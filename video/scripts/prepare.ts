@@ -22,8 +22,10 @@ const AUDIO = join(ROOT, "build", "audio");
 // Reciters of content/policy.yaml, as credited on screen.
 const RECITERS: Record<string, string> = { alafasy: "Mishari Rashid al-Afasy" };
 
-// Silence kept after each line before the next scene (seconds).
+// Silence kept after each line before the next scene (seconds), and the shortest scene: a one-word
+// question (« ليه؟ ») stays on screen long enough to be read, with a pause after it.
 const TAIL = { tts: 0.35, recitation: 0.6 };
+const MIN_SCENE = 1.5;
 
 // Display names of the hadith collections allowed by content/policy.yaml (metadata, not quotations).
 const COLLECTIONS: Record<string, string> = {
@@ -226,7 +228,7 @@ function main() {
       const media = s.audio === "none" ? null : mediaFor(ep.episode, manifest, s.id, spoken, source, where);
       const duration: Duration = media
         ? {
-            seconds: Math.round((media.seconds + TAIL[media.kind]) * 100) / 100,
+            seconds: Math.max(MIN_SCENE, Math.round((media.seconds + TAIL[media.kind]) * 100) / 100),
             provisional: false,
             basis: `audio: ${media.file} (${media.seconds} s) + ${TAIL[media.kind]} s`,
           }
