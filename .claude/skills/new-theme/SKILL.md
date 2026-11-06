@@ -5,9 +5,18 @@ description: Turn a new theme (patience, repentance, gratitude, trust in God...)
 
 # New theme
 
-The model is the du'a episode (`content/episodes/dua.yaml`, plan in `docs/design.md`). The
-process has three human validations that stay human (design.md): each source, the script and its
+The model is the du'a episode (`content/episodes/dua.yaml`, plan in `docs/design.md`) and the
+reference video it learned from (`reference/dua-video-analysis.md`). The process has three human
+validations that stay human (design.md): each source, the script and its
 translation, the final video. Never mark any of them done yourself.
+
+0. **Reference video** (when the owner shares one). Write its analysis in `reference/` following
+   `reference/dua-video-analysis.md`, text only (`reference/README.md`: no frame, audio or video of
+   a third party in this public repository). Method: timecoded contact sheets with ffmpeg (2 frames/s
+   for the hook, one per scene change after); the audio transcribed locally with faster-whisper
+   (`large-v3-turbo`, CPU int8; if PyAV fails to open the file, decode it to 16 kHz mono WAV with
+   ffmpeg and pass a numpy array); every quote on screen checked against `content/policy.yaml`. If
+   the hook uses a technique `write-hook` lacks, add it there.
 
 1. **Angle.** One theme, one promise, and 3 misconceptions people really hold about it (the du'a
    episode: "asking means refusing destiny", "everything is written, du'a changes nothing", "I was
@@ -27,9 +36,16 @@ translation, the final video. Never mark any of them done yourself.
      `uv run --with jsonschema --with pyyaml scripts/validate.py` (policy, grades).
    - List them for the owner: id, reference, Arabic and English text, link (`url`), and anything
      odd in the source (missing punctuation, several narrations). The owner sets `validated`.
+   - A reference video's quotes are leads, never sources: the du'a reference shows a weak sentence
+     attributed to the Prophet ﷺ, a paraphrase displayed as a verse, Companions' sayings without
+     source and a figure without source (its "citations" table). Each one goes through the registry.
 
 3. **Outline.** A table like the one in `docs/design.md`: number, role, content, source, reel.
-   The 16:9 episode plays every scene; each reel is one idea, 45–60 s, and stands alone.
+   The 16:9 episode plays every scene; each reel is one idea, 45–60 s, and stands alone. From the
+   reference: one misconception per part, announced on a sign by the recurring narrator (role
+   `misconception`; the sign template is to be made in task 4); in 16:9 the narrator comes back
+   every 30–60 s; a visual change every 6 s or so; one colour per function (concepts, narrator,
+   questions, quotes).
 
 4. **Script.** Follow the `write-hook` skill for the episode opening and for each reel: mirror,
    contrast, anchor, and an honest open loop to the next reel. Narration in Egyptian Arabic

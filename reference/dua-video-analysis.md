@@ -11,28 +11,36 @@ La vidéo qui a lancé le projet : un dessin animé en dialecte égyptien qui d�
 | Format | 16:9, animation 2D en aplats |
 | Langue | Narration en dialecte égyptien ; textes à l'écran en arabe classique et en égyptien |
 | Auteur | Non identifié. Les filigranes « VideoMaker » et « Made with VideoShow » (applis de montage mobiles) indiquent un ré-upload. |
-| Méthode | Une image toutes les 15 s, plus une image à chaque changement de plan (121 changements détectés). L'audio n'a pas été transcrit : le contenu parlé est déduit des textes à l'écran. |
+| Méthode | Une image toutes les 15 s, plus une image à chaque changement de plan (121 changements détectés). Sur 0:00 – 3:47, deux images par seconde pour l'accroche et la bande-son transcrite en local (Whisper large-v3-turbo, d'après un second enregistrement d'écran) : la section 1 et les citations en tiennent compte, la parole y est résumée, la transcription n'est pas versée au dépôt. Au-delà de 3:47, le contenu parlé est déduit des textes à l'écran. |
 
 ## Structure et plans clés
 
 Les timecodes sont ceux de l'enregistrement. Les textes à l'écran sont recopiés tels qu'affichés, pour l'analyse ; aucun ne doit être repris tel quel dans nos épisodes (règle : une citation n'existe que par son id dans le registre).
 
-### 1. Accroche et définition (0:00 – 0:47)
+### 1. Accroche et définition (0:00 – 0:45)
+
+La voix est résumée en italique (d'après la transcription) ; les textes à l'écran sont recopiés.
 
 | Timecode | Plan | Texte à l'écran |
 | --- | --- | --- |
-| 0:00 | Gros plan d'un garçon en larmes, accroché à une planche au milieu des vagues. | — |
-| 0:04 | Rue de ville, petite épicerie à l'enseigne peinte, voiture garée. | « دكان البركة » |
-| 0:07 | Le même garçon, souriant et rougissant, devant des immeubles ; fondu. | — |
-| 0:15 | Le garçon à genoux, mains ouvertes, sous un rayon de lumière, fond turquoise. | « لأنه اعتراف بقدرة الله (سبحانه وتعالى) » puis « والاحتياج إليه » |
-| 0:30 | Le garçon de dos, à genoux face à un mur ; cartouche vert au-dessus de lui. | « الدعاء » |
-| 0:37 | Entrée du narrateur : homme barbu, lunettes, chemise et pull sans manches. Il salue, puis lève l'index. | — |
+| 0:00 | Gros plan d'un garçon en larmes, accroché à une planche au milieu des vagues. *Quand on a peur, on dit « يا رب » malgré soi.* | — |
+| 0:04 | Rue de ville, petite épicerie à l'enseigne peinte ; le garçon regarde une voiture garée qui brille. *Quand on désire quelque chose, on dit aussi « يا رب », sans le vouloir.* | « دكان البركة » |
+| 0:07 | Le même garçon, souriant et rougissant, devant des immeubles. *Un réflexe qui sort tout droit du cœur.* | — |
+| 0:13 | Texte encadré sur le garçon en fondu, lu par le narrateur (sa voix, pas une récitation). | « فطرة الله التي فطر الناس عليها » |
+| 0:16 | Médaillon vert du Prophète ﷺ, puis une phrase encadrée et, dessous, une question d'un mot. *C'est pour ça que le Prophète ﷺ a dit…* | « النبي ﷺ », « الدعاء هو العبادة », « ليه؟ » |
+| 0:21 | Le garçon à genoux, mains ouvertes, sous un rayon de lumière, fond turquoise ; la réponse s'écrit morceau par morceau, au rythme de la voix. | « لأنه اعتراف بقدرة الله (سبحانه وتعالى) », « و ربوبيته… », « والاحتياج إليه », « في السراء والضراء » |
+| 0:28 | Montage de visages en invocation, yeux fermés, devant une foule : un vieil homme, une femme voilée, un jeune homme. *Beaucoup aiment le du'a, mais passent à côté de beaucoup de bien faute d'en connaître les secrets.* | — |
+| 0:33 | Le garçon de dos, à genoux face à un mur ; cartouche vert au-dessus de lui. | « الدعاء » |
+| 0:37 | Entrée du narrateur : homme barbu, lunettes, chemise et pull sans manches. Il salue ; le titre s'écrit à côté de lui, puis la promesse. | « خمس أشياء لا تعرفها عن الدعاء », « الأخيرة سوف تبهرك! » |
+| 0:42 | Le narrateur lève l'index, fond beige. *Première erreur que font beaucoup de gens…* | — |
 
-### 2. Idée reçue 1 : « le du'a s'oppose au contentement » (0:48 – 2:20)
+Ce qui accroche, dans l'ordre : un miroir (un réflexe que chacun reconnaît, sur une image forte), un contraste (la peur, puis le désir), le réflexe nommé, une seule citation, une question d'un mot avec sa réponse, l'enjeu (ce qu'on rate), une promesse chiffrée avec une boucle ouverte, puis le premier point sans transition. Repris dans le skill `write-hook` (`.claude/skills/write-hook/SKILL.md`).
+
+### 2. Idée reçue 1 : « le du'a s'oppose au contentement » (0:45 – 2:20)
 
 | Timecode | Plan | Texte à l'écran |
 | --- | --- | --- |
-| 0:48 | Le narrateur tient une pancarte en bois clouée. | « اعتقاد التعارض بين الدعاء والرضا » |
+| 0:45 | Le narrateur tient une pancarte en bois clouée. | « اعتقاد التعارض بين الدعاء والرضا » |
 | 0:48 | Un homme chauve et malade, assis à une table (flacon, verre d'eau, cachets), la tête sur les bras. | — |
 | 1:00 | Cartouche vert au-dessus d'un cœur rouge. | « الرضا » |
 | 1:15 | Le malade au lit d'hôpital, mains levées en invocation, à côté de sa version assise. | — |
@@ -143,6 +151,8 @@ Statut au regard de notre politique (`content/policy.yaml` : Bukhari, Muslim, et
 
 | Timecode | Citation affichée | Attribution affichée | Statut |
 | --- | --- | --- | --- |
+| 0:13 | « فطرة الله التي فطر الناس عليها » | Aucune, lu par le narrateur | Fragment d'Ar-Rum 30:30, lu par la voix au lieu d'être récité, sans référence. Chez nous : verset entier, récité, pas encore au registre. |
+| 0:16 | « الدعاء هو العبادة » | Le Prophète ﷺ | Tirmidhi 3247 (aussi 2969 et 3372), sahih selon al-Albani : `hadith.tirmidhi.3247` (proposé). Dans ce hadith, le Prophète ﷺ récite ensuite Ghafir 40:60 (`quran.40.60`). |
 | 3:00 | « إذا دعا أحدكم فلا يقل اللهم إن شئت فأعطني ولكن ليعزم المسألة وليعظم الرغبة » | Le Prophète ﷺ | Sens présent dans Sahih Muslim, mais le texte affiché semble fusionner deux versions. Chez nous : `hadith.muslim.2679a` et `hadith.bukhari.6339`, cités tels que publiés. |
 | 3:30 | « إذا أراد شيئاً فإنما يقول له كن فيكون » | Aucune, mis en scène comme un verset | Ce n'est la formulation exacte d'aucun verset : mélange de Ya-Sin 36:82 et d'Al-Baqarah 2:117. |
 | 4:30 | « لا يرد القضاء… » | Le Prophète ﷺ | Tirmidhi 2139, hasan selon al-Albani : `hadith.tirmidhi.2139` (proposé). |
@@ -162,7 +172,8 @@ Statut au regard de notre politique (`content/policy.yaml` : Bukhari, Muslim, et
 
 | Élément | Dans la référence | Chez nous |
 | --- | --- | --- |
-| Accroche | Situation forte dans les 5 premières secondes (noyade). | Même principe, présenté comme une scène type (« تخيّل… »). |
+| Accroche | Situation forte dans les 5 premières secondes (noyade), puis contraste, citation, « ليه؟ », enjeu. | Mêmes étapes (skill `write-hook`), présentées comme une scène type (« لما تكون… », « تخيّل… »). |
+| Promesse | « خمس أشياء… الأخيرة سوف تبهرك! » | Un nombre seulement s'il est vrai, une boucle ouverte seulement si elle est tenue (dua-01 annonce les 3 idées reçues des reels 2 à 4). |
 | Structure | Une idée reçue par partie, annoncée sur une pancarte. | Rôle `misconception` ; une idée reçue = un reel. |
 | Narrateur | Personnage récurrent qui parle face caméra. | `narrator` dans le catalogue. |
 | Personnage générique | Personnage blanc « toi », très réutilisable. | Idée à ajouter au catalogue : peu coûteux à animer, sans identité. |

@@ -8,10 +8,11 @@ description: Write or rewrite the hook (opening seconds) of a Quran-theme episod
 The owner rejected a first hook that described a scene in one long formal sentence
 (« تَخَيَّلْ أَنَّكَ تَنْتَظِرُ نَتِيجَةَ تَحْلِيلٍ طِبِّيٍّ، وَالْوَقْتُ لَا يَمُرُّ… », 21 words, MSA, no
 question, no promise) and shared a reference that hooks: an Egyptian animated explainer on du'a
-(2026-11-06). Only its hook was kept as a model, and only its techniques: never reuse its lines,
-drawings or structure word for word.
+(12 min, 2026-11-06; written analysis, shot by shot: `reference/dua-video-analysis.md`). Only its
+hook was kept as a model, and only its techniques: never reuse its lines, drawings or structure
+word for word.
 
-## What the reference does (first 42 s, 16:9)
+## What the reference does (first 45 s of 12 min, 16:9)
 
 | Time | What is said / shown | Technique to keep |
 | --- | --- | --- |
@@ -25,8 +26,17 @@ drawings or structure word for word.
 | 42 s | "First thing many people get wrong: …" | **Straight into the content** |
 
 Delivery: everyday Egyptian (ليه؟ · دلوقتي · يا عم · تلاقي نفسك), sentences of 2 to 4 seconds
-(≈ 2 words/s), one sentence per shot, the key word on screen, a cut every 2–4 s, a calm voice
-that still sounds like talking to a friend.
+(≈ 2 words/s), one sentence per shot, the key word on screen, a cut every 2–4 s in the hook (one
+every 6 s on average over the whole video), a calm voice that still sounds like talking to a friend.
+
+Visual devices worth reusing (reference analysis, "Langage visuel"):
+- A single word full screen for the question (« ليه؟ », « إزاي؟! ») → a `title-card` of one word.
+- The answer written phrase by phrase as the voice says it → `title-card` text revealed in sync (task 4).
+- Several faces in a row for the stakes ("this is about all of us").
+- A generic, featureless character labelled « انت » that plays the viewer: the mirror beat made
+  visible, cheap to animate, no identity. Not in `content/characters.yaml` yet: propose it to the
+  owner (task 5) rather than drawing it freely.
+- Real people (the Prophet ﷺ, Companions) only as a name medallion, never drawn: our `name-card`.
 
 What we do **not** take from it:
 - The narrator reads Quran (« فطرة الله التي فطر الناس عليها », « وأيوب إذ نادى ربه ») → for us a
