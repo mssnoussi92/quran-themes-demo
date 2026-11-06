@@ -32,7 +32,8 @@ translation, the final video. Never mark any of them done yourself.
      search the text; take its `arabicnumber` as the number (Muslim: one letter per narration,
      `hadith.muslim.2679a`). Example: « الدعاء هو العبادة » → Tirmidhi 2969, 3247, 3372.
    - Add each one to `content/sources/` with `status: proposed` and a `notes` line (which reel,
-     why), then `uv run --with ruamel.yaml tools/sources/fetch.py` and
+     why); for a hadith shown in a reel, an `excerpt_en`: the passage of `text_en` used as the
+     subtitle, copied exactly (validate.py checks it), then `uv run --with ruamel.yaml tools/sources/fetch.py` and
      `uv run --with jsonschema --with pyyaml scripts/validate.py` (policy, grades).
    - List them for the owner: id, reference, Arabic and English text, link (`url`), and anything
      odd in the source (missing punctuation, several narrations). The owner sets `validated`.

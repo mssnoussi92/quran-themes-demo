@@ -82,6 +82,9 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
                 report.error(where, "duplicate id")
             registry[sid] = src
             ref = src["ref"]
+            # An English excerpt is a selection of the published text, never a rewording.
+            if "excerpt_en" in src and src["excerpt_en"] not in (src.get("text_en") or ""):
+                report.error(where, "excerpt_en is not a passage of text_en")
             # Texts come from an API (tools/sources/fetch.py writes origin), never typed by hand.
             if (src.get("text_ar") or src.get("text_en")) and "origin" not in src:
                 report.error(where, "text without origin: fill it with tools/sources/fetch.py, never by hand")

@@ -18,9 +18,25 @@ export type ResolvedSource = {
   text_en: string;
   /** What a card shows: the whole verse, or only the Prophet's words for a hadith. */
   display_ar: string;
-  /** Same rule on the English text (whole text when it has no pair of quotation marks). */
+  /** English shown: the registry's `excerpt_en` (a passage of text_en), or the whole text. */
   display_en: string;
+  /** "Al-Albani: Sahih" when the grade is not the collection itself (Bukhari, Muslim). */
+  grade_note: string | null;
   translator: string | null;
+};
+
+/** One recited word: its position in the verse (1-based, waqf signs excluded), seconds in the file. */
+export type WordTiming = { position: number; start: number; end: number };
+
+/** Audio of a scene, produced by tools/audio/build.py and copied to public/audio/. */
+export type Media = {
+  kind: "tts" | "recitation";
+  /** Path under public/ (staticFile). */
+  file: string;
+  seconds: number;
+  words: WordTiming[];
+  /** "Recitation: Mishari Rashid al-Afasy" under a verse. */
+  credit: string | null;
 };
 
 export type Duration = {
@@ -45,6 +61,9 @@ export type ResolvedScene = {
     characters: Character[];
   };
   source: ResolvedSource | null;
+  /** What the voice says (tts), or the recited verse. */
+  spoken_ar: string | null;
+  media: Media | null;
   duration: Duration;
 };
 

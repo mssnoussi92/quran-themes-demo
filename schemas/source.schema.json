@@ -17,6 +17,11 @@
         "text_ar": { "type": ["string", "null"] },
         "text_en": { "type": ["string", "null"] },
         "translation": { "type": "string" },
+        "excerpt_en": {
+          "description": "Passage of text_en shown as the English subtitle (copied from it, never typed: validate.py checks it is part of text_en)",
+          "type": "string",
+          "minLength": 1
+        },
         "grade": { "enum": ["sahih", "hasan", "daif", "mawdu"] },
         "graded_by": { "type": "string" },
         "url": { "type": "string", "format": "uri", "description": "Page to read the source (quran.com, sunnah.com)" },

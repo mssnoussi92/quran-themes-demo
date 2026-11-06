@@ -11,6 +11,7 @@ __pycache__/
 node_modules/
 video/out/
 video/public/data/
+video/public/audio/
 .remotion/
 
 # Media takes produced locally
