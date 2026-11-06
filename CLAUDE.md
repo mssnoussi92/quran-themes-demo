@@ -45,7 +45,7 @@ tools/sources/fetch.py   remplit text_ar / text_en du registre (quran.com v4, ha
 tools/audio/build.py     audio d'un épisode -> build/audio/<épisode>/ : récitation (quran.com, temps des mots) + narration VoiceTut
 requirements/            dépendances Python par moteur (un venv par moteur)
 infra/claude-cloud-setup.sh  script de setup de l'environnement cloud (copié dans l'UI)
-.github/workflows/       validate.yml (contenu + video/), voice-test.yml
+.github/workflows/       validate.yml (contenu + video/), voice-test.yml (une voix par job), render.yml (audio + reel -> release)
 reference/               analyses de vidéos de référence (texte seulement : aucun visuel tiers, dépôt public)
 video/                   projet Remotion (TypeScript) : compositions Reel916 (1080x1920) et Episode169 (1920x1080)
   scripts/prepare.ts     content/ -> public/data/<épisode>.json (sources résolues depuis le registre, durées)
@@ -73,6 +73,7 @@ ffmpeg -y -i build/tts/test.wav -codec:a libmp3lame -qscale:a 2 build/tts/test.m
 
 # Audio d'un épisode (après npm run data ; VoiceTut ≈ 5 min par phrase sur 4 vCPU : en arrière-plan)
 python3 tools/audio/build.py --episode dua --speaker Mohammed          # puis npm run data : vraies durées
+# (dans GitHub Actions : workflow render, il fait tout et publie le MP4 en release)
 python3 tools/audio/build.py --episode dua --only promise              # une scène (ici la récitation)
 
 # Vidéo (dans video/ ; npm run data est lancé par studio, still et render)
@@ -105,7 +106,7 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
    - `ayah-card` : texte uthmani **exactement tel que publié**, ۞ compris (comme quran-reels).
    - `source-card` (hadith) : **seulement les paroles du Prophète ﷺ**, extraites par une règle fixe : du premier au dernier guillemet `"` du `text_ar` (sans la chaîne de transmission ni le commentaire de Tirmidhi ; une question posée entre deux réponses reste, ex. Muslim 2735c). Rapporteur et référence en légende. Le registre garde le texte complet.
 5. **Kit de personnages** à partir d'Open Peeps (CC0) : narrateur + `amir` + `salma`, poses et expressions du catalogue, bouche animée selon le volume. Si openpeeps.com est bloqué par le réseau, demande au propriétaire de déposer l'archive dans `assets/characters/source/`.
-6. **Workflow `render.yml`** : rend `dua-01` en 9:16 et le publie en release, comme `voice-test`.
+6. **Workflow `render.yml`** (écrit) : à la main (épisode, reel, voix, `draft`) ; vérifie les sources (`validate.py --release`, sauf brouillon), produit l'audio (`tools/audio/build.py`, VoiceTut en CPU, lignes déjà synthétisées reprises du cache), rend `Reel916` et publie le MP4 dans la pré-release `<reel>-latest`. VoiceTut : ≈ 5 min pour la 1re phrase, ≈ 1,5 min ensuite (4 vCPU).
 
 ## Skills (`.claude/skills/`)
 
