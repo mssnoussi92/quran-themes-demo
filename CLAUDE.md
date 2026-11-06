@@ -130,5 +130,4 @@ Procédures à suivre dans toute session :
 
 - **Marque** : ces vidéos sont publiées sur la **même page que Quran Words Daily** (Facebook `quranwordsdaily`, Instagram / TikTok / YouTube `quran_words_daily`), **à la main par le propriétaire** pour l'instant, à partir du MP4 de la pré-release `<reel>-latest`. Les règles de droits de la page s'appliquent donc (voir quran-reels : Rights Manager sur Facebook, Content ID sur YouTube).
 - **Licence** : MIT, comme quran-reels (`LICENSE`) ; Remotion garde sa propre licence (gratuite pour un particulier). Textes cités et récitations : à leurs éditeurs (README).
-
 - **Récitateur** : le propriétaire garde Alafasy (2026-11-06), en connaissant le risque sur la page (quran-reels : 93:1-11 d'Alafasy coupée par Rights Manager sur Facebook le 2026-11-05). Alternative prête si besoin : Minshawi murattal (quran.com, récitation 9, temps des mots disponibles).
