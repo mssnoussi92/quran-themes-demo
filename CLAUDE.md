@@ -67,7 +67,7 @@ uv run --with ruamel.yaml tools/sources/fetch.py --check
 
 # Synthèse vocale (venvs créés par le setup cloud ou par la CI)
 /opt/venvs/silma/bin/python tools/tts/say.py --engine silma --in content/voice-test/01-narration-msa.txt --out build/tts/test.wav
-/opt/venvs/voicetut/bin/python tools/tts/say.py --engine voicetut --speaker Mohamed --in content/voice-test/02-narration-egy.txt --out build/tts/test.wav
+/opt/venvs/voicetut/bin/python tools/tts/say.py --engine voicetut --speaker Mohammed --in content/voice-test/02-narration-egy.txt --out build/tts/test.wav
 ffmpeg -y -i build/tts/test.wav -codec:a libmp3lame -qscale:a 2 build/tts/test.mp3
 
 # Vidéo (dans video/ ; npm run data est lancé par studio, still et render)
@@ -93,7 +93,7 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 
 ## Tâches de la démo, dans l'ordre
 
-1. **Test de voix.** ✅ Le propriétaire a choisi **VoiceTut** (égyptien) le 2026-11-06 : `narration_language: ar-egy`, narration écrite en égyptien parlé. Voix entendue au test : `Mohamed` (défaut du workflow), à confirmer.
+1. **Test de voix.** ✅ Le propriétaire a choisi **VoiceTut** (égyptien) le 2026-11-06 : `narration_language: ar-egy`, narration écrite en égyptien parlé. **Attention** : le premier test de voix n'a produit que SILMA (le job VoiceTut a échoué sur un nom de voix inexistant, `Mohamed` au lieu de `Mohammed`) ; choix à confirmer à l'écoute des voix VoiceTut (`voice-test`, plusieurs voix par run).
 2. **Récupération des sources.** ✅ `tools/sources/fetch.py` remplit `text_ar` / `text_en` depuis quran.com v4 (uthmani, Sahih International) et hadith-api, avec `origin` (URL exactes, jugements de hadith-api) et `url` (page de lecture). Il ne valide jamais : le propriétaire passe chaque source en `validated` lui-même ; une source validée dont le texte ou le jugement change redevient `proposed`. Numérotation des hadiths = `arabicnumber` de hadith-api ; un numéro à plusieurs narrations (Muslim) prend `ref.narration` et une lettre (`hadith.muslim.2679a`). `validate.py` refuse un texte sans `origin`, la CI lance `fetch.py --check`.
 3. **Projet Remotion** ✅ `video/` (Remotion 4, React 19, TypeScript) : `Reel916` (un reel, props `reel`) et `Episode169` (toutes les scènes) lisent `public/data/<épisode>.json`, produit par `scripts/prepare.ts` depuis `content/` (textes pris du registre, source exclue ou inconnue = erreur). Polices Amiri Quran (versets), Amiri (arabe), Lora (anglais). Cartes **provisoires** et durées **estimées** d'après le texte (`duration.provisional`, mention « DRAFT » à l'écran) jusqu'à l'audio réel. MP4 H.264 yuv420p BT.709. À reprendre en tâche 4 : guillemets intérieurs d'un hadith à plusieurs paroles (Muslim 2735c) mal placés en RTL.
 4. **Modèles visuels** : `scene`, `ayah-card` (mots synchronisés via `segments=true` de l'API audio quran.com), `source-card`, `title-card`, sous-titres.

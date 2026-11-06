@@ -3,14 +3,14 @@
 
 Engines (each lives in its own venv, see requirements/):
   silma     SILMA TTS: Modern Standard Arabic + English, voice cloning from a reference clip.
-  voicetut  VoiceTut-TTS: Egyptian Arabic + English, 15 built-in voices (e.g. Mohamed, Hanan).
+  voicetut  VoiceTut-TTS: Egyptian Arabic + English, 19 built-in voices (e.g. Mohammed, Ahmed, Hanan).
 
 Text files: UTF-8; lines starting with '#' are comments and are skipped.
 
 Examples:
   /opt/venvs/silma/bin/python tools/tts/say.py --engine silma \
       --in content/voice-test/01-narration-msa.txt --out build/tts/msa.wav
-  /opt/venvs/voicetut/bin/python tools/tts/say.py --engine voicetut --speaker Mohamed \
+  /opt/venvs/voicetut/bin/python tools/tts/say.py --engine voicetut --speaker Mohammed \
       --in content/voice-test/*.txt --out-dir build/tts
 
 Never use this tool on Quran verses: verses always come from a real reciter.
@@ -87,7 +87,10 @@ def main() -> None:
     out = p.add_mutually_exclusive_group(required=True)
     out.add_argument("--out", help="output WAV (single input only)")
     out.add_argument("--out-dir", help="output directory, one WAV per input")
-    p.add_argument("--speaker", default="Mohamed", help="voicetut built-in voice (default: Mohamed, calm)")
+    p.add_argument("--speaker", default="Mohammed",
+                   help="voicetut built-in voice (default: Mohammed). Men: Ahmed, Ali, Hassan, Karim, Mahmoud, "
+                        "Mohammed, Mostafa, Ramy, Shaker, Tareq, Yehia, Youssef. Women: Hadeer, Hanan, Mariam, "
+                        "Rana, Sarah, Yasmin, Yara")
     p.add_argument("--language", choices=["ar", "en"], help="voicetut only; auto-detected by default")
     p.add_argument("--ref-audio", help="reference clip to clone (only voices you have the right to use)")
     p.add_argument("--ref-text", help="exact transcript of --ref-audio")

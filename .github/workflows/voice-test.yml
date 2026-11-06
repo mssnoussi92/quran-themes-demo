@@ -7,9 +7,9 @@ name: voice-test
 on:
   workflow_dispatch:
     inputs:
-      voicetut_speaker:
-        description: "VoiceTut built-in voice (calm ones: Mohamed, Aly, Hanan)"
-        default: Mohamed
+      voicetut_speakers:
+        description: "VoiceTut voices, comma-separated. Men: Ahmed, Ali, Hassan, Karim, Mahmoud, Mohammed, Mostafa, Ramy, Shaker, Tareq, Yehia, Youssef. Women: Hadeer, Hanan, Mariam, Rana, Sarah, Yasmin, Yara"
+        default: Mohammed,Ahmed,Karim,Mahmoud,Hanan
   push:
     branches: [main]
     paths:
@@ -56,10 +56,14 @@ jobs:
       - name: Synthesize and convert to MP3
         env:
           ENGINE: ${{ matrix.engine }}
-          SPEAKER: ${{ inputs.voicetut_speaker || 'Mohamed' }}
+          SPEAKERS: ${{ inputs.voicetut_speakers || 'Mohammed,Ahmed,Karim,Mahmoud,Hanan' }}
         run: |
-          ".venv-$ENGINE/bin/python" tools/tts/say.py --engine "$ENGINE" --speaker "$SPEAKER" \
-            --in content/voice-test/*.txt --out-dir build/tts
+          # SILMA has a single voice; VoiceTut reads every text once per voice listed.
+          if [ "$ENGINE" = voicetut ]; then IFS=',' read -ra voices <<< "$SPEAKERS"; else voices=(default); fi
+          for voice in "${voices[@]}"; do
+            ".venv-$ENGINE/bin/python" tools/tts/say.py --engine "$ENGINE" --speaker "$voice" \
+              --in content/voice-test/*.txt --out-dir build/tts
+          done
           for f in build/tts/*.wav; do
             ffmpeg -loglevel error -y -i "$f" -codec:a libmp3lame -qscale:a 2 "${f%.wav}.mp3"
           done
