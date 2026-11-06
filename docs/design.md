@@ -61,7 +61,7 @@ Règles : une citation n'existe que par son id ; une langue de plus est une clé
 | # | Rôle | Contenu | Source candidate | Reel |
 | --- | --- | --- | --- | --- |
 | 1 | Accroche | « يا رب »… qu'on dit sans y penser, dans la peur (attente d'un résultat) comme dans le désir : ce n'est pas une habitude, c'est une adoration. | Tirmidhi 3247 (« الدعاء هو العبادة ») | 1 |
-| 2 | Promesse | Pourquoi : on reconnaît son besoin de Dieu et Sa puissance. Le Prophète ﷺ a récité ensuite le verset de la promesse. Fin : « 3 idées reçues, la 1re au prochain reel ». | Ghafir 40:60 | 1 |
+| 2 | Promesse | Pourquoi : on reconnaît son besoin de Dieu et Sa puissance. Puis « قال ربنا سبحانه وتعالى » et le verset de la promesse. Fin : « 3 idées reçues, la 1re au prochain reel ». | Ghafir 40:60 | 1 |
 | 3 | Idée reçue 1 | « Demander, c'est refuser le destin. » Ayyub a invoqué. | Al-Anbiya 21:83 | 2 |
 | 4 | Preuve | Demander avec résolution, sans « si Tu veux ». | Bukhari 6339, Muslim 2679a | 2 |
 | 5 | Idée reçue 2 | « Tout est écrit, le du'a ne change rien. » | Tirmidhi 2139 ; Ar-Ra'd 13:39 | 3 |

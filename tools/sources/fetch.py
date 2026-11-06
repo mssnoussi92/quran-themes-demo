@@ -143,6 +143,10 @@ class Quran:
         trans = get_json(url_en)
         if len(trans["translations"]) != 1 or trans["meta"]["filters"]["verse_key"] != key:
             raise FetchError(f"{url_en}: expected one translation of {key}")
+        chapters = cached_json("quran.com/chapters.json", f"{QURAN_API}/chapters", self.refresh)["chapters"]
+        chapter = next((c for c in chapters if c["id"] == src["ref"]["surah"]), None)
+        if chapter is None:
+            raise FetchError(f"{QURAN_API}/chapters: no surah {src['ref']['surah']}")
         return {
             "text_ar": verses[0]["text_uthmani"].strip(),
             "text_en": clean_translation(trans["translations"][0]["text"]),
@@ -152,6 +156,8 @@ class Quran:
                 "text_ar": url_ar,
                 "text_en": url_en,
                 "translator": trans["meta"]["translation_name"],
+                "surah_ar": chapter["name_arabic"],
+                "surah_en": chapter["name_simple"],
             },
         }
 
@@ -331,6 +337,9 @@ def main() -> int:
             diffs = [k for k in ("text_ar", "text_en") if src.get(k) != got[k]]
             if plain((src.get("origin") or {}).get("grades")) != got["origin"].get("grades"):
                 diffs.append("grades")
+            # Surah names: shown under a verse, metadata (a change does not undo a validation).
+            diffs += [k for k in ("surah_ar", "surah_en")
+                      if k in got["origin"] and (src.get("origin") or {}).get(k) != got["origin"][k]]
             if not diffs:
                 print(f"ok      {sid}")
                 continue
@@ -343,7 +352,7 @@ def main() -> int:
             set_before(src, "url", got["url"], before="origin" if "origin" in src else "status")
             set_before(src, "origin", origin_map(got["origin"], today))
             note = ""
-            if src["status"] == "validated":
+            if src["status"] == "validated" and {"text_ar", "text_en", "grades"} & set(diffs):
                 src["status"] = "proposed"
                 src.pop("validated_by", None)
                 note = " (changed: status back to proposed, validate it again)"

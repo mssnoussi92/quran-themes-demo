@@ -35,6 +35,8 @@
             "text_ar": { "type": "string", "format": "uri" },
             "text_en": { "type": "string", "format": "uri" },
             "translator": { "type": "string" },
+            "surah_ar": { "type": "string", "description": "Name of the surah (verses), from quran.com" },
+            "surah_en": { "type": "string" },
             "book": { "type": "integer" },
             "hadith_in_book": { "type": "integer" },
             "grades": {

@@ -79,6 +79,7 @@ const Reference: React.FC<{ lines: (string | null)[] }> = ({ lines }) => (
     {lines.filter(Boolean).map((line, i) => (
       <div
         key={i}
+        dir="auto"
         style={{
           fontFamily: `"${FONT.latin}", "${FONT.arabic}"`,
           fontSize: i === 0 ? 34 : 26,

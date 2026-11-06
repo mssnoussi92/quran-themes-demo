@@ -12,6 +12,8 @@
     text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=40:60
     text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=40:60
     translator: Saheeh International
+    surah_ar: غافر
+    surah_en: Ghafir
     retrieved: '2026-11-06'
   status: validated
   validated_by: mssnoussi92
@@ -28,6 +30,8 @@
     text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=21:83
     text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=21:83
     translator: Saheeh International
+    surah_ar: الأنبياء
+    surah_en: Al-Anbya
     retrieved: '2026-11-06'
   status: validated
   validated_by: mssnoussi92
@@ -44,6 +48,8 @@
     text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=13:39
     text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=13:39
     translator: Saheeh International
+    surah_ar: الرعد
+    surah_en: Ar-Ra'd
     retrieved: '2026-11-06'
   status: validated
   validated_by: mssnoussi92
@@ -60,6 +66,8 @@
     text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:186
     text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:186
     translator: Saheeh International
+    surah_ar: البقرة
+    surah_en: Al-Baqarah
     retrieved: '2026-11-06'
   status: validated
   validated_by: mssnoussi92

@@ -2,7 +2,8 @@ name: render
 
 # Renders one reel of an episode in 9:16 with its real audio (recitation + VoiceTut narration)
 # and attaches the MP4 to the "<reel>-latest" pre-release (easy to play on a phone).
-# A release render needs every quoted source validated (validate.py --release); a draft does not.
+# A release render needs every quoted source and the reel's script validated by the owner
+# (validate.py --release --reel); a draft does not.
 
 on:
   workflow_dispatch:
@@ -53,7 +54,7 @@ jobs:
           if [ "$DRAFT" = true ]; then
             uv run --with jsonschema --with pyyaml scripts/validate.py
           else
-            uv run --with jsonschema --with pyyaml scripts/validate.py --release
+            uv run --with jsonschema --with pyyaml scripts/validate.py --release --reel "$REEL"
           fi
 
       # No apt: the Ubuntu mirror can hang for an hour (voice-test, 2026-11-06). Static ffmpeg build
