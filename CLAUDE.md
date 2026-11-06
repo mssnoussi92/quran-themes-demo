@@ -44,8 +44,11 @@ tools/tts/say.py         synthèse : un texte -> WAV (moteurs silma | voicetut)
 tools/sources/fetch.py   remplit text_ar / text_en du registre (quran.com v4, hadith-api) + origin
 requirements/            dépendances Python par moteur (un venv par moteur)
 infra/claude-cloud-setup.sh  script de setup de l'environnement cloud (copié dans l'UI)
-.github/workflows/       validate.yml, voice-test.yml
-video/                   (à créer) projet Remotion
+.github/workflows/       validate.yml (contenu + video/), voice-test.yml
+video/                   projet Remotion (TypeScript) : compositions Reel916 (1080x1920) et Episode169 (1920x1080)
+  scripts/prepare.ts     content/ -> public/data/<épisode>.json (sources résolues depuis le registre, durées)
+  src/                   Root.tsx (compositions), data.ts (chargement), Video.tsx, templates/ (cartes provisoires)
+  public/fonts/          Amiri Quran, Amiri, Lora (OFL, mêmes fichiers que quran-reels)
 build/                   (ignoré) tout ce qui est généré
 ```
 
@@ -64,6 +67,15 @@ uv run --with ruamel.yaml tools/sources/fetch.py --check
 /opt/venvs/silma/bin/python tools/tts/say.py --engine silma --in content/voice-test/01-narration-msa.txt --out build/tts/test.wav
 /opt/venvs/voicetut/bin/python tools/tts/say.py --engine voicetut --speaker Mohamed --in content/voice-test/02-narration-egy.txt --out build/tts/test.wav
 ffmpeg -y -i build/tts/test.wav -codec:a libmp3lame -qscale:a 2 build/tts/test.mp3
+
+# Vidéo (dans video/ ; npm run data est lancé par studio, still et render)
+export REMOTION_BROWSER_EXECUTABLE=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell  # session cloud
+npm run data                                         # content/ -> public/data/dua.json
+npm run typecheck
+npm run still -- Reel916 out/reel.png --frame=500    # une image
+npm run render -- Reel916 out/dua-01.mp4             # le reel dua-01 (≈ 40 s de calcul pour 30 s)
+npm run render -- Episode169 out/dua.mp4             # l'épisode entier en 16:9
+npm run render -- Reel916 out/x.mp4 --props='{"episode":"dua","reel":"dua-02","format":"reel","data":null}'
 ```
 
 La synthèse tourne sur CPU (4 vCPU) : compte une à plusieurs minutes par phrase au premier lancement (téléchargement des modèles, compilation des grammaires de normalisation). Lance-la en arrière-plan si elle dépasse 2 minutes.
@@ -74,14 +86,14 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 
 - Python : un venv par moteur, `/opt/venvs/silma` et `/opt/venvs/voicetut` (dépendances incompatibles entre elles : numpy<=1.26 pour SILMA).
 - Modèles : cache Hugging Face par défaut, `~/.cache/huggingface`.
-- Chrome for Testing est préinstallé (`$CHROME_PATH`), utilisable par Remotion via `browserExecutable`.
+- Navigateur pour Remotion : le headless shell préinstallé (`REMOTION_BROWSER_EXECUTABLE`, voir les commandes) ; sans cette variable, Remotion télécharge le sien (c'est ce que fait la CI).
 - Si un téléchargement échoue avec une erreur de proxy ou un 403, le domaine n'est pas autorisé : dis au propriétaire lequel ajouter (liste dans `docs/cloud-environment.md`), ne contourne pas.
 
 ## Tâches de la démo, dans l'ordre
 
 1. **Test de voix.** Lance le workflow `voice-test` (ou les commandes ci-dessus) et laisse le propriétaire choisir moteur et voix. VoiceTut ne parle que l'égyptien et l'anglais ; SILMA parle l'arabe standard et l'anglais.
 2. **Récupération des sources.** ✅ `tools/sources/fetch.py` remplit `text_ar` / `text_en` depuis quran.com v4 (uthmani, Sahih International) et hadith-api, avec `origin` (URL exactes, jugements de hadith-api) et `url` (page de lecture). Il ne valide jamais : le propriétaire passe chaque source en `validated` lui-même ; une source validée dont le texte ou le jugement change redevient `proposed`. Numérotation des hadiths = `arabicnumber` de hadith-api ; un numéro à plusieurs narrations (Muslim) prend `ref.narration` et une lettre (`hadith.muslim.2679a`). `validate.py` refuse un texte sans `origin`, la CI lance `fetch.py --check`.
-3. **Projet Remotion** dans `video/` (TypeScript). Une composition par format (`Reel916`, `Episode169`) qui lit `content/episodes/*.yaml`. Police coranique libre (Amiri Quran, OFL).
+3. **Projet Remotion** ✅ `video/` (Remotion 4, React 19, TypeScript) : `Reel916` (un reel, props `reel`) et `Episode169` (toutes les scènes) lisent `public/data/<épisode>.json`, produit par `scripts/prepare.ts` depuis `content/` (textes pris du registre, source exclue ou inconnue = erreur). Polices Amiri Quran (versets), Amiri (arabe), Lora (anglais). Cartes **provisoires** et durées **estimées** d'après le texte (`duration.provisional`, mention « DRAFT » à l'écran) jusqu'à l'audio réel. MP4 H.264 yuv420p BT.709. À reprendre en tâche 4 : guillemets intérieurs d'un hadith à plusieurs paroles (Muslim 2735c) mal placés en RTL.
 4. **Modèles visuels** : `scene`, `ayah-card` (mots synchronisés via `segments=true` de l'API audio quran.com), `source-card`, `title-card`, sous-titres.
    - `ayah-card` : texte uthmani **exactement tel que publié**, ۞ compris (comme quran-reels).
    - `source-card` (hadith) : **seulement les paroles du Prophète ﷺ**, extraites par une règle fixe : du premier au dernier guillemet `"` du `text_ar` (sans la chaîne de transmission ni le commentaire de Tirmidhi ; une question posée entre deux réponses reste, ex. Muslim 2735c). Rapporteur et référence en légende. Le registre garde le texte complet.

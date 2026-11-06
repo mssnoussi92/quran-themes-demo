@@ -16,7 +16,8 @@ Status: bootstrap. See `CLAUDE.md` for the rules and the task list, `docs/design
 | `scripts/validate.py` | Checks the content against the schemas and the editorial rules |
 | `tools/tts/say.py` | Text to WAV with SILMA (MSA + English) or VoiceTut (Egyptian + English) |
 | `tools/sources/fetch.py` | Fills the registry texts from quran.com and hadith-api (`--check` in CI) |
-| `.github/workflows/` | Content validation and voice test |
+| `video/` | Remotion project: `Reel916` and `Episode169` compositions, fed by `content/` |
+| `.github/workflows/` | Content and video checks, voice test |
 
 ## Quick start
 
@@ -31,4 +32,5 @@ Voice test: run the **voice-test** workflow from the Actions tab. The MP3 files 
 - [SILMA TTS](https://github.com/SILMA-AI/silma-tts) (Apache 2.0) and [VoiceTut-TTS](https://huggingface.co/mohammedaly22/VoiceTut-TTS) (Apache 2.0) for speech synthesis.
 - [Quran.com API](https://api-docs.quran.com) for Quran text, translation and recitation timings.
 - [hadith-api](https://github.com/fawazahmed0/hadith-api) for hadith texts and grades.
+- [Amiri Quran and Amiri](https://github.com/aliftype/amiri) (Khaled Hosny) and [Lora](https://github.com/cyrealtype/Lora-Cyrillic), under the SIL Open Font License (`video/public/fonts/`).
 - [Open Peeps](https://openpeeps.com) by Pablo Stanley (CC0) as the base of the character kit.

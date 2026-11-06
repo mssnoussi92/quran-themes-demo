@@ -26,3 +26,25 @@ jobs:
 
       - name: Shell scripts
         run: shellcheck infra/*.sh scripts/*.sh
+
+  video:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: video
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: video/package-lock.json
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: Episode data from content/ (sources resolved from the registry)
+        run: npm run data
+
+      - name: TypeScript
+        run: npm run typecheck
