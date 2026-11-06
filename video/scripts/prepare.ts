@@ -27,11 +27,13 @@ const AUDIO = join(ROOT, "build", "audio");
 // Reciters of content/policy.yaml, as credited on screen.
 const RECITERS: Record<string, string> = { alafasy: "Mishari Rashid al-Afasy" };
 
-// Silence after each line before the next scene (seconds): with the silence kept around each synthetic
-// line (tools/audio/build.py), about 0.25 s between two sentences, and a short breath after a verse.
-// The shortest scene: a one-word question (« ليه؟ ») stays on screen long enough to be read.
-const TAIL = { tts: 0.12, recitation: 0.25 };
-const MIN_SCENE = 0.8;
+// Silence after each line, before the transition (Video.tsx adds the transition, during which nobody
+// speaks): with the silence kept around each synthetic line (tools/audio/build.py), the gap between
+// two sentences is the transition plus ~0.14 s. A short breath more after a verse.
+// The shortest scene: a one-word question (« ليه؟ ») is also on screen during the transitions before
+// and after it, so a short minimum is enough to read it without leaving a blank in the voice.
+const TAIL = { tts: 0, recitation: 0.1 };
+const MIN_SCENE = 0.5;
 
 // Display names of the hadith collections allowed by content/policy.yaml (metadata, not quotations).
 const COLLECTIONS: Record<string, string> = {

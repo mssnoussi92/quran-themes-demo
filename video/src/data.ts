@@ -1,6 +1,6 @@
 import type { CalculateMetadataFunction } from "remotion";
 import { staticFile } from "remotion";
-import { toFrames } from "./formats";
+import { TRANSITION_SECONDS, toFrames } from "./formats";
 import type { FormatId } from "./formats";
 import type { EpisodeData, ResolvedScene } from "./types";
 
@@ -30,6 +30,9 @@ export const calculateMetadata: CalculateMetadataFunction<VideoProps> = async ({
     throw new Error(`public/data/${props.episode}.json is missing: run "npm run data" in video/`);
   }
   const data = (await res.json()) as EpisodeData;
-  const durationInFrames = selectScenes(data, props.reel).reduce((n, s) => n + toFrames(s.duration.seconds), 0);
+  // Scenes back to back, plus one silent transition between each two (Video.tsx).
+  const scenes = selectScenes(data, props.reel);
+  const between = toFrames(TRANSITION_SECONDS);
+  const durationInFrames = scenes.reduce((n, s) => n + toFrames(s.duration.seconds), 0) + (scenes.length - 1) * between;
   return { durationInFrames, props: { ...props, data } };
 };

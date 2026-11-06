@@ -1,0 +1,95 @@
+{
+  "note": "Narration takes validated by the owner (AI-generated voice, VoiceTut). Written by tools/audio/build.py --lock, never by hand.",
+  "takes": {
+    "anchor": {
+      "file": "anchor.flac",
+      "text": "النبي صلى الله عليه وسلم قال: الدُّعَاءُ هُوَ الْعِبَادَةُ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "79ffae2378d7a148",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-06",
+      "sha256": "de64ae036713489743daf5f01973071b48c4f9b7f807214e3692062ee3f79458"
+    },
+    "because": {
+      "file": "because.flac",
+      "text": "عشان لما بتقول «يا رب»، إنت بتعترف إنك محتاجله… وإنه يقدر.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "1115c5b4692d8361",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-06",
+      "sha256": "ec02326e810838c20f523a3c5ae1cc8d51e7e6e06c62748026f4a84d78522fa8"
+    },
+    "hook-1": {
+      "file": "hook-1.flac",
+      "text": "«يا رب»… قلتها كام مرة النهارده؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "b70d90ad19bbedab",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-06",
+      "sha256": "8aba5081d00503ded660d7619672afdd521965133f94edd8e949e1639a748dc4"
+    },
+    "hook-2": {
+      "file": "hook-2.flac",
+      "text": "لما تكون مستني نتيجة تحليل، وقلبك بيدق…",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "150b6a5a8ea770b7",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-06",
+      "sha256": "b1b4a9b6f5b1857c05d0fcaf135232ae22c9d139f99c8891bbe6ed9dff6a56de"
+    },
+    "hook-3": {
+      "file": "hook-3.flac",
+      "text": "أو لما تبقى نفسك في حاجة أوي…",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "588ee738ff2d22eb",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-06",
+      "sha256": "7171a62a2d5d1f8b506d516f431118a5dfeeca2842ff3b970691fe80224a5456"
+    },
+    "hook-4": {
+      "file": "hook-4.flac",
+      "text": "دي مش مجرد عادة… دي عبادة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "37c4209af8db2894",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-06",
+      "sha256": "ba6df4af9510571c9ea12aafd0e0568d38b44b6aa91ba935da10e047d6a219f4"
+    },
+    "outro": {
+      "file": "outro.flac",
+      "text": "بس فيه تلات أفكار غلط عن الدعاء… يمكن تكون مصدق واحدة منهم. أولها في الجاي.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "5e13b2a263ca55f0",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-06",
+      "sha256": "d44843768ca6360883aa80cbceae53410fa6ae3aaa45fc3d319b9e9a35a6c757"
+    },
+    "promise-intro": {
+      "file": "promise-intro.flac",
+      "text": "قال ربنا سبحانه وتعالى:",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "15121a4793c2d385",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-06",
+      "sha256": "b671924e19b808aeb9daa3fe83054dd51d9a33bbbbb793c58a82bfa5f97a4376"
+    },
+    "why": {
+      "file": "why.flac",
+      "text": "ليه؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "98c5888c228035af",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-06",
+      "sha256": "12cab08387ee328bdf132fde0f0b9a23b6c2dc9598d64db922f750298bc19e72"
+    }
+  }
+}
