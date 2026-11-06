@@ -1,0 +1,46 @@
+# Épisode Du'a. La démo ne produit que le reel dua-01 ; les autres reels sont décrits dans docs/design.md.
+episode: dua
+title: { ar: "الدعاء", en: "Du'a" }
+narration_language: ar-msa   # ar-msa ou ar-egy : se décide après le test de voix
+reels:
+  - id: dua-01
+    title: { ar: "أبسط ما تملك", en: "The simplest thing you have" }
+scenes:
+  - id: hook
+    role: hook
+    reel: dua-01
+    audio: tts
+    narration:
+      ar: "تَخَيَّلْ أَنَّكَ تَنْتَظِرُ نَتِيجَةَ تَحْلِيلٍ طِبِّيٍّ، وَالْوَقْتُ لَا يَمُرُّ. تُفَكِّرُ فِي كُلِّ الِاحْتِمَالَاتِ، وَتَنْسَى أَبْسَطَ مَا تَمْلِكُ: أَنْ تَرْفَعَ يَدَيْكَ وَتَدْعُوَ."
+      en: "Imagine you're waiting for a medical test result, and time just won't move. You think through every possibility, and forget the simplest thing you have: to raise your hands and make du'a."
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: worried, talking: false }
+  - id: promise-intro
+    role: promise
+    reel: dua-01
+    audio: tts
+    narration:
+      ar: "وَقَدْ وَعَدَ اللَّهُ وَعْدًا وَاضِحًا."
+      en: "And God made a clear promise."
+    visual:
+      template: title-card
+  - id: promise
+    role: evidence
+    reel: dua-01
+    source: quran.40.60
+    audio: recitation          # vraie récitation (Alafasy), jamais de synthèse
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: outro
+    role: outro
+    reel: dua-01
+    audio: tts
+    narration:
+      ar: "ارْفَعْ يَدَيْكَ الْآنَ."
+      en: "Raise your hands now."
+    visual:
+      template: title-card

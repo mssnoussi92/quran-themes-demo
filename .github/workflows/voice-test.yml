@@ -1,0 +1,97 @@
+name: voice-test
+
+# Reads every text in content/voice-test/ with both TTS engines on CPU,
+# converts the takes to MP3 and attaches them to the "voice-test-latest" pre-release
+# (easy to download and play on a phone).
+
+on:
+  workflow_dispatch:
+    inputs:
+      voicetut_speaker:
+        description: "VoiceTut built-in voice (calm ones: Mohamed, Aly, Hanan)"
+        default: Mohamed
+  push:
+    branches: [main]
+    paths:
+      - content/voice-test/**
+      - tools/tts/**
+      - requirements/**
+      - .github/workflows/voice-test.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: voice-test
+  cancel-in-progress: true
+
+jobs:
+  synthesize:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        engine: [silma, voicetut]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: System packages
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg libsndfile1
+
+      - name: Cache model weights
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-${{ matrix.engine }}-${{ hashFiles(format('requirements/{0}.txt', matrix.engine)) }}
+
+      - name: Install ${{ matrix.engine }} (CPU PyTorch)
+        run: |
+          uv venv --python 3.12 ".venv-${{ matrix.engine }}"
+          uv pip install --python ".venv-${{ matrix.engine }}/bin/python" --torch-backend cpu \
+            -r "requirements/${{ matrix.engine }}.txt"
+
+      - name: Synthesize and convert to MP3
+        env:
+          ENGINE: ${{ matrix.engine }}
+          SPEAKER: ${{ inputs.voicetut_speaker || 'Mohamed' }}
+        run: |
+          ".venv-$ENGINE/bin/python" tools/tts/say.py --engine "$ENGINE" --speaker "$SPEAKER" \
+            --in content/voice-test/*.txt --out-dir build/tts
+          for f in build/tts/*.wav; do
+            ffmpeg -loglevel error -y -i "$f" -codec:a libmp3lame -qscale:a 2 "${f%.wav}.mp3"
+          done
+          ls -la build/tts
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: voice-test-${{ matrix.engine }}
+          path: build/tts/*.mp3
+          if-no-files-found: error
+
+  publish:
+    needs: synthesize
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: voice-test-*
+          merge-multiple: true
+          path: mp3
+
+      - name: Attach MP3 files to the voice-test-latest pre-release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          ls mp3/*.mp3
+          notes="AI-generated voices (SILMA: MSA + English; VoiceTut: Egyptian + English). Run: $RUN_URL"
+          if ! gh release view voice-test-latest >/dev/null 2>&1; then
+            gh release create voice-test-latest --prerelease --title "Voice test (latest)" --notes "$notes"
+          fi
+          gh release upload voice-test-latest mp3/*.mp3 --clobber
+          gh release edit voice-test-latest --notes "$notes"

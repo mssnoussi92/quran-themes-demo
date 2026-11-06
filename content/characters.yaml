@@ -1,0 +1,16 @@
+# Catalogue fermé des personnages. Personnages fictifs uniquement :
+# jamais un prophète, un Compagnon ou une personne connue (voir CLAUDE.md).
+# Apparence à définir avec le propriétaire lors de la création du kit (base Open Peeps, CC0).
+characters:
+  narrator:
+    description: Narrateur fictif, adulte, tenue sobre
+    poses: [standing, pointing, open-hands]
+    moods: [calm, smiling]
+  amir:
+    description: Homme d'une trentaine d'années, personnage du quotidien
+    poses: [standing, sitting, pointing]
+    moods: [calm, worried, smiling]
+  salma:
+    description: Femme d'une trentaine d'années, personnage du quotidien
+    poses: [standing, sitting, pointing]
+    moods: [calm, worried, smiling]

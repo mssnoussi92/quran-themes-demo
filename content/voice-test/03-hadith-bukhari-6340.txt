@@ -1,0 +1,3 @@
+# Texte d'un hadith, vocalisé : test de prononciation de l'arabe classique uniquement.
+# Sahih al-Bukhari 6340. À revérifier contre le registre avant toute publication.
+قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ: يُسْتَجَابُ لِأَحَدِكُمْ مَا لَمْ يَعْجَلْ، يَقُولُ: دَعَوْتُ فَلَمْ يُسْتَجَبْ لِي.
