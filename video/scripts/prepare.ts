@@ -71,6 +71,7 @@ type ManifestScene = {
   source?: string;
   reciter?: string;
   words?: Media["words"];
+  phrases?: Media["phrases"];
 };
 
 type EpisodeFile = {
@@ -233,6 +234,7 @@ function mediaFor(episode: string, manifest: Record<string, ManifestScene> | nul
     file,
     seconds: entry.seconds,
     words: entry.words ?? [],
+    phrases: entry.phrases ?? [],
     credit: entry.kind === "recitation" && reciter ? `Recitation: ${reciter}` : null,
   };
 }

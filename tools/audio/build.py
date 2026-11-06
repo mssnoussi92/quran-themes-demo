@@ -13,6 +13,9 @@ verse for a recitation. Writes build/audio/<episode>/<scene>.(mp3|wav) and manif
               in content/audio/<episode>/ (FLAC + takes.json, `--lock <owner>`, only on the owner's
               word) and always reused; a line is synthesised only when it has no locked take for
               its text and voice. `--require-locked` (release renders) fails instead.
+              Each line is cut into phrases (after « ، … . ؟ : ») and the manifest gives the time
+              each phrase starts, read from the pauses of the take: a title card shows them one by
+              one as the voice says them.
 
 Usage:
   python3 tools/audio/build.py --episode dua
@@ -134,20 +137,32 @@ TIGHT = {"version": 2, "lead": 0.08, "trail": 0.06, "gap_after": 0.06, "gap_befo
          "window": 0.02, "threshold": 0.008}
 
 
-def tighten(raw: Path, dest: Path) -> float:
-    """Write `dest`: the 16-bit mono WAV `raw` with shorter silences; returns the seconds removed."""
-    with wave.open(str(raw)) as w:
+def read_wav(path: Path):
+    """Parameters and samples of a 16-bit mono WAV."""
+    with wave.open(str(path)) as w:
         params = w.getparams()
         samples = array.array("h", w.readframes(w.getnframes()))
     if params.sampwidth != 2 or params.nchannels != 1:
-        sys.exit(f"error: {raw}: expected 16-bit mono WAV")
-    rate = params.framerate
+        sys.exit(f"error: {path}: expected 16-bit mono WAV")
+    return params, samples
+
+
+def loud_windows(samples: array.array, rate: int) -> tuple[int, list[bool]]:
+    """Window length (samples) and, for each window of TIGHT["window"] s, whether it is speech."""
     win = max(1, int(rate * TIGHT["window"]))
     level = TIGHT["threshold"] * 32768
     loud = []
     for i in range(0, len(samples), win):
         chunk = samples[i:i + win]
         loud.append(math.sqrt(sum(x * x for x in chunk) / len(chunk)) > level)
+    return win, loud
+
+
+def tighten(raw: Path, dest: Path) -> float:
+    """Write `dest`: the 16-bit mono WAV `raw` with shorter silences; returns the seconds removed."""
+    params, samples = read_wav(raw)
+    rate = params.framerate
+    win, loud = loud_windows(samples, rate)
     if True not in loud:
         shutil.copyfile(raw, dest)
         return 0.0
@@ -175,6 +190,75 @@ def tighten(raw: Path, dest: Path) -> float:
         w.setparams(params)
         w.writeframes(out.tobytes())
     return round((len(samples) - len(out)) / rate, 3)
+
+
+# Phrases of a narration line, for the title card that shows them one by one: the text is cut after
+# « ، … . ؟ ! : », and phrase k starts where the voice resumes after the pause chosen for cut k. The
+# pauses of a tightened take (silences of 0.1 s or more inside the line) are matched in order to the
+# cuts: the closest to where the cut falls if the line were said at an even pace (letters before it),
+# the longest preferred (a cut between sentences or at a comma is a pause of 0.18 s once tightened,
+# a stop inside a word is shorter). Without enough pauses, the even-pace estimate.
+PHRASE_CUT = re.compile(r"(?<=[،,…\.!?؟:])\s+")
+PHRASES = {"version": 1, "min_pause": 0.1, "length_weight": 1.0}
+
+
+def split_phrases(text: str) -> list[str]:
+    return [p for p in PHRASE_CUT.split(text.strip()) if p]
+
+
+def phrase_times(path: Path, text: str) -> list[dict]:
+    """[{"text", "start"}] for each phrase of `text` in the tightened take `path` (seconds)."""
+    phrases = split_phrases(text)
+    params, samples = read_wav(path)
+    win, loud = loud_windows(samples, params.framerate)
+    step = win / params.framerate
+    if True not in loud:
+        return [{"text": phrases[0] if len(phrases) == 1 else text, "start": 0.0}]
+    first, last = loud.index(True), len(loud) - 1 - loud[::-1].index(True)
+    onset, end = first * step, (last + 1) * step
+    if len(phrases) == 1:
+        return [{"text": phrases[0], "start": round(onset, 3)}]
+    # Pauses inside the line: (start, length) in seconds.
+    pauses, run = [], 0
+    for i in range(first, last + 1):
+        if not loud[i]:
+            run += 1
+            continue
+        if run * step >= PHRASES["min_pause"] - 1e-9:
+            pauses.append(((i - run) * step, run * step))
+        run = 0
+    letters = [sum(ch.isalpha() for ch in p) for p in phrases]
+    total = sum(letters) or 1
+    expected = [onset + (end - onset) * sum(letters[:k + 1]) / total for k in range(len(phrases) - 1)]
+    longest = max((length for _, length in pauses), default=1.0)
+
+    def cost(k: int, j: int) -> float:
+        start, length = pauses[j]
+        return abs(start + length / 2 - expected[k]) / (end - onset) + \
+            PHRASES["length_weight"] * (1 - length / longest)
+
+    cuts = len(expected)
+    if len(pauses) < cuts:
+        starts = [onset] + expected
+    else:
+        # best[k][j]: lowest cost of cuts 0..k with cut k on pause j (pauses taken in order).
+        inf = float("inf")
+        best = [[inf] * len(pauses) for _ in range(cuts)]
+        prev = [[-1] * len(pauses) for _ in range(cuts)]
+        for j in range(len(pauses)):
+            best[0][j] = cost(0, j)
+        for k in range(1, cuts):
+            for j in range(k, len(pauses)):
+                i = min(range(k - 1, j), key=lambda i: best[k - 1][i])
+                best[k][j] = best[k - 1][i] + cost(k, j)
+                prev[k][j] = i
+        j = min(range(len(pauses)), key=lambda j: best[cuts - 1][j])
+        chosen = []
+        for k in range(cuts - 1, -1, -1):
+            chosen.append(j)
+            j = prev[k][j]
+        starts = [onset] + [pauses[j][0] + pauses[j][1] for j in reversed(chosen)]
+    return [{"text": p, "start": round(t, 3)} for p, t in zip(phrases, starts)]
 
 
 def tts_key(text: str, speaker: str) -> str:
@@ -297,6 +381,13 @@ def main() -> int:
         entry["seconds"] = seconds(final)
         entry["tight"] = TIGHT
         print(f"tts {sid}: {entry['seconds']} s ({removed} s of silence removed)")
+
+    # When each phrase starts (cheap: recomputed every time from the tightened take).
+    for sid, entry in scenes.items():
+        final = out_dir / entry["file"]
+        if entry["kind"] == "tts" and final.is_file():
+            entry["phrases"] = phrase_times(final, entry["text"])
+            entry["phrase_rule"] = PHRASES
 
     if args.lock:
         takes_dir.mkdir(parents=True, exist_ok=True)

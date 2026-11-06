@@ -44,6 +44,9 @@ export type ResolvedSource = {
 /** One recited word: its position in the verse (1-based, waqf signs excluded), seconds in the file. */
 export type WordTiming = { position: number; start: number; end: number };
 
+/** A phrase of a narration line and when the voice starts it (seconds in the file). */
+export type PhraseTiming = { text: string; start: number };
+
 /** Audio of a scene, produced by tools/audio/build.py and copied to public/audio/. */
 export type Media = {
   kind: "tts" | "recitation";
@@ -51,6 +54,8 @@ export type Media = {
   file: string;
   seconds: number;
   words: WordTiming[];
+  /** Narration: its phrases (cut after « ، … . ؟ : ») with their start, read from the take. */
+  phrases: PhraseTiming[];
   /** "Recitation: Mishari Rashid al-Afasy" under a verse. */
   credit: string | null;
 };
