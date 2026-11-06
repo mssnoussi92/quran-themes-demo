@@ -44,7 +44,7 @@ const Arabic: React.FC<{ text: string; family: string; size: number; weight?: nu
   <div
     dir="rtl"
     lang="ar"
-    style={{ fontFamily: family, fontSize: size, fontWeight: weight, lineHeight, color: COLOR.text }}
+    style={{ fontFamily: family, fontSize: size, fontWeight: weight, lineHeight, color: COLOR.text, textWrap: "balance" }}
   >
     {text}
   </div>
