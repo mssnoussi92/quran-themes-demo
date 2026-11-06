@@ -1,6 +1,7 @@
 // Cards (task 4): title, verse with the recited word highlighted, hadith, name; and the "scene"
 // template with its background and characters (task 5).
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
+import { AudioStart } from "../audioStart";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { BACKGROUNDS } from "../backgrounds/Backgrounds";
 import { CharacterView, placement } from "../characters/Character";
@@ -108,10 +109,11 @@ const currentWord = (words: WordTiming[], t: number) => words.find((w) => t >= w
 export const AyahCard: React.FC<CardProps> = ({ scene, format }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const audioStart = useContext(AudioStart);
   const source = scene.source;
   if (!source) return null;
   const words = scene.visual.highlight === "words" ? scene.media?.words ?? [] : [];
-  const active = currentWord(words, frame / fps);
+  const active = currentWord(words, (frame - audioStart) / fps);
   // Positions count real words only: waqf signs (ۚ ۖ) and ۞ are shown but never highlighted.
   let position = 0;
   const tokens = source.display_ar.split(/\s+/).map((token) => ({

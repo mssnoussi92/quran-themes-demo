@@ -13,6 +13,7 @@ import { join, relative, resolve } from "node:path";
 import { createRequire } from "node:module";
 import { parse } from "yaml";
 import { BODY_BOX, MOOD_FACES, SEAT } from "../src/characters/peeps.ts";
+import { TRANSITION_SECONDS } from "../src/formats.ts";
 import type { Character, Duration, EpisodeData, Media, ResolvedScene, ResolvedSource } from "../src/types.ts";
 
 // react-peeps exports one table per kind of piece (Hair, Face, StandingPose...): names are checked there.
@@ -27,10 +28,11 @@ const AUDIO = join(ROOT, "build", "audio");
 // Reciters of content/policy.yaml, as credited on screen.
 const RECITERS: Record<string, string> = { alafasy: "Mishari Rashid al-Afasy" };
 
-// Silence after each line before the next scene (seconds): with the silence kept around each synthetic
-// line (tools/audio/build.py), about 0.25 s between two sentences, and a short breath after a verse.
+// Silence after each line: exactly the transition to the next scene, so the movement happens while
+// nobody speaks and the next voice starts when it ends (Video.tsx). With the silence kept around each
+// synthetic line (tools/audio/build.py), about 0.35 s between two sentences, filled by the movement.
 // The shortest scene: a one-word question (« ليه؟ ») stays on screen long enough to be read.
-const TAIL = { tts: 0.12, recitation: 0.25 };
+const TAIL = { tts: TRANSITION_SECONDS, recitation: TRANSITION_SECONDS };
 const MIN_SCENE = 0.8;
 
 // Display names of the hadith collections allowed by content/policy.yaml (metadata, not quotations).

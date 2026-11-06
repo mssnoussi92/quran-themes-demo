@@ -17,4 +17,8 @@ export const FORMATS: Record<FormatId, Format> = {
 
 export const FPS = 30;
 
+/** Silent animated transition between two scenes (seconds): the next scene slides or fades in while
+ * nobody speaks; its voice starts when the movement ends (owner's request, 2026-11-06). */
+export const TRANSITION_SECONDS = 0.3;
+
 export const toFrames = (seconds: number) => Math.max(1, Math.round(seconds * FPS));

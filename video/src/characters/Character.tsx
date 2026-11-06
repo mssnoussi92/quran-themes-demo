@@ -4,7 +4,9 @@ import { useAudioData } from "@remotion/media-utils";
 import type { AudioData } from "@remotion/media-utils";
 import Peep from "react-peeps";
 import type { AccessoryType, FaceType, FacialHairType, HairType } from "react-peeps";
+import { useContext } from "react";
 import { staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AudioStart } from "../audioStart";
 import type { Character } from "../types";
 
 export const INK = "#1d1d1d";
@@ -61,11 +63,11 @@ function loudness(data: AudioData, start: number): number {
 
 /** Voice level of the scene's audio at this frame picks the closed- or open-mouth face. */
 const TalkingFigure: React.FC<{ c: Character; audio: string; width: number; height: number }> = ({ c, audio, width, height }) => {
-  const frame = useCurrentFrame();
+  const frame = useCurrentFrame() - useContext(AudioStart);
   const { fps } = useVideoConfig();
   const data = useAudioData(staticFile(audio));
   const step = Math.max(1, Math.round(fps * MOUTH_WINDOW));
-  const open = data !== null && loudness(data, (frame - (frame % step)) / fps) > MOUTH_OPEN_RMS;
+  const open = data !== null && frame >= 0 && loudness(data, (frame - (frame % step)) / fps) > MOUTH_OPEN_RMS;
   return <Figure c={c} face={open ? c.face_open : c.face} width={width} height={height} />;
 };
 
