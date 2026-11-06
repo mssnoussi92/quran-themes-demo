@@ -1,0 +1,29 @@
+{
+  "name": "quran-themes-video",
+  "private": true,
+  "description": "Remotion project: renders the episodes of content/episodes/ in 9:16 (reels) and 16:9 (episode)",
+  "type": "module",
+  "scripts": {
+    "data": "node scripts/prepare.ts",
+    "studio": "npm run data && remotion studio",
+    "typecheck": "tsc --noEmit",
+    "still": "npm run data && remotion still",
+    "render": "npm run data && remotion render"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.541",
+    "@remotion/fonts": "4.0.541",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.541",
+    "yaml": "2.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.13",
+    "@types/react": "19.2.2",
+    "typescript": "5.9.3"
+  }
+}

@@ -19,7 +19,8 @@
     book: 80
     hadith_in_book: 36
     retrieved: '2026-11-06'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Demander avec résolution, sans « si Tu veux » (reel dua-02)
 - id: hadith.muslim.2679a
   type: hadith
@@ -37,7 +38,8 @@
     book: 48
     hadith_in_book: 8
     retrieved: '2026-11-06'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Même sens, avec « qu'il intensifie son désir » (reel dua-02). 2679 a 2 narrations (hadith-api 2679.01, .02), la 1re seule contient « وليعظم الرغبة »
 - id: hadith.bukhari.6340
   type: hadith
@@ -55,7 +57,8 @@
     book: 80
     hadith_in_book: 37
     retrieved: '2026-11-06'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: « Il est répondu à chacun tant qu'il ne s'impatiente pas » (reel dua-04)
 - id: hadith.muslim.2735a
   type: hadith
@@ -73,7 +76,8 @@
     book: 48
     hadith_in_book: 125
     retrieved: '2026-11-06'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Même sens que Bukhari 6340 (reel dua-04). 2735 a 3 narrations (hadith-api 2735.01 à .03), la 1re a la même chaîne (Malik, Ibn Shihab) que Bukhari 6340
 - id: hadith.muslim.2735c
   type: hadith
@@ -91,7 +95,8 @@
     book: 48
     hadith_in_book: 127
     retrieved: '2026-11-06'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 3e narration de 2735, explique ce qu'est l'impatience (« قد دعوت وقد دعوت فلم أر يستجيب لي ») (reel dua-04)
 - id: hadith.tirmidhi.2139
   type: hadith
@@ -114,5 +119,6 @@
     - {name: Bashar Awad Maarouf, grade: Hasan}
     - {name: Zubair Ali Zai, grade: Daif}
     retrieved: '2026-11-06'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: « لا يرد القضاء إلا الدعاء » (reel dua-03). Tirmidhi admis le 2026-11-06 si al-Albani le juge sahih ou hasan (content/policy.yaml)

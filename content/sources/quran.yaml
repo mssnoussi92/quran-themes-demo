@@ -13,7 +13,8 @@
     text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=40:60
     translator: Saheeh International
     retrieved: '2026-11-06'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Ghafir 40:60, la promesse de répondre (reel dua-01)
 - id: quran.21.83
   type: ayah
@@ -28,7 +29,8 @@
     text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=21:83
     translator: Saheeh International
     retrieved: '2026-11-06'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Anbiya 21:83, l'invocation d'Ayyub (reel dua-02)
 - id: quran.13.39
   type: ayah
@@ -43,7 +45,8 @@
     text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=13:39
     translator: Saheeh International
     retrieved: '2026-11-06'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Ar-Ra'd 13:39 (reel dua-03)
 - id: quran.2.186
   type: ayah
@@ -58,5 +61,6 @@
     text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:186
     translator: Saheeh International
     retrieved: '2026-11-06'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Baqarah 2:186, conclusion (reel dua-05)
