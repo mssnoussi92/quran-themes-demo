@@ -75,6 +75,24 @@
     retrieved: '2026-11-06'
   status: proposed
   notes: Même sens que Bukhari 6340 (reel dua-04). 2735 a 3 narrations (hadith-api 2735.01 à .03), la 1re a la même chaîne (Malik, Ibn Shihab) que Bukhari 6340
+- id: hadith.muslim.2735c
+  type: hadith
+  ref: {collection: muslim, number: 2735, narration: 3}
+  grade: sahih
+  graded_by: Sahih Muslim
+  text_ar: حَدَّثَنِي أَبُو الطَّاهِرِ، أَخْبَرَنَا ابْنُ وَهْبٍ، أَخْبَرَنِي مُعَاوِيَةُ، - وَهُوَ ابْنُ صَالِحٍ - عَنْ رَبِيعَةَ بْنِ يَزِيدَ، عَنْ أَبِي إِدْرِيسَ الْخَوْلاَنِيِّ، عَنْ أَبِي هُرَيْرَةَ، عَنِ النَّبِيِّ صلى الله عليه وسلم أَنَّهُ قَالَ ‏"‏ لاَ يَزَالُ يُسْتَجَابُ لِلْعَبْدِ مَا لَمْ يَدْعُ بِإِثْمٍ أَوْ قَطِيعَةِ رَحِمٍ مَا لَمْ يَسْتَعْجِلْ ‏"‏ ‏.‏ قِيلَ يَا رَسُولَ اللَّهِ مَا الاِسْتِعْجَالُ قَالَ ‏"‏ يَقُولُ قَدْ دَعَوْتُ وَقَدْ دَعَوْتُ فَلَمْ أَرَ يَسْتَجِيبُ لِي فَيَسْتَحْسِرُ عِنْدَ ذَلِكَ وَيَدَعُ الدُّعَاءَ ‏"‏ ‏.‏
+  text_en: "Abu Huraira reported Allah's Messenger (ﷺ) as saying:The supplication of the servant is granted in case he does not supplicate for sin or for severing the ties of blood, or he does not become impatient. It was said: Allah's Messenger, what does:\" If he does not grow impatient\" imply? He said: That he should say like this: I supplicated and I supplicated but I did not find it being responded. and theu he becomes frustrated and abandons supplication"
+  url: https://sunnah.com/muslim:2735c
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim/6936.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim/6936.json
+    translator: Abdul Hamid Siddiqui
+    book: 48
+    hadith_in_book: 127
+    retrieved: '2026-11-06'
+  status: proposed
+  notes: 3e narration de 2735, explique ce qu'est l'impatience (« قد دعوت وقد دعوت فلم أر يستجيب لي ») (reel dua-04)
 - id: hadith.tirmidhi.2139
   type: hadith
   ref: {collection: tirmidhi, number: 2139}
@@ -90,6 +108,11 @@
     translator: Unknown
     book: 32
     hadith_in_book: 7
+    grades:
+    - {name: Ahmad Muhammad Shakir, grade: Hasan}
+    - {name: Al-Albani, grade: Hasan}
+    - {name: Bashar Awad Maarouf, grade: Hasan}
+    - {name: Zubair Ali Zai, grade: Daif}
     retrieved: '2026-11-06'
-  status: excluded
-  notes: « لا يرد القضاء إلا الدعاء ». Hors politique actuelle (Bukhari et Muslim seulement).
+  status: proposed
+  notes: « لا يرد القضاء إلا الدعاء » (reel dua-03). Tirmidhi admis le 2026-11-06 si al-Albani le juge sahih ou hasan (content/policy.yaml)

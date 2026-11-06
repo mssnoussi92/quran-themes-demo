@@ -32,6 +32,16 @@
             "translator": { "type": "string" },
             "book": { "type": "integer" },
             "hadith_in_book": { "type": "integer" },
+            "grades": {
+              "description": "Grades published by the API, copied as is",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["name", "grade"],
+                "additionalProperties": false,
+                "properties": { "name": { "type": "string" }, "grade": { "type": "string" } }
+              }
+            },
             "retrieved": { "type": "string", "format": "date" }
           }
         },

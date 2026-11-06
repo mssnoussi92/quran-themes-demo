@@ -6,8 +6,10 @@
 
 Texts are copied as published (outer whitespace and translation footnote markers removed),
 never retyped. Each filled entry gets an `origin` block (the exact URLs it came from) and a
-`url` to read it on quran.com / sunnah.com. The script never validates a source: statuses are
-left alone, except that a *validated* source whose text changed goes back to `proposed`.
+`url` to read it on quran.com / sunnah.com. Hadith grades published by hadith-api are copied
+too (`origin.grades`): scripts/validate.py checks them against content/policy.yaml. The script
+never validates a source: statuses are left alone, except that a *validated* source whose text
+or grades changed goes back to `proposed`.
 
 Hadith numbers are the usual ones, i.e. hadith-api's `arabicnumber` (Fath al-Bari for
 Bukhari, Fuad Abd al-Baqi for Muslim). When a number covers several narrations (Muslim
@@ -16,7 +18,7 @@ ends with the matching letter, as on sunnah.com: hadith.muslim.2679a.
 
 Usage:
   uv run --with ruamel.yaml tools/sources/fetch.py            # fill or refresh the registry
-  uv run --with ruamel.yaml tools/sources/fetch.py --check    # fail if a text differs from the API
+  uv run --with ruamel.yaml tools/sources/fetch.py --check    # fail if a text or grade differs from the API
   uv run --with ruamel.yaml tools/sources/fetch.py --only quran.40.60 hadith.bukhari.6339
 """
 from __future__ import annotations
@@ -34,7 +36,7 @@ import urllib.request
 from pathlib import Path
 
 from ruamel.yaml import YAML
-from ruamel.yaml.comments import CommentedMap
+from ruamel.yaml.comments import CommentedMap, CommentedSeq
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCES = ROOT / "content" / "sources"
@@ -230,6 +232,7 @@ class Hadith:
         h = self.resolve(collection, number, narration)
         text_ar, url_ar = self.text(f"ara-{collection}", h["hadithnumber"], h["arabicnumber"])
         text_en, url_en = self.text(f"eng-{collection}", h["hadithnumber"], h["arabicnumber"])
+        grades = [{"name": g["name"], "grade": g["grade"]} for g in h.get("grades", [])]
         return {
             "text_ar": text_ar,
             "text_en": text_en,
@@ -241,6 +244,7 @@ class Hadith:
                 "translator": self.translator(f"eng-{collection}"),
                 "book": h["reference"]["book"],
                 "hadith_in_book": h["reference"]["hadith"],
+                **({"grades": grades} if grades else {}),
             },
         }
 
@@ -253,6 +257,21 @@ def yaml_rt() -> YAML:
     y.width = 100_000          # one line per text: no folding inside Arabic strings
     y.indent(mapping=2, sequence=2, offset=0)
     return y
+
+
+def plain(value):
+    """ruamel nodes -> plain lists and dicts, for comparisons."""
+    return json.loads(json.dumps(value)) if value is not None else None
+
+
+def origin_map(origin: dict, today: str) -> CommentedMap:
+    m = CommentedMap({**origin, "retrieved": today})
+    m.fa.set_block_style()
+    if "grades" in m:
+        m["grades"] = CommentedSeq(CommentedMap(g) for g in m["grades"])
+        for g in m["grades"]:
+            g.fa.set_flow_style()          # - {name: Al-Albani, grade: Hasan}
+    return m
 
 
 def set_before(entry: CommentedMap, key: str, value, before: str = "status") -> None:
@@ -273,7 +292,8 @@ def expected_id(src) -> str | None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--check", action="store_true", help="write nothing; exit 1 if a text differs from the API")
+    parser.add_argument("--check", action="store_true",
+                        help="write nothing; exit 1 if a text or grade differs from the API")
     parser.add_argument("--only", nargs="+", metavar="ID", help="only these source ids")
     parser.add_argument("--refresh", action="store_true", help="download the cached API indexes again")
     args = parser.parse_args()
@@ -309,6 +329,8 @@ def main() -> int:
                 continue
 
             diffs = [k for k in ("text_ar", "text_en") if src.get(k) != got[k]]
+            if plain((src.get("origin") or {}).get("grades")) != got["origin"].get("grades"):
+                diffs.append("grades")
             if not diffs:
                 print(f"ok      {sid}")
                 continue
@@ -319,13 +341,12 @@ def main() -> int:
 
             src["text_ar"], src["text_en"] = got["text_ar"], got["text_en"]
             set_before(src, "url", got["url"], before="origin" if "origin" in src else "status")
-            set_before(src, "origin", CommentedMap({**got["origin"], "retrieved": today}))
-            src["origin"].fa.set_block_style()
+            set_before(src, "origin", origin_map(got["origin"], today))
             note = ""
             if src["status"] == "validated":
                 src["status"] = "proposed"
                 src.pop("validated_by", None)
-                note = " (text changed: status back to proposed, validate it again)"
+                note = " (changed: status back to proposed, validate it again)"
             print(f"filled  {sid}: {', '.join(diffs)}{note}")
             dirty = True
 

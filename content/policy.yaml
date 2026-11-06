@@ -1,8 +1,17 @@
 # Politique des sources. Une source hors politique doit avoir le statut "excluded" et ne peut pas être citée.
 hadith:
-  # Décision du 6 novembre 2026 : Sahih al-Bukhari et Sahih Muslim.
-  # La réponse du propriétaire était inachevée (« Bukhari, Muslim et… ») : demander avant d'élargir.
-  collections: [bukhari, muslim]
+  # Décisions du 6 novembre 2026 : Sahih al-Bukhari, Sahih Muslim, puis Jami' at-Tirmidhi.
+  collections: [bukhari, muslim, tirmidhi]
+  # Recueils qui contiennent aussi des hadiths faibles : un hadith n'y est cité que si ce savant
+  # le juge ainsi. Jugements publiés par hadith-api, recopiés par tools/sources/fetch.py dans
+  # origin.grades, vérifiés par scripts/validate.py.
+  graded:
+    tirmidhi:
+      by: Al-Albani
+      accept: [Sahih, Hasan, Hasan Sahih, Sahih Hadith, Sahih Matn, Sahih Mutawatir]
+      # Refusés : tout jugement de faiblesse, le jugement sur la chaîne seule (Sahih Isnaad,
+      # Hasan Isnaad, Hasan Sahih Isnaad) et les paroles d'un Compagnon ou d'un Successeur
+      # (Sahih Muquf, Sahih Isnaad Mauquf, Maqtu...).
 quran:
   translation: sahih-international
   reciter: alafasy
