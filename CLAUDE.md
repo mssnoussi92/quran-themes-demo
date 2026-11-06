@@ -45,6 +45,7 @@ tools/sources/fetch.py   remplit text_ar / text_en du registre (quran.com v4, ha
 requirements/            dépendances Python par moteur (un venv par moteur)
 infra/claude-cloud-setup.sh  script de setup de l'environnement cloud (copié dans l'UI)
 .github/workflows/       validate.yml (contenu + video/), voice-test.yml
+reference/               analyses de vidéos de référence (texte seulement : aucun visuel tiers, dépôt public)
 video/                   projet Remotion (TypeScript) : compositions Reel916 (1080x1920) et Episode169 (1920x1080)
   scripts/prepare.ts     content/ -> public/data/<épisode>.json (sources résolues depuis le registre, durées)
   src/                   Root.tsx (compositions), data.ts (chargement), Video.tsx, templates/ (cartes provisoires)
