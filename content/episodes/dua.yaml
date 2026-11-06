@@ -1,14 +1,13 @@
 # Épisode Du'a. La démo ne produit que le reel dua-01 ; les autres reels sont décrits dans docs/design.md.
 # Script de dua-01 réécrit le 2026-11-06 avec le skill write-hook (.claude/skills/write-hook),
-# script et traduction validés par le propriétaire le 2026-11-06 (validated_by). Toute modification
-# d'une ligne du reel retire validated_by : le propriétaire valide à nouveau.
+# validé par le propriétaire, puis modifié à sa demande le même jour (promise-intro) : à valider de
+# nouveau (validated_by). Toute modification d'une ligne du reel retire validated_by.
 episode: dua
 title: { ar: "الدعاء", en: "Du'a" }
 narration_language: ar-egy   # VoiceTut (égyptien), choix du propriétaire le 2026-11-06
 reels:
   - id: dua-01
     title: { ar: "يا رب", en: "Ya Rabb" }
-    validated_by: mssnoussi92
 scenes:
   # Miroir : une question à la deuxième personne, l'émotion dès la première image.
   - id: hook-1
@@ -90,15 +89,14 @@ scenes:
       en: "Because when you say “Ya Rabb”, you admit you need Him… and that He can."
     visual:
       template: title-card
-  # Promesse : le verset que le Prophète ﷺ a récité après (Tirmidhi 3247 : « ثم قرأ »).
+  # Promesse : le verset, introduit comme parole de Dieu (formulation du propriétaire, 2026-11-06).
   - id: promise-intro
     role: promise
     reel: dua-01
     audio: tts
-    mentions: ["النبي ﷺ"]
     narration:
-      ar: "وبعدها قرأ الآية دي:"
-      en: "Then he recited this verse:"
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
     visual:
       template: title-card
   - id: promise

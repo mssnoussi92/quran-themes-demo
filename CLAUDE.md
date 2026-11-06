@@ -22,7 +22,7 @@ Pas de publication sur les réseaux : c'est hors périmètre.
 - **Une citation n'existe que par son id.** Aucun texte de verset ou de hadith n'est tapé à la main dans un épisode. Les textes viennent du registre `content/sources/`, lui-même rempli depuis une API (quran.com, hadith-api), jamais depuis la mémoire d'un modèle.
 - **Jamais de synthèse vocale sur le Coran.** Une scène qui cite un verset utilise `audio: recitation` (récitateur réel). La voix de synthèse lit seulement la narration et, au besoin, le texte d'un hadith.
 - **Jamais de personnage pour un prophète, un Compagnon ou une personne connue.** Ces scènes utilisent une carte de nom (calligraphie). `scripts/validate.py` bloque tout personnage dans une scène dont `mentions` n'est pas vide.
-- **Script validé par le propriétaire.** Un reel n'est publiable qu'avec `validated_by` (script et traduction), posé à la demande du propriétaire, jamais par l'IA ; toute modification d'une de ses lignes retire `validated_by`.
+- **Script validé par le propriétaire.** Un reel n'est publiable qu'avec `validated_by` (script et traduction), posé à la demande du propriétaire, jamais par l'IA ; toute modification d'une de ses lignes retire `validated_by`, même faite à sa demande (il valide alors la nouvelle version, traduction comprise). Le rendu final (`render`, non brouillon) le vérifie : `validate.py --release --reel <reel>`.
 - **Politique des hadiths** (`content/policy.yaml`) : Sahih al-Bukhari, Sahih Muslim et Jami' at-Tirmidhi (décision du 6 novembre 2026). Un hadith de Tirmidhi n'est cité que si **al-Albani** le juge sahih ou hasan (liste exacte des jugements acceptés dans `policy.yaml`, jugements recopiés de hadith-api, vérifiés par `validate.py`). Tout autre recueil : demande au propriétaire avant d'élargir.
 - **Exemples honnêtes.** Une scène inventée est présentée comme une scène type (« imagine… »), jamais comme une histoire vraie. Aucun chiffre sans source.
 - **Voix déclarée.** La voix de synthèse est signalée comme générée par IA dans la description des vidéos.
@@ -65,6 +65,7 @@ build/                   (ignoré) tout ce qui est généré
 # Vérifier le contenu (schémas + règles)
 uv run --with jsonschema --with pyyaml scripts/validate.py
 uv run --with jsonschema --with pyyaml scripts/validate.py --release   # exige des sources "validated"
+uv run --with jsonschema --with pyyaml scripts/validate.py --release --reel dua-01   # et le script du reel validé
 
 # Registre : remplir les textes depuis les API (ne valide rien), ou vérifier qu'ils n'ont pas bougé (CI)
 uv run --with ruamel.yaml tools/sources/fetch.py

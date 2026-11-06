@@ -4,6 +4,7 @@
 Usage:
   uv run --with jsonschema --with pyyaml scripts/validate.py            # draft mode
   uv run --with jsonschema --with pyyaml scripts/validate.py --release  # every cited source must be validated
+  uv run --with jsonschema --with pyyaml scripts/validate.py --release --reel dua-01  # and that reel's script
 
 Exit code 1 when there is at least one error. Warnings never fail the run.
 """
@@ -174,6 +175,7 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--release", action="store_true", help="fail on sources that are not validated")
+    parser.add_argument("--reel", help="with --release: this reel's script must be validated by the owner (validated_by)")
     args = parser.parse_args()
 
     report = Report()
@@ -184,6 +186,12 @@ def main() -> int:
     episodes = sorted((CONTENT / "episodes").glob("*.yaml"))
     for path in episodes:
         check_episode(path, registry, catalog, backgrounds, args.release, report)
+    if args.reel:
+        reels = {r["id"]: r for path in episodes for r in (load_yaml(path) or {}).get("reels", [])}
+        if args.reel not in reels:
+            report.error("content/episodes", f"reel '{args.reel}' does not exist")
+        elif args.release and not reels[args.reel].get("validated_by"):
+            report.error("content/episodes", f"reel '{args.reel}': script not validated by the owner (validated_by)")
 
     for line in report.warnings + report.errors:
         print(line)
