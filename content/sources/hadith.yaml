@@ -1,48 +1,118 @@
-# Registre des hadiths. Numérotation usuelle : Fath al-Bari pour Bukhari, Fuad Abd al-Baqi pour Muslim.
-# Vérifier la correspondance avec la numérotation de hadith-api lors de la récupération.
+# Registre des hadiths. Numérotation usuelle : Fath al-Bari pour Bukhari, Fuad Abd al-Baqi pour Muslim,
+# c'est-à-dire le champ arabicnumber de hadith-api (son hadithnumber est une autre numérotation pour Muslim).
+# Un numéro qui couvre plusieurs narrations (Muslim 2679.01, 2679.02) : ref.narration et une lettre
+# à la fin de l'id, comme sur sunnah.com (hadith.muslim.2679a).
 # text_ar / text_en sont remplis par tools/sources/fetch.py, jamais à la main.
 - id: hadith.bukhari.6339
   type: hadith
-  ref: { collection: bukhari, number: 6339 }
+  ref: {collection: bukhari, number: 6339}
   grade: sahih
   graded_by: Sahih al-Bukhari
-  text_ar: null
-  text_en: null
+  text_ar: حَدَّثَنَا عَبْدُ اللَّهِ بْنُ مَسْلَمَةَ، عَنْ مَالِكٍ، عَنْ أَبِي الزِّنَادِ، عَنِ الأَعْرَجِ، عَنْ أَبِي هُرَيْرَةَ ـ رضى الله عنه ـ أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ ‏ "‏ لاَ يَقُولَنَّ أَحَدُكُمُ اللَّهُمَّ اغْفِرْ لِي، اللَّهُمَّ ارْحَمْنِي، إِنْ شِئْتَ‏.‏ لِيَعْزِمِ الْمَسْأَلَةَ، فَإِنَّهُ لاَ مُكْرِهَ لَهُ ‏"‏‏.‏
+  text_en: "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"None of you should say: 'O Allah, forgive me if You wish; O Allah, be merciful to me if You wish,' but he should always appeal to Allah with determination, for nobody can force Allah to do something against His Will"
+  url: https://sunnah.com/bukhari:6339
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-bukhari/6339.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari/6339.json
+    translator: Muhsin Khan
+    book: 80
+    hadith_in_book: 36
+    retrieved: '2026-11-06'
   status: proposed
   notes: Demander avec résolution, sans « si Tu veux » (reel dua-02)
-- id: hadith.muslim.2679
+- id: hadith.muslim.2679a
   type: hadith
-  ref: { collection: muslim, number: 2679 }
+  ref: {collection: muslim, number: 2679, narration: 1}
   grade: sahih
   graded_by: Sahih Muslim
-  text_ar: null
-  text_en: null
+  text_ar: حَدَّثَنَا يَحْيَى بْنُ أَيُّوبَ، وَقُتَيْبَةُ، وَابْنُ، حُجْرٍ قَالُوا حَدَّثَنَا إِسْمَاعِيلُ، - يَعْنُونَ ابْنَ جَعْفَرٍ - عَنِ الْعَلاَءِ، عَنْ أَبِيهِ، عَنْ أَبِي هُرَيْرَةَ، أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ ‏ "‏ إِذَا دَعَا أَحَدُكُمْ فَلاَ يَقُلِ اللَّهُمَّ اغْفِرْ لِي إِنْ شِئْتَ وَلَكِنْ لِيَعْزِمِ الْمَسْأَلَةَ وَلْيُعَظِّمِ الرَّغْبَةَ فَإِنَّ اللَّهَ لاَ يَتَعَاظَمُهُ شَىْءٌ أَعْطَاهُ ‏"‏ ‏.‏
+  text_en: "Abu Huraira reported Allah's Messenger (ﷺ) as saying:When one of you makes a supplication (to his Lord) one should not say: O Allah, grant me pardon, if Thou so likest, but one should beg one's (Lord) with a will and full devotion, for there is nothing so great in the eye of Allah which He cannot grant"
+  url: https://sunnah.com/muslim:2679a
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim/6812.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim/6812.json
+    translator: Abdul Hamid Siddiqui
+    book: 48
+    hadith_in_book: 8
+    retrieved: '2026-11-06'
   status: proposed
-  notes: Même sens, avec « qu'il intensifie son désir » (reel dua-02) ; numéro à confirmer
+  notes: Même sens, avec « qu'il intensifie son désir » (reel dua-02). 2679 a 2 narrations (hadith-api 2679.01, .02), la 1re seule contient « وليعظم الرغبة »
 - id: hadith.bukhari.6340
   type: hadith
-  ref: { collection: bukhari, number: 6340 }
+  ref: {collection: bukhari, number: 6340}
   grade: sahih
   graded_by: Sahih al-Bukhari
-  text_ar: null
-  text_en: null
+  text_ar: حَدَّثَنَا عَبْدُ اللَّهِ بْنُ يُوسُفَ، أَخْبَرَنَا مَالِكٌ، عَنِ ابْنِ شِهَابٍ، عَنْ أَبِي عُبَيْدٍ، مَوْلَى ابْنِ أَزْهَرَ عَنْ أَبِي هُرَيْرَةَ، أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ ‏ "‏ يُسْتَجَابُ لأَحَدِكُمْ مَا لَمْ يَعْجَلْ يَقُولُ دَعَوْتُ فَلَمْ يُسْتَجَبْ لِي ‏"‏‏.‏
+  text_en: Narrated Abu Huraira:Allah's Messenger (ﷺ) said, "The invocation of anyone of you is granted (by Allah) if he does not show impatience (by saying, "I invoked Allah but my request has not been granted)
+  url: https://sunnah.com/bukhari:6340
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-bukhari/6340.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari/6340.json
+    translator: Muhsin Khan
+    book: 80
+    hadith_in_book: 37
+    retrieved: '2026-11-06'
   status: proposed
   notes: « Il est répondu à chacun tant qu'il ne s'impatiente pas » (reel dua-04)
-- id: hadith.muslim.2735
+- id: hadith.muslim.2735a
   type: hadith
-  ref: { collection: muslim, number: 2735 }
+  ref: {collection: muslim, number: 2735, narration: 1}
   grade: sahih
   graded_by: Sahih Muslim
-  text_ar: null
-  text_en: null
+  text_ar: حَدَّثَنَا يَحْيَى بْنُ يَحْيَى، قَالَ قَرَأْتُ عَلَى مَالِكٍ عَنِ ابْنِ شِهَابٍ، عَنْ أَبِي عُبَيْدٍ، مَوْلَى ابْنِ أَزْهَرَ عَنْ أَبِي هُرَيْرَةَ، أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ ‏ "‏ يُسْتَجَابُ لأَحَدِكُمْ مَا لَمْ يَعْجَلْ فَيَقُولُ قَدْ دَعَوْتُ فَلاَ أَوْ فَلَمْ يُسْتَجَبْ لِي ‏"‏ ‏.‏
+  text_en: "Abu Huraira reported that Allah's Messenger (ﷺ) said:The supplication of every one of you is granted if he does not grow impatient and says: I supplicated but it was not granted"
+  url: https://sunnah.com/muslim:2735a
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim/6934.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim/6934.json
+    translator: Abdul Hamid Siddiqui
+    book: 48
+    hadith_in_book: 125
+    retrieved: '2026-11-06'
   status: proposed
-  notes: Même sens que Bukhari 6340 (reel dua-04)
+  notes: Même sens que Bukhari 6340 (reel dua-04). 2735 a 3 narrations (hadith-api 2735.01 à .03), la 1re a la même chaîne (Malik, Ibn Shihab) que Bukhari 6340
+- id: hadith.muslim.2735c
+  type: hadith
+  ref: {collection: muslim, number: 2735, narration: 3}
+  grade: sahih
+  graded_by: Sahih Muslim
+  text_ar: حَدَّثَنِي أَبُو الطَّاهِرِ، أَخْبَرَنَا ابْنُ وَهْبٍ، أَخْبَرَنِي مُعَاوِيَةُ، - وَهُوَ ابْنُ صَالِحٍ - عَنْ رَبِيعَةَ بْنِ يَزِيدَ، عَنْ أَبِي إِدْرِيسَ الْخَوْلاَنِيِّ، عَنْ أَبِي هُرَيْرَةَ، عَنِ النَّبِيِّ صلى الله عليه وسلم أَنَّهُ قَالَ ‏"‏ لاَ يَزَالُ يُسْتَجَابُ لِلْعَبْدِ مَا لَمْ يَدْعُ بِإِثْمٍ أَوْ قَطِيعَةِ رَحِمٍ مَا لَمْ يَسْتَعْجِلْ ‏"‏ ‏.‏ قِيلَ يَا رَسُولَ اللَّهِ مَا الاِسْتِعْجَالُ قَالَ ‏"‏ يَقُولُ قَدْ دَعَوْتُ وَقَدْ دَعَوْتُ فَلَمْ أَرَ يَسْتَجِيبُ لِي فَيَسْتَحْسِرُ عِنْدَ ذَلِكَ وَيَدَعُ الدُّعَاءَ ‏"‏ ‏.‏
+  text_en: "Abu Huraira reported Allah's Messenger (ﷺ) as saying:The supplication of the servant is granted in case he does not supplicate for sin or for severing the ties of blood, or he does not become impatient. It was said: Allah's Messenger, what does:\" If he does not grow impatient\" imply? He said: That he should say like this: I supplicated and I supplicated but I did not find it being responded. and theu he becomes frustrated and abandons supplication"
+  url: https://sunnah.com/muslim:2735c
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim/6936.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim/6936.json
+    translator: Abdul Hamid Siddiqui
+    book: 48
+    hadith_in_book: 127
+    retrieved: '2026-11-06'
+  status: proposed
+  notes: 3e narration de 2735, explique ce qu'est l'impatience (« قد دعوت وقد دعوت فلم أر يستجيب لي ») (reel dua-04)
 - id: hadith.tirmidhi.2139
   type: hadith
-  ref: { collection: tirmidhi, number: 2139 }
+  ref: {collection: tirmidhi, number: 2139}
   grade: hasan
   graded_by: al-Albani
-  text_ar: null
-  text_en: null
-  status: excluded
-  notes: « لا يرد القضاء إلا الدعاء ». Hors politique actuelle (Bukhari et Muslim seulement).
+  text_ar: حَدَّثَنَا مُحَمَّدُ بْنُ حُمَيْدٍ الرَّازِيُّ، وَسَعِيدُ بْنُ يَعْقُوبَ، قَالاَ حَدَّثَنَا يَحْيَى بْنُ الضُّرَيْسِ، عَنْ أَبِي مَوْدُودٍ، عَنْ سُلَيْمَانَ التَّيْمِيِّ، عَنْ أَبِي عُثْمَانَ النَّهْدِيِّ، عَنْ سَلْمَانَ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏ "‏ لاَ يَرُدُّ الْقَضَاءَ إِلاَّ الدُّعَاءُ وَلاَ يَزِيدُ فِي الْعُمُرِ إِلاَّ الْبِرُّ ‏"‏ ‏.‏ قَالَ أَبُو عِيسَى وَفِي الْبَابِ عَنْ أَبِي أُسَيْدٍ ‏.‏ وَهَذَا حَدِيثٌ حَسَنٌ غَرِيبٌ مِنْ حَدِيثِ سَلْمَانَ لاَ نَعْرِفُهُ إِلاَّ مِنْ حَدِيثِ يَحْيَى بْنِ الضُّرَيْسِ ‏.‏ وَأَبُو مَوْدُودٍ اثْنَانِ أَحَدُهُمَا يُقَالُ لَهُ فِضَّةٌ وَهُوَ الَّذِي رَوَى هَذَا الْحَدِيثَ اسْمُهُ فِضَّةٌ بَصْرِيٌّ وَالآخَرُ عَبْدُ الْعَزِيزِ بْنُ أَبِي سُلَيْمَانَ أَحَدُهُمَا بَصْرِيٌّ وَالآخَرُ مَدَنِيٌّ وَكَانَا فِي عَصْرٍ وَاحِدٍ وابو مودود الذي روى هذا الحديث أسمه فضة بصري. ‏
+  text_en: Salman narrated that the Messenger of Allah (s.a.w) said:"Nothing turns back the Decree except supplication, and nothing increases the life-span except righteousness
+  url: https://sunnah.com/tirmidhi:2139
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-tirmidhi/2139.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-tirmidhi/2139.json
+    translator: Unknown
+    book: 32
+    hadith_in_book: 7
+    grades:
+    - {name: Ahmad Muhammad Shakir, grade: Hasan}
+    - {name: Al-Albani, grade: Hasan}
+    - {name: Bashar Awad Maarouf, grade: Hasan}
+    - {name: Zubair Ali Zai, grade: Daif}
+    retrieved: '2026-11-06'
+  status: proposed
+  notes: « لا يرد القضاء إلا الدعاء » (reel dua-03). Tirmidhi admis le 2026-11-06 si al-Albani le juge sahih ou hasan (content/policy.yaml)

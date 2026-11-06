@@ -2,33 +2,61 @@
 # jamais à la main. Statut : proposed -> validated (par le propriétaire) ou excluded.
 - id: quran.40.60
   type: ayah
-  ref: { surah: 40, ayah: 60 }
-  text_ar: null
-  text_en: null
+  ref: {surah: 40, ayah: 60}
+  text_ar: وَقَالَ رَبُّكُمُ ٱدْعُونِىٓ أَسْتَجِبْ لَكُمْ ۚ إِنَّ ٱلَّذِينَ يَسْتَكْبِرُونَ عَنْ عِبَادَتِى سَيَدْخُلُونَ جَهَنَّمَ دَاخِرِينَ
+  text_en: And your Lord says, "Call upon Me; I will respond to you." Indeed, those who disdain My worship will enter Hell [rendered] contemptible.
   translation: sahih-international
+  url: https://quran.com/40/60
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=40:60
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=40:60
+    translator: Saheeh International
+    retrieved: '2026-11-06'
   status: proposed
   notes: Ghafir 40:60, la promesse de répondre (reel dua-01)
 - id: quran.21.83
   type: ayah
-  ref: { surah: 21, ayah: 83 }
-  text_ar: null
-  text_en: null
+  ref: {surah: 21, ayah: 83}
+  text_ar: ۞ وَأَيُّوبَ إِذْ نَادَىٰ رَبَّهُۥٓ أَنِّى مَسَّنِىَ ٱلضُّرُّ وَأَنتَ أَرْحَمُ ٱلرَّٰحِمِينَ
+  text_en: And [mention] Job, when he called to his Lord, "Indeed, adversity has touched me, and You are the most merciful of the merciful."
   translation: sahih-international
+  url: https://quran.com/21/83
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=21:83
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=21:83
+    translator: Saheeh International
+    retrieved: '2026-11-06'
   status: proposed
   notes: Al-Anbiya 21:83, l'invocation d'Ayyub (reel dua-02)
 - id: quran.13.39
   type: ayah
-  ref: { surah: 13, ayah: 39 }
-  text_ar: null
-  text_en: null
+  ref: {surah: 13, ayah: 39}
+  text_ar: يَمْحُوا۟ ٱللَّهُ مَا يَشَآءُ وَيُثْبِتُ ۖ وَعِندَهُۥٓ أُمُّ ٱلْكِتَـٰبِ
+  text_en: Allāh eliminates what He wills or confirms, and with Him is the Mother of the Book.
   translation: sahih-international
+  url: https://quran.com/13/39
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=13:39
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=13:39
+    translator: Saheeh International
+    retrieved: '2026-11-06'
   status: proposed
   notes: Ar-Ra'd 13:39 (reel dua-03)
 - id: quran.2.186
   type: ayah
-  ref: { surah: 2, ayah: 186 }
-  text_ar: null
-  text_en: null
+  ref: {surah: 2, ayah: 186}
+  text_ar: وَإِذَا سَأَلَكَ عِبَادِى عَنِّى فَإِنِّى قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ ٱلدَّاعِ إِذَا دَعَانِ ۖ فَلْيَسْتَجِيبُوا۟ لِى وَلْيُؤْمِنُوا۟ بِى لَعَلَّهُمْ يَرْشُدُونَ
+  text_en: And when My servants ask you, [O Muḥammad], concerning Me - indeed I am near. I respond to the invocation of the supplicant when he calls upon Me. So let them respond to Me [by obedience] and believe in Me that they may be [rightly] guided.
   translation: sahih-international
+  url: https://quran.com/2/186
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:186
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:186
+    translator: Saheeh International
+    retrieved: '2026-11-06'
   status: proposed
   notes: Al-Baqarah 2:186, conclusion (reel dua-05)

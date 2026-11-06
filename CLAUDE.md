@@ -22,7 +22,7 @@ Pas de publication sur les réseaux : c'est hors périmètre.
 - **Une citation n'existe que par son id.** Aucun texte de verset ou de hadith n'est tapé à la main dans un épisode. Les textes viennent du registre `content/sources/`, lui-même rempli depuis une API (quran.com, hadith-api), jamais depuis la mémoire d'un modèle.
 - **Jamais de synthèse vocale sur le Coran.** Une scène qui cite un verset utilise `audio: recitation` (récitateur réel). La voix de synthèse lit seulement la narration et, au besoin, le texte d'un hadith.
 - **Jamais de personnage pour un prophète, un Compagnon ou une personne connue.** Ces scènes utilisent une carte de nom (calligraphie). `scripts/validate.py` bloque tout personnage dans une scène dont `mentions` n'est pas vide.
-- **Politique des hadiths** (`content/policy.yaml`) : pour l'instant seuls Sahih al-Bukhari et Sahih Muslim passent. La réponse du propriétaire était inachevée (« Bukhari, Muslim et… ») : demande-lui avant d'élargir.
+- **Politique des hadiths** (`content/policy.yaml`) : Sahih al-Bukhari, Sahih Muslim et Jami' at-Tirmidhi (décision du 6 novembre 2026). Un hadith de Tirmidhi n'est cité que si **al-Albani** le juge sahih ou hasan (liste exacte des jugements acceptés dans `policy.yaml`, jugements recopiés de hadith-api, vérifiés par `validate.py`). Tout autre recueil : demande au propriétaire avant d'élargir.
 - **Exemples honnêtes.** Une scène inventée est présentée comme une scène type (« imagine… »), jamais comme une histoire vraie. Aucun chiffre sans source.
 - **Voix déclarée.** La voix de synthèse est signalée comme générée par IA dans la description des vidéos.
 - **Open source et gratuit d'abord.** Remotion est gratuit pour un particulier (licence propre à Remotion, pas OSI). Le reste doit être libre (MIT, Apache 2.0, CC0, OFL).
@@ -32,7 +32,7 @@ Pas de publication sur les réseaux : c'est hors périmètre.
 
 ```
 content/
-  policy.yaml            politique des sources (recueils de hadith acceptés)
+  policy.yaml            politique des sources (recueils de hadith acceptés, jugement exigé)
   characters.yaml        catalogue fermé des personnages, poses, expressions
   sources/*.yaml         registre des sources (ids stables, statut proposed/validated/excluded)
   episodes/*.yaml        scripts d'épisodes, découpés en scènes
@@ -41,6 +41,7 @@ schemas/                 JSON Schema du registre et des épisodes
 scripts/validate.py      vérification schémas + règles ci-dessus
 scripts/session-start.sh hook SessionStart (cloud uniquement)
 tools/tts/say.py         synthèse : un texte -> WAV (moteurs silma | voicetut)
+tools/sources/fetch.py   remplit text_ar / text_en du registre (quran.com v4, hadith-api) + origin
 requirements/            dépendances Python par moteur (un venv par moteur)
 infra/claude-cloud-setup.sh  script de setup de l'environnement cloud (copié dans l'UI)
 .github/workflows/       validate.yml, voice-test.yml
@@ -54,6 +55,10 @@ build/                   (ignoré) tout ce qui est généré
 # Vérifier le contenu (schémas + règles)
 uv run --with jsonschema --with pyyaml scripts/validate.py
 uv run --with jsonschema --with pyyaml scripts/validate.py --release   # exige des sources "validated"
+
+# Registre : remplir les textes depuis les API (ne valide rien), ou vérifier qu'ils n'ont pas bougé (CI)
+uv run --with ruamel.yaml tools/sources/fetch.py
+uv run --with ruamel.yaml tools/sources/fetch.py --check
 
 # Synthèse vocale (venvs créés par le setup cloud ou par la CI)
 /opt/venvs/silma/bin/python tools/tts/say.py --engine silma --in content/voice-test/01-narration-msa.txt --out build/tts/test.wav
@@ -75,14 +80,15 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 ## Tâches de la démo, dans l'ordre
 
 1. **Test de voix.** Lance le workflow `voice-test` (ou les commandes ci-dessus) et laisse le propriétaire choisir moteur et voix. VoiceTut ne parle que l'égyptien et l'anglais ; SILMA parle l'arabe standard et l'anglais.
-2. **Récupération des sources.** Écris `tools/sources/fetch.py` : remplit `text_ar` / `text_en` du registre depuis l'API quran.com v4 (texte uthmani, traduction Sahih International) et hadith-api (fawazahmed0). Le dépôt existant `mssnoussi92/quran-reels` fait déjà ce travail pour les versets : réutilise sa logique si le propriétaire attache ce dépôt.
+2. **Récupération des sources.** ✅ `tools/sources/fetch.py` remplit `text_ar` / `text_en` depuis quran.com v4 (uthmani, Sahih International) et hadith-api, avec `origin` (URL exactes, jugements de hadith-api) et `url` (page de lecture). Il ne valide jamais : le propriétaire passe chaque source en `validated` lui-même ; une source validée dont le texte ou le jugement change redevient `proposed`. Numérotation des hadiths = `arabicnumber` de hadith-api ; un numéro à plusieurs narrations (Muslim) prend `ref.narration` et une lettre (`hadith.muslim.2679a`). `validate.py` refuse un texte sans `origin`, la CI lance `fetch.py --check`.
 3. **Projet Remotion** dans `video/` (TypeScript). Une composition par format (`Reel916`, `Episode169`) qui lit `content/episodes/*.yaml`. Police coranique libre (Amiri Quran, OFL).
 4. **Modèles visuels** : `scene`, `ayah-card` (mots synchronisés via `segments=true` de l'API audio quran.com), `source-card`, `title-card`, sous-titres.
+   - `ayah-card` : texte uthmani **exactement tel que publié**, ۞ compris (comme quran-reels).
+   - `source-card` (hadith) : **seulement les paroles du Prophète ﷺ**, extraites par une règle fixe : du premier au dernier guillemet `"` du `text_ar` (sans la chaîne de transmission ni le commentaire de Tirmidhi ; une question posée entre deux réponses reste, ex. Muslim 2735c). Rapporteur et référence en légende. Le registre garde le texte complet.
 5. **Kit de personnages** à partir d'Open Peeps (CC0) : narrateur + `amir` + `salma`, poses et expressions du catalogue, bouche animée selon le volume. Si openpeeps.com est bloqué par le réseau, demande au propriétaire de déposer l'archive dans `assets/characters/source/`.
 6. **Workflow `render.yml`** : rend `dua-01` en 9:16 et le publie en release, comme `voice-test`.
 
 ## Questions encore ouvertes
 
-- Politique des hadiths : quel troisième critère après Bukhari et Muslim ?
 - Marque : série dans Quran Words Daily ou page séparée (décision reportée).
 - Licence du dépôt (pas encore choisie).

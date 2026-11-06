@@ -19,7 +19,10 @@ jobs:
         run: uv run --with jsonschema --with pyyaml scripts/validate.py
 
       - name: Python syntax
-        run: python3 -m py_compile tools/tts/say.py scripts/validate.py
+        run: python3 -m py_compile tools/tts/say.py tools/sources/fetch.py scripts/validate.py
+
+      - name: Registry texts are exactly the APIs' (quran.com, hadith-api)
+        run: uv run --with ruamel.yaml tools/sources/fetch.py --check
 
       - name: Shell scripts
         run: shellcheck infra/*.sh scripts/*.sh

@@ -17,7 +17,9 @@ Hors périmètre : la publication, et l'automatisation de bout en bout. Chaque �
 | Personnages | Dessin animé ; jamais pour un prophète, un Compagnon ou une personne connue | Kit SVG à partir d'Open Peeps (CC0). Carte de nom pour les personnes réelles. |
 | Machine | Démo sur GitHub, dépôt dédié | Rendu et synthèse dans GitHub Actions. Le M920q devient le plan B. |
 | Marque | Plus tard | Sans impact sur le dépôt. |
-| Jugements | « Bukhari, Muslim et… » (réponse inachevée) | Bukhari et Muslim seuls pour l'instant (`content/policy.yaml`). |
+| Jugements | Bukhari, Muslim et Tirmidhi | Tirmidhi seulement si al-Albani juge le hadith sahih ou hasan (`content/policy.yaml`, vérifié par `scripts/validate.py`). |
+| Carte d'un hadith | Paroles du Prophète ﷺ seulement | Extraites du texte arabe par une règle fixe (entre le premier et le dernier guillemet) ; rapporteur et référence en légende. |
+| Signe ۞ | Gardé | Le texte uthmani s'affiche exactement tel que publié. |
 
 ## Workflow de production
 
@@ -60,9 +62,9 @@ Règles : une citation n'existe que par son id ; une langue de plus est une clé
 | 1 | Accroche | Quelqu'un attend un résultat d'analyse et tourne en rond. | — | 1 |
 | 2 | Promesse | Le du'a, c'est reconnaître son besoin de Dieu ; Il promet de répondre. | Ghafir 40:60 | 1 |
 | 3 | Idée reçue 1 | « Demander, c'est refuser le destin. » Ayyub a invoqué. | Al-Anbiya 21:83 | 2 |
-| 4 | Preuve | Demander avec résolution, sans « si Tu veux ». | Bukhari 6339, Muslim 2679 | 2 |
-| 5 | Idée reçue 2 | « Tout est écrit, le du'a ne change rien. » | Tirmidhi / Ibn Majah (hors politique actuelle) ; Ar-Ra'd 13:39 | 3 |
-| 6 | Idée reçue 3 | « Je n'ai pas été exaucé. » | Bukhari 6340, Muslim 2735 ; Ahmad (hors politique actuelle) | 4 |
+| 4 | Preuve | Demander avec résolution, sans « si Tu veux ». | Bukhari 6339, Muslim 2679a | 2 |
+| 5 | Idée reçue 2 | « Tout est écrit, le du'a ne change rien. » | Tirmidhi 2139 ; Ar-Ra'd 13:39 | 3 |
+| 6 | Idée reçue 3 | « Je n'ai pas été exaucé. » | Bukhari 6340, Muslim 2735a et 2735c ; Ahmad (hors politique actuelle) | 4 |
 | 7 | Conclusion | Dieu est proche de celui qui L'invoque. | Al-Baqarah 2:186 | 5 |
 
 La démo ne produit que le reel 1.

@@ -51,9 +51,26 @@ def schema_check(validator: Draft202012Validator, data, where: str, report: Repo
     return ok
 
 
+def check_grade(src: dict, rule: dict, where: str, report: Report) -> None:
+    """Collections with weak hadiths: the grade published by hadith-api for rule['by'] must be accepted."""
+    by = rule["by"]
+    grades = [g["grade"] for g in (src.get("origin") or {}).get("grades", []) if g["name"].lower() == by.lower()]
+    if not grades:
+        report.error(where, f"no grade by {by} in origin.grades (run tools/sources/fetch.py)")
+        return
+    if grades[0] not in rule["accept"]:
+        report.error(where, f"{by} grades it '{grades[0]}', outside content/policy.yaml; status must be excluded")
+        return
+    if src.get("graded_by", "").lower() != by.lower():
+        report.error(where, f"graded_by must be {by} (content/policy.yaml)")
+    if src.get("grade") != grades[0].split()[0].lower():
+        report.error(where, f"grade '{src.get('grade')}' does not match {by}'s '{grades[0]}'")
+
+
 def check_registry(report: Report, policy: dict) -> dict[str, dict]:
     validator = Draft202012Validator(json.loads((ROOT / "schemas/source.schema.json").read_text()))
     allowed = set(policy.get("hadith", {}).get("collections", []))
+    graded = policy.get("hadith", {}).get("graded", {})
     registry: dict[str, dict] = {}
     for path in sorted((CONTENT / "sources").glob("*.yaml")):
         entries = load_yaml(path) or []
@@ -65,15 +82,22 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
                 report.error(where, "duplicate id")
             registry[sid] = src
             ref = src["ref"]
+            # Texts come from an API (tools/sources/fetch.py writes origin), never typed by hand.
+            if (src.get("text_ar") or src.get("text_en")) and "origin" not in src:
+                report.error(where, "text without origin: fill it with tools/sources/fetch.py, never by hand")
             if src["type"] == "ayah" and sid != f"quran.{ref['surah']}.{ref['ayah']}":
                 report.error(where, "id does not match ref")
             if src["type"] == "hadith":
-                if sid != f"hadith.{ref['collection']}.{ref['number']}":
+                suffix = chr(ord("a") + ref["narration"] - 1) if "narration" in ref else ""
+                if sid != f"hadith.{ref['collection']}.{ref['number']}{suffix}":
                     report.error(where, "id does not match ref")
                 if ref["collection"] not in allowed and src["status"] != "excluded":
                     report.error(where, f"collection '{ref['collection']}' is outside content/policy.yaml; status must be excluded")
                 if src.get("grade") in ("daif", "mawdu") and src["status"] != "excluded":
                     report.error(where, f"grade '{src['grade']}' cannot be quoted; status must be excluded")
+                rule = graded.get(ref["collection"])
+                if rule and src["status"] != "excluded":
+                    check_grade(src, rule, where, report)
     return registry
 
 
