@@ -56,8 +56,16 @@ jobs:
             uv run --with jsonschema --with pyyaml scripts/validate.py --release
           fi
 
-      - name: System packages
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg libsndfile1
+      # No apt: the Ubuntu mirror can hang for an hour (voice-test, 2026-11-06). Static ffmpeg build
+      # from imageio-ffmpeg (pip, pinned as in quran-reels), put on PATH as "ffmpeg".
+      - name: ffmpeg (static build)
+        run: |
+          uv venv .venv-tools
+          uv pip install --python .venv-tools/bin/python imageio-ffmpeg==0.8.1
+          mkdir -p "$HOME/.local/bin"
+          ln -sf "$(.venv-tools/bin/python -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())')" "$HOME/.local/bin/ffmpeg"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          "$HOME/.local/bin/ffmpeg" -hide_banner -version | head -1
 
       - uses: actions/setup-node@v4
         with:
@@ -97,7 +105,7 @@ jobs:
           npm run data
           props=$(printf '{"episode":"%s","reel":"%s","format":"reel","data":null}' "$EPISODE" "$REEL")
           npx remotion render Reel916 "out/$REEL.mp4" --props="$props"
-          ffprobe -v error -show_entries format=duration:stream=codec_name,width,height,pix_fmt -of compact "out/$REEL.mp4"
+          ffmpeg -hide_banner -i "out/$REEL.mp4" 2>&1 | grep -E "Duration|Stream" || true
 
       - name: Attach the MP4 to the <reel>-latest pre-release
         env:

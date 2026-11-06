@@ -21,6 +21,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -28,6 +29,7 @@ import tempfile
 import time
 import urllib.error
 import urllib.request
+import wave
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -53,9 +55,20 @@ def get(url: str, attempts: int = 5) -> bytes:
 
 
 def seconds(path: Path) -> float:
-    out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(path)],
-                         check=True, capture_output=True, text=True).stdout
-    return round(float(out), 3)
+    """Length of an audio file. WAV: read from its header. Other formats: decoded by ffmpeg (no
+    ffprobe needed, so the static build of imageio-ffmpeg is enough): its last reported out_time."""
+    if path.suffix.lower() == ".wav":
+        with wave.open(str(path)) as w:
+            return round(w.getnframes() / w.getframerate(), 3)
+    ffmpeg = os.environ.get("FFMPEG") or shutil.which("ffmpeg")
+    if not ffmpeg:
+        sys.exit("error: ffmpeg not found (install it, or set FFMPEG)")
+    log = subprocess.run([ffmpeg, "-hide_banner", "-nostats", "-stats_period", "60", "-progress", "pipe:1",
+                          "-i", str(path), "-f", "null", "-"], check=True, capture_output=True, text=True).stdout
+    times = re.findall(r"out_time_us=(\d+)", log)
+    if not times:
+        sys.exit(f"error: ffmpeg gave no duration for {path}")
+    return round(int(times[-1]) / 1_000_000, 3)
 
 
 def policy_value(name: str) -> str:
