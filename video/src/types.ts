@@ -5,7 +5,23 @@ export type I18n = { ar: string; en: string };
 
 export type Template = "scene" | "ayah-card" | "source-card" | "name-card" | "title-card";
 
-export type Character = { id: string; pose: string; mood: string; talking?: boolean };
+/** A catalog character resolved to its Open Peeps pieces (content/characters.yaml + characters/peeps.ts). */
+export type Character = {
+  id: string;
+  pose: string;
+  mood: string;
+  talking: boolean;
+  body: string;
+  kind: "standing" | "sitting" | "bust";
+  /** Extent of the figure [x, y, width, height] and, when sitting, the centre of its hips [x, y]. */
+  box: [number, number, number, number];
+  seat: [number, number] | null;
+  hair: string;
+  facial_hair: string;
+  accessory: string;
+  face: string;
+  face_open: string;
+};
 
 export type ResolvedSource = {
   id: string;

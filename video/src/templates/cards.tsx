@@ -1,7 +1,9 @@
-// Cards (task 4): title, verse with the recited word highlighted, hadith, name, and the
-// placeholder of the "scene" template until the character kit (task 5).
+// Cards (task 4): title, verse with the recited word highlighted, hadith, name; and the "scene"
+// template with its background and characters (task 5).
 import { Fragment } from "react";
-import { spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { BACKGROUNDS } from "../backgrounds/Backgrounds";
+import { CharacterView, placement } from "../characters/Character";
 import { FONT } from "../fonts";
 import type { Format } from "../formats";
 import { COLOR } from "../theme";
@@ -178,32 +180,45 @@ export const NameCard: React.FC<CardProps> = ({ scene, format }) => (
   </Stage>
 );
 
-/** Placeholder for the "scene" template: names the background and the characters, draws nothing. */
-export const SceneCard: React.FC<CardProps> = ({ scene, format }) => (
-  <Stage format={format}>
-    <div
-      style={{
-        width: "100%",
-        height: format.id === "reel" ? 820 : 560,
-        border: `3px dashed ${COLOR.muted}`,
-        borderRadius: 28,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 24,
-        fontFamily: FONT.latin,
-        color: COLOR.muted,
-        fontSize: 36,
-      }}
-    >
-      <div>background: {scene.visual.background ?? "none"}</div>
-      {scene.visual.characters.map((c) => (
-        <div key={c.id} style={{ color: COLOR.text, fontSize: 44 }}>
-          {c.id} · {c.pose} · {c.mood}
-        </div>
-      ))}
-      <div style={{ fontSize: 28 }}>placeholder: the character kit comes with task 5</div>
-    </div>
-  </Stage>
-);
+/** Where the floor is and how big the figures are, per format (Open Peeps units -> pixels).
+ * Reel: a standing figure (2931 units) reaches y = 276, just under the top safe area (250). */
+const STAGE = {
+  reel: { floorY: 1360, scale: 0.375 },
+  episode: { floorY: 880, scale: 0.235 },
+};
+const BUST_ZOOM = 3;
+
+/** The "scene" template: a background of the catalog and the scene's characters standing (or
+ * sitting) on its floor, with a slow push-in. */
+export const SceneCard: React.FC<CardProps> = ({ scene, format }) => {
+  const frame = useCurrentFrame();
+  const { durationInFrames } = useVideoConfig();
+  const { floorY, scale } = STAGE[format.id];
+  const id = scene.visual.background ?? "plain";
+  const Background = BACKGROUNDS[id];
+  if (!Background) throw new Error(`background '${id}' has no drawing in src/backgrounds/`);
+  const chars = scene.visual.characters;
+  const xs = chars.map((_, i) => (format.width * (i + 1)) / (chars.length + 1));
+  const sitter = chars.findIndex((c) => c.kind === "sitting");
+  const seatTop = sitter >= 0 ? floorY - placement(chars[sitter], xs[sitter], floorY, scale).seatHeight : null;
+  const zoom = interpolate(frame, [0, durationInFrames], [1, 1.04]);
+  return (
+    <AbsoluteFill style={{ transform: `scale(${zoom})`, transformOrigin: "50% 65%" }}>
+      <Background width={format.width} height={format.height} floorY={floorY} seatTop={seatTop} />
+      {chars.map((c, i) => {
+        // A bust faces the camera: larger, and cut by the bottom of the frame rather than standing on the floor.
+        const bust = c.kind === "bust";
+        return (
+          <CharacterView
+            key={c.id}
+            c={c}
+            x={xs[i]}
+            floorY={bust ? format.height + 20 : floorY}
+            scale={bust ? scale * BUST_ZOOM : scale}
+            audio={scene.media?.file ?? null}
+          />
+        );
+      })}
+    </AbsoluteFill>
+  );
+};

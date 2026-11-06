@@ -104,7 +104,7 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
     return registry
 
 
-def check_episode(path: Path, registry: dict, catalog: dict, release: bool, report: Report) -> None:
+def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, release: bool, report: Report) -> None:
     validator = Draft202012Validator(json.loads((ROOT / "schemas/episode.schema.json").read_text()))
     ep = load_yaml(path)
     if not schema_check(validator, ep, rel(path), report):
@@ -148,6 +148,10 @@ def check_episode(path: Path, registry: dict, catalog: dict, release: bool, repo
         if audio == "tts" and "narration" not in scene:
             report.error(where, "audio: tts needs a narration")
 
+        # Backgrounds: closed catalog too (content/backgrounds.yaml).
+        if "background" in visual and visual["background"] not in backgrounds:
+            report.error(where, f"background '{visual['background']}' is not in content/backgrounds.yaml")
+
         # Characters: closed catalog, fictional only, never with real people.
         chars = visual.get("characters", [])
         if chars and template != "scene":
@@ -175,10 +179,11 @@ def main() -> int:
     report = Report()
     policy = load_yaml(CONTENT / "policy.yaml") or {}
     catalog = (load_yaml(CONTENT / "characters.yaml") or {}).get("characters", {})
+    backgrounds = (load_yaml(CONTENT / "backgrounds.yaml") or {}).get("backgrounds", {})
     registry = check_registry(report, policy)
     episodes = sorted((CONTENT / "episodes").glob("*.yaml"))
     for path in episodes:
-        check_episode(path, registry, catalog, args.release, report)
+        check_episode(path, registry, catalog, backgrounds, args.release, report)
 
     for line in report.warnings + report.errors:
         print(line)

@@ -1,16 +1,26 @@
 # Catalogue fermé des personnages. Personnages fictifs uniquement :
 # jamais un prophète, un Compagnon ou une personne connue (voir CLAUDE.md).
-# Apparence à définir avec le propriétaire lors de la création du kit (base Open Peeps, CC0).
+# Dessins : Open Peeps de Pablo Stanley (CC0), assemblés par react-peeps (MIT) dans video/.
+# `look` : pièces Open Peeps (noms de react-peeps). `poses` : chaque pose du catalogue -> le corps
+# Open Peeps dessiné (debout, assis ou buste). Les humeurs -> visages : video/src/characters/peeps.ts.
+# Apparences validées par le propriétaire le 2026-11-06 sur la planche docs/characters.png (validated_by).
+# Toute modification d'une apparence ou d'une pose retire validated_by : le propriétaire valide à nouveau.
 characters:
   narrator:
-    description: Narrateur fictif, adulte, tenue sobre
-    poses: [standing, pointing, open-hands]
+    description: Narrateur fictif, adulte, tenue sobre ; lunettes et barbe courte
+    look: { hair: ShortVolumed, facial_hair: Chin, accessory: GlassClubmaster }
+    poses: { standing: BlazerPantsWB, pointing: PointingFingerWB, open-hands: Explaining }
     moods: [calm, smiling]
+    validated_by: mssnoussi92
   amir:
-    description: Homme d'une trentaine d'années, personnage du quotidien
-    poses: [standing, sitting, pointing]
+    description: Homme d'une trentaine d'années, personnage du quotidien ; cheveux courts, barbe courte
+    look: { hair: Short, facial_hair: Chin, accessory: None }
+    poses: { standing: ShirtPantsWB, sitting: MediumWB, pointing: PointingFingerWB }
     moods: [calm, worried, smiling]
+    validated_by: mssnoussi92
   salma:
-    description: Femme d'une trentaine d'années, personnage du quotidien
-    poses: [standing, sitting, pointing]
+    description: Femme d'une trentaine d'années, personnage du quotidien ; hijab, manches longues
+    look: { hair: Hijab, facial_hair: None, accessory: None }
+    poses: { standing: ShirtPantsBW, sitting: ClosedLegWB, pointing: PointingFingerBW }
     moods: [calm, worried, smiling]
+    validated_by: mssnoussi92

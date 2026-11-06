@@ -51,7 +51,8 @@ translation, the final video. Never mark any of them done yourself.
 4. **Script.** Follow the `write-hook` skill for the episode opening and for each reel: mirror,
    contrast, anchor, and an honest open loop to the next reel. Narration in Egyptian Arabic
    (VoiceTut), English subtitles in `narration.en`. Characters, poses and moods from
-   `content/characters.yaml` only; no character in a scene that names a real person (`mentions`).
+   `content/characters.yaml`, backgrounds from `content/backgrounds.yaml` only (a new one is added to
+   the catalog, drawn in `video/src/backgrounds/` and shown to the owner first); no character in a scene that names a real person (`mentions`).
    Typical situations are presented as such, never as true stories. No figure without a source.
 
 5. **Check.**

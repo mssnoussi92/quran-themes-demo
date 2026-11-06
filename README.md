@@ -33,4 +33,4 @@ Voice test: run the **voice-test** workflow from the Actions tab. The MP3 files 
 - [Quran.com API](https://api-docs.quran.com) for Quran text, translation and recitation timings.
 - [hadith-api](https://github.com/fawazahmed0/hadith-api) for hadith texts and grades.
 - [Amiri Quran and Amiri](https://github.com/aliftype/amiri) (Khaled Hosny) and [Lora](https://github.com/cyrealtype/Lora-Cyrillic), under the SIL Open Font License (`video/public/fonts/`).
-- [Open Peeps](https://openpeeps.com) by Pablo Stanley (CC0) as the base of the character kit.
+- [Open Peeps](https://openpeeps.com) by Pablo Stanley (CC0), assembled with [react-peeps](https://github.com/CeamKrier/react-peeps) (MIT), for the character kit (`docs/characters.png`).
