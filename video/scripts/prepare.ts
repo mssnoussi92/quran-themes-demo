@@ -58,7 +58,7 @@ type RegistryEntry = {
   status: "proposed" | "validated" | "excluded";
   grade?: string;
   graded_by?: string;
-  origin?: { translator?: string };
+  origin?: { translator?: string; surah_ar?: string; surah_en?: string };
 };
 
 type ManifestScene = {
@@ -162,7 +162,11 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
   let display_en = entry.text_en;
   if (entry.type === "ayah") {
     type = "ayah";
-    reference = `Quran ${ref.surah}:${ref.ayah}`;
+    // The surah by its name (from quran.com, in the registry), not its number: « سورة غافر · الآية ٦٠ ».
+    const ayah = new Intl.NumberFormat("ar-EG").format(ref.ayah ?? 0);
+    reference = entry.origin?.surah_ar
+      ? `سورة ${entry.origin.surah_ar} · الآية ${ayah}`
+      : `Quran ${ref.surah}:${ref.ayah}`;
     display_ar = entry.text_ar;
   } else if (entry.type === "hadith") {
     type = "hadith";
