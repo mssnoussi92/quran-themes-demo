@@ -45,6 +45,7 @@ tools/sources/fetch.py   remplit text_ar / text_en du registre (quran.com v4, ha
 requirements/            dépendances Python par moteur (un venv par moteur)
 infra/claude-cloud-setup.sh  script de setup de l'environnement cloud (copié dans l'UI)
 .github/workflows/       validate.yml, voice-test.yml
+reference/               analyses de vidéos de référence (texte seulement : aucun visuel tiers, dépôt public)
 video/                   (à créer) projet Remotion
 build/                   (ignoré) tout ce qui est généré
 ```
