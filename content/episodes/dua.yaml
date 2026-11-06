@@ -1,12 +1,14 @@
 # Épisode Du'a. La démo ne produit que le reel dua-01 ; les autres reels sont décrits dans docs/design.md.
-# Script de dua-01 réécrit le 2026-11-06 avec le skill write-hook (.claude/skills/write-hook) :
-# à valider par le propriétaire (script et traduction), comme la source hadith.tirmidhi.3247.
+# Script de dua-01 réécrit le 2026-11-06 avec le skill write-hook (.claude/skills/write-hook),
+# script et traduction validés par le propriétaire le 2026-11-06 (validated_by). Toute modification
+# d'une ligne du reel retire validated_by : le propriétaire valide à nouveau.
 episode: dua
 title: { ar: "الدعاء", en: "Du'a" }
 narration_language: ar-egy   # VoiceTut (égyptien), choix du propriétaire le 2026-11-06
 reels:
   - id: dua-01
     title: { ar: "يا رب", en: "Ya Rabb" }
+    validated_by: mssnoussi92
 scenes:
   # Miroir : une question à la deuxième personne, l'émotion dès la première image.
   - id: hook-1

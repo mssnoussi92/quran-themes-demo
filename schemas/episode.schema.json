@@ -19,7 +19,11 @@
         "additionalProperties": false,
         "properties": {
           "id": { "$ref": "#/$defs/slug" },
-          "title": { "$ref": "#/$defs/i18n" }
+          "title": { "$ref": "#/$defs/i18n" },
+          "validated_by": {
+            "description": "Owner who validated the reel's script and translation; removed whenever one of its lines changes",
+            "type": "string"
+          }
         }
       }
     },
