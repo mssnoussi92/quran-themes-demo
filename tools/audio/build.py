@@ -18,8 +18,10 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import array
 import hashlib
 import json
+import math
 import os
 import re
 import shutil
@@ -104,6 +106,60 @@ def recitation(scene: dict, reciter: str, out_dir: Path) -> dict:
             "reciter": reciter, "origin": {"api": api, "audio": url}, "words": words}
 
 
+# Pacing of the synthetic voice. VoiceTut leaves ~0.2 s of silence before a line, ~0.3 s after it,
+# and 0.4-0.55 s between the pieces it cuts at « … », « . » and « : »: with the scene tail, ~0.85 s
+# of silence between two lines (the owner found it laggy, 2026-11-06). Kept: 0.08 s before a line,
+# 0.06 s after it, and inside a line at most 0.06 s after a sound plus 0.12 s before the next one
+# (a weak onset such as the burst of « ق » reads as silence: version 1 kept 0.1 s and clipped it).
+# Silence = 20 ms windows under an RMS of 0.008 (speech measured at 0.03-0.26, silence under 0.003).
+# The synthesised line stays as <scene>.raw.wav; <scene>.wav is derived from it.
+TIGHT = {"version": 2, "lead": 0.08, "trail": 0.06, "gap_after": 0.06, "gap_before": 0.12,
+         "window": 0.02, "threshold": 0.008}
+
+
+def tighten(raw: Path, dest: Path) -> float:
+    """Write `dest`: the 16-bit mono WAV `raw` with shorter silences; returns the seconds removed."""
+    with wave.open(str(raw)) as w:
+        params = w.getparams()
+        samples = array.array("h", w.readframes(w.getnframes()))
+    if params.sampwidth != 2 or params.nchannels != 1:
+        sys.exit(f"error: {raw}: expected 16-bit mono WAV")
+    rate = params.framerate
+    win = max(1, int(rate * TIGHT["window"]))
+    level = TIGHT["threshold"] * 32768
+    loud = []
+    for i in range(0, len(samples), win):
+        chunk = samples[i:i + win]
+        loud.append(math.sqrt(sum(x * x for x in chunk) / len(chunk)) > level)
+    if True not in loud:
+        shutil.copyfile(raw, dest)
+        return 0.0
+    first, last = loud.index(True), len(loud) - 1 - loud[::-1].index(True)
+    after = round(TIGHT["gap_after"] / TIGHT["window"])
+    before = round(TIGHT["gap_before"] / TIGHT["window"])
+    windows = []                       # indices of the windows kept, in order
+    run: list[int] = []
+    for i in range(first, last + 1):
+        if loud[i]:
+            if len(run) > after + before:   # long pause: keep its start and, longer, its end
+                run = run[:after] + run[len(run) - before:]
+            windows += run + [i]
+            run = []
+        else:
+            run.append(i)
+    lead = int(TIGHT["lead"] * rate)
+    trail = int(TIGHT["trail"] * rate)
+    out = array.array("h", samples[max(0, first * win - lead): first * win])
+    for i in windows:
+        out.extend(samples[i * win:(i + 1) * win])
+    end = min(len(samples), (last + 1) * win)
+    out.extend(samples[end:end + trail])
+    with wave.open(str(dest), "wb") as w:
+        w.setparams(params)
+        w.writeframes(out.tobytes())
+    return round((len(samples) - len(out)) / rate, 3)
+
+
 def tts_key(text: str, speaker: str) -> str:
     return hashlib.sha256(f"voicetut\n{speaker}\n{text}".encode()).hexdigest()[:16]
 
@@ -121,7 +177,7 @@ def synthesise(jobs: list[tuple[dict, Path]], speaker: str, tts_python: str) -> 
         print(f"synthesising {len(jobs)} line(s) with VoiceTut ({speaker})...", flush=True)
         subprocess.run(cmd, check=True)
         for scene, dest in jobs:
-            shutil.move(Path(tmp) / f"{scene['id']}__voicetut-{speaker}.wav", dest)
+            shutil.move(Path(tmp) / f"{scene['id']}__voicetut-{speaker}.wav", dest.with_suffix(".raw.wav"))
 
 
 def main() -> int:
@@ -170,16 +226,32 @@ def main() -> int:
             dest = out_dir / f"{sid}.wav"
             scenes[sid] = {"kind": "tts", "file": dest.name, "engine": "voicetut", "speaker": args.speaker,
                            "text": text, "key": key}
-            if prev and prev.get("key") == key and dest.is_file():
+            if prev and prev.get("key") == key and (dest.is_file() or dest.with_suffix(".raw.wav").is_file()):
                 scenes[sid]["seconds"] = prev["seconds"]
+                if "tight" in prev:
+                    scenes[sid]["tight"] = prev["tight"]
             else:
                 to_synthesise.append((scene, dest))
 
     if to_synthesise:
         synthesise(to_synthesise, args.speaker, args.tts_python)
         for scene, dest in to_synthesise:
-            scenes[scene["id"]]["seconds"] = seconds(dest)
-            print(f"tts {scene['id']}: {scenes[scene['id']]['seconds']} s")
+            scenes[scene["id"]].pop("tight", None)
+
+    # Tighten every narration line from its raw take (new lines, older caches, a new rule version).
+    for sid, entry in scenes.items():
+        final = out_dir / entry["file"]
+        raw = final.with_suffix(".raw.wav")
+        if entry["kind"] != "tts" or (entry.get("tight") == TIGHT and final.is_file() and raw.is_file()):
+            continue
+        if not raw.is_file():
+            if "tight" in entry:
+                sys.exit(f"error: {raw.name} is missing and {final.name} is already tightened: run with --force")
+            shutil.move(final, raw)    # a line cached before the pacing rule: it is the raw take
+        removed = tighten(raw, final)
+        entry["seconds"] = seconds(final)
+        entry["tight"] = TIGHT
+        print(f"tts {sid}: {entry['seconds']} s ({removed} s of silence removed)")
 
     manifest = {"episode": args.episode, "note": "AI-generated voice for the narration (VoiceTut); "
                 "verses are recited by a real reciter", "scenes": scenes}

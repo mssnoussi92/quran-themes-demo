@@ -1,4 +1,4 @@
-import { AbsoluteFill, Html5Audio, Series, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Html5Audio, Series, interpolate, staticFile, useCurrentFrame } from "remotion";
 import { selectScenes } from "./data";
 import type { VideoProps } from "./data";
 import { FONT, loadFonts } from "./fonts";
@@ -11,16 +11,13 @@ import type { ResolvedScene } from "./types";
 
 loadFonts();
 
-const FADE = 8; // frames
+// Scenes change with a cut and a very short fade-in, as in the reference video (a cut every 2-4 s):
+// no fade-out, which would dip to the background between two lines.
+const FADE_IN = 4; // frames
 
 const Fade: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const frame = useCurrentFrame();
-  const { durationInFrames } = useVideoConfig();
-  const fade = Math.min(FADE, Math.floor(durationInFrames / 3));
-  const opacity = interpolate(frame, [0, fade, durationInFrames - fade, durationInFrames], [0, 1, 1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const opacity = interpolate(frame, [0, FADE_IN], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return <AbsoluteFill style={{ opacity }}>{children}</AbsoluteFill>;
 };
 
