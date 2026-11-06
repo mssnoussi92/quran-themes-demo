@@ -106,4 +106,5 @@ Mirror and contrast scenes use `template: scene` with a catalog character; key w
    frames, or a draft render (`npm run render -- Reel916 out/<reel>.mp4`).
 5. Open or update a PR: the hook line by line with its beat, the sources used and their status,
    and what was not taken. The owner validates the script and the translation (design.md, step 3):
-   never mark it validated yourself.
+   on their word, record `validated_by: <owner>` on the reel; never set it yourself, and remove it
+   whenever you change one of the reel's lines.

@@ -67,4 +67,5 @@ translation, the final video. Never mark any of them done yourself.
    - the open questions.
 
    Send the owner the draft video or a few stills. They validate the script and the translation;
-   after that, audio and render (tasks 4–6).
+   on their word, record `validated_by` on each validated reel. Then the release render: workflow
+   `render` (voice from `content/policy.yaml`).

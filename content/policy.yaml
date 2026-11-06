@@ -15,3 +15,7 @@ hadith:
 quran:
   translation: sahih-international
   reciter: alafasy
+narration:
+  # Décision du 6 novembre 2026, à l'écoute du brouillon de dua-01 : VoiceTut (égyptien), voix Mohammed.
+  engine: voicetut
+  voice: Mohammed

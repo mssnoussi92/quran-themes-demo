@@ -12,7 +12,7 @@ Hors périmètre : la publication, et l'automatisation de bout en bout. Chaque �
 
 | Sujet | Décision | Conséquence |
 | --- | --- | --- |
-| Narration | **Égyptien, VoiceTut** (choix du 6 novembre 2026, après le test de voix) | Narration écrite en égyptien parlé. Versets (récitation) et hadiths (texte du registre) restent en arabe classique. |
+| Narration | **Égyptien, VoiceTut, voix Mohammed** (choix du 6 novembre 2026, à l'écoute du brouillon de dua-01) | Narration écrite en égyptien parlé. Versets (récitation) et hadiths (texte du registre) restent en arabe classique. |
 | Accroche | Modèle : une vidéo de référence égyptienne sur le du'a (6 novembre 2026), son accroche seulement | Skill `write-hook` : miroir, contraste, ancre sourcée, « ليه؟ », enjeu, promesse honnête ; skill `new-theme` pour les autres thèmes. |
 | Voix | Synthèse | « Voix générée par IA » dans chaque description. |
 | Personnages | Dessin animé ; jamais pour un prophète, un Compagnon ou une personne connue | Kit SVG à partir d'Open Peeps (CC0). Carte de nom pour les personnes réelles. |

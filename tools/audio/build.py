@@ -13,7 +13,7 @@ verse for a recitation. Writes build/audio/<episode>/<scene>.(mp3|wav) and manif
 
 Usage:
   python3 tools/audio/build.py --episode dua
-  python3 tools/audio/build.py --episode dua --speaker Mohammed --tts-python /opt/venvs/voicetut/bin/python
+  python3 tools/audio/build.py --episode dua --speaker Ahmed --tts-python /opt/venvs/voicetut/bin/python
 """
 from __future__ import annotations
 
@@ -58,12 +58,17 @@ def seconds(path: Path) -> float:
     return round(float(out), 3)
 
 
-def reciter_from_policy() -> str:
+def policy_value(name: str) -> str:
+    """A scalar of content/policy.yaml (quran.reciter, narration.voice): keys are unique there."""
     for line in (ROOT / "content" / "policy.yaml").read_text(encoding="utf-8").splitlines():
         key, _, value = line.strip().partition(":")
-        if key == "reciter":
+        if key == name:
             return value.split("#")[0].strip()
-    sys.exit("error: no quran.reciter in content/policy.yaml")
+    sys.exit(f"error: no '{name}' in content/policy.yaml")
+
+
+def reciter_from_policy() -> str:
+    return policy_value("reciter")
 
 
 def recitation(scene: dict, reciter: str, out_dir: Path) -> dict:
@@ -109,12 +114,13 @@ def synthesise(jobs: list[tuple[dict, Path]], speaker: str, tts_python: str) -> 
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--episode", required=True)
-    p.add_argument("--speaker", default="Mohammed", help="VoiceTut voice (default: Mohammed, see tools/tts/say.py)")
+    p.add_argument("--speaker", help="VoiceTut voice (default: narration.voice in content/policy.yaml)")
     p.add_argument("--tts-python", default=os.environ.get("VOICETUT_PYTHON", "/opt/venvs/voicetut/bin/python"),
                    help="python of the VoiceTut venv (env VOICETUT_PYTHON)")
     p.add_argument("--force", action="store_true", help="synthesise and download everything again")
     p.add_argument("--only", nargs="+", metavar="SCENE", help="only these scenes (the others keep their audio)")
     args = p.parse_args()
+    args.speaker = args.speaker or policy_value("voice")
 
     data_path = ROOT / "video" / "public" / "data" / f"{args.episode}.json"
     if not data_path.is_file():
