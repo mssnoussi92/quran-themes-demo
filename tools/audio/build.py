@@ -11,8 +11,8 @@ verse for a recitation. Writes build/audio/<episode>/<scene>.(mp3|wav) and manif
   tts         tools/tts/say.py with VoiceTut (Egyptian Arabic) in its own venv. VoiceTut never says a
               line the same way twice, so the takes the owner listened to and approved are locked
               in content/audio/<episode>/ (FLAC + takes.json, `--lock <owner>`, only on the owner's
-              word) and always reused; a line is synthesised only when it has no locked take for
-              its text and voice. `--require-locked` (release renders) fails instead.
+              word) and always reused (also by another scene that says the same line in the same
+              voice); a line is synthesised only when it has no locked take for its text and voice. `--require-locked` (release renders) fails instead.
               Each line is cut into phrases (after « ، … . ؟ : ») and the manifest gives the time
               each phrase starts, read from the pauses of the take: a title card shows them one by
               one as the voice says them.
@@ -338,6 +338,13 @@ def main() -> int:
             scenes[sid] = {"kind": "tts", "file": dest.name, "engine": "voicetut", "speaker": args.speaker,
                            "text": text, "key": key, "take": "synthesised"}
             take = takes.get(sid)
+            if not take or take["key"] != key:
+                # The same line, in the same voice, already validated in another scene: that take.
+                twin = next((t_sid for t_sid, t in sorted(takes.items())
+                             if t["key"] == key and (takes_dir / t["file"]).is_file()), None)
+                if twin:
+                    take = takes[twin]
+                    scenes[sid]["take_from"] = twin
             if take and take["key"] == key and (takes_dir / take["file"]).is_file():
                 # The validated take: always this one, never a new synthesis.
                 scenes[sid].update(take="locked", take_sha=take["sha256"])
@@ -393,6 +400,8 @@ def main() -> int:
         takes_dir.mkdir(parents=True, exist_ok=True)
         for sid, entry in scenes.items():
             if entry["kind"] != "tts" or sid not in in_reel or (args.only and sid not in args.only):
+                continue
+            if entry.get("take_from"):      # already validated as another scene's take
                 continue
             flac = takes_dir / f"{sid}.flac"
             transcode(out_dir / f"{sid}.raw.wav", flac, "-c:a", "flac", "-compression_level", "12")

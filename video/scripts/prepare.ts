@@ -60,7 +60,7 @@ type RegistryEntry = {
   status: "proposed" | "validated" | "excluded";
   grade?: string;
   graded_by?: string;
-  origin?: { translator?: string; surah_ar?: string; surah_en?: string };
+  origin?: { translator?: string; surah_ar?: string; surah_en?: string; grades?: { name: string; grade: string }[] };
 };
 
 type ManifestScene = {
@@ -193,12 +193,19 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
     text_en: entry.text_en,
     display_ar,
     display_en,
-    grade_note:
-      entry.graded_by && !Object.values(COLLECTIONS).includes(entry.graded_by) && entry.grade
-        ? `${entry.graded_by}: ${entry.grade.charAt(0).toUpperCase()}${entry.grade.slice(1)}`
-        : null,
+    grade_note: gradeNote(entry),
     translator: entry.origin?.translator ?? null,
   };
+}
+
+/** "Al-Albani: Hasan Sahih": the scholar's grade exactly as hadith-api gives it (origin.grades), or
+ * the registry's grade; none when the grade is the collection itself (Bukhari, Muslim). */
+function gradeNote(entry: RegistryEntry): string | null {
+  if (!entry.graded_by || !entry.grade || Object.values(COLLECTIONS).includes(entry.graded_by)) return null;
+  const by = entry.graded_by.toLowerCase();
+  const exact = entry.origin?.grades?.find((g) => g.name.toLowerCase() === by);
+  if (exact) return `${exact.name}: ${exact.grade}`;
+  return `${entry.graded_by}: ${entry.grade.charAt(0).toUpperCase()}${entry.grade.slice(1)}`;
 }
 
 function estimate(audio: ResolvedScene["audio"], text: string | null): Duration {

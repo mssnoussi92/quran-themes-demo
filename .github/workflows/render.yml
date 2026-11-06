@@ -1,9 +1,11 @@
 name: render
 
-# Renders one reel of an episode in 9:16 with its real audio (recitation + VoiceTut narration)
-# and attaches the MP4 to the "<reel>-latest" pre-release (easy to play on a phone).
-# A release render needs every quoted source and the reel's script validated by the owner
-# (validate.py --release --reel); a draft does not.
+# Renders an episode with its real audio (recitation + VoiceTut narration), easy to play on a phone:
+#   reel = <reel id>  that reel in 9:16, attached to the "<reel>-latest" pre-release;
+#   reel = all        the whole episode in 16:9 (YouTube) and every reel in 9:16 (Facebook, Instagram,
+#                     TikTok), all attached to the "<episode>-latest" pre-release.
+# A release render needs every quoted source and the script of each reel rendered validated by the
+# owner (validate.py --release --reel), and their locked narration takes; a draft does not.
 
 on:
   workflow_dispatch:
@@ -12,7 +14,7 @@ on:
         description: "Episode (content/episodes/<episode>.yaml)"
         default: dua
       reel:
-        description: "Reel id"
+        description: "Reel id, or all: the 16:9 episode and every reel"
         default: dua-01
       speaker:
         description: "VoiceTut voice for the narration (see tools/tts/say.py --help)"
@@ -49,12 +51,25 @@ jobs:
 
       - uses: astral-sh/setup-uv@v6
 
+      # The reels to render: the one asked for, or all of the episode's.
+      - name: Reels
+        run: |
+          if [ "$REEL" = all ]; then
+            reels=$(uv run --with pyyaml python -c "import sys, yaml; print(' '.join(r['id'] for r in yaml.safe_load(open(sys.argv[1]))['reels']))" "content/episodes/$EPISODE.yaml")
+          else
+            reels="$REEL"
+          fi
+          echo "REELS=$reels" >> "$GITHUB_ENV"
+          echo "reels: $reels"
+
       - name: Sources and editorial rules
         run: |
           if [ "$DRAFT" = true ]; then
             uv run --with jsonschema --with pyyaml scripts/validate.py
           else
-            uv run --with jsonschema --with pyyaml scripts/validate.py --release --reel "$REEL"
+            for reel in $REELS; do
+              uv run --with jsonschema --with pyyaml scripts/validate.py --release --reel "$reel"
+            done
           fi
 
       # No apt: the Ubuntu mirror can hang for an hour (voice-test, 2026-11-06). Static ffmpeg build
@@ -102,29 +117,42 @@ jobs:
       - name: Audio (recitation and narration)
         run: |
           locked=()
-          if [ "$DRAFT" != true ]; then locked=(--require-locked --reel "$REEL"); fi
+          if [ "$DRAFT" != true ]; then
+            locked=(--require-locked)
+            if [ "$REEL" != all ]; then locked+=(--reel "$REEL"); fi
+          fi
           python3 tools/audio/build.py --episode "$EPISODE" --speaker "$SPEAKER" \
             --tts-python .venv-voicetut/bin/python "${locked[@]}"
 
-      - name: Render the reel
+      - name: Render
         working-directory: video
         run: |
           npm run data
-          props=$(printf '{"episode":"%s","reel":"%s","format":"reel","data":null}' "$EPISODE" "$REEL")
-          npx remotion render Reel916 "out/$REEL.mp4" --props="$props"
-          ffmpeg -hide_banner -i "out/$REEL.mp4" 2>&1 | grep -E "Duration|Stream" || true
+          if [ "$REEL" = all ]; then
+            props=$(printf '{"episode":"%s","reel":null,"format":"episode","data":null}' "$EPISODE")
+            npx remotion render Episode169 "out/$EPISODE-16x9.mp4" --props="$props"
+          fi
+          for reel in $REELS; do
+            props=$(printf '{"episode":"%s","reel":"%s","format":"reel","data":null}' "$EPISODE" "$reel")
+            npx remotion render Reel916 "out/$reel.mp4" --props="$props"
+          done
+          for f in out/*.mp4; do echo "$f"; ffmpeg -hide_banner -i "$f" 2>&1 | grep -E "Duration|Stream" || true; done
 
-      - name: Attach the MP4 to the <reel>-latest pre-release
+      - name: Attach the MP4 files to the pre-release
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          tag="$REEL-latest"
-          kind=$([ "$DRAFT" = true ] && echo "Draft (some sources not validated yet)" || echo "Release render")
+          if [ "$REEL" = all ]; then
+            tag="$EPISODE-latest"; title="Episode $EPISODE (latest): 16:9 and reels"
+          else
+            tag="$REEL-latest"; title="Reel $REEL (latest)"
+          fi
+          kind=$([ "$DRAFT" = true ] && echo "Draft (script or sources not all validated yet)" || echo "Release render")
           notes="$kind. Narration: AI-generated voice (VoiceTut, $SPEAKER). Verses: real recitation. Run: $RUN_URL"
           if ! gh release view "$tag" >/dev/null 2>&1; then
-            gh release create "$tag" --prerelease --title "Reel $REEL (latest)" --notes "$notes"
+            gh release create "$tag" --prerelease --title "$title" --notes "$notes"
           fi
-          gh release upload "$tag" "video/out/$REEL.mp4" --clobber
+          gh release upload "$tag" video/out/*.mp4 --clobber
           gh release edit "$tag" --notes "$notes"

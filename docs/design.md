@@ -17,7 +17,7 @@ Hors périmètre : la publication, et l'automatisation de bout en bout. Chaque �
 | Voix | Synthèse | « Voix générée par IA » dans chaque description. |
 | Personnages | Dessin animé ; jamais pour un prophète, un Compagnon ou une personne connue | Kit SVG à partir d'Open Peeps (CC0). Carte de nom pour les personnes réelles. |
 | Machine | Démo sur GitHub, dépôt dédié | Rendu et synthèse dans GitHub Actions. Le M920q devient le plan B. |
-| Marque | Plus tard | Sans impact sur le dépôt. |
+| Marque | Même page que Quran Words Daily, publiée à la main par le propriétaire (6 novembre 2026) | Épisode entier en 16:9 pour YouTube, reels en 9:16 pour Facebook, Instagram et TikTok. |
 | Jugements | Bukhari, Muslim et Tirmidhi | Tirmidhi seulement si al-Albani juge le hadith sahih ou hasan (`content/policy.yaml`, vérifié par `scripts/validate.py`). |
 | Carte d'un hadith | Paroles du Prophète ﷺ seulement | Extraites du texte arabe par une règle fixe (entre le premier et le dernier guillemet) ; rapporteur et référence en légende. |
 | Signe ۞ | Gardé | Le texte uthmani s'affiche exactement tel que publié. |
@@ -62,10 +62,10 @@ Règles : une citation n'existe que par son id ; une langue de plus est une clé
 | --- | --- | --- | --- | --- |
 | 1 | Accroche | « يا رب »… qu'on dit sans y penser, dans la peur (attente d'un résultat) comme dans le désir : ce n'est pas une habitude, c'est une adoration. | Tirmidhi 3247 (« الدعاء هو العبادة ») | 1 |
 | 2 | Promesse | Pourquoi : on reconnaît son besoin de Dieu et Sa puissance. Puis « قال ربنا سبحانه وتعالى » et le verset de la promesse. Fin : « 3 idées reçues, la 1re au prochain reel ». | Ghafir 40:60 | 1 |
-| 3 | Idée reçue 1 | « Demander, c'est refuser le destin. » Ayyub a invoqué. | Al-Anbiya 21:83 | 2 |
-| 4 | Preuve | Demander avec résolution, sans « si Tu veux ». | Bukhari 6339, Muslim 2679a | 2 |
-| 5 | Idée reçue 2 | « Tout est écrit, le du'a ne change rien. » | Tirmidhi 2139 ; Ar-Ra'd 13:39 | 3 |
-| 6 | Idée reçue 3 | « Je n'ai pas été exaucé. » | Bukhari 6340, Muslim 2735a et 2735c ; Ahmad (hors politique actuelle) | 4 |
-| 7 | Conclusion | Dieu est proche de celui qui L'invoque. | Al-Baqarah 2:186 | 5 |
+| 3 | Idée reçue 1 | « Je suis content de mon sort, je ne demande pas » : le du'a s'opposerait au contentement. Le narrateur annonce l'idée reçue. Ayyub, au cœur de l'épreuve, a invoqué son Seigneur (carte de nom, puis le verset) : le du'a n'est pas une objection, c'est un besoin. | Al-Anbiya 21:83 | 2 |
+| 4 | Preuve | Demander avec résolution, sans « si Tu veux » : rien n'est trop grand pour Dieu. Fin : « tout est écrit… que change le du'a ? » | Muslim 2679a | 2 |
+| 5 | Idée reçue 2 | « Tout est écrit, pourquoi demander ? » Rien ne repousse le décret sauf le du'a ; puis le verset ; le du'a lui-même fait partie du décret. Fin : « et si tu as beaucoup demandé sans rien voir ? » | Tirmidhi 2139 ; Ar-Ra'd 13:39 | 3 |
+| 6 | Idée reçue 3 | « J'ai demandé, rien n'est venu, j'ai arrêté. » Répondu tant qu'on ne s'impatiente pas ; et ce qui est demandé est donné, ou un mal équivalent est écarté : un du'a n'est jamais perdu. | Bukhari 6340 ; Tirmidhi 3573 (al-Albani : hasan sahih, à la place d'Ahmad) | 4 |
+| 7 | Conclusion | « Personne ne t'entend ? » Le verset de la proximité ; rappel des quatre reels en une phrase ; « n'arrête pas, et dis « يا رب » ». | Al-Baqarah 2:186 | 5 |
 
-La démo ne produit que le reel 1.
+Reels 2 à 5 proposés le 6 novembre 2026, à valider (script, traduction, voix). L'épisode 16:9 (YouTube) joue toutes les scènes dans l'ordre (≈ 4 min) ; chaque reel (9:16, 35 à 60 s) tient seul. Non repris des sources du plan : Bukhari 6339 (même sens que Muslim 2679a), Muslim 2735a et 2735c (même sens que Bukhari 6340), qui restent au registre.
