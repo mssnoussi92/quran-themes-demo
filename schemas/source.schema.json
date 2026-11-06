@@ -19,7 +19,22 @@
         "translation": { "type": "string" },
         "grade": { "enum": ["sahih", "hasan", "daif", "mawdu"] },
         "graded_by": { "type": "string" },
-        "url": { "type": "string", "format": "uri" },
+        "url": { "type": "string", "format": "uri", "description": "Page to read the source (quran.com, sunnah.com)" },
+        "origin": {
+          "description": "Where text_ar / text_en were fetched from (written by tools/sources/fetch.py)",
+          "type": "object",
+          "required": ["api", "text_ar", "text_en", "retrieved"],
+          "additionalProperties": false,
+          "properties": {
+            "api": { "type": "string" },
+            "text_ar": { "type": "string", "format": "uri" },
+            "text_en": { "type": "string", "format": "uri" },
+            "translator": { "type": "string" },
+            "book": { "type": "integer" },
+            "hadith_in_book": { "type": "integer" },
+            "retrieved": { "type": "string", "format": "date" }
+          }
+        },
         "status": { "enum": ["proposed", "validated", "excluded"] },
         "validated_by": { "type": "string" },
         "notes": { "type": "string" }
@@ -54,7 +69,11 @@
                 "additionalProperties": false,
                 "properties": {
                   "collection": { "type": "string", "pattern": "^[a-z]+$" },
-                  "number": { "type": "integer", "minimum": 1 }
+                  "number": { "type": "integer", "minimum": 1 },
+                  "narration": {
+                    "description": "Which narration when one number covers several (Muslim 2679a = 1): id ends with a, b...",
+                    "type": "integer", "minimum": 1, "maximum": 26
+                  }
                 }
               }
             }

@@ -15,6 +15,7 @@ Status: bootstrap. See `CLAUDE.md` for the rules and the task list, `docs/design
 | `schemas/` | JSON Schemas for the registry and the episodes |
 | `scripts/validate.py` | Checks the content against the schemas and the editorial rules |
 | `tools/tts/say.py` | Text to WAV with SILMA (MSA + English) or VoiceTut (Egyptian + English) |
+| `tools/sources/fetch.py` | Fills the registry texts from quran.com and hadith-api (`--check` in CI) |
 | `.github/workflows/` | Content validation and voice test |
 
 ## Quick start

@@ -41,6 +41,7 @@ schemas/                 JSON Schema du registre et des épisodes
 scripts/validate.py      vérification schémas + règles ci-dessus
 scripts/session-start.sh hook SessionStart (cloud uniquement)
 tools/tts/say.py         synthèse : un texte -> WAV (moteurs silma | voicetut)
+tools/sources/fetch.py   remplit text_ar / text_en du registre (quran.com v4, hadith-api) + origin
 requirements/            dépendances Python par moteur (un venv par moteur)
 infra/claude-cloud-setup.sh  script de setup de l'environnement cloud (copié dans l'UI)
 .github/workflows/       validate.yml, voice-test.yml
@@ -54,6 +55,10 @@ build/                   (ignoré) tout ce qui est généré
 # Vérifier le contenu (schémas + règles)
 uv run --with jsonschema --with pyyaml scripts/validate.py
 uv run --with jsonschema --with pyyaml scripts/validate.py --release   # exige des sources "validated"
+
+# Registre : remplir les textes depuis les API (ne valide rien), ou vérifier qu'ils n'ont pas bougé (CI)
+uv run --with ruamel.yaml tools/sources/fetch.py
+uv run --with ruamel.yaml tools/sources/fetch.py --check
 
 # Synthèse vocale (venvs créés par le setup cloud ou par la CI)
 /opt/venvs/silma/bin/python tools/tts/say.py --engine silma --in content/voice-test/01-narration-msa.txt --out build/tts/test.wav
@@ -75,7 +80,7 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 ## Tâches de la démo, dans l'ordre
 
 1. **Test de voix.** Lance le workflow `voice-test` (ou les commandes ci-dessus) et laisse le propriétaire choisir moteur et voix. VoiceTut ne parle que l'égyptien et l'anglais ; SILMA parle l'arabe standard et l'anglais.
-2. **Récupération des sources.** Écris `tools/sources/fetch.py` : remplit `text_ar` / `text_en` du registre depuis l'API quran.com v4 (texte uthmani, traduction Sahih International) et hadith-api (fawazahmed0). Le dépôt existant `mssnoussi92/quran-reels` fait déjà ce travail pour les versets : réutilise sa logique si le propriétaire attache ce dépôt.
+2. **Récupération des sources.** ✅ `tools/sources/fetch.py` remplit `text_ar` / `text_en` depuis quran.com v4 (uthmani, Sahih International) et hadith-api, avec `origin` (URL exactes) et `url` (page de lecture). Il ne valide jamais : le propriétaire passe chaque source en `validated` lui-même ; un texte validé qui change redevient `proposed`. Numérotation des hadiths = `arabicnumber` de hadith-api ; un numéro à plusieurs narrations (Muslim) prend `ref.narration` et une lettre (`hadith.muslim.2679a`). `validate.py` refuse un texte sans `origin`, la CI lance `fetch.py --check`.
 3. **Projet Remotion** dans `video/` (TypeScript). Une composition par format (`Reel916`, `Episode169`) qui lit `content/episodes/*.yaml`. Police coranique libre (Amiri Quran, OFL).
 4. **Modèles visuels** : `scene`, `ayah-card` (mots synchronisés via `segments=true` de l'API audio quran.com), `source-card`, `title-card`, sous-titres.
 5. **Kit de personnages** à partir d'Open Peeps (CC0) : narrateur + `amir` + `salma`, poses et expressions du catalogue, bouche animée selon le volume. Si openpeeps.com est bloqué par le réseau, demande au propriétaire de déposer l'archive dans `assets/characters/source/`.

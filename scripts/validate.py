@@ -65,10 +65,14 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
                 report.error(where, "duplicate id")
             registry[sid] = src
             ref = src["ref"]
+            # Texts come from an API (tools/sources/fetch.py writes origin), never typed by hand.
+            if (src.get("text_ar") or src.get("text_en")) and "origin" not in src:
+                report.error(where, "text without origin: fill it with tools/sources/fetch.py, never by hand")
             if src["type"] == "ayah" and sid != f"quran.{ref['surah']}.{ref['ayah']}":
                 report.error(where, "id does not match ref")
             if src["type"] == "hadith":
-                if sid != f"hadith.{ref['collection']}.{ref['number']}":
+                suffix = chr(ord("a") + ref["narration"] - 1) if "narration" in ref else ""
+                if sid != f"hadith.{ref['collection']}.{ref['number']}{suffix}":
                     report.error(where, "id does not match ref")
                 if ref["collection"] not in allowed and src["status"] != "excluded":
                     report.error(where, f"collection '{ref['collection']}' is outside content/policy.yaml; status must be excluded")
