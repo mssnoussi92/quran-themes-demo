@@ -15,7 +15,7 @@ Un reel `dua-01` en 9:16, rendu par GitHub Actions, qui contient :
 3. des sous-titres anglais sur toute la durée ;
 4. une carte de fin.
 
-Pas de publication sur les réseaux : c'est hors périmètre.
+Pas de publication automatique depuis ce dépôt : le propriétaire publie à la main (voir « Publication et licence »).
 
 ## Règles non négociables
 
@@ -125,7 +125,11 @@ Procédures à suivre dans toute session :
 - `new-theme` : d'un nouveau thème au script, en passant par les sources (proposées, jamais validées par l'IA), les idées reçues, les reels et une PR.
 - `write-hook` : l'accroche d'un épisode ou d'un reel. Elle reprend les techniques de la vidéo de référence du propriétaire (miroir, contraste, ancre sourcée, question en un mot, enjeu, promesse honnête ; analyse plan par plan dans `reference/dua-video-analysis.md`), dans le respect des règles ci-dessus.
 
+## Publication et licence (décisions du propriétaire, 2026-11-06)
+
+- **Marque** : ces vidéos sont publiées sur la **même page que Quran Words Daily** (Facebook `quranwordsdaily`, Instagram / TikTok / YouTube `quran_words_daily`), **à la main par le propriétaire** pour l'instant, à partir du MP4 de la pré-release `<reel>-latest`. Les règles de droits de la page s'appliquent donc (voir quran-reels : Rights Manager sur Facebook, Content ID sur YouTube).
+- **Licence** : MIT, comme quran-reels (`LICENSE`) ; Remotion garde sa propre licence (gratuite pour un particulier). Textes cités et récitations : à leurs éditeurs (README).
+
 ## Questions encore ouvertes
 
-- Marque : série dans Quran Words Daily ou page séparée (décision reportée).
-- Licence du dépôt (pas encore choisie).
+- **Récitateur de dua-01 avant la publication sur la page** : l'enregistrement d'Alafasy a été reconnu par Rights Manager sur cette page (quran-reels : 93:1-11 coupée sur Facebook le 2026-11-05, Alafasy écarté de sa rotation). Proposé : Minshawi murattal (dans la rotation de quran-reels, temps des mots sur quran.com, récitation 9). Décision du propriétaire.
