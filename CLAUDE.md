@@ -50,6 +50,7 @@ video/                   projet Remotion (TypeScript) : compositions Reel916 (10
   src/                   Root.tsx (compositions), data.ts (chargement), Video.tsx, templates/ (cartes provisoires)
   public/fonts/          Amiri Quran, Amiri, Lora (OFL, mêmes fichiers que quran-reels)
 build/                   (ignoré) tout ce qui est généré
+.claude/skills/          write-hook (accroche), new-theme (d'un thème au script validé)
 ```
 
 ## Commandes
@@ -91,7 +92,7 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 
 ## Tâches de la démo, dans l'ordre
 
-1. **Test de voix.** Lance le workflow `voice-test` (ou les commandes ci-dessus) et laisse le propriétaire choisir moteur et voix. VoiceTut ne parle que l'égyptien et l'anglais ; SILMA parle l'arabe standard et l'anglais.
+1. **Test de voix.** ✅ Le propriétaire a choisi **VoiceTut** (égyptien) le 2026-11-06 : `narration_language: ar-egy`, narration écrite en égyptien parlé. Voix entendue au test : `Mohamed` (défaut du workflow), à confirmer.
 2. **Récupération des sources.** ✅ `tools/sources/fetch.py` remplit `text_ar` / `text_en` depuis quran.com v4 (uthmani, Sahih International) et hadith-api, avec `origin` (URL exactes, jugements de hadith-api) et `url` (page de lecture). Il ne valide jamais : le propriétaire passe chaque source en `validated` lui-même ; une source validée dont le texte ou le jugement change redevient `proposed`. Numérotation des hadiths = `arabicnumber` de hadith-api ; un numéro à plusieurs narrations (Muslim) prend `ref.narration` et une lettre (`hadith.muslim.2679a`). `validate.py` refuse un texte sans `origin`, la CI lance `fetch.py --check`.
 3. **Projet Remotion** ✅ `video/` (Remotion 4, React 19, TypeScript) : `Reel916` (un reel, props `reel`) et `Episode169` (toutes les scènes) lisent `public/data/<épisode>.json`, produit par `scripts/prepare.ts` depuis `content/` (textes pris du registre, source exclue ou inconnue = erreur). Polices Amiri Quran (versets), Amiri (arabe), Lora (anglais). Cartes **provisoires** et durées **estimées** d'après le texte (`duration.provisional`, mention « DRAFT » à l'écran) jusqu'à l'audio réel. MP4 H.264 yuv420p BT.709. À reprendre en tâche 4 : guillemets intérieurs d'un hadith à plusieurs paroles (Muslim 2735c) mal placés en RTL.
 4. **Modèles visuels** : `scene`, `ayah-card` (mots synchronisés via `segments=true` de l'API audio quran.com), `source-card`, `title-card`, sous-titres.
@@ -99,6 +100,12 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
    - `source-card` (hadith) : **seulement les paroles du Prophète ﷺ**, extraites par une règle fixe : du premier au dernier guillemet `"` du `text_ar` (sans la chaîne de transmission ni le commentaire de Tirmidhi ; une question posée entre deux réponses reste, ex. Muslim 2735c). Rapporteur et référence en légende. Le registre garde le texte complet.
 5. **Kit de personnages** à partir d'Open Peeps (CC0) : narrateur + `amir` + `salma`, poses et expressions du catalogue, bouche animée selon le volume. Si openpeeps.com est bloqué par le réseau, demande au propriétaire de déposer l'archive dans `assets/characters/source/`.
 6. **Workflow `render.yml`** : rend `dua-01` en 9:16 et le publie en release, comme `voice-test`.
+
+## Skills (`.claude/skills/`)
+
+Procédures à suivre dans toute session :
+- `new-theme` : d'un nouveau thème au script, en passant par les sources (proposées, jamais validées par l'IA), les idées reçues, les reels et une PR.
+- `write-hook` : l'accroche d'un épisode ou d'un reel. Elle reprend les techniques de la vidéo de référence du propriétaire (miroir, contraste, ancre sourcée, question en un mot, enjeu, promesse honnête), dans le respect des règles ci-dessus.
 
 ## Questions encore ouvertes
 
