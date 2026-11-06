@@ -31,7 +31,9 @@ every 6 s on average over the whole video), a calm voice that still sounds like 
 
 Visual devices worth reusing (reference analysis, "Langage visuel"):
 - A single word full screen for the question (« ليه؟ », « إزاي؟! ») → a `title-card` of one word.
-- The answer written phrase by phrase as the voice says it → `title-card` text revealed in sync (task 4).
+- The answer written phrase by phrase as the voice says it → a `title-card` does it on its own: one
+  phrase per line, cut after « ، … . ؟ : », each written as the voice reaches it. Punctuate the line
+  where a new piece should appear (2 to 4 short pieces read best).
 - Several faces in a row for the stakes ("this is about all of us").
 - A generic, featureless character labelled « انت » that plays the viewer: the mirror beat made
   visible, cheap to animate, no identity. Not in `content/characters.yaml` yet: propose it to the

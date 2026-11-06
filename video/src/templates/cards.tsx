@@ -8,7 +8,7 @@ import { CharacterView, placement } from "../characters/Character";
 import { FONT } from "../fonts";
 import type { Format } from "../formats";
 import { COLOR } from "../theme";
-import type { ResolvedScene, WordTiming } from "../types";
+import type { PhraseTiming, ResolvedScene, WordTiming } from "../types";
 
 type CardProps = { scene: ResolvedScene; format: Format };
 
@@ -94,14 +94,49 @@ const Reference: React.FC<{ lines: (string | null)[] }> = ({ lines }) => (
   </div>
 );
 
-export const TitleCard: React.FC<CardProps> = ({ scene, format }) =>
-  scene.narration ? (
+/** A phrase appears this long before the voice says it, and takes REVEAL_FRAMES to come in. */
+const REVEAL_LEAD = 0.1;
+const REVEAL_FRAMES = 8;
+
+/** The phrases of a title card, timed on the take, when they are exactly the text shown. */
+const titlePhrases = (scene: ResolvedScene): PhraseTiming[] | null => {
+  const phrases = scene.media?.phrases ?? [];
+  const shown = (scene.narration?.ar ?? "").trim().replace(/\s+/g, " ");
+  return phrases.length > 1 && phrases.map((p) => p.text).join(" ") === shown ? phrases : null;
+};
+
+/** The line said by the voice, one phrase per line: the first is on the card from the start, the
+ * others are written as the voice reaches them (the answer revealed in rhythm, reference video). */
+export const TitleCard: React.FC<CardProps> = ({ scene, format }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const audioStart = useContext(AudioStart);
+  if (!scene.narration) return null;
+  const style = arabicStyle(FONT.arabic, fitSize(88, scene.narration.ar, 50), 700, 1.6);
+  const phrases = titlePhrases(scene);
+  return (
     <Stage format={format}>
-      <div dir="rtl" lang="ar" style={arabicStyle(FONT.arabic, fitSize(88, scene.narration.ar, 50), 700, 1.6)}>
-        {scene.narration.ar}
+      <div dir="rtl" lang="ar" style={style}>
+        {phrases
+          ? phrases.map((phrase, i) => {
+              const at = audioStart + Math.round((phrase.start - REVEAL_LEAD) * fps);
+              const t =
+                i === 0 || frame >= at + REVEAL_FRAMES
+                  ? 1
+                  : frame < at
+                    ? 0
+                    : spring({ frame: frame - at, fps, config: { damping: 200 }, durationInFrames: REVEAL_FRAMES });
+              return (
+                <div key={i} style={{ opacity: t, transform: `translateY(${(1 - t) * 18}px)` }}>
+                  {phrase.text}
+                </div>
+              );
+            })
+          : scene.narration.ar}
       </div>
     </Stage>
-  ) : null;
+  );
+};
 
 /** Word being recited at time t (seconds from the start of the scene), if any. */
 const currentWord = (words: WordTiming[], t: number) => words.find((w) => t >= w.start && t < w.end)?.position;
