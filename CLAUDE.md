@@ -47,7 +47,8 @@ tools/sources/fetch.py   remplit text_ar / text_en du registre (quran.com v4, ha
 tools/audio/build.py     audio d'un épisode -> build/audio/<épisode>/ : récitation (quran.com, temps des mots) + narration VoiceTut
 requirements/            dépendances Python par moteur (un venv par moteur)
 infra/claude-cloud-setup.sh  script de setup de l'environnement cloud (copié dans l'UI)
-.github/workflows/       validate.yml (contenu + video/), voice-test.yml (une voix par job), render.yml (audio + reel -> release)
+.github/workflows/       validate.yml (contenu + video/), voice-test.yml (une voix VoiceTut par job), render.yml (audio + reel -> release) ;
+                         sans apt-get (miroir Ubuntu bloqué une heure le 2026-11-06) : ffmpeg statique d'imageio-ffmpeg 0.8.1
 reference/               analyses de vidéos de référence (texte seulement : aucun visuel tiers, dépôt public)
 video/                   projet Remotion (TypeScript) : compositions Reel916 (1080x1920) et Episode169 (1920x1080)
   scripts/prepare.ts     content/ -> public/data/<épisode>.json (sources résolues depuis le registre, durées)

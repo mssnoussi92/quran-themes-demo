@@ -1,9 +1,10 @@
 name: voice-test
 
-# Reads the texts of content/voice-test/ with the TTS engines on CPU, converts the takes to MP3
-# and attaches them to the "voice-test-latest" pre-release (easy to download and play on a phone).
-# SILMA reads every text. Each VoiceTut voice reads the Egyptian narration and the hadith only, in
-# its own job: VoiceTut takes minutes per sentence on a runner's CPU.
+# Reads the Egyptian narration and the hadith of content/voice-test/ with VoiceTut on CPU, one job
+# per voice (VoiceTut takes minutes per sentence on a runner's CPU), converts the takes to MP3 and
+# attaches them to the "voice-test-latest" pre-release (easy to download and play on a phone).
+# SILMA is no longer read here: its torchaudio needs the system FFmpeg libraries (apt), and the
+# owner chose VoiceTut (2026-11-06); its earlier takes stay in the release.
 
 on:
   workflow_dispatch:
@@ -43,8 +44,7 @@ jobs:
           if bad:
               raise SystemExit(f"invalid voice name(s): {bad}")
           egy = "content/voice-test/02-narration-egy.txt content/voice-test/03-hadith-bukhari-6340.txt"
-          jobs = [{"engine": "silma", "voice": "default", "texts": "content/voice-test/*.txt"}]
-          jobs += [{"engine": "voicetut", "voice": v, "texts": egy} for v in voices]
+          jobs = [{"engine": "voicetut", "voice": v, "texts": egy} for v in voices]
           print("matrix=" + json.dumps({"include": jobs}))
           EOF
 
@@ -61,8 +61,16 @@ jobs:
 
       - uses: astral-sh/setup-uv@v6
 
-      - name: System packages
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg libsndfile1
+      # No apt: the Ubuntu mirror can hang for an hour (voice-test, 2026-11-06). Static ffmpeg build
+      # from imageio-ffmpeg (pip, pinned as in quran-reels), put on PATH as "ffmpeg".
+      - name: ffmpeg (static build)
+        run: |
+          uv venv .venv-tools
+          uv pip install --python .venv-tools/bin/python imageio-ffmpeg==0.8.1
+          mkdir -p "$HOME/.local/bin"
+          ln -sf "$(.venv-tools/bin/python -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())')" "$HOME/.local/bin/ffmpeg"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          "$HOME/.local/bin/ffmpeg" -hide_banner -version | head -1
 
       - name: Cache model weights
         uses: actions/cache@v4
@@ -114,7 +122,7 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           ls mp3/*.mp3
-          notes="AI-generated voices (SILMA: MSA + English; VoiceTut: Egyptian, one file per voice). Run: $RUN_URL"
+          notes="AI-generated voices. VoiceTut (Egyptian): one file per voice. SILMA (MSA + English): takes of 2026-11-06. Run: $RUN_URL"
           if ! gh release view voice-test-latest >/dev/null 2>&1; then
             gh release create voice-test-latest --prerelease --title "Voice test (latest)" --notes "$notes"
           fi
