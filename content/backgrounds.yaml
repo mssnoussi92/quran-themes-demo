@@ -1,0 +1,9 @@
+# Catalogue fermé des fonds de la scène `scene` (visual.background). Chaque fond est dessiné dans
+# video/src/backgrounds/ (aplats simples, sans texte ni personne) ; un épisode ne cite qu'un id d'ici.
+backgrounds:
+  waiting-room:
+    description: Salle d'attente, mur clair, rangée de sièges, horloge murale dont l'aiguille tourne
+  street:
+    description: Rue en journée, immeubles et vitrine éclairée
+  plain:
+    description: Fond uni clair, pour le narrateur face caméra

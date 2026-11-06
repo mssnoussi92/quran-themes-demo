@@ -27,14 +27,15 @@ Pas de publication sur les réseaux : c'est hors périmètre.
 - **Exemples honnêtes.** Une scène inventée est présentée comme une scène type (« imagine… »), jamais comme une histoire vraie. Aucun chiffre sans source.
 - **Voix déclarée.** La voix de synthèse est signalée comme générée par IA dans la description des vidéos.
 - **Open source et gratuit d'abord.** Remotion est gratuit pour un particulier (licence propre à Remotion, pas OSI). Le reste doit être libre (MIT, Apache 2.0, CC0, OFL).
-- **Catalogue fermé.** Modèles visuels, personnages, poses et expressions viennent de catalogues (`content/characters.yaml`, enums du schéma). Un épisode ne décrit jamais un dessin libre.
+- **Catalogue fermé.** Modèles visuels, personnages, poses, expressions et fonds viennent de catalogues (`content/characters.yaml`, `content/backgrounds.yaml`, enums du schéma). Un épisode ne décrit jamais un dessin libre ; un nouveau personnage, une nouvelle pose ou un nouveau fond s'ajoute au catalogue et le propriétaire le valide sur la planche (`docs/characters.png`).
 
 ## Arborescence
 
 ```
 content/
   policy.yaml            politique des sources (recueils de hadith acceptés, jugement exigé)
-  characters.yaml        catalogue fermé des personnages, poses, expressions
+  characters.yaml        catalogue fermé des personnages : apparence (pièces Open Peeps), poses -> corps, humeurs
+  backgrounds.yaml       catalogue fermé des fonds de la scène (salle d'attente, rue, uni)
   sources/*.yaml         registre des sources (ids stables, statut proposed/validated/excluded)
   episodes/*.yaml        scripts d'épisodes, découpés en scènes
   voice-test/*.txt       textes du test de voix
@@ -50,7 +51,8 @@ infra/claude-cloud-setup.sh  script de setup de l'environnement cloud (copié da
 reference/               analyses de vidéos de référence (texte seulement : aucun visuel tiers, dépôt public)
 video/                   projet Remotion (TypeScript) : compositions Reel916 (1080x1920) et Episode169 (1920x1080)
   scripts/prepare.ts     content/ -> public/data/<épisode>.json (sources résolues depuis le registre, durées)
-  src/                   Root.tsx (compositions), data.ts (chargement), Video.tsx, templates/ (cartes provisoires)
+  src/                   Root.tsx (compositions), data.ts (chargement), Video.tsx, templates/ (cartes, scène),
+                         characters/ (kit Open Peeps, bouche au volume), backgrounds/ (fonds), CharacterSheet.tsx
   public/fonts/          Amiri Quran, Amiri, Lora (OFL, mêmes fichiers que quran-reels)
 build/                   (ignoré) tout ce qui est généré
 .claude/skills/          write-hook (accroche), new-theme (d'un thème au script validé)
@@ -84,6 +86,7 @@ npm run typecheck
 npm run still -- Reel916 out/reel.png --frame=500    # une image
 npm run render -- Reel916 out/dua-01.mp4             # le reel dua-01 (≈ 40 s de calcul pour 30 s)
 npm run render -- Episode169 out/dua.mp4             # l'épisode entier en 16:9
+npm run still -- CharacterSheet ../docs/characters.png   # planche des personnages (validation des apparences)
 npm run render -- Reel916 out/x.mp4 --props='{"episode":"dua","reel":"dua-02","format":"reel","data":null}'
 ```
 
@@ -106,7 +109,7 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 4. **Modèles visuels** (en cours) : ✅ audio (`tools/audio/build.py` : récitation d'Alafasy et temps des mots via `recitations/7/by_ayah?fields=segments`, narration VoiceTut ; `prepare.ts` prend les vraies durées et copie l'audio dans `public/audio/`), ✅ `ayah-card` (mot récité surligné, crédit du récitateur), ✅ `source-card` (paroles entre « », question intermédiaire en retrait, référence + jugement « Al-Albani: Sahih » ; sous-titre anglais = `excerpt_en` du registre, passage vérifié de `text_en`), ✅ `title-card` (entrée animée) ; reste : `scene` (fonds, avec le kit de la tâche 5), révélation de la réponse au rythme de la voix.
    - `ayah-card` : texte uthmani **exactement tel que publié**, ۞ compris (comme quran-reels).
    - `source-card` (hadith) : **seulement les paroles du Prophète ﷺ**, extraites par une règle fixe : du premier au dernier guillemet `"` du `text_ar` (sans la chaîne de transmission ni le commentaire de Tirmidhi ; une question posée entre deux réponses reste, ex. Muslim 2735c). Rapporteur et référence en légende. Le registre garde le texte complet.
-5. **Kit de personnages** à partir d'Open Peeps (CC0) : narrateur + `amir` + `salma`, poses et expressions du catalogue, bouche animée selon le volume. Si openpeeps.com est bloqué par le réseau, demande au propriétaire de déposer l'archive dans `assets/characters/source/`.
+5. **Kit de personnages** ✅ (apparences à valider sur `docs/characters.png`) : Open Peeps (Pablo Stanley, CC0) par `react-peeps` (MIT). `content/characters.yaml` donne l'apparence et le corps de chaque pose ; `video/src/characters/peeps.ts` les visages par humeur (bouche fermée / ouverte) et l'emprise mesurée de chaque corps (un corps non mesuré est refusé par `prepare.ts`, comme tout nom de pièce inconnu). Assis : un banc sous les hanches ; buste : grand, coupé par le bas de l'image. `talking: true` : bouche ouverte quand le volume (RMS sur 0,1 s) dépasse 0,08. Fonds dessinés en aplats (`video/src/backgrounds/`), catalogue `content/backgrounds.yaml` vérifié par `validate.py`.
 6. **Workflow `render.yml`** (écrit) : à la main (épisode, reel, voix, `draft`) ; vérifie les sources (`validate.py --release`, sauf brouillon), produit l'audio (`tools/audio/build.py`, VoiceTut en CPU, lignes déjà synthétisées reprises du cache), rend `Reel916` et publie le MP4 dans la pré-release `<reel>-latest`. VoiceTut : ≈ 5 min pour la 1re phrase, ≈ 1,5 min ensuite (4 vCPU).
 
 ## Skills (`.claude/skills/`)

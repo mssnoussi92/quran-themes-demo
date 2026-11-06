@@ -10,8 +10,13 @@
 
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
+import { createRequire } from "node:module";
 import { parse } from "yaml";
-import type { Duration, EpisodeData, Media, ResolvedScene, ResolvedSource } from "../src/types.ts";
+import { BODY_BOX, MOOD_FACES, SEAT } from "../src/characters/peeps.ts";
+import type { Character, Duration, EpisodeData, Media, ResolvedScene, ResolvedSource } from "../src/types.ts";
+
+// react-peeps exports one table per kind of piece (Hair, Face, StandingPose...): names are checked there.
+const peeps = createRequire(import.meta.url)("react-peeps") as Record<string, Record<string, unknown>>;
 
 const ROOT = resolve(import.meta.dirname, "../..");
 const CONTENT = join(ROOT, "content");
@@ -83,10 +88,39 @@ type EpisodeFile = {
       background?: string;
       icon?: string;
       highlight?: "words" | "none";
-      characters?: ResolvedScene["visual"]["characters"];
+      characters?: { id: string; pose: string; mood: string; talking?: boolean }[];
     };
   }[];
 };
+
+type CatalogCharacter = {
+  look: { hair: string; facial_hair: string; accessory: string };
+  poses: Record<string, string>;
+  moods: string[];
+};
+
+/** A scene's character, resolved to its Open Peeps pieces; any unknown name is an error. */
+function resolveCharacter(c: { id: string; pose: string; mood: string; talking?: boolean },
+                          catalog: Record<string, CatalogCharacter>, where: string): Character {
+  const fail = (msg: string): never => {
+    throw new Error(`${where}: character ${c.id}: ${msg}`);
+  };
+  const spec = catalog[c.id] ?? fail("not in content/characters.yaml");
+  const body = spec.poses[c.pose] ?? fail(`pose '${c.pose}' not in the catalog`);
+  if (!spec.moods.includes(c.mood)) fail(`mood '${c.mood}' not in the catalog`);
+  const faces = MOOD_FACES[c.mood] ?? fail(`mood '${c.mood}' has no face in characters/peeps.ts`);
+  const kind = body in peeps.StandingPose ? "standing" : body in peeps.SittingPose ? "sitting"
+    : body in peeps.BustPose ? "bust" : fail(`'${body}' is not an Open Peeps body`);
+  const box = BODY_BOX[body] ?? fail(`body '${body}' has no measured box in characters/peeps.ts`);
+  const seat = kind === "sitting" ? SEAT[body] ?? fail(`sitting body '${body}' has no seat in characters/peeps.ts`) : null;
+  const { hair, facial_hair, accessory } = spec.look;
+  if (!(hair in peeps.Hair)) fail(`hair '${hair}' is not an Open Peeps piece`);
+  if (!(facial_hair in peeps.FacialHair)) fail(`facial hair '${facial_hair}' is not an Open Peeps piece`);
+  if (!(accessory in peeps.Accessories)) fail(`accessory '${accessory}' is not an Open Peeps piece`);
+  for (const f of [faces.closed, faces.open]) if (!(f in peeps.Face)) fail(`face '${f}' is not an Open Peeps piece`);
+  return { id: c.id, pose: c.pose, mood: c.mood, talking: c.talking ?? false, body, kind, box, seat,
+           hair, facial_hair, accessory, face: faces.closed, face_open: faces.open };
+}
 
 const yamlFiles = (dir: string) =>
   readdirSync(dir).filter((f) => f.endsWith(".yaml")).sort().map((f) => join(dir, f));
@@ -203,7 +237,19 @@ function main() {
     for (const entry of load<RegistryEntry[]>(file) ?? []) registry.set(entry.id, entry);
   }
 
+  const catalog = (load<{ characters: Record<string, CatalogCharacter> }>(join(CONTENT, "characters.yaml"))).characters;
+  const backgrounds = Object.keys(load<{ backgrounds: Record<string, unknown> }>(join(CONTENT, "backgrounds.yaml")).backgrounds);
+
   mkdirSync(OUT, { recursive: true });
+
+  // Every character of the catalog in every pose and mood, for the CharacterSheet still.
+  const sheet = Object.entries(catalog).map(([id, spec]) => ({
+    id,
+    poses: Object.keys(spec.poses).map((pose) =>
+      spec.moods.map((mood) => resolveCharacter({ id, pose, mood }, catalog, "content/characters.yaml")),
+    ),
+  }));
+  writeFileSync(join(OUT, "characters.json"), JSON.stringify(sheet, null, 2) + "\n");
   for (const file of yamlFiles(join(CONTENT, "episodes"))) {
     const ep = load<EpisodeFile>(file);
     const manifestPath = join(AUDIO, ep.episode, "manifest.json");
@@ -225,6 +271,9 @@ function main() {
         s.audio === "recitation"
           ? source?.text_ar ?? null
           : [s.narration?.ar, quoted].filter(Boolean).join(" ") || null;
+      if (s.visual.background && !backgrounds.includes(s.visual.background)) {
+        throw new Error(`${where}: background '${s.visual.background}' is not in content/backgrounds.yaml`);
+      }
       const media = s.audio === "none" ? null : mediaFor(ep.episode, manifest, s.id, spoken, source, where);
       const duration: Duration = media
         ? {
@@ -245,7 +294,7 @@ function main() {
           background: s.visual.background ?? null,
           icon: s.visual.icon ?? null,
           highlight: s.visual.highlight ?? "none",
-          characters: s.visual.characters ?? [],
+          characters: (s.visual.characters ?? []).map((c) => resolveCharacter(c, catalog, where)),
         },
         source,
         spoken_ar: spoken,

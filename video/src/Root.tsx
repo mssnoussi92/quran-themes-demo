@@ -1,4 +1,5 @@
-import { Composition } from "remotion";
+import { Composition, Still } from "remotion";
+import { CharacterSheet, sheetMetadata } from "./CharacterSheet";
 import { calculateMetadata } from "./data";
 import type { VideoProps } from "./data";
 import { FORMATS, FPS } from "./formats";
@@ -28,5 +29,6 @@ export const RemotionRoot: React.FC = () => (
       defaultProps={{ episode: "dua", reel: null, format: "episode", data: null } satisfies VideoProps}
       calculateMetadata={calculateMetadata}
     />
+    <Still id="CharacterSheet" component={CharacterSheet} width={1920} height={1080} defaultProps={{ data: null }} calculateMetadata={sheetMetadata} />
   </>
 );

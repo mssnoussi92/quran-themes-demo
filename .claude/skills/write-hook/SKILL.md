@@ -93,7 +93,8 @@ on the open loop of beat 7 that leads to the next reel.
 
 In `content/episodes/<theme>.yaml`, one scene per sentence, `id` `hook-1`, `hook-2`…, `role: hook`
 (then `evidence`, `promise`, `outro`), `reel: <reel id>`, `audio: tts`, `narration: {ar, en}`.
-Mirror and contrast scenes use `template: scene` with a catalog character; key words use
+Mirror and contrast scenes use `template: scene` with a catalog character and a catalog background
+(`content/backgrounds.yaml`); key words use
 `title-card`; the anchor is a `source-card` (hadith) or an `ayah-card` (verse). Example: reel
 `dua-01` in `content/episodes/dua.yaml`.
 

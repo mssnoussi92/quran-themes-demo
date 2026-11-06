@@ -16,8 +16,10 @@
   "dependencies": {
     "@remotion/cli": "4.0.541",
     "@remotion/fonts": "4.0.541",
+    "@remotion/media-utils": "4.0.541",
     "react": "19.2.0",
     "react-dom": "19.2.0",
+    "react-peeps": "0.1.10",
     "remotion": "4.0.541",
     "yaml": "2.8.1"
   },
