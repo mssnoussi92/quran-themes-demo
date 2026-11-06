@@ -8,11 +8,16 @@ verse for a recitation. Writes build/audio/<episode>/<scene>.(mp3|wav) and manif
 
   recitation  quran.com v4: the reciter's file for the verse and the time of each word
               (`segments`), reciter from content/policy.yaml. Never synthesised.
-  tts         tools/tts/say.py with VoiceTut (Egyptian Arabic) in its own venv. A scene is
-              synthesised again only when its text or the voice changed.
+  tts         tools/tts/say.py with VoiceTut (Egyptian Arabic) in its own venv. VoiceTut never says a
+              line the same way twice, so the takes the owner listened to and approved are locked
+              in content/audio/<episode>/ (FLAC + takes.json, `--lock <owner>`, only on the owner's
+              word) and always reused; a line is synthesised only when it has no locked take for
+              its text and voice. `--require-locked` (release renders) fails instead.
 
 Usage:
   python3 tools/audio/build.py --episode dua
+  python3 tools/audio/build.py --episode dua --lock mssnoussi92        # the owner approved these takes
+  python3 tools/audio/build.py --episode dua --require-locked --reel dua-01
   python3 tools/audio/build.py --episode dua --speaker Ahmed --tts-python /opt/venvs/voicetut/bin/python
 """
 from __future__ import annotations
@@ -56,16 +61,28 @@ def get(url: str, attempts: int = 5) -> bytes:
     raise AssertionError("unreachable")
 
 
+def ffmpeg_exe() -> str:
+    exe = os.environ.get("FFMPEG") or shutil.which("ffmpeg")
+    if not exe:
+        sys.exit("error: ffmpeg not found (install it, or set FFMPEG)")
+    return exe
+
+
+def transcode(src: Path, dest: Path, *codec: str) -> None:
+    subprocess.run([ffmpeg_exe(), "-loglevel", "error", "-y", "-i", str(src), *codec, str(dest)], check=True)
+
+
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
 def seconds(path: Path) -> float:
     """Length of an audio file. WAV: read from its header. Other formats: decoded by ffmpeg (no
     ffprobe needed, so the static build of imageio-ffmpeg is enough): its last reported out_time."""
     if path.suffix.lower() == ".wav":
         with wave.open(str(path)) as w:
             return round(w.getnframes() / w.getframerate(), 3)
-    ffmpeg = os.environ.get("FFMPEG") or shutil.which("ffmpeg")
-    if not ffmpeg:
-        sys.exit("error: ffmpeg not found (install it, or set FFMPEG)")
-    log = subprocess.run([ffmpeg, "-hide_banner", "-nostats", "-stats_period", "60", "-progress", "pipe:1",
+    log = subprocess.run([ffmpeg_exe(), "-hide_banner", "-nostats", "-stats_period", "60", "-progress", "pipe:1",
                           "-i", str(path), "-f", "null", "-"], check=True, capture_output=True, text=True).stdout
     times = re.findall(r"out_time_us=(\d+)", log)
     if not times:
@@ -188,6 +205,11 @@ def main() -> int:
                    help="python of the VoiceTut venv (env VOICETUT_PYTHON)")
     p.add_argument("--force", action="store_true", help="synthesise and download everything again")
     p.add_argument("--only", nargs="+", metavar="SCENE", help="only these scenes (the others keep their audio)")
+    p.add_argument("--lock", metavar="OWNER",
+                   help="store the current narration takes as validated by OWNER (only on the owner's word)")
+    p.add_argument("--require-locked", action="store_true",
+                   help="fail, before any synthesis, if a narration line has no validated take")
+    p.add_argument("--reel", help="with --require-locked or --lock: only this reel's scenes")
     args = p.parse_args()
     args.speaker = args.speaker or policy_value("voice")
 
@@ -199,6 +221,10 @@ def main() -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     manifest_path = out_dir / "manifest.json"
     old = {} if args.force or not manifest_path.is_file() else json.loads(manifest_path.read_text())["scenes"]
+    takes_dir = ROOT / "content" / "audio" / args.episode
+    takes_path = takes_dir / "takes.json"
+    takes = json.loads(takes_path.read_text(encoding="utf-8"))["takes"] if takes_path.is_file() else {}
+    in_reel = {s["id"] for s in data["scenes"] if not args.reel or s.get("reel") == args.reel}
 
     reciter = reciter_from_policy()
     scenes: dict[str, dict] = {}
@@ -224,14 +250,33 @@ def main() -> int:
             key = tts_key(text, args.speaker)
             prev = old.get(sid)
             dest = out_dir / f"{sid}.wav"
+            raw = dest.with_suffix(".raw.wav")
             scenes[sid] = {"kind": "tts", "file": dest.name, "engine": "voicetut", "speaker": args.speaker,
-                           "text": text, "key": key}
-            if prev and prev.get("key") == key and (dest.is_file() or dest.with_suffix(".raw.wav").is_file()):
+                           "text": text, "key": key, "take": "synthesised"}
+            take = takes.get(sid)
+            if take and take["key"] == key and (takes_dir / take["file"]).is_file():
+                # The validated take: always this one, never a new synthesis.
+                scenes[sid].update(take="locked", take_sha=take["sha256"])
+                if prev and prev.get("take_sha") == take["sha256"] and raw.is_file():
+                    scenes[sid]["seconds"] = prev["seconds"]
+                    if "tight" in prev:
+                        scenes[sid]["tight"] = prev["tight"]
+                else:
+                    transcode(takes_dir / take["file"], raw, "-c:a", "pcm_s16le")
+                    dest.unlink(missing_ok=True)
+                    print(f"tts {sid}: validated take ({take['validated_by']}, {take['locked']})")
+            elif prev and prev.get("key") == key and prev.get("take") != "locked" and (dest.is_file() or raw.is_file()):
                 scenes[sid]["seconds"] = prev["seconds"]
                 if "tight" in prev:
                     scenes[sid]["tight"] = prev["tight"]
             else:
                 to_synthesise.append((scene, dest))
+
+    if args.require_locked:
+        missing = [sid for sid, e in scenes.items() if e["kind"] == "tts" and e["take"] != "locked" and sid in in_reel]
+        if missing:
+            sys.exit(f"error: no validated take for {', '.join(missing)}: render a draft, let the owner listen, "
+                     f"then lock the takes the owner approves (tools/audio/build.py --lock <owner>)")
 
     if to_synthesise:
         synthesise(to_synthesise, args.speaker, args.tts_python)
@@ -252,6 +297,23 @@ def main() -> int:
         entry["seconds"] = seconds(final)
         entry["tight"] = TIGHT
         print(f"tts {sid}: {entry['seconds']} s ({removed} s of silence removed)")
+
+    if args.lock:
+        takes_dir.mkdir(parents=True, exist_ok=True)
+        for sid, entry in scenes.items():
+            if entry["kind"] != "tts" or sid not in in_reel or (args.only and sid not in args.only):
+                continue
+            flac = takes_dir / f"{sid}.flac"
+            transcode(out_dir / f"{sid}.raw.wav", flac, "-c:a", "flac", "-compression_level", "12")
+            takes[sid] = {"file": flac.name, "text": entry["text"], "engine": entry["engine"],
+                          "speaker": entry["speaker"], "key": entry["key"], "validated_by": args.lock,
+                          "locked": time.strftime("%Y-%m-%d"), "sha256": sha256(flac)}
+            entry.update(take="locked", take_sha=takes[sid]["sha256"])
+            print(f"locked {sid}: {flac.relative_to(ROOT)}")
+        takes_path.write_text(json.dumps(
+            {"note": "Narration takes validated by the owner (AI-generated voice, VoiceTut). Written by "
+                     "tools/audio/build.py --lock, never by hand.", "takes": dict(sorted(takes.items()))},
+            ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     manifest = {"episode": args.episode, "note": "AI-generated voice for the narration (VoiceTut); "
                 "verses are recited by a real reciter", "scenes": scenes}

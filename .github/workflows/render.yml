@@ -97,8 +97,14 @@ jobs:
           uv venv --python 3.12 .venv-voicetut
           uv pip install --python .venv-voicetut/bin/python --torch-backend cpu -r requirements/voicetut.txt
 
+      # A release render uses only the narration takes the owner validated (content/audio/<episode>/):
+      # it fails rather than synthesise a new take nobody listened to. A draft synthesises missing lines.
       - name: Audio (recitation and narration)
-        run: python3 tools/audio/build.py --episode "$EPISODE" --speaker "$SPEAKER" --tts-python .venv-voicetut/bin/python
+        run: |
+          locked=()
+          if [ "$DRAFT" != true ]; then locked=(--require-locked --reel "$REEL"); fi
+          python3 tools/audio/build.py --episode "$EPISODE" --speaker "$SPEAKER" \
+            --tts-python .venv-voicetut/bin/python "${locked[@]}"
 
       - name: Render the reel
         working-directory: video
