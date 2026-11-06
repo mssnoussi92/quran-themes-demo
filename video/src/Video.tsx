@@ -1,16 +1,10 @@
-import { TransitionSeries, springTiming } from "@remotion/transitions";
-import type { TransitionPresentation } from "@remotion/transitions";
-import { fade } from "@remotion/transitions/fade";
-import { iris } from "@remotion/transitions/iris";
-import { slide } from "@remotion/transitions/slide";
-import { wipe } from "@remotion/transitions/wipe";
 import { AbsoluteFill, Easing, Html5Audio, Sequence, interpolate, staticFile, useCurrentFrame } from "remotion";
 import { AudioStart } from "./audioStart";
 import { selectScenes } from "./data";
 import type { VideoProps } from "./data";
 import { FONT, loadFonts } from "./fonts";
-import { DEFAULT_TRANSITION, FORMATS, toFrames } from "./formats";
-import type { Format, TransitionStyle } from "./formats";
+import { FORMATS, TRANSITION_SECONDS, toFrames } from "./formats";
+import type { Format } from "./formats";
 import { AyahCard, NameCard, SceneCard, SourceCard, TitleCard } from "./templates/cards";
 import { Subtitles } from "./templates/Subtitles";
 import { COLOR } from "./theme";
@@ -66,9 +60,8 @@ function slots(scenes: ResolvedScene[], overlap: number): Slot[] {
 
 const BACKGROUND = `linear-gradient(180deg, ${COLOR.backgroundTop} 0%, ${COLOR.backgroundBottom} 100%)`;
 
-/** What the scene shows and plays, whatever the transition engine. Each scene is opaque (its own
- * background), so during a transition the scene coming in covers the one going out instead of
- * printing its text over it. */
+/** What the scene shows and plays. Each scene is opaque (its own background), so during a transition
+ * the scene coming in covers the one going out instead of printing its text over it. */
 const SceneBody: React.FC<{ slot: Slot; format: Format }> = ({ slot, format }) => {
   const { scene, lead, content } = slot;
   return (
@@ -89,16 +82,13 @@ const SceneBody: React.FC<{ slot: Slot; format: Format }> = ({ slot, format }) =
   );
 };
 
-/** Between two "scene" templates the move is a slide (or wipe); around cards, a fade (or iris). */
-const isSceneToScene = (a: ResolvedScene, b: ResolvedScene) =>
-  a.visual.template === "scene" && b.visual.template === "scene";
+// Between two "scene" templates the next one slides in from the left (Arabic reads right to left) and
+// pushes the other out; around cards, a cross-fade: the scene coming in (drawn on top) fades in over the
+// one going out, which stays as is. Ease in-out.
 
-// ---- "own": slide from the left (Arabic reads right to left) / cross-fade, ease in-out ----------------
-// Cross-fade: the scene coming in (drawn on top) fades in over the one going out, which stays as is.
+type MoveKind = "slide" | "fade" | null;
 
-type Move = "slide" | "fade" | null;
-
-const OwnMove: React.FC<{ enter: Move; exit: Move; slot: Slot; width: number; children: React.ReactNode }> = ({
+const Move: React.FC<{ enter: MoveKind; exit: MoveKind; slot: Slot; width: number; children: React.ReactNode }> = ({
   enter,
   exit,
   slot,
@@ -123,7 +113,7 @@ const OwnMove: React.FC<{ enter: Move; exit: Move; slot: Slot; width: number; ch
   return <AbsoluteFill style={style}>{children}</AbsoluteFill>;
 };
 
-const OwnTimeline: React.FC<{ list: Slot[]; format: Format }> = ({ list, format }) => {
+const Timeline: React.FC<{ list: Slot[]; format: Format }> = ({ list, format }) => {
   let from = 0;
   return (
     <>
@@ -131,17 +121,18 @@ const OwnTimeline: React.FC<{ list: Slot[]; format: Format }> = ({ list, format 
         // A scene starts where the previous one's content ends: its lead-in is that scene's exit.
         const start = from;
         from += slot.lead + slot.content;
-        const move = (a: ResolvedScene, b: ResolvedScene): Move => (isSceneToScene(a, b) ? "slide" : "fade");
+        const move = (a: ResolvedScene, b: ResolvedScene): MoveKind =>
+          a.visual.template === "scene" && b.visual.template === "scene" ? "slide" : "fade";
         return (
           <Sequence key={slot.scene.id} name={slot.scene.id} from={start} durationInFrames={slot.total}>
-            <OwnMove
+            <Move
               enter={i > 0 ? move(list[i - 1].scene, slot.scene) : null}
               exit={i < list.length - 1 ? move(slot.scene, list[i + 1].scene) : null}
               slot={slot}
               width={format.width}
             >
               <SceneBody slot={slot} format={format} />
-            </OwnMove>
+            </Move>
           </Sequence>
         );
       })}
@@ -149,51 +140,13 @@ const OwnTimeline: React.FC<{ list: Slot[]; format: Format }> = ({ list, format 
   );
 };
 
-// ---- "remotion" / "remotion-wipe-iris": @remotion/transitions, spring timing ------------------------
-
-const remotionMove = (style: TransitionStyle, a: ResolvedScene, b: ResolvedScene, format: Format) => {
-  const sceneToScene = isSceneToScene(a, b);
-  if (style === "remotion-wipe-iris") {
-    return (sceneToScene ? wipe({ direction: "from-left" }) : iris({ width: format.width, height: format.height })) as TransitionPresentation<Record<string, unknown>>;
-  }
-  return (sceneToScene ? slide({ direction: "from-left" }) : fade()) as TransitionPresentation<Record<string, unknown>>;
-};
-
-const RemotionTimeline: React.FC<{ list: Slot[]; format: Format; style: TransitionStyle; overlap: number }> = ({
-  list,
-  format,
-  style,
-  overlap,
-}) => (
-  <TransitionSeries>
-    {list.flatMap((slot, i) => [
-      i > 0 ? (
-        <TransitionSeries.Transition
-          key={`t-${slot.scene.id}`}
-          presentation={remotionMove(style, list[i - 1].scene, slot.scene, format)}
-          timing={springTiming({ config: { damping: 200 }, durationInFrames: overlap })}
-        />
-      ) : null,
-      <TransitionSeries.Sequence key={slot.scene.id} name={slot.scene.id} durationInFrames={slot.total}>
-        <SceneBody slot={slot} format={format} />
-      </TransitionSeries.Sequence>,
-    ])}
-  </TransitionSeries>
-);
-
-export const EpisodeVideo: React.FC<VideoProps> = ({ data, reel, format: formatId, transition }) => {
+export const EpisodeVideo: React.FC<VideoProps> = ({ data, reel, format: formatId }) => {
   if (!data) throw new Error("no episode data: calculateMetadata did not run");
   const format = FORMATS[formatId];
-  const choice = transition ?? DEFAULT_TRANSITION;
-  const overlap = toFrames(choice.seconds);
-  const list = slots(selectScenes(data, reel), overlap);
+  const list = slots(selectScenes(data, reel), toFrames(TRANSITION_SECONDS));
   return (
     <AbsoluteFill style={{ background: BACKGROUND }}>
-      {choice.style === "own" ? (
-        <OwnTimeline list={list} format={format} />
-      ) : (
-        <RemotionTimeline list={list} format={format} style={choice.style} overlap={overlap} />
-      )}
+      <Timeline list={list} format={format} />
     </AbsoluteFill>
   );
 };

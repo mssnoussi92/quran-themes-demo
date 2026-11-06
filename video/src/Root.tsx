@@ -2,7 +2,7 @@ import { Composition, Still } from "remotion";
 import { CharacterSheet, sheetMetadata } from "./CharacterSheet";
 import { calculateMetadata } from "./data";
 import type { VideoProps } from "./data";
-import { DEFAULT_TRANSITION, FORMATS, FPS } from "./formats";
+import { FORMATS, FPS } from "./formats";
 import { EpisodeVideo } from "./Video";
 
 // One composition per format, both fed by the same episode script.
@@ -16,7 +16,7 @@ export const RemotionRoot: React.FC = () => (
       height={FORMATS.reel.height}
       fps={FPS}
       durationInFrames={1}
-      defaultProps={{ episode: "dua", reel: "dua-01", format: "reel", transition: DEFAULT_TRANSITION, data: null } satisfies VideoProps}
+      defaultProps={{ episode: "dua", reel: "dua-01", format: "reel", data: null } satisfies VideoProps}
       calculateMetadata={calculateMetadata}
     />
     <Composition
@@ -26,7 +26,7 @@ export const RemotionRoot: React.FC = () => (
       height={FORMATS.episode.height}
       fps={FPS}
       durationInFrames={1}
-      defaultProps={{ episode: "dua", reel: null, format: "episode", transition: DEFAULT_TRANSITION, data: null } satisfies VideoProps}
+      defaultProps={{ episode: "dua", reel: null, format: "episode", data: null } satisfies VideoProps}
       calculateMetadata={calculateMetadata}
     />
     <Still id="CharacterSheet" component={CharacterSheet} width={1920} height={1080} defaultProps={{ data: null }} calculateMetadata={sheetMetadata} />

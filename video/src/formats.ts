@@ -18,11 +18,8 @@ export const FORMATS: Record<FormatId, Format> = {
 export const FPS = 30;
 
 /** Silent animated transition between two scenes: the next scene moves in while nobody speaks, and
- * its voice starts when the movement ends (owner's request, 2026-11-06). Chosen per render (props);
- * these are the defaults. "own": slide / cross-fade written here; "remotion": @remotion/transitions
- * slide / fade with a spring; "remotion-wipe-iris": @remotion/transitions wipe / iris. */
-export type TransitionStyle = "own" | "remotion" | "remotion-wipe-iris";
-export type TransitionChoice = { style: TransitionStyle; seconds: number };
-export const DEFAULT_TRANSITION: TransitionChoice = { style: "own", seconds: 0.3 };
+ * its voice starts when the movement ends (owner's request, 2026-11-06). 0.6 s: chosen by the owner
+ * among four variants (own 0.3 s / 0.6 s, @remotion/transitions slide-fade / wipe-iris 0.6 s). */
+export const TRANSITION_SECONDS = 0.6;
 
 export const toFrames = (seconds: number) => Math.max(1, Math.round(seconds * FPS));
