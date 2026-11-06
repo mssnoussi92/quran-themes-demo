@@ -1,0 +1,115 @@
+name: render
+
+# Renders one reel of an episode in 9:16 with its real audio (recitation + VoiceTut narration)
+# and attaches the MP4 to the "<reel>-latest" pre-release (easy to play on a phone).
+# A release render needs every quoted source validated (validate.py --release); a draft does not.
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "Episode (content/episodes/<episode>.yaml)"
+        default: dua
+      reel:
+        description: "Reel id"
+        default: dua-01
+      speaker:
+        description: "VoiceTut voice for the narration (see tools/tts/say.py --help)"
+        default: Mohammed
+      draft:
+        description: "Draft: render even if some quoted sources are not validated yet"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render-${{ inputs.reel }}
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    env:
+      EPISODE: ${{ inputs.episode }}
+      REEL: ${{ inputs.reel }}
+      SPEAKER: ${{ inputs.speaker }}
+      DRAFT: ${{ inputs.draft }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the inputs
+        run: |
+          [[ "$EPISODE" =~ ^[a-z0-9-]+$ && "$REEL" =~ ^[a-z0-9-]+$ && "$SPEAKER" =~ ^[A-Za-z]+$ ]] \
+            || { echo "::error::invalid episode, reel or speaker"; exit 1; }
+          test -f "content/episodes/$EPISODE.yaml" || { echo "::error::no content/episodes/$EPISODE.yaml"; exit 1; }
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Sources and editorial rules
+        run: |
+          if [ "$DRAFT" = true ]; then
+            uv run --with jsonschema --with pyyaml scripts/validate.py
+          else
+            uv run --with jsonschema --with pyyaml scripts/validate.py --release
+          fi
+
+      - name: System packages
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg libsndfile1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: video/package-lock.json
+
+      - name: Video dependencies
+        working-directory: video
+        run: npm ci --no-audit --no-fund && npm run data
+
+      - name: Cache model weights
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-voicetut-${{ hashFiles('requirements/voicetut.txt') }}
+
+      # Lines already synthesised with the same text and voice are reused (tools/audio/build.py).
+      - name: Cache episode audio
+        uses: actions/cache@v4
+        with:
+          path: build/audio/${{ inputs.episode }}
+          key: audio-${{ inputs.episode }}-${{ inputs.speaker }}-${{ hashFiles('content/**') }}
+          restore-keys: audio-${{ inputs.episode }}-${{ inputs.speaker }}-
+
+      - name: Install VoiceTut (CPU PyTorch)
+        run: |
+          uv venv --python 3.12 .venv-voicetut
+          uv pip install --python .venv-voicetut/bin/python --torch-backend cpu -r requirements/voicetut.txt
+
+      - name: Audio (recitation and narration)
+        run: python3 tools/audio/build.py --episode "$EPISODE" --speaker "$SPEAKER" --tts-python .venv-voicetut/bin/python
+
+      - name: Render the reel
+        working-directory: video
+        run: |
+          npm run data
+          props=$(printf '{"episode":"%s","reel":"%s","format":"reel","data":null}' "$EPISODE" "$REEL")
+          npx remotion render Reel916 "out/$REEL.mp4" --props="$props"
+          ffprobe -v error -show_entries format=duration:stream=codec_name,width,height,pix_fmt -of compact "out/$REEL.mp4"
+
+      - name: Attach the MP4 to the <reel>-latest pre-release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          tag="$REEL-latest"
+          kind=$([ "$DRAFT" = true ] && echo "Draft (some sources not validated yet)" || echo "Release render")
+          notes="$kind. Narration: AI-generated voice (VoiceTut, $SPEAKER). Verses: real recitation. Run: $RUN_URL"
+          if ! gh release view "$tag" >/dev/null 2>&1; then
+            gh release create "$tag" --prerelease --title "Reel $REEL (latest)" --notes "$notes"
+          fi
+          gh release upload "$tag" "video/out/$REEL.mp4" --clobber
+          gh release edit "$tag" --notes "$notes"

@@ -1,14 +1,26 @@
-// Provisional cards: they prove the data flow (registry texts, fonts, formats).
-// The real visual templates (word highlighting, characters, backgrounds) are task 4.
+// Cards (task 4): title, verse with the recited word highlighted, hadith, name, and the
+// placeholder of the "scene" template until the character kit (task 5).
+import { Fragment } from "react";
+import { spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { FONT } from "../fonts";
 import type { Format } from "../formats";
 import { COLOR } from "../theme";
-import type { ResolvedScene } from "../types";
+import type { ResolvedScene, WordTiming } from "../types";
 
 type CardProps = { scene: ResolvedScene; format: Format };
 
 /** Space left for the subtitles under the card, inside the safe area. */
 const SUBTITLE_RESERVE = { reel: 330, episode: 220 };
+
+const hasLetter = (token: string) => /\p{L}/u.test(token);
+
+/** The card enters with a short spring (scale and opacity). */
+const Enter: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const t = spring({ frame, fps, config: { damping: 200 }, durationInFrames: 12 });
+  return <div style={{ transform: `scale(${0.94 + 0.06 * t})`, opacity: t, width: "100%" }}>{children}</div>;
+};
 
 const Stage: React.FC<{ format: Format; children: React.ReactNode }> = ({ format, children }) => (
   <div
@@ -22,75 +34,147 @@ const Stage: React.FC<{ format: Format; children: React.ReactNode }> = ({ format
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      gap: 36,
       textAlign: "center",
+    }}
+  >
+    <Enter>{children}</Enter>
+  </div>
+);
+
+/** A framed panel for quotations: verses and hadiths. */
+const Panel: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: 30,
+      padding: "48px 44px",
+      borderRadius: 32,
+      background: COLOR.panel,
+      border: `2px solid ${COLOR.panelBorder}`,
     }}
   >
     {children}
   </div>
 );
 
-/** Long texts get a smaller size (rough rule until task 4 fits text to the box). */
+/** Long texts get a smaller size. */
 const fitSize = (base: number, text: string, comfortable: number) =>
   Math.round(base * Math.min(1, Math.sqrt(comfortable / Math.max(1, text.length))));
 
-const Arabic: React.FC<{ text: string; family: string; size: number; weight?: number; lineHeight?: number }> = ({
-  text,
-  family,
-  size,
-  weight = 400,
-  lineHeight = 1.8,
-}) => (
-  <div
-    dir="rtl"
-    lang="ar"
-    style={{ fontFamily: family, fontSize: size, fontWeight: weight, lineHeight, color: COLOR.text, textWrap: "balance" }}
-  >
-    {text}
-  </div>
-);
+const arabicStyle = (family: string, size: number, weight = 400, lineHeight = 1.8): React.CSSProperties => ({
+  fontFamily: family,
+  fontSize: size,
+  fontWeight: weight,
+  lineHeight,
+  color: COLOR.text,
+  textWrap: "balance",
+});
 
-const Reference: React.FC<{ text: string }> = ({ text }) => (
-  <div style={{ fontFamily: FONT.latin, fontSize: 34, color: COLOR.accent, letterSpacing: 1 }}>{text}</div>
+const Reference: React.FC<{ lines: (string | null)[] }> = ({ lines }) => (
+  <div style={{ display: "flex", flexDirection: "column", gap: 6, alignItems: "center" }}>
+    {lines.filter(Boolean).map((line, i) => (
+      <div
+        key={i}
+        style={{
+          fontFamily: `"${FONT.latin}", "${FONT.arabic}"`,
+          fontSize: i === 0 ? 34 : 26,
+          color: i === 0 ? COLOR.accent : COLOR.muted,
+          letterSpacing: i === 0 ? 1 : 0.5,
+        }}
+      >
+        {line}
+      </div>
+    ))}
+  </div>
 );
 
 export const TitleCard: React.FC<CardProps> = ({ scene, format }) =>
   scene.narration ? (
     <Stage format={format}>
-      <Arabic text={scene.narration.ar} family={FONT.arabic} size={fitSize(84, scene.narration.ar, 60)} weight={700} />
+      <div dir="rtl" lang="ar" style={arabicStyle(FONT.arabic, fitSize(88, scene.narration.ar, 50), 700, 1.6)}>
+        {scene.narration.ar}
+      </div>
     </Stage>
   ) : null;
 
+/** Word being recited at time t (seconds from the start of the scene), if any. */
+const currentWord = (words: WordTiming[], t: number) => words.find((w) => t >= w.start && t < w.end)?.position;
+
 export const AyahCard: React.FC<CardProps> = ({ scene, format }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
   const source = scene.source;
   if (!source) return null;
+  const words = scene.visual.highlight === "words" ? scene.media?.words ?? [] : [];
+  const active = currentWord(words, frame / fps);
+  // Positions count real words only: waqf signs (ۚ ۖ) and ۞ are shown but never highlighted.
+  let position = 0;
+  const tokens = source.display_ar.split(/\s+/).map((token) => ({
+    token,
+    position: hasLetter(token) ? ++position : null,
+  }));
   return (
     <Stage format={format}>
-      <Arabic
-        text={source.display_ar}
-        family={FONT.quran}
-        size={fitSize(format.id === "reel" ? 70 : 66, source.display_ar, 110)}
-        lineHeight={2.1}
-      />
-      <Reference text={source.reference} />
+      <Panel>
+        <div dir="rtl" lang="ar" style={arabicStyle(FONT.quran, fitSize(format.id === "reel" ? 72 : 66, source.display_ar, 110), 400, 2.1)}>
+          {tokens.map(({ token, position: p }, i) => (
+            <Fragment key={i}>
+              {i > 0 ? " " : null}
+              <span style={{ color: p !== null && p === active ? COLOR.accent : COLOR.text }}>{token}</span>
+            </Fragment>
+          ))}
+        </div>
+        <Reference lines={[source.reference, scene.media?.credit ?? null]} />
+      </Panel>
     </Stage>
   );
 };
 
+/** A hadith's words split at its inner quotation marks: the Prophet's words, and what was said in
+ * between (a question by the Companions, Muslim 2735c), without stray punctuation. */
+const hadithParts = (text: string) =>
+  text
+    .split('"')
+    .map((part) => part.replace(/^[\s.،:؛]+|[\s.،:؛]+$/g, ""))
+    .map((part, i) => ({ part, prophet: i % 2 === 0 }))
+    .filter(({ part }) => hasLetter(part));
+
 export const SourceCard: React.FC<CardProps> = ({ scene, format }) => {
   const source = scene.source;
   if (!source) return null;
+  const parts = source.type === "hadith" ? hadithParts(source.display_ar) : [{ part: source.display_ar, prophet: true }];
+  const size = fitSize(format.id === "reel" ? 76 : 68, source.display_ar, 60);
   return (
     <Stage format={format}>
-      <Arabic text={source.display_ar} family={FONT.arabic} size={fitSize(62, source.display_ar, 120)} />
-      <Reference text={source.reference} />
+      <Panel>
+        {parts.map(({ part, prophet }, i) => (
+          <div
+            key={i}
+            dir="rtl"
+            lang="ar"
+            style={{
+              ...arabicStyle(FONT.arabic, prophet ? size : Math.round(size * 0.7), prophet ? 700 : 400),
+              color: prophet ? COLOR.text : COLOR.muted,
+            }}
+          >
+            {prophet ? `«${part}»` : part}
+          </div>
+        ))}
+        <Reference lines={[source.reference, source.grade_note]} />
+      </Panel>
     </Stage>
   );
 };
 
 export const NameCard: React.FC<CardProps> = ({ scene, format }) => (
   <Stage format={format}>
-    <Arabic text={scene.mentions.join(" · ")} family={FONT.arabic} size={96} weight={700} />
+    <Panel>
+      <div dir="rtl" lang="ar" style={arabicStyle(FONT.arabic, 96, 700)}>
+        {scene.mentions.join(" · ")}
+      </div>
+    </Panel>
   </Stage>
 );
 
@@ -100,7 +184,7 @@ export const SceneCard: React.FC<CardProps> = ({ scene, format }) => (
     <div
       style={{
         width: "100%",
-        flex: 1,
+        height: format.id === "reel" ? 820 : 560,
         border: `3px dashed ${COLOR.muted}`,
         borderRadius: 28,
         display: "flex",
@@ -119,7 +203,7 @@ export const SceneCard: React.FC<CardProps> = ({ scene, format }) => (
           {c.id} · {c.pose} · {c.mood}
         </div>
       ))}
-      <div style={{ fontSize: 28 }}>placeholder: character kit and backgrounds come with tasks 4-5</div>
+      <div style={{ fontSize: 28 }}>placeholder: the character kit comes with task 5</div>
     </div>
   </Stage>
 );

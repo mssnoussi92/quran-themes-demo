@@ -1,4 +1,4 @@
-import { AbsoluteFill, Series, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Html5Audio, Series, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { selectScenes } from "./data";
 import type { VideoProps } from "./data";
 import { FONT, loadFonts } from "./fonts";
@@ -65,6 +65,7 @@ export const EpisodeVideo: React.FC<VideoProps> = ({ data, reel, format: formatI
       <Series>
         {selectScenes(data, reel).map((scene) => (
           <Series.Sequence key={scene.id} name={scene.id} durationInFrames={toFrames(scene.duration.seconds)}>
+            {scene.media ? <Html5Audio src={staticFile(scene.media.file)} /> : null}
             <Fade>
               <Card scene={scene} format={format} />
               <Subtitles scene={scene} format={format} />

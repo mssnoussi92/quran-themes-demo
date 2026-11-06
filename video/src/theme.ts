@@ -6,4 +6,6 @@ export const COLOR = {
   muted: "#a9b8c6",
   accent: "#d8b26a",
   subtitleBox: "rgba(6, 12, 20, 0.62)",
+  panel: "rgba(255, 255, 255, 0.04)",
+  panelBorder: "rgba(216, 178, 106, 0.35)",
 };

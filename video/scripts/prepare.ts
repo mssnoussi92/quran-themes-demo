@@ -1,19 +1,29 @@
 // content/ -> public/data/<episode>.json, the only data the compositions read.
 //
 // Resolves each scene's source id against the registry (content/sources/*.yaml): texts are
-// copied from there, never typed. Fails on an unknown or excluded source. Scene durations are
-// estimated from the text until the audio exists (tasks 4-5), and flagged `provisional`.
+// copied from there, never typed. Fails on an unknown or excluded source. When
+// tools/audio/build.py has produced the episode's audio (build/audio/<episode>/manifest.json),
+// each scene lasts as long as its audio, copied to public/audio/; otherwise the length is
+// estimated from the text and flagged `provisional`.
 //
 // Usage (from video/): node scripts/prepare.ts            (Node >= 22.18 runs TypeScript as is)
 
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
 import { parse } from "yaml";
-import type { Duration, EpisodeData, ResolvedScene, ResolvedSource } from "../src/types.ts";
+import type { Duration, EpisodeData, Media, ResolvedScene, ResolvedSource } from "../src/types.ts";
 
 const ROOT = resolve(import.meta.dirname, "../..");
 const CONTENT = join(ROOT, "content");
 const OUT = join(ROOT, "video", "public", "data");
+const PUBLIC = join(ROOT, "video", "public");
+const AUDIO = join(ROOT, "build", "audio");
+
+// Reciters of content/policy.yaml, as credited on screen.
+const RECITERS: Record<string, string> = { alafasy: "Mishari Rashid al-Afasy" };
+
+// Silence kept after each line before the next scene (seconds).
+const TAIL = { tts: 0.35, recitation: 0.6 };
 
 // Display names of the hadith collections allowed by content/policy.yaml (metadata, not quotations).
 const COLLECTIONS: Record<string, string> = {
@@ -36,8 +46,21 @@ type RegistryEntry = {
   ref: { surah?: number; ayah?: number; collection?: string; number?: number; narration?: number };
   text_ar: string | null;
   text_en: string | null;
+  excerpt_en?: string;
   status: "proposed" | "validated" | "excluded";
+  grade?: string;
+  graded_by?: string;
   origin?: { translator?: string };
+};
+
+type ManifestScene = {
+  kind: "tts" | "recitation";
+  file: string;
+  seconds: number;
+  text?: string;
+  source?: string;
+  reciter?: string;
+  words?: Media["words"];
 };
 
 type EpisodeFile = {
@@ -111,7 +134,9 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
     const letter = ref.narration ? String.fromCharCode(96 + ref.narration) : "";
     reference = `${name} ${ref.number}${letter}`;
     display_ar = prophetWords(entry.text_ar, entry.id);
-    display_en = betweenQuotes(entry.text_en) ?? entry.text_en;
+    // English: the quotation marks do not reliably surround the Prophet's words in the published
+    // translations, so the subtitle is the registry's `excerpt_en` (a checked passage) or the whole text.
+    display_en = entry.excerpt_en ?? entry.text_en;
   } else {
     throw new Error(`${where}: source type '${entry.type}' cannot be shown yet`);
   }
@@ -124,6 +149,10 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
     text_en: entry.text_en,
     display_ar,
     display_en,
+    grade_note:
+      entry.graded_by && !Object.values(COLLECTIONS).includes(entry.graded_by) && entry.grade
+        ? `${entry.graded_by}: ${entry.grade.charAt(0).toUpperCase()}${entry.grade.slice(1)}`
+        : null,
     translator: entry.origin?.translator ?? null,
   };
 }
@@ -142,6 +171,29 @@ function estimate(audio: ResolvedScene["audio"], text: string | null): Duration 
   };
 }
 
+/** The scene's audio from tools/audio/build.py, if it matches what the scene says now. */
+function mediaFor(episode: string, manifest: Record<string, ManifestScene> | null, sceneId: string,
+                  spoken: string | null, source: ResolvedSource | null, where: string): Media | null {
+  const entry = manifest?.[sceneId];
+  if (!entry) return null;
+  const current = entry.kind === "tts" ? entry.text === spoken : entry.source === source?.id;
+  if (!current) {
+    console.warn(`warning ${where}: audio is out of date (run tools/audio/build.py --episode ${episode})`);
+    return null;
+  }
+  const file = `audio/${episode}/${entry.file}`;
+  mkdirSync(join(PUBLIC, "audio", episode), { recursive: true });
+  copyFileSync(join(AUDIO, episode, entry.file), join(PUBLIC, file));
+  const reciter = entry.reciter ? RECITERS[entry.reciter] ?? entry.reciter : null;
+  return {
+    kind: entry.kind,
+    file,
+    seconds: entry.seconds,
+    words: entry.words ?? [],
+    credit: entry.kind === "recitation" && reciter ? `Recitation: ${reciter}` : null,
+  };
+}
+
 function main() {
   const registry = new Map<string, RegistryEntry>();
   const sourceFiles = yamlFiles(join(CONTENT, "sources"));
@@ -152,6 +204,10 @@ function main() {
   mkdirSync(OUT, { recursive: true });
   for (const file of yamlFiles(join(CONTENT, "episodes"))) {
     const ep = load<EpisodeFile>(file);
+    const manifestPath = join(AUDIO, ep.episode, "manifest.json");
+    const manifest = existsSync(manifestPath)
+      ? (JSON.parse(readFileSync(manifestPath, "utf8")) as { scenes: Record<string, ManifestScene> }).scenes
+      : null;
     const scenes: ResolvedScene[] = ep.scenes.map((s) => {
       const where = `${relative(ROOT, file)} [${s.id}]`;
       let source: ResolvedSource | null = null;
@@ -167,6 +223,14 @@ function main() {
         s.audio === "recitation"
           ? source?.text_ar ?? null
           : [s.narration?.ar, quoted].filter(Boolean).join(" ") || null;
+      const media = s.audio === "none" ? null : mediaFor(ep.episode, manifest, s.id, spoken, source, where);
+      const duration: Duration = media
+        ? {
+            seconds: Math.round((media.seconds + TAIL[media.kind]) * 100) / 100,
+            provisional: false,
+            basis: `audio: ${media.file} (${media.seconds} s) + ${TAIL[media.kind]} s`,
+          }
+        : estimate(s.audio, spoken);
       return {
         id: s.id,
         role: s.role,
@@ -182,7 +246,9 @@ function main() {
           characters: s.visual.characters ?? [],
         },
         source,
-        duration: estimate(s.audio, spoken),
+        spoken_ar: spoken,
+        media,
+        duration,
       };
     });
     const data: EpisodeData = {
@@ -196,7 +262,9 @@ function main() {
     const out = join(OUT, `${ep.episode}.json`);
     writeFileSync(out, JSON.stringify(data, null, 2) + "\n");
     const total = scenes.reduce((n, s) => n + s.duration.seconds, 0);
-    console.log(`${relative(ROOT, out)}: ${scenes.length} scenes, ${total.toFixed(1)} s (provisional)`);
+    const estimated = scenes.filter((s) => s.duration.provisional).length;
+    const how = estimated ? `${estimated} scene(s) estimated` : "real audio";
+    console.log(`${relative(ROOT, out)}: ${scenes.length} scenes, ${total.toFixed(1)} s (${how})`);
   }
 }
 

@@ -1,15 +1,16 @@
 name: voice-test
 
-# Reads every text in content/voice-test/ with both TTS engines on CPU,
-# converts the takes to MP3 and attaches them to the "voice-test-latest" pre-release
-# (easy to download and play on a phone).
+# Reads the texts of content/voice-test/ with the TTS engines on CPU, converts the takes to MP3
+# and attaches them to the "voice-test-latest" pre-release (easy to download and play on a phone).
+# SILMA reads every text. Each VoiceTut voice reads the Egyptian narration and the hadith only, in
+# its own job: VoiceTut takes minutes per sentence on a runner's CPU.
 
 on:
   workflow_dispatch:
     inputs:
-      voicetut_speaker:
-        description: "VoiceTut built-in voice (calm ones: Mohamed, Aly, Hanan)"
-        default: Mohamed
+      voicetut_speakers:
+        description: "VoiceTut voices, comma-separated. Men: Ahmed, Ali, Hassan, Karim, Mahmoud, Mohammed, Mostafa, Ramy, Shaker, Tareq, Yehia, Youssef. Women: Hadeer, Hanan, Mariam, Rana, Sarah, Yasmin, Yara"
+        default: Mohammed,Ahmed,Karim,Mahmoud,Hanan
   push:
     branches: [main]
     paths:
@@ -26,13 +27,35 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - id: matrix
+        env:
+          SPEAKERS: ${{ inputs.voicetut_speakers || 'Mohammed,Ahmed,Karim,Mahmoud,Hanan' }}
+        run: |
+          python3 - >> "$GITHUB_OUTPUT" <<'EOF'
+          import json, os, re
+          voices = [v.strip() for v in os.environ["SPEAKERS"].split(",") if v.strip()]
+          bad = [v for v in voices if not re.fullmatch(r"[A-Za-z]+", v)]
+          if bad:
+              raise SystemExit(f"invalid voice name(s): {bad}")
+          egy = "content/voice-test/02-narration-egy.txt content/voice-test/03-hadith-bukhari-6340.txt"
+          jobs = [{"engine": "silma", "voice": "default", "texts": "content/voice-test/*.txt"}]
+          jobs += [{"engine": "voicetut", "voice": v, "texts": egy} for v in voices]
+          print("matrix=" + json.dumps({"include": jobs}))
+          EOF
+
   synthesize:
+    needs: plan
+    name: synthesize (${{ matrix.engine }} ${{ matrix.voice }})
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     strategy:
       fail-fast: false
-      matrix:
-        engine: [silma, voicetut]
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v4
 
@@ -56,10 +79,12 @@ jobs:
       - name: Synthesize and convert to MP3
         env:
           ENGINE: ${{ matrix.engine }}
-          SPEAKER: ${{ inputs.voicetut_speaker || 'Mohamed' }}
+          VOICE: ${{ matrix.voice }}
+          TEXTS: ${{ matrix.texts }}
         run: |
-          ".venv-$ENGINE/bin/python" tools/tts/say.py --engine "$ENGINE" --speaker "$SPEAKER" \
-            --in content/voice-test/*.txt --out-dir build/tts
+          # shellcheck disable=SC2086  # TEXTS is a list of paths and globs
+          ".venv-$ENGINE/bin/python" tools/tts/say.py --engine "$ENGINE" --speaker "$VOICE" \
+            --in $TEXTS --out-dir build/tts
           for f in build/tts/*.wav; do
             ffmpeg -loglevel error -y -i "$f" -codec:a libmp3lame -qscale:a 2 "${f%.wav}.mp3"
           done
@@ -67,7 +92,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: voice-test-${{ matrix.engine }}
+          name: voice-test-${{ matrix.engine }}-${{ matrix.voice }}
           path: build/tts/*.mp3
           if-no-files-found: error
 
@@ -89,7 +114,7 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           ls mp3/*.mp3
-          notes="AI-generated voices (SILMA: MSA + English; VoiceTut: Egyptian + English). Run: $RUN_URL"
+          notes="AI-generated voices (SILMA: MSA + English; VoiceTut: Egyptian, one file per voice). Run: $RUN_URL"
           if ! gh release view voice-test-latest >/dev/null 2>&1; then
             gh release create voice-test-latest --prerelease --title "Voice test (latest)" --notes "$notes"
           fi
