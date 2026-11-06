@@ -12,7 +12,8 @@ Hors périmètre : la publication, et l'automatisation de bout en bout. Chaque �
 
 | Sujet | Décision | Conséquence |
 | --- | --- | --- |
-| Narration | Arabe standard ou égyptien | Le test de voix compare SILMA (arabe standard) et VoiceTut (égyptien). Versets et hadiths restent cités en arabe classique. |
+| Narration | **Égyptien, VoiceTut** (choix du 6 novembre 2026, après le test de voix) | Narration écrite en égyptien parlé. Versets (récitation) et hadiths (texte du registre) restent en arabe classique. |
+| Accroche | Modèle : une vidéo de référence égyptienne sur le du'a (6 novembre 2026), son accroche seulement | Skill `write-hook` : miroir, contraste, ancre sourcée, « ليه؟ », enjeu, promesse honnête ; skill `new-theme` pour les autres thèmes. |
 | Voix | Synthèse | « Voix générée par IA » dans chaque description. |
 | Personnages | Dessin animé ; jamais pour un prophète, un Compagnon ou une personne connue | Kit SVG à partir d'Open Peeps (CC0). Carte de nom pour les personnes réelles. |
 | Machine | Démo sur GitHub, dépôt dédié | Rendu et synthèse dans GitHub Actions. Le M920q devient le plan B. |
@@ -59,8 +60,8 @@ Règles : une citation n'existe que par son id ; une langue de plus est une clé
 
 | # | Rôle | Contenu | Source candidate | Reel |
 | --- | --- | --- | --- | --- |
-| 1 | Accroche | Quelqu'un attend un résultat d'analyse et tourne en rond. | — | 1 |
-| 2 | Promesse | Le du'a, c'est reconnaître son besoin de Dieu ; Il promet de répondre. | Ghafir 40:60 | 1 |
+| 1 | Accroche | « يا رب »… qu'on dit sans y penser, dans la peur (attente d'un résultat) comme dans le désir : ce n'est pas une habitude, c'est une adoration. | Tirmidhi 3247 (« الدعاء هو العبادة ») | 1 |
+| 2 | Promesse | Pourquoi : on reconnaît son besoin de Dieu et Sa puissance. Le Prophète ﷺ a récité ensuite le verset de la promesse. Fin : « 3 idées reçues, la 1re au prochain reel ». | Ghafir 40:60 | 1 |
 | 3 | Idée reçue 1 | « Demander, c'est refuser le destin. » Ayyub a invoqué. | Al-Anbiya 21:83 | 2 |
 | 4 | Preuve | Demander avec résolution, sans « si Tu veux ». | Bukhari 6339, Muslim 2679a | 2 |
 | 5 | Idée reçue 2 | « Tout est écrit, le du'a ne change rien. » | Tirmidhi 2139 ; Ar-Ra'd 13:39 | 3 |

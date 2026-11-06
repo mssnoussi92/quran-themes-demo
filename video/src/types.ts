@@ -18,6 +18,8 @@ export type ResolvedSource = {
   text_en: string;
   /** What a card shows: the whole verse, or only the Prophet's words for a hadith. */
   display_ar: string;
+  /** Same rule on the English text (whole text when it has no pair of quotation marks). */
+  display_en: string;
   translator: string | null;
 };
 

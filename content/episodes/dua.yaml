@@ -1,46 +1,119 @@
 # Épisode Du'a. La démo ne produit que le reel dua-01 ; les autres reels sont décrits dans docs/design.md.
+# Script de dua-01 réécrit le 2026-11-06 avec le skill write-hook (.claude/skills/write-hook) :
+# à valider par le propriétaire (script et traduction), comme la source hadith.tirmidhi.3247.
 episode: dua
 title: { ar: "الدعاء", en: "Du'a" }
-narration_language: ar-msa   # ar-msa ou ar-egy : se décide après le test de voix
+narration_language: ar-egy   # VoiceTut (égyptien), choix du propriétaire le 2026-11-06
 reels:
   - id: dua-01
-    title: { ar: "أبسط ما تملك", en: "The simplest thing you have" }
+    title: { ar: "يا رب", en: "Ya Rabb" }
 scenes:
-  - id: hook
+  # Miroir : une question à la deuxième personne, l'émotion dès la première image.
+  - id: hook-1
     role: hook
     reel: dua-01
     audio: tts
     narration:
-      ar: "تَخَيَّلْ أَنَّكَ تَنْتَظِرُ نَتِيجَةَ تَحْلِيلٍ طِبِّيٍّ، وَالْوَقْتُ لَا يَمُرُّ. تُفَكِّرُ فِي كُلِّ الِاحْتِمَالَاتِ، وَتَنْسَى أَبْسَطَ مَا تَمْلِكُ: أَنْ تَرْفَعَ يَدَيْكَ وَتَدْعُوَ."
-      en: "Imagine you're waiting for a medical test result, and time just won't move. You think through every possibility, and forget the simplest thing you have: to raise your hands and make du'a."
+      ar: "«يا رب»… قلتها كام مرة النهارده؟"
+      en: "“Ya Rabb”… how many times have you said it today?"
     visual:
       template: scene
       background: waiting-room
       characters:
         - { id: amir, pose: sitting, mood: worried, talking: false }
+  # Contraste : la peur…
+  - id: hook-2
+    role: hook
+    reel: dua-01
+    audio: tts
+    narration:
+      ar: "لما تكون مستني نتيجة تحليل، وقلبك بيدق…"
+      en: "When you're waiting for a test result, heart pounding…"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: worried, talking: false }
+  # … et le désir.
+  - id: hook-3
+    role: hook
+    reel: dua-01
+    audio: tts
+    narration:
+      ar: "أو لما تبقى نفسك في حاجة أوي…"
+      en: "Or when you want something so badly…"
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: amir, pose: standing, mood: smiling, talking: false }
+  # Nommer : le mot clé à l'écran.
+  - id: hook-4
+    role: hook
+    reel: dua-01
+    audio: tts
+    narration:
+      ar: "دي مش مجرد عادة… دي عبادة."
+      en: "That's not just a habit… it's worship."
+    visual:
+      template: title-card
+  # Ancre : la voix lit l'introduction, puis les paroles du Prophète ﷺ prises dans le registre.
+  - id: anchor
+    role: evidence
+    reel: dua-01
+    source: hadith.tirmidhi.3247
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "النبي صلى الله عليه وسلم قال:"
+      en: "The Prophet ﷺ said:"
+    visual:
+      template: source-card
+  # Question en un mot, réponse aussitôt.
+  - id: why
+    role: evidence
+    reel: dua-01
+    audio: tts
+    narration:
+      ar: "ليه؟"
+      en: "Why?"
+    visual:
+      template: title-card
+  - id: because
+    role: evidence
+    reel: dua-01
+    audio: tts
+    narration:
+      ar: "عشان لما بتقول «يا رب»، إنت بتعترف إنك محتاجله… وإنه يقدر."
+      en: "Because when you say “Ya Rabb”, you admit you need Him… and that He can."
+    visual:
+      template: title-card
+  # Promesse : le verset que le Prophète ﷺ a récité après (Tirmidhi 3247 : « ثم قرأ »).
   - id: promise-intro
     role: promise
     reel: dua-01
     audio: tts
+    mentions: ["النبي ﷺ"]
     narration:
-      ar: "وَقَدْ وَعَدَ اللَّهُ وَعْدًا وَاضِحًا."
-      en: "And God made a clear promise."
+      ar: "وبعدها قرأ الآية دي:"
+      en: "Then he recited this verse:"
     visual:
       template: title-card
   - id: promise
-    role: evidence
+    role: promise
     reel: dua-01
     source: quran.40.60
     audio: recitation          # vraie récitation (Alafasy), jamais de synthèse
     visual:
       template: ayah-card
       highlight: words
+  # Boucle ouverte honnête : les 3 idées reçues sont les reels dua-02 à dua-04 (docs/design.md).
   - id: outro
     role: outro
     reel: dua-01
     audio: tts
     narration:
-      ar: "ارْفَعْ يَدَيْكَ الْآنَ."
-      en: "Raise your hands now."
+      ar: "بس فيه تلات أفكار غلط عن الدعاء… يمكن تكون مصدق واحدة منهم. أولها في الجاي."
+      en: "But there are three wrong ideas about du'a… you might believe one of them. The first one is next."
     visual:
       template: title-card

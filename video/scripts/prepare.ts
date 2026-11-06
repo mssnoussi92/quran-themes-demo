@@ -71,16 +71,22 @@ const load = <T>(path: string): T => parse(readFileSync(path, "utf8")) as T;
 /** Words that are pronounced: tokens with at least one letter (waqf signs such as ۚ do not count). */
 const countWords = (text: string) => text.split(/\s+/).filter((t) => /[\p{L}]/u.test(t)).length;
 
+/** Text between the first and the last quotation mark, or null when there is no such pair.
+ * Invisible RLM marks (U+200F) and extra spaces are removed. */
+function betweenQuotes(text: string): string | null {
+  const first = text.indexOf('"');
+  const last = text.lastIndexOf('"');
+  if (first < 0 || last <= first) return null;
+  return text.slice(first + 1, last).replace(/\u200f/g, "").replace(/\s+/g, " ").trim();
+}
+
 /** The Prophet's words in a hadith: from the first to the last quotation mark of the Arabic text
  * (owner's decision, 2026-11-06). Drops the chain of narrators and any commentary after. A question
- * asked between two answers stays (Muslim 2735c). Invisible RLM marks and extra spaces are removed. */
+ * asked between two answers stays (Muslim 2735c). */
 function prophetWords(textAr: string, id: string): string {
-  const first = textAr.indexOf('"');
-  const last = textAr.lastIndexOf('"');
-  if (first < 0 || last <= first) {
-    throw new Error(`${id}: no quotation marks in text_ar, cannot isolate the Prophet's words`);
-  }
-  return textAr.slice(first + 1, last).replace(/‏/g, "").replace(/\s+/g, " ").trim();
+  const words = betweenQuotes(textAr);
+  if (!words) throw new Error(`${id}: no quotation marks in text_ar, cannot isolate the Prophet's words`);
+  return words;
 }
 
 function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
@@ -93,6 +99,7 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
   let type: ResolvedSource["type"];
   let reference: string;
   let display_ar: string;
+  let display_en = entry.text_en;
   if (entry.type === "ayah") {
     type = "ayah";
     reference = `Quran ${ref.surah}:${ref.ayah}`;
@@ -104,6 +111,7 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
     const letter = ref.narration ? String.fromCharCode(96 + ref.narration) : "";
     reference = `${name} ${ref.number}${letter}`;
     display_ar = prophetWords(entry.text_ar, entry.id);
+    display_en = betweenQuotes(entry.text_en) ?? entry.text_en;
   } else {
     throw new Error(`${where}: source type '${entry.type}' cannot be shown yet`);
   }
@@ -115,6 +123,7 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
     text_ar: entry.text_ar,
     text_en: entry.text_en,
     display_ar,
+    display_en,
     translator: entry.origin?.translator ?? null,
   };
 }
@@ -151,7 +160,13 @@ function main() {
         if (!entry) throw new Error(`${where}: source ${s.source} is not in content/sources/`);
         source = resolveSource(entry, where);
       }
-      const spoken = s.audio === "recitation" ? source?.text_ar ?? null : s.narration?.ar ?? null;
+      // What is heard: the recitation of the verse, or the narration followed by the hadith's words
+      // when the scene quotes one (the narration introduces it, the registry supplies it).
+      const quoted = source?.type === "hadith" ? source.display_ar : null;
+      const spoken =
+        s.audio === "recitation"
+          ? source?.text_ar ?? null
+          : [s.narration?.ar, quoted].filter(Boolean).join(" ") || null;
       return {
         id: s.id,
         role: s.role,
