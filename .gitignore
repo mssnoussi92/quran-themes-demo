@@ -1,0 +1,22 @@
+# Generated output (audio, timings, renders)
+build/
+out/
+
+# Python
+__pycache__/
+*.pyc
+.venv*/
+
+# Node / Remotion
+node_modules/
+video/out/
+.remotion/
+
+# Media takes produced locally
+*.wav
+*.mp3
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/

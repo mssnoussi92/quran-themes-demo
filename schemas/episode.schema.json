@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mssnoussi92/quran-themes-demo/schemas/episode.schema.json",
+  "title": "Episode script",
+  "description": "One episode, split into scenes. Quotations are referenced by source id only.",
+  "type": "object",
+  "required": ["episode", "title", "narration_language", "reels", "scenes"],
+  "additionalProperties": false,
+  "properties": {
+    "episode": { "$ref": "#/$defs/slug" },
+    "title": { "$ref": "#/$defs/i18n" },
+    "narration_language": { "enum": ["ar-msa", "ar-egy"] },
+    "reels": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "title"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "#/$defs/slug" },
+          "title": { "$ref": "#/$defs/i18n" }
+        }
+      }
+    },
+    "scenes": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/scene" } }
+  },
+  "$defs": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "i18n": {
+      "type": "object",
+      "required": ["ar", "en"],
+      "additionalProperties": false,
+      "patternProperties": { "^[a-z]{2}$": { "type": "string", "minLength": 1 } }
+    },
+    "scene": {
+      "type": "object",
+      "required": ["id", "role", "audio", "visual"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "role": { "enum": ["hook", "promise", "misconception", "evidence", "conclusion", "outro"] },
+        "reel": { "$ref": "#/$defs/slug" },
+        "audio": { "enum": ["tts", "recitation", "none"] },
+        "narration": { "$ref": "#/$defs/i18n" },
+        "source": { "type": "string" },
+        "mentions": {
+          "description": "Real people named in the scene (prophets, Companions, known people). Forbids characters.",
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "visual": { "$ref": "#/$defs/visual" }
+      }
+    },
+    "visual": {
+      "type": "object",
+      "required": ["template"],
+      "additionalProperties": false,
+      "properties": {
+        "template": { "enum": ["scene", "ayah-card", "source-card", "name-card", "title-card"] },
+        "background": { "$ref": "#/$defs/slug" },
+        "icon": { "$ref": "#/$defs/slug" },
+        "highlight": { "enum": ["words", "none"] },
+        "characters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "pose", "mood"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string" },
+              "pose": { "type": "string" },
+              "mood": { "type": "string" },
+              "talking": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

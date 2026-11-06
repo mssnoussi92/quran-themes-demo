@@ -1,0 +1,25 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  content:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Content against schemas and editorial rules
+        run: uv run --with jsonschema --with pyyaml scripts/validate.py
+
+      - name: Python syntax
+        run: python3 -m py_compile tools/tts/say.py scripts/validate.py
+
+      - name: Shell scripts
+        run: shellcheck infra/*.sh scripts/*.sh

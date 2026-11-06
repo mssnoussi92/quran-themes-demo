@@ -1,0 +1,34 @@
+# Registre des versets. text_ar / text_en sont remplis par tools/sources/fetch.py (API quran.com v4),
+# jamais à la main. Statut : proposed -> validated (par le propriétaire) ou excluded.
+- id: quran.40.60
+  type: ayah
+  ref: { surah: 40, ayah: 60 }
+  text_ar: null
+  text_en: null
+  translation: sahih-international
+  status: proposed
+  notes: Ghafir 40:60, la promesse de répondre (reel dua-01)
+- id: quran.21.83
+  type: ayah
+  ref: { surah: 21, ayah: 83 }
+  text_ar: null
+  text_en: null
+  translation: sahih-international
+  status: proposed
+  notes: Al-Anbiya 21:83, l'invocation d'Ayyub (reel dua-02)
+- id: quran.13.39
+  type: ayah
+  ref: { surah: 13, ayah: 39 }
+  text_ar: null
+  text_en: null
+  translation: sahih-international
+  status: proposed
+  notes: Ar-Ra'd 13:39 (reel dua-03)
+- id: quran.2.186
+  type: ayah
+  ref: { surah: 2, ayah: 186 }
+  text_ar: null
+  text_en: null
+  translation: sahih-international
+  status: proposed
+  notes: Al-Baqarah 2:186, conclusion (reel dua-05)

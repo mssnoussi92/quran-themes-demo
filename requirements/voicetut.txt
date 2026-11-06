@@ -1,0 +1,5 @@
+# VoiceTut-TTS: Egyptian Arabic + English (OmniVoice backbone, not declared by voicetut-tts itself). Install with:
+#   uv pip install --python <venv>/bin/python --torch-backend cpu -r requirements/voicetut.txt
+# Keep in sync with infra/claude-cloud-setup.sh.
+voicetut-tts==0.1.1
+omnivoice==0.2.1

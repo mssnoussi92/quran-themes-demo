@@ -1,0 +1,8 @@
+# Politique des sources. Une source hors politique doit avoir le statut "excluded" et ne peut pas être citée.
+hadith:
+  # Décision du 6 novembre 2026 : Sahih al-Bukhari et Sahih Muslim.
+  # La réponse du propriétaire était inachevée (« Bukhari, Muslim et… ») : demander avant d'élargir.
+  collections: [bukhari, muslim]
+quran:
+  translation: sahih-international
+  reciter: alafasy

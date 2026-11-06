@@ -1,0 +1,48 @@
+# Registre des hadiths. Numérotation usuelle : Fath al-Bari pour Bukhari, Fuad Abd al-Baqi pour Muslim.
+# Vérifier la correspondance avec la numérotation de hadith-api lors de la récupération.
+# text_ar / text_en sont remplis par tools/sources/fetch.py, jamais à la main.
+- id: hadith.bukhari.6339
+  type: hadith
+  ref: { collection: bukhari, number: 6339 }
+  grade: sahih
+  graded_by: Sahih al-Bukhari
+  text_ar: null
+  text_en: null
+  status: proposed
+  notes: Demander avec résolution, sans « si Tu veux » (reel dua-02)
+- id: hadith.muslim.2679
+  type: hadith
+  ref: { collection: muslim, number: 2679 }
+  grade: sahih
+  graded_by: Sahih Muslim
+  text_ar: null
+  text_en: null
+  status: proposed
+  notes: Même sens, avec « qu'il intensifie son désir » (reel dua-02) ; numéro à confirmer
+- id: hadith.bukhari.6340
+  type: hadith
+  ref: { collection: bukhari, number: 6340 }
+  grade: sahih
+  graded_by: Sahih al-Bukhari
+  text_ar: null
+  text_en: null
+  status: proposed
+  notes: « Il est répondu à chacun tant qu'il ne s'impatiente pas » (reel dua-04)
+- id: hadith.muslim.2735
+  type: hadith
+  ref: { collection: muslim, number: 2735 }
+  grade: sahih
+  graded_by: Sahih Muslim
+  text_ar: null
+  text_en: null
+  status: proposed
+  notes: Même sens que Bukhari 6340 (reel dua-04)
+- id: hadith.tirmidhi.2139
+  type: hadith
+  ref: { collection: tirmidhi, number: 2139 }
+  grade: hasan
+  graded_by: al-Albani
+  text_ar: null
+  text_en: null
+  status: excluded
+  notes: « لا يرد القضاء إلا الدعاء ». Hors politique actuelle (Bukhari et Muslim seulement).

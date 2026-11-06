@@ -1,0 +1,4 @@
+# SILMA TTS: Modern Standard Arabic + English. Install with:
+#   uv pip install --python <venv>/bin/python --torch-backend cpu -r requirements/silma.txt
+# Keep in sync with infra/claude-cloud-setup.sh.
+silma-tts==1.0.5
