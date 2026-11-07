@@ -73,6 +73,12 @@ on the open loop of beat 7 that leads to the next reel.
 - English subtitles (`narration.en`): natural English, same length and rhythm, not word for word.
 - Contrast the two poles of the theme (hardship / ease, fear / hope, sin / repentance…).
 - No greeting, no channel name, no "in this video we will…" before beat 4.
+- Write for the ear of VoiceTut, which speaks Egyptian: ق becomes ء (« قريب » → « أريب »), ث becomes
+  س, a ة before a pause can be heard as ت (« عادة »). Keep the screen correct and add `say_ar` for the
+  voice when a word must sound otherwise: « قَرِيب » (vowelled) for a classical ق, « عاده » for a
+  silent ة (skill `narration-takes`, §4). Before a verse, the owner's formula: « قال ربنا سبحانه وتعالى: ».
+- The reel's open loop to the next reel (« ده اللي جاي », « أولها في الجاي ») is the end of its line
+  marked `reel_only_end`: the whole-episode videos stop the line before it.
 
 ## Project rules (CLAUDE.md, non negotiable)
 

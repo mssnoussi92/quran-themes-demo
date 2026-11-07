@@ -1,6 +1,7 @@
 {
   "name": "quran-themes-video",
   "private": true,
+  "license": "MIT",
   "description": "Remotion project: renders the episodes of content/episodes/ in 9:16 (reels) and 16:9 (episode)",
   "type": "module",
   "scripts": {

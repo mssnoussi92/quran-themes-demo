@@ -1,0 +1,33 @@
+# Publication texts (owner's request, 2026-11-07): each render attaches to its pre-release, for every
+# video, the title, the description and the hashtags to paste on each platform (the owner publishes
+# by hand, from the release page). video/scripts/publish.ts writes them from:
+#   - the episode's `publish` texts (title, description, theme hashtags) and each reel's: written
+#     with the script, validated by the owner (`validated_by`), required by a release render;
+#   - this file (the page's hashtags, platform limits, fixed lines);
+#   - the data: sources quoted (reference, grade, link), reciter and readers, YouTube chapters.
+# Same page as Quran Words Daily (quran-reels, config/project.yaml): same brand tag first, same
+# limits per platform.
+
+handle: "@quran_words_daily"
+
+hashtags:
+  # Order: brand, broad[0], the episode's first tag, broad[1:], the episode's other tags, the
+  # reel's own, hadith tags (a hadith is quoted), the reciter's (a verse is recited). Platforms
+  # that allow fewer keep the first ones.
+  brand: "#QuranWordsDaily"
+  broad: ["#Quran", "#القرآن_الكريم"]
+  hadith: ["#Hadith", "#حديث"]
+  reciters:
+    alafasy: ["#Alafasy", "#مشاري_العفاسي"]
+
+platforms:
+  facebook: { max_hashtags: 8 }
+  instagram_tiktok: { max_hashtags: 5, max_caption: 2200 }   # Instagram's caps (2200 characters)
+  youtube: { max_title: 100, max_description: 5000 }
+
+# Lines of every description. The synthetic voice is declared (CLAUDE.md, « Voix déclarée »).
+lines:
+  narration: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي"
+  characters: "Characters: Open Peeps by Pablo Stanley (CC0)"
+  # A hadith with no recorded reading is read by the synthetic voice: said in its source line.
+  hadith_ai_voice: "Reading: AI-generated voice"

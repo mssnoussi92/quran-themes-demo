@@ -5,6 +5,7 @@ Usage:
   uv run --with jsonschema --with pyyaml scripts/validate.py            # draft mode
   uv run --with jsonschema --with pyyaml scripts/validate.py --release  # every cited source must be validated
   uv run --with jsonschema --with pyyaml scripts/validate.py --release --reel dua-01  # and that reel's script
+                                                                                   # and publication texts
 
 Exit code 1 when there is at least one error. Warnings never fail the run.
 """
@@ -12,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -102,7 +104,38 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
                 rule = graded.get(ref["collection"])
                 if rule and src["status"] != "excluded":
                     check_grade(src, rule, where, report)
+                check_recording(src, where, report)
     return registry
+
+
+def prophet_words(text_ar: str) -> str:
+    """The words a hadith card shows: from the first to the last quotation mark (prepare.ts)."""
+    first, last = text_ar.find('"'), text_ar.rfind('"')
+    return text_ar[first + 1:last] if 0 <= first < last else ""
+
+
+def plain_words(text: str) -> list[str]:
+    """Words for comparing a reading with the text: no diacritics or punctuation, one alef, ى = ي,
+    ة = ه (what speech recognition writes varies there)."""
+    text = ARABIC_MARKS.sub("", text)
+    text = re.sub("[أإآٱ]", "ا", text).replace("ى", "ي").replace("ة", "ه").replace("ؤ", "و").replace("ئ", "ي")
+    return re.sub(r"[^\w\s]", " ", text).split()
+
+
+def check_recording(src: dict, where: str, report: Report) -> None:
+    """A recorded reading must say the words the card shows: what Whisper heard there (heard) is
+    compared with them. A difference is a warning (recognition errs too) until the owner has
+    listened and validated the recording."""
+    rec = src.get("recording")
+    if not rec:
+        return
+    if rec["end"] <= rec["start"]:
+        report.error(where, "recording: end must come after start")
+    if rec["status"] == "validated" and not rec.get("validated_by"):
+        report.error(where, "recording: validated needs validated_by (the owner, after listening)")
+    shown, heard = plain_words(prophet_words(src.get("text_ar") or "")), plain_words(rec["heard"])
+    if shown != heard and rec["status"] != "validated":
+        report.warn(where, f"recording: heard {len(heard)} words that differ from the {len(shown)} shown; listen to it")
 
 
 def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, release: bool, report: Report) -> None:
@@ -111,6 +144,7 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
     if not schema_check(validator, ep, rel(path), report):
         return
     reels = {r["id"] for r in ep["reels"]}
+    check_publish(ep, rel(path), report)
     seen: set[str] = set()
     for scene in ep["scenes"]:
         where = f"{rel(path)} [{scene['id']}]"
@@ -133,6 +167,9 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
                 report.error(where, f"source '{src['id']}' is excluded")
             elif src["status"] != "validated":
                 (report.error if release else report.warn)(where, f"source '{src['id']}' is not validated yet")
+            if src is not None and src.get("recording", {}).get("status") == "proposed":
+                (report.error if release else report.warn)(
+                    where, f"recording of '{src['id']}' ({src['recording']['reader']}) not validated by the owner yet")
         if template in ("ayah-card", "source-card") and "source" not in scene:
             report.error(where, f"template '{template}' needs a source")
 
@@ -148,6 +185,23 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
         # Narration needed for TTS scenes.
         if audio == "tts" and "narration" not in scene:
             report.error(where, "audio: tts needs a narration")
+
+        # Pronunciation and reel-only ends: the voice says the words shown, and an episode cut drops
+        # whole phrases at the end of the line, in both languages.
+        narration = scene.get("narration") or {}
+        if "say_ar" in scene:
+            if not narration.get("ar"):
+                report.error(where, "say_ar needs narration.ar")
+            elif spoken_words(scene["say_ar"]) != spoken_words(narration["ar"]):
+                report.error(where, "say_ar must say the words of narration.ar (only a silent ة written ه may differ)")
+        if "reel_only_end" in scene:
+            end = scene["reel_only_end"]
+            if not scene.get("reel"):
+                report.error(where, "reel_only_end needs a reel")
+            for lang in ("ar", "en"):
+                text, tail = (narration.get(lang) or "").strip(), end[lang].strip()
+                if not (text.endswith(" " + tail) and text[: -len(tail)].strip()):
+                    report.error(where, f"reel_only_end.{lang} must be the end of narration.{lang}, after a space")
 
         # Backgrounds: closed catalog too (content/backgrounds.yaml).
         if "background" in visual and visual["background"] not in backgrounds:
@@ -172,6 +226,40 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
                 report.error(where, f"mood '{ch['mood']}' not in catalog for '{ch['id']}'")
 
 
+ARABIC_MARKS = re.compile("[\u064b-\u0652\u0670\u0640]")
+
+
+def spoken_words(text: str) -> list[str]:
+    """Words of an Arabic line for comparing what is shown and what is said: no diacritics, no
+    punctuation, ة and ه alike (a silent ة can be written ه for the voice)."""
+    words = re.sub(r"[^\w\s]", " ", ARABIC_MARKS.sub("", text)).split()
+    return [w.replace("ة", "ه") for w in words]
+
+
+YOUTUBE_TITLE = 100
+
+
+def check_publish(ep: dict, where: str, report: Report) -> None:
+    """Publication texts (`publish`): one per reel and one for the whole episode, with its hashtags.
+    The YouTube title is « <en> · <ar> » (video/scripts/publish.ts, which checks the other limits)."""
+    if "publish" not in ep:
+        report.warn(where, "no publication texts for the whole episode (publish: title, description, hashtags)")
+    elif not ep["publish"].get("hashtags"):
+        report.warn(where, "publish: no theme hashtags")
+    for item in [ep, *ep["reels"]]:
+        texts = item.get("publish")
+        name = item.get("id", ep["episode"])
+        if texts is None:
+            if item is not ep:
+                report.warn(where, f"reel '{name}': no publication texts (publish: title, description)")
+            continue
+        title = f"{texts['title']['en']} · {texts['title']['ar']}"
+        if len(title) > YOUTUBE_TITLE:
+            report.error(where, f"{name}: YouTube title « {title} » has {len(title)} characters (max {YOUTUBE_TITLE})")
+        if re.search("[<>]", title):
+            report.error(where, f"{name}: no < or > in a YouTube title")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--release", action="store_true", help="fail on sources that are not validated")
@@ -187,11 +275,18 @@ def main() -> int:
     for path in episodes:
         check_episode(path, registry, catalog, backgrounds, args.release, report)
     if args.reel:
-        reels = {r["id"]: r for path in episodes for r in (load_yaml(path) or {}).get("reels", [])}
-        if args.reel not in reels:
+        owner = {r["id"]: (r, ep) for path in episodes for ep in [load_yaml(path) or {}] for r in ep.get("reels", [])}
+        if args.reel not in owner:
             report.error("content/episodes", f"reel '{args.reel}' does not exist")
-        elif args.release and not reels[args.reel].get("validated_by"):
-            report.error("content/episodes", f"reel '{args.reel}': script not validated by the owner (validated_by)")
+        elif args.release:
+            reel, ep = owner[args.reel]
+            if not reel.get("validated_by"):
+                report.error("content/episodes", f"reel '{args.reel}': script not validated by the owner (validated_by)")
+            # The texts published with it (its own, and the episode's hashtags) are validated too.
+            if not (reel.get("publish") or {}).get("validated_by"):
+                report.error("content/episodes", f"reel '{args.reel}': publication texts not validated by the owner (publish.validated_by)")
+            if not (ep.get("publish") or {}).get("validated_by"):
+                report.error("content/episodes", f"episode '{ep.get('episode')}': publication texts and hashtags not validated by the owner (publish.validated_by)")
 
     for line in report.warnings + report.errors:
         print(line)

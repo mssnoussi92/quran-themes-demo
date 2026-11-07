@@ -29,6 +29,7 @@
   graded_by: Sahih Muslim
   text_ar: حَدَّثَنَا يَحْيَى بْنُ أَيُّوبَ، وَقُتَيْبَةُ، وَابْنُ، حُجْرٍ قَالُوا حَدَّثَنَا إِسْمَاعِيلُ، - يَعْنُونَ ابْنَ جَعْفَرٍ - عَنِ الْعَلاَءِ، عَنْ أَبِيهِ، عَنْ أَبِي هُرَيْرَةَ، أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ ‏ "‏ إِذَا دَعَا أَحَدُكُمْ فَلاَ يَقُلِ اللَّهُمَّ اغْفِرْ لِي إِنْ شِئْتَ وَلَكِنْ لِيَعْزِمِ الْمَسْأَلَةَ وَلْيُعَظِّمِ الرَّغْبَةَ فَإِنَّ اللَّهَ لاَ يَتَعَاظَمُهُ شَىْءٌ أَعْطَاهُ ‏"‏ ‏.‏
   text_en: "Abu Huraira reported Allah's Messenger (ﷺ) as saying:When one of you makes a supplication (to his Lord) one should not say: O Allah, grant me pardon, if Thou so likest, but one should beg one's (Lord) with a will and full devotion, for there is nothing so great in the eye of Allah which He cannot grant"
+  excerpt_en: "When one of you makes a supplication (to his Lord) one should not say: O Allah, grant me pardon, if Thou so likest, but one should beg one's (Lord) with a will and full devotion, for there is nothing so great in the eye of Allah which He cannot grant"
   url: https://sunnah.com/muslim:2679a
   origin:
     api: hadith-api (fawazahmed0)
@@ -41,6 +42,16 @@
   status: validated
   validated_by: mssnoussi92
   notes: Même sens, avec « qu'il intensifie son désir » (reel dua-02). 2679 a 2 narrations (hadith-api 2679.01, .02), la 1re seule contient « وليعظم الرغبة »
+  recording:
+    reader: Ryadussalihin.org
+    item: https://archive.org/details/ar_Moslem_Reading_16
+    file: https://archive.org/download/ar_Moslem_Reading_16/ar_Moslem_Reading_49.mp3
+    start: 285.5
+    end: 299.7
+    heard: إذا دعا أحدكم فلا يقول اللهم اغفر لي إن شئت ولكن ليعزم المسألة وليعظم الرغبة فإن الله لا يتعاظمه شيء أعطاه
+    license: none stated on the archive.org item
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.bukhari.6340
   type: hadith
   ref: {collection: bukhari, number: 6340}
@@ -48,6 +59,7 @@
   graded_by: Sahih al-Bukhari
   text_ar: حَدَّثَنَا عَبْدُ اللَّهِ بْنُ يُوسُفَ، أَخْبَرَنَا مَالِكٌ، عَنِ ابْنِ شِهَابٍ، عَنْ أَبِي عُبَيْدٍ، مَوْلَى ابْنِ أَزْهَرَ عَنْ أَبِي هُرَيْرَةَ، أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ ‏ "‏ يُسْتَجَابُ لأَحَدِكُمْ مَا لَمْ يَعْجَلْ يَقُولُ دَعَوْتُ فَلَمْ يُسْتَجَبْ لِي ‏"‏‏.‏
   text_en: Narrated Abu Huraira:Allah's Messenger (ﷺ) said, "The invocation of anyone of you is granted (by Allah) if he does not show impatience (by saying, "I invoked Allah but my request has not been granted)
+  excerpt_en: "The invocation of anyone of you is granted (by Allah) if he does not show impatience (by saying, \"I invoked Allah but my request has not been granted)"
   url: https://sunnah.com/bukhari:6340
   origin:
     api: hadith-api (fawazahmed0)
@@ -60,6 +72,16 @@
   status: validated
   validated_by: mssnoussi92
   notes: « Il est répondu à chacun tant qu'il ne s'impatiente pas » (reel dua-04)
+  recording:
+    reader: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane
+    item: https://archive.org/details/bukhari_audiobook
+    file: https://archive.org/download/bukhari_audiobook/6340.mp3
+    start: 12.18
+    end: 17.85
+    heard: يستجاب لأحدكم ما لم يعجل يقول دعوت فلم يستجب لي
+    license: none stated on the archive.org item
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.muslim.2735a
   type: hadith
   ref: {collection: muslim, number: 2735, narration: 1}
@@ -105,6 +127,7 @@
   graded_by: al-Albani
   text_ar: حَدَّثَنَا مُحَمَّدُ بْنُ حُمَيْدٍ الرَّازِيُّ، وَسَعِيدُ بْنُ يَعْقُوبَ، قَالاَ حَدَّثَنَا يَحْيَى بْنُ الضُّرَيْسِ، عَنْ أَبِي مَوْدُودٍ، عَنْ سُلَيْمَانَ التَّيْمِيِّ، عَنْ أَبِي عُثْمَانَ النَّهْدِيِّ، عَنْ سَلْمَانَ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏ "‏ لاَ يَرُدُّ الْقَضَاءَ إِلاَّ الدُّعَاءُ وَلاَ يَزِيدُ فِي الْعُمُرِ إِلاَّ الْبِرُّ ‏"‏ ‏.‏ قَالَ أَبُو عِيسَى وَفِي الْبَابِ عَنْ أَبِي أُسَيْدٍ ‏.‏ وَهَذَا حَدِيثٌ حَسَنٌ غَرِيبٌ مِنْ حَدِيثِ سَلْمَانَ لاَ نَعْرِفُهُ إِلاَّ مِنْ حَدِيثِ يَحْيَى بْنِ الضُّرَيْسِ ‏.‏ وَأَبُو مَوْدُودٍ اثْنَانِ أَحَدُهُمَا يُقَالُ لَهُ فِضَّةٌ وَهُوَ الَّذِي رَوَى هَذَا الْحَدِيثَ اسْمُهُ فِضَّةٌ بَصْرِيٌّ وَالآخَرُ عَبْدُ الْعَزِيزِ بْنُ أَبِي سُلَيْمَانَ أَحَدُهُمَا بَصْرِيٌّ وَالآخَرُ مَدَنِيٌّ وَكَانَا فِي عَصْرٍ وَاحِدٍ وابو مودود الذي روى هذا الحديث أسمه فضة بصري. ‏
   text_en: Salman narrated that the Messenger of Allah (s.a.w) said:"Nothing turns back the Decree except supplication, and nothing increases the life-span except righteousness
+  excerpt_en: "Nothing turns back the Decree except supplication, and nothing increases the life-span except righteousness"
   url: https://sunnah.com/tirmidhi:2139
   origin:
     api: hadith-api (fawazahmed0)
@@ -122,6 +145,16 @@
   status: validated
   validated_by: mssnoussi92
   notes: « لا يرد القضاء إلا الدعاء » (reel dua-03). Tirmidhi admis le 2026-11-06 si al-Albani le juge sahih ou hasan (content/policy.yaml)
+  recording:
+    reader: Yusuf ibn Nuh Ahmad
+    item: https://archive.org/details/yna-audiobook-arabic-sunan-altirmidhi
+    file: https://archive.org/download/yna-audiobook-arabic-sunan-altirmidhi/YNA-AudioBook-Arabic-Sunan-Al-Tirmidhi-2006-2204.mp3
+    start: 4501.45
+    end: 4505.05
+    heard: لا يرد القضاء إلا الدعاء ولا يزيد في العمر إلا البر
+    license: none stated on the archive.org item
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.tirmidhi.3247
   type: hadith
   ref: {collection: tirmidhi, number: 3247}
@@ -147,3 +180,48 @@
   status: validated
   validated_by: mssnoussi92
   notes: « الدعاء هو العبادة », puis le Prophète ﷺ récite 40:60 (« ثم قرأ ») (reel dua-01, nouvelle accroche)
+  recording:
+    reader: Yusuf ibn Nuh Ahmad
+    item: https://archive.org/details/yna-audiobook-arabic-sunan-altirmidhi
+    file: https://archive.org/download/yna-audiobook-arabic-sunan-altirmidhi/YNA-AudioBook-Arabic-Sunan-Al-Tirmidhi-3105-3301.mp3
+    start: 6254.08
+    end: 6255.55
+    heard: الدعاء هو العبادة
+    license: none stated on the archive.org item
+    status: validated
+    validated_by: mssnoussi92
+- id: hadith.tirmidhi.3573
+  type: hadith
+  ref: {collection: tirmidhi, number: 3573}
+  grade: hasan
+  graded_by: al-Albani
+  notes: "Reel dua-04 : tout du'a reçoit une réponse, ce qui est demandé ou un mal équivalent écarté (« إلا آتاه الله إياها أو صرف عنه من السوء مثلها »), puis « إذا نكثر » / « الله أكثر ». Remplace Ahmad (hors politique) du plan. Al-Albani : Hasan Sahih."
+  url: https://sunnah.com/tirmidhi:3573
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-tirmidhi/3573.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-tirmidhi/3573.json
+    translator: Unknown
+    book: 48
+    hadith_in_book: 204
+    grades:
+    - {name: Ahmad Muhammad Shakir, grade: Hasan Sahih}
+    - {name: Al-Albani, grade: Hasan Sahih}
+    - {name: Bashar Awad Maarouf, grade: Hasan Sahih}
+    - {name: Zubair Ali Zai, grade: Hasan}
+    retrieved: '2026-11-06'
+  status: validated
+  validated_by: mssnoussi92
+  text_ar: حَدَّثَنَا عَبْدُ اللَّهِ بْنُ عَبْدِ الرَّحْمَنِ الدَّارِمِيُّ، أَخْبَرَنَا مُحَمَّدُ بْنُ يُوسُفَ، عَنِ ابْنِ ثَوْبَانَ، عَنْ أَبِيهِ، عَنْ مَكْحُولٍ، عَنْ جُبَيْرِ بْنِ نُفَيْرٍ، أَنَّ عُبَادَةَ بْنَ الصَّامِتِ، حَدَّثَهُمْ أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ ‏"‏ مَا عَلَى الأَرْضِ مُسْلِمٌ يَدْعُو اللَّهَ بِدَعْوَةٍ إِلاَّ آتَاهُ اللَّهُ إِيَّاهَا أَوْ صَرَفَ عَنْهُ مِنَ السُّوءِ مِثْلَهَا مَا لَمْ يَدْعُ بِمَأْثَمٍ أَوْ قَطِيعَةِ رَحِمٍ ‏"‏ ‏.‏ فَقَالَ رَجُلٌ مِنَ الْقَوْمِ إِذًا نُكْثِرَ ‏.‏ قَالَ ‏"‏ اللَّهُ أَكْثَرُ ‏"‏ ‏.‏ قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ صَحِيحٌ غَرِيبٌ مِنْ هَذَا الْوَجْهِ وَابْنُ ثَوْبَانَ هُوَ عَبْدُ الرَّحْمَنِ بْنُ ثَابِتِ بْنِ ثَوْبَانَ الْعَابِدُ الشَّامِيُّ ‏.‏
+  text_en: 'Jubair bin Nufair narrated that `Ubadah bin As-Samit narrated to them that, the Messenger of Allah (ﷺ) said:“There is not a Muslim upon the earth who calls upon Allah with any supplication, except that Allah grants it to him, or he turns away from him the like of it in evil; as long as he does not supplicate for something sinful, or the severing of the ties of kinship.” So a man from the people said: “What if we should increase (in it)” He (ﷺ) said: “(With) Allah is more.”'
+  excerpt_en: "There is not a Muslim upon the earth who calls upon Allah with any supplication, except that Allah grants it to him, or he turns away from him the like of it in evil; as long as he does not supplicate for something sinful, or the severing of the ties of kinship.” So a man from the people said: “What if we should increase (in it)” He (ﷺ) said: “(With) Allah is more."
+  recording:
+    reader: Yusuf ibn Nuh Ahmad
+    item: https://archive.org/details/yna-audiobook-arabic-sunan-altirmidhi
+    file: https://archive.org/download/yna-audiobook-arabic-sunan-altirmidhi/YNA-AudioBook-Arabic-Sunan-Al-Tirmidhi-3535-3800.mp3
+    start: 1407.7
+    end: 1418.45
+    heard: ما على الأرض المسلمون يدعو الله بدعوة إلا أتاه الله إياها أو صرف عنه من السوء مثلها ما لم يدعو بإثم أو قطيعة رحم فقال رجل من القوم إذن نكثر قال الله أكثر
+    license: none stated on the archive.org item
+    status: validated
+    validated_by: mssnoussi92

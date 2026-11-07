@@ -1,12 +1,15 @@
 ---
 name: new-theme
-description: Turn a new theme (patience, repentance, gratitude, trust in God...) into an episode script for quran-themes-demo, from sources to reels: registry entries for the owner to validate, an outline built on misconceptions, a hook per reel (write-hook skill), Egyptian narration with English subtitles, a draft render and a PR. Use when the owner asks for a new theme or episode.
+description: Turn a new theme (patience, repentance, gratitude, trust in God...) into an episode of quran-themes-demo, from sources to videos - registry entries for the owner to validate, an outline built on misconceptions, a hook per reel (write-hook skill), Egyptian narration with English subtitles, checked takes (narration-takes skill), real hadith readings where they exist (find-hadith-recording skill), publication texts (title, description, hashtags), draft renders, a PR, then the release render of the whole episode (16:9 and 9:16) and its reels, with the texts to paste in the release notes. Use when the owner asks for a new theme or episode, or for the next parts of one.
 ---
 
 # New theme
 
-The model is the du'a episode (`content/episodes/dua.yaml`, plan in `docs/design.md`) and the
-reference video it learned from (`reference/dua-video-analysis.md`). The process has three human
+The model is the du'a episode (`content/episodes/dua.yaml`, plan in `docs/design.md`: five reels
+validated by the owner on 2026-11-07) and the reference video it learned from
+(`reference/dua-video-analysis.md`). The owner publishes by hand on the Quran Words Daily page: the
+whole episode in 16:9 on YouTube, the reels in 9:16 on Facebook, Instagram and TikTok, and the whole
+episode in 9:16 too. The process has three human
 validations that stay human (design.md): each source, the script and its
 translation, the final video. Never mark any of them done yourself.
 
@@ -31,9 +34,13 @@ translation, the final video. Never mark any of them done yourself.
      `editions/ara-<collection>1.min.json` (Arabic without diacritics) into the scratchpad and
      search the text; take its `arabicnumber` as the number (Muslim: one letter per narration,
      `hadith.muslim.2679a`). Example: « الدعاء هو العبادة » → Tirmidhi 2969, 3247, 3372.
+   - Between hadiths of the same meaning, prefer one with a recorded reading on archive.org (the
+     owner's preference, 2026-11-07): skill `find-hadith-recording` (Bukhari: one file per hadith).
+   - A collection outside the policy (Ahmad, the reference's « three outcomes ») is replaced, not
+     cited: dua found the same meaning in Tirmidhi 3573 (al-Albani: Hasan Sahih).
    - Add each one to `content/sources/` with `status: proposed` and a `notes` line (which reel,
      why); for a hadith shown in a reel, an `excerpt_en`: the passage of `text_en` used as the
-     subtitle, copied exactly (validate.py checks it), then `uv run --with ruamel.yaml tools/sources/fetch.py` and
+     subtitle, copied exactly without the chain of narrators (validate.py checks it), then `uv run --with ruamel.yaml tools/sources/fetch.py` and
      `uv run --with jsonschema --with pyyaml scripts/validate.py` (policy, grades).
    - List them for the owner: id, reference, Arabic and English text, link (`url`), and anything
      odd in the source (missing punctuation, several narrations). The owner sets `validated`.
@@ -42,33 +49,75 @@ translation, the final video. Never mark any of them done yourself.
      source and a figure without source (its "citations" table). Each one goes through the registry.
 
 3. **Outline.** A table like the one in `docs/design.md`: number, role, content, source, reel.
-   The 16:9 episode plays every scene; each reel is one idea, 45–60 s, and stands alone. From the
-   reference: one misconception per part, announced on a sign by the recurring narrator (role
-   `misconception`; the sign template is to be made in task 4); in 16:9 the narrator comes back
-   every 30–60 s; a visual change every 6 s or so; one colour per function (concepts, narrator,
-   questions, quotes).
+   The whole episode (16:9 and 9:16, 3 to 5 min) plays every scene in order; each reel is one idea,
+   35 to 60 s, and stands alone. As in dua:
+   - reel 1: the hook (write-hook) and the theme's promise, ending on an honest open loop (« three
+     wrong ideas… the first one is next »);
+   - one reel per misconception: a mirror line on a scene, the recurring narrator (`narrator`,
+     `open-hands`, background `plain`, `talking: true`) saying « أول فكرة غلط… », a title card with
+     the misconception, the evidence, a one-line takeaway, the open loop to the next reel;
+   - a conclusion reel: the closing verse, then a recap of the reels in one line (four pieces on a
+     title card) and a last line that loops back to the hook;
+   - every verse is introduced by « قال ربنا سبحانه وتعالى: » (the owner's formula; the locked take
+     is reused), every hadith by « النبي صلى الله عليه وسلم قال: » on its `source-card`;
+   - a prophet or a Companion appears only on a `name-card` (`mentions`), never drawn (Ayyub in dua);
+   - a visual change every 6 s or so; one colour per function (concepts, narrator, questions, quotes).
 
 4. **Script.** Follow the `write-hook` skill for the episode opening and for each reel: mirror,
    contrast, anchor, and an honest open loop to the next reel. Narration in Egyptian Arabic
-   (VoiceTut), English subtitles in `narration.en`. Characters, poses and moods from
+   (VoiceTut), English subtitles in `narration.en`.
+   - The open loop that only makes sense in a reel (« ده اللي جاي », « أولها في الجاي ») is marked
+     `reel_only_end: {ar, en}`: the whole-episode videos cut the line before it (owner's request).
+   - Title-card lines are punctuated where each piece should appear (« ، … . ؟ : »).
+   - Mark your own explanatory lines (not a quote, not a paraphrase of one) when you present the
+     script: the owner checks them first (dua: « الدعاء مش اعتراض… الدعاء احتياج »). Characters, poses and moods from
    `content/characters.yaml`, backgrounds from `content/backgrounds.yaml` only (a new one is added to
    the catalog, drawn in `video/src/backgrounds/` and shown to the owner first); no character in a scene that names a real person (`mentions`).
    Typical situations are presented as such, never as true stories. No figure without a source.
 
-5. **Check.**
+5. **Publication texts.** What the owner pastes with each video: the episode's `publish` (title and
+   description of the whole episode, and the theme hashtags of all its videos) and each reel's
+   `publish` (title, description), Arabic and English, in `content/episodes/<theme>.yaml`. Take
+   them from the validated lines of the script, as dua did (title = the reel's hook, description =
+   its misconception and takeaway); a word of your own is marked for the owner, like a line of the
+   script.
+   - YouTube title « <en> · <ar> »: 100 characters at most (validate.py). The whole episode's title
+     names the promise (dua: « Du'a: 3 wrong ideas you might believe »).
+   - Theme hashtags: 2 or 3, the English word first (`#Dua`, `#الدعاء`, `#Islam`). The page's
+     (`#QuranWordsDaily`, `#Quran`...), hadith and reciter tags are added by
+     `video/scripts/publish.ts` from `content/publish.yaml`; Instagram and TikTok keep the first 5,
+     Facebook 8, YouTube all.
+   - Never type a source, a grade, a reciter, a reader or the AI-voice line: publish.ts writes them
+     from the data, with the YouTube chapters of the whole episode (one per reel).
+   - Check: `cd video && npm run data && node scripts/publish.ts <theme> all` (fails on a broken
+     limit), and show the owner the result with the script. They validate the texts with it:
+     `publish.validated_by` on the episode and on each reel, removed whenever one of them changes.
+
+6. **Check, then audio.**
    - `uv run --with jsonschema --with pyyaml scripts/validate.py` (`--release` once the sources
      are validated).
-   - In `video/`: `npm run data` (each reel 45–60 s by the estimate), `npm run typecheck`.
-   - A draft render of the first reel: `npm run render -- Reel916 out/<reel>.mp4 --props='{"episode":"<theme>","reel":"<reel>","format":"reel","data":null}'`.
+   - In `video/`: `npm run data` (the estimate is pessimistic: 60 s estimated is about 50 s
+     real), `npm run typecheck`.
+   - Show the owner the script (Arabic and English, scene by scene, with the sources) while the
+     voice is being made: skill `narration-takes` (synthesis in the background, Whisper on every
+     take, retakes, pronunciation, phrase starts), and `find-hadith-recording` for the hadiths.
+   - Draft renders of every reel and of the whole episode (`Episode169`, and `Reel916` with
+     `"reel":null` for the 9:16 version), checked with a few frames and `listen.py`, then sent to
+     the owner (SendUserFile).
 
-6. **PR.** Describe:
+7. **PR.** Describe:
    - the angle and the outline;
    - each reel's script, Arabic and English, with its beats;
+   - the publication texts (titles, descriptions, hashtags);
    - the sources and their status;
    - the open questions.
 
-   Send the owner the draft video or a few stills. They validate the script and the translation;
-   on their word, record `validated_by` on each validated reel, and lock the narration takes they
-   listened to (`python3 tools/audio/build.py --episode <theme> --lock <owner> --reel <reel>`):
-   VoiceTut never says a line the same way twice, so only locked takes reach a release render. Then the release render: workflow
-   `render` (voice from `content/policy.yaml`).
+   Send the owner the draft videos. They validate the sources, the script and the translation, the
+   publication texts, the takes and the recordings; on their word, record `validated_by` on each
+   validated reel (and `publish.validated_by` on the texts they approved), lock the
+   narration takes they listened to (`python3 tools/audio/build.py --episode <theme> --lock <owner>
+   --reel <reel>`) and validate the recordings they heard. Only locked takes and validated sources
+   and recordings reach a release render. Then the release render: workflow `render` with
+   `reel: all` (the whole episode in 16:9 and 9:16 and every reel, in the `<theme>-latest`
+   pre-release, whose notes hold the texts to paste on each platform, one copyable block each; the
+   first run downloads the hadith recordings from archive.org), and give the owner the link.

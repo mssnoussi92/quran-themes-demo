@@ -1,0 +1,63 @@
+// Which scenes a video shows, and when each one starts: shared by the compositions (browser) and
+// scripts/publish.ts (Node, YouTube chapters), so that both read the same timeline. No Remotion
+// import here, and explicit .ts specifiers: Node runs this file as is.
+
+import { FPS, TRANSITION_SECONDS, toFrames } from "./formats.ts";
+import { splitPhrases } from "./phrases.ts";
+import type { EpisodeData, ResolvedScene } from "./types.ts";
+
+/** Silence kept before a cut: the take pauses 0.06 s after a sound and 0.12 s before the next one
+ * (tools/audio/build.py, TIGHT), so a line cut 0.12 s before a phrase ends as it would anyway. */
+const CUT_BEFORE = 0.12;
+
+const dropEnd = (text: string, end: string) => text.trim().slice(0, -end.trim().length).trim();
+
+/** A scene as the whole-episode videos show it: without the end said only in its reel ("that's
+ * next"); its audio stops before that phrase, its card and subtitles lose it too. */
+function withoutReelEnd(scene: ResolvedScene): ResolvedScene {
+  const end = scene.reel_only_end;
+  if (!end || !scene.narration) return scene;
+  const narration = { ar: dropEnd(scene.narration.ar, end.ar), en: dropEnd(scene.narration.en, end.en) };
+  const kept = splitPhrases(narration.ar).length;
+  const media = scene.media;
+  const timed = media?.phrases ?? [];
+  const seconds =
+    media && timed.length === splitPhrases(scene.narration.ar).length
+      ? Math.max(timed[kept - 1].start, timed[kept].start - CUT_BEFORE)
+      : (scene.duration.seconds * narration.ar.length) / scene.narration.ar.length;
+  const cut = Math.round(seconds * 100) / 100;
+  return {
+    ...scene,
+    narration,
+    media: media ? { ...media, seconds: cut, phrases: timed.slice(0, kept) } : null,
+    duration: { ...scene.duration, seconds: cut, basis: `${scene.duration.basis}; cut before « ${end.ar} »` },
+  };
+}
+
+/** The scenes of a reel, or of the whole episode (reel null). */
+export function selectScenes(data: EpisodeData, reel: string | null): ResolvedScene[] {
+  if (reel === null) return data.scenes.map(withoutReelEnd);
+  if (!data.reels.some((r) => r.id === reel)) {
+    throw new Error(`reel '${reel}' is not in episode '${data.episode}'`);
+  }
+  const scenes = data.scenes.filter((s) => s.reel === reel);
+  if (scenes.length === 0) throw new Error(`reel '${reel}' has no scene`);
+  return scenes;
+}
+
+/** Scenes back to back, plus one silent transition between each two (Video.tsx). */
+export function totalFrames(scenes: ResolvedScene[]): number {
+  const between = toFrames(TRANSITION_SECONDS);
+  return scenes.reduce((n, s) => n + toFrames(s.duration.seconds), 0) + (scenes.length - 1) * between;
+}
+
+/** Second at which each scene's content starts (its voice, after the transition that brings it in). */
+export function sceneStarts(scenes: ResolvedScene[]): number[] {
+  const between = toFrames(TRANSITION_SECONDS);
+  let frame = 0;
+  return scenes.map((s, i) => {
+    const start = frame + (i > 0 ? between : 0);
+    frame = start + toFrames(s.duration.seconds);
+    return start / FPS;
+  });
+}

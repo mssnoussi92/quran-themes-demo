@@ -1,8 +1,8 @@
 import type { CalculateMetadataFunction } from "remotion";
 import { staticFile } from "remotion";
-import { TRANSITION_SECONDS, toFrames } from "./formats";
 import type { FormatId } from "./formats";
-import type { EpisodeData, ResolvedScene } from "./types";
+import { selectScenes, totalFrames } from "./scenes.ts";
+import type { EpisodeData } from "./types";
 
 export type VideoProps = {
   /** Episode slug: content/episodes/<episode>.yaml */
@@ -14,25 +14,12 @@ export type VideoProps = {
   data: EpisodeData | null;
 };
 
-export function selectScenes(data: EpisodeData, reel: string | null): ResolvedScene[] {
-  if (reel === null) return data.scenes;
-  if (!data.reels.some((r) => r.id === reel)) {
-    throw new Error(`reel '${reel}' is not in episode '${data.episode}'`);
-  }
-  const scenes = data.scenes.filter((s) => s.reel === reel);
-  if (scenes.length === 0) throw new Error(`reel '${reel}' has no scene`);
-  return scenes;
-}
-
 export const calculateMetadata: CalculateMetadataFunction<VideoProps> = async ({ props, abortSignal }) => {
   const res = await fetch(staticFile(`data/${props.episode}.json`), { signal: abortSignal });
   if (!res.ok) {
     throw new Error(`public/data/${props.episode}.json is missing: run "npm run data" in video/`);
   }
   const data = (await res.json()) as EpisodeData;
-  // Scenes back to back, plus one silent transition between each two (Video.tsx).
-  const scenes = selectScenes(data, props.reel);
-  const between = toFrames(TRANSITION_SECONDS);
-  const durationInFrames = scenes.reduce((n, s) => n + toFrames(s.duration.seconds), 0) + (scenes.length - 1) * between;
+  const durationInFrames = totalFrames(selectScenes(data, props.reel));
   return { durationInFrames, props: { ...props, data } };
 };

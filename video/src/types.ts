@@ -27,8 +27,12 @@ export type ResolvedSource = {
   id: string;
   type: "ayah" | "hadith";
   status: "proposed" | "validated";
-  /** "Quran 40:60", "Sahih al-Bukhari 6339" */
+  /** As shown on the card: « سورة غافر · الآية ٦٠ », "Sahih al-Bukhari 6339" */
   reference: string;
+  /** In English, for the publication texts: "Surah Ghafir (40:60)", "Sahih al-Bukhari 6339" */
+  reference_en: string;
+  /** Reading page (quran.com, sunnah.com), from the registry. */
+  url: string | null;
   /** Texts exactly as in the registry. */
   text_ar: string;
   text_en: string;
@@ -39,6 +43,8 @@ export type ResolvedSource = {
   /** "Al-Albani: Sahih" when the grade is not the collection itself (Bukhari, Muslim). */
   grade_note: string | null;
   translator: string | null;
+  /** A person reading the hadith aloud (registry `recording`), heard instead of the synthetic voice. */
+  recording: { reader: string; file: string; start: number; end: number; status: "proposed" | "validated" } | null;
 };
 
 /** One recited word: its position in the verse (1-based, waqf signs excluded), seconds in the file. */
@@ -84,15 +90,23 @@ export type ResolvedScene = {
   source: ResolvedSource | null;
   /** What the voice says (tts), or the recited verse. */
   spoken_ar: string | null;
+  /** End of the narration said only in the reel on its own; the whole-episode videos cut it. */
+  reel_only_end: I18n | null;
   media: Media | null;
   duration: Duration;
 };
+
+/** What the owner pastes when publishing a video (title, description; hashtags added to the
+ * episode's), validated by the owner like the script (scripts/publish.ts writes the rest). */
+export type PublishTexts = { title: I18n; description: I18n; hashtags?: string[]; validated_by?: string };
 
 export type EpisodeData = {
   episode: string;
   title: I18n;
   narration_language: string;
-  reels: { id: string; title: I18n }[];
+  /** The whole episode's texts, and the hashtags of all its videos. */
+  publish: PublishTexts | null;
+  reels: { id: string; title: I18n; validated_by?: string; publish?: PublishTexts }[];
   scenes: ResolvedScene[];
   generated_from: string[];
 };

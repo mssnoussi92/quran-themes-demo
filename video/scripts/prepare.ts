@@ -13,7 +13,7 @@ import { join, relative, resolve } from "node:path";
 import { createRequire } from "node:module";
 import { parse } from "yaml";
 import { BODY_BOX, MOOD_FACES, SEAT } from "../src/characters/peeps.ts";
-import type { Character, Duration, EpisodeData, Media, ResolvedScene, ResolvedSource } from "../src/types.ts";
+import type { Character, Duration, EpisodeData, Media, PublishTexts, ResolvedScene, ResolvedSource } from "../src/types.ts";
 
 // react-peeps exports one table per kind of piece (Hair, Face, StandingPose...): names are checked there.
 const peeps = createRequire(import.meta.url)("react-peeps") as Record<string, Record<string, unknown>>;
@@ -58,10 +58,14 @@ type RegistryEntry = {
   text_en: string | null;
   excerpt_en?: string;
   status: "proposed" | "validated" | "excluded";
+  url?: string;
   grade?: string;
   graded_by?: string;
-  origin?: { translator?: string; surah_ar?: string; surah_en?: string };
+  origin?: { translator?: string; surah_ar?: string; surah_en?: string; grades?: { name: string; grade: string }[] };
+  recording?: Recording & { item: string; heard: string; license: string; validated_by?: string };
 };
+
+type Recording = NonNullable<ResolvedSource["recording"]>;
 
 type ManifestScene = {
   kind: "tts" | "recitation";
@@ -72,19 +76,30 @@ type ManifestScene = {
   reciter?: string;
   words?: Media["words"];
   phrases?: Media["phrases"];
+  /** A hadith read by a person: the take's introduction, then the reading (tools/audio/build.py). */
+  mix?: {
+    file: string;
+    seconds: number;
+    reader: string;
+    recording: { file: string; start: number; end: number };
+    phrases: Media["phrases"];
+  };
 };
 
 type EpisodeFile = {
   episode: string;
   title: { ar: string; en: string };
   narration_language: string;
-  reels: { id: string; title: { ar: string; en: string } }[];
+  publish?: PublishTexts;
+  reels: { id: string; title: { ar: string; en: string }; validated_by?: string; publish?: PublishTexts }[];
   scenes: {
     id: string;
     role: string;
     reel?: string;
     audio: "tts" | "recitation" | "none";
     narration?: { ar: string; en: string };
+    say_ar?: string;
+    reel_only_end?: { ar: string; en: string };
     source?: string;
     mentions?: string[];
     visual: {
@@ -143,6 +158,12 @@ function betweenQuotes(text: string): string | null {
   return text.slice(first + 1, last).replace(/\u200f/g, "").replace(/\s+/g, " ").trim();
 }
 
+/** A hadith's words as the voice reads them: the inner quotation marks dropped (Tirmidhi 3573: the
+ * Prophet's answer after a question), a lone full stop joined to the word before it, where VoiceTut
+ * makes its pause between sentences. */
+const speakable = (text: string) =>
+  text.replace(/"/g, " ").replace(/\s+\./g, ".").replace(/\s+/g, " ").trim();
+
 /** The Prophet's words in a hadith: from the first to the last quotation mark of the Arabic text
  * (owner's decision, 2026-11-06). Drops the chain of narrators and any commentary after. A question
  * asked between two answers stays (Muslim 2735c). */
@@ -161,6 +182,7 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
   const { ref } = entry;
   let type: ResolvedSource["type"];
   let reference: string;
+  let reference_en: string;
   let display_ar: string;
   let display_en = entry.text_en;
   if (entry.type === "ayah") {
@@ -170,6 +192,7 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
     reference = entry.origin?.surah_ar
       ? `سورة ${entry.origin.surah_ar} · الآية ${ayah}`
       : `Quran ${ref.surah}:${ref.ayah}`;
+    reference_en = `${entry.origin?.surah_en ? `Surah ${entry.origin.surah_en}` : "Quran"} (${ref.surah}:${ref.ayah})`;
     display_ar = entry.text_ar;
   } else if (entry.type === "hadith") {
     type = "hadith";
@@ -177,6 +200,7 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
     if (!name) throw new Error(`${where}: no display name for collection '${ref.collection}'`);
     const letter = ref.narration ? String.fromCharCode(96 + ref.narration) : "";
     reference = `${name} ${ref.number}${letter}`;
+    reference_en = reference;
     display_ar = prophetWords(entry.text_ar, entry.id);
     // English: the quotation marks do not reliably surround the Prophet's words in the published
     // translations, so the subtitle is the registry's `excerpt_en` (a checked passage) or the whole text.
@@ -189,16 +213,28 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
     type,
     status: entry.status,
     reference,
+    reference_en,
+    url: entry.url ?? null,
     text_ar: entry.text_ar,
     text_en: entry.text_en,
     display_ar,
     display_en,
-    grade_note:
-      entry.graded_by && !Object.values(COLLECTIONS).includes(entry.graded_by) && entry.grade
-        ? `${entry.graded_by}: ${entry.grade.charAt(0).toUpperCase()}${entry.grade.slice(1)}`
-        : null,
+    grade_note: gradeNote(entry),
     translator: entry.origin?.translator ?? null,
+    recording: entry.recording
+      ? (({ reader, file, start, end, status }) => ({ reader, file, start, end, status }))(entry.recording)
+      : null,
   };
+}
+
+/** "Al-Albani: Hasan Sahih": the scholar's grade exactly as hadith-api gives it (origin.grades), or
+ * the registry's grade; none when the grade is the collection itself (Bukhari, Muslim). */
+function gradeNote(entry: RegistryEntry): string | null {
+  if (!entry.graded_by || !entry.grade || Object.values(COLLECTIONS).includes(entry.graded_by)) return null;
+  const by = entry.graded_by.toLowerCase();
+  const exact = entry.origin?.grades?.find((g) => g.name.toLowerCase() === by);
+  if (exact) return `${exact.name}: ${exact.grade}`;
+  return `${entry.graded_by}: ${entry.grade.charAt(0).toUpperCase()}${entry.grade.slice(1)}`;
 }
 
 function estimate(audio: ResolvedScene["audio"], text: string | null): Duration {
@@ -225,17 +261,25 @@ function mediaFor(episode: string, manifest: Record<string, ManifestScene> | nul
     console.warn(`warning ${where}: audio is out of date (run tools/audio/build.py --episode ${episode})`);
     return null;
   }
-  const file = `audio/${episode}/${entry.file}`;
+  // A hadith with a recorded reading is heard read by that person: the audio must be the mix of it.
+  const rec = source?.recording ?? null;
+  const mix = entry.mix ?? null;
+  if (rec && !(mix && mix.recording.file === rec.file && mix.recording.start === rec.start && mix.recording.end === rec.end)) {
+    console.warn(`warning ${where}: the reading of ${source!.id} is not mixed yet (run tools/audio/build.py --episode ${episode})`);
+    return null;
+  }
+  const name = mix?.file ?? entry.file;
+  const file = `audio/${episode}/${name}`;
   mkdirSync(join(PUBLIC, "audio", episode), { recursive: true });
-  copyFileSync(join(AUDIO, episode, entry.file), join(PUBLIC, file));
+  copyFileSync(join(AUDIO, episode, name), join(PUBLIC, file));
   const reciter = entry.reciter ? RECITERS[entry.reciter] ?? entry.reciter : null;
   return {
     kind: entry.kind,
     file,
-    seconds: entry.seconds,
+    seconds: mix?.seconds ?? entry.seconds,
     words: entry.words ?? [],
-    phrases: entry.phrases ?? [],
-    credit: entry.kind === "recitation" && reciter ? `Recitation: ${reciter}` : null,
+    phrases: mix?.phrases ?? entry.phrases ?? [],
+    credit: entry.kind === "recitation" && reciter ? `Recitation: ${reciter}` : mix ? `Reading: ${mix.reader}` : null,
   };
 }
 
@@ -275,11 +319,11 @@ function main() {
       }
       // What is heard: the recitation of the verse, or the narration followed by the hadith's words
       // when the scene quotes one (the narration introduces it, the registry supplies it).
-      const quoted = source?.type === "hadith" ? source.display_ar : null;
+      const quoted = source?.type === "hadith" ? speakable(source.display_ar) : null;
       const spoken =
         s.audio === "recitation"
           ? source?.text_ar ?? null
-          : [s.narration?.ar, quoted].filter(Boolean).join(" ") || null;
+          : [s.say_ar ?? s.narration?.ar, quoted].filter(Boolean).join(" ") || null;
       if (s.visual.background && !backgrounds.includes(s.visual.background)) {
         throw new Error(`${where}: background '${s.visual.background}' is not in content/backgrounds.yaml`);
       }
@@ -307,6 +351,7 @@ function main() {
         },
         source,
         spoken_ar: spoken,
+        reel_only_end: s.reel_only_end ?? null,
         media,
         duration,
       };
@@ -315,6 +360,7 @@ function main() {
       episode: ep.episode,
       title: ep.title,
       narration_language: ep.narration_language,
+      publish: ep.publish ?? null,
       reels: ep.reels,
       scenes,
       generated_from: [file, ...sourceFiles].map((f) => relative(ROOT, f)),

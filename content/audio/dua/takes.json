@@ -11,6 +11,115 @@
       "locked": "2026-11-06",
       "sha256": "de64ae036713489743daf5f01973071b48c4f9b7f807214e3692062ee3f79458"
     },
+    "answer-hadith": {
+      "file": "answer-hadith.flac",
+      "text": "النبي صلى الله عليه وسلم قال: يُسْتَجَابُ لأَحَدِكُمْ مَا لَمْ يَعْجَلْ يَقُولُ دَعَوْتُ فَلَمْ يُسْتَجَبْ لِي",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "bd31baca7ef5f2df",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "3bc23a20f1d78cf71715931394c25ef7dbd178dac000245641789ae24349b88e"
+    },
+    "answer-hadith-2": {
+      "file": "answer-hadith-2.flac",
+      "text": "النبي صلى الله عليه وسلم قال: مَا عَلَى الأَرْضِ مُسْلِمٌ يَدْعُو اللَّهَ بِدَعْوَةٍ إِلاَّ آتَاهُ اللَّهُ إِيَّاهَا أَوْ صَرَفَ عَنْهُ مِنَ السُّوءِ مِثْلَهَا مَا لَمْ يَدْعُ بِمَأْثَمٍ أَوْ قَطِيعَةِ رَحِمٍ. فَقَالَ رَجُلٌ مِنَ الْقَوْمِ إِذًا نُكْثِرَ. قَالَ اللَّهُ أَكْثَرُ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "95cf28ed1cc3ad50",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "e7c7c61e97d096e526ad3a8ac4e70f4eb5a59f4a4f565b07b61d4d30e8586196",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.14,
+          10.26,
+          12.38
+        ]
+      }
+    },
+    "answer-haste": {
+      "file": "answer-haste.flac",
+      "text": "يعني متستعجلش… ومتقولش «دعيت ومحدش رد».",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "42cf6d12d8d41106",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "738f2bba701101996b1122867a43e957a2072408707ab84cb5ce17882e731943"
+    },
+    "answer-hook": {
+      "file": "answer-hook.flac",
+      "text": "دعيت… ودعيت… ومحصلش حاجة؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c0e4bf3e730a11fd",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "8511d773e5a7dc530288cb8da5a6868be98ab615cd68d87896606d95230c666c"
+    },
+    "answer-idea": {
+      "file": "answer-idea.flac",
+      "text": "إن ربنا مردش على دعاءك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "3d876f733d115797",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "8c2b7354dd3930004e11feba1711635f134d0cc332acde9e0bc239f30f0ded12"
+    },
+    "answer-never-lost": {
+      "file": "answer-never-lost.flac",
+      "text": "يعني دعاءك… عمره ما بيضيع.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2709268a012476d8",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "e7efff0b0eedd5ba341d1634e12ed45bec63fee966556e8c4aa25e7de5047e9f"
+    },
+    "answer-outro": {
+      "file": "answer-outro.flac",
+      "text": "وفي الآخر… آية تطمن قلبك. دي الأخيرة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c4a1f25bc9f75c1b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "2ff35d18e014573bb89d030617ea1fc3546f43c0b33868cc88e0d8b8ff470259"
+    },
+    "answer-question": {
+      "file": "answer-question.flac",
+      "text": "طب ولو اللي طلبته محصلش؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "867c31641ec18e6c",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "e6dcb22e53e99c5b5d7dd912b23219588d28beb87eaee44b9c8d7bcae5828e02"
+    },
+    "answer-stop": {
+      "file": "answer-stop.flac",
+      "text": "فبطلت تدعي؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "f719eecb3f0329c5",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "8821da25763ca6a090a8c31653f3a198b06f97627659563e77b53f6de4bd391c"
+    },
+    "answer-wrong": {
+      "file": "answer-wrong.flac",
+      "text": "تالت فكرة غلط…",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "4ec4bf0551ee74d5",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "4fdfc26c040d200123aa99e018f6035cd15ddf8710e5cd1ef7cd0b6983bff31f"
+    },
     "because": {
       "file": "because.flac",
       "text": "عشان لما بتقول «يا رب»، إنت بتعترف إنك محتاجله… وإنه يقدر.",
@@ -20,6 +129,156 @@
       "validated_by": "mssnoussi92",
       "locked": "2026-11-06",
       "sha256": "ec02326e810838c20f523a3c5ae1cc8d51e7e6e06c62748026f4a84d78522fa8"
+    },
+    "content-ask": {
+      "file": "content-ask.flac",
+      "text": "يعني اطلب… وإنت واثق إنه يقدر يديك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "6a4bfccfdb4fc740",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "518a39f8e430596225e2269e06f7fa45dcdc2f93bc01f5ebbf67c6c8b931865a"
+    },
+    "content-ayyub": {
+      "file": "content-ayyub.flac",
+      "text": "سيدنا أيوب عليه السلام، في عز البلاء… دعا ربنا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c4f4f811d6e68631",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "fe0658ebff8fd7ee16f97a1809d2e7e8a39d1ae8b733a889afe9857d9c4ab0fc"
+    },
+    "content-hadith": {
+      "file": "content-hadith.flac",
+      "text": "والنبي صلى الله عليه وسلم قال: إِذَا دَعَا أَحَدُكُمْ فَلاَ يَقُلِ اللَّهُمَّ اغْفِرْ لِي إِنْ شِئْتَ وَلَكِنْ لِيَعْزِمِ الْمَسْأَلَةَ وَلْيُعَظِّمِ الرَّغْبَةَ فَإِنَّ اللَّهَ لاَ يَتَعَاظَمُهُ شَىْءٌ أَعْطَاهُ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "560a8c0348322fb0",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "b6570cfb879921e56916325074bf2659d6cb17bc71283986a8829fe69cdacacf"
+    },
+    "content-hook": {
+      "file": "content-hook.flac",
+      "text": "عمرك قلت: «أنا راضي… مش هدعي»؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2f5831f1194ef24f",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "71276ead6d8186ab1f2bb81226899187a40cafcd7600a77b8ee0029845b90f3d"
+    },
+    "content-idea": {
+      "file": "content-idea.flac",
+      "text": "إن الدعاء عكس الرضا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2f9557a57dd38725",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "162de51c9d79c480610d6dc4ba78fac44f0582b32605c4088e665451409acc4a"
+    },
+    "content-need": {
+      "file": "content-need.flac",
+      "text": "الدعاء مش اعتراض… الدعاء احتياج.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "908a5ca4f6453da4",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "939067b34920b6be774b14101087f76a728c5342b1887a493f275fcb54d7a737"
+    },
+    "content-outro": {
+      "file": "content-outro.flac",
+      "text": "طب ما كل حاجة مكتوبة… الدعاء هيغير إيه؟ ده اللي جاي.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "01f3192f7c2ae584",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "56dc98cffacd587a05453a536e0915ab6698c755436eaec03dc84a968943a1ee"
+    },
+    "content-wrong": {
+      "file": "content-wrong.flac",
+      "text": "أول فكرة غلط عن الدعاء…",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "04cce833e01f2c93",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "4c993cdd441c237d09b2d926b1e377a5c4a685fbb95ba92db7b5b998895d8a9c"
+    },
+    "decree-hadith": {
+      "file": "decree-hadith.flac",
+      "text": "النبي صلى الله عليه وسلم قال: لاَ يَرُدُّ الْقَضَاءَ إِلاَّ الدُّعَاءُ وَلاَ يَزِيدُ فِي الْعُمُرِ إِلاَّ الْبِرُّ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "0c9466744df2ceb2",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "a23c75e3b27297d5bbd0b780abf7fb9715f37e43c3466a20d4af7309046d3923"
+    },
+    "decree-hook": {
+      "file": "decree-hook.flac",
+      "text": "«ما هو كله مكتوب… أدعي ليه؟»",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a4e9f9e8be340101",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "617d2bedd9c0b2e0c98e8815a1f99efbedf741c72d12242d6a1ec574b77a0559"
+    },
+    "decree-idea": {
+      "file": "decree-idea.flac",
+      "text": "إن الدعاء مش بيغير حاجة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "5a70239d68887a88",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "7780541dd6addf7a8d36accb16da70233fc57548afed1a002f7a623872dfa1ae"
+    },
+    "decree-means": {
+      "file": "decree-means.flac",
+      "text": "يعني فيه حاجة بترد القضاء… الدعاء.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "dd0eaab6987cf5a8",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "b1081e9a0601aa2c556192f24416a54a5afc983532e7d72d7b1aba4349a21404"
+    },
+    "decree-outro": {
+      "file": "decree-outro.flac",
+      "text": "طب ولو دعيت كتير… ومحصلش حاجة؟ ده اللي جاي.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "b396fc40f8f9005b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "cc80c278908f05321f52298851b057c56a6d48b6c17c1e7d75695d305b8c7932"
+    },
+    "decree-part": {
+      "file": "decree-part.flac",
+      "text": "والدعاء نفسه… من قدر ربنا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "ebb6b0fcfd31cf7e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "3abe3bf5671ea576ca07ff42942fc90e3cd083280d5a28dd01a6108a344e8573"
+    },
+    "decree-wrong": {
+      "file": "decree-wrong.flac",
+      "text": "تاني فكرة غلط…",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "268b7b578c0b61fa",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "111072b2394bce5dd472131f5a633427156b8c654fdc5a7b3c5c0fb06b792f5f"
     },
     "hook-1": {
       "file": "hook-1.flac",
@@ -53,13 +312,62 @@
     },
     "hook-4": {
       "file": "hook-4.flac",
-      "text": "دي مش مجرد عادة… دي عبادة.",
+      "text": "دي مش مجرد عاده… دي عبادة.",
       "engine": "voicetut",
       "speaker": "Mohammed",
-      "key": "37c4209af8db2894",
+      "key": "6f3d44d83195042b",
       "validated_by": "mssnoussi92",
-      "locked": "2026-11-06",
-      "sha256": "ba6df4af9510571c9ea12aafd0e0568d38b44b6aa91ba935da10e047d6a219f4"
+      "locked": "2026-11-07",
+      "sha256": "0b1b1b9cd547713b0a6e5cfce1328f646ebdb287ae632a78e81d6afa937b64e8"
+    },
+    "near-hook": {
+      "file": "near-hook.flac",
+      "text": "حاسس إن محدش سامعك؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "6ad3d2836d29ad4b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "5f97acddabcfee7209bf05c5322dbb2b985ed9756fe815a6506002c88d9b7139"
+    },
+    "near-near": {
+      "file": "near-near.flac",
+      "text": "ربنا قَرِيب… وبيجيب.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "f44ee2df87b91759",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "7821c788068584377b87fb9ac00193b5641944efecd0f0fafb65dfa28cc1ef9f"
+    },
+    "near-outro": {
+      "file": "near-outro.flac",
+      "text": "فمتبطلش تدعي… وقول «يا رب».",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "7c735019c6bd3930",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "6b2937f8b6a2aeee6cc33450e53a31db26981ee6ed7d5a4c35a652a5b52ac5ad"
+    },
+    "near-recap": {
+      "file": "near-recap.flac",
+      "text": "الدعاء عبادة… مش عكس الرضا… بيرد القضاء… وعمره ما بيضيع.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "4e944f3bfb5b16c4",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "32f15a30a7068ae61a2988a30546a1bbfd6b354bea3f9ec29fa787ba85c43379",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.2,
+          2.78,
+          3.88
+        ]
+      }
     },
     "outro": {
       "file": "outro.flac",

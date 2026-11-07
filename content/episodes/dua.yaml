@@ -1,15 +1,70 @@
-# Épisode Du'a. La démo ne produit que le reel dua-01 ; les autres reels sont décrits dans docs/design.md.
+# Épisode Du'a : 5 reels (9:16) pour Facebook, Instagram et TikTok ; l'épisode entier (16:9, toutes les
+# scènes dans l'ordre) pour YouTube. Plan : docs/design.md.
 # Script de dua-01 réécrit le 2026-11-06 avec le skill write-hook (.claude/skills/write-hook),
 # validé par le propriétaire, modifié à sa demande le même jour (promise-intro : « قال ربنا سبحانه
 # وتعالى »), puis validé de nouveau, sous-titre compris (validated_by). Toute modification d'une
-# ligne du reel retire validated_by.
+# ligne d'un reel retire son validated_by.
+# dua-02 à dua-05 : proposés le 2026-11-06 (une idée reçue par reel, puis la conclusion), validés par le
+# propriétaire le 2026-11-07, script, traduction et voix (prises figées).
 episode: dua
 title: { ar: "الدعاء", en: "Du'a" }
 narration_language: ar-egy   # VoiceTut (égyptien), choix du propriétaire le 2026-11-06
+# Textes de publication (titre, description, hashtags du thème) : proposés le 2026-11-07, faits des
+# répliques validées du script, validés par le propriétaire le même jour (validated_by) ; exigés par
+# un rendu final. Le reste (sources, récitateur, lecteurs, voix IA, chapitres) : video/scripts/publish.ts.
+publish:
+  title: { en: "Du'a: 3 wrong ideas you might believe", ar: "تلات أفكار غلط عن الدعاء… يمكن تكون مصدق واحدة منهم" }
+  description:
+    en: "“Ya Rabb”… how many times have you said it today? Du'a isn't just a habit… it's worship. Yet three wrong ideas keep us from it: that du'a goes against contentment, that it changes nothing since everything is written, and that God didn't answer. Each one, answered from the Qur'an and the Sunnah."
+    ar: "«يا رب»… قلتها كام مرة النهارده؟ الدعاء مش مجرد عادة… الدعاء عبادة. بس فيه تلات أفكار غلط بتبعدنا عنه: إن الدعاء عكس الرضا، وإنه مش بيغير حاجة عشان كله مكتوب، وإن ربنا مردش. والرد على كل فكرة من القرآن والسنة."
+  hashtags: ["#Dua", "#الدعاء", "#Islam"]
+  validated_by: mssnoussi92
 reels:
   - id: dua-01
     title: { ar: "يا رب", en: "Ya Rabb" }
     validated_by: mssnoussi92
+    publish:
+      title: { en: "“Ya Rabb”… how many times have you said it today?", ar: "«يا رب»… قلتها كام مرة النهارده؟" }
+      description:
+        en: "When you're waiting for a test result, heart pounding… or when you want something so badly… That's not just a habit… it's worship. Why?"
+        ar: "لما تكون مستني نتيجة تحليل، وقلبك بيدق… أو لما تبقى نفسك في حاجة أوي… دي مش مجرد عادة… دي عبادة. ليه؟"
+      validated_by: mssnoussi92
+  - id: dua-02
+    title: { ar: "الدعاء والرضا", en: "Du'a and contentment" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "Ever said: “I'm content… I won't ask”?", ar: "عمرك قلت: «أنا راضي… مش هدعي»؟" }
+      description:
+        en: "The first wrong idea about du'a: that it goes against contentment. Ayyub, peace be upon him, in the depth of his trial… called on his Lord. Du'a isn't objecting… it's needing Him."
+        ar: "أول فكرة غلط عن الدعاء: إن الدعاء عكس الرضا. سيدنا أيوب عليه السلام، في عز البلاء… دعا ربنا. الدعاء مش اعتراض… الدعاء احتياج."
+      validated_by: mssnoussi92
+  - id: dua-03
+    title: { ar: "الدعاء والقدر", en: "Du'a and destiny" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "“It's all written anyway… why make du'a?”", ar: "«ما هو كله مكتوب… أدعي ليه؟»" }
+      description:
+        en: "The second wrong idea: that du'a changes nothing. Yet there is something that turns back the decree… du'a. And du'a itself… is part of God's decree."
+        ar: "تاني فكرة غلط: إن الدعاء مش بيغير حاجة. بس فيه حاجة بترد القضاء… الدعاء. والدعاء نفسه… من قدر ربنا."
+      validated_by: mssnoussi92
+  - id: dua-04
+    title: { ar: "دعيت ومحصلش حاجة", en: "“I prayed and nothing happened”" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "You prayed… and prayed… and nothing happened?", ar: "دعيت… ودعيت… ومحصلش حاجة؟" }
+      description:
+        en: "The third wrong idea: that God didn't answer your du'a. Don't rush… and don't say “I prayed and got no answer.” Your du'a… is never wasted."
+        ar: "تالت فكرة غلط: إن ربنا مردش على دعاءك. متستعجلش… ومتقولش «دعيت ومحدش رد». دعاءك… عمره ما بيضيع."
+      validated_by: mssnoussi92
+  - id: dua-05
+    title: { ar: "ربنا قريب", en: "God is near" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "Feel like nobody hears you?", ar: "حاسس إن محدش سامعك؟" }
+      description:
+        en: "God is near… and He answers. Du'a is worship… not against contentment… it turns back the decree… and it's never wasted. So never stop making du'a… and say “Ya Rabb”."
+        ar: "ربنا قريب… وبيجيب. الدعاء عبادة… مش عكس الرضا… بيرد القضاء… وعمره ما بيضيع. فمتبطلش تدعي… وقول «يا رب»."
+      validated_by: mssnoussi92
 scenes:
   # Miroir : une question à la deuxième personne, l'émotion dès la première image.
   - id: hook-1
@@ -58,6 +113,8 @@ scenes:
     narration:
       ar: "دي مش مجرد عادة… دي عبادة."
       en: "That's not just a habit… it's worship."
+    # « عادة » : le ت ne se prononce pas (demande du propriétaire, 2026-11-07).
+    say_ar: "دي مش مجرد عاده… دي عبادة."
     visual:
       template: title-card
   # Ancre : la voix lit l'introduction, puis les paroles du Prophète ﷺ prises dans le registre.
@@ -117,5 +174,374 @@ scenes:
     narration:
       ar: "بس فيه تلات أفكار غلط عن الدعاء… يمكن تكون مصدق واحدة منهم. أولها في الجاي."
       en: "But there are three wrong ideas about du'a… you might believe one of them. The first one is next."
+    # Dans les versions complètes, la suite vient tout de suite : sans « أولها في الجاي » (2026-11-07).
+    reel_only_end: { ar: "أولها في الجاي.", en: "The first one is next." }
     visual:
       template: title-card
+
+  # ---- dua-02 : idée reçue 1, « le du'a s'oppose au contentement » ------------------------------
+  # Miroir : une phrase qu'on entend (ou qu'on se dit) au milieu d'une épreuve.
+  - id: content-hook
+    role: hook
+    reel: dua-02
+    audio: tts
+    narration:
+      ar: "عمرك قلت: «أنا راضي… مش هدعي»؟"
+      en: "Ever said: “I'm content… I won't ask”?"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: worried, talking: false }
+  # Le narrateur récurrent annonce l'idée reçue ; le mot clé à l'écran.
+  - id: content-wrong
+    role: misconception
+    reel: dua-02
+    audio: tts
+    narration:
+      ar: "أول فكرة غلط عن الدعاء…"
+      en: "The first wrong idea about du'a…"
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  - id: content-idea
+    role: misconception
+    reel: dua-02
+    audio: tts
+    narration:
+      ar: "إن الدعاء عكس الرضا."
+      en: "That du'a goes against contentment."
+    visual:
+      template: title-card
+  # Ayyub : une personne réelle, jamais dessinée (carte de nom), puis le verset récité.
+  - id: content-ayyub
+    role: evidence
+    reel: dua-02
+    audio: tts
+    mentions: ["أيوب عليه السلام"]
+    narration:
+      ar: "سيدنا أيوب عليه السلام، في عز البلاء… دعا ربنا."
+      en: "Ayyub, peace be upon him, in the depth of his trial… called on his Lord."
+    visual:
+      template: name-card
+  - id: content-verse-intro
+    role: evidence
+    reel: dua-02
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: content-verse
+    role: evidence
+    reel: dua-02
+    source: quran.21.83
+    audio: recitation
+    mentions: ["أيوب عليه السلام"]
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: content-need
+    role: evidence
+    reel: dua-02
+    audio: tts
+    narration:
+      ar: "الدعاء مش اعتراض… الدعاء احتياج."
+      en: "Du'a isn't objecting… it's needing Him."
+    visual:
+      template: title-card
+  # Comment demander : avec résolution, sans « si Tu veux ».
+  - id: content-hadith
+    role: evidence
+    reel: dua-02
+    source: hadith.muslim.2679a
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "والنبي صلى الله عليه وسلم قال:"
+      en: "And the Prophet ﷺ said:"
+    visual:
+      template: source-card
+  - id: content-ask
+    role: evidence
+    reel: dua-02
+    audio: tts
+    narration:
+      ar: "يعني اطلب… وإنت واثق إنه يقدر يديك."
+      en: "So ask… sure that He can give it to you."
+    visual:
+      template: title-card
+  - id: content-outro
+    role: outro
+    reel: dua-02
+    audio: tts
+    narration:
+      ar: "طب ما كل حاجة مكتوبة… الدعاء هيغير إيه؟ ده اللي جاي."
+      en: "But everything is already written… so what can du'a change? That's next."
+    reel_only_end: { ar: "ده اللي جاي.", en: "That's next." }
+    visual:
+      template: title-card
+
+  # ---- dua-03 : idée reçue 2, « tout est écrit, le du'a ne change rien » -------------------------
+  - id: decree-hook
+    role: hook
+    reel: dua-03
+    audio: tts
+    narration:
+      ar: "«ما هو كله مكتوب… أدعي ليه؟»"
+      en: "“It's all written anyway… why make du'a?”"
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: salma, pose: standing, mood: worried, talking: false }
+  - id: decree-wrong
+    role: misconception
+    reel: dua-03
+    audio: tts
+    narration:
+      ar: "تاني فكرة غلط…"
+      en: "The second wrong idea…"
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  - id: decree-idea
+    role: misconception
+    reel: dua-03
+    audio: tts
+    narration:
+      ar: "إن الدعاء مش بيغير حاجة."
+      en: "That du'a changes nothing."
+    visual:
+      template: title-card
+  - id: decree-hadith
+    role: evidence
+    reel: dua-03
+    source: hadith.tirmidhi.2139
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "النبي صلى الله عليه وسلم قال:"
+      en: "The Prophet ﷺ said:"
+    visual:
+      template: source-card
+  - id: decree-means
+    role: evidence
+    reel: dua-03
+    audio: tts
+    narration:
+      ar: "يعني فيه حاجة بترد القضاء… الدعاء."
+      en: "So there is something that turns back the decree… du'a."
+    visual:
+      template: title-card
+  - id: decree-verse-intro
+    role: evidence
+    reel: dua-03
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: decree-verse
+    role: evidence
+    reel: dua-03
+    source: quran.13.39
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: decree-part
+    role: evidence
+    reel: dua-03
+    audio: tts
+    narration:
+      ar: "والدعاء نفسه… من قدر ربنا."
+      en: "And du'a itself… is part of God's decree."
+    visual:
+      template: title-card
+  - id: decree-outro
+    role: outro
+    reel: dua-03
+    audio: tts
+    narration:
+      ar: "طب ولو دعيت كتير… ومحصلش حاجة؟ ده اللي جاي."
+      en: "And what if you prayed a lot… and nothing happened? That's next."
+    reel_only_end: { ar: "ده اللي جاي.", en: "That's next." }
+    visual:
+      template: title-card
+
+  # ---- dua-04 : idée reçue 3, « je n'ai pas été exaucé » -----------------------------------------
+  - id: answer-hook
+    role: hook
+    reel: dua-04
+    audio: tts
+    narration:
+      ar: "دعيت… ودعيت… ومحصلش حاجة؟"
+      en: "You prayed… and prayed… and nothing happened?"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: salma, pose: sitting, mood: worried, talking: false }
+  - id: answer-stop
+    role: hook
+    reel: dua-04
+    audio: tts
+    narration:
+      ar: "فبطلت تدعي؟"
+      en: "So you stopped?"
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: salma, pose: standing, mood: worried, talking: false }
+  - id: answer-wrong
+    role: misconception
+    reel: dua-04
+    audio: tts
+    narration:
+      ar: "تالت فكرة غلط…"
+      en: "The third wrong idea…"
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  - id: answer-idea
+    role: misconception
+    reel: dua-04
+    audio: tts
+    narration:
+      ar: "إن ربنا مردش على دعاءك."
+      en: "That God didn't answer your du'a."
+    visual:
+      template: title-card
+  - id: answer-hadith
+    role: evidence
+    reel: dua-04
+    source: hadith.bukhari.6340
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "النبي صلى الله عليه وسلم قال:"
+      en: "The Prophet ﷺ said:"
+    visual:
+      template: source-card
+  - id: answer-haste
+    role: evidence
+    reel: dua-04
+    audio: tts
+    narration:
+      ar: "يعني متستعجلش… ومتقولش «دعيت ومحدش رد»."
+      en: "So don't rush… and don't say “I prayed and got no answer.”"
+    visual:
+      template: title-card
+  - id: answer-question
+    role: evidence
+    reel: dua-04
+    audio: tts
+    narration:
+      ar: "طب ولو اللي طلبته محصلش؟"
+      en: "And if what you asked for doesn't happen?"
+    visual:
+      template: title-card
+  - id: answer-hadith-2
+    role: evidence
+    reel: dua-04
+    source: hadith.tirmidhi.3573
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "النبي صلى الله عليه وسلم قال:"
+      en: "The Prophet ﷺ said:"
+    visual:
+      template: source-card
+  - id: answer-never-lost
+    role: evidence
+    reel: dua-04
+    audio: tts
+    narration:
+      ar: "يعني دعاءك… عمره ما بيضيع."
+      en: "So your du'a… is never wasted."
+    visual:
+      template: title-card
+  - id: answer-outro
+    role: outro
+    reel: dua-04
+    audio: tts
+    narration:
+      ar: "وفي الآخر… آية تطمن قلبك. دي الأخيرة."
+      en: "And finally… a verse to put your heart at ease. That's the last one."
+    visual:
+      template: title-card
+
+  # ---- dua-05 : conclusion, « Dieu est proche » --------------------------------------------------
+  - id: near-hook
+    role: hook
+    reel: dua-05
+    audio: tts
+    narration:
+      ar: "حاسس إن محدش سامعك؟"
+      en: "Feel like nobody hears you?"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: worried, talking: false }
+  - id: near-verse-intro
+    role: conclusion
+    reel: dua-05
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: near-verse
+    role: conclusion
+    reel: dua-05
+    source: quran.2.186
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: near-near
+    role: conclusion
+    reel: dua-05
+    audio: tts
+    narration:
+      ar: "ربنا قريب… وبيجيب."
+      en: "God is near… and He answers."
+    # « قريب » avec un vrai ق, pas « أريب » à l'égyptienne (demande du propriétaire, 2026-11-07) :
+    # vocalisé pour la voix, qui le lit alors comme en arabe classique.
+    say_ar: "ربنا قَرِيب… وبيجيب."
+    visual:
+      template: title-card
+  # Rappel des quatre reels, un morceau par reel.
+  - id: near-recap
+    role: conclusion
+    reel: dua-05
+    audio: tts
+    narration:
+      ar: "الدعاء عبادة… مش عكس الرضا… بيرد القضاء… وعمره ما بيضيع."
+      en: "Du'a is worship… not against contentment… it turns back the decree… and it's never wasted."
+    visual:
+      template: title-card
+  - id: near-outro
+    role: outro
+    reel: dua-05
+    audio: tts
+    narration:
+      ar: "فمتبطلش تدعي… وقول «يا رب»."
+      en: "So never stop making du'a… and say “Ya Rabb”."
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: smiling, talking: true }

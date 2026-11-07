@@ -1,10 +1,10 @@
 import { AbsoluteFill, Easing, Html5Audio, Sequence, interpolate, staticFile, useCurrentFrame } from "remotion";
 import { AudioStart } from "./audioStart";
-import { selectScenes } from "./data";
 import type { VideoProps } from "./data";
 import { FONT, loadFonts } from "./fonts";
 import { FORMATS, TRANSITION_SECONDS, toFrames } from "./formats";
 import type { Format } from "./formats";
+import { selectScenes } from "./scenes.ts";
 import { AyahCard, NameCard, SceneCard, SourceCard, TitleCard } from "./templates/cards";
 import { Subtitles } from "./templates/Subtitles";
 import { COLOR } from "./theme";
@@ -68,7 +68,7 @@ const SceneBody: React.FC<{ slot: Slot; format: Format }> = ({ slot, format }) =
     <AudioStart.Provider value={lead}>
       <AbsoluteFill style={{ background: BACKGROUND }} />
       {scene.media ? (
-        <Sequence from={lead} layout="none">
+        <Sequence from={lead} durationInFrames={content} layout="none">
           <Html5Audio src={staticFile(scene.media.file)} />
         </Sequence>
       ) : null}
