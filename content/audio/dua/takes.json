@@ -303,13 +303,13 @@
     },
     "hook-4": {
       "file": "hook-4.flac",
-      "text": "دي مش مجرد عادة… دي عبادة.",
+      "text": "دي مش مجرد عاده… دي عبادة.",
       "engine": "voicetut",
       "speaker": "Mohammed",
-      "key": "37c4209af8db2894",
+      "key": "6f3d44d83195042b",
       "validated_by": "mssnoussi92",
-      "locked": "2026-11-06",
-      "sha256": "ba6df4af9510571c9ea12aafd0e0568d38b44b6aa91ba935da10e047d6a219f4"
+      "locked": "2026-11-07",
+      "sha256": "0b1b1b9cd547713b0a6e5cfce1328f646ebdb287ae632a78e81d6afa937b64e8"
     },
     "near-hook": {
       "file": "near-hook.flac",
@@ -323,13 +323,13 @@
     },
     "near-near": {
       "file": "near-near.flac",
-      "text": "ربنا قريب… وبيجيب.",
+      "text": "ربنا قَرِيب… وبيجيب.",
       "engine": "voicetut",
       "speaker": "Mohammed",
-      "key": "3abd6c8d979b1d91",
+      "key": "f44ee2df87b91759",
       "validated_by": "mssnoussi92",
       "locked": "2026-11-07",
-      "sha256": "9dfbcfe3f3d9618f52a1fd8a1488d757252bdc4b3a844dafd87880cd3feae541"
+      "sha256": "7821c788068584377b87fb9ac00193b5641944efecd0f0fafb65dfa28cc1ef9f"
     },
     "near-outro": {
       "file": "near-outro.flac",
