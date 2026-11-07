@@ -23,3 +23,6 @@ export const FPS = 30;
 export const TRANSITION_SECONDS = 0.6;
 
 export const toFrames = (seconds: number) => Math.max(1, Math.round(seconds * FPS));
+
+/** Length of the "like and subscribe" reminder of the YouTube video (templates/SubscribeReminder.tsx). */
+export const REMINDER_SECONDS = 4.4;

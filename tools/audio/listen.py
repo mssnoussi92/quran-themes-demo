@@ -11,6 +11,10 @@ recorded reading, and to place a cut in a pause. Nothing here decides anything: 
                pause before the word: check a cut with --envelope)
   --segments   one line per segment with its times (long windows, with voice activity detection)
   --envelope   loudness in dB per 20 ms window (no Whisper): pauses are the runs under about -35 dB
+  --vowels     the vowel quality of a window (no Whisper; Praat via praat-parselmouth): median F1/F2 of
+               its voiced frames, or of the first word of the file when no window is given. Whisper
+               writes words, not vowels: F2 tells « o/u » (about 800-1300 Hz) from « i/e » (1800+ Hz)
+               (« اُصْبُر » oṣbor 903 Hz; « تبت » said « tibt » 1807-1954 Hz)
   --episode E  check every narration take of build/audio/E/manifest.json against its text
                (--only to pick scenes); differences are printed, the reading of a hadith included
   --phrases E  where each phrase of each narration take starts, from Whisper's words (the pause
@@ -26,6 +30,7 @@ Examples:
   uv run --with faster-whisper==1.1.1 tools/audio/listen.py --words build/audio/dua/hook-4.wav
   uv run --with faster-whisper==1.1.1 tools/audio/listen.py --segments reading.mp3@1300@120
   python3 tools/audio/listen.py --envelope reading.mp3@1407@1.2
+  uv run --with praat-parselmouth tools/audio/listen.py --vowels take.wav take.wav@0.30@0.66
 
 Whisper: faster-whisper large-v3-turbo on CPU (int8), about real time on 4 vCPU; the model is
 downloaded from Hugging Face on first use. Audio is decoded by ffmpeg into numpy (PyAV inside
@@ -92,6 +97,43 @@ def envelope(spec: str) -> None:
         db = 20 * np.log10(np.sqrt(np.mean(samples[i:i + win] ** 2)) + 1e-9)
         cells.append(f"{start + i / RATE:.2f}:{db:.0f}")
     print(" ".join(cells))
+
+
+def vowels(spec: str) -> None:
+    """Median F1/F2 of the voiced frames of FILE@START@END, or of the file's first word."""
+    import numpy as np
+    import parselmouth
+    path, *window = spec.split("@")
+    snd = parselmouth.Sound(path)
+    if len(window) >= 2:
+        a, b = float(window[0]), float(window[0]) + float(window[1])
+    else:   # the first word: from the first loud 20 ms window to the first pause of 80 ms or more
+        x, rate = snd.values[0], snd.sampling_frequency
+        win = int(rate * 0.02)
+        db = np.array([20 * np.log10(np.sqrt(np.mean(x[i:i + win] ** 2)) + 1e-9) for i in range(0, len(x) - win, win)])
+        loud = db > db.max() - 30
+        on = int(np.argmax(loud))
+        quiet, off = 0, len(loud)
+        for j in range(on, len(loud)):
+            quiet = quiet + 1 if not loud[j] else 0
+            if quiet >= 4:
+                off = j - 3
+                break
+        a, b = on * 0.02, off * 0.02
+    part = snd.extract_part(a, b)
+    pitch = part.to_pitch(time_step=0.005)
+    formant = part.to_formant_burg(time_step=0.005, max_number_of_formants=5, maximum_formant=5000)
+    f1, f2 = [], []
+    for t in pitch.xs():
+        f0 = pitch.get_value_at_time(t)
+        if f0 and not np.isnan(f0):
+            v1, v2 = formant.get_value_at_time(1, t), formant.get_value_at_time(2, t)
+            if not (np.isnan(v1) or np.isnan(v2)):
+                f1.append(v1)
+                f2.append(v2)
+    med = lambda v: int(np.median(v)) if v else -1
+    quality = "?" if not f2 else ("o/u" if med(f2) < 1300 else "i/e" if med(f2) > 1700 else "a/between")
+    print(f"{spec}: {a:.2f}-{b:.2f} s, {len(f2)} voiced frames, F1 {med(f1)} Hz, F2 {med(f2)} Hz ({quality})")
 
 
 def check_episode(episode: str, only: list[str] | None) -> int:
@@ -198,6 +240,7 @@ def main() -> int:
     mode.add_argument("--words", action="store_true")
     mode.add_argument("--segments", action="store_true")
     mode.add_argument("--envelope", action="store_true")
+    mode.add_argument("--vowels", action="store_true")
     mode.add_argument("--episode")
     mode.add_argument("--phrases", metavar="EPISODE")
     p.add_argument("--only", nargs="+", metavar="SCENE")
@@ -213,6 +256,9 @@ def main() -> int:
         if args.envelope:
             print(f"== {spec}")
             envelope(spec)
+            continue
+        if args.vowels:
+            vowels(spec)
             continue
         samples, start = load(spec)
         print(f"== {spec} ({len(samples) / RATE:.2f} s)", flush=True)

@@ -77,8 +77,11 @@ on the open loop of beat 7 that leads to the next reel.
   س, a ة before a pause can be heard as ت (« عادة »). Keep the screen correct and add `say_ar` for the
   voice when a word must sound otherwise: « قَرِيب » (vowelled) for a classical ق, « عاده » for a
   silent ة (skill `narration-takes`, §4). Before a verse, the owner's formula: « قال ربنا سبحانه وتعالى: ».
-- The reel's open loop to the next reel (« ده اللي جاي », « أولها في الجاي ») is the end of its line
-  marked `reel_only_end`: the whole-episode videos stop the line before it.
+- The reel's open loop to the next reel is a follow call (owner's choice, 2026-11-07, in place of
+  « ده اللي جاي » / « أولها في الجاي »): « تابعنا عشان تعرف. » after the question that opens the next
+  idea, « تابعنا عشان تعرف أولها. » after the promise of the three ideas. It ends the line, marked
+  `reel_only_end`: the whole-episode videos stop the line before it. The last idea's reel says
+  « دي الأخيرة » (no follow call: the conclusion comes next).
 
 ## Project rules (CLAUDE.md, non negotiable)
 

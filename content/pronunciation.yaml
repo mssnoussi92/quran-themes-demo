@@ -1,0 +1,42 @@
+# Mots que VoiceTut dit mal, et l'écriture qui les lui fait bien dire (say_ar d'une scène), décidées par le
+# propriétaire à l'écoute. Skill voice-spelling. L'écran et les sous-titres gardent toujours l'écriture
+# normale ; seule la voix lit `say`. validate.py signale une réplique d'un reel pas encore validé qui
+# contient un de ces mots sans son écriture pour la voix.
+# Jamais pour le Coran (toujours récité) ni pour le texte d'un hadith (registre).
+words:
+  - word: عادة
+    say: عاده
+    why: le ت ne se prononce pas à la pause (« 'aada »)
+    decided: { by: mssnoussi92, on: 2026-11-07, scene: dua/hook-4 }
+  - word: قريب
+    say: قَرِيب
+    why: un vrai ق, pas « أريب » à l'égyptienne
+    decided: { by: mssnoussi92, on: 2026-11-07, scene: dua/near-near }
+  - word: اصبر
+    say: اُصْبُر
+    why: « oṣbor »
+    decided: { by: mssnoussi92, on: 2026-11-07, scene: sabr/reward-outro }
+  - word: بتصبر
+    say: بِتُصْبُر
+    why: « btoṣbor »
+    decided: { by: mssnoussi92, on: 2026-11-07, scene: sabr/because }
+  - word: البشرى
+    say: البُشْرَى
+    why: « al-boshra », pas « el-bashra »
+    decided: { by: mssnoussi92, on: 2026-11-07, scene: sabr/test-sure }
+  - word: مبيعيطش
+    say: مَبْيِعَيَّطْش
+    why: mal dit sans voyelles
+    decided: { by: mssnoussi92, on: 2026-11-07, scene: sabr/tears-idea }
+  - word: يعقوب
+    say: يَعْقُوب
+    why: "un nom, le ق se prononce"
+    decided: { by: mssnoussi92, on: 2026-11-07, scene: sabr/tears-yaqub }
+  - word: هتلاقيه
+    say: هَتْلاقِيه
+    why: le ه final était avalé
+    decided: { by: mssnoussi92, on: 2026-11-07, scene: tawba/relapse-again }
+  - word: تبت
+    say: توبت
+    why: "« tobt », pas « tibt » : les voyelles seules (تُبْت, تُبْتَ) restent « i » (F2 1690-1950 Hz), « توبت » donne « o » (649-1166 Hz)"
+    decided: { by: mssnoussi92, on: 2026-11-07, scene: tawba/relapse-hook }

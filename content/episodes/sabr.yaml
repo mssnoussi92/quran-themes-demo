@@ -1,8 +1,9 @@
 # Épisode Patience (الصبر) : 5 reels (9:16) pour Facebook, Instagram et TikTok ; l'épisode entier (16:9 et
 # 9:16) pour YouTube. Même structure que le du'a (docs/design.md) : l'accroche et la promesse, une idée
 # reçue par reel, la conclusion. Proposé le 2026-11-07 (skill new-theme), validé par le propriétaire le même
-# jour : sources, lectures, script et traduction, prises, textes de publication, miniature. Toute modification d'une ligne d'un reel retire
-# son validated_by.
+# jour : sources, lectures, script et traduction, prises, textes de publication, miniature. Fins de sabr-01 à 03
+# changées en « تابعنا عشان تعرف » à sa demande le même jour (comme le repentir) : lignes et nouvelles
+# prises validées par le propriétaire (prises figées). Toute modification d'une ligne d'un reel retire son validated_by.
 # Les répliques identiques à une prise figée du du'a (« قال ربنا سبحانه وتعالى: », « النبي صلى الله عليه
 # وسلم قال: », « تاني فكرة غلط… »…) reprennent cette prise (take_from, tools/audio/build.py).
 episode: sabr
@@ -177,9 +178,11 @@ scenes:
     reel: sabr-01
     audio: tts
     narration:
-      ar: "بس فيه تلات أفكار غلط عن الصبر… يمكن تكون مصدق واحدة منهم. أولها في الجاي."
-      en: "But there are three wrong ideas about patience… you might believe one of them. The first one is next."
-    reel_only_end: { ar: "أولها في الجاي.", en: "The first one is next." }
+      ar: "بس فيه تلات أفكار غلط عن الصبر… يمكن تكون مصدق واحدة منهم. تابعنا عشان تعرف أولها."
+      en: "But there are three wrong ideas about patience… you might believe one of them. Follow us to find out the first one."
+    # L'appel à suivre, dit seulement dans le reel, à la place de « أولها في الجاي » (demande du propriétaire, 2026-11-07,
+    # comme le repentir) ; les versions complètes coupent avant.
+    reel_only_end: { ar: "تابعنا عشان تعرف أولها.", en: "Follow us to find out the first one." }
     visual:
       template: title-card
 
@@ -287,9 +290,11 @@ scenes:
     reel: sabr-02
     audio: tts
     narration:
-      ar: "طب لو الصبر مش سكوت… يبقى أقعد أستنى وخلاص؟ ده اللي جاي."
-      en: "So if patience isn't silence… do I just sit and wait? That's next."
-    reel_only_end: { ar: "ده اللي جاي.", en: "That's next." }
+      ar: "طب لو الصبر مش سكوت… يبقى أقعد أستنى وخلاص؟ تابعنا عشان تعرف."
+      en: "So if patience isn't silence… do I just sit and wait? Follow us to find out."
+    # L'appel à suivre, dit seulement dans le reel, à la place de « ده اللي جاي » (demande du propriétaire, 2026-11-07,
+    # comme le repentir) ; les versions complètes coupent avant.
+    reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
     visual:
       template: title-card
 
@@ -380,9 +385,11 @@ scenes:
     reel: sabr-03
     audio: tts
     narration:
-      ar: "طب ولو أنا أصلاً… مش صبور؟ ده اللي جاي."
-      en: "And what if I'm just… not a patient person? That's next."
-    reel_only_end: { ar: "ده اللي جاي.", en: "That's next." }
+      ar: "طب ولو أنا أصلاً… مش صبور؟ تابعنا عشان تعرف."
+      en: "And what if I'm just… not a patient person? Follow us to find out."
+    # L'appel à suivre, dit seulement dans le reel, à la place de « ده اللي جاي » (demande du propriétaire, 2026-11-07,
+    # comme le repentir) ; les versions complètes coupent avant.
+    reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
     visual:
       template: title-card
 

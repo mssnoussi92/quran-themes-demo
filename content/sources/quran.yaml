@@ -1,5 +1,3 @@
-# Registre des versets. text_ar / text_en sont remplis par tools/sources/fetch.py (API quran.com v4),
-# jamais à la main. Statut : proposed -> validated (par le propriétaire) ou excluded.
 - id: quran.40.60
   type: ayah
   ref: {surah: 40, ayah: 60}
@@ -162,3 +160,93 @@
   status: validated
   validated_by: mssnoussi92
   notes: Az-Zumar 39:10, la récompense des patients sans compter (reel sabr-05, conclusion)
+- id: quran.42.25
+  type: ayah
+  ref: {surah: 42, ayah: 25}
+  text_ar: وَهُوَ ٱلَّذِى يَقْبَلُ ٱلتَّوْبَةَ عَنْ عِبَادِهِۦ وَيَعْفُوا۟ عَنِ ٱلسَّيِّـَٔاتِ وَيَعْلَمُ مَا تَفْعَلُونَ
+  text_en: And it is He who accepts repentance from His servants and pardons misdeeds, and He knows what you do.
+  translation: sahih-international
+  url: https://quran.com/42/25
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=42:25
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=42:25
+    translator: Saheeh International
+    surah_ar: الشورى
+    surah_en: Ash-Shuraa
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Ash-Shura 42:25, Il accepte le repentir de Ses serviteurs (reel tawba-01, la promesse)
+- id: quran.39.53
+  type: ayah
+  ref: {surah: 39, ayah: 53}
+  text_ar: ۞ قُلْ يَـٰعِبَادِىَ ٱلَّذِينَ أَسْرَفُوا۟ عَلَىٰٓ أَنفُسِهِمْ لَا تَقْنَطُوا۟ مِن رَّحْمَةِ ٱللَّهِ ۚ إِنَّ ٱللَّهَ يَغْفِرُ ٱلذُّنُوبَ جَمِيعًا ۚ إِنَّهُۥ هُوَ ٱلْغَفُورُ ٱلرَّحِيمُ
+  text_en: Say, "O My servants who have transgressed against themselves [by sinning], do not despair of the mercy of Allāh. Indeed, Allāh forgives all sins. Indeed, it is He who is the Forgiving, the Merciful."
+  translation: sahih-international
+  url: https://quran.com/39/53
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=39:53
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=39:53
+    translator: Saheeh International
+    surah_ar: الزمر
+    surah_en: Az-Zumar
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Az-Zumar 39:53, ne désespérez pas de la miséricorde de Dieu, Il pardonne tous les péchés (reel tawba-02)
+- id: quran.4.17
+  type: ayah
+  ref: {surah: 4, ayah: 17}
+  text_ar: إِنَّمَا ٱلتَّوْبَةُ عَلَى ٱللَّهِ لِلَّذِينَ يَعْمَلُونَ ٱلسُّوٓءَ بِجَهَـٰلَةٍ ثُمَّ يَتُوبُونَ مِن قَرِيبٍ فَأُو۟لَـٰٓئِكَ يَتُوبُ ٱللَّهُ عَلَيْهِمْ ۗ وَكَانَ ٱللَّهُ عَلِيمًا حَكِيمًا
+  text_en: The repentance accepted by Allāh is only for those who do wrong in ignorance [or carelessness] and then repent soon [after]. It is those to whom Allāh will turn in forgiveness, and Allāh is ever Knowing and Wise.
+  translation: sahih-international
+  url: https://quran.com/4/17
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=4:17
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=4:17
+    translator: Saheeh International
+    surah_ar: النساء
+    surah_en: An-Nisa
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: An-Nisa 4:17, le repentir de ceux qui se repentent sans tarder (reel tawba-04, « plus tard »)
+- id: quran.25.70
+  type: ayah
+  ref: {surah: 25, ayah: 70}
+  text_ar: إِلَّا مَن تَابَ وَءَامَنَ وَعَمِلَ عَمَلًا صَـٰلِحًا فَأُو۟لَـٰٓئِكَ يُبَدِّلُ ٱللَّهُ سَيِّـَٔاتِهِمْ حَسَنَـٰتٍ ۗ وَكَانَ ٱللَّهُ غَفُورًا رَّحِيمًا
+  text_en: Except for those who repent, believe and do righteous work. For them Allāh will replace their evil deeds with good. And ever is Allāh Forgiving and Merciful.
+  translation: sahih-international
+  url: https://quran.com/25/70
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=25:70
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=25:70
+    translator: Saheeh International
+    surah_ar: الفرقان
+    surah_en: Al-Furqan
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Furqan 25:70, Dieu change leurs mauvaises actions en bonnes (reel tawba-05, conclusion) ; gardé seul malgré le « إلا » initial (suite de 25:68-69), choix du propriétaire le 2026-11-07
+- id: quran.4.110
+  type: ayah
+  ref: {surah: 4, ayah: 110}
+  text_ar: وَمَن يَعْمَلْ سُوٓءًا أَوْ يَظْلِمْ نَفْسَهُۥ ثُمَّ يَسْتَغْفِرِ ٱللَّهَ يَجِدِ ٱللَّهَ غَفُورًا رَّحِيمًا
+  text_en: And whoever does a wrong or wrongs himself but then seeks forgiveness of Allāh will find Allāh Forgiving and Merciful.
+  translation: sahih-international
+  url: https://quran.com/4/110
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=4:110
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=4:110
+    translator: Saheeh International
+    surah_ar: النساء
+    surah_en: An-Nisa
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: An-Nisa 4:110, qui fait le mal puis demande pardon trouve Dieu Pardonneur et Miséricordieux (reel tawba-03, la rechute ; à la place de 3:135, qui commence au milieu d'une phrase)

@@ -1,0 +1,329 @@
+{
+  "note": "Narration takes validated by the owner (AI-generated voice, VoiceTut). Written by tools/audio/build.py --lock, never by hand.",
+  "takes": {
+    "anchor": {
+      "file": "anchor.flac",
+      "text": "والنبي صلى الله عليه وسلم قال: اللَّهُ أَفْرَحُ بِتَوْبَةِ عَبْدِهِ مِنْ أَحَدِكُمْ سَقَطَ عَلَى بَعِيرِهِ، وَقَدْ أَضَلَّهُ فِي أَرْضِ فَلاَةٍ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "f77c0a57bbf382ef",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "24aa9f35af20b8a2830e3dd69ba39fb3761fa2bf08f1d36cbeba1344999b962a"
+    },
+    "because": {
+      "file": "because.flac",
+      "text": "أيوه… بتوبتك إنت.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "6a6c40509bca6523",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "81486acff5e861f3e874ed4bb3652d716705b81f2118b6972845bc1613a5cc18"
+    },
+    "change-hook": {
+      "file": "change-hook.flac",
+      "text": "خايف ماضيك يفضل وراك؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "5e8d11ea9a83e200",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "2f49b2043d2c2a69eb4365c57844d8c630312a0a6b680375350ab6952852d932"
+    },
+    "change-outro": {
+      "file": "change-outro.flac",
+      "text": "فارجع… الباب لسه مفتوح.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "d594dd40cc1e7bc3",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "f3f54787eb00b9fbf896223d3b16698b9201d3c746ecd02185db348959c335a6"
+    },
+    "change-recap": {
+      "file": "change-recap.flac",
+      "text": "مفيش ذنب أكبر من رحمته… التوبة مش مرة واحدة… ومش لبعدين… وبتبدل السيئات حسنات.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c20bd98b5fd13cdc",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "f15f705327f6c4cc8721f6210c2a5077f1561fc5a0bef35e7d9b207a5ff53405"
+    },
+    "change-swap": {
+      "file": "change-swap.flac",
+      "text": "مش بس بيغفرها… بيبدلها حسنات.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "27eeb8ee0e9e6c7d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "fada60c06ab76d39891c89d197da43235c86d8c8d85cb8f311410cf1e699edb1"
+    },
+    "despair-all": {
+      "file": "despair-all.flac",
+      "text": "الذنوب جميعاً… لو رجعتله.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "8cb75fffdc0bcc3a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "41af92b929189d836e3bed7e513a1eb5cdbd34919ee6548a69e613cdba0efaa8"
+    },
+    "despair-hadith": {
+      "file": "despair-hadith.flac",
+      "text": "والنبي صلى الله عليه وسلم قال: قَالَ اللَّهُ يَا ابْنَ آدَمَ إِنَّكَ مَا دَعَوْتَنِي وَرَجَوْتَنِي غَفَرْتُ لَكَ عَلَى مَا كَانَ فِيكَ وَلاَ أُبَالِي يَا ابْنَ آدَمَ لَوْ بَلَغَتْ ذُنُوبُكَ عَنَانَ السَّمَاءِ ثُمَّ اسْتَغْفَرْتَنِي غَفَرْتُ لَكَ وَلاَ أُبَالِي يَا ابْنَ آدَمَ إِنَّكَ لَوْ أَتَيْتَنِي بِقُرَابِ الأَرْضِ خَطَايَا ثُمَّ لَقِيتَنِي لاَ تُشْرِكُ بِي شَيْئًا لأَتَيْتُكَ بِقُرَابِهَا مَغْفِرَةً",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "23dff540dece8596",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "f1f48f94cf945a2cb078f2aeb68b5d7c99f6355aac419e31277b06202ea82d38"
+    },
+    "despair-hook": {
+      "file": "despair-hook.flac",
+      "text": "أنا ذنوبي كتير… ربنا مش هيسامحني؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "e601904a5dad50dd",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "074c33d3219071a8a22aa22415781e448f8037d64345260990271d76736f1c52"
+    },
+    "despair-idea": {
+      "file": "despair-idea.flac",
+      "text": "إن فيه ذنب… أكبر من رحمة ربنا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "891895bc2212deb2",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "6734ea41faa136a47e428a9249053f43aba72c1c29fe27f4c17b613f2e499e48"
+    },
+    "despair-outro": {
+      "file": "despair-outro.flac",
+      "text": "طب ولو توبت… ورجعت للذنب تاني؟ تابعنا عشان تعرف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "91875a8a43d7b789",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "98d848c9726fc101f5e3b3c66a19b433b6c6a99ccdb9ed1b576e08d6dff36d82",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.36,
+          2.8
+        ]
+      }
+    },
+    "despair-takeaway": {
+      "file": "despair-takeaway.flac",
+      "text": "اليأس… هو الغلط الحقيقي.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "e94446c75bf3a2c1",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "8a6bf6a4fdac0e0fcfb5307da3f1c66a73ff098c85f33892c77ad2baef1e2748"
+    },
+    "despair-wrong": {
+      "file": "despair-wrong.flac",
+      "text": "أول فكرة غلط عن التوبة…",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "8f2ae91c8d097b91",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "56d2a00bdb56ca0f18c88b5ee27b1eb4cf0566b18a18592812f6da7b18a6e557"
+    },
+    "hook-1": {
+      "file": "hook-1.flac",
+      "text": "عملت ذنب… وحسيت إنك بعيد عن ربنا؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "d1a8d7c22f569006",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "1f0c4cd2263d038ce6d3021b71133bc352f1660db76f170cab45d854f095e4ab"
+    },
+    "hook-2": {
+      "file": "hook-2.flac",
+      "text": "وكل ما تفتكره… تتكسف ترجعله؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a0085ea2b652e3dd",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "18d16d7f46b0920cbd090228ba2b92e98c2b6b221acad5d7377d72d9daec51ab"
+    },
+    "hook-3": {
+      "file": "hook-3.flac",
+      "text": "بس الباب… لسه مفتوح.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "e7d074feb509369b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "0bcb70d011007ae88718ab7cad5f5d75b9d1567983430776c5af7a54eb2913b8"
+    },
+    "later-daily": {
+      "file": "later-daily.flac",
+      "text": "التوبة مش لآخر العمر… التوبة كل يوم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "6ce6ec5a2558f873",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "3dcbcb4d2e37f546245f1ca8cea72c0b7b7860fe73cc79c0f3f63827e55b4de1"
+    },
+    "later-hadith": {
+      "file": "later-hadith.flac",
+      "text": "والنبي صلى الله عليه وسلم قال: وَاللَّهِ إِنِّي لأَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ فِي الْيَوْمِ أَكْثَرَ مِنْ سَبْعِينَ مَرَّةً",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "0316c3b8e5effb5d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "ccfe2822f89e77cfc5df0f9474eaa17976946407d978cda6d7b111a0d103c87c"
+    },
+    "later-hook": {
+      "file": "later-hook.flac",
+      "text": "هتوب… بس بعدين؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "3e881ab93c3c8e87",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "0963d5361516fc730b95bd7d8b5b44711df33f99935c06764d63868c4f996ebd"
+    },
+    "later-idea": {
+      "file": "later-idea.flac",
+      "text": "إن التوبة… حاجة نأجلها لآخر العمر.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "319e652db0e3a4af",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "ddcdecccfbac0032b93b1801e14a799f1586c1a112f59042de9628c01208a641"
+    },
+    "later-outro": {
+      "file": "later-outro.flac",
+      "text": "وفي الآخر… وعد ربنا للتايبين. دي الأخيرة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "641e067385af2c21",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "e7ebf02d669428d1ddcc30be5d602c6156635ddb00c93bc7a5ffe72408a88b05"
+    },
+    "later-soon": {
+      "file": "later-soon.flac",
+      "text": "من قَرِيب… يعني متأجلش.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "e8c9843cc544a95a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "9fa9a965698632bde07a97572783d3b8de836eff098b2290233fa00678042f85"
+    },
+    "outro": {
+      "file": "outro.flac",
+      "text": "بس فيه تلات أفكار غلط عن التوبة… يمكن تكون مصدق واحدة منهم. تابعنا عشان تعرف أولها.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "cccebadcb60ef57e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "cf249f0589143e69f280ae8f434745951724f571a631fd96285d741d3e92d84e",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          2.28,
+          4.14
+        ]
+      }
+    },
+    "relapse-again": {
+      "file": "relapse-again.flac",
+      "text": "كل ما ترجع… هَتْلاقِيه غفور رحيم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c7b545efb937f5c1",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "829fe9190f1cfa79829845c5b55f89caec2162c8fc5d27533675f13b613a0133"
+    },
+    "relapse-hadith": {
+      "file": "relapse-hadith.flac",
+      "text": "النبي صلى الله عليه وسلم قال: كُلُّ ابْنِ آدَمَ خَطَّاءٌ وَخَيْرُ الْخَطَّائِينَ التَّوَّابُونَ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "dd6676a64dfdfd32",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "bf1a9f1c22ea2a99aa801ffdd4b255cfa5ba874e4723ef929543048f750b75bb"
+    },
+    "relapse-hook": {
+      "file": "relapse-hook.flac",
+      "text": "توبت… ورجعت تاني؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a10cfd90ef55aebb",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "88d7b5a76df02de45cdd983241c8de924208bcb2c4ea2307fb0dec00599b67a5"
+    },
+    "relapse-idea": {
+      "file": "relapse-idea.flac",
+      "text": "إن التوبة مرة واحدة… ولو وقعت، خلاص.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "eae94ee768623601",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "028d37e899844fa8f3a09fbbd3dea722c84bbe61b961c45e3535b9a2a834f88f"
+    },
+    "relapse-means": {
+      "file": "relapse-means.flac",
+      "text": "يعني كلنا بنغلط… وأحسننا اللي بيتوب.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2db6cba62e5a6a84",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "fc7e5a5bbfa0ae8c8a9e0c27e466d198183b11c2dd7a72946f2e7db0af37eb83"
+    },
+    "relapse-outro": {
+      "file": "relapse-outro.flac",
+      "text": "طب ما أتوب بعدين… لسه بدري؟ تابعنا عشان تعرف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "7a53a7b020a9a26b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "08644bcf7822d103971c66edec37c9d0e15f300159c4306d93217a395f17e48b",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.42,
+          2.34
+        ]
+      }
+    },
+    "why": {
+      "file": "why.flac",
+      "text": "بيفرح؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "dc37c71f04a266d8",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "2732041156182f1bd554603924377b3e8a244ddef807ea37b2bf677f69d96d72"
+    }
+  }
+}
