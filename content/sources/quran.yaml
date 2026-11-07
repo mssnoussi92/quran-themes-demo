@@ -229,8 +229,9 @@
     surah_ar: الفرقان
     surah_en: Al-Furqan
     retrieved: '2026-11-07'
-  status: proposed
-  notes: Al-Furqan 25:70, Dieu change leurs mauvaises actions en bonnes (reel tawba-05, conclusion)
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Furqan 25:70, Dieu change leurs mauvaises actions en bonnes (reel tawba-05, conclusion) ; gardé seul malgré le « إلا » initial (suite de 25:68-69), choix du propriétaire le 2026-11-07
 - id: quran.4.110
   type: ayah
   ref: {surah: 4, ayah: 110}
