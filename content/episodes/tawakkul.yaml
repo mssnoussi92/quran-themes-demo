@@ -199,6 +199,8 @@ scenes:
     narration:
       ar: "واحد سأل النبي صلى الله عليه وسلم: أربط الناقة وأتوكل… ولا أسيبها وأتوكل؟"
       en: "A man asked the Prophet ﷺ: should I tie my camel and trust God… or leave it loose and trust God?"
+    # « ولّا » (« ou », walla) pour la voix : « ولا » peut se lire « wa-lā » (« et ne… pas »).
+    say_ar: "واحد سأل النبي صلى الله عليه وسلم: أربط الناقة وأتوكل… ولّا أسيبها وأتوكل؟"
     visual:
       template: source-card
   - id: sit-verse-intro
