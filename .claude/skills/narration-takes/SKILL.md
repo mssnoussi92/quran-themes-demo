@@ -53,6 +53,15 @@ the same words, only diacritics, punctuation and ة/ه may differ (`validate.py`
 - A ة heard as ت at a pause (the owner: « عادة », "T is silent"): write it ه, « عاده ».
 - A word that must keep its ق (« قريب » said « أريب »): vowel it, « قَرِيب ». Whisper heard « قريب » on
   2 takes out of 2; « قَرِيبٌ » and the bare word stayed « أريب ».
+- Egyptian vowels the owner asked for (sabr, 2026-11-07), written in `say_ar`: « بتصبر » « btoṣbor »
+  (بِتُصْبُر), « اصبر » « oṣbor » (اُصْبُر), « البشرى » « al-boshra », not « el-bashra » (البُشْرَى),
+  « مبيعيطش » (مَبْيِعَيَّطْش). A name keeps its ق: « يَعْقُوب ».
+- Guillemets « » in the spoken text can make VoiceTut add a sound (« «اصبر»… » heard « اصبر بس »):
+  leave them out of `say_ar`.
+- Whisper writes what it understands, not the vowels: it cannot tell « oṣbor » from « iṣbir » or
+  « boshra » from « bashra ». For a vowel, make 2 or 3 takes, keep those Whisper hears with the right
+  words, and send the owner one MP3 per line with the takes one after the other (1.2 s apart) so
+  they choose by ear.
 - Test variants in one VoiceTut call (one model load): each variant twice in its own text file,
   `/opt/venvs/voicetut/bin/python tools/tts/say.py --engine voicetut --speaker Mohammed --language ar
   --in a1.txt a2.txt b1.txt b2.txt --out-dir <dir>`, then `listen.py` on each. To use a test take:

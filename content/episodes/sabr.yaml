@@ -197,7 +197,7 @@ scenes:
       ar: "إن الصابر مبيعيطش… ومبيشتكيش."
       en: "That a patient person doesn't cry… or complain."
     # « مبيعيطش » mal dit sans voyelles (le propriétaire, 2026-11-07) : vocalisé.
-    say_ar: "إن الصابر مَبِيعَيَّطْش… ومبيشتكيش."
+    say_ar: "إن الصابر مَبْيِعَيَّطْش… ومَبْيِشْتِكِيش."
     visual:
       template: title-card
   # Ya'qub : un prophète, jamais dessiné (carte de nom), puis le verset récité.
