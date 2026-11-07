@@ -16,6 +16,10 @@ verse for a recitation. Writes build/audio/<episode>/<scene>.(mp3|wav) and manif
               Each line is cut into phrases (after « ، … . ؟ : ») and the manifest gives the time
               each phrase starts, read from the pauses of the take: a title card shows them one by
               one as the voice says them.
+  reading     a hadith whose registry entry has a `recording` (a person reading the book aloud): the
+              scene's audio is its introduction cut from the narration take, a short pause, then the
+              reader saying the Prophet's words (`mix` in the manifest). The recording is downloaded
+              here, cut once and kept in build/audio/<episode>/readings/, never committed.
 
 Usage:
   python3 tools/audio/build.py --episode dua
@@ -38,6 +42,7 @@ import sys
 import tempfile
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 import wave
 from pathlib import Path
@@ -147,10 +152,10 @@ def read_wav(path: Path):
     return params, samples
 
 
-def loud_windows(samples: array.array, rate: int) -> tuple[int, list[bool]]:
+def loud_windows(samples: array.array, rate: int, threshold: float = TIGHT["threshold"]) -> tuple[int, list[bool]]:
     """Window length (samples) and, for each window of TIGHT["window"] s, whether it is speech."""
     win = max(1, int(rate * TIGHT["window"]))
-    level = TIGHT["threshold"] * 32768
+    level = threshold * 32768
     loud = []
     for i in range(0, len(samples), win):
         chunk = samples[i:i + win]
@@ -197,9 +202,11 @@ def tighten(raw: Path, dest: Path) -> float:
 # pauses of a tightened take (silences of 0.1 s or more inside the line) are matched in order to the
 # cuts: the closest to where the cut falls if the line were said at an even pace (letters before it),
 # the longest preferred (a cut between sentences or at a comma is a pause of 0.18 s once tightened,
-# a stop inside a word is shorter). Without enough pauses, the even-pace estimate.
+# a stop inside a word is shorter). Without enough pauses, the even-pace estimate. Version 2 halves
+# the weight of length: a noisy pause can look split in two (Muslim 2679a, after « قال: »), and
+# version 1 then cut the line at a longer pause 4 s later. Checked against Whisper on 13 lines.
 PHRASE_CUT = re.compile(r"(?<=[،,…\.!?؟:])\s+")
-PHRASES = {"version": 1, "min_pause": 0.1, "length_weight": 1.0}
+PHRASES = {"version": 2, "min_pause": 0.1, "length_weight": 0.5}
 
 
 def split_phrases(text: str) -> list[str]:
@@ -259,6 +266,77 @@ def phrase_times(path: Path, text: str) -> list[dict]:
             j = prev[k][j]
         starts = [onset] + [pauses[j][0] + pauses[j][1] for j in reversed(chosen)]
     return [{"text": p, "start": round(t, 3)} for p, t in zip(phrases, starts)]
+
+
+# A hadith read by a person (registry `recording`): the introduction of the narration take, cut
+# 0.12 s before the hadith (where the take pauses anyway), READING_GAP of silence, then the reading,
+# with 20 ms / 40 ms fades so the cut makes no click.
+READING_GAP = 0.25
+CUT_BEFORE = 0.12
+
+
+def download(url: str, dest: Path, attempts: int = 5) -> None:
+    """Stream a (large) file to disk."""
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    tmp = dest.with_suffix(dest.suffix + ".part")
+    for i in range(attempts):
+        try:
+            with urllib.request.urlopen(req, timeout=120) as r, open(tmp, "wb") as f:
+                shutil.copyfileobj(r, f, 1 << 20)
+            tmp.replace(dest)
+            return
+        except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
+            if i == attempts - 1:
+                sys.exit(f"error: {url}: {e}")
+            time.sleep(2 ** i)
+
+
+def reading_clip(rec: dict, source_id: str, out_dir: Path, rate: int) -> Path:
+    """The reader's words, mono 16-bit at `rate`, cut from the recording once and kept."""
+    folder = out_dir / "readings"
+    folder.mkdir(exist_ok=True)
+    clip, meta = folder / f"{source_id}.wav", folder / f"{source_id}.json"
+    want = {"file": rec["file"], "start": rec["start"], "end": rec["end"], "rate": rate}
+    if clip.is_file() and meta.is_file() and json.loads(meta.read_text()) == want:
+        return clip
+    with tempfile.TemporaryDirectory() as tmp:
+        src = Path(tmp) / ("recording" + Path(urllib.parse.urlparse(rec["file"]).path).suffix)
+        print(f"reading {source_id}: downloading {rec['file']}", flush=True)
+        download(rec["file"], src)
+        # atrim + asetpts: the clip's own clock starts at 0, so the fades fall at its two ends (with -ss
+        # after -i, the frames keep the recording's timestamps and a fade-out would mute the whole clip).
+        length = rec["end"] - rec["start"]
+        cut = (f"atrim=start={rec['start']:.3f}:end={rec['end']:.3f},asetpts=PTS-STARTPTS,"
+               f"afade=t=in:d=0.02,afade=t=out:st={max(0.0, length - 0.04):.3f}:d=0.04")
+        subprocess.run([ffmpeg_exe(), "-loglevel", "error", "-y", "-i", str(src), "-af", cut, "-ac", "1",
+                        "-ar", str(rate), "-c:a", "pcm_s16le", str(clip)], check=True)
+    meta.write_text(json.dumps(want) + "\n")
+    return clip
+
+
+def mix_reading(sid: str, entry: dict, scene: dict, out_dir: Path) -> dict:
+    """<scene>.mix.wav: the introduction of the take, a pause, the reader. Returns the manifest's mix."""
+    source = scene["source"]
+    rec = source["recording"]
+    intro = split_phrases((scene.get("narration") or {}).get("ar") or "")
+    phrases = entry.get("phrases") or []
+    if not intro or len(phrases) <= len(intro):
+        sys.exit(f"error: scene {sid}: cannot find where the hadith starts in the take")
+    params, samples = read_wav(out_dir / entry["file"])
+    rate = params.framerate
+    cut = max(1, int((phrases[len(intro)]["start"] - CUT_BEFORE) * rate))
+    _, reading = read_wav(reading_clip(rec, source["id"], out_dir, rate))
+    out = array.array("h", samples[:cut])
+    out.extend(array.array("h", bytes(2 * int(READING_GAP * rate))))
+    out.extend(reading)
+    mix = out_dir / f"{sid}.mix.wav"
+    with wave.open(str(mix), "wb") as w:
+        w.setparams(params)
+        w.writeframes(out.tobytes())
+    start = round(cut / rate + READING_GAP, 3)
+    return {"file": mix.name, "seconds": seconds(mix), "reader": rec["reader"],
+            "recording": {k: rec[k] for k in ("file", "start", "end")},
+            "phrases": phrases[:len(intro)] + [{"text": source["display_ar"], "start": start}]}
 
 
 def tts_key(text: str, speaker: str) -> str:
@@ -395,6 +473,17 @@ def main() -> int:
         if entry["kind"] == "tts" and final.is_file():
             entry["phrases"] = phrase_times(final, entry["text"])
             entry["phrase_rule"] = PHRASES
+
+    # Hadiths read by a person: the introduction of the take, then the reading.
+    for scene in data["scenes"]:
+        sid, entry = scene["id"], scenes.get(scene["id"])
+        if not entry or entry["kind"] != "tts":
+            continue
+        if (scene.get("source") or {}).get("recording") and (out_dir / entry["file"]).is_file():
+            entry["mix"] = mix_reading(sid, entry, scene, out_dir)
+            print(f"reading {sid}: {entry['mix']['seconds']} s ({entry['mix']['reader']})")
+        else:
+            entry.pop("mix", None)
 
     if args.lock:
         takes_dir.mkdir(parents=True, exist_ok=True)

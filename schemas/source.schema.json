@@ -54,7 +54,24 @@
         },
         "status": { "enum": ["proposed", "validated", "excluded"] },
         "validated_by": { "type": "string" },
-        "notes": { "type": "string" }
+        "notes": { "type": "string" },
+        "recording": {
+          "description": "A person reading the hadith aloud (a recorded reading of the book), heard instead of the synthetic voice for the words shown (display_ar). start/end found with Whisper; heard = what Whisper hears there, compared with the text by validate.py. The owner listens before validating it.",
+          "type": "object",
+          "required": ["reader", "item", "file", "start", "end", "heard", "license", "status"],
+          "additionalProperties": false,
+          "properties": {
+            "reader": { "type": "string" },
+            "item": { "type": "string", "format": "uri", "description": "Page of the recording (archive.org item)" },
+            "file": { "type": "string", "format": "uri", "description": "Audio file downloaded by tools/audio/build.py" },
+            "start": { "type": "number", "minimum": 0 },
+            "end": { "type": "number", "exclusiveMinimum": 0 },
+            "heard": { "type": "string" },
+            "license": { "type": "string", "description": "What the item says about reuse (\"none stated\" if nothing)" },
+            "status": { "enum": ["proposed", "validated"] },
+            "validated_by": { "type": "string" }
+          }
+        }
       },
       "allOf": [
         {

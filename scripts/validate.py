@@ -103,7 +103,37 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
                 rule = graded.get(ref["collection"])
                 if rule and src["status"] != "excluded":
                     check_grade(src, rule, where, report)
+                check_recording(src, where, report)
     return registry
+
+
+def prophet_words(text_ar: str) -> str:
+    """The words a hadith card shows: from the first to the last quotation mark (prepare.ts)."""
+    first, last = text_ar.find('"'), text_ar.rfind('"')
+    return text_ar[first + 1:last] if 0 <= first < last else ""
+
+
+def plain_words(text: str) -> list[str]:
+    """Words for comparing a reading with the text: no diacritics or punctuation, one alef, ى = ي,
+    ة = ه (what speech recognition writes varies there)."""
+    text = ARABIC_MARKS.sub("", text)
+    text = re.sub("[أإآٱ]", "ا", text).replace("ى", "ي").replace("ة", "ه").replace("ؤ", "و").replace("ئ", "ي")
+    return re.sub(r"[^\w\s]", " ", text).split()
+
+
+def check_recording(src: dict, where: str, report: Report) -> None:
+    """A recorded reading must say the words the card shows: what Whisper heard there (heard) is
+    compared with them. A difference is a warning (recognition errs too): the owner listens."""
+    rec = src.get("recording")
+    if not rec:
+        return
+    if rec["end"] <= rec["start"]:
+        report.error(where, "recording: end must come after start")
+    if rec["status"] == "validated" and not rec.get("validated_by"):
+        report.error(where, "recording: validated needs validated_by (the owner, after listening)")
+    shown, heard = plain_words(prophet_words(src.get("text_ar") or "")), plain_words(rec["heard"])
+    if shown != heard:
+        report.warn(where, f"recording: heard {len(heard)} words that differ from the {len(shown)} shown; listen to it")
 
 
 def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, release: bool, report: Report) -> None:
@@ -134,6 +164,9 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
                 report.error(where, f"source '{src['id']}' is excluded")
             elif src["status"] != "validated":
                 (report.error if release else report.warn)(where, f"source '{src['id']}' is not validated yet")
+            if src is not None and src.get("recording", {}).get("status") == "proposed":
+                (report.error if release else report.warn)(
+                    where, f"recording of '{src['id']}' ({src['recording']['reader']}) not validated by the owner yet")
         if template in ("ayah-card", "source-card") and "source" not in scene:
             report.error(where, f"template '{template}' needs a source")
 

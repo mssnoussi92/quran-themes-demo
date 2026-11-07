@@ -39,6 +39,8 @@ export type ResolvedSource = {
   /** "Al-Albani: Sahih" when the grade is not the collection itself (Bukhari, Muslim). */
   grade_note: string | null;
   translator: string | null;
+  /** A person reading the hadith aloud (registry `recording`), heard instead of the synthetic voice. */
+  recording: { reader: string; file: string; start: number; end: number; status: "proposed" | "validated" } | null;
 };
 
 /** One recited word: its position in the verse (1-based, waqf signs excluded), seconds in the file. */

@@ -206,7 +206,7 @@ export const SourceCard: React.FC<CardProps> = ({ scene, format }) => {
             {prophet ? `«${part}»` : part}
           </div>
         ))}
-        <Reference lines={[source.reference, source.grade_note]} />
+        <Reference lines={[source.reference, source.grade_note, scene.media?.credit ?? null]} />
       </Panel>
     </Stage>
   );

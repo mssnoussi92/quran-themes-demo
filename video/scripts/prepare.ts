@@ -61,7 +61,10 @@ type RegistryEntry = {
   grade?: string;
   graded_by?: string;
   origin?: { translator?: string; surah_ar?: string; surah_en?: string; grades?: { name: string; grade: string }[] };
+  recording?: Recording & { item: string; heard: string; license: string; validated_by?: string };
 };
+
+type Recording = NonNullable<ResolvedSource["recording"]>;
 
 type ManifestScene = {
   kind: "tts" | "recitation";
@@ -72,6 +75,14 @@ type ManifestScene = {
   reciter?: string;
   words?: Media["words"];
   phrases?: Media["phrases"];
+  /** A hadith read by a person: the take's introduction, then the reading (tools/audio/build.py). */
+  mix?: {
+    file: string;
+    seconds: number;
+    reader: string;
+    recording: { file: string; start: number; end: number };
+    phrases: Media["phrases"];
+  };
 };
 
 type EpisodeFile = {
@@ -203,6 +214,9 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
     display_en,
     grade_note: gradeNote(entry),
     translator: entry.origin?.translator ?? null,
+    recording: entry.recording
+      ? (({ reader, file, start, end, status }) => ({ reader, file, start, end, status }))(entry.recording)
+      : null,
   };
 }
 
@@ -240,17 +254,25 @@ function mediaFor(episode: string, manifest: Record<string, ManifestScene> | nul
     console.warn(`warning ${where}: audio is out of date (run tools/audio/build.py --episode ${episode})`);
     return null;
   }
-  const file = `audio/${episode}/${entry.file}`;
+  // A hadith with a recorded reading is heard read by that person: the audio must be the mix of it.
+  const rec = source?.recording ?? null;
+  const mix = entry.mix ?? null;
+  if (rec && !(mix && mix.recording.file === rec.file && mix.recording.start === rec.start && mix.recording.end === rec.end)) {
+    console.warn(`warning ${where}: the reading of ${source!.id} is not mixed yet (run tools/audio/build.py --episode ${episode})`);
+    return null;
+  }
+  const name = mix?.file ?? entry.file;
+  const file = `audio/${episode}/${name}`;
   mkdirSync(join(PUBLIC, "audio", episode), { recursive: true });
-  copyFileSync(join(AUDIO, episode, entry.file), join(PUBLIC, file));
+  copyFileSync(join(AUDIO, episode, name), join(PUBLIC, file));
   const reciter = entry.reciter ? RECITERS[entry.reciter] ?? entry.reciter : null;
   return {
     kind: entry.kind,
     file,
-    seconds: entry.seconds,
+    seconds: mix?.seconds ?? entry.seconds,
     words: entry.words ?? [],
-    phrases: entry.phrases ?? [],
-    credit: entry.kind === "recitation" && reciter ? `Recitation: ${reciter}` : null,
+    phrases: mix?.phrases ?? entry.phrases ?? [],
+    credit: entry.kind === "recitation" && reciter ? `Recitation: ${reciter}` : mix ? `Reading: ${mix.reader}` : null,
   };
 }
 
