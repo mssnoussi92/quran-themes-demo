@@ -21,15 +21,15 @@ publish:
   validated_by: mssnoussi92
 # Miniature YouTube de l'épisode entier (16:9) : video/src/Thumbnail.tsx, 1280x720. Proposée le
 # 2026-11-07 : textes courts tirés du titre validé (« تلات أفكار غلط عن الدعاء », chiffre ٣ pour la
-# lisibilité), Amir inquiet de l'accroche. À valider par le propriétaire sur l'image (validated_by) :
-# rendue avec l'épisode (render, reel = all), signalée « proposée » dans les notes tant qu'elle ne l'est pas.
+# lisibilité), Amir inquiet de l'accroche. Validée par le propriétaire sur l'image le même jour
+# (validated_by) ; rendue avec l'épisode (render, reel = all).
 thumbnail:
   layout: close-up
   headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas" }
   kicker: { ar: "عن الدعاء", en: "about du'a" }
   character: { id: amir, pose: standing, mood: worried }
   background: waiting-room
-  validated_by: mssnoussi92   # validée sur l'image par le propriétaire, 2026-11-07
+  validated_by: mssnoussi92
 reels:
   - id: dua-01
     title: { ar: "يا رب", en: "Ya Rabb" }
