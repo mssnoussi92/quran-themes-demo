@@ -117,6 +117,8 @@ scenes:
     narration:
       ar: "يعني الابتلاء جاي جاي… والبشرى للصابرين."
       en: "So trials will surely come… and the good news is for the patient."
+    # « البشرى » = « al-boshra », pas « el-bashra » (demande du propriétaire, 2026-11-07).
+    say_ar: "يعني الابتلاء جاي جاي… والبُشْرَى للصابرين."
     visual:
       template: title-card
   - id: anchor
@@ -147,6 +149,8 @@ scenes:
     narration:
       ar: "لما بتصبر… الوجع نفسه بيبقى خير ليك."
       en: "When you're patient… the pain itself becomes good for you."
+    # « بتصبر » à l'égyptienne, « btoṣbor » (demande du propriétaire, 2026-11-07).
+    say_ar: "لما بِتُصْبُر… الوجع نفسه بيبقى خير ليك."
     visual:
       template: title-card
   - id: outro
@@ -192,6 +196,8 @@ scenes:
     narration:
       ar: "إن الصابر مبيعيطش… ومبيشتكيش."
       en: "That a patient person doesn't cry… or complain."
+    # « مبيعيطش » mal dit sans voyelles (le propriétaire, 2026-11-07) : vocalisé.
+    say_ar: "إن الصابر مَبِيعَيَّطْش… ومبيشتكيش."
     visual:
       template: title-card
   # Ya'qub : un prophète, jamais dessiné (carte de nom), puis le verset récité.
@@ -510,5 +516,7 @@ scenes:
     narration:
       ar: "فلما حد يقولك «اصبر»… افتكر إن ربنا مع الصابرين."
       en: "So when someone tells you “be patient”… remember: God is with the patient."
+    # « اصبر » = « oṣbor » (le propriétaire, 2026-11-07) ; sans « » (VoiceTut ajoutait un son, hook-1).
+    say_ar: "فلما حد يقولك اُصْبُر… افتكر إن ربنا مع الصابرين."
     visual:
       template: title-card
