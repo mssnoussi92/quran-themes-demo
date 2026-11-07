@@ -63,13 +63,21 @@
     },
     "effort-outro": {
       "file": "effort-outro.flac",
-      "text": "طب ولو أنا أصلاً… مش صبور؟ ده اللي جاي.",
+      "text": "طب ولو أنا أصلاً… مش صبور؟ تابعنا عشان تعرف.",
       "engine": "voicetut",
       "speaker": "Mohammed",
-      "key": "a3680b4b84ec8466",
+      "key": "82b2ec0c0b9fb565",
       "validated_by": "mssnoussi92",
       "locked": "2026-11-07",
-      "sha256": "afb5c50f6435e41e04b4036f8e42cc4f69669e74990217a6eedc39118893879c"
+      "sha256": "4ee15d8c78ae839519a9a8fc157f93435b35b443d843baeee35aacbd6150dc9d",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.38,
+          2.28
+        ]
+      }
     },
     "effort-tool": {
       "file": "effort-tool.flac",
@@ -180,13 +188,21 @@
     },
     "outro": {
       "file": "outro.flac",
-      "text": "بس فيه تلات أفكار غلط عن الصبر… يمكن تكون مصدق واحدة منهم. أولها في الجاي.",
+      "text": "بس فيه تلات أفكار غلط عن الصبر… يمكن تكون مصدق واحدة منهم. تابعنا عشان تعرف أولها.",
       "engine": "voicetut",
       "speaker": "Mohammed",
-      "key": "9f7495a2d2e69847",
+      "key": "a8a8148c2ab03e98",
       "validated_by": "mssnoussi92",
       "locked": "2026-11-07",
-      "sha256": "5469cadce8398ceea0070baad134bb247f67f3d8a87b51298cd063c42a7a6bfc"
+      "sha256": "28f19eb0d2ebb6993079cbc0d63d0e0ede4a0db68ca61ce11e62b6f7f92e44f7",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          2.56,
+          4.58
+        ]
+      }
     },
     "reward-hook": {
       "file": "reward-hook.flac",
@@ -260,13 +276,21 @@
     },
     "tears-outro": {
       "file": "tears-outro.flac",
-      "text": "طب لو الصبر مش سكوت… يبقى أقعد أستنى وخلاص؟ ده اللي جاي.",
+      "text": "طب لو الصبر مش سكوت… يبقى أقعد أستنى وخلاص؟ تابعنا عشان تعرف.",
       "engine": "voicetut",
       "speaker": "Mohammed",
-      "key": "fb569f23b8f411b1",
+      "key": "99f33bfb0b57cba0",
       "validated_by": "mssnoussi92",
       "locked": "2026-11-07",
-      "sha256": "621f3bbd353f59783faed8e8957a571b74c63e3cf9abb0c1fcba1f24addf5c57"
+      "sha256": "0e500a0c658d16792759d5e02fbe20bfe98d5e7a5f723c18fff51ae795200d0b",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.9,
+          3.64
+        ]
+      }
     },
     "tears-takeaway": {
       "file": "tears-takeaway.flac",

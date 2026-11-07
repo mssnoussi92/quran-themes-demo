@@ -6,7 +6,7 @@
 # ligne d'un reel retire son validated_by.
 # dua-02 à dua-05 : proposés le 2026-11-06 (une idée reçue par reel, puis la conclusion), validés par le
 # propriétaire le 2026-11-07, script, traduction et voix (prises figées). Fins de dua-01 à 03 changées en
-# « تابعنا عشان تعرف » à sa demande le même jour (comme le repentir) : lignes validées par le propriétaire, nouvelles prises à écouter.
+# « تابعنا عشان تعرف » à sa demande le même jour (comme le repentir) : lignes et nouvelles prises validées par le propriétaire (prises figées).
 episode: dua
 title: { ar: "الدعاء", en: "Du'a" }
 narration_language: ar-egy   # VoiceTut (égyptien), choix du propriétaire le 2026-11-06

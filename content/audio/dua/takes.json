@@ -192,13 +192,21 @@
     },
     "content-outro": {
       "file": "content-outro.flac",
-      "text": "طب ما كل حاجة مكتوبة… الدعاء هيغير إيه؟ ده اللي جاي.",
+      "text": "طب ما كل حاجة مكتوبة… الدعاء هيغير إيه؟ تابعنا عشان تعرف.",
       "engine": "voicetut",
       "speaker": "Mohammed",
-      "key": "01f3192f7c2ae584",
+      "key": "b8ac0ea20435bbd3",
       "validated_by": "mssnoussi92",
       "locked": "2026-11-07",
-      "sha256": "56dc98cffacd587a05453a536e0915ab6698c755436eaec03dc84a968943a1ee"
+      "sha256": "98814e9f97c15cb35366f0ac917a9a8dd16848a77e90d55e97f32b0f35a94448",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.72,
+          3.02
+        ]
+      }
     },
     "content-wrong": {
       "file": "content-wrong.flac",
@@ -252,13 +260,21 @@
     },
     "decree-outro": {
       "file": "decree-outro.flac",
-      "text": "طب ولو دعيت كتير… ومحصلش حاجة؟ ده اللي جاي.",
+      "text": "طب ولو دعيت كتير… ومحصلش حاجة؟ تابعنا عشان تعرف.",
       "engine": "voicetut",
       "speaker": "Mohammed",
-      "key": "b396fc40f8f9005b",
+      "key": "2581fbfadd1693fc",
       "validated_by": "mssnoussi92",
       "locked": "2026-11-07",
-      "sha256": "cc80c278908f05321f52298851b057c56a6d48b6c17c1e7d75695d305b8c7932"
+      "sha256": "7a098f7fa02b0b0ed9e2a7d0fb5d169267b601a197bcab4f2c57e2d5424af9fb",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.46,
+          2.5
+        ]
+      }
     },
     "decree-part": {
       "file": "decree-part.flac",
@@ -371,13 +387,21 @@
     },
     "outro": {
       "file": "outro.flac",
-      "text": "بس فيه تلات أفكار غلط عن الدعاء… يمكن تكون مصدق واحدة منهم. أولها في الجاي.",
+      "text": "بس فيه تلات أفكار غلط عن الدعاء… يمكن تكون مصدق واحدة منهم. تابعنا عشان تعرف أولها.",
       "engine": "voicetut",
       "speaker": "Mohammed",
-      "key": "5e13b2a263ca55f0",
+      "key": "ca2f19c72347c906",
       "validated_by": "mssnoussi92",
-      "locked": "2026-11-06",
-      "sha256": "d44843768ca6360883aa80cbceae53410fa6ae3aaa45fc3d319b9e9a35a6c757"
+      "locked": "2026-11-07",
+      "sha256": "7d49695298db303be6a54338a5d39e45ad4d41bec5168264481f3080683aa2ff",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          2.52,
+          4.54
+        ]
+      }
     },
     "promise-intro": {
       "file": "promise-intro.flac",
