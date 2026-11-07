@@ -19,7 +19,10 @@ proposition. Les sources ci-dessous existent sous ces numéros dans hadith-api (
 2026-11-07, Tirmidhi avec le jugement d'al-Albani) ; elles restent à inscrire au registre et à
 faire valider, une par une.
 
-1. **فخ المقارنات** (le piège des comparaisons), avec « الشكر والقناعة » : plan validé.
+1. **فخ المقارنات** (le piège des comparaisons), avec « الشكر والقناعة » : plan validé ; **en cours**
+   (`content/episodes/muqarana.yaml`, plan dans `docs/design.md`). Écarts au plan, à valider : Tirmidhi
+   2513 à la place de Muslim 2963c (même parole, carte plus propre), Bukhari 6446 en ancre du reel 1, 14:7
+   (« لئن شكرتم لأزيدنكم ») pour la conclusion.
    - « اللي عنده أكتر… ربنا بيحبه أكتر » : 89:15-17 (« كلا »), Muslim 2564 (« إن الله لا ينظر إلى
      صوركم وأموالكم… », narration 2564c).
    - « حياتهم أحسن من حياتي » : 20:131 (« ولا تمدن عينيك »), Muslim 2963 (« انظروا إلى من أسفل
