@@ -59,7 +59,8 @@ video/                   projet Remotion (TypeScript) : compositions Reel916 (10
   scripts/publish.ts     textes à coller pour chaque vidéo et chaque plateforme (notes de la pré-release)
   src/                   Root.tsx (compositions), data.ts (chargement), scenes.ts (scènes d'une vidéo et minutage,
                          partagé avec publish.ts), Video.tsx, templates/ (cartes, scène),
-                         characters/ (kit Open Peeps, bouche au volume), backgrounds/ (fonds), CharacterSheet.tsx
+                         characters/ (kit Open Peeps, bouche au volume), backgrounds/ (fonds), CharacterSheet.tsx,
+                         Thumbnail.tsx (miniature YouTube 1280x720 de l'épisode, `thumbnail` de l'épisode)
   public/fonts/          Amiri Quran, Amiri, Lora (OFL, mêmes fichiers que quran-reels)
 build/                   (ignoré) tout ce qui est généré
 .claude/skills/          new-theme (d'un thème aux vidéos), write-hook (accroche), narration-takes (voix),
@@ -98,6 +99,8 @@ npm run render -- Reel916 out/dua-01.mp4             # le reel dua-01 (≈ 40 s 
 npm run render -- Episode169 out/dua.mp4             # l'épisode entier en 16:9
 node scripts/publish.ts dua all                      # textes à coller (titre, description, hashtags) de chaque vidéo
 npm run still -- CharacterSheet ../docs/characters.png   # planche des personnages (validation des apparences)
+npm run still -- Thumbnail169 out/dua-thumbnail.png      # miniature YouTube de l'épisode (mise en page de `thumbnail.layout`)
+npm run still -- Thumbnail169 out/t.png --props='{"episode":"dua","layout":"title","data":null}'   # comparer une autre mise en page
 npm run render -- Reel916 out/x.mp4 --props='{"episode":"dua","reel":"dua-02","format":"reel","data":null}'
 ```
 
@@ -143,5 +146,6 @@ Procédures à suivre dans toute session :
 
 - **Marque** : ces vidéos sont publiées sur la **même page que Quran Words Daily** (Facebook `quranwordsdaily`, Instagram / TikTok / YouTube `quran_words_daily`), **à la main par le propriétaire** pour l'instant, à partir du MP4 de la pré-release `<reel>-latest`. Les règles de droits de la page s'appliquent donc (voir quran-reels : Rights Manager sur Facebook, Content ID sur YouTube).
 - **Textes de publication** (demande du propriétaire, 2026-11-07) : les notes de la pré-release donnent, pour chaque vidéo, le titre et le texte à coller sur chaque plateforme, un bloc copiable chacun (`video/scripts/publish.ts`, lancé par `render.yml`) : Facebook (8 hashtags), Instagram et TikTok (5, légende ≤ 2 200 caractères), YouTube (titre « <en> · <ar> » ≤ 100 caractères, description avec tous les hashtags ; l'épisode 16:9 a ses chapitres, un par reel, au minutage de la vidéo). Écrits à la main (et validés) : titre, description et hashtags du thème (`publish` de l'épisode et de chaque reel), faits des répliques validées du script ; ceux du du'a validés par le propriétaire le 2026-11-07. Calculés : sources citées (référence, jugement, lien quran.com / sunnah.com), récitateur, lecteurs, ligne de voix IA, numéro de partie, hashtags de la page (`#QuranWordsDaily` d'abord, comme quran-reels), du hadith et du récitateur. La CI (`validate.yml`) vérifie les limites.
+- **Miniature YouTube** (demande du propriétaire, 2026-11-07) : `thumbnail` de l'épisode (mise en page du catalogue `close-up` | `scene` | `title`, titre court et ligne du thème tirés du titre validé, personnage et fond des catalogues) ; composition `Thumbnail169` (1280x720), rendue par `render.yml` avec l'épisode (`reel = all`) et jointe à la pré-release (`<épisode>-thumbnail.png`). Lisible à 170 px de large : un visage, trois à cinq mots, rien dans le coin bas-droite (durée). Le propriétaire la valide sur l'image (`thumbnail.validated_by`) ; les notes la signalent « proposée » tant qu'elle ne l'est pas, sans bloquer le rendu.
 - **Licence** : MIT, comme quran-reels (`LICENSE`) ; Remotion garde sa propre licence (gratuite pour un particulier). Textes cités et récitations : à leurs éditeurs (README).
 - **Récitateur** : le propriétaire garde Alafasy (2026-11-06), en connaissant le risque sur la page (quran-reels : 93:1-11 d'Alafasy coupée par Rights Manager sur Facebook le 2026-11-05). Alternative prête si besoin : Minshawi murattal (quran.com, récitation 9, temps des mots disponibles).

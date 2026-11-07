@@ -100,12 +100,28 @@ export type ResolvedScene = {
  * episode's), validated by the owner like the script (scripts/publish.ts writes the rest). */
 export type PublishTexts = { title: I18n; description: I18n; hashtags?: string[]; validated_by?: string };
 
+/** Layouts of the YouTube thumbnail (closed catalog, Thumbnail.tsx). */
+export type ThumbnailLayout = "close-up" | "scene" | "title";
+
+/** YouTube thumbnail of the whole 16:9 episode (1280x720), validated by the owner on the image. */
+export type ThumbnailData = {
+  layout: ThumbnailLayout;
+  /** Big text: a few words of the validated title. */
+  headline: I18n;
+  /** Smaller line under the headline (the theme). */
+  kicker: I18n | null;
+  character: Character | null;
+  background: string;
+  validated_by: string | null;
+};
+
 export type EpisodeData = {
   episode: string;
   title: I18n;
   narration_language: string;
   /** The whole episode's texts, and the hashtags of all its videos. */
   publish: PublishTexts | null;
+  thumbnail: ThumbnailData | null;
   reels: { id: string; title: I18n; validated_by?: string; publish?: PublishTexts }[];
   scenes: ResolvedScene[];
   generated_from: string[];

@@ -5,6 +5,8 @@ name: render
 #   reel = all        the whole episode in 16:9 (YouTube) and in 9:16, and every reel in 9:16 (Facebook,
 #                     Instagram, TikTok), all attached to the "<episode>-latest" pre-release. The whole
 #                     episode leaves out the ends said only in a reel ("that's next", reel_only_end).
+#                     With it, the episode's YouTube thumbnail (Thumbnail169, <episode>-thumbnail.png),
+#                     flagged in the notes until the owner validates it on the image.
 # The pre-release notes give, for each video, the title, description and hashtags to paste on each
 # platform (video/scripts/publish.ts: the episode's `publish` texts, sources, credits, chapters).
 # A release render needs every quoted source and the script of each reel rendered validated by the
@@ -142,6 +144,10 @@ jobs:
             npx remotion render Episode169 "out/$EPISODE-16x9.mp4" --props="$props"
             props=$(printf '{"episode":"%s","reel":null,"format":"reel","data":null}' "$EPISODE")
             npx remotion render Reel916 "out/$EPISODE-9x16.mp4" --props="$props"
+            if grep -q '^thumbnail:' "../content/episodes/$EPISODE.yaml"; then
+              props=$(printf '{"episode":"%s","layout":null,"data":null}' "$EPISODE")
+              npx remotion still Thumbnail169 "out/$EPISODE-thumbnail.png" --props="$props"
+            fi
           fi
           for reel in $REELS; do
             props=$(printf '{"episode":"%s","reel":"%s","format":"reel","data":null}' "$EPISODE" "$reel")
@@ -166,5 +172,6 @@ jobs:
           if ! gh release view "$tag" >/dev/null 2>&1; then
             gh release create "$tag" --prerelease --title "$title" --notes-file notes.md
           fi
-          gh release upload "$tag" video/out/*.mp4 --clobber
+          shopt -s nullglob
+          gh release upload "$tag" video/out/*.mp4 video/out/*.png --clobber
           gh release edit "$tag" --notes-file notes.md

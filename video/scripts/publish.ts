@@ -88,6 +88,8 @@ type Video = {
   scenes: ResolvedScene[];
   tags: string[];
   chapters: string[];
+  /** YouTube thumbnail attached to the same release (Thumbnail169), for the 16:9 episode. */
+  thumbnail?: { file: string; validated: boolean };
 };
 
 function check(what: string, text: string, max: number) {
@@ -126,6 +128,10 @@ function render(video: Video, settings: Settings): string[] {
     check(`${video.file}, YouTube description`, description, youtube.max_description);
     block(`Titre YouTube (${title.length}/${youtube.max_title})`, title);
     block(`Description YouTube (${tags.length} hashtags)`, description);
+    if (video.thumbnail) {
+      const note = video.thumbnail.validated ? "" : " ⚠️ proposée, pas encore validée par le propriétaire";
+      out.push(`**Miniature YouTube** : \`${video.thumbnail.file}\` (1280x720)${note}`, "");
+    }
   }
   return out;
 }
@@ -167,7 +173,8 @@ function main() {
     };
     videos.push(
       { ...whole, file: `${episode}-16x9.mp4`, label: `${data.title.en} · ${data.title.ar} — épisode complet 16:9`,
-        format: "16:9 · YouTube", platforms: ["youtube"], chapters: chapters(data, scenes) },
+        format: "16:9 · YouTube", platforms: ["youtube"], chapters: chapters(data, scenes),
+        thumbnail: data.thumbnail ? { file: `${episode}-thumbnail.png`, validated: Boolean(data.thumbnail.validated_by) } : undefined },
       { ...whole, file: `${episode}-9x16.mp4`, label: `${data.title.en} · ${data.title.ar} — épisode complet 9:16`,
         format: "9:16 · Facebook, Instagram, TikTok", platforms: ["social"], chapters: [] },
     );
