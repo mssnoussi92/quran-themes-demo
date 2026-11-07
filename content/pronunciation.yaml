@@ -36,3 +36,7 @@ words:
     say: هَتْلاقِيه
     why: le ه final était avalé
     decided: { by: mssnoussi92, on: 2026-11-07, scene: tawba/relapse-again }
+  - word: تبت
+    say: توبت
+    why: "« tobt », pas « tibt » : les voyelles seules (تُبْت, تُبْتَ) restent « i » (F2 1690-1950 Hz), « توبت » donne « o » (649-1166 Hz)"
+    decided: { by: mssnoussi92, on: 2026-11-07, scene: tawba/relapse-hook }

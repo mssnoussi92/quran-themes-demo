@@ -248,8 +248,9 @@ scenes:
     narration:
       ar: "طب ولو تبت… ورجعت للذنب تاني؟ ده اللي جاي."
       en: "And what if you repent… and go back to the sin? That's next."
-    # « تبت » = « tobt », pas « tibt » (le propriétaire, 2026-11-07).
-    say_ar: "طب ولو تُبْت… ورجعت للذنب تاني؟ ده اللي جاي."
+    # « تبت » = « tobt », pas « tibt » (le propriétaire, 2026-11-07) : la voix lit « توبت » (les voyelles
+    # seules ne suffisent pas : F2 1690-1950 Hz, « i » ; « توبت » 824-1166 Hz, « o » ; skill voice-spelling).
+    say_ar: "طب ولو توبت… ورجعت للذنب تاني؟ ده اللي جاي."
     reel_only_end: { ar: "ده اللي جاي.", en: "That's next." }
     visual:
       template: title-card
@@ -262,8 +263,8 @@ scenes:
     narration:
       ar: "تبت… ورجعت تاني؟"
       en: "You repented… and went back again?"
-    # « تبت » = « tobt », pas « tibt » (le propriétaire, 2026-11-07).
-    say_ar: "تُبْت… ورجعت تاني؟"
+    # « تبت » = « tobt », pas « tibt » (le propriétaire, 2026-11-07) : la voix lit « توبت » (voir despair-outro).
+    say_ar: "توبت… ورجعت تاني؟"
     visual:
       template: scene
       background: street
