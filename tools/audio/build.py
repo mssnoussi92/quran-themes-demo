@@ -11,8 +11,8 @@ verse for a recitation. Writes build/audio/<episode>/<scene>.(mp3|wav) and manif
   tts         tools/tts/say.py with VoiceTut (Egyptian Arabic) in its own venv. VoiceTut never says a
               line the same way twice, so the takes the owner listened to and approved are locked
               in content/audio/<episode>/ (FLAC + takes.json, `--lock <owner>`, only on the owner's
-              word) and always reused (also by another scene that says the same line in the same
-              voice); a line is synthesised only when it has no locked take for its text and voice. `--require-locked` (release renders) fails instead.
+              word) and always reused (also by another scene, of this episode or another one, that
+              says the same line in the same voice: `take_from` in the manifest); a line is synthesised only when it has no locked take for its text and voice. `--require-locked` (release renders) fails instead.
               Each line is cut into phrases (after « ، … . ؟ : ») and the manifest gives the time
               each phrase starts, read from the pauses of the take: a title card shows them one by
               one as the voice says them.
@@ -389,6 +389,21 @@ def main() -> int:
     takes_dir = ROOT / "content" / "audio" / args.episode
     takes_path = takes_dir / "takes.json"
     takes = json.loads(takes_path.read_text(encoding="utf-8"))["takes"] if takes_path.is_file() else {}
+    # Takes validated in the other episodes (same line, same voice): « قال ربنا سبحانه وتعالى: »,
+    # « النبي صلى الله عليه وسلم قال: »... keep the take the owner approved once. Label "<episode>/<scene>".
+    borrowed: dict[str, dict] = {}
+    for other in sorted((ROOT / "content" / "audio").glob("*/takes.json")):
+        if other.parent.name == args.episode:
+            continue
+        for t_sid, t in sorted(json.loads(other.read_text(encoding="utf-8"))["takes"].items()):
+            if (other.parent / t["file"]).is_file():
+                borrowed.setdefault(f"{other.parent.name}/{t_sid}", {**t, "path": other.parent / t["file"]})
+
+    def take_of(entry: dict, sid: str) -> dict | None:
+        """The locked take a scene uses: its own, another scene's, or another episode's."""
+        owner = entry.get("take_from") or sid
+        return borrowed.get(owner) if "/" in owner else takes.get(owner)
+
     in_reel = {s["id"] for s in data["scenes"] if not args.reel or s.get("reel") == args.reel}
 
     reciter = reciter_from_policy()
@@ -419,14 +434,21 @@ def main() -> int:
             scenes[sid] = {"kind": "tts", "file": dest.name, "engine": "voicetut", "speaker": args.speaker,
                            "text": text, "key": key, "take": "synthesised"}
             take = takes.get(sid)
+            take_path = takes_dir / take["file"] if take else None
             if not take or take["key"] != key:
-                # The same line, in the same voice, already validated in another scene: that take.
+                # The same line, in the same voice, already validated in another scene (of this
+                # episode first, then of another one): that take.
                 twin = next((t_sid for t_sid, t in sorted(takes.items())
                              if t["key"] == key and (takes_dir / t["file"]).is_file()), None)
                 if twin:
-                    take = takes[twin]
+                    take, take_path = takes[twin], takes_dir / takes[twin]["file"]
                     scenes[sid]["take_from"] = twin
-            if take and take["key"] == key and (takes_dir / take["file"]).is_file():
+                else:
+                    twin = next((label for label, t in borrowed.items() if t["key"] == key), None)
+                    if twin:
+                        take, take_path = borrowed[twin], borrowed[twin]["path"]
+                        scenes[sid]["take_from"] = twin
+            if take and take["key"] == key and take_path.is_file():
                 # The validated take: always this one, never a new synthesis.
                 scenes[sid].update(take="locked", take_sha=take["sha256"])
                 if prev and prev.get("take_sha") == take["sha256"] and raw.is_file():
@@ -434,7 +456,7 @@ def main() -> int:
                     if "tight" in prev:
                         scenes[sid]["tight"] = prev["tight"]
                 else:
-                    transcode(takes_dir / take["file"], raw, "-c:a", "pcm_s16le")
+                    transcode(take_path, raw, "-c:a", "pcm_s16le")
                     dest.unlink(missing_ok=True)
                     print(f"tts {sid}: validated take ({take['validated_by']}, {take['locked']})")
             elif prev and prev.get("key") == key and prev.get("take") != "locked" and (dest.is_file() or raw.is_file()):
@@ -476,7 +498,8 @@ def main() -> int:
         entry = scenes.get(sid)
         owner = (entry or {}).get("take_from") or sid
         if not entry or entry.get("take") != "locked" or owner not in takes:
-            sys.exit(f"error: --set-phrases {sid}: no locked take for this scene")
+            sys.exit(f"error: --set-phrases {sid}: no locked take of this episode for this scene "
+                     f"(a take of another episode is set there)")
         starts = [round(float(v), 3) for v in values.split(",")]
         if len(starts) != len(split_phrases(entry["text"])) or starts != sorted(starts):
             sys.exit(f"error: --set-phrases {sid}: give one start per phrase, in order "
@@ -495,7 +518,7 @@ def main() -> int:
         if entry["kind"] == "tts" and final.is_file():
             entry["phrases"] = phrase_times(final, entry["text"])
             entry["phrase_rule"] = PHRASES
-            stored = (takes.get(entry.get("take_from") or sid) or {}).get("phrases") if entry.get("take") == "locked" else None
+            stored = (take_of(entry, sid) or {}).get("phrases") if entry.get("take") == "locked" else None
             if stored and stored["tight"] == TIGHT["version"] and len(stored["starts"]) == len(entry["phrases"]):
                 for phrase, start in zip(entry["phrases"], stored["starts"]):
                     phrase["start"] = start

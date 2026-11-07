@@ -69,3 +69,18 @@ Règles : une citation n'existe que par son id ; une langue de plus est une clé
 | 7 | Conclusion | « Personne ne t'entend ? » Le verset de la proximité ; rappel des quatre reels en une phrase ; « n'arrête pas, et dis « يا رب » ». | Al-Baqarah 2:186 | 5 |
 
 Reels 2 à 5 proposés le 6 novembre 2026, validés par le propriétaire le 7 (script, traduction, voix). L'épisode complet, en 16:9 (YouTube) et en 9:16, joue toutes les scènes dans l'ordre (≈ 3 min 40), sans les fins propres aux reels (« ده اللي جاي ») ; chaque reel (9:16, 35 à 60 s) tient seul. Non repris des sources du plan : Bukhari 6339 (même sens que Muslim 2679a), Muslim 2735a et 2735c (même sens que Bukhari 6340), qui restent au registre.
+
+## Épisode Patience (plan)
+
+Proposé le 7 novembre 2026 (skill `new-theme`), à valider : sources, script, traduction, textes de publication. Même structure que le du'a : la promesse, trois idées reçues, la conclusion. Script : `content/episodes/sabr.yaml`.
+
+| # | Rôle | Contenu | Source | Reel |
+| --- | --- | --- | --- | --- |
+| 1 | Accroche | « اصبر »… le mot qu'on entend en attendant un travail, une guérison, un soulagement : facile à dire, difficile à vivre. | — | 1 |
+| 2 | Promesse | L'épreuve viendra, la bonne nouvelle est pour les patients ; pour le croyant, même l'épreuve est un bien s'il est patient. Fin : « 3 idées reçues, la 1re au prochain reel ». | Al-Baqarah 2:155 ; Muslim 2999 | 1 |
+| 3 | Idée reçue 1 | « Le patient ne pleure pas, ne se plaint pas. » Ya'qub se plaint de sa peine à Dieu seul (carte de nom, puis le verset) ; le Prophète ﷺ pleure son fils Ibrahim : « l'œil pleure, le cœur s'attriste, et nous ne disons que ce qui plaît à notre Seigneur ». La patience, ce n'est pas ne rien sentir, c'est ne pas s'opposer à Dieu. | Yusuf 12:86 ; Bukhari 1303 | 2 |
+| 4 | Idée reçue 2 | « Être patient, c'est renoncer et attendre. » Recherche ce qui te profite, demande l'aide de Dieu, ne renonce pas ; puis « cherchez l'aide dans la patience et la prière » : la patience est une aide pour avancer. | Muslim 2664 ; Al-Baqarah 2:153 | 3 |
+| 5 | Idée reçue 3 | « Je ne suis pas patient, c'est ma nature. » Celui qui s'efforce à la patience, Dieu le rend patient ; et la patience se demande : « Seigneur, déverse sur nous la patience ». | Bukhari 1469 ; Al-Baqarah 2:250 | 4 |
+| 6 | Conclusion | « Ta patience n'a pas de fin ? » La récompense des patients sans compter ; rappel des quatre reels ; « quand on te dit « اصبر », souviens-toi que Dieu est avec les patients ». | Az-Zumar 39:10 | 5 |
+
+Les répliques déjà figées dans le du'a (« قال ربنا سبحانه وتعالى: », « تاني فكرة غلط… », « تالت فكرة غلط… ») reprennent la prise validée (`tools/audio/build.py`, prises d'un autre épisode).

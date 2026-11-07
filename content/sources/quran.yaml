@@ -72,3 +72,88 @@
   status: validated
   validated_by: mssnoussi92
   notes: Al-Baqarah 2:186, conclusion (reel dua-05)
+- id: quran.2.155
+  type: ayah
+  ref: {surah: 2, ayah: 155}
+  text_ar: وَلَنَبْلُوَنَّكُم بِشَىْءٍ مِّنَ ٱلْخَوْفِ وَٱلْجُوعِ وَنَقْصٍ مِّنَ ٱلْأَمْوَٰلِ وَٱلْأَنفُسِ وَٱلثَّمَرَٰتِ ۗ وَبَشِّرِ ٱلصَّـٰبِرِينَ
+  text_en: And We will surely test you with something of fear and hunger and a loss of wealth and lives and fruits, but give good tidings to the patient,
+  translation: sahih-international
+  url: https://quran.com/2/155
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:155
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:155
+    translator: Saheeh International
+    surah_ar: البقرة
+    surah_en: Al-Baqarah
+    retrieved: '2026-11-07'
+  status: proposed
+  notes: Al-Baqarah 2:155, l'épreuve certaine et la bonne nouvelle aux patients (reel sabr-01)
+- id: quran.12.86
+  type: ayah
+  ref: {surah: 12, ayah: 86}
+  text_ar: قَالَ إِنَّمَآ أَشْكُوا۟ بَثِّى وَحُزْنِىٓ إِلَى ٱللَّهِ وَأَعْلَمُ مِنَ ٱللَّهِ مَا لَا تَعْلَمُونَ
+  text_en: He said, "I only complain of my suffering and my grief to Allāh, and I know from Allāh that which you do not know.
+  translation: sahih-international
+  url: https://quran.com/12/86
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=12:86
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=12:86
+    translator: Saheeh International
+    surah_ar: يوسف
+    surah_en: Yusuf
+    retrieved: '2026-11-07'
+  status: proposed
+  notes: Yusuf 12:86, Ya'qub se plaint de sa peine à Dieu seul (reel sabr-02, la plainte n'est pas contraire à la patience)
+- id: quran.2.153
+  type: ayah
+  ref: {surah: 2, ayah: 153}
+  text_ar: يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱسْتَعِينُوا۟ بِٱلصَّبْرِ وَٱلصَّلَوٰةِ ۚ إِنَّ ٱللَّهَ مَعَ ٱلصَّـٰبِرِينَ
+  text_en: O you who have believed, seek help through patience and prayer. Indeed, Allāh is with the patient.
+  translation: sahih-international
+  url: https://quran.com/2/153
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:153
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:153
+    translator: Saheeh International
+    surah_ar: البقرة
+    surah_en: Al-Baqarah
+    retrieved: '2026-11-07'
+  status: proposed
+  notes: Al-Baqarah 2:153, chercher de l'aide par la patience et la prière ; Dieu est avec les patients (reel sabr-03)
+- id: quran.2.250
+  type: ayah
+  ref: {surah: 2, ayah: 250}
+  text_ar: وَلَمَّا بَرَزُوا۟ لِجَالُوتَ وَجُنُودِهِۦ قَالُوا۟ رَبَّنَآ أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا وَٱنصُرْنَا عَلَى ٱلْقَوْمِ ٱلْكَـٰفِرِينَ
+  text_en: And when they went forth to [face] Goliath and his soldiers, they said, "Our Lord, pour upon us patience and plant firmly our feet and give us victory over the disbelieving people."
+  translation: sahih-international
+  url: https://quran.com/2/250
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:250
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:250
+    translator: Saheeh International
+    surah_ar: البقرة
+    surah_en: Al-Baqarah
+    retrieved: '2026-11-07'
+  status: proposed
+  notes: Al-Baqarah 2:250, « Seigneur, déverse sur nous la patience » (reel sabr-04, la patience se demande)
+- id: quran.39.10
+  type: ayah
+  ref: {surah: 39, ayah: 10}
+  text_ar: قُلْ يَـٰعِبَادِ ٱلَّذِينَ ءَامَنُوا۟ ٱتَّقُوا۟ رَبَّكُمْ ۚ لِلَّذِينَ أَحْسَنُوا۟ فِى هَـٰذِهِ ٱلدُّنْيَا حَسَنَةٌ ۗ وَأَرْضُ ٱللَّهِ وَٰسِعَةٌ ۗ إِنَّمَا يُوَفَّى ٱلصَّـٰبِرُونَ أَجْرَهُم بِغَيْرِ حِسَابٍ
+  text_en: Say, "O My servants who have believed, fear your Lord. For those who do good in this world is good, and the earth of Allāh is spacious. Indeed, the patient will be given their reward without account [i.e., limit]."
+  translation: sahih-international
+  url: https://quran.com/39/10
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=39:10
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=39:10
+    translator: Saheeh International
+    surah_ar: الزمر
+    surah_en: Az-Zumar
+    retrieved: '2026-11-07'
+  status: proposed
+  notes: Az-Zumar 39:10, la récompense des patients sans compter (reel sabr-05, conclusion)

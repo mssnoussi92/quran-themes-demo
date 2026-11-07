@@ -14,8 +14,9 @@ the owner's call, never yours: you prepare, check and propose.
 
 - `cd video && npm run data`, then `python3 tools/audio/build.py --episode <episode>` with
   `run_in_background` (VoiceTut on 4 vCPU: 40 to 170 s per line, the model loads once for all new
-  lines). Locked lines are reused, and so is a locked take of another scene with the same text and
-  voice (`take_from` in the manifest: « قال ربنا سبحانه وتعالى: » before every verse).
+  lines). Locked lines are reused, and so is a locked take of another scene, of this episode or of
+  another one, with the same text and voice (`take_from` in the manifest, `dua/promise-intro` for
+  another episode's: « قال ربنا سبحانه وتعالى: » before every verse, « تاني فكرة غلط… »).
 - A line changed after it was locked (text or `say_ar`) gets a new key, so a new take: the owner
   listens to it before it is locked.
 
