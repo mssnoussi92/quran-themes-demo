@@ -493,6 +493,15 @@
   text_ar: حَدَّثَنَا أَحْمَدُ بْنُ يُونُسَ، حَدَّثَنَا أَبُو بَكْرٍ، حَدَّثَنَا أَبُو حَصِينٍ، عَنْ أَبِي صَالِحٍ، عَنْ أَبِي هُرَيْرَةَ، عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ ‏ "‏ لَيْسَ الْغِنَى عَنْ كَثْرَةِ الْعَرَضِ، وَلَكِنَّ الْغِنَى غِنَى النَّفْسِ ‏"‏‏.‏
   text_en: Narrated Abu Huraira:The Prophet (ﷺ) said, "Wealth is not in having many possessions, but rather (true) wealth is feeling sufficiency in the soul
   excerpt_en: Wealth is not in having many possessions, but rather (true) wealth is feeling sufficiency in the soul
+  recording:
+    reader: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane
+    item: https://archive.org/details/bukhari_audiobook
+    file: https://archive.org/download/bukhari_audiobook/6446.mp3
+    start: 10.5
+    end: 15.0
+    heard: ليس الغنى عن كثرة العرض ولكن الغنى غنى النفس
+    license: none stated on the archive.org item
+    status: proposed
 - id: hadith.muslim.2564c
   type: hadith
   ref: {collection: muslim, number: 2564, narration: 3}
@@ -512,6 +521,15 @@
   text_ar: حَدَّثَنَا عَمْرٌو النَّاقِدُ، حَدَّثَنَا كَثِيرُ بْنُ هِشَامٍ، حَدَّثَنَا جَعْفَرُ بْنُ بُرْقَانَ، عَنْ يَزِيدَ بْنِ، الأَصَمِّ عَنْ أَبِي هُرَيْرَةَ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏ "‏ إِنَّ اللَّهَ لاَ يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ وَلَكِنْ يَنْظُرُ إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ ‏"‏ ‏.‏
   text_en: Abu Huraira reported Allah's Messenger (ﷺ) as saying:Verily Allah does not look to your faces and your wealth but He looks to your heart and to your deeds
   excerpt_en: Verily Allah does not look to your faces and your wealth but He looks to your heart and to your deeds
+  recording:
+    reader: Ryadussalihin.org
+    item: https://archive.org/details/ar_Moslem_Reading_16
+    file: https://archive.org/download/ar_Moslem_Reading_16/ar_Moslem_Reading_46.mp3
+    start: 1791.1
+    end: 1800.3
+    heard: إن الله لا ينظر إلى صوركم وأموالكم ولكن ينظر إلى قلوبكم وأعمالكم
+    license: none stated on the archive.org item
+    status: proposed
 - id: hadith.bukhari.73
   type: hadith
   ref: {collection: bukhari, number: 73}
@@ -527,10 +545,19 @@
     hadith_in_book: 15
     retrieved: '2026-11-07'
   status: proposed
-  notes: « لا حسد إلا في اثنتين » l'envie permise, dans le bien (reel muqarana-04, la bonne comparaison)
+  notes: "« لا حسد إلا في اثنتين » l'envie permise, dans le bien (reel muqarana-04, la bonne comparaison) ; lecture : fichier 0074.mp3 du livre audio (dans cette partie, la numérotation du lecteur est décalée d'un cran : 0073.mp3 lit Bukhari 72)"
   text_ar: حَدَّثَنَا الْحُمَيْدِيُّ، قَالَ حَدَّثَنَا سُفْيَانُ، قَالَ حَدَّثَنِي إِسْمَاعِيلُ بْنُ أَبِي خَالِدٍ، عَلَى غَيْرِ مَا حَدَّثَنَاهُ الزُّهْرِيُّ، قَالَ سَمِعْتُ قَيْسَ بْنَ أَبِي حَازِمٍ، قَالَ سَمِعْتُ عَبْدَ اللَّهِ بْنَ مَسْعُودٍ، قَالَ قَالَ النَّبِيُّ صلى الله عليه وسلم ‏ "‏ لاَ حَسَدَ إِلاَّ فِي اثْنَتَيْنِ رَجُلٌ آتَاهُ اللَّهُ مَالاً فَسُلِّطَ عَلَى هَلَكَتِهِ فِي الْحَقِّ، وَرَجُلٌ آتَاهُ اللَّهُ الْحِكْمَةَ، فَهْوَ يَقْضِي بِهَا وَيُعَلِّمُهَا ‏"‏‏.‏
   text_en: Narrated `Abdullah bin Mas`ud:The Prophet (ﷺ) said, "Do not wish to be like anyone except in two cases. (The first is) A person, whom Allah has given wealth and he spends it righteously; (the second is) the one whom Allah has given wisdom (the Holy Qur'an) and he acts according to it and teaches it to others." (Fath-al-Bari page 177 Vol)
   excerpt_en: Do not wish to be like anyone except in two cases. (The first is) A person, whom Allah has given wealth and he spends it righteously; (the second is) the one whom Allah has given wisdom (the Holy Qur'an) and he acts according to it and teaches it to others.
+  recording:
+    reader: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane
+    item: https://archive.org/details/bukhari_audiobook
+    file: https://archive.org/download/bukhari_audiobook/0074.mp3
+    start: 20.0
+    end: 34.4
+    heard: لا حسد إلا في اثنتين رجل آتاه الله مالا فسلط على هلكته في الحق ورجل آتاه الله الحكمة فهو يقضي بها ويعلمها
+    license: none stated on the archive.org item
+    status: proposed
 - id: hadith.tirmidhi.2513
   type: hadith
   ref: {collection: tirmidhi, number: 2513}
@@ -551,7 +578,16 @@
     - {name: Zubair Ali Zai, grade: Sahih Muslim}
     retrieved: '2026-11-07'
   status: proposed
-  notes: « انظروا إلى من هو أسفل منكم… فإنه أجدر أن لا تزدروا نعمة الله عليكم » (reel muqarana-03) ; à la place de Muslim 2963c, même parole, dont la carte aurait montré la remarque d'Abu Mu'awiya (« عليكم ») après les guillemets
+  notes: "« انظروا إلى من هو أسفل منكم… فإنه أجدر أن لا تزدروا نعمة الله عليكم » (reel muqarana-03) ; à la place de Muslim 2963c, même parole, dont la carte aurait montré la remarque d'Abu Mu'awiya (« عليكم ») après les guillemets ; lecture : Whisper entend « فانظروا », « أقدروا » et pas « تنظروا » (« ولا إلى من هو فوقكم ») : à l'écoute"
   text_ar: حَدَّثَنَا أَبُو كُرَيْبٍ، حَدَّثَنَا أَبُو مُعَاوِيَةَ، وَوَكِيعٌ، عَنِ الأَعْمَشِ، عَنْ أَبِي صَالِحٍ، عَنْ أَبِي هُرَيْرَةَ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏ "‏ انْظُرُوا إِلَى مَنْ هُوَ أَسْفَلَ مِنْكُمْ وَلاَ تَنْظُرُوا إِلَى مَنْ هُوَ فَوْقَكُمْ فَإِنَّهُ أَجْدَرُ أَنْ لاَ تَزْدَرُوا نِعْمَةَ اللَّهِ عَلَيْكُمْ ‏"‏ ‏.‏ هَذَا حَدِيثٌ صَحِيحٌ ‏.‏
   text_en: Abu Hurairah narrated that the Messenger of Allah (s.a.w) said:"Look to one who is lower than you, and do not look to one who is above you. For indeed that is more worthy(so that you will) not belittle Allah's favors upon you
   excerpt_en: Look to one who is lower than you, and do not look to one who is above you. For indeed that is more worthy(so that you will) not belittle Allah's favors upon you
+  recording:
+    reader: Yusuf ibn Nuh Ahmad
+    item: https://archive.org/details/yna-audiobook-arabic-sunan-altirmidhi
+    file: https://archive.org/download/yna-audiobook-arabic-sunan-altirmidhi/YNA-AudioBook-Arabic-Sunan-Al-Tirmidhi-2415-2605.mp3
+    start: 3396.0
+    end: 3402.68
+    heard: فانظروا إلى من هو أسفل منكم ولا إلى من هو فوقكم فإنه أقدروا أن لا تزدروا نعمة الله عليكم
+    license: none stated on the archive.org item
+    status: proposed
