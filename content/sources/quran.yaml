@@ -87,7 +87,8 @@
     surah_ar: البقرة
     surah_en: Al-Baqarah
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Baqarah 2:155, l'épreuve certaine et la bonne nouvelle aux patients (reel sabr-01)
 - id: quran.12.86
   type: ayah
@@ -104,7 +105,8 @@
     surah_ar: يوسف
     surah_en: Yusuf
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Yusuf 12:86, Ya'qub se plaint de sa peine à Dieu seul (reel sabr-02, la plainte n'est pas contraire à la patience)
 - id: quran.2.153
   type: ayah
@@ -121,7 +123,8 @@
     surah_ar: البقرة
     surah_en: Al-Baqarah
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Baqarah 2:153, chercher de l'aide par la patience et la prière ; Dieu est avec les patients (reel sabr-03)
 - id: quran.2.250
   type: ayah
@@ -138,7 +141,8 @@
     surah_ar: البقرة
     surah_en: Al-Baqarah
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Baqarah 2:250, « Seigneur, déverse sur nous la patience » (reel sabr-04, la patience se demande)
 - id: quran.39.10
   type: ayah
@@ -155,5 +159,6 @@
     surah_ar: الزمر
     surah_en: Az-Zumar
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Az-Zumar 39:10, la récompense des patients sans compter (reel sabr-05, conclusion)

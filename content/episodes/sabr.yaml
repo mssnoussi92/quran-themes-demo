@@ -1,64 +1,76 @@
 # Épisode Patience (الصبر) : 5 reels (9:16) pour Facebook, Instagram et TikTok ; l'épisode entier (16:9 et
 # 9:16) pour YouTube. Même structure que le du'a (docs/design.md) : l'accroche et la promesse, une idée
-# reçue par reel, la conclusion. Proposé le 2026-11-07 (skill new-theme), à valider par le propriétaire :
-# sources, script et traduction, textes de publication. Toute modification d'une ligne d'un reel retire
+# reçue par reel, la conclusion. Proposé le 2026-11-07 (skill new-theme), validé par le propriétaire le même
+# jour : sources, lectures, script et traduction, prises, textes de publication, miniature. Toute modification d'une ligne d'un reel retire
 # son validated_by.
 # Les répliques identiques à une prise figée du du'a (« قال ربنا سبحانه وتعالى: », « النبي صلى الله عليه
 # وسلم قال: », « تاني فكرة غلط… »…) reprennent cette prise (take_from, tools/audio/build.py).
 episode: sabr
 title: { ar: "الصبر", en: "Patience" }
 narration_language: ar-egy   # VoiceTut (égyptien), comme le du'a
-# Textes de publication : proposés le 2026-11-07, faits des répliques du script ; à valider par le
-# propriétaire (validated_by), exigés par un rendu final. Le reste : video/scripts/publish.ts.
+# Textes de publication : proposés le 2026-11-07, faits des répliques du script ; validés par le
+# propriétaire le même jour (validated_by), exigés par un rendu final. Le reste : video/scripts/publish.ts.
 publish:
   title: { en: "Patience: 3 wrong ideas you might believe", ar: "تلات أفكار غلط عن الصبر… يمكن تكون مصدق واحدة منهم" }
   description:
     en: "“Be patient”… how many times have you heard it? Easy to say… hard to live. Three wrong ideas make it harder: that a patient person doesn't cry or complain, that patience means giving up and just waiting, and that patience is a trait you either have or you don't. Each one, answered from the Qur'an and the Sunnah."
     ar: "«اصبر»… سمعتها كام مرة؟ كلمة سهلة تتقال… وصعبة تتعاش. وفيه تلات أفكار غلط بتصعّبها: إن الصابر مبيعيطش ومبيشتكيش، وإن الصبر يعني تستسلم وتقعد تستنى، وإن الصبر طبع يا عندك يا معندكش. والرد على كل فكرة من القرآن والسنة."
   hashtags: ["#Sabr", "#الصبر", "#Islam"]
-# Miniature YouTube (Thumbnail169), proposée le 2026-11-07 comme celle du du'a : à valider sur l'image.
+  validated_by: mssnoussi92
+# Miniature YouTube (Thumbnail169), proposée le 2026-11-07 comme celle du du'a, validée sur l'image.
 thumbnail:
   layout: close-up
   headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas" }
   kicker: { ar: "عن الصبر", en: "about patience" }
   character: { id: salma, pose: standing, mood: worried }
   background: waiting-room
+  validated_by: mssnoussi92
 reels:
   - id: sabr-01
     title: { ar: "اصبر", en: "Be patient" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "“Be patient”… how many times have you heard it?", ar: "«اصبر»… سمعتها كام مرة؟" }
       description:
         en: "While you wait for a job… a cure… or relief… Easy to say… hard to live. When you're patient… the pain itself becomes good for you."
         ar: "وإنت مستني شغل… أو شفا… أو فرج… كلمة سهلة تتقال… وصعبة تتعاش. لما بتصبر… الوجع نفسه بيبقى خير ليك."
+      validated_by: mssnoussi92
   - id: sabr-02
     title: { ar: "الصبر والدموع", en: "Patience and tears" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "You cried… and felt you weren't being patient?", ar: "عيطت… وحسيت إنك مش صابر؟" }
       description:
         en: "The first wrong idea about patience: that a patient person doesn't cry… or complain. Complaining to God… isn't the opposite of patience. Patience isn't feeling nothing… it's not objecting to God."
         ar: "أول فكرة غلط عن الصبر: إن الصابر مبيعيطش… ومبيشتكيش. الشكوى لربنا… مش عكس الصبر. الصبر مش إنك متحسش… الصبر إنك متعترضش على ربنا."
+      validated_by: mssnoussi92
   - id: sabr-03
     title: { ar: "الصبر والسعي", en: "Patience and effort" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "“I'm being patient”… while you sit and wait?", ar: "«أنا صابر»… وإنت قاعد مستني؟" }
       description:
         en: "The second wrong idea: that patience means giving up… and just waiting. Strive… seek God's help… and don't give up. Patience isn't standing still… it's help as you keep going."
         ar: "تاني فكرة غلط: إن الصبر يعني تستسلم… وتقعد تستنى. اسعى… واستعين بربنا… ومتستسلمش. الصبر مش إنك توقف… الصبر عون وإنت ماشي."
+      validated_by: mssnoussi92
   - id: sabr-04
     title: { ar: "الصبر بيتعلم", en: "Patience can be learned" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "“I'm not patient… that's just how I am”?", ar: "«أنا مش صبور… ده طبعي»؟" }
       description:
         en: "The third wrong idea: that patience is a trait… either you have it or you don't. Whoever tries to be patient… God makes patient. And patience… is something you ask God for."
         ar: "تالت فكرة غلط: إن الصبر طبع… يا عندك يا معندكش. اللي يحاول يصبر… ربنا يصبّره. والصبر كمان… بيتطلب من ربنا."
+      validated_by: mssnoussi92
   - id: sabr-05
     title: { ar: "أجر بغير حساب", en: "A reward without limit" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "Feel like your patience has no end?", ar: "حاسس إن صبرك ملوش آخر؟" }
       description:
         en: "The patient's reward… is without limit. Patience isn't silence… isn't giving up… it can be learned… and its reward is without limit. So when someone tells you “be patient”… remember: God is with the patient."
         ar: "الصابر أجره… من غير حساب. الصبر مش سكوت… مش استسلام… بيتعلم… وأجره من غير حساب. فلما حد يقولك «اصبر»… افتكر إن ربنا مع الصابرين."
+      validated_by: mssnoussi92
 scenes:
   # ---- sabr-01 : accroche et promesse ---------------------------------------------------------
   # Miroir : le mot que tout le monde entend, à la deuxième personne.

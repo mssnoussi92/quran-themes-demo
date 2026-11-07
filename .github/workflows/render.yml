@@ -33,8 +33,9 @@ on:
 permissions:
   contents: write
 
+# One run per episode and reel: « all » of two episodes run side by side.
 concurrency:
-  group: render-${{ inputs.reel }}
+  group: render-${{ inputs.episode }}-${{ inputs.reel }}
   cancel-in-progress: true
 
 jobs:
