@@ -48,3 +48,7 @@ jobs:
 
       - name: TypeScript
         run: npm run typecheck
+
+      # Title, captions and hashtags of every video within the platforms' limits.
+      - name: Publication texts
+        run: for f in ../content/episodes/*.yaml; do node scripts/publish.ts "$(basename "$f" .yaml)" all > /dev/null; done

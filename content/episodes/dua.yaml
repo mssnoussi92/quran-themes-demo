@@ -9,22 +9,56 @@
 episode: dua
 title: { ar: "الدعاء", en: "Du'a" }
 narration_language: ar-egy   # VoiceTut (égyptien), choix du propriétaire le 2026-11-06
+# Textes de publication (titre, description, hashtags du thème) : proposés le 2026-11-07, faits des
+# répliques validées du script ; à valider par le propriétaire (validated_by), exigés par un rendu
+# final. Le reste (sources, récitateur, lecteurs, voix IA, chapitres) : video/scripts/publish.ts.
+publish:
+  title: { en: "Du'a: 3 wrong ideas you might believe", ar: "تلات أفكار غلط عن الدعاء… يمكن تكون مصدق واحدة منهم" }
+  description:
+    en: "“Ya Rabb”… how many times have you said it today? Du'a isn't just a habit… it's worship. Yet three wrong ideas keep us from it: that du'a goes against contentment, that it changes nothing since everything is written, and that God didn't answer. Each one, answered from the Qur'an and the Sunnah."
+    ar: "«يا رب»… قلتها كام مرة النهارده؟ الدعاء مش مجرد عادة… الدعاء عبادة. بس فيه تلات أفكار غلط بتبعدنا عنه: إن الدعاء عكس الرضا، وإنه مش بيغير حاجة عشان كله مكتوب، وإن ربنا مردش. والرد على كل فكرة من القرآن والسنة."
+  hashtags: ["#Dua", "#الدعاء", "#Islam"]
 reels:
   - id: dua-01
     title: { ar: "يا رب", en: "Ya Rabb" }
     validated_by: mssnoussi92
+    publish:
+      title: { en: "“Ya Rabb”… how many times have you said it today?", ar: "«يا رب»… قلتها كام مرة النهارده؟" }
+      description:
+        en: "When you're waiting for a test result, heart pounding… or when you want something so badly… That's not just a habit… it's worship. Why?"
+        ar: "لما تكون مستني نتيجة تحليل، وقلبك بيدق… أو لما تبقى نفسك في حاجة أوي… دي مش مجرد عادة… دي عبادة. ليه؟"
   - id: dua-02
     title: { ar: "الدعاء والرضا", en: "Du'a and contentment" }
     validated_by: mssnoussi92
+    publish:
+      title: { en: "Ever said: “I'm content… I won't ask”?", ar: "عمرك قلت: «أنا راضي… مش هدعي»؟" }
+      description:
+        en: "The first wrong idea about du'a: that it goes against contentment. Ayyub, peace be upon him, in the depth of his trial… called on his Lord. Du'a isn't objecting… it's needing Him."
+        ar: "أول فكرة غلط عن الدعاء: إن الدعاء عكس الرضا. سيدنا أيوب عليه السلام، في عز البلاء… دعا ربنا. الدعاء مش اعتراض… الدعاء احتياج."
   - id: dua-03
     title: { ar: "الدعاء والقدر", en: "Du'a and destiny" }
     validated_by: mssnoussi92
+    publish:
+      title: { en: "“It's all written anyway… why make du'a?”", ar: "«ما هو كله مكتوب… أدعي ليه؟»" }
+      description:
+        en: "The second wrong idea: that du'a changes nothing. Yet there is something that turns back the decree… du'a. And du'a itself… is part of God's decree."
+        ar: "تاني فكرة غلط: إن الدعاء مش بيغير حاجة. بس فيه حاجة بترد القضاء… الدعاء. والدعاء نفسه… من قدر ربنا."
   - id: dua-04
     title: { ar: "دعيت ومحصلش حاجة", en: "“I prayed and nothing happened”" }
     validated_by: mssnoussi92
+    publish:
+      title: { en: "You prayed… and prayed… and nothing happened?", ar: "دعيت… ودعيت… ومحصلش حاجة؟" }
+      description:
+        en: "The third wrong idea: that God didn't answer your du'a. Don't rush… and don't say “I prayed and got no answer.” Your du'a… is never wasted."
+        ar: "تالت فكرة غلط: إن ربنا مردش على دعاءك. متستعجلش… ومتقولش «دعيت ومحدش رد». دعاءك… عمره ما بيضيع."
   - id: dua-05
     title: { ar: "ربنا قريب", en: "God is near" }
     validated_by: mssnoussi92
+    publish:
+      title: { en: "Feel like nobody hears you?", ar: "حاسس إن محدش سامعك؟" }
+      description:
+        en: "God is near… and He answers. Du'a is worship… not against contentment… it turns back the decree… and it's never wasted. So never stop making du'a… and say “Ya Rabb”."
+        ar: "ربنا قريب… وبيجيب. الدعاء عبادة… مش عكس الرضا… بيرد القضاء… وعمره ما بيضيع. فمتبطلش تدعي… وقول «يا رب»."
 scenes:
   # Miroir : une question à la deuxième personne, l'émotion dès la première image.
   - id: hook-1

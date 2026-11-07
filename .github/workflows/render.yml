@@ -5,8 +5,11 @@ name: render
 #   reel = all        the whole episode in 16:9 (YouTube) and in 9:16, and every reel in 9:16 (Facebook,
 #                     Instagram, TikTok), all attached to the "<episode>-latest" pre-release. The whole
 #                     episode leaves out the ends said only in a reel ("that's next", reel_only_end).
+# The pre-release notes give, for each video, the title, description and hashtags to paste on each
+# platform (video/scripts/publish.ts: the episode's `publish` texts, sources, credits, chapters).
 # A release render needs every quoted source and the script of each reel rendered validated by the
-# owner (validate.py --release --reel), and their locked narration takes; a draft does not.
+# owner (validate.py --release --reel), their publication texts, and their locked narration takes;
+# a draft does not.
 
 on:
   workflow_dispatch:
@@ -94,6 +97,11 @@ jobs:
         working-directory: video
         run: npm ci --no-audit --no-fund && npm run data
 
+      # Platform limits (title, caption length, hashtags) checked before the long render.
+      - name: Publication texts
+        working-directory: video
+        run: node scripts/publish.ts "$EPISODE" "$REEL" > /dev/null
+
       - name: Cache model weights
         uses: actions/cache@v4
         with:
@@ -141,7 +149,7 @@ jobs:
           done
           for f in out/*.mp4; do echo "$f"; ffmpeg -hide_banner -i "$f" 2>&1 | grep -E "Duration|Stream" || true; done
 
-      - name: Attach the MP4 files to the pre-release
+      - name: Attach the MP4 files and the publication texts to the pre-release
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
@@ -153,9 +161,10 @@ jobs:
             tag="$REEL-latest"; title="Reel $REEL (latest)"
           fi
           kind=$([ "$DRAFT" = true ] && echo "Draft (script or sources not all validated yet)" || echo "Release render")
-          notes="$kind. Narration: AI-generated voice (VoiceTut, $SPEAKER). Verses: real recitation. Run: $RUN_URL"
+          header="$kind. Narration: AI-generated voice (VoiceTut, $SPEAKER). Verses: real recitation. Run: $RUN_URL"
+          (cd video && node scripts/publish.ts "$EPISODE" "$REEL" --header "$header") > notes.md
           if ! gh release view "$tag" >/dev/null 2>&1; then
-            gh release create "$tag" --prerelease --title "$title" --notes "$notes"
+            gh release create "$tag" --prerelease --title "$title" --notes-file notes.md
           fi
           gh release upload "$tag" video/out/*.mp4 --clobber
-          gh release edit "$tag" --notes "$notes"
+          gh release edit "$tag" --notes-file notes.md

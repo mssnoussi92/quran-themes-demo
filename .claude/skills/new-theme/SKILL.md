@@ -1,6 +1,6 @@
 ---
 name: new-theme
-description: Turn a new theme (patience, repentance, gratitude, trust in God...) into an episode of quran-themes-demo, from sources to videos - registry entries for the owner to validate, an outline built on misconceptions, a hook per reel (write-hook skill), Egyptian narration with English subtitles, checked takes (narration-takes skill), real hadith readings where they exist (find-hadith-recording skill), draft renders, a PR, then the release render of the whole episode (16:9 and 9:16) and its reels. Use when the owner asks for a new theme or episode, or for the next parts of one.
+description: Turn a new theme (patience, repentance, gratitude, trust in God...) into an episode of quran-themes-demo, from sources to videos - registry entries for the owner to validate, an outline built on misconceptions, a hook per reel (write-hook skill), Egyptian narration with English subtitles, checked takes (narration-takes skill), real hadith readings where they exist (find-hadith-recording skill), publication texts (title, description, hashtags), draft renders, a PR, then the release render of the whole episode (16:9 and 9:16) and its reels, with the texts to paste in the release notes. Use when the owner asks for a new theme or episode, or for the next parts of one.
 ---
 
 # New theme
@@ -75,7 +75,25 @@ translation, the final video. Never mark any of them done yourself.
    the catalog, drawn in `video/src/backgrounds/` and shown to the owner first); no character in a scene that names a real person (`mentions`).
    Typical situations are presented as such, never as true stories. No figure without a source.
 
-5. **Check, then audio.**
+5. **Publication texts.** What the owner pastes with each video: the episode's `publish` (title and
+   description of the whole episode, and the theme hashtags of all its videos) and each reel's
+   `publish` (title, description), Arabic and English, in `content/episodes/<theme>.yaml`. Take
+   them from the validated lines of the script, as dua did (title = the reel's hook, description =
+   its misconception and takeaway); a word of your own is marked for the owner, like a line of the
+   script.
+   - YouTube title « <en> · <ar> »: 100 characters at most (validate.py). The whole episode's title
+     names the promise (dua: « Du'a: 3 wrong ideas you might believe »).
+   - Theme hashtags: 2 or 3, the English word first (`#Dua`, `#الدعاء`, `#Islam`). The page's
+     (`#QuranWordsDaily`, `#Quran`...), hadith and reciter tags are added by
+     `video/scripts/publish.ts` from `content/publish.yaml`; Instagram and TikTok keep the first 5,
+     Facebook 8, YouTube all.
+   - Never type a source, a grade, a reciter, a reader or the AI-voice line: publish.ts writes them
+     from the data, with the YouTube chapters of the whole episode (one per reel).
+   - Check: `cd video && npm run data && node scripts/publish.ts <theme> all` (fails on a broken
+     limit), and show the owner the result with the script. They validate the texts with it:
+     `publish.validated_by` on the episode and on each reel, removed whenever one of them changes.
+
+6. **Check, then audio.**
    - `uv run --with jsonschema --with pyyaml scripts/validate.py` (`--release` once the sources
      are validated).
    - In `video/`: `npm run data` (the estimate is pessimistic: 60 s estimated is about 50 s
@@ -87,17 +105,19 @@ translation, the final video. Never mark any of them done yourself.
      `"reel":null` for the 9:16 version), checked with a few frames and `listen.py`, then sent to
      the owner (SendUserFile).
 
-6. **PR.** Describe:
+7. **PR.** Describe:
    - the angle and the outline;
    - each reel's script, Arabic and English, with its beats;
+   - the publication texts (titles, descriptions, hashtags);
    - the sources and their status;
    - the open questions.
 
    Send the owner the draft videos. They validate the sources, the script and the translation, the
-   takes and the recordings; on their word, record `validated_by` on each validated reel, lock the
+   publication texts, the takes and the recordings; on their word, record `validated_by` on each
+   validated reel (and `publish.validated_by` on the texts they approved), lock the
    narration takes they listened to (`python3 tools/audio/build.py --episode <theme> --lock <owner>
    --reel <reel>`) and validate the recordings they heard. Only locked takes and validated sources
    and recordings reach a release render. Then the release render: workflow `render` with
    `reel: all` (the whole episode in 16:9 and 9:16 and every reel, in the `<theme>-latest`
-   pre-release; the first run downloads the hadith recordings from archive.org), and give the owner
-   the link.
+   pre-release, whose notes hold the texts to paste on each platform, one copyable block each; the
+   first run downloads the hadith recordings from archive.org), and give the owner the link.

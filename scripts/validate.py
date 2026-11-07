@@ -5,6 +5,7 @@ Usage:
   uv run --with jsonschema --with pyyaml scripts/validate.py            # draft mode
   uv run --with jsonschema --with pyyaml scripts/validate.py --release  # every cited source must be validated
   uv run --with jsonschema --with pyyaml scripts/validate.py --release --reel dua-01  # and that reel's script
+                                                                                   # and publication texts
 
 Exit code 1 when there is at least one error. Warnings never fail the run.
 """
@@ -143,6 +144,7 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
     if not schema_check(validator, ep, rel(path), report):
         return
     reels = {r["id"] for r in ep["reels"]}
+    check_publish(ep, rel(path), report)
     seen: set[str] = set()
     for scene in ep["scenes"]:
         where = f"{rel(path)} [{scene['id']}]"
@@ -234,6 +236,30 @@ def spoken_words(text: str) -> list[str]:
     return [w.replace("ة", "ه") for w in words]
 
 
+YOUTUBE_TITLE = 100
+
+
+def check_publish(ep: dict, where: str, report: Report) -> None:
+    """Publication texts (`publish`): one per reel and one for the whole episode, with its hashtags.
+    The YouTube title is « <en> · <ar> » (video/scripts/publish.ts, which checks the other limits)."""
+    if "publish" not in ep:
+        report.warn(where, "no publication texts for the whole episode (publish: title, description, hashtags)")
+    elif not ep["publish"].get("hashtags"):
+        report.warn(where, "publish: no theme hashtags")
+    for item in [ep, *ep["reels"]]:
+        texts = item.get("publish")
+        name = item.get("id", ep["episode"])
+        if texts is None:
+            if item is not ep:
+                report.warn(where, f"reel '{name}': no publication texts (publish: title, description)")
+            continue
+        title = f"{texts['title']['en']} · {texts['title']['ar']}"
+        if len(title) > YOUTUBE_TITLE:
+            report.error(where, f"{name}: YouTube title « {title} » has {len(title)} characters (max {YOUTUBE_TITLE})")
+        if re.search("[<>]", title):
+            report.error(where, f"{name}: no < or > in a YouTube title")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--release", action="store_true", help="fail on sources that are not validated")
@@ -249,11 +275,18 @@ def main() -> int:
     for path in episodes:
         check_episode(path, registry, catalog, backgrounds, args.release, report)
     if args.reel:
-        reels = {r["id"]: r for path in episodes for r in (load_yaml(path) or {}).get("reels", [])}
-        if args.reel not in reels:
+        owner = {r["id"]: (r, ep) for path in episodes for ep in [load_yaml(path) or {}] for r in ep.get("reels", [])}
+        if args.reel not in owner:
             report.error("content/episodes", f"reel '{args.reel}' does not exist")
-        elif args.release and not reels[args.reel].get("validated_by"):
-            report.error("content/episodes", f"reel '{args.reel}': script not validated by the owner (validated_by)")
+        elif args.release:
+            reel, ep = owner[args.reel]
+            if not reel.get("validated_by"):
+                report.error("content/episodes", f"reel '{args.reel}': script not validated by the owner (validated_by)")
+            # The texts published with it (its own, and the episode's hashtags) are validated too.
+            if not (reel.get("publish") or {}).get("validated_by"):
+                report.error("content/episodes", f"reel '{args.reel}': publication texts not validated by the owner (publish.validated_by)")
+            if not (ep.get("publish") or {}).get("validated_by"):
+                report.error("content/episodes", f"episode '{ep.get('episode')}': publication texts and hashtags not validated by the owner (publish.validated_by)")
 
     for line in report.warnings + report.errors:
         print(line)

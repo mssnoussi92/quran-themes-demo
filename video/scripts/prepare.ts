@@ -13,7 +13,7 @@ import { join, relative, resolve } from "node:path";
 import { createRequire } from "node:module";
 import { parse } from "yaml";
 import { BODY_BOX, MOOD_FACES, SEAT } from "../src/characters/peeps.ts";
-import type { Character, Duration, EpisodeData, Media, ResolvedScene, ResolvedSource } from "../src/types.ts";
+import type { Character, Duration, EpisodeData, Media, PublishTexts, ResolvedScene, ResolvedSource } from "../src/types.ts";
 
 // react-peeps exports one table per kind of piece (Hair, Face, StandingPose...): names are checked there.
 const peeps = createRequire(import.meta.url)("react-peeps") as Record<string, Record<string, unknown>>;
@@ -58,6 +58,7 @@ type RegistryEntry = {
   text_en: string | null;
   excerpt_en?: string;
   status: "proposed" | "validated" | "excluded";
+  url?: string;
   grade?: string;
   graded_by?: string;
   origin?: { translator?: string; surah_ar?: string; surah_en?: string; grades?: { name: string; grade: string }[] };
@@ -89,7 +90,8 @@ type EpisodeFile = {
   episode: string;
   title: { ar: string; en: string };
   narration_language: string;
-  reels: { id: string; title: { ar: string; en: string } }[];
+  publish?: PublishTexts;
+  reels: { id: string; title: { ar: string; en: string }; validated_by?: string; publish?: PublishTexts }[];
   scenes: {
     id: string;
     role: string;
@@ -180,6 +182,7 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
   const { ref } = entry;
   let type: ResolvedSource["type"];
   let reference: string;
+  let reference_en: string;
   let display_ar: string;
   let display_en = entry.text_en;
   if (entry.type === "ayah") {
@@ -189,6 +192,7 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
     reference = entry.origin?.surah_ar
       ? `سورة ${entry.origin.surah_ar} · الآية ${ayah}`
       : `Quran ${ref.surah}:${ref.ayah}`;
+    reference_en = `${entry.origin?.surah_en ? `Surah ${entry.origin.surah_en}` : "Quran"} (${ref.surah}:${ref.ayah})`;
     display_ar = entry.text_ar;
   } else if (entry.type === "hadith") {
     type = "hadith";
@@ -196,6 +200,7 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
     if (!name) throw new Error(`${where}: no display name for collection '${ref.collection}'`);
     const letter = ref.narration ? String.fromCharCode(96 + ref.narration) : "";
     reference = `${name} ${ref.number}${letter}`;
+    reference_en = reference;
     display_ar = prophetWords(entry.text_ar, entry.id);
     // English: the quotation marks do not reliably surround the Prophet's words in the published
     // translations, so the subtitle is the registry's `excerpt_en` (a checked passage) or the whole text.
@@ -208,6 +213,8 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
     type,
     status: entry.status,
     reference,
+    reference_en,
+    url: entry.url ?? null,
     text_ar: entry.text_ar,
     text_en: entry.text_en,
     display_ar,
@@ -353,6 +360,7 @@ function main() {
       episode: ep.episode,
       title: ep.title,
       narration_language: ep.narration_language,
+      publish: ep.publish ?? null,
       reels: ep.reels,
       scenes,
       generated_from: [file, ...sourceFiles].map((f) => relative(ROOT, f)),

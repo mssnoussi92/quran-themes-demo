@@ -27,8 +27,12 @@ export type ResolvedSource = {
   id: string;
   type: "ayah" | "hadith";
   status: "proposed" | "validated";
-  /** "Quran 40:60", "Sahih al-Bukhari 6339" */
+  /** As shown on the card: « سورة غافر · الآية ٦٠ », "Sahih al-Bukhari 6339" */
   reference: string;
+  /** In English, for the publication texts: "Surah Ghafir (40:60)", "Sahih al-Bukhari 6339" */
+  reference_en: string;
+  /** Reading page (quran.com, sunnah.com), from the registry. */
+  url: string | null;
   /** Texts exactly as in the registry. */
   text_ar: string;
   text_en: string;
@@ -92,11 +96,17 @@ export type ResolvedScene = {
   duration: Duration;
 };
 
+/** What the owner pastes when publishing a video (title, description; hashtags added to the
+ * episode's), validated by the owner like the script (scripts/publish.ts writes the rest). */
+export type PublishTexts = { title: I18n; description: I18n; hashtags?: string[]; validated_by?: string };
+
 export type EpisodeData = {
   episode: string;
   title: I18n;
   narration_language: string;
-  reels: { id: string; title: I18n }[];
+  /** The whole episode's texts, and the hashtags of all its videos. */
+  publish: PublishTexts | null;
+  reels: { id: string; title: I18n; validated_by?: string; publish?: PublishTexts }[];
   scenes: ResolvedScene[];
   generated_from: string[];
 };
