@@ -39,7 +39,11 @@ heard in two parts, introduction and reader).
 - Sounds added after the last word: VoiceTut sometimes says a short isolated « اه », « با » after
   0.3-0.5 s of silence (« جاي. »). Read the end with `listen.py --envelope <take>@<end-1.6>@1.6`: the
   last word must decay into silence with nothing after it (a dip of 0.1-0.2 s inside « تعرف » is the
-  word itself). Prefer another take; else cut the raw take in that silence (`atrim=end=<s>`).
+  word itself). Prefer another take; else cut the raw take in that silence (`ffmpeg -i
+  <scene>.raw.wav -af atrim=end=<s> -c:a pcm_s16le cut.wav`) and install it (`--use-take
+  <scene>=cut.wav`). Look at the raw take, not the tightened one: tightening shortens the silence
+  before the sound to 0.18 s. On a new episode, scan every take's end for a short sound (under
+  0.3 s) after a pause: muqarana had five (« ناقصة؟ », « قليل؟ »…), clicks or a breath, all cut.
 
 ## 3. Retake
 
