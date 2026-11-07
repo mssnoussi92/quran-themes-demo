@@ -1,0 +1,501 @@
+# Épisode Repentir (التوبة) : 5 reels (9:16) pour Facebook, Instagram et TikTok ; l'épisode entier (16:9 et
+# 9:16) pour YouTube. Même structure que le du'a et la patience (docs/design.md) : l'accroche et la
+# promesse, une idée reçue par reel, la conclusion. Proposé le 2026-11-07 (skill new-theme), à valider par
+# le propriétaire : sources, script et traduction, textes de publication, miniature. Toute modification
+# d'une ligne d'un reel retire son validated_by.
+# Les répliques identiques à une prise figée d'un autre épisode (« قال ربنا سبحانه وتعالى: », « تاني فكرة
+# غلط… », « تالت فكرة غلط… ») reprennent cette prise (take_from, tools/audio/build.py).
+# Prononciation : pas de guillemets « » dans ce que lit la voix (say_ar) ; « قَرِيب » vocalisé (vrai ق).
+episode: tawba
+title: { ar: "التوبة", en: "Repentance" }
+narration_language: ar-egy   # VoiceTut (égyptien), comme le du'a et la patience
+# Textes de publication : proposés le 2026-11-07, faits des répliques du script ; à valider par le
+# propriétaire (validated_by), exigés par un rendu final. Le reste : video/scripts/publish.ts.
+publish:
+  title: { en: "Repentance: 3 wrong ideas you might believe", ar: "تلات أفكار غلط عن التوبة… يمكن تكون مصدق واحدة منهم" }
+  description:
+    en: "You sinned… and felt far from God? The door is still open. Three wrong ideas keep us from it: that some sin is bigger than God's mercy, that repentance is a one-time thing, and that it can wait until later. Each one, answered from the Qur'an and the Sunnah."
+    ar: "عملت ذنب… وحسيت إنك بعيد عن ربنا؟ الباب لسه مفتوح. وفيه تلات أفكار غلط بتبعدنا عنه: إن فيه ذنب أكبر من رحمة ربنا، وإن التوبة مرة واحدة، وإنها تستنى لبعدين. والرد على كل فكرة من القرآن والسنة."
+  hashtags: ["#Tawba", "#التوبة", "#Islam"]
+# Miniature YouTube (Thumbnail169), proposée le 2026-11-07 comme celles du du'a et de la patience : à
+# valider sur l'image.
+thumbnail:
+  layout: close-up
+  headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas" }
+  kicker: { ar: "عن التوبة", en: "about repentance" }
+  character: { id: amir, pose: standing, mood: worried }
+  background: street
+reels:
+  - id: tawba-01
+    title: { ar: "الباب مفتوح", en: "The door is open" }
+    publish:
+      title: { en: "You sinned… and felt far from God?", ar: "عملت ذنب… وحسيت إنك بعيد عن ربنا؟" }
+      description:
+        en: "And every time you remember it… you're too ashamed to turn back? But the door… is still open. And God rejoices… at your own repentance."
+        ar: "وكل ما تفتكره… تتكسف ترجعله؟ بس الباب… لسه مفتوح. وربنا بيفرح… بتوبتك إنت."
+  - id: tawba-02
+    title: { ar: "رحمة أكبر من الذنب", en: "Mercy bigger than sin" }
+    publish:
+      title: { en: "“My sins are too many… God won't forgive me”?", ar: "«أنا ذنوبي كتير… ربنا مش هيسامحني»؟" }
+      description:
+        en: "The first wrong idea about repentance: that some sin is bigger than God's mercy. All sins… if you come back to Him. Despair… is the real mistake."
+        ar: "أول فكرة غلط عن التوبة: إن فيه ذنب أكبر من رحمة ربنا. الذنوب جميعاً… لو رجعتله. اليأس… هو الغلط الحقيقي."
+  - id: tawba-03
+    title: { ar: "وقعت تاني", en: "I fell again" }
+    publish:
+      title: { en: "You repented… and went back again?", ar: "تبت… ورجعت تاني؟" }
+      description:
+        en: "The second wrong idea: that repentance is a one-time thing… and if you fall, it's over. We all sin… and the best of us are those who repent. Every time you come back… you'll find Him Forgiving, Merciful."
+        ar: "تاني فكرة غلط: إن التوبة مرة واحدة… ولو وقعت، خلاص. كلنا بنغلط… وأحسننا اللي بيتوب. كل ما ترجع… هتلاقيه غفور رحيم."
+  - id: tawba-04
+    title: { ar: "هتوب بعدين", en: "I'll repent later" }
+    publish:
+      title: { en: "“I'll repent… but later”?", ar: "«هتوب… بس بعدين»؟" }
+      description:
+        en: "The third wrong idea: that repentance is something to leave for the end of life. “Soon”… means don't put it off. Repentance isn't for the end of life… it's every day."
+        ar: "تالت فكرة غلط: إن التوبة حاجة نأجلها لآخر العمر. «من قريب»… يعني متأجلش. التوبة مش لآخر العمر… التوبة كل يوم."
+  - id: tawba-05
+    title: { ar: "السيئات حسنات", en: "Bad deeds into good" }
+    publish:
+      title: { en: "Afraid your past will always follow you?", ar: "خايف ماضيك يفضل وراك؟" }
+      description:
+        en: "He doesn't just forgive them… He turns them into good deeds. No sin is bigger than His mercy… repentance isn't a one-time thing… nor for later… and it turns bad deeds into good. So come back… the door is still open."
+        ar: "مش بس بيغفرها… بيبدلها حسنات. مفيش ذنب أكبر من رحمته… التوبة مش مرة واحدة… ومش لبعدين… وبتبدل السيئات حسنات. فارجع… الباب لسه مفتوح."
+scenes:
+  # ---- tawba-01 : accroche et promesse --------------------------------------------------------
+  # Miroir : la distance après une faute, à la deuxième personne.
+  - id: hook-1
+    role: hook
+    reel: tawba-01
+    audio: tts
+    narration:
+      ar: "عملت ذنب… وحسيت إنك بعيد عن ربنا؟"
+      en: "You sinned… and felt far from God?"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: worried, talking: false }
+  # Contraste : la honte qui empêche de revenir (scène type).
+  - id: hook-2
+    role: hook
+    reel: tawba-01
+    audio: tts
+    narration:
+      ar: "وكل ما تفتكره… تتكسف ترجعله؟"
+      en: "And every time you remember it… you're too ashamed to turn back?"
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: salma, pose: standing, mood: worried, talking: false }
+  # Nommer (ligne de l'IA, à vérifier en premier).
+  - id: hook-3
+    role: hook
+    reel: tawba-01
+    audio: tts
+    narration:
+      ar: "بس الباب… لسه مفتوح."
+      en: "But the door… is still open."
+    visual:
+      template: title-card
+  # Ancre : Dieu accepte le repentir.
+  - id: promise-intro
+    role: promise
+    reel: tawba-01
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: promise
+    role: promise
+    reel: tawba-01
+    source: quran.42.25
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: anchor
+    role: evidence
+    reel: tawba-01
+    source: hadith.bukhari.6309
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "والنبي صلى الله عليه وسلم قال:"
+      en: "And the Prophet ﷺ said:"
+    visual:
+      template: source-card
+  # Question en un mot, reprise du hadith (« أفرح »), puis la réponse.
+  - id: why
+    role: evidence
+    reel: tawba-01
+    audio: tts
+    narration:
+      ar: "بيفرح؟"
+      en: "Rejoices?"
+    visual:
+      template: title-card
+  - id: because
+    role: evidence
+    reel: tawba-01
+    audio: tts
+    narration:
+      ar: "أيوه… بتوبتك إنت."
+      en: "Yes… at your own repentance."
+    visual:
+      template: title-card
+  - id: outro
+    role: outro
+    reel: tawba-01
+    audio: tts
+    narration:
+      ar: "بس فيه تلات أفكار غلط عن التوبة… يمكن تكون مصدق واحدة منهم. أولها في الجاي."
+      en: "But there are three wrong ideas about repentance… you might believe one of them. The first one is next."
+    reel_only_end: { ar: "أولها في الجاي.", en: "The first one is next." }
+    visual:
+      template: title-card
+
+  # ---- tawba-02 : idée reçue 1, « mes péchés sont trop nombreux » -------------------------------
+  - id: despair-hook
+    role: hook
+    reel: tawba-02
+    audio: tts
+    narration:
+      ar: "«أنا ذنوبي كتير… ربنا مش هيسامحني»؟"
+      en: "“My sins are too many… God won't forgive me”?"
+    say_ar: "أنا ذنوبي كتير… ربنا مش هيسامحني؟"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: worried, talking: false }
+  - id: despair-wrong
+    role: misconception
+    reel: tawba-02
+    audio: tts
+    narration:
+      ar: "أول فكرة غلط عن التوبة…"
+      en: "The first wrong idea about repentance…"
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  - id: despair-idea
+    role: misconception
+    reel: tawba-02
+    audio: tts
+    narration:
+      ar: "إن فيه ذنب… أكبر من رحمة ربنا."
+      en: "That some sin… is bigger than God's mercy."
+    visual:
+      template: title-card
+  - id: despair-verse-intro
+    role: evidence
+    reel: tawba-02
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: despair-verse
+    role: evidence
+    reel: tawba-02
+    source: quran.39.53
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Reprise de « يغفر الذنوب جميعا », avec la condition du repentir.
+  - id: despair-all
+    role: evidence
+    reel: tawba-02
+    audio: tts
+    narration:
+      ar: "الذنوب جميعاً… لو رجعتله."
+      en: "All sins… if you come back to Him."
+    visual:
+      template: title-card
+  - id: despair-hadith
+    role: evidence
+    reel: tawba-02
+    source: hadith.tirmidhi.3540
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "والنبي صلى الله عليه وسلم قال:"
+      en: "And the Prophet ﷺ said:"
+    visual:
+      template: source-card
+  # Ligne de l'IA, tirée de « لا تقنطوا من رحمة الله ».
+  - id: despair-takeaway
+    role: evidence
+    reel: tawba-02
+    audio: tts
+    narration:
+      ar: "اليأس… هو الغلط الحقيقي."
+      en: "Despair… is the real mistake."
+    visual:
+      template: title-card
+  - id: despair-outro
+    role: outro
+    reel: tawba-02
+    audio: tts
+    narration:
+      ar: "طب ولو تبت… ورجعت للذنب تاني؟ ده اللي جاي."
+      en: "And what if you repent… and go back to the sin? That's next."
+    reel_only_end: { ar: "ده اللي جاي.", en: "That's next." }
+    visual:
+      template: title-card
+
+  # ---- tawba-03 : idée reçue 2, « j'ai rechuté, mon repentir ne vaut rien » ------------------------
+  - id: relapse-hook
+    role: hook
+    reel: tawba-03
+    audio: tts
+    narration:
+      ar: "تبت… ورجعت تاني؟"
+      en: "You repented… and went back again?"
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: salma, pose: standing, mood: worried, talking: false }
+  - id: relapse-wrong
+    role: misconception
+    reel: tawba-03
+    audio: tts
+    narration:
+      ar: "تاني فكرة غلط…"
+      en: "The second wrong idea…"
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  - id: relapse-idea
+    role: misconception
+    reel: tawba-03
+    audio: tts
+    narration:
+      ar: "إن التوبة مرة واحدة… ولو وقعت، خلاص."
+      en: "That repentance is a one-time thing… and if you fall, it's over."
+    visual:
+      template: title-card
+  - id: relapse-hadith
+    role: evidence
+    reel: tawba-03
+    source: hadith.tirmidhi.2499
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "النبي صلى الله عليه وسلم قال:"
+      en: "The Prophet ﷺ said:"
+    visual:
+      template: source-card
+  # Reformule le hadith (« خير الخطائين التوابون »).
+  - id: relapse-means
+    role: evidence
+    reel: tawba-03
+    audio: tts
+    narration:
+      ar: "يعني كلنا بنغلط… وأحسننا اللي بيتوب."
+      en: "So we all sin… and the best of us are those who repent."
+    visual:
+      template: title-card
+  - id: relapse-verse-intro
+    role: evidence
+    reel: tawba-03
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: relapse-verse
+    role: evidence
+    reel: tawba-03
+    source: quran.4.110
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Reformule le verset (« ثم يستغفر الله يجد الله غفورا رحيما »).
+  - id: relapse-again
+    role: evidence
+    reel: tawba-03
+    audio: tts
+    narration:
+      ar: "كل ما ترجع… هتلاقيه غفور رحيم."
+      en: "Every time you come back… you'll find Him Forgiving, Merciful."
+    visual:
+      template: title-card
+  - id: relapse-outro
+    role: outro
+    reel: tawba-03
+    audio: tts
+    narration:
+      ar: "طب ما أتوب بعدين… لسه بدري؟ ده اللي جاي."
+      en: "Why not repent later… isn't it still early? That's next."
+    reel_only_end: { ar: "ده اللي جاي.", en: "That's next." }
+    visual:
+      template: title-card
+
+  # ---- tawba-04 : idée reçue 3, « je me repentirai plus tard » --------------------------------------
+  - id: later-hook
+    role: hook
+    reel: tawba-04
+    audio: tts
+    narration:
+      ar: "«هتوب… بس بعدين»؟"
+      en: "“I'll repent… but later”?"
+    say_ar: "هتوب… بس بعدين؟"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: calm, talking: false }
+  - id: later-wrong
+    role: misconception
+    reel: tawba-04
+    audio: tts
+    narration:
+      ar: "تالت فكرة غلط…"
+      en: "The third wrong idea…"
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  - id: later-idea
+    role: misconception
+    reel: tawba-04
+    audio: tts
+    narration:
+      ar: "إن التوبة… حاجة نأجلها لآخر العمر."
+      en: "That repentance… is something to leave for the end of life."
+    visual:
+      template: title-card
+  - id: later-verse-intro
+    role: evidence
+    reel: tawba-04
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: later-verse
+    role: evidence
+    reel: tawba-04
+    source: quran.4.17
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Reprise de « ثم يتوبون من قريب » ; « قَرِيب » vocalisé : le ق se prononce (mot du verset).
+  - id: later-soon
+    role: evidence
+    reel: tawba-04
+    audio: tts
+    narration:
+      ar: "«من قريب»… يعني متأجلش."
+      en: "“Soon”… means don't put it off."
+    say_ar: "من قَرِيب… يعني متأجلش."
+    visual:
+      template: title-card
+  - id: later-hadith
+    role: evidence
+    reel: tawba-04
+    source: hadith.bukhari.6307
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "والنبي صلى الله عليه وسلم قال:"
+      en: "And the Prophet ﷺ said:"
+    visual:
+      template: source-card
+  # Ligne de l'IA, tirée du hadith (plus de soixante-dix fois par jour).
+  - id: later-daily
+    role: evidence
+    reel: tawba-04
+    audio: tts
+    narration:
+      ar: "التوبة مش لآخر العمر… التوبة كل يوم."
+      en: "Repentance isn't for the end of life… it's every day."
+    visual:
+      template: title-card
+  - id: later-outro
+    role: outro
+    reel: tawba-04
+    audio: tts
+    narration:
+      ar: "وفي الآخر… وعد ربنا للتايبين. دي الأخيرة."
+      en: "And finally… God's promise to those who repent. That's the last one."
+    visual:
+      template: title-card
+
+  # ---- tawba-05 : conclusion --------------------------------------------------------------------
+  - id: change-hook
+    role: hook
+    reel: tawba-05
+    audio: tts
+    narration:
+      ar: "خايف ماضيك يفضل وراك؟"
+      en: "Afraid your past will always follow you?"
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: salma, pose: standing, mood: worried, talking: false }
+  - id: change-verse-intro
+    role: evidence
+    reel: tawba-05
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: change-verse
+    role: evidence
+    reel: tawba-05
+    source: quran.25.70
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Reformule le verset (« يبدل الله سيئاتهم حسنات »).
+  - id: change-swap
+    role: conclusion
+    reel: tawba-05
+    audio: tts
+    narration:
+      ar: "مش بس بيغفرها… بيبدلها حسنات."
+      en: "He doesn't just forgive them… He turns them into good deeds."
+    visual:
+      template: title-card
+  # Rappel des quatre reels en une carte (quatre morceaux).
+  - id: change-recap
+    role: conclusion
+    reel: tawba-05
+    audio: tts
+    narration:
+      ar: "مفيش ذنب أكبر من رحمته… التوبة مش مرة واحدة… ومش لبعدين… وبتبدل السيئات حسنات."
+      en: "No sin is bigger than His mercy… repentance isn't a one-time thing… nor for later… and it turns bad deeds into good."
+    visual:
+      template: title-card
+  # Retour à l'accroche (« الباب لسه مفتوح »).
+  - id: change-outro
+    role: conclusion
+    reel: tawba-05
+    audio: tts
+    narration:
+      ar: "فارجع… الباب لسه مفتوح."
+      en: "So come back… the door is still open."
+    visual:
+      template: title-card

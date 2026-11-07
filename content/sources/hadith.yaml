@@ -345,3 +345,88 @@
     license: none stated on the archive.org item
     status: validated
     validated_by: mssnoussi92
+- id: hadith.bukhari.6309
+  type: hadith
+  ref: {collection: bukhari, number: 6309}
+  grade: sahih
+  graded_by: Sahih al-Bukhari
+  text_ar: حَدَّثَنَا إِسْحَاقُ، أَخْبَرَنَا حَبَّانُ، حَدَّثَنَا هَمَّامٌ، حَدَّثَنَا قَتَادَةُ، حَدَّثَنَا أَنَسُ بْنُ مَالِكٍ، عَنِ النَّبِيِّ صلى الله عليه وسلم‏.‏ وَحَدَّثَنَا هُدْبَةُ، حَدَّثَنَا هَمَّامٌ، حَدَّثَنَا قَتَادَةُ، عَنْ أَنَسٍ ـ رضى الله عنه ـ قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏ "‏ اللَّهُ أَفْرَحُ بِتَوْبَةِ عَبْدِهِ مِنْ أَحَدِكُمْ سَقَطَ عَلَى بَعِيرِهِ، وَقَدْ أَضَلَّهُ فِي أَرْضِ فَلاَةٍ ‏"‏‏.‏
+  text_en: Narrated Anas bin Malik:Allah's Messenger (ﷺ) said, "Allah is more pleased with the repentance of His slave than anyone of you is pleased with finding his camel which he had lost in the desert
+  excerpt_en: Allah is more pleased with the repentance of His slave than anyone of you is pleased with finding his camel which he had lost in the desert
+  url: https://sunnah.com/bukhari:6309
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-bukhari/6309.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari/6309.json
+    translator: Muhsin Khan
+    book: 80
+    hadith_in_book: 6
+    retrieved: '2026-11-07'
+  status: proposed
+  notes: La joie de Dieu au repentir de Son serviteur, plus grande que celle de l'homme qui retrouve sa monture perdue (reel tawba-01)
+- id: hadith.tirmidhi.3540
+  type: hadith
+  ref: {collection: tirmidhi, number: 3540}
+  grade: sahih
+  graded_by: al-Albani
+  text_ar: حَدَّثَنَا عَبْدُ اللَّهِ بْنُ إِسْحَاقَ الْجَوْهَرِيُّ الْبَصْرِيُّ، حَدَّثَنَا أَبُو عَاصِمٍ، حَدَّثَنَا كَثِيرُ بْنُ فَائِدٍ، حَدَّثَنَا سَعِيدُ بْنُ عُبَيْدٍ، قَالَ سَمِعْتُ بَكْرَ بْنَ عَبْدِ اللَّهِ الْمُزَنِيَّ، يَقُولُ حَدَّثَنَا أَنَسُ بْنُ مَالِكٍ، قَالَ سَمِعْتُ رَسُولَ اللَّهِ صلى الله عليه وسلم يَقُولُ ‏ "‏ قَالَ اللَّهُ يَا ابْنَ آدَمَ إِنَّكَ مَا دَعَوْتَنِي وَرَجَوْتَنِي غَفَرْتُ لَكَ عَلَى مَا كَانَ فِيكَ وَلاَ أُبَالِي يَا ابْنَ آدَمَ لَوْ بَلَغَتْ ذُنُوبُكَ عَنَانَ السَّمَاءِ ثُمَّ اسْتَغْفَرْتَنِي غَفَرْتُ لَكَ وَلاَ أُبَالِي يَا ابْنَ آدَمَ إِنَّكَ لَوْ أَتَيْتَنِي بِقُرَابِ الأَرْضِ خَطَايَا ثُمَّ لَقِيتَنِي لاَ تُشْرِكُ بِي شَيْئًا لأَتَيْتُكَ بِقُرَابِهَا مَغْفِرَةً ‏"‏ ‏.‏ قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ غَرِيبٌ لاَ نَعْرِفُهُ إِلاَّ مِنْ هَذَا الْوَجْهِ ‏.‏
+  text_en: 'Anas bin Malik narrated that the Messenger of Allah (ﷺ) said:“Allah, Blessed is He and Most High, said: ‘O son of Adam! Verily as long as you called upon Me and hoped in Me, I forgave you, despite whatever may have occurred from you, and I did not mind. O son of Adam! Were your sins to reach the clouds of the sky, then you sought forgiveness from Me, I would forgive you, and I would not mind. So son of Adam! If you came to me with sins nearly as great as the earth, and then you met Me not associating anything with Me, I would come to you with forgiveness nearly as great as it.’”'
+  excerpt_en: 'Allah, Blessed is He and Most High, said: ‘O son of Adam! Verily as long as you called upon Me and hoped in Me, I forgave you, despite whatever may have occurred from you, and I did not mind. O son of Adam! Were your sins to reach the clouds of the sky, then you sought forgiveness from Me, I would forgive you, and I would not mind. So son of Adam! If you came to me with sins nearly as great as the earth, and then you met Me not associating anything with Me, I would come to you with forgiveness nearly as great as it.’'
+  url: https://sunnah.com/tirmidhi:3540
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-tirmidhi/3540.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-tirmidhi/3540.json
+    translator: Unknown
+    book: 48
+    hadith_in_book: 171
+    grades:
+    - {name: Ahmad Muhammad Shakir, grade: Sahih}
+    - {name: Al-Albani, grade: Sahih}
+    - {name: Bashar Awad Maarouf, grade: Hasan}
+    - {name: Zubair Ali Zai, grade: Isnaad Hasan}
+    retrieved: '2026-11-07'
+  status: proposed
+  notes: Hadith qudsi, « ô fils d'Adam… même si tes péchés atteignaient les nuages du ciel » (reel tawba-02)
+- id: hadith.tirmidhi.2499
+  type: hadith
+  ref: {collection: tirmidhi, number: 2499}
+  grade: hasan
+  graded_by: al-Albani
+  text_ar: حَدَّثَنَا أَحْمَدُ بْنُ مَنِيعٍ، حَدَّثَنَا زَيْدُ بْنُ حُبَابٍ، حَدَّثَنَا عَلِيُّ بْنُ مَسْعَدَةَ الْبَاهِلِيُّ، حَدَّثَنَا قَتَادَةُ، عَنْ أَنَسٍ، أَنَّ النَّبِيَّ صلى الله عليه وسلم قَالَ ‏ "‏ كُلُّ ابْنِ آدَمَ خَطَّاءٌ وَخَيْرُ الْخَطَّائِينَ التَّوَّابُونَ ‏"‏ ‏.‏ قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ غَرِيبٌ لاَ نَعْرِفُهُ إِلاَّ مِنْ حَدِيثِ عَلِيِّ بْنِ مَسْعَدَةَ عَنْ قَتَادَةَ ‏.‏
+  text_en: Anas narrated that the Prophet (ﷺ) said:"Every son of Adam sins, and the best of the sinners are the repentant
+  excerpt_en: Every son of Adam sins, and the best of the sinners are the repentant
+  url: https://sunnah.com/tirmidhi:2499
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-tirmidhi/2499.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-tirmidhi/2499.json
+    translator: Unknown
+    book: 37
+    hadith_in_book: 85
+    grades:
+    - {name: Ahmad Muhammad Shakir, grade: Hasan}
+    - {name: Al-Albani, grade: Hasan}
+    - {name: Zubair Ali Zai, grade: Daif}
+    retrieved: '2026-11-07'
+  status: proposed
+  notes: « Tout fils d'Adam commet des fautes, et les meilleurs fautifs sont ceux qui se repentent » (reel tawba-03)
+- id: hadith.bukhari.6307
+  type: hadith
+  ref: {collection: bukhari, number: 6307}
+  grade: sahih
+  graded_by: Sahih al-Bukhari
+  text_ar: حَدَّثَنَا أَبُو الْيَمَانِ، أَخْبَرَنَا شُعَيْبٌ، عَنِ الزُّهْرِيِّ، قَالَ أَخْبَرَنِي أَبُو سَلَمَةَ بْنُ عَبْدِ الرَّحْمَنِ، قَالَ قَالَ أَبُو هُرَيْرَةَ سَمِعْتُ رَسُولَ اللَّهِ صلى الله عليه وسلم يَقُولُ ‏ "‏ وَاللَّهِ إِنِّي لأَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ فِي الْيَوْمِ أَكْثَرَ مِنْ سَبْعِينَ مَرَّةً ‏"‏‏.‏
+  text_en: Narrated Abu Huraira:I heard Allah's Messenger (ﷺ) saying." By Allah! I ask for forgiveness from Allah and turn to Him in repentance more than seventy times a day
+  excerpt_en: By Allah! I ask for forgiveness from Allah and turn to Him in repentance more than seventy times a day
+  url: https://sunnah.com/bukhari:6307
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-bukhari/6307.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari/6307.json
+    translator: Muhsin Khan
+    book: 80
+    hadith_in_book: 4
+    retrieved: '2026-11-07'
+  status: proposed
+  notes: Le Prophète ﷺ demandait pardon et se repentait plus de soixante-dix fois par jour (reel tawba-04)
