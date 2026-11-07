@@ -21,6 +21,8 @@ proposition. Les sources ci-dessous existent sous ces numéros dans hadith-api (
 faire valider, une par une.
 
 1. **التوكل**, fusionné avec « الخوف والشعور بالعجز » (la peur pour l'accroche, le tawakkul pour réponse).
+   **En cours** (`content/episodes/tawakkul.yaml`, plan et écarts dans `docs/design.md`) : 33:3 et Tirmidhi
+   3426 à la place de 3:173 et Bukhari 4563, 67:15 au reel 2, 25:58 pour la conclusion.
    - « التوكل يعني أسيبها ومعملش حاجة » : Tirmidhi 2517 (« اعقلها وتوكل », al-Albani : Hasan),
      Tirmidhi 2344 (les oiseaux, al-Albani : Sahih). Pas Muslim 2664, déjà dans sabr-03.
    - « لو خايف… يبقى إيماني ضعيف » : Moussa a eu peur (20:67-68), carte de nom.
