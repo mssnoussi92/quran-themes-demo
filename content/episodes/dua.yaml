@@ -6,7 +6,7 @@
 # ligne d'un reel retire son validated_by.
 # dua-02 à dua-05 : proposés le 2026-11-06 (une idée reçue par reel, puis la conclusion), validés par le
 # propriétaire le 2026-11-07, script, traduction et voix (prises figées). Fins de dua-01 à 03 changées en
-# « تابعنا عشان تعرف » à sa demande le même jour (comme le repentir) : nouvelles prises à écouter, reels à valider.
+# « تابعنا عشان تعرف » à sa demande le même jour (comme le repentir) : lignes validées par le propriétaire, nouvelles prises à écouter.
 episode: dua
 title: { ar: "الدعاء", en: "Du'a" }
 narration_language: ar-egy   # VoiceTut (égyptien), choix du propriétaire le 2026-11-06
@@ -34,6 +34,7 @@ thumbnail:
 reels:
   - id: dua-01
     title: { ar: "يا رب", en: "Ya Rabb" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "“Ya Rabb”… how many times have you said it today?", ar: "«يا رب»… قلتها كام مرة النهارده؟" }
       description:
@@ -42,6 +43,7 @@ reels:
       validated_by: mssnoussi92
   - id: dua-02
     title: { ar: "الدعاء والرضا", en: "Du'a and contentment" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "Ever said: “I'm content… I won't ask”?", ar: "عمرك قلت: «أنا راضي… مش هدعي»؟" }
       description:
@@ -50,6 +52,7 @@ reels:
       validated_by: mssnoussi92
   - id: dua-03
     title: { ar: "الدعاء والقدر", en: "Du'a and destiny" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "“It's all written anyway… why make du'a?”", ar: "«ما هو كله مكتوب… أدعي ليه؟»" }
       description:

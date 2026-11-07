@@ -2,8 +2,8 @@
 # 9:16) pour YouTube. Même structure que le du'a (docs/design.md) : l'accroche et la promesse, une idée
 # reçue par reel, la conclusion. Proposé le 2026-11-07 (skill new-theme), validé par le propriétaire le même
 # jour : sources, lectures, script et traduction, prises, textes de publication, miniature. Fins de sabr-01 à 03
-# changées en « تابعنا عشان تعرف » à sa demande le même jour (comme le repentir) : nouvelles prises à écouter,
-# reels à valider. Toute modification d'une ligne d'un reel retire son validated_by.
+# changées en « تابعنا عشان تعرف » à sa demande le même jour (comme le repentir) : lignes validées par le
+# propriétaire, nouvelles prises à écouter. Toute modification d'une ligne d'un reel retire son validated_by.
 # Les répliques identiques à une prise figée du du'a (« قال ربنا سبحانه وتعالى: », « النبي صلى الله عليه
 # وسلم قال: », « تاني فكرة غلط… »…) reprennent cette prise (take_from, tools/audio/build.py).
 episode: sabr
@@ -29,6 +29,7 @@ thumbnail:
 reels:
   - id: sabr-01
     title: { ar: "اصبر", en: "Be patient" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "“Be patient”… how many times have you heard it?", ar: "«اصبر»… سمعتها كام مرة؟" }
       description:
@@ -37,6 +38,7 @@ reels:
       validated_by: mssnoussi92
   - id: sabr-02
     title: { ar: "الصبر والدموع", en: "Patience and tears" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "You cried… and felt you weren't being patient?", ar: "عيطت… وحسيت إنك مش صابر؟" }
       description:
@@ -45,6 +47,7 @@ reels:
       validated_by: mssnoussi92
   - id: sabr-03
     title: { ar: "الصبر والسعي", en: "Patience and effort" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "“I'm being patient”… while you sit and wait?", ar: "«أنا صابر»… وإنت قاعد مستني؟" }
       description:
