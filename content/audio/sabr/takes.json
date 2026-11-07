@@ -1,0 +1,339 @@
+{
+  "note": "Narration takes validated by the owner (AI-generated voice, VoiceTut). Written by tools/audio/build.py --lock, never by hand.",
+  "takes": {
+    "anchor": {
+      "file": "anchor.flac",
+      "text": "والنبي صلى الله عليه وسلم قال: عَجَبًا لأَمْرِ الْمُؤْمِنِ إِنَّ أَمْرَهُ كُلَّهُ خَيْرٌ وَلَيْسَ ذَاكَ لأَحَدٍ إِلاَّ لِلْمُؤْمِنِ إِنْ أَصَابَتْهُ سَرَّاءُ شَكَرَ فَكَانَ خَيْرًا لَهُ وَإِنْ أَصَابَتْهُ ضَرَّاءُ صَبَرَ فَكَانَ خَيْرًا لَهُ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "0b01b0d6e0fad81a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "e9b6ecbdeea7b6bc6d5a3f5cad8f72e75636930b821da97ca1860843857dbc06"
+    },
+    "because": {
+      "file": "because.flac",
+      "text": "لما بِتُصْبُر… الوجع نفسه بيبقى خير ليك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a9d081eed8ad680e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "5398a080c7d5f5539b370c2d2acf5efe275578e6bb5bfb1f6593d6a6b0bfe6b7"
+    },
+    "effort-hadith": {
+      "file": "effort-hadith.flac",
+      "text": "النبي صلى الله عليه وسلم قال: الْمُؤْمِنُ الْقَوِيُّ خَيْرٌ وَأَحَبُّ إِلَى اللَّهِ مِنَ الْمُؤْمِنِ الضَّعِيفِ وَفِي كُلٍّ خَيْرٌ احْرِصْ عَلَى مَا يَنْفَعُكَ وَاسْتَعِنْ بِاللَّهِ وَلاَ تَعْجِزْ وَإِنْ أَصَابَكَ شَىْءٌ فَلاَ تَقُلْ لَوْ أَنِّي فَعَلْتُ كَانَ كَذَا وَكَذَا. وَلَكِنْ قُلْ قَدَرُ اللَّهِ وَمَا شَاءَ فَعَلَ فَإِنَّ لَوْ تَفْتَحُ عَمَلَ الشَّيْطَانِ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "13f1d1358557dbfa",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "e3633e2aeac2272ef211dfac40433c206f699e627bd5772a60bd174d2ba983a5"
+    },
+    "effort-hook": {
+      "file": "effort-hook.flac",
+      "text": "«أنا صابر»… وإنت قاعد مستني ومش بتعمل حاجة؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "3e017e673e2e0439",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "e9114be9e30fa05b99efcd2b0354fd8776b15989af7ad6cb3e3509f8926eba10"
+    },
+    "effort-idea": {
+      "file": "effort-idea.flac",
+      "text": "إن الصبر يعني تستسلم… وتقعد تستنى.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2930a6fd70552833",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "60d3c0498c5ce3a38e01b34e9ff29cc2161f86981f64acba965cedbd4ed37332"
+    },
+    "effort-means": {
+      "file": "effort-means.flac",
+      "text": "يعني اسعى… واستعين بربنا… ومتستسلمش.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "010d3bfa30f05d33",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "ef9ceaad2f06c57433923229280fa426af8f8c6fdf61322232cf2bdaeb6fc6ea"
+    },
+    "effort-outro": {
+      "file": "effort-outro.flac",
+      "text": "طب ولو أنا أصلاً… مش صبور؟ ده اللي جاي.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a3680b4b84ec8466",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "afb5c50f6435e41e04b4036f8e42cc4f69669e74990217a6eedc39118893879c"
+    },
+    "effort-tool": {
+      "file": "effort-tool.flac",
+      "text": "الصبر مش إنك توقف… الصبر عون وإنت ماشي.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "ce924124c1b225f2",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "ddb40ed76912d91fb0ed2e31af72cb5b64d666eedfc32e30181e11f225f03a9a"
+    },
+    "hook-1": {
+      "file": "hook-1.flac",
+      "text": "اصبر… سمعتها كام مرة؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "bab5e4bc453b4f0b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "ddfe89141323f00a06e7e62a6cdeba30a6742325d65c0702f4c07f1775fecfbf"
+    },
+    "hook-2": {
+      "file": "hook-2.flac",
+      "text": "وإنت مستني شغل… أو شفا… أو فرج…",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "9eb30689f615bd5d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "3851026741864ce33973345ec242b441bf36e21e328746a5a11f7fb37fe55720"
+    },
+    "hook-3": {
+      "file": "hook-3.flac",
+      "text": "كلمة سهلة تتقال… وصعبة تتعاش.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "90057ef934d18b74",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "514d88d3d182349e5ea7d33cd07e15842a86743901909fc19081673bd0477e12",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.44
+        ]
+      }
+    },
+    "learn-ask": {
+      "file": "learn-ask.flac",
+      "text": "والصبر كمان… بيتطلب من ربنا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "ce6710ce68505471",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "925fcc73eeecac03b377ac314acece54b01a6d5dc37afda4e2fdd65587508281"
+    },
+    "learn-hadith": {
+      "file": "learn-hadith.flac",
+      "text": "النبي صلى الله عليه وسلم قال: مَا يَكُونُ عِنْدِي مِنْ خَيْرٍ فَلَنْ أَدَّخِرَهُ عَنْكُمْ، وَمَنْ يَسْتَعْفِفْ يُعِفَّهُ اللَّهُ، وَمَنْ يَسْتَغْنِ يُغْنِهِ اللَّهُ، وَمَنْ يَتَصَبَّرْ يُصَبِّرْهُ اللَّهُ، وَمَا أُعْطِيَ أَحَدٌ عَطَاءً خَيْرًا وَأَوْسَعَ مِنَ الصَّبْرِ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "7a252e8569055ec1",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "084066a9cca77c7b7c8ace7e8b47eb1209a07e474127078df56b13ab007279ca"
+    },
+    "learn-hook": {
+      "file": "learn-hook.flac",
+      "text": "«أنا مش صبور… ده طبعي»؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "6c2158c96ef0142f",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "2b397ce59ca8d393c7ed40bef312174597c10925efa4167c07d7adbb9efe8e32"
+    },
+    "learn-idea": {
+      "file": "learn-idea.flac",
+      "text": "إن الصبر طبع… يا عندك يا معندكش.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "53ab85861eb0abb1",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "55516f3f9946ebf7b7f899429019555d2d51851b14c0f543492a249906b04182"
+    },
+    "learn-means": {
+      "file": "learn-means.flac",
+      "text": "يعني اللي يحاول يصبر… ربنا يصبّره.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "3a7e33a6c8f8df3a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "91da6c44e197e5fd1329049d7963466987590ffce405ff2b898abeaff8e6b91d"
+    },
+    "learn-outro": {
+      "file": "learn-outro.flac",
+      "text": "وفي الآخر… وعد ربنا للصابرين. دي الأخيرة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "45acb98a849df945",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "99d2c6aab3ecacdab07256912daedb69bf9444d5c0b70e1d4a170fed30481653"
+    },
+    "outro": {
+      "file": "outro.flac",
+      "text": "بس فيه تلات أفكار غلط عن الصبر… يمكن تكون مصدق واحدة منهم. أولها في الجاي.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "9f7495a2d2e69847",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "5469cadce8398ceea0070baad134bb247f67f3d8a87b51298cd063c42a7a6bfc"
+    },
+    "reward-hook": {
+      "file": "reward-hook.flac",
+      "text": "حاسس إن صبرك ملوش آخر؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "bb8556ce0d60f259",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "af54b4217b31ebdc2ff9a52b636a6fade8615c9e9735f8a19b0d43f2bca94c6e"
+    },
+    "reward-no-limit": {
+      "file": "reward-no-limit.flac",
+      "text": "الصابر أجره… من غير حساب.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "10678d2ab358a418",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "d793137b385fdb47c31f241c334184cda9ec6520361f48fe431265548ed9bd83"
+    },
+    "reward-outro": {
+      "file": "reward-outro.flac",
+      "text": "فلما حد يقولك اُصْبُر… افتكر إن ربنا مع الصابرين.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "33829e4162d7e7a2",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "63e53dbf7e8a5714c9a208fcb352dc64afceb4426d934f828ad35661a76e019d"
+    },
+    "reward-recap": {
+      "file": "reward-recap.flac",
+      "text": "الصبر مش سكوت… مش استسلام… بيتعلم… وأجره من غير حساب.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "9d415006ec953cdb",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "bf54f7231ed4b96f90958707b82b1b43d7f194515552afa1567b4d6237b33c91"
+    },
+    "tears-hadith": {
+      "file": "tears-hadith.flac",
+      "text": "والنبي صلى الله عليه وسلم دمعت عينه، وابنه إبراهيم بيموت… وقال لعبد الرحمن بن عوف: يَا ابْنَ عَوْفٍ إِنَّهَا رَحْمَةٌ. ثُمَّ أَتْبَعَهَا بِأُخْرَى فَقَالَ صلى الله عليه وسلم إِنَّ الْعَيْنَ تَدْمَعُ، وَالْقَلْبَ يَحْزَنُ، وَلاَ نَقُولُ إِلاَّ مَا يَرْضَى رَبُّنَا، وَإِنَّا بِفِرَاقِكَ يَا إِبْرَاهِيمُ لَمَحْزُونُونَ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "6f6bd2927f5cc639",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "d646228909563f41555205d0931bdba2d5aa1f4211aa9304ed34bf6519dc2753"
+    },
+    "tears-hook": {
+      "file": "tears-hook.flac",
+      "text": "عيطت… وحسيت إنك مش صابر؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "f86e0db8705081fd",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "9850120498ee38b0e712f8e0991d581d0c3742354c4b9cc6e474d6d5daad3e53"
+    },
+    "tears-idea": {
+      "file": "tears-idea.flac",
+      "text": "إن الصابر مَبْيِعَيَّطْش… ومَبْيِشْتِكِيش.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "cfdd4fd6eea736c3",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "801d8c617b901a2e84b2c5d251d8067e22975d11f2eb55db568abd7f6088d18d"
+    },
+    "tears-outro": {
+      "file": "tears-outro.flac",
+      "text": "طب لو الصبر مش سكوت… يبقى أقعد أستنى وخلاص؟ ده اللي جاي.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "fb569f23b8f411b1",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "621f3bbd353f59783faed8e8957a571b74c63e3cf9abb0c1fcba1f24addf5c57"
+    },
+    "tears-takeaway": {
+      "file": "tears-takeaway.flac",
+      "text": "الصبر مش إنك متحسش… الصبر إنك متعترضش على ربنا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "d57674a7864417f2",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "279c786d4d414d18e71835eca964e28f93841e06807c532e221f27cbb0078b2c"
+    },
+    "tears-to-god": {
+      "file": "tears-to-god.flac",
+      "text": "الشكوى لربنا… مش عكس الصبر.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "499bd96977b73cfe",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "712a888ef7c40e92b7d9be88dcc361b7fd4d865c785c66c093d8f0bbe1cca79c"
+    },
+    "tears-wrong": {
+      "file": "tears-wrong.flac",
+      "text": "أول فكرة غلط عن الصبر…",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "3942064892954be5",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "e9bad15036354281c87cfb022b1c90ea57f283bb2a616ff3b4e4b78ac115129d"
+    },
+    "tears-yaqub": {
+      "file": "tears-yaqub.flac",
+      "text": "سيدنا يَعْقُوب عليه السلام، من حزنه على ابنه يوسف…",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a8b3e495b5c1f7c2",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "dd46453cf6f769479a47f0cf9c36d9dbd627e719096809f05c8d226af6a27295"
+    },
+    "test-sure": {
+      "file": "test-sure.flac",
+      "text": "يعني الابتلاء جاي جاي… والبُشْرَى للصابرين.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "635903bbaf03133a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "fc6312605211a2b176762c4eef7a2cdd8f96ec2b759dc3e851d816e2d58fc217"
+    },
+    "why": {
+      "file": "why.flac",
+      "text": "حتى الوجع… خير؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "861ee3f9183ec597",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "bd9d987d3d062cacc97cd26c8870fa6bba285e542f1e931079e05afacd3f1551",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.4
+        ]
+      }
+    }
+  }
+}

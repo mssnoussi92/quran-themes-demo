@@ -1,0 +1,541 @@
+# Épisode Patience (الصبر) : 5 reels (9:16) pour Facebook, Instagram et TikTok ; l'épisode entier (16:9 et
+# 9:16) pour YouTube. Même structure que le du'a (docs/design.md) : l'accroche et la promesse, une idée
+# reçue par reel, la conclusion. Proposé le 2026-11-07 (skill new-theme), validé par le propriétaire le même
+# jour : sources, lectures, script et traduction, prises, textes de publication, miniature. Toute modification d'une ligne d'un reel retire
+# son validated_by.
+# Les répliques identiques à une prise figée du du'a (« قال ربنا سبحانه وتعالى: », « النبي صلى الله عليه
+# وسلم قال: », « تاني فكرة غلط… »…) reprennent cette prise (take_from, tools/audio/build.py).
+episode: sabr
+title: { ar: "الصبر", en: "Patience" }
+narration_language: ar-egy   # VoiceTut (égyptien), comme le du'a
+# Textes de publication : proposés le 2026-11-07, faits des répliques du script ; validés par le
+# propriétaire le même jour (validated_by), exigés par un rendu final. Le reste : video/scripts/publish.ts.
+publish:
+  title: { en: "Patience: 3 wrong ideas you might believe", ar: "تلات أفكار غلط عن الصبر… يمكن تكون مصدق واحدة منهم" }
+  description:
+    en: "“Be patient”… how many times have you heard it? Easy to say… hard to live. Three wrong ideas make it harder: that a patient person doesn't cry or complain, that patience means giving up and just waiting, and that patience is a trait you either have or you don't. Each one, answered from the Qur'an and the Sunnah."
+    ar: "«اصبر»… سمعتها كام مرة؟ كلمة سهلة تتقال… وصعبة تتعاش. وفيه تلات أفكار غلط بتصعّبها: إن الصابر مبيعيطش ومبيشتكيش، وإن الصبر يعني تستسلم وتقعد تستنى، وإن الصبر طبع يا عندك يا معندكش. والرد على كل فكرة من القرآن والسنة."
+  hashtags: ["#Sabr", "#الصبر", "#Islam"]
+  validated_by: mssnoussi92
+# Miniature YouTube (Thumbnail169), proposée le 2026-11-07 comme celle du du'a, validée sur l'image.
+thumbnail:
+  layout: close-up
+  headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas" }
+  kicker: { ar: "عن الصبر", en: "about patience" }
+  character: { id: salma, pose: standing, mood: worried }
+  background: waiting-room
+  validated_by: mssnoussi92
+reels:
+  - id: sabr-01
+    title: { ar: "اصبر", en: "Be patient" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "“Be patient”… how many times have you heard it?", ar: "«اصبر»… سمعتها كام مرة؟" }
+      description:
+        en: "While you wait for a job… a cure… or relief… Easy to say… hard to live. When you're patient… the pain itself becomes good for you."
+        ar: "وإنت مستني شغل… أو شفا… أو فرج… كلمة سهلة تتقال… وصعبة تتعاش. لما بتصبر… الوجع نفسه بيبقى خير ليك."
+      validated_by: mssnoussi92
+  - id: sabr-02
+    title: { ar: "الصبر والدموع", en: "Patience and tears" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "You cried… and felt you weren't being patient?", ar: "عيطت… وحسيت إنك مش صابر؟" }
+      description:
+        en: "The first wrong idea about patience: that a patient person doesn't cry… or complain. Complaining to God… isn't the opposite of patience. Patience isn't feeling nothing… it's not objecting to God."
+        ar: "أول فكرة غلط عن الصبر: إن الصابر مبيعيطش… ومبيشتكيش. الشكوى لربنا… مش عكس الصبر. الصبر مش إنك متحسش… الصبر إنك متعترضش على ربنا."
+      validated_by: mssnoussi92
+  - id: sabr-03
+    title: { ar: "الصبر والسعي", en: "Patience and effort" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "“I'm being patient”… while you sit and wait?", ar: "«أنا صابر»… وإنت قاعد مستني؟" }
+      description:
+        en: "The second wrong idea: that patience means giving up… and just waiting. Strive… seek God's help… and don't give up. Patience isn't standing still… it's help as you keep going."
+        ar: "تاني فكرة غلط: إن الصبر يعني تستسلم… وتقعد تستنى. اسعى… واستعين بربنا… ومتستسلمش. الصبر مش إنك توقف… الصبر عون وإنت ماشي."
+      validated_by: mssnoussi92
+  - id: sabr-04
+    title: { ar: "الصبر بيتعلم", en: "Patience can be learned" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "“I'm not patient… that's just how I am”?", ar: "«أنا مش صبور… ده طبعي»؟" }
+      description:
+        en: "The third wrong idea: that patience is a trait… either you have it or you don't. Whoever tries to be patient… God makes patient. And patience… is something you ask God for."
+        ar: "تالت فكرة غلط: إن الصبر طبع… يا عندك يا معندكش. اللي يحاول يصبر… ربنا يصبّره. والصبر كمان… بيتطلب من ربنا."
+      validated_by: mssnoussi92
+  - id: sabr-05
+    title: { ar: "أجر بغير حساب", en: "A reward without limit" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "Feel like your patience has no end?", ar: "حاسس إن صبرك ملوش آخر؟" }
+      description:
+        en: "The patient's reward… is without limit. Patience isn't silence… isn't giving up… it can be learned… and its reward is without limit. So when someone tells you “be patient”… remember: God is with the patient."
+        ar: "الصابر أجره… من غير حساب. الصبر مش سكوت… مش استسلام… بيتعلم… وأجره من غير حساب. فلما حد يقولك «اصبر»… افتكر إن ربنا مع الصابرين."
+      validated_by: mssnoussi92
+scenes:
+  # ---- sabr-01 : accroche et promesse ---------------------------------------------------------
+  # Miroir : le mot que tout le monde entend, à la deuxième personne.
+  - id: hook-1
+    role: hook
+    reel: sabr-01
+    audio: tts
+    narration:
+      ar: "«اصبر»… سمعتها كام مرة؟"
+      en: "“Be patient”… how many times have you heard it?"
+    # Sans les guillemets « » : avec eux, VoiceTut ajoutait un son (« بس ») après « اصبر » (Whisper).
+    say_ar: "اصبر… سمعتها كام مرة؟"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: salma, pose: sitting, mood: worried, talking: false }
+  # Contraste : les attentes de la vie réelle (scènes types).
+  - id: hook-2
+    role: hook
+    reel: sabr-01
+    audio: tts
+    narration:
+      ar: "وإنت مستني شغل… أو شفا… أو فرج…"
+      en: "While you wait for a job… a cure… or relief…"
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: amir, pose: standing, mood: worried, talking: false }
+  # Nommer (ligne de l'IA, à vérifier en premier).
+  - id: hook-3
+    role: hook
+    reel: sabr-01
+    audio: tts
+    narration:
+      ar: "كلمة سهلة تتقال… وصعبة تتعاش."
+      en: "Easy to say… hard to live."
+    visual:
+      template: title-card
+  # Ancre : l'épreuve est certaine, la bonne nouvelle est pour les patients.
+  - id: test-intro
+    role: evidence
+    reel: sabr-01
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: test-verse
+    role: evidence
+    reel: sabr-01
+    source: quran.2.155
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: test-sure
+    role: evidence
+    reel: sabr-01
+    audio: tts
+    narration:
+      ar: "يعني الابتلاء جاي جاي… والبشرى للصابرين."
+      en: "So trials will surely come… and the good news is for the patient."
+    # « البشرى » = « al-boshra », pas « el-bashra » (demande du propriétaire, 2026-11-07).
+    say_ar: "يعني الابتلاء جاي جاي… والبُشْرَى للصابرين."
+    visual:
+      template: title-card
+  - id: anchor
+    role: evidence
+    reel: sabr-01
+    source: hadith.muslim.2999
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "والنبي صلى الله عليه وسلم قال:"
+      en: "And the Prophet ﷺ said:"
+    visual:
+      template: source-card
+  # Question en un mot, puis la réponse (ligne de l'IA, tirée du hadith).
+  - id: why
+    role: promise
+    reel: sabr-01
+    audio: tts
+    narration:
+      ar: "حتى الوجع… خير؟"
+      en: "Even pain… is good?"
+    visual:
+      template: title-card
+  - id: because
+    role: promise
+    reel: sabr-01
+    audio: tts
+    narration:
+      ar: "لما بتصبر… الوجع نفسه بيبقى خير ليك."
+      en: "When you're patient… the pain itself becomes good for you."
+    # « بتصبر » à l'égyptienne, « btoṣbor » (demande du propriétaire, 2026-11-07).
+    say_ar: "لما بِتُصْبُر… الوجع نفسه بيبقى خير ليك."
+    visual:
+      template: title-card
+  - id: outro
+    role: outro
+    reel: sabr-01
+    audio: tts
+    narration:
+      ar: "بس فيه تلات أفكار غلط عن الصبر… يمكن تكون مصدق واحدة منهم. أولها في الجاي."
+      en: "But there are three wrong ideas about patience… you might believe one of them. The first one is next."
+    reel_only_end: { ar: "أولها في الجاي.", en: "The first one is next." }
+    visual:
+      template: title-card
+
+  # ---- sabr-02 : idée reçue 1, « le patient ne pleure pas, ne se plaint pas » --------------------
+  - id: tears-hook
+    role: hook
+    reel: sabr-02
+    audio: tts
+    narration:
+      ar: "عيطت… وحسيت إنك مش صابر؟"
+      en: "You cried… and felt you weren't being patient?"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: salma, pose: sitting, mood: worried, talking: false }
+  - id: tears-wrong
+    role: misconception
+    reel: sabr-02
+    audio: tts
+    narration:
+      ar: "أول فكرة غلط عن الصبر…"
+      en: "The first wrong idea about patience…"
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  - id: tears-idea
+    role: misconception
+    reel: sabr-02
+    audio: tts
+    narration:
+      ar: "إن الصابر مبيعيطش… ومبيشتكيش."
+      en: "That a patient person doesn't cry… or complain."
+    # « مبيعيطش » mal dit sans voyelles (le propriétaire, 2026-11-07) : vocalisé.
+    say_ar: "إن الصابر مَبْيِعَيَّطْش… ومَبْيِشْتِكِيش."
+    visual:
+      template: title-card
+  # Ya'qub : un prophète, jamais dessiné (carte de nom), puis le verset récité.
+  - id: tears-yaqub
+    role: evidence
+    reel: sabr-02
+    audio: tts
+    mentions: ["يعقوب عليه السلام"]
+    narration:
+      ar: "سيدنا يعقوب عليه السلام، من حزنه على ابنه يوسف…"
+      en: "Ya'qub, peace be upon him, grieving for his son Yusuf…"
+    # « يعقوب » vocalisé : le ق se prononce (VoiceTut le lit « أ » sans voyelles, comme « قريب »).
+    say_ar: "سيدنا يَعْقُوب عليه السلام، من حزنه على ابنه يوسف…"
+    visual:
+      template: name-card
+  - id: tears-verse-intro
+    role: evidence
+    reel: sabr-02
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: tears-verse
+    role: evidence
+    reel: sabr-02
+    source: quran.12.86
+    audio: recitation
+    mentions: ["يعقوب عليه السلام"]
+    visual:
+      template: ayah-card
+      highlight: words
+  # Ligne de l'IA, à vérifier en premier.
+  - id: tears-to-god
+    role: evidence
+    reel: sabr-02
+    audio: tts
+    narration:
+      ar: "الشكوى لربنا… مش عكس الصبر."
+      en: "Complaining to God… isn't the opposite of patience."
+    visual:
+      template: title-card
+  # Le contexte du hadith (Anas) résumé par le narrateur, puis les paroles du Prophète ﷺ.
+  - id: tears-hadith
+    role: evidence
+    reel: sabr-02
+    source: hadith.bukhari.1303
+    audio: tts
+    mentions: ["النبي ﷺ", "إبراهيم ابن النبي ﷺ", "عبد الرحمن بن عوف رضي الله عنه"]
+    narration:
+      ar: "والنبي صلى الله عليه وسلم دمعت عينه، وابنه إبراهيم بيموت… وقال لعبد الرحمن بن عوف:"
+      en: "The Prophet ﷺ shed tears as his son Ibrahim was dying… and said to Abd al-Rahman ibn Awf:"
+    visual:
+      template: source-card
+  # Ligne de l'IA, tirée de « ولا نقول إلا ما يرضى ربنا ».
+  - id: tears-takeaway
+    role: evidence
+    reel: sabr-02
+    audio: tts
+    narration:
+      ar: "الصبر مش إنك متحسش… الصبر إنك متعترضش على ربنا."
+      en: "Patience isn't feeling nothing… it's not objecting to God."
+    visual:
+      template: title-card
+  - id: tears-outro
+    role: outro
+    reel: sabr-02
+    audio: tts
+    narration:
+      ar: "طب لو الصبر مش سكوت… يبقى أقعد أستنى وخلاص؟ ده اللي جاي."
+      en: "So if patience isn't silence… do I just sit and wait? That's next."
+    reel_only_end: { ar: "ده اللي جاي.", en: "That's next." }
+    visual:
+      template: title-card
+
+  # ---- sabr-03 : idée reçue 2, « être patient, c'est renoncer et attendre » ---------------------
+  - id: effort-hook
+    role: hook
+    reel: sabr-03
+    audio: tts
+    narration:
+      ar: "«أنا صابر»… وإنت قاعد مستني ومش بتعمل حاجة؟"
+      en: "“I'm being patient”… while you sit and wait, doing nothing?"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: calm, talking: false }
+  - id: effort-wrong
+    role: misconception
+    reel: sabr-03
+    audio: tts
+    narration:
+      ar: "تاني فكرة غلط…"
+      en: "The second wrong idea…"
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  - id: effort-idea
+    role: misconception
+    reel: sabr-03
+    audio: tts
+    narration:
+      ar: "إن الصبر يعني تستسلم… وتقعد تستنى."
+      en: "That patience means giving up… and just waiting."
+    visual:
+      template: title-card
+  - id: effort-hadith
+    role: evidence
+    reel: sabr-03
+    source: hadith.muslim.2664
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "النبي صلى الله عليه وسلم قال:"
+      en: "The Prophet ﷺ said:"
+    visual:
+      template: source-card
+  # Ligne de l'IA, tirée du hadith (« احرص… واستعن بالله ولا تعجز »).
+  - id: effort-means
+    role: evidence
+    reel: sabr-03
+    audio: tts
+    narration:
+      ar: "يعني اسعى… واستعين بربنا… ومتستسلمش."
+      en: "So strive… seek God's help… and don't give up."
+    visual:
+      template: title-card
+  - id: effort-verse-intro
+    role: evidence
+    reel: sabr-03
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: effort-verse
+    role: evidence
+    reel: sabr-03
+    source: quran.2.153
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Ligne de l'IA, tirée du verset (« استعينوا بالصبر »).
+  - id: effort-tool
+    role: evidence
+    reel: sabr-03
+    audio: tts
+    narration:
+      ar: "الصبر مش إنك توقف… الصبر عون وإنت ماشي."
+      en: "Patience isn't standing still… it's help as you keep going."
+    visual:
+      template: title-card
+  - id: effort-outro
+    role: outro
+    reel: sabr-03
+    audio: tts
+    narration:
+      ar: "طب ولو أنا أصلاً… مش صبور؟ ده اللي جاي."
+      en: "And what if I'm just… not a patient person? That's next."
+    reel_only_end: { ar: "ده اللي جاي.", en: "That's next." }
+    visual:
+      template: title-card
+
+  # ---- sabr-04 : idée reçue 3, « je ne suis pas patient, c'est ma nature » ----------------------
+  - id: learn-hook
+    role: hook
+    reel: sabr-04
+    audio: tts
+    narration:
+      ar: "«أنا مش صبور… ده طبعي»؟"
+      en: "“I'm not patient… that's just how I am”?"
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: amir, pose: standing, mood: worried, talking: false }
+  - id: learn-wrong
+    role: misconception
+    reel: sabr-04
+    audio: tts
+    narration:
+      ar: "تالت فكرة غلط…"
+      en: "The third wrong idea…"
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  - id: learn-idea
+    role: misconception
+    reel: sabr-04
+    audio: tts
+    narration:
+      ar: "إن الصبر طبع… يا عندك يا معندكش."
+      en: "That patience is a trait… either you have it or you don't."
+    visual:
+      template: title-card
+  - id: learn-hadith
+    role: evidence
+    reel: sabr-04
+    source: hadith.bukhari.1469
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "النبي صلى الله عليه وسلم قال:"
+      en: "The Prophet ﷺ said:"
+    visual:
+      template: source-card
+  # Ligne de l'IA : « يتصبّر » = s'efforcer d'être patient ; la traduction publiée dit « remains patient ».
+  - id: learn-means
+    role: evidence
+    reel: sabr-04
+    audio: tts
+    narration:
+      ar: "يعني اللي يحاول يصبر… ربنا يصبّره."
+      en: "So whoever tries to be patient… God makes patient."
+    visual:
+      template: title-card
+  # Ligne de l'IA, avant le verset qui la montre (une invocation pour demander la patience).
+  - id: learn-ask
+    role: evidence
+    reel: sabr-04
+    audio: tts
+    narration:
+      ar: "والصبر كمان… بيتطلب من ربنا."
+      en: "And patience… is something you ask God for."
+    visual:
+      template: title-card
+  - id: learn-verse-intro
+    role: evidence
+    reel: sabr-04
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: learn-verse
+    role: evidence
+    reel: sabr-04
+    source: quran.2.250
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: learn-outro
+    role: outro
+    reel: sabr-04
+    audio: tts
+    narration:
+      ar: "وفي الآخر… وعد ربنا للصابرين. دي الأخيرة."
+      en: "And finally… God's promise to the patient. That's the last one."
+    visual:
+      template: title-card
+
+  # ---- sabr-05 : conclusion --------------------------------------------------------------------
+  - id: reward-hook
+    role: hook
+    reel: sabr-05
+    audio: tts
+    narration:
+      ar: "حاسس إن صبرك ملوش آخر؟"
+      en: "Feel like your patience has no end?"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: salma, pose: sitting, mood: worried, talking: false }
+  - id: reward-verse-intro
+    role: evidence
+    reel: sabr-05
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: reward-verse
+    role: evidence
+    reel: sabr-05
+    source: quran.39.10
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: reward-no-limit
+    role: conclusion
+    reel: sabr-05
+    audio: tts
+    narration:
+      ar: "الصابر أجره… من غير حساب."
+      en: "The patient's reward… is without limit."
+    visual:
+      template: title-card
+  # Rappel des quatre reels en une carte (quatre morceaux).
+  - id: reward-recap
+    role: conclusion
+    reel: sabr-05
+    audio: tts
+    narration:
+      ar: "الصبر مش سكوت… مش استسلام… بيتعلم… وأجره من غير حساب."
+      en: "Patience isn't silence… isn't giving up… it can be learned… and its reward is without limit."
+    visual:
+      template: title-card
+  # Retour à l'accroche (« اصبر »), avec la fin du verset de sabr-03.
+  - id: reward-outro
+    role: conclusion
+    reel: sabr-05
+    audio: tts
+    narration:
+      ar: "فلما حد يقولك «اصبر»… افتكر إن ربنا مع الصابرين."
+      en: "So when someone tells you “be patient”… remember: God is with the patient."
+    # « اصبر » = « oṣbor » (le propriétaire, 2026-11-07) ; sans « » (VoiceTut ajoutait un son, hook-1).
+    say_ar: "فلما حد يقولك اُصْبُر… افتكر إن ربنا مع الصابرين."
+    visual:
+      template: title-card

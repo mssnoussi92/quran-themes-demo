@@ -119,6 +119,8 @@ export type EpisodeData = {
   episode: string;
   title: I18n;
   narration_language: string;
+  /** The page's name (content/publish.yaml, "@quran_words_daily"), shown on every frame. */
+  handle: string | null;
   /** The whole episode's texts, and the hashtags of all its videos. */
   publish: PublishTexts | null;
   thumbnail: ThumbnailData | null;

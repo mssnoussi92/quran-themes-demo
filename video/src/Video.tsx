@@ -140,6 +140,30 @@ const Timeline: React.FC<{ list: Slot[]; format: Format }> = ({ list, format }) 
   );
 };
 
+/** The page's name, small, in the top-right corner of the safe area, on every frame: it stays still
+ * during the transitions, and a reposted video keeps its source (as quran-reels signs its reels). */
+const Handle: React.FC<{ handle: string; format: Format }> = ({ handle, format }) => (
+  <div
+    style={{
+      position: "absolute",
+      top: format.safe.top - (format.id === "reel" ? 0 : 30),
+      right: format.safe.right - (format.id === "reel" ? 0 : 80),
+      fontFamily: FONT.latin,
+      fontSize: format.id === "reel" ? 30 : 28,
+      fontWeight: 600,
+      letterSpacing: 0.5,
+      color: COLOR.text,
+      opacity: 0.85,
+      // A light pill, as the subtitles: readable on the light backgrounds (street, narrator) too.
+      background: "rgba(10, 14, 35, 0.35)",
+      padding: "4px 14px",
+      borderRadius: 12,
+    }}
+  >
+    {handle}
+  </div>
+);
+
 export const EpisodeVideo: React.FC<VideoProps> = ({ data, reel, format: formatId }) => {
   if (!data) throw new Error("no episode data: calculateMetadata did not run");
   const format = FORMATS[formatId];
@@ -147,6 +171,7 @@ export const EpisodeVideo: React.FC<VideoProps> = ({ data, reel, format: formatI
   return (
     <AbsoluteFill style={{ background: BACKGROUND }}>
       <Timeline list={list} format={format} />
+      {data.handle ? <Handle handle={data.handle} format={format} /> : null}
     </AbsoluteFill>
   );
 };
