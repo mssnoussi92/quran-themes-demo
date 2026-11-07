@@ -82,8 +82,12 @@ mixed after the introduction phrase: all of it comes from the phrase starts of t
 - For each `!!` on a title card, a hadith scene or a line with `reel_only_end`, look at the loudness:
   `listen.py --envelope build/audio/<episode>/<scene>.wav@<t>@1` (a pause is a run under about
   -35 dB; the first loud window after it is where the phrase starts).
-- Store the checked starts with the locked take: `build.py --episode <episode> --set-phrases
-  <scene>=0.08,1.14,...` (one start per phrase); they replace the estimate from then on.
+- Store the checked starts: `build.py --episode <episode> --set-phrases <scene>=0.08,1.14,...` (one
+  start per phrase); they replace the estimate from then on. On a draft take they are kept in the
+  manifest, tied to that take's raw file (a retake drops them), so the drafts the owner hears are
+  already right; locking moves them to `takes.json`. Check above all a line with `reel_only_end`:
+  a wrong start there cuts words out of the whole-episode videos (tawba relapse-outro: the estimate
+  put « ده اللي جاي » at « بدري », 0.6 s early).
 
 ## 6. Draft, owner, lock
 

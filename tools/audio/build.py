@@ -374,7 +374,8 @@ def main() -> int:
     p.add_argument("--reel", help="with --require-locked or --lock: only this reel's scenes")
     p.add_argument("--set-phrases", nargs="+", metavar="SCENE=S1,S2,...",
                    help="store checked phrase starts (seconds in the tightened take, one per phrase) with a "
-                        "locked take: they replace the estimate (tools/audio/listen.py --phrases helps check)")
+                        "locked take, or with a draft take until it is redone or locked: they replace the "
+                        "estimate (tools/audio/listen.py --phrases helps check)")
     args = p.parse_args()
     args.speaker = args.speaker or policy_value("voice")
 
@@ -433,6 +434,8 @@ def main() -> int:
             raw = dest.with_suffix(".raw.wav")
             scenes[sid] = {"kind": "tts", "file": dest.name, "engine": "voicetut", "speaker": args.speaker,
                            "text": text, "key": key, "take": "synthesised"}
+            if prev and prev.get("checked"):    # checked phrase starts of a draft take (--set-phrases)
+                scenes[sid]["checked"] = prev["checked"]
             take = takes.get(sid)
             take_path = takes_dir / take["file"] if take else None
             if not take or take["key"] != key:
@@ -492,18 +495,25 @@ def main() -> int:
         entry["tight"] = TIGHT
         print(f"tts {sid}: {entry['seconds']} s ({removed} s of silence removed)")
 
-    # Checked phrase starts given on the command line: stored with the locked take they belong to.
+    # Checked phrase starts given on the command line: stored with the locked take they belong to,
+    # or, for a draft take, in the manifest, tied to that very take (its raw file): kept while the
+    # take is not redone, and moved to takes.json when the owner's approval locks it.
     for spec in args.set_phrases or []:
         sid, _, values = spec.partition("=")
         entry = scenes.get(sid)
         owner = (entry or {}).get("take_from") or sid
-        if not entry or entry.get("take") != "locked" or owner not in takes:
-            sys.exit(f"error: --set-phrases {sid}: no locked take of this episode for this scene "
+        if not entry or entry["kind"] != "tts" or (entry.get("take") == "locked" and owner not in takes):
+            sys.exit(f"error: --set-phrases {sid}: no take of this episode for this scene "
                      f"(a take of another episode is set there)")
         starts = [round(float(v), 3) for v in values.split(",")]
         if len(starts) != len(split_phrases(entry["text"])) or starts != sorted(starts):
             sys.exit(f"error: --set-phrases {sid}: give one start per phrase, in order "
                      f"({len(split_phrases(entry['text']))} phrases)")
+        if entry.get("take") != "locked":
+            raw = out_dir / f"{sid}.raw.wav"
+            entry["checked"] = {"tight": TIGHT["version"], "raw_sha": sha256(raw), "starts": starts}
+            print(f"phrases {sid}: {starts} kept with the draft take (manifest)")
+            continue
         takes[owner]["phrases"] = {"tight": TIGHT["version"], "starts": starts}
         takes_path.write_text(json.dumps(
             {"note": "Narration takes validated by the owner (AI-generated voice, VoiceTut). Written by "
@@ -519,6 +529,9 @@ def main() -> int:
             entry["phrases"] = phrase_times(final, entry["text"])
             entry["phrase_rule"] = PHRASES
             stored = (take_of(entry, sid) or {}).get("phrases") if entry.get("take") == "locked" else None
+            checked = entry.get("checked")
+            if not stored and checked and checked["raw_sha"] == sha256(out_dir / f"{sid}.raw.wav"):
+                stored = checked
             if stored and stored["tight"] == TIGHT["version"] and len(stored["starts"]) == len(entry["phrases"]):
                 for phrase, start in zip(entry["phrases"], stored["starts"]):
                     phrase["start"] = start
@@ -547,6 +560,9 @@ def main() -> int:
             takes[sid] = {"file": flac.name, "text": entry["text"], "engine": entry["engine"],
                           "speaker": entry["speaker"], "key": entry["key"], "validated_by": args.lock,
                           "locked": time.strftime("%Y-%m-%d"), "sha256": sha256(flac)}
+            checked = entry.pop("checked", None)
+            if checked and checked["raw_sha"] == sha256(out_dir / f"{sid}.raw.wav"):
+                takes[sid]["phrases"] = {"tight": checked["tight"], "starts": checked["starts"]}
             entry.update(take="locked", take_sha=takes[sid]["sha256"])
             print(f"locked {sid}: {flac.relative_to(ROOT)}")
         takes_path.write_text(json.dumps(
