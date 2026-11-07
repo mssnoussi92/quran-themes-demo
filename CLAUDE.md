@@ -59,7 +59,8 @@ video/                   projet Remotion (TypeScript) : compositions Reel916 (10
                          characters/ (kit Open Peeps, bouche au volume), backgrounds/ (fonds), CharacterSheet.tsx
   public/fonts/          Amiri Quran, Amiri, Lora (OFL, mêmes fichiers que quran-reels)
 build/                   (ignoré) tout ce qui est généré
-.claude/skills/          write-hook (accroche), new-theme (d'un thème au script validé)
+.claude/skills/          new-theme (d'un thème aux vidéos), write-hook (accroche), narration-takes (voix),
+                         find-hadith-recording (hadith lu par une vraie voix)
 ```
 
 ## Commandes
@@ -131,6 +132,8 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 Procédures à suivre dans toute session :
 - `new-theme` : d'un nouveau thème au script, en passant par les sources (proposées, jamais validées par l'IA), les idées reçues, les reels et une PR.
 - `write-hook` : l'accroche d'un épisode ou d'un reel. Elle reprend les techniques de la vidéo de référence du propriétaire (miroir, contraste, ancre sourcée, question en un mot, enjeu, promesse honnête ; analyse plan par plan dans `reference/dua-video-analysis.md`), dans le respect des règles ci-dessus.
+- `narration-takes` : la voix d'un épisode, de la synthèse aux prises figées : écoute de chaque prise par Whisper (`tools/audio/listen.py`), reprises, prononciation (`say_ar`), débuts de morceaux vérifiés (`--set-phrases`), brouillons, figer seulement sur la parole du propriétaire.
+- `find-hadith-recording` : trouver sur archive.org la lecture d'un hadith par une vraie voix (Bukhari, Muslim, Tirmidhi ; lectures déjà repérées), la caler, l'inscrire au registre (`recording`) pour que le propriétaire l'écoute et la valide.
 
 ## Publication et licence (décisions du propriétaire, 2026-11-06)
 
