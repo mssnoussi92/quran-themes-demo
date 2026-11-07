@@ -84,6 +84,8 @@ export type ResolvedScene = {
   source: ResolvedSource | null;
   /** What the voice says (tts), or the recited verse. */
   spoken_ar: string | null;
+  /** End of the narration said only in the reel on its own; the whole-episode videos cut it. */
+  reel_only_end: I18n | null;
   media: Media | null;
   duration: Duration;
 };

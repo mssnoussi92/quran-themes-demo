@@ -53,6 +53,14 @@
           "type": "array",
           "items": { "type": "string" }
         },
+        "say_ar": {
+          "description": "What the voice reads when the pronunciation must differ from the text shown: the same words, a silent ta marbuta written ha (« عادة » read « عاده »). The screen shows narration.ar.",
+          "type": "string"
+        },
+        "reel_only_end": {
+          "description": "End of the narration said only in the reel on its own (the open loop to the next reel, « ده اللي جاي »): the whole-episode videos stop the line just before it. Whole phrases at the end of narration.ar, and the matching end of narration.en.",
+          "$ref": "#/$defs/i18n"
+        },
         "visual": { "$ref": "#/$defs/visual" }
       }
     },

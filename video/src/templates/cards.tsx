@@ -8,6 +8,7 @@ import { CharacterView, placement } from "../characters/Character";
 import { FONT } from "../fonts";
 import type { Format } from "../formats";
 import { COLOR } from "../theme";
+import { splitPhrases } from "../phrases";
 import type { PhraseTiming, ResolvedScene, WordTiming } from "../types";
 
 type CardProps = { scene: ResolvedScene; format: Format };
@@ -98,11 +99,14 @@ const Reference: React.FC<{ lines: (string | null)[] }> = ({ lines }) => (
 const REVEAL_LEAD = 0.1;
 const REVEAL_FRAMES = 8;
 
-/** The phrases of a title card, timed on the take, when they are exactly the text shown. */
+/** The phrases shown on a title card, each with the time the take says it: the take's phrases are
+ * those of the line (or of its say_ar, same words), so they pair one to one. */
 const titlePhrases = (scene: ResolvedScene): PhraseTiming[] | null => {
-  const phrases = scene.media?.phrases ?? [];
-  const shown = (scene.narration?.ar ?? "").trim().replace(/\s+/g, " ");
-  return phrases.length > 1 && phrases.map((p) => p.text).join(" ") === shown ? phrases : null;
+  const timed = scene.media?.phrases ?? [];
+  const shown = splitPhrases(scene.narration?.ar ?? "");
+  return timed.length > 1 && timed.length === shown.length
+    ? shown.map((text, i) => ({ text, start: timed[i].start }))
+    : null;
 };
 
 /** The line said by the voice, one phrase per line: the first is on the card from the start, the

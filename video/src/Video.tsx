@@ -68,7 +68,7 @@ const SceneBody: React.FC<{ slot: Slot; format: Format }> = ({ slot, format }) =
     <AudioStart.Provider value={lead}>
       <AbsoluteFill style={{ background: BACKGROUND }} />
       {scene.media ? (
-        <Sequence from={lead} layout="none">
+        <Sequence from={lead} durationInFrames={content} layout="none">
           <Html5Audio src={staticFile(scene.media.file)} />
         </Sequence>
       ) : null}

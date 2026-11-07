@@ -2,8 +2,9 @@ name: render
 
 # Renders an episode with its real audio (recitation + VoiceTut narration), easy to play on a phone:
 #   reel = <reel id>  that reel in 9:16, attached to the "<reel>-latest" pre-release;
-#   reel = all        the whole episode in 16:9 (YouTube) and every reel in 9:16 (Facebook, Instagram,
-#                     TikTok), all attached to the "<episode>-latest" pre-release.
+#   reel = all        the whole episode in 16:9 (YouTube) and in 9:16, and every reel in 9:16 (Facebook,
+#                     Instagram, TikTok), all attached to the "<episode>-latest" pre-release. The whole
+#                     episode leaves out the ends said only in a reel ("that's next", reel_only_end).
 # A release render needs every quoted source and the script of each reel rendered validated by the
 # owner (validate.py --release --reel), and their locked narration takes; a draft does not.
 
@@ -131,6 +132,8 @@ jobs:
           if [ "$REEL" = all ]; then
             props=$(printf '{"episode":"%s","reel":null,"format":"episode","data":null}' "$EPISODE")
             npx remotion render Episode169 "out/$EPISODE-16x9.mp4" --props="$props"
+            props=$(printf '{"episode":"%s","reel":null,"format":"reel","data":null}' "$EPISODE")
+            npx remotion render Reel916 "out/$EPISODE-9x16.mp4" --props="$props"
           fi
           for reel in $REELS; do
             props=$(printf '{"episode":"%s","reel":"%s","format":"reel","data":null}' "$EPISODE" "$reel")
@@ -145,7 +148,7 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           if [ "$REEL" = all ]; then
-            tag="$EPISODE-latest"; title="Episode $EPISODE (latest): 16:9 and reels"
+            tag="$EPISODE-latest"; title="Episode $EPISODE (latest): whole episode (16:9, 9:16) and reels"
           else
             tag="$REEL-latest"; title="Reel $REEL (latest)"
           fi

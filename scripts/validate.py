@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -149,6 +150,23 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
         if audio == "tts" and "narration" not in scene:
             report.error(where, "audio: tts needs a narration")
 
+        # Pronunciation and reel-only ends: the voice says the words shown, and an episode cut drops
+        # whole phrases at the end of the line, in both languages.
+        narration = scene.get("narration") or {}
+        if "say_ar" in scene:
+            if not narration.get("ar"):
+                report.error(where, "say_ar needs narration.ar")
+            elif spoken_words(scene["say_ar"]) != spoken_words(narration["ar"]):
+                report.error(where, "say_ar must say the words of narration.ar (only a silent ة written ه may differ)")
+        if "reel_only_end" in scene:
+            end = scene["reel_only_end"]
+            if not scene.get("reel"):
+                report.error(where, "reel_only_end needs a reel")
+            for lang in ("ar", "en"):
+                text, tail = (narration.get(lang) or "").strip(), end[lang].strip()
+                if not (text.endswith(" " + tail) and text[: -len(tail)].strip()):
+                    report.error(where, f"reel_only_end.{lang} must be the end of narration.{lang}, after a space")
+
         # Backgrounds: closed catalog too (content/backgrounds.yaml).
         if "background" in visual and visual["background"] not in backgrounds:
             report.error(where, f"background '{visual['background']}' is not in content/backgrounds.yaml")
@@ -170,6 +188,16 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
                 report.error(where, f"pose '{ch['pose']}' not in catalog for '{ch['id']}'")
             if ch["mood"] not in spec["moods"]:
                 report.error(where, f"mood '{ch['mood']}' not in catalog for '{ch['id']}'")
+
+
+ARABIC_MARKS = re.compile("[\u064b-\u0652\u0670\u0640]")
+
+
+def spoken_words(text: str) -> list[str]:
+    """Words of an Arabic line for comparing what is shown and what is said: no diacritics, no
+    punctuation, ة and ه alike (a silent ة can be written ه for the voice)."""
+    words = re.sub(r"[^\w\s]", " ", ARABIC_MARKS.sub("", text)).split()
+    return [w.replace("ة", "ه") for w in words]
 
 
 def main() -> int:

@@ -85,6 +85,8 @@ type EpisodeFile = {
     reel?: string;
     audio: "tts" | "recitation" | "none";
     narration?: { ar: string; en: string };
+    say_ar?: string;
+    reel_only_end?: { ar: string; en: string };
     source?: string;
     mentions?: string[];
     visual: {
@@ -292,7 +294,7 @@ function main() {
       const spoken =
         s.audio === "recitation"
           ? source?.text_ar ?? null
-          : [s.narration?.ar, quoted].filter(Boolean).join(" ") || null;
+          : [s.say_ar ?? s.narration?.ar, quoted].filter(Boolean).join(" ") || null;
       if (s.visual.background && !backgrounds.includes(s.visual.background)) {
         throw new Error(`${where}: background '${s.visual.background}' is not in content/backgrounds.yaml`);
       }
@@ -320,6 +322,7 @@ function main() {
         },
         source,
         spoken_ar: spoken,
+        reel_only_end: s.reel_only_end ?? null,
         media,
         duration,
       };

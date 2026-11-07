@@ -2,6 +2,7 @@ import { useCurrentFrame, useVideoConfig } from "remotion";
 import { FONT } from "../fonts";
 import type { Format } from "../formats";
 import { COLOR } from "../theme";
+import { splitPhrases } from "../phrases";
 import type { ResolvedScene } from "../types";
 
 // English subtitles. A long text (a verse's translation, a hadith) is cut into short chunks shown one
@@ -74,9 +75,6 @@ function spread(text: string, from: number, to: number): Cue[] {
     return cue;
   });
 }
-
-/** Same phrase cut as tools/audio/build.py (PHRASE_CUT). */
-const splitPhrases = (text: string) => text.trim().split(/(?<=[،,….!?؟:])\s+/).filter(Boolean);
 
 const quoted = (cues: Cue[]): Cue[] =>
   cues.map((cue, i) => ({
