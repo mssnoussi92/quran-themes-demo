@@ -192,8 +192,11 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
         if "say_ar" in scene:
             if not narration.get("ar"):
                 report.error(where, "say_ar needs narration.ar")
-            elif spoken_words(scene["say_ar"]) != spoken_words(narration["ar"]):
-                report.error(where, "say_ar must say the words of narration.ar (only a silent ة written ه may differ)")
+            else:
+                said, shown = spoken_words(scene["say_ar"]), spoken_words(narration["ar"])
+                if len(said) != len(shown) or not all(same_word_spelled(a, b) for a, b in zip(shown, said)):
+                    report.error(where, "say_ar must say the words of narration.ar (only diacritics, punctuation, "
+                                        "a silent ة written ه, or a short vowel spelled with ا و ي may differ)")
         if "reel_only_end" in scene:
             end = scene["reel_only_end"]
             if not scene.get("reel"):
@@ -253,6 +256,24 @@ def check_thumbnail(ep: dict, where: str, catalog: dict, backgrounds: dict, repo
 
 
 ARABIC_MARKS = re.compile("[\u064b-\u0652\u0670\u0640]")
+
+
+VOWEL_LETTERS = set("اوي")
+
+
+def same_word_spelled(shown: str, said: str) -> bool:
+    """The word the voice reads is the word shown, a short vowel possibly spelled with its long-vowel
+    letter (« تبت » read « توبت »: owner's decision, 2026-11-07): `said` is `shown` with only ا, و
+    or ي added."""
+    if shown == said:
+        return True
+    i = 0
+    for ch in said:
+        if i < len(shown) and ch == shown[i]:
+            i += 1
+        elif ch not in VOWEL_LETTERS:
+            return False
+    return i == len(shown) and len(said) - len(shown) <= 2
 
 
 def spoken_words(text: str) -> list[str]:
