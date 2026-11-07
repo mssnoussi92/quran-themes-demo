@@ -18,6 +18,19 @@ the registry. The audio is never committed: `tools/audio/build.py` downloads it 
 | Muslim | `ar_Moslem_Reading_16` | one file per book, `ar_Moslem_Reading_NN.mp3` with NN = book + 1 (49 = book 48, الذكر والدعاء والتوبة والاستغفار, hadiths 2675-2748), up to 6.5 h | Ryadussalihin.org (no reader named) |
 | Tirmidhi | `yna-audiobook-arabic-sunan-altirmidhi` | files by hadith numbers (`...-2006-2204.mp3`), 30 to 40 s per hadith on average, same numbers as the registry on 2139, 3247 and 3573 | Yusuf ibn Nuh Ahmad |
 
+Readings in the registry, all validated by the owner (where each one is, to find a neighbour fast):
+
+| Hadith | File | Clip |
+| --- | --- | --- |
+| Bukhari 6340, 1303, 1469, 6309, 6307 | `bukhari_audiobook/<number>.mp3` | after the chain, 6 to 18 s in |
+| Muslim 2664 (القدر) | `ar_Moslem_Reading_47.mp3` | 2447.7-2476.1 s |
+| Muslim 2679a (الذكر والدعاء) | `ar_Moslem_Reading_49.mp3` | 285.5-299.7 s |
+| Muslim 2999 (الزهد والرقائق) | `ar_Moslem_Reading_54.mp3` | 3357.0-3375.2 s (a hadith of the same book, e.g. 2963, is in this file too: probe it first) |
+| Tirmidhi 2139 | `...-Al-Tirmidhi-2006-2204.mp3` | 4501.5-4505.1 s |
+| Tirmidhi 2499 | `...-Al-Tirmidhi-2415-2605.mp3` | 3006.4-3010.2 s |
+| Tirmidhi 3247 | `...-Al-Tirmidhi-3105-3301.mp3` | 6254.1-6255.6 s |
+| Tirmidhi 3540, 3573 | `...-Al-Tirmidhi-3535-3800.mp3` | 263.8-282.7 s, 1407.7-1418.5 s |
+
 Others seen: `Sahih_Bokhari_Audio_uP_bY_mUSLEm` (Bukhari by book), `016_20210811` and
 `063_20210811` (the Ryadussalihin Muslim and Tirmidhi again), `0063ArSonanTermetheAB63_201406`.
 Search more with the advanced search API:

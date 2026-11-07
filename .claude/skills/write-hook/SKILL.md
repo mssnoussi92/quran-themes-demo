@@ -73,10 +73,16 @@ on the open loop of beat 7 that leads to the next reel.
 - English subtitles (`narration.en`): natural English, same length and rhythm, not word for word.
 - Contrast the two poles of the theme (hardship / ease, fear / hope, sin / repentance…).
 - No greeting, no channel name, no "in this video we will…" before beat 4.
+- A new situation for each episode: the viewer follows the page. Already used: dua, waiting for a
+  test result and wanting something badly (« لما تكون مستني نتيجة تحليل »); sabr, « اصبر » heard
+  everywhere (« «اصبر»… سمعتها كام مرة؟ »); tawba, a sin and the shame of going back (« عملت ذنب…
+  وحسيت إنك بعيد عن ربنا؟ »).
 - Write for the ear of VoiceTut, which speaks Egyptian: ق becomes ء (« قريب » → « أريب »), ث becomes
-  س, a ة before a pause can be heard as ت (« عادة »). Keep the screen correct and add `say_ar` for the
-  voice when a word must sound otherwise: « قَرِيب » (vowelled) for a classical ق, « عاده » for a
-  silent ة (skill `narration-takes`, §4). Before a verse, the owner's formula: « قال ربنا سبحانه وتعالى: ».
+  س, a ة before a pause can be heard as ت (« عادة »). Keep the screen correct and give the voice its
+  own spelling in `say_ar` (up to two letters per word): every word the owner already corrected is
+  in `content/pronunciation.yaml` (« توبت » for « تبت », « اُصْبُر »…), apply it from the first draft
+  (skill `voice-spelling`). No guillemets « » in `say_ar`. Before a verse, the owner's formula:
+  « قال ربنا سبحانه وتعالى: ».
 - The reel's open loop to the next reel is a follow call (owner's choice, 2026-11-07, in place of
   « ده اللي جاي » / « أولها في الجاي »): « تابعنا عشان تعرف. » after the question that opens the next
   idea, « تابعنا عشان تعرف أولها. » after the promise of the three ideas. It ends the line, marked
