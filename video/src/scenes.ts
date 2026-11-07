@@ -2,7 +2,7 @@
 // scripts/publish.ts (Node, YouTube chapters), so that both read the same timeline. No Remotion
 // import here, and explicit .ts specifiers: Node runs this file as is.
 
-import { FPS, TRANSITION_SECONDS, toFrames } from "./formats.ts";
+import { FPS, REMINDER_SECONDS, TRANSITION_SECONDS, toFrames } from "./formats.ts";
 import { splitPhrases } from "./phrases.ts";
 import type { EpisodeData, ResolvedScene } from "./types.ts";
 
@@ -60,4 +60,23 @@ export function sceneStarts(scenes: ResolvedScene[]): number[] {
     frame = start + toFrames(s.duration.seconds);
     return start / FPS;
   });
+}
+
+/** Frames at which the "like and subscribe" reminder starts in the whole episode (YouTube): at the end
+ * of the first reel and over the last card. Dropped where it would cover a verse or a hadith. */
+export function reminderStarts(scenes: ResolvedScene[]): number[] {
+  const length = toFrames(REMINDER_SECONDS);
+  const overlap = toFrames(TRANSITION_SECONDS);
+  const starts = sceneStarts(scenes).map((s) => Math.round(s * FPS));
+  const ends = scenes.map((s, i) => starts[i] + toFrames(s.duration.seconds));
+  const total = totalFrames(scenes);
+  const second = scenes.findIndex((s) => s.reel !== scenes[0].reel);
+  const candidates = [
+    second > 0 ? starts[second - 1] + toFrames(0.3) : -1,
+    total - length - toFrames(0.2),   // over the last card(s), ending just before the video
+  ];
+  // Every scene on screen during the reminder (its transitions included) is a narration without a source.
+  const clear = (from: number) =>
+    scenes.every((s, i) => ends[i] + overlap <= from || starts[i] - overlap >= from + length || (!s.source && s.audio === "tts"));
+  return candidates.filter((from, i) => from >= 0 && from + length <= total && clear(from) && candidates.indexOf(from) === i);
 }

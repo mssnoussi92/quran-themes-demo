@@ -2,10 +2,11 @@ import { AbsoluteFill, Easing, Html5Audio, Sequence, interpolate, staticFile, us
 import { AudioStart } from "./audioStart";
 import type { VideoProps } from "./data";
 import { FONT, loadFonts } from "./fonts";
-import { FORMATS, TRANSITION_SECONDS, toFrames } from "./formats";
+import { FORMATS, REMINDER_SECONDS, TRANSITION_SECONDS, toFrames } from "./formats";
 import type { Format } from "./formats";
-import { selectScenes } from "./scenes.ts";
+import { reminderStarts, selectScenes } from "./scenes.ts";
 import { AyahCard, NameCard, SceneCard, SourceCard, TitleCard } from "./templates/cards";
+import { SubscribeReminder } from "./templates/SubscribeReminder";
 import { Subtitles } from "./templates/Subtitles";
 import { COLOR } from "./theme";
 import type { ResolvedScene } from "./types";
@@ -167,11 +168,19 @@ const Handle: React.FC<{ handle: string; format: Format }> = ({ handle, format }
 export const EpisodeVideo: React.FC<VideoProps> = ({ data, reel, format: formatId }) => {
   if (!data) throw new Error("no episode data: calculateMetadata did not run");
   const format = FORMATS[formatId];
-  const list = slots(selectScenes(data, reel), toFrames(TRANSITION_SECONDS));
+  const scenes = selectScenes(data, reel);
+  const list = slots(scenes, toFrames(TRANSITION_SECONDS));
+  // The reminder is for YouTube: the whole episode in 16:9 only (the reels' platforms have their own buttons).
+  const reminders = format.id === "episode" && reel === null ? reminderStarts(scenes) : [];
   return (
     <AbsoluteFill style={{ background: BACKGROUND }}>
       <Timeline list={list} format={format} />
       {data.handle ? <Handle handle={data.handle} format={format} /> : null}
+      {reminders.map((from) => (
+        <Sequence key={from} from={from} durationInFrames={toFrames(REMINDER_SECONDS)} layout="none">
+          <SubscribeReminder format={format} />
+        </Sequence>
+      ))}
     </AbsoluteFill>
   );
 };
