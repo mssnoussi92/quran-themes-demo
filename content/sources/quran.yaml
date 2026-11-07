@@ -364,7 +364,8 @@
     surah_ar: الملك
     surah_en: Al-Mulk
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Mulk 67:15, « marchez dans ses étendues et mangez de Sa subsistance » (reel tawakkul-02, le tawakkul n'est pas l'inaction)
   text_ar: هُوَ ٱلَّذِى جَعَلَ لَكُمُ ٱلْأَرْضَ ذَلُولًا فَٱمْشُوا۟ فِى مَنَاكِبِهَا وَكُلُوا۟ مِن رِّزْقِهِۦ ۖ وَإِلَيْهِ ٱلنُّشُورُ
   text_en: It is He who made the earth tame for you - so walk among its slopes and eat of His provision - and to Him is the resurrection.
@@ -380,7 +381,8 @@
     surah_ar: طه
     surah_en: Taha
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Ta-Ha 20:67, Moussa ressentit de la peur (reel tawakkul-03) ; commence par « ف » (la suite de 20:66, les cordes des magiciens), phrase entière
   text_ar: فَأَوْجَسَ فِى نَفْسِهِۦ خِيفَةً مُّوسَىٰ
   text_en: And he sensed within himself apprehension, did Moses.
@@ -396,7 +398,8 @@
     surah_ar: طه
     surah_en: Taha
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Ta-Ha 20:68, « N'aie pas peur, c'est toi le plus haut » (reel tawakkul-03)
   text_ar: قُلْنَا لَا تَخَفْ إِنَّكَ أَنتَ ٱلْأَعْلَىٰ
   text_en: We [i.e., Allāh] said, "Fear not. Indeed, it is you who are superior.
@@ -412,7 +415,8 @@
     surah_ar: الأحزاب
     surah_en: Al-Ahzab
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Ahzab 33:3, « et place ta confiance en Dieu, Dieu suffit comme garant » (reel tawakkul-04)
   text_ar: وَتَوَكَّلْ عَلَى ٱللَّهِ ۚ وَكَفَىٰ بِٱللَّهِ وَكِيلًا
   text_en: And rely upon Allāh; and sufficient is Allāh as Disposer of affairs.
@@ -428,7 +432,8 @@
     surah_ar: الفرقان
     surah_en: Al-Furqan
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Furqan 25:58, « place ta confiance dans le Vivant qui ne meurt pas » (reel tawakkul-05, conclusion) ; 65:3 (« فهو حسبه ») écarté car il commence au milieu d'une phrase (la suite de 65:2)
   text_ar: وَتَوَكَّلْ عَلَى ٱلْحَىِّ ٱلَّذِى لَا يَمُوتُ وَسَبِّحْ بِحَمْدِهِۦ ۚ وَكَفَىٰ بِهِۦ بِذُنُوبِ عِبَادِهِۦ خَبِيرًا
   text_en: And rely upon the Ever-Living who does not die, and exalt [Allāh] with His praise. And sufficient is He to be, with the sins of His servants, [fully] Aware -

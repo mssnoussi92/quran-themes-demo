@@ -618,7 +618,8 @@
     - {name: Bashar Awad Maarouf, grade: Hasan Sahih}
     - {name: Zubair Ali Zai, grade: Isnaad Hasan}
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: « لو أنكم كنتم توكلون على الله حق توكله لرزقتم كما ترزق الطير… » (reel tawakkul-01, l'ancre) ; al-Albani Sahih
   text_ar: حَدَّثَنَا عَلِيُّ بْنُ سَعِيدٍ الْكِنْدِيُّ، حَدَّثَنَا ابْنُ الْمُبَارَكِ، عَنْ حَيْوَةَ بْنِ شُرَيْحٍ، عَنْ بَكْرِ بْنِ عَمْرٍو، عَنْ عَبْدِ اللَّهِ بْنِ هُبَيْرَةَ، عَنْ أَبِي تَمِيمٍ الْجَيْشَانِيِّ، عَنْ عُمَرَ بْنِ الْخَطَّابِ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏ "‏ لَوْ أَنَّكُمْ كُنْتُمْ تَوَكَّلُونَ عَلَى اللَّهِ حَقَّ تَوَكُّلِهِ لَرُزِقْتُمْ كَمَا تُرْزَقُ الطَّيْرُ تَغْدُو خِمَاصًا وَتَرُوحُ بِطَانًا ‏"‏ ‏.‏ قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ صَحِيحٌ لاَ نَعْرِفُهُ إِلاَّ مِنْ هَذَا الْوَجْهِ ‏.‏ وَأَبُو تَمِيمٍ الْجَيْشَانِيُّ اسْمُهُ عَبْدُ اللَّهِ بْنُ مَالِكٍ ‏.‏
   text_en: Umar bin Al-Khattab narrated that the Messenger of Allah (s.a.w) said:"If you were to rely upon Allah with the required reliance, then He would provide for you just as a bird is provided for, it goes out in the morning empty, and returns full
@@ -650,7 +651,8 @@
     - {name: Al-Albani, grade: Hasan}
     - {name: Zubair Ali Zai, grade: Hasan}
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "« اعقلها وتوكل » (reel tawakkul-02) ; la question de l'homme (« أعقلها وأتوكل أو أطلقها وأتوكل ») est hors des guillemets, donc dite par la narration ; al-Albani Hasan (Tirmidhi rapporte que Yahya al-Qattan le jugeait « منكر ») ; lecture : commence par « قال » (« قال اعقلها », sans pause : le alif de « اعقلها » ne se prononce pas après « قال »), la narration s'arrête donc à la question"
   text_ar: حَدَّثَنَا أَبُو حَفْصٍ، عَمْرُو بْنُ عَلِيٍّ حَدَّثَنَا يَحْيَى بْنُ سَعِيدٍ الْقَطَّانُ، حَدَّثَنَا الْمُغِيرَةُ بْنُ أَبِي قُرَّةَ السَّدُوسِيُّ، قَالَ سَمِعْتُ أَنَسَ بْنَ مَالِكٍ، يَقُولُ قَالَ رَجُلٌ يَا رَسُولَ اللَّهِ أَعْقِلُهَا وَأَتَوَكَّلُ أَوْ أُطْلِقُهَا وَأَتَوَكَّلُ قَالَ ‏ "‏ اعْقِلْهَا وَتَوَكَّلْ ‏"‏ ‏.‏ قَالَ عَمْرُو بْنُ عَلِيٍّ قَالَ يَحْيَى وَهَذَا عِنْدِي حَدِيثٌ مُنْكَرٌ ‏.‏ قَالَ أَبُو عِيسَى وَهَذَا حَدِيثٌ غَرِيبٌ مِنْ حَدِيثِ أَنَسٍ لاَ نَعْرِفُهُ إِلاَّ مِنْ هَذَا الْوَجْهِ وَقَدْ رُوِيَ عَنْ عَمْرِو بْنِ أُمَيَّةَ الضَّمْرِيِّ عَنِ النَّبِيِّ صلى الله عليه وسلم نَحْوُ هَذَا ‏.‏
   text_en: 'Anas bin Malik narrated that a man said:"O Messenger of Allah! Shall I tie it and rely(upon Allah), or leave it loose and rely(upon Allah)?" He said: "Tie it and rely(upon Allah)." Other chains report similar narrations'
@@ -678,7 +680,8 @@
     book: 80
     hadith_in_book: 66
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: « اللهم إني أعوذ بك من الهم والحزن والعجز والكسل… » (reel tawakkul-03, le Prophète ﷺ demandait protection contre l'inquiétude)
   text_ar: حَدَّثَنَا خَالِدُ بْنُ مَخْلَدٍ، حَدَّثَنَا سُلَيْمَانُ، قَالَ حَدَّثَنِي عَمْرُو بْنُ أَبِي عَمْرٍو، قَالَ سَمِعْتُ أَنَسًا، قَالَ كَانَ النَّبِيُّ صلى الله عليه وسلم يَقُولُ ‏ "‏ اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَالْعَجْزِ وَالْكَسَلِ، وَالْجُبْنِ وَالْبُخْلِ، وَضَلَعِ الدَّيْنِ، وَغَلَبَةِ الرِّجَالِ ‏"‏‏.‏
   text_en: Narrated Anas bin Malik:The Prophet (ﷺ) used to say, "O Allah! I seek refuge with You from worry and grief, from incapacity and laziness, from cowardice and miserliness, from being heavily in debt and from being overpowered by (other) men." (See Hadith No)
@@ -710,7 +713,8 @@
     - {name: Al-Albani, grade: Sahih}
     - {name: Zubair Ali Zai, grade: Isnaad Hasan}
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: « بسم الله توكلت على الله… يقال له كفيت ووقيت » (reel tawakkul-04) ; la carte montre aussi la précision du rapporteur « يعني إذا خرج من بيته », entre les guillemets ; al-Albani Sahih
   text_ar: حَدَّثَنَا سَعِيدُ بْنُ يَحْيَى بْنِ سَعِيدٍ الأُمَوِيُّ، حَدَّثَنَا أَبِي، حَدَّثَنَا ابْنُ جُرَيْجٍ، عَنْ إِسْحَاقَ بْنِ عَبْدِ اللَّهِ بْنِ أَبِي طَلْحَةَ، عَنْ أَنَسِ بْنِ مَالِكٍ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏ "‏ مَنْ قَالَ - يَعْنِي إِذَا خَرَجَ مِنْ بَيْتِهِ - بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ لاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ ‏.‏ يُقَالُ لَهُ كُفِيتَ وَوُقِيتَ ‏.‏ وَتَنَحَّى عَنْهُ الشَّيْطَانُ ‏"‏ ‏.‏ قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ صَحِيحٌ غَرِيبٌ لاَ نَعْرِفُهُ إِلاَّ مِنْ هَذَا الْوَجْهِ ‏.‏
   text_en: 'Anas bin Malik narrated that the Messenger of Allah (ﷺ) said:“Whoever says – that is: when he leaves his house – ‘In the Name of Allah, I place my trust in Allah, there is no might or power except by Allah (Bismillāh, tawakkaltu `alallāh, lā ḥawla wa lā quwwata illā billāh)’ it will be said to him: ‘You have been sufficed and protected,’ and Shaitan will become distant from him.”'
