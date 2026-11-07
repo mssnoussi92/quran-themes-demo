@@ -143,6 +143,12 @@ function betweenQuotes(text: string): string | null {
   return text.slice(first + 1, last).replace(/\u200f/g, "").replace(/\s+/g, " ").trim();
 }
 
+/** A hadith's words as the voice reads them: the inner quotation marks dropped (Tirmidhi 3573: the
+ * Prophet's answer after a question), a lone full stop joined to the word before it, where VoiceTut
+ * makes its pause between sentences. */
+const speakable = (text: string) =>
+  text.replace(/"/g, " ").replace(/\s+\./g, ".").replace(/\s+/g, " ").trim();
+
 /** The Prophet's words in a hadith: from the first to the last quotation mark of the Arabic text
  * (owner's decision, 2026-11-06). Drops the chain of narrators and any commentary after. A question
  * asked between two answers stays (Muslim 2735c). */
@@ -282,7 +288,7 @@ function main() {
       }
       // What is heard: the recitation of the verse, or the narration followed by the hadith's words
       // when the scene quotes one (the narration introduces it, the registry supplies it).
-      const quoted = source?.type === "hadith" ? source.display_ar : null;
+      const quoted = source?.type === "hadith" ? speakable(source.display_ar) : null;
       const spoken =
         s.audio === "recitation"
           ? source?.text_ar ?? null
