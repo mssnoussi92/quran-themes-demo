@@ -50,7 +50,8 @@
     end: 299.7
     heard: إذا دعا أحدكم فلا يقول اللهم اغفر لي إن شئت ولكن ليعزم المسألة وليعظم الرغبة فإن الله لا يتعاظمه شيء أعطاه
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.bukhari.6340
   type: hadith
   ref: {collection: bukhari, number: 6340}
@@ -79,7 +80,8 @@
     end: 17.85
     heard: يستجاب لأحدكم ما لم يعجل يقول دعوت فلم يستجب لي
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.muslim.2735a
   type: hadith
   ref: {collection: muslim, number: 2735, narration: 1}
@@ -151,7 +153,8 @@
     end: 4505.05
     heard: لا يرد القضاء إلا الدعاء ولا يزيد في العمر إلا البر
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.tirmidhi.3247
   type: hadith
   ref: {collection: tirmidhi, number: 3247}
@@ -185,7 +188,8 @@
     end: 6255.55
     heard: الدعاء هو العبادة
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.tirmidhi.3573
   type: hadith
   ref: {collection: tirmidhi, number: 3573}
@@ -219,4 +223,5 @@
     end: 1418.45
     heard: ما على الأرض المسلمون يدعو الله بدعوة إلا أتاه الله إياها أو صرف عنه من السوء مثلها ما لم يدعو بإثم أو قطيعة رحم فقال رجل من القوم إذن نكثر قال الله أكثر
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92

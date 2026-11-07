@@ -123,7 +123,8 @@ def plain_words(text: str) -> list[str]:
 
 def check_recording(src: dict, where: str, report: Report) -> None:
     """A recorded reading must say the words the card shows: what Whisper heard there (heard) is
-    compared with them. A difference is a warning (recognition errs too): the owner listens."""
+    compared with them. A difference is a warning (recognition errs too) until the owner has
+    listened and validated the recording."""
     rec = src.get("recording")
     if not rec:
         return
@@ -132,7 +133,7 @@ def check_recording(src: dict, where: str, report: Report) -> None:
     if rec["status"] == "validated" and not rec.get("validated_by"):
         report.error(where, "recording: validated needs validated_by (the owner, after listening)")
     shown, heard = plain_words(prophet_words(src.get("text_ar") or "")), plain_words(rec["heard"])
-    if shown != heard:
+    if shown != heard and rec["status"] != "validated":
         report.warn(where, f"recording: heard {len(heard)} words that differ from the {len(shown)} shown; listen to it")
 
 
