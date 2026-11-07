@@ -24,7 +24,7 @@ thumbnail:
   headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas" }
   kicker: { ar: "عن التوبة", en: "about repentance" }
   character: { id: amir, pose: standing, mood: worried }
-  background: street
+  background: plain
 reels:
   - id: tawba-01
     title: { ar: "الباب مفتوح", en: "The door is open" }
