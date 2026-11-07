@@ -110,7 +110,7 @@ scenes:
       en: "And the Prophet ﷺ said:"
     visual:
       template: source-card
-  # Question en un mot, reprise du hadith (« غنى النفس »), puis la réponse (ligne de l'IA).
+  # Question en un mot, reprise du hadith (« غنى النفس »), puis la réponse.
   - id: why
     role: evidence
     reel: muqarana-01
@@ -120,6 +120,7 @@ scenes:
       en: "Richness of the soul?"
     visual:
       template: title-card
+  # Ligne de l'IA : ce qu'est « غنى النفس » (la traduction : « feeling sufficiency in the soul »).
   - id: because
     role: evidence
     reel: muqarana-01
@@ -459,7 +460,7 @@ scenes:
       en: "Giving isn't the measure of love… what they have isn't better… compete in doing good… and be grateful for what you have."
     visual:
       template: title-card
-  # Retour à l'accroche (faire défiler la vie des autres).
+  # Retour à l'accroche (faire défiler la vie des autres) ; ligne de l'IA.
   - id: end-outro
     role: conclusion
     reel: muqarana-05
