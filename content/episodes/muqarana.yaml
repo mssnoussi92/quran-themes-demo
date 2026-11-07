@@ -11,17 +11,18 @@ narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
 # Textes de publication : proposés le 2026-11-07, faits des répliques du script ; à valider par le
 # propriétaire (validated_by), exigés par un rendu final. Le reste : video/scripts/publish.ts.
 publish:
-  title: { en: "Comparing: 3 wrong ideas you might believe", ar: "تلات أفكار غلط عن المقارنة… يمكن تكون مصدق واحدة منهم" }
+  title: { en: "The comparison trap: 3 wrong ideas", ar: "فخ المقارنات… تلات أفكار غلط يمكن تكون مصدق واحدة منهم" }
   description:
     en: "You scroll… and everyone's life looks better than yours? Three wrong ideas keep the comparison going: that whoever has more is loved more by God, that what's in their hands is better than what's in yours, and that all comparing is wrong. Each one, answered from the Qur'an and the Sunnah."
     ar: "بتقلب في الموبايل… وكل الناس حياتهم أحلى من حياتك؟ وفيه تلات أفكار غلط بتخلينا نقارن: إن اللي عنده أكتر ربنا بيحبه أكتر، وإن اللي في إيديهم أحسن من اللي في إيدك، وإن كل مقارنة غلط. والرد على كل فكرة من القرآن والسنة."
   hashtags: ["#Gratitude", "#القناعة", "#Islam"]
 # Miniature YouTube (Thumbnail169), proposée le 2026-11-07 : gros plan, fond uni (lisible), Salma (Amir dans
-# la miniature du repentir).
+# la miniature du repentir) ; le titre « فخ المقارنات » (demande du propriétaire, même jour) dans le cadre doré :
+# en grand, le « خ » touchait le cadre.
 thumbnail:
   layout: close-up
-  headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas" }
-  kicker: { ar: "عن المقارنة", en: "about comparing" }
+  headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas:" }
+  kicker: { ar: "فخ المقارنات", en: "the comparison trap" }
   character: { id: salma, pose: standing, mood: worried }
   background: plain
 reels:
