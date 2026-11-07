@@ -1,0 +1,45 @@
+{
+  "note": "Narration takes validated by the owner (AI-generated voice, VoiceTut). Written by tools/audio/build.py --lock, never by hand.",
+  "takes": {
+    "because": {
+      "file": "because.flac",
+      "text": "لما بِتُصْبُر… الوجع نفسه بيبقى خير ليك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a9d081eed8ad680e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "5398a080c7d5f5539b370c2d2acf5efe275578e6bb5bfb1f6593d6a6b0bfe6b7"
+    },
+    "reward-outro": {
+      "file": "reward-outro.flac",
+      "text": "فلما حد يقولك اُصْبُر… افتكر إن ربنا مع الصابرين.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "33829e4162d7e7a2",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "63e53dbf7e8a5714c9a208fcb352dc64afceb4426d934f828ad35661a76e019d"
+    },
+    "tears-idea": {
+      "file": "tears-idea.flac",
+      "text": "إن الصابر مَبْيِعَيَّطْش… ومَبْيِشْتِكِيش.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "cfdd4fd6eea736c3",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "801d8c617b901a2e84b2c5d251d8067e22975d11f2eb55db568abd7f6088d18d"
+    },
+    "test-sure": {
+      "file": "test-sure.flac",
+      "text": "يعني الابتلاء جاي جاي… والبُشْرَى للصابرين.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "635903bbaf03133a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "fc6312605211a2b176762c4eef7a2cdd8f96ec2b759dc3e851d816e2d58fc217"
+    }
+  }
+}

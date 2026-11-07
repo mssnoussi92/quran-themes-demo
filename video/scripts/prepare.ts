@@ -387,6 +387,8 @@ function main() {
       episode: ep.episode,
       title: ep.title,
       narration_language: ep.narration_language,
+      // The page's name, on every frame (content/publish.yaml): a reposted video keeps its source.
+      handle: load<{ handle?: string }>(join(CONTENT, "publish.yaml")).handle ?? null,
       publish: ep.publish ?? null,
       thumbnail,
       reels: ep.reels,

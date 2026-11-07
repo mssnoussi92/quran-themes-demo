@@ -16,6 +16,13 @@ publish:
     en: "“Be patient”… how many times have you heard it? Easy to say… hard to live. Three wrong ideas make it harder: that a patient person doesn't cry or complain, that patience means giving up and just waiting, and that patience is a trait you either have or you don't. Each one, answered from the Qur'an and the Sunnah."
     ar: "«اصبر»… سمعتها كام مرة؟ كلمة سهلة تتقال… وصعبة تتعاش. وفيه تلات أفكار غلط بتصعّبها: إن الصابر مبيعيطش ومبيشتكيش، وإن الصبر يعني تستسلم وتقعد تستنى، وإن الصبر طبع يا عندك يا معندكش. والرد على كل فكرة من القرآن والسنة."
   hashtags: ["#Sabr", "#الصبر", "#Islam"]
+# Miniature YouTube (Thumbnail169), proposée le 2026-11-07 comme celle du du'a : à valider sur l'image.
+thumbnail:
+  layout: close-up
+  headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas" }
+  kicker: { ar: "عن الصبر", en: "about patience" }
+  character: { id: salma, pose: standing, mood: worried }
+  background: waiting-room
 reels:
   - id: sabr-01
     title: { ar: "اصبر", en: "Be patient" }
