@@ -62,6 +62,8 @@ scenes:
     narration:
       ar: "«اصبر»… سمعتها كام مرة؟"
       en: "“Be patient”… how many times have you heard it?"
+    # Sans les guillemets « » : avec eux, VoiceTut ajoutait un son (« بس ») après « اصبر » (Whisper).
+    say_ar: "اصبر… سمعتها كام مرة؟"
     visual:
       template: scene
       background: waiting-room
