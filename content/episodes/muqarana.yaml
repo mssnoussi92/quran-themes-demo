@@ -1,21 +1,23 @@
 # Épisode Le piège des comparaisons (فخ المقارنات), avec la gratitude (الشكر والقناعة) : 5 reels (9:16) pour
 # Facebook, Instagram et TikTok ; l'épisode entier (16:9 et 9:16) pour YouTube. Même structure que le du'a, la
 # patience et le repentir (docs/design.md) : l'accroche et la promesse, une idée reçue par reel, la conclusion.
-# Thème et plan choisis par le propriétaire le 2026-11-07 (docs/themes.md) ; sources, script, traduction,
-# textes de publication et miniature à valider. Toute modification d'une ligne d'un reel retire son validated_by.
+# Thème et plan choisis par le propriétaire le 2026-11-07 (docs/themes.md) ; tout validé par le propriétaire le
+# même jour (sources, lectures, script, traduction, prises, textes de publication, miniature). Toute modification
+# d'une ligne d'un reel retire son validated_by.
 # Les répliques identiques à une prise figée d'un autre épisode (« قال ربنا سبحانه وتعالى: », « تاني فكرة
 # غلط… », « تالت فكرة غلط… ») reprennent cette prise (take_from, tools/audio/build.py).
 episode: muqarana
 title: { ar: "فخ المقارنات", en: "The comparison trap" }
 narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
-# Textes de publication : proposés le 2026-11-07, faits des répliques du script ; à valider par le
-# propriétaire (validated_by), exigés par un rendu final. Le reste : video/scripts/publish.ts.
+# Textes de publication : proposés le 2026-11-07, faits des répliques du script ; validés par le
+# propriétaire le même jour (validated_by), exigés par un rendu final. Le reste : video/scripts/publish.ts.
 publish:
   title: { en: "The comparison trap: 3 wrong ideas", ar: "فخ المقارنات… تلات أفكار غلط يمكن تكون مصدق واحدة منهم" }
   description:
     en: "You scroll… and everyone's life looks better than yours? Three wrong ideas keep the comparison going: that whoever has more is loved more by God, that what's in their hands is better than what's in yours, and that all comparing is wrong. Each one, answered from the Qur'an and the Sunnah."
     ar: "بتقلب في الموبايل… وكل الناس حياتهم أحلى من حياتك؟ وفيه تلات أفكار غلط بتخلينا نقارن: إن اللي عنده أكتر ربنا بيحبه أكتر، وإن اللي في إيديهم أحسن من اللي في إيدك، وإن كل مقارنة غلط. والرد على كل فكرة من القرآن والسنة."
   hashtags: ["#Gratitude", "#القناعة", "#Islam"]
+  validated_by: mssnoussi92
 # Miniature YouTube (Thumbnail169), proposée le 2026-11-07 : gros plan, fond uni (lisible), Salma (Amir dans
 # la miniature du repentir) ; le titre « فخ المقارنات » (demande du propriétaire, même jour) dans le cadre doré :
 # en grand, le « خ » touchait le cadre.
@@ -25,42 +27,53 @@ thumbnail:
   kicker: { ar: "فخ المقارنات", en: "the comparison trap" }
   character: { id: salma, pose: standing, mood: worried }
   background: plain
+  validated_by: mssnoussi92
 reels:
   - id: muqarana-01
     title: { ar: "غنى النفس", en: "Richness of the soul" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "You scroll… and everyone's life looks great?", ar: "بتقلب في الموبايل… وكل الناس حياتهم حلوة؟" }
       description:
         en: "Then you look at your own life… and it feels like something's missing? The problem isn't your life… it's the comparison. Richness of the soul… is being content with what God gave you."
         ar: "وبعدين تبص لحياتك… وتحس إنها ناقصة؟ المشكلة مش في حياتك… المشكلة في المقارنة. غنى النفس… إنك تشبع باللي ربنا إداهولك."
+      validated_by: mssnoussi92
   - id: muqarana-02
     title: { ar: "العطا مش مقياس", en: "Giving isn't the measure" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "“If God loved me… He'd have given me what they have”?", ar: "«لو ربنا بيحبني… كان إداني زيهم»؟" }
       description:
         en: "The first wrong idea about comparing: that whoever has more is loved more by God. Giving isn't proof of love… and holding back isn't proof of disgrace."
         ar: "أول فكرة غلط عن المقارنة: إن اللي عنده أكتر ربنا بيحبه أكتر. العطا مش دليل حب… والمنع مش دليل إهانة."
+      validated_by: mssnoussi92
   - id: muqarana-03
     title: { ar: "اللي في إيديهم", en: "What's in their hands" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "“Why is their life better than mine?”", ar: "«ليه حياتهم أحلى من حياتي؟»" }
       description:
         en: "The second wrong idea: that what's in their hands is better than what's in yours. As long as your eyes are on others… you won't see God's blessings on you."
         ar: "تاني فكرة غلط: إن اللي في إيديهم أحسن من اللي في إيدك. طول ما عينك على غيرك… مش هتشوف نعمة ربنا عليك."
+      validated_by: mssnoussi92
   - id: muqarana-04
     title: { ar: "المنافسة في الخير", en: "Competing in good" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "You see someone doing good… and wish you were like them?", ar: "شايف حد بيعمل خير… ونفسك تبقى زيه؟" }
       description:
         en: "The third wrong idea: that all comparing is wrong. Compare yourself to them in doing good… not in what's in their hands."
         ar: "تالت فكرة غلط: إن كل مقارنة غلط. قارن نفسك بيهم في الخير… مش في اللي في إيديهم."
+      validated_by: mssnoussi92
   - id: muqarana-05
     title: { ar: "الشكر بيزوّد", en: "Gratitude brings more" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "Feel like what you have… isn't enough?", ar: "حاسس إن اللي معاك… قليل؟" }
       description:
         en: "Be grateful… and He gives you more. Giving isn't the measure of love… what they have isn't better… compete in doing good… and be grateful for what you have. So stop counting other people's blessings… and start counting God's blessings on you."
         ar: "اشكر… يزيدك. العطا مش مقياس حب… واللي في إيديهم مش أحسن… ونافس في الخير… واشكر على اللي معاك. فبطّل تعد نعم غيرك… وابدأ عد نعم ربنا عليك."
+      validated_by: mssnoussi92
 scenes:
   # ---- muqarana-01 : accroche et promesse -------------------------------------------------------
   # Miroir : faire défiler la vie des autres (scène type, à la deuxième personne).

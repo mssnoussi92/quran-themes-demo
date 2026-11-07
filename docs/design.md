@@ -102,7 +102,7 @@ An-Nisa 4:110 remplace Al Imran 3:135, qui commence au milieu d'une phrase (« �
 
 ## Épisode Le piège des comparaisons (plan)
 
-Thème et plan choisis par le propriétaire le 7 novembre 2026 (`docs/themes.md`), avec la gratitude (الشكر والقناعة) ; sources, script, traduction, textes de publication et miniature à valider. Même structure que les épisodes précédents. Script : `content/episodes/muqarana.yaml`.
+Thème et plan choisis par le propriétaire le 7 novembre 2026 (`docs/themes.md`), avec la gratitude (الشكر والقناعة) ; tout validé par le propriétaire le même jour : sources, lectures, script, traduction, prises, textes de publication, miniature (« فخ المقارنات » dans le cadre doré). Même structure que les épisodes précédents. Script : `content/episodes/muqarana.yaml`.
 
 | # | Rôle | Contenu | Source | Reel |
 | --- | --- | --- | --- | --- |

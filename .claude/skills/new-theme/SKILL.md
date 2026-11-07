@@ -117,7 +117,7 @@ translation, the final video. Never mark any of them done yourself.
      `publish.validated_by` on the episode and on each reel, removed whenever one of them changes.
    - YouTube thumbnail: the episode's `thumbnail` (layout `close-up`, headline « ٣ أفكار غلط », kicker
      « عن <الموضوع> », a character and mood from the catalog, another face than the last episode's:
-     dua and tawba Amir, sabr Salma), on the `plain` background (the street made tawba's title hard
+     dua and tawba Amir, sabr and muqarana Salma), on the `plain` background (the street made tawba's title hard
      to read). `npm run still -- Thumbnail169 out/<theme>-thumbnail.png`, look at it at 170 px wide,
      send it; `thumbnail.validated_by` on the owner's word, on the image.
 
