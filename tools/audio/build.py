@@ -372,6 +372,9 @@ def main() -> int:
     p.add_argument("--require-locked", action="store_true",
                    help="fail, before any synthesis, if a narration line has no validated take")
     p.add_argument("--reel", help="with --require-locked or --lock: only this reel's scenes")
+    p.add_argument("--set-phrases", nargs="+", metavar="SCENE=S1,S2,...",
+                   help="store checked phrase starts (seconds in the tightened take, one per phrase) with a "
+                        "locked take: they replace the estimate (tools/audio/listen.py --phrases helps check)")
     args = p.parse_args()
     args.speaker = args.speaker or policy_value("voice")
 
@@ -467,12 +470,36 @@ def main() -> int:
         entry["tight"] = TIGHT
         print(f"tts {sid}: {entry['seconds']} s ({removed} s of silence removed)")
 
-    # When each phrase starts (cheap: recomputed every time from the tightened take).
+    # Checked phrase starts given on the command line: stored with the locked take they belong to.
+    for spec in args.set_phrases or []:
+        sid, _, values = spec.partition("=")
+        entry = scenes.get(sid)
+        owner = (entry or {}).get("take_from") or sid
+        if not entry or entry.get("take") != "locked" or owner not in takes:
+            sys.exit(f"error: --set-phrases {sid}: no locked take for this scene")
+        starts = [round(float(v), 3) for v in values.split(",")]
+        if len(starts) != len(split_phrases(entry["text"])) or starts != sorted(starts):
+            sys.exit(f"error: --set-phrases {sid}: give one start per phrase, in order "
+                     f"({len(split_phrases(entry['text']))} phrases)")
+        takes[owner]["phrases"] = {"tight": TIGHT["version"], "starts": starts}
+        takes_path.write_text(json.dumps(
+            {"note": "Narration takes validated by the owner (AI-generated voice, VoiceTut). Written by "
+                     "tools/audio/build.py --lock, never by hand.", "takes": dict(sorted(takes.items()))},
+            ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"phrases {sid}: {starts} stored with the take {owner}")
+
+    # When each phrase starts (cheap: recomputed every time from the tightened take), unless checked
+    # starts are stored with the locked take (--set-phrases) for the same tightening.
     for sid, entry in scenes.items():
         final = out_dir / entry["file"]
         if entry["kind"] == "tts" and final.is_file():
             entry["phrases"] = phrase_times(final, entry["text"])
             entry["phrase_rule"] = PHRASES
+            stored = (takes.get(entry.get("take_from") or sid) or {}).get("phrases") if entry.get("take") == "locked" else None
+            if stored and stored["tight"] == TIGHT["version"] and len(stored["starts"]) == len(entry["phrases"]):
+                for phrase, start in zip(entry["phrases"], stored["starts"]):
+                    phrase["start"] = start
+                entry["phrase_rule"] = "checked"
 
     # Hadiths read by a person: the introduction of the take, then the reading.
     for scene in data["scenes"]:

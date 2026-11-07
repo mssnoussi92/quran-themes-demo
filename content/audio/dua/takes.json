@@ -29,7 +29,16 @@
       "key": "95cf28ed1cc3ad50",
       "validated_by": "mssnoussi92",
       "locked": "2026-11-07",
-      "sha256": "e7c7c61e97d096e526ad3a8ac4e70f4eb5a59f4a4f565b07b61d4d30e8586196"
+      "sha256": "e7c7c61e97d096e526ad3a8ac4e70f4eb5a59f4a4f565b07b61d4d30e8586196",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.14,
+          10.26,
+          12.38
+        ]
+      }
     },
     "answer-haste": {
       "file": "answer-haste.flac",
@@ -349,7 +358,16 @@
       "key": "4e944f3bfb5b16c4",
       "validated_by": "mssnoussi92",
       "locked": "2026-11-07",
-      "sha256": "32f15a30a7068ae61a2988a30546a1bbfd6b354bea3f9ec29fa787ba85c43379"
+      "sha256": "32f15a30a7068ae61a2988a30546a1bbfd6b354bea3f9ec29fa787ba85c43379",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.2,
+          2.78,
+          3.88
+        ]
+      }
     },
     "outro": {
       "file": "outro.flac",
