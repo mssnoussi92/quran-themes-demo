@@ -2,8 +2,8 @@
 # 9:16) pour YouTube. Même structure que le du'a et la patience (docs/design.md) : l'accroche et la
 # promesse, une idée reçue par reel, la conclusion. Proposé le 2026-11-07 (skill new-theme), validé par le
 # propriétaire le même jour (sources, 25:70 gardé seul, lectures, script, prises, textes, miniature) ; les fins de
-# tawba-01 à 03 changées en « تابعنا عشان تعرف » à sa demande : nouvelles prises à écouter. Toute modification
-# d'une ligne d'un reel retire son validated_by.
+# tawba-01 à 03 changées en « تابعنا عشان تعرف » à sa demande, nouvelles prises validées à l'écoute le même
+# jour. Toute modification d'une ligne d'un reel retire son validated_by.
 # Les répliques identiques à une prise figée d'un autre épisode (« قال ربنا سبحانه وتعالى: », « تاني فكرة
 # غلط… », « تالت فكرة غلط… ») reprennent cette prise (take_from, tools/audio/build.py).
 # Prononciation : pas de guillemets « » dans ce que lit la voix (say_ar) ; « قَرِيب » vocalisé (vrai ق).
@@ -31,6 +31,7 @@ thumbnail:
 reels:
   - id: tawba-01
     title: { ar: "الباب مفتوح", en: "The door is open" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "You sinned… and felt far from God?", ar: "عملت ذنب… وحسيت إنك بعيد عن ربنا؟" }
       description:
@@ -39,6 +40,7 @@ reels:
       validated_by: mssnoussi92
   - id: tawba-02
     title: { ar: "رحمة أكبر من الذنب", en: "Mercy bigger than sin" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "“My sins are too many… God won't forgive me”?", ar: "«أنا ذنوبي كتير… ربنا مش هيسامحني»؟" }
       description:
@@ -47,6 +49,7 @@ reels:
       validated_by: mssnoussi92
   - id: tawba-03
     title: { ar: "وقعت تاني", en: "I fell again" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "You repented… and went back again?", ar: "تبت… ورجعت تاني؟" }
       description:

@@ -101,6 +101,24 @@
       "locked": "2026-11-07",
       "sha256": "6734ea41faa136a47e428a9249053f43aba72c1c29fe27f4c17b613f2e499e48"
     },
+    "despair-outro": {
+      "file": "despair-outro.flac",
+      "text": "طب ولو توبت… ورجعت للذنب تاني؟ تابعنا عشان تعرف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "91875a8a43d7b789",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "98d848c9726fc101f5e3b3c66a19b433b6c6a99ccdb9ed1b576e08d6dff36d82",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.36,
+          2.8
+        ]
+      }
+    },
     "despair-takeaway": {
       "file": "despair-takeaway.flac",
       "text": "اليأس… هو الغلط الحقيقي.",
@@ -211,6 +229,24 @@
       "locked": "2026-11-07",
       "sha256": "9fa9a965698632bde07a97572783d3b8de836eff098b2290233fa00678042f85"
     },
+    "outro": {
+      "file": "outro.flac",
+      "text": "بس فيه تلات أفكار غلط عن التوبة… يمكن تكون مصدق واحدة منهم. تابعنا عشان تعرف أولها.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "cccebadcb60ef57e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "cf249f0589143e69f280ae8f434745951724f571a631fd96285d741d3e92d84e",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          2.28,
+          4.14
+        ]
+      }
+    },
     "relapse-again": {
       "file": "relapse-again.flac",
       "text": "كل ما ترجع… هَتْلاقِيه غفور رحيم.",
@@ -260,6 +296,24 @@
       "validated_by": "mssnoussi92",
       "locked": "2026-11-07",
       "sha256": "fc7e5a5bbfa0ae8c8a9e0c27e466d198183b11c2dd7a72946f2e7db0af37eb83"
+    },
+    "relapse-outro": {
+      "file": "relapse-outro.flac",
+      "text": "طب ما أتوب بعدين… لسه بدري؟ تابعنا عشان تعرف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "7a53a7b020a9a26b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "08644bcf7822d103971c66edec37c9d0e15f300159c4306d93217a395f17e48b",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.42,
+          2.34
+        ]
+      }
     },
     "why": {
       "file": "why.flac",
