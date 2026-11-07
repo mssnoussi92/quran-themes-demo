@@ -138,7 +138,10 @@ def check_recording(src: dict, where: str, report: Report) -> None:
         report.warn(where, f"recording: heard {len(heard)} words that differ from the {len(shown)} shown; listen to it")
 
 
-def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, release: bool, report: Report) -> None:
+def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, release: bool, report: Report,
+                  reel: str | None = None) -> None:
+    """release: sources and readings must be validated, in every scene, or only in `reel`'s scenes when
+    a reel is given (a source still proposed in another episode does not block this reel's render)."""
     validator = Draft202012Validator(json.loads((ROOT / "schemas/episode.schema.json").read_text()))
     ep = load_yaml(path)
     if not schema_check(validator, ep, rel(path), report):
@@ -150,6 +153,7 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
     seen: set[str] = set()
     for scene in ep["scenes"]:
         where = f"{rel(path)} [{scene['id']}]"
+        strict = release and (reel is None or scene.get("reel") == reel)
         if scene["id"] in seen:
             report.error(where, "duplicate scene id")
         seen.add(scene["id"])
@@ -168,9 +172,9 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
             elif src["status"] == "excluded":
                 report.error(where, f"source '{src['id']}' is excluded")
             elif src["status"] != "validated":
-                (report.error if release else report.warn)(where, f"source '{src['id']}' is not validated yet")
+                (report.error if strict else report.warn)(where, f"source '{src['id']}' is not validated yet")
             if src is not None and src.get("recording", {}).get("status") == "proposed":
-                (report.error if release else report.warn)(
+                (report.error if strict else report.warn)(
                     where, f"recording of '{src['id']}' ({src['recording']['reader']}) not validated by the owner yet")
         if template in ("ayah-card", "source-card") and "source" not in scene:
             report.error(where, f"template '{template}' needs a source")
@@ -329,7 +333,7 @@ def main() -> int:
     registry = check_registry(report, policy)
     episodes = sorted((CONTENT / "episodes").glob("*.yaml"))
     for path in episodes:
-        check_episode(path, registry, catalog, backgrounds, args.release, report)
+        check_episode(path, registry, catalog, backgrounds, args.release, report, args.reel)
     if args.reel:
         owner = {r["id"]: (r, ep) for path in episodes for ep in [load_yaml(path) or {}] for r in ep.get("reels", [])}
         if args.reel not in owner:
