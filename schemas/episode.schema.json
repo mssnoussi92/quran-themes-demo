@@ -11,6 +11,7 @@
     "title": { "$ref": "#/$defs/i18n" },
     "narration_language": { "enum": ["ar-msa", "ar-egy"] },
     "publish": { "$ref": "#/$defs/publish" },
+    "thumbnail": { "$ref": "#/$defs/thumbnail" },
     "reels": {
       "type": "array",
       "minItems": 1,
@@ -46,6 +47,28 @@
           "description": "Owner who validated these texts (on the episode: with its hashtags); removed whenever one of them changes",
           "type": "string"
         }
+      }
+    },
+    "thumbnail": {
+      "description": "YouTube thumbnail of the whole 16:9 episode (1280x720, Thumbnail169 still), short texts taken from the validated title. The owner validates the rendered image (validated_by), removed whenever one of these fields changes",
+      "type": "object",
+      "required": ["layout", "headline", "background"],
+      "additionalProperties": false,
+      "properties": {
+        "layout": {
+          "description": "Closed catalog of layouts (video/src/Thumbnail.tsx): close-up = a big face next to the text; scene = the character in its background, text on a band; title = the text alone on the cards' dark blue",
+          "enum": ["close-up", "scene", "title"]
+        },
+        "headline": { "$ref": "#/$defs/i18n" },
+        "kicker": { "$ref": "#/$defs/i18n" },
+        "character": {
+          "type": "object",
+          "required": ["id", "pose", "mood"],
+          "additionalProperties": false,
+          "properties": { "id": { "type": "string" }, "pose": { "type": "string" }, "mood": { "type": "string" } }
+        },
+        "background": { "$ref": "#/$defs/slug" },
+        "validated_by": { "description": "Owner who validated the rendered image", "type": "string" }
       }
     },
     "i18n": {
