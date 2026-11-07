@@ -29,6 +29,7 @@ thumbnail:
   kicker: { ar: "عن الدعاء", en: "about du'a" }
   character: { id: amir, pose: standing, mood: worried }
   background: waiting-room
+  validated_by: mssnoussi92   # validée sur l'image par le propriétaire, 2026-11-07
 reels:
   - id: dua-01
     title: { ar: "يا رب", en: "Ya Rabb" }
