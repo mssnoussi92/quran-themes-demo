@@ -47,6 +47,8 @@ heard in two parts, introduction and reader).
 
 ## 4. Pronunciation: `say_ar`
 
+The method (known spellings, variants, vowel measure, the owner's choice): skill `voice-spelling`.
+
 When the voice must read something written differently from the screen, add `say_ar` to the scene:
 the same words, only diacritics, punctuation and ة/ه may differ (`validate.py` checks it).
 
