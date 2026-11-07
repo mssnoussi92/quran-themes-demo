@@ -33,15 +33,29 @@ heard in two parts, introduction and reader).
   heard « فأنا رجل », « لا يتعاظمه » squashed into « يتعظمه » (four takes; a recorded reading solved it).
 - Isolate a doubtful word: `listen.py --words build/audio/<episode>/<scene>.wav@<start>@<seconds>`
   (a clip of 3 s or less can make Whisper hallucinate: widen it).
+- A short take on its own (a test take, a new ending): pad it with 1 s of silence before and 0.3 s
+  after (`ffmpeg -i t.wav -af "adelay=1000:all=1,apad=pad_dur=0.3" p.wav`); more after makes Whisper
+  invent « اشتركوا في القناة ». Word times then start 1 s late.
+- Sounds added after the last word: VoiceTut sometimes says a short isolated « اه », « با » after
+  0.3-0.5 s of silence (« جاي. »). Read the end with `listen.py --envelope <take>@<end-1.6>@1.6`: the
+  last word must decay into silence with nothing after it (a dip of 0.1-0.2 s inside « تعرف » is the
+  word itself). Prefer another take; else cut the raw take in that silence (`ffmpeg -i
+  <scene>.raw.wav -af atrim=end=<s> -c:a pcm_s16le cut.wav`) and install it (`--use-take
+  <scene>=cut.wav`). Look at the raw take, not the tightened one: tightening shortens the silence
+  before the sound to 0.18 s. On a new episode, scan every take's end for a short sound (under
+  0.3 s) after a pause: muqarana had five (« ناقصة؟ », « قليل؟ »…), clicks or a breath, all cut.
 
 ## 3. Retake
 
-- Keep the old take: move `<scene>.wav` and `<scene>.raw.wav` out of `build/audio/<episode>/`,
-  then `build.py --episode <episode> --only <scene>`, and listen again. For a hadith or a key word,
-  make 2 to 4 takes and keep the one Whisper hears best.
-- To put back a take you kept: copy its `.raw.wav` and `.wav` back, remove `"tight"` from its entry
-  in `manifest.json`, run `build.py --only <scene> --tts-python /bin/false` (it re-tightens, never
-  synthesises).
+- Several takes at once, the model loaded once (2 per line; 4 for a hadith or a key word): one text
+  file per take holding the scene's `spoken_ar` (from `video/public/data/<episode>.json`, after
+  `npm run data`), `/opt/venvs/voicetut/bin/python tools/tts/say.py --engine voicetut --speaker
+  Mohammed --language ar --in <dir>/in/*.txt --out-dir <dir>/out` in the background (about 2 min per
+  take), then §2 on each: words (padded), trailing sounds, and the pauses (no odd gap).
+- Install the take you chose: `python3 tools/audio/build.py --episode <episode> --only <scene>
+  --use-take <scene>=<dir>/out/<file>.wav --tts-python /bin/false`: it becomes the scene's draft take
+  (manifest), tightened, never re-synthesised; refused on a line that has a locked take. The same
+  option puts back a take you kept aside.
 - The voice reads a hadith from the registry's vowelled text, which keeps the classical ق. A real
   reader is better when one exists: skill `find-hadith-recording`.
 
@@ -50,7 +64,10 @@ heard in two parts, introduction and reader).
 The method (known spellings, variants, vowel measure, the owner's choice): skill `voice-spelling`.
 
 When the voice must read something written differently from the screen, add `say_ar` to the scene:
-the same words, only diacritics, punctuation and ة/ه may differ (`validate.py` checks it).
+the same words, word for word; diacritics, punctuation and up to two letters per word may differ
+(owner's decision, 2026-11-07: « تبت » read « توبت »; `validate.py` checks it). Every word the owner
+already corrected is in `content/pronunciation.yaml`: apply it in every new line (validate.py warns
+on a reel not yet validated that forgets one).
 
 - A ة heard as ت at a pause (the owner: « عادة », "T is silent"): write it ه, « عاده ».
 - A word that must keep its ق (« قريب » said « أريب »): vowel it, « قَرِيب ». Whisper heard « قريب » on
@@ -64,12 +81,9 @@ the same words, only diacritics, punctuation and ة/ه may differ (`validate.py`
   « boshra » from « bashra ». For a vowel, make 2 or 3 takes, keep those Whisper hears with the right
   words, and send the owner one MP3 per line with the takes one after the other (1.2 s apart) so
   they choose by ear.
-- Test variants in one VoiceTut call (one model load): each variant twice in its own text file,
-  `/opt/venvs/voicetut/bin/python tools/tts/say.py --engine voicetut --speaker Mohammed --language ar
-  --in a1.txt a2.txt b1.txt b2.txt --out-dir <dir>`, then `listen.py` on each. To use a test take:
-  copy it to `<scene>.raw.wav`, set the scene's manifest entry to the new spoken text and its key
-  (`build.tts_key(text, speaker)`), delete `<scene>.wav`, run `build.py --only <scene> --tts-python
-  /bin/false`.
+- Test variants in one VoiceTut call (one model load), each variant twice in its own text file
+  (§3), then `listen.py` on each, `--vowels` for a vowel. To use a test take: put the spelling in
+  the scene's `say_ar`, `npm run data`, then `build.py --only <scene> --use-take <scene>=<take.wav>`.
 
 ## 5. Phrase starts
 
@@ -89,15 +103,39 @@ mixed after the introduction phrase: all of it comes from the phrase starts of t
   manifest, tied to that take's raw file (a retake drops them), so the drafts the owner hears are
   already right; locking moves them to `takes.json`. Check above all a line with `reel_only_end`:
   a wrong start there cuts words out of the whole-episode videos (tawba relapse-outro: the estimate
-  put « ده اللي جاي » at « بدري », 0.6 s early).
+  put « ده اللي جاي » at « بدري », 0.6 s early). The cut falls 0.12 s before the start of the
+  `reel_only_end` phrase: `listen.py --envelope <take>@<start-0.3>@0.4` must show silence there
+  (under about -70 dB), after the previous word has decayed.
 
 ## 6. Draft, owner, lock
 
-- Render the reels locally (`REMOTION_BROWSER_EXECUTABLE` as in CLAUDE.md) and the whole episode if
-  it changed, then send them (SendUserFile) with what to listen to and where (second in the video):
-  retakes, pronunciation fixes, hadith readings, anything Whisper still hears differently.
+- Render the reels locally (`REMOTION_BROWSER_EXECUTABLE` as in CLAUDE.md, `--concurrency=2`: the
+  browser ran out of memory with more) and the whole episode if it changed, then send them
+  (SendUserFile) with what to listen to and where (second in the video): retakes, pronunciation
+  fixes, hadith readings, anything Whisper still hears differently.
+- For a few changed lines, an MP3 is enough and quicker: the new takes (tightened, from
+  `build/audio/<episode>/<scene>.wav`) one after the other, 1.2 s apart (`apad=pad_dur=1.2` and
+  `concat`), one file per episode, named in reel order (`dua-fins-1-dua01-2-dua02-3-dua03.mp3`).
 - Only on the owner's word: `python3 tools/audio/build.py --episode <episode> --lock <owner> --reel
   <reel>` (add `--only <scene>` for one take), commit `content/audio/`. Then the release checks pass
   (`validate.py --release --reel <reel>`, `build.py --require-locked`) and the `render` workflow can
-  run (`reel: all`).
+  run (`reel: all`, skill `release-render`).
 - Never lock, retake or re-synthesise a locked line without the owner hearing the result.
+
+## 7. A changed line in validated reels
+
+The owner asks to change a line that is already validated and locked (2026-11-07: the follow call
+« تابعنا عشان تعرف » in place of « اللي جاي », in 9 reels of 3 episodes). In order:
+
+1. Edit the line, Arabic and English (and `reel_only_end`, `say_ar`), and remove `validated_by` from
+   each reel it belongs to (CLAUDE.md: even at the owner's request). Leave `publish.validated_by` if
+   the publication texts did not change. Commit, push, and show the owner the new lines: they
+   validate them first (`validated_by` back on their word).
+2. Two takes per line in one synthesis (§3), checked (§2): words, the last word, the pauses.
+3. Install the best one per line (`--use-take`), check the phrase starts and the whole-episode cut
+   (§5), store them (`--set-phrases`).
+4. Send one MP3 per episode (§6); say what you checked and that a second take of each exists.
+5. On the owner's word: `--lock <owner> --only <scenes>`, `validate.py --release --reel` on each
+   reel and `build.py --require-locked`, commit, push, then the release render of each episode
+   (skill `release-render`).
+

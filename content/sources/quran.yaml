@@ -250,3 +250,105 @@
   status: validated
   validated_by: mssnoussi92
   notes: An-Nisa 4:110, qui fait le mal puis demande pardon trouve Dieu Pardonneur et Miséricordieux (reel tawba-03, la rechute ; à la place de 3:135, qui commence au milieu d'une phrase)
+- id: quran.89.15
+  type: ayah
+  ref: {surah: 89, ayah: 15}
+  url: https://quran.com/89/15
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=89:15
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=89:15
+    translator: Saheeh International
+    surah_ar: الفجر
+    surah_en: Al-Fajr
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Fajr 89:15, l'homme qui dit « mon Seigneur m'a honoré » quand Il lui donne (reel muqarana-02, avec 89:16-17)
+  text_ar: فَأَمَّا ٱلْإِنسَـٰنُ إِذَا مَا ٱبْتَلَىٰهُ رَبُّهُۥ فَأَكْرَمَهُۥ وَنَعَّمَهُۥ فَيَقُولُ رَبِّىٓ أَكْرَمَنِ
+  text_en: And as for man, when his Lord tries him and [thus] is generous to him and favors him, he says, "My Lord has honored me."
+- id: quran.89.16
+  type: ayah
+  ref: {surah: 89, ayah: 16}
+  url: https://quran.com/89/16
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=89:16
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=89:16
+    translator: Saheeh International
+    surah_ar: الفجر
+    surah_en: Al-Fajr
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Fajr 89:16, et « mon Seigneur m'a humilié » quand Il restreint sa subsistance (reel muqarana-02)
+  text_ar: وَأَمَّآ إِذَا مَا ٱبْتَلَىٰهُ فَقَدَرَ عَلَيْهِ رِزْقَهُۥ فَيَقُولُ رَبِّىٓ أَهَـٰنَنِ
+  text_en: But when He tries him and restricts his provision, he says, "My Lord has humiliated me."
+- id: quran.89.17
+  type: ayah
+  ref: {surah: 89, ayah: 17}
+  url: https://quran.com/89/17
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=89:17
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=89:17
+    translator: Saheeh International
+    surah_ar: الفجر
+    surah_en: Al-Fajr
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Fajr 89:17, « كلا » qui répond aux deux (reel muqarana-02) ; la suite de l'ayah (l'orphelin) est récitée aussi, ayah entière
+  text_ar: كَلَّا ۖ بَل لَّا تُكْرِمُونَ ٱلْيَتِيمَ
+  text_en: No! But you do not honor the orphan
+- id: quran.20.131
+  type: ayah
+  ref: {surah: 20, ayah: 131}
+  url: https://quran.com/20/131
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=20:131
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=20:131
+    translator: Saheeh International
+    surah_ar: طه
+    surah_en: Taha
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Ta-Ha 20:131, ne tends pas les yeux vers ce dont Nous avons fait jouir certains d'entre eux (reel muqarana-03)
+  text_ar: وَلَا تَمُدَّنَّ عَيْنَيْكَ إِلَىٰ مَا مَتَّعْنَا بِهِۦٓ أَزْوَٰجًا مِّنْهُمْ زَهْرَةَ ٱلْحَيَوٰةِ ٱلدُّنْيَا لِنَفْتِنَهُمْ فِيهِ ۚ وَرِزْقُ رَبِّكَ خَيْرٌ وَأَبْقَىٰ
+  text_en: And do not extend your eyes toward that by which We have given enjoyment to [some] categories of them, [its being but] the splendor of worldly life by which We test them. And the provision of your Lord is better and more enduring.
+- id: quran.83.26
+  type: ayah
+  ref: {surah: 83, ayah: 26}
+  url: https://quran.com/83/26
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=83:26
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=83:26
+    translator: Saheeh International
+    surah_ar: المطففين
+    surah_en: Al-Mutaffifin
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Mutaffifin 83:26, « et que pour cela rivalisent ceux qui rivalisent » (reel muqarana-04, la bonne comparaison) ; commence par « ختامه مسك » (la suite de 83:25)
+  text_ar: خِتَـٰمُهُۥ مِسْكٌ ۚ وَفِى ذَٰلِكَ فَلْيَتَنَافَسِ ٱلْمُتَنَـٰفِسُونَ
+  text_en: The last of it is musk. So for this let the competitors compete.
+- id: quran.14.7
+  type: ayah
+  ref: {surah: 14, ayah: 7}
+  url: https://quran.com/14/7
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=14:7
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=14:7
+    translator: Saheeh International
+    surah_ar: ابراهيم
+    surah_en: Ibrahim
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Ibrahim 14:7, « si vous êtes reconnaissants, J'augmenterai » (reel muqarana-05, conclusion, la gratitude)
+  text_ar: وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ ۖ وَلَئِن كَفَرْتُمْ إِنَّ عَذَابِى لَشَدِيدٌ
+  text_en: And [remember] when your Lord proclaimed, 'If you are grateful, I will surely increase you [in favor]; but if you deny, indeed, My punishment is severe.'"

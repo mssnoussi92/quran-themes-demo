@@ -25,6 +25,7 @@ Usage:
   python3 tools/audio/build.py --episode dua
   python3 tools/audio/build.py --episode dua --lock mssnoussi92        # the owner approved these takes
   python3 tools/audio/build.py --episode dua --require-locked --reel dua-01
+  python3 tools/audio/build.py --episode dua --only outro --use-take outro=takes/outro__2.wav   # a chosen take
   python3 tools/audio/build.py --episode dua --speaker Ahmed --tts-python /opt/venvs/voicetut/bin/python
 """
 from __future__ import annotations
@@ -372,12 +373,22 @@ def main() -> int:
     p.add_argument("--require-locked", action="store_true",
                    help="fail, before any synthesis, if a narration line has no validated take")
     p.add_argument("--reel", help="with --require-locked or --lock: only this reel's scenes")
+    p.add_argument("--use-take", nargs="+", metavar="SCENE=WAV",
+                   help="use this WAV (made by tools/tts/say.py from the scene's current spoken text, e.g. the "
+                        "best of several takes) as the scene's draft take, instead of a new synthesis; the "
+                        "owner listens to it before it is locked. Refused on a line that has a locked take")
     p.add_argument("--set-phrases", nargs="+", metavar="SCENE=S1,S2,...",
                    help="store checked phrase starts (seconds in the tightened take, one per phrase) with a "
                         "locked take, or with a draft take until it is redone or locked: they replace the "
                         "estimate (tools/audio/listen.py --phrases helps check)")
     args = p.parse_args()
     args.speaker = args.speaker or policy_value("voice")
+    use_take: dict[str, Path] = {}
+    for spec in args.use_take or []:
+        sid, _, path = spec.partition("=")
+        if not path or not Path(path).is_file():
+            sys.exit(f"error: --use-take {spec}: give SCENE=WAV with an existing file")
+        use_take[sid] = Path(path)
 
     data_path = ROOT / "video" / "public" / "data" / f"{args.episode}.json"
     if not data_path.is_file():
@@ -406,10 +417,16 @@ def main() -> int:
         return borrowed.get(owner) if "/" in owner else takes.get(owner)
 
     in_reel = {s["id"] for s in data["scenes"] if not args.reel or s.get("reel") == args.reel}
+    narrated = {s["id"] for s in data["scenes"] if s["audio"] == "tts"}
+    bad = sorted(sid for sid in use_take if sid not in narrated or (args.only and sid not in args.only))
+    if bad:
+        sys.exit(f"error: --use-take: {', '.join(bad)}: not a narration scene of this run "
+                 f"(check the scene id, and --only)")
 
     reciter = reciter_from_policy()
     scenes: dict[str, dict] = {}
     to_synthesise: list[tuple[dict, Path]] = []
+    chosen: list[tuple[str, Path, Path]] = []
     for scene in data["scenes"]:
         sid = scene["id"]
         if args.only and sid not in args.only:
@@ -434,7 +451,7 @@ def main() -> int:
             raw = dest.with_suffix(".raw.wav")
             scenes[sid] = {"kind": "tts", "file": dest.name, "engine": "voicetut", "speaker": args.speaker,
                            "text": text, "key": key, "take": "synthesised"}
-            if prev and prev.get("checked"):    # checked phrase starts of a draft take (--set-phrases)
+            if prev and prev.get("checked") and sid not in use_take:   # checked starts of a draft take (--set-phrases)
                 scenes[sid]["checked"] = prev["checked"]
             take = takes.get(sid)
             take_path = takes_dir / take["file"] if take else None
@@ -452,6 +469,9 @@ def main() -> int:
                         take, take_path = borrowed[twin], borrowed[twin]["path"]
                         scenes[sid]["take_from"] = twin
             if take and take["key"] == key and take_path.is_file():
+                if sid in use_take:
+                    sys.exit(f"error: --use-take {sid}: this line has a take validated by the owner "
+                             f"({scenes[sid].get('take_from') or sid}); a new take needs a changed line")
                 # The validated take: always this one, never a new synthesis.
                 scenes[sid].update(take="locked", take_sha=take["sha256"])
                 if prev and prev.get("take_sha") == take["sha256"] and raw.is_file():
@@ -462,6 +482,8 @@ def main() -> int:
                     transcode(take_path, raw, "-c:a", "pcm_s16le")
                     dest.unlink(missing_ok=True)
                     print(f"tts {sid}: validated take ({take['validated_by']}, {take['locked']})")
+            elif sid in use_take:
+                chosen.append((sid, raw, dest))    # copied once every scene is checked
             elif prev and prev.get("key") == key and prev.get("take") != "locked" and (dest.is_file() or raw.is_file()):
                 scenes[sid]["seconds"] = prev["seconds"]
                 if "tight" in prev:
@@ -474,6 +496,12 @@ def main() -> int:
         if missing:
             sys.exit(f"error: no validated take for {', '.join(missing)}: render a draft, let the owner listen, "
                      f"then lock the takes the owner approves (tools/audio/build.py --lock <owner>)")
+
+    # A take chosen among several (tools/tts/say.py): the draft take, tightened below.
+    for sid, raw, dest in chosen:
+        shutil.copyfile(use_take[sid], raw)
+        dest.unlink(missing_ok=True)
+        print(f"tts {sid}: draft take {use_take[sid].name}")
 
     if to_synthesise:
         synthesise(to_synthesise, args.speaker, args.tts_python)

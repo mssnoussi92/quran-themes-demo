@@ -65,7 +65,9 @@ video/                   projet Remotion (TypeScript) : compositions Reel916 (10
   public/fonts/          Amiri Quran, Amiri, Lora (OFL, mêmes fichiers que quran-reels)
 build/                   (ignoré) tout ce qui est généré
 .claude/skills/          new-theme (d'un thème aux vidéos), write-hook (accroche), narration-takes (voix),
-                         voice-spelling (prononciation), find-hadith-recording (hadith lu par une vraie voix)
+                         voice-spelling (prononciation), find-hadith-recording (hadith lu par une vraie voix),
+                         release-render (rendu final, vérification, liens)
+docs/themes.md           thèmes faits, choisis par le propriétaire (dans l'ordre, avec leur angle), en réserve
 ```
 
 ## Commandes
@@ -89,6 +91,7 @@ ffmpeg -y -i build/tts/test.wav -codec:a libmp3lame -qscale:a 2 build/tts/test.m
 python3 tools/audio/build.py --episode dua                             # voix de policy.yaml ; puis npm run data
 # (dans GitHub Actions : workflow render, il fait tout et publie le MP4 en release)
 python3 tools/audio/build.py --episode dua --only promise              # une scène (ici la récitation)
+python3 tools/audio/build.py --episode dua --only outro --use-take outro=<prise>.wav   # installer une prise choisie (say.py), sans synthèse
 python3 tools/audio/build.py --episode dua --lock mssnoussi92 --reel dua-01   # figer les prises approuvées à l'écoute
 
 # Vidéo (dans video/ ; npm run data est lancé par studio, still et render)
@@ -137,14 +140,18 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 8. **Épisode Patience** (demande du propriétaire, 2026-11-07) : `content/episodes/sabr.yaml`, reels **sabr-01 à sabr-05** (la promesse, trois idées reçues : « le patient ne pleure pas », « la patience, c'est attendre sans rien faire », « je ne suis pas patient de nature », la conclusion), plan dans `docs/design.md` ; 9 sources (2:155, 12:86, 2:153, 2:250, 39:10 ; Muslim 2999 et 2664, Bukhari 1303 et 1469), les 4 hadiths lus par de vrais lecteurs d'archive.org (Muslim : Ryadussalihin.org, fichiers 54 et 47 ; Bukhari : Abu Malik, un fichier par hadith). **Tout validé par le propriétaire le 2026-11-07** : sources, lectures, script et traduction, prises (figées), textes de publication, miniature ; durée gardée (épisode 5:04, reels 0:41 à 1:09). Une réplique identique à une prise figée d'un **autre épisode** reprend cette prise (`take_from` « dua/<scène> ») : « قال ربنا سبحانه وتعالى: », « تاني فكرة غلط… », « تالت فكرة غلط… ». Prononciation corrigée à l'écoute du propriétaire (2026-11-07), en `say_ar` : « بِتُصْبُر » (btoṣbor), « اُصْبُر » (oṣbor), « البُشْرَى » (al-boshra), « مَبْيِعَيَّطْش » ; ces quatre prises, choisies par le propriétaire. Débuts vérifiés : hook-3 (« وصعبة » 1,44 s), why (« خير؟ » 1,40 s). Miniature : close-up, Salma, « ٣ أفكار غلط / عن الصبر ».
 9. **Épisode Repentir** (demande du propriétaire, 2026-11-07, thème suivant la patience) : `content/episodes/tawba.yaml`, reels **tawba-01 à tawba-05** (la promesse, trois idées reçues : « mes péchés sont trop nombreux », « j'ai rechuté, c'est fini », « je me repentirai plus tard », la conclusion), plan dans `docs/design.md` ; 9 sources (42:25, 39:53, 4:110, 4:17, 25:70 gardé seul malgré le « إلا » initial, choix du propriétaire ; Bukhari 6309 et 6307, Tirmidhi 3540 et 2499), les 4 hadiths lus par de vrais lecteurs (Bukhari : Abu Malik ; Tirmidhi : Yusuf ibn Nuh Ahmad). **Tout validé par le propriétaire le 2026-11-07** : sources, lectures, script et traduction, prises (figées), textes de publication, miniature (close-up, Amir, fond uni : la rue rendait le titre difficile à lire). « تبت » est lu « توبت » par la voix (« tobt » ; les voyelles seules restaient « tibt », mesuré au F2), l'écran garde « تبت » ; « ذنب » reste « zanb » (choix du propriétaire). **Appel à suivre** (demande du propriétaire) : les fins des reels 01 à 03 disent « تابعنا عشان تعرف (أولها) » au lieu de « اللي جاي » (`reel_only_end`, absent des versions complètes) ; même changement ensuite dans le du'a et la patience (dua-01 à 03, sabr-01 à 03 : nouvelles lignes et prises validées par le propriétaire, prises figées).
 
+10. **Épisode Le piège des comparaisons** (choix du propriétaire, 2026-11-07) : `content/episodes/muqarana.yaml`, reels **muqarana-01 à muqarana-05** (l'accroche et Bukhari 6446, trois idées reçues : « qui a plus est plus aimé de Dieu » 89:15-17 et Muslim 2564c, « ce qu'ils ont est mieux » 20:131 et Tirmidhi 2513, « toute comparaison est mauvaise » Bukhari 73 et 83:26, la conclusion sur la gratitude 14:7), plan dans `docs/design.md`. Tirmidhi 2513 à la place de Muslim 2963c (la carte aurait montré une remarque d'Abu Mu'awiya). Les 4 hadiths lus par de vrais lecteurs (Bukhari 73 : fichier `0074.mp3`, numérotation du lecteur décalée). Titre « فخ المقارنات » (demande du propriétaire). **Tout validé par le propriétaire le 2026-11-07** ; prises figées.
+11. **Thèmes suivants** (`docs/themes.md`) : **التوكل** (avec la peur et le sentiment d'impuissance), puis **الخشوع** ; chacun avec le skill `new-theme`, sources à faire valider d'abord.
+
 ## Skills (`.claude/skills/`)
 
 Procédures à suivre dans toute session :
 - `new-theme` : d'un nouveau thème au script, en passant par les sources (proposées, jamais validées par l'IA), les idées reçues, les reels et une PR.
 - `write-hook` : l'accroche d'un épisode ou d'un reel. Elle reprend les techniques de la vidéo de référence du propriétaire (miroir, contraste, ancre sourcée, question en un mot, enjeu, promesse honnête ; analyse plan par plan dans `reference/dua-video-analysis.md`), dans le respect des règles ci-dessus.
-- `narration-takes` : la voix d'un épisode, de la synthèse aux prises figées : écoute de chaque prise par Whisper (`tools/audio/listen.py`), reprises, prononciation (`say_ar`), débuts de morceaux vérifiés (`--set-phrases`), brouillons, figer seulement sur la parole du propriétaire.
+- `narration-takes` : la voix d'un épisode, de la synthèse aux prises figées : écoute de chaque prise par Whisper (`tools/audio/listen.py`), plusieurs prises en une synthèse et la meilleure installée (`build.py --use-take`), prononciation (`say_ar`), débuts de morceaux vérifiés (`--set-phrases`), brouillons, figer seulement sur la parole du propriétaire ; changer une réplique déjà validée (§7).
 - `voice-spelling` : faire bien dire un mot à la voix (`say_ar`) : écritures connues (`content/pronunciation.yaml`), variantes essayées en une synthèse, mesure des voyelles (`listen.py --vowels`, Praat), sons ajoutés en fin de prise, choix du propriétaire à l'oreille ; jusqu'à deux lettres par mot peuvent changer pour la voix, l'écran ne change pas (décision du propriétaire, 2026-11-07).
 - `find-hadith-recording` : trouver sur archive.org la lecture d'un hadith par une vraie voix (Bukhari, Muslim, Tirmidhi ; lectures déjà repérées), la caler, l'inscrire au registre (`recording`) pour que le propriétaire l'écoute et la valide.
+- `release-render` : le rendu final d'un épisode (workflow `render`, `reel: all`) une fois tout validé : contrôles avant (`validate.py --release --reel`, `--require-locked`), lancement, attente en arrière-plan, images vérifiées dans les vidéos publiées (fin des reels, rappel du 16:9), liens au propriétaire.
 
 ## Publication et licence (décisions du propriétaire, 2026-11-06)
 

@@ -50,7 +50,8 @@ the file name; they choose by ear.
 ## 4. Record the decision
 
 - The chosen spelling goes into the scene's `say_ar` (with a comment: the word, what was wrong, the
-  owner's request and date), and the take into the episode (skill `narration-takes`, §4).
+  owner's request and date), and the take into the episode: `npm run data`, then `build.py --episode
+  <episode> --only <scene> --use-take <scene>=<take.wav>` (skill `narration-takes`, §3).
 - A spelling the owner approved goes into `content/pronunciation.yaml` (`word`, `say`, `why`, `decided`):
   every later script uses it from the start.
 - A word whose correction did not work stays out of the list; write what was tried in its scene's

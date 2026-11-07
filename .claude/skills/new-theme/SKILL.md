@@ -25,6 +25,18 @@ translation, the final video. Never mark any of them done yourself.
    episode: "asking means refusing destiny", "everything is written, du'a changes nothing", "I was
    not answered"). Each misconception becomes a reel and is refuted by at least one source. End
    with a conclusion. If a misconception has no source in the policy, drop it.
+   - The next themes and their order are in `docs/themes.md` (the owner's ideas, what was decided,
+     the outlines already approved): start from there, and keep it up to date.
+   - When the owner shares theme ideas (2026-11-07: study cards « محور الموضوع / ما الذي ستتعلمه »
+     and a list of virtues), judge each against the format: a situation of everyday life for the
+     hook (inner states hook better than social duties: comparison, fear, a wandering mind in prayer),
+     three misconceptions really held, sources in the policy for each, and overlap with the episodes
+     already made (`docs/themes.md`). Merge cards that say the same thing (fear and trust in God),
+     leave a near-duplicate of a recent episode for later, check that each source you name exists in
+     hadith-api under that number (step 2), and give a ranked proposal with the three misconceptions
+     and their sources. The owner chooses; write the decision in `docs/themes.md`.
+   - Do not refute a misconception with the same evidence as an earlier reel (sabr-03 « patience is
+     waiting » used Muslim 2664: a tawakkul reel on effort takes Tirmidhi 2517 and 2344 instead).
 
 2. **Sources.** For each claim, a verse or a hadith, never a summary from memory.
    - Verses: quran.ai MCP (`search_quran`, `fetch_word_concordance`; read its grounding rules
@@ -33,7 +45,14 @@ translation, the final video. Never mark any of them done yourself.
      if al-Albani grades it sahih or hasan). To search hadith-api, download
      `editions/ara-<collection>1.min.json` (Arabic without diacritics) into the scratchpad and
      search the text; take its `arabicnumber` as the number (Muslim: one letter per narration,
-     `hadith.muslim.2679a`). Example: « الدعاء هو العبادة » → Tirmidhi 2969, 3247, 3372.
+     `.01` → a, `hadith.muslim.2679a`). Example: « الدعاء هو العبادة » → Tirmidhi 2969, 3247, 3372.
+     The per-hadith URL `editions/ara-muslim/<n>.json` counts in sequence, not by `arabicnumber`:
+     `ara-muslim/2963` is a chain-only narration, the hadith is `arabicnumber` 2963.03. Bukhari's and
+     Tirmidhi's sequence matches their numbers. A hadith without an `arabicnumber` in hadith-api
+     (Muslim 2759) cannot be registered: take another one of the same meaning.
+   - Verses: a whole sentence. A verse that opens in the middle of one (« إلا », « و » carrying on
+     the verse before) is replaced or flagged to the owner: tawba took 4:110 instead of 3:135, and
+     kept 25:70 alone, opening with « إلا », by the owner's choice.
    - Between hadiths of the same meaning, prefer one with a recorded reading on archive.org (the
      owner's preference, 2026-11-07): skill `find-hadith-recording` (Bukhari: one file per hadith).
    - A collection outside the policy (Ahmad, the reference's « three outcomes ») is replaced, not
@@ -70,6 +89,9 @@ translation, the final video. Never mark any of them done yourself.
      (« Follow us to find out (the first one). », owner's choice, 2026-11-07), is marked
      `reel_only_end: {ar, en}`: the whole-episode videos cut the line before it (owner's request).
    - Title-card lines are punctuated where each piece should appear (« ، … . ؟ : »).
+   - The voice's spelling (`say_ar`) from the first draft: every word of `content/pronunciation.yaml`
+     (validate.py warns on a reel not yet validated that forgets one), no guillemets (skill
+     `voice-spelling`).
    - Mark your own explanatory lines (not a quote, not a paraphrase of one) when you present the
      script: the owner checks them first (dua: « الدعاء مش اعتراض… الدعاء احتياج »). Characters, poses and moods from
    `content/characters.yaml`, backgrounds from `content/backgrounds.yaml` only (a new one is added to
@@ -93,6 +115,11 @@ translation, the final video. Never mark any of them done yourself.
    - Check: `cd video && npm run data && node scripts/publish.ts <theme> all` (fails on a broken
      limit), and show the owner the result with the script. They validate the texts with it:
      `publish.validated_by` on the episode and on each reel, removed whenever one of them changes.
+   - YouTube thumbnail: the episode's `thumbnail` (layout `close-up`, headline « ٣ أفكار غلط », kicker
+     « عن <الموضوع> », a character and mood from the catalog, another face than the last episode's:
+     dua and tawba Amir, sabr and muqarana Salma), on the `plain` background (the street made tawba's title hard
+     to read). `npm run still -- Thumbnail169 out/<theme>-thumbnail.png`, look at it at 170 px wide,
+     send it; `thumbnail.validated_by` on the owner's word, on the image.
 
 6. **Check, then audio.**
    - `uv run --with jsonschema --with pyyaml scripts/validate.py` (`--release` once the sources
@@ -103,8 +130,9 @@ translation, the final video. Never mark any of them done yourself.
      voice is being made: skill `narration-takes` (synthesis in the background, Whisper on every
      take, retakes, pronunciation, phrase starts), and `find-hadith-recording` for the hadiths.
    - Draft renders of every reel and of the whole episode (`Episode169`, and `Reel916` with
-     `"reel":null` for the 9:16 version), checked with a few frames and `listen.py`, then sent to
-     the owner (SendUserFile).
+     `"reel":null` for the 9:16 version; `--concurrency=2`, the browser ran out of memory with more),
+     checked with a few frames and `listen.py`, then sent to the owner (SendUserFile). The 16:9 has
+     the like/subscribe reminder on its own (`reminderStarts`): look at one frame of each.
 
 7. **PR.** Describe:
    - the angle and the outline;
@@ -121,4 +149,8 @@ translation, the final video. Never mark any of them done yourself.
    and recordings reach a release render. Then the release render: workflow `render` with
    `reel: all` (the whole episode in 16:9 and 9:16 and every reel, in the `<theme>-latest`
    pre-release, whose notes hold the texts to paste on each platform, one copyable block each; the
-   first run downloads the hadith recordings from archive.org), and give the owner the link.
+   first run downloads the hadith recordings from archive.org): skill `release-render`, which also
+   checks the published videos and gives the owner the link.
+   - Once the owner has merged the PR, the next piece of work starts again from `main` (the same
+     branch name, restarted on `origin/main`), never on top of the merged history; record the theme
+     as done in `docs/themes.md`.

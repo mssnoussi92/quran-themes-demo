@@ -1,0 +1,486 @@
+# Épisode Le piège des comparaisons (فخ المقارنات), avec la gratitude (الشكر والقناعة) : 5 reels (9:16) pour
+# Facebook, Instagram et TikTok ; l'épisode entier (16:9 et 9:16) pour YouTube. Même structure que le du'a, la
+# patience et le repentir (docs/design.md) : l'accroche et la promesse, une idée reçue par reel, la conclusion.
+# Thème et plan choisis par le propriétaire le 2026-11-07 (docs/themes.md) ; tout validé par le propriétaire le
+# même jour (sources, lectures, script, traduction, prises, textes de publication, miniature). Toute modification
+# d'une ligne d'un reel retire son validated_by.
+# Les répliques identiques à une prise figée d'un autre épisode (« قال ربنا سبحانه وتعالى: », « تاني فكرة
+# غلط… », « تالت فكرة غلط… ») reprennent cette prise (take_from, tools/audio/build.py).
+episode: muqarana
+title: { ar: "فخ المقارنات", en: "The comparison trap" }
+narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
+# Textes de publication : proposés le 2026-11-07, faits des répliques du script ; validés par le
+# propriétaire le même jour (validated_by), exigés par un rendu final. Le reste : video/scripts/publish.ts.
+publish:
+  title: { en: "The comparison trap: 3 wrong ideas", ar: "فخ المقارنات… تلات أفكار غلط يمكن تكون مصدق واحدة منهم" }
+  description:
+    en: "You scroll… and everyone's life looks better than yours? Three wrong ideas keep the comparison going: that whoever has more is loved more by God, that what's in their hands is better than what's in yours, and that all comparing is wrong. Each one, answered from the Qur'an and the Sunnah."
+    ar: "بتقلب في الموبايل… وكل الناس حياتهم أحلى من حياتك؟ وفيه تلات أفكار غلط بتخلينا نقارن: إن اللي عنده أكتر ربنا بيحبه أكتر، وإن اللي في إيديهم أحسن من اللي في إيدك، وإن كل مقارنة غلط. والرد على كل فكرة من القرآن والسنة."
+  hashtags: ["#Gratitude", "#القناعة", "#Islam"]
+  validated_by: mssnoussi92
+# Miniature YouTube (Thumbnail169), proposée le 2026-11-07 : gros plan, fond uni (lisible), Salma (Amir dans
+# la miniature du repentir) ; le titre « فخ المقارنات » (demande du propriétaire, même jour) dans le cadre doré :
+# en grand, le « خ » touchait le cadre.
+thumbnail:
+  layout: close-up
+  headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas:" }
+  kicker: { ar: "فخ المقارنات", en: "the comparison trap" }
+  character: { id: salma, pose: standing, mood: worried }
+  background: plain
+  validated_by: mssnoussi92
+reels:
+  - id: muqarana-01
+    title: { ar: "غنى النفس", en: "Richness of the soul" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "You scroll… and everyone's life looks great?", ar: "بتقلب في الموبايل… وكل الناس حياتهم حلوة؟" }
+      description:
+        en: "Then you look at your own life… and it feels like something's missing? The problem isn't your life… it's the comparison. Richness of the soul… is being content with what God gave you."
+        ar: "وبعدين تبص لحياتك… وتحس إنها ناقصة؟ المشكلة مش في حياتك… المشكلة في المقارنة. غنى النفس… إنك تشبع باللي ربنا إداهولك."
+      validated_by: mssnoussi92
+  - id: muqarana-02
+    title: { ar: "العطا مش مقياس", en: "Giving isn't the measure" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "“If God loved me… He'd have given me what they have”?", ar: "«لو ربنا بيحبني… كان إداني زيهم»؟" }
+      description:
+        en: "The first wrong idea about comparing: that whoever has more is loved more by God. Giving isn't proof of love… and holding back isn't proof of disgrace."
+        ar: "أول فكرة غلط عن المقارنة: إن اللي عنده أكتر ربنا بيحبه أكتر. العطا مش دليل حب… والمنع مش دليل إهانة."
+      validated_by: mssnoussi92
+  - id: muqarana-03
+    title: { ar: "اللي في إيديهم", en: "What's in their hands" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "“Why is their life better than mine?”", ar: "«ليه حياتهم أحلى من حياتي؟»" }
+      description:
+        en: "The second wrong idea: that what's in their hands is better than what's in yours. As long as your eyes are on others… you won't see God's blessings on you."
+        ar: "تاني فكرة غلط: إن اللي في إيديهم أحسن من اللي في إيدك. طول ما عينك على غيرك… مش هتشوف نعمة ربنا عليك."
+      validated_by: mssnoussi92
+  - id: muqarana-04
+    title: { ar: "المنافسة في الخير", en: "Competing in good" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "You see someone doing good… and wish you were like them?", ar: "شايف حد بيعمل خير… ونفسك تبقى زيه؟" }
+      description:
+        en: "The third wrong idea: that all comparing is wrong. Compare yourself to them in doing good… not in what's in their hands."
+        ar: "تالت فكرة غلط: إن كل مقارنة غلط. قارن نفسك بيهم في الخير… مش في اللي في إيديهم."
+      validated_by: mssnoussi92
+  - id: muqarana-05
+    title: { ar: "الشكر بيزوّد", en: "Gratitude brings more" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "Feel like what you have… isn't enough?", ar: "حاسس إن اللي معاك… قليل؟" }
+      description:
+        en: "Be grateful… and He gives you more. Giving isn't the measure of love… what they have isn't better… compete in doing good… and be grateful for what you have. So stop counting other people's blessings… and start counting God's blessings on you."
+        ar: "اشكر… يزيدك. العطا مش مقياس حب… واللي في إيديهم مش أحسن… ونافس في الخير… واشكر على اللي معاك. فبطّل تعد نعم غيرك… وابدأ عد نعم ربنا عليك."
+      validated_by: mssnoussi92
+scenes:
+  # ---- muqarana-01 : accroche et promesse -------------------------------------------------------
+  # Miroir : faire défiler la vie des autres (scène type, à la deuxième personne).
+  - id: hook-1
+    role: hook
+    reel: muqarana-01
+    audio: tts
+    narration:
+      ar: "بتقلب في الموبايل… وكل الناس حياتهم حلوة؟"
+      en: "You scroll through your phone… and everyone's life looks great?"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: salma, pose: sitting, mood: worried, talking: false }
+  # Contraste : le retour à sa propre vie.
+  - id: hook-2
+    role: hook
+    reel: muqarana-01
+    audio: tts
+    narration:
+      ar: "وبعدين تبص لحياتك… وتحس إنها ناقصة؟"
+      en: "Then you look at your own life… and it feels like something's missing?"
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: amir, pose: standing, mood: worried, talking: false }
+  # Nommer (ligne de l'IA, à vérifier en premier).
+  - id: hook-3
+    role: hook
+    reel: muqarana-01
+    audio: tts
+    narration:
+      ar: "المشكلة مش في حياتك… المشكلة في المقارنة."
+      en: "The problem isn't your life… it's the comparison."
+    visual:
+      template: title-card
+  # Ancre : la vraie richesse.
+  - id: anchor
+    role: evidence
+    reel: muqarana-01
+    source: hadith.bukhari.6446
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "والنبي صلى الله عليه وسلم قال:"
+      en: "And the Prophet ﷺ said:"
+    visual:
+      template: source-card
+  # Question en un mot, reprise du hadith (« غنى النفس »), puis la réponse.
+  - id: why
+    role: evidence
+    reel: muqarana-01
+    audio: tts
+    narration:
+      ar: "غنى النفس؟"
+      en: "Richness of the soul?"
+    visual:
+      template: title-card
+  # Ligne de l'IA : ce qu'est « غنى النفس » (la traduction : « feeling sufficiency in the soul »).
+  - id: because
+    role: evidence
+    reel: muqarana-01
+    audio: tts
+    narration:
+      ar: "إنك تشبع… باللي ربنا إداهولك."
+      en: "Being content… with what God gave you."
+    visual:
+      template: title-card
+  - id: outro
+    role: outro
+    reel: muqarana-01
+    audio: tts
+    narration:
+      ar: "بس فيه تلات أفكار غلط عن المقارنة… يمكن تكون مصدق واحدة منهم. تابعنا عشان تعرف أولها."
+      en: "But there are three wrong ideas about comparing… you might believe one of them. Follow us to find out the first one."
+    # L'appel à suivre, dit seulement dans le reel ; les versions complètes coupent avant.
+    reel_only_end: { ar: "تابعنا عشان تعرف أولها.", en: "Follow us to find out the first one." }
+    visual:
+      template: title-card
+
+  # ---- muqarana-02 : idée reçue 1, « qui a plus est plus aimé de Dieu » ------------------------
+  - id: rich-hook
+    role: hook
+    reel: muqarana-02
+    audio: tts
+    narration:
+      ar: "«لو ربنا بيحبني… كان إداني زيهم»؟"
+      en: "“If God loved me… He'd have given me what they have”?"
+    say_ar: "لو ربنا بيحبني… كان إداني زيهم؟"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: worried, talking: false }
+  - id: rich-wrong
+    role: misconception
+    reel: muqarana-02
+    audio: tts
+    narration:
+      ar: "أول فكرة غلط عن المقارنة…"
+      en: "The first wrong idea about comparing…"
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  - id: rich-idea
+    role: misconception
+    reel: muqarana-02
+    audio: tts
+    narration:
+      ar: "إن اللي عنده أكتر… ربنا بيحبه أكتر."
+      en: "That whoever has more… is loved more by God."
+    visual:
+      template: title-card
+  - id: rich-verse-intro
+    role: evidence
+    reel: muqarana-02
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  # Trois ayahs de suite (89:15-17) : ce que dit l'homme quand Dieu donne, quand Il restreint, et « كلا ».
+  - id: rich-verse-1
+    role: evidence
+    reel: muqarana-02
+    source: quran.89.15
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: rich-verse-2
+    role: evidence
+    reel: muqarana-02
+    source: quran.89.16
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: rich-verse-3
+    role: evidence
+    reel: muqarana-02
+    source: quran.89.17
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: rich-hadith
+    role: evidence
+    reel: muqarana-02
+    source: hadith.muslim.2564c
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "والنبي صلى الله عليه وسلم قال:"
+      en: "And the Prophet ﷺ said:"
+    visual:
+      template: source-card
+  # Ligne de l'IA, tirée de « ربي أكرمن… ربي أهانن… كلا ».
+  - id: rich-takeaway
+    role: evidence
+    reel: muqarana-02
+    audio: tts
+    narration:
+      ar: "العطا مش دليل حب… والمنع مش دليل إهانة."
+      en: "Giving isn't proof of love… and holding back isn't proof of disgrace."
+    visual:
+      template: title-card
+  - id: rich-outro
+    role: outro
+    reel: muqarana-02
+    audio: tts
+    narration:
+      ar: "طب ولو حياتهم فعلاً أحسن من حياتي؟ تابعنا عشان تعرف."
+      en: "But what if their life really is better than mine? Follow us to find out."
+    reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
+    visual:
+      template: title-card
+
+  # ---- muqarana-03 : idée reçue 2, « leur vie est meilleure que la mienne » ---------------------
+  - id: life-hook
+    role: hook
+    reel: muqarana-03
+    audio: tts
+    narration:
+      ar: "«ليه حياتهم أحلى من حياتي؟»"
+      en: "“Why is their life better than mine?”"
+    say_ar: "ليه حياتهم أحلى من حياتي؟"
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: salma, pose: standing, mood: worried, talking: false }
+  - id: life-wrong
+    role: misconception
+    reel: muqarana-03
+    audio: tts
+    narration:
+      ar: "تاني فكرة غلط…"
+      en: "The second wrong idea…"
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  - id: life-idea
+    role: misconception
+    reel: muqarana-03
+    audio: tts
+    narration:
+      ar: "إن اللي في إيديهم… أحسن من اللي في إيدك."
+      en: "That what's in their hands… is better than what's in yours."
+    visual:
+      template: title-card
+  - id: life-verse-intro
+    role: evidence
+    reel: muqarana-03
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: life-verse
+    role: evidence
+    reel: muqarana-03
+    source: quran.20.131
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: life-hadith
+    role: evidence
+    reel: muqarana-03
+    source: hadith.tirmidhi.2513
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "والنبي صلى الله عليه وسلم قال:"
+      en: "And the Prophet ﷺ said:"
+    visual:
+      template: source-card
+  # Ligne de l'IA, tirée de « أجدر ألا تزدروا نعمة الله عليكم ».
+  - id: life-takeaway
+    role: evidence
+    reel: muqarana-03
+    audio: tts
+    narration:
+      ar: "طول ما عينك على غيرك… مش هتشوف نعمة ربنا عليك."
+      en: "As long as your eyes are on others… you won't see God's blessings on you."
+    visual:
+      template: title-card
+  - id: life-outro
+    role: outro
+    reel: muqarana-03
+    audio: tts
+    narration:
+      ar: "طب يبقى أبطل أبص لحد خالص؟ تابعنا عشان تعرف."
+      en: "So should I stop looking at anyone at all? Follow us to find out."
+    reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
+    visual:
+      template: title-card
+
+  # ---- muqarana-04 : idée reçue 3, « toute comparaison est mauvaise » ---------------------------
+  # Miroir : l'envie de faire le bien comme quelqu'un (le sens du hadith de Bukhari 73).
+  - id: good-hook
+    role: hook
+    reel: muqarana-04
+    audio: tts
+    narration:
+      ar: "شايف حد بيعمل خير… ونفسك تبقى زيه؟"
+      en: "You see someone doing good… and wish you were like them?"
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: amir, pose: standing, mood: calm, talking: false }
+  - id: good-wrong
+    role: misconception
+    reel: muqarana-04
+    audio: tts
+    narration:
+      ar: "تالت فكرة غلط…"
+      en: "The third wrong idea…"
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  - id: good-idea
+    role: misconception
+    reel: muqarana-04
+    audio: tts
+    narration:
+      ar: "إن كل مقارنة… غلط."
+      en: "That all comparing… is wrong."
+    visual:
+      template: title-card
+  - id: good-hadith
+    role: evidence
+    reel: muqarana-04
+    source: hadith.bukhari.73
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "والنبي صلى الله عليه وسلم قال:"
+      en: "And the Prophet ﷺ said:"
+    visual:
+      template: source-card
+  # Ligne de l'IA, tirée du hadith (l'argent dépensé dans le vrai, la sagesse enseignée).
+  - id: good-means
+    role: evidence
+    reel: muqarana-04
+    audio: tts
+    narration:
+      ar: "قارن نفسك بيهم في الخير… مش في اللي في إيديهم."
+      en: "Compare yourself to them in doing good… not in what's in their hands."
+    visual:
+      template: title-card
+  - id: good-verse-intro
+    role: evidence
+    reel: muqarana-04
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: good-verse
+    role: evidence
+    reel: muqarana-04
+    source: quran.83.26
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: good-outro
+    role: outro
+    reel: muqarana-04
+    audio: tts
+    narration:
+      ar: "وفي الآخر… وعد ربنا للشاكرين. دي الأخيرة."
+      en: "And finally… God's promise to the grateful. That's the last one."
+    visual:
+      template: title-card
+
+  # ---- muqarana-05 : conclusion, la gratitude ---------------------------------------------------
+  - id: end-hook
+    role: hook
+    reel: muqarana-05
+    audio: tts
+    narration:
+      ar: "حاسس إن اللي معاك… قليل؟"
+      en: "Feel like what you have… isn't enough?"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: salma, pose: sitting, mood: worried, talking: false }
+  - id: end-verse-intro
+    role: evidence
+    reel: muqarana-05
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: end-verse
+    role: evidence
+    reel: muqarana-05
+    source: quran.14.7
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Reformule le verset (« لئن شكرتم لأزيدنكم »).
+  - id: end-more
+    role: conclusion
+    reel: muqarana-05
+    audio: tts
+    narration:
+      ar: "اشكر… يزيدك."
+      en: "Be grateful… and He gives you more."
+    visual:
+      template: title-card
+  # Rappel des quatre reels en une carte (quatre morceaux).
+  - id: end-recap
+    role: conclusion
+    reel: muqarana-05
+    audio: tts
+    narration:
+      ar: "العطا مش مقياس حب… واللي في إيديهم مش أحسن… ونافس في الخير… واشكر على اللي معاك."
+      en: "Giving isn't the measure of love… what they have isn't better… compete in doing good… and be grateful for what you have."
+    visual:
+      template: title-card
+  # Retour à l'accroche (faire défiler la vie des autres) ; ligne de l'IA.
+  - id: end-outro
+    role: conclusion
+    reel: muqarana-05
+    audio: tts
+    narration:
+      ar: "فبطّل تعد نعم غيرك… وابدأ عد نعم ربنا عليك."
+      en: "So stop counting other people's blessings… and start counting God's blessings on you."
+    visual:
+      template: title-card

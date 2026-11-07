@@ -99,3 +99,18 @@ Proposé le 7 novembre 2026 (skill `new-theme`), à valider : sources, script, t
 | 6 | Conclusion | « Peur que ton passé te suive toujours ? » Dieu change leurs mauvaises actions en bonnes ; rappel des quatre reels ; « reviens… la porte est toujours ouverte ». | Al-Furqan 25:70 | 5 |
 
 An-Nisa 4:110 remplace Al Imran 3:135, qui commence au milieu d'une phrase (« والذين… », suite de 3:134). Muslim 2759 (« Dieu étend Sa main la nuit… ») est écarté : hadith-api ne lui donne pas de numéro.
+
+## Épisode Le piège des comparaisons (plan)
+
+Thème et plan choisis par le propriétaire le 7 novembre 2026 (`docs/themes.md`), avec la gratitude (الشكر والقناعة) ; tout validé par le propriétaire le même jour : sources, lectures, script, traduction, prises, textes de publication, miniature (« فخ المقارنات » dans le cadre doré). Même structure que les épisodes précédents. Script : `content/episodes/muqarana.yaml`.
+
+| # | Rôle | Contenu | Source | Reel |
+| --- | --- | --- | --- | --- |
+| 1 | Accroche | « Tu fais défiler ton téléphone… et la vie de tout le monde est belle ? » ; on revient à la sienne et elle paraît incomplète ; « le problème n'est pas ta vie… c'est la comparaison ». | — | 1 |
+| 2 | Promesse | La richesse n'est pas l'abondance des biens, c'est la richesse de l'âme : être rassasié de ce que Dieu t'a donné. Fin : « 3 idées reçues, suis-nous pour la 1re ». | Bukhari 6446 | 1 |
+| 3 | Idée reçue 1 | « Qui a plus est plus aimé de Dieu. » L'homme dit « mon Seigneur m'a honoré » quand Il donne, « m'a humilié » quand Il restreint : « كلا ». Dieu ne regarde ni vos visages ni vos biens, mais vos cœurs et vos actes. | Al-Fajr 89:15-17 ; Muslim 2564c | 2 |
+| 4 | Idée reçue 2 | « Ce qu'ils ont est mieux que ce que j'ai. » Ne tends pas les yeux vers l'éclat de la vie d'ici-bas, la subsistance de ton Seigneur est meilleure et plus durable ; regardez qui est en dessous de vous, pour ne pas mépriser le bienfait de Dieu. | Ta-Ha 20:131 ; Tirmidhi 2513 (al-Albani : Sahih) | 3 |
+| 5 | Idée reçue 3 | « Toute comparaison est mauvaise. » Pas d'envie permise sauf dans deux cas : l'argent dépensé dans le vrai, la sagesse enseignée ; « que pour cela rivalisent ceux qui rivalisent ». | Bukhari 73 ; Al-Mutaffifin 83:26 | 4 |
+| 6 | Conclusion | « Ce que tu as te semble peu ? » Si vous êtes reconnaissants, J'augmenterai ; rappel des quatre reels ; « arrête de compter les bienfaits des autres… compte ceux de Dieu sur toi ». | Ibrahim 14:7 | 5 |
+
+Tirmidhi 2513 remplace Muslim 2963c (mêmes paroles) : la carte de Muslim aurait montré, après les guillemets, la remarque d'Abu Mu'awiya (« عليكم »). 89:15-17 font environ 33 s de récitation : le reel 2 est le plus long (≈ 1 min). 83:26 commence par « ختامه مسك » (la suite de 83:25, le vin du Paradis) : ayah entière.

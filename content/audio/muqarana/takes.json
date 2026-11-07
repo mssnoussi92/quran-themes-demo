@@ -1,0 +1,328 @@
+{
+  "note": "Narration takes validated by the owner (AI-generated voice, VoiceTut). Written by tools/audio/build.py --lock, never by hand.",
+  "takes": {
+    "anchor": {
+      "file": "anchor.flac",
+      "text": "والنبي صلى الله عليه وسلم قال: لَيْسَ الْغِنَى عَنْ كَثْرَةِ الْعَرَضِ، وَلَكِنَّ الْغِنَى غِنَى النَّفْسِ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "ba148deccbe5972a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "bce6592b9edd0b73db60cc63b6a9177d7ff235964f9cd4ad90753ffc46c71e41",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          2.0,
+          4.12
+        ]
+      }
+    },
+    "because": {
+      "file": "because.flac",
+      "text": "إنك تشبع… باللي ربنا إداهولك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "cc9b944f0ab62877",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "209e5f62694b2e9b5e8323ecc493634c6cb301a1aa19d62917946cfb1b3757c4"
+    },
+    "end-hook": {
+      "file": "end-hook.flac",
+      "text": "حاسس إن اللي معاك… قليل؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "91961493912eb767",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "52ca6239d08229b02d76ef3c604e8f7e40a6869e2e8e0b0b7766b1414a73afea"
+    },
+    "end-more": {
+      "file": "end-more.flac",
+      "text": "اشكر… يزيدك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c87762d756f51d41",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "0e8f1fb2719f29a92b3f912a1a24cdd74f2953c5da20dbc9d1f3bd28758d58a4"
+    },
+    "end-outro": {
+      "file": "end-outro.flac",
+      "text": "فبطّل تعد نعم غيرك… وابدأ عد نعم ربنا عليك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "04520603b8c11970",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "3bbd439afa7df091c41d097d6ab08c4d4b0ab4e1ea97cd8c315597fb24ce78ed"
+    },
+    "end-recap": {
+      "file": "end-recap.flac",
+      "text": "العطا مش مقياس حب… واللي في إيديهم مش أحسن… ونافس في الخير… واشكر على اللي معاك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "8c9af63ee28db334",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "a0d1c4bad3219420d287a4b4e0c84dc772a5da1aad13d828f77a1339ab9e9aaa"
+    },
+    "good-hadith": {
+      "file": "good-hadith.flac",
+      "text": "والنبي صلى الله عليه وسلم قال: لاَ حَسَدَ إِلاَّ فِي اثْنَتَيْنِ رَجُلٌ آتَاهُ اللَّهُ مَالاً فَسُلِّطَ عَلَى هَلَكَتِهِ فِي الْحَقِّ، وَرَجُلٌ آتَاهُ اللَّهُ الْحِكْمَةَ، فَهْوَ يَقْضِي بِهَا وَيُعَلِّمُهَا",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "6dce7dabd3601193",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "e0f1702e12961ac44227fa01bc32c60436f726a967175cd89fb4532c3aaaf8dd",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.62,
+          6.76,
+          8.36
+        ]
+      }
+    },
+    "good-hook": {
+      "file": "good-hook.flac",
+      "text": "شايف حد بيعمل خير… ونفسك تبقى زيه؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "128c035de9e4f877",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "1910333d3c6893ce253b2ddddee84115ac38fc8da8e005eba77c867b6712c075"
+    },
+    "good-idea": {
+      "file": "good-idea.flac",
+      "text": "إن كل مقارنة… غلط.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "cac9608d9b19c454",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "a1ec0cd3b97c4f789da607bcc3fd06ecdc7c7a6ef22d908dec27019ad9e94135"
+    },
+    "good-means": {
+      "file": "good-means.flac",
+      "text": "قارن نفسك بيهم في الخير… مش في اللي في إيديهم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "cc3af4130fdf6b85",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "7e5be44f78bfc1827699f7923796b9407f386f4b0fd0f09d81ced084fa9ff25e"
+    },
+    "good-outro": {
+      "file": "good-outro.flac",
+      "text": "وفي الآخر… وعد ربنا للشاكرين. دي الأخيرة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "06b5bd5942dfa41c",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "a96e55e7721c33b8e4fc3317b28d2cb47ffcfb3b292af96c52936b28de88752a"
+    },
+    "hook-1": {
+      "file": "hook-1.flac",
+      "text": "بتقلب في الموبايل… وكل الناس حياتهم حلوة؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "80594c803482e2b9",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "98176d2c7b6e705be1a35db6682d82bb37aad18f79ed8e15d0241d2a17098ca4"
+    },
+    "hook-2": {
+      "file": "hook-2.flac",
+      "text": "وبعدين تبص لحياتك… وتحس إنها ناقصة؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "ea6551d2b0283747",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "e8cb31489212a7d7e5c0ac346621e20d1577e41eab82ce0a9acc8326a4b6769b"
+    },
+    "hook-3": {
+      "file": "hook-3.flac",
+      "text": "المشكلة مش في حياتك… المشكلة في المقارنة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "d414dac6e3ac1c5c",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "2221e34665da8265ef00da1eb06b3c2bb04352c39d91e32d35d7cceab3af6ead"
+    },
+    "life-hadith": {
+      "file": "life-hadith.flac",
+      "text": "والنبي صلى الله عليه وسلم قال: انْظُرُوا إِلَى مَنْ هُوَ أَسْفَلَ مِنْكُمْ وَلاَ تَنْظُرُوا إِلَى مَنْ هُوَ فَوْقَكُمْ فَإِنَّهُ أَجْدَرُ أَنْ لاَ تَزْدَرُوا نِعْمَةَ اللَّهِ عَلَيْكُمْ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "63aca10185c86861",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "deb0d700978d3ecfce32d8074af277f05b4e1fc898a1ca3d73e680be2fd3c60e",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.72
+        ]
+      }
+    },
+    "life-hook": {
+      "file": "life-hook.flac",
+      "text": "ليه حياتهم أحلى من حياتي؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a67df3b5e3164f15",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "321ca913edd429478c2709c5a2db6e51accefa696b6759e4bc172990533d1227"
+    },
+    "life-idea": {
+      "file": "life-idea.flac",
+      "text": "إن اللي في إيديهم… أحسن من اللي في إيدك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c376c2f651ec5042",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "b73a69d45e80ce1a638ab56e4ef16f3f0466ba988a85624113b49fce4c430dae"
+    },
+    "life-outro": {
+      "file": "life-outro.flac",
+      "text": "طب يبقى أبطل أبص لحد خالص؟ تابعنا عشان تعرف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "b7763d3963278ef7",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "a8d59e7e3b4020ddbce99168af793f5924e5f319fbf41bf4d8589f16b907fc52",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          2.04
+        ]
+      }
+    },
+    "life-takeaway": {
+      "file": "life-takeaway.flac",
+      "text": "طول ما عينك على غيرك… مش هتشوف نعمة ربنا عليك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c29f57c0326ee3a4",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "2e9254cbefde7e6b0738800840a9fc40e19e6059008386e419c7a7fd32be8b6f"
+    },
+    "outro": {
+      "file": "outro.flac",
+      "text": "بس فيه تلات أفكار غلط عن المقارنة… يمكن تكون مصدق واحدة منهم. تابعنا عشان تعرف أولها.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "14597ff70b7e013c",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "b9bc44eaa22bf4442c9cb3e700deb100853c575bec890177d6cde53f835edf86",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          2.8,
+          4.58
+        ]
+      }
+    },
+    "rich-hadith": {
+      "file": "rich-hadith.flac",
+      "text": "والنبي صلى الله عليه وسلم قال: إِنَّ اللَّهَ لاَ يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ وَلَكِنْ يَنْظُرُ إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "333f4449b584042e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "cab584972dacd4d505a1f943ccc56956e5696770cec3e4c7202b01f168094bb0",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.56
+        ]
+      }
+    },
+    "rich-hook": {
+      "file": "rich-hook.flac",
+      "text": "لو ربنا بيحبني… كان إداني زيهم؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "e100f11443184dd8",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "10d3fb4e4795ff4690c5e66c1f08b14960be9139e96b816c6806c3455ab7e6cd"
+    },
+    "rich-idea": {
+      "file": "rich-idea.flac",
+      "text": "إن اللي عنده أكتر… ربنا بيحبه أكتر.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "db875b04b07b59d7",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "0d27326970e058812ca04e3159a087eb9f4f2d850b6d7f562148e1dd86acbb40"
+    },
+    "rich-outro": {
+      "file": "rich-outro.flac",
+      "text": "طب ولو حياتهم فعلاً أحسن من حياتي؟ تابعنا عشان تعرف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c4bd2c0b8c409a89",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "1b4f525ae0eca30708103621ed6de562d8d30de1a7fc104be5d59ae9b1671fd0",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          2.34
+        ]
+      }
+    },
+    "rich-takeaway": {
+      "file": "rich-takeaway.flac",
+      "text": "العطا مش دليل حب… والمنع مش دليل إهانة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "570daf038b028008",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "305b878b73f25859d1334054dbbdc7a28b62cf21487d40c3fe237e4030aa898f"
+    },
+    "rich-wrong": {
+      "file": "rich-wrong.flac",
+      "text": "أول فكرة غلط عن المقارنة…",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "7c5dbc876cfdc299",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "d0089a6ca7941c2db4095026f2731c27dd83245eb3799f4c2272ee0b8cc0fc30"
+    },
+    "why": {
+      "file": "why.flac",
+      "text": "غنى النفس؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "7d59137a927a1386",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-07",
+      "sha256": "0b75c4a486139ce899bd9c0db66d8e4dba067c1e99738734a5b9adbd012b3562"
+    }
+  }
+}
