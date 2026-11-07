@@ -19,6 +19,16 @@ publish:
     ar: "«يا رب»… قلتها كام مرة النهارده؟ الدعاء مش مجرد عادة… الدعاء عبادة. بس فيه تلات أفكار غلط بتبعدنا عنه: إن الدعاء عكس الرضا، وإنه مش بيغير حاجة عشان كله مكتوب، وإن ربنا مردش. والرد على كل فكرة من القرآن والسنة."
   hashtags: ["#Dua", "#الدعاء", "#Islam"]
   validated_by: mssnoussi92
+# Miniature YouTube de l'épisode entier (16:9) : video/src/Thumbnail.tsx, 1280x720. Proposée le
+# 2026-11-07 : textes courts tirés du titre validé (« تلات أفكار غلط عن الدعاء », chiffre ٣ pour la
+# lisibilité), Amir inquiet de l'accroche. À valider par le propriétaire sur l'image (validated_by) :
+# rendue avec l'épisode (render, reel = all), signalée « proposée » dans les notes tant qu'elle ne l'est pas.
+thumbnail:
+  layout: close-up
+  headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas" }
+  kicker: { ar: "عن الدعاء", en: "about du'a" }
+  character: { id: amir, pose: standing, mood: worried }
+  background: waiting-room
 reels:
   - id: dua-01
     title: { ar: "يا رب", en: "Ya Rabb" }

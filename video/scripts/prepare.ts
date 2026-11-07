@@ -13,7 +13,9 @@ import { join, relative, resolve } from "node:path";
 import { createRequire } from "node:module";
 import { parse } from "yaml";
 import { BODY_BOX, MOOD_FACES, SEAT } from "../src/characters/peeps.ts";
-import type { Character, Duration, EpisodeData, Media, PublishTexts, ResolvedScene, ResolvedSource } from "../src/types.ts";
+import type {
+  Character, Duration, EpisodeData, Media, PublishTexts, ResolvedScene, ResolvedSource, ThumbnailData,
+} from "../src/types.ts";
 
 // react-peeps exports one table per kind of piece (Hair, Face, StandingPose...): names are checked there.
 const peeps = createRequire(import.meta.url)("react-peeps") as Record<string, Record<string, unknown>>;
@@ -91,6 +93,14 @@ type EpisodeFile = {
   title: { ar: string; en: string };
   narration_language: string;
   publish?: PublishTexts;
+  thumbnail?: {
+    layout: ThumbnailData["layout"];
+    headline: { ar: string; en: string };
+    kicker?: { ar: string; en: string };
+    character?: { id: string; pose: string; mood: string };
+    background: string;
+    validated_by?: string;
+  };
   reels: { id: string; title: { ar: string; en: string }; validated_by?: string; publish?: PublishTexts }[];
   scenes: {
     id: string;
@@ -356,11 +366,29 @@ function main() {
         duration,
       };
     });
+    // YouTube thumbnail: same closed catalogs as the scenes.
+    let thumbnail: ThumbnailData | null = null;
+    if (ep.thumbnail) {
+      const t = ep.thumbnail;
+      const where = `${relative(ROOT, file)} [thumbnail]`;
+      if (!backgrounds.includes(t.background)) {
+        throw new Error(`${where}: background '${t.background}' is not in content/backgrounds.yaml`);
+      }
+      thumbnail = {
+        layout: t.layout,
+        headline: t.headline,
+        kicker: t.kicker ?? null,
+        character: t.character ? resolveCharacter(t.character, catalog, where) : null,
+        background: t.background,
+        validated_by: t.validated_by ?? null,
+      };
+    }
     const data: EpisodeData = {
       episode: ep.episode,
       title: ep.title,
       narration_language: ep.narration_language,
       publish: ep.publish ?? null,
+      thumbnail,
       reels: ep.reels,
       scenes,
       generated_from: [file, ...sourceFiles].map((f) => relative(ROOT, f)),

@@ -225,6 +225,32 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
             if ch["mood"] not in spec["moods"]:
                 report.error(where, f"mood '{ch['mood']}' not in catalog for '{ch['id']}'")
 
+    check_thumbnail(ep, rel(path), catalog, backgrounds, report)
+
+
+def check_thumbnail(ep: dict, where: str, catalog: dict, backgrounds: dict, report: Report) -> None:
+    """YouTube thumbnail of the whole episode: same closed catalogs as the scenes (a fictional
+    character only, never a real person), validated by the owner on the rendered image."""
+    thumb = ep.get("thumbnail")
+    if thumb is None:
+        report.warn(where, "no thumbnail for the whole episode (thumbnail: layout, headline, background)")
+        return
+    where = f"{where} [thumbnail]"
+    if thumb["background"] not in backgrounds:
+        report.error(where, f"background '{thumb['background']}' is not in content/backgrounds.yaml")
+    ch = thumb.get("character")
+    if ch:
+        spec = catalog.get(ch["id"])
+        if spec is None:
+            report.error(where, f"character '{ch['id']}' is not in content/characters.yaml")
+        else:
+            if ch["pose"] not in spec["poses"]:
+                report.error(where, f"pose '{ch['pose']}' not in catalog for '{ch['id']}'")
+            if ch["mood"] not in spec["moods"]:
+                report.error(where, f"mood '{ch['mood']}' not in catalog for '{ch['id']}'")
+    if thumb["layout"] in ("close-up", "scene") and not ch:
+        report.error(where, f"layout '{thumb['layout']}' needs a character")
+
 
 ARABIC_MARKS = re.compile("[\u064b-\u0652\u0670\u0640]")
 

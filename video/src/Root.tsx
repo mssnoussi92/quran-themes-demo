@@ -3,6 +3,8 @@ import { CharacterSheet, sheetMetadata } from "./CharacterSheet";
 import { calculateMetadata } from "./data";
 import type { VideoProps } from "./data";
 import { FORMATS, FPS } from "./formats";
+import { Thumbnail, THUMBNAIL_SIZE, thumbnailMetadata } from "./Thumbnail";
+import type { ThumbnailProps } from "./Thumbnail";
 import { EpisodeVideo } from "./Video";
 
 // One composition per format, both fed by the same episode script.
@@ -30,5 +32,13 @@ export const RemotionRoot: React.FC = () => (
       calculateMetadata={calculateMetadata}
     />
     <Still id="CharacterSheet" component={CharacterSheet} width={1920} height={1080} defaultProps={{ data: null }} calculateMetadata={sheetMetadata} />
+    <Still
+      id="Thumbnail169"
+      component={Thumbnail}
+      width={THUMBNAIL_SIZE.width}
+      height={THUMBNAIL_SIZE.height}
+      defaultProps={{ episode: "dua", layout: null, data: null } satisfies ThumbnailProps}
+      calculateMetadata={thumbnailMetadata}
+    />
   </>
 );
