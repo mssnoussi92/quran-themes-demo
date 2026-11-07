@@ -1,7 +1,8 @@
 # Épisode Repentir (التوبة) : 5 reels (9:16) pour Facebook, Instagram et TikTok ; l'épisode entier (16:9 et
 # 9:16) pour YouTube. Même structure que le du'a et la patience (docs/design.md) : l'accroche et la
-# promesse, une idée reçue par reel, la conclusion. Proposé le 2026-11-07 (skill new-theme), à valider par
-# le propriétaire : sources, script et traduction, textes de publication, miniature. Toute modification
+# promesse, une idée reçue par reel, la conclusion. Proposé le 2026-11-07 (skill new-theme), validé par le
+# propriétaire le même jour (sources sauf 25:70, lectures, script, prises, textes, miniature) ; les fins de
+# tawba-01 à 03 changées en « تابعنا عشان تعرف » à sa demande : nouvelles prises à écouter. Toute modification
 # d'une ligne d'un reel retire son validated_by.
 # Les répliques identiques à une prise figée d'un autre épisode (« قال ربنا سبحانه وتعالى: », « تاني فكرة
 # غلط… », « تالت فكرة غلط… ») reprennent cette prise (take_from, tools/audio/build.py).
@@ -9,22 +10,24 @@
 episode: tawba
 title: { ar: "التوبة", en: "Repentance" }
 narration_language: ar-egy   # VoiceTut (égyptien), comme le du'a et la patience
-# Textes de publication : proposés le 2026-11-07, faits des répliques du script ; à valider par le
-# propriétaire (validated_by), exigés par un rendu final. Le reste : video/scripts/publish.ts.
+# Textes de publication : proposés le 2026-11-07, faits des répliques du script ; validés par le
+# propriétaire le même jour (validated_by), exigés par un rendu final. Le reste : video/scripts/publish.ts.
 publish:
   title: { en: "Repentance: 3 wrong ideas you might believe", ar: "تلات أفكار غلط عن التوبة… يمكن تكون مصدق واحدة منهم" }
   description:
     en: "You sinned… and felt far from God? The door is still open. Three wrong ideas keep us from it: that some sin is bigger than God's mercy, that repentance is a one-time thing, and that it can wait until later. Each one, answered from the Qur'an and the Sunnah."
     ar: "عملت ذنب… وحسيت إنك بعيد عن ربنا؟ الباب لسه مفتوح. وفيه تلات أفكار غلط بتبعدنا عنه: إن فيه ذنب أكبر من رحمة ربنا، وإن التوبة مرة واحدة، وإنها تستنى لبعدين. والرد على كل فكرة من القرآن والسنة."
   hashtags: ["#Tawba", "#التوبة", "#Islam"]
-# Miniature YouTube (Thumbnail169), proposée le 2026-11-07 comme celles du du'a et de la patience : à
-# valider sur l'image.
+  validated_by: mssnoussi92
+# Miniature YouTube (Thumbnail169), proposée le 2026-11-07 comme celles du du'a et de la patience, validée
+# sur l'image (fond uni : la rue rendait le titre difficile à lire).
 thumbnail:
   layout: close-up
   headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas" }
   kicker: { ar: "عن التوبة", en: "about repentance" }
   character: { id: amir, pose: standing, mood: worried }
   background: plain
+  validated_by: mssnoussi92
 reels:
   - id: tawba-01
     title: { ar: "الباب مفتوح", en: "The door is open" }
@@ -33,6 +36,7 @@ reels:
       description:
         en: "And every time you remember it… you're too ashamed to turn back? But the door… is still open. And God rejoices… at your own repentance."
         ar: "وكل ما تفتكره… تتكسف ترجعله؟ بس الباب… لسه مفتوح. وربنا بيفرح… بتوبتك إنت."
+      validated_by: mssnoussi92
   - id: tawba-02
     title: { ar: "رحمة أكبر من الذنب", en: "Mercy bigger than sin" }
     publish:
@@ -40,6 +44,7 @@ reels:
       description:
         en: "The first wrong idea about repentance: that some sin is bigger than God's mercy. All sins… if you come back to Him. Despair… is the real mistake."
         ar: "أول فكرة غلط عن التوبة: إن فيه ذنب أكبر من رحمة ربنا. الذنوب جميعاً… لو رجعتله. اليأس… هو الغلط الحقيقي."
+      validated_by: mssnoussi92
   - id: tawba-03
     title: { ar: "وقعت تاني", en: "I fell again" }
     publish:
@@ -47,20 +52,25 @@ reels:
       description:
         en: "The second wrong idea: that repentance is a one-time thing… and if you fall, it's over. We all sin… and the best of us are those who repent. Every time you come back… you'll find Him Forgiving, Merciful."
         ar: "تاني فكرة غلط: إن التوبة مرة واحدة… ولو وقعت، خلاص. كلنا بنغلط… وأحسننا اللي بيتوب. كل ما ترجع… هتلاقيه غفور رحيم."
+      validated_by: mssnoussi92
   - id: tawba-04
     title: { ar: "هتوب بعدين", en: "I'll repent later" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "“I'll repent… but later”?", ar: "«هتوب… بس بعدين»؟" }
       description:
         en: "The third wrong idea: that repentance is something to leave for the end of life. “Soon”… means don't put it off. Repentance isn't for the end of life… it's every day."
         ar: "تالت فكرة غلط: إن التوبة حاجة نأجلها لآخر العمر. «من قريب»… يعني متأجلش. التوبة مش لآخر العمر… التوبة كل يوم."
+      validated_by: mssnoussi92
   - id: tawba-05
     title: { ar: "السيئات حسنات", en: "Bad deeds into good" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "Afraid your past will always follow you?", ar: "خايف ماضيك يفضل وراك؟" }
       description:
         en: "He doesn't just forgive them… He turns them into good deeds. No sin is bigger than His mercy… repentance isn't a one-time thing… nor for later… and it turns bad deeds into good. So come back… the door is still open."
         ar: "مش بس بيغفرها… بيبدلها حسنات. مفيش ذنب أكبر من رحمته… التوبة مش مرة واحدة… ومش لبعدين… وبتبدل السيئات حسنات. فارجع… الباب لسه مفتوح."
+      validated_by: mssnoussi92
 scenes:
   # ---- tawba-01 : accroche et promesse --------------------------------------------------------
   # Miroir : la distance après une faute, à la deuxième personne.
@@ -152,9 +162,10 @@ scenes:
     reel: tawba-01
     audio: tts
     narration:
-      ar: "بس فيه تلات أفكار غلط عن التوبة… يمكن تكون مصدق واحدة منهم. أولها في الجاي."
-      en: "But there are three wrong ideas about repentance… you might believe one of them. The first one is next."
-    reel_only_end: { ar: "أولها في الجاي.", en: "The first one is next." }
+      ar: "بس فيه تلات أفكار غلط عن التوبة… يمكن تكون مصدق واحدة منهم. تابعنا عشان تعرف أولها."
+      en: "But there are three wrong ideas about repentance… you might believe one of them. Follow us to find out the first one."
+    # L'appel à suivre, dit seulement dans le reel, à la place de « أولها في الجاي » (accord du propriétaire, 2026-11-07).
+    reel_only_end: { ar: "تابعنا عشان تعرف أولها.", en: "Follow us to find out the first one." }
     visual:
       template: title-card
 
@@ -246,12 +257,12 @@ scenes:
     reel: tawba-02
     audio: tts
     narration:
-      ar: "طب ولو تبت… ورجعت للذنب تاني؟ ده اللي جاي."
-      en: "And what if you repent… and go back to the sin? That's next."
+      ar: "طب ولو تبت… ورجعت للذنب تاني؟ تابعنا عشان تعرف."
+      en: "And what if you repent… and go back to the sin? Follow us to find out."
     # « تبت » = « tobt », pas « tibt » (le propriétaire, 2026-11-07) : la voix lit « توبت » (les voyelles
     # seules ne suffisent pas : F2 1690-1950 Hz, « i » ; « توبت » 824-1166 Hz, « o » ; skill voice-spelling).
-    say_ar: "طب ولو توبت… ورجعت للذنب تاني؟ ده اللي جاي."
-    reel_only_end: { ar: "ده اللي جاي.", en: "That's next." }
+    say_ar: "طب ولو توبت… ورجعت للذنب تاني؟ تابعنا عشان تعرف."
+    reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
     visual:
       template: title-card
 
@@ -346,9 +357,9 @@ scenes:
     reel: tawba-03
     audio: tts
     narration:
-      ar: "طب ما أتوب بعدين… لسه بدري؟ ده اللي جاي."
-      en: "Why not repent later… isn't it still early? That's next."
-    reel_only_end: { ar: "ده اللي جاي.", en: "That's next." }
+      ar: "طب ما أتوب بعدين… لسه بدري؟ تابعنا عشان تعرف."
+      en: "Why not repent later… isn't it still early? Follow us to find out."
+    reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
     visual:
       template: title-card
 

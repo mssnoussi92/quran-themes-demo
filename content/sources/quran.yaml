@@ -175,7 +175,8 @@
     surah_ar: الشورى
     surah_en: Ash-Shuraa
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Ash-Shura 42:25, Il accepte le repentir de Ses serviteurs (reel tawba-01, la promesse)
 - id: quran.39.53
   type: ayah
@@ -192,7 +193,8 @@
     surah_ar: الزمر
     surah_en: Az-Zumar
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Az-Zumar 39:53, ne désespérez pas de la miséricorde de Dieu, Il pardonne tous les péchés (reel tawba-02)
 - id: quran.4.17
   type: ayah
@@ -209,7 +211,8 @@
     surah_ar: النساء
     surah_en: An-Nisa
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: An-Nisa 4:17, le repentir de ceux qui se repentent sans tarder (reel tawba-04, « plus tard »)
 - id: quran.25.70
   type: ayah
@@ -243,5 +246,6 @@
     surah_ar: النساء
     surah_en: An-Nisa
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: An-Nisa 4:110, qui fait le mal puis demande pardon trouve Dieu Pardonneur et Miséricordieux (reel tawba-03, la rechute ; à la place de 3:135, qui commence au milieu d'une phrase)

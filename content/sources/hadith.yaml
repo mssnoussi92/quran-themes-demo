@@ -362,7 +362,8 @@
     book: 80
     hadith_in_book: 6
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: La joie de Dieu au repentir de Son serviteur, plus grande que celle de l'homme qui retrouve sa monture perdue (reel tawba-01)
   recording:
     reader: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane
@@ -372,7 +373,8 @@
     end: 28.89
     heard: الله أفرح بتوبة عبده من أحدكم سقط على بعيره وقد أضله في أرض فلا
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.tirmidhi.3540
   type: hadith
   ref: {collection: tirmidhi, number: 3540}
@@ -395,7 +397,8 @@
     - {name: Bashar Awad Maarouf, grade: Hasan}
     - {name: Zubair Ali Zai, grade: Isnaad Hasan}
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Hadith qudsi, « ô fils d'Adam… même si tes péchés atteignaient les nuages du ciel » (reel tawba-02)
   recording:
     reader: Yusuf ibn Nuh Ahmad
@@ -405,7 +408,8 @@
     end: 282.7
     heard: قال الله تبارك وتعالى يا ابن آدم إنك ما دعوتني ورجوتني غفرت لك على ما كان فيك ولا أبالي يا ابن آدم لو بلغت ذنوبك عنان السماء ثم استغفرتني غفرت لك ولا أبالي يا ابن آدم إنك لو أتيتني بقراب الأرض خطايا ثم لقيتني لا تشرك بشيء لا أتيتك بقرابها مغفرة
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.tirmidhi.2499
   type: hadith
   ref: {collection: tirmidhi, number: 2499}
@@ -427,7 +431,8 @@
     - {name: Al-Albani, grade: Hasan}
     - {name: Zubair Ali Zai, grade: Daif}
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: « Tout fils d'Adam commet des fautes, et les meilleurs fautifs sont ceux qui se repentent » (reel tawba-03)
   recording:
     reader: Yusuf ibn Nuh Ahmad
@@ -437,7 +442,8 @@
     end: 3010.2
     heard: كل ابن آدم خطاء وخير الخطائين التوابون
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.bukhari.6307
   type: hadith
   ref: {collection: bukhari, number: 6307}
@@ -455,7 +461,8 @@
     book: 80
     hadith_in_book: 4
     retrieved: '2026-11-07'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Le Prophète ﷺ demandait pardon et se repentait plus de soixante-dix fois par jour (reel tawba-04)
   recording:
     reader: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane
@@ -465,4 +472,5 @@
     end: 21.34
     heard: والله إني لأستغفر الله وأتوب إليه في اليوم أكثر من سبعين مرة
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
