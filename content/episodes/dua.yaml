@@ -478,6 +478,9 @@ scenes:
     narration:
       ar: "ربنا قريب… وبيجيب."
       en: "God is near… and He answers."
+    # « قريب » avec un vrai ق, pas « أريب » à l'égyptienne (demande du propriétaire, 2026-11-07) :
+    # vocalisé pour la voix, qui le lit alors comme en arabe classique.
+    say_ar: "ربنا قَرِيب… وبيجيب."
     visual:
       template: title-card
   # Rappel des quatre reels, un morceau par reel.
