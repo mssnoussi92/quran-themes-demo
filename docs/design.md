@@ -84,3 +84,18 @@ Proposé le 7 novembre 2026 (skill `new-theme`), à valider : sources, script, t
 | 6 | Conclusion | « Ta patience n'a pas de fin ? » La récompense des patients sans compter ; rappel des quatre reels ; « quand on te dit « اصبر », souviens-toi que Dieu est avec les patients ». | Az-Zumar 39:10 | 5 |
 
 Les répliques déjà figées dans le du'a (« قال ربنا سبحانه وتعالى: », « تاني فكرة غلط… », « تالت فكرة غلط… ») reprennent la prise validée (`tools/audio/build.py`, prises d'un autre épisode).
+
+## Épisode Repentir (plan)
+
+Proposé le 7 novembre 2026 (skill `new-theme`), à valider : sources, script, traduction, textes de publication, miniature. Même structure que le du'a et la patience. Script : `content/episodes/tawba.yaml`.
+
+| # | Rôle | Contenu | Source | Reel |
+| --- | --- | --- | --- | --- |
+| 1 | Accroche | « Tu as péché… et tu t'es senti loin de Dieu ? » ; la honte qui empêche de revenir ; « mais la porte… est toujours ouverte ». | — | 1 |
+| 2 | Promesse | C'est Lui qui accepte le repentir de Ses serviteurs ; Dieu se réjouit du repentir de Son serviteur plus que l'homme qui retrouve sa monture perdue. Fin : « 3 idées reçues, la 1re au prochain reel ». | Ash-Shura 42:25 ; Bukhari 6309 | 1 |
+| 3 | Idée reçue 1 | « Mes péchés sont trop nombreux, Dieu ne me pardonnera pas. » Ne désespérez pas de la miséricorde de Dieu, Il pardonne tous les péchés ; « même si tes péchés atteignaient les nuages du ciel ». Le désespoir est la vraie faute. | Az-Zumar 39:53 ; Tirmidhi 3540 (al-Albani : Sahih) | 2 |
+| 4 | Idée reçue 2 | « J'ai rechuté, mon repentir ne vaut rien. » Tout fils d'Adam commet des fautes, les meilleurs sont ceux qui se repentent ; qui fait le mal puis demande pardon trouve Dieu Pardonneur, Miséricordieux. | Tirmidhi 2499 (al-Albani : Hasan) ; An-Nisa 4:110 | 3 |
+| 5 | Idée reçue 3 | « Je me repentirai plus tard. » Le repentir accepté est celui de ceux qui se repentent « sans tarder » ; le Prophète ﷺ se repentait plus de soixante-dix fois par jour : le repentir, c'est chaque jour. | An-Nisa 4:17 ; Bukhari 6307 | 4 |
+| 6 | Conclusion | « Peur que ton passé te suive toujours ? » Dieu change leurs mauvaises actions en bonnes ; rappel des quatre reels ; « reviens… la porte est toujours ouverte ». | Al-Furqan 25:70 | 5 |
+
+An-Nisa 4:110 remplace Al Imran 3:135, qui commence au milieu d'une phrase (« والذين… », suite de 3:134). Muslim 2759 (« Dieu étend Sa main la nuit… ») est écarté : hadith-api ne lui donne pas de numéro.
