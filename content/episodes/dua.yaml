@@ -5,7 +5,8 @@
 # وتعالى »), puis validé de nouveau, sous-titre compris (validated_by). Toute modification d'une
 # ligne d'un reel retire son validated_by.
 # dua-02 à dua-05 : proposés le 2026-11-06 (une idée reçue par reel, puis la conclusion), validés par le
-# propriétaire le 2026-11-07, script, traduction et voix (prises figées).
+# propriétaire le 2026-11-07, script, traduction et voix (prises figées). Fins de dua-01 à 03 changées en
+# « تابعنا عشان تعرف » à sa demande le même jour (comme le repentir) : nouvelles prises à écouter, reels à valider.
 episode: dua
 title: { ar: "الدعاء", en: "Du'a" }
 narration_language: ar-egy   # VoiceTut (égyptien), choix du propriétaire le 2026-11-06
@@ -33,7 +34,6 @@ thumbnail:
 reels:
   - id: dua-01
     title: { ar: "يا رب", en: "Ya Rabb" }
-    validated_by: mssnoussi92
     publish:
       title: { en: "“Ya Rabb”… how many times have you said it today?", ar: "«يا رب»… قلتها كام مرة النهارده؟" }
       description:
@@ -42,7 +42,6 @@ reels:
       validated_by: mssnoussi92
   - id: dua-02
     title: { ar: "الدعاء والرضا", en: "Du'a and contentment" }
-    validated_by: mssnoussi92
     publish:
       title: { en: "Ever said: “I'm content… I won't ask”?", ar: "عمرك قلت: «أنا راضي… مش هدعي»؟" }
       description:
@@ -51,7 +50,6 @@ reels:
       validated_by: mssnoussi92
   - id: dua-03
     title: { ar: "الدعاء والقدر", en: "Du'a and destiny" }
-    validated_by: mssnoussi92
     publish:
       title: { en: "“It's all written anyway… why make du'a?”", ar: "«ما هو كله مكتوب… أدعي ليه؟»" }
       description:
@@ -183,10 +181,11 @@ scenes:
     reel: dua-01
     audio: tts
     narration:
-      ar: "بس فيه تلات أفكار غلط عن الدعاء… يمكن تكون مصدق واحدة منهم. أولها في الجاي."
-      en: "But there are three wrong ideas about du'a… you might believe one of them. The first one is next."
-    # Dans les versions complètes, la suite vient tout de suite : sans « أولها في الجاي » (2026-11-07).
-    reel_only_end: { ar: "أولها في الجاي.", en: "The first one is next." }
+      ar: "بس فيه تلات أفكار غلط عن الدعاء… يمكن تكون مصدق واحدة منهم. تابعنا عشان تعرف أولها."
+      en: "But there are three wrong ideas about du'a… you might believe one of them. Follow us to find out the first one."
+    # L'appel à suivre, dit seulement dans le reel, à la place de « أولها في الجاي » (demande du propriétaire, 2026-11-07,
+    # comme le repentir) ; les versions complètes coupent avant.
+    reel_only_end: { ar: "تابعنا عشان تعرف أولها.", en: "Follow us to find out the first one." }
     visual:
       template: title-card
 
@@ -290,9 +289,11 @@ scenes:
     reel: dua-02
     audio: tts
     narration:
-      ar: "طب ما كل حاجة مكتوبة… الدعاء هيغير إيه؟ ده اللي جاي."
-      en: "But everything is already written… so what can du'a change? That's next."
-    reel_only_end: { ar: "ده اللي جاي.", en: "That's next." }
+      ar: "طب ما كل حاجة مكتوبة… الدعاء هيغير إيه؟ تابعنا عشان تعرف."
+      en: "But everything is already written… so what can du'a change? Follow us to find out."
+    # L'appel à suivre, dit seulement dans le reel, à la place de « ده اللي جاي » (demande du propriétaire, 2026-11-07,
+    # comme le repentir) ; les versions complètes coupent avant.
+    reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
     visual:
       template: title-card
 
@@ -381,9 +382,11 @@ scenes:
     reel: dua-03
     audio: tts
     narration:
-      ar: "طب ولو دعيت كتير… ومحصلش حاجة؟ ده اللي جاي."
-      en: "And what if you prayed a lot… and nothing happened? That's next."
-    reel_only_end: { ar: "ده اللي جاي.", en: "That's next." }
+      ar: "طب ولو دعيت كتير… ومحصلش حاجة؟ تابعنا عشان تعرف."
+      en: "And what if you prayed a lot… and nothing happened? Follow us to find out."
+    # L'appel à suivre, dit seulement dans le reel, à la place de « ده اللي جاي » (demande du propriétaire, 2026-11-07,
+    # comme le repentir) ; les versions complètes coupent avant.
+    reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
     visual:
       template: title-card
 

@@ -66,7 +66,8 @@ translation, the final video. Never mark any of them done yourself.
 4. **Script.** Follow the `write-hook` skill for the episode opening and for each reel: mirror,
    contrast, anchor, and an honest open loop to the next reel. Narration in Egyptian Arabic
    (VoiceTut), English subtitles in `narration.en`.
-   - The open loop that only makes sense in a reel (« ده اللي جاي », « أولها في الجاي ») is marked
+   - The open loop that only makes sense in a reel, the follow call « تابعنا عشان تعرف (أولها). »
+     (« Follow us to find out (the first one). », owner's choice, 2026-11-07), is marked
      `reel_only_end: {ar, en}`: the whole-episode videos cut the line before it (owner's request).
    - Title-card lines are punctuated where each piece should appear (« ، … . ؟ : »).
    - Mark your own explanatory lines (not a quote, not a paraphrase of one) when you present the
