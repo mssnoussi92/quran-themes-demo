@@ -4,7 +4,8 @@
 # validé par le propriétaire, modifié à sa demande le même jour (promise-intro : « قال ربنا سبحانه
 # وتعالى »), puis validé de nouveau, sous-titre compris (validated_by). Toute modification d'une
 # ligne d'un reel retire son validated_by.
-# dua-02 à dua-05 : proposés le 2026-11-06 (une idée reçue par reel, puis la conclusion), à valider.
+# dua-02 à dua-05 : proposés le 2026-11-06 (une idée reçue par reel, puis la conclusion), validés par le
+# propriétaire le 2026-11-07, script, traduction et voix (prises figées).
 episode: dua
 title: { ar: "الدعاء", en: "Du'a" }
 narration_language: ar-egy   # VoiceTut (égyptien), choix du propriétaire le 2026-11-06
@@ -14,12 +15,16 @@ reels:
     validated_by: mssnoussi92
   - id: dua-02
     title: { ar: "الدعاء والرضا", en: "Du'a and contentment" }
+    validated_by: mssnoussi92
   - id: dua-03
     title: { ar: "الدعاء والقدر", en: "Du'a and destiny" }
+    validated_by: mssnoussi92
   - id: dua-04
     title: { ar: "دعيت ومحصلش حاجة", en: "“I prayed and nothing happened”" }
+    validated_by: mssnoussi92
   - id: dua-05
     title: { ar: "ربنا قريب", en: "God is near" }
+    validated_by: mssnoussi92
 scenes:
   # Miroir : une question à la deuxième personne, l'émotion dès la première image.
   - id: hook-1
