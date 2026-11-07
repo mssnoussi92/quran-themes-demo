@@ -244,6 +244,15 @@
     retrieved: '2026-11-07'
   status: proposed
   notes: « Étonnante est l'affaire du croyant… », patient dans l'épreuve, c'est un bien pour lui (reel sabr-01)
+  recording:
+    reader: Ryadussalihin.org
+    item: https://archive.org/details/ar_Moslem_Reading_16
+    file: https://archive.org/download/ar_Moslem_Reading_16/ar_Moslem_Reading_54.mp3
+    start: 3356.96
+    end: 3375.2
+    heard: عجبا لأمر المؤمن إن أمره كله خير وليس ذاك لأحد إلا للمؤمن إن أصابته سراء شكر فكان خيرا له وإن أصابته ضراء صبر فكان خيرا له
+    license: none stated on the archive.org item
+    status: proposed
 - id: hadith.bukhari.1303
   type: hadith
   ref: {collection: bukhari, number: 1303}
@@ -263,6 +272,15 @@
     retrieved: '2026-11-07'
   status: proposed
   notes: Les larmes du Prophète ﷺ à la mort de son fils Ibrahim, « l'œil pleure, le cœur s'attriste… » (reel sabr-02)
+  recording:
+    reader: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane
+    item: https://archive.org/details/bukhari_audiobook
+    file: https://archive.org/download/bukhari_audiobook/1303.mp3
+    start: 42.2
+    end: 59.55
+    heard: يا ابن عوف إنها رحمة ثم أتبعها بأخرى فقال صلى الله عليه وسلم إن العين تدمع والقلب يحزن ولا نقول إلا ما يرضي ربنا وإنا بفراقك يا إبراهيم لمحزنون
+    license: none stated on the archive.org item
+    status: proposed
 - id: hadith.muslim.2664
   type: hadith
   ref: {collection: muslim, number: 2664}
@@ -282,6 +300,15 @@
     retrieved: '2026-11-07'
   status: proposed
   notes: « Le croyant fort… recherche ce qui te profite, demande l'aide de Dieu et ne renonce pas » (reel sabr-03)
+  recording:
+    reader: Ryadussalihin.org
+    item: https://archive.org/details/ar_Moslem_Reading_16
+    file: https://archive.org/download/ar_Moslem_Reading_16/ar_Moslem_Reading_47.mp3
+    start: 2447.68
+    end: 2476.1
+    heard: المؤمن القوي خير وأحب إلى الله من المؤمن الضعيف وفي كل خير احرص على ما ينفعك واستعن بالله ولا تعجز وإن أصابك شيء فلا تقل لو أني فعلت كان كذا وكذا ولكن قل قدر الله وما شاء فعل فإن لو تفتح عمل الشيطان
+    license: none stated on the archive.org item
+    status: proposed
 - id: hadith.bukhari.1469
   type: hadith
   ref: {collection: bukhari, number: 1469}
@@ -301,3 +328,12 @@
     retrieved: '2026-11-07'
   status: proposed
   notes: « Celui qui s'efforce à la patience, Dieu le rend patient » (reel sabr-04)
+  recording:
+    reader: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane
+    item: https://archive.org/details/bukhari_audiobook
+    file: https://archive.org/download/bukhari_audiobook/1469.mp3
+    start: 21.0
+    end: 38.4
+    heard: ما يكون عندي من خير فلن أدخره عنكم ومن يستعفف يعفه الله ومن يستغني يغنه الله ومن يتصبر يصبره الله وما أعطي أحد عطاء خيرا وأوسع من الصبر
+    license: none stated on the archive.org item
+    status: proposed
