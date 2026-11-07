@@ -332,6 +332,8 @@ scenes:
     narration:
       ar: "كل ما ترجع… هتلاقيه غفور رحيم."
       en: "Every time you come back… you'll find Him Forgiving, Merciful."
+    # « هتلاقيه » vocalisé : sans voyelles, VoiceTut avalait le ه final (Whisper : « هتلاقي »).
+    say_ar: "كل ما ترجع… هَتْلاقِيه غفور رحيم."
     visual:
       template: title-card
   - id: relapse-outro
