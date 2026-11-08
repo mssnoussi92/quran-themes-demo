@@ -13,6 +13,7 @@
 # « Ligne de l'IA », à vérifier en premier.
 episode: khidr
 title: { ar: "موسى والخضر", en: "Moses and al-Khidr" }
+format: story-suspense   # docs/formats.md (skill choose-format)
 narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
 # Textes de publication : proposés le 2026-11-08, faits des répliques du script ; validés par le propriétaire le
 # même jour (validated_by), avec les scripts, la traduction, l'ordre de l'épisode entier et la miniature. Le reste : video/scripts/publish.ts.
@@ -160,7 +161,7 @@ scenes:
       template: title-card
   # Récit d'après Bukhari 122 (« فسئل أي الناس أعلم فقال أنا أعلم »).
   - id: musa-1
-    role: evidence
+    role: event
     reel: khidr-01
     audio: tts
     mentions: ["موسى عليه السلام"]
@@ -170,7 +171,7 @@ scenes:
     visual:
       template: name-card
   - id: musa-2
-    role: evidence
+    role: event
     reel: khidr-01
     audio: tts
     narration:
@@ -180,7 +181,7 @@ scenes:
       template: title-card
   # Bukhari 122 : « فأوحى الله إليه أن عبدا من عبادي بمجمع البحرين هو أعلم منك » (au style indirect).
   - id: musa-3
-    role: evidence
+    role: event
     reel: khidr-01
     audio: tts
     mentions: ["موسى عليه السلام"]
@@ -192,7 +193,7 @@ scenes:
       template: scene
       background: confluence
   - id: musa-4
-    role: evidence
+    role: event
     reel: khidr-01
     audio: tts
     mentions: ["الخضر"]
@@ -205,7 +206,7 @@ scenes:
   # 18:66 raconté avec ses mots, puis récité avec 18:65 et 18:67-68 (règle du propriétaire, 2026-11-08 :
   # après chaque événement raconté, son verset).
   - id: ask
-    role: evidence
+    role: event
     reel: khidr-01
     audio: tts
     mentions: ["موسى عليه السلام"]
@@ -271,7 +272,7 @@ scenes:
         - { id: narrator, pose: open-hands, mood: calm, talking: true }
   # 18:69-70 racontés avec leurs mots, puis récités.
   - id: promise
-    role: evidence
+    role: event
     reel: khidr-01
     audio: tts
     mentions: ["موسى عليه السلام"]
@@ -282,7 +283,7 @@ scenes:
       template: scene
       background: confluence
   - id: condition
-    role: evidence
+    role: event
     reel: khidr-01
     audio: tts
     mentions: ["الخضر"]
@@ -331,7 +332,7 @@ scenes:
 
   # ---- khidr-02 : le bateau (18:71-73 racontés, d'après Bukhari 122 ; 18:79) --------------------------
   - id: ship-1
-    role: evidence
+    role: event
     reel: khidr-02
     audio: tts
     mentions: ["موسى عليه السلام", "الخضر"]
@@ -344,7 +345,7 @@ scenes:
       background: sea-boat
   # Bukhari 122, 3401 : « فجاء عصفور فوقع على حرف السفينة فنقر نقرة أو نقرتين في البحر ».
   - id: ship-bird
-    role: evidence
+    role: event
     reel: khidr-02
     audio: tts
     narration:
@@ -369,7 +370,7 @@ scenes:
       template: source-card
   # 18:71-73 racontés avec leurs mots, puis récités.
   - id: ship-2
-    role: evidence
+    role: event
     reel: khidr-02
     audio: tts
     mentions: ["الخضر"]
@@ -381,7 +382,7 @@ scenes:
       template: scene
       background: sea-boat
   - id: ship-3
-    role: evidence
+    role: event
     reel: khidr-02
     audio: tts
     mentions: ["موسى عليه السلام"]
@@ -392,7 +393,7 @@ scenes:
     visual:
       template: title-card
   - id: ship-4
-    role: evidence
+    role: event
     reel: khidr-02
     audio: tts
     mentions: ["الخضر"]
@@ -404,7 +405,7 @@ scenes:
       template: scene
       background: sea-boat
   - id: ship-5
-    role: evidence
+    role: event
     reel: khidr-02
     audio: tts
     mentions: ["موسى عليه السلام"]
@@ -477,7 +478,7 @@ scenes:
       highlight: words
   # Lignes de l'IA, tirées de 18:79.
   - id: ship-lesson-1
-    role: evidence
+    role: lesson
     reel: khidr-02
     audio: tts
     narration:
@@ -486,7 +487,7 @@ scenes:
     visual:
       template: title-card
   - id: ship-lesson-2
-    role: evidence
+    role: lesson
     reel: khidr-02
     audio: tts
     narration:
@@ -498,7 +499,7 @@ scenes:
       background: sea-boat
   # Exemple de vie (demande du propriétaire, 2026-11-08) : une sagesse qui se voit vite. Scène type.
   - id: ship-life-1
-    role: evidence
+    role: example
     reel: khidr-02
     audio: tts
     narration:
@@ -510,7 +511,7 @@ scenes:
       characters:
         - { id: salma, pose: standing, mood: worried, talking: false }
   - id: ship-life-2
-    role: evidence
+    role: example
     reel: khidr-02
     audio: tts
     narration:
@@ -535,7 +536,7 @@ scenes:
   # ---- khidr-03 : le garçon (18:74-76 racontés ; 18:80-81) ------------------------------------------
   # Sobre : ni image du garçon ni détail du hadith (« اقتلع رأسه »).
   - id: boy-1
-    role: evidence
+    role: event
     reel: khidr-03
     audio: tts
     mentions: ["موسى عليه السلام", "الخضر"]
@@ -548,7 +549,7 @@ scenes:
       background: road
   # 18:74-76 racontés avec leurs mots, puis récités.
   - id: boy-2
-    role: evidence
+    role: event
     reel: khidr-03
     audio: tts
     mentions: ["موسى عليه السلام"]
@@ -559,7 +560,7 @@ scenes:
     visual:
       template: title-card
   - id: boy-3
-    role: evidence
+    role: event
     reel: khidr-03
     audio: tts
     mentions: ["الخضر"]
@@ -571,7 +572,7 @@ scenes:
       template: scene
       background: road
   - id: boy-4
-    role: evidence
+    role: event
     reel: khidr-03
     audio: tts
     mentions: ["موسى عليه السلام"]
@@ -664,7 +665,7 @@ scenes:
       template: title-card
   # Lignes de l'IA (et du cours) : les parents ne l'ont peut-être jamais su.
   - id: boy-lesson-1
-    role: evidence
+    role: lesson
     reel: khidr-03
     audio: tts
     narration:
@@ -674,7 +675,7 @@ scenes:
       template: scene
       background: road
   - id: boy-lesson-2
-    role: evidence
+    role: lesson
     reel: khidr-03
     audio: tts
     narration:
@@ -683,7 +684,7 @@ scenes:
     visual:
       template: title-card
   - id: boy-lesson-3
-    role: evidence
+    role: lesson
     reel: khidr-03
     audio: tts
     narration:
@@ -696,7 +697,7 @@ scenes:
         - { id: narrator, pose: open-hands, mood: calm, talking: true }
   # Exemple de vie : une sagesse qu'on ne verra peut-être pas ici-bas. Scène type.
   - id: boy-life-1
-    role: evidence
+    role: example
     reel: khidr-03
     audio: tts
     narration:
@@ -708,7 +709,7 @@ scenes:
       characters:
         - { id: salma, pose: sitting, mood: worried, talking: false }
   - id: boy-life-2
-    role: evidence
+    role: example
     reel: khidr-03
     audio: tts
     narration:
@@ -729,7 +730,7 @@ scenes:
 
   # 18:77 raconté avec ses mots, puis récité.
   - id: wall-1
-    role: evidence
+    role: event
     reel: khidr-04
     audio: tts
     mentions: ["موسى عليه السلام", "الخضر"]
@@ -741,7 +742,7 @@ scenes:
       template: scene
       background: village-wall
   - id: wall-2
-    role: evidence
+    role: event
     reel: khidr-04
     audio: tts
     mentions: ["الخضر"]
@@ -753,7 +754,7 @@ scenes:
       template: scene
       background: village-wall
   - id: wall-3
-    role: evidence
+    role: event
     reel: khidr-04
     audio: tts
     mentions: ["موسى عليه السلام"]
@@ -782,7 +783,7 @@ scenes:
   # Seulement dans l'épisode entier : la séparation (18:78) racontée avec ses mots, puis récitée ; le
   # tournant vers le secret (18:79 suit).
   - id: parting-say
-    role: evidence
+    role: event
     audio: tts
     mentions: ["الخضر"]
     narration:
@@ -837,7 +838,7 @@ scenes:
       highlight: words
   # Lignes de l'IA, tirées de 18:82.
   - id: wall-lesson-1
-    role: evidence
+    role: lesson
     reel: khidr-04
     audio: tts
     narration:
@@ -847,7 +848,7 @@ scenes:
       template: scene
       background: wall-treasure
   - id: wall-lesson-2
-    role: evidence
+    role: lesson
     reel: khidr-04
     audio: tts
     narration:
@@ -861,7 +862,7 @@ scenes:
         - { id: narrator, pose: open-hands, mood: calm, talking: true }
   # Exemple de vie : une sagesse qui se voit des années après. Scène type.
   - id: wall-life-1
-    role: evidence
+    role: example
     reel: khidr-04
     audio: tts
     narration:
@@ -873,7 +874,7 @@ scenes:
       characters:
         - { id: amir, pose: sitting, mood: worried, talking: false }
   - id: wall-life-2
-    role: evidence
+    role: example
     reel: khidr-04
     audio: tts
     narration:

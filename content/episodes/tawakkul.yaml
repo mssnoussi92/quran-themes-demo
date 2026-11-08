@@ -9,6 +9,7 @@
 # غلط… », « تالت فكرة غلط… », « وفي الآخر… آية تطمن قلبك. دي الأخيرة. ») reprennent cette prise (take_from).
 episode: tawakkul
 title: { ar: "التوكل", en: "Trust in God" }
+format: misconceptions   # docs/formats.md (skill choose-format)
 narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
 # Textes de publication : proposés le 2026-11-07, faits des répliques du script ; validés par le
 # propriétaire le même jour (validated_by), exigés par un rendu final. Le reste : video/scripts/publish.ts.

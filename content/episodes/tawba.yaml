@@ -9,6 +9,7 @@
 # Prononciation : pas de guillemets « » dans ce que lit la voix (say_ar) ; « قَرِيب » vocalisé (vrai ق).
 episode: tawba
 title: { ar: "التوبة", en: "Repentance" }
+format: misconceptions   # docs/formats.md (skill choose-format)
 narration_language: ar-egy   # VoiceTut (égyptien), comme le du'a et la patience
 # Textes de publication : proposés le 2026-11-07, faits des répliques du script ; validés par le
 # propriétaire le même jour (validated_by), exigés par un rendu final. Le reste : video/scripts/publish.ts.

@@ -60,7 +60,25 @@ What we do **not** take from it:
 | 7. Promise: what this video (or series) gives, with a number if true; open loop | the reel's last line points to the next reel | by 40 s, then go |
 
 A reel can stop after beat 4 and spend the rest on its one idea (verse, hadith, answer), then end
-on the open loop of beat 7 that leads to the next reel.
+on the open loop of beat 7 that leads to the next reel. The timings above are for the hook only: a
+reel lasts what its content needs (owner's decision, 2026-11-08), so the first 3 seconds matter
+even more in a 2-minute reel.
+
+## The hook by format (`docs/formats.md`)
+
+The beats stay; what changes is the promise and what the mirror points at.
+
+| Format | Mirror | Promise (end of the hook) | Done |
+| --- | --- | --- | --- |
+| `misconceptions` | the inner state (« بتقلب في الموبايل… وكل الناس حياتهم حلوة؟ ») | a number, then the follow call: « ٣ أفكار غلط… تابعنا عشان تعرف أولها. » | dua, sabr, tawba, muqarana, tawakkul |
+| `story-suspense`, `story-linear` | the situation of life the story speaks to (« حصلك حاجة… ومش فاهم ليه؟ »), then « في سورة الكهف… » and what the story holds (« نبي شاف ٣ حاجات مش فاهمها ») | a new way of seeing (« قصة… هتخليك تبص لكل ابتلاء عدّى عليك بعين تانية ») | khidr, qarnayn |
+| `collection` | each reel its own situation (« لما تحس إنك في الضلمة… »), then who lived that moment | what this one moment gives; the thread of the collection in the first reel only | — |
+| `text-explained` | the situation the text answers | the text's few sentences, one per reel (« كلمات قليلة… كل واحدة فيها باب ») | — |
+| `two-paths` | the viewer before the same choice (« لما ربنا يديك نعمة… بتقول إيه؟ ») | two people, the same gift, two answers | — |
+| `practical` | the problem, in 3 s (« بتصلي… وعقلك في حتة تانية؟ ») | what they will be able to do, with a number if true | — |
+
+A collection's reels, or a story's, also each need their own first 3 seconds: a viewer who never saw
+reel 1 must want to stay.
 
 ## Writing rules
 

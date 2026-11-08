@@ -8,6 +8,7 @@
 # وسلم قال: », « تاني فكرة غلط… »…) reprennent cette prise (take_from, tools/audio/build.py).
 episode: sabr
 title: { ar: "الصبر", en: "Patience" }
+format: misconceptions   # docs/formats.md (skill choose-format)
 narration_language: ar-egy   # VoiceTut (égyptien), comme le du'a
 # Textes de publication : proposés le 2026-11-07, faits des répliques du script ; validés par le
 # propriétaire le même jour (validated_by), exigés par un rendu final. Le reste : video/scripts/publish.ts.
