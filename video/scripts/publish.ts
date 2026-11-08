@@ -45,14 +45,38 @@ const clock = (seconds: number) => {
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 };
 
-/** Each source quoted, once, in order: reference, grade, who recites or reads it, link. */
+/** Each source quoted, once, in order: reference, grade, who recites or reads it, link. Verses that
+ * follow each other in the surah, quoted one after the other with the same reciter and translation,
+ * share one line (« Surah Al-Kahf (18:71-82) »): a story told verse by verse fits in a caption. */
 function sourceLines(scenes: ResolvedScene[], settings: Settings): string[] {
   const seen = new Set<string>();
   const lines: string[] = [];
+  let run: { surah: number; first: number; last: number; name: string; rest: string[] } | null = null;
+  const ayahLine = (r: NonNullable<typeof run>) => {
+    const span = r.first === r.last ? `${r.first}` : `${r.first}-${r.last}`;
+    return `• ${[`${r.name} (${r.surah}:${span})`, ...r.rest, `https://quran.com/${r.surah}/${span}`].join(" · ")}`;
+  };
   for (const scene of scenes) {
     const source = scene.source;
     if (!source || seen.has(source.id) || (scene.audio === "tts" && source.type === "ayah")) continue;
     seen.add(source.id);
+    const verse = source.type === "ayah" ? /^quran\.(\d+)\.(\d+)$/.exec(source.id) : null;
+    const name = /^(.*) \(\d+:\d+\)$/.exec(source.reference_en)?.[1];
+    if (verse && name) {
+      const [surah, ayah] = [Number(verse[1]), Number(verse[2])];
+      const rest = [scene.media?.credit, source.translator && `Translation: ${source.translator}`].filter(
+        (x): x is string => Boolean(x),
+      );
+      if (run && run.surah === surah && run.last + 1 === ayah && run.rest.join() === rest.join()) {
+        run.last = ayah;
+        lines[lines.length - 1] = ayahLine(run);
+      } else {
+        run = { surah, first: ayah, last: ayah, name, rest };
+        lines.push(ayahLine(run));
+      }
+      continue;
+    }
+    run = null;
     const parts = [source.reference_en];
     if (source.type === "ayah") {
       if (scene.media?.credit) parts.push(scene.media.credit);

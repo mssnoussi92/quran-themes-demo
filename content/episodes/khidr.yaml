@@ -42,8 +42,8 @@ reels:
     publish:
       title: { en: "Why damage a boat that carried them for free?", ar: "ليه يخرق سفينة شالتهم ببلاش؟" }
       description:
-        en: "The first strange thing: al-Khidr pulls a plank out of the boat. The damage is what saved it: a small loss… that spared them a bigger one."
-        ar: "أول حاجة غريبة: الخضر خلع لوح من السفينة. العيب هو اللي حماها: خسارة صغيرة… حمتهم من خسارة أكبر."
+        en: "The first strange thing: al-Khidr tears a hole in the boat. The damage is what saved it: a small loss… that spared them a bigger one."
+        ar: "أول حاجة غريبة: الخضر خرق السفينة. العيب هو اللي حماها: خسارة صغيرة… حمتهم من خسارة أكبر."
   - id: khidr-03
     title: { ar: "الغلام", en: "The boy" }
     publish:
@@ -71,11 +71,13 @@ reels:
 whole:
   parts:
     - title: { ar: "مين أعلم؟", en: "Who knows more?" }
-      scenes: [hook-1, hook-2, hook-3, hook-4, musa-1, musa-2, musa-3, musa-4, ask, meet-verse-intro, meet-verse-1,
-               meet-verse-2, meet-takeaway, condition, outro]
+      scenes: [hook-1, hook-2, hook-3, hook-4, musa-1, musa-2, musa-3, musa-4, ask, meet-verse-intro, found-verse,
+               ask-verse, meet-verse-1, meet-verse-2, meet-takeaway, promise, condition, condition-intro,
+               condition-verse-1, condition-verse-2, outro]
     - title: { ar: "تلات حاجات غريبة", en: "Three strange things" }
-      scenes: [ship-1, ship-bird, ship-hadith, ship-2, ship-3, ship-4, boy-1, boy-2, boy-3, boy-4, wall-1, wall-2,
-               wall-3, parting-intro, parting]
+      scenes: [ship-1, ship-bird, ship-hadith, ship-2, ship-3, ship-4, ship-5, ship-event-intro, ship-event-1,
+               ship-event-2, ship-event-3, boy-1, boy-2, boy-3, boy-4, boy-event-intro, boy-event-1, boy-event-2,
+               boy-event-3, wall-1, wall-2, wall-3, wall-event-intro, wall-event, parting-say, parting-intro, parting]
     - title: { ar: "السر", en: "The secret" }
       scenes: [ship-verse, ship-lesson-1, ship-lesson-2, ship-outro, boy-verse-intro, boy-verse-1, boy-verse-2,
                boy-guard, boy-lesson-1, boy-lesson-2, boy-lesson-3, boy-outro, wall-verse-intro, wall-verse,
@@ -175,15 +177,16 @@ scenes:
     say_ar: "موسى طلع يدور عليه… ولقاه: الخَضِر."
     visual:
       template: name-card
-  # 18:66 raconté (« هل أتبعك على أن تعلمن مما علمت رشدا »).
+  # 18:66 raconté avec ses mots, puis récité avec 18:65 et 18:67-68 (règle du propriétaire, 2026-11-08 :
+  # après chaque événement raconté, son verset).
   - id: ask
     role: evidence
     reel: khidr-01
     audio: tts
-    mentions: ["موسى عليه السلام", "الخضر"]
+    mentions: ["موسى عليه السلام"]
     narration:
-      ar: "وطلب يمشي معاه… عشان يتعلم منه."
-      en: "And he asked to go with him… to learn from him."
+      ar: "وموسى قاله: ممكن أمشي معاك… عشان تعلمني من اللي اتعلمته؟"
+      en: "And Moses said to him: may I go with you… so you can teach me from what you were taught?"
     visual:
       template: scene
       background: confluence
@@ -196,6 +199,22 @@ scenes:
       en: "Our Lord, glorified and exalted is He, said:"
     visual:
       template: title-card
+  - id: found-verse
+    role: evidence
+    reel: khidr-01
+    source: quran.18.65
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: ask-verse
+    role: evidence
+    reel: khidr-01
+    source: quran.18.66
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
   - id: meet-verse-1
     role: evidence
     reel: khidr-01
@@ -225,19 +244,55 @@ scenes:
       background: plain
       characters:
         - { id: narrator, pose: open-hands, mood: calm, talking: true }
-  # 18:69-70 racontés (« ستجدني إن شاء الله صابرا », « فلا تسألني عن شيء حتى أحدث لك منه ذكرا »).
+  # 18:69-70 racontés avec leurs mots, puis récités.
+  - id: promise
+    role: evidence
+    reel: khidr-01
+    audio: tts
+    mentions: ["موسى عليه السلام"]
+    narration:
+      ar: "موسى قاله: هتلاقيني إن شاء الله صابر… ومش هعصيلك أمر."
+      en: "Moses said: you'll find me patient, God willing… and I won't disobey you."
+    visual:
+      template: scene
+      background: confluence
   - id: condition
     role: evidence
     reel: khidr-01
     audio: tts
-    mentions: ["موسى عليه السلام", "الخضر"]
+    mentions: ["الخضر"]
     narration:
-      ar: "موسى وعده يصبر… والخضر شرط عليه: متسألنيش عن حاجة… لحد ما أقولك أنا."
-      en: "Moses promised to be patient… and al-Khidr set one condition: don't ask me about anything… until I tell you myself."
-    say_ar: "موسى وعده يصبر… والخَضِر شرط عليه: متسألنيش عن حاجة… لحد ما أقولك أنا."
+      ar: "والخضر قاله: لو مشيت معايا… متسألنيش عن حاجة… لحد ما أنا أحكيلك عنها."
+      en: "And al-Khidr said: if you come with me… don't ask me about anything… until I tell you about it myself."
+    say_ar: "والخَضِر قاله: لو مشيت معايا… متسألنيش عن حاجة… لحد ما أنا أحكيلك عنها."
     visual:
       template: scene
       background: confluence
+  - id: condition-intro
+    role: evidence
+    reel: khidr-01
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: condition-verse-1
+    role: evidence
+    reel: khidr-01
+    source: quran.18.69
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: condition-verse-2
+    role: evidence
+    reel: khidr-01
+    source: quran.18.70
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
   - id: outro
     role: outro
     reel: khidr-01
@@ -287,42 +342,85 @@ scenes:
     say_ar: "والنبي صلى الله عليه وسلم حكى إن الخَضِر قال:"
     visual:
       template: source-card
+  # 18:71-73 racontés avec leurs mots, puis récités.
   - id: ship-2
     role: evidence
     reel: khidr-02
     audio: tts
     mentions: ["الخضر"]
     narration:
-      ar: "وبعدها… الخضر خلع لوح من السفينة… اللي شالتهم ببلاش!"
-      en: "And then… al-Khidr pulled a plank out of the boat… the boat that had carried them for free!"
-    say_ar: "وبعدها… الخَضِر خلع لوح من السفينة… اللي شالتهم ببلاش!"
+      ar: "وبعدها… الخضر خرق السفينة… اللي شالتهم ببلاش!"
+      en: "And then… al-Khidr tore a hole in the boat… the boat that had carried them for free!"
+    say_ar: "وبعدها… الخَضِر خَرَق السفينة… اللي شالتهم ببلاش!"
     visual:
       template: scene
       background: sea-boat
-  # 18:71 raconté (« أخرقتها لتغرق أهلها »).
   - id: ship-3
     role: evidence
     reel: khidr-02
     audio: tts
     mentions: ["موسى عليه السلام"]
     narration:
-      ar: "موسى ما قدرش يسكت: كده هتغرّق اللي فيها!"
-      en: "Moses couldn't keep quiet: you'll drown the people on board!"
+      ar: "موسى ما قدرش يسكت: خرقتها عشان تغرّق أهلها؟!"
+      en: "Moses couldn't keep quiet: you tore it open to drown its people?!"
+    say_ar: "موسى ما قدرش يسكت: خَرَقْتها عشان تغرّق أهلها؟!"
     visual:
       template: title-card
-  # 18:72-73 racontés.
   - id: ship-4
     role: evidence
     reel: khidr-02
     audio: tts
-    mentions: ["موسى عليه السلام", "الخضر"]
+    mentions: ["الخضر"]
     narration:
-      ar: "الخضر فكّره بالشرط… وموسى اعتذر: نسيت."
-      en: "Al-Khidr reminded him of the condition… and Moses apologised: I forgot."
-    say_ar: "الخَضِر فكّره بالشرط… وموسى اعتذر: نسيت."
+      ar: "الخضر قاله: مش قلتلك إنك مش هتقدر تصبر معايا؟"
+      en: "Al-Khidr said: didn't I tell you that you'd never be able to be patient with me?"
+    say_ar: "الخَضِر قاله: مش قلتلك إنك مش هتقدر تصبر معايا؟"
     visual:
       template: scene
       background: sea-boat
+  - id: ship-5
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    mentions: ["موسى عليه السلام"]
+    narration:
+      ar: "وموسى قاله: متآخذنيش… نسيت."
+      en: "And Moses said: don't blame me… I forgot."
+    visual:
+      template: title-card
+  - id: ship-event-intro
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: ship-event-1
+    role: evidence
+    reel: khidr-02
+    source: quran.18.71
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: ship-event-2
+    role: evidence
+    reel: khidr-02
+    source: quran.18.72
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: ship-event-3
+    role: evidence
+    reel: khidr-02
+    source: quran.18.73
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
   # Liaison du reel seul (pas dans l'épisode entier, où le secret vient après les trois événements).
   - id: ship-bridge
     role: evidence
@@ -398,28 +496,27 @@ scenes:
     visual:
       template: scene
       background: road
-  # 18:74 raconté (« أقتلت نفسا زكية بغير نفس »).
+  # 18:74-76 racontés avec leurs mots, puis récités.
   - id: boy-2
     role: evidence
     reel: khidr-03
     audio: tts
     mentions: ["موسى عليه السلام"]
     narration:
-      ar: "موسى اتصدم: قتلت نفس بريئة؟!"
-      en: "Moses was shocked: you killed an innocent soul?!"
-    say_ar: "موسى اتصدم: قَتَلْت نفس بريئة؟!"
+      ar: "موسى اتصدم: قتلت نفس بريئة… عمرها ما قتلت حد؟!"
+      en: "Moses was shocked: you killed an innocent soul… one that never killed anyone?!"
+    say_ar: "موسى اتصدم: قَتَلْت نفس بريئة… عمرها ما قَتَلِت حد؟!"
     visual:
       template: title-card
-  # 18:75-76 racontés.
   - id: boy-3
     role: evidence
     reel: khidr-03
     audio: tts
     mentions: ["الخضر"]
     narration:
-      ar: "الخضر قاله: مش قلت لك إنك مش هتصبر؟"
-      en: "Al-Khidr said: didn't I tell you that you wouldn't be patient?"
-    say_ar: "الخَضِر قاله: مش قلت لك إنك مش هتصبر؟"
+      ar: "الخضر قاله: مش قلتلك إنك مش هتقدر تصبر معايا؟"
+      en: "Al-Khidr said: didn't I tell you that you'd never be able to be patient with me?"
+    say_ar: "الخَضِر قاله: مش قلتلك إنك مش هتقدر تصبر معايا؟"
     visual:
       template: scene
       background: road
@@ -429,11 +526,44 @@ scenes:
     audio: tts
     mentions: ["موسى عليه السلام"]
     narration:
-      ar: "وموسى قال: لو سألتك تاني… متصاحبنيش."
-      en: "And Moses said: if I ask you again… don't keep me with you."
+      ar: "وموسى قاله: لو سألتك عن حاجة بعد كده… متصاحبنيش. وتبقى معذور."
+      en: "And Moses said: if I ask you about anything after this… don't keep me with you. You'd be excused."
     visual:
       template: scene
       background: road
+  - id: boy-event-intro
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: boy-event-1
+    role: evidence
+    reel: khidr-03
+    source: quran.18.74
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: boy-event-2
+    role: evidence
+    reel: khidr-03
+    source: quran.18.75
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: boy-event-3
+    role: evidence
+    reel: khidr-03
+    source: quran.18.76
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
   - id: boy-bridge
     role: evidence
     reel: khidr-03
@@ -525,16 +655,16 @@ scenes:
     visual:
       template: title-card
 
-  # ---- khidr-04 : le mur (18:77 raconté ; 18:82) -----------------------------------------------------
+  # 18:77 raconté avec ses mots, puis récité.
   - id: wall-1
     role: evidence
     reel: khidr-04
     audio: tts
     mentions: ["موسى عليه السلام", "الخضر"]
     narration:
-      ar: "موسى والخضر دخلوا قرية… طلبوا أكل… ورفضوا يضيفوهم."
-      en: "Moses and al-Khidr came to a village… they asked for food… and were turned away."
-    say_ar: "موسى والخَضِر دخلوا قرية… طلبوا أكل… ورفضوا يِضَيّفوهم."
+      ar: "موسى والخضر دخلوا قرية… طلبوا من أهلها أكل… ورفضوا يضيفوهم."
+      en: "Moses and al-Khidr came to a village… they asked its people for food… and were refused."
+    say_ar: "موسى والخَضِر دخلوا قرية… طلبوا من أهلها أكل… ورفضوا يِضَيّفوهم."
     visual:
       template: scene
       background: village-wall
@@ -544,24 +674,51 @@ scenes:
     audio: tts
     mentions: ["الخضر"]
     narration:
-      ar: "ولقوا جدار هيقع… والخضر صلّحه!"
+      ar: "ولقوا جدار عايز يقع… والخضر صلّحه!"
       en: "They found a wall about to fall… and al-Khidr set it straight!"
-    say_ar: "ولقوا جدار هيقع… والخَضِر صلّحه!"
+    say_ar: "ولقوا جدار عايز يقع… والخَضِر صلّحه!"
     visual:
       template: scene
       background: village-wall
-  # 18:77 raconté (« لو شئت لاتخذت عليه أجرا »).
   - id: wall-3
     role: evidence
     reel: khidr-04
     audio: tts
     mentions: ["موسى عليه السلام"]
     narration:
-      ar: "موسى قاله: طب ما تاخد عليه أجر؟"
-      en: "Moses said: why not at least ask to be paid for it?"
+      ar: "موسى قاله: لو كنت عايز… كنت خدت عليه أجر."
+      en: "Moses said: if you'd wanted… you could have taken a payment for it."
     visual:
       template: title-card
-  # Seulement dans l'épisode entier : la séparation (18:78), le tournant vers le secret.
+  - id: wall-event-intro
+    role: evidence
+    reel: khidr-04
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: wall-event
+    role: evidence
+    reel: khidr-04
+    source: quran.18.77
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Seulement dans l'épisode entier : la séparation (18:78) racontée avec ses mots, puis récitée ; le
+  # tournant vers le secret (18:79 suit).
+  - id: parting-say
+    role: evidence
+    audio: tts
+    mentions: ["الخضر"]
+    narration:
+      ar: "وهنا الخضر قاله: هنا نفترق… بس هقولك سر اللي مقدرتش تصبر عليه."
+      en: "Then al-Khidr said: this is where we part… but I'll tell you the secret of what you couldn't be patient with."
+    say_ar: "وهنا الخَضِر قاله: هنا نفترق… بس هقولك سر اللي مقدرتش تصبر عليه."
+    visual:
+      template: title-card
   - id: parting-intro
     role: evidence
     audio: tts
