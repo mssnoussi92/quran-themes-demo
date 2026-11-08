@@ -211,12 +211,14 @@ def cut(reciter: str, key: str, text: str, audio, db, timing, fixed: tuple[float
     if problems:
         print(f"        heard: {' '.join(h['word'] for h in heard)}")
         print(f"        verse: {' '.join(want)}")
-        return None
+        if not fixed:
+            return None             # a cut set by hand was checked by ear or at the envelope: kept
     start, end = float(start), float(end)
     return {"start": start, "end": end, "seconds": round(end - start, 2),
             "words": word_times(want, heard, match, round(end - start, 2)),
             "heard": " ".join(h["word"] for h in heard), "match": round(share, 2),
-            "method": "set by hand, words by Whisper" if fixed else
+            **({"note": "; ".join(problems)} if problems else {}),
+            "method": "set by hand (envelope), words by Whisper" if fixed else
                       "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"}
 
 
