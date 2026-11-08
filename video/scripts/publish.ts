@@ -18,7 +18,7 @@ import { readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { parse } from "yaml";
 import { FPS } from "../src/formats.ts";
-import { sceneStarts, selectScenes, totalFrames } from "../src/scenes.ts";
+import { sceneStarts, selectScenes, totalFrames, wholeParts } from "../src/scenes.ts";
 import type { EpisodeData, PublishTexts, ResolvedScene } from "../src/types.ts";
 
 const ROOT = resolve(import.meta.dirname, "../..");
@@ -136,13 +136,14 @@ function render(video: Video, settings: Settings): string[] {
   return out;
 }
 
-/** Chapters of the whole episode: one per reel, where its first scene starts. */
+/** Chapters of the whole episode: one per part (its own order, `whole`) or per reel, where its first
+ * scene starts. */
 function chapters(data: EpisodeData, scenes: ResolvedScene[]): string[] {
   const starts = sceneStarts(scenes);
-  const marks = data.reels.map((reel) => {
-    const i = scenes.findIndex((s) => s.reel === reel.id);
-    return { at: i <= 0 ? 0 : starts[i], title: `${reel.title.en} · ${reel.title.ar}` };
-  });
+  const marks = wholeParts(data).map(({ title, first }) => ({
+    at: first <= 0 ? 0 : starts[first],
+    title: `${title.en} · ${title.ar}`,
+  }));
   const end = totalFrames(scenes) / FPS;
   const short = marks.some((m, i) => (marks[i + 1]?.at ?? end) - m.at < CHAPTER_MIN);
   if (marks.length < 3 || short) {

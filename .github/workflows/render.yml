@@ -77,6 +77,10 @@ jobs:
             for reel in $REELS; do
               uv run --with jsonschema --with pyyaml scripts/validate.py --release --reel "$reel"
             done
+            # The whole episode's own order and lines (`whole`: scenes said only there), when it has one.
+            if [ "$REEL" = all ]; then
+              uv run --with jsonschema --with pyyaml scripts/validate.py --release --whole "$EPISODE"
+            fi
           fi
 
       # No apt: the Ubuntu mirror can hang for an hour (voice-test, 2026-11-06). Static ffmpeg build

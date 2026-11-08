@@ -7,3 +7,17 @@ backgrounds:
     description: Rue en journée, immeubles et vitrine éclairée
   plain:
     description: Fond uni clair, pour le narrateur face caméra
+  # Histoire de Moussa et al-Khadir (épisode khidr, 18:60-82) : des lieux et des choses, jamais une
+  # personne (un prophète n'est jamais dessiné ; le garçon n'est jamais montré).
+  confluence:
+    description: Là où les deux mers se rencontrent, deux eaux de deux couleurs, la plage, le rocher et le panier du poisson (Bukhari 122)
+  sea-boat:
+    description: La mer ouverte et le bateau à voile qui les a pris sans payer, qui tangue
+  sea-bird:
+    description: Gros plan sur le bord du bateau, le moineau qui pique la mer d'un coup de bec (Bukhari 122, 3401)
+  road:
+    description: Le chemin entre les collines, au soleil bas, vide (le garçon n'est pas montré)
+  village-wall:
+    description: Le village qui a refusé de les nourrir, et le mur fissuré qui penche, prêt à tomber, des briques à terre
+  wall-treasure:
+    description: Le mur redressé, et sous lui la terre ouverte sur le trésor des deux orphelins (18:82), qui brille

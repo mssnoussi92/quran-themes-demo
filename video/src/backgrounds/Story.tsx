@@ -1,0 +1,359 @@
+// Backgrounds of the story of Musa and al-Khidr (Al-Kahf 18:60-82, episode khidr): places and things
+// only, never a person (a prophet is never drawn; the boy is never shown). Same flat shapes and black
+// line as the other backgrounds. Each SVG names its gradients after itself: two backgrounds are on
+// screen together during a transition.
+import { useCurrentFrame, useVideoConfig } from "remotion";
+import { INK } from "../characters/Character";
+import type { BackgroundProps } from "./Backgrounds";
+
+const LINE = 6;
+
+const Svg: React.FC<{ w: number; h: number; children: React.ReactNode }> = ({ w, h, children }) => (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} style={{ position: "absolute", inset: 0 }}>
+    {children}
+  </svg>
+);
+
+/** Seconds since the scene started (animations). */
+const useSeconds = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  return frame / fps;
+};
+
+const Sky: React.FC<{ id: string; w: number; to: number; top: string; bottom: string }> = ({ id, w, to, top, bottom }) => (
+  <>
+    <defs>
+      <linearGradient id={id} x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor={top} />
+        <stop offset="100%" stopColor={bottom} />
+      </linearGradient>
+    </defs>
+    <rect width={w} height={to} fill={`url(#${id})`} />
+  </>
+);
+
+/** A wave line from x0 to x1 around y, drifting with time. */
+const wave = (x0: number, x1: number, y: number, amp: number, len: number, phase: number) => {
+  const pts: string[] = [];
+  for (let x = x0; x <= x1; x += 12) pts.push(`${x.toFixed(1)},${(y + amp * Math.sin((x / len) * 2 * Math.PI + phase)).toFixed(1)}`);
+  return `M ${pts.join(" L ")}`;
+};
+
+/** Rows of short white wave strokes over a sea, from `top` to `bottom`. */
+const Waves: React.FC<{ x0: number; x1: number; top: number; bottom: number; t: number; color?: string }> = ({
+  x0, x1, top, bottom, t, color = "#EAF6FB",
+}) => {
+  const rows = 6;
+  return (
+    <g fill="none" stroke={color} strokeWidth={5} strokeLinecap="round" opacity={0.85}>
+      {Array.from({ length: rows }, (_, i) => {
+        const y = top + ((bottom - top) * (i + 0.5)) / rows;
+        const len = 140 + 30 * i;
+        const shift = ((t * (18 + 4 * i) + i * 97) % (len * 2)) - len;
+        // Short dashes rather than one long line: lighter, like the flat style of the other drawings.
+        return (
+          <path key={i} d={wave(x0 + shift, x1 + len, y, 6 + i, len, t * 1.2 + i)} strokeDasharray={`${60 + 10 * i} ${120 + 20 * i}`} />
+        );
+      })}
+    </g>
+  );
+};
+
+/** Where the two seas meet (مجمع البحرين): two waters of two colours, a sandy shore, the rock where
+ * they slept and the basket that held the fish (Bukhari 122). */
+const Confluence: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
+  const t = useSeconds();
+  const u = Math.min(w, h);
+  const horizon = floorY - 0.45 * u;
+  const shore = floorY - 0.04 * u;
+  const seamTop = w * 0.56;
+  const seamBottom = w * 0.38;
+  const seam = (y: number) => seamTop + ((seamBottom - seamTop) * (y - horizon)) / (shore - horizon);
+  const seamPath = Array.from({ length: 30 }, (_, i) => {
+    const y = horizon + ((shore - horizon) * i) / 29;
+    return `${(seam(y) + 10 * Math.sin(i * 0.9 + t * 1.5)).toFixed(1)},${y.toFixed(1)}`;
+  });
+  const rockX = w * 0.5 + 0.2 * u;
+  return (
+    <Svg w={w} h={h}>
+      <Sky id="confluence-sky" w={w} to={horizon} top="#CFE6F1" bottom="#F7EEDA" />
+      <polygon points={`0,${horizon} ${seamTop},${horizon} ${seamBottom},${shore} 0,${shore}`} fill="#7CC0DF" />
+      <polygon points={`${seamTop},${horizon} ${w},${horizon} ${w},${shore} ${seamBottom},${shore}`} fill="#2F7E8E" />
+      <Waves x0={0} x1={seamTop} top={horizon + 20} bottom={shore - 10} t={t} />
+      <Waves x0={seamBottom} x1={w} top={horizon + 20} bottom={shore - 10} t={t + 3} color="#BFE3E6" />
+      <polyline points={seamPath.join(" ")} fill="none" stroke="#FFFFFF" strokeWidth={10} strokeLinecap="round" opacity={0.9} />
+      <line x1={0} y1={horizon} x2={w} y2={horizon} stroke={INK} strokeWidth={LINE} />
+      {/* the shore */}
+      <path d={`M 0 ${shore} Q ${w * 0.5} ${shore - 0.05 * u} ${w} ${shore} L ${w} ${h} L 0 ${h} Z`} fill="#E9D4A4" stroke={INK} strokeWidth={LINE} />
+      {/* the rock */}
+      <path
+        d={`M ${rockX - 0.2 * u} ${floorY + 0.02 * u}
+            C ${rockX - 0.22 * u} ${floorY - 0.14 * u}, ${rockX - 0.12 * u} ${floorY - 0.27 * u}, ${rockX + 0.02 * u} ${floorY - 0.26 * u}
+            C ${rockX + 0.16 * u} ${floorY - 0.25 * u}, ${rockX + 0.22 * u} ${floorY - 0.12 * u}, ${rockX + 0.2 * u} ${floorY + 0.02 * u} Z`}
+        fill="#A49482"
+        stroke={INK}
+        strokeWidth={LINE}
+        strokeLinejoin="round"
+      />
+      <path d={`M ${rockX - 0.08 * u} ${floorY - 0.2 * u} Q ${rockX} ${floorY - 0.23 * u} ${rockX + 0.07 * u} ${floorY - 0.19 * u}`} fill="none" stroke="#C9BBA9" strokeWidth={8} strokeLinecap="round" />
+      {/* the basket (مكتل), by the rock */}
+      <g stroke={INK} strokeWidth={4} strokeLinejoin="round">
+        <path d={`M ${rockX - 0.36 * u} ${floorY - 0.1 * u} L ${rockX - 0.24 * u} ${floorY - 0.1 * u} L ${rockX - 0.26 * u} ${floorY} L ${rockX - 0.34 * u} ${floorY} Z`} fill="#C99A5B" />
+        {[0.25, 0.5, 0.75].map((f) => (
+          <line key={f} x1={rockX - 0.36 * u + 0.12 * u * f} y1={floorY - 0.1 * u} x2={rockX - 0.34 * u + 0.08 * u * f} y2={floorY} />
+        ))}
+        <line x1={rockX - 0.355 * u} y1={floorY - 0.05 * u} x2={rockX - 0.245 * u} y2={floorY - 0.05 * u} />
+      </g>
+    </Svg>
+  );
+};
+
+/** The hull and sail of the boat that carried them for nothing (Bukhari 122), bobbing. */
+const Boat: React.FC<{ cx: number; water: number; u: number; t: number }> = ({ cx, water, u, t }) => {
+  const bob = 6 * Math.sin(t * 1.6);
+  const tilt = 1.5 * Math.sin(t * 1.1);
+  const half = 0.32 * u;
+  const deck = water - 0.09 * u;
+  return (
+    <g transform={`translate(0 ${bob}) rotate(${tilt} ${cx} ${water})`} stroke={INK} strokeWidth={LINE} strokeLinejoin="round">
+      {/* mast and sail */}
+      <line x1={cx} y1={deck} x2={cx} y2={deck - 0.44 * u} />
+      <path d={`M ${cx + 6} ${deck - 0.42 * u} Q ${cx + 0.26 * u} ${deck - 0.24 * u} ${cx + 6} ${deck - 0.04 * u} Z`} fill="#F7F1E3" />
+      <path d={`M ${cx} ${deck - 0.44 * u} L ${cx - 0.06 * u} ${deck - 0.41 * u} L ${cx} ${deck - 0.38 * u}`} fill="#D9644C" />
+      {/* hull */}
+      <path
+        d={`M ${cx - half} ${deck} L ${cx + half} ${deck} Q ${cx + half * 0.9} ${water + 0.03 * u} ${cx + half * 0.55} ${water + 0.05 * u}
+            L ${cx - half * 0.55} ${water + 0.05 * u} Q ${cx - half * 0.9} ${water + 0.03 * u} ${cx - half} ${deck} Z`}
+        fill="#A8693B"
+      />
+      <line x1={cx - half * 0.95} y1={deck + 0.035 * u} x2={cx + half * 0.95} y2={deck + 0.035 * u} strokeWidth={4} />
+      <line x1={cx - half * 0.8} y1={deck + 0.075 * u} x2={cx + half * 0.8} y2={deck + 0.075 * u} strokeWidth={4} />
+    </g>
+  );
+};
+
+/** The open sea and the boat (السفينة): the event and what it meant. */
+const SeaBoat: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
+  const t = useSeconds();
+  const u = Math.min(w, h);
+  const horizon = floorY - 0.4 * u;
+  const water = floorY - 0.06 * u;
+  return (
+    <Svg w={w} h={h}>
+      <Sky id="sea-boat-sky" w={w} to={horizon} top="#BFE2F0" bottom="#FCF1DA" />
+      <circle cx={w * 0.5 + 0.34 * u} cy={horizon - 0.3 * u} r={0.07 * u} fill="#FFD866" stroke={INK} strokeWidth={LINE} />
+      <rect y={horizon} width={w} height={h - horizon} fill="#4F9DC8" />
+      <line x1={0} y1={horizon} x2={w} y2={horizon} stroke={INK} strokeWidth={LINE} />
+      <Waves x0={0} x1={w} top={horizon + 20} bottom={water - 0.02 * u} t={t} />
+      <Boat cx={w / 2} water={water} u={u} t={t} />
+      <rect y={water + 0.03 * u} width={w} height={h - water} fill="#3F86B0" />
+      <Waves x0={0} x1={w} top={water + 0.05 * u} bottom={h} t={t + 5} />
+    </Svg>
+  );
+};
+
+/** Close on the edge of the boat: the sparrow that pecked the sea once or twice (Bukhari 122, 3401). */
+const SeaBird: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
+  const t = useSeconds();
+  const u = Math.min(w, h);
+  const horizon = floorY - 0.55 * u;
+  const water = floorY - 0.1 * u;
+  const edge = water - 0.05 * u; // top of the gunwale, just above the water
+  const end = w * 0.5 + 0.16 * u; // the boat's edge ends here, the sea beyond
+  // One peck every 2.6 s: the bird leans down to the water and comes back up.
+  const cycle = t % 2.6;
+  const dip = cycle > 1.6 && cycle < 2.2 ? Math.sin(((cycle - 1.6) / 0.6) * Math.PI) : 0;
+  const ripple = cycle > 1.9 ? (cycle - 1.9) / 0.7 : cycle < 0.6 ? (cycle + 0.7) / 0.7 : -1;
+  const b = 1.9 * u; // the bird is drawn larger than life: it is what the scene is about
+  const bx = end - 0.05 * b;
+  const by = edge - 0.045 * b;
+  const tip = { x: end + 0.05 * b, y: water + 0.005 * b };
+  return (
+    <Svg w={w} h={h}>
+      <Sky id="sea-bird-sky" w={w} to={horizon} top="#BFE2F0" bottom="#FCF1DA" />
+      <rect y={horizon} width={w} height={h - horizon} fill="#4F9DC8" />
+      <line x1={0} y1={horizon} x2={w} y2={horizon} stroke={INK} strokeWidth={LINE} />
+      <Waves x0={0} x1={w} top={horizon + 20} bottom={h} t={t} />
+      {ripple >= 0 && ripple <= 1 ? (
+        <ellipse cx={tip.x} cy={tip.y} rx={0.02 * u + 0.09 * u * ripple} ry={0.006 * u + 0.025 * u * ripple} fill="none" stroke="#EAF6FB" strokeWidth={5} opacity={1 - ripple} />
+      ) : null}
+      {/* the boat's side and its gunwale, seen from close */}
+      <path d={`M 0 ${edge} L ${end} ${edge} Q ${end + 0.02 * u} ${water + 0.12 * u} ${end - 0.1 * u} ${h} L 0 ${h} Z`} fill="#A8693B" stroke={INK} strokeWidth={LINE} strokeLinejoin="round" />
+      <rect x={-LINE} y={edge - 0.025 * u} width={end + LINE + 0.01 * u} height={0.035 * u} rx={8} fill="#8A5530" stroke={INK} strokeWidth={LINE} />
+      {[0.06, 0.13].map((f) => (
+        <line key={f} x1={0} y1={edge + f * u} x2={end - 0.01 * u * f * 10} y2={edge + f * u} stroke={INK} strokeWidth={4} />
+      ))}
+      {/* the sparrow */}
+      <g transform={`rotate(${50 * dip} ${bx} ${by + 0.03 * b})`} stroke={INK} strokeWidth={4} strokeLinejoin="round">
+        <path d={`M ${bx - 0.07 * b} ${by - 0.005 * b} L ${bx - 0.115 * b} ${by - 0.03 * b} L ${bx - 0.105 * b} ${by + 0.005 * b} Z`} fill="#7A5236" />
+        <ellipse cx={bx - 0.02 * b} cy={by} rx={0.055 * b} ry={0.035 * b} fill="#9A6B45" />
+        <path d={`M ${bx - 0.06 * b} ${by + 0.01 * b} Q ${bx - 0.02 * b} ${by + 0.04 * b} ${bx + 0.025 * b} ${by + 0.012 * b}`} fill="#E8D2AA" />
+        <path d={`M ${bx - 0.045 * b} ${by - 0.012 * b} Q ${bx - 0.02 * b} ${by - 0.03 * b} ${bx + 0.005 * b} ${by - 0.01 * b}`} fill="none" stroke={INK} strokeWidth={3} />
+        <circle cx={bx + 0.03 * b} cy={by - 0.03 * b} r={0.026 * b} fill="#9A6B45" />
+        <circle cx={bx + 0.04 * b} cy={by - 0.035 * b} r={0.005 * b} fill={INK} stroke="none" />
+        <path d={`M ${bx + 0.053 * b} ${by - 0.032 * b} L ${bx + 0.075 * b} ${by - 0.024 * b} L ${bx + 0.052 * b} ${by - 0.019 * b} Z`} fill="#E9B44C" />
+        <line x1={bx - 0.02 * b} y1={by + 0.034 * b} x2={bx - 0.025 * b} y2={edge - 0.025 * u} />
+        <line x1={bx} y1={by + 0.033 * b} x2={bx + 0.002 * b} y2={edge - 0.025 * u} />
+      </g>
+    </Svg>
+  );
+};
+
+/** The road they walked on (فانطلقا): hills, an empty path, nobody on it. */
+const Road: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
+  const u = Math.min(w, h);
+  const horizon = floorY - 0.38 * u;
+  const cx = w / 2;
+  return (
+    <Svg w={w} h={h}>
+      <Sky id="road-sky" w={w} to={horizon} top="#F6D7B3" bottom="#FBEFD9" />
+      <circle cx={cx - 0.3 * u} cy={horizon - 0.12 * u} r={0.08 * u} fill="#F7B267" stroke={INK} strokeWidth={LINE} />
+      <path d={`M 0 ${horizon} Q ${w * 0.25} ${horizon - 0.2 * u} ${w * 0.55} ${horizon} Z`} fill="#C7B086" stroke={INK} strokeWidth={LINE} strokeLinejoin="round" />
+      <path d={`M ${w * 0.4} ${horizon} Q ${w * 0.75} ${horizon - 0.26 * u} ${w} ${horizon - 0.06 * u} L ${w} ${horizon} Z`} fill="#B49B6E" stroke={INK} strokeWidth={LINE} strokeLinejoin="round" />
+      <rect y={horizon} width={w} height={h - horizon} fill="#E0C998" />
+      <line x1={0} y1={horizon} x2={w} y2={horizon} stroke={INK} strokeWidth={LINE} />
+      <path d={`M ${cx - 0.03 * u} ${horizon} L ${cx + 0.03 * u} ${horizon} L ${cx + 0.36 * u} ${h} L ${cx - 0.36 * u} ${h} Z`} fill="#F0DFB8" stroke={INK} strokeWidth={LINE} strokeLinejoin="round" />
+      {[
+        { x: cx - 0.42 * u, y: floorY - 0.12 * u, r: 0.06 * u },
+        { x: cx + 0.4 * u, y: floorY - 0.2 * u, r: 0.045 * u },
+      ].map((b, i) => (
+        <g key={i} stroke={INK} strokeWidth={LINE}>
+          <ellipse cx={b.x} cy={b.y} rx={b.r * 1.3} ry={b.r} fill="#8FAE6B" />
+          <ellipse cx={b.x - b.r * 0.4} cy={b.y - b.r * 0.4} rx={b.r * 0.8} ry={b.r * 0.6} fill="#A3C27D" />
+        </g>
+      ))}
+      <ellipse cx={cx + 0.3 * u} cy={floorY + 0.01 * u} rx={0.06 * u} ry={0.03 * u} fill="#A49482" stroke={INK} strokeWidth={LINE} />
+    </Svg>
+  );
+};
+
+/** Flat-roofed houses of the village, behind the wall. */
+const Houses: React.FC<{ w: number; base: number; u: number; scale?: number }> = ({ w, base, u, scale = 1 }) => {
+  const houses = [
+    { x: -0.05, hw: 0.3, top: 0.5, fill: "#DDBE91" },
+    { x: 0.22, hw: 0.24, top: 0.62, fill: "#CFA978" },
+    { x: 0.43, hw: 0.3, top: 0.46, fill: "#E5CA9F" },
+    { x: 0.7, hw: 0.36, top: 0.56, fill: "#D4B183" },
+  ];
+  return (
+    <g stroke={INK} strokeWidth={LINE} strokeLinejoin="round">
+      {houses.map((b, i) => {
+        const x = b.x * w;
+        const bw = b.hw * w;
+        const top = base - b.top * u * scale;
+        return (
+          <g key={i}>
+            <rect x={x} y={top} width={bw} height={base - top} fill={b.fill} />
+            <rect x={x + bw * 0.3} y={top + 0.08 * u} width={0.05 * u} height={0.07 * u} fill="#5B4636" strokeWidth={4} />
+            <rect x={x + bw * 0.6} y={top + 0.08 * u} width={0.05 * u} height={0.07 * u} fill="#5B4636" strokeWidth={4} />
+          </g>
+        );
+      })}
+    </g>
+  );
+};
+
+/** A brick wall from x1 to x2 standing at `base`, `tall` high. */
+const BrickWall: React.FC<{ x1: number; x2: number; base: number; tall: number; u: number; fill: string; cracked: boolean }> = ({
+  x1, x2, base, tall, u, fill, cracked,
+}) => {
+  const rows = 6;
+  const rh = tall / rows;
+  const bw = 0.12 * u;
+  return (
+    <g stroke={INK} strokeLinejoin="round">
+      <rect x={x1} y={base - tall} width={x2 - x1} height={tall} fill={fill} strokeWidth={LINE} />
+      {Array.from({ length: rows - 1 }, (_, r) => (
+        <line key={`r${r}`} x1={x1} y1={base - rh * (r + 1)} x2={x2} y2={base - rh * (r + 1)} strokeWidth={3} />
+      ))}
+      {Array.from({ length: rows }, (_, r) =>
+        Array.from({ length: Math.ceil((x2 - x1) / bw) }, (_, k) => {
+          const x = x1 + k * bw + (r % 2 ? bw / 2 : 0);
+          return x > x1 && x < x2 ? <line key={`b${r}-${k}`} x1={x} y1={base - rh * r} x2={x} y2={base - rh * (r + 1)} strokeWidth={3} /> : null;
+        }),
+      )}
+      {cracked ? (
+        <path
+          d={`M ${x1 + (x2 - x1) * 0.62} ${base - tall} L ${x1 + (x2 - x1) * 0.58} ${base - tall * 0.7} L ${x1 + (x2 - x1) * 0.65} ${base - tall * 0.5}
+              L ${x1 + (x2 - x1) * 0.6} ${base - tall * 0.2}`}
+          fill="none"
+          strokeWidth={7}
+          strokeLinecap="round"
+        />
+      ) : null}
+    </g>
+  );
+};
+
+/** The village that refused them food, and the wall about to fall down (يريد أن ينقض). */
+const VillageWall: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
+  const u = Math.min(w, h);
+  const x1 = w * 0.5 - 0.44 * u;
+  const x2 = w * 0.5 + 0.44 * u;
+  const tall = 0.3 * u;
+  return (
+    <Svg w={w} h={h}>
+      <Sky id="village-wall-sky" w={w} to={floorY} top="#CFE6F1" bottom="#F6EEDC" />
+      <Houses w={w} base={floorY - 0.1 * u} u={u} />
+      <rect y={floorY - 0.1 * u} width={w} height={h - floorY + 0.1 * u} fill="#DCC59A" />
+      <line x1={0} y1={floorY - 0.1 * u} x2={w} y2={floorY - 0.1 * u} stroke={INK} strokeWidth={LINE} />
+      <g transform={`rotate(5 ${x1} ${floorY})`}>
+        <BrickWall x1={x1} x2={x2} base={floorY} tall={tall} u={u} fill="#C98F5E" cracked />
+      </g>
+      {/* fallen bricks */}
+      {[0.1, 0.22, 0.7].map((f, i) => (
+        <rect key={i} x={x1 + (x2 - x1) * f} y={floorY + 0.01 * u + i * 6} width={0.09 * u} height={0.04 * u} rx={4} fill="#C98F5E" stroke={INK} strokeWidth={4} transform={`rotate(${i * 9 - 6} ${x1 + (x2 - x1) * f} ${floorY})`} />
+      ))}
+    </Svg>
+  );
+};
+
+/** The wall set straight, and what it kept: the orphans' treasure in the ground beneath (18:82). */
+const WallTreasure: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
+  const t = useSeconds();
+  const u = Math.min(w, h);
+  const ground = floorY - 0.3 * u;
+  const x1 = w * 0.5 - 0.44 * u;
+  const x2 = w * 0.5 + 0.44 * u;
+  const cx = w / 2;
+  const c = 1.5 * u; // the chest, drawn large
+  const chestTop = ground + 0.07 * u;
+  const glow = 0.6 + 0.4 * Math.sin(t * 2.4);
+  return (
+    <Svg w={w} h={h}>
+      <Sky id="wall-treasure-sky" w={w} to={ground} top="#CFE6F1" bottom="#F6EEDC" />
+      <Houses w={w} base={ground - 0.08 * u} u={u} scale={0.62} />
+      <rect y={ground - 0.08 * u} width={w} height={0.08 * u} fill="#DCC59A" />
+      <line x1={0} y1={ground - 0.08 * u} x2={w} y2={ground - 0.08 * u} stroke={INK} strokeWidth={LINE} />
+      <BrickWall x1={x1} x2={x2} base={ground} tall={0.3 * u} u={u} fill="#D39A68" cracked={false} />
+      {/* the ground cut open: earth, and the treasure under the wall */}
+      <rect y={ground} width={w} height={h - ground} fill="#B98A5A" />
+      <line x1={0} y1={ground} x2={w} y2={ground} stroke={INK} strokeWidth={LINE} />
+      {[0.06, 0.24].map((f) => (
+        <path key={f} d={wave(0, w, ground + (f + 0.3) * u, 8, 260, f * 9)} fill="none" stroke="#A47549" strokeWidth={10} />
+      ))}
+      <g stroke={INK} strokeWidth={LINE} strokeLinejoin="round">
+        <ellipse cx={cx} cy={chestTop + 0.07 * c} rx={0.2 * c} ry={0.1 * c} fill="#FFE08A" opacity={0.35 * glow} stroke="none" />
+        <rect x={cx - 0.12 * c} y={chestTop + 0.04 * c} width={0.24 * c} height={0.1 * c} rx={6} fill="#8A5530" />
+        <path d={`M ${cx - 0.12 * c} ${chestTop + 0.04 * c} Q ${cx} ${chestTop - 0.04 * c} ${cx + 0.12 * c} ${chestTop + 0.04 * c} Z`} fill="#A8693B" />
+        <rect x={cx - 0.02 * c} y={chestTop + 0.03 * c} width={0.04 * c} height={0.045 * c} fill="#E9B44C" strokeWidth={4} />
+        {[-0.08, 0.08].map((f) => (
+          <line key={f} x1={cx + f * c} y1={chestTop + 0.005 * c} x2={cx + f * c} y2={chestTop + 0.14 * c} strokeWidth={4} />
+        ))}
+      </g>
+      {[-0.17, 0.15, 0.19].map((f, i) => (
+        <circle key={i} cx={cx + f * c} cy={chestTop + (0.02 + 0.03 * i) * c} r={6 + 3 * glow} fill="#FFF3C8" opacity={glow} />
+      ))}
+    </Svg>
+  );
+};
+
+export const STORY_BACKGROUNDS: Record<string, React.FC<BackgroundProps>> = {
+  confluence: Confluence,
+  "sea-boat": SeaBoat,
+  "sea-bird": SeaBird,
+  road: Road,
+  "village-wall": VillageWall,
+  "wall-treasure": WallTreasure,
+};

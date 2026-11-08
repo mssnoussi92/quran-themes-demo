@@ -36,7 +36,7 @@ export type ResolvedSource = {
   /** Texts exactly as in the registry. */
   text_ar: string;
   text_en: string;
-  /** What a card shows: the whole verse, or only the Prophet's words for a hadith. */
+  /** What a card shows: the whole verse, or the Prophet's words for a hadith (its registry excerpt when too long). */
   display_ar: string;
   /** English shown: the registry's `excerpt_en` (a passage of text_en), or the whole text. */
   display_en: string;
@@ -115,6 +115,10 @@ export type ThumbnailData = {
   validated_by: string | null;
 };
 
+/** Order of the whole-episode videos when it is not the reels one after another (a story told with
+ * suspense): parts in order, each a YouTube chapter. */
+export type WholeOrder = { validated_by?: string; parts: { title: I18n; scenes: string[] }[] };
+
 export type EpisodeData = {
   episode: string;
   title: I18n;
@@ -125,6 +129,8 @@ export type EpisodeData = {
   publish: PublishTexts | null;
   thumbnail: ThumbnailData | null;
   reels: { id: string; title: I18n; validated_by?: string; publish?: PublishTexts }[];
+  /** The whole episode's own order, or null: every scene in file order. */
+  whole: WholeOrder | null;
   scenes: ResolvedScene[];
   generated_from: string[];
 };

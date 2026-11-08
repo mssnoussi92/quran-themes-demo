@@ -224,7 +224,7 @@ export const NameCard: React.FC<CardProps> = ({ scene, format }) => (
 
 /** Where the floor is and how big the figures are, per format (Open Peeps units -> pixels).
  * Reel: a standing figure (2931 units) reaches y = 276, just under the top safe area (250). */
-const STAGE = {
+export const STAGE = {
   reel: { floorY: 1360, scale: 0.375 },
   episode: { floorY: 880, scale: 0.235 },
 };
