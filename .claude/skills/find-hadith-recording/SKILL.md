@@ -30,7 +30,7 @@ Readings in the registry, all validated by the owner (where each one is, to find
 | Muslim 2999 (الزهد والرقائق) | `ar_Moslem_Reading_54.mp3` | 3357.0-3375.2 s (a hadith of the same book, e.g. 2963, is in this file too: probe it first) |
 | Tirmidhi 2139 | `...-Al-Tirmidhi-2006-2204.mp3` | 4501.5-4505.1 s |
 | Tirmidhi 2499, 2513 | `...-Al-Tirmidhi-2415-2605.mp3` | 3006.4-3010.2 s, 3396.0-3402.7 s (2513: muqarana) |
-| Tirmidhi 3247 | `...-Al-Tirmidhi-3105-3301.mp3` | 6254.1-6255.6 s |
+| Tirmidhi 3153, 3247 | `...-Al-Tirmidhi-3105-3301.mp3` | 2007.9-2023.18 s (3153: the estimate by numbers landed on it; the reader says « كأشد ما كان », the registry « كأمثل »; he runs on into « قال فيرجعون », cut at the dip after « إن شاء الله »), 6254.1-6255.6 s |
 | Tirmidhi 3540, 3573 | `...-Al-Tirmidhi-3535-3800.mp3` | 263.8-282.7 s, 1407.7-1418.5 s |
 
 Others seen: `Sahih_Bokhari_Audio_uP_bY_mUSLEm` (Bukhari by book), `016_20210811` and
@@ -38,6 +38,9 @@ Others seen: `Sahih_Bokhari_Audio_uP_bY_mUSLEm` (Bukhari by book), `016_20210811
 Search more with the advanced search API:
 `curl -sG https://archive.org/advancedsearch.php --data-urlencode 'q=title:(صحيح مسلم) AND mediatype:audio' --data-urlencode 'fl[]=identifier' --data-urlencode 'fl[]=title' --data-urlencode 'rows=40' --data-urlencode 'output=json'`.
 Most results are commentaries (شرح): look for readings (قراءة, مجالس سماع, audiobook).
+
+Whisper puts « قال » before the first word of a clip that starts in the pause after the reader's « قال »
+(Tirmidhi 3153, twice): an invention, check the envelope rather than move the cut.
 
 ## Steps
 

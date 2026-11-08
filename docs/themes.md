@@ -23,8 +23,8 @@ Tenu à jour par le skill `new-theme` (étape 1). Les plans détaillés des épi
 - **Dhul-Qarnayn (`qarnayn`)** (demande du propriétaire, 2026-11-08, aussitôt après khidr) : l'histoire d'Al-Kahf
   18:83-98, centrée sur ce qu'on fait de la force et du succès que Dieu donne (la justice, l'argent refusé aux gens
   dans le besoin, le travail avec eux, « ceci est une miséricorde de mon Seigneur », « إن شاء الله »). Mêmes règles
-  que khidr. Passe avant الخشوع. **Script, sources, textes, miniature et fonds validés par le propriétaire
-  (2026-11-08)** ; lecture et prises à l'écoute. Plan : `docs/design.md`.
+  que khidr. Passe avant الخشوع. **Tout validé par le propriétaire le 2026-11-08** (lecture et prises à l'écoute
+  des brouillons). Plan : `docs/design.md`.
 
 ## Choisis par le propriétaire (2026-11-07), dans l'ordre
 
