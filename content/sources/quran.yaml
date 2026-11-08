@@ -725,6 +725,22 @@
   notes: "Al-Kahf 18:82, le mur des deux orphelins, leur trésor et leur père vertueux, « miséricorde de ton Seigneur » et « je ne l'ai pas fait de moi-même » (reel khidr-04) ; une seule phrase, 50 s avec Alafasy ; commence par « وأما » comme 18:80"
   text_ar: وَأَمَّا ٱلْجِدَارُ فَكَانَ لِغُلَـٰمَيْنِ يَتِيمَيْنِ فِى ٱلْمَدِينَةِ وَكَانَ تَحْتَهُۥ كَنزٌ لَّهُمَا وَكَانَ أَبُوهُمَا صَـٰلِحًا فَأَرَادَ رَبُّكَ أَن يَبْلُغَآ أَشُدَّهُمَا وَيَسْتَخْرِجَا كَنزَهُمَا رَحْمَةً مِّن رَّبِّكَ ۚ وَمَا فَعَلْتُهُۥ عَنْ أَمْرِى ۚ ذَٰلِكَ تَأْوِيلُ مَا لَمْ تَسْطِع عَّلَيْهِ صَبْرًا
   text_en: And as for the wall, it belonged to two orphan boys in the city, and there was beneath it a treasure for them, and their father had been righteous. So your Lord intended that they reach maturity and extract their treasure, as a mercy from your Lord. And I did it not of my own accord. That is the interpretation of that about which you could not have patience."
+- id: quran.2.216
+  type: ayah
+  ref: {surah: 2, ayah: 216}
+  url: https://quran.com/2/216
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:216
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:216
+    translator: Saheeh International
+    surah_ar: البقرة
+    surah_en: Al-Baqarah
+    retrieved: '2026-11-08'
+  status: proposed
+  notes: Al-Baqara 2:216, « il se peut que vous détestiez une chose alors qu'elle est un bien pour vous… Allah sait et vous ne savez pas » (reel khidr-05, après le récapitulatif des trois sagesses ; demandé par le propriétaire le 2026-11-08, en connaissant le début « كتب عليكم القتال », montré puisque l'ayah est entière)
+  text_ar: كُتِبَ عَلَيْكُمُ ٱلْقِتَالُ وَهُوَ كُرْهٌ لَّكُمْ ۖ وَعَسَىٰٓ أَن تَكْرَهُوا۟ شَيْـًٔا وَهُوَ خَيْرٌ لَّكُمْ ۖ وَعَسَىٰٓ أَن تُحِبُّوا۟ شَيْـًٔا وَهُوَ شَرٌّ لَّكُمْ ۗ وَٱللَّهُ يَعْلَمُ وَأَنتُمْ لَا تَعْلَمُونَ
+  text_en: Battle has been enjoined upon you while it is hateful to you. But perhaps you hate a thing and it is good for you; and perhaps you love a thing and it is bad for you. And Allāh knows, while you know not.
 - id: quran.64.11
   type: ayah
   ref: {surah: 64, ayah: 11}

@@ -79,11 +79,12 @@ whole:
                ship-event-2, ship-event-3, boy-1, boy-2, boy-3, boy-4, boy-event-intro, boy-event-1, boy-event-2,
                boy-event-3, wall-1, wall-2, wall-3, wall-event-intro, wall-event, parting-say, parting-intro, parting]
     - title: { ar: "السر", en: "The secret" }
-      scenes: [ship-verse, ship-lesson-1, ship-lesson-2, ship-outro, boy-verse-intro, boy-verse-1, boy-verse-2,
-               boy-guard, boy-lesson-1, boy-lesson-2, boy-lesson-3, boy-outro, wall-verse-intro, wall-verse,
-               wall-lesson-1, wall-lesson-2]
+      scenes: [ship-verse, ship-lesson-1, ship-lesson-2, ship-life-1, ship-life-2, ship-outro, boy-verse-intro,
+               boy-verse-1, boy-verse-2, boy-guard, boy-lesson-1, boy-lesson-2, boy-lesson-3, boy-life-1, boy-life-2,
+               boy-outro, wall-verse-intro, wall-verse, wall-lesson-1, wall-lesson-2, wall-life-1, wall-life-2]
     - title: { ar: "ليه أنا؟", en: "Why me?" }
-      scenes: [end-hook, end-recap, end-why, end-because, end-hadith, end-only, end-verse-intro, end-verse, end-last]
+      scenes: [end-hook, end-recap, end-hate, end-hate-intro, end-hate-verse, end-why, end-because, end-hadith,
+               end-only, end-verse-intro, end-verse, end-last]
 scenes:
   # ---- khidr-01 : accroche, Moussa et al-Khadir, la condition --------------------------------------
   # Miroir : ce qui arrive sans qu'on comprenne pourquoi (scène type, à la deuxième personne).
@@ -471,6 +472,31 @@ scenes:
     visual:
       template: scene
       background: sea-boat
+  # Exemple de vie (demande du propriétaire, 2026-11-08) : une sagesse qui se voit vite. Scène type.
+  - id: ship-life-1
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    narration:
+      ar: "زي لما القطر يفوتك… وتتعصب إنك اتأخرت."
+      en: "Like when you miss your train… and you're angry about being late."
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: salma, pose: standing, mood: worried, talking: false }
+  - id: ship-life-2
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    narration:
+      ar: "وبعد ساعة تعرف… إنه عطل في نص الطريق."
+      en: "And an hour later you find out… it broke down halfway there."
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: salma, pose: standing, mood: smiling, talking: false }
   - id: ship-outro
     role: outro
     reel: khidr-02
@@ -644,6 +670,28 @@ scenes:
       background: plain
       characters:
         - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  # Exemple de vie : une sagesse qu'on ne verra peut-être pas ici-bas. Scène type.
+  - id: boy-life-1
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    narration:
+      ar: "زي حد خسر حد غالي عليه… ولسه بيسأل: ليه؟"
+      en: "Like someone who lost someone dear… and still asks: why?"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: salma, pose: sitting, mood: worried, talking: false }
+  - id: boy-life-2
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    narration:
+      ar: "السؤال ده… إجابته مش هنا. إجابته عند ربنا."
+      en: "That question… its answer isn't here. Its answer is with God."
+    visual:
+      template: title-card
   - id: boy-outro
     role: outro
     reel: khidr-03
@@ -787,6 +835,31 @@ scenes:
       background: plain
       characters:
         - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  # Exemple de vie : une sagesse qui se voit des années après. Scène type.
+  - id: wall-life-1
+    role: evidence
+    reel: khidr-04
+    audio: tts
+    narration:
+      ar: "زي لما تترفض من شغل كنت بتحلم بيه… وتفضل زعلان سنين."
+      en: "Like when you're turned down for the job you dreamed of… and stay upset for years."
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: worried, talking: false }
+  - id: wall-life-2
+    role: evidence
+    reel: khidr-04
+    audio: tts
+    narration:
+      ar: "وبعدين تفهم… إن الرفض ده هو اللي وصلك للي إنت فيه دلوقتي."
+      en: "And then you understand… that rejection is what brought you to where you are now."
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: amir, pose: standing, mood: smiling, talking: false }
   # Même réplique que dua-04, tawakkul-04 (prise figée reprise).
   - id: wall-outro
     role: outro
@@ -823,6 +896,33 @@ scenes:
     say_ar: "قصة موسى والخَضِر بتقول: الحكمة ممكن تبان بسرعة، أو بعد سنين، أو مش هتبان في الدنيا خالص."
     visual:
       template: title-card
+  # Al-Baqara 2:216 (demande du propriétaire, 2026-11-08) : racontée avec ses mots, puis récitée.
+  - id: end-hate
+    role: evidence
+    reel: khidr-05
+    audio: tts
+    narration:
+      ar: "ممكن تكره حاجة… وهي خير ليك. وتحب حاجة… وهي شر ليك."
+      en: "You may hate something… while it's good for you. And love something… while it's bad for you."
+    visual:
+      template: title-card
+  - id: end-hate-intro
+    role: evidence
+    reel: khidr-05
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: end-hate-verse
+    role: evidence
+    reel: khidr-05
+    source: quran.2.216
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
   - id: end-why
     role: conclusion
     reel: khidr-05
