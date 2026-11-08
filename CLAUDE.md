@@ -38,7 +38,7 @@ content/
   publish.yaml           textes de publication : hashtags de la page, limites des plateformes, lignes fixes (voix IA)
   pronunciation.yaml     mots que la voix dit mal et l'écriture qui les fait bien dire (say_ar), décisions du propriétaire
   characters.yaml        catalogue fermé des personnages : apparence (pièces Open Peeps), poses -> corps, humeurs
-  backgrounds.yaml       catalogue fermé des fonds de la scène (salle d'attente, rue, uni)
+  backgrounds.yaml       catalogue fermé des fonds de la scène (salle d'attente, rue, uni ; lieux de l'histoire de Moussa et al-Khadir), planche docs/backgrounds.png
   sources/*.yaml         registre des sources (ids stables, statut proposed/validated/excluded)
   audio/<épisode>/       prises de voix validées par le propriétaire (FLAC + takes.json, écrits par build.py --lock)
   episodes/*.yaml        scripts d'épisodes, découpés en scènes, et leurs textes de publication (`publish`)
@@ -61,7 +61,8 @@ video/                   projet Remotion (TypeScript) : compositions Reel916 (10
   src/                   Root.tsx (compositions), data.ts (chargement), scenes.ts (scènes d'une vidéo et minutage,
                          partagé avec publish.ts), Video.tsx, templates/ (cartes, scène),
                          characters/ (kit Open Peeps, bouche au volume), backgrounds/ (fonds), CharacterSheet.tsx,
-                         Thumbnail.tsx (miniature YouTube 1280x720 de l'épisode, `thumbnail` de l'épisode)
+                         Thumbnail.tsx (miniature YouTube 1280x720 de l'épisode, `thumbnail` de l'épisode),
+                         BackgroundSheet.tsx (planche des fonds, docs/backgrounds.png)
   public/fonts/          Amiri Quran, Amiri, Lora (OFL, mêmes fichiers que quran-reels)
 build/                   (ignoré) tout ce qui est généré
 .claude/skills/          new-theme (d'un thème aux vidéos), write-hook (accroche), narration-takes (voix),
@@ -103,6 +104,7 @@ npm run render -- Reel916 out/dua-01.mp4             # le reel dua-01 (≈ 40 s 
 npm run render -- Episode169 out/dua.mp4             # l'épisode entier en 16:9
 node scripts/publish.ts dua all                      # textes à coller (titre, description, hashtags) de chaque vidéo
 npm run still -- CharacterSheet ../docs/characters.png   # planche des personnages (validation des apparences)
+npm run still -- BackgroundSheet ../docs/backgrounds.png --frame=40   # planche des fonds, 16:9 et 9:16 (validation des dessins)
 npm run still -- Thumbnail169 out/dua-thumbnail.png      # miniature YouTube de l'épisode (mise en page de `thumbnail.layout`)
 npm run still -- Thumbnail169 out/t.png --props='{"episode":"dua","layout":"title","data":null}'   # comparer une autre mise en page
 npm run render -- Reel916 out/x.mp4 --props='{"episode":"dua","reel":"dua-02","format":"reel","data":null}'
@@ -142,7 +144,12 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 
 10. **Épisode Le piège des comparaisons** (choix du propriétaire, 2026-11-07) : `content/episodes/muqarana.yaml`, reels **muqarana-01 à muqarana-05** (l'accroche et Bukhari 6446, trois idées reçues : « qui a plus est plus aimé de Dieu » 89:15-17 et Muslim 2564c, « ce qu'ils ont est mieux » 20:131 et Tirmidhi 2513, « toute comparaison est mauvaise » Bukhari 73 et 83:26, la conclusion sur la gratitude 14:7), plan dans `docs/design.md`. Tirmidhi 2513 à la place de Muslim 2963c (la carte aurait montré une remarque d'Abu Mu'awiya). Les 4 hadiths lus par de vrais lecteurs (Bukhari 73 : fichier `0074.mp3`, numérotation du lecteur décalée). Titre « فخ المقارنات » (demande du propriétaire). **Tout validé par le propriétaire le 2026-11-07** ; prises figées.
 11. **Épisode La confiance en Dieu** (choix du propriétaire, 2026-11-07) : `content/episodes/tawakkul.yaml`, reels **tawakkul-01 à tawakkul-05** (l'accroche et Tirmidhi 2344, les oiseaux ; trois idées reçues : « le tawakkul, c'est ne rien faire » Tirmidhi 2517 et 67:15, « avoir peur, c'est avoir une foi faible » 20:67-68 avec Moussa sur une carte de nom et Bukhari 6369, « je dois tout porter seul » 33:3 et Tirmidhi 3426 ; la conclusion 25:58), plan dans `docs/design.md`. 33:3 et Tirmidhi 3426 à la place de 3:173 (début de phrase) et Bukhari 4563 (parole d'Ibn Abbas) ; 25:58 plutôt que 65:3 (début de phrase). Tirmidhi 2517 : la question de l'homme dite par la narration, la lecture commence par « قال ». Voix : « ولّا » (« ou ») dans la question. **Tout validé par le propriétaire** (2026-11-07 et 2026-11-08, lectures et prises à l'écoute) ; prises figées.
-12. **Thème suivant** (`docs/themes.md`) : **الخشوع** ; avec le skill `new-theme`, sources à faire valider d'abord.
+12. **Épisode Moussa et al-Khadir** (idée du propriétaire, 2026-11-08, d'après un cours en égyptien qu'il a partagé ; avant الخشوع) : `content/episodes/khidr.yaml`, l'histoire d'Al-Kahf 18:60-82 centrée sur la sagesse de l'épreuve et du décret, plan dans `docs/design.md`. Reels **khidr-01 à khidr-05** : le voyage et la condition (18:67-68), puis un événement et son explication par reel (le bateau, Bukhari 3401 et 18:79 ; le garçon, 18:80-81 ; le mur, 18:82), la leçon (Bukhari 122, 64:11). Trois nouveautés, choix du propriétaire :
+   - **Ordre propre à l'épisode entier** (`whole` de l'épisode, `parts` : titre et scènes) : le voyage, les trois événements sans explication (et 18:78, seulement là), puis le secret de chacun, puis la leçon ; chaque partie est un chapitre YouTube (`wholeParts`, `video/src/scenes.ts`). Une scène sans `reel` n'est dite que dans l'épisode entier ; une scène d'un reel absente de `whole` n'est dite que dans son reel (les liaisons « السر؟ الخضر قاله بعدين: »). Validé à part : `whole.validated_by` ; `validate.py --release --whole <épisode>` (render.yml, `reel: all`).
+   - **Extrait d'un hadith trop long** (`excerpt_ar` du registre, avec son `excerpt_en`) : la carte et le lecteur disent ce passage des paroles du Prophète ﷺ au lieu de tout ce qui est entre guillemets ; recopié de `text_ar` (script), `validate.py` vérifie qu'il en fait partie. Bukhari 3401 (le moineau) et 122 (« يرحم الله موسى… »), lus par Abu Malik (fichiers `3401.mp3` et `0123.mp3`).
+   - **Fonds de l'histoire** (`confluence`, `sea-boat`, `sea-bird`, `road`, `village-wall`, `wall-treasure`, `video/src/backgrounds/Story.tsx`) : des lieux, jamais une personne ; Moussa et al-Khadir en cartes de nom, le garçon jamais montré.
+   **Proposé le 2026-11-08, rien n'est validé.**
+13. **Thème suivant** (`docs/themes.md`) : **الخشوع** ; avec le skill `new-theme`, sources à faire valider d'abord.
 
 ## Skills (`.claude/skills/`)
 

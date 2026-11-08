@@ -437,3 +437,131 @@
   notes: Al-Furqan 25:58, « place ta confiance dans le Vivant qui ne meurt pas » (reel tawakkul-05, conclusion) ; 65:3 (« فهو حسبه ») écarté car il commence au milieu d'une phrase (la suite de 65:2)
   text_ar: وَتَوَكَّلْ عَلَى ٱلْحَىِّ ٱلَّذِى لَا يَمُوتُ وَسَبِّحْ بِحَمْدِهِۦ ۚ وَكَفَىٰ بِهِۦ بِذُنُوبِ عِبَادِهِۦ خَبِيرًا
   text_en: And rely upon the Ever-Living who does not die, and exalt [Allāh] with His praise. And sufficient is He to be, with the sins of His servants, [fully] Aware -
+- id: quran.18.67
+  type: ayah
+  ref: {surah: 18, ayah: 67}
+  url: https://quran.com/18/67
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:67
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:67
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-08'
+  status: proposed
+  notes: "Al-Kahf 18:67, « tu ne pourras pas être patient avec moi » (reel khidr-01, la rencontre ; lu avec 18:68 qui le continue)"
+  text_ar: قَالَ إِنَّكَ لَن تَسْتَطِيعَ مَعِىَ صَبْرًا
+  text_en: He said, "Indeed, with me you will never be able to have patience.
+- id: quran.18.68
+  type: ayah
+  ref: {surah: 18, ayah: 68}
+  url: https://quran.com/18/68
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:68
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:68
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-08'
+  status: proposed
+  notes: "Al-Kahf 18:68, « comment serais-tu patient sur ce que tu n'embrasses pas de ton savoir ? », la clé de l'histoire (reel khidr-01) ; commence par « و » : suit 18:67 sur la carte d'avant"
+  text_ar: وَكَيْفَ تَصْبِرُ عَلَىٰ مَا لَمْ تُحِطْ بِهِۦ خُبْرًا
+  text_en: And how can you have patience for what you do not encompass in knowledge?"
+- id: quran.18.78
+  type: ayah
+  ref: {surah: 18, ayah: 78}
+  url: https://quran.com/18/78
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:78
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:78
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-08'
+  status: proposed
+  notes: "Al-Kahf 18:78, la séparation et la promesse d'expliquer : le tournant de l'épisode complet, entre les trois événements et leur sens (seulement dans l'épisode complet)"
+  text_ar: قَالَ هَـٰذَا فِرَاقُ بَيْنِى وَبَيْنِكَ ۚ سَأُنَبِّئُكَ بِتَأْوِيلِ مَا لَمْ تَسْتَطِع عَّلَيْهِ صَبْرًا
+  text_en: '[Al-Khiḍr] said, "This is parting between me and you. I will inform you of the interpretation of that about which you could not have patience.'
+- id: quran.18.79
+  type: ayah
+  ref: {surah: 18, ayah: 79}
+  url: https://quran.com/18/79
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:79
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:79
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-08'
+  status: proposed
+  notes: "Al-Kahf 18:79, le bateau des pauvres, abîmé pour échapper au roi qui prenait tous les bateaux (reel khidr-02)"
+  text_ar: أَمَّا ٱلسَّفِينَةُ فَكَانَتْ لِمَسَـٰكِينَ يَعْمَلُونَ فِى ٱلْبَحْرِ فَأَرَدتُّ أَنْ أَعِيبَهَا وَكَانَ وَرَآءَهُم مَّلِكٌ يَأْخُذُ كُلَّ سَفِينَةٍ غَصْبًا
+  text_en: As for the ship, it belonged to poor people working at sea. So I intended to cause defect in it as there was after them a king who seized every [good] ship by force.
+- id: quran.18.80
+  type: ayah
+  ref: {surah: 18, ayah: 80}
+  url: https://quran.com/18/80
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:80
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:80
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-08'
+  status: proposed
+  notes: "Al-Kahf 18:80, le garçon dont les parents étaient croyants (reel khidr-03) ; commence par « وأما » : suite des explications, choix du propriétaire comme 25:70 ; lu avec 18:81 qui le continue"
+  text_ar: وَأَمَّا ٱلْغُلَـٰمُ فَكَانَ أَبَوَاهُ مُؤْمِنَيْنِ فَخَشِينَآ أَن يُرْهِقَهُمَا طُغْيَـٰنًا وَكُفْرًا
+  text_en: And as for the boy, his parents were believers, and we feared that he would overburden them by transgression and disbelief.
+- id: quran.18.81
+  type: ayah
+  ref: {surah: 18, ayah: 81}
+  url: https://quran.com/18/81
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:81
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:81
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-08'
+  status: proposed
+  notes: "Al-Kahf 18:81, « que leur Seigneur leur donne en échange un meilleur » (reel khidr-03) ; commence par « فأردنا » : suit 18:80 sur la carte d'avant"
+  text_ar: فَأَرَدْنَآ أَن يُبْدِلَهُمَا رَبُّهُمَا خَيْرًا مِّنْهُ زَكَوٰةً وَأَقْرَبَ رُحْمًا
+  text_en: So we intended that their Lord should substitute for them one better than him in purity and nearer to mercy.
+- id: quran.18.82
+  type: ayah
+  ref: {surah: 18, ayah: 82}
+  url: https://quran.com/18/82
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:82
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:82
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-08'
+  status: proposed
+  notes: "Al-Kahf 18:82, le mur des deux orphelins, leur trésor et leur père vertueux, « miséricorde de ton Seigneur » et « je ne l'ai pas fait de moi-même » (reel khidr-04) ; une seule phrase, 50 s avec Alafasy ; commence par « وأما » comme 18:80"
+  text_ar: وَأَمَّا ٱلْجِدَارُ فَكَانَ لِغُلَـٰمَيْنِ يَتِيمَيْنِ فِى ٱلْمَدِينَةِ وَكَانَ تَحْتَهُۥ كَنزٌ لَّهُمَا وَكَانَ أَبُوهُمَا صَـٰلِحًا فَأَرَادَ رَبُّكَ أَن يَبْلُغَآ أَشُدَّهُمَا وَيَسْتَخْرِجَا كَنزَهُمَا رَحْمَةً مِّن رَّبِّكَ ۚ وَمَا فَعَلْتُهُۥ عَنْ أَمْرِى ۚ ذَٰلِكَ تَأْوِيلُ مَا لَمْ تَسْطِع عَّلَيْهِ صَبْرًا
+  text_en: And as for the wall, it belonged to two orphan boys in the city, and there was beneath it a treasure for them, and their father had been righteous. So your Lord intended that they reach maturity and extract their treasure, as a mercy from your Lord. And I did it not of my own accord. That is the interpretation of that about which you could not have patience."
+- id: quran.64.11
+  type: ayah
+  ref: {surah: 64, ayah: 11}
+  url: https://quran.com/64/11
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=64:11
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=64:11
+    translator: Saheeh International
+    surah_ar: التغابن
+    surah_en: At-Taghabun
+    retrieved: '2026-11-08'
+  status: proposed
+  notes: "At-Taghabun 64:11, « aucun malheur n'arrive que par la permission d'Allah ; quiconque croit en Allah, Il guide son cœur » (reel khidr-05, verset de fin) ; plutôt que 2:216, qui commence par « le combat vous a été prescrit »"
+  text_ar: مَآ أَصَابَ مِن مُّصِيبَةٍ إِلَّا بِإِذْنِ ٱللَّهِ ۗ وَمَن يُؤْمِنۢ بِٱللَّهِ يَهْدِ قَلْبَهُۥ ۚ وَٱللَّهُ بِكُلِّ شَىْءٍ عَلِيمٌ
+  text_en: No disaster strikes except by permission of Allāh. And whoever believes in Allāh - He will guide his heart. And Allāh is Knowing of all things.

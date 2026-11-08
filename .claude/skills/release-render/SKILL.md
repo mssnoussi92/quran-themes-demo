@@ -16,7 +16,9 @@ per reel, `<episode>-thumbnail.png`, and in its notes the title and text to past
   texts (`publish.validated_by`, on the episode and each reel); every quoted source and recording
   `validated`; every narration line with a locked take. Check each reel:
   `uv run --with jsonschema --with pyyaml scripts/validate.py --release --reel <reel>` (its scenes
-  only: a source still proposed in another episode does not block it), then
+  only: a source still proposed in another episode does not block it), and for an episode with its
+  own order (`whole`, khidr) `validate.py --release --whole <episode>` (`whole.validated_by`, the
+  lines said only in the whole episode), then
   `python3 tools/audio/build.py --episode <episode> --require-locked --tts-python /bin/false`.
 - The thumbnail is rendered either way; the notes flag it « proposée » until `thumbnail.validated_by`.
 - Commit and push: the workflow renders the head of the branch it is given, at dispatch time.

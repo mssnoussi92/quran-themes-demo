@@ -37,10 +37,19 @@ translation, the final video. Never mark any of them done yourself.
      and their sources. The owner chooses; write the decision in `docs/themes.md`.
    - Do not refute a misconception with the same evidence as an earlier reel (sabr-03 « patience is
      waiting » used Muslim 2664: a tawakkul reel on effort takes Tirmidhi 2517 and 2344 instead).
+   - A **story** (khidr, 2026-11-08: Musa and al-Khidr, 18:60-82) needs no misconceptions: one event
+     and its meaning per reel, in the order of the Qur'an, and the whole episode told with suspense,
+     every event first and then every secret (`whole`, step 3). The narration tells the story from
+     the Qur'an and the authentic hadith only (no names or details introduced by « يزعمون », no
+     israiliyyat), the verses prove it; never draw a prophet, never show a killing.
 
 2. **Sources.** For each claim, a verse or a hadith, never a summary from memory.
    - Verses: quran.ai MCP (`search_quran`, `fetch_word_concordance`; read its grounding rules
      first and pass their nonce), or the quran.com API. Whole ayahs only.
+   - A hadith too long for a card (the whole story of Musa and al-Khidr, Bukhari 122): the registry's
+     `excerpt_ar` (with `excerpt_en`) is the passage the card shows and the reader says, copied from
+     `text_ar` with a script, never typed (validate.py checks it). One excerpt per hadith: a second
+     passage of the same story comes from another narration of it (Bukhari 3401 for the sparrow).
    - Hadiths: collections and grades allowed by `content/policy.yaml` (Bukhari, Muslim, Tirmidhi
      if al-Albani grades it sahih or hasan). To search hadith-api, download
      `editions/ara-<collection>1.min.json` (Arabic without diacritics) into the scratchpad and
@@ -81,6 +90,14 @@ translation, the final video. Never mark any of them done yourself.
      is reused), every hadith by « النبي صلى الله عليه وسلم قال: » on its `source-card`;
    - a prophet or a Companion appears only on a `name-card` (`mentions`), never drawn (Ayyub in dua);
    - a visual change every 6 s or so; one colour per function (concepts, narrator, questions, quotes).
+   - a story told with suspense in the whole episode (khidr): the episode's `whole` lists its parts
+     (a title each, a YouTube chapter) and their scenes in order. A scene without `reel` is said only
+     there (khidr: 18:78, the parting); a reel's scene left out of `whole` only in its reel (the
+     links « السر؟ الخضر قاله بعدين: »). The owner validates the order and those lines with the
+     reels: `whole.validated_by`, checked by `validate.py --release --whole <theme>`.
+   - new places for a story: draw them in `video/src/backgrounds/` (flat shapes, no person), add
+     them to `content/backgrounds.yaml`, render the board (`npm run still -- BackgroundSheet
+     ../docs/backgrounds.png --frame=40`) and send it to the owner before the drafts.
 
 4. **Script.** Follow the `write-hook` skill for the episode opening and for each reel: mirror,
    contrast, anchor, and an honest open loop to the next reel. Narration in Egyptian Arabic

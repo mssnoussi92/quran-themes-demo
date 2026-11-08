@@ -22,7 +22,8 @@ Readings in the registry, all validated by the owner (where each one is, to find
 
 | Hadith | File | Clip |
 | --- | --- | --- |
-| Bukhari 6340, 1303, 1469, 6309, 6307 (6446, 73 proposed) | `bukhari_audiobook/<number>.mp3` (73: `0074.mp3`) | after the chain, 6 to 21 s in |
+| Bukhari 6340, 1303, 1469, 6309, 6307, 6446, 73 | `bukhari_audiobook/<number>.mp3` (73: `0074.mp3`) | after the chain, 6 to 21 s in |
+| Bukhari 3401 (excerpt: the sparrow), 122 (excerpt: « يرحم الله موسى… ») | `3401.mp3` (383 s), `0123.mp3` (277 s: 122 is one file further, like 73) | 202.76-212.12 s, 268.78-276.5 s (proposed, khidr); position ≈ the excerpt's share of the text |
 | Muslim 2564c (البر والصلة) | `ar_Moslem_Reading_46.mp3` | 1791.1-1800.3 s (proposed, muqarana) |
 | Muslim 2664 (القدر) | `ar_Moslem_Reading_47.mp3` | 2447.7-2476.1 s |
 | Muslim 2679a (الذكر والدعاء) | `ar_Moslem_Reading_49.mp3` | 285.5-299.7 s |
