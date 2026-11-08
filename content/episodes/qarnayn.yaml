@@ -433,7 +433,7 @@ scenes:
       en: "Like when you're alone at work… and no one sees what you do with your time."
     visual:
       template: scene
-      background: plain
+      background: waiting-room
       characters:
         - { id: amir, pose: sitting, mood: calm, talking: false }
   - id: east-life-2
@@ -445,9 +445,9 @@ scenes:
       en: "And you still work with a conscience… because you know God sees."
     visual:
       template: scene
-      background: plain
+      background: waiting-room
       characters:
-        - { id: amir, pose: standing, mood: smiling, talking: false }
+        - { id: amir, pose: sitting, mood: smiling, talking: false }
   - id: west-outro
     role: outro
     reel: qarnayn-02
