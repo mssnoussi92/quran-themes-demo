@@ -20,6 +20,10 @@ Tenu à jour par le skill `new-theme` (étape 1). Les plans détaillés des épi
   un événement par reel (le bateau, le garçon, le mur) avec son explication et ses versets, un exemple de vie
   pour chaque sagesse, l'épisode entier raconté avec suspense. Passe avant الخشوع (choix du propriétaire).
   **Tout validé par le propriétaire le 2026-11-08.** Plan : `docs/design.md`.
+- **Dhul-Qarnayn (`qarnayn`)** (demande du propriétaire, 2026-11-08, aussitôt après khidr) : l'histoire d'Al-Kahf
+  18:83-98, centrée sur ce qu'on fait de la force et du succès que Dieu donne (la justice, l'argent refusé aux gens
+  dans le besoin, le travail avec eux, « ceci est une miséricorde de mon Seigneur », « إن شاء الله »). Mêmes règles
+  que khidr. Passe avant الخشوع. **Proposé.** Plan : `docs/design.md`.
 
 ## Choisis par le propriétaire (2026-11-07), dans l'ordre
 

@@ -1,5 +1,6 @@
-// Backgrounds of the story of Musa and al-Khidr (Al-Kahf 18:60-82, episode khidr): places and things
-// only, never a person (a prophet is never drawn; the boy is never shown). Same flat shapes and black
+// Backgrounds of the stories of Al-Kahf: Musa and al-Khidr (18:60-82, episode khidr) and Dhul-Qarnayn
+// (18:83-98, episode qarnayn). Places and things only, never a person (a prophet, Dhul-Qarnayn and the
+// peoples he met are never drawn; the boy is never shown). Same flat shapes and black
 // line as the other backgrounds. Each SVG names its gradients after itself: two backgrounds are on
 // screen together during a transition.
 import { useCurrentFrame, useVideoConfig } from "remotion";
@@ -349,6 +350,178 @@ const WallTreasure: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }
   );
 };
 
+// ---- Dhul-Qarnayn (18:83-98) --------------------------------------------------------------------
+
+/** Where the sun sets (مغرب الشمس): he found it setting, as it seemed to him, in a spring of dark mud
+ * (عين حمئة), and a people near it: their tents only, nobody drawn. The sun sinks slowly. */
+const SunsetSpring: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
+  const t = useSeconds();
+  const u = Math.min(w, h);
+  const horizon = floorY - 0.34 * u;
+  const cx = w / 2;
+  const sink = Math.min(t, 8) * 0.004 * u;
+  const pool = { cx, cy: horizon + 0.05 * u, rx: 0.5 * u, ry: 0.07 * u };
+  return (
+    <Svg w={w} h={h}>
+      <Sky id="sunset-spring-sky" w={w} to={horizon} top="#F2A65A" bottom="#FBD7A1" />
+      <defs>
+        <clipPath id={`sunset-spring-above-${w}x${h}`}>
+          <rect width={w} height={pool.cy - 2} />
+        </clipPath>
+      </defs>
+      <circle cx={cx} cy={horizon - 0.02 * u + sink} r={0.12 * u} fill="#F26B3A" stroke={INK} strokeWidth={LINE} clipPath={`url(#sunset-spring-above-${w}x${h})`} />
+      <rect y={horizon} width={w} height={h - horizon} fill="#C9A26E" />
+      <line x1={0} y1={horizon} x2={w} y2={horizon} stroke={INK} strokeWidth={LINE} />
+      {/* the dark spring, the sun's glow on it */}
+      <ellipse cx={pool.cx} cy={pool.cy} rx={pool.rx + 0.03 * u} ry={pool.ry + 0.02 * u} fill="#8C6A45" stroke={INK} strokeWidth={LINE} />
+      <ellipse cx={pool.cx} cy={pool.cy} rx={pool.rx} ry={pool.ry} fill="#3E3A2C" stroke={INK} strokeWidth={4} />
+      <ellipse cx={pool.cx} cy={pool.cy - 0.01 * u} rx={0.16 * u} ry={0.018 * u} fill="#F26B3A" opacity={0.55 + 0.15 * Math.sin(t * 1.3)} />
+      {[0.25, 0.7].map((f, i) => (
+        <path key={i} d={wave(pool.cx - pool.rx * 0.7, pool.cx + pool.rx * 0.7, pool.cy + (0.02 + 0.025 * i) * u, 3, 120, t * 0.8 + f * 5)} fill="none" stroke="#6B5E44" strokeWidth={4} strokeDasharray="50 90" />
+      ))}
+      {/* the people's tents, on the near shore */}
+      {[
+        { x: cx - 0.42 * u, s: 1 },
+        { x: cx - 0.3 * u, s: 0.75 },
+        { x: cx + 0.36 * u, s: 0.9 },
+      ].map((tent, i) => {
+        const base = floorY - 0.02 * u;
+        const tw = 0.12 * u * tent.s;
+        const th = 0.1 * u * tent.s;
+        return (
+          <g key={i} stroke={INK} strokeWidth={LINE} strokeLinejoin="round">
+            <path d={`M ${tent.x - tw} ${base} L ${tent.x} ${base - th} L ${tent.x + tw} ${base} Z`} fill={i % 2 ? "#B5835A" : "#9E6F4A"} />
+            <path d={`M ${tent.x} ${base - th} L ${tent.x - tw * 0.25} ${base} L ${tent.x + tw * 0.25} ${base} Z`} fill="#4A3526" />
+          </g>
+        );
+      })}
+    </Svg>
+  );
+};
+
+/** Where the sun rises (مطلع الشمس): a bare plain, nothing to shelter from it (لم نجعل لهم من دونها
+ * سترا). The sun climbs, heat lines shimmer above the ground. */
+const SunrisePlain: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
+  const t = useSeconds();
+  const u = Math.min(w, h);
+  const horizon = floorY - 0.3 * u;
+  const cx = w / 2 + 0.22 * u;
+  const rise = Math.min(t, 8) * 0.005 * u;
+  return (
+    <Svg w={w} h={h}>
+      <Sky id="sunrise-plain-sky" w={w} to={horizon} top="#BFDDEB" bottom="#FFE3B0" />
+      <defs>
+        <clipPath id={`sunrise-plain-above-${w}x${h}`}>
+          <rect width={w} height={horizon} />
+        </clipPath>
+      </defs>
+      <circle cx={cx} cy={horizon + 0.03 * u - rise} r={0.11 * u} fill="#FFC94D" stroke={INK} strokeWidth={LINE} clipPath={`url(#sunrise-plain-above-${w}x${h})`} />
+      {Array.from({ length: 8 }, (_, i) => {
+        const a = Math.PI + (i / 7) * Math.PI;
+        const r0 = 0.15 * u;
+        const r1 = 0.2 * u;
+        const cy = horizon + 0.03 * u - rise;
+        return <line key={i} x1={cx + r0 * Math.cos(a)} y1={cy + r0 * Math.sin(a)} x2={cx + r1 * Math.cos(a)} y2={cy + r1 * Math.sin(a)} stroke="#F2A93B" strokeWidth={7} strokeLinecap="round" clipPath={`url(#sunrise-plain-above-${w}x${h})`} />;
+      })}
+      <rect y={horizon} width={w} height={h - horizon} fill="#E7C98F" />
+      <line x1={0} y1={horizon} x2={w} y2={horizon} stroke={INK} strokeWidth={LINE} />
+      {[0.08, 0.16, 0.24].map((f, i) => (
+        <path key={i} d={wave(0, w, horizon + f * u, 4, 180, t * 2 + i)} fill="none" stroke="#F5DDAE" strokeWidth={5} strokeDasharray="70 140" opacity={0.8} />
+      ))}
+      {[
+        { x: w / 2 - 0.36 * u, y: floorY + 0.01 * u, r: 0.035 * u },
+        { x: w / 2 + 0.08 * u, y: floorY + 0.05 * u, r: 0.025 * u },
+      ].map((st, i) => (
+        <ellipse key={i} cx={st.x} cy={st.y} rx={st.r * 1.5} ry={st.r} fill="#B9A585" stroke={INK} strokeWidth={4} />
+      ))}
+    </Svg>
+  );
+};
+
+/** Two steep mountains (السدّين) and the pass between them. */
+const Mountains: React.FC<{ w: number; base: number; u: number; gap: number }> = ({ w, base, u, gap }) => {
+  const cx = w / 2;
+  const peak = base - 0.62 * u;
+  return (
+    <g stroke={INK} strokeWidth={LINE} strokeLinejoin="round">
+      <path d={`M ${-0.1 * u} ${base} L ${cx - 0.55 * u} ${peak + 0.05 * u} L ${cx - 0.36 * u} ${peak} L ${cx - gap} ${base - 0.1 * u} L ${cx - gap} ${base} Z`} fill="#8E8174" />
+      <path d={`M ${cx - 0.55 * u} ${peak + 0.05 * u} L ${cx - 0.46 * u} ${peak + 0.12 * u} L ${cx - 0.36 * u} ${peak} Z`} fill="#F4F1EA" strokeWidth={4} />
+      <path d={`M ${w + 0.1 * u} ${base} L ${cx + 0.58 * u} ${peak + 0.02 * u} L ${cx + 0.4 * u} ${peak + 0.06 * u} L ${cx + gap} ${base - 0.1 * u} L ${cx + gap} ${base} Z`} fill="#7D7166" />
+      <path d={`M ${cx + 0.58 * u} ${peak + 0.02 * u} L ${cx + 0.49 * u} ${peak + 0.1 * u} L ${cx + 0.4 * u} ${peak + 0.06 * u} Z`} fill="#F4F1EA" strokeWidth={4} />
+      {[0.3, 0.45].map((f) => (
+        <g key={f}>
+          <line x1={cx - 0.5 * u * f - gap} y1={base - 0.3 * u * f} x2={cx - 0.4 * u * f - gap} y2={base - 0.15 * u * f} strokeWidth={4} />
+          <line x1={cx + 0.5 * u * f + gap} y1={base - 0.32 * u * f} x2={cx + 0.42 * u * f + gap} y2={base - 0.16 * u * f} strokeWidth={4} />
+        </g>
+      ))}
+    </g>
+  );
+};
+
+/** The pass between the two mountains (بين السدّين), open: the way the people feared. */
+const MountainPass: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
+  const t = useSeconds();
+  const u = Math.min(w, h);
+  const base = floorY - 0.06 * u;
+  const cx = w / 2;
+  const gap = 0.12 * u;
+  return (
+    <Svg w={w} h={h}>
+      <Sky id="mountain-pass-sky" w={w} to={base} top="#B9D3E3" bottom="#EFE6D2" />
+      {/* dust blowing through the pass */}
+      {[0, 1, 2].map((i) => (
+        <path key={i} d={wave(cx - gap, cx + gap, base - (0.06 + 0.07 * i) * u, 6, 60, t * 3 + i * 2)} fill="none" stroke="#D8C7A8" strokeWidth={6} strokeLinecap="round" opacity={0.7} />
+      ))}
+      <Mountains w={w} base={base} u={u} gap={gap} />
+      <rect y={base} width={w} height={h - base} fill="#CDB68E" />
+      <line x1={0} y1={base} x2={w} y2={base} stroke={INK} strokeWidth={LINE} />
+      <path d={`M ${cx - 0.6 * gap} ${base} L ${cx + 0.6 * gap} ${base} L ${cx + 0.3 * u} ${h} L ${cx - 0.3 * u} ${h} Z`} fill="#DECAA2" stroke={INK} strokeWidth={LINE} strokeLinejoin="round" />
+    </Svg>
+  );
+};
+
+/** The barrier (الردم): bars of iron filling the pass from one mountain to the other, molten copper
+ * poured over them, glowing (آتوني زبر الحديد… أفرغ عليه قطرا). */
+const IronDam: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
+  const t = useSeconds();
+  const u = Math.min(w, h);
+  const base = floorY - 0.06 * u;
+  const cx = w / 2;
+  const gap = 0.12 * u;
+  const top = base - 0.5 * u;
+  const glow = 0.55 + 0.45 * Math.sin(t * 2.2);
+  const rows = 7;
+  const rh = (base - top) / rows;
+  const half = gap + 0.32 * u;
+  return (
+    <Svg w={w} h={h}>
+      <Sky id="iron-dam-sky" w={w} to={base} top="#B9D3E3" bottom="#EFE6D2" />
+      {/* the dam, between the mountains */}
+      <g stroke={INK} strokeLinejoin="round">
+        <rect x={cx - half} y={top} width={2 * half} height={base - top} fill="#6E737A" strokeWidth={LINE} />
+        {Array.from({ length: rows }, (_, r) =>
+          Array.from({ length: 6 }, (_, k) => {
+            const bw = (2 * half) / 5;
+            const x = cx - half + k * bw - (r % 2 ? bw / 2 : 0);
+            return <rect key={`${r}-${k}`} x={Math.max(x, cx - half)} y={top + r * rh} width={Math.min(bw, cx + half - Math.max(x, cx - half))} height={rh} fill={(r + k) % 2 ? "#7B8189" : "#666B72"} strokeWidth={3} />;
+          }),
+        )}
+        {/* molten copper running down */}
+        <path d={`M ${cx - half} ${top} L ${cx + half} ${top} L ${cx + half} ${top + 0.035 * u} Q ${cx} ${top + 0.06 * u} ${cx - half} ${top + 0.035 * u} Z`} fill="#E07B39" strokeWidth={LINE} />
+        {[-0.22, -0.05, 0.12, 0.27].map((f, i) => {
+          const len = (0.1 + 0.05 * i) * u * (0.8 + 0.2 * Math.sin(t * 1.5 + i));
+          const x = cx + f * u;
+          return <path key={i} d={`M ${x - 10} ${top + 0.03 * u} L ${x + 10} ${top + 0.03 * u} L ${x + 4} ${top + 0.03 * u + len} Q ${x} ${top + 0.04 * u + len} ${x - 4} ${top + 0.03 * u + len} Z`} fill="#E8893F" strokeWidth={3} />;
+        })}
+      </g>
+      <rect x={cx - half} y={top} width={2 * half} height={base - top} fill="#FF9A3C" opacity={0.18 * glow} />
+      <Mountains w={w} base={base} u={u} gap={half - 0.02 * u} />
+      <rect y={base} width={w} height={h - base} fill="#CDB68E" />
+      <line x1={0} y1={base} x2={w} y2={base} stroke={INK} strokeWidth={LINE} />
+    </Svg>
+  );
+};
+
 export const STORY_BACKGROUNDS: Record<string, React.FC<BackgroundProps>> = {
   confluence: Confluence,
   "sea-boat": SeaBoat,
@@ -356,4 +529,8 @@ export const STORY_BACKGROUNDS: Record<string, React.FC<BackgroundProps>> = {
   road: Road,
   "village-wall": VillageWall,
   "wall-treasure": WallTreasure,
+  "sunset-spring": SunsetSpring,
+  "sunrise-plain": SunrisePlain,
+  "mountain-pass": MountainPass,
+  "iron-dam": IronDam,
 };

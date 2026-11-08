@@ -22,3 +22,13 @@ backgrounds:
     description: Le village qui a refusé de les nourrir, et le mur fissuré qui penche, prêt à tomber, des briques à terre
   wall-treasure:
     description: Le mur redressé, et sous lui la terre ouverte sur le trésor des deux orphelins (18:82), qui brille
+  # Histoire de Dhul-Qarnayn (épisode qarnayn, 18:83-98) : des lieux, jamais une personne (ni lui, ni les
+  # peuples qu'il a rencontrés, ni Yajuj et Majuj).
+  sunset-spring:
+    description: Le couchant, le soleil qui semble se coucher dans une source de boue sombre (عين حمئة), les tentes d'un peuple sur la rive
+  sunrise-plain:
+    description: Le levant, une plaine nue, rien pour s'abriter du soleil (لم نجعل لهم من دونها سترا)
+  mountain-pass:
+    description: Deux montagnes escarpées (السدّين) et le passage ouvert entre elles, de la poussière qui y souffle
+  iron-dam:
+    description: Le barrage de blocs de fer entre les deux montagnes, le cuivre fondu versé dessus, rougeoyant
