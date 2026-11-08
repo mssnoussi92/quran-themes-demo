@@ -17,6 +17,11 @@ verse for a recitation. Writes build/audio/<episode>/<scene>.(mp3|wav) and manif
               in content/audio/<episode>/ (FLAC + takes.json, `--lock <owner>`, only on the owner's
               word) and always reused (also by another scene, of this episode or another one, that
               says the same line in the same voice: `take_from` in the manifest); a line is synthesised only when it has no locked take for its text and voice. `--require-locked` (release renders) fails instead.
+              A candidate take (`--candidate`, owner's decision of 2026-11-08: one validation, at
+              the end) is a take Claude checked (Whisper, trailing sounds, phrase starts) and stored
+              in the same place, not yet heard by the owner: the candidate render uses exactly it
+              (`--require-committed`), and the owner's word turns it into a locked take (`--lock`)
+              without touching its audio. A take of another episode is borrowed only once locked.
               Each line is cut into phrases (after « ، … . ؟ : ») and the manifest gives the time
               each phrase starts, read from the pauses of the take: a title card shows them one by
               one as the voice says them.
@@ -29,6 +34,8 @@ Usage:
   python3 tools/audio/build.py --episode dua
   python3 tools/audio/build.py --episode dua --lock mssnoussi92        # the owner approved these takes
   python3 tools/audio/build.py --episode dua --require-locked --reel dua-01
+  python3 tools/audio/build.py --episode dua --candidate               # store the checked takes for the candidate render
+  python3 tools/audio/build.py --episode dua --require-committed       # candidate render: candidate or locked takes only
   python3 tools/audio/build.py --episode dua --only outro --use-take outro=takes/outro__2.wav   # a chosen take
   python3 tools/audio/build.py --episode dua --speaker Ahmed --tts-python /opt/venvs/voicetut/bin/python
 """
@@ -380,6 +387,11 @@ def mix_reading(sid: str, entry: dict, scene: dict, out_dir: Path) -> dict:
             "phrases": phrases[:len(intro)] + [{"text": source["display_ar"], "start": start}]}
 
 
+TAKES_NOTE = ("Narration takes validated by the owner (AI-generated voice, VoiceTut), and candidate takes checked "
+              "by Claude for the owner's final review (status: candidate). Written by tools/audio/build.py "
+              "--candidate, --lock and --set-phrases, never by hand.")
+
+
 def tts_key(text: str, speaker: str) -> str:
     return hashlib.sha256(f"voicetut\n{speaker}\n{text}".encode()).hexdigest()[:16]
 
@@ -412,7 +424,12 @@ def main() -> int:
                    help="store the current narration takes as validated by OWNER (only on the owner's word)")
     p.add_argument("--require-locked", action="store_true",
                    help="fail, before any synthesis, if a narration line has no validated take")
-    p.add_argument("--reel", help="with --require-locked or --lock: only this reel's scenes")
+    p.add_argument("--candidate", action="store_true",
+                   help="store the current draft takes (checked by Claude, not yet heard by the owner) in "
+                        "content/audio/<episode>/ for the candidate render; --lock turns them into locked takes")
+    p.add_argument("--require-committed", action="store_true",
+                   help="fail, before any synthesis, if a narration line has neither a candidate nor a locked take")
+    p.add_argument("--reel", help="with --require-locked, --require-committed, --candidate or --lock: only this reel's scenes")
     p.add_argument("--use-take", nargs="+", metavar="SCENE=WAV",
                    help="use this WAV (made by tools/tts/say.py from the scene's current spoken text, e.g. the "
                         "best of several takes) as the scene's draft take, instead of a new synthesis; the "
@@ -448,7 +465,7 @@ def main() -> int:
         if other.parent.name == args.episode:
             continue
         for t_sid, t in sorted(json.loads(other.read_text(encoding="utf-8"))["takes"].items()):
-            if (other.parent / t["file"]).is_file():
+            if (other.parent / t["file"]).is_file() and t.get("status") != "candidate":
                 borrowed.setdefault(f"{other.parent.name}/{t_sid}", {**t, "path": other.parent / t["file"]})
 
     def take_of(entry: dict, sid: str) -> dict | None:
@@ -498,6 +515,8 @@ def main() -> int:
             if prev and prev.get("checked") and sid not in use_take:   # checked starts of a draft take (--set-phrases)
                 scenes[sid]["checked"] = prev["checked"]
             take = takes.get(sid)
+            if take and take.get("status") == "candidate" and sid in use_take:
+                take = None             # a candidate take nobody validated yet can be replaced
             take_path = takes_dir / take["file"] if take else None
             if not take or take["key"] != key:
                 # The same line, in the same voice, already validated in another scene (of this
@@ -516,8 +535,9 @@ def main() -> int:
                 if sid in use_take:
                     sys.exit(f"error: --use-take {sid}: this line has a take validated by the owner "
                              f"({scenes[sid].get('take_from') or sid}); a new take needs a changed line")
-                # The validated take: always this one, never a new synthesis.
-                scenes[sid].update(take="locked", take_sha=take["sha256"])
+                # The validated take (or the candidate one): always this one, never a new synthesis.
+                status = "candidate" if take.get("status") == "candidate" else "locked"
+                scenes[sid].update(take=status, take_sha=take["sha256"])
                 if prev and prev.get("take_sha") == take["sha256"] and raw.is_file():
                     scenes[sid]["seconds"] = prev["seconds"]
                     if "tight" in prev:
@@ -525,10 +545,12 @@ def main() -> int:
                 else:
                     transcode(take_path, raw, "-c:a", "pcm_s16le")
                     dest.unlink(missing_ok=True)
-                    print(f"tts {sid}: validated take ({take['validated_by']}, {take['locked']})")
+                    print(f"tts {sid}: " + (f"candidate take ({take['stored']})" if status == "candidate"
+                                            else f"validated take ({take['validated_by']}, {take['locked']})"))
             elif sid in use_take:
                 chosen.append((sid, raw, dest))    # copied once every scene is checked
-            elif prev and prev.get("key") == key and prev.get("take") != "locked" and (dest.is_file() or raw.is_file()):
+            elif prev and prev.get("key") == key and prev.get("take") not in ("locked", "candidate") \
+                    and (dest.is_file() or raw.is_file()):
                 scenes[sid]["seconds"] = prev["seconds"]
                 if "tight" in prev:
                     scenes[sid]["tight"] = prev["tight"]
@@ -538,8 +560,14 @@ def main() -> int:
     if args.require_locked:
         missing = [sid for sid, e in scenes.items() if e["kind"] == "tts" and e["take"] != "locked" and sid in in_reel]
         if missing:
-            sys.exit(f"error: no validated take for {', '.join(missing)}: render a draft, let the owner listen, "
-                     f"then lock the takes the owner approves (tools/audio/build.py --lock <owner>)")
+            sys.exit(f"error: no validated take for {', '.join(missing)}: render a candidate, let the owner watch "
+                     f"it, then lock the takes on the owner's word (tools/audio/build.py --lock <owner>)")
+    if args.require_committed:
+        missing = [sid for sid, e in scenes.items()
+                   if e["kind"] == "tts" and e["take"] not in ("locked", "candidate") and sid in in_reel]
+        if missing:
+            sys.exit(f"error: no candidate or validated take for {', '.join(missing)}: check the takes "
+                     f"(skill narration-takes), then store them (tools/audio/build.py --candidate)")
 
     # A take chosen among several (tools/tts/say.py): the draft take, tightened below.
     for sid, raw, dest in chosen:
@@ -574,23 +602,21 @@ def main() -> int:
         sid, _, values = spec.partition("=")
         entry = scenes.get(sid)
         owner = (entry or {}).get("take_from") or sid
-        if not entry or entry["kind"] != "tts" or (entry.get("take") == "locked" and owner not in takes):
+        if not entry or entry["kind"] != "tts" or (entry.get("take") in ("locked", "candidate") and owner not in takes):
             sys.exit(f"error: --set-phrases {sid}: no take of this episode for this scene "
                      f"(a take of another episode is set there)")
         starts = [round(float(v), 3) for v in values.split(",")]
         if len(starts) != len(split_phrases(entry["text"])) or starts != sorted(starts):
             sys.exit(f"error: --set-phrases {sid}: give one start per phrase, in order "
                      f"({len(split_phrases(entry['text']))} phrases)")
-        if entry.get("take") != "locked":
+        if entry.get("take") not in ("locked", "candidate"):
             raw = out_dir / f"{sid}.raw.wav"
             entry["checked"] = {"tight": TIGHT["version"], "raw_sha": sha256(raw), "starts": starts}
             print(f"phrases {sid}: {starts} kept with the draft take (manifest)")
             continue
         takes[owner]["phrases"] = {"tight": TIGHT["version"], "starts": starts}
-        takes_path.write_text(json.dumps(
-            {"note": "Narration takes validated by the owner (AI-generated voice, VoiceTut). Written by "
-                     "tools/audio/build.py --lock, never by hand.", "takes": dict(sorted(takes.items()))},
-            ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        takes_path.write_text(json.dumps({"note": TAKES_NOTE, "takes": dict(sorted(takes.items()))},
+                                         ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"phrases {sid}: {starts} stored with the take {owner}")
 
     # When each phrase starts (cheap: recomputed every time from the tightened take), unless checked
@@ -600,7 +626,7 @@ def main() -> int:
         if entry["kind"] == "tts" and final.is_file():
             entry["phrases"] = phrase_times(final, entry["text"])
             entry["phrase_rule"] = PHRASES
-            stored = (take_of(entry, sid) or {}).get("phrases") if entry.get("take") == "locked" else None
+            stored = (take_of(entry, sid) or {}).get("phrases") if entry.get("take") in ("locked", "candidate") else None
             checked = entry.get("checked")
             if not stored and checked and checked["raw_sha"] == sha256(out_dir / f"{sid}.raw.wav"):
                 stored = checked
@@ -620,12 +646,47 @@ def main() -> int:
         else:
             entry.pop("mix", None)
 
+    if args.candidate and args.lock:
+        sys.exit("error: --candidate and --lock: one or the other")
+    if args.candidate:
+        takes_dir.mkdir(parents=True, exist_ok=True)
+        for sid, entry in scenes.items():
+            if entry["kind"] != "tts" or sid not in in_reel or (args.only and sid not in args.only):
+                continue
+            if entry.get("take_from") or entry.get("take") in ("locked", "candidate"):
+                continue                    # stored already (its own, or another scene's)
+            flac = takes_dir / f"{sid}.flac"
+            raw = out_dir / f"{sid}.raw.wav"
+            transcode(raw, flac, "-c:a", "flac", "-compression_level", "12")
+            takes[sid] = {"file": flac.name, "text": entry["text"], "engine": entry["engine"],
+                          "speaker": entry["speaker"], "key": entry["key"], "status": "candidate",
+                          "stored": time.strftime("%Y-%m-%d"), "raw_sha256": sha256(raw), "sha256": sha256(flac)}
+            checked = entry.pop("checked", None)
+            if checked and checked["raw_sha"] == sha256(raw):
+                takes[sid]["phrases"] = {"tight": checked["tight"], "starts": checked["starts"]}
+            entry.update(take="candidate", take_sha=takes[sid]["sha256"])
+            print(f"candidate {sid}: {flac.relative_to(ROOT)}")
+        takes_path.write_text(json.dumps({"note": TAKES_NOTE, "takes": dict(sorted(takes.items()))},
+                                         ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
     if args.lock:
         takes_dir.mkdir(parents=True, exist_ok=True)
         for sid, entry in scenes.items():
             if entry["kind"] != "tts" or sid not in in_reel or (args.only and sid not in args.only):
                 continue
             if entry.get("take_from"):      # already validated as another scene's take
+                continue
+            if entry.get("take") == "candidate" and takes.get(sid, {}).get("status") == "candidate":
+                # The take the owner watched in the candidate render: the same audio, now validated.
+                cand = takes[sid]
+                takes[sid] = {k: v for k, v in cand.items() if k not in ("status", "stored", "raw_sha256", "sha256", "phrases")}
+                takes[sid].update(validated_by=args.lock, locked=time.strftime("%Y-%m-%d"), sha256=cand["sha256"])
+                if "phrases" in cand:
+                    takes[sid]["phrases"] = cand["phrases"]
+                entry.update(take="locked", take_sha=cand["sha256"])
+                print(f"locked {sid}: candidate take ({cand['stored']}), audio unchanged")
+                continue
+            if entry.get("take") == "locked":
                 continue
             flac = takes_dir / f"{sid}.flac"
             transcode(out_dir / f"{sid}.raw.wav", flac, "-c:a", "flac", "-compression_level", "12")
@@ -637,10 +698,8 @@ def main() -> int:
                 takes[sid]["phrases"] = {"tight": checked["tight"], "starts": checked["starts"]}
             entry.update(take="locked", take_sha=takes[sid]["sha256"])
             print(f"locked {sid}: {flac.relative_to(ROOT)}")
-        takes_path.write_text(json.dumps(
-            {"note": "Narration takes validated by the owner (AI-generated voice, VoiceTut). Written by "
-                     "tools/audio/build.py --lock, never by hand.", "takes": dict(sorted(takes.items()))},
-            ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        takes_path.write_text(json.dumps({"note": TAKES_NOTE, "takes": dict(sorted(takes.items()))},
+                                         ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     manifest = {"episode": args.episode, "note": "AI-generated voice for the narration (VoiceTut); "
                 "verses are recited by a real reciter", "scenes": scenes}

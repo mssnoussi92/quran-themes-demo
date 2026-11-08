@@ -18,7 +18,9 @@ recorded reading, and to place a cut in a pause. Nothing here decides anything: 
   --episode E  check every narration take of build/audio/E/manifest.json against its text
                (--only to pick scenes); differences are printed, the reading of a hadith included,
                and a short sound VoiceTut added after the last word (« اه », « با », a click: under
-               0.3 s, after 0.2 s of silence or more, at the end of the raw take)
+               0.3 s, after 0.2 s of silence or more, at the end of the raw take); with --save, the
+               results go to content/audio/E/checks.json, tied to each raw take (its sha256), for the
+               list « à vérifier » of the candidate render (video/scripts/review.ts)
   --phrases E  where each phrase of each narration take starts, from Whisper's words (the pause
                nearest to the first word of the phrase), next to build.py's estimate; "!!" marks a
                difference. Neither is always right (Whisper drifts in noisy pauses, the estimate
@@ -174,10 +176,13 @@ def trailing_sound(path: Path) -> tuple[float, float] | None:
     return start, end
 
 
-def check_episode(episode: str, only: list[str] | None) -> int:
+def check_episode(episode: str, only: list[str] | None, save: bool = False) -> int:
     """Each narration take (or its mix with a recorded reading) against the text it should say."""
+    import hashlib
     out_dir = ROOT / "build" / "audio" / episode
     scenes = json.loads((out_dir / "manifest.json").read_text())["scenes"]
+    checks_path = ROOT / "content" / "audio" / episode / "checks.json"
+    checks = json.loads(checks_path.read_text(encoding="utf-8"))["takes"] if checks_path.is_file() else {}
     data = {s["id"]: s for s in json.loads((ROOT / "video/public/data" / f"{episode}.json").read_text())["scenes"]}
     differ = 0
     for sid, entry in scenes.items():
@@ -198,6 +203,13 @@ def check_episode(episode: str, only: list[str] | None) -> int:
         a, b = plain(said), plain(heard)
         raw = out_dir / entry["file"].replace(".wav", ".raw.wav")
         tail = trailing_sound(raw) if not mix and raw.is_file() else None
+        if raw.is_file():
+            checks[sid] = {"raw_sha256": hashlib.sha256(raw.read_bytes()).hexdigest(), "heard": heard,
+                           "differs": None if a == b else "; ".join(
+                               f"{' '.join(a[i1:i2]) or '∅'} -> {' '.join(b[j1:j2]) or '∅'}"
+                               for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b).get_opcodes()
+                               if tag != "equal"),
+                           "sound": [round(tail[0], 2), round(tail[1], 2)] if tail else None}
         if tail:
             print(f"sound   {sid}: {tail[1] - tail[0]:.2f} s of sound after the last word Whisper hears, at "
                   f"{tail[0]:.2f} s of the raw take: an added « اه » or click (cut it, or retake) or the end of the "
@@ -213,6 +225,14 @@ def check_episode(episode: str, only: list[str] | None) -> int:
         print(f"differs {sid}: {'; '.join(diff)}\n        heard: {heard}")
     print(f"{differ} take(s) where Whisper hears something else: listen to them (dialect, names and "
           f"recognition errors are common; a wrong or missing word is a retake)")
+    if save:
+        checks_path.parent.mkdir(parents=True, exist_ok=True)
+        checks_path.write_text(json.dumps(
+            {"note": "What Whisper heard in each narration take and any sound after its last word "
+                     "(tools/audio/listen.py --episode --save), tied to the raw take; read by the candidate "
+                     "render's list « à vérifier » (video/scripts/review.ts). Not a validation.",
+             "takes": dict(sorted(checks.items()))}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"saved: {checks_path.relative_to(ROOT)}")
     return 0
 
 
@@ -290,10 +310,11 @@ def main() -> int:
     mode.add_argument("--episode")
     mode.add_argument("--phrases", metavar="EPISODE")
     p.add_argument("--only", nargs="+", metavar="SCENE")
+    p.add_argument("--save", action="store_true", help="with --episode: write content/audio/E/checks.json")
     p.add_argument("files", nargs="*", metavar="FILE[@START[@DURATION]]")
     args = p.parse_args()
     if args.episode:
-        return check_episode(args.episode, args.only)
+        return check_episode(args.episode, args.only, args.save)
     if args.phrases:
         return phrase_starts(args.phrases, args.only)
     if not args.files:

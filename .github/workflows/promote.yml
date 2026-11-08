@@ -1,0 +1,104 @@
+name: promote
+
+# The owner watched a candidate render (render workflow, mode candidate) and said « je valide »;
+# scripts/finalize.py validate recorded it (validated_by, takes locked) in a commit. This turns the
+# candidate's very videos into the final ones, without a new render: what the owner watched is what
+# they publish. Before that it checks that the owner's validation is complete (validate.py --release)
+# and that, since the candidate's commit, only validation lines changed in what the videos are made of
+# (scripts/finalize.py check). Then the "<episode|reel>-latest" pre-release gets the videos and the
+# notes written as validated (final-notes.md), and the draft candidate release goes.
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "Episode (content/episodes/<episode>.yaml)"
+      reel:
+        description: "The reel of the candidate, or all"
+        default: all
+
+permissions:
+  contents: write
+
+concurrency:
+  group: promote-${{ inputs.episode }}-${{ inputs.reel }}
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      EPISODE: ${{ inputs.episode }}
+      REEL: ${{ inputs.reel }}
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check the inputs
+        run: |
+          [[ "$EPISODE" =~ ^[a-z0-9-]+$ && "$REEL" =~ ^[a-z0-9-]+$ ]] || { echo "::error::invalid episode or reel"; exit 1; }
+          test -f "content/episodes/$EPISODE.yaml" || { echo "::error::no content/episodes/$EPISODE.yaml"; exit 1; }
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: The candidate release
+        run: |
+          name=$([ "$REEL" = all ] && echo "$EPISODE" || echo "$REEL")
+          id=$(gh api "repos/$GH_REPO/releases?per_page=100" --jq "[.[] | select(.draft and .tag_name == \"$name-candidate\")][0].id // empty")
+          [ -n "$id" ] || { echo "::error::no candidate release $name-candidate: run the render workflow in mode candidate"; exit 1; }
+          echo "CANDIDATE_ID=$id" >> "$GITHUB_ENV"
+          echo "NAME=$name" >> "$GITHUB_ENV"
+          mkdir candidate
+          gh api "repos/$GH_REPO/releases/$id/assets" --jq '.[] | "\(.id)\t\(.name)"' | while IFS=$'\t' read -r asset file; do
+            gh api -H "Accept: application/octet-stream" "repos/$GH_REPO/releases/assets/$asset" > "candidate/$file"
+            echo "$file: $(stat -c %s "candidate/$file") bytes"
+          done
+          test -f candidate/candidate.json && test -f candidate/final-notes.md
+          commit=$(python3 -c "import json; print(json.load(open('candidate/candidate.json'))['commit'])")
+          echo "CANDIDATE_COMMIT=$commit" >> "$GITHUB_ENV"
+          echo "CANDIDATE_RUN=$(python3 -c "import json; print(json.load(open('candidate/candidate.json'))['run'])")" >> "$GITHUB_ENV"
+
+      - name: The owner's validation is complete
+        run: |
+          if [ "$REEL" = all ]; then
+            reels=$(uv run --with pyyaml python -c "import sys, yaml; print(' '.join(r['id'] for r in yaml.safe_load(open(sys.argv[1]))['reels']))" "content/episodes/$EPISODE.yaml")
+          else
+            reels="$REEL"
+          fi
+          for reel in $reels; do
+            uv run --with jsonschema --with pyyaml scripts/validate.py --release --reel "$reel"
+          done
+          if [ "$REEL" = all ]; then
+            uv run --with jsonschema --with pyyaml scripts/validate.py --release --whole "$EPISODE"
+          fi
+
+      - name: Nothing but validations changed since the candidate
+        run: python3 scripts/finalize.py check --episode "$EPISODE" --since "$CANDIDATE_COMMIT"
+
+      - name: The candidate's videos become the final ones
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          tag="$NAME-latest"
+          if [ "$REEL" = all ]; then
+            title="Episode $EPISODE (latest): whole episode (16:9, 9:16) and reels"
+          else
+            title="Reel $REEL (latest)"
+          fi
+          {
+            echo "Validated by the owner. The videos of the candidate render ($CANDIDATE_RUN), unchanged; promoted by $RUN_URL. Narration: AI-generated voice (VoiceTut). Verses: real recitation."
+            echo
+            cat candidate/final-notes.md
+          } > notes.md
+          if ! gh release view "$tag" >/dev/null 2>&1; then
+            gh release create "$tag" --prerelease --title "$title" --notes-file notes.md
+          fi
+          shopt -s nullglob
+          gh release upload "$tag" candidate/*.mp4 candidate/*.png --clobber
+          gh release edit "$tag" --notes-file notes.md
+          gh api -X DELETE "repos/$GH_REPO/releases/$CANDIDATE_ID"
+          echo "final: $(gh release view "$tag" --json url --jq .url)"

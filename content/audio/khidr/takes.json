@@ -1,5 +1,5 @@
 {
-  "note": "Narration takes validated by the owner (AI-generated voice, VoiceTut). Written by tools/audio/build.py --lock, never by hand.",
+  "note": "Narration takes validated by the owner (AI-generated voice, VoiceTut), and candidate takes checked by Claude for the owner's final review (status: candidate). Written by tools/audio/build.py --candidate, --lock and --set-phrases, never by hand.",
   "takes": {
     "ask": {
       "file": "ask.flac",

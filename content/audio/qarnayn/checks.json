@@ -1,0 +1,17 @@
+{
+  "note": "What Whisper heard in each narration take and any sound after its last word (tools/audio/listen.py --episode --save), tied to the raw take; read by the candidate render's list « à vérifier » (video/scripts/review.ts). Not a validation.",
+  "takes": {
+    "east-life-1": {
+      "raw_sha256": "6f10b9d417134f10372882f8d2f4c7a30fa2286409cab4c1aa6450f7b45d4dc1",
+      "heard": "زي لما تبقى لوحدك في شغلك ومحدش شايف بتعمل ايه في وقتك",
+      "differs": null,
+      "sound": null
+    },
+    "east-life-2": {
+      "raw_sha256": "5a107245f967c65eb3d6893c43be8400d52ceed6c721a9a43d83a16edea936b9",
+      "heard": "وبرضه بتشتغل بضمير عشان عارف ان ربنا شايف",
+      "differs": null,
+      "sound": null
+    }
+  }
+}

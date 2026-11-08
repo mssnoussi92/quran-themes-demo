@@ -19,7 +19,7 @@ jobs:
         run: uv run --with jsonschema --with pyyaml scripts/validate.py
 
       - name: Python syntax
-        run: python3 -m py_compile tools/tts/say.py tools/sources/fetch.py tools/audio/build.py scripts/validate.py
+        run: python3 -m py_compile tools/tts/say.py tools/sources/fetch.py tools/audio/build.py tools/audio/listen.py scripts/validate.py scripts/finalize.py
 
       - name: Registry texts are exactly the APIs' (quran.com, hadith-api)
         run: uv run --with ruamel.yaml tools/sources/fetch.py --check
@@ -52,3 +52,7 @@ jobs:
       # Title, captions and hashtags of every video within the platforms' limits.
       - name: Publication texts
         run: for f in ../content/episodes/*.yaml; do node scripts/publish.ts "$(basename "$f" .yaml)" all > /dev/null; done
+
+      # The list « à vérifier » of a candidate render (render workflow, mode candidate) builds for every episode.
+      - name: Candidate review list
+        run: for f in ../content/episodes/*.yaml; do node scripts/review.ts "$(basename "$f" .yaml)" > /dev/null; done
