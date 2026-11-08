@@ -6,6 +6,8 @@ Usage:
   uv run --with jsonschema --with pyyaml scripts/validate.py --release  # every cited source must be validated
   uv run --with jsonschema --with pyyaml scripts/validate.py --release --reel dua-01  # and that reel's script
                                                                                    # and publication texts
+  uv run --with jsonschema --with pyyaml scripts/validate.py --release --whole khidr  # the whole episode's own
+                                                                                   # order and lines (whole)
 
 Exit code 1 when there is at least one error. Warnings never fail the run.
 """
@@ -88,6 +90,13 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
             # An English excerpt is a selection of the published text, never a rewording.
             if "excerpt_en" in src and src["excerpt_en"] not in (src.get("text_en") or ""):
                 report.error(where, "excerpt_en is not a passage of text_en")
+            if "excerpt_ar" in src:
+                if src["type"] != "hadith":
+                    report.error(where, "excerpt_ar is only for a hadith")
+                elif tidy(src["excerpt_ar"]) not in tidy(prophet_words(src.get("text_ar") or "")):
+                    report.error(where, "excerpt_ar is not a passage of the Prophet's words in text_ar")
+                if "excerpt_en" not in src:
+                    report.error(where, "excerpt_ar needs excerpt_en, its English")
             # Texts come from an API (tools/sources/fetch.py writes origin), never typed by hand.
             if (src.get("text_ar") or src.get("text_en")) and "origin" not in src:
                 report.error(where, "text without origin: fill it with tools/sources/fetch.py, never by hand")
@@ -114,6 +123,16 @@ def prophet_words(text_ar: str) -> str:
     return text_ar[first + 1:last] if 0 <= first < last else ""
 
 
+def tidy(text: str) -> str:
+    """Text as a card shows it: no right-to-left marks, single spaces (prepare.ts betweenQuotes)."""
+    return re.sub(r"\s+", " ", text.replace("\u200f", "")).strip()
+
+
+def shown_words(src: dict) -> str:
+    """What a hadith card shows: its excerpt (excerpt_ar), or the Prophet's words."""
+    return src.get("excerpt_ar") or prophet_words(src.get("text_ar") or "")
+
+
 def plain_words(text: str) -> list[str]:
     """Words for comparing a reading with the text: no diacritics or punctuation, one alef, ى = ي,
     ة = ه (what speech recognition writes varies there)."""
@@ -133,27 +152,34 @@ def check_recording(src: dict, where: str, report: Report) -> None:
         report.error(where, "recording: end must come after start")
     if rec["status"] == "validated" and not rec.get("validated_by"):
         report.error(where, "recording: validated needs validated_by (the owner, after listening)")
-    shown, heard = plain_words(prophet_words(src.get("text_ar") or "")), plain_words(rec["heard"])
+    shown, heard = plain_words(shown_words(src)), plain_words(rec["heard"])
     if shown != heard and rec["status"] != "validated":
         report.warn(where, f"recording: heard {len(heard)} words that differ from the {len(shown)} shown; listen to it")
 
 
 def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, release: bool, report: Report,
-                  reel: str | None = None) -> None:
+                  reel: str | None = None, whole: str | None = None) -> None:
     """release: sources and readings must be validated, in every scene, or only in `reel`'s scenes when
-    a reel is given (a source still proposed in another episode does not block this reel's render)."""
+    a reel is given (a source still proposed in another episode does not block this reel's render), or
+    only in the scenes said in `whole` episode alone (no reel)."""
     validator = Draft202012Validator(json.loads((ROOT / "schemas/episode.schema.json").read_text()))
     ep = load_yaml(path)
     if not schema_check(validator, ep, rel(path), report):
         return
     reels = {r["id"] for r in ep["reels"]}
     validated_reels = {r["id"] for r in ep["reels"] if r.get("validated_by")}
+    whole_validated = bool((ep.get("whole") or {}).get("validated_by"))
     lexicon = (load_yaml(CONTENT / "pronunciation.yaml") or {}).get("words", [])
     check_publish(ep, rel(path), report)
     seen: set[str] = set()
     for scene in ep["scenes"]:
         where = f"{rel(path)} [{scene['id']}]"
-        strict = release and (reel is None or scene.get("reel") == reel)
+        if reel is not None:
+            strict = release and scene.get("reel") == reel
+        elif whole is not None:
+            strict = release and ep["episode"] == whole and not scene.get("reel")
+        else:
+            strict = release
         if scene["id"] in seen:
             report.error(where, "duplicate scene id")
         seen.add(scene["id"])
@@ -197,7 +223,8 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
         narration = scene.get("narration") or {}
         # Words the voice says wrong (content/pronunciation.yaml): their spelling for the voice, in a
         # reel still being written (a validated reel keeps the takes the owner approved).
-        if narration.get("ar") and scene.get("reel") not in validated_reels:
+        validated = scene.get("reel") in validated_reels if scene.get("reel") else whole_validated
+        if narration.get("ar") and not validated:
             shown = spoken_words(narration["ar"])
             said = scene.get("say_ar", narration["ar"])
             for entry in lexicon:
@@ -243,7 +270,25 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
             if ch["mood"] not in spec["moods"]:
                 report.error(where, f"mood '{ch['mood']}' not in catalog for '{ch['id']}'")
 
+    check_whole(ep, rel(path), report)
     check_thumbnail(ep, rel(path), catalog, backgrounds, report)
+
+
+def check_whole(ep: dict, where: str, report: Report) -> None:
+    """The whole episode's order (`whole`): known scenes, each once, and every scene without a reel
+    in it (said only in the whole episode)."""
+    ids = {s["id"] for s in ep["scenes"]}
+    whole = ep.get("whole")
+    listed: list[str] = [sid for part in (whole or {}).get("parts", []) for sid in part["scenes"]]
+    for sid in listed:
+        if sid not in ids:
+            report.error(f"{where} [whole]", f"unknown scene '{sid}'")
+    for sid in sorted({s for s in listed if listed.count(s) > 1}):
+        report.error(f"{where} [whole]", f"scene '{sid}' is listed more than once")
+    for scene in ep["scenes"]:
+        if not scene.get("reel") and scene["id"] not in listed:
+            report.error(f"{where} [{scene['id']}]", "a scene without reel is said only in the whole episode: "
+                                                     "list it in whole.parts")
 
 
 def check_thumbnail(ep: dict, where: str, catalog: dict, backgrounds: dict, report: Report) -> None:
@@ -324,6 +369,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--release", action="store_true", help="fail on sources that are not validated")
     parser.add_argument("--reel", help="with --release: this reel's script must be validated by the owner (validated_by)")
+    parser.add_argument("--whole", metavar="EPISODE",
+                        help="with --release: the whole episode's order and its own lines (whole.validated_by)")
     args = parser.parse_args()
 
     report = Report()
@@ -333,7 +380,19 @@ def main() -> int:
     registry = check_registry(report, policy)
     episodes = sorted((CONTENT / "episodes").glob("*.yaml"))
     for path in episodes:
-        check_episode(path, registry, catalog, backgrounds, args.release, report, args.reel)
+        check_episode(path, registry, catalog, backgrounds, args.release, report, args.reel, args.whole)
+    # The reciter of content/policy.yaml recites every verse; one with a file per surah (Tawfiq As-Sayegh)
+    # needs the checked cut of each verse in content/recitations/<reciter>.json (tools/audio/recitation.py).
+    reciter = (policy.get("quran") or {}).get("reciter")
+    cuts_path = CONTENT / "recitations" / f"{reciter}.json"
+    if cuts_path.is_file():
+        cuts = json.loads(cuts_path.read_text(encoding="utf-8")).get("verses", {})
+        for path in episodes:
+            for scene in (load_yaml(path) or {}).get("scenes", []):
+                key = str(scene.get("source", "")).removeprefix("quran.").replace(".", ":")
+                if scene.get("audio") == "recitation" and key not in cuts:
+                    report.error(f"{rel(path)} [{scene['id']}]", f"no cut of {key} for {reciter}: run "
+                                 f"tools/audio/recitation.py --reciter {reciter} {key}")
     if args.reel:
         owner = {r["id"]: (r, ep) for path in episodes for ep in [load_yaml(path) or {}] for r in ep.get("reels", [])}
         if args.reel not in owner:
@@ -347,6 +406,14 @@ def main() -> int:
                 report.error("content/episodes", f"reel '{args.reel}': publication texts not validated by the owner (publish.validated_by)")
             if not (ep.get("publish") or {}).get("validated_by"):
                 report.error("content/episodes", f"episode '{ep.get('episode')}': publication texts and hashtags not validated by the owner (publish.validated_by)")
+
+    if args.whole:
+        found = [ep for path in episodes for ep in [load_yaml(path) or {}] if ep.get("episode") == args.whole]
+        if not found:
+            report.error("content/episodes", f"episode '{args.whole}' does not exist")
+        elif args.release and found[0].get("whole") and not found[0]["whole"].get("validated_by"):
+            report.error("content/episodes", f"episode '{args.whole}': whole-episode order and its own lines "
+                                             "not validated by the owner (whole.validated_by)")
 
     for line in report.warnings + report.errors:
         print(line)

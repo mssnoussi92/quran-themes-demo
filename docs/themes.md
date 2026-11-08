@@ -13,6 +13,14 @@ Tenu à jour par le skill `new-theme` (étape 1). Les plans détaillés des épi
 | Le piège des comparaisons (`muqarana`) | qui a plus est plus aimé de Dieu ; ce qu'ils ont est mieux que ce que j'ai ; toute comparaison est mauvaise ; conclusion sur la gratitude | faire défiler la vie des autres sur son téléphone |
 | La confiance en Dieu (`tawakkul`) | le tawakkul, c'est ne rien faire ; avoir peur, c'est avoir une foi faible ; je dois tout porter seul ; conclusion : le Vivant qui ne meurt pas | réveillé la nuit à penser à demain |
 
+## Histoire (hors série des idées reçues)
+
+- **Moussa et al-Khadir (`khidr`)** (idée du propriétaire, 2026-11-08, d'après un cours en égyptien qu'il a
+  partagé) : l'histoire d'Al-Kahf 18:60-82, centrée sur la sagesse de l'épreuve et du décret. Pas d'idées reçues :
+  un événement par reel (le bateau, le garçon, le mur) avec son explication et ses versets, un exemple de vie
+  pour chaque sagesse, l'épisode entier raconté avec suspense. Passe avant الخشوع (choix du propriétaire).
+  **Tout validé par le propriétaire le 2026-11-08.** Plan : `docs/design.md`.
+
 ## Choisis par le propriétaire (2026-11-07), dans l'ordre
 
 Le propriétaire a partagé des fiches de thèmes (الخشوع، الخوف والشعور بالعجز، فخ المقارنات، التوبة والخجل

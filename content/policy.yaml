@@ -14,7 +14,7 @@ hadith:
       # (Sahih Muquf, Sahih Isnaad Mauquf, Maqtu...).
 quran:
   translation: sahih-international
-  reciter: alafasy
+  reciter: sayegh
 narration:
   # Décision du 6 novembre 2026, à l'écoute du brouillon de dua-01 : VoiceTut (égyptien), voix Mohammed.
   engine: voicetut

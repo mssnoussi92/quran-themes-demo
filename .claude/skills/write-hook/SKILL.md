@@ -78,7 +78,9 @@ on the open loop of beat 7 that leads to the next reel.
   everywhere (« «اصبر»… سمعتها كام مرة؟ »); tawba, a sin and the shame of going back (« عملت ذنب…
   وحسيت إنك بعيد عن ربنا؟ »); muqarana, scrolling through other people's lives (« بتقلب في الموبايل…
   وكل الناس حياتهم حلوة؟ »); tawakkul, awake at night thinking about tomorrow (« صاحي بالليل… بتفكر في
-  بكرة؟ »).
+  بكرة؟ »); khidr, something happened and you don't understand why (« حصلت لك حاجة… ومش فاهم ليه؟ »),
+  with the promise the owner liked at the end of the hook (« قصة… هتخليك تبص لكل ابتلاء عدّى عليك بعين
+  تانية »), in Egyptian, not the classical « ستجعلك تعيد النظر ».
 - Write for the ear of VoiceTut, which speaks Egyptian: ق becomes ء (« قريب » → « أريب »), ث becomes
   س, a ة before a pause can be heard as ت (« عادة »). Keep the screen correct and give the voice its
   own spelling in `say_ar` (up to two letters per word): every word the owner already corrected is

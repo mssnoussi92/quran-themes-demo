@@ -14,7 +14,7 @@ import { createRequire } from "node:module";
 import { parse } from "yaml";
 import { BODY_BOX, MOOD_FACES, SEAT } from "../src/characters/peeps.ts";
 import type {
-  Character, Duration, EpisodeData, Media, PublishTexts, ResolvedScene, ResolvedSource, ThumbnailData,
+  Character, Duration, EpisodeData, Media, PublishTexts, ResolvedScene, ResolvedSource, ThumbnailData, WholeOrder,
 } from "../src/types.ts";
 
 // react-peeps exports one table per kind of piece (Hair, Face, StandingPose...): names are checked there.
@@ -27,7 +27,7 @@ const PUBLIC = join(ROOT, "video", "public");
 const AUDIO = join(ROOT, "build", "audio");
 
 // Reciters of content/policy.yaml, as credited on screen.
-const RECITERS: Record<string, string> = { alafasy: "Mishari Rashid al-Afasy" };
+const RECITERS: Record<string, string> = { alafasy: "Mishari Rashid al-Afasy", sayegh: "Tawfiq As-Sayegh" };
 
 // Silence after each line, before the transition (Video.tsx adds the transition, during which nobody
 // speaks): with the silence kept around each synthetic line (tools/audio/build.py), the gap between
@@ -58,6 +58,7 @@ type RegistryEntry = {
   ref: { surah?: number; ayah?: number; collection?: string; number?: number; narration?: number };
   text_ar: string | null;
   text_en: string | null;
+  excerpt_ar?: string;
   excerpt_en?: string;
   status: "proposed" | "validated" | "excluded";
   url?: string;
@@ -102,6 +103,7 @@ type EpisodeFile = {
     validated_by?: string;
   };
   reels: { id: string; title: { ar: string; en: string }; validated_by?: string; publish?: PublishTexts }[];
+  whole?: WholeOrder;
   scenes: {
     id: string;
     role: string;
@@ -211,7 +213,11 @@ function resolveSource(entry: RegistryEntry, where: string): ResolvedSource {
     const letter = ref.narration ? String.fromCharCode(96 + ref.narration) : "";
     reference = `${name} ${ref.number}${letter}`;
     reference_en = reference;
-    display_ar = prophetWords(entry.text_ar, entry.id);
+    // A hadith too long for a card shows the passage chosen in the registry (excerpt_ar, checked by
+    // validate.py to be part of the Prophet's words).
+    display_ar = entry.excerpt_ar
+      ? entry.excerpt_ar.replace(/\u200f/g, "").replace(/\s+/g, " ").trim()
+      : prophetWords(entry.text_ar, entry.id);
     // English: the quotation marks do not reliably surround the Prophet's words in the published
     // translations, so the subtitle is the registry's `excerpt_en` (a checked passage) or the whole text.
     display_en = entry.excerpt_en ?? entry.text_en;
@@ -366,6 +372,13 @@ function main() {
         duration,
       };
     });
+    // The whole episode's own order (a story with suspense): every scene it names exists.
+    if (ep.whole) {
+      const ids = new Set(scenes.map((s) => s.id));
+      for (const sid of ep.whole.parts.flatMap((p) => p.scenes)) {
+        if (!ids.has(sid)) throw new Error(`${relative(ROOT, file)} [whole]: unknown scene '${sid}'`);
+      }
+    }
     // YouTube thumbnail: same closed catalogs as the scenes.
     let thumbnail: ThumbnailData | null = null;
     if (ep.thumbnail) {
@@ -392,6 +405,7 @@ function main() {
       publish: ep.publish ?? null,
       thumbnail,
       reels: ep.reels,
+      whole: ep.whole ?? null,
       scenes,
       generated_from: [file, ...sourceFiles].map((f) => relative(ROOT, f)),
     };

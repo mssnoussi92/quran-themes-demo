@@ -4,7 +4,7 @@
 
 import { FPS, REMINDER_SECONDS, TRANSITION_SECONDS, toFrames } from "./formats.ts";
 import { splitPhrases } from "./phrases.ts";
-import type { EpisodeData, ResolvedScene } from "./types.ts";
+import type { EpisodeData, I18n, ResolvedScene } from "./types.ts";
 
 /** Silence kept before a cut: the take pauses 0.06 s after a sound and 0.12 s before the next one
  * (tools/audio/build.py, TIGHT), so a line cut 0.12 s before a phrase ends as it would anyway. */
@@ -34,9 +34,37 @@ function withoutReelEnd(scene: ResolvedScene): ResolvedScene {
   };
 }
 
+/** The whole episode's scenes in order: its own order (`whole`, a story told with suspense), or every
+ * scene as written. */
+function wholeScenes(data: EpisodeData): ResolvedScene[] {
+  if (!data.whole) return data.scenes;
+  const byId = new Map(data.scenes.map((s) => [s.id, s]));
+  return data.whole.parts.flatMap((p) =>
+    p.scenes.map((id) => {
+      const scene = byId.get(id);
+      if (!scene) throw new Error(`whole: unknown scene '${id}' in episode '${data.episode}'`);
+      return scene;
+    }),
+  );
+}
+
+/** Parts of the whole episode, each with the index of its first scene in selectScenes(data, null):
+ * its own parts, or one per reel. The YouTube chapters (scripts/publish.ts). */
+export function wholeParts(data: EpisodeData): { title: I18n; first: number }[] {
+  if (data.whole) {
+    let first = 0;
+    return data.whole.parts.map((p) => {
+      const part = { title: p.title, first };
+      first += p.scenes.length;
+      return part;
+    });
+  }
+  return data.reels.map((reel) => ({ title: reel.title, first: data.scenes.findIndex((s) => s.reel === reel.id) }));
+}
+
 /** The scenes of a reel, or of the whole episode (reel null). */
 export function selectScenes(data: EpisodeData, reel: string | null): ResolvedScene[] {
-  if (reel === null) return data.scenes.map(withoutReelEnd);
+  if (reel === null) return wholeScenes(data).map(withoutReelEnd);
   if (!data.reels.some((r) => r.id === reel)) {
     throw new Error(`reel '${reel}' is not in episode '${data.episode}'`);
   }

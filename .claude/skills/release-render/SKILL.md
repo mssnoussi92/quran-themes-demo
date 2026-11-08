@@ -16,7 +16,9 @@ per reel, `<episode>-thumbnail.png`, and in its notes the title and text to past
   texts (`publish.validated_by`, on the episode and each reel); every quoted source and recording
   `validated`; every narration line with a locked take. Check each reel:
   `uv run --with jsonschema --with pyyaml scripts/validate.py --release --reel <reel>` (its scenes
-  only: a source still proposed in another episode does not block it), then
+  only: a source still proposed in another episode does not block it), and for an episode with its
+  own order (`whole`, khidr) `validate.py --release --whole <episode>` (`whole.validated_by`, the
+  lines said only in the whole episode), then
   `python3 tools/audio/build.py --episode <episode> --require-locked --tts-python /bin/false`.
 - The thumbnail is rendered either way; the notes flag it « proposée » until `thumbnail.validated_by`.
 - Commit and push: the workflow renders the head of the branch it is given, at dispatch time.
@@ -30,8 +32,14 @@ GitHub MCP `actions_run_trigger`, method `run_workflow`, `workflow_id: render.ym
 
 - Two episodes render side by side; a second run of the same episode and reel cancels the first
   (`concurrency` in render.yml): dispatch each episode once.
-- About 16 to 25 minutes for `all`; the first run of an episode also downloads its hadith readings
-  from archive.org. Narration is never synthesised there when every take is locked.
+- About 11 to 25 minutes for `all` (khidr, 9 min of whole episode: 37 min); the first run of an
+  episode also downloads its hadith readings from archive.org and its reciter's surah files from
+  mp3quran.net (cached afterwards, `build/recitations`). Narration is never synthesised there when
+  every take is locked.
+- After a change every episode shares (the reciter, Tawfiq As-Sayegh in place of Alafasy on
+  2026-11-08; a composition): check and dispatch every episode at once, they run side by side (six
+  in 37 min). A dispatch can fail on a network error: list the runs before dispatching it again.
+- An episode whose last card follows a verse keeps one reminder only (khidr): say so.
 
 ## 3. Wait
 

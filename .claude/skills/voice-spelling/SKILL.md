@@ -17,6 +17,9 @@ owner's ear check the meaning. Never for a verse (always recited) nor for a hadi
   scene's `say_ar` (validate.py warns on a reel not yet validated that forgets one).
 - No guillemets « » in `say_ar`: VoiceTut added a sound after « «اصبر»… » (Whisper: « اصبر بس »).
 - A Quran word quoted in the narration keeps its ق: vowel it (« من قَرِيب »).
+- A word VoiceTut cannot say, whatever the spelling: write another word in the script (the owner
+  validates it with the script). « بانت » was heard « بنت » on 13 takes out of 14 (plain, بانِت, بَانِت,
+  باانِت; the vowel measure could not tell): khidr says « اتكشفت » (2026-11-08).
 
 ## 2. Hear what the voice said
 

@@ -1,4 +1,5 @@
 import { Composition, Still } from "remotion";
+import { BACKGROUND_SHEET, BackgroundSheet } from "./BackgroundSheet";
 import { CharacterSheet, sheetMetadata } from "./CharacterSheet";
 import { calculateMetadata } from "./data";
 import type { VideoProps } from "./data";
@@ -32,6 +33,8 @@ export const RemotionRoot: React.FC = () => (
       calculateMetadata={calculateMetadata}
     />
     <Still id="CharacterSheet" component={CharacterSheet} width={1920} height={1080} defaultProps={{ data: null }} calculateMetadata={sheetMetadata} />
+    {/* A composition rather than a still: the backgrounds move (waves, the bird's peck), pick a frame. */}
+    <Composition id="BackgroundSheet" component={BackgroundSheet} fps={FPS} durationInFrames={90} {...BACKGROUND_SHEET} />
     <Still
       id="Thumbnail169"
       component={Thumbnail}

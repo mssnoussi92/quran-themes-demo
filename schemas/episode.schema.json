@@ -30,6 +30,31 @@
         }
       }
     },
+    "whole": {
+      "description": "Order of the whole-episode videos (16:9 and 9:16) when it is not the reels one after another: a story told with suspense, its three events, then what they meant (khidr, owner's choice, 2026-11-08). Each part is a YouTube chapter. A scene without `reel` is said only here; a scene of a reel left out of the parts is said only in its reel. Without `whole`, the whole episode plays every scene in file order, one chapter per reel",
+      "type": "object",
+      "required": ["parts"],
+      "additionalProperties": false,
+      "properties": {
+        "validated_by": {
+          "description": "Owner who validated this order and the lines said only in the whole episode (scenes without reel); removed whenever one of them changes",
+          "type": "string"
+        },
+        "parts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["title", "scenes"],
+            "additionalProperties": false,
+            "properties": {
+              "title": { "$ref": "#/$defs/i18n" },
+              "scenes": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/slug" } }
+            }
+          }
+        }
+      }
+    },
     "scenes": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/scene" } }
   },
   "$defs": {
@@ -84,7 +109,10 @@
       "properties": {
         "id": { "$ref": "#/$defs/slug" },
         "role": { "enum": ["hook", "promise", "misconception", "evidence", "conclusion", "outro"] },
-        "reel": { "$ref": "#/$defs/slug" },
+        "reel": {
+          "description": "The reel the scene belongs to. Without it, the scene is said only in the whole episode, and must be in `whole`",
+          "$ref": "#/$defs/slug"
+        },
         "audio": { "enum": ["tts", "recitation", "none"] },
         "narration": { "$ref": "#/$defs/i18n" },
         "source": { "type": "string" },

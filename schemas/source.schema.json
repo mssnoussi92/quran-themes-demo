@@ -17,6 +17,11 @@
         "text_ar": { "type": ["string", "null"] },
         "text_en": { "type": ["string", "null"] },
         "translation": { "type": "string" },
+        "excerpt_ar": {
+          "description": "For a hadith too long for a card (the whole story of Musa and al-Khidr, Bukhari 122): the passage of the Prophet's words the card shows and the reader says, instead of everything between the first and last quotation marks. Copied from text_ar, never typed: validate.py checks it is part of the Prophet's words",
+          "type": "string",
+          "minLength": 1
+        },
         "excerpt_en": {
           "description": "Passage of text_en shown as the English subtitle (copied from it, never typed: validate.py checks it is part of text_en)",
           "type": "string",

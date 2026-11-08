@@ -1,0 +1,1021 @@
+# Épisode Moussa et al-Khadir (موسى والخضر) : la sagesse de l'épreuve et du décret, d'après Al-Kahf 18:60-82 et
+# le hadith d'Ubayy ibn Ka'b (Bukhari 122, 3401). Idée du propriétaire le 2026-11-08, à partir d'un cours en
+# égyptien qu'il a partagé (les idées seulement, jamais l'audio ; analyse dans la conversation). Ses choix :
+# - l'épisode entier (16:9 et 9:16) raconte avec suspense : le voyage, les trois événements sans explication, puis
+#   le secret de chacun, puis la leçon (`whole`) ;
+# - chaque reel tient seul : un événement et son explication (khidr-02 le bateau, khidr-03 le garçon, khidr-04 le
+#   mur), dans l'ordre du Coran ;
+# - la narration raconte, le Coran et le hadith prouvent ; de nouveaux fonds dessinés (docs/backgrounds.png) ;
+# - un extrait vérifié de Bukhari 122 et 3401 sur la carte (excerpt_ar) ; épisode avant الخشوع.
+# Moussa, al-Khadir et le Prophète ﷺ ne sont jamais dessinés (cartes de nom, fonds sans personne) ; le garçon
+# n'est jamais montré. Rien n'est validé : sources, script, traduction, textes, miniature, fonds et prises
+# attendent le propriétaire. Lignes de l'IA (pas une citation ni une reformulation d'une source) : marquées
+# « Ligne de l'IA », à vérifier en premier.
+episode: khidr
+title: { ar: "موسى والخضر", en: "Moses and al-Khidr" }
+narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
+# Textes de publication : proposés le 2026-11-08, faits des répliques du script ; validés par le propriétaire le
+# même jour (validated_by), avec les scripts, la traduction, l'ordre de l'épisode entier et la miniature. Le reste : video/scripts/publish.ts.
+publish:
+  title: { en: "Why me? Moses, al-Khidr and the wisdom you can't see", ar: "ليه أنا؟ موسى والخضر… والحكمة اللي مش شايفها" }
+  description:
+    en: "Something happened to you… and you don't understand why? In Surat al-Kahf, Moses travels with al-Khidr and sees three things he cannot understand: a boat damaged, a boy killed, a wall repaired for nothing. Then he learns the secret of each. The wisdom of a decree can show quickly, years later… or not in this life at all."
+    ar: "حصلت لك حاجة… ومش فاهم ليه؟ في سورة الكهف، موسى بيمشي مع الخضر ويشوف تلات حاجات مش فاهمها: سفينة اتخرقت، وغلام اتقتل، وجدار اتصلّح ببلاش. وبعدين يعرف السر. حكمة القدر ممكن تبان بسرعة، أو بعد سنين، أو مش هتبان في الدنيا خالص."
+  hashtags: ["#Qadr", "#القدر", "#SurahAlKahf"]
+  validated_by: mssnoussi92
+# Miniature YouTube (Thumbnail169), validée le 2026-11-08 : gros plan, fond uni, Salma (Amir dans celle de
+# la confiance en Dieu).
+thumbnail:
+  layout: close-up
+  headline: { ar: "ليه أنا؟", en: "Why me?" }
+  kicker: { ar: "موسى والخضر", en: "Moses and al-Khidr" }
+  character: { id: salma, pose: standing, mood: worried }
+  background: plain
+  validated_by: mssnoussi92
+reels:
+  - id: khidr-01
+    title: { ar: "مين أعلم؟", en: "Who knows more?" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "Something happened… and you don't understand why?", ar: "حصلت لك حاجة… ومش فاهم ليه؟" }
+      description:
+        en: "In Surat al-Kahf, a prophet saw three things he couldn't understand… and in the end, he learned the secret. Moses meets al-Khidr: “you will see things you can't understand… because you don't see the whole picture.”"
+        ar: "في سورة الكهف… نبي شاف تلات حاجات مش فاهمها… وفي الآخر عرف السر. موسى بيقابل الخضر: هتشوف حاجات مش هتقدر تفهمها… عشان مش شايف الصورة كلها."
+      validated_by: mssnoussi92
+  - id: khidr-02
+    title: { ar: "السفينة", en: "The boat" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "Why damage a boat that carried them for free?", ar: "ليه يخرق سفينة شالتهم ببلاش؟" }
+      description:
+        en: "The first strange thing: al-Khidr tears a hole in the boat. The damage is what saved it: a small loss… that spared them a bigger one."
+        ar: "أول حاجة غريبة: الخضر خرق السفينة. العيب هو اللي حماها: خسارة صغيرة… حمتهم من خسارة أكبر."
+      validated_by: mssnoussi92
+  - id: khidr-03
+    title: { ar: "الغلام", en: "The boy" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "Some wisdom… you may never see in this life", ar: "فيه حكمة… يمكن عمرك ما تشوفها في الدنيا" }
+      description:
+        en: "The second thing: the boy. His parents may never have known why. We only know because God told us. Some decrees… their wisdom won't show in this life."
+        ar: "تاني حاجة: الغلام. أبوه وأمه يمكن عمرهم ما عرفوا السبب. إحنا عرفنا عشان ربنا حكاه لنا. فيه أقدار… حكمتها مش هتبان في الدنيا."
+      validated_by: mssnoussi92
+  - id: khidr-04
+    title: { ar: "الجدار", en: "The wall" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "A treasure under a wall about to fall", ar: "كنز تحت جدار هيقع" }
+      description:
+        en: "The third thing: al-Khidr repairs a wall in a village that refused them food. Beneath it, a treasure waiting for two orphans to grow up. Good can be hidden… waiting for its time."
+        ar: "تالت حاجة: الخضر صلّح جدار في قرية رفضت تضيفهم. وتحته كنز… مستني يتيمين يكبروا. الخير ممكن يكون مستخبي… ومستني وقته."
+      validated_by: mssnoussi92
+  - id: khidr-05
+    title: { ar: "ليه أنا؟", en: "Why me?" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "Why me? Why now?", ar: "ليه أنا؟ ليه دلوقتي؟" }
+      description:
+        en: "The wisdom of a decree can show quickly, years later… or not in this life at all. Our knowledge, next to God's, is like that sparrow next to the sea. So next time you ask why… remember the boat."
+        ar: "حكمة القدر ممكن تبان بسرعة، أو بعد سنين، أو مش هتبان في الدنيا خالص. وعلمنا جنب علم ربنا… زي العصفور ده جنب البحر. فالمرة الجاية لما تسأل: ليه؟ افتكر السفينة."
+      validated_by: mssnoussi92
+# L'épisode entier : le voyage, les trois événements sans explication (avec 18:78, seulement ici), puis le secret
+# de chacun, puis la leçon. Les scènes de liaison propres aux reels (le rappel du début, « السر؟ الخضر قاله
+# بعدين: », la formule avant 18:79, l'annonce de la fin) n'y sont pas ; la formule et 18:78 n'y sont que là.
+whole:
+  validated_by: mssnoussi92
+  parts:
+    - title: { ar: "مين أعلم؟", en: "Who knows more?" }
+      scenes: [hook-1, hook-2, hook-3, hook-4, hook-5, musa-1, musa-2, musa-3, musa-4, ask, meet-verse-intro,
+               found-verse, ask-verse, meet-verse-1, meet-verse-2, meet-takeaway, promise, condition, condition-intro,
+               condition-verse-1, condition-verse-2, outro]
+    - title: { ar: "تلات حاجات غريبة", en: "Three strange things" }
+      scenes: [ship-1, ship-bird, ship-hadith, ship-2, ship-3, ship-4, ship-5, ship-event-intro, ship-event-1,
+               ship-event-2, ship-event-3, boy-1, boy-2, boy-3, boy-4, boy-event-intro, boy-event-1, boy-event-2,
+               boy-event-3, wall-1, wall-2, wall-3, wall-event-intro, wall-event, parting-say, parting-intro, parting]
+    - title: { ar: "السر", en: "The secret" }
+      scenes: [ship-verse, ship-lesson-1, ship-lesson-2, ship-life-1, ship-life-2, ship-outro, boy-verse-intro,
+               boy-verse-1, boy-verse-2, boy-guard, boy-lesson-1, boy-lesson-2, boy-lesson-3, boy-life-1, boy-life-2,
+               boy-outro, wall-verse-intro, wall-verse, wall-lesson-1, wall-lesson-2, wall-life-1, wall-life-2]
+    - title: { ar: "ليه أنا؟", en: "Why me?" }
+      scenes: [end-hook, end-recap, end-hate, end-hate-intro, end-hate-verse, end-why, end-because, end-hadith,
+               end-only, end-verse-intro, end-verse, end-last]
+scenes:
+  # ---- khidr-01 : accroche, Moussa et al-Khadir, la condition --------------------------------------
+  # Miroir : ce qui arrive sans qu'on comprenne pourquoi (scène type, à la deuxième personne).
+  - id: hook-1
+    role: hook
+    reel: khidr-01
+    audio: tts
+    narration:
+      ar: "حصلت لك حاجة… ومش فاهم ليه؟"
+      en: "Something happened to you… and you don't understand why?"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: salma, pose: sitting, mood: worried, talking: false }
+  # Contraste : ce qu'on perd, ce qui tarde.
+  - id: hook-2
+    role: hook
+    reel: khidr-01
+    audio: tts
+    narration:
+      ar: "خسرت حاجة… أو حاجة اتأخرت عليك سنين؟"
+      en: "You lost something… or something has kept you waiting for years?"
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: amir, pose: standing, mood: worried, talking: false }
+  # Nommer.
+  - id: hook-3
+    role: hook
+    reel: khidr-01
+    audio: tts
+    narration:
+      ar: "وقعدت تسأل: ليه أنا؟ ليه دلوقتي؟"
+      en: "And you keep asking: why me? Why now?"
+    visual:
+      template: title-card
+  # Promesse : le récit de la sourate (18:60-82), trois événements puis leur sens.
+  - id: hook-4
+    role: promise
+    reel: khidr-01
+    audio: tts
+    mentions: ["موسى عليه السلام"]
+    narration:
+      ar: "في سورة الكهف… نبي شاف تلات حاجات مش فاهمها… وفي الآخر عرف السر."
+      en: "In Surat al-Kahf… a prophet saw three things he couldn't understand… and in the end, he learned the secret."
+    visual:
+      template: title-card
+  # Promesse (demande du propriétaire, 2026-11-08, formulation en égyptien) : ce que l'histoire change pour toi.
+  - id: hook-5
+    role: hook
+    reel: khidr-01
+    audio: tts
+    narration:
+      ar: "قصة… هتخليك تبص لكل ابتلاء عدّى عليك بعين تانية."
+      en: "A story… that will make you see every trial you've been through with new eyes."
+    visual:
+      template: title-card
+  # Récit d'après Bukhari 122 (« فسئل أي الناس أعلم فقال أنا أعلم »).
+  - id: musa-1
+    role: evidence
+    reel: khidr-01
+    audio: tts
+    mentions: ["موسى عليه السلام"]
+    narration:
+      ar: "موسى عليه السلام اتسأل: مين أعلم واحد في الناس؟"
+      en: "Moses, peace be upon him, was asked: who knows more than anyone else?"
+    visual:
+      template: name-card
+  - id: musa-2
+    role: evidence
+    reel: khidr-01
+    audio: tts
+    narration:
+      ar: "قال: أنا."
+      en: "He said: I do."
+    visual:
+      template: title-card
+  # Bukhari 122 : « فأوحى الله إليه أن عبدا من عبادي بمجمع البحرين هو أعلم منك » (au style indirect).
+  - id: musa-3
+    role: evidence
+    reel: khidr-01
+    audio: tts
+    mentions: ["موسى عليه السلام"]
+    narration:
+      ar: "فربنا أوحى له إن فيه عبد أعلم منه… عند مجمع البحرين."
+      en: "So God revealed to him that there was a servant who knew more… where the two seas meet."
+    say_ar: "فربنا أَوْحَى له إن فيه عبد أعلم منه… عند مَجْمَع البَحْرَيْن."
+    visual:
+      template: scene
+      background: confluence
+  - id: musa-4
+    role: evidence
+    reel: khidr-01
+    audio: tts
+    mentions: ["الخضر"]
+    narration:
+      ar: "موسى طلع يدور عليه… ولقاه: الخضر."
+      en: "Moses set out to find him… and found him: al-Khidr."
+    say_ar: "موسى طلع يدور عليه… ولقاه: الخَضِر."
+    visual:
+      template: name-card
+  # 18:66 raconté avec ses mots, puis récité avec 18:65 et 18:67-68 (règle du propriétaire, 2026-11-08 :
+  # après chaque événement raconté, son verset).
+  - id: ask
+    role: evidence
+    reel: khidr-01
+    audio: tts
+    mentions: ["موسى عليه السلام"]
+    narration:
+      ar: "وموسى قاله: ممكن أمشي معاك… عشان تعلمني من اللي اتعلمته؟"
+      en: "And Moses said to him: may I go with you… so you can teach me from what you were taught?"
+    visual:
+      template: scene
+      background: confluence
+  - id: meet-verse-intro
+    role: evidence
+    reel: khidr-01
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: found-verse
+    role: evidence
+    reel: khidr-01
+    source: quran.18.65
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: ask-verse
+    role: evidence
+    reel: khidr-01
+    source: quran.18.66
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: meet-verse-1
+    role: evidence
+    reel: khidr-01
+    source: quran.18.67
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: meet-verse-2
+    role: evidence
+    reel: khidr-01
+    source: quran.18.68
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Ligne de l'IA, tirée de 18:68 : la clé de l'épisode.
+  - id: meet-takeaway
+    role: evidence
+    reel: khidr-01
+    audio: tts
+    narration:
+      ar: "يعني هتشوف حاجات… مش هتقدر تفهمها… عشان مش شايف الصورة كلها."
+      en: "In other words: you'll see things… you won't be able to understand… because you don't see the whole picture."
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  # 18:69-70 racontés avec leurs mots, puis récités.
+  - id: promise
+    role: evidence
+    reel: khidr-01
+    audio: tts
+    mentions: ["موسى عليه السلام"]
+    narration:
+      ar: "موسى قاله: هتلاقيني إن شاء الله صابر… ومش هعصيلك أمر."
+      en: "Moses said: you'll find me patient, God willing… and I won't disobey you."
+    visual:
+      template: scene
+      background: confluence
+  - id: condition
+    role: evidence
+    reel: khidr-01
+    audio: tts
+    mentions: ["الخضر"]
+    narration:
+      ar: "والخضر قاله: لو مشيت معايا… متسألنيش عن حاجة… لحد ما أنا أحكيلك عنها."
+      en: "And al-Khidr said: if you come with me… don't ask me about anything… until I tell you about it myself."
+    say_ar: "والخَضِر قاله: لو مشيت معايا… متسألنيش عن حاجة… لحد ما أنا أحكيلك عنها."
+    visual:
+      template: scene
+      background: confluence
+  - id: condition-intro
+    role: evidence
+    reel: khidr-01
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: condition-verse-1
+    role: evidence
+    reel: khidr-01
+    source: quran.18.69
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: condition-verse-2
+    role: evidence
+    reel: khidr-01
+    source: quran.18.70
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: outro
+    role: outro
+    reel: khidr-01
+    audio: tts
+    narration:
+      ar: "وبدأت الرحلة… تلات حاجات غريبة. تابعنا عشان تعرف أولها."
+      en: "And so the journey began… three strange things. Follow us to find out the first one."
+    reel_only_end: { ar: "تابعنا عشان تعرف أولها.", en: "Follow us to find out the first one." }
+    visual:
+      template: title-card
+
+  # ---- khidr-02 : le bateau (18:71-73 racontés, d'après Bukhari 122 ; 18:79) --------------------------
+  - id: ship-1
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    mentions: ["موسى عليه السلام", "الخضر"]
+    narration:
+      ar: "موسى والخضر ركبوا سفينة… أصحابها عرفوا الخضر… فشالوهم ببلاش."
+      en: "Moses and al-Khidr boarded a boat… its crew recognised al-Khidr… and took them for free."
+    say_ar: "موسى والخَضِر ركبوا سفينة… أصحابها عرفوا الخَضِر… فشالوهم ببلاش."
+    visual:
+      template: scene
+      background: sea-boat
+  # Bukhari 122, 3401 : « فجاء عصفور فوقع على حرف السفينة فنقر نقرة أو نقرتين في البحر ».
+  - id: ship-bird
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    narration:
+      ar: "وعصفور وقف على طرف السفينة… ونقر في البحر."
+      en: "A sparrow landed on the edge of the boat… and pecked at the sea."
+    say_ar: "وعصفور وقف على طرف السفينة… ونَقَر في البحر."
+    visual:
+      template: scene
+      background: sea-bird
+  # Le Prophète ﷺ raconte ce que dit al-Khadir : l'extrait de Bukhari 3401 (excerpt_ar), lu par Abu Malik.
+  - id: ship-hadith
+    role: evidence
+    reel: khidr-02
+    source: hadith.bukhari.3401
+    audio: tts
+    mentions: ["النبي ﷺ", "الخضر"]
+    narration:
+      ar: "والنبي صلى الله عليه وسلم حكى إن الخضر قال:"
+      en: "And the Prophet ﷺ told us that al-Khidr said:"
+    say_ar: "والنبي صلى الله عليه وسلم حكى إن الخَضِر قال:"
+    visual:
+      template: source-card
+  # 18:71-73 racontés avec leurs mots, puis récités.
+  - id: ship-2
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    mentions: ["الخضر"]
+    narration:
+      ar: "وبعدها… الخضر خرق السفينة… اللي شالتهم ببلاش!"
+      en: "And then… al-Khidr tore a hole in the boat… the boat that had carried them for free!"
+    say_ar: "وبعدها… الخَضِر خَرَق السفينة… اللي شالتهم ببلاش!"
+    visual:
+      template: scene
+      background: sea-boat
+  - id: ship-3
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    mentions: ["موسى عليه السلام"]
+    narration:
+      ar: "موسى ما قدرش يسكت: خرقتها عشان تغرّق أهلها؟!"
+      en: "Moses couldn't keep quiet: you tore it open to drown its people?!"
+    say_ar: "موسى ما قدرش يسكت: خَرَقْتها عشان تغرّق أهلها؟!"
+    visual:
+      template: title-card
+  - id: ship-4
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    mentions: ["الخضر"]
+    narration:
+      ar: "الخضر قاله: مش قلتلك إنك مش هتقدر تصبر معايا؟"
+      en: "Al-Khidr said: didn't I tell you that you'd never be able to be patient with me?"
+    say_ar: "الخَضِر قاله: مش قلتلك إنك مش هتقدر تصبر معايا؟"
+    visual:
+      template: scene
+      background: sea-boat
+  - id: ship-5
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    mentions: ["موسى عليه السلام"]
+    narration:
+      ar: "وموسى قاله: متآخذنيش… نسيت."
+      en: "And Moses said: don't blame me… I forgot."
+    visual:
+      template: title-card
+  - id: ship-event-intro
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: ship-event-1
+    role: evidence
+    reel: khidr-02
+    source: quran.18.71
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: ship-event-2
+    role: evidence
+    reel: khidr-02
+    source: quran.18.72
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: ship-event-3
+    role: evidence
+    reel: khidr-02
+    source: quran.18.73
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Liaison du reel seul (pas dans l'épisode entier, où le secret vient après les trois événements).
+  - id: ship-bridge
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    mentions: ["الخضر"]
+    narration:
+      ar: "السر؟ الخضر قاله بعدين:"
+      en: "The secret? Al-Khidr told him later:"
+    say_ar: "السر؟ الخَضِر قاله بعدين:"
+    visual:
+      template: title-card
+  - id: ship-verse-intro
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: ship-verse
+    role: evidence
+    reel: khidr-02
+    source: quran.18.79
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Lignes de l'IA, tirées de 18:79.
+  - id: ship-lesson-1
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    narration:
+      ar: "العيب اللي في السفينة… هو اللي حماها."
+      en: "The damage to the boat… is what saved it."
+    visual:
+      template: title-card
+  - id: ship-lesson-2
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    narration:
+      ar: "خسارة صغيرة… حمتهم من خسارة أكبر. والحكمة هنا… اتكشفت بسرعة."
+      en: "A small loss… that spared them a bigger one. And here, the wisdom… was revealed quickly."
+    say_ar: "خسارة صغيرة… حمتهم من خسارة أكبر. والحكمة هنا… اتْكَشَفِت بسرعة."
+    visual:
+      template: scene
+      background: sea-boat
+  # Exemple de vie (demande du propriétaire, 2026-11-08) : une sagesse qui se voit vite. Scène type.
+  - id: ship-life-1
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    narration:
+      ar: "زي لما القطر يفوتك… وتتعصب إنك اتأخرت."
+      en: "Like when you miss your train… and you're angry about being late."
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: salma, pose: standing, mood: worried, talking: false }
+  - id: ship-life-2
+    role: evidence
+    reel: khidr-02
+    audio: tts
+    narration:
+      ar: "وبعد ساعة تعرف… إنه عطل في نص الطريق."
+      en: "And an hour later you find out… it broke down halfway there."
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: salma, pose: standing, mood: smiling, talking: false }
+  - id: ship-outro
+    role: outro
+    reel: khidr-02
+    audio: tts
+    narration:
+      ar: "بس مش كل حكمة بتبان بسرعة… تابعنا عشان تعرف."
+      en: "But not every wisdom shows that quickly… Follow us to find out."
+    reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
+    visual:
+      template: title-card
+
+  # ---- khidr-03 : le garçon (18:74-76 racontés ; 18:80-81) ------------------------------------------
+  # Sobre : ni image du garçon ni détail du hadith (« اقتلع رأسه »).
+  - id: boy-1
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    mentions: ["موسى عليه السلام", "الخضر"]
+    narration:
+      ar: "موسى والخضر كملوا طريقهم… وقابلوا غلام… والخضر قتله."
+      en: "Moses and al-Khidr went on their way… they met a boy… and al-Khidr killed him."
+    say_ar: "موسى والخَضِر كملوا طريقهم… وقابلوا غُلام… والخَضِر قَتَلُه."
+    visual:
+      template: scene
+      background: road
+  # 18:74-76 racontés avec leurs mots, puis récités.
+  - id: boy-2
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    mentions: ["موسى عليه السلام"]
+    narration:
+      ar: "موسى اتصدم: قتلت نفس بريئة… عمرها ما قتلت حد؟!"
+      en: "Moses was shocked: you killed an innocent soul… one that never killed anyone?!"
+    say_ar: "موسى اتصدم: قَتَلْت نفس بريئة… عمرها ما قَتَلِت حد؟!"
+    visual:
+      template: title-card
+  - id: boy-3
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    mentions: ["الخضر"]
+    narration:
+      ar: "الخضر قاله: مش قلتلك إنك مش هتقدر تصبر معايا؟"
+      en: "Al-Khidr said: didn't I tell you that you'd never be able to be patient with me?"
+    say_ar: "الخَضِر قاله: مش قلتلك إنك مش هتقدر تصبر معايا؟"
+    visual:
+      template: scene
+      background: road
+  - id: boy-4
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    mentions: ["موسى عليه السلام"]
+    narration:
+      ar: "وموسى قاله: لو سألتك عن حاجة بعد كده… متصاحبنيش. وتبقى معذور."
+      en: "And Moses said: if I ask you about anything after this… don't keep me with you. You'd be excused."
+    visual:
+      template: scene
+      background: road
+  - id: boy-event-intro
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: boy-event-1
+    role: evidence
+    reel: khidr-03
+    source: quran.18.74
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: boy-event-2
+    role: evidence
+    reel: khidr-03
+    source: quran.18.75
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: boy-event-3
+    role: evidence
+    reel: khidr-03
+    source: quran.18.76
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: boy-bridge
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    mentions: ["الخضر"]
+    narration:
+      ar: "السر؟ الخضر قاله بعدين:"
+      en: "The secret? Al-Khidr told him later:"
+    say_ar: "السر؟ الخَضِر قاله بعدين:"
+    visual:
+      template: title-card
+  - id: boy-verse-intro
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: boy-verse-1
+    role: evidence
+    reel: khidr-03
+    source: quran.18.80
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: boy-verse-2
+    role: evidence
+    reel: khidr-03
+    source: quran.18.81
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Garde-fou (ligne de l'IA, d'après 18:82 « وما فعلته عن أمري ») : un ordre de Dieu propre à al-Khadir.
+  - id: boy-guard
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    mentions: ["الخضر"]
+    narration:
+      ar: "والخضر عمل كده بأمر من ربنا… حاجة خاصة بيه. محدش غيره يقدر يعمل كده."
+      en: "Al-Khidr did this by God's command… something given to him alone. No one else may ever do such a thing."
+    say_ar: "والخَضِر عمل كده بأمر من ربنا… حاجة خاصة بيه. محدش غيره يقدر يعمل كده."
+    visual:
+      template: title-card
+  # Lignes de l'IA (et du cours) : les parents ne l'ont peut-être jamais su.
+  - id: boy-lesson-1
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    narration:
+      ar: "بس الأب والأم… يمكن عمرهم ما عرفوا السبب."
+      en: "But the father and mother… may never have known why."
+    visual:
+      template: scene
+      background: road
+  - id: boy-lesson-2
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    narration:
+      ar: "إحنا عرفناه… عشان ربنا حكاه لنا."
+      en: "We know it… only because God told us."
+    visual:
+      template: title-card
+  - id: boy-lesson-3
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    narration:
+      ar: "فيه أقدار… حكمتها مش هتبان في الدنيا."
+      en: "Some decrees… their wisdom won't show in this life."
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  # Exemple de vie : une sagesse qu'on ne verra peut-être pas ici-bas. Scène type.
+  - id: boy-life-1
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    narration:
+      ar: "زي حد خسر حد غالي عليه… ولسه بيسأل: ليه؟"
+      en: "Like someone who lost someone dear… and still asks: why?"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: salma, pose: sitting, mood: worried, talking: false }
+  - id: boy-life-2
+    role: evidence
+    reel: khidr-03
+    audio: tts
+    narration:
+      ar: "السؤال ده… إجابته مش هنا. إجابته عند ربنا."
+      en: "That question… its answer isn't here. Its answer is with God."
+    visual:
+      template: title-card
+  - id: boy-outro
+    role: outro
+    reel: khidr-03
+    audio: tts
+    narration:
+      ar: "طب والخير اللي متأخر؟ تابعنا عشان تعرف."
+      en: "And what about good that's slow to come? Follow us to find out."
+    reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
+    visual:
+      template: title-card
+
+  # 18:77 raconté avec ses mots, puis récité.
+  - id: wall-1
+    role: evidence
+    reel: khidr-04
+    audio: tts
+    mentions: ["موسى عليه السلام", "الخضر"]
+    narration:
+      ar: "موسى والخضر دخلوا قرية… طلبوا من أهلها أكل… ورفضوا يضيفوهم."
+      en: "Moses and al-Khidr came to a village… they asked its people for food… and were refused."
+    say_ar: "موسى والخَضِر دخلوا قرية… طلبوا من أهلها أكل… ورفضوا يِضَيّفوهم."
+    visual:
+      template: scene
+      background: village-wall
+  - id: wall-2
+    role: evidence
+    reel: khidr-04
+    audio: tts
+    mentions: ["الخضر"]
+    narration:
+      ar: "ولقوا جدار عايز يقع… والخضر صلّحه!"
+      en: "They found a wall about to fall… and al-Khidr set it straight!"
+    say_ar: "ولقوا جدار عايز يقع… والخَضِر صلّحه!"
+    visual:
+      template: scene
+      background: village-wall
+  - id: wall-3
+    role: evidence
+    reel: khidr-04
+    audio: tts
+    mentions: ["موسى عليه السلام"]
+    narration:
+      ar: "موسى قاله: لو كنت عايز… كنت خدت عليه أجر."
+      en: "Moses said: if you'd wanted… you could have taken a payment for it."
+    visual:
+      template: title-card
+  - id: wall-event-intro
+    role: evidence
+    reel: khidr-04
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: wall-event
+    role: evidence
+    reel: khidr-04
+    source: quran.18.77
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Seulement dans l'épisode entier : la séparation (18:78) racontée avec ses mots, puis récitée ; le
+  # tournant vers le secret (18:79 suit).
+  - id: parting-say
+    role: evidence
+    audio: tts
+    mentions: ["الخضر"]
+    narration:
+      ar: "وهنا الخضر قاله: هنا نفترق… بس هقولك سر اللي مقدرتش تصبر عليه."
+      en: "Then al-Khidr said: this is where we part… but I'll tell you the secret of what you couldn't be patient with."
+    say_ar: "وهنا الخَضِر قاله: هنا نفترق… بس هقولك سر اللي مقدرتش تصبر عليه."
+    visual:
+      template: title-card
+  - id: parting-intro
+    role: evidence
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: parting
+    role: evidence
+    source: quran.18.78
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Liaison du reel seul (18:78 raconté).
+  - id: wall-bridge
+    role: evidence
+    reel: khidr-04
+    audio: tts
+    mentions: ["الخضر"]
+    narration:
+      ar: "وهنا افترقوا… بس قبل ما يمشي… الخضر قاله السر:"
+      en: "And there they parted… but before leaving… al-Khidr told him the secret:"
+    say_ar: "وهنا افترقوا… بس قبل ما يمشي… الخَضِر قاله السر:"
+    visual:
+      template: title-card
+  - id: wall-verse-intro
+    role: evidence
+    reel: khidr-04
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: wall-verse
+    role: evidence
+    reel: khidr-04
+    source: quran.18.82
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Lignes de l'IA, tirées de 18:82.
+  - id: wall-lesson-1
+    role: evidence
+    reel: khidr-04
+    audio: tts
+    narration:
+      ar: "كنز مستخبي تحت جدار… مستني الولدين يكبروا."
+      en: "A treasure hidden under a wall… waiting for two boys to grow up."
+    visual:
+      template: scene
+      background: wall-treasure
+  - id: wall-lesson-2
+    role: evidence
+    reel: khidr-04
+    audio: tts
+    narration:
+      ar: "الخير ممكن يكون مستخبي… ومستني وقته. والحكمة هنا… اتكشفت بعد سنين."
+      en: "Good can be hidden… waiting for its time. And here, the wisdom… was revealed years later."
+    say_ar: "الخير ممكن يكون مستخبي… ومستني وقته. والحكمة هنا… اتْكَشَفِت بعد سنين."
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  # Exemple de vie : une sagesse qui se voit des années après. Scène type.
+  - id: wall-life-1
+    role: evidence
+    reel: khidr-04
+    audio: tts
+    narration:
+      ar: "زي لما تترفض من شغل كنت بتحلم بيه… وتفضل زعلان سنين."
+      en: "Like when you're turned down for the job you dreamed of… and stay upset for years."
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: worried, talking: false }
+  - id: wall-life-2
+    role: evidence
+    reel: khidr-04
+    audio: tts
+    narration:
+      ar: "وبعدين تفهم… إن الرفض ده هو اللي وصلك للي إنت فيه دلوقتي."
+      en: "And then you understand… that rejection is what brought you to where you are now."
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: amir, pose: standing, mood: smiling, talking: false }
+  # Même réplique que dua-04, tawakkul-04 (prise figée reprise).
+  - id: wall-outro
+    role: outro
+    reel: khidr-04
+    audio: tts
+    narration:
+      ar: "وفي الآخر… آية تطمن قلبك. دي الأخيرة."
+      en: "And finally… a verse to put your heart at ease. That's the last one."
+    visual:
+      template: title-card
+
+  # ---- khidr-05 : la leçon -------------------------------------------------------------------------
+  - id: end-hook
+    role: conclusion
+    reel: khidr-05
+    audio: tts
+    narration:
+      ar: "ليه أنا؟ ليه دلوقتي؟"
+      en: "Why me? Why now?"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: salma, pose: sitting, mood: worried, talking: false }
+  # Ligne de l'IA (et du cours) : les trois temps de la sagesse, un par événement.
+  - id: end-recap
+    role: conclusion
+    reel: khidr-05
+    audio: tts
+    mentions: ["موسى عليه السلام", "الخضر"]
+    narration:
+      ar: "قصة موسى والخضر بتقول: الحكمة ممكن تبان بسرعة، أو بعد سنين، أو مش هتبان في الدنيا خالص."
+      en: "The story of Moses and al-Khidr says: the wisdom can show quickly, or years later, or not in this life at all."
+    say_ar: "قصة موسى والخَضِر بتقول: الحكمة ممكن تبان بسرعة، أو بعد سنين، أو مش هتبان في الدنيا خالص."
+    visual:
+      template: title-card
+  # Al-Baqara 2:216 (demande du propriétaire, 2026-11-08) : racontée avec ses mots, puis récitée.
+  - id: end-hate
+    role: evidence
+    reel: khidr-05
+    audio: tts
+    narration:
+      ar: "ممكن تكره حاجة… وهي خير ليك. وتحب حاجة… وهي شر ليك."
+      en: "You may hate something… while it's good for you. And love something… while it's bad for you."
+    visual:
+      template: title-card
+  - id: end-hate-intro
+    role: evidence
+    reel: khidr-05
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: end-hate-verse
+    role: evidence
+    reel: khidr-05
+    source: quran.2.216
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: end-why
+    role: conclusion
+    reel: khidr-05
+    audio: tts
+    narration:
+      ar: "طب ليه مش بنشوفها؟"
+      en: "So why can't we see it?"
+    visual:
+      template: title-card
+  # Ligne de l'IA, d'après le moineau de Bukhari 3401 (khidr-02), sans en reprendre les mots.
+  - id: end-because
+    role: conclusion
+    reel: khidr-05
+    audio: tts
+    narration:
+      ar: "عشان علمنا… جنب علم ربنا… زي العصفور ده جنب البحر."
+      en: "Because our knowledge… next to God's… is like that sparrow next to the sea."
+    visual:
+      template: scene
+      background: sea-bird
+  # Même introduction que tawakkul-01 (prise figée reprise) ; l'extrait de Bukhari 122 (excerpt_ar), lu par Abu Malik.
+  - id: end-hadith
+    role: conclusion
+    reel: khidr-05
+    source: hadith.bukhari.122
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "والنبي صلى الله عليه وسلم قال:"
+      en: "And the Prophet ﷺ said:"
+    visual:
+      template: source-card
+  # Ligne de l'IA, d'après Bukhari 122.
+  - id: end-only
+    role: conclusion
+    reel: khidr-05
+    audio: tts
+    narration:
+      ar: "كل اللي عرفناه… تلات حاجات بس… وفي كل واحدة رحمة."
+      en: "All we were told… was three things… and in each one, mercy."
+    visual:
+      template: title-card
+  - id: end-verse-intro
+    role: conclusion
+    reel: khidr-05
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: end-verse
+    role: conclusion
+    reel: khidr-05
+    source: quran.64.11
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Ligne de l'IA : retour à l'accroche.
+  - id: end-last
+    role: conclusion
+    reel: khidr-05
+    audio: tts
+    narration:
+      ar: "فالمرة الجاية لما تسأل: ليه؟ افتكر السفينة."
+      en: "So next time you ask: why?… remember the boat."
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: salma, pose: standing, mood: calm, talking: false }

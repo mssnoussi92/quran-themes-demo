@@ -2,6 +2,7 @@
 // shapes with the same black line as Open Peeps. No text, no people.
 import { useCurrentFrame, useVideoConfig } from "remotion";
 import { INK } from "../characters/Character";
+import { STORY_BACKGROUNDS } from "./Story";
 
 export type BackgroundProps = {
   width: number;
@@ -120,4 +121,5 @@ export const BACKGROUNDS: Record<string, React.FC<BackgroundProps>> = {
   "waiting-room": WaitingRoom,
   street: Street,
   plain: Plain,
+  ...STORY_BACKGROUNDS,
 };

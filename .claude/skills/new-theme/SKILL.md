@@ -37,10 +37,38 @@ translation, the final video. Never mark any of them done yourself.
      and their sources. The owner chooses; write the decision in `docs/themes.md`.
    - Do not refute a misconception with the same evidence as an earlier reel (sabr-03 « patience is
      waiting » used Muslim 2664: a tawakkul reel on effort takes Tirmidhi 2517 and 2344 instead).
+   - A **story** (khidr, 2026-11-08: Musa and al-Khidr, 18:60-82) needs no misconceptions: one event
+     and its meaning per reel, in the order of the Qur'an, and the whole episode told with suspense,
+     every event first and then every secret (`whole`, step 3). The narration tells the story from
+     the Qur'an and the authentic hadith only (no names or details introduced by « يزعمون », no
+     israiliyyat), the verses prove it; never draw a prophet, never show a killing.
+     - **After each event told, its verse recited** (owner's rule, 2026-11-08): the narration says
+       the event in Egyptian, as close as it can to the verse's own words (« مش قلتلك إنك مش هتقدر
+       تصبر معايا؟ » for 18:72), then « قال ربنا سبحانه وتعالى: » and the verses of that event, one
+       intro for verses that follow each other (18:71-73). The synthetic voice never says the
+       Quran's text itself: a dialect rendering, then the reciter. Reels grow to about 2 min.
+     - **A life example after each lesson** (owner's request, 2026-11-08): a typical scene of
+       everyday life and feeling, two lines on a catalog character (« زي لما القطر يفوتك… »,
+       worried, then « وبعد ساعة تعرف… », smiling), presented as typical, never as a true story.
+     - A promise at the end of the hook, in Egyptian (« قصة… هتخليك تبص لكل ابتلاء عدّى عليك بعين
+       تانية »): what the story changes for the viewer, where viewers decide to stay.
 
 2. **Sources.** For each claim, a verse or a hadith, never a summary from memory.
    - Verses: quran.ai MCP (`search_quran`, `fetch_word_concordance`; read its grounding rules
      first and pass their nonce), or the quran.com API. Whole ayahs only.
+   - Each verse is recited by the reciter of `content/policy.yaml` (Tawfiq As-Sayegh since
+     2026-11-08, one file per surah on mp3quran.net): once the verse is in the registry, cut it in
+     his surah file, `uv run --with faster-whisper==1.1.1 --with pyyaml tools/audio/recitation.py
+     --reciter sayegh <surah:ayah>` (or `--all`). Whisper checks the cut (every word, the first and
+     the last above all, nothing of the neighbouring ayah). A cut it refuses is settled at the
+     envelope (`listen.py --envelope <build/recitations/sayegh/SSS.mp3>@<t>@2`: the dip before the
+     first word, the one after the last; a reciter who joins two ayahs leaves only a dip, 2:155) and
+     set by hand (`--set 13:39=891.68,903.25`). validate.py fails on a recited verse without a cut.
+     Tell the owner which cuts were set by hand: they listen to them first.
+   - A hadith too long for a card (the whole story of Musa and al-Khidr, Bukhari 122): the registry's
+     `excerpt_ar` (with `excerpt_en`) is the passage the card shows and the reader says, copied from
+     `text_ar` with a script, never typed (validate.py checks it). One excerpt per hadith: a second
+     passage of the same story comes from another narration of it (Bukhari 3401 for the sparrow).
    - Hadiths: collections and grades allowed by `content/policy.yaml` (Bukhari, Muslim, Tirmidhi
      if al-Albani grades it sahih or hasan). To search hadith-api, download
      `editions/ara-<collection>1.min.json` (Arabic without diacritics) into the scratchpad and
@@ -81,6 +109,14 @@ translation, the final video. Never mark any of them done yourself.
      is reused), every hadith by « النبي صلى الله عليه وسلم قال: » on its `source-card`;
    - a prophet or a Companion appears only on a `name-card` (`mentions`), never drawn (Ayyub in dua);
    - a visual change every 6 s or so; one colour per function (concepts, narrator, questions, quotes).
+   - a story told with suspense in the whole episode (khidr): the episode's `whole` lists its parts
+     (a title each, a YouTube chapter) and their scenes in order. A scene without `reel` is said only
+     there (khidr: 18:78, the parting); a reel's scene left out of `whole` only in its reel (the
+     links « السر؟ الخضر قاله بعدين: »). The owner validates the order and those lines with the
+     reels: `whole.validated_by`, checked by `validate.py --release --whole <theme>`.
+   - new places for a story: draw them in `video/src/backgrounds/` (flat shapes, no person), add
+     them to `content/backgrounds.yaml`, render the board (`npm run still -- BackgroundSheet
+     ../docs/backgrounds.png --frame=40`) and send it to the owner before the drafts.
 
 4. **Script.** Follow the `write-hook` skill for the episode opening and for each reel: mirror,
    contrast, anchor, and an honest open loop to the next reel. Narration in Egyptian Arabic
