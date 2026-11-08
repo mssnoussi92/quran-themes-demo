@@ -80,7 +80,9 @@ on the open loop of beat 7 that leads to the next reel.
   وكل الناس حياتهم حلوة؟ »); tawakkul, awake at night thinking about tomorrow (« صاحي بالليل… بتفكر في
   بكرة؟ »); khidr, something happened and you don't understand why (« حصلت لك حاجة… ومش فاهم ليه؟ »),
   with the promise the owner liked at the end of the hook (« قصة… هتخليك تبص لكل ابتلاء عدّى عليك بعين
-  تانية »), in Egyptian, not the classical « ستجعلك تعيد النظر ».
+  تانية »), in Egyptian, not the classical « ستجعلك تعيد النظر »; qarnayn, success and power in your hands
+  (« ربنا فتحها عليك؟ نجحت… اترقيت… بقى في إيدك قوة؟ », then « ناس كتير… أول ما يمسكوا القوة… بيتغيروا »), promise
+  « قصة… هتعلمك تعمل إيه بكل نعمة في إيدك ».
 - Write for the ear of VoiceTut, which speaks Egyptian: ق becomes ء (« قريب » → « أريب »), ث becomes
   س, a ة before a pause can be heard as ت (« عادة »). Keep the screen correct and give the voice its
   own spelling in `say_ar` (up to two letters per word): every word the owner already corrected is

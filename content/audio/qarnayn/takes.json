@@ -1,0 +1,488 @@
+{
+  "note": "Narration takes validated by the owner (AI-generated voice, VoiceTut). Written by tools/audio/build.py --lock, never by hand.",
+  "takes": {
+    "build-1": {
+      "file": "build-1.flac",
+      "text": "قال: هاتوا قِطَع الحديد… لحد ما ساوى بين الجبلين.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "779896e6b0019fd9",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "f4a21557ef201deecdea0f79fd59412644323cff1a182dff6805eab010344603"
+    },
+    "build-2": {
+      "file": "build-2.flac",
+      "text": "وقال: انفخوا… لحد ما الحديد بقى نار… وقال: هاتوا نحاس دايب أصبه عليه.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "0fe02ee052d4a401",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "7d538dc95bed86a8102c8bd342bb7760e072469671951c42c87ca94ac12b583e"
+    },
+    "build-3": {
+      "file": "build-3.flac",
+      "text": "ويأجوج ومأجوج… ما قدروا يطلعوا عليه… ولا يخرموه.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "8e3125feff64f419",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "fffe577474580fc286ef94ce5490f899c218b72ee56b32887e0924d8ff7364f5"
+    },
+    "dam-1": {
+      "file": "dam-1.flac",
+      "text": "وبعدها مشي… لحد ما وصل بين جبلين… لقى قَوْم… يدوب بيفهموا الكلام.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "8e02c8d22f6938d5",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "9723f5b7ed52b8fa65262cdf3f08f311c214b3dbff5b3b0c8a85cb8fb262a66d"
+    },
+    "dam-2": {
+      "file": "dam-2.flac",
+      "text": "قالوا له: يأجوج ومأجوج بيفسدوا في الأرض… ندفعلك فلوس… وتعمل بيننا وبينهم سد؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "5f526d43519eafed",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "db0196190b7dbc57fc4aa0f54388f404c24121f917b3d4d44455ab3b77994838"
+    },
+    "dam-3": {
+      "file": "dam-3.flac",
+      "text": "قال: اللي ربنا إداهولي أحسن. ساعدوني بقُوِّتْكُم… وأنا أعمل بينكم وبينهم ردم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "6466cdff1c0138de",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "6032c41ca08291a36feb532878e884aca6755535602fbb30026c545ac9fb7012",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          0.38,
+          2.04,
+          3.46
+        ]
+      }
+    },
+    "dam-lesson-1": {
+      "file": "dam-lesson-1.flac",
+      "text": "ما خدش فلوس من ناس محتاجة… عشان اللي ربنا إداهوله أحسن.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "11e5b88efdd99888",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "44fe9c6b19f5de40b7ac5c6eb8827a0fbf5efd180aa6d583f8293065affb2d5d"
+    },
+    "dam-lesson-2": {
+      "file": "dam-lesson-2.flac",
+      "text": "وما عملش كل حاجة لوحده: قالهم ساعدوني.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "78983047b3160d00",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "14a151c99e64ec18021e7d33cb9231fbda0390954f5437914f307f9054d7a6d7"
+    },
+    "dam-life-1": {
+      "file": "dam-life-1.flac",
+      "text": "زي لما حد محتاج يطلب منك مساعدة… وإنت تقدر تستغله.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "e5b677b16c7ff5e4",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "302fd4007c7b7c5a8e84fe8245da556aa685c9905676c4471b51295f801cd765"
+    },
+    "dam-life-2": {
+      "file": "dam-life-2.flac",
+      "text": "أو تساعده… وتعلّمه يقف على رجله.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "6ccb321a104e3b42",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "b0420a8c7f7a92a65be8f8b2208133b58c9552096bf9c4eac35d74be03d4ad67"
+    },
+    "dam-outro": {
+      "file": "dam-outro.flac",
+      "text": "وبدأ يبني… تابعنا عشان تعرف إزاي.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "adb7a5e7ce08ee5f",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "969dd3a32bed7b7b8305fdd4350904bb26585d2e25482fe80355db22d77eb9ca"
+    },
+    "east-1": {
+      "file": "east-1.flac",
+      "text": "وبعدها مشي… لحد ما وصل لمطلع الشمس… لقاها بتطلع على قَوْم… مالهمش حاجة تسترهم منها.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "7b2971c13705f585",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "f0c547349c4bb8f7cce135ee6e6a9a7537a963ac2c57ee917de37c74fd4127fb"
+    },
+    "east-lesson": {
+      "file": "east-lesson.flac",
+      "text": "وربنا كان عارف كل حاجة في إيده… وإنت كمان: ربنا شايف بتعمل إيه باللي في إيدك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "d24f71f3b6341365",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "a80cbc11bb365f370fc2ce51983cc701c619b4a47456ece5e99265bdece4f75c"
+    },
+    "end-1": {
+      "file": "end-1.flac",
+      "text": "النبي صلى الله عليه وسلم حكى عن السد ده… إن يأجوج ومأجوج بيحفروا فيه كل يوم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "77c630ed1da83ccc",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "49b4450f71a1e8e08f7d28c45ca9d8d544abb5663565843b863d34cd49c85bfa"
+    },
+    "end-2": {
+      "file": "end-2.flac",
+      "text": "ولما قالوا: إن شاء الله… رجعوا لقوه زي ما سابوه… وخرموه.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "ef0df0a5153602b4",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "69eed2840608f422d9cf8a866cc8f3f919f550977b71d64e28fdad8eab61550a"
+    },
+    "end-3": {
+      "file": "end-3.flac",
+      "text": "كلمة واحدة… وربنا علّمهالنا في سورة الكهف نفسها.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "5e9bc3ba3a1d1fa7",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "00dcedb4b8f9624de3be6129fb7d5e20d1c222c29c219b7f4a7c842dd6662ba8"
+    },
+    "end-hadith": {
+      "file": "end-hadith.flac",
+      "text": "والنبي صلى الله عليه وسلم قال: يَحْفِرُونَهُ كُلَّ يَوْمٍ حَتَّى إِذَا كَادُوا يَخْرِقُونَهُ قَالَ الَّذِي عَلَيْهِمُ ارْجِعُوا فَسَتَخْرِقُونَهُ غَدًا فَيُعِيدُهُ اللَّهُ كَأَمْثَلِ مَا كَانَ حَتَّى إِذَا بَلَغَ مُدَّتَهُمْ وَأَرَادَ اللَّهُ أَنْ يَبْعَثَهُمْ عَلَى النَّاسِ قَالَ الَّذِي عَلَيْهِمُ ارْجِعُوا فَسَتَخْرِقُونَهُ غَدًا إِنْ شَاءَ اللَّهُ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "49da705d9f86358e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "8a20fc6075b71ef92d820c62594b20154db8a3ba98794e206c74f01af8195d52",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.46
+        ]
+      }
+    },
+    "end-last": {
+      "file": "end-last.flac",
+      "text": "فالمرة الجاية لما ربنا يفتحها عليك… قول: ده رحمة من ربي.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "41e2d33ef85824d1",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "8875e335af08d01813aa21e9d52409cfe84ca8ad4c2386ecf1bbf2f6e4f86c7a"
+    },
+    "end-recap": {
+      "file": "end-recap.flac",
+      "text": "ذو القَرْنَيْن علّمنا: النعمة من ربنا… والقُوَّة أمانة… والمساعدة من غير استغلال… والنجاح رحمة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "14d38416cf980f6d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "dd43cce7c08a2a082f60ae091765413785db1cc56c52dfd5405e97b8f34f482f"
+    },
+    "given": {
+      "file": "given.flac",
+      "text": "ربنا مكّن له في الأرض… وإداه من كل حاجة سبب… وهو مشي ورا السبب.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "5c743f4bbc3b4edf",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "221eaf7c668415daab74a22d98674307026debf05511499b75551aeb749c9773"
+    },
+    "given-lesson": {
+      "file": "given-lesson.flac",
+      "text": "النعمة من ربنا… بس لازم إنت تمشي فيها.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "f802e98bf4710aaf",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "1737cbe5832df08dd327bc5d76fc09b3962e9d6a47fbd895d67f73640618826f"
+    },
+    "given-life-1": {
+      "file": "given-life-1.flac",
+      "text": "زي واحد عنده موهبة… ومستنيها تشتغل لوحدها.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "00b40c5a0cb3189c",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "9cf5d36165015d430308cc3921373943cd730404e31ddd9d758c33585776c952"
+    },
+    "given-life-2": {
+      "file": "given-life-2.flac",
+      "text": "واللي بيشتغل على موهبته كل يوم… هو اللي بيوصل.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "72fad4ddec0a6fc0",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "36138c8d4c7494ed4ef820accda533e5f342061d86c8a44dd637aa83237c45f3"
+    },
+    "hook-1": {
+      "file": "hook-1.flac",
+      "text": "ربنا فتحها عليك؟ نجحت… اترقيت… بقى في إيدك قُوَّة؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "b842968db770913c",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "f10aef404af2d7f766777ae882f36456a39c3311611300a76cbeb6c67d98dccf"
+    },
+    "hook-2": {
+      "file": "hook-2.flac",
+      "text": "ناس كتير… أول ما يمسكوا القُوَّة… بيتغيروا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "5d23a4bf169e7729",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "ca42221d0ee0eb3459d5150c19310b1312788d5b9ffc0696639656b7f31ba1eb"
+    },
+    "hook-3": {
+      "file": "hook-3.flac",
+      "text": "في سورة الكهف… راجل ربنا إداه قُوَّة… ومشي بيها لآخر الأرض.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "3ad18bd0b86deb0f",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "c3a4f9605f5b639df4229c8bc79cc913502727c07258e25652a1a8af8a8919a7"
+    },
+    "hook-4": {
+      "file": "hook-4.flac",
+      "text": "قصة… هتعلمك تعمل إيه بكل نعمة في إيدك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "508ce2d2d1e55d4e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "109a56cadd087bf61853c2aacab771a7669ef6f45927be29746d578b16f3dd8d"
+    },
+    "humble-1": {
+      "file": "humble-1.flac",
+      "text": "وبعد كل ده… قال: ده رحمة من ربي. ولما ييجي وعد ربي… هيخليه تراب. ووعد ربي حق.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "e4eafbfa43384993",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "e923e0e2b70c42e63adb237040c14b5c693034abde024645e00e4c8841b6e43e"
+    },
+    "humble-lesson": {
+      "file": "humble-lesson.flac",
+      "text": "ما قالش: أنا اللي عملت… قال: رحمة من ربي.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "f246737d8e31a6e1",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "a6672d735dd7401867487c534c2dbe90854813bf94755d08397368df072f2dd9",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          0.76,
+          1.66,
+          1.96
+        ]
+      }
+    },
+    "humble-life-1": {
+      "file": "humble-life-1.flac",
+      "text": "زي لما تنجح… والناس تسقف لك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "e9f42bc61deef5a2",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "f082d9bc9f4129c504f9ddaca1d5708ba7ada35287ef8d2e16d33ab52798fa72"
+    },
+    "humble-life-2": {
+      "file": "humble-life-2.flac",
+      "text": "وقلبك بيقول: الحمد لله… ده من ربنا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "8cd602e017f5dd04",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "79099c201b70cf96d664c2fea38ae6d4257389ca2f3e3496d9b3b5f287e5c2e9"
+    },
+    "humble-outro": {
+      "file": "humble-outro.flac",
+      "text": "وفي الآخر… كلمة واحدة ماسكة السد. دي الأخيرة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "7f8a1acd7883e130",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "29bf8aa570194a3657ba9fe8873003d6ea527daa6366345252a154e6b412e5ea"
+    },
+    "outro": {
+      "file": "outro.flac",
+      "text": "ومشي… لحد ما وصل للمكان اللي بتغرب فيه الشمس. تابعنا عشان تعرف لقى إيه هناك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "e43f51cec1cd1e7e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "837cdcf060fa12e70bd979117d3566482517e212d67174d9c534479734061c06",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          0.88,
+          3.66
+        ]
+      }
+    },
+    "west-1": {
+      "file": "west-1.flac",
+      "text": "لما وصل لمغرب الشمس… شافها كأنها بتغرب في عين طين أسود… ولقى عندها قَوْم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c9d3790fc23a710d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "6f01256a2e395cde0a9d0d72a79ea52e73909be05ae50495216c26ee3126f2ff"
+    },
+    "west-2": {
+      "file": "west-2.flac",
+      "text": "وربنا قاله: يا تعاقبهم… يا تعاملهم بالحسنى.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "117bb7dc1c195a0e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "cc25477fb33dbd0083977dfd1976239c7dde18e73f28debeff2db65503c23fdc"
+    },
+    "west-3": {
+      "file": "west-3.flac",
+      "text": "قال: اللي ظلم… هنعاقبه. وبعدين يرجع لربه… ويعاقبه أشد.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "128405d20f40a635",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "c49f0e35d9cdc4fd57c81978ae21fc1da20ff27f81f3c40ed61ac0e9d57b0466",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          0.52,
+          1.34,
+          2.34,
+          3.74
+        ]
+      }
+    },
+    "west-4": {
+      "file": "west-4.flac",
+      "text": "واللي آمن وعمل الصالح… له أحسن جزاء… وهنعامله بالسهل.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "708f963cba5768dd",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "5a6f70340e7941a47ecf38263591cf93b10a9cf7f96731b42e975b2990d458e7"
+    },
+    "west-lesson": {
+      "file": "west-lesson.flac",
+      "text": "القُوَّة أمانة… مش رخصة تظلم بيها: الظالم يتحاسب… والكويس يتكرّم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "1b763d471886cb08",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "1658140a7a6c92d96537e23eb7fd840a73b5048bf5cd8b1dea3b103daa8662dd"
+    },
+    "west-life-1": {
+      "file": "west-life-1.flac",
+      "text": "زي لما يبقى في إيدك سلطة… في شغلك… أو في بيتك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "e147a2bc544828f5",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "738b5b9338baacec11dca58dca154e4835a1c3302619bceb68069148a93af54c"
+    },
+    "west-life-2": {
+      "file": "west-life-2.flac",
+      "text": "اللي بيغلط يتحاسب… واللي بيتعب تقوله: شكرًا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "d7abf385e8b7910a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "d72d3716ffdaba98d8fa34bc54d89e228b792a2ee11d9e402511d94f1aff1242"
+    },
+    "west-outro": {
+      "file": "west-outro.flac",
+      "text": "وبعدها… وصل لقَوْم عندهم مشكلة كبيرة. تابعنا عشان تعرف عمل إيه.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "db1ac8220cc2e77d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "977cf8a9c5dd16703a962518f579313c62f3e638a61ccdd3ffcfdddb9de239e3"
+    },
+    "who-1": {
+      "file": "who-1.flac",
+      "text": "الناس سألوا النبي صلى الله عليه وسلم عن ذِي القَرْنَيْن… وربنا جاوبهم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "9b05c6714b28d783",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "ed99cd68eaa1d83a606d58211df6aa7047b4bd3599c8105d662e6505cc182365"
+    },
+    "who-2": {
+      "file": "who-2.flac",
+      "text": "مين هو؟ القرآن ما قالش اسمه… ولا زمنه. قال اللي يهمنا: عمل إيه.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "fbf988eb020e6fe0",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "8bfbce1ef7298ee32644658e6d2e6f90f553413f2b628e2b336b5b3340eda881",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.1,
+          2.74,
+          3.56,
+          4.74
+        ]
+      }
+    }
+  }
+}

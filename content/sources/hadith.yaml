@@ -797,3 +797,39 @@
     license: none stated on the archive.org item
     status: validated
     validated_by: mssnoussi92
+- id: hadith.tirmidhi.3153
+  type: hadith
+  ref: {collection: tirmidhi, number: 3153}
+  grade: sahih
+  graded_by: al-Albani
+  url: https://sunnah.com/tirmidhi:3153
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-tirmidhi/3153.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-tirmidhi/3153.json
+    translator: Unknown
+    book: 47
+    hadith_in_book: 205
+    grades:
+    - {name: Ahmad Muhammad Shakir, grade: Sahih}
+    - {name: Al-Albani, grade: Sahih}
+    - {name: Bashar Awad Maarouf, grade: Hasan}
+    - {name: Zubair Ali Zai, grade: Daif}
+    retrieved: '2026-11-08'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« يحفرونه كل يوم… ارجعوا فستخرقونه غدا إن شاء الله » : le barrage tient jusqu'au jour où ils disent « si Allah le veut » (reel dq-05) ; al-Albani Sahih ; la suite (leur sortie, les flèches) n'est pas montrée"
+  excerpt_ar: يَحْفِرُونَهُ كُلَّ يَوْمٍ حَتَّى إِذَا كَادُوا يَخْرِقُونَهُ قَالَ الَّذِي عَلَيْهِمُ ارْجِعُوا فَسَتَخْرِقُونَهُ غَدًا فَيُعِيدُهُ اللَّهُ كَأَمْثَلِ مَا كَانَ حَتَّى إِذَا بَلَغَ مُدَّتَهُمْ وَأَرَادَ اللَّهُ أَنْ يَبْعَثَهُمْ عَلَى النَّاسِ قَالَ الَّذِي عَلَيْهِمُ ارْجِعُوا فَسَتَخْرِقُونَهُ غَدًا إِنْ شَاءَ اللَّهُ
+  excerpt_en: "They excavated each day, until when they are just about to penetrate it, their leader says: 'Go back so that you can penetrate it tomorrow!'\" He said: \"But Allah makes it return just as it was, until their appointed time, when Allah ordains to send them upon the people, and their leader says: 'Go back so you can penetrate it tomorrow, if Allah wills.'"
+  text_ar: حَدَّثَنَا مُحَمَّدُ بْنُ بَشَّارٍ، وَغَيْرُ، وَاحِدٍ، - الْمَعْنَى وَاحِدٌ وَاللَّفْظُ لاِبْنِ بَشَّارٍ قَالُوا حَدَّثَنَا هِشَامُ بْنُ عَبْدِ الْمَلِكِ حَدَّثَنَا أَبُو عَوَانَةَ عَنْ قَتَادَةَ عَنْ أَبِي رَافِعٍ عَنْ حَدِيثِ أَبِي هُرَيْرَةَ عَنِ النَّبِيِّ صلى الله عليه وسلم فِي السَّدِّ قَالَ ‏ "‏ يَحْفِرُونَهُ كُلَّ يَوْمٍ حَتَّى إِذَا كَادُوا يَخْرِقُونَهُ قَالَ الَّذِي عَلَيْهِمُ ارْجِعُوا فَسَتَخْرِقُونَهُ غَدًا فَيُعِيدُهُ اللَّهُ كَأَمْثَلِ مَا كَانَ حَتَّى إِذَا بَلَغَ مُدَّتَهُمْ وَأَرَادَ اللَّهُ أَنْ يَبْعَثَهُمْ عَلَى النَّاسِ قَالَ الَّذِي عَلَيْهِمُ ارْجِعُوا فَسَتَخْرِقُونَهُ غَدًا إِنْ شَاءَ اللَّهُ وَاسْتَثْنَى ‏.‏ قَالَ فَيَرْجِعُونَ فَيَجِدُونَهُ كَهَيْئَتِهِ حِينَ تَرَكُوهُ فَيَخْرِقُونَهُ فَيَخْرُجُونَ عَلَى النَّاسِ فَيَسْتَقُونَ الْمِيَاهَ وَيَفِرُّ النَّاسُ مِنْهُمْ فَيَرْمُونَ بِسِهَامِهِمْ فِي السَّمَاءِ فَتَرْجِعُ مُخَضَّبَةً بِالدِّمَاءِ فَيَقُولُونَ قَهَرْنَا مَنْ فِي الأَرْضِ وَعَلَوْنَا مَنْ فِي السَّمَاءِ قَسْوَةً وَعُلُوًّا ‏.‏ فَيَبْعَثُ اللَّهُ عَلَيْهِمْ نَغَفًا فِي أَقْفَائِهِمْ فَيَهْلِكُونَ قَالَ فَوَالَّذِي نَفْسُ مُحَمَّدٍ بِيَدِهِ إِنَّ دَوَابَّ الأَرْضِ تَسْمَنُ وَتَبْطَرُ وَتَشْكَرُ شَكْرًا مِنْ لُحُومِهِمْ ‏"‏ ‏.‏ قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ غَرِيبٌ إِنَّمَا نَعْرِفُهُ مِنْ هَذَا الْوَجْهِ مِثْلَ هَذَا ‏.‏
+  text_en: "Narrated Abu Rafi':a Hadith of Abu Hurairah, from the Prophet (ﷺ), regarding the 'barrier (18:93).' \"They excavated each day, until when they are just about to penetrate it, their leader says: 'Go back so that you can penetrate it tomorrow!'\" He said: \"But Allah makes it return just as it was, until their appointed time, when Allah ordains to send them upon the people, and their leader says: 'Go back so you can penetrate it tomorrow, if Allah wills.' So he makes this exception.\" He said: \"So they return, and find it just as it was when they left it. Then they penetrate it, and [they (Ya'juj & Ma'juj)] are released upon the people drinking up the water, and the people flee from them. They shoot their arrows into the heavens so they returned dyed with blood, and they say - crudely and arrogantly - 'We vanquished those in the earth, let us dominate the inhabitants of the heavens.' Then Allah sends Naghaf upon them, attaching to the nape of their necks, destroying them.\" He said: \"By the One in Whose Hand is the soul of Muhammad! The beasts of the earth will become very fat and bloated with milk from their flesh"
+  recording:
+    reader: Yusuf ibn Nuh Ahmad
+    item: https://archive.org/details/yna-audiobook-arabic-sunan-altirmidhi
+    file: https://archive.org/download/yna-audiobook-arabic-sunan-altirmidhi/YNA-AudioBook-Arabic-Sunan-Al-Tirmidhi-3105-3301.mp3
+    start: 2007.9
+    end: 2023.18
+    heard: يحفرونه كل يوم حتى إذا كادوا يخرقونه قال الذي عليهم ارجعوا فستخرقونه غدا فيعيده الله كأشد ما كان حتى إذا بلغ مدتهم وأراد الله أن يبعثهم على الناس قال الذي عليهم ارجعوا فستخرقونه غدا إن شاء الله
+    license: none stated on the archive.org item
+    status: validated
+    validated_by: mssnoussi92
