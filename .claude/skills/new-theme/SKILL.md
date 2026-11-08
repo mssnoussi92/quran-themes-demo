@@ -1,6 +1,6 @@
 ---
 name: new-theme
-description: Turn a new theme (patience, repentance, gratitude, trust in God...) into an episode of quran-themes-demo, from sources to videos - registry entries for the owner to validate, an outline in the format chosen with the owner (choose-format skill, docs/formats.md), a hook per reel (write-hook skill), Egyptian narration with English subtitles, checked takes (narration-takes skill), real hadith readings where they exist (find-hadith-recording skill), publication texts (title, description, hashtags), draft renders, a PR, then the release render of the whole episode (16:9 and 9:16) and its reels, with the texts to paste in the release notes. Use when the owner asks for a new theme or episode, or for the next parts of one.
+description: Turn a new theme (patience, repentance, gratitude, trust in God...) into an episode of quran-themes-demo, from sources to videos - registry entries (proposed), an outline in the format chosen with the owner (choose-format skill, docs/formats.md), a hook per reel (write-hook skill), Egyptian narration with English subtitles, checked takes (narration-takes skill), real hadith readings where they exist (find-hadith-recording skill), publication texts (title, description, hashtags), the script sent to the owner for information before the voice, a candidate render for the owner's one validation at the end, a PR, then on their « je valide » the final videos (16:9 and 9:16, the reels, the texts to paste). Use when the owner asks for a new theme or episode, or for the next parts of one.
 ---
 
 # New theme
@@ -9,9 +9,12 @@ The model is the du'a episode (`content/episodes/dua.yaml`, plan in `docs/design
 validated by the owner on 2026-11-07) and the reference video it learned from
 (`reference/dua-video-analysis.md`). The owner publishes by hand on the Quran Words Daily page: the
 whole episode in 16:9 on YouTube, the reels in 9:16 on Facebook, Instagram and TikTok, and the whole
-episode in 9:16 too. The process has three human
-validations that stay human (design.md): each source, the script and its
-translation, the final video. Never mark any of them done yourself.
+episode in 9:16 too. Since 2026-11-08 the owner decides twice (their choice, design.md): the subject
+and its format at the start (skill `choose-format`), and **one validation at the end**, on the
+candidate videos, that covers everything (sources, script and translation, voice, readings,
+publication texts, thumbnail, backgrounds). In between, you work alone, checked by the automatic
+gates (`validate.py`, the episode hook, `listen.py`, `recitation.py`). Never mark anything validated
+yourself: only the owner's « je valide », recorded by `scripts/finalize.py validate`.
 
 0. **Reference video** (when the owner shares one). Write its analysis in `reference/` following
    `reference/dua-video-analysis.md`, text only (`reference/README.md`: no frame, audio or video of
@@ -94,8 +97,10 @@ translation, the final video. Never mark any of them done yourself.
      why); for a hadith shown in a reel, an `excerpt_en`: the passage of `text_en` used as the
      subtitle, copied exactly without the chain of narrators (validate.py checks it), then `uv run --with ruamel.yaml tools/sources/fetch.py` and
      `uv run --with jsonschema --with pyyaml scripts/validate.py` (policy, grades).
-   - List them for the owner: id, reference, Arabic and English text, link (`url`), and anything
-     odd in the source (missing punctuation, several narrations). The owner sets `validated`.
+   - They stay `proposed`: the candidate's list « à vérifier » shows each one with its link and its
+     minute in the videos, and the owner's final word validates them. Anything odd in a source
+     (missing punctuation, several narrations, a verse opening on « إلا ») goes in the PR and in the
+     message that sends the script.
    - A reference video's quotes are leads, never sources: the du'a reference shows a weak sentence
      attributed to the Prophet ﷺ, a paraphrase displayed as a verse, Companions' sayings without
      source and a figure without source (its "citations" table). Each one goes through the registry.
@@ -166,26 +171,30 @@ translation, the final video. Never mark any of them done yourself.
    - Never type a source, a grade, a reciter, a reader or the AI-voice line: publish.ts writes them
      from the data, with the YouTube chapters of the whole episode (one per reel).
    - Check: `cd video && npm run data && node scripts/publish.ts <theme> all` (fails on a broken
-     limit), and show the owner the result with the script. They validate the texts with it:
-     `publish.validated_by` on the episode and on each reel, removed whenever one of them changes.
+     limit). They are validated with the rest at the end (`publish.validated_by` on the episode and
+     on each reel, written by `finalize.py validate`, removed whenever one of them changes).
    - YouTube thumbnail: the episode's `thumbnail` (layout `close-up`, headline « ٣ أفكار غلط », kicker
      « عن <الموضوع> », a character and mood from the catalog, another face than the last episode's:
      dua, tawba and tawakkul Amir, sabr and muqarana Salma), on the `plain` background (the street made tawba's title hard
-     to read). `npm run still -- Thumbnail169 out/<theme>-thumbnail.png`, look at it at 170 px wide,
-     send it; `thumbnail.validated_by` on the owner's word, on the image.
+     to read). `npm run still -- Thumbnail169 out/<theme>-thumbnail.png`, look at it at 170 px wide;
+     the candidate release carries it, validated with the rest.
 
 6. **Check, then audio.**
-   - `uv run --with jsonschema --with pyyaml scripts/validate.py` (`--release` once the sources
-     are validated).
+   - `uv run --with jsonschema --with pyyaml scripts/validate.py`: no error, and every warning fixed
+     or explained (the episode hook shows them after each edit).
    - In `video/`: `npm run data` (the estimate is pessimistic: 60 s estimated is about 50 s
      real), `npm run typecheck`.
-   - Show the owner the script (Arabic and English, scene by scene, with the sources) while the
-     voice is being made: skill `narration-takes` (synthesis in the background, Whisper on every
-     take, retakes, pronunciation, phrase starts), and `find-hadith-recording` for the hadiths.
-   - Draft renders of every reel and of the whole episode (`Episode169`, and `Reel916` with
-     `"reel":null` for the 9:16 version; `--concurrency=2`, the browser ran out of memory with more),
-     checked with a few frames and `listen.py`, then sent to the owner (SendUserFile). The 16:9 has
-     the like/subscribe reminder on its own (`reminderStarts`): look at one frame of each.
+   - **Send the owner the script before the voice, for information** (their choice, 2026-11-08: a
+     correction of substance found at the end costs every take of the lines it touches; on the text,
+     nothing): Arabic and English, scene by scene, with the sources, your own lines marked. Not a
+     validation: carry on with the voice unless they answer with a correction.
+   - The voice: skill `narration-takes` (synthesis in the background, Whisper on every take,
+     retakes, pronunciation, phrase starts, then `listen.py --save` and `build.py --candidate`), and
+     `find-hadith-recording` for the hadiths.
+   - Local draft renders where something new shows (`Episode169`, and `Reel916` with
+     `"reel":null` for the 9:16 version; `--concurrency=2`, the browser ran out of memory with more):
+     look at their frames yourself (new backgrounds, characters, cards, the 16:9's like/subscribe
+     reminder, `reminderStarts`). They are no longer sent to the owner.
 
 7. **PR.** Describe:
    - the angle and the outline;
@@ -194,16 +203,12 @@ translation, the final video. Never mark any of them done yourself.
    - the sources and their status;
    - the open questions.
 
-   Send the owner the draft videos. They validate the sources, the script and the translation, the
-   publication texts, the takes and the recordings; on their word, record `validated_by` on each
-   validated reel (and `publish.validated_by` on the texts they approved), lock the
-   narration takes they listened to (`python3 tools/audio/build.py --episode <theme> --lock <owner>
-   --reel <reel>`) and validate the recordings they heard. Only locked takes and validated sources
-   and recordings reach a release render. Then the release render: workflow `render` with
-   `reel: all` (the whole episode in 16:9 and 9:16 and every reel, in the `<theme>-latest`
-   pre-release, whose notes hold the texts to paste on each platform, one copyable block each; the
-   first run downloads the hadith recordings from archive.org): skill `release-render`, which also
-   checks the published videos and gives the owner the link.
+   Then the candidate render (skill `release-render`: workflow `render`, `reel: all`, mode
+   `candidate`): a draft release only the owner sees, with the list « à vérifier » and every video.
+   Send the owner its link. Their corrections: fix, check, new candidate. Their « je valide »:
+   `scripts/finalize.py validate --episode <theme> --owner <owner>` records every validation and
+   locks the takes; after the PR is merged, the promote workflow turns those very videos into the
+   `<theme>-latest` pre-release, whose notes hold the texts to paste on each platform.
    - Once the owner has merged the PR, the next piece of work starts again from `main` (the same
      branch name, restarted on `origin/main`), never on top of the merged history; record the theme
      as done in `docs/themes.md`.

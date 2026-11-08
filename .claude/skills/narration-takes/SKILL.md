@@ -1,14 +1,17 @@
 ---
 name: narration-takes
-description: Produce, check and lock the VoiceTut narration of an episode or reel in quran-themes-demo - synthesise the lines, have Whisper listen to every take, retake the bad ones, fix pronunciation (say_ar), check the phrase starts, render drafts for the owner and lock only the takes the owner approved. Use after a script is written or changed, whenever the owner reports a mispronounced word, and before any release render.
+description: Produce, check and store the VoiceTut narration of an episode or reel in quran-themes-demo - synthesise the lines, have Whisper listen to every take (words, sounds after the last word), retake the bad ones, fix pronunciation (say_ar), check the phrase starts, store the checked takes as candidates for the candidate render, and lock them only on the owner's « je valide » after it. Use after a script is written or changed, whenever the owner reports a mispronounced word, and before any release render.
 ---
 
 # Narration takes
 
 VoiceTut (Egyptian Arabic, voice from `content/policy.yaml`) never says a line the same way twice.
-A take the owner listened to and approved is locked (`content/audio/<episode>/`, FLAC + `takes.json`)
-and reused forever; a release render accepts nothing else (`build.py --require-locked`). Locking is
-the owner's call, never yours: you prepare, check and propose.
+A take is checked by you, stored as a **candidate** (`content/audio/<episode>/`, FLAC + `takes.json`,
+`status: candidate`), heard by the owner in the candidate render, and locked on their « je valide »
+(owner's decision, 2026-11-08: one validation, at the end): reused forever, audio unchanged. A
+candidate render accepts only candidate or locked takes (`build.py --require-committed`), a final one
+only locked takes (`--require-locked`). Locking is the owner's call, never yours: you prepare, check
+and store.
 
 ## 1. Synthesise
 
@@ -118,20 +121,22 @@ mixed after the introduction phrase: all of it comes from the phrase starts of t
   `reel_only_end` phrase: `listen.py --envelope <take>@<start-0.3>@0.4` must show silence there
   (under about -70 dB), after the previous word has decayed.
 
-## 6. Draft, owner, lock
+## 6. Candidate takes, owner, lock
 
 - Render the reels locally (`REMOTION_BROWSER_EXECUTABLE` as in CLAUDE.md, `--concurrency=2`: the
-  browser ran out of memory with more) and the whole episode if it changed, then send them
-  (SendUserFile) with what to listen to and where (second in the video): retakes, pronunciation
-  fixes, hadith readings, anything Whisper still hears differently.
-- For a few changed lines, an MP3 is enough and quicker: the new takes (tightened, from
-  `build/audio/<episode>/<scene>.wav`) one after the other, 1.2 s apart (`apad=pad_dur=1.2` and
-  `concat`), one file per episode, named in reel order (`dua-fins-1-dua01-2-dua02-3-dua03.mp3`).
-- Only on the owner's word: `python3 tools/audio/build.py --episode <episode> --lock <owner> --reel
-  <reel>` (add `--only <scene>` for one take), commit `content/audio/`. Then the release checks pass
-  (`validate.py --release --reel <reel>`, `build.py --require-locked`) and the `render` workflow can
-  run (`reel: all`, skill `release-render`).
-- Never lock, retake or re-synthesise a locked line without the owner hearing the result.
+  browser ran out of memory with more) where something new shows, and look at their frames yourself:
+  drafts are no longer sent to the owner, who watches the candidate render once.
+- Save what Whisper heard: `uv run --with faster-whisper==1.1.1 --with numpy tools/audio/listen.py
+  --episode <episode> --save` (`content/audio/<episode>/checks.json`, tied to each raw take): the
+  candidate's list « à vérifier » shows each new take with what Whisper heard and any sound after it.
+- Store the checked takes: `python3 tools/audio/build.py --episode <episode> --candidate --tts-python
+  /bin/false` (add `--reel` or `--only`), commit `content/audio/`; `--require-committed` must pass.
+  Then the candidate render (skill `release-render`). A candidate take can still be replaced
+  (`--use-take`, then `--candidate` again) until the owner's word.
+- On the owner's « je valide » after the candidate render, and only then: `scripts/finalize.py
+  validate` locks every candidate take of the episode (`build.py --lock`, audio unchanged) with the
+  rest of the validation (skill `release-render`, §2).
+- Never lock a take, nor retake or re-synthesise a locked line, without the owner hearing the result.
 
 ## 7. A changed line in validated reels
 
@@ -140,13 +145,14 @@ The owner asks to change a line that is already validated and locked (2026-11-07
 
 1. Edit the line, Arabic and English (and `reel_only_end`, `say_ar`), and remove `validated_by` from
    each reel it belongs to (CLAUDE.md: even at the owner's request). Leave `publish.validated_by` if
-   the publication texts did not change. Commit, push, and show the owner the new lines: they
-   validate them first (`validated_by` back on their word).
+   the publication texts did not change. Tell the owner the new lines (for information: they
+   validate them with the candidate render).
 2. Two takes per line in one synthesis (§3), checked (§2): words, the last word, the pauses.
 3. Install the best one per line (`--use-take`), check the phrase starts and the whole-episode cut
    (§5), store them (`--set-phrases`).
-4. Send one MP3 per episode (§6); say what you checked and that a second take of each exists.
-5. On the owner's word: `--lock <owner> --only <scenes>`, `validate.py --release --reel` on each
-   reel and `build.py --require-locked`, commit, push, then the release render of each episode
-   (skill `release-render`).
+4. `listen.py --episode <episode> --only <scenes> --save`, `build.py --candidate --only <scenes>`,
+   commit, push, then a candidate render of each episode (skill `release-render`). First done this
+   way: qarnayn-02's example after the lesson of the rising sun (2026-11-08).
+5. On the owner's « je valide »: `scripts/finalize.py validate --episode <episode> --owner <owner>`,
+   `validate.py --release --reel` on each reel, commit, push, then the promote workflow.
 

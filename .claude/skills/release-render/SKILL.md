@@ -1,47 +1,77 @@
 ---
 name: release-render
-description: Run the final render of an episode of quran-themes-demo (workflow render, reel all - the whole episode in 16:9 and 9:16, every reel, the YouTube thumbnail, the texts to paste in the release notes), after checking that everything the owner validated is in place, then wait for it, check the published videos frame by frame and give the owner the links. Use when the owner has validated an episode, after a validated line or take changed, after a change to the compositions (signature, reminder...), and whenever the owner asks for the final videos.
+description: Render an episode of quran-themes-demo for the owner (workflow render, reel all - the whole episode in 16:9 and 9:16, every reel, the YouTube thumbnail, the texts to paste) - first as a candidate in a draft release with the list « à vérifier », for the owner's one validation at the end; then, on the owner's « je valide », record every validation (scripts/finalize.py validate) and promote the candidate's very videos to <episode>-latest (workflow promote); or a final render of an episode already validated after a change to the compositions. Check the videos, give the owner the links. Use when an episode is ready for the owner, when the owner says « je valide », after a change every episode shares, and whenever the owner asks for the videos.
 ---
 
 # Release render
 
-A release render publishes what the owner publishes by hand on the Quran Words Daily page: the
-`<episode>-latest` pre-release holds `<episode>-16x9.mp4` (YouTube), `<episode>-9x16.mp4`, one MP4
-per reel, `<episode>-thumbnail.png`, and in its notes the title and text to paste for each video
-(`video/scripts/publish.ts`). It only accepts what the owner validated; it never validates anything.
+The owner publishes by hand from the `<episode>-latest` pre-release: `<episode>-16x9.mp4` (YouTube),
+`<episode>-9x16.mp4`, one MP4 per reel, `<episode>-thumbnail.png`, and in its notes the title and
+text to paste for each video (`video/scripts/publish.ts`). Since 2026-11-08 the owner validates
+**once, at the end, on the videos** (their decision): a candidate render first, then their word,
+then the same videos become the final ones. Nothing is validated by Claude; Claude only records the
+owner's word.
 
-## 1. Before
+## 1. Candidate render (mode `candidate`)
 
-- Every reel validated by the owner (`validated_by`, script and translation) and its publication
-  texts (`publish.validated_by`, on the episode and each reel); every quoted source and recording
-  `validated`; every narration line with a locked take. Check each reel:
-  `uv run --with jsonschema --with pyyaml scripts/validate.py --release --reel <reel>` (its scenes
-  only: a source still proposed in another episode does not block it), and for an episode with its
-  own order (`whole`, khidr) `validate.py --release --whole <episode>` (`whole.validated_by`, the
-  lines said only in the whole episode), then
-  `python3 tools/audio/build.py --episode <episode> --require-locked --tts-python /bin/false`.
-- The thumbnail is rendered either way; the notes flag it « proposée » until `thumbnail.validated_by`.
-- Commit and push: the workflow renders the head of the branch it is given, at dispatch time.
+Before:
+- Everything checked as the skills say: sources by `content/policy.yaml`, script (format, dialect,
+  spellings: `validate.py` with no warning left unexplained), takes (`listen.py --episode <episode>
+  --save`: Whisper, trailing sounds; `--phrases`; retakes), recordings, backgrounds drawn and looked
+  at on a local still. Draft renders stay local: look at their frames yourself.
+- The checked takes stored as candidates: `python3 tools/audio/build.py --episode <episode>
+  --candidate --tts-python /bin/false` (FLAC + `takes.json`, `status: candidate`), and
+  `content/audio/<episode>/checks.json` (from `listen.py --save`) committed with them.
+- `python3 tools/audio/build.py --episode <episode> --require-committed --tts-python /bin/false`
+  passes; commit and push (the workflow renders the head of the branch at dispatch time).
 
-## 2. Dispatch
+Dispatch: GitHub MCP `actions_run_trigger`, `run_workflow`, `workflow_id: render.yml`,
+`ref: <branch>`, inputs `{"episode": "<episode>", "reel": "all", "speaker": "Mohammed", "mode":
+"candidate"}`; `actions_list` → `list_workflow_runs` on `render.yml` gives the run.
 
-GitHub MCP `actions_run_trigger`, method `run_workflow`, `workflow_id: render.yml`, `ref: <branch>`
-(after a merge, `main` holds the same content), inputs `{"episode": "<episode>", "reel": "all",
-"speaker": "Mohammed", "draft": "false"}`. Then `actions_list` → `list_workflow_runs` on
-`render.yml` gives the run id and number.
+It goes to a **draft** release `<episode>-candidate` (only the repository's owner sees it, signed in
+on GitHub), replacing the previous one. Its notes: the list « à vérifier » (`video/scripts/review.ts`:
+what « je valide » will validate, the new voice with what Whisper heard, the lessons and life
+examples, the sources and readings, new backgrounds and spellings, automatic warnings, each with its
+minute in each video), then the texts to paste as they are now. Assets: the videos, the thumbnail,
+`final-notes.md` (the notes as validated) and `candidate.json` (the commit rendered).
 
-- Two episodes render side by side; a second run of the same episode and reel cancels the first
-  (`concurrency` in render.yml): dispatch each episode once.
-- About 11 to 25 minutes for `all` (khidr, 9 min of whole episode: 37 min); the first run of an
-  episode also downloads its hadith readings from archive.org and its reciter's surah files from
-  mp3quran.net (cached afterwards, `build/recitations`). Narration is never synthesised there when
-  every take is locked.
-- After a change every episode shares (the reciter, Tawfiq As-Sayegh in place of Alafasy on
-  2026-11-08; a composition): check and dispatch every episode at once, they run side by side (six
-  in 37 min). A dispatch can fail on a network error: list the runs before dispatching it again.
-- An episode whose last card follows a verse keeps one reminder only (khidr): say so.
+Give the owner the link of the draft release (in the run's log, step « Attach the candidate videos »,
+or `list_releases` on the GitHub MCP) and say what to look at first.
 
-## 3. Wait
+## 2. The owner's answer
+
+- **Corrections** (a line, a word, a voice, by video and minute): make them, check again, store the
+  new takes as candidates, new candidate render. A changed line needs nothing else from the owner
+  until the next candidate.
+- **« je valide »** (for this candidate, nothing else): `uv run --with pyyaml python3 scripts/finalize.py
+  validate --episode <episode> --owner mssnoussi92`. It records `validated_by` on each reel, the
+  publication texts, the thumbnail, the whole episode's order, the sources and recordings quoted, the
+  new backgrounds and spellings, and locks the candidate takes (same audio). Then `validate.py
+  --release --reel <reel>` for each reel (and `--whole <episode>`), commit, push. Never run it on
+  your own judgement, nor for a candidate the owner has not watched.
+- The owner merges the PR (the promote workflow runs from `main`; a workflow must be on the default
+  branch to be dispatched).
+
+## 3. Promote
+
+`actions_run_trigger`, `workflow_id: promote.yml`, `ref: main`, inputs `{"episode": "<episode>",
+"reel": "all"}`. It checks the owner's validation (`validate.py --release`), that only validation
+lines changed since the candidate's commit in what the videos are made of (`scripts/finalize.py
+check`: `content/`, `video/src`, `prepare.ts`, `build.py`; docs and skills are free), then puts the
+candidate's videos and `final-notes.md` in `<episode>-latest` and deletes the draft. A change since
+the candidate (a line, a take, a composition) fails it: new candidate.
+
+## 4. Final render (mode `final`)
+
+Only for an episode already validated whose videos must change without any new content: a change
+every episode shares (the reciter, Tawfiq As-Sayegh in place of Alafasy on 2026-11-08; a composition,
+the signature, the reminder). It needs every reel validated and every take locked (`validate.py
+--release --reel`, `build.py --require-locked`) and goes straight to `<episode>-latest`.
+Dispatch all the episodes at once: they run side by side (six in 37 min). Mode `draft` (lines
+synthesised in CI) is a quick look only: it writes over `<episode>-latest`, avoid it.
+
+## 5. Wait
 
 Not with sleep in the foreground: a background loop on the public API, which notifies you when it
 ends (the run's page needs no token, the repository is public):
@@ -52,36 +82,31 @@ for i in $(seq 1 60); do s=$(curl -sS https://api.github.com/repos/mssnoussi92/q
   case "$s" in completed*) echo "$s"; exit 0;; esac; sleep 60; done; echo timeout
 ```
 
-On a failure: `get_job_logs` (failed jobs only). Seen causes: a source or a reel not validated
-(the `validate.py --release` step names it), a line without a locked take (`--require-locked`), an
-archive.org download that timed out (rerun the failed jobs once).
+About 11 to 25 minutes for `all` (khidr, 9 min of whole episode: 37 min); the first run of an
+episode downloads its hadith readings (archive.org) and its reciter's surah files (mp3quran.net),
+cached afterwards. A second run of the same episode and reel cancels the first: dispatch once. A
+dispatch can fail on a network error: list the runs before dispatching again. On a failure:
+`get_job_logs` (failed jobs only). Seen causes: a source or reel not validated (final), a line
+without a committed take (`--require-committed`: store it as a candidate) or without a locked one
+(final), an archive.org download that timed out (rerun the failed jobs once).
 
-## 4. Check what was published
+## 6. Check the videos
 
-- `curl -sS https://api.github.com/repos/mssnoussi92/quran-themes-demo/releases/tags/<episode>-latest`:
-  8 assets for 5 reels, all updated by this run (`updated_at`), and the notes start with « Release
-  render » and the run's URL.
-- Download into a scratchpad folder of its own the files whose look changed (the 16:9, a reel whose
-  line changed), take frames with ffmpeg and look at them (Read), then delete the downloads:
-  - the end of a reel: `ffmpeg -sseof -1.2 -i <reel>.mp4 -frames:v 1 end.png` (its last line, the
-    follow call « تابعنا عشان تعرف »);
-  - the YouTube reminder in the 16:9, about 2 s after each start (pill, « مشترك ✓ · Subscribed »,
-    nothing hidden under it): the starts come from the same code as the video,
-
-    ```ts
-    // <scratchpad>/reminders.ts, run with: node --experimental-strip-types <scratchpad>/reminders.ts
-    import { readFileSync } from "node:fs";
-    import { reminderStarts, selectScenes } from "/home/user/quran-themes-demo/video/src/scenes.ts";
-    const data = JSON.parse(readFileSync("/home/user/quran-themes-demo/video/public/data/<episode>.json", "utf8"));
-    console.log(reminderStarts(selectScenes(data, null)).map((f) => (f / 30).toFixed(1)));
-    ```
-
-    (after `npm run data`; none listed means both places fell on a verse or a hadith: tell the owner);
+- Final release: `curl -sS https://api.github.com/repos/mssnoussi92/quran-themes-demo/releases/tags/<episode>-latest`
+  (8 assets for 5 reels, updated now). A draft release is not on the public API: check the run's log
+  and `list_releases` on the GitHub MCP.
+- Frames: download the files whose look changed into a scratchpad folder of its own (public
+  release), or render the same compositions locally (draft), take frames with ffmpeg and look at
+  them (Read), then delete them:
+  - the end of a reel: `ffmpeg -sseof -1.2 -i <reel>.mp4 -frames:v 1 end.png` (the follow call);
+  - the YouTube reminder in the 16:9, about 2 s after each start (`reminderStarts`, video/src/scenes.ts,
+    `node --experimental-strip-types` on a small script after `npm run data`; none listed means both
+    places fell on a verse or a hadith: tell the owner); an episode whose last card follows a verse
+    keeps one reminder only (khidr);
   - the signature « @quran_words_daily » top right, on any frame.
 
-## 5. Report
+## 7. Report
 
-Give the owner the release link (`https://github.com/mssnoussi92/quran-themes-demo/releases/tag/<episode>-latest`),
-what changed, what you looked at and saw, and what remains (a thumbnail still « proposée », a reel
-not rendered). The texts to paste are in the notes: do not copy them into the conversation unless
-asked.
+The link (draft candidate, or `https://github.com/mssnoussi92/quran-themes-demo/releases/tag/<episode>-latest`),
+what changed, what you looked at and saw, and what remains. The texts to paste are in the notes: do
+not copy them into the conversation unless asked.

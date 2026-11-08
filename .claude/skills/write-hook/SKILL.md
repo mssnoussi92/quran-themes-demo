@@ -150,6 +150,8 @@ Mirror and contrast scenes use `template: scene` with a catalog character and a 
 4. `cd video && npm run data`: check the estimated durations, then `npm run still` on the first
    frames, or a draft render (`npm run render -- Reel916 out/<reel>.mp4`).
 5. Open or update a PR: the hook line by line with its beat, the sources used and their status,
-   and what was not taken. The owner validates the script and the translation (design.md, step 3):
-   on their word, record `validated_by: <owner>` on the reel; never set it yourself, and remove it
-   whenever you change one of the reel's lines.
+   and what was not taken. Send the owner the script before the voice, for information (skill
+   `new-theme`, §6). The owner validates the script and the translation with the rest, on the
+   candidate render (one validation at the end, 2026-11-08): `validated_by` is written by
+   `scripts/finalize.py validate` on their word only; remove it whenever you change one of a
+   validated reel's lines.

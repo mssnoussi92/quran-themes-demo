@@ -52,16 +52,19 @@ Escalate, in one VoiceTut run (the model loads once): each variant twice, in its
    voice could read « wa-lā » (« and not »); approved by the owner by ear (tawakkul/sit-hadith,
    2026-11-08). Not in the pronunciation list: « ولا » also means « and not ».
 
-Keep the takes Whisper hears with the right words and the measure puts on the right vowel. Send the
-owner one MP3 per line, the takes one after the other 1.2 s apart (`ffmpeg ... concat`), numbered in
-the file name; they choose by ear.
+Keep the takes Whisper hears with the right words and the measure puts on the right vowel, and
+install the best one (`--use-take`). Since 2026-11-08 the owner hears it in the candidate render, with
+the rest (one validation at the end); an MP3 of the variants, one after the other 1.2 s apart
+(`ffmpeg ... concat`), is only for a doubt the measure cannot settle, if the owner asks for it.
 
 ## 4. Record the decision
 
 - The chosen spelling goes into the scene's `say_ar` (with a comment: the word, what was wrong, the
   owner's request and date), and the take into the episode: `npm run data`, then `build.py --episode
   <episode> --only <scene> --use-take <scene>=<take.wav>` (skill `narration-takes`, §3).
-- A spelling the owner approved goes into `content/pronunciation.yaml` (`word`, `say`, `why`, `decided`):
-  every later script uses it from the start.
+- A new spelling goes into `content/pronunciation.yaml` (`word`, `say`, `why`) with
+  `decided: { by: proposed, on: <date>, scene: <episode>/<scene> }`: the candidate's list « à vérifier »
+  shows it, and the owner's « je valide » turns `proposed` into their name (`scripts/finalize.py
+  validate`). Every later script uses it from the start.
 - A word whose correction did not work stays out of the list; write what was tried in its scene's
   comment (« ذَنْب »: VoiceTut keeps « zanb »).

@@ -24,16 +24,16 @@ Hors périmètre : la publication, et l'automatisation de bout en bout. Chaque �
 
 ## Workflow de production
 
-Six étapes et trois validations humaines, qui le restent :
+Depuis le 8 novembre 2026 (décision du propriétaire), deux décisions humaines seulement, une au début et une à la fin ; entre les deux, des contrôles automatiques :
 
-1. Choisir le thème.
-2. Collecter les sources dans le registre. **Validation humaine de chaque source.**
-3. Écrire le script (AR + EN), qui cite les sources par leur id. **Validation humaine du script et de la traduction.**
-4. Produire l'audio : narration en synthèse vocale, versets avec une vraie récitation.
-5. Caler les timings : mots, scènes, sous-titres.
-6. Monter et rendre (Remotion), en 16:9 et 9:16. **Contrôle humain de la vidéo finale.**
+1. Choisir le sujet et son format (skill `choose-format`, `docs/formats.md`). **Décision du propriétaire.**
+2. Collecter les sources dans le registre (`proposed`) : politique des hadiths, jugements, versets entiers, extraits recopiés du texte (`validate.py`, `fetch.py --check`).
+3. Écrire le script (AR + EN), qui cite les sources par leur id : structure du format, dialecte égyptien (`content/dialect.yaml`), prononciation (`content/pronunciation.yaml`), vérifiés par `validate.py` et par le hook après chaque modification. Le script part chez le propriétaire avant la voix, **pour information**.
+4. Produire l'audio : narration en synthèse vocale, versets avec une vraie récitation (coupes vérifiées par Whisper), hadiths lus par de vrais lecteurs quand ils existent ; chaque prise réécoutée par Whisper (`listen.py --save`), rangée comme candidate.
+5. Caler les timings : mots, scènes, sous-titres (débuts de morceaux vérifiés).
+6. Monter et rendre (Remotion), en 16:9 et 9:16 : **rendu candidat** (release brouillon, liste « à vérifier »). **Validation unique du propriétaire**, qui couvre tout (« je valide », inscrit par `scripts/finalize.py`), puis ces mêmes vidéos deviennent la version finale (workflow `promote`).
 
-On automatise d'abord l'étape qui prend le plus de temps à la main.
+Avant (jusqu'au 8 novembre 2026) : trois validations au fil de l'eau (chaque source, le script et sa traduction, la vidéo finale), plus l'écoute des brouillons.
 
 ## Architecture « script-as-data »
 
