@@ -632,7 +632,8 @@
     end: 4708.28
     heard: لو أنكم كنتم توكلون على الله حق توكله لرزقتم كما يرزق الطير تغدو خماصا وتروث بطانا
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.tirmidhi.2517
   type: hadith
   ref: {collection: tirmidhi, number: 2517}
@@ -665,7 +666,8 @@
     end: 3540.57
     heard: قال اعقلها وتوكل
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.bukhari.6369
   type: hadith
   ref: {collection: bukhari, number: 6369}
@@ -694,7 +696,8 @@
     end: 20.6
     heard: اللهم إني أعوذ بك من الهم والحزن والعجز والكسل والجبن والبخل وضلع الدين وغلبة الرجال
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.tirmidhi.3426
   type: hadith
   ref: {collection: tirmidhi, number: 3426}
@@ -727,4 +730,5 @@
     end: 5096.5
     heard: من قال يعني إذا خرج من بيته بسم الله توكلت على الله لا حول ولا قوة إلا بالله يقال له كفيت ووقيت وترحى عنه الشيطان
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92

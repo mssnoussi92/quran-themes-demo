@@ -117,7 +117,7 @@ Tirmidhi 2513 remplace Muslim 2963c (mêmes paroles) : la carte de Muslim aurait
 
 ## Épisode La confiance en Dieu (plan)
 
-Thème et plan choisis par le propriétaire le 7 novembre 2026 (`docs/themes.md`), avec la peur et le sentiment d'impuissance (الخوف والشعور بالعجز) ; sources, lectures, script, traduction, textes de publication et miniature à valider. Même structure que les épisodes précédents. Script : `content/episodes/tawakkul.yaml`.
+Thème et plan choisis par le propriétaire le 7 novembre 2026 (`docs/themes.md`), avec la peur et le sentiment d'impuissance (الخوف والشعور بالعجز) ; tout validé par le propriétaire : sources, script, traduction, textes de publication et miniature le 7, lectures et prises à l'écoute le 8 novembre. Même structure que les épisodes précédents. Script : `content/episodes/tawakkul.yaml`.
 
 | # | Rôle | Contenu | Source | Reel |
 | --- | --- | --- | --- | --- |

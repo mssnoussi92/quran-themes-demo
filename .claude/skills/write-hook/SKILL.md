@@ -77,7 +77,8 @@ on the open loop of beat 7 that leads to the next reel.
   test result and wanting something badly (« لما تكون مستني نتيجة تحليل »); sabr, « اصبر » heard
   everywhere (« «اصبر»… سمعتها كام مرة؟ »); tawba, a sin and the shame of going back (« عملت ذنب…
   وحسيت إنك بعيد عن ربنا؟ »); muqarana, scrolling through other people's lives (« بتقلب في الموبايل…
-  وكل الناس حياتهم حلوة؟ »).
+  وكل الناس حياتهم حلوة؟ »); tawakkul, awake at night thinking about tomorrow (« صاحي بالليل… بتفكر في
+  بكرة؟ »).
 - Write for the ear of VoiceTut, which speaks Egyptian: ق becomes ء (« قريب » → « أريب »), ث becomes
   س, a ة before a pause can be heard as ت (« عادة »). Keep the screen correct and give the voice its
   own spelling in `say_ar` (up to two letters per word): every word the owner already corrected is

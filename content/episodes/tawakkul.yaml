@@ -1,9 +1,10 @@
 # Épisode La confiance en Dieu (التوكل), avec la peur et le sentiment d'impuissance (الخوف والشعور بالعجز) :
 # 5 reels (9:16) pour Facebook, Instagram et TikTok ; l'épisode entier (16:9 et 9:16) pour YouTube. Même
 # structure que les épisodes précédents (docs/design.md) : l'accroche et la promesse, une idée reçue par reel,
-# la conclusion. Thème et plan choisis par le propriétaire le 2026-11-07 (docs/themes.md) ; sources, script,
-# traduction, textes de publication et miniature validés par le propriétaire le même jour ; lectures et prises à
-# valider à l'écoute. Toute modification d'une ligne d'un reel retire son validated_by.
+# la conclusion. Thème et plan choisis par le propriétaire le 2026-11-07 (docs/themes.md) ; tout validé par le
+# propriétaire : sources, script, traduction, textes de publication et miniature le 2026-11-07, lectures et prises
+# à l'écoute des brouillons le 2026-11-08 (prises figées). Toute modification d'une ligne d'un reel retire son
+# validated_by.
 # Les répliques identiques à une prise figée d'un autre épisode (« قال ربنا سبحانه وتعالى: », « تاني فكرة
 # غلط… », « تالت فكرة غلط… », « وفي الآخر… آية تطمن قلبك. دي الأخيرة. ») reprennent cette prise (take_from).
 episode: tawakkul
