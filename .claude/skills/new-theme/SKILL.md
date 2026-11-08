@@ -46,6 +46,15 @@ translation, the final video. Never mark any of them done yourself.
 2. **Sources.** For each claim, a verse or a hadith, never a summary from memory.
    - Verses: quran.ai MCP (`search_quran`, `fetch_word_concordance`; read its grounding rules
      first and pass their nonce), or the quran.com API. Whole ayahs only.
+   - Each verse is recited by the reciter of `content/policy.yaml` (Tawfiq As-Sayegh since
+     2026-11-08, one file per surah on mp3quran.net): once the verse is in the registry, cut it in
+     his surah file, `uv run --with faster-whisper==1.1.1 --with pyyaml tools/audio/recitation.py
+     --reciter sayegh <surah:ayah>` (or `--all`). Whisper checks the cut (every word, the first and
+     the last above all, nothing of the neighbouring ayah). A cut it refuses is settled at the
+     envelope (`listen.py --envelope <build/recitations/sayegh/SSS.mp3>@<t>@2`: the dip before the
+     first word, the one after the last; a reciter who joins two ayahs leaves only a dip, 2:155) and
+     set by hand (`--set 13:39=891.68,903.25`). validate.py fails on a recited verse without a cut.
+     Tell the owner which cuts were set by hand: they listen to them first.
    - A hadith too long for a card (the whole story of Musa and al-Khidr, Bukhari 122): the registry's
      `excerpt_ar` (with `excerpt_en`) is the passage the card shows and the reader says, copied from
      `text_ar` with a script, never typed (validate.py checks it). One excerpt per hadith: a second

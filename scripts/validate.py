@@ -381,6 +381,18 @@ def main() -> int:
     episodes = sorted((CONTENT / "episodes").glob("*.yaml"))
     for path in episodes:
         check_episode(path, registry, catalog, backgrounds, args.release, report, args.reel, args.whole)
+    # The reciter of content/policy.yaml recites every verse; one with a file per surah (Tawfiq As-Sayegh)
+    # needs the checked cut of each verse in content/recitations/<reciter>.json (tools/audio/recitation.py).
+    reciter = (policy.get("quran") or {}).get("reciter")
+    cuts_path = CONTENT / "recitations" / f"{reciter}.json"
+    if cuts_path.is_file():
+        cuts = json.loads(cuts_path.read_text(encoding="utf-8")).get("verses", {})
+        for path in episodes:
+            for scene in (load_yaml(path) or {}).get("scenes", []):
+                key = str(scene.get("source", "")).removeprefix("quran.").replace(".", ":")
+                if scene.get("audio") == "recitation" and key not in cuts:
+                    report.error(f"{rel(path)} [{scene['id']}]", f"no cut of {key} for {reciter}: run "
+                                 f"tools/audio/recitation.py --reciter {reciter} {key}")
     if args.reel:
         owner = {r["id"]: (r, ep) for path in episodes for ep in [load_yaml(path) or {}] for r in ep.get("reels", [])}
         if args.reel not in owner:
