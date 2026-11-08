@@ -71,8 +71,8 @@ reels:
 whole:
   parts:
     - title: { ar: "مين أعلم؟", en: "Who knows more?" }
-      scenes: [hook-1, hook-2, hook-3, hook-4, musa-1, musa-2, musa-3, musa-4, ask, meet-verse-intro, found-verse,
-               ask-verse, meet-verse-1, meet-verse-2, meet-takeaway, promise, condition, condition-intro,
+      scenes: [hook-1, hook-2, hook-3, hook-4, hook-5, musa-1, musa-2, musa-3, musa-4, ask, meet-verse-intro,
+               found-verse, ask-verse, meet-verse-1, meet-verse-2, meet-takeaway, promise, condition, condition-intro,
                condition-verse-1, condition-verse-2, outro]
     - title: { ar: "تلات حاجات غريبة", en: "Three strange things" }
       scenes: [ship-1, ship-bird, ship-hadith, ship-2, ship-3, ship-4, ship-5, ship-event-intro, ship-event-1,
@@ -132,6 +132,16 @@ scenes:
     narration:
       ar: "في سورة الكهف… نبي شاف تلات حاجات مش فاهمها… وفي الآخر عرف السر."
       en: "In Surat al-Kahf… a prophet saw three things he couldn't understand… and in the end, he learned the secret."
+    visual:
+      template: title-card
+  # Promesse (demande du propriétaire, 2026-11-08, formulation en égyptien) : ce que l'histoire change pour toi.
+  - id: hook-5
+    role: hook
+    reel: khidr-01
+    audio: tts
+    narration:
+      ar: "قصة… هتخليك تبص لكل ابتلاء عدّى عليك بعين تانية."
+      en: "A story… that will make you see every trial you've been through with new eyes."
     visual:
       template: title-card
   # Récit d'après Bukhari 122 (« فسئل أي الناس أعلم فقال أنا أعلم »).
