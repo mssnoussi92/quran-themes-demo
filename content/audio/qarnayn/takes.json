@@ -146,9 +146,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "f85b3ac2d98ce91c",
-      "status": "candidate",
-      "stored": "2026-11-08",
-      "raw_sha256": "6f10b9d417134f10372882f8d2f4c7a30fa2286409cab4c1aa6450f7b45d4dc1",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
       "sha256": "a2b34d869efb09d38e31f294809dcd310a91792b21c56ed0f3cfd0785798dea6"
     },
     "east-life-2": {
@@ -157,9 +156,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "0d7f093dcab83e31",
-      "status": "candidate",
-      "stored": "2026-11-08",
-      "raw_sha256": "5a107245f967c65eb3d6893c43be8400d52ceed6c721a9a43d83a16edea936b9",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
       "sha256": "7ca440663f8d3ce55c55080d7b87a685bb3c7a248def0730e30b3122149ec3e5"
     },
     "end-1": {

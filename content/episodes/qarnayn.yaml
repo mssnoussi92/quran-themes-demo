@@ -45,6 +45,7 @@ reels:
       validated_by: mssnoussi92
   - id: qarnayn-02
     title: { ar: "العدل", en: "Justice" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "Power is a trust… not a license", ar: "القوة أمانة… مش رخصة" }
       description:
