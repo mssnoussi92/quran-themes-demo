@@ -32,8 +32,14 @@ GitHub MCP `actions_run_trigger`, method `run_workflow`, `workflow_id: render.ym
 
 - Two episodes render side by side; a second run of the same episode and reel cancels the first
   (`concurrency` in render.yml): dispatch each episode once.
-- About 16 to 25 minutes for `all`; the first run of an episode also downloads its hadith readings
-  from archive.org. Narration is never synthesised there when every take is locked.
+- About 11 to 25 minutes for `all` (khidr, 9 min of whole episode: 37 min); the first run of an
+  episode also downloads its hadith readings from archive.org and its reciter's surah files from
+  mp3quran.net (cached afterwards, `build/recitations`). Narration is never synthesised there when
+  every take is locked.
+- After a change every episode shares (the reciter, Tawfiq As-Sayegh in place of Alafasy on
+  2026-11-08; a composition): check and dispatch every episode at once, they run side by side (six
+  in 37 min). A dispatch can fail on a network error: list the runs before dispatching it again.
+- An episode whose last card follows a verse keeps one reminder only (khidr): say so.
 
 ## 3. Wait
 
