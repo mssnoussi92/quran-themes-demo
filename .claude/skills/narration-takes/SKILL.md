@@ -42,8 +42,10 @@ heard in two parts, introduction and reader).
   word itself). Prefer another take; else cut the raw take in that silence (`ffmpeg -i
   <scene>.raw.wav -af atrim=end=<s> -c:a pcm_s16le cut.wav`) and install it (`--use-take
   <scene>=cut.wav`). Look at the raw take, not the tightened one: tightening shortens the silence
-  before the sound to 0.18 s. On a new episode, scan every take's end for a short sound (under
-  0.3 s) after a pause: muqarana had five (« ناقصة؟ », « قليل؟ »…), clicks or a breath, all cut;
+  before the sound to 0.18 s. `listen.py --episode` scans every raw take's end on its own
+  (« sound » lines: a run under 0.3 s after 0.2 s of silence, that Whisper does not hear as the end
+  of the last word; a voiced « ها » detached from its word can still show, qarnayn given-life-1): each
+  « sound » line is listened to. Seen before that scan: muqarana had five (« ناقصة؟ », « قليل؟ »…), clicks or a breath, all cut;
   khidr had them after « ؟! » on 4 takes of 4 (« قتلت نفس بريئة… عمرها ما قتلت حد؟! »).
 - To tell a short last sound from a short last word (« ليه؟ », « أنا. »), cut the raw take before
   it and transcribe again (padded): if Whisper still hears every word, the sound is extra; then

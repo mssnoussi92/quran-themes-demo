@@ -82,7 +82,10 @@ reel 1 must want to stay.
 
 ## Writing rules
 
-- Egyptian colloquial Arabic for the narration (VoiceTut). Write it as spoken: short, concrete,
+- Egyptian colloquial Arabic for the narration (VoiceTut): no standard-Arabic word where Egyptian has
+  its own (« ده » not « هذا », « اللي » not « الذي », « مش » not « ليس », « ليه » not « لماذا »);
+  `content/dialect.yaml` lists them and `validate.py` warns on any of them outside « » quotes in a reel
+  not validated yet (the episode hook shows it right after each edit). Write it as spoken: short, concrete,
   second person (« إنت »), no formal connectors (« إذ إنّ », « حيث »).
 - Spell what the voice must say: « صلى الله عليه وسلم » in the narration, « ﷺ » only in the English.
 - One sentence = one scene = one image. 2 to 4 s each; the reel's first sentence is 3 s at most.

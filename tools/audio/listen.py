@@ -16,7 +16,9 @@ recorded reading, and to place a cut in a pause. Nothing here decides anything: 
                writes words, not vowels: F2 tells « o/u » (about 800-1300 Hz) from « i/e » (1800+ Hz)
                (« اُصْبُر » oṣbor 903 Hz; « تبت » said « tibt » 1807-1954 Hz)
   --episode E  check every narration take of build/audio/E/manifest.json against its text
-               (--only to pick scenes); differences are printed, the reading of a hadith included
+               (--only to pick scenes); differences are printed, the reading of a hadith included,
+               and a short sound VoiceTut added after the last word (« اه », « با », a click: under
+               0.3 s, after 0.2 s of silence or more, at the end of the raw take)
   --phrases E  where each phrase of each narration take starts, from Whisper's words (the pause
                nearest to the first word of the phrase), next to build.py's estimate; "!!" marks a
                difference. Neither is always right (Whisper drifts in noisy pauses, the estimate
@@ -136,6 +138,42 @@ def vowels(spec: str) -> None:
     print(f"{spec}: {a:.2f}-{b:.2f} s, {len(f2)} voiced frames, F1 {med(f1)} Hz, F2 {med(f2)} Hz ({quality})")
 
 
+def trailing_sound(path: Path) -> tuple[float, float] | None:
+    """A short sound after the last word of a raw take (start, end), or None: the last loud run
+    (over -35 dB, 20 ms windows, runs less than 0.06 s apart joined) lasts under 0.3 s and follows
+    0.2 s of silence or more (skill narration-takes, « Sounds added after the last word »)."""
+    import numpy as np
+    samples, _ = load(str(path))
+    win = RATE // 50
+    m = len(samples) // win
+    db = 20 * np.log10(np.sqrt((samples[: m * win].reshape(m, win) ** 2).mean(1)) + 1e-9)
+    runs: list[list[float]] = []
+    i = 0
+    while i < m:
+        if db[i] > -35:
+            j = i
+            while j < m and db[j] > -35:
+                j += 1
+            if runs and i * 0.02 - runs[-1][1] < 0.06:
+                runs[-1][1] = j * 0.02
+            else:
+                runs.append([i * 0.02, j * 0.02])
+            i = j
+        else:
+            i += 1
+    if len(runs) < 2:
+        return None
+    (_, prev_end), (start, end) = runs[-2], runs[-1]
+    if not (end - start < 0.3 and start - prev_end >= 0.2):
+        return None
+    # A short last word said after a pause (« قال: … أنا », « ليه؟ », « شكرًا ») is no added sound:
+    # Whisper hears a word that ends inside that last run.
+    heard = [w for s in transcribe(samples, words=True) for w in (s.words or [])]
+    if heard and heard[-1].end > start + 0.05:
+        return None
+    return start, end
+
+
 def check_episode(episode: str, only: list[str] | None) -> int:
     """Each narration take (or its mix with a recorded reading) against the text it should say."""
     out_dir = ROOT / "build" / "audio" / episode
@@ -158,8 +196,16 @@ def check_episode(episode: str, only: list[str] | None) -> int:
         said = entry["text"] if not entry.get("mix") else \
             f"{data[sid]['narration']['ar']} {source.get('display_ar', '')}"
         a, b = plain(said), plain(heard)
+        raw = out_dir / entry["file"].replace(".wav", ".raw.wav")
+        tail = trailing_sound(raw) if not mix and raw.is_file() else None
+        if tail:
+            print(f"sound   {sid}: {tail[1] - tail[0]:.2f} s of sound after the last word Whisper hears, at "
+                  f"{tail[0]:.2f} s of the raw take: an added « اه » or click (cut it, or retake) or the end of the "
+                  f"word itself (qarnayn given-life-1, voiced, approved by ear): listen "
+                  f"(--envelope {raw.relative_to(ROOT)}@{tail[0] - 1:.2f}@1.6)")
         if a == b:
-            print(f"ok      {sid}")
+            if not tail:
+                print(f"ok      {sid}")
             continue
         differ += 1
         diff = [f"{x} -> {y}" for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b).get_opcodes()
