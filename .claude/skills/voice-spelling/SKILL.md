@@ -20,6 +20,9 @@ owner's ear check the meaning. Never for a verse (always recited) nor for a hadi
 
 ## 2. Hear what the voice said
 
+- Whisper's guesses that are not the voice's fault: on one word with little context it writes the
+  commoner word (« السحرة » heard « الصحراء » on 4 takes, « غنى النفس » heard « روني نفس »; the vowel
+  measure was right). Leave the take and tell the owner where to listen.
 - Words: `uv run --with faster-whisper==1.1.1 tools/audio/listen.py --episode <episode>` (skill
   `narration-takes`). A doubt on a short take: pad it with 1 s of silence before (and 0.3 s after:
   more makes Whisper invent « اشتركوا في القناة ») and transcribe again; an error that stays is real.
@@ -42,6 +45,9 @@ Escalate, in one VoiceTut run (the model loads once): each variant twice, in its
    « tibt »).
 2. The vowel written with its long letter (و for o/u, ي for i/e, ا for a): « توبت » for « tobt ».
 3. Another letter or a split word that VoiceTut reads as wanted (up to two letters per word).
+4. A shadda that tells two words apart: « ولّا » (walla, « or ») where the screen has « ولا », which the
+   voice could read « wa-lā » (« and not »); approved by the owner by ear (tawakkul/sit-hadith,
+   2026-11-08). Not in the pronunciation list: « ولا » also means « and not ».
 
 Keep the takes Whisper hears with the right words and the measure puts on the right vowel. Send the
 owner one MP3 per line, the takes one after the other 1.2 s apart (`ffmpeg ... concat`), numbered in

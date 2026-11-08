@@ -114,3 +114,18 @@ Thème et plan choisis par le propriétaire le 7 novembre 2026 (`docs/themes.md`
 | 6 | Conclusion | « Ce que tu as te semble peu ? » Si vous êtes reconnaissants, J'augmenterai ; rappel des quatre reels ; « arrête de compter les bienfaits des autres… compte ceux de Dieu sur toi ». | Ibrahim 14:7 | 5 |
 
 Tirmidhi 2513 remplace Muslim 2963c (mêmes paroles) : la carte de Muslim aurait montré, après les guillemets, la remarque d'Abu Mu'awiya (« عليكم »). 89:15-17 font environ 33 s de récitation : le reel 2 est le plus long (≈ 1 min). 83:26 commence par « ختامه مسك » (la suite de 83:25, le vin du Paradis) : ayah entière.
+
+## Épisode La confiance en Dieu (plan)
+
+Thème et plan choisis par le propriétaire le 7 novembre 2026 (`docs/themes.md`), avec la peur et le sentiment d'impuissance (الخوف والشعور بالعجز) ; tout validé par le propriétaire : sources, script, traduction, textes de publication et miniature le 7, lectures et prises à l'écoute le 8 novembre. Même structure que les épisodes précédents. Script : `content/episodes/tawakkul.yaml`.
+
+| # | Rôle | Contenu | Source | Reel |
+| --- | --- | --- | --- | --- |
+| 1 | Accroche | « Réveillé la nuit… à penser à demain ? » ; le travail, l'argent, tout sur tes épaules ; « la solution n'est pas de ne plus avoir peur… c'est de placer ta confiance en Dieu ». | — | 1 |
+| 2 | Promesse | Si vous placiez votre confiance en Dieu comme il se doit, Il vous nourrirait comme les oiseaux : ils partent le ventre vide et reviennent rassasiés. Fin : « 3 idées reçues, suis-nous pour la 1re ». | Tirmidhi 2344 (al-Albani : Sahih) | 1 |
+| 3 | Idée reçue 1 | « Le tawakkul, c'est ne rien faire. » « Attache-la et place ta confiance en Dieu » ; marchez dans ses étendues et mangez de Sa subsistance. Fais ta part… et laisse le résultat à Dieu. | Tirmidhi 2517 (al-Albani : Hasan) ; Al-Mulk 67:15 | 2 |
+| 4 | Idée reçue 2 | « Avoir peur, c'est avoir une foi faible. » Moussa a ressenti de la peur (carte de nom), Dieu lui dit : n'aie pas peur ; le Prophète ﷺ demandait protection contre l'inquiétude et l'impuissance. La peur n'est pas une foi faible… porte-la à Dieu. | Ta-Ha 20:67-68 ; Bukhari 6369 | 3 |
+| 5 | Idée reçue 3 | « Je dois tout porter seul. » Place ta confiance en Dieu, Dieu suffit comme garant ; qui dit en sortant « بسم الله توكلت على الله… » : « tu es pris en charge ». | Al-Ahzab 33:3 ; Tirmidhi 3426 (al-Albani : Sahih) | 4 |
+| 6 | Conclusion | « Peur que ceux sur qui tu t'appuies s'en aillent ? » Place ta confiance dans le Vivant qui ne meurt pas ; rappel des quatre reels ; « dors en paix… Celui qui nourrit les oiseaux ne t'oubliera pas ». | Al-Furqan 25:58 | 5 |
+
+Écarts au plan de `docs/themes.md` : 3:173 commence au milieu d'une phrase (« الذين… », suite de 3:172) et Bukhari 4563 est une parole d'Ibn Abbas, pas du Prophète ﷺ : remplacés par 33:3 et Tirmidhi 3426. 65:3 (« فهو حسبه ») commence aussi au milieu d'une phrase (suite de 65:2) : 25:58 pour la conclusion. Tirmidhi 2517 : la question de l'homme est hors des guillemets, la narration la dit, et la lecture commence par « قال » (« قال اعقلها » se dit d'un trait).

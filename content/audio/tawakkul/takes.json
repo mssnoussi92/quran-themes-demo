@@ -1,0 +1,348 @@
+{
+  "note": "Narration takes validated by the owner (AI-generated voice, VoiceTut). Written by tools/audio/build.py --lock, never by hand.",
+  "takes": {
+    "alone-hadith": {
+      "file": "alone-hadith.flac",
+      "text": "والنبي صلى الله عليه وسلم قال: مَنْ قَالَ - يَعْنِي إِذَا خَرَجَ مِنْ بَيْتِهِ - بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ لاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ. يُقَالُ لَهُ كُفِيتَ وَوُقِيتَ. وَتَنَحَّى عَنْهُ الشَّيْطَانُ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "fb8621e6e74969f9",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "efb4ed5492769d1d2f4b7a71d8e1372d23d43f18f594eae79aa1f146a7539c8d",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.86,
+          8.06,
+          9.42
+        ]
+      }
+    },
+    "alone-hook": {
+      "file": "alone-hook.flac",
+      "text": "لو أنا مشلتهاش… محدش هيشيلها؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "178aa70e4b6ea944",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "e8c688e0c56971937d95b37aeb7ee09a5bfa1550c7ffc42cce160faf6f0eeccf"
+    },
+    "alone-idea": {
+      "file": "alone-idea.flac",
+      "text": "إنك لازم تشيل كل حاجة… لوحدك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "9fa88ef08794829f",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "1c79032409718b6cd2eafe8d9e484ac182939cfaf5bdeab18bcef9c29863f94f"
+    },
+    "alone-takeaway": {
+      "file": "alone-takeaway.flac",
+      "text": "مش لوحدك… ربنا كفاية.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "8ef986488636a7f0",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "00a67e699739ca052bc40227bd9e8f6629f31abcbb84dd97ae3265612a24cde5"
+    },
+    "anchor": {
+      "file": "anchor.flac",
+      "text": "والنبي صلى الله عليه وسلم قال: لَوْ أَنَّكُمْ كُنْتُمْ تَوَكَّلُونَ عَلَى اللَّهِ حَقَّ تَوَكُّلِهِ لَرُزِقْتُمْ كَمَا تُرْزَقُ الطَّيْرُ تَغْدُو خِمَاصًا وَتَرُوحُ بِطَانًا",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c2761dc606ad5479",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "75c6b57cf5433e44f77dd515cf08d167272e8bfc954b5904a3ce0e84f46e9668",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.6
+        ]
+      }
+    },
+    "because": {
+      "file": "because.flac",
+      "text": "بتطلع الصبح جعانة… وترجع شبعانة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "3f8ec253eea69e0f",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "29897e403c141fb3533e653b889308b4ddbf93dd52dcf495d432192c9b42fa52"
+    },
+    "end-hook": {
+      "file": "end-hook.flac",
+      "text": "خايف اللي بتتسند عليهم… يمشوا؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "9b4b09ca4c11dd94",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "8a79883c77448d0e583ebc1dadd7e8b630c427cf0bb975d707bb2460d2f815b1",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          2.02
+        ]
+      }
+    },
+    "end-lean": {
+      "file": "end-lean.flac",
+      "text": "اتسند على اللي مبيموتش.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2404d2d0cbf58cde",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "cd6636eef74c092921c2263e36c2ba39c450776704a63eeb23b48bf885e51db1"
+    },
+    "end-outro": {
+      "file": "end-outro.flac",
+      "text": "فنام مطمن… اللي بيرزق الطير مش هينساك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "bf237943ccbd49ab",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "35ce774907320ae93c2cac9f9df7789447a7f7cda8a7beedd3fbbc58cb0f8e3c"
+    },
+    "end-recap": {
+      "file": "end-recap.flac",
+      "text": "التوكل مش قعدة… والخوف مش ضعف إيمان… ومش لازم تشيلها لوحدك… وربنا كفاية.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "b45b677eff1b5493",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "0d26b67143f46e4676352a4c1a27493ac297ae73cff92afb9e739b1d3398011e"
+    },
+    "fear-hadith": {
+      "file": "fear-hadith.flac",
+      "text": "والنبي صلى الله عليه وسلم كان بيقول: اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَالْعَجْزِ وَالْكَسَلِ، وَالْجُبْنِ وَالْبُخْلِ، وَضَلَعِ الدَّيْنِ، وَغَلَبَةِ الرِّجَالِ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "af8e1ca6bb85b970",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "4c0413056b34891b27d957ecf922e7512bb39ea57927e985ab5f813cce996852",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.9,
+          4.48,
+          5.66,
+          6.78,
+          7.66
+        ]
+      }
+    },
+    "fear-hook": {
+      "file": "fear-hook.flac",
+      "text": "أنا خايف… يبقى إيماني ضعيف؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "57552e9e462ff95e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "896f1ab968a6e3b2f2c1da92c3ef08d476ae750a2e25d8ecf27eba147a617926"
+    },
+    "fear-idea": {
+      "file": "fear-idea.flac",
+      "text": "إن الخوف… معناه إن إيمانك ضعيف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "456b2fe326a3e8c9",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "6b5bb95e8f36b6960ff1f438dbbf66d1398e3ba446f0e2589e8dca0e5ad2fdf1"
+    },
+    "fear-musa": {
+      "file": "fear-musa.flac",
+      "text": "سيدنا موسى عليه السلام… قدام السحرة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "f499c2251d89393b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "d053bc89b3dda3e4841d6833d6864477c3c7a2522ce5cf743dbc932b061eb355"
+    },
+    "fear-outro": {
+      "file": "fear-outro.flac",
+      "text": "طب ولو حاسس إن كل حاجة على كتافي؟ تابعنا عشان تعرف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "3358ecf9f7189d0c",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "3a47cf914581cde92fae92a373d666c25590a379727095eb94ce7f112ff3c6b7",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          2.24
+        ]
+      }
+    },
+    "fear-takeaway": {
+      "file": "fear-takeaway.flac",
+      "text": "الخوف مش ضعف إيمان… خد خوفك وروح بيه لربنا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "15f325633ce8d4c1",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "519e2e453c81982cf5f6e05a21d590993fe09717685b1e1b8e5499fb6ce3efff"
+    },
+    "hook-1": {
+      "file": "hook-1.flac",
+      "text": "صاحي بالليل… بتفكر في بكرة؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "b8059b9029bc724b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "01f0a0aa3d15fa3e9b1c866edca92b12851d784df24105c0470ca788598694a0"
+    },
+    "hook-2": {
+      "file": "hook-2.flac",
+      "text": "الشغل… الفلوس… وكل حاجة فوق دماغك؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "08fdaa20f332a2dd",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "b41d809938f6f58e21e6686dbd332079fd4c43e38ccf9b42f877db41edef44a2"
+    },
+    "hook-3": {
+      "file": "hook-3.flac",
+      "text": "الحل مش إنك متخافش… الحل إنك تتوكل.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a76d7e91e1c0f282",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "50e3467fc5c24b1dd7cc944b269975a8bebf0690fadb681e182156b1a6aeba0f"
+    },
+    "outro": {
+      "file": "outro.flac",
+      "text": "بس فيه تلات أفكار غلط عن التوكل… يمكن تكون مصدق واحدة منهم. تابعنا عشان تعرف أولها.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "cdbc0f5b29203c9f",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "bda4996cbee5b2a8ffbe5ee992567c52fb845722dd95f6449a079cbe32e7f6f1",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          2.6,
+          4.58
+        ]
+      }
+    },
+    "sit-hadith": {
+      "file": "sit-hadith.flac",
+      "text": "واحد سأل النبي صلى الله عليه وسلم: أربط الناقة وأتوكل… ولّا أسيبها وأتوكل؟ اعْقِلْهَا وَتَوَكَّلْ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "1c39b070cf3ca4b1",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "5bca0c99576edb281d264608bb734b7070229912413fe31da2601b35f051f8fe",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          2.06,
+          3.46,
+          5.18
+        ]
+      }
+    },
+    "sit-hook": {
+      "file": "sit-hook.flac",
+      "text": "سيبها على الله… وقاعد مستني؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "0e43c743754c3cfe",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "9ba5cdcc63850d0954e8c8009a92ae12dff18641570ff9f027c5d25c50c17223"
+    },
+    "sit-idea": {
+      "file": "sit-idea.flac",
+      "text": "إن التوكل… إنك متعملش حاجة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "47289cc48d198876",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "c74cdde066b524a90e4155caf0fb3012d512fe3dae616cbf8619fea2dd33954b"
+    },
+    "sit-outro": {
+      "file": "sit-outro.flac",
+      "text": "طب ولو أنا خايف… يبقى مش متوكل؟ تابعنا عشان تعرف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "fcfbb1556bca3bf4",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "4674ec50c7f73f78e12b5f955f0f2ba565a313884e8ceefe5fc2d908af209344",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.48,
+          2.74
+        ]
+      }
+    },
+    "sit-takeaway": {
+      "file": "sit-takeaway.flac",
+      "text": "اعمل اللي عليك… وسيب النتيجة على ربنا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "5711c575b1f6febf",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "3a96a58fc4966fcb2dcbd9abd449875041bd34a7863de19f2f6be232d096a688",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.54
+        ]
+      }
+    },
+    "sit-wrong": {
+      "file": "sit-wrong.flac",
+      "text": "أول فكرة غلط عن التوكل…",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a9e19007e3435217",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "ac340dba234c24c93f406bffb8f4ceb3c2bdfd7b69abe205bdf435919fcb3887"
+    },
+    "why": {
+      "file": "why.flac",
+      "text": "زي الطير؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "bd0493eb397bbd20",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "9daefd3fbb177383c23a9e56810d9266498c3a171618b2ee7fae3ee951bb46df"
+    }
+  }
+}

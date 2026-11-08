@@ -352,3 +352,88 @@
   notes: Ibrahim 14:7, « si vous êtes reconnaissants, J'augmenterai » (reel muqarana-05, conclusion, la gratitude)
   text_ar: وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ ۖ وَلَئِن كَفَرْتُمْ إِنَّ عَذَابِى لَشَدِيدٌ
   text_en: And [remember] when your Lord proclaimed, 'If you are grateful, I will surely increase you [in favor]; but if you deny, indeed, My punishment is severe.'"
+- id: quran.67.15
+  type: ayah
+  ref: {surah: 67, ayah: 15}
+  url: https://quran.com/67/15
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=67:15
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=67:15
+    translator: Saheeh International
+    surah_ar: الملك
+    surah_en: Al-Mulk
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Mulk 67:15, « marchez dans ses étendues et mangez de Sa subsistance » (reel tawakkul-02, le tawakkul n'est pas l'inaction)
+  text_ar: هُوَ ٱلَّذِى جَعَلَ لَكُمُ ٱلْأَرْضَ ذَلُولًا فَٱمْشُوا۟ فِى مَنَاكِبِهَا وَكُلُوا۟ مِن رِّزْقِهِۦ ۖ وَإِلَيْهِ ٱلنُّشُورُ
+  text_en: It is He who made the earth tame for you - so walk among its slopes and eat of His provision - and to Him is the resurrection.
+- id: quran.20.67
+  type: ayah
+  ref: {surah: 20, ayah: 67}
+  url: https://quran.com/20/67
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=20:67
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=20:67
+    translator: Saheeh International
+    surah_ar: طه
+    surah_en: Taha
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Ta-Ha 20:67, Moussa ressentit de la peur (reel tawakkul-03) ; commence par « ف » (la suite de 20:66, les cordes des magiciens), phrase entière
+  text_ar: فَأَوْجَسَ فِى نَفْسِهِۦ خِيفَةً مُّوسَىٰ
+  text_en: And he sensed within himself apprehension, did Moses.
+- id: quran.20.68
+  type: ayah
+  ref: {surah: 20, ayah: 68}
+  url: https://quran.com/20/68
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=20:68
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=20:68
+    translator: Saheeh International
+    surah_ar: طه
+    surah_en: Taha
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Ta-Ha 20:68, « N'aie pas peur, c'est toi le plus haut » (reel tawakkul-03)
+  text_ar: قُلْنَا لَا تَخَفْ إِنَّكَ أَنتَ ٱلْأَعْلَىٰ
+  text_en: We [i.e., Allāh] said, "Fear not. Indeed, it is you who are superior.
+- id: quran.33.3
+  type: ayah
+  ref: {surah: 33, ayah: 3}
+  url: https://quran.com/33/3
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=33:3
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=33:3
+    translator: Saheeh International
+    surah_ar: الأحزاب
+    surah_en: Al-Ahzab
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Ahzab 33:3, « et place ta confiance en Dieu, Dieu suffit comme garant » (reel tawakkul-04)
+  text_ar: وَتَوَكَّلْ عَلَى ٱللَّهِ ۚ وَكَفَىٰ بِٱللَّهِ وَكِيلًا
+  text_en: And rely upon Allāh; and sufficient is Allāh as Disposer of affairs.
+- id: quran.25.58
+  type: ayah
+  ref: {surah: 25, ayah: 58}
+  url: https://quran.com/25/58
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=25:58
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=25:58
+    translator: Saheeh International
+    surah_ar: الفرقان
+    surah_en: Al-Furqan
+    retrieved: '2026-11-07'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Furqan 25:58, « place ta confiance dans le Vivant qui ne meurt pas » (reel tawakkul-05, conclusion) ; 65:3 (« فهو حسبه ») écarté car il commence au milieu d'une phrase (la suite de 65:2)
+  text_ar: وَتَوَكَّلْ عَلَى ٱلْحَىِّ ٱلَّذِى لَا يَمُوتُ وَسَبِّحْ بِحَمْدِهِۦ ۚ وَكَفَىٰ بِهِۦ بِذُنُوبِ عِبَادِهِۦ خَبِيرًا
+  text_en: And rely upon the Ever-Living who does not die, and exalt [Allāh] with His praise. And sufficient is He to be, with the sins of His servants, [fully] Aware -

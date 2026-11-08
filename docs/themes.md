@@ -11,6 +11,7 @@ Tenu à jour par le skill `new-theme` (étape 1). Les plans détaillés des épi
 | Patience (`sabr`) | le patient ne pleure pas ; la patience, c'est attendre sans rien faire ; je ne suis pas patient de nature | « اصبر » entendu partout |
 | Repentir (`tawba`) | mes péchés sont trop nombreux ; j'ai rechuté, c'est fini ; je me repentirai plus tard | un péché, la honte de revenir |
 | Le piège des comparaisons (`muqarana`) | qui a plus est plus aimé de Dieu ; ce qu'ils ont est mieux que ce que j'ai ; toute comparaison est mauvaise ; conclusion sur la gratitude | faire défiler la vie des autres sur son téléphone |
+| La confiance en Dieu (`tawakkul`) | le tawakkul, c'est ne rien faire ; avoir peur, c'est avoir une foi faible ; je dois tout porter seul ; conclusion : le Vivant qui ne meurt pas | réveillé la nuit à penser à demain |
 
 ## Choisis par le propriétaire (2026-11-07), dans l'ordre
 
@@ -20,13 +21,7 @@ proposition. Les sources ci-dessous existent sous ces numéros dans hadith-api (
 2026-11-07, Tirmidhi avec le jugement d'al-Albani) ; elles restent à inscrire au registre et à
 faire valider, une par une.
 
-1. **التوكل**, fusionné avec « الخوف والشعور بالعجز » (la peur pour l'accroche, le tawakkul pour réponse).
-   - « التوكل يعني أسيبها ومعملش حاجة » : Tirmidhi 2517 (« اعقلها وتوكل », al-Albani : Hasan),
-     Tirmidhi 2344 (les oiseaux, al-Albani : Sahih). Pas Muslim 2664, déjà dans sabr-03.
-   - « لو خايف… يبقى إيماني ضعيف » : Moussa a eu peur (20:67-68), carte de nom.
-   - « لازم أشيل كل حاجة لوحدي » : 3:173, Bukhari 4563 (« حسبنا الله ونعم الوكيل », Ibrahim dans le feu).
-   - Pratique : Bukhari 6369 (« اللهم إني أعوذ بك من الهم والحزن والعجز والكسل »).
-2. **الخشوع**.
+1. **الخشوع**.
    - « سرحت… يبقى صلاتي ملهاش لازمة » : Muslim 2203 (le Compagnon qui s'en plaint, carte de nom).
    - « الخشوع للناس الصالحين بس » : 2:45-46, Bukhari 751.
    - « الخشوع يعني أعيط » : 23:1-2, Muslim 228.
