@@ -449,7 +449,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Al-Kahf 18:23, « ne dis jamais d'une chose : je la ferai demain… » (reel dq-05, « إن شاء الله » ; une phrase avec 18:24, qui commence par « إلا »)"
   text_ar: وَلَا تَقُولَنَّ لِشَا۟ىْءٍ إِنِّى فَاعِلٌ ذَٰلِكَ غَدًا
   text_en: And never say of anything, "Indeed, I will do that tomorrow,"
@@ -465,7 +466,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 'Al-Kahf 18:24, « …sans ajouter : si Allah le veut » (reel dq-05, lu avec 18:23)'
   text_ar: إِلَّآ أَن يَشَآءَ ٱللَّهُ ۚ وَٱذْكُر رَّبَّكَ إِذَا نَسِيتَ وَقُلْ عَسَىٰٓ أَن يَهْدِيَنِ رَبِّى لِأَقْرَبَ مِنْ هَـٰذَا رَشَدًا
   text_en: Except [when adding], "If Allāh wills." And remember your Lord when you forget [it] and say, "Perhaps my Lord will guide me to what is nearer than this to right conduct."
@@ -787,7 +789,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:83, « ils t'interrogent sur Dhul-Qarnayn » (reel dq-01)
   text_ar: وَيَسْـَٔلُونَكَ عَن ذِى ٱلْقَرْنَيْنِ ۖ قُلْ سَأَتْلُوا۟ عَلَيْكُم مِّنْهُ ذِكْرًا
   text_en: And they ask you, [O Muḥammad], about Dhul-Qarnayn. Say, "I will recite to you about him a report."
@@ -803,7 +806,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:84, Dieu l'a établi sur terre et lui a donné de chaque chose un moyen (reel dq-01)
   text_ar: إِنَّا مَكَّنَّا لَهُۥ فِى ٱلْأَرْضِ وَءَاتَيْنَـٰهُ مِن كُلِّ شَىْءٍ سَبَبًا
   text_en: Indeed, We established him upon the earth, and We gave him from everything a way [i.e., means].
@@ -819,7 +823,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:85, « il suivit un moyen » (reel dq-01)
   text_ar: فَأَتْبَعَ سَبَبًا
   text_en: So he followed a way
@@ -835,7 +840,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 'Al-Kahf 18:86, au couchant ; le choix : châtier ou bien traiter (reel dq-02)'
   text_ar: حَتَّىٰٓ إِذَا بَلَغَ مَغْرِبَ ٱلشَّمْسِ وَجَدَهَا تَغْرُبُ فِى عَيْنٍ حَمِئَةٍ وَوَجَدَ عِندَهَا قَوْمًا ۗ قُلْنَا يَـٰذَا ٱلْقَرْنَيْنِ إِمَّآ أَن تُعَذِّبَ وَإِمَّآ أَن تَتَّخِذَ فِيهِمْ حُسْنًا
   text_en: Until, when he reached the setting of the sun [i.e., the west], he found it [as if] setting in a body of dark water, and he found near it a people. We [i.e., Allāh] said, "O Dhul-Qarnayn, either you punish [them] or else adopt among them [a way of] goodness."
@@ -851,7 +857,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:87, celui qui a été injuste sera châtié (reel dq-02, lu avec 18:88)
   text_ar: قَالَ أَمَّا مَن ظَلَمَ فَسَوْفَ نُعَذِّبُهُۥ ثُمَّ يُرَدُّ إِلَىٰ رَبِّهِۦ فَيُعَذِّبُهُۥ عَذَابًا نُّكْرًا
   text_en: He said, "As for one who wrongs, we will punish him. Then he will be returned to his Lord, and He will punish him with a terrible punishment [i.e., Hellfire].
@@ -867,7 +874,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:88, celui qui a cru et bien agi aura la meilleure récompense (reel dq-02)
   text_ar: وَأَمَّا مَنْ ءَامَنَ وَعَمِلَ صَـٰلِحًا فَلَهُۥ جَزَآءً ٱلْحُسْنَىٰ ۖ وَسَنَقُولُ لَهُۥ مِنْ أَمْرِنَا يُسْرًا
   text_en: But as for one who believes and does righteousness, he will have a reward of the best [i.e., Paradise], and we [i.e., Dhul-Qarnayn] will speak to him from our command with ease."
@@ -883,7 +891,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:89, « puis il suivit un moyen » (reel dq-02, vers le levant)
   text_ar: ثُمَّ أَتْبَعَ سَبَبًا
   text_en: Then he followed a way
@@ -899,7 +908,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:90, au levant, un peuple sans abri contre le soleil (reel dq-02)
   text_ar: حَتَّىٰٓ إِذَا بَلَغَ مَطْلِعَ ٱلشَّمْسِ وَجَدَهَا تَطْلُعُ عَلَىٰ قَوْمٍ لَّمْ نَجْعَل لَّهُم مِّن دُونِهَا سِتْرًا
   text_en: Until, when he came to the rising of the sun [i.e., the east], he found it rising on a people for whom We had not made against it any shield.
@@ -915,7 +925,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:91, « Nous connaissions tout ce qu'il avait » (reel dq-02)
   text_ar: كَذَٰلِكَ وَقَدْ أَحَطْنَا بِمَا لَدَيْهِ خُبْرًا
   text_en: Thus. And We had encompassed [all] that he had in knowledge.
@@ -931,7 +942,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:92, « puis il suivit un moyen » (reel dq-03)
   text_ar: ثُمَّ أَتْبَعَ سَبَبًا
   text_en: Then he followed a way.
@@ -947,7 +959,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:93, entre les deux barrières, un peuple qui comprenait à peine (reel dq-03)
   text_ar: حَتَّىٰٓ إِذَا بَلَغَ بَيْنَ ٱلسَّدَّيْنِ وَجَدَ مِن دُونِهِمَا قَوْمًا لَّا يَكَادُونَ يَفْقَهُونَ قَوْلًا
   text_en: Until, when he reached [a pass] between two mountains, he found beside them a people who could hardly understand [his] speech.
@@ -963,7 +976,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:94, Yajuj et Majuj ; ils proposent un tribut pour un barrage (reel dq-03)
   text_ar: قَالُوا۟ يَـٰذَا ٱلْقَرْنَيْنِ إِنَّ يَأْجُوجَ وَمَأْجُوجَ مُفْسِدُونَ فِى ٱلْأَرْضِ فَهَلْ نَجْعَلُ لَكَ خَرْجًا عَلَىٰٓ أَن تَجْعَلَ بَيْنَنَا وَبَيْنَهُمْ سَدًّا
   text_en: They said, "O Dhul-Qarnayn, indeed Gog and Magog are [great] corrupters in the land. So may we assign for you an expenditure that you might make between us and them a barrier?"
@@ -979,7 +993,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:95, « ce que mon Seigneur m'a donné vaut mieux ; aidez-moi avec votre force » (reel dq-03)
   text_ar: قَالَ مَا مَكَّنِّى فِيهِ رَبِّى خَيْرٌ فَأَعِينُونِى بِقُوَّةٍ أَجْعَلْ بَيْنَكُمْ وَبَيْنَهُمْ رَدْمًا
   text_en: He said, "That in which my Lord has established me is better [than what you offer], but assist me with strength [i.e., manpower]; I will make between you and them a dam.
@@ -995,7 +1010,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:96, le fer, le feu, le cuivre fondu (reel dq-04)
   text_ar: ءَاتُونِى زُبَرَ ٱلْحَدِيدِ ۖ حَتَّىٰٓ إِذَا سَاوَىٰ بَيْنَ ٱلصَّدَفَيْنِ قَالَ ٱنفُخُوا۟ ۖ حَتَّىٰٓ إِذَا جَعَلَهُۥ نَارًا قَالَ ءَاتُونِىٓ أُفْرِغْ عَلَيْهِ قِطْرًا
   text_en: Bring me bars of iron" - until, when he had leveled [them] between the two mountain walls, he said, "Blow [with bellows]," until when he had made it [like] fire, he said, "Bring me, that I may pour over it molten copper."
@@ -1011,7 +1027,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:97, ils ne purent ni l'escalader ni le percer (reel dq-04)
   text_ar: فَمَا ٱسْطَـٰعُوٓا۟ أَن يَظْهَرُوهُ وَمَا ٱسْتَطَـٰعُوا۟ لَهُۥ نَقْبًا
   text_en: So they [i.e., Gog and Magog] were unable to pass over it, nor were they able [to effect] in it any penetration.
@@ -1027,7 +1044,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:98, « ceci est une miséricorde de mon Seigneur » ; la promesse de Dieu (reel dq-04)
   text_ar: قَالَ هَـٰذَا رَحْمَةٌ مِّن رَّبِّى ۖ فَإِذَا جَآءَ وَعْدُ رَبِّى جَعَلَهُۥ دَكَّآءَ ۖ وَكَانَ وَعْدُ رَبِّى حَقًّا
   text_en: '[Dhul-Qarnayn] said, "This is a mercy from my Lord; but when the promise of my Lord comes [i.e., approaches], He will make it level, and ever is the promise of my Lord true."'

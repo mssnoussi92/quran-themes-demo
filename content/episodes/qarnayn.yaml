@@ -8,20 +8,22 @@
 # - Dhul-Qarnayn, le Prophète ﷺ et les peuples rencontrés ne sont jamais dessinés (carte de nom, fonds sans
 #   personne). Le Coran ne donne ni son nom ni son époque : on n'en dit rien (pas d'Alexandre, pas de récit
 #   d'Israël). Récitateur : Tawfiq As-Sayegh (content/policy.yaml).
-# L'épisode entier dit les reels dans l'ordre. Rien n'est validé : sources, lecture, script, traduction, textes,
-# miniature, fonds et prises attendent le propriétaire. Lignes de l'IA (pas une citation ni une reformulation
-# d'une source) : marquées « Ligne de l'IA », à vérifier en premier.
+# L'épisode entier dit les reels dans l'ordre. Validés par le propriétaire le 2026-11-08 (validated_by) : sources,
+# scripts et traduction, textes de publication, miniature, fonds. À valider à l'écoute des brouillons : la lecture
+# de Tirmidhi 3153 et les prises de voix. Lignes de l'IA (pas une citation ni une reformulation d'une source) :
+# marquées « Ligne de l'IA ».
 episode: qarnayn
 title: { ar: "ذو القرنين", en: "Dhul-Qarnayn" }
 narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
-# Textes de publication : proposés le 2026-11-08, faits des répliques du script. Le reste : video/scripts/publish.ts.
+# Textes de publication : faits des répliques du script, validés par le propriétaire le 2026-11-08. Le reste : video/scripts/publish.ts.
 publish:
   title: { en: "Dhul-Qarnayn: what to do with the power God gives you", ar: "ذو القرنين… والقوة اللي ربنا إداهالك" }
   description:
     en: "Has God opened doors for you? So many people change the moment they get power. In Surat al-Kahf, Dhul-Qarnayn was given power over the earth: he was just with it, refused to exploit people in need, worked with them, and said of all he built: this is a mercy from my Lord."
     ar: "ربنا فتحها عليك؟ ناس كتير أول ما يمسكوا القوة بيتغيروا. في سورة الكهف، ذو القرنين ربنا مكّن له في الأرض: عدل بالقوة، وما استغلش الناس المحتاجة، واشتغل معاهم، وقال عن كل اللي بناه: ده رحمة من ربي."
   hashtags: ["#DhulQarnayn", "#ذو_القرنين", "#SurahAlKahf"]
-# Miniature YouTube (Thumbnail169), proposée le 2026-11-08 : gros plan, fond uni, Amir (Salma dans celle de Moussa
+  validated_by: mssnoussi92
+# Miniature YouTube (Thumbnail169), validée le 2026-11-08 : gros plan, fond uni, Amir (Salma dans celle de Moussa
 # et al-Khadir).
 thumbnail:
   layout: close-up
@@ -29,42 +31,53 @@ thumbnail:
   kicker: { ar: "والقوة اللي في إيدك", en: "and the power in your hands" }
   character: { id: amir, pose: standing, mood: worried }
   background: plain
+  validated_by: mssnoussi92
 reels:
   - id: qarnayn-01
     title: { ar: "ذو القرنين", en: "Dhul-Qarnayn" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "God opened doors for you… now what?", ar: "ربنا فتحها عليك… وبعدين؟" }
       description:
         en: "So many people change the moment they get power. In Surat al-Kahf, God established a man on the earth and gave him a way to everything… and he followed the way. The blessing is from God, but you have to walk with it."
         ar: "ناس كتير أول ما يمسكوا القوة بيتغيروا. في سورة الكهف، ربنا مكّن لراجل في الأرض وإداه من كل حاجة سبب… وهو مشي ورا السبب. النعمة من ربنا… بس لازم إنت تمشي فيها."
+      validated_by: mssnoussi92
   - id: qarnayn-02
     title: { ar: "العدل", en: "Justice" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "Power is a trust… not a license", ar: "القوة أمانة… مش رخصة" }
       description:
         en: "At the setting of the sun, Dhul-Qarnayn was given the choice: punish them, or treat them with kindness. The wrongdoer is held to account, the good are honoured. And God knew everything in his hands, as He sees what you do with what is in yours."
         ar: "عند مغرب الشمس، ذو القرنين اتخيّر: يعاقبهم… ولا يعاملهم بالحسنى. الظالم يتحاسب… والكويس يتكرّم. وربنا كان عارف كل حاجة في إيده… زي ما هو شايف بتعمل إيه باللي في إيدك."
+      validated_by: mssnoussi92
   - id: qarnayn-03
     title: { ar: "السد", en: "The barrier" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "They offered him money… he said no", ar: "عرضوا عليه فلوس… وقال لأ" }
       description:
         en: "Between two mountains, a people afraid of Gog and Magog offered Dhul-Qarnayn money for a barrier. He said: what my Lord has given me is better, help me with your strength. No money from people in need, and he didn't do it all alone."
         ar: "بين جبلين، قوم خايفين من يأجوج ومأجوج عرضوا على ذي القرنين فلوس عشان يعمل سد. قال: اللي ربنا إداهولي أحسن… ساعدوني بقوتكم. ما خدش فلوس من ناس محتاجة… وما عملش كل حاجة لوحده."
+      validated_by: mssnoussi92
   - id: qarnayn-04
     title: { ar: "رحمة من ربي", en: "A mercy from my Lord" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "He built the barrier… and said: a mercy from my Lord", ar: "بنى السد… وقال: رحمة من ربي" }
       description:
         en: "Iron, fire and molten copper: a barrier no one could climb or break through. And after all that, he didn't say: I did it. He said: this is a mercy from my Lord."
         ar: "حديد ونار ونحاس دايب: سد محدش قدر يطلعه ولا يخرمه. وبعد كل ده… ما قالش: أنا اللي عملت. قال: ده رحمة من ربي."
+      validated_by: mssnoussi92
   - id: qarnayn-05
     title: { ar: "إن شاء الله", en: "If God wills" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "The one word that holds the barrier", ar: "الكلمة اللي ماسكة السد" }
       description:
         en: "The Prophet ﷺ told us that Gog and Magog dig into the barrier every day, until the day they say: if God wills. A word God taught us in Surat al-Kahf itself. So next time God opens a door for you… say: this is a mercy from my Lord."
         ar: "النبي ﷺ حكى إن يأجوج ومأجوج بيحفروا في السد كل يوم… لحد اليوم اللي يقولوا فيه: إن شاء الله. كلمة ربنا علّمهالنا في سورة الكهف نفسها. فالمرة الجاية لما ربنا يفتحها عليك… قول: ده رحمة من ربي."
+      validated_by: mssnoussi92
 scenes:
   # ---- qarnayn-01 : accroche, qui il est, la force donnée (18:83-85) ----------------------------------------
   # Miroir : le succès, la force qu'on a reçue (scène type, à la deuxième personne).
