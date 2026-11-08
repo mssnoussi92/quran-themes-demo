@@ -14,14 +14,16 @@
 episode: khidr
 title: { ar: "موسى والخضر", en: "Moses and al-Khidr" }
 narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
-# Textes de publication : proposés le 2026-11-08, faits des répliques du script. Le reste : video/scripts/publish.ts.
+# Textes de publication : proposés le 2026-11-08, faits des répliques du script ; validés par le propriétaire le
+# même jour (validated_by), avec les scripts, la traduction, l'ordre de l'épisode entier et la miniature. Le reste : video/scripts/publish.ts.
 publish:
   title: { en: "Why me? Moses, al-Khidr and the wisdom you can't see", ar: "ليه أنا؟ موسى والخضر… والحكمة اللي مش شايفها" }
   description:
     en: "Something happened to you… and you don't understand why? In Surat al-Kahf, Moses travels with al-Khidr and sees three things he cannot understand: a boat damaged, a boy killed, a wall repaired for nothing. Then he learns the secret of each. The wisdom of a decree can show quickly, years later… or not in this life at all."
     ar: "حصلت لك حاجة… ومش فاهم ليه؟ في سورة الكهف، موسى بيمشي مع الخضر ويشوف تلات حاجات مش فاهمها: سفينة اتخرقت، وغلام اتقتل، وجدار اتصلّح ببلاش. وبعدين يعرف السر. حكمة القدر ممكن تبان بسرعة، أو بعد سنين، أو مش هتبان في الدنيا خالص."
   hashtags: ["#Qadr", "#القدر", "#SurahAlKahf"]
-# Miniature YouTube (Thumbnail169), proposée le 2026-11-08 : gros plan, fond uni, Salma (Amir dans celle de
+  validated_by: mssnoussi92
+# Miniature YouTube (Thumbnail169), validée le 2026-11-08 : gros plan, fond uni, Salma (Amir dans celle de
 # la confiance en Dieu).
 thumbnail:
   layout: close-up
@@ -29,46 +31,58 @@ thumbnail:
   kicker: { ar: "موسى والخضر", en: "Moses and al-Khidr" }
   character: { id: salma, pose: standing, mood: worried }
   background: plain
+  validated_by: mssnoussi92
 reels:
   - id: khidr-01
     title: { ar: "مين أعلم؟", en: "Who knows more?" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "Something happened… and you don't understand why?", ar: "حصلت لك حاجة… ومش فاهم ليه؟" }
       description:
         en: "In Surat al-Kahf, a prophet saw three things he couldn't understand… and in the end, he learned the secret. Moses meets al-Khidr: “you will see things you can't understand… because you don't see the whole picture.”"
         ar: "في سورة الكهف… نبي شاف تلات حاجات مش فاهمها… وفي الآخر عرف السر. موسى بيقابل الخضر: هتشوف حاجات مش هتقدر تفهمها… عشان مش شايف الصورة كلها."
+      validated_by: mssnoussi92
   - id: khidr-02
     title: { ar: "السفينة", en: "The boat" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "Why damage a boat that carried them for free?", ar: "ليه يخرق سفينة شالتهم ببلاش؟" }
       description:
         en: "The first strange thing: al-Khidr tears a hole in the boat. The damage is what saved it: a small loss… that spared them a bigger one."
         ar: "أول حاجة غريبة: الخضر خرق السفينة. العيب هو اللي حماها: خسارة صغيرة… حمتهم من خسارة أكبر."
+      validated_by: mssnoussi92
   - id: khidr-03
     title: { ar: "الغلام", en: "The boy" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "Some wisdom… you may never see in this life", ar: "فيه حكمة… يمكن عمرك ما تشوفها في الدنيا" }
       description:
         en: "The second thing: the boy. His parents may never have known why. We only know because God told us. Some decrees… their wisdom won't show in this life."
         ar: "تاني حاجة: الغلام. أبوه وأمه يمكن عمرهم ما عرفوا السبب. إحنا عرفنا عشان ربنا حكاه لنا. فيه أقدار… حكمتها مش هتبان في الدنيا."
+      validated_by: mssnoussi92
   - id: khidr-04
     title: { ar: "الجدار", en: "The wall" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "A treasure under a wall about to fall", ar: "كنز تحت جدار هيقع" }
       description:
         en: "The third thing: al-Khidr repairs a wall in a village that refused them food. Beneath it, a treasure waiting for two orphans to grow up. Good can be hidden… waiting for its time."
         ar: "تالت حاجة: الخضر صلّح جدار في قرية رفضت تضيفهم. وتحته كنز… مستني يتيمين يكبروا. الخير ممكن يكون مستخبي… ومستني وقته."
+      validated_by: mssnoussi92
   - id: khidr-05
     title: { ar: "ليه أنا؟", en: "Why me?" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "Why me? Why now?", ar: "ليه أنا؟ ليه دلوقتي؟" }
       description:
         en: "The wisdom of a decree can show quickly, years later… or not in this life at all. Our knowledge, next to God's, is like that sparrow next to the sea. So next time you ask why… remember the boat."
         ar: "حكمة القدر ممكن تبان بسرعة، أو بعد سنين، أو مش هتبان في الدنيا خالص. وعلمنا جنب علم ربنا… زي العصفور ده جنب البحر. فالمرة الجاية لما تسأل: ليه؟ افتكر السفينة."
+      validated_by: mssnoussi92
 # L'épisode entier : le voyage, les trois événements sans explication (avec 18:78, seulement ici), puis le secret
 # de chacun, puis la leçon. Les scènes de liaison propres aux reels (le rappel du début, « السر؟ الخضر قاله
 # بعدين: », la formule avant 18:79, l'annonce de la fin) n'y sont pas ; la formule et 18:78 n'y sont que là.
 whole:
+  validated_by: mssnoussi92
   parts:
     - title: { ar: "مين أعلم؟", en: "Who knows more?" }
       scenes: [hook-1, hook-2, hook-3, hook-4, hook-5, musa-1, musa-2, musa-3, musa-4, ask, meet-verse-intro,

@@ -449,7 +449,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:65, ils trouvent un serviteur à qui Dieu a donné une science venant de Lui (reel khidr-01, la rencontre, lu avec 18:66-68 ; commence par « فوجدا », phrase complète)
   text_ar: فَوَجَدَا عَبْدًا مِّنْ عِبَادِنَآ ءَاتَيْنَـٰهُ رَحْمَةً مِّنْ عِندِنَا وَعَلَّمْنَـٰهُ مِن لَّدُنَّا عِلْمًا
   text_en: And they found a servant from among Our servants [i.e., al-Khiḍr] to whom We had given mercy from Us and had taught him from Us a [certain] knowledge.
@@ -465,7 +466,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:66, Moussa demande à le suivre pour apprendre (reel khidr-01, après la narration de la demande)
   text_ar: قَالَ لَهُۥ مُوسَىٰ هَلْ أَتَّبِعُكَ عَلَىٰٓ أَن تُعَلِّمَنِ مِمَّا عُلِّمْتَ رُشْدًا
   text_en: Moses said to him, "May I follow you on [the condition] that you teach me from what you have been taught of sound judgement?"
@@ -481,7 +483,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Al-Kahf 18:67, « tu ne pourras pas être patient avec moi » (reel khidr-01, la rencontre ; lu avec 18:68 qui le continue)"
   text_ar: قَالَ إِنَّكَ لَن تَسْتَطِيعَ مَعِىَ صَبْرًا
   text_en: He said, "Indeed, with me you will never be able to have patience.
@@ -497,7 +500,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Al-Kahf 18:68, « comment serais-tu patient sur ce que tu n'embrasses pas de ton savoir ? », la clé de l'histoire (reel khidr-01) ; commence par « و » : suit 18:67 sur la carte d'avant"
   text_ar: وَكَيْفَ تَصْبِرُ عَلَىٰ مَا لَمْ تُحِطْ بِهِۦ خُبْرًا
   text_en: And how can you have patience for what you do not encompass in knowledge?"
@@ -513,7 +517,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:69, Moussa promet d'être patient (reel khidr-01, la condition, lu avec 18:70)
   text_ar: قَالَ سَتَجِدُنِىٓ إِن شَآءَ ٱللَّهُ صَابِرًا وَلَآ أَعْصِى لَكَ أَمْرًا
   text_en: '[Moses] said, "You will find me, if Allāh wills, patient, and I will not disobey you in [any] order."'
@@ -529,7 +534,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Al-Kahf 18:70, la condition : ne m'interroge sur rien (reel khidr-01)"
   text_ar: قَالَ فَإِنِ ٱتَّبَعْتَنِى فَلَا تَسْـَٔلْنِى عَن شَىْءٍ حَتَّىٰٓ أُحْدِثَ لَكَ مِنْهُ ذِكْرًا
   text_en: He said, "Then if you follow me, do not ask me about anything until I make to you about it mention [i.e., explanation]."
@@ -545,7 +551,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:71, le bateau percé et l'objection de Moussa (reel khidr-02, après la narration de l'événement, lu avec 18:72-73)
   text_ar: فَٱنطَلَقَا حَتَّىٰٓ إِذَا رَكِبَا فِى ٱلسَّفِينَةِ خَرَقَهَا ۖ قَالَ أَخَرَقْتَهَا لِتُغْرِقَ أَهْلَهَا لَقَدْ جِئْتَ شَيْـًٔا إِمْرًا
   text_en: So they set out, until when they had embarked on the ship, he [i.e., al-Khiḍr] tore it open. [Moses] said, "Have you torn it open to drown its people? You have certainly done a grave thing."
@@ -561,7 +568,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:72, « ne t'avais-je pas dit… » (reel khidr-02)
   text_ar: قَالَ أَلَمْ أَقُلْ إِنَّكَ لَن تَسْتَطِيعَ مَعِىَ صَبْرًا
   text_en: '[Al-Khiḍr] said, "Did I not say that with me you would never be able to have patience?"'
@@ -577,7 +585,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Al-Kahf 18:73, Moussa s'excuse : j'ai oublié (reel khidr-02)"
   text_ar: قَالَ لَا تُؤَاخِذْنِى بِمَا نَسِيتُ وَلَا تُرْهِقْنِى مِنْ أَمْرِى عُسْرًا
   text_en: '[Moses] said, "Do not blame me for what I forgot and do not overwhelm me in my matter with difficulty."'
@@ -593,7 +602,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:74, le garçon et l'objection de Moussa (reel khidr-03, après la narration de l'événement, lu avec 18:75-76)
   text_ar: فَٱنطَلَقَا حَتَّىٰٓ إِذَا لَقِيَا غُلَـٰمًا فَقَتَلَهُۥ قَالَ أَقَتَلْتَ نَفْسًا زَكِيَّةًۢ بِغَيْرِ نَفْسٍ لَّقَدْ جِئْتَ شَيْـًٔا نُّكْرًا
   text_en: So they set out, until when they met a boy, he [i.e., al-Khiḍr] killed him. [Moses] said, "Have you killed a pure soul for other than [having killed] a soul? You have certainly done a deplorable thing."
@@ -609,7 +619,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:75, « ne t'avais-je pas dit, à toi… » (reel khidr-03)
   text_ar: ۞ قَالَ أَلَمْ أَقُل لَّكَ إِنَّكَ لَن تَسْتَطِيعَ مَعِىَ صَبْرًا
   text_en: '[Al-Khiḍr] said, "Did I not tell you that with me you would never be able to have patience?"'
@@ -625,7 +636,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:76, si je t'interroge encore, ne me garde pas avec toi (reel khidr-03)
   text_ar: قَالَ إِن سَأَلْتُكَ عَن شَىْءٍۭ بَعْدَهَا فَلَا تُصَـٰحِبْنِى ۖ قَدْ بَلَغْتَ مِن لَّدُنِّى عُذْرًا
   text_en: '[Moses] said, "If I should ask you about anything after this, then do not keep me as a companion. You have obtained from me an excuse."'
@@ -641,7 +653,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Kahf 18:77, le village et le mur redressé (reel khidr-04, après la narration de l'événement)
   text_ar: فَٱنطَلَقَا حَتَّىٰٓ إِذَآ أَتَيَآ أَهْلَ قَرْيَةٍ ٱسْتَطْعَمَآ أَهْلَهَا فَأَبَوْا۟ أَن يُضَيِّفُوهُمَا فَوَجَدَا فِيهَا جِدَارًا يُرِيدُ أَن يَنقَضَّ فَأَقَامَهُۥ ۖ قَالَ لَوْ شِئْتَ لَتَّخَذْتَ عَلَيْهِ أَجْرًا
   text_en: So they set out, until when they came to the people of a town, they asked its people for food, but they refused to offer them hospitality. And they found therein a wall about to collapse, so he [i.e., al-Khiḍr] restored it. [Moses] said, "If you wished, you could have taken for it a payment."
@@ -657,7 +670,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Al-Kahf 18:78, la séparation et la promesse d'expliquer : le tournant de l'épisode complet, entre les trois événements et leur sens (seulement dans l'épisode complet)"
   text_ar: قَالَ هَـٰذَا فِرَاقُ بَيْنِى وَبَيْنِكَ ۚ سَأُنَبِّئُكَ بِتَأْوِيلِ مَا لَمْ تَسْتَطِع عَّلَيْهِ صَبْرًا
   text_en: '[Al-Khiḍr] said, "This is parting between me and you. I will inform you of the interpretation of that about which you could not have patience.'
@@ -673,7 +687,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Al-Kahf 18:79, le bateau des pauvres, abîmé pour échapper au roi qui prenait tous les bateaux (reel khidr-02)"
   text_ar: أَمَّا ٱلسَّفِينَةُ فَكَانَتْ لِمَسَـٰكِينَ يَعْمَلُونَ فِى ٱلْبَحْرِ فَأَرَدتُّ أَنْ أَعِيبَهَا وَكَانَ وَرَآءَهُم مَّلِكٌ يَأْخُذُ كُلَّ سَفِينَةٍ غَصْبًا
   text_en: As for the ship, it belonged to poor people working at sea. So I intended to cause defect in it as there was after them a king who seized every [good] ship by force.
@@ -689,7 +704,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Al-Kahf 18:80, le garçon dont les parents étaient croyants (reel khidr-03) ; commence par « وأما » : suite des explications, choix du propriétaire comme 25:70 ; lu avec 18:81 qui le continue"
   text_ar: وَأَمَّا ٱلْغُلَـٰمُ فَكَانَ أَبَوَاهُ مُؤْمِنَيْنِ فَخَشِينَآ أَن يُرْهِقَهُمَا طُغْيَـٰنًا وَكُفْرًا
   text_en: And as for the boy, his parents were believers, and we feared that he would overburden them by transgression and disbelief.
@@ -705,7 +721,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Al-Kahf 18:81, « que leur Seigneur leur donne en échange un meilleur » (reel khidr-03) ; commence par « فأردنا » : suit 18:80 sur la carte d'avant"
   text_ar: فَأَرَدْنَآ أَن يُبْدِلَهُمَا رَبُّهُمَا خَيْرًا مِّنْهُ زَكَوٰةً وَأَقْرَبَ رُحْمًا
   text_en: So we intended that their Lord should substitute for them one better than him in purity and nearer to mercy.
@@ -721,7 +738,8 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Al-Kahf 18:82, le mur des deux orphelins, leur trésor et leur père vertueux, « miséricorde de ton Seigneur » et « je ne l'ai pas fait de moi-même » (reel khidr-04) ; une seule phrase, 50 s avec Alafasy ; commence par « وأما » comme 18:80"
   text_ar: وَأَمَّا ٱلْجِدَارُ فَكَانَ لِغُلَـٰمَيْنِ يَتِيمَيْنِ فِى ٱلْمَدِينَةِ وَكَانَ تَحْتَهُۥ كَنزٌ لَّهُمَا وَكَانَ أَبُوهُمَا صَـٰلِحًا فَأَرَادَ رَبُّكَ أَن يَبْلُغَآ أَشُدَّهُمَا وَيَسْتَخْرِجَا كَنزَهُمَا رَحْمَةً مِّن رَّبِّكَ ۚ وَمَا فَعَلْتُهُۥ عَنْ أَمْرِى ۚ ذَٰلِكَ تَأْوِيلُ مَا لَمْ تَسْطِع عَّلَيْهِ صَبْرًا
   text_en: And as for the wall, it belonged to two orphan boys in the city, and there was beneath it a treasure for them, and their father had been righteous. So your Lord intended that they reach maturity and extract their treasure, as a mercy from your Lord. And I did it not of my own accord. That is the interpretation of that about which you could not have patience."
@@ -737,7 +755,8 @@
     surah_ar: البقرة
     surah_en: Al-Baqarah
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: Al-Baqara 2:216, « il se peut que vous détestiez une chose alors qu'elle est un bien pour vous… Allah sait et vous ne savez pas » (reel khidr-05, après le récapitulatif des trois sagesses ; demandé par le propriétaire le 2026-11-08, en connaissant le début « كتب عليكم القتال », montré puisque l'ayah est entière)
   text_ar: كُتِبَ عَلَيْكُمُ ٱلْقِتَالُ وَهُوَ كُرْهٌ لَّكُمْ ۖ وَعَسَىٰٓ أَن تَكْرَهُوا۟ شَيْـًٔا وَهُوَ خَيْرٌ لَّكُمْ ۖ وَعَسَىٰٓ أَن تُحِبُّوا۟ شَيْـًٔا وَهُوَ شَرٌّ لَّكُمْ ۗ وَٱللَّهُ يَعْلَمُ وَأَنتُمْ لَا تَعْلَمُونَ
   text_en: Battle has been enjoined upon you while it is hateful to you. But perhaps you hate a thing and it is good for you; and perhaps you love a thing and it is bad for you. And Allāh knows, while you know not.
@@ -753,7 +772,8 @@
     surah_ar: التغابن
     surah_en: At-Taghabun
     retrieved: '2026-11-08'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "At-Taghabun 64:11, « aucun malheur n'arrive que par la permission d'Allah ; quiconque croit en Allah, Il guide son cœur » (reel khidr-05, verset de fin) ; plutôt que 2:216, qui commence par « le combat vous a été prescrit »"
   text_ar: مَآ أَصَابَ مِن مُّصِيبَةٍ إِلَّا بِإِذْنِ ٱللَّهِ ۗ وَمَن يُؤْمِنۢ بِٱللَّهِ يَهْدِ قَلْبَهُۥ ۚ وَٱللَّهُ بِكُلِّ شَىْءٍ عَلِيمٌ
   text_en: No disaster strikes except by permission of Allāh. And whoever believes in Allāh - He will guide his heart. And Allāh is Knowing of all things.

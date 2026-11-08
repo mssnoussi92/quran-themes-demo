@@ -28,6 +28,14 @@ words:
     say: مَبْيِعَيَّطْش
     why: mal dit sans voyelles
     decided: { by: mssnoussi92, on: 2026-11-07, scene: sabr/tears-idea }
+  - word: قتله
+    say: قَتَلُه
+    why: "un vrai ق ; « قَتَله » était entendu « أكلوا » (Whisper : « قتلوا » sur 4 prises sur 4 avec « قَتَلُه »)"
+    decided: { by: mssnoussi92, on: 2026-11-08, scene: khidr/boy-1 }
+  - word: قتلت
+    say: قَتَلْت
+    why: "un vrai ق, pas « اتلت » à l'égyptienne (une prise sur deux le garde : en refaire jusqu'à l'entendre)"
+    decided: { by: mssnoussi92, on: 2026-11-08, scene: khidr/boy-2 }
   - word: يعقوب
     say: يَعْقُوب
     why: "un nom, le ق se prononce"

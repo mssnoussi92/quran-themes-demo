@@ -1,0 +1,573 @@
+{
+  "note": "Narration takes validated by the owner (AI-generated voice, VoiceTut). Written by tools/audio/build.py --lock, never by hand.",
+  "takes": {
+    "ask": {
+      "file": "ask.flac",
+      "text": "وموسى قاله: ممكن أمشي معاك… عشان تعلمني من اللي اتعلمته؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "50268a8de3e78969",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "53c0126f8cb60ff030fc896e4a0b374457bc3d4d6e093f4ad99428320f9cec31"
+    },
+    "boy-1": {
+      "file": "boy-1.flac",
+      "text": "موسى والخَضِر كملوا طريقهم… وقابلوا غُلام… والخَضِر قَتَلُه.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "b3e76fe5d810f858",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "f1d141ca789a4f36f9c87f39c5fec3d7171b888bf74a5d7fec59b42169ef6147"
+    },
+    "boy-2": {
+      "file": "boy-2.flac",
+      "text": "موسى اتصدم: قَتَلْت نفس بريئة… عمرها ما قَتَلِت حد؟!",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "1d05146600b29c27",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "f464f92f13b43848d3a5b86a32cff89309e367f5c3dc674a07a1623842adbcea"
+    },
+    "boy-3": {
+      "file": "boy-3.flac",
+      "text": "الخَضِر قاله: مش قلتلك إنك مش هتقدر تصبر معايا؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c8d8adee5ec58c87",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "d031456021c80a1c28b1073efb4cc1148f3de477442cd821b52a6b437180f2ec"
+    },
+    "boy-4": {
+      "file": "boy-4.flac",
+      "text": "وموسى قاله: لو سألتك عن حاجة بعد كده… متصاحبنيش. وتبقى معذور.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "bf632ff8d32c7767",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "6a7ff948b3fe23e16403703f7c28029051d861ac77692253d76d4f79b9a50084"
+    },
+    "boy-bridge": {
+      "file": "boy-bridge.flac",
+      "text": "السر؟ الخَضِر قاله بعدين:",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "9a9b3d2a4fc59b9e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "38688de7034119160bab33a96227d1bafac002e7040abf50ee12a068b916fd93"
+    },
+    "boy-guard": {
+      "file": "boy-guard.flac",
+      "text": "والخَضِر عمل كده بأمر من ربنا… حاجة خاصة بيه. محدش غيره يقدر يعمل كده.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "4fba66a04e9f1373",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "17fa33160a9f74b7129875b9a08be86abaec71b2f4f526e2e5b537507915e032"
+    },
+    "boy-lesson-1": {
+      "file": "boy-lesson-1.flac",
+      "text": "بس الأب والأم… يمكن عمرهم ما عرفوا السبب.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a07fc18e47d3d393",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "c7c3eda1040259322aa787bd7f8504477ff918f7fa740f3fd86a820a45cfb5b1"
+    },
+    "boy-lesson-2": {
+      "file": "boy-lesson-2.flac",
+      "text": "إحنا عرفناه… عشان ربنا حكاه لنا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "8b6fea80dfe3d23d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "11441d9d7a461f22e8473827db5731614d73f8e050b5a049b024108b2ee93b34"
+    },
+    "boy-lesson-3": {
+      "file": "boy-lesson-3.flac",
+      "text": "فيه أقدار… حكمتها مش هتبان في الدنيا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "04510ef856156633",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "167d952e2c532354e6a8a5118fe729f69c0b541a29b5c02e674b96daae9b2171"
+    },
+    "boy-life-1": {
+      "file": "boy-life-1.flac",
+      "text": "زي حد خسر حد غالي عليه… ولسه بيسأل: ليه؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "25e04dd09537e1c6",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "d9c0bde8f964141b16dfa1e9478ddad277cb6ba0d5aea0af074747c82295a30b"
+    },
+    "boy-life-2": {
+      "file": "boy-life-2.flac",
+      "text": "السؤال ده… إجابته مش هنا. إجابته عند ربنا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "e52622e339a87cba",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "97cffb78136d47a16c1b695dd8542e5d95ced6cb8e33f0acda5533b8f74c248f",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          0.84,
+          2.1
+        ]
+      }
+    },
+    "boy-outro": {
+      "file": "boy-outro.flac",
+      "text": "طب والخير اللي متأخر؟ تابعنا عشان تعرف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "f8ea8f06797510c1",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "87b251e9055e0a777b46ada1a76997c87a11a797bac71a783725095e4ea0d7ea"
+    },
+    "condition": {
+      "file": "condition.flac",
+      "text": "والخَضِر قاله: لو مشيت معايا… متسألنيش عن حاجة… لحد ما أنا أحكيلك عنها.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "4be420faf3ca8ddf",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "034f63922af6aab1602b3bb49d52092cea07d6a0a01ba8e2577fb6758b0d5936"
+    },
+    "end-because": {
+      "file": "end-because.flac",
+      "text": "عشان علمنا… جنب علم ربنا… زي العصفور ده جنب البحر.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "1fc506bc5d8ed8dd",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "7b7497a8a2a7fdd09c293eca1c07bc3e3e05a5eab33d3477ce862555501b0c9a"
+    },
+    "end-hadith": {
+      "file": "end-hadith.flac",
+      "text": "والنبي صلى الله عليه وسلم قال: يَرْحَمُ اللَّهُ مُوسَى، لَوَدِدْنَا لَوْ صَبَرَ حَتَّى يُقَصَّ عَلَيْنَا مِنْ أَمْرِهِمَا",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "d911ee2eb9cc3477",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "7378d5175ff50f77c421d04a7906d8b228e9b143f376742439de681d4a526932"
+    },
+    "end-hate": {
+      "file": "end-hate.flac",
+      "text": "ممكن تكره حاجة… وهي خير ليك. وتحب حاجة… وهي شر ليك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "38f0dba0d126ace2",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "5d3ebafa0170338ff86a349475c23ec82d0a35f414fec319be5719cd8c2fdc10"
+    },
+    "end-hook": {
+      "file": "end-hook.flac",
+      "text": "ليه أنا؟ ليه دلوقتي؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "956a41ac94f18da5",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "3be0f55f1eb9223f44e0e610d2bf9b102b1fdf632072f61d3a0d5b448182e7b0"
+    },
+    "end-last": {
+      "file": "end-last.flac",
+      "text": "فالمرة الجاية لما تسأل: ليه؟ افتكر السفينة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "b8dee6574b052eb3",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "59b3854b21430fbb12b129f22b443e6d533201e29fa889ec74aa95a5bfd3799f"
+    },
+    "end-only": {
+      "file": "end-only.flac",
+      "text": "كل اللي عرفناه… تلات حاجات بس… وفي كل واحدة رحمة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "fda68f86a01669d2",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "b45272c2572fe5cc08152ab1791efc39eb3834a63a1367c0fe29d183f77005b9"
+    },
+    "end-recap": {
+      "file": "end-recap.flac",
+      "text": "قصة موسى والخَضِر بتقول: الحكمة ممكن تبان بسرعة، أو بعد سنين، أو مش هتبان في الدنيا خالص.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a0239dc47f08e92c",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "f43fd02bbda756bc8beb2342ec482c48b6d0216d04c7671dbce4248034fd5504"
+    },
+    "end-why": {
+      "file": "end-why.flac",
+      "text": "طب ليه مش بنشوفها؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "63248b74679c038a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "320fa36a5315bcd5416f88505de3e63b2fff5f1ba938bf64d87a11be44799c0c"
+    },
+    "hook-1": {
+      "file": "hook-1.flac",
+      "text": "حصلت لك حاجة… ومش فاهم ليه؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "3520a04a83e5997f",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "9ee0036d0afb1cbcc41ba92c67e9c3f4e4d325a01a3d5b541cbf68fde40b3f5c"
+    },
+    "hook-2": {
+      "file": "hook-2.flac",
+      "text": "خسرت حاجة… أو حاجة اتأخرت عليك سنين؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "868453e74fdf289b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "3181fbc37eba81d4f21f9dc19b980deea67b92a4016f118940c577774c9bd9d8"
+    },
+    "hook-3": {
+      "file": "hook-3.flac",
+      "text": "وقعدت تسأل: ليه أنا؟ ليه دلوقتي؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "0640454178e4e989",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "bcb9e781d53ceff7bb6c47dfa9f3fa9658eb5a8a4bb7273b9d2b8654ada86614"
+    },
+    "hook-4": {
+      "file": "hook-4.flac",
+      "text": "في سورة الكهف… نبي شاف تلات حاجات مش فاهمها… وفي الآخر عرف السر.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "3d1b6feb7ac279c9",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "5eaf74fae078b3a4a3fca2c6fea1ec78364190c158caa305a15d3f171fb3f229"
+    },
+    "hook-5": {
+      "file": "hook-5.flac",
+      "text": "قصة… هتخليك تبص لكل ابتلاء عدّى عليك بعين تانية.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "e6eab08ac44fb95d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "1610b30110878003874bfd5376dcf91800a4a149ac385e17369040f105a32852"
+    },
+    "meet-takeaway": {
+      "file": "meet-takeaway.flac",
+      "text": "يعني هتشوف حاجات… مش هتقدر تفهمها… عشان مش شايف الصورة كلها.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "f107c4df715e5825",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "6c5291dc3ae2bd088e4b67008eaf6095c614891e1b4b556e502fc8cb17d15229"
+    },
+    "musa-1": {
+      "file": "musa-1.flac",
+      "text": "موسى عليه السلام اتسأل: مين أعلم واحد في الناس؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2bdc90e8dac5cc2c",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "0a80a51ee8c73b8bf32f81edb46e13314bf1dc3d1cf02620aaaadcb6bf7cd1fa"
+    },
+    "musa-2": {
+      "file": "musa-2.flac",
+      "text": "قال: أنا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2584bb4fecc5425d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "3edf5b2706d9b04992d754a5831cdb3e4662b8f3a181253bfa257ee40e277876"
+    },
+    "musa-3": {
+      "file": "musa-3.flac",
+      "text": "فربنا أَوْحَى له إن فيه عبد أعلم منه… عند مَجْمَع البَحْرَيْن.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "5be254614b0c1ba4",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "7f49fea360503aebe79ef3ec3a17ac95f2978da7981e8c5b1a2d641a4495a4e1"
+    },
+    "musa-4": {
+      "file": "musa-4.flac",
+      "text": "موسى طلع يدور عليه… ولقاه: الخَضِر.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2cb8a0ee3fbe1f88",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "3e73fe34fe35bcac2d7e055535b5d13af0c0db425dee6ae595b00e2c49820ef9"
+    },
+    "outro": {
+      "file": "outro.flac",
+      "text": "وبدأت الرحلة… تلات حاجات غريبة. تابعنا عشان تعرف أولها.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "f5310bacafdd3c83",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "c3d50836a34f922d10fddd7882672544f930232fbcc0b3af7a7019deef0bc94f"
+    },
+    "parting-say": {
+      "file": "parting-say.flac",
+      "text": "وهنا الخَضِر قاله: هنا نفترق… بس هقولك سر اللي مقدرتش تصبر عليه.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "b99287af1286c788",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "045cd69436c5782cb89f5272904315c833fd234593c95a15d470b69d138c617d"
+    },
+    "promise": {
+      "file": "promise.flac",
+      "text": "موسى قاله: هتلاقيني إن شاء الله صابر… ومش هعصيلك أمر.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "9fbc5c2dba6ca1f4",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "c5680667c7d7f4e4d8c9708daff8c2c665bf1872fbafdbee62db881e47fb9a1b"
+    },
+    "ship-1": {
+      "file": "ship-1.flac",
+      "text": "موسى والخَضِر ركبوا سفينة… أصحابها عرفوا الخَضِر… فشالوهم ببلاش.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2f19d82a24327243",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "23f853afa34e52a305fa73c535a64496311b89fa1d25160b622cbd011e596f2b"
+    },
+    "ship-2": {
+      "file": "ship-2.flac",
+      "text": "وبعدها… الخَضِر خَرَق السفينة… اللي شالتهم ببلاش!",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "397922933299d046",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "d4ec57061c7b669bf5c920c66a41501870388b3a478cb7a0fcf744be6a9dbad9"
+    },
+    "ship-3": {
+      "file": "ship-3.flac",
+      "text": "موسى ما قدرش يسكت: خَرَقْتها عشان تغرّق أهلها؟!",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "5abc21c6b67c597b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "a88f6137c7f1d03f3e7dc7dd81902e9a254e3c2db46ed2bf7ef12f8ebd44db88"
+    },
+    "ship-4": {
+      "file": "ship-4.flac",
+      "text": "الخَضِر قاله: مش قلتلك إنك مش هتقدر تصبر معايا؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c8d8adee5ec58c87",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "d031456021c80a1c28b1073efb4cc1148f3de477442cd821b52a6b437180f2ec"
+    },
+    "ship-5": {
+      "file": "ship-5.flac",
+      "text": "وموسى قاله: متآخذنيش… نسيت.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "09386398a490bda1",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "ccc3fde51f290887cf0444054f0a67fc993c3ef6a82bb18b606af34f8fb60189"
+    },
+    "ship-bird": {
+      "file": "ship-bird.flac",
+      "text": "وعصفور وقف على طرف السفينة… ونَقَر في البحر.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "5a1f3063e51e2654",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "ebbaeb9801633e1ae6b35e2d85d206876fc8388602fd943920f245ddcadc6bd3"
+    },
+    "ship-bridge": {
+      "file": "ship-bridge.flac",
+      "text": "السر؟ الخَضِر قاله بعدين:",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "9a9b3d2a4fc59b9e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "38688de7034119160bab33a96227d1bafac002e7040abf50ee12a068b916fd93"
+    },
+    "ship-hadith": {
+      "file": "ship-hadith.flac",
+      "text": "والنبي صلى الله عليه وسلم حكى إن الخَضِر قال: يَا مُوسَى، مَا نَقَصَ عِلْمِي وَعِلْمُكَ مِنْ عِلْمِ اللَّهِ إِلاَّ مِثْلَ مَا نَقَصَ هَذَا الْعُصْفُورُ بِمِنْقَارِهِ مِنَ الْبَحْرِ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "f9987711d5eb377a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "4df3adf6cff459794b99c397ba7b1137611907136dcdceb7c86e31c8f99fdddb"
+    },
+    "ship-lesson-1": {
+      "file": "ship-lesson-1.flac",
+      "text": "العيب اللي في السفينة… هو اللي حماها.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "d2971756e6aea6d8",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "e2da3583e92feef0d50be1fe58cdc619e53e2749c25ce02859d834e9f1dfcdaf"
+    },
+    "ship-lesson-2": {
+      "file": "ship-lesson-2.flac",
+      "text": "خسارة صغيرة… حمتهم من خسارة أكبر. والحكمة هنا… اتْكَشَفِت بسرعة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "f24a077974504eab",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "1d02edf49c45f03f2af1848a15e9e7ee7d787df7340d7b0d4f5203aa16a7627f"
+    },
+    "ship-life-1": {
+      "file": "ship-life-1.flac",
+      "text": "زي لما القطر يفوتك… وتتعصب إنك اتأخرت.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "5125402c12e70815",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "0f7fb694030903c4778ab2e06a8761513c86e35a0a53bafe9e1ea0f154089b71"
+    },
+    "ship-life-2": {
+      "file": "ship-life-2.flac",
+      "text": "وبعد ساعة تعرف… إنه عطل في نص الطريق.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "71e4b3820376388a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "495bdadc559f5317e773bad62b421b9485d53cf14a6b2304bb1a9e45d0a2832f"
+    },
+    "ship-outro": {
+      "file": "ship-outro.flac",
+      "text": "بس مش كل حكمة بتبان بسرعة… تابعنا عشان تعرف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "0fe7fbac859c82d9",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "a5d49a7f4f5968490f474a26cea93f504ed94234e35af40f6c094d64a5a3c858"
+    },
+    "wall-1": {
+      "file": "wall-1.flac",
+      "text": "موسى والخَضِر دخلوا قرية… طلبوا من أهلها أكل… ورفضوا يِضَيّفوهم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "24968c0ea224e053",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "88af242ba8a2ea33e8cfde77aba2006ae7fa9b0c5f975fde4935198968b341c3"
+    },
+    "wall-2": {
+      "file": "wall-2.flac",
+      "text": "ولقوا جدار عايز يقع… والخَضِر صلّحه!",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "5bf193d6961ff427",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "16d5b23a1e35d889b7e5436f0a9b1373497d5c5f41f6bcf0e226eb360f58273b"
+    },
+    "wall-3": {
+      "file": "wall-3.flac",
+      "text": "موسى قاله: لو كنت عايز… كنت خدت عليه أجر.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "15770932756213bb",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "7468fc8ec20e76441c3e369d0e5ea0b9cb1bd94d45d9b72d1bfa7072482ba930"
+    },
+    "wall-bridge": {
+      "file": "wall-bridge.flac",
+      "text": "وهنا افترقوا… بس قبل ما يمشي… الخَضِر قاله السر:",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "9063ab5a4bd1d34d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "ba642dbcec381a79053809fa7074e2d902d7fc1baa1b0c2ce7498e9d07b45c7d"
+    },
+    "wall-lesson-1": {
+      "file": "wall-lesson-1.flac",
+      "text": "كنز مستخبي تحت جدار… مستني الولدين يكبروا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "42666e510f2dc00d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "56efcd42925e2d691d917041d00803590199380ddb1f164c641aa4cf02dc5387"
+    },
+    "wall-lesson-2": {
+      "file": "wall-lesson-2.flac",
+      "text": "الخير ممكن يكون مستخبي… ومستني وقته. والحكمة هنا… اتْكَشَفِت بعد سنين.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c12b9c37773c4a72",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "c3b8abc7092f7db57bfa8403ad3510bea15cf9a4e2e72800a925f213aeb1a934"
+    },
+    "wall-life-1": {
+      "file": "wall-life-1.flac",
+      "text": "زي لما تترفض من شغل كنت بتحلم بيه… وتفضل زعلان سنين.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "f7fbac4cc49ee824",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "e88912b30d7522e9bb6c9467bec9e0130abbb455beff0df5e15137e75b51d2e8"
+    },
+    "wall-life-2": {
+      "file": "wall-life-2.flac",
+      "text": "وبعدين تفهم… إن الرفض ده هو اللي وصلك للي إنت فيه دلوقتي.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "7e1bcf6d751765e3",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-08",
+      "sha256": "9d50f3d8674121d5676dc43cd73a471d9c7e234f159a9c7e1a8e04d6ac5dbf7c"
+    }
+  }
+}

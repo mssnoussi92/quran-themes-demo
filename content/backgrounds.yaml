@@ -8,7 +8,8 @@ backgrounds:
   plain:
     description: Fond uni clair, pour le narrateur face caméra
   # Histoire de Moussa et al-Khadir (épisode khidr, 18:60-82) : des lieux et des choses, jamais une
-  # personne (un prophète n'est jamais dessiné ; le garçon n'est jamais montré).
+  # personne (un prophète n'est jamais dessiné ; le garçon n'est jamais montré). Validés par le
+  # propriétaire le 2026-11-08 (planche docs/backgrounds.png et brouillons).
   confluence:
     description: Là où les deux mers se rencontrent, deux eaux de deux couleurs, la plage, le rocher et le panier du poisson (Bukhari 122)
   sea-boat:
