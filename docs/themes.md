@@ -26,6 +26,41 @@ Tenu à jour par le skill `new-theme` (étape 1). Les plans détaillés des épi
   que khidr. Passe avant الخشوع. **Tout validé par le propriétaire le 2026-11-08** (lecture et prises à l'écoute
   des brouillons). Plan : `docs/design.md`.
 
+## Histoires à traiter plus tard (recherche du 2026-11-08, gardée à la demande du propriétaire)
+
+Même format que `khidr` et `qarnayn` : chaque événement raconté en égyptien puis son verset récité (Tawfiq
+As-Sayegh), un exemple de vie après chaque leçon, une promesse dans l'accroche ; jamais un prophète ni une personne
+connue dessinés (cartes de nom, fonds de lieux). Rien n'est commencé ni choisi : le propriétaire choisira l'ordre.
+Durées de récitation de Tawfiq d'après les repères de mp3quran.net (khidr et qarnayn : environ 4 min de versets chacun).
+
+**Finir les quatre histoires d'Al-Kahf** (série complète pour la page, le vendredi), proposé en premier :
+
+| Histoire | Passage | Récitation | Angle, accroche | Événements, sources, visuels |
+| --- | --- | --- | --- | --- |
+| Les gens de la caverne (أصحاب الكهف) | 18:9-26 | 6,2 min (choisir environ 4 min) | Garder sa foi quand tout le monde autour pense autrement (« لما تكون الوحيد اللي بيصلي في الشغل ») | La fuite des jeunes, le sommeil de 309 ans, le réveil et la pièce de monnaie, la découverte ; leur nombre n'est pas tranché par le Coran, n'en rien dire ; 18:23-24 déjà cité dans qarnayn ; la grotte, le soleil qui s'en écarte, le chien (dessinable), jamais les jeunes |
+| L'homme aux deux jardins (صاحب الجنتين) | 18:32-44 | 3,1 min | La richesse qui rend arrogant ; « ما شاء الله لا قوة إلا بالله » (18:39) | Les deux jardins, « je ne pense pas que cela périsse jamais », le conseil de l'ami, le jardin détruit ; Bukhari 6384 (« لا حول ولا قوة إلا بالله كنز من كنوز الجنة ») possible |
+
+**Autres histoires du Coran :**
+
+| Histoire | Passage | Récitation | Angle | Remarques |
+| --- | --- | --- | --- | --- |
+| Younous dans la baleine | 21:87-88, 37:139-148 | 1,5 min | Au fond du noir, et en faute : « إني كنت من الظالمين » | Tirmidhi 3505 (« دعوة ذي النون… », al-Albani : Sahih, vérifié dans hadith-api) ; court et fort ; Younous jamais dessiné (la mer, la baleine en fond) |
+| Les propriétaires du jardin (أصحاب الجنة) | 68:17-33 | 1,9 min | L'avarice et l'intention : récolter à l'aube pour ne rien laisser aux pauvres, le jardin brûlé dans la nuit | Très visuel, aucun personnage nommé |
+| Qaroun | 28:76-83 | 3,0 min | « إنما أوتيته على علم عندي », l'inverse de Dhul-Qarnayn (« هذا رحمة من ربي ») ; ceux qui l'enviaient remercient Dieu | La terre l'engloutit ; fin sur 28:83 ; jamais dessiné |
+| Soulayman : la fourmi, la huppe | 27:15-44 | 8,4 min (choisir : 27:18-19, la huppe, « هذا من فضل ربي ليبلوني أأشكر أم أكفر ») | La gratitude | Proche de qarnayn (la force) ; la fourmi et la huppe sont dessinables |
+| Youssouf | sourate 12 | environ 30 min en cinq parties (le rêve et le puits 12:4-20, 4,6 min ; la maison d'al-Aziz 12:21-35, 4,9 ; la prison 12:36-57, 7,5 ; les frères en Égypte 12:58-82, 7,6 ; la fin 12:83-101, 5,3) | L'envie, la pureté, la prison, le pardon (« لا تثريب عليكم اليوم ») | Une série de 4 à 5 épisodes ; 12:86 déjà cité dans la patience |
+| Les gens de la fosse (أصحاب الأخدود) | 85:1-10 | 1,0 min | Tenir bon ; la vraie victoire ne se voit pas toujours | Avec Muslim 3005 (le garçon, le roi, le moine), fort mais violent (le feu) : extraits choisis |
+| La vache des fils d'Israël | 2:67-73 | 2,0 min | Multiplier les questions pour éviter d'obéir | Plus léger |
+
+**Histoires racontées par le Prophète ﷺ** (pas de verset après chaque événement : la preuve est le hadith lu par
+Abu Malik, en extraits ; nombres vérifiés dans hadith-api) : les trois hommes de la grotte et le rocher (Bukhari 2272,
+les bonnes actions sincères) ; le lépreux, le chauve et l'aveugle (Bukhari 3464, la reconnaissance mise à
+l'épreuve) ; l'homme qui avait tué 99 personnes (Bukhari 3470, ne jamais désespérer, changer d'entourage).
+
+Ordre proposé : les gens de la caverne, l'homme aux deux jardins, Younous, puis les propriétaires du jardin ou
+Qaroun, Youssouf plus tard en série. الخشوع peut passer avant, après ou entre deux (ses sources sont déjà au
+registre, proposées).
+
 ## Choisis par le propriétaire (2026-11-07), dans l'ordre
 
 Le propriétaire a partagé des fiches de thèmes (الخشوع، الخوف والشعور بالعجز، فخ المقارنات، التوبة والخجل
