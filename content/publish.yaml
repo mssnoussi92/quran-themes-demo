@@ -19,6 +19,7 @@ hashtags:
   hadith: ["#Hadith", "#حديث"]
   reciters:
     alafasy: ["#Alafasy", "#مشاري_العفاسي"]
+    sayegh: ["#TawfiqAsSayegh", "#توفيق_الصايغ"]
 
 platforms:
   facebook: { max_hashtags: 8 }

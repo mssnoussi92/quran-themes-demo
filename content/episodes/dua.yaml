@@ -174,7 +174,7 @@ scenes:
     role: promise
     reel: dua-01
     source: quran.40.60
-    audio: recitation          # vraie récitation (Alafasy), jamais de synthèse
+    audio: recitation          # vraie récitation (content/policy.yaml), jamais de synthèse
     visual:
       template: ayah-card
       highlight: words

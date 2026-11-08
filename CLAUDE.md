@@ -39,6 +39,7 @@ content/
   pronunciation.yaml     mots que la voix dit mal et l'écriture qui les fait bien dire (say_ar), décisions du propriétaire
   characters.yaml        catalogue fermé des personnages : apparence (pièces Open Peeps), poses -> corps, humeurs
   backgrounds.yaml       catalogue fermé des fonds de la scène (salle d'attente, rue, uni ; lieux de l'histoire de Moussa et al-Khadir), planche docs/backgrounds.png
+  recitations/<récitateur>.json  coupes des versets cités dans les sourates du récitateur et temps des mots (recitation.py)
   sources/*.yaml         registre des sources (ids stables, statut proposed/validated/excluded)
   audio/<épisode>/       prises de voix validées par le propriétaire (FLAC + takes.json, écrits par build.py --lock)
   episodes/*.yaml        scripts d'épisodes, découpés en scènes, et leurs textes de publication (`publish`)
@@ -48,7 +49,8 @@ scripts/validate.py      vérification schémas + règles ci-dessus
 scripts/session-start.sh hook SessionStart (cloud uniquement)
 tools/tts/say.py         synthèse : un texte -> WAV (moteurs silma | voicetut)
 tools/sources/fetch.py   remplit text_ar / text_en du registre (quran.com v4, hadith-api) + origin
-tools/audio/build.py     audio d'un épisode -> build/audio/<épisode>/ : récitation (quran.com, temps des mots) + narration VoiceTut
+tools/audio/build.py     audio d'un épisode -> build/audio/<épisode>/ : récitation (verset coupé dans la sourate du récitateur) + narration VoiceTut
+tools/audio/recitation.py  où est chaque verset cité dans le fichier de sa sourate (Tawfiq As-Sayegh) et le temps de chaque mot -> content/recitations/
 tools/audio/listen.py    écoute par Whisper : texte, temps des mots, segments, enveloppe sonore ; contrôle des prises, débuts de morceaux
 requirements/            dépendances Python par moteur (un venv par moteur)
 infra/claude-cloud-setup.sh  script de setup de l'environnement cloud (copié dans l'UI)
@@ -169,4 +171,4 @@ Procédures à suivre dans toute session :
 - **Signature** (demande du propriétaire, 2026-11-07) : le nom de la page (`handle` de `content/publish.yaml`, « @quran_words_daily ») sur chaque image des vidéos, comme quran-reels : petit, en haut à droite de la zone sûre, sur une pastille sombre légère (lisible sur les fonds clairs), immobile pendant les transitions (`Handle`, `video/src/Video.tsx`). Pas sur la miniature : YouTube affiche déjà le nom de la chaîne à côté.
 - **Rappel « j'aime / abonne-toi »** (demande du propriétaire, 2026-11-07) : seulement dans l'épisode entier en 16:9 (YouTube), une pastille animée de 4,4 s (`SubscribeReminder`, icônes Material Icons, Apache 2.0) : un curseur touche j'aime, « اشترك · Subscribe » (qui devient « مشترك ✓ ») et la cloche. Deux passages (`reminderStarts`, `video/src/scenes.ts`) : à la fin du premier reel et sur la dernière carte ; jamais par-dessus un verset ou un hadith (un passage qui en couvrirait un est retiré).
 - **Licence** : MIT, comme quran-reels (`LICENSE`) ; Remotion garde sa propre licence (gratuite pour un particulier). Textes cités et récitations : à leurs éditeurs (README).
-- **Récitateur** : le propriétaire garde Alafasy (2026-11-06), en connaissant le risque sur la page (quran-reels : 93:1-11 d'Alafasy coupée par Rights Manager sur Facebook le 2026-11-05). Alternative prête si besoin : Minshawi murattal (quran.com, récitation 9, temps des mots disponibles).
+- **Récitateur** : **Tawfiq As-Sayegh** dans tous les épisodes (demande du propriétaire, 2026-11-08 : aucune revendication de droits constatée sur ses récitations, alors qu'Alafasy a vu 93:1-11 coupée par Rights Manager sur Facebook le 2026-11-05, quran-reels). Il n'est pas sur quran.com : mp3quran.net a un fichier par sourate (comme dans quran-reels). `tools/audio/recitation.py` trouve chaque verset cité dans sa sourate (repères de mp3quran.net, coupe au moment le plus calme, vérifiée par Whisper : tous les mots, le premier et le dernier surtout, rien de l'ayah voisine) et le temps de chaque mot (surlignage, sous-titres) ; `content/recitations/sayegh.json` garde seulement ces temps, `build.py` télécharge la sourate (`build/recitations/`, jamais commité) et coupe le verset. Avant : Alafasy (quran.com, récitation 7, un fichier par ayah avec les temps des mots), garde possible (`reciter: alafasy` dans `content/policy.yaml`).

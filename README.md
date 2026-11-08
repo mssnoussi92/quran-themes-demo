@@ -30,7 +30,8 @@ Voice test: run the **voice-test** workflow from the Actions tab. The MP3 files 
 ## Credits
 
 - [SILMA TTS](https://github.com/SILMA-AI/silma-tts) (Apache 2.0) and [VoiceTut-TTS](https://huggingface.co/mohammedaly22/VoiceTut-TTS) (Apache 2.0) for speech synthesis.
-- [Quran.com API](https://api-docs.quran.com) for Quran text, translation and recitation timings.
+- [Quran.com API](https://api-docs.quran.com) for Quran text and translation.
+- [mp3quran.net](https://www.mp3quran.net) for the recitation of Tawfiq As-Sayegh (one file per surah) and its ayah timings.
 - [hadith-api](https://github.com/fawazahmed0/hadith-api) for hadith texts and grades.
 - [Amiri Quran and Amiri](https://github.com/aliftype/amiri) (Khaled Hosny) and [Lora](https://github.com/cyrealtype/Lora-Cyrillic), under the SIL Open Font License (`video/public/fonts/`).
 - [Open Peeps](https://openpeeps.com) by Pablo Stanley (CC0), assembled with [react-peeps](https://github.com/CeamKrier/react-peeps) (MIT), for the character kit (`docs/characters.png`).

@@ -62,7 +62,7 @@ export type Media = {
   words: WordTiming[];
   /** Narration: its phrases (cut after « ، … . ؟ : ») with their start, read from the take. */
   phrases: PhraseTiming[];
-  /** "Recitation: Mishari Rashid al-Afasy" under a verse. */
+  /** "Recitation: Tawfiq As-Sayegh" under a verse. */
   credit: string | null;
 };
 

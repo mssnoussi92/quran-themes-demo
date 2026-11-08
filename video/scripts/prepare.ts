@@ -27,7 +27,7 @@ const PUBLIC = join(ROOT, "video", "public");
 const AUDIO = join(ROOT, "build", "audio");
 
 // Reciters of content/policy.yaml, as credited on screen.
-const RECITERS: Record<string, string> = { alafasy: "Mishari Rashid al-Afasy" };
+const RECITERS: Record<string, string> = { alafasy: "Mishari Rashid al-Afasy", sayegh: "Tawfiq As-Sayegh" };
 
 // Silence after each line, before the transition (Video.tsx adds the transition, during which nobody
 // speaks): with the silence kept around each synthetic line (tools/audio/build.py), the gap between

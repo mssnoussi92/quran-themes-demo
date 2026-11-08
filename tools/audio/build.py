@@ -6,8 +6,12 @@ scene, what is heard: `spoken_ar` for the narration (a hadith's words come from 
 verse for a recitation. Writes build/audio/<episode>/<scene>.(mp3|wav) and manifest.json; run
 `npm run data` again afterwards and the compositions use the real lengths.
 
-  recitation  quran.com v4: the reciter's file for the verse and the time of each word
-              (`segments`), reciter from content/policy.yaml. Never synthesised.
+  recitation  the reciter of content/policy.yaml (`reciter`). Never synthesised.
+              quran.com v4 (Alafasy): the reciter's file for the verse and the time of each word
+              (`segments`). One file per surah (Tawfiq As-Sayegh, mp3quran.net): the verse is cut out
+              of its surah's file where content/recitations/<reciter>.json says, which also gives the
+              time of each word (tools/audio/recitation.py, checked by Whisper); the surah files are
+              downloaded once into build/recitations/<reciter>/, never committed.
   tts         tools/tts/say.py with VoiceTut (Egyptian Arabic) in its own venv. VoiceTut never says a
               line the same way twice, so the takes the owner listened to and approved are locked
               in content/audio/<episode>/ (FLAC + takes.json, `--lock <owner>`, only on the owner's
@@ -53,8 +57,10 @@ QURAN_API = "https://api.quran.com/api/v4"
 VERSE_AUDIO = "https://verses.quran.com"
 USER_AGENT = "quran-themes-demo/0.1 (+https://github.com/mssnoussi92/quran-themes-demo)"
 
-# Reciter in content/policy.yaml -> quran.com recitation id.
+# Reciter in content/policy.yaml -> quran.com recitation id (one file per ayah, with word times).
 RECITATIONS = {"alafasy": 7}
+# Reciters with one file per surah: content/recitations/<reciter>.json (tools/audio/recitation.py).
+CUTS = ROOT / "content" / "recitations"
 
 
 def get(url: str, attempts: int = 5) -> bytes:
@@ -116,9 +122,9 @@ def recitation(scene: dict, reciter: str, out_dir: Path) -> dict:
     source = scene["source"]
     if not source or source["type"] != "ayah":
         sys.exit(f"error: scene {scene['id']}: audio: recitation needs a verse")
-    if reciter not in RECITATIONS:
-        sys.exit(f"error: reciter '{reciter}' has no quran.com recitation id in RECITATIONS")
     key = source["id"].removeprefix("quran.").replace(".", ":")
+    if reciter not in RECITATIONS:
+        return surah_cut(scene, reciter, key, out_dir)
     api = f"{QURAN_API}/recitations/{RECITATIONS[reciter]}/by_ayah/{key}?fields=segments"
     files = json.loads(get(api))["audio_files"]
     if len(files) != 1 or files[0]["verse_key"] != key:
@@ -130,6 +136,40 @@ def recitation(scene: dict, reciter: str, out_dir: Path) -> dict:
     words = [{"position": pos, "start": start / 1000, "end": end / 1000} for _, pos, start, end in files[0]["segments"]]
     return {"kind": "recitation", "file": dest.name, "seconds": seconds(dest), "source": source["id"],
             "reciter": reciter, "origin": {"api": api, "audio": url}, "words": words}
+
+
+def verse_cut(reciter: str, key: str) -> tuple[dict, str]:
+    """Where the verse is in its surah's file (content/recitations/<reciter>.json), and that file's URL."""
+    path = CUTS / f"{reciter}.json"
+    if not path.is_file():
+        sys.exit(f"error: reciter '{reciter}' has neither a quran.com recitation id (RECITATIONS) nor {path}")
+    cuts = json.loads(path.read_text(encoding="utf-8"))
+    entry = cuts["verses"].get(key)
+    if not entry:
+        sys.exit(f"error: no cut of {key} in {path.relative_to(ROOT)}: run "
+                 f"tools/audio/recitation.py --reciter {reciter} {key}")
+    return entry, cuts["surah_url"].format(surah=int(key.split(":")[0]))
+
+
+def surah_cut(scene: dict, reciter: str, key: str, out_dir: Path) -> dict:
+    """The verse cut out of the reciter's file of the whole surah (downloaded once)."""
+    entry, url = verse_cut(reciter, key)
+    surah = ROOT / "build" / "recitations" / reciter / url.rsplit("/", 1)[1]
+    if not surah.is_file():
+        surah.parent.mkdir(parents=True, exist_ok=True)
+        print(f"recitation {scene['id']}: downloading {url}", flush=True)
+        download(url, surah)
+    dest = out_dir / f"{scene['id']}.mp3"
+    length = entry["end"] - entry["start"]
+    # atrim + asetpts: the clip's own clock starts at 0, so the fades fall at its two ends.
+    cut = (f"atrim=start={entry['start']:.3f}:end={entry['end']:.3f},asetpts=PTS-STARTPTS,"
+           f"afade=t=in:d=0.02,afade=t=out:st={max(0.0, length - 0.04):.3f}:d=0.04")
+    subprocess.run([ffmpeg_exe(), "-loglevel", "error", "-y", "-i", str(surah), "-af", cut, "-ac", "1",
+                    "-codec:a", "libmp3lame", "-qscale:a", "2", str(dest)], check=True)
+    words = [{"position": pos, "start": start, "end": end} for pos, start, end in entry["words"]]
+    return {"kind": "recitation", "file": dest.name, "seconds": seconds(dest), "source": scene["source"]["id"],
+            "reciter": reciter, "origin": {"audio": url, "start": entry["start"], "end": entry["end"]},
+            "words": words}
 
 
 # Pacing of the synthetic voice. VoiceTut leaves ~0.2 s of silence before a line, ~0.3 s after it,
@@ -435,8 +475,12 @@ def main() -> int:
             continue
         if scene["audio"] == "recitation":
             prev = old.get(sid)
+            key = scene["source"]["id"].removeprefix("quran.").replace(".", ":")
+            same_cut = reciter in RECITATIONS or (prev and prev.get("origin", {}).get("start") ==
+                                                  verse_cut(reciter, key)[0]["start"] and prev["origin"].get("end") ==
+                                                  verse_cut(reciter, key)[0]["end"])
             if prev and prev.get("source") == scene["source"]["id"] and prev.get("reciter") == reciter \
-                    and (out_dir / prev["file"]).is_file():
+                    and same_cut and (out_dir / prev["file"]).is_file():
                 scenes[sid] = prev
             else:
                 scenes[sid] = recitation(scene, reciter, out_dir)

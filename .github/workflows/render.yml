@@ -115,6 +115,15 @@ jobs:
           path: ~/.cache/huggingface
           key: hf-voicetut-${{ hashFiles('requirements/voicetut.txt') }}
 
+      # The reciter's files of whole surahs (Tawfiq As-Sayegh, mp3quran.net), each verse cut out of them
+      # where content/recitations/<reciter>.json says: downloaded once (surah 2 is 110 MB).
+      - name: Cache surah recitations
+        uses: actions/cache@v4
+        with:
+          path: build/recitations
+          key: recitations-${{ hashFiles('content/recitations/**') }}
+          restore-keys: recitations-
+
       # Lines already synthesised with the same text and voice are reused (tools/audio/build.py).
       - name: Cache episode audio
         uses: actions/cache@v4
