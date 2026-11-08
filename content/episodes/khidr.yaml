@@ -393,7 +393,7 @@ scenes:
     narration:
       ar: "موسى والخضر كملوا طريقهم… وقابلوا غلام… والخضر قتله."
       en: "Moses and al-Khidr went on their way… they met a boy… and al-Khidr killed him."
-    say_ar: "موسى والخَضِر كملوا طريقهم… وقابلوا غُلام… والخَضِر قَتَله."
+    say_ar: "موسى والخَضِر كملوا طريقهم… وقابلوا غُلام… والخَضِر قَتَلُه."
     visual:
       template: scene
       background: road
