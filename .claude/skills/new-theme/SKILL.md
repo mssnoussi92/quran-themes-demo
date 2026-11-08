@@ -42,6 +42,16 @@ translation, the final video. Never mark any of them done yourself.
      every event first and then every secret (`whole`, step 3). The narration tells the story from
      the Qur'an and the authentic hadith only (no names or details introduced by « يزعمون », no
      israiliyyat), the verses prove it; never draw a prophet, never show a killing.
+     - **After each event told, its verse recited** (owner's rule, 2026-11-08): the narration says
+       the event in Egyptian, as close as it can to the verse's own words (« مش قلتلك إنك مش هتقدر
+       تصبر معايا؟ » for 18:72), then « قال ربنا سبحانه وتعالى: » and the verses of that event, one
+       intro for verses that follow each other (18:71-73). The synthetic voice never says the
+       Quran's text itself: a dialect rendering, then the reciter. Reels grow to about 2 min.
+     - **A life example after each lesson** (owner's request, 2026-11-08): a typical scene of
+       everyday life and feeling, two lines on a catalog character (« زي لما القطر يفوتك… »,
+       worried, then « وبعد ساعة تعرف… », smiling), presented as typical, never as a true story.
+     - A promise at the end of the hook, in Egyptian (« قصة… هتخليك تبص لكل ابتلاء عدّى عليك بعين
+       تانية »): what the story changes for the viewer, where viewers decide to stay.
 
 2. **Sources.** For each claim, a verse or a hadith, never a summary from memory.
    - Verses: quran.ai MCP (`search_quran`, `fetch_word_concordance`; read its grounding rules
