@@ -1,6 +1,6 @@
 ---
 name: new-theme
-description: Turn a new theme (patience, repentance, gratitude, trust in God...) into an episode of quran-themes-demo, from sources to videos - registry entries for the owner to validate, an outline built on misconceptions, a hook per reel (write-hook skill), Egyptian narration with English subtitles, checked takes (narration-takes skill), real hadith readings where they exist (find-hadith-recording skill), publication texts (title, description, hashtags), draft renders, a PR, then the release render of the whole episode (16:9 and 9:16) and its reels, with the texts to paste in the release notes. Use when the owner asks for a new theme or episode, or for the next parts of one.
+description: Turn a new theme (patience, repentance, gratitude, trust in God...) into an episode of quran-themes-demo, from sources to videos - registry entries for the owner to validate, an outline in the format chosen with the owner (choose-format skill, docs/formats.md), a hook per reel (write-hook skill), Egyptian narration with English subtitles, checked takes (narration-takes skill), real hadith readings where they exist (find-hadith-recording skill), publication texts (title, description, hashtags), draft renders, a PR, then the release render of the whole episode (16:9 and 9:16) and its reels, with the texts to paste in the release notes. Use when the owner asks for a new theme or episode, or for the next parts of one.
 ---
 
 # New theme
@@ -21,10 +21,14 @@ translation, the final video. Never mark any of them done yourself.
    ffmpeg and pass a numpy array); every quote on screen checked against `content/policy.yaml`. If
    the hook uses a technique `write-hook` lacks, add it there.
 
-1. **Angle.** One theme, one promise, and 3 misconceptions people really hold about it (the du'a
-   episode: "asking means refusing destiny", "everything is written, du'a changes nothing", "I was
-   not answered"). Each misconception becomes a reel and is refuted by at least one source. End
-   with a conclusion. If a misconception has no source in the policy, drop it.
+1. **Format, then angle.** Choose the format first: skill `choose-format` (catalog `docs/formats.md`:
+   misconceptions, story with suspense or in order, collection, one text explained, two paths,
+   practical). The owner decides; write `format:` in the episode and the decision in
+   `docs/themes.md`. Then the angle in that format. **Misconceptions**: one theme, one promise, and 3
+   misconceptions people really hold about it (the du'a episode: "asking means refusing destiny",
+   "everything is written, du'a changes nothing", "I was not answered"). Each misconception becomes a
+   reel and is refuted by at least one source. End with a conclusion. If a misconception has no
+   source in the policy, drop it.
    - The next themes and their order are in `docs/themes.md` (the owner's ideas, what was decided,
      the outlines already approved): start from there, and keep it up to date.
    - When the owner shares theme ideas (2026-11-07: study cards « محور الموضوع / ما الذي ستتعلمه »
@@ -39,9 +43,10 @@ translation, the final video. Never mark any of them done yourself.
      waiting » used Muslim 2664: a tawakkul reel on effort takes Tirmidhi 2517 and 2344 instead).
    - A **story** (khidr, 2026-11-08: Musa and al-Khidr, 18:60-82) needs no misconceptions: one event
      and its meaning per reel, in the order of the Qur'an, and the whole episode told with suspense,
-     every event first and then every secret (`whole`, step 3). The narration tells the story from
-     the Qur'an and the authentic hadith only (no names or details introduced by « يزعمون », no
-     israiliyyat), the verses prove it; never draw a prophet, never show a killing.
+     every event first and then every secret (`whole`, step 3): format `story-suspense`; a story
+     with no secret to keep is told in order, `story-linear` (qarnayn). The narration tells the
+     story from the Qur'an and the authentic hadith only (no names or details introduced by
+     « يزعمون », no israiliyyat), the verses prove it; never draw a prophet, never show a killing.
      - **After each event told, its verse recited** (owner's rule, 2026-11-08): the narration says
        the event in Egyptian, as close as it can to the verse's own words (« مش قلتلك إنك مش هتقدر
        تصبر معايا؟ » for 18:72), then « قال ربنا سبحانه وتعالى: » and the verses of that event, one
@@ -96,13 +101,25 @@ translation, the final video. Never mark any of them done yourself.
      source and a figure without source (its "citations" table). Each one goes through the registry.
 
 3. **Outline.** A table like the one in `docs/design.md`: number, role, content, source, reel.
-   The whole episode (16:9 and 9:16, 3 to 5 min) plays every scene in order; each reel is one idea,
-   35 to 60 s, and stands alone. As in dua:
+   The whole episode (16:9 and 9:16) plays every scene in order (or its `whole` order); each reel is
+   one idea and stands alone. **Its length follows its content** (owner's decision, 2026-11-08:
+   quality before duration; misconceptions reels ran 0:41-1:09, story reels 1:14-2:12): the only
+   hard limit is Instagram's 3 min. Past 90 s, propose a relaunch in the middle of the reel, a
+   one-word question on a card (« وبعدين؟ »), never a cut for length alone.
+   - Tag each scene with its role in the format (`docs/formats.md`): `event` for what happened (then
+     its verse or hadith card), `lesson` for the lesson drawn (your own line: mark it for the
+     owner), `example` for the life example after it. `validate.py` warns, on reels not validated
+     yet, when an event has no verse or hadith before the lesson, a lesson no example, or the reel
+     misses a beat of its format: fix each warning or tell the owner why it stays.
+
+   Misconceptions format, as in dua:
    - reel 1: the hook (write-hook) and the theme's promise, ending on an honest open loop (« three
      wrong ideas… the first one is next »);
    - one reel per misconception: a mirror line on a scene, the recurring narrator (`narrator`,
      `open-hands`, background `plain`, `talking: true`) saying « أول فكرة غلط… », a title card with
-     the misconception, the evidence, a one-line takeaway, the open loop to the next reel;
+     the misconception, the evidence, a one-line takeaway (`lesson`), a life example (`example`, two
+     lines on a catalog character, added on 2026-11-08 as in the stories), the open loop to the next
+     reel;
    - a conclusion reel: the closing verse, then a recap of the reels in one line (four pieces on a
      title card) and a last line that loops back to the hook;
    - every verse is introduced by « قال ربنا سبحانه وتعالى: » (the owner's formula; the locked take

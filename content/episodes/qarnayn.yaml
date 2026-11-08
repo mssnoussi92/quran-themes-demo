@@ -14,6 +14,7 @@
 # marquées « Ligne de l'IA ».
 episode: qarnayn
 title: { ar: "ذو القرنين", en: "Dhul-Qarnayn" }
+format: story-linear   # docs/formats.md (skill choose-format)
 narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
 # Textes de publication : faits des répliques du script, validés par le propriétaire le 2026-11-08. Le reste : video/scripts/publish.ts.
 publish:
@@ -120,7 +121,7 @@ scenes:
       template: title-card
   # Promesse : ce que l'histoire change pour toi.
   - id: hook-4
-    role: hook
+    role: promise
     reel: qarnayn-01
     audio: tts
     narration:
@@ -130,7 +131,7 @@ scenes:
       template: title-card
   # 18:83 raconté, puis récité.
   - id: who-1
-    role: evidence
+    role: event
     reel: qarnayn-01
     audio: tts
     mentions: ["ذو القرنين", "النبي ﷺ"]
@@ -169,7 +170,7 @@ scenes:
       template: title-card
   # 18:84-85 racontés, puis récités.
   - id: given
-    role: evidence
+    role: event
     reel: qarnayn-01
     audio: tts
     narration:
@@ -205,7 +206,7 @@ scenes:
       highlight: words
   # Ligne de l'IA.
   - id: given-lesson
-    role: evidence
+    role: lesson
     reel: qarnayn-01
     audio: tts
     narration:
@@ -215,7 +216,7 @@ scenes:
       template: title-card
   # Exemple de vie (scène type) : le don, et le travail.
   - id: given-life-1
-    role: evidence
+    role: example
     reel: qarnayn-01
     audio: tts
     narration:
@@ -227,7 +228,7 @@ scenes:
       characters:
         - { id: amir, pose: standing, mood: worried, talking: false }
   - id: given-life-2
-    role: evidence
+    role: example
     reel: qarnayn-01
     audio: tts
     narration:
@@ -252,7 +253,7 @@ scenes:
   # ---- qarnayn-02 : le couchant et le levant, la justice (18:86-91) ---------------------------------------
   # 18:86 raconté, puis récité.
   - id: west-1
-    role: evidence
+    role: event
     reel: qarnayn-02
     audio: tts
     narration:
@@ -263,7 +264,7 @@ scenes:
       template: scene
       background: sunset-spring
   - id: west-2
-    role: evidence
+    role: event
     reel: qarnayn-02
     audio: tts
     narration:
@@ -290,7 +291,7 @@ scenes:
       highlight: words
   # 18:87-88 racontés, puis récités.
   - id: west-3
-    role: evidence
+    role: event
     reel: qarnayn-02
     audio: tts
     narration:
@@ -299,7 +300,7 @@ scenes:
     visual:
       template: title-card
   - id: west-4
-    role: evidence
+    role: event
     reel: qarnayn-02
     audio: tts
     narration:
@@ -334,7 +335,7 @@ scenes:
       highlight: words
   # Ligne de l'IA.
   - id: west-lesson
-    role: evidence
+    role: lesson
     reel: qarnayn-02
     audio: tts
     narration:
@@ -345,7 +346,7 @@ scenes:
       template: title-card
   # Exemple de vie (scène type) : l'autorité au travail ou à la maison.
   - id: west-life-1
-    role: evidence
+    role: example
     reel: qarnayn-02
     audio: tts
     narration:
@@ -357,7 +358,7 @@ scenes:
       characters:
         - { id: salma, pose: standing, mood: calm, talking: false }
   - id: west-life-2
-    role: evidence
+    role: example
     reel: qarnayn-02
     audio: tts
     narration:
@@ -370,7 +371,7 @@ scenes:
         - { id: salma, pose: standing, mood: smiling, talking: false }
   # 18:89-91 racontés, puis récités.
   - id: east-1
-    role: evidence
+    role: event
     reel: qarnayn-02
     audio: tts
     narration:
@@ -415,7 +416,7 @@ scenes:
       highlight: words
   # Ligne de l'IA, d'après 18:91 (« وقد أحطنا بما لديه خبرا »).
   - id: east-lesson
-    role: evidence
+    role: lesson
     reel: qarnayn-02
     audio: tts
     narration:
@@ -438,7 +439,7 @@ scenes:
   # ---- qarnayn-03 : le barrage demandé, l'argent refusé (18:92-95) ----------------------------------------
   # 18:92-93 racontés, puis récités.
   - id: dam-1
-    role: evidence
+    role: event
     reel: qarnayn-03
     audio: tts
     narration:
@@ -475,7 +476,7 @@ scenes:
       highlight: words
   # 18:94-95 racontés, puis récités.
   - id: dam-2
-    role: evidence
+    role: event
     reel: qarnayn-03
     audio: tts
     narration:
@@ -484,7 +485,7 @@ scenes:
     visual:
       template: title-card
   - id: dam-3
-    role: evidence
+    role: event
     reel: qarnayn-03
     audio: tts
     narration:
@@ -520,7 +521,7 @@ scenes:
       highlight: words
   # Lignes de l'IA, d'après 18:95.
   - id: dam-lesson-1
-    role: evidence
+    role: lesson
     reel: qarnayn-03
     audio: tts
     narration:
@@ -529,7 +530,7 @@ scenes:
     visual:
       template: title-card
   - id: dam-lesson-2
-    role: evidence
+    role: lesson
     reel: qarnayn-03
     audio: tts
     narration:
@@ -539,7 +540,7 @@ scenes:
       template: title-card
   # Exemple de vie (scène type) : aider sans profiter.
   - id: dam-life-1
-    role: evidence
+    role: example
     reel: qarnayn-03
     audio: tts
     narration:
@@ -551,7 +552,7 @@ scenes:
       characters:
         - { id: amir, pose: sitting, mood: worried, talking: false }
   - id: dam-life-2
-    role: evidence
+    role: example
     reel: qarnayn-03
     audio: tts
     narration:
@@ -576,7 +577,7 @@ scenes:
   # ---- qarnayn-04 : le fer et le cuivre, « une miséricorde de mon Seigneur » (18:96-98) --------------------
   # 18:96-97 racontés, puis récités.
   - id: build-1
-    role: evidence
+    role: event
     reel: qarnayn-04
     audio: tts
     narration:
@@ -587,7 +588,7 @@ scenes:
       template: scene
       background: mountain-pass
   - id: build-2
-    role: evidence
+    role: event
     reel: qarnayn-04
     audio: tts
     narration:
@@ -597,7 +598,7 @@ scenes:
       template: scene
       background: iron-dam
   - id: build-3
-    role: evidence
+    role: event
     reel: qarnayn-04
     audio: tts
     narration:
@@ -633,7 +634,7 @@ scenes:
       highlight: words
   # 18:98 raconté, puis récité.
   - id: humble-1
-    role: evidence
+    role: event
     reel: qarnayn-04
     audio: tts
     narration:
@@ -660,7 +661,7 @@ scenes:
       highlight: words
   # Ligne de l'IA, d'après 18:98.
   - id: humble-lesson
-    role: evidence
+    role: lesson
     reel: qarnayn-04
     audio: tts
     narration:
@@ -670,7 +671,7 @@ scenes:
       template: title-card
   # Exemple de vie (scène type) : le succès rendu à Dieu.
   - id: humble-life-1
-    role: evidence
+    role: example
     reel: qarnayn-04
     audio: tts
     narration:
@@ -682,7 +683,7 @@ scenes:
       characters:
         - { id: salma, pose: standing, mood: smiling, talking: false }
   - id: humble-life-2
-    role: evidence
+    role: example
     reel: qarnayn-04
     audio: tts
     narration:

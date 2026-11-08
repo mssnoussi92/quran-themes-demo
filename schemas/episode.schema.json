@@ -4,11 +4,15 @@
   "title": "Episode script",
   "description": "One episode, split into scenes. Quotations are referenced by source id only.",
   "type": "object",
-  "required": ["episode", "title", "narration_language", "reels", "scenes"],
+  "required": ["episode", "title", "format", "narration_language", "reels", "scenes"],
   "additionalProperties": false,
   "properties": {
     "episode": { "$ref": "#/$defs/slug" },
     "title": { "$ref": "#/$defs/i18n" },
+    "format": {
+      "description": "The episode's format, from the closed catalog docs/formats.md (chosen with the skill choose-format, decided by the owner). scripts/validate.py checks its structure in the reels not validated yet",
+      "enum": ["misconceptions", "story-suspense", "story-linear", "collection", "text-explained", "two-paths", "practical"]
+    },
     "narration_language": { "enum": ["ar-msa", "ar-egy"] },
     "publish": { "$ref": "#/$defs/publish" },
     "thumbnail": { "$ref": "#/$defs/thumbnail" },
@@ -108,7 +112,10 @@
       "additionalProperties": false,
       "properties": {
         "id": { "$ref": "#/$defs/slug" },
-        "role": { "enum": ["hook", "promise", "misconception", "evidence", "conclusion", "outro"] },
+        "role": {
+          "description": "What the scene does in its format (docs/formats.md): event = what happened in a story, told in Egyptian close to the text's words, then proven by its verse or hadith; lesson = the lesson drawn from it (our own line, checked by the owner first), followed by an example; example = a typical scene of today's life (« Like when… »), never a true story",
+          "enum": ["hook", "promise", "misconception", "event", "evidence", "lesson", "example", "conclusion", "outro"]
+        },
         "reel": {
           "description": "The reel the scene belongs to. Without it, the scene is said only in the whole episode, and must be in `whole`",
           "$ref": "#/$defs/slug"

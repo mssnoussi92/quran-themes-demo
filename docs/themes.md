@@ -1,9 +1,12 @@
 # Thèmes : faits, choisis, en réserve
 
-Tenu à jour par le skill `new-theme` (étape 1). Les plans détaillés des épisodes faits sont dans
-`docs/design.md` ; ici, ce qui a été décidé sur l'ordre et l'angle des suivants.
+Tenu à jour par les skills `choose-format` et `new-theme` (étape 1). Les plans détaillés des épisodes faits
+sont dans `docs/design.md`, les formats dans `docs/formats.md` ; ici, ce qui a été décidé sur l'ordre, le
+format et l'angle des suivants.
 
 ## Faits
+
+Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
 
 | Épisode | Idées reçues (un reel chacune) | Accroche |
 | --- | --- | --- |
@@ -13,7 +16,7 @@ Tenu à jour par le skill `new-theme` (étape 1). Les plans détaillés des épi
 | Le piège des comparaisons (`muqarana`) | qui a plus est plus aimé de Dieu ; ce qu'ils ont est mieux que ce que j'ai ; toute comparaison est mauvaise ; conclusion sur la gratitude | faire défiler la vie des autres sur son téléphone |
 | La confiance en Dieu (`tawakkul`) | le tawakkul, c'est ne rien faire ; avoir peur, c'est avoir une foi faible ; je dois tout porter seul ; conclusion : le Vivant qui ne meurt pas | réveillé la nuit à penser à demain |
 
-## Histoire (hors série des idées reçues)
+## Histoire (formats `story-suspense` et `story-linear`)
 
 - **Moussa et al-Khadir (`khidr`)** (idée du propriétaire, 2026-11-08, d'après un cours en égyptien qu'il a
   partagé) : l'histoire d'Al-Kahf 18:60-82, centrée sur la sagesse de l'épreuve et du décret. Pas d'idées reçues :
@@ -28,9 +31,10 @@ Tenu à jour par le skill `new-theme` (étape 1). Les plans détaillés des épi
 
 ## Histoires à traiter plus tard (recherche du 2026-11-08, gardée à la demande du propriétaire)
 
-Même format que `khidr` et `qarnayn` : chaque événement raconté en égyptien puis son verset récité (Tawfiq
-As-Sayegh), un exemple de vie après chaque leçon, une promesse dans l'accroche ; jamais un prophète ni une personne
-connue dessinés (cartes de nom, fonds de lieux). Rien n'est commencé ni choisi : le propriétaire choisira l'ordre.
+Règles de `khidr` et `qarnayn`, dans le format de chaque fiche (ci-dessous) : chaque événement raconté en
+égyptien puis son verset récité (Tawfiq As-Sayegh), un exemple de vie après chaque leçon, une promesse dans
+l'accroche ; jamais un prophète ni une personne connue dessinés (cartes de nom, fonds de lieux). Rien n'est
+commencé ni choisi : le propriétaire choisira le format et l'ordre.
 Durées de récitation de Tawfiq d'après les repères de mp3quran.net (khidr et qarnayn : environ 4 min de versets chacun).
 
 **Finir les quatre histoires d'Al-Kahf** (série complète pour la page, le vendredi), proposé en premier :
@@ -57,9 +61,29 @@ Abu Malik, en extraits ; nombres vérifiés dans hadith-api) : les trois hommes 
 les bonnes actions sincères) ; le lépreux, le chauve et l'aveugle (Bukhari 3464, la reconnaissance mise à
 l'épreuve) ; l'homme qui avait tué 99 personnes (Bukhari 3470, ne jamais désespérer, changer d'entourage).
 
-Ordre proposé : les gens de la caverne, l'homme aux deux jardins, Younous, puis les propriétaires du jardin ou
-Qaroun, Youssouf plus tard en série. الخشوع peut passer avant, après ou entre deux (ses sources sont déjà au
-registre, proposées).
+### Fiches de format (skill `choose-format`, 2026-11-08)
+
+Proposées, rien n'est décidé. Récitations mesurées sur les repères de Tawfiq As-Sayegh (mp3quran.net, lecture 17) ;
+l'épisode entier dure environ deux fois sa récitation (khidr et qarnayn), estimation à confirmer au brouillon.
+
+| Sujet | Format conseillé | Autre possible | Pourquoi | Reels | Durée |
+| --- | --- | --- | --- | --- | --- |
+| Les gens de la caverne (18:9-26) | `story-linear` | `story-suspense` : garder « combien de temps ont-ils dormi ? » jusqu'à 18:25 | quatre temps nets ; le seul secret (la durée) est dit par le Coran à la fin : le suspense est possible, mais coûte un ordre de plus à valider | 5 : la fuite et leur du'a (18:10) ; leur foi (18:13-16) ; la caverne et le sommeil (18:17-18) ; le réveil, la pièce, la découverte (18:19-21) ; la conclusion (pas 18:23-24, déjà dans qarnayn-05) | 6,2 min de versets, en garder environ 4 ; épisode environ 8 min |
+| L'homme aux deux jardins (18:32-44) | `two-paths` | `story-linear` | l'histoire est elle-même deux chemins : le propriétaire (18:34-36) et son ami (18:37-41) ; la leçon tient en une phrase, « ما شاء الله لا قوة إلا بالله » (18:39) | 4 : l'accroche ; le chemin du propriétaire ; celui de l'ami ; la fin (18:42-44) et la conclusion | 3,1 min ; environ 6 min |
+| Younous | `collection` « دعوات في الشدة » | `story-linear` avec 37:139-148 | seul, trop court pour cinq reels (21:87-88 : 34 s) ; avec quatre autres du'as de prophètes dans la détresse, chaque reel tient seul et finit sur la réponse (« فاستجبنا له ») | 5 : Nouh 54:10-12 (23 s) ; Ayyoub 21:83-84 (30 s ; 21:83 déjà dans le du'a) ; Younous 21:87-88 (34 s, avec Tirmidhi 3505) ; Zakariya 21:89-90 (39 s) ; Moussa 28:24-25 (42 s) | 2,8 min ; environ 6 min |
+| Les propriétaires du jardin (68:17-33) | `story-linear`, 3 reels | un reel d'une collection sur l'intention | court (1,9 min) mais complet ; « le plus juste d'entre eux » (68:28) porte la leçon | 3 : le plan de la nuit ; le jardin brûlé ; le matin, le reproche, le repentir | 1,9 min ; environ 4 min |
+| Qaroun (28:76-83) | `two-paths` | `story-linear` | deux regards sur sa richesse dans l'histoire même : ceux qui voulaient la vie d'ici-bas (28:79), ceux qui avaient reçu le savoir (28:80) ; mais « على علم عندي » est l'inverse exact de qarnayn-04 (« هذا رحمة من ربي ») : rappel assumé de Dhul-Qarnayn, ou attendre | 4 | 3,0 min ; environ 6 min |
+| La gratitude (الشكر) : le lépreux, le chauve et l'aveugle (Bukhari 3464) | `story-linear` (histoire racontée par le Prophète ﷺ) | `two-paths` | trois hommes, la même épreuve : un reel chacun ; الشكر est dans la liste du propriétaire ; Soulayman (27:40, « هذا من فضل ربي ليبلوني أأشكر أم أكفر ») en conclusion | 5 : l'accroche ; le lépreux ; le chauve ; l'aveugle ; la conclusion | à estimer ; deux narrations seulement (Bukhari 3464, Muslim 2964, vérifiées dans hadith-api) pour trois passages : il faut plusieurs extraits par hadith au registre, ou une carte sans lecture |
+| La sincérité (الإخلاص) : les trois hommes de la grotte (Bukhari 2272) | `story-linear` (racontée par le Prophète ﷺ) | — | trois hommes, trois actes sincères : un reel chacun ; الإخلاص est dans la liste du propriétaire ; quatre narrations chez Bukhari (2215, 2272, 2333, 5974) et une chez Muslim (2743a), vérifiées dans hadith-api : un extrait par homme sans changer le registre, lus par Abu Malik (un fichier par hadith, à vérifier) | 5 : l'accroche ; un homme par reel ; la conclusion | à estimer |
+| Soulayman (27:15-44) | dans « الشكر » (27:40 en conclusion) | `story-linear` plus tard | 8,4 min de versets ; la fourmi et la huppe seraient à ajouter au catalogue des personnages | — | 27:38-40 : 70 s ; 27:18-19 : 57 s |
+| Youssouf (sourate 12) | `story-linear`, série de 4 à 5 épisodes | — | environ 30 min de versets ; le rêve du début (12:4) s'accomplit à la fin (12:100) : c'est le fil de la série | un épisode par partie (tableau ci-dessus) | environ 30 min de versets |
+| Les gens de la fosse (85:1-10, Muslim 3005) | `story-linear` (racontée par le Prophète ﷺ) | un reel d'une collection sur la constance | l'histoire est dans le hadith, 85:4-10 la conclut ; le feu dit sobrement, jamais montré ; une lecture de Muslim 3005 à chercher (sans doute dans le même fichier que Muslim 2999, le livre du zuhd) | 4 à 5 | 1,0 min de versets |
+| La vache (2:67-73) | `story-linear`, 3 reels | un reel d'une collection | court et léger : multiplier les questions pour ne pas obéir | 3 | 2,0 min ; environ 4 min |
+| L'homme aux 99 meurtres (Bukhari 3470) | `story-linear` | — | trop proche du repentir, déjà fait : plus tard, sous l'angle de l'entourage (quitter la terre où l'on péchait) | 4 | à estimer |
+
+Ordre proposé, en variant les formats (jamais trois fois le même de suite ; les deux histoires comptent pour un) :
+الخشوع (`misconceptions`, choisi), les gens de la caverne, « دعوات في الشدة » (`collection`), الشكر (Bukhari 3464),
+l'homme aux deux jardins (`two-paths`), الإخلاص (Bukhari 2272), puis le reste ; Youssouf plus tard en série.
 
 ## Choisis par le propriétaire (2026-11-07), dans l'ordre
 

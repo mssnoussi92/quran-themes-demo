@@ -271,7 +271,88 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
                 report.error(where, f"mood '{ch['mood']}' not in catalog for '{ch['id']}'")
 
     check_whole(ep, rel(path), report)
+    check_format(ep, rel(path), report)
     check_thumbnail(ep, rel(path), catalog, backgrounds, report)
+
+
+QUOTES = ("ayah-card", "source-card")
+
+
+def format_problems(fmt: str, scenes: list[dict], first: bool, last: bool) -> list[str]:
+    """What a reel misses for its format (docs/formats.md): every event proven by its verse or hadith
+    before the lesson, every lesson followed by a life example (owner's rules, 2026-11-08), and the
+    beats each format needs."""
+    problems: list[str] = []
+    event = lesson = None
+    event_runs = 0
+    for s in scenes:
+        role, template = s["role"], s["visual"]["template"]
+        if role == "event":
+            if event is None:
+                event_runs += 1
+            event = event or s["id"]
+            if lesson:
+                problems.append(f"lesson '{lesson}' has no life example (role: example) after it")
+                lesson = None
+        elif template in QUOTES:
+            event = None
+        elif role in ("lesson", "example") and event:
+            problems.append(f"event '{event}' is not followed by its verse or hadith before the {role}")
+            event = None
+        if role == "lesson":
+            lesson = lesson or s["id"]
+        elif role == "example":
+            lesson = None
+    if event:
+        problems.append(f"event '{event}' is not followed by its verse or hadith")
+    if lesson:
+        problems.append(f"lesson '{lesson}' has no life example (role: example) after it")
+
+    roles = {s["role"] for s in scenes}
+    has_quote = any(s["visual"]["template"] in QUOTES for s in scenes)
+    middle = not first and not last
+    if fmt == "collection":
+        if not scenes or scenes[0]["role"] != "hook":
+            problems.append("a collection reel stands alone: it starts with its own hook")
+        for role in ("event", "lesson"):
+            if role not in roles:
+                problems.append(f"no {role} in this reel")
+        return problems
+    if first and "promise" not in roles:
+        problems.append("the first reel's hook ends with a promise (role: promise)")
+    if last and "conclusion" not in roles:
+        problems.append("the last reel is the conclusion (role: conclusion)")
+    if fmt in ("story-suspense", "story-linear") and not last and "event" not in roles:
+        problems.append("no event in this reel")
+    if middle:
+        needed = {"misconceptions": ("misconception", "lesson"), "story-suspense": ("lesson",),
+                  "story-linear": ("lesson",), "text-explained": ("lesson",), "two-paths": ("lesson",),
+                  "practical": ("lesson",)}[fmt]
+        for role in needed:
+            if role not in roles:
+                problems.append(f"no {role} in this reel")
+        if fmt in ("text-explained", "practical") and not has_quote:
+            problems.append("no verse or hadith in this reel")
+        if fmt == "two-paths" and event_runs < 2:
+            problems.append("two paths: two events, each proven by its verse or hadith")
+    return problems
+
+
+def check_format(ep: dict, where: str, report: Report) -> None:
+    """The episode's format (docs/formats.md, skill choose-format). Its structure is checked in the
+    reels being written: a reel the owner validated stays as they approved it (qarnayn-02's lesson on
+    the rising sun has no example, by their choice)."""
+    fmt = ep["format"]
+    if fmt == "story-suspense" and not ep.get("whole"):
+        report.error(where, "format story-suspense needs `whole`: the events first, then their secrets (docs/formats.md)")
+    if ep.get("whole") and fmt != "story-suspense":
+        report.warn(where, f"`whole` reorders the episode, which only the story-suspense format does (format: {fmt})")
+    for i, reel in enumerate(ep["reels"]):
+        if reel.get("validated_by"):
+            continue
+        scenes = [s for s in ep["scenes"] if s.get("reel") == reel["id"]]
+        for problem in format_problems(fmt, scenes, i == 0, i == len(ep["reels"]) - 1):
+            report.warn(f"{where} [{reel['id']}]", f"{problem} ({fmt}: docs/formats.md)")
 
 
 def check_whole(ep: dict, where: str, report: Report) -> None:

@@ -4,7 +4,7 @@ Version condensée de l'étude de faisabilité du 6 novembre 2026. Le document c
 
 ## Concept
 
-Un épisode traite un thème du Coran. Il s'ouvre sur une accroche tirée de la vie réelle ; chaque citation affichée vient d'une source vérifiée avec sa référence ; la voix est calme ; les sous-titres sont en anglais. Le même script produit un épisode long (16:9, 3 à 5 min) et 3 à 6 reels verticaux (9:16) d'environ une minute.
+Un épisode traite un thème du Coran. Il s'ouvre sur une accroche tirée de la vie réelle ; chaque citation affichée vient d'une source vérifiée avec sa référence ; la voix est calme ; les sous-titres sont en anglais. Le même script produit un épisode long (16:9) et 3 à 6 reels verticaux (9:16). Le format de l'épisode (idées fausses, histoire, collection…) vient du catalogue `docs/formats.md` ; la durée suit le contenu (la qualité avant la durée, décision du 8 novembre 2026 : reels de 0:41 à 2:12, épisodes de 4 à 9 min), dans la limite d'Instagram (3 min par reel).
 
 Hors périmètre : la publication, et l'automatisation de bout en bout. Chaque étape est conçue pour pouvoir être automatisée plus tard.
 

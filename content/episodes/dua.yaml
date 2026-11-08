@@ -9,6 +9,7 @@
 # « تابعنا عشان تعرف » à sa demande le même jour (comme le repentir) : lignes et nouvelles prises validées par le propriétaire (prises figées).
 episode: dua
 title: { ar: "الدعاء", en: "Du'a" }
+format: misconceptions   # docs/formats.md (skill choose-format)
 narration_language: ar-egy   # VoiceTut (égyptien), choix du propriétaire le 2026-11-06
 # Textes de publication (titre, description, hashtags du thème) : proposés le 2026-11-07, faits des
 # répliques validées du script, validés par le propriétaire le même jour (validated_by) ; exigés par
