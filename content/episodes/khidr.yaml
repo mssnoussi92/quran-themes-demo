@@ -367,8 +367,9 @@ scenes:
     reel: khidr-02
     audio: tts
     narration:
-      ar: "خسارة صغيرة… حمتهم من خسارة أكبر. والحكمة هنا… بانت بسرعة."
-      en: "A small loss… that spared them a bigger one. And here, the wisdom… showed quickly."
+      ar: "خسارة صغيرة… حمتهم من خسارة أكبر. والحكمة هنا… اتكشفت بسرعة."
+      en: "A small loss… that spared them a bigger one. And here, the wisdom… was revealed quickly."
+    say_ar: "خسارة صغيرة… حمتهم من خسارة أكبر. والحكمة هنا… اتْكَشَفِت بسرعة."
     visual:
       template: scene
       background: sea-boat
@@ -621,8 +622,9 @@ scenes:
     reel: khidr-04
     audio: tts
     narration:
-      ar: "الخير ممكن يكون مستخبي… ومستني وقته. والحكمة هنا… بانت بعد سنين."
-      en: "Good can be hidden… waiting for its time. And here, the wisdom… showed years later."
+      ar: "الخير ممكن يكون مستخبي… ومستني وقته. والحكمة هنا… اتكشفت بعد سنين."
+      en: "Good can be hidden… waiting for its time. And here, the wisdom… was revealed years later."
+    say_ar: "الخير ممكن يكون مستخبي… ومستني وقته. والحكمة هنا… اتْكَشَفِت بعد سنين."
     visual:
       template: scene
       background: plain
