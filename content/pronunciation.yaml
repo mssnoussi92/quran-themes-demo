@@ -64,3 +64,11 @@ words:
     say: عَلَيَّا
     why: "« 'alayya » (sur moi) ; écrit « عليّ », il pouvait se lire « عليه » (sur lui)"
     decided: { by: mssnoussi92, on: 2026-11-09, scene: khushu/drift-complaint }
+  - word: آمنوا
+    say: آمَنُوا
+    why: "Whisper entendait « أمينوا » ; vocalisé, « آمنوا »"
+    decided: { by: proposed, on: 2026-11-09, scene: kahf/faith-1 }
+  - word: صحيوا
+    say: صحيو
+    why: "« ṣiḥyu » (ils se sont réveillés) : écrit avec l'alif, Whisper entendait « صحيح », « صح يولبت » ; sans l'alif, « صحيوا »"
+    decided: { by: proposed, on: 2026-11-09, scene: kahf/wake-1 }

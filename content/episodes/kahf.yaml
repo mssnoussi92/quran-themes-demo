@@ -191,6 +191,7 @@ scenes:
     narration:
       ar: "كانوا شباب… آمنوا بربهم… وربنا زادهم هدى."
       en: "They were young men… who believed in their Lord… and God increased them in guidance."
+    say_ar: "كانوا شباب… آمَنُوا بربهم… وربنا زادهم هدى."
     visual:
       template: scene
       background: old-city
@@ -310,6 +311,7 @@ scenes:
     narration:
       ar: "جوه الكهف… الشمس وهي طالعة تميل عنهم يمين… وهي بتغرب تبعد عنهم شمال… وهما في وسع منه."
       en: "Inside the cave… the rising sun turned away from them to the right… the setting sun passed them by on the left… while they lay in an open space within it."
+    say_ar: "جوه الكهف… الشمس وهي طالعة تميل عنهم يِمِين… وهي بتغرب تبعد عنهم شمال… وهما في وسع منه."
     visual:
       template: scene
       background: cave-inside
@@ -398,6 +400,7 @@ scenes:
     narration:
       ar: "وفي يوم… صحيوا. تابعنا عشان تعرف لقوا إيه."
       en: "And one day… they woke up. Follow us to find out what they found."
+    say_ar: "وفي يوم… صحيو. تابعنا عشان تعرف لقوا إيه."
     reel_only_end: { ar: "تابعنا عشان تعرف لقوا إيه.", en: "Follow us to find out what they found." }
     visual:
       template: title-card
@@ -410,6 +413,7 @@ scenes:
     narration:
       ar: "صحيوا… وواحد منهم سأل: قعدنا قد إيه؟ قالوا: يوم… ولا بعض يوم."
       en: "They woke up… and one of them asked: how long did we stay? They said: a day… or part of a day."
+    say_ar: "صحيو… وواحد منهم سأل: قعدنا قد إيه؟ قالوا: يوم… ولا بعض يوم."
     visual:
       template: scene
       background: cave-inside
