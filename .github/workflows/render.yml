@@ -51,7 +51,10 @@ concurrency:
 jobs:
   render:
     runs-on: ubuntu-24.04
-    timeout-minutes: 150
+    # The paper-cut style (docs/styles.md) renders about six times slower than the flat one on a
+    # runner without GPU (0.24 s a frame against 0.04): about 3 h 30 for a nine-minute episode in
+    # both formats and its reels. GitHub's limit for a job is 360 minutes.
+    timeout-minutes: 330
     env:
       EPISODE: ${{ inputs.episode }}
       REEL: ${{ inputs.reel }}

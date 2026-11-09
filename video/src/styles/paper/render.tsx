@@ -2,7 +2,7 @@
 // scene's characters as silhouettes (silhouettes.ts), drawn as sheets of cut paper lit from behind;
 // and the backdrop of the cards. Every frame can be drawn alone (no state, seeded randomness).
 import React, { createContext } from "react";
-import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import type { Format } from "../../formats";
 import type { ResolvedScene, VisualStyle } from "../../types";
 import type { Layer, Shape } from "../geometry";
@@ -39,17 +39,11 @@ const colourOf = (layer: Layer, p: PaperPalette): string => {
 };
 
 /** Fibre, rim light on the top edge, dark band at the bottom edge, shadow on the sheets behind. */
-const SheetFilter: React.FC<{ id: string; seed: number; rim: string; u: number }> = ({ id, seed, rim, u }) => (
+const SheetFilter: React.FC<{ id: string; rim: string; u: number }> = ({ id, rim, u }) => (
   <filter id={id} x="-10%" y="-10%" width="120%" height="125%" colorInterpolationFilters="sRGB">
-    <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves={2} seed={seed} result="fine" />
-    <feColorMatrix in="fine" type="saturate" values="0" result="fineGrey" />
-    <feComponentTransfer in="fineGrey" result="fineSoft">
-      <feFuncR type="linear" slope={0.12} intercept={0.44} />
-      <feFuncG type="linear" slope={0.12} intercept={0.44} />
-      <feFuncB type="linear" slope={0.12} intercept={0.44} />
-    </feComponentTransfer>
-    <feBlend in="SourceGraphic" in2="fineSoft" mode="soft-light" result="fibre" />
-    <feComposite in="fibre" in2="SourceAlpha" operator="in" result="sheet" />
+    {/* The fibre is one grain texture over the whole picture (PaperGrain): a noise per sheet and per
+        frame made the render seven times slower than the flat style. */}
+    <feComposite in="SourceGraphic" in2="SourceAlpha" operator="in" result="sheet" />
     <feOffset in="SourceAlpha" dy={0.004 * u} result="down" />
     <feComposite in="SourceAlpha" in2="down" operator="out" result="topEdge" />
     <feFlood floodColor={rim} floodOpacity={0.85} />
@@ -82,7 +76,7 @@ const Defs: React.FC<{ p: PaperPalette; n: number; u: number; prefix: string }> 
       <stop offset="1" stopColor="#000" stopOpacity={0.35} />
     </radialGradient>
     {Array.from({ length: n }, (_, i) => (
-      <SheetFilter key={i} id={`${prefix}-f${i}`} seed={7 + i * 13} rim={p.light} u={u} />
+      <SheetFilter key={i} id={`${prefix}-f${i}`} rim={p.light} u={u} />
     ))}
     <filter id={`${prefix}-bloom`} x="-40%" y="-40%" width="180%" height="180%">
       <feGaussianBlur stdDeviation={0.02 * u} />
@@ -91,6 +85,17 @@ const Defs: React.FC<{ p: PaperPalette; n: number; u: number; prefix: string }> 
       <feGaussianBlur stdDeviation={0.013 * u} />
     </filter>
   </defs>
+);
+
+/** The paper's fibre: one grain texture (public/textures/paper-grain.jpg, grey noise made with ffmpeg)
+ * laid over the whole picture. */
+export const PaperGrain: React.FC = () => (
+  <div
+    style={{
+      position: "absolute", inset: 0, backgroundImage: `url(${staticFile("textures/paper-grain.jpg")})`,
+      backgroundSize: "512px 512px", mixBlendMode: "soft-light", opacity: 0.5, pointerEvents: "none",
+    }}
+  />
 );
 
 /** The box: a dark frame with rounded inner corners, and a light vignette. */
@@ -168,70 +173,88 @@ export const PaperScene: React.FC<{ scene: ResolvedScene; format: Format; floor?
   const prefix = `ps-${scene.id}`;
   const wall = [...sheets].reverse().find((l) => l.role === "wall" && l.depth <= 0.35);
   const skyLayers = layers.filter((l) => l.role === "sky");
-  return (
-    <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} style={{ position: "absolute", inset: 0 }}>
-      <Defs p={p} n={sheets.length + 1} u={u} prefix={prefix} />
-      <g transform={`translate(${w / 2} ${h * 0.6}) scale(${push}) translate(${-w / 2} ${-h * 0.6})`}>
-        <rect x={-40} y={-40} width={w + 80} height={h + 80} fill={`url(#${prefix}-sky)`} />
-        {layers.map((l) => {
-          if (l.role === "sky") return <Shapes key={l.id} shapes={l.shapes} fill={`url(#${prefix}-sky)`} />;
-          if (l.role === "light")
-            return (
-              <g key={l.id} transform={`translate(${drift(l.depth)} 0)`}>
-                <g style={{ mixBlendMode: "screen" }} opacity={0.6 * breathe} filter={`url(#${prefix}-bloom)`}>
-                  <Shapes shapes={l.shapes} fill={p.light} />
-                </g>
-                <Shapes shapes={l.shapes} fill={p.light} opacity={breathe} />
-              </g>
-            );
-          const i = sheets.indexOf(l);
-          return (
-            <React.Fragment key={l.id}>
-              <g transform={`translate(${drift(l.depth)} 0)`} filter={`url(#${prefix}-f${i + 1})`}>
-                <Shapes shapes={l.shapes} fill={colourOf(l, p)} />
-                {l.over ? <Shapes shapes={l.over} fill={colourOf(l, p)} /> : null}
-              </g>
-              {place.lit && Math.abs(place.lit.depth - l.depth) < 0.03 ? (
-                <g transform={`translate(${drift(l.depth)} 0)`}>
-                  {place.lit.shapes.map((s, k) => (
-                    <Shapes key={k} shapes={[s]} fill={p.light} opacity={0.6 + 0.4 * Math.sin(t * 0.8 + k)} />
-                  ))}
-                </g>
-              ) : null}
-              {/* The light spills over the edge of the opening, onto the sheet that has the hole. */}
-              {l === wall && skyLayers.length && isSmall(skyLayers.flatMap((s) => s.shapes), w, h)
-                ? skyLayers.map((s) => (
-                    <g key={`b-${s.id}`} style={{ mixBlendMode: "screen" }} opacity={0.4 * breathe} filter={`url(#${prefix}-bloom)`}>
-                      <Shapes shapes={s.shapes} fill={p.light} />
-                    </g>
-                  ))
-                : null}
-              {place.beam && l.depth <= 0.6 && (sheets[i + 1]?.depth ?? 1) > 0.6 ? <Beam beam={place.beam} p={p} t={t} u={u} prefix={prefix} /> : null}
-            </React.Fragment>
-          );
-        })}
-      </g>
-      <PaperFrame w={w} h={h} color={p.frame} prefix={prefix} />
+  // Each sheet is its own plane, moved by a CSS transform: its paper is drawn once and then only
+  // moved (the render was five to seven times slower than the flat style with one SVG for all).
+  const plane = (key: string, depth: number, children: React.ReactNode, extra: React.CSSProperties = {}) => (
+    <svg key={key} width={w} height={h} viewBox={`0 0 ${w} ${h}`}
+      style={{ position: "absolute", inset: 0, overflow: "visible", transform: `translateX(${drift(depth).toFixed(2)}px)`, willChange: "transform", ...extra }}>
+      {children}
     </svg>
+  );
+  const planes: React.ReactNode[] = [];
+  for (const l of layers) {
+    if (l.role === "sky") {
+      planes.push(plane(l.id, l.depth, <Shapes shapes={l.shapes} fill={`url(#${prefix}-sky)`} />));
+      continue;
+    }
+    if (l.role === "light") {
+      planes.push(plane(`${l.id}-bloom`, l.depth, <g filter={`url(#${prefix}-bloom)`}><Shapes shapes={l.shapes} fill={p.light} /></g>, { mixBlendMode: "screen", opacity: 0.6 * breathe }));
+      planes.push(plane(l.id, l.depth, <Shapes shapes={l.shapes} fill={p.light} />, { opacity: breathe }));
+      continue;
+    }
+    const i = sheets.indexOf(l);
+    planes.push(plane(l.id, l.depth, (
+      <g filter={`url(#${prefix}-f${i + 1})`}>
+        <Shapes shapes={l.shapes} fill={colourOf(l, p)} />
+        {l.over ? <Shapes shapes={l.over} fill={colourOf(l, p)} /> : null}
+      </g>
+    )));
+    if (place.lit && Math.abs(place.lit.depth - l.depth) < 0.03) {
+      // Lit windows in three groups that dim and brighten in turn.
+      for (let g = 0; g < 3; g++)
+        planes.push(plane(`${l.id}-lit-${g}`, l.depth, <Shapes shapes={place.lit.shapes.filter((_, k) => k % 3 === g)} fill={p.light} />,
+          { opacity: 0.65 + 0.35 * Math.sin(t * 0.8 + g * 2.1) }));
+    }
+    // The light spills over the edge of the opening, onto the sheet that has the hole.
+    if (l === wall && skyLayers.length && isSmall(skyLayers.flatMap((x) => x.shapes), w, h))
+      planes.push(plane(`${l.id}-spill`, l.depth, <g filter={`url(#${prefix}-bloom)`}><Shapes shapes={skyLayers.flatMap((x) => x.shapes)} fill={p.light} /></g>,
+        { mixBlendMode: "screen", opacity: 0.4 * breathe }));
+    if (place.beam && l.depth <= 0.6 && (sheets[i + 1]?.depth ?? 1) > 0.6) {
+      planes.push(plane("beam", 0.6, (
+        <>
+          <path d={place.beam.d} fill={p.light} opacity={0.45} filter={`url(#${prefix}-soft)`} />
+          <ellipse {...place.beam.patch} fill={p.light} opacity={0.55} filter={`url(#${prefix}-soft)`} />
+        </>
+      ), { mixBlendMode: "screen" }));
+      planes.push(plane("motes", 0.6, <Motes beam={place.beam} p={p} t={t} u={u} />, { mixBlendMode: "screen" }));
+    }
+  }
+  return (
+    <>
+      <svg width={0} height={0} style={{ position: "absolute" }}>
+        <Defs p={p} n={sheets.length + 1} u={u} prefix={prefix} />
+      </svg>
+      <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, transform: `scale(${push.toFixed(4)})`, transformOrigin: "50% 60%", willChange: "transform" }}>
+          <svg width={w} height={h} style={{ position: "absolute", inset: 0 }}>
+            <rect x={-40} y={-40} width={w + 80} height={h + 80} fill={`url(#${prefix}-sky)`} />
+          </svg>
+          {planes}
+        </div>
+      </div>
+      <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} style={{ position: "absolute", inset: 0 }}>
+        <PaperFrame w={w} h={h} color={p.frame} prefix={prefix} />
+      </svg>
+      <PaperGrain />
+    </>
   );
 };
 
-const Beam: React.FC<{ beam: NonNullable<Place["beam"]>; p: PaperPalette; t: number; u: number; prefix: string }> = ({ beam, p, t, u, prefix }) => {
+/** Dust floating in the beam (18:17): the only thing redrawn every frame. */
+const Motes: React.FC<{ beam: NonNullable<Place["beam"]>; p: PaperPalette; t: number; u: number }> = ({ beam, p, t, u }) => {
   const xs = beam.d.match(/-?\d+(\.\d+)?/g)!.map(Number);
   const minX = Math.min(xs[0], xs[2], xs[4], xs[6]);
   const maxX = Math.max(xs[0], xs[2], xs[4], xs[6]);
   const minY = Math.min(xs[1], xs[3], xs[5], xs[7]);
   const maxY = Math.max(xs[1], xs[3], xs[5], xs[7]);
   return (
-    <g style={{ mixBlendMode: "screen" }}>
-      <path d={beam.d} fill={p.light} opacity={0.45} filter={`url(#${prefix}-soft)`} />
-      <ellipse {...beam.patch} fill={p.light} opacity={0.55} filter={`url(#${prefix}-soft)`} />
+    <>
       {Array.from({ length: 40 }, (_, i) => {
         const x = minX + rand(i * 3.1) * (maxX - minX) + 0.012 * u * Math.sin(t * 0.4 + i);
         const y = minY + rand(i * 7.7) * (maxY - minY) + ((t * 9 + i * 13) % 60) - 30;
         return <circle key={i} cx={x} cy={y} r={0.0015 * u + rand(i) * 0.002 * u} fill={p.light} opacity={0.3 + 0.4 * rand(i * 2)} />;
       })}
-    </g>
+    </>
   );
 };
 
@@ -258,6 +281,7 @@ export const PaperBackdrop: React.FC<{ format: Format; variant: number; prefix: 
   }));
   const lanterns = v === 0 ? [{ x: 0.2 * w, y: 0.27 * h, s: 0.85 }, { x: 0.82 * w, y: 0.2 * h, s: 0.7 }] : [];
   return (
+    <>
     <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} style={{ position: "absolute", inset: 0 }}>
       <Defs p={p} n={6} u={u} prefix={prefix} />
       <rect x={0} y={0} width={w} height={h} fill={`url(#${prefix}-sky)`} />
@@ -284,6 +308,8 @@ export const PaperBackdrop: React.FC<{ format: Format; variant: number; prefix: 
       ))}
       <PaperFrame w={w} h={h} color={p.frame} prefix={prefix} />
     </svg>
+    <PaperGrain />
+    </>
   );
 };
 

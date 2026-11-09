@@ -231,7 +231,8 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
             shown = spoken_words(narration["ar"])
             said = scene.get("say_ar", narration["ar"])
             for entry in lexicon:
-                if spoken_words(entry["word"])[0] in shown and entry["say"] not in said:
+                # `also`: other spellings the voice says right too (one per take that needed it).
+                if spoken_words(entry["word"])[0] in shown and not any(v in said for v in [entry["say"], *entry.get("also", [])]):
                     report.warn(where, f"« {entry['word']} »: the voice says it right as « {entry['say']} » "
                                        f"(content/pronunciation.yaml): write it so in say_ar")
         # Egyptian narration: no standard-Arabic word where the dialect has its own (content/dialect.yaml),

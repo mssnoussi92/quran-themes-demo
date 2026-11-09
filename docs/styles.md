@@ -50,6 +50,11 @@ l'épisode (`style:` de `content/episodes/<thème>.yaml`), choisi avec le format
 - **Gestes propres** : la lumière qui traverse une découpe ; une couche qui s'écarte pour révéler la suivante.
 - **Pièges** : tout devient brun et boueux si les couches sont trop proches en valeur ; un halo trop fort délave
   ce qui est devant l'ouverture ; un grain de papier trop fort fait des taches.
+- **Coût du rendu** : environ six fois le style plat sur un runner sans carte graphique (0,24 s par image,
+  contre 0,04) : 3 h 30 environ pour un épisode de neuf minutes dans les deux formats et ses reels (limite du
+  workflow `render` relevée à 330 min). Le grain est une seule texture (`public/textures/paper-grain.jpg`),
+  chaque feuille un plan déplacé en CSS. À faire : dessiner une fois les décors de chaque scène (image) puis
+  les déplacer, pour revenir près du style plat.
 
 ## Tableau à la craie (`chalk`)
 
