@@ -20,7 +20,9 @@ name: render
 #   final      every quoted source, script, publication text and narration take validated by the
 #              owner (validate.py --release, build.py --require-locked): a new render of a validated
 #              episode (a change to the compositions), straight to "<…>-latest".
-#   draft      whatever exists, missing lines synthesised in CI (VoiceTut): a quick look, never published.
+#   draft      whatever exists, missing lines synthesised in CI (VoiceTut): a quick look, never published,
+#              attached to its own pre-release "<episode|reel>-draft" so that it never replaces the
+#              validated videos of "<…>-latest", which the owner publishes from.
 #
 # Three stages. The render is 93 % of a run's time (30 runs, 2026-11-06 to 2026-11-09) and the
 # three renders of an episode weigh about the same, so they run side by side:
@@ -103,7 +105,12 @@ jobs:
       - name: Sources and editorial rules
         run: |
           if [ "$MODE" != final ]; then
-            # A candidate shows the owner what the checks left (dialect, spellings, format): the list « à vérifier ».
+            # A candidate shows the owner what the checks left (dialect, spellings, format): the list
+            # « à vérifier » takes validate.py's warnings. An error stops the run all the same (a
+            # character beside a named person, a verse read by the synthetic voice, an unknown
+            # source): `tee` alone hid validate.py's exit status, and the owner could be shown a
+            # candidate that breaks a rule.
+            set -o pipefail
             uv run --with jsonschema --with pyyaml scripts/validate.py | tee validate.txt
           else
             for reel in $REELS; do
@@ -364,12 +371,14 @@ jobs:
       - name: Attach the MP4 files and the publication texts to the pre-release
         if: inputs.mode != 'candidate'
         run: |
+          # A draft never touches "<…>-latest": the validated videos stay what the owner publishes.
+          which=$([ "$MODE" = draft ] && echo draft || echo latest)
           if [ "$REEL" = all ]; then
-            tag="$EPISODE-latest"; title="Episode $EPISODE (latest): whole episode (16:9, 9:16) and reels"
+            tag="$EPISODE-$which"; title="Episode $EPISODE ($which): whole episode (16:9, 9:16) and reels"
           else
-            tag="$REEL-latest"; title="Reel $REEL (latest)"
+            tag="$REEL-$which"; title="Reel $REEL ($which)"
           fi
-          kind=$([ "$MODE" = draft ] && echo "Draft (script or sources not all validated yet)" || echo "Release render")
+          kind=$([ "$MODE" = draft ] && echo "Draft, not for publication (script or sources not all validated yet)" || echo "Release render")
           header="$kind. Narration: AI-generated voice (VoiceTut, $SPEAKER). Verses: real recitation. Run: $RUN_URL"
           (cd video && node scripts/publish.ts "$EPISODE" "$REEL" --header "$header") > notes.md
           if ! gh release view "$tag" >/dev/null 2>&1; then
