@@ -47,7 +47,7 @@ reels:
   - id: khushu-03
     title: { ar: "مش للمشايخ بس", en: "Not only for sheikhs" }
     publish:
-      title: { en: "“Khushu is for sheikhs… not for someone like me”?", ar: "«الخشوع ده للمشايخ… مش لواحد زيي»؟" }
+      title: { en: "“Khushu is for sheikhs… not for me”?", ar: "«الخشوع ده للمشايخ… مش ليا أنا»؟" }
       description:
         en: "The second wrong idea: that khushu is only for the pious. Khushu isn't a rank for sheikhs… it's something any Muslim gets better at, like their wudu."
         ar: "تاني فكرة غلط: إن الخشوع للناس الصالحين بس. الخشوع مش رتبة للمشايخ… ده حاجة أي مسلم بيحسّنها، زي وضوءه."
@@ -200,8 +200,10 @@ scenes:
     reel: khushu-02
     audio: tts
     narration:
-      ar: "الشيطان بيلخبط عليّ صلاتي وقرايتي."
+      ar: "الشيطان بيلخبط عليا صلاتي وقرايتي."
       en: "Satan muddles my prayer and my recitation."
+    # « عليا » (« 3alayya », sur moi) : « عليّ » pouvait se lire « عليه » (sur lui).
+    say_ar: "الشيطان بِيْلَخْبَط عَلَيَّا صلاتي وقرايتي."
     visual:
       template: title-card
   - id: drift-hadith
@@ -276,9 +278,10 @@ scenes:
     reel: khushu-03
     audio: tts
     narration:
-      ar: "«الخشوع ده للمشايخ… مش لواحد زيي»؟"
-      en: "“Khushu is for sheikhs… not for someone like me”?"
-    say_ar: "الخشوع ده للمشايخ… مش لواحد زيي؟"
+      ar: "«الخشوع ده للمشايخ… مش ليا أنا»؟"
+      en: "“Khushu is for sheikhs… not for me”?"
+    # « مش لواحد زيي » : VoiceTut disait « زي » puis, après un silence, un son à part.
+    say_ar: "الخشوع ده للمشايخ… مش ليا أنا؟"
     visual:
       template: scene
       background: mosque
@@ -359,6 +362,7 @@ scenes:
     narration:
       ar: "الخشوع مش رتبة للمشايخ… ده حاجة أي مسلم بيحسّنها، زي وضوءه."
       en: "Khushu isn't a rank for sheikhs… it's something any Muslim gets better at, like their wudu."
+    say_ar: "الخشوع مش رُتْبَة للمشايخ… ده حاجة أي مسلم بيحسّنها، زي وضوءه."
     visual:
       template: title-card
   - id: pious-life-1
@@ -390,8 +394,11 @@ scenes:
     reel: khushu-03
     audio: tts
     narration:
-      ar: "طب ولو مش بعيط في الصلاة… يبقى معنديش خشوع؟ تابعنا عشان تعرف."
+      ar: "طب ولو مبعيطش في الصلاة… يبقى معنديش خشوع؟ تابعنا عشان تعرف."
       en: "But if I don't cry in prayer… does that mean I have no khushu? Follow us to find out."
+    # « مبعيطش » vocalisé, comme « مَبْيِعَيَّطْش » (content/pronunciation.yaml) : « مش بعيط », même
+    # vocalisé, était entendu « بعيد » (loin) par Whisper sur 3 prises sur 3.
+    say_ar: "طب ولو مَبَعَيَّطْش في الصلاة… يبقى معنديش خشوع؟ تابعنا عشان تعرف."
     reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
     visual:
       template: title-card
@@ -404,6 +411,7 @@ scenes:
     narration:
       ar: "بتشوف ناس بتعيط في الصلاة… وإنت لأ؟"
       en: "You see people crying in prayer… and you don't?"
+    say_ar: "بتشوف ناس بِتْعَيَّط في الصلاة… وإنت لأ؟"
     visual:
       template: scene
       background: mosque
