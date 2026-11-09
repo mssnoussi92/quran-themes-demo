@@ -9,9 +9,10 @@ backgrounds:
     description: Rue en journée, immeubles et vitrine éclairée
   plain:
     description: Fond uni clair, pour le narrateur face caméra
-  # Épisode الخشوع (2026-11-09) : la prière, sans personne ; à valider avec le rendu candidat.
+  # Épisode الخشوع (2026-11-09) : la prière, sans personne ; validé par le propriétaire sur le rendu candidat.
   mosque:
     description: Intérieur de mosquée, mur clair, fenêtres en arc et mihrab, lampes suspendues qui se balancent un peu, frise de carreaux, tapis aux rangées de prière
+    validated_by: mssnoussi92
   # Histoire de Moussa et al-Khadir (épisode khidr, 18:60-82) : des lieux et des choses, jamais une
   # personne (un prophète n'est jamais dessiné ; le garçon n'est jamais montré). Validés par le
   # propriétaire le 2026-11-08 (planche docs/backgrounds.png et brouillons).

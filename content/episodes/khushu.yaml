@@ -3,11 +3,11 @@
 # propriétaire dans l'ordre du 2026-11-08), avec un exemple de vie après chaque phrase à retenir.
 # Thème et idées reçues choisis par le propriétaire le 2026-11-07 (docs/themes.md) ; script écrit le
 # 2026-11-09, envoyé au propriétaire pour information avant la voix ; tout est validé d'un coup, à la fin,
-# sur le rendu candidat (scripts/finalize.py validate, seulement sur sa parole). Toute modification d'une
-# ligne d'un reel retire son validated_by.
+# sur le rendu candidat (scripts/finalize.py validate, seulement sur sa parole) : **tout validé par le
+# propriétaire le 2026-11-09** (run 29). Toute modification d'une ligne d'un reel retire son validated_by.
 # Les répliques identiques à une prise figée d'un autre épisode (« قال ربنا سبحانه وتعالى: », « والنبي صلى
 # الله عليه وسلم قال: », « تاني فكرة غلط… », « تالت فكرة غلط… ») reprennent cette prise (take_from).
-# Écarts au plan du 2026-11-07 (à trancher par le propriétaire) : Muslim 228 (« ما من امرئ مسلم… فيحسن
+# Écarts au plan du 2026-11-07, validés par le propriétaire avec le reste : Muslim 228 (« ما من امرئ مسلم… فيحسن
 # وضوءها وخشوعها ») passe à l'idée « pour les gens pieux seulement », Bukhari 751 (le regard qui se
 # détourne) à l'idée « c'est pleurer » ; Bukhari 608 en ancre de l'accroche, 57:16 en conclusion.
 episode: khushu
@@ -22,6 +22,7 @@ publish:
     en: "Praying… and suddenly remembering something you'd forgotten? Three wrong ideas keep us from khushu in prayer: that drifting off makes your prayer worthless, that khushu is only for the pious, and that it means crying. Each one, answered from the Qur'an and the Sunnah."
     ar: "بتصلي… وفجأة افتكرت حاجة كنت ناسيها؟ فيه تلات أفكار غلط بتبعدنا عن الخشوع في الصلاة: إن السرحان بيخلي صلاتك ملهاش لازمة، وإن الخشوع للمشايخ بس، وإنه يعني لازم تعيط. والرد على كل فكرة من القرآن والسنة."
   hashtags: ["#Khushu", "#الخشوع", "#Salah"]
+  validated_by: mssnoussi92
 # Miniature YouTube (Thumbnail169) : gros plan, fond uni, Salma (Amir dans celle de Dhul-Qarnayn).
 thumbnail:
   layout: close-up
@@ -29,42 +30,53 @@ thumbnail:
   kicker: { ar: "عن الخشوع", en: "about khushu" }
   character: { id: salma, pose: standing, mood: worried }
   background: plain
+  validated_by: mssnoussi92
 reels:
   - id: khushu-01
     title: { ar: "مش لوحدك", en: "It's not just you" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "Praying… and suddenly remembering something you'd forgotten?", ar: "بتصلي… وفجأة افتكرت حاجة كنت ناسيها؟" }
       description:
         en: "You watch a match and remember every move… you pray four rak'as and don't know how many you prayed? It's not just you: the Prophet ﷺ described it."
         ar: "تتفرج على ماتش وتفتكر كل لعبة… وتصلي أربع ركعات ومش عارف صليت كام؟ ده مش إنت بس: النبي صلى الله عليه وسلم وصفه."
+      validated_by: mssnoussi92
   - id: khushu-02
     title: { ar: "ارجع للسطر", en: "Back to the line" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "“I drift off in every prayer… so it's worthless”?", ar: "«أنا بسرح في كل صلاة… يبقى صلاتي ملهاش لازمة»؟" }
       description:
         en: "The first wrong idea about khushu: that drifting off makes your prayer worthless. A Companion complained of it, and the Prophet ﷺ gave him a remedy. Drifting off doesn't mean you quit… it means you fight back."
         ar: "أول فكرة غلط عن الخشوع: إن السرحان بيخلي صلاتك ملهاش لازمة. صحابي اشتكى منه، والنبي صلى الله عليه وسلم إداله علاج. السرحان مش معناه تبطل… معناه تقاوم."
+      validated_by: mssnoussi92
   - id: khushu-03
     title: { ar: "مش للمشايخ بس", en: "Not only for sheikhs" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "“Khushu is for sheikhs… not for me”?", ar: "«الخشوع ده للمشايخ… مش ليا أنا»؟" }
       description:
         en: "The second wrong idea: that khushu is only for the pious. Khushu isn't a rank for sheikhs… it's something any Muslim gets better at, like their wudu."
         ar: "تاني فكرة غلط: إن الخشوع للناس الصالحين بس. الخشوع مش رتبة للمشايخ… ده حاجة أي مسلم بيحسّنها، زي وضوءه."
+      validated_by: mssnoussi92
   - id: khushu-04
     title: { ar: "قلبك وعينك", en: "Your heart and your eyes" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "People cry in prayer… and you don't?", ar: "بتشوف ناس بتعيط في الصلاة… وإنت لأ؟" }
       description:
         en: "The third wrong idea: that khushu means you have to cry. Khushu doesn't have to be tears… it's being present: with your heart, and with your eyes."
         ar: "تالت فكرة غلط: إن الخشوع يعني لازم تعيط. الخشوع مش لازم دموع… الخشوع إنك تكون حاضر: بقلبك، وبعينك."
+      validated_by: mssnoussi92
   - id: khushu-05
     title: { ar: "ارجع لصلاتك", en: "Come back to your prayer" }
+    validated_by: mssnoussi92
     publish:
       title: { en: "Five prayers a day… five chances", ar: "كل يوم خمس صلوات… يعني خمس فرص" }
       description:
         en: "Isn't it time… for your heart to be humble? Drifting off doesn't mean you quit… khushu isn't only for sheikhs… it doesn't have to be tears… it's a present heart. So next time you remember in prayer something you'd forgotten… don't quit. Come back to your prayer."
         ar: "مش آن الأوان… إن قلبك يخشع؟ السرحان مش معناه تبطل… والخشوع مش للمشايخ بس… ومش لازم دموع… هو قلب حاضر. فالمرة الجاية لما تفتكر في الصلاة حاجة كنت ناسيها… متبطلش. ارجع لصلاتك."
+      validated_by: mssnoussi92
 scenes:
   # ---- khushu-01 : accroche et promesse -----------------------------------------------------------
   # Miroir : se souvenir, en priant, de ce qu'on avait oublié (scène type, à la deuxième personne ;

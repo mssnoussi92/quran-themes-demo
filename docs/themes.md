@@ -95,8 +95,8 @@ proposition. Les sources ci-dessous existent sous ces numéros dans hadith-api (
 faire valider, une par une.
 
 1. **الخشوع** (`misconceptions`) : script écrit le 2026-11-09 (`content/episodes/khushu.yaml`, plan dans
-   `docs/design.md`), rendu candidat à valider. Écarts proposés (à trancher) : Muslim 228 et Bukhari 751
-   échangés, Bukhari 608 en ancre de l'accroche, 57:16 en conclusion.
+   `docs/design.md`) : **tout validé par le propriétaire le 2026-11-09** sur le rendu candidat, avec les écarts
+   au plan : Muslim 228 et Bukhari 751 échangés, Bukhari 608 en ancre de l'accroche, 57:16 en conclusion.
    - « سرحت… يبقى صلاتي ملهاش لازمة » : Muslim 2203a (le Compagnon qui s'en plaint, carte de nom).
    - « الخشوع للناس الصالحين بس » : 2:45-46, Muslim 228 (plan : Bukhari 751).
    - « الخشوع يعني أعيط » : 23:1-2, Bukhari 751 (plan : Muslim 228).

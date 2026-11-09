@@ -7,9 +7,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "df675386e51aa1ba",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "beb669aba86c58e31b55aa8f8554a0645975426a69bfb1b8bc06c6171e65ef13",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "8343a382d394ceea87d7314cc29e6bd47826f969a8b724ede9edf384902d43df"
     },
     "drift-complaint": {
@@ -18,9 +17,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "8c12f77998792098",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "445f64d915e60a0921694a18a6c9e6e8133cf2dbe4f10bc8e97e1b283e96a5ff",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "e391a18e3737d3ed82478fa803deb28fd16b4a0b27bd821185e5975f92a823a6"
     },
     "drift-hadith": {
@@ -29,9 +27,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "514cee9042ce3826",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "c6b0d7b50347e18e8aad4a8c7f3725ed24895b53f807b9b80cdf2a7c103a92b0",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "13b25c85d4ed67b93a1b80e50cd827da214924e1186fc440ffe363a06534b2ae",
       "phrases": {
         "tight": 2,
@@ -47,9 +44,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "c8799dc6106c0a1c",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "25e856c66a9cd9639a19e8364e75d55255fd2ff6c97f25316160ff4baccc9183",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "b2911d8dd507c583a37418244d54a526f71c049d09886a6178878edfdd23c1f3"
     },
     "drift-idea": {
@@ -58,9 +54,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "92ae3d7407ff1518",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "896c2c6eda7762bc4f3001a8ed8be661ccee51f2b24337f481bde3c622fc1210",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "418cc9f3596700b88a161248528ea62a70762ba015c3192181a0021a5e381623"
     },
     "drift-lesson": {
@@ -69,9 +64,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "649a09ba04a48049",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "119639b18214aaa9b9c1d781306d6005f7e1df5dcc7c6aa46d91dda811fd8cd9",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "c01cceb6fcc7fbe440329a1580244d70c4b959ca9357753c268a029ae4bdfc0b"
     },
     "drift-life-1": {
@@ -80,9 +74,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "3e25e80550afe243",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "cbed43730e515bc90043f36fb664e0d660096639b5a83f82f100e2f1b3a01f9d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "e2fb2f391e6dab1f035f7ad94b44ab423c07c2e716bbfa49277e564b47fdc5d2"
     },
     "drift-life-2": {
@@ -91,9 +84,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "ea72db98625da8f4",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "c0d25894d8ee3477e5fa95d7392b292e95bf9a7eee4f0b79352b64163bc4080a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "75ca57d5e56dc8e483fc13b070ae70d37cb5bf13ae968b453943821d60dda58f"
     },
     "drift-outro": {
@@ -102,9 +94,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "2eaff74b1a6d8114",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "bef1acf8693c671d5f5011d5c787b3388dc041f4da1837dabc4d0d2bd8ea33fa",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "5ce69acc87c5f4625a26b902410f63586aaa9364d40053ebc2f062f34c10f784"
     },
     "drift-result": {
@@ -113,9 +104,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "7f9fead591abea5e",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "235e6ea010bade73833afec60a5954e2e58e7f92d3c1151b269d7f603a3475e0",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "5d5f23d345ffa8340128460bb8f82885c03f26864c8399e7eb7cc885cc935249",
       "phrases": {
         "tight": 2,
@@ -132,9 +122,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "27e5bb19d3098658",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "6666dfed2a59a058fd8d6f97682f8642a12857377640de561cf0b5e442de2a1b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "f351998b310934c3e6561e0cc7c49202763b13150820a3616beebdc0ed4e3b8e"
     },
     "drift-wrong": {
@@ -143,9 +132,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "eee5329b6d017f53",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "6ef2c021ead4eac0989d5e00379da46e5dd54afeae31954bfe861f73ca83ac4f",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "812d3cd376b5f6fbfd5a9341794018803820aa0104dcac47b43ad2d31daee137"
     },
     "end-ask": {
@@ -154,9 +142,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "a6d810ef6f848242",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "e72d4778f04b4a74ee75f9c1f295e2f14c39a9a1ed0aae51e15e1c1a9f910181",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "84a70471d05c004bae4aa3a01732167db3dc65e321dc0963d9be7eeb9be13653"
     },
     "end-hook": {
@@ -165,9 +152,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "39751dd484adaec3",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "e351c23045b4eb7cd1e890862f5685d1328fec327e62ed2d03f60273d275d5ea",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "ad121d75010d20028ba024bdb2d0bf96ed37db0e9c543fef457359f9e5f13e3e"
     },
     "end-outro": {
@@ -176,9 +162,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "7005b578bef0247b",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "0ee57278b28c423328afd11925e6a10992746eefe2835a3e789d96c650dd61ce",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "393e1bd32e5969e15afdf83d3ab0be16c900e93d164c47a825eb51dda88cc23b",
       "phrases": {
         "tight": 2,
@@ -195,9 +180,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "137f1cc0d214c23f",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "8d4f493f956c56ff89a3fb35b8f4f5a4264df41579264c2b6a3791c360f5e45a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "99bbabae26e6fab0d58eb25114b106959db7ea70bf68c77da722948c1854b34b"
     },
     "hook-1": {
@@ -206,9 +190,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "866fa8b27dda9f0b",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "05331bee1a7d8b5248bfe139388e41a3d49fcc5a7c1fc44ab11ccd7eb67ca75a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "874a7f09bb65e957317b64b8a3d1235a124d6aa2e121db017e2fe586fe9d661f"
     },
     "hook-2": {
@@ -217,9 +200,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "9b968491fe9dddbb",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "95690d63d5f4390f7ab8e4c2e8226e49ccc84bc648301c52fe6ed218225f2461",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "5be37f078afa83270faa809fae094060e490bc618abb8768534ad007ec0f846f"
     },
     "hook-3": {
@@ -228,9 +210,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "cc013719d31297d4",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "a04de530ef61c867c4ea080345b7c1513f8b4f464886b129c5f6d95a90b4245e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "56124c65163b33f79c572eb27d575111d9a56b7ec54e45192a7ccf927fc3c1ca"
     },
     "hook-4": {
@@ -239,9 +220,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "2e3a174ca4c0a9f2",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "fd2671af545064e6cf9a4fadae15ed2cfef565d637a9ebe0686b4ddbc278383d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "f2b5c90d90fda37c758b0c7084e22bb581c17c0d6a87cd066c586449816824bb"
     },
     "pious-hadith": {
@@ -250,9 +230,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "8447e704ecd7db88",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "fe043e6d0bb2473e2e81e228dd86dd96fd2dbf96a9bf377cb479798e2582acc1",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "d63d354850ab4745ac27bd828fabeb9676c3fa009784c572c4ee8fd2e95748df"
     },
     "pious-hook": {
@@ -261,9 +240,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "085bf285ae8ea1bc",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "3fc4da498d3b44232cb3c4bca650ef4bf80c8399c33aaa2d349b9f722016e9b0",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "38c5d1340f35051953a1631fbeea0c7035f263c1c66ebb3f68b00309e81369c5"
     },
     "pious-idea": {
@@ -272,9 +250,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "4fd1c8ac915a14d3",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "b53d097b3a13970ecf3615b20503074da7209e1ea8312d22e3d3b60513823116",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "b04bc9c89942d6746a4057ee36db6c23ccb369000f869eb6930575ed280debff"
     },
     "pious-lesson": {
@@ -283,9 +260,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "edc0a56a24a6c33a",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "d694b56016d096a4f2d85720a62a5329d8b11e8ff15bcac1c32eb9e599567544",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "cc2c6f1ec9795f2e13a1ec8dd6b3d5d51299a8c1db5a263809dc3fe751e1ce6d"
     },
     "pious-life-1": {
@@ -294,9 +270,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "436dddc91b8c9aec",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "4eaa4f9d4a4d75de4774955d5dd4e047c92b46f10919d24d95fe373b4c38c22c",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "c884d218b674148dca7c6e15b3b98aaf0f8bf3f5d387dc8e5b1886e085b8168c"
     },
     "pious-life-2": {
@@ -305,9 +280,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "272b227218969ac4",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "b0b191e0a5769a874a9ce5647bb73c985c26b5dc95ec468bcbeb79a7143dff78",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "bf4a8424d6ef6f66f3047e4e4d4549e850a038759af9e28196de2752edafc892"
     },
     "pious-outro": {
@@ -316,9 +290,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "d38314797400d2a8",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "70e29f80661eaa63ce5d1180b066bf9c47bf40ed9f5456eed1ba086aea2db5ab",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "d11fc655cd51660db263c95e157d2173b7a5a72203561ad0f6632e442917e812"
     },
     "pious-who": {
@@ -327,9 +300,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "177c187fdc036a10",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "cbd94d53b8c66e5ec6f7d5270f4864088b728ebcedb8683f5aa8c35dbae22762",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "c07fb4491bba2edad452bba49331bef022311483b42ee1f6ff0f57414470618f"
     },
     "promise": {
@@ -338,9 +310,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "601aa7311e3a4079",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "47c6d217f99e1ad617195bc9ec78a40073b37ef147a60e7da0faa4a7ed650bff",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "e8ca6334936fc7df9b5852d98738406216ada7498c40d81c6ccaa8788764ba48",
       "phrases": {
         "tight": 2,
@@ -357,9 +328,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "1224e48f341f422c",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "6bcf575f1f45f2b58ac587e25bd72adb4548e88eb9e785f453be24222cec9376",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "459bd21d5fa3947cfd34a6e012e86bdfedd1e5bd7e3309ca460b21b79be567a5",
       "phrases": {
         "tight": 2,
@@ -376,9 +346,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "2b05ba8100eb5d3c",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "a55cc23da7b551191f1d87ba59215518d75ab5c07153439cf8f07c5395558cae",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "a8fe9b92487b35c5a89adc06c40a3d13c86b4260d425764a694c7aa7694d201e"
     },
     "tears-hadith": {
@@ -387,9 +356,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "f5184fe8a7d28927",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "11ab47852175ee2b2ae6c050806abfab9235332bc282a007a48ace441a574c3f",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "5154debb24e559033f74b57ba586c1ab0bbf6f2b7234f0e8544366f013f2fbda"
     },
     "tears-hook": {
@@ -398,9 +366,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "2cd855e98193267b",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "1243e4d8eb5ea57a0bf21e7de3ff2187730da8d26dcb0475a01d11b75faff875",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "6fad41fde9e76c2a3b2b960216e4c845a4137e1577e8041d699c216fa517b03f"
     },
     "tears-idea": {
@@ -409,9 +376,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "5c0a8ce0c5c195fe",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "fbfbae568f720dc86fca6e83674c8e2a65a4328d0b4ac3293c03de8d7495050d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "544575f4416888cd009e6169222c44f2adfde7ffaf6a930d6c2cb1db2bb6439e"
     },
     "tears-lesson": {
@@ -420,9 +386,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "b38ab7bd18479c24",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "53e20f22c232b05e1156b6d37412cc662d5f8bec6330dc2f34cf4d55e3115ed4",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "2a397bf205c7b3ab4f2689caa3c9abd18a647c2f767440f53f51f87f4add69de"
     },
     "tears-life-1": {
@@ -431,9 +396,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "06b6c0dad347305e",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "f84139ebff9f3a1bad6c54d264b383ab35b68a0b6f78f218dafd88ea24fb4795",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "da8e287453907f6dce42b3f329fbe0ccec1af71027a7c5ab00b37881e4d35f5b"
     },
     "tears-life-2": {
@@ -442,9 +406,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "f9d302491cea242b",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "44e942e67365dbe23e7c88f5e40b1ae0718c75a21aa0fb427dd5481ce8d6921c",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "8a2e9765afaebfdc42ac6a2da943c7d6503991388becbbbee55604c935987c2a",
       "phrases": {
         "tight": 2,
@@ -460,9 +423,8 @@
       "engine": "voicetut",
       "speaker": "Mohammed",
       "key": "0d76538fb92f9fa5",
-      "status": "candidate",
-      "stored": "2026-11-09",
-      "raw_sha256": "7dfd0e453031123f61d8028e85f33a59896946a55000bb736d0697773a89870d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
       "sha256": "f4a14f0a4941fa8e8f981859b7c77a7ed96274fc287ff6e8a11d0b9a76cb89bf"
     }
   }
