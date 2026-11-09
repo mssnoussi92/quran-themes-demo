@@ -93,8 +93,9 @@ on a reel not yet validated that forgets one).
   leave them out of `say_ar`.
 - Whisper writes what it understands, not the vowels: it cannot tell « oṣbor » from « iṣbir » or
   « boshra » from « bashra ». For a vowel, make 2 or 3 takes, keep those Whisper hears with the right
-  words, and send the owner one MP3 per line with the takes one after the other (1.2 s apart) so
-  they choose by ear.
+  words and measure the vowel (`voice-spelling` skill, which holds the whole method). The owner
+  hears the chosen take in the candidate render, with the rest; an MP3 of the variants is only
+  for a doubt the measure cannot settle, if they ask for it.
 - Test variants in one VoiceTut call (one model load), each variant twice in its own text file
   (§3), then `listen.py` on each, `--vowels` for a vowel. To use a test take: put the spelling in
   the scene's `say_ar`, `npm run data`, then `build.py --only <scene> --use-take <scene>=<take.wav>`.

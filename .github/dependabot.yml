@@ -1,0 +1,14 @@
+# The versions of the GitHub Actions used by the workflows (checkout, setup-node, cache, artifacts,
+# setup-uv), proposed once a month in one pull request, checked by the validate workflow. They are
+# still on the Node.js 20 generation, which the runners now force onto Node.js 24 (a warning on
+# every run). The npm and Python dependencies are pinned by hand: a Remotion update changes the
+# render and is tried on purpose.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]

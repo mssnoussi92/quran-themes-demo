@@ -70,8 +70,8 @@ The beats stay; what changes is the promise and what the mirror points at.
 
 | Format | Mirror | Promise (end of the hook) | Done |
 | --- | --- | --- | --- |
-| `misconceptions` | the inner state (« بتقلب في الموبايل… وكل الناس حياتهم حلوة؟ ») | a number, then the follow call: « ٣ أفكار غلط… تابعنا عشان تعرف أولها. » | dua, sabr, tawba, muqarana, tawakkul |
-| `story-suspense`, `story-linear` | the situation of life the story speaks to (« حصلك حاجة… ومش فاهم ليه؟ »), then « في سورة الكهف… » and what the story holds (« نبي شاف ٣ حاجات مش فاهمها ») | a new way of seeing (« قصة… هتخليك تبص لكل ابتلاء عدّى عليك بعين تانية ») | khidr, qarnayn |
+| `misconceptions` | the inner state (« بتقلب في الموبايل… وكل الناس حياتهم حلوة؟ ») | a number, then the follow call: « ٣ أفكار غلط… تابعنا عشان تعرف أولها. » | dua, sabr, tawba, muqarana, tawakkul, khushu |
+| `story-suspense`, `story-linear` | the situation of life the story speaks to (« حصلك حاجة… ومش فاهم ليه؟ »), then « في سورة الكهف… » and what the story holds (« نبي شاف ٣ حاجات مش فاهمها ») | a new way of seeing (« قصة… هتخليك تبص لكل ابتلاء عدّى عليك بعين تانية ») | khidr, qarnayn, kahf |
 | `collection` | each reel its own situation (« لما تحس إنك في الضلمة… »), then who lived that moment | what this one moment gives; the thread of the collection in the first reel only | — |
 | `text-explained` | the situation the text answers | the text's few sentences, one per reel (« كلمات قليلة… كل واحدة فيها باب ») | — |
 | `two-paths` | the viewer before the same choice (« لما ربنا يديك نعمة… بتقول إيه؟ ») | two people, the same gift, two answers | — |
@@ -94,7 +94,10 @@ reel 1 must want to stay.
 - English subtitles (`narration.en`): natural English, same length and rhythm, not word for word.
 - Contrast the two poles of the theme (hardship / ease, fear / hope, sin / repentance…).
 - No greeting, no channel name, no "in this video we will…" before beat 4.
-- A new situation for each episode: the viewer follows the page. Already used: dua, waiting for a
+- A new situation for each episode: the viewer follows the page. **Read the hooks already made, do
+  not trust this list**: `grep -n -A8 "id: hook-1" content/episodes/*.yaml` (it stopped at qarnayn;
+  since then khushu, « بتصلي… وفجأة افتكرت حاجة كنت ناسيها؟ », which is also the « practical »
+  example of the table above, and kahf, « لما تكون الوحيد اللي بيصلي في الشغل… »). Already used: dua, waiting for a
   test result and wanting something badly (« لما تكون مستني نتيجة تحليل »); sabr, « اصبر » heard
   everywhere (« «اصبر»… سمعتها كام مرة؟ »); tawba, a sin and the shame of going back (« عملت ذنب…
   وحسيت إنك بعيد عن ربنا؟ »); muqarana, scrolling through other people's lives (« بتقلب في الموبايل…
@@ -148,7 +151,9 @@ Mirror and contrast scenes use `template: scene` with a catalog character and a 
 2. The 3-second test: frame 1 plus the first line alone must make someone stay.
 3. `uv run --with jsonschema --with pyyaml scripts/validate.py`
 4. `cd video && npm run data`: check the estimated durations, then `npm run still` on the first
-   frames, or a draft render (`npm run render -- Reel916 out/<reel>.mp4`).
+   frames, or a draft render (`npm run render -- Reel916 out/<reel>.mp4
+   --props='{"episode":"<episode>","reel":"<reel>","format":"reel","data":null}'`; without
+   `--props` it renders dua-01).
 5. Open or update a PR: the hook line by line with its beat, the sources used and their status,
    and what was not taken. Send the owner the script before the voice, for information (skill
    `new-theme`, §6). The owner validates the script and the translation with the rest, on the

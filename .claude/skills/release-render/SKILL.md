@@ -68,8 +68,11 @@ Only for an episode already validated whose videos must change without any new c
 every episode shares (the reciter, Tawfiq As-Sayegh in place of Alafasy on 2026-11-08; a composition,
 the signature, the reminder). It needs every reel validated and every take locked (`validate.py
 --release --reel`, `build.py --require-locked`) and goes straight to `<episode>-latest`.
-Dispatch all the episodes at once: they run side by side (six in 37 min). Mode `draft` (lines
-synthesised in CI) is a quick look only: it writes over `<episode>-latest`, avoid it.
+Dispatch all the episodes at once: they run side by side. Mode `draft` (lines synthesised in CI)
+is a quick look only: it goes to its own pre-release `<episode|reel>-draft` (public, never
+`<…>-latest`, which holds the validated videos the owner publishes) and is never published.
+A candidate or a draft stops on an error of `validate.py`; its warnings go to the list
+« à vérifier ».
 
 ## 5. Wait
 
