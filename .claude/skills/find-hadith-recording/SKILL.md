@@ -15,7 +15,7 @@ the registry. The audio is never committed: `tools/audio/build.py` downloads it 
 | Collection | archive.org item | Layout | Reader |
 | --- | --- | --- | --- |
 | Bukhari | `bukhari_audiobook` | one file per hadith, `NNNN.mp3` (four digits: `0074.mp3`), usually the registry's number (6340.mp3 = Bukhari 6340) but not always: `0073.mp3` reads Bukhari 72 and `0074.mp3` Bukhari 73, so transcribe it first; chain, then the hadith. archive.org sometimes answers 500 with a small HTML page: `curl -f`, retry, check the file is audio | Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane |
-| Muslim | `ar_Moslem_Reading_16` | one file per book, `ar_Moslem_Reading_NN.mp3`, the book in each file's title (`/metadata`): 46 البر والصلة, 47 القدر, 49 الذكر والدعاء, 54 الزهد; up to 6.5 h. Position in the file ≈ the share of the book's Arabic text (hadith-api, `reference.book`) before the hadith (2564c: 21 %, found 30 s off) | Ryadussalihin.org (no reader named) |
+| Muslim | `ar_Moslem_Reading_16` | one file per book, `ar_Moslem_Reading_NN.mp3`, the book in each file's title (`/metadata`), file number = book number + 1 (01 is the introduction): 03 الطهارة, 40 السلام, 46 البر والصلة, 47 القدر, 49 الذكر والدعاء, 54 الزهد; up to 6.5 h. Position in the file ≈ the share of the book's Arabic text (hadith-api, `reference.book`) before the hadith (2564c: 21 %, found 30 s off) | Ryadussalihin.org (no reader named) |
 | Tirmidhi | `yna-audiobook-arabic-sunan-altirmidhi` | files by hadith numbers (`...-2006-2204.mp3`), 30 to 40 s per hadith on average, same numbers as the registry on 2139, 3247 and 3573 | Yusuf ibn Nuh Ahmad |
 
 Readings in the registry, all validated by the owner (where each one is, to find a neighbour fast):
@@ -24,6 +24,9 @@ Readings in the registry, all validated by the owner (where each one is, to find
 | --- | --- | --- |
 | Bukhari 6340, 1303, 1469, 6309, 6307, 6446, 73 | `bukhari_audiobook/<number>.mp3` (73: `0074.mp3`) | after the chain, 6 to 21 s in |
 | Bukhari 3401 (excerpt: the sparrow), 122 (excerpt: « يرحم الله موسى… ») | `3401.mp3` (383 s), `0123.mp3` (277 s: 122 is one file further, like 73) | 202.76-212.12 s, 268.78-276.5 s (khidr; Whisper hears « لولدنا » for « لوددنا », validated by ear); position ≈ the excerpt's share of the text |
+| Bukhari 608 (excerpt: « حتى يخطر بين المرء ونفسه… »), 751 | `0608.mp3`, `0751.mp3` (same numbers) | 28.40-40.25 s, 15.50-19.85 s (khushu; the reader pauses before « حتى » and « هو ») |
+| Muslim 228 (الطهارة) | `ar_Moslem_Reading_03.mp3` (file = book + 1: 03 is book 2) | 479.60-497.60 s (khushu; the estimate by share of text, 8 %, landed 35 s before it; Whisper hears « كثارة », « يؤتي ») |
+| Muslim 2203a (السلام) | `ar_Moslem_Reading_40.mp3` (book 39) | 3667.50-3677.45 s (khushu; share 43.5 %, found 60 s after the estimate; the Companion's complaint is read just before) |
 | Muslim 2564c (البر والصلة) | `ar_Moslem_Reading_46.mp3` | 1791.1-1800.3 s (muqarana) |
 | Muslim 2664 (القدر) | `ar_Moslem_Reading_47.mp3` | 2447.7-2476.1 s |
 | Muslim 2679a (الذكر والدعاء) | `ar_Moslem_Reading_49.mp3` | 285.5-299.7 s |

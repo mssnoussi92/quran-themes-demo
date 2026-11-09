@@ -1,0 +1,431 @@
+{
+  "note": "Narration takes validated by the owner (AI-generated voice, VoiceTut), and candidate takes checked by Claude for the owner's final review (status: candidate). Written by tools/audio/build.py --candidate, --lock and --set-phrases, never by hand.",
+  "takes": {
+    "anchor": {
+      "file": "anchor.flac",
+      "text": "النبي صلى الله عليه وسلم قال عن الشيطان في الصلاة: حَتَّى يَخْطُرَ بَيْنَ الْمَرْءِ وَنَفْسِهِ، يَقُولُ اذْكُرْ كَذَا، اذْكُرْ كَذَا. لِمَا لَمْ يَكُنْ يَذْكُرُ، حَتَّى يَظَلَّ الرَّجُلُ لاَ يَدْرِي كَمْ صَلَّى",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "df675386e51aa1ba",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "8343a382d394ceea87d7314cc29e6bd47826f969a8b724ede9edf384902d43df"
+    },
+    "drift-complaint": {
+      "file": "drift-complaint.flac",
+      "text": "الشيطان بِيْلَخْبَط عَلَيَّا صلاتي وقرايتي.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "8c12f77998792098",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "e391a18e3737d3ed82478fa803deb28fd16b4a0b27bd821185e5975f92a823a6"
+    },
+    "drift-hadith": {
+      "file": "drift-hadith.flac",
+      "text": "فالنبي صلى الله عليه وسلم قاله: ذَاكَ شَيْطَانٌ يُقَالُ لَهُ خِنْزِبٌ فَإِذَا أَحْسَسْتَهُ فَتَعَوَّذْ بِاللَّهِ مِنْهُ وَاتْفِلْ عَلَى يَسَارِكَ ثَلاَثًا",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "514cee9042ce3826",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "13b25c85d4ed67b93a1b80e50cd827da214924e1186fc440ffe363a06534b2ae",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.68
+        ]
+      }
+    },
+    "drift-hook": {
+      "file": "drift-hook.flac",
+      "text": "أنا بسرح في كل صلاة… يبقى صلاتي ملهاش لازمة؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c8799dc6106c0a1c",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "b2911d8dd507c583a37418244d54a526f71c049d09886a6178878edfdd23c1f3"
+    },
+    "drift-idea": {
+      "file": "drift-idea.flac",
+      "text": "إن السرحان… يخلي صلاتك ملهاش لازمة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "92ae3d7407ff1518",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "418cc9f3596700b88a161248528ea62a70762ba015c3192181a0021a5e381623"
+    },
+    "drift-lesson": {
+      "file": "drift-lesson.flac",
+      "text": "السرحان مش معناه تبطل… معناه تقاوم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "649a09ba04a48049",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "c01cceb6fcc7fbe440329a1580244d70c4b959ca9357753c268a029ae4bdfc0b"
+    },
+    "drift-life-1": {
+      "file": "drift-life-1.flac",
+      "text": "زي لما تقرا كتاب… وتسرح في نص الصفحة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "3e25e80550afe243",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "e2fb2f391e6dab1f035f7ad94b44ab423c07c2e716bbfa49277e564b47fdc5d2"
+    },
+    "drift-life-2": {
+      "file": "drift-life-2.flac",
+      "text": "مش بترمي الكتاب… بترجع للسطر اللي سرحت عنده.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "ea72db98625da8f4",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "75ca57d5e56dc8e483fc13b070ae70d37cb5bf13ae968b453943821d60dda58f"
+    },
+    "drift-outro": {
+      "file": "drift-outro.flac",
+      "text": "طب ولو أنا مش من الناس الصالحين دول؟ تابعنا عشان تعرف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2eaff74b1a6d8114",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "5ce69acc87c5f4625a26b902410f63586aaa9364d40053ebc2f062f34c10f784"
+    },
+    "drift-result": {
+      "file": "drift-result.flac",
+      "text": "وعثمان قال: عملت كده… وربنا شاله عني.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "7f9fead591abea5e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "5d5f23d345ffa8340128460bb8f82885c03f26864c8399e7eb7cc885cc935249",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.1,
+          1.66
+        ]
+      }
+    },
+    "drift-who": {
+      "file": "drift-who.flac",
+      "text": "صحابي اسمه عثمان بن أبي العاص… راح للنبي صلى الله عليه وسلم وقاله:",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "27e5bb19d3098658",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "f351998b310934c3e6561e0cc7c49202763b13150820a3616beebdc0ed4e3b8e"
+    },
+    "drift-wrong": {
+      "file": "drift-wrong.flac",
+      "text": "أول فكرة غلط عن الخشوع…",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "eee5329b6d017f53",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "812d3cd376b5f6fbfd5a9341794018803820aa0104dcac47b43ad2d31daee137"
+    },
+    "end-ask": {
+      "file": "end-ask.flac",
+      "text": "مش آن الأوان… إن قلبك يخشع؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a6d810ef6f848242",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "84a70471d05c004bae4aa3a01732167db3dc65e321dc0963d9be7eeb9be13653"
+    },
+    "end-hook": {
+      "file": "end-hook.flac",
+      "text": "كل يوم خمس صلوات… يعني خمس فرص.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "39751dd484adaec3",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "ad121d75010d20028ba024bdb2d0bf96ed37db0e9c543fef457359f9e5f13e3e"
+    },
+    "end-outro": {
+      "file": "end-outro.flac",
+      "text": "فالمرة الجاية لما تفتكر في الصلاة حاجة كنت ناسيها… متبطلش. ارجع لصلاتك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "7005b578bef0247b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "393e1bd32e5969e15afdf83d3ab0be16c900e93d164c47a825eb51dda88cc23b",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          3.6,
+          4.34
+        ]
+      }
+    },
+    "end-recap": {
+      "file": "end-recap.flac",
+      "text": "السرحان مش معناه تبطل… والخشوع مش للمشايخ بس… ومش لازم دموع… هو قلب حاضر.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "137f1cc0d214c23f",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "99bbabae26e6fab0d58eb25114b106959db7ea70bf68c77da722948c1854b34b"
+    },
+    "hook-1": {
+      "file": "hook-1.flac",
+      "text": "بتصلي… وفجأة افتكرت حاجة كنت ناسيها؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "866fa8b27dda9f0b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "874a7f09bb65e957317b64b8a3d1235a124d6aa2e121db017e2fe586fe9d661f"
+    },
+    "hook-2": {
+      "file": "hook-2.flac",
+      "text": "تتفرج على ماتش… وتفتكر كل لعبة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "9b968491fe9dddbb",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "5be37f078afa83270faa809fae094060e490bc618abb8768534ad007ec0f846f"
+    },
+    "hook-3": {
+      "file": "hook-3.flac",
+      "text": "وتصلي أربع ركعات… ومش عارف صليت كام.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "cc013719d31297d4",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "56124c65163b33f79c572eb27d575111d9a56b7ec54e45192a7ccf927fc3c1ca"
+    },
+    "hook-4": {
+      "file": "hook-4.flac",
+      "text": "ده مش إنت بس…",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2e3a174ca4c0a9f2",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "f2b5c90d90fda37c758b0c7084e22bb581c17c0d6a87cd066c586449816824bb"
+    },
+    "pious-hadith": {
+      "file": "pious-hadith.flac",
+      "text": "والنبي صلى الله عليه وسلم قال: مَا مِنِ امْرِئٍ مُسْلِمٍ تَحْضُرُهُ صَلاَةٌ مَكْتُوبَةٌ فَيُحْسِنُ وُضُوءَهَا وَخُشُوعَهَا وَرُكُوعَهَا إِلاَّ كَانَتْ كَفَّارَةً لِمَا قَبْلَهَا مِنَ الذُّنُوبِ مَا لَمْ يُؤْتِ كَبِيرَةً وَذَلِكَ الدَّهْرَ كُلَّهُ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "8447e704ecd7db88",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "d63d354850ab4745ac27bd828fabeb9676c3fa009784c572c4ee8fd2e95748df"
+    },
+    "pious-hook": {
+      "file": "pious-hook.flac",
+      "text": "الخشوع ده للمشايخ… مش ليا أنا؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "085bf285ae8ea1bc",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "38c5d1340f35051953a1631fbeea0c7035f263c1c66ebb3f68b00309e81369c5"
+    },
+    "pious-idea": {
+      "file": "pious-idea.flac",
+      "text": "إن الخشوع… للناس الصالحين بس.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "4fd1c8ac915a14d3",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "b04bc9c89942d6746a4057ee36db6c23ccb369000f869eb6930575ed280debff"
+    },
+    "pious-lesson": {
+      "file": "pious-lesson.flac",
+      "text": "الخشوع مش رُتْبَة للمشايخ… ده حاجة أي مسلم بيحسّنها، زي وضوءه.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "edc0a56a24a6c33a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "cc2c6f1ec9795f2e13a1ec8dd6b3d5d51299a8c1db5a263809dc3fe751e1ce6d"
+    },
+    "pious-life-1": {
+      "file": "pious-life-1.flac",
+      "text": "زي أول مرة تسوق… وتقول: عمري ما هتعلم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "436dddc91b8c9aec",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "c884d218b674148dca7c6e15b3b98aaf0f8bf3f5d387dc8e5b1886e085b8168c"
+    },
+    "pious-life-2": {
+      "file": "pious-life-2.flac",
+      "text": "وبالتمرين… بقيت تسوق وإنت مرتاح.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "272b227218969ac4",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "bf4a8424d6ef6f66f3047e4e4d4549e850a038759af9e28196de2752edafc892"
+    },
+    "pious-outro": {
+      "file": "pious-outro.flac",
+      "text": "طب ولو مبعيطش في الصلاة… يبقى معنديش خشوع؟ تابعنا عشان تعرف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "d38314797400d2a8",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "d11fc655cd51660db263c95e157d2173b7a5a72203561ad0f6632e442917e812"
+    },
+    "pious-who": {
+      "file": "pious-who.flac",
+      "text": "الخاشعين… هما اللي عارفين إنهم هيقابلوا ربنا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "177c187fdc036a10",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "c07fb4491bba2edad452bba49331bef022311483b42ee1f6ff0f57414470618f"
+    },
+    "promise": {
+      "file": "promise.flac",
+      "text": "بس فيه تلات أفكار غلط عن الخشوع… يمكن تكون مصدق واحدة منهم. تابعنا عشان تعرف أولها.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "601aa7311e3a4079",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "e8ca6334936fc7df9b5852d98738406216ada7498c40d81c6ccaa8788764ba48",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          2.68,
+          4.64
+        ]
+      }
+    },
+    "stakes": {
+      "file": "stakes.flac",
+      "text": "وناس كتير… من كتر السرحان، بطلت تحاول.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "1224e48f341f422c",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "459bd21d5fa3947cfd34a6e012e86bdfedd1e5bd7e3309ca460b21b79be567a5",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.22,
+          2.3
+        ]
+      }
+    },
+    "tears-aisha": {
+      "file": "tears-aisha.flac",
+      "text": "السيدة عائشة سألت النبي صلى الله عليه وسلم عن الالتفات في الصلاة… إنك تلف وشك وإنت بتصلي.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2b05ba8100eb5d3c",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "a8fe9b92487b35c5a89adc06c40a3d13c86b4260d425764a694c7aa7694d201e"
+    },
+    "tears-hadith": {
+      "file": "tears-hadith.flac",
+      "text": "قالها: هُوَ اخْتِلاَسٌ يَخْتَلِسُهُ الشَّيْطَانُ مِنْ صَلاَةِ الْعَبْدِ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "f5184fe8a7d28927",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "5154debb24e559033f74b57ba586c1ab0bbf6f2b7234f0e8544366f013f2fbda"
+    },
+    "tears-hook": {
+      "file": "tears-hook.flac",
+      "text": "بتشوف ناس بِتْعَيَّط في الصلاة… وإنت لأ؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2cd855e98193267b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "6fad41fde9e76c2a3b2b960216e4c845a4137e1577e8041d699c216fa517b03f"
+    },
+    "tears-idea": {
+      "file": "tears-idea.flac",
+      "text": "إن الخشوع… يعني لازم تعيط.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "5c0a8ce0c5c195fe",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "544575f4416888cd009e6169222c44f2adfde7ffaf6a930d6c2cb1db2bb6439e"
+    },
+    "tears-lesson": {
+      "file": "tears-lesson.flac",
+      "text": "الخشوع مش لازم دموع… الخشوع إنك تكون حاضر: بقلبك، وبعينك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "b38ab7bd18479c24",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "2a397bf205c7b3ab4f2689caa3c9abd18a647c2f767440f53f51f87f4add69de"
+    },
+    "tears-life-1": {
+      "file": "tears-life-1.flac",
+      "text": "زي لما حد بتحبه بيكلمك… وعينك في الموبايل.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "06b6c0dad347305e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "da8e287453907f6dce42b3f329fbe0ccec1af71027a7c5ab00b37881e4d35f5b"
+    },
+    "tears-life-2": {
+      "file": "tears-life-2.flac",
+      "text": "ولما تسيب الموبايل وتبصله… يحس إنك معاه.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "f9d302491cea242b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "8a2e9765afaebfdc42ac6a2da943c7d6503991388becbbbee55604c935987c2a",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          1.86
+        ]
+      }
+    },
+    "tears-outro": {
+      "file": "tears-outro.flac",
+      "text": "وفي الآخر… آية بتسألك سؤال. دي الأخيرة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "0d76538fb92f9fa5",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "f4a14f0a4941fa8e8f981859b7c77a7ed96274fc287ff6e8a11d0b9a76cb89bf"
+    }
+  }
+}
