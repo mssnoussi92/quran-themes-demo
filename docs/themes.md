@@ -81,6 +81,51 @@ l'épisode entier dure environ deux fois sa récitation (khidr et qarnayn), esti
 | La vache (2:67-73) | `story-linear`, 3 reels | un reel d'une collection | court et léger : multiplier les questions pour ne pas obéir | 3 | 2,0 min ; environ 4 min |
 | L'homme aux 99 meurtres (Bukhari 3470) | `story-linear` | — | trop proche du repentir, déjà fait : plus tard, sous l'angle de l'entourage (quitter la terre où l'on péchait) | 4 | à estimer |
 
+### Fiche détaillée : les gens de la caverne (skill `choose-format`, 2026-11-09)
+
+À trancher par le propriétaire. Récitation de Tawfiq mesurée verset par verset (mp3quran.net, lecture 17) :
+18:9-26 = 6,2 min ; 18:19 seul dure 47 s, 18:22 38 s.
+
+- **Format conseillé : `story-linear`.** Le Coran garde déjà la question pour la fin : au réveil, « combien
+  de temps sommes-nous restés ? — un jour ou une partie de jour » (18:19), et la réponse ne vient qu'en 18:25
+  (trois cents ans, et neuf de plus). Dans l'ordre du texte, le reel 4 finit sur cette question et le reel 5
+  y répond : le suspense est là sans ordre propre à l'épisode entier. **Autre possible : `story-suspense`**,
+  qui garderait les trois temps (la fuite, le sommeil, le réveil) puis leurs leçons : un ordre de plus à
+  valider, pour peu de gain ici. Variété : après `misconceptions` (الخشوع), une histoire est permise.
+- **Angle** (celui de la liste du 2026-11-08) : rester fidèle quand on est seul à penser autrement ; et le
+  lieu étroit qu'on choisit pour Dieu qui devient miséricorde (18:16, « ينشر لكم ربكم من رحمته »).
+  Accroche : « لما تكون الوحيد اللي بيصلي في الشغل… ».
+- **Reels** (environ 4,1 min de versets ; 4,7 min avec 18:22) :
+  1. L'accroche, « في سورة الكهف… شباب » ; Muslim 809a en ancre (les dix premiers versets d'Al-Kahf protègent
+     du Dajjal, et l'histoire y commence) ; 18:9-10, leur fuite et leur du'a ; la promesse. Versets 24 s.
+  2. Qui ils étaient : des jeunes qui ont cru, « nous avons raffermi leurs cœurs » quand ils se sont levés
+     seuls (18:13-14), « réfugiez-vous dans la caverne, votre Seigneur répandra sur vous de Sa miséricorde »
+     (18:16) ; leçon : celui qui se tient seul pour Dieu, Dieu lui affermit le cœur ; exemple : le seul au
+     travail qui refuse. Versets 59 s (18:15, leur argument contre leur peuple, laissé de côté : 22 s).
+  3. La caverne et le sommeil : le soleil qui s'écarte d'eux (18:17), on les croirait éveillés, Dieu les
+     retourne, leur chien à l'entrée (18:18) ; leçon : quand tu te réfugies en Dieu, Il prend soin du
+     moindre détail ; exemple : laisser une chose pour Dieu, croire que la vie s'est rétrécie, puis voir la
+     porte s'ouvrir. Versets 57 s.
+  4. Le réveil : « combien de temps ? » ; la pièce d'argent, la ville, la prudence (18:19-20) ; leur histoire
+     révélée, pour que les gens sachent que la promesse de Dieu est vraie et que l'Heure ne fait aucun doute
+     (18:21) ; fin sur la question : combien de temps, vraiment ? Versets 98 s : reel d'environ 2:10, avec une
+     relance au milieu (« وبعدين؟ ») si le propriétaire le veut.
+  5. La conclusion : trois cents ans et neuf (18:25) ; Dieu sait mieux combien de temps (18:26) ; leur nombre,
+     que le Coran ne tranche pas : ne pas disputer de ce qui n'apporte rien (18:22, à trancher) ; leur du'a
+     (18:10) à garder pour soi ; retour à l'accroche. Versets 29 s (67 s avec 18:22).
+- **Sources** : 18:9-10, 13-14, 16-21, 25-26 (et 18:22 si retenu) à inscrire, aucune encore au registre ;
+  Muslim 809a (hadith-api 809.01 ; 809b note que Shu'ba disait « من آخر الكهف », la carte montre 809a) à
+  inscrire, sa lecture à chercher (Ryadussalihin.org, livre 6, fichier 07). 18:23-24 laissés de côté, déjà
+  dans qarnayn-05. Rien hors du texte : ni leur nombre, ni leurs noms, ni la ville ou le roi, ni le nom du
+  chien, ni le calcul des années.
+- **Durée estimée** : épisode entier d'environ 8,5 min (9,5 avec 18:22), reels de 1:20 à 2:10.
+- **À faire** : trois fonds nouveaux, des lieux sans personne : l'intérieur de la caverne (la lumière du soleil
+  qui passe à droite puis à gauche sans les toucher, 18:17), l'entrée avec le chien couché, pattes étendues
+  (18:18), la ville ancienne et la pièce d'argent (18:19). Les jeunes ne sont jamais dessinés : cartes de nom
+  (« أصحاب الكهف »), scènes de lieux.
+- **Décisions du propriétaire** : le format ; garder 18:22 (leur nombre) ou non ; Muslim 809a en ancre de
+  l'accroche ; la relance au milieu du reel 4.
+
 **Ordre validé par le propriétaire le 2026-11-08**, en variant les formats (jamais trois fois le même de suite ; les
 deux histoires comptent pour un) :
 الخشوع (`misconceptions`, choisi), les gens de la caverne, « دعوات في الشدة » (`collection`), الشكر (Bukhari 3464),
