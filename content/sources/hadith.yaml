@@ -951,3 +951,31 @@
     license: none stated on the archive.org item
     status: validated
     validated_by: mssnoussi92
+- id: hadith.muslim.809a
+  type: hadith
+  ref: {collection: muslim, number: 809, narration: 1}
+  grade: sahih
+  graded_by: Sahih Muslim
+  url: https://sunnah.com/muslim:809a
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim/1883.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim/1883.json
+    translator: Abdul Hamid Siddiqui
+    book: 6
+    hadith_in_book: 311
+    retrieved: '2026-11-09'
+  status: proposed
+  notes: "« من حفظ عشر آيات من أول سورة الكهف عصم من الدجال » (kahf-01, ancre de l'accroche : les dix premiers versets d'Al-Kahf, où l'histoire commence) ; 809b (hadith-api 809.02) dit que Shu'ba rapportait « من آخر الكهف » et Hammam « من أول الكهف » : la carte montre 809a"
+  text_ar: وَحَدَّثَنَا مُحَمَّدُ بْنُ الْمُثَنَّى، حَدَّثَنَا مُعَاذُ بْنُ هِشَامٍ، حَدَّثَنِي أَبِي، عَنْ قَتَادَةَ، عَنْ سَالِمِ، بْنِ أَبِي الْجَعْدِ الْغَطَفَانِيِّ عَنْ مَعْدَانَ بْنِ أَبِي طَلْحَةَ الْيَعْمَرِيِّ، عَنْ أَبِي الدَّرْدَاءِ، أَنَّ النَّبِيَّ صلى الله عليه وسلم قَالَ ‏ "‏ مَنْ حَفِظَ عَشْرَ آيَاتٍ مِنْ أَوَّلِ سُورَةِ الْكَهْفِ عُصِمَ مِنَ الدَّجَّالِ ‏"‏
+  text_en: Abu Darda' reported Allah's Apostle (ﷺ) as saying:If anyone learns by heart the first ten verses of the Surah al-Kahf, he will be protected from the Dajjal
+  excerpt_en: If anyone learns by heart the first ten verses of the Surah al-Kahf, he will be protected from the Dajjal
+  recording:
+    reader: Ryadussalihin.org
+    item: https://archive.org/details/ar_Moslem_Reading_16
+    file: https://archive.org/download/ar_Moslem_Reading_16/ar_Moslem_Reading_07.mp3
+    start: 11621.3
+    end: 11627.7
+    heard: من حفظ عشر آيات من أول سورة الكهف عصم من الدجال
+    license: none stated on the archive.org item
+    status: proposed
