@@ -21,6 +21,15 @@ name: render
 #              owner (validate.py --release, build.py --require-locked): a new render of a validated
 #              episode (a change to the compositions), straight to "<…>-latest".
 #   draft      whatever exists, missing lines synthesised in CI (VoiceTut): a quick look, never published.
+#
+# Three stages. The render is 93 % of a run's time (30 runs, 2026-11-06 to 2026-11-09) and the
+# three renders of an episode weigh about the same, so they run side by side:
+#   audio     the checks, the audio once for every video (a draft's synthesis is never the same
+#             twice) and the episode's data, handed to the next jobs as an artifact;
+#   render    one job per leg: the whole episode in 16:9, in 9:16, the reels and the thumbnail
+#             (one leg for a single reel); each keeps its videos as an artifact for 7 days;
+#   release   the videos of every leg and the notes, attached to the release.
+# A leg that failed is run again alone (« Re-run failed jobs »): the others are not rendered twice.
 
 on:
   workflow_dispatch:
@@ -41,25 +50,28 @@ on:
         default: candidate
 
 permissions:
-  contents: write
+  contents: read
 
 # One run per episode and reel: « all » of two episodes run side by side.
 concurrency:
   group: render-${{ inputs.episode }}-${{ inputs.reel }}
   cancel-in-progress: true
 
+env:
+  EPISODE: ${{ inputs.episode }}
+  REEL: ${{ inputs.reel }}
+  SPEAKER: ${{ inputs.speaker }}
+  MODE: ${{ inputs.mode }}
+
 jobs:
-  render:
+  audio:
+    name: audio and data
     runs-on: ubuntu-24.04
-    # The paper-cut style (docs/styles.md) renders about six times slower than the flat one on a
-    # runner without GPU (0.24 s a frame against 0.04): about 3 h 30 for a nine-minute episode in
-    # both formats and its reels. GitHub's limit for a job is 360 minutes.
-    timeout-minutes: 330
-    env:
-      EPISODE: ${{ inputs.episode }}
-      REEL: ${{ inputs.reel }}
-      SPEAKER: ${{ inputs.speaker }}
-      MODE: ${{ inputs.mode }}
+    # A draft of a whole episode synthesises every line in CI (VoiceTut, about 1.5 min a line).
+    timeout-minutes: 240
+    outputs:
+      reels: ${{ steps.reels.outputs.reels }}
+      legs: ${{ steps.reels.outputs.legs }}
     steps:
       - uses: actions/checkout@v4
 
@@ -71,15 +83,21 @@ jobs:
 
       - uses: astral-sh/setup-uv@v6
 
-      # The reels to render: the one asked for, or all of the episode's.
+      # The reels to render: the one asked for, or all of the episode's. The legs of the render:
+      # the whole episode in each format and the reels (with the thumbnail), or the one reel.
       - name: Reels
+        id: reels
         run: |
           if [ "$REEL" = all ]; then
             reels=$(uv run --with pyyaml python -c "import sys, yaml; print(' '.join(r['id'] for r in yaml.safe_load(open(sys.argv[1]))['reels']))" "content/episodes/$EPISODE.yaml")
+            legs='{"leg":["16x9","9x16","reels"]}'
           else
             reels="$REEL"
+            legs='{"leg":["reels"]}'
           fi
           echo "REELS=$reels" >> "$GITHUB_ENV"
+          echo "reels=$reels" >> "$GITHUB_OUTPUT"
+          echo "legs=$legs" >> "$GITHUB_OUTPUT"
           echo "reels: $reels"
 
       - name: Sources and editorial rules
@@ -95,6 +113,7 @@ jobs:
             if [ "$REEL" = all ]; then
               uv run --with jsonschema --with pyyaml scripts/validate.py --release --whole "$EPISODE"
             fi
+            : > validate.txt          # nothing left to look at; the artifact keeps its layout
           fi
 
       # No apt: the Ubuntu mirror can hang for an hour (voice-test, 2026-11-06). Static ffmpeg build
@@ -164,24 +183,93 @@ jobs:
           python3 tools/audio/build.py --episode "$EPISODE" --speaker "$SPEAKER" \
             --tts-python .venv-voicetut/bin/python "${locked[@]}"
 
+      # The data every video is rendered from, with the real lengths, and the audio they play: the
+      # render legs and the release notes read these very files, never a second build.
+      - name: Episode data with the real audio
+        working-directory: video
+        run: npm run data
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: episode-data
+          path: |
+            video/public/data
+            video/public/audio
+            validate.txt
+          if-no-files-found: error
+          retention-days: 7
+          overwrite: true             # a second attempt of the run replaces the first one's
+
+  render:
+    needs: audio
+    name: render (${{ matrix.leg }})
+    runs-on: ubuntu-24.04
+    # The paper-cut style (docs/styles.md) renders about four times slower than the flat one on a
+    # runner without GPU (0.13 to 0.17 s a frame against 0.04): 46 minutes for the 16:9 of a
+    # nine-minute episode (kahf, run 30). GitHub's limit for a job is 360 minutes.
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false          # a leg that fails does not stop the others: run it again alone
+      matrix: ${{ fromJSON(needs.audio.outputs.legs) }}
+    env:
+      REELS: ${{ needs.audio.outputs.reels }}
+      LEG: ${{ matrix.leg }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+
+      # For the lengths and the loudness printed after the render (Remotion brings its own to encode).
+      - name: ffmpeg (static build)
+        run: |
+          uv venv .venv-tools
+          uv pip install --python .venv-tools/bin/python imageio-ffmpeg==0.8.1
+          mkdir -p "$HOME/.local/bin"
+          ln -sf "$(.venv-tools/bin/python -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())')" "$HOME/.local/bin/ffmpeg"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: video/package-lock.json
+
+      - name: Video dependencies
+        working-directory: video
+        run: npm ci --no-audit --no-fund
+
+      # video/public/data and video/public/audio as the audio job made them. No « npm run data » here:
+      # without the audio it would write estimated lengths (and « DRAFT » on the videos).
+      - uses: actions/download-artifact@v4
+        with:
+          name: episode-data
+          path: .
+
       - name: Render
         working-directory: video
         run: |
-          npm run data
-          if [ "$REEL" = all ]; then
-            props=$(printf '{"episode":"%s","reel":null,"format":"episode","data":null}' "$EPISODE")
-            npx remotion render Episode169 "out/$EPISODE-16x9.mp4" --props="$props"
-            props=$(printf '{"episode":"%s","reel":null,"format":"reel","data":null}' "$EPISODE")
-            npx remotion render Reel916 "out/$EPISODE-9x16.mp4" --props="$props"
-            if grep -q '^thumbnail:' "../content/episodes/$EPISODE.yaml"; then
-              props=$(printf '{"episode":"%s","layout":null,"data":null}' "$EPISODE")
-              npx remotion still Thumbnail169 "out/$EPISODE-thumbnail.png" --props="$props"
-            fi
-          fi
-          for reel in $REELS; do
-            props=$(printf '{"episode":"%s","reel":"%s","format":"reel","data":null}' "$EPISODE" "$reel")
-            npx remotion render Reel916 "out/$reel.mp4" --props="$props"
-          done
+          test -s "public/data/$EPISODE.json" || { echo "::error::no data for $EPISODE from the audio job"; exit 1; }
+          case "$LEG" in
+            16x9)
+              props=$(printf '{"episode":"%s","reel":null,"format":"episode","data":null}' "$EPISODE")
+              npx remotion render Episode169 "out/$EPISODE-16x9.mp4" --props="$props"
+              ;;
+            9x16)
+              props=$(printf '{"episode":"%s","reel":null,"format":"reel","data":null}' "$EPISODE")
+              npx remotion render Reel916 "out/$EPISODE-9x16.mp4" --props="$props"
+              ;;
+            reels)
+              if [ "$REEL" = all ] && grep -q '^thumbnail:' "../content/episodes/$EPISODE.yaml"; then
+                props=$(printf '{"episode":"%s","layout":null,"data":null}' "$EPISODE")
+                npx remotion still Thumbnail169 "out/$EPISODE-thumbnail.png" --props="$props"
+              fi
+              for reel in $REELS; do
+                props=$(printf '{"episode":"%s","reel":"%s","format":"reel","data":null}' "$EPISODE" "$reel")
+                npx remotion render Reel916 "out/$reel.mp4" --props="$props"
+              done
+              ;;
+            *) echo "::error::unknown leg $LEG"; exit 1 ;;
+          esac
           for f in out/*.mp4; do echo "$f"; ffmpeg -hide_banner -i "$f" 2>&1 | grep -E "Duration|Stream" || true; done
           # Loudness of each video (every part is levelled to -16 LUFS by tools/audio/build.py): about
           # -16 LUFS integrated, true peak under -1 dBTP.
@@ -189,14 +277,68 @@ jobs:
             echo "$f: $(ffmpeg -hide_banner -nostats -i "$f" -vn -af ebur128=peak=true -f null - 2>&1 | grep -A14 Summary | grep -E ' I:| Peak:' | tr -s ' ' | tr '\n' ' ')"
           done
 
+      # Kept whatever happens next: an error while writing the release does not cost a render.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: videos-${{ matrix.leg }}
+          path: |
+            video/out/*.mp4
+            video/out/*.png
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0        # MP4 and PNG are compressed already
+          overwrite: true             # the leg run again after a failure
+
+  release:
+    needs: [audio, render]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      REELS: ${{ needs.audio.outputs.reels }}
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: video/package-lock.json
+
+      - name: Video dependencies
+        working-directory: video
+        run: npm ci --no-audit --no-fund
+
+      # The data the videos were rendered from (the notes give each chapter at its minute in the video)
+      # and, for a candidate, what validate.py left to look at.
+      - uses: actions/download-artifact@v4
+        with:
+          name: episode-data
+          path: .
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: videos-*
+          merge-multiple: true
+          path: video/out
+
+      - name: The videos of every leg
+        run: |
+          ls -la video/out
+          expected="$REELS"
+          if [ "$REEL" = all ]; then expected="$expected $EPISODE-16x9 $EPISODE-9x16"; fi
+          for name in $expected; do
+            test -s "video/out/$name.mp4" || { echo "::error::video/out/$name.mp4 is missing"; exit 1; }
+          done
+
       # Candidate: a draft release (private), its notes the list « à vérifier » then the texts as they are
       # now; the final notes (as validated) and the commit rendered kept as assets for the promote workflow.
       - name: Attach the candidate videos to a draft release
         if: inputs.mode == 'candidate'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           name=$([ "$REEL" = all ] && echo "$EPISODE" || echo "$REEL")
           tag="$name-candidate"
@@ -221,10 +363,6 @@ jobs:
 
       - name: Attach the MP4 files and the publication texts to the pre-release
         if: inputs.mode != 'candidate'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           if [ "$REEL" = all ]; then
             tag="$EPISODE-latest"; title="Episode $EPISODE (latest): whole episode (16:9, 9:16) and reels"
