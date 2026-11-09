@@ -1147,3 +1147,19 @@
   notes: Al-Mu'minun 23:2, « ceux qui sont humbles dans leur prière » (khushu, lu avec 23:1 ; commence par « الذين »)
   text_ar: ٱلَّذِينَ هُمْ فِى صَلَاتِهِمْ خَـٰشِعُونَ
   text_en: They who are during their prayer humbly intent
+- id: quran.57.16
+  type: ayah
+  ref: {surah: 57, ayah: 16}
+  url: https://quran.com/57/16
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=57:16
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=57:16
+    translator: Saheeh International
+    surah_ar: الحديد
+    surah_en: Al-Hadid
+    retrieved: '2026-11-09'
+  status: proposed
+  notes: Al-Hadid 57:16, « le temps n'est-il pas venu pour les croyants que leurs cœurs s'humilient (تخشع) au rappel d'Allah ? » (khushu, verset de conclusion, reel khushu-05 ; phrase complète, commence par ۞ « ألم يأن », la fin parle des gens du Livre dont les cœurs se sont durcis)
+  text_ar: ۞ أَلَمْ يَأْنِ لِلَّذِينَ ءَامَنُوٓا۟ أَن تَخْشَعَ قُلُوبُهُمْ لِذِكْرِ ٱللَّهِ وَمَا نَزَلَ مِنَ ٱلْحَقِّ وَلَا يَكُونُوا۟ كَٱلَّذِينَ أُوتُوا۟ ٱلْكِتَـٰبَ مِن قَبْلُ فَطَالَ عَلَيْهِمُ ٱلْأَمَدُ فَقَسَتْ قُلُوبُهُمْ ۖ وَكَثِيرٌ مِّنْهُمْ فَـٰسِقُونَ
+  text_en: Has the time not come for those who have believed that their hearts should become humbly submissive at the remembrance of Allāh and what has come down of the truth? And let them not be like those who were given the Scripture before, and a long period passed over them, so their hearts hardened; and many of them are defiantly disobedient.

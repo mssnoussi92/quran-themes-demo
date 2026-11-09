@@ -1,0 +1,583 @@
+# Épisode Le recueillement dans la prière (الخشوع) : 5 reels (9:16) pour Facebook, Instagram et TikTok ;
+# l'épisode entier (16:9 et 9:16) pour YouTube. Format « idées fausses » (docs/formats.md, choisi par le
+# propriétaire dans l'ordre du 2026-11-08), avec un exemple de vie après chaque phrase à retenir.
+# Thème et idées reçues choisis par le propriétaire le 2026-11-07 (docs/themes.md) ; script écrit le
+# 2026-11-09, envoyé au propriétaire pour information avant la voix ; tout est validé d'un coup, à la fin,
+# sur le rendu candidat (scripts/finalize.py validate, seulement sur sa parole). Toute modification d'une
+# ligne d'un reel retire son validated_by.
+# Les répliques identiques à une prise figée d'un autre épisode (« قال ربنا سبحانه وتعالى: », « والنبي صلى
+# الله عليه وسلم قال: », « تاني فكرة غلط… », « تالت فكرة غلط… ») reprennent cette prise (take_from).
+# Écarts au plan du 2026-11-07 (à trancher par le propriétaire) : Muslim 228 (« ما من امرئ مسلم… فيحسن
+# وضوءها وخشوعها ») passe à l'idée « pour les gens pieux seulement », Bukhari 751 (le regard qui se
+# détourne) à l'idée « c'est pleurer » ; Bukhari 608 en ancre de l'accroche, 57:16 en conclusion.
+episode: khushu
+title: { ar: "الخشوع", en: "Khushu in prayer" }
+format: misconceptions   # docs/formats.md (skill choose-format)
+narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
+# Textes de publication, faits des répliques du script ; validés avec le reste à la fin (validated_by).
+# Le reste (sources, récitateur, lecteurs, voix IA, chapitres) : video/scripts/publish.ts.
+publish:
+  title: { en: "Khushu: 3 wrong ideas you might believe", ar: "تلات أفكار غلط عن الخشوع… يمكن تكون مصدق واحدة منهم" }
+  description:
+    en: "Praying… and suddenly remembering something you'd forgotten? Three wrong ideas keep us from khushu in prayer: that drifting off makes your prayer worthless, that khushu is only for the pious, and that it means crying. Each one, answered from the Qur'an and the Sunnah."
+    ar: "بتصلي… وفجأة افتكرت حاجة كنت ناسيها؟ فيه تلات أفكار غلط بتبعدنا عن الخشوع في الصلاة: إن السرحان بيخلي صلاتك ملهاش لازمة، وإن الخشوع للمشايخ بس، وإنه يعني لازم تعيط. والرد على كل فكرة من القرآن والسنة."
+  hashtags: ["#Khushu", "#الخشوع", "#Salah"]
+# Miniature YouTube (Thumbnail169) : gros plan, fond uni, Salma (Amir dans celle de Dhul-Qarnayn).
+thumbnail:
+  layout: close-up
+  headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas" }
+  kicker: { ar: "عن الخشوع", en: "about khushu" }
+  character: { id: salma, pose: standing, mood: worried }
+  background: plain
+reels:
+  - id: khushu-01
+    title: { ar: "مش لوحدك", en: "It's not just you" }
+    publish:
+      title: { en: "Praying… and suddenly remembering something you'd forgotten?", ar: "بتصلي… وفجأة افتكرت حاجة كنت ناسيها؟" }
+      description:
+        en: "You watch a match and remember every move… you pray four rak'as and don't know how many you prayed? It's not just you: the Prophet ﷺ described it."
+        ar: "تتفرج على ماتش وتفتكر كل لعبة… وتصلي أربع ركعات ومش عارف صليت كام؟ ده مش إنت بس: النبي صلى الله عليه وسلم وصفه."
+  - id: khushu-02
+    title: { ar: "ارجع للسطر", en: "Back to the line" }
+    publish:
+      title: { en: "“I drift off in every prayer… so it's worthless”?", ar: "«أنا بسرح في كل صلاة… يبقى صلاتي ملهاش لازمة»؟" }
+      description:
+        en: "The first wrong idea about khushu: that drifting off makes your prayer worthless. A Companion complained of it, and the Prophet ﷺ gave him a remedy. Drifting off doesn't mean you quit… it means you fight back."
+        ar: "أول فكرة غلط عن الخشوع: إن السرحان بيخلي صلاتك ملهاش لازمة. صحابي اشتكى منه، والنبي صلى الله عليه وسلم إداله علاج. السرحان مش معناه تبطل… معناه تقاوم."
+  - id: khushu-03
+    title: { ar: "مش للمشايخ بس", en: "Not only for sheikhs" }
+    publish:
+      title: { en: "“Khushu is for sheikhs… not for someone like me”?", ar: "«الخشوع ده للمشايخ… مش لواحد زيي»؟" }
+      description:
+        en: "The second wrong idea: that khushu is only for the pious. Khushu isn't a rank for sheikhs… it's something any Muslim gets better at, like their wudu."
+        ar: "تاني فكرة غلط: إن الخشوع للناس الصالحين بس. الخشوع مش رتبة للمشايخ… ده حاجة أي مسلم بيحسّنها، زي وضوءه."
+  - id: khushu-04
+    title: { ar: "قلبك وعينك", en: "Your heart and your eyes" }
+    publish:
+      title: { en: "People cry in prayer… and you don't?", ar: "بتشوف ناس بتعيط في الصلاة… وإنت لأ؟" }
+      description:
+        en: "The third wrong idea: that khushu means you have to cry. Khushu doesn't have to be tears… it's being present: with your heart, and with your eyes."
+        ar: "تالت فكرة غلط: إن الخشوع يعني لازم تعيط. الخشوع مش لازم دموع… الخشوع إنك تكون حاضر: بقلبك، وبعينك."
+  - id: khushu-05
+    title: { ar: "ارجع لصلاتك", en: "Come back to your prayer" }
+    publish:
+      title: { en: "Five prayers a day… five chances", ar: "كل يوم خمس صلوات… يعني خمس فرص" }
+      description:
+        en: "Isn't it time… for your heart to be humble? Drifting off doesn't mean you quit… khushu isn't only for sheikhs… it doesn't have to be tears… it's a present heart. So next time you remember in prayer something you'd forgotten… don't quit. Come back to your prayer."
+        ar: "مش آن الأوان… إن قلبك يخشع؟ السرحان مش معناه تبطل… والخشوع مش للمشايخ بس… ومش لازم دموع… هو قلب حاضر. فالمرة الجاية لما تفتكر في الصلاة حاجة كنت ناسيها… متبطلش. ارجع لصلاتك."
+scenes:
+  # ---- khushu-01 : accroche et promesse -----------------------------------------------------------
+  # Miroir : se souvenir, en priant, de ce qu'on avait oublié (scène type, à la deuxième personne ;
+  # c'est ce que décrit Bukhari 608, l'ancre).
+  - id: hook-1
+    role: hook
+    reel: khushu-01
+    audio: tts
+    narration:
+      ar: "بتصلي… وفجأة افتكرت حاجة كنت ناسيها؟"
+      en: "Praying… and suddenly you remember something you'd forgotten?"
+    visual:
+      template: scene
+      background: mosque
+      characters:
+        - { id: amir, pose: standing, mood: worried, talking: false }
+  # Contraste : l'attention entière ailleurs (ligne de l'IA).
+  - id: hook-2
+    role: hook
+    reel: khushu-01
+    audio: tts
+    narration:
+      ar: "تتفرج على ماتش… وتفتكر كل لعبة."
+      en: "You watch a match… and remember every move."
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: smiling, talking: false }
+  - id: hook-3
+    role: hook
+    reel: khushu-01
+    audio: tts
+    narration:
+      ar: "وتصلي أربع ركعات… ومش عارف صليت كام."
+      en: "You pray four rak'as… and don't know how many you prayed."
+    visual:
+      template: title-card
+  # Nommer (ligne de l'IA), puis l'ancre.
+  - id: hook-4
+    role: hook
+    reel: khushu-01
+    audio: tts
+    narration:
+      ar: "ده مش إنت بس…"
+      en: "It's not just you…"
+    visual:
+      template: title-card
+  - id: anchor
+    role: evidence
+    reel: khushu-01
+    source: hadith.bukhari.608
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "النبي صلى الله عليه وسلم قال عن الشيطان في الصلاة:"
+      en: "The Prophet ﷺ said, about Satan in prayer:"
+    visual:
+      template: source-card
+  # L'enjeu (ligne de l'IA, situation type, sans chiffre).
+  - id: stakes
+    role: hook
+    reel: khushu-01
+    audio: tts
+    narration:
+      ar: "وناس كتير… من كتر السرحان، بطلت تحاول."
+      en: "And many people… drift off so much, they stop trying."
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: salma, pose: standing, mood: worried, talking: false }
+  - id: promise
+    role: promise
+    reel: khushu-01
+    audio: tts
+    narration:
+      ar: "بس فيه تلات أفكار غلط عن الخشوع… يمكن تكون مصدق واحدة منهم. تابعنا عشان تعرف أولها."
+      en: "But there are three wrong ideas about khushu… you might believe one of them. Follow us to find out the first one."
+    reel_only_end: { ar: "تابعنا عشان تعرف أولها.", en: "Follow us to find out the first one." }
+    visual:
+      template: title-card
+
+  # ---- khushu-02 : idée reçue 1, « je m'égare, donc ma prière ne sert à rien » ----------------------
+  - id: drift-hook
+    role: hook
+    reel: khushu-02
+    audio: tts
+    narration:
+      ar: "«أنا بسرح في كل صلاة… يبقى صلاتي ملهاش لازمة»؟"
+      en: "“I drift off in every prayer… so my prayer is worthless”?"
+    say_ar: "أنا بسرح في كل صلاة… يبقى صلاتي ملهاش لازمة؟"
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: salma, pose: sitting, mood: worried, talking: false }
+  - id: drift-wrong
+    role: misconception
+    reel: khushu-02
+    audio: tts
+    narration:
+      ar: "أول فكرة غلط عن الخشوع…"
+      en: "The first wrong idea about khushu…"
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  - id: drift-idea
+    role: misconception
+    reel: khushu-02
+    audio: tts
+    narration:
+      ar: "إن السرحان… يخلي صلاتك ملهاش لازمة."
+      en: "That drifting off… makes your prayer worthless."
+    visual:
+      template: title-card
+  # Carte de nom (un Compagnon n'est jamais dessiné) ; sa plainte (hors des guillemets du hadith) dite
+  # en égyptien au plus près du texte (« إن الشيطان قد حال بيني وبين صلاتي وقراءتي يلبسها علي »).
+  - id: drift-who
+    role: evidence
+    reel: khushu-02
+    audio: tts
+    mentions: ["عثمان بن أبي العاص رضي الله عنه"]
+    narration:
+      ar: "صحابي اسمه عثمان بن أبي العاص… راح للنبي صلى الله عليه وسلم وقاله:"
+      en: "A Companion named Uthman ibn Abi al-As… went to the Prophet ﷺ and told him:"
+    visual:
+      template: name-card
+  - id: drift-complaint
+    role: evidence
+    reel: khushu-02
+    audio: tts
+    narration:
+      ar: "الشيطان بيلخبط عليّ صلاتي وقرايتي."
+      en: "Satan muddles my prayer and my recitation."
+    visual:
+      template: title-card
+  - id: drift-hadith
+    role: evidence
+    reel: khushu-02
+    source: hadith.muslim.2203a
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "فالنبي صلى الله عليه وسلم قاله:"
+      en: "So the Prophet ﷺ told him:"
+    visual:
+      template: source-card
+  # La suite du hadith, hors des guillemets (« ففعلت ذلك فأذهبه الله عني »), en égyptien.
+  - id: drift-result
+    role: evidence
+    reel: khushu-02
+    audio: tts
+    narration:
+      ar: "وعثمان قال: عملت كده… وربنا شاله عني."
+      en: "And Uthman said: I did that… and God took it away from me."
+    visual:
+      template: title-card
+  # Ligne de l'IA, tirée du hadith : un remède, pas « ta prière ne vaut rien ».
+  - id: drift-lesson
+    role: lesson
+    reel: khushu-02
+    audio: tts
+    narration:
+      ar: "السرحان مش معناه تبطل… معناه تقاوم."
+      en: "Drifting off doesn't mean you quit… it means you fight back."
+    visual:
+      template: title-card
+  - id: drift-life-1
+    role: example
+    reel: khushu-02
+    audio: tts
+    narration:
+      ar: "زي لما تقرا كتاب… وتسرح في نص الصفحة."
+      en: "Like when you're reading a book… and drift off halfway down the page."
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: worried, talking: false }
+  - id: drift-life-2
+    role: example
+    reel: khushu-02
+    audio: tts
+    narration:
+      ar: "مش بترمي الكتاب… بترجع للسطر اللي سرحت عنده."
+      en: "You don't throw the book away… you go back to the line where you drifted."
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: smiling, talking: false }
+  - id: drift-outro
+    role: outro
+    reel: khushu-02
+    audio: tts
+    narration:
+      ar: "طب ولو أنا مش من الناس الصالحين دول؟ تابعنا عشان تعرف."
+      en: "But what if I'm not one of those pious people? Follow us to find out."
+    reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
+    visual:
+      template: title-card
+
+  # ---- khushu-03 : idée reçue 2, « le khushu', c'est pour les gens pieux » --------------------------
+  - id: pious-hook
+    role: hook
+    reel: khushu-03
+    audio: tts
+    narration:
+      ar: "«الخشوع ده للمشايخ… مش لواحد زيي»؟"
+      en: "“Khushu is for sheikhs… not for someone like me”?"
+    say_ar: "الخشوع ده للمشايخ… مش لواحد زيي؟"
+    visual:
+      template: scene
+      background: mosque
+      characters:
+        - { id: amir, pose: standing, mood: worried, talking: false }
+  - id: pious-wrong
+    role: misconception
+    reel: khushu-03
+    audio: tts
+    narration:
+      ar: "تاني فكرة غلط…"
+      en: "The second wrong idea…"
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  - id: pious-idea
+    role: misconception
+    reel: khushu-03
+    audio: tts
+    narration:
+      ar: "إن الخشوع… للناس الصالحين بس."
+      en: "That khushu… is only for the pious."
+    visual:
+      template: title-card
+  - id: pious-verse-intro
+    role: evidence
+    reel: khushu-03
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: pious-verse-1
+    role: evidence
+    reel: khushu-03
+    source: quran.2.45
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: pious-verse-2
+    role: evidence
+    reel: khushu-03
+    source: quran.2.46
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Reformule 2:46 (« الذين يظنون أنهم ملاقو ربهم ») : une certitude, pas un rang.
+  - id: pious-who
+    role: evidence
+    reel: khushu-03
+    audio: tts
+    narration:
+      ar: "الخاشعين… هما اللي عارفين إنهم هيقابلوا ربنا."
+      en: "The humble… are those who know they will meet their Lord."
+    visual:
+      template: title-card
+  - id: pious-hadith
+    role: evidence
+    reel: khushu-03
+    source: hadith.muslim.228
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "والنبي صلى الله عليه وسلم قال:"
+      en: "And the Prophet ﷺ said:"
+    visual:
+      template: source-card
+  # Ligne de l'IA, tirée de « ما من امرئ مسلم… فيحسن وضوءها وخشوعها ».
+  - id: pious-lesson
+    role: lesson
+    reel: khushu-03
+    audio: tts
+    narration:
+      ar: "الخشوع مش رتبة للمشايخ… ده حاجة أي مسلم بيحسّنها، زي وضوءه."
+      en: "Khushu isn't a rank for sheikhs… it's something any Muslim gets better at, like their wudu."
+    visual:
+      template: title-card
+  - id: pious-life-1
+    role: example
+    reel: khushu-03
+    audio: tts
+    narration:
+      ar: "زي أول مرة تسوق… وتقول: عمري ما هتعلم."
+      en: "Like the first time you drive… and you say: I'll never learn."
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: amir, pose: standing, mood: worried, talking: false }
+  - id: pious-life-2
+    role: example
+    reel: khushu-03
+    audio: tts
+    narration:
+      ar: "وبالتمرين… بقيت تسوق وإنت مرتاح."
+      en: "And with practice… you drive at ease."
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: amir, pose: standing, mood: smiling, talking: false }
+  - id: pious-outro
+    role: outro
+    reel: khushu-03
+    audio: tts
+    narration:
+      ar: "طب ولو مش بعيط في الصلاة… يبقى معنديش خشوع؟ تابعنا عشان تعرف."
+      en: "But if I don't cry in prayer… does that mean I have no khushu? Follow us to find out."
+    reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
+    visual:
+      template: title-card
+
+  # ---- khushu-04 : idée reçue 3, « le khushu', c'est pleurer » -------------------------------------
+  - id: tears-hook
+    role: hook
+    reel: khushu-04
+    audio: tts
+    narration:
+      ar: "بتشوف ناس بتعيط في الصلاة… وإنت لأ؟"
+      en: "You see people crying in prayer… and you don't?"
+    visual:
+      template: scene
+      background: mosque
+      characters:
+        - { id: salma, pose: standing, mood: worried, talking: false }
+  - id: tears-wrong
+    role: misconception
+    reel: khushu-04
+    audio: tts
+    narration:
+      ar: "تالت فكرة غلط…"
+      en: "The third wrong idea…"
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: narrator, pose: open-hands, mood: calm, talking: true }
+  - id: tears-idea
+    role: misconception
+    reel: khushu-04
+    audio: tts
+    narration:
+      ar: "إن الخشوع… يعني لازم تعيط."
+      en: "That khushu… means you have to cry."
+    visual:
+      template: title-card
+  - id: tears-verse-intro
+    role: evidence
+    reel: khushu-04
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: tears-verse-1
+    role: evidence
+    reel: khushu-04
+    source: quran.23.1
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: tears-verse-2
+    role: evidence
+    reel: khushu-04
+    source: quran.23.2
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Carte de nom ; la question d'Aïcha (hors des guillemets du hadith) dite par la narration.
+  - id: tears-aisha
+    role: evidence
+    reel: khushu-04
+    audio: tts
+    mentions: ["عائشة رضي الله عنها"]
+    narration:
+      ar: "السيدة عائشة سألت النبي صلى الله عليه وسلم عن الالتفات في الصلاة… إنك تلف وشك وإنت بتصلي."
+      en: "Aisha asked the Prophet ﷺ about looking around in prayer… turning your face away while you pray."
+    visual:
+      template: name-card
+  - id: tears-hadith
+    role: evidence
+    reel: khushu-04
+    source: hadith.bukhari.751
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "قالها:"
+      en: "He told her:"
+    visual:
+      template: source-card
+  # Ligne de l'IA, tirée de 23:2 et de Bukhari 751 : la présence, le cœur et le regard.
+  - id: tears-lesson
+    role: lesson
+    reel: khushu-04
+    audio: tts
+    narration:
+      ar: "الخشوع مش لازم دموع… الخشوع إنك تكون حاضر: بقلبك، وبعينك."
+      en: "Khushu doesn't have to be tears… it's being present: with your heart, and with your eyes."
+    visual:
+      template: title-card
+  - id: tears-life-1
+    role: example
+    reel: khushu-04
+    audio: tts
+    narration:
+      ar: "زي لما حد بتحبه بيكلمك… وعينك في الموبايل."
+      en: "Like when someone you love is talking to you… and your eyes are on your phone."
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: salma, pose: sitting, mood: calm, talking: false }
+  - id: tears-life-2
+    role: example
+    reel: khushu-04
+    audio: tts
+    narration:
+      ar: "ولما تسيب الموبايل وتبصله… يحس إنك معاه."
+      en: "And when you put the phone down and look at them… they feel you're with them."
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: salma, pose: sitting, mood: smiling, talking: false }
+  - id: tears-outro
+    role: outro
+    reel: khushu-04
+    audio: tts
+    narration:
+      ar: "وفي الآخر… آية بتسألك سؤال. دي الأخيرة."
+      en: "And finally… a verse that asks you a question. That's the last one."
+    visual:
+      template: title-card
+
+  # ---- khushu-05 : conclusion, « le temps n'est-il pas venu ? » ------------------------------------
+  - id: end-hook
+    role: hook
+    reel: khushu-05
+    audio: tts
+    narration:
+      ar: "كل يوم خمس صلوات… يعني خمس فرص."
+      en: "Five prayers a day… that's five chances."
+    visual:
+      template: scene
+      background: mosque
+      characters:
+        - { id: amir, pose: standing, mood: calm, talking: false }
+  - id: end-verse-intro
+    role: evidence
+    reel: khushu-05
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: end-verse
+    role: evidence
+    reel: khushu-05
+    source: quran.57.16
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Reformule la question du verset (« ألم يأن للذين آمنوا أن تخشع قلوبهم »).
+  - id: end-ask
+    role: conclusion
+    reel: khushu-05
+    audio: tts
+    narration:
+      ar: "مش آن الأوان… إن قلبك يخشع؟"
+      en: "Isn't it time… for your heart to be humble?"
+    visual:
+      template: title-card
+  # Rappel des trois idées et de la leçon en une carte (quatre morceaux).
+  - id: end-recap
+    role: conclusion
+    reel: khushu-05
+    audio: tts
+    narration:
+      ar: "السرحان مش معناه تبطل… والخشوع مش للمشايخ بس… ومش لازم دموع… هو قلب حاضر."
+      en: "Drifting off doesn't mean you quit… khushu isn't only for sheikhs… it doesn't have to be tears… it's a present heart."
+    visual:
+      template: title-card
+  # Retour à l'accroche (ce qu'on se rappelle en priant) ; ligne de l'IA.
+  - id: end-outro
+    role: conclusion
+    reel: khushu-05
+    audio: tts
+    narration:
+      ar: "فالمرة الجاية لما تفتكر في الصلاة حاجة كنت ناسيها… متبطلش. ارجع لصلاتك."
+      en: "So next time you remember in prayer something you'd forgotten… don't quit. Come back to your prayer."
+    visual:
+      template: title-card

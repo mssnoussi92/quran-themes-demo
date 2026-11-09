@@ -105,6 +105,83 @@ const Street: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
   );
 };
 
+/** A pointed arch (two arcs meeting at the top) over a rectangle: x is the centre, base the bottom. */
+const archPath = (x: number, base: number, width: number, height: number) => {
+  const half = width / 2;
+  const spring = base - height + width * 0.75; // where the arch starts to curve
+  const top = base - height;
+  return `M ${x - half} ${base} L ${x - half} ${spring} Q ${x - half} ${top + width * 0.12} ${x} ${top}`
+    + ` Q ${x + half} ${top + width * 0.12} ${x + half} ${spring} L ${x + half} ${base} Z`;
+};
+
+const Mosque: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const t = frame / fps;
+  const unit = Math.min(w, h);
+  const dado = unit * 0.2;
+  const portrait = h > w;
+  // Arched windows along the wall, light coming in; the middle one is the mihrab, deeper.
+  const count = portrait ? 3 : 5;
+  const archW = unit * (portrait ? 0.2 : 0.15);
+  const archH = unit * (portrait ? 0.62 : 0.42);
+  const archBase = floorY - dado - unit * 0.04;
+  const xs = Array.from({ length: count }, (_, i) => (w * (i + 0.5)) / count);
+  const mid = Math.floor(count / 2);
+  // Hanging lamps, swaying a little (a breath of air), in the gaps between the arches.
+  const lampXs = Array.from({ length: count - 1 }, (_, i) => (xs[i] + xs[i + 1]) / 2);
+  const lampY = archBase - archH + unit * 0.06;
+  const rows = 4;
+  return (
+    <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} style={{ position: "absolute", inset: 0 }}>
+      <rect width={w} height={floorY} fill="#F1E6D0" />
+      {xs.map((x, i) => {
+        const deep = i === mid;
+        const aw = deep ? archW * 1.15 : archW;
+        const ah = deep ? archH * 1.08 : archH;
+        return (
+          <g key={i}>
+            <path d={archPath(x, archBase + unit * 0.02, aw + unit * 0.05, ah + unit * 0.045)} fill="#D9C29A" stroke={INK} strokeWidth={LINE} strokeLinejoin="round" />
+            <path d={archPath(x, archBase, aw, ah)} fill={deep ? "#3F6E78" : "#BFDCE8"} stroke={INK} strokeWidth={LINE} strokeLinejoin="round" />
+            {deep ? null : (
+              <>
+                <line x1={x} y1={archBase - ah + unit * 0.03} x2={x} y2={archBase} stroke={INK} strokeWidth={4} />
+                <line x1={x - aw / 2} y1={archBase - ah * 0.42} x2={x + aw / 2} y2={archBase - ah * 0.42} stroke={INK} strokeWidth={4} />
+              </>
+            )}
+          </g>
+        );
+      })}
+      {lampXs.map((x, i) => {
+        const swing = 2.2 * Math.sin(t * 0.9 + i * 1.7);
+        const glow = 0.8 + 0.2 * Math.sin(t * 1.3 + i);
+        const s = unit * 0.035;
+        return (
+          <g key={`lamp-${i}`} transform={`rotate(${swing} ${x} 0)`}>
+            <line x1={x} y1={0} x2={x} y2={lampY} stroke={INK} strokeWidth={3} />
+            <path d={`M ${x - s * 0.6} ${lampY + s * 0.5} Q ${x} ${lampY - s * 0.4} ${x + s * 0.6} ${lampY + s * 0.5} Z`} fill="#B8873A" stroke={INK} strokeWidth={4} />
+            <path d={`M ${x - s} ${lampY + s * 0.5} L ${x + s} ${lampY + s * 0.5} L ${x + s * 0.55} ${lampY + s * 2.1} L ${x - s * 0.55} ${lampY + s * 2.1} Z`} fill="#FFD866" fillOpacity={glow} stroke={INK} strokeWidth={4} strokeLinejoin="round" />
+            <circle cx={x} cy={lampY + s * 2.45} r={s * 0.3} fill="#B8873A" stroke={INK} strokeWidth={3} />
+          </g>
+        );
+      })}
+      {/* tiled dado */}
+      <rect y={floorY - dado} width={w} height={dado} fill="#BFD8CF" />
+      {Array.from({ length: Math.ceil(w / (dado * 0.5)) + 1 }, (_, k) => (
+        <path key={`tile-${k}`} d={`M ${k * dado * 0.5} ${floorY - dado * 0.5} l ${dado * 0.25} ${-dado * 0.25} l ${dado * 0.25} ${dado * 0.25} l ${-dado * 0.25} ${dado * 0.25} Z`} fill="#8FB8AC" stroke={INK} strokeWidth={3} />
+      ))}
+      <line x1={0} y1={floorY - dado} x2={w} y2={floorY - dado} stroke={INK} strokeWidth={LINE} />
+      {/* carpet with its prayer rows */}
+      <rect y={floorY} width={w} height={h - floorY} fill="#A63D40" />
+      {Array.from({ length: rows }, (_, k) => {
+        const y = floorY + ((h - floorY) * (k + 0.55)) / rows;
+        return <rect key={`row-${k}`} x={0} y={y} width={w} height={unit * 0.012} fill="#D9A441" />;
+      })}
+      <line x1={0} y1={floorY} x2={w} y2={floorY} stroke={INK} strokeWidth={LINE} />
+    </svg>
+  );
+};
+
 const Plain: React.FC<BackgroundProps> = ({ width: w, height: h }) => (
   <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} style={{ position: "absolute", inset: 0 }}>
     <defs>
@@ -121,5 +198,6 @@ export const BACKGROUNDS: Record<string, React.FC<BackgroundProps>> = {
   "waiting-room": WaitingRoom,
   street: Street,
   plain: Plain,
+  mosque: Mosque,
   ...STORY_BACKGROUNDS,
 };
