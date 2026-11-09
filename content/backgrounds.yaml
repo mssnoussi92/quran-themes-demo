@@ -48,3 +48,10 @@ backgrounds:
   iron-dam:
     description: Le barrage de blocs de fer entre les deux montagnes, le cuivre fondu versé dessus, rougeoyant
     validated_by: mssnoussi92
+  # Les gens de la caverne (épisode kahf, 18:9-26) : des lieux, jamais les jeunes ; à valider avec le rendu candidat.
+  cave-inside:
+    description: L'intérieur de la caverne vu vers son ouverture, la lumière du soleil qui tombe à droite puis à gauche sans jamais toucher l'espace du milieu, vide (18:17)
+  cave-entrance:
+    description: L'entrée de la caverne dans la colline, et leur chien couché au seuil, pattes avant étendues, qui respire lentement (18:18)
+  old-city:
+    description: La ville ancienne, ses maisons et un étal de pain, la pièce d'argent posée sur le comptoir, qui brille (18:19) ; la rue vide

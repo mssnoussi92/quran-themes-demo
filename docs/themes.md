@@ -123,8 +123,10 @@ l'épisode entier dure environ deux fois sa récitation (khidr et qarnayn), esti
   qui passe à droite puis à gauche sans les toucher, 18:17), l'entrée avec le chien couché, pattes étendues
   (18:18), la ville ancienne et la pièce d'argent (18:19). Les jeunes ne sont jamais dessinés : cartes de nom
   (« أصحاب الكهف »), scènes de lieux.
-- **Décisions du propriétaire** : le format ; garder 18:22 (leur nombre) ou non ; Muslim 809a en ancre de
-  l'accroche ; la relance au milieu du reel 4.
+- **Décisions du propriétaire (2026-11-09)** : `story-linear` ; 18:22 gardé ; Muslim 809a en ancre de l'accroche ;
+  la relance « وبعدين؟ » au milieu du reel 4. Ajouté au script : Bukhari 6324 (la du'a du réveil, « الحمد لله الذي
+  أحيانا بعد ما أماتنا وإليه النشور », lue par Abu Malik) dans l'exemple de vie du reel 4. Script :
+  `content/episodes/kahf.yaml`, plan dans `docs/design.md`.
 
 **Ordre validé par le propriétaire le 2026-11-08**, en variant les formats (jamais trois fois le même de suite ; les
 deux histoires comptent pour un) :
