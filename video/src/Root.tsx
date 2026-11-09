@@ -6,6 +6,8 @@ import type { VideoProps } from "./data";
 import { FORMATS, FPS } from "./formats";
 import { Thumbnail, THUMBNAIL_SIZE, thumbnailMetadata } from "./Thumbnail";
 import type { ThumbnailProps } from "./Thumbnail";
+import { StyleLab } from "./styles/StyleLab";
+import type { StyleLabProps } from "./styles/StyleLab";
 import { EpisodeVideo } from "./Video";
 
 // One composition per format, both fed by the same episode script.
@@ -35,6 +37,9 @@ export const RemotionRoot: React.FC = () => (
     <Still id="CharacterSheet" component={CharacterSheet} width={1920} height={1080} defaultProps={{ data: null }} calculateMetadata={sheetMetadata} />
     {/* A composition rather than a still: the backgrounds move (waves, the bird's peck), pick a frame. */}
     <Composition id="BackgroundSheet" component={BackgroundSheet} fps={FPS} durationInFrames={90} {...BACKGROUND_SHEET} />
+    {/* Style lab (2026-11-09): one shot of the cave in one style, for the owner to compare styles. */}
+    <Composition id="StyleLab" component={StyleLab} fps={FPS} durationInFrames={240} width={1080} height={1920}
+      defaultProps={{ style: "paper", shot: "office" } satisfies StyleLabProps} />
     <Still
       id="Thumbnail169"
       component={Thumbnail}
