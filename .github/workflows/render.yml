@@ -180,6 +180,11 @@ jobs:
             npx remotion render Reel916 "out/$reel.mp4" --props="$props"
           done
           for f in out/*.mp4; do echo "$f"; ffmpeg -hide_banner -i "$f" 2>&1 | grep -E "Duration|Stream" || true; done
+          # Loudness of each video (every part is levelled to -16 LUFS by tools/audio/build.py): about
+          # -16 LUFS integrated, true peak under -1 dBTP.
+          for f in out/*.mp4; do
+            echo "$f: $(ffmpeg -hide_banner -nostats -i "$f" -vn -af ebur128=peak=true -f null - 2>&1 | grep -A14 Summary | grep -E ' I:| Peak:' | tr -s ' ' | tr '\n' ' ')"
+          done
 
       # Candidate: a draft release (private), its notes the list « à vérifier » then the texts as they are
       # now; the final notes (as validated) and the commit rendered kept as assets for the promote workflow.

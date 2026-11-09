@@ -79,6 +79,8 @@ type ManifestScene = {
   reciter?: string;
   words?: Media["words"];
   phrases?: Media["phrases"];
+  /** The same part at the loudness every part is brought to (tools/audio/build.py, LEVEL): what is played. */
+  level?: { file: string };
   /** A hadith read by a person: the take's introduction, then the reading (tools/audio/build.py). */
   mix?: {
     file: string;
@@ -284,7 +286,7 @@ function mediaFor(episode: string, manifest: Record<string, ManifestScene> | nul
     console.warn(`warning ${where}: the reading of ${source!.id} is not mixed yet (run tools/audio/build.py --episode ${episode})`);
     return null;
   }
-  const name = mix?.file ?? entry.file;
+  const name = mix?.file ?? entry.level?.file ?? entry.file;
   const file = `audio/${episode}/${name}`;
   mkdirSync(join(PUBLIC, "audio", episode), { recursive: true });
   copyFileSync(join(AUDIO, episode, name), join(PUBLIC, file));

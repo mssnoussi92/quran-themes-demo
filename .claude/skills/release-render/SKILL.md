@@ -99,6 +99,9 @@ without a committed take (`--require-committed`: store it as a candidate) or wit
   release), or render the same compositions locally (draft), take frames with ffmpeg and look at
   them (Read), then delete them:
   - the end of a reel: `ffmpeg -sseof -1.2 -i <reel>.mp4 -frames:v 1 end.png` (the follow call);
+  - the loudness the run's log prints for each video (step « Render »): about -16 LUFS integrated, true
+    peak under -1 dBTP (every part levelled by `tools/audio/build.py`, `LEVEL`); far from it, a part was
+    not levelled (an old manifest: run `build.py` again);
   - the YouTube reminder in the 16:9, about 2 s after each start (`reminderStarts`, video/src/scenes.ts,
     `node --experimental-strip-types` on a small script after `npm run data`; none listed means both
     places fell on a verse or a hadith: tell the owner); an episode whose last card follows a verse
