@@ -1,0 +1,263 @@
+{
+  "note": "What Whisper heard in each narration take and any sound after its last word (tools/audio/listen.py --episode --save), tied to the raw take; read by the candidate render's list « à vérifier » (video/scripts/review.ts). Not a validation.",
+  "takes": {
+    "anchor": {
+      "raw_sha256": "beb669aba86c58e31b55aa8f8554a0645975426a69bfb1b8bc06c6171e65ef13",
+      "heard": "النبي صلى الله عليه وسلم قال عن الشيطان في الصلاة حتى يخطر بين المرء ونفسه يقول اذكر كذا اذكر كذا لما لم يكن يذكر حتى يظل الرجل لا يدري كم صلى",
+      "differs": null,
+      "sound": null
+    },
+    "drift-complaint": {
+      "raw_sha256": "445f64d915e60a0921694a18a6c9e6e8133cf2dbe4f10bc8e97e1b283e96a5ff",
+      "heard": "الشيطان بيلغبط علي صلاتي وقرايتي",
+      "differs": "بيلخبط عليا -> بيلغبط علي",
+      "sound": null
+    },
+    "drift-hadith": {
+      "raw_sha256": "c6b0d7b50347e18e8aad4a8c7f3725ed24895b53f807b9b80cdf2a7c103a92b0",
+      "heard": "فالنبي صلى الله عليه وسلم قال ذاك شيطان يقال له خنزب فإذا أحسسته فتعوذ بالله منه واتفل على يسارك ثلاثا",
+      "differs": "قاله -> قال",
+      "sound": null
+    },
+    "drift-hook": {
+      "raw_sha256": "25e856c66a9cd9639a19e8364e75d55255fd2ff6c97f25316160ff4baccc9183",
+      "heard": "أنا بصرح في كل صلاة يبقى صلاتي ملهاش لازمة",
+      "differs": "بسرح -> بصرح",
+      "sound": null
+    },
+    "drift-idea": {
+      "raw_sha256": "896c2c6eda7762bc4f3001a8ed8be661ccee51f2b24337f481bde3c622fc1210",
+      "heard": "إن الصرحان يخلي صلاتك ملهاش لازمة",
+      "differs": "السرحان -> الصرحان",
+      "sound": null
+    },
+    "drift-lesson": {
+      "raw_sha256": "119639b18214aaa9b9c1d781306d6005f7e1df5dcc7c6aa46d91dda811fd8cd9",
+      "heard": "الصرحان مش معناه تبطل معناه تقاوم",
+      "differs": "السرحان -> الصرحان",
+      "sound": null
+    },
+    "drift-life-1": {
+      "raw_sha256": "cbed43730e515bc90043f36fb664e0d660096639b5a83f82f100e2f1b3a01f9d",
+      "heard": "زي لما تقرأ كتاب وتصرح في نص الصفحة",
+      "differs": "وتسرح -> وتصرح",
+      "sound": null
+    },
+    "drift-life-2": {
+      "raw_sha256": "c0d25894d8ee3477e5fa95d7392b292e95bf9a7eee4f0b79352b64163bc4080a",
+      "heard": "مش بترمي الكتاب بترجع للسطر اللي صرحت عنده",
+      "differs": "سرحت -> صرحت",
+      "sound": null
+    },
+    "drift-outro": {
+      "raw_sha256": "bef1acf8693c671d5f5011d5c787b3388dc041f4da1837dabc4d0d2bd8ea33fa",
+      "heard": "طب ولو أنا مش من الناس الصالحين دول تابعنا عشان تعرف",
+      "differs": null,
+      "sound": null
+    },
+    "drift-result": {
+      "raw_sha256": "235e6ea010bade73833afec60a5954e2e58e7f92d3c1151b269d7f603a3475e0",
+      "heard": "وعثمان قال عملت كده وربنا شالوا عني",
+      "differs": "شاله -> شالوا",
+      "sound": null
+    },
+    "drift-who": {
+      "raw_sha256": "6666dfed2a59a058fd8d6f97682f8642a12857377640de561cf0b5e442de2a1b",
+      "heard": "صحابي اسمه عثمان بن أبي العاص راح للنبي صلى الله عليه وسلم وقاله",
+      "differs": null,
+      "sound": null
+    },
+    "drift-wrong": {
+      "raw_sha256": "6ef2c021ead4eac0989d5e00379da46e5dd54afeae31954bfe861f73ca83ac4f",
+      "heard": "أو الفكرة غلط عن الخشوع",
+      "differs": "اول فكره -> او الفكره",
+      "sound": null
+    },
+    "end-ask": {
+      "raw_sha256": "e72d4778f04b4a74ee75f9c1f295e2f14c39a9a1ed0aae51e15e1c1a9f910181",
+      "heard": "مش آن الأوان إن قلبك يخشع",
+      "differs": null,
+      "sound": null
+    },
+    "end-hook": {
+      "raw_sha256": "e351c23045b4eb7cd1e890862f5685d1328fec327e62ed2d03f60273d275d5ea",
+      "heard": "كل يوم خمس صلوات يعني خمس فرص",
+      "differs": null,
+      "sound": null
+    },
+    "end-outro": {
+      "raw_sha256": "0ee57278b28c423328afd11925e6a10992746eefe2835a3e789d96c650dd61ce",
+      "heard": "فالمرة الجاية لما تفتكر في الصلاة حاجة كنت نسيها ما تبطلش ارجع لصلاتك",
+      "differs": "ناسيها متبطلش -> نسيها ما تبطلش",
+      "sound": null
+    },
+    "end-recap": {
+      "raw_sha256": "8d4f493f956c56ff89a3fb35b8f4f5a4264df41579264c2b6a3791c360f5e45a",
+      "heard": "الصرحان مش معنات بطل والخشوع مش للمشايخ بس ومش لازم دموع هو قلب حاضر",
+      "differs": "السرحان -> الصرحان; معناه تبطل -> معنات بطل",
+      "sound": null
+    },
+    "end-verse-intro": {
+      "raw_sha256": "f41682dd192baa4b5c08d809bba3a9f8d9b11d3d2dd3b133fef29c92e13d5cee",
+      "heard": "قال ربنا سبحانه وتعالى",
+      "differs": null,
+      "sound": null
+    },
+    "hook-1": {
+      "raw_sha256": "05331bee1a7d8b5248bfe139388e41a3d49fcc5a7c1fc44ab11ccd7eb67ca75a",
+      "heard": "بتصلي وفجأة افتكرت حاجة كنت نسيها",
+      "differs": "ناسيها -> نسيها",
+      "sound": null
+    },
+    "hook-2": {
+      "raw_sha256": "95690d63d5f4390f7ab8e4c2e8226e49ccc84bc648301c52fe6ed218225f2461",
+      "heard": "تتفرج على ماتش وتفتكر كل لعبة",
+      "differs": null,
+      "sound": null
+    },
+    "hook-3": {
+      "raw_sha256": "a04de530ef61c867c4ea080345b7c1513f8b4f464886b129c5f6d95a90b4245e",
+      "heard": "وتصلي أربع ركعات ومش عارف صليت كام",
+      "differs": null,
+      "sound": null
+    },
+    "hook-4": {
+      "raw_sha256": "fd2671af545064e6cf9a4fadae15ed2cfef565d637a9ebe0686b4ddbc278383d",
+      "heard": "ده مش انت بس",
+      "differs": null,
+      "sound": null
+    },
+    "pious-hadith": {
+      "raw_sha256": "fe043e6d0bb2473e2e81e228dd86dd96fd2dbf96a9bf377cb479798e2582acc1",
+      "heard": "والنبي صلى الله عليه وسلم قال ما من امرئ مسلم تحضره صلاة مكتوبة فيحسن وضوءها وخشوعها وركوعها إلا كانت كثارة لما قبلها من الذنوب ما لم يؤتي كبيرة وذلك الدهر كله",
+      "differs": "كفاره -> كثاره; يوت -> يوتي",
+      "sound": null
+    },
+    "pious-hook": {
+      "raw_sha256": "3fc4da498d3b44232cb3c4bca650ef4bf80c8399c33aaa2d349b9f722016e9b0",
+      "heard": "الخشوع ده للمشايخ مش لي أنا",
+      "differs": "ليا -> لي",
+      "sound": null
+    },
+    "pious-idea": {
+      "raw_sha256": "b53d097b3a13970ecf3615b20503074da7209e1ea8312d22e3d3b60513823116",
+      "heard": "ان الخشوع للناس الصلاحين بس",
+      "differs": "الصالحين -> الصلاحين",
+      "sound": null
+    },
+    "pious-lesson": {
+      "raw_sha256": "d694b56016d096a4f2d85720a62a5329d8b11e8ff15bcac1c32eb9e599567544",
+      "heard": "الخشوع مش ردبة للمشايخ ده حاجة أي مسلم بيحسنها زي وضوءه",
+      "differs": "رتبه -> ردبه",
+      "sound": null
+    },
+    "pious-life-1": {
+      "raw_sha256": "4eaa4f9d4a4d75de4774955d5dd4e047c92b46f10919d24d95fe373b4c38c22c",
+      "heard": "زي أول مرة تسوق وتقول عمري ما هتعلم",
+      "differs": null,
+      "sound": null
+    },
+    "pious-life-2": {
+      "raw_sha256": "b0b191e0a5769a874a9ce5647bb73c985c26b5dc95ec468bcbeb79a7143dff78",
+      "heard": "وبالتمرين بقيت تسوى وانت مرتاح",
+      "differs": "تسوق -> تسوي",
+      "sound": null
+    },
+    "pious-outro": {
+      "raw_sha256": "70e29f80661eaa63ce5d1180b066bf9c47bf40ed9f5456eed1ba086aea2db5ab",
+      "heard": "طب ولو ما بعيطش في الصلاة يبقى ما عنديش خشوع تابعنا عشان تعرف",
+      "differs": "مبعيطش -> ما بعيطش; معنديش -> ما عنديش",
+      "sound": null
+    },
+    "pious-verse-intro": {
+      "raw_sha256": "f41682dd192baa4b5c08d809bba3a9f8d9b11d3d2dd3b133fef29c92e13d5cee",
+      "heard": "قال ربنا سبحانه وتعالى",
+      "differs": null,
+      "sound": null
+    },
+    "pious-who": {
+      "raw_sha256": "cbd94d53b8c66e5ec6f7d5270f4864088b728ebcedb8683f5aa8c35dbae22762",
+      "heard": "الخاشعين هم اللي عارفين انهم هيقابلوا ربنا",
+      "differs": "هما -> هم",
+      "sound": null
+    },
+    "pious-wrong": {
+      "raw_sha256": "00b9185993253943f55f9e6eb78dd38bbec6a8dd40f0a597c92663f0d689efac",
+      "heard": "تاني فكرة غلط",
+      "differs": null,
+      "sound": null
+    },
+    "promise": {
+      "raw_sha256": "47c6d217f99e1ad617195bc9ec78a40073b37ef147a60e7da0faa4a7ed650bff",
+      "heard": "بس فيه ثلاث أفكار غلط عن الخشوع يمكن تكون مصدق واحدة منهم تابعنا عشان تعرف أولها",
+      "differs": "تلات -> ثلاث",
+      "sound": null
+    },
+    "stakes": {
+      "raw_sha256": "6bcf575f1f45f2b58ac587e25bd72adb4548e88eb9e785f453be24222cec9376",
+      "heard": "وناس كتير من كتر الصرحان بطلت تتحاول",
+      "differs": "السرحان -> الصرحان; تحاول -> تتحاول",
+      "sound": null
+    },
+    "tears-aisha": {
+      "raw_sha256": "a55cc23da7b551191f1d87ba59215518d75ab5c07153439cf8f07c5395558cae",
+      "heard": "السيدة عائشة سألت النبي صلى الله عليه وسلم عن الالتفات في الصلاة انك تلف وشك وانت بتصلي",
+      "differs": null,
+      "sound": null
+    },
+    "tears-hadith": {
+      "raw_sha256": "11ab47852175ee2b2ae6c050806abfab9235332bc282a007a48ace441a574c3f",
+      "heard": "ألا هو اختلاس يختلصه الشيطان من صلاة العبد",
+      "differs": "قالها -> الا; يختلسه -> يختلصه",
+      "sound": null
+    },
+    "tears-hook": {
+      "raw_sha256": "1243e4d8eb5ea57a0bf21e7de3ff2187730da8d26dcb0475a01d11b75faff875",
+      "heard": "بتشوف ناس بتعيط في الصلاة وانت لأ",
+      "differs": null,
+      "sound": null
+    },
+    "tears-idea": {
+      "raw_sha256": "fbfbae568f720dc86fca6e83674c8e2a65a4328d0b4ac3293c03de8d7495050d",
+      "heard": "إن الخشوع يعني لازم تعيط",
+      "differs": null,
+      "sound": null
+    },
+    "tears-lesson": {
+      "raw_sha256": "53e20f22c232b05e1156b6d37412cc662d5f8bec6330dc2f34cf4d55e3115ed4",
+      "heard": "خشوع مش لازم من دموع الخشوع انك تكون حاضر بقلبك وبعينك",
+      "differs": "الخشوع -> خشوع; ∅ -> من",
+      "sound": null
+    },
+    "tears-life-1": {
+      "raw_sha256": "f84139ebff9f3a1bad6c54d264b383ab35b68a0b6f78f218dafd88ea24fb4795",
+      "heard": "زي اللي محد بتحبه بيكلمك وعينك في الموبايل",
+      "differs": "لما حد -> اللي محد",
+      "sound": null
+    },
+    "tears-life-2": {
+      "raw_sha256": "44e942e67365dbe23e7c88f5e40b1ae0718c75a21aa0fb427dd5481ce8d6921c",
+      "heard": "ولما تسيب الموبايل وتبصله يحس انك معاه",
+      "differs": null,
+      "sound": null
+    },
+    "tears-outro": {
+      "raw_sha256": "7dfd0e453031123f61d8028e85f33a59896946a55000bb736d0697773a89870d",
+      "heard": "وفي الآخر آية بتسألك سؤال دي الأخيرة",
+      "differs": null,
+      "sound": null
+    },
+    "tears-verse-intro": {
+      "raw_sha256": "f41682dd192baa4b5c08d809bba3a9f8d9b11d3d2dd3b133fef29c92e13d5cee",
+      "heard": "قال ربنا سبحانه وتعالى",
+      "differs": null,
+      "sound": null
+    },
+    "tears-wrong": {
+      "raw_sha256": "c29c81a9051e9114abaa4d34e20a73d8acb105c645a9a4fef0307f51e72b197d",
+      "heard": "ثالث فكرة غلط",
+      "differs": "تالت -> ثالث",
+      "sound": null
+    }
+  }
+}

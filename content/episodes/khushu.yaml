@@ -396,9 +396,8 @@ scenes:
     narration:
       ar: "طب ولو مبعيطش في الصلاة… يبقى معنديش خشوع؟ تابعنا عشان تعرف."
       en: "But if I don't cry in prayer… does that mean I have no khushu? Follow us to find out."
-    # « مبعيطش » vocalisé, comme « مَبْيِعَيَّطْش » (content/pronunciation.yaml) : « مش بعيط », même
-    # vocalisé, était entendu « بعيد » (loin) par Whisper sur 3 prises sur 3.
-    say_ar: "طب ولو مَبَعَيَّطْش في الصلاة… يبقى معنديش خشوع؟ تابعنا عشان تعرف."
+    # « مش بعيط », même vocalisé, était entendu « بعيد » (loin) par Whisper sur 3 prises sur 3 ;
+    # « مبعيطش » sans voyelles est entendu juste (« مَبَعَيَّطْش » vocalisé : « ما بيطش »).
     reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
     visual:
       template: title-card
