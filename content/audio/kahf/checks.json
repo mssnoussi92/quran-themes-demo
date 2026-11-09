@@ -1,0 +1,296 @@
+{
+  "note": "What Whisper heard in each narration take and any sound after its last word (tools/audio/listen.py --episode --save), tied to the raw take; read by the candidate render's list « à vérifier » (video/scripts/review.ts). Not a validation.",
+  "takes": {
+    "anchor": {
+      "raw_sha256": "972f2c9f3e706c27f3f548bc3399520109333af3642f4cb0b326093d3896a00f",
+      "heard": "والنبي صلى الله عليه وسلم قال من حفظ عشر آيات من أول سورة الكهف عصم من الدجال",
+      "differs": null,
+      "sound": null
+    },
+    "anchor-2": {
+      "raw_sha256": "4bfc589a4cae6725dcceffb1b5ef01ade0517aece0dd4269fa1162bb68571541",
+      "heard": "والعشر آيات دول فيهم بداية قصتهم",
+      "differs": null,
+      "sound": null
+    },
+    "cave-1": {
+      "raw_sha256": "b43452eadaf45a4e64c2f2d99323444e7539638605b14cd54ed25146efc7ba78",
+      "heard": "جو الكهف الشمس وهي طالعة تميل عنهم يمين وهي بتغرب تبعد عنهم شمال وهم في واسع منه",
+      "differs": "جوه -> جو; وهما -> وهم; وسع -> واسع",
+      "sound": null
+    },
+    "cave-2": {
+      "raw_sha256": "17651091caec1e45ca86fc887681ea557a297e6353e83e5049364f9a97acd8e6",
+      "heard": "تحسبهم صحيين وهم نايمين وربنا بيقلبهم يمين وشمال وكلبهم مادد إيدية على باب الكهف",
+      "differs": "صاحيين وهما -> صحيين وهم",
+      "sound": null
+    },
+    "cave-intro": {
+      "raw_sha256": "f41682dd192baa4b5c08d809bba3a9f8d9b11d3d2dd3b133fef29c92e13d5cee",
+      "heard": "قال ربنا سبحانه وتعالى",
+      "differs": null,
+      "sound": null
+    },
+    "cave-intro-2": {
+      "raw_sha256": "f41682dd192baa4b5c08d809bba3a9f8d9b11d3d2dd3b133fef29c92e13d5cee",
+      "heard": "قال ربنا سبحانه وتعالى",
+      "differs": null,
+      "sound": null
+    },
+    "cave-lesson": {
+      "raw_sha256": "cbb94468d88475a7341e01816374f2b31938c0a1533da9b594ece3f20bb90e96",
+      "heard": "لما تلجأ لربنا هو بيدبر لك أصغر تفصيله",
+      "differs": "بيدبرلك -> بيدبر لك",
+      "sound": null
+    },
+    "cave-life-1": {
+      "raw_sha256": "323997c5d22fec7b39525a70995c3397119f1f41712f442b4e85ba05d14e594c",
+      "heard": "زي لما تسيب حاجة عشان ربنا وتحس ان الدنيا ضقت عليك",
+      "differs": "ضاقت -> ضقت",
+      "sound": null
+    },
+    "cave-life-2": {
+      "raw_sha256": "2b58b244a20e69fef55a09b2ce41775f7aa81f8b74f6d4d00117985b18a1f798",
+      "heard": "وبعدين تلاقي ربنا مساهلها من حتة عمرك ما فكرت فيها",
+      "differs": "مسهلها -> مساهلها",
+      "sound": null
+    },
+    "cave-outro": {
+      "raw_sha256": "d38fc4dc7d5ccfbc5776b2254fd6c6bf768818bb2ac3fec7fac5c5caf402a843",
+      "heard": "وفي يوم صحيوا تابعنا عشان تعرف لقوا ايه",
+      "differs": "صحيو -> صحيوا",
+      "sound": null
+    },
+    "end-1": {
+      "raw_sha256": "5752f2ba1630817a5390b07c72822b221454d08a9d4b1334bf4ee9b1ef057688",
+      "heard": "الناس اختلفوا كانوا كام ثلاثة خمسة سبعة وربنا قال هو أعلم بعددهم وما تتجادلش فيهم",
+      "differs": "تلاته -> ثلاثه; ومتتجادلش -> وما تتجادلش",
+      "sound": null
+    },
+    "end-2": {
+      "raw_sha256": "f856f75711b07dfa6ee2f38900000118864ffd4b4294805b6ac28791f03ef189",
+      "heard": "بس قالنا قعدوا قد إيه",
+      "differs": null,
+      "sound": null
+    },
+    "end-dua": {
+      "raw_sha256": "8e28b11bee3e1e2588c607ea3f07032ee87c9a017688bd916eb611fd10727b38",
+      "heard": "ودعوتهم خليها معاك لما تحس انك لوحدك",
+      "differs": null,
+      "sound": null
+    },
+    "end-dua-intro": {
+      "raw_sha256": "f41682dd192baa4b5c08d809bba3a9f8d9b11d3d2dd3b133fef29c92e13d5cee",
+      "heard": "قال ربنا سبحانه وتعالى",
+      "differs": null,
+      "sound": null
+    },
+    "end-intro": {
+      "raw_sha256": "f41682dd192baa4b5c08d809bba3a9f8d9b11d3d2dd3b133fef29c92e13d5cee",
+      "heard": "قال ربنا سبحانه وتعالى",
+      "differs": null,
+      "sound": null
+    },
+    "end-intro-2": {
+      "raw_sha256": "f41682dd192baa4b5c08d809bba3a9f8d9b11d3d2dd3b133fef29c92e13d5cee",
+      "heard": "قال ربنا سبحانه وتعالى",
+      "differs": null,
+      "sound": null
+    },
+    "end-lesson": {
+      "raw_sha256": "0705a74d0fa23b657d05d4b59124bf9e0856a4d34f63fad191840908915a3fb1",
+      "heard": "مش كل سؤال يستاهل خناءة المهم الدرس",
+      "differs": "خناقه -> خناءه",
+      "sound": null
+    },
+    "end-life-1": {
+      "raw_sha256": "b76290690a562da4acacfb38481805d9008765bac61c1102e706b8ee66e50627",
+      "heard": "زي ناس بتتخانق على تفاصيل القصة وتنسى القصة نفسها",
+      "differs": null,
+      "sound": null
+    },
+    "end-outro": {
+      "raw_sha256": "d30c3c3289e6a483516da77289df16fc82faedda8ab977265f2d667d2864b3e1",
+      "heard": "فالمرة الجاية لما تكون الوحيد اللي بيصلي افتكر الكهف",
+      "differs": null,
+      "sound": null
+    },
+    "end-recap": {
+      "raw_sha256": "08e6ccebf9d3c44591c4d83cd4119d6db36f03dcdc04fac5eabdb13a7767d9ec",
+      "heard": "وقفوا لوحدهم ربنا سبتهم ورحمهم وصحاهم آية للناس",
+      "differs": "ثبتهم -> سبتهم",
+      "sound": null
+    },
+    "faith-1": {
+      "raw_sha256": "4e0aefcb732af4477dbb0491a80e8de083c0ec30a084de1f68b5a712e4e542b7",
+      "heard": "كانوا شباب أمانوا بربهم وربنا زادهم هدى",
+      "differs": "امنوا -> امانوا",
+      "sound": null
+    },
+    "faith-2": {
+      "raw_sha256": "eab7576db9eb2c45b6ab83aa06a2b95449b7e0f4ce39e32aed9b521da8fd50bf",
+      "heard": "وربنا سبت قلوبهم لما وقفوا قدام قومهم وقالوا ربنا رب السماء والأرض ومش هنداعي غيره",
+      "differs": "ثبت -> سبت; السما -> السماء; هندعي -> هنداعي",
+      "sound": null
+    },
+    "faith-3": {
+      "raw_sha256": "761a1820dda9eda36cdc4755466f4f7afd092fb7f5b33e0764326a27ff240e48",
+      "heard": "وقالوا البعض طالما سبتوهم هم واللي بيعبدوه روحوا للكهف ربنا هيفرش لكم من رحمته ويسهلكم أمركم",
+      "differs": "لبعض -> البعض; هما -> هم; ويسهل لكم -> ويسهلكم",
+      "sound": null
+    },
+    "faith-intro": {
+      "raw_sha256": "f41682dd192baa4b5c08d809bba3a9f8d9b11d3d2dd3b133fef29c92e13d5cee",
+      "heard": "قال ربنا سبحانه وتعالى",
+      "differs": null,
+      "sound": null
+    },
+    "faith-intro-2": {
+      "raw_sha256": "f41682dd192baa4b5c08d809bba3a9f8d9b11d3d2dd3b133fef29c92e13d5cee",
+      "heard": "قال ربنا سبحانه وتعالى",
+      "differs": null,
+      "sound": null
+    },
+    "faith-lesson": {
+      "raw_sha256": "1f035c4de709ac42661f90d131e046358e518b8e02dfbdc8e2d1452427012aa7",
+      "heard": "لما تقف لوحدك عشان ربنا ربنا هو اللي بيسبت قلبك",
+      "differs": "بيثبت -> بيسبت",
+      "sound": null
+    },
+    "faith-life-1": {
+      "raw_sha256": "3e257789e76bddc4a4b2101d2e1dcb74b04e76e4f73e085f65c55b3e33d859da",
+      "heard": "زي لما مديرك يطلب منك تمضي على حاجة غلط وكل اللي حواليك مضو",
+      "differs": "مضوا -> مضو",
+      "sound": null
+    },
+    "faith-life-2": {
+      "raw_sha256": "70c99082a8a8d7ee92de93e73f7af823333618734c34aa1e8e6f1ffe2b0ebea6",
+      "heard": "وتقول لأ وتلاقي قلبك متطمن رغم كل حاجة",
+      "differs": "مطمن -> متطمن",
+      "sound": null
+    },
+    "faith-outro": {
+      "raw_sha256": "3cadfd4edc2636d7de8ed474499bc3a134414ed38d496dda29355e6bec5f8d9f",
+      "heard": "طب حصلهم إيه جوة الكهف؟ تبعنا عشان تعرف",
+      "differs": "تابعنا -> تبعنا",
+      "sound": null
+    },
+    "hook-1": {
+      "raw_sha256": "9e6ed99e45bf164903bef42fe18c5ac60f08db70716a8fdbf5f02a7711a96273",
+      "heard": "لما تكون الوحيد اللي بيصلي في الشغل",
+      "differs": null,
+      "sound": null
+    },
+    "hook-2": {
+      "raw_sha256": "08b35e4f09b4411e7bef0b9391ccd158de1b23e34148e53c7197cc7842c4b6b0",
+      "heard": "والكل بيبصلك كأنك غريب",
+      "differs": null,
+      "sound": null
+    },
+    "hook-3": {
+      "raw_sha256": "6c09fcf0e05083f216a24198f4555c5cd08d9cdd86d89e0a91b36092e283577b",
+      "heard": "في صورة الكهف شباب كانوا لوحدهم كده",
+      "differs": "سوره -> صوره",
+      "sound": null
+    },
+    "outro": {
+      "raw_sha256": "5c77710ed7db77b2d2e233d8214ad0161ba8a555c3eb248cd19c563011c56025",
+      "heard": "مين الشباب دول وليه لجأوا للكهف تابعنا عشان تعرف",
+      "differs": null,
+      "sound": null
+    },
+    "promise": {
+      "raw_sha256": "e381deeb880fabd6080982742e10558cfa24ebc65de7963b9a96d78dcd2381ab",
+      "heard": "قصة هتخليك ما تخافش تكون مختلف عشان ربنا",
+      "differs": "متخافش -> ما تخافش",
+      "sound": null
+    },
+    "start-1": {
+      "raw_sha256": "ce981b3d794b30aa591e2192a6c1021d8abf127fd6c2606152f7c1cc7e4b7f5d",
+      "heard": "شباب لجأوا لكهف ودعوا ربنا يديهم رحمة من عنده ويهديهم في أمرهم",
+      "differs": null,
+      "sound": null
+    },
+    "start-intro": {
+      "raw_sha256": "f41682dd192baa4b5c08d809bba3a9f8d9b11d3d2dd3b133fef29c92e13d5cee",
+      "heard": "قال ربنا سبحانه وتعالى",
+      "differs": null,
+      "sound": null
+    },
+    "wake-1": {
+      "raw_sha256": "8a1868f29e082e4f173710ab486128dbde058a83a82595f37731a11c9dc2a2fd",
+      "heard": "صحيوا واحد منهم سأل أعدنا قد إيه؟ قالوا يوم ولا بعض يوم",
+      "differs": "صحيو وواحد -> صحيوا واحد; قعدنا -> اعدنا",
+      "sound": null
+    },
+    "wake-2": {
+      "raw_sha256": "f932052f20f480a24781362f59257a4431e22d7143613574a8ed64f87955c5a4",
+      "heard": "وبعتوا واحد منهم بفلوسهم الفضة للمدينة يجيب أطهر أكل ويتلطف ومحدش يحس بيهم",
+      "differs": null,
+      "sound": null
+    },
+    "wake-3": {
+      "raw_sha256": "6d24cb7872eb5e86ce57e59a4657fe9e9528c9e1cb14abda6ee2969e41d1cfbe",
+      "heard": "عشان لو قومهم عرفوا مكانهم هيرجموهم أو يرجعوهم لدنهم",
+      "differs": "لدينهم -> لدنهم",
+      "sound": null
+    },
+    "wake-4": {
+      "raw_sha256": "4753b40e02b1ac70e266c42e29e9b3db9aeb58153144fc2b10b8f91b8e6c8a56",
+      "heard": "ربنا كشف قصتهم للناس عشان يعرفوا ان وعد ربنا حق وان القيامة جاية ما فيها الشك",
+      "differs": "مفيهاش شك -> ما فيها الشك",
+      "sound": [
+        7.16,
+        7.18
+      ]
+    },
+    "wake-intro": {
+      "raw_sha256": "f41682dd192baa4b5c08d809bba3a9f8d9b11d3d2dd3b133fef29c92e13d5cee",
+      "heard": "قال ربنا سبحانه وتعالى",
+      "differs": null,
+      "sound": null
+    },
+    "wake-intro-2": {
+      "raw_sha256": "f41682dd192baa4b5c08d809bba3a9f8d9b11d3d2dd3b133fef29c92e13d5cee",
+      "heard": "قال ربنا سبحانه وتعالى",
+      "differs": null,
+      "sound": null
+    },
+    "wake-intro-3": {
+      "raw_sha256": "f41682dd192baa4b5c08d809bba3a9f8d9b11d3d2dd3b133fef29c92e13d5cee",
+      "heard": "قال ربنا سبحانه وتعالى",
+      "differs": null,
+      "sound": null
+    },
+    "wake-lesson": {
+      "raw_sha256": "fc79cad64afd8fb7d756576605345d977d5327d82ee8b4e9fbd667fa9c7db385",
+      "heard": "اللي صحاهم بعد كل ده قادر يبعثنا بعد الموت",
+      "differs": null,
+      "sound": null
+    },
+    "wake-life-1": {
+      "raw_sha256": "a980fc248ff20877f22c67f248222f66d94b7f9da3defb0317182e545f57f294",
+      "heard": "زي ما بيتنام كل ليلة وتصحى الصبح",
+      "differs": "بتنام -> بيتنام",
+      "sound": null
+    },
+    "wake-life-2": {
+      "raw_sha256": "c3984f4aa4bb4407bad4ae03afcb021743c0202e00c7385eccbf176d8e7200c3",
+      "heard": "والنبي صلى الله عليه وسلم كان لما يصحى من النوم يقول الحمد لله الذي أحيانا بعدما أماتنا وإليه النشور",
+      "differs": "بعد ما -> بعدما",
+      "sound": null
+    },
+    "wake-outro": {
+      "raw_sha256": "8ab5ec2eb820b6d7403130dc96ad2de71ceb92ecd85faeffd39feb1b189298df",
+      "heard": "طب قعدوا في الكهف الدي فعلا تابعنا عشان تعرف",
+      "differs": "قد ايه -> الدي",
+      "sound": null
+    },
+    "wake-then": {
+      "raw_sha256": "73e6d41e9f9fee8435fb5a6f98187f4752f7fc35292c7f4720982eec6798513e",
+      "heard": "وبعدين",
+      "differs": null,
+      "sound": null
+    }
+  }
+}

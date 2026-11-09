@@ -15,6 +15,7 @@
 episode: qarnayn
 title: { ar: "ذو القرنين", en: "Dhul-Qarnayn" }
 format: story-linear   # docs/formats.md (skill choose-format)
+style: flat   # docs/styles.md (made before the styles, validated in this one)
 narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
 # Textes de publication : faits des répliques du script, validés par le propriétaire le 2026-11-08. Le reste : video/scripts/publish.ts.
 publish:

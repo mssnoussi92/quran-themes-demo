@@ -172,6 +172,7 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
     lexicon = (load_yaml(CONTENT / "pronunciation.yaml") or {}).get("words", [])
     dialect = {alef(k): v for k, v in ((load_yaml(CONTENT / "dialect.yaml") or {}).get("words") or {}).items()}
     egyptian = ep["narration_language"] == "ar-egy"
+    style = ep["style"]
     check_publish(ep, rel(path), report)
     seen: set[str] = set()
     for scene in ep["scenes"]:
@@ -230,7 +231,8 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
             shown = spoken_words(narration["ar"])
             said = scene.get("say_ar", narration["ar"])
             for entry in lexicon:
-                if spoken_words(entry["word"])[0] in shown and entry["say"] not in said:
+                # `also`: other spellings the voice says right too (one per take that needed it).
+                if spoken_words(entry["word"])[0] in shown and not any(v in said for v in [entry["say"], *entry.get("also", [])]):
                     report.warn(where, f"« {entry['word']} »: the voice says it right as « {entry['say']} » "
                                        f"(content/pronunciation.yaml): write it so in say_ar")
         # Egyptian narration: no standard-Arabic word where the dialect has its own (content/dialect.yaml),
@@ -259,6 +261,9 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
         # Backgrounds: closed catalog too (content/backgrounds.yaml).
         if "background" in visual and visual["background"] not in backgrounds:
             report.error(where, f"background '{visual['background']}' is not in content/backgrounds.yaml")
+        elif "background" in visual and style not in drawn_in(backgrounds[visual["background"]]):
+            report.error(where, f"background '{visual['background']}' has no drawing in the style '{style}' "
+                                f"(content/backgrounds.yaml, styles)")
 
         # Characters: closed catalog, fictional only, never with real people.
         chars = visual.get("characters", [])
@@ -273,17 +278,42 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
             if spec is None:
                 report.error(where, f"character '{ch['id']}' is not in content/characters.yaml")
                 continue
-            if ch["pose"] not in spec["poses"]:
-                report.error(where, f"pose '{ch['pose']}' not in catalog for '{ch['id']}'")
+            if ch["pose"] not in poses_in(spec, style):
+                report.error(where, f"pose '{ch['pose']}' not in catalog for '{ch['id']}' in the style '{style}'")
             if ch["mood"] not in spec["moods"]:
                 report.error(where, f"mood '{ch['mood']}' not in catalog for '{ch['id']}'")
 
     check_whole(ep, rel(path), report)
+    check_style(ep, rel(path), report)
     check_format(ep, rel(path), report)
     check_thumbnail(ep, rel(path), catalog, backgrounds, report)
 
 
 QUOTES = ("ayah-card", "source-card")
+
+# The style each format takes (docs/styles.md, owner's decision of 2026-11-09).
+STYLE_OF_FORMAT = {
+    "story-suspense": "paper", "story-linear": "paper", "misconceptions": "chalk",
+    "collection": "illumination", "text-explained": "illumination", "practical": "flat", "two-paths": "flat",
+}
+
+
+def drawn_in(background: dict) -> list[str]:
+    """The styles a background of the catalog is drawn in (content/backgrounds.yaml, `styles`; flat by default)."""
+    return background.get("styles") or ["flat"]
+
+
+def poses_in(character: dict, style: str) -> list[str]:
+    """The poses a character has in a style: Open Peeps bodies (flat, chalk), silhouettes (paper)."""
+    return list(character.get("paper_poses") or []) if style == "paper" else list(character["poses"])
+
+
+def check_style(ep: dict, where: str, report: Report) -> None:
+    """The episode's style follows its format (docs/styles.md), checked while a reel is being written:
+    the nine episodes made before the styles keep the flat style they were validated in."""
+    expected = STYLE_OF_FORMAT.get(ep["format"])
+    if expected and ep["style"] != expected and any(not r.get("validated_by") for r in ep["reels"]):
+        report.warn(where, f"style '{ep['style']}' for the format '{ep['format']}': docs/styles.md gives '{expected}'")
 
 
 def format_problems(fmt: str, scenes: list[dict], first: bool, last: bool) -> list[str]:
@@ -388,15 +418,18 @@ def check_thumbnail(ep: dict, where: str, catalog: dict, backgrounds: dict, repo
         report.warn(where, "no thumbnail for the whole episode (thumbnail: layout, headline, background)")
         return
     where = f"{where} [thumbnail]"
+    style = ep.get("style", "flat")
     if thumb["background"] not in backgrounds:
         report.error(where, f"background '{thumb['background']}' is not in content/backgrounds.yaml")
+    elif style not in drawn_in(backgrounds[thumb["background"]]):
+        report.error(where, f"background '{thumb['background']}' has no drawing in the style '{style}'")
     ch = thumb.get("character")
     if ch:
         spec = catalog.get(ch["id"])
         if spec is None:
             report.error(where, f"character '{ch['id']}' is not in content/characters.yaml")
         else:
-            if ch["pose"] not in spec["poses"]:
+            if ch["pose"] not in poses_in(spec, style):
                 report.error(where, f"pose '{ch['pose']}' not in catalog for '{ch['id']}'")
             if ch["mood"] not in spec["moods"]:
                 report.error(where, f"mood '{ch['mood']}' not in catalog for '{ch['id']}'")

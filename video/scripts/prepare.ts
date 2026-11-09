@@ -79,6 +79,8 @@ type ManifestScene = {
   reciter?: string;
   words?: Media["words"];
   phrases?: Media["phrases"];
+  /** The same part at the loudness every part is brought to (tools/audio/build.py, LEVEL): what is played. */
+  level?: { file: string };
   /** A hadith read by a person: the take's introduction, then the reading (tools/audio/build.py). */
   mix?: {
     file: string;
@@ -92,6 +94,7 @@ type ManifestScene = {
 type EpisodeFile = {
   episode: string;
   title: { ar: string; en: string };
+  style?: EpisodeData["style"];
   narration_language: string;
   publish?: PublishTexts;
   thumbnail?: {
@@ -125,18 +128,28 @@ type EpisodeFile = {
 };
 
 type CatalogCharacter = {
-  look: { hair: string; facial_hair: string; accessory: string };
+  look?: { hair: string; facial_hair: string; accessory: string };
   poses: Record<string, string>;
+  /** Poses drawn as paper-cut silhouettes (video/src/styles/paper/silhouettes.ts, docs/styles.md). */
+  paper_poses?: string[];
   moods: string[];
 };
 
-/** A scene's character, resolved to its Open Peeps pieces; any unknown name is an error. */
+/** A scene's character, resolved to its Open Peeps pieces (or, in the paper style, to its silhouette
+ * pose); any unknown name is an error. */
 function resolveCharacter(c: { id: string; pose: string; mood: string; talking?: boolean },
-                          catalog: Record<string, CatalogCharacter>, where: string): Character {
+                          catalog: Record<string, CatalogCharacter>, where: string, style: string = "flat"): Character {
   const fail = (msg: string): never => {
     throw new Error(`${where}: character ${c.id}: ${msg}`);
   };
   const spec = catalog[c.id] ?? fail("not in content/characters.yaml");
+  if (style === "paper") {
+    if (!(spec.paper_poses ?? []).includes(c.pose)) fail(`pose '${c.pose}' has no paper silhouette (paper_poses)`);
+    if (!spec.moods.includes(c.mood)) fail(`mood '${c.mood}' not in the catalog`);
+    return { id: c.id, pose: c.pose, mood: c.mood, talking: c.talking ?? false, body: "silhouette",
+             kind: c.pose === "sitting" ? "sitting" : "standing", box: [0, 0, 0, 0], seat: null,
+             hair: "", facial_hair: "", accessory: "", face: "", face_open: "" };
+  }
   const body = spec.poses[c.pose] ?? fail(`pose '${c.pose}' not in the catalog`);
   if (!spec.moods.includes(c.mood)) fail(`mood '${c.mood}' not in the catalog`);
   const faces = MOOD_FACES[c.mood] ?? fail(`mood '${c.mood}' has no face in characters/peeps.ts`);
@@ -144,7 +157,7 @@ function resolveCharacter(c: { id: string; pose: string; mood: string; talking?:
     : body in peeps.BustPose ? "bust" : fail(`'${body}' is not an Open Peeps body`);
   const box = BODY_BOX[body] ?? fail(`body '${body}' has no measured box in characters/peeps.ts`);
   const seat = kind === "sitting" ? SEAT[body] ?? fail(`sitting body '${body}' has no seat in characters/peeps.ts`) : null;
-  const { hair, facial_hair, accessory } = spec.look;
+  const { hair, facial_hair, accessory } = spec.look ?? fail("no Open Peeps look (look)");
   if (!(hair in peeps.Hair)) fail(`hair '${hair}' is not an Open Peeps piece`);
   if (!(facial_hair in peeps.FacialHair)) fail(`facial hair '${facial_hair}' is not an Open Peeps piece`);
   if (!(accessory in peeps.Accessories)) fail(`accessory '${accessory}' is not an Open Peeps piece`);
@@ -284,7 +297,7 @@ function mediaFor(episode: string, manifest: Record<string, ManifestScene> | nul
     console.warn(`warning ${where}: the reading of ${source!.id} is not mixed yet (run tools/audio/build.py --episode ${episode})`);
     return null;
   }
-  const name = mix?.file ?? entry.file;
+  const name = mix?.file ?? entry.level?.file ?? entry.file;
   const file = `audio/${episode}/${name}`;
   mkdirSync(join(PUBLIC, "audio", episode), { recursive: true });
   copyFileSync(join(AUDIO, episode, name), join(PUBLIC, file));
@@ -363,7 +376,7 @@ function main() {
           background: s.visual.background ?? null,
           icon: s.visual.icon ?? null,
           highlight: s.visual.highlight ?? "none",
-          characters: (s.visual.characters ?? []).map((c) => resolveCharacter(c, catalog, where)),
+          characters: (s.visual.characters ?? []).map((c) => resolveCharacter(c, catalog, where, ep.style ?? "flat")),
         },
         source,
         spoken_ar: spoken,
@@ -391,7 +404,7 @@ function main() {
         layout: t.layout,
         headline: t.headline,
         kicker: t.kicker ?? null,
-        character: t.character ? resolveCharacter(t.character, catalog, where) : null,
+        character: t.character ? resolveCharacter(t.character, catalog, where, ep.style ?? "flat") : null,
         background: t.background,
         validated_by: t.validated_by ?? null,
       };
@@ -399,6 +412,7 @@ function main() {
     const data: EpisodeData = {
       episode: ep.episode,
       title: ep.title,
+      style: ep.style ?? "flat",
       narration_language: ep.narration_language,
       // The page's name, on every frame (content/publish.yaml): a reposted video keeps its source.
       handle: load<{ handle?: string }>(join(CONTENT, "publish.yaml")).handle ?? null,

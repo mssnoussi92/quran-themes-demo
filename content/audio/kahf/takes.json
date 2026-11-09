@@ -1,0 +1,399 @@
+{
+  "note": "Narration takes validated by the owner (AI-generated voice, VoiceTut), and candidate takes checked by Claude for the owner's final review (status: candidate). Written by tools/audio/build.py --candidate, --lock and --set-phrases, never by hand.",
+  "takes": {
+    "anchor": {
+      "file": "anchor.flac",
+      "text": "والنبي صلى الله عليه وسلم قال: مَنْ حَفِظَ عَشْرَ آيَاتٍ مِنْ أَوَّلِ سُورَةِ الْكَهْفِ عُصِمَ مِنَ الدَّجَّالِ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "5bda783e7398742a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "16902c455d72b5220da90cd2e2df14e4cc4599e6d306e2f188ea505d80a9df78"
+    },
+    "anchor-2": {
+      "file": "anchor-2.flac",
+      "text": "والعشر آيات دول… فيهم بداية قصتهم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "8f1c5966ab847c30",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "28402635835b11233a4be8db86080dba46fa3f567a926e6b0b0abba8a8263594"
+    },
+    "cave-1": {
+      "file": "cave-1.flac",
+      "text": "جوه الكهف… الشمس وهي طالعة تميل عنهم يِمِين… وهي بتغرب تبعد عنهم شمال… وهما في وسع منه.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "eb39a762f31eb88f",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "c7757ff2fa2347a7e544648b9db2290ee0097dd2a2a43a1cc53d74b3c6079743"
+    },
+    "cave-2": {
+      "file": "cave-2.flac",
+      "text": "تحسبهم صاحيين… وهما نايمين. وربنا بيقلّبهم يمين وشمال… وكلبهم مادد إيديه على باب الكهف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a7d0432bad815274",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "159780eb52142092702c191bc29adba3ef27d21f1664b250a33e2f6499b0c178"
+    },
+    "cave-lesson": {
+      "file": "cave-lesson.flac",
+      "text": "لما تلجأ لربنا… هو بيدبّرلك أصغر تفصيلة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "e24ce681abd4b30e",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "f88b648f1f44836a24f9e2151f2a6398315028d13638e851ac5f6c554b1aed91"
+    },
+    "cave-life-1": {
+      "file": "cave-life-1.flac",
+      "text": "زي لما تسيب حاجة عشان ربنا… وتحس إن الدنيا ضاقت عليك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "ecb129951a8749e7",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "036e85ee37f1a686ecb14f890f4c88b5fc5f201702f5f7f2b34457e1c89c843e"
+    },
+    "cave-life-2": {
+      "file": "cave-life-2.flac",
+      "text": "وبعدين تلاقي ربنا مسهّلها… من حتة عمرك ما فكرت فيها.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "1be7fe6f7c3c680f",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "9db863861759b177d4111052fc237d84706f334470ea6f7a6a68e52c1cc7d54e"
+    },
+    "cave-outro": {
+      "file": "cave-outro.flac",
+      "text": "وفي يوم… صِحْيُو. تابعنا عشان تعرف لقوا إيه.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "fb7206e675e74c3d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "c115f9821cb6a224ac39f4e4d406dd90290d4e85e4121c6fd162947917435c3c",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          0.82,
+          1.44
+        ]
+      }
+    },
+    "end-1": {
+      "file": "end-1.flac",
+      "text": "الناس اختلفوا: كانوا كام؟ تلاتة… خمسة… سبعة؟ وربنا قال: هو أعلم بعددهم… ومتتجادلش فيهم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "ec85db728b886013",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "113548c9c60a94d6ffdc4d3bbae9115e075266d04f6870629cf215ab0f97a5e3"
+    },
+    "end-2": {
+      "file": "end-2.flac",
+      "text": "بس قالنا قعدوا قد إيه.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a511d5503629e7de",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "339828bd4a00f4f46306b47d790c859991f9096e30f4fe632529879ef6416dac"
+    },
+    "end-dua": {
+      "file": "end-dua.flac",
+      "text": "ودعوتهم… خليها معاك لما تحس إنك لوحدك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "dd9d311036d6569d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "90f67b3c2d2abc8cf522f9e6a3e4063a86d7877eb04b6c8724141413227182c0"
+    },
+    "end-lesson": {
+      "file": "end-lesson.flac",
+      "text": "مش كل سؤال يستاهل خناقة… المهم الدرس.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "3142c7cb1f496b87",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "3ce39b225bee921cc32c13e43238cffb7a4fb47a743cecfcb747bd10e23188f5"
+    },
+    "end-life-1": {
+      "file": "end-life-1.flac",
+      "text": "زي ناس بتتخانق على تفاصيل القصة… وتنسى القصة نفسها.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "0b11121bceb382eb",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "67410d37e8747601c149808980fa9a0ab71129a95631247a764fedbeda6caa02"
+    },
+    "end-outro": {
+      "file": "end-outro.flac",
+      "text": "فالمرة الجاية لما تكون الوحيد اللي بيصلي… افتكر الكهف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "13a72ad735ae1ca8",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "6cf9a6554cacda9d861d726a90aff4c11860b9c2aa99676c7ae8fe74f24f5829",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          3.26
+        ]
+      }
+    },
+    "end-recap": {
+      "file": "end-recap.flac",
+      "text": "وقفوا لوحدهم… ربنا ثبّتهم… ورحمهم… وصحّاهم آية للناس.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2c2d482c4971af9b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "b3eea06c359bb896deb2e1ee9c1cd20f4704b9667966db4d908b2760c762c443",
+      "phrases": {
+        "tight": 2,
+        "starts": [
+          0.08,
+          0.84,
+          2.46,
+          3.48
+        ]
+      }
+    },
+    "faith-1": {
+      "file": "faith-1.flac",
+      "text": "كانوا شباب… آمَنُوا بربهم… وربنا زادهم هدى.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c1aaadeaeb7e1b35",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "209dd7a70f32c3d1066e807e44e47a02673f466ff756c626a050fba9c28d87f6"
+    },
+    "faith-2": {
+      "file": "faith-2.flac",
+      "text": "وربنا ثبّت قلوبهم… لما وقفوا قدام قومهم وقالوا: ربنا رب السما والأرض… ومش هندعي غيره.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "cf137b248204ee50",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "8649d35e20a896e54485d3406e3ab16d17373308412fa8a498350c7d3edcf608"
+    },
+    "faith-3": {
+      "file": "faith-3.flac",
+      "text": "وقالوا لبعض: طالما سبتوهم هما واللي بيعبدوه… روحوا للكهف. ربنا هيفرش لكم من رحمته… ويسهّل لكم أمركم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "194ccb380a965df1",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "d577bb1197115d03ee046d5438db4de974d32bd8802336c9cc0861ff75d29141"
+    },
+    "faith-lesson": {
+      "file": "faith-lesson.flac",
+      "text": "لما تقف لوحدك عشان ربنا… ربنا هو اللي بيثبّت قلبك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2cf8bc8209fc34bb",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "d80b1cf8bc9279d4017e465e9bb826728e0675896a18ca6fd644d1466afdb571"
+    },
+    "faith-life-1": {
+      "file": "faith-life-1.flac",
+      "text": "زي لما مديرك يطلب منك تمضي على حاجة غلط… وكل اللي حواليك مضوا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "dd4b28b18b051781",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "9d91917046db3a5fe81d3d434a1d8926d2183159a2524f4f846dd35e6ea0af48"
+    },
+    "faith-life-2": {
+      "file": "faith-life-2.flac",
+      "text": "وتقول لأ… وتلاقي قلبك مطمن رغم كل حاجة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "4ea86517f81bf948",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "6f3e43096ac0760b192d1e095ea67a387a9c7a31ad5ad87ea945557c0550aa4b"
+    },
+    "faith-outro": {
+      "file": "faith-outro.flac",
+      "text": "طب حصلهم إيه جوه الكهف؟ تابعنا عشان تعرف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "6663a35d911e4281",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "bbe61708df2642688f2bd034e67589c3c3a119c403e9b3f93e2e83cc6dd32fac"
+    },
+    "hook-1": {
+      "file": "hook-1.flac",
+      "text": "لما تكون الوحيد اللي بيصلي في الشغل…",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "e89b655fbad0e5b0",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "d3337a75c99a7e4b9f23ba2cc75197d6c0d99b647206991ca79374b98343f637"
+    },
+    "hook-2": {
+      "file": "hook-2.flac",
+      "text": "والكل بيبصلك… كأنك غريب.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "42006b9f1aa391b4",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "677d72893dac226f05955495914e9b4969550617e329ec1f94219c971fe5af6e"
+    },
+    "hook-3": {
+      "file": "hook-3.flac",
+      "text": "في سورة الكهف… شباب كانوا لوحدهم كده.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "440ba016b927e08b",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "76284121f3279948f6fc2cc3a35bd3bf32459e74ef7e9efcfc77d45766dd46ab"
+    },
+    "outro": {
+      "file": "outro.flac",
+      "text": "مين الشباب دول… وليه لجأوا للكهف؟ تابعنا عشان تعرف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "d16f27e00ff2c0df",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "71fcb9034607b55023a53d94bdf8a1124088f743956a2e2d339d6dc638191d64"
+    },
+    "promise": {
+      "file": "promise.flac",
+      "text": "قصة… هتخليك متخافش تكون مختلف عشان ربنا.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "c73ff69caa556886",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "dfad3c6513b2c7ee66ac4222e70e0f204ba7eadc3c84add45fe53412b8ac974e"
+    },
+    "start-1": {
+      "file": "start-1.flac",
+      "text": "شباب لجأوا لكهف… ودعوا ربنا يديهم رحمة من عنده… ويهديهم في أمرهم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "a5d4cd9a61d4064a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "a098c1c07e218760aeb82b80a439e0f5f41abbd9255eda917db2988cf2a57011"
+    },
+    "wake-1": {
+      "file": "wake-1.flac",
+      "text": "صحيو… وواحد منهم سأل: قعدنا قد إيه؟ قالوا: يوم… ولا بعض يوم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "3bfc34bb556f5bb0",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "a892f37b1684cfb373c369375ec28439fef563e551e3330b029c9731903eb2c4"
+    },
+    "wake-2": {
+      "file": "wake-2.flac",
+      "text": "وبعتوا واحد منهم بفلوسهم الفضة للمدينة… يجيب أطهر أكل… ويتلطف… ومحدش يحس بيهم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "86dd57a3e5d985ea",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "00270d2291d2b71010240a05bc271c66235fa7eebfee25105456727c21606a3e"
+    },
+    "wake-3": {
+      "file": "wake-3.flac",
+      "text": "عشان لو قَوْمُهُم عرفوا مكانهم… هيرجموهم… أو يرجعوهم لدينهم.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "d0336df3aae3a53a",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "0f65fd8ecb688f415934f110899be061ead568a7c8d5d741eb903e0063b7c634"
+    },
+    "wake-4": {
+      "file": "wake-4.flac",
+      "text": "ربنا كشف قصتهم للناس… عشان يعرفوا إن وعد ربنا حق… وإن القيامة جاية… مفيهاش شك.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "ad7d21138ceddd76",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "c1aaf0b32c23047ef541e2ede19359d7e48e32ce2f5b497c5b956228b76d3ba1"
+    },
+    "wake-lesson": {
+      "file": "wake-lesson.flac",
+      "text": "اللي صحّاهم بعد كل ده… قادر يبعثنا بعد الموت.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "92dee0ea997ae191",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "0c5316a2aa2505b71b962ca2032b1037dd53caf2ac681697620b619353eee012"
+    },
+    "wake-life-1": {
+      "file": "wake-life-1.flac",
+      "text": "زي ما بتنام كل ليلة… وتصحى الصبح.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "dd1448b4a68b4dc2",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "69055dd449996b29c60dbaee09ae1213812b283a29d21a92c5b7864d772f53d6"
+    },
+    "wake-life-2": {
+      "file": "wake-life-2.flac",
+      "text": "والنبي صلى الله عليه وسلم كان لما يصحى من النوم يقول: الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا، وَإِلَيْهِ النُّشُورُ",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "ecfdc62ffd071f0d",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "4b06e7f1bea821c21a20ef1b905c1ee6e983322bbb7da5bfd02b3c67678e9180"
+    },
+    "wake-outro": {
+      "file": "wake-outro.flac",
+      "text": "طب قعدوا في الكهف قد إيه فعلًا؟ تابعنا عشان تعرف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "1990a224a617d3a2",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "df75f08e4dd5a78aac43e773defff6fce588c72f7f8ee3923c874bda1de4678d"
+    },
+    "wake-then": {
+      "file": "wake-then.flac",
+      "text": "وبعدين؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "01e5475a71260232",
+      "validated_by": "mssnoussi92",
+      "locked": "2026-11-09",
+      "sha256": "324bce178a2416e702cb07a2743094ff1d83ddd0f7f18a8b6fd0ebb35964baf2"
+    }
+  }
+}

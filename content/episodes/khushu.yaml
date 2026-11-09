@@ -13,6 +13,7 @@
 episode: khushu
 title: { ar: "الخشوع", en: "Khushu in prayer" }
 format: misconceptions   # docs/formats.md (skill choose-format)
+style: flat   # docs/styles.md (made before the styles, validated in this one)
 narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
 # Textes de publication, faits des répliques du script ; validés avec le reste à la fin (validated_by).
 # Le reste (sources, récitateur, lecteurs, voix IA, chapitres) : video/scripts/publish.ts.

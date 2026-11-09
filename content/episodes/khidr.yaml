@@ -14,6 +14,7 @@
 episode: khidr
 title: { ar: "موسى والخضر", en: "Moses and al-Khidr" }
 format: story-suspense   # docs/formats.md (skill choose-format)
+style: flat   # docs/styles.md (made before the styles, validated in this one)
 narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
 # Textes de publication : proposés le 2026-11-08, faits des répliques du script ; validés par le propriétaire le
 # même jour (validated_by), avec les scripts, la traduction, l'ordre de l'épisode entier et la miniature. Le reste : video/scripts/publish.ts.

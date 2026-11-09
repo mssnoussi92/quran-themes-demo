@@ -437,6 +437,193 @@
   notes: Al-Furqan 25:58, « place ta confiance dans le Vivant qui ne meurt pas » (reel tawakkul-05, conclusion) ; 65:3 (« فهو حسبه ») écarté car il commence au milieu d'une phrase (la suite de 65:2)
   text_ar: وَتَوَكَّلْ عَلَى ٱلْحَىِّ ٱلَّذِى لَا يَمُوتُ وَسَبِّحْ بِحَمْدِهِۦ ۚ وَكَفَىٰ بِهِۦ بِذُنُوبِ عِبَادِهِۦ خَبِيرًا
   text_en: And rely upon the Ever-Living who does not die, and exalt [Allāh] with His praise. And sufficient is He to be, with the sins of His servants, [fully] Aware -
+- id: quran.18.9
+  type: ayah
+  ref: {surah: 18, ayah: 9}
+  url: https://quran.com/18/9
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:9
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:9
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-09'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Kahf 18:9, « penses-tu que les gens de la caverne et d'ar-Raqim étaient, parmi Nos signes, une merveille ? » (kahf-01, ouverture de l'histoire ; dans les dix premiers versets, Muslim 809a)
+  text_ar: أَمْ حَسِبْتَ أَنَّ أَصْحَـٰبَ ٱلْكَهْفِ وَٱلرَّقِيمِ كَانُوا۟ مِنْ ءَايَـٰتِنَا عَجَبًا
+  text_en: Or have you thought that the companions of the cave and the inscription were, among Our signs, a wonder?
+- id: quran.18.10
+  type: ayah
+  ref: {surah: 18, ayah: 10}
+  url: https://quran.com/18/10
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:10
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:10
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-09'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Kahf 18:10, les jeunes se réfugient dans la caverne et disent « ربنا آتنا من لدنك رحمة وهيئ لنا من أمرنا رشدا » (kahf-01, et leur du'a en conclusion)
+  text_ar: إِذْ أَوَى ٱلْفِتْيَةُ إِلَى ٱلْكَهْفِ فَقَالُوا۟ رَبَّنَآ ءَاتِنَا مِن لَّدُنكَ رَحْمَةً وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًا
+  text_en: '[Mention] when the youths retreated to the cave and said, "Our Lord, grant us from Yourself mercy and prepare for us from our affair right guidance."'
+- id: quran.18.13
+  type: ayah
+  ref: {surah: 18, ayah: 13}
+  url: https://quran.com/18/13
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:13
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:13
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-09'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Kahf 18:13, « des jeunes qui ont cru en leur Seigneur, et Nous avons accru leur guidée » (kahf-02)
+  text_ar: نَّحْنُ نَقُصُّ عَلَيْكَ نَبَأَهُم بِٱلْحَقِّ ۚ إِنَّهُمْ فِتْيَةٌ ءَامَنُوا۟ بِرَبِّهِمْ وَزِدْنَـٰهُمْ هُدًى
+  text_en: It is We who relate to you, [O Muḥammad], their story in truth. Indeed, they were youths who believed in their Lord, and We increased them in guidance.
+- id: quran.18.14
+  type: ayah
+  ref: {surah: 18, ayah: 14}
+  url: https://quran.com/18/14
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:14
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:14
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-09'
+  status: validated
+  validated_by: mssnoussi92
+  notes: 'Al-Kahf 18:14, « Nous avons raffermi leurs cœurs quand ils se sont levés et ont dit : notre Seigneur est le Seigneur des cieux et de la terre » (kahf-02 ; commence par « و », phrase complète)'
+  text_ar: وَرَبَطْنَا عَلَىٰ قُلُوبِهِمْ إِذْ قَامُوا۟ فَقَالُوا۟ رَبُّنَا رَبُّ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ لَن نَّدْعُوَا۟ مِن دُونِهِۦٓ إِلَـٰهًا ۖ لَّقَدْ قُلْنَآ إِذًا شَطَطًا
+  text_en: And We bound [i.e., made firm] their hearts when they stood up and said, "Our Lord is the Lord of the heavens and the earth. Never will we invoke besides Him any deity. We would have certainly spoken, then, an excessive transgression.
+- id: quran.18.16
+  type: ayah
+  ref: {surah: 18, ayah: 16}
+  url: https://quran.com/18/16
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:16
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:16
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-09'
+  status: validated
+  validated_by: mssnoussi92
+  notes: 'Al-Kahf 18:16, « réfugiez-vous dans la caverne : votre Seigneur répandra sur vous de Sa miséricorde » (kahf-02 ; commence par « وإذ », phrase complète ; 18:15, leur argument, laissé de côté)'
+  text_ar: وَإِذِ ٱعْتَزَلْتُمُوهُمْ وَمَا يَعْبُدُونَ إِلَّا ٱللَّهَ فَأْوُۥٓا۟ إِلَى ٱلْكَهْفِ يَنشُرْ لَكُمْ رَبُّكُم مِّن رَّحْمَتِهِۦ وَيُهَيِّئْ لَكُم مِّنْ أَمْرِكُم مِّرْفَقًا
+  text_en: '[The youths said to one another], "And when you have withdrawn from them and that which they worship other than Allāh, retreat to the cave. Your Lord will spread out for you of His mercy and will prepare for you from your affair facility."'
+- id: quran.18.17
+  type: ayah
+  ref: {surah: 18, ayah: 17}
+  url: https://quran.com/18/17
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:17
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:17
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-09'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Kahf 18:17, le soleil qui s'écarte de leur caverne à son lever et à son coucher (kahf-03)
+  text_ar: ۞ وَتَرَى ٱلشَّمْسَ إِذَا طَلَعَت تَّزَٰوَرُ عَن كَهْفِهِمْ ذَاتَ ٱلْيَمِينِ وَإِذَا غَرَبَت تَّقْرِضُهُمْ ذَاتَ ٱلشِّمَالِ وَهُمْ فِى فَجْوَةٍ مِّنْهُ ۚ ذَٰلِكَ مِنْ ءَايَـٰتِ ٱللَّهِ ۗ مَن يَهْدِ ٱللَّهُ فَهُوَ ٱلْمُهْتَدِ ۖ وَمَن يُضْلِلْ فَلَن تَجِدَ لَهُۥ وَلِيًّا مُّرْشِدًا
+  text_en: And [had you been present], you would see the sun when it rose, inclining away from their cave on the right, and when it set, passing away from them on the left, while they were [lying] within an open space thereof. That was from the signs of Allāh. He whom Allāh guides is the [rightly] guided, but he whom He sends astray - never will you find for him a protecting guide.
+- id: quran.18.18
+  type: ayah
+  ref: {surah: 18, ayah: 18}
+  url: https://quran.com/18/18
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:18
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:18
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-09'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Kahf 18:18, on les croirait éveillés ; Nous les tournons à droite et à gauche ; leur chien, pattes étendues à l'entrée (kahf-03)
+  text_ar: وَتَحْسَبُهُمْ أَيْقَاظًا وَهُمْ رُقُودٌ ۚ وَنُقَلِّبُهُمْ ذَاتَ ٱلْيَمِينِ وَذَاتَ ٱلشِّمَالِ ۖ وَكَلْبُهُم بَـٰسِطٌ ذِرَاعَيْهِ بِٱلْوَصِيدِ ۚ لَوِ ٱطَّلَعْتَ عَلَيْهِمْ لَوَلَّيْتَ مِنْهُمْ فِرَارًا وَلَمُلِئْتَ مِنْهُمْ رُعْبًا
+  text_en: And you would think them awake, while they were asleep. And We turned them to the right and to the left, while their dog stretched his forelegs at the entrance. If you had looked at them, you would have turned from them in flight and been filled by them with terror.
+- id: quran.18.19
+  type: ayah
+  ref: {surah: 18, ayah: 19}
+  url: https://quran.com/18/19
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:19
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:19
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-09'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Al-Kahf 18:19, le réveil : « combien de temps êtes-vous restés ? — un jour ou une partie de jour » ; la pièce d'argent, la ville, la prudence (kahf-04)"
+  text_ar: وَكَذَٰلِكَ بَعَثْنَـٰهُمْ لِيَتَسَآءَلُوا۟ بَيْنَهُمْ ۚ قَالَ قَآئِلٌ مِّنْهُمْ كَمْ لَبِثْتُمْ ۖ قَالُوا۟ لَبِثْنَا يَوْمًا أَوْ بَعْضَ يَوْمٍ ۚ قَالُوا۟ رَبُّكُمْ أَعْلَمُ بِمَا لَبِثْتُمْ فَٱبْعَثُوٓا۟ أَحَدَكُم بِوَرِقِكُمْ هَـٰذِهِۦٓ إِلَى ٱلْمَدِينَةِ فَلْيَنظُرْ أَيُّهَآ أَزْكَىٰ طَعَامًا فَلْيَأْتِكُم بِرِزْقٍ مِّنْهُ وَلْيَتَلَطَّفْ وَلَا يُشْعِرَنَّ بِكُمْ أَحَدًا
+  text_en: And similarly, We awakened them that they might question one another. Said a speaker from among them, "How long have you remained [here]?" They said, "We have remained a day or part of a day." They said, "Your Lord is most knowing of how long you remained. So send one of you with this silver coin of yours to the city and let him look to which is the best of food and bring you provision from it and let him be cautious. And let no one be aware of you.
+- id: quran.18.20
+  type: ayah
+  ref: {surah: 18, ayah: 20}
+  url: https://quran.com/18/20
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:20
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:20
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-09'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Kahf 18:20, « s'ils vous découvrent, ils vous lapideront ou vous ramèneront à leur religion » (kahf-04 ; commence par « إنهم », suite de 18:19, lu avec lui)
+  text_ar: إِنَّهُمْ إِن يَظْهَرُوا۟ عَلَيْكُمْ يَرْجُمُوكُمْ أَوْ يُعِيدُوكُمْ فِى مِلَّتِهِمْ وَلَن تُفْلِحُوٓا۟ إِذًا أَبَدًا
+  text_en: Indeed, if they come to know of you, they will stone you or return you to their religion. And never would you succeed, then - ever."
+- id: quran.18.21
+  type: ayah
+  ref: {surah: 18, ayah: 21}
+  url: https://quran.com/18/21
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:21
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:21
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-09'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Kahf 18:21, Dieu fait connaître leur histoire pour qu'on sache que Sa promesse est vraie et que l'Heure ne fait aucun doute (kahf-04)
+  text_ar: وَكَذَٰلِكَ أَعْثَرْنَا عَلَيْهِمْ لِيَعْلَمُوٓا۟ أَنَّ وَعْدَ ٱللَّهِ حَقٌّ وَأَنَّ ٱلسَّاعَةَ لَا رَيْبَ فِيهَآ إِذْ يَتَنَـٰزَعُونَ بَيْنَهُمْ أَمْرَهُمْ ۖ فَقَالُوا۟ ٱبْنُوا۟ عَلَيْهِم بُنْيَـٰنًا ۖ رَّبُّهُمْ أَعْلَمُ بِهِمْ ۚ قَالَ ٱلَّذِينَ غَلَبُوا۟ عَلَىٰٓ أَمْرِهِمْ لَنَتَّخِذَنَّ عَلَيْهِم مَّسْجِدًا
+  text_en: And similarly, We caused them to be found that they [who found them] would know that the promise of Allāh is truth and that of the Hour there is no doubt. [That was] when they disputed among themselves about their affair and [then] said, "Construct over them a structure. Their Lord is most knowing about them." Said those who prevailed in the matter, "We will surely take [for ourselves] over them a masjid."
+- id: quran.18.22
+  type: ayah
+  ref: {surah: 18, ayah: 22}
+  url: https://quran.com/18/22
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:22
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:22
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-09'
+  status: validated
+  validated_by: mssnoussi92
+  notes: 'Al-Kahf 18:22, leur nombre : trois, cinq ou sept, « mon Seigneur connaît mieux leur nombre », ne pas en disputer (kahf-05, choix du propriétaire 2026-11-09)'
+  text_ar: سَيَقُولُونَ ثَلَـٰثَةٌ رَّابِعُهُمْ كَلْبُهُمْ وَيَقُولُونَ خَمْسَةٌ سَادِسُهُمْ كَلْبُهُمْ رَجْمًۢا بِٱلْغَيْبِ ۖ وَيَقُولُونَ سَبْعَةٌ وَثَامِنُهُمْ كَلْبُهُمْ ۚ قُل رَّبِّىٓ أَعْلَمُ بِعِدَّتِهِم مَّا يَعْلَمُهُمْ إِلَّا قَلِيلٌ ۗ فَلَا تُمَارِ فِيهِمْ إِلَّا مِرَآءً ظَـٰهِرًا وَلَا تَسْتَفْتِ فِيهِم مِّنْهُمْ أَحَدًا
+  text_en: They [i.e., people] will say there were three, the fourth of them being their dog; and they will say there were five, the sixth of them being their dog - guessing at the unseen; and they will say there were seven, and the eighth of them was their dog. Say, [O Muḥammad], "My Lord is most knowing of their number. None knows them except a few. So do not argue about them except with an obvious argument and do not inquire about them among [the speculators] from anyone."
 - id: quran.18.23
   type: ayah
   ref: {surah: 18, ayah: 23}
@@ -471,6 +658,40 @@
   notes: 'Al-Kahf 18:24, « …sans ajouter : si Allah le veut » (reel dq-05, lu avec 18:23)'
   text_ar: إِلَّآ أَن يَشَآءَ ٱللَّهُ ۚ وَٱذْكُر رَّبَّكَ إِذَا نَسِيتَ وَقُلْ عَسَىٰٓ أَن يَهْدِيَنِ رَبِّى لِأَقْرَبَ مِنْ هَـٰذَا رَشَدًا
   text_en: Except [when adding], "If Allāh wills." And remember your Lord when you forget [it] and say, "Perhaps my Lord will guide me to what is nearer than this to right conduct."
+- id: quran.18.25
+  type: ayah
+  ref: {surah: 18, ayah: 25}
+  url: https://quran.com/18/25
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:25
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:25
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-09'
+  status: validated
+  validated_by: mssnoussi92
+  notes: Al-Kahf 18:25, « ils restèrent dans leur caverne trois cents ans, et en ajoutèrent neuf » (kahf-05, la réponse à 18:19)
+  text_ar: وَلَبِثُوا۟ فِى كَهْفِهِمْ ثَلَـٰثَ مِا۟ئَةٍ سِنِينَ وَٱزْدَادُوا۟ تِسْعًا
+  text_en: And they remained in their cave for three hundred years and exceeded by nine.
+- id: quran.18.26
+  type: ayah
+  ref: {surah: 18, ayah: 26}
+  url: https://quran.com/18/26
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=18:26
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=18:26
+    translator: Saheeh International
+    surah_ar: الكهف
+    surah_en: Al-Kahf
+    retrieved: '2026-11-09'
+  status: validated
+  validated_by: mssnoussi92
+  notes: 'Al-Kahf 18:26, « dis : Allah sait mieux combien de temps ils restèrent » (kahf-05)'
+  text_ar: قُلِ ٱللَّهُ أَعْلَمُ بِمَا لَبِثُوا۟ ۖ لَهُۥ غَيْبُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ أَبْصِرْ بِهِۦ وَأَسْمِعْ ۚ مَا لَهُم مِّن دُونِهِۦ مِن وَلِىٍّ وَلَا يُشْرِكُ فِى حُكْمِهِۦٓ أَحَدًا
+  text_en: Say, "Allāh is most knowing of how long they remained. He has [knowledge of] the unseen [aspects] of the heavens and the earth. How Seeing is He and how Hearing! They have not besides Him any protector, and He shares not His legislation with anyone."
 - id: quran.18.65
   type: ayah
   ref: {surah: 18, ayah: 65}

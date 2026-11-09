@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { AbsoluteFill, Easing, Html5Audio, Sequence, interpolate, staticFile, useCurrentFrame } from "remotion";
 import { AudioStart } from "./audioStart";
 import type { VideoProps } from "./data";
@@ -5,6 +6,7 @@ import { FONT, loadFonts } from "./fonts";
 import { FORMATS, REMINDER_SECONDS, TRANSITION_SECONDS, toFrames } from "./formats";
 import type { Format } from "./formats";
 import { reminderStarts, selectScenes } from "./scenes.ts";
+import { PaperBackdrop, StyleContext } from "./styles/paper/render";
 import { AyahCard, NameCard, SceneCard, SourceCard, TitleCard } from "./templates/cards";
 import { SubscribeReminder } from "./templates/SubscribeReminder";
 import { Subtitles } from "./templates/Subtitles";
@@ -63,11 +65,19 @@ const BACKGROUND = `linear-gradient(180deg, ${COLOR.backgroundTop} 0%, ${COLOR.b
 
 /** What the scene shows and plays. Each scene is opaque (its own background), so during a transition
  * the scene coming in covers the one going out instead of printing its text over it. */
+/** A number from a scene id, to vary the cards' backdrops. */
+const variantOf = (id: string) => [...id].reduce((n, c) => n + c.charCodeAt(0), 0);
+
 const SceneBody: React.FC<{ slot: Slot; format: Format }> = ({ slot, format }) => {
   const { scene, lead, content } = slot;
+  const style = useContext(StyleContext);
   return (
     <AudioStart.Provider value={lead}>
-      <AbsoluteFill style={{ background: BACKGROUND }} />
+      {style === "paper" && scene.visual.template !== "scene" ? (
+        <PaperBackdrop format={format} variant={variantOf(scene.id)} prefix={`pb-${scene.id}`} />
+      ) : (
+        <AbsoluteFill style={{ background: BACKGROUND }} />
+      )}
       {scene.media ? (
         <Sequence from={lead} durationInFrames={content} layout="none">
           <Html5Audio src={staticFile(scene.media.file)} />
@@ -173,6 +183,7 @@ export const EpisodeVideo: React.FC<VideoProps> = ({ data, reel, format: formatI
   // The reminder is for YouTube: the whole episode in 16:9 only (the reels' platforms have their own buttons).
   const reminders = format.id === "episode" && reel === null ? reminderStarts(scenes) : [];
   return (
+    <StyleContext.Provider value={data.style ?? "flat"}>
     <AbsoluteFill style={{ background: BACKGROUND }}>
       <Timeline list={list} format={format} />
       {data.handle ? <Handle handle={data.handle} format={format} /> : null}
@@ -182,5 +193,6 @@ export const EpisodeVideo: React.FC<VideoProps> = ({ data, reel, format: formatI
         </Sequence>
       ))}
     </AbsoluteFill>
+    </StyleContext.Provider>
   );
 };

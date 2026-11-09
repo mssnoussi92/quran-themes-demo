@@ -5,6 +5,9 @@
 # Open Peeps dessiné (debout, assis ou buste). Les humeurs -> visages : video/src/characters/peeps.ts.
 # Apparences validées par le propriétaire le 2026-11-06 sur la planche docs/characters.png (validated_by).
 # Toute modification d'une apparence ou d'une pose retire validated_by : le propriétaire valide à nouveau.
+# `paper_poses` : les poses dessinées en silhouette de papier découpé (style `paper`, docs/styles.md,
+# video/src/styles/paper/silhouettes.ts) : sans visage, reconnaissables au contour ; validées avec le
+# rendu candidat du premier épisode en papier (`paper_validated_by`, sur la parole du propriétaire).
 characters:
   narrator:
     description: Narrateur fictif, adulte, tenue sobre ; lunettes et barbe courte
@@ -16,11 +19,35 @@ characters:
     description: Homme d'une trentaine d'années, personnage du quotidien ; cheveux courts, barbe courte
     look: { hair: Short, facial_hair: Chin, accessory: None }
     poses: { standing: ShirtPantsWB, sitting: MediumWB, pointing: PointingFingerWB }
+    paper_poses: [standing, sitting, praying, pointing]
     moods: [calm, worried, smiling]
     validated_by: mssnoussi92
+    paper_validated_by: mssnoussi92
   salma:
     description: Femme d'une trentaine d'années, personnage du quotidien ; hijab, manches longues
     look: { hair: Hijab, facial_hair: None, accessory: None }
     poses: { standing: ShirtPantsBW, sitting: ClosedLegWB, pointing: PointingFingerBW }
+    paper_poses: [standing, sitting, pointing]
     moods: [calm, worried, smiling]
     validated_by: mssnoussi92
+    paper_validated_by: mssnoussi92
+  # Personnages du quotidien ajoutés pour les styles (2026-11-09, plus de visages : docs/styles.md) ;
+  # pour l'instant en silhouette de papier seulement (pas de pièces Open Peeps).
+  youssef:
+    description: Jeune homme, collègue de bureau, grand et mince ; cheveux courts, rasé
+    poses: {}
+    paper_poses: [standing, sitting, pointing]
+    moods: [calm, worried, smiling]
+    paper_validated_by: mssnoussi92
+  hoda:
+    description: Femme, collègue de bureau ; hijab, robe longue
+    poses: {}
+    paper_poses: [standing, sitting]
+    moods: [calm, worried, smiling]
+    paper_validated_by: mssnoussi92
+  karim:
+    description: Homme d'une cinquantaine d'années, un peu fort ; casquette, barbe courte (le chef, un voisin de café)
+    poses: {}
+    paper_poses: [standing, sitting, pointing]
+    moods: [calm, worried, smiling]
+    paper_validated_by: mssnoussi92

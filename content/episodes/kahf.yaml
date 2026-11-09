@@ -1,0 +1,703 @@
+# Épisode Les gens de la caverne (أصحاب الكهف), d'après Al-Kahf 18:9-26 : rester fidèle quand on est seul à
+# penser autrement, et le lieu étroit qu'on choisit pour Dieu qui devient miséricorde. Deuxième de l'ordre validé
+# par le propriétaire le 2026-11-08 ; format `story-linear` (docs/formats.md), choisi par le propriétaire le
+# 2026-11-09 avec 18:22 (leur nombre), Muslim 809a en ancre de l'accroche et une relance au milieu du reel 4
+# (fiche dans docs/themes.md). Règles des épisodes-histoires :
+# - après chaque événement raconté, son verset récité : la narration le dit d'abord en égyptien, au plus près des
+#   mots du verset, puis « قال ربنا سبحانه وتعالى: » et le verset (jamais le texte coranique par la voix de
+#   synthèse) ;
+# - un exemple de vie en scène type après chaque leçon ; une promesse à la fin de l'accroche ;
+# - les jeunes ne sont jamais dessinés (fonds de lieux sans personne) ; rien hors du texte : ni leur nombre, ni leurs
+#   noms, ni la ville ou le roi, ni le nom du chien, ni le calcul des années ; 18:23-24 laissés de côté (déjà dans
+#   qarnayn-05). Récitateur : Tawfiq As-Sayegh (content/policy.yaml).
+# L'épisode entier dit les reels dans l'ordre. Script envoyé au propriétaire pour information avant la voix ; tout
+# est validé d'un coup, à la fin, sur le rendu candidat (scripts/finalize.py validate, seulement sur sa parole).
+# Lignes de l'IA (pas une citation ni une reformulation d'une source) : marquées « Ligne de l'IA ».
+episode: kahf
+title: { ar: "أصحاب الكهف", en: "The People of the Cave" }
+format: story-linear   # docs/formats.md (skill choose-format)
+style: paper   # docs/styles.md: stories in paper-cut
+narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
+# Textes de publication, faits des répliques du script ; validés avec le reste à la fin. Le reste : publish.ts.
+publish:
+  title: { en: "The People of the Cave: when you stand alone for God", ar: "أصحاب الكهف… لما تقف لوحدك عشان ربنا" }
+  description:
+    en: "The only one who prays at work? In Surat al-Kahf, young men stood alone before their people for their Lord. God steadied their hearts, took them into a cave and spread His mercy over them… then woke them, a sign for the people. Their story, from the Qur'an alone."
+    ar: "الوحيد اللي بيصلي في الشغل؟ في سورة الكهف، شباب وقفوا لوحدهم قدام قومهم عشان ربهم. ربنا ثبّت قلوبهم، ودخّلهم كهف، وفرش لهم من رحمته… وبعدين صحّاهم آية للناس. قصتهم، من القرآن بس."
+  hashtags: ["#PeopleOfTheCave", "#أصحاب_الكهف", "#SurahAlKahf"]
+  validated_by: mssnoussi92
+# Miniature YouTube (Thumbnail169) : gros plan, fond uni, Amir (Salma dans celle du khushu').
+thumbnail:
+  layout: close-up
+  headline: { ar: "أصحاب الكهف", en: "The People of the Cave" }
+  kicker: { ar: "لما تقف لوحدك", en: "· when you stand alone" }
+  character: { id: amir, pose: standing, mood: worried }
+  background: cave-entrance
+  validated_by: mssnoussi92
+reels:
+  - id: kahf-01
+    title: { ar: "شباب في كهف", en: "Young men in a cave" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "The only one who prays at work?", ar: "الوحيد اللي بيصلي في الشغل؟" }
+      description:
+        en: "And everyone looks at you as if you were a stranger? In Surat al-Kahf, young men were alone like that. They took refuge in a cave and asked their Lord for mercy, and to guide them in their affair."
+        ar: "والكل بيبصلك كأنك غريب؟ في سورة الكهف، شباب كانوا لوحدهم كده. لجأوا لكهف ودعوا ربنا يديهم رحمة من عنده… ويهديهم في أمرهم."
+      validated_by: mssnoussi92
+  - id: kahf-02
+    title: { ar: "ربطنا على قلوبهم", en: "We steadied their hearts" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "They stood up alone… and God steadied their hearts", ar: "وقفوا لوحدهم… وربنا ثبّت قلوبهم" }
+      description:
+        en: "Young men who believed in their Lord stood before their whole people and said: our Lord is the Lord of the heavens and the earth. When you stand alone for God, it is God who steadies your heart."
+        ar: "شباب آمنوا بربهم، وقفوا قدام قومهم كلهم وقالوا: ربنا رب السما والأرض. لما تقف لوحدك عشان ربنا… ربنا هو اللي بيثبّت قلبك."
+      validated_by: mssnoussi92
+  - id: kahf-03
+    title: { ar: "الشمس والكهف", en: "The sun and the cave" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "Even the sun turned away from them", ar: "حتى الشمس كانت بتميل عنهم" }
+      description:
+        en: "Inside the cave, the sun turned away from them when it rose and when it set, and their dog lay at the entrance. When you take refuge in God, He takes care of the smallest detail."
+        ar: "جوه الكهف، الشمس كانت بتميل عنهم وهي طالعة وهي بتغرب… وكلبهم نايم على الباب. لما تلجأ لربنا… هو بيدبّرلك أصغر تفصيلة."
+      validated_by: mssnoussi92
+  - id: kahf-04
+    title: { ar: "يوم أو بعض يوم", en: "A day, or part of a day" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "They woke up… and thought it had been a day", ar: "صحيوا… وفاكرينها يوم" }
+      description:
+        en: "How long did we stay? A day, or part of a day. They sent one of them to the city with their silver coin… and God made their story known: His promise is true, and the Hour will come. The One who woke them can raise us after death."
+        ar: "قعدنا قد إيه؟ يوم… ولا بعض يوم. بعتوا واحد بفلوسهم الفضة للمدينة… وربنا كشف قصتهم للناس: وعده حق، والقيامة جاية. اللي صحّاهم بعد كل ده… قادر يبعثنا بعد الموت."
+      validated_by: mssnoussi92
+  - id: kahf-05
+    title: { ar: "ربي أعلم", en: "My Lord knows best" }
+    validated_by: mssnoussi92
+    publish:
+      title: { en: "How many were they? God didn't tell us", ar: "كانوا كام؟ ربنا ما قالناش" }
+      description:
+        en: "Three? Five? Seven? God didn't tell us their number, and told us not to argue about it. But He told us how long they stayed: three hundred years, and nine more. Keep their prayer with you when you feel alone."
+        ar: "تلاتة؟ خمسة؟ سبعة؟ ربنا ما قالناش عددهم… وقالنا متتجادلش فيه. بس قالنا قعدوا قد إيه: تلتمية سنة… وتسعة. وخلي دعوتهم معاك لما تحس إنك لوحدك."
+      validated_by: mssnoussi92
+scenes:
+  # ---- kahf-01 : accroche, ancre (Muslim 809a), le début de l'histoire (18:9-10), promesse ---------------------
+  # Miroir : être le seul à faire ce que Dieu demande (scène type, à la deuxième personne).
+  - id: hook-1
+    role: hook
+    reel: kahf-01
+    audio: tts
+    narration:
+      ar: "لما تكون الوحيد اللي بيصلي في الشغل…"
+      en: "When you're the only one who prays at work…"
+    visual:
+      template: scene
+      background: office
+      characters:
+        - { id: amir, pose: praying, mood: worried, talking: false }
+  # Contraste : le regard des autres (ligne de l'IA).
+  - id: hook-2
+    role: hook
+    reel: kahf-01
+    audio: tts
+    narration:
+      ar: "والكل بيبصلك… كأنك غريب."
+      en: "And everyone looks at you… as if you were a stranger."
+    visual:
+      template: scene
+      background: office
+      characters:
+        - { id: youssef, pose: standing, mood: worried, talking: false }
+        - { id: hoda, pose: sitting, mood: worried, talking: false }
+  - id: hook-3
+    role: hook
+    reel: kahf-01
+    audio: tts
+    narration:
+      ar: "في سورة الكهف… شباب كانوا لوحدهم كده."
+      en: "In Surat al-Kahf… young men were alone just like that."
+    visual:
+      template: title-card
+  # Ancre : les dix premiers versets d'Al-Kahf, où l'histoire commence.
+  - id: anchor
+    role: evidence
+    reel: kahf-01
+    source: hadith.muslim.809a
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "والنبي صلى الله عليه وسلم قال:"
+      en: "And the Prophet ﷺ said:"
+    visual:
+      template: source-card
+  - id: anchor-2
+    role: evidence
+    reel: kahf-01
+    audio: tts
+    narration:
+      ar: "والعشر آيات دول… فيهم بداية قصتهم."
+      en: "And in those ten verses… their story begins."
+    visual:
+      template: title-card
+  # 18:9-10 racontés, puis récités.
+  - id: start-1
+    role: event
+    reel: kahf-01
+    audio: tts
+    narration:
+      ar: "شباب لجأوا لكهف… ودعوا ربنا يديهم رحمة من عنده… ويهديهم في أمرهم."
+      en: "Young men took refuge in a cave… and asked their Lord for mercy from Him… and to guide them in their affair."
+    visual:
+      template: scene
+      background: cave-entrance
+  - id: start-intro
+    role: evidence
+    reel: kahf-01
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: start-verse-1
+    role: evidence
+    reel: kahf-01
+    source: quran.18.9
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: start-verse-2
+    role: evidence
+    reel: kahf-01
+    source: quran.18.10
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Promesse : ce que l'histoire change pour toi (ligne de l'IA).
+  - id: promise
+    role: promise
+    reel: kahf-01
+    audio: tts
+    narration:
+      ar: "قصة… هتخليك متخافش تكون مختلف عشان ربنا."
+      en: "A story… that will make you unafraid to be different for God."
+    visual:
+      template: title-card
+  - id: outro
+    role: outro
+    reel: kahf-01
+    audio: tts
+    narration:
+      ar: "مين الشباب دول… وليه لجأوا للكهف؟ تابعنا عشان تعرف."
+      en: "Who were these young men… and why did they take refuge in the cave? Follow us to find out."
+    reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
+    visual:
+      template: title-card
+
+  # ---- kahf-02 : qui ils étaient, leur foi et leur décision (18:13-14, 18:16) ---------------------------------
+  # 18:13 raconté, puis 18:14.
+  - id: faith-1
+    role: event
+    reel: kahf-02
+    audio: tts
+    narration:
+      ar: "كانوا شباب… آمنوا بربهم… وربنا زادهم هدى."
+      en: "They were young men… who believed in their Lord… and God increased them in guidance."
+    say_ar: "كانوا شباب… آمَنُوا بربهم… وربنا زادهم هدى."
+    visual:
+      template: scene
+      background: old-city
+  - id: faith-2
+    role: event
+    reel: kahf-02
+    audio: tts
+    narration:
+      ar: "وربنا ثبّت قلوبهم… لما وقفوا قدام قومهم وقالوا: ربنا رب السما والأرض… ومش هندعي غيره."
+      en: "And God steadied their hearts… when they stood before their people and said: our Lord is the Lord of the heavens and the earth… and we will call on no other."
+    visual:
+      template: title-card
+  - id: faith-intro
+    role: evidence
+    reel: kahf-02
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: faith-verse-1
+    role: evidence
+    reel: kahf-02
+    source: quran.18.13
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: faith-verse-2
+    role: evidence
+    reel: kahf-02
+    source: quran.18.14
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # 18:16 raconté, puis récité.
+  - id: faith-3
+    role: event
+    reel: kahf-02
+    audio: tts
+    narration:
+      ar: "وقالوا لبعض: طالما سبتوهم هما واللي بيعبدوه… روحوا للكهف. ربنا هيفرش لكم من رحمته… ويسهّل لكم أمركم."
+      en: "And they said to each other: since you have left them and what they worship… go to the cave. Your Lord will spread His mercy over you… and make your affair easy."
+    visual:
+      template: scene
+      background: cave-entrance
+  - id: faith-intro-2
+    role: evidence
+    reel: kahf-02
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: faith-verse-3
+    role: evidence
+    reel: kahf-02
+    source: quran.18.16
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Ligne de l'IA, tirée de « وربطنا على قلوبهم ».
+  - id: faith-lesson
+    role: lesson
+    reel: kahf-02
+    audio: tts
+    narration:
+      ar: "لما تقف لوحدك عشان ربنا… ربنا هو اللي بيثبّت قلبك."
+      en: "When you stand alone for God… it is God who steadies your heart."
+    visual:
+      template: title-card
+  # Exemple de vie (scène type).
+  - id: faith-life-1
+    role: example
+    reel: kahf-02
+    audio: tts
+    narration:
+      ar: "زي لما مديرك يطلب منك تمضي على حاجة غلط… وكل اللي حواليك مضوا."
+      en: "Like when your boss asks you to sign something wrong… and everyone around you has signed."
+    visual:
+      template: scene
+      background: office
+      characters:
+        - { id: karim, pose: pointing, mood: calm, talking: false }
+        - { id: amir, pose: standing, mood: worried, talking: false }
+  - id: faith-life-2
+    role: example
+    reel: kahf-02
+    audio: tts
+    narration:
+      ar: "وتقول لأ… وتلاقي قلبك مطمن رغم كل حاجة."
+      en: "And you say no… and find your heart at peace in spite of everything."
+    visual:
+      template: scene
+      background: office
+      characters:
+        - { id: amir, pose: standing, mood: calm, talking: false }
+  - id: faith-outro
+    role: outro
+    reel: kahf-02
+    audio: tts
+    narration:
+      ar: "طب حصلهم إيه جوه الكهف؟ تابعنا عشان تعرف."
+      en: "So what happened to them inside the cave? Follow us to find out."
+    reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
+    visual:
+      template: title-card
+
+  # ---- kahf-03 : la caverne et le sommeil (18:17-18) -----------------------------------------------------------
+  - id: cave-1
+    role: event
+    reel: kahf-03
+    audio: tts
+    narration:
+      ar: "جوه الكهف… الشمس وهي طالعة تميل عنهم يمين… وهي بتغرب تبعد عنهم شمال… وهما في وسع منه."
+      en: "Inside the cave… the rising sun turned away from them to the right… the setting sun passed them by on the left… while they lay in an open space within it."
+    say_ar: "جوه الكهف… الشمس وهي طالعة تميل عنهم يِمِين… وهي بتغرب تبعد عنهم شمال… وهما في وسع منه."
+    visual:
+      template: scene
+      background: cave-inside
+  - id: cave-intro
+    role: evidence
+    reel: kahf-03
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: cave-verse-1
+    role: evidence
+    reel: kahf-03
+    source: quran.18.17
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: cave-2
+    role: event
+    reel: kahf-03
+    audio: tts
+    narration:
+      ar: "تحسبهم صاحيين… وهما نايمين. وربنا بيقلّبهم يمين وشمال… وكلبهم مادد إيديه على باب الكهف."
+      en: "You would think them awake… while they slept. God turned them to the right and to the left… and their dog stretched its forelegs at the cave's entrance."
+    visual:
+      template: scene
+      background: cave-entrance
+  - id: cave-intro-2
+    role: evidence
+    reel: kahf-03
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: cave-verse-2
+    role: evidence
+    reel: kahf-03
+    source: quran.18.18
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Ligne de l'IA, tirée de 18:16-18 (la miséricorde promise, le soleil, le sommeil gardé).
+  - id: cave-lesson
+    role: lesson
+    reel: kahf-03
+    audio: tts
+    narration:
+      ar: "لما تلجأ لربنا… هو بيدبّرلك أصغر تفصيلة."
+      en: "When you take refuge in God… He takes care of the smallest detail."
+    visual:
+      template: title-card
+  - id: cave-life-1
+    role: example
+    reel: kahf-03
+    audio: tts
+    narration:
+      ar: "زي لما تسيب حاجة عشان ربنا… وتحس إن الدنيا ضاقت عليك."
+      en: "Like when you give something up for God… and feel the world closing in on you."
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: salma, pose: standing, mood: worried, talking: false }
+  - id: cave-life-2
+    role: example
+    reel: kahf-03
+    audio: tts
+    narration:
+      ar: "وبعدين تلاقي ربنا مسهّلها… من حتة عمرك ما فكرت فيها."
+      en: "And then you find God has made it easy… from a place you never thought of."
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: salma, pose: standing, mood: smiling, talking: false }
+  - id: cave-outro
+    role: outro
+    reel: kahf-03
+    audio: tts
+    narration:
+      ar: "وفي يوم… صحيوا. تابعنا عشان تعرف لقوا إيه."
+      en: "And one day… they woke up. Follow us to find out what they found."
+    say_ar: "وفي يوم… صِحْيُو. تابعنا عشان تعرف لقوا إيه."
+    reel_only_end: { ar: "تابعنا عشان تعرف لقوا إيه.", en: "Follow us to find out what they found." }
+    visual:
+      template: title-card
+
+  # ---- kahf-04 : le réveil, la pièce, la découverte (18:19-21), relance au milieu ----------------------------
+  - id: wake-1
+    role: event
+    reel: kahf-04
+    audio: tts
+    narration:
+      ar: "صحيوا… وواحد منهم سأل: قعدنا قد إيه؟ قالوا: يوم… ولا بعض يوم."
+      en: "They woke up… and one of them asked: how long did we stay? They said: a day… or part of a day."
+    say_ar: "صحيو… وواحد منهم سأل: قعدنا قد إيه؟ قالوا: يوم… ولا بعض يوم."
+    visual:
+      template: scene
+      background: cave-inside
+  - id: wake-2
+    role: event
+    reel: kahf-04
+    audio: tts
+    narration:
+      ar: "وبعتوا واحد منهم بفلوسهم الفضة للمدينة… يجيب أطهر أكل… ويتلطف… ومحدش يحس بيهم."
+      en: "And they sent one of them to the city with their silver coin… to bring the purest food… to be careful… and let no one notice them."
+    visual:
+      template: scene
+      background: old-city
+  - id: wake-intro
+    role: evidence
+    reel: kahf-04
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: wake-verse-1
+    role: evidence
+    reel: kahf-04
+    source: quran.18.19
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # 18:20, la raison de leur prudence (suite de leurs paroles).
+  - id: wake-3
+    role: event
+    reel: kahf-04
+    audio: tts
+    narration:
+      ar: "عشان لو قومهم عرفوا مكانهم… هيرجموهم… أو يرجّعوهم لدينهم."
+      en: "Because if their people found out where they were… they would stone them… or bring them back to their religion."
+    say_ar: "عشان لو قَوْمُهُم عرفوا مكانهم… هيرجموهم… أو يرجعوهم لدينهم."
+    visual:
+      template: title-card
+  - id: wake-intro-2
+    role: evidence
+    reel: kahf-04
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: wake-verse-2
+    role: evidence
+    reel: kahf-04
+    source: quran.18.20
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Relance au milieu du reel (choix du propriétaire, 2026-11-09).
+  - id: wake-then
+    role: hook
+    reel: kahf-04
+    audio: tts
+    narration:
+      ar: "وبعدين؟"
+      en: "And then?"
+    visual:
+      template: title-card
+  # 18:21 raconté, puis récité.
+  - id: wake-4
+    role: event
+    reel: kahf-04
+    audio: tts
+    narration:
+      ar: "ربنا كشف قصتهم للناس… عشان يعرفوا إن وعد ربنا حق… وإن القيامة جاية… مفيهاش شك."
+      en: "God made their story known to the people… so they would know that God's promise is true… and that the Hour is coming… without any doubt."
+    visual:
+      template: scene
+      background: old-city
+  - id: wake-intro-3
+    role: evidence
+    reel: kahf-04
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: wake-verse-3
+    role: evidence
+    reel: kahf-04
+    source: quran.18.21
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Ligne de l'IA, tirée de 18:21 (« ليعلموا أن وعد الله حق وأن الساعة لا ريب فيها »).
+  - id: wake-lesson
+    role: lesson
+    reel: kahf-04
+    audio: tts
+    narration:
+      ar: "اللي صحّاهم بعد كل ده… قادر يبعثنا بعد الموت."
+      en: "The One who woke them after all that… can raise us after death."
+    visual:
+      template: title-card
+  # Exemple de vie (scène type), puis ce que le Prophète ﷺ disait au réveil (Bukhari 6324, extrait).
+  - id: wake-life-1
+    role: example
+    reel: kahf-04
+    audio: tts
+    narration:
+      ar: "زي ما بتنام كل ليلة… وتصحى الصبح."
+      en: "Just as you fall asleep every night… and wake up in the morning."
+    visual:
+      template: scene
+      background: bedroom
+      characters:
+        - { id: amir, pose: sitting, mood: calm, talking: false }
+  - id: wake-life-2
+    role: example
+    reel: kahf-04
+    source: hadith.bukhari.6324
+    audio: tts
+    mentions: ["النبي ﷺ"]
+    narration:
+      ar: "والنبي صلى الله عليه وسلم كان لما يصحى من النوم يقول:"
+      en: "And the Prophet ﷺ, when he woke up from sleep, would say:"
+    visual:
+      template: source-card
+  - id: wake-outro
+    role: outro
+    reel: kahf-04
+    audio: tts
+    narration:
+      ar: "طب قعدوا في الكهف قد إيه فعلًا؟ تابعنا عشان تعرف."
+      en: "So how long did they really stay in the cave? Follow us to find out."
+    reel_only_end: { ar: "تابعنا عشان تعرف.", en: "Follow us to find out." }
+    visual:
+      template: title-card
+
+  # ---- kahf-05 : leur nombre (18:22), leur durée (18:25-26), leur du'a, retour à l'accroche ------------------
+  - id: end-1
+    role: event
+    reel: kahf-05
+    audio: tts
+    narration:
+      ar: "الناس اختلفوا: كانوا كام؟ تلاتة… خمسة… سبعة؟ وربنا قال: هو أعلم بعددهم… ومتتجادلش فيهم."
+      en: "People disagreed: how many were they? Three… five… seven? And God said: He knows their number best… so do not argue about them."
+    visual:
+      template: scene
+      background: cave-entrance
+  - id: end-intro
+    role: evidence
+    reel: kahf-05
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: end-verse-1
+    role: evidence
+    reel: kahf-05
+    source: quran.18.22
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Ligne de l'IA, tirée de « فلا تمار فيهم إلا مراء ظاهرا ».
+  - id: end-lesson
+    role: lesson
+    reel: kahf-05
+    audio: tts
+    narration:
+      ar: "مش كل سؤال يستاهل خناقة… المهم الدرس."
+      en: "Not every question is worth a fight… what matters is the lesson."
+    visual:
+      template: title-card
+  - id: end-life-1
+    role: example
+    reel: kahf-05
+    audio: tts
+    narration:
+      ar: "زي ناس بتتخانق على تفاصيل القصة… وتنسى القصة نفسها."
+      en: "Like people who fight over the details of a story… and forget the story itself."
+    visual:
+      template: scene
+      background: cafe
+      characters:
+        - { id: karim, pose: pointing, mood: worried, talking: false }
+        - { id: youssef, pose: sitting, mood: worried, talking: false }
+  - id: end-2
+    role: event
+    reel: kahf-05
+    audio: tts
+    narration:
+      ar: "بس قالنا قعدوا قد إيه."
+      en: "But He did tell us how long they stayed."
+    visual:
+      template: title-card
+  - id: end-intro-2
+    role: evidence
+    reel: kahf-05
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: end-verse-2
+    role: evidence
+    reel: kahf-05
+    source: quran.18.25
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  - id: end-verse-3
+    role: evidence
+    reel: kahf-05
+    source: quran.18.26
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Récapitulatif en une carte (quatre morceaux, ligne de l'IA tirée des reels).
+  - id: end-recap
+    role: conclusion
+    reel: kahf-05
+    audio: tts
+    narration:
+      ar: "وقفوا لوحدهم… ربنا ثبّتهم… ورحمهم… وصحّاهم آية للناس."
+      en: "They stood alone… God steadied them… showed them mercy… and woke them as a sign for the people."
+    visual:
+      template: title-card
+  - id: end-dua
+    role: conclusion
+    reel: kahf-05
+    audio: tts
+    narration:
+      ar: "ودعوتهم… خليها معاك لما تحس إنك لوحدك."
+      en: "And their prayer… keep it with you when you feel alone."
+    visual:
+      template: title-card
+  - id: end-dua-intro
+    role: evidence
+    reel: kahf-05
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: end-dua-verse
+    role: evidence
+    reel: kahf-05
+    source: quran.18.10
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Retour à l'accroche (ligne de l'IA).
+  - id: end-outro
+    role: conclusion
+    reel: kahf-05
+    audio: tts
+    narration:
+      ar: "فالمرة الجاية لما تكون الوحيد اللي بيصلي… افتكر الكهف."
+      en: "So next time you're the only one who prays… remember the cave."
+    visual:
+      template: title-card

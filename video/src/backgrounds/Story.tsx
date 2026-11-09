@@ -522,7 +522,143 @@ const IronDam: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => 
   );
 };
 
+// ---- The people of the cave (episode kahf, 18:9-26): the places only, never the youths. -------------
+
+/** Inside the cave, looking at its mouth: the sun's light falls on the right side, then on the left,
+ * and never on the open space in the middle where they lie (18:17, « تزاور عن كهفهم ذات اليمين… تقرضهم
+ * ذات الشمال وهم في فجوة منه »). The open space stays empty: the youths are never drawn. */
+const CaveInside: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
+  const t = useSeconds();
+  const u = Math.min(w, h);
+  const cx = w / 2;
+  const mouthY = floorY - 0.6 * u;
+  const rx = 0.17 * u;
+  const ry = 0.13 * u;
+  // One side, then the other: the light swings slowly and turns away before the middle.
+  const swing = Math.sin(t * 0.32);
+  const side = swing >= 0 ? 1 : -1;
+  const far = Math.abs(swing);
+  const footX = cx + side * (0.3 * u + 0.12 * u * far);
+  const footW = 0.12 * u;
+  const glow = 0.25 + 0.2 * far;
+  const top = floorY - 0.92 * u;
+  const cavity = `M ${cx - 0.75 * u} ${h} L ${cx - 0.62 * u} ${floorY - 0.35 * u} Q ${cx - 0.55 * u} ${top} ${cx} ${top}`
+    + ` Q ${cx + 0.55 * u} ${top} ${cx + 0.62 * u} ${floorY - 0.35 * u} L ${cx + 0.75 * u} ${h} Z`;
+  return (
+    <Svg w={w} h={h}>
+      <defs>
+        <linearGradient id="cave-inside-sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#BFE0F0" />
+          <stop offset="100%" stopColor="#FFF1CF" />
+        </linearGradient>
+      </defs>
+      <rect width={w} height={h} fill="#2B211C" />
+      <path d={cavity} fill="#4A3B31" stroke={INK} strokeWidth={LINE} strokeLinejoin="round" />
+      {/* rock seams */}
+      {[[-0.48, 0.2, -0.36, 0.05], [0.44, 0.3, 0.33, 0.12], [-0.3, -0.2, -0.18, -0.32], [0.28, -0.25, 0.18, -0.36]].map(([a, b, c, d], i) => (
+        <path key={i} d={`M ${cx + a * u} ${floorY - 0.45 * u + b * u} Q ${cx + ((a + c) / 2) * u} ${floorY - 0.5 * u + ((b + d) / 2) * u} ${cx + c * u} ${floorY - 0.45 * u + d * u}`} fill="none" stroke="#2B211C" strokeWidth={5} strokeLinecap="round" />
+      ))}
+      <ellipse cx={cx} cy={mouthY} rx={rx} ry={ry} fill="url(#cave-inside-sky)" stroke={INK} strokeWidth={LINE} />
+      {/* the floor, and the open space in the middle, in the shade */}
+      <path d={`M ${cx - 0.75 * u} ${h} L ${cx - 0.66 * u} ${floorY} L ${cx + 0.66 * u} ${floorY} L ${cx + 0.75 * u} ${h} Z`} fill="#5B4A3D" stroke={INK} strokeWidth={LINE} strokeLinejoin="round" />
+      <ellipse cx={cx} cy={floorY + 0.08 * u} rx={0.22 * u} ry={0.05 * u} fill="#4D3E33" />
+      {/* the sun's light, from the mouth to one side of the floor */}
+      <polygon
+        points={`${cx - rx * 0.55},${mouthY + ry * 0.4} ${cx + rx * 0.55},${mouthY + ry * 0.4} ${footX + footW},${floorY + 0.06 * u} ${footX - footW},${floorY + 0.06 * u}`}
+        fill="#FFE39A"
+        fillOpacity={glow}
+      />
+      <ellipse cx={footX} cy={floorY + 0.06 * u} rx={footW * 1.1} ry={0.035 * u} fill="#F3C96E" fillOpacity={glow + 0.15} />
+    </Svg>
+  );
+};
+
+/** The cave's mouth in the rocky hill, and their dog at the threshold, forelegs stretched out
+ * (18:18, « وكلبهم باسط ذراعيه بالوصيد »), breathing slowly. No one else. */
+const CaveEntrance: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
+  const t = useSeconds();
+  const u = Math.min(w, h);
+  const cx = w / 2;
+  const breath = 1 + 0.035 * Math.sin(t * 1.6);
+  const hill = `M ${-0.1 * u} ${floorY} Q ${cx - 0.55 * u} ${floorY - 0.55 * u} ${cx - 0.1 * u} ${floorY - 0.62 * u}`
+    + ` Q ${cx + 0.45 * u} ${floorY - 0.7 * u} ${w + 0.1 * u} ${floorY - 0.2 * u} L ${w + 0.1 * u} ${floorY} Z`;
+  const mouth = `M ${cx - 0.26 * u} ${floorY} Q ${cx - 0.28 * u} ${floorY - 0.42 * u} ${cx} ${floorY - 0.44 * u}`
+    + ` Q ${cx + 0.28 * u} ${floorY - 0.42 * u} ${cx + 0.26 * u} ${floorY} Z`;
+  // The dog, lying at the threshold, head to the left, forelegs out in front.
+  const dx = cx + 0.03 * u;
+  const dy = floorY - 0.035 * u;
+  return (
+    <Svg w={w} h={h}>
+      <Sky id="cave-entrance-sky" w={w} to={floorY} top="#9FC6DA" bottom="#F5E3C3" />
+      <path d={hill} fill="#A08463" stroke={INK} strokeWidth={LINE} strokeLinejoin="round" />
+      <path d={`M ${cx - 0.42 * u} ${floorY - 0.3 * u} q ${0.08 * u} ${-0.05 * u} ${0.16 * u} 0 M ${cx + 0.3 * u} ${floorY - 0.42 * u} q ${0.06 * u} ${-0.04 * u} ${0.13 * u} 0`} fill="none" stroke={INK} strokeWidth={4} strokeLinecap="round" />
+      <path d={mouth} fill="#241B16" stroke={INK} strokeWidth={LINE} strokeLinejoin="round" />
+      <rect y={floorY} width={w} height={h - floorY} fill="#CDB78F" />
+      <line x1={0} y1={floorY} x2={w} y2={floorY} stroke={INK} strokeWidth={LINE} />
+      <g stroke={INK} strokeWidth={5} strokeLinejoin="round" strokeLinecap="round" transform={`translate(${dx} ${floorY}) scale(1.75) translate(${-dx} ${-floorY})`}>
+        {/* tail, hind leg, body */}
+        <path d={`M ${dx + 0.13 * u} ${dy} q ${0.07 * u} ${-0.01 * u} ${0.08 * u} ${-0.06 * u}`} fill="none" strokeWidth={9} />
+        <ellipse cx={dx + 0.08 * u} cy={dy + 0.012 * u} rx={0.05 * u} ry={0.03 * u} fill="#B88A55" />
+        <ellipse cx={dx + 0.03 * u} cy={dy - 0.005 * u} rx={0.12 * u} ry={0.042 * u * breath} fill="#C99B63" />
+        {/* forelegs stretched forward on the ground */}
+        <rect x={dx - 0.21 * u} y={dy + 0.012 * u} width={0.16 * u} height={0.022 * u} rx={0.011 * u} fill="#C99B63" />
+        <rect x={dx - 0.19 * u} y={dy + 0.026 * u} width={0.14 * u} height={0.02 * u} rx={0.01 * u} fill="#B88A55" />
+        {/* head, resting, with its drooping ear and snout */}
+        <ellipse cx={dx - 0.1 * u} cy={dy - 0.03 * u} rx={0.05 * u} ry={0.04 * u} fill="#C99B63" />
+        <ellipse cx={dx - 0.15 * u} cy={dy - 0.015 * u} rx={0.03 * u} ry={0.02 * u} fill="#D8AE78" />
+        <circle cx={dx - 0.178 * u} cy={dy - 0.02 * u} r={0.008 * u} fill={INK} />
+        <path d={`M ${dx - 0.09 * u} ${dy - 0.065 * u} q ${0.04 * u} ${0.0 * u} ${0.035 * u} ${0.05 * u} q ${-0.02 * u} ${0.01 * u} ${-0.035 * u} ${-0.01 * u} Z`} fill="#8E6A42" />
+        <path d={`M ${dx - 0.125 * u} ${dy - 0.04 * u} q ${0.01 * u} ${0.006 * u} ${0.02 * u} 0`} fill="none" strokeWidth={4} />
+      </g>
+    </Svg>
+  );
+};
+
+/** The city they sent one of them to with their silver coin, to buy the purest food (18:19): houses,
+ * a market stall with bread, and the coin on its counter, glinting. No one in the street. */
+const OldCity: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
+  const t = useSeconds();
+  const u = Math.min(w, h);
+  const cx = w / 2;
+  const base = floorY - 0.05 * u;
+  const counter = floorY - 0.16 * u;
+  const coinX = cx + 0.16 * u;
+  const coinY = counter - 0.07 * u;
+  const coinR = 0.065 * u;
+  const glint = (t * 0.45) % 1.6;
+  return (
+    <Svg w={w} h={h}>
+      <Sky id="old-city-sky" w={w} to={floorY} top="#C8E2EE" bottom="#F8EBD3" />
+      <Houses w={w} base={base} u={u} scale={1.1} />
+      <rect y={base} width={w} height={h - base} fill="#DCC59A" />
+      <line x1={0} y1={base} x2={w} y2={base} stroke={INK} strokeWidth={LINE} />
+      <g stroke={INK} strokeWidth={LINE} strokeLinejoin="round">
+        {/* the stall: two posts, a striped awning, a counter with round loaves */}
+        <rect x={cx - 0.36 * u} y={counter - 0.3 * u} width={0.03 * u} height={0.3 * u + (floorY - counter)} fill="#8C6A48" />
+        <rect x={cx + 0.33 * u} y={counter - 0.3 * u} width={0.03 * u} height={0.3 * u + (floorY - counter)} fill="#8C6A48" />
+        {Array.from({ length: 6 }, (_, i) => (
+          <path key={i} d={`M ${cx - 0.4 * u + i * 0.133 * u} ${counter - 0.34 * u} l ${0.133 * u} 0 l 0 ${0.08 * u} q ${-0.066 * u} ${0.04 * u} ${-0.133 * u} 0 Z`} fill={i % 2 ? "#F4EBD8" : "#C8553D"} />
+        ))}
+        <rect x={cx - 0.4 * u} y={counter} width={0.8 * u} height={0.07 * u} fill="#A47B52" />
+        {[-0.3, -0.18, -0.06].map((f, i) => (
+          <ellipse key={i} cx={cx + f * u} cy={counter - 0.025 * u} rx={0.05 * u} ry={0.025 * u} fill="#E3B26A" />
+        ))}
+        {/* the silver coin (ورقكم هذه) */}
+        <circle cx={coinX} cy={coinY} r={coinR} fill="#D9DEE3" />
+        <circle cx={coinX} cy={coinY} r={coinR * 0.72} fill="#C3C9CF" strokeWidth={4} />
+        <path d={`M ${coinX} ${coinY - coinR * 0.4} L ${coinX + coinR * 0.12} ${coinY - coinR * 0.12} L ${coinX + coinR * 0.4} ${coinY} L ${coinX + coinR * 0.12} ${coinY + coinR * 0.12} L ${coinX} ${coinY + coinR * 0.4} L ${coinX - coinR * 0.12} ${coinY + coinR * 0.12} L ${coinX - coinR * 0.4} ${coinY} L ${coinX - coinR * 0.12} ${coinY - coinR * 0.12} Z`} fill="#AEB5BC" strokeWidth={3} />
+      </g>
+      {glint < 1 ? (
+        <path d={`M ${coinX + coinR * 0.5} ${coinY - coinR * 0.95} l ${0.01 * u} ${0.022 * u} l ${0.022 * u} ${0.01 * u} l ${-0.022 * u} ${0.01 * u} l ${-0.01 * u} ${0.022 * u} l ${-0.01 * u} ${-0.022 * u} l ${-0.022 * u} ${-0.01 * u} l ${0.022 * u} ${-0.01 * u} Z`} fill="#FFFFFF" opacity={Math.sin(glint * Math.PI)} />
+      ) : null}
+    </Svg>
+  );
+};
+
 export const STORY_BACKGROUNDS: Record<string, React.FC<BackgroundProps>> = {
+  "cave-inside": CaveInside,
+  "cave-entrance": CaveEntrance,
+  "old-city": OldCity,
   confluence: Confluence,
   "sea-boat": SeaBoat,
   "sea-bird": SeaBird,

@@ -323,6 +323,39 @@ READING_GAP = 0.25
 CUT_BEFORE = 0.12
 
 
+# Loudness (owner's decision, 2026-11-09). Measured on the cave episode before: Tawfiq's recitation at
+# -10 to -11 LUFS with true peaks over 0 dB (+2.7), VoiceTut at -19, the archive.org readings at -24
+# and -27: jumps of 13 to 17 dB inside one reel. Every part the video plays is brought to the same
+# loudness: a gain from its EBU R128 integrated loudness, then a lookahead limiter for the few peaks
+# the gain pushes over the ceiling (sample peak 0.8, -1.9 dBFS; its delay is compensated, so word and
+# phrase times do not move). A recorded reading is compressed first: a room recording has peaks far
+# above its speech, and the limiter alone would have to flatten them. -16 LUFS, not -14: at -14 the
+# limiter would cut the voice's peaks by about 5 dB. What the checks listen to (<scene>.wav, the raw
+# takes, the committed FLAC) is not touched: <scene>.level.wav is what the video plays.
+LEVEL = {"version": 1, "lufs": -16.0, "limit": 0.8,
+         "reading": "acompressor=threshold=0.03:ratio=3:attack=10:release=200:knee=4"}
+
+
+def loudness(path: Path, pre: str = "") -> float | None:
+    """EBU R128 integrated loudness (LUFS) of an audio file after the filters `pre`; None if silent."""
+    log = subprocess.run([ffmpeg_exe(), "-hide_banner", "-nostats", "-i", str(path), "-af", f"{pre}ebur128",
+                          "-f", "null", "-"], capture_output=True, text=True, check=True).stderr
+    found = re.findall(r"I:\s+(-?[\d.]+) LUFS", log)
+    value = float(found[-1]) if found else None
+    return value if value is not None and value > -70 else None
+
+
+def level(src: Path, dest: Path, pre: str = "") -> dict:
+    """Write `dest`, 16-bit mono WAV at the rate of `src`: `src` (after the filters `pre`) at LEVEL["lufs"]."""
+    pre = f"{pre}," if pre else ""
+    measured = loudness(src, pre)
+    gain = 0.0 if measured is None else LEVEL["lufs"] - measured
+    chain = f"{pre}volume={gain:.2f}dB,alimiter=limit={LEVEL['limit']}:attack=5:release=50:level=0:latency=1"
+    subprocess.run([ffmpeg_exe(), "-loglevel", "error", "-y", "-i", str(src), "-af", chain, "-ac", "1",
+                    "-c:a", "pcm_s16le", str(dest)], check=True)
+    return {"in_lufs": None if measured is None else round(measured, 1), "gain_db": round(gain, 2)}
+
+
 def download(url: str, dest: Path, attempts: int = 5) -> None:
     """Stream a (large) file to disk."""
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
@@ -373,8 +406,19 @@ def mix_reading(sid: str, entry: dict, scene: dict, out_dir: Path) -> dict:
     params, samples = read_wav(out_dir / entry["file"])
     rate = params.framerate
     cut = max(1, int((phrases[len(intro)]["start"] - CUT_BEFORE) * rate))
-    _, reading = read_wav(reading_clip(rec, source["id"], out_dir, rate))
-    out = array.array("h", samples[:cut])
+    clip = reading_clip(rec, source["id"], out_dir, rate)
+    # Both parts at the same loudness (LEVEL), each on its own (the take as a whole also holds the
+    # synthetic voice reading the hadith): redone each time, a few seconds of audio.
+    with tempfile.TemporaryDirectory() as tmp:
+        part = Path(tmp) / "intro.wav"
+        with wave.open(str(part), "wb") as w:
+            w.setparams(params)
+            w.writeframes(samples[:cut].tobytes())
+        level(part, Path(tmp) / "intro.level.wav")
+        _, said = read_wav(Path(tmp) / "intro.level.wav")
+    level(clip, clip.with_suffix(".level.wav"), LEVEL["reading"])
+    _, reading = read_wav(clip.with_suffix(".level.wav"))
+    out = array.array("h", said[:cut])
     out.extend(array.array("h", bytes(2 * int(READING_GAP * rate))))
     out.extend(reading)
     mix = out_dir / f"{sid}.mix.wav"
@@ -634,6 +678,20 @@ def main() -> int:
                 for phrase, start in zip(entry["phrases"], stored["starts"]):
                     phrase["start"] = start
                 entry["phrase_rule"] = "checked"
+
+    # The same loudness for every part the video plays (LEVEL): <scene>.level.wav, redone when its
+    # source or the rule changes.
+    for sid, entry in scenes.items():
+        src = out_dir / entry["file"]
+        if not src.is_file():
+            continue
+        dest = out_dir / f"{sid}.level.wav"
+        done = entry.get("level")
+        if done and done.get("rule") == LEVEL and done.get("from_sha") == sha256(src) and dest.is_file():
+            continue
+        result = level(src, dest)
+        entry["level"] = {"file": dest.name, "rule": LEVEL, "from_sha": sha256(src), **result}
+        print(f"level {sid}: {result['in_lufs']} LUFS, {result['gain_db']:+.1f} dB")
 
     # Hadiths read by a person: the introduction of the take, then the reading.
     for scene in data["scenes"]:
