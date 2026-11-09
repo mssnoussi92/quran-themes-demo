@@ -10,6 +10,7 @@ import type { Format } from "../formats";
 import { COLOR } from "../theme";
 import { splitPhrases } from "../phrases";
 import type { PhraseTiming, ResolvedScene, WordTiming } from "../types";
+import { PAPER_SHEET, PaperScene, StyleContext } from "../styles/paper/render";
 
 type CardProps = { scene: ResolvedScene; format: Format };
 
@@ -46,22 +47,27 @@ const Stage: React.FC<{ format: Format; children: React.ReactNode }> = ({ format
 );
 
 /** A framed panel for quotations: verses and hadiths. */
-const Panel: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap: 30,
-      padding: "48px 44px",
-      borderRadius: 32,
-      background: COLOR.panel,
-      border: `2px solid ${COLOR.panelBorder}`,
-    }}
-  >
-    {children}
-  </div>
-);
+const Panel: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  // Paper style: the same layout on a sheet of dark paper, lit on its top edge (docs/styles.md).
+  const style = useContext(StyleContext);
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 30,
+        padding: "48px 44px",
+        borderRadius: 32,
+        background: COLOR.panel,
+        border: `2px solid ${COLOR.panelBorder}`,
+        ...(style === "paper" ? PAPER_SHEET : {}),
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
 /** Long texts get a smaller size. */
 const fitSize = (base: number, text: string, comfortable: number) =>
@@ -116,11 +122,17 @@ export const TitleCard: React.FC<CardProps> = ({ scene, format }) => {
   const { fps } = useVideoConfig();
   const audioStart = useContext(AudioStart);
   if (!scene.narration) return null;
+  const look = useContext(StyleContext);
   const style = arabicStyle(FONT.arabic, fitSize(88, scene.narration.ar, 50), 700, 1.6);
+  // Paper style: the letters cut in a strip of dark paper, the light coming through them.
+  const paper: React.CSSProperties =
+    look === "paper"
+      ? { ...PAPER_SHEET, padding: "36px 40px", color: "#ffe9bf", textShadow: "0 0 18px rgba(255, 214, 140, 0.55)" }
+      : {};
   const phrases = titlePhrases(scene);
   return (
     <Stage format={format}>
-      <div dir="rtl" lang="ar" style={style}>
+      <div dir="rtl" lang="ar" style={{ ...style, ...paper }}>
         {phrases
           ? phrases.map((phrase, i) => {
               const at = audioStart + Math.round((phrase.start - REVEAL_LEAD) * fps);
@@ -232,7 +244,10 @@ const BUST_ZOOM = 3;
 
 /** The "scene" template: a background of the catalog and the scene's characters standing (or
  * sitting) on its floor, with a slow push-in. */
-export const SceneCard: React.FC<CardProps> = ({ scene, format }) => {
+export const SceneCard: React.FC<CardProps> = (props) =>
+  useContext(StyleContext) === "paper" ? <PaperScene {...props} /> : <FlatScene {...props} />;
+
+const FlatScene: React.FC<CardProps> = ({ scene, format }) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
   const { floorY, scale } = STAGE[format.id];

@@ -9,6 +9,7 @@
 episode: muqarana
 title: { ar: "فخ المقارنات", en: "The comparison trap" }
 format: misconceptions   # docs/formats.md (skill choose-format)
+style: flat   # docs/styles.md (made before the styles, validated in this one)
 narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
 # Textes de publication : proposés le 2026-11-07, faits des répliques du script ; validés par le
 # propriétaire le même jour (validated_by), exigés par un rendu final. Le reste : video/scripts/publish.ts.

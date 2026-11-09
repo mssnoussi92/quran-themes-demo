@@ -16,6 +16,7 @@
 episode: kahf
 title: { ar: "أصحاب الكهف", en: "The People of the Cave" }
 format: story-linear   # docs/formats.md (skill choose-format)
+style: paper   # docs/styles.md: stories in paper-cut
 narration_language: ar-egy   # VoiceTut (égyptien), comme les autres épisodes
 # Textes de publication, faits des répliques du script ; validés avec le reste à la fin. Le reste : publish.ts.
 publish:
@@ -79,9 +80,9 @@ scenes:
       en: "When you're the only one who prays at work…"
     visual:
       template: scene
-      background: waiting-room
+      background: office
       characters:
-        - { id: amir, pose: sitting, mood: worried, talking: false }
+        - { id: amir, pose: praying, mood: worried, talking: false }
   # Contraste : le regard des autres (ligne de l'IA).
   - id: hook-2
     role: hook
@@ -92,9 +93,10 @@ scenes:
       en: "And everyone looks at you… as if you were a stranger."
     visual:
       template: scene
-      background: street
+      background: office
       characters:
-        - { id: salma, pose: standing, mood: worried, talking: false }
+        - { id: youssef, pose: standing, mood: worried, talking: false }
+        - { id: hoda, pose: sitting, mood: worried, talking: false }
   - id: hook-3
     role: hook
     reel: kahf-01
@@ -277,9 +279,10 @@ scenes:
       en: "Like when your boss asks you to sign something wrong… and everyone around you has signed."
     visual:
       template: scene
-      background: waiting-room
+      background: office
       characters:
-        - { id: amir, pose: sitting, mood: worried, talking: false }
+        - { id: karim, pose: pointing, mood: calm, talking: false }
+        - { id: amir, pose: standing, mood: worried, talking: false }
   - id: faith-life-2
     role: example
     reel: kahf-02
@@ -289,9 +292,9 @@ scenes:
       en: "And you say no… and find your heart at peace in spite of everything."
     visual:
       template: scene
-      background: waiting-room
+      background: office
       characters:
-        - { id: amir, pose: sitting, mood: calm, talking: false }
+        - { id: amir, pose: standing, mood: calm, talking: false }
   - id: faith-outro
     role: outro
     reel: kahf-02
@@ -529,7 +532,7 @@ scenes:
       en: "Just as you fall asleep every night… and wake up in the morning."
     visual:
       template: scene
-      background: waiting-room
+      background: bedroom
       characters:
         - { id: amir, pose: sitting, mood: calm, talking: false }
   - id: wake-life-2
@@ -601,9 +604,10 @@ scenes:
       en: "Like people who fight over the details of a story… and forget the story itself."
     visual:
       template: scene
-      background: street
+      background: cafe
       characters:
-        - { id: salma, pose: standing, mood: worried, talking: false }
+        - { id: karim, pose: pointing, mood: worried, talking: false }
+        - { id: youssef, pose: sitting, mood: worried, talking: false }
   - id: end-2
     role: event
     reel: kahf-05

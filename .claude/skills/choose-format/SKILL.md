@@ -89,8 +89,14 @@ Write it under the subject in `docs/themes.md` (or send it, for a subject not sa
 
 ## 6. After the owner's choice
 
-`format:` in `content/episodes/<theme>.yaml`, the decision in `docs/themes.md`, then the `new-theme`
-skill in that format (its hook: `write-hook`, « The hook by format »). Tag the scenes with their roles
+`format:` in `content/episodes/<theme>.yaml`, and its visual style `style:`, which follows the format
+(`docs/styles.md`, owner's decision of 2026-11-09: `paper` for the stories, `chalk` for misconceptions,
+`illumination` for a collection or one text explained, `flat` for practical and two paths); the decision
+in `docs/themes.md`, then the `new-theme` skill in that format (its hook: `write-hook`, « The hook by
+format »). Each scene says where it happens: a place of the catalog drawn in that style
+(`content/backgrounds.yaml`, `styles`), never the hook's place of the two episodes before (the waiting
+room and the street came back in all of the first nine); a missing place is drawn and added to the
+catalog, and the owner sees the new places with the script, for information. Tag the scenes with their roles
 (`event`, `lesson`, `example`…): `validate.py` warns on a reel not yet validated that misses a beat of
 its format.
 

@@ -119,9 +119,13 @@ export type ThumbnailData = {
  * suspense): parts in order, each a YouTube chapter. */
 export type WholeOrder = { validated_by?: string; parts: { title: I18n; scenes: string[] }[] };
 
+/** The episode's visual style (docs/styles.md): flat is the Open Peeps look of the first episodes. */
+export type VisualStyle = "flat" | "paper" | "chalk" | "illumination" | "watercolor";
+
 export type EpisodeData = {
   episode: string;
   title: I18n;
+  style: VisualStyle;
   narration_language: string;
   /** The page's name (content/publish.yaml, "@quran_words_daily"), shown on every frame. */
   handle: string | null;

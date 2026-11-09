@@ -2,11 +2,14 @@
 # video/src/backgrounds/ (aplats simples, sans texte ni personne) ; un épisode ne cite qu'un id d'ici.
 # `validated_by` : le propriétaire a validé le dessin (planche docs/backgrounds.png ou vidéo candidate) ;
 # un fond sans ce champ et qu'aucun reel validé n'emploie est « nouveau » dans la liste à vérifier.
+# `styles` : les styles où le fond est dessiné (docs/styles.md) ; sans ce champ, le style `flat` seulement.
+# Papier découpé : video/src/styles/paper/places.ts.
 backgrounds:
   waiting-room:
     description: Salle d'attente, mur clair, rangée de sièges, horloge murale dont l'aiguille tourne
   street:
-    description: Rue en journée, immeubles et vitrine éclairée
+    description: Rue en journée, immeubles et vitrine éclairée ; en papier, une rue égyptienne au crépuscule, balcons, moucharabieh, minaret au loin, une porte éclairée au bout
+    styles: [flat, paper]
   plain:
     description: Fond uni clair, pour le narrateur face caméra
   # Épisode الخشوع (2026-11-09) : la prière, sans personne ; validé par le propriétaire sur le rendu candidat.
@@ -51,7 +54,21 @@ backgrounds:
   # Les gens de la caverne (épisode kahf, 18:9-26) : des lieux, jamais les jeunes ; à valider avec le rendu candidat.
   cave-inside:
     description: L'intérieur de la caverne vu vers son ouverture, la lumière du soleil qui tombe à droite puis à gauche sans jamais toucher l'espace du milieu, vide (18:17)
+    styles: [flat, paper]
   cave-entrance:
     description: L'entrée de la caverne dans la colline, et leur chien couché au seuil, pattes avant étendues, qui respire lentement (18:18)
+    styles: [flat, paper]
   old-city:
     description: La ville ancienne, ses maisons et un étal de pain, la pièce d'argent posée sur le comptoir, qui brille (18:19) ; la rue vide
+    styles: [flat, paper]
+  # Lieux du quotidien en papier découpé (2026-11-09) : à la place de la salle d'attente et de la rue pour
+  # chaque scène de vie (docs/styles.md : un lieu qui dit où l'on est).
+  office:
+    description: Au travail, une fenêtre sur la ville (fenêtres éclairées), bureaux et écrans, une lampe, une plante devant
+    styles: [paper]
+  bedroom:
+    description: La chambre à l'aube, le lit, la fenêtre où le soleil se lève, rideaux, une table de chevet
+    styles: [paper]
+  cafe:
+    description: Un café le soir, fenêtres en arc sur la nuit et le croissant de lune, lanternes, une table et deux chaises
+    styles: [paper]
