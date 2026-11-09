@@ -138,6 +138,22 @@ def mark_backgrounds(names: set[str], owner: str, done: list[str]) -> None:
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def mark_paper(kind: str, names: set[str], owner: str, done: list[str]) -> None:
+    """paper_validated_by on the places (backgrounds.yaml) or characters (characters.yaml) drawn in
+    paper-cut that the owner saw in the candidate render (docs/styles.md)."""
+    path = CONTENT / f"{kind}.yaml"
+    lines = path.read_text(encoding="utf-8").split("\n")
+    for name in sorted(names):
+        k = next((i for i, line in enumerate(lines) if re.match(rf"^  {re.escape(name)}:\s*$", line)), None)
+        if k is None:
+            continue
+        end = block_end(lines, k, 2)
+        if not has_key(lines, k + 1, end, 4, "paper_validated_by"):
+            lines.insert(end, f"    paper_validated_by: {owner}")
+            done.append(f"{kind[:-1]} {name} (paper)")
+    path.write_text("\n".join(lines), encoding="utf-8")
+
+
 def mark_spellings(episode: str, owner: str, done: list[str]) -> None:
     path = CONTENT / "pronunciation.yaml"
     text = path.read_text(encoding="utf-8")
@@ -182,6 +198,11 @@ def validate(episode: str, owner: str) -> int:
     sources = {s["source"] for s in ep["scenes"] if s.get("source")}
     mark_sources(sources, owner, done)
     mark_backgrounds(new_backgrounds, owner, done)
+    if ep.get("style") == "paper":
+        mark_paper("backgrounds", {b for b in used if b}, owner, done)
+        thumb = (ep.get("thumbnail") or {}).get("character")
+        people = {c["id"] for s in ep["scenes"] for c in (s.get("visual") or {}).get("characters") or []}
+        mark_paper("characters", people | ({thumb["id"]} if thumb else set()), owner, done)
     mark_spellings(episode, owner, done)
 
     subprocess.run(["npm", "run", "-s", "data"], cwd=ROOT / "video", check=True, stdout=subprocess.DEVNULL)
@@ -208,7 +229,7 @@ RENDER_PATHS = ["content", "video/src", "video/public/fonts", "video/package.jso
 FREE = re.compile(r"^content/(pronunciation\.yaml|dialect\.yaml|audio/[^/]+/checks\.json)$")
 VALIDATION_LINE = re.compile(
     r"^\s*(#.*)?$"                                             # comments, blank lines
-    r"|^\s*validated_by: \S+\s*$"                              # validated_by of a reel, texts, source...
+    r"|^\s*(paper_)?validated_by: \S+\s*$"                     # validated_by of a reel, texts, source, drawing...
     r"|^\s*status: (proposed|validated)\s*$"                   # a source or recording
     r'|^\s*"(validated_by|locked|status|stored|raw_sha256)": .*$'   # a take locked (takes.json)
 )

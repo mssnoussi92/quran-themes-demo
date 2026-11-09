@@ -132,6 +132,33 @@ function main() {
   }
   section("Nouveaux fonds", [...backgrounds].map(([bg, sid]) => `- \`${bg}\` (d'abord ${where(sid)})`));
 
+  // 5b. In the paper-cut style (docs/styles.md): places and characters whose paper drawing the owner
+  // has not seen yet (`paper_validated_by` in content/backgrounds.yaml and content/characters.yaml).
+  if (data.style === "paper") {
+    const paperCatalog = catalog as Record<string, { validated_by?: string; paper_validated_by?: string }>;
+    const people = (parse(readFileSync(join(ROOT, "content/characters.yaml"), "utf8")) as {
+      characters: Record<string, { paper_validated_by?: string }>;
+    }).characters;
+    const drawings: string[] = [];
+    const seen = new Set<string>();
+    for (const s of data.scenes) {
+      const bg = s.visual.background;
+      if (bg && !backgrounds.has(bg) && !paperCatalog[bg]?.paper_validated_by && !seen.has(`bg:${bg}`)) {
+        seen.add(`bg:${bg}`);
+        drawings.push(`- le lieu \`${bg}\` en papier (d'abord ${where(s.id)})`);
+      }
+      for (const c of s.visual.characters) {
+        if (!people[c.id]?.paper_validated_by && !seen.has(`ch:${c.id}`)) {
+          seen.add(`ch:${c.id}`);
+          drawings.push(`- la silhouette de \`${c.id}\` (d'abord ${where(s.id)})`);
+        }
+      }
+    }
+    if (data.thumbnail && !backgrounds.has(data.thumbnail.background) && !paperCatalog[data.thumbnail.background]?.paper_validated_by && !seen.has(`bg:${data.thumbnail.background}`))
+      drawings.push(`- le lieu \`${data.thumbnail.background}\` en papier (miniature)`);
+    section("Papier découpé : dessins nouveaux (style, lieux, silhouettes)", drawings);
+  }
+
   // 6. Spellings for the voice not decided by the owner yet.
   const lexicon = parse(readFileSync(join(ROOT, "content/pronunciation.yaml"), "utf8")) as {
     words: { word: string; say: string; decided?: { by?: string; scene?: string } }[];
