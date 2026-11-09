@@ -72,8 +72,10 @@ Whisper puts « قال » before the first word of a clip that starts in the pau
    the reading once (`build/audio/<episode>/readings/`) and mixes the scene: the introduction cut
    from the locked narration take, 0.25 s, the reader. `listen.py --episode <episode> --only <scene>`
    must hear the introduction once, then the hadith once; if the synthetic voice starts the hadith
-   before the reader, the phrase start of the take is wrong (skill `narration-takes`, §5). Render the
-   reels and send them to the owner with the reader, the source and the differences.
-7. **Owner.** On their word only: `status: validated`, `validated_by: <owner>`, commit, then the
-   release render. A recording the owner refuses is removed from the registry: the voice reads the
-   hadith again.
+   before the reader, the phrase start of the take is wrong (skill `narration-takes`, §5). Note the
+   differences (`heard`) in the PR: the candidate's list « à vérifier » shows the reading still
+   `proposed`, with its minute in each video.
+7. **Owner.** The owner hears it in the candidate render (since 2026-11-08, one validation at the
+   end): on their « je valide », `scripts/finalize.py validate` writes `status: validated`,
+   `validated_by: <owner>`. A recording the owner refuses is removed from the registry: the voice
+   reads the hadith again, in the next candidate.

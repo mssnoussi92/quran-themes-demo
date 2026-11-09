@@ -1,0 +1,54 @@
+# Mots d'arabe standard (فصحى) qui n'ont pas leur place dans la narration en égyptien (VoiceTut, ar-egy), avec ce
+# qu'on dit à la place. scripts/validate.py les cherche dans narration.ar des reels pas encore validés, hors
+# citations entre « » (un mot du verset repris tel quel, « هذا رحمة من ربي »), avec ou sans « و » / « ف » devant ;
+# sans voyelles, et alif avec ou sans hamza comptent pareil. Demande du propriétaire (2026-11-08) : vérifier la
+# narration égyptienne sans lui. Liste essayée le même jour sur les 305 répliques validées des sept épisodes :
+# aucune alerte. Mots écartés, que l'égyptien parlé emploie aussi : « لكن », « جدًا », « إن ».
+words:
+  هذا: ده
+  هذه: دي
+  ذلك: ده
+  تلك: دي
+  هؤلاء: دول
+  أولئك: دول
+  الذي: اللي
+  التي: اللي
+  الذين: اللي
+  ليس: مش
+  ليست: مش
+  لست: مش
+  لسنا: مش
+  لماذا: ليه
+  ماذا: إيه
+  كيف: إزاي
+  أين: فين
+  متى: إمتى
+  الآن: دلوقتي
+  سوف: "هـ (هيعمل)"
+  لن: "مش هـ (مش هيعمل)"
+  لم: "ما…ش (معملش)"
+  يجب: لازم
+  ينبغي: المفروض
+  أيضا: "كمان، برضه"
+  فقط: بس
+  عندما: لما
+  حينما: لما
+  نحن: إحنا
+  أنتم: إنتو
+  يوجد: فيه
+  أريد: عايز
+  يريد: عايز
+  تريد: "عايز، عايزة"
+  أستطيع: أقدر
+  يستطيع: يقدر
+  تستطيع: تقدر
+  نستطيع: نقدر
+  ذهب: راح
+  رأى: شاف
+  يرى: يشوف
+  ترى: تشوف
+  نرى: نشوف
+  لقد: "(rien : « قد » ne se dit pas)"
+  إذا: لو
+  إذ: لما
+  حيث: "عشان، لإن"

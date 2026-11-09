@@ -170,6 +170,8 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
     validated_reels = {r["id"] for r in ep["reels"] if r.get("validated_by")}
     whole_validated = bool((ep.get("whole") or {}).get("validated_by"))
     lexicon = (load_yaml(CONTENT / "pronunciation.yaml") or {}).get("words", [])
+    dialect = {alef(k): v for k, v in ((load_yaml(CONTENT / "dialect.yaml") or {}).get("words") or {}).items()}
+    egyptian = ep["narration_language"] == "ar-egy"
     check_publish(ep, rel(path), report)
     seen: set[str] = set()
     for scene in ep["scenes"]:
@@ -231,6 +233,12 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
                 if spoken_words(entry["word"])[0] in shown and entry["say"] not in said:
                     report.warn(where, f"« {entry['word']} »: the voice says it right as « {entry['say']} » "
                                        f"(content/pronunciation.yaml): write it so in say_ar")
+        # Egyptian narration: no standard-Arabic word where the dialect has its own (content/dialect.yaml),
+        # outside quotes, in a reel still being written.
+        if egyptian and narration.get("ar") and not validated:
+            for word in standard_words(narration["ar"], dialect):
+                report.warn(where, f"« {word} » is standard Arabic in the Egyptian narration: say « {dialect[word]} » "
+                                   f"(content/dialect.yaml)")
         if "say_ar" in scene:
             if not narration.get("ar"):
                 report.error(where, "say_ar needs narration.ar")
@@ -397,6 +405,25 @@ def check_thumbnail(ep: dict, where: str, catalog: dict, backgrounds: dict, repo
 
 
 ARABIC_MARKS = re.compile("[\u064b-\u0652\u0670\u0640]")
+QUOTED = re.compile("«[^»]*»")
+
+
+def alef(word: str) -> str:
+    """A word without its vowels, alif with or without hamza alike."""
+    return re.sub("[أإآ]", "ا", ARABIC_MARKS.sub("", word))
+
+
+def standard_words(text: str, dialect: dict) -> list[str]:
+    """Standard-Arabic words of content/dialect.yaml in an Egyptian line, outside « » quotes, with or
+    without a « و » or « ف » in front."""
+    found = []
+    for word in re.findall("[\u0621-\u0652\u0670]+", QUOTED.sub(" ", text)):
+        word = alef(word)
+        for candidate in (word, word[1:] if word[:1] in "وف" else ""):
+            if candidate in dialect:
+                found.append(candidate)
+                break
+    return found
 
 
 def edit_distance(a: str, b: str) -> int:

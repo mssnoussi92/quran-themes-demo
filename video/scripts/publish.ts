@@ -13,6 +13,9 @@
 //   node scripts/publish.ts <episode> all       the whole episode (16:9 and 9:16) and every reel
 //   node scripts/publish.ts <episode> <reel>    one reel
 //   [--header "<line>"]                         a first line (the render workflow: run, voice)
+//   [--as-validated]                            the notes as they will read once the owner has validated
+//                                               (no « proposé » notices): written by the candidate render,
+//                                               used as they are when its videos become the final ones
 
 import { readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
@@ -39,6 +42,7 @@ const HASHTAG = /^#[\p{L}\p{N}_]+$/u;
 const CHAPTER_MIN = 10;
 
 const problems: string[] = [];
+let asValidated = false;
 const ar = (n: number) => new Intl.NumberFormat("ar-EG").format(n);
 const clock = (seconds: number) => {
   const s = Math.floor(seconds);
@@ -134,7 +138,7 @@ function render(video: Video, settings: Settings): string[] {
     settings.handle,
   ];
   const head = [texts.title.en, texts.title.ar, ""];
-  if (!texts.validated_by) out.push("⚠️ Textes proposés, pas encore validés par le propriétaire.", "");
+  if (!texts.validated_by && !asValidated) out.push("⚠️ Textes proposés, pas encore validés par le propriétaire.", "");
   const block = (title: string, text: string) => out.push(`**${title}**`, "", "```text", text, "```", "");
   if (video.platforms.includes("social")) {
     const fb = [...head, ...body, "", tags.slice(0, facebook.max_hashtags).join(" ")].join("\n");
@@ -153,7 +157,7 @@ function render(video: Video, settings: Settings): string[] {
     block(`Titre YouTube (${title.length}/${youtube.max_title})`, title);
     block(`Description YouTube (${tags.length} hashtags)`, description);
     if (video.thumbnail) {
-      const note = video.thumbnail.validated ? "" : " ⚠️ proposée, pas encore validée par le propriétaire";
+      const note = video.thumbnail.validated || asValidated ? "" : " ⚠️ proposée, pas encore validée par le propriétaire";
       out.push(`**Miniature YouTube** : \`${video.thumbnail.file}\` (1280x720)${note}`, "");
     }
   }
@@ -181,6 +185,11 @@ function main() {
   const args = process.argv.slice(2);
   const headerAt = args.indexOf("--header");
   const header = headerAt >= 0 ? args.splice(headerAt, 2)[1] : null;
+  const validatedAt = args.indexOf("--as-validated");
+  if (validatedAt >= 0) {
+    args.splice(validatedAt, 1);
+    asValidated = true;
+  }
   const [episode, which] = args;
   if (!episode || !which) throw new Error("usage: node scripts/publish.ts <episode> <reel|all> [--header <line>]");
   const data = JSON.parse(readFileSync(join(ROOT, "video/public/data", `${episode}.json`), "utf8")) as EpisodeData;

@@ -9,9 +9,18 @@ name: render
 #                     flagged in the notes until the owner validates it on the image.
 # The pre-release notes give, for each video, the title, description and hashtags to paste on each
 # platform (video/scripts/publish.ts: the episode's `publish` texts, sources, credits, chapters).
-# A release render needs every quoted source and the script of each reel rendered validated by the
-# owner (validate.py --release --reel), their publication texts, and their locked narration takes;
-# a draft does not.
+# Modes:
+#   candidate  (owner's decision, 2026-11-08: one validation, at the end) everything Claude checked,
+#              nothing validated yet: the narration takes stored as candidates (tools/audio/build.py
+#              --candidate) or locked, never a new synthesis. Attached to a *draft* release
+#              "<episode|reel>-candidate", visible only to the repository's owner, whose notes start
+#              with the list « à vérifier » (video/scripts/review.ts) and keep the final notes aside
+#              (final-notes.md). On the owner's « je valide »: scripts/finalize.py validate, then the
+#              promote workflow turns these very videos into "<…>-latest".
+#   final      every quoted source, script, publication text and narration take validated by the
+#              owner (validate.py --release, build.py --require-locked): a new render of a validated
+#              episode (a change to the compositions), straight to "<…>-latest".
+#   draft      whatever exists, missing lines synthesised in CI (VoiceTut): a quick look, never published.
 
 on:
   workflow_dispatch:
@@ -25,10 +34,11 @@ on:
       speaker:
         description: "VoiceTut voice for the narration (see tools/tts/say.py --help)"
         default: Mohammed
-      draft:
-        description: "Draft: render even if some quoted sources are not validated yet"
-        type: boolean
-        default: false
+      mode:
+        description: "candidate (for the owner's one validation), final (all validated), draft (a quick look)"
+        type: choice
+        options: [candidate, final, draft]
+        default: candidate
 
 permissions:
   contents: write
@@ -46,7 +56,7 @@ jobs:
       EPISODE: ${{ inputs.episode }}
       REEL: ${{ inputs.reel }}
       SPEAKER: ${{ inputs.speaker }}
-      DRAFT: ${{ inputs.draft }}
+      MODE: ${{ inputs.mode }}
     steps:
       - uses: actions/checkout@v4
 
@@ -71,8 +81,9 @@ jobs:
 
       - name: Sources and editorial rules
         run: |
-          if [ "$DRAFT" = true ]; then
-            uv run --with jsonschema --with pyyaml scripts/validate.py
+          if [ "$MODE" != final ]; then
+            # A candidate shows the owner what the checks left (dialect, spellings, format): the list « à vérifier ».
+            uv run --with jsonschema --with pyyaml scripts/validate.py | tee validate.txt
           else
             for reel in $REELS; do
               uv run --with jsonschema --with pyyaml scripts/validate.py --release --reel "$reel"
@@ -137,13 +148,14 @@ jobs:
           uv venv --python 3.12 .venv-voicetut
           uv pip install --python .venv-voicetut/bin/python --torch-backend cpu -r requirements/voicetut.txt
 
-      # A release render uses only the narration takes the owner validated (content/audio/<episode>/):
-      # it fails rather than synthesise a new take nobody listened to. A draft synthesises missing lines.
+      # A final render uses only the narration takes the owner validated (content/audio/<episode>/), a
+      # candidate only those Claude checked and stored, or validated ones: both fail rather than synthesise
+      # a new take nobody checked. A draft synthesises missing lines.
       - name: Audio (recitation and narration)
         run: |
           locked=()
-          if [ "$DRAFT" != true ]; then
-            locked=(--require-locked)
+          if [ "$MODE" != draft ]; then
+            locked=($([ "$MODE" = final ] && echo --require-locked || echo --require-committed))
             if [ "$REEL" != all ]; then locked+=(--reel "$REEL"); fi
           fi
           python3 tools/audio/build.py --episode "$EPISODE" --speaker "$SPEAKER" \
@@ -169,7 +181,38 @@ jobs:
           done
           for f in out/*.mp4; do echo "$f"; ffmpeg -hide_banner -i "$f" 2>&1 | grep -E "Duration|Stream" || true; done
 
+      # Candidate: a draft release (private), its notes the list « à vérifier » then the texts as they are
+      # now; the final notes (as validated) and the commit rendered kept as assets for the promote workflow.
+      - name: Attach the candidate videos to a draft release
+        if: inputs.mode == 'candidate'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          name=$([ "$REEL" = all ] && echo "$EPISODE" || echo "$REEL")
+          tag="$name-candidate"
+          header="Candidate render, not validated yet. Narration: AI-generated voice (VoiceTut, $SPEAKER). Verses: real recitation. Run: $RUN_URL"
+          {
+            echo "$header"; echo
+            (cd video && node scripts/review.ts "$EPISODE" --warnings ../validate.txt)
+            echo; echo "---"; echo
+            (cd video && node scripts/publish.ts "$EPISODE" "$REEL")
+          } > notes.md
+          (cd video && node scripts/publish.ts "$EPISODE" "$REEL" --as-validated) > video/out/final-notes.md
+          printf '{"episode": "%s", "reel": "%s", "commit": "%s", "run": "%s"}\n' "$EPISODE" "$REEL" "$GITHUB_SHA" "$RUN_URL" > video/out/candidate.json
+          # One candidate at a time: the previous draft of the same name goes.
+          for id in $(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .id"); do
+            gh api -X DELETE "repos/$GH_REPO/releases/$id"
+          done
+          shopt -s nullglob
+          gh release create "$tag" --draft --prerelease --target "$GITHUB_SHA" \
+            --title "Candidate $name: to watch, then « je valide »" --notes-file notes.md \
+            video/out/*.mp4 video/out/*.png video/out/final-notes.md video/out/candidate.json
+          echo "draft release: $(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .html_url")"
+
       - name: Attach the MP4 files and the publication texts to the pre-release
+        if: inputs.mode != 'candidate'
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
@@ -180,7 +223,7 @@ jobs:
           else
             tag="$REEL-latest"; title="Reel $REEL (latest)"
           fi
-          kind=$([ "$DRAFT" = true ] && echo "Draft (script or sources not all validated yet)" || echo "Release render")
+          kind=$([ "$MODE" = draft ] && echo "Draft (script or sources not all validated yet)" || echo "Release render")
           header="$kind. Narration: AI-generated voice (VoiceTut, $SPEAKER). Verses: real recitation. Run: $RUN_URL"
           (cd video && node scripts/publish.ts "$EPISODE" "$REEL" --header "$header") > notes.md
           if ! gh release view "$tag" >/dev/null 2>&1; then

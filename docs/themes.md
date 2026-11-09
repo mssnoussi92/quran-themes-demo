@@ -81,7 +81,8 @@ l'épisode entier dure environ deux fois sa récitation (khidr et qarnayn), esti
 | La vache (2:67-73) | `story-linear`, 3 reels | un reel d'une collection | court et léger : multiplier les questions pour ne pas obéir | 3 | 2,0 min ; environ 4 min |
 | L'homme aux 99 meurtres (Bukhari 3470) | `story-linear` | — | trop proche du repentir, déjà fait : plus tard, sous l'angle de l'entourage (quitter la terre où l'on péchait) | 4 | à estimer |
 
-Ordre proposé, en variant les formats (jamais trois fois le même de suite ; les deux histoires comptent pour un) :
+**Ordre validé par le propriétaire le 2026-11-08**, en variant les formats (jamais trois fois le même de suite ; les
+deux histoires comptent pour un) :
 الخشوع (`misconceptions`, choisi), les gens de la caverne, « دعوات في الشدة » (`collection`), الشكر (Bukhari 3464),
 l'homme aux deux jardins (`two-paths`), الإخلاص (Bukhari 2272), puis le reste ; Youssouf plus tard en série.
 

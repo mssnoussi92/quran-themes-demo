@@ -424,6 +424,31 @@ scenes:
       en: "God knew everything in his hands… and you too: God sees what you do with what's in yours."
     visual:
       template: title-card
+  # Exemple de vie de la leçon du levant (demande du propriétaire, 2026-11-08 : la seule leçon sans exemple).
+  - id: east-life-1
+    role: example
+    reel: qarnayn-02
+    audio: tts
+    narration:
+      ar: "زي لما تبقى لوحدك في شغلك… ومحدش شايف بتعمل إيه في وقتك."
+      en: "Like when you're alone at work… and no one sees what you do with your time."
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: calm, talking: false }
+  - id: east-life-2
+    role: example
+    reel: qarnayn-02
+    audio: tts
+    narration:
+      ar: "وبرضه بتشتغل بضمير… عشان عارف إن ربنا شايف."
+      en: "And you still work with a conscience… because you know God sees."
+    visual:
+      template: scene
+      background: waiting-room
+      characters:
+        - { id: amir, pose: sitting, mood: smiling, talking: false }
   - id: west-outro
     role: outro
     reel: qarnayn-02

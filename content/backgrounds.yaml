@@ -1,5 +1,7 @@
 # Catalogue fermé des fonds de la scène `scene` (visual.background). Chaque fond est dessiné dans
 # video/src/backgrounds/ (aplats simples, sans texte ni personne) ; un épisode ne cite qu'un id d'ici.
+# `validated_by` : le propriétaire a validé le dessin (planche docs/backgrounds.png ou vidéo candidate) ;
+# un fond sans ce champ et qu'aucun reel validé n'emploie est « nouveau » dans la liste à vérifier.
 backgrounds:
   waiting-room:
     description: Salle d'attente, mur clair, rangée de sièges, horloge murale dont l'aiguille tourne
@@ -12,23 +14,33 @@ backgrounds:
   # propriétaire le 2026-11-08 (planche docs/backgrounds.png et brouillons).
   confluence:
     description: Là où les deux mers se rencontrent, deux eaux de deux couleurs, la plage, le rocher et le panier du poisson (Bukhari 122)
+    validated_by: mssnoussi92
   sea-boat:
     description: La mer ouverte et le bateau à voile qui les a pris sans payer, qui tangue
+    validated_by: mssnoussi92
   sea-bird:
     description: Gros plan sur le bord du bateau, le moineau qui pique la mer d'un coup de bec (Bukhari 122, 3401)
+    validated_by: mssnoussi92
   road:
     description: Le chemin entre les collines, au soleil bas, vide (le garçon n'est pas montré)
+    validated_by: mssnoussi92
   village-wall:
     description: Le village qui a refusé de les nourrir, et le mur fissuré qui penche, prêt à tomber, des briques à terre
+    validated_by: mssnoussi92
   wall-treasure:
     description: Le mur redressé, et sous lui la terre ouverte sur le trésor des deux orphelins (18:82), qui brille
+    validated_by: mssnoussi92
   # Histoire de Dhul-Qarnayn (épisode qarnayn, 18:83-98) : des lieux, jamais une personne (ni lui, ni les
   # peuples qu'il a rencontrés, ni Yajuj et Majuj). Validés par le propriétaire le 2026-11-08.
   sunset-spring:
     description: Le couchant, le soleil qui semble se coucher dans une source de boue sombre (عين حمئة), les tentes d'un peuple sur la rive
+    validated_by: mssnoussi92
   sunrise-plain:
     description: Le levant, une plaine nue, rien pour s'abriter du soleil (لم نجعل لهم من دونها سترا)
+    validated_by: mssnoussi92
   mountain-pass:
     description: Deux montagnes escarpées (السدّين) et le passage ouvert entre elles, de la poussière qui y souffle
+    validated_by: mssnoussi92
   iron-dam:
     description: Le barrage de blocs de fer entre les deux montagnes, le cuivre fondu versé dessus, rougeoyant
+    validated_by: mssnoussi92
