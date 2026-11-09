@@ -82,13 +82,19 @@ for i in $(seq 1 60); do s=$(curl -sS https://api.github.com/repos/mssnoussi92/q
   case "$s" in completed*) echo "$s"; exit 0;; esac; sleep 60; done; echo timeout
 ```
 
-About 11 to 25 minutes for `all` (khidr, 9 min of whole episode: 37 min); the first run of an
-episode downloads its hadith readings (archive.org) and its reciter's surah files (mp3quran.net),
-cached afterwards. A second run of the same episode and reel cancels the first: dispatch once. A
+The run has three stages: `audio and data` (checks, the audio once, the episode's data), then
+`render (16x9)`, `render (9x16)` and `render (reels)` side by side (one, `reels`, for a single
+reel), then `release`. The longest render gives the time: about 7 minutes for `all` in the flat
+style (tawakkul, run 31; 11 to 25 minutes when the renders followed each other), about 50 expected
+for a nine-minute episode in paper (kahf took 2 h in one job, run 30); a single reel about 4. The
+first run of an episode downloads its hadith readings (archive.org) and its reciter's surah files
+(mp3quran.net), cached afterwards. A second run of the same episode and reel cancels the first: dispatch once. A
 dispatch can fail on a network error: list the runs before dispatching again. On a failure:
 `get_job_logs` (failed jobs only). Seen causes: a source or reel not validated (final), a line
 without a committed take (`--require-committed`: store it as a candidate) or without a locked one
-(final), an archive.org download that timed out (rerun the failed jobs once).
+(final), an archive.org download that timed out (rerun the failed jobs once). A render leg that
+failed: `actions_run_trigger`, `rerun_failed_jobs` on the run renders that leg again alone, then
+`release`; the other legs' videos are kept (artifacts `videos-<leg>`, 7 days).
 
 ## 6. Check the videos
 
@@ -99,7 +105,7 @@ without a committed take (`--require-committed`: store it as a candidate) or wit
   release), or render the same compositions locally (draft), take frames with ffmpeg and look at
   them (Read), then delete them:
   - the end of a reel: `ffmpeg -sseof -1.2 -i <reel>.mp4 -frames:v 1 end.png` (the follow call);
-  - the loudness the run's log prints for each video (step « Render »): about -16 LUFS integrated, true
+  - the loudness the run's log prints for each video (step « Render » of each `render (<leg>)` job): about -16 LUFS integrated, true
     peak under -1 dBTP (every part levelled by `tools/audio/build.py`, `LEVEL`); far from it, a part was
     not levelled (an old manifest: run `build.py` again);
   - the YouTube reminder in the 16:9, about 2 s after each start (`reminderStarts`, video/src/scenes.ts,
