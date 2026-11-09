@@ -404,7 +404,7 @@ function main() {
         layout: t.layout,
         headline: t.headline,
         kicker: t.kicker ?? null,
-        character: t.character ? resolveCharacter(t.character, catalog, where) : null,
+        character: t.character ? resolveCharacter(t.character, catalog, where, ep.style ?? "flat") : null,
         background: t.background,
         validated_by: t.validated_by ?? null,
       };

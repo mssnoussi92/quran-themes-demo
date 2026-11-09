@@ -31,7 +31,7 @@ thumbnail:
   headline: { ar: "أصحاب الكهف", en: "The People of the Cave" }
   kicker: { ar: "لما تقف لوحدك", en: "· when you stand alone" }
   character: { id: amir, pose: standing, mood: worried }
-  background: plain
+  background: cave-entrance
 reels:
   - id: kahf-01
     title: { ar: "شباب في كهف", en: "Young men in a cave" }
@@ -403,7 +403,7 @@ scenes:
     narration:
       ar: "وفي يوم… صحيوا. تابعنا عشان تعرف لقوا إيه."
       en: "And one day… they woke up. Follow us to find out what they found."
-    say_ar: "وفي يوم… صحيو. تابعنا عشان تعرف لقوا إيه."
+    say_ar: "وفي يوم… صِحْيُو. تابعنا عشان تعرف لقوا إيه."
     reel_only_end: { ar: "تابعنا عشان تعرف لقوا إيه.", en: "Follow us to find out what they found." }
     visual:
       template: title-card
@@ -455,6 +455,7 @@ scenes:
     narration:
       ar: "عشان لو قومهم عرفوا مكانهم… هيرجموهم… أو يرجّعوهم لدينهم."
       en: "Because if their people found out where they were… they would stone them… or bring them back to their religion."
+    say_ar: "عشان لو قَوْمُهُم عرفوا مكانهم… هيرجموهم… أو يرجعوهم لدينهم."
     visual:
       template: title-card
   - id: wake-intro-2

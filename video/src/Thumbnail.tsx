@@ -10,6 +10,8 @@ import type { CalculateMetadataFunction } from "remotion";
 import { BACKGROUNDS } from "./backgrounds/Backgrounds";
 import { CharacterView, placement } from "./characters/Character";
 import { FONT, loadFonts } from "./fonts";
+import { PAPER_SHEET, PaperScene } from "./styles/paper/render";
+import { PAPER_PLACES } from "./styles/paper/places";
 import { COLOR } from "./theme";
 import type { Character, EpisodeData, ThumbnailData, ThumbnailLayout } from "./types";
 
@@ -150,9 +152,44 @@ const Title: React.FC<{ t: ThumbnailData }> = ({ t }) => (
   </AbsoluteFill>
 );
 
+/** Paper-cut style (docs/styles.md): a place of the episode in paper, the character's silhouette seen
+ * from close on the left, the words cut in a strip of dark paper on the right. */
+const PaperThumb: React.FC<{ t: ThumbnailData; c: Character | null }> = ({ t, c }) => {
+  const place = t.background in PAPER_PLACES ? t.background : "cave-entrance";
+  const scene = {
+    id: "thumbnail", visual: { template: "scene", background: place, icon: null, highlight: "none", characters: c ? [{ ...c, pose: c.pose === "sitting" ? "standing" : c.pose }] : [] },
+  } as unknown as Parameters<typeof PaperScene>[0]["scene"];
+  // The place is drawn wider than the image and moved left: its centre (the cave's mouth) sits on the
+  // left half, the person beside it, the words on the right.
+  const shift = 280;
+  const format = { id: "episode", width: W + shift, height: H, safe: { top: 40, right: 60, bottom: 40, left: 60 } } as Parameters<typeof PaperScene>[0]["format"];
+  return (
+    <AbsoluteFill>
+      <div style={{ position: "absolute", left: -shift, top: 0, width: W + shift, height: H }}>
+        <PaperScene scene={scene} format={format} floor={H - 24} figure={0.86} figureX={(shift + 170) / (W + shift)} />
+      </div>
+      <div style={{ position: "absolute", right: 48, top: 46, ...PAPER_SHEET, padding: "26px 40px", display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
+        <div dir="rtl" style={{ fontFamily: FONT.arabic, fontWeight: 700, fontSize: 118, lineHeight: 1.15, color: "#ffe9bf", textShadow: "0 0 18px rgba(255, 214, 140, 0.55)", whiteSpace: "nowrap" }}>
+          {t.headline.ar}
+        </div>
+        {t.kicker ? (
+          <div dir="rtl" style={{ fontFamily: FONT.arabic, fontWeight: 700, fontSize: 64, lineHeight: 1.3, color: GOLD, whiteSpace: "nowrap" }}>
+            {t.kicker.ar}
+          </div>
+        ) : null}
+        <div style={{ marginTop: 6, fontFamily: FONT.latin, fontSize: 30, color: "#f1e2c4" }}>
+          {t.headline.en}
+          {t.kicker ? ` ${t.kicker.en}` : ""}
+        </div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 export const Thumbnail: React.FC<ThumbnailProps> = ({ data, layout }) => {
   const t = data?.thumbnail;
   if (!t) return null;
+  if (data?.style === "paper") return <PaperThumb t={t} c={t.character ?? null} />;
   const chosen = layout ?? t.layout;
   if (chosen === "title" || !t.character) return <Title t={t} />;
   return chosen === "close-up" ? <CloseUp t={t} c={t.character} /> : <Scene t={t} c={t.character} />;

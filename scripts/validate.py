@@ -417,15 +417,18 @@ def check_thumbnail(ep: dict, where: str, catalog: dict, backgrounds: dict, repo
         report.warn(where, "no thumbnail for the whole episode (thumbnail: layout, headline, background)")
         return
     where = f"{where} [thumbnail]"
+    style = ep.get("style", "flat")
     if thumb["background"] not in backgrounds:
         report.error(where, f"background '{thumb['background']}' is not in content/backgrounds.yaml")
+    elif style not in drawn_in(backgrounds[thumb["background"]]):
+        report.error(where, f"background '{thumb['background']}' has no drawing in the style '{style}'")
     ch = thumb.get("character")
     if ch:
         spec = catalog.get(ch["id"])
         if spec is None:
             report.error(where, f"character '{ch['id']}' is not in content/characters.yaml")
         else:
-            if ch["pose"] not in spec["poses"]:
+            if ch["pose"] not in poses_in(spec, style):
                 report.error(where, f"pose '{ch['pose']}' not in catalog for '{ch['id']}'")
             if ch["mood"] not in spec["moods"]:
                 report.error(where, f"mood '{ch['mood']}' not in catalog for '{ch['id']}'")

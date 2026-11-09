@@ -111,11 +111,11 @@ export const PaperFrame: React.FC<{ w: number; h: number; color: string; prefix:
 type Drawn = Layer & { light?: boolean };
 
 /** The scene's characters as layers: sitting ones on the place's seats, the others standing, spread. */
-const figures = (scene: ResolvedScene, place: Place, w: number, f: number, u: number, t: number): Drawn[] => {
+const figures = (scene: ResolvedScene, place: Place, w: number, f: number, u: number, t: number, size: number, at?: number): Drawn[] => {
   const chars = scene.visual.characters;
   const seats = [...place.seats];
   const standing = chars.filter((c) => c.pose !== "sitting");
-  const H = 0.6 * u;
+  const H = size * u;
   const out: Drawn[] = [];
   let k = 0;
   chars.forEach((c) => {
@@ -126,8 +126,8 @@ const figures = (scene: ResolvedScene, place: Place, w: number, f: number, u: nu
       out.push({ id: `fig-${c.id}`, role: MAIN.has(c.id) ? "accent" : "figure", depth: seat.hidden ? 0.58 : place.figureDepth, shapes: fig.body, over: fig.arms });
     } else {
       const i = standing.indexOf(c);
-      const x = (w * (i + 1)) / (standing.length + 1) + (seats.length === 0 && standing.length === 1 ? 0.12 * u : 0);
-      const dir = standing.length === 1 ? -1 : x < w / 2 ? 1 : -1;
+      const x = at !== undefined ? at * w : (w * (i + 1)) / (standing.length + 1) + (seats.length === 0 && standing.length === 1 ? 0.12 * u : 0);
+      const dir = at !== undefined ? (x < w / 2 ? 1 : -1) : standing.length === 1 ? -1 : x < w / 2 ? 1 : -1;
       const fig = silhouette(c.id, c.pose, x, f, H * sway, dir);
       // Someone praying stands on a prayer rug: it says what the pose is at a glance.
       if (c.pose === "praying")
@@ -145,21 +145,22 @@ const figures = (scene: ResolvedScene, place: Place, w: number, f: number, u: nu
 const isSmall = (shapes: Shape[], w: number, h: number) =>
   shapes.every((s) => (s.kind === "rect" ? s.w * s.h < 0.5 * w * h : true));
 
-/** A place of the catalog in paper, with the scene's characters. */
-export const PaperScene: React.FC<{ scene: ResolvedScene; format: Format }> = ({ scene, format }) => {
+/** A place of the catalog in paper, with the scene's characters. `floor` and `figure` (the size of
+ * a standing person, in u) change the framing: the thumbnail is seen from closer. */
+export const PaperScene: React.FC<{ scene: ResolvedScene; format: Format; floor?: number; figure?: number; figureX?: number }> = ({ scene, format, floor, figure, figureX }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const t = frame / fps;
   const w = format.width;
   const h = format.height;
   const u = Math.min(w, h);
-  const f = FLOOR[format.id];
+  const f = floor ?? FLOOR[format.id];
   const id = scene.visual.background ?? "";
   const build = PAPER_PLACES[id];
   if (!build) throw new Error(`background '${id}' has no paper drawing in src/styles/paper/places.ts`);
   const place = build(w, h, f);
   const p = place.palette;
-  const layers: Drawn[] = [...place.layers, ...figures(scene, place, w, f, u, t)].sort((a, b) => a.depth - b.depth);
+  const layers: Drawn[] = [...place.layers, ...figures(scene, place, w, f, u, t, figure ?? 0.6, figureX)].sort((a, b) => a.depth - b.depth);
   const sheets = layers.filter((l) => l.role !== "sky" && l.role !== "light");
   const push = interpolate(frame, [0, durationInFrames], [1, 1.035]);
   const drift = (depth: number) => (depth - 0.5) * 0.024 * u * Math.sin(t * 0.35);
