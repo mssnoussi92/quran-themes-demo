@@ -22,6 +22,7 @@ characters:
     paper_poses: [standing, sitting, praying, pointing]
     moods: [calm, worried, smiling]
     validated_by: mssnoussi92
+    paper_validated_by: mssnoussi92
   salma:
     description: Femme d'une trentaine d'années, personnage du quotidien ; hijab, manches longues
     look: { hair: Hijab, facial_hair: None, accessory: None }
@@ -29,6 +30,7 @@ characters:
     paper_poses: [standing, sitting, pointing]
     moods: [calm, worried, smiling]
     validated_by: mssnoussi92
+    paper_validated_by: mssnoussi92
   # Personnages du quotidien ajoutés pour les styles (2026-11-09, plus de visages : docs/styles.md) ;
   # pour l'instant en silhouette de papier seulement (pas de pièces Open Peeps).
   youssef:
@@ -36,13 +38,16 @@ characters:
     poses: {}
     paper_poses: [standing, sitting, pointing]
     moods: [calm, worried, smiling]
+    paper_validated_by: mssnoussi92
   hoda:
     description: Femme, collègue de bureau ; hijab, robe longue
     poses: {}
     paper_poses: [standing, sitting]
     moods: [calm, worried, smiling]
+    paper_validated_by: mssnoussi92
   karim:
     description: Homme d'une cinquantaine d'années, un peu fort ; casquette, barbe courte (le chef, un voisin de café)
     poses: {}
     paper_poses: [standing, sitting, pointing]
     moods: [calm, worried, smiling]
+    paper_validated_by: mssnoussi92

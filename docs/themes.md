@@ -127,6 +127,12 @@ l'épisode entier dure environ deux fois sa récitation (khidr et qarnayn), esti
   la relance « وبعدين؟ » au milieu du reel 4. Ajouté au script : Bukhari 6324 (la du'a du réveil, « الحمد لله الذي
   أحيانا بعد ما أماتنا وإليه النشور », lue par Abu Malik) dans l'exemple de vie du reel 4. Script :
   `content/episodes/kahf.yaml`, plan dans `docs/design.md`.
+- **Fait** : premier épisode en **papier découpé** (`docs/styles.md`) ; scènes de vie dans de nouveaux lieux
+  (bureau, chambre à l'aube, rue égyptienne, café) avec des silhouettes (Amir, Salma, Youssef, Hoda, Karim).
+  **Tout validé par le propriétaire le 2026-11-09** sur le rendu candidat (run 30) : 13 versets, Muslim 809a et
+  Bukhari 6324 et leurs lectures, scripts et traduction, textes de publication, miniature en papier, les sept
+  lieux en papier et les silhouettes, deux écritures pour la voix ; prises figées (37). Reels de 1:03 à 2:32,
+  épisode entier 8:48.
 
 **Ordre validé par le propriétaire le 2026-11-08**, en variant les formats (jamais trois fois le même de suite ; les
 deux histoires comptent pour un) :

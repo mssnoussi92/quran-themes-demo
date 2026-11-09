@@ -67,9 +67,9 @@ words:
   - word: آمنوا
     say: آمَنُوا
     why: "Whisper entendait « أمينوا » ; vocalisé, « آمنوا »"
-    decided: { by: proposed, on: 2026-11-09, scene: kahf/faith-1 }
+    decided: { by: mssnoussi92, on: 2026-11-09, scene: kahf/faith-1 }
   - word: صحيوا
     say: صحيو
     also: [صِحْيُو]
     why: "« ṣiḥyu » (ils se sont réveillés) : écrit avec l'alif, Whisper entendait « صحيح », « صح يولبت » ; sans l'alif, « صحيوا » (kahf/wake-1) ; dans kahf/cave-outro, seule la forme vocalisée l'a donné"
-    decided: { by: proposed, on: 2026-11-09, scene: kahf/wake-1 }
+    decided: { by: mssnoussi92, on: 2026-11-09, scene: kahf/wake-1 }
