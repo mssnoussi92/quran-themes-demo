@@ -18,7 +18,10 @@ the registry. The audio is never committed: `tools/audio/build.py` downloads it 
 | Muslim | `ar_Moslem_Reading_16` | one file per book, `ar_Moslem_Reading_NN.mp3`, the book in each file's title (`/metadata`), file number = book number + 1 (01 is the introduction): 03 الطهارة, 40 السلام, 46 البر والصلة, 47 القدر, 49 الذكر والدعاء, 54 الزهد; up to 6.5 h. Position in the file ≈ the share of the book's Arabic text (hadith-api, `reference.book`) before the hadith (2564c: 21 %, found 30 s off) | Ryadussalihin.org (no reader named) |
 | Tirmidhi | `yna-audiobook-arabic-sunan-altirmidhi` | files by hadith numbers (`...-2006-2204.mp3`), 30 to 40 s per hadith on average, same numbers as the registry on 2139, 3247 and 3573 | Yusuf ibn Nuh Ahmad |
 
-Readings in the registry, all validated by the owner (where each one is, to find a neighbour fast):
+Readings in the registry (where each one is, to find a neighbour fast). **The registry is the list,
+not this table**, which misses the latest ones: print them all with
+`uv run --with pyyaml python -c "import yaml; [print(e['id'], e['recording'].get('file'), e['recording'].get('start'), e['recording'].get('status')) for e in yaml.safe_load(open('content/sources/hadith.yaml', encoding='utf-8')) if e.get('recording')]"`
+before searching. Those noted here by hand:
 
 | Hadith | File | Clip |
 | --- | --- | --- |

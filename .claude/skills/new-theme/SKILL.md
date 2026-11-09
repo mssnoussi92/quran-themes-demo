@@ -136,9 +136,15 @@ yourself: only the owner's « je valide », recorded by `scripts/finalize.py val
      there (khidr: 18:78, the parting); a reel's scene left out of `whole` only in its reel (the
      links « السر؟ الخضر قاله بعدين: »). The owner validates the order and those lines with the
      reels: `whole.validated_by`, checked by `validate.py --release --whole <theme>`.
-   - new places for a story: draw them in `video/src/backgrounds/` (flat shapes, no person), add
-     them to `content/backgrounds.yaml`, render the board (`npm run still -- BackgroundSheet
-     ../docs/backgrounds.png --frame=40`) and send it to the owner before the drafts.
+   - new places: drawn in the episode's style, never a person in them. `flat`: shapes in
+     `video/src/backgrounds/`. `paper` (the stories since 2026-11-09): layers in
+     `video/src/styles/paper/places.ts`, the characters' faceless silhouettes in
+     `silhouettes.ts` (`paper_poses` in `content/characters.yaml`). Add each place to
+     `content/backgrounds.yaml` with the `styles` it is drawn in, render the board (`npm run
+     still -- BackgroundSheet ../docs/backgrounds.png --frame=40`) and look at it yourself. The
+     owner sees the new places in the candidate render, with the rest (the list « à vérifier »
+     names them; `finalize.py validate` writes their `validated_by` / `paper_validated_by`);
+     send the board earlier only if they ask.
 
 4. **Script.** Follow the `write-hook` skill for the episode opening and for each reel: mirror,
    contrast, anchor, and an honest open loop to the next reel. Narration in Egyptian Arabic
@@ -153,7 +159,7 @@ yourself: only the owner's « je valide », recorded by `scripts/finalize.py val
    - Mark your own explanatory lines (not a quote, not a paraphrase of one) when you present the
      script: the owner checks them first (dua: « الدعاء مش اعتراض… الدعاء احتياج »). Characters, poses and moods from
    `content/characters.yaml`, backgrounds from `content/backgrounds.yaml` only (a new one is added to
-   the catalog, drawn in `video/src/backgrounds/` and shown to the owner first); no character in a scene that names a real person (`mentions`).
+   the catalog and drawn in the episode's style, step 2; the owner sees it in the candidate render); no character in a scene that names a real person (`mentions`).
    Typical situations are presented as such, never as true stories. No figure without a source.
 
 5. **Publication texts.** What the owner pastes with each video: the episode's `publish` (title and
@@ -174,9 +180,12 @@ yourself: only the owner's « je valide », recorded by `scripts/finalize.py val
      limit). They are validated with the rest at the end (`publish.validated_by` on the episode and
      on each reel, written by `finalize.py validate`, removed whenever one of them changes).
    - YouTube thumbnail: the episode's `thumbnail` (layout `close-up`, headline « ٣ أفكار غلط », kicker
-     « عن <الموضوع> », a character and mood from the catalog, another face than the last episode's:
-     dua, tawba and tawakkul Amir, sabr and muqarana Salma), on the `plain` background (the street made tawba's title hard
-     to read). `npm run still -- Thumbnail169 out/<theme>-thumbnail.png`, look at it at 170 px wide;
+     « عن <الموضوع> », a character and mood from the catalog, another face and another mood than
+     the last episodes': read them, `grep -A6 "^thumbnail:" content/episodes/*.yaml`), on the
+     `plain` background (the street made tawba's title hard to read). `npm run still --
+     Thumbnail169 out/<theme>-thumbnail.png --props='{"episode":"<theme>","layout":null,"data":null}'`
+     (without `--props` it draws dua's), look at it at 170 px wide beside the others': the
+     subject must be what the eye reads first;
      the candidate release carries it, validated with the rest.
 
 6. **Check, then audio.**

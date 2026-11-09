@@ -22,3 +22,4 @@ video/public/audio/
 .DS_Store
 .idea/
 .vscode/
+.pytest_cache/

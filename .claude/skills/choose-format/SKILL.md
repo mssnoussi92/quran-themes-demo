@@ -93,7 +93,11 @@ Write it under the subject in `docs/themes.md` (or send it, for a subject not sa
 (`docs/styles.md`, owner's decision of 2026-11-09: `paper` for the stories, `chalk` for misconceptions,
 `illumination` for a collection or one text explained, `flat` for practical and two paths); the decision
 in `docs/themes.md`, then the `new-theme` skill in that format (its hook: `write-hook`, « The hook by
-format »). Each scene says where it happens: a place of the catalog drawn in that style
+format »). **Only `flat` and `paper` are drawn today** (`video/src/styles/paper/`; the renderer knows no
+other, and `validate.py` refuses every scene of an episode set in a style its places are not drawn in:
+tests/test_validate.py). `chalk` and `illumination` are decided, not built: for a format that calls for
+one of them, say so in the format sheet and ask the owner which comes first, building the style (its
+places, its cards, a board for them to see) or making this episode in `flat` or `paper`. Each scene says where it happens: a place of the catalog drawn in that style
 (`content/backgrounds.yaml`, `styles`), never the hook's place of the two episodes before (the waiting
 room and the street came back in all of the first nine); a missing place is drawn and added to the
 catalog, and the owner sees the new places with the script, for information. Tag the scenes with their roles

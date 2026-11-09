@@ -1,15 +1,25 @@
 name: validate
 
+# On a pull request and on main. A push to a branch that has a pull request ran everything twice
+# (43 runs out of 191 repeated a commit already checked, 2026-11-06 to 2026-11-09): a branch
+# without a pull request is checked by hand (workflow_dispatch) or by opening one.
 on:
   push:
+    branches: [main]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
 
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   content:
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -17,6 +27,13 @@ jobs:
 
       - name: Content against schemas and editorial rules
         run: uv run --with jsonschema --with pyyaml scripts/validate.py
+
+      # The rules themselves: each must still refuse what it was written to refuse (a character
+      # beside a named person, a verse read by the synthetic voice, a source outside the policy,
+      # a final render without the owner's validation), and promote must refuse a candidate whose
+      # content changed. Tried on a copy of the real content with one thing broken (tests/).
+      - name: The rules still refuse what they must
+        run: uv run --with pytest --with jsonschema --with pyyaml pytest -q tests
 
       - name: Python syntax
         run: python3 -m py_compile tools/tts/say.py tools/sources/fetch.py tools/audio/build.py tools/audio/listen.py scripts/validate.py scripts/finalize.py
@@ -29,6 +46,7 @@ jobs:
 
   video:
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     defaults:
       run:
         working-directory: video

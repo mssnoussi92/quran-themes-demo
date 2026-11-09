@@ -12,13 +12,8 @@ on:
       voicetut_speakers:
         description: "VoiceTut voices, comma-separated. Men: Ahmed, Ali, Hassan, Karim, Mahmoud, Mohammed, Mostafa, Ramy, Shaker, Tareq, Yehia, Youssef. Women: Hadeer, Hanan, Mariam, Rana, Sarah, Yasmin, Yara"
         default: Mohammed,Ahmed,Karim,Mahmoud,Hanan
-  push:
-    branches: [main]
-    paths:
-      - content/voice-test/**
-      - tools/tts/**
-      - requirements/**
-      - .github/workflows/voice-test.yml
+  # By hand only: the voice is chosen (Mohammed, 2026-11-06). A push to main that touched tools/tts
+  # or requirements/ used to start five synthesis jobs nobody listened to (3 runs out of 5).
 
 permissions:
   contents: write
