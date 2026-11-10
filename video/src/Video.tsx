@@ -6,7 +6,9 @@ import { FONT, loadFonts } from "./fonts";
 import { FORMATS, REMINDER_SECONDS, TRANSITION_SECONDS, toFrames } from "./formats";
 import type { Format } from "./formats";
 import { reminderStarts, selectScenes } from "./scenes.ts";
-import { PaperBackdrop, StyleContext } from "./styles/paper/render";
+import { StyleContext } from "./styles/context";
+import { KITS } from "./styles/kits";
+import { PaperBackdrop } from "./styles/paper/render";
 import { AyahCard, NameCard, SceneCard, SourceCard, TitleCard } from "./templates/cards";
 import { SubscribeReminder } from "./templates/SubscribeReminder";
 import { Subtitles } from "./templates/Subtitles";
@@ -71,9 +73,14 @@ const variantOf = (id: string) => [...id].reduce((n, c) => n + c.charCodeAt(0), 
 const SceneBody: React.FC<{ slot: Slot; format: Format }> = ({ slot, format }) => {
   const { scene, lead, content } = slot;
   const style = useContext(StyleContext);
+  const kit = KITS[style];
   return (
     <AudioStart.Provider value={lead}>
-      {style === "paper" && scene.visual.template !== "scene" ? (
+      {scene.visual.template === "scene" ? (
+        <AbsoluteFill style={{ background: BACKGROUND }} />
+      ) : kit ? (
+        <kit.Backdrop scene={scene} format={format} />
+      ) : style === "paper" ? (
         <PaperBackdrop format={format} variant={variantOf(scene.id)} prefix={`pb-${scene.id}`} />
       ) : (
         <AbsoluteFill style={{ background: BACKGROUND }} />
@@ -175,18 +182,22 @@ const Handle: React.FC<{ handle: string; format: Format }> = ({ handle, format }
   </div>
 );
 
-export const EpisodeVideo: React.FC<VideoProps> = ({ data, reel, format: formatId }) => {
+export const EpisodeVideo: React.FC<VideoProps> = ({ data, reel, format: formatId, style, platform }) => {
   if (!data) throw new Error("no episode data: calculateMetadata did not run");
+  // A version made for a platform is signed with the page's name there, or not made at all: a video
+  // signed with someone else's account is worse than a failed render.
+  if (platform && !data.handles?.[platform]) throw new Error(`no handle for the platform '${platform}' in content/publish.yaml (handles)`);
+  const handle = platform ? data.handles![platform] : data.handle;
   const format = FORMATS[formatId];
   const scenes = selectScenes(data, reel);
   const list = slots(scenes, toFrames(TRANSITION_SECONDS));
   // The reminder is for YouTube: the whole episode in 16:9 only (the reels' platforms have their own buttons).
   const reminders = format.id === "episode" && reel === null ? reminderStarts(scenes) : [];
   return (
-    <StyleContext.Provider value={data.style ?? "flat"}>
+    <StyleContext.Provider value={style ?? data.style ?? "flat"}>
     <AbsoluteFill style={{ background: BACKGROUND }}>
       <Timeline list={list} format={format} />
-      {data.handle ? <Handle handle={data.handle} format={format} /> : null}
+      {handle ? <Handle handle={handle} format={format} /> : null}
       {reminders.map((from) => (
         <Sequence key={from} from={from} durationInFrames={toFrames(REMINDER_SECONDS)} layout="none">
           <SubscribeReminder format={format} />

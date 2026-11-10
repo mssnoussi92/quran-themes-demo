@@ -27,6 +27,10 @@ export type Place = {
   lit?: { shapes: Shape[]; depth: number };
   /** A beam of light (the cave, 18:17) and where it falls. */
   beam?: { d: string; patch: Glow };
+  /** Height in pixels of a standing person the place is drawn around, when it is not the silhouettes'
+   * (0.6 of the frame's short side): the places built for the Open Peeps figures, who stand taller.
+   * A style that draws those figures brings them to the place's scale (styles/chalk/scene.tsx). */
+  person?: number;
 };
 
 type Builder = (w: number, h: number, f: number) => Place;
@@ -487,3 +491,162 @@ export const PAPER_PLACES: Record<string, Builder> = {
   "cave-entrance": caveEntrance,
   "cave-inside": caveInside,
 };
+
+// ---------------------------------------------------------------------------------------------
+// Places of the first episodes (waiting room, mosque), added with the chalk style (2026-11-10), whose
+// people are the Open Peeps figures: in both formats a standing one fills four fifths of the height
+// above the floor line (formats.ts, STAGE), far more of a reel than the 0.6 u of a paper
+// silhouette. So these two take their unit from that height, not from the frame's short side: a
+// standing person is still 0.6 u tall, the door is a door for that person and the seat a seat, in a
+// reel (seen from close: its middle only) as in an episode. `lines` are what a line style draws
+// inside a layer (the hands of the clock, the tiles); the paper style ignores them.
+
+/** The unit of a place drawn for people who fill 0.8 of the height above the floor line. */
+const unitOf = (f: number) => f / 0.75;
+
+/** A pointed arch: two curves that meet at the top, over a rectangle (x: its left, y: its top). */
+const ogive = (x: number, y: number, w: number, h: number) =>
+  `M${x} ${y + h} V${y + 0.55 * w} Q${x} ${y + 0.1 * w} ${x + w / 2} ${y} Q${x + w} ${y + 0.1 * w} ${x + w} ${y + 0.55 * w} V${y + h} Z`;
+
+/** A waiting room (the hooks of the first episodes): a row of seats along the wall, a clock above
+ * it (the time that passes), a door. */
+const waitingRoom: Builder = (w, h, f) => {
+  const u = unitOf(f);
+  const cx = w / 2;
+  const floorTop = f - 0.07 * u;
+  // The row of seats: low (the hips of a sitting person), long enough for two.
+  const seatY = f - 0.085 * u;
+  const bx = cx - 0.6 * u;
+  const bw = 0.78 * u;
+  const legs = [bx + 0.05 * u, bx + bw / 2, bx + bw - 0.05 * u];
+  // The clock, on the left of whoever sits in the middle (the page's signature is on the right).
+  const kx = cx - 0.17 * u;
+  const ky = f - 0.6 * u;
+  const kr = 0.052 * u;
+  const hand = (deg: number, len: number) => {
+    const a = ((deg - 90) * Math.PI) / 180;
+    return `M${kx} ${ky} L${(kx + Math.cos(a) * len).toFixed(1)} ${(ky + Math.sin(a) * len).toFixed(1)}`;
+  };
+  const ticks = [0, 90, 180, 270].map((deg) => {
+    const a = (deg * Math.PI) / 180;
+    return `M${(kx + Math.cos(a) * kr * 0.74).toFixed(1)} ${(ky + Math.sin(a) * kr * 0.74).toFixed(1)} L${(kx + Math.cos(a) * kr * 0.9).toFixed(1)} ${(ky + Math.sin(a) * kr * 0.9).toFixed(1)}`;
+  });
+  // The door, on the right: its frame, its leaf with a panel, its handle.
+  const dx = cx + 0.21 * u;
+  const dw = 0.25 * u;
+  const dTop = f - 0.68 * u;
+  const t = 0.014 * u;
+  return {
+    palette: WARM,
+    layers: [
+      { id: "wall", role: "wall", depth: 0.3, shapes: [R(0, 0, w, floorTop)] },
+      {
+        id: "door", role: "object", depth: 0.33, tint: 1,
+        shapes: [R(dx - t, dTop - t, dw + 2 * t, floorTop - dTop + t)],
+        over: [R(dx, dTop, dw, floorTop - dTop)],
+        lines: [
+          `M${dx + 0.035 * u} ${f - 0.36 * u} a${0.011 * u} ${0.011 * u} 0 1 0 0.1 0`,
+          `M${dx + 0.05 * u} ${dTop + 0.05 * u} H${dx + dw - 0.05 * u} V${f - 0.42 * u} H${dx + 0.05 * u} Z`,
+        ],
+      },
+      {
+        id: "clock", role: "object", depth: 0.34,
+        shapes: [{ kind: "circle", cx: kx, cy: ky, r: kr }],
+        lines: [hand(300, kr * 0.48), hand(60, kr * 0.7), ...ticks],
+      },
+      { id: "floor", role: "floor", depth: 0.4, shapes: [R(0, floorTop, w, h - floorTop)] },
+      {
+        id: "seats", role: "object", depth: 0.55,
+        shapes: [
+          R(bx + 0.02 * u, seatY - 0.2 * u, bw - 0.04 * u, 0.15 * u, 0.02 * u),
+          R(bx, seatY, bw, 0.028 * u, 0.008 * u),
+          ...legs.map((x) => R(x - 0.007 * u, seatY + 0.028 * u, 0.014 * u, f - 0.012 * u - seatY - 0.028 * u)),
+        ],
+      },
+    ],
+    seats: [
+      { x: cx - 0.02 * u, y: seatY, dir: 1 },
+      { x: cx - 0.36 * u, y: seatY, dir: 1 },
+    ],
+    figureDepth: 0.6,
+    person: 0.6 * u,
+  };
+};
+
+/** A mosque (khushu): the mihrab in the middle of the qibla wall, arched windows on each side of it,
+ * hanging lamps between them, a tiled band at the foot of the wall, the carpet. No one in it. */
+const mosque: Builder = (w, h, f) => {
+  const u = unitOf(f);
+  const cx = w / 2;
+  const floorTop = f - 0.07 * u;
+  const gap = 0.215 * u;
+  const ww = 0.13 * u;
+  const wTop = f - 0.68 * u;
+  const wBot = f - 0.28 * u;
+  const sides: number[] = [];
+  for (let k = 1; cx + k * gap - ww / 2 < w; k++) sides.push(k);
+  const windows = sides.flatMap((k) => [cx - k * gap, cx + k * gap]).map((x) => ogive(x - ww / 2, wTop, ww, wBot - wTop));
+  // The mihrab: a niche in a frame, down to the floor.
+  const mw = 0.2 * u;
+  const mTop = f - 0.73 * u;
+  // Lamps hang in the gaps: beside the mihrab, then between two windows.
+  const lampXs = sides.flatMap((k) => (k === 1 ? [cx - 0.128 * u, cx + 0.128 * u] : [cx - (k - 0.5) * gap, cx + (k - 0.5) * gap]));
+  const lampY = f - 0.7 * u;
+  const s = 0.022 * u;
+  // The tiled band: a row of lozenges between two lines.
+  const band = 0.07 * u;
+  const tiles = (x0: number, x1: number) => {
+    const n = Math.max(1, Math.round((x1 - x0) / (band * 0.9)));
+    const step = (x1 - x0) / n;
+    let up = `M${x0.toFixed(1)} ${floorTop - band / 2}`;
+    let down = up;
+    for (let i = 0; i < n; i++) {
+      up += ` l${(step / 2).toFixed(1)} ${(-band * 0.32).toFixed(1)} l${(step / 2).toFixed(1)} ${(band * 0.32).toFixed(1)}`;
+      down += ` l${(step / 2).toFixed(1)} ${(band * 0.32).toFixed(1)} l${(step / 2).toFixed(1)} ${(-band * 0.32).toFixed(1)}`;
+    }
+    return [up, down];
+  };
+  const side = cx - mw / 2 - 0.02 * u;
+  return {
+    palette: {
+      sky: ["#fff6dc", "#f6c98a"],
+      ladder: [[0, "#f6dcae"], [0.3, "#e6bd86"], [0.4, "#c9925a"], [0.5, "#a5683a"], [0.8, "#5c3019"], [1, "#27130a"]],
+      accent: ["#16605a", "#a3322a"],
+      light: "#ffe6a8",
+      frame: "#170c07",
+    },
+    layers: [
+      { id: "light", role: "sky", depth: 0, shapes: windows.map(P) },
+      { id: "wall", role: "wall", depth: 0.3, shapes: [P(`${box(0, 0, w, floorTop)} ${windows.join(" ")}`)] },
+      {
+        id: "mihrab", role: "object", depth: 0.34, tint: 1,
+        shapes: [P(ogive(cx - mw / 2, mTop, mw, floorTop - mTop))],
+        over: [P(ogive(cx - mw / 2 + 0.028 * u, mTop + 0.05 * u, mw - 0.056 * u, floorTop - mTop - 0.05 * u))],
+      },
+      {
+        id: "tiles", role: "object", depth: 0.36,
+        shapes: [R(0, floorTop - band, side, band), R(w - side, floorTop - band, side, band)],
+        lines: [...tiles(0, side), ...tiles(w - side, w)],
+      },
+      {
+        id: "lamps", role: "object", depth: 0.38,
+        shapes: lampXs.flatMap((x) => [
+          R(x - 1.5, 0, 3, lampY),
+          P(`M${x - s} ${lampY} H${x + s} L${x + s * 0.6} ${lampY + s * 2.4} H${x - s * 0.6} Z`),
+        ]),
+      },
+      { id: "flames", role: "light", depth: 0.39, shapes: lampXs.map((x) => ({ kind: "ellipse" as const, cx: x, cy: lampY + s * 1.2, rx: s * 0.42, ry: s * 0.8 })) },
+      {
+        id: "floor", role: "floor", depth: 0.4, shapes: [R(0, floorTop, w, h - floorTop)],
+        lines: [`M0 ${f + 0.11 * u} H${w}`, `M0 ${f + 0.26 * u} H${w}`],
+      },
+      { id: "carpet", role: "accent", tint: 1, depth: 0.45, shapes: [R(0, f - 0.018 * u, w, 0.05 * u)] },
+    ],
+    seats: [],
+    figureDepth: 0.6,
+    person: 0.6 * u,
+  };
+};
+
+PAPER_PLACES["waiting-room"] = waitingRoom;
+PAPER_PLACES.mosque = mosque;

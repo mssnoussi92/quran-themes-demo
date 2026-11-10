@@ -26,12 +26,13 @@ publish:
   validated_by: mssnoussi92
 # Miniature YouTube (Thumbnail169) : gros plan, fond uni, Salma (Amir dans celle de Dhul-Qarnayn).
 thumbnail:
-  layout: close-up
+  layout: poster
   headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas" }
   kicker: { ar: "عن الخشوع", en: "about khushu" }
-  character: { id: salma, pose: standing, mood: worried }
+  big: kicker
+  color: rose
+  character: { id: salma, pose: standing, mood: calm }
   background: plain
-  validated_by: mssnoussi92
 reels:
   - id: khushu-01
     title: { ar: "مش لوحدك", en: "It's not just you" }

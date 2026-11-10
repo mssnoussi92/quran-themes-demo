@@ -9,6 +9,12 @@
 # limits per platform.
 
 handle: "@quran_words_daily"
+# Where the page has another name. TikTok: @quran.words.daily (@quran_words_daily is someone else's
+# empty account there; owner's decision of 2026-11-09 for the daily reels of quran-reels, 2026-11-10
+# for these videos). Every 9:16 video is rendered a second time signed with that name
+# (<video>-tiktok.mp4, workflow render), and its TikTok caption ends with it.
+handles:
+  tiktok: "@quran.words.daily"
 
 hashtags:
   # Order: brand, broad[0], the episode's first tag, broad[1:], the episode's other tags, the

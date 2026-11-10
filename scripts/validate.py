@@ -286,6 +286,7 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
     check_whole(ep, rel(path), report)
     check_style(ep, rel(path), report)
     check_format(ep, rel(path), report)
+    check_picture(ep, rel(path), report)
     check_thumbnail(ep, rel(path), catalog, backgrounds, report)
 
 
@@ -303,9 +304,15 @@ def drawn_in(background: dict) -> list[str]:
     return background.get("styles") or ["flat"]
 
 
+# Styles whose people are silhouettes with no face (video/src/styles/paper/silhouettes.ts): cut in
+# paper, or painted flat in a manuscript. The others draw the Open Peeps figures (flat, chalk).
+SILHOUETTE_STYLES = ("paper", "illumination")
+
+
 def poses_in(character: dict, style: str) -> list[str]:
-    """The poses a character has in a style: Open Peeps bodies (flat, chalk), silhouettes (paper)."""
-    return list(character.get("paper_poses") or []) if style == "paper" else list(character["poses"])
+    """The poses a character has in a style: Open Peeps bodies (flat, chalk), silhouettes (paper,
+    illumination: `paper_poses`)."""
+    return list(character.get("paper_poses") or []) if style in SILHOUETTE_STYLES else list(character["poses"])
 
 
 def check_style(ep: dict, where: str, report: Report) -> None:
@@ -391,6 +398,46 @@ def check_format(ep: dict, where: str, report: Report) -> None:
         scenes = [s for s in ep["scenes"] if s.get("reel") == reel["id"]]
         for problem in format_problems(fmt, scenes, i == 0, i == len(ep["reels"]) - 1):
             report.warn(f"{where} [{reel['id']}]", f"{problem} ({fmt}: docs/formats.md)")
+
+
+# Formats where the text is the picture (docs/styles.md: a manuscript page): a drawn scene is the exception.
+TEXT_FORMATS = ("collection", "text-explained")
+DRAWN_SHARE = 1 / 3
+TEXT_RUN = 3
+
+
+def picture_problems(fmt: str, scenes: list[dict]) -> list[str]:
+    """What a reel gives to look at (audit of the published videos, 2026-11-09: 27 % of 480 scenes
+    drawn, 48 % a card showing the sentence the voice says, the picture unchanged for 60 to 83 % of a
+    reel; owner's decision of 2026-11-10: more drawn scenes in the episodes to come). At least a third
+    of a reel's scenes are drawn (a place, people), and never three cards of narration in a row."""
+    problems: list[str] = []
+    if not scenes:
+        return problems
+    drawn = sum(1 for s in scenes if s["visual"]["template"] == "scene")
+    if fmt not in TEXT_FORMATS and drawn < DRAWN_SHARE * len(scenes):
+        problems.append(f"{drawn} of {len(scenes)} scenes are drawn (template: scene): at least a third, "
+                        f"the rest of the time the picture is a card of text")
+    run: list[str] = []
+    for s in [*scenes, None]:
+        if s is not None and s["visual"]["template"] == "title-card":
+            run.append(s["id"])
+            continue
+        if len(run) >= TEXT_RUN:
+            problems.append(f"{len(run)} cards of narration in a row ({run[0]} … {run[-1]}): nothing new to look at; "
+                            f"say one of these lines over a drawn scene")
+        run = []
+    return problems
+
+
+def check_picture(ep: dict, where: str, report: Report) -> None:
+    """Checked in the reels being written, as the format is: a reel the owner validated stays as is."""
+    for reel in ep["reels"]:
+        if reel.get("validated_by"):
+            continue
+        scenes = [s for s in ep["scenes"] if s.get("reel") == reel["id"]]
+        for problem in picture_problems(ep["format"], scenes):
+            report.warn(f"{where} [{reel['id']}]", problem)
 
 
 def check_whole(ep: dict, where: str, report: Report) -> None:

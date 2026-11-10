@@ -10,10 +10,11 @@ import type { CalculateMetadataFunction } from "remotion";
 import { BACKGROUNDS } from "./backgrounds/Backgrounds";
 import { CharacterView, placement } from "./characters/Character";
 import { FONT, loadFonts } from "./fonts";
+import { KITS } from "./styles/kits";
 import { PAPER_SHEET, PaperScene } from "./styles/paper/render";
 import { PAPER_PLACES } from "./styles/paper/places";
 import { COLOR } from "./theme";
-import type { Character, EpisodeData, ThumbnailData, ThumbnailLayout } from "./types";
+import type { Character, EpisodeData, ThumbnailColor, ThumbnailData, ThumbnailLayout, VisualStyle } from "./types";
 
 loadFonts();
 
@@ -24,6 +25,8 @@ export type ThumbnailProps = {
   /** Overrides the episode's layout, to compare the layouts before choosing one. */
   layout: ThumbnailLayout | null;
   data: EpisodeData | null;
+  /** Another style than the episode's own, to compare (never a release render). */
+  style?: VisualStyle | null;
 };
 
 export const thumbnailMetadata: CalculateMetadataFunction<ThumbnailProps> = async ({ props, abortSignal }) => {
@@ -152,6 +155,81 @@ const Title: React.FC<{ t: ThumbnailData }> = ({ t }) => (
   </AbsoluteFill>
 );
 
+/** One colour per theme (closed palette, `thumbnail.color`): [edge, centre]. Dark enough for cream
+ * letters, different enough to tell two episodes apart on the channel page before a word is read. */
+export const THUMBNAIL_COLORS: Record<ThumbnailColor, [string, string]> = {
+  teal: ["#083f3b", "#12857a"],
+  indigo: ["#161d57", "#3b4bb5"],
+  green: ["#143f27", "#2d8a53"],
+  violet: ["#311a5c", "#6c46b5"],
+  amber: ["#6e3f00", "#c98414"],
+  blue: ["#0c2f5a", "#1f70c4"],
+  brick: ["#5f1d0e", "#bb4a2a"],
+  rose: ["#63142c", "#bd3b5f"],
+};
+
+const MARKS = /[\u064b-\u0652\u0670\u0640]/g;
+
+/** The subject biggest (2026-11-10: eight thumbnails of nine showed « ٣ أفكار غلط » in big and their
+ * subject in the smallest text, unreadable at 170 px): the line that says the subject (`big`) fills
+ * the width in cream on the theme's colour, the other one sits above it in a yellow tag, the face is
+ * cut out like a sticker (a white edge: a black hijab stays readable on a dark colour). */
+const Poster: React.FC<{ t: ThumbnailData; c: Character | null }> = ({ t, c }) => {
+  const [edge, centre] = THUMBNAIL_COLORS[t.color ?? "teal"];
+  const subject = t.big === "kicker" && t.kicker ? t.kicker : t.headline;
+  const other = t.big === "kicker" ? t.headline : t.kicker;
+  // The size that fills the text column: Amiri bold advances 0.34 to 0.40 em a letter, spaces included
+  // (measured on the eight first subjects; marks have no width).
+  const letters = [...subject.ar.replace(MARKS, "")].length;
+  const column = c ? 730 : 1120;
+  const size = Math.round(Math.min(c ? 240 : 300, column / (0.42 * letters)));
+  const english = `${t.headline.en}${t.kicker ? ` ${t.kicker.en}` : ""}`;
+  const scale = 0.7;
+  const [, , , bh] = c?.box ?? [0, 0, 0, 0];
+  const edgeLine = [[7, 0], [-7, 0], [0, 7], [0, -7], [5, 5], [-5, 5], [5, -5], [-5, -5]]
+    .map(([x, y]) => `drop-shadow(${x}px ${y}px 0 #fffaf0)`).join(" ");
+  return (
+    <AbsoluteFill style={{ background: `radial-gradient(circle at ${c ? 26 : 50}% 52%, ${centre} 0%, ${edge} 72%)` }}>
+      {c ? (
+        <div style={{ position: "absolute", inset: 0, filter: `${edgeLine} drop-shadow(0 14px 18px rgba(0, 0, 0, 0.35))` }}>
+          <CharacterView c={c} x={292} floorY={22 + (bh + 80) * scale} scale={scale} audio={null} />
+        </div>
+      ) : null}
+      <div
+        style={{
+          position: "absolute", right: 58, top: 0, bottom: 84, width: column, display: "flex", flexDirection: "column",
+          alignItems: c ? "flex-end" : "center", justifyContent: "center",
+        }}
+      >
+        {other ? (
+          <div
+            dir="rtl"
+            style={{
+              padding: "0 30px 12px", borderRadius: 18, background: "#ffd34d", color: "#17130a", fontFamily: FONT.arabic,
+              fontWeight: 700, fontSize: 70, lineHeight: 1.35, whiteSpace: "nowrap", boxShadow: "0 8px 0 rgba(0, 0, 0, 0.28)",
+            }}
+          >
+            {other.ar}
+          </div>
+        ) : null}
+        <div
+          dir="rtl"
+          style={{
+            marginTop: 6, fontFamily: FONT.arabic, fontWeight: 700, fontSize: size, lineHeight: 1.38, color: "#fffaf0",
+            whiteSpace: "nowrap", textShadow: "0 8px 0 rgba(0, 0, 0, 0.32)",
+          }}
+        >
+          {subject.ar}
+        </div>
+        {/* One line, inside the column whatever its length (Lora advances about 0.55 em a letter). */}
+        <div style={{ fontFamily: FONT.latin, fontSize: Math.min(36, Math.floor(column / (0.56 * english.length))), fontWeight: 600, color: "rgba(255, 250, 240, 0.88)", whiteSpace: "nowrap" }}>
+          {english}
+        </div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 /** Paper-cut style (docs/styles.md): a place of the episode in paper, the character's silhouette seen
  * from close on the left, the words cut in a strip of dark paper on the right. */
 const PaperThumb: React.FC<{ t: ThumbnailData; c: Character | null }> = ({ t, c }) => {
@@ -186,11 +264,15 @@ const PaperThumb: React.FC<{ t: ThumbnailData; c: Character | null }> = ({ t, c 
   );
 };
 
-export const Thumbnail: React.FC<ThumbnailProps> = ({ data, layout }) => {
+export const Thumbnail: React.FC<ThumbnailProps> = ({ data, layout, style: asked }) => {
   const t = data?.thumbnail;
   if (!t) return null;
-  if (data?.style === "paper") return <PaperThumb t={t} c={t.character ?? null} />;
+  const style = asked ?? data?.style ?? "flat";
+  const kit = KITS[style];
+  if (kit) return <kit.Thumb t={t} c={t.character ?? null} />;
+  if (style === "paper") return <PaperThumb t={t} c={t.character ?? null} />;
   const chosen = layout ?? t.layout;
+  if (chosen === "poster") return <Poster t={t} c={t.character ?? null} />;
   if (chosen === "title" || !t.character) return <Title t={t} />;
   return chosen === "close-up" ? <CloseUp t={t} c={t.character} /> : <Scene t={t} c={t.character} />;
 };

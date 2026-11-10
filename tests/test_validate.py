@@ -81,12 +81,29 @@ def test_backgrounds_and_characters_come_from_the_closed_catalogs(copy):
 
 
 def test_a_style_that_is_not_drawn_is_refused(copy):
-    """docs/styles.md gives chalk to the misconceptions and illumination to the collections: until
-    they are built, an episode cannot be set in them (2026-11-09: only flat and paper are drawn)."""
+    """A style in reserve (watercolor) draws no place yet: an episode cannot be set in it."""
+    ep = copy.episode(EPISODE)
+    ep["style"] = "watercolor"
+    copy.save_episode(ep)
+    refused(copy.validate(), "has no drawing in the style 'watercolor'")
+
+
+def test_a_place_not_drawn_in_the_style_is_refused(copy):
+    """Chalk draws the places of the misconceptions episodes (2026-11-10), not those of the stories
+    of al-Kahf, drawn in the flat style only."""
+    ep = copy.episode("khidr")
+    ep["style"] = "chalk"
+    copy.save_episode(ep)
+    refused(copy.validate(), "background 'confluence' has no drawing in the style 'chalk'")
+
+
+def test_the_misconceptions_episodes_can_be_set_in_chalk(copy):
+    """Every place and pose of khushu is drawn in chalk: it validates in that style."""
     ep = copy.episode(EPISODE)
     ep["style"] = "chalk"
     copy.save_episode(ep)
-    refused(copy.validate(), "has no drawing in the style 'chalk'")
+    done = copy.validate()
+    assert done.returncode == 0 and " 0 error(s)" in done.stdout, done.stdout[-2000:]
 
 
 def test_the_voice_says_the_words_on_screen(copy):
@@ -120,3 +137,45 @@ def test_a_final_render_needs_validated_sources(copy):
     refused(done, f"source '{quoted}' is not validated yet")
     plain = copy.validate()
     assert plain.returncode == 0 and "warning" in plain.stdout    # a warning without --release
+
+
+def warned(done, message: str) -> None:
+    assert done.returncode == 0, done.stdout[-2000:] + done.stderr[-2000:]
+    assert any(line.startswith("warning ") and message in line for line in done.stdout.splitlines()), done.stdout[-2000:]
+
+
+def test_a_reel_being_written_must_give_something_to_look_at(copy):
+    """Audit of 2026-11-09: 27 % of the scenes drawn, the picture a card of text the rest of the time.
+    A reel the owner validated stays as is; one being written is told."""
+    ep = copy.episode(EPISODE)
+    of = lambda r: [s for s in ep["scenes"] if s.get("reel") == r["id"]]
+    drawn = lambda r: sum(1 for s in of(r) if s["visual"]["template"] == "scene")
+    reel = next(r for r in ep["reels"] if 3 * drawn(r) < len(of(r)))      # a reel of cards, as published
+    assert " 0 warning(s)" in copy.validate().stdout             # validated: nothing said
+    del reel["validated_by"]
+    copy.save_episode(ep)
+    done = copy.validate()
+    warned(done, f"[{reel['id']}]")
+    assert "scenes are drawn (template: scene): at least a third" in done.stdout
+
+
+def test_three_cards_of_narration_in_a_row_are_told(copy):
+    ep = copy.episode(EPISODE)
+    reel = ep["reels"][0]
+    del reel["validated_by"]
+    cards = [s for s in ep["scenes"] if s.get("reel") == reel["id"] and s["visual"]["template"] == "title-card"]
+    others = [s for s in ep["scenes"] if s not in cards]
+    at = next(i for i, s in enumerate(others) if s.get("reel") == reel["id"])
+    ep["scenes"] = others[:at] + cards + others[at:]              # the reel's title cards one after the other
+    copy.save_episode(ep)
+    warned(copy.validate(), f"{len(cards)} cards of narration in a row ({cards[0]['id']} … {cards[-1]['id']})")
+
+
+def test_a_manuscript_page_draws_silhouettes(copy):
+    """Illumination has no faces: a pose only the Open Peeps figures have is refused there."""
+    ep = copy.episode(EPISODE)
+    ep["style"] = "illumination"
+    copy.save_episode(ep)
+    done = copy.validate()
+    refused(done, "in the style 'illumination'")
+    assert "pose 'open-hands' not in catalog for 'narrator' in the style 'illumination'" in done.stdout

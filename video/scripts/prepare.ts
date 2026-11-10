@@ -101,6 +101,8 @@ type EpisodeFile = {
     layout: ThumbnailData["layout"];
     headline: { ar: string; en: string };
     kicker?: { ar: string; en: string };
+    big?: ThumbnailData["big"];
+    color?: ThumbnailData["color"];
     character?: { id: string; pose: string; mood: string };
     background: string;
     validated_by?: string;
@@ -135,7 +137,11 @@ type CatalogCharacter = {
   moods: string[];
 };
 
-/** A scene's character, resolved to its Open Peeps pieces (or, in the paper style, to its silhouette
+/** Styles whose people are silhouettes with no face (video/src/styles/paper/silhouettes.ts: cut paper,
+ * painted flat in a manuscript); the others draw the Open Peeps figures (flat, chalk). */
+const SILHOUETTE_STYLES = ["paper", "illumination"];
+
+/** A scene's character, resolved to its Open Peeps pieces (or, in a silhouette style, to its silhouette
  * pose); any unknown name is an error. */
 function resolveCharacter(c: { id: string; pose: string; mood: string; talking?: boolean },
                           catalog: Record<string, CatalogCharacter>, where: string, style: string = "flat"): Character {
@@ -143,8 +149,8 @@ function resolveCharacter(c: { id: string; pose: string; mood: string; talking?:
     throw new Error(`${where}: character ${c.id}: ${msg}`);
   };
   const spec = catalog[c.id] ?? fail("not in content/characters.yaml");
-  if (style === "paper") {
-    if (!(spec.paper_poses ?? []).includes(c.pose)) fail(`pose '${c.pose}' has no paper silhouette (paper_poses)`);
+  if (SILHOUETTE_STYLES.includes(style)) {
+    if (!(spec.paper_poses ?? []).includes(c.pose)) fail(`pose '${c.pose}' has no silhouette (paper_poses)`);
     if (!spec.moods.includes(c.mood)) fail(`mood '${c.mood}' not in the catalog`);
     return { id: c.id, pose: c.pose, mood: c.mood, talking: c.talking ?? false, body: "silhouette",
              kind: c.pose === "sitting" ? "sitting" : "standing", box: [0, 0, 0, 0], seat: null,
@@ -404,6 +410,8 @@ function main() {
         layout: t.layout,
         headline: t.headline,
         kicker: t.kicker ?? null,
+        big: t.big === "kicker" && t.kicker ? "kicker" : "headline",
+        color: t.color ?? null,
         character: t.character ? resolveCharacter(t.character, catalog, where, ep.style ?? "flat") : null,
         background: t.background,
         validated_by: t.validated_by ?? null,
@@ -416,6 +424,7 @@ function main() {
       narration_language: ep.narration_language,
       // The page's name, on every frame (content/publish.yaml): a reposted video keeps its source.
       handle: load<{ handle?: string }>(join(CONTENT, "publish.yaml")).handle ?? null,
+      handles: load<{ handles?: Record<string, string> }>(join(CONTENT, "publish.yaml")).handles ?? {},
       publish: ep.publish ?? null,
       thumbnail,
       reels: ep.reels,

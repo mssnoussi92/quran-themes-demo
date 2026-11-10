@@ -4,7 +4,7 @@ import { AbsoluteFill } from "remotion";
 import { BACKGROUNDS } from "./backgrounds/Backgrounds";
 import { FONT } from "./fonts";
 import { FORMATS } from "./formats";
-import { STAGE } from "./templates/cards";
+import { STAGE } from "./formats";
 
 const SCALE = 0.3;
 const LABEL = 300;

@@ -7,7 +7,11 @@ description: Render an episode of quran-themes-demo for the owner (workflow rend
 
 The owner publishes by hand from the `<episode>-latest` pre-release: `<episode>-16x9.mp4` (YouTube),
 `<episode>-9x16.mp4`, one MP4 per reel, `<episode>-thumbnail.png`, and in its notes the title and
-text to paste for each video (`video/scripts/publish.ts`). Since 2026-11-08 the owner validates
+text to paste for each video (`video/scripts/publish.ts`). Every 9:16 video also has its **TikTok
+version** (`<reel>-tiktok.mp4`, `<episode>-9x16-tiktok.mp4`), signed `@quran.words.daily`: the page's
+name on TikTok, where `@quran_words_daily` is someone else's account (`content/publish.yaml`,
+`handles`). The notes give TikTok its own block, with that file's name and that signature: when you
+hand over the links, say which file goes to TikTok. Since 2026-11-08 the owner validates
 **once, at the end, on the videos** (their decision): a candidate render first, then their word,
 then the same videos become the final ones. Nothing is validated by Claude; Claude only records the
 owner's word.

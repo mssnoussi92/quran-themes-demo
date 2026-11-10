@@ -132,31 +132,42 @@ function main() {
   }
   section("Nouveaux fonds", [...backgrounds].map(([bg, sid]) => `- \`${bg}\` (d'abord ${where(sid)})`));
 
-  // 5b. In the paper-cut style (docs/styles.md): places and characters whose paper drawing the owner
-  // has not seen yet (`paper_validated_by` in content/backgrounds.yaml and content/characters.yaml).
-  if (data.style === "paper") {
-    const paperCatalog = catalog as Record<string, { validated_by?: string; paper_validated_by?: string }>;
+  // 5b. In a style other than the flat one (docs/styles.md): the places whose drawing in that style the
+  // owner has not seen yet (`<style>_validated_by` in content/backgrounds.yaml) and, where people are
+  // silhouettes (paper, illumination), the silhouettes not seen yet (`paper_validated_by` in
+  // content/characters.yaml: the same shapes in both). Chalk traces the Open Peeps figures of the
+  // character sheet: nothing new to validate there.
+  const STYLE_NAMES: Record<string, { title: string; place: string }> = {
+    paper: { title: "Papier découpé", place: "en papier" },
+    chalk: { title: "Craie", place: "à la craie" },
+    illumination: { title: "Enluminure", place: "en enluminure" },
+  };
+  const styleName = STYLE_NAMES[data.style];
+  if (styleName) {
+    const key = `${data.style}_validated_by`;
+    const styleCatalog = catalog as Record<string, Record<string, string | undefined>>;
     const people = (parse(readFileSync(join(ROOT, "content/characters.yaml"), "utf8")) as {
       characters: Record<string, { paper_validated_by?: string }>;
     }).characters;
+    const silhouettes = data.style === "paper" || data.style === "illumination";
     const drawings: string[] = [];
     const seen = new Set<string>();
     for (const s of data.scenes) {
       const bg = s.visual.background;
-      if (bg && !backgrounds.has(bg) && !paperCatalog[bg]?.paper_validated_by && !seen.has(`bg:${bg}`)) {
+      if (bg && !backgrounds.has(bg) && !styleCatalog[bg]?.[key] && !seen.has(`bg:${bg}`)) {
         seen.add(`bg:${bg}`);
-        drawings.push(`- le lieu \`${bg}\` en papier (d'abord ${where(s.id)})`);
+        drawings.push(`- le lieu \`${bg}\` ${styleName.place} (d'abord ${where(s.id)})`);
       }
-      for (const c of s.visual.characters) {
+      for (const c of silhouettes ? s.visual.characters : []) {
         if (!people[c.id]?.paper_validated_by && !seen.has(`ch:${c.id}`)) {
           seen.add(`ch:${c.id}`);
           drawings.push(`- la silhouette de \`${c.id}\` (d'abord ${where(s.id)})`);
         }
       }
     }
-    if (data.thumbnail && !backgrounds.has(data.thumbnail.background) && !paperCatalog[data.thumbnail.background]?.paper_validated_by && !seen.has(`bg:${data.thumbnail.background}`))
-      drawings.push(`- le lieu \`${data.thumbnail.background}\` en papier (miniature)`);
-    section("Papier découpé : dessins nouveaux (style, lieux, silhouettes)", drawings);
+    if (data.thumbnail && !backgrounds.has(data.thumbnail.background) && !styleCatalog[data.thumbnail.background]?.[key] && !seen.has(`bg:${data.thumbnail.background}`))
+      drawings.push(`- le lieu \`${data.thumbnail.background}\` ${styleName.place} (miniature)`);
+    section(`${styleName.title} : dessins nouveaux (style, lieux${silhouettes ? ", silhouettes" : ""})`, drawings);
   }
 
   // 6. Spellings for the voice not decided by the owner yet.
