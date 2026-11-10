@@ -79,7 +79,7 @@ jobs:
       reels: ${{ steps.reels.outputs.reels }}
       legs: ${{ steps.reels.outputs.legs }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Check the inputs
         run: |
@@ -87,7 +87,7 @@ jobs:
             || { echo "::error::invalid episode, reel or speaker"; exit 1; }
           test -f "content/episodes/$EPISODE.yaml" || { echo "::error::no content/episodes/$EPISODE.yaml"; exit 1; }
 
-      - uses: astral-sh/setup-uv@v6
+      - uses: astral-sh/setup-uv@v7
 
       # The reels to render: the one asked for, or all of the episode's. The legs of the render:
       # the whole episode in each format and the reels (with the thumbnail), or the one reel.
@@ -138,7 +138,7 @@ jobs:
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
           "$HOME/.local/bin/ffmpeg" -hide_banner -version | head -1
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -154,7 +154,7 @@ jobs:
         run: node scripts/publish.ts "$EPISODE" "$REEL" > /dev/null
 
       - name: Cache model weights
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/huggingface
           key: hf-voicetut-${{ hashFiles('requirements/voicetut.txt') }}
@@ -162,7 +162,7 @@ jobs:
       # The reciter's files of whole surahs (Tawfiq As-Sayegh, mp3quran.net), each verse cut out of them
       # where content/recitations/<reciter>.json says: downloaded once (surah 2 is 110 MB).
       - name: Cache surah recitations
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: build/recitations
           key: recitations-${{ hashFiles('content/recitations/**') }}
@@ -170,7 +170,7 @@ jobs:
 
       # Lines already synthesised with the same text and voice are reused (tools/audio/build.py).
       - name: Cache episode audio
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: build/audio/${{ inputs.episode }}
           key: audio-${{ inputs.episode }}-${{ inputs.speaker }}-${{ hashFiles('content/**') }}
@@ -200,7 +200,7 @@ jobs:
         working-directory: video
         run: npm run data
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: episode-data
           path: |
@@ -226,9 +226,9 @@ jobs:
       REELS: ${{ needs.audio.outputs.reels }}
       LEG: ${{ matrix.leg }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: astral-sh/setup-uv@v6
+      - uses: astral-sh/setup-uv@v7
 
       # For the lengths and the loudness printed after the render (Remotion brings its own to encode).
       - name: ffmpeg (static build)
@@ -239,7 +239,7 @@ jobs:
           ln -sf "$(.venv-tools/bin/python -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())')" "$HOME/.local/bin/ffmpeg"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -251,7 +251,7 @@ jobs:
 
       # video/public/data and video/public/audio as the audio job made them. No « npm run data » here:
       # without the audio it would write estimated lengths (and « DRAFT » on the videos).
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: episode-data
           path: .
@@ -295,7 +295,7 @@ jobs:
           done
 
       # Kept whatever happens next: an error while writing the release does not cost a render.
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: videos-${{ matrix.leg }}
           path: |
@@ -318,9 +318,9 @@ jobs:
       GH_REPO: ${{ github.repository }}
       RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -332,12 +332,12 @@ jobs:
 
       # The data the videos were rendered from (the notes give each chapter at its minute in the video)
       # and, for a candidate, what validate.py left to look at.
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: episode-data
           path: .
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           pattern: videos-*
           merge-multiple: true
