@@ -9,7 +9,7 @@ import { reminderStarts, selectScenes } from "./scenes.ts";
 import { StyleContext } from "./styles/context";
 import { KITS } from "./styles/kits";
 import { PaperBackdrop } from "./styles/paper/render";
-import { AyahCard, NameCard, SceneCard, SourceCard, TitleCard } from "./templates/cards";
+import { AyahCard, NameCard, SceneCaption, SceneCard, SourceCard, TitleCard } from "./templates/cards";
 import { SubscribeReminder } from "./templates/SubscribeReminder";
 import { Subtitles } from "./templates/Subtitles";
 import { COLOR } from "./theme";
@@ -91,6 +91,7 @@ const SceneBody: React.FC<{ slot: Slot; format: Format }> = ({ slot, format }) =
         </Sequence>
       ) : null}
       <Card scene={scene} format={format} />
+      {scene.visual.template === "scene" && scene.visual.caption ? <SceneCaption scene={scene} format={format} /> : null}
       {/* No subtitle during a transition: nobody speaks, and two boxes would overlap. */}
       <Sequence from={lead} durationInFrames={content} layout="none">
         <Subtitles scene={scene} format={format} />

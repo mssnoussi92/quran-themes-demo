@@ -64,6 +64,33 @@ on the open loop of beat 7 that leads to the next reel. The timings above are fo
 reel lasts what its content needs (owner's decision, 2026-11-08), so the first 3 seconds matter
 even more in a 2-minute reel.
 
+## What the first measure said (Instagram, 2026-11-09)
+
+The beats above were learned from a 12-minute 16:9 video. The first reel measured on strangers says
+they are too slow for a reel: khidr-01 as an Instagram trial reel (118 views, 112 non-followers) kept
+**26.4 %** of its views past 3 seconds, **8 s** watched on average out of 2:00, no share, no follow
+(CLAUDE.md, task 19). What its first 20 seconds were: a still character in a waiting room and a
+general question (« حصلت لك حاجة… ومش فاهم ليه؟ »), a second still character, then three cards of
+text in a row (0:06 to 0:18, where the curve falls fastest), a promise at 0:09 (« three things… and
+the secret ») that the reel does not keep: it ends on « follow us to find out the first one ».
+One reel, few views, no reel to compare with: a direction, not a proof.
+
+What is being tried instead (`content/episodes/khidr-solo.yaml`; **the owner has not decided**: until
+they do, write a story reel both ways when they ask for one):
+
+- **Open on the thing itself**, not on a question about the viewer's life: the strangest concrete
+  fact of the reel, in the story's own terms (« سفينة شالتهم ببلاش… وواحد منهم خرقها! ليه؟ »). The
+  mirror (the viewer's life) comes as the life example and the last line, once the story has paid.
+- **Frame 1 shows it and writes it**: the drawing is the event (the boat holed, not the boat sailing),
+  and the line is in large letters over it (`visual.caption: big`, a scene without characters), so
+  that it is read with the sound off. Render frame 0 and look at it alone: is there a reason to stay?
+- **The promise is kept in the same reel**, and says so (« والسر في آية من سورة الكهف »): a stranger
+  does not follow to get the first answer. A reel that only sets up the next one is not a reel for
+  strangers (khidr-01: its content belongs to the whole episode).
+- **No card of text before the first event**, never two in a row in the first 20 seconds.
+- Time to the answer, not total length, is what to cut: khidr-02 gave its secret at 1:17, the trial
+  gives it at 0:34 with the same two verses (18:71, 18:79).
+
 ## The hook by format (`docs/formats.md`)
 
 The beats stay; what changes is the promise and what the mirror points at.

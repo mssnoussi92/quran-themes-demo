@@ -32,6 +32,9 @@ backgrounds:
   sea-boat:
     description: La mer ouverte et le bateau à voile qui les a pris sans payer, qui tangue
     validated_by: mssnoussi92
+  # Essai khidr-solo (2026-11-10) : l'événement lui-même, pour l'ouverture du reel. À valider sur le rendu candidat.
+  sea-boat-holed:
+    description: Le même bateau, percé, une planche arrachée à la ligne d'eau, l'eau qui entre et gicle, la planche qui flotte à côté, le bateau qui penche
   sea-bird:
     description: Gros plan sur le bord du bateau, le moineau qui pique la mer d'un coup de bec (Bukhari 122, 3401)
     validated_by: mssnoussi92

@@ -180,6 +180,67 @@ export const TitleCard: React.FC<CardProps> = ({ scene, format }) => {
   );
 };
 
+/** The narration line written large over a drawn scene (`visual.caption: big`): what a viewer reads in
+ * the first second of a reel, sound on or off. One phrase per line, each on its own dark strip so that
+ * a line not said yet leaves the picture clear; the first is there from the first frame, the others come
+ * as the voice reaches them (the title card's timing), and the last one, the point of the line, is in
+ * the highlight colour. Drawn above the scene whatever the style. */
+export const SceneCaption: React.FC<CardProps> = ({ scene, format }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const audioStart = useContext(AudioStart);
+  if (!scene.narration) return null;
+  const timed = titlePhrases(scene);
+  const phrases = timed ?? splitPhrases(scene.narration.ar).map((text) => ({ text, start: 0 }));
+  const reel = format.id === "reel";
+  const longest = phrases.reduce((n, p) => Math.max(n, p.text.length), 1);
+  const size = fitSize(reel ? 92 : 72, "x".repeat(longest), 17);
+  return (
+    <div
+      dir="rtl"
+      lang="ar"
+      style={{
+        position: "absolute",
+        top: format.safe.top + (reel ? 64 : 10),
+        left: format.safe.left,
+        right: format.safe.right,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: reel ? 14 : 10,
+      }}
+    >
+      {phrases.map((phrase, i) => {
+        const at = audioStart + Math.round((phrase.start - REVEAL_LEAD) * fps);
+        const t =
+          i === 0 || !timed || frame >= at + REVEAL_FRAMES
+            ? 1
+            : frame < at
+              ? 0
+              : spring({ frame: frame - at, fps, config: { damping: 200 }, durationInFrames: REVEAL_FRAMES });
+        const point = phrases.length > 1 && i === phrases.length - 1;
+        return (
+          <div
+            key={i}
+            style={{
+              ...arabicStyle(FONT.arabic, size, 700, 1.45),
+              color: point ? "#FFD866" : COLOR.text,
+              background: "#0c1422",
+              padding: reel ? "4px 34px 10px" : "2px 28px 8px",
+              borderRadius: 22,
+              textAlign: "center",
+              opacity: t,
+              transform: `translateY(${(1 - t) * 18}px) scale(${0.96 + 0.04 * t})`,
+            }}
+          >
+            {phrase.text}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 /** Word being recited at time t (seconds from the start of the scene), if any. */
 const currentWord = (words: WordTiming[], t: number) => words.find((w) => t >= w.start && t < w.end)?.position;
 
@@ -252,13 +313,24 @@ export const SourceCard: React.FC<CardProps> = ({ scene, format }) => {
   );
 };
 
+/** Letters of a name card that fit on one line at its size (Amiri bold 96 in the panel). */
+const NAMES_ON_A_LINE = { reel: 22, episode: 44 };
+
 export const NameCard: React.FC<CardProps> = ({ scene, format }) => {
   const ink = useInk();
   return (
     <Stage format={format}>
       <Panel kind="name" format={format}>
         <div dir="rtl" lang="ar" style={{ ...arabicStyle(FONT.arabic, 96, 700), color: ink.text }}>
-          {scene.mentions.join(" · ")}
+          {/* Several names too long for one line (9:16): one name per line, never a name cut in two
+              (« عليه السلام »). Names that fit keep their line (« ذو القرنين · النبي ﷺ »). */}
+          {scene.mentions.join(" · ").length > NAMES_ON_A_LINE[format.id]
+            ? scene.mentions.map((name, i) => (
+                <div key={i} style={{ whiteSpace: "nowrap" }}>
+                  {name}
+                </div>
+              ))
+            : scene.mentions.join(" · ")}
         </div>
       </Panel>
     </Stage>

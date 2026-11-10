@@ -110,12 +110,20 @@ const Confluence: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) 
   );
 };
 
-/** The hull and sail of the boat that carried them for nothing (Bukhari 122), bobbing. */
-const Boat: React.FC<{ cx: number; water: number; u: number; t: number }> = ({ cx, water, u, t }) => {
-  const bob = 6 * Math.sin(t * 1.6);
-  const tilt = 1.5 * Math.sin(t * 1.1);
+/** The hull and sail of the boat that carried them for nothing (Bukhari 122), bobbing. `holed`: after
+ * 18:71, a plank torn out at the waterline, the sea splashing at the gap, the boat lower and leaning. */
+const Boat: React.FC<{ cx: number; water: number; u: number; t: number; holed?: boolean }> = ({ cx, water, u, t, holed = false }) => {
+  const bob = 6 * Math.sin(t * 1.6) + (holed ? 0.02 * u : 0);
+  const tilt = (holed ? -5 : 0) + 1.5 * Math.sin(t * 1.1);
   const half = 0.32 * u;
   const deck = water - 0.09 * u;
+  // The gap: on the hull's side, across its two seams, just above the water.
+  const hx = cx - half * 0.4;
+  const hy = deck + 0.058 * u;
+  const gap = [
+    [-0.062, -0.026], [-0.03, -0.04], [-0.006, -0.024], [0.03, -0.038], [0.058, -0.014],
+    [0.046, 0.026], [0.012, 0.018], [-0.018, 0.034], [-0.056, 0.02],
+  ].map(([x, y]) => `${(hx + x * u).toFixed(1)},${(hy + y * u).toFixed(1)}`);
   return (
     <g transform={`translate(0 ${bob}) rotate(${tilt} ${cx} ${water})`} stroke={INK} strokeWidth={LINE} strokeLinejoin="round">
       {/* mast and sail */}
@@ -130,6 +138,21 @@ const Boat: React.FC<{ cx: number; water: number; u: number; t: number }> = ({ c
       />
       <line x1={cx - half * 0.95} y1={deck + 0.035 * u} x2={cx + half * 0.95} y2={deck + 0.035 * u} strokeWidth={4} />
       <line x1={cx - half * 0.8} y1={deck + 0.075 * u} x2={cx + half * 0.8} y2={deck + 0.075 * u} strokeWidth={4} />
+      {holed ? (
+        <>
+          <polygon points={gap.join(" ")} fill="#2A1A10" strokeWidth={5} />
+          {/* splinters left on the edges of the gap */}
+          <path d={`M ${hx - 0.03 * u} ${hy - 0.04 * u} l ${0.012 * u} ${0.024 * u} M ${hx + 0.03 * u} ${hy - 0.038 * u} l ${-0.008 * u} ${0.022 * u} M ${hx - 0.018 * u} ${hy + 0.034 * u} l ${0.01 * u} ${-0.02 * u}`} fill="none" stroke="#C99A5B" strokeWidth={5} strokeLinecap="round" />
+          {/* the sea splashing at the gap: drops thrown up and falling back, one after the other */}
+          {Array.from({ length: 7 }, (_, k) => {
+            const p = (t * 1.3 + k / 7) % 1;
+            const side = (k % 2 ? 1 : -1) * (0.035 + 0.02 * (k % 3));
+            const x = hx + side * u * (0.5 + 1.6 * p);
+            const y = hy - 0.02 * u - 0.16 * u * 4 * p * (1 - p) * (0.6 + 0.13 * (k % 4));
+            return <circle key={k} cx={x} cy={y} r={0.013 * u * (1 - 0.45 * p)} fill="#EAF6FB" strokeWidth={3} opacity={p > 0.9 ? (1 - p) * 10 : 1} />;
+          })}
+        </>
+      ) : null}
     </g>
   );
 };
@@ -150,6 +173,47 @@ const SeaBoat: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => 
       <Boat cx={w / 2} water={water} u={u} t={t} />
       <rect y={water + 0.03 * u} width={w} height={h - water} fill="#3F86B0" />
       <Waves x0={0} x1={w} top={water + 0.05 * u} bottom={h} t={t + 5} />
+    </Svg>
+  );
+};
+
+/** The boat just after al-Khidr tore it open (18:71): the event itself, what a reel can open on. The
+ * torn plank floats away beside it; rings spread on the water under the gap. Nobody is drawn. */
+const SeaBoatHoled: React.FC<BackgroundProps> = ({ width: w, height: h, floorY }) => {
+  const t = useSeconds();
+  const u = Math.min(w, h);
+  const horizon = floorY - 0.4 * u;
+  const water = floorY - 0.06 * u;
+  const cx = w / 2;
+  const ZOOM = 1.4;
+  const ring = (t * 0.8) % 1;
+  const px = cx - 0.4 * u - 10 * t;
+  const py = water + 0.1 * u + 5 * Math.sin(t * 1.9);
+  return (
+    <Svg w={w} h={h}>
+      <Sky id="sea-boat-holed-sky" w={w} to={horizon} top="#BFE2F0" bottom="#FCF1DA" />
+      {/* the sun low on the left: the top of the picture is left to the line written over it */}
+      <circle cx={w * 0.5 - 0.36 * u} cy={horizon - 0.11 * u} r={0.065 * u} fill="#FFD866" stroke={INK} strokeWidth={LINE} />
+      <rect y={horizon} width={w} height={h - horizon} fill="#4F9DC8" />
+      <line x1={0} y1={horizon} x2={w} y2={horizon} stroke={INK} strokeWidth={LINE} />
+      <Waves x0={0} x1={w} top={horizon + 20} bottom={water - 0.02 * u} t={t} />
+      {/* seen from closer than the boat sailing (sea-boat): the gap is what the picture is about */}
+      <g transform={`translate(${cx} ${water}) scale(${ZOOM}) translate(${-cx} ${-water})`}>
+        <Boat cx={cx} water={water} u={u} t={t} holed />
+      </g>
+      <rect y={water + 0.03 * u} width={w} height={h - water} fill="#3F86B0" />
+      <Waves x0={0} x1={w} top={water + 0.05 * u} bottom={h} t={t + 5} />
+      {/* rings on the water under the gap */}
+      {[0, 0.5].map((d) => {
+        const r = (ring + d) % 1;
+        return (
+          <ellipse key={d} cx={cx - 0.18 * u} cy={water + 0.06 * u} rx={0.06 * u + 0.2 * u * r} ry={0.014 * u + 0.04 * u * r} fill="none" stroke="#EAF6FB" strokeWidth={5} opacity={0.9 * (1 - r)} />
+        );
+      })}
+      {/* the torn plank, drifting away */}
+      <g transform={`rotate(${-14 + 4 * Math.sin(t * 1.3)} ${px} ${py})`} stroke={INK} strokeWidth={LINE} strokeLinejoin="round">
+        <path d={`M ${px - 0.07 * u} ${py - 0.014 * u} L ${px + 0.06 * u} ${py - 0.014 * u} L ${px + 0.075 * u} ${py} L ${px + 0.058 * u} ${py + 0.014 * u} L ${px - 0.07 * u} ${py + 0.014 * u} L ${px - 0.058 * u} ${py} Z`} fill="#A8693B" />
+      </g>
     </Svg>
   );
 };
@@ -661,6 +725,7 @@ export const STORY_BACKGROUNDS: Record<string, React.FC<BackgroundProps>> = {
   "old-city": OldCity,
   confluence: Confluence,
   "sea-boat": SeaBoat,
+  "sea-boat-holed": SeaBoatHoled,
   "sea-bird": SeaBird,
   road: Road,
   "village-wall": VillageWall,

@@ -1,0 +1,65 @@
+{
+  "note": "What Whisper heard in each narration take and any sound after its last word (tools/audio/listen.py --episode --save), tied to the raw take; read by the candidate render's list « à vérifier » (video/scripts/review.ts). Not a validation.",
+  "takes": {
+    "boat-bridge": {
+      "raw_sha256": "ce30542f952728c7f075f4ee72536c19d7549579a81270e22ab48699e07c6d94",
+      "heard": "السر الخضر قاله بعدين",
+      "differs": null,
+      "sound": null
+    },
+    "boat-hook": {
+      "raw_sha256": "814d359a4bcdf3ab9fbc320797ee42a277f8f922b81f5bec2c932745d439c475",
+      "heard": "سفينة شالتهم ببلاش وواحد منهم خرقه ليه؟",
+      "differs": "خرقها -> خرقه",
+      "sound": null
+    },
+    "boat-last": {
+      "raw_sha256": "b6e366d38dd413476ba17dae8537c1a41963f6d92934f0ca431641de8dca9cca",
+      "heard": "لما حاجة تتكسر في حياتك افتكر السفينة",
+      "differs": null,
+      "sound": null
+    },
+    "boat-lesson-1": {
+      "raw_sha256": "699e7cf66b810ba0e48b2a84dedd4953944a8656f76822240368678de004c378",
+      "heard": "العيب اللي في السفينة هو اللي حماها",
+      "differs": null,
+      "sound": null
+    },
+    "boat-lesson-2": {
+      "raw_sha256": "852d1d93a790c270a824228e2b4c83d8c02fc83ffe3c08d30752a7ba947d6d61",
+      "heard": "خسارة صغيرة حمتهم من خسارة أكبر والحكمة هنا اتكشفت بسرعة",
+      "differs": null,
+      "sound": null
+    },
+    "boat-life-1": {
+      "raw_sha256": "62c975d04f5657cc4c0a34047ed96fe0450dbcb0aa3e0ed7155590910d8c2c3d",
+      "heard": "زي لما القطر يفوتك وتتعصب انك اتأخرت",
+      "differs": null,
+      "sound": null
+    },
+    "boat-life-2": {
+      "raw_sha256": "a1ba8c4e734552280b796c4561620e30fb0659b42777ece541ec4c38a48aa82d",
+      "heard": "وبعد ساعة تعرف أنه عطل في نص الطريق",
+      "differs": null,
+      "sound": null
+    },
+    "boat-moses": {
+      "raw_sha256": "e93026cb99a4662e28d9151a2b5ae398b78b9d7e138e82c3508e5b2833df9d2d",
+      "heard": "موسى مقدرش يسكت خرقتها عشان تغرق أهلها",
+      "differs": "ما قدرش -> مقدرش",
+      "sound": null
+    },
+    "boat-verse-intro": {
+      "raw_sha256": "f41682dd192baa4b5c08d809bba3a9f8d9b11d3d2dd3b133fef29c92e13d5cee",
+      "heard": "قال ربنا سبحانه وتعالى",
+      "differs": null,
+      "sound": null
+    },
+    "boat-who": {
+      "raw_sha256": "dee12c3fef7af05ab84d61d79de5048c58540a303560e734700433b865a6a2f8",
+      "heard": "ده حصل بين موسى عليه السلام والخضر والصر في آية من سورة الكهف",
+      "differs": "والسر -> والصر",
+      "sound": null
+    }
+  }
+}

@@ -267,6 +267,14 @@ def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, 
 
         # Characters: closed catalog, fictional only, never with real people.
         chars = visual.get("characters", [])
+        # The line written large over a drawn scene: it takes the top of the picture, where people stand.
+        if "caption" in visual:
+            if template != "scene":
+                report.error(where, "caption is for the 'scene' template (a card already writes its line)")
+            elif chars:
+                report.error(where, "caption: no character in a scene that writes its line over the picture")
+            if not narration.get("ar"):
+                report.error(where, "caption needs narration.ar (the line it writes)")
         if chars and template != "scene":
             report.error(where, "characters are only allowed in the 'scene' template")
         if chars and scene.get("mentions"):

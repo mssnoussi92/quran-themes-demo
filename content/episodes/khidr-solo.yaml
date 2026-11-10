@@ -1,0 +1,174 @@
+# Essai (2026-11-10) : un reel de l'histoire de Moussa et al-Khadir qui tient seul, pour quelqu'un qui n'a
+# rien vu d'autre. Écrit après le premier essai sur Instagram (khidr-01 en « essai reel », 118 vues dont 112
+# de non-abonnés : 26,4 % seulement ont passé les 3 premières secondes, durée de vue moyenne 8 s sur 2:00 ;
+# analyse dans CLAUDE.md, tâche 19). Ce qui change par rapport à khidr-02 (le bateau, 1:55) :
+# - l'ouverture est l'événement lui-même (le bateau percé), pas une question générale ; la phrase est écrite
+#   en grand sur l'image dès la première image (`caption: big`) ;
+# - le secret (18:79) arrive à 0:34 au lieu de 1:17 ; le moineau (Bukhari 3401) et les versets 18:72-73
+#   restent dans khidr-02 et dans l'épisode entier ;
+# - aucune suite n'est demandée pour comprendre : pas d'appel à suivre dit, la fin est la phrase à retenir.
+# Les règles tiennent : chaque événement raconté est suivi de son verset (18:71), la leçon de son exemple.
+# Deux alertes de validate.py restent, voulues : le style (les histoires vont en papier, docs/styles.md ; les
+# lieux du bateau n'existent qu'en plat) et l'absence de miniature (un seul reel, pas d'épisode pour YouTube).
+# Répliques reprises telles quelles de khidr-02, avec leurs prises figées (`take_from`) : boat-moses,
+# boat-verse-intro, boat-bridge, boat-lesson-1, boat-lesson-2, boat-life-1, boat-life-2. Lignes de l'IA,
+# nouvelles, à vérifier en premier : boat-hook, boat-who, boat-last. Rien n'est validé.
+# Style : `flat`, comme khidr (les lieux de l'histoire ne sont pas dessinés en papier).
+episode: khidr-solo
+title: { ar: "موسى والخضر", en: "Moses and al-Khidr" }
+format: story-linear   # un événement, sa preuve, son secret, la leçon : dans l'ordre (docs/formats.md)
+style: flat
+narration_language: ar-egy
+publish:
+  title: { en: "Moses, al-Khidr and the boat", ar: "موسى والخضر والسفينة" }
+  description:
+    en: "A boat carried Moses and al-Khidr for free… and al-Khidr tore a hole in it. Why? The answer is one verse of Surat al-Kahf: the damage is what saved the boat."
+    ar: "سفينة شالت موسى والخضر ببلاش… والخضر خرقها. ليه؟ الإجابة في آية من سورة الكهف: العيب هو اللي حماها."
+  hashtags: ["#Qadr", "#القدر", "#SurahAlKahf"]
+reels:
+  - id: khidr-solo-01
+    title: { ar: "خرق السفينة… ليه؟", en: "He tore a hole in the boat… why?" }
+    publish:
+      title: { en: "He tore a hole in the boat that carried them for free", ar: "خرق السفينة اللي شالتهم ببلاش" }
+      description:
+        en: "Al-Khidr tears a hole in the boat that carried him and Moses for free. Moses can't keep quiet. The secret is in one verse of Surat al-Kahf: a small loss… that spared them a bigger one."
+        ar: "الخضر خرق السفينة اللي شالته هو وموسى ببلاش. موسى ما قدرش يسكت. والسر في آية من سورة الكهف: خسارة صغيرة… حمتهم من خسارة أكبر."
+scenes:
+  # Ouverture sur l'événement (Bukhari 122 : « فحملوهما بغير نول » ; 18:71), sans nommer encore : qui ? pourquoi ?
+  - id: boat-hook
+    role: hook
+    reel: khidr-solo-01
+    audio: tts
+    mentions: ["الخضر"]
+    narration:
+      ar: "سفينة شالتهم ببلاش… وواحد منهم خرقها! ليه؟"
+      en: "A boat carried them for free… and one of them tore a hole in it! Why?"
+    say_ar: "سفينة شالتهم ببلاش… وواحد منهم خَرَقْها! ليه؟"
+    visual:
+      template: scene
+      background: sea-boat-holed
+      caption: big
+  # Promesse (ligne de l'IA) : qui, et ce que le reel donne ; tenue à 0:34 (18:79).
+  - id: boat-who
+    role: promise
+    reel: khidr-solo-01
+    audio: tts
+    mentions: ["موسى عليه السلام", "الخضر"]
+    narration:
+      ar: "ده حصل بين موسى عليه السلام والخضر… والسر في آية من سورة الكهف."
+      en: "This happened between Moses, peace be upon him, and al-Khidr… and the secret is in one verse of Surat al-Kahf."
+    say_ar: "ده حصل بين موسى عليه السلام والخَضِر… والسر في آية من سورة الكهف."
+    visual:
+      template: name-card
+  # Même réplique que khidr-02 (ship-3), prise figée reprise ; ici écrite sur l'image du bateau.
+  - id: boat-moses
+    role: event
+    reel: khidr-solo-01
+    audio: tts
+    mentions: ["موسى عليه السلام"]
+    narration:
+      ar: "موسى ما قدرش يسكت: خرقتها عشان تغرّق أهلها؟!"
+      en: "Moses couldn't keep quiet: you tore it open to drown its people?!"
+    say_ar: "موسى ما قدرش يسكت: خَرَقْتها عشان تغرّق أهلها؟!"
+    visual:
+      template: scene
+      background: sea-boat-holed
+      caption: big
+  - id: boat-verse-intro
+    role: evidence
+    reel: khidr-solo-01
+    audio: tts
+    narration:
+      ar: "قال ربنا سبحانه وتعالى:"
+      en: "Our Lord, glorified and exalted is He, said:"
+    visual:
+      template: title-card
+  - id: boat-verse
+    role: evidence
+    reel: khidr-solo-01
+    source: quran.18.71
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Même réplique que khidr-02 (ship-bridge) ; le verset suit aussitôt, sans seconde formule.
+  - id: boat-bridge
+    role: evidence
+    reel: khidr-solo-01
+    audio: tts
+    mentions: ["الخضر"]
+    narration:
+      ar: "السر؟ الخضر قاله بعدين:"
+      en: "The secret? Al-Khidr told him later:"
+    say_ar: "السر؟ الخَضِر قاله بعدين:"
+    visual:
+      template: title-card
+  - id: boat-secret
+    role: evidence
+    reel: khidr-solo-01
+    source: quran.18.79
+    audio: recitation
+    visual:
+      template: ayah-card
+      highlight: words
+  # Mêmes répliques que khidr-02 (ship-lesson-1, ship-lesson-2), tirées de 18:79.
+  - id: boat-lesson-1
+    role: lesson
+    reel: khidr-solo-01
+    audio: tts
+    narration:
+      ar: "العيب اللي في السفينة… هو اللي حماها."
+      en: "The damage to the boat… is what saved it."
+    visual:
+      template: scene
+      background: sea-boat-holed
+      caption: big
+  - id: boat-lesson-2
+    role: lesson
+    reel: khidr-solo-01
+    audio: tts
+    narration:
+      ar: "خسارة صغيرة… حمتهم من خسارة أكبر. والحكمة هنا… اتكشفت بسرعة."
+      en: "A small loss… that spared them a bigger one. And here, the wisdom… was revealed quickly."
+    say_ar: "خسارة صغيرة… حمتهم من خسارة أكبر. والحكمة هنا… اتْكَشَفِت بسرعة."
+    visual:
+      template: scene
+      background: sea-boat
+  # Exemple de vie de khidr-02 (ship-life-1, ship-life-2). Scène type.
+  - id: boat-life-1
+    role: example
+    reel: khidr-solo-01
+    audio: tts
+    narration:
+      ar: "زي لما القطر يفوتك… وتتعصب إنك اتأخرت."
+      en: "Like when you miss your train… and you're angry about being late."
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: salma, pose: standing, mood: worried, talking: false }
+  - id: boat-life-2
+    role: example
+    reel: khidr-solo-01
+    audio: tts
+    narration:
+      ar: "وبعد ساعة تعرف… إنه عطل في نص الطريق."
+      en: "And an hour later you find out… it broke down halfway there."
+    visual:
+      template: scene
+      background: street
+      characters:
+        - { id: salma, pose: standing, mood: smiling, talking: false }
+  # Ligne de l'IA : la phrase à retenir, tournée vers celui qui regarde (comme end-last de khidr-05).
+  - id: boat-last
+    role: conclusion
+    reel: khidr-solo-01
+    audio: tts
+    narration:
+      ar: "لما حاجة تتكسر في حياتك… افتكر السفينة."
+      en: "When something breaks in your life… remember the boat."
+    visual:
+      template: scene
+      background: plain
+      characters:
+        - { id: salma, pose: standing, mood: calm, talking: false }

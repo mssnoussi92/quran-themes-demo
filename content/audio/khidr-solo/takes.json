@@ -1,0 +1,38 @@
+{
+  "note": "Narration takes validated by the owner (AI-generated voice, VoiceTut), and candidate takes checked by Claude for the owner's final review (status: candidate). Written by tools/audio/build.py --candidate, --lock and --set-phrases, never by hand.",
+  "takes": {
+    "boat-hook": {
+      "file": "boat-hook.flac",
+      "text": "سفينة شالتهم ببلاش… وواحد منهم خَرَقْها! ليه؟",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "2c29d89091820932",
+      "status": "candidate",
+      "stored": "2026-11-10",
+      "raw_sha256": "814d359a4bcdf3ab9fbc320797ee42a277f8f922b81f5bec2c932745d439c475",
+      "sha256": "eacdf6465c56cb45c7281d805072e710b01118c8699ab2df574bb274721ef8ff"
+    },
+    "boat-last": {
+      "file": "boat-last.flac",
+      "text": "لما حاجة تتكسر في حياتك… افتكر السفينة.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "0a22c49fe8594122",
+      "status": "candidate",
+      "stored": "2026-11-10",
+      "raw_sha256": "b6e366d38dd413476ba17dae8537c1a41963f6d92934f0ca431641de8dca9cca",
+      "sha256": "70c84d81a1863bc5debce0f9b25c2275eea83a4d448a9dcea640aa6b348f5e98"
+    },
+    "boat-who": {
+      "file": "boat-who.flac",
+      "text": "ده حصل بين موسى عليه السلام والخَضِر… والسر في آية من سورة الكهف.",
+      "engine": "voicetut",
+      "speaker": "Mohammed",
+      "key": "3454ee892da9b87a",
+      "status": "candidate",
+      "stored": "2026-11-10",
+      "raw_sha256": "dee12c3fef7af05ab84d61d79de5048c58540a303560e734700433b865a6a2f8",
+      "sha256": "12e9669d7d782ab2f5277adbfc2aca02083ad18a00474926242263a69b38b9d0"
+    }
+  }
+}

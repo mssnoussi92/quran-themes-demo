@@ -84,6 +84,8 @@ export type ResolvedScene = {
     template: Template;
     background: string | null;
     icon: string | null;
+    /** "big": the narration line written large over the drawn scene, phrase by phrase with the voice. */
+    caption: "big" | null;
     highlight: "words" | "none";
     characters: Character[];
   };

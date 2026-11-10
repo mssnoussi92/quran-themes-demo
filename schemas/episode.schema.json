@@ -159,6 +159,10 @@
         "template": { "enum": ["scene", "ayah-card", "source-card", "name-card", "title-card"] },
         "background": { "$ref": "#/$defs/slug" },
         "icon": { "$ref": "#/$defs/slug" },
+        "caption": {
+          "description": "A drawn scene that also writes its narration line (narration.ar) in large letters over the picture, phrase by phrase as the voice says it, the first phrase from the first frame: for the opening line of a reel (what a viewer reads in the first second, sound on or off) and for the sentence to keep. Only on a scene without characters (the text takes the top of the picture)",
+          "enum": ["big"]
+        },
         "highlight": { "enum": ["words", "none"] },
         "characters": {
           "type": "array",
