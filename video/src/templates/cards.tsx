@@ -54,7 +54,7 @@ const useInk = () => {
 };
 
 /** A framed panel for quotations: verses and hadiths. */
-const Panel: React.FC<{ kind: PanelKind; format: Format; children: React.ReactNode }> = ({ kind, format, children }) => {
+const Panel: React.FC<{ kind: PanelKind; format: Format; solid?: boolean; children: React.ReactNode }> = ({ kind, format, solid = false, children }) => {
   // Paper style: the same layout on a sheet of dark paper, lit on its top edge (docs/styles.md).
   // A style built as a kit frames the same layout its own way (slate, gold).
   const style = useContext(StyleContext);
@@ -69,7 +69,8 @@ const Panel: React.FC<{ kind: PanelKind; format: Format; children: React.ReactNo
         gap: 30,
         padding: "48px 44px",
         borderRadius: 32,
-        background: COLOR.panel,
+        // `solid`: the panel lies over a drawn scene (a verse recited over its place), not over the dark ground.
+        background: solid ? "rgba(10, 18, 30, 0.9)" : COLOR.panel,
         border: `2px solid ${COLOR.panelBorder}`,
         ...(style === "paper" ? PAPER_SHEET : {}),
       }}
@@ -261,7 +262,7 @@ export const AyahCard: React.FC<CardProps> = ({ scene, format }) => {
   }));
   return (
     <Stage format={format}>
-      <Panel kind="ayah" format={format}>
+      <Panel kind="ayah" format={format} solid={scene.visual.background !== null}>
         <div dir="rtl" lang="ar" style={arabicStyle(FONT.quran, fitSize(format.id === "reel" ? 72 : 66, source.display_ar, 110), 400, 2.1)}>
           {tokens.map(({ token, position: p }, i) => (
             <Fragment key={i}>
