@@ -131,6 +131,16 @@ yourself: only the owner's « je valide », recorded by `scripts/finalize.py val
      is reused), every hadith by « النبي صلى الله عليه وسلم قال: » on its `source-card`;
    - a prophet or a Companion appears only on a `name-card` (`mentions`), never drawn (Ayyub in dua);
    - a visual change every 6 s or so; one colour per function (concepts, narrator, questions, quotes).
+   - **something to look at** (owner's decision, 2026-11-10, after the audit of the published
+     videos: 27 % of 480 scenes drawn, 48 % a card showing the sentence the voice says, the picture
+     unchanged for 60 to 83 % of a reel): at least a third of a reel's scenes are drawn (`scene`: a
+     place, people), and never three cards of narration in a row. `validate.py` warns on a reel
+     being written (the drawn share is not asked of a collection or an explained text, whose
+     picture is the text). A line of narration can be said over a drawn scene instead of a card:
+     the English subtitle carries it, the Arabic line is then not on screen, so keep on a card the
+     lines to remember (the misconception, the lesson, the open loop). Vary who and where: of 100
+     appearances 95 were the same three people, half of them `worried`; a place that says where
+     we are rather than the waiting room again.
    - a story told with suspense in the whole episode (khidr): the episode's `whole` lists its parts
      (a title each, a YouTube chapter) and their scenes in order. A scene without `reel` is said only
      there (khidr: 18:78, the parting); a reel's scene left out of `whole` only in its reel (the
@@ -179,14 +189,19 @@ yourself: only the owner's « je valide », recorded by `scripts/finalize.py val
    - Check: `cd video && npm run data && node scripts/publish.ts <theme> all` (fails on a broken
      limit). They are validated with the rest at the end (`publish.validated_by` on the episode and
      on each reel, written by `finalize.py validate`, removed whenever one of them changes).
-   - YouTube thumbnail: the episode's `thumbnail` (layout `close-up`, headline « ٣ أفكار غلط », kicker
-     « عن <الموضوع> », a character and mood from the catalog, another face and another mood than
-     the last episodes': read them, `grep -A6 "^thumbnail:" content/episodes/*.yaml`), on the
-     `plain` background (the street made tawba's title hard to read). `npm run still --
-     Thumbnail169 out/<theme>-thumbnail.png --props='{"episode":"<theme>","layout":null,"data":null}'`
-     (without `--props` it draws dua's), look at it at 170 px wide beside the others': the
-     subject must be what the eye reads first;
-     the candidate release carries it, validated with the rest.
+   - YouTube thumbnail: the episode's `thumbnail`, layout `poster` in the flat style (2026-11-10:
+     eight thumbnails of nine looked the same and their subject was the smallest text): the line
+     that says the subject is drawn biggest (`big: kicker` when the headline is the formula
+     « ٣ أفكار غلط » and the kicker the theme « عن <الموضوع> »; a story's name is its headline, the
+     default), the other line sits in a tag above it, on the theme's `color` (closed palette of
+     the schema; not the colour of the last two episodes), with a character and mood from the
+     catalog (another face and another mood than the last episodes': read them all, `grep -A8
+     "^thumbnail:" content/episodes/*.yaml`; the board is `docs/thumbnails.png`). The paper,
+     chalk and illumination styles draw their own thumbnail from the same fields. `npm run still
+     -- Thumbnail169 out/<theme>-thumbnail.png --props='{"episode":"<theme>","layout":null,"data":null}'`
+     (without `--props` it draws dua's), then look at it at 170 px wide beside the others': the
+     subject must be what the eye reads first, and no English or Arabic line may run over the
+     face; the candidate release carries it, validated with the rest.
 
 6. **Check, then audio.**
    - `uv run --with jsonschema --with pyyaml scripts/validate.py`: no error, and every warning fixed

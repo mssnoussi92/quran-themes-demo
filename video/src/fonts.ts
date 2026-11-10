@@ -9,6 +9,9 @@ export const FONT = {
   arabic: "Amiri",
   /** English: translations, subtitles, references. */
   latin: "Lora",
+  /** The chalk style's hand (docs/styles.md): ruqaa, the handwriting of Egyptians. An Arabic subset
+   * (letters, the digits ٠ to ٩, « ، ؟ ! »): the other signs (… . : « ») fall back to Amiri. */
+  ruqaa: "Aref Ruqaa",
 } as const;
 
 const FILES = [
@@ -16,6 +19,8 @@ const FILES = [
   { family: FONT.arabic, file: "Amiri-Regular.ttf", weight: "400" },
   { family: FONT.arabic, file: "Amiri-Bold.ttf", weight: "700" },
   { family: FONT.latin, file: "Lora.ttf", weight: "400" },
+  { family: FONT.ruqaa, file: "lab/aref-ruqaa-arabic-400-normal.woff2", weight: "400" },
+  { family: FONT.ruqaa, file: "lab/aref-ruqaa-arabic-700-normal.woff2", weight: "700" },
 ];
 
 let loading: Promise<void[]> | null = null;

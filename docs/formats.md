@@ -111,6 +111,28 @@ propriétaire. `scripts/validate.py` vérifie la structure de chaque format dans
 - **Vérifié** : chaque reel du milieu a un verset ou un hadith et une leçon suivie de son exemple.
 - **Pièges** : donner un avis de fiqh ; une étape sans texte (« conseil » de développement personnel).
 
+## Proposés le 2026-11-10 (le propriétaire a demandé d'autres styles de script ; rien n'est décidé)
+
+- **Une question, un reel** (`question`) : une question que les gens posent vraiment (« ليه دعائي ما
+  اتستجابش؟ », « أصلي وأنا مش مركز… تتقبل؟ »), dite par un personnage dans une scène, puis la réponse en
+  un verset et un hadith, une phrase à retenir, c'est tout. **Un seul reel de 45 à 75 s, sans épisode** :
+  ni promesse, ni suite, ni version 16:9. Pourquoi : c'est le seul format qui tient un rythme
+  hebdomadaire (un épisode de cinq reels demande 40 à 70 prises de voix), et la question est l'accroche.
+  Piège : répondre par un avis ; la réponse est le texte, ou le format ne s'applique pas.
+- **Dialogue** (`dialogue`) : deux personnages du catalogue se parlent dans un lieu (l'un doute, l'autre
+  répond par la source) au lieu d'un narrateur face caméra. Pourquoi : chaque réplique est une scène
+  dessinée avec deux personnes (la part de cartes de texte tombe d'elle-même), et l'égyptien parlé y est
+  chez lui. Il faut une **seconde voix** (VoiceTut en a d'autres : à choisir à l'oreille, workflow
+  `voice-test`) et la règle « bouche au volume » par personnage. Piège : faire dire un verset à un
+  personnage (jamais : le verset reste récité, sur sa carte) ; un personnage qui « sait tout » et sermonne.
+- **Série courte datée** (`season`) : un reel par jour sur une période (les dix jours de Dhul-Hijja, la
+  dernière décade de Ramadan), chacun un acte et sa source. Ce n'est pas un nouveau schéma (c'est
+  `practical` ou `collection`) mais un **calendrier** : à préparer un mois avant, d'un seul rendu.
+
+Ma recommandation : `question` d'abord (le plus léger, et il nourrit la page entre deux épisodes), puis
+`dialogue` sur un épisode d'essai. Les deux formats « plus tard » ci-dessous restent les plus riches, mais
+bloqués par leur prérequis.
+
 ## Plus tard (pas encore au catalogue)
 
 - **Un nom d'Allah**, **un mot du Coran** : il faut d'abord un type de source « tafsir » au registre, pour que le

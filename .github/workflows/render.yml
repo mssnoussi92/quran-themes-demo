@@ -7,6 +7,9 @@ name: render
 #                     episode leaves out the ends said only in a reel ("that's next", reel_only_end).
 #                     With it, the episode's YouTube thumbnail (Thumbnail169, <episode>-thumbnail.png),
 #                     flagged in the notes until the owner validates it on the image.
+# Every 9:16 video is rendered a second time for TikTok, signed with the page's name there
+# (content/publish.yaml, `handles`: @quran.words.daily; @quran_words_daily is someone else's account
+# on TikTok): <video>-tiktok.mp4, in its own leg beside the others.
 # The pre-release notes give, for each video, the title, description and hashtags to paste on each
 # platform (video/scripts/publish.ts: the episode's `publish` texts, sources, credits, chapters).
 # Modes:
@@ -28,8 +31,9 @@ name: render
 # three renders of an episode weigh about the same, so they run side by side:
 #   audio     the checks, the audio once for every video (a draft's synthesis is never the same
 #             twice) and the episode's data, handed to the next jobs as an artifact;
-#   render    one job per leg: the whole episode in 16:9, in 9:16, the reels and the thumbnail
-#             (one leg for a single reel); each keeps its videos as an artifact for 7 days;
+#   render    one job per leg: the whole episode in 16:9, in 9:16, the reels and the thumbnail, and
+#             the TikTok versions of the 9:16 ones (two legs for a single reel: the reel and its
+#             TikTok version); each keeps its videos as an artifact for 7 days;
 #   release   the videos of every leg and the notes, attached to the release.
 # A leg that failed is run again alone (« Re-run failed jobs »): the others are not rendered twice.
 
@@ -92,10 +96,10 @@ jobs:
         run: |
           if [ "$REEL" = all ]; then
             reels=$(uv run --with pyyaml python -c "import sys, yaml; print(' '.join(r['id'] for r in yaml.safe_load(open(sys.argv[1]))['reels']))" "content/episodes/$EPISODE.yaml")
-            legs='{"leg":["16x9","9x16","reels"]}'
+            legs='{"leg":["16x9","9x16","reels","9x16-tiktok","reels-tiktok"]}'
           else
             reels="$REEL"
-            legs='{"leg":["reels"]}'
+            legs='{"leg":["reels","reels-tiktok"]}'
           fi
           echo "REELS=$reels" >> "$GITHUB_ENV"
           echo "reels=$reels" >> "$GITHUB_OUTPUT"
@@ -256,23 +260,29 @@ jobs:
         working-directory: video
         run: |
           test -s "public/data/$EPISODE.json" || { echo "::error::no data for $EPISODE from the audio job"; exit 1; }
+          # A TikTok leg renders the same videos signed with the page's name on TikTok (the composition
+          # fails if content/publish.yaml has no such name): <video>-tiktok.mp4.
           case "$LEG" in
+            *-tiktok) platform='"tiktok"'; suffix=-tiktok ;;
+            *) platform=null; suffix= ;;
+          esac
+          case "${LEG%-tiktok}" in
             16x9)
               props=$(printf '{"episode":"%s","reel":null,"format":"episode","data":null}' "$EPISODE")
               npx remotion render Episode169 "out/$EPISODE-16x9.mp4" --props="$props"
               ;;
             9x16)
-              props=$(printf '{"episode":"%s","reel":null,"format":"reel","data":null}' "$EPISODE")
-              npx remotion render Reel916 "out/$EPISODE-9x16.mp4" --props="$props"
+              props=$(printf '{"episode":"%s","reel":null,"format":"reel","platform":%s,"data":null}' "$EPISODE" "$platform")
+              npx remotion render Reel916 "out/$EPISODE-9x16$suffix.mp4" --props="$props"
               ;;
             reels)
-              if [ "$REEL" = all ] && grep -q '^thumbnail:' "../content/episodes/$EPISODE.yaml"; then
+              if [ "$LEG" = reels ] && [ "$REEL" = all ] && grep -q '^thumbnail:' "../content/episodes/$EPISODE.yaml"; then
                 props=$(printf '{"episode":"%s","layout":null,"data":null}' "$EPISODE")
                 npx remotion still Thumbnail169 "out/$EPISODE-thumbnail.png" --props="$props"
               fi
               for reel in $REELS; do
-                props=$(printf '{"episode":"%s","reel":"%s","format":"reel","data":null}' "$EPISODE" "$reel")
-                npx remotion render Reel916 "out/$reel.mp4" --props="$props"
+                props=$(printf '{"episode":"%s","reel":"%s","format":"reel","platform":%s,"data":null}' "$EPISODE" "$reel" "$platform")
+                npx remotion render Reel916 "out/$reel$suffix.mp4" --props="$props"
               done
               ;;
             *) echo "::error::unknown leg $LEG"; exit 1 ;;
@@ -337,7 +347,8 @@ jobs:
         run: |
           ls -la video/out
           expected="$REELS"
-          if [ "$REEL" = all ]; then expected="$expected $EPISODE-16x9 $EPISODE-9x16"; fi
+          for reel in $REELS; do expected="$expected $reel-tiktok"; done
+          if [ "$REEL" = all ]; then expected="$expected $EPISODE-16x9 $EPISODE-9x16 $EPISODE-9x16-tiktok"; fi
           for name in $expected; do
             test -s "video/out/$name.mp4" || { echo "::error::video/out/$name.mp4 is missing"; exit 1; }
           done

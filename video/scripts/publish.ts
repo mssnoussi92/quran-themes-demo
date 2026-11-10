@@ -28,6 +28,9 @@ const ROOT = resolve(import.meta.dirname, "../..");
 
 type Settings = {
   handle: string;
+  /** The page's name where it differs ("tiktok"): that platform's caption ends with it, and its
+   * video is the version signed with it (<video>-tiktok.mp4). */
+  handles?: Record<string, string>;
   hashtags: { brand: string; broad: string[]; hadith: string[]; reciters: Record<string, string[]> };
   platforms: {
     facebook: { max_hashtags: number };
@@ -128,15 +131,20 @@ function render(video: Video, settings: Settings): string[] {
   const { texts, scenes, tags } = video;
   const { facebook, instagram_tiktok: short, youtube } = settings.platforms;
   const seconds = Math.round(totalFrames(scenes) / FPS);
-  const out = [`## ${video.label}`, "", `\`${video.file}\` · ${clock(seconds)} · ${video.format}`, ""];
+  // TikTok has its own file: the page has another name there, drawn on every frame of that version.
+  const tiktokHandle = video.platforms.includes("social") ? settings.handles?.tiktok : undefined;
+  const tiktokFile = video.file.replace(/\.mp4$/, "-tiktok.mp4");
+  const files = tiktokHandle ? `\`${video.file}\` (TikTok : \`${tiktokFile}\`)` : `\`${video.file}\``;
+  const out = [`## ${video.label}`, "", `${files} · ${clock(seconds)} · ${video.format}`, ""];
   if (!texts) return [...out, "⚠️ Pas encore de textes de publication (`publish` dans l'épisode).", ""];
-  const body = [
+  const bodyFor = (handle: string) => [
     texts.description.en, "", texts.description.ar, "",
     video.part, "",
     "Quoted:", ...sourceLines(scenes, settings), "",
     settings.lines.narration, settings.lines.characters, "",
-    settings.handle,
+    handle,
   ];
+  const body = bodyFor(settings.handle);
   const head = [texts.title.en, texts.title.ar, ""];
   if (!texts.validated_by && !asValidated) out.push("⚠️ Textes proposés, pas encore validés par le propriétaire.", "");
   const block = (title: string, text: string) => out.push(`**${title}**`, "", "```text", text, "```", "");
@@ -145,7 +153,15 @@ function render(video: Video, settings: Settings): string[] {
     const ig = [...head, ...body, "", tags.slice(0, short.max_hashtags).join(" ")].join("\n");
     check(`${video.file}, Instagram/TikTok caption`, ig, short.max_caption);
     block(`Facebook (${Math.min(tags.length, facebook.max_hashtags)} hashtags)`, fb);
-    block(`Instagram · TikTok (${Math.min(tags.length, short.max_hashtags)} hashtags)`, ig);
+    if (tiktokHandle) {
+      // The same caption signed with the page's name on TikTok, for the video signed with it.
+      const tiktok = [...head, ...bodyFor(tiktokHandle), "", tags.slice(0, short.max_hashtags).join(" ")].join("\n");
+      check(`${tiktokFile}, TikTok caption`, tiktok, short.max_caption);
+      block(`Instagram (${Math.min(tags.length, short.max_hashtags)} hashtags)`, ig);
+      block(`TikTok : la vidéo \`${tiktokFile}\`, signée ${tiktokHandle} (${Math.min(tags.length, short.max_hashtags)} hashtags)`, tiktok);
+    } else {
+      block(`Instagram · TikTok (${Math.min(tags.length, short.max_hashtags)} hashtags)`, ig);
+    }
   }
   if (video.platforms.includes("youtube")) {
     const title = `${texts.title.en} · ${texts.title.ar}`;

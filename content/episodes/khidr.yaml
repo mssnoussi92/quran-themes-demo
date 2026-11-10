@@ -28,12 +28,13 @@ publish:
 # Miniature YouTube (Thumbnail169), validée le 2026-11-08 : gros plan, fond uni, Salma (Amir dans celle de
 # la confiance en Dieu).
 thumbnail:
-  layout: close-up
+  layout: poster
   headline: { ar: "ليه أنا؟", en: "Why me?" }
   kicker: { ar: "موسى والخضر", en: "Moses and al-Khidr" }
+  big: kicker
+  color: blue
   character: { id: salma, pose: standing, mood: worried }
   background: plain
-  validated_by: mssnoussi92
 reels:
   - id: khidr-01
     title: { ar: "مين أعلم؟", en: "Who knows more?" }

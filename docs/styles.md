@@ -24,7 +24,8 @@ l'épisode (`style:` de `content/episodes/<thème>.yaml`), choisi avec le format
   référence par le nom de la sourate et récitateur), mot récité surligné. Seule la matière du cadre suit le style
   (papier, ardoise, or), jamais la lecture du texte.
 - **La carte du hadith** : paroles du Prophète ﷺ entre « », référence, jugement, lecteur.
-- **La signature** « @quran_words_daily », les **sous-titres** anglais (Lora sur fond sombre), les zones sûres.
+- **La signature** « @quran_words_daily » (« @quran.words.daily » sur la version TikTok de chaque vidéo 9:16),
+  les **sous-titres** anglais (Lora sur fond sombre), les zones sûres.
 - **Les règles de `CLAUDE.md`** : aucun prophète, Compagnon ou personne connue dessiné (carte de nom), les
   jeunes de la caverne jamais montrés, exemples présentés comme des scènes types.
 - **Une scène est décrite une seule fois** (`video/src/styles/geometry.ts` : des couches de formes simples) ; le
@@ -72,6 +73,17 @@ l'épisode (`style:` de `content/episodes/<thème>.yaml`), choisi avec le format
   dessin qui apparaît trait par trait.
 - **Pièges** : traits trop fins illisibles sur téléphone ; trop de hachures ; un tableau trop propre (garder les
   traces d'effacement).
+- **Construit le 2026-11-10** (`video/src/styles/chalk/`), pas encore vu par le propriétaire dans un épisode :
+  les lieux en couches tracés d'un trait autour de chaque chose, qui apparaissent du fond vers l'avant en 0,6 s
+  puis restent ; les figures Open Peeps tracées à la craie (jaune pour Amir et Salma, blanc sinon), à l'échelle
+  du lieu, caméra rapprochée vers elles, bouche qui s'ouvre avec la voix ; la narration en ruqaa écrite de
+  droite à gauche phrase par phrase, l'idée fausse (`misconception`) barrée en rose puis effacée (son
+  fantôme reste au tableau), la dernière phrase d'une leçon ou d'une conclusion en jaune, soulignée ; les
+  lettres moins trouées que les traits (lisibles sur téléphone) ; verset et hadith dans un cadre tracé, le
+  texte net ; miniature : le sujet en jaune, le plus grand. Lieux : ceux des idées reçues (salle d'attente,
+  rue, mosquée, fond nu) et du quotidien en couches (bureau, chambre, café, caverne, ville ancienne).
+- **Coût du rendu** : 1,4 fois le plat (tawba-03 : 96 s contre 69 s pour 1 280 images, même machine, l'un
+  après l'autre ; 0,075 s par image) ; MP4 trois fois plus lourd (le grain du tableau), 14 Mo pour 43 s.
 
 ## Enluminure (`illumination`)
 
@@ -82,6 +94,68 @@ l'épisode (`style:` de `content/episodes/<thème>.yaml`), choisi avec le format
 - **Gestes propres** : une rosace géométrique qui se trace ; un reflet de lumière qui passe sur l'or.
 - **Pièges** : le cadre prend de la place sur un écran vertical (laisser la scène respirer) ; trop de motifs
   fatiguent : un épisode entier en cadre plein lasse vite, d'où les formats où le texte est au centre.
+- **Construit le 2026-11-10** (`video/src/styles/illumination/`), pas encore vu par le propriétaire dans un
+  épisode : la page de parchemin et sa bordure d'étoiles, une rosace qui se trace derrière chaque carte, un
+  reflet qui passe sur l'or ; le verset et le hadith sur un folio ivoire à cadre d'or et de lapis, le mot
+  récité en **vermillon** (la rubrique des manuscrits), le texte net ; la narration dans un cartouche doré
+  qui s'ouvre à chaque phrase quand la voix l'atteint ; les lieux en couches peints à plat dans un arc
+  brisé, cerne d'encre, murs à motifs ; les personnes en silhouettes sans visage (ivoire cerné d'or pour Amir
+  et Salma) ; miniature : le sujet dans le cartouche, le plus grand. Pas de narrateur en buste dans ce style
+  (les silhouettes n'ont pas cette pose : `validate.py` le refuse).
+- **Coût du rendu** : 1,7 fois le plat (tawba-03 : 115 s contre 69 s, 0,09 s par image), 9 Mo pour 43 s.
+
+## Comment un style est construit
+
+- **Plat** et **papier** sont câblés à la main dans les cartes (`video/src/templates/cards.tsx`,
+  `Video.tsx`). Les styles suivants sont chacun un **kit** (`video/src/styles/kit.ts`, inscrit dans
+  `kits.ts`) : son fond derrière les cartes (`Backdrop`), sa scène (`Scene` : un lieu et ses
+  personnages), le cadre d'un verset, d'un hadith ou d'un nom (`Panel`, et les couleurs `ink` ; le texte
+  lui-même est dessiné par `cards.tsx`, jamais filtré ni déformé), sa façon d'écrire la narration
+  (`Title`, chaque phrase quand la voix y arrive) et sa miniature (`Thumb`).
+- **Un lieu est décrit une fois** en couches de formes simples (`video/src/styles/paper/places.ts`) ; papier,
+  craie et enluminure dessinent ces mêmes couches chacun à sa manière. Le catalogue
+  (`content/backgrounds.yaml`, `styles`) dit dans quels styles un lieu a été regardé, et le propriétaire
+  valide le dessin style par style (`<style>_validated_by`, écrit par `finalize.py validate` après le
+  rendu candidat).
+- **Les personnes** : figures Open Peeps avec leur visage (plat, craie) ou silhouettes sans visage
+  (papier, enluminure : `paper_poses` de `content/characters.yaml`).
+- **Voir un reel dans un autre style** sans toucher à son épisode : la prop `style` des compositions
+  (`--props='{…,"style":"chalk"}'`), pour un aperçu seulement, jamais un rendu de publication. Procédure
+  complète : skill `add-style`.
+
+Planche de comparaison, le même reel (tawba-03) aux mêmes instants en plat, craie et enluminure :
+`docs/styles-tawba-03.png`.
+
+## Propositions de visuels (2026-11-10, le propriétaire en a demandé ; rien n'est décidé)
+
+Le défaut mesuré sur les vidéos publiées n'est pas le style : sur 480 scènes, 27 % sont dessinées et 48 %
+sont une carte qui affiche la phrase que dit la voix ; l'image ne change pas pendant 60 à 83 % d'un reel.
+La caverne en papier a exactement la même part (27 %). Un nouveau style habille ce défaut, il ne le corrige
+pas. Par ordre de ce que chacune rapporte :
+
+1. **La phrase écrite dans la scène.** La ligne arabe s'écrit dans le décor (sur le tableau en craie, sur
+   une bande de papier, dans un cartouche) au-dessus des personnages, au lieu d'occuper une carte à elle
+   seule. Chaque carte de narration peut alors devenir une scène dessinée sans perdre le texte arabe pour
+   ceux qui regardent sans le son. C'est le plus gros levier : la part dessinée passerait de 27 % à
+   environ 70 % sans une ligne de script en plus.
+2. **Changer de cadre dans une scène** (`shot: wide | close | detail`) : même lieu, mais on coupe sur le
+   visage à la phrase qui touche, ou sur les mains. L'image change toutes les 3 à 5 s sans nouveau dessin.
+3. **Des objets en gros plan** (petit catalogue fermé : un téléphone et sa notification, un tapis de
+   prière, une horloge, une porte, une chaise vide, une lettre) : des accroches et des exemples de vie qui
+   ne montrent pas encore les trois mêmes personnes.
+4. **Le verset qui s'écrit mot à mot, sur plusieurs écrans quand il est long** (la règle de quran-reels) :
+   corrige les textes trop petits (6 versets sur 82 sous 50 px, la moitié des hadiths) et anime le plus
+   long plan fixe d'un reel (jusqu'à 16 s).
+5. **Chiffres et tracés** : un nombre qui s'affiche en grand (« ٣٠٩ »), un chemin à deux branches (deux
+   chemins), le trajet d'une histoire sur une carte (Dhul-Qarnayn : le couchant, le levant, le barrage).
+6. **Plus de monde et plus d'humeurs** : une apparence Open Peeps pour Youssef, Hoda et Karim (aujourd'hui
+   en silhouette seulement), une femme âgée, un adolescent ; des humeurs `surprised`, `sad`, `relieved`
+   (sur 100 apparitions, 95 sont les trois mêmes personnes et une sur deux est `worried`).
+7. **L'aquarelle pour le quotidien** (formats pratique et deux chemins, aujourd'hui en plat « en attendant
+   mieux ») : le style en réserve ci-dessous.
+
+Ma recommandation : 1 et 2 d'abord (ils changent ce qu'on regarde dans tous les styles), puis 4. Les
+autres au fil des épisodes qui en ont besoin.
 
 ## Aquarelle (`watercolor`, en réserve)
 

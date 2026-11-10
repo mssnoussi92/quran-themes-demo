@@ -89,11 +89,19 @@
       "additionalProperties": false,
       "properties": {
         "layout": {
-          "description": "Closed catalog of layouts (video/src/Thumbnail.tsx): close-up = a big face next to the text; scene = the character in its background, text on a band; title = the text alone on the cards' dark blue",
-          "enum": ["close-up", "scene", "title"]
+          "description": "Closed catalog of layouts (video/src/Thumbnail.tsx): poster = the subject biggest on the theme's colour, the other line small in a tag, a face beside them (2026-11-10: eight of nine thumbnails looked the same and their subject was unreadable at 170 px); close-up = a big face next to the text; scene = the character in its background, text on a band; title = the text alone on the cards' dark blue",
+          "enum": ["poster", "close-up", "scene", "title"]
         },
         "headline": { "$ref": "#/$defs/i18n" },
         "kicker": { "$ref": "#/$defs/i18n" },
+        "big": {
+          "description": "Which line says the subject and is drawn biggest (poster layout, and the thumbnails of the chalk and illumination styles): headline by default; kicker when the headline is the formula (« ٣ أفكار غلط ») and the kicker the theme (« عن الدعاء »)",
+          "enum": ["headline", "kicker"]
+        },
+        "color": {
+          "description": "The theme's colour in the poster layout, from the closed palette of video/src/Thumbnail.tsx: two episodes side by side on the channel page are told apart before a word is read; not the colour of the last two thumbnails",
+          "enum": ["teal", "indigo", "green", "violet", "amber", "blue", "brick", "rose"]
+        },
         "character": {
           "type": "object",
           "required": ["id", "pose", "mood"],

@@ -1,17 +1,16 @@
 // The paper-cut style in the episodes (docs/styles.md): a place of the catalog (places.ts) with the
 // scene's characters as silhouettes (silhouettes.ts), drawn as sheets of cut paper lit from behind;
 // and the backdrop of the cards. Every frame can be drawn alone (no state, seeded randomness).
-import React, { createContext } from "react";
+import React from "react";
 import { interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import type { Format } from "../../formats";
-import type { ResolvedScene, VisualStyle } from "../../types";
+import type { ResolvedScene } from "../../types";
 import type { Layer, Shape } from "../geometry";
 import { mix, rand, Shapes } from "../shapes";
 import { PAPER_PLACES, type PaperPalette, type Place } from "./places";
 import { silhouette } from "./silhouettes";
 
-/** The episode's visual style, for every template (Video.tsx provides it). */
-export const StyleContext = createContext<VisualStyle>("flat");
+export { StyleContext } from "../context";
 
 /** Where the floor is, per format (the same as the flat scenes: the subtitles stay below). */
 const FLOOR = { reel: 1360, episode: 880 };

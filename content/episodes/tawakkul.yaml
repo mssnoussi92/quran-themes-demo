@@ -24,12 +24,13 @@ publish:
 # Miniature YouTube (Thumbnail169), proposée le 2026-11-07 : gros plan, fond uni, Amir (Salma dans celle des
 # comparaisons).
 thumbnail:
-  layout: close-up
+  layout: poster
   headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas" }
   kicker: { ar: "عن التوكل", en: "about trusting God" }
-  character: { id: amir, pose: standing, mood: worried }
+  big: kicker
+  color: amber
+  character: { id: amir, pose: standing, mood: smiling }
   background: plain
-  validated_by: mssnoussi92
 reels:
   - id: tawakkul-01
     title: { ar: "زي الطير", en: "Like the birds" }

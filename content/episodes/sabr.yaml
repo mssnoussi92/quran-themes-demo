@@ -22,12 +22,13 @@ publish:
   validated_by: mssnoussi92
 # Miniature YouTube (Thumbnail169), proposée le 2026-11-07 comme celle du du'a, validée sur l'image.
 thumbnail:
-  layout: close-up
+  layout: poster
   headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas" }
   kicker: { ar: "عن الصبر", en: "about patience" }
+  big: kicker
+  color: indigo
   character: { id: salma, pose: standing, mood: worried }
   background: waiting-room
-  validated_by: mssnoussi92
 reels:
   - id: sabr-01
     title: { ar: "اصبر", en: "Be patient" }

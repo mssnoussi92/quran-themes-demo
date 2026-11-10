@@ -24,12 +24,13 @@ publish:
 # la miniature du repentir) ; le titre « فخ المقارنات » (demande du propriétaire, même jour) dans le cadre doré :
 # en grand, le « خ » touchait le cadre.
 thumbnail:
-  layout: close-up
+  layout: poster
   headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas:" }
   kicker: { ar: "فخ المقارنات", en: "the comparison trap" }
+  big: kicker
+  color: violet
   character: { id: salma, pose: standing, mood: worried }
   background: plain
-  validated_by: mssnoussi92
 reels:
   - id: muqarana-01
     title: { ar: "غنى النفس", en: "Richness of the soul" }

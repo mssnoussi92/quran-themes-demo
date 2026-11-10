@@ -24,12 +24,13 @@ publish:
 # Miniature YouTube (Thumbnail169), proposée le 2026-11-07 comme celles du du'a et de la patience, validée
 # sur l'image (fond uni : la rue rendait le titre difficile à lire).
 thumbnail:
-  layout: close-up
+  layout: poster
   headline: { ar: "٣ أفكار غلط", en: "3 wrong ideas" }
   kicker: { ar: "عن التوبة", en: "about repentance" }
+  big: kicker
+  color: green
   character: { id: amir, pose: standing, mood: worried }
   background: plain
-  validated_by: mssnoussi92
 reels:
   - id: tawba-01
     title: { ar: "الباب مفتوح", en: "The door is open" }

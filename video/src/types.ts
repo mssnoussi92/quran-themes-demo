@@ -101,7 +101,10 @@ export type ResolvedScene = {
 export type PublishTexts = { title: I18n; description: I18n; hashtags?: string[]; validated_by?: string };
 
 /** Layouts of the YouTube thumbnail (closed catalog, Thumbnail.tsx). */
-export type ThumbnailLayout = "close-up" | "scene" | "title";
+export type ThumbnailLayout = "close-up" | "scene" | "title" | "poster";
+
+/** Colours of the `poster` thumbnail (closed palette, Thumbnail.tsx): one per theme. */
+export type ThumbnailColor = "teal" | "indigo" | "green" | "violet" | "amber" | "blue" | "brick" | "rose";
 
 /** YouTube thumbnail of the whole 16:9 episode (1280x720), validated by the owner on the image. */
 export type ThumbnailData = {
@@ -110,6 +113,11 @@ export type ThumbnailData = {
   headline: I18n;
   /** Smaller line under the headline (the theme). */
   kicker: I18n | null;
+  /** Which of the two lines says the subject: the `poster` layout and the styles' own thumbnails
+   * draw it biggest (« عن الدعاء » rather than « ٣ أفكار غلط », read at 170 px wide). */
+  big: "headline" | "kicker";
+  /** The theme's colour (`poster` layout). */
+  color: ThumbnailColor | null;
   character: Character | null;
   background: string;
   validated_by: string | null;
@@ -129,6 +137,9 @@ export type EpisodeData = {
   narration_language: string;
   /** The page's name (content/publish.yaml, "@quran_words_daily"), shown on every frame. */
   handle: string | null;
+  /** The page's name where it differs (content/publish.yaml, `handles`: "tiktok" -> "@quran.words.daily"):
+   * the version of a video rendered for that platform is signed with it. */
+  handles?: Record<string, string>;
   /** The whole episode's texts, and the hashtags of all its videos. */
   publish: PublishTexts | null;
   thumbnail: ThumbnailData | null;
