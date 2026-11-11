@@ -12,8 +12,11 @@
 #   propriétaire), puis l'appel à suivre que le propriétaire a
 #   validé pour le dernier short de Moussa et al-Khadir. Ce qu'il promet (« القصة الجاية ») est à lui de tenir.
 # - `kept` : réplique validée de l'ancien épisode, sans ses guillemets ; les autres sont de l'IA.
-# Rien n'est validé : le propriétaire lit le script avant toute voix.
+# « Je valide le script » du propriétaire (2026-11-11), sur le script corrigé (docs/scripts/dua.md) : les
+# répliques, la place des versets et des hadiths, les titres. Ni la voix, ni les images, ni les textes de
+# publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
 id: waited
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
 handle: "@quran_words_daily"
 # Le clip : un ciel étoilé (accéléré), cherché pour ce short (2026-11-11 : la lune du garçon, Pixabay 29238,
 # faisait deux images semblables ; le propriétaire : « chercher des clips qui marchent avec notre plan et les

@@ -12,8 +12,11 @@
 #   parfaite » (2026-11-11) : elle ne change pas ; « الدعاء هو العبادة » (Tirmidhi 3247) y est
 #   lu une fois, dans le chapitre `worship` ; le premier short le lit aussi, à sa place, et cette lecture et
 #   « وقال كمان: » ne sont pas reprises ici.
-# Rien n'est validé : le propriétaire lit le script avant toute voix.
+# « Je valide le script » du propriétaire (2026-11-11), sur le script corrigé (docs/scripts/dua.md) : les
+# répliques, la place des versets et des hadiths, les titres. Ni la voix, ni les images, ni les textes de
+# publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
 id: dua
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
 files: dua                       # début du nom des vidéos livrées : dua-film-16x9.mp4, dua-short-<n>-<id>.mp4
 title: { ar: "الدعاء… تلات أفكار غلط بتبعدك عنه", en: "Du'a: three wrong ideas that keep you from asking" }
 handle: "@quran_words_daily"

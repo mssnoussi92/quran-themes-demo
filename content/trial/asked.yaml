@@ -14,8 +14,11 @@
 # - Aucun mot du silence pour « ne pas demander » (refusés par le propriétaire) : « ساب الدعاء ».
 # - Le sens de 21:84 est dit après le verset, avec nos mots (« ومعاهم قدّهم » pour « ومثلهم معهم »).
 # - L'exemple (le malade qui prend son remède) est une scène type ; aucune comparaison de Dieu à une personne.
-# Rien n'est validé : le propriétaire lit le script avant toute voix.
+# « Je valide le script » du propriétaire (2026-11-11), sur le script corrigé (docs/scripts/dua.md) : les
+# répliques, la place des versets et des hadiths, les titres. Ni la voix, ni les images, ni les textes de
+# publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
 id: asked
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 59291, author: trilemedia, page: "https://pixabay.com/videos/id-59291/", take: { height: 1440 }, position: "43% 50%", shift: 480, brightness: 0.7, ground: "#0a0b12", horizon: 1420, landscape: { side: left, horizon: 760, shift: 160, brightness: 0.65 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
