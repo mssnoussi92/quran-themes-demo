@@ -7,7 +7,7 @@ Script à valider avant toute voix. Les répliques **nouvelles** sont de la sess
 | 1 | `west` | 2:10 | 0:50 | 0:00 | 9 | 4 |
 | 2 | `tribute` | 2:04 | 0:45 | 0:00 | 9 | 5 |
 | 3 | `barrier` | 1:56 | 0:47 | 0:00 | 9 | 5 |
-| | le film `qarnayn` | 8:38 | 3:33 | 0:15 | 5 (propres au film) | 10 |
+| | le film `qarnayn` | 8:37 | 3:33 | 0:15 | 5 (propres au film) | 10 |
 
 ## Short 1 · `west` · مصير قوم كاملين… بكلمة منه!
 
@@ -44,20 +44,20 @@ Environ **2:10** · 0:50 de récitation, 0:00 de hadith lu · 9 répliques nouve
 **1:25 · narration** (image : `land`)
 - كان يقدر يعمل اللي هو عايزه… بس هو فاكر إن الكل راجع لربنا… وهو أولهم.  
   *He could have done as he pleased… but he remembered that everyone returns to God… himself first.* · **nouvelle**
-- وإحنا كده: أول ما نقدر على حد… بننسى إن ربنا قادر علينا.  
-  *And so are we: the moment we have power over someone… we forget God has power over us.* · **nouvelle**
+- وإحنا كده: شوية سلطة… وننسى إن إحنا كمان هنتحاسب.  
+  *And so are we: a little authority… and we forget that we too will be held to account.* · **nouvelle**
 
-**1:38 · narration** (image : `land`)
+**1:37 · narration** (image : `land`)
 - زي لما يبقى في إيدك سلطة… في شغلك… أو في بيتك.  
   *Like when you have authority… at work… or at home.* · reprise de `qarnayn.west-life-1`
 - اللي بيغلط يتحاسب… واللي بيتعب تقوله: شكرًا.  
   *Whoever does wrong is held to account… and whoever works hard hears: thank you.* · reprise de `qarnayn.west-life-2`
 
-**1:48 · narration** (image : `just`)
+**1:47 · narration** (image : `just`)
 - القوة أمانة… مش رخصة تظلم بيها: الظالم يتحاسب… والكويس يتكرّم.  
   *Power is a trust… not a license to wrong people: the wrongdoer is held to account… and the good are honoured.* · reprise de `qarnayn.west-lesson`
-- لما تقدر على حد أضعف منك… افتكر مغرب الشمس.  
-  *When you have power over someone weaker than you… remember the setting of the sun.* · **nouvelle**
+- لما مصير حد يبقى بكلمة منك… افتكر مغرب الشمس.  
+  *When someone's fate hangs on a word from you… remember the setting of the sun.* · **nouvelle**
 - ده اختبار القوة على الناس… بس فيه اختبار تاني: ناس محتاجاك… وبتعرض عليك فلوس.  
   *That was the test of power over people… there is another: people who need you… and offer you money.* · **nouvelle**
 - تابعنا عشان تعرف عمل إيه.  
@@ -179,7 +179,7 @@ Environ **1:56** · 0:47 de récitation, 0:00 de hadith lu · 9 répliques nouve
 
 ## Le film · `qarnayn`
 
-Environ **8:38**, dont 12 s d'image calme à la fin · 3:33 de récitation, 0:15 de hadith lu. Il reprend les shorts réplique par réplique (sans leurs appels à suivre) ; seules ses répliques propres sont écrites ici en entier.
+Environ **8:37**, dont 12 s d'image calme à la fin · 3:33 de récitation, 0:15 de hadith lu. Il reprend les shorts réplique par réplique (sans leurs appels à suivre) ; seules ses répliques propres sont écrites ici en entier.
 
 ### 0:00 · Three tests · تلات اختبارات
 
@@ -230,8 +230,8 @@ Environ **8:38**, dont 12 s d'image calme à la fin · 3:33 de récitation, 0:15
 - 1:49 · **Verset récité** · Al-Kahf 18:88 · 14 s
 - 2:03 · répliques du short `west` (`meaning`)
 - 2:16 · répliques du short `west` (`depth`)
-- 2:29 · répliques du short `west` (`example`)
-- 2:39 · répliques du short `west` (`close`, 2 sur 4) · **rappel d'abonnement**
+- 2:28 · répliques du short `west` (`example`)
+- 2:38 · répliques du short `west` (`close`, 2 sur 4) · **rappel d'abonnement**
 
 ### 2:50 · The rising of the sun · مطلع الشمس
 
@@ -267,16 +267,16 @@ Environ **8:38**, dont 12 s d'image calme à la fin · 3:33 de récitation, 0:15
 
 - 3:46 · **Verset récité** · Al-Kahf 18:93 · 14 s · coupe posée à la main, à écouter
 - 4:00 · **Verset récité** · Al-Kahf 18:94 · 17 s
-- 4:18 · répliques du short `tribute` (`turn`)
+- 4:17 · répliques du short `tribute` (`turn`)
 - 4:19 · **Verset récité** · Al-Kahf 18:95 · 15 s
 - 4:34 · répliques du short `tribute` (`meaning`)
 - 4:51 · répliques du short `tribute` (`depth`)
 - 5:05 · répliques du short `tribute` (`example`)
 - 5:13 · répliques du short `tribute` (`close`, 2 sur 4)
 
-### 5:25 · This is a mercy from my Lord · ده رحمة من ربي
+### 5:24 · This is a mercy from my Lord · ده رحمة من ربي
 
-- 5:25 · répliques du short `barrier` (`open`)
+- 5:24 · répliques du short `barrier` (`open`)
 - 5:38 · **Verset récité** · Al-Kahf 18:96 · 19 s
 - 5:58 · répliques du short `barrier` (`stood`)
 - 5:59 · **Verset récité** · Al-Kahf 18:97 · 10 s
@@ -295,7 +295,7 @@ Environ **8:38**, dont 12 s d'image calme à la fin · 3:33 de récitation, 0:15
 - والنبي صلى الله عليه وسلم قال:  
   *And the Prophet ﷺ said:* · reprise de `qarnayn.end-hadith`
 
-**7:20** · **Hadith lu par une vraie voix** · Tirmidhi 3153 · lu par Yusuf ibn Nuh Ahmad · 15 s  
+**7:19** · **Hadith lu par une vraie voix** · Tirmidhi 3153 · lu par Yusuf ibn Nuh Ahmad · 15 s  
   يَحْفِرُونَهُ كُلَّ يَوْمٍ حَتَّى إِذَا كَادُوا يَخْرِقُونَهُ قَالَ الَّذِي عَلَيْهِمُ ارْجِعُوا فَسَتَخْرِقُونَهُ غَدًا فَيُعِيدُهُ اللَّهُ كَأَمْثَلِ مَا كَانَ حَتَّى إِذَا بَلَغَ مُدَّتَهُمْ وَأَرَادَ اللَّهُ أَنْ يَبْعَثَهُمْ عَلَى النَّاسِ قَالَ الَّذِي عَلَيْهِمُ ارْجِعُوا فَسَتَخْرِقُونَهُ غَدًا إِنْ شَاءَ اللَّهُ  
   *They excavated each day, until when they are just about to penetrate it, their leader says: 'Go back so that you can penetrate it tomorrow!'" He said: "But Allah makes it return just as it was, until their appointed time, when Allah ordains to send them upon the people, and their leader says: 'Go back so you can penetrate it tomorrow, if Allah wills.'*
 
