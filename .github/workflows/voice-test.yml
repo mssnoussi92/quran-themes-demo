@@ -5,13 +5,21 @@ name: voice-test
 # attaches them to the "voice-test-latest" pre-release (easy to download and play on a phone).
 # SILMA is no longer read here: its torchaudio needs the system FFmpeg libraries (apt), and the
 # owner chose VoiceTut (2026-11-06); its earlier takes stay in the release.
+# Voice comparison of 2026-11-11 (free first, docs/retention.md): `gemini_voices` has Gemini TTS
+# (Google AI Studio, free tier) say the five lines of content/voice-test/10-boat-standard.txt and
+# 11-boat-egyptian.txt, one file per voice and text, named by its label (C-boat-standard.mp3) so the
+# owner can listen without knowing which engine is which. The key is the repository secret
+# GEMINI_API_KEY: it never passes through a session. Leave an input empty to skip its engine.
 
 on:
   workflow_dispatch:
     inputs:
       voicetut_speakers:
-        description: "VoiceTut voices, comma-separated. Men: Ahmed, Ali, Hassan, Karim, Mahmoud, Mohammed, Mostafa, Ramy, Shaker, Tareq, Yehia, Youssef. Women: Hadeer, Hanan, Mariam, Rana, Sarah, Yasmin, Yara"
+        description: "VoiceTut voices, comma-separated (empty: none). Men: Ahmed, Ali, Hassan, Karim, Mahmoud, Mohammed, Mostafa, Ramy, Shaker, Tareq, Yehia, Youssef. Women: Hadeer, Hanan, Mariam, Rana, Sarah, Yasmin, Yara"
         default: Mohammed,Ahmed,Karim,Mahmoud,Hanan
+      gemini_voices:
+        description: "Gemini TTS voices as label=Voice, comma-separated (empty: none), e.g. C=Charon,D=Algieba. Needs the secret GEMINI_API_KEY"
+        default: ""
   # By hand only: the voice is chosen (Mohammed, 2026-11-06). A push to main that touched tools/tts
   # or requirements/ used to start five synthesis jobs nobody listened to (3 runs out of 5).
 
@@ -27,10 +35,11 @@ jobs:
     runs-on: ubuntu-24.04
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
+      count: ${{ steps.matrix.outputs.count }}
     steps:
       - id: matrix
         env:
-          SPEAKERS: ${{ inputs.voicetut_speakers || 'Mohammed,Ahmed,Karim,Mahmoud,Hanan' }}
+          SPEAKERS: ${{ inputs.voicetut_speakers }}
         run: |
           python3 - >> "$GITHUB_OUTPUT" <<'EOF'
           import json, os, re
@@ -41,10 +50,12 @@ jobs:
           egy = "content/voice-test/02-narration-egy.txt content/voice-test/03-hadith-bukhari-6340.txt"
           jobs = [{"engine": "voicetut", "voice": v, "texts": egy} for v in voices]
           print("matrix=" + json.dumps({"include": jobs}))
+          print(f"count={len(jobs)}")
           EOF
 
   synthesize:
     needs: plan
+    if: ${{ needs.plan.outputs.count != '0' }}
     name: synthesize (${{ matrix.engine }} ${{ matrix.voice }})
     runs-on: ubuntu-24.04
     timeout-minutes: 90
@@ -99,8 +110,47 @@ jobs:
           path: build/tts/*.mp3
           if-no-files-found: error
 
+  # Gemini TTS by its API: no model to install, a few requests spaced out (free tier).
+  gemini:
+    if: ${{ inputs.gemini_voices != '' }}
+    name: synthesize (gemini)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v7
+
+      - name: ffmpeg (static build)
+        run: |
+          uv venv .venv-tools
+          uv pip install --python .venv-tools/bin/python imageio-ffmpeg==0.8.1
+          mkdir -p "$HOME/.local/bin"
+          ln -sf "$(.venv-tools/bin/python -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())')" "$HOME/.local/bin/ffmpeg"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Synthesize and convert to MP3
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          VOICES: ${{ inputs.gemini_voices }}
+        run: |
+          python3 tools/tts/gemini.py --voices "$VOICES" --out-dir build/tts \
+            --in content/voice-test/10-boat-standard.txt content/voice-test/11-boat-egyptian.txt
+          for f in build/tts/*.wav; do
+            ffmpeg -loglevel error -y -i "$f" -codec:a libmp3lame -qscale:a 2 "${f%.wav}.mp3"
+          done
+          ls -la build/tts
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: voice-test-gemini
+          path: build/tts/*.mp3
+          if-no-files-found: error
+
   publish:
-    needs: synthesize
+    needs: [synthesize, gemini]
     if: ${{ !cancelled() }}
     runs-on: ubuntu-24.04
     steps:
@@ -117,7 +167,7 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           ls mp3/*.mp3
-          notes="AI-generated voices. VoiceTut (Egyptian): one file per voice. SILMA (MSA + English): takes of 2026-11-06. Run: $RUN_URL"
+          notes="AI-generated voices. VoiceTut (Egyptian): one file per voice. SILMA (MSA + English): takes of 2026-11-06. Voice comparison of 2026-11-11: <label>-boat-standard.mp3 and <label>-boat-egyptian.mp3, the same five lines by each voice. Run: $RUN_URL"
           if ! gh release view voice-test-latest >/dev/null 2>&1; then
             gh release create voice-test-latest --prerelease --title "Voice test (latest)" --notes "$notes"
           fi

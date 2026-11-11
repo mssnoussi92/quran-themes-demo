@@ -36,7 +36,7 @@ jobs:
         run: uv run --with pytest --with jsonschema --with pyyaml pytest -q tests
 
       - name: Python syntax
-        run: python3 -m py_compile tools/tts/say.py tools/sources/fetch.py tools/audio/build.py tools/audio/listen.py scripts/validate.py scripts/finalize.py
+        run: python3 -m py_compile tools/tts/say.py tools/tts/gemini.py tools/sources/fetch.py tools/audio/build.py tools/audio/listen.py scripts/validate.py scripts/finalize.py
 
       - name: Registry texts are exactly the APIs' (quran.com, hadith-api)
         run: uv run --with ruamel.yaml tools/sources/fetch.py --check
