@@ -6,6 +6,7 @@
   python3 tools/trial/clip.py --look 14955 --out <dir>                              # <dir>/14955/sheet.jpg: 16 frames across the clip
   python3 tools/trial/clip.py --id 14955 --out <file> --seconds 12.5 --height 1440 --pingpong   # try a candidate
   python3 tools/trial/clip.py --trial waited --out <file>                           # the clip of a short, prepared as its `clip.take` says
+  python3 tools/trial/clip.py --film qarnayn --picture east --out <file>            # a picture of the film alone (`pictures` of its file)
 
 The owner's rule (2026-11-11): the clip is looked for to serve the plan of the short, then prepared; a list of
 clips approved for something else is where to look first, not the limit. A clip is still shown to the owner,
@@ -175,6 +176,8 @@ def main() -> None:
     p.add_argument("--look", type=int, metavar="ID", help="16 frames across one clip")
     p.add_argument("--id", type=int, help="fetch this clip (a candidate, before it is in a file)")
     p.add_argument("--trial", help="fetch the clip of content/trial/<id>.yaml, prepared as its `clip.take` says")
+    p.add_argument("--film", help="with --picture: the film whose own picture (`pictures` of content/trial/<film>.yaml) is fetched")
+    p.add_argument("--picture", help="with --film: the name of that picture")
     p.add_argument("--out", required=True, type=Path, help="a directory (--search, --look) or the clip's file")
     p.add_argument("--min-seconds", type=float, default=12, help="--search: the shortest clip kept (12)")
     p.add_argument("--limit", type=int, default=25, help="--search: how many clips on the sheet (25)")
@@ -193,15 +196,16 @@ def main() -> None:
     if args.id:
         take = {k: v for k, v in (("from", args.start), ("seconds", args.seconds), ("height", args.height), ("pingpong", args.pingpong)) if v}
         return fetch(args.id, args.out, take)
-    if not args.trial:
-        sys.exit("error: one of --search, --look, --id, --trial")
+    if not args.trial and not (args.film and args.picture):
+        sys.exit("error: one of --search, --look, --id, --trial, or --film with --picture")
     try:
         import yaml
     except ImportError:
         sys.exit("error: PyYAML is needed to read the short: uv run --with pyyaml python3 tools/trial/clip.py …")
-    clip = yaml.safe_load((ROOT / "content" / "trial" / f"{args.trial}.yaml").read_text(encoding="utf-8")).get("clip") or {}
+    spec = yaml.safe_load((ROOT / "content" / "trial" / f"{args.trial or args.film}.yaml").read_text(encoding="utf-8"))
+    clip = (spec.get("clip") if args.trial else ((spec.get("pictures") or {}).get(args.picture) or {}).get("clip")) or {}
     if clip.get("source") != "pixabay" or not clip.get("id"):
-        sys.exit("error: no Pixabay clip id in the short")
+        sys.exit("error: no Pixabay clip id in the short" if args.trial else f"error: the film has no picture « {args.picture} » with a Pixabay clip")
     fetch(int(clip["id"]), args.out, clip.get("take") or {})
 
 

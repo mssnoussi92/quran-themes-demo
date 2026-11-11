@@ -12,6 +12,7 @@ import type { WordTiming } from "../types";
 import { Boat, Fleet } from "./Boat";
 import { Call, Niche, Whale } from "./Dua";
 import { House, Land } from "./Home";
+import { Barrier, Chest, Cliffs, Dwellings } from "./Qarnayn";
 import { Village, Wall } from "./Wall";
 
 loadFonts();
@@ -219,9 +220,67 @@ const WaitedPicture: Drawn = ({ t, show, horizon }) => (
   </>
 );
 
+const both = (a: number, b: number) => Math.min(1, a + b);
+
+/** Dhul-Qarnayn, the west (18:86-88): a people is its dwellings by the water where the sun goes down. `sun`,
+ * `choice`: dark, their fate not yet said; `just`: lit, each one treated as he deserves; `land`: the lake alone. */
+const WestPicture: Drawn = ({ t, show, horizon }) => (
+  <>
+    <Land id="l-west" horizon={horizon} rim="#ffc98a" />
+    <g opacity={both(show("sun"), show("choice"))}>
+      <Dwellings id="d-dark" x={420} y={horizon + 36} scale={0.92} t={t} lit={0} />
+    </g>
+    <g opacity={show("just")}>
+      <Dwellings id="d-just" x={420} y={horizon + 36} scale={0.92} t={t} lit={5} />
+    </g>
+  </>
+);
+
+/** Dhul-Qarnayn, the tribute refused (18:93-95): the filmed gorge is the pass between the two mountains. `pass`:
+ * the dwellings of the people at its foot; `offer`: the chest they offer, open; `refused`: the chest closed and
+ * left aside, the first blocks of iron laid by their hands; `land`: the gorge alone. */
+const TributePicture: Drawn = ({ t, show, since, horizon }) => (
+  <>
+    <Land id="l-tribute" horizon={horizon} rim="#cfd8e6" />
+    <g opacity={Math.min(1, show("pass") + show("offer") + show("refused"))}>
+      <Dwellings id="d-pass" x={300} y={horizon + 30} scale={0.6} t={t} lit={2} rim="#cfd8e6" />
+    </g>
+    <g opacity={show("offer")}>
+      <Chest id="c-offer" x={690} y={horizon + 150} scale={1.35} t={t} open />
+    </g>
+    <g opacity={show("refused")}>
+      <Chest id="c-left" x={900} y={horizon + 210} scale={0.8} t={t} open={false} />
+      <Barrier id="b-first" x={640} y={horizon + 60} span={300} full={162} level={Math.min(1, Math.max(0, (t - since("refused") - 1.5) / 9))} heat={0} copper={0} t={t} rim="#cfd8e6" />
+    </g>
+  </>
+);
+
+/** Dhul-Qarnayn, the barrier (18:96-98): two walls of rock, and what is built between them. `blocks`: the courses
+ * of iron going up; `fire`: the fire blown, the copper run into the joints; `done`, `land`: the barrier standing. */
+const BarrierPicture: Drawn = ({ t, show, since, horizon }) => {
+  const ground = horizon + 46;
+  const wall = { x: 540, y: ground, span: 330, full: 594, t, rim: "#b9c6e6" };
+  return (
+    <>
+      <Cliffs id="k-barrier" horizon={horizon} middle={540} gap={320} height={760} rim="#b9c6e6" />
+      <g opacity={show("blocks")}>
+        <Barrier id="b-rise" {...wall} level={Math.min(1, 0.3 + Math.max(0, t - since("blocks")) / 14)} heat={0} copper={0} />
+      </g>
+      <g opacity={show("fire")}>
+        <Barrier id="b-fire" {...wall} level={1} heat={Math.min(1, Math.max(0, t - since("fire")) / 3)} copper={Math.min(1, Math.max(0, t - since("fire") - 7) / 9)} />
+      </g>
+      <g opacity={both(show("done"), show("land"))}>
+        <Barrier id="b-done" {...wall} level={1} heat={0} copper={1} />
+      </g>
+      <Land id="l-barrier" horizon={horizon + 30} rim="#b9c6e6" />
+    </>
+  );
+};
+
 export const PICTURES: Record<string, Drawn> = {
   boat: BoatPicture, boy: HomePicture, wall: WallPicture,
   asked: AskedPicture, written: WrittenPicture, waited: WaitedPicture,
+  west: WestPicture, tribute: TributePicture, barrier: BarrierPicture,
 };
 
 const hasLetter = (token: string) => /\p{L}/u.test(token);

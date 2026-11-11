@@ -20,7 +20,7 @@ outro: 12
 thumbnail: { title: "ذو القرنين", tag: "٣ اختبارات للقوة", panels: [west, tribute, barrier] }
 # Une image propre au film (aucun short) : le clip seul, rien de dessiné dessus.
 pictures:
-  east: { clip: { source: pixabay, id: 26085, author: TeeFarm, page: "https://pixabay.com/videos/id-26085/", take: { seconds: 30, height: 1440 }, brightness: 0.7, side: left, horizon: 640 } }
+  east: { clip: { source: pixabay, id: 26085, author: TeeFarm, page: "https://pixabay.com/videos/id-26085/", take: { seconds: 30, height: 1440 }, brightness: 0.7, side: left, horizon: 640 }, ambience: tribute }
 publish:
   title: { en: "Dhul-Qarnayn: 3 tests of power", ar: "ذو القرنين: ٣ اختبارات للقوة" }
   series: { en: "Dhul-Qarnayn", ar: "ذو القرنين" }

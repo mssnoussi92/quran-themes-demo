@@ -163,8 +163,24 @@ def prepare(args) -> None:
     end = segments[-1]["start"] + segments[-1]["seconds"]
     total = round(end + film["outro"], 2)
 
+    # The pictures: the clip of each short, in its wide setting; and the film's own pictures (`pictures` of its
+    # file: a clip with nothing drawn over it, given with --picture <name>=<clip>).
+    own = film.get("pictures") or {}
+    given = dict(x.split("=", 1) for x in (args.picture or []))
     pictures = {}
     for name in sorted({s["picture"] for s in shots}):
+        if name in own:
+            clip = out_dir / f"{fid}-{name}-clip.mp4"
+            if name in given:
+                shutil.copyfile(given[name], clip)
+            if not clip.is_file():
+                sys.exit(f"error: the film's own picture « {name} » has no clip: python3 tools/trial/clip.py --film {fid} --picture {name} --out <file>, then --picture {name}=<file>")
+            base = own[name]["clip"]
+            if "side" not in base or "horizon" not in base:
+                sys.exit(f"error: pictures.{name}.clip needs `side` and `horizon` (it is only shown in the wide frame)")
+            pictures[name] = {"clip": f"trial/{clip.name}", "clip_seconds": round(P.seconds(clip), 2), "bare": True,
+                              **{k: base[k] for k in ("ground", "rate", "brightness", "side", "horizon", "shift") if k in base}}
+            continue
         clip = out_dir / f"{name}-clip.mp4"
         if not clip.is_file():
             sys.exit(f"error: {clip.relative_to(P.ROOT)} is missing: prepare the short « {name} » first (--trial {name} --draft --clip …)")
@@ -177,7 +193,13 @@ def prepare(args) -> None:
     # The ambience of each picture under the narration, silent under every verse and the hadith; it stays under
     # the calm picture of the end and leaves with it (tools/trial/ambience.py).
     bed = None
-    specs = {name: trial(name).get("ambience") for name in pictures}
+    # A picture of the film alone takes the ambience its file names: a short's id, or a recording of its own.
+    def ambience_of(name: str) -> dict | None:
+        if name not in own:
+            return trial(name).get("ambience")
+        named = own[name].get("ambience")
+        return trial(named).get("ambience") if isinstance(named, str) else named
+    specs = {name: ambience_of(name) for name in pictures}
     if all(specs.values()) and not args.no_ambience:
         import ambience
         quiet = [(s["start"], s["start"] + s["seconds"]) for s in segments if s["kind"] != "narration"]

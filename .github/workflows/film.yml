@@ -2,7 +2,7 @@ name: film
 
 # Prepares and renders a film of the model (docs/model.md) and its shorts: the three shorts, their TikTok
 # versions, the film, the covers and the thumbnail, side by side in parallel jobs, into a DRAFT release
-# "<files>-candidate" that only the repository's owner sees. Until now this was done in an interactive
+# "<files>-candidate" that only the repository's owner sees (a try on a push: "<files>-workflow-test"). Until now this was done in an interactive
 # session, one video after the other (about 2.5 hours for a film and three shorts), because the filmed
 # clips are not in the repository.
 #
@@ -51,8 +51,10 @@ permissions:
   contents: read
 
 # One run per film at a time: two runs of the same film would replace each other's draft release.
+# The try on a push has its own group and its own release (<files>-workflow-test): it must never wait behind,
+# nor replace, the draft of a real run of the same film.
 concurrency:
-  group: film-${{ inputs.film || 'dua' }}
+  group: film-${{ github.event_name == 'push' && 'workflow-test' || inputs.film }}
   cancel-in-progress: false
 
 # On a push there are no inputs: the du'a film, its first short only, with the ambience.
@@ -200,9 +202,16 @@ jobs:
 
       - name: Timeline of the film
         if: ${{ env.ONLY == 'all' || env.ONLY == 'film' }}
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
           flags=()
           if [ "$AMBIENCE" != true ]; then flags+=(--no-ambience); fi
+          # The film's own pictures (`pictures` of its file: a clip with nothing drawn, as the east of Dhul-Qarnayn).
+          for name in $(uv run --with pyyaml python3 -c "import sys, yaml; print(' '.join((yaml.safe_load(open(sys.argv[1])).get('pictures') or {})))" "content/trial/$FILM.yaml"); do
+            uv run --with pyyaml python3 tools/trial/clip.py --film "$FILM" --picture "$name" --out "build/clips/$FILM-$name.mp4"
+            flags+=(--picture "$name=build/clips/$FILM-$name.mp4")
+          done
           uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py \
             --film "$FILM" --voice "$VOICE" --takes content/trial/takes "${flags[@]}"
 
@@ -392,6 +401,7 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       GH_REPO: ${{ github.repository }}
       RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      SUFFIX: ${{ github.event_name == 'push' && 'workflow-test' || 'candidate' }}
     steps:
       - uses: actions/checkout@v7
 
@@ -445,7 +455,7 @@ jobs:
       # One draft at a time: the previous draft of the same tag goes. A draft is seen by the owner only.
       - name: Draft release
         run: |
-          tag="$FILES-candidate"
+          tag="$FILES-$SUFFIX"
           {
             echo "Draft render of the film \`$FILM\` and its shorts, not validated. Narration: AI-generated voice (voice $VOICE, takes kept in content/trial/takes/). Verses: real recitation. Ambience under the narration: $AMBIENCE. Run: $RUN_URL"
             echo
@@ -469,7 +479,7 @@ jobs:
             exit 1
           fi
           gh release create "$tag" --draft --prerelease --target "$GITHUB_SHA" \
-            --title "Draft $FILM: videos to watch" --notes-file notes.md "${assets[@]}"
+            --title "Draft $FILM ($SUFFIX): videos to watch" --notes-file notes.md "${assets[@]}"
           echo "draft release: $(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .html_url")"
 
       # What succeeded is published above; a failed render or still still fails the run.

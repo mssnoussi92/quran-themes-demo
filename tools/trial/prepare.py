@@ -237,6 +237,8 @@ def main() -> None:
                    help="no voice yet: the narration is silent and timed from its length (voice label X), to look at the "
                         "scenes and the script on stills before any request is spent")
     p.add_argument("--no-ambience", action="store_true", help="no bed under the narration (the trial's `ambience`)")
+    p.add_argument("--picture", action="append", metavar="NAME=CLIP",
+                   help="with --film: the clip of one of the film's own pictures (`pictures` of its file), once per picture")
     p.add_argument("--by-pauses", action="store_true", help="place the phrases on the longest pauses of the take, without Whisper (a few lines only)")
     args = p.parse_args()
     if args.film:

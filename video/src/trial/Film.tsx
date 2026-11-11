@@ -13,6 +13,7 @@ import { Clip, GOLD, NarrationText, ReadingText, SHADOW, TRIAL_FPS, VerseText, s
 import type { Layout, Narration, Reading, Verse } from "./Trial";
 import { Village, Wall } from "./Wall";
 import { Call, Niche, Whale } from "./Dua";
+import { Barrier, Chest, Cliffs, Dwellings } from "./Qarnayn";
 
 loadFonts();
 
@@ -23,7 +24,8 @@ type Side = "left" | "right";
 /** `center`: a line said over several pictures in a row (the opening): its text stays in the middle. */
 type Column = Side | "center";
 /** A filmed clip in the wide frame: the side of what is drawn over it, its horizon, how it is moved and darkened. */
-type FilmPicture = { clip: string; clip_seconds: number; side: Side; horizon: number; shift?: number; brightness?: number; ground?: string; rate?: number };
+/** `bare`: a picture of the film alone, a clip with nothing drawn over it (the east of Dhul-Qarnayn). */
+type FilmPicture = { clip: string; clip_seconds: number; side: Side; horizon: number; shift?: number; brightness?: number; ground?: string; rate?: number; bare?: boolean };
 type FilmSegment = (Omit<Narration, "scene"> | Omit<Verse, "scene"> | Omit<Reading, "scene">) & { chapter: string; center?: boolean };
 type Shot = { start: number; picture: string; scene: string };
 type Chapter = { id: string; title: { ar: string; en: string }; number: number | null; start: number };
@@ -168,9 +170,67 @@ const WaitedWide: Drawn = ({ t, show, horizon }) => (
   </>
 );
 
+const both = (a: number, b: number) => Math.min(1, a + b);
+
+/** Dhul-Qarnayn, the west: the dwellings by the water, on the left of the wide frame. */
+const WestWide: Drawn = ({ t, show, horizon }) => (
+  <>
+    <Land id="fl-west" horizon={horizon} rim="#ffc98a" width={W} />
+    <g opacity={both(show("sun"), show("choice"))}>
+      <Dwellings id="fd-dark" x={470} y={horizon + 34} scale={0.85} t={t} lit={0} />
+    </g>
+    <g opacity={show("just")}>
+      <Dwellings id="fd-just" x={470} y={horizon + 34} scale={0.85} t={t} lit={5} />
+    </g>
+  </>
+);
+
+/** Dhul-Qarnayn, the tribute refused: the dwellings, the chest, the first blocks, on the left of the wide frame. */
+const TributeWide: Drawn = ({ t, show, since, horizon }) => (
+  <>
+    <Land id="fl-tribute" horizon={horizon} rim="#cfd8e6" width={W} />
+    <g opacity={Math.min(1, show("pass") + show("offer") + show("refused"))}>
+      <Dwellings id="fd-pass" x={300} y={horizon + 30} scale={0.55} t={t} lit={2} rim="#cfd8e6" />
+    </g>
+    <g opacity={show("offer")}>
+      <Chest id="fc-offer" x={640} y={horizon + 130} scale={1.15} t={t} open />
+    </g>
+    <g opacity={show("refused")}>
+      <Chest id="fc-left" x={800} y={horizon + 170} scale={0.7} t={t} open={false} />
+      <Barrier id="fb-first" x={560} y={horizon + 56} span={280} full={162} level={Math.min(1, Math.max(0, (t - since("refused") - 1.5) / 9))} heat={0} copper={0} t={t} rim="#cfd8e6" />
+    </g>
+  </>
+);
+
+/** Dhul-Qarnayn, the barrier between its two walls of rock, on the right of the wide frame. */
+const BarrierWide: Drawn = ({ t, show, since, horizon }) => {
+  const wall = { x: 1440, y: horizon + 40, span: 300, full: 486, t, rim: "#b9c6e6" };
+  return (
+    <>
+      <g transform="translate(960 0)">
+        <Cliffs id="fk-barrier" horizon={horizon} middle={480} gap={290} height={600} rim="#b9c6e6" width={960} />
+      </g>
+      <g opacity={show("blocks")}>
+        <Barrier id="fb-rise" {...wall} level={Math.min(1, 0.3 + Math.max(0, t - since("blocks")) / 14)} heat={0} copper={0} />
+      </g>
+      <g opacity={show("fire")}>
+        <Barrier id="fb-fire" {...wall} level={1} heat={Math.min(1, Math.max(0, t - since("fire")) / 3)} copper={Math.min(1, Math.max(0, t - since("fire") - 7) / 9)} />
+      </g>
+      <g opacity={both(show("done"), show("land"))}>
+        <Barrier id="fb-done" {...wall} level={1} heat={0} copper={1} />
+      </g>
+      <Land id="fl-barrier" horizon={horizon + 26} rim="#b9c6e6" width={W} />
+    </>
+  );
+};
+
+/** A picture of the film alone (`pictures` of the film's file): the filmed clip, nothing drawn over it. */
+const Bare: Drawn = () => null;
+
 const WIDE: Record<string, Drawn> = {
   boat: BoatWide, boy: HomeWide, wall: WallWide,
   asked: AskedWide, written: WrittenWide, waited: WaitedWide,
+  west: WestWide, tribute: TributeWide, barrier: BarrierWide,
 };
 
 /** One stretch of the film on the same clip: the clip, what is drawn over it scene after scene, a slow zoom. */
@@ -178,7 +238,7 @@ const Stage: React.FC<{ picture: FilmPicture; name: string; shots: Shot[]; from:
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const t = from + frame / fps;
-  const Drawing = WIDE[name];
+  const Drawing = picture.bare ? Bare : WIDE[name];
   if (!Drawing) throw new Error(`no wide picture is drawn for « ${name} »`);
   const zoom = interpolate(frame, [0, durationInFrames], [1, 1.05]);
   // The text side is darkened, the side of the drawing is left clear.
