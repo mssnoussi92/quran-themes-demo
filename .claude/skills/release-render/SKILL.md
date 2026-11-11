@@ -5,27 +5,38 @@ description: Render, check and hand over the videos of a film and its shorts in 
 
 # Render, check, hand over
 
-## 0. The workflow `film` (normal path once it has been tried)
+## 0. The workflow `film` (the normal path)
 
 `.github/workflows/film.yml` prepares and renders a film, its shorts and their TikTok versions in parallel
-jobs (a video per job) and puts them in a **draft** release `<files>-candidate` that only the owner sees. It
-has **not been run yet**: try it once (one short first: `only` = the short's id) before relying on it, and
-fall back to the session path below if it fails.
+jobs (a video per job) and puts them in a **draft** release `<files>-candidate` that only the owner sees. In
+service since 2026-11-11: the du'a (seven videos) took 70 minutes, the film alone 65. The first film, which
+reads an old episode in `verses`, is refused: it is rendered in the session (below).
 
 - **Dispatch** with the GitHub MCP (`actions_run_trigger`, `run_workflow`, `workflow_id: film.yml`, `ref: <branch>`,
   inputs as strings), or from the Actions tab once the file is on the default branch. A push that changes
-  the workflow file itself tries it on one short of the du'a (no inputs on a push).
+  the workflow file itself tries it on one short of the du'a (no inputs on a push; its draft is
+  `<files>-workflow-test`).
   Inputs: `film` (required: `content/trial/<film>.yaml`), `voice` (D), `only` (`all`, `shorts`, `film`,
-  `tiktok`, or one short's id: only that short is prepared), `ambience` (true: the bed is under the narration).
+  `tiktok`, or one short's id: only that short is prepared), `ambience` (true: the bed is under the narration),
+  `from_run` (see below).
 - **Needs** the repository secret `PIXABAY_API_KEY` (it fails at once, saying so, when it is missing), the
-  voice takes already in `content/trial/takes/` (it never asks Gemini), and a film that reads the registry
-  (the first film, which reads an old episode in `verses`, is refused).
+  voice takes already in `content/trial/takes/` (it never asks Gemini), and a film that reads the registry.
 - **What you get**: the draft release with `<files>-short-<n>-<id>.mp4`, the `-tiktok` twins,
   `<files>-film-16x9.mp4`, the covers, the thumbnail, the check sheets (`sheets/`), and the texts to paste as
   the body; each video is also a run artifact for 7 days. `tools/trial/videos.py --film <film>` lists the
   expected names. If a render failed, the rest is published, the notes name what is missing and the run is
   red: re-run the failed jobs.
-- Open the sheets, read the check output, then send the owner the draft. **The validation is still
+- **`from_run: <run id>`** (same `film`, `voice`, `only`): nothing is prepared or rendered, the draft is made
+  again from that run's artifacts, in a minute. For a release step that failed, or texts to paste corrected
+  after the render.
+- **Check before the owner sees anything.** Download each video's artifact into the scratchpad
+  (`actions_list` `list_workflow_run_artifacts`, then `actions_get` `download_workflow_run_artifact`: a
+  temporary link, `curl -L -o`), read its `-check.txt`, open its sheets, and **look at a few frames at full
+  size**: a sheet shows a frame at 500 px, where a wrong glyph is invisible (« ﷺ » was an empty box in a
+  whole film, 2026-11-11, and nothing on the sheets said so). A render machine has none of the session's
+  fonts: `rules.py` refuses a sign the project's fonts lack, and a new kind of text on screen is still looked
+  at once at full size.
+- Then send the owner the videos in the conversation, or the draft's link. **The validation is still
   recorded on the owner's word** (`validated`, section 9): the workflow validates nothing.
 
 The session path below stays valid, unchanged.

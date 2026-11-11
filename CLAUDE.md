@@ -38,7 +38,7 @@ Le propriétaire est développeur, il échange en français. Réponds en frança
 - **Politique des hadiths** (`content/policy.yaml`) : Sahih al-Bukhari, Sahih Muslim et Jami' at-Tirmidhi. Un hadith de Tirmidhi n'est cité que si **al-Albani** le juge sahih ou hasan (jugements recopiés de hadith-api) ; son jugement s'affiche sous la référence. Tout autre recueil : demande au propriétaire avant d'élargir.
 - **Jamais l'invisible figuré.** Ni le paradis, ni l'enfer, ni le Jour du Jugement, ni les anges ne sont dessinés ni générés en image : le texte et la récitation seulement.
 
-`tools/trial/rules.py` refuse ce qu'un code peut voir de ces règles dans les fichiers (une citation hors registre ou hors politique, la voix qui dirait un verset). Les dessins et la première image se vérifient à l'œil, à chaque script et à chaque image.
+`tools/trial/rules.py` refuse ce qu'un code peut voir de ces règles dans les fichiers (une citation hors registre ou hors politique, la voix qui dirait un verset), et un signe qu'aucune police du projet ne sait dessiner. Les dessins et la première image se vérifient à l'œil, à chaque script et à chaque image.
 
 ## Ce qui vaut toujours
 
@@ -104,6 +104,7 @@ cd video && npm run typecheck
 - Modèles Whisper : cache Hugging Face, `~/.cache/huggingface`. Venvs de l'ancien circuit : `/opt/venvs/silma`, `/opt/venvs/voicetut` (le message « /opt/venvs/READY missing » au démarrage ne gêne pas le modèle).
 - Un téléchargement refusé par le proxy (403) : le domaine n'est pas autorisé ; dis au propriétaire lequel ajouter (`docs/cloud-environment.md`), ne contourne pas.
 - Pour que le propriétaire **écoute** un son seul, passe par le workflow `voice-test` (release `voice-test-latest`) ; une vidéo se lui envoie dans la conversation.
+- Les vidéos d'un run GitHub se téléchargent dans la session : `actions_list` (`list_workflow_run_artifacts`), puis `actions_get` (`download_workflow_run_artifact`) donne un lien temporaire que `curl` suit ; à contrôler sur leurs planches avant tout envoi.
 
 ## Skills (`.claude/skills/`)
 
@@ -137,6 +138,7 @@ La session est l'orchestrateur : elle fait le plan, confie ce qui s'y prête, re
 ## Où on en est (à tenir à jour ; le détail est dans `docs/history.md`)
 
 - **Moussa et al-Khadir** : film et trois shorts entièrement validés, livrés dans la conversation.
-- **Le du'a** (`asked`, `written`, `waited`, film `dua`) : script validé le 2026-11-11, voix faite (quatre prises), rendus en cours dans la session ; restent le contrôle de chaque vidéo, l'ambiance, les couvertures, les textes, puis le « je valide » du propriétaire sur les vidéos. Huit versets, Tirmidhi 3505 et sa lecture sont encore `proposed` dans le registre : sa validation des vidéos doit les couvrir.
-- **Ensuite** : Dhul-Qarnayn (choix du propriétaire, 2026-11-11), puis les autres épisodes publiés à réécrire (`docs/themes.md`).
-- **Rendu dans GitHub Actions** : accepté par le propriétaire le 2026-11-11 ; le workflow est en cours d'écriture et demande le secret `PIXABAY_API_KEY` dans le dépôt. Tant qu'il n'a pas tourné une fois, le rendu se fait dans la session (skill `release-render`).
+- **Le du'a** (`asked`, `written`, `waited`, film `dua`) : script validé le 2026-11-11, voix faite (quatre prises), les sept vidéos rendues par le workflow `film`. Les trois shorts envoyés d'abord (rendus dans la session) et le film de travail portent un « ﷺ » mal dessiné dans les sous-titres anglais : corrigé, re-rendu sur GitHub ; restent le contrôle de ce rendu sur ses planches, l'envoi, puis le « je valide » du propriétaire sur les vidéos. Huit versets, Tirmidhi 3505 et sa lecture sont encore `proposed` dans le registre : sa validation des vidéos doit les couvrir.
+- **Dhul-Qarnayn** (`west`, `tribute`, `barrier`, film `qarnayn`) : script écrit, corrigé deux fois par le propriétaire, dessins faits, brouillons envoyés ; attend son « je valide le script » (puis quatre requêtes de voix) et son accord sur quatre clips proposés (`docs/model.md`, « Clips filmés ») ; ambiances provisoires. Ensuite : les autres épisodes publiés à réécrire (`docs/themes.md`).
+- **Le premier film** (Moussa et al-Khadir, validé) a les deux mêmes défauts de police, signalés au propriétaire le 2026-11-11 : un « ﷺ » en police à pixels dans la conclusion, le point de « al-Khiḍr » décalé. Il n'est re-rendu que s'il le demande.
+- **Rendu dans GitHub Actions** : en service depuis le 2026-11-11 (workflow `film`, skill `release-render` §0) : sept vidéos en 70 minutes, release brouillon `<files>-candidate`, `from_run` pour republier sans re-rendre. Le premier film (qui lit un ancien épisode) se rend encore dans la session.

@@ -118,8 +118,10 @@ chaque short ; Tirmidhi 3505 à la fin du deuxième short.
 fichiers). **Voix** : quatre requêtes, une par texte (run 15 de `voice-test`, aucune refusée), prises dans
 `content/trial/takes/` ; chaque phrase retrouvée. Durées avec la voix : 1:49, 2:04, 1:57, film 7:36.
 
-**Reste** : les rendus, leur contrôle, l'ambiance, les couvertures et les textes, puis le « je valide » du
-propriétaire sur les vidéos.
+**Rendu** (2026-11-11) : les sept vidéos par le workflow `film` (film 7:36). Les trois shorts envoyés d'abord et le
+film de travail ont un « ﷺ » mal dessiné dans les sous-titres anglais (`docs/history.md`, tâche 44) : corrigé et
+re-rendu. **Reste** : le contrôle de ce rendu, son envoi, puis le « je valide » du propriétaire sur les vidéos,
+qui doit couvrir les huit versets, Tirmidhi 3505 et sa lecture, encore `proposed`.
 
 ### Fiche : Dhul-Qarnayn dans le modèle (skill `choose-format`, 2026-11-11)
 
@@ -190,6 +192,10 @@ un défilé, un feu). **Voix** : quatre requêtes (trois shorts, le film), une j
 **Décisions du propriétaire (2026-11-11, « ok go with your recommendations »)** : trois shorts (le couchant,
 l'argent refusé, « رحمة من ربي ») et le film ; le levant et « إن شاء الله » dans le film seulement ; le fil des
 trois épreuves de la force (sur les gens, de prendre, d'avoir réussi).
+
+**État (2026-11-11)** : script écrit (`west`, `tribute`, `barrier`, film `qarnayn` ; page lisible
+`docs/scripts/qarnayn.md`), corrigé deux fois par le propriétaire (`docs/history.md`, tâche 43), dessins faits,
+brouillons envoyés. Attend : « je valide le script », l'accord sur les quatre clips, les vraies ambiances.
 
 ## Faits (ancien circuit)
 

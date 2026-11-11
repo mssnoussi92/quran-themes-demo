@@ -128,10 +128,10 @@ cd .. && python3 tools/trial/check.py video/out/<vidéo>.mp4 --data video/public
 uv run --with pyyaml python3 tools/trial/publish.py --film <film>
 ```
 
-**Le même chemin en CI** : le workflow `film` (dispatch à la main : `film`, `voice`, `only`, `ambience`) refait les
-étapes de préparation et de rendu ci-dessus, une vidéo par job, et livre une release brouillon `<files>-candidate`
-(secret `PIXABAY_API_KEY` ; `uv run --with pyyaml python3 tools/trial/videos.py --film <film>` montre ce qu'il
-rendrait ; voir « Ce que les outils ne font pas encore », point 3).
+**Le même chemin en CI, et le chemin normal** : le workflow `film` (dispatch à la main : `film`, `voice`, `only`,
+`ambience`, `from_run`) refait les étapes de préparation et de rendu ci-dessus, une vidéo par job, et livre une
+release brouillon `<files>-candidate` (secret `PIXABAY_API_KEY` ; `uv run --with pyyaml python3 tools/trial/videos.py
+--film <film>` montre ce qu'il rendrait ; voir « Ce que les outils ne font pas encore », point 3).
 
 ## Réglages (ce que le propriétaire a validé)
 
@@ -235,27 +235,34 @@ dit quoi faire.
    ou du mauvais type ; un hadith hors politique (`content/policy.yaml`) ; une lecture sans enregistrement ; un
    verset sans coupe ; **la voix de synthèse qui dit une citation** (4 mots de suite d'un verset du registre, dans son écriture coranique ou courante, ou d'un
    hadith cité : un filet, pas une preuve) ; un texte de voix qui diffère des répliques ; un `reuse`, des `lines` ou un `subscribe` cassés ; un
-   champ obligatoire absent ; une réplique vide ; un titre YouTube de plus de 100 caractères. Il avertit des mots
+   champ obligatoire absent ; une réplique vide ; un titre YouTube de plus de 100 caractères ; **un signe affiché que la
+   police de son texte n'a pas** (lu dans les fichiers de `video/public/fonts/` : Amiri Quran pour un verset, Amiri pour l'arabe,
+   Lora puis Amiri pour l'anglais). Il avertit des mots
    refusés par le propriétaire (`content/wording.yaml`), de l'arabe standard (`content/dialect.yaml`), d'une première
    phrase d'un seul mot, d'une ligne anglaise de plus de 125 caractères (tant que les vidéos ne sont pas validées), d'un short de plus de 2:05, d'un short
    sans ambiance, de ce qui n'est pas encore validé. **Ce qu'aucun code ne contrôle encore : les dessins** (personne
    dessinée, invisible figuré, première image) et le son de la voix : rappelés en fin de sortie, à vérifier à l'œil et
    à l'oreille. Pas de schéma des fichiers : seuls les champs ci-dessus sont exigés. (Le registre reste vérifié par
    `validate.py`.)
-3. **Rendu en CI : écrit, jamais lancé.** Le workflow `film` (`.github/workflows/film.yml`, à la main : `film`,
-   `voice` D, `only` all|shorts|film|tiktok|<id d'un short>, `ambience`) prépare puis rend en jobs parallèles :
-   `prepare` (règles, clip Pixabay de chaque short, timelines avec les prises de `content/trial/takes/` : aucune
-   requête de voix, puis le film), un job `render` par vidéo (short, version TikTok, film : `check.py` et ses
-   planches), `stills` (couvertures et vignette), `release` (le seul qui écrit : une release **brouillon**
-   `<files>-candidate`, que le propriétaire seul voit, avec les vidéos, les images, les planches et
-   `publish.py` en notes ; ce qui a réussi est publié, les notes disent ce qui manque et le job échoue). La liste
-   des vidéos vient de `tools/trial/videos.py` (lue dans les fichiers du film, mêmes noms que `publish.py`).
-   `ffprobe` est celui que Remotion apporte (aucun téléchargement tiers). Un push qui modifie le workflow l'essaie
-   sur un short du du'a. Il demande le secret du dépôt **`PIXABAY_API_KEY`** (les clips ne sont pas dans le dépôt) ; il ne sait pas
-   encore préparer le premier film (qui lit ses versets dans un ancien épisode, `verses`). **Il n'a pas encore
-   tourné : l'essayer une fois sur le du'a (`only` = un short, d'abord) avant de s'y fier.** Le chemin par la
-   session (commandes ci-dessus, skill `release-render`) reste le secours. La validation s'inscrit toujours à
-   la main (`validated`), sur la parole du propriétaire, sans `finalize.py`.
+3. **Rendu en CI : en service depuis le 2026-11-11, sauf pour le premier film.** Le workflow `film`
+   (`.github/workflows/film.yml`, à la main : `film`, `voice` D, `only` all|shorts|film|tiktok|<id d'un short>,
+   `ambience`, `from_run`) prépare puis rend en jobs parallèles : `prepare` (règles, clip Pixabay de chaque short,
+   timelines avec les prises de `content/trial/takes/` : aucune requête de voix, puis le film), un job `render` par
+   vidéo (short, version TikTok, film : `check.py` et ses planches), `stills` (couvertures et vignette), `release`
+   (le seul qui écrit : une release **brouillon** `<files>-candidate`, que le propriétaire seul voit, avec les
+   vidéos, les images, les planches et `publish.py` en notes ; ce qui a réussi est publié, les notes disent ce qui
+   manque et le job échoue). La liste des vidéos vient de `tools/trial/videos.py` (lue dans les fichiers du film,
+   mêmes noms que `publish.py`). `ffprobe` est celui que Remotion apporte (aucun téléchargement tiers). Un push qui
+   modifie le workflow l'essaie sur un short du du'a (release `<files>-workflow-test`). Il demande le secret du
+   dépôt **`PIXABAY_API_KEY`**. **Mesuré sur le du'a** : préparation 6 min, un short 13 à 18 min, le film 65 min,
+   le tout en 70 minutes ; les timelines sont celles de la session à la seconde près. **`from_run` = l'id d'un run** :
+   rien n'est préparé ni rendu, la release brouillon est refaite avec les artefacts de ce run (gardés 7 jours), en
+   une minute : pour une étape de release qui a échoué, ou des textes à coller corrigés après le rendu.
+   **Ce qu'il ne fait pas** : préparer le premier film (qui lit ses versets dans un ancien épisode, `verses`) : le
+   chemin par la session (commandes ci-dessus, skill `release-render`) reste pour lui, et en secours. **Une machine
+   de rendu n'a pas les polices de la session** : un signe absent des polices du projet y sort en carré vide (vu sur
+   « ﷺ ») ; `rules.py` le refuse avant le rendu. La validation s'inscrit toujours à la main (`validated`), sur la
+   parole du propriétaire, sans `finalize.py`.
 4. **Formats pas encore éprouvés.** Une histoire est validée, les idées reçues sont en cours (le du'a) ; pour une
    collection ou un texte expliqué, la structure du film et des shorts se propose d'abord au propriétaire (skill
    `choose-format`).

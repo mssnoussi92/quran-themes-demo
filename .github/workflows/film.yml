@@ -479,8 +479,7 @@ jobs:
       # One draft at a time: the previous draft of the same tag goes. A draft is seen by the owner only.
       # No --target: a draft has no tag until it is published, and these never are. With --target "$GITHUB_SHA"
       # a dispatched run was refused twice (HTTP 403, « Resource not accessible by integration », 2026-11-11)
-      # where the same step had passed on a push; the texts to paste were in its notes for the first time too,
-      # so if the notes are what is refused, the draft is made with short notes and the texts as a file.
+      # after its seven renders; without it, the same artifacts and the same notes were published (`from_run`).
       - name: Draft release
         run: |
           tag="$FILES-$SUFFIX"
@@ -494,13 +493,12 @@ jobs:
               echo
             fi
             echo "Check sheets of every video: \`sheets/\`, to open and read before watching (a text that leaves the frame, the wrong signature)."
-          } > short.md
-          { cat short.md; echo; echo "---"; echo; cat publication.md; } > notes.md
-          no_draft() {
-            for id in $(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .id"); do
-              gh api -X DELETE "repos/$GH_REPO/releases/$id"
-            done
-          }
+            echo; echo "---"; echo
+            cat publication.md
+          } > notes.md
+          for id in $(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .id"); do
+            gh api -X DELETE "repos/$GH_REPO/releases/$id"
+          done
           shopt -s nullglob
           assets=(release/*.mp4 release/*.jpg release/sheets/*)
           echo "assets: ${#assets[@]}"
@@ -508,13 +506,7 @@ jobs:
             echo "::error::nothing was rendered: no release"
             exit 1
           fi
-          no_draft
-          if ! gh release create "$tag" --draft --prerelease --title "$title" --notes-file notes.md "${assets[@]}"; then
-            echo "::warning::the draft was refused with the texts to paste in its notes: made again with short notes, the texts as the file publication.md"
-            no_draft
-            { cat short.md; echo; echo "Texts to paste: the file \`publication.md\` of this release."; } > notes.md
-            gh release create "$tag" --draft --prerelease --title "$title" --notes-file notes.md "${assets[@]}" publication.md
-          fi
+          gh release create "$tag" --draft --prerelease --title "$title" --notes-file notes.md "${assets[@]}"
           echo "draft release: $(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .html_url")"
 
       # What succeeded is published above; a failed render or still still fails the run.
