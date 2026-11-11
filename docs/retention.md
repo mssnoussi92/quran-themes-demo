@@ -2,6 +2,121 @@
 
 Proposé le 2026-11-10. **Rien n'est décidé** : le propriétaire tranche point par point (liste à la fin).
 
+## Mise à jour du 2026-11-11
+
+**Ce que le propriétaire a précisé.** Il a validé ce qui existe par rapport aux options que les sessions lui ont
+montrées, sans être convaincu à 100 % par les personnages ni par les styles. Ce dépôt a commencé comme une démo :
+continuer sur cette base est peut-être l'erreur. **Quatre règles seulement sont obligatoires** : les citations
+par id, jamais de synthèse vocale sur le Coran, personne de connu dessiné, la politique des hadiths. Tout le reste
+se discute, outils compris. Pas de voix humaine ; d'autres voix IA sont à essayer. Le style est à proposer, même
+s'il demande un grand chantier. Il n'a pas décidé si ces vidéos iront sur les pages des récitations. On continue
+le brainstorming avant de tout recréer.
+
+**Ce que montrent les pages** (YouTube Studio, 13 oct. – 9 nov. 2026, et `quran-reels`) :
+
+- La chaîne n'a que cinq jours d'activité : 9 000 vues, 51,5 h, soit **environ 20 s regardées par vue**, sur des
+  récitations de sourates courtes (texte arabe, traduction anglaise, sens d'un mot). 66 abonnés au 2026-11-09,
+  5 sur TikTok. Il n'y a donc presque pas de public à perdre, ni à apporter.
+- Vues par pays : Algérie 11,6 %, Maroc 8,8 %, Ouzbékistan 7,7 %, **Égypte 6,5 %**, Irak 5,8 %, Syrie 5,1 %,
+  Indonésie 4,8 %, Allemagne 3,2 %, Arabie saoudite 2,9 %, Jordanie 1,9 %. Les pays arabes de cette liste font
+  42,6 % des vues ; aucun pays anglophone n'y figure.
+
+**Ce que j'en tire.**
+
+- **La langue.** La narration en égyptien s'adresse d'abord à 6,5 % de ce public. L'arabe standard simple
+  (« فصحى مبسطة ») est compris de l'Algérie à l'Irak, c'est la langue habituelle du récit religieux, et c'est là
+  que les voix de synthèse sont le mieux mesurées (voir « Les voix »). Contrepartie à tenir : en arabe standard, une phrase de la
+  narration peut retomber mot pour mot sur le verset qu'elle annonce ; or la voix de synthèse ne dit jamais le
+  Coran. « Une question, le verset, le sens » règle ce point : la narration ne redit plus le verset.
+- **Les pages.** Deux produits, deux publics : des récitations de 20 s pour tout musulman, des films racontés
+  en arabe pour qui comprend l'arabe. Je les séparerais (des pages au nom arabe pour les films, les pages des
+  récitations renvoyant vers elles), puisqu'il n'y a pas encore de public à déplacer. Confiance moyenne : le
+  propriétaire tranche, rien d'autre n'en dépend que le nom signé sur les images.
+- **Le style.** Tout ce qui a été montré au propriétaire a été dessiné par du code, dans la direction la moins
+  favorable à ce moyen : des personnages et des objets au trait, en aplats. Trois familles d'images existent,
+  et aucune n'a été comparée aux autres : (1) **dessiné par le code, mais en silhouettes à contre-jour**, dans les
+  couleurs des récitations de la page (essai « nuit et or » du 2026-11-11 : `docs/retention/nuit-et-or-9x16.jpg`
+  et `nuit-et-or-16x9.jpg`, dessinés par `docs/retention/style-frame.py`) ; (2)
+  **images peintes par un modèle d'images**, animées par un mouvement de caméra ; (3) **vidéos de nature et
+  typographie**, comme les récitations. Le film peut mêler (1) et (3). À comparer sur le même plan avant de
+  choisir.
+- **La base.** Le dépôt contient 6 000 lignes de dessins (plat, Open Peeps, papier, craie, enluminure), 6 000
+  lignes d'épisodes écrits en reels-chapitres et 2 200 lignes d'instructions qui présentent les choix de la démo
+  comme des règles ; ce qui porte les quatre règles obligatoires (registre des sources, coupes de récitation et
+  temps des mots, nivelage du son) tient en 1 900 lignes. Quand la direction sera choisie : **un dépôt neuf pour
+  les films**, qui reprend ces 1 900 lignes et les tests des quatre règles, et rien d'autre ; celui-ci reste
+  l'archive des neuf épisodes.
+
+### Les voix (recherche du 2026-11-11)
+
+Recherche sur le web par un agent de la session ; les prix et plusieurs noms de modèles sont à revérifier chez
+le fournisseur avant de s'engager.
+
+- **Les meilleures voix arabes sont payantes, et coûtent peu** : 0,14 à 0,64 $ pour dix minutes de narration.
+  Trois moteurs sont en tête des classements par écoute : **Gemini 3.8 Flash TTS** (le seul dont la documentation
+  nomme à la fois l'arabe standard et l'égyptien ; on lui dit comment raconter, en clair ; environ 0,14 $ le
+  film), **ElevenLabs Eleven v4** (0,32 à 0,64 $) et **Cartesia Sonic 3.6** (0,31 à 0,40 $)
+  ([Artificial Analysis](https://artificialanalysis.ai/text-to-speech/leaderboard/controlled-voice),
+  [Google](https://aistudio.google.com/docs/speech-generation), [ElevenLabs](https://elevenlabs.io/pricing/api),
+  [Cartesia](https://cartesia.ai/pricing)). Azure a seize voix arabes par pays et un palier gratuit, mais ses
+  voix sont jugées plus mécaniques.
+- **Aucun modèle libre n'est à la fois proche de ces trois-là, utilisable commercialement et rapide sur CPU**
+  ([arène arabe de Navid](https://huggingface.co/spaces/Navid-AI/Arabic-TTS-Arena)). « Libre et gratuit d'abord »
+  est ce qui a tenu la voix au niveau où elle est.
+- **L'égyptien est peu mesuré** : 823 votes d'écoute contre 5 134 pour l'arabe standard, et aucun test
+  indépendant de l'égyptien pour ElevenLabs, Cartesia ou Gemini 3.8.
+- **VoiceTut : un doute sur la licence.** Le modèle est publié en Apache 2.0 mais affiné à partir d'OmniVoice,
+  dont les poids sont en CC-BY-NC (non commercial)
+  ([VoiceTut](https://huggingface.co/mohammedaly22/VoiceTut-TTS), [OmniVoice](https://huggingface.co/k2-fsa/OmniVoice)).
+  À éclaircir avant de monétiser ; ce n'est pas un avis juridique.
+- **Les voyelles.** Aucun de ces moteurs n'exige un texte vocalisé ; pour l'arabe standard, un outil libre
+  existe (CATT) et un grand modèle de langage vocalise mieux encore, à condition de vérifier que les lettres
+  n'ont pas changé ([étude LREC 2026](https://arxiv.org/abs/2506.11602)). Rien de fiable pour l'égyptien.
+- Non fait : un essai d'écoute. Un moteur libre (Supertonic 3) n'a pas pu être installé dans cette session
+  (installation refusée par le mode de permission) ; les trois moteurs en tête demandent une clé d'API.
+
+### Les images (recherche du 2026-11-11)
+
+- **Ce qui fait le plus de vues dans cette niche aujourd'hui, ce sont des images générées par IA** : la chaîne
+  Towards Eternity (4,09 M d'abonnés) est passée en février 2026 à une série titrée « AI-Visualized », dont le
+  premier épisode (15,8 M de vues) est sa vidéo la plus vue
+  ([vidIQ](https://vidiq.com/youtube-stats/channel/@towardseternity/)). Aucune chaîne arabe sans visage
+  d'histoires du Coran à grande échelle n'a été trouvée : lacune de la recherche, pas preuve d'absence.
+- **C'est aussi la voie la plus risquée.** YouTube ne monétise pas les « diaporamas d'images… avec peu ou pas de
+  récit » ni l'IA « à gabarits génériques », admet l'IA qui illustre un récit original
+  ([YouTube](https://support.google.com/youtube/answer/1311392?hl=en)), et n'exige l'étiquette « contenu modifié »
+  que pour un rendu réaliste, pas pour un style illustré
+  ([YouTube](https://support.google.com/youtube/answer/14328491?hl=en)). Dar al-Ifta (fatwa du 2025-12-30)
+  interdit de figurer par IA les scènes du Jour dernier et rappelle l'interdit de représenter les prophètes,
+  « explicitement ou par symbole »
+  ([Dar al-Ifta](https://www.dar-alifta.org/ar/fatwa/details/22537/%D8%AD%D9%83%D9%85-%D8%AA%D8%B5%D9%88%D9%8A%D8%B1-%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D9%82%D9%8A%D8%A7%D9%85%D8%A9-%D8%A8%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A)).
+  Proposition : ajouter aux règles obligatoires « ne jamais figurer l'invisible » (paradis, enfer, Jugement, anges).
+- **Trois chaînes de fabrication** (coûts estimés par l'agent, pour un film de 7 min et 60 à 90 plans) :
+  (A) des planches peintes par un modèle d'images dans un seul style, découpées en couches et animées par le
+  code, rendu identique à chaque fois : 5 à 25 $ ; (B) la même, plus de l'image-vers-vidéo sur dix à quinze
+  plans (l'eau, le feu, le ciel, la première seconde des shorts) : 15 à 45 $ ; (C) tout en image-vers-vidéo :
+  45 à 250 $, des heures de relecture par film, et tous les risques ci-dessus.
+- **Le moteur n'est pas le problème** : Remotion reste gratuit pour un particulier, lit des couches d'images et
+  des clips, et rend bien le texte arabe ; en changer n'apporte rien.
+- Midjourney n'a pas d'API : inutilisable dans une chaîne sans écran (le propriétaire travaille au téléphone).
+
+### Ce que je recommande, et la suite du brainstorming
+
+- **Le film** : la récitation en colonne vertébrale (« une question, le verset, le sens »), en arabe standard
+  simple, dans une image de nuit et d'or qui prolonge les récitations de la page.
+- **L'image** : commencer par ce que le code dessine bien (silhouettes, lumière, typographie), puis relever le
+  plafond avec des planches peintes par un modèle d'images dans la même direction (chaîne A), et de
+  l'image-vers-vidéo sur quelques plans seulement (B). Pas C.
+- **La voix** : une des trois voix payantes, choisie à l'oreille.
+- **Avant tout chantier, trois comparaisons** que le propriétaire juge au téléphone :
+  1. **la voix, à l'aveugle** : les cinq mêmes phrases, en arabe standard et en égyptien, par Gemini 3.8,
+     Eleven v4 et Sonic 3.6 (moins de 2 $, sans doute rien avec les paliers gratuits) ; il faut une clé d'API
+     par service, saisie dans le formulaire sécurisé de la session, jamais dans la conversation ;
+  2. **le style, sur le même plan** : la silhouette dessinée par le code (faite), une planche peinte par un
+     modèle d'images, une vidéo de nature avec la typographie ; la session a un générateur d'images par le
+     connecteur Figma du propriétaire, payant en crédits Figma : seulement avec son accord ;
+  3. **puis 45 secondes montées** avec la voix et le style retenus, avant d'écrire une ligne du nouveau dépôt.
+
 ## La demande
 
 Propriétaire, 2026-11-10, après le premier essai sur Instagram : les règles et les personnages des vidéos faites
