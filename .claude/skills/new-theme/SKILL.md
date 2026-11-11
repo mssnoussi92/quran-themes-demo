@@ -156,7 +156,8 @@ saw and heard; anything added afterwards waits for their word again.
 ## 10. Leave the repository true
 
 - `docs/themes.md`: the theme as done in the model; `docs/model.md` when a setting, a clip, a
-  recording or a tool changed; `CLAUDE.md`: one task entry (what was asked, decided, validated).
+  recording or a tool changed; `docs/history.md`: one task entry at the end (what was asked, decided,
+  validated); `CLAUDE.md`: only « Où on en est », kept current and short.
 - A tool gap closed (`docs/model.md`, « Ce que les outils ne font pas encore »): remove it there and
   update the skill that mentioned it.
 - Commit and push on the session's branch.

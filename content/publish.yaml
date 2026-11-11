@@ -32,7 +32,7 @@ platforms:
   instagram_tiktok: { max_hashtags: 5, max_caption: 2200 }   # Instagram's caps (2200 characters)
   youtube: { max_title: 100, max_description: 5000 }
 
-# Lines of every description. The synthetic voice is declared (CLAUDE.md, « Voix déclarée »).
+# Lines of every description. The synthetic voice is declared (CLAUDE.md, « Ce qui vaut toujours »).
 lines:
   narration: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي"
   characters: "Characters: Open Peeps by Pablo Stanley (CC0)"

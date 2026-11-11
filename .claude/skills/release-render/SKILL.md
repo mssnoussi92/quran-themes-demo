@@ -146,5 +146,6 @@ caption), then the covers and the file of texts. The message the owner reads:
 
 ## 9. Record
 
-`CLAUDE.md` (one task entry: what was delivered, decided, validated), `docs/model.md` if a setting or
+`docs/history.md` (one task entry at the end: what was delivered, decided, validated), `CLAUDE.md` (only
+« Où on en est », kept current and short), `docs/model.md` if a setting or
 a catalog changed, `docs/themes.md`; commit and push on the session's branch.
