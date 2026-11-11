@@ -259,8 +259,11 @@ const TributePicture: Drawn = ({ t, show, since, horizon }) => (
  * of iron going up; `fire`: the fire blown, the copper run into the joints; `done`, `land`: the barrier standing. */
 const BarrierPicture: Drawn = ({ t, show, since, horizon }) => {
   const ground = horizon + 46;
-  const wall = { x: 540, y: ground, span: 520, full: 702, t, rim: "#b9c6e6" };
-  const rock = <Cliffs id="k-barrier" horizon={horizon} middle={540} gap={320} height={760} rim="#b9c6e6" />;
+  // The walls stand lower than the text and leave the filmed mist above them; the barrier is laid from one to
+  // the other (the rock covers its ends) up to their shoulders; the fire lights the faces that look into the pass.
+  const wall = { x: 540, y: ground, span: 640, full: 540, t, rim: "#b9c6e6" };
+  const fire = show("fire") * Math.min(1, Math.max(0, t - since("fire")) / 3);
+  const rock = <Cliffs id="k-barrier" horizon={horizon} middle={540} gap={400} height={600} rim="#b9c6e6" glow={fire} />;
   return (
     <>
       <g opacity={show("blocks")}>

@@ -47,34 +47,73 @@ export const Dwellings: React.FC<{ id: string; x: number; y: number; scale: numb
   );
 };
 
-/** Two walls of rock and the pass between them, for a frame `width` wide. `middle`: the middle of the pass;
- * `gap`: its width at the ground; `height`: how high the walls stand over the horizon. */
-export const Cliffs: React.FC<{ id: string; horizon: number; middle: number; gap: number; height: number; rim: string; width?: number }> = ({ id, horizon, middle, gap, height, rim, width = 1080 }) => {
-  const l = middle - gap / 2;
-  const r = middle + gap / 2;
-  const top = horizon - height;
-  const base = horizon + 80;
-  const left = `M -40 ${base} L -40 ${top + 60} L ${l * 0.28} ${top + 20} L ${l * 0.5} ${top + 70} L ${l * 0.72} ${top + 36} L ${l - 70} ${top + 110} L ${l - 84} ${top + height * 0.42} L ${l - 40} ${top + height * 0.5} L ${l - 52} ${top + height * 0.78} L ${l} ${base} Z`;
-  const rightTop = (k: number) => r + (width + 40 - r) * k;
-  const right = `M ${width + 40} ${base} L ${width + 40} ${top + 90} L ${rightTop(0.7)} ${top + 30} L ${rightTop(0.45)} ${top + 84} L ${rightTop(0.24)} ${top + 50} L ${r + 64} ${top + 130} L ${r + 86} ${top + height * 0.46} L ${r + 36} ${top + height * 0.56} L ${r + 50} ${top + height * 0.8} L ${r} ${base} Z`;
+/** One wall of rock, drawn from its outer edge (x = 0) to its foot in the pass (x = w): a dark body, a plane that
+ * faces the pass and takes the light of the sky, cracks, a line of light along its top. `glow`: how much of the
+ * fire it takes on that plane (0 to 1). `tilt`: a small change of its outline, so the two walls are not twins. */
+const Rock: React.FC<{ id: string; w: number; h: number; base: number; rim: string; glow: number; tilt: number; slope?: boolean }> = ({ id, w, h, base, rim, glow, tilt, slope = false }) => {
+  const top = base - h;
+  const y = (k: number, d = 0) => top + h * k + d * tilt;
+  // the outline, from the outer foot, over the top, down the face that looks into the pass
+  // `slope`: its outer side is in the frame (the wide film): it climbs from the ground instead of standing cut
+  const rise = slope ? `L ${w * 0.07} ${y(0.62, 0)} L ${w * 0.04} ${y(0.4, 0)} L ${w * 0.13} ${y(0.14, 8)}` : `L 0 ${y(0.1, 14)}`;
+  const crest = `${rise} L ${w * 0.2} ${y(0.02, -10)} L ${w * 0.36} ${y(0.09, 12)} L ${w * 0.54} ${y(0.03, -8)} L ${w * 0.72} ${y(0.12, 10)} L ${w * 0.86} ${y(0.2, 0)}`;
+  const face = `L ${w * 0.8} ${y(0.4, 8)} L ${w * 0.93} ${y(0.47, 0)} L ${w * 0.88} ${y(0.68, -6)} L ${w * 0.97} ${y(0.75, 0)} L ${w} ${base}`;
+  const plane = `M ${w * 0.86} ${y(0.2, 0)} ${face} L ${w * 0.78} ${base} L ${w * 0.7} ${y(0.72, 0)} L ${w * 0.74} ${y(0.5, 0)} L ${w * 0.62} ${y(0.38, 6)} L ${w * 0.7} ${y(0.24, 0)} Z`;
   return (
     <g>
       <defs>
-        <linearGradient id={`${id}-rock`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#0c1020" />
-          <stop offset=".6" stopColor={INK} />
+        <linearGradient id={`${id}-body`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#0e1326" />
+          <stop offset=".55" stopColor="#070912" />
           <stop offset="1" stopColor="#030308" />
         </linearGradient>
+        <linearGradient id={`${id}-plane`} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#1b2440" />
+          <stop offset="1" stopColor="#0b0f1e" />
+        </linearGradient>
+        <linearGradient id={`${id}-lit`} x1="1" y1="1" x2="0" y2="0">
+          <stop offset="0" stopColor="#ff8a2e" stopOpacity=".75" />
+          <stop offset=".6" stopColor="#ff9a3a" stopOpacity=".22" />
+          <stop offset="1" stopColor="#ffb35a" stopOpacity="0" />
+        </linearGradient>
       </defs>
-      <path d={left} fill={`url(#${id}-rock)`} />
-      <path d={right} fill={`url(#${id}-rock)`} />
-      {[0.2, 0.36, 0.55, 0.72].map((k, i) => (
-        <path key={i} d={`M -40 ${top + height * k + 30} L ${l * 0.45} ${top + height * k} L ${l - 60 + 20 * (i % 2)} ${top + height * k + 44} M ${r + 60 - 20 * (i % 2)} ${top + height * k + 50} L ${rightTop(0.5)} ${top + height * k + 6} L ${width + 40} ${top + height * k + 40}`} fill="none" stroke={rim} strokeWidth={2} opacity={0.1} />
-      ))}
-      {/* the light of the sky on the faces that look into the pass, and along the tops */}
-      <path d={`M ${l - 70} ${top + 110} L ${l - 84} ${top + height * 0.42} L ${l - 40} ${top + height * 0.5} L ${l - 52} ${top + height * 0.78} L ${l} ${base}`} fill="none" stroke={rim} strokeWidth={3} opacity={0.4} />
-      <path d={`M ${r + 64} ${top + 130} L ${r + 86} ${top + height * 0.46} L ${r + 36} ${top + height * 0.56} L ${r + 50} ${top + height * 0.8} L ${r} ${base}`} fill="none" stroke={rim} strokeWidth={3} opacity={0.4} />
-      <path d={`M -40 ${top + 60} L ${l * 0.28} ${top + 20} L ${l * 0.5} ${top + 70} L ${l * 0.72} ${top + 36} L ${l - 70} ${top + 110} M ${width + 40} ${top + 90} L ${rightTop(0.7)} ${top + 30} L ${rightTop(0.45)} ${top + 84} L ${rightTop(0.24)} ${top + 50} L ${r + 64} ${top + 130}`} fill="none" stroke={rim} strokeWidth={2.5} opacity={0.28} />
+      <path d={`M 0 ${base} ${crest} ${face} Z`} fill={`url(#${id}-body)`} />
+      {/* the plane that faces the pass: the light of the sky, then the light of the fire */}
+      <path d={plane} fill={`url(#${id}-plane)`} opacity={0.9} />
+      {glow > 0 ? <path d={plane} fill={`url(#${id}-lit)`} opacity={glow} /> : null}
+      {/* a second, fainter plane higher up, and the cracks of the rock */}
+      <path d={`M ${w * 0.2} ${y(0.02, -10)} L ${w * 0.36} ${y(0.09, 12)} L ${w * 0.3} ${y(0.34, 0)} L ${w * 0.12} ${y(0.26, 0)} Z`} fill="#141b30" opacity={0.55} />
+      <path d={`M ${w * 0.54} ${y(0.03, -8)} L ${w * 0.5} ${y(0.3, 0)} L ${w * 0.58} ${y(0.52, 0)} M ${w * 0.3} ${y(0.34, 0)} L ${w * 0.36} ${y(0.6, 0)} L ${w * 0.28} ${y(0.82, 0)} M ${w * 0.12} ${y(0.26, 0)} L ${w * 0.08} ${y(0.55, 0)}`} fill="none" stroke={rim} strokeWidth={2} opacity={0.13} />
+      {/* the line of light: along the top, and down the edge of the pass */}
+      <path d={`M 0 ${base} ${crest}`} fill="none" stroke={rim} strokeWidth={3} opacity={slope ? 0.42 : 0} />
+      {slope ? null : <path d={`M 0 ${y(0.1, 14)} ${crest.slice(crest.indexOf("L", 2))}`} fill="none" stroke={rim} strokeWidth={3} opacity={0.42} />}
+      <path d={`M ${w * 0.86} ${y(0.2, 0)} ${face}`} fill="none" stroke={glow > 0.05 ? COPPER : rim} strokeWidth={3} opacity={0.45 + 0.3 * glow} />
+    </g>
+  );
+};
+
+/** Two walls of rock and the pass between them, for a frame `width` wide. `middle`: the middle of the pass;
+ * `gap`: its width at the ground; `height`: how high the walls stand over the horizon; `glow`: the fire on the
+ * faces that look into the pass (0 to 1); `open`: the outer side of the left wall is in the frame (the film).
+ * A little mist lies at their foot, as in the filmed sky behind. */
+export const Cliffs: React.FC<{ id: string; horizon: number; middle: number; gap: number; height: number; rim: string; width?: number; glow?: number; open?: boolean }> = ({ id, horizon, middle, gap, height, rim, width = 1080, glow = 0, open = false }) => {
+  const l = middle - gap / 2;
+  const r = middle + gap / 2;
+  const base = horizon + 80;
+  return (
+    <g>
+      <defs>
+        <filter id={`${id}-mist`} x="-20%" y="-150%" width="140%" height="400%">
+          <feGaussianBlur stdDeviation="30" />
+        </filter>
+      </defs>
+      <g transform="translate(-40 0)">
+        <Rock id={`${id}-l`} w={l + 40} h={height + 80} base={base} rim={rim} glow={glow} tilt={1} slope={open} />
+      </g>
+      <g transform={`translate(${width + 40} 0) scale(-1 1)`}>
+        <Rock id={`${id}-r`} w={width + 40 - r} h={(height + 80) * 0.93} base={base} rim={rim} glow={glow} tilt={-1.4} />
+      </g>
+      <ellipse cx={middle} cy={horizon + 4} rx={gap * 1.3} ry={46} fill="#c9d4f0" opacity={0.1} filter={`url(#${id}-mist)`} />
     </g>
   );
 };
@@ -135,7 +174,13 @@ export const Barrier: React.FC<{ id: string; x: number; y: number; span: number;
       const a = Math.max(-span / 2, bx);
       const b = Math.min(span / 2, bx + w);
       if (b - a < 6 || (a + span / 2) / span > there) continue;
-      blocks.push(<rect key={`${row}-${k}`} x={a + 2} y={top + 2} width={b - a - 4} height={course - 4} rx={3} fill="#0a0d19" stroke={rim} strokeWidth={1.5} strokeOpacity={0.22} />);
+      const shade = ["#0a0d19", "#0c1020", "#090b16", "#0d1122"][(row * 3 + k + 8) % 4];
+      blocks.push(
+        <g key={`${row}-${k}`}>
+          <rect x={a + 2} y={top + 2} width={b - a - 4} height={course - 4} rx={3} fill={shade} stroke={rim} strokeWidth={1.5} strokeOpacity={0.2} />
+          <path d={`M ${a + 6} ${top + 5} L ${b - 6} ${top + 5}`} stroke={rim} strokeWidth={2} opacity={0.14} />
+        </g>,
+      );
       // how far the copper has run down: the top courses first
       const reached = Math.max(0, Math.min(1, copper * rows - (rows - 1 - row)));
       if (reached > 0) {

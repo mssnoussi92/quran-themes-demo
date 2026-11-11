@@ -204,10 +204,11 @@ const TributeWide: Drawn = ({ t, show, since, horizon }) => (
 
 /** Dhul-Qarnayn, the barrier between its two walls of rock, on the right of the wide frame. */
 const BarrierWide: Drawn = ({ t, show, since, horizon }) => {
-  const wall = { x: 1440, y: horizon + 40, span: 470, full: 540, t, rim: "#b9c6e6" };
+  const wall = { x: 1480, y: horizon + 40, span: 560, full: 432, t, rim: "#b9c6e6" };
+  const fire = show("fire") * Math.min(1, Math.max(0, t - since("fire")) / 3);
   const rock = (
     <g transform="translate(960 0)">
-      <Cliffs id="fk-barrier" horizon={horizon} middle={480} gap={290} height={600} rim="#b9c6e6" width={960} />
+      <Cliffs id="fk-barrier" horizon={horizon} middle={520} gap={340} height={480} rim="#b9c6e6" width={960} glow={fire} open />
     </g>
   );
   return (
