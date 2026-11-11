@@ -39,7 +39,9 @@ night, and the du'a's third short took the full moon of the boy's short, two pic
   python3 tools/trial/clip.py --search "starry sky night" "milky way" "desert night stars" --out <scratchpad>/<dir>
   ```
 
-  Several queries in English, the same thing said several ways. It leaves out what Pixabay marks
+  Several queries in English, the same thing said several ways. Pixabay's search is loose (« sunset
+  marsh » brings seas and forests, the most downloaded first): add `--tags lake pond marsh` to keep
+  only the clips whose tags name what you asked for. It leaves out what Pixabay marks
   AI-generated or low quality, what is under twelve seconds or under 1920 px, and what a tag says
   shows a person; it prints the rest with their tags and writes a sheet of first frames.
 - **Look at a whole clip before keeping it**: the sheet shows one frame, and a clip can change.

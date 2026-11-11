@@ -2,6 +2,7 @@
 """The filmed clip of a short: find it, look at all of it, fetch it and prepare it (Pixabay; never in the repository).
 
   python3 tools/trial/clip.py --search "starry sky night" "milky way" --out <dir>   # candidates: a table and <dir>/sheet.jpg
+  python3 tools/trial/clip.py --search "sunset lake" "dusk pond" --tags lake pond marsh --out <dir>   # only what the tags name
   python3 tools/trial/clip.py --look 14955 --out <dir>                              # <dir>/14955/sheet.jpg: 16 frames across the clip
   python3 tools/trial/clip.py --id 14955 --out <file> --seconds 12.5 --height 1440 --pingpong   # try a candidate
   python3 tools/trial/clip.py --trial waited --out <file>                           # the clip of a short, prepared as its `clip.take` says
@@ -86,9 +87,9 @@ def one(clip_id: int) -> dict:
     return hits[0]
 
 
-def search(queries: list[str], out: Path, min_seconds: float, limit: int) -> None:
+def search(queries: list[str], out: Path, min_seconds: float, limit: int, wanted: list[str]) -> None:
     found: dict[int, dict] = {}
-    dropped = {"AI-generated": 0, "low quality": 0, "too short": 0, "too small": 0, "a person in the tags": 0}
+    dropped = {"AI-generated": 0, "low quality": 0, "too short": 0, "too small": 0, "a person in the tags": 0, "none of the tags asked for": 0}
     for query in queries:
         hits = api(q=query, video_type="film", safesearch="true", per_page=100, order="popular").get("hits", [])
         for hit in hits:
@@ -98,7 +99,8 @@ def search(queries: list[str], out: Path, min_seconds: float, limit: int) -> Non
             big = largest(hit)
             why = ("AI-generated" if hit.get("isAiGenerated") else "low quality" if hit.get("isLowQuality")
                    else "too short" if hit["duration"] < min_seconds else "too small" if max(big["width"], big["height"]) < 1920
-                   else "a person in the tags" if tags & PEOPLE else None)
+                   else "a person in the tags" if tags & PEOPLE
+                   else "none of the tags asked for" if wanted and not any(w in hit["tags"].lower() for w in wanted) else None)
             if why:
                 dropped[why] += 1
             else:
@@ -176,13 +178,16 @@ def main() -> None:
     p.add_argument("--out", required=True, type=Path, help="a directory (--search, --look) or the clip's file")
     p.add_argument("--min-seconds", type=float, default=12, help="--search: the shortest clip kept (12)")
     p.add_argument("--limit", type=int, default=25, help="--search: how many clips on the sheet (25)")
+    p.add_argument("--tags", nargs="+", default=[], metavar="WORD",
+                   help="--search: keep only clips whose tags hold one of these words (Pixabay's search is loose: "
+                        "« sunset marsh » brings seas and forests; --tags lake pond marsh keeps what was asked)")
     p.add_argument("--from", dest="start", type=float, help="with --id: where the stretch kept begins")
     p.add_argument("--seconds", type=float, help="with --id: how long the stretch kept is")
     p.add_argument("--height", type=int, help="with --id: reduce to this height (1440 for a 4K clip)")
     p.add_argument("--pingpong", action="store_true", help="with --id: forward then backward")
     args = p.parse_args()
     if args.search:
-        return search(args.search, args.out, args.min_seconds, args.limit)
+        return search(args.search, args.out, args.min_seconds, args.limit, [w.lower() for w in args.tags])
     if args.look:
         return look(args.look, args.out)
     if args.id:
