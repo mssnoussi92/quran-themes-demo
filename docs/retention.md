@@ -234,6 +234,38 @@ Décisions du propriétaire : **la troisième piste d'image** (la vraie mer film
 - La vidéo ne se rend que dans une session : le clip de mer (Pixabay 22183) n'est pas dans le dépôt,
   `tools/trial/clip.py` le récupère avec la clé de l'environnement.
 
+### Avis du propriétaire sur l'essai, et version 2 du script (2026-11-11)
+
+Le propriétaire, après la version 1 (voix de secours) : **l'image et le rythme sont bons** ; le script n'est pas
+assez attirant, **surtout la leçon de la fin** ; l'histoire est plus profonde : elle parle du qadar, et de ce que
+tout ce qu'on voit comme un mal n'en est pas un ; il faut **développer la leçon avec un bon exemple** et **finir
+en annonçant l'épisode suivant** (« النوع الثاني من القدر »).
+
+Ce que la session en pense (dit au propriétaire, il tranche) :
+
+- **D'accord sur la leçon.** Pour tenir en 1:03, la version 1 avait retiré l'exemple de vie et réduit la leçon à
+  un slogan (« افتكر السفينة »). Les départs mesurés sont dans les premières secondes : vingt secondes de fond à
+  la fin ne coûtent rien, et ce sont elles qui font enregistrer et partager.
+- **D'accord sur le fond, pas sur le mot.** « Trois types de qadar » est une lecture de prédicateurs (elle
+  circule en plusieurs versions qui ne se recoupent pas), pas un classement du Coran ni d'un hadith ; dans les
+  livres de croyance, « أنواع التقدير » désigne autre chose (l'éternel, celui de la vie, de l'année, du jour).
+  Dit comme un fait, ce serait une affirmation sans source. Proposé : « تلات مواقف » (trois situations de
+  l'histoire), la leçon restant notre ligne, et 2:216 pour l'appuyer dans le film.
+- **L'annonce du suivant : oui, à trois conditions.** Le short tient d'abord sa propre promesse ; l'annonce est
+  une question ouverte sur le cas suivant, pas « تابعنا » (28 reels sur 45 finissaient ainsi) ; et le suivant
+  doit se trouver : numéro à l'écran et dans le titre, vidéo associée du short vers le film sur YouTube, les
+  trois épinglés dans l'ordre ailleurs. Un short est montré dans le désordre à des gens qui ne suivent pas la
+  page.
+- **L'exemple.** Celui du train (khidr-02) est une coïncidence heureuse ; il ne ressemble pas au bateau. Le
+  bateau, c'est un petit mal visible qui protège d'un grand. Proposé : la petite douleur qui envoie chez le
+  médecin, qui découvre plus grave à temps. Autre possibilité : le travail perdu avant que l'entreprise ferme.
+- **L'accroche reste l'événement** (le bateau percé), pas « le qadar a trois types » : une ouverture de cours
+  est ce qui a perdu les trois quarts des spectateurs en trois secondes sur khidr-01.
+
+Version 2 écrite (`content/trial/boat.yaml`, `content/voice-test/20-trial-boat.txt`, environ 1:30) : la promesse
+regarde le spectateur, puis après 18:79 le sens, « موسى شاف الخرق… وما شافش الملك », l'exemple, « مش كل حاجة
+شايفها شر… تبقى شر », et l'annonce du deuxième. Les voix D et E la diront au retour du quota.
+
 ## La demande
 
 Propriétaire, 2026-11-10, après le premier essai sur Instagram : les règles et les personnages des vidéos faites

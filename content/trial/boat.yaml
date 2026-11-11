@@ -9,7 +9,18 @@
 #   le palier gratuit de Gemini donne 10 requêtes par jour), recoupée sur ses pauses par tools/trial/prepare.py ;
 #   voix D (Algieba) et E (Sadaltager) de Gemini 3.8 Flash TTS, V = la voix de secours (VoiceTut Mohammed) ;
 #   « ركّبوهم » à la place de « شالتهم », que le propriétaire n'aimait pas.
-# Lignes de l'IA : toutes les répliques (reprises de khidr-solo, sauf la première et « السر؟ »).
+# Lignes de l'IA : toutes les répliques.
+# Version 2 (2026-11-11), après l'avis du propriétaire sur la version 1 (image et rythme bons ; script pas assez
+# attirant, surtout la leçon de la fin ; l'histoire parle du qadar : tout ce qu'on voit comme un mal n'en est pas
+# un ; développer la leçon avec un bon exemple ; finir en annonçant le deuxième) :
+# - la promesse de l'accroche regarde le spectateur (« كل حاجة اتكسرت في حياتك ») ;
+# - après 18:79 : le sens (le roi prend les bateaux sains), la phrase profonde (Moussa a vu le trou, pas le roi),
+#   un exemple de vie en scène type (la petite douleur qui envoie chez le médecin), la phrase à retenir, puis
+#   l'annonce du deuxième cas, sans « تابعنا » ;
+# - « تلات مواقف », pas « أنواع القدر » : la lecture en trois cas est celle de prédicateurs, pas un classement du
+#   Coran ni des livres de croyance (proposition de la session, le propriétaire tranche) ;
+# - nouvelle scène `sea` : la mer seule, pour l'exemple (la vie du spectateur).
+# Version 1 : commit 7a36223.
 id: boat
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 22183, author: Artvan93, page: "https://pixabay.com/videos/id-22183/" }
@@ -21,8 +32,8 @@ segments:
     lines:
       - ar: "ركّبوهم السفينة ببلاش… وواحد منهم خرقها! ليه؟"
         en: "They let them board the boat for free… and one of them tore a hole in it! Why?"
-      - ar: "ده حصل بين موسى عليه السلام والخَضِر… والسر في آية من سورة الكهف."
-        en: "It happened between Moses, peace be upon him, and al-Khidr… and the secret is in one verse of Surat al-Kahf."
+      - ar: "ده حصل بين موسى عليه السلام والخَضِر… والسبب… هيغيّر نظرتك لكل حاجة اتكسرت في حياتك."
+        en: "It happened between Moses, peace be upon him, and al-Khidr… and the reason… will change how you see everything that ever broke in your life."
   - verse: quran.18.71
     scene: holed
   - narration: secret
@@ -32,12 +43,33 @@ segments:
         en: "The secret? Al-Khidr told him later."
   - verse: quran.18.79
     scene: fleet
+  - narration: meaning
+    scene: fleet
+    lines:
+      - ar: "الملك بياخد كل سفينة سليمة… واللي فيها عيب… بيسيبها."
+        en: "The king takes every sound boat… and a damaged one… he leaves."
+      - ar: "العيب اللي في السفينة… هو اللي حماها."
+        en: "The damage to the boat… is what saved it."
+  - narration: depth
+    scene: sail
+    lines:
+      - ar: "موسى شاف الخرق… وما شافش الملك."
+        en: "Moses saw the hole… he did not see the king."
+      - ar: "وإحنا كده: بنشوف اللي اتكسر… ومش بنشوف اللي اتحمينا منه."
+        en: "And so do we: we see what broke… not what we were protected from."
+  - narration: example
+    scene: sea
+    lines:
+      - ar: "زي وجع بسيط… يوديك للدكتور… فيكتشف حاجة أكبر… بدري."
+        en: "Like a small pain… that sends you to the doctor… who finds something bigger… early."
+      - ar: "الوجع اللي زعّلك… هو اللي نجّاك."
+        en: "The pain you resented… is what saved you."
   - narration: close
     scene: sail
     lines:
-      - ar: "العيب اللي في السفينة… هو اللي حماها."
-        en: "The damage to the boat… is what saved it."
-      - ar: "خسارة صغيرة… حمتهم من خسارة أكبر."
-        en: "A small loss… that spared them a bigger one."
-      - ar: "لما حاجة تتكسر في حياتك… افتكر السفينة."
-        en: "When something breaks in your life… remember the boat."
+      - ar: "مش كل حاجة شايفها شر… تبقى شر."
+        en: "Not everything you see as bad… is bad."
+      - ar: "ده أول موقف من تلاتة… وحكمته اتكشفت بسرعة."
+        en: "That was the first of three… and its wisdom showed quickly."
+      - ar: "التاني أصعب… ناس اتوجعوا… ويمكن عمرهم ما عرفوا ليه."
+        en: "The second is harder… people were hurt… and may never have known why."

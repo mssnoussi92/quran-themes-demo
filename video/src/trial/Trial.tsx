@@ -13,7 +13,8 @@ import { Boat, Fleet } from "./Boat";
 
 loadFonts();
 
-type SceneId = "holed" | "fleet" | "sail";
+/** `sea`: the sea alone (an example from the viewer's life: nothing of the story is drawn). */
+type SceneId = "holed" | "fleet" | "sail" | "sea";
 type Phrase = { text: string; start: number };
 type Line = { ar: string; en: string; phrases: Phrase[]; end: number };
 type Narration = { kind: "narration"; scene: SceneId; start: number; seconds: number; file: string; lines: Line[] };
@@ -174,6 +175,8 @@ export const Trial: React.FC<TrialProps> = ({ data }) => {
   const holed = sceneOpacity(data.segments, "holed", t);
   const fleet = sceneOpacity(data.segments, "fleet", t);
   const sail = sceneOpacity(data.segments, "sail", t);
+  // The boat sails away from the moment its scene first shows.
+  const sailFrom = data.segments.find((s) => s.scene === "sail")?.start ?? 0;
   return (
     <AbsoluteFill style={{ background: "#04070f" }}>
       {/* the picture: it grows slowly around the horizon, the texts never move */}
@@ -188,7 +191,7 @@ export const Trial: React.FC<TrialProps> = ({ data }) => {
             <Boat id="b-holed" x={500} y={1185} scale={0.72} t={t} holed splash />
           </g>
           <g opacity={sail}>
-            <Boat id="b-sail" x={560 - 4 * Math.max(0, t - 40)} y={1170} scale={0.66} t={t} holed splash={false} plank={false} />
+            <Boat id="b-sail" x={560 - 4 * Math.max(0, t - sailFrom)} y={1170} scale={0.66} t={t} holed splash={false} plank={false} />
           </g>
         </svg>
       </AbsoluteFill>
