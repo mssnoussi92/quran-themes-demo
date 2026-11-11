@@ -275,9 +275,20 @@ cela engage : la suite promise doit exister quand ce short sera publié. La phra
 la version 2 avait retirée, revient à sa demande sans le mot : « لما حاجة وحشة تحصلك… افتكر السفينة », après la
 phrase à retenir (14 répliques, environ 1:40).
 
+**Ce qui distingue les trois histoires** (propriétaire, même jour) : la fin peut être resserrée, mais elle doit
+garder « الحكمة اتكشفت بسرعة » ou une phrase de ce sens, parce que c'est la différence entre les trois (ici la
+sagesse se dévoile vite ; pour le garçon, peut-être jamais ici-bas ; pour le mur, des années après). L'annonce
+du deuxième cas est donc bâtie dessus, en une phrase : « هنا الحكمة اتكشفت بسرعة… بس في الموقف التاني… ناس
+اتوجعوا… ويمكن عمرهم ما عرفوا الحكمة ». À garder pour le film : chaque histoire dit comment sa sagesse s'est
+dévoilée, et c'est ce qui fait passer de l'une à la suivante (13 répliques, environ 1:35).
+
 Sa capture de la page des limites de Google AI Studio montre 60 requêtes par minute, 100 000 jetons par minute
 et **100 requêtes par jour**, sans dire pour quel modèle ; le refus du run 11 disait 10 par jour pour
 `gemini-3.8-flash-tts`. À lui de regarder la page modèle par modèle ; d'ici là on compte sur 10.
+Sa seconde capture, pour **Gemini 3.8 Flash TTS** : environ **3 requêtes par minute, 10 000 jetons d'entrée par
+minute, 10 requêtes par jour**. Le chiffre de 10 est confirmé ; les 35 s d'attente entre deux requêtes de
+`gemini.py` respectent les 3 par minute ; 10 000 jetons d'entrée laissent passer la narration d'un film entier
+en une requête (2 187 lettres pour khidr), si la durée de sortie suit.
 
 ### Tenir un film entier dans le quota gratuit de Gemini (2026-11-11)
 

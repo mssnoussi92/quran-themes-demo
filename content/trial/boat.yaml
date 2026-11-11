@@ -25,6 +25,8 @@
 #   dit après l'annonce du deuxième cas (la raison de suivre) ; le nom de la page s'affiche en grand à ce moment.
 #   La phrase de la version 1 « لما حاجة تتكسر في حياتك… افتكر السفينة », que la version 2 avait retirée, revient à
 #   sa demande, sans ce mot : « لما حاجة وحشة تحصلك… افتكر السفينة » (elle répond à la promesse de l'accroche).
+#   L'annonce du deuxième cas tient en une phrase, bâtie sur ce qui distingue les trois histoires (demande du
+#   propriétaire) : ici la sagesse s'est dévoilée vite, dans la deuxième peut-être jamais pour ceux qui l'ont vécue.
 # Version 1 : commit 7a36223.
 id: boat
 handle: "@quran_words_daily"
@@ -76,9 +78,7 @@ segments:
         en: "Not everything you see as bad… is bad."
       - ar: "لما حاجة وحشة تحصلك… افتكر السفينة."
         en: "When something bad happens to you… remember the boat."
-      - ar: "ده أول موقف من تلاتة… وحكمته اتكشفت بسرعة."
-        en: "That was the first of three… and its wisdom showed quickly."
-      - ar: "التاني أصعب… ناس اتوجعوا… ويمكن عمرهم ما عرفوا ليه."
-        en: "The second is harder… people were hurt… and may never have known why."
+      - ar: "هنا الحكمة اتكشفت بسرعة… بس في الموقف التاني… ناس اتوجعوا… ويمكن عمرهم ما عرفوا الحكمة."
+        en: "Here the wisdom showed quickly… but in the second story… people were hurt… and may never have known the wisdom."
       - ar: "تابعنا عشان تعرف بقية القصة."
         en: "Follow us to know the rest of the story."
