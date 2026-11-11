@@ -117,6 +117,37 @@ le fournisseur avant de s'engager.
      connecteur Figma du propriétaire, payant en crédits Figma : seulement avec son accord ;
   3. **puis 45 secondes montées** avec la voix et le style retenus, avant d'écrire une ligne du nouveau dépôt.
 
+### Gratuit d'abord (décisions du propriétaire, 2026-11-11)
+
+Le propriétaire accepte la cinquième règle obligatoire (**jamais l'invisible figuré**) et tranche : **on commence
+gratuit** ; le payant viendra quand une limite sera atteinte et que les vidéos rapporteront. Cela remplace, pour
+maintenant, « une voix payante » et « des planches peintes par un modèle d'images » ci-dessus.
+
+- **La voix est le maillon faible du gratuit.** Le film doit donc en dépendre le moins possible : la récitation
+  en colonne vertébrale (elle fait déjà la moitié du film), une narration courte (« une question, le verset, le
+  sens »), le sens écrit à l'écran.
+- **Voix gratuites à comparer à l'oreille**, de la plus prometteuse à la moins :
+  1. **Gemini 3.8 Flash TTS, palier gratuit** : la page des prix l'indique « Free of charge », sans donner ses
+     limites, et précise que les contenus du palier gratuit servent à améliorer les produits de Google
+     ([Google](https://aistudio.google.com/docs/pricing)). Il faut une clé gratuite Google AI Studio ; le droit de
+     publier la voix produite sur ce palier reste à confirmer dans les conditions.
+  2. **Azure, palier gratuit F0** : 0,5 million de caractères par mois en voix neurales, soit une soixantaine
+     de films ; seize voix arabes par pays ; jugées plus mécaniques
+     ([Azure](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/)). Il faut un
+     compte Azure.
+  3. **Supertonic 3** (modèle libre, rapide sur CPU, milieu de classement) : sa licence OpenRAIL-M n'interdit pas
+     l'usage commercial et exige de dire que la voix est générée par une machine, ce que les descriptions font
+     déjà ([licence](https://huggingface.co/Supertone/supertonic-3/blob/main/LICENSE)).
+  4. **Chatterbox Multilingual** (MIT), vitesse sur CPU inconnue.
+  VoiceTut reste possible, avec son doute de licence à lever avant toute monétisation.
+- **Images gratuites** : ce que le code dessine (« nuit et or » : silhouettes, lumière, typographie) et des
+  vidéos de nature libres, comme le fait déjà `quran-reels` ; le verset récité sur la scène.
+- **Reporté au jour où les vidéos rapportent** : les voix payantes (0,14 à 0,64 $ le film), les planches peintes
+  par un modèle d'images, l'image-vers-vidéo.
+- **Les comparaisons d'avant chantier, version gratuite** : (1) la voix, les cinq mêmes phrases en arabe
+  standard et en égyptien, par les moteurs ci-dessus ; (2) le style, « nuit et or » dessiné par le code contre
+  une vidéo de nature avec la typographie ; (3) 45 secondes montées.
+
 ## La demande
 
 Propriétaire, 2026-11-10, après le premier essai sur Instagram : les règles et les personnages des vidéos faites
