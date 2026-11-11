@@ -7,9 +7,9 @@ Script à valider avant toute voix. Les répliques **nouvelles** sont de la sess
 | 1 | `west` | 2:10 | 0:50 | 0:00 | 9 | 4 |
 | 2 | `tribute` | 2:04 | 0:45 | 0:00 | 9 | 5 |
 | 3 | `barrier` | 1:56 | 0:47 | 0:00 | 9 | 5 |
-| | le film `qarnayn` | 8:37 | 3:33 | 0:15 | 5 (propres au film) | 10 |
+| | le film `qarnayn` | 8:38 | 3:33 | 0:15 | 5 (propres au film) | 10 |
 
-## Short 1 · `west` · قوم كاملين في إيده… عمل إيه؟
+## Short 1 · `west` · مصير قوم كاملين… بكلمة منه!
 
 Environ **2:10** · 0:50 de récitation, 0:00 de hadith lu · 9 répliques nouvelles, 4 reprises.
 
@@ -24,28 +24,28 @@ Environ **2:10** · 0:50 de récitation, 0:00 de hadith lu · 9 répliques nouve
   *Until, when he reached the setting of the sun [i.e., the west], he found it [as if] setting in a body of dark water, and he found near it a people. We [i.e., Allāh] said, "O Dhul-Qarnayn, either you punish [them] or else adopt among them [a way of] goodness."*
 
 **0:39 · narration** (image : `choice`)
-- القوم بقوا في إيده: يعاقب… ولا يحسن. اختار إيه؟  
-  *The people were in his hands: punish… or do good. What did he choose?* · **nouvelle**
+- مصير قوم كاملين… بكلمة منه: يعاقب… ولا يحسن. اختار إيه؟  
+  *The fate of a whole people… at his word: punish… or do good. What did he choose?* · **nouvelle**
 
-**0:44** · **Verset récité** · Al-Kahf 18:87 · 12 s  
+**0:45** · **Verset récité** · Al-Kahf 18:87 · 12 s  
   قَالَ أَمَّا مَن ظَلَمَ فَسَوْفَ نُعَذِّبُهُۥ ثُمَّ يُرَدُّ إِلَىٰ رَبِّهِۦ فَيُعَذِّبُهُۥ عَذَابًا نُّكْرًا  
   *He said, "As for one who wrongs, we will punish him. Then he will be returned to his Lord, and He will punish him with a terrible punishment [i.e., Hellfire].*
 
-**0:57** · **Verset récité** · Al-Kahf 18:88 · 14 s  
+**0:58** · **Verset récité** · Al-Kahf 18:88 · 14 s  
   وَأَمَّا مَنْ ءَامَنَ وَعَمِلَ صَـٰلِحًا فَلَهُۥ جَزَآءً ٱلْحُسْنَىٰ ۖ وَسَنَقُولُ لَهُۥ مِنْ أَمْرِنَا يُسْرًا  
   *But as for one who believes and does righteousness, he will have a reward of the best [i.e., Paradise], and we [i.e., Dhul-Qarnayn] will speak to him from our command with ease."*
 
-**1:11 · narration** (image : `just`)
+**1:12 · narration** (image : `just`)
 - اللي ظلم… يتعاقب… وبعدين يرجع لربه. واللي آمن وعمل صالح… ليه أحسن جزاء.  
   *Whoever does wrong… is punished… then returns to his Lord. Whoever believes and does good… has the best reward.* · **nouvelle**
 - ما عاقبش الكل… وما سابش الكل: كل واحد باللي عمله.  
   *He did not punish them all… nor let them all go: each one by what he did.* · **nouvelle**
 
-**1:24 · narration** (image : `land`)
+**1:25 · narration** (image : `land`)
 - كان يقدر يعمل اللي هو عايزه… بس هو فاكر إن الكل راجع لربنا… وهو أولهم.  
   *He could have done as he pleased… but he remembered that everyone returns to God… himself first.* · **nouvelle**
-- وإحنا كده: أول ما حد يبقى تحت إيدنا… بننسى إن إحنا كمان تحت إيد ربنا.  
-  *And so are we: the moment someone is under our hand… we forget we are under God's.* · **nouvelle**
+- وإحنا كده: أول ما نقدر على حد… بننسى إن ربنا قادر علينا.  
+  *And so are we: the moment we have power over someone… we forget God has power over us.* · **nouvelle**
 
 **1:38 · narration** (image : `land`)
 - زي لما يبقى في إيدك سلطة… في شغلك… أو في بيتك.  
@@ -53,11 +53,11 @@ Environ **2:10** · 0:50 de récitation, 0:00 de hadith lu · 9 répliques nouve
 - اللي بيغلط يتحاسب… واللي بيتعب تقوله: شكرًا.  
   *Whoever does wrong is held to account… and whoever works hard hears: thank you.* · reprise de `qarnayn.west-life-2`
 
-**1:47 · narration** (image : `just`)
+**1:48 · narration** (image : `just`)
 - القوة أمانة… مش رخصة تظلم بيها: الظالم يتحاسب… والكويس يتكرّم.  
   *Power is a trust… not a license to wrong people: the wrongdoer is held to account… and the good are honoured.* · reprise de `qarnayn.west-lesson`
-- لما حد يبقى تحت إيدك… افتكر مغرب الشمس.  
-  *When someone is under your hand… remember the setting of the sun.* · **nouvelle**
+- لما تقدر على حد أضعف منك… افتكر مغرب الشمس.  
+  *When you have power over someone weaker than you… remember the setting of the sun.* · **nouvelle**
 - ده اختبار القوة على الناس… بس فيه اختبار تاني: ناس محتاجاك… وبتعرض عليك فلوس.  
   *That was the test of power over people… there is another: people who need you… and offer you money.* · **nouvelle**
 - تابعنا عشان تعرف عمل إيه.  
@@ -179,13 +179,13 @@ Environ **1:56** · 0:47 de récitation, 0:00 de hadith lu · 9 répliques nouve
 
 ## Le film · `qarnayn`
 
-Environ **8:37**, dont 12 s d'image calme à la fin · 3:33 de récitation, 0:15 de hadith lu. Il reprend les shorts réplique par réplique (sans leurs appels à suivre) ; seules ses répliques propres sont écrites ici en entier.
+Environ **8:38**, dont 12 s d'image calme à la fin · 3:33 de récitation, 0:15 de hadith lu. Il reprend les shorts réplique par réplique (sans leurs appels à suivre) ; seules ses répliques propres sont écrites ici en entier.
 
 ### 0:00 · Three tests · تلات اختبارات
 
 **0:00 · narration propre au film**
-- قوم كاملين بقوا في إيده… فلوس اتعرضت عليه… وسد محدش قدر يعدّيه.  
-  *A whole people left in his hands… money offered to him… and a barrier no one could pass.* · **nouvelle**
+- مصير قوم كاملين بكلمة منه… فلوس اتعرضت عليه… وسد محدش قدر يعدّيه.  
+  *The fate of a whole people at his word… money offered to him… and a barrier no one could pass.* · **nouvelle**
 
 **0:06 · narration propre au film**
 - راجل واحد… وتلات اختبارات للقوة.  
@@ -221,21 +221,21 @@ Environ **8:37**, dont 12 s d'image calme à la fin · 3:33 de récitation, 0:15
   *The blessing is from God… but you have to walk with it.* · reprise de `qarnayn.given-lesson`
 
 
-### 0:51 · A whole people in his hands · قوم كاملين في إيده
+### 0:51 · The fate of a people at his word · مصير قوم بكلمة منه
 
 - 0:51 · répliques du short `west` (`open`)
 - 1:05 · **Verset récité** · Al-Kahf 18:86 · 24 s · coupe posée à la main, à écouter
 - 1:30 · répliques du short `west` (`turn`)
-- 1:35 · **Verset récité** · Al-Kahf 18:87 · 12 s
-- 1:48 · **Verset récité** · Al-Kahf 18:88 · 14 s
-- 2:02 · répliques du short `west` (`meaning`)
-- 2:15 · répliques du short `west` (`depth`)
+- 1:36 · **Verset récité** · Al-Kahf 18:87 · 12 s
+- 1:49 · **Verset récité** · Al-Kahf 18:88 · 14 s
+- 2:03 · répliques du short `west` (`meaning`)
+- 2:16 · répliques du short `west` (`depth`)
 - 2:29 · répliques du short `west` (`example`)
-- 2:38 · répliques du short `west` (`close`, 2 sur 4) · **rappel d'abonnement**
+- 2:39 · répliques du short `west` (`close`, 2 sur 4) · **rappel d'abonnement**
 
-### 2:49 · The rising of the sun · مطلع الشمس
+### 2:50 · The rising of the sun · مطلع الشمس
 
-**2:49 · narration propre au film**
+**2:50 · narration propre au film**
 - وبعدها مشي… للناحية التانية خالص.  
   *Then he set out… all the way to the other side.* · **nouvelle**
 
@@ -243,7 +243,7 @@ Environ **8:37**, dont 12 s d'image calme à la fin · 3:33 de récitation, 0:15
   ثُمَّ أَتْبَعَ سَبَبًا  
   *Then he followed a way*
 
-**2:56** · **Verset récité** · Al-Kahf 18:90 · 13 s · coupe posée à la main, à écouter  
+**2:57** · **Verset récité** · Al-Kahf 18:90 · 13 s · coupe posée à la main, à écouter  
   حَتَّىٰٓ إِذَا بَلَغَ مَطْلِعَ ٱلشَّمْسِ وَجَدَهَا تَطْلُعُ عَلَىٰ قَوْمٍ لَّمْ نَجْعَل لَّهُم مِّن دُونِهَا سِتْرًا  
   *Until, when he came to the rising of the sun [i.e., the east], he found it rising on a people for whom We had not made against it any shield.*
 
@@ -251,7 +251,7 @@ Environ **8:37**, dont 12 s d'image calme à la fin · 3:33 de récitation, 0:15
   كَذَٰلِكَ وَقَدْ أَحَطْنَا بِمَا لَدَيْهِ خُبْرًا  
   *Thus. And We had encompassed [all] that he had in knowledge.*
 
-**3:15 · narration propre au film**
+**3:16 · narration propre au film**
 - قوم… مفيش بينهم وبين الشمس حاجة تسترهم.  
   *A people… with nothing between them and the sun to shelter them.* · **nouvelle**
 - وربنا كان عارف كل حاجة في إيده… وإنت كمان: ربنا شايف بتعمل إيه باللي في إيدك.  
@@ -261,41 +261,41 @@ Environ **8:37**, dont 12 s d'image calme à la fin · 3:33 de récitation, 0:15
 ### 3:27 · They offered him money, he refused · عرضوا عليه فلوس… ورفض
 
 - 3:27 · répliques du short `tribute` (`open`)
-**3:42** · **Verset récité** · Al-Kahf 18:92 · 3 s · coupe posée à la main, à écouter  
+**3:43** · **Verset récité** · Al-Kahf 18:92 · 3 s · coupe posée à la main, à écouter  
   ثُمَّ أَتْبَعَ سَبَبًا  
   *Then he followed a way.*
 
 - 3:46 · **Verset récité** · Al-Kahf 18:93 · 14 s · coupe posée à la main, à écouter
 - 4:00 · **Verset récité** · Al-Kahf 18:94 · 17 s
-- 4:17 · répliques du short `tribute` (`turn`)
-- 4:18 · **Verset récité** · Al-Kahf 18:95 · 15 s
-- 4:33 · répliques du short `tribute` (`meaning`)
+- 4:18 · répliques du short `tribute` (`turn`)
+- 4:19 · **Verset récité** · Al-Kahf 18:95 · 15 s
+- 4:34 · répliques du short `tribute` (`meaning`)
 - 4:51 · répliques du short `tribute` (`depth`)
-- 5:04 · répliques du short `tribute` (`example`)
+- 5:05 · répliques du short `tribute` (`example`)
 - 5:13 · répliques du short `tribute` (`close`, 2 sur 4)
 
-### 5:24 · This is a mercy from my Lord · ده رحمة من ربي
+### 5:25 · This is a mercy from my Lord · ده رحمة من ربي
 
-- 5:24 · répliques du short `barrier` (`open`)
+- 5:25 · répliques du short `barrier` (`open`)
 - 5:38 · **Verset récité** · Al-Kahf 18:96 · 19 s
 - 5:58 · répliques du short `barrier` (`stood`)
 - 5:59 · **Verset récité** · Al-Kahf 18:97 · 10 s
 - 6:09 · répliques du short `barrier` (`turn`)
 - 6:10 · **Verset récité** · Al-Kahf 18:98 · 18 s
-- 6:28 · répliques du short `barrier` (`meaning`)
+- 6:29 · répliques du short `barrier` (`meaning`)
 - 6:42 · répliques du short `barrier` (`depth`)
 - 6:53 · répliques du short `barrier` (`example`)
 - 7:00 · répliques du short `barrier` (`close`, 2 sur 4)
 
-### 7:09 · If God wills · إن شاء الله
+### 7:10 · If God wills · إن شاء الله
 
-**7:09 · narration propre au film**
+**7:10 · narration propre au film**
 - النبي صلى الله عليه وسلم حكى عن السد ده… إن يأجوج ومأجوج بيحفروا فيه كل يوم.  
   *The Prophet ﷺ told us about this barrier… Gog and Magog dig into it every day.* · reprise de `qarnayn.end-1`
 - والنبي صلى الله عليه وسلم قال:  
   *And the Prophet ﷺ said:* · reprise de `qarnayn.end-hadith`
 
-**7:19** · **Hadith lu par une vraie voix** · Tirmidhi 3153 · lu par Yusuf ibn Nuh Ahmad · 15 s  
+**7:20** · **Hadith lu par une vraie voix** · Tirmidhi 3153 · lu par Yusuf ibn Nuh Ahmad · 15 s  
   يَحْفِرُونَهُ كُلَّ يَوْمٍ حَتَّى إِذَا كَادُوا يَخْرِقُونَهُ قَالَ الَّذِي عَلَيْهِمُ ارْجِعُوا فَسَتَخْرِقُونَهُ غَدًا فَيُعِيدُهُ اللَّهُ كَأَمْثَلِ مَا كَانَ حَتَّى إِذَا بَلَغَ مُدَّتَهُمْ وَأَرَادَ اللَّهُ أَنْ يَبْعَثَهُمْ عَلَى النَّاسِ قَالَ الَّذِي عَلَيْهِمُ ارْجِعُوا فَسَتَخْرِقُونَهُ غَدًا إِنْ شَاءَ اللَّهُ  
   *They excavated each day, until when they are just about to penetrate it, their leader says: 'Go back so that you can penetrate it tomorrow!'" He said: "But Allah makes it return just as it was, until their appointed time, when Allah ordains to send them upon the people, and their leader says: 'Go back so you can penetrate it tomorrow, if Allah wills.'*
 
@@ -309,15 +309,15 @@ Environ **8:37**, dont 12 s d'image calme à la fin · 3:33 de récitation, 0:15
   وَلَا تَقُولَنَّ لِشَا۟ىْءٍ إِنِّى فَاعِلٌ ذَٰلِكَ غَدًا  
   *And never say of anything, "Indeed, I will do that tomorrow,"*
 
-**7:54** · **Verset récité** · Al-Kahf 18:24 · 19 s  
+**7:55** · **Verset récité** · Al-Kahf 18:24 · 19 s  
   إِلَّآ أَن يَشَآءَ ٱللَّهُ ۚ وَٱذْكُر رَّبَّكَ إِذَا نَسِيتَ وَقُلْ عَسَىٰٓ أَن يَهْدِيَنِ رَبِّى لِأَقْرَبَ مِنْ هَـٰذَا رَشَدًا  
   *Except [when adding], "If Allāh wills." And remember your Lord when you forget [it] and say, "Perhaps my Lord will guide me to what is nearer than this to right conduct."*
 
-**8:13 · narration propre au film**
+**8:14 · narration propre au film**
 - ذو القرنين علّمنا: النعمة من ربنا… والقوة أمانة… والمساعدة من غير استغلال… والنجاح رحمة.  
   *Dhul-Qarnayn taught us: blessings come from God… power is a trust… help without exploiting… and success is a mercy.* · reprise de `qarnayn.end-recap`
 
-**8:22 · narration propre au film** · **rappel d'abonnement**
+**8:23 · narration propre au film** · **rappel d'abonnement**
 - اشترك… عشان القصة الجاية.  
   *Subscribe… for the next story.* · **nouvelle**
 

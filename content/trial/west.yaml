@@ -9,6 +9,8 @@
 # - « كل واحد باللي عمله » : al-Sa'di, « وافق مرضاة الله في معاملة كل أحد بما يليق بحاله ». « اللي ظلم » garde le
 #   mot du verset (les deux tafsirs : par la mécréance) ; l'exemple de vie parle d'autorité, pas de foi.
 # - « وهو أولهم » est notre lecture : celui qui rappelle le retour au Seigneur sait qu'il y retourne aussi.
+# - Le propriétaire (2026-11-11) : « تحت إيدك » revenait dans plusieurs répliques et ne parlait pas ; à la place,
+#   « تقدر على حد », « مصير قوم كاملين… بكلمة منه ». « في إيدك » ne reste que dans une réplique gardée.
 # - Personne n'est dessiné : le peuple, ce sont ses habitations au bord de l'eau, éteintes puis éclairées.
 # - Le soleil se couche UNE fois sur tout le short : le clip (26 s) est ralenti cinq fois, images fondues
 #   (`take.slow`), et joué sans boucle (`rate: 1`).
@@ -21,9 +23,9 @@ clip: { source: pixabay, id: 21488, author: josefgadermaier, page: "https://pixa
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 40-trial-west
 ambience: { source: bigsoundbank, id: "1448", title: "Small waves and beach #2", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/detail-1448-small-waves-and-beach-2.html", from: 100, seconds: 80, level: -36 }
-cover: { scene: sun, title: "قوم كاملين في إيده… عمل إيه؟", tag: "ذو القرنين · ١ من ٣", focus: 1200 }
+cover: { scene: sun, title: "مصير قوم كاملين… بكلمة منه!", tag: "ذو القرنين · ١ من ٣", focus: 1200 }
 publish:
-  title: { en: "A whole people in his hands: what did he do?", ar: "قوم كاملين في إيده… عمل إيه؟" }
+  title: { en: "The fate of a whole people… at his word", ar: "مصير قوم كاملين… بكلمة منه!" }
   part: 1
   description:
     en: "Dhul-Qarnayn reached the setting of the sun and found a people there, and the choice was left to him: punish them, or treat them well. His answer is justice: each one according to what he did. Power is a trust, not a license."
@@ -42,8 +44,8 @@ segments:
   - narration: turn
     scene: choice
     lines:
-      - ar: "القوم بقوا في إيده: يعاقب… ولا يحسن. اختار إيه؟"
-        en: "The people were in his hands: punish… or do good. What did he choose?"
+      - ar: "مصير قوم كاملين… بكلمة منه: يعاقب… ولا يحسن. اختار إيه؟"
+        en: "The fate of a whole people… at his word: punish… or do good. What did he choose?"
   - verse: quran.18.87
     scene: choice
   - verse: quran.18.88
@@ -60,8 +62,8 @@ segments:
     lines:
       - ar: "كان يقدر يعمل اللي هو عايزه… بس هو فاكر إن الكل راجع لربنا… وهو أولهم."
         en: "He could have done as he pleased… but he remembered that everyone returns to God… himself first."
-      - ar: "وإحنا كده: أول ما حد يبقى تحت إيدنا… بننسى إن إحنا كمان تحت إيد ربنا."
-        en: "And so are we: the moment someone is under our hand… we forget we are under God's."
+      - ar: "وإحنا كده: أول ما نقدر على حد… بننسى إن ربنا قادر علينا."
+        en: "And so are we: the moment we have power over someone… we forget God has power over us."
   - narration: example
     scene: land
     lines:
@@ -77,8 +79,8 @@ segments:
       - ar: "القوة أمانة… مش رخصة تظلم بيها: الظالم يتحاسب… والكويس يتكرّم."
         en: "Power is a trust… not a license to wrong people: the wrongdoer is held to account… and the good are honoured."
         kept: qarnayn.west-lesson
-      - ar: "لما حد يبقى تحت إيدك… افتكر مغرب الشمس."
-        en: "When someone is under your hand… remember the setting of the sun."
+      - ar: "لما تقدر على حد أضعف منك… افتكر مغرب الشمس."
+        en: "When you have power over someone weaker than you… remember the setting of the sun."
       - ar: "ده اختبار القوة على الناس… بس فيه اختبار تاني: ناس محتاجاك… وبتعرض عليك فلوس."
         en: "That was the test of power over people… there is another: people who need you… and offer you money."
       - ar: "تابعنا عشان تعرف عمل إيه."

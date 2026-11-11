@@ -25,8 +25,8 @@ publish:
   title: { en: "Dhul-Qarnayn: 3 tests of power", ar: "ذو القرنين: ٣ اختبارات للقوة" }
   series: { en: "Dhul-Qarnayn", ar: "ذو القرنين" }
   description:
-    en: "A whole people left in his hands, money offered to him, a barrier no one could pass: one man, three tests of power in Surat al-Kahf. What do you do with those under your hand, what do you take from those who need you, and what do you say when you succeed?"
-    ar: "قوم كاملين بقوا في إيده، فلوس اتعرضت عليه، وسد محدش قدر يعدّيه: راجل واحد… وتلات اختبارات للقوة في سورة الكهف. تعمل إيه في اللي تحت إيدك، تاخد إيه من اللي محتاجك، وتقول إيه لما تنجح؟"
+    en: "The fate of a whole people at his word, money offered to him, a barrier no one could pass: one man, three tests of power in Surat al-Kahf. What do you do when you have power over someone, what do you take from those who need you, and what do you say when you succeed?"
+    ar: "مصير قوم كاملين بكلمة منه، فلوس اتعرضت عليه، وسد محدش قدر يعدّيه: راجل واحد… وتلات اختبارات للقوة في سورة الكهف. تعمل إيه لما تقدر على حد، تاخد إيه من اللي محتاجك، وتقول إيه لما تنجح؟"
   hashtags: ["#DhulQarnayn", "#ذو_القرنين", "#SurahAlKahf"]      # ceux de l'ancien épisode, validés par le propriétaire
   narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }
 chapters:
@@ -36,8 +36,8 @@ chapters:
       - narration: film-open
         shots: [{ picture: west, scene: sun }, { picture: tribute, scene: offer }, { picture: barrier, scene: done }]
         lines:
-          - ar: "قوم كاملين بقوا في إيده… فلوس اتعرضت عليه… وسد محدش قدر يعدّيه."
-            en: "A whole people left in his hands… money offered to him… and a barrier no one could pass."
+          - ar: "مصير قوم كاملين بكلمة منه… فلوس اتعرضت عليه… وسد محدش قدر يعدّيه."
+            en: "The fate of a whole people at his word… money offered to him… and a barrier no one could pass."
       - narration: film-promise
         picture: east
         scene: plain
@@ -72,7 +72,7 @@ chapters:
             kept: qarnayn.given-lesson
   - id: west
     number: 1
-    title: { ar: "قوم كاملين في إيده", en: "A whole people in his hands" }
+    title: { ar: "مصير قوم بكلمة منه", en: "The fate of a people at his word" }
     segments:
       - { reuse: west.open, picture: west, scene: sun }
       - { verse: quran.18.86 }

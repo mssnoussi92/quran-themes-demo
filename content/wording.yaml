@@ -34,6 +34,12 @@ refused:
     patterns: ["[وف]?شاب"]
     instead: "« راسه شابت »"
     why: read as « young man », on screen and by the voice
+  - id: under-your-hand
+    # « تحت إيدك », « تحت إيدنا », « تحت إيد ربنا »: said in several lines of the same short, and flat. « في إيدك »
+    # (something you hold) is another turn and stays.
+    patterns: ["تحت\\s+ايد[ا-ي]{0,3}"]
+    instead: "« تقدر على حد », « مصير… بكلمة منه », « ليك سلطة على حد »"
+    why: he found it repeated and not telling enough (2026-11-11), and asked for more expressive words
   - id: proverb-of-patience
     patterns: ["مضرب\\s+المثل"]
     instead: "the proverb as people say it: « بنقول يا صبر أيوب… »"
