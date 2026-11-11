@@ -21,6 +21,9 @@ on:
       gemini_voices:
         description: "Gemini TTS voices as label=Voice, comma-separated (empty: none), e.g. C=Charon,D=Algieba. Needs the secret GEMINI_API_KEY"
         default: ""
+      gemini_texts:
+        description: "Text files Gemini says, space-separated (each is one take per voice; a first line '# style:' directs the voice)"
+        default: "content/voice-test/10-boat-standard.txt content/voice-test/11-boat-egyptian.txt"
   # By hand only: the voice is chosen (Mohammed, 2026-11-06). A push to main that touched tools/tts
   # or requirements/ used to start five synthesis jobs nobody listened to (3 runs out of 5).
 
@@ -149,9 +152,14 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           VOICES: ${{ inputs.gemini_voices }}
+          TEXTS: ${{ inputs.gemini_texts }}
         run: |
-          python3 tools/tts/gemini.py --voices "$VOICES" --out-dir build/tts \
-            --in content/voice-test/10-boat-standard.txt content/voice-test/11-boat-egyptian.txt
+          # Only text files of content/voice-test/ (the input is a list of paths, split on spaces).
+          for f in $TEXTS; do
+            case "$f" in content/voice-test/*.txt) [ -f "$f" ] || { echo "no such text: $f"; exit 1; } ;; *) echo "not a text of content/voice-test/: $f"; exit 1 ;; esac
+          done
+          # shellcheck disable=SC2086  # TEXTS is a list of paths
+          python3 tools/tts/gemini.py --voices "$VOICES" --out-dir build/tts --in $TEXTS
           for f in build/tts/*.wav; do
             ffmpeg -loglevel error -y -i "$f" -codec:a libmp3lame -qscale:a 2 "${f%.wav}.mp3"
           done
