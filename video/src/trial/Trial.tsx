@@ -228,10 +228,10 @@ const WestPicture: Drawn = ({ t, show, horizon }) => (
   <>
     <Land id="l-west" horizon={horizon} rim="#ffc98a" />
     <g opacity={both(show("sun"), show("choice"))}>
-      <Dwellings id="d-dark" x={420} y={horizon + 36} scale={0.92} t={t} lit={0} />
+      <Dwellings id="d-dark" x={470} y={horizon + 36} scale={1.02} t={t} lit={0} />
     </g>
     <g opacity={show("just")}>
-      <Dwellings id="d-just" x={420} y={horizon + 36} scale={0.92} t={t} lit={5} />
+      <Dwellings id="d-just" x={470} y={horizon + 36} scale={1.02} t={t} lit={5} />
     </g>
   </>
 );
@@ -243,14 +243,14 @@ const TributePicture: Drawn = ({ t, show, since, horizon }) => (
   <>
     <Land id="l-tribute" horizon={horizon} rim="#cfd8e6" />
     <g opacity={Math.min(1, show("pass") + show("offer") + show("refused"))}>
-      <Dwellings id="d-pass" x={300} y={horizon + 30} scale={0.6} t={t} lit={2} rim="#cfd8e6" />
+      <Dwellings id="d-pass" x={270} y={horizon + 30} scale={0.6} t={t} lit={2} rim="#cfd8e6" />
     </g>
     <g opacity={show("offer")}>
-      <Chest id="c-offer" x={690} y={horizon + 150} scale={1.35} t={t} open />
+      <Chest id="c-offer" x={610} y={horizon + 150} scale={1.3} t={t} open />
     </g>
     <g opacity={show("refused")}>
-      <Chest id="c-left" x={900} y={horizon + 210} scale={0.8} t={t} open={false} />
-      <Barrier id="b-first" x={640} y={horizon + 60} span={300} full={162} level={Math.min(1, Math.max(0, (t - since("refused") - 1.5) / 9))} heat={0} copper={0} t={t} rim="#cfd8e6" />
+      <Chest id="c-left" x={610} y={horizon + 150} scale={1.3} t={t} open={false} />
+      <Barrier id="b-first" x={900} y={horizon + 70} span={270} full={216} level={Math.min(1, Math.max(0, (t - since("refused") - 1.5) / 9))} heat={0} copper={0} t={t} rim="#cfd8e6" />
     </g>
   </>
 );
@@ -259,10 +259,10 @@ const TributePicture: Drawn = ({ t, show, since, horizon }) => (
  * of iron going up; `fire`: the fire blown, the copper run into the joints; `done`, `land`: the barrier standing. */
 const BarrierPicture: Drawn = ({ t, show, since, horizon }) => {
   const ground = horizon + 46;
-  const wall = { x: 540, y: ground, span: 330, full: 594, t, rim: "#b9c6e6" };
+  const wall = { x: 540, y: ground, span: 520, full: 702, t, rim: "#b9c6e6" };
+  const rock = <Cliffs id="k-barrier" horizon={horizon} middle={540} gap={320} height={760} rim="#b9c6e6" />;
   return (
     <>
-      <Cliffs id="k-barrier" horizon={horizon} middle={540} gap={320} height={760} rim="#b9c6e6" />
       <g opacity={show("blocks")}>
         <Barrier id="b-rise" {...wall} level={Math.min(1, 0.3 + Math.max(0, t - since("blocks")) / 14)} heat={0} copper={0} />
       </g>
@@ -272,6 +272,7 @@ const BarrierPicture: Drawn = ({ t, show, since, horizon }) => {
       <g opacity={both(show("done"), show("land"))}>
         <Barrier id="b-done" {...wall} level={1} heat={0} copper={1} />
       </g>
+      {rock}
       <Land id="l-barrier" horizon={horizon + 30} rim="#b9c6e6" />
     </>
   );

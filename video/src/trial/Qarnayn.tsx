@@ -68,6 +68,9 @@ export const Cliffs: React.FC<{ id: string; horizon: number; middle: number; gap
       </defs>
       <path d={left} fill={`url(#${id}-rock)`} />
       <path d={right} fill={`url(#${id}-rock)`} />
+      {[0.2, 0.36, 0.55, 0.72].map((k, i) => (
+        <path key={i} d={`M -40 ${top + height * k + 30} L ${l * 0.45} ${top + height * k} L ${l - 60 + 20 * (i % 2)} ${top + height * k + 44} M ${r + 60 - 20 * (i % 2)} ${top + height * k + 50} L ${rightTop(0.5)} ${top + height * k + 6} L ${width + 40} ${top + height * k + 40}`} fill="none" stroke={rim} strokeWidth={2} opacity={0.1} />
+      ))}
       {/* the light of the sky on the faces that look into the pass, and along the tops */}
       <path d={`M ${l - 70} ${top + 110} L ${l - 84} ${top + height * 0.42} L ${l - 40} ${top + height * 0.5} L ${l - 52} ${top + height * 0.78} L ${l} ${base}`} fill="none" stroke={rim} strokeWidth={3} opacity={0.4} />
       <path d={`M ${r + 64} ${top + 130} L ${r + 86} ${top + height * 0.46} L ${r + 36} ${top + height * 0.56} L ${r + 50} ${top + height * 0.8} L ${r} ${base}`} fill="none" stroke={rim} strokeWidth={3} opacity={0.4} />
@@ -100,10 +103,11 @@ export const Chest: React.FC<{ id: string; x: number; y: number; scale: number; 
           ))}
         </>
       ) : (
-        <path d="M -104 -96 C -100 -132 100 -132 104 -96 Z" fill={INK} stroke={rim} strokeWidth={2.5} strokeOpacity={0.3} />
+        <path d="M -108 -96 C -104 -150 104 -150 108 -96 Z" fill="#0b0e1c" stroke={rim} strokeWidth={3} strokeOpacity={0.6} />
       )}
-      <path d="M -104 0 L -104 -96 L 104 -96 L 104 0 Z" fill={INK} stroke={rim} strokeWidth={2.5} strokeOpacity={0.3} />
-      <path d="M -104 -62 L 104 -62 M -40 -96 L -40 0 M 40 -96 L 40 0" stroke={rim} strokeWidth={2} opacity={0.18} />
+      <path d="M -104 0 L -104 -96 L 104 -96 L 104 0 Z" fill="#0b0e1c" stroke={rim} strokeWidth={3} strokeOpacity={0.55} />
+      <path d="M -104 -62 L 104 -62 M -40 -96 L -40 0 M 40 -96 L 40 0" stroke={rim} strokeWidth={2.5} opacity={0.32} />
+      <rect x={-14} y={-108} width={28} height={30} rx={4} fill="#0b0e1c" stroke={rim} strokeWidth={2.5} strokeOpacity={0.5} />
     </g>
   );
 };

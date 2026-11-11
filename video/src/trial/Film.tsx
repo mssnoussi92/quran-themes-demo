@@ -190,26 +190,28 @@ const TributeWide: Drawn = ({ t, show, since, horizon }) => (
   <>
     <Land id="fl-tribute" horizon={horizon} rim="#cfd8e6" width={W} />
     <g opacity={Math.min(1, show("pass") + show("offer") + show("refused"))}>
-      <Dwellings id="fd-pass" x={300} y={horizon + 30} scale={0.55} t={t} lit={2} rim="#cfd8e6" />
+      <Dwellings id="fd-pass" x={250} y={horizon + 30} scale={0.55} t={t} lit={2} rim="#cfd8e6" />
     </g>
     <g opacity={show("offer")}>
-      <Chest id="fc-offer" x={640} y={horizon + 130} scale={1.15} t={t} open />
+      <Chest id="fc-offer" x={540} y={horizon + 130} scale={1.1} t={t} open />
     </g>
     <g opacity={show("refused")}>
-      <Chest id="fc-left" x={800} y={horizon + 170} scale={0.7} t={t} open={false} />
-      <Barrier id="fb-first" x={560} y={horizon + 56} span={280} full={162} level={Math.min(1, Math.max(0, (t - since("refused") - 1.5) / 9))} heat={0} copper={0} t={t} rim="#cfd8e6" />
+      <Chest id="fc-left" x={540} y={horizon + 130} scale={1.1} t={t} open={false} />
+      <Barrier id="fb-first" x={780} y={horizon + 60} span={230} full={216} level={Math.min(1, Math.max(0, (t - since("refused") - 1.5) / 9))} heat={0} copper={0} t={t} rim="#cfd8e6" />
     </g>
   </>
 );
 
 /** Dhul-Qarnayn, the barrier between its two walls of rock, on the right of the wide frame. */
 const BarrierWide: Drawn = ({ t, show, since, horizon }) => {
-  const wall = { x: 1440, y: horizon + 40, span: 300, full: 486, t, rim: "#b9c6e6" };
+  const wall = { x: 1440, y: horizon + 40, span: 470, full: 540, t, rim: "#b9c6e6" };
+  const rock = (
+    <g transform="translate(960 0)">
+      <Cliffs id="fk-barrier" horizon={horizon} middle={480} gap={290} height={600} rim="#b9c6e6" width={960} />
+    </g>
+  );
   return (
     <>
-      <g transform="translate(960 0)">
-        <Cliffs id="fk-barrier" horizon={horizon} middle={480} gap={290} height={600} rim="#b9c6e6" width={960} />
-      </g>
       <g opacity={show("blocks")}>
         <Barrier id="fb-rise" {...wall} level={Math.min(1, 0.3 + Math.max(0, t - since("blocks")) / 14)} heat={0} copper={0} />
       </g>
@@ -219,6 +221,7 @@ const BarrierWide: Drawn = ({ t, show, since, horizon }) => {
       <g opacity={both(show("done"), show("land"))}>
         <Barrier id="fb-done" {...wall} level={1} heat={0} copper={1} />
       </g>
+      {rock}
       <Land id="fl-barrier" horizon={horizon + 26} rim="#b9c6e6" width={W} />
     </>
   );

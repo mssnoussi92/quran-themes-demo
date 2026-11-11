@@ -57,7 +57,13 @@ night, and the du'a's third short took the full moon of the boy's short, two pic
   `from` and `seconds`: the stretch that fits (the stars before the clouds). `height: 1440`: a 4K clip
   reduced. `pingpong: true`: the stretch forward then backward, for a sky or a sea whose loop would
   jump (stars seen twice during the cross-fade); not for something that visibly goes one way (waves
-  breaking, a sun going down).
+  breaking, a sun going down). `slow: 5`: five times slower, the frames in between blended, for what
+  happens once: a sun that sets must set once over the whole short, not four times in a loop (the
+  west of Dhul-Qarnayn; set the clip's `rate: 1`).
+- **A picture of the film alone** (no short has it: the east of Dhul-Qarnayn): `pictures: { <name>:
+  { clip: { …, side, horizon }, ambience: <a short's id> } }` in the film's file; its clip is fetched
+  with `clip.py --film <film> --picture <name>` and given to `prepare.py --film <film> --picture
+  <name>=<clip>`. Nothing is drawn over it.
 
   ```bash
   python3 tools/trial/clip.py --id <n> --out <clip> --seconds 12.5 --height 1440 --pingpong   # a candidate

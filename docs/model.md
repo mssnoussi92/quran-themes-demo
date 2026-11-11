@@ -67,7 +67,7 @@ video/out/                     (ignoré) rendus
 | --- | --- |
 | `id` | son nom, celui du fichier ; c'est aussi la clé de son dessin (`PICTURES` de `Trial.tsx`, `WIDE` de `Film.tsx`) |
 | `handle` | la signature (`@quran_words_daily`) ; celle de TikTok vient de `content/publish.yaml` (`handles`) |
-| `clip` | le clip filmé : `source: pixabay`, `id`, `author`, `page` ; `take`, ce qu'on en garde (`from`, `seconds` : le passage qui sert ; `height` : un 4K réduit ; `pingpong: true` : le passage à l'endroit puis à l'envers, un ciel qui boucle sans saut), appliqué par `tools/trial/clip.py` ; et comment il se pose dans le cadre 9:16 : `position` (recadrage), `shift` (px, vers le bas ou le haut, pour laisser sa place au texte), `brightness`, `ground` (couleur derrière), `horizon` (hauteur de l'horizon : l'image grandit lentement autour), `rate` (vitesse, 0,85 par défaut) ; `landscape` : les mêmes réglages pour le 16:9 du film, et `side` (le côté du dessin, le texte prend l'autre) |
+| `clip` | le clip filmé : `source: pixabay`, `id`, `author`, `page` ; `take`, ce qu'on en garde (`from`, `seconds` : le passage qui sert ; `height` : un 4K réduit ; `pingpong: true` : le passage à l'endroit puis à l'envers, un ciel qui boucle sans saut ; `slow: 5` : cinq fois plus lent, images fondues, pour ce qui n'arrive qu'une fois, un soleil qui se couche sur tout le short, avec `rate: 1`), appliqué par `tools/trial/clip.py` ; et comment il se pose dans le cadre 9:16 : `position` (recadrage), `shift` (px, vers le bas ou le haut, pour laisser sa place au texte), `brightness`, `ground` (couleur derrière), `horizon` (hauteur de l'horizon : l'image grandit lentement autour), `rate` (vitesse, 0,85 par défaut) ; `landscape` : les mêmes réglages pour le 16:9 du film, et `side` (le côté du dessin, le texte prend l'autre) |
 | `ambience` | l'enregistrement sous la narration : `source: bigsoundbank`, `id`, `title`, `author`, `licence`, `page`, `from` et `seconds` (l'extrait bouclé), `level` (LUFS de la nappe) |
 | `verses` | seulement dans le premier film : l'ancien épisode préparé d'où viennent ses versets ; un fichier sans `verses` lit le registre (`tools/trial/sources.py`) |
 | `voices` | les voix connues : `D` (Gemini, Algieba), `V` (VoiceTut, secours), `X` (brouillon muet) |
@@ -168,6 +168,10 @@ seul, donc jamais dans le dépôt ; l'auteur est cité dans les descriptions.
 | --- | --- | --- | --- |
 | 22183 | Artvan93 | mer calme au crépuscule, horizon rose (31 s) | le bateau |
 | 29238 | Dans4 | pleine lune dans de fins nuages (20 s) | le garçon |
+| 21488 | josefgadermaier | le soleil qui se couche derrière des arbres, sur un lac sombre, accéléré (26 s ; ralenti cinq fois : il se couche une fois sur tout le short) | Dhul-Qarnayn, le couchant : **proposé** (2026-11-11) |
+| 225408 | AttilaPergel | un fleuve entre deux parois de roche (les Portes de Fer), vu d'en haut, vertical (18 s) ; un petit bateau passe en bas, caché par le sol dessiné | Dhul-Qarnayn, l'argent refusé : **proposé** |
+| 381 | FlickrVideos | falaises sombres dans la brume du soir (Grand Canyon), accéléré (20 s) | Dhul-Qarnayn, le barrage : **proposé** |
+| 26085 | TeeFarm | une plaine nue, le soleil bas sur l'horizon (Namibie, un coucher filmé), 4K (73 s ; 30 s gardées) | Dhul-Qarnayn, le levant, dans le film seulement : **proposé** |
 | 14955 | adege | ciel étoilé au-dessus du Schlern (Dolomites), accéléré, 4K (17 s) : étoiles qui tournent, traînées d'avions, des nuages dans les 4 dernières secondes ; gardé : 12,5 s, en aller-retour (25 s) | du'a, le lieu de prière ; approuvé par le propriétaire le 2026-11-11 (« parfait », sur la planche de comparaison) |
 | 190332 | DancingSky | ciel de nuages au couchant sur une plaine, accéléré, 4K (14 s) | le mur |
 | 138588 | Natures_Embrace | vagues au couchant, 4K (29 s) | du'a, le grand poisson |

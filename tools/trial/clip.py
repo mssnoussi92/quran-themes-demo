@@ -20,7 +20,9 @@ appears. --look and --search write what they download under --out, each clip in 
 `clip.take` of content/trial/<id>.yaml (or --from, --seconds, --height, --pingpong with --id) says what is
 kept of the clip: `from` and `seconds` (the stretch that fits: before the clouds come in), `height` (a 4K clip
 reduced), `pingpong: true` (the stretch forward then backward: a sky that loops with no jump; done in memory,
-so reduce the height and keep the stretch under about twenty seconds).
+so reduce the height and keep the stretch under about twenty seconds), `slow: 5` (five times slower, the frames
+in between blended: something that happens once, a sun going down, lasts the whole short and never loops; set
+the clip's `rate: 1`).
 
 The key is read from the environment (PIXABAY_API_KEY) and never printed. Pixabay's content licence allows the
 use, not the redistribution of the file alone: a clip is never committed. Needs ffmpeg.
@@ -152,7 +154,10 @@ def look(clip_id: int, out: Path) -> None:
 
 def prepared(source: Path, out: Path, take: dict) -> None:
     """What is kept of a clip: a stretch of it, reduced, forward then backward when it must loop with no jump."""
-    chain = f"scale=-2:'min({int(take['height'])},ih)'" if take.get("height") else "null"
+    steps = [f"scale=-2:'min({int(take['height'])},ih)'"] if take.get("height") else []
+    if take.get("slow"):       # each frame held `slow` times longer, the frames in between blended: no stutter
+        steps += [f"setpts={float(take['slow'])}*PTS", "framerate=fps=30:interp_start=0:interp_end=255:scene=100"]
+    chain = ",".join(steps) or "null"
     graph = f"[0:v]{chain},split[a][b];[b]reverse[r];[a][r]concat=n=2:v=1[o]" if take.get("pingpong") else f"[0:v]{chain}[o]"
     cut = (["-ss", str(take["from"])] if take.get("from") else []) + (["-t", str(take["seconds"])] if take.get("seconds") else [])
     run("ffmpeg", "-loglevel", "error", "-y", *cut, "-i", str(source), "-filter_complex", graph, "-map", "[o]", "-an",
@@ -188,13 +193,14 @@ def main() -> None:
     p.add_argument("--seconds", type=float, help="with --id: how long the stretch kept is")
     p.add_argument("--height", type=int, help="with --id: reduce to this height (1440 for a 4K clip)")
     p.add_argument("--pingpong", action="store_true", help="with --id: forward then backward")
+    p.add_argument("--slow", type=float, help="with --id: this many times slower, frames blended")
     args = p.parse_args()
     if args.search:
         return search(args.search, args.out, args.min_seconds, args.limit, [w.lower() for w in args.tags])
     if args.look:
         return look(args.look, args.out)
     if args.id:
-        take = {k: v for k, v in (("from", args.start), ("seconds", args.seconds), ("height", args.height), ("pingpong", args.pingpong)) if v}
+        take = {k: v for k, v in (("from", args.start), ("seconds", args.seconds), ("height", args.height), ("pingpong", args.pingpong), ("slow", args.slow)) if v}
         return fetch(args.id, args.out, take)
     if not args.trial and not (args.film and args.picture):
         sys.exit("error: one of --search, --look, --id, --trial, or --film with --picture")

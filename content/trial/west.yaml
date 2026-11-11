@@ -10,12 +10,14 @@
 #   mot du verset (les deux tafsirs : par la mécréance) ; l'exemple de vie parle d'autorité, pas de foi.
 # - « وهو أولهم » est notre lecture : celui qui rappelle le retour au Seigneur sait qu'il y retourne aussi.
 # - Personne n'est dessiné : le peuple, ce sont ses habitations au bord de l'eau, éteintes puis éclairées.
+# - Le soleil se couche UNE fois sur tout le short : le clip (26 s) est ralenti cinq fois, images fondues
+#   (`take.slow`), et joué sans boucle (`rate: 1`).
 # - Clip et ambiance PROPOSÉS (le clip est à montrer au propriétaire ; l'ambiance, un des trois enregistrements
 #   validés, est provisoire : une eau calme le soir reste à chercher).
 # Rien n'est validé : le propriétaire lit le script avant toute voix.
 id: west
 handle: "@quran_words_daily"
-clip: { source: pixabay, id: 21488, author: josefgadermaier, page: "https://pixabay.com/videos/id-21488/", position: "50% 50%", brightness: 0.75, landscape: { side: left, horizon: 700, brightness: 0.7 } }
+clip: { source: pixabay, id: 21488, author: josefgadermaier, page: "https://pixabay.com/videos/id-21488/", take: { slow: 5 }, rate: 1, position: "12% 50%", shift: 200, brightness: 0.8, ground: "#0b0d16", horizon: 1420, landscape: { side: left, horizon: 760, brightness: 0.7 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 40-trial-west
 ambience: { source: bigsoundbank, id: "1448", title: "Small waves and beach #2", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/detail-1448-small-waves-and-beach-2.html", from: 100, seconds: 80, level: -36 }
