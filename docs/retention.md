@@ -180,6 +180,39 @@ propriétaire écoute des fichiers nommés par une lettre ; la clé est ici.
   formulaire de clé des sessions ne convient pas : Google lit la clé dans l'en-tête `x-goog-api-key`, que ce
   formulaire n'envoie pas.
 
+### Décisions sur la voix (propriétaire, 2026-11-11)
+
+- **Les meilleures voix à son oreille : D et E en égyptien**, c'est-à-dire Gemini 3.8 Flash TTS, voix `Algieba`
+  et `Sadaltager`. La narration reste donc **en égyptien** (la session recommandait l'arabe standard, pour un
+  public où l'Égypte fait 6,5 % des vues ; il a tranché à l'écoute).
+- **VoiceTut `Mohammed` reste la voix de secours**, au cas où le palier gratuit de Gemini deviendrait payant. Sa
+  prononciation se corrige par l'écriture du texte donné à la voix (`say_ar`, skill `voice-spelling`) : le
+  propriétaire a constaté que le résultat change selon qu'on écrit « sabr » ou « sibr », surtout pour les
+  voyelles o et u, et qu'il faut parfois écrire « ou ».
+- **Conditions de Gemini, lues le 2026-11-11** ([conditions](https://aistudio.google.com/docs/terms),
+  [limites](https://aistudio.google.com/docs/rate-limits)) ; ce n'est pas un avis juridique :
+  - Google ne revendique pas la propriété de ce qui est généré, et celui qui s'en sert en est responsable. Rien
+    n'interdit de publier la voix ; rien ne l'autorise en toutes lettres non plus.
+  - Palier gratuit : les textes envoyés et les voix produites servent à améliorer les produits de Google, et
+    des personnes peuvent les relire. Pour quelqu'un qui se trouve dans l'Espace économique européen, en Suisse
+    ou au Royaume-Uni, ce sont les règles du palier payant qui s'appliquent même au quota gratuit.
+  - Les limites du palier gratuit pour la voix ne sont pas publiées : elles se lisent dans Google AI Studio,
+    sur le compte du propriétaire ; les quotas du jour repartent à minuit, heure du Pacifique. Le test a fait
+    six requêtes en trois minutes sans refus.
+  - Conséquence pour la suite : **peu de requêtes**, une par séquence de plusieurs phrases (comme le test : cinq
+    phrases en une prise), jamais une par phrase.
+
+### Trois pistes d'image sur le même plan (2026-11-11)
+
+Envoyées au propriétaire, en attente de son avis ; l'image n'est pas dans le dépôt (elle contient une image
+d'une vidéo tierce) :
+
+1. **dessiné par le code**, « nuit et or » (`docs/retention/nuit-et-or-*.jpg`) ;
+2. **vraie vidéo de mer et typographie**, comme `quran-reels` (le clip de mer au crépuscule déjà approuvé par le
+   propriétaire, Pixabay 22183) : belle, vivante, mais elle ne montre pas l'événement ;
+3. **les deux ensemble** : la vraie mer qui bouge, et dessus la silhouette dessinée de ce que raconte le
+   verset (le bateau percé). Tout est gratuit dans les trois cas.
+
 ## La demande
 
 Propriétaire, 2026-11-10, après le premier essai sur Instagram : les règles et les personnages des vidéos faites
