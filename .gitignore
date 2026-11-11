@@ -24,3 +24,6 @@ video/public/audio/
 .vscode/
 .pytest_cache/
 video/public/trial/
+
+# Working copies of sub-agents (git worktrees): never part of the repository
+.claude/worktrees/
