@@ -92,10 +92,18 @@ def letters(text: str) -> int:
     return len(re.sub(r"[^\w]", "", MARKS.sub("", text)))
 
 
-def place(lines: list[str], whole: Path | None, by_pauses: bool = False) -> tuple[list[float], list, float]:
+def rule_of(spec: dict) -> int:
+    """The alignment rule of a short or a film. The first film (the files that still name an old episode in
+    `verses`) was validated with rule 2 and keeps it: its videos come out the same. Everything after: rule 3."""
+    return 2 if spec.get("verses") else 3
+
+
+def place(lines: list[str], whole: Path | None, by_pauses: bool = False, rule: int = 3) -> tuple[list[float], list, float]:
     """Where each phrase of `lines` starts in the levelled take `whole`, the pause before each one (None: none
     found, or the first phrase) and where the take ends. `whole` None: no voice yet, a draft timed from the
-    length of the phrases."""
+    length of the phrases. `rule` 2: how a pause was found until 2026-11-11 (a silence, or none); 3: when there
+    is no silence between two words, the quiet stretch at a higher floor (a breath lifted by the levelling). A
+    file the owner validated keeps the rule it was validated with (`rule_of`), so its videos come out the same."""
     phrases = [ph for l in lines for ph in PHRASE_CUT.split(l.strip())]
     if whole is None:
         # Each phrase lasts what its letters take at the pace of the Gemini voices and is followed by a pause,
@@ -120,12 +128,12 @@ def place(lines: list[str], whole: Path | None, by_pauses: bool = False) -> tupl
     # Whisper hears the take and each phrase is found by its words (tools/audio/align.py): what makes one
     # request for thirty phrases, or for a chapter, safe to cut. Kept beside the take: Whisper is slow.
     kept = whole.with_suffix(".align.json")
-    stamp = f"2:{whole.stat().st_size}:{'|'.join(lines)}"      # 2: the pause before a phrase starts after the word before it
+    stamp = f"{rule}:{whole.stat().st_size}:{'|'.join(lines)}"   # 2: the pause before a phrase starts after the word before it; 3: see above
     if kept.is_file() and (old := json.loads(kept.read_text(encoding="utf-8"))).get("stamp") == stamp:
         return old["starts"], [tuple(g) if g else None for g in old["gaps"]], old["end"]
     sys.path.insert(0, str(ROOT / "tools" / "audio"))
     import align
-    heard = align.phrases_in_take(whole, lines)
+    heard = align.phrases_in_take(whole, lines, louder=rule >= 3)
     if [h.text for h in heard] != phrases:
         sys.exit(f"error: {whole.name}: the phrases of the take and of the text differ")
     weak = align.report(heard)
@@ -266,7 +274,7 @@ def main() -> None:
         sys.exit(f"error: {text.name} and the lines of the trial differ")
     phrases = [ph for seg in narrated for l in seg["lines"] for ph in PHRASE_CUT.split(l["ar"].strip())]
     whole = None if args.draft else take_of(args.takes, args.voice, spec["text"], out_dir, args.trial)
-    starts, gaps, take_end = place(said, whole, args.by_pauses)
+    starts, gaps, take_end = place(said, whole, args.by_pauses, rule_of(spec))
     first, k = {}, 0                                        # narration id -> its first phrase in the take
     for seg in narrated:
         first[seg["narration"]] = k

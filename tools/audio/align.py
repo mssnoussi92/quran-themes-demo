@@ -39,6 +39,10 @@ class Phrase:
     said: str                    # what Whisper heard there
 
 
+# Where a pause is looked for when nothing under the usual floor is found between two words.
+LOUDER_FLOORS = ("-34dB", "-30dB", "-26dB")
+
+
 def silences(path: Path, floor: str = "-38dB", least: float = 0.12) -> list[tuple[float, float]]:
     log = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(path), "-af", f"silencedetect=noise={floor}:d={least}",
                           "-f", "null", "-"], capture_output=True, text=True).stderr
@@ -58,7 +62,8 @@ def phrases_of(lines: list[str]) -> list[str]:
     return [ph for line in lines for ph in PHRASE_CUT.split(line.strip()) if ph]
 
 
-def align(phrases: list[str], words: list[tuple[str, float, float]], quiet: list[tuple[float, float]]) -> list[Phrase]:
+def align(phrases: list[str], words: list[tuple[str, float, float]], quiet: list[tuple[float, float]],
+          louder: list[list[tuple[float, float]]] | None = None) -> list[Phrase]:
     import listen
     letters = lambda text: "".join(listen.plain(text))
     wanted, begins = "", []
@@ -96,6 +101,14 @@ def align(phrases: list[str], words: list[tuple[str, float, float]], quiet: list
         # must not take the pause that came before the question).
         said_before = words[first - 1][1] + 0.05 if first > 0 else 0.0
         around = [(a, b) for a, b in quiet if b > before - 0.25 and a < t + 0.3 and a >= said_before and (k > 0 or a <= 0.05)]
+        # No silence there: the voice breathes in the pause, and a levelled take lifts that breath over the
+        # floor. The pause is then looked for at higher floors (the quiet stretch between two words, not
+        # silence), still after the word before; without it the cut falls on Whisper's word boundary, which
+        # puts a pause inside the next word (« قال: » clipped before « بس فيه… », the du'a film).
+        for level in louder or []:
+            if around or k == 0:
+                break
+            around = [(a, b) for a, b in level if b > before - 0.1 and a < t + 0.3 and a >= said_before]
         if k == 0:
             around = [(a, b) for a, b in quiet if a <= 0.05]
         pause = max(around, key=lambda g: g[1] - g[0]) if around else None
@@ -111,8 +124,10 @@ def align(phrases: list[str], words: list[tuple[str, float, float]], quiet: list
     return out
 
 
-def phrases_in_take(take: Path, lines: list[str]) -> list[Phrase]:
-    return align(phrases_of(lines), words_of(take), silences(take))
+def phrases_in_take(take: Path, lines: list[str], louder: bool = True) -> list[Phrase]:
+    """`louder` False: the rule before 2026-11-11 (a pause is a silence under the usual floor, or there is none),
+    for a take whose videos the owner validated with it."""
+    return align(phrases_of(lines), words_of(take), silences(take), [silences(take, floor) for floor in LOUDER_FLOORS] if louder else None)
 
 
 def report(found: list[Phrase]) -> int:

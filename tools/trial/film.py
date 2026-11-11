@@ -46,7 +46,7 @@ class Take:
         if said != [l["ar"] for l in self.lines]:
             sys.exit(f"error: {text.name} and the lines of {name} differ")
         self.whole = None if args.draft else P.take_of(args.takes, args.voice, spec["text"], out_dir, name)
-        self.starts, self.gaps, self.end = P.place(said, self.whole)
+        self.starts, self.gaps, self.end = P.place(said, self.whole, rule=P.rule_of(spec))
         self.first, k = [], 0                   # index of the first phrase of each line
         for l in self.lines:
             self.first.append(k)
