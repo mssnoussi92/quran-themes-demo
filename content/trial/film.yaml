@@ -1,0 +1,126 @@
+# Le film long de l'essai (2026-11-11, docs/retention.md) : toute l'histoire de Moussa et d'al-Khadir en une
+# vidéo 16:9 d'environ 8 minutes, bâtie sur les trois shorts dont le propriétaire a validé le script le même
+# jour. PROPOSITION de la session : la structure et les répliques nouvelles ne sont pas validées, et le code
+# ne lit pas encore ce fichier (seule sa `thumbnail` l'est, par tools/trial/prepare.py --film).
+#
+# Structure proposée : chaque histoire avec son secret, comme dans les shorts (le premier secret est dit vers
+# 2:10 ; dans l'ancien film de khidr il venait à 5:14). L'autre possibilité, l'ordre du Coran (les trois
+# événements, 18:78, puis les trois secrets), se monte avec les mêmes prises : c'est un choix de montage.
+#
+# - `reuse` : une réplique déjà dans un short (content/trial/<short>.yaml, narration et numéro de ligne à
+#   partir de 0) : sa prise est reprise telle quelle, aucune requête de voix ;
+# - `narration` : une réplique propre au film (texte de voix content/voice-test/23-trial-film.txt, UNE requête
+#   pour toutes) ; celles marquées « khidr » sont des répliques validées de l'ancien film, redites par la voix D ;
+# - `verse` : récité (Tawfiq As-Sayegh) ; `reading` : hadith lu par une vraie voix (registre, lecture validée).
+# Durée estimée : 8:10, dont 3:50 de récitation et 0:12 de lecture de hadith.
+id: film
+title: { ar: "موسى والخضر… مش كل حاجة شايفها شر تبقى شر", en: "Moses and al-Khidr: not everything that looks bad is bad" }
+handle: "@quran_words_daily"
+text: 23-trial-film
+# Miniature YouTube 1280x720 (TrialThumb169), proposée : les trois histoires côte à côte, le nom de l'histoire en grand.
+thumbnail: { title: "موسى والخضر", tag: "٣ مواقف… و٣ أسرار", panels: [boat, boy, wall] }
+chapters:
+  - id: open                     # 0:00, environ 20 s : les trois images, la promesse
+    title: { ar: "تلات مواقف", en: "Three stories" }
+    segments:
+      - narration: film-open
+        lines:
+          - ar: "سفينة اتخرقت… أب وأم خسروا ابنهم… وجدار اتبنى ببلاش."
+            en: "A boat torn open… a father and mother who lost their son… and a wall rebuilt for free."
+          - ar: "تلات مواقف… موسى عليه السلام نفسه ما قدرش يسكت عليها… وفي كل واحد منهم سر."
+            en: "Three stories… that Moses himself, peace be upon him, could not keep silent about… and in each one, a secret."
+          - ar: "والتلاتة مع بعض… هيغيّروا نظرتك لكل حاجة وحشة حصلتلك."
+            en: "And together… they will change how you see every bad thing that ever happened to you."
+  - id: meeting                  # 0:20, environ 45 s : la rencontre et la condition
+    title: { ar: "الشرط", en: "The condition" }
+    segments:
+      - narration: film-meeting
+        lines:
+          - ar: "موسى عليه السلام عرف إن فيه عبد… ربنا علّمه علم ما عندوش… فراح له… وطلب يتعلم منه."
+            en: "Moses, peace be upon him, learned of a servant… whom God had taught a knowledge he did not have… so he went to him… and asked to learn from him."
+      - verse: quran.18.67
+      - verse: quran.18.68
+      - narration: film-condition
+        lines:
+          - ar: "يعني هتشوف حاجات… مش هتقدر تفهمها… عشان مش شايف الصورة كلها."      # khidr, meet-takeaway
+            en: "In other words: you'll see things… you won't be able to understand… because you don't see the whole picture."
+          - ar: "وشرط عليه شرط واحد."
+            en: "And he set him one condition."
+      - verse: quran.18.70
+  - id: boat                     # 1:05, environ 1:50
+    title: { ar: "السفينة", en: "The boat" }
+    picture: boat
+    segments:
+      - reuse: boat.open
+        lines: [0]
+      - verse: quran.18.71
+      - verse: quran.18.72
+      - verse: quran.18.73
+      - reuse: boat.secret
+      - verse: quran.18.79
+      - reuse: boat.meaning
+      - reuse: boat.depth
+      - reuse: boat.example
+      - reuse: boat.close
+        lines: [0, 2]            # la phrase à retenir, puis l'annonce du deuxième ; « افتكر السفينة » ferme le film
+  - id: boy                      # 2:55, environ 2:05
+    title: { ar: "الغلام", en: "The boy" }
+    picture: boy
+    segments:
+      - reuse: boy.open
+        lines: [0]
+      - verse: quran.18.74
+      - verse: quran.18.75
+      - verse: quran.18.76
+      - reuse: boy.secret
+      - verse: quran.18.80
+      - verse: quran.18.81
+      - reuse: boy.meaning       # la garde y est : elle ne se coupe jamais
+      - reuse: boy.depth
+      - reuse: boy.example
+      - reuse: boy.close
+        lines: [0, 1]
+  - id: wall                     # 5:00, environ 2:00
+    title: { ar: "الجدار", en: "The wall" }
+    picture: wall
+    segments:
+      - reuse: wall.open
+        lines: [0]
+      - verse: quran.18.77
+      - narration: film-parting
+        lines:
+          - ar: "وهنا الخَضِر قاله: هنا نفترق… بس هقولك سر اللي مقدرتش تصبر عليه."      # khidr, parting-say
+            en: "Then al-Khidr said: this is where we part… but I'll tell you the secret of what you couldn't be patient with."
+      - verse: quran.18.78
+      - verse: quran.18.82
+      - reuse: wall.meaning
+      - reuse: wall.depth
+      - reuse: wall.example
+      - reuse: wall.close
+        lines: [0]
+  - id: end                      # 7:00, environ 1:10 : ce qui relie les trois, le verset, le moineau
+    title: { ar: "ليه مش بنشوفها؟", en: "Why can't we see it?" }
+    picture: boat
+    segments:
+      - reuse: wall.close
+        lines: [1]               # « تلات مواقف: حكمة اتكشفت بسرعة… »
+      - narration: film-hate
+        lines:
+          - ar: "ممكن تكره حاجة… وهي خير ليك. وتحب حاجة… وهي شر ليك."      # khidr, end-hate
+            en: "You may hate something… while it's good for you. And love something… while it's bad for you."
+      - verse: quran.2.216
+      - narration: film-sparrow
+        lines:
+          - ar: "طب ليه مش بنشوفها؟"      # khidr, end-why
+            en: "So why can't we see it?"
+          - ar: "وهم في السفينة… عصفور وقف على طرفها… ونقر في البحر."      # khidr, ship-bird
+            en: "While they were on the boat… a sparrow landed on its edge… and pecked at the sea."
+          - ar: "والنبي صلى الله عليه وسلم حكى إن الخَضِر قال:"      # khidr, ship-hadith
+            en: "And the Prophet ﷺ told us that al-Khidr said:"
+      - reading: hadith.bukhari.3401
+      - reuse: boat.close
+        lines: [1]               # « لما حاجة وحشة تحصلك… افتكر السفينة. »
+      - narration: film-follow
+        lines:
+          - ar: "اشترك… عشان القصة الجاية."
+            en: "Subscribe… for the next story."

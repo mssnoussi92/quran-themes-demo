@@ -28,12 +28,17 @@
 #   L'annonce du deuxième cas tient en une phrase, bâtie sur ce qui distingue les trois histoires (demande du
 #   propriétaire) : ici la sagesse s'est dévoilée vite, dans la deuxième peut-être jamais pour ceux qui l'ont vécue.
 # Version 1 : commit 7a36223.
+# Script validé par le propriétaire le 2026-11-11 (« je valide le script », après lecture des trois shorts) : les
+# répliques ci-dessous, telles qu'elles sont. Cela ne valide ni la voix, ni les images, ni les textes de
+# publication ; toute réplique changée ensuite redevient à valider.
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
 id: boat
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 22183, author: Artvan93, page: "https://pixabay.com/videos/id-22183/", position: "62% 50%", horizon: 827, rate: 0.85 }
 verses: khidr-solo     # épisode préparé d'où viennent les versets et leur récitation
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", E: "Gemini 3.8 Flash TTS, Sadaltager", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 20-trial-boat   # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+cover: { scene: holed, title: "ليه خرق السفينة؟", tag: "موسى والخضر · ١ من ٣", focus: 1120 }   # couverture 9:16 du short (TrialCover916), proposée
 segments:
   - narration: open
     scene: holed

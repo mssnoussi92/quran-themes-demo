@@ -12,12 +12,17 @@
 #   dessous, sur un ciel de couchant (clip 190332 de Pixabay, déjà approuvé pour quran-reels, « pb-sunset-clouds »).
 # - Deux versets longs (28 s et 35,5 s) : leur texte s'affiche par pages, au fil de la récitation.
 # - Répliques : toutes de l'IA (« خير مستخبي… ومستني وقته » vient de khidr-04).
+# Script validé par le propriétaire le 2026-11-11 (« je valide le script », après lecture des trois shorts) : les
+# répliques ci-dessous, telles qu'elles sont. Cela ne valide ni la voix, ni les images, ni les textes de
+# publication ; toute réplique changée ensuite redevient à valider.
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
 id: wall
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 190332, author: DancingSky, page: "https://pixabay.com/videos/id-190332/", position: "42% 50%", shift: -400, brightness: 0.62, ground: "#05060c" }
 verses: khidr
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", E: "Gemini 3.8 Flash TTS, Sadaltager", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 22-trial-wall
+cover: { scene: treasure, title: "سر تحت الجدار", tag: "موسى والخضر · ٣ من ٣", focus: 1230 }   # couverture 9:16 du short (TrialCover916), proposée
 segments:
   - narration: open
     scene: leaning

@@ -10,12 +10,17 @@
 #   approuvé par le propriétaire pour quran-reels, « pb-full-moon »), une fenêtre allumée, puis une seconde
 #   quand le verset 18:81 parle de ce qui leur est donné à la place.
 # - Répliques reprises de khidr-03 (validées là-bas) : la garde, l'exemple ; les autres sont de l'IA.
+# Script validé par le propriétaire le 2026-11-11 (« je valide le script », après lecture des trois shorts) : les
+# répliques ci-dessous, telles qu'elles sont. Cela ne valide ni la voix, ni les images, ni les textes de
+# publication ; toute réplique changée ensuite redevient à valider.
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
 id: boy
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 29238, author: Dans4, page: "https://pixabay.com/videos/id-29238/", position: "48.6% 50%", shift: 520, brightness: 0.95, ground: "#050a14" }
 verses: khidr          # épisode préparé d'où viennent les versets et leur récitation
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", E: "Gemini 3.8 Flash TTS, Sadaltager", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 21-trial-boy     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+cover: { scene: home, title: "خسروا ابنهم… ليه؟", tag: "موسى والخضر · ٢ من ٣", focus: 1190 }   # couverture 9:16 du short (TrialCover916), proposée
 segments:
   - narration: open
     scene: home

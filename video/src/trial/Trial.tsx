@@ -30,6 +30,8 @@ type Picture = { position?: string; shift?: number; brightness?: number; ground?
 export type TrialData = {
   trial: string; voice: string; voice_name: string; handle: string;
   clip: string; clip_seconds: number; picture?: Picture; seconds: number; segments: Segment[];
+  /** The 9:16 cover of the short: the scene it shows, its title in large, a tag above it. */
+  cover?: { scene: string; title: string; tag: string; focus?: number } | null;
 };
 export type TrialProps = { trial: string; voice: string; data: TrialData | null };
 
@@ -41,16 +43,16 @@ export const trialMetadata: CalculateMetadataFunction<TrialProps> = async ({ pro
   return { durationInFrames: Math.ceil(data.seconds * TRIAL_FPS), props: { ...props, data } };
 };
 
-const W = 1080;
-const H = 1920;
-const GOLD = "#ffcf6a";
-const SHADOW = "0 2px 24px rgba(4,7,20,.9), 0 0 60px rgba(4,7,20,.7)";
+export const W = 1080;
+export const H = 1920;
+export const GOLD = "#ffcf6a";
+export const SHADOW = "0 2px 24px rgba(4,7,20,.9), 0 0 60px rgba(4,7,20,.7)";
 const FADE = 0.6;
 /** Most words of a verse on screen at once: a long verse is shown page by page, as it is recited. */
 const VERSE_PAGE = 14;
 
 /** The filmed clip, played a little slower than life and looped with a cross-fade. */
-const Clip: React.FC<{ src: string; clipSeconds: number; picture: Picture }> = ({ src, clipSeconds, picture }) => {
+export const Clip: React.FC<{ src: string; clipSeconds: number; picture: Picture }> = ({ src, clipSeconds, picture }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const rate = picture.rate ?? 0.85;
@@ -96,7 +98,7 @@ const sceneOpacity = (segments: Segment[], id: string, t: number) => {
 };
 
 /** What a short draws over its clip. `show(id)`: how much of that scene is there now; `since(id)`: when it first came. */
-type Drawn = React.FC<{ t: number; show: (id: string) => number; since: (id: string) => number; horizon: number }>;
+export type Drawn = React.FC<{ t: number; show: (id: string) => number; since: (id: string) => number; horizon: number }>;
 
 /** The boat (18:71, 18:79): `holed` close, `fleet` the king's ships behind it, `sail` going on its way, `sea` the sea alone. */
 const BoatPicture: Drawn = ({ t, show, since, horizon }) => (
@@ -154,7 +156,7 @@ const WallPicture: Drawn = ({ t, show, horizon }) => (
   </>
 );
 
-const PICTURES: Record<string, Drawn> = { boat: BoatPicture, boy: HomePicture, wall: WallPicture };
+export const PICTURES: Record<string, Drawn> = { boat: BoatPicture, boy: HomePicture, wall: WallPicture };
 
 const hasLetter = (token: string) => /\p{L}/u.test(token);
 const fit = (base: number, text: string, comfortable: number) => Math.round(base * Math.min(1, Math.sqrt(comfortable / Math.max(1, text.length))));

@@ -383,6 +383,46 @@ Correction d'une estimation de la session : les pauses de la voix aux « … » 
 secondes par short, mais on ne les supprime pas ; les ramener à 0,45 s au plus gagne 7 à 11 s par short
 (mesuré sur la prise D de la première comparaison : 12 pauses, 7,95 s, dont 2,7 s au-dessus de 0,45 s).
 
+### Script des trois shorts validé ; le film long et les miniatures, proposés (2026-11-11)
+
+**« Je valide le script »** (propriétaire, 2026-11-11, après lecture des trois shorts) : inscrit dans
+`content/trial/boat.yaml`, `boy.yaml`, `wall.yaml` (`script_validated`). Cela vaut pour les répliques, pas pour
+la voix, les images ni les textes de publication ; une réplique changée redevient à valider.
+
+**Le film long** (sa demande : adapter le script pour une vidéo longue qui contient toute l'histoire, avec une
+suggestion). Proposé dans `content/trial/film.yaml`, pas validé, pas encore lu par le code :
+
+| | Chapitre | Contenu | Durée estimée |
+|---|---|---|---|
+| 0:00 | Trois situations | les trois images, la promesse (répliques nouvelles) | 0:20 |
+| 0:20 | La condition | 18:67-68, « مش شايف الصورة كلها », 18:70 | 0:45 |
+| 1:05 | Le bateau | accroche du short, 18:71-73, 18:79, sa leçon, l'annonce du deuxième | 1:50 |
+| 2:55 | Le garçon | accroche du short, 18:74-76, 18:80-81, sa leçon avec la garde, l'annonce du troisième | 2:05 |
+| 5:00 | Le mur | accroche du short, 18:77, la séparation et 18:78, 18:82, sa leçon | 2:00 |
+| 7:00 | Pourquoi on ne le voit pas | les trois façons, 2:216, le moineau (Bukhari 3401, lu par une vraie voix), « افتكر السفينة » | 1:10 |
+
+Environ 8:10, dont 3:50 de récitation. Ce que la session recommande, et pourquoi :
+
+- **Chaque histoire avec son secret**, comme dans les shorts : le premier secret est dit vers 2:10 (5:14 dans
+  l'ancien film). L'autre possibilité est l'ordre du Coran (les trois événements, 18:78, puis les trois
+  secrets), que le propriétaire avait choisi pour l'ancien film ; elle garde le suspense du texte mais fait
+  attendre la première réponse jusque vers 3:50, alors qu'une vue dure en moyenne bien moins. Les deux se
+  montent avec les mêmes prises : c'est un choix de montage, pas de voix.
+- **Les shorts donnent les trois quarts de la narration du film** : leurs prises sont reprises réplique par
+  réplique. Le film ne demande qu'**une requête de voix** de plus (12 répliques, `content/voice-test/23-trial-film.txt`).
+- **Le film reprend ce que les shorts laissent de côté** : la condition, « ألم أقل إنك لن تستطيع معي صبرا »
+  après chaque événement (18:72-73, 18:75-76), la séparation (18:78), 2:216 et le moineau.
+- **Ce qui reste à construire** : la version 16:9 du montage (les mêmes scènes en paysage, un clip par
+  chapitre), les images de l'ouverture, de la condition et de la fin ; un rendu de 8 minutes prend environ
+  1 h 30 dans une session.
+
+**Les miniatures**, proposées (`cover` de chaque short, `thumbnail` de `film.yaml`) : une couverture 9:16 par
+short (`TrialCover916` : la scène, le titre en grand, « موسى والخضر · ١ من ٣ » en étiquette ; titre et
+silhouette dans le carré central, que montre une grille de profil) et la vignette YouTube du film
+(`TrialThumb169`, 1280x720 : les trois histoires côte à côte, la première à droite, « موسى والخضر » en grand,
+« ٣ مواقف… و٣ أسرار » en étiquette, rien dans le coin bas-droite). Titres des couvertures : « ليه خرق
+السفينة؟ », « خسروا ابنهم… ليه؟ », « سر تحت الجدار ».
+
 ## La demande
 
 Propriétaire, 2026-11-10, après le premier essai sur Instagram : les règles et les personnages des vidéos faites

@@ -19,6 +19,10 @@ verses' texts from the episode khidr-solo already prepared here (npm run data, t
 Before any voice (no request spent): --trial <id> --draft --clip <clip> writes <id>-X.json, the narration
 silent and timed from its length, the recitation real; stills of Trial916 then show the script on its scenes.
 
+Covers (proposed): after a draft of each short, `prepare.py --film` writes the film's thumbnail data; then
+  npx remotion still TrialCover916 out/<id>-cover.png --frame=45 --props='{"trial":"<id>","voice":"X","data":null}'
+  npx remotion still TrialThumb169 out/film-thumbnail.png --frame=45
+
 One narration take per voice holds every line of the short (the free tier of Gemini gives 10 requests a
 day): each line is cut into phrases after « … ! ؟ ? . : » as everywhere else, each phrase is found in the
 take by its words as Whisper hears them (tools/audio/align.py; --by-pauses: by the longest silences, the
@@ -79,13 +83,25 @@ def main() -> None:
     p.add_argument("--trial", default="boat")
     p.add_argument("--voice", help="label of the narration voice (D, E)")
     p.add_argument("--takes", type=Path, help="directory of the narration take <voice>-<text>.flac (or .wav, .mp3)")
-    p.add_argument("--clip", required=True, type=Path, help="the filmed clip of the trial (not in the repository)")
+    p.add_argument("--clip", type=Path, help="the filmed clip of the trial (not in the repository)")
+    p.add_argument("--film", action="store_true",
+                   help="write public/trial/film.json from content/trial/film.yaml: for now its YouTube thumbnail "
+                        "(TrialThumb169), which shows the picture of each short already prepared here")
     p.add_argument("--episode", help="prepared episode the verses come from (default: `verses` of the trial)")
     p.add_argument("--draft", action="store_true",
                    help="no voice yet: the narration is silent and timed from its length (voice label X), to look at the "
                         "scenes and the script on stills before any request is spent")
     p.add_argument("--by-pauses", action="store_true", help="place the phrases on the longest pauses of the take, without Whisper (a few lines only)")
     args = p.parse_args()
+    if args.film:
+        film = yaml.safe_load((ROOT / "content" / "trial" / "film.yaml").read_text(encoding="utf-8"))
+        out = PUBLIC / "trial" / "film.json"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps({"title": film["title"], "handle": film["handle"], "thumbnail": film["thumbnail"]}, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"{out.relative_to(ROOT)}: thumbnail of the film ({', '.join(film['thumbnail']['panels'])})")
+        return
+    if not args.clip:
+        sys.exit("error: --clip")
     if args.draft:
         args.voice = args.voice or "X"
     elif not args.voice or not args.takes:
@@ -205,6 +221,7 @@ def main() -> None:
             # How the clip sits in the frame (content/trial/<id>.yaml, `clip`): where it is cropped, how far it is
             # moved down (or up) to leave the text its place, how much it is darkened, the colour behind it.
             "picture": {k: spec["clip"][k] for k in ("position", "shift", "brightness", "ground", "horizon", "rate") if k in spec["clip"]},
+            "cover": spec.get("cover"),                     # the 9:16 cover of the short (TrialCover916)
             "seconds": total, "segments": segments}
     out = out_dir / f"{args.trial}-{args.voice}.json"
     out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
