@@ -488,6 +488,34 @@ Le propriétaire, avant de dormir : « je t'autorise de terminer les vidéos ave
 
 Rien de cela n'est validé par le propriétaire : il juge au réveil.
 
+### Validation du propriétaire et ambiance sonore (2026-11-11, à son réveil)
+
+Le propriétaire : « je valide et je suis d'accord sur ta remarque pour le son hors voix ».
+
+- **Validé sur sa parole** (`validated` de `content/trial/boat.yaml`, `boy.yaml`, `wall.yaml`, `film.yaml`) : la
+  voix D entendue sur les vidéos entières, les trois montages et celui du film, le rappel d'abonnement, les
+  couvertures et la vignette, les titres et descriptions. Il a validé en connaissant les points faibles listés
+  plus haut (la fin du mur promet une histoire qui n'existe pas encore, le short du garçon dit un meurtre).
+- **Ambiance sous la narration, jamais sous un verset ni un hadith** (`tools/trial/ambience.py`, `ambience` de
+  chaque short) : un enregistrement de terrain par image, de BigSoundBank (Joseph Sardin, **CC0** : tout usage,
+  crédit non exigé, cité quand même dans les descriptions) : de petites vagues prises à 10 m sous le bateau
+  (n° 1448), la campagne le soir avec des grillons sous la maison (n° 1880), le vent dans un arbre sous le mur
+  (n° 0659). Wikimedia Commons, essayé d'abord, n'avait en CC0 que la mer et refusait les recherches. Un son
+  fabriqué par le code a été écarté : impossible de juger sans oreille s'il sonne faux, alors qu'un vrai
+  enregistrement sonne au moins vrai.
+- **Réglages** : nappe à −36 LUFS (−38 pour les grillons, plus perçants), soit 20 LU sous la voix ; elle s'en va
+  en 0,8 s avant chaque verset, vaut zéro pendant qu'il dure (vérifié par l'outil, qui s'arrête sinon), revient
+  en 1 s ; elle ne revient pas entre deux versets séparés de moins de 4 s (« السر؟ الخضر قاله بعدين ») ; dans le
+  film une image montrée moins de 8 s ne change pas l'ambiance (l'ouverture reste sur la mer) et la mer tient
+  sous les 12 secondes de la fin, puis s'éteint.
+- **Les vidéos déjà rendues** ont reçu la nappe sans nouveau rendu (`ambience.py --mix` : l'image est copiée,
+  identique au bit près ; le son est celui de la vidéo plus la nappe) : `…-ambience.mp4`. Mesuré : sous les
+  versets la différence avec l'ancien son est à −65 dBFS (le réencodage seul), sous la narration ce qui est
+  ajouté est la nappe (corrélation 0,99) ; volumes inchangés (−16,2 à −16,4 LUFS). Un rendu neuf la joue
+  de lui-même (`ambience` des données, `Trial916` et `TrialFilm169`).
+- **Pas encore entendue par le propriétaire** : le niveau se règle d'un nombre (`level`), l'enregistrement se
+  change d'une ligne.
+
 ## La demande
 
 Propriétaire, 2026-11-10, après le premier essai sur Instagram : les règles et les personnages des vidéos faites

@@ -93,15 +93,26 @@ def main() -> None:
     pub = film["publish"]
     narration = pub["narration"][args.voice]
     shorts = [yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film["thumbnail"]["panels"]]
-    footage = lambda specs: "Footage: Pixabay (" + ", ".join(dict.fromkeys(s["clip"]["author"] for s in specs)) + ")"
+    def footage(specs: list[dict]) -> str:
+        """Where the pictures come from, and the ambience under the narration when the videos have one."""
+        line = "Footage: Pixabay (" + ", ".join(dict.fromkeys(s["clip"]["author"] for s in specs)) + ")"
+        beds = list(dict.fromkeys(f"{s['ambience']['source'].replace('bigsoundbank', 'BigSoundBank')} ({s['ambience']['author']})" for s in specs if s.get("ambience")))
+        return line + (" · Ambience: " + ", ".join(beds) if beds else "")
+
+    # « Je valide » of the owner on the texts: `validated` of every file, with `publish` in what it covers.
+    said = [(s.get("validated") or {}) for s in [film, *shorts]]
+    validated = all("publish" in (v.get("what") or []) for v in said)
+    when = said[0].get("on", said[0].get(True))      # PyYAML reads the key « on » as true (YAML 1.1)
+    status = (f"Titres et descriptions **validés par le propriétaire le {when}**" if validated
+              else "Titres et descriptions **proposés par la session, pas encore validés par le propriétaire**")
     limits = conf["platforms"]
     out = [
         "# Moussa et al-Khadir : textes de publication de l'essai",
         "",
-        "Pour le film et chaque short : le titre, puis le texte à coller sur chaque plateforme. Titres et "
-        "descriptions **proposés par la session, pas encore validés par le propriétaire** ; les sources, les durées, "
-        "les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout "
-        "changement). Fichiers : ceux envoyés dans la conversation.",
+        f"Pour le film et chaque short : le titre, puis le texte à coller sur chaque plateforme. {status} ; "
+        "les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés "
+        "(`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation ; "
+        "avec l'ambiance sonore sous la narration, les mêmes noms terminés par `-ambience.mp4`.",
         "",
     ]
 

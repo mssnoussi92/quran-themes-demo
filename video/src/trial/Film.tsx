@@ -32,6 +32,8 @@ export type FilmData = {
   film: string; voice: string; voice_name: string; handle: string; title: { ar: string; en: string };
   seconds: number; outro: number; chapters: Chapter[]; pictures: Record<string, FilmPicture>;
   shots: Shot[]; subscribe: number[]; segments: FilmSegment[];
+  /** The ambience under the narration: one recording per picture, silent under every verse and the hadith. */
+  ambience?: string;
 };
 export type FilmProps = { voice: string; data: FilmData | null };
 
@@ -235,6 +237,7 @@ export const Film: React.FC<FilmProps> = ({ data }) => {
           </Sequence>
         );
       })}
+      {data.ambience ? <Html5Audio src={staticFile(data.ambience)} /> : null}
       {data.segments.map((seg, i) =>
         seg.file ? (
           <Sequence key={i} from={Math.round(seg.start * fps)} durationInFrames={Math.ceil(seg.seconds * fps) + 2} layout="none">

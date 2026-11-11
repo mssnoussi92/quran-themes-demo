@@ -30,6 +30,8 @@ export type Picture = { position?: string; shift?: number; brightness?: number; 
 export type TrialData = {
   trial: string; voice: string; voice_name: string; handle: string; handles?: Record<string, string>;
   clip: string; clip_seconds: number; picture?: Picture; seconds: number; segments: Segment[];
+  /** The ambience under the narration, as long as the video and already silent under each verse (tools/trial/ambience.py). */
+  ambience?: string;
   /** The 9:16 cover of the short: the scene it shows, its title in large, a tag above it. */
   cover?: { scene: string; title: string; tag: string; focus?: number } | null;
 };
@@ -319,6 +321,7 @@ export const Trial: React.FC<TrialProps> = ({ data, platform }) => {
         </svg>
       </AbsoluteFill>
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(4,7,20,.78) 0%, rgba(4,7,20,.45) 30%, rgba(4,7,20,.05) 52%, rgba(4,7,20,.38) 100%)" }} />
+      {data.ambience ? <Html5Audio src={staticFile(data.ambience)} /> : null}
       {data.segments.map((seg, i) =>
         seg.file ? (
           <Sequence key={i} from={Math.round(seg.start * fps)} durationInFrames={Math.ceil(seg.seconds * fps) + 2} layout="none">

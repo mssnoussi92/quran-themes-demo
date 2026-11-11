@@ -1,6 +1,6 @@
 # Essai, deuxième short (2026-11-11, docs/retention.md) : le garçon (Al-Kahf 18:74, 18:80-81), dans le modèle du
 # bateau (content/trial/boat.yaml) : une question, le verset, le sens, ce qu'on ne voit pas, un exemple de vie,
-# la phrase à retenir, comment la sagesse s'est dévoilée, l'annonce du suivant. Rien n'est validé ; ce fichier
+# la phrase à retenir, comment la sagesse s'est dévoilée, l'annonce du suivant. Validé depuis par le propriétaire (`script_validated`, `validated`) ; ce fichier
 # n'est pas un épisode (validate.py ne le lit pas).
 # - L'accroche ne dit pas l'acte avec notre voix : elle part des parents (ce qu'ils ont perdu, ce qu'ils n'ont
 #   peut-être jamais su), et c'est le verset qui dit ce qui s'est passé.
@@ -14,6 +14,16 @@
 # répliques ci-dessous, telles qu'elles sont. Cela ne valide ni la voix, ni les images, ni les textes de
 # publication ; toute réplique changée ensuite redevient à valider.
 script_validated: { by: mssnoussi92, on: 2026-11-11 }
+# « Je valide » du propriétaire (2026-11-11) sur la vidéo livrée dans la conversation : la voix D entendue sur la
+# vidéo entière, le montage, la couverture, les textes de publication (`publish`). Inscrit sur sa parole.
+# L'ambiance sonore (`ambience`), ajoutée après avec son accord, n'était pas dans la vidéo qu'il a vue :
+# elle attend son oreille.
+validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, cover, publish] }
+# Ambiance sous la narration, jamais sous un verset ni un hadith (accord du propriétaire, 2026-11-11) : un
+# enregistrement de terrain de BigSoundBank (Joseph Sardin, CC0 : tout usage, crédit non exigé), hors dépôt
+# (tools/trial/ambience.py). `level` : volume de la nappe en LUFS (la voix est à -16). La campagne le soir dans un pré : des grillons, de rares grenouilles.
+# Le propriétaire ne l'a pas encore entendue.
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 80, level: -38 }
 id: boy
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 29238, author: Dans4, page: "https://pixabay.com/videos/id-29238/", position: "48.6% 50%", shift: 520, brightness: 0.95, ground: "#050a14", landscape: { side: right, horizon: 770, brightness: 0.95 } }

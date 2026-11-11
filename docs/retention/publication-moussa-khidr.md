@@ -1,6 +1,6 @@
 # Moussa et al-Khadir : textes de publication de l'essai
 
-Pour le film et chaque short : le titre, puis le texte à coller sur chaque plateforme. Titres et descriptions **proposés par la session, pas encore validés par le propriétaire** ; les sources, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation.
+Pour le film et chaque short : le titre, puis le texte à coller sur chaque plateforme. Titres et descriptions **validés par le propriétaire le 2026-11-11** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation ; avec l'ambiance sonore sous la narration, les mêmes noms terminés par `-ambience.mp4`.
 
 ## Le film · Moses and al-Khidr: what looks bad is not always bad · موسى والخضر: مش كل شر… شر
 
@@ -39,7 +39,7 @@ Quoted:
 • Sahih al-Bukhari 3401 · Reading: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane · https://sunnah.com/bukhari:3401
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Footage: Pixabay (Artvan93, Dans4, DancingSky)
+Footage: Pixabay (Artvan93, Dans4, DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
@@ -69,7 +69,7 @@ Quoted:
 • Surah Al-Kahf (18:79) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/79
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Footage: Pixabay (Artvan93)
+Footage: Pixabay (Artvan93) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
@@ -93,7 +93,7 @@ Quoted:
 • Surah Al-Kahf (18:79) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/79
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Footage: Pixabay (Artvan93)
+Footage: Pixabay (Artvan93) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
@@ -117,7 +117,7 @@ Quoted:
 • Surah Al-Kahf (18:79) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/79
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Footage: Pixabay (Artvan93)
+Footage: Pixabay (Artvan93) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
@@ -147,7 +147,7 @@ Quoted:
 • Surah Al-Kahf (18:79) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/79
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Footage: Pixabay (Artvan93)
+Footage: Pixabay (Artvan93) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
@@ -177,7 +177,7 @@ Quoted:
 • Surah Al-Kahf (18:80-81) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/80-81
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Footage: Pixabay (Dans4)
+Footage: Pixabay (Dans4) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
@@ -201,7 +201,7 @@ Quoted:
 • Surah Al-Kahf (18:80-81) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/80-81
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Footage: Pixabay (Dans4)
+Footage: Pixabay (Dans4) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
@@ -225,7 +225,7 @@ Quoted:
 • Surah Al-Kahf (18:80-81) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/80-81
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Footage: Pixabay (Dans4)
+Footage: Pixabay (Dans4) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
@@ -255,7 +255,7 @@ Quoted:
 • Surah Al-Kahf (18:80-81) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/80-81
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Footage: Pixabay (Dans4)
+Footage: Pixabay (Dans4) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
@@ -285,7 +285,7 @@ Quoted:
 • Surah Al-Kahf (18:82) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/82
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Footage: Pixabay (DancingSky)
+Footage: Pixabay (DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
@@ -309,7 +309,7 @@ Quoted:
 • Surah Al-Kahf (18:82) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/82
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Footage: Pixabay (DancingSky)
+Footage: Pixabay (DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
@@ -333,7 +333,7 @@ Quoted:
 • Surah Al-Kahf (18:82) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/82
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Footage: Pixabay (DancingSky)
+Footage: Pixabay (DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
@@ -363,7 +363,7 @@ Quoted:
 • Surah Al-Kahf (18:82) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/82
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Footage: Pixabay (DancingSky)
+Footage: Pixabay (DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 

@@ -160,6 +160,15 @@ def prepare(args) -> None:
     data = {"film": film["id"], "voice": args.voice, "voice_name": film["voices"][args.voice], "handle": film["handle"],
             "title": film["title"], "seconds": total, "outro": film["outro"], "chapters": chapters, "pictures": pictures,
             "shots": shots, "subscribe": subscribe, "segments": segments}
+    # The ambience of each picture under the narration, silent under every verse and the hadith; it stays under
+    # the calm picture of the end and leaves with it (tools/trial/ambience.py).
+    bed = None
+    specs = {name: trial(name).get("ambience") for name in pictures}
+    if all(specs.values()) and not args.no_ambience:
+        import ambience
+        quiet = [(s["start"], s["start"] + s["seconds"]) for s in segments if s["kind"] != "narration"]
+        bed = ambience.bed(specs, [(s["start"], s["picture"]) for s in shots], quiet, total, out_dir / f"film-{args.voice}-ambience", end=3.0)
+        data["ambience"] = f"trial/{bed['file'].name}"
     out = out_dir / f"film-{args.voice}.json"
     out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
 
@@ -168,5 +177,7 @@ def prepare(args) -> None:
     for c in chapters:
         print(f"  {stamp(c['start'])}  {c['title']['en']}")
     print(f"  subscribe reminder at {', '.join(stamp(x) for x in subscribe)}")
+    if bed:
+        print("  ambience: " + ", ".join(f"{stamp(a)} {specs[name]['title']}" for a, _, name in bed["runs"]) + f"; silent under {len(bed['silent'])} stretches")
     print(f"{out.relative_to(P.ROOT)}: {stamp(total)} ({total} s), {len(segments)} segments, {len(shots)} shots, "
           f"{stamp(recitation)} of recitation, {film['outro']} s of calm picture at the end")

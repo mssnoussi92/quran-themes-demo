@@ -1,5 +1,5 @@
 # Essai, troisième short (2026-11-11, docs/retention.md) : le mur (Al-Kahf 18:77, 18:82), dans le modèle du
-# bateau (content/trial/boat.yaml). Rien n'est validé ; ce fichier n'est pas un épisode.
+# bateau (content/trial/boat.yaml). Validé depuis par le propriétaire (`script_validated`, `validated`) ; ce fichier n'est pas un épisode.
 # - L'accroche est le miroir de celle du bateau : là-bas des gens généreux et leur bateau percé, ici un village
 #   qui refuse de les recevoir et son mur réparé pour rien.
 # - La promesse est concrète : « sous ce mur, il y avait un secret ».
@@ -16,6 +16,16 @@
 # répliques ci-dessous, telles qu'elles sont. Cela ne valide ni la voix, ni les images, ni les textes de
 # publication ; toute réplique changée ensuite redevient à valider.
 script_validated: { by: mssnoussi92, on: 2026-11-11 }
+# « Je valide » du propriétaire (2026-11-11) sur la vidéo livrée dans la conversation : la voix D entendue sur la
+# vidéo entière, le montage, la couverture, les textes de publication (`publish`). Inscrit sur sa parole.
+# L'ambiance sonore (`ambience`), ajoutée après avec son accord, n'était pas dans la vidéo qu'il a vue :
+# elle attend son oreille.
+validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, cover, publish] }
+# Ambiance sous la narration, jamais sous un verset ni un hadith (accord du propriétaire, 2026-11-11) : un
+# enregistrement de terrain de BigSoundBank (Joseph Sardin, CC0 : tout usage, crédit non exigé), hors dépôt
+# (tools/trial/ambience.py). `level` : volume de la nappe en LUFS (la voix est à -16). Le vent dans un arbre, quelques oiseaux.
+# Le propriétaire ne l'a pas encore entendue.
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -36 }
 id: wall
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 190332, author: DancingSky, page: "https://pixabay.com/videos/id-190332/", position: "42% 50%", shift: -400, brightness: 0.62, ground: "#05060c", landscape: { side: left, horizon: 770, shift: -160, brightness: 0.62 } }

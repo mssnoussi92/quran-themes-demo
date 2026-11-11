@@ -20,6 +20,9 @@ data, tools/audio/build.py).
   # the film, after the three shorts: prepare.py --film --voice D --takes content/trial/takes, then
   # npx remotion render src/index.ts TrialFilm169 out/essai/khidr-film-16x9.mp4 --concurrency=4 --crf=21 --props='{"voice":"D","data":null}'
 
+The ambience under the narration (the trial's `ambience`, tools/trial/ambience.py: a field recording, silent
+under each verse) is made here too, <id>-<voice>-ambience.m4a; --no-ambience leaves it out.
+
 Before any voice (no request spent): --trial <id> --draft --clip <clip> writes <id>-X.json, the narration
 silent and timed from its length, the recitation real; stills of Trial916 then show the script on its scenes.
 
@@ -224,6 +227,7 @@ def main() -> None:
     p.add_argument("--draft", action="store_true",
                    help="no voice yet: the narration is silent and timed from its length (voice label X), to look at the "
                         "scenes and the script on stills before any request is spent")
+    p.add_argument("--no-ambience", action="store_true", help="no bed under the narration (the trial's `ambience`)")
     p.add_argument("--by-pauses", action="store_true", help="place the phrases on the longest pauses of the take, without Whisper (a few lines only)")
     args = p.parse_args()
     if args.film:
@@ -271,6 +275,12 @@ def main() -> None:
             segments.append({**verse_segment(by_source, seg["verse"], out_dir, args.episode), "scene": seg["scene"], "start": round(t, 2)})
         t += segments[-1]["seconds"] + GAP
     total = round(t - GAP + TAIL, 2)
+    # The ambience under the narration, silent under each verse (tools/trial/ambience.py).
+    bed = None
+    if spec.get("ambience") and not args.no_ambience:
+        import ambience
+        quiet = [(s["start"], s["start"] + s["seconds"]) for s in segments if s["kind"] != "narration"]
+        bed = ambience.bed({args.trial: spec["ambience"]}, [(0.0, args.trial)], quiet, total, out_dir / f"{args.trial}-{args.voice}-ambience")
     handles = yaml.safe_load((ROOT / "content" / "publish.yaml").read_text(encoding="utf-8")).get("handles", {})
     data = {"trial": args.trial, "voice": args.voice, "voice_name": spec["voices"][args.voice], "handle": spec["handle"],
             "handles": handles,                             # where the page has another name (TikTok): prop `platform`
@@ -280,11 +290,16 @@ def main() -> None:
             "picture": {k: spec["clip"][k] for k in ("position", "shift", "brightness", "ground", "horizon", "rate") if k in spec["clip"]},
             "cover": spec.get("cover"),                     # the 9:16 cover of the short (TrialCover916)
             "seconds": total, "segments": segments}
+    if bed:
+        data["ambience"] = f"trial/{bed['file'].name}"
     out = out_dir / f"{args.trial}-{args.voice}.json"
     out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     for s in segments:
         what = " | ".join(f"{ph['text']}@{ph['start']}" for l in s.get("lines", []) for ph in l["phrases"]) or s.get("reference")
         print(f"{s['start']:6.2f}  {s['kind']:9s} {s['seconds']:5.2f} s  {s['scene']:6s} {what}")
+    if bed:
+        print(f"ambience: {spec['ambience']['title']} at {spec['ambience'].get('level', -36)} LUFS, silent under "
+              + ", ".join(f"{a:.1f}-{b:.1f} s" for a, b in bed["silent"]))
     print(f"{out.relative_to(ROOT)}: {total} s")
 
 

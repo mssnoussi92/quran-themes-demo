@@ -1,5 +1,5 @@
 # Essai du 2026-11-11 (docs/retention.md) : le short du bateau dans le modèle proposé, pour que le propriétaire
-# juge sur une vidéo avant tout chantier. Rien n'est validé ; ce fichier n'est pas un épisode (validate.py ne le
+# juge sur une vidéo avant tout chantier. Validé depuis par le propriétaire (`script_validated`, `validated`) ; ce fichier n'est pas un épisode (validate.py ne le
 # lit pas) et la vidéo ne se rend que dans une session (la vidéo de mer n'est pas dans le dépôt).
 # - « une question, le verset, le sens » : la narration ne raconte pas ce que le verset va dire ;
 # - la voix continue sur une image qui vit : la mer filmée (Pixabay 22183, clip approuvé par le propriétaire
@@ -32,6 +32,16 @@
 # répliques ci-dessous, telles qu'elles sont. Cela ne valide ni la voix, ni les images, ni les textes de
 # publication ; toute réplique changée ensuite redevient à valider.
 script_validated: { by: mssnoussi92, on: 2026-11-11 }
+# « Je valide » du propriétaire (2026-11-11) sur la vidéo livrée dans la conversation : la voix D entendue sur la
+# vidéo entière, le montage, la couverture, les textes de publication (`publish`). Inscrit sur sa parole.
+# L'ambiance sonore (`ambience`), ajoutée après avec son accord, n'était pas dans la vidéo qu'il a vue :
+# elle attend son oreille.
+validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, cover, publish] }
+# Ambiance sous la narration, jamais sous un verset ni un hadith (accord du propriétaire, 2026-11-11) : un
+# enregistrement de terrain de BigSoundBank (Joseph Sardin, CC0 : tout usage, crédit non exigé), hors dépôt
+# (tools/trial/ambience.py). `level` : volume de la nappe en LUFS (la voix est à -16). De petites vagues sur une plage, prises à 10 m.
+# Le propriétaire ne l'a pas encore entendue.
+ambience: { source: bigsoundbank, id: "1448", title: "Small waves and beach #2", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/detail-1448-small-waves-and-beach-2.html", from: 100, seconds: 80, level: -36 }
 id: boat
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 22183, author: Artvan93, page: "https://pixabay.com/videos/id-22183/", position: "62% 50%", horizon: 827, rate: 0.85, landscape: { side: left, horizon: 465 } }
