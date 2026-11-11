@@ -18,8 +18,11 @@
 #   (`take.slow`), et joué sans boucle (`rate: 1`).
 # - Clip et ambiance PROPOSÉS (le clip est à montrer au propriétaire ; l'ambiance, un des trois enregistrements
 #   validés, est provisoire : une eau calme le soir reste à chercher).
-# Rien n'est validé : le propriétaire lit le script avant toute voix.
+# Script validé par le propriétaire le 2026-11-11 (« je valide le script ») : les répliques, la place des versets et
+# du hadith, les titres. Ni la voix, ni les images (clips proposés, dessins), ni l'ambiance, ni les textes de
+# publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
 id: west
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 21488, author: josefgadermaier, page: "https://pixabay.com/videos/id-21488/", take: { slow: 5 }, rate: 1, position: "12% 50%", shift: 200, brightness: 0.8, ground: "#0b0d16", horizon: 1420, landscape: { side: left, horizon: 760, brightness: 0.7 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }

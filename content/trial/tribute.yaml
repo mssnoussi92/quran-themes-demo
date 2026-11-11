@@ -7,8 +7,11 @@
 # - Gog et Magog ne sont jamais dessinés : le défilé, les habitations au pied des parois, le tribut posé, les outils.
 # - Clip et ambiance PROPOSÉS (le clip est à montrer au propriétaire ; l'ambiance est provisoire : le vent dans un
 #   défilé reste à chercher).
-# Rien n'est validé : le propriétaire lit le script avant toute voix.
+# Script validé par le propriétaire le 2026-11-11 (« je valide le script ») : les répliques, la place des versets et
+# du hadith, les titres. Ni la voix, ni les images (clips proposés, dessins), ni l'ambiance, ni les textes de
+# publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
 id: tribute
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 225408, author: AttilaPergel, page: "https://pixabay.com/videos/id-225408/", position: "50% 40%", brightness: 0.7, landscape: { side: left, horizon: 700, brightness: 0.65 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }

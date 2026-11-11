@@ -9,8 +9,11 @@
 #   short de Moussa et al-Khadir. Ce qu'il promet (« القصة الجاية ») est à lui de tenir.
 # - Clip et ambiance PROPOSÉS (le clip est à montrer au propriétaire ; l'ambiance est provisoire : un feu reste à
 #   chercher).
-# Rien n'est validé : le propriétaire lit le script avant toute voix.
+# Script validé par le propriétaire le 2026-11-11 (« je valide le script ») : les répliques, la place des versets et
+# du hadith, les titres. Ni la voix, ni les images (clips proposés, dessins), ni l'ambiance, ni les textes de
+# publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
 id: barrier
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 381, author: FlickrVideos, page: "https://pixabay.com/videos/id-381/", position: "50% 50%", brightness: 0.85, landscape: { side: right, horizon: 700, brightness: 0.8 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }

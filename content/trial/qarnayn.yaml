@@ -9,8 +9,11 @@
 # - Le levant se montre par un clip seul (une plaine nue, le soleil bas : Pixabay 26085, PROPOSÉ), rien de dessiné :
 #   le verset dit qu'il n'y a rien entre eux et le soleil. Image propre au film (`pictures`).
 # - Gog et Magog ne sont jamais dessinés ; pendant le hadith, l'image est le barrage.
-# Rien n'est validé : le propriétaire lit le script avant toute voix.
+# Script validé par le propriétaire le 2026-11-11 (« je valide le script ») : les répliques, la place des versets et
+# du hadith, les titres. Ni la voix, ni les images (clips proposés, dessins), ni l'ambiance, ni les textes de
+# publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
 id: qarnayn
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
 files: qarnayn                   # début du nom des vidéos livrées : qarnayn-film-16x9.mp4, qarnayn-short-<n>-<id>.mp4
 title: { ar: "ذو القرنين… تلات اختبارات للقوة", en: "Dhul-Qarnayn: three tests of power" }
 handle: "@quran_words_daily"
