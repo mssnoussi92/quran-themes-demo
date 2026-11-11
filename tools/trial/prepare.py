@@ -102,8 +102,10 @@ def place(lines: list[str], whole: Path | None, by_pauses: bool = False, rule: i
     """Where each phrase of `lines` starts in the levelled take `whole`, the pause before each one (None: none
     found, or the first phrase) and where the take ends. `whole` None: no voice yet, a draft timed from the
     length of the phrases. `rule` 2: how a pause was found until 2026-11-11 (a silence, or none); 3: when there
-    is no silence between two words, the quiet stretch at a higher floor (a breath lifted by the levelling). A
-    file the owner validated keeps the rule it was validated with (`rule_of`), so its videos come out the same."""
+    is no silence between two words, the quiet stretch at a higher floor (a breath lifted by the levelling); a
+    pause ends before the phrase's first word does and is the pause of one phrase only (added the same day: it
+    moves no phrase of the du'a, checked on its four levelled takes). A file the owner validated keeps the rule it
+    was validated with (`rule_of`), so its videos come out the same."""
     phrases = [ph for l in lines for ph in PHRASE_CUT.split(l.strip())]
     if whole is None:
         # Each phrase lasts what its letters take at the pace of the Gemini voices and is followed by a pause,

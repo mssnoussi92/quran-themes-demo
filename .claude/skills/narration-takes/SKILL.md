@@ -91,6 +91,11 @@ heard: a line the voice changed, skipped or said twice.
   what it heard before you call a line wrong.
 - A phrase said straight after a one-word question (« السر؟ ») has no pause of its own before it: it
   starts where the question ends, not at the pause before the question.
+- **Two phrases at the same second** is the sign to look for in the list. Two causes were met and are
+  handled since 2026-11-11 (`tests/test_align.py`): a one-word phrase (« شكرًا. ») given the long pause
+  that follows it, so that it appeared after the voice had said it; two phrases said in one breath
+  (« نقول: ده تعبي… ») given the same pause. If it comes back, print Whisper's words and the silences
+  around that second before anything is rendered.
 - « warning: no pause before « … » » from `prepare.py`: a segment starts at a phrase with no pause found
   before it, so the cut would fall on Whisper's word boundary, which puts the pause inside the next
   word and clips the word before. Since 2026-11-11 a pause that is not silence (a breath, lifted by

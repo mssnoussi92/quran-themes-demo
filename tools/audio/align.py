@@ -63,7 +63,7 @@ def phrases_of(lines: list[str]) -> list[str]:
 
 
 def align(phrases: list[str], words: list[tuple[str, float, float]], quiet: list[tuple[float, float]],
-          louder: list[list[tuple[float, float]]] | None = None) -> list[Phrase]:
+          louder: list[list[tuple[float, float]]] | None = None, before_its_word: bool = False) -> list[Phrase]:
     import listen
     letters = lambda text: "".join(listen.plain(text))
     wanted, begins = "", []
@@ -100,7 +100,11 @@ def align(phrases: list[str], words: list[tuple[str, float, float]], quiet: list
         # that starts after the word before did (a phrase said straight after a one-word question, « السر؟ »,
         # must not take the pause that came before the question).
         said_before = words[first - 1][1] + 0.05 if first > 0 else 0.0
-        around = [(a, b) for a, b in quiet if b > before - 0.25 and a < t + 0.3 and a >= said_before and (k > 0 or a <= 0.05)]
+        # And it ends before the phrase's first word does: a one-word phrase (« شكرًا. ») whose start Whisper
+        # hears late was given the long pause AFTER it, and appeared on screen once the voice had said it.
+        its_word_ends = words[first][2] if before_its_word else float("inf")
+        around = [(a, b) for a, b in quiet if b > before - 0.25 and a < t + 0.3 and a >= said_before and (k > 0 or a <= 0.05)
+                  and b < its_word_ends]
         # No silence there: the voice breathes in the pause, and a levelled take lifts that breath over the
         # floor. The pause is then looked for at higher floors (the quiet stretch between two words, not
         # silence), still after the word before; without it the cut falls on Whisper's word boundary, which
@@ -108,10 +112,14 @@ def align(phrases: list[str], words: list[tuple[str, float, float]], quiet: list
         for level in louder or []:
             if around or k == 0:
                 break
-            around = [(a, b) for a, b in level if b > before - 0.1 and a < t + 0.3 and a >= said_before]
+            around = [(a, b) for a, b in level if b > before - 0.1 and a < t + 0.3 and a >= said_before and b < its_word_ends]
         if k == 0:
             around = [(a, b) for a, b in quiet if a <= 0.05]
         pause = max(around, key=lambda g: g[1] - g[0]) if around else None
+        # A pause is the pause before one phrase only: « نقول: ده تعبي… » said in one breath gave both phrases the
+        # pause before « نقول », and the second one the same second as the first.
+        if before_its_word and pause and out and out[-1].pause == pause:
+            pause = None
         start = pause[1] if pause else max(0.0, t - 0.05)
         if k == 0 and pause is None:
             start = 0.0
@@ -125,9 +133,11 @@ def align(phrases: list[str], words: list[tuple[str, float, float]], quiet: list
 
 
 def phrases_in_take(take: Path, lines: list[str], louder: bool = True) -> list[Phrase]:
-    """`louder` False: the rule before 2026-11-11 (a pause is a silence under the usual floor, or there is none),
-    for a take whose videos the owner validated with it."""
-    return align(phrases_of(lines), words_of(take), silences(take), [silences(take, floor) for floor in LOUDER_FLOORS] if louder else None)
+    """`louder` False: the rule before 2026-11-11 (a pause is a silence under the usual floor, or there is none; it
+    may end after the phrase's first word, and serve two phrases), for a take whose videos the owner validated
+    with it."""
+    return align(phrases_of(lines), words_of(take), silences(take), [silences(take, floor) for floor in LOUDER_FLOORS] if louder else None,
+                 before_its_word=louder)
 
 
 def report(found: list[Phrase]) -> int:
