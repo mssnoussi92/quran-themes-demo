@@ -91,8 +91,13 @@ def align(phrases: list[str], words: list[tuple[str, float, float]], quiet: list
         first = max(first, min(last_word + 1, len(words) - 1)) if first <= last_word else first
         t = words[first][1]
         before = words[first - 1][2] if first > 0 else 0.0
-        # The pause between the word before and this one: the longest silence that overlaps that gap.
-        around = [(a, b) for a, b in quiet if b > before - 0.25 and a < t + 0.3 and (k > 0 or a <= 0.05)]
+        # The pause between the word before and this one: the longest silence that overlaps that gap, and
+        # that starts after the word before did (a phrase said straight after a one-word question, « السر؟ »,
+        # must not take the pause that came before the question).
+        said_before = words[first - 1][1] + 0.05 if first > 0 else 0.0
+        around = [(a, b) for a, b in quiet if b > before - 0.25 and a < t + 0.3 and a >= said_before and (k > 0 or a <= 0.05)]
+        if k == 0:
+            around = [(a, b) for a, b in quiet if a <= 0.05]
         pause = max(around, key=lambda g: g[1] - g[0]) if around else None
         start = pause[1] if pause else max(0.0, t - 0.05)
         if k == 0 and pause is None:

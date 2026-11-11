@@ -48,6 +48,8 @@ TAIL = 1.2          # after the last word
 LEVEL = "loudnorm=I=-16:TP=-1.9:LRA=11"
 PHRASE_CUT = re.compile(r"(?<=[،,….!?؟:])\s+")
 MARKS = re.compile("[ً-ْٰـ]")
+PAUSE = 0.5         # most silence kept inside a line, at a « … » (the Gemini voices hold up to 1.5 s there)
+PAUSE_LINES = 0.7   # and between two lines of the same segment
 DRAFT_PACE = 10.0   # letters a second while speaking: the Gemini voices D and E (189 letters and 12 pauses in 24 to 27 s)
 
 
@@ -110,7 +112,7 @@ def place(lines: list[str], whole: Path | None, by_pauses: bool = False) -> tupl
     # Whisper hears the take and each phrase is found by its words (tools/audio/align.py): what makes one
     # request for thirty phrases, or for a chapter, safe to cut. Kept beside the take: Whisper is slow.
     kept = whole.with_suffix(".align.json")
-    stamp = f"{whole.stat().st_size}:{'|'.join(lines)}"
+    stamp = f"2:{whole.stat().st_size}:{'|'.join(lines)}"      # 2: the pause before a phrase starts after the word before it
     if kept.is_file() and (old := json.loads(kept.read_text(encoding="utf-8"))).get("stamp") == stamp:
         return old["starts"], [tuple(g) if g else None for g in old["gaps"]], old["end"]
     sys.path.insert(0, str(ROOT / "tools" / "audio"))
@@ -143,6 +145,41 @@ def cut(starts: list[float], gaps: list, end: float, first: int, after: int, wha
     else:
         stop = max(begin + 0.1, starts[after] - 0.03)
     return begin, stop
+
+
+def narration(whole: Path | None, starts: list[float], gaps: list, end: float, first: int, lines: list[dict], out: Path) -> dict:
+    """The phrases of `lines` (the first one is phrase `first` of the take) as a narration segment, its audio
+    cut into `out` (`whole` None: a draft, no audio). The pauses of the voice are tightened: no more than PAUSE
+    of silence at a « … », PAUSE_LINES between two lines; what is removed is the middle of the pause, so the
+    end of a word and the attack of the next one are left alone."""
+    parts = [PHRASE_CUT.split(l["ar"].strip()) for l in lines]
+    after = first + sum(len(x) for x in parts)
+    begin, stop = cut(starts, gaps, end, first, after, parts[0][0])
+    line_firsts, k = set(), first
+    for x in parts:
+        line_firsts.add(k)
+        k += len(x)
+    removed, shift, rel = [], 0.0, []
+    for k in range(first, after):
+        if k > first and gaps[k]:
+            a, b = gaps[k]
+            most = PAUSE_LINES if k in line_firsts else PAUSE
+            if b - a > most:
+                removed.append((a + most * 0.4, b - most * 0.6))
+                shift += (b - a) - most
+        rel.append(round(starts[k] - begin - shift, 2))
+    length = round(stop - begin - shift, 2)
+    if whole is not None:
+        keep = f"between(t,{begin:.3f},{stop:.3f})" + (f"*not({'+'.join(f'between(t,{x:.3f},{y:.3f})' for x, y in removed)})" if removed else "")
+        run("ffmpeg", "-y", "-loglevel", "error", "-i", str(whole), "-af",
+            f"asetnsamples=n=240,aselect='{keep}',asetpts=N/SR/TB,afade=t=in:d=0.02,afade=t=out:st={max(0.0, length - 0.05):.3f}:d=0.05", str(out))
+    made, k = [], 0
+    for line, x in zip(lines, parts):
+        made.append({"ar": line["ar"], "en": line["en"], "phrases": [{"text": ph, "start": rel[k + i]} for i, ph in enumerate(x)]})
+        k += len(x)
+    for i, line in enumerate(made):               # a line stays until the next one starts
+        line["end"] = made[i + 1]["phrases"][0]["start"] if i + 1 < len(made) else length
+    return {"kind": "narration", "seconds": length, "file": None if whole is None else f"trial/{out.name}", "lines": made}
 
 
 def take_of(takes: Path, voice: str, text: str, out_dir: Path, name: str) -> Path:
@@ -215,30 +252,17 @@ def main() -> None:
     phrases = [ph for seg in narrated for l in seg["lines"] for ph in PHRASE_CUT.split(l["ar"].strip())]
     whole = None if args.draft else take_of(args.takes, args.voice, spec["text"], out_dir, args.trial)
     starts, gaps, take_end = place(said, whole, args.by_pauses)
-    cuts, k = {}, 0                                         # narration id -> (from, to) in the take
+    first, k = {}, 0                                        # narration id -> its first phrase in the take
     for seg in narrated:
-        n = sum(len(PHRASE_CUT.split(l["ar"].strip())) for l in seg["lines"])
-        cuts[seg["narration"]] = (*cut(starts, gaps, take_end, k, k + n, phrases[k]), k)
-        k += n
+        first[seg["narration"]] = k
+        k += sum(len(PHRASE_CUT.split(l["ar"].strip())) for l in seg["lines"])
 
     t, segments = LEAD, []
     for seg in spec["segments"]:
         if "narration" in seg:
-            begin, end, k = cuts[seg["narration"]]
             wav = out_dir / f"{args.trial}-{args.voice}-{seg['narration']}.wav"
-            if not args.draft:
-                run("ffmpeg", "-y", "-loglevel", "error", "-i", str(whole), "-af",
-                    f"atrim=start={begin:.3f}:end={end:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.02,afade=t=out:st={end - begin - 0.05:.3f}:d=0.05", str(wav))
-            lines = []
-            for line in seg["lines"]:
-                parts = PHRASE_CUT.split(line["ar"].strip())
-                lines.append({"ar": line["ar"], "en": line["en"],
-                              "phrases": [{"text": ph, "start": round(starts[k + i] - begin, 2)} for i, ph in enumerate(parts)]})
-                k += len(parts)
-            for i, line in enumerate(lines):      # a line stays until the next one starts
-                line["end"] = lines[i + 1]["phrases"][0]["start"] if i + 1 < len(lines) else round(end - begin, 2)
-            segments.append({"kind": "narration", "scene": seg["scene"], "start": round(t, 2), "seconds": round(end - begin, 2),
-                             "file": None if args.draft else f"trial/{wav.name}", "lines": lines})
+            made = narration(whole, starts, gaps, take_end, first[seg["narration"]], seg["lines"], wav)
+            segments.append({**made, "scene": seg["scene"], "start": round(t, 2)})
         else:
             segments.append({**verse_segment(by_source, seg["verse"], out_dir, args.episode), "scene": seg["scene"], "start": round(t, 2)})
         t += segments[-1]["seconds"] + GAP

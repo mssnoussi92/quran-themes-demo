@@ -57,21 +57,7 @@ class Take:
         mine = [i for i, l in enumerate(self.lines) if l["narration"] == narration and (wanted is None or l["index"] in wanted)]
         if not mine or mine != list(range(mine[0], mine[-1] + 1)):
             sys.exit(f"error: {self.name}.{narration} {wanted}: no such lines, or lines that do not follow each other")
-        first = self.first[mine[0]]
-        after = self.first[mine[-1] + 1] if mine[-1] + 1 < len(self.lines) else self.count
-        begin, stop = P.cut(self.starts, self.gaps, self.end, first, after, self.lines[mine[0]]["ar"])
-        if out is not None and self.whole is not None:
-            P.run("ffmpeg", "-y", "-loglevel", "error", "-i", str(self.whole), "-af",
-                  f"atrim=start={begin:.3f}:end={stop:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.02,afade=t=out:st={stop - begin - 0.05:.3f}:d=0.05", str(out))
-        lines = []
-        for i in mine:
-            parts = P.PHRASE_CUT.split(self.lines[i]["ar"].strip())
-            lines.append({"ar": self.lines[i]["ar"], "en": self.lines[i]["en"],
-                          "phrases": [{"text": ph, "start": round(self.starts[self.first[i] + j] - begin, 2)} for j, ph in enumerate(parts)]})
-        for i, line in enumerate(lines):          # a line stays until the next one starts
-            line["end"] = lines[i + 1]["phrases"][0]["start"] if i + 1 < len(lines) else round(stop - begin, 2)
-        return {"kind": "narration", "seconds": round(stop - begin, 2), "lines": lines,
-                "file": f"trial/{out.name}" if out is not None and self.whole is not None else None}
+        return P.narration(self.whole, self.starts, self.gaps, self.end, self.first[mine[0]], [self.lines[i] for i in mine], out)
 
 
 def prepare(args) -> None:
