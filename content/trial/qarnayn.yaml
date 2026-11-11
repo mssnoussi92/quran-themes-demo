@@ -25,6 +25,7 @@ thumbnail: { title: "ذو القرنين", tag: "٣ اختبارات للقوة"
 pictures:
   east: { clip: { source: pixabay, id: 26085, author: TeeFarm, page: "https://pixabay.com/videos/id-26085/", take: { seconds: 30, height: 1440 }, brightness: 0.7, side: left, horizon: 640 }, ambience: tribute }
 publish:
+  out: docs/retention/publication-qarnayn.md      # où tools/trial/publish.py écrit les textes à coller
   title: { en: "Dhul-Qarnayn: 3 tests of power", ar: "ذو القرنين: ٣ اختبارات للقوة" }
   series: { en: "Dhul-Qarnayn", ar: "ذو القرنين" }
   description:
