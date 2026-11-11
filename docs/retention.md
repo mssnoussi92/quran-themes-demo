@@ -158,15 +158,25 @@ propriétaire écoute des fichiers nommés par une lettre ; la clé est ici.
 | --- | --- | --- | --- |
 | A | Supertonic 3, voix `M5` | CPU de la session : 8 s de calcul pour 35 s de voix | Standard : tous les mots. Égyptien : deux mots déformés. |
 | B | Chatterbox Multilingual V3, voix par défaut | CPU : 3 à 4 fois la durée de la voix | Standard : trois mots déformés. Égyptien : quatre. Débit plus rapide (23 s contre 34). |
-| C, D, E | Gemini 3.8 Flash TTS, voix `Charon`, `Algieba`, `Sadaltager` | API, palier gratuit, par le workflow `voice-test` | Pas encore produit : le workflow reçoit le secret `GEMINI_API_KEY` vide (runs 6 et 7). |
+| C, D, E | Gemini 3.8 Flash TTS, voix `Charon`, `Algieba`, `Sadaltager` | API, palier gratuit, par le workflow `voice-test` (run 10 ; six requêtes en trois minutes) | Standard : tous les mots, pour les trois voix. Égyptien : deux à quatre mots écrits autrement. |
+| B-lent | Chatterbox V3, `exaggeration` 0,7, `cfg_weight` 0,25, puis ralenti de 10 % | CPU | Non transcrit. |
 | actuelle | VoiceTut `Mohammed` (égyptien seulement) | prises déjà figées | Connues du propriétaire. |
 
+- **Ce qu'a entendu le propriétaire (2026-11-11)** : A « très mauvais » ; B parle bien et prononce sans faute,
+  mais trop vite et de façon mécanique ; la voix actuelle (VoiceTut) est bonne, sa prononciation imparfaite. La
+  transcription automatique disait l'inverse pour A et B (A sans faute, B trois mots déformés) : **elle ne
+  mesure pas la qualité d'une voix**, seulement si des mots y sont. Suite : B refait plus lent et plus
+  expressif (« B-lent »), et Gemini (C, D, E), envoyés à l'écoute.
+- VoiceTut n'a pas de réglage de ton : ses « personnages » sont ses 19 voix, plus la vitesse. Le propriétaire en
+  a entendu cinq le 2026-11-06 ; huit voix d'homme ne l'ont jamais été (Ali, Hassan, Mostafa, Ramy, Shaker,
+  Tareq, Yehia, Youssef).
 - Supertonic lit **mieux un texte sans voyelles** : sur le même texte entièrement vocalisé, il a déformé trois
   mots (« والسر في » entendu « وللسروف »). Pour lui, n'écrire que les voyelles d'un nom propre.
 - Chatterbox V3 ne s'installe pas depuis PyPI (0.1.7 n'a que la V2) : il faut le dépôt GitHub de Resemble.
 - Whisper compte des mots, il ne juge ni le timbre ni le naturel : c'est l'oreille du propriétaire qui tranche.
 - Gemini : `tools/tts/gemini.py` et l'entrée `gemini_voices` du workflow `voice-test` ; la clé est un secret du
-  dépôt GitHub (idée du propriétaire, comme dans `quran-reels`), elle ne passe jamais par une session. Le
+  dépôt GitHub (idée du propriétaire, comme dans `quran-reels` ; en place depuis le run 10), elle ne passe
+  jamais par une session. Le
   formulaire de clé des sessions ne convient pas : Google lit la clé dans l'en-tête `x-goog-api-key`, que ce
   formulaire n'envoie pas.
 
