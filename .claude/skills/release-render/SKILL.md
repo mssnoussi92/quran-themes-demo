@@ -171,6 +171,27 @@ caption), then the covers and the file of texts. The message the owner reads:
 - what you find weak, plainly, and what you would do about it;
 - that the videos exist only in the conversation.
 
+### The owner's page
+
+The owner asked (2026-11-11) to see the films and shorts again without asking a session: a private page of
+their claude.ai account, « Films et shorts à publier », with for each film and each short a light preview,
+the thumbnail or cover, and every text to paste with a Copy button, one tab per platform. Refresh it whenever
+a film is delivered, corrected or validated:
+
+```bash
+uv run --with pyyaml python3 tools/trial/gallery.py --film film=<dir> --film dua=<dir> --film <new>=<dir> \
+    --release dua=<url of the draft release> --release <new>=<url>          # every film, the newest last
+```
+
+- `<dir>` holds a film's delivered videos and stills under the names `tools/trial/videos.py` gives them
+  (download a run's artifacts into one folder); `publish.out` of the film must exist (`publish.py`).
+- It writes `build/gallery/` (ignored): `index.html` and `media/` (each preview under 20 MiB: a page serves
+  nothing larger). Look at the page once (a screenshot of `index.html`), then publish it with the artifacts
+  server from those files: `list_artifacts` finds the page by its title, `get_artifact` gives the version to
+  republish over; send `index.html` and the media that changed, 64 MiB at most a call (`files.json` lists them).
+- The page says what is validated from the files (`validated`): never mark by hand. It only shows; the files to
+  publish are the full ones (the draft release, or the conversation for the first film).
+
 ## 8. The owner's answer
 
 - **Corrections**: make them, check, send the videos that changed. A line changed is a script to

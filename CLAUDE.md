@@ -68,7 +68,8 @@ tools/trial/             script.py (le script en une page, à valider), rules.py
                          regarder, préparer un clip), sources.py (une source du registre, prête à jouer), prepare.py (un short ;
                          --film : le film, film.py), ambience.py (la nappe ; --mix sous une vidéo rendue), check.py (contrôle
                          d'un rendu sur ses planches d'images), splice.py (quelques secondes re-rendues et raccordées, le
-                         reste copié), videos.py (les vidéos d'un film, pour le workflow), publish.py (textes à coller)
+                         reste copié), videos.py (les vidéos d'un film, pour le workflow), publish.py (textes à coller),
+                         gallery.py (la page où le propriétaire revoit tout et copie les textes)
 tools/audio/             align.py (chaque phrase retrouvée dans une prise), recitation.py (coupes des versets), build.py et
                          listen.py (nivelage, coupes, Whisper : partagés avec l'ancien circuit)
 tools/tts/gemini.py      la voix (workflow voice-test) ; tools/sources/fetch.py : textes du registre depuis les API
@@ -142,4 +143,5 @@ La session est l'orchestrateur : elle fait le plan, confie ce qui s'y prête, re
 - **Moussa et al-Khadir** : film et trois shorts validés, y compris les sept vidéos corrigées le 2026-11-11 (« ﷺ » et « al-Khiḍr » des sous-titres, quelques secondes raccordées : `video/out/essai-2/` de la session, envoyées) : ce sont elles qui se publient.
 - **Le du'a** (`asked`, `written`, `waited`, film `dua`) : vidéos **validées** le 2026-11-11 (voix, montage, couvertures, vignette, rappel, ambiance) et sources validées ; release brouillon `dua-candidate`. Restent ses textes à coller (`docs/retention/publication-dua.md`, envoyés) : `publish` n'est pas dans ce qu'il a validé.
 - **Dhul-Qarnayn** (`west`, `tribute`, `barrier`, film `qarnayn`) : script validé, voix faite, clips et ambiances approuvés (2026-11-11). Trois points faibles traités à sa demande (niveau de la voix, une réplique coupée en deux, le soleil sur la couverture) : les sept vidéos sont re-rendues par le workflow `film` ; restent leur contrôle, l'envoi, son « je valide » sur les vidéos et sur les textes. Ensuite : les autres épisodes publiés à réécrire (`docs/themes.md`).
+- **La page du propriétaire** (sa demande, 2026-11-11 : revoir films et shorts sans passer par une session, avec aperçu, couverture, textes et bouton « Copier ») : l'artefact privé « Films et shorts à publier » de son compte claude.ai (`list_artifacts` le retrouve par ce titre), fait par `tools/trial/gallery.py` et republié par la session à chaque film livré ou validé (skill `release-render`, §7). Y sont : Moussa et al-Khadir, le du'a ; Dhul-Qarnayn s'y ajoute une fois contrôlé.
 - **Rendu dans GitHub Actions** : en service depuis le 2026-11-11 (workflow `film`, skill `release-render` §0) : sept vidéos en 70 minutes, release brouillon `<files>-candidate`, `from_run` pour republier sans re-rendre. Le premier film (qui lit un ancien épisode) se rend encore dans la session.

@@ -53,6 +53,7 @@ tools/trial/ambience.py        la nappe d'ambiance d'une vidéo ; --mix : la pos
 tools/trial/publish.py         les textes à coller
 tools/trial/check.py           contrôle d'un rendu : format, durée, volume, planches d'images
 tools/trial/splice.py          quelques secondes d'une vidéo re-rendues et raccordées, le reste copié tel quel, prouvé image par image
+tools/trial/gallery.py         la page du propriétaire : aperçus allégés, couvertures, textes à coller avec un bouton Copier (dossier build/gallery, publié en artefact privé)
 tools/trial/rules.py           les règles sur les fichiers d'un film ; tools/trial/videos.py : ses vidéos et images, pour le workflow film
 tools/audio/align.py           chaque phrase d'un texte retrouvée dans une longue prise
 tools/tts/gemini.py            la voix (dans le workflow voice-test : la clé est un secret du dépôt)
