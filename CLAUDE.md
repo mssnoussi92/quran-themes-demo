@@ -67,7 +67,8 @@ content/
 tools/trial/             script.py (le script en une page, à valider), rules.py (les règles sur les fichiers), clip.py (chercher,
                          regarder, préparer un clip), sources.py (une source du registre, prête à jouer), prepare.py (un short ;
                          --film : le film, film.py), ambience.py (la nappe ; --mix sous une vidéo rendue), check.py (contrôle
-                         d'un rendu sur ses planches d'images), publish.py (textes à coller)
+                         d'un rendu sur ses planches d'images), splice.py (quelques secondes re-rendues et raccordées, le
+                         reste copié), videos.py (les vidéos d'un film, pour le workflow), publish.py (textes à coller)
 tools/audio/             align.py (chaque phrase retrouvée dans une prise), recitation.py (coupes des versets), build.py et
                          listen.py (nivelage, coupes, Whisper : partagés avec l'ancien circuit)
 tools/tts/gemini.py      la voix (workflow voice-test) ; tools/sources/fetch.py : textes du registre depuis les API
