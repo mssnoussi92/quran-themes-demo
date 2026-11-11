@@ -8,9 +8,10 @@
 #   (2:186) ; ses répliques propres tiennent en UNE requête de voix (content/voice-test/33-trial-dua.txt).
 # - `kept` : réplique validée de l'ancien épisode, reprise mot pour mot, sans ses guillemets.
 # - Corrections du propriétaire (2026-11-11) : aucun mot du silence pour « ne pas demander » (« بتبعدنا عن
-#   الدعاء »), « راسه شابت » au lieu de « شاب » (lu « jeune »). « الدعاء عبادة » revient dans chaque partie par
-#   les répliques des shorts ; Tirmidhi 3247 n'est lu qu'une fois, dans le chapitre `worship` (le premier short
-#   le lit aussi : cette lecture et « وقال كمان: » ne sont pas reprises ici).
+#   الدعاء »), « راسه شابت » au lieu de « شاب » (lu « jeune »). Le propriétaire trouve « la structure du film
+#   parfaite » (2026-11-11) : elle ne change pas ; « الدعاء هو العبادة » (Tirmidhi 3247) y est
+#   lu une fois, dans le chapitre `worship` ; le premier short le lit aussi, à sa place, et cette lecture et
+#   « وقال كمان: » ne sont pas reprises ici.
 # Rien n'est validé : le propriétaire lit le script avant toute voix.
 id: dua
 files: dua                       # début du nom des vidéos livrées : dua-film-16x9.mp4, dua-short-<n>-<id>.mp4

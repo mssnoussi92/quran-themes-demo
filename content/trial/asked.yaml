@@ -6,9 +6,11 @@
 # - « يا صبر أيوب » : le proverbe, tel qu'on le dit, pas un superlatif tiré d'un texte (le propriétaire a refusé
 #   « مضرب المثل في الصبر », 2026-11-11). Pas de « : » après « بنقول » : la première image n'aurait montré que ce mot
 #   (une réplique est coupée en phrases après « … ، . ! ؟ : »).
-# - « الدعاء عبادة » (demande du propriétaire, 2026-11-11) : le hadith lui-même, Tirmidhi 3247 (1,5 s, lecture
-#   validée), lu avant Muslim 2679a, puis notre réplique « الدعاء عبادة… مش قلة رضا ». Le film ne relit pas 3247
-#   ici (il l'a dit dans son chapitre « الدعاء عبادة »).
+# - « الدعاء هو العبادة » (propriétaire, 2026-11-11 : le mentionner « dans le bon emplacement et la bonne story,
+#   non le dupliquer partout ») : le hadith lui-même, Tirmidhi 3247 (1,5 s, lecture validée), lu UNE fois dans
+#   les shorts, ici : c'est la réponse à « je suis satisfait, je ne demande pas » (on ne laisse pas une adoration
+#   par satisfaction). Il vient après « الدعاء مش اعتراض… الدعاء احتياج », avant Muslim 2679a. Aucune réplique à
+#   nous ne le redit. Le film ne le relit pas ici : il l'a dit dans son chapitre « الدعاء عبادة ».
 # - Aucun mot du silence pour « ne pas demander » (refusés par le propriétaire) : « ساب الدعاء ».
 # - Le sens de 21:84 est dit après le verset, avec nos mots (« ومعاهم قدّهم » pour « ومثلهم معهم »).
 # - L'exemple (le malade qui prend son remède) est une scène type ; aucune comparaison de Dieu à une personne.
@@ -27,8 +29,8 @@ publish:
   title: { en: "Patient… and he asked", ar: "صابر… ودعا!" }
   part: 1
   description:
-    en: "We say: I'm content, so I won't ask. Yet Job, peace be upon him, whose patience became a proverb, asked God to lift his suffering, and was answered. Du'a is worship, not a lack of contentment: contentment is not objecting to what happened; du'a is asking for what is to come."
-    ar: "بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب عليه السلام، اللي بنقول على صبره: يا صبر أيوب، دعا ربنا يشيل عنه البلاء… واستجاب له. الدعاء عبادة… مش قلة رضا: الرضا إنك ما تعترضش على اللي حصل، والدعاء إنك تطلب اللي جاي."
+    en: "We say: I'm content, so I won't ask. Yet Job, peace be upon him, whose patience became a proverb, asked God to lift his suffering, and was answered. Contentment is not objecting to what happened; du'a is asking for what is to come."
+    ar: "بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب عليه السلام، اللي بنقول على صبره: يا صبر أيوب، دعا ربنا يشيل عنه البلاء… واستجاب له. الرضا إنك ما تعترضش على اللي حصل، والدعاء إنك تطلب اللي جاي."
 segments:
   - narration: open
     scene: dark
@@ -74,8 +76,6 @@ segments:
   - narration: depth
     scene: land
     lines:
-      - ar: "الدعاء عبادة… مش قلة رضا."
-        en: "Du'a is worship… not a lack of contentment."
       - ar: "الرضا… إنك ما تعترضش على اللي حصل. والدعاء… إنك تطلب اللي جاي."
         en: "Contentment… is not objecting to what happened. Du'a… is asking for what is to come."
   - narration: example

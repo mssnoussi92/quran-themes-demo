@@ -8,8 +8,6 @@
 # - L'exemple (la graine qu'on déterre chaque jour) est une scène type, bâtie sur le hadith : ce qui perd une
 #   demande, c'est la hâte, pas le retard.
 # - « راسه شابت », jamais « شاب » seul : lu « jeune » (le propriétaire, 2026-11-11).
-# - « الدعاء عبادة » (sa demande, même jour) : une réplique à nous, après la phrase profonde ; le hadith
-#   (Tirmidhi 3247) est lu dans le premier short et dans le film.
 # - Dernier short : il résume les trois idées qui éloignent du du'a (aucun mot du silence : refusés par le
 #   propriétaire), puis l'appel à suivre que le propriétaire a
 #   validé pour le dernier short de Moussa et al-Khadir. Ce qu'il promet (« القصة الجاية ») est à lui de tenir.
@@ -19,7 +17,8 @@ id: waited
 handle: "@quran_words_daily"
 # Le clip : un ciel étoilé (accéléré), cherché pour ce short (2026-11-11 : la lune du garçon, Pixabay 29238,
 # faisait deux images semblables ; le propriétaire : « chercher des clips qui marchent avec notre plan et les
-# préparer »). PROPOSÉ, à approuver par le propriétaire (docs/model.md, « Clips filmés »). `take` : les 12,5
+# préparer »). Approuvé par lui le même jour sur la planche de comparaison (« parfait » ; l'image se valide sur
+# les vidéos ; docs/model.md, « Clips filmés »). `take` : les 12,5
 # premières secondes (avant les nuages), réduites, en aller-retour pour boucler sans saut des étoiles.
 clip: { source: pixabay, id: 14955, author: adege, page: "https://pixabay.com/videos/id-14955/", take: { seconds: 12.5, height: 1440, pingpong: true }, position: "62% 50%", shift: 300, brightness: 1.0, ground: "#0b0a18", rate: 0.5, landscape: { side: right, horizon: 770, brightness: 1.0 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
@@ -76,8 +75,6 @@ segments:
     lines:
       - ar: "اللي بيضيّع الدعاء… مش التأخير. الاستعجال."
         en: "What loses a du'a… is not the delay. It is the hurry."
-      - ar: "والدعاء عبادة… حتى وإنت مستني."
-        en: "And du'a is worship… even while you wait."
   - narration: example
     scene: sky
     lines:

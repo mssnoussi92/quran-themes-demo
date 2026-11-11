@@ -161,7 +161,7 @@ seul, donc jamais dans le dépôt ; l'auteur est cité dans les descriptions.
 | --- | --- | --- | --- |
 | 22183 | Artvan93 | mer calme au crépuscule, horizon rose (31 s) | le bateau |
 | 29238 | Dans4 | pleine lune dans de fins nuages (20 s) | le garçon |
-| 14955 | adege | ciel étoilé au-dessus du Schlern (Dolomites), accéléré, 4K (17 s) : étoiles qui tournent, traînées d'avions, des nuages dans les 4 dernières secondes ; gardé : 12,5 s, en aller-retour (25 s) | du'a, le lieu de prière : **proposé** (2026-11-11), pas encore approuvé |
+| 14955 | adege | ciel étoilé au-dessus du Schlern (Dolomites), accéléré, 4K (17 s) : étoiles qui tournent, traînées d'avions, des nuages dans les 4 dernières secondes ; gardé : 12,5 s, en aller-retour (25 s) | du'a, le lieu de prière ; approuvé par le propriétaire le 2026-11-11 (« parfait », sur la planche de comparaison) |
 | 190332 | DancingSky | ciel de nuages au couchant sur une plaine, accéléré, 4K (14 s) | le mur |
 | 138588 | Natures_Embrace | vagues au couchant, 4K (29 s) | du'a, le grand poisson |
 | 4006 | outlinez | petites vagues sur le sable mouillé, lumière dorée, de près (40 s) | |

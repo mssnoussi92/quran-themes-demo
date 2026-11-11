@@ -77,10 +77,14 @@ In the film the shorts' follow calls are left out (`reuse` with `lines:`).
 - **The first line is the first frame**: it is on screen before the voice starts. Render frame 0 and
   look at it alone. Only its first phrase is there: « بنقول: يا صبر أيوب… » left the single word
   « بنقول: » on the first frame, because a line is cut after « : » too. No colon in the first phrase.
-- **What the whole theme rests on is said in every short** (owner, 2026-11-11: « الدعاء عبادة » was
-  only in the film): one line of ours per short, tied to that short's wrong idea (« الدعاء عبادة… مش
-  قلة رضا. », « وقبل ده كله… الدعاء عبادة. », « والدعاء عبادة… حتى وإنت مستني. »), and its hadith read in
-  the first short when it is a few seconds long (Tirmidhi 3247: 1.5 s). The film reads that hadith once.
+- **Something to add goes once, in the right story and at the right place.** The owner asked for
+  « الدعاء هو العبادة » to be mentioned too; a line of ours was added to every short, and he corrected
+  it (2026-11-11): « je voulais l'ajouter dans le bon emplacement et la bonne story, non le dupliquer
+  partout ». So: the hadith itself, read once (Tirmidhi 3247, 1.5 s), in the short whose wrong idea it
+  answers (« I'm content, I won't ask »: nobody gives up an act of worship out of contentment), after
+  the line it supports and before the short's other hadith (« وقال كمان: »); no line of ours says it
+  again; the film keeps its own reading in its own chapter. When a request can be read as « once » or
+  « everywhere », it is once: say where and why, and let the owner move it.
 - **The narration never says a verse.** It asks the question before the verse and says the meaning
   after it, in its own Egyptian words; an Egyptian rendering of a verse's meaning is ours, the verse's
   Arabic is the reciter's.
@@ -129,7 +133,7 @@ line, identical to the last character (`prepare.py` refuses a difference).
 5. Each refused word; each word of `content/dialect.yaml`.
 6. The lengths `tools/trial/script.py` estimates: over about 2:05, a short says two ideas; keep one
    (the du'a's third short lost a second hadith to the film and went from 2:27 to 2:00).
-   A draft runs a few seconds longer than the estimate (2:07 estimated, 2:11 drafted).
+   A draft runs a few seconds longer than the estimate (2:04 estimated, 2:08 drafted).
 7. The draft (`prepare.py --draft`, skill `new-theme`, step 5): a still at each segment.
 
 Then the script goes to the owner with the outline and the pictures, Arabic and English, your own
