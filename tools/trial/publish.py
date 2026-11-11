@@ -188,7 +188,7 @@ def main() -> None:
         if len(title) > limits["youtube"]["max_title"]:
             sys.exit(f"error: {name}: the YouTube title is {len(title)} characters")
         out += [f"## Short {n} · {sp['title']['en']} · {sp['title']['ar']}", "",
-                f"`{name}{bed}.mp4` (TikTok : `{name}-tiktok{bed}.mp4`, signée {conf['handles']['tiktok']}) · {stamp(data['seconds'])} · 9:16 · "
+                f"`{name}{bed}.mp4` (TikTok : `{name}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`) · {stamp(data['seconds'])} · 9:16 · "
                 f"Facebook, Instagram, TikTok, YouTube Shorts · couverture : `{cover}`", "",
                 f"**Facebook ({limits['facebook']['max_hashtags']} hashtags)**", "", block(caption(conf["handle"], limits["facebook"]["max_hashtags"])),
                 f"**Instagram ({limits['instagram_tiktok']['max_hashtags']} hashtags)**", "", block(insta),

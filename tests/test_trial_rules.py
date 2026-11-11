@@ -162,6 +162,26 @@ def test_a_missing_field_and_an_empty_line(copy):
     assert "an empty ar or en" in done.stdout
 
 
+def test_a_sign_no_font_of_the_project_can_draw_is_refused(copy):
+    """Left to the machine's own font, « ﷺ » was a pixel font in a session and an empty box on a GitHub runner."""
+    spec = copy.load("content/trial/asked.yaml")
+    line = next(s for s in spec["segments"] if "narration" in s)["lines"][0]
+    line["en"] = line["en"] + " 中"
+    copy.dump("content/trial/asked.yaml", spec)
+    refused(copy.rules(), "no glyph for « 中 » U+4E2D in Lora.ttf or Amiri-Regular.ttf")
+
+
+def test_what_the_english_font_lacks_is_drawn_by_the_arabic_one():
+    sys.path.insert(0, str(REPO / "tools" / "trial"))
+    import rules
+    lora, amiri = rules.codepoints("Lora.ttf"), rules.codepoints("Amiri-Regular.ttf")
+    for sign in "ﷺḍḥ":            # the Prophet ﷺ, al-Khiḍr, Muḥammad: in the translations and the English lines
+        assert ord(sign) not in lora and ord(sign) in amiri, sign
+    assert rules.no_glyph("And the Prophet ﷺ told us that al-Khiḍr said: “…”", "latin") == []
+    assert rules.no_glyph("والنبي صلى الله عليه وسلم قال: «…»، ليه؟!", "lines") == []
+    assert rules.no_glyph("a → b", "latin") == ["« → » U+2192"]
+
+
 def test_a_refused_word_is_a_warning_not_an_error(copy):
     line = copy.change_line("asked", "turn", 0, lambda old: f"شالتهم {old}")
     done = copy.rules()

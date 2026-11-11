@@ -17,6 +17,23 @@ import { Village, Wall } from "./Wall";
 
 loadFonts();
 
+/** An English text. Lora draws it; what Lora lacks is drawn with Amiri, which ships with the project too, never
+ * by the machine's own font (« the Prophet ﷺ » came out as a pixel font in a session and as an empty box on a
+ * GitHub runner, 2026-11-11). An Arabic sign is upright and a little larger. A dotted letter of a transliteration
+ * (« al-Khiḍr », « Muḥammad ») is asked from Amiri first: Lora has no such letter and would draw its own « d »
+ * and a loose dot, which lands under the next letter. tools/trial/rules.py refuses a sign neither font has. */
+const ENGLISH = `${FONT.latin}, ${FONT.arabic}`;
+const NOT_LORA = /([\u0600-\u06FF\uFB50-\uFDFF\uFE70-\uFEFF]+|[\u1E00-\u1E9F])/;
+export const English: React.FC<{ text: string }> = ({ text }) => (
+  <>
+    {text.split(NOT_LORA).map((part, i) =>
+      i % 2 === 0 ? part
+        : part.charCodeAt(0) < 0x1e00 || part.charCodeAt(0) > 0x1e9f
+          ? <span key={i} lang="ar" style={{ fontFamily: FONT.arabic, fontStyle: "normal", fontSize: "1.25em", lineHeight: 0 }}>{part}</span>
+          : <span key={i} style={{ fontFamily: `${FONT.arabic}, ${FONT.latin}` }}>{part}</span>)}
+  </>
+);
+
 type Phrase = { text: string; start: number };
 type Line = { ar: string; en: string; phrases: Phrase[]; end: number };
 /** `file` is null in a draft: the script and the scenes are looked at before any voice says them. */
@@ -361,8 +378,8 @@ export const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean;
           </div>
         ) : null}
       </div>
-      <div lang="en" style={{ position: "absolute", top: layout.sub.top, left: layout.sub.left, right: layout.sub.right, textAlign: "center", opacity: show, fontFamily: FONT.latin, fontStyle: "italic", fontSize: subSize(line.en, layout), lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
-        {line.en}
+      <div lang="en" style={{ position: "absolute", top: layout.sub.top, left: layout.sub.left, right: layout.sub.right, textAlign: "center", opacity: show, fontFamily: ENGLISH, fontStyle: "italic", fontSize: subSize(line.en, layout), lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
+        <English text={line.en} />
       </div>
     </>
   );
@@ -413,8 +430,8 @@ export const VerseText: React.FC<{ seg: Verse; t: number; layout?: Layout }> = (
           </Fragment>
         ))}
       </div>
-      <div lang="en" style={{ position: "absolute", top: layout.sub.top, left: layout.sub.left, right: layout.sub.right, textAlign: "center", fontFamily: FONT.latin, fontStyle: "italic", fontSize: layout.sub.size, lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
-        {cue.text}
+      <div lang="en" style={{ position: "absolute", top: layout.sub.top, left: layout.sub.left, right: layout.sub.right, textAlign: "center", fontFamily: ENGLISH, fontStyle: "italic", fontSize: layout.sub.size, lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
+        <English text={cue.text} />
       </div>
       <div style={{ position: "absolute", top: layout.credit.top, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.latin, fontSize: layout.credit.size, color: "rgba(255,255,255,.62)", textShadow: SHADOW }}>
         {seg.credit}
@@ -442,8 +459,8 @@ export const ReadingText: React.FC<{ seg: Reading; t: number; layout?: Layout }>
       <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.verseTop + 56, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.arabic, fontSize: brief ? 96 : fit(64, seg.text, layout.readingComfortable ?? 90), lineHeight: 1.8, color: "#fff", textShadow: SHADOW, textWrap: "balance" }}>
         « {seg.text} »
       </div>
-      <div lang="en" style={{ position: "absolute", top: layout.sub.top, left: layout.sub.left, right: layout.sub.right, textAlign: "center", fontFamily: FONT.latin, fontStyle: "italic", fontSize: layout.sub.size, lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
-        {cue}
+      <div lang="en" style={{ position: "absolute", top: layout.sub.top, left: layout.sub.left, right: layout.sub.right, textAlign: "center", fontFamily: ENGLISH, fontStyle: "italic", fontSize: layout.sub.size, lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
+        <English text={cue} />
       </div>
       <div style={{ position: "absolute", top: layout.credit.top, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.latin, fontSize: layout.credit.size, color: "rgba(255,255,255,.62)", textShadow: SHADOW }}>
         {seg.credit}

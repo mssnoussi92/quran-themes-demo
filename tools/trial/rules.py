@@ -16,7 +16,8 @@ content/policy.yaml; a reading with no recording; a verse with no cut in the rec
 voice saying a quote (four words in a row of a verse of the registry, in its Uthmani or its everyday spelling,
 or of a hadith quoted in that file; a net, not a proof: a line is still read by a person);
 a voice text that differs from the lines; a broken `reuse`, `lines` or `subscribe` in a film; a missing
-field; an empty line; a YouTube title over 100 characters.
+field; an empty line; a YouTube title over 100 characters; a sign shown on screen that the font of its text
+has no glyph for (video/public/fonts/).
 Warnings: a word of content/dialect.yaml or of content/wording.yaml; a first phrase of one word; an
 English line over 125 characters (in a file whose videos the owner has not validated yet); a short over 2:05 (the estimate of tools/trial/script.py); a short with no
 ambience; a source or a reading not validated yet. Info: what the owner has not validated yet.
@@ -27,7 +28,10 @@ import argparse
 import itertools
 import json
 import re
+import struct
 import sys
+import unicodedata
+from functools import lru_cache
 from pathlib import Path
 
 import yaml
@@ -88,6 +92,59 @@ def stamp(seconds: float) -> str:
 
 
 # ---- The repository -------------------------------------------------------------------------------------------
+
+# ---- a glyph for every sign shown ------------------------------------------------------------------------------
+# A sign the font of its text does not have is drawn by whatever font the machine has: a pixel font in a session,
+# an empty box on a GitHub runner (« ﷺ » in an English line of the du'a film, 2026-11-11). The fonts are those of
+# video/src/fonts.ts; in an English text, what Lora lacks is drawn with Amiri (`ENGLISH`, video/src/trial/Trial.tsx):
+# « ﷺ », the dotted letters of a transliteration.
+
+FONTS = REPO / "video" / "public" / "fonts"
+FACE = {"quran": ("AmiriQuran-Regular.ttf",), "lines": ("Amiri-Bold.ttf",), "arabic": ("Amiri-Regular.ttf",),
+        "latin": ("Lora.ttf", "Amiri-Regular.ttf")}
+
+
+@lru_cache(maxsize=None)
+def codepoints(font: str) -> frozenset[int]:
+    """The characters a font file has a glyph for: its `cmap` table, formats 4 and 12 (read here so that this
+    tool keeps running with PyYAML alone; the same sets as fontTools on the four fonts)."""
+    data = (FONTS / font).read_bytes()
+    count = struct.unpack(">H", data[4:6])[0]
+    tables = {data[12 + 16 * i:16 + 16 * i]: struct.unpack(">I", data[20 + 16 * i:24 + 16 * i])[0] for i in range(count)}
+    at = tables[b"cmap"]
+    found: set[int] = set()
+    for i in range(struct.unpack(">H", data[at + 2:at + 4])[0]):
+        base = at + struct.unpack(">I", data[at + 8 + 8 * i:at + 12 + 8 * i])[0]
+        kind = struct.unpack(">H", data[base:base + 2])[0]
+        if kind == 4:
+            n = struct.unpack(">H", data[base + 6:base + 8])[0] // 2
+            ends = struct.unpack(f">{n}H", data[base + 14:base + 14 + 2 * n])
+            starts = struct.unpack(f">{n}H", data[base + 16 + 2 * n:base + 16 + 4 * n])
+            deltas = struct.unpack(f">{n}H", data[base + 16 + 4 * n:base + 16 + 6 * n])
+            ranges_at = base + 16 + 6 * n
+            ranges = struct.unpack(f">{n}H", data[ranges_at:ranges_at + 2 * n])
+            for k in range(n):
+                for c in range(starts[k], ends[k] + 1):
+                    if ranges[k] == 0:
+                        glyph = (c + deltas[k]) & 0xFFFF
+                    else:
+                        where = ranges_at + 2 * k + ranges[k] + 2 * (c - starts[k])
+                        glyph = struct.unpack(">H", data[where:where + 2])[0]
+                    if glyph and c != 0xFFFF:
+                        found.add(c)
+        elif kind == 12:
+            for g in range(struct.unpack(">I", data[base + 12:base + 16])[0]):
+                first, last, glyph = struct.unpack(">III", data[base + 16 + 12 * g:base + 28 + 12 * g])
+                found.update(c for c in range(first, last + 1) if glyph + c - first)
+    return frozenset(found)
+
+
+def no_glyph(text: str, face: str) -> list[str]:
+    """The signs of a text that none of its fonts can draw, each with its code."""
+    fonts = FACE[face]
+    return [f"« {c} » U+{ord(c):04X}" for c in dict.fromkeys(str(text))
+            if not (c.isspace() or unicodedata.category(c) in ("Cf", "Cc") or any(ord(c) in codepoints(f) for f in fonts))]
+
 
 class Repo:
     def __init__(self, root: Path):
@@ -191,8 +248,11 @@ class Checker:
             ref = src["ref"]
             if f"{ref['surah']}:{ref['ayah']}" not in self.repo.cuts:
                 self.out.error(file, f"verse {sid} has no cut in the reciter's file (content/recitations/)")
+            self.glyphs(file, src["text_ar"], "quran", f"verse {sid}")
         else:
             self.hadith(file, sid, src)
+            self.glyphs(file, src.get("excerpt_ar") or src["text_ar"], "arabic", f"reading {sid}")
+        self.glyphs(file, src.get("excerpt_en") or src["text_en"], "latin", f"{kind} {sid}, its translation")
         return src
 
     def hadith(self, file: str, sid: str, src: dict) -> None:
@@ -215,6 +275,11 @@ class Checker:
         elif rec.get("status") != "validated" and f"reading of {sid}" not in self.unvalidated:
             self.unvalidated.append(f"reading of {sid}")
 
+    def glyphs(self, file: str, text, face: str, what: str) -> None:
+        missing = no_glyph(text or "", face)
+        if missing:
+            self.out.error(file, f"{what}: no glyph for {', '.join(missing)} in {' or '.join(FACE[face])}; the machine's own font would draw it (a box on a runner)")
+
     # -- text
     def narration_lines(self, file: str, lines: list[dict], where: str, quotes: dict, quoted_by: str = "") -> None:
         """The checks of every narration line: not empty, no quotation, no refused or standard-Arabic word."""
@@ -224,6 +289,8 @@ class Checker:
                 self.out.error(file, f"{where}: a narration line with an empty ar or en: « {ar or ''} » / « {en or ''} »")
                 continue
             self.said_quote(file, ar, quotes)
+            self.glyphs(file, ar, "lines", f"{where}, « {ar} »")
+            self.glyphs(file, en, "latin", f"{where}, « {en} »")
             if not line.get("kept"):
                 self.dialect(file, ar)
             self.wording(file, ar)

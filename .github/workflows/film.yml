@@ -20,7 +20,9 @@ name: film
 #
 # The owner's validation is still recorded on their word, after they watched the draft (skill
 # release-render): this workflow validates nothing. A render that failed is run again alone
-# (« Re-run failed jobs »); the others are not rendered twice.
+# (« Re-run failed jobs »); the others are not rendered twice. With `from_run` (the id of an earlier run, same
+# film, voice and `only`), nothing is prepared or rendered: the draft release is made again from that run's
+# artifacts (kept 7 days), for a release step that failed or for texts to paste that changed since.
 
 # A push that changes this file tries it on one short (film and short below): a workflow that exists only on
 # a branch cannot be dispatched before it has run once, and a change to it is worth a real run.
@@ -46,6 +48,10 @@ on:
         description: "Put the field recording under the narration (tools/trial/ambience.py)"
         default: true
         type: boolean
+      from_run:
+        description: "Only publish again what an earlier run rendered: its run id (same film, voice and only)"
+        default: ""
+        type: string
 
 permissions:
   contents: read
@@ -67,6 +73,7 @@ env:
 jobs:
   prepare:
     name: prepare (clips, timelines)
+    if: ${{ !inputs.from_run }}
     runs-on: ubuntu-24.04
     timeout-minutes: 120
     permissions:
@@ -385,17 +392,16 @@ jobs:
   release:
     needs: [prepare, render, stills]
     # Runs after failures and skipped jobs too: what succeeded is published. Not after a cancel, nor when
-    # there was nothing to publish from (prepare failed).
-    if: ${{ !cancelled() && needs.prepare.result == 'success' }}
+    # there was nothing to publish from (prepare failed). With `from_run`, it is the only job that runs.
+    if: ${{ !cancelled() && (inputs.from_run || needs.prepare.result == 'success') }}
     runs-on: ubuntu-24.04
     timeout-minutes: 30
-    # The only job that writes to the repository.
+    # The only job that writes to the repository. `actions: read`: the artifacts of another run (`from_run`).
     permissions:
       contents: write
+      actions: read
     env:
-      FILES: ${{ needs.prepare.outputs.files }}
-      VIDEOS: ${{ needs.prepare.outputs.videos }}
-      STILLS: ${{ needs.prepare.outputs.stills }}
+      FROM_RUN: ${{ inputs.from_run || github.run_id }}
       RENDER_RESULT: ${{ needs.render.result }}
       STILLS_RESULT: ${{ needs.stills.result }}
       GH_TOKEN: ${{ github.token }}
@@ -407,23 +413,41 @@ jobs:
 
       - uses: astral-sh/setup-uv@v7
 
+      # Listed again here, from the files, and not taken from the prepare job: with `from_run` it did not run.
+      - name: The videos and stills expected
+        run: |
+          [[ "$FILM" =~ ^[a-z0-9-]+$ && "$ONLY" =~ ^[a-z0-9-]+$ && "$VOICE" =~ ^[A-Za-z]+$ && "$FROM_RUN" =~ ^[0-9]+$ ]] \
+            || { echo "::error::invalid film, only, voice or from_run"; exit 1; }
+          {
+            echo "VIDEOS=$(uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --voice "$VOICE" --only "$ONLY" --matrix)"
+            echo "STILLS=$(uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --voice "$VOICE" --only "$ONLY" --stills --matrix)"
+            echo "FILES=$(uv run --with pyyaml python3 -c "import sys, yaml; f = yaml.safe_load(open(sys.argv[1])); print(f.get('files', f['id']))" "content/trial/$FILM.yaml")"
+          } >> "$GITHUB_ENV"
+          echo "artifacts of run $FROM_RUN"
+
       # The timelines publish.py reads (durations, chapters), as prepared.
       - uses: actions/download-artifact@v8
         with:
           name: trial-data
           path: video/public/trial
+          run-id: ${{ env.FROM_RUN }}
+          github-token: ${{ github.token }}
 
       - uses: actions/download-artifact@v8
         with:
           pattern: video-*
           merge-multiple: true
           path: release
+          run-id: ${{ env.FROM_RUN }}
+          github-token: ${{ github.token }}
         continue-on-error: true       # no video rendered at all: said below
 
       - uses: actions/download-artifact@v8
         with:
           name: stills
           path: release
+          run-id: ${{ env.FROM_RUN }}
+          github-token: ${{ github.token }}
         continue-on-error: true       # no still: said below
 
       - name: What is there, what is missing
@@ -453,9 +477,14 @@ jobs:
           fi
 
       # One draft at a time: the previous draft of the same tag goes. A draft is seen by the owner only.
+      # No --target: a draft has no tag until it is published, and these never are. With --target "$GITHUB_SHA"
+      # a dispatched run was refused twice (HTTP 403, « Resource not accessible by integration », 2026-11-11)
+      # where the same step had passed on a push; the texts to paste were in its notes for the first time too,
+      # so if the notes are what is refused, the draft is made with short notes and the texts as a file.
       - name: Draft release
         run: |
           tag="$FILES-$SUFFIX"
+          title="Draft $FILM ($SUFFIX): videos to watch"
           {
             echo "Draft render of the film \`$FILM\` and its shorts, not validated. Narration: AI-generated voice (voice $VOICE, takes kept in content/trial/takes/). Verses: real recitation. Ambience under the narration: $AMBIENCE. Run: $RUN_URL"
             echo
@@ -465,12 +494,13 @@ jobs:
               echo
             fi
             echo "Check sheets of every video: \`sheets/\`, to open and read before watching (a text that leaves the frame, the wrong signature)."
-            echo; echo "---"; echo
-            cat publication.md
-          } > notes.md
-          for id in $(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .id"); do
-            gh api -X DELETE "repos/$GH_REPO/releases/$id"
-          done
+          } > short.md
+          { cat short.md; echo; echo "---"; echo; cat publication.md; } > notes.md
+          no_draft() {
+            for id in $(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .id"); do
+              gh api -X DELETE "repos/$GH_REPO/releases/$id"
+            done
+          }
           shopt -s nullglob
           assets=(release/*.mp4 release/*.jpg release/sheets/*)
           echo "assets: ${#assets[@]}"
@@ -478,8 +508,13 @@ jobs:
             echo "::error::nothing was rendered: no release"
             exit 1
           fi
-          gh release create "$tag" --draft --prerelease --target "$GITHUB_SHA" \
-            --title "Draft $FILM ($SUFFIX): videos to watch" --notes-file notes.md "${assets[@]}"
+          no_draft
+          if ! gh release create "$tag" --draft --prerelease --title "$title" --notes-file notes.md "${assets[@]}"; then
+            echo "::warning::the draft was refused with the texts to paste in its notes: made again with short notes, the texts as the file publication.md"
+            no_draft
+            { cat short.md; echo; echo "Texts to paste: the file \`publication.md\` of this release."; } > notes.md
+            gh release create "$tag" --draft --prerelease --title "$title" --notes-file notes.md "${assets[@]}" publication.md
+          fi
           echo "draft release: $(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .html_url")"
 
       # What succeeded is published above; a failed render or still still fails the run.

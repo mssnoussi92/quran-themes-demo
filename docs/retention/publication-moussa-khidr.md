@@ -50,7 +50,7 @@ Footage: Pixabay (Artvan93, Dans4, DancingSky) · Ambience: BigSoundBank (Joseph
 
 ## Short 1 · Why did he tear a hole in the boat? · ليه خرق السفينة؟
 
-`khidr-short-1-boat-ambience.mp4` (TikTok : `khidr-short-1-boat-tiktok-ambience.mp4`, signée @quran.words.daily) · 1:33 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-1-bateau.jpg`
+`khidr-short-1-boat-ambience.mp4` (TikTok : `khidr-short-1-boat-tiktok-ambience.mp4`, signée `@quran.words.daily`) · 1:33 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-1-bateau.jpg`
 
 **Facebook (8 hashtags)**
 
@@ -158,7 +158,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 
 ## Short 2 · They lost their son… why? · خسروا ابنهم… ليه؟
 
-`khidr-short-2-boy-ambience.mp4` (TikTok : `khidr-short-2-boy-tiktok-ambience.mp4`, signée @quran.words.daily) · 1:47 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-2-garcon.jpg`
+`khidr-short-2-boy-ambience.mp4` (TikTok : `khidr-short-2-boy-tiktok-ambience.mp4`, signée `@quran.words.daily`) · 1:47 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-2-garcon.jpg`
 
 **Facebook (8 hashtags)**
 
@@ -266,7 +266,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 
 ## Short 3 · The secret under the wall · سر تحت الجدار
 
-`khidr-short-3-wall-ambience.mp4` (TikTok : `khidr-short-3-wall-tiktok-ambience.mp4`, signée @quran.words.daily) · 2:03 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-3-mur.jpg`
+`khidr-short-3-wall-ambience.mp4` (TikTok : `khidr-short-3-wall-tiktok-ambience.mp4`, signée `@quran.words.daily`) · 2:03 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-3-mur.jpg`
 
 **Facebook (8 hashtags)**
 
