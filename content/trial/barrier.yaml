@@ -1,0 +1,86 @@
+# Dhul-Qarnayn dans le modèle, short 3 (2026-11-11, docs/themes.md) : « رحمة من ربي ». L'épreuve d'avoir réussi : il
+# bâtit le barrage de fer et de cuivre (18:96), que personne ne franchit ni ne perce (18:97), et il dit que c'est
+# une miséricorde de son Seigneur (18:98).
+# - `kept` : réplique validée de l'ancien épisode, reprise mot pour mot ; les autres sont de l'IA, à valider.
+# - 18:98 : al-Sa'di, « أضاف النعمة إلى موليها… وهذه حال الخلفاء الصالحين » : d'où la phrase profonde.
+# - Jamais dessinés : Gog et Magog, ni le barrage rasé (la promesse de la fin : l'invisible n'est pas figuré). Le
+#   dessin : les blocs de fer entre les deux parois, le feu, le cuivre coulé, le barrage fini.
+# - Dernier short : il résume les trois épreuves, puis l'appel à suivre que le propriétaire a validé pour le dernier
+#   short de Moussa et al-Khadir. Ce qu'il promet (« القصة الجاية ») est à lui de tenir.
+# - Clip et ambiance PROPOSÉS (le clip est à montrer au propriétaire ; l'ambiance est provisoire : un feu reste à
+#   chercher).
+# Rien n'est validé : le propriétaire lit le script avant toute voix.
+id: barrier
+handle: "@quran_words_daily"
+clip: { source: pixabay, id: 381, author: FlickrVideos, page: "https://pixabay.com/videos/id-381/", position: "50% 50%", brightness: 0.85, landscape: { side: right, horizon: 700, brightness: 0.8 } }
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 42-trial-barrier
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 80, level: -38 }
+cover: { scene: done, title: "بنى السد… وقال: مش مني!", tag: "ذو القرنين · ٣ من ٣", focus: 1200 }
+publish:
+  title: { en: "He built the barrier… and said: not from me", ar: "بنى السد… وقال: مش مني!" }
+  part: 3
+  description:
+    en: "Blocks of iron between two mountains, fire, molten copper: a barrier no one could climb or pierce. And when it stood, Dhul-Qarnayn said: this is a mercy from my Lord. Success is a mercy, and nothing lasts but God."
+    ar: "قطع حديد بين جبلين، ونار، ونحاس دايب: سد محدش قدر يطلع عليه ولا يخرمه. ولما خلص، ذو القرنين قال: ده رحمة من ربي. النجاح رحمة… ومفيش حاجة دايمة غير ربنا."
+segments:
+  - narration: open
+    scene: blocks
+    lines:
+      - ar: "بنى سد من حديد ونحاس… محدش قدر يعدّيه… وقال: ده مش مني!"
+        en: "He built a barrier of iron and copper… no one could get past it… and he said: this is not from me!"
+      - ar: "ده ذو القرنين… وبعد أكبر حاجة عملها… قال كلمة… هتغيّر نظرتك لكل نجاح في حياتك."
+        en: "That was Dhul-Qarnayn… after his greatest work… he said a word… that changes how you see every success in your life."
+  - verse: quran.18.96
+    scene: fire
+  - narration: stood
+    scene: done
+    lines:
+      - ar: "والسد وقف؟"
+        en: "And did the barrier hold?"
+  - verse: quran.18.97
+    scene: done
+  - narration: turn
+    scene: done
+    lines:
+      - ar: "وهو قال إيه؟"
+        en: "And what did he say?"
+  - verse: quran.18.98
+    scene: done
+  - narration: meaning
+    scene: done
+    lines:
+      - ar: "وبعد كل ده… قال: ده رحمة من ربي. ولما ييجي وعد ربي… هيخليه تراب. ووعد ربي حق."
+        en: "After all that… he said: this is a mercy from my Lord. When my Lord's promise comes… He will level it to dust. And my Lord's promise is true."
+        kept: qarnayn.humble-1
+      - ar: "ما قالش: أنا اللي عملت… قال: رحمة من ربي."
+        en: "He didn't say: I did it… he said: a mercy from my Lord."
+        kept: qarnayn.humble-lesson
+  - narration: depth
+    scene: land
+    lines:
+      - ar: "الناس شافت السد… وهو شاف اللي إداه القوة يبنيه."
+        en: "People saw the barrier… he saw the One who gave him the strength to build it."
+      - ar: "وإحنا كده: أول ما ننجح… نقول: ده تعبي… ده شطارتي."
+        en: "And so are we: the moment we succeed… we say: my effort… my talent."
+  - narration: example
+    scene: land
+    lines:
+      - ar: "زي لما تنجح… والناس تسقف لك."
+        en: "Like when you succeed… and people applaud you."
+        kept: qarnayn.humble-life-1
+      - ar: "وقلبك بيقول: الحمد لله… ده من ربنا."
+        en: "And your heart says: praise be to God… this is from Him."
+        kept: qarnayn.humble-life-2
+  - narration: close
+    scene: done
+    lines:
+      - ar: "النجاح رحمة من ربنا… مش بس شطارة."
+        en: "Success is a mercy from God… not just talent."
+      - ar: "فالمرة الجاية لما ربنا يفتحها عليك… قول: ده رحمة من ربي."
+        en: "So next time God opens a door for you… say: this is a mercy from my Lord."
+        kept: qarnayn.end-last
+      - ar: "تلات اختبارات للقوة: على الناس… قدام المحتاج… وبعد النجاح."
+        en: "Three tests of power: over people… before the one in need… and after success."
+      - ar: "تابعنا عشان القصة الجاية."
+        en: "Follow us for the next story."

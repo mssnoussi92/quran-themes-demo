@@ -1,0 +1,83 @@
+# Dhul-Qarnayn dans le modèle, short 1 (2026-11-11, docs/themes.md « Fiche : Dhul-Qarnayn dans le modèle ») : le
+# couchant. L'épreuve du pouvoir sur les gens : un peuple entier lui est laissé (18:86), et il répond par la justice
+# (18:87-88). Décisions du propriétaire (2026-11-11, « ok go with your recommendations ») : trois shorts, un par
+# épreuve de la force ; le levant et « إن شاء الله » dans le film.
+# - `kept` : réplique validée de l'ancien épisode (content/episodes/qarnayn.yaml, scène nommée), reprise mot pour
+#   mot ; les autres répliques sont de l'IA, à valider.
+# - 18:86 : « شافها كأنها بتغرب » : ce qu'il voit de là où il est (al-Muyassar : « في مرأى العين كأنها تغرب » ;
+#   al-Sa'di : ce que voit celui qui a de l'eau entre lui et l'horizon). Jamais « elle se couche dans ».
+# - « كل واحد باللي عمله » : al-Sa'di, « وافق مرضاة الله في معاملة كل أحد بما يليق بحاله ». « اللي ظلم » garde le
+#   mot du verset (les deux tafsirs : par la mécréance) ; l'exemple de vie parle d'autorité, pas de foi.
+# - « وهو أولهم » est notre lecture : celui qui rappelle le retour au Seigneur sait qu'il y retourne aussi.
+# - Personne n'est dessiné : le peuple, ce sont ses habitations au bord de l'eau, éteintes puis éclairées.
+# - Clip et ambiance PROPOSÉS (le clip est à montrer au propriétaire ; l'ambiance, un des trois enregistrements
+#   validés, est provisoire : une eau calme le soir reste à chercher).
+# Rien n'est validé : le propriétaire lit le script avant toute voix.
+id: west
+handle: "@quran_words_daily"
+clip: { source: pixabay, id: 21488, author: josefgadermaier, page: "https://pixabay.com/videos/id-21488/", position: "50% 50%", brightness: 0.75, landscape: { side: left, horizon: 700, brightness: 0.7 } }
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 40-trial-west
+ambience: { source: bigsoundbank, id: "1448", title: "Small waves and beach #2", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/detail-1448-small-waves-and-beach-2.html", from: 100, seconds: 80, level: -36 }
+cover: { scene: sun, title: "قوم كاملين في إيده… عمل إيه؟", tag: "ذو القرنين · ١ من ٣", focus: 1200 }
+publish:
+  title: { en: "A whole people in his hands: what did he do?", ar: "قوم كاملين في إيده… عمل إيه؟" }
+  part: 1
+  description:
+    en: "Dhul-Qarnayn reached the setting of the sun and found a people there, and the choice was left to him: punish them, or treat them well. His answer is justice: each one according to what he did. Power is a trust, not a license."
+    ar: "ذو القرنين وصل لمغرب الشمس ولقى هناك قوم… واتخيّر: يعاقبهم ولا يحسن ليهم. وإجابته كانت العدل: كل واحد باللي عمله. القوة أمانة… مش رخصة."
+segments:
+  - narration: open
+    scene: sun
+    lines:
+      - ar: "لما وصل لمغرب الشمس… شافها كأنها بتغرب في عين طين أسود… ولقى عندها قوم."
+        en: "When he reached the setting of the sun… he saw it as if setting in a spring of dark mud… and found a people there."
+        kept: qarnayn.west-1
+      - ar: "ده ذو القرنين… واللي عمله فيهم… هيوريك تعمل إيه لما يبقى ليك سلطة على حد."
+        en: "That was Dhul-Qarnayn… what he did with them… shows what to do when you have power over someone."
+  - verse: quran.18.86
+    scene: sun
+  - narration: turn
+    scene: choice
+    lines:
+      - ar: "القوم بقوا في إيده: يعاقب… ولا يحسن. اختار إيه؟"
+        en: "The people were in his hands: punish… or do good. What did he choose?"
+  - verse: quran.18.87
+    scene: choice
+  - verse: quran.18.88
+    scene: just
+  - narration: meaning
+    scene: just
+    lines:
+      - ar: "اللي ظلم… يتعاقب… وبعدين يرجع لربه. واللي آمن وعمل صالح… ليه أحسن جزاء."
+        en: "Whoever does wrong… is punished… then returns to his Lord. Whoever believes and does good… has the best reward."
+      - ar: "ما عاقبش الكل… وما سابش الكل: كل واحد باللي عمله."
+        en: "He did not punish them all… nor let them all go: each one by what he did."
+  - narration: depth
+    scene: land
+    lines:
+      - ar: "كان يقدر يعمل اللي هو عايزه… بس هو فاكر إن الكل راجع لربنا… وهو أولهم."
+        en: "He could have done as he pleased… but he remembered that everyone returns to God… himself first."
+      - ar: "وإحنا كده: أول ما حد يبقى تحت إيدنا… بننسى إن إحنا كمان تحت إيد ربنا."
+        en: "And so are we: the moment someone is under our hand… we forget we are under God's."
+  - narration: example
+    scene: land
+    lines:
+      - ar: "زي لما يبقى في إيدك سلطة… في شغلك… أو في بيتك."
+        en: "Like when you have authority… at work… or at home."
+        kept: qarnayn.west-life-1
+      - ar: "اللي بيغلط يتحاسب… واللي بيتعب تقوله: شكرًا."
+        en: "Whoever does wrong is held to account… and whoever works hard hears: thank you."
+        kept: qarnayn.west-life-2
+  - narration: close
+    scene: just
+    lines:
+      - ar: "القوة أمانة… مش رخصة تظلم بيها: الظالم يتحاسب… والكويس يتكرّم."
+        en: "Power is a trust… not a license to wrong people: the wrongdoer is held to account… and the good are honoured."
+        kept: qarnayn.west-lesson
+      - ar: "لما حد يبقى تحت إيدك… افتكر مغرب الشمس."
+        en: "When someone is under your hand… remember the setting of the sun."
+      - ar: "ده اختبار القوة على الناس… بس فيه اختبار تاني: ناس محتاجاك… وبتعرض عليك فلوس."
+        en: "That was the test of power over people… there is another: people who need you… and offer you money."
+      - ar: "تابعنا عشان تعرف عمل إيه."
+        en: "Follow us to find out what he did."
