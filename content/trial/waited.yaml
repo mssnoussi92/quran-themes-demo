@@ -7,7 +7,11 @@
 #   jamais renvoyé déçu ni privé de réponse).
 # - L'exemple (la graine qu'on déterre chaque jour) est une scène type, bâtie sur le hadith : ce qui perd une
 #   demande, c'est la hâte, pas le retard.
-# - Dernier short : il résume les trois raisons de se taire, puis l'appel à suivre que le propriétaire a
+# - « راسه شابت », jamais « شاب » seul : lu « jeune » (le propriétaire, 2026-11-11).
+# - « الدعاء عبادة » (sa demande, même jour) : une réplique à nous, après la phrase profonde ; le hadith
+#   (Tirmidhi 3247) est lu dans le premier short et dans le film.
+# - Dernier short : il résume les trois idées qui éloignent du du'a (aucun mot du silence : refusés par le
+#   propriétaire), puis l'appel à suivre que le propriétaire a
 #   validé pour le dernier short de Moussa et al-Khadir. Ce qu'il promet (« القصة الجاية ») est à lui de tenir.
 # - `kept` : réplique validée de l'ancien épisode, sans ses guillemets ; les autres sont de l'IA.
 # Rien n'est validé : le propriétaire lit le script avant toute voix.
@@ -20,9 +24,9 @@ text: 32-trial-waited
 # propriétaire sur le premier film (docs/model.md, « Ambiances »).
 ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 80, level: -38 }
 # Couverture et textes de publication, proposés (à valider avec les vidéos ; le titre, avec le script).
-cover: { scene: niche, title: "شاب… وما بطّلش يدعي", tag: "الدعاء · ٣ من ٣", focus: 1230 }
+cover: { scene: niche, title: "راسه شابت… وما بطّلش يدعي", tag: "الدعاء · ٣ من ٣", focus: 1230 }
 publish:
-  title: { en: "He grew old… and never stopped asking", ar: "شاب… وما بطّلش يدعي" }
+  title: { en: "His hair turned white… and he never stopped asking", ar: "راسه شابت… وما بطّلش يدعي" }
   part: 3
   description:
     en: "I asked and nothing happened. Zechariah, peace be upon him, was old, his hair white, and still asking: never, he said, had he been disappointed in calling on his Lord. What loses a du'a is not the delay, it is the hurry."
@@ -68,6 +72,8 @@ segments:
     lines:
       - ar: "اللي بيضيّع الدعاء… مش التأخير. الاستعجال."
         en: "What loses a du'a… is not the delay. It is the hurry."
+      - ar: "والدعاء عبادة… حتى وإنت مستني."
+        en: "And du'a is worship… even while you wait."
   - narration: example
     scene: sky
     lines:
@@ -78,9 +84,9 @@ segments:
   - narration: close
     scene: two
     lines:
-      - ar: "لما تقول دعيت وما حصلش… افتكر سيدنا زكريا: شاب… وما بطّلش."
-        en: "When you say: I asked and nothing happened… remember Zechariah: he grew old… and never stopped."
-      - ar: "تلات حاجات بتسكّتنا… وتلات نداءات في القرآن بتردّ عليها."
-        en: "Three things keep us silent… and three calls in the Quran answer them."
+      - ar: "لما تقول دعيت وما حصلش… افتكر سيدنا زكريا: راسه شابت… وما بطّلش."
+        en: "When you say: I asked and nothing happened… remember Zechariah: his hair turned white… and he never stopped."
+      - ar: "تلات أفكار بتبعدنا عن الدعاء… وتلات نداءات في القرآن بتردّ عليها."
+        en: "Three ideas keep us from du'a… and three calls in the Quran answer them."
       - ar: "تابعنا عشان القصة الجاية."
         en: "Follow us for the next story."

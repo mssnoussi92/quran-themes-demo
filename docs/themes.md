@@ -88,7 +88,14 @@ chaque short ; Tirmidhi 3505 à la fin du deuxième short.
   posées à la main (le début de 21:87, la limite entre 37:143 et 37:144 que le récitateur enchaîne) ; la lecture de
   3505 trouvée (Yusuf ibn Nuh Ahmad), **proposée** ;
 - le script des trois shorts et des répliques propres au film, **à valider par le propriétaire avant toute voix** ;
-  durées estimées 1:51, 2:03, 2:00, film 7:40 ;
+  durées estimées 1:57, 2:07, 2:05, film 7:51 (avant ses corrections : 1:51, 2:03, 2:00, 7:40) ;
+- **corrections du propriétaire sur le premier script (2026-11-11)** : « مضرب المثل في الصبر » refusé (l'accroche
+  devient le proverbe : « بنقول يا صبر أيوب… وهو نفسه دعا ربنا يشيل عنه البلاء! ») ; **tous les mots du silence**
+  pour « ne pas demander » à changer (« اللي سكت », « مسكّتانا », « بتسكّتنا », le titre du film : remplacés par
+  « ساب الدعاء » et « بتبعدنا عن الدعاء ») ; « شاب » se lit « jeune » (« راسه شابت ») ; **« الدعاء عبادة » à dire
+  aussi** : une réplique dans chaque short, liée à son idée reçue, et dans le premier le hadith lui-même
+  (Tirmidhi 3247, 1,5 s, lecture validée) avant Muslim 2679a ; le film ne le lit qu'une fois, dans son chapitre.
+  Le deuxième short passe à 2:07 estimées (2:11 en brouillon) : dit au propriétaire ;
 - une idée par short : le troisième garde Bukhari 6340 (ne pas se hâter), Tirmidhi 3573 (donné, ou un mal écarté)
   passe dans le film ; 13:39 dans le film seulement ;
 - vérifié dans deux tafsirs (al-Sa'di, al-Muyassar ; Ibn Kathir pour les deux lectures de 37:143) : la réplique dit
@@ -97,7 +104,8 @@ chaque short ; Tirmidhi 3505 à la fin du deuxième short.
   puis une lueur sous l'eau, le lieu de prière et sa lampe sous la lune ; brouillons envoyés au propriétaire ;
 - deux outils faits au passage : les sources lues dans le registre, un hadith lu dans un short.
 
-**Reste** : le « je valide le script » du propriétaire, puis quatre requêtes de voix, la préparation, les rendus.
+**Reste** : le « je valide le script » du propriétaire sur le script corrigé, puis quatre requêtes de voix, la
+préparation, les rendus.
 
 ## Faits (ancien circuit)
 

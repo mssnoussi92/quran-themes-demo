@@ -7,21 +7,25 @@
 #   et ajoute : l'ouverture, le cadre (« الدعاء هو العبادة », 40:60), 13:39 dans la deuxième partie, la conclusion
 #   (2:186) ; ses répliques propres tiennent en UNE requête de voix (content/voice-test/33-trial-dua.txt).
 # - `kept` : réplique validée de l'ancien épisode, reprise mot pour mot, sans ses guillemets.
+# - Corrections du propriétaire (2026-11-11) : aucun mot du silence pour « ne pas demander » (« بتبعدنا عن
+#   الدعاء »), « راسه شابت » au lieu de « شاب » (lu « jeune »). « الدعاء عبادة » revient dans chaque partie par
+#   les répliques des shorts ; Tirmidhi 3247 n'est lu qu'une fois, dans le chapitre `worship` (le premier short
+#   le lit aussi : cette lecture et « وقال كمان: » ne sont pas reprises ici).
 # Rien n'est validé : le propriétaire lit le script avant toute voix.
 id: dua
 files: dua                       # début du nom des vidéos livrées : dua-film-16x9.mp4, dua-short-<n>-<id>.mp4
-title: { ar: "الدعاء… تلات أفكار غلط بتسكّتك", en: "Du'a: three wrong ideas that keep you silent" }
+title: { ar: "الدعاء… تلات أفكار غلط بتبعدك عنه", en: "Du'a: three wrong ideas that keep you from asking" }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 33-trial-dua
 outro: 12
 thumbnail: { title: "الدعاء", tag: "٣ أفكار غلط… و٣ نداءات", panels: [asked, written, waited] }
 publish:
-  title: { en: "Du'a: 3 wrong ideas that keep you from asking", ar: "الدعاء: ٣ أفكار غلط بتسكّتك" }
+  title: { en: "Du'a: 3 wrong ideas that keep you from asking", ar: "الدعاء: ٣ أفكار غلط بتبعدك عنه" }
   series: { en: "Du'a", ar: "الدعاء" }
   description:
-    en: "One in the depth of affliction, one in the belly of a whale, one grown old and still asking: three who called on God in the Quran, and all three were answered. And three wrong ideas that keep us silent: I'm content so I won't ask, it's all written, I asked and nothing happened."
-    ar: "واحد في عز البلاء، واحد في بطن حوت، وواحد شاب ولسه بيطلب: تلاتة نادوا ربنا في القرآن… والتلاتة اترد عليهم. وتلات أفكار غلط بتسكّتنا: أنا راضي مش هدعي، كله مكتوب، دعيت وما حصلش."
+    en: "One in the depth of affliction, one in the belly of a whale, one whose hair had turned white and still asking: three who called on God in the Quran, and all three were answered. And three wrong ideas that keep us from asking: I'm content so I won't ask, it's all written, I asked and nothing happened."
+    ar: "واحد في عز البلاء، واحد في بطن حوت، وواحد راسه شابت ولسه بيطلب: تلاتة نادوا ربنا في القرآن… والتلاتة اترد عليهم. وتلات أفكار غلط بتبعدنا عن الدعاء: أنا راضي مش هدعي، كله مكتوب، دعيت وما حصلش."
   hashtags: ["#Dua", "#الدعاء", "#Islam"]      # ceux de l'ancien épisode, validés par le propriétaire le 2026-11-07
   narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }
 chapters:
@@ -31,16 +35,16 @@ chapters:
       - narration: film-open
         shots: [{ picture: asked, scene: dark }, { picture: written, scene: deep }, { picture: waited, scene: niche }]
         lines:
-          - ar: "واحد في عز البلاء… واحد في بطن حوت… وواحد شاب ولسه بيطلب."
-            en: "One in the depth of affliction… one in the belly of a whale… and one grown old, still asking."
+          - ar: "واحد في عز البلاء… واحد في بطن حوت… وواحد راسه شابت ولسه بيطلب."
+            en: "One in the depth of affliction… one in the belly of a whale… and one whose hair had turned white, still asking."
       - narration: film-promise
         picture: written
         scene: sea
         lines:
           - ar: "تلاتة نادوا ربنا… والتلاتة اترد عليهم."
             en: "Three who called on God… and all three were answered."
-          - ar: "وإحنا… تلات أفكار غلط مسكّتانا."
-            en: "And us… three wrong ideas keep us silent."
+          - ar: "وإحنا… تلات أفكار غلط بتبعدنا عن الدعاء."
+            en: "And us… three wrong ideas keep us from asking."
   - id: worship
     title: { ar: "الدعاء عبادة", en: "Du'a is worship" }
     segments:

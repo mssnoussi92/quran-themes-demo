@@ -7,6 +7,9 @@
 # - 37:143 : deux lectures chez les exégètes (Ibn Kathir) : ses œuvres d'avant, ou son appel dans le poisson ;
 #   al-Sa'di et al-Muyassar disent les deux. D'où « ذِكره لربنا » (les deux), jamais « son du'a seul ».
 # - Le lien entre le décret et le du'a repose sur le hadith (2139), pas sur notre lecture du verset.
+# - « الدعاء عبادة » (demande du propriétaire, 2026-11-11) : une réplique à nous, après l'exemple ; le hadith
+#   (Tirmidhi 3247) est lu dans le premier short et dans le film.
+# - Aucun mot du silence pour « ne pas demander » (refusés par le propriétaire) : « ساب الدعاء ».
 # - `kept` : réplique validée de l'ancien épisode, sans ses guillemets ; les autres sont de l'IA.
 # Rien n'est validé : le propriétaire lit le script avant toute voix.
 id: written
@@ -81,6 +84,8 @@ segments:
     lines:
       - ar: "زي الرزق: مكتوب… وبرضه بتنزل شغلك كل يوم."
         en: "Like your provision: it is written… and still you go to work every day."
+      - ar: "وقبل ده كله… الدعاء عبادة."
+        en: "And before all of that… du'a is worship."
   - narration: close
     scene: shore
     lines:
@@ -93,7 +98,7 @@ segments:
   - narration: next
     scene: shore
     lines:
-      - ar: "ده اللي سكت عشان كله مكتوب… بس فيه اللي دعا… ودعا… وما شافش حاجة. فبطّل."
-        en: "That is the one silent because it's all written… another asked… and asked… and saw nothing. So he stopped."
+      - ar: "ده اللي ساب الدعاء عشان كله مكتوب… بس فيه اللي دعا… ودعا… وما شافش حاجة. فبطّل."
+        en: "That is the one who gave up asking because it's all written… another asked… and asked… and saw nothing. So he stopped."
       - ar: "تابعنا عشان تعرف."
         en: "Follow us to find out."

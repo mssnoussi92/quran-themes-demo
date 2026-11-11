@@ -369,12 +369,14 @@ export const ReadingText: React.FC<{ seg: Reading; t: number; layout?: Layout }>
   const total = chunks.reduce((n, c) => n + c.length, 0) || 1;
   let done = 0;
   const cue = chunks.find((c) => (done += c.length) / total > local / seg.seconds) ?? chunks[chunks.length - 1];
+  // A hadith of a few words (« الدعاء هو العبادة ») is read in under two seconds: written large, it is read at a glance.
+  const brief = seg.text.replace(/[^\u0621-\u064A]/g, "").length <= 24;
   return (
     <div style={{ opacity: show }}>
       <div style={{ position: "absolute", top: layout.verseTop, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.latin, fontSize: 30, color: "rgba(255,255,255,.72)", textShadow: SHADOW }}>
         {seg.reference}
       </div>
-      <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.verseTop + 56, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.arabic, fontSize: fit(64, seg.text, layout.readingComfortable ?? 90), lineHeight: 1.8, color: "#fff", textShadow: SHADOW, textWrap: "balance" }}>
+      <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.verseTop + 56, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.arabic, fontSize: brief ? 96 : fit(64, seg.text, layout.readingComfortable ?? 90), lineHeight: 1.8, color: "#fff", textShadow: SHADOW, textWrap: "balance" }}>
         « {seg.text} »
       </div>
       <div lang="en" style={{ position: "absolute", top: layout.sub.top, left: layout.sub.left, right: layout.sub.right, textAlign: "center", fontFamily: FONT.latin, fontStyle: "italic", fontSize: layout.sub.size, lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>

@@ -75,7 +75,12 @@ In the film the shorts' follow calls are left out (`reuse` with `lines:`).
   voice reaches it, and the last phrase of a line is the one in gold. Put the point there. Two to four
   phrases a line; the voice pauses at each « … ».
 - **The first line is the first frame**: it is on screen before the voice starts. Render frame 0 and
-  look at it alone.
+  look at it alone. Only its first phrase is there: « بنقول: يا صبر أيوب… » left the single word
+  « بنقول: » on the first frame, because a line is cut after « : » too. No colon in the first phrase.
+- **What the whole theme rests on is said in every short** (owner, 2026-11-11: « الدعاء عبادة » was
+  only in the film): one line of ours per short, tied to that short's wrong idea (« الدعاء عبادة… مش
+  قلة رضا. », « وقبل ده كله… الدعاء عبادة. », « والدعاء عبادة… حتى وإنت مستني. »), and its hadith read in
+  the first short when it is a few seconds long (Tirmidhi 3247: 1.5 s). The film reads that hadith once.
 - **The narration never says a verse.** It asks the question before the verse and says the meaning
   after it, in its own Egyptian words; an Egyptian rendering of a verse's meaning is ours, the verse's
   Arabic is the reciter's.
@@ -96,6 +101,9 @@ In the film the shorts' follow calls are left out (`reuse` with `lines:`).
 | « شالتهم » | « ركّبوهم السفينة » | he does not like the word |
 | « اتكسرت », « تتكسر » | « حاجة وحشة حصلتلك », « اللي خسرناه » | he does not like the word |
 | « أنواع القدر » | « تلات مواقف » | three kinds of decree is a preachers' reading, not a classification of the Quran or of the books of creed |
+| « سكت », « ساكت », « بتسكّتنا », « مسكّتانا »: any word of silence for « not asking » | « ساب الدعاء », « بتبعدنا عن الدعاء » | he asked for every word of silence to be changed (2026-11-11); a du'a can be said in the heart, the image was ours |
+| « شاب » alone for « grew old » | « راسه شابت » | read as « young man » (شابّ), on screen and by the voice |
+| « مضرب المثل في الصبر » | the proverb as people say it: « بنقول يا صبر أيوب… » | he flagged the phrase without a reason; our reading: a standard-Arabic turn in an Egyptian line |
 | an ending without a call | « تابعنا عشان تعرف بقية القصة. » as the last line | he wants the call said |
 | an ending that only teases | how the wisdom showed here, then what differs next | what tells the parts apart is the reason to follow |
 
@@ -121,6 +129,7 @@ line, identical to the last character (`prepare.py` refuses a difference).
 5. Each refused word; each word of `content/dialect.yaml`.
 6. The lengths `tools/trial/script.py` estimates: over about 2:05, a short says two ideas; keep one
    (the du'a's third short lost a second hadith to the film and went from 2:27 to 2:00).
+   A draft runs a few seconds longer than the estimate (2:07 estimated, 2:11 drafted).
 7. The draft (`prepare.py --draft`, skill `new-theme`, step 5): a still at each segment.
 
 Then the script goes to the owner with the outline and the pictures, Arabic and English, your own

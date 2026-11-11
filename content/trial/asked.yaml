@@ -3,7 +3,13 @@
 # d'être soulagé (Al-Anbiya 21:83-84), puis par le hadith de Muslim 2679a (demander avec résolution).
 # - `kept` : réplique validée de l'ancien épisode (content/episodes/dua.yaml, scène nommée), reprise mot pour mot,
 #   sans ses guillemets ; les autres répliques sont de l'IA, à valider.
-# - « مضرب المثل في الصبر » : le proverbe (« صبر أيوب »), pas un superlatif tiré d'un texte.
+# - « يا صبر أيوب » : le proverbe, tel qu'on le dit, pas un superlatif tiré d'un texte (le propriétaire a refusé
+#   « مضرب المثل في الصبر », 2026-11-11). Pas de « : » après « بنقول » : la première image n'aurait montré que ce mot
+#   (une réplique est coupée en phrases après « … ، . ! ؟ : »).
+# - « الدعاء عبادة » (demande du propriétaire, 2026-11-11) : le hadith lui-même, Tirmidhi 3247 (1,5 s, lecture
+#   validée), lu avant Muslim 2679a, puis notre réplique « الدعاء عبادة… مش قلة رضا ». Le film ne relit pas 3247
+#   ici (il l'a dit dans son chapitre « الدعاء عبادة »).
+# - Aucun mot du silence pour « ne pas demander » (refusés par le propriétaire) : « ساب الدعاء ».
 # - Le sens de 21:84 est dit après le verset, avec nos mots (« ومعاهم قدّهم » pour « ومثلهم معهم »).
 # - L'exemple (le malade qui prend son remède) est une scène type ; aucune comparaison de Dieu à une personne.
 # Rien n'est validé : le propriétaire lit le script avant toute voix.
@@ -18,19 +24,19 @@ ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: J
 # Couverture et textes de publication, proposés (à valider avec les vidéos ; le titre, avec le script).
 cover: { scene: call, title: "صابر… ودعا!", tag: "الدعاء · ١ من ٣", focus: 1240 }
 publish:
-  title: { en: "The model of patience… asked", ar: "صابر… ودعا!" }
+  title: { en: "Patient… and he asked", ar: "صابر… ودعا!" }
   part: 1
   description:
-    en: "We say: I'm content, so I won't ask. Yet the very model of patience, Job, peace be upon him, asked God to lift his suffering, and was answered. Contentment is not objecting to what happened; du'a is asking for what is to come."
-    ar: "بنقول: أنا راضي… مش هدعي. بس مضرب المثل في الصبر، سيدنا أيوب عليه السلام، دعا ربنا يشيل عنه البلاء… واستجاب له. الرضا إنك ما تعترضش على اللي حصل، والدعاء إنك تطلب اللي جاي."
+    en: "We say: I'm content, so I won't ask. Yet Job, peace be upon him, whose patience became a proverb, asked God to lift his suffering, and was answered. Du'a is worship, not a lack of contentment: contentment is not objecting to what happened; du'a is asking for what is to come."
+    ar: "بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب عليه السلام، اللي بنقول على صبره: يا صبر أيوب، دعا ربنا يشيل عنه البلاء… واستجاب له. الدعاء عبادة… مش قلة رضا: الرضا إنك ما تعترضش على اللي حصل، والدعاء إنك تطلب اللي جاي."
 segments:
   - narration: open
     scene: dark
     lines:
-      - ar: "مضرب المثل في الصبر… دعا ربنا يشيل عنه البلاء! إزاي؟"
-        en: "The very model of patience… asked God to lift his suffering! How?"
-      - ar: "ده سيدنا أيوب عليه السلام… وإحنا بنقول: أنا راضي… مش هدعي."
-        en: "That was Job, peace be upon him… and we say: I'm content… I won't ask."
+      - ar: "بنقول يا صبر أيوب… وهو نفسه دعا ربنا يشيل عنه البلاء!"
+        en: "We say “the patience of Job”… and he himself asked God to lift his suffering!"
+      - ar: "سيدنا أيوب عليه السلام دعا… وإحنا بنقول: أنا راضي… مش هدعي."
+        en: "Job, peace be upon him, asked… and we say: I'm content… I won't ask."
   - verse: quran.21.83
     scene: call
   - narration: turn
@@ -50,6 +56,13 @@ segments:
         kept: dua.content-need
       - ar: "والنبي صلى الله عليه وسلم قال:"
         en: "And the Prophet ﷺ said:"
+  - reading: hadith.tirmidhi.3247
+    scene: lit
+  - narration: also
+    scene: lit
+    lines:
+      - ar: "وقال كمان:"
+        en: "And he also said:"
   - reading: hadith.muslim.2679a
     scene: lit
   - narration: ask
@@ -61,6 +74,8 @@ segments:
   - narration: depth
     scene: land
     lines:
+      - ar: "الدعاء عبادة… مش قلة رضا."
+        en: "Du'a is worship… not a lack of contentment."
       - ar: "الرضا… إنك ما تعترضش على اللي حصل. والدعاء… إنك تطلب اللي جاي."
         en: "Contentment… is not objecting to what happened. Du'a… is asking for what is to come."
   - narration: example
@@ -77,7 +92,7 @@ segments:
         en: "Accept what has passed… and ask for what is to come."
       - ar: "لما تقول أنا راضي… افتكر سيدنا أيوب: راضي… ودعا."
         en: "When you say: I'm content… remember Job: content… and he asked."
-      - ar: "ده اللي سكت عشان فاكر الدعاء قلة رضا… بس فيه اللي ساكت لسبب تاني: كله مكتوب… أدعي ليه؟"
-        en: "That is the one silent because he thinks asking means discontent… another is silent for another reason: it's all written… why ask?"
+      - ar: "ده اللي ساب الدعاء عشان فاكره قلة رضا… بس فيه اللي سابه لسبب تاني: كله مكتوب… أدعي ليه؟"
+        en: "That is the one who gave up asking because he thinks it means discontent… another gave it up for another reason: it's all written… why ask?"
       - ar: "تابعنا عشان تعرف."
         en: "Follow us to find out."
