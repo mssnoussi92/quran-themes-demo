@@ -91,7 +91,7 @@ const sceneOpacity = (segments: Segment[], id: SceneId, t: number) => {
 const hasLetter = (token: string) => /\p{L}/u.test(token);
 const fit = (base: number, text: string, comfortable: number) => Math.round(base * Math.min(1, Math.sqrt(comfortable / Math.max(1, text.length))));
 
-const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean }> = ({ seg, t, last }) => {
+const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean; handle: string }> = ({ seg, t, last, handle }) => {
   const { fps } = useVideoConfig();
   const local = t - seg.start;
   const index = seg.lines.findIndex((l, i) => local < l.end || i === seg.lines.length - 1);
@@ -117,6 +117,12 @@ const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean }> = ({
             </div>
           );
         })}
+        {/* The last line of the short is its call to follow: the page to follow is written under it, large. */}
+        {last && index === seg.lines.length - 1 ? (
+          <div dir="ltr" style={{ display: "inline-block", marginTop: 34, padding: "10px 44px", borderRadius: 999, border: `3px solid ${GOLD}`, background: "rgba(4,7,20,.55)", fontFamily: FONT.latin, fontWeight: 600, fontSize: 50, lineHeight: 1.4, color: GOLD, textShadow: "none", opacity: interpolate(local, [lineStart + 0.2, lineStart + 0.6], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
+            {handle}
+          </div>
+        ) : null}
       </div>
       <div lang="en" style={{ position: "absolute", top: 1490, left: 80, right: 80, textAlign: "center", opacity: show, fontFamily: FONT.latin, fontStyle: "italic", fontSize: 44, lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
         {line.en}
@@ -202,7 +208,7 @@ export const Trial: React.FC<TrialProps> = ({ data }) => {
         </Sequence>
       ))}
       {current.kind === "narration" ? (
-        <NarrationText seg={current} t={t} last={current === data.segments[data.segments.length - 1]} />
+        <NarrationText seg={current} t={t} last={current === data.segments[data.segments.length - 1]} handle={data.handle} />
       ) : (
         <VerseText seg={current} t={t} />
       )}

@@ -266,6 +266,17 @@ Version 2 écrite (`content/trial/boat.yaml`, `content/voice-test/20-trial-boat.
 regarde le spectateur, puis après 18:79 le sens, « موسى شاف الخرق… وما شافش الملك », l'exemple, « مش كل حاجة
 شايفها شر… تبقى شر », et l'annonce du deuxième. Les voix D et E la diront au retour du quota.
 
+**Réponse du propriétaire (2026-11-11)** : il garde la version 2 et ne change que deux choses. Il ne veut pas du
+mot « اتكسرت » : remplacé par « كل حاجة وحشة حصلتلك في حياتك » dans la promesse et « اللي خسرناه » dans la leçon
+(à éviter dans les scripts à venir, comme « شالتهم »). Et il veut **finir par un appel à suivre** : « تابعنا
+عشان تعرف بقية القصة », dit en dernier, après l'annonce du deuxième cas, qui donne la raison de suivre ; le nom
+de la page s'affiche en grand sous la phrase. La session avait proposé de s'en passer : il a tranché. Ce que
+cela engage : la suite promise doit exister quand ce short sera publié.
+
+Sa capture de la page des limites de Google AI Studio montre 60 requêtes par minute, 100 000 jetons par minute
+et **100 requêtes par jour**, sans dire pour quel modèle ; le refus du run 11 disait 10 par jour pour
+`gemini-3.8-flash-tts`. À lui de regarder la page modèle par modèle ; d'ici là on compte sur 10.
+
 ### Tenir un film entier dans le quota gratuit de Gemini (2026-11-11)
 
 Demande du propriétaire : optimiser le nombre de requêtes pour finir toute la vidéo sans dépasser le quota du
