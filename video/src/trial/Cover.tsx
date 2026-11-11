@@ -7,7 +7,7 @@
 // Same rules as the other thumbnails: readable at 170 px wide, three to five words, nothing in the bottom
 // right corner of the 16:9 one (YouTube writes the duration there). Session only, like the trial itself.
 import type { CalculateMetadataFunction } from "remotion";
-import { AbsoluteFill, staticFile } from "remotion";
+import { AbsoluteFill, Sequence, staticFile, useVideoConfig } from "remotion";
 import { FONT, loadFonts } from "../fonts";
 import { Clip, GOLD, H, PICTURES, W } from "./Trial";
 import type { TrialData } from "./Trial";
@@ -22,14 +22,19 @@ const load = async (trial: string, voice: string, signal: AbortSignal) => {
   return (await res.json()) as TrialData;
 };
 
-/** The picture of a short at one of its scenes: its clip, what is drawn over it, the same veil as in the video. */
+/** The picture of a short at one of its scenes: its clip, what is drawn over it, the same veil as in the video.
+ * `cover.at`: the second of the clip, as the short plays it, that the cover shows (the sun of the first short of
+ * Dhul-Qarnayn is above the frame when the clip starts, and low over the water a minute and a half later). */
 const Scene: React.FC<{ data: TrialData; scene: string }> = ({ data, scene }) => {
   const picture = data.picture ?? {};
+  const { fps } = useVideoConfig();
   const Drawing = PICTURES[data.trial];
   if (!Drawing) throw new Error(`no picture is drawn for the trial « ${data.trial} »`);
   return (
     <AbsoluteFill style={{ width: W, height: H, background: picture.ground ?? "#04070f" }}>
-      <Clip src={data.clip} clipSeconds={data.clip_seconds} picture={picture} />
+      <Sequence from={-Math.round((data.cover?.at ?? 0) * fps)} layout="none">
+        <Clip src={data.clip} clipSeconds={data.clip_seconds} picture={picture} />
+      </Sequence>
       <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: "absolute", inset: 0 }}>
         <Drawing t={2} show={(id) => (id === scene ? 1 : 0)} since={() => 0} horizon={picture.horizon ?? 1300} />
       </svg>

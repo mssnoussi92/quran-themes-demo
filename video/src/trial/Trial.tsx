@@ -57,7 +57,7 @@ export type TrialData = {
   /** The ambience under the narration, as long as the video and already silent under each verse (tools/trial/ambience.py). */
   ambience?: string;
   /** The 9:16 cover of the short: the scene it shows, its title in large, a tag above it. */
-  cover?: { scene: string; title: string; tag: string; focus?: number } | null;
+  cover?: { scene: string; title: string; tag: string; focus?: number; at?: number } | null;
 };
 /** `platform`: where the page has another name (TikTok: content/publish.yaml, `handles`), the video is signed with it. */
 export type TrialProps = { trial: string; voice: string; platform?: string; data: TrialData | null };
