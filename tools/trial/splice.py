@@ -13,13 +13,17 @@ pieces are kept (default: beside --out, `<out>.splice/`). --concurrency, --crf: 
 
 Then it proves the result, or stops with exit code 1 and leaves --out unwritten: the same number of frames, every
 frame outside the stretches identical to the video's (hashes of the decoded pictures), every frame inside them
-identical to the patch rendered. What the patch shows is still looked at (tools/trial/check.py --at). One
-render at a time in a session: this renders, so nothing heavy beside it.
+identical to the patch rendered. And it says where the picture really changes inside each stretch (frames under
+40 dB of PSNR against the video; a picture that is the same and only encoded again stays over 43 dB): that list
+must be the fix and nothing else, since the code may have moved since the video was rendered. What the patch
+shows is still looked at (a frame of each change, at full size). One render at a time in a session: this
+renders, so nothing heavy beside it.
 """
 from __future__ import annotations
 
 import argparse
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -27,6 +31,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 FPS = 30
+SAME_PICTURE = 40.0      # dB: over it, two encodings of one picture; a sign redrawn in a subtitle is near 30
 
 
 def run(cmd: list[str], **kw) -> subprocess.CompletedProcess:
@@ -52,6 +57,26 @@ def hashes(video: Path) -> list[str]:
     """The hash of every decoded picture, in order."""
     out = run(["ffmpeg", "-nostdin", "-v", "error", "-i", str(video), "-map", "0:v", "-f", "framemd5", "-"]).stdout
     return [row.rsplit(",", 1)[1].strip() for row in out.splitlines() if row and not row.startswith("#")]
+
+
+def changes(video: Path, fixed: Path, a: int, b: int, work: Path) -> tuple[list[tuple[int, int]], float]:
+    """Inside the stretch a..b-1: the runs of frames whose picture changed, and the lowest PSNR of the others."""
+    stats = work / f"psnr-{a}.log"
+    at = f"{a / FPS:.6f}"
+    run(["ffmpeg", "-nostdin", "-v", "error", "-ss", at, "-i", str(video), "-ss", at, "-i", str(fixed), "-frames:v", str(b - a),
+         "-filter_complex", f"[0:v][1:v]psnr=stats_file={stats}", "-f", "null", "-"])
+    runs, rest = [], float("inf")
+    for row in stats.read_text(encoding="utf-8").splitlines():
+        frame = a + int(re.search(r"n:(\d+)", row).group(1)) - 1
+        value = re.search(r"psnr_avg:(\S+)", row).group(1)
+        psnr = float("inf") if value == "inf" else float(value)
+        if psnr >= SAME_PICTURE:
+            rest = min(rest, psnr)
+        elif runs and frame <= runs[-1][1] + 2:
+            runs[-1] = (runs[-1][0], frame)
+        else:
+            runs.append((frame, frame))
+    return runs, rest
 
 
 def stretches(asked: list[str], keys: list[int], total: int) -> list[tuple[int, int]]:
@@ -147,6 +172,12 @@ def main() -> int:
             sys.exit(f"error: frames {a}-{b - 1} ({kind}): {len(wrong)} picture(s) differ from the {'video' if kind == 'kept' else 'patch'}, first at {wrong[:3]}")
         if kind == "patch":
             changed += sum(1 for x, y in zip(before[a:b], after[a:b]) if x != y)
+    for kind, a, b, _ in pieces:
+        if kind == "patch":
+            runs, rest = changes(video, fixed, a, b, work)
+            where = ", ".join(f"{x}-{y} ({(y - x + 1) / FPS:.1f} s)" for x, y in runs) or "nowhere"
+            same = "identical" if rest == float("inf") else f"the same picture encoded again ({rest:.1f} dB at least)"
+            print(f"  frames {a}-{b - 1}: the picture changes in {where}; elsewhere {same}")
     shutil.move(str(fixed), str(out))
     patched = sum(b - a for kind, a, b, _ in pieces if kind == "patch")
     print(f"{out.name}: {total} frames, {patched} rendered again ({changed} differ from the video), {total - patched} copied and identical; sound copied")

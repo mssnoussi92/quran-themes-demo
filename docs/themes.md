@@ -193,9 +193,12 @@ un défilé, un feu). **Voix** : quatre requêtes (trois shorts, le film), une j
 l'argent refusé, « رحمة من ربي ») et le film ; le levant et « إن شاء الله » dans le film seulement ; le fil des
 trois épreuves de la force (sur les gens, de prendre, d'avoir réussi).
 
-**État (2026-11-11)** : script écrit (`west`, `tribute`, `barrier`, film `qarnayn` ; page lisible
-`docs/scripts/qarnayn.md`), corrigé deux fois par le propriétaire (`docs/history.md`, tâche 43), dessins faits,
-brouillons envoyés. Attend : « je valide le script », l'accord sur les quatre clips, les vraies ambiances.
+**État (2026-11-11)** : script **validé par le propriétaire** (« je valide le script » ; page lisible
+`docs/scripts/qarnayn.md` ; `docs/history.md`, tâches 43 et 45), voix faite, shorts rendus et envoyés (2:06, 1:54,
+1:51), film 8:24 en rendu. **Encore proposés, pas approuvés** : les quatre clips et les ambiances. **À lui dire avec
+les vidéos** : la réplique de six phrases du troisième short (« وبعد كل ده… ووعد ربي حق. ») s'écrit petit, la
+couper en deux lignes ne demanderait aucune voix ; le premier short sort à −16,9 LUFS (les autres entre −16,0 et
+−16,4).
 **Ambiances** : les trois des brouillons sont celles du premier film, provisoires. Candidates sur BigSoundBank
 (CC0), **à écouter par le propriétaire sur leur page, aucune n'est choisie** : pour le couchant, « Pond in a Field »
 (0691, 2:42 : une mare, grenouilles, oiseaux, vent) ou « Froux peat bogs » (1349 : une tourbière, beaucoup de

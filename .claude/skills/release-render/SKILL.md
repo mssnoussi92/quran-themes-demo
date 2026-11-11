@@ -122,25 +122,28 @@ hadith or the tool stops.
 
 ## 5. A few seconds to redo in an hour of render
 
-When a fix changes the picture of a short stretch and **nothing in the timeline or the sound**
-(a text that overflowed, a drawing), render that stretch alone and splice it in between two
-keyframes; the rest is not encoded again.
+When a fix changes the picture of short stretches and **nothing in the timeline or the sound** (a sign
+drawn wrong, a text that overflowed, a drawing), render those stretches alone and splice them in: the
+rest is not encoded again, and a video the owner validated stays, frame for frame, what they validated.
 
 ```bash
-ffprobe -v error -select_streams v -skip_frame nokey -show_entries frame=pts_time -of csv=p=0 -read_intervals <a>%<b> <video>   # keyframes around the stretch
-# k1: the keyframe at or before its first frame; k2: the first keyframe after its last frame (frame = seconds x 30)
-npx remotion render <new bundle> <composition> patch.mp4 --frames=<k1>-<k2 - 1> --concurrency=4 --crf=21 --props='…'
-ffmpeg -i <video> -map 0:v -c copy -frames:v <k1> A.mp4
-ffmpeg -i patch.mp4 -map 0:v -c copy B.mp4
-ffmpeg -ss <seconds of k2> -i <video> -map 0:v -c copy C.mp4
-printf "file '%s'\n" "$PWD/A.mp4" "$PWD/B.mp4" "$PWD/C.mp4" > list.txt
-ffmpeg -f concat -safe 0 -i list.txt -i <video> -map 0:v -map 1:a -c copy -movflags +faststart fixed.mp4
+npx remotion bundle src/index.ts --out-dir <scratchpad>/bundle          # with the fix
+python3 tools/trial/splice.py video/out/<video>.mp4 --bundle <scratchpad>/bundle --composition Trial916 \
+    --props '{"trial":"<id>","voice":"D","data":null}' --frames <first>-<last> [<first>-<last> …] --out video/out/<dir>/<video>.mp4
 ```
 
-Then prove it: the same number of frames as before (`ffprobe -count_packets`), and the frames of both
-files hashed (`ffmpeg -i <file> -map 0:v -f framemd5 <file>.md5`, one file at a time): every frame
-outside the stretch identical, every frame inside it equal to the patch. Look at the stretch on a
-sheet. If the lengths changed, render the whole video.
+- `--frames`: seconds x 30, from the timeline (`start` of the segment, of the line). The tool widens
+  each stretch to the keyframes around it (a film has one every eight seconds at most), renders it,
+  copies the rest and the sound, and **proves the result** on the hash of every decoded picture:
+  outside the stretches identical to the video, inside identical to the patch; it writes nothing
+  otherwise. Splice the file the owner has (the one with the ambience): its sound is kept.
+- Read the last lines: « the picture changes in 599-670 (2.4 s) » must be the fix and nothing else. The
+  code may have moved since the video was rendered; a change elsewhere in a stretch is a difference
+  the owner did not validate.
+- Look at one frame of each change at full size, old and new side by side.
+- It renders: one at a time, nothing heavy beside it. The first film's seven videos (a sign in a
+  subtitle, eleven stretches) took forty minutes instead of two hours and a half (2026-11-11).
+- If the lengths or the sound change, this is not the tool: render the whole video.
 
 ## 6. Covers, thumbnail, texts
 
