@@ -47,13 +47,15 @@ content/trial/takes/<voix>-trial-<id>.flac   la prise de la voix pour ce texte (
 tools/trial/clip.py            le clip filmé (Pixabay, hors dépôt)
 tools/trial/prepare.py         un short -> video/public/trial/<id>-<voix>.json (minutage) ; --film <id> : le film
 tools/trial/film.py            le film (appelé par prepare.py --film)
+tools/trial/sources.py         un verset ou un hadith du registre, prêt à jouer : textes, coupe du récitateur, lecture, nivelage
+tools/trial/script.py          le script d'un film et de ses shorts en une page à valider, avec les durées estimées
 tools/trial/ambience.py        la nappe d'ambiance d'une vidéo ; --mix : la poser sous une vidéo déjà rendue
 tools/trial/publish.py         les textes à coller
 tools/trial/check.py           contrôle d'un rendu : format, durée, volume, planches d'images
 tools/audio/align.py           chaque phrase d'un texte retrouvée dans une longue prise
 tools/tts/gemini.py            la voix (dans le workflow voice-test : la clé est un secret du dépôt)
 video/src/trial/               Trial.tsx (short), Film.tsx (film), Cover.tsx (couverture, vignette),
-                               Boat.tsx, Home.tsx, Wall.tsx (les dessins d'une histoire)
+                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a) : les dessins
 video/public/trial/            (ignoré) données préparées, clips, audio
 build/trial/ambience/          (ignoré) enregistrements d'ambiance téléchargés
 video/out/                     (ignoré) rendus
@@ -67,12 +69,12 @@ video/out/                     (ignoré) rendus
 | `handle` | la signature (`@quran_words_daily`) ; celle de TikTok vient de `content/publish.yaml` (`handles`) |
 | `clip` | le clip filmé : `source: pixabay`, `id`, `author`, `page`, et comment il se pose dans le cadre 9:16 : `position` (recadrage), `shift` (px, vers le bas ou le haut, pour laisser sa place au texte), `brightness`, `ground` (couleur derrière), `horizon` (hauteur de l'horizon : l'image grandit lentement autour), `rate` (vitesse, 0,85 par défaut) ; `landscape` : les mêmes réglages pour le 16:9 du film, et `side` (le côté du dessin, le texte prend l'autre) |
 | `ambience` | l'enregistrement sous la narration : `source: bigsoundbank`, `id`, `title`, `author`, `licence`, `page`, `from` et `seconds` (l'extrait bouclé), `level` (LUFS de la nappe) |
-| `verses` | l'épisode préparé d'où viennent les versets et leur récitation (voir « Ce que les outils ne font pas encore ») |
+| `verses` | seulement dans le premier film : l'ancien épisode préparé d'où viennent ses versets ; un fichier sans `verses` lit le registre (`tools/trial/sources.py`) |
 | `voices` | les voix connues : `D` (Gemini, Algieba), `V` (VoiceTut, secours), `X` (brouillon muet) |
 | `text` | son texte de voix : `content/voice-test/<text>.txt` |
 | `cover` | la couverture 9:16 : `scene` montrée, `title` en grand, `tag` au-dessus, `focus` (hauteur du sujet), `file` (nom du fichier livré) |
 | `publish` | `title` et `description` (ar, en), `part` (son numéro dans la série) |
-| `segments` | dans l'ordre : `narration: <nom>` avec `scene` et `lines` (`ar`, `en`), ou `verse: quran.S.A` avec `scene` |
+| `segments` | dans l'ordre : `narration: <nom>` avec `scene` et `lines` (`ar`, `en` ; `kept: <épisode>.<scène>` pour une réplique validée reprise d'un ancien épisode), `verse: quran.S.A` ou `reading: hadith.<recueil>.<n>` (lu par une vraie voix) avec `scene` |
 | `script_validated`, `validated` | la parole du propriétaire : le script, puis la vidéo (`what` : ce qu'elle couvre) ; jamais écrits par l'IA de son propre chef |
 
 Une réplique (`lines`) est coupée en phrases après « ، … . ! ؟ : » : chaque phrase s'écrit quand la voix la
@@ -85,7 +87,7 @@ l'un à l'autre en fondu.
 | --- | --- |
 | `id`, `files` | son nom (le premier : `film`) ; `files` : le début du nom des vidéos livrées (`khidr-film-16x9.mp4`, `khidr-short-<n>-<id>.mp4`) |
 | `text` | le texte de voix de ses répliques propres (une requête pour toutes) |
-| `verses` | l'épisode préparé d'où viennent versets et lectures de hadith |
+| `verses` | seulement dans le premier film (ancien épisode préparé) ; sinon le registre |
 | `outro` | secondes d'image calme à la fin (12) |
 | `thumbnail` | la vignette : `title`, `tag`, `panels` (les shorts montrés côte à côte, le premier à droite), `file` |
 | `publish` | `title`, `series` (le nom de la série, repris par les shorts), `description`, `hashtags` (2 ou 3, ceux du thème), `narration` (la ligne qui déclare la voix IA, par voix), `out` (où écrire les textes à coller) |
@@ -100,9 +102,8 @@ short) et `scene` disent l'image, gardés d'un segment au suivant ; `shots` donn
 ## La chaîne, dans l'ordre
 
 ```bash
-cd video && npm ci && npm run data && cd ..            # les épisodes préparés : textes des versets (registre)
-python3 tools/audio/build.py --episode <épisode> --require-committed --tts-python /bin/false   # récitations, lectures
-(cd video && npm run data)                              # ... et leurs durées
+cd video && npm ci && cd ..
+uv run --with pyyaml python3 tools/trial/script.py --film <film>       # le script en une page, durées estimées : au propriétaire, avant la voix
 python3 tools/trial/clip.py --trial <id> --out <dir>/<id>.mp4          # le clip (PIXABAY_API_KEY de l'environnement)
 # un clip 4K est d'abord réduit : ffmpeg -i <clip> -vf scale=-2:1440 -an <clip-1440.mp4>
 
@@ -152,9 +153,9 @@ fichier seul, donc jamais dans le dépôt ; l'auteur est cité dans les descript
 | Pixabay | Auteur | Ce qu'il montre | Utilisé |
 | --- | --- | --- | --- |
 | 22183 | Artvan93 | mer calme au crépuscule, horizon rose (31 s) | le bateau |
-| 29238 | Dans4 | pleine lune dans de fins nuages (20 s) | le garçon |
+| 29238 | Dans4 | pleine lune dans de fins nuages (20 s) | le garçon ; du'a, le lieu de prière |
 | 190332 | DancingSky | ciel de nuages au couchant sur une plaine, accéléré, 4K (14 s) | le mur |
-| 138588 | Natures_Embrace | vagues au couchant, 4K (29 s) | |
+| 138588 | Natures_Embrace | vagues au couchant, 4K (29 s) | du'a, le grand poisson |
 | 4006 | outlinez | petites vagues sur le sable mouillé, lumière dorée, de près (40 s) | |
 | 24216 | javlemus | vue du ciel, vagues sur un rivage de sable brun (31 s) | |
 | 208635 | SkyScapeDrone | eau claire peu profonde sur le sable, vertical 4K (11 s) | |
@@ -165,7 +166,7 @@ fichier seul, donc jamais dans le dépôt ; l'auteur est cité dans les descript
 | 271161 | McPix22 | ruisseau entre des rochers moussus, 4K (27 s) | |
 | 174860 | Alex_Sochi7777 | rivière de forêt, petits rapides, 4K (28 s) | |
 | 2119 | bellergy | lever de soleil vu du ciel sur forêt et îles (25 s) | |
-| 59291 | trilemedia | soleil au-dessus d'une vallée de brume, 4K (19 s) | |
+| 59291 | trilemedia | soleil au-dessus d'une vallée de brume, 4K (19 s) | du'a, la maison |
 | 223338 | adege | orage qui s'assombrit sur des collines, accéléré 4K (40 s) | |
 | 287510 | Thamnguyen_TBVN | ruisseau de forêt dans des rayons de soleil, 4K (16 s) | |
 | 382582 | Matthias_Groeneveld | pinède dans la brume, rayons de soleil, 4K (12 s) | |
@@ -204,30 +205,26 @@ Décisions du propriétaire sur les scripts (2026-11-11), à tenir dans chaque s
 
 ## Ce que les outils ne font pas encore
 
-Le modèle a été construit pour une histoire. Avant ou pendant la première réécriture, ces manques se
-rencontrent ; chacun dit quoi faire.
+Le modèle a été construit pour une histoire, puis ouvert au du'a (des idées reçues). Ce qui manque encore ; chacun
+dit quoi faire.
 
-1. **Les sources passent par un ancien épisode.** `verses: <épisode>` : un verset ou un hadith n'est
-   disponible que s'il est une scène de cet épisode préparé (`video/public/data/<épisode>.json`, audio de
-   `tools/audio/build.py`). Réécrire un épisode avec ses propres sources marche tel quel. Une source nouvelle
-   demande de faire lire le registre directement par `prepare.py` (texte, référence et traduction :
-   `content/sources/` ; coupe de récitation : `content/recitations/sayegh.json` et `build.py` ; ce que fait
-   `video/scripts/prepare.ts` pour les épisodes). À construire, pas à contourner en modifiant un ancien épisode.
-2. **Pas de hadith dans un short.** `Trial916` joue narration et versets ; seul le film joue une lecture
-   (`reading`, `ReadingText` de `Film.tsx`). À porter dans `prepare.py` et `Trial.tsx` au premier short qui
-   cite un hadith (les épisodes d'idées reçues en citent tous).
-3. **Pas d'écriture pour la voix.** Le texte de voix doit être exactement les répliques de l'écran (pas de
+1. **Pas d'écriture pour la voix.** Le texte de voix doit être exactement les répliques de l'écran (pas de
    `say_ar`). Un mot mal dit se corrige en le vocalisant dans la réplique même (« الخَضِر »), ou en changeant
    de mot avec l'accord du propriétaire.
-4. **Aucun contrôle automatique.** `validate.py` et `tests/` ne lisent pas `content/trial/` : les règles se
+2. **Aucun contrôle automatique.** `validate.py` et `tests/` ne lisent pas `content/trial/` : les règles se
    vérifient à la main, à chaque script et à chaque image. À ajouter : un schéma des fichiers du modèle et les
-   refus des cinq règles.
-5. **Rendu dans une session seulement.** Clips et ambiances sont hors dépôt, le film demande plus d'une heure
+   refus des cinq règles. (Le registre, lui, reste vérifié : politique des hadiths, textes, coupes.)
+3. **Rendu dans une session seulement.** Clips et ambiances sont hors dépôt, le film demande plus d'une heure
    (4 images par seconde), les vidéos sont livrées dans la conversation et dans aucune release ; la validation
    s'inscrit à la main (`validated`), sans `finalize.py`.
-6. **Le modèle n'a été éprouvé que sur une histoire.** Pour un épisode d'idées reçues, une collection ou un
-   texte expliqué, la structure du film et des shorts se propose d'abord au propriétaire (skill
+4. **Formats pas encore éprouvés.** Une histoire est validée, les idées reçues sont en cours (le du'a) ; pour une
+   collection ou un texte expliqué, la structure du film et des shorts se propose d'abord au propriétaire (skill
    `choose-format`).
+
+Comblés le 2026-11-11, avec le du'a : **une source se lit dans le registre** (`tools/trial/sources.py` : texte,
+référence, coupe de récitation, lecture du hadith ; un fichier qui nomme un ancien épisode dans `verses`, comme le
+premier film, garde son ancien chemin) ; **un short joue un hadith lu** (`reading:` dans ses segments, comme le
+film).
 
 ## Par où commencer
 

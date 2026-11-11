@@ -9,8 +9,20 @@
 # Rien n'est validé : le propriétaire lit le script avant toute voix.
 id: asked
 handle: "@quran_words_daily"
+clip: { source: pixabay, id: 59291, author: trilemedia, page: "https://pixabay.com/videos/id-59291/", position: "43% 50%", shift: 480, brightness: 0.7, ground: "#0a0b12", horizon: 1420, landscape: { side: left, horizon: 760, shift: 160, brightness: 0.65 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 30-trial-asked     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Ambiance sous la narration, jamais sous un verset ni un hadith : un des trois enregistrements validés par le
+# propriétaire sur le premier film (docs/model.md, « Ambiances »).
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -36 }
+# Couverture et textes de publication, proposés (à valider avec les vidéos ; le titre, avec le script).
+cover: { scene: call, title: "صابر… ودعا!", tag: "الدعاء · ١ من ٣", focus: 1240 }
+publish:
+  title: { en: "The model of patience… asked", ar: "صابر… ودعا!" }
+  part: 1
+  description:
+    en: "We say: I'm content, so I won't ask. Yet the very model of patience, Job, peace be upon him, asked God to lift his suffering, and was answered. Contentment is not objecting to what happened; du'a is asking for what is to come."
+    ar: "بنقول: أنا راضي… مش هدعي. بس مضرب المثل في الصبر، سيدنا أيوب عليه السلام، دعا ربنا يشيل عنه البلاء… واستجاب له. الرضا إنك ما تعترضش على اللي حصل، والدعاء إنك تطلب اللي جاي."
 segments:
   - narration: open
     scene: dark

@@ -13,8 +13,20 @@
 # Rien n'est validé : le propriétaire lit le script avant toute voix.
 id: waited
 handle: "@quran_words_daily"
+clip: { source: pixabay, id: 29238, author: Dans4, page: "https://pixabay.com/videos/id-29238/", position: "48.6% 50%", shift: 520, brightness: 0.95, ground: "#050a14", landscape: { side: right, horizon: 770, brightness: 0.95 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 32-trial-waited
+# Ambiance sous la narration, jamais sous un verset ni un hadith : un des trois enregistrements validés par le
+# propriétaire sur le premier film (docs/model.md, « Ambiances »).
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 80, level: -38 }
+# Couverture et textes de publication, proposés (à valider avec les vidéos ; le titre, avec le script).
+cover: { scene: niche, title: "شاب… وما بطّلش يدعي", tag: "الدعاء · ٣ من ٣", focus: 1230 }
+publish:
+  title: { en: "He grew old… and never stopped asking", ar: "شاب… وما بطّلش يدعي" }
+  part: 3
+  description:
+    en: "I asked and nothing happened. Zechariah, peace be upon him, was old, his hair white, and still asking: never, he said, had he been disappointed in calling on his Lord. What loses a du'a is not the delay, it is the hurry."
+    ar: "دعيت… وما حصلش حاجة. سيدنا زكريا عليه السلام كان كبير، راسه شابت، ولسه بيدعي… وقال إنه عمره ما رجع من دعاء ربنا خايب. اللي بيضيّع الدعاء مش التأخير… الاستعجال."
 segments:
   - narration: open
     scene: niche

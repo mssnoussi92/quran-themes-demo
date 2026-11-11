@@ -105,7 +105,9 @@ Add to this table each time the owner refuses a word.
 
 `content/trial/<id>.yaml`, `segments`: `narration: <name>` (`open`, `secret`, `meaning`, `depth`,
 `example`, `close`), its `scene` (a state of the drawing, skill `new-scene`) and its `lines` (`ar`,
-`en`); `verse: quran.S.A` with its `scene`. Then the voice text, `content/voice-test/NN-trial-<id>.txt`:
+`en`, and `kept: <episode>.<scene>` on a validated line of an old episode taken word for word);
+`verse: quran.S.A` or `reading: hadith.<collection>.<n>` with its `scene`. A hadith is introduced by the
+last line of the narration before it (« والنبي صلى الله عليه وسلم قال: ») and read by a real voice. Then the voice text, `content/voice-test/NN-trial-<id>.txt`:
 the style line of `20-trial-boat.txt` copied as it is, then every line of the file, in order, one per
 line, identical to the last character (`prepare.py` refuses a difference).
 
@@ -117,8 +119,9 @@ line, identical to the last character (`prepare.py` refuses a difference).
 4. Is there a line that could be imitated or misread (an act only a prophet's companion in knowledge
    was commanded to do, a loss explained)? It needs its line of warning.
 5. Each refused word; each word of `content/dialect.yaml`.
-6. The draft (`prepare.py --draft`, skill `new-theme`, step 5): its length, and a still at each
-   segment.
+6. The lengths `tools/trial/script.py` estimates: over about 2:05, a short says two ideas; keep one
+   (the du'a's third short lost a second hadith to the film and went from 2:27 to 2:00).
+7. The draft (`prepare.py --draft`, skill `new-theme`, step 5): a still at each segment.
 
 Then the script goes to the owner with the outline and the pictures, Arabic and English, your own
 lines marked, and **the voice waits for their « je valide le script »**.

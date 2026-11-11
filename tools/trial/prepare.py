@@ -3,9 +3,10 @@
 
 Writes video/public/trial/<id>-<voice>.json (the timeline the composition Trial916 plays) and copies the
 audio beside it. Session only: the narration takes come from the release voice-test-latest (Gemini, by
-the workflow voice-test), the sea clip from Pixabay (key of the environment), the recitation and the
-verses' texts from the episode the trial names (`verses`: khidr, khidr-solo) already prepared here (npm run
-data, tools/audio/build.py).
+the workflow voice-test), the clip from Pixabay (key of the environment). Verses and hadiths come from the
+registry (tools/trial/sources.py: texts, the reciter's cut, the reader's recording), or, when the file names an
+old episode in `verses` (the first film), from that episode already prepared here (npm run data,
+tools/audio/build.py).
 
   cd video && npm run data && cd ..                                     # the verses, from the registry
   python3 tools/audio/build.py --episode khidr --require-committed --tts-python /bin/false && (cd video && npm run data)
@@ -242,9 +243,15 @@ def main() -> None:
         sys.exit("error: --voice and --takes, or --draft")
 
     spec = yaml.safe_load((ROOT / "content" / "trial" / f"{args.trial}.yaml").read_text(encoding="utf-8"))
-    args.episode = args.episode or spec.get("verses", "khidr-solo")
-    episode = json.loads((PUBLIC / "data" / f"{args.episode}.json").read_text(encoding="utf-8"))
-    by_source = {s["source"]["id"]: s for s in episode["scenes"] if s.get("source") and s["audio"] == "recitation"}
+    # Where the quotes come from: the registry (tools/trial/sources.py), or, for the first film, the old episode
+    # its file names in `verses` (texts prepared by video/scripts/prepare.ts, audio built by tools/audio/build.py).
+    args.episode = args.episode or spec.get("verses")
+    by_source = None
+    if args.episode:
+        episode = json.loads((PUBLIC / "data" / f"{args.episode}.json").read_text(encoding="utf-8"))
+        by_source = {s["source"]["id"]: s for s in episode["scenes"] if s.get("source") and s["audio"] == "recitation"}
+    else:
+        import sources
     out_dir = PUBLIC / "trial"
     out_dir.mkdir(parents=True, exist_ok=True)
     clip = out_dir / f"{args.trial}-clip.mp4"
@@ -271,8 +278,14 @@ def main() -> None:
             wav = out_dir / f"{args.trial}-{args.voice}-{seg['narration']}.wav"
             made = narration(whole, starts, gaps, take_end, first[seg["narration"]], seg["lines"], wav)
             segments.append({**made, "scene": seg["scene"], "start": round(t, 2)})
+        elif "verse" in seg:
+            made = verse_segment(by_source, seg["verse"], out_dir, args.episode) if by_source is not None else sources.verse(seg["verse"], out_dir)
+            segments.append({**made, "scene": seg["scene"], "start": round(t, 2)})
+        elif "reading" in seg and by_source is None:
+            # A hadith read by a real voice, in a short as in the film; never the synthetic voice.
+            segments.append({**sources.reading(seg["reading"], out_dir, draft=args.draft), "scene": seg["scene"], "start": round(t, 2)})
         else:
-            segments.append({**verse_segment(by_source, seg["verse"], out_dir, args.episode), "scene": seg["scene"], "start": round(t, 2)})
+            sys.exit(f"error: a segment that is neither a narration, a verse nor a reading from the registry: {sorted(seg)}")
         t += segments[-1]["seconds"] + GAP
     total = round(t - GAP + TAIL, 2)
     # The ambience under the narration, silent under each verse (tools/trial/ambience.py).
@@ -294,6 +307,8 @@ def main() -> None:
         data["ambience"] = f"trial/{bed['file'].name}"
     out = out_dir / f"{args.trial}-{args.voice}.json"
     out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+    if by_source is None and sources.proposed:
+        print("not validated by the owner yet: " + "; ".join(sources.proposed))
     for s in segments:
         what = " | ".join(f"{ph['text']}@{ph['start']}" for l in s.get("lines", []) for ph in l["phrases"]) or s.get("reference")
         print(f"{s['start']:6.2f}  {s['kind']:9s} {s['seconds']:5.2f} s  {s['scene']:6s} {what}")

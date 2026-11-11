@@ -8,11 +8,11 @@ import type { CalculateMetadataFunction } from "remotion";
 import { AbsoluteFill, Html5Audio, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { FONT, loadFonts } from "../fonts";
 import { Boat, Fleet } from "./Boat";
-import { subtitleChunks } from "../templates/Subtitles";
 import { House, Land } from "./Home";
-import { Clip, GOLD, NarrationText, SHADOW, TRIAL_FPS, VerseText, fit, sceneOpacity } from "./Trial";
-import type { Layout, Narration, Verse } from "./Trial";
+import { Clip, GOLD, NarrationText, ReadingText, SHADOW, TRIAL_FPS, VerseText, sceneOpacity } from "./Trial";
+import type { Layout, Narration, Reading, Verse } from "./Trial";
 import { Village, Wall } from "./Wall";
+import { Call, Niche, Whale } from "./Dua";
 
 loadFonts();
 
@@ -24,8 +24,7 @@ type Side = "left" | "right";
 type Column = Side | "center";
 /** A filmed clip in the wide frame: the side of what is drawn over it, its horizon, how it is moved and darkened. */
 type FilmPicture = { clip: string; clip_seconds: number; side: Side; horizon: number; shift?: number; brightness?: number; ground?: string; rate?: number };
-type Reading = { kind: "reading"; start: number; seconds: number; file: string; reference: string; text: string; en: string; credit: string };
-type FilmSegment = ((Omit<Narration, "scene"> | Omit<Verse, "scene">) | Reading) & { chapter: string; center?: boolean };
+type FilmSegment = (Omit<Narration, "scene"> | Omit<Verse, "scene"> | Omit<Reading, "scene">) & { chapter: string; center?: boolean };
 type Shot = { start: number; picture: string; scene: string };
 type Chapter = { id: string; title: { ar: string; en: string }; number: number | null; start: number };
 export type FilmData = {
@@ -118,7 +117,61 @@ const WallWide: Drawn = ({ t, show, horizon }) => (
   </>
 );
 
-const WIDE: Record<string, Drawn> = { boat: BoatWide, boy: HomeWide, wall: WallWide };
+/** The house of the first call of the du'a film, on the left of the wide frame, at dawn. */
+const AskedWide: Drawn = ({ t, show, horizon }) => (
+  <>
+    <Land id="fl-asked" horizon={horizon} rim="#ffc98a" width={W} />
+    <g opacity={show("lit")}>
+      <House id="fa-more" x={930} y={horizon + 8} scale={0.46} t={t + 3} lights={2} rim="#ffc98a" />
+    </g>
+    <g opacity={show("dark")}>
+      <House id="fa-dark" x={480} y={horizon + 34} scale={0.95} t={t} lights={0} rim="#ffc98a" />
+    </g>
+    <g opacity={show("call")}>
+      <House id="fa-call" x={480} y={horizon + 34} scale={0.95} t={t} lights={1} rim="#ffc98a" />
+    </g>
+    <g opacity={show("lit")}>
+      <House id="fa-lit" x={480} y={horizon + 34} scale={0.95} t={t} lights={2} rim="#ffc98a" />
+    </g>
+  </>
+);
+
+/** The sea of the second call, the tail of the great fish on the left of the wide frame. */
+const WrittenWide: Drawn = ({ t, show, since, horizon }) => {
+  const dark = Math.max(show("deep"), show("light"));
+  return (
+    <>
+      <rect x={-60} y={-60} width={W + 120} height={H + 120} fill="#02030a" opacity={0.42 * dark} />
+      <g opacity={show("light")}>
+        <Call id="fw-call" x={520} y={horizon + 190} t={t} />
+      </g>
+      <g opacity={show("deep")}>
+        <Whale id="fw-deep" x={520} y={horizon + 190} scale={1.15} t={t} sink={Math.min(1, Math.max(0, (t - since("deep") - 9) / 14))} />
+      </g>
+    </>
+  );
+};
+
+/** The place of prayer of the third call, on the right of the wide frame, under the filmed moon (the text takes the dark side). */
+const WaitedWide: Drawn = ({ t, show, horizon }) => (
+  <>
+    <Land id="fl-waited" horizon={horizon} rim="#9fb6e6" width={W} />
+    <g opacity={show("niche")}>
+      <Niche id="fn-niche" x={1450} y={horizon + 34} scale={0.95} t={t} lights={1} />
+    </g>
+    <g opacity={show("two")}>
+      <Niche id="fn-two" x={1450} y={horizon + 34} scale={0.95} t={t} lights={2} />
+    </g>
+    <g opacity={show("far")}>
+      <Niche id="fn-far" x={1500} y={horizon + 30} scale={0.5} t={t} lights={2} />
+    </g>
+  </>
+);
+
+const WIDE: Record<string, Drawn> = {
+  boat: BoatWide, boy: HomeWide, wall: WallWide,
+  asked: AskedWide, written: WrittenWide, waited: WaitedWide,
+};
 
 /** One stretch of the film on the same clip: the clip, what is drawn over it scene after scene, a slow zoom. */
 const Stage: React.FC<{ picture: FilmPicture; name: string; shots: Shot[]; from: number; fade: number }> = ({ picture, name, shots, from, fade }) => {
@@ -143,33 +196,6 @@ const Stage: React.FC<{ picture: FilmPicture; name: string; shots: Shot[]; from:
       <AbsoluteFill style={{ background: veil }} />
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(4,7,20,.5) 0%, rgba(4,7,20,0) 16%, rgba(4,7,20,0) 74%, rgba(4,7,20,.72) 100%)" }} />
     </AbsoluteFill>
-  );
-};
-
-/** A hadith read by a real voice: its words between « », its reference above, the reader and the translator under. */
-const ReadingText: React.FC<{ seg: Reading; t: number; layout: Layout }> = ({ seg, t, layout }) => {
-  const local = t - seg.start;
-  const show = interpolate(local, [-0.3, 0.1, seg.seconds - 0.1, seg.seconds + 0.3], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  // The translation in short chunks, each for its share of the reading (there are no word times for a reader).
-  const chunks = subtitleChunks(seg.en);
-  const total = chunks.reduce((n, c) => n + c.length, 0) || 1;
-  let done = 0;
-  const cue = chunks.find((c) => (done += c.length) / total > local / seg.seconds) ?? chunks[chunks.length - 1];
-  return (
-    <div style={{ opacity: show }}>
-      <div style={{ position: "absolute", top: layout.verseTop, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.latin, fontSize: 30, color: "rgba(255,255,255,.72)", textShadow: SHADOW }}>
-        {seg.reference}
-      </div>
-      <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.verseTop + 56, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.arabic, fontSize: fit(64, seg.text, 90), lineHeight: 1.8, color: "#fff", textShadow: SHADOW, textWrap: "balance" }}>
-        « {seg.text} »
-      </div>
-      <div lang="en" style={{ position: "absolute", top: layout.sub.top, left: layout.sub.left, right: layout.sub.right, textAlign: "center", fontFamily: FONT.latin, fontStyle: "italic", fontSize: layout.sub.size, lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
-        {cue}
-      </div>
-      <div style={{ position: "absolute", top: layout.credit.top, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.latin, fontSize: layout.credit.size, color: "rgba(255,255,255,.62)", textShadow: SHADOW }}>
-        {seg.credit}
-      </div>
-    </div>
   );
 };
 
@@ -251,7 +277,7 @@ export const Film: React.FC<FilmProps> = ({ data }) => {
       ) : current.kind === "verse" ? (
         <VerseText seg={{ ...current, scene: shot.scene }} t={t} layout={layout} />
       ) : (
-        <ReadingText seg={current} t={t} layout={layout} />
+        <ReadingText seg={{ ...current, scene: shot.scene }} t={t} layout={layout} />
       )}
       {/* where we are in the story: the chapter, top left */}
       <div dir="rtl" lang="ar" style={{ position: "absolute", top: 50, left: 70, opacity: 0.86 * chapterIn * (ended ? 0 : 1), fontFamily: FONT.arabic, fontWeight: 700, fontSize: 36, color: GOLD, textShadow: SHADOW }}>

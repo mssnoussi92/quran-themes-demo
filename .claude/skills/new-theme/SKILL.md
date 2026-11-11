@@ -31,9 +31,9 @@ to correct a video published before.
 - **A new theme or story**: skill `choose-format` first (the kind of subject, its hard filters), then
   here. A reference video the owner shares is analysed in `reference/`, text only (method in
   `docs/legacy/skills/new-theme.md`, step 0).
-- The model was proven on **a story**. For misconceptions, a collection or one text explained, propose
-  the structure of the film and of the shorts to the owner before writing (`docs/model.md`, « Ce que les
-  outils ne font pas encore », 6), and say which tool is missing (a hadith in a short, 2).
+- The model was proven on **a story**, then opened to misconceptions with the du'a (`content/trial/dua.yaml`,
+  `asked`, `written`, `waited`: each wrong idea broken by one concrete call in the Quran). For a collection or
+  one text explained, propose the structure of the film and of the shorts to the owner before writing.
 
 ## 2. Sources
 
@@ -56,10 +56,11 @@ A claim is a verse or a hadith of the registry, never a summary from memory.
   at the envelope (`--set`), and the owner is told which ones were set by hand.
 - **Recitation length** decides the size: the film lasts about twice its recitation (3:50 of verses in
   7:47). Sum it before the outline (`choose-format`, « Hard filters »).
-- **How a source reaches a video today**: through a prepared episode, the one the short or the film
-  names in `verses:`. A rewrite uses its own episode. A source that episode does not hold cannot be
-  played yet: that is the first tool to build (`docs/model.md`, 1), not something to work around by
-  editing a validated episode. Say it to the owner when the outline needs one.
+- **How a source reaches a video**: by its id, from the registry (`tools/trial/sources.py`: the text
+  shown, the reciter's cut, the reader's recording, all levelled). A verse needs its cut, a hadith its
+  recorded reading (in a draft a hadith with no reading yet is kept twelve seconds, silent). What the
+  owner has not validated yet is played and listed (« not validated by the owner yet »): they hear it in
+  the videos. Only the first film still reads an old episode (`verses:`).
 
 ## 3. The film first, then its shorts
 
@@ -86,8 +87,11 @@ Write the outline as a table and send it with the script (step 4).
 ## 4. The script, then the owner
 
 Skill `write-hook`: the beats of a short, the film's own lines, the words the owner refused, the
-checks. Then send the owner the whole script, Arabic and English, segment by segment, your own lines
-marked, with the outline and the draft pictures of step 5. **Wait for « je valide le script »** (or
+checks. Then `uv run --with pyyaml python3 tools/trial/script.py --film <film>` writes the whole script
+as one page (`docs/scripts/<film>.md`): every segment, Arabic and English, each quote from the registry,
+your own lines marked « nouvelle » and the validated lines of an old episode « reprise » (`kept:`), with an
+estimate of each video's length (within six seconds on the first film). Send it to the owner with the
+draft pictures of step 5. **Wait for « je valide le script »** (or
 their corrections) before the voice: write `script_validated: { by: <owner>, on: <date> }` in each file
 on that word only. A line changed afterwards is to be validated again.
 

@@ -18,7 +18,7 @@ Référence du modèle actuel : `docs/model.md`. Conception de l'ancien circuit 
 - **Où** : `content/trial/` (un fichier par short, un par film), `tools/trial/`, `video/src/trial/` ; le dossier s'appelle encore `trial`, ce n'est plus un essai. Champs, réglages, catalogues des clips et des ambiances, chaîne de commandes : `docs/model.md`.
 - **Le propriétaire décide trois fois** : le sujet, le script avant la voix, les vidéos à la fin. Sa validation s'inscrit sur sa parole (`script_validated`, `validated`), jamais par l'IA. Il publie à la main.
 - **Les skills** (`.claude/skills/`) mènent du sujet aux vidéos : `choose-format`, `new-theme`, `write-hook`, `new-scene`, `narration-takes`, `voice-spelling`, `find-hadith-recording`, `release-render`.
-- **Ce que les outils ne font pas encore** (`docs/model.md`) : une source doit passer par un ancien épisode préparé, un short ne joue pas de hadith, aucune écriture pour la voix seule, aucun contrôle automatique des règles sur ces fichiers, rendu dans une session seulement (environ 4 images par seconde, vidéos livrées dans la conversation). Le modèle n'a été éprouvé que sur une histoire.
+- **Ce que les outils ne font pas encore** (`docs/model.md`) : aucune écriture pour la voix seule, aucun contrôle automatique des règles sur ces fichiers, rendu dans une session seulement (environ 4 images par seconde, vidéos livrées dans la conversation). Une histoire est validée ; les idées reçues sont en cours (le du'a).
 
 ## Objectif de la démo (ancien circuit, définition de « fini »)
 
@@ -89,7 +89,8 @@ tools/audio/listen.py    écoute par Whisper : texte, temps des mots, segments, 
 tools/audio/align.py     chaque phrase d'un texte retrouvée dans UNE longue prise (Whisper, alignement lettre à lettre) : une requête Gemini par chapitre
 content/trial/           LE MODÈLE (docs/model.md) : un fichier par short (clip, ambiance, couverture, textes, segments) et un par film
                          (chapitres, vignette) ; takes/ : les prises de la voix D (une par texte, gardées)
-tools/trial/             clip.py (clip filmé, Pixabay), prepare.py (un short ; --film <id> : le film, film.py), ambience.py (nappe sous la
+tools/trial/             script.py (le script en une page à valider), clip.py (clip filmé, Pixabay), sources.py (un verset ou un hadith du
+                         registre, prêt à jouer), prepare.py (un short ; --film <id> : le film, film.py), ambience.py (nappe sous la
                          narration ; --mix sous une vidéo rendue), publish.py (textes à coller), check.py (contrôle d'un rendu)
 requirements/            dépendances Python par moteur (un venv par moteur)
 infra/claude-cloud-setup.sh  script de setup de l'environnement cloud (copié dans l'UI)

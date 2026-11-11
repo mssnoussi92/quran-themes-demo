@@ -23,7 +23,7 @@ idea, or yours, is weaker than another on the evidence. You recommend; the owner
 | The subject is… | Format | In the model |
 | --- | --- | --- |
 | a story (Quran, or told by the Prophet ﷺ) of three events or more | `story-suspense`, `story-linear` | proven (Musa and al-Khidr): one short per event with its answer, the film with every part and what ties them |
-| an inner state or a virtue people misunderstand, three misconceptions really held | `misconceptions` | not built yet: each short quotes a hadith, which a short cannot play today |
+| an inner state or a virtue people misunderstand, three misconceptions really held | `misconceptions` | in progress (the du'a, `docs/themes.md`): each wrong idea is broken by one concrete fact of the Quran that can be drawn, its hadith as second proof |
 | several short moments with one real thread | `collection` | not tried: one short per moment fits the model well |
 | one hadith or one long verse, sentence by sentence | `text-explained` | not tried |
 | two people, the same gift or trial, opposite answers | `two-paths` | not tried |
@@ -54,10 +54,9 @@ Drop a candidate that fails one:
   is never shown; the unseen is never pictured.
 - **Every short stands alone**: its promise is kept before it ends. A part that only prepares another
   belongs to the film, not to a short.
-- **What the tools play today** (`docs/model.md`, « Ce que les outils ne font pas encore »): a source
-  must be in an episode already prepared, a short cannot play a hadith reading, nothing checks the
-  rules automatically. A candidate that needs one of these is not dropped: its sheet says which tool
-  comes first.
+- **What the tools do not do yet** (`docs/model.md`, « Ce que les outils ne font pas encore »): no
+  spelling for the voice only, nothing checks the rules automatically on the model's files. A candidate
+  that needs one of these is not dropped: its sheet says which tool comes first.
 
 ## 3. Criteria
 

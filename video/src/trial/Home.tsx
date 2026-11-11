@@ -34,8 +34,9 @@ export const Land: React.FC<{ id: string; horizon: number; rim: string; path?: b
 };
 
 /** A flat-roofed house and its lower wing, a palm beside it. (x, y): the middle of its foot on the ground.
- * `lights`: 1, the window of the house; 2, the window of the wing as well. */
-export const House: React.FC<{ id: string; x: number; y: number; scale: number; t: number; lights: 1 | 2 }> = ({ id, x, y, scale, t, lights }) => {
+ * `lights`: 1, the window of the house; 2, the window of the wing as well; 0, no light at all (nobody answers yet).
+ * `rim`: the colour of the light on its edges (the moon by default; a warm one at dawn). */
+export const House: React.FC<{ id: string; x: number; y: number; scale: number; t: number; lights: 0 | 1 | 2; rim?: string }> = ({ id, x, y, scale, t, lights, rim = "#9fb6e6" }) => {
   const flicker = (d: number) => 0.9 + 0.1 * Math.sin(t * 2.3 + d) * Math.sin(t * 0.7 + 2 * d);
   const window = (cx: number, cy: number, d: number) => (
     <g opacity={flicker(d)}>
@@ -43,6 +44,9 @@ export const House: React.FC<{ id: string; x: number; y: number; scale: number; 
       <path d={`M ${cx - 22} ${cy + 34} L ${cx - 22} ${cy - 12} A 22 22 0 0 1 ${cx + 22} ${cy - 12} L ${cx + 22} ${cy + 34} Z`} fill="#ffe9c4" />
       <path d={`M ${cx} ${cy - 34} L ${cx} ${cy + 34} M ${cx - 22} ${cy + 2} L ${cx + 22} ${cy + 2}`} stroke={INK} strokeWidth={4} />
     </g>
+  );
+  const unlit = (cx: number, cy: number) => (
+    <path d={`M ${cx - 22} ${cy + 34} L ${cx - 22} ${cy - 12} A 22 22 0 0 1 ${cx + 22} ${cy - 12} L ${cx + 22} ${cy + 34} Z`} fill="#0d1020" stroke={rim} strokeWidth={2} strokeOpacity={0.2} />
   );
   return (
     <g transform={`translate(${x} ${y}) scale(${scale})`}>
@@ -55,7 +59,7 @@ export const House: React.FC<{ id: string; x: number; y: number; scale: number; 
         </filter>
       </defs>
       {/* the warm light the windows throw on the ground in front of the house */}
-      <ellipse cx={lights === 2 ? 40 : -30} cy={26} rx={lights === 2 ? 260 : 170} ry={30} fill={LIGHT} opacity={0.16} filter={`url(#${id}-soft)`} />
+      {lights > 0 ? <ellipse cx={lights === 2 ? 40 : -30} cy={26} rx={lights === 2 ? 260 : 170} ry={30} fill={LIGHT} opacity={0.16} filter={`url(#${id}-soft)`} /> : null}
       {/* the palm, behind the house */}
       <g transform="translate(-250 0)">
         <path d="M -8 0 C -2 -110 6 -220 26 -330 L 40 -328 C 24 -220 18 -110 12 0 Z" fill={INK} />
@@ -67,12 +71,12 @@ export const House: React.FC<{ id: string; x: number; y: number; scale: number; 
       <path d="M -170 0 L -170 -236 L -150 -236 L -150 -252 L -110 -252 L -110 -236 L 50 -236 L 50 -252 L 90 -252 L 90 -236 L 110 -236 L 110 0 Z" fill={INK} />
       <path d="M 110 0 L 110 -150 L 126 -150 L 126 -162 L 290 -162 L 290 -150 L 306 -150 L 306 0 Z" fill={INK} />
       {/* moonlight on the edges that face the moon */}
-      <path d="M 110 -236 L 110 -150 M 306 -150 L 306 0" stroke="#9fb6e6" strokeWidth={3} opacity={0.5} />
-      <path d="M -150 -252 L -110 -252 M 50 -252 L 90 -252 M 126 -162 L 290 -162" stroke="#9fb6e6" strokeWidth={3} opacity={0.4} />
+      <path d="M 110 -236 L 110 -150 M 306 -150 L 306 0" stroke={rim} strokeWidth={3} opacity={0.5} />
+      <path d="M -150 -252 L -110 -252 M 50 -252 L 90 -252 M 126 -162 L 290 -162" stroke={rim} strokeWidth={3} opacity={0.4} />
       {/* the door, closed */}
-      <path d="M -62 0 L -62 -96 A 34 34 0 0 1 6 -96 L 6 0 Z" fill="#0d1020" stroke="#9fb6e6" strokeWidth={2} strokeOpacity={0.25} />
-      {window(-110, -150, 0)}
-      {lights === 2 ? window(208, -84, 1.7) : null}
+      <path d="M -62 0 L -62 -96 A 34 34 0 0 1 6 -96 L 6 0 Z" fill="#0d1020" stroke={rim} strokeWidth={2} strokeOpacity={0.25} />
+      {lights > 0 ? window(-110, -150, 0) : unlit(-110, -150)}
+      {lights === 2 ? window(208, -84, 1.7) : lights === 0 ? unlit(208, -84) : null}
     </g>
   );
 };

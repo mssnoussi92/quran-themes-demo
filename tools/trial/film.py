@@ -79,10 +79,15 @@ def prepare(args) -> None:
         args.voice = args.voice or "X"
     elif not args.voice or not args.takes:
         return                                   # the thumbnail only
-    episode_name = args.episode or film["verses"]
-    episode = json.loads((P.PUBLIC / "data" / f"{episode_name}.json").read_text(encoding="utf-8"))
-    recited = {s["source"]["id"]: s for s in episode["scenes"] if s.get("source") and s["audio"] == "recitation"}
-    read = {s["source"]["id"]: s for s in episode["scenes"] if s.get("source") and (s["source"].get("recording") or {}).get("status") == "validated"}
+    # The quotes: from the registry (tools/trial/sources.py), or from the old episode the first film names in `verses`.
+    episode_name = args.episode or film.get("verses")
+    recited = read = None
+    if episode_name:
+        episode = json.loads((P.PUBLIC / "data" / f"{episode_name}.json").read_text(encoding="utf-8"))
+        recited = {s["source"]["id"]: s for s in episode["scenes"] if s.get("source") and s["audio"] == "recitation"}
+        read = {s["source"]["id"]: s for s in episode["scenes"] if s.get("source") and (s["source"].get("recording") or {}).get("status") == "validated"}
+    else:
+        import sources
 
     trials: dict[str, dict] = {}
     takes: dict[str, Take] = {fid: Take(fid, film, args, out_dir)}
@@ -113,7 +118,9 @@ def prepare(args) -> None:
             elif "narration" in seg:
                 made = takes[fid].segment(seg["narration"], None, wav)
             elif "verse" in seg:
-                made = P.verse_segment(recited, seg["verse"], out_dir, episode_name)
+                made = P.verse_segment(recited, seg["verse"], out_dir, episode_name) if recited is not None else sources.verse(seg["verse"], out_dir)
+            elif read is None:
+                made = sources.reading(seg["reading"], out_dir, draft=args.draft)
             else:
                 source = read.get(seg["reading"])
                 if source is None:
@@ -180,6 +187,8 @@ def prepare(args) -> None:
     out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
 
     stamp = lambda x: f"{int(x // 60)}:{int(x % 60):02d}"
+    if recited is None and sources.proposed:
+        print("  not validated by the owner yet: " + "; ".join(sources.proposed))
     recitation = sum(s["seconds"] for s in segments if s["kind"] == "verse")
     for c in chapters:
         print(f"  {stamp(c['start'])}  {c['title']['en']}")

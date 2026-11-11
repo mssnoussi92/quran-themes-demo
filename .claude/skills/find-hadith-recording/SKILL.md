@@ -61,8 +61,9 @@ reader's extract alone, the hadith's words on screen between « », its referenc
 - A new recording is `proposed`: send the owner the extract itself (an MP3, in the conversation) with
   what Whisper hears differently; on their word write `status: validated` and `validated_by` with a
   ruamel round trip. Never on your own judgement.
-- **A short cannot play a reading yet** (`docs/model.md`, « Ce que les outils ne font pas encore », 2):
-  a hadith belongs to the film until `prepare.py` and `Trial.tsx` learn it.
+- A short plays a reading the same way (`reading:` in its segments). Files that read the registry
+  (`tools/trial/sources.py`, every film but the first) play a recording still `proposed` and list it:
+  the owner hears it in the videos; with no recording at all, only a draft is prepared.
 
 Steps 1 to 5 below are the same for the model; steps 6 and 7 describe the mix and the validation of
 the episodes published before.

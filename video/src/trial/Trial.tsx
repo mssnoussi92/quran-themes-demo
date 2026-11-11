@@ -10,6 +10,7 @@ import { FONT, loadFonts } from "../fonts";
 import { subtitleChunks } from "../templates/Subtitles";
 import type { WordTiming } from "../types";
 import { Boat, Fleet } from "./Boat";
+import { Call, Niche, Whale } from "./Dua";
 import { House, Land } from "./Home";
 import { Village, Wall } from "./Wall";
 
@@ -23,7 +24,12 @@ export type Verse = {
   kind: "verse"; scene: string; start: number; seconds: number; file: string;
   reference: string; text: string; en: string; words: WordTiming[]; credit: string;
 };
-type Segment = Narration | Verse;
+/** A hadith read by a real voice (the registry's recording); `file` is null in a draft when no reading is found yet. */
+export type Reading = {
+  kind: "reading"; scene: string; start: number; seconds: number; file: string | null;
+  reference: string; text: string; en: string; credit: string;
+};
+type Segment = Narration | Verse | Reading;
 /** How the filmed clip sits in the frame: where it is cropped, how far down (or up) it is moved to leave the
  * text its place, how dark, the colour behind it, where its horizon is (the picture grows around it). */
 export type Picture = { position?: string; shift?: number; brightness?: number; ground?: string; horizon?: number; rate?: number };
@@ -159,7 +165,64 @@ const WallPicture: Drawn = ({ t, show, horizon }) => (
   </>
 );
 
-export const PICTURES: Record<string, Drawn> = { boat: BoatPicture, boy: HomePicture, wall: WallPicture };
+/** The du'a, first call (21:83-84): a house alone at dawn. `dark`: no light at its windows; `call`: one window lit;
+ * `lit`: every window lit, and another house beside it (his family, and as many again); `land`: the land alone. */
+const AskedPicture: Drawn = ({ t, show, horizon }) => (
+  <>
+    <Land id="l-asked" horizon={horizon} rim="#ffc98a" />
+    <g opacity={show("lit")}>
+      <House id="a-more" x={900} y={horizon + 4} scale={0.5} t={t + 3} lights={2} rim="#ffc98a" />
+    </g>
+    <g opacity={show("dark")}>
+      <House id="a-dark" x={470} y={horizon + 34} scale={1} t={t} lights={0} rim="#ffc98a" />
+    </g>
+    <g opacity={show("call")}>
+      <House id="a-call" x={470} y={horizon + 34} scale={1} t={t} lights={1} rim="#ffc98a" />
+    </g>
+    <g opacity={show("lit")}>
+      <House id="a-lit" x={470} y={horizon + 34} scale={1} t={t} lights={2} rim="#ffc98a" />
+    </g>
+  </>
+);
+
+/** The du'a, second call (21:87-88, 37:143-144): the sea, and nobody. `deep`: the dark closes on the tail of the
+ * great fish going down; `light`: a light under the water, where the call comes from; `shore`, `sea`: the sea alone. */
+const WrittenPicture: Drawn = ({ t, show, since, horizon }) => {
+  const dark = Math.max(show("deep"), show("light"));
+  return (
+    <>
+      <rect x={-60} y={-60} width={W + 120} height={H + 120} fill="#02030a" opacity={0.42 * dark} />
+      <g opacity={show("light")}>
+        <Call id="w-call" x={560} y={horizon + 170} t={t} />
+      </g>
+      <g opacity={show("deep")}>
+        <Whale id="w-deep" x={560} y={horizon + 150} scale={1.5} t={t} sink={Math.min(1, Math.max(0, (t - since("deep") - 9) / 14))} />
+      </g>
+    </>
+  );
+};
+
+/** The du'a, third call (19:4, 21:89-90): the place where he prays, under the moon. `niche`: its lamp; `two`: a
+ * second light beside it (what he is given); `far`: the same from afar; `sky`: the land alone. */
+const WaitedPicture: Drawn = ({ t, show, horizon }) => (
+  <>
+    <Land id="l-waited" horizon={horizon} rim="#9fb6e6" path />
+    <g opacity={show("niche")}>
+      <Niche id="n-niche" x={340} y={horizon + 34} scale={1} t={t} lights={1} />
+    </g>
+    <g opacity={show("two")}>
+      <Niche id="n-two" x={340} y={horizon + 34} scale={1} t={t} lights={2} />
+    </g>
+    <g opacity={show("far")}>
+      <Niche id="n-far" x={300} y={horizon + 22} scale={0.52} t={t} lights={2} />
+    </g>
+  </>
+);
+
+export const PICTURES: Record<string, Drawn> = {
+  boat: BoatPicture, boy: HomePicture, wall: WallPicture,
+  asked: AskedPicture, written: WrittenPicture, waited: WaitedPicture,
+};
 
 const hasLetter = (token: string) => /\p{L}/u.test(token);
 export const fit = (base: number, text: string, comfortable: number) => Math.round(base * Math.min(1, Math.sqrt(comfortable / Math.max(1, text.length))));
@@ -175,10 +238,12 @@ export type Layout = {
   /** The translation: `rows`, the most rows it may take before the bottom of the frame (it is written smaller to fit). */
   sub: { top: number; left: number; right: number; size: number; rows?: number };
   credit: { top: number; size: number };
+  /** The length a hadith's text is comfortable at, at its largest size (90 when not said: the film). */
+  readingComfortable?: number;
 };
 export const PORTRAIT: Layout = {
   width: W, left: 70, right: 70, top: 340, size: 104, height: 450, verseTop: 316, verseSize: 66, verseComfortable: 150,
-  sub: { top: 1490, left: 80, right: 80, size: 44 }, credit: { top: 1716, size: 30 },
+  sub: { top: 1490, left: 80, right: 80, size: 44 }, credit: { top: 1716, size: 30 }, readingComfortable: 120,
 };
 
 /** The largest size at which the phrases of a line, each on its own row (a long one on two), stay above
@@ -295,6 +360,33 @@ export const VerseText: React.FC<{ seg: Verse; t: number; layout?: Layout }> = (
   );
 };
 
+/** A hadith read by a real voice: its words between « », its reference above, the reader and the translator under. */
+export const ReadingText: React.FC<{ seg: Reading; t: number; layout?: Layout }> = ({ seg, t, layout = PORTRAIT }) => {
+  const local = t - seg.start;
+  const show = interpolate(local, [-0.3, 0.1, seg.seconds - 0.1, seg.seconds + 0.3], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  // The translation in short chunks, each for its share of the reading (there are no word times for a reader).
+  const chunks = subtitleChunks(seg.en);
+  const total = chunks.reduce((n, c) => n + c.length, 0) || 1;
+  let done = 0;
+  const cue = chunks.find((c) => (done += c.length) / total > local / seg.seconds) ?? chunks[chunks.length - 1];
+  return (
+    <div style={{ opacity: show }}>
+      <div style={{ position: "absolute", top: layout.verseTop, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.latin, fontSize: 30, color: "rgba(255,255,255,.72)", textShadow: SHADOW }}>
+        {seg.reference}
+      </div>
+      <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.verseTop + 56, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.arabic, fontSize: fit(64, seg.text, layout.readingComfortable ?? 90), lineHeight: 1.8, color: "#fff", textShadow: SHADOW, textWrap: "balance" }}>
+        « {seg.text} »
+      </div>
+      <div lang="en" style={{ position: "absolute", top: layout.sub.top, left: layout.sub.left, right: layout.sub.right, textAlign: "center", fontFamily: FONT.latin, fontStyle: "italic", fontSize: layout.sub.size, lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
+        {cue}
+      </div>
+      <div style={{ position: "absolute", top: layout.credit.top, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.latin, fontSize: layout.credit.size, color: "rgba(255,255,255,.62)", textShadow: SHADOW }}>
+        {seg.credit}
+      </div>
+    </div>
+  );
+};
+
 export const Trial: React.FC<TrialProps> = ({ data, platform }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
@@ -331,8 +423,10 @@ export const Trial: React.FC<TrialProps> = ({ data, platform }) => {
       )}
       {current.kind === "narration" ? (
         <NarrationText seg={current} t={t} last={current === data.segments[data.segments.length - 1]} handle={handle} />
-      ) : (
+      ) : current.kind === "verse" ? (
         <VerseText seg={current} t={t} />
+      ) : (
+        <ReadingText seg={current} t={t} />
       )}
       <div style={{ position: "absolute", top: 250, right: 90, fontFamily: FONT.latin, fontWeight: 600, fontSize: 30, color: GOLD, opacity: 0.9, textShadow: SHADOW }}>
         {handle}
