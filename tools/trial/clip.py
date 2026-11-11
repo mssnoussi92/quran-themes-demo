@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Fetch the sea clip of a trial (content/trial/<id>.yaml, `clip`) from Pixabay: it is not in the repository.
+"""Fetch the filmed clip of a trial (content/trial/<id>.yaml, `clip`) from Pixabay: it is not in the repository.
 
-  python3 tools/trial/clip.py --out <dir>/sea.mp4        # needs PIXABAY_API_KEY (set in the cloud environment)
+  python3 tools/trial/clip.py --trial boy --out <dir>/boy.mp4     # needs PIXABAY_API_KEY (set in the cloud environment)
 
 The key is read from the environment and never printed. Pixabay's content licence allows the use; the
-clip is one the owner approved for quran-reels (config/backgrounds.yaml there, pb-dusk-sea).
+clips are ones the owner approved for quran-reels (config/backgrounds.yaml there: pb-dusk-sea,
+pb-full-moon, pb-sunset-clouds). The largest file up to 4K is taken.
 """
 from __future__ import annotations
 
@@ -33,11 +34,11 @@ def main() -> None:
     if not found:
         sys.exit("error: no Pixabay clip id in the trial")
     url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode({"key": key, "id": found.group(1)})
-    with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "quran-themes-demo/0.1"}), timeout=60) as r:
+    with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (video tool)"}), timeout=60) as r:
         hit = json.load(r)["hits"][0]
     video = hit["videos"].get("large") or hit["videos"]["medium"]
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    with urllib.request.urlopen(urllib.request.Request(video["url"], headers={"User-Agent": "quran-themes-demo/0.1"}), timeout=300) as r:
+    with urllib.request.urlopen(urllib.request.Request(video["url"], headers={"User-Agent": "Mozilla/5.0 (video tool)"}), timeout=300) as r:
         args.out.write_bytes(r.read())
     print(f"{args.out}: {video['width']}x{video['height']}, {hit.get('duration')} s, by {hit.get('user')}")
 

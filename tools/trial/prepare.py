@@ -16,6 +16,9 @@ verses' texts from the episode khidr-solo already prepared here (npm run data, t
   uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py --voice D --takes <takes> --clip <dir>/sea.mp4
   cd video && npx remotion render Trial916 out/trial-D.mp4 --concurrency=2 --props='{"trial":"boat","voice":"D","data":null}'
 
+Before any voice (no request spent): --trial <id> --draft --clip <clip> writes <id>-X.json, the narration
+silent and timed from its length, the recitation real; stills of Trial916 then show the script on its scenes.
+
 One narration take per voice holds every line of the short (the free tier of Gemini gives 10 requests a
 day): each line is cut into phrases after « … ! ؟ ? . : » as everywhere else, each phrase is found in the
 take by its words as Whisper hears them (tools/audio/align.py; --by-pauses: by the longest silences, the
@@ -40,6 +43,8 @@ LEAD = 0.5          # before the first word, the picture is already there
 TAIL = 1.2          # after the last word
 LEVEL = "loudnorm=I=-16:TP=-1.9:LRA=11"
 PHRASE_CUT = re.compile(r"(?<=[،,….!?؟:])\s+")
+MARKS = re.compile("[ً-ْٰـ]")
+DRAFT_PACE = 10.0   # letters a second while speaking: the Gemini voices D and E (189 letters and 12 pauses in 24 to 27 s)
 
 
 def run(*cmd: str) -> str:
@@ -72,19 +77,28 @@ def pauses(path: Path, count: int) -> list[tuple[float, float]]:
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--trial", default="boat")
-    p.add_argument("--voice", required=True, help="label of the narration voice (D, E)")
-    p.add_argument("--takes", required=True, type=Path, help="directory of the narration take <voice>-<text>.flac (or .wav, .mp3)")
-    p.add_argument("--clip", required=True, type=Path, help="the sea clip (not in the repository)")
-    p.add_argument("--episode", default="khidr-solo", help="prepared episode the verses come from")
+    p.add_argument("--voice", help="label of the narration voice (D, E)")
+    p.add_argument("--takes", type=Path, help="directory of the narration take <voice>-<text>.flac (or .wav, .mp3)")
+    p.add_argument("--clip", required=True, type=Path, help="the filmed clip of the trial (not in the repository)")
+    p.add_argument("--episode", help="prepared episode the verses come from (default: `verses` of the trial)")
+    p.add_argument("--draft", action="store_true",
+                   help="no voice yet: the narration is silent and timed from its length (voice label X), to look at the "
+                        "scenes and the script on stills before any request is spent")
     p.add_argument("--by-pauses", action="store_true", help="place the phrases on the longest pauses of the take, without Whisper (a few lines only)")
     args = p.parse_args()
+    if args.draft:
+        args.voice = args.voice or "X"
+    elif not args.voice or not args.takes:
+        sys.exit("error: --voice and --takes, or --draft")
 
     spec = yaml.safe_load((ROOT / "content" / "trial" / f"{args.trial}.yaml").read_text(encoding="utf-8"))
+    args.episode = args.episode or spec.get("verses", "khidr-solo")
     episode = json.loads((PUBLIC / "data" / f"{args.episode}.json").read_text(encoding="utf-8"))
     by_source = {s["source"]["id"]: s for s in episode["scenes"] if s.get("source") and s["audio"] == "recitation"}
     out_dir = PUBLIC / "trial"
     out_dir.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(args.clip, out_dir / "sea.mp4")
+    clip = out_dir / f"{args.trial}-clip.mp4"
+    shutil.copyfile(args.clip, clip)
 
     # The narration: one take per voice for the whole short (the lines of content/voice-test/<text>.txt, in
     # order), cut here between its segments, in the middle of the pause before each one.
@@ -93,13 +107,30 @@ def main() -> None:
     narrated = [seg for seg in spec["segments"] if "narration" in seg]
     if said != [l["ar"] for seg in narrated for l in seg["lines"]]:
         sys.exit(f"error: {text.name} and the lines of the trial differ")
-    take = next((f for f in (args.takes / f"{args.voice}-{re.sub(r'^[0-9]+-', '', spec['text'])}{ext}" for ext in (".flac", ".wav", ".mp3")) if f.is_file()), None)
-    if take is None:
-        sys.exit(f"error: no take {args.voice}-{re.sub(r'^[0-9]+-', '', spec['text'])}.(flac|wav|mp3) in {args.takes}")
-    whole = out_dir / f"{args.trial}-{args.voice}.wav"
-    run("ffmpeg", "-y", "-loglevel", "error", "-i", str(take), "-af", LEVEL, "-ar", "48000", "-ac", "1", str(whole))
     phrases = [ph for seg in narrated for l in seg["lines"] for ph in PHRASE_CUT.split(l["ar"].strip())]
-    if args.by_pauses:
+    whole = out_dir / f"{args.trial}-{args.voice}.wav"
+    if not args.draft:
+        take = next((f for f in (args.takes / f"{args.voice}-{re.sub(r'^[0-9]+-', '', spec['text'])}{ext}" for ext in (".flac", ".wav", ".mp3")) if f.is_file()), None)
+        if take is None:
+            sys.exit(f"error: no take {args.voice}-{re.sub(r'^[0-9]+-', '', spec['text'])}.(flac|wav|mp3) in {args.takes}")
+        run("ffmpeg", "-y", "-loglevel", "error", "-i", str(take), "-af", LEVEL, "-ar", "48000", "-ac", "1", str(whole))
+    if args.draft:
+        # No voice yet: each phrase lasts what its letters take at the pace of the Gemini voices (7.5 a second,
+        # measured on D and E) and is followed by a pause, longer at the end of a line.
+        line_ends, n = set(), 0
+        for seg in narrated:
+            for l in seg["lines"]:
+                n += len(PHRASE_CUT.split(l["ar"].strip()))
+                line_ends.add(n - 1)
+        starts, after, at = [], [], 0.1
+        for i, ph in enumerate(phrases):
+            starts.append(round(at, 2))
+            stop = at + max(0.5, len(re.sub(r"[^\w]", "", MARKS.sub("", ph))) / DRAFT_PACE)
+            at = stop + (0.7 if i in line_ends else 0.45)
+            after.append((round(stop, 2), round(at, 2)))
+        gaps = [None] + after[:-1]                          # the pause before each phrase
+        draft_end = after[-1][0] + 0.2
+    elif args.by_pauses:
         # The first way (five lines): the longest pauses of the take, in order. A voice that does not pause
         # at one « … » shifts every phrase after it.
         found = pauses(whole, len(phrases) - 1)
@@ -130,7 +161,7 @@ def main() -> None:
             begin = max(0.0, starts[k] - 0.03)
             print(f"warning: no pause before « {phrases[k]} »: the cut before it may clip a word, listen")
         if k + n >= len(phrases):
-            end = seconds(whole)
+            end = draft_end if args.draft else seconds(whole)
         elif gaps[k + n]:
             end = min((gaps[k + n][0] + gaps[k + n][1]) / 2, gaps[k + n][0] + 0.25)
         else:
@@ -143,8 +174,9 @@ def main() -> None:
         if "narration" in seg:
             begin, end, k = cuts[seg["narration"]]
             wav = out_dir / f"{args.trial}-{args.voice}-{seg['narration']}.wav"
-            run("ffmpeg", "-y", "-loglevel", "error", "-i", str(whole), "-af",
-                f"atrim=start={begin:.3f}:end={end:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.02,afade=t=out:st={end - begin - 0.05:.3f}:d=0.05", str(wav))
+            if not args.draft:
+                run("ffmpeg", "-y", "-loglevel", "error", "-i", str(whole), "-af",
+                    f"atrim=start={begin:.3f}:end={end:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.02,afade=t=out:st={end - begin - 0.05:.3f}:d=0.05", str(wav))
             lines = []
             for line in seg["lines"]:
                 parts = PHRASE_CUT.split(line["ar"].strip())
@@ -154,7 +186,7 @@ def main() -> None:
             for i, line in enumerate(lines):      # a line stays until the next one starts
                 line["end"] = lines[i + 1]["phrases"][0]["start"] if i + 1 < len(lines) else round(end - begin, 2)
             segments.append({"kind": "narration", "scene": seg["scene"], "start": round(t, 2), "seconds": round(end - begin, 2),
-                             "file": f"trial/{wav.name}", "lines": lines})
+                             "file": None if args.draft else f"trial/{wav.name}", "lines": lines})
         else:
             scene = by_source.get(seg["verse"])
             if scene is None:
@@ -169,7 +201,11 @@ def main() -> None:
         t += segments[-1]["seconds"] + GAP
     total = round(t - GAP + TAIL, 2)
     data = {"trial": args.trial, "voice": args.voice, "voice_name": spec["voices"][args.voice], "handle": spec["handle"],
-            "clip": "trial/sea.mp4", "clip_seconds": round(seconds(args.clip), 2), "seconds": total, "segments": segments}
+            "clip": f"trial/{clip.name}", "clip_seconds": round(seconds(args.clip), 2),
+            # How the clip sits in the frame (content/trial/<id>.yaml, `clip`): where it is cropped, how far it is
+            # moved down (or up) to leave the text its place, how much it is darkened, the colour behind it.
+            "picture": {k: spec["clip"][k] for k in ("position", "shift", "brightness", "ground", "horizon", "rate") if k in spec["clip"]},
+            "seconds": total, "segments": segments}
     out = out_dir / f"{args.trial}-{args.voice}.json"
     out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     for s in segments:

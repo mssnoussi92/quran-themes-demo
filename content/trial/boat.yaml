@@ -30,8 +30,9 @@
 # Version 1 : commit 7a36223.
 id: boat
 handle: "@quran_words_daily"
-clip: { source: pixabay, id: 22183, author: Artvan93, page: "https://pixabay.com/videos/id-22183/" }
-voices: { D: "Gemini 3.8 Flash TTS, Algieba", E: "Gemini 3.8 Flash TTS, Sadaltager", V: "VoiceTut, Mohammed" }
+clip: { source: pixabay, id: 22183, author: Artvan93, page: "https://pixabay.com/videos/id-22183/", position: "62% 50%", horizon: 827, rate: 0.85 }
+verses: khidr-solo     # épisode préparé d'où viennent les versets et leur récitation
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", E: "Gemini 3.8 Flash TTS, Sadaltager", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 20-trial-boat   # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
 segments:
   - narration: open

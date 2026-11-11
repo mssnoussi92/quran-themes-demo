@@ -1,0 +1,67 @@
+# Essai, troisième short (2026-11-11, docs/retention.md) : le mur (Al-Kahf 18:77, 18:82), dans le modèle du
+# bateau (content/trial/boat.yaml). Rien n'est validé ; ce fichier n'est pas un épisode.
+# - L'accroche est le miroir de celle du bateau : là-bas des gens généreux et leur bateau percé, ici un village
+#   qui refuse de les recevoir et son mur réparé pour rien.
+# - La promesse est concrète : « sous ce mur, il y avait un secret ».
+# - Ce qu'on ne voit pas : un bien fait pour toi sans que tu le saches ; l'exemple : ce qui arrive tard, quand on
+#   est prêt (« يبلغا أشدهما » : le trésor attend qu'ils aient grandi).
+# - Dernier des trois : la fin redit comment la sagesse s'est dévoilée dans chacun (vite, jamais pour ceux qui
+#   l'ont vécue, cachée jusqu'à son heure), et l'appel à suivre annonce une autre histoire (à remplacer par le
+#   film quand il existera).
+# - Personne n'est montré : le village aux fenêtres éteintes, le mur qui penche puis redressé, la lueur du trésor
+#   dessous, sur un ciel de couchant (clip 190332 de Pixabay, déjà approuvé pour quran-reels, « pb-sunset-clouds »).
+# - Deux versets longs (28 s et 35,5 s) : leur texte s'affiche par pages, au fil de la récitation.
+# - Répliques : toutes de l'IA (« خير مستخبي… ومستني وقته » vient de khidr-04).
+id: wall
+handle: "@quran_words_daily"
+clip: { source: pixabay, id: 190332, author: DancingSky, page: "https://pixabay.com/videos/id-190332/", position: "42% 50%", shift: -400, brightness: 0.62, ground: "#05060c" }
+verses: khidr
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", E: "Gemini 3.8 Flash TTS, Sadaltager", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 22-trial-wall
+segments:
+  - narration: open
+    scene: leaning
+    lines:
+      - ar: "قرية رفضت تضيّفهم… وواحد منهم صلّح جدارها ببلاش! ليه؟"
+        en: "A town refused to host them… and one of them repaired its wall for free! Why?"
+      - ar: "ده حصل بين موسى عليه السلام والخَضِر… وتحت الجدار ده… كان فيه سر."
+        en: "It happened between Moses, peace be upon him, and al-Khidr… and under that wall… there was a secret."
+  - verse: quran.18.77
+    scene: leaning
+  - narration: secret
+    scene: raised
+    lines:
+      - ar: "السر؟ الخَضِر قاله قبل ما يفترقوا."
+        en: "The secret? Al-Khidr told him before they parted."
+  - verse: quran.18.82
+    scene: treasure
+  - narration: meaning
+    scene: treasure
+    lines:
+      - ar: "تحت الجدار… كنز لولدين يتامى… أبوهم كان راجل صالح."
+        en: "Under the wall… a treasure for two orphan boys… whose father had been a righteous man."
+      - ar: "لو الجدار وقع… الكنز كان هيضيع منهم وهم صغيرين… فربنا حفظه لحد ما يكبروا."
+        en: "Had the wall fallen… the treasure would have been lost to them as children… so God kept it until they grew up."
+  - narration: depth
+    scene: far
+    lines:
+      - ar: "الولدين… يمكن عمرهم ما عرفوا مين صلّح جدارهم."
+        en: "The two boys… may never have known who repaired their wall."
+      - ar: "كام جدار اتبنى في حياتك… وإنت مش داري؟"
+        en: "How many walls were built in your life… without your knowing?"
+  - narration: example
+    scene: land
+    lines:
+      - ar: "زي رزق اتأخر عليك سنين… وجالك لما بقيت قدّه."
+        en: "Like a provision delayed for years… that came once you were ready for it."
+      - ar: "التأخير ده… كان حفظ. مش حرمان."
+        en: "That delay… was safekeeping. Not deprivation."
+  - narration: close
+    scene: far
+    lines:
+      - ar: "فيه خير مستخبي… ومستني وقته."
+        en: "Some good is hidden… waiting for its time."
+      - ar: "تلات مواقف: حكمة اتكشفت بسرعة… وحكمة ما اتكشفتش لأصحابها… وخير مستخبي لحد وقته."
+        en: "Three stories: a wisdom shown quickly… a wisdom never shown to those who lived it… and a good hidden until its time."
+      - ar: "تابعنا عشان القصة الجاية."
+        en: "Follow us for the next story."

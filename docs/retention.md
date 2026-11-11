@@ -335,6 +335,45 @@ gratuit.
 Écarté : plusieurs projets ou comptes Google pour multiplier le quota gratuit. La limite est par projet ;
 la multiplier ainsi, c'est la contourner, et c'est le compte du propriétaire qui serait exposé.
 
+### Les deux histoires suivantes, écrites et dessinées sans voix (2026-11-11)
+
+Le propriétaire : continuer à préparer les histoires suivantes, avec leurs scènes et leur script, et laisser
+les voix pour plus tard. Fait, dans le modèle du bateau (une question, le verset, le sens, ce qu'on ne voit
+pas, un exemple de vie, la phrase à retenir, comment la sagesse s'est dévoilée, l'annonce du suivant) :
+
+| Short | Fichier | Versets (récitation) | Image filmée | Ce qui est dessiné | Durée estimée |
+|---|---|---|---|---|---|
+| Le bateau | `content/trial/boat.yaml` | 18:71, 18:79 (34 s) | mer au crépuscule (Pixabay 22183) | le bateau percé, les navires du roi | 1:41 |
+| Le garçon | `content/trial/boy.yaml` | 18:74, 18:80, 18:81 (41 s) | pleine lune dans les nuages (29238) | la maison des parents, une fenêtre allumée, puis deux | 1:52 |
+| Le mur | `content/trial/wall.yaml` | 18:77, 18:82 (63,5 s) | ciel de couchant (190332) | le village éteint, le mur qui penche, redressé, la lueur du trésor | 2:06 |
+
+Les trois clips sont de ceux que le propriétaire a déjà approuvés pour quran-reels (`config/backgrounds.yaml`
+là-bas). Personne n'est dessiné dans aucun des trois.
+
+- **Le garçon.** L'accroche ne dit pas l'acte avec notre voix : elle part des parents (« أب وأم مؤمنين… خسروا
+  ابنهم… ويمكن عمرهم ما عرفوا ليه »), et c'est le verset qui dit ce qui s'est passé. La garde de khidr-03 reste
+  mot pour mot (« والخضر عمل كده بأمر من ربنا… محدش غيره يقدر يعمل كده ») et ne se coupe jamais. L'exemple
+  (quelqu'un qui a perdu un proche) ne donne jamais de raison : « إجابته عند ربنا ». Risque à connaître : le
+  verset dit « فقتله » et sa traduction « killed him » ; une plateforme peut limiter la vidéo pour ce mot.
+- **Le mur.** L'accroche est le miroir de celle du bateau (des gens généreux et leur bateau percé ; un village
+  qui refuse de les recevoir et son mur réparé pour rien) ; la promesse est concrète (« وتحت الجدار ده… كان فيه
+  سر ») ; la phrase qui se partage : « كام جدار اتبنى في حياتك… وإنت مش داري؟ » ; l'exemple : ce qui arrive tard,
+  quand on est prêt (« يبلغا أشدهما »). Dernier des trois, il redit comment la sagesse s'est dévoilée dans
+  chacun. Son appel à suivre annonce « l'histoire suivante » : à remplacer par le film quand il existera.
+- **Les durées** sont longues pour des shorts (1:41 à 2:06). Deux leviers sans toucher au fond : resserrer les
+  pauses de la voix à chaque « … » (une vingtaine de secondes par short ; ce que `build.py` fait déjà pour
+  VoiceTut), et, pour le mur, ses deux versets font à eux seuls 63,5 s.
+
+Ce qui a été construit pour cela : un **brouillon sans voix** (`tools/trial/prepare.py --draft`, voix « X » : la
+narration est muette et minutée d'après sa longueur, la récitation est la vraie), pour regarder scènes et
+script sur des images avant de dépenser une requête ; `Trial916` dessine une histoire par essai (`boat`,
+`boy`, `wall` : `video/src/trial/Boat.tsx`, `Home.tsx`, `Wall.tsx`) sur un clip placé par l'essai (`clip` :
+recadrage, décalage, assombrissement) ; un verset long s'affiche par pages de 14 mots au plus, au fil de la
+récitation ; une réplique longue rétrécit pour rester au-dessus de l'image.
+
+Voix : les répliques des trois shorts tiennent dans trois textes (`content/voice-test/20`, `21`, `22`), soit
+**3 requêtes pour une voix**, 6 pour les deux.
+
 ## La demande
 
 Propriétaire, 2026-11-10, après le premier essai sur Instagram : les règles et les personnages des vidéos faites
