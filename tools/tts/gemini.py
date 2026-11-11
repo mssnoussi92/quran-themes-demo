@@ -27,7 +27,7 @@ import wave
 from pathlib import Path
 
 URL = "https://generativelanguage.googleapis.com/v1beta/interactions"
-RETRY_AFTER = (30, 60, 120)   # seconds, on 429 or a server error (the free tier allows few requests a minute)
+RETRY_AFTER = (30, 60)   # seconds, on 429 or a server error (the free tier allows few requests a minute)
 
 
 def read(path: Path) -> tuple[str, str | None]:
@@ -69,7 +69,8 @@ def say(text: str, style: str | None, voice: str, model: str, key: str) -> bytes
                 return audio_of(json.load(reply))
         except urllib.error.HTTPError as e:
             detail = e.read().decode("utf-8", "replace")[:800]
-            if e.code not in (429, 500, 502, 503, 504) or wait is None:
+            # The daily limit (10 requests a day on the free tier, back at midnight Pacific) is not worth a wait.
+            if e.code not in (429, 500, 502, 503, 504) or wait is None or "per day" in detail:
                 raise SystemExit(f"error: Gemini answered {e.code} for the voice {voice}: {detail}")
             print(f"  {e.code}, attempt {attempt + 1}: waiting {wait} s", flush=True)
             time.sleep(wait)
@@ -93,7 +94,7 @@ def main() -> None:
     p.add_argument("--in", dest="inputs", nargs="+", required=True, type=Path, help="text file(s)")
     p.add_argument("--out-dir", required=True, type=Path)
     p.add_argument("--model", default="gemini-3.8-flash-tts")
-    p.add_argument("--pause", type=float, default=25.0, help="seconds between two requests (free tier)")
+    p.add_argument("--pause", type=float, default=35.0, help="seconds between two requests (free tier)")
     args = p.parse_args()
     key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not key:
@@ -105,7 +106,7 @@ def main() -> None:
             sys.exit(f"error: --voices wants label=Voice, got '{item}'")
         voices.append((label, voice))
     args.out_dir.mkdir(parents=True, exist_ok=True)
-    first = True
+    first, failed = True, []
     for path in args.inputs:
         text, style = read(path)
         name = re.sub(r"^\d+-", "", path.stem)
@@ -114,8 +115,17 @@ def main() -> None:
                 time.sleep(args.pause)
             first = False
             out = args.out_dir / f"{label}-{name}.wav"
-            seconds = write_wav(say(text, style, voice, args.model, key), out)
+            # A request refused (the free tier allows 10 a day) does not lose the takes already made:
+            # the others are still tried, and the run fails at the end, after they are written.
+            try:
+                seconds = write_wav(say(text, style, voice, args.model, key), out)
+            except SystemExit as e:
+                print(e, flush=True)
+                failed.append(out.name)
+                continue
             print(f"{out}: {seconds:.1f} s ({voice}, {args.model})", flush=True)
+    if failed:
+        sys.exit(f"error: {len(failed)} take(s) not made: {', '.join(failed)}")
 
 
 if __name__ == "__main__":

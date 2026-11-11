@@ -9,6 +9,8 @@ import type { ThumbnailProps } from "./Thumbnail";
 import { StyleLab } from "./styles/StyleLab";
 import type { StyleLabProps } from "./styles/StyleLab";
 import { EpisodeVideo } from "./Video";
+import { TRIAL_FPS, Trial, trialMetadata } from "./trial/Trial";
+import type { TrialProps } from "./trial/Trial";
 
 // One composition per format, both fed by the same episode script.
 // Pick another episode or reel with --props, e.g. --props='{"episode":"dua","reel":"dua-01"}'.
@@ -40,6 +42,10 @@ export const RemotionRoot: React.FC = () => (
     {/* Style lab (2026-11-09): one shot of the cave in one style, for the owner to compare styles. */}
     <Composition id="StyleLab" component={StyleLab} fps={FPS} durationInFrames={240} width={1080} height={1920}
       defaultProps={{ style: "paper", shot: "office" } satisfies StyleLabProps} />
+    {/* Trial short of 2026-11-11 (docs/retention.md): filmed sea, drawn silhouette, the verse over the scene.
+        Session only (tools/trial/prepare.py). */}
+    <Composition id="Trial916" component={Trial} fps={TRIAL_FPS} durationInFrames={1} width={1080} height={1920}
+      defaultProps={{ trial: "boat", voice: "D", data: null } satisfies TrialProps} calculateMetadata={trialMetadata} />
     <Still
       id="Thumbnail169"
       component={Thumbnail}

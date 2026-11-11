@@ -1,0 +1,43 @@
+# Essai du 2026-11-11 (docs/retention.md) : le short du bateau dans le modèle proposé, pour que le propriétaire
+# juge sur une vidéo avant tout chantier. Rien n'est validé ; ce fichier n'est pas un épisode (validate.py ne le
+# lit pas) et la vidéo ne se rend que dans une session (la vidéo de mer n'est pas dans le dépôt).
+# - « une question, le verset, le sens » : la narration ne raconte pas ce que le verset va dire ;
+# - la voix continue sur une image qui vit : la mer filmée (Pixabay 22183, clip approuvé par le propriétaire
+#   pour quran-reels) et, dessus, la silhouette dessinée de ce que dit le verset ;
+# - le verset récité sur la scène (Tawfiq As-Sayegh), texte et traduction du registre ;
+# - narration en égyptien, **une seule prise par voix pour tout le short** (content/voice-test/20-trial-boat.txt :
+#   le palier gratuit de Gemini donne 10 requêtes par jour), recoupée sur ses pauses par tools/trial/prepare.py ;
+#   voix D (Algieba) et E (Sadaltager) de Gemini 3.8 Flash TTS, V = la voix de secours (VoiceTut Mohammed) ;
+#   « ركّبوهم » à la place de « شالتهم », que le propriétaire n'aimait pas.
+# Lignes de l'IA : toutes les répliques (reprises de khidr-solo, sauf la première et « السر؟ »).
+id: boat
+handle: "@quran_words_daily"
+clip: { source: pixabay, id: 22183, author: Artvan93, page: "https://pixabay.com/videos/id-22183/" }
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", E: "Gemini 3.8 Flash TTS, Sadaltager", V: "VoiceTut, Mohammed" }
+text: 20-trial-boat   # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+segments:
+  - narration: open
+    scene: holed
+    lines:
+      - ar: "ركّبوهم السفينة ببلاش… وواحد منهم خرقها! ليه؟"
+        en: "They let them board the boat for free… and one of them tore a hole in it! Why?"
+      - ar: "ده حصل بين موسى عليه السلام والخَضِر… والسر في آية من سورة الكهف."
+        en: "It happened between Moses, peace be upon him, and al-Khidr… and the secret is in one verse of Surat al-Kahf."
+  - verse: quran.18.71
+    scene: holed
+  - narration: secret
+    scene: holed
+    lines:
+      - ar: "السر؟ الخَضِر قاله بعدين."
+        en: "The secret? Al-Khidr told him later."
+  - verse: quran.18.79
+    scene: fleet
+  - narration: close
+    scene: sail
+    lines:
+      - ar: "العيب اللي في السفينة… هو اللي حماها."
+        en: "The damage to the boat… is what saved it."
+      - ar: "خسارة صغيرة… حمتهم من خسارة أكبر."
+        en: "A small loss… that spared them a bigger one."
+      - ar: "لما حاجة تتكسر في حياتك… افتكر السفينة."
+        en: "When something breaks in your life… remember the boat."

@@ -158,18 +158,24 @@ jobs:
           for f in $TEXTS; do
             case "$f" in content/voice-test/*.txt) [ -f "$f" ] || { echo "no such text: $f"; exit 1; } ;; *) echo "not a text of content/voice-test/: $f"; exit 1 ;; esac
           done
+          # A take refused (10 requests a day on the free tier) must not lose the ones already made: they are
+          # converted and uploaded all the same, and the job fails afterwards.
+          status=0
           # shellcheck disable=SC2086  # TEXTS is a list of paths
-          python3 tools/tts/gemini.py --voices "$VOICES" --out-dir build/tts --in $TEXTS
+          python3 tools/tts/gemini.py --voices "$VOICES" --out-dir build/tts --in $TEXTS || status=$?
           for f in build/tts/*.wav; do
+            [ -f "$f" ] || continue
             ffmpeg -loglevel error -y -i "$f" -codec:a libmp3lame -qscale:a 2 "${f%.wav}.mp3"
           done
           ls -la build/tts
+          exit "$status"
 
       - uses: actions/upload-artifact@v7
+        if: ${{ !cancelled() }}
         with:
           name: voice-test-gemini
           path: build/tts/*.mp3
-          if-no-files-found: error
+          if-no-files-found: warn
 
   publish:
     needs: [synthesize, gemini]
