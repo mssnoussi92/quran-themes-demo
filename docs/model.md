@@ -67,7 +67,7 @@ video/out/                     (ignoré) rendus
 | --- | --- |
 | `id` | son nom, celui du fichier ; c'est aussi la clé de son dessin (`PICTURES` de `Trial.tsx`, `WIDE` de `Film.tsx`) |
 | `handle` | la signature (`@quran_words_daily`) ; celle de TikTok vient de `content/publish.yaml` (`handles`) |
-| `clip` | le clip filmé : `source: pixabay`, `id`, `author`, `page`, et comment il se pose dans le cadre 9:16 : `position` (recadrage), `shift` (px, vers le bas ou le haut, pour laisser sa place au texte), `brightness`, `ground` (couleur derrière), `horizon` (hauteur de l'horizon : l'image grandit lentement autour), `rate` (vitesse, 0,85 par défaut) ; `landscape` : les mêmes réglages pour le 16:9 du film, et `side` (le côté du dessin, le texte prend l'autre) |
+| `clip` | le clip filmé : `source: pixabay`, `id`, `author`, `page` ; `take`, ce qu'on en garde (`from`, `seconds` : le passage qui sert ; `height` : un 4K réduit ; `pingpong: true` : le passage à l'endroit puis à l'envers, un ciel qui boucle sans saut), appliqué par `tools/trial/clip.py` ; et comment il se pose dans le cadre 9:16 : `position` (recadrage), `shift` (px, vers le bas ou le haut, pour laisser sa place au texte), `brightness`, `ground` (couleur derrière), `horizon` (hauteur de l'horizon : l'image grandit lentement autour), `rate` (vitesse, 0,85 par défaut) ; `landscape` : les mêmes réglages pour le 16:9 du film, et `side` (le côté du dessin, le texte prend l'autre) |
 | `ambience` | l'enregistrement sous la narration : `source: bigsoundbank`, `id`, `title`, `author`, `licence`, `page`, `from` et `seconds` (l'extrait bouclé), `level` (LUFS de la nappe) |
 | `verses` | seulement dans le premier film : l'ancien épisode préparé d'où viennent ses versets ; un fichier sans `verses` lit le registre (`tools/trial/sources.py`) |
 | `voices` | les voix connues : `D` (Gemini, Algieba), `V` (VoiceTut, secours), `X` (brouillon muet) |
@@ -104,8 +104,9 @@ short) et `scene` disent l'image, gardés d'un segment au suivant ; `shots` donn
 ```bash
 cd video && npm ci && cd ..
 uv run --with pyyaml python3 tools/trial/script.py --film <film>       # le script en une page, durées estimées : au propriétaire, avant la voix
-python3 tools/trial/clip.py --trial <id> --out <dir>/<id>.mp4          # le clip (PIXABAY_API_KEY de l'environnement)
-# un clip 4K est d'abord réduit : ffmpeg -i <clip> -vf scale=-2:1440 -an <clip-1440.mp4>
+python3 tools/trial/clip.py --search "<ce que l'image doit montrer>" --out <dir>   # chercher un clip pour le plan : table et planche
+python3 tools/trial/clip.py --look <n> --out <dir>                     # un clip entier sur 16 images, avant de le retenir
+python3 tools/trial/clip.py --trial <id> --out <dir>/<id>.mp4          # le clip du short, préparé comme le dit `clip.take` (PIXABAY_API_KEY de l'environnement)
 
 # brouillon sans voix : le script sur ses scènes, aucune requête dépensée
 uv run --with pyyaml --with numpy python3 tools/trial/prepare.py --trial <id> --draft --clip <clip>
@@ -145,15 +146,22 @@ uv run --with pyyaml python3 tools/trial/publish.py --film <film>
 
 ## Catalogues
 
-**Clips filmés.** Seulement des clips que le propriétaire a approuvés (nature, personne, aucun animal, aucun
-texte ; vérifiés image par image pour quran-reels, `config/backgrounds.yaml` de ce dépôt, 2026-11-05). Un
-clip hors de cette liste lui est d'abord montré. Licence Pixabay : usage libre, pas de redistribution du
-fichier seul, donc jamais dans le dépôt ; l'auteur est cité dans les descriptions.
+**Clips filmés.** Le clip se cherche pour le plan du short, puis se prépare (propriétaire, 2026-11-11 : « il
+faut chercher des clips qui marchent avec notre plan et les préparer », après deux shorts qui se ressemblaient
+sous la même lune). La liste ci-dessous est l'endroit où regarder d'abord, pas une limite : elle vient de
+quran-reels (`config/backgrounds.yaml` de ce dépôt, 2026-11-05), qui n'a qu'une nuit. Un clip qui n'y est pas se
+trouve avec `tools/trial/clip.py --search` (il écarte ce que Pixabay marque généré par IA ou de basse qualité, ce
+qui est trop court ou trop petit, ce dont les mots-clés nomment une personne), se regarde en entier avec `--look`
+(personne, aucun animal, aucun texte, aucun bâtiment éclairé ; l'heure change-t-elle en cours de clip ?), se
+prépare (`take`), s'essaie derrière le dessin, et **se montre au propriétaire avec sa page Pixabay avant d'être
+employé** : « proposé » ici jusqu'à sa parole. Licence Pixabay : usage libre, pas de redistribution du fichier
+seul, donc jamais dans le dépôt ; l'auteur est cité dans les descriptions.
 
 | Pixabay | Auteur | Ce qu'il montre | Utilisé |
 | --- | --- | --- | --- |
 | 22183 | Artvan93 | mer calme au crépuscule, horizon rose (31 s) | le bateau |
-| 29238 | Dans4 | pleine lune dans de fins nuages (20 s) | le garçon ; du'a, le lieu de prière |
+| 29238 | Dans4 | pleine lune dans de fins nuages (20 s) | le garçon |
+| 14955 | adege | ciel étoilé au-dessus du Schlern (Dolomites), accéléré, 4K (17 s) : étoiles qui tournent, traînées d'avions, des nuages dans les 4 dernières secondes ; gardé : 12,5 s, en aller-retour (25 s) | du'a, le lieu de prière : **proposé** (2026-11-11), pas encore approuvé |
 | 190332 | DancingSky | ciel de nuages au couchant sur une plaine, accéléré, 4K (14 s) | le mur |
 | 138588 | Natures_Embrace | vagues au couchant, 4K (29 s) | du'a, le grand poisson |
 | 4006 | outlinez | petites vagues sur le sable mouillé, lumière dorée, de près (40 s) | |

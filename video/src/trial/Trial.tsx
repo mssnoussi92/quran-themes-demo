@@ -202,7 +202,7 @@ const WrittenPicture: Drawn = ({ t, show, since, horizon }) => {
   );
 };
 
-/** The du'a, third call (19:4, 21:89-90): the place where he prays, under the moon. `niche`: its lamp; `two`: a
+/** The du'a, third call (19:4, 21:89-90): the place where he prays, under the stars. `niche`: its lamp; `two`: a
  * second light beside it (what he is given); `far`: the same from afar; `sky`: the land alone. */
 const WaitedPicture: Drawn = ({ t, show, horizon }) => (
   <>

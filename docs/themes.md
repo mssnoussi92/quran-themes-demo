@@ -101,7 +101,12 @@ chaque short ; Tirmidhi 3505 à la fin du deuxième short.
 - vérifié dans deux tafsirs (al-Sa'di, al-Muyassar ; Ibn Kathir pour les deux lectures de 37:143) : la réplique dit
   « ذِكره لربنا », pas « son du'a seul » ; le lien entre décret et du'a repose sur le hadith 2139 ;
 - les dessins (`video/src/trial/Dua.tsx`) : la maison éteinte puis éclairée à l'aube, la queue du grand poisson
-  puis une lueur sous l'eau, le lieu de prière et sa lampe sous la lune ; brouillons envoyés au propriétaire ;
+  puis une lueur sous l'eau, le lieu de prière et sa lampe ; brouillons envoyés au propriétaire ;
+- **le clip du troisième short** : il reprenait la lune du garçon ; le propriétaire (2026-11-11) : « il faut chercher
+  des clips qui marchent avec notre plan et les préparer ». Cherché sur Pixabay (28 requêtes, environ 1 500 clips,
+  dix regardés en entier) : **un ciel étoilé, Pixabay 14955** (adege), 12,5 s gardées en aller-retour, **proposé**,
+  à approuver ; écartés : étoiles jusqu'au lever du jour (137617 : terne, et l'aube reviendrait à chaque boucle),
+  soir bleu avec un palmier (20836 : ce n'est pas la nuit, 1080p), mer de nuages (368458 : trop clair sous le texte) ;
 - deux outils faits au passage : les sources lues dans le registre, un hadith lu dans un short.
 
 **Reste** : le « je valide le script » du propriétaire sur le script corrigé, puis quatre requêtes de voix, la

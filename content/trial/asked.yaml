@@ -15,7 +15,7 @@
 # Rien n'est validé : le propriétaire lit le script avant toute voix.
 id: asked
 handle: "@quran_words_daily"
-clip: { source: pixabay, id: 59291, author: trilemedia, page: "https://pixabay.com/videos/id-59291/", position: "43% 50%", shift: 480, brightness: 0.7, ground: "#0a0b12", horizon: 1420, landscape: { side: left, horizon: 760, shift: 160, brightness: 0.65 } }
+clip: { source: pixabay, id: 59291, author: trilemedia, page: "https://pixabay.com/videos/id-59291/", take: { height: 1440 }, position: "43% 50%", shift: 480, brightness: 0.7, ground: "#0a0b12", horizon: 1420, landscape: { side: left, horizon: 760, shift: 160, brightness: 0.65 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 30-trial-asked     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
 # Ambiance sous la narration, jamais sous un verset ni un hadith : un des trois enregistrements validés par le

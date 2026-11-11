@@ -17,7 +17,11 @@
 # Rien n'est validé : le propriétaire lit le script avant toute voix.
 id: waited
 handle: "@quran_words_daily"
-clip: { source: pixabay, id: 29238, author: Dans4, page: "https://pixabay.com/videos/id-29238/", position: "48.6% 50%", shift: 520, brightness: 0.95, ground: "#050a14", landscape: { side: right, horizon: 770, brightness: 0.95 } }
+# Le clip : un ciel étoilé (accéléré), cherché pour ce short (2026-11-11 : la lune du garçon, Pixabay 29238,
+# faisait deux images semblables ; le propriétaire : « chercher des clips qui marchent avec notre plan et les
+# préparer »). PROPOSÉ, à approuver par le propriétaire (docs/model.md, « Clips filmés »). `take` : les 12,5
+# premières secondes (avant les nuages), réduites, en aller-retour pour boucler sans saut des étoiles.
+clip: { source: pixabay, id: 14955, author: adege, page: "https://pixabay.com/videos/id-14955/", take: { seconds: 12.5, height: 1440, pingpong: true }, position: "62% 50%", shift: 300, brightness: 1.0, ground: "#0b0a18", rate: 0.5, landscape: { side: right, horizon: 770, brightness: 1.0 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 32-trial-waited
 # Ambiance sous la narration, jamais sous un verset ni un hadith : un des trois enregistrements validés par le

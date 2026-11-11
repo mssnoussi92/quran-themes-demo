@@ -14,7 +14,7 @@
 # Rien n'est validé : le propriétaire lit le script avant toute voix.
 id: written
 handle: "@quran_words_daily"
-clip: { source: pixabay, id: 138588, author: Natures_Embrace, page: "https://pixabay.com/videos/id-138588/", position: "40% 50%", brightness: 0.62, horizon: 1195, rate: 0.7, landscape: { side: left, horizon: 640, brightness: 0.6 } }
+clip: { source: pixabay, id: 138588, author: Natures_Embrace, page: "https://pixabay.com/videos/id-138588/", take: { height: 1440 }, position: "40% 50%", brightness: 0.62, horizon: 1195, rate: 0.7, landscape: { side: left, horizon: 640, brightness: 0.6 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 31-trial-written
 # Ambiance sous la narration, jamais sous un verset ni un hadith : un des trois enregistrements validés par le

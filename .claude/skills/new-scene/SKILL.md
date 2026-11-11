@@ -24,19 +24,48 @@ window lit, a wall about to fall). Read the three drawings before you draw: `vid
 
 ## 1. The clip
 
-- From the list the owner approved (`docs/model.md`, « Clips filmés »: nature only, no people, no
-  animal, no text, checked frame by frame). A clip outside the list is shown to the owner first, with
-  its Pixabay page; never one with a person.
-- One clip per story; the film reuses the clips of its shorts. Choose it for the hour and the mood of
-  the story, and for a calm, dark area where the text will sit.
-- Fetch it (it is never committed; the key is the environment's `PIXABAY_API_KEY`, never printed):
+**The clip is looked for to serve the plan of the short, then prepared** (owner, 2026-11-11: « il faut
+chercher des clips qui marchent avec notre plan et les préparer »). The list of `docs/model.md`
+(« Clips filmés ») came from another project and is where to look first, not the limit: it has one
+night, and the du'a's third short took the full moon of the boy's short, two pictures alike.
+
+- **Say what the picture must do before you search**: the hour and the place the lines say, the mood,
+  a calm dark area at the top for the text, a ground or a horizon the drawing can stand on, and **what
+  tells it from every other picture** of this film and of the films before (lay their covers side by
+  side). One clip per story; the film reuses the clips of its shorts.
+- **Search** (the key is the environment's `PIXABAY_API_KEY`, never printed; nothing is committed):
 
   ```bash
-  python3 tools/trial/clip.py --trial <id> --out <scratchpad>/clips/<id>.mp4
-  ffmpeg -i <clip> -vf scale=-2:1440 -an <clip-1440.mp4>      # a 4K clip: reduce it first
+  python3 tools/trial/clip.py --search "starry sky night" "milky way" "desert night stars" --out <scratchpad>/<dir>
   ```
 
-  It needs `clip: { source: pixabay, id: <n>, … }` in `content/trial/<id>.yaml` already.
+  Several queries in English, the same thing said several ways. It leaves out what Pixabay marks
+  AI-generated or low quality, what is under twelve seconds or under 1920 px, and what a tag says
+  shows a person; it prints the rest with their tags and writes a sheet of first frames.
+- **Look at a whole clip before keeping it**: the sheet shows one frame, and a clip can change.
+
+  ```bash
+  python3 tools/trial/clip.py --look <n> --out <scratchpad>/<dir>      # 16 frames across the clip
+  ```
+
+  Nobody, no animal, no text or logo, no lit building or town; several shots cut together (not one
+  clip); an hour that changes (a time-lapse from night to dawn loops from dawn back to night); clouds
+  that come in at the end. Read the sheet at full size.
+- **Prepare it**: `take` in the short's `clip` says what is kept, and `clip.py --trial` applies it.
+  `from` and `seconds`: the stretch that fits (the stars before the clouds). `height: 1440`: a 4K clip
+  reduced. `pingpong: true`: the stretch forward then backward, for a sky or a sea whose loop would
+  jump (stars seen twice during the cross-fade); not for something that visibly goes one way (waves
+  breaking, a sun going down).
+
+  ```bash
+  python3 tools/trial/clip.py --id <n> --out <clip> --seconds 12.5 --height 1440 --pingpong   # a candidate
+  python3 tools/trial/clip.py --trial <id> --out <scratchpad>/clips/<id>.mp4                    # once it is in the file
+  ```
+- **Try two or three behind the drawing**, on frame 0 and on a verse, side by side with the picture it
+  replaces, in the short and in the film (step 4). What looked best alone is not always what reads
+  best under the text: a sky lit by a town, a mountain behind the silhouette.
+- **Show the owner** that sheet with the Pixabay page of each, your recommendation and why. A clip
+  they have not approved is written « proposé » in `docs/model.md`; never one with a person.
 
 ## 2. Place it
 
@@ -128,7 +157,7 @@ looped (`from`, `seconds`) and its `level`.
 
 ## 6. Record it
 
-- The clip and the recording in the catalogs of `docs/model.md` (what it shows or sounds like, where
-  it is used).
+- The clip and the recording in the catalogs of `docs/model.md` (what it shows or sounds like, what is
+  kept of it, where it is used, approved by the owner or still proposed).
 - Nothing is validated by you: the owner's « je valide » on the videos covers the pictures and the
   ambience they saw and heard (`validated`, `what`).
