@@ -91,6 +91,11 @@ heard: a line the voice changed, skipped or said twice.
   what it heard before you call a line wrong.
 - A phrase said straight after a one-word question (« السر؟ ») has no pause of its own before it: it
   starts where the question ends, not at the pause before the question.
+- « warning: no pause before « … » » from `prepare.py`: a segment starts at a phrase with no pause found
+  before it, so the cut would fall on Whisper's word boundary, which puts the pause inside the next
+  word and clips the word before. Since 2026-11-11 a pause that is not silence (a breath, lifted by
+  the levelling) is looked for at higher floors, and the warning should not come back; if it does,
+  look at the envelope around that second before rendering, never render over it.
 - Whisper says whether the words are there. It does not say whether the voice is good: a voice the
   owner found « very bad » was transcribed without a fault. The owner's ear judges the voice, on the
   whole videos.

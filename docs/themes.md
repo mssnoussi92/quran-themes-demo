@@ -112,8 +112,12 @@ chaque short ; Tirmidhi 3505 à la fin du deuxième short.
   soir bleu avec un palmier (20836 : ce n'est pas la nuit, 1080p), mer de nuages (368458 : trop clair sous le texte) ;
 - deux outils faits au passage : les sources lues dans le registre, un hadith lu dans un short.
 
-**Reste** : le « je valide le script » du propriétaire sur le script corrigé, puis quatre requêtes de voix, la
-préparation, les rendus.
+**Script validé par le propriétaire le 2026-11-11** (« je valide le script », `script_validated` des quatre
+fichiers). **Voix** : quatre requêtes, une par texte (run 15 de `voice-test`, aucune refusée), prises dans
+`content/trial/takes/` ; chaque phrase retrouvée. Durées avec la voix : 1:49, 2:04, 1:57, film 7:36.
+
+**Reste** : les rendus, leur contrôle, l'ambiance, les couvertures et les textes, puis le « je valide » du
+propriétaire sur les vidéos.
 
 ## Faits (ancien circuit)
 

@@ -134,6 +134,7 @@ uv run --with pyyaml python3 tools/trial/publish.py --film <film>
 | Voix | Gemini 3.8 Flash TTS, `Algieba` (D), en égyptien ; secours VoiceTut `Mohammed` (V) | `voices`, workflow `voice-test` |
 | Requêtes de voix | 10 par jour (palier gratuit, par projet Google) : une par texte, jamais par phrase ; une prise faite est gardée | `content/trial/takes/` |
 | Pauses de la voix | 0,5 s au plus dans une réplique, 0,7 s entre deux | `PAUSE`, `PAUSE_LINES` (`prepare.py`) |
+| Où une phrase commence dans la prise | à la fin du silence qui la précède (−38 dB, 0,12 s au moins) ; sans silence entre deux mots, le creux trouvé à −34, −30 puis −26 dB (règle 3, depuis le du'a) ; le premier film garde la règle 2 (un silence, ou rien) | `LOUDER_FLOORS` (`tools/audio/align.py`), `rule_of` (`prepare.py`) |
 | Entre deux segments | 0,35 s d'image seule (short) ; 0,2 s entre deux narrations d'un même chapitre (film) | `GAP`, `BETWEEN`, `BETWEEN_LINES` |
 | Début, fin d'un short | 0,5 s avant le premier mot (la première phrase est déjà écrite), 1,2 s après le dernier | `LEAD`, `TAIL` |
 | Volume | chaque morceau à −16 LUFS ; la vidéo sort entre −16,2 et −16,4 | `tools/audio/build.py`, `prepare.py` |
