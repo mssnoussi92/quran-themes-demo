@@ -519,6 +519,26 @@ Le propriétaire : « je valide et je suis d'accord sur ta remarque pour le son 
   `…-ambience.mp4`** ; elles ne sont dans aucune release, seulement dans la conversation. Pour un prochain
   film : le niveau se règle d'un nombre (`level`), l'enregistrement se change d'une ligne.
 
+### Le modèle devient la règle (2026-11-11)
+
+Le propriétaire, après avoir validé les vidéos et leur ambiance : « pas de souci pour l'histoire annoncée, je
+vais gérer les publications ; oui, les épisodes doivent être réécrits en suivant ce modèle, création de nouvelles
+scènes et scripts améliorés, avec ambiance ; donc je suggère que tu adaptes et améliores les skills pour d'autres
+sessions ».
+
+- **Décidé** : le modèle de l'essai est celui de toutes les vidéos ; les épisodes publiés sont à réécrire. La
+  suite annoncée par la fin du mur est son affaire.
+- **Fait** : la référence `docs/model.md` ; les skills réécrits ou adaptés, les cinq anciens archivés
+  (`docs/legacy/skills/`) ; les outils ouverts à un deuxième film (un id de film partout, noms des fichiers
+  livrés pris du fichier du film), le film validé ressortant identique à l'octet près ; `tools/trial/check.py`.
+- **Ce qui change dans la façon de travailler** : le script est validé par le propriétaire **avant** la voix
+  (dans l'ancien circuit il le recevait pour information) : une prise de Gemini ne se retouche pas, et le
+  palier gratuit donne dix requêtes par jour.
+- **Dit au propriétaire, à trancher** : les skills ne suffisent pas. Les outils ont été faits pour une
+  histoire : une source doit passer par un ancien épisode, un short ne joue pas de hadith, rien ne contrôle
+  automatiquement les cinq règles sur ces fichiers, tout se rend dans une session. Ordre proposé : les deux
+  histoires d'abord (Dhul-Qarnayn, la caverne), les idées reçues une fois ces manques comblés.
+
 ## La demande
 
 Propriétaire, 2026-11-10, après le premier essai sur Instagram : les règles et les personnages des vidéos faites

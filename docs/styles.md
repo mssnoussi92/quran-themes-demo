@@ -1,5 +1,8 @@
 # Styles visuels : catalogue fermé
 
+> **Ancien circuit.** Depuis le 2026-11-11 les vidéos suivent le modèle « un film et ses shorts » (`docs/model.md`), qui n'a qu'un
+> aspect : un clip filmé et des silhouettes dessinées (skill `new-scene`). Ce catalogue vaut pour les épisodes publiés avant.
+
 Décidé par le propriétaire le 2026-11-09, sur la planche des quatre styles (`video/src/styles/`, composition
 `StyleLab`) : le style d'un épisode suit son format. Le propriétaire trouvait le rendu limité et répété :
 mêmes trois personnages, salle d'attente et rue dans les 9 premiers épisodes, une carte de texte une scène sur
@@ -121,7 +124,7 @@ l'épisode (`style:` de `content/episodes/<thème>.yaml`), choisi avec le format
   (papier, enluminure : `paper_poses` de `content/characters.yaml`).
 - **Voir un reel dans un autre style** sans toucher à son épisode : la prop `style` des compositions
   (`--props='{…,"style":"chalk"}'`), pour un aperçu seulement, jamais un rendu de publication. Procédure
-  complète : skill `add-style`.
+  complète : `docs/legacy/skills/add-style.md`.
 
 Planche de comparaison, le même reel (tawba-03) aux mêmes instants en plat, craie et enluminure :
 `docs/styles-tawba-03.png`.

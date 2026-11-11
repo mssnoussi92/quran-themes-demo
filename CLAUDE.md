@@ -6,9 +6,21 @@ Le propriétaire est développeur, il échange en français. Réponds en frança
 
 **Le contredire, toujours** (demande du propriétaire, 2026-11-08) : quand une de ses idées ou de ses décisions, ou une des tiennes, est fausse ou plus faible qu'une autre (source, format, angle, réplique, choix technique), dis-le franchement, avec la raison et ce que tu ferais à la place. Il tranche ; ne suis jamais en silence, ne passe jamais outre en silence.
 
-Conception complète : `docs/design.md`. Réglage de l'environnement cloud : `docs/cloud-environment.md`.
+Référence du modèle actuel : `docs/model.md`. Conception de l'ancien circuit : `docs/design.md`. Réglage de l'environnement cloud : `docs/cloud-environment.md`.
 
-## Objectif de la démo (définition de « fini »)
+## Le modèle : un film et ses shorts (ce qui se fait depuis le 2026-11-11)
+
+**Décision du propriétaire, 2026-11-11** : le modèle validé sur Moussa et al-Khadir (un film de 7:47 et trois shorts) est celui de toutes les vidéos à venir, et **les épisodes déjà publiés doivent être réécrits en le suivant** : scènes nouvelles, scripts améliorés, ambiance. Tout travail nouveau part de là ; la démo `dua-01`, les reels en chapitres, les personnages et les styles décrits plus bas sont l'ancien circuit, gardé pour corriger une vidéo déjà publiée.
+
+- **Une vidéo** : un clip filmé de nature et, dessus, les silhouettes dessinées de ce que dit le texte (des choses et des lieux, jamais une personne) ; le verset récité sur sa scène, le mot récité en or ; la narration en égyptien, écrite phrase par phrase au rythme de la voix ; une ambiance sous la narration, jamais sous un verset ni un hadith.
+- **Un short** (9:16, il tient seul) : une question, le verset, le sens, ce qu'on ne voit pas, un exemple de vie, la phrase à retenir, ce qui le distingue des autres, l'appel à suivre. **Le film** (16:9, moins de 10 min) reprend les shorts réplique par réplique et ajoute l'ouverture, les liaisons et la conclusion.
+- **La voix** : Gemini 3.8 Flash TTS, `Algieba`, palier gratuit de 10 requêtes par jour : une requête par texte, jamais par phrase, le script validé avant. Secours : VoiceTut `Mohammed`.
+- **Où** : `content/trial/` (un fichier par short, un par film), `tools/trial/`, `video/src/trial/` ; le dossier s'appelle encore `trial`, ce n'est plus un essai. Champs, réglages, catalogues des clips et des ambiances, chaîne de commandes : `docs/model.md`.
+- **Le propriétaire décide trois fois** : le sujet, le script avant la voix, les vidéos à la fin. Sa validation s'inscrit sur sa parole (`script_validated`, `validated`), jamais par l'IA. Il publie à la main.
+- **Les skills** (`.claude/skills/`) mènent du sujet aux vidéos : `choose-format`, `new-theme`, `write-hook`, `new-scene`, `narration-takes`, `voice-spelling`, `find-hadith-recording`, `release-render`.
+- **Ce que les outils ne font pas encore** (`docs/model.md`) : une source doit passer par un ancien épisode préparé, un short ne joue pas de hadith, aucune écriture pour la voix seule, aucun contrôle automatique des règles sur ces fichiers, rendu dans une session seulement (environ 4 images par seconde, vidéos livrées dans la conversation). Le modèle n'a été éprouvé que sur une histoire.
+
+## Objectif de la démo (ancien circuit, définition de « fini »)
 
 Un reel `dua-01` en 9:16, rendu par GitHub Actions, qui contient :
 
@@ -19,7 +31,7 @@ Un reel `dua-01` en 9:16, rendu par GitHub Actions, qui contient :
 
 Pas de publication automatique depuis ce dépôt : le propriétaire publie à la main (voir « Publication et licence »).
 
-**Objectif depuis le 2026-11-10** (propriétaire, après le premier essai sur Instagram) : **un film long, de moins de 10 min environ, et 4 à 6 shorts tirés de lui** ; le critère est **la rétention** et attirer des spectateurs. Les règles de production et les personnages des vidéos déjà faites ne sont pas des acquis : les remettre en cause et proposer mieux, chiffres à l'appui (`docs/retention.md` : ce qui est mesuré, ce qui est proposé, ce que le propriétaire doit trancher). Tant qu'il n'a pas tranché, les règles ci-dessous valent pour ce qui est publié.
+**Objectif depuis le 2026-11-10** (propriétaire, après le premier essai sur Instagram) : **un film long, de moins de 10 min environ, et 4 à 6 shorts tirés de lui** ; le critère est **la rétention** et attirer des spectateurs. Les règles de production et les personnages des vidéos déjà faites ne sont pas des acquis : les remettre en cause et proposer mieux, chiffres à l'appui (`docs/retention.md` : ce qui est mesuré, ce qui est proposé, ce que le propriétaire doit trancher). Il a tranché le 2026-11-11 : le modèle ci-dessus ; ce qui suit vaut pour ce qui est déjà publié.
 
 ## Règles obligatoires
 
@@ -31,7 +43,9 @@ Pas de publication automatique depuis ce dépôt : le propriétaire publie à la
 - **Politique des hadiths** (`content/policy.yaml`) : Sahih al-Bukhari, Sahih Muslim et Jami' at-Tirmidhi (décision du 6 novembre 2026). Un hadith de Tirmidhi n'est cité que si **al-Albani** le juge sahih ou hasan (liste exacte des jugements acceptés dans `policy.yaml`, jugements recopiés de hadith-api, vérifiés par `validate.py`). Tout autre recueil : demande au propriétaire avant d'élargir.
 - **Jamais l'invisible figuré** (accord du propriétaire, 2026-11-11). Ni le paradis, ni l'enfer, ni le Jour du Jugement, ni les anges ne sont dessinés, ni générés en image : le texte et la récitation seulement (fatwa de Dar al-Ifta du 2025-12-30 sur les scènes du Jour dernier figurées par IA, `docs/retention.md`). Aucun contrôle automatique : à vérifier à chaque script et à chaque image.
 
-## Choix actuels, tous à rediscuter
+## Choix de l'ancien circuit, et ceux qui valent toujours
+
+**Valent aussi dans le modèle** : la validation sur la seule parole du propriétaire, les exemples honnêtes, la voix déclarée, gratuit d'abord. **Propres à l'ancien circuit** : le rendu candidat et `promote`, les prises VoiceTut figées, le catalogue fermé de personnages, de fonds et de styles.
 
 Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux options que les sessions lui ont montrées**, sans être convaincu à 100 % par les personnages ni par les styles ; ce dépôt a commencé comme une démo et continuer sur cette base est peut-être l'erreur ; tout outil se discute et se remplace s'il existe mieux (y compris payant). Pas de voix humaine, mais d'autres voix IA à essayer. Le style est à proposer, même s'il demande un grand chantier. **On continue le brainstorming avant de tout recréer** (`docs/retention.md`). Ce qui suit décrit donc ce qui est fait et vaut pour ce qui est déjà publié, pas ce qui doit rester.
 
@@ -73,6 +87,10 @@ tools/audio/build.py     audio d'un épisode -> build/audio/<épisode>/ : récit
 tools/audio/recitation.py  où est chaque verset cité dans le fichier de sa sourate (Tawfiq As-Sayegh) et le temps de chaque mot -> content/recitations/
 tools/audio/listen.py    écoute par Whisper : texte, temps des mots, segments, enveloppe sonore ; contrôle des prises, débuts de morceaux
 tools/audio/align.py     chaque phrase d'un texte retrouvée dans UNE longue prise (Whisper, alignement lettre à lettre) : une requête Gemini par chapitre
+content/trial/           LE MODÈLE (docs/model.md) : un fichier par short (clip, ambiance, couverture, textes, segments) et un par film
+                         (chapitres, vignette) ; takes/ : les prises de la voix D (une par texte, gardées)
+tools/trial/             clip.py (clip filmé, Pixabay), prepare.py (un short ; --film <id> : le film, film.py), ambience.py (nappe sous la
+                         narration ; --mix sous une vidéo rendue), publish.py (textes à coller), check.py (contrôle d'un rendu)
 requirements/            dépendances Python par moteur (un venv par moteur)
 infra/claude-cloud-setup.sh  script de setup de l'environnement cloud (copié dans l'UI)
 .github/workflows/       validate.yml (contenu + video/), voice-test.yml (une voix VoiceTut par job), render.yml (audio une fois, puis les rendus côte à côte : 16:9, 9:16,
@@ -89,18 +107,37 @@ video/                   projet Remotion (TypeScript) : compositions Reel916 (10
                          characters/ (kit Open Peeps, bouche au volume), backgrounds/ (fonds), CharacterSheet.tsx,
                          Thumbnail.tsx (miniature YouTube 1280x720 de l'épisode, `thumbnail` de l'épisode),
                          BackgroundSheet.tsx (planche des fonds, docs/backgrounds.png)
+  src/trial/             LE MODÈLE : Trial.tsx (short, Trial916), Film.tsx (film, TrialFilm169), Cover.tsx (couverture et vignette),
+                         Boat.tsx, Home.tsx, Wall.tsx (les dessins d'une histoire)
   public/fonts/          Amiri Quran, Amiri, Lora (OFL, mêmes fichiers que quran-reels)
 build/                   (ignoré) tout ce qui est généré
-.claude/skills/          choose-format (format d'un épisode), new-theme (d'un thème aux vidéos), write-hook (accroche),
-                         narration-takes (voix), voice-spelling (prononciation), find-hadith-recording (hadith lu par une
-                         vraie voix), add-style (un lieu ou un style), release-render (rendu final, vérification, liens)
+.claude/skills/          choose-format (ce que sera le film), new-theme (du sujet au film et à ses shorts), write-hook (le script),
+                         new-scene (clip, dessin, ambiance), narration-takes (la voix, une requête par texte), voice-spelling
+                         (prononciation), find-hadith-recording (hadith lu par une vraie voix), release-render (rendre,
+                         contrôler, livrer, inscrire la validation)
+docs/model.md            référence du modèle : ce qu'est une vidéo, champs des fichiers, chaîne, réglages, catalogues (clips,
+                         ambiances), ce que les outils ne font pas encore
+docs/legacy/skills/      les skills de l'ancien circuit (épisodes en reels, VoiceTut, styles, workflow render) : pour corriger
+                         une vidéo déjà publiée seulement
 docs/formats.md          catalogue fermé des formats d'épisode (idées fausses, histoire, collection, texte expliqué, deux chemins, pratique)
 docs/styles.md           catalogue fermé des styles visuels (papier découpé, craie, enluminure, plat ; aquarelle en réserve), un par format
 docs/themes.md           thèmes faits, choisis par le propriétaire (dans l'ordre, avec leur format et leur angle), en réserve, fiches de format
-docs/retention.md        remise à plat pour la rétention (2026-11-10) : mesures, propositions, décisions du propriétaire ; rien n'est décidé
+docs/retention.md        d'où vient le modèle (2026-11-10 et 11) : mesures, propositions, essais, décisions du propriétaire, dans l'ordre
 ```
 
 ## Commandes
+
+Le modèle (chaîne complète et réglages : `docs/model.md`) :
+
+```bash
+uv run --with pyyaml --with numpy python3 tools/trial/prepare.py --trial <id> --draft --clip <clip>          # brouillon sans voix
+uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py --trial <id> --voice D --takes content/trial/takes --clip <clip>
+uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py --film <film> --voice D --takes content/trial/takes
+python3 tools/trial/check.py video/out/<vidéo>.mp4 --data video/public/trial/<id>-D.json                     # format, volume, planches d'images
+uv run --with pyyaml python3 tools/trial/publish.py --film <film>                                            # textes à coller
+```
+
+L'ancien circuit :
 
 ```bash
 # Vérifier le contenu (schémas + règles)
@@ -204,19 +241,22 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 30. **Script des trois shorts validé par le propriétaire** (2026-11-11, « je valide le script ») : `script_validated` dans `content/trial/boat.yaml`, `boy.yaml`, `wall.yaml` (les répliques seulement : ni la voix, ni les images, ni les textes de publication). **Film long proposé, pas validé** (`content/trial/film.yaml`, `docs/retention.md`, « Le film long ») : environ 8:10, six chapitres (les trois situations, la condition 18:67-70, le bateau, le garçon, le mur, pourquoi on ne le voit pas avec 2:216 et le moineau) ; chaque histoire avec son secret (premier secret vers 2:10), l'ordre du Coran en autre possibilité, mêmes prises ; les prises des shorts reprises réplique par réplique, une seule requête de plus pour les 12 répliques propres au film (`content/voice-test/23-trial-film.txt`) ; le montage 16:9 reste à construire. **Miniatures proposées** : `TrialCover916` (couverture 9:16 d'un short, `cover` de son YAML) et `TrialThumb169` (vignette YouTube du film, `thumbnail` de `film.yaml`, données par `tools/trial/prepare.py --film`) ; `video/src/trial/Cover.tsx`.
 31. **Film validé, montage 16:9, rappel d'abonnement** (2026-11-11, « je valide et tu peux commencer le montage ») : la structure du film (chaque histoire avec son secret), ses répliques nouvelles et les titres des miniatures sont validés par le propriétaire (`script_validated` et `thumbnail.validated` de `content/trial/film.yaml`) ; ni la voix ni le montage ne le sont. **Montage** : `TrialFilm169` (`video/src/trial/Film.tsx`), données par `tools/trial/prepare.py --film` (`tools/trial/film.py` : `--draft`, ou `--voice D --takes content/trial/takes`) après la préparation des trois shorts ; le dessin d'un côté, le texte de l'autre, un clip par histoire, le chapitre en haut à gauche, les répliques des shorts recoupées dans leurs prises ; brouillon de 8:00. **Rappel d'abonnement** (proposé à sa demande) : le nom de la page, en haut à droite, devient 4 secondes un bouton « اشترك · Subscribe » avec une cloche, qui se remplit d'or (« مشترك ✓ ») ; deux passages (`subscribe: true` : après la première leçon, vers 2:30, et sur la dernière phrase), jamais sur un verset, un hadith ou la garde, jamais dans les 30 premières secondes ; 12 secondes d'image calme à la fin pour l'écran de fin de YouTube.
 32. **Fini dans la nuit sur l'autorisation du propriétaire** (2026-11-11 : « je t'autorise de terminer les vidéos avec tes recommandations ; 3 shorts + film + thumbnail + title et description ») : `docs/retention.md`, « La nuit du 2026-11-11 ». Les quatre prises de la voix D sont dans `content/trial/takes/` (4 requêtes ; le compteur du palier gratuit n'est pas strict : une requête refusée « pour la journée » est passée quelques minutes après). `prepare.py` **resserre les pauses de la voix** (0,5 s au plus dans une réplique, 0,7 s entre deux). Durées : bateau 1:33, garçon 1:47, mur 2:04, film 7:47. Rendus dans `video/out/essai/` (hors dépôt) : les trois shorts, le film, et les shorts signés du nom TikTok de la page (prop `platform` de `Trial916`). **Textes de publication** proposés : `publish` des fichiers de l'essai, `tools/trial/publish.py` -> `docs/retention/publication-moussa-khidr.md`. **Livré dans la conversation le 2026-11-11 au matin** : les trois shorts, le film (−16,2 LUFS ; une traduction qui sortait de l'image à 0:19 corrigée, `sub.rows`), les quatre miniatures, le fichier des textes, puis les trois shorts signés pour TikTok (`@quran.words.daily`). Les vidéos ne sont dans aucune release : pour les refaire, les commandes en tête de `tools/trial/prepare.py` et `tools/trial/film.py`, dans une session (clips Pixabay hors dépôt, environ 4 images par seconde). (Validé depuis : tâche 33.)
-33. **Essai validé, ambiance sonore ajoutée** (2026-11-11, « je valide et je suis d'accord sur ta remarque pour le son hors voix ») : `validated` des quatre fichiers de l'essai, inscrit sur sa parole : la voix D sur les vidéos entières, les montages, le rappel d'abonnement, couvertures et vignette, titres et descriptions. **Ambiance sous la narration, jamais sous un verset ni un hadith** (`tools/trial/ambience.py`, `ambience` de chaque short ; `docs/retention.md`, « Validation du propriétaire et ambiance sonore ») : un enregistrement de terrain par image, de BigSoundBank (Joseph Sardin, CC0, hors dépôt : `build/trial/ambience/`) : petites vagues (bateau), campagne le soir avec grillons (garçon), vent dans un arbre (mur) ; nappe à −36 LUFS (20 LU sous la voix), à zéro pendant chaque récitation (l'outil s'arrête sinon), fabriquée par `prepare.py` et `film.py` et jouée par `Trial916` et `TrialFilm169`. Les sept vidéos livrées l'ont reçue sans nouveau rendu (`ambience.py --mix`, image identique au bit près) : `video/out/essai/…-ambience.mp4`. **Ambiance validée par le propriétaire le même jour** (second « je valide », sur les vidéos reçues avec la nappe ; `ambience` dans `validated`) : **l'essai Moussa et al-Khadir est entièrement validé**, les vidéos finales sont les `…-ambience.mp4` (dans la conversation, aucune release) ; il les publie à la main avec `docs/retention/publication-moussa-khidr.md`. Rien n'est décidé pour la suite (prochain film dans ce modèle, histoire annoncée par la fin du mur, branchement de la voix D et de l'ambiance sur les épisodes).
+33. **Essai validé, ambiance sonore ajoutée** (2026-11-11, « je valide et je suis d'accord sur ta remarque pour le son hors voix ») : `validated` des quatre fichiers de l'essai, inscrit sur sa parole : la voix D sur les vidéos entières, les montages, le rappel d'abonnement, couvertures et vignette, titres et descriptions. **Ambiance sous la narration, jamais sous un verset ni un hadith** (`tools/trial/ambience.py`, `ambience` de chaque short ; `docs/retention.md`, « Validation du propriétaire et ambiance sonore ») : un enregistrement de terrain par image, de BigSoundBank (Joseph Sardin, CC0, hors dépôt : `build/trial/ambience/`) : petites vagues (bateau), campagne le soir avec grillons (garçon), vent dans un arbre (mur) ; nappe à −36 LUFS (20 LU sous la voix), à zéro pendant chaque récitation (l'outil s'arrête sinon), fabriquée par `prepare.py` et `film.py` et jouée par `Trial916` et `TrialFilm169`. Les sept vidéos livrées l'ont reçue sans nouveau rendu (`ambience.py --mix`, image identique au bit près) : `video/out/essai/…-ambience.mp4`. **Ambiance validée par le propriétaire le même jour** (second « je valide », sur les vidéos reçues avec la nappe ; `ambience` dans `validated`) : **l'essai Moussa et al-Khadir est entièrement validé**, les vidéos finales sont les `…-ambience.mp4` (dans la conversation, aucune release) ; il les publie à la main avec `docs/retention/publication-moussa-khidr.md`. (Décidé depuis : tâche 34.)
+34. **Le modèle devient la règle, skills et outils adaptés** (2026-11-11 ; le propriétaire : « pas de souci pour l'histoire annoncée, je vais gérer les publications ; les épisodes doivent être réécrits en suivant ce modèle, création de nouvelles scènes et scripts améliorés, avec ambiance ; adapte et améliore les skills pour d'autres sessions ») : section « Le modèle » en tête de ce fichier, référence `docs/model.md` (champs, chaîne, réglages, les 21 clips approuvés pour quran-reels, les trois ambiances, les manques des outils). **Skills** : `new-theme`, `write-hook`, `narration-takes`, `release-render` réécrits pour le modèle ; `new-scene` nouveau (clip, dessin, ambiance), à la place d'`add-style` ; `choose-format`, `voice-spelling`, `find-hadith-recording` adaptés ; les cinq anciens dans `docs/legacy/skills/`. Changement de fond : **le script est validé par le propriétaire avant la voix** (une prise ne se retouche pas, dix requêtes par jour). **Outils** : un film a un id (`prepare.py --film <id>`, prop `film` de `TrialFilm169` et `TrialThumb169`, `publish.py --film` ; noms des vidéos et du fichier de textes pris du fichier du film : `files`, `publish.out`, `cover.file`, `thumbnail.file`) : le film validé ressort identique à l'octet près ; `tools/trial/check.py` (format, durée contre le minutage, volume, planches de 16 images choisies dans le minutage). **Dit au propriétaire, sans décision de sa part** : les skills ne suffisent pas, les outils ont été faits pour une histoire (six manques, `docs/model.md`) ; ordre proposé : Dhul-Qarnayn puis la caverne, les idées reçues après avoir comblé les manques 1 et 2.
 
 ## Skills (`.claude/skills/`)
 
-Procédures à suivre dans toute session :
-- `choose-format` : le format d'un nouvel épisode (`docs/formats.md`), avant tout script : type de sujet, filtres (sources dans la politique, durée de récitation, rien à dessiner d'interdit), critères (accroche de 3 s, ce que gagne le spectateur, variété, coût), contradiction franche, fiche avec une recommandation, une autre possibilité et les décisions du propriétaire.
-- `new-theme` : d'un nouveau thème au script, dans le format choisi, en passant par les sources (proposées, jamais validées par l'IA), les reels et une PR.
-- `write-hook` : l'accroche d'un épisode ou d'un reel. Elle reprend les techniques de la vidéo de référence du propriétaire (miroir, contraste, ancre sourcée, question en un mot, enjeu, promesse honnête ; analyse plan par plan dans `reference/dua-video-analysis.md`), dans le respect des règles ci-dessus.
-- `narration-takes` : la voix d'un épisode, de la synthèse aux prises figées : écoute de chaque prise par Whisper (`tools/audio/listen.py`), plusieurs prises en une synthèse et la meilleure installée (`build.py --use-take`), prononciation (`say_ar`), débuts de morceaux vérifiés (`--set-phrases`), brouillons, figer seulement sur la parole du propriétaire ; changer une réplique déjà validée (§7).
-- `voice-spelling` : faire bien dire un mot à la voix (`say_ar`) : écritures connues (`content/pronunciation.yaml`), variantes essayées en une synthèse, mesure des voyelles (`listen.py --vowels`, Praat), sons ajoutés en fin de prise, choix du propriétaire à l'oreille ; jusqu'à deux lettres par mot peuvent changer pour la voix, l'écran ne change pas (décision du propriétaire, 2026-11-07).
-- `find-hadith-recording` : trouver sur archive.org la lecture d'un hadith par une vraie voix (Bukhari, Muslim, Tirmidhi ; lectures déjà repérées), la caler, l'inscrire au registre (`recording`) pour que le propriétaire l'écoute et la valide.
-- `add-style` : un lieu nouveau (dessiné une fois en couches, que papier, craie et enluminure rendent chacun à leur manière) ou un style entier (un kit), regardé sur des images fixes et sur un vrai reel vu dans ce style, inscrit au catalogue, validé par le propriétaire dans le rendu candidat.
-- `release-render` : les vidéos d'un épisode (workflow `render`, `reel: all`) : le rendu candidat pour la validation unique du propriétaire (release brouillon, liste « à vérifier »), puis sur son « je valide » `finalize.py validate` et le workflow `promote` ; ou un rendu final d'un épisode déjà validé (changement des compositions) ; attente en arrière-plan, images vérifiées, liens au propriétaire.
+Procédures à suivre dans toute session, pour le modèle (`docs/model.md`) :
+- `choose-format` : ce que sera un film, avant tout script : type de sujet (`docs/formats.md`), filtres (une source dans la politique pour chaque partie, durée de récitation, rien qui demande de dessiner une personne, chaque short tient seul, ce que les outils savent jouer), critères (première image, ce que gagne le spectateur, ce qui distingue les parties, coût en requêtes de voix, en dessins et en rendu), contradiction franche, fiche avec une recommandation, une autre possibilité et les décisions du propriétaire.
+- `new-theme` : d'un thème, d'une histoire ou d'un épisode à réécrire jusqu'au film et à ses shorts : sources (proposées, jamais validées par l'IA), le film d'abord puis ce que tient chaque short, le script validé par le propriétaire avant la voix, scènes, voix, montage du film, couvertures, textes de publication, rendus, validation inscrite sur sa parole.
+- `write-hook` : le script d'un short et les répliques propres au film : les onze temps d'un short avec les répliques validées du bateau en exemple, les mots que le propriétaire a refusés, les contrôles avant de lui envoyer le script.
+- `new-scene` : l'image et le son d'une histoire : un clip filmé approuvé, sa place dans le cadre, les silhouettes dessinées (des choses et des lieux, jamais une personne), un état du dessin par scène, les images fixes regardées avant toute voix, l'enregistrement d'ambiance sous la narration.
+- `narration-takes` : la voix (Gemini, `Algieba`) dans le palier gratuit : un texte et une requête par short, une pour les répliques du film, la prise gardée, chaque phrase retrouvée dans la prise (`tools/audio/align.py`), les corrections d'un texte en une seule requête.
+- `voice-spelling` : faire bien dire un mot : avec la voix du modèle (le mot vocalisé dans la réplique, ou changé avec le propriétaire) ; avec VoiceTut, la voix de secours et celle des anciens épisodes (`say_ar`, `content/pronunciation.yaml`).
+- `find-hadith-recording` : trouver sur archive.org la lecture d'un hadith par une vraie voix, la caler, l'inscrire au registre ; le film la joue (`reading`), un short pas encore.
+- `release-render` : rendre dans la session (un bundle, une vidéo à la fois), contrôler chaque vidéo sur ses planches d'images (`tools/trial/check.py`), poser l'ambiance sans nouveau rendu, refaire quelques secondes sans réencoder le reste, couvertures et textes, livrer, inscrire le « je valide » du propriétaire.
+
+Les skills de l'ancien circuit (`new-theme`, `write-hook`, `narration-takes`, `release-render`, `add-style` tels qu'ils étaient) sont dans `docs/legacy/skills/`.
 
 ## Publication et licence (décisions du propriétaire, 2026-11-06)
 

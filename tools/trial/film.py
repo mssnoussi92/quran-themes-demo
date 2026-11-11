@@ -1,9 +1,10 @@
-"""The long film of the trial (content/trial/film.yaml, docs/retention.md): its timeline for TrialFilm169.
+"""A long film (content/trial/<id>.yaml with `chapters`; docs/model.md): its timeline for TrialFilm169.
 
-Called by tools/trial/prepare.py --film, after each short was prepared here (their clips are reused):
+Called by tools/trial/prepare.py --film [<id>] (« film » when no id is given: the first one, Moses and
+al-Khidr), after each of its shorts was prepared here (their clips are reused):
 
-  uv run --with pyyaml python3 tools/trial/prepare.py --film --draft                                   # no voice yet
-  uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py --film --voice D --takes content/trial/takes
+  uv run --with pyyaml --with numpy python3 tools/trial/prepare.py --film <id> --draft                 # no voice yet
+  uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py --film <id> --voice D --takes content/trial/takes
 
 The film says three kinds of narration lines, and asks the voice for the third kind only:
 - `reuse`: lines of a short, cut out of that short's take (the same take, the same words);
@@ -11,7 +12,7 @@ The film says three kinds of narration lines, and asks the voice for the third k
 and recites the verses (the prepared episode `verses`), and plays a hadith read by a real voice (the
 reader's extract cut by tools/audio/build.py for that episode: build/audio/<episode>/readings/).
 
-Writes video/public/trial/film-<voice>.json and film.json (the thumbnail, for TrialThumb169).
+Writes video/public/trial/<id>-<voice>.json and <id>.json (the thumbnail, for TrialThumb169).
 """
 from __future__ import annotations
 
@@ -61,10 +62,16 @@ class Take:
 
 
 def prepare(args) -> None:
-    film = yaml.safe_load((P.ROOT / "content" / "trial" / "film.yaml").read_text(encoding="utf-8"))
+    fid = args.film                          # the film's id: content/trial/<id>.yaml (the first one is « film »)
+    path = P.ROOT / "content" / "trial" / f"{fid}.yaml"
+    if not path.is_file():
+        sys.exit(f"error: {path.relative_to(P.ROOT)} is missing")
+    film = yaml.safe_load(path.read_text(encoding="utf-8"))
+    if film.get("id") != fid or "chapters" not in film:
+        sys.exit(f"error: {path.name} is not a film (its `id` must be « {fid} » and it must have `chapters`)")
     out_dir = P.PUBLIC / "trial"
     out_dir.mkdir(parents=True, exist_ok=True)
-    thumb = out_dir / "film.json"
+    thumb = out_dir / f"{fid}.json"
     shown = {k: film["thumbnail"][k] for k in ("title", "tag", "panels")}
     thumb.write_text(json.dumps({"title": film["title"], "handle": film["handle"], "thumbnail": shown}, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{thumb.relative_to(P.ROOT)}: thumbnail of the film ({', '.join(film['thumbnail']['panels'])})")
@@ -78,7 +85,7 @@ def prepare(args) -> None:
     read = {s["source"]["id"]: s for s in episode["scenes"] if s.get("source") and (s["source"].get("recording") or {}).get("status") == "validated"}
 
     trials: dict[str, dict] = {}
-    takes: dict[str, Take] = {"film": Take("film", film, args, out_dir)}
+    takes: dict[str, Take] = {fid: Take(fid, film, args, out_dir)}
 
     def trial(name: str) -> dict:
         if name not in trials:
@@ -99,12 +106,12 @@ def prepare(args) -> None:
             picture, scene = seg.get("picture", first.get("picture", picture)), seg.get("scene", first.get("scene", scene))
             if picture is None or scene is None:
                 sys.exit(f"error: chapter {chapter['id']}: a first segment with no picture or scene")
-            wav = out_dir / f"film-{args.voice}-{n:03d}.wav"
+            wav = out_dir / f"{fid}-{args.voice}-{n:03d}.wav"
             if "reuse" in seg:
                 name, narration = seg["reuse"].split(".")
                 made = take(name).segment(narration, seg.get("lines"), wav)
             elif "narration" in seg:
-                made = takes["film"].segment(seg["narration"], None, wav)
+                made = takes[fid].segment(seg["narration"], None, wav)
             elif "verse" in seg:
                 made = P.verse_segment(recited, seg["verse"], out_dir, episode_name)
             else:
@@ -167,9 +174,9 @@ def prepare(args) -> None:
     if all(specs.values()) and not args.no_ambience:
         import ambience
         quiet = [(s["start"], s["start"] + s["seconds"]) for s in segments if s["kind"] != "narration"]
-        bed = ambience.bed(specs, [(s["start"], s["picture"]) for s in shots], quiet, total, out_dir / f"film-{args.voice}-ambience", end=3.0)
+        bed = ambience.bed(specs, [(s["start"], s["picture"]) for s in shots], quiet, total, out_dir / f"{fid}-{args.voice}-ambience", end=3.0)
         data["ambience"] = f"trial/{bed['file'].name}"
-    out = out_dir / f"film-{args.voice}.json"
+    out = out_dir / f"{fid}-{args.voice}.json"
     out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
 
     stamp = lambda x: f"{int(x // 60)}:{int(x % 60):02d}"

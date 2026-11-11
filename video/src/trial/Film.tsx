@@ -35,11 +35,12 @@ export type FilmData = {
   /** The ambience under the narration: one recording per picture, silent under every verse and the hadith. */
   ambience?: string;
 };
-export type FilmProps = { voice: string; data: FilmData | null };
+/** `film`: the id of the film (content/trial/<id>.yaml); the first one is « film ». */
+export type FilmProps = { film: string; voice: string; data: FilmData | null };
 
 export const filmMetadata: CalculateMetadataFunction<FilmProps> = async ({ props, abortSignal }) => {
-  const res = await fetch(staticFile(`trial/film-${props.voice}.json`), { signal: abortSignal });
-  if (!res.ok) throw new Error(`public/trial/film-${props.voice}.json is missing: run tools/trial/prepare.py --film`);
+  const res = await fetch(staticFile(`trial/${props.film}-${props.voice}.json`), { signal: abortSignal });
+  if (!res.ok) throw new Error(`public/trial/${props.film}-${props.voice}.json is missing: run tools/trial/prepare.py --film ${props.film}`);
   const data = (await res.json()) as FilmData;
   return { durationInFrames: Math.ceil(data.seconds * TRIAL_FPS), props: { ...props, data } };
 };

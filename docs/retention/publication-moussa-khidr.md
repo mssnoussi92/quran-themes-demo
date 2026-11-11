@@ -1,4 +1,4 @@
-# Moussa et al-Khadir : textes de publication de l'essai
+# Moses and al-Khidr · موسى والخضر : textes de publication
 
 Pour le film et chaque short : le titre, puis le texte à coller sur chaque plateforme. Titres et descriptions **validés par le propriétaire le 2026-11-11** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation, avec l'ambiance sonore sous la narration, validée elle aussi (`…-ambience.mp4`).
 

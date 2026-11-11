@@ -1,128 +1,150 @@
 ---
 name: release-render
-description: Render an episode of quran-themes-demo for the owner (workflow render, reel all - the whole episode in 16:9 and 9:16, every reel, the YouTube thumbnail, the texts to paste) - first as a candidate in a draft release with the list « à vérifier », for the owner's one validation at the end; then, on the owner's « je valide », record every validation (scripts/finalize.py validate) and promote the candidate's very videos to <episode>-latest (workflow promote); or a final render of an episode already validated after a change to the compositions. Check the videos, give the owner the links. Use when an episode is ready for the owner, when the owner says « je valide », after a change every episode shares, and whenever the owner asks for the videos.
+description: Render, check and hand over the videos of a film and its shorts in the model of quran-themes-demo (docs/model.md) - the renders run in the session one after the other from one bundle (each short, its TikTok version, the film), each video is looked at on sheets of frames and measured before it is sent (tools/trial/check.py), the ambience is put under the narration without rendering again, a few seconds can be re-rendered and spliced in without encoding the rest, covers, thumbnail and the texts to paste go with them, and the owner's « je valide » is recorded on their word. Use when a film and its shorts are prepared with their voice, when the owner asks for the videos or sends corrections, and when the owner validates.
 ---
 
-# Release render
+# Render, check, hand over
 
-The owner publishes by hand from the `<episode>-latest` pre-release: `<episode>-16x9.mp4` (YouTube),
-`<episode>-9x16.mp4`, one MP4 per reel, `<episode>-thumbnail.png`, and in its notes the title and
-text to paste for each video (`video/scripts/publish.ts`). Every 9:16 video also has its **TikTok
-version** (`<reel>-tiktok.mp4`, `<episode>-9x16-tiktok.mp4`), signed `@quran.words.daily`: the page's
-name on TikTok, where `@quran_words_daily` is someone else's account (`content/publish.yaml`,
-`handles`). The notes give TikTok its own block, with that file's name and that signature: when you
-hand over the links, say which file goes to TikTok. Since 2026-11-08 the owner validates
-**once, at the end, on the videos** (their decision): a candidate render first, then their word,
-then the same videos become the final ones. Nothing is validated by Claude; Claude only records the
-owner's word.
+The videos of the model are rendered **in the session**, not by a workflow: the filmed clips and the
+ambience recordings are not in the repository. They are sent to the owner in the conversation, and
+they are in no release: tell them to keep their copies. The owner validates once, on the videos, and
+only their word is recorded. The old circuit (workflow `render`, candidate, `promote`) is in
+`docs/legacy/skills/release-render.md`, for a video published before.
 
-## 1. Candidate render (mode `candidate`)
+## 1. Before
 
-Before:
-- Everything checked as the skills say: sources by `content/policy.yaml`, script (format, dialect,
-  spellings: `validate.py` with no warning left unexplained), takes (`listen.py --episode <episode>
-  --save`: Whisper, trailing sounds; `--phrases`; retakes), recordings, backgrounds drawn and looked
-  at on a local still. Draft renders stay local: look at their frames yourself.
-- The checked takes stored as candidates: `python3 tools/audio/build.py --episode <episode>
-  --candidate --tts-python /bin/false` (FLAC + `takes.json`, `status: candidate`), and
-  `content/audio/<episode>/checks.json` (from `listen.py --save`) committed with them.
-- `python3 tools/audio/build.py --episode <episode> --require-committed --tts-python /bin/false`
-  passes; commit and push (the workflow renders the head of the branch at dispatch time).
+- Every short prepared with its voice, then the film (skill `new-theme`, step 7): the timelines are
+  `video/public/trial/<id>-D.json`.
+- `cd video && npm run typecheck`.
+- **Prepare without the ambience for the first delivery** (`--no-ambience` on each `prepare.py`): the
+  bed is then put under the rendered videos in two minutes (§4), and the owner can ask for another
+  level or another recording without an hour of rendering. A timeline that has `ambience` plays it by
+  itself: use that once the level is settled.
 
-Dispatch: GitHub MCP `actions_run_trigger`, `run_workflow`, `workflow_id: render.yml`,
-`ref: <branch>`, inputs `{"episode": "<episode>", "reel": "all", "speaker": "Mohammed", "mode":
-"candidate"}`; `actions_list` → `list_workflow_runs` on `render.yml` gives the run.
+## 2. Render
 
-It goes to a **draft** release `<episode>-candidate` (only the repository's owner sees it, signed in
-on GitHub), replacing the previous one. Its notes: the list « à vérifier » (`video/scripts/review.ts`:
-what « je valide » will validate, the new voice with what Whisper heard, the lessons and life
-examples, the sources and readings, new backgrounds and spellings, automatic warnings, each with its
-minute in each video), then the texts to paste as they are now. Assets: the videos, the thumbnail,
-`final-notes.md` (the notes as validated) and `candidate.json` (the commit rendered).
-
-Give the owner the link of the draft release (in the run's log, step « Attach the candidate videos »,
-or `list_releases` on the GitHub MCP) and say what to look at first.
-
-## 2. The owner's answer
-
-- **Corrections** (a line, a word, a voice, by video and minute): make them, check again, store the
-  new takes as candidates, new candidate render. A changed line needs nothing else from the owner
-  until the next candidate.
-- **« je valide »** (for this candidate, nothing else): `uv run --with pyyaml python3 scripts/finalize.py
-  validate --episode <episode> --owner mssnoussi92`. It records `validated_by` on each reel, the
-  publication texts, the thumbnail, the whole episode's order, the sources and recordings quoted, the
-  new backgrounds and spellings, and locks the candidate takes (same audio). Then `validate.py
-  --release --reel <reel>` for each reel (and `--whole <episode>`), commit, push. Never run it on
-  your own judgement, nor for a candidate the owner has not watched.
-- The owner merges the PR (the promote workflow runs from `main`; a workflow must be on the default
-  branch to be dispatched).
-
-## 3. Promote
-
-`actions_run_trigger`, `workflow_id: promote.yml`, `ref: main`, inputs `{"episode": "<episode>",
-"reel": "all"}`. It checks the owner's validation (`validate.py --release`), that only validation
-lines changed since the candidate's commit in what the videos are made of (`scripts/finalize.py
-check`: `content/`, `video/src`, `prepare.ts`, `build.py`; docs and skills are free), then puts the
-candidate's videos and `final-notes.md` in `<episode>-latest` and deletes the draft. A change since
-the candidate (a line, a take, a composition) fails it: new candidate.
-
-## 4. Final render (mode `final`)
-
-Only for an episode already validated whose videos must change without any new content: a change
-every episode shares (the reciter, Tawfiq As-Sayegh in place of Alafasy on 2026-11-08; a composition,
-the signature, the reminder). It needs every reel validated and every take locked (`validate.py
---release --reel`, `build.py --require-locked`) and goes straight to `<episode>-latest`.
-Dispatch all the episodes at once: they run side by side. Mode `draft` (lines synthesised in CI)
-is a quick look only: it goes to its own pre-release `<episode|reel>-draft` (public, never
-`<…>-latest`, which holds the validated videos the owner publishes) and is never published.
-A candidate or a draft stops on an error of `validate.py`; its warnings go to the list
-« à vérifier ».
-
-## 5. Wait
-
-Not with sleep in the foreground: a background loop on the public API, which notifies you when it
-ends (the run's page needs no token, the repository is public):
+About four frames a second on four vCPU: thirteen to twenty minutes for a short, seventy for a film
+of eight minutes, and the shorts once more for TikTok. Count two hours and a half for a film and
+three shorts.
 
 ```bash
-for i in $(seq 1 60); do s=$(curl -sS https://api.github.com/repos/mssnoussi92/quran-themes-demo/actions/runs/<id> \
-  | python3 -c "import json,sys;d=json.load(sys.stdin);print(d['status'],d.get('conclusion'))"); \
-  case "$s" in completed*) echo "$s"; exit 0;; esac; sleep 60; done; echo timeout
+cd video && export REMOTION_BROWSER_EXECUTABLE=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell
+npx remotion bundle src/index.ts --out-dir <scratchpad>/bundle          # once; again after any change to video/src or to the data
+npx remotion render <bundle> Trial916 out/<files>-short-<n>-<id>.mp4 --concurrency=4 --crf=21 --props='{"trial":"<id>","voice":"D","data":null}'
+npx remotion render <bundle> TrialFilm169 out/<files>-film-16x9.mp4 --concurrency=4 --crf=21 --props='{"film":"<film>","voice":"D","data":null}'
+npx remotion render <bundle> Trial916 out/<files>-short-<n>-<id>-tiktok.mp4 --concurrency=4 --crf=21 --props='{"trial":"<id>","voice":"D","platform":"tiktok","data":null}'
 ```
 
-The run has three stages: `audio and data` (checks, the audio once, the episode's data), then
-`render (16x9)`, `render (9x16)` and `render (reels)` side by side (one, `reels`, for a single
-reel), then `release`. The longest render gives the time: about 7 minutes for `all` in the flat
-style (tawakkul, run 31; 11 to 25 minutes when the renders followed each other), about 50 expected
-for a nine-minute episode in paper (kahf took 2 h in one job, run 30); a single reel about 4. The
-first run of an episode downloads its hadith readings (archive.org) and its reciter's surah files
-(mp3quran.net), cached afterwards. A second run of the same episode and reel cancels the first: dispatch once. A
-dispatch can fail on a network error: list the runs before dispatching again. On a failure:
-`get_job_logs` (failed jobs only). Seen causes: a source or reel not validated (final), a line
-without a committed take (`--require-committed`: store it as a candidate) or without a locked one
-(final), an archive.org download that timed out (rerun the failed jobs once). A render leg that
-failed: `actions_run_trigger`, `rerun_failed_jobs` on the run renders that leg again alone, then
-`release`; the other legs' videos are kept (artifacts `videos-<leg>`, 7 days).
+- **One script, one render at a time, in the background**: a shell script that renders each video in
+  turn and appends « done <name> exit <code> » to a status file, started with `run_in_background`;
+  wait on that file with a background `until grep …; do sleep 15; done`, never with sleep in the
+  foreground. Shorts first (send each as it is checked), then the film, then the TikTok versions.
+- **Nothing heavy beside a render**: decoding two long videos while one rendered took its memory and
+  the kernel killed it at frame 1965 of 2793. An exit code other than 0: read the render's log and
+  start that video again.
+- The TikTok version differs by its signature only (`@quran.words.daily`, `handles.tiktok` of
+  `content/publish.yaml`): `@quran_words_daily` is someone else's account there. A platform without a
+  name fails the render rather than sign with the wrong account.
+- The bundle copies `video/public/`: build it after the data is final, and build another one after a
+  change (a render in progress keeps reading its own).
 
-## 6. Check the videos
+## 3. Check each video before it is sent
 
-- Final release: `curl -sS https://api.github.com/repos/mssnoussi92/quran-themes-demo/releases/tags/<episode>-latest`
-  (8 assets for 5 reels, updated now). A draft release is not on the public API: check the run's log
-  and `list_releases` on the GitHub MCP.
-- Frames: download the files whose look changed into a scratchpad folder of its own (public
-  release), or render the same compositions locally (draft), take frames with ffmpeg and look at
-  them (Read), then delete them:
-  - the end of a reel: `ffmpeg -sseof -1.2 -i <reel>.mp4 -frames:v 1 end.png` (the follow call);
-  - the loudness the run's log prints for each video (step « Render » of each `render (<leg>)` job): about -16 LUFS integrated, true
-    peak under -1 dBTP (every part levelled by `tools/audio/build.py`, `LEVEL`); far from it, a part was
-    not levelled (an old manifest: run `build.py` again);
-  - the YouTube reminder in the 16:9, about 2 s after each start (`reminderStarts`, video/src/scenes.ts,
-    `node --experimental-strip-types` on a small script after `npm run data`; none listed means both
-    places fell on a verse or a hadith: tell the owner); an episode whose last card follows a verse
-    keeps one reminder only (khidr);
-  - the signature « @quran_words_daily » top right, on any frame.
+```bash
+python3 tools/trial/check.py video/out/<video>.mp4 --data video/public/trial/<id>-D.json
+```
 
-## 7. Report
+It prints the format, the length against the timeline, the loudness (-16 to -16.5 LUFS: every part
+is levelled to -16), and writes sheets of sixteen frames chosen from the timeline: the first frame,
+the middle of every segment, each subscribe reminder as it opens and once filled, the last line, the
+last second. **Open every sheet** and look for:
 
-The link (draft candidate, or `https://github.com/mssnoussi92/quran-themes-demo/releases/tag/<episode>-latest`),
-what changed, what you looked at and saw, and what remains. The texts to paste are in the notes: do
-not copy them into the conversation unless asked.
+- a line of text or a translation that leaves the frame or crosses the drawing (the first film had a
+  translation of three rows cut by the bottom edge: seen on the sheet, nowhere else);
+- a verse on its scene, the recited word in gold, its reference and the recitation credit;
+- the right signature on each version; the page's name large under the last line of a short;
+- in the film: the chapter at the top left, both reminders (never over a verse or a hadith), the
+  hadith's reader named, the calm picture at the end;
+- a picture that did not change where the script changes scene.
+
+`--at <seconds…>` takes the frames you name (a closer look at a doubt). What no check tells: how the
+voice sounds and whether the ambience is right. Say to the owner that you did not hear the videos.
+
+## 4. The ambience, without rendering again
+
+Prepare again **with** the ambience (the same commands without `--no-ambience`: the timeline does
+not move, the bed is written beside it), then:
+
+```bash
+python3 tools/trial/ambience.py --mix video/out/<video>.mp4 --bed video/public/trial/<id>-D-ambience.wav --out video/out/<video>-ambience.mp4
+```
+
+The picture is copied as it is, the sound is the video's plus the bed; the tool prints the loudness.
+The TikTok version takes the same bed. Another level or recording (`ambience` of the short, skill
+`new-scene`): prepare, mix, two minutes for seven videos. The bed is zero under every verse and
+hadith or the tool stops.
+
+## 5. A few seconds to redo in an hour of render
+
+When a fix changes the picture of a short stretch and **nothing in the timeline or the sound**
+(a text that overflowed, a drawing), render that stretch alone and splice it in between two
+keyframes; the rest is not encoded again.
+
+```bash
+ffprobe -v error -select_streams v -skip_frame nokey -show_entries frame=pts_time -of csv=p=0 -read_intervals <a>%<b> <video>   # keyframes around the stretch
+# k1: the keyframe at or before its first frame; k2: the first keyframe after its last frame (frame = seconds x 30)
+npx remotion render <new bundle> <composition> patch.mp4 --frames=<k1>-<k2 - 1> --concurrency=4 --crf=21 --props='…'
+ffmpeg -i <video> -map 0:v -c copy -frames:v <k1> A.mp4
+ffmpeg -i patch.mp4 -map 0:v -c copy B.mp4
+ffmpeg -ss <seconds of k2> -i <video> -map 0:v -c copy C.mp4
+printf "file '%s'\n" "$PWD/A.mp4" "$PWD/B.mp4" "$PWD/C.mp4" > list.txt
+ffmpeg -f concat -safe 0 -i list.txt -i <video> -map 0:v -map 1:a -c copy -movflags +faststart fixed.mp4
+```
+
+Then prove it: the same number of frames as before (`ffprobe -count_packets`), and the frames of both
+files hashed (`ffmpeg -i <file> -map 0:v -f framemd5 <file>.md5`, one file at a time): every frame
+outside the stretch identical, every frame inside it equal to the patch. Look at the stretch on a
+sheet. If the lengths changed, render the whole video.
+
+## 6. Covers, thumbnail, texts
+
+```bash
+npx remotion still <bundle> TrialCover916 out/<id>-cover.png --frame=45 --props='{"trial":"<id>","voice":"D","data":null}'
+npx remotion still <bundle> TrialThumb169 out/<film>-thumbnail.png --frame=45 --props='{"film":"<film>","voice":"D","data":null,"panels":null}'
+ffmpeg -i out/<name>.png -q:v 2 out/<name>.jpg
+uv run --with pyyaml python3 tools/trial/publish.py --film <film>
+```
+
+Look at the thumbnail reduced to 170 px wide. `publish.py` writes the texts to paste, one block per
+platform, with the sources quoted, the chapters of the film, the credits (footage, ambience), the
+line that declares the AI voice and the page's hashtags; it stops on a title or a caption over a
+platform's limit. Give the covers the names of `cover.file` and `thumbnail.file`: the texts cite them.
+
+## 7. Hand over
+
+Send each video as soon as it is checked (`SendUserFile`, with its length and its loudness in the
+caption), then the covers and the file of texts. The message the owner reads:
+
+- what is delivered, with the lengths and the film's chapters;
+- what you decided alone since their last word, and why;
+- what they must judge: the voice on whole videos, the lessons and the endings, the montage and the
+  reminder, the ambience, the titles and the covers;
+- what you find weak, plainly, and what you would do about it;
+- that the videos exist only in the conversation.
+
+## 8. The owner's answer
+
+- **Corrections**: make them, check, send the videos that changed. A line changed is a script to
+  validate and a text to say again (skill `narration-takes`, §5).
+- **« je valide »**: write in each file `validated: { by: <owner>, on: <date>, what: [...] }` with
+  exactly what they saw and heard (`voice`, `montage`, `cover` or `thumbnail`, `subscribe`, `publish`,
+  `ambience`). Something added after it (an ambience, a new line) is not covered: it waits for their
+  next word. Run `publish.py` again (it says whether the texts are validated and names the final
+  files), commit, push. Never on your own judgement.
+- The owner publishes by hand. On YouTube: the end screen on the last twelve seconds of the film, and
+  the film as the « related video » of each short. Shorts that promise a sequel go out close together.
+
+## 9. Record
+
+`CLAUDE.md` (one task entry: what was delivered, decided, validated), `docs/model.md` if a setting or
+a catalog changed, `docs/themes.md`; commit and push on the session's branch.

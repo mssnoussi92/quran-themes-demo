@@ -48,7 +48,7 @@ clip: { source: pixabay, id: 22183, author: Artvan93, page: "https://pixabay.com
 verses: khidr-solo     # épisode préparé d'où viennent les versets et leur récitation
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", E: "Gemini 3.8 Flash TTS, Sadaltager", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 20-trial-boat   # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
-cover: { scene: holed, title: "ليه خرق السفينة؟", tag: "موسى والخضر · ١ من ٣", focus: 1120 }   # couverture 9:16 du short (TrialCover916) ; titre validé par le propriétaire le 2026-11-11, avec le film
+cover: { scene: holed, title: "ليه خرق السفينة؟", tag: "موسى والخضر · ١ من ٣", focus: 1120, file: couverture-1-bateau.jpg }   # couverture 9:16 du short (TrialCover916) ; titre validé par le propriétaire le 2026-11-11, avec le film
 # Textes de publication, proposés par la session (2026-11-11), pas encore validés : tools/trial/publish.py en
 # fait les textes à coller sur chaque plateforme. Faits des répliques validées du script.
 publish:

@@ -72,16 +72,17 @@ export const TrialCover: React.FC<CoverProps> = ({ data }) => {
 
 export const THUMB = { width: 1280, height: 720 };
 type Film = { title: { ar: string; en: string }; handle: string; thumbnail: { title: string; tag: string; panels: string[] } };
-export type ThumbProps = { voice: string; film: Film | null; panels: TrialData[] | null };
+/** `film`: the id of the film (content/trial/<id>.yaml; the first one is « film »); `data`: its thumbnail, loaded. */
+export type ThumbProps = { film: string; voice: string; data: Film | null; panels: TrialData[] | null };
 export const thumbMetadata: CalculateMetadataFunction<ThumbProps> = async ({ props, abortSignal }) => {
-  const res = await fetch(staticFile("trial/film.json"), { signal: abortSignal });
-  if (!res.ok) throw new Error("public/trial/film.json is missing: run tools/trial/prepare.py --film");
-  const film = (await res.json()) as Film;
-  const panels = await Promise.all(film.thumbnail.panels.map((trial) => load(trial, props.voice, abortSignal)));
-  return { props: { ...props, film, panels } };
+  const res = await fetch(staticFile(`trial/${props.film}.json`), { signal: abortSignal });
+  if (!res.ok) throw new Error(`public/trial/${props.film}.json is missing: run tools/trial/prepare.py --film ${props.film}`);
+  const data = (await res.json()) as Film;
+  const panels = await Promise.all(data.thumbnail.panels.map((trial) => load(trial, props.voice, abortSignal)));
+  return { props: { ...props, data, panels } };
 };
 
-export const TrialThumb: React.FC<ThumbProps> = ({ film, panels }) => {
+export const TrialThumb: React.FC<ThumbProps> = ({ data: film, panels }) => {
   if (!film || !panels) throw new Error("no film data: calculateMetadata did not run");
   const width = THUMB.width / panels.length;
   // Each panel is the 9:16 picture of a short, reduced and a little enlarged around what is drawn (`focus` of

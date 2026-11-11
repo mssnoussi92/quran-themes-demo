@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""The texts to paste for the trial videos (content/trial/*.yaml, docs/retention.md): for the film and each
+"""The texts to paste for a film and its shorts (content/trial/*.yaml, docs/model.md): for the film and each
 short, the title and the text of each platform, one block to copy each, in the form video/scripts/publish.ts
-gives the episodes (same order of hashtags, same limits: content/publish.yaml).
+gives the old episodes (same order of hashtags, same limits: content/publish.yaml).
 
-  uv run --with pyyaml python3 tools/trial/publish.py [--voice D] [--out docs/retention/publication-moussa-khidr.md]
+  uv run --with pyyaml python3 tools/trial/publish.py [--film <id>] [--voice D] [--out <file.md>]
 
 Written by hand in the trial files (`publish`: title, description; the film's `series` and `hashtags`).
 Computed here: the sources quoted (reference, reciter or reader, link), the durations and the film's
@@ -84,10 +84,12 @@ def block(text: str) -> str:
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--voice", default="D")
-    p.add_argument("--out", type=Path, default=ROOT / "docs" / "retention" / "publication-moussa-khidr.md")
+    p.add_argument("--film", default="film", help="the film's id (content/trial/<id>.yaml)")
+    p.add_argument("--out", type=Path, help="default: `publish.out` of the film, or docs/publication-<files>.md")
     args = p.parse_args()
     conf = yaml.safe_load((ROOT / "content" / "publish.yaml").read_text(encoding="utf-8"))
-    film = yaml.safe_load((TRIAL / "film.yaml").read_text(encoding="utf-8"))
+    film = yaml.safe_load((TRIAL / f"{args.film}.yaml").read_text(encoding="utf-8"))
+    files = film.get("files", film["id"])        # what the delivered videos' names start with
     episode = json.loads((PUBLIC / "data" / f"{film['verses']}.json").read_text(encoding="utf-8"))
     sources = {s["source"]["id"]: s["source"] for s in episode["scenes"] if s.get("source")}
     pub = film["publish"]
@@ -109,7 +111,7 @@ def main() -> None:
               else "Titres et descriptions **proposés par la session, pas encore validés par le propriétaire**")
     limits = conf["platforms"]
     out = [
-        "# Moussa et al-Khadir : textes de publication de l'essai",
+        f"# {pub['series']['en']} · {pub['series']['ar']} : textes de publication",
         "",
         f"Pour le film et chaque short : le titre, puis le texte à coller sur chaque plateforme. {status} ; "
         "les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés "
@@ -120,7 +122,7 @@ def main() -> None:
     ]
 
     # The film
-    data = json.loads((PUBLIC / "trial" / f"film-{args.voice}.json").read_text(encoding="utf-8"))
+    data = json.loads((PUBLIC / "trial" / f"{args.film}-{args.voice}.json").read_text(encoding="utf-8"))
     ids = [("verse", s["verse"]) if "verse" in s else ("reading", s["reading"]) for c in film["chapters"] for s in c["segments"] if "verse" in s or "reading" in s]
     lines, hadith, verse = quoted(ids, sources)
     title = f"{pub['title']['en']} · {pub['title']['ar']}"
@@ -135,7 +137,7 @@ def main() -> None:
     if len(body) > limits["youtube"]["max_description"]:
         sys.exit(f"error: the film's YouTube description is {len(body)} characters")
     out += [f"## Le film · {pub['title']['en']} · {pub['title']['ar']}", "",
-            f"`khidr-film-16x9{bed}.mp4` · {stamp(data['seconds'])} · 16:9 · YouTube · miniature : `miniature-film-16x9.jpg`", "",
+            f"`{files}-film-16x9{bed}.mp4` · {stamp(data['seconds'])} · 16:9 · YouTube · miniature : `{film['thumbnail'].get('file', files + '-film-thumbnail.jpg')}`", "",
             f"**Titre YouTube ({len(title)}/{limits['youtube']['max_title']})**", "", block(title),
             "**Description YouTube**", "", block(body),
             "Écran de fin (YouTube Studio) : les 12 dernières secondes sont une image calme, faite pour y poser le bouton "
@@ -149,7 +151,8 @@ def main() -> None:
         lines, hadith, verse = quoted(ids, sources)
         n, total = sp["part"], len(shorts)
         series = f"{pub['series']['en']} · part {n}/{total} · {pub['series']['ar']} · الجزء {str(n).translate(DIGITS)} من {str(total).translate(DIGITS)}"
-        name = f"khidr-short-{n}-{spec['id']}"
+        name = f"{files}-short-{n}-{spec['id']}"
+        cover = (spec.get("cover") or {}).get("file", f"{name}-cover.jpg")
 
         def caption(handle: str, most: int | None) -> str:
             return "\n\n".join([
@@ -166,7 +169,7 @@ def main() -> None:
             sys.exit(f"error: {name}: the YouTube title is {len(title)} characters")
         out += [f"## Short {n} · {sp['title']['en']} · {sp['title']['ar']}", "",
                 f"`{name}{bed}.mp4` (TikTok : `{name}-tiktok{bed}.mp4`, signée {conf['handles']['tiktok']}) · {stamp(data['seconds'])} · 9:16 · "
-                f"Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-{n}-{ {'boat': 'bateau', 'boy': 'garcon', 'wall': 'mur'}[spec['id']] }.jpg`", "",
+                f"Facebook, Instagram, TikTok, YouTube Shorts · couverture : `{cover}`", "",
                 f"**Facebook ({limits['facebook']['max_hashtags']} hashtags)**", "", block(caption(conf["handle"], limits["facebook"]["max_hashtags"])),
                 f"**Instagram ({limits['instagram_tiktok']['max_hashtags']} hashtags)**", "", block(insta),
                 f"**TikTok : la vidéo `{name}-tiktok{bed}.mp4` ({limits['instagram_tiktok']['max_hashtags']} hashtags)**", "",
@@ -175,9 +178,10 @@ def main() -> None:
                 "**Description YouTube (Shorts)**", "", block(caption(conf["handle"], None)),
                 "Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.", ""]
 
-    args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text("\n".join(out), encoding="utf-8")
-    print(f"{args.out.relative_to(ROOT)}: the film and {len(shorts)} shorts")
+    target = args.out or ROOT / pub.get("out", f"docs/publication-{files}.md")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text("\n".join(out), encoding="utf-8")
+    print(f"{target.relative_to(ROOT)}: the film and {len(shorts)} shorts")
 
 
 if __name__ == "__main__":

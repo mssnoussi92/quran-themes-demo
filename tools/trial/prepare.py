@@ -219,10 +219,10 @@ def main() -> None:
     p.add_argument("--voice", help="label of the narration voice (D, E)")
     p.add_argument("--takes", type=Path, help="directory of the narration take <voice>-<text>.flac (or .wav, .mp3)")
     p.add_argument("--clip", type=Path, help="the filmed clip of the trial (not in the repository)")
-    p.add_argument("--film", action="store_true",
-                   help="the long film of content/trial/film.yaml, built on the shorts already prepared here "
-                        "(tools/trial/film.py): public/trial/film-<voice>.json for TrialFilm169 and film.json, its "
-                        "YouTube thumbnail (TrialThumb169); with --draft, or --voice and --takes")
+    p.add_argument("--film", nargs="?", const="film", default=None, metavar="ID",
+                   help="the long film content/trial/<ID>.yaml (ID: film when not given), built on the shorts already "
+                        "prepared here (tools/trial/film.py): public/trial/<ID>-<voice>.json for TrialFilm169 and "
+                        "<ID>.json, its YouTube thumbnail (TrialThumb169); with --draft, or --voice and --takes")
     p.add_argument("--episode", help="prepared episode the verses come from (default: `verses` of the trial)")
     p.add_argument("--draft", action="store_true",
                    help="no voice yet: the narration is silent and timed from its length (voice label X), to look at the "

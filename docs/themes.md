@@ -4,7 +4,23 @@ Tenu à jour par les skills `choose-format` et `new-theme` (étape 1). Les plans
 sont dans `docs/design.md`, les formats dans `docs/formats.md` ; ici, ce qui a été décidé sur l'ordre, le
 format et l'angle des suivants.
 
-## Faits
+## Réécriture dans le modèle (décision du propriétaire, 2026-11-11)
+
+Les épisodes ci-dessous ont été publiés dans l'ancien circuit (reels en chapitres, personnages, styles). **Ils
+doivent être réécrits dans le modèle « un film et ses shorts »** (`docs/model.md`) : scènes nouvelles, scripts
+améliorés, ambiance. Leurs sources et leurs lectures de hadith, validées, restent.
+
+| Épisode | Dans le modèle |
+| --- | --- |
+| Moussa et al-Khadir (`khidr`) | **fait** : film de 7:47 et trois shorts (`content/trial/film.yaml`, `boat`, `boy`, `wall`), tout validé le 2026-11-11 |
+| Dhul-Qarnayn (`qarnayn`), les gens de la caverne (`kahf`) | à réécrire ; des histoires, le format où le modèle est éprouvé |
+| Du'a, patience, repentir, comparaisons, confiance en Dieu, الخشوع | à réécrire ; idées reçues : leur structure dans le modèle se propose d'abord au propriétaire, et chaque short cite un hadith, ce qu'un short ne sait pas encore jouer |
+
+**Ordre proposé par la session, pas décidé** : Dhul-Qarnayn, puis la caverne, puis les idées reçues une fois les
+outils complétés (`docs/model.md`, « Ce que les outils ne font pas encore », 1 et 2). Le propriétaire choisit
+(skill `choose-format`).
+
+## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
 

@@ -17,6 +17,7 @@
 #   garde ; jamais dans les 30 premières secondes) ; `outro` : secondes d'image calme à la fin, pour l'écran de
 #   fin de YouTube.
 id: film
+files: khidr                     # début du nom des vidéos livrées : khidr-film-16x9.mp4, khidr-short-<n>-<id>.mp4
 title: { ar: "موسى والخضر… مش كل حاجة شايفها شر تبقى شر", en: "Moses and al-Khidr: not everything that looks bad is bad" }
 script_validated: { by: mssnoussi92, on: 2026-11-11 }
 # « Je valide » du propriétaire (2026-11-11) sur la vidéo livrée dans la conversation : la voix D entendue sur la
@@ -30,10 +31,11 @@ text: 23-trial-film
 verses: khidr
 outro: 12
 # Miniature YouTube 1280x720 (TrialThumb169) : les trois histoires côte à côte, le nom de l'histoire en grand.
-thumbnail: { title: "موسى والخضر", tag: "٣ مواقف… و٣ أسرار", panels: [boat, boy, wall], validated: { by: mssnoussi92, on: 2026-11-11 } }
+thumbnail: { title: "موسى والخضر", tag: "٣ مواقف… و٣ أسرار", panels: [boat, boy, wall], file: miniature-film-16x9.jpg, validated: { by: mssnoussi92, on: 2026-11-11 } }
 # Textes de publication, proposés par la session (2026-11-11), pas encore validés : tools/trial/publish.py en
 # fait les textes à coller (YouTube avec ses chapitres, et les trois shorts, qui prennent `series` et `hashtags`).
 publish:
+  out: docs/retention/publication-moussa-khidr.md      # où tools/trial/publish.py écrit les textes à coller
   title: { en: "Moses and al-Khidr: what looks bad is not always bad", ar: "موسى والخضر: مش كل شر… شر" }
   series: { en: "Moses and al-Khidr", ar: "موسى والخضر" }
   description:
