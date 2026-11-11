@@ -23,6 +23,13 @@ verses: khidr
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", E: "Gemini 3.8 Flash TTS, Sadaltager", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 22-trial-wall
 cover: { scene: treasure, title: "سر تحت الجدار", tag: "موسى والخضر · ٣ من ٣", focus: 1230 }   # couverture 9:16 du short (TrialCover916) ; titre validé par le propriétaire le 2026-11-11, avec le film
+# Textes de publication, proposés par la session (2026-11-11), pas encore validés (tools/trial/publish.py).
+publish:
+  title: { en: "The secret under the wall", ar: "سر تحت الجدار" }
+  part: 3
+  description:
+    en: "A town refused to host them… and one of them repaired its wall for free. Why? Under that wall was a treasure kept for two orphans until they grew up. How many walls were built in your life without your knowing?"
+    ar: "قرية رفضت تضيّفهم… وواحد منهم صلّح جدارها ببلاش. ليه؟ تحت الجدار كنز لولدين يتامى، ربنا حفظه لحد ما يكبروا. كام جدار اتبنى في حياتك… وإنت مش داري؟"
 segments:
   - narration: open
     scene: leaning

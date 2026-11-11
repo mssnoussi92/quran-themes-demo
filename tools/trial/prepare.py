@@ -267,7 +267,9 @@ def main() -> None:
             segments.append({**verse_segment(by_source, seg["verse"], out_dir, args.episode), "scene": seg["scene"], "start": round(t, 2)})
         t += segments[-1]["seconds"] + GAP
     total = round(t - GAP + TAIL, 2)
+    handles = yaml.safe_load((ROOT / "content" / "publish.yaml").read_text(encoding="utf-8")).get("handles", {})
     data = {"trial": args.trial, "voice": args.voice, "voice_name": spec["voices"][args.voice], "handle": spec["handle"],
+            "handles": handles,                             # where the page has another name (TikTok): prop `platform`
             "clip": f"trial/{clip.name}", "clip_seconds": round(seconds(args.clip), 2),
             # How the clip sits in the frame (content/trial/<id>.yaml, `clip`): where it is cropped, how far it is
             # moved down (or up) to leave the text its place, how much it is darkened, the colour behind it.

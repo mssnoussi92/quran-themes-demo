@@ -39,6 +39,14 @@ verses: khidr-solo     # épisode préparé d'où viennent les versets et leur r
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", E: "Gemini 3.8 Flash TTS, Sadaltager", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 20-trial-boat   # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
 cover: { scene: holed, title: "ليه خرق السفينة؟", tag: "موسى والخضر · ١ من ٣", focus: 1120 }   # couverture 9:16 du short (TrialCover916) ; titre validé par le propriétaire le 2026-11-11, avec le film
+# Textes de publication, proposés par la session (2026-11-11), pas encore validés : tools/trial/publish.py en
+# fait les textes à coller sur chaque plateforme. Faits des répliques validées du script.
+publish:
+  title: { en: "Why did he tear a hole in the boat?", ar: "ليه خرق السفينة؟" }
+  part: 1
+  description:
+    en: "They let them board for free… and one of them tore a hole in the boat. Why? The answer is in Surat al-Kahf: a king was seizing every sound boat, and the damage is what saved this one. Not everything that looks bad is bad."
+    ar: "ركّبوهم السفينة ببلاش… وواحد منهم خرقها. ليه؟ الإجابة في سورة الكهف: ملك بياخد كل سفينة سليمة، والعيب هو اللي حماها. مش كل حاجة شايفها شر… تبقى شر."
 segments:
   - narration: open
     scene: holed

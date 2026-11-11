@@ -28,12 +28,13 @@ type Segment = Narration | Verse;
  * text its place, how dark, the colour behind it, where its horizon is (the picture grows around it). */
 export type Picture = { position?: string; shift?: number; brightness?: number; ground?: string; horizon?: number; rate?: number };
 export type TrialData = {
-  trial: string; voice: string; voice_name: string; handle: string;
+  trial: string; voice: string; voice_name: string; handle: string; handles?: Record<string, string>;
   clip: string; clip_seconds: number; picture?: Picture; seconds: number; segments: Segment[];
   /** The 9:16 cover of the short: the scene it shows, its title in large, a tag above it. */
   cover?: { scene: string; title: string; tag: string; focus?: number } | null;
 };
-export type TrialProps = { trial: string; voice: string; data: TrialData | null };
+/** `platform`: where the page has another name (TikTok: content/publish.yaml, `handles`), the video is signed with it. */
+export type TrialProps = { trial: string; voice: string; platform?: string; data: TrialData | null };
 
 export const TRIAL_FPS = 30;
 export const trialMetadata: CalculateMetadataFunction<TrialProps> = async ({ props, abortSignal }) => {
@@ -282,10 +283,13 @@ export const VerseText: React.FC<{ seg: Verse; t: number; layout?: Layout }> = (
   );
 };
 
-export const Trial: React.FC<TrialProps> = ({ data }) => {
+export const Trial: React.FC<TrialProps> = ({ data, platform }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   if (!data) throw new Error("no trial data: calculateMetadata did not run");
+  // A platform with no name of its own in `handles` fails the render rather than sign with the wrong account.
+  const handle = platform ? data.handles?.[platform] : data.handle;
+  if (!handle) throw new Error(`no handle for the platform « ${platform} » (content/publish.yaml, handles)`);
   const t = frame / fps;
   const picture = data.picture ?? {};
   const horizon = picture.horizon ?? 1300;
@@ -313,12 +317,12 @@ export const Trial: React.FC<TrialProps> = ({ data }) => {
         ) : null,
       )}
       {current.kind === "narration" ? (
-        <NarrationText seg={current} t={t} last={current === data.segments[data.segments.length - 1]} handle={data.handle} />
+        <NarrationText seg={current} t={t} last={current === data.segments[data.segments.length - 1]} handle={handle} />
       ) : (
         <VerseText seg={current} t={t} />
       )}
       <div style={{ position: "absolute", top: 250, right: 90, fontFamily: FONT.latin, fontWeight: 600, fontSize: 30, color: GOLD, opacity: 0.9, textShadow: SHADOW }}>
-        {data.handle}
+        {handle}
       </div>
     </AbsoluteFill>
   );

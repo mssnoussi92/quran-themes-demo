@@ -21,6 +21,13 @@ verses: khidr          # épisode préparé d'où viennent les versets et leur r
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", E: "Gemini 3.8 Flash TTS, Sadaltager", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 21-trial-boy     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
 cover: { scene: home, title: "خسروا ابنهم… ليه؟", tag: "موسى والخضر · ٢ من ٣", focus: 1190 }   # couverture 9:16 du short (TrialCover916) ; titre validé par le propriétaire le 2026-11-11, avec le film
+# Textes de publication, proposés par la session (2026-11-11), pas encore validés (tools/trial/publish.py).
+publish:
+  title: { en: "They lost their son… why?", ar: "خسروا ابنهم… ليه؟" }
+  part: 2
+  description:
+    en: "A believing father and mother lost their son, and may never have known why. God told us the reason in Surat al-Kahf. Not every wisdom is shown in this life: some answers are with God."
+    ar: "أب وأم مؤمنين خسروا ابنهم… ويمكن عمرهم ما عرفوا ليه. السبب ربنا حكاه لنا في سورة الكهف. مش كل حكمة هتتكشف في الدنيا: فيه أسئلة إجابتها عند ربنا."
 segments:
   - narration: open
     scene: home

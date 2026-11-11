@@ -448,6 +448,34 @@ première phrase ; le chapitre en cours en haut à gauche ; le moineau du hadith
 Les répliques des shorts sont recoupées dans leurs prises, réplique par réplique. Brouillon sans voix :
 8:00, chapitres à 0:00, 0:18, 1:00, 2:39, 4:41 et 6:41, 3:50 de récitation.
 
+### La nuit du 2026-11-11 : la voix D sur les quatre textes, les rendus, les textes de publication
+
+Le propriétaire, avant de dormir : « je t'autorise de terminer les vidéos avec tes recommandations ; je veux
+3 shorts + film + thumbnail + title et description » pour le matin.
+
+- **La voix.** Une requête d'essai à 04:40 UTC est passée, alors que le quota du jour devait être épuisé
+  jusqu'à 08:00 UTC ; les trois autres textes ont suivi (une refusée avec « retry in 3h18m », repassée à la
+  demande suivante). Les quatre prises de la voix D sont dans le dépôt (`content/trial/takes/` : 65, 70, 66 et
+  64 s), 4 requêtes en tout. Le compteur du palier gratuit n'est donc pas strict : une requête refusée « pour la
+  journée » peut passer quelques minutes après. Une prise d'une minute et 13 répliques tient dans une requête.
+- **La découpe.** Chaque phrase est retrouvée par ses mots (`align.py`) : 33, 35, 30 et 28 morceaux, tous
+  entendus. Un cas corrigé : une phrase dite sans pause après une question d'un mot (« السر؟ ») prenait la pause
+  d'avant la question.
+- **Les pauses resserrées** (recommandation de la session, appliquée) : la voix D tient jusqu'à 1,5 s à chaque
+  « … » ; `prepare.py` garde au plus 0,5 s dans une réplique et 0,7 s entre deux répliques, en retirant le
+  milieu du silence. Vérifié par Whisper sur six morceaux : aucun mot coupé. Gain : 6 à 7 s par short.
+- **Les durées réelles** : bateau 1:33, garçon 1:47, mur 2:04, film 7:47 (chapitres à 0:00, 0:19, 1:00, 2:32,
+  4:31, 6:29 ; rappels d'abonnement à 2:26 et 7:33).
+- **Les rendus** : `video/out/essai/khidr-short-1-boat.mp4`, `-2-boy`, `-3-wall`, `khidr-film-16x9.mp4`, puis
+  les trois shorts signés du nom TikTok de la page (`-tiktok.mp4`, prop `platform`), environ 4 images par
+  seconde dans la session.
+- **Les textes de publication** : `publish` de chaque fichier de l'essai (titre, description, proposés) et
+  `tools/trial/publish.py`, qui écrit `docs/retention/publication-moussa-khidr.md` : pour le film et chaque
+  short, un bloc à coller par plateforme, les sources citées, les chapitres du film, la ligne de voix IA
+  (Gemini), les hashtags de la page.
+
+Rien de cela n'est validé par le propriétaire : il juge au réveil.
+
 ## La demande
 
 Propriétaire, 2026-11-10, après le premier essai sur Instagram : les règles et les personnages des vidéos faites

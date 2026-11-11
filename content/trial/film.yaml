@@ -26,6 +26,16 @@ verses: khidr
 outro: 12
 # Miniature YouTube 1280x720 (TrialThumb169) : les trois histoires côte à côte, le nom de l'histoire en grand.
 thumbnail: { title: "موسى والخضر", tag: "٣ مواقف… و٣ أسرار", panels: [boat, boy, wall], validated: { by: mssnoussi92, on: 2026-11-11 } }
+# Textes de publication, proposés par la session (2026-11-11), pas encore validés : tools/trial/publish.py en
+# fait les textes à coller (YouTube avec ses chapitres, et les trois shorts, qui prennent `series` et `hashtags`).
+publish:
+  title: { en: "Moses and al-Khidr: what looks bad is not always bad", ar: "موسى والخضر: مش كل شر… شر" }
+  series: { en: "Moses and al-Khidr", ar: "موسى والخضر" }
+  description:
+    en: "A boat torn open, a father and mother who lost their son, a wall rebuilt for free: three things Moses, peace be upon him, could not keep silent about on his journey with al-Khidr (Surat al-Kahf), and the secret of each. A wisdom shown quickly, a wisdom never shown to those who lived it, and a good hidden until its time."
+    ar: "سفينة اتخرقت، أب وأم خسروا ابنهم، وجدار اتبنى ببلاش: تلات مواقف موسى عليه السلام ما قدرش يسكت عليها في رحلته مع الخضر (سورة الكهف)، وسر كل واحد منهم. حكمة اتكشفت بسرعة، وحكمة ما اتكشفتش لأصحابها، وخير مستخبي لحد وقته."
+  hashtags: ["#Qadr", "#القدر", "#SurahAlKahf"]      # ceux de l'épisode khidr, validés par le propriétaire le 2026-11-08
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }
 chapters:
   - id: open                     # 0:00 : les trois images, la promesse
     title: { ar: "تلات مواقف", en: "Three stories" }
