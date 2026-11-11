@@ -513,8 +513,11 @@ Le propriétaire : « je valide et je suis d'accord sur ta remarque pour le son 
   versets la différence avec l'ancien son est à −65 dBFS (le réencodage seul), sous la narration ce qui est
   ajouté est la nappe (corrélation 0,99) ; volumes inchangés (−16,2 à −16,4 LUFS). Un rendu neuf la joue
   de lui-même (`ambience` des données, `Trial916` et `TrialFilm169`).
-- **Pas encore entendue par le propriétaire** : le niveau se règle d'un nombre (`level`), l'enregistrement se
-  change d'une ligne.
+- **Validée par le propriétaire le même jour** (« je valide », après avoir reçu les sept vidéos avec la nappe) :
+  les trois enregistrements et leurs niveaux, grillons et vent compris, que la session lui signalait comme ses
+  choix les moins sûrs. `ambience` s'ajoute à `validated` des quatre fichiers. **Les vidéos finales sont les
+  `…-ambience.mp4`** ; elles ne sont dans aucune release, seulement dans la conversation. Pour un prochain
+  film : le niveau se règle d'un nombre (`level`), l'enregistrement se change d'une ligne.
 
 ## La demande
 

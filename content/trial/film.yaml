@@ -21,9 +21,9 @@ title: { ar: "موسى والخضر… مش كل حاجة شايفها شر تب
 script_validated: { by: mssnoussi92, on: 2026-11-11 }
 # « Je valide » du propriétaire (2026-11-11) sur la vidéo livrée dans la conversation : la voix D entendue sur la
 # vidéo entière, le montage, la vignette, le rappel d'abonnement, les textes de publication (`publish`). Inscrit sur sa parole.
-# L'ambiance sonore (`ambience`), ajoutée après avec son accord, n'était pas dans la vidéo qu'il a vue :
-# elle attend son oreille.
-validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, thumbnail, subscribe, publish] }
+# L'ambiance sonore (`ambience`), ajoutée après avec son accord, a reçu son propre « je valide » le même jour,
+# sur les vidéos `…-ambience.mp4` : ce sont elles, les vidéos finales.
+validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, thumbnail, subscribe, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 23-trial-film

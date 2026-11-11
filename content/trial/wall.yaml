@@ -18,13 +18,13 @@
 script_validated: { by: mssnoussi92, on: 2026-11-11 }
 # « Je valide » du propriétaire (2026-11-11) sur la vidéo livrée dans la conversation : la voix D entendue sur la
 # vidéo entière, le montage, la couverture, les textes de publication (`publish`). Inscrit sur sa parole.
-# L'ambiance sonore (`ambience`), ajoutée après avec son accord, n'était pas dans la vidéo qu'il a vue :
-# elle attend son oreille.
-validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, cover, publish] }
+# L'ambiance sonore (`ambience`), ajoutée après avec son accord, a reçu son propre « je valide » le même jour,
+# sur les vidéos `…-ambience.mp4` : ce sont elles, les vidéos finales.
+validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, cover, publish, ambience] }
 # Ambiance sous la narration, jamais sous un verset ni un hadith (accord du propriétaire, 2026-11-11) : un
 # enregistrement de terrain de BigSoundBank (Joseph Sardin, CC0 : tout usage, crédit non exigé), hors dépôt
 # (tools/trial/ambience.py). `level` : volume de la nappe en LUFS (la voix est à -16). Le vent dans un arbre, quelques oiseaux.
-# Le propriétaire ne l'a pas encore entendue.
+# Validée par le propriétaire le 2026-11-11, après l'avoir reçue sous les vidéos (`validated`).
 ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -36 }
 id: wall
 handle: "@quran_words_daily"

@@ -1,10 +1,10 @@
 # Moussa et al-Khadir : textes de publication de l'essai
 
-Pour le film et chaque short : le titre, puis le texte à coller sur chaque plateforme. Titres et descriptions **validés par le propriétaire le 2026-11-11** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation ; avec l'ambiance sonore sous la narration, les mêmes noms terminés par `-ambience.mp4`.
+Pour le film et chaque short : le titre, puis le texte à coller sur chaque plateforme. Titres et descriptions **validés par le propriétaire le 2026-11-11** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation, avec l'ambiance sonore sous la narration, validée elle aussi (`…-ambience.mp4`).
 
 ## Le film · Moses and al-Khidr: what looks bad is not always bad · موسى والخضر: مش كل شر… شر
 
-`khidr-film-16x9.mp4` · 7:47 · 16:9 · YouTube · miniature : `miniature-film-16x9.jpg`
+`khidr-film-16x9-ambience.mp4` · 7:47 · 16:9 · YouTube · miniature : `miniature-film-16x9.jpg`
 
 **Titre YouTube (80/100)**
 
@@ -50,7 +50,7 @@ Footage: Pixabay (Artvan93, Dans4, DancingSky) · Ambience: BigSoundBank (Joseph
 
 ## Short 1 · Why did he tear a hole in the boat? · ليه خرق السفينة؟
 
-`khidr-short-1-boat.mp4` (TikTok : `khidr-short-1-boat-tiktok.mp4`, signée @quran.words.daily) · 1:33 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-1-bateau.jpg`
+`khidr-short-1-boat-ambience.mp4` (TikTok : `khidr-short-1-boat-tiktok-ambience.mp4`, signée @quran.words.daily) · 1:33 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-1-bateau.jpg`
 
 **Facebook (8 hashtags)**
 
@@ -100,7 +100,7 @@ Footage: Pixabay (Artvan93) · Ambience: BigSoundBank (Joseph Sardin)
 #QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر
 ```
 
-**TikTok : la vidéo `khidr-short-1-boat-tiktok.mp4` (5 hashtags)**
+**TikTok : la vidéo `khidr-short-1-boat-tiktok-ambience.mp4` (5 hashtags)**
 
 ```text
 Why did he tear a hole in the boat?
@@ -158,7 +158,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 
 ## Short 2 · They lost their son… why? · خسروا ابنهم… ليه؟
 
-`khidr-short-2-boy.mp4` (TikTok : `khidr-short-2-boy-tiktok.mp4`, signée @quran.words.daily) · 1:47 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-2-garcon.jpg`
+`khidr-short-2-boy-ambience.mp4` (TikTok : `khidr-short-2-boy-tiktok-ambience.mp4`, signée @quran.words.daily) · 1:47 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-2-garcon.jpg`
 
 **Facebook (8 hashtags)**
 
@@ -208,7 +208,7 @@ Footage: Pixabay (Dans4) · Ambience: BigSoundBank (Joseph Sardin)
 #QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر
 ```
 
-**TikTok : la vidéo `khidr-short-2-boy-tiktok.mp4` (5 hashtags)**
+**TikTok : la vidéo `khidr-short-2-boy-tiktok-ambience.mp4` (5 hashtags)**
 
 ```text
 They lost their son… why?
@@ -266,7 +266,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 
 ## Short 3 · The secret under the wall · سر تحت الجدار
 
-`khidr-short-3-wall.mp4` (TikTok : `khidr-short-3-wall-tiktok.mp4`, signée @quran.words.daily) · 2:03 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-3-mur.jpg`
+`khidr-short-3-wall-ambience.mp4` (TikTok : `khidr-short-3-wall-tiktok-ambience.mp4`, signée @quran.words.daily) · 2:03 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-3-mur.jpg`
 
 **Facebook (8 hashtags)**
 
@@ -316,7 +316,7 @@ Footage: Pixabay (DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 #QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر
 ```
 
-**TikTok : la vidéo `khidr-short-3-wall-tiktok.mp4` (5 hashtags)**
+**TikTok : la vidéo `khidr-short-3-wall-tiktok-ambience.mp4` (5 hashtags)**
 
 ```text
 The secret under the wall
