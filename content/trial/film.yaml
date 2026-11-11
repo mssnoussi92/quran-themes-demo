@@ -18,6 +18,7 @@
 #   fin de YouTube.
 id: film
 files: khidr                     # début du nom des vidéos livrées : khidr-film-16x9.mp4, khidr-short-<n>-<id>.mp4
+ambience_after: true             # ce film seulement : l'ambiance a été posée sous les vidéos rendues (ambience.py --mix), les validées s'appellent …-ambience.mp4
 title: { ar: "موسى والخضر… مش كل حاجة شايفها شر تبقى شر", en: "Moses and al-Khidr: not everything that looks bad is bad" }
 script_validated: { by: mssnoussi92, on: 2026-11-11 }
 # « Je valide » du propriétaire (2026-11-11) sur la vidéo livrée dans la conversation : la voix D entendue sur la

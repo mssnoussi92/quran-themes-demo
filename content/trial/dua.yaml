@@ -17,6 +17,11 @@
 # publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
 id: dua
 script_validated: { by: mssnoussi92, on: 2026-11-11 }
+# « Je valide tout » du propriétaire (2026-11-11) sur le film corrigé, rendu par le workflow `film` et envoyé dans la
+# conversation : la voix D sur la vidéo entière, le montage, la vignette, le rappel d'abonnement, l'ambiance ; et les
+# sources du film et de ses shorts qui étaient encore proposées (huit versets, Tirmidhi 3505 et sa lecture). Inscrit
+# sur sa parole. Les textes de publication (`publish`) ne sont pas couverts : il lui reste à les lire.
+validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, thumbnail, subscribe, ambience] }
 files: dua                       # début du nom des vidéos livrées : dua-film-16x9.mp4, dua-short-<n>-<id>.mp4
 title: { ar: "الدعاء… تلات أفكار غلط بتبعدك عنه", en: "Du'a: three wrong ideas that keep you from asking" }
 handle: "@quran_words_daily"
@@ -25,6 +30,7 @@ text: 33-trial-dua
 outro: 12
 thumbnail: { title: "الدعاء", tag: "٣ أفكار غلط… و٣ نداءات", panels: [asked, written, waited] }
 publish:
+  out: docs/retention/publication-dua.md      # où tools/trial/publish.py écrit les textes à coller
   title: { en: "Du'a: 3 wrong ideas that keep you from asking", ar: "الدعاء: ٣ أفكار غلط بتبعدك عنه" }
   series: { en: "Du'a", ar: "الدعاء" }
   description:

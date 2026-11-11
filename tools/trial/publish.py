@@ -125,8 +125,11 @@ def main() -> None:
     said = [(s.get("validated") or {}) for s in [film, *shorts]]
     validated = all("publish" in (v.get("what") or []) for v in said)
     when = said[0].get("on", said[0].get(True))      # PyYAML reads the key « on » as true (YAML 1.1)
-    # Once the owner has validated the ambience, the videos to publish are the ones that have it.
-    bed = "-ambience" if all("ambience" in (v.get("what") or []) for v in said) else ""
+    # The first film was rendered without its ambience, which was put under the rendered videos afterwards
+    # (`ambience_after` of its file): once the owner has validated it, the videos to publish are those mixes,
+    # `…-ambience.mp4`. Every film since is rendered with its ambience, and its videos keep their names.
+    heard = all("ambience" in (v.get("what") or []) for v in said)
+    bed = "-ambience" if film.get("ambience_after") and heard else ""
     status = (f"Titres et descriptions **validés par le propriétaire le {when}**" if validated
               else "Titres et descriptions **proposés par la session, pas encore validés par le propriétaire**")
     limits = conf["platforms"]
@@ -136,8 +139,11 @@ def main() -> None:
         f"Pour le film et chaque short : le titre, puis le texte à coller sur chaque plateforme. {status} ; "
         "les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés "
         "(`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation"
-        + (", avec l'ambiance sonore sous la narration, validée elle aussi (`…-ambience.mp4`)." if bed else
-           " ; avec l'ambiance sonore sous la narration, pas encore validée, les mêmes noms terminés par `-ambience.mp4`."),
+        + ((", avec l'ambiance sonore sous la narration, validée elle aussi (`…-ambience.mp4`)." if bed else
+            " ; avec l'ambiance sonore sous la narration, pas encore validée, les mêmes noms terminés par `-ambience.mp4`.")
+           if film.get("ambience_after") else
+           " et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise"
+           + (", validée elle aussi." if heard else ", pas encore validée.")),
         "",
     ]
 

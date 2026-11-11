@@ -8,9 +8,9 @@ publication texts (tools/trial/publish.py) give them.
   uv run --with pyyaml python3 tools/trial/videos.py --film <id> --stills --matrix   # the covers and the thumbnail
 
 A short is `<files>-short-<part>-<id>` (composition Trial916) and its TikTok twin `<name>-tiktok` (same props
-plus "platform":"tiktok"); the film is `<files>-film-16x9` (TrialFilm169). Once the owner has validated the
-ambience of every file (`validated.what` has `ambience`), publish.py names the videos `...-ambience`: the same
-rule is applied here, so that the names are identical. Stills: the cover of a short (TrialCover916, `cover.file`
+plus "platform":"tiktok"); the film is `<files>-film-16x9` (TrialFilm169). The first film alone
+(`ambience_after` in its file: its ambience was mixed under the rendered videos) has its videos named
+`...-ambience` once the owner validated that ambience: publish.py names them so, and the same rule is applied here. Stills: the cover of a short (TrialCover916, `cover.file`
 or `<name>-cover.jpg`) and the film's thumbnail (TrialThumb169, `thumbnail.file` or `<files>-film-thumbnail.jpg`),
 both taken at frame 45.
 
@@ -49,9 +49,10 @@ def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]
     ids = [s["id"] for s in shorts]
     if only not in ("all", "shorts", "film", "tiktok") and only not in ids:
         sys.exit(f"error: --only {only}: not all, shorts, film, tiktok or one of {', '.join(ids)}")
-    # Same rule as publish.py: the videos carry the ambience in their name once the owner validated it.
+    # Same rule as publish.py: only the first film's videos (`ambience_after`: the ambience mixed under them
+    # after the render) carry the ambience in their name, once the owner validated it.
     said = [(s.get("validated") or {}) for s in [film, *shorts]]
-    bed = "-ambience" if all("ambience" in (v.get("what") or []) for v in said) else ""
+    bed = "-ambience" if film.get("ambience_after") and all("ambience" in (v.get("what") or []) for v in said) else ""
     videos, stills = [], []
     for spec in shorts:
         if only == "film" or only in ids and only != spec["id"]:

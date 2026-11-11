@@ -87,7 +87,7 @@ l'un à l'autre en fondu.
 
 | Champ | Ce que c'est |
 | --- | --- |
-| `id`, `files` | son nom (le premier : `film`) ; `files` : le début du nom des vidéos livrées (`khidr-film-16x9.mp4`, `khidr-short-<n>-<id>.mp4`) |
+| `id`, `files` | son nom (le premier : `film`) ; `files` : le début du nom des vidéos livrées (`khidr-film-16x9.mp4`, `khidr-short-<n>-<id>.mp4`) ; `ambience_after: true`, le premier film seulement : son ambiance a été posée sous les vidéos déjà rendues, et ses vidéos validées s'appellent `…-ambience.mp4` (les films suivants sont rendus avec leur ambiance et gardent leurs noms) |
 | `text` | le texte de voix de ses répliques propres (une requête pour toutes) |
 | `verses` | seulement dans le premier film (ancien épisode préparé) ; sinon le registre |
 | `outro` | secondes d'image calme à la fin (12) |
