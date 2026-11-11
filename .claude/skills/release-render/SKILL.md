@@ -5,6 +5,31 @@ description: Render, check and hand over the videos of a film and its shorts in 
 
 # Render, check, hand over
 
+## 0. The workflow `film` (normal path once it has been tried)
+
+`.github/workflows/film.yml` prepares and renders a film, its shorts and their TikTok versions in parallel
+jobs (a video per job) and puts them in a **draft** release `<files>-candidate` that only the owner sees. It
+has **not been run yet**: try it once (one short first: `only` = the short's id) before relying on it, and
+fall back to the session path below if it fails.
+
+- **Dispatch** with the GitHub MCP (`actions_run_trigger`, `run_workflow`, `workflow_id: film.yml`, `ref: <branch>`,
+  inputs as strings), or from the Actions tab once the file is on the default branch. A push that changes
+  the workflow file itself tries it on one short of the du'a (no inputs on a push).
+  Inputs: `film` (required: `content/trial/<film>.yaml`), `voice` (D), `only` (`all`, `shorts`, `film`,
+  `tiktok`, or one short's id: only that short is prepared), `ambience` (true: the bed is under the narration).
+- **Needs** the repository secret `PIXABAY_API_KEY` (it fails at once, saying so, when it is missing), the
+  voice takes already in `content/trial/takes/` (it never asks Gemini), and a film that reads the registry
+  (the first film, which reads an old episode in `verses`, is refused).
+- **What you get**: the draft release with `<files>-short-<n>-<id>.mp4`, the `-tiktok` twins,
+  `<files>-film-16x9.mp4`, the covers, the thumbnail, the check sheets (`sheets/`), and the texts to paste as
+  the body; each video is also a run artifact for 7 days. `tools/trial/videos.py --film <film>` lists the
+  expected names. If a render failed, the rest is published, the notes name what is missing and the run is
+  red: re-run the failed jobs.
+- Open the sheets, read the check output, then send the owner the draft. **The validation is still
+  recorded on the owner's word** (`validated`, section 9): the workflow validates nothing.
+
+The session path below stays valid, unchanged.
+
 The videos of the model are rendered **in the session**, not by a workflow: the filmed clips and the
 ambience recordings are not in the repository. They are sent to the owner in the conversation, and
 they are in no release: tell them to keep their copies. The owner validates once, on the videos, and
