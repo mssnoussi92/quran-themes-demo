@@ -271,7 +271,9 @@ mot « اتكسرت » : remplacé par « كل حاجة وحشة حصلتلك ف
 (à éviter dans les scripts à venir, comme « شالتهم »). Et il veut **finir par un appel à suivre** : « تابعنا
 عشان تعرف بقية القصة », dit en dernier, après l'annonce du deuxième cas, qui donne la raison de suivre ; le nom
 de la page s'affiche en grand sous la phrase. La session avait proposé de s'en passer : il a tranché. Ce que
-cela engage : la suite promise doit exister quand ce short sera publié.
+cela engage : la suite promise doit exister quand ce short sera publié. La phrase de fin de la version 1, que
+la version 2 avait retirée, revient à sa demande sans le mot : « لما حاجة وحشة تحصلك… افتكر السفينة », après la
+phrase à retenir (14 répliques, environ 1:40).
 
 Sa capture de la page des limites de Google AI Studio montre 60 requêtes par minute, 100 000 jetons par minute
 et **100 requêtes par jour**, sans dire pour quel modèle ; le refus du run 11 disait 10 par jour pour

@@ -23,6 +23,8 @@
 # - demandes du propriétaire sur la version 2 (2026-11-11) : il ne veut pas du mot « اتكسرت » (remplacé par
 #   « حاجة وحشة حصلتلك » et « اللي خسرناه ») et veut finir par un appel à suivre : « تابعنا عشان تعرف بقية القصة »,
 #   dit après l'annonce du deuxième cas (la raison de suivre) ; le nom de la page s'affiche en grand à ce moment.
+#   La phrase de la version 1 « لما حاجة تتكسر في حياتك… افتكر السفينة », que la version 2 avait retirée, revient à
+#   sa demande, sans ce mot : « لما حاجة وحشة تحصلك… افتكر السفينة » (elle répond à la promesse de l'accroche).
 # Version 1 : commit 7a36223.
 id: boat
 handle: "@quran_words_daily"
@@ -72,6 +74,8 @@ segments:
     lines:
       - ar: "مش كل حاجة شايفها شر… تبقى شر."
         en: "Not everything you see as bad… is bad."
+      - ar: "لما حاجة وحشة تحصلك… افتكر السفينة."
+        en: "When something bad happens to you… remember the boat."
       - ar: "ده أول موقف من تلاتة… وحكمته اتكشفت بسرعة."
         en: "That was the first of three… and its wisdom showed quickly."
       - ar: "التاني أصعب… ناس اتوجعوا… ويمكن عمرهم ما عرفوا ليه."
