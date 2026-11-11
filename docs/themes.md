@@ -13,8 +13,10 @@ améliorés, ambiance. Leurs sources et leurs lectures de hadith, validées, res
 | Épisode | Dans le modèle |
 | --- | --- |
 | Moussa et al-Khadir (`khidr`) | **fait** : film de 7:47 et trois shorts (`content/trial/film.yaml`, `boat`, `boy`, `wall`), tout validé le 2026-11-11 |
-| Dhul-Qarnayn (`qarnayn`), les gens de la caverne (`kahf`) | à réécrire ; des histoires, le format où le modèle est éprouvé |
-| Du'a, patience, repentir, comparaisons, confiance en Dieu, الخشوع | à réécrire ; idées reçues : leur structure dans le modèle se propose d'abord au propriétaire, et chaque short cite un hadith, ce qu'un short ne sait pas encore jouer |
+| Du'a (`dua`) | **en cours** : script validé, voix faite, rendus en cours (`content/trial/dua.yaml`, `asked`, `written`, `waited`) |
+| Dhul-Qarnayn (`qarnayn`) | **le suivant** (choix du propriétaire, 2026-11-11) : fiche ci-dessous, structure à valider |
+| Les gens de la caverne (`kahf`) | à réécrire ; une histoire, le format où le modèle est éprouvé |
+| Patience, repentir, comparaisons, confiance en Dieu, الخشوع | à réécrire ; idées reçues, sur le modèle du du'a (chaque idée brisée par un fait du Coran qu'on peut montrer) |
 
 **Ordre** : la session proposait Dhul-Qarnayn, puis la caverne, puis les idées reçues une fois les outils
 complétés. **Le propriétaire a choisi autrement (2026-11-11) : le du'a d'abord**, « car c'est différent », puis
@@ -118,6 +120,78 @@ fichiers). **Voix** : quatre requêtes, une par texte (run 15 de `voice-test`, a
 
 **Reste** : les rendus, leur contrôle, l'ambiance, les couvertures et les textes, puis le « je valide » du
 propriétaire sur les vidéos.
+
+### Fiche : Dhul-Qarnayn dans le modèle (skill `choose-format`, 2026-11-11)
+
+**Choix du propriétaire (2026-11-11)** : Dhul-Qarnayn est le thème suivant, après le du'a.
+
+**Ce qu'est l'épisode publié** (`content/episodes/qarnayn.yaml`, cinq reels, 7:38) : qui il est et la force donnée
+(18:83-85), le couchant et le levant (18:86-91), le barrage demandé et l'argent refusé (18:92-95), le fer et le
+cuivre, « رحمة من ربي » (18:96-98), « إن شاء الله » (Tirmidhi 3153, 18:23-24). Ses 19 sources et la lecture de
+Tirmidhi 3153 (Yusuf ibn Nuh Ahmad, 15 s) sont validées et restent ; les versets sont déjà coupés dans la récitation.
+
+**Ce qui ne passe pas tel quel dans le modèle** :
+
+- **Il raconte puis récite** : chaque verset est d'abord dit en égyptien par la narration (« قال: اللي ظلم… هنعاقبه »),
+  puis récité. Dans le modèle, la narration pose la question, le verset répond, la narration dit le sens.
+- **Son premier reel ne fait qu'installer** (qui il est, la force donnée) et finit sur « تابعنا عشان تعرف لقى إيه
+  هناك » : c'est le défaut mesuré sur khidr-01. Son accroche est une question au spectateur (« ربنا فتحها عليك؟ »).
+- **Deux de ses quatre étapes montrent des gens** (le peuple du couchant, celui du levant, celui des deux
+  montagnes) : le modèle ne dessine personne. Il reste des lieux et des choses, et il y en a : une source sombre où
+  le soleil se couche, une plaine nue au lever, un défilé entre deux parois, des blocs de fer, un feu, du cuivre.
+
+**Durées de récitation** (Tawfiq As-Sayegh, coupes du dépôt) : 18:83-85, 19 s ; 18:86-88, 50 s ; 18:89-91, 22 s ;
+18:92-95, 48 s ; 18:96-98, 47 s ; soit 3:07 pour 18:83-98, plus 18:23-24, 27 s, et le hadith lu, 15 s. Un film
+d'environ 7:30.
+
+**Recommandé : trois shorts, un par épreuve de la force, et le film qui les relie.** La même force, trois questions
+différentes posées à celui qui l'a :
+
+| Short | Le fait qui l'ouvre | Versets (récitation) | La question | Ce qui est dessiné (des lieux, des choses) |
+| --- | --- | --- | --- | --- |
+| 1. Le couchant | il arrive là où le soleil se couche, et il lui est laissé le choix sur tout un peuple : punir, ou bien traiter | 18:86-88 (50 s) | que fais-tu de ceux qui sont sous ta main ? La justice : celui qui fait le mal en répond, celui qui fait le bien est bien traité | le soleil qui descend sur une eau sombre (le clip), des habitations au bord, éteintes puis éclairées |
+| 2. L'argent refusé | on lui propose de l'argent pour bâtir un barrage, il le refuse, et il demande leurs bras | 18:92-95 (48 s) | que prends-tu à ceux qui ont besoin de toi ? Rien : ce que Dieu lui a donné vaut mieux, et il les fait travailler avec lui | un défilé entre deux parois, de jour ; un tribut posé, laissé là ; des outils |
+| 3. « رحمة من ربي » | il bâtit ce que personne ne peut franchir ni percer, et il dit : ce n'est pas moi | 18:96-98 (47 s) | que dis-tu quand tu as réussi ? « C'est une miséricorde de mon Seigneur », et rien ne dure | les blocs de fer entre les deux parois, le feu, le cuivre coulé, le barrage fini |
+
+- **Ce qui distingue les parties** : le pouvoir sur les gens, le pouvoir de prendre, le pouvoir d'avoir réussi. La
+  fin de chaque short nomme l'épreuve qu'on vient de voir et annonce la suivante. C'est la lecture de la session
+  (l'ancien épisode disait : la force est un dépôt, l'aide sans profit, la réussite est une miséricorde) ; le
+  propriétaire a peut-être la sienne, comme il avait la sienne pour Moussa et al-Khadir.
+- **Le film** (environ 7:30) ajoute : l'ouverture sur les trois images ; qui il est, en trois versets (18:83-85 :
+  le Coran ne dit ni son nom ni son époque, il dit ce qu'il a fait de ce qu'il a reçu) ; **le levant** entre le
+  premier et le deuxième short (18:89-91, 22 s : un peuple sans abri devant le soleil, et « Nous savions tout ce
+  qu'il avait ») ; la conclusion, « إن شاء الله » (Tirmidhi 3153, puis 18:23-24).
+- **Le levant n'a pas son short** : 22 secondes de versets, et le Coran ne dit pas ce qu'il y fit. Dans le film,
+  il se montre par le clip seul : une plaine nue au lever du soleil, rien de dessiné, puisque le verset dit qu'il
+  n'y a rien entre eux et le soleil.
+
+**Autre possibilité : un quatrième short, « إن شاء الله »** (Tirmidhi 3153 et 18:23-24, 42 s de citations). Il
+tient seul et il se partage bien (une phrase que tout le monde dit). Contre : c'est un hadith sur la fin des temps
+(Gog et Magog creusent chaque jour), donc une image qui ne peut montrer que le barrage ; et il clôt mieux le film
+qu'il n'ouvre un short. La session le garde pour la conclusion du film et laisse le propriétaire trancher.
+
+**Ce que la session se reproche et surveille** :
+
+- **18:86** : le soleil « se couche dans une source boueuse » est ce qu'il voit de là où il est, pas un fait
+  d'astronomie. L'ancienne réplique validée disait « شافها كأنها بتغرب » ; la traduction du registre dit « [as if] ».
+  La réplique du modèle doit garder ce « كأنها », et se vérifie dans un tafsir avant le script.
+- **Gog et Magog ne sont jamais dessinés**, ni le barrage rasé de 18:98 (la promesse de la fin : l'invisible n'est
+  pas figuré). Le texte et la récitation seulement.
+- **Trois images qui risquent de se ressembler** : deux shorts sur trois se passent au même défilé. Il faut deux
+  clips différents (de jour et de loin pour l'argent refusé ; au crépuscule et de près, avec le feu, pour le
+  barrage), sinon on refait l'erreur de la lune du du'a.
+
+**À faire de nouveau** : aucune source (tout est validé) ; trois ou quatre clips à chercher pour le plan (un
+coucher de soleil sur une eau sombre, un défilé de jour, le même genre de lieu au crépuscule, une plaine nue au
+lever) et à montrer au propriétaire ; trois dessins ; trois ambiances à choisir (une eau calme le soir, le vent dans
+un défilé, un feu). **Voix** : quatre requêtes (trois shorts, le film), une journée. **Rendu** : par le workflow
+`film` s'il a tourné une fois, sinon dans la session.
+
+**Décisions attendues du propriétaire** :
+
+1. Trois shorts (le couchant, l'argent refusé, « رحمة من ربي ») et le film, ou quatre avec « إن شاء الله » ?
+2. Le levant dans le film seulement ?
+3. Le fil des trois épreuves de la force (sur les gens, de prendre, d'avoir réussi), ou une autre lecture ?
 
 ## Faits (ancien circuit)
 
