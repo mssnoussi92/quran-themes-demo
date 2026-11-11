@@ -187,11 +187,9 @@ lever) et à montrer au propriétaire ; trois dessins ; trois ambiances à chois
 un défilé, un feu). **Voix** : quatre requêtes (trois shorts, le film), une journée. **Rendu** : par le workflow
 `film` s'il a tourné une fois, sinon dans la session.
 
-**Décisions attendues du propriétaire** :
-
-1. Trois shorts (le couchant, l'argent refusé, « رحمة من ربي ») et le film, ou quatre avec « إن شاء الله » ?
-2. Le levant dans le film seulement ?
-3. Le fil des trois épreuves de la force (sur les gens, de prendre, d'avoir réussi), ou une autre lecture ?
+**Décisions du propriétaire (2026-11-11, « ok go with your recommendations »)** : trois shorts (le couchant,
+l'argent refusé, « رحمة من ربي ») et le film ; le levant et « إن شاء الله » dans le film seulement ; le fil des
+trois épreuves de la force (sur les gens, de prendre, d'avoir réussi).
 
 ## Faits (ancien circuit)
 
