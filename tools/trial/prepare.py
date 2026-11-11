@@ -4,17 +4,21 @@
 Writes video/public/trial/<id>-<voice>.json (the timeline the composition Trial916 plays) and copies the
 audio beside it. Session only: the narration takes come from the release voice-test-latest (Gemini, by
 the workflow voice-test), the sea clip from Pixabay (key of the environment), the recitation and the
-verses' texts from the episode khidr-solo already prepared here (npm run data, tools/audio/build.py).
+verses' texts from the episode the trial names (`verses`: khidr, khidr-solo) already prepared here (npm run
+data, tools/audio/build.py).
 
   cd video && npm run data && cd ..                                     # the verses, from the registry
-  python3 tools/audio/build.py --episode khidr-solo --require-committed --tts-python /bin/false && (cd video && npm run data)
-  python3 tools/trial/clip.py --out <dir>/sea.mp4                          # the sea clip (PIXABAY_API_KEY)
-  # the narration: workflow voice-test, gemini_voices "D=Algieba,E=Sadaltager", gemini_texts
-  # "content/voice-test/20-trial-boat.txt", voicetut_speakers "none"; then download <voice>-trial-boat.flac
+  python3 tools/audio/build.py --episode khidr --require-committed --tts-python /bin/false && (cd video && npm run data)
+  python3 tools/trial/clip.py --trial boat --out <dir>/sea.mp4            # the clip of the trial (PIXABAY_API_KEY)
+  # the narration: workflow voice-test, gemini_voices "D=Algieba", gemini_texts
+  # "content/voice-test/20-trial-boat.txt", voicetut_speakers "none"; then download D-trial-boat.flac
   # from the release voice-test-latest into content/trial/takes/ and commit it: a take that exists is
-  # never asked for again (<takes> = content/trial/takes)
-  uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py --voice D --takes <takes> --clip <dir>/sea.mp4
-  cd video && npx remotion render Trial916 out/trial-D.mp4 --concurrency=2 --props='{"trial":"boat","voice":"D","data":null}'
+  # never asked for again (the four takes of voice D are there)
+  uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py --trial boat --voice D --takes content/trial/takes --clip <dir>/sea.mp4
+  cd video && npx remotion render src/index.ts Trial916 out/essai/khidr-short-1-boat.mp4 --concurrency=4 --crf=21 --props='{"trial":"boat","voice":"D","data":null}'
+  # TikTok: the same with "platform":"tiktok" in the props (signed with the page's TikTok name)
+  # the film, after the three shorts: prepare.py --film --voice D --takes content/trial/takes, then
+  # npx remotion render src/index.ts TrialFilm169 out/essai/khidr-film-16x9.mp4 --concurrency=4 --crf=21 --props='{"voice":"D","data":null}'
 
 Before any voice (no request spent): --trial <id> --draft --clip <clip> writes <id>-X.json, the narration
 silent and timed from its length, the recitation real; stills of Trial916 then show the script on its scenes.
