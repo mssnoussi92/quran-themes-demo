@@ -7,7 +7,7 @@ const LIGHT = "#ffd9a0";
 const GOLD = "#ffcf6a";
 
 /** The town on the horizon: flat-roofed houses with dark doors and windows, a few palms. */
-export const Village: React.FC<{ horizon: number }> = ({ horizon }) => {
+export const Village: React.FC<{ horizon: number; wide?: boolean }> = ({ horizon, wide = false }) => {
   const house = (x: number, w: number, h: number, key: number) => (
     <g key={key}>
       <rect x={x} y={horizon + 20 - h} width={w} height={h + 20} fill={FAR} />
@@ -30,6 +30,9 @@ export const Village: React.FC<{ horizon: number }> = ({ horizon }) => {
     <g>
       {[[18, 150, 120], [150, 120, 176], [262, 150, 104], [398, 96, 138], [770, 130, 150], [884, 110, 96], [976, 120, 170]].map(([x, w, h], i) => house(x, w, h, i))}
       {[[130, 190], [700, 150], [868, 210]].map(([x, h], i) => palm(x, h, 10 + i))}
+      {/* the 16:9 frame is wider: the town goes on to the right */}
+      {wide ? [[1090, 140, 110], [1226, 110, 160], [1330, 160, 96], [1486, 120, 144], [1602, 150, 118], [1748, 110, 172], [1852, 120, 100]].map(([x, w, h], i) => house(x, w, h, 20 + i)) : null}
+      {wide ? [[1210, 170], [1590, 200], [1840, 150]].map(([x, h], i) => palm(x, h, 30 + i)) : null}
     </g>
   );
 };

@@ -7,8 +7,9 @@ const LIGHT = "#ffd9a0";
 
 /** The land every scene stands on: a dark rise drawn over the bottom of the clip, lit along its edge (`rim`:
  * moonlight or the last light of the sun); `path`: a pale track coming up to the middle of the rise. */
-export const Land: React.FC<{ id: string; horizon: number; rim: string; path?: boolean }> = ({ id, horizon, rim, path = false }) => {
-  const edge = `M -20 ${horizon + 46} C 180 ${horizon + 8} 420 ${horizon + 2} 600 ${horizon + 20} C 800 ${horizon + 40} 960 ${horizon + 6} 1100 ${horizon - 12}`;
+export const Land: React.FC<{ id: string; horizon: number; rim: string; path?: boolean; width?: number }> = ({ id, horizon, rim, path = false, width = 1080 }) => {
+  const x = (v: number) => Math.round((v * width) / 1080);
+  const edge = `M -20 ${horizon + 46} C ${x(180)} ${horizon + 8} ${x(420)} ${horizon + 2} ${x(600)} ${horizon + 20} C ${x(800)} ${horizon + 40} ${x(960)} ${horizon + 6} ${x(1100)} ${horizon - 12}`;
   return (
     <g>
       <defs>
@@ -23,7 +24,7 @@ export const Land: React.FC<{ id: string; horizon: number; rim: string; path?: b
           <stop offset="1" stopColor={rim} stopOpacity="0" />
         </linearGradient>
       </defs>
-      <path d={`${edge} L 1100 1960 L -20 1960 Z`} fill={`url(#${id}-land)`} />
+      <path d={`${edge} L ${x(1100)} 1960 L -20 1960 Z`} fill={`url(#${id}-land)`} />
       <path d={edge} fill="none" stroke={rim} strokeWidth={3} opacity={0.35} />
       {path ? (
         <path d={`M 474 ${horizon + 24} C 540 ${horizon + 130} 600 ${horizon + 300} 470 1960 L 760 1960 C 760 ${horizon + 320} 620 ${horizon + 130} 504 ${horizon + 22} Z`} fill={`url(#${id}-path)`} />

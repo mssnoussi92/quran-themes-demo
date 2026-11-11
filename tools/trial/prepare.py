@@ -78,6 +78,97 @@ def pauses(path: Path, count: int) -> list[tuple[float, float]]:
     return sorted(sorted(inner, key=lambda g: g[1] - g[0], reverse=True)[:count])
 
 
+def letters(text: str) -> int:
+    return len(re.sub(r"[^\w]", "", MARKS.sub("", text)))
+
+
+def place(lines: list[str], whole: Path | None, by_pauses: bool = False) -> tuple[list[float], list, float]:
+    """Where each phrase of `lines` starts in the levelled take `whole`, the pause before each one (None: none
+    found, or the first phrase) and where the take ends. `whole` None: no voice yet, a draft timed from the
+    length of the phrases."""
+    phrases = [ph for l in lines for ph in PHRASE_CUT.split(l.strip())]
+    if whole is None:
+        # Each phrase lasts what its letters take at the pace of the Gemini voices and is followed by a pause,
+        # longer at the end of a line.
+        line_ends, n = set(), 0
+        for l in lines:
+            n += len(PHRASE_CUT.split(l.strip()))
+            line_ends.add(n - 1)
+        starts, after, at = [], [], 0.1
+        for i, ph in enumerate(phrases):
+            starts.append(round(at, 2))
+            stop = at + max(0.5, letters(ph) / DRAFT_PACE)
+            at = stop + (0.7 if i in line_ends else 0.45)
+            after.append((round(stop, 2), round(at, 2)))
+        return starts, [None] + after[:-1], after[-1][0] + 0.2
+    if by_pauses:
+        # The first way (five lines): the longest pauses of the take, in order. A voice that does not pause
+        # at one « … » shifts every phrase after it.
+        found = pauses(whole, len(phrases) - 1)
+        lead = next((b for a, b in silences(whole) if a <= 0.05), 0.0)
+        return [lead] + [b for _, b in found], [None] + found, seconds(whole)
+    # Whisper hears the take and each phrase is found by its words (tools/audio/align.py): what makes one
+    # request for thirty phrases, or for a chapter, safe to cut. Kept beside the take: Whisper is slow.
+    kept = whole.with_suffix(".align.json")
+    stamp = f"{whole.stat().st_size}:{'|'.join(lines)}"
+    if kept.is_file() and (old := json.loads(kept.read_text(encoding="utf-8"))).get("stamp") == stamp:
+        return old["starts"], [tuple(g) if g else None for g in old["gaps"]], old["end"]
+    sys.path.insert(0, str(ROOT / "tools" / "audio"))
+    import align
+    heard = align.phrases_in_take(whole, lines)
+    if [h.text for h in heard] != phrases:
+        sys.exit(f"error: {whole.name}: the phrases of the take and of the text differ")
+    weak = align.report(heard)
+    if weak:
+        print(f"warning: {whole.name}: {weak} phrase(s) mostly not heard (!!): listen before rendering; lines to redo go in ONE request")
+    starts, gaps, end = [h.start for h in heard], [h.pause for h in heard], seconds(whole)
+    kept.write_text(json.dumps({"stamp": stamp, "starts": starts, "gaps": gaps, "end": end}), encoding="utf-8")
+    return starts, gaps, end
+
+
+def cut(starts: list[float], gaps: list, end: float, first: int, after: int, what: str = "") -> tuple[float, float]:
+    """Where to cut the phrases [first, after) out of a take: 0.15 s of the pause before the first word is
+    kept, and 0.25 s of the one after the last."""
+    if first == 0:
+        begin = max(0.0, starts[0] - 0.08)
+    elif gaps[first]:
+        begin = max((gaps[first][0] + gaps[first][1]) / 2, gaps[first][1] - 0.15)
+    else:
+        begin = max(0.0, starts[first] - 0.03)
+        print(f"warning: no pause before « {what} »: the cut before it may clip a word, listen")
+    if after >= len(starts):
+        stop = end
+    elif gaps[after]:
+        stop = min((gaps[after][0] + gaps[after][1]) / 2, gaps[after][0] + 0.25)
+    else:
+        stop = max(begin + 0.1, starts[after] - 0.03)
+    return begin, stop
+
+
+def take_of(takes: Path, voice: str, text: str, out_dir: Path, name: str) -> Path:
+    """The take <voice>-<text> of `takes`, levelled into out_dir/<name>-<voice>.wav."""
+    stem = f"{voice}-{re.sub(r'^[0-9]+-', '', text)}"
+    take = next((f for f in (takes / f"{stem}{ext}" for ext in (".flac", ".wav", ".mp3")) if f.is_file()), None)
+    if take is None:
+        sys.exit(f"error: no take {stem}.(flac|wav|mp3) in {takes}")
+    whole = out_dir / f"{name}-{voice}.wav"
+    if not whole.is_file() or whole.stat().st_mtime < take.stat().st_mtime:
+        run("ffmpeg", "-y", "-loglevel", "error", "-i", str(take), "-af", LEVEL, "-ar", "48000", "-ac", "1", str(whole))
+    return whole
+
+
+def verse_segment(by_source: dict, source: str, out_dir: Path, episode: str) -> dict:
+    scene = by_source.get(source)
+    if scene is None:
+        sys.exit(f"error: {source} is not recited in the prepared episode {episode}")
+    src, media = scene["source"], scene["media"]
+    wav = out_dir / f"{source.replace('.', '-')}.wav"
+    shutil.copyfile(PUBLIC / media["file"], wav)
+    return {"kind": "verse", "seconds": media["seconds"], "file": f"trial/{wav.name}", "reference": src["reference"],
+            "text": src["display_ar"], "en": src["display_en"], "words": media["words"],
+            "credit": f"{media['credit'].split(': ')[-1]} · {src['translator']}"}
+
+
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--trial", default="boat")
@@ -85,8 +176,9 @@ def main() -> None:
     p.add_argument("--takes", type=Path, help="directory of the narration take <voice>-<text>.flac (or .wav, .mp3)")
     p.add_argument("--clip", type=Path, help="the filmed clip of the trial (not in the repository)")
     p.add_argument("--film", action="store_true",
-                   help="write public/trial/film.json from content/trial/film.yaml: for now its YouTube thumbnail "
-                        "(TrialThumb169), which shows the picture of each short already prepared here")
+                   help="the long film of content/trial/film.yaml, built on the shorts already prepared here "
+                        "(tools/trial/film.py): public/trial/film-<voice>.json for TrialFilm169 and film.json, its "
+                        "YouTube thumbnail (TrialThumb169); with --draft, or --voice and --takes")
     p.add_argument("--episode", help="prepared episode the verses come from (default: `verses` of the trial)")
     p.add_argument("--draft", action="store_true",
                    help="no voice yet: the narration is silent and timed from its length (voice label X), to look at the "
@@ -94,11 +186,8 @@ def main() -> None:
     p.add_argument("--by-pauses", action="store_true", help="place the phrases on the longest pauses of the take, without Whisper (a few lines only)")
     args = p.parse_args()
     if args.film:
-        film = yaml.safe_load((ROOT / "content" / "trial" / "film.yaml").read_text(encoding="utf-8"))
-        out = PUBLIC / "trial" / "film.json"
-        out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(json.dumps({"title": film["title"], "handle": film["handle"], "thumbnail": film["thumbnail"]}, ensure_ascii=False, indent=1), encoding="utf-8")
-        print(f"{out.relative_to(ROOT)}: thumbnail of the film ({', '.join(film['thumbnail']['panels'])})")
+        import film
+        film.prepare(args)
         return
     if not args.clip:
         sys.exit("error: --clip")
@@ -124,65 +213,12 @@ def main() -> None:
     if said != [l["ar"] for seg in narrated for l in seg["lines"]]:
         sys.exit(f"error: {text.name} and the lines of the trial differ")
     phrases = [ph for seg in narrated for l in seg["lines"] for ph in PHRASE_CUT.split(l["ar"].strip())]
-    whole = out_dir / f"{args.trial}-{args.voice}.wav"
-    if not args.draft:
-        take = next((f for f in (args.takes / f"{args.voice}-{re.sub(r'^[0-9]+-', '', spec['text'])}{ext}" for ext in (".flac", ".wav", ".mp3")) if f.is_file()), None)
-        if take is None:
-            sys.exit(f"error: no take {args.voice}-{re.sub(r'^[0-9]+-', '', spec['text'])}.(flac|wav|mp3) in {args.takes}")
-        run("ffmpeg", "-y", "-loglevel", "error", "-i", str(take), "-af", LEVEL, "-ar", "48000", "-ac", "1", str(whole))
-    if args.draft:
-        # No voice yet: each phrase lasts what its letters take at the pace of the Gemini voices (7.5 a second,
-        # measured on D and E) and is followed by a pause, longer at the end of a line.
-        line_ends, n = set(), 0
-        for seg in narrated:
-            for l in seg["lines"]:
-                n += len(PHRASE_CUT.split(l["ar"].strip()))
-                line_ends.add(n - 1)
-        starts, after, at = [], [], 0.1
-        for i, ph in enumerate(phrases):
-            starts.append(round(at, 2))
-            stop = at + max(0.5, len(re.sub(r"[^\w]", "", MARKS.sub("", ph))) / DRAFT_PACE)
-            at = stop + (0.7 if i in line_ends else 0.45)
-            after.append((round(stop, 2), round(at, 2)))
-        gaps = [None] + after[:-1]                          # the pause before each phrase
-        draft_end = after[-1][0] + 0.2
-    elif args.by_pauses:
-        # The first way (five lines): the longest pauses of the take, in order. A voice that does not pause
-        # at one « … » shifts every phrase after it.
-        found = pauses(whole, len(phrases) - 1)
-        lead = next((b for a, b in silences(whole) if a <= 0.05), 0.0)
-        starts = [lead] + [b for _, b in found]            # where each phrase starts in the take
-        gaps = [None] + found                               # the pause before each phrase
-    else:
-        # Whisper hears the take and each phrase is found by its words (tools/audio/align.py): what makes
-        # one request for thirty phrases, or for a chapter, safe to cut.
-        sys.path.insert(0, str(ROOT / "tools" / "audio"))
-        import align
-        heard = align.phrases_in_take(whole, said)
-        if [h.text for h in heard] != phrases:
-            sys.exit("error: the phrases of the take and of the trial differ")
-        weak = align.report(heard)
-        if weak:
-            print(f"warning: {weak} phrase(s) mostly not heard (!!): listen before rendering; lines to redo go in ONE request")
-        starts, gaps = [h.start for h in heard], [h.pause for h in heard]
+    whole = None if args.draft else take_of(args.takes, args.voice, spec["text"], out_dir, args.trial)
+    starts, gaps, take_end = place(said, whole, args.by_pauses)
     cuts, k = {}, 0                                         # narration id -> (from, to) in the take
-    for i, seg in enumerate(narrated):
+    for seg in narrated:
         n = sum(len(PHRASE_CUT.split(l["ar"].strip())) for l in seg["lines"])
-        # A segment keeps 0.15 s of the pause before its first word and 0.25 s of the one after its last.
-        if k == 0:
-            begin = max(0.0, starts[0] - 0.08)
-        elif gaps[k]:
-            begin = max((gaps[k][0] + gaps[k][1]) / 2, gaps[k][1] - 0.15)
-        else:
-            begin = max(0.0, starts[k] - 0.03)
-            print(f"warning: no pause before « {phrases[k]} »: the cut before it may clip a word, listen")
-        if k + n >= len(phrases):
-            end = draft_end if args.draft else seconds(whole)
-        elif gaps[k + n]:
-            end = min((gaps[k + n][0] + gaps[k + n][1]) / 2, gaps[k + n][0] + 0.25)
-        else:
-            end = max(begin + 0.1, starts[k + n] - 0.03)
-        cuts[seg["narration"]] = (begin, end, k)
+        cuts[seg["narration"]] = (*cut(starts, gaps, take_end, k, k + n, phrases[k]), k)
         k += n
 
     t, segments = LEAD, []
@@ -204,16 +240,7 @@ def main() -> None:
             segments.append({"kind": "narration", "scene": seg["scene"], "start": round(t, 2), "seconds": round(end - begin, 2),
                              "file": None if args.draft else f"trial/{wav.name}", "lines": lines})
         else:
-            scene = by_source.get(seg["verse"])
-            if scene is None:
-                sys.exit(f"error: {seg['verse']} is not recited in the prepared episode {args.episode}")
-            src, media = scene["source"], scene["media"]
-            wav = out_dir / f"{seg['verse'].replace('.', '-')}.wav"
-            shutil.copyfile(PUBLIC / media["file"], wav)
-            segments.append({"kind": "verse", "scene": seg["scene"], "start": round(t, 2), "seconds": media["seconds"],
-                             "file": f"trial/{wav.name}", "reference": src["reference"], "text": src["display_ar"],
-                             "en": src["display_en"], "words": media["words"],
-                             "credit": f"{media['credit'].split(': ')[-1]} · {src['translator']}"})
+            segments.append({**verse_segment(by_source, seg["verse"], out_dir, args.episode), "scene": seg["scene"], "start": round(t, 2)})
         t += segments[-1]["seconds"] + GAP
     total = round(t - GAP + TAIL, 2)
     data = {"trial": args.trial, "voice": args.voice, "voice_name": spec["voices"][args.voice], "handle": spec["handle"],

@@ -423,6 +423,31 @@ silhouette dans le carré central, que montre une grille de profil) et la vignet
 « ٣ مواقف… و٣ أسرار » en étiquette, rien dans le coin bas-droite). Titres des couvertures : « ليه خرق
 السفينة؟ », « خسروا ابنهم… ليه؟ », « سر تحت الجدار ».
 
+### Film validé, montage 16:9 commencé, rappel d'abonnement (2026-11-11)
+
+**« Je valide et tu peux commencer le montage »** (propriétaire, 2026-11-11, en réponse aux trois questions de
+la session) : la structure du film (chaque histoire avec son secret), ses répliques nouvelles et les titres
+des miniatures. Inscrit dans `content/trial/film.yaml` (`script_validated`, `thumbnail.validated`). Ni la voix
+ni le montage ne sont validés.
+
+**Le rappel d'abonnement** (sa demande : un format animé et le bon emplacement), proposé et construit ainsi :
+
+- **La forme** : le nom de la page, en haut à droite, devient pendant 4 secondes un bouton « اشترك · Subscribe »
+  avec une cloche ; il se remplit d'or et dit « مشترك ✓ », la cloche se balance, puis le nom revient. Pas de
+  curseur (il fait tutoriel, et la plupart des spectateurs sont sur téléphone), pas de son.
+- **L'endroit** : à la place du nom de la page, donc loin du texte arabe et des sous-titres.
+- **Les moments** : deux passages (`subscribe: true` dans `film.yaml`) : juste après la première leçon,
+  pendant la phrase qui annonce la deuxième histoire (vers 2:30) ; à la fin, sur « اشترك… عشان القصة الجاية ».
+  Jamais sur un verset, un hadith ou la garde, jamais dans les 30 premières secondes (`tools/trial/film.py` le
+  refuse). Les 12 dernières secondes sont une image calme, pour l'écran de fin de YouTube.
+
+**Le montage 16:9** (`TrialFilm169`, `video/src/trial/Film.tsx` ; données par `tools/trial/prepare.py --film`,
+`tools/trial/film.py`) : ce qui est dessiné d'un côté de l'image, le texte arabe de l'autre, la traduction en
+bas ; un clip par histoire, fondu de l'un à l'autre ; l'ouverture montre les trois images au fil de sa
+première phrase ; le chapitre en cours en haut à gauche ; le moineau du hadith dessiné sur le bord du bateau.
+Les répliques des shorts sont recoupées dans leurs prises, réplique par réplique. Brouillon sans voix :
+8:00, chapitres à 0:00, 0:18, 1:00, 2:39, 4:41 et 6:41, 3:50 de récitation.
+
 ## La demande
 
 Propriétaire, 2026-11-10, après le premier essai sur Instagram : les règles et les personnages des vidéos faites

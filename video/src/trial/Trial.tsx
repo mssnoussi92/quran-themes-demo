@@ -18,15 +18,15 @@ loadFonts();
 type Phrase = { text: string; start: number };
 type Line = { ar: string; en: string; phrases: Phrase[]; end: number };
 /** `file` is null in a draft: the script and the scenes are looked at before any voice says them. */
-type Narration = { kind: "narration"; scene: string; start: number; seconds: number; file: string | null; lines: Line[] };
-type Verse = {
+export type Narration = { kind: "narration"; scene: string; start: number; seconds: number; file: string | null; lines: Line[] };
+export type Verse = {
   kind: "verse"; scene: string; start: number; seconds: number; file: string;
   reference: string; text: string; en: string; words: WordTiming[]; credit: string;
 };
 type Segment = Narration | Verse;
 /** How the filmed clip sits in the frame: where it is cropped, how far down (or up) it is moved to leave the
  * text its place, how dark, the colour behind it, where its horizon is (the picture grows around it). */
-type Picture = { position?: string; shift?: number; brightness?: number; ground?: string; horizon?: number; rate?: number };
+export type Picture = { position?: string; shift?: number; brightness?: number; ground?: string; horizon?: number; rate?: number };
 export type TrialData = {
   trial: string; voice: string; voice_name: string; handle: string;
   clip: string; clip_seconds: number; picture?: Picture; seconds: number; segments: Segment[];
@@ -84,7 +84,7 @@ export const Clip: React.FC<{ src: string; clipSeconds: number; picture: Picture
 };
 
 /** How much of a scene shows at time t: scenes follow one another with a cross-fade. */
-const sceneOpacity = (segments: Segment[], id: string, t: number) => {
+export const sceneOpacity = (segments: { scene: string; start: number }[], id: string, t: number) => {
   let shown = 0;
   let current: string | null = null;
   for (const seg of segments) {
@@ -159,19 +159,36 @@ const WallPicture: Drawn = ({ t, show, horizon }) => (
 export const PICTURES: Record<string, Drawn> = { boat: BoatPicture, boy: HomePicture, wall: WallPicture };
 
 const hasLetter = (token: string) => /\p{L}/u.test(token);
-const fit = (base: number, text: string, comfortable: number) => Math.round(base * Math.min(1, Math.sqrt(comfortable / Math.max(1, text.length))));
+export const fit = (base: number, text: string, comfortable: number) => Math.round(base * Math.min(1, Math.sqrt(comfortable / Math.max(1, text.length))));
+
+/** Where the texts sit in the frame: the column of the Arabic text (the whole width of a short, the side of
+ * the frame the picture leaves free in the 16:9 film), the translation under the picture, the credit. */
+export type Layout = {
+  width: number; left: number; right: number;
+  /** A narration line: its top, its largest size, the most height it may take. */
+  top: number; size: number; height: number;
+  /** A verse: the top of its reference, its largest size, the length it is comfortable at that size. */
+  verseTop: number; verseSize: number; verseComfortable: number;
+  sub: { top: number; left: number; right: number; size: number };
+  credit: { top: number; size: number };
+};
+export const PORTRAIT: Layout = {
+  width: W, left: 70, right: 70, top: 340, size: 104, height: 450, verseTop: 316, verseSize: 66, verseComfortable: 150,
+  sub: { top: 1490, left: 80, right: 80, size: 44 }, credit: { top: 1716, size: 30 },
+};
 
 /** The largest size at which the phrases of a line, each on its own row (a long one on two), stay above
  * the picture: at most 450 px of text under the top margin. A letter of the bold Arabic face is about 0.41 em wide. */
-const narrationSize = (phrases: string[]) => {
-  for (let size = 104; size > 50; size -= 2) {
-    const rows = phrases.reduce((n, text) => n + Math.ceil((text.length * 0.41 * size) / (W - 140)), 0);
-    if (rows * size * 1.5 <= 450) return size;
+const narrationSize = (phrases: string[], layout: Layout) => {
+  const width = layout.width - layout.left - layout.right;
+  for (let size = layout.size; size > 50; size -= 2) {
+    const rows = phrases.reduce((n, text) => n + Math.ceil((text.length * 0.41 * size) / width), 0);
+    if (rows * size * 1.5 <= layout.height) return size;
   }
   return 50;
 };
 
-const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean; handle: string }> = ({ seg, t, last, handle }) => {
+export const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean; handle: string; layout?: Layout }> = ({ seg, t, last, handle, layout = PORTRAIT }) => {
   const { fps } = useVideoConfig();
   const local = t - seg.start;
   const index = seg.lines.findIndex((l, i) => local < l.end || i === seg.lines.length - 1);
@@ -181,10 +198,10 @@ const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean; handle
   // The first line of the video is written on its first frame, before the voice: it is what stops the thumb.
   const opening = seg.start < 1 && index === 0;
   const show = interpolate(local, [opening ? -10 : lineStart - 0.25, opening ? -9 : lineStart - 0.05, lineEnd - 0.2, lineEnd], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const size = narrationSize(line.phrases.map((p) => p.text));
+  const size = narrationSize(line.phrases.map((p) => p.text), layout);
   return (
     <>
-      <div dir="rtl" lang="ar" style={{ position: "absolute", top: 340, left: 70, right: 70, textAlign: "center", opacity: show, fontFamily: FONT.arabic, fontWeight: 700, fontSize: size, lineHeight: 1.5, color: "#fff", textShadow: SHADOW }}>
+      <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.top, left: layout.left, right: layout.right, textAlign: "center", opacity: show, fontFamily: FONT.arabic, fontWeight: 700, fontSize: size, lineHeight: 1.5, color: "#fff", textShadow: SHADOW }}>
         {line.phrases.map((phrase, i) => {
           // The very first phrase of the video is on its first frame; the others come as the voice reaches them.
           const first = opening && i === 0;
@@ -197,20 +214,20 @@ const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean; handle
           );
         })}
         {/* The last line of the short is its call to follow: the page to follow is written under it, large. */}
-        {last && index === seg.lines.length - 1 ? (
+        {last && handle && index === seg.lines.length - 1 ? (
           <div dir="ltr" style={{ display: "inline-block", marginTop: 34, padding: "10px 44px", borderRadius: 999, border: `3px solid ${GOLD}`, background: "rgba(4,7,20,.55)", fontFamily: FONT.latin, fontWeight: 600, fontSize: 50, lineHeight: 1.4, color: GOLD, textShadow: "none", opacity: interpolate(local, [lineStart + 0.2, lineStart + 0.6], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
             {handle}
           </div>
         ) : null}
       </div>
-      <div lang="en" style={{ position: "absolute", top: 1490, left: 80, right: 80, textAlign: "center", opacity: show, fontFamily: FONT.latin, fontStyle: "italic", fontSize: 44, lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
+      <div lang="en" style={{ position: "absolute", top: layout.sub.top, left: layout.sub.left, right: layout.sub.right, textAlign: "center", opacity: show, fontFamily: FONT.latin, fontStyle: "italic", fontSize: layout.sub.size, lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
         {line.en}
       </div>
     </>
   );
 };
 
-const VerseText: React.FC<{ seg: Verse; t: number }> = ({ seg, t }) => {
+export const VerseText: React.FC<{ seg: Verse; t: number; layout?: Layout }> = ({ seg, t, layout = PORTRAIT }) => {
   const local = t - seg.start;
   const show = interpolate(local, [-0.3, 0.1, seg.seconds - 0.1, seg.seconds + 0.3], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const active = seg.words.find((w) => local >= w.start && local < w.end)?.position;
@@ -244,10 +261,10 @@ const VerseText: React.FC<{ seg: Verse; t: number }> = ({ seg, t }) => {
   const cue = [...cues].reverse().find((c) => local >= c.start) ?? cues[0];
   return (
     <div style={{ opacity: show }}>
-      <div dir="rtl" lang="ar" style={{ position: "absolute", top: 316, left: 0, right: 0, textAlign: "center", fontFamily: FONT.arabic, fontSize: 34, color: "rgba(255,255,255,.72)", textShadow: SHADOW }}>
+      <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.verseTop, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.arabic, fontSize: 34, color: "rgba(255,255,255,.72)", textShadow: SHADOW }}>
         {seg.reference}
       </div>
-      <div dir="rtl" lang="ar" style={{ position: "absolute", top: 366, left: 64, right: 64, textAlign: "center", opacity: turn, fontFamily: FONT.quran, fontSize: fit(66, "x".repeat(longestPage), 150), lineHeight: 1.95, color: "#fff", textShadow: SHADOW, textWrap: "balance" }}>
+      <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.verseTop + 50, left: layout.left - 6, right: layout.right - 6, textAlign: "center", opacity: turn, fontFamily: FONT.quran, fontSize: fit(layout.verseSize, "x".repeat(longestPage), layout.verseComfortable), lineHeight: 1.95, color: "#fff", textShadow: SHADOW, textWrap: "balance" }}>
         {shown.map(({ token, position: p }, i) => (
           <Fragment key={`${page}-${i}`}>
             {i > 0 ? " " : null}
@@ -255,10 +272,10 @@ const VerseText: React.FC<{ seg: Verse; t: number }> = ({ seg, t }) => {
           </Fragment>
         ))}
       </div>
-      <div lang="en" style={{ position: "absolute", top: 1490, left: 80, right: 80, textAlign: "center", fontFamily: FONT.latin, fontStyle: "italic", fontSize: 44, lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
+      <div lang="en" style={{ position: "absolute", top: layout.sub.top, left: layout.sub.left, right: layout.sub.right, textAlign: "center", fontFamily: FONT.latin, fontStyle: "italic", fontSize: layout.sub.size, lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
         {cue.text}
       </div>
-      <div style={{ position: "absolute", top: 1716, left: 0, right: 0, textAlign: "center", fontFamily: FONT.latin, fontSize: 30, color: "rgba(255,255,255,.62)", textShadow: SHADOW }}>
+      <div style={{ position: "absolute", top: layout.credit.top, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.latin, fontSize: layout.credit.size, color: "rgba(255,255,255,.62)", textShadow: SHADOW }}>
         {seg.credit}
       </div>
     </div>

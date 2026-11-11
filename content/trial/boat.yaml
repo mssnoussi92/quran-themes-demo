@@ -34,11 +34,11 @@
 script_validated: { by: mssnoussi92, on: 2026-11-11 }
 id: boat
 handle: "@quran_words_daily"
-clip: { source: pixabay, id: 22183, author: Artvan93, page: "https://pixabay.com/videos/id-22183/", position: "62% 50%", horizon: 827, rate: 0.85 }
+clip: { source: pixabay, id: 22183, author: Artvan93, page: "https://pixabay.com/videos/id-22183/", position: "62% 50%", horizon: 827, rate: 0.85, landscape: { side: left, horizon: 465 } }
 verses: khidr-solo     # épisode préparé d'où viennent les versets et leur récitation
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", E: "Gemini 3.8 Flash TTS, Sadaltager", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 20-trial-boat   # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
-cover: { scene: holed, title: "ليه خرق السفينة؟", tag: "موسى والخضر · ١ من ٣", focus: 1120 }   # couverture 9:16 du short (TrialCover916), proposée
+cover: { scene: holed, title: "ليه خرق السفينة؟", tag: "موسى والخضر · ١ من ٣", focus: 1120 }   # couverture 9:16 du short (TrialCover916) ; titre validé par le propriétaire le 2026-11-11, avec le film
 segments:
   - narration: open
     scene: holed

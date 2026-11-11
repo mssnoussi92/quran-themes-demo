@@ -6,8 +6,8 @@ const LIGHT = "#ffd9a0";
 
 /** The boat of 18:71: a dhow with a lateen sail, bobbing; `holed` shows the plank torn out at the
  * waterline, the light of the sea through the gap and, with `splash`, the water thrown up at it. */
-export const Boat: React.FC<{ x: number; y: number; scale: number; t: number; holed?: boolean; splash?: boolean; plank?: boolean; id: string }> = ({
-  x, y, scale, t, holed = true, splash = true, plank = true, id,
+export const Boat: React.FC<{ x: number; y: number; scale: number; t: number; holed?: boolean; splash?: boolean; plank?: boolean; bird?: boolean; id: string }> = ({
+  x, y, scale, t, holed = true, splash = true, plank = true, bird = false, id,
 }) => {
   const bob = 5 * Math.sin(t * 1.4);
   const tilt = (holed ? -3.5 : -1) + 1.2 * Math.sin(t * 0.9);
@@ -50,6 +50,17 @@ export const Boat: React.FC<{ x: number; y: number; scale: number; t: number; ho
           fill={INK}
         />
         <path d="M 356 -114 L 320 -88 C 250 -48 140 -40 12 -40" fill="none" stroke="#ffbe7a" strokeWidth={3.5} opacity={0.6} />
+        {/* the sparrow of the hadith (Bukhari 3401), on the edge of the boat: it dips its beak towards the sea */}
+        {bird ? (
+          <g transform={`translate(-262 -112) scale(1.5) rotate(${-8 + 16 * Math.max(0, Math.sin(t * 1.3)) ** 3})`}>
+            <ellipse cx={0} cy={-20} rx={24} ry={15} fill={INK} />
+            <circle cx={-22} cy={-32} r={11} fill={INK} />
+            <path d="M -31 -31 L -47 -26 L -31 -24 Z" fill={INK} />
+            <path d="M 18 -24 L 50 -34 L 44 -16 Z" fill={INK} />
+            <path d="M -4 -6 L -6 4 M 6 -6 L 6 4" stroke={INK} strokeWidth={3} />
+            <path d="M -18 -30 Q 0 -40 22 -26" fill="none" stroke="#ffc98a" strokeWidth={2} opacity={0.6} />
+          </g>
+        ) : null}
         {holed ? (
           <>
             <polygon points="-140,-28 -108,-40 -84,-24 -50,-38 -22,-18 -32,12 -66,6 -98,16 -134,4" fill={LIGHT} filter={`url(#${id}-glow)`} opacity={splash ? 1 : 0.6} />

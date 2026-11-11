@@ -18,11 +18,11 @@
 script_validated: { by: mssnoussi92, on: 2026-11-11 }
 id: wall
 handle: "@quran_words_daily"
-clip: { source: pixabay, id: 190332, author: DancingSky, page: "https://pixabay.com/videos/id-190332/", position: "42% 50%", shift: -400, brightness: 0.62, ground: "#05060c" }
+clip: { source: pixabay, id: 190332, author: DancingSky, page: "https://pixabay.com/videos/id-190332/", position: "42% 50%", shift: -400, brightness: 0.62, ground: "#05060c", landscape: { side: left, horizon: 770, shift: -160, brightness: 0.62 } }
 verses: khidr
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", E: "Gemini 3.8 Flash TTS, Sadaltager", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 22-trial-wall
-cover: { scene: treasure, title: "سر تحت الجدار", tag: "موسى والخضر · ٣ من ٣", focus: 1230 }   # couverture 9:16 du short (TrialCover916), proposée
+cover: { scene: treasure, title: "سر تحت الجدار", tag: "موسى والخضر · ٣ من ٣", focus: 1230 }   # couverture 9:16 du short (TrialCover916) ; titre validé par le propriétaire le 2026-11-11, avec le film
 segments:
   - narration: open
     scene: leaning

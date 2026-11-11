@@ -13,6 +13,8 @@ import { TRIAL_FPS, Trial, trialMetadata } from "./trial/Trial";
 import type { TrialProps } from "./trial/Trial";
 import { THUMB, TrialCover, TrialThumb, coverMetadata, thumbMetadata } from "./trial/Cover";
 import type { CoverProps, ThumbProps } from "./trial/Cover";
+import { Film, filmMetadata } from "./trial/Film";
+import type { FilmProps } from "./trial/Film";
 
 // One composition per format, both fed by the same episode script.
 // Pick another episode or reel with --props, e.g. --props='{"episode":"dua","reel":"dua-01"}'.
@@ -52,6 +54,9 @@ export const RemotionRoot: React.FC = () => (
         clip is a video: 60 frames so that the cover is taken a moment into it (--frame=45). */}
     <Composition id="TrialCover916" component={TrialCover} fps={TRIAL_FPS} durationInFrames={60} width={1080} height={1920}
       defaultProps={{ trial: "boat", voice: "X", data: null } satisfies CoverProps} calculateMetadata={coverMetadata} />
+    {/* The long film of the trial (content/trial/film.yaml), 16:9, built on the three shorts. */}
+    <Composition id="TrialFilm169" component={Film} fps={TRIAL_FPS} durationInFrames={1} width={1920} height={1080}
+      defaultProps={{ voice: "D", data: null } satisfies FilmProps} calculateMetadata={filmMetadata} />
     <Composition id="TrialThumb169" component={TrialThumb} fps={TRIAL_FPS} durationInFrames={60} width={THUMB.width} height={THUMB.height}
       defaultProps={{ voice: "X", film: null, panels: null } satisfies ThumbProps} calculateMetadata={thumbMetadata} />
     <Still
