@@ -473,6 +473,18 @@ Le propriétaire, avant de dormir : « je t'autorise de terminer les vidéos ave
   `tools/trial/publish.py`, qui écrit `docs/retention/publication-moussa-khidr.md` : pour le film et chaque
   short, un bloc à coller par plateforme, les sources citées, les chapitres du film, la ligne de voix IA
   (Gemini), les hashtags de la page.
+- **Vérifié avant l'envoi** : chaque vidéo sur une planche d'images (ouverture, un verset par histoire, les deux
+  rappels d'abonnement, le hadith, la fin) et mesurée : −16,4, −16,3, −16,3 LUFS pour les shorts, −16,2 pour le
+  film (écart de 4,6 LU). Un défaut trouvé dans le film et corrigé : la traduction d'une réplique (144
+  caractères, 0:19 à 0:27) prenait trois lignes et la troisième sortait de l'image ; une traduction trop longue
+  pour les deux lignes du film est maintenant écrite plus petit (`sub.rows`, `subSize`, `Trial.tsx`). Seules les
+  500 images entre deux images clés (0:14 à 0:31) ont été rendues à nouveau et recollées sans réencoder le reste
+  (comparaison image par image : les 13 526 autres sont identiques, le son n'a pas bougé).
+- **Points faibles connus, non corrigés** : aucun son hors des voix (les clips sont muets, les 12 dernières
+  secondes du film sont silencieuses) ; dans l'ouverture du film le texte passe sur la lune ; une double image
+  brève quand le bateau change de place entre deux plans ; le short du mur finit sur « تابعنا عشان القصة الجاية »
+  alors qu'aucune histoire suivante n'existe encore ; le short du garçon dit un meurtre dans le verset et sa
+  traduction, ce que les plateformes peuvent limiter.
 
 Rien de cela n'est validé par le propriétaire : il juge au réveil.
 

@@ -170,7 +170,8 @@ export type Layout = {
   top: number; size: number; height: number;
   /** A verse: the top of its reference, its largest size, the length it is comfortable at that size. */
   verseTop: number; verseSize: number; verseComfortable: number;
-  sub: { top: number; left: number; right: number; size: number };
+  /** The translation: `rows`, the most rows it may take before the bottom of the frame (it is written smaller to fit). */
+  sub: { top: number; left: number; right: number; size: number; rows?: number };
   credit: { top: number; size: number };
 };
 export const PORTRAIT: Layout = {
@@ -187,6 +188,15 @@ const narrationSize = (phrases: string[], layout: Layout) => {
     if (rows * size * 1.5 <= layout.height) return size;
   }
   return 50;
+};
+
+/** The size of a translation: the layout's, or smaller when the line would take more rows than the layout has
+ * under it (the film has two before the bottom of the frame). A letter of the italic Latin face is about 0.49 em wide;
+ * 8 % is kept for the words that do not fill their row. */
+const subSize = (text: string, layout: Layout) => {
+  if (!layout.sub.rows) return layout.sub.size;
+  const width = layout.width - layout.sub.left - layout.sub.right;
+  return Math.min(layout.sub.size, Math.floor((layout.sub.rows * width * 0.92) / (0.49 * Math.max(1, text.length))));
 };
 
 export const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean; handle: string; layout?: Layout }> = ({ seg, t, last, handle, layout = PORTRAIT }) => {
@@ -221,7 +231,7 @@ export const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean;
           </div>
         ) : null}
       </div>
-      <div lang="en" style={{ position: "absolute", top: layout.sub.top, left: layout.sub.left, right: layout.sub.right, textAlign: "center", opacity: show, fontFamily: FONT.latin, fontStyle: "italic", fontSize: layout.sub.size, lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
+      <div lang="en" style={{ position: "absolute", top: layout.sub.top, left: layout.sub.left, right: layout.sub.right, textAlign: "center", opacity: show, fontFamily: FONT.latin, fontStyle: "italic", fontSize: subSize(line.en, layout), lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
         {line.en}
       </div>
     </>

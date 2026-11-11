@@ -49,7 +49,7 @@ const layoutFor = (side: Column): Layout => ({
   right: side === "left" ? 80 : side === "center" ? 330 : 900,
   top: side === "center" ? 150 : 176, size: 90, height: side === "center" ? 420 : 600,
   verseTop: 150, verseSize: 60, verseComfortable: 110,
-  sub: { top: 936, left: 250, right: 250, size: 40 },
+  sub: { top: 936, left: 250, right: 250, size: 40, rows: 2 },
   credit: { top: 846, size: 26 },
 });
 
