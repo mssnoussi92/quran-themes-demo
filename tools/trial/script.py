@@ -1,0 +1,176 @@
+#!/usr/bin/env python3
+"""The script of a film and its shorts as one page the owner can read and validate (docs/model.md).
+
+  uv run --with pyyaml python3 tools/trial/script.py --film <id> [--out docs/scripts/<id>.md]
+
+For each short, then for the film: every segment in order, the narration in Arabic and English, each
+verse and hadith by its reference with its length, and an estimate of the video's length before any
+voice exists. A line marked « reprise » is a validated line of the old episode kept word for word
+(`kept:` in the file); every other line is new and is what the owner validates. Nothing is typed
+here: lines come from content/trial/, references and texts of the quotes from the registry.
+
+The estimate: the voice says about ten letters a second, holds each « … » half a second and 0.7 s
+between two lines (tools/trial/prepare.py tightens its pauses to that); verses last what their cut
+in the recitation lasts (content/recitations/), a hadith what its recorded reading lasts.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import sys
+from pathlib import Path
+
+import yaml
+
+ROOT = Path(__file__).resolve().parents[2]
+TRIAL = ROOT / "content" / "trial"
+PHRASE_CUT = re.compile(r"(?<=[،,….!?؟:])\s+")
+PACE, PAUSE, PAUSE_LINES, GAP, LEAD, TAIL = 10.0, 0.5, 0.7, 0.35, 0.5, 1.2
+UNKNOWN_READING = 12.0     # a hadith whose reading is not found yet
+
+
+def stamp(seconds: float) -> str:
+    return f"{int(seconds // 60)}:{int(seconds % 60):02d}"
+
+
+def letters(text: str) -> int:
+    return len(re.sub(r"[^ء-ي]", "", text))
+
+
+def spoken(lines: list[dict]) -> float:
+    """Seconds a narration segment lasts, about."""
+    total = 0.0
+    for i, line in enumerate(lines):
+        phrases = [p for p in PHRASE_CUT.split(line["ar"].strip()) if p]
+        total += letters(line["ar"]) / PACE + PAUSE * (len(phrases) - 1) + (PAUSE_LINES if i else 0)
+    return total
+
+
+def registry() -> dict:
+    out = {}
+    for path in (ROOT / "content" / "sources").glob("*.yaml"):
+        for entry in yaml.safe_load(path.read_text(encoding="utf-8")) or []:
+            out[entry["id"]] = entry
+    return out
+
+
+def quote(sid: str, sources: dict, cuts: dict) -> tuple[str, float]:
+    """One line for a verse or a hadith, and how long it lasts."""
+    src = sources.get(sid)
+    if src is None:
+        sys.exit(f"error: {sid} is not in the registry")
+    state = "" if src.get("status") == "validated" else " · **source proposée, à valider**"
+    if src["type"] == "ayah":
+        key = f"{src['ref']['surah']}:{src['ref']['ayah']}"
+        cut = cuts.get(key)
+        seconds = cut["seconds"] if cut else 0.0
+        hand = " · coupe posée à la main, à écouter" if cut and "hand" in cut.get("method", "") else ""
+        name = (src.get("origin") or {}).get("surah_en", "")
+        return (f"**Verset récité** · {name} {key} · {seconds:.0f} s{state}{hand}  \n  {src['text_ar']}  \n  *{src['text_en']}*", seconds)
+    rec = src.get("recording")
+    seconds = rec["end"] - rec["start"] if rec else UNKNOWN_READING
+    reading = (f"lu par {rec['reader']} · {seconds:.0f} s" + ("" if rec.get("status") == "validated" else " · **lecture à valider**")) if rec \
+        else f"**lecture à trouver** (comptée {UNKNOWN_READING:.0f} s)"
+    ref = f"{src['ref']['collection'].capitalize()} {src['ref']['number']}" + ("abcdefgh"[src["ref"]["narration"] - 1] if src["ref"].get("narration") else "")
+    text = src.get("excerpt_ar") or src["text_ar"]
+    if not src.get("excerpt_ar") and text.count('"') >= 2:
+        text = text[text.index('"'):text.rindex('"') + 1]
+    english = src.get("excerpt_en") or src.get("text_en", "")
+    return (f"**Hadith lu par une vraie voix** · {ref} · {reading}{state}  \n  {text}  \n  *{english}*", seconds)
+
+
+def narration(lines: list[dict]) -> list[str]:
+    out = []
+    for line in lines:
+        mark = f"reprise de `{line['kept']}`" if line.get("kept") else "**nouvelle**"
+        out += [f"- {line['ar']}  ", f"  *{line['en']}* · {mark}"]
+    return out
+
+
+def main() -> None:
+    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument("--film", required=True, help="the film's id (content/trial/<id>.yaml)")
+    p.add_argument("--out", type=Path)
+    args = p.parse_args()
+    film = yaml.safe_load((TRIAL / f"{args.film}.yaml").read_text(encoding="utf-8"))
+    sources = registry()
+    cuts = json.loads((ROOT / "content" / "recitations" / "sayegh.json").read_text(encoding="utf-8"))
+    cuts = cuts.get("verses", cuts)
+    shorts = {name: yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film["thumbnail"]["panels"]}
+    doc = [f"# {film['title']['en']} · {film['title']['ar']}", "",
+           "Script à valider avant toute voix. Les répliques **nouvelles** sont de la session ; les répliques « reprises » "
+           "sont celles que le propriétaire a validées dans l'ancien épisode, mot pour mot. Versets et hadiths viennent du "
+           "registre. Durées estimées sans voix (`tools/trial/script.py`, à relancer après tout changement).", ""]
+    summary, bodies = [], []
+
+    # Each short
+    lengths = {}
+    for n, (name, spec) in enumerate(shorts.items(), 1):
+        t, recited, read, new, kept = LEAD, 0.0, 0.0, 0, 0
+        body = []
+        for seg in spec["segments"]:
+            if "narration" in seg:
+                seconds = spoken(seg["lines"])
+                body += [f"**{stamp(t)} · narration** (image : `{seg['scene']}`)", *narration(seg["lines"]), ""]
+                new += sum(1 for l in seg["lines"] if not l.get("kept"))
+                kept += sum(1 for l in seg["lines"] if l.get("kept"))
+            else:
+                text, seconds = quote(seg.get("verse") or seg["reading"], sources, cuts)
+                body += [f"**{stamp(t)}** · {text}", ""]
+                recited += seconds if "verse" in seg else 0
+                read += seconds if "reading" in seg else 0
+            t += seconds + GAP
+        total = t - GAP + TAIL
+        lengths[name] = total
+        cover = spec.get("cover") or {}
+        head = [f"## Short {n} · `{name}`" + (f" · {cover['title']}" if cover.get("title") else ""), "",
+                f"Environ **{stamp(total)}** · {stamp(recited)} de récitation, {stamp(read)} de hadith lu · "
+                f"{new} répliques nouvelles, {kept} reprises.", ""]
+        bodies += head + body
+        summary.append(f"| {n} | `{name}` | {stamp(total)} | {stamp(recited)} | {stamp(read)} | {new} | {kept} |")
+
+    # The film: the lines of its own, and its order
+    t, recited, read = LEAD, 0.0, 0.0
+    body, own_new, own_kept = [], 0, 0
+    for chapter in film["chapters"]:
+        body += [f"### {stamp(t)} · {chapter['title']['en']} · {chapter['title']['ar']}", ""]
+        for seg in chapter["segments"]:
+            if "reuse" in seg:
+                name, part = seg["reuse"].split(".")
+                lines = next(s["lines"] for s in shorts[name]["segments"] if s.get("narration") == part)
+                if "lines" in seg:
+                    lines = [lines[i] for i in seg["lines"]]
+                seconds = spoken(lines)
+                body.append(f"- {stamp(t)} · répliques du short `{name}` (`{part}`" + (f", {len(lines)} sur {len(next(s['lines'] for s in shorts[name]['segments'] if s.get('narration') == part))}" if "lines" in seg else "") + ")"
+                            + (" · **rappel d'abonnement**" if seg.get("subscribe") else ""))
+            elif "narration" in seg:
+                seconds = spoken(seg["lines"])
+                body += [f"**{stamp(t)} · narration propre au film**" + (" · **rappel d'abonnement**" if seg.get("subscribe") else ""), *narration(seg["lines"]), ""]
+                own_new += sum(1 for l in seg["lines"] if not l.get("kept"))
+                own_kept += sum(1 for l in seg["lines"] if l.get("kept"))
+            else:
+                text, seconds = quote(seg.get("verse") or seg["reading"], sources, cuts)
+                first = text.split("  \n")[0]
+                in_short = any((s.get("verse") or s.get("reading")) == (seg.get("verse") or seg["reading"]) for sp in shorts.values() for s in sp["segments"])
+                body += [f"- {stamp(t)} · {first}"] if in_short else [f"**{stamp(t)}** · {text}", ""]
+                recited += seconds if "verse" in seg else 0
+                read += seconds if "reading" in seg else 0
+            t += seconds + GAP
+        body.append("")
+    total = t - GAP + film.get("outro", 0)
+    doc += ["| | Vidéo | Durée estimée | Récitation | Hadith lu | Répliques nouvelles | Reprises |", "| --- | --- | --- | --- | --- | --- | --- |", *summary,
+            f"| | le film `{args.film}` | {stamp(total)} | {stamp(recited)} | {stamp(read)} | {own_new} (propres au film) | {own_kept} |", ""]
+    doc += bodies
+    doc += [f"## Le film · `{args.film}`", "",
+            f"Environ **{stamp(total)}**, dont {film.get('outro', 0)} s d'image calme à la fin · {stamp(recited)} de récitation, {stamp(read)} de hadith lu. "
+            "Il reprend les shorts réplique par réplique (sans leurs appels à suivre) ; seules ses répliques propres sont écrites ici en entier.", "", *body]
+    out = args.out or ROOT / "docs" / "scripts" / f"{args.film}.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text("\n".join(doc), encoding="utf-8")
+    shown = out.relative_to(ROOT) if out.is_relative_to(ROOT) else out
+    print(f"{shown}: " + ", ".join(f"{k} {stamp(v)}" for k, v in lengths.items()) + f", film {stamp(total)}")
+
+
+if __name__ == "__main__":
+    main()

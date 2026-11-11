@@ -1,0 +1,71 @@
+# Le du'a dans le modèle, short 1 (2026-11-11, docs/themes.md « Fiche : le du'a dans le modèle ») : « je suis satisfait,
+# je ne demande pas ». L'idée reçue est brisée par un fait : celui dont on fait le modèle de la patience a demandé
+# d'être soulagé (Al-Anbiya 21:83-84), puis par le hadith de Muslim 2679a (demander avec résolution).
+# - `kept` : réplique validée de l'ancien épisode (content/episodes/dua.yaml, scène nommée), reprise mot pour mot,
+#   sans ses guillemets ; les autres répliques sont de l'IA, à valider.
+# - « مضرب المثل في الصبر » : le proverbe (« صبر أيوب »), pas un superlatif tiré d'un texte.
+# - Le sens de 21:84 est dit après le verset, avec nos mots (« ومعاهم قدّهم » pour « ومثلهم معهم »).
+# - L'exemple (le malade qui prend son remède) est une scène type ; aucune comparaison de Dieu à une personne.
+# Rien n'est validé : le propriétaire lit le script avant toute voix.
+id: asked
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 30-trial-asked     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+segments:
+  - narration: open
+    scene: dark
+    lines:
+      - ar: "مضرب المثل في الصبر… دعا ربنا يشيل عنه البلاء! إزاي؟"
+        en: "The very model of patience… asked God to lift his suffering! How?"
+      - ar: "ده سيدنا أيوب عليه السلام… وإحنا بنقول: أنا راضي… مش هدعي."
+        en: "That was Job, peace be upon him… and we say: I'm content… I won't ask."
+  - verse: quran.21.83
+    scene: call
+  - narration: turn
+    scene: call
+    lines:
+      - ar: "وربنا رد عليه بإيه؟"
+        en: "And how did God answer him?"
+  - verse: quran.21.84
+    scene: lit
+  - narration: meaning
+    scene: lit
+    lines:
+      - ar: "استجاب له… شال عنه البلاء… ورجّع له أهله… ومعاهم قدّهم."
+        en: "He answered him… lifted his suffering… gave him back his family… and as many again."
+      - ar: "الدعاء مش اعتراض… الدعاء احتياج."
+        en: "Du'a isn't objecting… it's needing Him."
+        kept: dua.content-need
+      - ar: "والنبي صلى الله عليه وسلم قال:"
+        en: "And the Prophet ﷺ said:"
+  - reading: hadith.muslim.2679a
+    scene: lit
+  - narration: ask
+    scene: lit
+    lines:
+      - ar: "يعني اطلب… وإنت واثق إنه يقدر يديك."
+        en: "So ask… sure that He can give it to you."
+        kept: dua.content-ask
+  - narration: depth
+    scene: land
+    lines:
+      - ar: "الرضا… إنك ما تعترضش على اللي حصل. والدعاء… إنك تطلب اللي جاي."
+        en: "Contentment… is not objecting to what happened. Du'a… is asking for what is to come."
+  - narration: example
+    scene: land
+    lines:
+      - ar: "زي العيّان: راضي بقضاء ربنا… وبرضه بياخد الدوا."
+        en: "Like someone ill: content with God's decree… and still taking the medicine."
+      - ar: "الدوا مش اعتراض… والدعاء كمان."
+        en: "The medicine is not an objection… and neither is du'a."
+  - narration: close
+    scene: lit
+    lines:
+      - ar: "ارضى باللي فات… واطلب اللي جاي."
+        en: "Accept what has passed… and ask for what is to come."
+      - ar: "لما تقول أنا راضي… افتكر سيدنا أيوب: راضي… ودعا."
+        en: "When you say: I'm content… remember Job: content… and he asked."
+      - ar: "ده اللي سكت عشان فاكر الدعاء قلة رضا… بس فيه اللي ساكت لسبب تاني: كله مكتوب… أدعي ليه؟"
+        en: "That is the one silent because he thinks asking means discontent… another is silent for another reason: it's all written… why ask?"
+      - ar: "تابعنا عشان تعرف."
+        en: "Follow us to find out."

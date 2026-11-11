@@ -1389,3 +1389,131 @@
   notes: Al-Hadid 57:16, « le temps n'est-il pas venu pour les croyants que leurs cœurs s'humilient (تخشع) au rappel d'Allah ? » (khushu, verset de conclusion, reel khushu-05 ; phrase complète, commence par ۞ « ألم يأن », la fin parle des gens du Livre dont les cœurs se sont durcis)
   text_ar: ۞ أَلَمْ يَأْنِ لِلَّذِينَ ءَامَنُوٓا۟ أَن تَخْشَعَ قُلُوبُهُمْ لِذِكْرِ ٱللَّهِ وَمَا نَزَلَ مِنَ ٱلْحَقِّ وَلَا يَكُونُوا۟ كَٱلَّذِينَ أُوتُوا۟ ٱلْكِتَـٰبَ مِن قَبْلُ فَطَالَ عَلَيْهِمُ ٱلْأَمَدُ فَقَسَتْ قُلُوبُهُمْ ۖ وَكَثِيرٌ مِّنْهُمْ فَـٰسِقُونَ
   text_en: Has the time not come for those who have believed that their hearts should become humbly submissive at the remembrance of Allāh and what has come down of the truth? And let them not be like those who were given the Scripture before, and a long period passed over them, so their hearts hardened; and many of them are defiantly disobedient.
+- id: quran.21.84
+  type: ayah
+  ref: {surah: 21, ayah: 84}
+  url: https://quran.com/21/84
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=21:84
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=21:84
+    translator: Saheeh International
+    surah_ar: الأنبياء
+    surah_en: Al-Anbya
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "Al-Anbiya 21:84, la réponse à l'appel d'Ayyub (film du du'a dans le modèle, short 1)"
+  text_ar: فَٱسْتَجَبْنَا لَهُۥ فَكَشَفْنَا مَا بِهِۦ مِن ضُرٍّ ۖ وَءَاتَيْنَـٰهُ أَهْلَهُۥ وَمِثْلَهُم مَّعَهُمْ رَحْمَةً مِّنْ عِندِنَا وَذِكْرَىٰ لِلْعَـٰبِدِينَ
+  text_en: So We responded to him and removed what afflicted him of adversity. And We gave him [back] his family and the like thereof with them as mercy from Us and a reminder for the worshippers [of Allāh].
+- id: quran.21.87
+  type: ayah
+  ref: {surah: 21, ayah: 87}
+  url: https://quran.com/21/87
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=21:87
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=21:87
+    translator: Saheeh International
+    surah_ar: الأنبياء
+    surah_en: Al-Anbya
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "Al-Anbiya 21:87, l'appel de Younous dans les ténèbres (film du du'a, short 2)"
+  text_ar: وَذَا ٱلنُّونِ إِذ ذَّهَبَ مُغَـٰضِبًا فَظَنَّ أَن لَّن نَّقْدِرَ عَلَيْهِ فَنَادَىٰ فِى ٱلظُّلُمَـٰتِ أَن لَّآ إِلَـٰهَ إِلَّآ أَنتَ سُبْحَـٰنَكَ إِنِّى كُنتُ مِنَ ٱلظَّـٰلِمِينَ
+  text_en: And [mention] the man of the fish [i.e., Jonah], when he went off in anger and thought that We would not decree [anything] upon him. And he called out within the darknesses, "There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers."
+- id: quran.21.88
+  type: ayah
+  ref: {surah: 21, ayah: 88}
+  url: https://quran.com/21/88
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=21:88
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=21:88
+    translator: Saheeh International
+    surah_ar: الأنبياء
+    surah_en: Al-Anbya
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "Al-Anbiya 21:88, la réponse à Younous, « ainsi sauvons-Nous les croyants » (film du du'a, short 2)"
+  text_ar: فَٱسْتَجَبْنَا لَهُۥ وَنَجَّيْنَـٰهُ مِنَ ٱلْغَمِّ ۚ وَكَذَٰلِكَ نُـۨجِى ٱلْمُؤْمِنِينَ
+  text_en: So We responded to him and saved him from the distress. And thus do We save the believers.
+- id: quran.37.143
+  type: ayah
+  ref: {surah: 37, ayah: 143}
+  url: https://quran.com/37/143
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=37:143
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=37:143
+    translator: Saheeh International
+    surah_ar: الصافات
+    surah_en: As-Saffat
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "As-Saffat 37:143, « s'il n'avait pas été de ceux qui glorifient » (film du du'a, short 2 ; se récite avec 37:144)"
+  text_ar: فَلَوْلَآ أَنَّهُۥ كَانَ مِنَ ٱلْمُسَبِّحِينَ
+  text_en: And had he not been of those who exalt Allāh,
+- id: quran.37.144
+  type: ayah
+  ref: {surah: 37, ayah: 144}
+  url: https://quran.com/37/144
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=37:144
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=37:144
+    translator: Saheeh International
+    surah_ar: الصافات
+    surah_en: As-Saffat
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "As-Saffat 37:144, « il serait resté dans son ventre » (film du du'a, short 2 ; suite de 37:143)"
+  text_ar: لَلَبِثَ فِى بَطْنِهِۦٓ إِلَىٰ يَوْمِ يُبْعَثُونَ
+  text_en: He would have remained inside its belly until the Day they are resurrected.
+- id: quran.21.89
+  type: ayah
+  ref: {surah: 21, ayah: 89}
+  url: https://quran.com/21/89
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=21:89
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=21:89
+    translator: Saheeh International
+    surah_ar: الأنبياء
+    surah_en: Al-Anbya
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "Al-Anbiya 21:89, l'appel de Zakariya (film du du'a, short 3)"
+  text_ar: وَزَكَرِيَّآ إِذْ نَادَىٰ رَبَّهُۥ رَبِّ لَا تَذَرْنِى فَرْدًا وَأَنتَ خَيْرُ ٱلْوَٰرِثِينَ
+  text_en: And [mention] Zechariah, when he called to his Lord, "My Lord, do not leave me alone [with no heir], while You are the best of inheritors."
+- id: quran.21.90
+  type: ayah
+  ref: {surah: 21, ayah: 90}
+  url: https://quran.com/21/90
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=21:90
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=21:90
+    translator: Saheeh International
+    surah_ar: الأنبياء
+    surah_en: Al-Anbya
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "Al-Anbiya 21:90, la réponse à Zakariya (film du du'a, short 3)"
+  text_ar: فَٱسْتَجَبْنَا لَهُۥ وَوَهَبْنَا لَهُۥ يَحْيَىٰ وَأَصْلَحْنَا لَهُۥ زَوْجَهُۥٓ ۚ إِنَّهُمْ كَانُوا۟ يُسَـٰرِعُونَ فِى ٱلْخَيْرَٰتِ وَيَدْعُونَنَا رَغَبًا وَرَهَبًا ۖ وَكَانُوا۟ لَنَا خَـٰشِعِينَ
+  text_en: So We responded to him, and We gave to him John, and amended for him his wife. Indeed, they used to hasten to good deeds and supplicate Us in hope and fear, and they were to Us humbly submissive.
+- id: quran.19.4
+  type: ayah
+  ref: {surah: 19, ayah: 4}
+  url: https://quran.com/19/4
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=19:4
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=19:4
+    translator: Saheeh International
+    surah_ar: مريم
+    surah_en: Maryam
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "Maryam 19:4, Zakariya : « jamais je n'ai été déçu en T'invoquant » (film du du'a, short 3)"
+  text_ar: قَالَ رَبِّ إِنِّى وَهَنَ ٱلْعَظْمُ مِنِّى وَٱشْتَعَلَ ٱلرَّأْسُ شَيْبًا وَلَمْ أَكُنۢ بِدُعَآئِكَ رَبِّ شَقِيًّا
+  text_en: He said, "My Lord, indeed my bones have weakened, and my head has filled with white, and never have I been in my supplication to You, my Lord, unhappy [i.e., disappointed].
