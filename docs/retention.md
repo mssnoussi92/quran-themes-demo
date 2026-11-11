@@ -148,6 +148,28 @@ maintenant, « une voix payante » et « des planches peintes par un modèle d'i
   standard et en égyptien, par les moteurs ci-dessus ; (2) le style, « nuit et or » dessiné par le code contre
   une vidéo de nature avec la typographie ; (3) 45 secondes montées.
 
+### Comparaison des voix gratuites (2026-11-11, en cours)
+
+Les cinq mêmes phrases (l'ouverture, la promesse, la leçon et la fin du short du bateau), en arabe standard
+(`content/voice-test/10-boat-standard.txt`) et en égyptien (`11-boat-egyptian.txt`), mises au même volume. Le
+propriétaire écoute des fichiers nommés par une lettre ; la clé est ici.
+
+| Lettre | Moteur | Où il tourne | Ce qu'entend Whisper |
+| --- | --- | --- | --- |
+| A | Supertonic 3, voix `M5` | CPU de la session : 8 s de calcul pour 35 s de voix | Standard : tous les mots. Égyptien : deux mots déformés. |
+| B | Chatterbox Multilingual V3, voix par défaut | CPU : 3 à 4 fois la durée de la voix | Standard : trois mots déformés. Égyptien : quatre. Débit plus rapide (23 s contre 34). |
+| C, D, E | Gemini 3.8 Flash TTS, voix `Charon`, `Algieba`, `Sadaltager` | API, palier gratuit, par le workflow `voice-test` | Pas encore produit : le workflow reçoit le secret `GEMINI_API_KEY` vide (runs 6 et 7). |
+| actuelle | VoiceTut `Mohammed` (égyptien seulement) | prises déjà figées | Connues du propriétaire. |
+
+- Supertonic lit **mieux un texte sans voyelles** : sur le même texte entièrement vocalisé, il a déformé trois
+  mots (« والسر في » entendu « وللسروف »). Pour lui, n'écrire que les voyelles d'un nom propre.
+- Chatterbox V3 ne s'installe pas depuis PyPI (0.1.7 n'a que la V2) : il faut le dépôt GitHub de Resemble.
+- Whisper compte des mots, il ne juge ni le timbre ni le naturel : c'est l'oreille du propriétaire qui tranche.
+- Gemini : `tools/tts/gemini.py` et l'entrée `gemini_voices` du workflow `voice-test` ; la clé est un secret du
+  dépôt GitHub (idée du propriétaire, comme dans `quran-reels`), elle ne passe jamais par une session. Le
+  formulaire de clé des sessions ne convient pas : Google lit la clé dans l'en-tête `x-goog-api-key`, que ce
+  formulaire n'envoie pas.
+
 ## La demande
 
 Propriétaire, 2026-11-10, après le premier essai sur Instagram : les règles et les personnages des vidéos faites
