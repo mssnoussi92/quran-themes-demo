@@ -5,11 +5,11 @@ Script à valider avant toute voix. Les répliques **nouvelles** sont de la sess
 | | Vidéo | Durée estimée | Récitation | Hadith lu | Répliques nouvelles | Reprises |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | `asked` | 1:51 | 0:29 | 0:14 | 12 | 2 |
-| 2 | `written` | 2:05 | 0:48 | 0:15 | 13 | 2 |
+| 2 | `written` | 2:03 | 0:48 | 0:13 | 13 | 2 |
 | 3 | `waited` | 2:00 | 0:54 | 0:05 | 12 | 1 |
-| | le film `dua` | 7:42 | 3:05 | 0:47 | 7 (propres au film) | 9 |
+| | le film `dua` | 7:40 | 3:05 | 0:45 | 7 (propres au film) | 9 |
 
-## Short 1 · `asked`
+## Short 1 · `asked` · صابر… ودعا!
 
 Environ **1:51** · 0:29 de récitation, 0:14 de hadith lu · 12 répliques nouvelles, 2 reprises.
 
@@ -67,9 +67,9 @@ Environ **1:51** · 0:29 de récitation, 0:14 de hadith lu · 12 répliques nouv
 - تابعنا عشان تعرف.  
   *Follow us to find out.* · **nouvelle**
 
-## Short 2 · `written`
+## Short 2 · `written` · في بطن الحوت… مين سمعه؟
 
-Environ **2:05** · 0:48 de récitation, 0:15 de hadith lu · 13 répliques nouvelles, 2 reprises.
+Environ **2:03** · 0:48 de récitation, 0:13 de hadith lu · 13 répliques nouvelles, 2 reprises.
 
 **0:00 · narration** (image : `deep`)
 - في بطن حوت… في ضلمة فوق ضلمة… مين هيسمعه؟  
@@ -133,17 +133,17 @@ Environ **2:05** · 0:48 de récitation, 0:15 de hadith lu · 13 répliques nouv
 - والنبي صلى الله عليه وسلم علّمنا دعوته:  
   *And the Prophet ﷺ taught us his call:* · **nouvelle**
 
-**1:43** · **Hadith lu par une vraie voix** · Tirmidhi 3505 · **lecture à trouver** (comptée 12 s) · **source proposée, à valider**  
+**1:43** · **Hadith lu par une vraie voix** · Tirmidhi 3505 · lu par Yusuf ibn Nuh Ahmad · 10 s · **lecture à valider** · **source proposée, à valider**  
   "‏ دَعْوَةُ ذِي النُّونِ إِذْ دَعَا وَهُوَ فِي بَطْنِ الْحُوتِ لاَ إِلَهَ إِلاَّ أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ ‏.‏ فَإِنَّهُ لَمْ يَدْعُ بِهَا رَجُلٌ مُسْلِمٌ فِي شَيْءٍ قَطُّ إِلاَّ اسْتَجَابَ اللَّهُ لَهُ ‏"  
   *“The supplication of Dhun-Nun (Prophet Yunus) when he supplicated, while in the belly of the whale was: ‘There is none worthy of worship except You, Glory to You, Indeed, I have been of the transgressors. (Lā ilāha illā anta subḥānaka innī kuntu minaẓ-ẓālimīn)’ So indeed, no Muslim man supplicates with it for anything, ever, except Allah responds to him.”*
 
-**1:55 · narration** (image : `shore`)
+**1:53 · narration** (image : `shore`)
 - ده اللي سكت عشان كله مكتوب… بس فيه اللي دعا… ودعا… وما شافش حاجة. فبطّل.  
   *That is the one silent because it's all written… another asked… and asked… and saw nothing. So he stopped.* · **nouvelle**
 - تابعنا عشان تعرف.  
   *Follow us to find out.* · **nouvelle**
 
-## Short 3 · `waited`
+## Short 3 · `waited` · شاب… وما بطّلش يدعي
 
 Environ **2:00** · 0:54 de récitation, 0:05 de hadith lu · 12 répliques nouvelles, 1 reprises.
 
@@ -205,7 +205,7 @@ Environ **2:00** · 0:54 de récitation, 0:05 de hadith lu · 12 répliques nouv
 
 ## Le film · `dua`
 
-Environ **7:42**, dont 12 s d'image calme à la fin · 3:05 de récitation, 0:47 de hadith lu. Il reprend les shorts réplique par réplique (sans leurs appels à suivre) ; seules ses répliques propres sont écrites ici en entier.
+Environ **7:40**, dont 12 s d'image calme à la fin · 3:05 de récitation, 0:45 de hadith lu. Il reprend les shorts réplique par réplique (sans leurs appels à suivre) ; seules ses répliques propres sont écrites ici en entier.
 
 ### 0:00 · Three calls · تلات نداءات
 
@@ -275,49 +275,49 @@ Environ **7:42**, dont 12 s d'image calme à la fin · 3:05 de récitation, 0:47
 - 4:00 · répliques du short `written` (`depth`)
 - 4:09 · répliques du short `written` (`example`)
 - 4:13 · répliques du short `written` (`close`)
-- 4:20 · **Hadith lu par une vraie voix** · Tirmidhi 3505 · **lecture à trouver** (comptée 12 s) · **source proposée, à valider**
+- 4:20 · **Hadith lu par une vraie voix** · Tirmidhi 3505 · lu par Yusuf ibn Nuh Ahmad · 10 s · **lecture à valider** · **source proposée, à valider**
 
-### 4:33 · I asked and nothing happened · دعيت… وما حصلش حاجة
+### 4:30 · I asked and nothing happened · دعيت… وما حصلش حاجة
 
-- 4:33 · répliques du short `waited` (`open`)
-- 4:44 · **Verset récité** · Maryam 19:4 · 16 s · **source proposée, à valider**
-- 5:00 · répliques du short `waited` (`never`)
-- 5:06 · **Verset récité** · Al-Anbya 21:89 · 12 s · **source proposée, à valider**
-- 5:19 · **Verset récité** · Al-Anbya 21:90 · 27 s · **source proposée, à valider**
-- 5:46 · répliques du short `waited` (`meaning`)
-- 5:54 · **Hadith lu par une vraie voix** · Bukhari 6340 · lu par Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane · 6 s
-- 6:00 · répliques du short `waited` (`haste`)
-- 6:03 · répliques du short `waited` (`depth`)
-- 6:08 · répliques du short `waited` (`example`)
-**6:17 · narration propre au film**
+- 4:30 · répliques du short `waited` (`open`)
+- 4:42 · **Verset récité** · Maryam 19:4 · 16 s · **source proposée, à valider**
+- 4:58 · répliques du short `waited` (`never`)
+- 5:04 · **Verset récité** · Al-Anbya 21:89 · 12 s · **source proposée, à valider**
+- 5:17 · **Verset récité** · Al-Anbya 21:90 · 27 s · **source proposée, à valider**
+- 5:44 · répliques du short `waited` (`meaning`)
+- 5:52 · **Hadith lu par une vraie voix** · Bukhari 6340 · lu par Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane · 6 s
+- 5:58 · répliques du short `waited` (`haste`)
+- 6:01 · répliques du short `waited` (`depth`)
+- 6:06 · répliques du short `waited` (`example`)
+**6:15 · narration propre au film**
 - طب ولو اللي طلبته محصلش؟  
   *And if what you asked for doesn't happen?* · reprise de `dua.answer-question`
 - النبي صلى الله عليه وسلم قال:  
   *The Prophet ﷺ said:* · reprise de `dua.answer-hadith-2`
 
-**6:23** · **Hadith lu par une vraie voix** · Tirmidhi 3573 · lu par Yusuf ibn Nuh Ahmad · 11 s  
+**6:21** · **Hadith lu par une vraie voix** · Tirmidhi 3573 · lu par Yusuf ibn Nuh Ahmad · 11 s  
   "‏ مَا عَلَى الأَرْضِ مُسْلِمٌ يَدْعُو اللَّهَ بِدَعْوَةٍ إِلاَّ آتَاهُ اللَّهُ إِيَّاهَا أَوْ صَرَفَ عَنْهُ مِنَ السُّوءِ مِثْلَهَا مَا لَمْ يَدْعُ بِمَأْثَمٍ أَوْ قَطِيعَةِ رَحِمٍ ‏"‏ ‏.‏ فَقَالَ رَجُلٌ مِنَ الْقَوْمِ إِذًا نُكْثِرَ ‏.‏ قَالَ ‏"‏ اللَّهُ أَكْثَرُ ‏"  
   *There is not a Muslim upon the earth who calls upon Allah with any supplication, except that Allah grants it to him, or he turns away from him the like of it in evil; as long as he does not supplicate for something sinful, or the severing of the ties of kinship.” So a man from the people said: “What if we should increase (in it)” He (ﷺ) said: “(With) Allah is more.*
 
-**6:34 · narration propre au film**
+**6:32 · narration propre au film**
 - يعني دعاءك… عمره ما بيضيع.  
   *So your du'a… is never wasted.* · reprise de `dua.answer-never-lost`
 - إنت مستني رد واحد… وربنا عنده أكتر من رد: يديك… أو يصرف عنك شر قدّه.  
   *You wait for one answer… God has more than one: He gives it to you… or turns away from you a harm as great.* · **nouvelle**
 
-- 6:44 · répliques du short `waited` (`close`, 1 sur 3)
+- 6:42 · répliques du short `waited` (`close`, 1 sur 3)
 
-### 6:50 · God is near · ربنا قريب
+### 6:48 · God is near · ربنا قريب
 
-**6:50 · narration propre au film**
+**6:48 · narration propre au film**
 - طب هو سامعني أصلاً؟  
   *But does He even hear me?* · **nouvelle**
 
-**6:52** · **Verset récité** · Al-Baqarah 2:186 · 23 s  
+**6:49** · **Verset récité** · Al-Baqarah 2:186 · 23 s  
   وَإِذَا سَأَلَكَ عِبَادِى عَنِّى فَإِنِّى قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ ٱلدَّاعِ إِذَا دَعَانِ ۖ فَلْيَسْتَجِيبُوا۟ لِى وَلْيُؤْمِنُوا۟ بِى لَعَلَّهُمْ يَرْشُدُونَ  
   *And when My servants ask you, [O Muḥammad], concerning Me - indeed I am near. I respond to the invocation of the supplicant when he calls upon Me. So let them respond to Me [by obedience] and believe in Me that they may be [rightly] guided.*
 
-**7:15 · narration propre au film**
+**7:13 · narration propre au film**
 - ربنا قريب… وبيجيب.  
   *God is near… and He answers.* · reprise de `dua.near-near`
 - الدعاء عبادة… مش عكس الرضا… بيرد القضاء… وعمره ما بيضيع.  
@@ -325,7 +325,7 @@ Environ **7:42**, dont 12 s d'image calme à la fin · 3:05 de récitation, 0:47
 - فمتبطلش تدعي… وقول يا رب.  
   *So never stop making du'a… and say “Ya Rabb”.* · reprise de `dua.near-outro`
 
-**7:27 · narration propre au film** · **rappel d'abonnement**
+**7:25 · narration propre au film** · **rappel d'abonnement**
 - اشترك… عشان القصة الجاية.  
   *Subscribe… for the next story.* · **nouvelle**
 

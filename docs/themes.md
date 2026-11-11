@@ -21,7 +21,7 @@ complétés. **Le propriétaire a choisi autrement (2026-11-11) : le du'a d'abor
 les outils complétés avec les leçons retenues. La session s'y range : c'est le cas difficile, et six des huit
 épisodes restants lui ressemblent.
 
-### Fiche : le du'a dans le modèle (skill `choose-format`, 2026-11-11) — à trancher par le propriétaire
+### Fiche : le du'a dans le modèle (skill `choose-format`, 2026-11-11)
 
 **Ce qu'est l'épisode publié** (`content/episodes/dua.yaml`, cinq reels) : trois idées reçues (« je suis satisfait,
 je ne demande pas » ; « tout est écrit, à quoi bon » ; « j'ai demandé et rien n'est venu »), encadrées par un reel de
@@ -77,12 +77,27 @@ dessins et trois ambiances ; clips de la liste approuvée. **Outils, avant le re
 outils du modèle (une source nouvelle ne peut pas être jouée aujourd'hui) ; jouer un hadith dans un short, sauf si
 les hadiths ne sont cités que dans le film. **Voix** : quatre requêtes (trois shorts, le film), une journée.
 
-**Décisions du propriétaire** :
+**Décisions du propriétaire (2026-11-11, « ok go with your recommendations »)** : les trois appels d'Al-Anbiya ; le
+film du du'a remplace la collection « دعوات في الشدة » (Nouh et Moussa restent pour plus tard) ; les hadiths dans
+chaque short ; Tirmidhi 3505 à la fin du deuxième short.
 
-1. Les trois appels d'Al-Anbiya, ou les seules sources de l'ancien épisode avec le minimum ?
-2. Le film du du'a remplace-t-il la collection « دعوات في الشدة » ?
-3. Les hadiths dans chaque short (un outil à construire d'abord), ou seulement dans le film ?
-4. Tirmidhi 3505 (l'invocation de Dhun-Noun), comme invocation à dire à la fin du deuxième short ?
+**Fait depuis** (`content/trial/asked.yaml`, `written.yaml`, `waited.yaml`, `dua.yaml` ; script lisible :
+`docs/scripts/dua.md`) :
+
+- les huit versets et Tirmidhi 3505 au registre, **proposés** ; les versets coupés dans la récitation, trois coupes
+  posées à la main (le début de 21:87, la limite entre 37:143 et 37:144 que le récitateur enchaîne) ; la lecture de
+  3505 trouvée (Yusuf ibn Nuh Ahmad), **proposée** ;
+- le script des trois shorts et des répliques propres au film, **à valider par le propriétaire avant toute voix** ;
+  durées estimées 1:51, 2:03, 2:00, film 7:40 ;
+- une idée par short : le troisième garde Bukhari 6340 (ne pas se hâter), Tirmidhi 3573 (donné, ou un mal écarté)
+  passe dans le film ; 13:39 dans le film seulement ;
+- vérifié dans deux tafsirs (al-Sa'di, al-Muyassar ; Ibn Kathir pour les deux lectures de 37:143) : la réplique dit
+  « ذِكره لربنا », pas « son du'a seul » ; le lien entre décret et du'a repose sur le hadith 2139 ;
+- les dessins (`video/src/trial/Dua.tsx`) : la maison éteinte puis éclairée à l'aube, la queue du grand poisson
+  puis une lueur sous l'eau, le lieu de prière et sa lampe sous la lune ; brouillons envoyés au propriétaire ;
+- deux outils faits au passage : les sources lues dans le registre, un hadith lu dans un short.
+
+**Reste** : le « je valide le script » du propriétaire, puis quatre requêtes de voix, la préparation, les rendus.
 
 ## Faits (ancien circuit)
 
