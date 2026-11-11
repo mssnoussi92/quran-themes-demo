@@ -196,6 +196,12 @@ trois épreuves de la force (sur les gens, de prendre, d'avoir réussi).
 **État (2026-11-11)** : script écrit (`west`, `tribute`, `barrier`, film `qarnayn` ; page lisible
 `docs/scripts/qarnayn.md`), corrigé deux fois par le propriétaire (`docs/history.md`, tâche 43), dessins faits,
 brouillons envoyés. Attend : « je valide le script », l'accord sur les quatre clips, les vraies ambiances.
+**Ambiances** : les trois des brouillons sont celles du premier film, provisoires. Candidates sur BigSoundBank
+(CC0), **à écouter par le propriétaire sur leur page, aucune n'est choisie** : pour le couchant, « Pond in a Field »
+(0691, 2:42 : une mare, grenouilles, oiseaux, vent) ou « Froux peat bogs » (1349 : une tourbière, beaucoup de
+vent) ; pour le défilé, « Strong wind #1 » (0146 : vent fort dans un pin, un oiseau) ; pour le barrage, « Big
+branching fire #3 » (0989, 2:09 : un grand feu de branches, dehors), qui ne vaudrait que sous les scènes du feu :
+aujourd'hui une image n'a qu'une ambiance, il faudrait une ambiance par scène.
 
 ## Faits (ancien circuit)
 
