@@ -9,13 +9,14 @@ name: voice-test
 # (Google AI Studio, free tier) say the five lines of content/voice-test/10-boat-standard.txt and
 # 11-boat-egyptian.txt, one file per voice and text, named by its label (C-boat-standard.mp3) so the
 # owner can listen without knowing which engine is which. The key is the repository secret
-# GEMINI_API_KEY: it never passes through a session. Leave an input empty to skip its engine.
+# GEMINI_API_KEY: it never passes through a session. `voicetut_speakers: none` skips VoiceTut; an empty
+# `gemini_voices` skips Gemini.
 
 on:
   workflow_dispatch:
     inputs:
       voicetut_speakers:
-        description: "VoiceTut voices, comma-separated (empty: none). Men: Ahmed, Ali, Hassan, Karim, Mahmoud, Mohammed, Mostafa, Ramy, Shaker, Tareq, Yehia, Youssef. Women: Hadeer, Hanan, Mariam, Rana, Sarah, Yasmin, Yara"
+        description: "VoiceTut voices, comma-separated, or none. Men: Ahmed, Ali, Hassan, Karim, Mahmoud, Mohammed, Mostafa, Ramy, Shaker, Tareq, Yehia, Youssef. Women: Hadeer, Hanan, Mariam, Rana, Sarah, Yasmin, Yara"
         default: Mohammed,Ahmed,Karim,Mahmoud,Hanan
       gemini_voices:
         description: "Gemini TTS voices as label=Voice, comma-separated (empty: none), e.g. C=Charon,D=Algieba. Needs the secret GEMINI_API_KEY"
@@ -43,7 +44,10 @@ jobs:
         run: |
           python3 - >> "$GITHUB_OUTPUT" <<'EOF'
           import json, os, re
-          voices = [v.strip() for v in os.environ["SPEAKERS"].split(",") if v.strip()]
+          # "none" skips VoiceTut (an empty input is replaced by its default by GitHub: run 6 of 2026-11-11
+          # started five VoiceTut jobs nobody asked for).
+          asked = os.environ["SPEAKERS"].strip()
+          voices = [] if asked.lower() == "none" else [v.strip() for v in asked.split(",") if v.strip()]
           bad = [v for v in voices if not re.fullmatch(r"[A-Za-z]+", v)]
           if bad:
               raise SystemExit(f"invalid voice name(s): {bad}")
