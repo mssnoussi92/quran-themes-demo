@@ -4,11 +4,17 @@ short, the title and the text of each platform, one block to copy each, in the f
 gives the old episodes (same order of hashtags, same limits: content/publish.yaml).
 
   uv run --with pyyaml python3 tools/trial/publish.py [--film <id>] [--voice D] [--out <file.md>]
+  uv run --with pyyaml python3 tools/trial/publish.py --film <id> --draft --out <file.md>   # before the voice: lengths and limits
 
 Written by hand in the trial files (`publish`: title, description; the film's `series` and `hashtags`).
 Computed here: the sources quoted (reference, reciter or reader, link), the durations and the film's
 chapters (the timelines prepared by tools/trial/prepare.py for that voice), the line that declares the
 AI voice, the page's hashtags. Session only for the durations: it needs video/public/trial/*-<voice>.json.
+
+A source is read where the film reads it: the old episode the first film names (`verses`), or the registry
+(tools/trial/sources.py). A hadith whose grade is not its collection (Tirmidhi) is written with al-Albani's
+grade. --draft takes the timelines of the silent draft (voice X): the durations are estimates, the texts and
+the platforms' limits are the real ones.
 """
 from __future__ import annotations
 
@@ -57,7 +63,7 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
             flush()
             hadith = True
             src = sources[sid]
-            lines.append(f"• {src['reference_en']} · Reading: {src['recording']['reader']} · {src['url']}")
+            lines.append(" · ".join(x for x in (f"• {src['reference_en']}", src.get("grade_note"), f"Reading: {src['recording']['reader']}", src["url"]) if x))
     flush()
     seen, unique = set(), []
     for l in lines:
@@ -86,12 +92,26 @@ def main() -> None:
     p.add_argument("--voice", default="D")
     p.add_argument("--film", default="film", help="the film's id (content/trial/<id>.yaml)")
     p.add_argument("--out", type=Path, help="default: `publish.out` of the film, or docs/publication-<files>.md")
+    p.add_argument("--draft", action="store_true", help="before the voice: the timelines of the silent draft (voice X)")
     args = p.parse_args()
+    if args.draft and not args.out:
+        sys.exit("error: --draft needs --out (a draft does not replace the film's publication texts)")
+    timeline = "X" if args.draft else args.voice
     conf = yaml.safe_load((ROOT / "content" / "publish.yaml").read_text(encoding="utf-8"))
     film = yaml.safe_load((TRIAL / f"{args.film}.yaml").read_text(encoding="utf-8"))
     files = film.get("files", film["id"])        # what the delivered videos' names start with
-    episode = json.loads((PUBLIC / "data" / f"{film['verses']}.json").read_text(encoding="utf-8"))
-    sources = {s["source"]["id"]: s["source"] for s in episode["scenes"] if s.get("source")}
+    if film.get("verses"):                      # the first film: what its old episode prepared
+        episode = json.loads((PUBLIC / "data" / f"{film['verses']}.json").read_text(encoding="utf-8"))
+        sources = {s["source"]["id"]: s["source"] for s in episode["scenes"] if s.get("source")}
+    else:                                       # the registry, as the videos read it
+        import sources as registry              # tools/trial/sources.py
+
+        class FromRegistry(dict):
+            def __missing__(self, sid: str) -> dict:
+                self[sid] = registry.described(sid)
+                return self[sid]
+
+        sources = FromRegistry()
     pub = film["publish"]
     narration = pub["narration"][args.voice]
     shorts = [yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film["thumbnail"]["panels"]]
@@ -122,7 +142,7 @@ def main() -> None:
     ]
 
     # The film
-    data = json.loads((PUBLIC / "trial" / f"{args.film}-{args.voice}.json").read_text(encoding="utf-8"))
+    data = json.loads((PUBLIC / "trial" / f"{args.film}-{timeline}.json").read_text(encoding="utf-8"))
     ids = [("verse", s["verse"]) if "verse" in s else ("reading", s["reading"]) for c in film["chapters"] for s in c["segments"] if "verse" in s or "reading" in s]
     lines, hadith, verse = quoted(ids, sources)
     title = f"{pub['title']['en']} · {pub['title']['ar']}"
@@ -146,8 +166,8 @@ def main() -> None:
     # The shorts
     for spec in shorts:
         sp = spec["publish"]
-        data = json.loads((PUBLIC / "trial" / f"{spec['id']}-{args.voice}.json").read_text(encoding="utf-8"))
-        ids = [("verse", s["verse"]) for s in spec["segments"] if "verse" in s]
+        data = json.loads((PUBLIC / "trial" / f"{spec['id']}-{timeline}.json").read_text(encoding="utf-8"))
+        ids = [("verse", s["verse"]) if "verse" in s else ("reading", s["reading"]) for s in spec["segments"] if "verse" in s or "reading" in s]
         lines, hadith, verse = quoted(ids, sources)
         n, total = sp["part"], len(shorts)
         series = f"{pub['series']['en']} · part {n}/{total} · {pub['series']['ar']} · الجزء {str(n).translate(DIGITS)} من {str(total).translate(DIGITS)}"
@@ -181,7 +201,8 @@ def main() -> None:
     target = args.out or ROOT / pub.get("out", f"docs/publication-{files}.md")
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text("\n".join(out), encoding="utf-8")
-    print(f"{target.relative_to(ROOT)}: the film and {len(shorts)} shorts")
+    shown = target.relative_to(ROOT) if target.is_relative_to(ROOT) else target
+    print(f"{shown}: the film and {len(shorts)} shorts" + (" (draft: durations estimated)" if args.draft else ""))
 
 
 if __name__ == "__main__":

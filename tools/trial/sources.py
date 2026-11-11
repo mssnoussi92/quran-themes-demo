@@ -58,6 +58,16 @@ def entry(sid: str) -> dict:
     return found
 
 
+def grade_note(e: dict) -> str | None:
+    """« Al-Albani: Hasan Sahih »: the scholar's grade exactly as hadith-api gives it (`origin.grades`), or the
+    registry's grade; none when the grade is the collection itself (Bukhari, Muslim). As video/scripts/prepare.ts."""
+    by, grade = e.get("graded_by"), e.get("grade")
+    if not by or not grade or by in COLLECTIONS.values():
+        return None
+    exact = next((g for g in (e.get("origin") or {}).get("grades") or [] if g["name"].lower() == by.lower()), None)
+    return f"{exact['name']}: {exact['grade']}" if exact else f"{by}: {grade[0].upper()}{grade[1:]}"
+
+
 def clean(text: str) -> str:
     return " ".join(text.replace("‏", "").split())
 
@@ -71,7 +81,8 @@ def described(sid: str) -> dict:
         return {"type": "ayah", "id": sid,
                 "reference": f"سورة {origin['surah_ar']} · الآية {str(ref['ayah']).translate(DIGITS)}" if origin.get("surah_ar") else f"Quran {ref['surah']}:{ref['ayah']}",
                 "reference_en": f"{'Surah ' + origin['surah_en'] if origin.get('surah_en') else 'Quran'} ({ref['surah']}:{ref['ayah']})",
-                "display_ar": e["text_ar"], "display_en": e["text_en"], "translator": translator, "url": e.get("url"), "recording": None}
+                "display_ar": e["text_ar"], "display_en": e["text_en"], "translator": translator, "url": e.get("url"), "recording": None,
+                "grade_note": None}
     if e["type"] != "hadith":
         sys.exit(f"error: {sid}: a source of type « {e['type']} » cannot be shown")
     name = COLLECTIONS.get(ref["collection"])
@@ -86,7 +97,8 @@ def described(sid: str) -> dict:
         text = e["text_ar"][first + 1:last]
     return {"type": "hadith", "id": sid, "reference": f"{name} {ref['number']}{letter}", "reference_en": f"{name} {ref['number']}{letter}",
             "display_ar": clean(text), "display_en": e.get("excerpt_en") or e["text_en"],
-            "translator": translator if translator and translator != "Unknown" else None, "url": e.get("url"), "recording": e.get("recording")}
+            "translator": translator if translator and translator != "Unknown" else None, "url": e.get("url"), "recording": e.get("recording"),
+            "grade_note": grade_note(e)}
 
 
 def name_of(sid: str) -> str:
@@ -114,7 +126,8 @@ def reading(sid: str, out_dir: Path, draft: bool = False) -> dict:
     d = described(sid)
     if d["type"] != "hadith":
         sys.exit(f"error: {sid} is not a hadith")
-    shown = {"kind": "reading", "reference": d["reference"], "text": d["display_ar"], "en": d["display_en"]}
+    # Under a hadith of Tirmidhi, al-Albani's grade as it is recorded (the hadith policy; as on the old cards).
+    shown = {"kind": "reading", "reference": " · ".join(x for x in (d["reference"], d["grade_note"]) if x), "text": d["display_ar"], "en": d["display_en"]}
     rec = d["recording"]
     if not rec:
         if not draft:

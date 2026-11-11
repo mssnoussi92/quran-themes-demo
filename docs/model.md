@@ -232,7 +232,10 @@ dit quoi faire.
 Comblés le 2026-11-11, avec le du'a : **une source se lit dans le registre** (`tools/trial/sources.py` : texte,
 référence, coupe de récitation, lecture du hadith ; un fichier qui nomme un ancien épisode dans `verses`, comme le
 premier film, garde son ancien chemin) ; **un short joue un hadith lu** (`reading:` dans ses segments, comme le
-film).
+film) ; **les textes de publication lisent le registre aussi** (`tools/trial/publish.py` ; `--draft` avant la
+voix, pour les longueurs et les limites des plateformes) ; **sous un hadith de Tirmidhi, le jugement d'al-Albani**
+tel qu'il est inscrit (« Al-Albani: Hasan Sahih »), à l'écran et dans les textes, comme sur les cartes des anciens
+épisodes ; **le clip se cherche et se prépare** (`tools/trial/clip.py`, « Clips filmés »).
 
 ## Par où commencer
 
