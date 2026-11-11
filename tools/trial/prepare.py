@@ -10,14 +10,16 @@ verses' texts from the episode khidr-solo already prepared here (npm run data, t
   python3 tools/audio/build.py --episode khidr-solo --require-committed --tts-python /bin/false && (cd video && npm run data)
   python3 tools/trial/clip.py --out <dir>/sea.mp4                          # the sea clip (PIXABAY_API_KEY)
   # the narration: workflow voice-test, gemini_voices "D=Algieba,E=Sadaltager", gemini_texts
-  # "content/voice-test/20-trial-boat.txt", voicetut_speakers "none"; then download <voice>-trial-boat.mp3
-  # from the release voice-test-latest into <takes>
-  uv run --with pyyaml python3 tools/trial/prepare.py --voice D --takes <takes> --clip <dir>/sea.mp4
+  # "content/voice-test/20-trial-boat.txt", voicetut_speakers "none"; then download <voice>-trial-boat.flac
+  # from the release voice-test-latest into content/trial/takes/ and commit it: a take that exists is
+  # never asked for again (<takes> = content/trial/takes)
+  uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py --voice D --takes <takes> --clip <dir>/sea.mp4
   cd video && npx remotion render Trial916 out/trial-D.mp4 --concurrency=2 --props='{"trial":"boat","voice":"D","data":null}'
 
 One narration take per voice holds every line of the short (the free tier of Gemini gives 10 requests a
-day): each line is cut into phrases after « … ! ؟ ? . : » as everywhere else, the phrases are timed on the
-pauses of the take (its longest silences, in order), and the take is cut between its segments.
+day): each line is cut into phrases after « … ! ؟ ? . : » as everywhere else, each phrase is found in the
+take by its words as Whisper hears them (tools/audio/align.py; --by-pauses: by the longest silences, the
+first way, for a few lines only), and the take is cut between its segments, in the pause.
 """
 from __future__ import annotations
 
@@ -71,9 +73,10 @@ def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--trial", default="boat")
     p.add_argument("--voice", required=True, help="label of the narration voice (D, E)")
-    p.add_argument("--takes", required=True, type=Path, help="directory of the narration take <voice>-<text>.mp3 (or .wav)")
+    p.add_argument("--takes", required=True, type=Path, help="directory of the narration take <voice>-<text>.flac (or .wav, .mp3)")
     p.add_argument("--clip", required=True, type=Path, help="the sea clip (not in the repository)")
     p.add_argument("--episode", default="khidr-solo", help="prepared episode the verses come from")
+    p.add_argument("--by-pauses", action="store_true", help="place the phrases on the longest pauses of the take, without Whisper (a few lines only)")
     args = p.parse_args()
 
     spec = yaml.safe_load((ROOT / "content" / "trial" / f"{args.trial}.yaml").read_text(encoding="utf-8"))
@@ -90,20 +93,48 @@ def main() -> None:
     narrated = [seg for seg in spec["segments"] if "narration" in seg]
     if said != [l["ar"] for seg in narrated for l in seg["lines"]]:
         sys.exit(f"error: {text.name} and the lines of the trial differ")
-    take = next((f for f in (args.takes / f"{args.voice}-{re.sub(r'^[0-9]+-', '', spec['text'])}{ext}" for ext in (".wav", ".mp3")) if f.is_file()), None)
+    take = next((f for f in (args.takes / f"{args.voice}-{re.sub(r'^[0-9]+-', '', spec['text'])}{ext}" for ext in (".flac", ".wav", ".mp3")) if f.is_file()), None)
     if take is None:
-        sys.exit(f"error: no take {args.voice}-{re.sub(r'^[0-9]+-', '', spec['text'])}.(wav|mp3) in {args.takes}")
+        sys.exit(f"error: no take {args.voice}-{re.sub(r'^[0-9]+-', '', spec['text'])}.(flac|wav|mp3) in {args.takes}")
     whole = out_dir / f"{args.trial}-{args.voice}.wav"
     run("ffmpeg", "-y", "-loglevel", "error", "-i", str(take), "-af", LEVEL, "-ar", "48000", "-ac", "1", str(whole))
     phrases = [ph for seg in narrated for l in seg["lines"] for ph in PHRASE_CUT.split(l["ar"].strip())]
-    gaps = pauses(whole, len(phrases) - 1)
-    lead = next((b for a, b in silences(whole) if a <= 0.05), 0.0)
-    starts = [lead] + [b for _, b in gaps]                 # where each phrase starts in the take
+    if args.by_pauses:
+        # The first way (five lines): the longest pauses of the take, in order. A voice that does not pause
+        # at one « … » shifts every phrase after it.
+        found = pauses(whole, len(phrases) - 1)
+        lead = next((b for a, b in silences(whole) if a <= 0.05), 0.0)
+        starts = [lead] + [b for _, b in found]            # where each phrase starts in the take
+        gaps = [None] + found                               # the pause before each phrase
+    else:
+        # Whisper hears the take and each phrase is found by its words (tools/audio/align.py): what makes
+        # one request for thirty phrases, or for a chapter, safe to cut.
+        sys.path.insert(0, str(ROOT / "tools" / "audio"))
+        import align
+        heard = align.phrases_in_take(whole, said)
+        if [h.text for h in heard] != phrases:
+            sys.exit("error: the phrases of the take and of the trial differ")
+        weak = align.report(heard)
+        if weak:
+            print(f"warning: {weak} phrase(s) mostly not heard (!!): listen before rendering; lines to redo go in ONE request")
+        starts, gaps = [h.start for h in heard], [h.pause for h in heard]
     cuts, k = {}, 0                                         # narration id -> (from, to) in the take
     for i, seg in enumerate(narrated):
         n = sum(len(PHRASE_CUT.split(l["ar"].strip())) for l in seg["lines"])
-        begin = max(0.0, lead - 0.08) if k == 0 else (gaps[k - 1][0] + gaps[k - 1][1]) / 2
-        end = seconds(whole) if k + n >= len(phrases) else (gaps[k + n - 1][0] + gaps[k + n - 1][1]) / 2
+        # A segment keeps 0.15 s of the pause before its first word and 0.25 s of the one after its last.
+        if k == 0:
+            begin = max(0.0, starts[0] - 0.08)
+        elif gaps[k]:
+            begin = max((gaps[k][0] + gaps[k][1]) / 2, gaps[k][1] - 0.15)
+        else:
+            begin = max(0.0, starts[k] - 0.03)
+            print(f"warning: no pause before « {phrases[k]} »: the cut before it may clip a word, listen")
+        if k + n >= len(phrases):
+            end = seconds(whole)
+        elif gaps[k + n]:
+            end = min((gaps[k + n][0] + gaps[k + n][1]) / 2, gaps[k + n][0] + 0.25)
+        else:
+            end = max(begin + 0.1, starts[k + n] - 0.03)
         cuts[seg["narration"]] = (begin, end, k)
         k += n
 

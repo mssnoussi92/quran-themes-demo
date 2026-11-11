@@ -24,6 +24,12 @@ on:
       gemini_texts:
         description: "Text files Gemini says, space-separated (each is one take per voice; a first line '# style:' directs the voice)"
         default: "content/voice-test/10-boat-standard.txt content/voice-test/11-boat-egyptian.txt"
+      gemini_model:
+        description: "Gemini TTS model. Each model has its own daily quota (free tier of gemini-3.8-flash-tts: 10 requests a day)"
+        default: "gemini-3.8-flash-tts"
+      gemini_max_requests:
+        description: "Most requests this run may send (voices x texts); the run refuses to start above it"
+        default: "4"
   # By hand only: the voice is chosen (Mohammed, 2026-11-06). A push to main that touched tools/tts
   # or requirements/ used to start five synthesis jobs nobody listened to (3 runs out of 5).
 
@@ -153,7 +159,11 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           VOICES: ${{ inputs.gemini_voices }}
           TEXTS: ${{ inputs.gemini_texts }}
+          MODEL: ${{ inputs.gemini_model }}
+          MAX_REQUESTS: ${{ inputs.gemini_max_requests }}
         run: |
+          case "$MODEL" in gemini-*tts*) ;; *) echo "not a Gemini TTS model: $MODEL"; exit 1 ;; esac
+          case "$MAX_REQUESTS" in ''|*[!0-9]*) echo "gemini_max_requests is not a number: $MAX_REQUESTS"; exit 1 ;; esac
           # Only text files of content/voice-test/ (the input is a list of paths, split on spaces).
           for f in $TEXTS; do
             case "$f" in content/voice-test/*.txt) [ -f "$f" ] || { echo "no such text: $f"; exit 1; } ;; *) echo "not a text of content/voice-test/: $f"; exit 1 ;; esac
@@ -162,10 +172,13 @@ jobs:
           # converted and uploaded all the same, and the job fails afterwards.
           status=0
           # shellcheck disable=SC2086  # TEXTS is a list of paths
-          python3 tools/tts/gemini.py --voices "$VOICES" --out-dir build/tts --in $TEXTS || status=$?
+          python3 tools/tts/gemini.py --voices "$VOICES" --model "$MODEL" --max-requests "$MAX_REQUESTS" --out-dir build/tts --in $TEXTS || status=$?
           for f in build/tts/*.wav; do
             [ -f "$f" ] || continue
             ffmpeg -loglevel error -y -i "$f" -codec:a libmp3lame -qscale:a 2 "${f%.wav}.mp3"
+            # The take as Gemini gave it, lossless: what a video is cut from, and what is kept so that the
+            # same lines are never asked for twice (10 requests a day).
+            ffmpeg -loglevel error -y -i "$f" "${f%.wav}.flac"
           done
           ls -la build/tts
           exit "$status"
@@ -174,7 +187,9 @@ jobs:
         if: ${{ !cancelled() }}
         with:
           name: voice-test-gemini
-          path: build/tts/*.mp3
+          path: |
+            build/tts/*.mp3
+            build/tts/*.flac
           if-no-files-found: warn
 
   publish:
@@ -199,5 +214,6 @@ jobs:
           if ! gh release view voice-test-latest >/dev/null 2>&1; then
             gh release create voice-test-latest --prerelease --title "Voice test (latest)" --notes "$notes"
           fi
-          gh release upload voice-test-latest mp3/*.mp3 --clobber
+          shopt -s nullglob
+          gh release upload voice-test-latest mp3/*.mp3 mp3/*.flac --clobber
           gh release edit voice-test-latest --notes "$notes"

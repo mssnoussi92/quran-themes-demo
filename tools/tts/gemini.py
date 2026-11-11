@@ -95,6 +95,9 @@ def main() -> None:
     p.add_argument("--out-dir", required=True, type=Path)
     p.add_argument("--model", default="gemini-3.8-flash-tts")
     p.add_argument("--pause", type=float, default=35.0, help="seconds between two requests (free tier)")
+    p.add_argument("--max-requests", type=int, default=4,
+                   help="refuse to start if voices x texts is more than this (the free tier gives 10 requests a day: "
+                        "one text holds a whole short or a whole chapter, one voice once it is chosen)")
     args = p.parse_args()
     key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not key:
@@ -105,6 +108,12 @@ def main() -> None:
         if not re.fullmatch(r"[A-Za-z0-9]{1,12}", label) or not re.fullmatch(r"[A-Za-z]{2,30}", voice):
             sys.exit(f"error: --voices wants label=Voice, got '{item}'")
         voices.append((label, voice))
+    # Counted before anything is sent: a wrong input must not spend the day's requests (10 on the free tier).
+    asked = len(voices) * len(args.inputs)
+    if asked > args.max_requests:
+        sys.exit(f"error: {len(voices)} voice(s) x {len(args.inputs)} text(s) = {asked} requests, more than --max-requests "
+                 f"{args.max_requests}: put the lines in fewer texts, ask for fewer voices, or raise the limit on purpose")
+    print(f"{asked} request(s) to {args.model} (limit of this run: {args.max_requests})", flush=True)
     args.out_dir.mkdir(parents=True, exist_ok=True)
     first, failed = True, []
     for path in args.inputs:
@@ -124,6 +133,7 @@ def main() -> None:
                 failed.append(out.name)
                 continue
             print(f"{out}: {seconds:.1f} s ({voice}, {args.model})", flush=True)
+    print(f"requests: {asked - len(failed)} take(s) made, {len(failed)} refused or failed", flush=True)
     if failed:
         sys.exit(f"error: {len(failed)} take(s) not made: {', '.join(failed)}")
 

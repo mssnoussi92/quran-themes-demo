@@ -266,6 +266,51 @@ Version 2 écrite (`content/trial/boat.yaml`, `content/voice-test/20-trial-boat.
 regarde le spectateur, puis après 18:79 le sens, « موسى شاف الخرق… وما شافش الملك », l'exemple, « مش كل حاجة
 شايفها شر… تبقى شر », et l'annonce du deuxième. Les voix D et E la diront au retour du quota.
 
+### Tenir un film entier dans le quota gratuit de Gemini (2026-11-11)
+
+Demande du propriétaire : optimiser le nombre de requêtes pour finir toute la vidéo sans dépasser le quota du
+jour. Ce qu'on sait : **10 requêtes par jour** pour `gemini-3.8-flash-tts` sur le palier gratuit (message d'erreur
+du run 11), retour à minuit, heure du Pacifique ; la limite est **par projet Google, pas par clé**, et **chaque
+modèle a son propre compteur** (documentation des limites, lue le 2026-11-11) ; les vraies limites ne se lisent
+que sur aistudio.google.com/rate-limit. La documentation ne donne **aucune durée maximale par requête** : à
+mesurer (prise la plus longue faite à ce jour : 27 s).
+
+Mesures : un film comme khidr dit 68 répliques, 2 187 lettres ; les voix D et E disent 7 à 8 lettres par
+seconde, soit 4 min 30 à 5 min de narration (moins dans le modèle proposé, qui raconte moins). Un chapitre
+fait 300 à 530 lettres, donc 40 à 75 s par requête ; l'essai du bateau (version 2) : 412 lettres.
+
+**Ce qui coûte une requête, c'est un appel, pas une phrase.** Les règles :
+
+1. **Une seule voix.** D ou E se choisit sur l'essai ; deux voix doublent tout et ne tiennent plus dans la journée.
+2. **Une requête par chapitre**, jamais par phrase : toutes les répliques du chapitre dans un seul texte. Ce qui
+   le rend possible : `tools/audio/align.py` retrouve chaque phrase dans la prise par ses mots (Whisper, puis
+   alignement lettre à lettre), au lieu de compter les silences ; essayé sur trois prises réelles (D, E,
+   VoiceTut : 13 phrases sur 13, mêmes instants que la découpe faite à la main).
+3. **Les shorts ne coûtent presque rien** : ils sont recoupés dans les prises du film. Seules leurs répliques
+   propres (accroche, annonce du suivant) sont à dire, **toutes ensemble dans une requête**.
+4. **Les corrections en lot** : `align.py` liste les phrases mal dites ; toutes les répliques à refaire vont dans
+   UNE requête (avec la réplique d'avant et celle d'après pour le ton), puis sont remontées à leur place.
+5. **Le texte se fige avant Gemini.** Les allers-retours sur le script se font à la lecture, et au besoin sur un
+   montage avec la voix de secours (VoiceTut, sans quota). Gemini ne dit qu'un texte arrêté.
+6. **Une prise faite ne se redemande jamais** : le workflow la garde sans perte (FLAC, release
+   `voice-test-latest`), elle est rangée dans le dépôt, et tout nouveau rendu (16:9, 9:16, shorts) la réutilise.
+7. **Un garde-fou** : `tools/tts/gemini.py --max-requests` (4 par défaut, entrée `gemini_max_requests` du
+   workflow) refuse de démarrer si voix × textes dépasse la limite, avant d'envoyer quoi que ce soit (le run 6
+   avait lancé par erreur cinq synthèses que personne ne demandait).
+
+**Budget d'un film et de ses cinq shorts, une voix** : 5 requêtes (un chapitre chacune) + 1 (les répliques
+propres aux shorts) + 1 à 2 (corrections) = **7 à 8 sur 10**, en une journée. Si une requête peut porter deux
+ou trois minutes (à essayer une fois), le film tient en 2 ou 3 et le total tombe à 4 ou 5.
+
+À essayer quand il reste du quota, sans rien promettre : deux prises du même texte dans une seule requête (le
+texte répété, pour choisir la meilleure phrase par phrase) ; les deux voix dans une requête à deux locuteurs
+(pour une comparaison seulement) ; un autre modèle pour les brouillons (`gemini-3.8-flash-lite-tts`, compteur à
+part : entrée `gemini_model` du workflow), si le propriétaire voit sur la page des limites qu'il a un palier
+gratuit.
+
+Écarté : plusieurs projets ou comptes Google pour multiplier le quota gratuit. La limite est par projet ;
+la multiplier ainsi, c'est la contourner, et c'est le compte du propriétaire qui serait exposé.
+
 ## La demande
 
 Propriétaire, 2026-11-10, après le premier essai sur Instagram : les règles et les personnages des vidéos faites
