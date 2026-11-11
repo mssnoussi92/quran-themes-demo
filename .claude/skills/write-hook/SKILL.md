@@ -111,7 +111,7 @@ In the film the shorts' follow calls are left out (`reuse` with `lines:`).
 | an ending without a call | « تابعنا عشان تعرف بقية القصة. » as the last line | he wants the call said |
 | an ending that only teases | how the wisdom showed here, then what differs next | what tells the parts apart is the reason to follow |
 
-Add to this table each time the owner refuses a word.
+The words of this table that a pattern can find are also in `content/wording.yaml`, which `tools/trial/rules.py` reads to warn about them: add each new refused word to the table and to that file.
 
 ## Encode it
 

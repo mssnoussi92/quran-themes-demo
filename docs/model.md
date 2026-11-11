@@ -104,6 +104,7 @@ short) et `scene` disent l'image, gardés d'un segment au suivant ; `shots` donn
 ```bash
 cd video && npm ci && cd ..
 uv run --with pyyaml python3 tools/trial/script.py --film <film>       # le script en une page, durées estimées : au propriétaire, avant la voix
+uv run --with pyyaml python3 tools/trial/rules.py --film <film>        # les règles sur les fichiers (ou --all ; --draft avant que les lectures soient trouvées) : 0 erreur avant d'écrire au propriétaire
 python3 tools/trial/clip.py --search "<ce que l'image doit montrer>" --out <dir>   # chercher un clip pour le plan : table et planche
 python3 tools/trial/clip.py --look <n> --out <dir>                     # un clip entier sur 16 images, avant de le retenir
 python3 tools/trial/clip.py --trial <id> --out <dir>/<id>.mp4          # le clip du short, préparé comme le dit `clip.take` (PIXABAY_API_KEY de l'environnement)
@@ -220,9 +221,18 @@ dit quoi faire.
 1. **Pas d'écriture pour la voix.** Le texte de voix doit être exactement les répliques de l'écran (pas de
    `say_ar`). Un mot mal dit se corrige en le vocalisant dans la réplique même (« الخَضِر »), ou en changeant
    de mot avec l'accord du propriétaire.
-2. **Aucun contrôle automatique.** `validate.py` et `tests/` ne lisent pas `content/trial/` : les règles se
-   vérifient à la main, à chaque script et à chaque image. À ajouter : un schéma des fichiers du modèle et les
-   refus des cinq règles. (Le registre, lui, reste vérifié : politique des hadiths, textes, coupes.)
+2. **Contrôle automatique des fichiers, sauf les dessins.** `tools/trial/rules.py` (CI : `validate.yml` ; tests :
+   `tests/test_trial_rules.py`) lit chaque film et ses shorts et refuse : un id absent du registre, exclu, sans texte
+   ou du mauvais type ; un hadith hors politique (`content/policy.yaml`) ; une lecture sans enregistrement ; un
+   verset sans coupe ; **la voix de synthèse qui dit une citation** (4 mots de suite d'un verset du registre, dans son écriture coranique ou courante, ou d'un
+   hadith cité : un filet, pas une preuve) ; un texte de voix qui diffère des répliques ; un `reuse`, des `lines` ou un `subscribe` cassés ; un
+   champ obligatoire absent ; une réplique vide ; un titre YouTube de plus de 100 caractères. Il avertit des mots
+   refusés par le propriétaire (`content/wording.yaml`), de l'arabe standard (`content/dialect.yaml`), d'une première
+   phrase d'un seul mot, d'une ligne anglaise de plus de 125 caractères (tant que les vidéos ne sont pas validées), d'un short de plus de 2:05, d'un short
+   sans ambiance, de ce qui n'est pas encore validé. **Ce qu'aucun code ne contrôle encore : les dessins** (personne
+   dessinée, invisible figuré, première image) et le son de la voix : rappelés en fin de sortie, à vérifier à l'œil et
+   à l'oreille. Pas de schéma des fichiers : seuls les champs ci-dessus sont exigés. (Le registre reste vérifié par
+   `validate.py`.)
 3. **Rendu dans une session seulement.** Clips et ambiances sont hors dépôt, le film demande plus d'une heure
    (4 images par seconde), les vidéos sont livrées dans la conversation et dans aucune release ; la validation
    s'inscrit à la main (`validated`), sans `finalize.py`.

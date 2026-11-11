@@ -1,0 +1,40 @@
+# Words and turns the owner refused in the scripts of the film-and-shorts model (docs/model.md), as data.
+# tools/trial/rules.py warns when one of them appears in a narration line (kept lines too), a title, a cover
+# title or an Arabic description of content/trial/. The table of the skill write-hook (« Words and turns the
+# owner refused ») tells the story of each; add an entry here each time the owner refuses a word.
+#
+# patterns: regular expressions tried on the text with diacritics, Quranic marks and tatweel removed,
+#   alef with hamza (أ إ آ ٱ) written ا, ة written ه, ى written ي, ؤ written و, ئ written ي, hamza alone removed
+#   (so write them like that); each pattern must match a whole word (or the whole phrase), prefixes are
+#   written in the pattern. Patterns are folded the same way, so they may be written with the plain letters.
+# instead: what to write.
+# why: the owner's reason, or ours when he gave none.
+refused:
+  - id: shalathum
+    patterns: ["[وف]?شالتهم"]
+    instead: "« ركّبوهم السفينة »"
+    why: he does not like the word (2026-11-11)
+  - id: broke
+    patterns: ["[وفبهل]{0,2}(?:ات|تت)كسر[ا-ي]{0,3}"]
+    instead: "« حاجة وحشة حصلتلك », « اللي خسرناه »"
+    why: he does not like the word (2026-11-11)
+  - id: kinds-of-decree
+    patterns: ["انواع\\s+القدر"]
+    instead: "« تلات مواقف »"
+    why: three kinds of decree is a preachers' reading, not a classification of the Quran or of the books of creed
+  - id: silence-for-not-asking
+    # سكت, ساكت, بتسكّتنا, مسكّتانا, بتسكّتك: any word of silence said for « not asking ». Whole words only;
+    # « مسكت » (I grabbed) may be a false alarm: read the line. « يسكت » (he stays silent) is not matched: the
+    # validated first film says that Moses could not keep silent (« ما قدرش يسكت »), which is not « not asking ».
+    patterns: ["[وفبمت]{0,2}سكت[ا-ي]{0,4}", "[وفبمت]{0,2}ساكت[ا-ي]{0,3}"]
+    instead: "« ساب الدعاء », « بتبعدنا عن الدعاء »"
+    why: he asked for every word of silence to be changed (2026-11-11); a du'a can be said in the heart, the image was ours
+  - id: young-man
+    # « شاب » alone is read « young man » (شابّ). « شابت » (turned white) and « شباب » are other words and stay.
+    patterns: ["[وف]?شاب"]
+    instead: "« راسه شابت »"
+    why: read as « young man », on screen and by the voice
+  - id: proverb-of-patience
+    patterns: ["مضرب\\s+المثل"]
+    instead: "the proverb as people say it: « بنقول يا صبر أيوب… »"
+    why: he flagged the phrase without a reason; our reading is a standard-Arabic turn in an Egyptian line
