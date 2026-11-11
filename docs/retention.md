@@ -374,6 +374,15 @@ récitation ; une réplique longue rétrécit pour rester au-dessus de l'image.
 Voix : les répliques des trois shorts tiennent dans trois textes (`content/voice-test/20`, `21`, `22`), soit
 **3 requêtes pour une voix**, 6 pour les deux.
 
+**Une seule voix : D** (décision du propriétaire, 2026-11-11 : « puisqu'on est limité sur les requêtes Gemini,
+on utilise seulement la voix D »). D = Gemini 3.8 Flash TTS, voix `Algieba`, en égyptien. E (`Sadaltager`)
+n'est pas écartée pour sa qualité : elle n'est plus enregistrée, pour ne pas doubler les requêtes. VoiceTut
+`Mohammed` reste la voix de secours. Les trois shorts coûtent donc 3 requêtes, une par texte.
+
+Correction d'une estimation de la session : les pauses de la voix aux « … » font bien une vingtaine de
+secondes par short, mais on ne les supprime pas ; les ramener à 0,45 s au plus gagne 7 à 11 s par short
+(mesuré sur la prise D de la première comparaison : 12 pauses, 7,95 s, dont 2,7 s au-dessus de 0,45 s).
+
 ## La demande
 
 Propriétaire, 2026-11-10, après le premier essai sur Instagram : les règles et les personnages des vidéos faites
