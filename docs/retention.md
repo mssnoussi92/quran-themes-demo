@@ -213,6 +213,27 @@ d'une vidéo tierce) :
 3. **les deux ensemble** : la vraie mer qui bouge, et dessus la silhouette dessinée de ce que raconte le
    verset (le bateau percé). Tout est gratuit dans les trois cas.
 
+### L'essai monté (2026-11-11)
+
+Décisions du propriétaire : **la troisième piste d'image** (la vraie mer filmée, la silhouette dessinée dessus),
+**les deux voix D et E** dans l'essai, et « شالتهم » ne lui plaît pas : la première phrase dit « ركّبوهم
+السفينة ببلاش ».
+
+- **Ce qui est monté** : le short du bateau dans le modèle proposé (`content/trial/boat.yaml`, composition
+  `Trial916`, `tools/trial/`) : une image continue (la mer, la silhouette du bateau percé, puis les navires du
+  roi à l'horizon pour 18:79), la voix qui ne s'arrête pas aux changements de plan, les deux versets récités
+  sur la scène avec le mot surligné, la première phrase écrite dès la première image. 1:03, contre 1:55 pour
+  khidr-02. Aucune ambiance sonore : le clip de mer n'a pas de son.
+- **Le palier gratuit de Gemini donne 10 requêtes par jour** (message d'erreur du run 11 ; retour à minuit,
+  heure du Pacifique). La narration d'un short tient donc en **une seule prise par voix**, recoupée sur ses
+  pauses (`tools/trial/prepare.py`). Le run 11 a épuisé le quota du jour et perdu ses prises (corrigé : une
+  requête refusée ne fait plus perdre les prises déjà faites).
+- **Envoyé au propriétaire** : l'essai avec la voix de secours (VoiceTut ; une réplique nouvelle, les autres
+  sont ses prises connues). Les versions D et E se feront quand le quota repart (rappel programmé dans la
+  session pour le 2026-11-11 à 08:10 UTC).
+- La vidéo ne se rend que dans une session : le clip de mer (Pixabay 22183) n'est pas dans le dépôt,
+  `tools/trial/clip.py` le récupère avec la clé de l'environnement.
+
 ## La demande
 
 Propriétaire, 2026-11-10, après le premier essai sur Instagram : les règles et les personnages des vidéos faites
