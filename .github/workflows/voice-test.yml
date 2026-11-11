@@ -135,6 +135,16 @@ jobs:
           ln -sf "$(.venv-tools/bin/python -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())')" "$HOME/.local/bin/ffmpeg"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
+      # Where the key is, without ever printing it: a repository secret is what the next step reads; a
+      # repository *variable* of the same name is not a secret (its value shows in logs and settings).
+      - name: Is the key there?
+        env:
+          AS_SECRET: ${{ secrets.GEMINI_API_KEY != '' }}
+          AS_VARIABLE: ${{ vars.GEMINI_API_KEY != '' }}
+        run: |
+          echo "repository secret GEMINI_API_KEY set: $AS_SECRET"
+          echo "repository variable GEMINI_API_KEY set: $AS_VARIABLE"
+
       - name: Synthesize and convert to MP3
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
