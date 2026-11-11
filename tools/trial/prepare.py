@@ -93,9 +93,26 @@ def letters(text: str) -> int:
 
 
 def rule_of(spec: dict) -> int:
-    """The alignment rule of a short or a film. The first film (the files that still name an old episode in
-    `verses`) was validated with rule 2 and keeps it: its videos come out the same. Everything after: rule 3."""
-    return 2 if spec.get("verses") else 3
+    """The rule a short or a film is prepared with: how its phrases are found in the take (`place`) and how loud
+    its narration plays (`trim`). A film the owner validated keeps the rule it was validated with, so that its
+    videos come out the same: the first film (the files that still name an old episode in `verses`) rule 2, the
+    du'a rule 3 (`rule: 3` in its files). Everything after: rule 4."""
+    return int(spec["rule"]) if spec.get("rule") else 2 if spec.get("verses") else 4
+
+
+def trim(whole: Path | None, rule: int) -> float:
+    """The decibels to add to what is cut from the levelled take `whole`, so that the narration plays at the
+    loudness the recitation plays at. One-pass loudnorm lands under its target: by 0 to 1.9 dB on the twelve
+    takes measured on 2026-11-11 (the first short of Dhul-Qarnayn at -17.9 LUFS, its voice two decibels under
+    its verses). Since rule 4. The take itself is not changed: the phrases are found in it as before."""
+    if whole is None or rule < 4:
+        return 0.0
+    sys.path.insert(0, str(ROOT / "tools" / "audio"))
+    import build
+    measured = build.loudness(whole)
+    gain = 0.0 if measured is None else round(build.LEVEL["lufs"] - measured, 2)
+    print(f"narration level: {whole.name} at {measured} LUFS after loudnorm, {gain:+.2f} dB on its segments")
+    return gain
 
 
 def place(lines: list[str], whole: Path | None, by_pauses: bool = False, rule: int = 3) -> tuple[list[float], list, float]:
@@ -130,7 +147,7 @@ def place(lines: list[str], whole: Path | None, by_pauses: bool = False, rule: i
     # Whisper hears the take and each phrase is found by its words (tools/audio/align.py): what makes one
     # request for thirty phrases, or for a chapter, safe to cut. Kept beside the take: Whisper is slow.
     kept = whole.with_suffix(".align.json")
-    stamp = f"{rule}:{whole.stat().st_size}:{'|'.join(lines)}"   # 2: the pause before a phrase starts after the word before it; 3: see above
+    stamp = f"{min(rule, 3)}:{whole.stat().st_size}:{'|'.join(lines)}"   # 2: the pause before a phrase starts after the word before it; 3: see above (rule 4 finds the phrases as rule 3 does)
     if kept.is_file() and (old := json.loads(kept.read_text(encoding="utf-8"))).get("stamp") == stamp:
         return old["starts"], [tuple(g) if g else None for g in old["gaps"]], old["end"]
     sys.path.insert(0, str(ROOT / "tools" / "audio"))
@@ -165,11 +182,13 @@ def cut(starts: list[float], gaps: list, end: float, first: int, after: int, wha
     return begin, stop
 
 
-def narration(whole: Path | None, starts: list[float], gaps: list, end: float, first: int, lines: list[dict], out: Path) -> dict:
+def narration(whole: Path | None, starts: list[float], gaps: list, end: float, first: int, lines: list[dict], out: Path,
+              gain: float = 0.0) -> dict:
     """The phrases of `lines` (the first one is phrase `first` of the take) as a narration segment, its audio
     cut into `out` (`whole` None: a draft, no audio). The pauses of the voice are tightened: no more than PAUSE
     of silence at a « … », PAUSE_LINES between two lines; what is removed is the middle of the pause, so the
-    end of a word and the attack of the next one are left alone."""
+    end of a word and the attack of the next one are left alone. `gain`: decibels added to the cut (`trim`),
+    with the limiter of the recitations for the few peaks it pushes over the ceiling."""
     parts = [PHRASE_CUT.split(l["ar"].strip()) for l in lines]
     after = first + sum(len(x) for x in parts)
     begin, stop = cut(starts, gaps, end, first, after, parts[0][0])
@@ -190,7 +209,9 @@ def narration(whole: Path | None, starts: list[float], gaps: list, end: float, f
     if whole is not None:
         keep = f"between(t,{begin:.3f},{stop:.3f})" + (f"*not({'+'.join(f'between(t,{x:.3f},{y:.3f})' for x, y in removed)})" if removed else "")
         run("ffmpeg", "-y", "-loglevel", "error", "-i", str(whole), "-af",
-            f"asetnsamples=n=240,aselect='{keep}',asetpts=N/SR/TB,afade=t=in:d=0.02,afade=t=out:st={max(0.0, length - 0.05):.3f}:d=0.05", str(out))
+            f"asetnsamples=n=240,aselect='{keep}',asetpts=N/SR/TB,"
+            + (f"volume={gain:.2f}dB,alimiter=limit=0.8:attack=5:release=50:level=0:latency=1," if gain else "")
+            + f"afade=t=in:d=0.02,afade=t=out:st={max(0.0, length - 0.05):.3f}:d=0.05", str(out))
     made, k = [], 0
     for line, x in zip(lines, parts):
         made.append({"ar": line["ar"], "en": line["en"], "phrases": [{"text": ph, "start": rel[k + i]} for i, ph in enumerate(x)]})
@@ -279,6 +300,7 @@ def main() -> None:
     phrases = [ph for seg in narrated for l in seg["lines"] for ph in PHRASE_CUT.split(l["ar"].strip())]
     whole = None if args.draft else take_of(args.takes, args.voice, spec["text"], out_dir, args.trial)
     starts, gaps, take_end = place(said, whole, args.by_pauses, rule_of(spec))
+    gain = trim(whole, rule_of(spec))
     first, k = {}, 0                                        # narration id -> its first phrase in the take
     for seg in narrated:
         first[seg["narration"]] = k
@@ -288,7 +310,7 @@ def main() -> None:
     for seg in spec["segments"]:
         if "narration" in seg:
             wav = out_dir / f"{args.trial}-{args.voice}-{seg['narration']}.wav"
-            made = narration(whole, starts, gaps, take_end, first[seg["narration"]], seg["lines"], wav)
+            made = narration(whole, starts, gaps, take_end, first[seg["narration"]], seg["lines"], wav, gain)
             segments.append({**made, "scene": seg["scene"], "start": round(t, 2)})
         elif "verse" in seg:
             made = verse_segment(by_source, seg["verse"], out_dir, args.episode) if by_source is not None else sources.verse(seg["verse"], out_dir)

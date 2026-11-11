@@ -53,8 +53,13 @@ segments:
   - narration: meaning
     scene: done
     lines:
-      - ar: "وبعد كل ده… قال: ده رحمة من ربي. ولما ييجي وعد ربي… هيخليه تراب. ووعد ربي حق."
-        en: "After all that… he said: this is a mercy from my Lord. When my Lord's promise comes… He will level it to dust. And my Lord's promise is true."
+      # Une seule réplique jusqu'au 2026-11-11 : six phrases empilées, écrites petit. Coupée en deux à la demande du
+      # propriétaire (« traite les points faibles »), mot pour mot, sans nouvelle prise de voix.
+      - ar: "وبعد كل ده… قال: ده رحمة من ربي."
+        en: "After all that… he said: this is a mercy from my Lord."
+        kept: qarnayn.humble-1
+      - ar: "ولما ييجي وعد ربي… هيخليه تراب. ووعد ربي حق."
+        en: "When my Lord's promise comes… He will level it to dust. And my Lord's promise is true."
         kept: qarnayn.humble-1
       - ar: "ما قالش: أنا اللي عملت… قال: رحمة من ربي."
         en: "He didn't say: I did it… he said: a mercy from my Lord."

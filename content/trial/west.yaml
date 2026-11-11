@@ -28,7 +28,7 @@ clip: { source: pixabay, id: 21488, author: josefgadermaier, page: "https://pixa
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 40-trial-west
 ambience: { source: bigsoundbank, id: "1448", title: "Small waves and beach #2", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/detail-1448-small-waves-and-beach-2.html", from: 100, seconds: 80, level: -36 }
-cover: { scene: sun, title: "مصير قوم كاملين… بكلمة منه!", tag: "ذو القرنين · ١ من ٣", focus: 1200 }
+cover: { scene: sun, title: "مصير قوم كاملين… بكلمة منه!", tag: "ذو القرنين · ١ من ٣", focus: 1200, at: 78 }   # at : la seconde du clip que montre la couverture (le soleil au-dessus des arbres ; au début du clip il est hors cadre)
 publish:
   title: { en: "The fate of a whole people… at his word", ar: "مصير قوم كاملين… بكلمة منه!" }
   part: 1

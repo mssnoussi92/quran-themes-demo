@@ -13,7 +13,7 @@ améliorés, ambiance. Leurs sources et leurs lectures de hadith, validées, res
 | Épisode | Dans le modèle |
 | --- | --- |
 | Moussa et al-Khadir (`khidr`) | **fait** : film de 7:47 et trois shorts (`content/trial/film.yaml`, `boat`, `boy`, `wall`), tout validé le 2026-11-11 |
-| Du'a (`dua`) | **en cours** : script validé, voix faite, rendus en cours (`content/trial/dua.yaml`, `asked`, `written`, `waited`) |
+| Du'a (`dua`) | **fait, vidéos validées le 2026-11-11** (`content/trial/dua.yaml`, `asked`, `written`, `waited`) ; restent ses textes à coller à valider |
 | Dhul-Qarnayn (`qarnayn`) | **le suivant** (choix du propriétaire, 2026-11-11) : fiche ci-dessous, structure à valider |
 | Les gens de la caverne (`kahf`) | à réécrire ; une histoire, le format où le modèle est éprouvé |
 | Patience, repentir, comparaisons, confiance en Dieu, الخشوع | à réécrire ; idées reçues, sur le modèle du du'a (chaque idée brisée par un fait du Coran qu'on peut montrer) |
@@ -118,10 +118,11 @@ chaque short ; Tirmidhi 3505 à la fin du deuxième short.
 fichiers). **Voix** : quatre requêtes, une par texte (run 15 de `voice-test`, aucune refusée), prises dans
 `content/trial/takes/` ; chaque phrase retrouvée. Durées avec la voix : 1:49, 2:04, 1:57, film 7:36.
 
-**Rendu** (2026-11-11) : les sept vidéos par le workflow `film` (film 7:36). Les trois shorts envoyés d'abord et le
-film de travail ont un « ﷺ » mal dessiné dans les sous-titres anglais (`docs/history.md`, tâche 44) : corrigé et
-re-rendu. **Reste** : le contrôle de ce rendu, son envoi, puis le « je valide » du propriétaire sur les vidéos,
-qui doit couvrir les huit versets, Tirmidhi 3505 et sa lecture, encore `proposed`.
+**Rendu et validation** (2026-11-11) : les sept vidéos par le workflow `film` (film 7:36 ; shorts 1:49, 2:04,
+1:57), corrigées d'un « ﷺ » mal dessiné dans les sous-titres anglais (`docs/history.md`, tâche 44), puis
+**validées par le propriétaire** (« je valide tout » : voix, montage, couvertures, vignette, rappel, ambiance),
+avec les huit versets, Tirmidhi 3505 et sa lecture. **Reste** : ses textes à coller
+(`docs/retention/publication-dua.md`), qu'il n'a pas encore validés.
 
 ### Fiche : Dhul-Qarnayn dans le modèle (skill `choose-format`, 2026-11-11)
 
@@ -193,18 +194,12 @@ un défilé, un feu). **Voix** : quatre requêtes (trois shorts, le film), une j
 l'argent refusé, « رحمة من ربي ») et le film ; le levant et « إن شاء الله » dans le film seulement ; le fil des
 trois épreuves de la force (sur les gens, de prendre, d'avoir réussi).
 
-**État (2026-11-11)** : script **validé par le propriétaire** (« je valide le script » ; page lisible
-`docs/scripts/qarnayn.md` ; `docs/history.md`, tâches 43 et 45), voix faite, shorts rendus et envoyés (2:06, 1:54,
-1:51), film 8:24 en rendu. **Encore proposés, pas approuvés** : les quatre clips et les ambiances. **À lui dire avec
-les vidéos** : la réplique de six phrases du troisième short (« وبعد كل ده… ووعد ربي حق. ») s'écrit petit, la
-couper en deux lignes ne demanderait aucune voix ; le premier short sort à −16,9 LUFS (les autres entre −16,0 et
-−16,4).
-**Ambiances** : les trois des brouillons sont celles du premier film, provisoires. Candidates sur BigSoundBank
-(CC0), **à écouter par le propriétaire sur leur page, aucune n'est choisie** : pour le couchant, « Pond in a Field »
-(0691, 2:42 : une mare, grenouilles, oiseaux, vent) ou « Froux peat bogs » (1349 : une tourbière, beaucoup de
-vent) ; pour le défilé, « Strong wind #1 » (0146 : vent fort dans un pin, un oiseau) ; pour le barrage, « Big
-branching fire #3 » (0989, 2:09 : un grand feu de branches, dehors), qui ne vaudrait que sous les scènes du feu :
-aujourd'hui une image n'a qu'une ambiance, il faudrait une ambiance par scène.
+**État (2026-11-11)** : script **validé** (« je valide le script »), voix faite, **clips et ambiances approuvés**
+(« je valide tout », après les trois shorts ; les ambiances sont les trois enregistrements du premier film, et les
+candidates notées un moment ne sont pas retenues). Trois points faibles traités à sa demande (`docs/history.md`,
+tâche 46) : la voix du premier short remontée au niveau de ses versets, la réplique « وبعد كل ده… » coupée en
+deux lignes, le soleil sur la couverture du premier short. Durées : 2:06, 1:54, 1:51, film 8:24. **Reste** : le
+contrôle du rendu corrigé, l'envoi, son « je valide » sur les vidéos et les textes.
 
 ## Faits (ancien circuit)
 

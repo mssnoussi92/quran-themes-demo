@@ -6,8 +6,8 @@ Script à valider avant toute voix. Les répliques **nouvelles** sont de la sess
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | `west` | 2:10 | 0:50 | 0:00 | 9 | 4 |
 | 2 | `tribute` | 2:04 | 0:45 | 0:00 | 9 | 5 |
-| 3 | `barrier` | 1:56 | 0:47 | 0:00 | 9 | 5 |
-| | le film `qarnayn` | 8:37 | 3:33 | 0:15 | 5 (propres au film) | 10 |
+| 3 | `barrier` | 1:56 | 0:47 | 0:00 | 9 | 6 |
+| | le film `qarnayn` | 8:38 | 3:33 | 0:15 | 5 (propres au film) | 10 |
 
 ## Short 1 · `west` · مصير قوم كاملين… بكلمة منه!
 
@@ -121,7 +121,7 @@ Environ **2:04** · 0:45 de récitation, 0:00 de hadith lu · 9 répliques nouve
 
 ## Short 3 · `barrier` · بنى السد… وقال: مش مني!
 
-Environ **1:56** · 0:47 de récitation, 0:00 de hadith lu · 9 répliques nouvelles, 5 reprises.
+Environ **1:56** · 0:47 de récitation, 0:00 de hadith lu · 9 répliques nouvelles, 6 reprises.
 
 **0:00 · narration** (image : `blocks`)
 - بنى سد من حديد ونحاس… محدش قدر يعدّيه… وقال: ده مش مني!  
@@ -150,8 +150,10 @@ Environ **1:56** · 0:47 de récitation, 0:00 de hadith lu · 9 répliques nouve
   *[Dhul-Qarnayn] said, "This is a mercy from my Lord; but when the promise of my Lord comes [i.e., approaches], He will make it level, and ever is the promise of my Lord true."*
 
 **1:04 · narration** (image : `done`)
-- وبعد كل ده… قال: ده رحمة من ربي. ولما ييجي وعد ربي… هيخليه تراب. ووعد ربي حق.  
-  *After all that… he said: this is a mercy from my Lord. When my Lord's promise comes… He will level it to dust. And my Lord's promise is true.* · reprise de `qarnayn.humble-1`
+- وبعد كل ده… قال: ده رحمة من ربي.  
+  *After all that… he said: this is a mercy from my Lord.* · reprise de `qarnayn.humble-1`
+- ولما ييجي وعد ربي… هيخليه تراب. ووعد ربي حق.  
+  *When my Lord's promise comes… He will level it to dust. And my Lord's promise is true.* · reprise de `qarnayn.humble-1`
 - ما قالش: أنا اللي عملت… قال: رحمة من ربي.  
   *He didn't say: I did it… he said: a mercy from my Lord.* · reprise de `qarnayn.humble-lesson`
 
@@ -179,7 +181,7 @@ Environ **1:56** · 0:47 de récitation, 0:00 de hadith lu · 9 répliques nouve
 
 ## Le film · `qarnayn`
 
-Environ **8:37**, dont 12 s d'image calme à la fin · 3:33 de récitation, 0:15 de hadith lu. Il reprend les shorts réplique par réplique (sans leurs appels à suivre) ; seules ses répliques propres sont écrites ici en entier.
+Environ **8:38**, dont 12 s d'image calme à la fin · 3:33 de récitation, 0:15 de hadith lu. Il reprend les shorts réplique par réplique (sans leurs appels à suivre) ; seules ses répliques propres sont écrites ici en entier.
 
 ### 0:00 · Three tests · تلات اختبارات
 
@@ -295,7 +297,7 @@ Environ **8:37**, dont 12 s d'image calme à la fin · 3:33 de récitation, 0:15
 - والنبي صلى الله عليه وسلم قال:  
   *And the Prophet ﷺ said:* · reprise de `qarnayn.end-hadith`
 
-**7:19** · **Hadith lu par une vraie voix** · Tirmidhi 3153 · lu par Yusuf ibn Nuh Ahmad · 15 s  
+**7:20** · **Hadith lu par une vraie voix** · Tirmidhi 3153 · lu par Yusuf ibn Nuh Ahmad · 15 s  
   يَحْفِرُونَهُ كُلَّ يَوْمٍ حَتَّى إِذَا كَادُوا يَخْرِقُونَهُ قَالَ الَّذِي عَلَيْهِمُ ارْجِعُوا فَسَتَخْرِقُونَهُ غَدًا فَيُعِيدُهُ اللَّهُ كَأَمْثَلِ مَا كَانَ حَتَّى إِذَا بَلَغَ مُدَّتَهُمْ وَأَرَادَ اللَّهُ أَنْ يَبْعَثَهُمْ عَلَى النَّاسِ قَالَ الَّذِي عَلَيْهِمُ ارْجِعُوا فَسَتَخْرِقُونَهُ غَدًا إِنْ شَاءَ اللَّهُ  
   *They excavated each day, until when they are just about to penetrate it, their leader says: 'Go back so that you can penetrate it tomorrow!'" He said: "But Allah makes it return just as it was, until their appointed time, when Allah ordains to send them upon the people, and their leader says: 'Go back so you can penetrate it tomorrow, if Allah wills.'*
 

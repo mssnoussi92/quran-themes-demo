@@ -13,6 +13,7 @@
 # répliques, la place des versets et des hadiths, les titres. Ni la voix, ni les images, ni les textes de
 # publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
 id: written
+rule: 3                          # préparé avec la règle 3 (calage et niveau de la voix du 2026-11-11) : ses vidéos validées en sortent identiques (tools/trial/prepare.py, rule_of)
 script_validated: { by: mssnoussi92, on: 2026-11-11 }
 # « Je valide tout » du propriétaire (2026-11-11) sur les vidéos corrigées, rendues par le workflow `film` et envoyées
 # dans la conversation : la voix D sur la vidéo entière, le montage, la couverture, l'ambiance. Inscrit sur sa parole.

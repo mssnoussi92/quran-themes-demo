@@ -35,3 +35,17 @@ def test_a_pause_is_the_pause_before_one_phrase_only():
     quiet = [(37.68, 38.22), (39.04, 39.27), (40.05, 40.42)]
     assert starts(phrases, words, quiet, new=True)[1:] == [39.27, 39.41]
     assert starts(phrases, words, quiet, new=False)[1:] == [39.27, 39.27]
+
+
+def test_a_validated_film_keeps_the_rule_it_was_validated_with():
+    """The first film names an old episode (rule 2), the du'a says `rule: 3`, everything after is rule 4; and only
+    rule 4 lifts the narration to the recitation's loudness: nothing is measured, nothing added, before it."""
+    sys.path.insert(0, str(REPO / "tools" / "trial"))
+    import prepare
+    import yaml
+    load = lambda name: yaml.safe_load((REPO / "content" / "trial" / f"{name}.yaml").read_text(encoding="utf-8"))
+    assert [prepare.rule_of(load(n)) for n in ("film", "boat", "boy", "wall")] == [2, 2, 2, 2]
+    assert [prepare.rule_of(load(n)) for n in ("dua", "asked", "written", "waited")] == [3, 3, 3, 3]
+    assert [prepare.rule_of(load(n)) for n in ("qarnayn", "west", "tribute", "barrier")] == [4, 4, 4, 4]
+    missing = REPO / "no-such-take.wav"
+    assert prepare.trim(missing, 2) == 0.0 and prepare.trim(missing, 3) == 0.0 and prepare.trim(None, 4) == 0.0

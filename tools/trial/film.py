@@ -47,6 +47,7 @@ class Take:
             sys.exit(f"error: {text.name} and the lines of {name} differ")
         self.whole = None if args.draft else P.take_of(args.takes, args.voice, spec["text"], out_dir, name)
         self.starts, self.gaps, self.end = P.place(said, self.whole, rule=P.rule_of(spec))
+        self.gain = P.trim(self.whole, P.rule_of(spec))
         self.first, k = [], 0                   # index of the first phrase of each line
         for l in self.lines:
             self.first.append(k)
@@ -58,7 +59,7 @@ class Take:
         mine = [i for i, l in enumerate(self.lines) if l["narration"] == narration and (wanted is None or l["index"] in wanted)]
         if not mine or mine != list(range(mine[0], mine[-1] + 1)):
             sys.exit(f"error: {self.name}.{narration} {wanted}: no such lines, or lines that do not follow each other")
-        return P.narration(self.whole, self.starts, self.gaps, self.end, self.first[mine[0]], [self.lines[i] for i in mine], out)
+        return P.narration(self.whole, self.starts, self.gaps, self.end, self.first[mine[0]], [self.lines[i] for i in mine], out, self.gain)
 
 
 def prepare(args) -> None:

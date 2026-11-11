@@ -74,7 +74,7 @@ video/out/                     (ignoré) rendus
 | `verses` | seulement dans le premier film : l'ancien épisode préparé d'où viennent ses versets ; un fichier sans `verses` lit le registre (`tools/trial/sources.py`) |
 | `voices` | les voix connues : `D` (Gemini, Algieba), `V` (VoiceTut, secours), `X` (brouillon muet) |
 | `text` | son texte de voix : `content/voice-test/<text>.txt` |
-| `cover` | la couverture 9:16 : `scene` montrée, `title` en grand, `tag` au-dessus, `focus` (hauteur du sujet), `file` (nom du fichier livré) |
+| `cover` | la couverture 9:16 : `scene` montrée, `title` en grand, `tag` au-dessus, `focus` (hauteur du sujet), `at` (la seconde du clip, tel que le short le joue, que montrent la couverture et le panneau de la vignette : sans lui, le début du clip), `file` (nom du fichier livré) |
 | `publish` | `title` et `description` (ar, en), `part` (son numéro dans la série) |
 | `segments` | dans l'ordre : `narration: <nom>` avec `scene` et `lines` (`ar`, `en` ; `kept: <épisode>.<scène>` pour une réplique validée reprise d'un ancien épisode), `verse: quran.S.A` ou `reading: hadith.<recueil>.<n>` (lu par une vraie voix) avec `scene` |
 | `script_validated`, `validated` | la parole du propriétaire : le script, puis la vidéo (`what` : ce qu'elle couvre) ; jamais écrits par l'IA de son propre chef |
@@ -145,7 +145,7 @@ release brouillon `<files>-candidate` (secret `PIXABAY_API_KEY` ; `uv run --with
 | Où une phrase commence dans la prise | à la fin du silence qui la précède (−38 dB, 0,12 s au moins) ; sans silence entre deux mots, le creux trouvé à −34, −30 puis −26 dB ; une pause finit avant la fin du premier mot de sa phrase et ne sert qu'à une phrase (règle 3, depuis le du'a ; ces deux précisions, ajoutées pour Dhul-Qarnayn, ne déplacent aucune phrase du du'a) ; le premier film garde la règle 2 (un silence, ou rien) | `LOUDER_FLOORS` (`tools/audio/align.py`), `rule_of` (`prepare.py`) |
 | Entre deux segments | 0,35 s d'image seule (short) ; 0,2 s entre deux narrations d'un même chapitre (film) | `GAP`, `BETWEEN`, `BETWEEN_LINES` |
 | Début, fin d'un short | 0,5 s avant le premier mot (la première phrase est déjà écrite), 1,2 s après le dernier | `LEAD`, `TAIL` |
-| Volume | chaque morceau à −16 LUFS ; la vidéo sort entre −16,2 et −16,4 | `tools/audio/build.py`, `prepare.py` |
+| Volume | chaque morceau à −16 LUFS : une récitation ou une lecture par un gain mesuré ; la prise de la voix par `loudnorm` en une passe, qui s'arrête jusqu'à 1,9 dB sous sa cible (mesuré sur douze prises), puis, **depuis Dhul-Qarnayn (règle 4)**, par le gain qui manque, posé sur chaque segment coupé (la prise où l'on cherche les phrases ne change pas). Le premier film (règle 2) et le du'a (`rule: 3` dans ses fichiers) gardent le niveau avec lequel ils ont été validés | `tools/audio/build.py`, `trim` et `rule_of` (`prepare.py`) |
 | Ambiance | −36 LUFS (20 LU sous la voix), −38 pour un son aigu (grillons) ; part en 0,8 s avant une récitation, revient en 1 s ; ne revient pas entre deux récitations séparées de moins de 4 s ; une image montrée moins de 8 s ne change pas l'ambiance | `ambience.py` |
 | Verset | pages de 14 mots au plus, le mot récité en or | `VERSE_PAGE` (`Trial.tsx`) |
 | Traduction | deux lignes au plus dans le film, écrite plus petit sinon | `sub.rows` (`Film.tsx`) |
