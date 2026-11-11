@@ -3,8 +3,10 @@
 
   uv run --with pyyaml python3 tools/trial/script.py --film <id> [--out docs/scripts/<id>.md]
 
-For each short, then for the film: every segment in order, the narration in Arabic and English, each
-verse and hadith by its reference with its length, and an estimate of the video's length before any
+<id>: a film (a file with `chapters`) or a series (a file with `shorts` and no chapters: shorts that stand
+alone, no film). For each short, then for the film: every segment in order, the narration in Arabic and
+English, each verse and hadith by its reference with its length, what a narration rests on (`sources:` the
+report it tells, the tafsir its meaning comes from), and an estimate of the video's length before any
 voice exists. A line marked « reprise » is a validated line of the old episode kept word for word
 (`kept:` in the file); every other line is new and is what the owner validates. Nothing is typed
 here: lines come from content/trial/, references and texts of the quotes from the registry.
@@ -80,6 +82,45 @@ def quote(sid: str, sources: dict, cuts: dict) -> tuple[str, float]:
     return (f"**Hadith lu par une vraie voix** · {ref} · {reading}{state}  \n  {text}  \n  *{english}*", seconds)
 
 
+COLLECTIONS = {"bukhari": "Sahih al-Bukhari", "muslim": "Sahih Muslim", "tirmidhi": "Jami' at-Tirmidhi"}
+
+
+def passage(ids: list[str], sources: dict, cuts: dict) -> tuple[str, float]:
+    """Verses that follow one another, recited without a break (`verses:`): one line, and how long it lasts."""
+    srcs = []
+    for sid in ids:
+        if sid not in sources:
+            sys.exit(f"error: {sid} is not in the registry")
+        srcs.append(sources[sid])
+    keys = [f"{x['ref']['surah']}:{x['ref']['ayah']}" for x in srcs]
+    found = [cuts.get(k) for k in keys]
+    seconds = found[-1]["end"] - found[0]["start"] if all(found) else 0.0
+    state = "" if all(x.get("status") == "validated" for x in srcs) else " · **sources proposées, à valider**"
+    hand = " · coupes posées à la main, à écouter" if any(c and "hand" in c.get("method", "") for c in found) else ""
+    name = (srcs[0].get("origin") or {}).get("surah_en", "")
+    rows = [f"  {x['text_ar']}  \n  *{x['text_en']}*" for x in srcs]
+    return (f"**Versets récités d'une traite** · {name} {keys[0]}-{keys[-1].split(':')[1]} · {seconds:.0f} s{state}{hand}  \n" + "  \n".join(rows), seconds)
+
+
+def rests_on(ids: list[str], sources: dict, policy: dict) -> str:
+    """What a narration rests on, as the owner reads it: the report told, the tafsir of the meaning."""
+    out = []
+    for sid in ids:
+        src = sources.get(sid)
+        if src is None:
+            sys.exit(f"error: {sid} is not in the registry")
+        state = "" if src.get("status") == "validated" else ", source proposée"
+        ref = src["ref"]
+        if src["type"] == "hadith":
+            name = COLLECTIONS.get(ref["collection"], ref["collection"].capitalize())
+            letter = "abcdefgh"[ref["narration"] - 1] if ref.get("narration") else ""
+            out.append(f"récit de [{name} {ref['number']}{letter}]({src.get('url')}), raconté avec nos mots{state}")
+        else:
+            edition = ((policy.get("tafsir") or {}).get("editions") or {}).get(ref["edition"]) or {}
+            out.append(f"sens d'après [{edition.get('en', ref['edition'])} · {edition.get('ar', '')}]({src.get('url')}) sur {ref['surah']}:{ref['ayah']}{state}")
+    return "d'après : " + " ; ".join(out) + " · référence écrite à l'écran, jamais lue"
+
+
 def narration(lines: list[dict]) -> list[str]:
     out = []
     for line in lines:
@@ -94,10 +135,12 @@ def main() -> None:
     p.add_argument("--out", type=Path)
     args = p.parse_args()
     film = yaml.safe_load((TRIAL / f"{args.film}.yaml").read_text(encoding="utf-8"))
+    series = "chapters" not in film          # shorts that stand alone: no film
+    policy = yaml.safe_load((ROOT / "content" / "policy.yaml").read_text(encoding="utf-8")) or {}
     sources = registry()
     cuts = json.loads((ROOT / "content" / "recitations" / "sayegh.json").read_text(encoding="utf-8"))
     cuts = cuts.get("verses", cuts)
-    shorts = {name: yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film["thumbnail"]["panels"]}
+    shorts = {name: yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film.get("shorts") or film["thumbnail"]["panels"]}
     doc = [f"# {film['title']['en']} · {film['title']['ar']}", "",
            "Script à valider avant toute voix. Les répliques **nouvelles** sont de la session ; les répliques « reprises » "
            "sont celles que le propriétaire a validées dans l'ancien épisode, mot pour mot. Versets et hadiths viennent du "
@@ -112,9 +155,14 @@ def main() -> None:
         for seg in spec["segments"]:
             if "narration" in seg:
                 seconds = spoken(seg["lines"])
-                body += [f"**{stamp(t)} · narration** (image : `{seg['scene']}`)", *narration(seg["lines"]), ""]
+                body += [f"**{stamp(t)} · narration** (image : `{seg['scene']}`)"
+                         + (f" · {rests_on(seg['sources'], sources, policy)}" if seg.get("sources") else ""), *narration(seg["lines"]), ""]
                 new += sum(1 for l in seg["lines"] if not l.get("kept"))
                 kept += sum(1 for l in seg["lines"] if l.get("kept"))
+            elif "verses" in seg:
+                text, seconds = passage(seg["verses"], sources, cuts)
+                body += [f"**{stamp(t)}** · {text}", ""]
+                recited += seconds
             else:
                 text, seconds = quote(seg.get("verse") or seg["reading"], sources, cuts)
                 body += [f"**{stamp(t)}** · {text}", ""]
@@ -129,6 +177,16 @@ def main() -> None:
                 f"{new} répliques nouvelles, {kept} reprises.", ""]
         bodies += head + body
         summary.append(f"| {n} | `{name}` | {stamp(total)} | {stamp(recited)} | {stamp(read)} | {new} | {kept} |")
+
+    if series:
+        doc += ["| | Short | Durée estimée | Récitation | Hadith lu | Répliques nouvelles | Reprises |", "| --- | --- | --- | --- | --- | --- | --- |", *summary, ""]
+        doc += bodies
+        out = args.out or ROOT / "docs" / "scripts" / f"{args.film}.md"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text("\n".join(doc), encoding="utf-8")
+        shown = out.relative_to(ROOT) if out.is_relative_to(ROOT) else out
+        print(f"{shown}: " + ", ".join(f"{k} {stamp(v)}" for k, v in lengths.items()) + " (a series: no film)")
+        return
 
     # The film: the lines of its own, and its order
     t, recited, read = LEAD, 0.0, 0.0

@@ -2084,6 +2084,38 @@
       "match": 1.0,
       "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
     },
+    "62:11": {
+      "file": "062.mp3",
+      "start": 169.91,
+      "end": 193.11,
+      "seconds": 23.2,
+      "words": [
+        [1, 0.0, 0.54],
+        [2, 0.54, 1.12],
+        [3, 1.12, 2.08],
+        [4, 2.08, 2.54],
+        [5, 2.54, 3.3],
+        [6, 3.3, 5.58],
+        [7, 5.58, 6.78],
+        [8, 6.78, 8.08],
+        [9, 8.08, 10.04],
+        [10, 10.04, 10.98],
+        [11, 10.98, 11.26],
+        [12, 11.26, 12.14],
+        [13, 12.14, 12.8],
+        [14, 12.8, 13.62],
+        [15, 13.62, 14.42],
+        [16, 14.42, 15.18],
+        [17, 15.18, 15.74],
+        [18, 15.74, 17.06],
+        [19, 17.06, 18.32],
+        [20, 18.32, 19.28],
+        [21, 19.28, 23.2]
+      ],
+      "heard": "وإذا رأوا تجارة أو لهول فاضوا إليها وتركوك قائما قل ما عند الله خير من اللهو ومن التجارة والله خير الرازقين",
+      "match": 1.0,
+      "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
+    },
     "64:11": {
       "file": "064.mp3",
       "start": 156.51,
@@ -2212,6 +2244,130 @@
       "heard": "كلا بل لا تكرمون اليتيم",
       "match": 1.0,
       "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
+    },
+    "93:1": {
+      "file": "093.mp3",
+      "start": 3.8,
+      "end": 4.62,
+      "seconds": 0.82,
+      "words": [
+        [1, 0.0, 0.82]
+      ],
+      "heard": "والضحى",
+      "match": 1.0,
+      "note": "end 4.62 s at -15 dB",
+      "method": "set by hand (envelope), words by Whisper"
+    },
+    "93:2": {
+      "file": "093.mp3",
+      "start": 4.62,
+      "end": 7.12,
+      "seconds": 2.5,
+      "words": [
+        [1, 0.0, 0.88],
+        [2, 0.88, 1.34],
+        [3, 1.34, 2.5]
+      ],
+      "heard": "والليل إذا سجاء",
+      "match": 1.0,
+      "note": "start 4.62 s at -15 dB; end 7.12 s at -34 dB",
+      "method": "set by hand (envelope), words by Whisper"
+    },
+    "93:3": {
+      "file": "093.mp3",
+      "start": 7.12,
+      "end": 10.64,
+      "seconds": 3.52,
+      "words": [
+        [1, 0.0, 0.32],
+        [2, 0.32, 1.26],
+        [3, 1.26, 1.92],
+        [4, 1.92, 2.4],
+        [5, 2.4, 3.52]
+      ],
+      "heard": "ما ودعك ربك وما قلا",
+      "match": 1.0,
+      "note": "start 7.12 s at -34 dB; end 10.64 s at -33 dB",
+      "method": "set by hand (envelope), words by Whisper"
+    },
+    "93:4": {
+      "file": "093.mp3",
+      "start": 10.64,
+      "end": 14.38,
+      "seconds": 3.74,
+      "words": [
+        [1, 0.0, 1.32],
+        [2, 1.32, 1.92],
+        [3, 1.92, 2.44],
+        [4, 2.44, 2.76],
+        [5, 2.76, 3.74]
+      ],
+      "heard": "وللآخرة خير لك من الأولى",
+      "match": 1.0,
+      "note": "start 10.64 s at -33 dB; end 14.38 s at -26 dB",
+      "method": "set by hand (envelope), words by Whisper"
+    },
+    "93:5": {
+      "file": "093.mp3",
+      "start": 14.38,
+      "end": 18.3,
+      "seconds": 3.92,
+      "words": [
+        [1, 0.0, 0.74],
+        [2, 0.74, 1.72],
+        [3, 1.72, 2.38],
+        [4, 2.38, 3.92]
+      ],
+      "heard": "ولسوف يعطيك ربك فترضى",
+      "match": 1.0,
+      "note": "start 14.38 s at -26 dB; end 18.30 s at -37 dB",
+      "method": "set by hand (envelope), words by Whisper"
+    },
+    "93:6": {
+      "file": "093.mp3",
+      "start": 18.3,
+      "end": 22.5,
+      "seconds": 4.2,
+      "words": [
+        [1, 0.0, 0.44],
+        [2, 0.44, 1.2],
+        [3, 1.2, 2.04],
+        [4, 2.04, 4.2]
+      ],
+      "heard": "ألم يجدك يتيما فآوى",
+      "match": 1.0,
+      "note": "start 18.30 s at -37 dB; end 22.50 s at -35 dB",
+      "method": "set by hand (envelope), words by Whisper"
+    },
+    "93:7": {
+      "file": "093.mp3",
+      "start": 22.5,
+      "end": 27.46,
+      "seconds": 4.96,
+      "words": [
+        [1, 0.0, 0.86],
+        [2, 0.86, 3.44],
+        [3, 3.44, 4.96]
+      ],
+      "heard": "ووجدك ضالا فهدا",
+      "match": 1.0,
+      "note": "start 22.50 s at -35 dB; end 27.46 s at -18 dB",
+      "method": "set by hand (envelope), words by Whisper"
+    },
+    "93:8": {
+      "file": "093.mp3",
+      "start": 27.46,
+      "end": 34.04,
+      "seconds": 6.58,
+      "words": [
+        [1, 0.0, 0.92],
+        [2, 0.92, 3.32],
+        [3, 3.32, 6.58]
+      ],
+      "heard": "ووجدك عائلا فأغنى",
+      "match": 1.0,
+      "note": "start 27.46 s at -18 dB; end 34.04 s at -41 dB",
+      "method": "set by hand (envelope), words by Whisper"
     }
   }
 }

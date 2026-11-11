@@ -88,9 +88,11 @@ propriétaire. `scripts/validate.py` vérifie la structure de chaque format dans
   le dernier, le texte entier à nouveau et la conclusion.
 - **Exemple** : Tirmidhi 2516, « احفظ الله يحفظك… » (al-Albani : Sahih, vérifié dans hadith-api).
 - **Vérifié** : chaque reel du milieu a le texte (carte) et une leçon suivie de son exemple.
-- **Pièges** : expliquer au-delà du sens apparent : le sens d'un mot ou l'avis d'un savant demanderait une
-  source de tafsir ou de charh au registre (pas encore possible) ; nos lignes d'explication sont signalées au
-  propriétaire.
+- **Pièges** : expliquer au-delà du sens apparent : le sens d'un mot ou l'avis d'un savant demande une source de
+  tafsir au registre (possible depuis le 2026-11-11 pour un verset : `content/sources/tafsir.yaml`, trois tafsirs
+  dans la politique ; pas de charh de hadith) ; nos lignes d'explication sont signalées au propriétaire.
+- **Dans le modèle** : la série « آية وحكايتها » (`docs/themes.md`) en est la forme courte : un verset, son récit de
+  révélation, son sens d'après un tafsir nommé, un short qui tient seul.
 
 ## 6. Deux chemins (`two-paths`)
 

@@ -1,0 +1,119 @@
+# Passages de tafsir sur lesquels repose une réplique de sens (content/policy.yaml, tafsir.editions). Jamais lus ni
+# affichés : seul le nom du tafsir s'écrit. Textes remplis par tools/sources/fetch.py depuis l'API quran.com.
+- id: tafsir.muyassar.62.11
+  type: tafsir
+  ref: {edition: muyassar, surah: 62, ayah: 11}
+  url: https://quran.com/62:11/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/62:11
+    edition: Tafsir Muyassar
+    verses: ["62:11"]
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "le sens de 62:11 (short caravan)"
+  text_ar: 'إذا رأى بعض المسلمين تجارة أو شيئًا مِن لهو الدنيا وزينتها تفرَّقوا إليها، وتركوك -أيها النبي- قائمًا على المنبر تخطب، قل لهم -أيها النبي-: ما عند الله من الثواب والنعيم أنفع لكم من اللهو ومن التجارة، والله -وحده- خير مَن رزق وأعطى، فاطلبوا منه، واستعينوا بطاعته على نيل ما عنده من خيري الدنيا والآخرة.'
+- id: tafsir.saadi.62.11
+  type: tafsir
+  ref: {edition: saadi, surah: 62, ayah: 11}
+  url: https://quran.com/62:11/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/62:11
+    edition: السعدي Al-Sa'di
+    verses: ["62:11"]
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "la leçon de 62:11 : la patience dans l'obéissance ne fait pas perdre la subsistance (short caravan)"
+  text_ar: '{ وَإِذَا رَأَوْا تِجَارَةً أَوْ لَهْوًا انْفَضُّوا إِلَيْهَا } أي: خرجوا من المسجد، حرصًا على ذلك اللهو، و [تلك] التجارة، وتركوا الخير، { وَتَرَكُوكَ قَائِمًا } تخطب الناس، وذلك [في] يوم جمعة، بينما النبي صلى الله عليه وسلم يخطب الناس، إذ قدم المدينة، عير تحمل تجارة، فلما سمع الناس بها، وهم في المسجد، انفضوا من المسجد، وتركوا النبي صلى الله عليه وسلم يخطب استعجالًا لما لا ينبغي أن يستعجل له، وترك أدب، { قُلْ مَا عِنْدَ اللَّهِ } من الأجر والثواب، لمن لازم الخير وصبر نفسه على عبادة الله.{ خَيْرٌ مِنَ اللَّهْوِ وَمِنَ التِّجَارَةِ } التي، وإن حصل منها بعض المقاصد، فإن ذلك قليل منغص، مفوت لخير الآخرة، وليس الصبر على طاعة الله مفوتًا للرزق، فإن الله خير الرازقين، فمن اتقى الله رزقه من حيث لا يحتسب.وفي هذه الآيات فوائد عديدة:منها: أن الجمعة فريضة على جميع المؤمنين، يجب عليهم السعي لها، والمبادرة والاهتمام بشأنها.ومنها: أن الخطبتين يوم الجمعة، فريضتان يجب حضورهما، لأنه فسر الذكر هنا بالخطبتين، فأمر الله بالمضي إليه والسعي له.ومنها: مشروعية النداء ليوم الجمعة، والأمر به.ومنها: النهى عن البيع والشراء، بعد نداء الجمعة، وتحريم ذلك، وما ذاك إلا لأنه يفوت الواجب ويشغل عنه، فدل ذلك على أن كل أمر ولو كان مباحًا في الأصل، إذا كان ينشأ عنه تفويت واجب، فإنه لا يجوز في تلك الحال.ومنها: الأمر بحضور الخطبتين يوم الجمعة، وذم من لم يحضرهما، ومن لازم ذلك الإنصات لهما.ومنها: أنه ينبغي للعبد المقبل على عبادة الله، وقت دواعي النفس لحضور اللهو [والتجارات] والشهوات، أن يذكرها بما عند الله من الخيرات، وما لمؤثر رضاه على هواه.تم تفسير سورة الجمعة، ولله الحمد والثناء'
+- id: tafsir.muyassar.93.3
+  type: tafsir
+  ref: {edition: muyassar, surah: 93, ayah: 3}
+  url: https://quran.com/93:3/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/93:3
+    edition: Tafsir Muyassar
+    verses: ["93:1", "93:2", "93:3"]
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "le sens de 93:1-3 : ni abandonné ni détesté, la révélation avait tardé (short duha)"
+  text_ar: أقسم الله بوقت الضحى، والمراد به النهار كله، وبالليل إذا سكن بالخلق واشتد ظلامه. ويقسم الله بما يشاء من مخلوقاته، أما المخلوق فلا يجوز له أن يقسم بغير خالقه، فإن القسم بغير الله شرك. ما تركك -أيها النبي- ربك، وما أبغضك بإبطاء الوحي عنك.
+- id: tafsir.muyassar.93.4
+  type: tafsir
+  ref: {edition: muyassar, surah: 93, ayah: 4}
+  url: https://quran.com/93:4/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/93:4
+    edition: Tafsir Muyassar
+    verses: ["93:4", "93:5"]
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "le sens de 93:4-5 (short duha)"
+  text_ar: ولَلدَّار الآخرة خير لك من دار الدنيا، ولسوف يعطيك ربك -أيها النبي- مِن أنواع الإنعام في الآخرة، فترضى بذلك.
+- id: tafsir.muyassar.93.6
+  type: tafsir
+  ref: {edition: muyassar, surah: 93, ayah: 6}
+  url: https://quran.com/93:6/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/93:6
+    edition: Tafsir Muyassar
+    verses: ["93:6"]
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "le sens de 93:6 (short duha)"
+  text_ar: ألم يَجِدْك من قبلُ يتيمًا مات أبوك وأنت حمل في بطن أمك، فآواك ورعاك؟ ووجدك لا تدري ما الكتاب ولا الإيمان، فعلَّمك ما لم تكن تعلم، ووفقك لأحسن الأعمال؟ ووجدك فقيرًا، فساق إليك رزقك، وأغنى نفسك بالقناعة والصبر؟
+- id: tafsir.muyassar.93.7
+  type: tafsir
+  ref: {edition: muyassar, surah: 93, ayah: 7}
+  url: https://quran.com/93:7/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/93:7
+    edition: Tafsir Muyassar
+    verses: ["93:7", "93:8"]
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "le sens de 93:7-8 (short duha)"
+  text_ar: ألم يَجِدْك من قبلُ يتيمًا، فآواك ورعاك؟ ووجدك لا تدري ما الكتاب ولا الإيمان، فعلَّمك ما لم تكن تعلم، ووفقك لأحسن الأعمال؟ ووجدك فقيرًا، فساق لك رزقك، وأغنى نفسك بالقناعة والصبر؟
+- id: tafsir.saadi.93.8
+  type: tafsir
+  ref: {edition: saadi, surah: 93, ayah: 8}
+  url: https://quran.com/93:8/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/93:8
+    edition: السعدي Al-Sa'di
+    verses: ["93:8"]
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "la leçon de 93:6-8 : Celui qui a ôté ces manques ôtera tout manque (short duha)"
+  text_ar: '{ وَوَجَدَكَ عَائِلًا } أي: فقيرًا { فَأَغْنَى } بما فتح الله عليك من البلدان، التي جبيت لك أموالها وخراجها. فالذي أزال عنك هذه النقائص، سيزيل عنك كل نقص، والذي أوصلك إلى الغنى، وآواك ونصرك وهداك، قابل نعمته بالشكران.'
+- id: tafsir.muyassar.39.53
+  type: tafsir
+  ref: {edition: muyassar, surah: 39, ayah: 53}
+  url: https://quran.com/39:53/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/39:53
+    edition: Tafsir Muyassar
+    verses: ["39:53"]
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "le sens de 39:53 : le pardon de tous les péchés pour qui s'en repent (short hope)"
+  text_ar: 'قل -أيها الرسول- لعبادي الذين تمادَوا في المعاصي، وأسرفوا على أنفسهم بإتيان ما تدعوهم إليه نفوسهم من الذنوب: لا تَيْئسوا من رحمة الله؛ لكثرة ذنوبكم، إن الله يغفر الذنوب جميعًا لمن تاب منها ورجع عنها مهما كانت، إنه هو الغفور لذنوب التائبين من عباده، الرحيم بهم.'
+- id: tafsir.saadi.39.53
+  type: tafsir
+  ref: {edition: saadi, surah: 39, ayah: 53}
+  url: https://quran.com/39:53/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/39:53
+    edition: السعدي Al-Sa'di
+    verses: ["39:53"]
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "la leçon de 39:53 : le désespoir fait rester dans la faute ; qui ne revient pas ferme sur lui-même la porte (short hope)"
+  text_ar: 'يخبر تعالى عباده المسرفين بسعة كرمه، ويحثهم على الإنابة قبل أن لا يمكنهم ذلك فقال: { قُلْ } يا أيها الرسول ومن قام مقامه من الدعاة لدين اللّه، مخبرا للعباد عن ربهم: { يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَى أَنْفُسِهِمْ } باتباع ما تدعوهم إليه أنفسهم من الذنوب، والسعي في مساخط علام الغيوب.{ لَا تَقْنَطُوا مِنْ رَحْمَةِ اللَّهِ } أي: لا تيأسوا منها، فتلقوا بأيديكم إلى التهلكة، وتقولوا قد كثرت ذنوبنا وتراكمت عيوبنا، فليس لها طريق يزيلها ولا سبيل يصرفها، فتبقون بسبب ذلك مصرين على العصيان، متزودين ما يغضب عليكم الرحمن، ولكن اعرفوا ربكم بأسمائه الدالة على كرمه وجوده، واعلموا أنه يغفر الذنوب جميعا من الشرك، والقتل، والزنا، والربا، والظلم، وغير ذلك من الذنوب الكبار والصغار. { إِنَّهُ هُوَ الْغَفُورُ الرَّحِيمُ } أي: وصفه المغفرة والرحمة، وصفان لازمان ذاتيان، لا تنفك ذاته عنهما، ولم تزل آثارهما سارية في الوجود، مالئة للموجود،.تسح يداه من الخيرات آناء الليل والنهار، ويوالي النعم على العباد والفواضل في السر والجهار، والعطاء أحب إليه من المنع، والرحمة سبقت الغضب وغلبته، .ولكن لمغفرته ورحمته ونيلهما أسباب إن لم يأت بها العبد، فقد أغلق على نفسه باب الرحمة والمغفرة، أعظمها وأجلها، بل لا سبب لها غيره، الإنابة إلى اللّه تعالى بالتوبة النصوح، والدعاء والتضرع والتأله والتعبد،. فهلم إلى هذا السبب الأجل، والطريق الأعظم.'

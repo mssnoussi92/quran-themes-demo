@@ -1,0 +1,24 @@
+# La série « آية وحكايتها » (un verset et son récit), pilote de trois shorts. Demande du propriétaire (2026-11-11) :
+# une série de shorts sur la chaîne, « un ayah ou un mot ou plus », avec le tafsir et, si possible, l'histoire de
+# l'ayah ; il veut de l'aide sur l'accroche, le choix et un short qui attire. Ses décisions du même jour (« Ok go
+# avec tes recommandations ») : trois tafsirs dans la politique (content/policy.yaml : al-Muyassar, as-Sa'di, Ibn
+# Kathir) ; le récit de révélation seulement s'il est dans les recueils de la politique des hadiths ; un pilote de
+# trois shorts : 62:11, la sourate 93, 39:53. Fiche : docs/themes.md.
+# Une série : des shorts qui tiennent seuls, pas de film (`shorts`, pas de `chapters`). Chaque short :
+#   le fait du récit (première image) · la promesse · le verset récité · le sens (d'après le tafsir nommé) · ce qu'on
+#   ne voit pas · un exemple de vie · la phrase à retenir · le short suivant · l'appel à suivre.
+# - Le récit est raconté par la narration avec ses mots (`sources:` du segment : la référence s'écrit à l'écran et
+#   dans la description) ; il n'est jamais lu par la voix de synthèse, et aucune parole du Prophète ﷺ n'y est dite.
+# - Le sens dit après le verset vient du passage de tafsir nommé dans `sources:` ; la réplique ne dit rien de plus.
+# - L'ordre de publication est celui de `shorts` : chaque short annonce le suivant (une promesse à tenir).
+# Rien n'est validé : ni le script, ni les titres, ni les sources proposées.
+id: ayah
+files: ayah                      # début du nom des vidéos livrées : ayah-short-<n>-<id>.mp4
+title: { ar: "آية وحكايتها", en: "A Verse and Its Story" }
+shorts: [caravan, duha, hope]
+handle: "@quran_words_daily"
+publish:
+  out: docs/retention/publication-ayah.md
+  series: { en: "A Verse and Its Story", ar: "آية وحكايتها" }
+  hashtags: ["#Quran", "#القرآن", "#Tafsir"]
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }

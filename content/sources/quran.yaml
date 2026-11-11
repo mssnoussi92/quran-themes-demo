@@ -1525,3 +1525,147 @@
   notes: "Maryam 19:4, Zakariya : « jamais je n'ai été déçu en T'invoquant » (film du du'a, short 3)"
   text_ar: قَالَ رَبِّ إِنِّى وَهَنَ ٱلْعَظْمُ مِنِّى وَٱشْتَعَلَ ٱلرَّأْسُ شَيْبًا وَلَمْ أَكُنۢ بِدُعَآئِكَ رَبِّ شَقِيًّا
   text_en: He said, "My Lord, indeed my bones have weakened, and my head has filled with white, and never have I been in my supplication to You, my Lord, unhappy [i.e., disappointed].
+- id: quran.62.11
+  type: ayah
+  ref: {surah: 62, ayah: 11}
+  url: https://quran.com/62/11
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=62:11
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=62:11
+    translator: Saheeh International
+    surah_ar: الجمعة
+    surah_en: Al-Jumu'ah
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "Al-Jumu'ah 62:11, la caravane un vendredi (série « un verset et son récit », short caravan)"
+  text_ar: وَإِذَا رَأَوْا۟ تِجَـٰرَةً أَوْ لَهْوًا ٱنفَضُّوٓا۟ إِلَيْهَا وَتَرَكُوكَ قَآئِمًا ۚ قُلْ مَا عِندَ ٱللَّهِ خَيْرٌ مِّنَ ٱللَّهْوِ وَمِنَ ٱلتِّجَـٰرَةِ ۚ وَٱللَّهُ خَيْرُ ٱلرَّٰزِقِينَ
+  text_en: But [on one occasion] when they saw a transaction or a diversion, [O Muḥammad], they rushed to it and left you standing. Say, "What is with Allāh is better than diversion and than a transaction, and Allāh is the best of providers."
+- id: quran.93.1
+  type: ayah
+  ref: {surah: 93, ayah: 1}
+  url: https://quran.com/93/1
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=93:1
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=93:1
+    translator: Saheeh International
+    surah_ar: الضحى
+    surah_en: Ad-Duhaa
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "Ad-Duha 93:1 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
+  text_ar: وَٱلضُّحَىٰ
+  text_en: By the morning brightness
+- id: quran.93.2
+  type: ayah
+  ref: {surah: 93, ayah: 2}
+  url: https://quran.com/93/2
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=93:2
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=93:2
+    translator: Saheeh International
+    surah_ar: الضحى
+    surah_en: Ad-Duhaa
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "Ad-Duha 93:2 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
+  text_ar: وَٱلَّيْلِ إِذَا سَجَىٰ
+  text_en: And [by] the night when it covers with darkness,
+- id: quran.93.3
+  type: ayah
+  ref: {surah: 93, ayah: 3}
+  url: https://quran.com/93/3
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=93:3
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=93:3
+    translator: Saheeh International
+    surah_ar: الضحى
+    surah_en: Ad-Duhaa
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "Ad-Duha 93:3 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
+  text_ar: مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ
+  text_en: Your Lord has not taken leave of you, [O Muḥammad], nor has He detested [you].
+- id: quran.93.4
+  type: ayah
+  ref: {surah: 93, ayah: 4}
+  url: https://quran.com/93/4
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=93:4
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=93:4
+    translator: Saheeh International
+    surah_ar: الضحى
+    surah_en: Ad-Duhaa
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "Ad-Duha 93:4 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
+  text_ar: وَلَلْـَٔاخِرَةُ خَيْرٌ لَّكَ مِنَ ٱلْأُولَىٰ
+  text_en: And the Hereafter is better for you than the first [life].
+- id: quran.93.5
+  type: ayah
+  ref: {surah: 93, ayah: 5}
+  url: https://quran.com/93/5
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=93:5
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=93:5
+    translator: Saheeh International
+    surah_ar: الضحى
+    surah_en: Ad-Duhaa
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "Ad-Duha 93:5 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
+  text_ar: وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰٓ
+  text_en: And your Lord is going to give you, and you will be satisfied.
+- id: quran.93.6
+  type: ayah
+  ref: {surah: 93, ayah: 6}
+  url: https://quran.com/93/6
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=93:6
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=93:6
+    translator: Saheeh International
+    surah_ar: الضحى
+    surah_en: Ad-Duhaa
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "Ad-Duha 93:6 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
+  text_ar: أَلَمْ يَجِدْكَ يَتِيمًا فَـَٔاوَىٰ
+  text_en: Did He not find you an orphan and give [you] refuge?
+- id: quran.93.7
+  type: ayah
+  ref: {surah: 93, ayah: 7}
+  url: https://quran.com/93/7
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=93:7
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=93:7
+    translator: Saheeh International
+    surah_ar: الضحى
+    surah_en: Ad-Duhaa
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "Ad-Duha 93:7 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
+  text_ar: وَوَجَدَكَ ضَآلًّا فَهَدَىٰ
+  text_en: And He found you lost and guided [you],
+- id: quran.93.8
+  type: ayah
+  ref: {surah: 93, ayah: 8}
+  url: https://quran.com/93/8
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=93:8
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=93:8
+    translator: Saheeh International
+    surah_ar: الضحى
+    surah_en: Ad-Duhaa
+    retrieved: '2026-11-11'
+  status: proposed
+  notes: "Ad-Duha 93:8 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
+  text_ar: وَوَجَدَكَ عَآئِلًا فَأَغْنَىٰ
+  text_en: And He found you poor and made [you] self-sufficient.

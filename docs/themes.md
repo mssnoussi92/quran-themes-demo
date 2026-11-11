@@ -201,6 +201,43 @@ tâche 46) : la voix du premier short remontée au niveau de ses versets, la ré
 deux lignes, le soleil sur la couverture du premier short. Durées : 2:06, 1:54, 1:51, film 8:24. **Reste** : le
 contrôle du rendu corrigé, l'envoi, son « je valide » sur les vidéos et les textes.
 
+## Série de shorts : « آية وحكايتها », un verset et son récit (2026-11-11)
+
+Demande du propriétaire : une série de shorts, « un ayah ou un mot ou plus », avec le tafsir et, si possible,
+l'histoire de l'ayah. Sa décision (« Ok go avec tes recommandations ») : les recommandations de la session, ci-dessous.
+
+**Ce qu'est un short de la série** (il tient seul ; pas de film) : le fait le plus étrange du récit de révélation, sur
+la première image ; ce que le verset change pour le spectateur ; le verset récité ; son sens, d'après un tafsir nommé ;
+ce qu'on ne voit pas ; un exemple de vie ; la phrase à retenir ; le short suivant ; l'appel à suivre.
+
+**Le choix d'un verset, cinq filtres** :
+
+1. un récit de révélation dans les recueils de la politique (Bukhari, Muslim, Tirmidhi jugé sahih ou hasan par
+   al-Albani), retrouvé sous son numéro dans hadith-api ; les autres récits des livres de causes de révélation ne se
+   racontent pas ;
+2. un fait qu'on peut montrer par une chose ou un lieu, rien de l'invisible ;
+3. 15 à 40 s de récitation, en versets entiers ;
+4. un sens sur lequel les tafsirs de la politique s'accordent : ni verset de jugement juridique, ni verset disputé ;
+5. ce que le spectateur y gagne, en une phrase.
+
+**Les sources** : le récit est raconté par la narration avec ses mots, sa référence écrite à l'écran (jamais lu par la
+voix de synthèse, aucune parole du Prophète ﷺ dite par elle) ; le sens vient d'al-Muyassar, la leçon d'as-Sa'di,
+écrits par leur nom ; nos répliques sans tafsir (exemples, « ce qu'on ne voit pas ») sont signalées au propriétaire.
+
+**Le pilote** (`content/trial/ayah.yaml` ; script : `docs/scripts/ayah.md`, à valider) :
+
+| Short | Verset | Le fait du récit | Ce qu'on y gagne | Estimé |
+| --- | --- | --- | --- | --- |
+| `caravan` | 62:11 (23 s) | un vendredi, une caravane de nourriture arrive pendant le prêche ; douze hommes restent (Muslim 863a, Bukhari 936) | la subsistance ne se perd pas à s'arrêter pour Dieu | 1:43 |
+| `duha` | 93:1-5 puis 93:6-8 (30 s) | malade deux ou trois nuits ; une femme vient dire qu'il a été abandonné (Bukhari 4950) | tard ne veut pas dire abandonné | 1:52 |
+| `hope` | 39:53 (23 s) | des gens qui avaient beaucoup tué et beaucoup commis l'adultère demandent s'il existe une expiation (Bukhari 4810) | aucun péché n'est trop grand pour revenir ; ce n'est pas une permission | 1:46 |
+
+**En réserve pour la série** : 49:2 et Thabit ibn Qays (Bukhari 4846, Muslim 119 : le récit vient après le verset) ; la
+sorte « un mot » (12:19, « سيارة » : « جماعة من المسافرين » selon al-Muyassar), plus légère, à essayer après le pilote.
+
+**Reste** : son « je valide le script » ; puis les clips (montrés avant d'être employés), les dessins, les ambiances,
+la référence à l'écran et la récitation d'une traite dans les outils, trois requêtes de voix, le rendu.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

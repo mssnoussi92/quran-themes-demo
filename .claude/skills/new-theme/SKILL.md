@@ -31,6 +31,10 @@ to correct a video published before.
 - **A new theme or story**: skill `choose-format` first (the kind of subject, its hard filters), then
   here. A reference video the owner shares is analysed in `reference/`, text only (method in
   `docs/legacy/skills/new-theme.md`, step 0).
+- **A short of the series « آية وحكايتها »** (one verse, the fact of its revelation report as the hook, its meaning
+  after a named tafsir; no film): the sheet and its five filters are in `docs/themes.md`, the files in
+  `content/trial/ayah.yaml`; the report must be found in a collection of the hadith policy under its number, the
+  tafsir passage registered by id (`content/sources/tafsir.yaml`), and the narration segment names both in `sources:`.
 - The model was proven on **a story**, then opened to misconceptions with the du'a (`content/trial/dua.yaml`,
   `asked`, `written`, `waited`: each wrong idea broken by one concrete call in the Quran). For a collection or
   one text explained, propose the structure of the film and of the shorts to the owner before writing.

@@ -3,16 +3,22 @@
 
   uv run --with pyyaml python3 tools/trial/rules.py [--film <id> | --all] [--draft] [--root <dir>]
 
---all: every film file of content/trial/ (a file with `chapters`) and the shorts of its `thumbnail.panels`.
+--all: every film file of content/trial/ (a file with `chapters`) and the shorts of its `thumbnail.panels`, and
+every series (a file with `shorts` and no chapters: shorts that stand alone, no film). --film takes either.
 --draft: a hadith with no recorded reading is a warning, not an error (before the voice, the reading may
-still be searched for). --root: the directory holding content/ (the tests point it at a copy).
+still be searched for). A short with no clip yet is a warning in a draft and as long as the owner has not
+validated its script (the script goes to them before the pictures), an error afterwards.
+--root: the directory holding content/ (the tests point it at a copy).
 
 One line per finding, `error|warning|info <file>: <what>`, then a summary per film; exit code 1 when there
 is an error. What no code can check (a person drawn, the unseen pictured, the first frame, the sound of the
 voice) is listed at the end, to check by eye.
 
 Errors: a quoted id absent from the registry, excluded, without text or of the wrong type; a hadith outside
-content/policy.yaml; a reading with no recording; a verse with no cut in the reciter's file; the synthetic
+content/policy.yaml; a reading with no recording; a verse with no cut in the reciter's file; what a narration
+rests on (`sources:` of a narration segment: the report it tells in its own words, the tafsir its meaning comes
+from; written on screen as a reference, never read) when it is not a hadith of the policy or the passage of a
+tafsir of the policy about a verse recited in that short; the synthetic
 voice saying a quote (four words in a row of a verse of the registry, in its Uthmani or its everyday spelling,
 or of a hadith quoted in that file; a net, not a proof: a line is still read by a person);
 a voice text that differs from the lines; a broken `reuse`, `lines` or `subscribe` in a film; a missing
@@ -85,6 +91,10 @@ def prophet_words(text_ar: str) -> str:
 
 def shown_words(src: dict) -> str:
     return src.get("excerpt_ar") or prophet_words(src.get("text_ar") or "")
+
+
+# What every line says of the Prophet ﷺ or of a Companion, as a report says it too: not a quotation of the report.
+FORMULA = re.compile("صلي الله عليه وسلم|رضي الله عنهما|رضي الله عنها|رضي الله عنهم|رضي الله عنه|عليه السلام|عز وجل")
 
 
 def stamp(seconds: float) -> str:
@@ -255,25 +265,93 @@ class Checker:
         self.glyphs(file, src.get("excerpt_en") or src["text_en"], "latin", f"{kind} {sid}, its translation")
         return src
 
-    def hadith(self, file: str, sid: str, src: dict) -> None:
+    def passage(self, file: str, ids) -> set[str]:
+        """`verses:` verses that follow one another in a surah, recited without a break: one cut, from the start of
+        the first to the end of the last (a reciter who chains short verses leaves no silence to cut at)."""
+        if not isinstance(ids, list) or len(ids) < 2:
+            self.out.error(file, f"`verses` is a list of two verses or more (one verse: `verse:`): {ids}")
+            return set()
+        srcs = [self.quoted(file, sid, "verse") for sid in ids]
+        if not all(srcs):
+            return set()
+        refs = [(x["ref"]["surah"], x["ref"]["ayah"]) for x in srcs]
+        keys = [f"{su}:{ay}" for su, ay in refs]
+        if any(b != (a[0], a[1] + 1) for a, b in zip(refs, refs[1:])):
+            self.out.error(file, f"verses {', '.join(keys)}: a passage is made of verses that follow one another in one surah")
+        cuts = [self.repo.cuts.get(k) for k in keys]
+        if all(cuts) and any(abs(a["end"] - b["start"]) > 0.005 for a, b in zip(cuts, cuts[1:])):
+            self.out.error(file, f"verses {keys[0]} to {keys[-1]}: their cuts do not touch in the reciter's file "
+                                 "(each ends where the next starts: tools/audio/recitation.py --set)")
+        return set(keys)
+
+    def in_policy(self, file: str, sid: str, src: dict, kind: str = "reading") -> bool:
+        """A hadith of a collection of the policy, with the grade the policy asks of that collection."""
         policy = (self.repo.policy.get("hadith") or {})
         ref = src["ref"]
         if ref["collection"] not in (policy.get("collections") or []):
-            self.out.error(file, f"reading {sid}: collection « {ref['collection']} » is outside content/policy.yaml")
-            return
+            self.out.error(file, f"{kind} {sid}: collection « {ref['collection']} » is outside content/policy.yaml")
+            return False
         rule = (policy.get("graded") or {}).get(ref["collection"])
         if rule:      # as scripts/validate.py check_grade: the grade of this scholar, in origin.grades, must be accepted
             by = rule["by"]
             grades = [g["grade"] for g in (src.get("origin") or {}).get("grades", []) if g["name"].lower() == by.lower()]
             if not grades:
-                self.out.error(file, f"reading {sid}: no grade by {by} in the registry (content/policy.yaml asks for one)")
-            elif grades[0] not in rule["accept"]:
-                self.out.error(file, f"reading {sid}: {by} grades it « {grades[0]} », outside content/policy.yaml")
+                self.out.error(file, f"{kind} {sid}: no grade by {by} in the registry (content/policy.yaml asks for one)")
+                return False
+            if grades[0] not in rule["accept"]:
+                self.out.error(file, f"{kind} {sid}: {by} grades it « {grades[0]} », outside content/policy.yaml")
+                return False
+        return True
+
+    def hadith(self, file: str, sid: str, src: dict) -> None:
+        if not self.in_policy(file, sid, src):
+            return
         rec = src.get("recording")
         if not rec:
             (self.out.warn if self.draft else self.out.error)(file, f"reading {sid} has no recording in the registry (skill find-hadith-recording)")
         elif rec.get("status") != "validated" and f"reading of {sid}" not in self.unvalidated:
             self.unvalidated.append(f"reading of {sid}")
+
+    def rests_on(self, file: str, seg: dict, recited: set[str], told: dict) -> None:
+        """`sources:` of a narration segment: what its lines rest on, written on screen as a reference and listed in
+        the description, never read. A hadith of the policy (the report the narration tells in its own words: its
+        words go to `told`, so that the voice saying four of them in a row is refused) or the passage of a tafsir
+        of the policy about a verse recited in this short (where the meaning said comes from)."""
+        where = f"narration {seg.get('narration')}"
+        listed = seg.get("sources")
+        if not isinstance(listed, list) or not listed or any(not isinstance(i, str) for i in listed):
+            self.out.error(file, f"{where}: `sources` is a list of ids of the registry")
+            return
+        for sid in listed:
+            src = self.repo.sources.get(sid)
+            if src is None:
+                self.out.error(file, f"{where}: source {sid} is not in the registry (content/sources/)")
+                continue
+            if src.get("status") == "excluded":
+                self.out.error(file, f"{where}: source {sid} is excluded from the registry")
+                continue
+            if not src.get("text_ar"):
+                self.out.error(file, f"{where}: source {sid} has no text in the registry (tools/sources/fetch.py)")
+                continue
+            if src.get("type") == "hadith":
+                if not self.in_policy(file, sid, src, "source"):
+                    continue
+                for piece in FORMULA.split(fold(src["text_ar"])):       # the words of the report, its formulas apart
+                    add_runs(told, words_of(piece), sid)
+            elif src.get("type") == "tafsir":
+                ref = src["ref"]
+                if ref["edition"] not in ((self.repo.policy.get("tafsir") or {}).get("editions") or {}):
+                    self.out.error(file, f"{where}: source {sid}: tafsir « {ref['edition']} » is outside content/policy.yaml")
+                    continue
+                about = set((src.get("origin") or {}).get("verses") or []) | {f"{ref['surah']}:{ref['ayah']}"}
+                if not about & recited:
+                    self.out.error(file, f"{where}: source {sid} explains {', '.join(sorted(about))}, which this short does not recite")
+                    continue
+            else:
+                self.out.error(file, f"{where}: source {sid} is of type « {src.get('type')} »: a narration rests on a hadith or a tafsir (a verse is recited: `verse:`)")
+                continue
+            if src.get("status") != "validated" and f"source {sid}" not in self.unvalidated:
+                self.unvalidated.append(f"source {sid}")
 
     def glyphs(self, file: str, text, face: str, what: str) -> None:
         missing = no_glyph(text or "", face)
@@ -359,19 +437,32 @@ class Checker:
     def short(self, path: Path) -> dict | None:
         file = self.repo.rel(path)
         spec = yaml.safe_load(path.read_text(encoding="utf-8"))
-        self.required(file, spec, ["id", "clip.source", "clip.id", "clip.author", "clip.page", "text", "segments",
-                                   "cover.title", "publish.title.ar", "publish.title.en", "publish.description.ar",
-                                   "publish.description.en", "publish.part"])
+        self.required(file, spec, ["id", "text", "segments", "cover.title", "publish.title.ar", "publish.title.en",
+                                   "publish.description.ar", "publish.description.en", "publish.part"])
+        if not spec.get("clip") and (self.draft or not spec.get("script_validated")):      # the script goes to the owner first
+            self.out.warn(file, "no `clip` yet: the pictures come after the script (tools/trial/clip.py, shown to the owner)")
+        else:
+            self.required(file, spec, ["clip.source", "clip.id", "clip.author", "clip.page"])
         segments = spec.get("segments") or []
         self.delivered = bool(spec.get("validated"))
-        hadiths = {}
+        hadiths, recited = {}, set()
         for seg in segments:
             if "verse" in seg:
-                self.quoted(file, seg["verse"], "verse")
+                src = self.quoted(file, seg["verse"], "verse")
+                if src:
+                    recited.add(f"{src['ref']['surah']}:{src['ref']['ayah']}")
+            if "verses" in seg:
+                recited |= self.passage(file, seg["verses"])
             if "reading" in seg:
                 src = self.quoted(file, seg["reading"], "reading")
                 if src:
                     add_runs(hadiths, words_of(shown_words(src)), seg["reading"])
+        for seg in segments:
+            if "sources" in seg:
+                if "narration" in seg:
+                    self.rests_on(file, seg, recited, hadiths)
+                else:
+                    self.out.error(file, f"`sources` on a segment that is not a narration: {seg_name(seg)}")
         lines = []
         for seg in segments:
             if "narration" in seg:
@@ -404,6 +495,13 @@ class Checker:
 
     # -- estimates (tools/trial/script.py: the same constants and the same `spoken`)
     def seconds_of(self, seg: dict) -> float:
+        if "verses" in seg:
+            keys = []
+            for sid in seg["verses"] if isinstance(seg["verses"], list) else []:
+                ref = (self.repo.sources.get(sid) or {}).get("ref") or {}
+                keys.append(f"{ref.get('surah')}:{ref.get('ayah')}")
+            cuts = [self.repo.cuts.get(k) for k in keys]
+            return cuts[-1]["end"] - cuts[0]["start"] if cuts and all(cuts) else 0.0
         if "verse" in seg:
             src = self.repo.sources.get(seg["verse"]) or {}
             ref = src.get("ref") or {}
@@ -420,10 +518,27 @@ class Checker:
             t += self.seconds_of(seg) + script.GAP
         return t - script.GAP + script.TAIL
 
+    # -- a series: shorts that stand alone, no film
+    def series(self, path: Path, spec: dict) -> tuple[dict, dict]:
+        file = self.repo.rel(path)
+        self.required(file, spec, ["id", "title", "shorts", "publish.series", "publish.hashtags", "publish.narration"])
+        shorts: dict[str, dict] = {}
+        for name in spec.get("shorts") or []:
+            short_path = path.parent / f"{name}.yaml"
+            if not short_path.exists():
+                self.out.error(file, f"shorts: the short « {name} » has no file content/trial/{name}.yaml")
+                continue
+            shorts[name] = self.short(short_path)
+        if get(spec, "title.ar"):
+            self.wording(file, get(spec, "title.ar"), "series title")
+        return spec, shorts
+
     # -- a film
     def film(self, path: Path) -> tuple[dict, dict]:
         file = self.repo.rel(path)
         spec = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if "chapters" not in spec and "shorts" in spec:
+            return self.series(path, spec)
         self.required(file, spec, ["id", "title", "text", "chapters", "thumbnail.panels", "publish.title",
                                    "publish.series", "publish.hashtags", "publish.narration"])
         shorts: dict[str, dict] = {}
@@ -504,7 +619,7 @@ class Checker:
 
 
 def seg_name(seg: dict) -> str:
-    return next((f"{k}: {v}" for k, v in seg.items() if k in ("verse", "reading", "narration", "reuse")), "?")
+    return next((f"{k}: {v}" for k, v in seg.items() if k in ("verse", "verses", "reading", "narration", "reuse")), "?")
 
 
 # ---- Main -----------------------------------------------------------------------------------------------------
@@ -513,7 +628,7 @@ def films_of(repo: Repo) -> list[Path]:
     out = []
     for path in sorted((repo.content / "trial").glob("*.yaml")):
         data = yaml.safe_load(path.read_text(encoding="utf-8"))
-        if isinstance(data, dict) and "chapters" in data:
+        if isinstance(data, dict) and ("chapters" in data or "shorts" in data):
             out.append(path)
     return out
 
@@ -539,7 +654,8 @@ def main() -> int:
             out.warn(repo.rel(path), "quoted and not validated yet: " + ", ".join(checker.unvalidated))
         for level, file, what in out.items:
             print(f"{level} {file}: {what}")
-        print(f"film {spec.get('id', path.stem)}: {len(shorts)} short(s), {out.count('error')} error(s), {out.count('warning')} warning(s)")
+        kind = "film" if "chapters" in spec else "series"
+        print(f"{kind} {spec.get('id', path.stem)}: {len(shorts)} short(s), {out.count('error')} error(s), {out.count('warning')} warning(s)")
         total_errors += out.count("error")
     print("\nTo check by eye (no code can):")
     for item in TO_CHECK_BY_EYE:

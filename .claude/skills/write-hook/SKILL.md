@@ -52,6 +52,21 @@ Two other shorts, two other ways in (`boy.yaml`, `wall.yaml`):
   حكمة اتكشفت بسرعة… وحكمة ما اتكشفتش لأصحابها… وخير مستخبي لحد وقته. » « تابعنا عشان القصة الجاية. »).
   A line that promises something to come is the owner's to keep: say so when you write one.
 
+## A short of a series (« آية وحكايتها »)
+
+One verse and its revelation report, no film (`content/trial/caravan.yaml`, `duha.yaml`, `hope.yaml`; not validated
+yet when this was written). The beats are the same with three differences:
+
+- **Beat 1 is the fact of the report**, in the first phrase (it is the first frame), and the narration tells the
+  report in its own words: `sources: [hadith.<collection>.<n>]` on that segment writes the reference on screen.
+  Only a report of the hadith policy; never a word of the Prophet ﷺ said by the voice; an insult in a report is
+  not repeated (« اللي بيجيلك سابك » for the woman's word in Bukhari 4950).
+- **Beat 6, the meaning, says what the named tafsir says and nothing more** (`sources: [tafsir.<edition>.S.A]`):
+  read the passage in the registry before writing the line; a condition the tafsir states is said (« للي يتوب
+  ويرجع »). Lines that rest on no tafsir (the example, « ce qu'on ne voit pas ») are marked as ours for the owner.
+- **Beat 10 names the next short of the series** (a promise to keep: the order of `shorts` is the order of
+  publication); never « every verse has a story », which is false.
+
 ## The film's own lines
 
 The film says the shorts' lines again and adds few (twelve in the first film, one voice request):

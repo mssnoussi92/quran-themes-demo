@@ -205,3 +205,76 @@ def test_the_refused_words_hit_what_they_must_and_nothing_else():
     assert hit("broke", "كل حاجة اتكسرت") and hit("broke", "اللي بتتكسر") and hit("kinds-of-decree", "أنواع القدر")
     assert hit("proverb-of-patience", "مضرب المثل في الصبر")
     assert hit("young-man", "راجل شاب كبير") and not hit("young-man", "راسه شابت") and not hit("young-man", "الشباب")
+
+
+# ---- A series of shorts that stand alone: what a narration rests on, a passage recited without a break ----------
+
+def set_sources(copy, short: str, narration: str, sources: list[str]) -> None:
+    spec = copy.load(f"content/trial/{short}.yaml")
+    next(s for s in spec["segments"] if s.get("narration") == narration)["sources"] = sources
+    copy.dump(f"content/trial/{short}.yaml", spec)
+
+
+def test_a_series_is_checked_with_its_shorts(copy):
+    done = copy.rules("--film", "ayah", "--draft")
+    assert done.returncode == 0, done.stdout[-3000:]
+    assert "series ayah: 3 short(s), 0 error(s)" in done.stdout
+
+
+def test_a_narration_rests_on_a_hadith_or_a_tafsir_of_the_policy(copy):
+    set_sources(copy, "caravan", "meaning", ["tafsir.muyassar.39.53"])           # the tafsir of a verse another short recites
+    refused(copy.rules("--film", "ayah", "--draft"), "which this short does not recite")
+    set_sources(copy, "caravan", "meaning", ["quran.62.11"])                     # a verse is recited, not rested on
+    refused(copy.rules("--film", "ayah", "--draft"), "a narration rests on a hadith or a tafsir")
+    set_sources(copy, "caravan", "meaning", ["tafsir.razi.62.11"])               # not in the registry
+    refused(copy.rules("--film", "ayah", "--draft"), "source tafsir.razi.62.11 is not in the registry")
+    set_sources(copy, "caravan", "meaning", ["tafsir.muyassar.62.11"])
+    assert copy.rules("--film", "ayah", "--draft").returncode == 0
+    policy = copy.load("content/policy.yaml")                                    # a tafsir the owner did not let in
+    del policy["tafsir"]["editions"]["muyassar"]
+    copy.dump("content/policy.yaml", policy)
+    refused(copy.rules("--film", "ayah", "--draft"), "tafsir « muyassar » is outside content/policy.yaml")
+
+
+def test_a_report_outside_the_hadith_policy_is_refused(copy):
+    path = copy.root / "content" / "sources" / "hadith.yaml"
+    entries = yaml.safe_load(path.read_text(encoding="utf-8"))
+    next(e for e in entries if e["id"] == "hadith.bukhari.936")["ref"]["collection"] = "wahidi"
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    refused(copy.rules("--film", "ayah", "--draft"), "source hadith.bukhari.936: collection « wahidi » is outside content/policy.yaml")
+
+
+def test_the_voice_tells_a_report_and_never_reads_it(copy):
+    """Four words in a row of the report a narration rests on are refused; what every line says of the Prophet ﷺ
+    (the blessing after his name) is in the report too and is not a quotation."""
+    assert copy.rules("--film", "ayah", "--draft").returncode == 0               # the lines say the blessing: accepted
+    words = copy.source("hadith.bukhari.936")["text_ar"].rsplit("وسلم", 1)[1].split()[:4]
+    line = copy.change_line("caravan", "open", 1, lambda old: old + " " + " ".join(words))
+    done = copy.rules("--film", "ayah", "--draft")
+    refused(done, "the synthetic voice says")
+    assert "hadith.bukhari.936" in done.stdout and line in done.stdout
+
+
+def test_a_passage_is_verses_that_follow_one_another_with_cuts_that_touch(copy):
+    spec = copy.load("content/trial/duha.yaml")
+    first = next(s for s in spec["segments"] if "verses" in s)
+    kept = list(first["verses"])
+    first["verses"] = [kept[0], kept[2]]
+    copy.dump("content/trial/duha.yaml", spec)
+    refused(copy.rules("--film", "ayah", "--draft"), "a passage is made of verses that follow one another in one surah")
+    first["verses"] = kept
+    copy.dump("content/trial/duha.yaml", spec)
+    cuts_path = copy.root / "content" / "recitations" / "sayegh.json"
+    cuts = json.loads(cuts_path.read_text(encoding="utf-8"))
+    cuts["verses"]["93:2"]["start"] += 0.4
+    cuts_path.write_text(json.dumps(cuts, ensure_ascii=False), encoding="utf-8")
+    refused(copy.rules("--film", "ayah", "--draft"), "their cuts do not touch in the reciter's file")
+
+
+def test_a_short_without_a_clip_waits_for_the_script_only(copy):
+    assert "no `clip` yet" in copy.rules("--film", "ayah").stdout                # not a draft: still a warning, the script is not validated
+    spec = copy.load("content/trial/caravan.yaml")
+    spec["script_validated"] = {"by": "owner", "on": "2026-11-11"}
+    copy.dump("content/trial/caravan.yaml", spec)
+    refused(copy.rules("--film", "ayah"), "missing field `clip.source`")
+

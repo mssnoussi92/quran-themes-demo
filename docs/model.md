@@ -77,12 +77,19 @@ video/out/                     (ignoré) rendus
 | `text` | son texte de voix : `content/voice-test/<text>.txt` |
 | `cover` | la couverture 9:16 : `scene` montrée, `title` en grand, `tag` au-dessus, `focus` (hauteur du sujet), `at` (la seconde du clip, tel que le short le joue, que montrent la couverture et le panneau de la vignette : sans lui, le début du clip), `file` (nom du fichier livré) |
 | `publish` | `title` et `description` (ar, en), `part` (son numéro dans la série) |
-| `segments` | dans l'ordre : `narration: <nom>` avec `scene` et `lines` (`ar`, `en` ; `kept: <épisode>.<scène>` pour une réplique validée reprise d'un ancien épisode), `verse: quran.S.A` ou `reading: hadith.<recueil>.<n>` (lu par une vraie voix) avec `scene` |
+| `segments` | dans l'ordre : `narration: <nom>` avec `scene` et `lines` (`ar`, `en` ; `kept: <épisode>.<scène>` pour une réplique validée reprise d'un ancien épisode), `verse: quran.S.A` ou `reading: hadith.<recueil>.<n>` (lu par une vraie voix) avec `scene` ; `verses: [quran.S.A, quran.S.B, …]` : des versets qui se suivent, récités d'une traite (un récitateur qui enchaîne des versets courts ne laisse aucun silence où couper : leurs coupes se touchent, posées par `recitation.py --set`) ; sur une narration, `sources: [<id>, …]` : ce sur quoi elle repose, écrit à l'écran en référence et dans la description, jamais lu (le hadith dont elle raconte le récit avec ses mots, le passage de tafsir d'où vient le sens qu'elle dit) |
 | `script_validated`, `validated` | la parole du propriétaire : le script, puis la vidéo (`what` : ce qu'elle couvre) ; jamais écrits par l'IA de son propre chef |
 
 Une réplique (`lines`) est coupée en phrases après « ، … . ! ؟ : » : chaque phrase s'écrit quand la voix la
 dit. `scene` est le nom d'un état du dessin (`holed`, `fleet`, `sail`, `sea` pour le bateau) : l'image passe de
 l'un à l'autre en fondu.
+
+### Une série (`content/trial/<id>.yaml`, avec `shorts`, sans `chapters`)
+
+Des shorts qui tiennent seuls, sans film (la première : `ayah`, « آية وحكايتها », `docs/themes.md`) : `id`, `files`,
+`title` (ar, en), `shorts` (dans l'ordre de publication : chaque short annonce le suivant), `handle`, `publish`
+(`series`, `hashtags`, `narration`, `out`). `script.py --film <série>` et `rules.py --film <série>` la lisent comme un
+film ; le reste de la chaîne ne la connaît pas encore (« Ce que les outils ne font pas encore », 5).
 
 ### Un film (`content/trial/<id>.yaml`, avec `chapters`)
 
@@ -216,6 +223,11 @@ Les cinq règles obligatoires de `CLAUDE.md` valent ici comme partout. Dans ce m
 
 - **Citations par id** : un verset est `verse: quran.S.A`, un hadith `reading: hadith.<recueil>.<n>`, résolus
   depuis le registre. Aucune réplique ne contient le texte d'un verset ou d'un hadith.
+- **Ce sur quoi une réplique repose** (`sources:` d'une narration, depuis la série « آية وحكايتها ») : un hadith de
+  la politique dont elle raconte le récit avec ses mots, ou le passage d'un tafsir de la politique
+  (`content/policy.yaml`, `tafsir.editions` : al-Muyassar, as-Sa'di, Ibn Kathir) sur un verset que le short récite.
+  Ni lu ni affiché : la référence s'écrit. `rules.py` refuse la voix qui dirait quatre mots de suite du récit. Un
+  récit de révélation qui n'est pas dans les recueils de la politique ne se raconte pas.
 - **Jamais de synthèse sur le Coran** : la narration dit la question et le sens avec ses mots à elle ; c'est le
   récitateur qui dit le verset. Un hadith est lu par une vraie voix (lecture validée du registre).
 - **Personne de connu dessiné**, et dans ce modèle **personne du tout** : des choses et des lieux. Ni le
@@ -269,6 +281,12 @@ dit quoi faire.
 4. **Formats pas encore éprouvés.** Une histoire est validée, les idées reçues sont en cours (le du'a) ; pour une
    collection ou un texte expliqué, la structure du film et des shorts se propose d'abord au propriétaire (skill
    `choose-format`).
+5. **Une série de shorts n'est lue que jusqu'au script.** `script.py` et `rules.py` lisent une série (`shorts`, sans
+   `chapters`), `sources:` et `verses:` ; `fetch.py` remplit un passage de tafsir. À faire quand le script du pilote
+   (`ayah`) sera validé : `prepare.py` et `sources.py` (jouer des versets d'une traite, porter les références d'une
+   narration), `Trial.tsx` (écrire la référence à l'écran pendant la réplique, changer de verset dans un passage),
+   `publish.py` (les sources d'une narration dans les textes, une série sans film), `videos.py`, le workflow `film`
+   et `gallery.py` (une série : des shorts, pas de 16:9).
 
 Comblés le 2026-11-11, avec le du'a : **une source se lit dans le registre** (`tools/trial/sources.py` : texte,
 référence, coupe de récitation, lecture du hadith ; un fichier qui nomme un ancien épisode dans `verses`, comme le

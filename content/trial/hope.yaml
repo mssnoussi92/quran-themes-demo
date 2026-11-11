@@ -1,0 +1,82 @@
+# « آية وحكايتها », short 3 (pilote, 2026-11-11 ; content/trial/ayah.yaml, docs/themes.md) : Az-Zumar 39:53.
+# Le fait : des gens du polythéisme qui avaient beaucoup tué et beaucoup commis l'adultère viennent dire : ce à quoi
+# tu appelles est bon, si seulement tu nous disais qu'il y a une expiation à ce que nous avons fait (Bukhari 4810 ;
+# aussi Muslim 122). Les autres récits des livres de causes de révélation (Wahshi, des musulmans éprouvés) ne sont
+# pas racontés.
+# - Le sens (al-Muyassar) : ne désespérez pas à cause du nombre de vos péchés ; Il pardonne tous les péchés « لمن تاب
+#   منها ورجع عنها مهما كانت ». Cette condition est dite dans la réplique de sens.
+# - La leçon (as-Sa'di) : dire « nos péchés sont trop nombreux » fait rester dans la désobéissance ; qui ne revient
+#   pas « فقد أغلق على نفسه باب الرحمة والمغفرة ».
+# - LIGNE D'AVERTISSEMENT, jamais coupée : « ومش معناها اعمل اللي إنت عايزه… معناها: ارجع. » (le verset n'est pas
+#   une permission).
+# - « ما ناداهمش: يا مجرمين… ناداهم ونسبهم لنفسه » : notre remarque sur le premier mot du verset, qui vient d'être
+#   récité ; la voix de synthèse ne redit pas ce mot.
+# - L'exemple (celui qui a laissé la prière des années) est une scène type.
+# - Images prévues (personne, rien de l'invisible) : `road` une route dans la nuit ; `rain` la pluie sur une terre
+#   craquelée ; `gate` une porte ouverte, la lumière au travers.
+# - Dernier short du pilote : l'avant-dernière réplique rappelle les trois récits, l'appel promet le verset suivant
+#   (promesse à tenir seulement si la série continue : à garder ou à retirer, au propriétaire de le dire).
+id: hope
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 52-trial-hope     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Clip, dessins et ambiance : après le script (skill new-scene) ; le clip se montre au propriétaire avant d'être employé.
+cover: { scene: road, title: "قتلوا كتير… وجم يسألوا!", tag: "آية وحكايتها · ٣" }
+publish:
+  title: { en: "They had killed many… and came to ask", ar: "قتلوا كتير… وجم يسألوا!" }
+  part: 3
+  description:
+    en: "People who had killed much and committed adultery much came to the Prophet ﷺ and asked: is there any expiation for what we have done? The verse that came down is for everyone who thinks his sin is too great to be forgiven. It does not mean: do as you please. It means: come back."
+    ar: "ناس قتلوا كتير وزنوا كتير… وجم للنبي ﷺ يسألوا: اللي عملناه ليه كفّارة؟ والآية اللي نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر. ومش معناها اعمل اللي إنت عايزه… معناها: ارجع."
+segments:
+  - narration: open
+    scene: road
+    sources: [hadith.bukhari.4810]
+    lines:
+      - ar: "ناس قتلوا كتير… وزنوا كتير… وجم للنبي صلى الله عليه وسلم يسألوا!"
+        en: "People who had killed much… and committed adultery much… came to the Prophet ﷺ with a question!"
+      - ar: "قالوله: اللي بتدعو له حلو… بس قولّنا: اللي عملناه… ليه كفّارة؟"
+        en: "They said: what you call to is good… but tell us: what we have done… is there any expiation for it?"
+      - ar: "والرد اللي نزل… لكل واحد شايف إن ذنبه أكبر من إنه يتغفر."
+        en: "And the answer that came down… is for everyone who thinks his sin is too great to be forgiven."
+  - verse: quran.39.53
+    scene: rain
+  - narration: meaning
+    scene: rain
+    sources: [tafsir.muyassar.39.53]
+    lines:
+      - ar: "يعني: يا اللي زوّدتوها على نفسكم في الذنوب… ما تيأسوش من رحمة ربنا."
+        en: "Meaning: you who have gone too far against yourselves in sin… do not despair of God's mercy."
+      - ar: "ربنا بيغفر الذنوب كلها… للي يتوب ويرجع… مهما كانت."
+        en: "God forgives all sins… for whoever repents and turns back… whatever they were."
+  - narration: depth
+    scene: rain
+    sources: [tafsir.saadi.39.53]
+    lines:
+      - ar: "ما ناداهمش: يا مجرمين… ناداهم ونسبهم لنفسه."
+        en: "He did not call them: you criminals… He called them and named them His own."
+      - ar: "واليأس… هو اللي بيخليك تكمّل في الغلط."
+        en: "And despair… is what keeps you going in the wrong."
+      - ar: "وإحنا… الذنب يكبر في عينينا لحد ما نقول: خلاص… ما ينفعش أرجع."
+        en: "And us… the sin grows in our eyes until we say: that's it… I can't come back."
+  - narration: example
+    scene: road
+    lines:
+      - ar: "زي واحد ساب الصلاة سنين… وكل ما ييجي يرجع يقول: بعد كل ده؟"
+        en: "Like someone who left prayer for years… and each time he is about to return says: after all this?"
+      - ar: "أيوه… بعد كل ده."
+        en: "Yes… after all this."
+      - ar: "ومش معناها اعمل اللي إنت عايزه… معناها: ارجع."
+        en: "It does not mean: do as you please… it means: come back."
+  - narration: close
+    scene: gate
+    sources: [tafsir.saadi.39.53]
+    lines:
+      - ar: "الباب مفتوح… واللي بيقفله على نفسه… هو اللي ما بيرجعش."
+        en: "The door is open… and the one who shuts it on himself… is the one who does not come back."
+      - ar: "لما تقول لنفسك: فات الأوان… افتكر مين اللي سألوا قبلك."
+        en: "When you tell yourself: it's too late… remember who asked before you."
+      - ar: "تلات آيات… وتلات حكايات: قافلة… وكلمة… وسؤال."
+        en: "Three verses… three stories: a caravan… a remark… and a question."
+      - ar: "تابعنا عشان الآية الجاية وحكايتها."
+        en: "Follow us for the next verse and its story."

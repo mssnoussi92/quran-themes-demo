@@ -76,6 +76,7 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
     validator = Draft202012Validator(json.loads((ROOT / "schemas/source.schema.json").read_text()))
     allowed = set(policy.get("hadith", {}).get("collections", []))
     graded = policy.get("hadith", {}).get("graded", {})
+    tafsirs = set((policy.get("tafsir") or {}).get("editions") or {})
     registry: dict[str, dict] = {}
     for path in sorted((CONTENT / "sources").glob("*.yaml")):
         entries = load_yaml(path) or []
@@ -102,6 +103,11 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
                 report.error(where, "text without origin: fill it with tools/sources/fetch.py, never by hand")
             if src["type"] == "ayah" and sid != f"quran.{ref['surah']}.{ref['ayah']}":
                 report.error(where, "id does not match ref")
+            if src["type"] == "tafsir":
+                if sid != f"tafsir.{ref['edition']}.{ref['surah']}.{ref['ayah']}":
+                    report.error(where, "id does not match ref")
+                if ref["edition"] not in tafsirs and src["status"] != "excluded":
+                    report.error(where, f"tafsir '{ref['edition']}' is outside content/policy.yaml; status must be excluded")
             if src["type"] == "hadith":
                 suffix = chr(ord("a") + ref["narration"] - 1) if "narration" in ref else ""
                 if sid != f"hadith.{ref['collection']}.{ref['number']}{suffix}":

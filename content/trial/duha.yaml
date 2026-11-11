@@ -1,0 +1,95 @@
+# « آية وحكايتها », short 2 (pilote, 2026-11-11 ; content/trial/ayah.yaml, docs/themes.md) : Ad-Duha 93:1-8.
+# Le fait : le Prophète ﷺ, malade, ne se lève pas deux ou trois nuits ; une femme vient lui dire qu'elle espère qu'il
+# a été abandonné ; la sourate descend (Bukhari 4950 : « اشتكى… فلم يقم ليلتين أو ثلاثا، فجاءت امرأة فقالت… »).
+# - Le mot de la femme (« شيطانك ») n'est pas redit par notre voix : « اللي بيجيلك سابك ». « تشمت » est notre
+#   lecture de « إني لأرجو » (elle espère). Aucun nom : le récit de nos recueils n'en donne pas.
+# - Deux autres récits des livres de causes de révélation (une parole prêtée à Khadija, un chiot mort sous le lit)
+#   ne sont pas dans nos recueils : ils ne sont pas racontés.
+# - Le sens (al-Muyassar) : serment par le jour et par la nuit quand elle s'apaise ; « ما تركك ربك وما أبغضك بإبطاء
+#   الوحي عنك » ; l'au-delà vaut mieux pour toi que ce monde ; orphelin et Il t'a abrité ; « لا تدري ما الكتاب ولا
+#   الإيمان فعلّمك » (93:7 dit d'après le tafsir, mot pour mot dans le sens) ; pauvre et Il t'a pourvu, « وأغنى نفسك
+#   بالقناعة ». As-Sa'di lit 93:4 autrement (chaque état à venir meilleur que le précédent) : on dit al-Muyassar.
+# - La leçon (as-Sa'di, 93:8) : « فالذي أزال عنك هذه النقائص سيزيل عنك كل نقص ».
+# - La récitation s'arrête à 93:8 : les trois derniers versets (les ordres) ne sont pas récités. 93:1-5 puis 93:6-8
+#   sont récités d'une traite (`verses:`) : le récitateur enchaîne ces versets sans silence (coupes posées à la main).
+# - Images prévues (personne, rien de l'invisible) : `night` une nuit calme ; `dawn` la première lumière ; `day` le
+#   plein matin.
+# - La dernière réplique avant l'appel annonce le short 3 (39:53) : promesse à tenir, ordre de publication.
+id: duha
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 51-trial-duha     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Clip, dessins et ambiance : après le script (skill new-scene) ; le clip se montre au propriétaire avant d'être employé.
+cover: { scene: dawn, title: "قالتله: سابك… فنزل الرد", tag: "آية وحكايتها · ٢" }
+publish:
+  title: { en: "She told him: you've been left… and the answer came down", ar: "قالتله: سابك… فنزل الرد" }
+  part: 2
+  description:
+    en: "The Prophet ﷺ had been ill for two or three nights when a woman came to gloat: the one who comes to you has left you. The answer did not come from him: a surah came down. Late does not mean left."
+    ar: "النبي ﷺ كان تعبان ليلتين تلاتة… فجت واحدة تشمت وتقوله: اللي بيجيلك سابك. والرد ما جاش منه: نزلت سورة. اتأخر عليك… بس ما سابكش."
+segments:
+  - narration: open
+    scene: night
+    sources: [hadith.bukhari.4950]
+    lines:
+      - ar: "واحدة جت تشمت في النبي صلى الله عليه وسلم… وقالتله: اللي بيجيلك سابك!"
+        en: "A woman came to gloat at the Prophet ﷺ… and told him: the one who comes to you has left you!"
+      - ar: "كان تعبان… ليلتين تلاتة ما قامش."
+        en: "He had been ill… for two or three nights he had not risen."
+      - ar: "والرد عليها… ما جاش منه. نزل من السما."
+        en: "And the answer to her… did not come from him. It came down from heaven."
+      - ar: "ولو حسّيت يوم إن ربنا سابك… اسمع الرد ده."
+        en: "And if you have ever felt that God left you… listen to this answer."
+  - verses: [quran.93.1, quran.93.2, quran.93.3, quran.93.4, quran.93.5]
+    scene: dawn
+  - narration: meaning
+    scene: dawn
+    sources: [tafsir.muyassar.93.3, tafsir.muyassar.93.4]
+    lines:
+      - ar: "ربنا أقسم بالنهار… وبالليل لما يسكن ويضلّم."
+        en: "God swore by the daylight… and by the night when it grows still and dark."
+      - ar: "الوحي اتأخر… بس ربنا ما سابكش… ولا كرهك."
+        en: "Revelation was late… but God has not left you… nor does He hate you."
+      - ar: "والآخرة أحسن لك من الدنيا… وهيديك لحد ما ترضى."
+        en: "And the hereafter is better for you than this world… and He will give you until you are content."
+  - narration: turn
+    scene: dawn
+    lines:
+      - ar: "طب والدليل؟ ربنا فكّره بتلات حاجات… من حياته هو."
+        en: "And the proof? God reminded him of three things… from his own life."
+  - verses: [quran.93.6, quran.93.7, quran.93.8]
+    scene: day
+  - narration: proof
+    scene: day
+    sources: [tafsir.muyassar.93.6, tafsir.muyassar.93.7]
+    lines:
+      - ar: "كنت يتيم… فضمّك ورعاك."
+        en: "You were an orphan… and He sheltered you and cared for you."
+      - ar: "ما كنتش تعرف الكتاب ولا الإيمان… فعلّمك."
+        en: "You knew neither the Book nor faith… and He taught you."
+      - ar: "وكنت فقير… فبعتلك رزقك وغنّى قلبك بالقناعة."
+        en: "And you were poor… and He sent you your provision and made your heart rich with contentment."
+  - narration: depth
+    scene: day
+    sources: [tafsir.saadi.93.8]
+    lines:
+      - ar: "اللي شال عنك ده كله زمان… هيشيل عنك اللي إنت فيه دلوقتي."
+        en: "The One who lifted all that from you then… will lift what you are in now."
+      - ar: "وإحنا كده: أول ما حاجة تتأخر… نقول ربنا سابنا."
+        en: "And that's us: the moment something is late… we say God has left us."
+  - narration: example
+    scene: night
+    lines:
+      - ar: "زي دعوة بتدعيها من شهور… ولسه ما جاتش."
+        en: "Like a prayer you have been making for months… that still hasn't come."
+  - narration: close
+    scene: dawn
+    lines:
+      - ar: "اتأخر عليك… بس ما سابكش."
+        en: "It is late for you… but He has not left you."
+      - ar: "لما تحس إنك لوحدك… عدّ اللي عمله معاك قبل كده."
+        en: "When you feel alone… count what He has done for you before."
+      - ar: "دي سورة ردّت على كلمة… وفيه آية نزلت لناس… عملوا أكبر الذنوب وجم يسألوا."
+        en: "That surah answered a remark… and there is a verse that came down for people… who had done the gravest sins and came to ask."
+      - ar: "تابعنا عشان تعرف حكايتها."
+        en: "Follow us to hear its story."

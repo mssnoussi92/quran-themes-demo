@@ -25,7 +25,8 @@ Le propriétaire est développeur, il échange en français. Réponds en frança
 - **Un short** (9:16, il tient seul) : une question, le verset, le sens, ce qu'on ne voit pas, un exemple de vie, la phrase à retenir, ce qui le distingue des autres, l'appel à suivre. **Le film** (16:9, moins de 10 min) reprend les shorts réplique par réplique et ajoute l'ouverture, les liaisons et la conclusion.
 - **La voix** : Gemini 3.8 Flash TTS, `Algieba` (étiquette `D`), palier gratuit de 10 requêtes par jour : une requête par texte, jamais par phrase, le script validé avant. Secours : VoiceTut `Mohammed`.
 - **Le clip** se cherche pour le plan du short, se regarde en entier, se prépare, et se montre au propriétaire avant d'être employé (`tools/trial/clip.py`).
-- **Où** : `content/trial/` (un fichier par short, un par film), `tools/trial/`, `video/src/trial/` ; le dossier s'appelle encore `trial`, ce n'est plus un essai.
+- **Une série** (propriétaire, 2026-11-11) : des shorts qui tiennent seuls, sans film. La première, « آية وحكايتها » : un verset, le fait de son récit de révélation en accroche, son sens d'après un tafsir nommé (`docs/themes.md`).
+- **Où** : `content/trial/` (un fichier par short, un par film ou par série), `tools/trial/`, `video/src/trial/` ; le dossier s'appelle encore `trial`, ce n'est plus un essai.
 - **Le propriétaire décide trois fois** : le sujet, le script avant la voix, les vidéos à la fin. Sa validation s'inscrit sur sa parole (`script_validated`, `validated`), jamais par l'IA. Il publie à la main.
 
 ## Règles obligatoires
@@ -35,7 +36,7 @@ Le propriétaire est développeur, il échange en français. Réponds en frança
 - **Une citation n'existe que par son id.** Aucun texte de verset ou de hadith n'est tapé à la main. Les textes viennent du registre `content/sources/`, lui-même rempli depuis une API (quran.com, hadith-api), jamais depuis la mémoire d'un modèle.
 - **Jamais de synthèse vocale sur le Coran.** Un verset est récité par un vrai récitateur. La voix de synthèse lit seulement la narration ; un hadith est lu par une vraie voix (`recording` du registre).
 - **Jamais de personnage pour un prophète, un Compagnon ou une personne connue** ; dans le modèle, personne n'est dessiné du tout.
-- **Politique des hadiths** (`content/policy.yaml`) : Sahih al-Bukhari, Sahih Muslim et Jami' at-Tirmidhi. Un hadith de Tirmidhi n'est cité que si **al-Albani** le juge sahih ou hasan (jugements recopiés de hadith-api) ; son jugement s'affiche sous la référence. Tout autre recueil : demande au propriétaire avant d'élargir.
+- **Politique des hadiths** (`content/policy.yaml`) : Sahih al-Bukhari, Sahih Muslim et Jami' at-Tirmidhi. Un hadith de Tirmidhi n'est cité que si **al-Albani** le juge sahih ou hasan (jugements recopiés de hadith-api) ; son jugement s'affiche sous la référence. Tout autre recueil : demande au propriétaire avant d'élargir. **Tafsir** (propriétaire, 2026-11-11) : al-Muyassar, as-Sa'di, Ibn Kathir, par id du registre ; un passage de tafsir n'est ni lu ni affiché, une réplique de sens repose dessus et son nom s'écrit. Un récit de révélation ne se raconte que s'il est dans les recueils de cette politique.
 - **Jamais l'invisible figuré.** Ni le paradis, ni l'enfer, ni le Jour du Jugement, ni les anges ne sont dessinés ni générés en image : le texte et la récitation seulement.
 
 `tools/trial/rules.py` refuse ce qu'un code peut voir de ces règles dans les fichiers (une citation hors registre ou hors politique, la voix qui dirait un verset), et un signe qu'aucune police du projet ne sait dessiner. Les dessins et la première image se vérifient à l'œil, à chaque script et à chaque image.
@@ -58,7 +59,8 @@ Le propriétaire est développeur, il échange en français. Réponds en frança
 content/
   trial/                 le modèle : un fichier par short (clip, ambiance, couverture, textes, segments), un par film
                          (chapitres, vignette) ; takes/ : les prises de la voix D (une par texte, gardées)
-  sources/*.yaml         registre des sources (ids stables ; statut proposed / validated / excluded ; lecture d'un hadith)
+  sources/*.yaml         registre des sources (ids stables ; statut proposed / validated / excluded ; lecture d'un hadith ;
+                         tafsir.yaml : les passages de tafsir sur lesquels repose une réplique de sens)
   recitations/           où est chaque verset cité dans la sourate du récitateur, et le temps de chaque mot
   voice-test/*.txt       textes dits par la voix (NN-trial-<id>.txt : identiques aux répliques du fichier)
   policy.yaml            politique des sources      publish.yaml   pages, limites des plateformes, lignes fixes
@@ -143,5 +145,6 @@ La session est l'orchestrateur : elle fait le plan, confie ce qui s'y prête, re
 - **Moussa et al-Khadir** : film et trois shorts validés, y compris les sept vidéos corrigées le 2026-11-11 (« ﷺ » et « al-Khiḍr » des sous-titres, quelques secondes raccordées : `video/out/essai-2/` de la session, envoyées) : ce sont elles qui se publient.
 - **Le du'a** (`asked`, `written`, `waited`, film `dua`) : vidéos **validées** le 2026-11-11 (voix, montage, couvertures, vignette, rappel, ambiance) et sources validées ; release brouillon `dua-candidate`. Restent ses textes à coller (`docs/retention/publication-dua.md`, envoyés) : `publish` n'est pas dans ce qu'il a validé.
 - **Dhul-Qarnayn** (`west`, `tribute`, `barrier`, film `qarnayn`) : script validé, voix faite, clips et ambiances approuvés (2026-11-11). Trois points faibles traités à sa demande (niveau de la voix, une réplique coupée en deux, le soleil sur la couverture) : les sept vidéos sont re-rendues par le workflow `film` ; restent leur contrôle, l'envoi, son « je valide » sur les vidéos et sur les textes. Ensuite : les autres épisodes publiés à réécrire (`docs/themes.md`).
+- **La série « آية وحكايتها »** (`ayah` : `caravan` 62:11, `duha` 93:1-8, `hope` 39:53) : pilote de trois shorts, sujet et tafsirs décidés par le propriétaire le 2026-11-11 ; script écrit et envoyé (`docs/scripts/ayah.md`), sources proposées. **Attend son « je valide le script »** ; ensuite les clips, les dessins, la référence à l'écran et la récitation d'une traite dans les outils (`docs/model.md`, « Ce que les outils ne font pas encore », 5), puis trois requêtes de voix.
 - **La page du propriétaire** (sa demande, 2026-11-11 : revoir films et shorts sans passer par une session, avec aperçu, couverture, textes et bouton « Copier ») : l'artefact privé « Films et shorts à publier » de son compte claude.ai (`list_artifacts` le retrouve par ce titre), fait par `tools/trial/gallery.py` et republié par la session à chaque film livré ou validé (skill `release-render`, §7). Y sont : Moussa et al-Khadir, le du'a ; Dhul-Qarnayn s'y ajoute une fois contrôlé.
 - **Rendu dans GitHub Actions** : en service depuis le 2026-11-11 (workflow `film`, skill `release-render` §0) : sept vidéos en 70 minutes, release brouillon `<files>-candidate`, `from_run` pour republier sans re-rendre. Le premier film (qui lit un ancien épisode) se rend encore dans la session.
