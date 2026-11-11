@@ -271,10 +271,13 @@ def test_a_passage_is_verses_that_follow_one_another_with_cuts_that_touch(copy):
     refused(copy.rules("--film", "ayah", "--draft"), "their cuts do not touch in the reciter's file")
 
 
-def test_a_short_without_a_clip_waits_for_the_script_only(copy):
-    assert "no `clip` yet" in copy.rules("--film", "ayah").stdout                # not a draft: still a warning, the script is not validated
+def test_a_short_without_a_clip_is_a_warning_until_its_videos_are_validated(copy):
     spec = copy.load("content/trial/caravan.yaml")
-    spec["script_validated"] = {"by": "owner", "on": "2026-11-11"}
+    spec.pop("clip", None)
     copy.dump("content/trial/caravan.yaml", spec)
-    refused(copy.rules("--film", "ayah"), "missing field `clip.source`")
+    done = copy.rules("--film", "ayah", "--draft")
+    assert done.returncode == 0 and "no `clip` yet" in done.stdout, done.stdout[-2000:]
+    spec["validated"] = {"by": "owner", "on": "2026-11-11", "what": ["voice"]}
+    copy.dump("content/trial/caravan.yaml", spec)
+    refused(copy.rules("--film", "ayah", "--draft"), "missing field `clip.source`")
 

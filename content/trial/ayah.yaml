@@ -11,7 +11,8 @@
 #   dans la description) ; il n'est jamais lu par la voix de synthèse, et aucune parole du Prophète ﷺ n'y est dite.
 # - Le sens dit après le verset vient du passage de tafsir nommé dans `sources:` ; la réplique ne dit rien de plus.
 # - L'ordre de publication est celui de `shorts` : chaque short annonce le suivant (une promesse à tenir).
-# Rien n'est validé : ni le script, ni les titres, ni les sources proposées.
+# Script validé par le propriétaire le 2026-11-11 (« je valide le script » : répliques, versets, titres, nom de la série).
+# Restent à valider, sur les vidéos : la voix, les images, les textes à coller, les sources proposées.
 id: ayah
 files: ayah                      # début du nom des vidéos livrées : ayah-short-<n>-<id>.mp4
 title: { ar: "آية وحكايتها", en: "A Verse and Its Story" }

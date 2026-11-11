@@ -6,8 +6,8 @@
 --all: every film file of content/trial/ (a file with `chapters`) and the shorts of its `thumbnail.panels`, and
 every series (a file with `shorts` and no chapters: shorts that stand alone, no film). --film takes either.
 --draft: a hadith with no recorded reading is a warning, not an error (before the voice, the reading may
-still be searched for). A short with no clip yet is a warning in a draft and as long as the owner has not
-validated its script (the script goes to them before the pictures), an error afterwards.
+still be searched for). A short with no clip yet is a warning (the script goes to the owner before the pictures,
+and tools/trial/prepare.py stops without one); in a short whose videos are validated it is an error.
 --root: the directory holding content/ (the tests point it at a copy).
 
 One line per finding, `error|warning|info <file>: <what>`, then a summary per film; exit code 1 when there
@@ -439,7 +439,7 @@ class Checker:
         spec = yaml.safe_load(path.read_text(encoding="utf-8"))
         self.required(file, spec, ["id", "text", "segments", "cover.title", "publish.title.ar", "publish.title.en",
                                    "publish.description.ar", "publish.description.en", "publish.part"])
-        if not spec.get("clip") and (self.draft or not spec.get("script_validated")):      # the script goes to the owner first
+        if not spec.get("clip") and not spec.get("validated"):      # the script and the voice come before the pictures
             self.out.warn(file, "no `clip` yet: the pictures come after the script (tools/trial/clip.py, shown to the owner)")
         else:
             self.required(file, spec, ["clip.source", "clip.id", "clip.author", "clip.page"])

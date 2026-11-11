@@ -14,6 +14,11 @@
 #   lampes éteintes ; `phone` un téléphone allumé posé près d'un tapis de prière.
 # - La dernière réplique avant l'appel annonce le short 2 (la sourate 93) : promesse à tenir, ordre de publication.
 id: caravan
+# « Je valide le script » du propriétaire (2026-11-11), sur le script envoyé (docs/scripts/ayah.md) : les répliques, la
+# place des versets, ce sur quoi chaque narration repose, les titres. Ni la voix, ni les images, ni les textes de
+# publication, ni les sources proposées du registre : il les valide sur les vidéos. Toute réplique changée ensuite
+# redevient à valider.
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 50-trial-caravan     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
