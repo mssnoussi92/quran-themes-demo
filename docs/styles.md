@@ -1,7 +1,8 @@
 # Styles visuels : catalogue fermé
 
 > **Ancien circuit.** Depuis le 2026-11-11 les vidéos suivent le modèle « un film et ses shorts » (`docs/model.md`), qui n'a qu'un
-> aspect : un clip filmé et des silhouettes dessinées (skill `new-scene`). Ce catalogue vaut pour les épisodes publiés avant.
+> aspect : un clip filmé et des silhouettes dessinées (skill `new-scene`). Ce catalogue vaut pour les épisodes publiés avant
+> (« oui, les styles deviennent de l'archive », le propriétaire, 2026-11-11).
 
 Décidé par le propriétaire le 2026-11-09, sur la planche des quatre styles (`video/src/styles/`, composition
 `StyleLab`) : le style d'un épisode suit son format. Le propriétaire trouvait le rendu limité et répété :

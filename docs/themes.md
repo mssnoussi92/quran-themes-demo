@@ -16,9 +16,73 @@ améliorés, ambiance. Leurs sources et leurs lectures de hadith, validées, res
 | Dhul-Qarnayn (`qarnayn`), les gens de la caverne (`kahf`) | à réécrire ; des histoires, le format où le modèle est éprouvé |
 | Du'a, patience, repentir, comparaisons, confiance en Dieu, الخشوع | à réécrire ; idées reçues : leur structure dans le modèle se propose d'abord au propriétaire, et chaque short cite un hadith, ce qu'un short ne sait pas encore jouer |
 
-**Ordre proposé par la session, pas décidé** : Dhul-Qarnayn, puis la caverne, puis les idées reçues une fois les
-outils complétés (`docs/model.md`, « Ce que les outils ne font pas encore », 1 et 2). Le propriétaire choisit
-(skill `choose-format`).
+**Ordre** : la session proposait Dhul-Qarnayn, puis la caverne, puis les idées reçues une fois les outils
+complétés. **Le propriétaire a choisi autrement (2026-11-11) : le du'a d'abord**, « car c'est différent », puis
+les outils complétés avec les leçons retenues. La session s'y range : c'est le cas difficile, et six des huit
+épisodes restants lui ressemblent.
+
+### Fiche : le du'a dans le modèle (skill `choose-format`, 2026-11-11) — à trancher par le propriétaire
+
+**Ce qu'est l'épisode publié** (`content/episodes/dua.yaml`, cinq reels) : trois idées reçues (« je suis satisfait,
+je ne demande pas » ; « tout est écrit, à quoi bon » ; « j'ai demandé et rien n'est venu »), encadrées par un reel de
+promesse et un de conclusion. Ses sources, toutes validées : 40:60, 21:83, 13:39, 2:186 ; Tirmidhi 3247, 2139, 3573,
+Muslim 2679a, Bukhari 6340, lus par de vrais lecteurs.
+
+**Ce qui ne passe pas tel quel dans le modèle** (mesuré) :
+
+- **64 secondes de récitation en tout** (40:60 17 s, 21:83 12 s, 13:39 12 s, 2:186 23 s). Le reel « tout est écrit »
+  n'a que 12 s de verset, celui de « rien n'est venu » aucun : sous les 15 s qu'un short demande, alors que la
+  récitation est ce que les spectateurs restent écouter.
+- **Rien à dessiner.** Ses images étaient des personnes (la salle d'attente, le narrateur) ; le modèle ne dessine
+  personne, et une idée reçue n'est pas une chose.
+- **Ses accroches sont des questions au spectateur** (« عمرك قلت: أنا راضي… مش هدعي؟ »), le genre d'ouverture qui a
+  perdu trois spectateurs sur quatre sur khidr-01. Aucun reel du du'a n'a été mesuré lui-même.
+
+**Recommandé : chaque idée reçue brisée par l'appel d'un prophète, dans l'ordre de la sourate Al-Anbiya** (21:83-90),
+qui aligne elle-même Ayyoub, Younous et Zakariya avec les mêmes mots : il appela son Seigneur, « alors Nous lui
+avons répondu ». Le fait d'abord, l'idée reçue ensuite, dite avec les mots du spectateur.
+
+| Short | L'idée reçue | Le fait qui l'ouvre | Versets (récitation) | Seconde preuve (lecture validée) | Ce qui est dessiné |
+| --- | --- | --- | --- | --- | --- |
+| 1 | « je suis satisfait, je ne demande pas » | celui que le Coran donne en exemple de patience a demandé d'être soulagé | 21:83 (12 s, validé), 21:84 (18 s, nouveau) | Muslim 2679a (14 s) | une maison seule et éteinte sur une terre sèche, puis ses fenêtres allumées, et autant d'autres (21:84 : sa famille, et autant avec elle) |
+| 2 | « tout est écrit, à quoi bon » | un homme dans le ventre d'un poisson, au fond de la mer, la nuit : qu'est-ce qui peut encore changer ? | 21:87-88 (34 s, nouveaux), 37:143-144 (14 s, nouveaux) | Tirmidhi 2139 (4 s) ; Tirmidhi 3505 en option | la mer sombre, la forme du grand poisson sous la surface (une créature que le texte nomme ; personne n'est montré), une lueur dans le noir, puis le rivage |
+| 3 | « j'ai demandé et rien n'est venu » | un vieil homme, les os affaiblis, la tête blanche, qui demande encore, et dit n'avoir jamais été déçu en demandant | 19:4 (16 s, nouveau), 21:89-90 (39 s, nouveaux) | Bukhari 6340 (6 s), Tirmidhi 3573 (11 s) | une niche de prière et sa lampe, la nuit, puis une seconde lumière quand le verset dit ce qui lui est donné (aucune personne, aucun ange) |
+
+- **Ce qui distingue les parties** : trois raisons d'arrêter de demander. « Je ne dois pas » (le contentement), « ça
+  ne sert à rien » (le décret), « ça n'a pas marché » (l'attente). La fin de chaque short nomme la raison qu'il
+  vient de lever et annonce la suivante.
+- **Le film** (environ 7 min) : l'ouverture en une phrase sur les trois images ; le cadre, « الدعاء هو العبادة »
+  (Tirmidhi 3247) et 40:60 ; les trois parties ; 13:39 dans la deuxième ; la conclusion sur 2:186. Environ 3:05 de
+  récitation et 0:36 de hadiths lus.
+- **Plus de reel de promesse ni de reel de conclusion** : ce qu'ils disaient appartient au film, un short qui ne
+  fait qu'annoncer n'est pas un short.
+- **Répliques validées de l'ancien épisode à garder** : « الدعاء مش اعتراض… الدعاء احتياج », « دعاءك… عمره ما
+  بيضيع », « ربنا قريب… وبيجيب ».
+
+**Autre possibilité** : garder le du'a sur ses seules sources, en ajoutant le minimum (21:84, et un verset pour
+chacune des deux autres idées). Moins de travail, mais deux shorts sur trois restent sans scène à montrer.
+
+**Ce que la session se reproche à elle-même** : lire 37:143-144 comme la réponse à « tout est écrit » est notre
+rapprochement, pas une parole de savant ; à vérifier dans un tafsir avant le script, et la réplique sera marquée
+comme la nôtre. Et faire de trois idées reçues trois récits risque de noyer l'idée reçue : elle doit être dite dans
+les quinze premières secondes.
+
+**Chevauchement à trancher** : ces trois appels sont trois des cinq de la collection « دعوات في الشدة » (troisième de
+l'ordre validé le 2026-11-08 : Nouh, Ayyoub, Younous, Zakariya, Moussa). Proposé : le film du du'a la remplace ; Nouh
+(54:10-12) et Moussa (28:24-25) restent pour plus tard.
+
+**À faire de nouveau** : huit versets à inscrire au registre et à couper dans la récitation (21:84, 21:87, 21:88,
+37:143, 37:144, 21:89, 21:90, 19:4) ; Tirmidhi 3505 s'il est retenu (al-Albani : sahih ; lecture à trouver) ; trois
+dessins et trois ambiances ; clips de la liste approuvée. **Outils, avant le rendu** : faire lire le registre aux
+outils du modèle (une source nouvelle ne peut pas être jouée aujourd'hui) ; jouer un hadith dans un short, sauf si
+les hadiths ne sont cités que dans le film. **Voix** : quatre requêtes (trois shorts, le film), une journée.
+
+**Décisions du propriétaire** :
+
+1. Les trois appels d'Al-Anbiya, ou les seules sources de l'ancien épisode avec le minimum ?
+2. Le film du du'a remplace-t-il la collection « دعوات في الشدة » ?
+3. Les hadiths dans chaque short (un outil à construire d'abord), ou seulement dans le film ?
+4. Tirmidhi 3505 (l'invocation de Dhun-Noun), comme invocation à dire à la fin du deuxième short ?
 
 ## Faits (ancien circuit)
 

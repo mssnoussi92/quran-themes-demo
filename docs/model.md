@@ -229,8 +229,10 @@ rencontrent ; chacun dit quoi faire.
    texte expliqué, la structure du film et des shorts se propose d'abord au propriétaire (skill
    `choose-format`).
 
-## Par où commencer (proposé, pas décidé)
+## Par où commencer
 
-Les histoires d'abord, là où le modèle est éprouvé et où les versets font l'image : Dhul-Qarnayn, puis les
-gens de la caverne. Les épisodes d'idées reçues ensuite, une fois les manques 1 et 2 comblés et leur
-structure choisie avec le propriétaire. L'épisode khidr est déjà réécrit : c'est ce film.
+**Décidé par le propriétaire le 2026-11-11 : le du'a d'abord**, parce qu'il est différent (des idées reçues, pas une
+histoire), puis les outils complétés avec les leçons retenues. La session proposait les histoires d'abord
+(Dhul-Qarnayn, la caverne) : elle s'est rangée à son ordre, le cas difficile apprenant plus qu'une seconde histoire.
+Fiche du du'a dans le modèle, avec ses décisions : `docs/themes.md`. L'épisode khidr est déjà réécrit : c'est le
+premier film.
