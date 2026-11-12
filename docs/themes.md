@@ -230,18 +230,18 @@ voix de synthèse, aucune parole du Prophète ﷺ dite par elle) ; le sens vient
 | --- | --- | --- | --- | --- |
 | `caravan` | 62:11 (23 s) | un vendredi, une caravane de nourriture arrive pendant le prêche ; douze hommes restent (Muslim 863a, Bukhari 936) | la subsistance ne se perd pas à s'arrêter pour Dieu | 1:43 |
 | `duha` | 93:1-5 puis 93:6-8 (30 s) | malade deux ou trois nuits ; une femme vient dire qu'il a été abandonné (Bukhari 4950) | tard ne veut pas dire abandonné | 1:52 |
-| `hope` | 39:53 (23 s) | des gens qui avaient beaucoup tué et beaucoup commis l'adultère demandent s'il existe une expiation (Bukhari 4810) | aucun péché n'est trop grand pour revenir ; ce n'est pas une permission | 1:46 |
+| `hope` | 39:53 (23 s) | des gens qui avaient beaucoup tué et beaucoup commis l'adultère demandent s'il existe une expiation (Bukhari 4810) ; la narration dit « ذنوب كبيرة », sans les nommer (propriétaire, 2026-11-12) | aucun péché n'est trop grand pour revenir ; ce n'est pas une permission | 1:31 |
 
 **En réserve pour la série** : 49:2 et Thabit ibn Qays (Bukhari 4846, Muslim 119 : le récit vient après le verset) ; la
 sorte « un mot » (12:19, « سيارة » : « جماعة من المسافرين » selon al-Muyassar), plus légère, à essayer après le pilote.
 
-**État (2026-11-12)** : **rien n'est validé par le propriétaire.** La session avait lu son « je valide le script » du
-2026-11-11 comme celui de ce script ; il portait sur les textes à coller du du'a (sa mise au point du 2026-11-12), et
-l'inscription est retirée. La voix a donc été faite avant sa validation, contre la règle (trois requêtes du palier
-gratuit) : les trois prises ne servent que si le script est validé tel quel, une réplique changée fait refaire la
-prise de son short. Clips proposés (dunes, aube sur une baie, ciel d'orage), dessins et ambiances faits ; rendu par
-le workflow `film`, en brouillon. **Reste** : son « je valide le script » ou ses corrections, puis son mot sur les
-vidéos (voix, images, clips, ambiances), les sources proposées et les textes.
+**État (2026-11-12)** : **script validé par le propriétaire le 2026-11-12** (« je valide le reste »), une réplique
+changée à sa demande : l'accroche du short 3 ne nomme plus les deux péchés du récit, elle dit, avec ses mots, « ناس
+عملوا ذنوب كبيرة… » ; le titre de sa couverture suit. La session avait d'abord lu son « je valide le script » du 11
+comme celui de ce script (il portait sur les textes du du'a) et fait la voix sans sa validation : les prises des shorts
+1 et 2 disent le script validé mot pour mot, celle du short 3 est refaite. Clips proposés (dunes, aube sur une baie,
+ciel d'orage), dessins et ambiances faits ; rendu par le workflow `film`. **Reste** : le contrôle, l'envoi, son mot sur
+les vidéos (voix, images, clips, ambiances), les sources proposées et les textes.
 
 ## Faits (ancien circuit)
 
