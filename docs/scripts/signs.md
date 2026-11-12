@@ -214,7 +214,7 @@ Environ **2:04** · 0:53 de récitation · 12 répliques, dont 0 de raisonnement
 - تابعنا عشان الآية الجاية.  
   *Follow us for the next sign.* · **validée**
 
-## Ce qu'il faut savoir avant de valider
+## Ce qu'il faut savoir
 
 **Les sources à inscrire au registre (statut « proposé », jamais validées par la session)** : 111:1-5, 6:125,
 23:12-14 ; Bukhari 4971 et 4280 ; Ibn Kathir sur 111:1, 111:5, 6:125 et 23:14 ; al-Muyassar sur 111:1-3, 6:125 et
