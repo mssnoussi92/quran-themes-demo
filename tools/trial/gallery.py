@@ -10,7 +10,7 @@ it writes a folder, which a session publishes as a private page (skill release-r
   uv run --with pyyaml python3 tools/trial/gallery.py --film film=video/out/essai-2 --film dua=video/out/dua/ci-2 \\
       [--release dua=<url of its draft release>] [--out build/gallery]
 
---film ID=DIR: DIR holds the delivered videos and stills of the film, named as tools/trial/videos.py names them
+--film ID=DIR: a film, or a series (shorts that stand alone: no 16:9 card). DIR holds the delivered videos and stills, named as tools/trial/videos.py names them
 (the TikTok twins are not previewed: the same video, signed with the TikTok name). Films are shown in the order
 given, the last one first. Encoding is skipped for a preview newer than its video.
 """
@@ -110,7 +110,8 @@ def covers(what: list[dict], key: str) -> bool:
 
 def film_data(film_id: str, folder: Path, out: Path, release: str | None) -> dict:
     film = yaml.safe_load((TRIAL / f"{film_id}.yaml").read_text(encoding="utf-8"))
-    shorts = [yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film["thumbnail"]["panels"]]
+    series = "chapters" not in film             # a series: shorts that stand alone, no film and no thumbnail
+    shorts = [yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film.get("shorts") or film["thumbnail"]["panels"]]
     listed, stills = videos.listing(film_id, "D", "all")
     written = ROOT / film["publish"].get("out", "")
     if not film["publish"].get("out") or not written.is_file():
@@ -130,20 +131,21 @@ def film_data(film_id: str, folder: Path, out: Path, release: str | None) -> dic
             if not needed.is_file():
                 sys.exit(f"error: {film_id}: {needed} is missing")
         wide = video["kind"] == "film"
-        slug = f"{film.get('files', film_id)}-{'film' if wide else 'short-' + str(n)}"
+        k = n if series else n - 1              # which short this is (the film, when there is one, comes first)
+        slug = f"{film.get('files', film_id)}-{'film' if wide else 'short-' + str(k + 1)}"
         preview(src, media / f"{slug}.mp4", wide)
         still(image, media / f"{slug}.jpg", 960 if wide else 540)
-        spec = film if wide else shorts[n - 1]
+        spec = film if wide else shorts[k]
         title = spec["publish"]["title"]
-        cards.append({"wide": wide, "slug": slug, "file": f"{video['name']}.mp4", "twin": None if wide else f"{twins[n - 1]}.mp4",
+        cards.append({"wide": wide, "slug": slug, "file": f"{video['name']}.mp4", "twin": None if wide else f"{twins[k]}.mp4",
                       "image": picture["name"], "length": stamp(seconds(src)), "ar": title["ar"], "en": title["en"],
                       "blocks": section["blocks"], "notes": section["notes"]})
         print(f"  {slug}: {(media / (slug + '.mp4')).stat().st_size / 1e6:.1f} MB", flush=True)
-    everyone = [film, *shorts]
-    return {"id": film_id, "anchor": re.sub(r"[^a-z0-9]+", "-", film["publish"]["series"]["en"].lower()).strip("-"),
+    everyone = shorts if series else [film, *shorts]
+    return {"id": film_id, "series": series, "anchor": re.sub(r"[^a-z0-9]+", "-", film["publish"]["series"]["en"].lower()).strip("-"),
             "ar": film["publish"]["series"]["ar"], "en": film["publish"]["series"]["en"], "cards": cards, "release": release,
             "videos_ok": all(s.get("validated") for s in everyone) and covers(everyone, "voice") and covers(everyone, "montage"),
-            "texts_ok": covers(everyone, "publish"), "date": str((film.get("validated") or {}).get("on", (film.get("validated") or {}).get(True, "")))}
+            "texts_ok": covers(everyone, "publish"), "date": str((everyone[0].get("validated") or {}).get("on", (everyone[0].get("validated") or {}).get(True, "")))}
 
 
 # ---- the page ---------------------------------------------------------------------------------------------------
@@ -289,7 +291,7 @@ def card(c: dict) -> str:
 def page(films: list[dict], made: str) -> str:
     e = html.escape
     summary = "".join(
-        f'<a href="#{f["anchor"]}"><span class="ar" dir="rtl" lang="ar">{e(f["ar"])}</span><span class="en">{e(f["en"])} · un film et {len(f["cards"]) - 1} shorts</span>{pills(f)}</a>'
+        f'<a href="#{f["anchor"]}"><span class="ar" dir="rtl" lang="ar">{e(f["ar"])}</span><span class="en">{e(f["en"])} · {f"une série, {len(f['cards'])} shorts" if f["series"] else f"un film et {len(f['cards']) - 1} shorts"}</span>{pills(f)}</a>'
         for f in films)
     sections = ""
     for f in films:

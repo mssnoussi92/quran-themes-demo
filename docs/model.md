@@ -89,8 +89,8 @@ l'un à l'autre en fondu.
 Des shorts qui tiennent seuls, sans film (la première : `ayah`, « آية وحكايتها », `docs/themes.md`) : `id`, `files`,
 `title` (ar, en), `shorts` (dans l'ordre de publication : chaque short annonce le suivant), `handle`, `publish`
 (`series`, `hashtags`, `narration`, `out`). `script.py --film <série>` et `rules.py --film <série>` la lisent comme un
-film, et toute la chaîne aussi (préparation, rendu par le workflow `film`, textes à coller), sauf la page du
-propriétaire (« Ce que les outils ne font pas encore », 5).
+film, et toute la chaîne aussi depuis le 2026-11-12 : préparation (des versets récités d'une traite, la référence
+d'une narration), rendu par le workflow `film` (des shorts, pas de 16:9), textes à coller, page du propriétaire.
 
 ### Un film (`content/trial/<id>.yaml`, avec `chapters`)
 
@@ -284,12 +284,6 @@ dit quoi faire.
 4. **Formats pas encore éprouvés.** Une histoire est validée, les idées reçues sont en cours (le du'a) ; pour une
    collection ou un texte expliqué, la structure du film et des shorts se propose d'abord au propriétaire (skill
    `choose-format`).
-5. **Une série de shorts : la page du propriétaire ne la montre pas encore.** Toute la chaîne lit une série
-   (`shorts`, sans `chapters`) depuis le 2026-11-12 : `script.py`, `rules.py`, `prepare.py` et `sources.py` (des
-   versets récités d'une traite, `verses:` ; ce sur quoi une narration repose, `sources:`), `Trial.tsx` (la référence
-   écrite pendant la réplique, à la place du crédit ; un passage tourne ses pages entre deux versets, chaque verset
-   fermé par son signe de fin), `publish.py`, `videos.py` et le workflow `film` (des shorts, pas de 16:9). Reste
-   `gallery.py` : la page suppose un film et sa vignette.
 
 Comblés le 2026-11-11, avec le du'a : **une source se lit dans le registre** (`tools/trial/sources.py` : texte,
 référence, coupe de récitation, lecture du hadith ; un fichier qui nomme un ancien épisode dans `verses`, comme le
