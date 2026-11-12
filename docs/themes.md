@@ -346,6 +346,17 @@ porte les mots dont on a besoin.
 - **Le registre** n'a pas de type pour une source scientifique : un fichier (`content/sources/science.yaml` : id,
   référence, lien) et `rules.py` qui l'accepte, à faire avec le script.
 
+### Le titre et les images de style (propriétaire, 2026-11-12 : « ok pour سنريهم آياتنا, fais les images de style »)
+
+**Titre validé : « سنريهم آياتنا »** (41:53), écrit à l'écran, jamais dit par la voix. Trois images de style d'un
+épisode sur 51:47 (`docs/retention/signs-style-51-47.jpg`, faites par `docs/retention/signs-style-frame.py`, sans
+voix ni script) : la certitude d'autrefois sur le schéma de Ptolémée ; « ١٩٢٩ » en grand sur le premier champ profond
+de Webb, la coupole en silhouette, la source écrite ; le verset (texte et traduction lus dans l'API de quran.com) avec
+« لموسعون » en or sur le champ ultra-profond de Hubble. En bas de chaque image, la frise des dates (أرسطو, بطليموس,
+القرآن en vert, أينشتاين, هابل), le point raconté allumé. Le numéro d'épisode est dans un anneau : « · ١ » se lisait
+« ١٠ ». **Les photos de l'ESA (Webb, Hubble) sont sous CC BY 4.0 et leurs conditions exigent le crédit sur la vidéo
+elle-même** (« not hidden… burned in »), pas seulement dans la description : il est écrit en bas de l'image.
+
 ### Un style à part pour cette série (propriétaire, 2026-11-12 : « ne te limite pas à l'existant ; cette série demande un style différent pour le hook et l'histoire »)
 
 Il montre un article de quran-m.com (« كل في فلك يسبحون بين التفسير اللغوي والرؤية الفلكية الحديثة », 2025). **Ce
