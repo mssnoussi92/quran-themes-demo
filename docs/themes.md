@@ -235,15 +235,12 @@ voix de synthèse, aucune parole du Prophète ﷺ dite par elle) ; le sens vient
 **En réserve pour la série** : 49:2 et Thabit ibn Qays (Bukhari 4846, Muslim 119 : le récit vient après le verset) ; la
 sorte « un mot » (12:19, « سيارة » : « جماعة من المسافرين » selon al-Muyassar), plus légère, à essayer après le pilote.
 
-**État (2026-11-12)** : **script validé par le propriétaire le 2026-11-12** (« je valide le reste »), une réplique
-changée à sa demande : l'accroche du short 3 ne nomme plus les deux péchés du récit, elle dit, avec ses mots, « ناس
-عملوا ذنوب كبيرة… » ; le titre de sa couverture suit. La session avait d'abord lu son « je valide le script » du 11
-comme celui de ce script (il portait sur les textes du du'a) et fait la voix sans sa validation : les prises des shorts
-1 et 2 disent le script validé mot pour mot, celle du short 3 est refaite. Clips proposés (dunes, aube sur une baie,
-ciel d'orage), dessins et ambiances faits ; les trois shorts (1:41, 1:50, 1:31) sont rendus, contrôlés et envoyés,
-release brouillon `ayah-candidate`, et sur la page du propriétaire. Le short 1 passe en plein jour à sa demande (la
-prière du vendredi est à midi) : image approuvée par lui sur planche, vidéo re-rendue, contrôlée et envoyée. **Reste** : son mot sur les
-vidéos (voix, images, clips, ambiances), les sources proposées et les textes.
+**État (2026-11-12)** : **le pilote est validé en entier par le propriétaire** : le script (« je valide le reste », une
+réplique changée à sa demande : l'accroche du short 3 dit « ناس عملوا ذنوب كبيرة… », sans nommer les deux péchés
+du récit), l'image de jour du short 1 (la prière du vendredi est à midi : plus de lampes, des traces de pas), puis
+« tout sur les 3 shorts » : les vidéos, les sources, les textes à coller. Release brouillon `ayah-candidate`, page
+du propriétaire à jour. **À publier par lui.** La dernière réplique du short 3 promet « le verset suivant et son
+récit » : la suite (réserve ci-dessus) attend son choix.
 
 ## Faits (ancien circuit)
 

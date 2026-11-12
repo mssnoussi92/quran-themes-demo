@@ -25,15 +25,20 @@ id: hope
 # chaque narration repose. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication, ni les sources
 # proposées : sur les vidéos. La prise faite avant ce mot ne sert plus : refaite après lui (une requête).
 script_validated: { by: mssnoussi92, on: 2026-11-12 }
+# « Je valide tout sur les 3 shorts » du propriétaire (2026-11-12), sur les vidéos rendues par le workflow `film` et
+# envoyées dans la conversation (livrée le même jour, avec sa réplique) : la voix D sur la vidéo entière, le montage (le clip
+# et les dessins), la couverture, l'ambiance, les textes de publication (`publish`, docs/retention/publication-ayah.md,
+# envoyés) ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 52-trial-hope     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
-# Clip PROPOSÉ (pas encore approuvé par le propriétaire) : un ciel d'orage bleu sombre au-dessus d'une ligne d'arbres,
+# Le clip (validé par le propriétaire sur la vidéo, 2026-11-12) : un ciel d'orage bleu sombre au-dessus d'une ligne d'arbres,
 # en accéléré, ralenti sept fois pour ne se jouer qu'une fois. Dessins : video/src/trial/Ayah.tsx.
 clip: { source: pixabay, id: 16495, author: max_bbb, page: "https://pixabay.com/videos/id-16495/", take: { slow: 7, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.8, ground: "#05070f", horizon: 1330 }
 # Ambiance sous la narration, jamais sous le verset : le vent, un des trois enregistrements validés à l'écoute par le
 # propriétaire (docs/model.md, « Ambiances »). Une pluie irait mieux à cette image : la recherche de la banque de sons
-# a refusé la session (403) ; à choisir avec lui s'il la veut.
+# a refusé la session (403) ; il a validé le short avec le vent (2026-11-12).
 ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -36 }
 cover: { scene: gate, title: "عملوا ذنوب كبيرة… وجم يسألوا!", tag: "آية وحكايتها · ٣", focus: 1180 }
 publish:

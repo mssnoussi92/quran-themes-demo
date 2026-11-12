@@ -195,9 +195,9 @@ seul, donc jamais dans le dépôt ; l'auteur est cité dans les descriptions.
 | 228847 | Kanenori | cascade en forêt, vertical 4K (20 s) | |
 | 271161 | McPix22 | ruisseau entre des rochers moussus, 4K (27 s) | |
 | 174860 | Alex_Sochi7777 | rivière de forêt, petits rapides, 4K (28 s) | |
-| 2119 | bellergy | une aube rose vue d'un drone qui s'élève au-dessus d'une colline boisée et découvre une baie et ses îles (25 s ; ralenti cinq fois : il ne se joue qu'une fois) | série « آية وحكايتها », Ad-Duha : **proposé** (2026-11-12) |
-| 16139 | AcornStudioSpain | des dunes de jour, un drone qui avance lentement, 1080p (24 s ; ralenti cinq fois) | série, la caravane (62:11) : **approuvé** sur planche, en plein jour, sans assombrissement (2026-11-12) ; se valide sur la vidéo |
-| 16495 | max_bbb | un ciel d'orage bleu sombre au-dessus d'une ligne d'arbres, accéléré, 1080p (16 s ; ralenti sept fois) | série, 39:53 : **proposé** (2026-11-12) |
+| 2119 | bellergy | une aube rose vue d'un drone qui s'élève au-dessus d'une colline boisée et découvre une baie et ses îles (25 s ; ralenti cinq fois : il ne se joue qu'une fois) | série « آية وحكايتها », Ad-Duha : **validé** sur la vidéo (2026-11-12) |
+| 16139 | AcornStudioSpain | des dunes de jour, un drone qui avance lentement, 1080p (24 s ; ralenti cinq fois) | série, la caravane (62:11) : **validé** sur la vidéo, en plein jour, sans assombrissement (2026-11-12) |
+| 16495 | max_bbb | un ciel d'orage bleu sombre au-dessus d'une ligne d'arbres, accéléré, 1080p (16 s ; ralenti sept fois) | série, 39:53 : **validé** sur la vidéo (2026-11-12) |
 | 59291 | trilemedia | soleil au-dessus d'une vallée de brume, 4K (19 s) | du'a, la maison |
 | 223338 | adege | orage qui s'assombrit sur des collines, accéléré 4K (40 s) | |
 | 287510 | Thamnguyen_TBVN | ruisseau de forêt dans des rayons de soleil, 4K (16 s) | |

@@ -22,10 +22,15 @@ id: duha
 # ni les sources proposées du registre : il les valide sur les vidéos. Toute réplique changée ensuite redevient à
 # valider. La prise de voix, faite avant ce mot par erreur (docs/history.md, tâche 50), dit ce script mot pour mot.
 script_validated: { by: mssnoussi92, on: 2026-11-12 }
+# « Je valide tout sur les 3 shorts » du propriétaire (2026-11-12), sur les vidéos rendues par le workflow `film` et
+# envoyées dans la conversation (livrée le même jour) : la voix D sur la vidéo entière, le montage (le clip
+# et les dessins), la couverture, l'ambiance, les textes de publication (`publish`, docs/retention/publication-ayah.md,
+# envoyés) ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 51-trial-duha     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
-# Clip PROPOSÉ (pas encore approuvé par le propriétaire) : une aube rose filmée d'un drone qui s'élève au-dessus d'une
+# Le clip (validé par le propriétaire sur la vidéo, 2026-11-12) : une aube rose filmée d'un drone qui s'élève au-dessus d'une
 # colline boisée et découvre une baie, ralentie cinq fois pour ne se jouer qu'une fois. Dessins : video/src/trial/Ayah.tsx.
 clip: { source: pixabay, id: 2119, author: bellergy, page: "https://pixabay.com/videos/id-2119/", take: { slow: 5, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.7, ground: "#07060b", horizon: 1330 }
 # Ambiance sous la narration, jamais sous les versets : un des trois enregistrements validés à l'écoute par le

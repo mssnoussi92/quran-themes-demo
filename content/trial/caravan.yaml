@@ -20,6 +20,11 @@ id: caravan
 # ni les sources proposées du registre : il les valide sur les vidéos. Toute réplique changée ensuite redevient à
 # valider. La prise de voix, faite avant ce mot par erreur (docs/history.md, tâche 50), dit ce script mot pour mot.
 script_validated: { by: mssnoussi92, on: 2026-11-12 }
+# « Je valide tout sur les 3 shorts » du propriétaire (2026-11-12), sur les vidéos rendues par le workflow `film` et
+# envoyées dans la conversation (la version de jour, rendue après son choix de l'image) : la voix D sur la vidéo entière, le montage (le clip
+# et les dessins), la couverture, l'ambiance, les textes de publication (`publish`, docs/retention/publication-ayah.md,
+# envoyés) ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 50-trial-caravan     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
@@ -30,7 +35,7 @@ text: 50-trial-caravan     # content/voice-test/<text>.txt : toutes les répliqu
 # lampes (une lumière ne se lit que la nuit, et vingt-quatre lampes dont douze s'éteignent comptaient ceux qui sont
 # partis, ce que le récit ne donne pas) : le lieu du prêche en plein jour, la caravane, des traces de pas.
 # APPROUVÉE par lui le même jour sur la planche de comparaison (« je valide l'image du jour ») : le clip ainsi posé
-# et les dessins ; la vidéo elle-même se valide quand il l'a vue (`validated`).
+# et les dessins ; puis validée sur la vidéo avec le reste (`validated`).
 clip: { source: pixabay, id: 16139, author: AcornStudioSpain, page: "https://pixabay.com/videos/id-16139/", take: { slow: 5, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 1.0, veil: 0.55, ground: "#0b0907", horizon: 1330 }
 # Ambiance sous la narration, jamais sous le verset : un des trois enregistrements validés à l'écoute par le propriétaire
 # sur le premier film (docs/model.md, « Ambiances ») : le vent.

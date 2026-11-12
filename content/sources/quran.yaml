@@ -1537,7 +1537,8 @@
     surah_ar: الجمعة
     surah_en: Al-Jumu'ah
     retrieved: '2026-11-11'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Al-Jumu'ah 62:11, la caravane un vendredi (série « un verset et son récit », short caravan)"
   text_ar: وَإِذَا رَأَوْا۟ تِجَـٰرَةً أَوْ لَهْوًا ٱنفَضُّوٓا۟ إِلَيْهَا وَتَرَكُوكَ قَآئِمًا ۚ قُلْ مَا عِندَ ٱللَّهِ خَيْرٌ مِّنَ ٱللَّهْوِ وَمِنَ ٱلتِّجَـٰرَةِ ۚ وَٱللَّهُ خَيْرُ ٱلرَّٰزِقِينَ
   text_en: But [on one occasion] when they saw a transaction or a diversion, [O Muḥammad], they rushed to it and left you standing. Say, "What is with Allāh is better than diversion and than a transaction, and Allāh is the best of providers."
@@ -1553,7 +1554,8 @@
     surah_ar: الضحى
     surah_en: Ad-Duhaa
     retrieved: '2026-11-11'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Ad-Duha 93:1 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
   text_ar: وَٱلضُّحَىٰ
   text_en: By the morning brightness
@@ -1569,7 +1571,8 @@
     surah_ar: الضحى
     surah_en: Ad-Duhaa
     retrieved: '2026-11-11'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Ad-Duha 93:2 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
   text_ar: وَٱلَّيْلِ إِذَا سَجَىٰ
   text_en: And [by] the night when it covers with darkness,
@@ -1585,7 +1588,8 @@
     surah_ar: الضحى
     surah_en: Ad-Duhaa
     retrieved: '2026-11-11'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Ad-Duha 93:3 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
   text_ar: مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ
   text_en: Your Lord has not taken leave of you, [O Muḥammad], nor has He detested [you].
@@ -1601,7 +1605,8 @@
     surah_ar: الضحى
     surah_en: Ad-Duhaa
     retrieved: '2026-11-11'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Ad-Duha 93:4 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
   text_ar: وَلَلْـَٔاخِرَةُ خَيْرٌ لَّكَ مِنَ ٱلْأُولَىٰ
   text_en: And the Hereafter is better for you than the first [life].
@@ -1617,7 +1622,8 @@
     surah_ar: الضحى
     surah_en: Ad-Duhaa
     retrieved: '2026-11-11'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Ad-Duha 93:5 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
   text_ar: وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰٓ
   text_en: And your Lord is going to give you, and you will be satisfied.
@@ -1633,7 +1639,8 @@
     surah_ar: الضحى
     surah_en: Ad-Duhaa
     retrieved: '2026-11-11'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Ad-Duha 93:6 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
   text_ar: أَلَمْ يَجِدْكَ يَتِيمًا فَـَٔاوَىٰ
   text_en: Did He not find you an orphan and give [you] refuge?
@@ -1649,7 +1656,8 @@
     surah_ar: الضحى
     surah_en: Ad-Duhaa
     retrieved: '2026-11-11'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Ad-Duha 93:7 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
   text_ar: وَوَجَدَكَ ضَآلًّا فَهَدَىٰ
   text_en: And He found you lost and guided [you],
@@ -1665,7 +1673,8 @@
     surah_ar: الضحى
     surah_en: Ad-Duhaa
     retrieved: '2026-11-11'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Ad-Duha 93:8 (série « un verset et son récit », short duha : 93:1-5 puis 93:6-8)"
   text_ar: وَوَجَدَكَ عَآئِلًا فَأَغْنَىٰ
   text_en: And He found you poor and made [you] self-sufficient.

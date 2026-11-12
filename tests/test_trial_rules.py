@@ -252,7 +252,10 @@ def test_the_voice_tells_a_report_and_never_reads_it(copy):
     line = copy.change_line("caravan", "open", 1, lambda old: old + " " + " ".join(words))
     done = copy.rules("--film", "ayah", "--draft")
     refused(done, "the synthetic voice says")
-    assert "hadith.bukhari.936" in done.stdout and line in done.stdout
+    # Both reports this narration rests on say these four words: the error names the one listed first. (Until the
+    # sources were validated, a warning listed every proposed source and this passed whatever the error named.)
+    said = next(row for row in done.stdout.splitlines() if "the synthetic voice says" in row)
+    assert ("hadith.muslim.863a" in said or "hadith.bukhari.936" in said) and line in done.stdout
 
 
 def test_a_passage_is_verses_that_follow_one_another_with_cuts_that_touch(copy):
@@ -274,6 +277,7 @@ def test_a_passage_is_verses_that_follow_one_another_with_cuts_that_touch(copy):
 def test_a_short_without_a_clip_is_a_warning_until_its_videos_are_validated(copy):
     spec = copy.load("content/trial/caravan.yaml")
     spec.pop("clip", None)
+    spec.pop("validated", None)          # the real short is validated: first, a short whose videos are not yet
     copy.dump("content/trial/caravan.yaml", spec)
     done = copy.rules("--film", "ayah", "--draft")
     assert done.returncode == 0 and "no `clip` yet" in done.stdout, done.stdout[-2000:]

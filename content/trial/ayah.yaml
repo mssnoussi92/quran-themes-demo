@@ -12,9 +12,11 @@
 # - Le sens dit après le verset vient du passage de tafsir nommé dans `sources:` ; la réplique ne dit rien de plus.
 # - L'ordre de publication est celui de `shorts` : chaque short annonce le suivant (une promesse à tenir).
 # Script validé par le propriétaire le 2026-11-12 (« je valide le reste », une réplique du short 3 changée par ses mots ;
-# `script_validated` de chaque short). Restent à valider, sur les vidéos : la voix, les images, les clips, les
-# ambiances, les textes à coller et les sources proposées.
+# `script_validated` de chaque short), puis tout le reste le même jour (« je valide tout sur les 3 shorts » : vidéos,
+# sources, textes ; `validated` de chaque short). Ici, ce que ce fichier porte de ces textes : le nom de la série, ses
+# hashtags, la ligne de la voix.
 id: ayah
+validated: { by: mssnoussi92, on: 2026-11-12, what: [publish] }
 files: ayah                      # début du nom des vidéos livrées : ayah-short-<n>-<id>.mp4
 title: { ar: "آية وحكايتها", en: "A Verse and Its Story" }
 shorts: [caravan, duha, hope]
