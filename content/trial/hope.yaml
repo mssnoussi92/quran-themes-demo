@@ -17,10 +17,14 @@
 # - Dernier short du pilote : l'avant-dernière réplique rappelle les trois récits, l'appel promet le verset suivant
 #   (promesse à tenir seulement si la série continue : à garder ou à retirer, au propriétaire de le dire).
 id: hope
-# RIEN n'est validé par le propriétaire (sa mise au point du 2026-11-12) : son « je valide le script » du 2026-11-11
-# portait sur les textes à coller du du'a, pas sur ce script. La session l'avait lu de travers ; l'inscription est
-# retirée. La prise de voix (content/trial/takes/) a donc été faite avant sa validation, contre la règle : elle ne
-# sert que si le script est validé tel quel ; une réplique changée la fait refaire (une requête).
+# « Je valide le reste » du propriétaire (2026-11-12), en réponse au script envoyé (docs/scripts/ayah.md), après avoir
+# demandé de changer « قتلوا كتير… وزنوا كتير » par, « par exemple », « عملوا ذنوب كبيرة » : ses mots sont pris tels
+# quels dans la première réplique (la narration ne nomme plus les deux péchés du récit ; la référence de Bukhari 4810
+# reste écrite). Le titre de la couverture et le titre de publication portaient les mêmes mots : la session les a
+# alignés sur les siens et le lui a dit, à lui de le démentir. Validé : les répliques, la place du verset, ce sur quoi
+# chaque narration repose. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication, ni les sources
+# proposées : sur les vidéos. La prise faite avant ce mot ne sert plus : refaite après lui (une requête).
+script_validated: { by: mssnoussi92, on: 2026-11-12 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 52-trial-hope     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
@@ -31,20 +35,20 @@ clip: { source: pixabay, id: 16495, author: max_bbb, page: "https://pixabay.com/
 # propriétaire (docs/model.md, « Ambiances »). Une pluie irait mieux à cette image : la recherche de la banque de sons
 # a refusé la session (403) ; à choisir avec lui s'il la veut.
 ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -36 }
-cover: { scene: gate, title: "قتلوا كتير… وجم يسألوا!", tag: "آية وحكايتها · ٣", focus: 1180 }
+cover: { scene: gate, title: "عملوا ذنوب كبيرة… وجم يسألوا!", tag: "آية وحكايتها · ٣", focus: 1180 }
 publish:
-  title: { en: "They had killed many… and came to ask", ar: "قتلوا كتير… وجم يسألوا!" }
+  title: { en: "They had committed grave sins… and came to ask", ar: "عملوا ذنوب كبيرة… وجم يسألوا!" }
   part: 3
   description:
-    en: "People who had killed much and committed adultery much came to the Prophet ﷺ and asked: is there any expiation for what we have done? The verse that came down is for everyone who thinks his sin is too great to be forgiven. It does not mean: do as you please. It means: come back."
-    ar: "ناس قتلوا كتير وزنوا كتير… وجم للنبي ﷺ يسألوا: اللي عملناه ليه كفّارة؟ والآية اللي نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر. ومش معناها اعمل اللي إنت عايزه… معناها: ارجع."
+    en: "People who had committed grave sins came to the Prophet ﷺ and asked: is there any expiation for what we have done? The verse that came down is for everyone who thinks his sin is too great to be forgiven. It does not mean: do as you please. It means: come back."
+    ar: "ناس عملوا ذنوب كبيرة… وجم للنبي ﷺ يسألوا: اللي عملناه ليه كفّارة؟ والآية اللي نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر. ومش معناها اعمل اللي إنت عايزه… معناها: ارجع."
 segments:
   - narration: open
     scene: road
     sources: [hadith.bukhari.4810]
     lines:
-      - ar: "ناس قتلوا كتير… وزنوا كتير… وجم للنبي صلى الله عليه وسلم يسألوا!"
-        en: "People who had killed much… and committed adultery much… came to the Prophet ﷺ with a question!"
+      - ar: "ناس عملوا ذنوب كبيرة… وجم للنبي صلى الله عليه وسلم يسألوا!"
+        en: "People who had committed grave sins… came to the Prophet ﷺ with a question!"
       - ar: "قالوله: اللي بتدعو له حلو… بس قولّنا: اللي عملناه… ليه كفّارة؟"
         en: "They said: what you call to is good… but tell us: what we have done… is there any expiation for it?"
       - ar: "والرد اللي نزل… لكل واحد شايف إن ذنبه أكبر من إنه يتغفر."

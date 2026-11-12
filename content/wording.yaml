@@ -44,3 +44,9 @@ refused:
     patterns: ["مضرب\\s+المثل"]
     instead: "the proverb as people say it: « بنقول يا صبر أيوب… »"
     why: he flagged the phrase without a reason; our reading is a standard-Arabic turn in an Egyptian line
+  - id: sins-named
+    # « قتلوا كتير… وزنوا كتير » : l'accroche du short `hope` nommait les deux péchés du récit (Bukhari 4810). Le
+    # verset, sa traduction et la référence écrite disent le reste ; notre voix ne les nomme pas.
+    patterns: ["[وف]?قتلوا\\s+كتير", "[وف]?زنوا", "(?:ال|بال|وال)?زنا", "[وف]?زني"]
+    instead: "« عملوا ذنوب كبيرة »"
+    why: he asked for the change and gave the words (2026-11-12), without a reason; our reading is that our voice does not name such sins bluntly

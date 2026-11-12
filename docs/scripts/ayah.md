@@ -6,7 +6,7 @@ Script à valider avant toute voix. Les répliques **nouvelles** sont de la sess
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | `caravan` | 1:43 | 0:23 | 0:00 | 15 | 0 |
 | 2 | `duha` | 1:52 | 0:30 | 0:00 | 18 | 0 |
-| 3 | `hope` | 1:46 | 0:23 | 0:00 | 15 | 0 |
+| 3 | `hope` | 1:45 | 0:23 | 0:00 | 15 | 0 |
 
 ## Short 1 · `caravan` · سابوا خطبة الجمعة… ليه؟
 
@@ -130,29 +130,29 @@ Environ **1:52** · 0:30 de récitation, 0:00 de hadith lu · 18 répliques nouv
 - تابعنا عشان تعرف حكايتها.  
   *Follow us to hear its story.* · **nouvelle**
 
-## Short 3 · `hope` · قتلوا كتير… وجم يسألوا!
+## Short 3 · `hope` · عملوا ذنوب كبيرة… وجم يسألوا!
 
-Environ **1:46** · 0:23 de récitation, 0:00 de hadith lu · 15 répliques nouvelles, 0 reprises.
+Environ **1:45** · 0:23 de récitation, 0:00 de hadith lu · 15 répliques nouvelles, 0 reprises.
 
 **0:00 · narration** (image : `road`) · d'après : récit de [Sahih al-Bukhari 4810](https://sunnah.com/bukhari:4810), raconté avec nos mots, source proposée · référence écrite à l'écran, jamais lue
-- ناس قتلوا كتير… وزنوا كتير… وجم للنبي صلى الله عليه وسلم يسألوا!  
-  *People who had killed much… and committed adultery much… came to the Prophet ﷺ with a question!* · **nouvelle**
+- ناس عملوا ذنوب كبيرة… وجم للنبي صلى الله عليه وسلم يسألوا!  
+  *People who had committed grave sins… came to the Prophet ﷺ with a question!* · **nouvelle**
 - قالوله: اللي بتدعو له حلو… بس قولّنا: اللي عملناه… ليه كفّارة؟  
   *They said: what you call to is good… but tell us: what we have done… is there any expiation for it?* · **nouvelle**
 - والرد اللي نزل… لكل واحد شايف إن ذنبه أكبر من إنه يتغفر.  
   *And the answer that came down… is for everyone who thinks his sin is too great to be forgiven.* · **nouvelle**
 
-**0:19** · **Verset récité** · Az-Zumar 39:53 · 23 s  
+**0:18** · **Verset récité** · Az-Zumar 39:53 · 23 s  
   ۞ قُلْ يَـٰعِبَادِىَ ٱلَّذِينَ أَسْرَفُوا۟ عَلَىٰٓ أَنفُسِهِمْ لَا تَقْنَطُوا۟ مِن رَّحْمَةِ ٱللَّهِ ۚ إِنَّ ٱللَّهَ يَغْفِرُ ٱلذُّنُوبَ جَمِيعًا ۚ إِنَّهُۥ هُوَ ٱلْغَفُورُ ٱلرَّحِيمُ  
   *Say, "O My servants who have transgressed against themselves [by sinning], do not despair of the mercy of Allāh. Indeed, Allāh forgives all sins. Indeed, it is He who is the Forgiving, the Merciful."*
 
-**0:43 · narration** (image : `rain`) · d'après : sens d'après [Al-Tafsir al-Muyassar · التفسير الميسر](https://quran.com/39:53/tafsirs/ar-tafsir-muyassar) sur 39:53, source proposée · référence écrite à l'écran, jamais lue
+**0:42 · narration** (image : `rain`) · d'après : sens d'après [Al-Tafsir al-Muyassar · التفسير الميسر](https://quran.com/39:53/tafsirs/ar-tafsir-muyassar) sur 39:53, source proposée · référence écrite à l'écran, jamais lue
 - يعني: يا اللي زوّدتوها على نفسكم في الذنوب… ما تيأسوش من رحمة ربنا.  
   *Meaning: you who have gone too far against yourselves in sin… do not despair of God's mercy.* · **nouvelle**
 - ربنا بيغفر الذنوب كلها… للي يتوب ويرجع… مهما كانت.  
   *God forgives all sins… for whoever repents and turns back… whatever they were.* · **nouvelle**
 
-**0:55 · narration** (image : `rain`) · d'après : sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/39:53/tafsirs/ar-tafseer-al-saddi) sur 39:53, source proposée · référence écrite à l'écran, jamais lue
+**0:54 · narration** (image : `rain`) · d'après : sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/39:53/tafsirs/ar-tafseer-al-saddi) sur 39:53, source proposée · référence écrite à l'écran, jamais lue
 - ما ناداهمش: يا مجرمين… ناداهم ونسبهم لنفسه.  
   *He did not call them: you criminals… He called them and named them His own.* · **nouvelle**
 - واليأس… هو اللي بيخليك تكمّل في الغلط.  
@@ -160,7 +160,7 @@ Environ **1:46** · 0:23 de récitation, 0:00 de hadith lu · 15 répliques nouv
 - وإحنا… الذنب يكبر في عينينا لحد ما نقول: خلاص… ما ينفعش أرجع.  
   *And us… the sin grows in our eyes until we say: that's it… I can't come back.* · **nouvelle**
 
-**1:11 · narration** (image : `road`)
+**1:10 · narration** (image : `road`)
 - زي واحد ساب الصلاة سنين… وكل ما ييجي يرجع يقول: بعد كل ده؟  
   *Like someone who left prayer for years… and each time he is about to return says: after all this?* · **nouvelle**
 - أيوه… بعد كل ده.  
@@ -168,7 +168,7 @@ Environ **1:46** · 0:23 de récitation, 0:00 de hadith lu · 15 répliques nouv
 - ومش معناها اعمل اللي إنت عايزه… معناها: ارجع.  
   *It does not mean: do as you please… it means: come back.* · **nouvelle**
 
-**1:24 · narration** (image : `gate`) · d'après : sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/39:53/tafsirs/ar-tafseer-al-saddi) sur 39:53, source proposée · référence écrite à l'écran, jamais lue
+**1:23 · narration** (image : `gate`) · d'après : sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/39:53/tafsirs/ar-tafseer-al-saddi) sur 39:53, source proposée · référence écrite à l'écran, jamais lue
 - الباب مفتوح… واللي بيقفله على نفسه… هو اللي ما بيرجعش.  
   *The door is open… and the one who shuts it on himself… is the one who does not come back.* · **nouvelle**
 - لما تقول لنفسك: فات الأوان… افتكر مين اللي سألوا قبلك.  

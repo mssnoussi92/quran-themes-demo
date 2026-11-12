@@ -250,19 +250,19 @@ Footage: Pixabay (bellergy) · Ambience: BigSoundBank (Joseph Sardin)
 #QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Tafsir #Hadith #حديث #TawfiqAsSayegh #توفيق_الصايغ
 ```
 
-## Short 3 · They had killed many… and came to ask · قتلوا كتير… وجم يسألوا!
+## Short 3 · They had committed grave sins… and came to ask · عملوا ذنوب كبيرة… وجم يسألوا!
 
 `ayah-short-3-hope.mp4` (TikTok : `ayah-short-3-hope-tiktok.mp4`, signée `@quran.words.daily`) · 1:33 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-3-hope-cover.jpg`
 
 **Facebook (8 hashtags)**
 
 ```text
-They had killed many… and came to ask
-قتلوا كتير… وجم يسألوا!
+They had committed grave sins… and came to ask
+عملوا ذنوب كبيرة… وجم يسألوا!
 
-People who had killed much and committed adultery much came to the Prophet ﷺ and asked: is there any expiation for what we have done? The verse that came down is for everyone who thinks his sin is too great to be forgiven. It does not mean: do as you please. It means: come back.
+People who had committed grave sins came to the Prophet ﷺ and asked: is there any expiation for what we have done? The verse that came down is for everyone who thinks his sin is too great to be forgiven. It does not mean: do as you please. It means: come back.
 
-ناس قتلوا كتير وزنوا كتير… وجم للنبي ﷺ يسألوا: اللي عملناه ليه كفّارة؟ والآية اللي نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر. ومش معناها اعمل اللي إنت عايزه… معناها: ارجع.
+ناس عملوا ذنوب كبيرة… وجم للنبي ﷺ يسألوا: اللي عملناه ليه كفّارة؟ والآية اللي نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر. ومش معناها اعمل اللي إنت عايزه… معناها: ارجع.
 
 A Verse and Its Story · 3 · آية وحكايتها · ٣
 
@@ -283,12 +283,12 @@ Footage: Pixabay (max_bbb) · Ambience: BigSoundBank (Joseph Sardin)
 **Instagram (5 hashtags)**
 
 ```text
-They had killed many… and came to ask
-قتلوا كتير… وجم يسألوا!
+They had committed grave sins… and came to ask
+عملوا ذنوب كبيرة… وجم يسألوا!
 
-People who had killed much and committed adultery much came to the Prophet ﷺ and asked: is there any expiation for what we have done? The verse that came down is for everyone who thinks his sin is too great to be forgiven. It does not mean: do as you please. It means: come back.
+People who had committed grave sins came to the Prophet ﷺ and asked: is there any expiation for what we have done? The verse that came down is for everyone who thinks his sin is too great to be forgiven. It does not mean: do as you please. It means: come back.
 
-ناس قتلوا كتير وزنوا كتير… وجم للنبي ﷺ يسألوا: اللي عملناه ليه كفّارة؟ والآية اللي نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر. ومش معناها اعمل اللي إنت عايزه… معناها: ارجع.
+ناس عملوا ذنوب كبيرة… وجم للنبي ﷺ يسألوا: اللي عملناه ليه كفّارة؟ والآية اللي نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر. ومش معناها اعمل اللي إنت عايزه… معناها: ارجع.
 
 A Verse and Its Story · 3 · آية وحكايتها · ٣
 
@@ -309,12 +309,12 @@ Footage: Pixabay (max_bbb) · Ambience: BigSoundBank (Joseph Sardin)
 **TikTok : la vidéo `ayah-short-3-hope-tiktok.mp4` (5 hashtags)**
 
 ```text
-They had killed many… and came to ask
-قتلوا كتير… وجم يسألوا!
+They had committed grave sins… and came to ask
+عملوا ذنوب كبيرة… وجم يسألوا!
 
-People who had killed much and committed adultery much came to the Prophet ﷺ and asked: is there any expiation for what we have done? The verse that came down is for everyone who thinks his sin is too great to be forgiven. It does not mean: do as you please. It means: come back.
+People who had committed grave sins came to the Prophet ﷺ and asked: is there any expiation for what we have done? The verse that came down is for everyone who thinks his sin is too great to be forgiven. It does not mean: do as you please. It means: come back.
 
-ناس قتلوا كتير وزنوا كتير… وجم للنبي ﷺ يسألوا: اللي عملناه ليه كفّارة؟ والآية اللي نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر. ومش معناها اعمل اللي إنت عايزه… معناها: ارجع.
+ناس عملوا ذنوب كبيرة… وجم للنبي ﷺ يسألوا: اللي عملناه ليه كفّارة؟ والآية اللي نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر. ومش معناها اعمل اللي إنت عايزه… معناها: ارجع.
 
 A Verse and Its Story · 3 · آية وحكايتها · ٣
 
@@ -332,21 +332,21 @@ Footage: Pixabay (max_bbb) · Ambience: BigSoundBank (Joseph Sardin)
 #QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Tafsir
 ```
 
-**Titre YouTube (63/100)**
+**Titre YouTube (78/100)**
 
 ```text
-They had killed many… and came to ask · قتلوا كتير… وجم يسألوا!
+They had committed grave sins… and came to ask · عملوا ذنوب كبيرة… وجم يسألوا!
 ```
 
 **Description YouTube (Shorts)**
 
 ```text
-They had killed many… and came to ask
-قتلوا كتير… وجم يسألوا!
+They had committed grave sins… and came to ask
+عملوا ذنوب كبيرة… وجم يسألوا!
 
-People who had killed much and committed adultery much came to the Prophet ﷺ and asked: is there any expiation for what we have done? The verse that came down is for everyone who thinks his sin is too great to be forgiven. It does not mean: do as you please. It means: come back.
+People who had committed grave sins came to the Prophet ﷺ and asked: is there any expiation for what we have done? The verse that came down is for everyone who thinks his sin is too great to be forgiven. It does not mean: do as you please. It means: come back.
 
-ناس قتلوا كتير وزنوا كتير… وجم للنبي ﷺ يسألوا: اللي عملناه ليه كفّارة؟ والآية اللي نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر. ومش معناها اعمل اللي إنت عايزه… معناها: ارجع.
+ناس عملوا ذنوب كبيرة… وجم للنبي ﷺ يسألوا: اللي عملناه ليه كفّارة؟ والآية اللي نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر. ومش معناها اعمل اللي إنت عايزه… معناها: ارجع.
 
 A Verse and Its Story · 3 · آية وحكايتها · ٣
 

@@ -123,6 +123,7 @@ In the film the shorts' follow calls are left out (`reuse` with `lines:`).
 | « سكت », « ساكت », « بتسكّتنا », « مسكّتانا »: any word of silence for « not asking » | « ساب الدعاء », « بتبعدنا عن الدعاء » | he asked for every word of silence to be changed (2026-11-11); a du'a can be said in the heart, the image was ours |
 | « شاب » alone for « grew old » | « راسه شابت » | read as « young man » (شابّ), on screen and by the voice |
 | « مضرب المثل في الصبر » | the proverb as people say it: « بنقول يا صبر أيوب… » | he flagged the phrase without a reason; our reading: a standard-Arabic turn in an Egyptian line |
+| « قتلوا كتير… وزنوا كتير » (grave sins named by our voice) | « عملوا ذنوب كبيرة » | he asked for the change and gave the words (2026-11-12), no reason given; our reading: the verse and the written reference say the rest, our voice does not name such sins bluntly. The hook is less concrete: make up for it with the question the people asked |
 | « تحت إيدك », « تحت إيدنا », said in several lines | « تقدر على حد », « مصير قوم كاملين… بكلمة منه » | repeated and flat (2026-11-11): he asked for more telling words; one image said once, not a filler said four times |
 | an ending without a call | « تابعنا عشان تعرف بقية القصة. » as the last line | he wants the call said |
 | an ending that only teases | how the wisdom showed here, then what differs next | what tells the parts apart is the reason to follow |
