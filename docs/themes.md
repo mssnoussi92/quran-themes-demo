@@ -346,6 +346,17 @@ porte les mots dont on a besoin.
 - **Le registre** n'a pas de type pour une source scientifique : un fichier (`content/sources/science.yaml` : id,
   référence, lien) et `rules.py` qui l'accepte, à faire avec le script.
 
+### Ses corrections du script (propriétaire, 2026-11-12)
+
+« Pour l'embryologie, oui : ne cite pas ce qui est prouvé faux ; le Coran n'a pas mentionné les 40 jours ; le tafsir
+est un effort personnel d'Ibn Kathir et des autres. Et après « إحنا مش بنقول إن العلم أثبت القرآن… », mets toujours
+آيات et سنريهم آياتنا. Et enlève « المفسرين القدام، زي ابن كثير… حاجة مستحيلة ». » **Fait** : les quarante jours ne
+sont pas dits (avis donné : ils viennent de Bukhari 3208, un hadith de notre politique, et non d'un tafsir seul ;
+l'effort des savants porte sur sa lecture) ; la lecture des anciens de 6:125 est retirée ; après la réplique
+d'honnêteté, la voix dit « القرآن كتاب آيات » et **le récitateur** récite 41:53 jusqu'au premier arrêt (« ۗ »)
+pendant que « سنريهم آياتنا » s'écrit : la voix de synthèse ne dit pas des mots du Coran. Durées : 1:49, 2:05, 2:11.
+Question posée : la même signature pour clore l'épisode d'Abou Lahab, qui n'a pas de réplique d'honnêteté ?
+
 ### Le style validé, les trois épisodes choisis (propriétaire, 2026-11-12 : « oui je valide ; et fais les 3 : Abou Lahab, 6:125 et l'embryologie »)
 
 Lu comme : **le style des images est validé** ; **les trois épisodes sont Abou Lahab (111:1-5), 6:125 et

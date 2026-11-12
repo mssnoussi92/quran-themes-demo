@@ -12,8 +12,8 @@ raconte davantage.
 | | Épisode | Durée estimée | Récitation | Répliques | Raisonnement de la session |
 | --- | --- | --- | --- | --- | --- |
 | 1 | `lahab` | 1:49 | 0:25 | 16 | 2 |
-| 2 | `sky` | 2:05 | 0:32 | 15 | 0 |
-| 3 | `womb` | 1:59 | 0:40 | 14 | 1 |
+| 2 | `sky` | 2:05 | 0:45 | 13 | 0 |
+| 3 | `womb` | 2:11 | 0:53 | 13 | 1 |
 
 ## Épisode 1 · `lahab` · كلمة واحدة… وما قالهاش · One sentence… he never said it
 
@@ -69,7 +69,7 @@ Environ **1:49** · 0:25 de récitation · 16 répliques, dont 2 de raisonnement
 
 ## Épisode 2 · `sky` · صدر بيضيق… كل ما تطلع لفوق · A chest that tightens as you rise
 
-Environ **2:05** · 0:32 de récitation · 15 répliques, dont 0 de raisonnement de la session.
+Environ **2:05** · 0:45 de récitation · 13 répliques, dont 0 de raisonnement de la session.
 
 **L'image** : Un ballon à gaz dans un ciel de haute altitude (dessiné, en silhouette, sans personne dans la nacelle visible), les nuages loin dessous ; le Puy de Dôme et un baromètre (dessinés) ; des photos du ciel (ESA, crédit écrit sur l'image). Frise : « ~٣٠ ق.م » (chronique Han), « ٦١٠ » (le Coran, en vert), « ١٦٤٨ » (Pascal), « ١٧٨٣ » (premier vol habité), « ١٨٧٥ » (le Zénith).
 
@@ -82,28 +82,28 @@ Environ **2:05** · 0:32 de récitation · 15 répliques, dont 0 de raisonnement
 **0:11 · narration** (image : le Puy de Dôme et le baromètre, frise sur ١٦٤٨) · d'après : Périer et Pascal, Puy de Dôme, 19 septembre 1648 ; la chronique des Han (~30 av. J.-C.) (à sourcer) · source écrite à l'écran
 - قبلها بقرنين… سنة ١٦٤٨… طلعوا بمقياس على جبل في فرنسا… ولقوا إن الهوا بيخف كل ما تطلع لفوق.  
   *Two centuries earlier, in 1648… they carried a gauge up a mountain in France… and found the air grows thinner the higher you go.* · **nouvelle**
-- وقبلها بكتير… الناس كانت بتتعب على الجبال العالية… من غير ما تعرف ليه.  
-  *And long before that… people fell ill on high mountains… without knowing why.* · **nouvelle**
 - طب كتاب نزل في صحرا من ١٤٠٠ سنة… قبل أول إنسان يطير بأكتر من ألف سنة… قال إيه؟  
   *So a book revealed in a desert 1,400 years ago… more than a thousand years before the first human flew… what did it say?* · **nouvelle**
 
-**0:35** · **Verset récité** · Al-An'am 6:125 · 33 s (image : le ciel, photo de l'ESA, frise sur ٦١٠)  
+**0:27** · **Verset récité** · Al-An'am 6:125 · 33 s (image : le ciel, photo de l'ESA, frise sur ٦١٠)  
   فَمَن يُرِدِ ٱللَّهُ أَن يَهْدِيَهُۥ يَشْرَحْ صَدْرَهُۥ لِلْإِسْلَـٰمِ ۖ وَمَن يُرِدْ أَن يُضِلَّهُۥ يَجْعَلْ صَدْرَهُۥ ضَيِّقًا حَرَجًا كَأَنَّمَا يَصَّعَّدُ فِى ٱلسَّمَآءِ ۚ كَذَٰلِكَ يَجْعَلُ ٱللَّهُ ٱلرِّجْسَ عَلَى ٱلَّذِينَ لَا يُؤْمِنُونَ  
   *So whoever Allāh wants to guide - He expands his breast to [contain] Islām; and whoever He wants to send astray - He makes his breast tight and constricted as though he were climbing into the sky. Thus does Allāh place defilement upon those who do not believe.* (Saheeh International)
 
-**1:08 · narration** (image : le ciel qui s'assombrit en montant) · d'après : sens d'après [Al-Tafsir al-Muyassar](https://quran.com/6:125/tafsirs/16) ; lecture des anciens : [Ibn Kathir](https://quran.com/6:125/tafsirs/14) (Ibn Abbas, Ibn Jarir), [as-Sa'di](https://quran.com/6:125/tafsirs/91) · référence écrite à l'écran, jamais lue
+**1:01 · narration** (image : le ciel qui s'assombrit en montant) · d'après : sens d'après [Al-Tafsir al-Muyassar](https://quran.com/6:125/tafsirs/16) · référence écrite à l'écran, jamais lue
 - يعني: اللي ربنا عايز يهديه… يفتح قلبه للإيمان… واللي يضله… يخلي صدره ضيق.  
   *Meaning: whomever God wills to guide… He opens his heart to faith… and whomever He sends astray… He makes his chest tight.* · **nouvelle**
-- المفسرين القدام، زي ابن كثير، فهموها: زي اللي بيحاول يطلع السما… حاجة مستحيلة.  
-  *The early commentators, like Ibn Kathir, read it as: like someone trying to climb to the sky… something impossible.* · **nouvelle**
 - والتفسير الميسر قال: زي اللي بيطلع لطبقات الجو العالية… فيضيق نفَسه.  
   *And al-Tafsir al-Muyassar says: like one rising into the upper air… whose breath grows short.* · **nouvelle**
 
-**1:29 · narration** (image : la frise entière, ٦١٠ et ١٧٨٣ allumés)
-- إحنا مش بنقول إن العلم أثبت القرآن… القرآن مش كتاب فيزيا.  
-  *We are not saying science proved the Quran… the Quran is not a physics book.* · **nouvelle**
-- بس الصورة دي: صدر بيضيق كل ما تطلع لفوق… اتقالت قبل ما إنسان يطير بأكتر من ألف سنة.  
-  *But this image—a chest tightening as you rise—was spoken more than a thousand years before anyone flew.* · **nouvelle**
+**1:15 · narration** (image : la frise entière, ٦١٠ et ١٧٨٣ allumés)
+- والصورة دي: صدر بيضيق كل ما تطلع لفوق… اتقالت قبل ما إنسان يطير بأكتر من ألف سنة.  
+  *This image—a chest tightening as you rise—was spoken more than a thousand years before anyone flew.* · **nouvelle**
+- إحنا مش بنقول إن العلم أثبت القرآن… القرآن مش كتاب فيزيا… القرآن كتاب آيات.  
+  *We are not saying science proved the Quran… the Quran is not a physics book… it is a book of signs.* · **nouvelle**
+
+**1:29** · **Verset récité** · Fussilat 41:53, jusqu'au premier arrêt « ۗ » (« أنه الحق ») · 12 s (image : « سنريهم آياتنا » en or, en grand, sur la frise entière)  
+  سَنُرِيهِمْ ءَايَـٰتِنَا فِى ٱلْـَٔافَاقِ وَفِىٓ أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ ٱلْحَقُّ  
+  *We will show them Our signs in the horizons and within themselves until it becomes clear to them that it is the truth.* (Saheeh International)
 
 **1:42 · narration** (image : le ciel qui s'ouvre, l'aube) · d'après : [as-Sa'di](https://quran.com/6:125/tafsirs/91) sur 6:125 · référence écrite à l'écran, jamais lue
 - والآية أصلًا مش عن الطيران… عن قلب مقفول قدام الحق.  
@@ -119,7 +119,7 @@ Environ **2:05** · 0:32 de récitation · 15 répliques, dont 0 de raisonnement
 
 ## Épisode 3 · `womb` · كلمة واحدة لمرحلة محدش كان يشوفها · One word for a stage no one could see
 
-Environ **1:59** · 0:40 de récitation · 14 répliques, dont 1 de raisonnement de la session.
+Environ **2:11** · 0:53 de récitation · 13 répliques, dont 1 de raisonnement de la session.
 
 **L'image** : Une sangsue dans l'eau (dessinée, en silhouette) ; un microscope ancien (dessiné) ; **aucun embryon dessiné ni photographié tant que le propriétaire n'a pas tranché** (voir les points à trancher). Frise : « ٣٥٠ ق.م » (Aristote), « ١٧٠ » (Galien), « ٦١٠ » (le Coran, en vert), « ١٣٧٣ » (mort d'Ibn Kathir), « ١٩١٤ » (collection Carnegie).
 
@@ -138,24 +138,26 @@ Environ **1:59** · 0:40 de récitation · 14 répliques, dont 1 de raisonnement
   *And certainly did We create man from an extract of clay. Then We placed him as a sperm-drop in a firm lodging [i.e., the womb]. Then We made the sperm-drop into a clinging clot, and We made the clot into a lump [of flesh], and We made [from] the lump, bones, and We covered the bones with flesh; then We developed him into another creation. So blessed is Allāh, the best of creators.* (Saheeh International)
 
 **1:06 · narration** (image : la sangsue dans l'eau) · d'après : sens d'après [Ibn Kathir](https://quran.com/23:14/tafsirs/14) (« علقة حمراء على شكل العلقة مستطيلة ») et [Al-Tafsir al-Muyassar](https://quran.com/23:14/tafsirs/16) (« دمًا أحمر ») sur 23:14 ; Carnegie, stade 11 (~24 jours, 2,5 à 4,5 mm) (à sourcer) · référence écrite à l'écran, jamais lue
-- كلمة واحدة: علقة.  
-  *One word: 'alaqa.* · **nouvelle**
-- ابن كثير قال: علقة حمرا… على شكل العلقة… مستطيلة.  
-  *Ibn Kathir wrote: a red 'alaqa… shaped like a leech… elongated.* · **nouvelle**
+- كلمة واحدة: علقة. ابن كثير قال: حمرا… على شكل العلقة… مستطيلة.  
+  *One word: 'alaqa. Ibn Kathir wrote: red… shaped like a leech… elongated.* · **nouvelle**
 - والعلقة: الدودة اللي بتعيش في المية… وبتلزق وتمص الدم.  
   *And the leech: the worm that lives in water… that clings and feeds on blood.* · **nouvelle**
-- وده شكل الجنين في أسبوعه الرابع تقريبًا: مستطيل… صغير… ولازق في رحم أمه، بياخد منه غذاه.  
-  *And that is roughly the embryo in its fourth week: elongated… tiny… attached to its mother's womb, drawing its nourishment from it.* · **nouvelle**
+- وده شكل الجنين في أسبوعه الرابع: مستطيل… ولازق في رحم أمه، بياخد منه غذاه.  
+  *And that is the embryo in its fourth week: elongated… attached to its mother's womb, drawing its nourishment from it.* · **nouvelle**
 - وابن كثير كتب الكلام ده من أكتر من ستمية سنة… من غير ميكروسكوب.  
   *And Ibn Kathir wrote this over six hundred years ago… without a microscope.* · **nouvelle**
 
-**1:33 · narration** (image : la frise entière, ٦١٠ et ١٩١٤ allumés)
-- إحنا مش بنقول إن العلم أثبت القرآن… القرآن مش كتاب طب.  
-  *We are not saying science proved the Quran… the Quran is not a medical textbook.* · **nouvelle**
-- بس الكلمة اللي اختارها لمرحلة محدش كان يشوفها… هي اسم الشكل اللي شافوه بعدها بأكتر من ألف سنة.  
-  *But the word it chose for a stage no one could see… names the shape they saw more than a thousand years later.* · **nouvelle**
+**1:30 · narration** (image : la frise entière, ٦١٠ et ١٩١٤ allumés)
+- والكلمة اللي اختارها لمرحلة محدش كان يشوفها… هي اسم الشكل اللي شافوه بعدها بأكتر من ألف سنة.  
+  *And the word it chose for a stage no one could see… names the shape they saw more than a thousand years later.* · **nouvelle**
+- إحنا مش بنقول إن العلم أثبت القرآن… القرآن مش كتاب طب… القرآن كتاب آيات.  
+  *We are not saying science proved the Quran… the Quran is not a medical textbook… it is a book of signs.* · **nouvelle**
 
-**1:46 · narration** (image : le ciel, puis la lumière douce)
+**1:45** · **Verset récité** · Fussilat 41:53, jusqu'au premier arrêt « ۗ » (« أنه الحق ») · 12 s (image : « سنريهم آياتنا » en or, en grand, sur la frise entière)  
+  سَنُرِيهِمْ ءَايَـٰتِنَا فِى ٱلْـَٔافَاقِ وَفِىٓ أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ ٱلْحَقُّ  
+  *We will show them Our signs in the horizons and within themselves until it becomes clear to them that it is the truth.* (Saheeh International)
+
+**1:58 · narration** (image : le ciel, puis la lumière douce)
 - اللي خلقك وإنت تلاتة مللي… مش هينساك وإنت كبير.  
   *The One who created you when you were three millimetres long… will not forget you now that you are grown.* · **nouvelle · raisonnement de la session, signalé**
 - تلات آيات: راجل… وسما… وجنين.  
@@ -175,13 +177,21 @@ est vérifiée sur une source sérieuse avant d'entrer au registre ; une date qu
 **Ce que le script ne dit pas, et pourquoi** :
 - *Abou Lahab* : qu'il a entendu la sourate (aucune de nos sources ne le dit) ; combien d'années il a vécu après
   (aucune ne le date) ; « تبًّا لك » : la voix dit « دعا عليه », sans répéter l'insulte.
-- *6:125* : que personne ne savait qu'on respire mal en montagne (la chronique des Han le décrit) ; la réplique dit
-  « من غير ما تعرف ليه ». Al-Muyassar est un tafsir de notre époque : c'est pour cela que le script donne aussi la
-  lecture des anciens (Ibn Kathir, as-Sa'di : une chose impossible).
-- *L'embryologie* : **nos trois tafsirs placent la علقة après quarante jours** (Bukhari 3208) ; le script cite la
-  forme qu'Ibn Kathir lui donne, pas son temps, et ne dit pas que la science confirme l'ordre « les os, puis la
-  chair », qui est discuté. C'est le choix du propriétaire, fait en connaissant l'objection : un spectateur peut
-  l'opposer en commentaire.
+- *L'embryologie* : les quarante jours. **Décision du propriétaire (2026-11-12)** : « ne cite pas ce qui est prouvé
+  faux ; le Coran n'a pas mentionné les 40 jours ; le tafsir est un effort personnel d'Ibn Kathir et des autres ». Le
+  verset ne les dit pas, c'est exact. Mais nos trois tafsirs les tiennent d'un hadith de notre politique, Bukhari 3208
+  (Ibn Mas'oud) ; l'effort des savants porte sur la façon de le lire (Muslim 2645 dit quarante-deux nuits, puis la
+  forme, la chair et les os). Le script cite la forme qu'Ibn Kathir donne à la علقة, pas son temps, et ne dit pas que
+  la science confirme « les os, puis la chair », qui est discuté. Un spectateur peut opposer Bukhari 3208 en
+  commentaire.
+- *6:125* : la lecture des anciens (« une chose impossible ») est retirée à la demande du propriétaire ; la réplique de
+  sens repose sur al-Muyassar, dont le nom est écrit à l'écran : elle n'est pas prêtée aux anciens. La réplique sur la
+  chronique des Han est retirée pour la longueur ; aucune réplique ne dit que personne ne savait qu'on respire mal
+  en montagne.
+- *La signature* (demande du propriétaire : « toujours mettre آيات et سنريهم آياتنا » après la réplique d'honnêteté) :
+  la voix dit « القرآن كتاب آيات », puis le récitateur récite 41:53 jusqu'au premier arrêt (« ۗ », après « أنه الحق »)
+  pendant que « سنريهم آياتنا » s'écrit en or. **La voix de synthèse ne dit jamais « سنريهم آياتنا »** : ce sont des mots
+  du Coran. Durée estimée de la coupe : 12,5 s (le verset entier dure 20,8 s), à mesurer à la coupe.
 
 **Les points à trancher** :
 1. *L'embryologie, l'image* : rien n'est dessiné ni montré de l'embryon dans ce script (la sangsue, un microscope, la
