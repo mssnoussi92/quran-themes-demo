@@ -8,11 +8,14 @@ serves files of 20 MiB at most), the thumbnail and the covers, and every text to
 it writes a folder, which a session publishes as a private page (skill release-render).
 
   uv run --with pyyaml python3 tools/trial/gallery.py --film film=video/out/essai-2 --film dua=video/out/dua/ci-2 \\
-      [--release dua=<url of its draft release>] [--out build/gallery]
+      [--release dua=<url of its draft release>] [--tall dua=video/out/tall/dua-film-9x16.mp4] \\
+      [--release dua-9x16=<url of the vertical film's draft release>] [--out build/gallery]
 
 --film ID=DIR: a film, or a series (shorts that stand alone: no 16:9 card). DIR holds the delivered videos and stills, named as tools/trial/videos.py names them
 (the TikTok twins are not previewed: the same video, signed with the TikTok name). Films are shown in the order
 given, the last one first. Encoding is skipped for a preview newer than its video.
+--tall ID=MP4: the film in 9:16 (for Facebook), shown in its film's section with its Facebook text
+(`publish.out` of the film with « -9x16 », tools/trial/publish.py --tall); its release is given as --release ID-9x16=URL.
 """
 from __future__ import annotations
 
@@ -51,7 +54,8 @@ def stamp(t: float) -> str:
 
 
 def preview(src: Path, dest: Path, wide: bool) -> None:
-    """`src` encoded small into `dest`: 480p for a film, 540 px wide for a short; again at a set bitrate if too big."""
+    """`src` encoded small into `dest`: 480p for a film, 540 px wide for a short or a vertical film; again at a set
+    bitrate if too big."""
     if dest.exists() and dest.stat().st_mtime >= src.stat().st_mtime and dest.stat().st_size <= MOST:
         return
     scale = "scale=854:480" if wide else "scale=540:960"
@@ -104,11 +108,19 @@ def texts(path: Path) -> list[dict]:
     return sections
 
 
+def frame(src: Path, dest: Path, at: float, width: int) -> None:
+    """One picture of a video, for the poster of a video that has no cover (the vertical film)."""
+    if not (dest.exists() and dest.stat().st_mtime >= src.stat().st_mtime):
+        run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-ss", str(at), "-i", str(src), "-frames:v", "1",
+             "-vf", f"scale={width}:-2", "-q:v", "4", str(dest)])
+
+
 def covers(what: list[dict], key: str) -> bool:
     return all(key in ((s.get("validated") or {}).get("what") or []) for s in what)
 
 
-def film_data(film_id: str, folder: Path, out: Path, release: str | None) -> dict:
+def film_data(film_id: str, folder: Path, out: Path, release: str | None, tall: Path | None = None,
+              tall_release: str | None = None) -> dict:
     film = yaml.safe_load((TRIAL / f"{film_id}.yaml").read_text(encoding="utf-8"))
     series = "chapters" not in film             # a series: shorts that stand alone, no film and no thumbnail
     shorts = [yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film.get("shorts") or film["thumbnail"]["panels"]]
@@ -141,9 +153,31 @@ def film_data(film_id: str, folder: Path, out: Path, release: str | None) -> dic
                       "image": picture["name"], "length": stamp(seconds(src)), "ar": title["ar"], "en": title["en"],
                       "blocks": section["blocks"], "notes": section["notes"]})
         print(f"  {slug}: {(media / (slug + '.mp4')).stat().st_size / 1e6:.1f} MB", flush=True)
+    upright = None
+    if tall:
+        # The same film in 9:16, for Facebook: its own text, written beside the film's (publish.py --tall).
+        if series:
+            sys.exit(f"error: --tall: {film_id} is a series, it has no film")
+        said = (film.get("tall") or {}).get("validated") or {}
+        written = ROOT / film["publish"]["out"]
+        written = written.with_name(written.stem + "-9x16" + written.suffix)
+        if not tall.is_file() or not written.is_file():
+            sys.exit(f"error: {film_id}: {tall if not tall.is_file() else written} is missing (tools/trial/publish.py --film {film_id} --tall)")
+        part = texts(written)
+        if len(part) != 1:
+            sys.exit(f"error: {written}: {len(part)} sections, one expected")
+        slug = f"{film.get('files', film_id)}-film-9x16"
+        preview(tall, media / f"{slug}.mp4", False)
+        frame(tall, media / f"{slug}.jpg", 1.0, 540)
+        upright = {"wide": False, "tall": True, "slug": slug, "file": tall.name, "twin": None, "image": None,
+                   "length": stamp(seconds(tall)), "ar": film["publish"]["title"]["ar"], "en": film["publish"]["title"]["en"],
+                   "blocks": part[0]["blocks"], "notes": part[0]["notes"], "release": tall_release,
+                   "ok": all(k in (said.get("what") or []) for k in ("montage", "publish")), "on": str(said.get("on", said.get(True, "")))}
+        print(f"  {slug}: {(media / (slug + '.mp4')).stat().st_size / 1e6:.1f} MB", flush=True)
     everyone = shorts if series else [film, *shorts]
     return {"id": film_id, "series": series, "anchor": re.sub(r"[^a-z0-9]+", "-", film["publish"]["series"]["en"].lower()).strip("-"),
             "ar": film["publish"]["series"]["ar"], "en": film["publish"]["series"]["en"], "cards": cards, "release": release,
+            "tall": upright,
             "videos_ok": all(s.get("validated") for s in everyone) and covers(everyone, "voice") and covers(everyone, "montage"),
             "texts_ok": covers(everyone, "publish"), "date": str((everyone[0].get("validated") or {}).get("on", (everyone[0].get("validated") or {}).get(True, "")))}
 
@@ -194,7 +228,8 @@ section.film { display: flex; flex-direction: column; gap: 18px; scroll-margin-t
 .shorts { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; align-items: start; }
 article { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
 article.wide { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 18px; }
-@media (max-width: 860px) { article.wide { display: flex; } }
+article.tall { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 18px; }
+@media (max-width: 860px) { article.wide, article.tall { display: flex; } }
 .look { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 video { width: 100%; background: #000; border-radius: 8px; display: block; }
 article:not(.wide) video { aspect-ratio: 9 / 16; max-height: 560px; object-fit: contain; }
@@ -275,14 +310,22 @@ def card(c: dict) -> str:
                    f'<pre id="{ident}" dir="auto">{e(b["text"])}</pre></div>')
     notes = "".join(f'<p class="notes">{e(re.sub("`", "", n))}</p>' for n in c["notes"])
     twin = f' · version TikTok : <code>{e(c["twin"])}</code>' if c["twin"] else ""
-    kind = "Film 16:9" if c["wide"] else "Short 9:16"
+    kind = "Film 16:9" if c["wide"] else "Film 9:16, pour Facebook" if c.get("tall") else "Short 9:16"
     picture = "Vignette" if c["wide"] else "Couverture"
-    return f'''<article class="{'wide' if c['wide'] else 'short'}">
+    if c.get("tall"):
+        where = (f'release brouillon : <a href="{e(c["release"])}">sur GitHub</a>' if c["release"]
+                 else "envoyé dans la conversation, dans aucune release")
+        state = (f'<span class="pill good">Montage et texte validés le {e(c["on"])}</span>' if c["ok"]
+                 else '<span class="pill wait">À valider</span>')
+        shown = f'<div class="pills">{state}</div><p class="meta">Le même film, monté comme ses shorts : même voix, même minutage. Fichier : {where}.</p>'
+    else:
+        shown = f'<figure><img src="media/{c["slug"]}.jpg" alt="{picture} : {e(c["en"])}" loading="lazy"><figcaption>{picture} : <code>{e(c["image"])}</code></figcaption></figure>'
+    return f'''<article class="{'wide' if c['wide'] else 'tall' if c.get('tall') else 'short'}">
   <div class="look">
     <h3 dir="rtl" lang="ar">{e(c["ar"])}<span dir="ltr" lang="en">{e(c["en"])}</span></h3>
     <video controls playsinline preload="none" poster="media/{c["slug"]}.jpg"><source src="media/{c["slug"]}.mp4" type="video/mp4"></video>
     <p class="meta">{kind} · {c["length"]} · aperçu allégé · fichier à publier : <code>{e(c["file"])}</code>{twin}</p>
-    <figure><img src="media/{c["slug"]}.jpg" alt="{picture} : {e(c["en"])}" loading="lazy"><figcaption>{picture} : <code>{e(c["image"])}</code></figcaption></figure>
+    {shown}
   </div>
   <div class="texts">{tabs}{blocks}{notes}</div>
 </article>'''
@@ -291,13 +334,13 @@ def card(c: dict) -> str:
 def page(films: list[dict], made: str) -> str:
     e = html.escape
     summary = "".join(
-        f'<a href="#{f["anchor"]}"><span class="ar" dir="rtl" lang="ar">{e(f["ar"])}</span><span class="en">{e(f["en"])} · {f"une série, {len(f['cards'])} shorts" if f["series"] else f"un film et {len(f['cards']) - 1} shorts"}</span>{pills(f)}</a>'
+        f'<a href="#{f["anchor"]}"><span class="ar" dir="rtl" lang="ar">{e(f["ar"])}</span><span class="en">{e(f["en"])} · {f"une série, {len(f['cards'])} shorts" if f["series"] else f"un film et {len(f['cards']) - 1} shorts" + (", le film en 9:16" if f["tall"] else "")}</span>{pills(f)}</a>'
         for f in films)
     sections = ""
     for f in films:
         where = (f'Fichiers à publier (pleine qualité, versions TikTok comprises) : <a href="{e(f["release"])}">la release brouillon sur GitHub</a>, visible de vous seul une fois connecté.'
                  if f["release"] else "Fichiers à publier (pleine qualité, versions TikTok comprises) : ceux envoyés dans la conversation ; ils ne sont dans aucune release.")
-        wide = "".join(card(c) for c in f["cards"] if c["wide"])
+        wide = "".join(card(c) for c in f["cards"] if c["wide"]) + (card(f["tall"]) if f["tall"] else "")
         shorts = "".join(card(c) for c in f["cards"] if not c["wide"])
         sections += f'''<section class="film" id="{f["anchor"]}">
   <header><h2 dir="rtl" lang="ar">{e(f["ar"])}<span dir="ltr" lang="en">{e(f["en"])}</span></h2>{pills(f)}</header>
@@ -335,15 +378,17 @@ def main() -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--film", action="append", required=True, metavar="ID=DIR")
     p.add_argument("--release", action="append", default=[], metavar="ID=URL")
+    p.add_argument("--tall", action="append", default=[], metavar="ID=MP4", help="the film in 9:16 (its release: --release ID-9x16=URL)")
     p.add_argument("--out", type=Path, default=ROOT / "build" / "gallery")
     p.add_argument("--date", help="the date written at the foot of the page (default: today)")
     args = p.parse_args()
     releases = dict(item.split("=", 1) for item in args.release)
+    talls = {k: Path(v) for k, v in (item.split("=", 1) for item in args.tall)}
     films = []
     for item in args.film:
         film_id, _, folder = item.partition("=")
         print(f"{film_id}:", flush=True)
-        films.append(film_data(film_id, Path(folder), args.out, releases.get(film_id)))
+        films.append(film_data(film_id, Path(folder), args.out, releases.get(film_id), talls.get(film_id), releases.get(f"{film_id}-9x16")))
     from datetime import date
     args.out.mkdir(parents=True, exist_ok=True)
     (args.out / "index.html").write_text(page(films[::-1], args.date or date.today().isoformat()), encoding="utf-8")

@@ -181,6 +181,7 @@ a film is delivered, corrected or validated:
 ```bash
 uv run --with pyyaml python3 tools/trial/gallery.py --film film=<dir> --film dua=<dir> --film <new>=<dir> \
     --release dua=<url of the draft release> --release <new>=<url>          # every film, the newest last
+    [--tall dua=<the film in 9:16>.mp4 --release dua-9x16=<url>]            # a film's vertical version, for Facebook
 ```
 
 - `<dir>` holds a film's delivered videos and stills under the names `tools/trial/videos.py` gives them
