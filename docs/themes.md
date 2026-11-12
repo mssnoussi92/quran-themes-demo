@@ -242,7 +242,13 @@ du récit), l'image de jour du short 1 (la prière du vendredi est à midi : plu
 du propriétaire à jour. **À publier par lui.** La dernière réplique du short 3 promet « le verset suivant et son
 récit » : la suite (réserve ci-dessus) attend son choix.
 
-### La suite de la série : trois versets proposés (session, 2026-11-12, à choisir par le propriétaire)
+### La suite de la série : trois versets candidats (session, 2026-11-12)
+
+**Décision du propriétaire (2026-11-12)** : « laisse-les comme candidats pour cette série ; je préfère qu'on commence à
+publier, ensuite on poursuit ». Rien n'est écrit ni enregistré avant son choix, qui se fera avec les premières
+mesures. Échéance : le short 3 (l'espoir) promet le verset suivant ; si la série sort un vendredi par semaine à
+partir du 20 novembre (`docs/retention/calendar.md`, proposé), le short 4 doit sortir le 11 décembre, donc le choix
+vers le 27 novembre (script, sa validation, voix, clips à lui montrer, dessins, rendu : environ une semaine).
 
 Cherchés avec les cinq filtres ; récits relus dans hadith-api, sens dans al-Muyassar et as-Sa'di (quran.ai),
 récitation de Tawfiq As-Sayegh mesurée sur mp3quran (lecture 17). Aucun n'est encore dans le registre.
