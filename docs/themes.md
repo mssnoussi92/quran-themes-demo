@@ -242,6 +242,30 @@ du récit), l'image de jour du short 1 (la prière du vendredi est à midi : plu
 du propriétaire à jour. **À publier par lui.** La dernière réplique du short 3 promet « le verset suivant et son
 récit » : la suite (réserve ci-dessus) attend son choix.
 
+### La suite de la série : trois versets proposés (session, 2026-11-12, à choisir par le propriétaire)
+
+Cherchés avec les cinq filtres ; récits relus dans hadith-api, sens dans al-Muyassar et as-Sa'di (quran.ai),
+récitation de Tawfiq As-Sayegh mesurée sur mp3quran (lecture 17). Aucun n'est encore dans le registre.
+
+| Short | Verset | Le fait du récit | Ce qu'on y gagne | Dessin (choses et lieux) |
+| --- | --- | --- | --- | --- |
+| 4 | 24:22 (28 s) | Abou Bakr jure de ne plus rien donner à un parent pauvre, Mistah, qui avait pris part aux paroles contre sa fille ; le verset descend, il dit « بلى والله إني أحب أن يغفر الله لي » et rend la pension (Bukhari 4750 ; as-Sa'di le raconte) | pardonner à un proche qui t'a fait du mal : « ألا تحبون أن يغفر الله لكم » | une maison de Médine, une bourse posée devant une porte, qui revient |
+| 5 | 8:32-33 (40 s) | Abou Jahl demande à Dieu une pluie de pierres « si c'est la vérité » ; le verset répond (Bukhari 4648, Muslim 2796) | le pardon demandé retient le châtiment : « وهم يستغفرون » (al-Muyassar, as-Sa'di) | la vallée de La Mecque sous un ciel lourd, aucune pierre ; le ciel qui s'ouvre |
+| 6 | 9:118 (37 s) | Ka'b ibn Malik dit la vérité au lieu d'une excuse : cinquante nuits sans que personne lui parle, une lettre d'un roi qui l'invite, qu'il brûle dans un four ; la bonne nouvelle à l'aube, sur un toit (Bukhari 4418) | quand la terre se resserre, il n'y a de refuge qu'en Dieu ; la vérité l'a sauvé (as-Sa'di : « من عليهم بالصدق ») | une rue de marché vide, un four où brûle une lettre, un toit à l'aube |
+
+**Les points à trancher** :
+- **24:22** : le récit est dans celui de la calomnie contre Aïcha. La narration dirait « كلام وحش اتقال على بنته », sans
+  nommer l'accusation, comme pour `hope` (`sins-named`).
+- **9:118** commence par « وعلى الثلاثة », qui continue la phrase de 9:117 (« لقد تاب الله على النبي… »). Le sens tient
+  seul (al-Muyassar : « وكذلك تاب الله على الثلاثة »), mais 9:117-118 ferait environ une minute de récitation.
+- **Écartés** : 80:1-10 (Ibn Umm Maktum, Tirmidhi 3331), parce qu'al-Albani le juge « Sahih Isnaad », un jugement que
+  `content/policy.yaml` refuse ; 2:144 et 2:187, parce que ce sont des versets de jugement.
+- **En réserve** : 49:2 (Thabit ibn Qays, Bukhari 4846 : un gain moins direct pour le spectateur) ; 111:1-5 (Abou Lahab
+  sur as-Safa, Bukhari 4971 : 26 s).
+
+**Budget** : trois requêtes de voix (une par short, le jour où le script est validé), trois clips à vous montrer,
+trois dessins nouveaux, trois ambiances, un rendu GitHub Actions (environ 45 min).
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
