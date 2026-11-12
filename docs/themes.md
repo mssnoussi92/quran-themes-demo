@@ -266,11 +266,58 @@ récitation de Tawfiq As-Sayegh mesurée sur mp3quran (lecture 17). Aucun n'est 
   seul (al-Muyassar : « وكذلك تاب الله على الثلاثة »), mais 9:117-118 ferait environ une minute de récitation.
 - **Écartés** : 80:1-10 (Ibn Umm Maktum, Tirmidhi 3331), parce qu'al-Albani le juge « Sahih Isnaad », un jugement que
   `content/policy.yaml` refuse ; 2:144 et 2:187, parce que ce sont des versets de jugement.
-- **En réserve** : 49:2 (Thabit ibn Qays, Bukhari 4846 : un gain moins direct pour le spectateur) ; 111:1-5 (Abou Lahab
-  sur as-Safa, Bukhari 4971 : 26 s).
+- **En réserve** : 49:2 (Thabit ibn Qays, Bukhari 4846 : un gain moins direct pour le spectateur). 111:1-5 (Abou Lahab)
+  passe à la série « الإعجاز في القرآن » ci-dessous, à la demande du propriétaire.
 
 **Budget** : trois requêtes de voix (une par short, le jour où le script est validé), trois clips à vous montrer,
 trois dessins nouveaux, trois ambiances, un rendu GitHub Actions (environ 45 min).
+
+## Série proposée : « الإعجاز في القرآن » (idée du propriétaire, 2026-11-12)
+
+Demande du propriétaire : une série de deux ou trois shorts, comme la première. Son candidat : sourate al-Masad, parce
+que le Coran y annonce qu'Abou Lahab ira au Feu ; il l'a entendue, et s'il s'était fait musulman, il aurait démenti le
+Coran. La session en propose deux autres. **Rien n'est écrit** : comme la suite de « آية وحكايتها », la production
+attend les premières mesures (sa décision du même jour : publier d'abord).
+
+**Le cadre proposé** : des versets qui annoncent une chose avant qu'elle arrive, et la chose arrivée, écrite dans un
+tafsir de la politique ou un hadith de ses recueils. **Pas de « miracle scientifique »** : nos tafsirs ne le disent
+pas, ces lectures sont disputées entre savants, et une seule fausse expose la page et le Coran à la moquerie. Exemple :
+« في أدنى الأرض » (30:3) est souvent présenté comme « le point le plus bas de la terre » ; al-Muyassar lit « la terre
+la plus proche » (« أدنى أرض الشام إلى فارس »).
+
+| Short | Verset | Ce qu'il annonce | Ce qui est arrivé, et la source | Dessin (choses et lieux) |
+| --- | --- | --- | --- | --- |
+| 1 (propriétaire) | 111:1-5 (26 s) | Abou Lahab et sa femme iront au Feu | ils ne sont jamais devenus musulmans, « ni en apparence ni en secret » ; Ibn Kathir : « في هذه السورة معجزة ظاهرة ودليل واضح على النبوة… فكان هذا من أقوى الأدلة الباهرة على النبوة الظاهرة ». Le récit de la révélation : Bukhari 4971 (as-Safa, « تبا لك ») | la colline d'as-Safa au matin (« يا صباحاه »), des épines sur un chemin (al-Muyassar : elle en jetait sur le chemin du Prophète ﷺ) ; **aucune flamme** : le Feu est l'invisible |
+| 2 (session) | 54:43-46 (26 s) | « سيهزم الجمع ويولون الدبر », annoncé à La Mecque, avant l’émigration | al-Muyassar : « وقد حدث هذا يوم بدر » ; le Prophète ﷺ le récite à Badr (Bukhari 4875) ; Aïcha : ce passage est descendu à La Mecque quand elle était une petite fille qui jouait (Bukhari 4876, sur 54:46) | les puits et les dunes de Badr à l'aube, une tente ; aucun combat |
+| 3 (session) | 30:1-5 (38 s) | les Romains, vaincus par les Perses, vaincront « في بضع سنين » | al-Muyassar : « وقد تحقق ذلك فغلبت الروم الفرس بعد سبع سنين » ; as-Sa'di : « بضع », de trois à dix ans | deux empires sur une carte, une ville fortifiée, des étendards sans croix |
+
+**Les points à trancher** :
+- **Al-Masad, ce que nos sources ne disent pas** : qu'Abou Lahab a entendu la sourate. Le récit de la colère de sa femme
+  est chez Ibn Abi Hatim et al-Bazzar (cités par Ibn Kathir), hors des recueils de la politique. Le short dirait : elle est
+  descendue de son vivant, sur lui, par son nom, et il a vécu après. « S'il avait dit la shahada, même en mentant, le
+  Coran était démenti » est notre raisonnement, appuyé sur Ibn Kathir (« لا ظاهرا ولا باطنا ») : réplique signalée.
+- **L'objection qu'on entendra** (« un ennemi ne se convertit pas, ça ne prouve rien ») : Abou Soufyan, qui a combattu
+  le Prophète ﷺ, est devenu musulman (Bukhari 4280). Qu'un ennemi se convertisse était possible ; lui ne l'a pas fait.
+- **Ar-Rum** : le récit le plus connu, le pari d'Abou Bakr avec Quraysh, est jugé faible (« Daif ») par al-Albani
+  (Tirmidhi 3193, 3194) : il ne se raconte pas. Le récit jugé sahih (Tirmidhi 3192) dit autre chose : la sourate
+  serait descendue le jour de Badr, dans une autre lecture (« غَلَبَت »). Le short ne raconte donc pas de récit de
+  révélation : le verset, et son accomplissement d'après al-Muyassar.
+- **Badr** : Bukhari 4876 nomme 54:46, le verset suivant, et non 54:45 ; les deux sont dans le même passage, et
+  al-Muyassar dit l'accomplissement. Une bataille : rien du combat n'est dessiné.
+- **Écartés** : 48:27 (« لتدخلن المسجد الحرام ») : le retour de l'année suivante figurait déjà dans le traité
+  d'al-Hudaybiya (Bukhari 4252 : « وقاضاهم على أن يعتمر العام المقبل »), un sceptique dira que c'était négocié.
+  5:67 (« والله يعصمك من الناس », les gardes renvoyés, Tirmidhi 3046, hasan selon al-Albani) : fort, mais l'objection
+  du poison de Khaybar (Bukhari 4428) demande plus qu'un short.
+- **En réserve** : 2:23-24 (36 s), le défi lui-même (« ولن تفعلوا » ; al-Muyassar : « وستعجزون مستقبلا لا محالة ») :
+  le cœur du mot « إعجاز », mais sans fait qu'on peut montrer.
+- **La forme** : celle de « آية وحكايتها », sauf l'exemple de vie, qui va mal à une prophétie. À sa place, ce que ça
+  change pour le spectateur : si le Coran a dit vrai sur Abou Lahab, Badr et Rome, ses promesses sont vraies (réplique
+  de la session, signalée).
+- **Le nom** : « الإعجاز » promet souvent le scientifique ; « قالها القرآن… وحصلت » dit exactement ce que la série
+  montre. À lui de choisir.
+
+**Budget** : trois requêtes de voix, trois clips à lui montrer, trois dessins, trois ambiances, un rendu GitHub
+Actions ; quatre sources de hadith et trois de tafsir à inscrire au registre.
 
 ## Faits (ancien circuit)
 
