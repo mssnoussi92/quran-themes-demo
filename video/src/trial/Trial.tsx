@@ -415,6 +415,11 @@ const subSize = (text: string, layout: Layout) => {
   return Math.min(layout.sub.size, Math.floor((layout.sub.rows * width * 0.92) / (0.49 * Math.max(1, text.length))));
 };
 
+/** A formula of blessing is never cut between two rows: its spaces do not break (seen on the first frame of a
+ * short, 2026-11-12: « صلى الله عليه » on one row and « وسلم » on the next). */
+const FORMULAS = ["صلى الله عليه وسلم", "عليه السلام", "عليهم السلام", "رضي الله عنه", "رضي الله عنها", "رضي الله عنهم"];
+const whole = (text: string) => FORMULAS.reduce((out, formula) => out.split(formula).join(formula.replace(/ /g, " ")), text);
+
 export const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean; handle: string; layout?: Layout }> = ({ seg, t, last, handle, layout = PORTRAIT }) => {
   const { fps } = useVideoConfig();
   const local = t - seg.start;
@@ -436,7 +441,7 @@ export const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean;
           const point = line.phrases.length > 1 && i === line.phrases.length - 1;
           return (
             <div key={i} style={{ opacity: k, transform: `translateY(${(1 - k) * 18}px)`, color: point ? GOLD : "#fff", textWrap: "balance" }}>
-              {phrase.text}
+              {whole(phrase.text)}
             </div>
           );
         })}
