@@ -252,7 +252,7 @@ Footage: Pixabay (bellergy) · Ambience: BigSoundBank (Joseph Sardin)
 
 ## Short 3 · They had committed grave sins… and came to ask · عملوا ذنوب كبيرة… وجم يسألوا!
 
-`ayah-short-3-hope.mp4` (TikTok : `ayah-short-3-hope-tiktok.mp4`, signée `@quran.words.daily`) · 1:33 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-3-hope-cover.jpg`
+`ayah-short-3-hope.mp4` (TikTok : `ayah-short-3-hope-tiktok.mp4`, signée `@quran.words.daily`) · 1:30 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-3-hope-cover.jpg`
 
 **Facebook (8 hashtags)**
 
