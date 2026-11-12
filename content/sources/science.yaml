@@ -1,0 +1,114 @@
+# Sources scientifiques et historiques de la série « سنريهم آياتنا » (docs/themes.md, docs/scripts/signs.md) : ce sur
+# quoi repose une réplique qui donne une date ou un fait de science. Ce ne sont pas des textes cités : une étiquette
+# (`label`) écrite à l'écran sous la réplique, la référence complète dans la description, et les pages sur lesquelles la
+# session a vérifié le fait (`checked`), le 2026-11-12. Proposées : le propriétaire les valide avec les vidéos.
+
+- id: science.zenith-1875
+  type: science
+  ref: { author: "Gaston Tissandier, Joseph Crocé-Spinelli, Théodore Sivel", title: "L'ascension du ballon Zénith", publication: "15 avril 1875", year: 1875 }
+  url: https://en.wikipedia.org/wiki/Th%C3%A9odore_Sivel
+  label: { ar: "بالون زينيث، ١٨٧٥", en: "Zénith balloon, 1875" }
+  claim: "Le 15 avril 1875, le ballon Zénith monte à environ 8 600 m ; Sivel et Crocé-Spinelli meurent faute d'oxygène, Tissandier survit."
+  checked: { "on": '2026-11-12', sources: ["https://en.wikipedia.org/wiki/Th%C3%A9odore_Sivel", "https://en.wikipedia.org/wiki/Joseph_Croc%C3%A9-Spinelli", "https://centennialofflight.net/essay/Lighter_than_air/early_scientific_balloons/LTA7.htm"] }
+  status: proposed
+  notes: "Épisode sky, première réplique après le titre : « سنة ١٨٧٥… تلات رجالة طلعوا في السما ببالون », « ولما عدّوا تمانية كيلو… اتنين منهم ما رجعوش »."
+
+- id: science.perier-pascal-1648
+  type: science
+  ref: { author: "Florin Périer, Blaise Pascal", title: "Récit de la grande expérience de l'équilibre des liqueurs", publication: "Puy de Dôme, 19 septembre 1648", year: 1648 }
+  url: https://www.whipplemuseum.cam.ac.uk/explore-whipple-collections/meteorology/barometers
+  label: { ar: "تجربة باسكال، ١٦٤٨", en: "Pascal's experiment, 1648" }
+  claim: "Le 19 septembre 1648, Périer porte un baromètre au sommet du Puy de Dôme à la demande de Pascal : la colonne de mercure y est plus basse, l'air pèse moins en altitude."
+  checked: { "on": '2026-11-12', sources: ["https://www.whipplemuseum.cam.ac.uk/explore-whipple-collections/meteorology/barometers", "https://core-prod.cambridgecore.org/core/journals/dialogue-canadian-philosophical-review-revue-canadienne-de-philosophie/article/pascals-great-experiment/FD9B1366AA6ABE167BD36AEE1052853A"] }
+  status: proposed
+  notes: "Épisode sky : « سنة ١٦٤٨… طلعوا بمقياس على جبل في فرنسا… ولقوا إن الهوا بيخف كل ما تطلع لفوق »."
+
+- id: science.first-flight-1783
+  type: science
+  ref: { author: "Jean-François Pilâtre de Rozier, François Laurent d'Arlandes", title: "Premier vol libre habité, en montgolfière", publication: "Paris, 21 novembre 1783", year: 1783 }
+  url: https://en.wikipedia.org/wiki/Jean-Fran%C3%A7ois_Pil%C3%A2tre_de_Rozier
+  label: { ar: "أول طيران للإنسان، ١٧٨٣", en: "First human flight, 1783" }
+  claim: "Le 21 novembre 1783, Pilâtre de Rozier et d'Arlandes font le premier vol libre habité : plus de mille ans après la révélation (610-632)."
+  checked: { "on": '2026-11-12', sources: ["https://en.wikipedia.org/wiki/Jean-Fran%C3%A7ois_Pil%C3%A2tre_de_Rozier", "https://www.guinnessworldrecords.com/world-records/385167-first-free-manned-balloon-flight"] }
+  status: proposed
+  notes: "Épisode sky : « قبل أول إنسان يطير بأكتر من ألف سنة », « اتقالت قبل ما إنسان يطير بأكتر من ألف سنة »."
+
+- id: science.einstein-1917
+  type: science
+  ref: { author: "Albert Einstein", title: "Kosmologische Betrachtungen zur allgemeinen Relativitätstheorie", publication: "Sitzungsberichte der Preußischen Akademie der Wissenschaften", year: 1917 }
+  url: https://en.wikipedia.org/wiki/Einstein%27s_static_universe
+  label: { ar: "أينشتاين، ١٩١٧", en: "Einstein, 1917" }
+  claim: "En 1917, Einstein ajoute à ses équations la constante cosmologique pour que son modèle d'univers reste statique ; il l'abandonne après Hubble."
+  checked: { "on": '2026-11-12', sources: ["https://en.wikipedia.org/wiki/Einstein%27s_static_universe", "https://physicstoday.aip.org/news/einstein-ushers-in-modern-cosmology", "https://epjh.epj.org/articles/epjh/abs/2017/03/h170002/h170002.html"] }
+  status: proposed
+  notes: "Épisode universe : « حتى أينشتاين… غلط فيها », « سنة ١٩١٧… زوّد رقم في معادلاته… عشان الكون يفضل ثابت »."
+
+- id: science.hubble-1929
+  type: science
+  ref: { author: "Edwin Hubble", title: "A Relation between Distance and Radial Velocity among Extra-Galactic Nebulae", publication: "Proceedings of the National Academy of Sciences 15: 168-173", year: 1929 }
+  url: https://ui.adsabs.harvard.edu/abs/1929PNAS...15..168H/abstract
+  label: { ar: "هابل، ١٩٢٩", en: "Hubble, PNAS, 1929" }
+  claim: "En 1929, depuis l'observatoire du mont Wilson (Californie), Hubble montre que les galaxies s'éloignent d'autant plus vite qu'elles sont loin : l'univers s'étend."
+  checked: { "on": '2026-11-12', sources: ["https://ui.adsabs.harvard.edu/abs/1929PNAS...15..168H/abstract", "https://apod.nasa.gov/diamond_jubilee/1996/hub_1929.html"] }
+  status: proposed
+  notes: "Épisode universe : « لحد سنة ١٩٢٩… تلسكوب فوق جبل في كاليفورنيا شاف المجرات… بتبعد عننا », « يعني الكون… بيتمدد »."
+
+- id: science.aristotle-heavens
+  type: science
+  ref: { author: "Aristote", title: "Du ciel (De caelo), livre I", publication: "traduction J. L. Stocks, MIT Classics", year: -350 }
+  url: https://classics.mit.edu/Aristotle/heavens.2.ii.html
+  label: { ar: "أرسطو، في السماء", en: "Aristotle, On the Heavens" }
+  claim: "Pour Aristote (IVᵉ siècle av. J.-C.), les cieux sont inengendrés, incorruptibles, sans croissance ni changement."
+  checked: { "on": '2026-11-12', sources: ["https://classics.mit.edu/Aristotle/heavens.2.ii.html", "https://www.as.utexas.edu/astronomy/education/spring05/bromm/readings/antiquity1.pdf"] }
+  status: proposed
+  notes: "Épisode universe : « زي ما أذكى عقول الدنيا كانت متأكدة… أكتر من ألفين سنة: الكون ثابت » (d'Aristote à 1917)."
+
+- id: science.ptolemy-almagest
+  type: science
+  ref: { author: "Ptolémée", title: "Almageste", publication: "Alexandrie, vers 150", year: 150 }
+  url: https://en.wikipedia.org/wiki/Almagest
+  label: { ar: "بطليموس، المجسطي", en: "Ptolemy, Almagest" }
+  claim: "Vers 150, Ptolémée décrit un univers centré sur la Terre, chaque astre sur sa sphère, les étoiles fixes autour : le modèle qui règne jusqu'au XVIᵉ siècle."
+  checked: { "on": '2026-11-12', sources: ["https://en.wikipedia.org/wiki/Almagest"] }
+  status: proposed
+  notes: "Épisode universe : le schéma dessiné et la frise (« ١٥٠ بطليموس »)."
+
+- id: science.aristotle-generation
+  type: science
+  ref: { author: "Aristote", title: "De la génération des animaux", publication: "IVᵉ siècle av. J.-C.", year: -350 }
+  url: https://embryo.asu.edu/pages/generation-animals-aristotle-0
+  label: { ar: "أرسطو، تكوين الحيوان", en: "Aristotle, Generation of Animals" }
+  claim: "Pour Aristote, l'embryon se forme du sang des menstrues que la semence fait prendre, comme la présure fait cailler le lait."
+  checked: { "on": '2026-11-12', sources: ["https://embryo.asu.edu/pages/generation-animals-aristotle-0", "https://www.faculty.umb.edu/gary_zabel/Courses/Bodies,%20Souls,%20and%20Robots/Texts/Aristotle/on_the_generation_of_animals.htm"] }
+  status: proposed
+  notes: "Épisode womb : « من أيام أرسطو… أكبر العلما كانوا فاكرين: الجنين دم… بيتجمد زي اللبن »."
+
+- id: science.carnegie-stage-11
+  type: science
+  ref: { author: "R. O'Rahilly, F. Müller", title: "Developmental Stages in Human Embryos, stade 11", publication: "Carnegie Institution of Washington", year: 1987 }
+  url: https://embryology.med.unsw.edu.au/embryology/index.php/Carnegie_stage_11
+  label: { ar: "مراحل كارنيجي، ١٩٨٧", en: "Carnegie stages, 1987" }
+  claim: "Vers 24 jours (stade 11 de Carnegie), l'embryon mesure environ 2,5 à 4,5 mm ; la classification vient de la collection Carnegie, commencée en 1914."
+  checked: { "on": '2026-11-12', sources: ["https://embryology.med.unsw.edu.au/embryology/index.php/Carnegie_stage_11", "https://embryology.med.unsw.edu.au/embryology/index.php/1987_Developmental_Stages_In_Human_Embryos_-_Stage_11"] }
+  status: proposed
+  notes: "Épisode womb : « الجنين وعنده أربع أسابيع… طوله حوالي تلاتة مللي », « وده شكل الجنين في أسبوعه الرابع » (environ quatre semaines : le stade 11 est à 24 jours)."
+
+- id: science.microscope-1620
+  type: science
+  ref: { author: "Zacharias Janssen (attribué), Cornelis Drebbel", title: "Les premiers microscopes composés", publication: "Pays-Bas et Londres, années 1590-1620 (première description datée : Boreel, 1619)", year: 1619 }
+  url: https://en.wikipedia.org/wiki/Timeline_of_microscope_technology
+  label: { ar: "أول ميكروسكوب، حوالي ١٦٢٠", en: "First microscopes, c. 1620" }
+  claim: "Les premiers microscopes composés datent des années 1590-1620 (Janssen, attribution discutée ; Drebbel, 1619-1622) : environ mille ans après la révélation."
+  checked: { "on": '2026-11-12', sources: ["https://en.wikipedia.org/wiki/Timeline_of_microscope_technology", "https://www.encyclopedia.com/medicine/medical-journals/microscope-compound"] }
+  status: proposed
+  notes: "Épisode womb : le titre « قبل الميكروسكوب بألف سنة… القرآن وصف شكلك » et « اسم الشكل اللي شافوه بعدها بأكتر من ألف سنة »."
+
+- id: science.ibn-kathir-1373
+  type: science
+  ref: { author: "Ibn Kathir", title: "Ismaïl ibn Kathir, auteur du Tafsir, mort à Damas", publication: "774 H / 1373", year: 1373 }
+  url: https://en.wikipedia.org/wiki/Ibn_Kathir
+  label: { ar: "ابن كثير، توفي ١٣٧٣", en: "Ibn Kathir, d. 1373" }
+  claim: "Ibn Kathir meurt à Damas en 774 H (1373) : plus de six cents ans avant nous."
+  checked: { "on": '2026-11-12', sources: ["https://en.wikipedia.org/wiki/Ibn_Kathir"] }
+  status: proposed
+  notes: "Épisode womb : « وابن كثير كتب الكلام ده من أكتر من ستمية سنة… من غير ميكروسكوب » (une date d'histoire, rangée ici faute d'un type à elle)."
