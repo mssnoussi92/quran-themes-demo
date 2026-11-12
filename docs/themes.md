@@ -369,6 +369,28 @@ l'écran comme une référence de hadith ; personne dessiné (le télescope et s
 Lahab, aucune flamme. Un arc possible : 51:47 (le ciel qui s'élargit) et 6:125 (la poitrine qui se resserre). À
 montrer d'abord en trois images de style, sans voix.
 
+### Ce que la session retient d'un article d'al-Alukah (propriétaire, 2026-11-12 : « regarde s'il y a quelque chose d'utile »)
+
+« الإعجاز العلمي في القرآن », Salah Najib ad-Daqq, al-Alukah, 2017 : trente-six exemples, tirés d'ouvrages de seconde
+main (as-Sabouni, « التبيان » ; Nabil Haroun, « كشاف الإعجاز العلمي »), sans référence scientifique, sans règle, sans
+avis contraire. Sa définition est celle du propriétaire (« إخبار القرآن عن حقائق علمية لم تكن معروفة وقت نزوله ») ;
+il ne vérifie jamais la seconde moitié : c'est ce que notre frise des dates fera. **Ce qui sert** :
+- **41:53, cadre et titre possible de la série** : « سنريهم آياتنا في الآفاق وفي أنفسهم حتى يتبين لهم أنه الحق ».
+  Ibn Kathir y lit les victoires (Badr, la conquête de La Mecque : Mujahid, al-Hasan, as-Suddi) et ce dont l'homme est
+  fait, « كما هو مبسوط في علم التشريح » ; al-Muyassar : les victoires, ce qui arrive dans les cieux et la terre, et
+  « بديع آيات الله وعجائب صنعه » dans les hommes. Le verset couvre donc les deux sortes d'épisodes, prophéties et
+  création. Titre proposé : « سنريهم آياتنا », écrit à l'écran, jamais dit par la voix (elle ne dit pas le Coran).
+- **6:125** y figure (n° 10, d'après as-Sabouni) : un classique du genre, et al-Muyassar le dit.
+- **15:22, « وأرسلنا الرياح لواقح »**, candidat nouveau : al-Muyassar et Ibn Kathir disent que les vents fécondent les
+  nuages (Ibn Mas'oud) et les arbres. Pour la science, à sourcer avant d'en parler : les gouttes des nuages se forment
+  sur des poussières que porte le vent (Aitken, 1880) ; le rôle du vent dans la pollinisation (XVIIᵉ-XVIIIᵉ siècles).
+  Faiblesse : on fécondait déjà les palmiers à la main à Médine (Muslim 2363).
+- Sa phrase « القرآن ليس كتاب طب أو هندسة » va dans le sens de notre réplique d'honnêteté.
+
+**Ce qui ne sert pas** : la plupart des trente-six. Exemples : 10:61, « ذرة » serait l'atome, quand al-Muyassar lit
+« زنة نملة صغيرة » ; 96:2, le spermatozoïde serait la علقة, quand 23:14 met la نطفة avant elle ; 72:8-9, les météores,
+gardiens du ciel contre les djinns, c'est l'invisible ; 16:115, des chiffres de maladies sans source.
+
 ### Le côté scientifique : la recherche demandée (propriétaire, 2026-11-12)
 
 Sa demande : « des choses que le Coran dit depuis plus de 1400 ans, prouvées scientifiquement ces dernières années, en
