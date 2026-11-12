@@ -133,6 +133,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 59. **Le script de « سنريهم آياتنا » corrigé** (propriétaire, 2026-11-12 : ne pas dire les quarante jours, « le Coran ne les mentionne pas, le tafsir est un effort personnel » ; après la réplique d'honnêteté, toujours « آيات » et « سنريهم آياتنا » ; retirer la lecture des anciens de 6:125). **Avis donné** : les quarante jours viennent de Bukhari 3208, pas d'un tafsir seul ; « سنريهم آياتنا » ne peut pas être dit par la voix de synthèse (des mots du Coran) : le récitateur récite 41:53 jusqu'au premier arrêt « ۗ », le titre s'écrit en même temps. Fait dans `docs/scripts/signs.md` ; la réplique sur la chronique des Han retirée pour la longueur. **Puis** : la réplique d'honnêteté elle-même supprimée à sa demande (avis donné : elle était la marque de confiance de la série ; sans elle, 41:53 suit directement le fait scientifique, et c'est le cadre du Coran lui-même qui parle). Pas encore validé.
 
+60. **Les scripts de « سنريهم آياتنا » validés, et 51:47 ajouté** (propriétaire, 2026-11-12 : « je valide ta recommandation et je valide les scripts ; mais où est le story الكون ثابت ? »). Inscrit : `lahab`, `sky`, `womb` validés (la réplique du miroir, d'après al-Muyassar sur « وفي أنفسهم », remplace « اللي خلقك وإنت تلاتة مللي… », qu'il voulait changer). La session avait mis 51:47 en réserve et l'avait dit ; il est ajouté en deuxième épisode (`universe`, 51:47-49), à valider, avec deux répliques validées qui changent pour lui (l'annonce finale d'Abou Lahab, le compte final de l'embryon). Aucune requête de voix : l'ordre fixe les répliques d'annonce.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```

@@ -346,6 +346,17 @@ porte les mots dont on a besoin.
 - **Le registre** n'a pas de type pour une source scientifique : un fichier (`content/sources/science.yaml` : id,
   référence, lien) et `rules.py` qui l'accepte, à faire avec le script.
 
+### Scripts validés, et l'épisode « الكون ثابت » ajouté (propriétaire, 2026-11-12)
+
+« Je valide ta recommandation et je valide les scripts. Mais où est le story « الكون ثابت » ? » **Inscrit** : les scripts
+de `lahab`, `sky` et `womb` sont validés, avec la réplique du miroir (« بص في المراية… أول آية شفتها في حياتك… هي
+إنت. »). La session avait lu « fais les 3 : Abou Lahab, 6:125 et l'embryologie » comme mettant 51:47 en réserve, et
+l'avait dit ; il le veut. **Ajouté en deuxième épisode, `universe`** (51:47-49, 19 s : 51:47 seul fait 8 s), à valider en
+entier ; deux répliques validées changent pour lui faire place, à revalider : l'annonce de la fin de `lahab` (« الحلقة
+الجاية: عن الكون كله. ») et le compte de la fin de `womb` (« أربع آيات: راجل… وكون… وصدر… وجنين. »). Ordre : un homme,
+le ciel qui s'étend, la poitrine qui se resserre, l'embryon. Durées : 1:47, 1:29, 1:57, 2:05. **La voix attend** : les
+répliques qui annoncent l'épisode suivant dépendent de cet ordre.
+
 ### Ses corrections du script (propriétaire, 2026-11-12)
 
 « Pour l'embryologie, oui : ne cite pas ce qui est prouvé faux ; le Coran n'a pas mentionné les 40 jours ; le tafsir
