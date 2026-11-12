@@ -135,7 +135,8 @@ export const sceneOpacity = (segments: { scene: string; start: number }[], id: s
 /** What a short draws over its clip. `show(id)`: how much of that scene is there now; `since(id)`: when it first came. */
 export type Drawn = React.FC<{ t: number; show: (id: string) => number; since: (id: string) => number; horizon: number }>;
 
-/** The boat (18:71, 18:79): `holed` close, `fleet` the king's ships behind it, `sail` going on its way, `sea` the sea alone. */
+/** The boat (18:71, 18:79): `holed` close, `fleet` the king's ships behind it, `sail` going on its way, `sea` the sea alone;
+ * `bird`: the sparrow of the hadith on its edge, before anything was torn (a scene of the film, shown by its vertical version). */
 const BoatPicture: Drawn = ({ t, show, since, horizon }) => (
   <>
     <g opacity={show("fleet")}>
@@ -144,6 +145,9 @@ const BoatPicture: Drawn = ({ t, show, since, horizon }) => (
     </g>
     <g opacity={show("holed")}>
       <Boat id="b-holed" x={500} y={1185} scale={0.72} t={t} holed splash />
+    </g>
+    <g opacity={show("bird")}>
+      <Boat id="b-bird" x={500} y={1185} scale={0.72} t={t} holed={false} splash={false} plank={false} bird />
     </g>
     <g opacity={show("sail")}>
       <Boat id="b-sail" x={560 - 4 * Math.max(0, t - since("sail"))} y={1170} scale={0.66} t={t} holed splash={false} plank={false} />

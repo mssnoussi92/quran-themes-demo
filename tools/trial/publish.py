@@ -127,9 +127,10 @@ def main() -> None:
     p.add_argument("--film", default="film", help="the film's id (content/trial/<id>.yaml)")
     p.add_argument("--out", type=Path, help="default: `publish.out` of the film, or docs/publication-<files>.md")
     p.add_argument("--draft", action="store_true", help="before the voice: the timelines of the silent draft (voice X)")
+    p.add_argument("--tall", action="store_true", help="only the text of the film in 9:16 (`<files>-film-9x16.mp4`), for Facebook")
     args = p.parse_args()
-    if args.draft and not args.out:
-        sys.exit("error: --draft needs --out (a draft does not replace the film's publication texts)")
+    if (args.draft or args.tall) and not args.out:
+        sys.exit("error: --draft and --tall need --out (they do not replace the film's publication texts)")
     timeline = "X" if args.draft else args.voice
     conf = yaml.safe_load((ROOT / "content" / "publish.yaml").read_text(encoding="utf-8"))
     film = yaml.safe_load((TRIAL / f"{args.film}.yaml").read_text(encoding="utf-8"))
@@ -150,9 +151,11 @@ def main() -> None:
     narration = pub["narration"][args.voice]
     series_only = "chapters" not in film          # a series: shorts that stand alone, no film
     shorts = [yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film.get("shorts") or film["thumbnail"]["panels"]]
-    def footage(specs: list[dict]) -> str:
-        """Where the pictures come from, and the ambience under the narration when the videos have one."""
-        line = "Footage: Pixabay (" + ", ".join(dict.fromkeys(s["clip"]["author"] for s in specs)) + ")"
+    def footage(specs: list[dict], own: dict | None = None) -> str:
+        """Where the pictures come from, and the ambience under the narration when the videos have one. `own`:
+        the film's own pictures (`pictures` of its file: a clip no short shows), credited with the others."""
+        authors = [s["clip"]["author"] for s in specs] + [pic["clip"]["author"] for pic in (own or {}).values() if pic.get("clip", {}).get("author")]
+        line = "Footage: Pixabay (" + ", ".join(dict.fromkeys(authors)) + ")"
         beds = list(dict.fromkeys(f"{s['ambience']['source'].replace('bigsoundbank', 'BigSoundBank')} ({s['ambience']['author']})" for s in specs if s.get("ambience")))
         return line + (" · Ambience: " + ", ".join(beds) if beds else "")
 
@@ -182,6 +185,29 @@ def main() -> None:
         "",
     ]
 
+    if args.tall:
+        # The film in 9:16: one caption, for Facebook, made of the film's own title and description. No chapters
+        # (a reel has none) and the hashtags a Facebook post takes.
+        if series_only:
+            sys.exit(f"error: --tall: {args.film} is a series, it has no film")
+        data = json.loads((PUBLIC / "trial" / f"{args.film}-{timeline}.json").read_text(encoding="utf-8"))
+        lines, hadith, verse = quoted(quotes_of([s for c in film["chapters"] for s in c["segments"]]), sources)
+        caption = "\n\n".join([
+            pub["title"]["en"] + "\n" + pub["title"]["ar"], pub["description"]["en"], pub["description"]["ar"],
+            "Quoted:\n" + "\n".join(lines), narration + "\n" + footage(shorts, film.get("pictures")), conf["handle"],
+            hashtags(conf, pub["hashtags"], hadith, verse, limits["facebook"]["max_hashtags"]),
+        ])
+        out = [f"# {pub['series']['en']} · {pub['series']['ar']} : le film en 9:16", "",
+               "Le même film, monté pour un écran vertical (les images des shorts, la même voix, le même minutage). Texte "
+               "**proposé par la session** : il reprend le titre et la description du film, sans les chapitres.", "",
+               f"## Le film en 9:16 · {pub['title']['en']} · {pub['title']['ar']}", "",
+               f"`{files}-film-9x16.mp4` · {stamp(data['seconds'])} · 9:16 · Facebook", "",
+               f"**Facebook ({limits['facebook']['max_hashtags']} hashtags)**", "", block(caption)]
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        args.out.write_text("\n".join(out), encoding="utf-8")
+        print(f"{args.out}: the film in 9:16")
+        return
+
     if not series_only:
         # The film
         data = json.loads((PUBLIC / "trial" / f"{args.film}-{timeline}.json").read_text(encoding="utf-8"))
@@ -193,7 +219,7 @@ def main() -> None:
         chapters = "\n".join(f"{stamp(c['start'])} {c['title']['en']} · {c['title']['ar']}" for c in data["chapters"])
         body = "\n\n".join([
             pub["description"]["en"], pub["description"]["ar"], "Chapters:\n" + chapters,
-            "Quoted:\n" + "\n".join(lines), narration + "\n" + footage(shorts), conf["handle"],
+            "Quoted:\n" + "\n".join(lines), narration + "\n" + footage(shorts, film.get("pictures")), conf["handle"],
             hashtags(conf, pub["hashtags"], hadith, verse, None),
         ])
         if len(body) > limits["youtube"]["max_description"]:

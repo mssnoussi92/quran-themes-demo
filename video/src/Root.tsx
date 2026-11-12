@@ -13,7 +13,7 @@ import { TRIAL_FPS, Trial, trialMetadata } from "./trial/Trial";
 import type { TrialProps } from "./trial/Trial";
 import { THUMB, TrialCover, TrialThumb, coverMetadata, thumbMetadata } from "./trial/Cover";
 import type { CoverProps, ThumbProps } from "./trial/Cover";
-import { Film, filmMetadata } from "./trial/Film";
+import { Film, FilmTall, filmMetadata } from "./trial/Film";
 import type { FilmProps } from "./trial/Film";
 
 // One composition per format, both fed by the same episode script.
@@ -56,6 +56,9 @@ export const RemotionRoot: React.FC = () => (
       defaultProps={{ trial: "boat", voice: "X", data: null } satisfies CoverProps} calculateMetadata={coverMetadata} />
     {/* The long film of the trial (content/trial/film.yaml), 16:9, built on the three shorts. */}
     <Composition id="TrialFilm169" component={Film} fps={TRIAL_FPS} durationInFrames={1} width={1920} height={1080}
+      defaultProps={{ film: "film", voice: "D", data: null } satisfies FilmProps} calculateMetadata={filmMetadata} />
+    {/* The same film in 9:16, laid out as its shorts are: for the platforms whose player is vertical. */}
+    <Composition id="TrialFilm916" component={FilmTall} fps={TRIAL_FPS} durationInFrames={1} width={1080} height={1920}
       defaultProps={{ film: "film", voice: "D", data: null } satisfies FilmProps} calculateMetadata={filmMetadata} />
     <Composition id="TrialThumb169" component={TrialThumb} fps={TRIAL_FPS} durationInFrames={60} width={THUMB.width} height={THUMB.height}
       defaultProps={{ film: "film", voice: "X", data: null, panels: null } satisfies ThumbProps} calculateMetadata={thumbMetadata} />

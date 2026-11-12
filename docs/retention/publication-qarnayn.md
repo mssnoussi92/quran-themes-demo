@@ -34,7 +34,7 @@ Quoted:
 • Surah Al-Kahf (18:23-24) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/23-24
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Footage: Pixabay (josefgadermaier, AttilaPergel, FlickrVideos) · Ambience: BigSoundBank (Joseph Sardin)
+Footage: Pixabay (josefgadermaier, AttilaPergel, FlickrVideos, TeeFarm) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 

@@ -180,14 +180,18 @@ def prepare(args) -> None:
             if "side" not in base or "horizon" not in base:
                 sys.exit(f"error: pictures.{name}.clip needs `side` and `horizon` (it is only shown in the wide frame)")
             pictures[name] = {"clip": f"trial/{clip.name}", "clip_seconds": round(P.seconds(clip), 2), "bare": True,
-                              **{k: base[k] for k in ("ground", "rate", "brightness", "veil", "side", "horizon", "shift") if k in base}}
+                              **{k: base[k] for k in ("ground", "rate", "brightness", "veil", "side", "horizon", "shift") if k in base},
+                              # the vertical film (9:16): the clip's own settings there, `portrait` of its file
+                              "portrait": {**{k: base[k] for k in ("ground", "rate", "brightness", "veil") if k in base}, **(base.get("portrait") or {})}}
             continue
         clip = out_dir / f"{name}-clip.mp4"
         if not clip.is_file():
             sys.exit(f"error: {clip.relative_to(P.ROOT)} is missing: prepare the short « {name} » first (--trial {name} --draft --clip …)")
         base = trial(name)["clip"]
         pictures[name] = {"clip": f"trial/{clip.name}", "clip_seconds": round(P.seconds(clip), 2),
-                          **{k: base[k] for k in ("ground", "rate", "brightness", "veil") if k in base}, **base["landscape"]}
+                          **{k: base[k] for k in ("ground", "rate", "brightness", "veil") if k in base}, **base["landscape"],
+                          # the vertical film (9:16) shows the clip as its short does
+                          "portrait": {k: base[k] for k in ("position", "shift", "brightness", "ground", "horizon", "rate", "veil") if k in base}}
     data = {"film": film["id"], "voice": args.voice, "voice_name": film["voices"][args.voice], "handle": film["handle"],
             "title": film["title"], "seconds": total, "outro": film["outro"], "chapters": chapters, "pictures": pictures,
             "shots": shots, "subscribe": subscribe, "segments": segments}

@@ -8,13 +8,14 @@ avec quels réglages, et ce que les outils ne font pas encore. La marche à suiv
 des décisions dans `docs/retention.md`.
 
 Le dossier s'appelle encore `trial` (l'essai) : `content/trial/`, `tools/trial/`, `video/src/trial/`, et les
-compositions `Trial916`, `TrialFilm169`, `TrialCover916`, `TrialThumb169`. Ce n'est plus un essai.
+compositions `Trial916`, `TrialFilm169`, `TrialFilm916`, `TrialCover916`, `TrialThumb169`. Ce n'est plus un essai.
 
 ## Ce qu'on livre
 
 | Vidéo | Format | Pour |
 | --- | --- | --- |
 | Le film, moins de 10 min | 16:9 | YouTube |
+| Le même film en vertical (à l'essai, 2026-11-12 : demande du propriétaire) : même voix et même minutage, les images des shorts, les textes où un short les met ; `<files>-film-9x16.mp4`, composition `TrialFilm916`, demandé par `only: tall` (jamais dans `all`), release brouillon à part `<files>-9x16-candidate`, texte par `publish.py --tall` | 9:16 | Facebook (toute vidéo y est un Reel ; Instagram refuse plus de 3 min) |
 | 3 à 6 shorts, chacun tient seul | 9:16 | Facebook, Instagram, YouTube Shorts |
 | Les mêmes shorts signés `@quran.words.daily` | 9:16 | TikTok |
 | Une couverture par short, une vignette pour le film | 9:16, 16:9 | grille du profil, YouTube |

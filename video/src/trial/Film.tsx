@@ -9,8 +9,8 @@ import { AbsoluteFill, Html5Audio, Sequence, interpolate, spring, staticFile, us
 import { FONT, loadFonts } from "../fonts";
 import { Boat, Fleet } from "./Boat";
 import { House, Land } from "./Home";
-import { Clip, GOLD, NarrationText, ReadingText, SHADOW, TRIAL_FPS, VerseText, sceneOpacity } from "./Trial";
-import type { Layout, Narration, Reading, Verse } from "./Trial";
+import { Clip, GOLD, H as TALL_H, NarrationText, PICTURES, ReadingText, SHADOW, TRIAL_FPS, VerseText, W as TALL_W, sceneOpacity } from "./Trial";
+import type { Layout, Narration, Picture, Reading, Verse } from "./Trial";
 import { Village, Wall } from "./Wall";
 import { Call, Niche, Whale } from "./Dua";
 import { Barrier, Chest, Cliffs, Dwellings } from "./Qarnayn";
@@ -25,7 +25,8 @@ type Side = "left" | "right";
 type Column = Side | "center";
 /** A filmed clip in the wide frame: the side of what is drawn over it, its horizon, how it is moved and darkened. */
 /** `bare`: a picture of the film alone, a clip with nothing drawn over it (the east of Dhul-Qarnayn). */
-type FilmPicture = { clip: string; clip_seconds: number; side: Side; horizon: number; shift?: number; brightness?: number; ground?: string; rate?: number; bare?: boolean };
+/** `portrait`: how the same clip sits in the 9:16 frame of the vertical film (the settings of its short). */
+type FilmPicture = { clip: string; clip_seconds: number; side: Side; horizon: number; shift?: number; brightness?: number; ground?: string; rate?: number; bare?: boolean; portrait?: Picture };
 type FilmSegment = (Omit<Narration, "scene"> | Omit<Verse, "scene"> | Omit<Reading, "scene">) & { chapter: string; center?: boolean };
 type Shot = { start: number; picture: string; scene: string };
 type Chapter = { id: string; title: { ar: string; en: string }; number: number | null; start: number };
@@ -348,6 +349,112 @@ export const Film: React.FC<FilmProps> = ({ data }) => {
         {chapter.number ? `${["٠", "١", "٢", "٣", "٤", "٥"][chapter.number]} · ` : ""}{chapter.title.ar}
       </div>
       <Signature handle={data.handle} reminders={data.subscribe} t={t} />
+    </AbsoluteFill>
+  );
+};
+
+// -- The vertical film (9:16): the same timeline and the same sound, laid out as the shorts are. Each stretch shows
+// the picture of the short it comes from, as that short shows it; the texts sit where a short puts them. For the
+// platforms whose player is vertical (every video on Facebook is a reel): the 16:9 film there is a band in the
+// middle of a phone, and this picture is text to read.
+
+/** One stretch of the vertical film on the same clip: the clip in its 9:16 setting, the short's drawing, its veil. */
+const StageTall: React.FC<{ picture: FilmPicture; name: string; shots: Shot[]; from: number; fade: number }> = ({ picture, name, shots, from, fade }) => {
+  const frame = useCurrentFrame();
+  const { fps, durationInFrames } = useVideoConfig();
+  const t = from + frame / fps;
+  const tall = picture.portrait ?? {};
+  const horizon = tall.horizon ?? 1300;
+  const Drawing = picture.bare ? Bare : PICTURES[name];
+  if (!Drawing) throw new Error(`no picture is drawn for « ${name} »`);
+  const zoom = interpolate(frame, [0, durationInFrames], [1, 1.05]);
+  const veil = tall.veil ?? 1;
+  return (
+    <AbsoluteFill style={{ background: tall.ground ?? "#04070f", opacity: fade ? interpolate(frame, [0, fade * fps], [0, 1], { extrapolateRight: "clamp" }) : 1 }}>
+      <AbsoluteFill style={{ transform: `scale(${zoom})`, transformOrigin: `50% ${(horizon / TALL_H) * 100}%` }}>
+        <Clip src={picture.clip} clipSeconds={picture.clip_seconds} picture={tall} />
+        <svg width={TALL_W} height={TALL_H} viewBox={`0 0 ${TALL_W} ${TALL_H}`} style={{ position: "absolute", inset: 0 }}>
+          <Drawing t={t} show={(id) => sceneOpacity(shots, id, t)} since={(id) => shots.find((s) => s.scene === id)?.start ?? from} horizon={horizon} />
+        </svg>
+      </AbsoluteFill>
+      <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(4,7,20,${0.78 * veil}) 0%, rgba(4,7,20,${0.45 * veil}) 30%, rgba(4,7,20,.05) 52%, rgba(4,7,20,.38) 100%)` }} />
+      {/* a clip with nothing drawn has no dark land under the translation: it is given one */}
+      {picture.bare ? <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(4,7,20,0) 62%, rgba(4,7,20,.82) 76%, rgba(4,7,20,.94) 100%)" }} /> : null}
+    </AbsoluteFill>
+  );
+};
+
+/** The name of the page, top right as in a short; when the reminder passes it becomes « تابعنا » and the name, large,
+ * for four seconds. No bell and no « Subscribe »: those are another platform's. */
+const Follow: React.FC<{ handle: string; reminders: number[]; t: number }> = ({ handle, reminders, t }) => {
+  const { fps } = useVideoConfig();
+  const at = reminders.find((r) => t >= r - 0.1 && t < r + 4.3);
+  const local = at === undefined ? -1 : t - at;
+  const open = at === undefined ? 0 : Math.min(spring({ frame: Math.round(local * fps), fps, config: { damping: 200 }, durationInFrames: 10 }), interpolate(local, [3.7, 4.1], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }));
+  return (
+    <div style={{ position: "absolute", top: 226, right: 90, height: 84, display: "flex", alignItems: "center", justifyContent: "flex-end" }}>
+      <div style={{ position: "absolute", right: 0, fontFamily: FONT.latin, fontWeight: 600, fontSize: 30, color: GOLD, opacity: 0.9 * (1 - open), textShadow: SHADOW, whiteSpace: "nowrap" }}>
+        {handle}
+      </div>
+      <div style={{ opacity: open, transform: `scale(${0.9 + 0.1 * open})`, transformOrigin: "100% 50%", display: "flex", alignItems: "center", gap: 18, padding: "8px 34px 10px", borderRadius: 999, border: `3px solid ${GOLD}`, background: "rgba(4,7,20,.6)", color: GOLD, whiteSpace: "nowrap" }}>
+        <span dir="rtl" lang="ar" style={{ fontFamily: FONT.arabic, fontWeight: 700, fontSize: 46, lineHeight: 1.2 }}>تابعنا</span>
+        <span style={{ fontFamily: FONT.latin, fontWeight: 600, fontSize: 34 }}>{handle}</span>
+      </div>
+    </div>
+  );
+};
+
+export const FilmTall: React.FC<FilmProps> = ({ data }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  if (!data) throw new Error("no film data: calculateMetadata did not run");
+  const t = frame / fps;
+  const runs: { name: string; from: number; shots: Shot[] }[] = [];
+  for (const shot of data.shots) {
+    const last = runs[runs.length - 1];
+    if (last && last.name === shot.picture) last.shots.push(shot);
+    else runs.push({ name: shot.picture, from: shot.start, shots: [shot] });
+  }
+  const FADE = 0.7;
+  const current = [...data.segments].reverse().find((s) => t >= s.start - 0.3) ?? data.segments[0];
+  const shot = [...data.shots].reverse().find((s) => t >= s.start) ?? data.shots[0];
+  const chapter = [...data.chapters].reverse().find((c) => t >= c.start) ?? data.chapters[0];
+  const chapterIn = interpolate(t - chapter.start, [0.2, 0.7], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const final = data.segments[data.segments.length - 1];
+  const ended = t > data.seconds - data.outro + 4.6;      // the last line stays with the page's name under it, then the picture alone
+  return (
+    <AbsoluteFill style={{ background: "#04070f" }}>
+      {runs.map((run, i) => {
+        const first = i === 0;
+        const start = first ? 0 : run.from - FADE / 2;
+        const end = i + 1 < runs.length ? runs[i + 1].from + FADE : data.seconds;
+        return (
+          <Sequence key={i} from={Math.round(start * fps)} durationInFrames={Math.ceil((end - start) * fps)} layout="none">
+            <StageTall picture={data.pictures[run.name]} name={run.name} shots={run.shots} from={start} fade={first ? 0 : FADE} />
+          </Sequence>
+        );
+      })}
+      {data.ambience ? <Html5Audio src={staticFile(data.ambience)} /> : null}
+      {data.segments.map((seg, i) =>
+        seg.file ? (
+          <Sequence key={i} from={Math.round(seg.start * fps)} durationInFrames={Math.ceil(seg.seconds * fps) + 2} layout="none">
+            <Html5Audio src={staticFile(seg.file)} />
+          </Sequence>
+        ) : null,
+      )}
+      {ended ? null : current.kind === "narration" ? (
+        <NarrationText seg={{ ...current, scene: shot.scene }} t={t} last={current === final} handle={data.handle} />
+      ) : current.kind === "verse" ? (
+        <VerseText seg={{ ...current, scene: shot.scene }} t={t} />
+      ) : (
+        <ReadingText seg={{ ...current, scene: shot.scene }} t={t} />
+      )}
+      {/* where we are in the story: the chapter, top left, facing the name of the page */}
+      <div dir="rtl" lang="ar" style={{ position: "absolute", top: 240, left: 90, opacity: 0.86 * chapterIn * (ended ? 0 : 1), fontFamily: FONT.arabic, fontWeight: 700, fontSize: 36, color: GOLD, textShadow: SHADOW }}>
+        {chapter.number ? `${["٠", "١", "٢", "٣", "٤", "٥"][chapter.number]} · ` : ""}{chapter.title.ar}
+      </div>
+      {/* the reminder of the last line is the page's name under that line, as in a short */}
+      <Follow handle={data.handle} reminders={data.subscribe.filter((r) => r < final.start)} t={t} />
     </AbsoluteFill>
   );
 };

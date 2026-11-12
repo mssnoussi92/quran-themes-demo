@@ -3,7 +3,7 @@
 shorts of its `thumbnail.panels`; or a series, a file with `shorts` and no chapters: its shorts, no film), never from a table: what the workflow film.yml renders, and the names the
 publication texts (tools/trial/publish.py) give them.
 
-  uv run --with pyyaml python3 tools/trial/videos.py --film <id> [--voice D] [--only all|shorts|film|tiktok|<short id>]
+  uv run --with pyyaml python3 tools/trial/videos.py --film <id> [--voice D] [--only all|shorts|film|tall|tiktok|<short id>]
   uv run --with pyyaml python3 tools/trial/videos.py --film <id> --matrix            # the videos, as a GitHub Actions matrix (one line)
   uv run --with pyyaml python3 tools/trial/videos.py --film <id> --stills --matrix   # the covers and the thumbnail
 
@@ -15,7 +15,10 @@ or `<name>-cover.jpg`) and the film's thumbnail (TrialThumb169, `thumbnail.file`
 both taken at frame 45.
 
 --only: all (default); shorts (the shorts, their TikTok twins, their covers); film (the film and its thumbnail);
-tiktok (the TikTok twins only); or one short's id (that short, its twin and its cover).
+tiktok (the TikTok twins only); or one short's id (that short, its twin and its cover); tall: the film in 9:16
+(`<files>-film-9x16`, TrialFilm916: the same timeline laid out as the shorts are, for the platforms whose player is
+vertical). The vertical film is asked for by name and is never part of `all`: a film's validated videos stay what
+they are.
 """
 from __future__ import annotations
 
@@ -48,8 +51,13 @@ def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]
     shorts = [load(name) for name in film.get("shorts") or film["thumbnail"]["panels"]]
     ids = [s["id"] for s in shorts]
     has_film = "chapters" in film               # a series (a file with `shorts`, no chapters) has no film
-    if only not in ("all", "shorts", "film", "tiktok") and only not in ids:
-        sys.exit(f"error: --only {only}: not all, shorts, film, tiktok or one of {', '.join(ids)}")
+    if only not in ("all", "shorts", "film", "tall", "tiktok") and only not in ids:
+        sys.exit(f"error: --only {only}: not all, shorts, film, tall, tiktok or one of {', '.join(ids)}")
+    if only == "tall":
+        if not has_film:
+            sys.exit(f"error: --only tall: {film_id} is a series, it has no film")
+        return [{"name": f"{files}-film-9x16", "composition": "TrialFilm916", "props": compact({"film": film_id, "voice": voice, "data": None}),
+                 "timeline": f"video/public/trial/{film_id}-{voice}.json", "kind": "tall"}], []
     # Same rule as publish.py: only the first film's videos (`ambience_after`: the ambience mixed under them
     # after the render) carry the ambience in their name, once the owner validated it.
     said = [(s.get("validated") or {}) for s in [film, *shorts]]
@@ -81,7 +89,7 @@ def main() -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--film", required=True, help="the film's id (content/trial/<id>.yaml)")
     p.add_argument("--voice", default="D")
-    p.add_argument("--only", default="all", help="all, shorts, film, tiktok, or one short's id")
+    p.add_argument("--only", default="all", help="all, shorts, film, tall (the film in 9:16), tiktok, or one short's id")
     p.add_argument("--matrix", action="store_true", help="one JSON object on one line, a GitHub Actions matrix")
     p.add_argument("--stills", action="store_true", help="the covers and the thumbnail instead of the videos")
     p.add_argument("--ids", action="store_true",
