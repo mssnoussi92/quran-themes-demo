@@ -24,8 +24,14 @@ so reduce the height and keep the stretch under about twenty seconds), `slow: 5`
 in between blended: something that happens once, a sun going down, lasts the whole short and never loops; set
 the clip's `rate: 1`).
 
-The key is read from the environment (PIXABAY_API_KEY) and never printed. Pixabay's content licence allows the
-use, not the redistribution of the file alone: a clip is never committed. Needs ffmpeg.
+`clip: {source: generated, kind: night, seconds: 20}` of a short needs no clip from anywhere: ffmpeg draws it
+(`generated()`; 1080x1920, 30 fps, H.264), for a short whose picture is all drawn over a plain ground. No network,
+no key, nothing to credit. The only kind is `night`: a deep sky from #02040b at the top to #0a1230 at the
+bottom, a very faint grain that moves slowly so that the encoder does not band the gradient; no star, the
+drawings add them.
+
+The key is read from the environment (PIXABAY_API_KEY) and never printed; only a Pixabay clip needs it. Pixabay's
+content licence allows the use, not the redistribution of the file alone: a clip is never committed. Needs ffmpeg.
 """
 from __future__ import annotations
 
@@ -164,6 +170,29 @@ def prepared(source: Path, out: Path, take: dict) -> None:
         "-c:v", "libx264", "-crf", "17", "-preset", "fast", "-pix_fmt", "yuv420p", str(out))
 
 
+# Generated clips (`clip.source: generated`): kind -> (RGB at the top, RGB at the bottom): #02040b, #0a1230.
+GENERATED = {"night": ((2, 4, 11), (10, 18, 48))}
+
+
+def generated(clip: dict, out: Path) -> None:
+    """A clip ffmpeg draws: a vertical gradient with a faint grain. The grain is random noise on each frame, mixed
+    over a few frames so that it drifts slowly instead of flickering; without it a gradient this dark is encoded
+    in visible bands (8 bits leave only a few levels between the two colours). The gradient is computed on a strip
+    four pixels wide and enlarged: cheap, and the same on every ffmpeg."""
+    kind = clip.get("kind")
+    if kind not in GENERATED:
+        sys.exit(f"error: no generated clip of kind « {kind} » (kinds: {', '.join(GENERATED)})")
+    seconds = float(clip.get("seconds") or 20)
+    top, bottom = GENERATED[kind]
+    out.parent.mkdir(parents=True, exist_ok=True)
+    run("ffmpeg", "-loglevel", "error", "-y", "-f", "lavfi", "-i",
+        f"color=c=black:s=4x1920:r=30:d={seconds},format=rgb24,"
+        + ":".join(f"geq={c}='lerp({a},{b},Y/H)'" if i == 0 else f"{c}='lerp({a},{b},Y/H)'" for i, (c, a, b) in enumerate(zip("rgb", top, bottom)))
+        + ",scale=1080:1920:flags=neighbor,format=yuv420p,noise=alls=3:allf=t,tmix=frames=8",
+        "-an", "-c:v", "libx264", "-crf", "17", "-preset", "fast", "-pix_fmt", "yuv420p", "-r", "30", str(out))
+    print(f"{out}: {seconds_of(out):.2f} s, generated ({kind}), 1080x1920, 30 fps; nothing to credit")
+
+
 def fetch(clip_id: int, out: Path, take: dict) -> None:
     hit = one(clip_id)
     video = largest(hit)
@@ -180,7 +209,7 @@ def main() -> None:
     p.add_argument("--search", nargs="+", metavar="QUERY", help="look for clips: one or several queries, in English")
     p.add_argument("--look", type=int, metavar="ID", help="16 frames across one clip")
     p.add_argument("--id", type=int, help="fetch this clip (a candidate, before it is in a file)")
-    p.add_argument("--trial", help="fetch the clip of content/trial/<id>.yaml, prepared as its `clip.take` says")
+    p.add_argument("--trial", help="fetch the clip of content/trial/<id>.yaml, prepared as its `clip.take` says (or generated: `clip.source: generated`)")
     p.add_argument("--film", help="with --picture: the film whose own picture (`pictures` of content/trial/<film>.yaml) is fetched")
     p.add_argument("--picture", help="with --film: the name of that picture")
     p.add_argument("--out", required=True, type=Path, help="a directory (--search, --look) or the clip's file")
@@ -210,6 +239,8 @@ def main() -> None:
         sys.exit("error: PyYAML is needed to read the short: uv run --with pyyaml python3 tools/trial/clip.py …")
     spec = yaml.safe_load((ROOT / "content" / "trial" / f"{args.trial or args.film}.yaml").read_text(encoding="utf-8"))
     clip = (spec.get("clip") if args.trial else ((spec.get("pictures") or {}).get(args.picture) or {}).get("clip")) or {}
+    if args.trial and clip.get("source") == "generated":        # no network, no key
+        return generated(clip, out=args.out)
     if clip.get("source") != "pixabay" or not clip.get("id"):
         sys.exit("error: no Pixabay clip id in the short" if args.trial else f"error: the film has no picture « {args.picture} » with a Pixabay clip")
     fetch(int(clip["id"]), args.out, clip.get("take") or {})

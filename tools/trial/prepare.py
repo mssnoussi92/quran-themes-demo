@@ -318,7 +318,7 @@ def main() -> None:
             segments.append({**made, "scene": seg["scene"], "start": round(t, 2)})
         elif "verses" in seg and by_source is None:
             # Verses that follow one another, recited without a break: one cut, one segment.
-            segments.append({**sources.passage(seg["verses"], out_dir), "scene": seg["scene"], "start": round(t, 2)})
+            segments.append({**sources.passage(seg["verses"], out_dir, seg.get("upto")), "scene": seg["scene"], "start": round(t, 2)})
         elif "verse" in seg:
             made = verse_segment(by_source, seg["verse"], out_dir, args.episode) if by_source is not None else sources.verse(seg["verse"], out_dir)
             segments.append({**made, "scene": seg["scene"], "start": round(t, 2)})

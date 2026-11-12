@@ -24,6 +24,8 @@ import yaml
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools" / "audio"))
 import build  # noqa: E402  (tools/audio/build.py: the cuts and the levelling of the episodes)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import script  # noqa: E402  (first_words, first_sentence: the cut of a verse at a pause sign, shared with the script page and the rules)
 
 WORK = ROOT / "build" / "trial" / "sources"
 RECITERS = {"alafasy": "Mishari Rashid al-Afasy", "sayegh": "Tawfiq As-Sayegh"}                 # as video/scripts/prepare.ts
@@ -60,9 +62,11 @@ def entry(sid: str) -> dict:
 
 
 def entry_of(sid: str) -> dict:
-    """A source a narration rests on (a report told, a tafsir): its registry entry, or stop. It needs no English text."""
+    """A source a narration rests on (a report told, a tafsir, a science source): its registry entry, or stop. It needs
+    no English text; a science source needs its label, not a text."""
     found = registry().get(sid)
-    if found is None or found.get("status") == "excluded" or not found.get("text_ar"):
+    usable = bool((found or {}).get("label")) if (found or {}).get("type") == "science" else bool((found or {}).get("text_ar"))
+    if found is None or found.get("status") == "excluded" or not usable:
         sys.exit(f"error: {sid} is not a usable source of the registry (content/sources/)")
     return found
 
@@ -130,13 +134,18 @@ def verse(sid: str, out_dir: Path) -> dict:
             "credit": " · ".join(x for x in (RECITERS.get(reciter, reciter), d["translator"]) if x)}
 
 
-def passage(ids: list[str], out_dir: Path) -> dict:
+def passage(ids: list[str], out_dir: Path, upto: int | None = None) -> dict:
     """Verses that follow one another, recited without a break (`verses:`): one cut of the reciter's surah, from the
     start of the first verse to the end of the last (a reciter who chains short verses leaves no silence to cut
     at), levelled like a verse. One verse segment: the verses written one after the other, each closed by the sign
     of the end of a verse with its number (a sign, not a word: it is never counted nor lit), the time of every word
     counted from the start of the passage, and where each verse starts and ends among the words (`verses`), so
-    that the screen turns its pages between two verses and shows each translation under its own verse."""
+    that the screen turns its pages between two verses and shows each translation under its own verse.
+
+    `upto: N` (one verse only): the verse is cut at a pause sign, so that a short recites the first sentence of a
+    long verse. The audio ends where word N ends (the same fades as at a verse end), the text keeps its first N
+    words, the timings stop at N, the translation stops at the end of its first sentence. No sign of the end of a
+    verse: the verse does not end there."""
     described_ = [described(sid) for sid in ids]
     if any(d["type"] != "ayah" for d in described_):
         sys.exit(f"error: a passage is made of verses: {', '.join(ids)}")
@@ -152,7 +161,14 @@ def passage(ids: list[str], out_dir: Path) -> dict:
     build.surah_cut({"id": name_of(ids[0]), "source": {"id": ids[0]}}, reciter, f"{refs[0]['surah']}:{refs[0]['ayah']}", WORK)
     surah = ROOT / "build" / "recitations" / reciter / build.verse_cut(reciter, f"{refs[0]['surah']}:{refs[0]['ayah']}")[1].rsplit("/", 1)[1]
     start, end = cuts[0]["start"], cuts[-1]["end"]
-    name = f"{name_of(ids[0])}-{refs[-1]['ayah']}"
+    if upto is not None:
+        if len(ids) != 1:
+            sys.exit(f"error: `upto` cuts one verse, not {len(ids)}: {', '.join(ids)}")
+        timed = cuts[0]["words"]
+        if not isinstance(upto, int) or not 1 <= upto <= len(timed):
+            sys.exit(f"error: `upto: {upto}` of {ids[0]}: the verse has {len(timed)} recited words")
+        end = min(end, start + timed[upto - 1][2])       # where word N ends in the reciter's file
+    name = f"{name_of(ids[0])}-{refs[-1]['ayah']}" + (f"-w{upto}" if upto is not None else "")
     raw = WORK / f"{name}.mp3"
     subprocess.run([build.ffmpeg_exe(), "-loglevel", "error", "-y", "-i", str(surah), "-af",
                           f"atrim=start={start:.3f}:end={end:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.02,afade=t=out:st={max(0.0, end - start - 0.04):.3f}:d=0.04",
@@ -162,15 +178,22 @@ def passage(ids: list[str], out_dir: Path) -> dict:
     words, verses, texts, position = [], [], [], 0
     for d, ref, cut in zip(described_, refs, cuts):
         first = position + 1
-        for _, a, b in cut["words"]:
+        for _, a, b in cut["words"][:upto]:              # upto None: every word
             position += 1
             words.append({"position": position, "start": round(cut["start"] - start + a, 3), "end": round(cut["start"] - start + b, 3)})
+        if upto is not None:
+            d = {**d, "display_ar": script.first_words(d["display_ar"], upto), "display_en": script.first_sentence(d["display_en"])}
+            described_[0] = d
+            texts.append(d["display_ar"])
+        else:
+            texts.append(f"{d['display_ar']} \u06dd{str(ref['ayah']).translate(DIGITS)}")
         verses.append({"en": d["display_en"], "first": first, "last": position})
-        texts.append(f"{d['display_ar']} \u06dd{str(ref['ayah']).translate(DIGITS)}")
     origin = entry(ids[0]).get("origin") or {}
-    span = f"{str(refs[0]['ayah']).translate(DIGITS)}-{str(refs[-1]['ayah']).translate(DIGITS)}"
+    one = len(ids) == 1                                  # a verse cut at a pause sign (`upto`): « الآية », not « الآيات »
+    span = str(refs[0]['ayah']).translate(DIGITS) if one else f"{str(refs[0]['ayah']).translate(DIGITS)}-{str(refs[-1]['ayah']).translate(DIGITS)}"
+    span_en = f"{refs[0]['ayah']}" if one else f"{refs[0]['ayah']}-{refs[-1]['ayah']}"
     return {"kind": "verse", "seconds": round(build.seconds(wav), 3), "file": f"trial/{wav.name}",
-            "reference": f"سورة {origin['surah_ar']} · الآيات {span}" if origin.get("surah_ar") else f"Quran {refs[0]['surah']}:{refs[0]['ayah']}-{refs[-1]['ayah']}",
+            "reference": f"سورة {origin['surah_ar']} · {'الآية' if one else 'الآيات'} {span}" if origin.get("surah_ar") else f"Quran {refs[0]['surah']}:{span_en}",
             "text": " ".join(texts), "en": " ".join(d["display_en"] for d in described_), "words": words, "verses": verses,
             "credit": " · ".join(x for x in (RECITERS.get(reciter, reciter), described_[0]["translator"]) if x)}
 
@@ -180,14 +203,17 @@ REPORTED_BY = {"bukhari": ("البخاري", "al-Bukhari"), "muslim": ("مسلم
 
 def references(ids: list[str]) -> dict:
     """What a narration rests on (`sources:`), as it is written on screen while it is said: the reports it tells in
-    its own words (« رواه مسلم ٨٦٣ والبخاري ٩٣٦ ») and the tafsir its meaning comes from (its name, from
-    content/policy.yaml). Never read nor shown: a reference. An unvalidated source is listed as proposed."""
+    its own words (« رواه مسلم ٨٦٣ والبخاري ٩٣٦ »), the tafsir its meaning comes from (its name, from
+    content/policy.yaml) and the papers or data a claim rests on (a `science` source: its `label`, no text).
+    Never read nor shown: a reference. An unvalidated source is listed as proposed."""
     policy = yaml.safe_load((ROOT / "content" / "policy.yaml").read_text(encoding="utf-8")) or {}
     editions = (policy.get("tafsir") or {}).get("editions") or {}
-    reports, tafsirs = [], []
+    reports, tafsirs, sciences = [], [], []
     for sid in ids:
         e = registry().get(sid)
-        if e is None or e.get("status") == "excluded" or not e.get("text_ar"):
+        # A science source has no text (its label is what is written): it needs the label, not a text.
+        has_text = bool((e or {}).get("label")) if (e or {}).get("type") == "science" else bool((e or {}).get("text_ar"))
+        if e is None or e.get("status") == "excluded" or not has_text:
             sys.exit(f"error: {sid} is not a source of the registry a narration can rest on (tools/trial/rules.py)")
         if e.get("status") != "validated" and f"source {sid}" not in proposed:
             proposed.append(f"source {sid}")
@@ -202,12 +228,17 @@ def references(ids: list[str]) -> dict:
                 sys.exit(f"error: {sid}: tafsir « {ref['edition']} » is outside content/policy.yaml")
             if (name["ar"], name["en"]) not in tafsirs:
                 tafsirs.append((name["ar"], name["en"]))
+        elif e["type"] == "science":
+            if (e["label"]["ar"], e["label"]["en"]) not in sciences:
+                sciences.append((e["label"]["ar"], e["label"]["en"]))
         else:
-            sys.exit(f"error: {sid}: a narration rests on a hadith or a tafsir, not on a source of type « {e['type']} »")
+            sys.exit(f"error: {sid}: a narration rests on a hadith, a tafsir or a science source, not on a source of type « {e['type']} »")
     ar = [("رواه " + " و".join(a for a, _ in reports))] if reports else []
     en = [", ".join(b for _, b in reports)] if reports else []
     ar += [a for a, _ in tafsirs]
     en += [b for _, b in tafsirs]
+    ar += [a for a, _ in sciences]              # the papers and the data come last, after the tafsir names
+    en += [b for _, b in sciences]
     return {"ar": " · ".join(ar), "en": " · ".join(en), "ids": list(ids)}
 
 

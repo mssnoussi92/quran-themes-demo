@@ -265,10 +265,18 @@ class Checker:
         self.glyphs(file, src.get("excerpt_en") or src["text_en"], "latin", f"{kind} {sid}, its translation")
         return src
 
-    def passage(self, file: str, ids) -> set[str]:
+    def passage(self, file: str, ids, upto=None) -> set[str]:
         """`verses:` verses that follow one another in a surah, recited without a break: one cut, from the start of
-        the first to the end of the last (a reciter who chains short verses leaves no silence to cut at)."""
-        if not isinstance(ids, list) or len(ids) < 2:
+        the first to the end of the last (a reciter who chains short verses leaves no silence to cut at).
+        `upto: N` cuts one verse after its Nth word: it is the only case of a `verses` list of one verse."""
+        if upto is not None:
+            if not isinstance(ids, list) or len(ids) != 1:
+                self.out.error(file, f"`upto` cuts one verse after its Nth word: `verses` must list exactly one verse, not {ids}")
+                return set()
+            if not isinstance(upto, int) or isinstance(upto, bool) or upto < 1:
+                self.out.error(file, f"`upto: {upto}` is the number of recited words kept, an integer from 1")
+                return set()
+        elif not isinstance(ids, list) or len(ids) < 2:
             self.out.error(file, f"`verses` is a list of two verses or more (one verse: `verse:`): {ids}")
             return set()
         srcs = [self.quoted(file, sid, "verse") for sid in ids]
@@ -279,6 +287,16 @@ class Checker:
         if any(b != (a[0], a[1] + 1) for a, b in zip(refs, refs[1:])):
             self.out.error(file, f"verses {', '.join(keys)}: a passage is made of verses that follow one another in one surah")
         cuts = [self.repo.cuts.get(k) for k in keys]
+        if upto is not None:
+            timed = (cuts[0] or {}).get("words") or []
+            words = [t for t in srcs[0]["text_ar"].split() if script.is_word(t)]
+            if timed and upto > len(timed):
+                self.out.error(file, f"`upto: {upto}`: verse {keys[0]} has {len(timed)} recited words")
+            elif not script.stops_after(srcs[0]["text_ar"], upto):
+                # A cut must end a whole sentence: the reciter stops at a pause sign, not in the middle of one.
+                at = words[upto - 1] if upto <= len(words) else "?"
+                self.out.warn(file, f"`upto: {upto}` of {keys[0]}: word {upto} (« {at} ») is not followed by a pause sign (ۖ ۗ ۚ ۛ ۘ ۙ ۜ): "
+                                    "the cut would end in the middle of a sentence")
         if all(cuts) and any(abs(a["end"] - b["start"]) > 0.005 for a, b in zip(cuts, cuts[1:])):
             self.out.error(file, f"verses {keys[0]} to {keys[-1]}: their cuts do not touch in the reciter's file "
                                  "(each ends where the next starts: tools/audio/recitation.py --set)")
@@ -316,7 +334,8 @@ class Checker:
         """`sources:` of a narration segment: what its lines rest on, written on screen as a reference and listed in
         the description, never read. A hadith of the policy (the report the narration tells in its own words: its
         words go to `told`, so that the voice saying four of them in a row is refused) or the passage of a tafsir
-        of the policy about a verse recited in this short (where the meaning said comes from)."""
+        of the policy about a verse recited in this short (where the meaning said comes from), or a `science` source
+        (a paper or a dataset the claim rests on: it needs its label, no text and no recited verse)."""
         where = f"narration {seg.get('narration')}"
         listed = seg.get("sources")
         if not isinstance(listed, list) or not listed or any(not isinstance(i, str) for i in listed):
@@ -329,6 +348,14 @@ class Checker:
                 continue
             if src.get("status") == "excluded":
                 self.out.error(file, f"{where}: source {sid} is excluded from the registry")
+                continue
+            if src.get("type") == "science":
+                # A paper or a dataset: no text, only the label written on screen (and the line of the description).
+                label = src.get("label") or {}
+                if not label.get("ar") or not label.get("en"):
+                    self.out.error(file, f"{where}: science source {sid} has no label.ar / label.en in the registry")
+                elif src.get("status") != "validated" and f"source {sid}" not in self.unvalidated:
+                    self.unvalidated.append(f"source {sid}")
                 continue
             if not src.get("text_ar"):
                 self.out.error(file, f"{where}: source {sid} has no text in the registry (tools/sources/fetch.py)")
@@ -348,7 +375,7 @@ class Checker:
                     self.out.error(file, f"{where}: source {sid} explains {', '.join(sorted(about))}, which this short does not recite")
                     continue
             else:
-                self.out.error(file, f"{where}: source {sid} is of type « {src.get('type')} »: a narration rests on a hadith or a tafsir (a verse is recited: `verse:`)")
+                self.out.error(file, f"{where}: source {sid} is of type « {src.get('type')} »: a narration rests on a hadith or a tafsir, or on a science source (a verse is recited: `verse:`)")
                 continue
             if src.get("status") != "validated" and f"source {sid}" not in self.unvalidated:
                 self.unvalidated.append(f"source {sid}")
@@ -442,7 +469,10 @@ class Checker:
         if not spec.get("clip") and not spec.get("validated"):      # the script and the voice come before the pictures
             self.out.warn(file, "no `clip` yet: the pictures come after the script (tools/trial/clip.py, shown to the owner)")
         else:
-            self.required(file, spec, ["clip.source", "clip.id", "clip.author", "clip.page"])
+            if get(spec, "clip.source") == "generated":       # synthesized by tools/trial/clip.py: no author, no page
+                self.required(file, spec, ["clip.kind", "clip.seconds"])
+            else:
+                self.required(file, spec, ["clip.source", "clip.id", "clip.author", "clip.page"])
         segments = spec.get("segments") or []
         self.delivered = bool(spec.get("validated"))
         hadiths, recited = {}, set()
@@ -452,7 +482,9 @@ class Checker:
                 if src:
                     recited.add(f"{src['ref']['surah']}:{src['ref']['ayah']}")
             if "verses" in seg:
-                recited |= self.passage(file, seg["verses"])
+                recited |= self.passage(file, seg["verses"], seg.get("upto"))
+            elif "upto" in seg:
+                self.out.error(file, "`upto` is for a `verses` segment of one verse")
             if "reading" in seg:
                 src = self.quoted(file, seg["reading"], "reading")
                 if src:
@@ -501,6 +533,13 @@ class Checker:
                 ref = (self.repo.sources.get(sid) or {}).get("ref") or {}
                 keys.append(f"{ref.get('surah')}:{ref.get('ayah')}")
             cuts = [self.repo.cuts.get(k) for k in keys]
+            if cuts and all(cuts) and isinstance(seg.get("upto"), int) and len(cuts) == 1:
+                # Cut at word N: the time of the words kept (the reciter's own timing), else in proportion to them.
+                timed = cuts[0].get("words") or []
+                if timed:
+                    return timed[min(seg["upto"], len(timed)) - 1][2]
+                total = len((self.repo.sources.get(seg["verses"][0]) or {}).get("text_ar", "").split()) or seg["upto"]
+                return cuts[0]["seconds"] * min(1.0, seg["upto"] / total)
             return cuts[-1]["end"] - cuts[0]["start"] if cuts and all(cuts) else 0.0
         if "verse" in seg:
             src = self.repo.sources.get(seg["verse"]) or {}

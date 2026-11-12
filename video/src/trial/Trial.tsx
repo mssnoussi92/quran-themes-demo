@@ -388,6 +388,10 @@ export const PICTURES: Record<string, Drawn> = {
   caravan: CaravanPicture, duha: DuhaPicture, hope: HopePicture,
 };
 
+/** What a short draws above its veil, under its texts, outside the slowly growing picture: a timeline, a badge,
+ * anything that must not move. None by default; a short registers its own here. */
+export const OVERLAYS: Record<string, Drawn> = {};
+
 const hasLetter = (token: string) => /\p{L}/u.test(token);
 export const fit = (base: number, text: string, comfortable: number) => Math.round(base * Math.min(1, Math.sqrt(comfortable / Math.max(1, text.length))));
 
@@ -408,6 +412,15 @@ export type Layout = {
 export const PORTRAIT: Layout = {
   width: W, left: 70, right: 70, top: 340, size: 104, height: 450, verseTop: 316, verseSize: 66, verseComfortable: 150,
   sub: { top: 1490, left: 80, right: 80, size: 44 }, credit: { top: 1716, size: 30 }, readingComfortable: 120,
+};
+
+/** A short that needs its texts elsewhere (a timeline above the picture, a narrower column) says so here: what it
+ * gives is merged over PORTRAIT (`sub` and `credit` one level deeper, so that `sub: { top }` keeps the rest). */
+export type LayoutOverride = Omit<Partial<Layout>, "sub" | "credit"> & { sub?: Partial<Layout["sub"]>; credit?: Partial<Layout["credit"]> };
+export const LAYOUTS: Record<string, LayoutOverride> = {};
+const layoutOf = (trial: string): Layout => {
+  const own = LAYOUTS[trial];
+  return own ? { ...PORTRAIT, ...own, sub: { ...PORTRAIT.sub, ...own.sub }, credit: { ...PORTRAIT.credit, ...own.credit } } : PORTRAIT;
 };
 
 /** The largest size at which the phrases of a line, each on its own row (a long one on two), stay above
@@ -594,6 +607,8 @@ export const Trial: React.FC<TrialProps> = ({ data, platform }) => {
   const horizon = picture.horizon ?? 1300;
   const Drawing = PICTURES[data.trial];
   if (!Drawing) throw new Error(`no picture is drawn for the trial « ${data.trial} »`);
+  const Overlay = OVERLAYS[data.trial];
+  const layout = layoutOf(data.trial);
   const zoom = interpolate(frame, [0, durationInFrames], [1, 1.07]);
   const current = [...data.segments].reverse().find((s) => t >= s.start - 0.3) ?? data.segments[0];
   const show = (id: string) => sceneOpacity(data.segments, id, t);
@@ -608,6 +623,11 @@ export const Trial: React.FC<TrialProps> = ({ data, platform }) => {
         </svg>
       </AbsoluteFill>
       <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(4,7,20,${0.78 * (picture.veil ?? 1)}) 0%, rgba(4,7,20,${0.45 * (picture.veil ?? 1)}) 30%, rgba(4,7,20,.05) 52%, rgba(4,7,20,.38) 100%)` }} />
+      {Overlay ? (
+        <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: "absolute", inset: 0 }}>
+          <Overlay t={t} show={show} since={since} horizon={horizon} />
+        </svg>
+      ) : null}
       {data.ambience ? <Html5Audio src={staticFile(data.ambience)} /> : null}
       {data.segments.map((seg, i) =>
         seg.file ? (
@@ -617,11 +637,11 @@ export const Trial: React.FC<TrialProps> = ({ data, platform }) => {
         ) : null,
       )}
       {current.kind === "narration" ? (
-        <NarrationText seg={current} t={t} last={current === data.segments[data.segments.length - 1]} handle={handle} />
+        <NarrationText seg={current} t={t} last={current === data.segments[data.segments.length - 1]} handle={handle} layout={layout} />
       ) : current.kind === "verse" ? (
-        <VerseText seg={current} t={t} />
+        <VerseText seg={current} t={t} layout={layout} />
       ) : (
-        <ReadingText seg={current} t={t} />
+        <ReadingText seg={current} t={t} layout={layout} />
       )}
       <div style={{ position: "absolute", top: 250, right: 90, fontFamily: FONT.latin, fontWeight: 600, fontSize: 30, color: GOLD, opacity: 0.9, textShadow: SHADOW }}>
         {handle}

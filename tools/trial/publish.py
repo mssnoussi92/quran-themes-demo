@@ -53,7 +53,7 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
 
     hadith = verse = False
     for kind, sid in ids:
-        if kind in ("report", "tafsir"):      # what a narration rests on (`sources:`): told or explained, never read
+        if kind in ("report", "tafsir", "science"):      # what a narration rests on (`sources:`): told, explained or measured, never read
             flush()
             lines.append(rests_on(kind, sid))
             hadith = hadith or kind == "report"
@@ -78,11 +78,14 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
 
 
 def rests_on(kind: str, sid: str) -> str:
-    """The line of a report a narration tells in its own words, or of the tafsir its meaning comes from."""
+    """The line of a report a narration tells in its own words, of the tafsir its meaning comes from, or of the
+    paper or the data (a `science` source) a claim rests on."""
     import sources as registry              # tools/trial/sources.py
 
     e = registry.entry_of(sid)
     ref = e["ref"]
+    if kind == "science":
+        return f"• {ref['author']}, {ref['title']}, {ref['publication']}, {ref['year']} · {e['url']}"
     if kind == "report":
         letter = chr(96 + ref["narration"]) if ref.get("narration") else ""
         return f"• {registry.COLLECTIONS[ref['collection']]} {ref['number']}{letter} (told in the narration's own words) · {e['url']}"
@@ -93,7 +96,8 @@ def rests_on(kind: str, sid: str) -> str:
 
 def quotes_of(segments: list[dict]) -> list[tuple[str, str]]:
     """What a list of segments quotes or rests on, in order: verses (one or a passage), readings, and the sources
-    of a narration (a hadith: a report told; a tafsir: where a meaning comes from)."""
+    of a narration (a hadith: a report told; a tafsir: where a meaning comes from; a science source: a paper or
+    data)."""
     ids = []
     for s in segments:
         if "verse" in s:
@@ -103,8 +107,23 @@ def quotes_of(segments: list[dict]) -> list[tuple[str, str]]:
         elif "reading" in s:
             ids.append(("reading", s["reading"]))
         for sid in s.get("sources") or []:
-            ids.append(("report" if sid.startswith("hadith.") else "tafsir", sid))
+            ids.append(("report" if sid.startswith("hadith.") else "science" if sid.startswith("science.") else "tafsir", sid))
     return ids
+
+
+def footage(specs: list[dict], own: dict | None = None) -> str:
+    """Where the pictures come from, and the ambience under the narration when the videos have one. `own`:
+    the film's own pictures (`pictures` of its file: a clip no short shows), credited with the others.
+    A generated clip (`clip.source: generated`) has no author and is not credited; the photos a short
+    carries (`photos`: credit, licence) are listed under « Images »."""
+    authors = [s["clip"]["author"] for s in specs if (s.get("clip") or {}).get("author")]
+    authors += [pic["clip"]["author"] for pic in (own or {}).values() if pic.get("clip", {}).get("author")]
+    images = [f"{p['credit']} ({p['licence']})" for s in specs for p in s.get("photos") or []]
+    beds = list(dict.fromkeys(f"{s['ambience']['source'].replace('bigsoundbank', 'BigSoundBank')} ({s['ambience']['author']})" for s in specs if s.get("ambience")))
+    parts = ([f"Footage: Pixabay ({', '.join(dict.fromkeys(authors))})"] if authors else []) \
+        + ([f"Images: {', '.join(dict.fromkeys(images))}"] if images else []) \
+        + ([f"Ambience: {', '.join(beds)}"] if beds else [])
+    return " · ".join(parts)
 
 
 def hashtags(conf: dict, theme: list[str], hadith: bool, verse: bool, most: int | None) -> str:
@@ -152,14 +171,6 @@ def main() -> None:
     narration = pub["narration"][args.voice]
     series_only = "chapters" not in film          # a series: shorts that stand alone, no film
     shorts = [yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film.get("shorts") or film["thumbnail"]["panels"]]
-    def footage(specs: list[dict], own: dict | None = None) -> str:
-        """Where the pictures come from, and the ambience under the narration when the videos have one. `own`:
-        the film's own pictures (`pictures` of its file: a clip no short shows), credited with the others."""
-        authors = [s["clip"]["author"] for s in specs] + [pic["clip"]["author"] for pic in (own or {}).values() if pic.get("clip", {}).get("author")]
-        line = "Footage: Pixabay (" + ", ".join(dict.fromkeys(authors)) + ")"
-        beds = list(dict.fromkeys(f"{s['ambience']['source'].replace('bigsoundbank', 'BigSoundBank')} ({s['ambience']['author']})" for s in specs if s.get("ambience")))
-        return line + (" · Ambience: " + ", ".join(beds) if beds else "")
-
     # « Je valide » of the owner on the texts: `validated` of every file, with `publish` in what it covers.
     said = [(s.get("validated") or {}) for s in [film, *shorts]]
     validated = all("publish" in (v.get("what") or []) for v in said)

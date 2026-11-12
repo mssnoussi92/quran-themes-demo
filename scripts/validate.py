@@ -108,6 +108,19 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
                     report.error(where, "id does not match ref")
                 if ref["edition"] not in tafsirs and src["status"] != "excluded":
                     report.error(where, f"tafsir '{ref['edition']}' is outside content/policy.yaml; status must be excluded")
+            if src["type"] == "science":
+                # A paper or a dataset a script rests on: labels and a checked claim, never a quoted text.
+                # (The schema says the same; these messages name the rule.)
+                if not re.fullmatch(r"science\.[a-z0-9-]+", sid):
+                    report.error(where, "a science id is science.<slug> (lowercase letters, digits, hyphens)")
+                if not isinstance(ref.get("year"), int) or isinstance(ref.get("year"), bool):
+                    report.error(where, "a science source needs ref.year, an integer")
+                for key in ("url", "label", "checked"):
+                    if not src.get(key):
+                        report.error(where, f"a science source needs {key}")
+                for key in ("text_ar", "text_en", "origin"):
+                    if key in src:
+                        report.error(where, f"a science source has no {key}: it is a label, not a quoted text")
             if src["type"] == "hadith":
                 suffix = chr(ord("a") + ref["narration"] - 1) if "narration" in ref else ""
                 if sid != f"hadith.{ref['collection']}.{ref['number']}{suffix}":

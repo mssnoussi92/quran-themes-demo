@@ -12,7 +12,7 @@
       "additionalProperties": false,
       "properties": {
         "id": { "type": "string", "pattern": "^[a-z]+(\\.[a-z0-9-]+)+$" },
-        "type": { "enum": ["ayah", "hadith", "athar", "tafsir"] },
+        "type": { "enum": ["ayah", "hadith", "athar", "tafsir", "science"] },
         "ref": { "type": "object" },
         "text_ar": { "type": ["string", "null"] },
         "text_en": { "type": ["string", "null"] },
@@ -60,6 +60,24 @@
               }
             },
             "retrieved": { "type": "string", "format": "date" }
+          }
+        },
+        "label": {
+          "description": "For a science source: the short names written on screen after the sources of a narration (ar for the Arabic part, en for the English part)",
+          "type": "object",
+          "required": ["ar", "en"],
+          "additionalProperties": false,
+          "properties": { "ar": { "type": "string" }, "en": { "type": "string" } }
+        },
+        "claim": { "type": "string", "description": "For a science source: what the paper or the data say, in a line (what the script may rest on)" },
+        "checked": {
+          "description": "For a science source: when the claim was checked and against which pages",
+          "type": "object",
+          "required": ["on", "sources"],
+          "additionalProperties": false,
+          "properties": {
+            "on": { "type": "string", "format": "date" },
+            "sources": { "type": "array", "minItems": 1, "items": { "type": "string", "format": "uri" } }
           }
         },
         "status": { "enum": ["proposed", "validated", "excluded"] },
@@ -146,8 +164,30 @@
           }
         },
         {
+          "if": { "properties": { "type": { "const": "science" } } },
+          "then": {
+            "description": "A paper or a dataset the script rests on, not a quoted text: it carries labels, a claim and the pages it was checked against. No text, nothing fetched.",
+            "required": ["url", "label", "checked"],
+            "properties": {
+              "id": { "pattern": "^science\\.[a-z0-9-]+$" },
+              "text_ar": false,
+              "text_en": false,
+              "origin": false,
+              "ref": {
+                "type": "object",
+                "required": ["year"],
+                "properties": { "year": { "type": "integer" } }
+              }
+            }
+          }
+        },
+        {
           "if": { "properties": { "status": { "const": "validated" } } },
-          "then": { "required": ["text_ar", "validated_by"] }
+          "then": { "required": ["validated_by"] }
+        },
+        {
+          "if": { "properties": { "status": { "const": "validated" }, "type": { "enum": ["ayah", "hadith", "athar", "tafsir"] } } },
+          "then": { "required": ["text_ar"] }
         },
         {
           "if": { "properties": { "status": { "const": "validated" }, "type": { "enum": ["ayah", "hadith", "athar"] } } },

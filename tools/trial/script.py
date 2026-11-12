@@ -49,6 +49,45 @@ def spoken(lines: list[dict]) -> float:
     return total
 
 
+PAUSE_SIGNS = "\u06d6\u06d7\u06da\u06db\u06d8\u06d9\u06dc"      # ۖ ۗ ۚ ۛ ۘ ۙ ۜ: where a reciter may stop in a verse
+
+
+def is_word(token: str) -> bool:
+    """A token that is recited (it has a letter), as hasLetter in video/src/trial/Trial.tsx: a pause sign alone is not."""
+    return any(ch.isalpha() for ch in token)
+
+
+def first_words(text: str, n: int) -> str:
+    """The first n recited words of a verse's display text (`upto: n`), with the pause sign that follows word n
+    when it is a token of its own (a sign attached to the word comes with the word)."""
+    kept, count = [], 0
+    for token in text.split():
+        if is_word(token):
+            if count == n:
+                break
+            count += 1
+        kept.append(token)
+    return " ".join(kept)
+
+
+def first_sentence(en: str) -> str:
+    """The translation up to the end of its first sentence (at the first « . »), period kept."""
+    head, dot, _ = en.partition(". ")
+    return head + dot.strip() if dot else en
+
+
+def stops_after(text: str, n: int) -> bool:
+    """Is word n of the verse's text followed by a pause sign (attached to it, or the next token)?"""
+    tokens, count = text.split(), 0
+    for i, token in enumerate(tokens):
+        if is_word(token):
+            count += 1
+            if count == n:
+                nxt = tokens[i + 1] if i + 1 < len(tokens) else ""
+                return any(c in PAUSE_SIGNS for c in token) or (bool(nxt) and not is_word(nxt) and any(c in PAUSE_SIGNS for c in nxt))
+    return False
+
+
 def registry() -> dict:
     out = {}
     for path in (ROOT / "content" / "sources").glob("*.yaml"):
@@ -85,7 +124,7 @@ def quote(sid: str, sources: dict, cuts: dict) -> tuple[str, float]:
 COLLECTIONS = {"bukhari": "Sahih al-Bukhari", "muslim": "Sahih Muslim", "tirmidhi": "Jami' at-Tirmidhi"}
 
 
-def passage(ids: list[str], sources: dict, cuts: dict) -> tuple[str, float]:
+def passage(ids: list[str], sources: dict, cuts: dict, upto: int | None = None) -> tuple[str, float]:
     """Verses that follow one another, recited without a break (`verses:`): one line, and how long it lasts."""
     srcs = []
     for sid in ids:
@@ -95,6 +134,14 @@ def passage(ids: list[str], sources: dict, cuts: dict) -> tuple[str, float]:
     keys = [f"{x['ref']['surah']}:{x['ref']['ayah']}" for x in srcs]
     found = [cuts.get(k) for k in keys]
     seconds = found[-1]["end"] - found[0]["start"] if all(found) else 0.0
+    if upto and len(srcs) == 1 and found[0]:          # cut at the end of word `upto`: only those words, the first sentence
+        words = found[0]["words"]
+        seconds = words[min(upto, len(words)) - 1][2]
+        x = srcs[0]
+        state = "" if x.get("status") == "validated" else " · **source proposée, à valider**"
+        hand = " · coupe posée à la main, à écouter" if "hand" in found[0].get("method", "") else ""
+        name = (x.get("origin") or {}).get("surah_en", "")
+        return (f"**Verset récité, coupé au mot {upto}** · {name} {keys[0]} · {seconds:.0f} s{state}{hand}  \n  {first_words(x['text_ar'], upto)}  \n  *{first_sentence(x['text_en'])}*", seconds)
     state = "" if all(x.get("status") == "validated" for x in srcs) else " · **sources proposées, à valider**"
     hand = " · coupes posées à la main, à écouter" if any(c and "hand" in c.get("method", "") for c in found) else ""
     name = (srcs[0].get("origin") or {}).get("surah_en", "")
@@ -115,6 +162,8 @@ def rests_on(ids: list[str], sources: dict, policy: dict) -> str:
             name = COLLECTIONS.get(ref["collection"], ref["collection"].capitalize())
             letter = "abcdefgh"[ref["narration"] - 1] if ref.get("narration") else ""
             out.append(f"récit de [{name} {ref['number']}{letter}]({src.get('url')}), raconté avec nos mots{state}")
+        elif src["type"] == "science":
+            out.append(f"source scientifique [{src['label']['en']}]({src.get('url')}) : {src.get('claim', '')}{state}")
         else:
             edition = ((policy.get("tafsir") or {}).get("editions") or {}).get(ref["edition"]) or {}
             out.append(f"sens d'après [{edition.get('en', ref['edition'])} · {edition.get('ar', '')}]({src.get('url')}) sur {ref['surah']}:{ref['ayah']}{state}")
@@ -160,7 +209,7 @@ def main() -> None:
                 new += sum(1 for l in seg["lines"] if not l.get("kept"))
                 kept += sum(1 for l in seg["lines"] if l.get("kept"))
             elif "verses" in seg:
-                text, seconds = passage(seg["verses"], sources, cuts)
+                text, seconds = passage(seg["verses"], sources, cuts, seg.get("upto"))
                 body += [f"**{stamp(t)}** · {text}", ""]
                 recited += seconds
             else:

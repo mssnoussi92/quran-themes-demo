@@ -285,3 +285,187 @@ def test_a_short_without_a_clip_is_a_warning_until_its_videos_are_validated(copy
     copy.dump("content/trial/caravan.yaml", spec)
     refused(copy.rules("--film", "ayah", "--draft"), "missing field `clip.source`")
 
+
+
+# ---- the series « سنريهم آياتنا »: science sources, a verse cut at a pause sign, a generated clip -----------------
+
+HUBBLE = {
+    "id": "science.hubble-1929", "type": "science",
+    "ref": {"author": "Edwin Hubble", "title": "A relation between distance and radial velocity among extra-galactic nebulae",
+            "publication": "Proceedings of the National Academy of Sciences 15 (3): 168-173", "year": 1929},
+    "url": "https://doi.org/10.1073/pnas.15.3.168",
+    "label": {"ar": "هابل، ١٩٢٩", "en": "Hubble, PNAS, 1929"},
+    "claim": "galaxies recede from us, the faster the farther (1929)",
+    "checked": {"on": "2026-11-12", "sources": ["https://en.wikipedia.org/wiki/Hubble%27s_law"]},
+    "status": "proposed",
+    "notes": "a paper, not a quoted text: it carries labels, no text",
+}
+PAUSES = "ۖۗۚۛۘۙۜ"
+
+
+def add_science(copy, **change) -> dict:
+    entry = {k: v for k, v in {**HUBBLE, **change}.items() if v is not None}
+    (copy.root / "content" / "sources" / "science.yaml").write_text(
+        yaml.safe_dump([entry], allow_unicode=True, sort_keys=False, width=10_000), encoding="utf-8")
+    return entry
+
+
+def validate(copy) -> subprocess.CompletedProcess:
+    """scripts/validate.py on the copy (it reads the schemas and the content next to it)."""
+    shutil.copytree(REPO / "schemas", copy.root / "schemas", dirs_exist_ok=True)
+    (copy.root / "scripts").mkdir(exist_ok=True)
+    shutil.copy(REPO / "scripts" / "validate.py", copy.root / "scripts" / "validate.py")
+    return subprocess.run([sys.executable, str(copy.root / "scripts" / "validate.py")], capture_output=True, text=True, check=False)
+
+
+def tool(name: str):
+    """A module of tools/trial/ (they are scripts: put the directory on the path)."""
+    sys.path.insert(0, str(REPO / "tools" / "trial"))
+    return __import__(name)
+
+
+def test_a_science_source_is_accepted_in_a_narration(copy):
+    add_science(copy)
+    set_sources(copy, "caravan", "meaning", ["tafsir.muyassar.62.11", "science.hubble-1929"])
+    done = copy.rules("--film", "ayah", "--draft")
+    assert done.returncode == 0, done.stdout[-2000:]
+    assert "source science.hubble-1929" in done.stdout            # proposed, listed like the others
+    set_sources(copy, "caravan", "meaning", ["science.hubble-1929"])     # no recited verse and no text needed
+    assert copy.rules("--film", "ayah", "--draft").returncode == 0
+
+
+def test_a_science_source_needs_its_label(copy):
+    add_science(copy, label=None)
+    set_sources(copy, "caravan", "meaning", ["science.hubble-1929"])
+    refused(copy.rules("--film", "ayah", "--draft"), "science source science.hubble-1929 has no label")
+    done = validate(copy)                                         # the registry refuses it too, at its schema
+    assert done.returncode == 1 and "science" in done.stdout + done.stderr, done.stdout[-2000:] + done.stderr[-1000:]
+    add_science(copy)
+    done = validate(copy)
+    assert done.returncode == 0, done.stdout[-2000:]
+
+
+def test_a_science_source_is_a_label_never_a_text(copy):
+    add_science(copy, text_ar="نص")
+    assert validate(copy).returncode == 1
+    add_science(copy, ref={**HUBBLE["ref"], "year": "1929"})
+    assert validate(copy).returncode == 1
+
+
+def test_a_science_source_is_not_a_verse_nor_a_reading(copy):
+    add_science(copy)
+    spec = copy.load("content/trial/caravan.yaml")
+    next(s for s in spec["segments"] if "verse" in s)["verse"] = "science.hubble-1929"
+    copy.dump("content/trial/caravan.yaml", spec)
+    refused(copy.rules("--film", "ayah", "--draft"), "verse science.hubble-1929 is a source of type « science »")
+    spec = copy.load("content/trial/duha.yaml")
+    passage = next(s for s in spec["segments"] if "verses" in s)
+    passage["verses"] = ["science.hubble-1929", *passage["verses"][1:]]
+    copy.dump("content/trial/duha.yaml", spec)
+    refused(copy.rules("--film", "ayah", "--draft"), "verse science.hubble-1929 is a source of type « science »")
+
+
+def cut_at_a_pause(copy) -> tuple[str, str, int]:
+    """A verse a short recites whose text has a pause sign inside it: its id, its short, and the number of the word
+    the sign follows."""
+    for sid, short in (("quran.62.11", "caravan"), ("quran.39.53", "hope")):
+        tokens = copy.source(sid)["text_ar"].split()
+        count = 0
+        for i, token in enumerate(tokens):
+            count += any(ch.isalpha() for ch in token)
+            following = tokens[i + 1] if i + 1 < len(tokens) else ""
+            if count and i + 1 < len(tokens) and any(c in PAUSES for c in token + following):
+                return sid, short, count
+    raise AssertionError("no verse with a pause sign among the ones the shorts recite")
+
+
+def test_a_verse_is_cut_at_a_pause_sign(copy):
+    sid, short, n = cut_at_a_pause(copy)
+    spec = copy.load(f"content/trial/{short}.yaml")
+    verse = next(s for s in spec["segments"] if s.get("verse") == sid)
+    del verse["verse"]
+    verse.update({"verses": [sid], "upto": n})
+    copy.dump(f"content/trial/{short}.yaml", spec)
+    done = copy.rules("--film", "ayah", "--draft")
+    assert done.returncode == 0 and "not followed by a pause sign" not in done.stdout, done.stdout[-2000:]
+    verse["upto"] = n + 1                                          # the middle of a sentence: a warning, not an error
+    copy.dump(f"content/trial/{short}.yaml", spec)
+    done = copy.rules("--film", "ayah", "--draft")
+    assert done.returncode == 0 and "not followed by a pause sign" in done.stdout, done.stdout[-2000:]
+    verse["upto"] = 400                                            # more words than the verse has
+    copy.dump(f"content/trial/{short}.yaml", spec)
+    refused(copy.rules("--film", "ayah", "--draft"), "recited words")
+
+
+def test_upto_cuts_one_verse_only(copy):
+    spec = copy.load("content/trial/duha.yaml")
+    first = next(s for s in spec["segments"] if "verses" in s)
+    assert len(first["verses"]) >= 2
+    first["upto"] = 3
+    copy.dump("content/trial/duha.yaml", spec)
+    refused(copy.rules("--film", "ayah", "--draft"), "`upto` cuts one verse after its Nth word")
+    first["verses"] = first["verses"][:1]                          # one verse and no `upto`: that is `verse:`
+    del first["upto"]
+    copy.dump("content/trial/duha.yaml", spec)
+    refused(copy.rules("--film", "ayah", "--draft"), "`verses` is a list of two verses or more")
+
+
+def test_a_cut_verse_lasts_what_its_kept_words_last(copy):
+    rules = tool("rules")
+    repo = rules.Repo(copy.root)
+    checker = rules.Checker(repo, rules.Findings(), True)
+    sid, _, n = cut_at_a_pause(copy)
+    cut = checker.seconds_of({"verses": [sid], "upto": n})
+    whole = repo.cuts[sid.removeprefix("quran.").replace(".", ":")]["seconds"]
+    assert 0 < cut < whole
+
+
+def test_a_generated_clip_needs_no_pixabay_id(copy):
+    spec = copy.load("content/trial/caravan.yaml")
+    spec["clip"] = {"source": "generated", "kind": "night", "seconds": 20, "brightness": 1.0}
+    copy.dump("content/trial/caravan.yaml", spec)
+    done = copy.rules("--film", "ayah", "--draft")
+    assert done.returncode == 0, done.stdout[-2000:]
+    del spec["clip"]["kind"]
+    copy.dump("content/trial/caravan.yaml", spec)
+    refused(copy.rules("--film", "ayah", "--draft"), "missing field `clip.kind`")
+
+
+def test_a_generated_clip_is_not_credited_and_photos_are():
+    publish = tool("publish")
+    photo = {"file": "signs/webb.jpg", "credit": "NASA, ESA, CSA, STScI", "licence": "CC BY 4.0", "page": "https://esawebb.org/images/weic2209a/"}
+    night = {"clip": {"source": "generated", "kind": "night", "seconds": 20}, "ambience": {"source": "bigsoundbank", "author": "J. S."}, "photos": [photo]}
+    other = {"clip": {"source": "generated", "kind": "night", "seconds": 20}, "photos": [photo]}
+    assert publish.footage([night, other]) == "Images: NASA, ESA, CSA, STScI (CC BY 4.0) · Ambience: BigSoundBank (J. S.)"
+    filmed = {"clip": {"source": "pixabay", "id": 1, "author": "Someone"}}
+    assert publish.footage([filmed, night]).startswith("Footage: Pixabay (Someone) · Images: ")
+    assert publish.footage([{"clip": {"source": "generated"}}]) == ""
+
+
+def test_the_references_of_a_narration_list_the_science_sources_last(monkeypatch):
+    sources = tool("sources")
+    monkeypatch.setattr(sources, "_registry", {**sources.registry(), HUBBLE["id"]: HUBBLE})
+    monkeypatch.setattr(sources, "proposed", [])
+    refs = sources.references(["science.hubble-1929", "tafsir.muyassar.62.11", "hadith.muslim.863a"])
+    assert refs["ar"].endswith("هابل، ١٩٢٩") and refs["en"].endswith("Hubble, PNAS, 1929")
+    assert refs["ar"].startswith("رواه") and refs["ar"].count(" · ") == 2
+    assert "source science.hubble-1929" in sources.proposed
+    line = tool("publish").rests_on("science", "science.hubble-1929")
+    assert line == ("• Edwin Hubble, A relation between distance and radial velocity among extra-galactic nebulae, "
+                    "Proceedings of the National Academy of Sciences 15 (3): 168-173, 1929 · https://doi.org/10.1073/pnas.15.3.168")
+    with pytest.raises(SystemExit):                                # a science source is not a verse
+        sources.described("science.hubble-1929")
+    with pytest.raises(SystemExit):
+        sources.references(["science.nowhere"])
+
+
+def test_a_verse_cut_keeps_its_first_words_and_its_first_sentence():
+    script = tool("script")
+    text = "أَلَمْ تَرَ ۖ إِلَى ٱلَّذِينَ ۚ خَرَجُوا"
+    assert script.first_words(text, 2) == "أَلَمْ تَرَ ۖ"
+    assert script.first_words(text, 3) == "أَلَمْ تَرَ ۖ إِلَى"
+    assert script.stops_after(text, 2) and script.stops_after(text, 4) and not script.stops_after(text, 3)
+    attached = "قَالَ رَبِّ ٱشْرَحْ لِىۖ صَدْرِى"              # the sign is attached to word 4
+    assert script.stops_after(attached, 4) and not script.stops_after(attached, 3)
+    assert script.first_sentence("He said it. And then he left. Done") == "He said it."
+    assert script.first_sentence("No full stop inside") == "No full stop inside"
