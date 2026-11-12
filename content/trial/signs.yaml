@@ -1,0 +1,19 @@
+# La série « سنريهم آياتنا » (idée du propriétaire, 2026-11-12 ; fiche et recherche : docs/themes.md ; script :
+# docs/scripts/signs.md). Le titre vient de 41:53 (« سنريهم آياتنا في الآفاق وفي أنفسهم حتى يتبين لهم أنه الحق »), écrit à
+# l'écran, jamais dit par la voix ; le récitateur récite 41:53 jusqu'au premier arrêt à la fin de chaque épisode (la
+# signature). Des versets qui annoncent une chose, ou dont un mot rejoint ce que la science a vu bien plus tard, sans
+# jamais dire que la science prouve le Coran. Style d'enquête validé : une frise des dates en or, des photos du ciel
+# (ESA, CC BY 4.0, crédit écrit sur l'image), des schémas dessinés, personne dessiné.
+# Une série : des shorts qui tiennent seuls, pas de film. L'ordre de publication est celui de `shorts` : chaque épisode
+# annonce le suivant. Script, titres et débuts validés par le propriétaire le 2026-11-12 (`script_validated` de chaque
+# épisode). Ici, ce que ce fichier porte de ses textes : le nom de la série, ses hashtags, la ligne de la voix.
+id: signs
+files: signs                     # début du nom des vidéos livrées : signs-short-<n>-<id>.mp4
+title: { ar: "سنريهم آياتنا", en: "We Will Show Them Our Signs" }
+shorts: [lahab, universe, sky, womb]
+handle: "@quran_words_daily"
+publish:
+  out: docs/retention/publication-signs.md
+  series: { en: "We Will Show Them Our Signs", ar: "سنريهم آياتنا" }
+  hashtags: ["#Quran", "#القرآن", "#Science"]
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }

@@ -1,0 +1,76 @@
+# « سنريهم آياتنا », épisode 4 (content/trial/signs.yaml ; script : docs/scripts/signs.md, validé). Style d'enquête
+# validé (docs/retention/signs-style-51-47.jpg) : un ciel de nuit généré, les dessins et les photos de l'ESA de
+# video/src/trial/Signs.tsx, la frise des dates et le badge de la série en surimpression. Personne n'est dessiné ;
+# aucune flamme (le Feu est l'invisible). Les répliques sont celles du script validé, mot pour mot.
+id: womb
+# « Je valide les scripts », puis « je valide l'épisode 2 et les deux répliques », puis « je valide les titres et les
+# nouveaux débuts » du propriétaire (2026-11-12) : les répliques, la place des versets, ce sur quoi chaque narration
+# repose, le titre. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication : il les valide sur les vidéos.
+script_validated: { by: mssnoussi92, on: 2026-11-12 }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 56-trial-womb     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) : rien à créditer ; les images sont dans les dessins.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1300, veil: 0.7 }
+# Les photos montrées par les dessins (crédit écrit sur l'image, comme l'exigent les conditions de l'ESA, et dans la description).
+photos:
+  - { file: signs/hubble-udf.jpg, credit: "NASA, ESA, S. Beckwith (STScI), HUDF Team", licence: "CC BY 4.0", page: "https://esahubble.org/images/heic0406a/" }
+# Ambiance sous la narration, jamais sous les versets : un des enregistrements validés à l'écoute (docs/model.md).
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 130, level: -38 }
+cover: { scene: microscope, title: "قبل الميكروسكوب بألف سنة… القرآن وصف شكلك", tag: "سنريهم آياتنا (٤)", focus: 1100 }
+publish:
+  title: { en: "1,000 years before microscopes, the Quran described you", ar: "قبل الميكروسكوب بألف سنة… القرآن وصف شكلك" }
+  part: 4
+  description:
+    en: "Since Aristotle, scholars thought the embryo was blood setting like milk; no one could see its shape at four weeks, three millimetres long. The Quran named that stage with one word: 'alaqa. Ibn Kathir, six centuries ago, described it."
+    ar: "من أيام أرسطو والعلما فاكرين الجنين دم بيتجمد زي اللبن، ومحدش كان يقدر يشوف شكله وهو تلاتة مللي. والقرآن سمّى المرحلة دي بكلمة واحدة: علقة. وابن كثير وصفها من أكتر من ستمية سنة."
+segments:
+  - narration: open
+    scene: milk
+    sources: [science.aristotle-generation, science.microscope-1620]
+    lines:
+      - ar: "قبل الميكروسكوب بألف سنة… القرآن وصف شكلك."
+        en: "A thousand years before the microscope… the Quran described your shape."
+      - ar: "من أيام أرسطو… أكبر العلما كانوا فاكرين: الجنين دم… بيتجمد زي اللبن."
+        en: "Since Aristotle… the greatest scholars believed: the embryo is blood… setting like milk."
+  - narration: unseen
+    scene: microscope
+    sources: [science.carnegie-stage-11]
+    lines:
+      - ar: "الجنين وعنده أربع أسابيع… طوله حوالي تلاتة مللي… ومحدش كان يقدر يشوف شكله."
+        en: "At four weeks the embryo is about three millimetres long… and no one could see its shape."
+      - ar: "طب القرآن… من ١٤٠٠ سنة… سمّى المرحلة دي بإيه؟"
+        en: "So what did the Quran, 1,400 years ago… call this stage?"
+  - verses: [quran.23.12, quran.23.13, quran.23.14]
+    scene: microscope
+  - narration: word
+    scene: leech
+    sources: [tafsir.ibn-kathir.23.14, tafsir.muyassar.23.14, science.carnegie-stage-11, science.ibn-kathir-1373]
+    lines:
+      - ar: "كلمة واحدة: علقة. ابن كثير قال: حمرا… على شكل العلقة… مستطيلة."
+        en: "One word: 'alaqa. Ibn Kathir wrote: red… shaped like a leech… elongated."
+      - ar: "والعلقة: الدودة اللي بتعيش في المية… وبتلزق وتمص الدم."
+        en: "And the leech: the worm that lives in water… that clings and feeds on blood."
+      - ar: "وده شكل الجنين في أسبوعه الرابع: مستطيل… ولازق في رحم أمه، بياخد منه غذاه."
+        en: "And that is the embryo in its fourth week: elongated… attached to its mother's womb, drawing its nourishment from it."
+      - ar: "وابن كثير كتب الكلام ده من أكتر من ستمية سنة… من غير ميكروسكوب."
+        en: "And Ibn Kathir wrote this over six hundred years ago… without a microscope."
+  - narration: image
+    scene: microscope
+    sources: [science.microscope-1620]
+    lines:
+      - ar: "والكلمة اللي اختارها القرآن لمرحلة محدش كان يشوفها… هي اسم الشكل اللي شافوه بعدها بأكتر من ألف سنة."
+        en: "And the word the Quran chose for a stage no one could see… names the shape they saw more than a thousand years later."
+  - verses: [quran.41.53]
+    upto: 11            # jusqu'au premier arrêt « ۗ », après « أنه الحق » : la signature de la série
+    scene: signs
+  - narration: close
+    scene: mirror
+    sources: [tafsir.muyassar.41.53]
+    lines:
+      - ar: "بص في المراية… أول آية شفتها في حياتك… هي إنت."
+        en: "Look in the mirror… the first sign you ever saw… is you."
+      - ar: "أربع آيات: راجل… وكون… وصدر… وجنين."
+        en: "Four signs: a man… a universe… a chest… and an embryo."
+      - ar: "تابعنا عشان الآية الجاية."
+        en: "Follow us for the next sign."

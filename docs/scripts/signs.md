@@ -134,7 +134,7 @@ Environ **2:01** · 0:45 de récitation · 13 répliques, dont 0 de raisonnement
 
 **0:15 · narration** (image : le Puy de Dôme et le baromètre, frise sur ١٦٤٨) · d'après : Périer et Pascal, Puy de Dôme, 19 septembre 1648 ; la chronique des Han (~30 av. J.-C.) (à sourcer) · source écrite à l'écran
 - قبلها بقرنين… سنة ١٦٤٨… طلعوا بمقياس على جبل في فرنسا… ولقوا إن الهوا بيخف كل ما تطلع لفوق.  
-  *Two centuries earlier, in 1648… they carried a gauge up a mountain in France… and found the air grows thinner the higher you go.* · **validée**
+  *Two centuries earlier, in 1648… they carried a gauge up a mountain in France… and found the air thins as you climb.* · **validée**
 - طب كتاب نزل في صحرا من ١٤٠٠ سنة… قبل أول إنسان يطير بأكتر من ألف سنة… قال إيه؟  
   *So a book revealed in a desert 1,400 years ago… more than a thousand years before the first human flew… what did it say?* · **validée**
 
@@ -168,7 +168,7 @@ Environ **2:01** · 0:45 de récitation · 13 répliques, dont 0 de raisonnement
 - تابعنا عشان الآية الجاية.  
   *Follow us for the next sign.* · **validée**
 
-## Épisode 4 · `womb` · قبل الميكروسكوب بألف سنة… القرآن وصف شكلك · A thousand years before the microscope, the Quran described your shape (titre validé)
+## Épisode 4 · `womb` · قبل الميكروسكوب بألف سنة… القرآن وصف شكلك · 1,000 years before microscopes, the Quran described you (titre validé)
 
 Environ **2:04** · 0:53 de récitation · 12 répliques, dont 0 de raisonnement de la session.
 
