@@ -2,9 +2,9 @@
 
 **Les quatre scripts sont validés par le propriétaire (2026-11-12)** : `lahab`, `sky`, `womb` (« je valide ta recommandation
 et je valide les scripts »), puis `universe` et les deux répliques changées pour lui (« je valide l'épisode 2 et les deux
-répliques »). **Titres** : ceux de `lahab` et `universe` sont validés (« كلمة واحدة كانت هتكذّب القرآن », « حتى أينشتاين
-غلط فيها ») ; ceux de `sky` et `womb` sont proposés. **Les premières répliques changent pour dire le titre**
-(sa demande : « changer les hooks du début avec ce qui est dans le titre ») : elles sont marquées « à valider ». Style validé :
+répliques »). **Les quatre titres et les débuts qui les disent sont validés** (« je valide les titres et les nouveaux débuts ») :
+« كلمة واحدة كانت هتكذّب القرآن », « حتى أينشتاين غلط فيها », « اللي بيحصل فوق ٨ كيلو… القرآن وصفه », « قبل الميكروسكوب بألف
+سنة… القرآن وصف شكلك ». **Le script entier est validé ; aucune voix n'est encore faite.** Style validé :
 `docs/retention/signs-style-51-47.jpg`. Toutes les répliques sont écrites par la session ; celles qui sont un
 raisonnement de la session, et non un tafsir, sont signalées. Les versets et leur
 traduction sont lus dans l'API de quran.com, jamais tapés. Les durées sont estimées (environ dix lettres par seconde,
@@ -28,11 +28,11 @@ Environ **1:43** · 0:25 de récitation · 16 répliques, dont 2 de raisonnement
 
 **0:00 · narration** (image : le défi, sur la première image (sablier))
 - كلمة واحدة… كانت هتكذّب القرآن.  
-  *One sentence… could have proved the Quran wrong.* · **hook aligné sur le titre : à valider · raisonnement de la session, signalé**
+  *One sentence… could have proved the Quran wrong.* · **validée (début aligné sur le titre) · raisonnement de la session, signalé**
 - القرآن قال على راجل عايش… وباسمه: هيموت على الكفر.  
-  *The Quran said of a living man… by his name: he will die a disbeliever.* · **hook aligné sur le titre : à valider**
+  *The Quran said of a living man… by his name: he will die a disbeliever.* · **validée (début aligné sur le titre)**
 - وكل اللي كان عليه: يقول الشهادة… ولو بلسانه بس.  
-  *All he had to do: say the shahada… even with his tongue alone.* · **hook aligné sur le titre : à valider**
+  *All he had to do: say the shahada… even with his tongue alone.* · **validée (début aligné sur le titre)**
 - وما قالهاش.  
   *And he never said it.* · **validée**
 
@@ -80,11 +80,11 @@ Environ **1:31** · 0:31 de récitation · 12 répliques, dont 1 de raisonnement
 
 **0:00 · narration** (image : l'équation d'Einstein écrite à la craie, sa constante Λ en or (frise sur ١٩١٧), puis le schéma de Ptolémée (frise sur ١٥٠)) · d'après : Aristote, *Du ciel* ; Ptolémée, *Almageste* ; Einstein, « Kosmologische Betrachtungen zur allgemeinen Relativitätstheorie », 1917 (à sourcer) · source écrite à l'écran
 - حتى أينشتاين… غلط فيها.  
-  *Even Einstein… got this one wrong.* · **hook aligné sur le titre : à valider**
+  *Even Einstein… got this one wrong.* · **validée (début aligné sur le titre)**
 - سنة ١٩١٧… زوّد رقم في معادلاته… عشان الكون يفضل ثابت.  
-  *In 1917… he added a term to his equations… to keep the universe still.* · **hook aligné sur le titre : à valider**
+  *In 1917… he added a term to his equations… to keep the universe still.* · **validée (début aligné sur le titre)**
 - زي ما أذكى عقول الدنيا كانت متأكدة… أكتر من ألفين سنة: الكون ثابت.  
-  *As the greatest minds had been certain for over two thousand years: the universe does not change.* · **hook aligné sur le titre : à valider**
+  *As the greatest minds had been certain for over two thousand years: the universe does not change.* · **validée (début aligné sur le titre)**
 
 **0:15 · narration** (image : « ١٩٢٩ » sur le champ profond de Webb, la coupole) · d'après : Edwin Hubble, *Proceedings of the National Academy of Sciences*, 1929 (à sourcer) · source écrite à l'écran
 - لحد سنة ١٩٢٩… تلسكوب فوق جبل في كاليفورنيا شاف المجرات… بتبعد عننا.  
@@ -118,7 +118,7 @@ Environ **1:31** · 0:31 de récitation · 12 répliques, dont 1 de raisonnement
 - تابعنا عشان الآية الجاية.  
   *Follow us for the next sign.* · **validée**
 
-## Épisode 3 · `sky` · اللي بيحصل فوق ٨ كيلو… القرآن وصفه · What happens 8 km up… the Quran described it (titre proposé)
+## Épisode 3 · `sky` · اللي بيحصل فوق ٨ كيلو… القرآن وصفه · What happens 8 km up… the Quran described it (titre validé)
 
 Environ **2:01** · 0:45 de récitation · 13 répliques, dont 0 de raisonnement de la session.
 
@@ -126,11 +126,11 @@ Environ **2:01** · 0:45 de récitation · 13 répliques, dont 0 de raisonnement
 
 **0:00 · narration** (image : le ballon très haut, frise sur ١٨٧٥) · d'après : le vol du Zénith, 15 avril 1875 (à sourcer : récits historiques, crédits sur l'image) · source écrite à l'écran
 - اللي بيحصل فوق تمانية كيلو… القرآن وصفه.  
-  *What happens eight kilometres up… the Quran described it.* · **hook aligné sur le titre : à valider**
+  *What happens eight kilometres up… the Quran described it.* · **validée (début aligné sur le titre)**
 - سنة ١٨٧٥… تلات رجالة طلعوا في السما ببالون.  
   *In 1875… three men rose into the sky in a balloon.* · **validée**
 - ولما عدّوا تمانية كيلو… اتنين منهم ما رجعوش: الهوا ما بقاش يكفي.  
-  *Past eight kilometres… two of them never came back: the air was no longer enough.* · **hook aligné sur le titre : à valider**
+  *Past eight kilometres… two of them never came back: the air was no longer enough.* · **validée (début aligné sur le titre)**
 
 **0:15 · narration** (image : le Puy de Dôme et le baromètre, frise sur ١٦٤٨) · d'après : Périer et Pascal, Puy de Dôme, 19 septembre 1648 ; la chronique des Han (~30 av. J.-C.) (à sourcer) · source écrite à l'écran
 - قبلها بقرنين… سنة ١٦٤٨… طلعوا بمقياس على جبل في فرنسا… ولقوا إن الهوا بيخف كل ما تطلع لفوق.  
@@ -168,7 +168,7 @@ Environ **2:01** · 0:45 de récitation · 13 répliques, dont 0 de raisonnement
 - تابعنا عشان الآية الجاية.  
   *Follow us for the next sign.* · **validée**
 
-## Épisode 4 · `womb` · قبل الميكروسكوب بألف سنة… القرآن وصف شكلك · A thousand years before the microscope, the Quran described your shape (titre proposé)
+## Épisode 4 · `womb` · قبل الميكروسكوب بألف سنة… القرآن وصف شكلك · A thousand years before the microscope, the Quran described your shape (titre validé)
 
 Environ **2:04** · 0:53 de récitation · 12 répliques, dont 0 de raisonnement de la session.
 
@@ -176,7 +176,7 @@ Environ **2:04** · 0:53 de récitation · 12 répliques, dont 0 de raisonnement
 
 **0:00 · narration** (image : un bol de lait qui caille (dessiné), frise sur ٣٥٠ ق.م) · d'après : Aristote, *De la génération des animaux* (le sang des menstrues « caillé » par la semence, comme la présure fait cailler le lait) (à sourcer) · source écrite à l'écran
 - قبل الميكروسكوب بألف سنة… القرآن وصف شكلك.  
-  *A thousand years before the microscope… the Quran described your shape.* · **hook aligné sur le titre : à valider**
+  *A thousand years before the microscope… the Quran described your shape.* · **validée (début aligné sur le titre)**
 - من أيام أرسطو… أكبر العلما كانوا فاكرين: الجنين دم… بيتجمد زي اللبن.  
   *Since Aristotle… the greatest scholars believed: the embryo is blood… setting like milk.* · **validée**
 - الجنين وعنده أربع أسابيع… طوله حوالي تلاتة مللي… ومحدش كان يقدر يشوف شكله.  

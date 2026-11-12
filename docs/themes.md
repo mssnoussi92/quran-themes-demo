@@ -346,6 +346,14 @@ porte les mots dont on a besoin.
 - **Le registre** n'a pas de type pour une source scientifique : un fichier (`content/sources/science.yaml` : id,
   référence, lien) et `rules.py` qui l'accepte, à faire avec le script.
 
+### Le script entier validé (propriétaire, 2026-11-12 : « je valide les titres et les nouveaux débuts »)
+
+Les quatre titres (ceux de `sky` et `womb` : les recommandations de la session) et les premières répliques qui les
+disent sont validés : **tout `docs/scripts/signs.md` est validé.** Aucune voix n'est faite ; la session recommande
+d'attendre les premières mesures (vendredi 13) avant les quatre prises, à sa décision. Avant la voix ou en même temps :
+les sources au registre (« proposé »), un type « source scientifique », les coupes de récitation (111:1-5, 51:47-49,
+6:125, 23:12-14, 41:53 jusqu'au premier arrêt), les fichiers des épisodes (`content/trial/`) et la composition du style.
+
 ### Deux titres validés ; les débuts alignés sur les titres (propriétaire, 2026-11-12)
 
 « Je valide « كلمة واحدة كانت هتكذّب القرآن » et « حتى أينشتاين غلط فيها » ; ces titres attirent, je cherche ce style ; je
