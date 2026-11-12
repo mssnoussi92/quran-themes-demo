@@ -319,6 +319,33 @@ la plus proche » (« أدنى أرض الشام إلى فارس »).
 **Budget** : trois requêtes de voix, trois clips à lui montrer, trois dessins, trois ambiances, un rendu GitHub
 Actions ; quatre sources de hadith et trois de tafsir à inscrire au registre.
 
+### Décision du propriétaire (2026-11-12) : Abou Lahab et deux scientifiques
+
+« Je veux Abou Lahab et deux scientifiques ; je suis avec toi, on ne dit pas que la science a prouvé le Coran ; mon
+idée : le Coran le dit il y a plus de 1400 ans, et la science l'a établi il y a quelques années ; علم الأجنة في
+القرآن est un exemple. » Badr et Rome restent en réserve.
+
+**L'embryologie : objection de la session, à trancher par lui.** Nos trois tafsirs lisent 23:14 avec des étapes de
+quarante jours : as-Sa'di : علقة « بعد مضي أربعين يوما من النطفة », مضغة « بعد أربعين يوما », les os et la chair
+« في الأربعين الثالثة » ; al-Muyassar : « بعد أربعين يوما مضغة » ; Ibn Kathir : quarante jours à chaque étape
+(Bukhari 3208, le hadith d'Ibn Mas'oud). L'embryologie d'aujourd'hui place les membres, puis les premiers os, dans
+les huit premières semaines. Une réplique de sens doit reposer sur un tafsir nommé (règle du projet) : on dirait donc
+ce que la science contredit, ou l'on s'écarte des trois. Ibn Kathir écrit bien « علقة حمراء على شكل العلقة
+مستطيلة » (en forme de sangsue, allongée), mais aussi que la مضغة n'a « ni forme ni trait ». Muslim 2645 (quarante-deux
+nuits, puis forme, ouïe, vue, peau, chair, os) va dans le sens de la science, et les savants concilient les deux
+hadiths ; pas en 1:40. **Recommandation de la session** : 51:47 et 6:125, où un tafsir de la politique (al-Muyassar)
+porte les mots dont on a besoin.
+
+**Ce qu'on dira honnêtement** :
+- 6:125 : la chronique Han (~30 av. J.-C.) décrit déjà le malaise des hauts cols ; ce qu'on ne savait pas, c'est
+  pourquoi (l'air diminue avec la hauteur, Pascal 1648, à sourcer). Ne pas dire « personne ne savait qu'on respire
+  mal en hauteur ».
+- 51:47 : l'univers immuable d'Aristote et de Ptolémée ; Einstein qui, en 1917, ajoute une constante pour le garder
+  immobile ; Hubble en 1929 (à sourcer) ; nos tafsirs disent « لموسعون لأرجائها » (al-Muyassar).
+- « Il y a quelques années » : 1648 et 1929 ; on dira la date.
+- **Le registre** n'a pas de type pour une source scientifique : un fichier (`content/sources/science.yaml` : id,
+  référence, lien) et `rules.py` qui l'accepte, à faire avec le script.
+
 ### Le côté scientifique : la recherche demandée (propriétaire, 2026-11-12)
 
 Sa demande : « des choses que le Coran dit depuis plus de 1400 ans, prouvées scientifiquement ces dernières années, en
