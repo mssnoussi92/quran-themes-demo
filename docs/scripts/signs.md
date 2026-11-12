@@ -13,7 +13,7 @@ raconte davantage.
 | --- | --- | --- | --- | --- | --- |
 | 1 | `lahab` | 1:49 | 0:25 | 16 | 2 |
 | 2 | `sky` | 1:57 | 0:45 | 12 | 0 |
-| 3 | `womb` | 2:04 | 0:53 | 12 | 1 |
+| 3 | `womb` | 2:04 | 0:53 | 12 | 0 |
 
 ## Épisode 1 · `lahab` · كلمة واحدة… وما قالهاش · One sentence… he never said it
 
@@ -117,7 +117,7 @@ Environ **1:57** · 0:45 de récitation · 12 répliques, dont 0 de raisonnement
 
 ## Épisode 3 · `womb` · كلمة واحدة لمرحلة محدش كان يشوفها · One word for a stage no one could see
 
-Environ **2:04** · 0:53 de récitation · 12 répliques, dont 1 de raisonnement de la session.
+Environ **2:04** · 0:53 de récitation · 12 répliques, dont 0 de raisonnement de la session.
 
 **L'image** : Une sangsue dans l'eau (dessinée, en silhouette) ; un microscope ancien (dessiné) ; **aucun embryon dessiné ni photographié tant que le propriétaire n'a pas tranché** (voir les points à trancher). Frise : « ٣٥٠ ق.م » (Aristote), « ١٧٠ » (Galien), « ٦١٠ » (le Coran, en vert), « ١٣٧٣ » (mort d'Ibn Kathir), « ١٩١٤ » (collection Carnegie).
 
@@ -153,9 +153,9 @@ Environ **2:04** · 0:53 de récitation · 12 répliques, dont 1 de raisonnement
   سَنُرِيهِمْ ءَايَـٰتِنَا فِى ٱلْـَٔافَاقِ وَفِىٓ أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ ٱلْحَقُّ  
   *We will show them Our signs in the horizons and within themselves until it becomes clear to them that it is the truth.* (Saheeh International)
 
-**1:52 · narration** (image : le ciel, puis la lumière douce)
-- اللي خلقك وإنت تلاتة مللي… مش هينساك وإنت كبير.  
-  *The One who created you when you were three millimetres long… will not forget you now that you are grown.* · **nouvelle · raisonnement de la session, signalé**
+**1:52 · narration** (image : un miroir (dessiné), puis la lumière douce) · d'après : « وفي أنفسهم » : [Al-Tafsir al-Muyassar](https://quran.com/41:53/tafsirs/16) sur 41:53 (« وفي أنفسهم وما اشتملت عليه من بديع آيات الله وعجائب صنعه ») · référence écrite à l'écran, jamais lue
+- بص في المراية… أول آية شفتها في حياتك… هي إنت.  
+  *Look in the mirror… the first sign you ever saw… is you.* · **nouvelle**
 - تلات آيات: راجل… وسما… وجنين.  
   *Three signs: a man… a sky… and an embryo.* · **nouvelle**
 - تابعنا عشان الآية الجاية.  
