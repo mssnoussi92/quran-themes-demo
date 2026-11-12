@@ -24,8 +24,13 @@ script_validated: { by: mssnoussi92, on: 2026-11-11 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 51-trial-duha     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
-# Clip, dessins et ambiance : après le script (skill new-scene) ; le clip se montre au propriétaire avant d'être employé.
-cover: { scene: dawn, title: "قالتله: سابك… فنزل الرد", tag: "آية وحكايتها · ٢" }
+# Clip PROPOSÉ (pas encore approuvé par le propriétaire) : une aube rose filmée d'un drone qui s'élève au-dessus d'une
+# colline boisée et découvre une baie, ralentie cinq fois pour ne se jouer qu'une fois. Dessins : video/src/trial/Ayah.tsx.
+clip: { source: pixabay, id: 2119, author: bellergy, page: "https://pixabay.com/videos/id-2119/", take: { slow: 5, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.7, ground: "#07060b", horizon: 1330 }
+# Ambiance sous la narration, jamais sous les versets : un des trois enregistrements validés à l'écoute par le
+# propriétaire sur le premier film (docs/model.md, « Ambiances ») : un pré la nuit.
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 80, level: -38 }
+cover: { scene: dawn, title: "قالتله: سابك… فنزل الرد", tag: "آية وحكايتها · ٢", focus: 1180 }
 publish:
   title: { en: "She told him: you've been left… and the answer came down", ar: "قالتله: سابك… فنزل الرد" }
   part: 2

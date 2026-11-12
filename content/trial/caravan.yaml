@@ -22,8 +22,13 @@ script_validated: { by: mssnoussi92, on: 2026-11-11 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 50-trial-caravan     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
-# Clip, dessins et ambiance : après le script (skill new-scene) ; le clip se montre au propriétaire avant d'être employé.
-cover: { scene: caravan, title: "سابوا خطبة الجمعة… ليه؟", tag: "آية وحكايتها · ١" }
+# Clip PROPOSÉ (pas encore approuvé par le propriétaire) : des dunes filmées d'un drone qui avance lentement, de jour,
+# ralenti cinq fois pour ne se jouer qu'une fois sur tout le short. Dessins : video/src/trial/Ayah.tsx.
+clip: { source: pixabay, id: 16139, author: AcornStudioSpain, page: "https://pixabay.com/videos/id-16139/", take: { slow: 5, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.74, ground: "#0b0907", horizon: 1330 }
+# Ambiance sous la narration, jamais sous le verset : un des trois enregistrements validés à l'écoute par le propriétaire
+# sur le premier film (docs/model.md, « Ambiances ») : le vent.
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -36 }
+cover: { scene: caravan, title: "سابوا خطبة الجمعة… ليه؟", tag: "آية وحكايتها · ١", focus: 1180 }
 publish:
   title: { en: "They walked out of the Friday sermon… why?", ar: "سابوا خطبة الجمعة… ليه؟" }
   part: 1

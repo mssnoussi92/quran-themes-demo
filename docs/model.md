@@ -89,7 +89,8 @@ l'un à l'autre en fondu.
 Des shorts qui tiennent seuls, sans film (la première : `ayah`, « آية وحكايتها », `docs/themes.md`) : `id`, `files`,
 `title` (ar, en), `shorts` (dans l'ordre de publication : chaque short annonce le suivant), `handle`, `publish`
 (`series`, `hashtags`, `narration`, `out`). `script.py --film <série>` et `rules.py --film <série>` la lisent comme un
-film ; le reste de la chaîne ne la connaît pas encore (« Ce que les outils ne font pas encore », 5).
+film, et toute la chaîne aussi (préparation, rendu par le workflow `film`, textes à coller), sauf la page du
+propriétaire (« Ce que les outils ne font pas encore », 5).
 
 ### Un film (`content/trial/<id>.yaml`, avec `chapters`)
 
@@ -178,10 +179,10 @@ seul, donc jamais dans le dépôt ; l'auteur est cité dans les descriptions.
 | --- | --- | --- | --- |
 | 22183 | Artvan93 | mer calme au crépuscule, horizon rose (31 s) | le bateau |
 | 29238 | Dans4 | pleine lune dans de fins nuages (20 s) | le garçon |
-| 21488 | josefgadermaier | le soleil qui se couche derrière des arbres, sur un lac sombre, accéléré (26 s ; ralenti cinq fois : il se couche une fois sur tout le short) | Dhul-Qarnayn, le couchant : **proposé** (2026-11-11) |
-| 225408 | AttilaPergel | un fleuve entre deux parois de roche (les Portes de Fer), vu d'en haut, vertical (18 s) ; un petit bateau passe en bas, caché par le sol dessiné | Dhul-Qarnayn, l'argent refusé : **proposé** |
-| 381 | FlickrVideos | falaises sombres dans la brume du soir (Grand Canyon), accéléré (20 s) | Dhul-Qarnayn, le barrage : **proposé** |
-| 26085 | TeeFarm | une plaine nue, le soleil bas sur l'horizon (Namibie, un coucher filmé), 4K (73 s ; 30 s gardées) | Dhul-Qarnayn, le levant, dans le film seulement : **proposé** |
+| 21488 | josefgadermaier | le soleil qui se couche derrière des arbres, sur un lac sombre, accéléré (26 s ; ralenti cinq fois : il se couche une fois sur tout le short) | Dhul-Qarnayn, le couchant (approuvé par le propriétaire, 2026-11-11) |
+| 225408 | AttilaPergel | un fleuve entre deux parois de roche (les Portes de Fer), vu d'en haut, vertical (18 s) ; un petit bateau passe en bas, caché par le sol dessiné | Dhul-Qarnayn, l'argent refusé (approuvé, 2026-11-11) |
+| 381 | FlickrVideos | falaises sombres dans la brume du soir (Grand Canyon), accéléré (20 s) | Dhul-Qarnayn, le barrage (approuvé, 2026-11-11) |
+| 26085 | TeeFarm | une plaine nue, le soleil bas sur l'horizon (Namibie, un coucher filmé), 4K (73 s ; 30 s gardées) | Dhul-Qarnayn, le levant, dans le film seulement (approuvé, 2026-11-11) |
 | 14955 | adege | ciel étoilé au-dessus du Schlern (Dolomites), accéléré, 4K (17 s) : étoiles qui tournent, traînées d'avions, des nuages dans les 4 dernières secondes ; gardé : 12,5 s, en aller-retour (25 s) | du'a, le lieu de prière ; approuvé par le propriétaire le 2026-11-11 (« parfait », sur la planche de comparaison) |
 | 190332 | DancingSky | ciel de nuages au couchant sur une plaine, accéléré, 4K (14 s) | le mur |
 | 138588 | Natures_Embrace | vagues au couchant, 4K (29 s) | du'a, le grand poisson |
@@ -194,7 +195,9 @@ seul, donc jamais dans le dépôt ; l'auteur est cité dans les descriptions.
 | 228847 | Kanenori | cascade en forêt, vertical 4K (20 s) | |
 | 271161 | McPix22 | ruisseau entre des rochers moussus, 4K (27 s) | |
 | 174860 | Alex_Sochi7777 | rivière de forêt, petits rapides, 4K (28 s) | |
-| 2119 | bellergy | lever de soleil vu du ciel sur forêt et îles (25 s) | |
+| 2119 | bellergy | une aube rose vue d'un drone qui s'élève au-dessus d'une colline boisée et découvre une baie et ses îles (25 s ; ralenti cinq fois : il ne se joue qu'une fois) | série « آية وحكايتها », Ad-Duha : **proposé** (2026-11-12) |
+| 16139 | AcornStudioSpain | des dunes de jour, un drone qui avance lentement, 1080p (24 s ; ralenti cinq fois) | série, la caravane (62:11) : **proposé** (2026-11-12) |
+| 16495 | max_bbb | un ciel d'orage bleu sombre au-dessus d'une ligne d'arbres, accéléré, 1080p (16 s ; ralenti sept fois) | série, 39:53 : **proposé** (2026-11-12) |
 | 59291 | trilemedia | soleil au-dessus d'une vallée de brume, 4K (19 s) | du'a, la maison |
 | 223338 | adege | orage qui s'assombrit sur des collines, accéléré 4K (40 s) | |
 | 287510 | Thamnguyen_TBVN | ruisseau de forêt dans des rayons de soleil, 4K (16 s) | |
@@ -281,12 +284,12 @@ dit quoi faire.
 4. **Formats pas encore éprouvés.** Une histoire est validée, les idées reçues sont en cours (le du'a) ; pour une
    collection ou un texte expliqué, la structure du film et des shorts se propose d'abord au propriétaire (skill
    `choose-format`).
-5. **Une série de shorts n'est lue que jusqu'au script.** `script.py` et `rules.py` lisent une série (`shorts`, sans
-   `chapters`), `sources:` et `verses:` ; `fetch.py` remplit un passage de tafsir. À faire quand le script du pilote
-   (`ayah`) sera validé : `prepare.py` et `sources.py` (jouer des versets d'une traite, porter les références d'une
-   narration), `Trial.tsx` (écrire la référence à l'écran pendant la réplique, changer de verset dans un passage),
-   `publish.py` (les sources d'une narration dans les textes, une série sans film), `videos.py`, le workflow `film`
-   et `gallery.py` (une série : des shorts, pas de 16:9).
+5. **Une série de shorts : la page du propriétaire ne la montre pas encore.** Toute la chaîne lit une série
+   (`shorts`, sans `chapters`) depuis le 2026-11-12 : `script.py`, `rules.py`, `prepare.py` et `sources.py` (des
+   versets récités d'une traite, `verses:` ; ce sur quoi une narration repose, `sources:`), `Trial.tsx` (la référence
+   écrite pendant la réplique, à la place du crédit ; un passage tourne ses pages entre deux versets, chaque verset
+   fermé par son signe de fin), `publish.py`, `videos.py` et le workflow `film` (des shorts, pas de 16:9). Reste
+   `gallery.py` : la page suppose un film et sa vignette.
 
 Comblés le 2026-11-11, avec le du'a : **une source se lit dans le registre** (`tools/trial/sources.py` : texte,
 référence, coupe de récitation, lecture du hadith ; un fichier qui nomme un ancien épisode dans `verses`, comme le

@@ -235,8 +235,9 @@ voix de synthèse, aucune parole du Prophète ﷺ dite par elle) ; le sens vient
 **En réserve pour la série** : 49:2 et Thabit ibn Qays (Bukhari 4846, Muslim 119 : le récit vient après le verset) ; la
 sorte « un mot » (12:19, « سيارة » : « جماعة من المسافرين » selon al-Muyassar), plus légère, à essayer après le pilote.
 
-**Reste** : son « je valide le script » ; puis les clips (montrés avant d'être employés), les dessins, les ambiances,
-la référence à l'écran et la récitation d'une traite dans les outils, trois requêtes de voix, le rendu.
+**État (2026-11-12)** : script validé par le propriétaire le 2026-11-11 ; voix faite ; clips proposés (dunes, aube
+sur une baie, ciel d'orage), dessins et ambiances faits ; rendu par le workflow `film`. **Reste** : le contrôle, l'envoi,
+son « je valide » sur les vidéos, les sources proposées et les textes.
 
 ## Faits (ancien circuit)
 

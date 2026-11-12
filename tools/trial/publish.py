@@ -53,7 +53,11 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
 
     hadith = verse = False
     for kind, sid in ids:
-        if kind == "verse":
+        if kind in ("report", "tafsir"):      # what a narration rests on (`sources:`): told or explained, never read
+            flush()
+            lines.append(rests_on(kind, sid))
+            hadith = hadith or kind == "report"
+        elif kind == "verse":
             verse = True
             if run and (run[-1].split(".")[1] != sid.split(".")[1] or int(sid.split(".")[2]) != int(run[-1].split(".")[2]) + 1):
                 flush()
@@ -71,6 +75,36 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
             seen.add(l)
             unique.append(l)
     return unique, hadith, verse
+
+
+def rests_on(kind: str, sid: str) -> str:
+    """The line of a report a narration tells in its own words, or of the tafsir its meaning comes from."""
+    import sources as registry              # tools/trial/sources.py
+
+    e = registry.entry_of(sid)
+    ref = e["ref"]
+    if kind == "report":
+        letter = chr(96 + ref["narration"]) if ref.get("narration") else ""
+        return f"• {registry.COLLECTIONS[ref['collection']]} {ref['number']}{letter} (told in the narration's own words) · {e['url']}"
+    policy = yaml.safe_load((ROOT / "content" / "policy.yaml").read_text(encoding="utf-8")) or {}
+    name = policy["tafsir"]["editions"][ref["edition"]]["en"]
+    return f"• Meaning after {name} ({ref['surah']}:{ref['ayah']}) · {e['url']}"
+
+
+def quotes_of(segments: list[dict]) -> list[tuple[str, str]]:
+    """What a list of segments quotes or rests on, in order: verses (one or a passage), readings, and the sources
+    of a narration (a hadith: a report told; a tafsir: where a meaning comes from)."""
+    ids = []
+    for s in segments:
+        if "verse" in s:
+            ids.append(("verse", s["verse"]))
+        elif "verses" in s:
+            ids += [("verse", sid) for sid in s["verses"]]
+        elif "reading" in s:
+            ids.append(("reading", s["reading"]))
+        for sid in s.get("sources") or []:
+            ids.append(("report" if sid.startswith("hadith.") else "tafsir", sid))
+    return ids
 
 
 def hashtags(conf: dict, theme: list[str], hadith: bool, verse: bool, most: int | None) -> str:
@@ -114,7 +148,8 @@ def main() -> None:
         sources = FromRegistry()
     pub = film["publish"]
     narration = pub["narration"][args.voice]
-    shorts = [yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film["thumbnail"]["panels"]]
+    series_only = "chapters" not in film          # a series: shorts that stand alone, no film
+    shorts = [yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film.get("shorts") or film["thumbnail"]["panels"]]
     def footage(specs: list[dict]) -> str:
         """Where the pictures come from, and the ambience under the narration when the videos have one."""
         line = "Footage: Pixabay (" + ", ".join(dict.fromkeys(s["clip"]["author"] for s in specs)) + ")"
@@ -136,7 +171,7 @@ def main() -> None:
     out = [
         f"# {pub['series']['en']} · {pub['series']['ar']} : textes de publication",
         "",
-        f"Pour le film et chaque short : le titre, puis le texte à coller sur chaque plateforme. {status} ; "
+        f"Pour {'chaque short' if series_only else 'le film et chaque short'} : le titre, puis le texte à coller sur chaque plateforme. {status} ; "
         "les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés "
         "(`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation"
         + ((", avec l'ambiance sonore sous la narration, validée elle aussi (`…-ambience.mp4`)." if bed else
@@ -147,36 +182,38 @@ def main() -> None:
         "",
     ]
 
-    # The film
-    data = json.loads((PUBLIC / "trial" / f"{args.film}-{timeline}.json").read_text(encoding="utf-8"))
-    ids = [("verse", s["verse"]) if "verse" in s else ("reading", s["reading"]) for c in film["chapters"] for s in c["segments"] if "verse" in s or "reading" in s]
-    lines, hadith, verse = quoted(ids, sources)
-    title = f"{pub['title']['en']} · {pub['title']['ar']}"
-    if len(title) > limits["youtube"]["max_title"]:
-        sys.exit(f"error: the film's YouTube title is {len(title)} characters (most: {limits['youtube']['max_title']})")
-    chapters = "\n".join(f"{stamp(c['start'])} {c['title']['en']} · {c['title']['ar']}" for c in data["chapters"])
-    body = "\n\n".join([
-        pub["description"]["en"], pub["description"]["ar"], "Chapters:\n" + chapters,
-        "Quoted:\n" + "\n".join(lines), narration + "\n" + footage(shorts), conf["handle"],
-        hashtags(conf, pub["hashtags"], hadith, verse, None),
-    ])
-    if len(body) > limits["youtube"]["max_description"]:
-        sys.exit(f"error: the film's YouTube description is {len(body)} characters")
-    out += [f"## Le film · {pub['title']['en']} · {pub['title']['ar']}", "",
-            f"`{files}-film-16x9{bed}.mp4` · {stamp(data['seconds'])} · 16:9 · YouTube · miniature : `{film['thumbnail'].get('file', files + '-film-thumbnail.jpg')}`", "",
-            f"**Titre YouTube ({len(title)}/{limits['youtube']['max_title']})**", "", block(title),
-            "**Description YouTube**", "", block(body),
-            "Écran de fin (YouTube Studio) : les 12 dernières secondes sont une image calme, faite pour y poser le bouton "
-            "d'abonnement et la vidéo suivante.", ""]
+    if not series_only:
+        # The film
+        data = json.loads((PUBLIC / "trial" / f"{args.film}-{timeline}.json").read_text(encoding="utf-8"))
+        ids = quotes_of([s for c in film["chapters"] for s in c["segments"]])
+        lines, hadith, verse = quoted(ids, sources)
+        title = f"{pub['title']['en']} · {pub['title']['ar']}"
+        if len(title) > limits["youtube"]["max_title"]:
+            sys.exit(f"error: the film's YouTube title is {len(title)} characters (most: {limits['youtube']['max_title']})")
+        chapters = "\n".join(f"{stamp(c['start'])} {c['title']['en']} · {c['title']['ar']}" for c in data["chapters"])
+        body = "\n\n".join([
+            pub["description"]["en"], pub["description"]["ar"], "Chapters:\n" + chapters,
+            "Quoted:\n" + "\n".join(lines), narration + "\n" + footage(shorts), conf["handle"],
+            hashtags(conf, pub["hashtags"], hadith, verse, None),
+        ])
+        if len(body) > limits["youtube"]["max_description"]:
+            sys.exit(f"error: the film's YouTube description is {len(body)} characters")
+        out += [f"## Le film · {pub['title']['en']} · {pub['title']['ar']}", "",
+                f"`{files}-film-16x9{bed}.mp4` · {stamp(data['seconds'])} · 16:9 · YouTube · miniature : `{film['thumbnail'].get('file', files + '-film-thumbnail.jpg')}`", "",
+                f"**Titre YouTube ({len(title)}/{limits['youtube']['max_title']})**", "", block(title),
+                "**Description YouTube**", "", block(body),
+                "Écran de fin (YouTube Studio) : les 12 dernières secondes sont une image calme, faite pour y poser le bouton "
+                "d'abonnement et la vidéo suivante.", ""]
 
     # The shorts
     for spec in shorts:
         sp = spec["publish"]
         data = json.loads((PUBLIC / "trial" / f"{spec['id']}-{timeline}.json").read_text(encoding="utf-8"))
-        ids = [("verse", s["verse"]) if "verse" in s else ("reading", s["reading"]) for s in spec["segments"] if "verse" in s or "reading" in s]
-        lines, hadith, verse = quoted(ids, sources)
+        lines, hadith, verse = quoted(quotes_of(spec["segments"]), sources)
         n, total = sp["part"], len(shorts)
-        series = f"{pub['series']['en']} · part {n}/{total} · {pub['series']['ar']} · الجزء {str(n).translate(DIGITS)} من {str(total).translate(DIGITS)}"
+        # A series goes on: its shorts are numbered, never « n of total ».
+        series = (f"{pub['series']['en']} · {n} · {pub['series']['ar']} · {str(n).translate(DIGITS)}" if series_only else
+                  f"{pub['series']['en']} · part {n}/{total} · {pub['series']['ar']} · الجزء {str(n).translate(DIGITS)} من {str(total).translate(DIGITS)}")
         name = f"{files}-short-{n}-{spec['id']}"
         cover = (spec.get("cover") or {}).get("file", f"{name}-cover.jpg")
 
@@ -202,13 +239,13 @@ def main() -> None:
                 block(caption(conf["handles"]["tiktok"], limits["instagram_tiktok"]["max_hashtags"])),
                 f"**Titre YouTube ({len(title)}/{limits['youtube']['max_title']})**", "", block(title),
                 "**Description YouTube (Shorts)**", "", block(caption(conf["handle"], None)),
-                "Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.", ""]
+                *([] if series_only else ["Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.", ""])]
 
     target = args.out or ROOT / pub.get("out", f"docs/publication-{files}.md")
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text("\n".join(out), encoding="utf-8")
     shown = target.relative_to(ROOT) if target.is_relative_to(ROOT) else target
-    print(f"{shown}: the film and {len(shorts)} shorts" + (" (draft: durations estimated)" if args.draft else ""))
+    print(f"{shown}: {'a series, ' if series_only else 'the film and '}{len(shorts)} shorts" + (" (draft: durations estimated)" if args.draft else ""))
 
 
 if __name__ == "__main__":

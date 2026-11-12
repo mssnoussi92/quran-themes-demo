@@ -212,6 +212,8 @@ jobs:
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
+          # A series (a file with `shorts` and no chapters: shorts that stand alone) has no film to prepare.
+          if ! grep -q '^chapters:' "content/trial/$FILM.yaml"; then echo "$FILM is a series: no film"; exit 0; fi
           flags=()
           if [ "$AMBIENCE" != true ]; then flags+=(--no-ambience); fi
           # The film's own pictures (`pictures` of its file: a clip with nothing drawn, as the east of Dhul-Qarnayn).

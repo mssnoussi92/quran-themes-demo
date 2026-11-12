@@ -9,6 +9,7 @@ import { AbsoluteFill, Easing, Html5Audio, OffthreadVideo, Sequence, interpolate
 import { FONT, loadFonts } from "../fonts";
 import { subtitleChunks } from "../templates/Subtitles";
 import type { WordTiming } from "../types";
+import { Caravan, Gate, Lantern, Palm, Rain, Sermon, Stars } from "./Ayah";
 import { Boat, Fleet } from "./Boat";
 import { Call, Niche, Whale } from "./Dua";
 import { House, Land } from "./Home";
@@ -37,10 +38,15 @@ export const English: React.FC<{ text: string }> = ({ text }) => (
 type Phrase = { text: string; start: number };
 type Line = { ar: string; en: string; phrases: Phrase[]; end: number };
 /** `file` is null in a draft: the script and the scenes are looked at before any voice says them. */
-export type Narration = { kind: "narration"; scene: string; start: number; seconds: number; file: string | null; lines: Line[] };
+/** `refs`: what the lines rest on (the report the narration tells in its own words, the tafsir its meaning comes
+ * from): a reference written small while they are said, never read (tools/trial/sources.py, `references`). */
+export type Narration = { kind: "narration"; scene: string; start: number; seconds: number; file: string | null; lines: Line[]; refs?: { ar: string; en: string } };
+/** `verses`: a passage (verses recited without a break, tools/trial/sources.py `passage`): where each verse starts
+ * and ends among the words, and its translation. The pages turn between two verses. */
 export type Verse = {
   kind: "verse"; scene: string; start: number; seconds: number; file: string;
   reference: string; text: string; en: string; words: WordTiming[]; credit: string;
+  verses?: { en: string; first: number; last: number }[];
 };
 /** A hadith read by a real voice (the registry's recording); `file` is null in a draft when no reading is found yet. */
 export type Reading = {
@@ -298,10 +304,73 @@ const BarrierPicture: Drawn = ({ t, show, since, horizon }) => {
   );
 };
 
+const CLAMP = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
+
+/** « آية وحكايتها », the caravan (62:11): where the sermon is given, its lamps all lit (`sermon`); the loaded camels
+ * come in and the lamps go out while the verse is recited (`caravan`), until twelve are left (`twelve`: the twelve
+ * men who stayed); any other scene (`phone`): the desert alone, the viewer's own day. Nobody is drawn. */
+const CaravanPicture: Drawn = ({ t, show, since, horizon }) => {
+  const came = Math.max(show("caravan"), show("twelve"));
+  const there = Math.max(show("sermon"), came);
+  const sinceCaravan = t - since("caravan");
+  const lit = interpolate(sinceCaravan, [3, 17], [24, 12], CLAMP);
+  const enter = interpolate(sinceCaravan, [0, 7], [0, 1], { ...CLAMP, easing: Easing.out(Easing.cubic) });
+  return (
+    <>
+      <g opacity={there}>
+        <Land id="l-caravan" horizon={horizon} rim="#ffd9a0" />
+        <Sermon id="s-caravan" x={452} y={horizon + 30} scale={0.98} t={t} lit={lit} />
+      </g>
+      <g opacity={came}>
+        <Caravan id="c-caravan" x={470 - 560 * (1 - enter)} y={horizon + 30} scale={0.7} t={t} count={3} right />
+      </g>
+    </>
+  );
+};
+
+/** « آية وحكايتها », Ad-Duha (93:1-8): a still night over a dark house (`night`: a veil and its stars); the veil
+ * lifts and the filmed dawn is there (`dawn`); then three lights, one for each thing the surah recalls, each when
+ * its verse is recited (`day`: the house lit, a shelter; a lantern, a guidance; a palm heavy with dates, a
+ * provision). They stay lit when the night comes back. */
+const DuhaPicture: Drawn = ({ t, show, since, horizon }) => {
+  const night = show("night");
+  const day = t - since("day");
+  const lit = (at: number) => interpolate(day, [at, at + 1.4], [0, 1], CLAMP);
+  return (
+    <>
+      <rect x={-40} y={-40} width={W + 80} height={H + 80} fill="#03050f" opacity={0.6 * night} />
+      <Stars t={t} night={night} />
+      <Land id="l-duha" horizon={horizon} rim="#ffb9a0" />
+      <g opacity={1 - lit(0)}>
+        <House id="d-dark" x={250} y={horizon + 40} scale={0.78} t={t} lights={0} rim="#ffb9a0" />
+      </g>
+      <g opacity={lit(0)}>
+        <House id="d-lit" x={250} y={horizon + 40} scale={0.78} t={t} lights={1} rim="#ffb9a0" />
+      </g>
+      <Lantern id="d-lantern" x={590} y={horizon + 28} scale={0.95} t={t} lit={lit(4.2)} rim="#ffb9a0" />
+      <Palm id="d-palm" x={880} y={horizon + 16} scale={0.95} t={t} fruit={lit(9.16)} rim="#ffb9a0" />
+    </>
+  );
+};
+
+/** « آية وحكايتها », Az-Zumar 39:53: a road in the dark, a gate at its end, closed (`road`); the rain comes
+ * (`rain`, while the verse is recited and its meaning said); the gate opens and its light pours down the road
+ * (`gate`). Nobody on the road: the viewer is the one who comes back. */
+const HopePicture: Drawn = ({ t, show, horizon }) => (
+  <>
+    <Land id="l-hope" horizon={horizon} rim="#9fb6e6" path />
+    <Gate id="g-hope" x={490} y={horizon + 24} scale={0.92} t={t} open={show("gate")} />
+    <g opacity={show("rain")}>
+      <Rain t={t} />
+    </g>
+  </>
+);
+
 export const PICTURES: Record<string, Drawn> = {
   boat: BoatPicture, boy: HomePicture, wall: WallPicture,
   asked: AskedPicture, written: WrittenPicture, waited: WaitedPicture,
   west: WestPicture, tribute: TributePicture, barrier: BarrierPicture,
+  caravan: CaravanPicture, duha: DuhaPicture, hope: HopePicture,
 };
 
 const hasLetter = (token: string) => /\p{L}/u.test(token);
@@ -381,6 +450,13 @@ export const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean;
       <div lang="en" style={{ position: "absolute", top: layout.sub.top, left: layout.sub.left, right: layout.sub.right, textAlign: "center", opacity: show, fontFamily: ENGLISH, fontStyle: "italic", fontSize: subSize(line.en, layout), lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
         <English text={line.en} />
       </div>
+      {/* What these lines rest on, where a verse has its credit: there for the whole segment, not line by line. */}
+      {seg.refs ? (
+        <div style={{ position: "absolute", top: layout.credit.top, left: layout.left, right: layout.right, textAlign: "center", fontSize: layout.credit.size, color: "rgba(255,255,255,.62)", textShadow: SHADOW, opacity: interpolate(local, [0, 0.4, seg.seconds - 0.1, seg.seconds + 0.25], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
+          <span dir="rtl" lang="ar" style={{ fontFamily: FONT.arabic, fontSize: layout.credit.size * 1.15 }}>{seg.refs.ar}</span>
+          <span style={{ fontFamily: FONT.latin }}>{`  ·  ${seg.refs.en}`}</span>
+        </div>
+      ) : null}
     </>
   );
 };
@@ -392,10 +468,23 @@ export const VerseText: React.FC<{ seg: Verse; t: number; layout?: Layout }> = (
   let position = 0;
   const tokens = seg.text.split(/\s+/).map((token) => ({ token, position: hasLetter(token) ? ++position : null }));
   // A long verse is shown page by page (pages of the same size), each one from the moment its first word is recited.
+  // A passage turns its pages between two verses: whole verses, pages of about the same size.
   const count = position;
-  const pages = Math.ceil(count / VERSE_PAGE);
+  const firsts: number[] = [1];                // the first word of each page of a passage
+  let onPage = 0;
+  const even = count / Math.ceil(count / VERSE_PAGE);       // pages of about the same size
+  for (const v of seg.verses ?? []) {
+    const size = v.last - v.first + 1;
+    if (onPage > 0 && (onPage + size > VERSE_PAGE || onPage >= even)) {
+      firsts.push(v.first);
+      onPage = 0;
+    }
+    onPage += size;
+  }
+  const pages = seg.verses ? firsts.length : Math.ceil(count / VERSE_PAGE);
   const perPage = Math.ceil(count / pages);
-  const pageOf = (p: number) => Math.min(pages - 1, Math.floor((p - 1) / perPage));
+  const pageOf = (p: number) => (seg.verses ? firsts.filter((f) => f <= p).length - 1 : Math.min(pages - 1, Math.floor((p - 1) / perPage)));
+  const firstOf = (k: number) => (seg.verses ? firsts[k] : k * perPage + 1);
   const reached = [...seg.words].reverse().find((w) => local >= w.start)?.position ?? 1;
   const page = pageOf(reached);
   let lastPosition = 1;
@@ -403,18 +492,22 @@ export const VerseText: React.FC<{ seg: Verse; t: number; layout?: Layout }> = (
     lastPosition = p ?? lastPosition;          // a mark with no letter (۞, a pause sign) stays with the word before it
     return pageOf(lastPosition) === page;
   });
-  const pageStart = page === 0 ? -1 : seg.words.find((w) => w.position === page * perPage + 1)?.start ?? 0;
+  const pageStart = page === 0 ? -1 : seg.words.find((w) => w.position === firstOf(page))?.start ?? 0;
   const turn = interpolate(local, [pageStart - 0.05, pageStart + 0.25], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const longestPage = Math.max(...Array.from({ length: pages }, (_, k) => tokens.filter(({ position: p }) => p !== null && pageOf(p) === k).reduce((n, x) => n + x.token.length + 1, 0)));
   // The translation in short chunks, each starting with the recited word at the same place in the verse.
-  const chunks = subtitleChunks(seg.en);
-  const total = chunks.reduce((n, c) => n + c.length, 0) || 1;
-  let done = 0;
-  const cues = chunks.map((text) => {
-    const word = seg.words[Math.min(seg.words.length - 1, Math.floor((seg.words.length * done) / total))];
-    const start = done === 0 ? 0 : word.start;
-    done += text.length;
-    return { text, start };
+  // In a passage each verse has its own translation, cut the same way among its own words.
+  const cues = (seg.verses ?? [{ en: seg.en, first: 1, last: seg.words.length }]).flatMap((verse, n) => {
+    const words = seg.words.filter((w) => w.position >= verse.first && w.position <= verse.last);
+    const chunks = subtitleChunks(verse.en);
+    const total = chunks.reduce((sum, c) => sum + c.length, 0) || 1;
+    let done = 0;
+    return chunks.map((text) => {
+      const word = words[Math.min(words.length - 1, Math.floor((words.length * done) / total))];
+      const start = done === 0 ? (n === 0 ? 0 : (words[0]?.start ?? 0)) : (word?.start ?? 0);
+      done += text.length;
+      return { text, start };
+    });
   });
   const cue = [...cues].reverse().find((c) => local >= c.start) ?? cues[0];
   return (

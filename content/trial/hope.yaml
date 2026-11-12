@@ -25,8 +25,14 @@ script_validated: { by: mssnoussi92, on: 2026-11-11 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 52-trial-hope     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
-# Clip, dessins et ambiance : après le script (skill new-scene) ; le clip se montre au propriétaire avant d'être employé.
-cover: { scene: road, title: "قتلوا كتير… وجم يسألوا!", tag: "آية وحكايتها · ٣" }
+# Clip PROPOSÉ (pas encore approuvé par le propriétaire) : un ciel d'orage bleu sombre au-dessus d'une ligne d'arbres,
+# en accéléré, ralenti sept fois pour ne se jouer qu'une fois. Dessins : video/src/trial/Ayah.tsx.
+clip: { source: pixabay, id: 16495, author: max_bbb, page: "https://pixabay.com/videos/id-16495/", take: { slow: 7, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.8, ground: "#05070f", horizon: 1330 }
+# Ambiance sous la narration, jamais sous le verset : le vent, un des trois enregistrements validés à l'écoute par le
+# propriétaire (docs/model.md, « Ambiances »). Une pluie irait mieux à cette image : la recherche de la banque de sons
+# a refusé la session (403) ; à choisir avec lui s'il la veut.
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -36 }
+cover: { scene: gate, title: "قتلوا كتير… وجم يسألوا!", tag: "آية وحكايتها · ٣", focus: 1180 }
 publish:
   title: { en: "They had killed many… and came to ask", ar: "قتلوا كتير… وجم يسألوا!" }
   part: 3

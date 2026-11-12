@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Every video and still of a film and its shorts, listed from the files (content/trial/<film>.yaml and the
-shorts of its `thumbnail.panels`), never from a table: what the workflow film.yml renders, and the names the
+shorts of its `thumbnail.panels`; or a series, a file with `shorts` and no chapters: its shorts, no film), never from a table: what the workflow film.yml renders, and the names the
 publication texts (tools/trial/publish.py) give them.
 
   uv run --with pyyaml python3 tools/trial/videos.py --film <id> [--voice D] [--only all|shorts|film|tiktok|<short id>]
@@ -45,8 +45,9 @@ def compact(obj: dict) -> str:
 def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]]:
     film = load(film_id)
     files = film.get("files", film["id"])
-    shorts = [load(name) for name in film["thumbnail"]["panels"]]
+    shorts = [load(name) for name in film.get("shorts") or film["thumbnail"]["panels"]]
     ids = [s["id"] for s in shorts]
+    has_film = "chapters" in film               # a series (a file with `shorts`, no chapters) has no film
     if only not in ("all", "shorts", "film", "tiktok") and only not in ids:
         sys.exit(f"error: --only {only}: not all, shorts, film, tiktok or one of {', '.join(ids)}")
     # Same rule as publish.py: only the first film's videos (`ambience_after`: the ambience mixed under them
@@ -67,7 +68,7 @@ def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]
         if only != "tiktok":
             stills.append({"name": (spec.get("cover") or {}).get("file", f"{name}-cover.jpg"), "composition": "TrialCover916",
                            "props": compact(props), "frame": STILL_FRAME, "kind": "cover"})
-    if only in ("all", "film"):
+    if only in ("all", "film") and has_film:
         videos.append({"name": f"{files}-film-16x9{bed}", "composition": "TrialFilm169",
                        "props": compact({"film": film_id, "voice": voice, "data": None}),
                        "timeline": f"video/public/trial/{film_id}-{voice}.json", "kind": "film"})
@@ -87,7 +88,8 @@ def main() -> int:
                    help="the ids of the shorts to prepare, space-separated (every short unless --only names one: the film and the TikTok twins need them all)")
     args = p.parse_args()
     if args.ids:
-        ids = [name for name in load(args.film)["thumbnail"]["panels"]]
+        spec = load(args.film)
+        ids = [name for name in spec.get("shorts") or spec["thumbnail"]["panels"]]
         print(" ".join([args.only] if args.only in ids else ids))
         return 0
     videos, stills = listing(args.film, args.voice, args.only)
