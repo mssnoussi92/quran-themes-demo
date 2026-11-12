@@ -1,8 +1,8 @@
 # سنريهم آياتنا · We Will Show Them Our Signs
 
-**Les épisodes `lahab`, `sky` et `womb` sont validés par le propriétaire (2026-11-12 : « je valide ta recommandation et je
-valide les scripts »)**, sauf les deux répliques marquées « à revalider » : elles ont changé quand il a demandé où était
-l'épisode « الكون ثابت » (51:47), ajouté en deuxième position et **à valider** en entier. Style validé :
+**Les quatre scripts sont validés par le propriétaire (2026-11-12)** : `lahab`, `sky` et `womb` (« je valide ta
+recommandation et je valide les scripts »), puis `universe` et les deux répliques changées pour lui (« je valide
+l'épisode 2 et les deux répliques »). Les mentions « à valider » ci-dessous datent d'avant ce mot. Style validé :
 `docs/retention/signs-style-51-47.jpg`. Toutes les répliques sont écrites par la session ; celles qui sont un
 raisonnement de la session, et non un tafsir, sont signalées. Les versets et leur
 traduction sont lus dans l'API de quran.com, jamais tapés. Les durées sont estimées (environ dix lettres par seconde,

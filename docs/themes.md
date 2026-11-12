@@ -346,6 +346,15 @@ porte les mots dont on a besoin.
 - **Le registre** n'a pas de type pour une source scientifique : un fichier (`content/sources/science.yaml` : id,
   référence, lien) et `rules.py` qui l'accepte, à faire avec le script.
 
+### Les quatre scripts validés ; les titres à challenger (propriétaire, 2026-11-12)
+
+« Je valide l'épisode 2 et les deux répliques, mais il faut challenger les titres car ils attirent : que penses-tu ? »
+**Inscrit** : les quatre scripts sont validés (`docs/scripts/signs.md`). **Titres proposés par la session** (couverture,
+puis titre de publication « en · ar ») : `lahab` « كلمة واحدة كانت هتكذّب القرآن! » ; `universe` « حتى أينشتاين غلط
+فيها! » ; `sky` « طلعوا السما… واتنين ما رجعوش! » ; `womb` « شكلك وإنت ٣ مللي… القرآن سمّاه ». Avis donné : dans le fil
+des Reels et des Shorts, on voit la première image avant le titre ; le titre compte sur YouTube (recherche, suggestions)
+et sur la grille du profil. Un titre doit être tenu par la vidéo (khidr-01). À son choix.
+
 ### Scripts validés, et l'épisode « الكون ثابت » ajouté (propriétaire, 2026-11-12)
 
 « Je valide ta recommandation et je valide les scripts. Mais où est le story « الكون ثابت » ? » **Inscrit** : les scripts

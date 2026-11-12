@@ -135,6 +135,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 60. **Les scripts de « سنريهم آياتنا » validés, et 51:47 ajouté** (propriétaire, 2026-11-12 : « je valide ta recommandation et je valide les scripts ; mais où est le story الكون ثابت ? »). Inscrit : `lahab`, `sky`, `womb` validés (la réplique du miroir, d'après al-Muyassar sur « وفي أنفسهم », remplace « اللي خلقك وإنت تلاتة مللي… », qu'il voulait changer). La session avait mis 51:47 en réserve et l'avait dit ; il est ajouté en deuxième épisode (`universe`, 51:47-49), à valider, avec deux répliques validées qui changent pour lui (l'annonce finale d'Abou Lahab, le compte final de l'embryon). Aucune requête de voix : l'ordre fixe les répliques d'annonce.
 
+61. **Les quatre scripts validés ; les titres** (propriétaire, 2026-11-12 : « je valide l'épisode 2 et les deux répliques, mais il faut challenger les titres car ils attirent »). Inscrit dans `docs/scripts/signs.md`. Titres proposés, deux par épisode, une recommandation chacun ; avis donné : la première image compte plus que le titre dans le fil, le titre compte sur YouTube et sur la grille du profil, et il doit être tenu par la vidéo.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```
