@@ -12,8 +12,8 @@ raconte davantage.
 | | Épisode | Durée estimée | Récitation | Répliques | Raisonnement de la session |
 | --- | --- | --- | --- | --- | --- |
 | 1 | `lahab` | 1:49 | 0:25 | 16 | 2 |
-| 2 | `sky` | 2:05 | 0:45 | 13 | 0 |
-| 3 | `womb` | 2:11 | 0:53 | 13 | 1 |
+| 2 | `sky` | 1:57 | 0:45 | 12 | 0 |
+| 3 | `womb` | 2:03 | 0:53 | 12 | 1 |
 
 ## Épisode 1 · `lahab` · كلمة واحدة… وما قالهاش · One sentence… he never said it
 
@@ -69,7 +69,7 @@ Environ **1:49** · 0:25 de récitation · 16 répliques, dont 2 de raisonnement
 
 ## Épisode 2 · `sky` · صدر بيضيق… كل ما تطلع لفوق · A chest that tightens as you rise
 
-Environ **2:05** · 0:45 de récitation · 13 répliques, dont 0 de raisonnement de la session.
+Environ **1:57** · 0:45 de récitation · 12 répliques, dont 0 de raisonnement de la session.
 
 **L'image** : Un ballon à gaz dans un ciel de haute altitude (dessiné, en silhouette, sans personne dans la nacelle visible), les nuages loin dessous ; le Puy de Dôme et un baromètre (dessinés) ; des photos du ciel (ESA, crédit écrit sur l'image). Frise : « ~٣٠ ق.م » (chronique Han), « ٦١٠ » (le Coran, en vert), « ١٦٤٨ » (Pascal), « ١٧٨٣ » (premier vol habité), « ١٨٧٥ » (le Zénith).
 
@@ -98,14 +98,12 @@ Environ **2:05** · 0:45 de récitation · 13 répliques, dont 0 de raisonnement
 **1:15 · narration** (image : la frise entière, ٦١٠ et ١٧٨٣ allumés)
 - والصورة دي: صدر بيضيق كل ما تطلع لفوق… اتقالت قبل ما إنسان يطير بأكتر من ألف سنة.  
   *This image—a chest tightening as you rise—was spoken more than a thousand years before anyone flew.* · **nouvelle**
-- إحنا مش بنقول إن العلم أثبت القرآن… القرآن مش كتاب فيزيا… القرآن كتاب آيات.  
-  *We are not saying science proved the Quran… the Quran is not a physics book… it is a book of signs.* · **nouvelle**
 
-**1:29** · **Verset récité** · Fussilat 41:53, jusqu'au premier arrêt « ۗ » (« أنه الحق ») · 12 s (image : « سنريهم آياتنا » en or, en grand, sur la frise entière)  
+**1:22** · **Verset récité** · Fussilat 41:53, jusqu'au premier arrêt « ۗ » (« أنه الحق ») · 12 s (image : « سنريهم آياتنا » en or, en grand, sur la frise entière)  
   سَنُرِيهِمْ ءَايَـٰتِنَا فِى ٱلْـَٔافَاقِ وَفِىٓ أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ ٱلْحَقُّ  
   *We will show them Our signs in the horizons and within themselves until it becomes clear to them that it is the truth.* (Saheeh International)
 
-**1:42 · narration** (image : le ciel qui s'ouvre, l'aube) · d'après : [as-Sa'di](https://quran.com/6:125/tafsirs/91) sur 6:125 · référence écrite à l'écran, jamais lue
+**1:35 · narration** (image : le ciel qui s'ouvre, l'aube) · d'après : [as-Sa'di](https://quran.com/6:125/tafsirs/91) sur 6:125 · référence écrite à l'écran, jamais lue
 - والآية أصلًا مش عن الطيران… عن قلب مقفول قدام الحق.  
   *And the verse isn't really about flying… it's about a heart closed to the truth.* · **nouvelle**
 - السعدي قال: الصدر اللي بيتفتح للخير… علامة هداية.  
@@ -119,7 +117,7 @@ Environ **2:05** · 0:45 de récitation · 13 répliques, dont 0 de raisonnement
 
 ## Épisode 3 · `womb` · كلمة واحدة لمرحلة محدش كان يشوفها · One word for a stage no one could see
 
-Environ **2:11** · 0:53 de récitation · 13 répliques, dont 1 de raisonnement de la session.
+Environ **2:03** · 0:53 de récitation · 12 répliques, dont 1 de raisonnement de la session.
 
 **L'image** : Une sangsue dans l'eau (dessinée, en silhouette) ; un microscope ancien (dessiné) ; **aucun embryon dessiné ni photographié tant que le propriétaire n'a pas tranché** (voir les points à trancher). Frise : « ٣٥٠ ق.م » (Aristote), « ١٧٠ » (Galien), « ٦١٠ » (le Coran, en vert), « ١٣٧٣ » (mort d'Ibn Kathir), « ١٩١٤ » (collection Carnegie).
 
@@ -150,14 +148,12 @@ Environ **2:11** · 0:53 de récitation · 13 répliques, dont 1 de raisonnement
 **1:30 · narration** (image : la frise entière, ٦١٠ et ١٩١٤ allumés)
 - والكلمة اللي اختارها لمرحلة محدش كان يشوفها… هي اسم الشكل اللي شافوه بعدها بأكتر من ألف سنة.  
   *And the word it chose for a stage no one could see… names the shape they saw more than a thousand years later.* · **nouvelle**
-- إحنا مش بنقول إن العلم أثبت القرآن… القرآن مش كتاب طب… القرآن كتاب آيات.  
-  *We are not saying science proved the Quran… the Quran is not a medical textbook… it is a book of signs.* · **nouvelle**
 
-**1:45** · **Verset récité** · Fussilat 41:53, jusqu'au premier arrêt « ۗ » (« أنه الحق ») · 12 s (image : « سنريهم آياتنا » en or, en grand, sur la frise entière)  
+**1:38** · **Verset récité** · Fussilat 41:53, jusqu'au premier arrêt « ۗ » (« أنه الحق ») · 12 s (image : « سنريهم آياتنا » en or, en grand, sur la frise entière)  
   سَنُرِيهِمْ ءَايَـٰتِنَا فِى ٱلْـَٔافَاقِ وَفِىٓ أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ ٱلْحَقُّ  
   *We will show them Our signs in the horizons and within themselves until it becomes clear to them that it is the truth.* (Saheeh International)
 
-**1:58 · narration** (image : le ciel, puis la lumière douce)
+**1:51 · narration** (image : le ciel, puis la lumière douce)
 - اللي خلقك وإنت تلاتة مللي… مش هينساك وإنت كبير.  
   *The One who created you when you were three millimetres long… will not forget you now that you are grown.* · **nouvelle · raisonnement de la session, signalé**
 - تلات آيات: راجل… وسما… وجنين.  
@@ -188,8 +184,10 @@ est vérifiée sur une source sérieuse avant d'entrer au registre ; une date qu
   sens repose sur al-Muyassar, dont le nom est écrit à l'écran : elle n'est pas prêtée aux anciens. La réplique sur la
   chronique des Han est retirée pour la longueur ; aucune réplique ne dit que personne ne savait qu'on respire mal
   en montagne.
-- *La signature* (demande du propriétaire : « toujours mettre آيات et سنريهم آياتنا » après la réplique d'honnêteté) :
-  la voix dit « القرآن كتاب آيات », puis le récitateur récite 41:53 jusqu'au premier arrêt (« ۗ », après « أنه الحق »)
+- *La réplique d'honnêteté* (« إحنا مش بنقول إن العلم أثبت القرآن… القرآن مش كتاب فيزيا… القرآن كتاب آيات ») :
+  supprimée à la demande du propriétaire. Aucune réplique ne dit que la science prouve le Coran.
+- *La signature* (demande du propriétaire : « toujours آيات et سنريهم آياتنا ») : après la réplique qui dit ce que la
+  science a vu bien plus tard, le récitateur récite 41:53 jusqu'au premier arrêt (« ۗ », après « أنه الحق »)
   pendant que « سنريهم آياتنا » s'écrit en or. **La voix de synthèse ne dit jamais « سنريهم آياتنا »** : ce sont des mots
   du Coran. Durée estimée de la coupe : 12,5 s (le verset entier dure 20,8 s), à mesurer à la coupe.
 

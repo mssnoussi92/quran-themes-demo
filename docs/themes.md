@@ -357,6 +357,11 @@ d'honnêteté, la voix dit « القرآن كتاب آيات » et **le récitat
 pendant que « سنريهم آياتنا » s'écrit : la voix de synthèse ne dit pas des mots du Coran. Durées : 1:49, 2:05, 2:11.
 Question posée : la même signature pour clore l'épisode d'Abou Lahab, qui n'a pas de réplique d'honnêteté ?
 
+**Puis** (le même soir) : « إحنا مش بنقول إن العلم أثبت القرآن… القرآن مش كتاب xx… القرآن كتاب آيات : à supprimer ». Fait : la
+réplique disparaît des épisodes 2 et 3 ; la signature (41:53 récité, le titre écrit) suit directement la réplique qui
+dit ce que la science a vu bien plus tard. Aucune réplique ne dit que la science prouve le Coran. Durées : 1:49,
+1:57, 2:03.
+
 ### Le style validé, les trois épisodes choisis (propriétaire, 2026-11-12 : « oui je valide ; et fais les 3 : Abou Lahab, 6:125 et l'embryologie »)
 
 Lu comme : **le style des images est validé** ; **les trois épisodes sont Abou Lahab (111:1-5), 6:125 et
