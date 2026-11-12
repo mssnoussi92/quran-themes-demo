@@ -319,6 +319,41 @@ la plus proche » (« أدنى أرض الشام إلى فارس »).
 **Budget** : trois requêtes de voix, trois clips à lui montrer, trois dessins, trois ambiances, un rendu GitHub
 Actions ; quatre sources de hadith et trois de tafsir à inscrire au registre.
 
+### Le côté scientifique : la recherche demandée (propriétaire, 2026-11-12)
+
+Sa demande : « des choses que le Coran dit depuis plus de 1400 ans, prouvées scientifiquement ces dernières années, en
+disant ce qu'on savait à l'époque ». Onze affirmations courantes, chacune passée à trois questions : que disent nos
+tafsirs (al-Muyassar, as-Sa'di, Ibn Kathir, quran.ai) ; le savait-on avant 632 ; que dit la science. Les dates de
+science marquées « à sourcer » sont de mémoire et se vérifient avant tout script.
+
+| Verset | L'affirmation | Nos tafsirs | Connu avant 632 ? | Verdict |
+| --- | --- | --- | --- | --- |
+| 51:47 « وإنا لموسعون » | l'univers en expansion | Ibn Kathir : « قد وسعنا أرجاءها » (nous l'avons faite vaste) ; al-Muyassar et as-Sa'di : « لموسعون لأرجائها وأنحائها » (as-Sa'di ajoute : par la subsistance) | non : un ciel immuable (Aristote, Ptolémée) ; l'expansion : Lemaître 1927, Hubble 1929 (à sourcer) | **le meilleur candidat**, mais « qui s'étend » est une lecture moderne que la grammaire permet ; nos tafsirs disent « vaste » |
+| 6:125 « كأنما يصعد في السماء » | on respire mal en altitude | **al-Muyassar : « كحال من يصعد في طبقات الجو العليا فيصاب بضيق شديد في التنفس »** ; Ibn Kathir et as-Sa'di : l'image d'une chose impossible | en partie : maux de tête et vomissements sur les hauts cols, dans une chronique Han (~30 av. J.-C.) ; que l'air diminue avec la hauteur : Pascal, 1648 (à sourcer) | **candidat** : un de nos tafsirs le dit, les deux classiques non |
+| 24:40 « موج من فوقه موج » | les vagues internes | al-Muyassar : des vagues sur des vagues, puis des nuages : une parabole des œuvres des mécréants | l'obscurité du fond : connue des plongeurs ; les vagues internes : Nansen 1893, Ekman 1904 | faible : la lecture « vagues internes » est la nôtre, pas celle du tafsir |
+| 23:12-14 | l'embryologie | al-Muyassar : « علقة أي دما أحمر », quarante jours | Galien (années 170) décrit d'autres étapes : semence, croissance, trois organes, toutes les parties | **à éviter** : « des os puis la chair » est discuté (muscles et cartilage se forment ensemble), un embryon n'est pas du sang ; c'est l'affirmation la plus attaquée |
+| 21:30 « كانتا رتقا ففتقناهما » | le Big Bang | al-Muyassar : collés sans pluie ni plantes, puis séparés : la pluie et les plantes ; adressé aux mécréants (« أولم ير »), qui le voyaient | — | **rejeté** : le tafsir dit autre chose |
+| 55:19-20 « بينهما برزخ » | la barrière entre mers | al-Muyassar : l'eau douce et l'eau salée se rencontrent sans se mêler | oui : visible à l'embouchure de tout fleuve | faible |
+| 78:7 « والجبال أوتادا » | les racines des montagnes | al-Muyassar : « رواسي كي لا تتحرك بكم الأرض » | — | **risqué** : les montagnes ont des racines (isostasie, XIXᵉ siècle), mais n'empêchent pas les séismes ; l'argument se retourne |
+| 57:25 « وأنزلنا الحديد » | le fer venu de l'espace | al-Muyassar : « وأنزلنا لهم الحديد » ; le même verbe pour le bétail (39:6 : « وأنزل لكم من الأنعام ») | — | **rejeté** |
+| 75:4 « نسوي بنانه » | les empreintes digitales | al-Muyassar : les doigts refaits comme avant la mort, à la résurrection | — | **rejeté** |
+| 71:16, 25:61 | la lune reflète la lumière | al-Muyassar : la lune une lumière, le soleil une lampe | oui : Anaxagore, Vᵉ siècle av. J.-C. (à sourcer) | **rejeté** : on le savait |
+| 30:3 « في أدنى الأرض » | le point le plus bas du monde | al-Muyassar : « أدنى أرض الشام إلى فارس » (la terre la plus proche) | — | **rejeté** |
+
+**L'arme se retourne.** Dire « la science prouve le Coran », c'est accepter que la science le juge. Les critiques
+répondent alors avec nos propres sources : Muslim 315 (le sexe de l'enfant selon le liquide qui « l'emporte »,
+« فعلا مني الرجل مني المرأة أذكرا »), opposé à la génétique, et 18:86 (« تغرب في عين حمئة »), qui est dans notre
+film de Dhul-Qarnayn. Les savants y répondent, mais pas en 1:40, ni dans les commentaires.
+
+**Les savants sont partagés** : al-Shatibi (al-Muwafaqat) refuse de lire dans le Coran des sciences que les premiers
+Arabes ne connaissaient pas (« أمية الشريعة ») ; Ibn Ashour le discute dans la quatrième introduction de son tafsir.
+Ce n'est pas une affaire réglée.
+
+**Ce que la session recommande** : la série reste sur les prophéties. Si le propriétaire veut un épisode
+scientifique, un seul, et sans le mot « preuve » : 6:125 (al-Muyassar le dit) ou 51:47 (la lecture classique dite à
+côté de la moderne). Il faudrait alors une source scientifique dans le registre (Pascal, Hubble), qui n'a aujourd'hui
+aucun type pour elle : un outil et une règle à ajouter, à sa décision.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
