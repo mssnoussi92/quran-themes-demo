@@ -127,10 +127,11 @@ def main() -> None:
     p.add_argument("--film", default="film", help="the film's id (content/trial/<id>.yaml)")
     p.add_argument("--out", type=Path, help="default: `publish.out` of the film, or docs/publication-<files>.md")
     p.add_argument("--draft", action="store_true", help="before the voice: the timelines of the silent draft (voice X)")
-    p.add_argument("--tall", action="store_true", help="only the text of the film in 9:16 (`<files>-film-9x16.mp4`), for Facebook")
+    p.add_argument("--tall", action="store_true",
+                   help="only the text of the film in 9:16 (`<files>-film-9x16.mp4`), for Facebook; written beside the film's texts (`…-9x16.md`) unless --out")
     args = p.parse_args()
-    if (args.draft or args.tall) and not args.out:
-        sys.exit("error: --draft and --tall need --out (they do not replace the film's publication texts)")
+    if args.draft and not args.out:
+        sys.exit("error: --draft needs --out (a draft does not replace the film's publication texts)")
     timeline = "X" if args.draft else args.voice
     conf = yaml.safe_load((ROOT / "content" / "publish.yaml").read_text(encoding="utf-8"))
     film = yaml.safe_load((TRIAL / f"{args.film}.yaml").read_text(encoding="utf-8"))
@@ -197,15 +198,21 @@ def main() -> None:
             "Quoted:\n" + "\n".join(lines), narration + "\n" + footage(shorts, film.get("pictures")), conf["handle"],
             hashtags(conf, pub["hashtags"], hadith, verse, limits["facebook"]["max_hashtags"]),
         ])
+        said = ((film.get("tall") or {}).get("validated") or {})
+        state = (f"**validé par le propriétaire le {said.get('on', said.get(True))}**" if "publish" in (said.get("what") or [])
+                 else "**proposé par la session, pas encore validé par le propriétaire**")
         out = [f"# {pub['series']['en']} · {pub['series']['ar']} : le film en 9:16", "",
-               "Le même film, monté pour un écran vertical (les images des shorts, la même voix, le même minutage). Texte "
-               "**proposé par la session** : il reprend le titre et la description du film, sans les chapitres.", "",
+               f"Le même film, monté pour un écran vertical (les images des shorts, la même voix, le même minutage). Texte {state} : "
+               "il reprend le titre et la description du film, sans les chapitres.", "",
                f"## Le film en 9:16 · {pub['title']['en']} · {pub['title']['ar']}", "",
                f"`{files}-film-9x16.mp4` · {stamp(data['seconds'])} · 9:16 · Facebook", "",
                f"**Facebook ({limits['facebook']['max_hashtags']} hashtags)**", "", block(caption)]
-        args.out.parent.mkdir(parents=True, exist_ok=True)
-        args.out.write_text("\n".join(out), encoding="utf-8")
-        print(f"{args.out}: the film in 9:16")
+        # Beside the film's own texts: `publish.out` of its file, with « -9x16 » before the extension.
+        own = ROOT / pub.get("out", f"docs/publication-{files}.md")
+        target = args.out or own.with_name(own.stem + "-9x16" + own.suffix)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text("\n".join(out), encoding="utf-8")
+        print(f"{target.relative_to(ROOT) if target.is_relative_to(ROOT) else target}: the film in 9:16")
         return
 
     if not series_only:

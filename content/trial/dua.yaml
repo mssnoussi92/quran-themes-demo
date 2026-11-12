@@ -24,6 +24,10 @@ script_validated: { by: mssnoussi92, on: 2026-11-11 }
 # sur sa parole. Les textes de publication (`publish`, docs/retention/publication-dua.md, envoyés dans la conversation) :
 # validés par son « je valide le script » du 2026-11-11 au soir ; il a précisé le 2026-11-12 que ce mot portait sur eux.
 validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, thumbnail, subscribe, publish, ambience] }
+# Le même film en vertical (9:16, pour Facebook : tools/trial/videos.py, `only: tall`). « Je valide tout » du propriétaire
+# (2026-11-12), sur la vidéo envoyée dans la conversation et son texte Facebook : le montage vertical (la voix et
+# l'ambiance sont celles du film, déjà validées) et ce texte. Inscrit sur sa parole.
+tall: { validated: { by: mssnoussi92, on: 2026-11-12, what: [montage, publish] } }
 files: dua                       # début du nom des vidéos livrées : dua-film-16x9.mp4, dua-short-<n>-<id>.mp4
 title: { ar: "الدعاء… تلات أفكار غلط بتبعدك عنه", en: "Du'a: three wrong ideas that keep you from asking" }
 handle: "@quran_words_daily"

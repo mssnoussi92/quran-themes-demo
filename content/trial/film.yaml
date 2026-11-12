@@ -26,6 +26,10 @@ script_validated: { by: mssnoussi92, on: 2026-11-11 }
 # L'ambiance sonore (`ambience`), ajoutée après avec son accord, a reçu son propre « je valide » le même jour,
 # sur les vidéos `…-ambience.mp4` : ce sont elles, les vidéos finales.
 validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, thumbnail, subscribe, publish, ambience] }
+# Le même film en vertical (9:16, pour Facebook : tools/trial/videos.py, `only: tall`). « Je valide tout » du propriétaire
+# (2026-11-12), sur la vidéo envoyée dans la conversation et son texte Facebook : le montage vertical (la voix et
+# l'ambiance sont celles du film, déjà validées) et ce texte. Inscrit sur sa parole.
+tall: { validated: { by: mssnoussi92, on: 2026-11-12, what: [montage, publish] } }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 23-trial-film
