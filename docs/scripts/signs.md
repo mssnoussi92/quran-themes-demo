@@ -13,7 +13,7 @@ raconte davantage.
 | --- | --- | --- | --- | --- | --- |
 | 1 | `lahab` | 1:49 | 0:25 | 16 | 2 |
 | 2 | `sky` | 1:57 | 0:45 | 12 | 0 |
-| 3 | `womb` | 2:03 | 0:53 | 12 | 1 |
+| 3 | `womb` | 2:04 | 0:53 | 12 | 1 |
 
 ## Épisode 1 · `lahab` · كلمة واحدة… وما قالهاش · One sentence… he never said it
 
@@ -117,7 +117,7 @@ Environ **1:57** · 0:45 de récitation · 12 répliques, dont 0 de raisonnement
 
 ## Épisode 3 · `womb` · كلمة واحدة لمرحلة محدش كان يشوفها · One word for a stage no one could see
 
-Environ **2:03** · 0:53 de récitation · 12 répliques, dont 1 de raisonnement de la session.
+Environ **2:04** · 0:53 de récitation · 12 répliques, dont 1 de raisonnement de la session.
 
 **L'image** : Une sangsue dans l'eau (dessinée, en silhouette) ; un microscope ancien (dessiné) ; **aucun embryon dessiné ni photographié tant que le propriétaire n'a pas tranché** (voir les points à trancher). Frise : « ٣٥٠ ق.م » (Aristote), « ١٧٠ » (Galien), « ٦١٠ » (le Coran, en vert), « ١٣٧٣ » (mort d'Ibn Kathir), « ١٩١٤ » (collection Carnegie).
 
@@ -146,14 +146,14 @@ Environ **2:03** · 0:53 de récitation · 12 répliques, dont 1 de raisonnement
   *And Ibn Kathir wrote this over six hundred years ago… without a microscope.* · **nouvelle**
 
 **1:30 · narration** (image : la frise entière, ٦١٠ et ١٩١٤ allumés)
-- والكلمة اللي اختارها لمرحلة محدش كان يشوفها… هي اسم الشكل اللي شافوه بعدها بأكتر من ألف سنة.  
-  *And the word it chose for a stage no one could see… names the shape they saw more than a thousand years later.* · **nouvelle**
+- والكلمة اللي اختارها القرآن لمرحلة محدش كان يشوفها… هي اسم الشكل اللي شافوه بعدها بأكتر من ألف سنة.  
+  *And the word the Quran chose for a stage no one could see… names the shape they saw more than a thousand years later.* · **nouvelle**
 
-**1:38** · **Verset récité** · Fussilat 41:53, jusqu'au premier arrêt « ۗ » (« أنه الحق ») · 12 s (image : « سنريهم آياتنا » en or, en grand, sur la frise entière)  
+**1:39** · **Verset récité** · Fussilat 41:53, jusqu'au premier arrêt « ۗ » (« أنه الحق ») · 12 s (image : « سنريهم آياتنا » en or, en grand, sur la frise entière)  
   سَنُرِيهِمْ ءَايَـٰتِنَا فِى ٱلْـَٔافَاقِ وَفِىٓ أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ ٱلْحَقُّ  
   *We will show them Our signs in the horizons and within themselves until it becomes clear to them that it is the truth.* (Saheeh International)
 
-**1:51 · narration** (image : le ciel, puis la lumière douce)
+**1:52 · narration** (image : le ciel, puis la lumière douce)
 - اللي خلقك وإنت تلاتة مللي… مش هينساك وإنت كبير.  
   *The One who created you when you were three millimetres long… will not forget you now that you are grown.* · **nouvelle · raisonnement de la session, signalé**
 - تلات آيات: راجل… وسما… وجنين.  
