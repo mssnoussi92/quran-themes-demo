@@ -346,6 +346,15 @@ porte les mots dont on a besoin.
 - **Le registre** n'a pas de type pour une source scientifique : un fichier (`content/sources/science.yaml` : id,
   référence, lien) et `rules.py` qui l'accepte, à faire avec le script.
 
+### Le style validé, les trois épisodes choisis (propriétaire, 2026-11-12 : « oui je valide ; et fais les 3 : Abou Lahab, 6:125 et l'embryologie »)
+
+Lu comme : **le style des images est validé** ; **les trois épisodes sont Abou Lahab (111:1-5), 6:125 et
+l'embryologie (23:12-14)** ; 51:47, qui a servi aux images de style, passe en réserve (dit au propriétaire, à lui de le
+démentir). L'embryologie est son choix, fait en connaissant l'objection de la session (les quarante jours de nos trois
+tafsirs). Script envoyé le même soir : `docs/scripts/signs.md` (épisodes `lahab`, `sky`, `womb` ; 1:49, 2:05, 1:59
+estimés), avec ce qu'il ne dit pas et pourquoi, et quatre points à trancher. **Aucune requête de voix avant son « je
+valide le script ».**
+
 ### Le titre et les images de style (propriétaire, 2026-11-12 : « ok pour سنريهم آياتنا, fais les images de style »)
 
 **Titre validé : « سنريهم آياتنا »** (41:53), écrit à l'écran, jamais dit par la voix. Trois images de style d'un
