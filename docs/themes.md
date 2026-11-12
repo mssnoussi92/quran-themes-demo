@@ -230,7 +230,7 @@ voix de synthèse, aucune parole du Prophète ﷺ dite par elle) ; le sens vient
 | --- | --- | --- | --- | --- |
 | `caravan` | 62:11 (23 s) | un vendredi, une caravane de nourriture arrive pendant le prêche ; douze hommes restent (Muslim 863a, Bukhari 936) | la subsistance ne se perd pas à s'arrêter pour Dieu | 1:43 |
 | `duha` | 93:1-5 puis 93:6-8 (30 s) | malade deux ou trois nuits ; une femme vient dire qu'il a été abandonné (Bukhari 4950) | tard ne veut pas dire abandonné | 1:52 |
-| `hope` | 39:53 (23 s) | des gens qui avaient beaucoup tué et beaucoup commis l'adultère demandent s'il existe une expiation (Bukhari 4810) ; la narration dit « ذنوب كبيرة », sans les nommer (propriétaire, 2026-11-12) | aucun péché n'est trop grand pour revenir ; ce n'est pas une permission | 1:31 |
+| `hope` | 39:53 (23 s) | des gens qui avaient beaucoup tué et beaucoup commis l'adultère demandent s'il existe une expiation (Bukhari 4810) ; la narration dit « ذنوب كبيرة », sans les nommer (propriétaire, 2026-11-12) | aucun péché n'est trop grand pour revenir ; ce n'est pas une permission | 1:45 |
 
 **En réserve pour la série** : 49:2 et Thabit ibn Qays (Bukhari 4846, Muslim 119 : le récit vient après le verset) ; la
 sorte « un mot » (12:19, « سيارة » : « جماعة من المسافرين » selon al-Muyassar), plus légère, à essayer après le pilote.
