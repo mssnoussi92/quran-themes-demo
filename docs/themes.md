@@ -346,6 +346,29 @@ porte les mots dont on a besoin.
 - **Le registre** n'a pas de type pour une source scientifique : un fichier (`content/sources/science.yaml` : id,
   référence, lien) et `rules.py` qui l'accepte, à faire avec le script.
 
+### Un style à part pour cette série (propriétaire, 2026-11-12 : « ne te limite pas à l'existant ; cette série demande un style différent pour le hook et l'histoire »)
+
+Il montre un article de quran-m.com (« كل في فلك يسبحون بين التفسير اللغوي والرؤية الفلكية الحديثة », 2025). **Ce
+qui s'en garde** : mettre côte à côte ce que disaient les savants anciens et ce que la science a vu. **Ce qui ne
+s'en garde pas** : sa conclusion (« preuve de l'origine divine »), et sa thèse : « فلك » au singulier serait la
+galaxie, quand al-Muyassar lit « ولكل منهما مدار يجري فيه » et Ibn Kathir « فلك بذاته… وفلك آخر » ; « chacun sur son
+orbite » est aussi le modèle de Ptolémée ; ses références ne donnent pas ses chiffres.
+
+**Proposé par la session** : une enquête, avec une frise des dates.
+1. La certitude d'autrefois, avec sa date, sur la première image (« لمدة ألفين سنة… أذكى عقول الدنيا كانت متأكدة:
+   السما ثابتة. »), sur un schéma dessiné (les sphères de Ptolémée).
+2. La date qui casse tout (« لحد سنة ١٩٢٩. »), la découverte en deux répliques, une image du ciel.
+3. La question (« طب كتاب نزل من ١٤٠٠ سنة… قال إيه؟ »), puis le verset récité.
+4. Ce que disaient nos tafsirs, nommés, et le mot en or.
+5. La réplique d'honnêteté, marque de la série (« مش بنقول إن العلم أثبت القرآن… »).
+6. Ce que ça change pour le spectateur, l'épisode suivant, l'appel à suivre.
+
+L'image : des photographies du ciel (NASA, domaine public ; ESA, Hubble et Webb, CC BY 4.0 : à vérifier) et des
+schémas animés dessinés par le code (orbites, sphères, frise des dates en or), la source scientifique écrite à
+l'écran comme une référence de hadith ; personne dessiné (le télescope et sa coupole, jamais l'astronome) ; pour Abou
+Lahab, aucune flamme. Un arc possible : 51:47 (le ciel qui s'élargit) et 6:125 (la poitrine qui se resserre). À
+montrer d'abord en trois images de style, sans voix.
+
 ### Le côté scientifique : la recherche demandée (propriétaire, 2026-11-12)
 
 Sa demande : « des choses que le Coran dit depuis plus de 1400 ans, prouvées scientifiquement ces dernières années, en
