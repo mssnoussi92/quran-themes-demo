@@ -17,8 +17,9 @@ rule: 3                          # préparé avec la règle 3 (calage et niveau 
 script_validated: { by: mssnoussi92, on: 2026-11-11 }
 # « Je valide tout » du propriétaire (2026-11-11) sur les vidéos corrigées, rendues par le workflow `film` et envoyées
 # dans la conversation : la voix D sur la vidéo entière, le montage, la couverture, l'ambiance. Inscrit sur sa parole.
-# Les textes de publication (`publish`) ne sont pas couverts : il ne les a pas eus sous les yeux dans la conversation.
-validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, cover, ambience] }
+# Les textes de publication (`publish`, docs/retention/publication-dua.md, envoyés dans la conversation) : validés par
+# son « je valide le script » du 2026-11-11 au soir ; il a précisé le 2026-11-12 que ce mot portait sur eux.
+validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 138588, author: Natures_Embrace, page: "https://pixabay.com/videos/id-138588/", take: { height: 1440 }, position: "40% 50%", brightness: 0.62, horizon: 1195, rate: 0.7, landscape: { side: left, horizon: 640, brightness: 0.6 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }

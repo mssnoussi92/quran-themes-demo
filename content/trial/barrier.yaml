@@ -14,6 +14,11 @@
 # publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
 id: barrier
 script_validated: { by: mssnoussi92, on: 2026-11-11 }
+# « Je valide » du propriétaire (2026-11-12 : « je valide Dhul-Qarnayn, vidéo et textes ») sur les vidéos corrigées,
+# rendues par le workflow `film` et envoyées dans la conversation (release brouillon `qarnayn-candidate`) : la voix D
+# sur la vidéo entière, le montage, la couverture, l'ambiance, et les textes de publication (`publish`,
+# docs/retention/publication-qarnayn.md, envoyés). Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 381, author: FlickrVideos, page: "https://pixabay.com/videos/id-381/", position: "50% 50%", brightness: 0.85, landscape: { side: right, horizon: 700, brightness: 0.8 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }

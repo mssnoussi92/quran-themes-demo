@@ -13,8 +13,8 @@ améliorés, ambiance. Leurs sources et leurs lectures de hadith, validées, res
 | Épisode | Dans le modèle |
 | --- | --- |
 | Moussa et al-Khadir (`khidr`) | **fait** : film de 7:47 et trois shorts (`content/trial/film.yaml`, `boat`, `boy`, `wall`), tout validé le 2026-11-11 |
-| Du'a (`dua`) | **fait, vidéos validées le 2026-11-11** (`content/trial/dua.yaml`, `asked`, `written`, `waited`) ; restent ses textes à coller à valider |
-| Dhul-Qarnayn (`qarnayn`) | **le suivant** (choix du propriétaire, 2026-11-11) : fiche ci-dessous, structure à valider |
+| Du'a (`dua`) | **fait** : film et trois shorts (`content/trial/dua.yaml`, `asked`, `written`, `waited`), vidéos et textes à coller validés le 2026-11-11 |
+| Dhul-Qarnayn (`qarnayn`) | **fait** : film de 8:24 et trois shorts (`content/trial/qarnayn.yaml`, `west`, `tribute`, `barrier`), vidéos et textes à coller validés le 2026-11-12 ; fiche ci-dessous |
 | Les gens de la caverne (`kahf`) | à réécrire ; une histoire, le format où le modèle est éprouvé |
 | Patience, repentir, comparaisons, confiance en Dieu, الخشوع | à réécrire ; idées reçues, sur le modèle du du'a (chaque idée brisée par un fait du Coran qu'on peut montrer) |
 
@@ -198,8 +198,8 @@ trois épreuves de la force (sur les gens, de prendre, d'avoir réussi).
 (« je valide tout », après les trois shorts ; les ambiances sont les trois enregistrements du premier film, et les
 candidates notées un moment ne sont pas retenues). Trois points faibles traités à sa demande (`docs/history.md`,
 tâche 46) : la voix du premier short remontée au niveau de ses versets, la réplique « وبعد كل ده… » coupée en
-deux lignes, le soleil sur la couverture du premier short. Durées : 2:06, 1:54, 1:51, film 8:24. **Reste** : le
-contrôle du rendu corrigé, l'envoi, son « je valide » sur les vidéos et les textes.
+deux lignes, le soleil sur la couverture du premier short. Durées : 2:06, 1:54, 1:51, film 8:24. **Vidéos et textes à
+coller validés par le propriétaire le 2026-11-12** (`validated` des quatre fichiers).
 
 ## Série de shorts : « آية وحكايتها », un verset et son récit (2026-11-11)
 
@@ -235,9 +235,13 @@ voix de synthèse, aucune parole du Prophète ﷺ dite par elle) ; le sens vient
 **En réserve pour la série** : 49:2 et Thabit ibn Qays (Bukhari 4846, Muslim 119 : le récit vient après le verset) ; la
 sorte « un mot » (12:19, « سيارة » : « جماعة من المسافرين » selon al-Muyassar), plus légère, à essayer après le pilote.
 
-**État (2026-11-12)** : script validé par le propriétaire le 2026-11-11 ; voix faite ; clips proposés (dunes, aube
-sur une baie, ciel d'orage), dessins et ambiances faits ; rendu par le workflow `film`. **Reste** : le contrôle, l'envoi,
-son « je valide » sur les vidéos, les sources proposées et les textes.
+**État (2026-11-12)** : **rien n'est validé par le propriétaire.** La session avait lu son « je valide le script » du
+2026-11-11 comme celui de ce script ; il portait sur les textes à coller du du'a (sa mise au point du 2026-11-12), et
+l'inscription est retirée. La voix a donc été faite avant sa validation, contre la règle (trois requêtes du palier
+gratuit) : les trois prises ne servent que si le script est validé tel quel, une réplique changée fait refaire la
+prise de son short. Clips proposés (dunes, aube sur une baie, ciel d'orage), dessins et ambiances faits ; rendu par
+le workflow `film`, en brouillon. **Reste** : son « je valide le script » ou ses corrections, puis son mot sur les
+vidéos (voix, images, clips, ambiances), les sources proposées et les textes.
 
 ## Faits (ancien circuit)
 

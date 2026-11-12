@@ -17,11 +17,10 @@
 # - Dernier short du pilote : l'avant-dernière réplique rappelle les trois récits, l'appel promet le verset suivant
 #   (promesse à tenir seulement si la série continue : à garder ou à retirer, au propriétaire de le dire).
 id: hope
-# « Je valide le script » du propriétaire (2026-11-11), sur le script envoyé (docs/scripts/ayah.md) : les répliques, la
-# place des versets, ce sur quoi chaque narration repose, les titres. Ni la voix, ni les images, ni les textes de
-# publication, ni les sources proposées du registre : il les valide sur les vidéos. Toute réplique changée ensuite
-# redevient à valider.
-script_validated: { by: mssnoussi92, on: 2026-11-11 }
+# RIEN n'est validé par le propriétaire (sa mise au point du 2026-11-12) : son « je valide le script » du 2026-11-11
+# portait sur les textes à coller du du'a, pas sur ce script. La session l'avait lu de travers ; l'inscription est
+# retirée. La prise de voix (content/trial/takes/) a donc été faite avant sa validation, contre la règle : elle ne
+# sert que si le script est validé tel quel ; une réplique changée la fait refaire (une requête).
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 52-trial-hope     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne

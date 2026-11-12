@@ -14,6 +14,11 @@
 # publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
 id: qarnayn
 script_validated: { by: mssnoussi92, on: 2026-11-11 }
+# « Je valide » du propriétaire (2026-11-12 : « je valide Dhul-Qarnayn, vidéo et textes ») sur les vidéos corrigées,
+# rendues par le workflow `film` et envoyées dans la conversation (release brouillon `qarnayn-candidate`) : la voix D
+# sur la vidéo entière, le montage, la vignette, le rappel d'abonnement, l'ambiance, et les textes de publication (`publish`,
+# docs/retention/publication-qarnayn.md, envoyés). Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, thumbnail, subscribe, publish, ambience] }
 files: qarnayn                   # début du nom des vidéos livrées : qarnayn-film-16x9.mp4, qarnayn-short-<n>-<id>.mp4
 title: { ar: "ذو القرنين… تلات اختبارات للقوة", en: "Dhul-Qarnayn: three tests of power" }
 handle: "@quran_words_daily"
