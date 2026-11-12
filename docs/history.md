@@ -137,6 +137,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 61. **Les quatre scripts validés ; les titres** (propriétaire, 2026-11-12 : « je valide l'épisode 2 et les deux répliques, mais il faut challenger les titres car ils attirent »). Inscrit dans `docs/scripts/signs.md`. Titres proposés, deux par épisode, une recommandation chacun ; avis donné : la première image compte plus que le titre dans le fil, le titre compte sur YouTube et sur la grille du profil, et il doit être tenu par la vidéo.
 
+62. **Les titres dans le style qu'il cherche, et les débuts qui les disent** (propriétaire, 2026-11-12 : deux titres validés, « كلمة واحدة كانت هتكذّب القرآن » et « حتى أينشتاين غلط فيها » ; « je cherche ce style » ; « changer les hooks du début avec ce qui est dans le titre »). Titres proposés pour 6:125 et l'embryon, dans ce style ; les premières répliques des quatre épisodes réécrites pour dire le titre, à valider ; dans `universe`, la première image devient l'équation d'Einstein. Avis donné : un titre audacieux doit reposer sur ce que l'épisode dit (al-Muyassar pour 6:125, Ibn Kathir pour l'embryon) ; une même formule sur quatre titres s'use.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```

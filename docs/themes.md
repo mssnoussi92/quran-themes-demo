@@ -346,6 +346,17 @@ porte les mots dont on a besoin.
 - **Le registre** n'a pas de type pour une source scientifique : un fichier (`content/sources/science.yaml` : id,
   référence, lien) et `rules.py` qui l'accepte, à faire avec le script.
 
+### Deux titres validés ; les débuts alignés sur les titres (propriétaire, 2026-11-12)
+
+« Je valide « كلمة واحدة كانت هتكذّب القرآن » et « حتى أينشتاين غلط فيها » ; ces titres attirent, je cherche ce style ; je
+cherche encore des titres pour les autres ; et il faut changer les hooks du début avec ce qui est dans le titre. »
+**Inscrit** : les titres de `lahab` et `universe` sont validés. **Proposés**, dans ce style : `sky` « اللي بيحصل فوق ٨
+كيلو… القرآن وصفه » (sur la lecture d'al-Muyassar), `womb` « قبل الميكروسكوب بألف سنة… القرآن وصف شكلك » (sur la forme
+qu'Ibn Kathir donne à la علقة ; premiers microscopes vers 1590-1620, à sourcer). **Les premières répliques disent
+maintenant le titre** (`docs/scripts/signs.md`, marquées « à valider ») ; pour `universe`, la première image devient
+l'équation d'Einstein, sa constante Λ en or, et le schéma de Ptolémée passe à la troisième réplique. Dans `lahab`, la
+réplique « ولو كان قالها… كان كذّب الآية » disparaît : la première la dit. Durées : 1:43, 1:31, 2:01, 2:04.
+
 ### Les quatre scripts validés ; les titres à challenger (propriétaire, 2026-11-12)
 
 « Je valide l'épisode 2 et les deux répliques, mais il faut challenger les titres car ils attirent : que penses-tu ? »
