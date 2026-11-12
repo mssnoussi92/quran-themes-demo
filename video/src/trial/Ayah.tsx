@@ -50,13 +50,39 @@ export const Caravan: React.FC<{ id: string; x: number; y: number; scale: number
   </g>
 );
 
+/** Tracks in the sand, from the shade of the place of the sermon to the caravan: steps that left, nobody drawn.
+ * `trails`: each one from a point to another, with how far its middle bends; `shown`: 0 none yet, 1 all of them. */
+export const Footprints: React.FC<{ trails: { from: [number, number]; to: [number, number]; bend: number }[]; shown: number; ink?: string }> = ({ trails, shown, ink = "#1c140b" }) => (
+  <g>
+    {trails.map((trail, k) => {
+      const [x0, y0] = trail.from;
+      const [x1, y1] = trail.to;
+      const mx = (x0 + x1) / 2;
+      const my = (y0 + y1) / 2 + trail.bend;
+      const steps = Math.max(4, Math.round(Math.hypot(x1 - x0, y1 - y0) / 30));
+      // each trail starts a little after the one before, and its steps follow one another
+      const far = Math.max(0, Math.min(1, shown * (1 + 0.5 * (trails.length - 1) / trails.length) - (0.5 * k) / trails.length)) * steps;
+      return Array.from({ length: steps }, (_, i) => {
+        // a step is never quite where the one before would put it; the nearer ones (lower in the frame) are larger
+        const p = (i + 0.5 + 0.3 * (chance(i, k + 5) - 0.5)) / steps;
+        const x = (1 - p) * (1 - p) * x0 + 2 * p * (1 - p) * mx + p * p * x1;
+        const y = (1 - p) * (1 - p) * y0 + 2 * p * (1 - p) * my + p * p * y1;
+        const near = 0.75 + 0.7 * Math.max(0, Math.min(1, (y - y0) / 110));
+        const side = (i % 2 ? 4 : -4) * near + 2 * (chance(i, k + 9) - 0.5);
+        const turn = (Math.atan2(y1 - y0, x1 - x0) * 180) / Math.PI + 14 * (chance(i, k + 13) - 0.5);
+        return <ellipse key={`${k}-${i}`} cx={x} cy={y + side} rx={8.5 * near} ry={3.4 * near} transform={`rotate(${turn} ${x} ${y + side})`} fill={ink} opacity={0.78 * Math.max(0, Math.min(1, far - i))} />;
+      });
+    })}
+  </g>
+);
+
 /** Which lamps stay lit last: lamp `k` is lit while `lit` is over its rank. */
 const RANK = [7, 19, 2, 13, 22, 5, 16, 10, 0, 21, 8, 14, 3, 18, 11, 23, 6, 15, 1, 20, 9, 12, 4, 17];
 
 /** Where a sermon is given: palm trunks, a roof of palm, the steps of a minbar (empty: nobody is drawn), and
  * twenty-four lamps under the roof. `lit`: how many burn (24: everyone is there; 12: those who stayed); a
  * fraction is a lamp going out. (x, y): the foot of its first trunk. */
-export const Sermon: React.FC<{ id: string; x: number; y: number; scale: number; t: number; lit: number; rim?: string }> = ({ id, x, y, scale, t, lit, rim = "#ffd9a0" }) => (
+export const Sermon: React.FC<{ id: string; x: number; y: number; scale: number; t: number; lit: number; rim?: string; lamps?: boolean }> = ({ id, x, y, scale, t, lit, rim = "#ffd9a0", lamps = true }) => (
   <g transform={`translate(${x} ${y}) scale(${scale})`}>
     <defs>
       <radialGradient id={`${id}-glow`}>
@@ -85,7 +111,7 @@ export const Sermon: React.FC<{ id: string; x: number; y: number; scale: number;
     <path d="M 550 -132 L 550 -218 L 562 -218 L 562 4 L 550 4 Z" fill={INK} />
     <path d="M 452 -44 L 486 -44 L 486 -88 L 520 -88 L 520 -132 L 556 -132" fill="none" stroke={rim} strokeWidth={2.5} opacity={0.5} />
     {/* the lamps: three rows under the roof */}
-    {Array.from({ length: 24 }, (_, k) => {
+    {(lamps ? Array.from({ length: 24 }) : []).map((_, k) => {
       const row = Math.floor(k / 8);
       const cx = 22 + (k % 8) * 58 + (row === 1 ? 29 : 0);
       const cy = -306 + row * 62;

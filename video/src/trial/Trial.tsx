@@ -9,7 +9,7 @@ import { AbsoluteFill, Easing, Html5Audio, OffthreadVideo, Sequence, interpolate
 import { FONT, loadFonts } from "../fonts";
 import { subtitleChunks } from "../templates/Subtitles";
 import type { WordTiming } from "../types";
-import { Caravan, Gate, Lantern, Palm, Rain, Sermon, Stars } from "./Ayah";
+import { Caravan, Footprints, Gate, Lantern, Palm, Rain, Sermon, Stars } from "./Ayah";
 import { Boat, Fleet } from "./Boat";
 import { Call, Niche, Whale } from "./Dua";
 import { House, Land } from "./Home";
@@ -56,7 +56,9 @@ export type Reading = {
 type Segment = Narration | Verse | Reading;
 /** How the filmed clip sits in the frame: where it is cropped, how far down (or up) it is moved to leave the
  * text its place, how dark, the colour behind it, where its horizon is (the picture grows around it). */
-export type Picture = { position?: string; shift?: number; brightness?: number; ground?: string; horizon?: number; rate?: number };
+/** `veil`: how much of the dark veil behind the text is laid over the top of the clip (1 when not said; less for a
+ * picture in full daylight, whose sky must stay a day sky). */
+export type Picture = { position?: string; shift?: number; brightness?: number; ground?: string; horizon?: number; rate?: number; veil?: number };
 export type TrialData = {
   trial: string; voice: string; voice_name: string; handle: string; handles?: Record<string, string>;
   clip: string; clip_seconds: number; picture?: Picture; seconds: number; segments: Segment[];
@@ -306,23 +308,32 @@ const BarrierPicture: Drawn = ({ t, show, since, horizon }) => {
 
 const CLAMP = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
-/** « آية وحكايتها », the caravan (62:11): where the sermon is given, its lamps all lit (`sermon`); the loaded camels
- * come in and the lamps go out while the verse is recited (`caravan`), until twelve are left (`twelve`: the twelve
- * men who stayed); any other scene (`phone`): the desert alone, the viewer's own day. Nobody is drawn. */
+/** « آية وحكايتها », the caravan (62:11), at midday (the Friday prayer): where the sermon is given, in full daylight
+ * (`sermon`: palm trunks, a roof of leaves, the steps of a minbar); the loaded camels come in while the verse is
+ * recited and tracks leave the shade for them (`caravan`, `twelve`); any other scene (`phone`): the desert alone, the
+ * viewer's own day. Nobody is drawn, and nothing counts those who left: the report gives only the twelve who stayed. */
 const CaravanPicture: Drawn = ({ t, show, since, horizon }) => {
   const came = Math.max(show("caravan"), show("twelve"));
   const there = Math.max(show("sermon"), came);
   const sinceCaravan = t - since("caravan");
-  const lit = interpolate(sinceCaravan, [3, 17], [24, 12], CLAMP);
   const enter = interpolate(sinceCaravan, [0, 7], [0, 1], { ...CLAMP, easing: Easing.out(Easing.cubic) });
+  const left = interpolate(sinceCaravan, [3, 17], [0, 1], CLAMP);
+  const y = horizon + 30;
   return (
     <>
       <g opacity={there}>
-        <Land id="l-caravan" horizon={horizon} rim="#ffd9a0" />
-        <Sermon id="s-caravan" x={452} y={horizon + 30} scale={0.98} t={t} lit={lit} />
+        <Land id="l-caravan" horizon={horizon} rim="#fff0d2" top="#a48a5e" />
+        <g opacity={came}>
+          <Footprints shown={left} trails={[
+            { from: [520, y + 22], to: [150, y + 58], bend: 10 }, { from: [640, y + 30], to: [250, y + 84], bend: 14 },
+            { from: [760, y + 24], to: [60, y + 96], bend: 20 }, { from: [860, y + 36], to: [330, y + 112], bend: 12 },
+            { from: [960, y + 28], to: [180, y + 128], bend: 22 }, { from: [580, y + 44], to: [20, y + 74], bend: 8 },
+          ]} />
+        </g>
+        <Sermon id="s-caravan" x={452} y={y} scale={0.98} t={t} lit={0} lamps={false} rim="#fff0d2" />
       </g>
       <g opacity={came}>
-        <Caravan id="c-caravan" x={470 - 560 * (1 - enter)} y={horizon + 30} scale={0.7} t={t} count={3} right />
+        <Caravan id="c-caravan" x={470 - 560 * (1 - enter)} y={y} scale={0.7} t={t} count={3} right rim="#fff0d2" />
       </g>
     </>
   );
@@ -592,7 +603,7 @@ export const Trial: React.FC<TrialProps> = ({ data, platform }) => {
           <Drawing t={t} show={show} since={since} horizon={horizon} />
         </svg>
       </AbsoluteFill>
-      <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(4,7,20,.78) 0%, rgba(4,7,20,.45) 30%, rgba(4,7,20,.05) 52%, rgba(4,7,20,.38) 100%)" }} />
+      <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(4,7,20,${0.78 * (picture.veil ?? 1)}) 0%, rgba(4,7,20,${0.45 * (picture.veil ?? 1)}) 30%, rgba(4,7,20,.05) 52%, rgba(4,7,20,.38) 100%)` }} />
       {data.ambience ? <Html5Audio src={staticFile(data.ambience)} /> : null}
       {data.segments.map((seg, i) =>
         seg.file ? (

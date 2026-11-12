@@ -58,10 +58,11 @@ export const TrialCover: React.FC<CoverProps> = ({ data }) => {
   if (!data.cover) throw new Error(`content/trial/${data.trial}.yaml has no cover`);
   const { scene, title, tag } = data.cover;
   const size = Math.round(Math.min(190, (W - 120) / (title.length * 0.43)));
+  const veil = data.picture?.veil ?? 1;      // a picture in full daylight keeps a day sky behind its title
   return (
     <AbsoluteFill style={{ background: "#04070f" }}>
       <Scene data={data} scene={scene} />
-      <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(4,7,20,.82) 0%, rgba(4,7,20,.62) 34%, rgba(4,7,20,.06) 56%, rgba(4,7,20,.45) 100%)" }} />
+      <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(4,7,20,${0.82 * veil}) 0%, rgba(4,7,20,${0.62 * veil}) 34%, rgba(4,7,20,.06) 56%, rgba(4,7,20,.45) 100%)` }} />
       <div style={{ position: "absolute", top: 450, left: 50, right: 50, textAlign: "center" }}>
         <Tag text={tag} size={50} />
         <div dir="rtl" lang="ar" style={{ marginTop: 26, fontFamily: FONT.arabic, fontWeight: 700, fontSize: size, lineHeight: 1.35, color: "#fff", textShadow: INK_SHADOW, textWrap: "balance" }}>

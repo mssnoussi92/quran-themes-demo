@@ -7,14 +7,14 @@ const LIGHT = "#ffd9a0";
 
 /** The land every scene stands on: a dark rise drawn over the bottom of the clip, lit along its edge (`rim`:
  * moonlight or the last light of the sun); `path`: a pale track coming up to the middle of the rise. */
-export const Land: React.FC<{ id: string; horizon: number; rim: string; path?: boolean; width?: number }> = ({ id, horizon, rim, path = false, width = 1080 }) => {
+export const Land: React.FC<{ id: string; horizon: number; rim: string; path?: boolean; width?: number; top?: string }> = ({ id, horizon, rim, path = false, width = 1080, top = "#0b0e1c" }) => {
   const x = (v: number) => Math.round((v * width) / 1080);
   const edge = `M -20 ${horizon + 46} C ${x(180)} ${horizon + 8} ${x(420)} ${horizon + 2} ${x(600)} ${horizon + 20} C ${x(800)} ${horizon + 40} ${x(960)} ${horizon + 6} ${x(1100)} ${horizon - 12}`;
   return (
     <g>
       <defs>
         <linearGradient id={`${id}-land`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#0b0e1c" />
+          <stop offset="0" stopColor={top} />
           <stop offset=".35" stopColor={INK} />
           <stop offset="1" stopColor="#030308" />
         </linearGradient>

@@ -341,7 +341,7 @@ def main() -> None:
             "clip": f"trial/{clip.name}", "clip_seconds": round(seconds(args.clip), 2),
             # How the clip sits in the frame (content/trial/<id>.yaml, `clip`): where it is cropped, how far it is
             # moved down (or up) to leave the text its place, how much it is darkened, the colour behind it.
-            "picture": {k: spec["clip"][k] for k in ("position", "shift", "brightness", "ground", "horizon", "rate") if k in spec["clip"]},
+            "picture": {k: spec["clip"][k] for k in ("position", "shift", "brightness", "ground", "horizon", "rate", "veil") if k in spec["clip"]},
             "cover": spec.get("cover"),                     # the 9:16 cover of the short (TrialCover916)
             "seconds": total, "segments": segments}
     if bed:
