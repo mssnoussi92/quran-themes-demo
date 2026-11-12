@@ -23,12 +23,14 @@ script_validated: { by: mssnoussi92, on: 2026-11-12 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 50-trial-caravan     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
-# Clip PROPOSÉ (pas encore approuvé par le propriétaire) : des dunes filmées d'un drone qui avance lentement, de jour,
-# ralenti cinq fois pour ne se jouer qu'une fois sur tout le short. Dessins : video/src/trial/Ayah.tsx.
+# Le clip : des dunes filmées d'un drone qui avance lentement, de jour, ralenti cinq fois pour ne se jouer qu'une fois
+# sur tout le short. Dessins : video/src/trial/Ayah.tsx.
 # Le propriétaire (2026-11-12) : « l'heure de l'histoire, c'est midi, la prière du vendredi, et c'est un peu sombre ».
-# Version de jour PROPOSÉE : le clip sans assombrissement (`brightness: 1.0`), le voile du haut allégé (`veil: 0.55`),
-# plus de lampes (une lumière ne se lit que la nuit, et vingt-quatre lampes dont douze s'éteignent comptaient ceux qui
-# sont partis, ce que le récit ne donne pas) : le lieu du prêche en plein jour, la caravane, des traces de pas.
+# L'image de jour : le clip sans assombrissement (`brightness: 1.0`), le voile du haut allégé (`veil: 0.55`), plus de
+# lampes (une lumière ne se lit que la nuit, et vingt-quatre lampes dont douze s'éteignent comptaient ceux qui sont
+# partis, ce que le récit ne donne pas) : le lieu du prêche en plein jour, la caravane, des traces de pas.
+# APPROUVÉE par lui le même jour sur la planche de comparaison (« je valide l'image du jour ») : le clip ainsi posé
+# et les dessins ; la vidéo elle-même se valide quand il l'a vue (`validated`).
 clip: { source: pixabay, id: 16139, author: AcornStudioSpain, page: "https://pixabay.com/videos/id-16139/", take: { slow: 5, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 1.0, veil: 0.55, ground: "#0b0907", horizon: 1330 }
 # Ambiance sous la narration, jamais sous le verset : un des trois enregistrements validés à l'écoute par le propriétaire
 # sur le premier film (docs/model.md, « Ambiances ») : le vent.

@@ -1,8 +1,8 @@
 // Silhouettes of the series « آية وحكايتها » (content/trial/ayah.yaml, caravan.yaml, duha.yaml, hope.yaml;
 // docs/themes.md): one verse and the report of its revelation, and nobody drawn. The caravan of 62:11 is its
 // loaded camels (a creature the report names: « عير تحمل طعاما ») and the place of the Friday sermon is palm
-// trunks, a roof and the steps of a minbar, empty, with lamps that go out until twelve are left (the twelve men
-// who stayed, by their count only). Ad-Duha is a night that lifts, then three lights for what the surah recalls
+// trunks, a roof and the steps of a minbar, empty, in full daylight (the Friday prayer is at midday), and tracks
+// in the sand that leave its shade for the caravan. Ad-Duha is a night that lifts, then three lights for what the surah recalls
 // (a shelter, a guidance, a provision). Az-Zumar 39:53 is a road in the rain and a gate that opens.
 // Backlit shapes over a filmed desert, a filmed dawn and a filmed storm sky.
 const INK = "#05060d";
@@ -76,20 +76,13 @@ export const Footprints: React.FC<{ trails: { from: [number, number]; to: [numbe
   </g>
 );
 
-/** Which lamps stay lit last: lamp `k` is lit while `lit` is over its rank. */
-const RANK = [7, 19, 2, 13, 22, 5, 16, 10, 0, 21, 8, 14, 3, 18, 11, 23, 6, 15, 1, 20, 9, 12, 4, 17];
-
-/** Where a sermon is given: palm trunks, a roof of palm, the steps of a minbar (empty: nobody is drawn), and
- * twenty-four lamps under the roof. `lit`: how many burn (24: everyone is there; 12: those who stayed); a
- * fraction is a lamp going out. (x, y): the foot of its first trunk. */
-export const Sermon: React.FC<{ id: string; x: number; y: number; scale: number; t: number; lit: number; rim?: string; lamps?: boolean }> = ({ id, x, y, scale, t, lit, rim = "#ffd9a0", lamps = true }) => (
+/** Where a sermon is given, in daylight: palm trunks, a roof of palm, the steps of a minbar (empty: nobody is
+ * drawn). (x, y): the foot of its first trunk. It had twenty-four lamps, of which twelve went out: a light only
+ * reads at night, the Friday prayer is at midday, and the report counts those who stayed, not those who left
+ * (the owner chose the daylight picture, 2026-11-12). */
+export const Sermon: React.FC<{ id: string; x: number; y: number; scale: number; rim?: string }> = ({ id, x, y, scale, rim = "#ffd9a0" }) => (
   <g transform={`translate(${x} ${y}) scale(${scale})`}>
     <defs>
-      <radialGradient id={`${id}-glow`}>
-        <stop offset="0" stopColor="#fff3cf" stopOpacity=".95" />
-        <stop offset=".3" stopColor={LIGHT} stopOpacity=".5" />
-        <stop offset="1" stopColor={LIGHT} stopOpacity="0" />
-      </radialGradient>
       <filter id={`${id}-soft`} x="-20%" y="-300%" width="140%" height="700%">
         <feGaussianBlur stdDeviation="10" />
       </filter>
@@ -110,24 +103,6 @@ export const Sermon: React.FC<{ id: string; x: number; y: number; scale: number;
     <path d="M 452 4 L 452 -44 L 486 -44 L 486 -88 L 520 -88 L 520 -132 L 556 -132 L 556 4 Z" fill={INK} />
     <path d="M 550 -132 L 550 -218 L 562 -218 L 562 4 L 550 4 Z" fill={INK} />
     <path d="M 452 -44 L 486 -44 L 486 -88 L 520 -88 L 520 -132 L 556 -132" fill="none" stroke={rim} strokeWidth={2.5} opacity={0.5} />
-    {/* the lamps: three rows under the roof */}
-    {(lamps ? Array.from({ length: 24 }) : []).map((_, k) => {
-      const row = Math.floor(k / 8);
-      const cx = 22 + (k % 8) * 58 + (row === 1 ? 29 : 0);
-      const cy = -306 + row * 62;
-      const on = Math.max(0, Math.min(1, lit - RANK[k]));
-      const flicker = 0.88 + 0.12 * Math.sin(t * 2.1 + k * 1.7) * Math.sin(t * 0.8 + k);
-      return (
-        <g key={k}>
-          <path d={`M ${cx} -346 L ${cx} ${cy - 9}`} stroke={INK} strokeWidth={2} />
-          <circle cx={cx} cy={cy} r={9} fill="#141624" stroke="#2a2d40" strokeWidth={1.5} />
-          <g opacity={on * flicker}>
-            <circle cx={cx} cy={cy} r={38} fill={`url(#${id}-glow)`} />
-            <circle cx={cx} cy={cy} r={8} fill="#fff1cc" />
-          </g>
-        </g>
-      );
-    })}
   </g>
 );
 

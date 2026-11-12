@@ -330,7 +330,7 @@ const CaravanPicture: Drawn = ({ t, show, since, horizon }) => {
             { from: [960, y + 28], to: [180, y + 128], bend: 22 }, { from: [580, y + 44], to: [20, y + 74], bend: 8 },
           ]} />
         </g>
-        <Sermon id="s-caravan" x={452} y={y} scale={0.98} t={t} lit={0} lamps={false} rim="#fff0d2" />
+        <Sermon id="s-caravan" x={452} y={y} scale={0.98} rim="#fff0d2" />
       </g>
       <g opacity={came}>
         <Caravan id="c-caravan" x={470 - 560 * (1 - enter)} y={y} scale={0.7} t={t} count={3} right rim="#fff0d2" />

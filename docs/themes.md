@@ -241,8 +241,9 @@ changée à sa demande : l'accroche du short 3 ne nomme plus les deux péchés d
 comme celui de ce script (il portait sur les textes du du'a) et fait la voix sans sa validation : les prises des shorts
 1 et 2 disent le script validé mot pour mot, celle du short 3 est refaite. Clips proposés (dunes, aube sur une baie,
 ciel d'orage), dessins et ambiances faits ; les trois shorts (1:41, 1:50, 1:31) sont rendus, contrôlés et envoyés,
-release brouillon `ayah-candidate`, et sur la page du propriétaire. **Reste** : son mot sur les vidéos (voix, images,
-clips, ambiances), les sources proposées et les textes.
+release brouillon `ayah-candidate`, et sur la page du propriétaire. Le short 1 passe en plein jour à sa demande (la
+prière du vendredi est à midi) : image approuvée par lui sur planche, vidéo re-rendue. **Reste** : son mot sur les
+vidéos (voix, images, clips, ambiances), les sources proposées et les textes.
 
 ## Faits (ancien circuit)
 
