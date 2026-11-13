@@ -542,8 +542,9 @@ maintenant sans voix (`docs/scripts/kalima.md`, à valider) ; « سمعوا ال
   as-Sa'di) ; **les trois mots du noyau de datte** (فتيل 4:49, نقير 4:124, قطمير 35:13 : le fil dans sa fente, le creux
   sur son dos, la peau autour ; al-Muyassar, Ibn Kathir), qui remplacent le seul قطمير à la demande du propriétaire
   (2026-11-13, « l'épisode 2 à réécrire ») ; هَلُوعًا (70:19-23 : le mot expliqué par les deux versets suivants, et
-  l'exception, « إلا المصلين » ; as-Sa'di, al-Muyassar). Durées estimées 1:37, 2:07, 1:23 ; l'épisode 2 est récité
-  pour moitié (trois versets, 1:03). 4:124 commence par « وَمَن » : une phrase entière, pas une suite.
+  l'exception, « إلا المصلين » ; as-Sa'di, al-Muyassar). Durées estimées 1:37, 2:05, 1:23 ; l'épisode 2 est récité
+  pour moitié (trois versets, 1:03). Son titre et son début : « بلحة واحدة… فيها تلات كلمات من القرآن » (« نواية بلحة
+  واحدة », jugé difficile par le propriétaire, remplacé le 2026-11-13 ; « le reste est good »). 4:124 commence par « وَمَن » : une phrase entière, pas une suite.
 - **Le tafsir n'est pas nommé par la narration** (propriétaire, 2026-11-13) : la réplique dit le sens, la référence
   s'écrit dessous (`content/wording.yaml`, `tafsir-named-in-narration`, et le skill `write-hook`). Les répliques validées
   de « سنريهم آياتنا » qui le nomment restent telles quelles.
