@@ -107,6 +107,10 @@ In the film the shorts' follow calls are left out (`reuse` with `lines:`).
 - **The narration never says a verse.** It asks the question before the verse and says the meaning
   after it, in its own Egyptian words; an Egyptian rendering of a verse's meaning is ours, the verse's
   Arabic is the reciter's.
+- **A claim we refute is never said in our voice** (owner, 2026-11-13, the numeric-miracle episodes): from the first
+  frame it is shown as a claim (« بيقولوا: … », in quotation marks, a « ؟ » on it), and the next phrase says we checked
+  (« أنا عدّيتها بنفسي. »). About three viewers in four leave within three seconds (khidr-01): they leave with whatever
+  the first frame asserted. The pull of the claim stays; only whose voice says it changes.
 - **Honest**: an example is a typical scene (« زي… », « لما… »), never a true story; no figure
   without a source; a promise only if the short keeps it.
 - **Names**: « موسى عليه السلام », « النبي صلى الله عليه وسلم » spelled out for the voice; a name the

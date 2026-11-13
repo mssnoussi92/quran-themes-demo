@@ -645,6 +645,30 @@ s'allume, puis s'éteint forme par forme pendant que 475 devient 365. Sources no
 - **Les dérives** : des dates calculées (la fin d'un État, le Jour du Jugement) et le 11 septembre lu dans 9:110. Avis de la
   session : garder l'exemple de Rashad Khalifa et « dater le Jour du Jugement », laisser les exemples politiques.
 
+**Décisions du propriétaire (2026-11-13, « je valide tes recommandations »)** : les épisodes de comptage entrent dans
+« سنريهم آياتنا » (pas de série à part) ; l'accroche montre l'affirmation **comme une affirmation** dès la première image
+(« بيقولوا », jamais notre voix : skill `write-hook`), puis le compte ; les exemples politiques sont laissés ; le style de
+montage est inscrit comme une option (`docs/model.md`, « Le style compteur »). **Reste à son mot** : citer à l'écran des
+auteurs contemporains (ar-Rumi, Qutna, islamqa). Avis de la session : non ; les comptes sont les nôtres, refaits par
+un script, leur règle écrite à l'écran, et tout spectateur peut les refaire ; une source de type nouveau, `count` (le
+corpus, le lemme, la règle), comme `science`.
+
+**L'épisode 5, « يوم ٣٦٥ »** (plan de la session, 2026-11-13 ; images de style `docs/retention/count-style-yawm.jpg` ;
+le script viendra après les images, et la voix après « je valide le script ») :
+
+| Temps | Ce qui se passe | Image |
+| --- | --- | --- |
+| L'affirmation | « بيقولوا: «يوم» في القرآن ٣٦٥ مرة… زي أيام السنة. أنا عدّيتها بنفسي. » | la carte « بيقولوا », 365 en particules, un « ؟ » ; la grille attend derrière |
+| Le compte | toutes les formes : 475 | la grille s'allume, 437 versets |
+| Les règles | 365 n'apparaît qu'en retirant 110 : أيام et يومين (30), يومئذ (70), يومكم et يومهم (10) ; « ليه دي تتعد… ودي لأ؟ » | la bande des règles, des versets qui s'éteignent en anneaux vides (341 restent) |
+| L'année du Coran | 10:5 récité : les phases de la lune pour compter les années (al-Muyassar) ; une année lunaire fait 354 jours (source `science` à inscrire) | le verset, « عَدَدَ ٱلسِّنِينَ وَٱلْحِسَابَ » en or, les phases de la lune |
+| Ce qui tient | الدنيا 115 = الآخرة 115, à règle égale ; « بس هل ده الإعجاز؟ » | le « = », les deux mots sur une petite grille |
+| Le vrai défi | 17:88 récité : produire un texte comme lui, pas un compte (as-Sa'di) | le verset, « لَا يَأْتُونَ بِمِثْلِهِۦ » en or |
+| À retenir | « قبل ما تنشر رقم عن القرآن… عِدّه. » | — |
+
+Sources à inscrire : 10:5, 17:88, leurs passages de tafsir, le compte (`count`), l'année lunaire (`science`). Suite
+possible : l'épisode 6, « ١٩ » (le code de Rashad Khalifa l'a mené à retirer 9:128-129), à décider avec lui.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

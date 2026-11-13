@@ -114,6 +114,25 @@ mot de l'épisode écrit en grand, en or, dès la première image (jamais dit pa
 et le badge de la série au-dessus du voile (`KALIMA_PICTURES`, `KALIMA_OVERLAYS` de `video/src/trial/Kalima.tsx`).
 Un épisode peut réciter plusieurs versets séparés (`stone` : 4:49, 4:124, 35:13, chacun avec sa narration).
 
+**Le style compteur, une option** (propriétaire, 2026-11-13 : « enregistre ce style comme option à utiliser si ça
+fonctionne, pour une série ou dans une partie »). Il vient d'une vidéo de « إعجاز عددي » qu'il a trouvée attirante ; ce
+qu'on en garde est une version à nous, retournée vers la vérification. **Pour** un épisode ou une partie qui compte ou
+qui compare (un mot du Coran et ses occurrences, deux versets presque pareils, une affirmation chiffrée qui circule) ;
+**pas pour** une histoire, où le clip filmé et ses silhouettes restent le modèle. Rien n'est mesuré : à essayer sur un
+épisode avant de l'étendre. Images de style : `docs/retention/count-style-yawm.jpg` (`count-style-frame.py`, cinq images
+d'un épisode « يوم ٣٦٥ » de « سنريهم آياتنا »). **Pas encore construit dans Remotion.**
+- **Un nombre fait de particules** qui se rassemblent ; un « = » entre deux comptes.
+- **La grille des 6 236 versets** (une pastille par verset, dans l'ordre du mushaf, de droite à gauche) : en or les
+  versets du mot compté ; en anneau vide ceux qu'une règle retire ; un second mot dans une autre couleur.
+- **La bande des règles**, au pied de l'image, à la place de la frise des dates de « سنريهم آياتنا » : chaque règle de
+  comptage et le nombre qu'elle donne (475, 445, 375, 365), celle qu'on raconte allumée.
+- **Le verset** récité, le mot compté en or, un schéma dessous (les phases de la lune sous 10:5).
+- **Ce qui ne change pas** : nos polices (Amiri, Amiri Quran, Lora), la nuit et l'or, le badge de la série et la
+  signature ; une affirmation qu'on réfute est montrée **comme une affirmation** dès la première image (« بيقولوا »,
+  entre guillemets, un « ؟ » dessus), jamais dite par notre voix (skill `write-hook`) ; chaque
+  nombre est compté par un script sur le Quranic Arabic Corpus, jamais tapé, et la règle de comptage est écrite à
+  l'écran.
+
 ### Un film (`content/trial/<id>.yaml`, avec `chapters`)
 
 | Champ | Ce que c'est |
