@@ -141,7 +141,7 @@ const Notebook: React.FC<{ y: number; marks: number; things: number }> = ({ y, m
       )}
       {/* the blessings: three gold marks, once counted */}
       {[0, 1, 2].map((m) => (
-        <path key={m} d={`M ${110 + m * 60} -60 l 0 ${110 * clamp(marks - m)}`} stroke={GOLD} strokeWidth={14} strokeLinecap="round" />
+        <path key={m} d={`M ${110 + m * 60} -60 l 0 ${110 * clamp(marks - m)}`} stroke={GOLD} strokeWidth={14} strokeLinecap="round" opacity={marks - m > 0.02 ? 1 : 0} />
       ))}
     </g>
   </g>
