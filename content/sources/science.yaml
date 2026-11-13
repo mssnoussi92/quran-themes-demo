@@ -126,7 +126,7 @@
 
 - id: science.count-yawm
   type: science
-  ref: { author: "Quranic Arabic Corpus (University of Leeds)", title: "Morphologie du Coran, mot par mot : le lemme يوم", publication: "corpus.quran.com ; quran-morphology.txt (github.com/mustafa0x/quran-morphology)", year: 2011 }
+  ref: { author: "Quranic Arabic Corpus (University of Leeds)", title: "Morphology of the Quran, word by word: every form of يوم, counted", publication: "corpus.quran.com; quran-morphology.txt (github.com/mustafa0x/quran-morphology)", year: 2011 }
   url: https://corpus.quran.com/
   label: { ar: "عدّ الكلمات: Quranic Arabic Corpus", en: "Word counts: Quranic Arabic Corpus" }
   claim: "Le lemme يوم : 475 mots (dans 437 versets) ; sans le pluriel et le duel, 445 ; sans يومئذ, 375 ; sans يومكم et يومهم, 365. Comptés par tools/trial/count.py, jamais tapés (video/src/trial/countData.ts)."
@@ -136,7 +136,7 @@
 
 - id: science.count-board
   type: science
-  ref: { author: "Quranic Arabic Corpus (University of Leeds)", title: "Huit égalités qui circulent, comptées sous trois règles fixes (toutes les formes, le singulier, la racine)", publication: "corpus.quran.com ; quran-morphology.txt (github.com/mustafa0x/quran-morphology)", year: 2011 }
+  ref: { author: "Quranic Arabic Corpus (University of Leeds)", title: "Eight circulating claims, counted under three fixed rules (every form, the singular, the root)", publication: "corpus.quran.com; quran-morphology.txt (github.com/mustafa0x/quran-morphology)", year: 2011 }
   url: https://corpus.quran.com/
   label: { ar: "عدّ الكلمات: Quranic Arabic Corpus", en: "Word counts: Quranic Arabic Corpus" }
   claim: "Toutes les formes / le singulier / la racine : شهر 21/12/21 ; الدنيا et الآخرة 115-115/115-115/133-250 ; الملائكة et الشيطان 88-88/13-70/206-88 ; رجل et امرأة 29-26/24-24/73-38 ; الصلاة 83/78/99 ; الصبر 15/15/103 ; الليل 84/83/92 ; يوم 475/445/475. Comptés par tools/trial/count.py."
@@ -146,7 +146,7 @@
 
 - id: science.khalifa-19
   type: science
-  ref: { author: "Yvonne Yazbeck Haddad, Jane Idleman Smith", title: "Mission to America: Five Islamic Sectarian Communities in North America (Rashad Khalifa)", publication: "University Press of Florida, 1993, p. 141-160", year: 1993 }
+  ref: { author: "Yvonne Yazbeck Haddad, Jane Idleman Smith", title: "Mission to America: Five Islamic Sectarian Communities in North America (Rashad Khalifa)", publication: "University Press of Florida, pp. 141-160", year: 1993 }
   url: https://en.wikipedia.org/wiki/Rashad_Khalifa
   label: { ar: "رشاد خليفة و«الرقم 19»", en: "Rashad Khalifa and the « code 19 »" }
   claim: "Rashad Khalifa (1935-1990) publie de 1973 à 1982 une structure mathématique du Coran fondée sur 19, et soutient que cette structure rejette 9:128-129, deux versets qu'il dit n'être pas du Coran."

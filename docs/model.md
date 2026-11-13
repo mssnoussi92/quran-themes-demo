@@ -59,7 +59,7 @@ tools/trial/rules.py           les règles sur les fichiers d'un film ; tools/tr
 tools/audio/align.py           chaque phrase d'un texte retrouvée dans une longue prise
 tools/tts/gemini.py            la voix (dans le workflow voice-test : la clé est un secret du dépôt)
 video/src/trial/               Trial.tsx (short), Film.tsx (film), Cover.tsx (couverture, vignette),
-                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a), Signs.tsx et Kalima.tsx (les séries) : les dessins
+                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a), Signs.tsx, Kalima.tsx et Count.tsx (les séries) : les dessins
 video/public/trial/            (ignoré) données préparées, clips, audio
 build/trial/ambience/          (ignoré) enregistrements d'ambiance téléchargés
 video/out/                     (ignoré) rendus
@@ -120,7 +120,9 @@ qu'on en garde est une version à nous, retournée vers la vérification. **Pour
 qui compare (un mot du Coran et ses occurrences, deux versets presque pareils, une affirmation chiffrée qui circule) ;
 **pas pour** une histoire, où le clip filmé et ses silhouettes restent le modèle. Rien n'est mesuré : à essayer sur un
 épisode avant de l'étendre. Images de style : `docs/retention/count-style-yawm.jpg` (`count-style-frame.py`, cinq images
-d'un épisode « يوم 365 » de « سنريهم آياتنا »). **Pas encore construit dans Remotion.**
+d'un épisode « يوم 365 » de « سنريهم آياتنا »). **Construit le 2026-11-13** pour l'épisode `days` : `video/src/trial/Count.tsx`
+(les dessins, réglés sur le temps de chaque scène) et `tools/trial/count.py` (les comptes refaits sur le Quranic Arabic
+Corpus, écrits dans `video/src/trial/countData.ts`, avec leurs tests) ; un autre épisode y ajoute ses données et ses scènes.
 - **Un nombre fait de particules** qui se rassemblent ; un « = » entre deux comptes.
 - **Les comptes en chiffres « 365 »**, pas en chiffres arabes orientaux (propriétaire, 2026-11-13) : dans le nombre en
   particules, la bande des règles, les répliques et les légendes ; le badge de la série et la référence d'un verset

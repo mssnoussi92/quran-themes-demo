@@ -80,7 +80,7 @@ partir du deuxième, c'est l'épisode d'avant.
 | sam. 5 déc. | « سنريهم آياتنا » 3 : le ciel | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 3 » |
 | ven. 11 déc. | **« آية وحكايتها » 4** : le verset promis par le short 3 | les quatre | à faire | à faire |
 | sam. 12 déc. | « سنريهم آياتنا » 4 : l'embryon | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 4 » |
-| sam. 19 déc. | **« سنريهم آياتنا » 5** : la « آية الجاية » promise par le short 4 | les quatre | à faire | à faire |
+| sam. 19 déc. | « سنريهم آياتنا » 5 : « بيقولوا 365… عدّيتها بنفسي » (annoncé par la fin de `womb`) | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 5 » |
 
 Une ligne barrée est publiée : la session la barre quand le propriétaire le lui dit, et republie sa page, qui montre ce
 calendrier. Les fichiers de Moussa et al-Khadir ne sont dans aucune release : ce sont ceux envoyés dans la conversation le
