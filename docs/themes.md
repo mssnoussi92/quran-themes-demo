@@ -634,6 +634,18 @@ qu'ils renforcent : « nous vérifions ») ; le style de la vidéo retourné con
 s'allume, puis s'éteint forme par forme pendant que 475 devient 365. Sources nouvelles à décider : les comptes (un type
 `count`, la méthode écrite) ; les savants contemporains (Qunaibi, ar-Rumi, islamqa) ne sont pas dans la politique.
 
+**Ce que le propriétaire a ajouté** (2026-11-13, le texte d'islamqa 69741, « ça peut être utile ») :
+- **Le compte de يوم refait par la session est exactement celui que critique le Dr Fahd ar-Rumi** (« اتجاهات التفسير في القرن
+  الرابع عشر », 2/699-700) : 365 en gardant « اليوم » et « يوماً », en laissant « يومكم », « يومهم », « يومئذ ». Deux
+  vérifications indépendantes qui se rejoignent.
+- **Une étude critique** : Ashraf Abd ar-Razzaq Qutna, « رسم المصحف والإعجاز العددي » (Damas, 1999), sur trois livres (Bassam
+  Jarrar, Abd ar-Razzaq Nawfal, Adnan ar-Rifa'i) : des conditions « توجيهية حيناً وانتقائية حيناً آخر », jusqu'à s'écarter du
+  rasm othmanien.
+- **La distinction qui porte le script** : « اللطيفة » n'est pas « الإعجاز » ; un livre au nombre de mots voulu, tout auteur peut
+  l'écrire ; le défi est de produire une sourate comme lui.
+- **Les dérives** : des dates calculées (la fin d'un État, le Jour du Jugement) et le 11 septembre lu dans 9:110. Avis de la
+  session : garder l'exemple de Rashad Khalifa et « dater le Jour du Jugement », laisser les exemples politiques.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
