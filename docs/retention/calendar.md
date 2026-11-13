@@ -1,7 +1,7 @@
 # Calendrier de publication et fiche de mesures
 
-Deuxième version, proposée par la session le 2026-11-13 après les deux premières publications, **à valider par le
-propriétaire**. Il publie à la main. Les textes à coller sont sur sa page « Films et shorts à publier » et dans
+Deuxième version, proposée par la session le 2026-11-13 après les deux premières publications, **validée par le
+propriétaire le même jour** (« je valide la grille »). Il publie à la main. Les textes à coller sont sur sa page « Films et shorts à publier » et dans
 `docs/retention/publication-*.md`. La première version (2026-11-12 : une vidéo par jour, le film vertical après ses
 shorts) est dans l'historique git ; il l'a trouvée à revoir.
 
@@ -9,7 +9,7 @@ shorts) est dans l'historique git ; il l'a trouvée à revoir.
 
 | Quand | Quoi | Où |
 | --- | --- | --- |
-| jeu. 12 nov., soir | Moussa et al-Khadir : le film | Facebook (version à préciser : verticale ou 16:9), YouTube |
+| jeu. 12 nov., soir | Moussa et al-Khadir : le film | Facebook (le film vertical), YouTube (16:9) |
 | ven. 13 nov., matin | Moussa et al-Khadir : short 1, la barque | les quatre ; sur YouTube, le film en « Vidéo associée » |
 
 ## La grille de la semaine
@@ -38,9 +38,14 @@ Pourquoi :
 - **La faiblesse de la grille** : chaque type de vidéo a son jour. Le jour de la semaine se mêle donc au type quand on
   compare. À une centaine de vues, ce biais pèse moins que l'accroche, mais il faut le garder en tête.
 
-**Les heures** : tous les shorts à une même heure, celle du short 1. Il ne faut en changer que si les statistiques
-d'audience de la page (Instagram, YouTube Studio) montrent les abonnés en ligne à une autre heure, et alors dès le
-short 2. Les films sortent tous à l'heure du premier. Notez ces deux heures dans la fiche.
+**Les heures** : une seule heure pour tous les shorts, une seule pour tous les films. Avis de la session
+(2026-11-13), à confirmer par le propriétaire : **le soir, vers 20 h heure du Caire** (19 h à Alger et à Paris, 21 h à
+Riyad et à Bagdad), pour les shorts comme pour les films. Le public de la page va du Maroc à l'Irak (`docs/retention.md`) ;
+à cette heure, il est partout chez lui et réveillé, alors que le matin tombe pendant le travail ou l'école. Un film de
+sept à huit minutes se regarde le soir. Le short 1 de Moussa et al-Khadir, sorti le matin, reste le seul à cette heure.
+Avec 66 abonnés, presque toutes les vues viennent d'inconnus (112 sur 118 dans l'essai de khidr-01) : l'heure exacte
+pèse donc moins que la régularité. Les statistiques d'audience de la page (Instagram, YouTube Studio, TikTok) diront
+plus tard si une autre heure vaut mieux.
 
 **La vidéo associée sur YouTube** : pour le short d'une histoire, c'est son film. Pour l'épisode d'une série, à
 partir du deuxième, c'est l'épisode d'avant.
@@ -75,8 +80,8 @@ partir du deuxième, c'est l'épisode d'avant.
 | sam. 19 déc. | **« سنريهم آياتنا » 5** : la « آية الجاية » promise par le short 4 | les quatre | à faire | à faire |
 
 Les fichiers de Moussa et al-Khadir ne sont dans aucune release : ce sont ceux envoyés dans la conversation le
-2026-11-12. Le film vertical de Moussa et al-Khadir n'a plus de date : il reste à savoir lequel des deux est sur
-Facebook.
+2026-11-12. Le film vertical de Moussa et al-Khadir est celui qui est sur Facebook. La grille commence le lundi 16 : les shorts 2
+et 3 de Moussa et al-Khadir la précèdent, le samedi et le dimanche.
 
 ## Les mesures
 
@@ -118,7 +123,7 @@ Une ligne par vidéo et par plateforme, remplie à 48 heures. L'heure de publica
 
 | Publiée le | Heure | Vidéo | Plateforme | Durée | Vues | Passent 3 s | Durée moyenne | % de la durée | Partages | Abonnés |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 12 nov. | soir | Khidr, film | Facebook | 7:47 | | | | | | |
+| 12 nov. | soir | Khidr, film vertical | Facebook | 7:47 | | | | | | |
 | 12 nov. | soir | Khidr, film | YouTube | 7:47 | | | | | | |
 | 13 nov. | matin | Khidr, short 1 | Facebook | 1:33 | | | | | | |
 | 13 nov. | matin | Khidr, short 1 | Instagram | 1:33 | | | | | | |
