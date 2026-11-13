@@ -590,6 +590,29 @@ l'accroche, « لاحظت الفرق؟ ». Pas de place dans la grille (deux sé
 maintenant, script après les premières mesures. 6:151 / 17:31 parle de tuer ses enfants : la première image ne le montre
 pas, l'accroche est le mot qui change de place.
 
+**Rappel du propriétaire (2026-11-13 : « nous avons oublié ma proposition initiale des versets similaires mais
+différents dans le sens »)**, et une troisième paire cherchée le même soir dans nos tafsirs (quran.com, éditions 14, 16,
+91), parmi sept candidates (28:20 / 36:20, 31:17 / 42:43, 2:58 / 7:161, 3:126 / 8:10, 7:12 / 38:75, 2:35 / 7:19 : aucune
+différence expliquée par nos trois tafsirs) :
+- **4:135 / 5:8** : « كُونُوا قَوَّامِينَ بِالْقِسْطِ شُهَدَاءَ لِلَّهِ » puis « كُونُوا قَوَّامِينَ لِلَّهِ شُهَدَاءَ بِالْقِسْطِ ». As-Sa'di donne à
+  chacun son sens : en 4:135, la justice jusque contre soi et ceux qu'on aime (« حتى على الأحباب بل على النفس ») ; en 5:8,
+  la justice envers celui qu'on déteste (« على القريب والبعيد، والصديق والعدو »… « لا يحملنكم بغض قوم ») ; Ibn Kathir
+  cite 5:8 sous 4:135. L'ordre inversé des mots se dit comme une observation du texte, signalée ; le sens de chaque
+  verset repose sur as-Sa'di.
+
+**Le pilote proposé** (session, 2026-11-13), trois épisodes, chacun avec sa différence expliquée par un tafsir :
+
+| Épisode | Les versets (récitation de Tawfiq As-Sayegh) | Ce qui change | Le tafsir |
+| --- | --- | --- | --- |
+| 1 | 6:151 jusqu'à « وَإِيَّاهُمْ » (sur 42 s) · 17:31 (14,7 s) | « نَرْزُقُكُمْ وَإِيَّاهُمْ » / « نَرْزُقُهُمْ وَإِيَّاكُمْ » : la pauvreté déjà là, la peur de la pauvreté | Ibn Kathir |
+| 2 | 18:79 (17,9 s) · 18:81 (10,3 s) · 18:82 jusqu'à un arrêt (sur 35 s) ; coupes déjà faites pour le premier film | « فَأَرَدتُّ », « فَأَرَدْنَا », « فَأَرَادَ رَبُّكَ » : le mal rapporté à soi, le bien à Dieu | as-Sa'di |
+| 3 | 4:135 jusqu'à « وَالْأَقْرَبِينَ » (sur 49 s) · 5:8 jusqu'à « لِلتَّقْوَىٰ » (sur 36 s) | les mêmes mots en ordre inverse : contre ceux qu'on aime, pour ceux qu'on déteste | as-Sa'di |
+
+**L'image** : le style compteur, que le propriétaire veut voir servir ailleurs (`docs/model.md`) : les deux versets l'un
+sous l'autre, les mots pareils éteints, le mot qui change en or, qui glisse à sa nouvelle place. Images de style d'abord.
+Le nom : « لاحظت الفرق؟ » (le propriétaire l'emploie lui-même ; « تدبر القرآن » est trop large). **À son mot** : le pilote,
+le nom, et quand (aucune place dans la grille ; « كلمة من القرآن » attend déjà).
+
 ### Le « إعجاز عددي » : une vidéo analysée et des comptes refaits (propriétaire, 2026-11-13)
 
 Demande : analyser le montage d'une vidéo Facebook (enregistrement d'écran, 1:33) pour « لاحظت الفرق », et une série
