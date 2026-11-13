@@ -38,9 +38,11 @@ Pourquoi :
 - **La faiblesse de la grille** : chaque type de vidéo a son jour. Le jour de la semaine se mêle donc au type quand on
   compare. À une centaine de vues, ce biais pèse moins que l'accroche, mais il faut le garder en tête.
 
-**Les heures** : une seule heure pour tous les shorts, une seule pour tous les films. Avis de la session
-(2026-11-13), à confirmer par le propriétaire : **le soir, vers 20 h heure du Caire** (19 h à Alger et à Paris, 21 h à
-Riyad et à Bagdad), pour les shorts comme pour les films. Le public de la page va du Maroc à l'Irak (`docs/retention.md`) ;
+**L'heure : 19 h, heure de France**, pour les shorts comme pour les films (décision du propriétaire, 2026-11-13 :
+« le soir à 20 h heure du Caire, mais mets l'heure de France pour moi »). C'est 20 h au Caire, 19 h à Alger, 21 h à
+Riyad et à Bagdad. Le décalage reste d'une heure jusqu'au passage de la France à l'heure d'été, le 28 mars 2027 :
+de cette date jusqu'à celui de l'Égypte (fin avril), 20 h au Caire sera 20 h en France. Avis de la session qui l'a
+précédée : le public de la page va du Maroc à l'Irak (`docs/retention.md`) ;
 à cette heure, il est partout chez lui et réveillé, alors que le matin tombe pendant le travail ou l'école. Un film de
 sept à huit minutes se regarde le soir. Le short 1 de Moussa et al-Khadir, sorti le matin, reste le seul à cette heure.
 Avec 66 abonnés, presque toutes les vues viennent d'inconnus (112 sur 118 dans l'essai de khidr-01) : l'heure exacte
@@ -119,7 +121,7 @@ ci-dessous. Les noms des chiffres changent d'une plateforme à l'autre ; ceux qu
 
 ## La fiche
 
-Une ligne par vidéo et par plateforme, remplie à 48 heures. L'heure de publication est celle du pays du propriétaire.
+Une ligne par vidéo et par plateforme, remplie à 48 heures. L'heure de publication est celle de France.
 
 | Publiée le | Heure | Vidéo | Plateforme | Durée | Vues | Passent 3 s | Durée moyenne | % de la durée | Partages | Abonnés |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
