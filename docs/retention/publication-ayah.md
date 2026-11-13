@@ -1,6 +1,6 @@
 # A Verse and Its Story · آية وحكايتها : textes de publication
 
-Pour chaque short : le titre, puis le texte à coller sur chaque plateforme. Titres et descriptions **validés par le propriétaire le 2026-11-12** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, pas encore validée.
+Pour chaque short : le titre, puis le texte à coller sur chaque plateforme. Titres et descriptions **validés par le propriétaire le 2026-11-12** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, validée elle aussi.
 
 ## Short 1 · They walked out of the Friday sermon… why? · سابوا خطبة الجمعة… ليه؟
 

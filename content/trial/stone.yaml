@@ -5,10 +5,15 @@ id: stone
 # « Je valide le script » du propriétaire (2026-11-13), sur docs/scripts/kalima.md : les répliques, la place des versets,
 # ce sur quoi chaque narration repose, le titre. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication.
 script_validated: { by: mssnoussi92, on: 2026-11-13 }
+# « Je valide tout pour كلمة من القرآن » du propriétaire (2026-11-13), sur les vidéos rendues par le workflow `film` (runs 20
+# et 21) et envoyées dans la conversation : la voix D, le montage (le clip, les dessins, le mot en or), la couverture,
+# l'ambiance, les textes de publication (docs/retention/publication-kalima.md) ; et ses sources encore proposées, passées
+# à `validated` dans le registre. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 58-trial-stone     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
-# Clip proposé au propriétaire le 2026-11-13 (planche envoyée), pas encore approuvé.
+# Clip proposé au propriétaire le 2026-11-13 (planche envoyée), approuvé par lui avec les vidéos (« je valide tout »).
 clip: { source: pixabay, id: 8451, author: Felix-Mittermeier, page: "https://pixabay.com/videos/id-8451/", take: { slow: 7, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.85, ground: "#06050c", horizon: 1300 }
 # Ambiance sous la narration, jamais sous les versets : un des enregistrements validés à l'écoute (docs/model.md).
 ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 130, level: -38 }

@@ -4,6 +4,7 @@
 # un exemple de vie, la phrase à retenir, le mot suivant annoncé. Le mot n'est pas dit par la voix de synthèse.
 # Une série : des shorts qui tiennent seuls, pas de film ; l'ordre de publication est celui de `shorts`.
 id: kalima
+validated: { by: mssnoussi92, on: 2026-11-13, what: [publish] }      # « je valide tout pour كلمة من القرآن » (2026-11-13)
 files: kalima                    # début du nom des vidéos livrées : kalima-short-<n>-<id>.mp4
 title: { ar: "كلمة من القرآن", en: "A Word of the Quran" }
 shorts: [kanud, stone, haluu]

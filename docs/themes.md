@@ -529,7 +529,7 @@ Faits des accroches vérifiés le 2026-11-13 (quran.ai : tafsirs et concordance 
 
 **Décision du propriétaire (2026-11-13, « go with your recommendations »)** : les gens de la caverne pour le 30 novembre
 (fiche plus bas) ; « كلمة من القرآن » est la troisième série, lancée quand une place s'ouvre, son script pilote écrit
-maintenant sans voix (`docs/scripts/kalima.md`, à valider) ; « سمعوا الآية… » rangée comme variante de « آية وحكايتها » ;
+maintenant (`docs/scripts/kalima.md`, validé, puis produit et validé le 2026-11-13) ; « سمعوا الآية… » rangée comme variante de « آية وحكايتها » ;
 « سورة اسمها… » et « حكاية حكاها النبي ﷺ » gardées en réserve ; « آية لكل موقف » écartée.
 
 ### « كلمة من القرآن » : la fiche (session, 2026-11-13)
@@ -553,11 +553,10 @@ maintenant sans voix (`docs/scripts/kalima.md`, à valider) ; « سمعوا ال
   soleil et la lune, un tapis de prière, personne) et, en plus, le mot en grand, en or, sur la première image et pendant
   son sens (un `OVERLAYS` de la série, comme la frise de « سنريهم آياتنا »).
 - **Script validé par le propriétaire le 2026-11-13** (« je valide le script » : les répliques et les titres des trois
-  épisodes, `docs/scripts/kalima.md`). Aucune voix faite.
-- **À faire maintenant que le script est validé** : les 15 versets et leurs passages de tafsir au registre, cinq coupes de
-  récitation (100:1-8, 4:49, 4:124, 35:13, 70:19-23), trois clips à montrer (le désert à l'aube avec de la poussière, une palmeraie au
-  soir, un ciel d'orage qui s'éclaircit), les dessins (`video/src/trial/Kalima.tsx`), trois ambiances ; trois
-  requêtes de voix.
+  épisodes, `docs/scripts/kalima.md`).
+- **Produit et validé le 2026-11-13** (« je valide tout pour كلمة من القرآن ») : 1:29, 1:58, 1:16 ; vidéos, versions
+  TikTok, couvertures, ambiances, clips, textes à coller (`docs/retention/publication-kalima.md`) et 26 sources ; release
+  brouillon `kalima-candidate`. À publier par lui quand une place s'ouvre dans la grille.
 - **Fin d'un épisode** (propriétaire, 2026-11-13) : jamais le résumé de la série ; le mot suivant s'il est connu, sinon
   « تابعنا عشان تعرف الكلمة اللي جاية. » (`haluu` changé, à confirmer avant la voix).
 - **Production lancée le 2026-11-13** (« oui, lance la production ») : sources, récitations, fichiers, dessins, voix,

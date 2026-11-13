@@ -178,7 +178,8 @@ def main() -> None:
     # The first film was rendered without its ambience, which was put under the rendered videos afterwards
     # (`ambience_after` of its file): once the owner has validated it, the videos to publish are those mixes,
     # `…-ambience.mp4`. Every film since is rendered with its ambience, and its videos keep their names.
-    heard = all("ambience" in (v.get("what") or []) for v in said)
+    # A series' own file has no ambience: only its shorts say whether theirs was validated.
+    heard = all("ambience" in (v.get("what") or []) for v in (said[1:] if series_only else said))
     bed = "-ambience" if film.get("ambience_after") and heard else ""
     status = (f"Titres et descriptions **validés par le propriétaire le {when}**" if validated
               else "Titres et descriptions **proposés par la session, pas encore validés par le propriétaire**")
