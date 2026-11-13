@@ -165,6 +165,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 75. **« التمرة » au lieu de « البلحة »** (propriétaire, 2026-11-13 : « et si التمر peut remplacer بلحة, prends-le »). Les quatre « نواة البلحة » du pilote deviennent « نواة التمرة » (le mot d'al-Muyassar) ; le pilote ne dit plus « بلح ». Inscrit comme refus (`content/wording.yaml`, `balah` ; skill `write-hook`). Avis donné : oui ; en Égypte, « بلح » est la datte fraîche et « تمر » la datte sèche, et c'est bien de la datte sèche, avec son noyau, que parle le tafsir.
 
+76. **Le script pilote de « كلمة من القرآن » validé** (propriétaire, 2026-11-13 : « je valide le script »). Seule chose qui attendait son mot : lu comme les répliques des trois épisodes (`kanud`, `stone`, `haluu`) et leurs titres, tels que dans `docs/scripts/kalima.md` ; le nom de la série reste « كلمة من القرآن », proposé par la session, faute d'un autre choix de sa part. Inscrit dans ce document et dans `docs/themes.md` ; `script_validated` s'écrira dans chaque fichier de `content/trial/` quand le script y sera encodé. Aucune voix faite.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```

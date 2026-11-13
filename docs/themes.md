@@ -552,7 +552,9 @@ maintenant sans voix (`docs/scripts/kalima.md`, à valider) ; « سمعوا ال
 - **L'image** : le modèle (un clip filmé, des silhouettes dessinées : des chevaux sans cavalier, un noyau de datte, le
   soleil et la lune, un tapis de prière, personne) et, en plus, le mot en grand, en or, sur la première image et pendant
   son sens (un `OVERLAYS` de la série, comme la frise de « سنريهم آياتنا »).
-- **À faire après la validation du script** : les 15 versets et leurs passages de tafsir au registre, cinq coupes de
+- **Script validé par le propriétaire le 2026-11-13** (« je valide le script » : les répliques et les titres des trois
+  épisodes, `docs/scripts/kalima.md`). Aucune voix faite.
+- **À faire maintenant que le script est validé** : les 15 versets et leurs passages de tafsir au registre, cinq coupes de
   récitation (100:1-8, 4:49, 4:124, 35:13, 70:19-23), trois clips à montrer (le désert à l'aube avec de la poussière, une palmeraie au
   soir, un ciel d'orage qui s'éclaircit), les dessins (`video/src/trial/Kalima.tsx`), trois ambiances ; trois
   requêtes de voix.

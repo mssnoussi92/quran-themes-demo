@@ -1,12 +1,13 @@
 # كلمة من القرآن · A Word of the Quran
 
-**Script pilote, à valider par le propriétaire.** Écrit par la session le 2026-11-13 (sa décision « go with your
+**Script pilote validé par le propriétaire le 2026-11-13** (« je valide le script », lu comme les répliques des trois
+épisodes et leurs titres tels qu'ils sont ici ; le nom de la série reste « كلمة من القرآن » tant qu'il n'en choisit pas un
+autre). Aucune voix n'est encore faite. Écrit par la session le 2026-11-13 (sa décision « go with your
 recommendations »), puis corrigé le même jour à sa demande : **l'épisode 2 réécrit** (les trois mots du noyau de datte
 au lieu du seul قطمير), **aucun tafsir nommé par la narration** (la référence s'écrit sous la réplique, à l'écran :
 `content/wording.yaml`, `tafsir-named-in-narration`), puis, à son choix, **« النواة » et « التمرة »** au lieu de « نواية » et « بلحة » (« نواية بلحة واحدة » trouvé difficile ;
 « on prend la kalima النواة partout » ; « si التمر peut remplacer بلحة, prends-le ») : le titre et le début de l'épisode 2
-disent « نواة التمرة… فيها تلات كلمات من القرآن ». Sur le reste, son mot : « le reste est good ».
-Aucune requête de voix avant son « je valide le script ». Toutes les répliques sont de la session ; celles qui sont un
+disent « نواة التمرة… فيها تلات كلمات من القرآن ». Sur le reste, son mot : « le reste est good ». Toutes les répliques sont de la session ; celles qui sont un
 raisonnement de la session, et non un tafsir, ou une scène type, sont signalées. Les versets ne sont désignés que par leur
 référence : leur texte viendra du registre. Durées estimées (environ dix lettres par seconde, une demi-seconde à chaque
 « … », la récitation de Tawfiq As-Sayegh mesurée sur mp3quran). Sens des mots vérifiés le 2026-11-13 dans les tafsirs de
