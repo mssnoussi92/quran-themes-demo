@@ -469,3 +469,27 @@ def test_a_verse_cut_keeps_its_first_words_and_its_first_sentence():
     assert script.stops_after(attached, 4) and not script.stops_after(attached, 3)
     assert script.first_sentence("He said it. And then he left. Done") == "He said it."
     assert script.first_sentence("No full stop inside") == "No full stop inside"
+
+
+def test_a_turn_refused_in_the_narration_only_is_not_checked_on_titles():
+    """« tafsir-named-in-narration » (where: narration): the voice must not name the tafsir, a description may."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("rules_where", REPO / "tools" / "trial" / "rules.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    warned = []
+
+    class Out:
+        def warn(self, file, message):
+            warned.append(message)
+
+    class Repo:
+        refused_re = [({"id": "tafsir-named-in-narration", "where": "narration", "instead": "x"},
+                       [module.whole("(?:وال|ال)سعدي")])]
+
+    check = module.Checker.__new__(module.Checker)
+    check.repo, check.out = Repo(), Out()
+    check.wording("f.yaml", "السعدي قال: كده.")
+    assert len(warned) == 1
+    check.wording("f.yaml", "وكلام السعدي عنها.", "description")
+    assert len(warned) == 1

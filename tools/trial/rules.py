@@ -425,6 +425,8 @@ class Checker:
     def wording(self, file: str, text: str, label: str = "") -> None:
         folded = " ".join(words_of(text))
         for entry, patterns in self.repo.refused_re:
+            if entry.get("where") == "narration" and label:     # a turn refused in what the voice says, not on a cover
+                continue
             if any(p.search(folded) for p in patterns):
                 self.out.warn(file, f"refused wording « {entry['id']} » (content/wording.yaml; write {entry['instead']}) in {label or 'the line'} « {text} »")
 

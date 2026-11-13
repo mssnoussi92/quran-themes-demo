@@ -538,17 +538,21 @@ maintenant sans voix (`docs/scripts/kalima.md`, à valider) ; « سمعوا ال
   le verset récité (le mot y est dit pour la première fois, par le récitateur : la voix de synthèse ne le dit jamais,
   c'est un mot du Coran) ; son sens d'après un tafsir nommé ; ce qu'on ne voit pas ; un exemple de vie ; la phrase à
   retenir ; le mot suivant annoncé.
-- **Le pilote** : كَنُود (100:1-8 : le serment sur les chevaux, puis le mot ; Ibn Kathir, d'après al-Hasan, et as-Sa'di),
-  قِطْمِير (35:13 : la nuit et le jour, le soleil et la lune, puis la peau du noyau de datte ; al-Muyassar, Ibn Kathir),
-  هَلُوعًا (70:19-23 : le mot expliqué par les deux versets suivants, et l'exception, « إلا المصلين » ; as-Sa'di,
-  al-Muyassar). Durées estimées 1:39, 1:31, 1:25 ; un quart à un tiers récité. En réserve : نقير (4:53, 4:124) et
-  فتيل (4:49), les deux autres mots du noyau de datte (al-Muyassar).
+- **Le pilote** : كَنُود (100:1-8 : le serment sur les chevaux, puis le mot ; al-Muyassar, Ibn Kathir d'après al-Hasan,
+  as-Sa'di) ; **les trois mots du noyau de datte** (فتيل 4:49, نقير 4:124, قطمير 35:13 : le fil dans sa fente, le creux
+  sur son dos, la peau autour ; al-Muyassar, Ibn Kathir), qui remplacent le seul قطمير à la demande du propriétaire
+  (2026-11-13, « l'épisode 2 à réécrire ») ; هَلُوعًا (70:19-23 : le mot expliqué par les deux versets suivants, et
+  l'exception, « إلا المصلين » ; as-Sa'di, al-Muyassar). Durées estimées 1:37, 2:07, 1:23 ; l'épisode 2 est récité
+  pour moitié (trois versets, 1:03). 4:124 commence par « وَمَن » : une phrase entière, pas une suite.
+- **Le tafsir n'est pas nommé par la narration** (propriétaire, 2026-11-13) : la réplique dit le sens, la référence
+  s'écrit dessous (`content/wording.yaml`, `tafsir-named-in-narration`, et le skill `write-hook`). Les répliques validées
+  de « سنريهم آياتنا » qui le nomment restent telles quelles.
 - **L'image** : le modèle (un clip filmé, des silhouettes dessinées : des chevaux sans cavalier, un noyau de datte, le
   soleil et la lune, un tapis de prière, personne) et, en plus, le mot en grand, en or, sur la première image et pendant
   son sens (un `OVERLAYS` de la série, comme la frise de « سنريهم آياتنا »).
-- **À faire après la validation du script** : les 14 versets et 6 passages de tafsir au registre, trois coupes de
-  récitation (100:1-8, 35:13, 70:19-23), trois clips à montrer (le désert à l'aube avec de la poussière, un ciel de la
-  nuit au jour, un ciel d'orage qui s'éclaircit), les dessins (`video/src/trial/Kalima.tsx`), trois ambiances ; trois
+- **À faire après la validation du script** : les 15 versets et leurs passages de tafsir au registre, cinq coupes de
+  récitation (100:1-8, 4:49, 4:124, 35:13, 70:19-23), trois clips à montrer (le désert à l'aube avec de la poussière, une palmeraie au
+  soir, un ciel d'orage qui s'éclaircit), les dessins (`video/src/trial/Kalima.tsx`), trois ambiances ; trois
   requêtes de voix.
 - **Quand** : pas dans la grille actuelle (elle n'a plus de place) ; prête pour le jour où une série cède la sienne, ou
   après le 12 décembre.

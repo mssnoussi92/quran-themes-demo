@@ -9,6 +9,7 @@
 #   written in the pattern. Patterns are folded the same way, so they may be written with the plain letters.
 # instead: what to write.
 # why: the owner's reason, or ours when he gave none.
+# where: « narration » for a turn refused only in what the voice says (titles, covers and descriptions are not checked).
 refused:
   - id: shalathum
     patterns: ["[وف]?شالتهم"]
@@ -50,3 +51,12 @@ refused:
     patterns: ["[وف]?قتلوا\\s+كتير", "[وف]?زنوا", "(?:ال|بال|وال)?زنا", "[وف]?زني"]
     instead: "« عملوا ذنوب كبيرة »"
     why: he asked for the change and gave the words (2026-11-12), without a reason; our reading is that our voice does not name such sins bluntly
+  - id: tafsir-named-in-narration
+    # « ابن كثير قال… », « السعدي قال… », « والتفسير الميسر قال… » : the narration named the tafsir its line rests on.
+    # The validated lines of « سنريهم آياتنا » (2026-11-12) still say it and stay as they are; they warn. A scholar who is
+    # part of the story (« وابن كثير كتب الكلام ده من أكتر من ستمية سنة… ») warns too: read the line, keep it if the name
+    # is the fact told, not the citation.
+    patterns: ["[وف]?ابن\\s+كثير", "(?:وال|ال)سعدي", "(?:وال|ال)?تفسير\\s+الميسر", "(?:وال|ال)ميسر", "[وف]?الحسن\\s+البصري"]
+    where: narration
+    instead: "the line says the meaning (« معناها… », « يعني… »), and the tafsir's name is written under it on screen"
+    why: "he asked for it (2026-11-13, on the pilot of « كلمة من القرآن »): the written reference is enough; our reading: the name said costs time and sounds like a lecture"
