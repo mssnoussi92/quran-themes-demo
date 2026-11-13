@@ -177,6 +177,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 81. **Une vidéo de « إعجاز عددي » analysée, une série étudiée** (propriétaire, 2026-11-13 : « analyse ce style de montage, utile pour لاحظت الفرق ; et une nouvelle série : الإعجاز العددي في القرآن, حقيقة أو وهم ; do your research »). Quinze égalités de la vidéo recomptées dans le Quranic Arabic Corpus et sur le texte de quran.com : la règle de comptage change de l'une à l'autre, deux ne tiennent pas (`docs/themes.md`). Avis donné : deux épisodes de « سنريهم آياتنا » plutôt qu'une série de plus, et dire aussi ce qui tient.
 
+82. **La nouvelle fin de `haluu` voix et rendu** (propriétaire, 2026-11-13 : « oui, la fin de l'épisode 3, lance la voix »). Une requête (52,6 s, toutes les phrases retrouvées) ; rendu des trois épisodes (workflow `film`, run 21 : un rendu d'un seul short aurait remplacé la release brouillon par lui seul ; les épisodes 1 et 2 ne changent pas) ; contrôlé : 1080x1920, -16,3 LUFS, 1:16, la fin « تابعنا عشان تعرف الكلمة اللي جاية. » sur le « ؟ », plus de pile de mots. Envoyé ; release `kalima-candidate` refaite ; page republiée (`video/out/kalima/ci-2/`). **Puis** : « le calcul n'est pas correct : j'ai cherché شهر sur quran.ksu.edu.sa et trouvé 17 ». Vérifié : 17 est le nombre de **versets** où le mot apparaît (les 17 de sa capture, un par un) ; ils portent 21 **mots** du lemme (12 au singulier, 2 au duel, 7 au pluriel) : le même mot donne 17, 21 ou 12 selon ce qu'on compte, ce qui est le propos même de la série.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```

@@ -608,7 +608,7 @@ position s:a:w ; vérification sur le texte imlaei de quran.com pour قل, قا�
 | Ce que la vidéo affiche | Ce qu'on compte | Règle qu'il faut pour obtenir son nombre |
 | --- | --- | --- |
 | يوم 365 | le lemme يوم : 475 (dont يومئذ 70, pluriel 27, duel 3) ; singulier sans يومئذ : 375 | singulier, sans يومئذ, et sans les 10 formes à pronom (يومكم، يومهم…) : 365 ; c'est la critique du Dr Fahd ar-Rumi rapportée par islamqa 69741 |
-| شهر 12 | le lemme : 21 ; singulier : 12 | singulier seulement : tient |
+| شهر 12 | le lemme : 21 mots dans 17 versets (la recherche de quran.ksu.edu.sa donne 17 : des versets) ; singulier : 12 | singulier seulement : tient |
 | الدنيا 115 = الآخرة 115 | lemme دنيا : 115 ; le féminin de آخر : 115 | tient, à règle égale (le lemme) |
 | الملائكة 88 = الشيطان 88 | lemme مَلَك : 88 (pluriel 73, singulier 13, duel 2) ; lemme شيطان : 88 | tient en comptant « ange » au singulier, au duel et au pluriel ; « الملائكة » seul : 73 |
 | رجل 24 = امرأة 24 | رجل au singulier : 24 (29 avec le duel) ; امرأة : 26 (25 sans le duel) | ne tient pas |
