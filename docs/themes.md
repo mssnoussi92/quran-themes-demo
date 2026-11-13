@@ -507,6 +507,26 @@ scientifique, un seul, et sans le mot « preuve » : 6:125 (al-Muyassar le dit) 
 côté de la moderne). Il faudrait alors une source scientifique dans le registre (Pascal, Hubble), qui n'a aujourd'hui
 aucun type pour elle : un outil et une règle à ajouter, à sa décision.
 
+## Séries proposées (session, 2026-11-13 ; rien n'est choisi)
+
+Demande du propriétaire : « what's next ? Peux-tu suggérer d'autres types de séries ? ». **Avis donné d'abord** : la
+grille validée n'a plus de place (vendredi et samedi pris, dimanche libre) ; une troisième série maintenant supprime le
+jour libre et divise les mesures (trois séries, une mesure chacune par semaine). Choisir les candidates maintenant, en
+lancer une quand une place s'ouvre (une série que les mesures jugent faible, ou après le 12 décembre). La seule
+échéance est l'histoire du 30 novembre : **les gens de la caverne recommandés** (dernière histoire d'Al-Kahf après
+Moussa et al-Khadir et Dhul-Qarnayn, fiche plus bas) ; sujet à décider maintenant, script après les premières mesures
+(vers le 18 novembre), production du 19 au 26.
+
+Faits des accroches vérifiés le 2026-11-13 (quran.ai : tafsirs et concordance ; hadith-api pour les numéros) :
+
+| Série | Ce que c'est | Accroches vérifiées | Pour | Contre |
+| --- | --- | --- | --- | --- |
+| **« كلمة من القرآن »** (recommandée) | un mot rare du Coran, son sens d'après un tafsir nommé, le verset récité, la leçon | فتيل، نقير، قطمير : trois mots pour trois choses minuscules de la noix de datte (al-Muyassar sur 4:49 : le fil dans la fente ; 4:53 et 4:124 : le creux au dos ; 35:13 : la fine peau blanche) ; كنود (100:6) : « الذي يعد المصائب، وينسى نعم ربه » (al-Hasan, cité par Ibn Kathir ; le hadith qu'il cite ensuite, il le dit faible : à ne pas employer) | le nom et le premier contenu de la page (Quran Words Daily : le sens d'un mot) ; un verset et un tafsir par short ; un objet à dessiner | une leçon de vocabulaire si l'accroche n'est pas le sens le plus étrange ; voisine du mot « اختارها القرآن » de l'épisode de l'embryon |
+| **« سورة اسمها… »** | une sourate qui porte le nom d'un animal ou d'une chose (العنكبوت، النمل، النحل، الفيل، البقرة، الحديد) | l'araignée n'est que dans 29:41 (deux fois dans ce verset) ; la fourmi n'est que dans 27:18 (concordance) | la plus visuelle : des animaux et des choses, ce que le modèle dessine | la tentation des « miracles » (l'araignée femelle, l'abeille) : le terrain de « سنريهم آياتنا », avec ses précautions |
+| **« سمعوا الآية… »** | ce qu'ont fait des Compagnons en entendant un verset | Abou Talha donne Bayruha, son plus beau jardin, en entendant 3:92 (Bukhari 1461) ; le vin versé jusqu'à couler dans les rues de Médine (Bukhari 2464) ; Omar s'arrête à 7:199 (Bukhari 4642) | des histoires vraies, des accroches fortes | proche de « آية وحكايتها » (une variante, plutôt qu'une série de plus) ; une lecture humaine de chaque hadith à trouver |
+| **« حكاية حكاها النبي ﷺ »** | une histoire racontée par le Prophète ﷺ, un short chacune | l'homme qui abreuve un chien assoiffé (Bukhari 2363) ; la femme et le chien (Bukhari 3467) ; le marchand qui faisait grâce aux débiteurs (Bukhari 2078) ; l'homme qui demande qu'on le brûle par crainte de Dieu (Bukhari 3481) ; les trois hommes de la grotte (Bukhari 2272) | le format éprouvé : une histoire | le hadith porte l'histoire : une lecture humaine par short à trouver, et la narration ne peut pas redire ses mots |
+| « آية لكل موقف » (déconseillée) | un verset pour un moment de vie (l'angoisse, l'injustice) | — | — | s'ouvre sur une question générale sur la vie du spectateur : l'accroche qui a perdu trois spectateurs sur quatre (khidr-01) |
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

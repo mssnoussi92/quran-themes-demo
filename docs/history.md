@@ -153,6 +153,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 69. **Le calendrier sur sa page** (propriétaire, 2026-11-13 : « ajoute le calendrier sur l'artifact pour qu'il soit facile à consulter »). `tools/trial/gallery.py` le lit dans `docs/retention/calendar.md` (l'heure, la grille, la routine des mesures, chaque ligne datée liée à la carte de sa vidéo par les textes qu'elle nomme ; une date barrée est publiée), et la page marque elle-même la prochaine ligne d'après la date du lecteur ; il passe avant les films. Le film du 12 novembre ajouté au tableau, barré comme le short 1. Corrigé à l'œil : l'arabe dans une ligne française inversait l'ordre (« ١ » avant le guillemet) ; il est isolé (`<bdi>`). Tests : `tests/test_gallery_calendar.py`. Page republiée (`index.html` seul).
 
+70. **La suite, et d'autres séries** (propriétaire, 2026-11-13 : « what's next ? Peux-tu suggérer d'autres types de séries ? »). **Avis donné** : publier, mesurer ; la seule échéance est l'histoire du 30 novembre, les gens de la caverne recommandés (sujet maintenant, script après les premières mesures) ; la grille n'a plus de place pour une troisième série, à choisir maintenant et à lancer quand une place s'ouvre. Cinq séries proposées, accroches vérifiées (quran.ai, hadith-api), dans `docs/themes.md` (« Séries proposées ») : « كلمة من القرآن » recommandée, « سورة اسمها… », « سمعوا الآية… » (plutôt une variante de « آية وحكايتها »), « حكاية حكاها النبي ﷺ », « آية لكل موقف » déconseillée. Rien n'est choisi.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```
