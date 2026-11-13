@@ -16,6 +16,7 @@ import { House, Land } from "./Home";
 import { Barrier, Chest, Cliffs, Dwellings } from "./Qarnayn";
 import { Village, Wall } from "./Wall";
 import { SIGNS_LAYOUTS, SIGNS_OVERLAYS, SIGNS_PICTURES } from "./Signs";
+import { KALIMA_OVERLAYS, KALIMA_PICTURES } from "./Kalima";
 
 loadFonts();
 
@@ -388,11 +389,12 @@ export const PICTURES: Record<string, Drawn> = {
   west: WestPicture, tribute: TributePicture, barrier: BarrierPicture,
   caravan: CaravanPicture, duha: DuhaPicture, hope: HopePicture,
   ...SIGNS_PICTURES,
+  ...KALIMA_PICTURES,
 };
 
 /** What a short draws above its veil, under its texts, outside the slowly growing picture: a timeline, a badge,
  * anything that must not move. None by default; a short registers its own here. */
-export const OVERLAYS: Record<string, Drawn> = { ...SIGNS_OVERLAYS };
+export const OVERLAYS: Record<string, Drawn> = { ...SIGNS_OVERLAYS, ...KALIMA_OVERLAYS };
 
 const hasLetter = (token: string) => /\p{L}/u.test(token);
 export const fit = (base: number, text: string, comfortable: number) => Math.round(base * Math.min(1, Math.sqrt(comfortable / Math.max(1, text.length))));
