@@ -161,6 +161,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 73. **« نواية بلحة واحدة » remplacé** (propriétaire, 2026-11-13 : « je trouve نواية بلحة واحدة difficile, le reste est good »). Lu comme : l'expression du titre et du début de l'épisode 2 (et de ses deux rappels, dans l'annonce de l'épisode 1 et le résumé de l'épisode 3), pas le mot « النواية » des répliques qui nomment chaque partie. Remplacée par « بلحة واحدة… فيها تلات كلمات من القرآن » ; la ligne qui répétait les « trois choses dans son noyau » retirée (les trois répliques suivantes le disent) : 2:05. « Le reste est good » n'est pas lu comme « je valide le script » : demandé avant toute voix.
 
+74. **« النواة » partout** (propriétaire, 2026-11-13 : « on prend la kalima النواة partout, et نواة البلحة »). Dans le pilote de « كلمة من القرآن », « نواية » devient « النواة » dans les cinq répliques qui le disaient, et le titre et le début de l'épisode 2 disent « نواة البلحة… فيها تلات كلمات من القرآن » (lu ainsi : « نواة البلحة » remplace aussi « بلحة واحدة », comme ses deux rappels dans les épisodes 1 et 3). Inscrit comme refus (`content/wording.yaml`, `nawaya` ; skill `write-hook`). Avis donné : un mot d'arabe standard dans une ligne égyptienne, compris de tout le public de la page (du Maroc à l'Irak), et le mot du tafsir. Durées : 1:37, 2:04, 1:24.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```

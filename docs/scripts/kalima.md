@@ -3,8 +3,9 @@
 **Script pilote, à valider par le propriétaire.** Écrit par la session le 2026-11-13 (sa décision « go with your
 recommendations »), puis corrigé le même jour à sa demande : **l'épisode 2 réécrit** (les trois mots du noyau de datte
 au lieu du seul قطمير), **aucun tafsir nommé par la narration** (la référence s'écrit sous la réplique, à l'écran :
-`content/wording.yaml`, `tafsir-named-in-narration`), puis **« نواية بلحة واحدة » remplacé** (« difficile », 2026-11-13 :
-le titre et le début disent « بلحة واحدة… فيها تلات كلمات من القرآن ») ; sur le reste, son mot : « le reste est good ».
+`content/wording.yaml`, `tafsir-named-in-narration`), puis **« نواية بلحة واحدة » remplacé** (« difficile », 2026-11-13) et **« النواة » partout**, à son choix (« on prend
+la kalima النواة partout, et نواة البلحة ») : le titre et le début disent « نواة البلحة… فيها تلات كلمات من القرآن » ; sur
+le reste, son mot : « le reste est good ».
 Aucune requête de voix avant son « je valide le script ». Toutes les répliques sont de la session ; celles qui sont un
 raisonnement de la session, et non un tafsir, ou une scène type, sont signalées. Les versets ne sont désignés que par leur
 référence : leur texte viendra du registre. Durées estimées (environ dix lettres par seconde, une demi-seconde à chaque
@@ -18,8 +19,8 @@ une prudence, pas une règle : dans `womb`, validé, la voix dit « علقة ».
 | | Épisode | Mot | Versets | Durée estimée | Récitation | Répliques |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | `kanud` | كَنُود | 100:1-8 | 1:37 | 0:27 | 14 |
-| 2 | `stone` | فَتِيل · نَقِير · قِطْمِير | 4:49, 4:124, 35:13 | 2:05 | 1:03 | 13 |
-| 3 | `haluu` | هَلُوعًا | 70:19-23 | 1:23 | 0:23 | 12 |
+| 2 | `stone` | فَتِيل · نَقِير · قِطْمِير | 4:49, 4:124, 35:13 | 2:04 | 1:03 | 13 |
+| 3 | `haluu` | هَلُوعًا | 70:19-23 | 1:24 | 0:23 | 12 |
 
 ## Épisode 1 · `kanud` · كلمة في القرآن… يمكن توصفك · A word in the Quran… that might describe you (titre proposé)
 
@@ -64,28 +65,28 @@ Environ **1:37** · 0:27 de récitation (100:1-8).
   *Tonight… before you tell what went wrong… name three blessings.* · tient la promesse du début
 
 **narration · `next`** (image : un noyau de datte, de près, en annonce)
-- دي كلمة عن الإنسان والنعمة… والجاية: بلحة واحدة… فيها تلات كلمات من القرآن.  
-  *That was a word about man and blessings… next: one date… holds three words of the Quran.*
+- دي كلمة عن الإنسان والنعمة… والجاية: نواة البلحة… فيها تلات كلمات من القرآن.  
+  *That was a word about man and blessings… next: the date stone… holds three words of the Quran.*
 - تابعنا عشان الكلمة الجاية.  
   *Follow us for the next word.*
 
 
-## Épisode 2 · `stone` · بلحة واحدة… فيها تلات كلمات من القرآن · One date… holds three words of the Quran (titre proposé) · **réécrit**
+## Épisode 2 · `stone` · نواة البلحة… فيها تلات كلمات من القرآن · The date stone… holds three words of the Quran (titre proposé) · **réécrit**
 
-Environ **2:05** · 1:03 de récitation (4:49, 4:124, 35:13).
+Environ **2:04** · 1:03 de récitation (4:49, 4:124, 35:13).
 
 **L'image** : Un seul noyau de datte, de très près, sur un clip de palmeraie au soir ; à chaque verset, une de ses trois parties s'éclaire : le fil dans sa fente, le petit creux sur son dos, la fine peau blanche autour. Pendant 35:13, le soleil et la lune au-dessus.
 
 **narration · `stone`** (image : le noyau entier, les trois mots en or autour de lui ; la voix ne les dit jamais)
-- بلحة واحدة… فيها تلات كلمات من القرآن.  
-  *One date… holds three words of the Quran.*
+- نواة البلحة… فيها تلات كلمات من القرآن.  
+  *The date stone… holds three words of the Quran.*
 - واللي هتعرفه… هيخليك ما تستصغرش أي حاجة تعملها.  
   *And what you'll learn… will stop you from belittling anything you do.* · promesse, tenue par l'exemple et « ما تستصغرش »
 
 **verset 4:49, récité** (image : le fil dans la fente du noyau, éclairé ; le mot en or quand il est récité)
 
 **narration · `thread`** (image : le fil, son nom écrit ; la référence écrite) · d'après : al-Muyassar sur 4:49 (référence écrite, jamais dite)
-- الأولى: الخيط الرفيع اللي في شق النواية.  
+- الأولى: الخيط الرفيع اللي في شق النواة.  
   *The first: the thin thread in the date stone's groove.*
 - ربنا مش بيظلم حد… ولا قد الخيط ده.  
   *God wrongs no one… not even by that thread.*
@@ -93,7 +94,7 @@ Environ **2:05** · 1:03 de récitation (4:49, 4:124, 35:13).
 **verset 4:124, récité** (image : le petit creux sur le dos du noyau, éclairé)
 
 **narration · `speck`** (image : le creux, son nom écrit ; la référence écrite) · d'après : al-Muyassar sur 4:124 (référence écrite, jamais dite)
-- التانية: النقرة الصغيرة اللي على ضهر النواية.  
+- التانية: النقرة الصغيرة اللي على ضهر النواة.  
   *The second: the tiny dent on the back of the stone.*
 - والعمل الصالح… مش هيضيع منه ولا قدها.  
   *And a good deed… won't lose even that much.*
@@ -101,7 +102,7 @@ Environ **2:05** · 1:03 de récitation (4:49, 4:124, 35:13).
 **verset 35:13, récité** (image : la nuit et le jour, le soleil et la lune ; à la fin, la peau blanche du noyau, éclairée)
 
 **narration · `skin`** (image : la peau, son nom écrit ; la référence écrite) · d'après : al-Muyassar et Ibn Kathir sur 35:13 (référence écrite, jamais dite)
-- التالتة: القشرة البيضا الرفيعة اللي حوالين النواية.  
+- التالتة: القشرة البيضا الرفيعة اللي حوالين النواة.  
   *The third: the thin white skin around the stone.*
 - واللي بيدعوهم الناس من غير ربنا… ما يملكوش ولا قدها.  
   *And those people call on besides God… don't own even that much.*
@@ -113,7 +114,7 @@ Environ **2:05** · 1:03 de récitation (4:49, 4:124, 35:13).
   *With God… it won't lose even a dent's worth.*
 
 **narration · `remember`** (image : le noyau entier, ses trois parties éclairées)
-- ما تستصغرش حاجة تعملها… ربنا ما بيضيّعش ولا قد قشرة نواية.  
+- ما تستصغرش حاجة تعملها… ربنا ما بيضيّعش ولا قد قشرة النواة.  
   *Don't belittle anything you do… God doesn't let slip even the skin of a date stone.* · tient la promesse du début
 
 **narration · `next`** (image : le mot suivant, voilé)
@@ -125,7 +126,7 @@ Environ **2:05** · 1:03 de récitation (4:49, 4:124, 35:13).
 
 ## Épisode 3 · `haluu` · كلمة شرحها القرآن بنفسه… وكتب علاجها · A word the Quran explains itself… and gives its cure (titre proposé)
 
-Environ **1:23** · 0:23 de récitation (70:19-23).
+Environ **1:24** · 0:23 de récitation (70:19-23).
 
 **L'image** : Un ciel d'orage (clip filmé) qui s'éclaircit ; un coffre fermé ; puis un tapis de prière tourné vers une niche, à l'aube. Personne.
 
@@ -160,7 +161,7 @@ Environ **1:23** · 0:23 de récitation (70:19-23).
   *When you find yourself falling apart… or tight-fisted… go back to your prayer.*
 
 **narration · `three`** (image : les mots de la série en or)
-- كلمة بتعدّ المصايب… وتلاتة في بلحة واحدة… وكلمة جه علاجها معاها.  
-  *A word that counts misfortunes… three in one date… and a word that came with its cure.*
+- كلمة بتعدّ المصايب… وتلاتة في نواة البلحة… وكلمة جه علاجها معاها.  
+  *A word that counts misfortunes… three in a date stone… and a word that came with its cure.*
 - تابعنا عشان الكلمة الجاية.  
   *Follow us for the next word.*

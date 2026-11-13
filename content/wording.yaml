@@ -60,3 +60,8 @@ refused:
     where: narration
     instead: "the line says the meaning (« معناها… », « يعني… »), and the tafsir's name is written under it on screen"
     why: "he asked for it (2026-11-13, on the pilot of « كلمة من القرآن »): the written reference is enough; our reading: the name said costs time and sounds like a lecture"
+  - id: nawaya
+    # « نواية », « النواية », « نوايتها » : the Egyptian word for a date stone, in the pilot of « كلمة من القرآن ».
+    patterns: ["(?:[وفبل]|ال|وال|بال|فال|لل)?نوايه", "(?:[وفبل]|ال|وال|بال|فال|لل)?نوايت[ا-ي]{0,3}"]
+    instead: "« النواة », « نواة البلحة »"
+    why: "he chose the word (2026-11-13: « on prend la kalima النواة partout, et نواة البلحة ») after finding « نواية بلحة واحدة » difficult; our reading: النواة is understood by every Arabic speaker, as is the tafsir's word (al-Muyassar: نواة التمرة)"
