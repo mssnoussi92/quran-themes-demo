@@ -80,6 +80,21 @@ def align(phrases: list[str], words: list[tuple[str, float, float]], quiet: list
         for k in range(n):
             to_heard[a + k] = b + k
 
+    # Which phrase each word heard belongs to: the one that has most of its letters. Whisper heard « قده » for
+    # « قدها » (`stone`, 2026-11-13): the « ا » left over was matched with the first letter of the next word,
+    # « التالتة », which then counted as said by the phrase before, and « التالتة: » took the start of the phrase
+    # after it: the cut before its segment would have clipped it.
+    letters_of: dict[tuple[int, int], int] = {}
+    for k in range(len(phrases)):
+        for i in range(begins[k], begins[k + 1] if k + 1 < len(phrases) else len(wanted)):
+            if i in to_heard:
+                key = (owner[to_heard[i]], k)
+                letters_of[key] = letters_of.get(key, 0) + 1
+    holder: dict[int, int] = {}
+    for (word, k), n in sorted(letters_of.items()):
+        if n > letters_of.get((word, holder.get(word, -1)), 0):
+            holder[word] = k
+
     out: list[Phrase] = []
     last_word = -1                              # last word heard of the phrase before
     for k, ph in enumerate(phrases):
@@ -90,6 +105,10 @@ def align(phrases: list[str], words: list[tuple[str, float, float]], quiet: list
             out.append(Phrase(ph, words[first][1] if words else 0.0, None, 0.0, ""))
             continue
         first, final = owner[to_heard[matched[0]]], owner[to_heard[matched[-1]]]
+        if before_its_word:                     # its own words: those it has most of the letters of
+            own = [owner[to_heard[i]] for i in matched if holder.get(owner[to_heard[i]]) == k]
+            if own:
+                first, final = own[0], own[-1]
         # Its first letters heard as something else: the words between the phrase before and this match are its start.
         if matched[0] > begin and first > last_word + 1:
             first = last_word + 1
