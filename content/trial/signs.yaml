@@ -8,6 +8,7 @@
 # annonce le suivant. Script, titres et débuts validés par le propriétaire le 2026-11-12 (`script_validated` de chaque
 # épisode). Ici, ce que ce fichier porte de ses textes : le nom de la série, ses hashtags, la ligne de la voix.
 id: signs
+validated: { by: mssnoussi92, on: 2026-11-13, what: [publish] }      # « je valide tout » (2026-11-13)
 files: signs                     # début du nom des vidéos livrées : signs-short-<n>-<id>.mp4
 title: { ar: "سنريهم آياتنا", en: "We Will Show Them Our Signs" }
 shorts: [lahab, universe, sky, womb]

@@ -145,6 +145,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 65. **« سنريهم آياتنا » livré** (2026-11-13). Rendu par le workflow `film` (`film: signs`, run 18, 29 minutes) : quatre shorts et leurs versions TikTok, release brouillon `signs-candidate`. Contrôlés : 1080x1920, -16,1 à -16,2 LUFS, planches de chaque vidéo (l'équation d'Einstein sur la première image, la sangsue, le chemin d'épines, la signature 41:53, la frise et les références sous les sous-titres), les quatre couvertures, la signature TikTok. Envoyés avec les textes à coller ; page du propriétaire republiée (« vidéos à valider »). Pas écoutés en entier : la voix est celle des prises dont chaque phrase a été retrouvée.
 
+66. **« سنريهم آياتنا » validé** (propriétaire, 2026-11-13 : « je valide tout, garde إذا et la signature »). Lu comme sa réponse aux cinq choses qui attendaient son mot : les vidéos, les textes, les sources, la signature d'Abou Lahab, « إذا ». Inscrit : `validated` dans `lahab`, `universe`, `sky`, `womb` (voix, montage, couverture, textes, ambiance) et dans `signs` (ses textes) ; les 38 sources des épisodes passent à `validated` (13 versets, 2 hadiths, 12 passages de tafsir, 11 sources scientifiques). Textes à coller régénérés (leur ligne d'état), page du propriétaire republiée : tout y est validé. « إذا » reste signalé par `rules.py` (avertissement) : son choix, pour cette réplique.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```

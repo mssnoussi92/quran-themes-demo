@@ -346,6 +346,12 @@ porte les mots dont on a besoin.
 - **Le registre** n'a pas de type pour une source scientifique : un fichier (`content/sources/science.yaml` : id,
   référence, lien) et `rules.py` qui l'accepte, à faire avec le script.
 
+### Tout validé (propriétaire, 2026-11-13 : « je valide tout, garde إذا et la signature »)
+
+Les quatre vidéos (voix, montage, couvertures, ambiance), leurs textes à coller et leurs 38 sources (versets, hadiths,
+tafsir, sources scientifiques) ; « إذا » gardé dans « سألهم إذا كانوا بيصدقوه » ; la signature 41:53 gardée à la fin
+d'Abou Lahab. Release brouillon `signs-candidate`. À publier par lui.
+
 ### Le script entier validé (propriétaire, 2026-11-12 : « je valide les titres et les nouveaux débuts »)
 
 Les quatre titres (ceux de `sky` et `womb` : les recommandations de la session) et les premières répliques qui les

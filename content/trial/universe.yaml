@@ -7,6 +7,11 @@ id: universe
 # nouveaux débuts » du propriétaire (2026-11-12) : les répliques, la place des versets, ce sur quoi chaque narration
 # repose, le titre. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication : il les valide sur les vidéos.
 script_validated: { by: mssnoussi92, on: 2026-11-12 }
+# « Je valide tout, garde إذا et la signature » du propriétaire (2026-11-13), sur les vidéos rendues par le workflow
+# `film` (run 18) et envoyées dans la conversation : la voix D, le montage (le ciel généré, les dessins, les photos de
+# l'ESA, la frise, la signature 41:53), la couverture, les textes de publication (docs/retention/publication-signs.md),
+# l'ambiance ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 54-trial-universe     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne

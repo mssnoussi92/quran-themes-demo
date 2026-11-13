@@ -1,6 +1,6 @@
 # We Will Show Them Our Signs · سنريهم آياتنا : textes de publication
 
-Pour chaque short : le titre, puis le texte à coller sur chaque plateforme. Titres et descriptions **proposés par la session, pas encore validés par le propriétaire** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, pas encore validée.
+Pour chaque short : le titre, puis le texte à coller sur chaque plateforme. Titres et descriptions **validés par le propriétaire le 2026-11-13** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, pas encore validée.
 
 ## Short 1 · One sentence could have disproved the Quran · كلمة واحدة كانت هتكذّب القرآن
 
