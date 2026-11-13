@@ -120,8 +120,11 @@ qu'on en garde est une version à nous, retournée vers la vérification. **Pour
 qui compare (un mot du Coran et ses occurrences, deux versets presque pareils, une affirmation chiffrée qui circule) ;
 **pas pour** une histoire, où le clip filmé et ses silhouettes restent le modèle. Rien n'est mesuré : à essayer sur un
 épisode avant de l'étendre. Images de style : `docs/retention/count-style-yawm.jpg` (`count-style-frame.py`, cinq images
-d'un épisode « يوم ٣٦٥ » de « سنريهم آياتنا »). **Pas encore construit dans Remotion.**
+d'un épisode « يوم 365 » de « سنريهم آياتنا »). **Pas encore construit dans Remotion.**
 - **Un nombre fait de particules** qui se rassemblent ; un « = » entre deux comptes.
+- **Les comptes en chiffres « 365 »**, pas en chiffres arabes orientaux (propriétaire, 2026-11-13) : dans le nombre en
+  particules, la bande des règles, les répliques et les légendes ; le badge de la série et la référence d'un verset
+  gardent ceux de la série.
 - **La grille des 6 236 versets** (une pastille par verset, dans l'ordre du mushaf, de droite à gauche) : en or les
   versets du mot compté ; en anneau vide ceux qu'une règle retire ; un second mot dans une autre couleur.
 - **La bande des règles**, au pied de l'image, à la place de la frise des dates de « سنريهم آياتنا » : chaque règle de

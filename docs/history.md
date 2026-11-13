@@ -183,6 +183,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 84. **Les épisodes de comptage, et le style compteur** (propriétaire, 2026-11-13 : « oui, je valide tes recommandations, et enregistre ce style comme option à utiliser si ça fonctionne, pour une série ou dans une partie ; et commence le design de ta proposition »). Lu comme : les épisodes de comptage dans « سنريهم آياتنا », l'affirmation montrée comme une affirmation dès la première image, les exemples politiques laissés, le style repris en version à nous ; la question des auteurs contemporains n'avait pas de recommandation, elle reste à son mot (avis donné : non). **Inscrit** : le style dans `docs/model.md` (une option, pas encore construite dans Remotion), la règle de l'accroche dans le skill `write-hook`, les décisions et le plan de l'épisode 5 dans `docs/themes.md`. **Images de style** : cinq images 9:16 de « يوم ٣٦٥ » (`docs/retention/count-style-frame.py`, `count-style-yawm.jpg`), chaque nombre compté par le script sur le Quranic Arabic Corpus (475, 445, 375, 365 ; 437 versets allumés, 341 après les règles ; الدنيا et الآخرة 115), le verset 10:5 lu depuis quran.com ; `style-frame-shot.js` attend désormais qu'une page qui dessine par script ait fini.
 
+85. **Les comptes en chiffres « 365 »** (propriétaire, 2026-11-13 : « utilise les nombres 365 et non pas ٣٦٥ »). Lu comme valant pour le style compteur : le nombre en particules, la bande des règles, les répliques et les légendes ; le badge de la série et la référence d'un verset gardent ceux de « سنريهم آياتنا », et les autres séries ne changent pas sans son mot. Inscrit dans `docs/model.md` ; images refaites.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```

@@ -653,12 +653,12 @@ auteurs contemporains (ar-Rumi, Qutna, islamqa). Avis de la session : non ; les 
 un script, leur règle écrite à l'écran, et tout spectateur peut les refaire ; une source de type nouveau, `count` (le
 corpus, le lemme, la règle), comme `science`.
 
-**L'épisode 5, « يوم ٣٦٥ »** (plan de la session, 2026-11-13 ; images de style `docs/retention/count-style-yawm.jpg` ;
+**L'épisode 5, « يوم 365 »** (plan de la session, 2026-11-13 ; images de style `docs/retention/count-style-yawm.jpg` ;
 le script viendra après les images, et la voix après « je valide le script ») :
 
 | Temps | Ce qui se passe | Image |
 | --- | --- | --- |
-| L'affirmation | « بيقولوا: «يوم» في القرآن ٣٦٥ مرة… زي أيام السنة. أنا عدّيتها بنفسي. » | la carte « بيقولوا », 365 en particules, un « ؟ » ; la grille attend derrière |
+| L'affirmation | « بيقولوا: «يوم» في القرآن 365 مرة… زي أيام السنة. أنا عدّيتها بنفسي. » | la carte « بيقولوا », 365 en particules, un « ؟ » ; la grille attend derrière |
 | Le compte | toutes les formes : 475 | la grille s'allume, 437 versets |
 | Les règles | 365 n'apparaît qu'en retirant 110 : أيام et يومين (30), يومئذ (70), يومكم et يومهم (10) ; « ليه دي تتعد… ودي لأ؟ » | la bande des règles, des versets qui s'éteignent en anneaux vides (341 restent) |
 | L'année du Coran | 10:5 récité : les phases de la lune pour compter les années (al-Muyassar) ; une année lunaire fait 354 jours (source `science` à inscrire) | le verset, « عَدَدَ ٱلسِّنِينَ وَٱلْحِسَابَ » en or, les phases de la lune |

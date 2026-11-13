@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Style frames of the counting style (owner, 2026-11-13: « enregistre ce style comme option »), not part of the videos:
-five stills of a « سنريهم آياتنا » episode on the claim « يوم ٣٦٥ » in the look of the counting style (docs/model.md):
-numbers made of particles, a grid of the 6,236 verses where the counted word lights up, a strip of the counting rules
+five stills of a « سنريهم آياتنا » episode on the claim « يوم 365 » in the look of the counting style (docs/model.md):
+numbers made of particles (counts written 365, never in Arabic-Indic digits: owner,
+2026-11-13), a grid of the 6,236 verses where the counted word lights up, a strip of the counting rules
 at the foot, two counts set equal, a verse with a drawing under it.
 
 Every number is counted here, never typed: the morphology of the Quranic Arabic Corpus (quran-morphology.txt of
@@ -26,13 +27,8 @@ MORPH = Path(sys.argv[2])
 FONTS = ROOT / "video" / "public" / "fonts"
 W, H = 1080, 1920
 GOLD, INK, NIGHT, MINT, OFF = "#f0c46a", "#f4efe2", "#03050d", "#9fe3c8", "#7f8db0"
-AR = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")
 e = html.escape
 random.seed(5)
-
-
-def ar(n):
-    return str(n).translate(AR)
 
 
 # --- the counts -------------------------------------------------------------------------------------------------------
@@ -110,7 +106,7 @@ def rules(step):
         glow = f'<circle cx="{x:.0f}" cy="{y}" r="30" fill="{GOLD}" opacity=".22"/>' if on else ""
         out.append(f'{glow}<circle cx="{x:.0f}" cy="{y}" r="{r}" fill="{GOLD if on or past else NIGHT}" stroke="{GOLD}" stroke-width="3"/>'
                    f'<text x="{x:.0f}" y="{y - 30}" text-anchor="middle" font-family="Amiri" font-weight="700" font-size="{44 if on else 32}" '
-                   f'fill="{GOLD}" opacity="{1 if on else .65}">{ar(n)}</text>'
+                   f'fill="{GOLD}" opacity="{1 if on else .65}">{str(n)}</text>'
                    f'<text x="{x:.0f}" y="{y + 50}" text-anchor="middle" font-family="Amiri" font-size="25" fill="{INK}" '
                    f'opacity="{.95 if on else .5}">{label}</text>')
     return "".join(out)
@@ -227,30 +223,30 @@ CORPUS = "Quranic Arabic Corpus · corpus.quran.com"
 # 1. The first frame: the claim, shown as a claim (quoted, dashed, a question mark on it), never said by our voice
 CARD = (f'<rect x="150" y="560" width="780" height="520" rx="30" transform="rotate(-2.5 540 820)" fill="#060a18" fill-opacity=".92" '
         f'stroke="{GOLD}" stroke-opacity=".55" stroke-width="2" stroke-dasharray="10 8"/>')
-page("count-a", stars(160) + grid(790, faint=True) + CARD + number(ar(365), 540, 800, 300),
+page("count-a", stars(160) + grid(790, faint=True) + CARD + number(str(365), 540, 800, 300),
      f'''{TOP}
-<div class="line">بيقولوا: «يوم» في القرآن ٣٦٥ مرة…<br>زي أيام السنة. <span class="gold">أنا عدّيتها بنفسي.</span></div>
+<div class="line">بيقولوا: «يوم» في القرآن 365 مرة…<br>زي أيام السنة. <span class="gold">أنا عدّيتها بنفسي.</span></div>
 <div class="claim"><div class="who">❝ بيقولوا</div><div class="what">مرة… زي أيام السنة</div></div><div class="stamp">؟</div>
 <div class="en" style="top:1545px">They say "day" appears 365 times in the Quran… like the days of the year. I counted it myself.</div>''')
 
 # 2. The count: every form of the word, every verse it is in lit on the grid
-page("count-b", stars(90) + number(ar(STEPS[0]), 540, 640, 230) + grid(800, lit=lit_all) + rules(0),
+page("count-b", stars(90) + number(str(STEPS[0]), 540, 640, 230) + grid(800, lit=lit_all) + rules(0),
      f'''{TOP}
-<div class="line">عدّيت كل مرة جت فيها… <span class="gold">طلعت {ar(STEPS[0])}.</span></div>
-<div class="caption" style="top:1428px">كل نقطة آية · {ar(len(VERSES))} آية · الدهبي: الآيات اللي فيها «يوم»</div>
+<div class="line">عدّيت كل مرة جت فيها… <span class="gold">طلعت {str(STEPS[0])}.</span></div>
+<div class="caption" style="top:1428px">كل نقطة آية · {str(len(VERSES))} آية · الدهبي: الآيات اللي فيها «يوم»</div>
 <div class="source" style="top:1470px">{CORPUS}</div>
 <div class="en" style="top:1545px">I counted every time it comes… 475.</div>''')
 
 # 3. The rules: what has to go for 365 to come out, the verses that go dark as empty rings
-page("count-c", stars(90) + number(ar(STEPS[3]), 540, 640, 230) + grid(800, lit=lit_kept, gone=lit_all - lit_kept) + rules(3),
+page("count-c", stars(90) + number(str(STEPS[3]), 540, 640, 230) + grid(800, lit=lit_kept, gone=lit_all - lit_kept) + rules(3),
      f'''{TOP}
-<div class="line">عشان تطلع ٣٦٥… لازم تشيل {ar(STEPS[0] - STEPS[3])}.<br><span class="gold">ليه دي تتعد… ودي لأ؟</span></div>
+<div class="line">عشان تطلع 365… لازم تشيل {str(STEPS[0] - STEPS[3])}.<br><span class="gold">ليه دي تتعد… ودي لأ؟</span></div>
 <div class="caption" style="top:1428px">الدواير الفاضية: آيات «يوم» فيها اتشالت من العدّ</div>
 <div class="en" style="top:1490px">For 365 to come out, you have to take 110 away. Why count this one… and not that one?</div>''')
 
 EQUALS = "".join(f'<rect x="505" y="{y}" width="70" height="12" rx="6" fill="{INK}" opacity=".9"/>' for y in (796, 832))
 # 4. The honest part: two counts that do hold, under the same rule
-page("count-d", stars(120) + number(ar(dunya), 800, 820, 190) + EQUALS + number(ar(akhira), 280, 820, 190, MINT)
+page("count-d", stars(120) + number(str(dunya), 800, 820, 190) + EQUALS + number(str(akhira), 280, 820, 190, MINT)
      + grid(1240, lit=in_dunya, other=in_akhira, cols=140, pitch=6.6, size=.62),
      f'''{TOP}
 <div class="line">بس فيه عدّات صح… <span class="gold">بنفس القاعدة.</span></div>
