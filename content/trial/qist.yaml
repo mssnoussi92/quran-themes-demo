@@ -1,0 +1,65 @@
+# « لاحظت الفرق؟ », épisode 3 (content/trial/farq.yaml ; script : docs/scripts/farq.md, validé). Le style compteur
+# (docs/model.md) : sur la nuit de la page, les deux versets face à face (video/src/trial/Farq.tsx, leurs mots lus dans le
+# registre par tools/trial/farq.py : farqData.ts), ce qui diffère en or et en vert, les mots qui changent de place ; puis
+# leur sens. Personne n'est dessiné. Les répliques sont celles du script validé, mot pour mot.
+id: qist
+# « Je valide le script » du propriétaire (2026-11-13) : les répliques, la place des versets, ce sur quoi chaque narration
+# repose, le titre. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication : il les valide sur les vidéos.
+script_validated: { by: mssnoussi92, on: 2026-11-13 }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 63-trial-qist     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) : rien à créditer.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1300, veil: 0.7 }
+# Ambiance sous la narration, jamais sous les versets : un des enregistrements validés à l'écoute (docs/model.md).
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 40, seconds: 110, level: -38 }
+cover: { scene: faces, title: "نفس الكلمات… بالمقلوب", tag: "لاحظت الفرق؟ (٣)", focus: 1000 }
+publish:
+  title: { en: "The same words… in reverse", ar: "نفس الكلمات… بالمقلوب" }
+  part: 3
+  description:
+    en: "The same words in reverse order, in two verses: justice even against yourself and those you love, and justice even toward someone you dislike."
+    ar: "نفس الكلمات بالمقلوب في آيتين: العدل حتى على نفسك واللي بتحبهم، والعدل حتى مع اللي بتكرهه. العدل مش على مزاجك."
+segments:
+  - narration: open
+    scene: faces
+    lines:
+      - ar: "نفس الكلمات بالظبط… في آيتين… بس الترتيب اتقلب."
+        en: "Exactly the same words… in two verses… but the order is turned around."
+      - ar: "ولو عرفت ليه… هتعرف تعدل مع اللي بتحبه… ومع اللي بتكرهه."
+        en: "And once you know why… you will know how to be just with those you love… and with those you dislike."
+  - verses: [quran.4.135]
+    upto: 14            # jusqu'à un arrêt (docs/scripts/farq.md)
+    scene: top
+  - verses: [quran.5.8]
+    upto: 15            # jusqu'à un arrêt (docs/scripts/farq.md)
+    scene: bottom
+  - narration: swap
+    scene: swap
+    lines:
+      - ar: "لاحظت؟ في الأولى… بدأ بالعدل… وفي التانية… بدأ بربنا."
+        en: "Did you notice? In the first… He begins with justice… in the second… He begins with God."
+  - narration: meaning
+    scene: meanings
+    sources: [tafsir.saadi.4.135, tafsir.saadi.5.8]
+    lines:
+      - ar: "الأولى: قول الحق… حتى على نفسك… وعلى أبوك وأمك وقرايبك."
+        en: "The first: speak the truth… even against yourself… against your father, your mother and your relatives."
+      - ar: "والتانية: اعدل… حتى مع اللي بتكرهه… ما تخليش كرهك يظلمه."
+        en: "The second: be just… even with someone you dislike… do not let your dislike wrong him."
+      - ar: "نفس الكلمات… وكل ترتيب جه في مكانه."
+        en: "The same words… and each order came in its place."
+  - narration: example
+    scene: scales
+    lines:
+      - ar: "زي لما أخوك يغلط في حق حد… وتتسأل… تقول الحق."
+        en: "Like when your brother wrongs someone… and you are asked… you tell the truth."
+      - ar: "ولما حد بتكرهه يكون على حق… تقول: الحق معاه."
+        en: "And when someone you dislike is in the right… you say: he is right."
+  - narration: close
+    scene: faces
+    lines:
+      - ar: "العدل… مش على مزاجك."
+        en: "Justice… is not up to your mood."
+      - ar: "تابعنا عشان الفرق الجاي."
+        en: "Follow us for the next difference."

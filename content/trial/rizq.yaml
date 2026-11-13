@@ -1,0 +1,66 @@
+# « لاحظت الفرق؟ », épisode 1 (content/trial/farq.yaml ; script : docs/scripts/farq.md, validé). Le style compteur
+# (docs/model.md) : sur la nuit de la page, les deux versets face à face (video/src/trial/Farq.tsx, leurs mots lus dans le
+# registre par tools/trial/farq.py : farqData.ts), ce qui diffère en or et en vert, les mots qui changent de place ; puis
+# leur sens. Personne n'est dessiné. Les répliques sont celles du script validé, mot pour mot.
+id: rizq
+# « Je valide le script » du propriétaire (2026-11-13) : les répliques, la place des versets, ce sur quoi chaque narration
+# repose, le titre. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication : il les valide sur les vidéos.
+script_validated: { by: mssnoussi92, on: 2026-11-13 }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 61-trial-rizq     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) : rien à créditer.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1300, veil: 0.7 }
+# Ambiance sous la narration, jamais sous les versets : un des enregistrements validés à l'écoute (docs/model.md).
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 110, level: -38 }
+cover: { scene: faces, title: "كلمتين اتبدّلوا… ليه؟", tag: "لاحظت الفرق؟ (١)", focus: 1000 }
+publish:
+  title: { en: "Two words swapped places… why?", ar: "كلمتين اتبدّلوا… ليه؟" }
+  part: 1
+  description:
+    en: "Two verses, almost the same words: 'We provide for you and them' and 'We provide for them and you'. In the first, poverty is already there; in the second, it is feared. Their provision is on God."
+    ar: "آيتين تقريبًا نفس الكلام، بس كلمتين بدّلوا مكانهم. في الأولى الفقر موجود، فطمّنك إنت الأول؛ وفي التانية الخوف من فقر جاي، فطمّنك عليهم هما الأول. رزقهم على ربنا."
+segments:
+  - narration: open
+    scene: faces
+    lines:
+      - ar: "آيتين في القرآن… نفس الكلام تقريبًا… بس كلمتين بدّلوا مكانهم."
+        en: "Two verses of the Quran… almost the same words… but two words swapped places."
+      - ar: "ولو عرفت ليه… هتفهم إزاي ربنا بيطمّنك على رزقك."
+        en: "And once you know why… you will see how God reassures you about your provision."
+  - verses: [quran.6.151]
+    upto: 21            # jusqu'à un arrêt (docs/scripts/farq.md)
+    scene: top
+  - verse: quran.17.31
+    scene: bottom
+  - narration: swap
+    scene: swap
+    lines:
+      - ar: "لاحظت؟ في الأولى… ربنا بدأ بيك… وفي التانية… بدأ بولادك."
+        en: "Did you notice? In the first… God begins with you… in the second… He begins with your children."
+  - narration: meaning
+    scene: meanings
+    sources: [tafsir.ibn-kathir.6.151, tafsir.ibn-kathir.17.31]
+    lines:
+      - ar: "في الأولى: الفقر موجود فعلًا… فطمّنك إنت الأول."
+        en: "In the first: poverty is already there… so He reassures you first."
+      - ar: "وفي التانية: الخوف من فقر جاي… فطمّنك عليهم هما الأول."
+        en: "In the second: the fear of a poverty to come… so He reassures you about them first."
+      - ar: "يعني رزقهم مش من جيبك… رزقهم على ربنا."
+        en: "Meaning: their provision does not come from your pocket… it is on God."
+  - narration: example
+    scene: cradle
+    lines:
+      - ar: "زي أب مستني مولود… وكل ليلة يحسبها: هقدر أصرف عليه؟"
+        en: "Like a father waiting for a baby… counting every night: will I manage to provide for it?"
+      - ar: "الآية بتقوله: رزقه قبل رزقك… ورزقك معاه."
+        en: "The verse tells him: its provision comes before yours… and yours comes with it."
+  - narration: close
+    scene: faces
+    lines:
+      - ar: "كلمة اتقدّمت… عشان قلبك يرتاح."
+        en: "One word moved forward… so that your heart can rest."
+      - ar: "الحلقة الجاية: راجل واحد… نسب حاجة لنفسه… وحاجة لربنا. ليه؟"
+        en: "Next: one man… credited one thing to himself… and another to God. Why?"
+      - ar: "تابعنا عشان الفرق الجاي."
+        en: "Follow us for the next difference."

@@ -131,7 +131,8 @@
   label: { ar: "عدّ الكلمات: Quranic Arabic Corpus", en: "Word counts: Quranic Arabic Corpus" }
   claim: "Le lemme يوم : 475 mots (dans 437 versets) ; sans le pluriel et le duel, 445 ; sans يومئذ, 375 ; sans يومكم et يومهم, 365. Comptés par tools/trial/count.py, jamais tapés (video/src/trial/countData.ts)."
   checked: { "on": '2026-11-13', sources: ["https://corpus.quran.com/", "https://github.com/mustafa0x/quran-morphology", "tools/trial/count.py"] }
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Épisode days : « «يوم»: عدّيتها بكل أشكالها… طلعت 475 », « عشان تطلع 365… لازم تشيل 110 »."
 
 - id: science.count-board
@@ -141,7 +142,8 @@
   label: { ar: "عدّ الكلمات: Quranic Arabic Corpus", en: "Word counts: Quranic Arabic Corpus" }
   claim: "Toutes les formes / le singulier / la racine : شهر 21/12/21 ; الدنيا et الآخرة 115-115/115-115/133-250 ; الملائكة et الشيطان 88-88/13-70/206-88 ; رجل et امرأة 29-26/24-24/73-38 ; الصلاة 83/78/99 ; الصبر 15/15/103 ; الليل 84/83/92 ; يوم 475/445/475. Comptés par tools/trial/count.py."
   checked: { "on": '2026-11-13', sources: ["https://corpus.quran.com/", "https://github.com/mustafa0x/quran-morphology", "tools/trial/count.py"] }
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Épisode days, le tableau des règles : « أغلبهم صح فعلًا… بس كل واحد بقاعدة », « «شهر» 12… لو عدّيت المفرد بس… و«الصلاة» 99… لو عدّيت الجذر كله », « ولو مشيت بقاعدة واحدة على الكل… أغلبهم يقع »."
 
 - id: science.khalifa-19
@@ -151,5 +153,6 @@
   label: { ar: "رشاد خليفة و«الرقم 19»", en: "Rashad Khalifa and the « code 19 »" }
   claim: "Rashad Khalifa (1935-1990) publie de 1973 à 1982 une structure mathématique du Coran fondée sur 19, et soutient que cette structure rejette 9:128-129, deux versets qu'il dit n'être pas du Coran."
   checked: { "on": '2026-11-13', sources: ["https://en.wikipedia.org/wiki/Rashad_Khalifa"] }
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Épisode days : « وفي واحد مشي ورا رقم… لحد ما قال إن آيتين مش من القرآن… عشان ما ظبطوش مع حسابه ». La voix dit « واحد » ; son nom s'écrit à l'écran (décision du propriétaire, 2026-11-13). Wikipedia cite Haddad et Smith pour ses livres, Submission.org pour 9:128-129 : à vérifier dans le livre si possible."

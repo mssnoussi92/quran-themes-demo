@@ -1,0 +1,14 @@
+# La série « لاحظت الفرق؟ » (idée du propriétaire, 2026-11-13 : « تدبر القرآن », des versets presque pareils et différents
+# dans le sens ; fiche : docs/themes.md ; script : docs/scripts/farq.md, validé le 2026-11-13). Chaque épisode : deux
+# versets face à face, ce qui change, et son sens d'après un tafsir de la politique. Le style compteur (docs/model.md).
+# Une série : des shorts qui tiennent seuls, pas de film ; chaque épisode annonce le suivant s'il est connu.
+id: farq
+files: farq                      # début du nom des vidéos livrées : farq-short-<n>-<id>.mp4
+title: { ar: "لاحظت الفرق؟", en: "Did You Notice the Difference?" }
+shorts: [rizq, adab, qist]
+handle: "@quran_words_daily"
+publish:
+  out: docs/retention/publication-farq.md
+  series: { en: "Did You Notice the Difference?", ar: "لاحظت الفرق؟" }
+  hashtags: ["#Quran", "#القرآن", "#تدبر"]
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }

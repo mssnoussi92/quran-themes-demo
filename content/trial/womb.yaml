@@ -11,9 +11,9 @@ script_validated: { by: mssnoussi92, on: 2026-11-12 }
 # `film` (run 18) et envoyées dans la conversation : la voix D, le montage (le ciel généré, les dessins, les photos de
 # l'ESA, la frise, la signature 41:53), la couverture, les textes de publication (docs/retention/publication-signs.md),
 # l'ambiance ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
-# La fin changée le 2026-11-13 (sa décision) : la voix est redite en entier et la vidéo rendue à nouveau ; voix et montage
-# attendent son mot sur la nouvelle vidéo. Couverture, textes et ambiance ne changent pas.
-validated: { by: mssnoussi92, on: 2026-11-13, what: [cover, publish, ambience] }
+# La fin changée le 2026-11-13 (sa décision) : la voix redite en entier et la vidéo rendue à nouveau (workflow `film`,
+# run 22) ; « je valide l'épisode 4 et 5 » (2026-11-13) : la nouvelle voix et le nouveau montage. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 56-trial-womb     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne

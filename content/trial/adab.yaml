@@ -1,0 +1,64 @@
+# « لاحظت الفرق؟ », épisode 2 (content/trial/farq.yaml ; script : docs/scripts/farq.md, validé). Le style compteur
+# (docs/model.md) : sur la nuit de la page, les deux versets face à face (video/src/trial/Farq.tsx, leurs mots lus dans le
+# registre par tools/trial/farq.py : farqData.ts), ce qui diffère en or et en vert, les mots qui changent de place ; puis
+# leur sens. Personne n'est dessiné. Les répliques sont celles du script validé, mot pour mot.
+id: adab
+# « Je valide le script » du propriétaire (2026-11-13) : les répliques, la place des versets, ce sur quoi chaque narration
+# repose, le titre. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication : il les valide sur les vidéos.
+script_validated: { by: mssnoussi92, on: 2026-11-13 }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 62-trial-adab     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) : rien à créditer.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1300, veil: 0.7 }
+# Ambiance sous la narration, jamais sous les versets : un des enregistrements validés à l'écoute (docs/model.md).
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 110, level: -36 }
+cover: { scene: faces, title: "مرة قال «أنا»… ومرة قال «ربنا»", tag: "لاحظت الفرق؟ (٢)", focus: 1000 }
+publish:
+  title: { en: "Once he said 'I'… once he said 'your Lord'", ar: "مرة قال «أنا»… ومرة قال «ربنا»" }
+  part: 2
+  description:
+    en: "One man, one story: the damage to the boat he credited to himself, the good done to the two orphans to God. Courtesy toward God in words, though both were by His decree."
+    ar: "راجل واحد في حكاية واحدة: العيب في المركب نسبه لنفسه، والخير لليتيمين نسبه لربنا. أدب مع ربنا في الكلام، مع إن الاتنين بقضائه."
+segments:
+  - narration: open
+    scene: faces
+    lines:
+      - ar: "راجل واحد… في حكاية واحدة… مرة قال: أنا اللي عملت… ومرة قال: ربنا اللي عمل."
+        en: "One man… in one story… once said: I did it… and once said: your Lord did."
+      - ar: "والفرق ده… هيغيّر طريقة كلامك عن كل حاجة بتحصلك."
+        en: "And this difference… will change the way you speak about everything that happens to you."
+      - ar: "ده الخَضِر… مع موسى عليه السلام… وهو بيشرحله اللي عمله."
+        en: "This is al-Khiḍr… with Moses, peace be upon him… explaining what he did."
+  - verse: quran.18.79
+    scene: boat
+  - narration: turn
+    scene: wall
+    lines:
+      - ar: "وفي آخر الحكاية… عن كنز اليتيمين…"
+        en: "And at the end of the story… about the orphans' treasure…"
+  - verses: [quran.18.82]
+    upto: 24            # jusqu'à un arrêt (docs/scripts/farq.md)
+    scene: wall
+  - narration: meaning
+    scene: meanings
+    sources: [tafsir.saadi.18.82]
+    lines:
+      - ar: "لاحظت؟ العيب في المركب… قال: أنا… والخير للولدين… قال: ربنا."
+        en: "Did you notice? The damage to the boat… he said: I… the good for the two boys… he said: your Lord."
+      - ar: "ده أدب مع ربنا في الكلام… مع إن الاتنين بقضاء ربنا."
+        en: "That is courtesy toward God in words… though both were by God's decree."
+  - narration: example
+    scene: lamp
+    lines:
+      - ar: "زي لما تقع في مشكلة… تقول: أنا اللي قصّرت… ولما يجيلك خير… تقول: ده من ربنا."
+        en: "Like when you fall into trouble… you say: I fell short… and when good comes… you say: this is from God."
+  - narration: close
+    scene: faces
+    lines:
+      - ar: "الخير… انسبه لربنا… والتقصير… ابدأ فيه بنفسك."
+        en: "The good… credit it to God… the shortcoming… start with yourself."
+      - ar: "الحلقة الجاية: نفس الكلمات بالظبط… بس الترتيب اتقلب."
+        en: "Next: exactly the same words… but the order is turned around."
+      - ar: "تابعنا عشان الفرق الجاي."
+        en: "Follow us for the next difference."
