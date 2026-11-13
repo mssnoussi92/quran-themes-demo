@@ -94,7 +94,9 @@ heard: a line the voice changed, skipped or said twice.
 - **Two phrases at the same second** is the sign to look for in the list. Two causes were met and are
   handled since 2026-11-11 (`tests/test_align.py`): a one-word phrase (« شكرًا. ») given the long pause
   that follows it, so that it appeared after the voice had said it; two phrases said in one breath
-  (« نقول: ده تعبي… ») given the same pause. If it comes back, print Whisper's words and the silences
+  (« نقول: ده تعبي… ») given the same pause. A third since 2026-11-13: a word Whisper heard short (« قده » for « قدها »)
+  lent its missing letter to the next word, which then counted as said by the phrase before (« التالتة: »
+  took the start of the phrase after it, `stone`); a word now belongs to the phrase that has most of its letters. If it comes back, print Whisper's words and the silences
   around that second before anything is rendered.
 - « warning: no pause before « … » » from `prepare.py`: a segment starts at a phrase with no pause found
   before it, so the cut would fall on Whisper's word boundary, which puts the pause inside the next

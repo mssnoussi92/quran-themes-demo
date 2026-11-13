@@ -59,7 +59,7 @@ tools/trial/rules.py           les règles sur les fichiers d'un film ; tools/tr
 tools/audio/align.py           chaque phrase d'un texte retrouvée dans une longue prise
 tools/tts/gemini.py            la voix (dans le workflow voice-test : la clé est un secret du dépôt)
 video/src/trial/               Trial.tsx (short), Film.tsx (film), Cover.tsx (couverture, vignette),
-                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a) : les dessins
+                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a), Signs.tsx et Kalima.tsx (les séries) : les dessins
 video/public/trial/            (ignoré) données préparées, clips, audio
 build/trial/ambience/          (ignoré) enregistrements d'ambiance téléchargés
 video/out/                     (ignoré) rendus
@@ -108,6 +108,11 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
 - `OVERLAYS` et `LAYOUTS` de `video/src/trial/Trial.tsx` : ce qu'un short dessine au-dessus du voile sans bouger
   (le badge de la série, la frise des dates) et où ses textes se placent ; les dessins, photos et frises de la série
   sont dans `video/src/trial/Signs.tsx`.
+
+**« كلمة من القرآن »** (`kalima`, 2026-11-13) : le short du modèle (un clip filmé, des silhouettes dessinées), plus le
+mot de l'épisode écrit en grand, en or, dès la première image (jamais dit par la voix : le récitateur le dit le premier)
+et le badge de la série au-dessus du voile (`KALIMA_PICTURES`, `KALIMA_OVERLAYS` de `video/src/trial/Kalima.tsx`).
+Un épisode peut réciter plusieurs versets séparés (`stone` : 4:49, 4:124, 35:13, chacun avec sa narration).
 
 ### Un film (`content/trial/<id>.yaml`, avec `chapters`)
 

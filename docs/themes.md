@@ -558,6 +558,8 @@ maintenant sans voix (`docs/scripts/kalima.md`, à valider) ; « سمعوا ال
   récitation (100:1-8, 4:49, 4:124, 35:13, 70:19-23), trois clips à montrer (le désert à l'aube avec de la poussière, une palmeraie au
   soir, un ciel d'orage qui s'éclaircit), les dessins (`video/src/trial/Kalima.tsx`), trois ambiances ; trois
   requêtes de voix.
+- **Production lancée le 2026-11-13** (« oui, lance la production ») : sources, récitations, fichiers, dessins, voix,
+  rendu par le workflow `film` ; clips proposés, pas encore approuvés (`docs/history.md`, tâche 77).
 - **Quand** : pas dans la grille actuelle (elle n'a plus de place) ; prête pour le jour où une série cède la sienne, ou
   après le 12 décembre.
 
