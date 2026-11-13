@@ -337,11 +337,7 @@ const HaluuPicture: Drawn = ({ t, show, since }) => {
       <g opacity={show("meaning")}><Word text="هَلُوعًا" y={1060} size={170} /></g>
       <g opacity={rug}><Prayer y={1250} light={show("cure") * after(t, since("cure"), 6)} /></g>
       <g opacity={show("salary")}><Salary y={1180} /></g>
-      <g opacity={show("three")}>
-        <Word text="كَنُود" y={880} size={130} />
-        <Word text="فَتِيل · نَقِير · قِطْمِير" y={1100} size={96} />
-        <Word text="هَلُوعًا" y={1320} size={130} />
-      </g>
+      <g opacity={show("next")}><Word text="؟" y={1160} size={260} /></g>
     </g>
   );
 };

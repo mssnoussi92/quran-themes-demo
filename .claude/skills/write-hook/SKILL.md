@@ -48,6 +48,10 @@ Two other shorts, two other ways in (`boy.yaml`, `wall.yaml`):
   warning that is never cut** (« والخَضِر عمل كده بأمر من ربنا… حاجة خاصة بيه. محدش غيره يقدر يعمل
   كده. »), and its example never gives a reason for a loss: « إجابته عند ربنا ».
 - **A question to the viewer can be beat 7** (the wall: « كام جدار اتبنى في حياتك… وإنت مش داري؟ »).
+- **An episode of a series** (the owner, 2026-11-13) stands alone to its last line: it never sums the series up
+  (« تلات كلمات… », « أربع آيات… »: the series will have more episodes, and a viewer who saw only this one did not
+  see the others). It announces the next episode when its subject is known (« والجاية: نواة التمرة… »), else it
+  ends on a generic call (« تابعنا عشان تعرف الكلمة اللي جاية. »).
 - **The last short** sums the parts up by what tells them apart, then calls to follow (« تلات مواقف:
   حكمة اتكشفت بسرعة… وحكمة ما اتكشفتش لأصحابها… وخير مستخبي لحد وقته. » « تابعنا عشان القصة الجاية. »).
   A line that promises something to come is the owner's to keep: say so when you write one.

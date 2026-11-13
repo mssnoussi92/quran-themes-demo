@@ -1,177 +1,166 @@
-# A Word of the Quran · كلمة من القرآن
+# كلمة من القرآن · A Word of the Quran
 
-Script à valider avant toute voix. Les répliques **nouvelles** sont de la session ; les répliques « reprises » sont celles que le propriétaire a validées dans l'ancien épisode, mot pour mot. Versets et hadiths viennent du registre. Durées estimées sans voix (`tools/trial/script.py`, à relancer après tout changement).
+**Script pilote validé par le propriétaire le 2026-11-13** (« je valide le script », lu comme les répliques des trois
+épisodes et leurs titres tels qu'ils sont ici ; le nom de la série reste « كلمة من القرآن » tant qu'il n'en choisit pas un
+autre). Aucune voix n'est encore faite. Écrit par la session le 2026-11-13 (sa décision « go with your
+recommendations »), puis corrigé le même jour à sa demande : **l'épisode 2 réécrit** (les trois mots du noyau de datte
+au lieu du seul قطمير), **aucun tafsir nommé par la narration** (la référence s'écrit sous la réplique, à l'écran :
+`content/wording.yaml`, `tafsir-named-in-narration`), puis, à son choix, **« النواة » et « التمرة »** au lieu de « نواية » et « بلحة » (« نواية بلحة واحدة » trouvé difficile ;
+« on prend la kalima النواة partout » ; « si التمر peut remplacer بلحة, prends-le ») : le titre et le début de l'épisode 2
+disent « نواة التمرة… فيها تلات كلمات من القرآن ». Sur le reste, son mot : « le reste est good ». Toutes les répliques sont de la session ; celles qui sont un
+raisonnement de la session, et non un tafsir, ou une scène type, sont signalées. Les versets ne sont désignés que par leur
+référence : leur texte viendra du registre. Durées estimées (environ dix lettres par seconde, une demi-seconde à chaque
+« … », la récitation de Tawfiq As-Sayegh mesurée sur mp3quran). Sens des mots vérifiés le 2026-11-13 dans les tafsirs de
+la politique (quran.ai : al-Muyassar, as-Sa'di, Ibn Kathir).
 
-| | Short | Durée estimée | Récitation | Hadith lu | Répliques nouvelles | Reprises |
+**Le mot n'est pas dit par la voix de synthèse** : il est écrit en or dès la première image, et c'est le récitateur qui
+le prononce le premier ; la narration dit « الكلمة دي ». C'est un choix d'écriture (on attend le mot jusqu'au verset) et
+une prudence, pas une règle : dans `womb`, validé, la voix dit « علقة ».
+
+| | Épisode | Mot | Versets | Durée estimée | Récitation | Répliques |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `kanud` | 1:39 | 0:27 | 0:00 | 14 | 0 |
-| 2 | `stone` | 2:03 | 1:03 | 0:00 | 13 | 0 |
-| 3 | `haluu` | 1:24 | 0:22 | 0:00 | 12 | 0 |
+| 1 | `kanud` | كَنُود | 100:1-8 | 1:37 | 0:27 | 14 |
+| 2 | `stone` | فَتِيل · نَقِير · قِطْمِير | 4:49, 4:124, 35:13 | 2:04 | 1:03 | 13 |
+| 3 | `haluu` | هَلُوعًا | 70:19-23 | 1:17 | 0:23 | 11 |
 
-## Short 1 · `kanud` · كلمة في القرآن… يمكن توصفك
+## Épisode 1 · `kanud` · كلمة في القرآن… يمكن توصفك · A word in the Quran… that might describe you (titre proposé)
 
-Environ **1:39** · 0:27 de récitation, 0:00 de hadith lu · 14 répliques nouvelles, 0 reprises.
+Environ **1:37** · 0:27 de récitation (100:1-8).
 
-**0:00 · narration** (image : `word`) · d'après : sens d'après [Tafsir Ibn Kathir · تفسير ابن كثير](https://quran.com/100:6/tafsirs/ar-tafsir-ibn-kathir) sur 100:6, source proposée · référence écrite à l'écran, jamais lue
+**L'image** : Le désert à l'aube (clip filmé), des chevaux en silhouette qui galopent, des étincelles sous les sabots, la poussière. Personne ne les monte : pas de cavalier dessiné.
+
+**narration · `word`** (image : le mot « كَنُود » en or, grand, sur la première image ; la voix ne le dit jamais)
 - فيه كلمة في القرآن… بتوصف اللي بيعدّ المصايب… وينسى النعم.  
-  *There's a word in the Quran… for the one who counts his misfortunes… and forgets the blessings.* · **nouvelle**
+  *There's a word in the Quran… for the one who counts his misfortunes… and forgets the blessings.* · Ibn Kathir, d'après al-Hasan al-Basri : référence écrite
 - وربنا أقسم بخيل بتجري… عشان يقولها عن الإنسان.  
-  *God swore by charging horses… to say it about man.* · **nouvelle**
+  *God swore by charging horses… to say it about man.*
 - واللي هتعرفه عنها… هيغيّر الطريقة اللي بتحكي بيها عن يومك.  
-  *And what you'll learn about it… will change the way you talk about your day.* · **nouvelle**
+  *And what you'll learn about it… will change the way you talk about your day.* · promesse, tenue par la réplique « قول تلات نعم »
 
-**0:17** · **Versets récités d'une traite** · Al-'Adiyat 100:1-8 · 28 s · **sources proposées, à valider** · coupes posées à la main, à écouter  
-  وَٱلْعَـٰدِيَـٰتِ ضَبْحًا  
-  *By the racers, panting,*  
-  فَٱلْمُورِيَـٰتِ قَدْحًا  
-  *And the producers of sparks [when] striking*  
-  فَٱلْمُغِيرَٰتِ صُبْحًا  
-  *And the chargers at dawn,*  
-  فَأَثَرْنَ بِهِۦ نَقْعًا  
-  *Stirring up thereby [clouds of] dust,*  
-  فَوَسَطْنَ بِهِۦ جَمْعًا  
-  *Arriving thereby in the center collectively,*  
-  إِنَّ ٱلْإِنسَـٰنَ لِرَبِّهِۦ لَكَنُودٌ  
-  *Indeed mankind, to his Lord, is ungrateful.*  
-  وَإِنَّهُۥ عَلَىٰ ذَٰلِكَ لَشَهِيدٌ  
-  *And indeed, he is to that a witness.*  
-  وَإِنَّهُۥ لِحُبِّ ٱلْخَيْرِ لَشَدِيدٌ  
-  *And indeed he is, in love of wealth, intense.*
+**verset 100:1-8, récité** (image : les chevaux à l'aube ; le mot en or quand il est récité)
 
-**0:45 · narration** (image : `meaning`) · d'après : sens d'après [Al-Tafsir al-Muyassar · التفسير الميسر](https://quran.com/100:6/tafsirs/ar-tafsir-muyassar) sur 100:6, source proposée ; sens d'après [Tafsir Ibn Kathir · تفسير ابن كثير](https://quran.com/100:6/tafsirs/ar-tafsir-ibn-kathir) sur 100:6, source proposée ; sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/100:7/tafsirs/ar-tafseer-al-saddi) sur 100:7, source proposée · référence écrite à l'écran, jamais lue
+**narration · `meaning`** (image : le mot, son sens écrit dessous ; la référence écrite sous chaque réplique) · d'après : al-Muyassar et Ibn Kathir sur 100:6 ; as-Sa'di sur 100:7 (référence écrite, jamais dite)
 - الكلمة دي… معناها: ناكر لنعمة ربه.  
-  *This word… means: denying his Lord's blessings.* · **nouvelle**
+  *This word… means: denying his Lord's blessings.* · al-Muyassar, Ibn Kathir
 - والآية اللي بعدها قالت: وهو نفسه شاهد على كده… عارفها عن نفسه، ومش بينكرها.  
-  *And the next verse says: he himself is witness to it… he knows it of himself, and doesn't deny it.* · **nouvelle**
+  *And the next verse says: he himself is witness to it… he knows it of himself, and doesn't deny it.* · as-Sa'di
 
-**0:57 · narration** (image : `ledger`)
+**narration · `ledger`** (image : un carnet ouvert : une page couverte de traits, l'autre vide ; autour, du pain, un verre d'eau, une lampe, une fenêtre éclairée)
 - المصيبة… بنفتكرها باليوم والساعة.  
-  *A misfortune… we remember it to the day and the hour.* · **nouvelle**
+  *A misfortune… we remember it to the day and the hour.* · raisonnement de la session
 - والنعمة… بنعيش جواها كل يوم… ومش شايفينها.  
-  *A blessing… we live inside it every day… and don't see it.* · **nouvelle**
+  *A blessing… we live inside it every day… and don't see it.* · raisonnement de la session
 
-**1:05 · narration** (image : `day`)
+**narration · `day`** (image : une journée en objets : le soleil, le pain, une maison ; une tasse fêlée, une seule)
 - زي يوم عدّى كله كويس: صحة… وأكل… وبيت.  
-  *Like a day that went well: health… food… a home.* · **nouvelle**
+  *Like a day that went well: health… food… a home.* · scène type
 - وحاجة واحدة بس باظت.  
-  *And just one thing went wrong.* · **nouvelle**
+  *And just one thing went wrong.* · scène type
 - وبالليل… الحاجة الوحيدة اللي بتحكيها… هي اللي باظت.  
-  *And at night… the only thing you talk about… is the thing that went wrong.* · **nouvelle**
+  *And at night… the only thing you talk about… is the thing that went wrong.* · scène type
 
-**1:18 · narration** (image : `count`)
+**narration · `count`** (image : la page vide du carnet reçoit trois traits d'or)
 - قبل ما تعدّ اللي راح… عدّ اللي لسه معاك.  
-  *Before you count what's gone… count what you still have.* · **nouvelle**
+  *Before you count what's gone… count what you still have.*
 - والنهارده بالليل… قبل ما تحكي اللي باظ… قول تلات نعم.  
-  *Tonight… before you tell what went wrong… name three blessings.* · **nouvelle**
+  *Tonight… before you tell what went wrong… name three blessings.* · tient la promesse du début
 
-**1:27 · narration** (image : `next`)
+**narration · `next`** (image : un noyau de datte, de près, en annonce)
 - دي كلمة عن الإنسان والنعمة… والجاية: نواة التمرة… فيها تلات كلمات من القرآن.  
-  *That was a word about man and blessings… next: the date stone… holds three words of the Quran.* · **nouvelle**
+  *That was a word about man and blessings… next: the date stone… holds three words of the Quran.*
 - تابعنا عشان الكلمة الجاية.  
-  *Follow us for the next word.* · **nouvelle**
+  *Follow us for the next word.*
 
-## Short 2 · `stone` · نواة التمرة… فيها تلات كلمات من القرآن
 
-Environ **2:03** · 1:03 de récitation, 0:00 de hadith lu · 13 répliques nouvelles, 0 reprises.
+## Épisode 2 · `stone` · نواة التمرة… فيها تلات كلمات من القرآن · The date stone… holds three words of the Quran (titre proposé) · **réécrit**
 
-**0:00 · narration** (image : `stone`)
+Environ **2:04** · 1:03 de récitation (4:49, 4:124, 35:13).
+
+**L'image** : Un seul noyau de datte, de très près, sur un clip de palmeraie au soir ; à chaque verset, une de ses trois parties s'éclaire : le fil dans sa fente, le petit creux sur son dos, la fine peau blanche autour. Pendant 35:13, le soleil et la lune au-dessus.
+
+**narration · `stone`** (image : le noyau entier, les trois mots en or autour de lui ; la voix ne les dit jamais)
 - نواة التمرة… فيها تلات كلمات من القرآن.  
-  *The date stone… holds three words of the Quran.* · **nouvelle**
+  *The date stone… holds three words of the Quran.*
 - واللي هتعرفه… هيخليك ما تستصغرش أي حاجة تعملها.  
-  *And what you'll learn… will stop you from belittling anything you do.* · **nouvelle**
+  *And what you'll learn… will stop you from belittling anything you do.* · promesse, tenue par l'exemple et « ما تستصغرش »
 
-**0:09** · **Verset récité** · An-Nisa 4:49 · 13 s · **source proposée, à valider**  
-  أَلَمْ تَرَ إِلَى ٱلَّذِينَ يُزَكُّونَ أَنفُسَهُم ۚ بَلِ ٱللَّهُ يُزَكِّى مَن يَشَآءُ وَلَا يُظْلَمُونَ فَتِيلًا  
-  *Have you not seen those who claim themselves to be pure? Rather, Allāh purifies whom He wills, and injustice is not done to them, [even] as much as a thread [inside a date seed].*
+**verset 4:49, récité** (image : le fil dans la fente du noyau, éclairé ; le mot en or quand il est récité)
 
-**0:23 · narration** (image : `thread`) · d'après : sens d'après [Al-Tafsir al-Muyassar · التفسير الميسر](https://quran.com/4:49/tafsirs/ar-tafsir-muyassar) sur 4:49, source proposée · référence écrite à l'écran, jamais lue
+**narration · `thread`** (image : le fil, son nom écrit ; la référence écrite) · d'après : al-Muyassar sur 4:49 (référence écrite, jamais dite)
 - الأولى: الخيط الرفيع اللي في شق النواة.  
-  *The first: the thin thread in the date stone's groove.* · **nouvelle**
+  *The first: the thin thread in the date stone's groove.*
 - ربنا مش بيظلم حد… ولا قد الخيط ده.  
-  *God wrongs no one… not even by that thread.* · **nouvelle**
+  *God wrongs no one… not even by that thread.*
 
-**0:30** · **Verset récité** · An-Nisa 4:124 · 18 s · **source proposée, à valider**  
-  وَمَن يَعْمَلْ مِنَ ٱلصَّـٰلِحَـٰتِ مِن ذَكَرٍ أَوْ أُنثَىٰ وَهُوَ مُؤْمِنٌ فَأُو۟لَـٰٓئِكَ يَدْخُلُونَ ٱلْجَنَّةَ وَلَا يُظْلَمُونَ نَقِيرًا  
-  *And whoever does righteous deeds, whether male or female, while being a believer - those will enter Paradise and will not be wronged, [even as much as] the speck on a date seed.*
+**verset 4:124, récité** (image : le petit creux sur le dos du noyau, éclairé)
 
-**0:49 · narration** (image : `speck`) · d'après : sens d'après [Al-Tafsir al-Muyassar · التفسير الميسر](https://quran.com/4:124/tafsirs/ar-tafsir-muyassar) sur 4:124, source proposée · référence écrite à l'écran, jamais lue
+**narration · `speck`** (image : le creux, son nom écrit ; la référence écrite) · d'après : al-Muyassar sur 4:124 (référence écrite, jamais dite)
 - التانية: النقرة الصغيرة اللي على ضهر النواة.  
-  *The second: the tiny dent on the back of the stone.* · **nouvelle**
+  *The second: the tiny dent on the back of the stone.*
 - والعمل الصالح… مش هيضيع منه ولا قدها.  
-  *And a good deed… won't lose even that much.* · **nouvelle**
+  *And a good deed… won't lose even that much.*
 
-**0:58** · **Verset récité** · Fatir 35:13 · 31 s · **source proposée, à valider**  
-  يُولِجُ ٱلَّيْلَ فِى ٱلنَّهَارِ وَيُولِجُ ٱلنَّهَارَ فِى ٱلَّيْلِ وَسَخَّرَ ٱلشَّمْسَ وَٱلْقَمَرَ كُلٌّ يَجْرِى لِأَجَلٍ مُّسَمًّى ۚ ذَٰلِكُمُ ٱللَّهُ رَبُّكُمْ لَهُ ٱلْمُلْكُ ۚ وَٱلَّذِينَ تَدْعُونَ مِن دُونِهِۦ مَا يَمْلِكُونَ مِن قِطْمِيرٍ  
-  *He causes the night to enter the day, and He causes the day to enter the night and has subjected the sun and the moon - each running [its course] for a specified term. That is Allāh, your Lord; to Him belongs sovereignty. And those whom you invoke other than Him do not possess [as much as] the membrane of a date seed.*
+**verset 35:13, récité** (image : la nuit et le jour, le soleil et la lune ; à la fin, la peau blanche du noyau, éclairée)
 
-**1:29 · narration** (image : `skin`) · d'après : sens d'après [Al-Tafsir al-Muyassar · التفسير الميسر](https://quran.com/35:13/tafsirs/ar-tafsir-muyassar) sur 35:13, source proposée ; sens d'après [Tafsir Ibn Kathir · تفسير ابن كثير](https://quran.com/35:13/tafsirs/ar-tafsir-ibn-kathir) sur 35:13, source proposée · référence écrite à l'écran, jamais lue
+**narration · `skin`** (image : la peau, son nom écrit ; la référence écrite) · d'après : al-Muyassar et Ibn Kathir sur 35:13 (référence écrite, jamais dite)
 - التالتة: القشرة البيضا الرفيعة اللي حوالين النواة.  
-  *The third: the thin white skin around the stone.* · **nouvelle**
+  *The third: the thin white skin around the stone.*
 - واللي بيدعوهم الناس من غير ربنا… ما يملكوش ولا قدها.  
-  *And those people call on besides God… don't own even that much.* · **nouvelle**
+  *And those people call on besides God… don't own even that much.*
 
-**1:40 · narration** (image : `cup`)
+**narration · `cup`** (image : un verre d'eau posé, seul)
 - زي كوباية مية… ادّيتها لعطشان… ومحدش شافك.  
-  *Like a glass of water… you gave someone thirsty… and no one saw you.* · **nouvelle**
+  *Like a glass of water… you gave someone thirsty… and no one saw you.* · scène type
 - عند ربنا… مش هتضيع ولا قد النقرة.  
-  *With God… it won't lose even a dent's worth.* · **nouvelle**
+  *With God… it won't lose even a dent's worth.*
 
-**1:48 · narration** (image : `remember`)
+**narration · `remember`** (image : le noyau entier, ses trois parties éclairées)
 - ما تستصغرش حاجة تعملها… ربنا ما بيضيّعش ولا قد قشرة النواة.  
-  *Don't belittle anything you do… God doesn't let slip even the skin of a date stone.* · **nouvelle**
+  *Don't belittle anything you do… God doesn't let slip even the skin of a date stone.* · tient la promesse du début
 
-**1:53 · narration** (image : `next`)
+**narration · `next`** (image : le mot suivant, voilé)
 - والكلمة الجاية: ربنا شرحها بنفسه… في الآيتين اللي بعدها.  
-  *The next word: God explains it Himself… in the two verses after it.* · **nouvelle**
+  *The next word: God explains it Himself… in the two verses after it.*
 - تابعنا عشان الكلمة الجاية.  
-  *Follow us for the next word.* · **nouvelle**
+  *Follow us for the next word.*
 
-## Short 3 · `haluu` · كلمة شرحها القرآن بنفسه… وكتب علاجها
 
-Environ **1:24** · 0:22 de récitation, 0:00 de hadith lu · 12 répliques nouvelles, 0 reprises.
+## Épisode 3 · `haluu` · كلمة شرحها القرآن بنفسه… وكتب علاجها · A word the Quran explains itself… and gives its cure (titre proposé)
 
-**0:00 · narration** (image : `word`)
+Environ **1:17** · 0:23 de récitation (70:19-23).
+
+**L'image** : Un ciel d'orage (clip filmé) qui s'éclaircit ; un coffre fermé ; puis un tapis de prière tourné vers une niche, à l'aube. Personne.
+
+**narration · `word`** (image : le mot « هَلُوعًا » en or sur le ciel d'orage)
 - فيه كلمة في القرآن… ربنا شرحها بنفسه… في الآيتين اللي بعدها.  
-  *There's a word in the Quran… God explains it Himself… in the two verses that follow.* · **nouvelle**
+  *There's a word in the Quran… God explains it Himself… in the two verses that follow.*
 - وفي نفس المكان… كتب علاجها.  
-  *And right there… He wrote its cure.* · **nouvelle**
+  *And right there… He wrote its cure.* · promesse, tenue par « الصلاة »
 
-**0:09** · **Versets récités d'une traite** · Al-Ma'arij 70:19-23 · 23 s · **sources proposées, à valider**  
-  ۞ إِنَّ ٱلْإِنسَـٰنَ خُلِقَ هَلُوعًا  
-  *Indeed, mankind was created anxious:*  
-  إِذَا مَسَّهُ ٱلشَّرُّ جَزُوعًا  
-  *When evil touches him, impatient,*  
-  وَإِذَا مَسَّهُ ٱلْخَيْرُ مَنُوعًا  
-  *And when good touches him, withholding [of it],*  
-  إِلَّا ٱلْمُصَلِّينَ  
-  *Except the observers of prayer -*  
-  ٱلَّذِينَ هُمْ عَلَىٰ صَلَاتِهِمْ دَآئِمُونَ  
-  *Those who are constant in their prayer*
+**verset 70:19-23, récité** (image : l'orage, puis le coffre fermé ; à « إلا المصلين », le tapis de prière à l'aube ; le mot en or)
 
-**0:32 · narration** (image : `meaning`) · d'après : sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/70:20/tafsirs/ar-tafseer-al-saddi) sur 70:20, source proposée ; sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/70:22/tafsirs/ar-tafseer-al-saddi) sur 70:22, source proposée ; sens d'après [Al-Tafsir al-Muyassar · التفسير الميسر](https://quran.com/70:19/tafsirs/ar-tafsir-muyassar) sur 70:19, source proposée · référence écrite à l'écran, jamais lue
+**narration · `meaning`** (image : les deux états : l'orage, le coffre fermé ; la référence écrite sous chaque réplique) · d'après : as-Sa'di et al-Muyassar sur 70:19-23 (référence écrite, jamais dite)
 - لو جاله شر… ينهار… ويقلب الدنيا.  
-  *When harm touches him… he falls apart… and turns the world upside down.* · **nouvelle**
+  *When harm touches him… he falls apart… and turns the world upside down.*
 - ولو جاله خير… يمسكه… وما يدّيش منه حد.  
-  *When good comes to him… he holds on to it… and gives none of it away.* · **nouvelle**
+  *When good comes to him… he holds on to it… and gives none of it away.*
 - وده طبع في الإنسان… إلا صنف واحد: اللي بيصلّوا… وثابتين على صلاتهم.  
-  *That is man's nature… except one kind: those who pray… and keep to their prayer.* · **nouvelle**
+  *That is man's nature… except one kind: those who pray… and keep to their prayer.*
 - دول لو جالهم خير… شكروا وادّوا. ولو جالهم شر… صبروا.  
-  *When good comes to them… they give thanks and give. When harm comes… they are patient.* · **nouvelle**
+  *When good comes to them… they give thanks and give. When harm comes… they are patient.* · as-Sa'di : référence écrite
 
-**0:54 · narration** (image : `salary`)
+**narration · `salary`** (image : un calendrier, une date entourée ; une enveloppe fermée)
 - زي واحد مرتبه اتأخر يومين… فقلب البيت.  
-  *Like someone whose salary is two days late… and turns the house upside down.* · **nouvelle**
+  *Like someone whose salary is two days late… and turns the house upside down.* · scène type
 - ولما نزل… مسكه… ومحدش شاف منه حاجة.  
-  *And when it comes in… he holds on to it… and nobody sees a thing of it.* · **nouvelle**
+  *And when it comes in… he holds on to it… and nobody sees a thing of it.* · scène type
 
-**1:02 · narration** (image : `cure`)
+**narration · `cure`** (image : le tapis de prière, la lumière qui monte)
 - الطبع ده في كل واحد فينا… والقرآن كتب علاجه في نفس المكان: الصلاة.  
-  *This nature is in each of us… and the Quran wrote its cure in the same place: prayer.* · **nouvelle**
+  *This nature is in each of us… and the Quran wrote its cure in the same place: prayer.* · tient la promesse du début
 - لما تلاقي نفسك بتنهار… أو إيدك ماسكة… ارجع لصلاتك.  
-  *When you find yourself falling apart… or tight-fisted… go back to your prayer.* · **nouvelle**
+  *When you find yourself falling apart… or tight-fisted… go back to your prayer.*
 
-**1:14 · narration** (image : `three`)
-- كلمة بتعدّ المصايب… وتلاتة في نواة التمرة… وكلمة جه علاجها معاها.  
-  *A word that counts misfortunes… three in a date stone… and a word that came with its cure.* · **nouvelle**
-- تابعنا عشان الكلمة الجاية.  
-  *Follow us for the next word.* · **nouvelle**
+**narration · `next`** (image : le mot suivant, voilé)
+- تابعنا عشان تعرف الكلمة اللي جاية.  
+  *Follow us to find out the next word.* · la phrase du propriétaire (2026-11-13), à confirmer avant la voix

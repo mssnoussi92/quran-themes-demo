@@ -55,10 +55,11 @@ segments:
         en: "This nature is in each of us… and the Quran wrote its cure in the same place: prayer."
       - ar: "لما تلاقي نفسك بتنهار… أو إيدك ماسكة… ارجع لصلاتك."
         en: "When you find yourself falling apart… or tight-fisted… go back to your prayer."
-  - narration: three
-    scene: three
+  # Le propriétaire (2026-11-13) : la fin ne résume plus la série (« تلات كلمات… »), qui aura d'autres épisodes ; chaque
+  # épisode tient seul et annonce le suivant s'il est connu, sinon une phrase générique, la sienne. Changée après sa
+  # validation du script : à confirmer avant la voix.
+  - narration: next
+    scene: next
     lines:
-      - ar: "كلمة بتعدّ المصايب… وتلاتة في نواة التمرة… وكلمة جه علاجها معاها."
-        en: "A word that counts misfortunes… three in a date stone… and a word that came with its cure."
-      - ar: "تابعنا عشان الكلمة الجاية."
-        en: "Follow us for the next word."
+      - ar: "تابعنا عشان تعرف الكلمة اللي جاية."
+        en: "Follow us to find out the next word."
