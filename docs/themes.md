@@ -15,7 +15,7 @@ améliorés, ambiance. Leurs sources et leurs lectures de hadith, validées, res
 | Moussa et al-Khadir (`khidr`) | **fait** : film de 7:47 et trois shorts (`content/trial/film.yaml`, `boat`, `boy`, `wall`), tout validé le 2026-11-11 |
 | Du'a (`dua`) | **fait** : film et trois shorts (`content/trial/dua.yaml`, `asked`, `written`, `waited`), vidéos et textes à coller validés le 2026-11-11 |
 | Dhul-Qarnayn (`qarnayn`) | **fait** : film de 8:24 et trois shorts (`content/trial/qarnayn.yaml`, `west`, `tribute`, `barrier`), vidéos et textes à coller validés le 2026-11-12 ; fiche ci-dessous |
-| Les gens de la caverne (`kahf`) | à réécrire ; une histoire, le format où le modèle est éprouvé |
+| Les gens de la caverne (`kahf`) | **choisi pour le 30 novembre** (2026-11-13) ; fiche dans le modèle plus bas, script après les premières mesures |
 | Patience, repentir, comparaisons, confiance en Dieu, الخشوع | à réécrire ; idées reçues, sur le modèle du du'a (chaque idée brisée par un fait du Coran qu'on peut montrer) |
 
 **Ordre** : la session proposait Dhul-Qarnayn, puis la caverne, puis les idées reçues une fois les outils
@@ -527,6 +527,32 @@ Faits des accroches vérifiés le 2026-11-13 (quran.ai : tafsirs et concordance 
 | **« حكاية حكاها النبي ﷺ »** | une histoire racontée par le Prophète ﷺ, un short chacune | l'homme qui abreuve un chien assoiffé (Bukhari 2363) ; la femme et le chien (Bukhari 3467) ; le marchand qui faisait grâce aux débiteurs (Bukhari 2078) ; l'homme qui demande qu'on le brûle par crainte de Dieu (Bukhari 3481) ; les trois hommes de la grotte (Bukhari 2272) | le format éprouvé : une histoire | le hadith porte l'histoire : une lecture humaine par short à trouver, et la narration ne peut pas redire ses mots |
 | « آية لكل موقف » (déconseillée) | un verset pour un moment de vie (l'angoisse, l'injustice) | — | — | s'ouvre sur une question générale sur la vie du spectateur : l'accroche qui a perdu trois spectateurs sur quatre (khidr-01) |
 
+**Décision du propriétaire (2026-11-13, « go with your recommendations »)** : les gens de la caverne pour le 30 novembre
+(fiche plus bas) ; « كلمة من القرآن » est la troisième série, lancée quand une place s'ouvre, son script pilote écrit
+maintenant sans voix (`docs/scripts/kalima.md`, à valider) ; « سمعوا الآية… » rangée comme variante de « آية وحكايتها » ;
+« سورة اسمها… » et « حكاية حكاها النبي ﷺ » gardées en réserve ; « آية لكل موقف » écartée.
+
+### « كلمة من القرآن » : la fiche (session, 2026-11-13)
+
+- **Ce qu'est un épisode** : un mot rare du Coran ; son sens le plus étonnant en première image, le mot écrit en or ;
+  le verset récité (le mot y est dit pour la première fois, par le récitateur : la voix de synthèse ne le dit jamais,
+  c'est un mot du Coran) ; son sens d'après un tafsir nommé ; ce qu'on ne voit pas ; un exemple de vie ; la phrase à
+  retenir ; le mot suivant annoncé.
+- **Le pilote** : كَنُود (100:1-8 : le serment sur les chevaux, puis le mot ; Ibn Kathir, d'après al-Hasan, et as-Sa'di),
+  قِطْمِير (35:13 : la nuit et le jour, le soleil et la lune, puis la peau du noyau de datte ; al-Muyassar, Ibn Kathir),
+  هَلُوعًا (70:19-23 : le mot expliqué par les deux versets suivants, et l'exception, « إلا المصلين » ; as-Sa'di,
+  al-Muyassar). Durées estimées 1:39, 1:31, 1:25 ; un quart à un tiers récité. En réserve : نقير (4:53, 4:124) et
+  فتيل (4:49), les deux autres mots du noyau de datte (al-Muyassar).
+- **L'image** : le modèle (un clip filmé, des silhouettes dessinées : des chevaux sans cavalier, un noyau de datte, le
+  soleil et la lune, un tapis de prière, personne) et, en plus, le mot en grand, en or, sur la première image et pendant
+  son sens (un `OVERLAYS` de la série, comme la frise de « سنريهم آياتنا »).
+- **À faire après la validation du script** : les 14 versets et 6 passages de tafsir au registre, trois coupes de
+  récitation (100:1-8, 35:13, 70:19-23), trois clips à montrer (le désert à l'aube avec de la poussière, un ciel de la
+  nuit au jour, un ciel d'orage qui s'éclaircit), les dessins (`video/src/trial/Kalima.tsx`), trois ambiances ; trois
+  requêtes de voix.
+- **Quand** : pas dans la grille actuelle (elle n'a plus de place) ; prête pour le jour où une série cède la sienne, ou
+  après le 12 décembre.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
@@ -661,6 +687,42 @@ l'épisode entier dure environ deux fois sa récitation (khidr et qarnayn), esti
 deux histoires comptent pour un) :
 الخشوع (`misconceptions`, choisi), les gens de la caverne, « دعوات في الشدة » (`collection`), الشكر (Bukhari 3464),
 l'homme aux deux jardins (`two-paths`), الإخلاص (Bukhari 2272), puis le reste ; Youssouf plus tard en série.
+
+### Fiche : les gens de la caverne dans le modèle (skill `choose-format`, 2026-11-13)
+
+**Choix du propriétaire (2026-11-13, « go with your recommendations »)** : l'histoire du lundi 30 novembre, la dernière
+d'Al-Kahf après Moussa et al-Khadir et Dhul-Qarnayn. Le script s'écrit après les premières mesures (vers le 18 novembre,
+pour que les débuts en profitent), la production du 19 au 26.
+
+**Ce qu'est l'épisode publié** (`content/episodes/kahf.yaml`, papier découpé, 8:48) : ses sources sont validées et
+restent (13 versets, Muslim 809a et Bukhari 6324 avec leurs lectures), et ses versets sont déjà coupés dans la
+récitation. Ce qui ne passe pas tel quel : des silhouettes de gens dans ses scènes de vie (le modèle ne dessine
+personne), la narration qui raconte puis récite, un premier reel qui ne fait qu'installer.
+
+**Durées de récitation** (coupes du dépôt) : 18:9, 9 s ; 18:10, 14 s ; 18:13, 13 s ; 18:14, 25 s ; 18:16, 21 s ;
+18:17, 31 s ; 18:18, 27 s ; 18:19, 47 s ; 18:20, 16 s ; 18:21, 34 s ; 18:22, 39 s ; 18:25, 8 s ; 18:26, 21 s.
+
+**Recommandé : trois shorts, un par moment du refuge, et le film qui les relie.**
+
+| Short | Le fait qui l'ouvre | Versets (récitation) | La leçon | Ce qui est dessiné (des lieux, des choses) |
+| --- | --- | --- | --- | --- |
+| 1. La fuite | des jeunes quittent leur ville et s'enferment dans une caverne, et ne demandent qu'une chose | 18:10, 18:14, 18:16 (61 s) | quand on est seul à croire, Dieu raffermit le cœur ; le lieu étroit choisi pour Lui s'ouvre en miséricorde | la ville au loin, une colline, l'entrée de la caverne au soir |
+| 2. Le sommeil | le soleil s'écarte d'eux à son lever et à son coucher ; on les croirait éveillés | 18:17-18 (57 s) | celui qui se réfugie en Dieu, Dieu prend soin du moindre détail | l'intérieur de la caverne, la lumière qui passe à droite puis à gauche sans toucher le fond, le chien couché à l'entrée |
+| 3. Le réveil | ils se réveillent et croient avoir dormi un jour ; c'était trois cent neuf ans | 18:19, 18:25 (55 s), Bukhari 6324 lu | chaque matin est un petit réveil : la du'a du réveil | la pièce d'argent, la ville ancienne, le soleil qui se lève |
+
+- **Ce qui distingue les parties** (lecture de la session) : choisir Dieu quand on est seul ; être gardé sans le savoir ;
+  se réveiller et voir que le temps était dans Sa main.
+- **Le film** ajoute : l'ouverture sur les trois images ; le cadre, Muslim 809a (les dix premiers versets d'Al-Kahf, où
+  l'histoire commence) et 18:9 ; la conclusion, 18:21 (pourquoi leur histoire a été montrée), 18:22 (leur nombre, qu'on
+  ne dispute pas : sa décision du 2026-11-09) et 18:26. Versets : 2:52 dans les shorts, 1:43 en plus dans le film,
+  soit 4:35 et un film d'environ 9:10, sous les dix minutes ; plus court sans 18:22 (39 s), à son choix.
+- **Ce que la session surveille** : les jeunes ne sont jamais dessinés (le chien peut l'être : un animal) ; rien hors
+  du texte (ni leur nombre, ni leurs noms, ni la ville, ni le roi, ni le nom du chien, ni le calcul des années) ;
+  rien de ce que Muslim 809a annonce n'est figuré.
+- **À faire** : trois ou quatre clips à chercher et à montrer (une colline et l'entrée d'une caverne au soir, l'intérieur
+  d'une caverne traversé d'un rayon, un lever de soleil sur des collines), trois dessins, trois ambiances (le vent à
+  l'entrée d'une caverne, le silence et les gouttes, les oiseaux du matin). **Voix** : quatre requêtes, une journée.
+  **Rendu** : workflow `film`.
 
 ## Choisis par le propriétaire (2026-11-07), dans l'ordre
 
