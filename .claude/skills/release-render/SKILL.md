@@ -192,6 +192,10 @@ uv run --with pyyaml python3 tools/trial/gallery.py --film film=<dir> --film dua
   republish over; send `index.html` and the media that changed, 64 MiB at most a call (`files.json` lists them).
 - The page says what is validated from the files (`validated`): never mark by hand. It only shows; the files to
   publish are the full ones (the draft release, or the conversation for the first film).
+- **The calendar** opens the page: read from `docs/retention/calendar.md` (the hour, the week's grid, the measures
+  routine, each dated row linked to its video's card), never typed in the tool; `--calendar none` leaves it out.
+  When the owner says what he published, strike its date in that file (`~~sam. 14 nov.~~`) and republish the page:
+  `index.html` alone, the media did not change. The page marks the next row itself, from the reader's date.
 
 ## 8. The owner's answer
 

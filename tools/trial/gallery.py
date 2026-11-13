@@ -16,6 +16,11 @@ it writes a folder, which a session publishes as a private page (skill release-r
 given, the last one first. Encoding is skipped for a preview newer than its video.
 --tall ID=MP4: the film in 9:16 (for Facebook), shown in its film's section with its Facebook text
 (`publish.out` of the film with « -9x16 », tools/trial/publish.py --tall); its release is given as --release ID-9x16=URL.
+--calendar MD: the publication calendar shown at the top of the page (default docs/retention/calendar.md; « none »: no
+calendar). Read from that file only, never typed here: the hour (« **L'heure : … ** »), the week's grid (its table under
+« ## La grille de la semaine »), the measures routine (« Le plus simple : … »), and each dated row of the table under
+« ## Le calendrier », linked to its video's card through the publication texts it names; a struck date (« ~~ ») is
+published. The next row to publish is marked by the page itself, from the reader's date.
 """
 from __future__ import annotations
 
@@ -36,6 +41,9 @@ ROOT = Path(__file__).resolve().parents[2]
 TRIAL = ROOT / "content" / "trial"
 MOST = 20 * 1024 * 1024 - 400_000        # bytes: a file of the page, under the 20 MiB a page may serve
 PLATFORMS = (("facebook", "Facebook"), ("instagram", "Instagram"), ("tiktok", "TikTok"), ("youtube", "YouTube"))
+CALENDAR = ROOT / "docs" / "retention" / "calendar.md"
+MONTHS = {"janv": 1, "févr": 2, "mars": 3, "avr": 4, "mai": 5, "juin": 6, "juil": 7, "août": 8, "sept": 9, "oct": 10,
+          "nov": 11, "déc": 12}
 
 
 def run(cmd: list[str]) -> str:
@@ -175,7 +183,7 @@ def film_data(film_id: str, folder: Path, out: Path, release: str | None, tall: 
                    "ok": all(k in (said.get("what") or []) for k in ("montage", "publish")), "on": str(said.get("on", said.get(True, "")))}
         print(f"  {slug}: {(media / (slug + '.mp4')).stat().st_size / 1e6:.1f} MB", flush=True)
     everyone = shorts if series else [film, *shorts]
-    return {"id": film_id, "series": series, "anchor": re.sub(r"[^a-z0-9]+", "-", film["publish"]["series"]["en"].lower()).strip("-"),
+    return {"id": film_id, "out": Path(film["publish"]["out"]).name, "series": series, "anchor": re.sub(r"[^a-z0-9]+", "-", film["publish"]["series"]["en"].lower()).strip("-"),
             "ar": film["publish"]["series"]["ar"], "en": film["publish"]["series"]["en"], "cards": cards, "release": release,
             "tall": upright,
             "videos_ok": all(s.get("validated") for s in everyone) and covers(everyone, "voice") and covers(everyone, "montage"),
@@ -210,7 +218,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 28px 16px 80px; display: flex
 h1, h2, h3 { margin: 0; text-wrap: balance; }
 h1 { font: 700 2rem/1.2 var(--body); letter-spacing: -0.01em; }
 .lede { color: var(--muted); max-width: 65ch; margin: 8px 0 0; }
-.summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin-top: 22px; }
+.summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
 .summary a { display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 10px;
   background: var(--card); color: inherit; text-decoration: none; }
 .summary a:hover, .summary a:focus-visible { border-color: var(--accent); }
@@ -254,6 +262,29 @@ figcaption { color: var(--muted); font-size: 0.82rem; overflow-wrap: anywhere; }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 pre { margin: 0; padding: 12px; font: 0.9rem/1.6 var(--body); white-space: pre-wrap; overflow-wrap: anywhere; unicode-bidi: plaintext; text-align: start; max-height: 320px; overflow-y: auto; }
 .notes { color: var(--muted); font-size: 0.85rem; margin: 0; }
+section.calendar { display: flex; flex-direction: column; gap: 14px; scroll-margin-top: 12px; }
+.calendar > header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
+.calendar h2 { font: 700 1.6rem/1.25 var(--body); }
+.hour, .routine { margin: 0; color: var(--muted); }
+.hour strong { color: var(--ink); }
+.routine { font-size: 0.92rem; max-width: 75ch; }
+.week { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; }
+.week li { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; }
+.week b { font-size: 0.85rem; color: var(--accent); }
+.week span { font-size: 0.92rem; }
+.days { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.day { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; gap: 4px 14px; align-items: center; background: var(--card);
+  border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; scroll-margin-top: 12px; }
+.day .date { font-weight: 600; font-variant-numeric: tabular-nums; }
+.day .what { display: flex; flex-direction: column; min-width: 0; }
+.day .on { color: var(--muted); font-size: 0.85rem; }
+.day .go { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; justify-content: flex-end; font-size: 0.88rem; }
+.day .go a { color: var(--accent); font-weight: 600; }
+.day.done { opacity: 0.6; }
+.day.done strong { text-decoration: line-through; text-decoration-thickness: 1px; }
+.day.next { border: 2px solid var(--accent); }
+.pill.next { color: var(--accent); }
+@media (max-width: 640px) { .day { grid-template-columns: minmax(0, 1fr); } .day .go { justify-content: flex-start; } }
 footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--line); padding-top: 16px; max-width: 75ch; }
 """
 
@@ -281,10 +312,98 @@ document.addEventListener('click', async (event) => {
     card.querySelectorAll('.block').forEach((b) => { b.hidden = b.dataset.platform !== tab.dataset.platform; });
   }
 });
+(() => {                                            // the next row to publish, from the reader's own date
+  const now = new Date();
+  const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  const next = [...document.querySelectorAll('.day:not(.done)')].find((row) => row.dataset.date >= today);
+  if (!next) return;
+  next.classList.add('next');
+  const pill = next.querySelector('.pill.next');
+  pill.textContent = next.dataset.date === today ? "Aujourd'hui" : 'Prochaine';
+  pill.hidden = false;
+})();
 document.addEventListener('play', (event) => {      // one video at a time
   document.querySelectorAll('video').forEach((v) => { if (v !== event.target) v.pause(); });
 }, true);
 """
+
+
+def table(text: str, heading: str) -> list[list[str]]:
+    """The rows of the first Markdown table under `## heading`, each a list of cells (header and rule left out)."""
+    _, found, rest = text.partition(f"\n## {heading}")
+    if not found:
+        return []
+    lines = [line for line in rest.split("\n## ", 1)[0].splitlines() if line.startswith("|")]
+    return [[cell.strip() for cell in line.strip().strip("|").split("|")] for line in lines[2:]]
+
+
+def calendar(path: Path, films: list[dict]) -> dict:
+    """The calendar of docs/retention/calendar.md, for the page: hour, grid, routine and dated rows with their cards."""
+    text = path.read_text(encoding="utf-8")
+    plain = lambda cell: re.sub(r"~~|\*\*|`", "", cell).strip()     # noqa: E731
+    first = re.search(r"\b(20\d\d)-\d\d-\d\d\b", text)
+    if not first:
+        sys.exit(f"error: {path}: no ISO date to take the calendar's year from")
+    year, before = int(first.group(1)), 0
+    hour = re.search(r"\*\*L'heure : (.+?)\*\*", text)
+    routine = re.search(r"Le plus simple : (.+?\.)(?=\s)", text, re.S)
+    by_texts = {f["out"]: f for f in films}
+    rows, texts_file = [], None
+    for cells in table(text, "Le calendrier"):
+        date, what, where, files, said = (cells + [""] * 5)[:5]
+        day = re.search(r"(\d{1,2}) (" + "|".join(MONTHS) + r")\.?", date)
+        if not day:
+            sys.exit(f"error: {path}: no date in « {date} »")
+        month = MONTHS[day.group(2)]
+        year += month < before                  # December, then January: the next year
+        before = month
+        links = []
+        for piece in said.split(";"):
+            named = re.search(r"`(publication-[^`]+\.md)`", piece)
+            if named and named.group(1).endswith("-9x16.md"):
+                film = by_texts.get(named.group(1).replace("-9x16.md", ".md"))
+                if film and film["tall"]:
+                    links.append(("Film vertical", film["tall"]["slug"]))
+                continue
+            texts_file = named.group(1) if named else texts_file
+            part = re.search(r"« (Le film|Short (\d+)) »", piece)
+            film = by_texts.get(texts_file)
+            if not part or not film:
+                continue
+            ending = "-film" if part.group(1) == "Le film" else f"-short-{part.group(2)}"
+            card = next((c for c in film["cards"] if c["slug"].endswith(ending)), None)
+            if card:
+                links.append(("Film 16:9" if card["wide"] else "Voir et copier", card["slug"]))
+        rows.append({"date": plain(date), "iso": f"{year}-{month:02d}-{int(day.group(1)):02d}", "what": plain(what),
+                     "where": plain(where).replace("les quatre", "les quatre plateformes"), "links": links,
+                     "done": date.startswith("~~"), "todo": "à faire" in files})
+    return {"hour": hour.group(1) if hour else None, "routine": " ".join(routine.group(1).split()) if routine else None,
+            "grid": [(plain(a), plain(b)) for a, b, *_ in table(text, "La grille de la semaine")], "rows": rows}
+
+
+ARABIC = re.compile(r"[\u0600-\u06ff\ufb50-\ufdff\ufe70-\ufeff]+(?:\s+[\u0600-\u06ff\ufb50-\ufdff\ufe70-\ufeff]+)*")
+
+
+def schedule(cal: dict) -> str:
+    # The Arabic inside a French line is isolated, or the words around it are reordered (« ١ » before the guillemet).
+    e = lambda text: ARABIC.sub(lambda m: f'<bdi dir="rtl" lang="ar">{m.group(0)}</bdi>', html.escape(text))  # noqa: E731
+    grid = "".join(f'<li><b>{e(day)}</b><span>{e(what)}</span></li>' for day, what in cal["grid"])
+    items = ""
+    for r in cal["rows"]:
+        links = " ".join(f'<a href="#{e(slug)}">{e(label)}</a>' for label, slug in r["links"])
+        state = ('<span class="pill good">Publié</span>' if r["done"] else '<span class="pill wait">À faire</span>' if r["todo"]
+                 else "")
+        items += (f'<li class="day{" done" if r["done"] else ""}" data-date="{r["iso"]}"><span class="date">{e(r["date"])}</span>'
+                  f'<span class="what"><strong>{e(r["what"])}</strong><span class="on">{e(r["where"])}</span></span>'
+                  f'<span class="go">{links}{state}<span class="pill next" hidden></span></span></li>')
+    hour = f'<p class="hour">Chaque publication à <strong>{e(cal["hour"])}</strong>.</p>' if cal["hour"] else ""
+    routine = f'<p class="routine">Mesures : {e(cal["routine"])}</p>' if cal["routine"] else ""
+    return f'''<section class="calendar" id="calendrier">
+  <header><h2>Le calendrier</h2>{hour}</header>
+  <ul class="week" aria-label="La grille de la semaine">{grid}</ul>
+  {routine}
+  <ol class="days">{items}</ol>
+</section>'''
 
 
 def pills(film: dict) -> str:
@@ -320,7 +439,7 @@ def card(c: dict) -> str:
         shown = f'<div class="pills">{state}</div><p class="meta">Le même film, monté comme ses shorts : même voix, même minutage. Fichier : {where}.</p>'
     else:
         shown = f'<figure><img src="media/{c["slug"]}.jpg" alt="{picture} : {e(c["en"])}" loading="lazy"><figcaption>{picture} : <code>{e(c["image"])}</code></figcaption></figure>'
-    return f'''<article class="{'wide' if c['wide'] else 'tall' if c.get('tall') else 'short'}">
+    return f'''<article id="{c['slug']}" class="{'wide' if c['wide'] else 'tall' if c.get('tall') else 'short'}">
   <div class="look">
     <h3 dir="rtl" lang="ar">{e(c["ar"])}<span dir="ltr" lang="en">{e(c["en"])}</span></h3>
     <video controls playsinline preload="none" poster="media/{c["slug"]}.jpg"><source src="media/{c["slug"]}.mp4" type="video/mp4"></video>
@@ -331,7 +450,7 @@ def card(c: dict) -> str:
 </article>'''
 
 
-def page(films: list[dict], made: str) -> str:
+def page(films: list[dict], made: str, cal: dict | None = None) -> str:
     e = html.escape
     summary = "".join(
         f'<a href="#{f["anchor"]}"><span class="ar" dir="rtl" lang="ar">{e(f["ar"])}</span><span class="en">{e(f["en"])} · {f"une série, {len(f['cards'])} shorts" if f["series"] else f"un film et {len(f['cards']) - 1} shorts" + (", le film en 9:16" if f["tall"] else "")}</span>{pills(f)}</a>'
@@ -362,9 +481,10 @@ def page(films: list[dict], made: str) -> str:
 <main>
   <div>
     <h1>Films et shorts à publier</h1>
-    <p class="lede">Chaque film et ses shorts : l'aperçu, la vignette ou la couverture, et les textes à coller sur chaque plateforme. L'aperçu est allégé pour cette page ; ce qui se publie, ce sont les fichiers nommés sous chaque vidéo.</p>
-    <nav class="summary" aria-label="Films">{summary}</nav>
+    <p class="lede">{'Le calendrier d’abord : ce qui se publie chaque jour, et ce qui est publié. Ensuite, chaque film et ses shorts' if cal else 'Chaque film et ses shorts'} : l'aperçu, la vignette ou la couverture, et les textes à coller sur chaque plateforme. L'aperçu est allégé pour cette page ; ce qui se publie, ce sont les fichiers nommés sous chaque vidéo.</p>
   </div>
+  {schedule(cal) if cal else ""}
+  <nav class="summary" aria-label="Films">{summary}</nav>
   {sections}
   <footer>Page refaite le {e(made)} par <code>tools/trial/gallery.py</code>. Les textes viennent de <code>tools/trial/publish.py</code> ; la voix de la narration est générée par IA et chaque description le dit. Une vidéo ou un texte marqué « à valider » attend votre mot.</footer>
 </main>
@@ -381,6 +501,7 @@ def main() -> int:
     p.add_argument("--tall", action="append", default=[], metavar="ID=MP4", help="the film in 9:16 (its release: --release ID-9x16=URL)")
     p.add_argument("--out", type=Path, default=ROOT / "build" / "gallery")
     p.add_argument("--date", help="the date written at the foot of the page (default: today)")
+    p.add_argument("--calendar", default=str(CALENDAR), metavar="MD", help="the publication calendar (« none »: no calendar)")
     args = p.parse_args()
     releases = dict(item.split("=", 1) for item in args.release)
     talls = {k: Path(v) for k, v in (item.split("=", 1) for item in args.tall)}
@@ -391,7 +512,8 @@ def main() -> int:
         films.append(film_data(film_id, Path(folder), args.out, releases.get(film_id), talls.get(film_id), releases.get(f"{film_id}-9x16")))
     from datetime import date
     args.out.mkdir(parents=True, exist_ok=True)
-    (args.out / "index.html").write_text(page(films[::-1], args.date or date.today().isoformat()), encoding="utf-8")
+    cal = None if args.calendar == "none" else calendar(Path(args.calendar), films)
+    (args.out / "index.html").write_text(page(films[::-1], args.date or date.today().isoformat(), cal), encoding="utf-8")
     files = sorted(args.out.rglob("*"))
     total = sum(f.stat().st_size for f in files if f.is_file())
     (args.out / "files.json").write_text(json.dumps([{"as": str(f.relative_to(args.out)), "bytes": f.stat().st_size} for f in files if f.is_file() and f.name != "files.json"], indent=1), encoding="utf-8")

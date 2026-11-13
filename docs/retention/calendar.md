@@ -59,7 +59,8 @@ partir du deuxième, c'est l'épisode d'avant.
 
 | Date | Quoi | Où | Fichiers | Texte (section de `docs/retention/…`) |
 | --- | --- | --- | --- | --- |
-| ~~ven. 13 nov.~~ | ~~Khidr, short 1 : la barque~~ (publié) | | | |
+| ~~jeu. 12 nov., soir~~ | ~~Moussa et al-Khadir : le film~~ | YouTube (16:9) ; Facebook (vertical) | `khidr-film-16x9-ambience.mp4`, `khidr-film-9x16.mp4` | `publication-moussa-khidr.md` : « Le film » ; `publication-moussa-khidr-9x16.md` |
+| ~~ven. 13 nov.~~ | ~~Khidr, short 1 : la barque~~ | les quatre | `khidr-short-1-boat-ambience.mp4`, `-tiktok-ambience`, `couverture-1-bateau.jpg` | `publication-moussa-khidr.md` : « Short 1 » |
 | sam. 14 nov. | Khidr, short 2 : le garçon | les quatre | `khidr-short-2-boy-ambience.mp4`, `-tiktok-ambience`, `couverture-2-garcon.jpg` | `publication-moussa-khidr.md` : « Short 2 » |
 | dim. 15 nov. | Khidr, short 3 : le mur | les quatre | `khidr-short-3-wall-ambience.mp4`, `-tiktok-ambience`, `couverture-3-mur.jpg` | « Short 3 » |
 | lun. 16 nov., soir | Du'a : le film | YouTube (16:9) ; Facebook (vertical) | releases `dua-candidate`, `dua-9x16-candidate` | `publication-dua.md` : « Le film » ; `publication-dua-9x16.md` |
@@ -81,7 +82,8 @@ partir du deuxième, c'est l'épisode d'avant.
 | sam. 12 déc. | « سنريهم آياتنا » 4 : l'embryon | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 4 » |
 | sam. 19 déc. | **« سنريهم آياتنا » 5** : la « آية الجاية » promise par le short 4 | les quatre | à faire | à faire |
 
-Les fichiers de Moussa et al-Khadir ne sont dans aucune release : ce sont ceux envoyés dans la conversation le
+Une ligne barrée est publiée : la session la barre quand le propriétaire le lui dit, et republie sa page, qui montre ce
+calendrier. Les fichiers de Moussa et al-Khadir ne sont dans aucune release : ce sont ceux envoyés dans la conversation le
 2026-11-12. Le film vertical de Moussa et al-Khadir est celui qui est sur Facebook. La grille commence le lundi 16 : les shorts 2
 et 3 de Moussa et al-Khadir la précèdent, le samedi et le dimanche.
 
