@@ -178,7 +178,8 @@ def generated(clip: dict, out: Path) -> None:
     """A clip ffmpeg draws: a vertical gradient with a faint grain. The grain is random noise on each frame, mixed
     over a few frames so that it drifts slowly instead of flickering; without it a gradient this dark is encoded
     in visible bands (8 bits leave only a few levels between the two colours). The gradient is computed on a strip
-    four pixels wide and enlarged: cheap, and the same on every ffmpeg."""
+    four pixels wide and enlarged: cheap, and the same on every ffmpeg. `setsar=1`: enlarging the strip keeps its
+    shape in the sample aspect ratio (1:270), which Remotion's compositor cannot read (a still timed out, 2026-11-12)."""
     kind = clip.get("kind")
     if kind not in GENERATED:
         sys.exit(f"error: no generated clip of kind « {kind} » (kinds: {', '.join(GENERATED)})")
@@ -188,7 +189,7 @@ def generated(clip: dict, out: Path) -> None:
     run("ffmpeg", "-loglevel", "error", "-y", "-f", "lavfi", "-i",
         f"color=c=black:s=4x1920:r=30:d={seconds},format=rgb24,"
         + ":".join(f"geq={c}='lerp({a},{b},Y/H)'" if i == 0 else f"{c}='lerp({a},{b},Y/H)'" for i, (c, a, b) in enumerate(zip("rgb", top, bottom)))
-        + ",scale=1080:1920:flags=neighbor,format=yuv420p,noise=alls=3:allf=t,tmix=frames=8",
+        + ",scale=1080:1920:flags=neighbor,setsar=1,format=yuv420p,noise=alls=3:allf=t,tmix=frames=8",
         "-an", "-c:v", "libx264", "-crf", "17", "-preset", "fast", "-pix_fmt", "yuv420p", "-r", "30", str(out))
     print(f"{out}: {seconds_of(out):.2f} s, generated ({kind}), 1080x1920, 30 fps; nothing to credit")
 

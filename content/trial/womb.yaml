@@ -42,15 +42,19 @@ segments:
       - ar: "طب القرآن… من ١٤٠٠ سنة… سمّى المرحلة دي بإيه؟"
         en: "So what did the Quran, 1,400 years ago… call this stage?"
   - verses: [quran.23.12, quran.23.13, quran.23.14]
-    scene: microscope
+    scene: lens
   - narration: word
     scene: leech
-    sources: [tafsir.ibn-kathir.23.14, tafsir.muyassar.23.14, science.carnegie-stage-11, science.ibn-kathir-1373]
+    sources: [tafsir.ibn-kathir.23.14, tafsir.muyassar.23.14]
     lines:
       - ar: "كلمة واحدة: علقة. ابن كثير قال: حمرا… على شكل العلقة… مستطيلة."
         en: "One word: 'alaqa. Ibn Kathir wrote: red… shaped like a leech… elongated."
       - ar: "والعلقة: الدودة اللي بتعيش في المية… وبتلزق وتمص الدم."
         en: "And the leech: the worm that lives in water… that clings and feeds on blood."
+  - narration: shape
+    scene: leech
+    sources: [science.carnegie-stage-11, science.ibn-kathir-1373]
+    lines:
       - ar: "وده شكل الجنين في أسبوعه الرابع: مستطيل… ولازق في رحم أمه، بياخد منه غذاه."
         en: "And that is the embryo in its fourth week: elongated… attached to its mother's womb, drawing its nourishment from it."
       - ar: "وابن كثير كتب الكلام ده من أكتر من ستمية سنة… من غير ميكروسكوب."

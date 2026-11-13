@@ -15,6 +15,7 @@ import { Call, Niche, Whale } from "./Dua";
 import { House, Land } from "./Home";
 import { Barrier, Chest, Cliffs, Dwellings } from "./Qarnayn";
 import { Village, Wall } from "./Wall";
+import { SIGNS_LAYOUTS, SIGNS_OVERLAYS, SIGNS_PICTURES } from "./Signs";
 
 loadFonts();
 
@@ -386,11 +387,12 @@ export const PICTURES: Record<string, Drawn> = {
   asked: AskedPicture, written: WrittenPicture, waited: WaitedPicture,
   west: WestPicture, tribute: TributePicture, barrier: BarrierPicture,
   caravan: CaravanPicture, duha: DuhaPicture, hope: HopePicture,
+  ...SIGNS_PICTURES,
 };
 
 /** What a short draws above its veil, under its texts, outside the slowly growing picture: a timeline, a badge,
  * anything that must not move. None by default; a short registers its own here. */
-export const OVERLAYS: Record<string, Drawn> = {};
+export const OVERLAYS: Record<string, Drawn> = { ...SIGNS_OVERLAYS };
 
 const hasLetter = (token: string) => /\p{L}/u.test(token);
 export const fit = (base: number, text: string, comfortable: number) => Math.round(base * Math.min(1, Math.sqrt(comfortable / Math.max(1, text.length))));
@@ -417,7 +419,7 @@ export const PORTRAIT: Layout = {
 /** A short that needs its texts elsewhere (a timeline above the picture, a narrower column) says so here: what it
  * gives is merged over PORTRAIT (`sub` and `credit` one level deeper, so that `sub: { top }` keeps the rest). */
 export type LayoutOverride = Omit<Partial<Layout>, "sub" | "credit"> & { sub?: Partial<Layout["sub"]>; credit?: Partial<Layout["credit"]> };
-export const LAYOUTS: Record<string, LayoutOverride> = {};
+export const LAYOUTS: Record<string, LayoutOverride> = { ...SIGNS_LAYOUTS };
 const layoutOf = (trial: string): Layout => {
   const own = LAYOUTS[trial];
   return own ? { ...PORTRAIT, ...own, sub: { ...PORTRAIT.sub, ...own.sub }, credit: { ...PORTRAIT.credit, ...own.credit } } : PORTRAIT;
