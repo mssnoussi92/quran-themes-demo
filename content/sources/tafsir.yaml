@@ -294,3 +294,133 @@
   validated_by: mssnoussi92
   notes: '« وفي أنفسهم وما اشتملت عليه من بديع آيات الله وعجائب صنعه » (épisode womb : la réplique du miroir)'
   text_ar: سَنُري هؤلاء المكذبين آياتنا من الفتوحات وظهور الإسلام على الأقاليم وسائر الأديان، وفي أقطار السموات والأرض، وما يحدثه الله فيهما من الحوادث العظيمة، وفي أنفسهم وما اشتملت عليه من بديع آيات الله وعجائب صنعه، حتى يتبين لهم من تلك الآيات بيان لا يقبل الشك أن القرآن الكريم هو الحق الموحَى به من رب العالمين. أو لم يكفهم دليلا على أن القرآن حق، ومَن جاء به صادق، شهادة الله تعالى؟ فإنه قد شهد له بالتصديق، وهو على كل شيء شهيد، ولا شيء أكبر شهادة من شهادته سبحانه وتعالى.
+- id: tafsir.muyassar.100.6
+  type: tafsir
+  ref: {edition: muyassar, surah: 100, ayah: 6}
+  url: https://quran.com/100:6/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/100:6
+    edition: Tafsir Muyassar
+    verses: ["100:6", "100:7", "100:8"]
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: '« إن الإنسان لِنعم ربه لَجحود » (épisode kanud : « الكلمة دي… معناها: ناكر لنعمة ربه »)'
+  text_ar: إن الإنسان لِنعم ربه لَجحود، وإنه بجحوده ذلك لمقر. وإنه لحب المال لشديد.
+- id: tafsir.ibn-kathir.100.6
+  type: tafsir
+  ref: {edition: ibn-kathir, surah: 100, ayah: 6}
+  url: https://quran.com/100:6/tafsirs/ar-tafsir-ibn-kathir
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/14/by_ayah/100:6
+    edition: Tafsir Ibn Kathir
+    verses: ["100:6"]
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: '« قال الحسن: هو الذي يعد المصائب، وينسى نعم ربه » (épisode kanud : le début ; le hadith d''Abou Oumama qu''il cite ensuite, il le dit faible : non employé)'
+  text_ar: "وقوله : ( إن الإنسان لربه لكنود ) هذا هو المقسم عليه ، بمعنى : أنه لنعم ربه لجحود كفور .\nقال ابن عباس ، ومجاهد ، وإبراهيم النخعي ، وأبو الجوزاء ، وأبو العالية ، وأبو الضحى ، وسعيد بن جبير ، ومحمد بن قيس ، والضحاك ، والحسن ، وقتادة ، والربيع بن أنس ، وابن زيد : الكنود : الكفور . قال الحسن : هو الذي يعد المصائب ، وينسى نعم ربه .\nوقال ابن أبي حاتم : حدثنا أبو كريب ، حدثنا عبيد الله ، عن إسرائيل ، عن جعفر بن الزبير ، عن القاسم ، عن أبي أمامة قال : قال رسول الله صلى الله عليه وسلم : ( إن الإنسان لربه لكنود ) قال : \" الكفور الذي يأكل وحده ، ويضرب عبده ، ويمنع رفده \" .\nورواه ابن أبي حاتم ، من طريق جعفر بن الزبير - وهو متروك - فهذا إسناد ضعيف . وقد رواه ابن جرير أيضا من حديث حريز بن عثمان ، عن حمزة بن هانئ ، عن أبي أمامة موقوفا ."
+- id: tafsir.saadi.100.7
+  type: tafsir
+  ref: {edition: saadi, surah: 100, ayah: 7}
+  url: https://quran.com/100:7/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/100:7
+    edition: السعدي Al-Sa'di
+    verses: ["100:7"]
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: '« إن الإنسان على ما يعرف من نفسه من المنع والكند لشاهد بذلك، لا يجحده ولا ينكره » (épisode kanud)'
+  text_ar: '{ وَإِنَّهُ عَلَى ذَلِكَ لَشَهِيدٌ } أي: إن الإنسان على ما يعرف من نفسه من المنع والكند لشاهد بذلك، لا يجحده ولا ينكره، لأن ذلك أمر بين واضح. ويحتمل أن الضمير عائد إلى الله تعالى أي: إن العبد لربه لكنود، والله شهيد على ذلك، ففيه الوعيد، والتهديد الشديد، لمن هو لربه كنود، بأن الله عليه شهيد.'
+- id: tafsir.muyassar.4.49
+  type: tafsir
+  ref: {edition: muyassar, surah: 4, ayah: 49}
+  url: https://quran.com/4:49/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/4:49
+    edition: Tafsir Muyassar
+    verses: ["4:49"]
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: '« مقدار الخيط الذي يكون في شق نواة التمرة » (épisode stone : فتيل)'
+  text_ar: ألم تعلم -أيها الرسول- أمر أولئك الذين يُثنون على أنفسهم وأعمالهم، ويصفونها بالطهر والبعد عن السوء؟ بل الله تعالى وحده هو الذي يثني على مَن يشاء مِن عباده، لعلمه بحقيقة أعمالهم، ولا يُنقَصون من أعمالهم شيئًا مقدار الخيط الذي يكون في شق نَواة التمرة.
+- id: tafsir.muyassar.4.124
+  type: tafsir
+  ref: {edition: muyassar, surah: 4, ayah: 124}
+  url: https://quran.com/4:124/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/4:124
+    edition: Tafsir Muyassar
+    verses: ["4:124"]
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: '« ولو كان مقدار النقرة في ظهر النواة » (épisode stone : نقير)'
+  text_ar: ومن يعمل من الأعمال الصالحة من ذكر أو أنثى، وهو مؤمن بالله تعالى وبما أنزل من الحق، فأولئك يدخلهم الله الجنة دار النعيم المقيم، ولا يُنْقَصون من ثواب أعمالهم شيئًا، ولو كان مقدار النقرة في ظهر النواة.
+- id: tafsir.muyassar.35.13
+  type: tafsir
+  ref: {edition: muyassar, surah: 35, ayah: 13}
+  url: https://quran.com/35:13/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/35:13
+    edition: Tafsir Muyassar
+    verses: ["35:13"]
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: '« ما يملكون من قطمير، وهي القشرة الرقيقة البيضاء تكون على النواة » (épisode stone : قطمير)'
+  text_ar: واللهُ يدخل من ساعات الليل في النهار، فيزيد النهار بقَدْر ما نقص من الليل، ويُدخل من ساعات النهار في الليل، فيزيد الليل بقَدْر ما نقص من النهار، وذلل الشمس والقمر، يجريان لوقت معلوم، ذلكم الذي فعل هذا هو الله ربكم له الملك كله، والذين تعبدون من دون الله ما يملكون مِن قطمير، وهي القشرة الرقيقة البيضاء تكون على النَّواة.
+- id: tafsir.ibn-kathir.35.13
+  type: tafsir
+  ref: {edition: ibn-kathir, surah: 35, ayah: 13}
+  url: https://quran.com/35:13/tafsirs/ar-tafsir-ibn-kathir
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/14/by_ayah/35:13
+    edition: Tafsir Ibn Kathir
+    verses: ["35:13"]
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: '« القطمير: هو اللفافة التي تكون على نواة التمرة » (épisode stone : قطمير)'
+  text_ar: "وهذا أيضا من قدرته التامة وسلطانه العظيم ، في تسخيره الليل بظلامه والنهار بضيائه ، ويأخذ من طول هذا فيزيده في قصر هذا فيعتدلان . ثم يأخذ من هذا في هذا ، فيطول هذا ويقصر هذا ، ثم يتقارضان صيفا وشتاء ، ( وسخر الشمس والقمر ) أي : والنجوم السيارات ، والثوابت الثاقبات بأضوائهن أجرام السماوات ، الجميع يسيرون بمقدار معين ، وعلى منهاج مقنن محرر ، تقديرا من عزيز عليم .\n( كل يجري لأجل مسمى ) أي : إلى يوم القيامة .\n( ذلكم الله ربكم ) أي : الذي فعل هذا هو الرب العظيم ، الذي لا إله غيره ، ( والذين تدعون من دونه ) أي : من الأنداد والأصنام التي هي على صورة من تزعمون من الملائكة المقربين ، ( ما يملكون من قطمير ) .\nقال ابن عباس ، ومجاهد ، وعكرمة ، وعطاء وعطية العوفي ، والحسن ، وقتادة وغيرهم : القطمير : هو اللفافة التي تكون على نواة التمرة ، أي : لا يملكون من السماوات والأرض شيئا ، ولا بمقدار هذا القطمير ."
+- id: tafsir.muyassar.70.19
+  type: tafsir
+  ref: {edition: muyassar, surah: 70, ayah: 19}
+  url: https://quran.com/70:19/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/70:19
+    edition: Tafsir Muyassar
+    verses: ["70:19", "70:20", "70:21", "70:22", "70:23", "70:24", "70:25", "70:26", "70:27", "70:28"]
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: '« إذا أصابه المكروه والعسر فهو كثير الجزع… وإذا أصابه الخير واليسر فهو كثير المنع… إلا المقيمين للصلاة » (épisode haluu)'
+  text_ar: إن الإنسان جُبِلَ على الجزع وشدة الحرص، إذا أصابه المكروه والعسر فهو كثير الجزع والأسى، وإذا أصابه الخير واليسر فهو كثير المنع والإمساك، إلا المقيمين للصلاة الذين يحافظون على أدائها في جميع الأوقات، ولا يَشْغَلهم عنها شاغل، والذين في أموالهم نصيب معيَّن فرضه الله عليهم، وهو الزكاة لمن يسألهم المعونة، ولمن يتعفف عن سؤالها، والذين يؤمنون بيوم الحساب والجزاء فيستعدون له بالأعمال الصالحة، والذين هم خائفون من عذاب الله. إن عذاب ربهم لا ينبغي أن يأمنه أحد. والذين هم حافظون لفروجهم عن كل ما حرَّم الله عليهم، إلا على أزواجهم وإمائهم، فإنهم غير مؤاخذين.
+- id: tafsir.saadi.70.20
+  type: tafsir
+  ref: {edition: saadi, surah: 70, ayah: 20}
+  url: https://quran.com/70:20/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/70:20
+    edition: السعدي Al-Sa'di
+    verses: ["70:20"]
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: '« وفسر الهلوع بأنه: إذا مسه الشر جزوعا » (épisode haluu : le mot expliqué par les versets suivants)'
+  text_ar: 'وفسر الهلوع بأنه: { إِذَا مَسَّهُ الشَّرُّ جَزُوعًا } فيجزع إن أصابه فقر أو مرض، أو ذهاب محبوب له، من مال أو أهل أو ولد، ولا يستعمل في ذلك الصبر والرضا بما قضى الله.'
+- id: tafsir.saadi.70.22
+  type: tafsir
+  ref: {edition: saadi, surah: 70, ayah: 22}
+  url: https://quran.com/70:22/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/70:22
+    edition: السعدي Al-Sa'di
+    verses: ["70:22"]
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: '« فإنهم إذا مسهم الخير شكروا الله، وأنفقوا… وإذا مسهم الشر صبروا واحتسبوا » (épisode haluu)'
+  text_ar: '{ إِلَّا الْمُصَلِّينَ } الموصوفين بتلك الأوصاف فإنهم إذا مسهم الخير شكروا الله، وأنفقوا مما خولهم الله، وإذا مسهم الشر صبروا واحتسبوا.'

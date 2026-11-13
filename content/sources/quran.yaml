@@ -1899,3 +1899,259 @@
   notes: 'Fussilat 41:53 (« سنريهم آياتنا », la signature de la série : récité jusqu''au premier arrêt « ۗ », après « أنه الحق » ; le titre de la série en vient)'
   text_ar: سَنُرِيهِمْ ءَايَـٰتِنَا فِى ٱلْـَٔافَاقِ وَفِىٓ أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ ٱلْحَقُّ ۗ أَوَلَمْ يَكْفِ بِرَبِّكَ أَنَّهُۥ عَلَىٰ كُلِّ شَىْءٍ شَهِيدٌ
   text_en: We will show them Our signs in the horizons and within themselves until it becomes clear to them that it is the truth. But is it not sufficient concerning your Lord that He is, over all things, a Witness?
+- id: quran.100.1
+  type: ayah
+  ref: {surah: 100, ayah: 1}
+  url: https://quran.com/100/1
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=100:1
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=100:1
+    translator: Saheeh International
+    surah_ar: العاديات
+    surah_en: Al-'Adiyat
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Al-''Adiyat 100:1 (« كلمة من القرآن », épisode kanud)'
+  text_ar: وَٱلْعَـٰدِيَـٰتِ ضَبْحًا
+  text_en: By the racers, panting,
+- id: quran.100.2
+  type: ayah
+  ref: {surah: 100, ayah: 2}
+  url: https://quran.com/100/2
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=100:2
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=100:2
+    translator: Saheeh International
+    surah_ar: العاديات
+    surah_en: Al-'Adiyat
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Al-''Adiyat 100:2 (« كلمة من القرآن », épisode kanud)'
+  text_ar: فَٱلْمُورِيَـٰتِ قَدْحًا
+  text_en: And the producers of sparks [when] striking
+- id: quran.100.3
+  type: ayah
+  ref: {surah: 100, ayah: 3}
+  url: https://quran.com/100/3
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=100:3
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=100:3
+    translator: Saheeh International
+    surah_ar: العاديات
+    surah_en: Al-'Adiyat
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Al-''Adiyat 100:3 (« كلمة من القرآن », épisode kanud)'
+  text_ar: فَٱلْمُغِيرَٰتِ صُبْحًا
+  text_en: And the chargers at dawn,
+- id: quran.100.4
+  type: ayah
+  ref: {surah: 100, ayah: 4}
+  url: https://quran.com/100/4
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=100:4
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=100:4
+    translator: Saheeh International
+    surah_ar: العاديات
+    surah_en: Al-'Adiyat
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Al-''Adiyat 100:4 (« كلمة من القرآن », épisode kanud)'
+  text_ar: فَأَثَرْنَ بِهِۦ نَقْعًا
+  text_en: Stirring up thereby [clouds of] dust,
+- id: quran.100.5
+  type: ayah
+  ref: {surah: 100, ayah: 5}
+  url: https://quran.com/100/5
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=100:5
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=100:5
+    translator: Saheeh International
+    surah_ar: العاديات
+    surah_en: Al-'Adiyat
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Al-''Adiyat 100:5 (« كلمة من القرآن », épisode kanud)'
+  text_ar: فَوَسَطْنَ بِهِۦ جَمْعًا
+  text_en: Arriving thereby in the center collectively,
+- id: quran.100.6
+  type: ayah
+  ref: {surah: 100, ayah: 6}
+  url: https://quran.com/100/6
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=100:6
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=100:6
+    translator: Saheeh International
+    surah_ar: العاديات
+    surah_en: Al-'Adiyat
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Al-''Adiyat 100:6 (« كلمة من القرآن », épisode kanud : le mot كنود)'
+  text_ar: إِنَّ ٱلْإِنسَـٰنَ لِرَبِّهِۦ لَكَنُودٌ
+  text_en: Indeed mankind, to his Lord, is ungrateful.
+- id: quran.100.7
+  type: ayah
+  ref: {surah: 100, ayah: 7}
+  url: https://quran.com/100/7
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=100:7
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=100:7
+    translator: Saheeh International
+    surah_ar: العاديات
+    surah_en: Al-'Adiyat
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Al-''Adiyat 100:7 (« كلمة من القرآن », épisode kanud)'
+  text_ar: وَإِنَّهُۥ عَلَىٰ ذَٰلِكَ لَشَهِيدٌ
+  text_en: And indeed, he is to that a witness.
+- id: quran.100.8
+  type: ayah
+  ref: {surah: 100, ayah: 8}
+  url: https://quran.com/100/8
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=100:8
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=100:8
+    translator: Saheeh International
+    surah_ar: العاديات
+    surah_en: Al-'Adiyat
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Al-''Adiyat 100:8 (« كلمة من القرآن », épisode kanud)'
+  text_ar: وَإِنَّهُۥ لِحُبِّ ٱلْخَيْرِ لَشَدِيدٌ
+  text_en: And indeed he is, in love of wealth, intense.
+- id: quran.4.49
+  type: ayah
+  ref: {surah: 4, ayah: 49}
+  url: https://quran.com/4/49
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=4:49
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=4:49
+    translator: Saheeh International
+    surah_ar: النساء
+    surah_en: An-Nisa
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'An-Nisa'' 4:49 (« كلمة من القرآن », épisode stone : le mot فتيل)'
+  text_ar: أَلَمْ تَرَ إِلَى ٱلَّذِينَ يُزَكُّونَ أَنفُسَهُم ۚ بَلِ ٱللَّهُ يُزَكِّى مَن يَشَآءُ وَلَا يُظْلَمُونَ فَتِيلًا
+  text_en: Have you not seen those who claim themselves to be pure? Rather, Allāh purifies whom He wills, and injustice is not done to them, [even] as much as a thread [inside a date seed].
+- id: quran.4.124
+  type: ayah
+  ref: {surah: 4, ayah: 124}
+  url: https://quran.com/4/124
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=4:124
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=4:124
+    translator: Saheeh International
+    surah_ar: النساء
+    surah_en: An-Nisa
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'An-Nisa'' 4:124 (« كلمة من القرآن », épisode stone : le mot نقير)'
+  text_ar: وَمَن يَعْمَلْ مِنَ ٱلصَّـٰلِحَـٰتِ مِن ذَكَرٍ أَوْ أُنثَىٰ وَهُوَ مُؤْمِنٌ فَأُو۟لَـٰٓئِكَ يَدْخُلُونَ ٱلْجَنَّةَ وَلَا يُظْلَمُونَ نَقِيرًا
+  text_en: And whoever does righteous deeds, whether male or female, while being a believer - those will enter Paradise and will not be wronged, [even as much as] the speck on a date seed.
+- id: quran.35.13
+  type: ayah
+  ref: {surah: 35, ayah: 13}
+  url: https://quran.com/35/13
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=35:13
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=35:13
+    translator: Saheeh International
+    surah_ar: فاطر
+    surah_en: Fatir
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Fatir 35:13 (« كلمة من القرآن », épisode stone : le mot قطمير)'
+  text_ar: يُولِجُ ٱلَّيْلَ فِى ٱلنَّهَارِ وَيُولِجُ ٱلنَّهَارَ فِى ٱلَّيْلِ وَسَخَّرَ ٱلشَّمْسَ وَٱلْقَمَرَ كُلٌّ يَجْرِى لِأَجَلٍ مُّسَمًّى ۚ ذَٰلِكُمُ ٱللَّهُ رَبُّكُمْ لَهُ ٱلْمُلْكُ ۚ وَٱلَّذِينَ تَدْعُونَ مِن دُونِهِۦ مَا يَمْلِكُونَ مِن قِطْمِيرٍ
+  text_en: He causes the night to enter the day, and He causes the day to enter the night and has subjected the sun and the moon - each running [its course] for a specified term. That is Allāh, your Lord; to Him belongs sovereignty. And those whom you invoke other than Him do not possess [as much as] the membrane of a date seed.
+- id: quran.70.19
+  type: ayah
+  ref: {surah: 70, ayah: 19}
+  url: https://quran.com/70/19
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=70:19
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=70:19
+    translator: Saheeh International
+    surah_ar: المعارج
+    surah_en: Al-Ma'arij
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Al-Ma''arij 70:19 (« كلمة من القرآن », épisode haluu : le mot هلوعا)'
+  text_ar: ۞ إِنَّ ٱلْإِنسَـٰنَ خُلِقَ هَلُوعًا
+  text_en: 'Indeed, mankind was created anxious:'
+- id: quran.70.20
+  type: ayah
+  ref: {surah: 70, ayah: 20}
+  url: https://quran.com/70/20
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=70:20
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=70:20
+    translator: Saheeh International
+    surah_ar: المعارج
+    surah_en: Al-Ma'arij
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Al-Ma''arij 70:20 (« كلمة من القرآن », épisode haluu)'
+  text_ar: إِذَا مَسَّهُ ٱلشَّرُّ جَزُوعًا
+  text_en: When evil touches him, impatient,
+- id: quran.70.21
+  type: ayah
+  ref: {surah: 70, ayah: 21}
+  url: https://quran.com/70/21
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=70:21
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=70:21
+    translator: Saheeh International
+    surah_ar: المعارج
+    surah_en: Al-Ma'arij
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Al-Ma''arij 70:21 (« كلمة من القرآن », épisode haluu)'
+  text_ar: وَإِذَا مَسَّهُ ٱلْخَيْرُ مَنُوعًا
+  text_en: And when good touches him, withholding [of it],
+- id: quran.70.22
+  type: ayah
+  ref: {surah: 70, ayah: 22}
+  url: https://quran.com/70/22
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=70:22
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=70:22
+    translator: Saheeh International
+    surah_ar: المعارج
+    surah_en: Al-Ma'arij
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Al-Ma''arij 70:22 (« كلمة من القرآن », épisode haluu)'
+  text_ar: إِلَّا ٱلْمُصَلِّينَ
+  text_en: Except the observers of prayer -
+- id: quran.70.23
+  type: ayah
+  ref: {surah: 70, ayah: 23}
+  url: https://quran.com/70/23
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=70:23
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=70:23
+    translator: Saheeh International
+    surah_ar: المعارج
+    surah_en: Al-Ma'arij
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Al-Ma''arij 70:23 (« كلمة من القرآن », épisode haluu)'
+  text_ar: ٱلَّذِينَ هُمْ عَلَىٰ صَلَاتِهِمْ دَآئِمُونَ
+  text_en: Those who are constant in their prayer

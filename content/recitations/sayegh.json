@@ -210,6 +210,31 @@
       "match": 1.0,
       "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
     },
+    "4:49": {
+      "file": "004.mp3",
+      "start": 1468.05,
+      "end": 1481.43,
+      "seconds": 13.38,
+      "words": [
+        [1, 0.0, 0.38],
+        [2, 0.38, 0.8],
+        [3, 0.8, 1.1],
+        [4, 1.1, 1.94],
+        [5, 1.94, 3.02],
+        [6, 3.02, 4.78],
+        [7, 4.78, 5.38],
+        [8, 5.38, 6.02],
+        [9, 6.02, 7.04],
+        [10, 7.04, 7.34],
+        [11, 7.34, 9.48],
+        [12, 9.48, 10.14],
+        [13, 10.14, 11.42],
+        [14, 11.42, 13.38]
+      ],
+      "heard": "ألم تر إلى الذين يزكون أنفسهم بل الله يزكي من يشاء ولا يظلمون فتيلا",
+      "match": 1.0,
+      "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
+    },
     "4:110": {
       "file": "004.mp3",
       "start": 3094.29,
@@ -231,6 +256,33 @@
         [13, 13.82, 16.12]
       ],
       "heard": "ومن يعمل سوءا أو يظلم نفسه ثم يستغفر الله يجد الله غفورا رحيما",
+      "match": 1.0,
+      "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
+    },
+    "4:124": {
+      "file": "004.mp3",
+      "start": 3389.43,
+      "end": 3407.89,
+      "seconds": 18.46,
+      "words": [
+        [1, 0.0, 0.58],
+        [2, 0.58, 1.84],
+        [3, 1.84, 2.14],
+        [4, 2.14, 3.66],
+        [5, 3.66, 4.1],
+        [6, 4.1, 5.22],
+        [7, 5.22, 5.84],
+        [8, 5.84, 7.24],
+        [9, 7.24, 7.86],
+        [10, 7.86, 8.66],
+        [11, 8.66, 11.22],
+        [12, 11.22, 12.54],
+        [13, 12.54, 14.14],
+        [14, 14.14, 14.82],
+        [15, 14.82, 16.32],
+        [16, 16.32, 18.46]
+      ],
+      "heard": "ومن يعمل من الصالحات من ذكر أو أنثى وهو مؤمن فأولئك يدخلون الجنة ولا يظلمون نقيرا",
       "match": 1.0,
       "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
     },
@@ -2008,6 +2060,45 @@
       "match": 1.0,
       "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
     },
+    "35:13": {
+      "file": "035.mp3",
+      "start": 292.83,
+      "end": 324.11,
+      "seconds": 31.28,
+      "words": [
+        [1, 0.0, 0.72],
+        [2, 0.72, 1.46],
+        [3, 1.46, 1.76],
+        [4, 1.76, 3.08],
+        [5, 3.08, 5.42],
+        [6, 5.42, 6.68],
+        [7, 6.68, 6.98],
+        [8, 6.98, 8.2],
+        [9, 8.2, 9.5],
+        [10, 9.5, 10.36],
+        [11, 10.36, 11.42],
+        [12, 11.42, 12.3],
+        [13, 12.3, 13.76],
+        [14, 13.76, 14.66],
+        [15, 14.66, 17.34],
+        [16, 17.34, 18.52],
+        [17, 18.52, 19.18],
+        [18, 19.18, 20.62],
+        [19, 20.62, 21.06],
+        [20, 21.06, 21.96],
+        [21, 21.96, 23.36],
+        [22, 23.36, 24.4],
+        [23, 24.4, 24.86],
+        [24, 24.86, 26.3],
+        [25, 26.3, 26.9],
+        [26, 26.9, 28.24],
+        [27, 28.24, 28.76],
+        [28, 28.76, 31.28]
+      ],
+      "heard": "يولج الليل في النهار ويولج النهار في الليل وسخر الشمس والقمر كل يجري لأجل مسمى ذلك الله ربكم له الملك والذين تدعون من دونه ما يملكون من قطمير",
+      "match": 1.0,
+      "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
+    },
     "37:143": {
       "file": "037.mp3",
       "start": 892.25,
@@ -2355,6 +2446,80 @@
       "match": 1.0,
       "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
     },
+    "70:19": {
+      "file": "070.mp3",
+      "start": 86.93,
+      "end": 92.61,
+      "seconds": 5.68,
+      "words": [
+        [1, 0.0, 0.8],
+        [2, 0.8, 2.84],
+        [3, 2.84, 3.48],
+        [4, 3.48, 5.68]
+      ],
+      "heard": "إن الإنسان خلق هلوعا",
+      "match": 1.0,
+      "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
+    },
+    "70:20": {
+      "file": "070.mp3",
+      "start": 92.61,
+      "end": 96.71,
+      "seconds": 4.1,
+      "words": [
+        [1, 0.0, 0.44],
+        [2, 0.44, 1.32],
+        [3, 1.32, 1.9],
+        [4, 1.9, 4.1]
+      ],
+      "heard": "إذا مسه الشر جزوعا",
+      "match": 1.0,
+      "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
+    },
+    "70:21": {
+      "file": "070.mp3",
+      "start": 96.71,
+      "end": 100.19,
+      "seconds": 3.48,
+      "words": [
+        [1, 0.0, 0.6],
+        [2, 0.6, 1.44],
+        [3, 1.44, 2.2],
+        [4, 2.2, 3.48]
+      ],
+      "heard": "وإذا مسه الخير منوعاً",
+      "match": 1.0,
+      "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
+    },
+    "70:22": {
+      "file": "070.mp3",
+      "start": 100.19,
+      "end": 103.07,
+      "seconds": 2.88,
+      "words": [
+        [1, 0.0, 0.54],
+        [2, 0.54, 2.88]
+      ],
+      "heard": "إلا المصلين",
+      "match": 1.0,
+      "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
+    },
+    "70:23": {
+      "file": "070.mp3",
+      "start": 103.07,
+      "end": 109.71,
+      "seconds": 6.64,
+      "words": [
+        [1, 0.0, 0.86],
+        [2, 0.86, 1.28],
+        [3, 1.28, 1.66],
+        [4, 1.66, 2.76],
+        [5, 2.76, 6.64]
+      ],
+      "heard": "الذين هم على صلاتهم دائمون",
+      "match": 1.0,
+      "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
+    },
     "83:26": {
       "file": "083.mp3",
       "start": 147.03,
@@ -2554,6 +2719,126 @@
       "heard": "ووجدك عائلا فأغنى",
       "match": 1.0,
       "note": "start 27.46 s at -18 dB; end 34.04 s at -41 dB",
+      "method": "set by hand (envelope), words by Whisper"
+    },
+    "100:1": {
+      "file": "100.mp3",
+      "start": 3.45,
+      "end": 6.21,
+      "seconds": 2.76,
+      "words": [
+        [1, 0.0, 1.42],
+        [2, 1.42, 2.76]
+      ],
+      "heard": "والعاديات ضبحا فيها",
+      "match": 1.0,
+      "note": "0 word(s) heard before, 1 after; end 6.21 s at -31 dB",
+      "method": "set by hand (envelope), words by Whisper"
+    },
+    "100:2": {
+      "file": "100.mp3",
+      "start": 6.21,
+      "end": 9.03,
+      "seconds": 2.82,
+      "words": [
+        [1, 0.0, 1.74],
+        [2, 1.74, 2.82]
+      ],
+      "heard": "فالموريات قد حا",
+      "match": 1.0,
+      "note": "start 6.21 s at -31 dB; end 9.03 s at -34 dB",
+      "method": "set by hand (envelope), words by Whisper"
+    },
+    "100:3": {
+      "file": "100.mp3",
+      "start": 9.03,
+      "end": 11.93,
+      "seconds": 2.9,
+      "words": [
+        [1, 0.0, 1.44],
+        [2, 1.44, 2.9]
+      ],
+      "heard": "فالمغيرات صدحا",
+      "match": 1.0,
+      "note": "start 9.03 s at -34 dB; end 11.93 s at -34 dB",
+      "method": "set by hand (envelope), words by Whisper"
+    },
+    "100:4": {
+      "file": "100.mp3",
+      "start": 11.93,
+      "end": 14.47,
+      "seconds": 2.54,
+      "words": [
+        [1, 0.0, 0.78],
+        [2, 0.78, 1.12],
+        [3, 1.12, 2.54]
+      ],
+      "heard": "فأثرن به نقعا",
+      "match": 1.0,
+      "note": "start 11.93 s at -34 dB; end 14.47 s at -37 dB",
+      "method": "set by hand (envelope), words by Whisper"
+    },
+    "100:5": {
+      "file": "100.mp3",
+      "start": 14.47,
+      "end": 17.25,
+      "seconds": 2.78,
+      "words": [
+        [1, 0.0, 0.88],
+        [2, 0.88, 1.2],
+        [3, 1.2, 2.78]
+      ],
+      "heard": "فوسطن به جمعا",
+      "match": 1.0,
+      "note": "start 14.47 s at -37 dB; end 17.25 s at -33 dB",
+      "method": "set by hand (envelope), words by Whisper"
+    },
+    "100:6": {
+      "file": "100.mp3",
+      "start": 17.25,
+      "end": 22.29,
+      "seconds": 5.04,
+      "words": [
+        [1, 0.0, 0.72],
+        [2, 0.72, 2.28],
+        [3, 2.28, 3.32],
+        [4, 3.32, 5.04]
+      ],
+      "heard": "إن الإنسان لربه لكنود",
+      "match": 1.0,
+      "note": "start 17.25 s at -33 dB; end 22.29 s at -33 dB",
+      "method": "set by hand (envelope), words by Whisper"
+    },
+    "100:7": {
+      "file": "100.mp3",
+      "start": 22.29,
+      "end": 26.61,
+      "seconds": 4.32,
+      "words": [
+        [1, 0.0, 1.18],
+        [2, 1.18, 1.68],
+        [3, 1.68, 2.54],
+        [4, 2.54, 4.32]
+      ],
+      "heard": "وإنه على ذلك لشهيد",
+      "match": 1.0,
+      "note": "start 22.29 s at -33 dB; end 26.61 s at -35 dB",
+      "method": "set by hand (envelope), words by Whisper"
+    },
+    "100:8": {
+      "file": "100.mp3",
+      "start": 26.61,
+      "end": 31.25,
+      "seconds": 4.64,
+      "words": [
+        [1, 0.0, 1.14],
+        [2, 1.14, 1.94],
+        [3, 1.94, 2.7],
+        [4, 2.7, 4.64]
+      ],
+      "heard": "وإنه لحب الخير لشديد",
+      "match": 1.0,
+      "note": "start 26.61 s at -35 dB; end 31.25 s at -35 dB",
       "method": "set by hand (envelope), words by Whisper"
     },
     "111:1": {
