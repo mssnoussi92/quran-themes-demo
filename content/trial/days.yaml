@@ -26,8 +26,8 @@ publish:
   title: { en: "They say 365… I counted it myself", ar: "بيقولوا 365… عدّيتها بنفسي" }
   part: 5
   description:
-    en: "They say the word 'day' is in the Quran 365 times. In all its forms it comes 475 times. Most numbers that circulate are right, each under its own rule; no single rule makes them all hold. The challenge of the Quran is something else (17:88). Before you share a number about the Quran, count it."
-    ar: "بيقولوا كلمة «يوم» في القرآن 365 مرة، وهي بكل أشكالها 475. وأغلب الأرقام اللي بتتنشر صح، بس كل رقم بقاعدة. والتحدي اللي القرآن قاله حاجة تانية. قبل ما تنشر رقم عن القرآن، عِدّه، وشوف العلما بيقولوا إيه."
+    en: "They say 'day' is in the Quran 365 times; in all its forms it comes 475 times. Most numbers that circulate are right, each under its own rule, but no single rule makes them all hold. Before you share a number about the Quran, count it."
+    ar: "بيقولوا «يوم» في القرآن 365 مرة، وهي بكل أشكالها 475. وأغلب الأرقام اللي بتتنشر صح، بس كل رقم بقاعدة. قبل ما تنشر رقم عن القرآن، عِدّه، وشوف العلما بيقولوا إيه."
 segments:
   - narration: open
     scene: cards

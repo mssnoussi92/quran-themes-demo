@@ -536,25 +536,25 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 They say 365… I counted it myself
 بيقولوا 365… عدّيتها بنفسي
 
-They say the word 'day' is in the Quran 365 times. In all its forms it comes 475 times. Most numbers that circulate are right, each under its own rule; no single rule makes them all hold. The challenge of the Quran is something else (17:88). Before you share a number about the Quran, count it.
+They say 'day' is in the Quran 365 times; in all its forms it comes 475 times. Most numbers that circulate are right, each under its own rule, but no single rule makes them all hold. Before you share a number about the Quran, count it.
 
-بيقولوا كلمة «يوم» في القرآن 365 مرة، وهي بكل أشكالها 475. وأغلب الأرقام اللي بتتنشر صح، بس كل رقم بقاعدة. والتحدي اللي القرآن قاله حاجة تانية. قبل ما تنشر رقم عن القرآن، عِدّه، وشوف العلما بيقولوا إيه.
+بيقولوا «يوم» في القرآن 365 مرة، وهي بكل أشكالها 475. وأغلب الأرقام اللي بتتنشر صح، بس كل رقم بقاعدة. قبل ما تنشر رقم عن القرآن، عِدّه، وشوف العلما بيقولوا إيه.
 
 We Will Show Them Our Signs · 5 · سنريهم آياتنا · ٥
 
 Quoted:
-• Quranic Arabic Corpus (University of Leeds), Morphologie du Coran, mot par mot : le lemme يوم, corpus.quran.com ; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
-• Quranic Arabic Corpus (University of Leeds), Huit égalités qui circulent, comptées sous trois règles fixes (toutes les formes, le singulier, la racine), corpus.quran.com ; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
+• Quranic Arabic Corpus (University of Leeds), Morphology of the Quran, word by word: every form of يوم, counted, corpus.quran.com; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
+• Quranic Arabic Corpus (University of Leeds), Eight circulating claims, counted under three fixed rules (every form, the singular, the root), corpus.quran.com; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
 • Surah Al-Isra (17:88) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/17/88
 • Meaning after Al-Tafsir al-Muyassar (17:88) · https://quran.com/17:88/tafsirs/ar-tafsir-muyassar
-• Yvonne Yazbeck Haddad, Jane Idleman Smith, Mission to America: Five Islamic Sectarian Communities in North America (Rashad Khalifa), University Press of Florida, 1993, p. 141-160, 1993 · https://en.wikipedia.org/wiki/Rashad_Khalifa
+• Yvonne Yazbeck Haddad, Jane Idleman Smith, Mission to America: Five Islamic Sectarian Communities in North America (Rashad Khalifa), University Press of Florida, pp. 141-160, 1993 · https://en.wikipedia.org/wiki/Rashad_Khalifa
 • Surah Al-Baqarah (2:169) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/2/169
 • Meaning after Al-Tafsir al-Muyassar (2:169) · https://quran.com/2:169/tafsirs/ar-tafsir-muyassar
 • Meaning after Tafsir as-Sa'di (2:169) · https://quran.com/2:169/tafsirs/ar-tafseer-al-saddi
 • Surah Fussilat (41:53) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/41/53
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Ambience: BigSoundBank (Joseph Sardin)
+Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
@@ -567,25 +567,25 @@ Ambience: BigSoundBank (Joseph Sardin)
 They say 365… I counted it myself
 بيقولوا 365… عدّيتها بنفسي
 
-They say the word 'day' is in the Quran 365 times. In all its forms it comes 475 times. Most numbers that circulate are right, each under its own rule; no single rule makes them all hold. The challenge of the Quran is something else (17:88). Before you share a number about the Quran, count it.
+They say 'day' is in the Quran 365 times; in all its forms it comes 475 times. Most numbers that circulate are right, each under its own rule, but no single rule makes them all hold. Before you share a number about the Quran, count it.
 
-بيقولوا كلمة «يوم» في القرآن 365 مرة، وهي بكل أشكالها 475. وأغلب الأرقام اللي بتتنشر صح، بس كل رقم بقاعدة. والتحدي اللي القرآن قاله حاجة تانية. قبل ما تنشر رقم عن القرآن، عِدّه، وشوف العلما بيقولوا إيه.
+بيقولوا «يوم» في القرآن 365 مرة، وهي بكل أشكالها 475. وأغلب الأرقام اللي بتتنشر صح، بس كل رقم بقاعدة. قبل ما تنشر رقم عن القرآن، عِدّه، وشوف العلما بيقولوا إيه.
 
 We Will Show Them Our Signs · 5 · سنريهم آياتنا · ٥
 
 Quoted:
-• Quranic Arabic Corpus (University of Leeds), Morphologie du Coran, mot par mot : le lemme يوم, corpus.quran.com ; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
-• Quranic Arabic Corpus (University of Leeds), Huit égalités qui circulent, comptées sous trois règles fixes (toutes les formes, le singulier, la racine), corpus.quran.com ; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
+• Quranic Arabic Corpus (University of Leeds), Morphology of the Quran, word by word: every form of يوم, counted, corpus.quran.com; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
+• Quranic Arabic Corpus (University of Leeds), Eight circulating claims, counted under three fixed rules (every form, the singular, the root), corpus.quran.com; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
 • Surah Al-Isra (17:88) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/17/88
 • Meaning after Al-Tafsir al-Muyassar (17:88) · https://quran.com/17:88/tafsirs/ar-tafsir-muyassar
-• Yvonne Yazbeck Haddad, Jane Idleman Smith, Mission to America: Five Islamic Sectarian Communities in North America (Rashad Khalifa), University Press of Florida, 1993, p. 141-160, 1993 · https://en.wikipedia.org/wiki/Rashad_Khalifa
+• Yvonne Yazbeck Haddad, Jane Idleman Smith, Mission to America: Five Islamic Sectarian Communities in North America (Rashad Khalifa), University Press of Florida, pp. 141-160, 1993 · https://en.wikipedia.org/wiki/Rashad_Khalifa
 • Surah Al-Baqarah (2:169) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/2/169
 • Meaning after Al-Tafsir al-Muyassar (2:169) · https://quran.com/2:169/tafsirs/ar-tafsir-muyassar
 • Meaning after Tafsir as-Sa'di (2:169) · https://quran.com/2:169/tafsirs/ar-tafseer-al-saddi
 • Surah Fussilat (41:53) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/41/53
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Ambience: BigSoundBank (Joseph Sardin)
+Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
@@ -598,25 +598,25 @@ Ambience: BigSoundBank (Joseph Sardin)
 They say 365… I counted it myself
 بيقولوا 365… عدّيتها بنفسي
 
-They say the word 'day' is in the Quran 365 times. In all its forms it comes 475 times. Most numbers that circulate are right, each under its own rule; no single rule makes them all hold. The challenge of the Quran is something else (17:88). Before you share a number about the Quran, count it.
+They say 'day' is in the Quran 365 times; in all its forms it comes 475 times. Most numbers that circulate are right, each under its own rule, but no single rule makes them all hold. Before you share a number about the Quran, count it.
 
-بيقولوا كلمة «يوم» في القرآن 365 مرة، وهي بكل أشكالها 475. وأغلب الأرقام اللي بتتنشر صح، بس كل رقم بقاعدة. والتحدي اللي القرآن قاله حاجة تانية. قبل ما تنشر رقم عن القرآن، عِدّه، وشوف العلما بيقولوا إيه.
+بيقولوا «يوم» في القرآن 365 مرة، وهي بكل أشكالها 475. وأغلب الأرقام اللي بتتنشر صح، بس كل رقم بقاعدة. قبل ما تنشر رقم عن القرآن، عِدّه، وشوف العلما بيقولوا إيه.
 
 We Will Show Them Our Signs · 5 · سنريهم آياتنا · ٥
 
 Quoted:
-• Quranic Arabic Corpus (University of Leeds), Morphologie du Coran, mot par mot : le lemme يوم, corpus.quran.com ; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
-• Quranic Arabic Corpus (University of Leeds), Huit égalités qui circulent, comptées sous trois règles fixes (toutes les formes, le singulier, la racine), corpus.quran.com ; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
+• Quranic Arabic Corpus (University of Leeds), Morphology of the Quran, word by word: every form of يوم, counted, corpus.quran.com; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
+• Quranic Arabic Corpus (University of Leeds), Eight circulating claims, counted under three fixed rules (every form, the singular, the root), corpus.quran.com; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
 • Surah Al-Isra (17:88) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/17/88
 • Meaning after Al-Tafsir al-Muyassar (17:88) · https://quran.com/17:88/tafsirs/ar-tafsir-muyassar
-• Yvonne Yazbeck Haddad, Jane Idleman Smith, Mission to America: Five Islamic Sectarian Communities in North America (Rashad Khalifa), University Press of Florida, 1993, p. 141-160, 1993 · https://en.wikipedia.org/wiki/Rashad_Khalifa
+• Yvonne Yazbeck Haddad, Jane Idleman Smith, Mission to America: Five Islamic Sectarian Communities in North America (Rashad Khalifa), University Press of Florida, pp. 141-160, 1993 · https://en.wikipedia.org/wiki/Rashad_Khalifa
 • Surah Al-Baqarah (2:169) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/2/169
 • Meaning after Al-Tafsir al-Muyassar (2:169) · https://quran.com/2:169/tafsirs/ar-tafsir-muyassar
 • Meaning after Tafsir as-Sa'di (2:169) · https://quran.com/2:169/tafsirs/ar-tafseer-al-saddi
 • Surah Fussilat (41:53) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/41/53
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Ambience: BigSoundBank (Joseph Sardin)
+Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
@@ -635,25 +635,25 @@ They say 365… I counted it myself · بيقولوا 365… عدّيتها بن
 They say 365… I counted it myself
 بيقولوا 365… عدّيتها بنفسي
 
-They say the word 'day' is in the Quran 365 times. In all its forms it comes 475 times. Most numbers that circulate are right, each under its own rule; no single rule makes them all hold. The challenge of the Quran is something else (17:88). Before you share a number about the Quran, count it.
+They say 'day' is in the Quran 365 times; in all its forms it comes 475 times. Most numbers that circulate are right, each under its own rule, but no single rule makes them all hold. Before you share a number about the Quran, count it.
 
-بيقولوا كلمة «يوم» في القرآن 365 مرة، وهي بكل أشكالها 475. وأغلب الأرقام اللي بتتنشر صح، بس كل رقم بقاعدة. والتحدي اللي القرآن قاله حاجة تانية. قبل ما تنشر رقم عن القرآن، عِدّه، وشوف العلما بيقولوا إيه.
+بيقولوا «يوم» في القرآن 365 مرة، وهي بكل أشكالها 475. وأغلب الأرقام اللي بتتنشر صح، بس كل رقم بقاعدة. قبل ما تنشر رقم عن القرآن، عِدّه، وشوف العلما بيقولوا إيه.
 
 We Will Show Them Our Signs · 5 · سنريهم آياتنا · ٥
 
 Quoted:
-• Quranic Arabic Corpus (University of Leeds), Morphologie du Coran, mot par mot : le lemme يوم, corpus.quran.com ; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
-• Quranic Arabic Corpus (University of Leeds), Huit égalités qui circulent, comptées sous trois règles fixes (toutes les formes, le singulier, la racine), corpus.quran.com ; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
+• Quranic Arabic Corpus (University of Leeds), Morphology of the Quran, word by word: every form of يوم, counted, corpus.quran.com; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
+• Quranic Arabic Corpus (University of Leeds), Eight circulating claims, counted under three fixed rules (every form, the singular, the root), corpus.quran.com; quran-morphology.txt (github.com/mustafa0x/quran-morphology), 2011 · https://corpus.quran.com/
 • Surah Al-Isra (17:88) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/17/88
 • Meaning after Al-Tafsir al-Muyassar (17:88) · https://quran.com/17:88/tafsirs/ar-tafsir-muyassar
-• Yvonne Yazbeck Haddad, Jane Idleman Smith, Mission to America: Five Islamic Sectarian Communities in North America (Rashad Khalifa), University Press of Florida, 1993, p. 141-160, 1993 · https://en.wikipedia.org/wiki/Rashad_Khalifa
+• Yvonne Yazbeck Haddad, Jane Idleman Smith, Mission to America: Five Islamic Sectarian Communities in North America (Rashad Khalifa), University Press of Florida, pp. 141-160, 1993 · https://en.wikipedia.org/wiki/Rashad_Khalifa
 • Surah Al-Baqarah (2:169) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/2/169
 • Meaning after Al-Tafsir al-Muyassar (2:169) · https://quran.com/2:169/tafsirs/ar-tafsir-muyassar
 • Meaning after Tafsir as-Sa'di (2:169) · https://quran.com/2:169/tafsirs/ar-tafseer-al-saddi
 • Surah Fussilat (41:53) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/41/53
 
 Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-Ambience: BigSoundBank (Joseph Sardin)
+Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
