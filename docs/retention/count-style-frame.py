@@ -10,7 +10,7 @@ mustafa0x/quran-morphology, one word = one s:a:w). The verse and its translation
 saved beside the images (never typed):
   curl -s "https://api.quran.com/api/v4/verses/by_key/10:5?translations=20&fields=text_uthmani&words=true&word_fields=text_uthmani" -o <dir>/verse-10-5.json
 
-  python3 docs/retention/count-style-frame.py <dir> <quran-morphology.txt> && node docs/retention/style-frame-shot.js <dir> count-a count-b count-c count-d count-e
+  python3 docs/retention/count-style-frame.py <dir> <quran-morphology.txt> && node docs/retention/style-frame-shot.js <dir> count-a count-b count-c count-d count-e count-f
 """
 import collections
 import html
@@ -38,7 +38,8 @@ for line in MORPH.open(encoding="utf-8"):
     s, a, w, _ = map(int, loc.split(":"))
     f = feats.split("|")
     lemma = next((x[4:] for x in f if x.startswith("LEM:")), None)
-    segments[(s, a, w)].append((form, pos, lemma, f))
+    root = next((x[5:] for x in f if x.startswith("ROOT:")), None)
+    segments[(s, a, w)].append((form, pos, lemma, f, root))
 VERSES = sorted({(s, a) for s, a, _ in segments})
 assert len(VERSES) == 6236
 bare = lambda t: re.sub(r"[ً-ٰٟۖ-ۭ]", "", t)
@@ -68,6 +69,42 @@ in_akhira = {(s, a) for (s, a, _), v in segments.items() if any(x[2] == "آخِ�
 lit_all = {(s, a) for (s, a, _), c in yawm.items()}
 lit_kept = {(s, a) for (s, a, _), c in yawm.items() if c == 4}
 print(f"يوم {STEPS}, verses lit {len(lit_all)} then {len(lit_kept)}; الدنيا {dunya} الآخرة {akhira}")
+
+
+def tally(lemma=None, root=None, singular=False, feminine=False):
+    """Words of the Quran with this lemma (or root): every form, the singular only, the feminine only."""
+    n = 0
+    for word in segments.values():
+        for x in word:
+            if (lemma and x[2] == lemma) or (root and x[4] == root):
+                if singular and ({"MP", "FP", "MD", "FD"} & set(x[3])):
+                    continue
+                if feminine and not ({"F", "FS"} & set(x[3])):
+                    continue
+                n += 1
+                break
+    return n
+
+
+# The board: each claim of the videos that circulate, counted under three fixed rules. A pair is two words said equal.
+WORDS = {"يوم": ("يَوْم", "يوم", False), "شهر": ("شَهْر", "شهر", False), "الدنيا": ("دُنْيا", "دنو", False),
+         "الآخرة": ("آخِر", "أخر", True), "الملائكة": ("مَلَك", "ملك", False), "الشيطان": ("شَيْطان", "شطن", False),
+         "رجل": ("رَجُل", "رجل", False), "امرأة": ("امْرَأَت", "مرأ", False), "الصلاة": ("صَلاة", "صلو", False),
+         "الصبر": ("صَبْر", "صبر", False), "الليل": ("لَيْل", "ليل", False)}
+
+
+def three(word):
+    lemma, root, fem = WORDS[word]
+    return (tally(lemma=lemma, feminine=fem), tally(lemma=lemma, singular=True, feminine=fem),
+            tally(root=root) if not fem else tally(root=root))
+
+
+CLAIMS = [(("يوم",), 365), (("شهر",), 12), (("الدنيا", "الآخرة"), 115), (("الملائكة", "الشيطان"), 88),
+          (("رجل", "امرأة"), 24), (("الصلاة",), 99), (("الصبر",), 103), (("الليل",), 92)]
+BOARD = [(words, claim, list(zip(*[three(w) for w in words]))) for words, claim in CLAIMS]
+for words, claim, cells in BOARD:
+    print(" = ".join(words), claim, cells)
+assert [c for _, _, c in BOARD][1] == [(21,), (12,), (21,)] and [c for _, _, c in BOARD][4] == [(29, 26), (24, 24), (73, 38)]
 
 verse = json.loads((OUT / "verse-10-5.json").read_text(encoding="utf-8"))["verse"]
 words = [w["text_uthmani"] for w in verse["words"] if w.get("char_type_name", "word") == "word"]
@@ -207,6 +244,14 @@ svg {{ position: absolute; inset: 0; }}
 .verse {{ position: absolute; top: 560px; left: 60px; right: 60px; direction: rtl; text-align: center;
   font: 66px/1.95 'Amiri Quran'; text-shadow: 0 4px 26px rgba(0,0,0,.95); }}
 .ref {{ position: absolute; top: 470px; left: 0; right: 0; text-align: center; font: 700 36px Amiri; color: {GOLD}; }}
+.board {{ position: absolute; top: 470px; left: 40px; right: 40px; direction: rtl; border-collapse: collapse; }}
+.board th, .board td {{ padding: 14px 8px; text-align: center; border-bottom: 1px solid rgba(244,239,226,.12); }}
+.board th {{ font: 700 38px Amiri; color: {INK}; text-align: right; width: 300px; }}
+.board td {{ font: 34px Lora; color: {INK}; }}
+.board td.head {{ font: 700 30px Amiri; color: {INK}; opacity: .7; }}
+.board td.said {{ font: 700 36px Lora; color: {INK}; }}
+.board td.miss {{ opacity: .38; }}
+.board td.hit {{ color: {GOLD}; font-weight: 700; background: rgba(240,196,106,.14); border-radius: 12px; }}
 .recite {{ position: absolute; top: 1130px; left: 0; right: 0; text-align: center; font: 28px Amiri; color: {INK}; opacity: .75; }}
 """
 
@@ -223,11 +268,23 @@ CORPUS = "Quranic Arabic Corpus · corpus.quran.com"
 # 1. The first frame: the claim, shown as a claim (quoted, dashed, a question mark on it), never said by our voice
 CARD = (f'<rect x="150" y="560" width="780" height="520" rx="30" transform="rotate(-2.5 540 820)" fill="#060a18" fill-opacity=".92" '
         f'stroke="{GOLD}" stroke-opacity=".55" stroke-width="2" stroke-dasharray="10 8"/>')
-page("count-a", stars(160) + grid(790, faint=True) + CARD + number(str(365), 540, 800, 300),
+def back(x, y, w, h, angle, label):
+    """A claim card behind the front one: only its top shows, with its claim written on it."""
+    cx, cy = x + w / 2, y + h / 2
+    return (f'<g transform="rotate({angle} {cx} {cy})"><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="28" fill="#070c1d" '
+            f'stroke="{GOLD}" stroke-opacity=".4" stroke-width="2" stroke-dasharray="10 8"/>'
+            f'<text x="{cx}" y="{y + 44}" text-anchor="middle" direction="rtl" font-family="Amiri" font-weight="700" font-size="34" '
+            f'fill="{INK}" opacity=".85">{label}</text></g>')
+
+
+BACKS = (back(230, 465, 620, 480, -6, "بيقولوا: «الدنيا» و«الآخرة»… 115 و115") +
+         back(190, 575, 700, 500, 4, "بيقولوا: «شهر»… 12 مرة"))
+FRONT = CARD.replace('y="560"', 'y="650"').replace("rotate(-2.5 540 820)", "rotate(-2.5 540 910)")
+page("count-a", stars(160) + grid(790, faint=True) + BACKS + FRONT + number(str(365), 540, 890, 300),
      f'''{TOP}
-<div class="line">بيقولوا: «يوم» في القرآن 365 مرة…<br>زي أيام السنة. <span class="gold">أنا عدّيتها بنفسي.</span></div>
-<div class="claim"><div class="who">❝ بيقولوا</div><div class="what">مرة… زي أيام السنة</div></div><div class="stamp">؟</div>
-<div class="en" style="top:1545px">They say "day" appears 365 times in the Quran… like the days of the year. I counted it myself.</div>''')
+<div class="line" style="font-size:54px">بيقولوا: «يوم» في القرآن 365 مرة…<br>و«شهر» 12… و«الدنيا» قد «الآخرة»…<br><span class="gold">أنا عدّيتهم كلهم بنفسي.</span></div>
+<div class="claim" style="top:650px"><div class="who">❝ بيقولوا</div><div class="what">مرة… زي أيام السنة</div></div><div class="stamp" style="top:610px">؟</div>
+<div class="en" style="top:1545px">They say "day" is in the Quran 365 times… "month" 12… "this world" as often as "the hereafter"… I counted them all myself.</div>''')
 
 # 2. The count: every form of the word, every verse it is in lit on the grid
 page("count-b", stars(90) + number(str(STEPS[0]), 540, 640, 230) + grid(800, lit=lit_all) + rules(0),
@@ -265,4 +322,20 @@ page("count-e", stars(200) + moons(1330),
 <div class="verse">{shown}</div>
 <div class="recite">تلاوة: توفيق الصايغ</div>
 <div class="en" style="top:1420px;font-size:28px">{e(translation)}<br><span style="font-size:24px;opacity:.75">Saheeh International</span></div>''')
+# 6. The board: every claim under the same three rules; in gold, the rule that gives the number they say
+def cell(values, claim):
+    hit = all(v == claim for v in values)
+    text = " · ".join(str(v) for v in values)
+    return f'<td class="{"hit" if hit else "miss"}">{text}</td>'
+
+
+rows = "".join(f'<tr><th>{" = ".join(words)}</th><td class="said">{claim}</td>{"".join(cell(v, claim) for v in cells)}</tr>'
+               for words, claim, cells in BOARD)
+page("count-f", stars(120),
+     f'''{TOP}
+<div class="line">والباقيين؟ أغلبهم صح فعلًا…<br><span class="gold">بس كل واحد بقاعدة.</span></div>
+<table class="board"><tr><th></th><td class="head">بيقولوا</td><td class="head">كل الصيغ</td><td class="head">المفرد بس</td><td class="head">الجذر كله</td></tr>{rows}</table>
+<div class="caption" style="top:1410px">الدهبي: القاعدة اللي بتطلّع الرقم اللي بيقولوه · «يوم»: ولا قاعدة منهم</div>
+<div class="source" style="top:1452px">{CORPUS}</div>
+<div class="en" style="top:1520px">And the rest? Most are actually right… but each with its own rule.</div>''')
 print(OUT)

@@ -610,16 +610,18 @@ position s:a:w ; vérification sur le texte imlaei de quran.com pour قل, قا�
 | شهر 12 | le lemme : 21 mots dans 17 versets (la recherche de quran.ksu.edu.sa donne 17 : des versets) ; singulier : 12 | singulier seulement : tient |
 | الدنيا 115 = الآخرة 115 | lemme دنيا : 115 ; le féminin de آخر : 115 | tient, à règle égale (le lemme) |
 | الملائكة 88 = الشيطان 88 | lemme مَلَك : 88 (pluriel 73, singulier 13, duel 2) ; lemme شيطان : 88 | tient en comptant « ange » au singulier, au duel et au pluriel ; « الملائكة » seul : 73 |
-| رجل 24 = امرأة 24 | رجل au singulier : 24 (29 avec le duel) ; امرأة : 26 (25 sans le duel) | ne tient pas |
-| قل 332 = قالوا 332 | قل : 333 (texte de quran.com, avec و et ف ; 336 dans le corpus) ; قالوا : 329 | ne tient pas |
+| رجل 24 = امرأة 24 | رجل au singulier : 24 (29 avec le duel) ; امرأة (lemme امْرَأَت) au singulier : 24 (26 avec le duel) | tient au singulier (**corrigé le 2026-11-13** : le premier compte, « 25 sans le duel », avait pris aussi امْرُؤ, « un homme », 4:176) |
+| قل 332 = قالوا 332 | dans le corpus, par la forme grammaticale (impératif 2e masc. sing. de قالَ ; accompli 3e masc. plur.) : 332 et 332 | tient (**corrigé le 2026-11-13** : le premier compte, fait sur le texte, donnait 333 et 329) |
 | القرآن 70 = القيامة 70 ; عيسى 25 = آدم 25 ; القمر 27 ; جهنم 77 | 70 ; 70 ; 25 ; 25 ; 27 ; 77 | tiennent (lemme) |
-| الليل 92 (« et la sourate 92 est al-Layl ») | lemme ليل : 84 | 84 + ليلة 8 : deux mots additionnés |
+| الليل 92 (« et la sourate 92 est al-Layl ») | lemme ليل : 84 | toute la racine ليل (84 + ليلة 8) : 92 |
 | الصلاة 99 (« 99 noms de Dieu ») | lemme صلاة : 83 | toute la racine صلو (le verbe صلّى, مصلّين…) : 99 |
 | صبر 103 (« sourate 103 ») | lemme صبر : 15 | toute la racine : 103 |
 | نفع 50 = الفساد 50 | lemme فساد : 11 | toute la racine des deux : 50 et 50 |
 
 **Ce que ça montre** : la règle change d'une égalité à l'autre (un singulier, un lemme, une racine entière, deux mots
-additionnés, des formes écartées), elle est choisie après coup ; deux égalités ne tiennent même pas. Et même quand un
+additionnés, des formes écartées), elle est choisie après coup. **Recompté le 2026-11-13** (`count-style-frame.py`, le
+tableau des règles) : sauf يوم, chaque égalité tient sous une règle, mais pas la même ; une seule règle pour toutes, et la
+plupart tombent (le lemme : 2 sur 8 ; le singulier : 3 ; la racine : 3). Et même quand un
 compte tient, un auteur peut l'obtenir : ce n'est pas le défi du Coran (17:88, as-Sa'di : des gens de la langue et de
 l'éloquence n'ont pas pu en produire autant). Les mois du Coran sont lunaires (10:5, al-Muyassar : « وبالقمر تعرف الشهور
 والأعوام »). Le « code 19 » de Rashad Khalifa (publié de 1973 à 1982) l'a mené à retirer 9:128-129, qui « cassaient » son
@@ -656,7 +658,7 @@ corpus, le lemme, la règle), comme `science`.
 
 **L'épisode 5, « يوم 365 »** (`days` ; plan de la session, 2026-11-13 ; images de style validées,
 `docs/retention/count-style-yawm.jpg` ; **script écrit le 2026-11-13, refait le même soir à sa demande, à valider** : `docs/scripts/signs.md`,
-2:10 ; 17:88, 2:169 et la signature 41:53 ; sans 10:5 ni l'année lunaire ; la voix après « je valide le script ».
+2:22 dans sa troisième version (plusieurs affirmations et le tableau des règles, à sa demande) ; 17:88, 2:169 et la signature 41:53 ; sans 10:5 ni l'année lunaire ; la voix après « je valide le script ».
 Le tableau ci-dessous est le plan montré avec les images ; le script l'a changé) :
 
 | Temps | Ce qui se passe | Image |
