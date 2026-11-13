@@ -163,6 +163,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 74. **« النواة » partout** (propriétaire, 2026-11-13 : « on prend la kalima النواة partout, et نواة البلحة »). Dans le pilote de « كلمة من القرآن », « نواية » devient « النواة » dans les cinq répliques qui le disaient, et le titre et le début de l'épisode 2 disent « نواة البلحة… فيها تلات كلمات من القرآن » (lu ainsi : « نواة البلحة » remplace aussi « بلحة واحدة », comme ses deux rappels dans les épisodes 1 et 3). Inscrit comme refus (`content/wording.yaml`, `nawaya` ; skill `write-hook`). Avis donné : un mot d'arabe standard dans une ligne égyptienne, compris de tout le public de la page (du Maroc à l'Irak), et le mot du tafsir. Durées : 1:37, 2:04, 1:24.
 
+75. **« التمرة » au lieu de « البلحة »** (propriétaire, 2026-11-13 : « et si التمر peut remplacer بلحة, prends-le »). Les quatre « نواة البلحة » du pilote deviennent « نواة التمرة » (le mot d'al-Muyassar) ; le pilote ne dit plus « بلح ». Inscrit comme refus (`content/wording.yaml`, `balah` ; skill `write-hook`). Avis donné : oui ; en Égypte, « بلح » est la datte fraîche et « تمر » la datte sèche, et c'est bien de la datte sèche, avec son noyau, que parle le tafsir.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```

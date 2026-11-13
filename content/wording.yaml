@@ -63,5 +63,11 @@ refused:
   - id: nawaya
     # « نواية », « النواية », « نوايتها » : the Egyptian word for a date stone, in the pilot of « كلمة من القرآن ».
     patterns: ["(?:[وفبل]|ال|وال|بال|فال|لل)?نوايه", "(?:[وفبل]|ال|وال|بال|فال|لل)?نوايت[ا-ي]{0,3}"]
-    instead: "« النواة », « نواة البلحة »"
+    instead: "« النواة », « نواة التمرة »"
     why: "he chose the word (2026-11-13: « on prend la kalima النواة partout, et نواة البلحة ») after finding « نواية بلحة واحدة » difficult; our reading: النواة is understood by every Arabic speaker, as is the tafsir's word (al-Muyassar: نواة التمرة)"
+  - id: balah
+    # « بلحة », « البلحة », « البلح » : the Egyptian word for a date, in the pilot of « كلمة من القرآن ». A palm tree
+    # (« نخلة ») is another word and stays.
+    patterns: ["(?:[وفبل]|ال|وال|بال|فال|لل)?بلحه", "(?:[وفبل]|ال|وال|بال|فال|لل)?بلح"]
+    instead: "« التمرة », « التمر », « نواة التمرة »"
+    why: "he chose it (2026-11-13: « si التمر peut remplacer بلحة, prends-le »); our reading: التمر is the word of every Arabic speaker and of the tafsir (al-Muyassar: نواة التمرة), بلح is Egyptian and, there, the fresh date"

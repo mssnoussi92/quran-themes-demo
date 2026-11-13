@@ -543,9 +543,9 @@ maintenant sans voix (`docs/scripts/kalima.md`, à valider) ; « سمعوا ال
   sur son dos, la peau autour ; al-Muyassar, Ibn Kathir), qui remplacent le seul قطمير à la demande du propriétaire
   (2026-11-13, « l'épisode 2 à réécrire ») ; هَلُوعًا (70:19-23 : le mot expliqué par les deux versets suivants, et
   l'exception, « إلا المصلين » ; as-Sa'di, al-Muyassar). Durées estimées 1:37, 2:05, 1:23 ; l'épisode 2 est récité
-  pour moitié (trois versets, 1:03). Son titre et son début : « نواة البلحة… فيها تلات كلمات من القرآن » (« نواية بلحة
-  واحدة », jugé difficile par le propriétaire, remplacé le 2026-11-13 ; « النواة » partout, son choix ; « le reste est
-  good »). 4:124 commence par « وَمَن » : une phrase entière, pas une suite.
+  pour moitié (trois versets, 1:03). Son titre et son début : « نواة التمرة… فيها تلات كلمات من القرآن » (« نواية بلحة
+  واحدة », jugé difficile par le propriétaire, remplacé le 2026-11-13 ; « النواة » et « التمرة » partout, son choix ;
+  « le reste est good »). 4:124 commence par « وَمَن » : une phrase entière, pas une suite.
 - **Le tafsir n'est pas nommé par la narration** (propriétaire, 2026-11-13) : la réplique dit le sens, la référence
   s'écrit dessous (`content/wording.yaml`, `tafsir-named-in-narration`, et le skill `write-hook`). Les répliques validées
   de « سنريهم آياتنا » qui le nomment restent telles quelles.

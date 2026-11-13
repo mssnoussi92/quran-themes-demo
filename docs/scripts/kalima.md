@@ -3,9 +3,9 @@
 **Script pilote, à valider par le propriétaire.** Écrit par la session le 2026-11-13 (sa décision « go with your
 recommendations »), puis corrigé le même jour à sa demande : **l'épisode 2 réécrit** (les trois mots du noyau de datte
 au lieu du seul قطمير), **aucun tafsir nommé par la narration** (la référence s'écrit sous la réplique, à l'écran :
-`content/wording.yaml`, `tafsir-named-in-narration`), puis **« نواية بلحة واحدة » remplacé** (« difficile », 2026-11-13) et **« النواة » partout**, à son choix (« on prend
-la kalima النواة partout, et نواة البلحة ») : le titre et le début disent « نواة البلحة… فيها تلات كلمات من القرآن » ; sur
-le reste, son mot : « le reste est good ».
+`content/wording.yaml`, `tafsir-named-in-narration`), puis, à son choix, **« النواة » et « التمرة »** au lieu de « نواية » et « بلحة » (« نواية بلحة واحدة » trouvé difficile ;
+« on prend la kalima النواة partout » ; « si التمر peut remplacer بلحة, prends-le ») : le titre et le début de l'épisode 2
+disent « نواة التمرة… فيها تلات كلمات من القرآن ». Sur le reste, son mot : « le reste est good ».
 Aucune requête de voix avant son « je valide le script ». Toutes les répliques sont de la session ; celles qui sont un
 raisonnement de la session, et non un tafsir, ou une scène type, sont signalées. Les versets ne sont désignés que par leur
 référence : leur texte viendra du registre. Durées estimées (environ dix lettres par seconde, une demi-seconde à chaque
@@ -65,20 +65,20 @@ Environ **1:37** · 0:27 de récitation (100:1-8).
   *Tonight… before you tell what went wrong… name three blessings.* · tient la promesse du début
 
 **narration · `next`** (image : un noyau de datte, de près, en annonce)
-- دي كلمة عن الإنسان والنعمة… والجاية: نواة البلحة… فيها تلات كلمات من القرآن.  
+- دي كلمة عن الإنسان والنعمة… والجاية: نواة التمرة… فيها تلات كلمات من القرآن.  
   *That was a word about man and blessings… next: the date stone… holds three words of the Quran.*
 - تابعنا عشان الكلمة الجاية.  
   *Follow us for the next word.*
 
 
-## Épisode 2 · `stone` · نواة البلحة… فيها تلات كلمات من القرآن · The date stone… holds three words of the Quran (titre proposé) · **réécrit**
+## Épisode 2 · `stone` · نواة التمرة… فيها تلات كلمات من القرآن · The date stone… holds three words of the Quran (titre proposé) · **réécrit**
 
 Environ **2:04** · 1:03 de récitation (4:49, 4:124, 35:13).
 
 **L'image** : Un seul noyau de datte, de très près, sur un clip de palmeraie au soir ; à chaque verset, une de ses trois parties s'éclaire : le fil dans sa fente, le petit creux sur son dos, la fine peau blanche autour. Pendant 35:13, le soleil et la lune au-dessus.
 
 **narration · `stone`** (image : le noyau entier, les trois mots en or autour de lui ; la voix ne les dit jamais)
-- نواة البلحة… فيها تلات كلمات من القرآن.  
+- نواة التمرة… فيها تلات كلمات من القرآن.  
   *The date stone… holds three words of the Quran.*
 - واللي هتعرفه… هيخليك ما تستصغرش أي حاجة تعملها.  
   *And what you'll learn… will stop you from belittling anything you do.* · promesse, tenue par l'exemple et « ما تستصغرش »
@@ -161,7 +161,7 @@ Environ **1:24** · 0:23 de récitation (70:19-23).
   *When you find yourself falling apart… or tight-fisted… go back to your prayer.*
 
 **narration · `three`** (image : les mots de la série en or)
-- كلمة بتعدّ المصايب… وتلاتة في نواة البلحة… وكلمة جه علاجها معاها.  
+- كلمة بتعدّ المصايب… وتلاتة في نواة التمرة… وكلمة جه علاجها معاها.  
   *A word that counts misfortunes… three in a date stone… and a word that came with its cure.*
 - تابعنا عشان الكلمة الجاية.  
   *Follow us for the next word.*
