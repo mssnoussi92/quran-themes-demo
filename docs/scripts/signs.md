@@ -19,7 +19,7 @@ raconte davantage.
 | 2 | `universe` | 1:31 | 0:31 | 12 | 1 |
 | 3 | `sky` | 2:01 | 0:45 | 13 | 0 |
 | 4 | `womb` | 2:04 | 0:53 | 12 | 0 |
-| 5 | `days` (à valider) | 2:22 | 0:46 | 16 | 4 |
+| 5 | `days` | 2:24 | 0:46 | 16 | 4 |
 
 ## Épisode 1 · `lahab` · كلمة واحدة كانت هتكذّب القرآن · One sentence could have disproved the Quran (titre validé)
 
@@ -210,15 +210,17 @@ Environ **2:04** · 0:53 de récitation · 12 répliques, dont 0 de raisonnement
 **1:51 · narration** (image : un miroir (dessiné), puis la lumière douce) · d'après : « وفي أنفسهم » : [Al-Tafsir al-Muyassar](https://quran.com/41:53/tafsirs/16) sur 41:53 (« وفي أنفسهم وما اشتملت عليه من بديع آيات الله وعجائب صنعه ») · référence écrite à l'écran, jamais lue
 - بص في المراية… أول آية شفتها في حياتك… هي إنت.  
   *Look in the mirror… the first sign you ever saw… is you.* · **validée**
-- أربع آيات: راجل… وكون… وصدر… وجنين.  
-  *Four signs: a man… a universe… a chest… and an embryo.* · **validée (changée pour l'épisode 2, revalidée)**
+- ده كان عن جواك… الحلقة الجاية: رقم مشهور عن القرآن… عدّيته بنفسي.  
+  *That was about what is inside you… next: a famous number about the Quran… I counted it myself.* · **validée (2026-11-13 : remplace « أربع آيات: راجل… وكون… وصدر… وجنين. », qui résumait la série)**
 - تابعنا عشان الآية الجاية.  
   *Follow us for the next sign.* · **validée**
 
-## Épisode 5 · `days` · بيقولوا 365… عدّيتها بنفسي · They say 365… I counted it myself (à valider)
+## Épisode 5 · `days` · بيقولوا 365… عدّيتها بنفسي · They say 365… I counted it myself (validé)
 
-Environ **2:22** · 0:46 de récitation · 16 répliques, dont 4 de raisonnement de la session, une phrase du propriétaire et
-une validée par lui. **Troisième version, 2026-11-13, à valider** : plusieurs affirmations au lieu d'une, une seule
+Environ **2:24** · 0:46 de récitation · 16 répliques, dont 4 de raisonnement de la session, une phrase du propriétaire et
+une validée par lui. **Validé par le propriétaire le 2026-11-13** (« ajoute كلمة avant يوم dans la première réplique et la
+première image, et ajoute شوف العلماء بيقولوا إيه ou similaire ; je valide le reste et tu peux créer la vidéo » : ses deux
+ajouts faits, la réplique « «شهر» 12… » gardée). **Troisième version** : plusieurs affirmations au lieu d'une, une seule
 conclusion (sa demande : « on peut citer plus d'exemples, يوم, شهر…, la conclusion sera unique, et on peut jouer sur le
 graphique et le montage attirant dès le début »). Style validé : `docs/retention/count-style-yawm.jpg` ; les deux images
 nouvelles (la pile de cartes, le tableau des règles) : `docs/retention/count-style-yawm-board.jpg`. Les nombres sont
@@ -231,24 +233,24 @@ pour 17:88 ; les deux pastilles de 9:128-129 qui s'éteignent, puis reviennent ;
 Personne n'est dessiné ; rien de l'invisible.
 
 **0:00 · narration `open`** (image : la pile de cartes « ❝ بيقولوا » : 365 devant, en particules, avec son « ؟ » ; derrière, « شهر 12 » et « الدنيا و الآخرة 115 » ; elles défilent une à une, vite, comme dans les vidéos qui circulent)
-- بيقولوا: «يوم» في القرآن 365 مرة… و«شهر» 12… و«الدنيا» قد «الآخرة»… أنا عدّيتهم كلهم بنفسي.  
-  *They say "day" is in the Quran 365 times… "month" 12… "this world" as often as "the hereafter"… I counted them all myself.* · **nouvelle, à valider · le titre**
+- بيقولوا كلمة «يوم» في القرآن 365 مرة… و«شهر» 12… و«الدنيا» قد «الآخرة»… أنا عدّيتهم كلهم بنفسي.  
+  *They say the word "day" is in the Quran 365 times… "month" 12… "this world" as often as "the hereafter"… I counted them all myself.* · **validée · « كلمة » ajouté à sa demande · le titre**
 
 **0:10 · narration `days`** (image : la grille s'allume, le compteur monte jusqu'à 475 ; puis la bande avance, 475, 445, 375, 365, chaque forme retirée écrite dessous, et les versets retirés deviennent des anneaux vides) · d'après : le compte (lemme يوم : 475 mots dans 437 versets ; pluriel et duel 30, يومئذ 70, يومكم et يومهم 10) · source écrite à l'écran
 - «يوم»: عدّيتها بكل أشكالها… طلعت 475.  
-  *"Day": I counted it in all its forms… 475.* · **nouvelle, à valider**
+  *"Day": I counted it in all its forms… 475.* · **validée**
 - عشان تطلع 365… لازم تشيل 110… ليه دي تتعد… ودي لأ؟  
-  *For it to come out 365… you have to take away 110… why count this one… and not that one?* · **nouvelle, à valider · raisonnement de la session, signalé**
+  *For it to come out 365… you have to take away 110… why count this one… and not that one?* · **validée · raisonnement de la session, signalé**
 
 **0:23 · narration `board`** (image : le tableau se remplit ligne par ligne, les cases d'or s'allument, chacune dans une autre colonne ; puis une seule règle balaie toutes les lignes, colonne après colonne, et la plupart s'éteignent ; puis une page couverte de chiffres) · d'après : le compte (huit affirmations, trois règles fixes : toutes les formes, le singulier, la racine ; `count-style-frame.py`)
 - والباقيين؟ أغلبهم صح فعلًا… بس كل واحد بقاعدة.  
-  *And the rest? Most are actually right… but each with its own rule.* · **nouvelle, à valider**
+  *And the rest? Most are actually right… but each with its own rule.* · **validée**
 - «شهر» 12… لو عدّيت المفرد بس… و«الصلاة» 99… لو عدّيت الجذر كله.  
-  *"Month" is 12… if you count the singular only… and "prayer" is 99… if you count the whole root.* · **nouvelle, à valider**
+  *"Month" is 12… if you count the singular only… and "prayer" is 99… if you count the whole root.* · **validée**
 - ولو مشيت بقاعدة واحدة على الكل… أغلبهم يقع.  
-  *Apply one rule to them all… and most of them fall.* · **nouvelle, à valider · raisonnement de la session, signalé (le lemme : 2 sur 8 ; le singulier : 3 ; la racine : 3)**
+  *Apply one rule to them all… and most of them fall.* · **validée · raisonnement de la session, signalé (le lemme : 2 sur 8 ; le singulier : 3 ; la racine : 3)**
 - وكتاب عدد كلماته متظبط؟ أي حد يقدر يكتبه… التحدي اللي القرآن قاله… حاجة تانية.  
-  *And a book whose word counts are arranged? Anyone can write one… the challenge the Quran made… is something else.* · **nouvelle, à valider · raisonnement de la session, signalé (d'après le texte d'islamqa qu'il a envoyé : « اللطيفة » n'est pas « الإعجاز »)**
+  *And a book whose word counts are arranged? Anyone can write one… the challenge the Quran made… is something else.* · **validée · raisonnement de la session, signalé (d'après le texte d'islamqa qu'il a envoyé : « اللطيفة » n'est pas « الإعجاز »)**
 
 **0:47** · **Verset récité** · Al-Isra 17:88 · 20,5 s (image : la plume et la page blanche ; « لَا يَأْتُونَ بِمِثْلِهِۦ » en or)  
    قُل لَّئِنِ ٱجْتَمَعَتِ ٱلْإِنسُ وَٱلْجِنُّ عَلَىٰٓ أَن يَأْتُوا۟ بِمِثْلِ هَـٰذَا ٱلْقُرْءَانِ لَا يَأْتُونَ بِمِثْلِهِۦ وَلَوْ كَانَ بَعْضُهُمْ لِبَعْضٍۢ ظَهِيرًۭا  
@@ -256,15 +258,15 @@ Personne n'est dessiné ; rien de l'invisible.
 
 **1:08 · narration `meaning`** (image : la plume posée, la page qui reste blanche) · d'après : sens d'après [Al-Tafsir al-Muyassar](https://quran.com/17:88/tafsirs/16) (« لو اتفقت الإنس والجن على محاولة الإتيان بمثل هذا القرآن المعجز لا يستطيعون الإتيان به، ولو تعاونوا ») · référence écrite à l'écran, jamais lue
 - يعني: الإنس والجن كلهم… ولو اتعاونوا… مش هيقدروا يجيبوا كلام زيه.  
-  *Meaning: all of mankind and the jinn… even working together… could not bring speech like it.* · **nouvelle, à valider**
+  *Meaning: all of mankind and the jinn… even working together… could not bring speech like it.* · **validée**
 
 **1:14 · narration `danger`** (image : la carte 365 revient et s'effrite ; puis la grille : les deux pastilles de 9:128-129 s'éteignent, « 6236 » devient « 6234 ») · d'après : Rashad Khalifa (« code 19 », livres de 1973 à 1982) a soutenu que la structure qu'il comptait rejetait 9:128-129 ([Wikipedia](https://en.wikipedia.org/wiki/Rashad_Khalifa), d'après Haddad et Smith, *Mission to America*, 1993) · son nom et la source écrits à l'écran (confirmé par le propriétaire), jamais dits
 - والرقم اللي بيتنشر غلط… بيخلي الناس تشك في القرآن نفسه.  
-  *And a wrong number that gets shared… makes people doubt the Quran itself.* · **nouvelle, à valider · raisonnement de la session, signalé (le point de départ du propriétaire)**
+  *And a wrong number that gets shared… makes people doubt the Quran itself.* · **validée · raisonnement de la session, signalé (le point de départ du propriétaire)**
 - وفي واحد مشي ورا رقم… لحد ما قال إن آيتين مش من القرآن… عشان ما ظبطوش مع حسابه.  
-  *And one man followed a number… until he said two verses were not part of the Quran… because they didn't fit his count.* · **nouvelle, à valider**
+  *And one man followed a number… until he said two verses were not part of the Quran… because they didn't fit his count.* · **validée**
 - طب واللي يقول: ربنا قصد الرقم ده؟  
-  *And whoever says: God intended this number?* · **nouvelle, à valider**
+  *And whoever says: God intended this number?* · **validée**
 
 **1:30** · **Verset récité** · Al-Baqara 2:169 · 12,7 s (image : la nuit, le verset ; « وَأَن تَقُولُوا۟ عَلَى ٱللَّهِ مَا لَا تَعْلَمُونَ » en or ; rien de dessiné)  
    إِنَّمَا يَأْمُرُكُم بِٱلسُّوٓءِ وَٱلْفَحْشَآءِ وَأَن تَقُولُوا۟ عَلَى ٱللَّهِ مَا لَا تَعْلَمُونَ  
@@ -272,7 +274,7 @@ Personne n'est dessiné ; rien de l'invisible.
 
 **1:43 · narration `warning`** (image : les deux pastilles de 9:128-129 reviennent ; la grille entière, intacte) · d'après : sens d'après [Al-Tafsir al-Muyassar](https://quran.com/2:169/tafsirs/16) (« إنما يأمركم الشيطان بكل ذنب قبيح… وبأن تفتروا على الله الكذب… بدون علم ») et [as-Sa'di](https://quran.com/2:169/tafsirs/91) (« ومن قال: الله خلق هذا الصنف من المخلوقات, للعلة الفلانية بلا برهان له بذلك, فقد قال على الله بلا علم » ; « فالقول على الله بلا علم, من أكبر المحرمات, وأشملها, وأكبر طرق الشيطان التي يدعو إليها ») · référence écrite à l'écran, jamais lue
 - يعني: من اللي الشيطان بيأمر بيه… إنك تقول على ربنا من غير علم.  
-  *Meaning: among what Satan commands… is that you say about God what you don't know.* · **nouvelle, à valider**
+  *Meaning: among what Satan commands… is that you say about God what you don't know.* · **validée**
 - فلو نشرت رقم زي ده من غير دليل… تبقى ماشي في طريق الشيطان… حتى من غير ما تقصد.  
   *So if you share a number like this without proof… you are walking Satan's path… even without meaning to.* · **validée par le propriétaire (2026-11-13 : « je valide ta modif ») · son idée, dite au conditionnel et avec le mot d'as-Sa'di, « طرق الشيطان »**
 
@@ -282,9 +284,9 @@ Personne n'est dessiné ; rien de l'invisible.
 
 **2:09 · narration `close`** (image : la grille entière s'allume doucement ; puis la pile de cartes « ❝ بيقولوا » revient, petite, avec son « ؟ »)
 - القرآن مليان معجزات حقيقية… فمتدورش على معجزات مش صحيحة.  
-  *The Quran is full of real miracles… so don't go looking for false ones.* · **nouvelle, à valider · la phrase du propriétaire**
-- قبل ما تنشر رقم عن القرآن… عِدّه.  
-  *Before you share a number about the Quran… count it.* · **nouvelle, à valider · la phrase à retenir**
+  *The Quran is full of real miracles… so don't go looking for false ones.* · **validée · la phrase du propriétaire**
+- قبل ما تنشر رقم عن القرآن… عِدّه… وشوف العلما بيقولوا إيه.  
+  *Before you share a number about the Quran… count it… and see what the scholars say.* · **validée · « وشوف العلما بيقولوا إيه » ajouté à sa demande · la phrase à retenir**
 - تابعنا عشان الآية الجاية.  
   *Follow us for the next sign.* · **reprise de la série**
 

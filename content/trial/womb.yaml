@@ -11,7 +11,9 @@ script_validated: { by: mssnoussi92, on: 2026-11-12 }
 # `film` (run 18) et envoyées dans la conversation : la voix D, le montage (le ciel généré, les dessins, les photos de
 # l'ESA, la frise, la signature 41:53), la couverture, les textes de publication (docs/retention/publication-signs.md),
 # l'ambiance ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
-validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
+# La fin changée le 2026-11-13 (sa décision) : la voix est redite en entier et la vidéo rendue à nouveau ; voix et montage
+# attendent son mot sur la nouvelle vidéo. Couverture, textes et ambiance ne changent pas.
+validated: { by: mssnoussi92, on: 2026-11-13, what: [cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 56-trial-womb     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
@@ -79,7 +81,9 @@ segments:
     lines:
       - ar: "بص في المراية… أول آية شفتها في حياتك… هي إنت."
         en: "Look in the mirror… the first sign you ever saw… is you."
-      - ar: "أربع آيات: راجل… وكون… وصدر… وجنين."
-        en: "Four signs: a man… a universe… a chest… and an embryo."
+      # Changée le 2026-11-13 (propriétaire, « oui » à la réplique proposée) : la réplique d'avant résumait la série
+      # (« أربع آيات: راجل… وكون… وصدر… وجنين. ») ; un épisode de série annonce le suivant quand il est connu (l'épisode 5).
+      - ar: "ده كان عن جواك… الحلقة الجاية: رقم مشهور عن القرآن… عدّيته بنفسي."
+        en: "That was about what is inside you… next: a famous number about the Quran… I counted it myself."
       - ar: "تابعنا عشان الآية الجاية."
         en: "Follow us for the next sign."

@@ -2171,3 +2171,37 @@
   notes: 'Al-Ma''arij 70:23 (« كلمة من القرآن », épisode haluu)'
   text_ar: ٱلَّذِينَ هُمْ عَلَىٰ صَلَاتِهِمْ دَآئِمُونَ
   text_en: Those who are constant in their prayer
+
+- id: quran.17.88
+  type: ayah
+  ref: {surah: 17, ayah: 88}
+  url: https://quran.com/17/88
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=17:88
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=17:88
+    translator: Saheeh International
+    surah_ar: الإسراء
+    surah_en: Al-Isra
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Al-Isra 17:88 (« سنريهم آياتنا », épisode days : le vrai défi du Coran, un texte comme lui, pas un compte)'
+
+  text_ar: قُل لَّئِنِ ٱجْتَمَعَتِ ٱلْإِنسُ وَٱلْجِنُّ عَلَىٰٓ أَن يَأْتُوا۟ بِمِثْلِ هَـٰذَا ٱلْقُرْءَانِ لَا يَأْتُونَ بِمِثْلِهِۦ وَلَوْ كَانَ بَعْضُهُمْ لِبَعْضٍ ظَهِيرًا
+  text_en: Say, "If mankind and the jinn gathered in order to produce the like of this Qur’ān, they could not produce the like of it, even if they were to each other assistants."
+- id: quran.2.169
+  type: ayah
+  ref: {surah: 2, ayah: 169}
+  url: https://quran.com/2/169
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:169
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:169
+    translator: Saheeh International
+    surah_ar: البقرة
+    surah_en: Al-Baqarah
+    retrieved: '2026-11-13'
+  status: proposed
+  notes: 'Al-Baqara 2:169 (« سنريهم آياتنا », épisode days : « وأن تقولوا على الله ما لا تعلمون » ; le verset auquel pensait le propriétaire)'
+  text_ar: إِنَّمَا يَأْمُرُكُم بِٱلسُّوٓءِ وَٱلْفَحْشَآءِ وَأَن تَقُولُوا۟ عَلَى ٱللَّهِ مَا لَا تَعْلَمُونَ
+  text_en: He only orders you to evil and immorality and to say about Allāh what you do not know.

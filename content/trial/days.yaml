@@ -1,0 +1,110 @@
+# « سنريهم آياتنا », épisode 5 (content/trial/signs.yaml ; script : docs/scripts/signs.md, validé). Le style compteur
+# (docs/model.md, « Le style compteur ») : sur le ciel de nuit de la série, une pile de cartes « ❝ بيقولوا », les nombres
+# en particules, la grille des 6 236 versets, la bande des règles, le tableau des règles ; une plume et une page ; la
+# signature 41:53. Chaque nombre vient de tools/trial/count.py (video/src/trial/countData.ts), jamais tapé. Les dessins
+# sont dans video/src/trial/Count.tsx. Personne n'est dessiné ; rien de l'invisible. Les répliques sont celles du script
+# validé, mot pour mot.
+id: days
+# « Ajoute كلمة avant يوم dans la première réplique et la première image, et ajoute شوف العلماء بيقولوا إيه ou similaire ;
+# je valide le reste et tu peux créer la vidéo » du propriétaire (2026-11-13), après « je valide ta modif » (la réplique
+# « فلو نشرت… طريق الشيطان… ») et « je confirme » (le nom de Rashad Khalifa écrit à l'écran) : les répliques, la place des
+# versets, ce sur quoi chaque narration repose, le titre. Ni la voix, ni les images, ni l'ambiance, ni les textes de
+# publication : il les valide sur les vidéos.
+script_validated: { by: mssnoussi92, on: 2026-11-13 }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 60-trial-days     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py), comme les autres épisodes : rien à créditer.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1300, veil: 0.7 }
+# Ambiance sous la narration, jamais sous les versets : un des enregistrements validés à l'écoute (docs/model.md).
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 150, level: -38 }
+cover: { scene: cards, title: "بيقولوا 365… عدّيتها بنفسي", tag: "سنريهم آياتنا (٥)", focus: 1000 }
+publish:
+  title: { en: "They say 365… I counted it myself", ar: "بيقولوا 365… عدّيتها بنفسي" }
+  part: 5
+  description:
+    en: "They say the word 'day' is in the Quran 365 times. Counted in all its forms it comes 475 times: 365 appears only by leaving out 'days', 'on that day', 'your day', 'their day'. Most numbers that circulate are right, each under its own rule, and no single rule makes them all hold. The challenge of the Quran is something else (17:88). Before you share a number about the Quran, count it, and see what the scholars say. Two more that hold, each under its own rule: قل and قالوا, 332 each by the form of the verb; نفع and فساد, 50 each by the root."
+    ar: "بيقولوا كلمة «يوم» في القرآن 365 مرة. لو عدّيتها بكل أشكالها تطلع 475، وما تطلعش 365 غير لما تشيل «أيام» و«يومئذ» و«يومكم» و«يومهم». وأغلب الأرقام اللي بتتنشر صح، بس كل رقم بقاعدة، ومفيش قاعدة واحدة بتظبطهم كلهم. والتحدي اللي القرآن قاله حاجة تانية (الإسراء 88). قبل ما تنشر رقم عن القرآن، عِدّه، وشوف العلما بيقولوا إيه."
+segments:
+  - narration: open
+    scene: cards
+    lines:
+      - ar: "بيقولوا كلمة «يوم» في القرآن 365 مرة… و«شهر» 12… و«الدنيا» قد «الآخرة»… أنا عدّيتهم كلهم بنفسي."
+        en: "They say \"day\" is in the Quran 365 times… \"month\" 12… \"this world\" as often as \"the hereafter\"… I counted them all myself."
+  - narration: count
+    scene: grid
+    sources: [science.count-yawm]
+    lines:
+      - ar: "«يوم»: عدّيتها بكل أشكالها… طلعت 475."
+        en: "\"Day\": I counted it in all its forms… 475."
+  - narration: rules
+    scene: rules
+    sources: [science.count-yawm]
+    lines:
+      - ar: "عشان تطلع 365… لازم تشيل 110… ليه دي تتعد… ودي لأ؟"
+        en: "For it to come out 365… you have to take away 110… why count this one… and not that one?"
+  - narration: board
+    scene: board
+    sources: [science.count-board]
+    lines:
+      - ar: "والباقيين؟ أغلبهم صح فعلًا… بس كل واحد بقاعدة."
+        en: "And the rest? Most are actually right… but each with its own rule."
+      - ar: "«شهر» 12… لو عدّيت المفرد بس… و«الصلاة» 99… لو عدّيت الجذر كله."
+        en: "\"Month\" is 12… if you count the singular only… and \"prayer\" is 99… if you count the whole root."
+  - narration: sweep
+    scene: sweep
+    sources: [science.count-board]
+    lines:
+      - ar: "ولو مشيت بقاعدة واحدة على الكل… أغلبهم يقع."
+        en: "Apply one rule to them all… and most of them fall."
+  - narration: page
+    scene: page
+    lines:
+      - ar: "وكتاب عدد كلماته متظبط؟ أي حد يقدر يكتبه… التحدي اللي القرآن قاله… حاجة تانية."
+        en: "And a book whose word counts are arranged? Anyone can write one… the challenge the Quran made… is something else."
+  - verse: quran.17.88
+    scene: quill
+  - narration: meaning
+    scene: quill
+    sources: [tafsir.muyassar.17.88]
+    lines:
+      - ar: "يعني: الإنس والجن كلهم… ولو اتعاونوا… مش هيقدروا يجيبوا كلام زيه."
+        en: "Meaning: all of mankind and the jinn… even working together… could not bring speech like it."
+  - narration: danger
+    scene: crumble
+    lines:
+      - ar: "والرقم اللي بيتنشر غلط… بيخلي الناس تشك في القرآن نفسه."
+        en: "And a wrong number that gets shared… makes people doubt the Quran itself."
+  - narration: khalifa
+    scene: removed
+    sources: [science.khalifa-19]
+    lines:
+      - ar: "وفي واحد مشي ورا رقم… لحد ما قال إن آيتين مش من القرآن… عشان ما ظبطوش مع حسابه."
+        en: "And one man followed a number… until he said two verses were not part of the Quran… because they didn't fit his count."
+  - narration: ask
+    scene: ask
+    lines:
+      - ar: "طب واللي يقول: ربنا قصد الرقم ده؟"
+        en: "And whoever says: God intended this number?"
+  - verse: quran.2.169
+    scene: night
+  - narration: warning
+    scene: restored
+    sources: [tafsir.muyassar.2.169, tafsir.saadi.2.169]
+    lines:
+      - ar: "يعني: من اللي الشيطان بيأمر بيه… إنك تقول على ربنا من غير علم."
+        en: "Meaning: among what Satan commands… is that you say about God what you don't know."
+      - ar: "فلو نشرت رقم زي ده من غير دليل… تبقى ماشي في طريق الشيطان… حتى من غير ما تقصد."
+        en: "So if you share a number like this without proof… you are walking Satan's path… even without meaning to."
+  - verses: [quran.41.53]
+    upto: 11            # jusqu'au premier arrêt « ۗ », après « أنه الحق » : la signature de la série
+    scene: signs
+  - narration: close
+    scene: whole
+    lines:
+      - ar: "القرآن مليان معجزات حقيقية… فمتدورش على معجزات مش صحيحة."
+        en: "The Quran is full of real miracles… so don't go looking for false ones."
+      - ar: "قبل ما تنشر رقم عن القرآن… عِدّه… وشوف العلما بيقولوا إيه."
+        en: "Before you share a number about the Quran… count it… and see what the scholars say."
+      - ar: "تابعنا عشان الآية الجاية."
+        en: "Follow us for the next sign."
