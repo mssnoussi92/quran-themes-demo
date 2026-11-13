@@ -565,6 +565,32 @@ maintenant sans voix (`docs/scripts/kalima.md`, à valider) ; « سمعوا ال
 - **Quand** : pas dans la grille actuelle (elle n'a plus de place) ; prête pour le jour où une série cède la sienne, ou
   après le 12 décembre.
 
+### Série proposée : deux versets presque pareils (idée du propriétaire, 2026-11-13 : « تدبر القرآن »)
+
+Deux versets presque identiques dont un mot change, ou change de place, et le sens avec lui ; le départ qu'il propose :
+6:151 et 17:31. Vérifié le 2026-11-13 (quran.ai : texte et tafsirs de la politique) :
+
+- **6:151 / 17:31** : « مِنْ إِمْلَاقٍ… نَحْنُ نَرْزُقُكُمْ وَإِيَّاهُمْ » et « خَشْيَةَ إِمْلَاقٍ… نَحْنُ نَرْزُقُهُمْ وَإِيَّاكُمْ ». **Ibn Kathir
+  explique la différence** : dans al-An'am la pauvreté est déjà là (« فلما كان الفقر حاصلا قال: نحن نرزقكم وإياهم؛ لأنه الأهم
+  هاهنا ») ; dans al-Isra c'est la peur d'une pauvreté à venir (« خشية حصول فقر في الآجل… فبدأ برزقهم للاهتمام بهم، أي: لا
+  تخافوا من فقركم بسببهم »). Al-Muyassar et as-Sa'di donnent le sens de chacun. Ibn Kathir cite le hadith des deux Sahih
+  (« أن تقتل ولدك خشية أن يطعم معك ») : numéro à vérifier dans hadith-api avant tout script.
+- **18:79 / 18:81 / 18:82** : « فَأَرَدتُّ أَنْ أَعِيبَهَا », « فَأَرَدْنَا », « فَأَرَادَ رَبُّكَ ». **As-Sa'di explique** : le mal, al-Khidr le
+  rapporte à lui-même, le bien à Dieu, par politesse envers Dieu (« استعمال الأدب مع الله تعالى في الألفاظ »), comme Ibrahim
+  (26:80) ; Ibn Kathir : la volonté rapportée à Dieu en 18:82 parce que seul Dieu fait atteindre l'âge adulte. Voisin du
+  film de Moussa et al-Khadir, sous un autre angle.
+- **14:34 / 16:18** : « وَإِن تَعُدُّوا نِعْمَةَ اللَّهِ لَا تُحْصُوهَا », puis « إِنَّ الْإِنسَانَ لَظَلُومٌ كَفَّارٌ » ou « إِنَّ اللَّهَ لَغَفُورٌ رَحِيمٌ ». Chaque
+  fin a son sens dans as-Sa'di et Ibn Kathir (l'homme, injuste et ingrat sauf celui que Dieu guide ; Dieu qui se contente de
+  peu de reconnaissance) ; **le rapprochement des deux n'est dans aucun de nos tafsirs** : il se dit comme une observation du
+  texte, signalée.
+
+**Avis de la session** : l'idée tient (trois paires vérifiées, dont deux expliquées par un tafsir de la politique) ; le
+filtre dur est là : une paire ne sert que si un de nos trois tafsirs explique la différence, ou si elle se voit dans le
+texte et se dit comme une observation. Le nom « تدبر القرآن » est trop large (toute la page en fait) : un titre qui est déjà
+l'accroche, « لاحظت الفرق؟ ». Pas de place dans la grille (deux séries publiées, « كلمة من القرآن » en attente) : fiche
+maintenant, script après les premières mesures. 6:151 / 17:31 parle de tuer ses enfants : la première image ne le montre
+pas, l'accroche est le mot qui change de place.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
