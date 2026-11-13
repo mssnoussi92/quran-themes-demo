@@ -1,54 +1,90 @@
 # Calendrier de publication et fiche de mesures
 
-Proposé par la session le 2026-11-12, **à valider par le propriétaire** : il publie à la main à partir du vendredi
-13 novembre, Moussa et al-Khadir en premier (sa décision). Les textes à coller sont sur sa page « Films et shorts à
-publier » et dans `docs/retention/publication-*.md`.
+Deuxième version, proposée par la session le 2026-11-13 après les deux premières publications, **à valider par le
+propriétaire**. Il publie à la main. Les textes à coller sont sur sa page « Films et shorts à publier » et dans
+`docs/retention/publication-*.md`. La première version (2026-11-12 : une vidéo par jour, le film vertical après ses
+shorts) est dans l'historique git ; il l'a trouvée à revoir.
 
-## Les règles du calendrier
+## Ce qui est publié
 
-- **Une publication par jour, toujours à la même heure.** C'est vous qui choisissez l'heure ; notez-la. Deux
-  vidéos qui sortent à des heures différentes ne se comparent pas.
-- **Un short sort le même jour sur les quatre plateformes** : Facebook, Instagram et YouTube Shorts avec le fichier
-  normal, TikTok avec le fichier `-tiktok`.
-- **Le film 16:9 sort sur YouTube le jour de son premier short, et avant lui.** Ensuite, dans YouTube Studio
-  (sur ordinateur), chaque short reçoit le film comme « Vidéo associée » : le lien n'apparaît que si le film est
-  déjà en ligne.
-- **Le film vertical sort sur Facebook seulement, le lendemain du troisième short.** Instagram limite un reel à
-  3 minutes. Comme le film répète ses trois shorts, on le publie après eux, puis on compare.
-- **Les shorts d'un même film sortent les jours qui se suivent** : chacun annonce le suivant (« تابعنا… »).
-- **La série « آية وحكايتها » sort le vendredi, une par semaine.** Le premier short parle de la prière du vendredi,
-  à midi. Chaque short annonce le suivant, et le troisième annonce « الآية الجاية وحكايتها » : le rythme d'une
-  semaine laisse le temps de faire le quatrième pour le 11 décembre. *Autre choix* : les trois du 20 au 22 novembre ;
-  les mesures arrivent plus vite, mais il faut alors que le quatrième soit prêt fin novembre.
+| Quand | Quoi | Où |
+| --- | --- | --- |
+| jeu. 12 nov., soir | Moussa et al-Khadir : le film | Facebook (version à préciser : verticale ou 16:9), YouTube |
+| ven. 13 nov., matin | Moussa et al-Khadir : short 1, la barque | les quatre ; sur YouTube, le film en « Vidéo associée » |
+
+## La grille de la semaine
+
+| Jour | Quoi |
+| --- | --- |
+| lundi soir | le film de l'histoire de la semaine : YouTube (16:9), Facebook (vertical) |
+| mardi, mercredi, jeudi | ses trois shorts, un par jour, sur les quatre plateformes |
+| vendredi | « آية وحكايتها » : un épisode |
+| samedi | « سنريهم آياتنا » : un épisode |
+| dimanche | rien : le jour pour rattraper un retard sans casser la grille |
+
+Pourquoi :
+
+- **Une seule chose par jour**, et un jour libre : cinq shorts et un film par semaine, publiés à la main sur
+  quatre plateformes, toutes les semaines.
+- **Le film la veille au soir de son premier short**, comme Moussa et al-Khadir. Sur YouTube, chaque short peut alors
+  recevoir le film comme « Vidéo associée » dès le premier. Les trois films sortent dans le même ordre, ce qui permet
+  de les comparer. Le prix : sur Facebook, un abonné qui a vu le film y retrouve ensuite ses shorts.
+- **Les shorts d'une histoire sortent trois jours de suite** : chacun finit par « تابعنا عشان تعرف… ».
+- **Chaque série a son jour, une fois par semaine** : chaque épisode annonce le suivant (« الحلقة الجاية: عن الكون
+  كله »). « آية وحكايتها » sort le vendredi, parce que son premier short parle de la prière du vendredi.
+- **Le stock tient jusqu'au 12 décembre.** Avant cette date, il faudra : une histoire nouvelle pour le 30 novembre,
+  le quatrième « آية وحكايتها » pour le 11 décembre (le short 3 le promet), le cinquième « سنريهم آياتنا » pour le
+  19 décembre (le short 4 le promet). Ces choix se feront avec les mesures.
+- **La faiblesse de la grille** : chaque type de vidéo a son jour. Le jour de la semaine se mêle donc au type quand on
+  compare. À une centaine de vues, ce biais pèse moins que l'accroche, mais il faut le garder en tête.
+
+**Les heures** : tous les shorts à une même heure, celle du short 1. Il ne faut en changer que si les statistiques
+d'audience de la page (Instagram, YouTube Studio) montrent les abonnés en ligne à une autre heure, et alors dès le
+short 2. Les films sortent tous à l'heure du premier. Notez ces deux heures dans la fiche.
+
+**La vidéo associée sur YouTube** : pour le short d'une histoire, c'est son film. Pour l'épisode d'une série, à
+partir du deuxième, c'est l'épisode d'avant.
+
+**Le choix plus rapide** : un short chaque jour, sans jour libre. On apprend un peu plus vite, mais le stock est
+épuisé le 28 novembre, et la production suivante doit être prête à cette date.
 
 ## Le calendrier
 
 | Date | Quoi | Où | Fichiers | Texte (section de `docs/retention/…`) |
 | --- | --- | --- | --- | --- |
-| ven. 13 nov. | Moussa et al-Khadir : le film, **puis** le short 1, la barque (1:33) | YouTube (film) ; les quatre (short) | `khidr-film-16x9-ambience.mp4` + `miniature-film-16x9.jpg` ; `khidr-short-1-boat-ambience.mp4`, `-tiktok-ambience`, `couverture-1-bateau.jpg` | `publication-moussa-khidr.md` : « Le film », « Short 1 » |
-| sam. 14 nov. | Khidr, short 2 : le garçon (1:47) | les quatre | `khidr-short-2-boy-ambience.mp4`, `-tiktok-ambience`, `couverture-2-garcon.jpg` | « Short 2 » |
-| dim. 15 nov. | Khidr, short 3 : le mur (2:03) | les quatre | `khidr-short-3-wall-ambience.mp4`, `-tiktok-ambience`, `couverture-3-mur.jpg` | « Short 3 » |
-| lun. 16 nov. | Khidr, le film vertical (7:47) | Facebook | `khidr-film-9x16.mp4` | `publication-moussa-khidr-9x16.md` |
-| mar. 17 nov. | Le du'a : le film, **puis** le short 1, Ayyoub (1:49) | YouTube (film) ; les quatre (short) | release `dua-candidate` | `publication-dua.md` : « Le film », « Short 1 » |
-| mer. 18 nov. | Du'a, short 2 : Younous (2:04) | les quatre | release `dua-candidate` | « Short 2 » |
-| jeu. 19 nov. | Du'a, short 3 : Zakariya (1:57) | les quatre | release `dua-candidate` | « Short 3 » |
-| **ven. 20 nov.** | **Série, short 1 : la caravane** (1:40) | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 1 » |
-| sam. 21 nov. | Du'a, le film vertical (7:36) | Facebook | release `dua-9x16-candidate` | `publication-dua-9x16.md` |
-| dim. 22 nov. | Dhul-Qarnayn : le film, **puis** le short 1, le couchant (2:05) | YouTube (film) ; les quatre (short) | release `qarnayn-candidate` | `publication-qarnayn.md` : « Le film », « Short 1 » |
-| lun. 23 nov. | Dhul-Qarnayn, short 2 : l'argent refusé (1:53) | les quatre | release `qarnayn-candidate` | « Short 2 » |
-| mar. 24 nov. | Dhul-Qarnayn, short 3 : le barrage (1:51) | les quatre | release `qarnayn-candidate` | « Short 3 » |
-| mer. 25 nov. | Dhul-Qarnayn, le film vertical (8:25) | Facebook | release `qarnayn-9x16-candidate` | `publication-qarnayn-9x16.md` |
-| **ven. 27 nov.** | **Série, short 2 : الضحى** (1:49) | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 2 » |
-| **ven. 4 déc.** | **Série, short 3 : l'espoir** (1:30) | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 3 » |
-| **ven. 11 déc.** | **Série, short 4** : le verset suivant, promis par le short 3 | les quatre | à faire | à faire |
+| ~~ven. 13 nov.~~ | ~~Khidr, short 1 : la barque~~ (publié) | | | |
+| sam. 14 nov. | Khidr, short 2 : le garçon | les quatre | `khidr-short-2-boy-ambience.mp4`, `-tiktok-ambience`, `couverture-2-garcon.jpg` | `publication-moussa-khidr.md` : « Short 2 » |
+| dim. 15 nov. | Khidr, short 3 : le mur | les quatre | `khidr-short-3-wall-ambience.mp4`, `-tiktok-ambience`, `couverture-3-mur.jpg` | « Short 3 » |
+| lun. 16 nov., soir | Du'a : le film | YouTube (16:9) ; Facebook (vertical) | releases `dua-candidate`, `dua-9x16-candidate` | `publication-dua.md` : « Le film » ; `publication-dua-9x16.md` |
+| mar. 17 nov. | Du'a, short 1 : Ayyoub | les quatre | release `dua-candidate` | `publication-dua.md` : « Short 1 » |
+| mer. 18 nov. | Du'a, short 2 : Younous | les quatre | release `dua-candidate` | « Short 2 » |
+| jeu. 19 nov. | Du'a, short 3 : Zakariya | les quatre | release `dua-candidate` | « Short 3 » |
+| ven. 20 nov. | « آية وحكايتها » 1 : la caravane | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 1 » |
+| sam. 21 nov. | « سنريهم آياتنا » 1 : Abou Lahab | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 1 » |
+| lun. 23 nov., soir | Dhul-Qarnayn : le film | YouTube (16:9) ; Facebook (vertical) | releases `qarnayn-candidate`, `qarnayn-9x16-candidate` | `publication-qarnayn.md` : « Le film » ; `publication-qarnayn-9x16.md` |
+| mar. 24 nov. | Dhul-Qarnayn, short 1 : le couchant | les quatre | release `qarnayn-candidate` | `publication-qarnayn.md` : « Short 1 » |
+| mer. 25 nov. | Dhul-Qarnayn, short 2 : l'argent refusé | les quatre | release `qarnayn-candidate` | « Short 2 » |
+| jeu. 26 nov. | Dhul-Qarnayn, short 3 : le barrage | les quatre | release `qarnayn-candidate` | « Short 3 » |
+| ven. 27 nov. | « آية وحكايتها » 2 : الضحى | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 2 » |
+| sam. 28 nov. | « سنريهم آياتنا » 2 : le cosmos | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 2 » |
+| lun. 30 nov. → jeu. 3 déc. | **une histoire nouvelle** : son film, ses trois shorts | | à faire | à faire |
+| ven. 4 déc. | « آية وحكايتها » 3 : l'espoir | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 3 » |
+| sam. 5 déc. | « سنريهم آياتنا » 3 : le ciel | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 3 » |
+| ven. 11 déc. | **« آية وحكايتها » 4** : le verset promis par le short 3 | les quatre | à faire | à faire |
+| sam. 12 déc. | « سنريهم آياتنا » 4 : l'embryon | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 4 » |
+| sam. 19 déc. | **« سنريهم آياتنا » 5** : la « آية الجاية » promise par le short 4 | les quatre | à faire | à faire |
 
 Les fichiers de Moussa et al-Khadir ne sont dans aucune release : ce sont ceux envoyés dans la conversation le
-2026-11-12. Après le 25 novembre, il ne reste que la série du vendredi : c'est là que les mesures décident de la
-suite de la production.
+2026-11-12. Le film vertical de Moussa et al-Khadir n'a plus de date : il reste à savoir lequel des deux est sur
+Facebook.
 
 ## Les mesures
 
-**Quand** : 48 heures après chaque publication ; une seconde fois à 7 jours pour un film.
+**Quand** : 48 heures après chaque publication, et une seconde fois à 7 jours pour un film. Le plus simple : le jour
+où vous publiez une vidéo, envoyez la capture de celle d'avant-hier ; le lundi soir, envoyez aussi celle du film de la
+semaine d'avant. Pour Moussa et al-Khadir : le film samedi 14 au soir, le short 1 dimanche 15, le film à 7 jours jeudi
+19 au soir.
+
 **Comment** : envoyez une capture des statistiques de chaque vidéo, une par plateforme ; la session remplit la fiche
 ci-dessous. Les noms des chiffres changent d'une plateforme à l'autre ; ceux qui comptent sont :
 
@@ -66,19 +102,25 @@ ci-dessous. Les noms des chiffres changent d'une plateforme à l'autre ; ceux qu
 
 ## Ce qu'on décidera avec ces chiffres
 
-1. **Le modèle fait-il mieux que l'ancien ?** Les douze shorts comparés à khidr-01 (26,4 % à 3 s, 7 % de la
-   durée regardée).
-2. **Quelles premières images retiennent ?** Douze shorts, douze accroches : celles qui tiennent guident les scripts
-   suivants.
-3. **Sur Facebook, film vertical ou shorts ?** Durée regardée et abonnés gagnés, film contre ses trois shorts.
-4. **La série ou les histoires ?** La caravane, الضحى et l'espoir comparés aux shorts des films.
-5. **Ce qu'on produit ensuite** : la suite de la série, les gens de la caverne ou les idées reçues
-   (`docs/themes.md`).
+1. **Vers le 21 novembre, l'histoire du 30 novembre** : les shorts de Moussa et al-Khadir et les premiers du du'a,
+   comparés à khidr-01 (26,4 % à 3 s, 7 % de la durée regardée). Le modèle fait-il mieux que l'ancien, et quelles
+   premières images retiennent ?
+2. **Sur Facebook, le film ou ses shorts ?** La durée regardée et les abonnés gagnés de chaque film, contre ceux de
+   ses trois shorts.
+3. **Les séries ou les histoires ?** Les premiers épisodes des deux séries, comparés aux shorts des films ; puis,
+   entre les deux séries, laquelle on prolonge au-delà de l'épisode promis.
+4. **Le rythme lui-même** : s'il tient sans retard, et si les chiffres le permettent, on peut passer à une
+   publication par jour.
 
 ## La fiche
 
-Une ligne par vidéo et par plateforme, remplie à 48 heures.
+Une ligne par vidéo et par plateforme, remplie à 48 heures. L'heure de publication est celle du pays du propriétaire.
 
-| Publiée le | Vidéo | Plateforme | Durée | Vues | Passent 3 s | Durée moyenne | % de la durée | Partages | Abonnés |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| | | | | | | | | | |
+| Publiée le | Heure | Vidéo | Plateforme | Durée | Vues | Passent 3 s | Durée moyenne | % de la durée | Partages | Abonnés |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 12 nov. | soir | Khidr, film | Facebook | 7:47 | | | | | | |
+| 12 nov. | soir | Khidr, film | YouTube | 7:47 | | | | | | |
+| 13 nov. | matin | Khidr, short 1 | Facebook | 1:33 | | | | | | |
+| 13 nov. | matin | Khidr, short 1 | Instagram | 1:33 | | | | | | |
+| 13 nov. | matin | Khidr, short 1 | YouTube Shorts | 1:33 | | | | | | |
+| 13 nov. | matin | Khidr, short 1 | TikTok | 1:33 | | | | | | |
