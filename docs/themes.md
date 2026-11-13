@@ -648,13 +648,15 @@ s'allume, puis s'éteint forme par forme pendant que 475 devient 365. Sources no
 **Décisions du propriétaire (2026-11-13, « je valide tes recommandations »)** : les épisodes de comptage entrent dans
 « سنريهم آياتنا » (pas de série à part) ; l'accroche montre l'affirmation **comme une affirmation** dès la première image
 (« بيقولوا », jamais notre voix : skill `write-hook`), puis le compte ; les exemples politiques sont laissés ; le style de
-montage est inscrit comme une option (`docs/model.md`, « Le style compteur »). **Reste à son mot** : citer à l'écran des
-auteurs contemporains (ar-Rumi, Qutna, islamqa). Avis de la session : non ; les comptes sont les nôtres, refaits par
+montage est inscrit comme une option (`docs/model.md`, « Le style compteur »). **Puis** (« je valide les images, écris le
+script de l'épisode 5 ; et pour les auteurs, non ») : les images de style validées ; **aucun auteur contemporain** (ar-Rumi,
+Qutna, islamqa) n'est cité à l'écran, comme la session le recommandait : les comptes sont les nôtres, refaits par
 un script, leur règle écrite à l'écran, et tout spectateur peut les refaire ; une source de type nouveau, `count` (le
 corpus, le lemme, la règle), comme `science`.
 
-**L'épisode 5, « يوم 365 »** (plan de la session, 2026-11-13 ; images de style `docs/retention/count-style-yawm.jpg` ;
-le script viendra après les images, et la voix après « je valide le script ») :
+**L'épisode 5, « يوم 365 »** (`days` ; plan de la session, 2026-11-13 ; images de style validées,
+`docs/retention/count-style-yawm.jpg` ; **script écrit le 2026-11-13, à valider** : `docs/scripts/signs.md`, 1:53, sans
+10:5 ni l'année lunaire, retirés pour la longueur ; la voix après « je valide le script ») :
 
 | Temps | Ce qui se passe | Image |
 | --- | --- | --- |

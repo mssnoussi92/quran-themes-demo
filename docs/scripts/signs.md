@@ -19,6 +19,7 @@ raconte davantage.
 | 2 | `universe` | 1:31 | 0:31 | 12 | 1 |
 | 3 | `sky` | 2:01 | 0:45 | 13 | 0 |
 | 4 | `womb` | 2:04 | 0:53 | 12 | 0 |
+| 5 | `days` (à valider) | 1:53 | 0:33 | 14 | 3 |
 
 ## Épisode 1 · `lahab` · كلمة واحدة كانت هتكذّب القرآن · One sentence could have disproved the Quran (titre validé)
 
@@ -213,6 +214,94 @@ Environ **2:04** · 0:53 de récitation · 12 répliques, dont 0 de raisonnement
   *Four signs: a man… a universe… a chest… and an embryo.* · **validée (changée pour l'épisode 2, revalidée)**
 - تابعنا عشان الآية الجاية.  
   *Follow us for the next sign.* · **validée**
+
+## Épisode 5 · `days` · بيقولوا 365… عدّيتها بنفسي · They say 365… I counted it myself (à valider)
+
+Environ **1:53** · 0:33 de récitation · 14 répliques, dont 3 de raisonnement de la session. **Écrit le 2026-11-13, à
+valider** ; style validé : `docs/retention/count-style-yawm.jpg` (le style compteur, `docs/model.md`). Les nombres sont
+comptés par `docs/retention/count-style-frame.py` sur le Quranic Arabic Corpus, jamais tapés ; ils s'écrivent « 365 ».
+
+**L'image** : le style compteur, sur la nuit de la série. La carte « ❝ بيقولوا » avec son « ؟ » ; les nombres en
+particules ; la grille des 6 236 versets ; au pied, la bande des règles à la place de la frise des dates ; le « = » de
+الدنيا et الآخرة ; pour 17:88, une plume, un encrier et une page blanche (dessinés) ; la signature « سنريهم آياتنا » en
+or. Personne n'est dessiné.
+
+**0:00 · narration `open`** (image : la carte « ❝ بيقولوا », 365 en particules, le « ؟ » ; la grille attend derrière)
+- بيقولوا: «يوم» في القرآن 365 مرة… زي أيام السنة… أنا عدّيتها بنفسي.  
+  *They say "day" appears 365 times in the Quran… like the days of the year… I counted it myself.* · **nouvelle, à valider · le titre**
+- واللي لقيته… هيخليك تفكر قبل ما تنشر أي رقم عن القرآن.  
+  *And what I found… will make you think before you share any number about the Quran.* · **nouvelle, à valider · la promesse, tenue par la réplique 13**
+
+**0:13 · narration `count`** (image : la carte s'efface, la grille s'allume verset par verset, le compteur monte jusqu'à 475 ; la bande sur « كل الصيغ ») · d'après : le compte (Quranic Arabic Corpus, lemme يوم : 475 mots dans 437 versets) · source écrite à l'écran
+- عدّيت كل مرة الكلمة جت فيها… بكل أشكالها… طلعت 475.  
+  *I counted every time the word appears… in all its forms… 475.* · **nouvelle, à valider**
+
+**0:20 · narration `rules`** (image : la bande avance d'une règle à chaque phrase, 475, 445, 375, 365 ; les versets retirés deviennent des anneaux vides, 341 restent allumés) · d'après : le compte (pluriel et duel 30, يومئذ 70, يومكم et يومهم 10)
+- عشان تطلع 365… لازم تشيل 110.  
+  *For it to come out 365… you have to take away 110.* · **nouvelle, à valider**
+- تشيل «أيام» و«يومين»… وتشيل «يومئذ»… وتشيل «يومكم» و«يومهم».  
+  *Take away "days" and "two days"… take away "on that day"… take away "your day" and "their day".* · **nouvelle, à valider**
+- ليه دي تتعد… ودي لأ؟  
+  *Why count this one… and not that one?* · **nouvelle, à valider · raisonnement de la session, signalé**
+
+**0:33 · narration `holds`** (image : « 115 = 115 », الدنيا en or, الآخرة en vert, la petite grille des deux mots) · d'après : le compte (lemme دنيا : 115 ; le féminin du lemme آخِر : 115)
+- بس فيه عدّات صح… «الدنيا» 115… و«الآخرة» 115… بنفس القاعدة.  
+  *But some counts do hold… "this world" 115… and "the hereafter" 115… under the same rule.* · **nouvelle, à valider**
+- حاجة لطيفة… بس هل ده التحدي اللي القرآن نفسه قاله؟  
+  *A nice touch… but is that the challenge the Quran itself made?* · **nouvelle, à valider**
+
+**0:45** · **Verset récité** · Al-Isra 17:88 · 20,5 s (image : la plume et la page blanche ; « لَا يَأْتُونَ بِمِثْلِهِۦ » en or)  
+   قُل لَّئِنِ ٱجْتَمَعَتِ ٱلْإِنسُ وَٱلْجِنُّ عَلَىٰٓ أَن يَأْتُوا۟ بِمِثْلِ هَـٰذَا ٱلْقُرْءَانِ لَا يَأْتُونَ بِمِثْلِهِۦ وَلَوْ كَانَ بَعْضُهُمْ لِبَعْضٍۢ ظَهِيرًۭا  
+  *Say, "If mankind and the jinn gathered in order to produce the like of this Qur’ān, they could not produce the like of it, even if they were to each other assistants."* (Saheeh International)
+
+**1:06 · narration `meaning`** (image : la plume posée, la page qui reste blanche) · d'après : sens d'après [Al-Tafsir al-Muyassar](https://quran.com/17:88/tafsirs/16) (« لو اتفقت الإنس والجن على محاولة الإتيان بمثل هذا القرآن… لا يستطيعون… ولو تعاونوا ») et [as-Sa'di](https://quran.com/17:88/tafsirs/91) (« دواعي أعدائه المكذبين به متوفرة على رد ما جاء به بأي وجه كان، وهم أهل اللسان والفصاحة… وعجزوا عن معارضته ») · référence écrite à l'écran, jamais lue
+- يعني: الإنس والجن كلهم… لو اتعاونوا… مش هيقدروا يجيبوا كلام زيه.  
+  *Meaning: all of mankind and the jinn… even working together… could not bring speech like it.* · **nouvelle, à valider**
+- واللي اتحدّاهم كانوا أهل الفصاحة… وكان نفسهم يردّوا عليه… وما قدروش.  
+  *And those it challenged were masters of eloquence… eager to answer it… and they could not.* · **nouvelle, à valider**
+- أي حد يقدر يكتب كتاب… عدد كلماته متظبط… التحدي في الكلام نفسه.  
+  *Anyone can write a book… with its word counts arranged… the challenge is in the speech itself.* · **nouvelle, à valider · raisonnement de la session, signalé**
+
+**1:26** · **Verset récité** · Fussilat 41:53, jusqu'au premier arrêt « ۗ » (« أنه الحق ») · 12,5 s (image : « سنريهم آياتنا » en or, en grand, sur la bande des règles entière) : la signature de la série  
+   سَنُرِيهِمْ ءَايَـٰتِنَا فِى ٱلْـَٔافَاقِ وَفِىٓ أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ ٱلْحَقُّ  
+  *We will show them Our signs in the horizons and within themselves until it becomes clear to them that it is the truth.* (Saheeh International)
+
+**1:39 · narration `close`** (image : la carte « ❝ بيقولوا » revient, son 365 se défait en particules)
+- والرقم اللي بيتنشر غلط… اللي هيعدّه مش هيشك في اللي نشره… هيشك في القرآن.  
+  *And a wrong number that gets shared… whoever counts it won't doubt the one who shared it… they'll doubt the Quran.* · **nouvelle, à valider · raisonnement de la session, signalé**
+- قبل ما تنشر رقم عن القرآن… عِدّه.  
+  *Before you share a number about the Quran… count it.* · **nouvelle, à valider · la phrase à retenir**
+- تابعنا عشان الآية الجاية.  
+  *Follow us for the next sign.* · **reprise de la série**
+
+**Titres** (deux, une recommandation) : **« بيقولوا 365… عدّيتها بنفسي »** (recommandé : l'affirmation y est donnée comme une
+affirmation, et la promesse de la première réplique y est) ; ou « «يوم» 365 مرة في القرآن؟ » (plus court, mais seul le
+« ؟ » le distingue de ce qu'il réfute). YouTube : « They say 365… I counted it myself · بيقولوا 365… عدّيتها بنفسي ».
+Couverture : la carte « ❝ بيقولوا », 365 en particules, le « ؟ » ; étiquette « سنريهم آياتنا (٥) ».
+
+**Ce que l'épisode ne dit pas, et pourquoi** :
+- *10:5 et l'année lunaire* (dans le plan montré avec les images) : retirés. 10:5 dure 27,7 s ; avec lui l'épisode passait
+  2:20, et la réfutation tient déjà sans lui (la règle choisie). L'image du verset sur un schéma sert à 17:88 ; les
+  phases de la lune ne servent pas.
+- *17:36* (« وَلَا تَقْفُ مَا لَيْسَ لَكَ بِهِ عِلْمٌ », al-Muyassar : « بل تأكَّد وتثبَّت ») : la mise en garde la plus juste,
+  mais 13 s de plus ; gardé pour un épisode 6 (le « 19 » de Rashad Khalifa, à décider), où la mise en garde est le sujet.
+  Ici la mise en garde est dite par nos mots (répliques 13 et 14), sans verset.
+- *Les autres affirmations* (الصلاة 99, الليل 92, رجل et امرأة…) : une par épisode ; dans la description, pas dans la voix.
+- *Aucun auteur contemporain* n'est nommé ni cité (décision du propriétaire, 2026-11-13) : les comptes sont les nôtres,
+  leur règle écrite à l'écran, et chacun peut les refaire.
+
+**Les points à trancher** :
+1. *La voix dit trois des formes comptées* (« أيام », « يومئذ », « يومكم ») : des mots de la langue, pas un verset.
+   Si vous préférez, elles restent écrites sur la bande et la voix dit « تشيل الجمع… وتشيل تلات أشكال تانية ».
+2. *Les chiffres « 365 » dans la voix* : la voix lit le texte de l'écran. Si la prise les lit mal (en anglais, ou en arabe
+   standard), la réplique les écrit en lettres (« تلتمية خمسة وستين ») et le grand nombre en particules reste « 365 ».
+3. *La fin de `womb`* (validée, publiée le 12 décembre) résume la série (« أربع آيات: راجل… وكون… وصدر… وجنين. »), ce que
+   vous avez refusé pour « كلمة من القرآن ». L'épisode suivant étant connu, je propose : « ده كان عن جواك… الحلقة
+   الجاية: رقم مشهور عن القرآن… عدّيته بنفسي. » Une requête de voix et un rendu, avant le 12 décembre.
+
+**Les sources à inscrire (statut « proposé »)** : 17:88 ; al-Muyassar et as-Sa'di sur 17:88 ; 41:53 et al-Muyassar sur
+41:53 sont déjà au registre. **Le compte**, une source d'un type nouveau, `count` : le corpus, le lemme, chaque règle
+et son nombre, et le script qui les refait.
 
 ## Ce qu'il faut savoir
 

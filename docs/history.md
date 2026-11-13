@@ -185,6 +185,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 85. **Les comptes en chiffres « 365 »** (propriétaire, 2026-11-13 : « utilise les nombres 365 et non pas ٣٦٥ »). Lu comme valant pour le style compteur : le nombre en particules, la bande des règles, les répliques et les légendes ; le badge de la série et la référence d'un verset gardent ceux de « سنريهم آياتنا », et les autres séries ne changent pas sans son mot. Inscrit dans `docs/model.md` ; images refaites.
 
+86. **Le script de l'épisode 5, « بيقولوا 365… عدّيتها بنفسي »** (propriétaire, 2026-11-13 : « je valide les images, écris le script de l'épisode 5, et pour les auteurs, non »). Inscrit : images de style validées ; aucun auteur contemporain à l'écran. Script (`docs/scripts/signs.md`, `days`) : 14 répliques, 17:88 et la signature 41:53, 1:53 estimées dont 0:33 récitées. **Retiré du plan montré avec les images** : 10:5 et l'année lunaire (27,7 s : l'épisode passait 2:20) ; 17:36 gardé pour un épisode 6 éventuel. Tafsirs lus avant d'écrire : al-Muyassar et as-Sa'di sur 17:88 (et 10:5, 17:36). Points soumis : la voix dit trois formes comptées ; les chiffres « 365 » dans la voix ; la fin de `womb`, qui résume la série, à changer maintenant que l'épisode suivant est connu. Aucune voix faite.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```
