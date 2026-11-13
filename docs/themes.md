@@ -591,6 +591,49 @@ l'accroche, « لاحظت الفرق؟ ». Pas de place dans la grille (deux sé
 maintenant, script après les premières mesures. 6:151 / 17:31 parle de tuer ses enfants : la première image ne le montre
 pas, l'accroche est le mot qui change de place.
 
+### Le « إعجاز عددي » : une vidéo analysée et des comptes refaits (propriétaire, 2026-11-13)
+
+Demande : analyser le montage d'une vidéo Facebook (enregistrement d'écran, 1:33) pour « لاحظت الفرق », et une série
+« الإعجاز العددي في القرآن: حقيقة أو وهم », d'après les points du Dr Iyad Qunaibi qu'il résume (comptes sélectifs, l'année
+lunaire de 354 jours, aucune méthode fixe, le danger pour la crédibilité du Coran si un calcul tombe).
+
+**La vidéo** est elle-même une vidéo de « إعجاز عددي » : fond bleu nuit, nombres faits de particules, une grille de 6 236
+points (« كل نقطة آية ») où s'allument les versets du mot compté, le signe « = » entre deux comptes, le verset en haut avec
+le mot coloré, sa traduction et sa référence ; aucune voix (Whisper n'entend rien), un fond sonore ; une quinzaine
+d'égalités en 92 secondes.
+
+**Les comptes refaits** (Quranic Arabic Corpus, `quran-morphology.txt` de mustafa0x/quran-morphology, un mot = une
+position s:a:w ; vérification sur le texte imlaei de quran.com pour قل, قالوا et جهنم) :
+
+| Ce que la vidéo affiche | Ce qu'on compte | Règle qu'il faut pour obtenir son nombre |
+| --- | --- | --- |
+| يوم 365 | le lemme يوم : 475 (dont يومئذ 70, pluriel 27, duel 3) ; singulier sans يومئذ : 375 | singulier, sans يومئذ, et sans les 10 formes à pronom (يومكم، يومهم…) : 365 ; c'est la critique du Dr Fahd ar-Rumi rapportée par islamqa 69741 |
+| شهر 12 | le lemme : 21 ; singulier : 12 | singulier seulement : tient |
+| الدنيا 115 = الآخرة 115 | lemme دنيا : 115 ; le féminin de آخر : 115 | tient, à règle égale (le lemme) |
+| الملائكة 88 = الشيطان 88 | lemme مَلَك : 88 (pluriel 73, singulier 13, duel 2) ; lemme شيطان : 88 | tient en comptant « ange » au singulier, au duel et au pluriel ; « الملائكة » seul : 73 |
+| رجل 24 = امرأة 24 | رجل au singulier : 24 (29 avec le duel) ; امرأة : 26 (25 sans le duel) | ne tient pas |
+| قل 332 = قالوا 332 | قل : 333 (texte de quran.com, avec و et ف ; 336 dans le corpus) ; قالوا : 329 | ne tient pas |
+| القرآن 70 = القيامة 70 ; عيسى 25 = آدم 25 ; القمر 27 ; جهنم 77 | 70 ; 70 ; 25 ; 25 ; 27 ; 77 | tiennent (lemme) |
+| الليل 92 (« et la sourate 92 est al-Layl ») | lemme ليل : 84 | 84 + ليلة 8 : deux mots additionnés |
+| الصلاة 99 (« 99 noms de Dieu ») | lemme صلاة : 83 | toute la racine صلو (le verbe صلّى, مصلّين…) : 99 |
+| صبر 103 (« sourate 103 ») | lemme صبر : 15 | toute la racine : 103 |
+| نفع 50 = الفساد 50 | lemme فساد : 11 | toute la racine des deux : 50 et 50 |
+
+**Ce que ça montre** : la règle change d'une égalité à l'autre (un singulier, un lemme, une racine entière, deux mots
+additionnés, des formes écartées), elle est choisie après coup ; deux égalités ne tiennent même pas. Et même quand un
+compte tient, un auteur peut l'obtenir : ce n'est pas le défi du Coran (17:88, as-Sa'di : des gens de la langue et de
+l'éloquence n'ont pas pu en produire autant). Les mois du Coran sont lunaires (10:5, al-Muyassar : « وبالقمر تعرف الشهور
+والأعوام »). Le « code 19 » de Rashad Khalifa (publié de 1973 à 1982) l'a mené à retirer 9:128-129, qui « cassaient » son
+compte, et à se déclarer messager (Wikipedia). Pour la caverne : le calcul « 300 ans solaires = 309 lunaires » est rejeté
+par Ibn Uthaymin (islamqa 69741) ; notre fiche l'écarte déjà.
+
+**Avis de la session** : l'idée est bonne et utile, et elle demande d'être honnête dans les deux sens. Plusieurs égalités
+tiennent à règle égale : les dire, sinon on fait le même tri à l'envers. Plutôt qu'une cinquième série, deux épisodes de
+« سنريهم آياتنا » (le même public, le même style d'enquête, les sources vérifiées du type `science`, et une crédibilité
+qu'ils renforcent : « nous vérifions ») ; le style de la vidéo retourné contre elle : la grille des 6 236 versets qui
+s'allume, puis s'éteint forme par forme pendant que 475 devient 365. Sources nouvelles à décider : les comptes (un type
+`count`, la méthode écrite) ; les savants contemporains (Qunaibi, ar-Rumi, islamqa) ne sont pas dans la politique.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

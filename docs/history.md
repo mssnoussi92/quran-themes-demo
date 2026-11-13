@@ -175,6 +175,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 80. **« Je valide », et une quatrième idée de série** (propriétaire, 2026-11-13 : « je valide ; et j'ai une autre idée de série : تدبر القرآن, des versets presque semblables mais différents dans le sens ; un exemple de départ : 6:151 et 17:31 »). Plusieurs choses attendaient son mot (la nouvelle fin de `haluu`, les vidéos, clips, textes et sources de « كلمة من القرآن », la fin de `hope` et `womb`) : sa réponse est demandée avant la requête de voix (règle de CLAUDE.md). La série : trois paires vérifiées dans nos tafsirs (`docs/themes.md`) ; avis donné sur le nom et la place dans la grille.
 
+81. **Une vidéo de « إعجاز عددي » analysée, une série étudiée** (propriétaire, 2026-11-13 : « analyse ce style de montage, utile pour لاحظت الفرق ; et une nouvelle série : الإعجاز العددي في القرآن, حقيقة أو وهم ; do your research »). Quinze égalités de la vidéo recomptées dans le Quranic Arabic Corpus et sur le texte de quran.com : la règle de comptage change de l'une à l'autre, deux ne tiennent pas (`docs/themes.md`). Avis donné : deux épisodes de « سنريهم آياتنا » plutôt qu'une série de plus, et dire aussi ce qui tient.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```
