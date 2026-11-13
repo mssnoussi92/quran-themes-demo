@@ -656,7 +656,7 @@ corpus, le lemme, la règle), comme `science`.
 
 **L'épisode 5, « يوم 365 »** (`days` ; plan de la session, 2026-11-13 ; images de style validées,
 `docs/retention/count-style-yawm.jpg` ; **script écrit le 2026-11-13, refait le même soir à sa demande, à valider** : `docs/scripts/signs.md`,
-2:07 ; 17:88, 2:169 et la signature 41:53 ; sans 10:5 ni l'année lunaire ; la voix après « je valide le script ».
+2:10 ; 17:88, 2:169 et la signature 41:53 ; sans 10:5 ni l'année lunaire ; la voix après « je valide le script ».
 Le tableau ci-dessous est le plan montré avec les images ; le script l'a changé) :
 
 | Temps | Ce qui se passe | Image |

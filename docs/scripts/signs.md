@@ -19,7 +19,7 @@ raconte davantage.
 | 2 | `universe` | 1:31 | 0:31 | 12 | 1 |
 | 3 | `sky` | 2:01 | 0:45 | 13 | 0 |
 | 4 | `womb` | 2:04 | 0:53 | 12 | 0 |
-| 5 | `days` (à valider) | 2:07 | 0:46 | 14 | 3 |
+| 5 | `days` (à valider) | 2:10 | 0:46 | 14 | 3 |
 
 ## Épisode 1 · `lahab` · كلمة واحدة كانت هتكذّب القرآن · One sentence could have disproved the Quran (titre validé)
 
@@ -217,7 +217,7 @@ Environ **2:04** · 0:53 de récitation · 12 répliques, dont 0 de raisonnement
 
 ## Épisode 5 · `days` · بيقولوا 365… عدّيتها بنفسي · They say 365… I counted it myself (à valider)
 
-Environ **2:07** · 0:46 de récitation · 14 répliques, dont 3 de raisonnement de la session et une phrase du propriétaire.
+Environ **2:10** · 0:46 de récitation · 14 répliques, dont 3 de raisonnement de la session et deux du propriétaire.
 **Deuxième version, 2026-11-13, à valider** : la fin refaite à sa demande (« القرآن مليان معجزات… فمتدورش على معجزات مش
 صحيحة » ; que le spectateur comprenne que nous défendons le Coran et que le « إعجاز عددي » le fait douter ; le verset de
 « ceux qui disent sur Allah ce qu'ils ne savent pas ») et les arguments les plus forts des textes qu'il a envoyés. Style
@@ -267,17 +267,17 @@ s'éteignent, puis reviennent ; la signature « سنريهم آياتنا » en 
    إِنَّمَا يَأْمُرُكُم بِٱلسُّوٓءِ وَٱلْفَحْشَآءِ وَأَن تَقُولُوا۟ عَلَى ٱللَّهِ مَا لَا تَعْلَمُونَ  
   *He only orders you to evil and immorality and to say about Allāh what you do not know.* (Saheeh International)
 
-**1:31 · narration `warning`** (image : les deux pastilles de 9:128-129 reviennent ; la grille entière, intacte) · d'après : sens d'après [Al-Tafsir al-Muyassar](https://quran.com/2:169/tafsirs/16) (« إنما يأمركم الشيطان بكل ذنب قبيح… وبأن تفتروا على الله الكذب… بدون علم ») et [as-Sa'di](https://quran.com/2:169/tafsirs/91) (« ومن قال: الله خلق هذا الصنف من المخلوقات, للعلة الفلانية بلا برهان له بذلك, فقد قال على الله بلا علم ») · référence écrite à l'écran, jamais lue
+**1:31 · narration `warning`** (image : les deux pastilles de 9:128-129 reviennent ; la grille entière, intacte) · d'après : sens d'après [Al-Tafsir al-Muyassar](https://quran.com/2:169/tafsirs/16) (« إنما يأمركم الشيطان بكل ذنب قبيح… وبأن تفتروا على الله الكذب… بدون علم ») et [as-Sa'di](https://quran.com/2:169/tafsirs/91) (« ومن قال: الله خلق هذا الصنف من المخلوقات, للعلة الفلانية بلا برهان له بذلك, فقد قال على الله بلا علم » ; « فالقول على الله بلا علم, من أكبر المحرمات, وأشملها, وأكبر طرق الشيطان التي يدعو إليها ») · référence écrite à l'écran, jamais lue
 - يعني: من اللي الشيطان بيأمر بيه… إنك تقول على ربنا من غير علم.  
   *Meaning: among what Satan commands… is that you say about God what you don't know.* · **nouvelle, à valider**
-- زي إنك تقول: ربنا عمل كده عشان كده… من غير دليل.  
-  *Like saying: God did this for that reason… without any proof.* · **nouvelle, à valider**
+- فلو نشرت رقم زي ده من غير دليل… تبقى ماشي في طريق الشيطان… حتى من غير ما تقصد.  
+  *So if you share a number like this without proof… you are walking Satan's path… even without meaning to.* · **nouvelle, à valider · la demande du propriétaire (« إنت بتطيع الشيطان… وحتى من غير قصد »), dite au conditionnel et avec le mot d'as-Sa'di, « طرق الشيطان »**
 
-**1:42** · **Verset récité** · Fussilat 41:53, jusqu'au premier arrêt « ۗ » (« أنه الحق ») · 12,5 s (image : « سنريهم آياتنا » en or, en grand, sur la grille entière) : la signature de la série  
+**1:45** · **Verset récité** · Fussilat 41:53, jusqu'au premier arrêt « ۗ » (« أنه الحق ») · 12,5 s (image : « سنريهم آياتنا » en or, en grand, sur la grille entière) : la signature de la série  
    سَنُرِيهِمْ ءَايَـٰتِنَا فِى ٱلْـَٔافَاقِ وَفِىٓ أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ ٱلْحَقُّ  
   *We will show them Our signs in the horizons and within themselves until it becomes clear to them that it is the truth.* (Saheeh International)
 
-**1:55 · narration `close`** (image : la grille entière s'allume doucement ; puis la carte « ❝ بيقولوا » revient, petite, avec son « ؟ »)
+**1:57 · narration `close`** (image : la grille entière s'allume doucement ; puis la carte « ❝ بيقولوا » revient, petite, avec son « ؟ »)
 - القرآن مليان معجزات حقيقية… فمتدورش على معجزات مش صحيحة.  
   *The Quran is full of real miracles… so don't go looking for false ones.* · **nouvelle, à valider · la phrase du propriétaire**
 - قبل ما تنشر رقم عن القرآن… عِدّه.  
@@ -303,14 +303,15 @@ la carte « ❝ بيقولوا », 365 en particules, le « ؟ » ; étiquette �
   as-Sa'di l'explique exactement de notre cas (dire que Dieu a fait une chose pour telle raison, sans preuve) : c'est
   lui. **17:36** (« وَلَا تَقْفُ مَا لَيْسَ لَكَ بِهِ عِلْمٌ », al-Muyassar : « بل تأكَّد وتثبَّت ») serait plus doux.
 - *Aucun auteur contemporain* n'est nommé ni cité comme autorité (décision du propriétaire). Rashad Khalifa est l'exemple,
-  pas une autorité : la voix dit « واحد », son nom et la source s'écrivent à l'écran.
+  pas une autorité : la voix dit « واحد », **son nom et la source s'écrivent à l'écran** (décidé par la session, à qui le
+  propriétaire a laissé le choix : un fait sans nom ne se vérifie pas, et l'épisode demande justement de vérifier).
 - *Dater l'Heure par des nombres* (dans le texte d'islamqa) : pas dans cet épisode ; une réplique de plus, et l'Heure est
   l'invisible.
 
-**Les points à trancher** :
-1. *2:169 parle des ordres du Shaytan* : à quelqu'un qui a partagé un de ces nombres de bonne foi, c'est dur. La réplique
-   dit « من اللي الشيطان بيأمر بيه », pas « إنت بتطيع الشيطان ». Si c'est trop dur, 17:36 à la place (13 s).
-2. *Le nom de Rashad Khalifa écrit à l'écran*, avec sa source : un exemple, pas une référence. À garder ?
+**Tranché par le propriétaire (2026-11-13)** : 2:169 reste, et la réplique s'adresse au spectateur (« إنت بتطيع الشيطان…
+وحتى من غير قصد ») ; écrite au conditionnel (« فلو نشرت… ») pour viser l'acte et non chaque spectateur, et avec « طريق »,
+le mot d'as-Sa'di (« أكبر طرق الشيطان »), plutôt que « بتطيع », qui suppose qu'on obéit en sachant. Le nom de Khalifa :
+laissé à la session, écrit.
 
 **Les sources à inscrire (statut « proposé »)** : 17:88, 2:169 ; al-Muyassar sur 17:88 et 2:169, as-Sa'di sur 2:169 ;
 41:53 et al-Muyassar sur 41:53 sont déjà au registre. **Le compte**, une source d'un type nouveau, `count` : le corpus,
