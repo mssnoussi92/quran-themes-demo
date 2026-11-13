@@ -12,7 +12,7 @@ text: 57-trial-kanud     # content/voice-test/<text>.txt : toutes les répliques
 clip: { source: pixabay, id: 26085, author: TeeFarm, page: "https://pixabay.com/videos/id-26085/", take: { from: 2, seconds: 18, height: 1440, pingpong: true }, rate: 0.85, position: "50% 50%", shift: 0, brightness: 0.8, ground: "#0a0705", horizon: 1300 }
 # Ambiance sous la narration, jamais sous les versets : un des enregistrements validés à l'écoute (docs/model.md).
 ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 110, level: -36 }
-cover: { scene: horses, title: "كلمة في القرآن… يمكن توصفك", tag: "كلمة من القرآن · ١", focus: 1050 }
+cover: { scene: horses, title: "كلمة في القرآن… يمكن توصفك", tag: "كلمة من القرآن (١)", focus: 1050 }
 publish:
   title: { en: "A word in the Quran… that might describe you", ar: "كلمة في القرآن… يمكن توصفك" }
   part: 1

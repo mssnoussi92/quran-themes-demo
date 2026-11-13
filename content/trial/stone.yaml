@@ -12,7 +12,7 @@ text: 58-trial-stone     # content/voice-test/<text>.txt : toutes les répliques
 clip: { source: pixabay, id: 8451, author: Felix-Mittermeier, page: "https://pixabay.com/videos/id-8451/", take: { slow: 7, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.85, ground: "#06050c", horizon: 1300 }
 # Ambiance sous la narration, jamais sous les versets : un des enregistrements validés à l'écoute (docs/model.md).
 ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 130, level: -38 }
-cover: { scene: stone, title: "نواة التمرة… فيها تلات كلمات من القرآن", tag: "كلمة من القرآن · ٢", focus: 1050 }
+cover: { scene: stone, title: "نواة التمرة… فيها تلات كلمات من القرآن", tag: "كلمة من القرآن (٢)", focus: 1050 }
 publish:
   title: { en: "The date stone… holds three words of the Quran", ar: "نواة التمرة… فيها تلات كلمات من القرآن" }
   part: 2
