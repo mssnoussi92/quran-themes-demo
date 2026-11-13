@@ -57,7 +57,7 @@ segments:
         en: "When you find yourself falling apart… or tight-fisted… go back to your prayer."
   # Le propriétaire (2026-11-13) : la fin ne résume plus la série (« تلات كلمات… »), qui aura d'autres épisodes ; chaque
   # épisode tient seul et annonce le suivant s'il est connu, sinon une phrase générique, la sienne. Changée après sa
-  # validation du script : à confirmer avant la voix.
+  # validation du script, puis confirmée par lui le même jour (« oui, la fin de l'épisode 3, lance la voix »).
   - narration: next
     scene: next
     lines:
