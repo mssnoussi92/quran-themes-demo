@@ -197,6 +197,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 91. **La série des versets presque pareils, reprise** (propriétaire, 2026-11-13 : « nous sommes concentrés sur cet épisode et nous avons oublié ma proposition initiale des versets similaires mais différents dans le sens »). Il a raison : la fiche était écrite (2026-11-13, avis : attendre les mesures) et n'avait plus bougé. Troisième paire cherchée dans nos tafsirs (sept candidates, une retenue : 4:135 / 5:8, as-Sa'di) ; pilote de trois épisodes proposé avec ses durées de récitation (`docs/themes.md`) ; le style compteur proposé pour son image.
 
+92. **« لاحظت الفرق؟ » : images de style et script pilote** (propriétaire, 2026-11-13 : « oui, commencer »). Lu comme : les trois paires proposées, le nom, les images de style et le script maintenant, sans voix ; dit au propriétaire. **Images de style** (`docs/retention/farq-style-frame.py`, `farq-style.jpg`) : quatre images 9:16 dans le style compteur, les deux versets l'un sous l'autre, ce qui diffère trouvé par le script (les mots comparés sans voyelles), une flèche de chaque mot à sa nouvelle place ; trois défauts corrigés à l'œil (les flèches sur les mots, les cartes qui se touchaient, l'ordre inversé de 4:135 / 5:8 mal repéré par la comparaison : une fonction pour les mots déplacés). **Script** (`docs/scripts/farq.md`) : `rizq` (6:151 / 17:31, Ibn Kathir), `adab` (18:79 / 18:82, as-Sa'di ; 18:81 laissé : aucun de nos tafsirs n'explique « فأردنا », et c'est le verset du garçon tué), `qist` (4:135 / 5:8, as-Sa'di) ; 1:29, 1:38, 1:28 estimées ; les mots du Coran qui changent ne sont jamais dits par la voix.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```

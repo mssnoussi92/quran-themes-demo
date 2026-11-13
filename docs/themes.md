@@ -606,12 +606,15 @@ différence expliquée par nos trois tafsirs) :
 | --- | --- | --- | --- |
 | 1 | 6:151 jusqu'à « وَإِيَّاهُمْ » (sur 42 s) · 17:31 (14,7 s) | « نَرْزُقُكُمْ وَإِيَّاهُمْ » / « نَرْزُقُهُمْ وَإِيَّاكُمْ » : la pauvreté déjà là, la peur de la pauvreté | Ibn Kathir |
 | 2 | 18:79 (17,9 s) · 18:81 (10,3 s) · 18:82 jusqu'à un arrêt (sur 35 s) ; coupes déjà faites pour le premier film | « فَأَرَدتُّ », « فَأَرَدْنَا », « فَأَرَادَ رَبُّكَ » : le mal rapporté à soi, le bien à Dieu | as-Sa'di |
-| 3 | 4:135 jusqu'à « وَالْأَقْرَبِينَ » (sur 49 s) · 5:8 jusqu'à « لِلتَّقْوَىٰ » (sur 36 s) | les mêmes mots en ordre inverse : contre ceux qu'on aime, pour ceux qu'on déteste | as-Sa'di |
+| 3 | 4:135 jusqu'à « وَالْأَقْرَبِينَ » (sur 49 s) · 5:8 jusqu'à « تَعْدِلُوا » (sur 36 s) | les mêmes mots en ordre inverse : contre ceux qu'on aime, pour ceux qu'on déteste | as-Sa'di |
 
 **L'image** : le style compteur, que le propriétaire veut voir servir ailleurs (`docs/model.md`) : les deux versets l'un
 sous l'autre, les mots pareils éteints, le mot qui change en or, qui glisse à sa nouvelle place. Images de style d'abord.
 Le nom : « لاحظت الفرق؟ » (le propriétaire l'emploie lui-même ; « تدبر القرآن » est trop large). **À son mot** : le pilote,
 le nom, et quand (aucune place dans la grille ; « كلمة من القرآن » attend déjà).
+
+**« Oui, commencer »** (propriétaire, 2026-11-13) : images de style (`docs/retention/farq-style.jpg`) et script pilote
+(`docs/scripts/farq.md`, à valider : `rizq`, `adab`, `qist` ; 18:81 laissé hors de l'épisode 2).
 
 ### Le « إعجاز عددي » : une vidéo analysée et des comptes refaits (propriétaire, 2026-11-13)
 
