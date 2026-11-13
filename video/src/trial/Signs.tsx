@@ -19,13 +19,13 @@ const PALE = "#f4efe2";
 const RIM = "#b9cdff";
 
 /** A number between 0 and 1 from an index: the same at every frame (the render draws frames in any order). */
-const chance = (i: number, salt = 0) => {
+export const chance = (i: number, salt = 0) => {
   const v = Math.sin(i * 127.1 + salt * 311.7) * 43758.5453;
   return v - Math.floor(v);
 };
-const clamp = (x: number) => Math.min(1, Math.max(0, x));
+export const clamp = (x: number) => Math.min(1, Math.max(0, x));
 
-const Stars: React.FC<{ n: number; top?: number; bottom?: number; salt?: number; opacity?: number }> = ({ n, top = 0, bottom = H, salt = 0, opacity = 1 }) => (
+export const Stars: React.FC<{ n: number; top?: number; bottom?: number; salt?: number; opacity?: number }> = ({ n, top = 0, bottom = H, salt = 0, opacity = 1 }) => (
   <g opacity={opacity}>
     {Array.from({ length: n }, (_, i) => (
       <circle key={i} cx={chance(i, salt) * W} cy={top + chance(i, salt + 1) * (bottom - top)} r={0.6 + chance(i, salt + 2) * 1.7} fill="#fff" opacity={0.15 + chance(i, salt + 3) * 0.7} />
@@ -41,7 +41,7 @@ const Photo: React.FC<{ file: string; opacity: number; scale?: number; bottom?: 
     </g>
   );
 
-const Defs: React.FC = () => (
+export const Defs: React.FC = () => (
   <defs>
     <radialGradient id="sg-sun"><stop offset="0" stopColor={GOLD} stopOpacity={0.75} /><stop offset="1" stopColor={GOLD} stopOpacity={0} /></radialGradient>
     <radialGradient id="sg-earth" cx=".35" cy=".35"><stop offset="0" stopColor="#7fb2ff" /><stop offset=".6" stopColor="#2b5aa8" /><stop offset="1" stopColor="#0c1e44" /></radialGradient>
@@ -67,7 +67,7 @@ const Defs: React.FC = () => (
 );
 
 /** The title of the series, large, while the reciter says 41:53 (the signature of every episode). Written, never said. */
-const Signature: React.FC<{ show: number; t: number; since: number }> = ({ show, t, since }) =>
+export const Signature: React.FC<{ show: number; t: number; since: number }> = ({ show, t, since }) =>
   show <= 0 ? null : (
     <g opacity={show}>
       <Photo file="signs/hubble-udf.jpg" opacity={0.55} scale={interpolate(t - since, [0, 14], [1.12, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })} />
@@ -111,7 +111,7 @@ const Timeline: React.FC<{ points: Point[]; show: (id: string) => number }> = ({
 };
 
 /** The name of the series and the number of the episode in a ring (a middle dot before « ١ » read as « ١٠ »). */
-const Badge: React.FC<{ n: string }> = ({ n }) => (
+export const Badge: React.FC<{ n: string }> = ({ n }) => (
   <g>
     <circle cx={114} cy={268} r={24} fill="none" stroke={GOLD} strokeWidth={2.5} />
     <text x={114} y={281} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={30} fill={GOLD}>{n}</text>
