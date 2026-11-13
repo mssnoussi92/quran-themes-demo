@@ -93,6 +93,22 @@ Des shorts qui tiennent seuls, sans film (la première : `ayah`, « آية وح�
 film, et toute la chaîne aussi depuis le 2026-11-12 : préparation (des versets récités d'une traite, la référence
 d'une narration), rendu par le workflow `film` (des shorts, pas de 16:9), textes à coller, page du propriétaire.
 
+**Le style d'enquête de « سنريهم آياتنا »** (`signs`, 2026-11-12, validé par le propriétaire sur trois images de
+style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
+- `clip: { source: generated, kind: night, seconds: 20 }` : un ciel de nuit que `tools/trial/clip.py` dessine avec
+  ffmpeg (aucun téléchargement, rien à créditer ; `setsar=1`, sans quoi le compositeur de Remotion ne lit pas le clip).
+- `photos:` : les photographies que les dessins montrent (`{file, credit, licence, page}`, fichiers dans
+  `video/public/signs/`, ici ESA/Webb et ESA/Hubble en CC BY 4.0, que leurs conditions veulent créditées sur l'image
+  même) ; `publish.py` les crédite (« Images: … »).
+- Une source `science` dans le registre (`content/sources/science.yaml` : `ref.year`, `url`, `label` ar et en
+  écrits à l'écran, `claim`, `checked` : les pages où la session a vérifié le fait) : une narration peut reposer
+  dessus (`sources:`), jamais un verset ni une lecture.
+- `upto: N` sur un segment `verses` d'un seul verset : il n'en récite que les N premiers mots, jusqu'à un signe de
+  pause (la signature : 41:53 jusqu'à « أنه الحق ۗ »).
+- `OVERLAYS` et `LAYOUTS` de `video/src/trial/Trial.tsx` : ce qu'un short dessine au-dessus du voile sans bouger
+  (le badge de la série, la frise des dates) et où ses textes se placent ; les dessins, photos et frises de la série
+  sont dans `video/src/trial/Signs.tsx`.
+
 ### Un film (`content/trial/<id>.yaml`, avec `chapters`)
 
 | Champ | Ce que c'est |
