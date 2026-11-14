@@ -353,7 +353,13 @@ def main() -> None:
     effects = None
     if any(seg.get("sfx") for seg in spec["segments"]):
         import sfx
-        events = [(made["start"] + at, sound) for seg, made in zip(spec["segments"], segments) for sound, at in seg.get("sfx") or []]
+        def when(made: dict, at) -> float:
+            """`at`: seconds after the segment starts, or « phrase N » (the N-th phrase of its lines, said or written)."""
+            if isinstance(at, str):
+                said = [ph for line in made.get("lines", []) for ph in line["phrases"]]
+                return made["start"] + said[int(at.split()[1])]["start"]
+            return made["start"] + at
+        events = [(when(made, at), sound) for seg, made in zip(spec["segments"], segments) for sound, at in seg.get("sfx") or []]
         quiet = [(s["start"], s["start"] + s["seconds"]) for s in segments if s["kind"] != "narration"]
         effects = sfx.track(events, quiet, total, out_dir / f"{args.trial}-{args.voice}-sfx.wav", word=args.trial)
     handles = yaml.safe_load((ROOT / "content" / "publish.yaml").read_text(encoding="utf-8")).get("handles", {})

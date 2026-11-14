@@ -6,7 +6,7 @@
 id: map
 files: map                       # début du nom des vidéos livrées : map-short-<n>-<id>.mp4
 title: { ar: "خريطة كلمة", en: "The Map of a Word" }
-shorts: [qalb]
+shorts: [qalb, nur, sadr]
 handle: "@quran_words_daily"
 publish:
   out: docs/retention/publication-map.md

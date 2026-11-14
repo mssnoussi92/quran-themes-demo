@@ -1,0 +1,102 @@
+# « خريطة كلمة », épisode 2 (content/trial/map.yaml ; script : docs/scripts/map.md). Le modèle de `qalb`, validé par le
+# propriétaire le 2026-11-14 : un début muet et rapide (`silent`, `hold`, effets `sfx`), puis la voix D et une leçon. Ici la
+# sourate où le mot revient le plus porte son nom ; la première fois, une lumière qu'on perd (2:17) ; la lumière vraie
+# (24:35, jusqu'au premier arrêt). Les nombres viennent de tools/trial/wordmap.py ; les dessins : video/src/trial/WordMap.tsx.
+# Personne n'est dessiné ; rien de l'invisible (aucune lumière n'est montrée pour Dieu : le point du verset, comme ailleurs).
+# Script écrit par la session le 2026-11-14 (« je veux 3 épisodes ») : pas encore validé ; aucune voix avant son mot.
+id: nur
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 65-trial-nur
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1300, veil: 0.7 }
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 110, level: -36 }
+cover: { scene: scan, title: "«النور» في القرآن… كام مرة؟", tag: "خريطة كلمة (٢)", focus: 1000 }
+publish:
+  title: { en: "Light in the Quran… how many times?", ar: "«النور» في القرآن… كام مرة؟" }
+  part: 2
+  hashtags: ["#النور", "#سورة_النور"]
+  description:
+    en: "The word 'light' in the Quran: 43 times, in 33 verses, and most of all in the surah that bears its name, an-Nur. The first time, a light that is lost (2:17). And where the true light comes from (24:35)."
+    ar: "كلمة «النور» في القرآن: 43 مرة، في 33 آية، وأكتر سورة فيها… سورة «النور». أول مرة: نور بيروح (البقرة 17). والنور الحقيقي… من ربنا (النور 35)."
+segments:
+  # -- le début, muet et rapide
+  - narration: hook
+    silent: true
+    hold: 2.6
+    scene: scan
+    sfx: [[scan, 0]]
+    lines:
+      - ar: "«النور» في القرآن كام مرة؟"
+        en: "\"Light\" in the Quran: how many times?"
+  - narration: land
+    silent: true
+    hold: 2.2
+    scene: land
+    sources: [science.count-nur]
+    sfx: [[impact, 0.3]]
+    lines:
+      - ar: "43 مرة."
+        en: "43 times."
+  - narration: verses
+    silent: true
+    hold: 3.0
+    scene: grid
+    sources: [science.count-nur]
+    sfx: [[whoosh, 0]]
+    lines:
+      - ar: "في 33 آية… من 6236."
+        en: "In 33 verses… out of 6,236."
+  - narration: surahs
+    silent: true
+    hold: 4.0
+    scene: surahs
+    sources: [science.count-nur]
+    sfx: [[whoosh, 0], [pops, 0.95]]
+    lines:
+      - ar: "وأكتر سورة؟ سورة اسمها «النور»… 7 مرات."
+        en: "And the surah where it comes most? One named \"Light\"… 7 times."
+  # -- la voix
+  - narration: turn
+    scene: first
+    sources: [science.count-nur]
+    sfx: [[click, 0.4]]
+    lines:
+      - ar: "بس العدد… مش هو الحكاية."
+        en: "But the number… isn't the story."
+      - ar: "الحكاية… في أول مرة."
+        en: "The story… is in the first time."
+  - verse: quran.2.17
+    scene: first
+  - narration: lost
+    scene: fade
+    sources: [tafsir.muyassar.2.17]
+    lines:
+      - ar: "يعني: زي ناس في ليلة ضلمة… واحد منهم ولّع نار… ولما نوّرت حواليهم… انطفت."
+        en: "Meaning: like people on a dark night… one of them lit a fire… and just as it lit up around them… it went out."
+      - ar: "ده مثل المنافقين: آمنوا بلسانهم بس… فرجعوا للضلمة."
+        en: "That is the likeness of the hypocrites: they believed with their tongues only… and went back to the dark."
+      - ar: "طب النور الحقيقي… منين؟"
+        en: "So where does the true light come from?"
+  - verses: [quran.24.35]
+    upto: 4            # jusqu'au premier arrêt « ۚ », après « والأرض »
+    scene: rest
+  - narration: meaning
+    scene: rest
+    sources: [tafsir.muyassar.24.35]
+    lines:
+      - ar: "يعني: ربنا هو اللي نوّر السما والأرض… وكتابه وهدايته… نور منه."
+        en: "Meaning: God is the One who lit the heavens and the earth… and His Book and His guidance… are light from Him."
+  - narration: example
+    scene: rest
+    lines:
+      - ar: "زي أوضة ضلمة… مهما تدوّر فيها… مش هتلاقي حاجة."
+        en: "Like a dark room… however much you search in it… you find nothing."
+      - ar: "لحد ما النور ييجي… من برّه."
+        en: "Until the light comes… from outside."
+  - narration: close
+    scene: end
+    lines:
+      - ar: "النور من ربنا… اطلبه منه."
+        en: "Light is from God… ask Him for it."
+      - ar: "تابعنا عشان الكلمة الجاية."
+        en: "Follow us for the next word."

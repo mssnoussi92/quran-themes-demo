@@ -166,3 +166,23 @@
   checked: { "on": '2026-11-14', sources: ["https://corpus.quran.com/", "https://github.com/mustafa0x/quran-morphology", "tools/trial/wordmap.py"] }
   status: proposed
   notes: "Épisode qalb de « خريطة كلمة » : chaque nombre à l'écran."
+
+- id: science.count-nur
+  type: science
+  ref: { author: "Quranic Arabic Corpus (University of Leeds)", title: "Morphology of the Quran, word by word: every form of نور (the light), counted", publication: "corpus.quran.com; quran-morphology.txt (github.com/mustafa0x/quran-morphology)", year: 2011 }
+  url: https://corpus.quran.com/
+  label: { ar: "عدّ الكلمات: Quranic Arabic Corpus", en: "Word counts: Quranic Arabic Corpus" }
+  claim: "Le lemme نُور : 43 mots dans 33 versets, tous au singulier ; le plus souvent dans an-Nur (7), al-Hadid (6), al-Ma'ida (4) ; la première fois en 2:17, la dernière en 71:16. Comptés par tools/trial/wordmap.py."
+  checked: { "on": '2026-11-14', sources: ["https://corpus.quran.com/", "https://github.com/mustafa0x/quran-morphology", "tools/trial/wordmap.py"] }
+  status: proposed
+  notes: "Épisode nur de « خريطة كلمة » : chaque nombre à l'écran."
+
+- id: science.count-sadr
+  type: science
+  ref: { author: "Quranic Arabic Corpus (University of Leeds)", title: "Morphology of the Quran, word by word: every form of صدر (the chest), counted", publication: "corpus.quran.com; quran-morphology.txt (github.com/mustafa0x/quran-morphology)", year: 2011 }
+  url: https://corpus.quran.com/
+  label: { ar: "عدّ الكلمات: Quranic Arabic Corpus", en: "Word counts: Quranic Arabic Corpus" }
+  claim: "Le lemme صَدْر : 44 mots dans 41 versets ; 34 au pluriel (صدور), 10 au singulier ; le plus souvent dans Al 'Imran (5), Hud (3), Ghafir (3) ; la première fois en 3:29, la dernière en 114:5, dans la dernière sourate. Comptés par tools/trial/wordmap.py."
+  checked: { "on": '2026-11-14', sources: ["https://corpus.quran.com/", "https://github.com/mustafa0x/quran-morphology", "tools/trial/wordmap.py"] }
+  status: proposed
+  notes: "Épisode sadr de « خريطة كلمة » : chaque nombre à l'écran."

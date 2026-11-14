@@ -2432,3 +2432,37 @@
   notes: 'Taha 20:26, récité à la suite de 20:25 (« خريطة كلمة », épisode sadr : « ويسر لي أمري »)'
   text_ar: وَيَسِّرْ لِىٓ أَمْرِى
   text_en: And ease for me my task
+
+- id: quran.20.27
+  type: ayah
+  ref: {surah: 20, ayah: 27}
+  url: https://quran.com/20/27
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=20:27
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=20:27
+    translator: Saheeh International
+    surah_ar: طه
+    surah_en: Taha
+    retrieved: '2026-11-14'
+  status: proposed
+  notes: 'Taha 20:27, récité à la suite de 20:25-26 (« خريطة كلمة », épisode sadr : « واحلل عقدة من لساني »)'
+
+  text_ar: وَٱحْلُلْ عُقْدَةً مِّن لِّسَانِى
+  text_en: And untie the knot from my tongue
+- id: quran.20.28
+  type: ayah
+  ref: {surah: 20, ayah: 28}
+  url: https://quran.com/20/28
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=20:28
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=20:28
+    translator: Saheeh International
+    surah_ar: طه
+    surah_en: Taha
+    retrieved: '2026-11-14'
+  status: proposed
+  notes: 'Taha 20:28, la fin du du''a de Moussa récité dans l''épisode sadr (« يفقهوا قولي »)'
+  text_ar: يَفْقَهُوا۟ قَوْلِى
+  text_en: That they may understand my speech.

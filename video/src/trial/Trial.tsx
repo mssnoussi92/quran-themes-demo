@@ -140,7 +140,9 @@ export const sceneOpacity = (segments: { scene: string; start: number }[], id: s
 };
 
 /** What a short draws over its clip. `show(id)`: how much of that scene is there now; `since(id)`: when it first came. */
-export type Drawn = React.FC<{ t: number; show: (id: string) => number; since: (id: string) => number; horizon: number }>;
+/** `phrase(id, n)`: when the n-th phrase (counted over its lines) of the first narration on the scene `id` is said, in
+ * seconds; a drawing that does not get it (a cover, the film) falls back on its own times. */
+export type Drawn = React.FC<{ t: number; show: (id: string) => number; since: (id: string) => number; horizon: number; phrase?: (id: string, n: number) => number }>;
 
 /** The boat (18:71, 18:79): `holed` close, `fleet` the king's ships behind it, `sail` going on its way, `sea` the sea alone;
  * `bird`: the sparrow of the hadith on its edge, before anything was torn (a scene of the film, shown by its vertical version). */
@@ -625,19 +627,24 @@ export const Trial: React.FC<TrialProps> = ({ data, platform }) => {
   const current = [...data.segments].reverse().find((s) => t >= s.start - 0.3) ?? data.segments[0];
   const show = (id: string) => sceneOpacity(data.segments, id, t);
   const since = (id: string) => data.segments.find((s) => s.scene === id)?.start ?? 0;
+  const phrase = (id: string, n: number) => {
+    const seg = data.segments.find((s) => s.scene === id && s.kind === "narration") as Narration | undefined;
+    const said = seg ? seg.lines.flatMap((l) => l.phrases) : [];
+    return seg && said[n] ? seg.start + said[n].start : since(id) + n;
+  };
   return (
     <AbsoluteFill style={{ background: picture.ground ?? "#04070f" }}>
       {/* the picture: it grows slowly around the horizon, the texts never move */}
       <AbsoluteFill style={{ transform: `scale(${zoom})`, transformOrigin: `50% ${(horizon / H) * 100}%` }}>
         <Clip src={data.clip} clipSeconds={data.clip_seconds} picture={picture} />
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: "absolute", inset: 0 }}>
-          <Drawing t={t} show={show} since={since} horizon={horizon} />
+          <Drawing t={t} show={show} since={since} horizon={horizon} phrase={phrase} />
         </svg>
       </AbsoluteFill>
       <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(4,7,20,${0.78 * (picture.veil ?? 1)}) 0%, rgba(4,7,20,${0.45 * (picture.veil ?? 1)}) 30%, rgba(4,7,20,.05) 52%, rgba(4,7,20,.38) 100%)` }} />
       {Overlay ? (
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: "absolute", inset: 0 }}>
-          <Overlay t={t} show={show} since={since} horizon={horizon} />
+          <Overlay t={t} show={show} since={since} horizon={horizon} phrase={phrase} />
         </svg>
       ) : null}
       {data.ambience ? <Html5Audio src={staticFile(data.ambience)} /> : null}

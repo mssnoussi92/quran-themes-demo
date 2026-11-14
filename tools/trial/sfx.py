@@ -46,7 +46,7 @@ def scan_x(f: float) -> float:
 def word_data(word: str) -> dict:
     text = (ROOT / "video" / "src" / "trial" / "mapData.ts").read_text(encoding="utf-8")
     data = json.loads(re.search(r"MAP = (\{.*\}) as const", text).group(1))
-    return {"verses": data["verses"], **data["words"][word]}
+    return {**data["words"][word], "grid": data["verses"]}   # `verses` of a word: the verses that hold it
 
 
 def rng(seed: int) -> np.random.Generator:
@@ -132,7 +132,7 @@ def scan(word: str) -> tuple[np.ndarray, int]:
     """The ticks of the scan and the breath under it; returns the sound and how many ticks it has. Its time 0 is the
     start of the scan (SCAN_LEAD before its segment)."""
     data = word_data(word)
-    rows = (data["verses"] - 1) // COLS
+    rows = (data["grid"] - 1) // COLS
     times = sorted({round(SCAN * scan_x((v // COLS) / rows), 3) for v, _, _ in data["each"]})
     n = int((SCAN + 0.1) * RATE)
     t = np.arange(n) / RATE

@@ -97,7 +97,7 @@ segments:
   - narration: closed
     scene: closed
     sources: [tafsir.muyassar.2.7, tafsir.muyassar.83.14]
-    sfx: [[click, 0.1], [click, 1.1], [lock, 2.2]]
+    sfx: [[click, "phrase 0"], [click, "phrase 1"], [lock, "phrase 2"]]   # les cadenas, sur « أول مرة… وآخر مرة… قلوب اتقفلت »
     lines:
       - ar: "أول مرة… وآخر مرة… قلوب اتقفلت."
         en: "The first time… and the last… hearts that were closed."
