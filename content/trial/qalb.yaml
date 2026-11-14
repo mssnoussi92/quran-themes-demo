@@ -5,8 +5,13 @@
 # texte à l'écran, tenu `hold` secondes, des effets sonores `sfx`), la suite dite par la voix D. Les nombres viennent de
 # tools/trial/wordmap.py, jamais tapés ; les dessins : video/src/trial/WordMap.tsx ; les sons : tools/trial/sfx.py,
 # générés (rien à créditer, aucun son musical, jamais sous un verset). Personne n'est dessiné.
-# Script écrit par la session le 2026-11-14 : pas encore validé ; aucune requête de voix avant son « je valide le script ».
+# Script écrit par la session le 2026-11-14.
 id: qalb
+# « C'est mieux comme ça, et je veux 3 épisodes, et je valide tout » du propriétaire (2026-11-14), sur le brouillon v2 et
+# le script docs/scripts/map.md, seul script qui attendait son mot : lu comme le script tel qu'envoyé, sans le hadith du
+# الران proposé en option (« mieux comme ça »), et le début du brouillon avec ses sons. Ni la voix, ni la vidéo finale,
+# ni les textes, ni les sources : il les valide sur les vidéos. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-14 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 64-trial-qalb     # content/voice-test/<text>.txt : les répliques dites par la voix (pas celles du début muet)
