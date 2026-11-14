@@ -27,7 +27,7 @@ cover: { scene: hourglass, title: "كلمة واحدة كانت هتكذّب ا�
 publish:
   title: { en: "One sentence could have disproved the Quran", ar: "كلمة واحدة كانت هتكذّب القرآن" }
   part: 1
-  hashtags: ["#سورة_المسد", "#أبو_لهب"]      # les siens, d'abord (proposés par la session le 2026-11-14, à valider)
+  hashtags: ["#سورة_المسد", "#أبو_لهب"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
   description:
     en: "A book said of a living man, by his name, that he would die a disbeliever. All he had to do to prove it wrong was say one sentence, even as a lie. He never said it. Surat al-Masad, and what Ibn Kathir wrote about it."
     ar: "كتاب قال على راجل عايش، وباسمه، إنه هيموت على الكفر. وكل اللي كان عليه عشان يكذّبه: كلمة واحدة، ولو كدب. وما قالهاش. سورة المسد، وكلام ابن كثير عنها."

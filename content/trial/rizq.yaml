@@ -17,7 +17,7 @@ cover: { scene: faces, title: "كلمتين اتبدّلوا… ليه؟", tag: 
 publish:
   title: { en: "Two words swapped places… why?", ar: "كلمتين اتبدّلوا… ليه؟" }
   part: 1
-  hashtags: ["#الرزق"]      # les siens, d'abord (proposés par la session le 2026-11-14, à valider)
+  hashtags: ["#الرزق"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
   description:
     en: "Two verses, almost the same words: 'We provide for you and them' and 'We provide for them and you'. In the first, poverty is already there; in the second, it is feared. Their provision is on God."
     ar: "آيتين تقريبًا نفس الكلام، بس كلمتين بدّلوا مكانهم. في الأولى الفقر موجود، فطمّنك إنت الأول؛ وفي التانية الخوف من فقر جاي، فطمّنك عليهم هما الأول. رزقهم على ربنا."

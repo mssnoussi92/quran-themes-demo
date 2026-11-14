@@ -21,7 +21,7 @@ cover: { scene: horses, title: "كلمة في القرآن… يمكن توصف�
 publish:
   title: { en: "A word in the Quran… that might describe you", ar: "كلمة في القرآن… يمكن توصفك" }
   part: 1
-  hashtags: ["#سورة_العاديات", "#الشكر"]      # les siens, d'abord (proposés par la session le 2026-11-14, à valider)
+  hashtags: ["#سورة_العاديات", "#الشكر"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
   description:
     en: "God swore by charging horses to say one word about man. Al-Hasan al-Basri explained it: the one who counts his misfortunes, and forgets his Lord's blessings."
     ar: "ربنا أقسم بالخيل وهي بتجري عشان يقول كلمة واحدة عن الإنسان. والحسن البصري فسّرها: اللي بيعدّ المصايب، وينسى نعم ربه."

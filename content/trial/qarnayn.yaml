@@ -40,7 +40,7 @@ publish:
   description:
     en: "The fate of a whole people at his word, money offered to him, a barrier no one could pass: one man, three tests of power in Surat al-Kahf. What do you do when you have power over someone, what do you take from those who need you, and what do you say when you succeed?"
     ar: "مصير قوم كاملين بكلمة منه، فلوس اتعرضت عليه، وسد محدش قدر يعدّيه: راجل واحد… وتلات اختبارات للقوة في سورة الكهف. تعمل إيه لما تقدر على حد، تاخد إيه من اللي محتاجك، وتقول إيه لما تنجح؟"
-  hashtags: ["#ذو_القرنين", "#سورة_الكهف"]      # proposés par la session le 2026-11-14, à valider ; avant : ["#DhulQarnayn", "#ذو_القرنين", "#SurahAlKahf"]
+  hashtags: ["#ذو_القرنين", "#سورة_الكهف"]      # validés par le propriétaire le 2026-11-14 (« je valide les hashtags ») ; avant : ["#DhulQarnayn", "#ذو_القرنين", "#SurahAlKahf"]
   narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }
 chapters:
   - id: open

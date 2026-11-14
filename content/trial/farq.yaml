@@ -10,5 +10,5 @@ handle: "@quran_words_daily"
 publish:
   out: docs/retention/publication-farq.md
   series: { en: "Did You Notice the Difference?", ar: "لاحظت الفرق؟" }
-  hashtags: ["#لاحظت_الفرق", "#تدبر_القرآن"]      # proposés par la session le 2026-11-14, à valider ; avant : ["#Quran", "#القرآن", "#تدبر"]
+  hashtags: ["#لاحظت_الفرق", "#تدبر_القرآن"]      # validés par le propriétaire le 2026-11-14 (« je valide les hashtags ») ; avant : ["#Quran", "#القرآن", "#تدبر"]
   narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }

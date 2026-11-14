@@ -17,7 +17,7 @@ cover: { scene: faces, title: "نفس الكلمات… بالمقلوب", tag: 
 publish:
   title: { en: "The same words… in reverse", ar: "نفس الكلمات… بالمقلوب" }
   part: 3
-  hashtags: ["#العدل"]      # les siens, d'abord (proposés par la session le 2026-11-14, à valider)
+  hashtags: ["#العدل"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
   description:
     en: "The same words in reverse order, in two verses: justice even against yourself and those you love, and justice even toward someone you dislike."
     ar: "نفس الكلمات بالمقلوب في آيتين: العدل حتى على نفسك واللي بتحبهم، والعدل حتى مع اللي بتكرهه. العدل مش على مزاجك."

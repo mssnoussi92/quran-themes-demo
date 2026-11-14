@@ -12,5 +12,5 @@ handle: "@quran_words_daily"
 publish:
   out: docs/retention/publication-kalima.md
   series: { en: "A Word of the Quran", ar: "كلمة من القرآن" }
-  hashtags: ["#كلمة_من_القرآن", "#معاني_القرآن"]      # proposés par la session le 2026-11-14, à valider ; avant : ["#Quran", "#القرآن", "#تدبر"]
+  hashtags: ["#كلمة_من_القرآن", "#معاني_القرآن"]      # validés par le propriétaire le 2026-11-14 (« je valide les hashtags ») ; avant : ["#Quran", "#القرآن", "#تدبر"]
   narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }

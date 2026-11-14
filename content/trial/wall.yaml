@@ -37,7 +37,7 @@ cover: { scene: treasure, title: "سر تحت الجدار", tag: "موسى وا
 publish:
   title: { en: "The secret under the wall", ar: "سر تحت الجدار" }
   part: 3
-  hashtags: ["#الخضر", "#الحكمة"]      # les siens, d'abord (proposés par la session le 2026-11-14, à valider)
+  hashtags: ["#الخضر", "#الحكمة"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
   description:
     en: "A town refused to host them… and one of them repaired its wall for free. Why? Under that wall was a treasure kept for two orphans until they grew up. How many walls were built in your life without your knowing?"
     ar: "قرية رفضت تضيّفهم… وواحد منهم صلّح جدارها ببلاش. ليه؟ تحت الجدار كنز لولدين يتامى، ربنا حفظه لحد ما يكبروا. كام جدار اتبنى في حياتك… وإنت مش داري؟"
