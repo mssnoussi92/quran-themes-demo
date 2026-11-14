@@ -203,7 +203,7 @@ const place = (s: { name: string; ayah: number }) => `${s.name} ${s.ayah}`;
 
 const QalbPicture: Drawn = ({ t, show, since }) => {
   const hook = show("hook");
-  const fall = after(t, since("grid") + 0.1, 1.3);
+  const fall = show("grid") > 0 ? after(t, since("grid") + 0.1, 1.3) : 0;     // a cover (scene hook) never crumbles
   const grid = Math.max(show("grid"), show("first"), show("last"), show("closed"), show("rest"), show("end"));
   const gathered = Math.max(show("forms"), show("surahs"));
   const travel = after(t, since("last") + 0.1, 1.4);
