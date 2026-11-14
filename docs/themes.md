@@ -616,6 +616,28 @@ le nom, et quand (aucune place dans la grille ; « كلمة من القرآن »
 **« Oui, commencer »** (propriétaire, 2026-11-13) : images de style (`docs/retention/farq-style.jpg`) et script pilote
 (`docs/scripts/farq.md`, à valider : `rizq`, `adab`, `qist` ; 18:81 laissé hors de l'épisode 2).
 
+### Série proposée dans le montage de la vidéo de référence : « خريطة كلمة » (session, 2026-11-14)
+
+Demande du propriétaire (2026-11-14) : « on est loin du style du montage de la vidéo ; j'aimerais explorer une série qui
+utilise ce type de montage ». **Ce qui fait ce montage**, et que nos séries n'ont pas pris : **aucune voix** (un fond
+sonore, le texte à l'écran) ; une **image qui bouge sans arrêt** (les nombres en particules qui se forment, la grille qui
+s'allume, des coupes toutes les cinq à six secondes) ; **beaucoup d'informations, vite** ; des données du Coran rendues
+visibles. Nos épisodes gardent le modèle : la voix égyptienne, des répliques de trois à huit secondes, des cartes posées.
+
+**Proposition** : une série sans voix, « خريطة كلمة » (une carte d'un mot) : un mot du Coran, ou une famille de mots, et
+**où** il est dans les 6 236 versets, en données vraies, comptées par l'outil (`tools/trial/count.py`), jamais un
+« miracle » : combien de fois, toutes formes comprises (la règle écrite) ; sa première et sa dernière apparition ; les
+sourates où il revient le plus ; mecquois ou médinois ; puis un verset récité où il est, le mot en or, et son sens en
+une ligne écrite (nos mots, d'après un tafsir nommé dessous) ; une soixantaine de secondes. Le nom de la page est
+« Quran Words Daily » : une série sur les mots du Coran, en données, lui va. **Ce qu'elle coûte** : aucune requête de
+voix ; des dessins à reprendre de `Count.tsx` (particules, grille) et à animer davantage (une caméra qui avance dans la
+grille, des sourates qui s'allument) ; des données de plus (le lieu de révélation de chaque sourate, quran.com).
+
+**Les risques** : sans voix, plus d'égyptien, ce qui distingue la page ; tout se lit (arabe et anglais à l'écran), à
+garder court ; une série de nombres glisse vite vers le « إعجاز عددي » : chaque nombre est un fait, la règle de comptage
+écrite, aucune égalité cherchée entre deux mots ; un compte ne dit rien du sens : c'est le verset et son tafsir qui le
+disent. **À son mot** : une série sans voix, le nom, les trois premiers mots, des images de style d'abord.
+
 ### Le « إعجاز عددي » : une vidéo analysée et des comptes refaits (propriétaire, 2026-11-13)
 
 Demande : analyser le montage d'une vidéo Facebook (enregistrement d'écran, 1:33) pour « لاحظت الفرق », et une série
