@@ -596,3 +596,68 @@
   status: proposed
   notes: '« ألا بطاعة الله وذكره وثوابه تسكن القلوب وتستأنس » (épisode qalb : « يعني: القلب يرتاح… بذكر ربنا »)'
   text_ar: ويهدي الذين تسكن قلوبهم بتوحيد الله وذكره فتطمئن، ألا بطاعة الله وذكره وثوابه تسكن القلوب وتستأنس.
+- id: tafsir.muyassar.2.17
+  type: tafsir
+  ref: {edition: muyassar, surah: 2, ayah: 17}
+  url: https://quran.com/2:17/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/2:17
+    edition: Tafsir Muyassar
+    verses: ["2:17"]
+    retrieved: '2026-11-14'
+  status: proposed
+  notes: '« ذهب الله بنورهم » (épisode nur : le sens de la première fois)'
+  text_ar: حال المنافقين الذين آمنوا -ظاهرًا لا باطنًا- برسالة محمد صلى الله عليه وسلم، ثم كفروا، فصاروا يتخبطون في ظلماتِ ضلالهم وهم لا يشعرون، ولا أمل لهم في الخروج منها، تُشْبه حالَ جماعة في ليلة مظلمة، وأوقد أحدهم نارًا عظيمة للدفء والإضاءة، فلما سطعت النار وأنارت ما حوله، انطفأت وأعتمت، فصار أصحابها في ظلمات لا يرون شيئًا، ولا يهتدون إلى طريق ولا مخرج.
+- id: tafsir.muyassar.24.35
+  type: tafsir
+  ref: {edition: muyassar, surah: 24, ayah: 35}
+  url: https://quran.com/24:35/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/24:35
+    edition: Tafsir Muyassar
+    verses: ["24:35"]
+    retrieved: '2026-11-14'
+  status: proposed
+  notes: '« الله نور السماوات والأرض » (épisode nur : le sens du verset de la sourate an-Nur)'
+  text_ar: الله نور السموات والأرض يدبر الأمر فيهما ويهدي أهلهما، فهو -سبحانه- نور، وحجابه نور، به استنارت السموات والأرض وما فيهما، وكتاب الله وهدايته نور منه سبحانه، فلولا نوره تعالى لتراكمت الظلمات بعضها فوق بعض. مثل نوره الذي يهدي إليه، وهو الإيمان والقرآن في قلب المؤمن كمشكاة، وهي الكُوَّة في الحائط غير النافذة، فيها مصباح، حيث تجمع الكوَّة نور المصباح فلا يتفرق، وذلك المصباح في زجاجة، كأنها -لصفائها- كوكب مضيء كالدُّر، يوقَد المصباح من زيت شجرة مباركة، وهي شجرة الزيتون، لا شرقية فقط، فلا تصيبها الشمس آخر النهار، ولا غربية فقط فلا تصيبها الشمس أول النهار، بل هي متوسطة في مكان من الأرض لا إلى الشرق ولا إلى الغرب، يكاد زيتها -لصفائه- يضيء من نفسه قبل أن تمسه النار، فإذا مَسَّتْه النار أضاء إضاءة بليغة، نور على نور، فهو نور من إشراق الزيت على نور من إشعال النار، فذلك مثل الهدى يضيء في قلب المؤمن. والله يهدي ويوفق لاتباع القرآن مَن يشاء، ويضرب الأمثال للناس؛ ليعقلوا عنه أمثاله وحكمه. والله بكل شيء عليم، لا يخفى عليه شيء.
+- id: tafsir.muyassar.3.29
+  type: tafsir
+  ref: {edition: muyassar, surah: 3, ayah: 29}
+  url: https://quran.com/3:29/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/3:29
+    edition: Tafsir Muyassar
+    verses: ["3:29"]
+    retrieved: '2026-11-14'
+  status: proposed
+  notes: '« يعلمه الله » (épisode sadr : ce qui est caché dans les poitrines, Dieu le sait)'
+  text_ar: 'قل -أيها النبي- للمؤمنين: إن تكتموا ما استقر في قلوبكم من موالاة الكافرين ونصرتهم أو تظهروا ذلك لا يَخْفَ على الله منه شيء، فإنَّ علمه محيط بكل ما في السماوات وما في الأرض، وله القدرة التامة على كل شيء.'
+- id: tafsir.muyassar.114.5
+  type: tafsir
+  ref: {edition: muyassar, surah: 114, ayah: 5}
+  url: https://quran.com/114:5/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/114:5
+    edition: Tafsir Muyassar
+    verses: ["114:5"]
+    retrieved: '2026-11-14'
+  status: proposed
+  notes: '« يوسوس في صدور الناس » (épisode sadr : la dernière fois)'
+  text_ar: الذي يبثُّ الشر والشكوك في صدور الناس.
+- id: tafsir.muyassar.20.25
+  type: tafsir
+  ref: {edition: muyassar, surah: 20, ayah: 25}
+  url: https://quran.com/20:25/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/20:25
+    edition: Tafsir Muyassar
+    verses: ["20:25"]
+    retrieved: '2026-11-14'
+  status: proposed
+  notes: '« رب اشرح لي صدري » (épisode sadr : le du''a de Moussa, son sens)'
+  text_ar: 'قال موسى: رب وسِّع لي صدري، وسَهِّل لي أمري، وأطلق لساني بفصيح المنطق; ليفهموا كلامي. واجعل لي معينا من أهلي، هارون أخي. قَوِّني به وشدَّ به ظهري، وأشركه معي في النبوة وتبليغ الرسالة; كي ننزهك بالتسبيح كثيرًا، ونذكرك كثيرا فنحمدك. إنك كنت بنا بصيرًا، لا يخفى عليك شيء من أفعالنا.'

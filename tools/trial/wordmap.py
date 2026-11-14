@@ -22,7 +22,11 @@ OUT = ROOT / "video" / "src" / "trial" / "mapData.ts"
 
 # The episodes: the lemma counted, as the corpus writes it, and the verses the episode marks on the map besides the
 # first and the last (the verse of its answer).
-WORDS = {"qalb": {"lemma": "قَلْب", "marks": [(13, 28)]}}
+WORDS = {
+    "qalb": {"lemma": "قَلْب", "marks": [(13, 28)]},
+    "nur": {"lemma": "نُور", "marks": [(24, 35)]},
+    "sadr": {"lemma": "صَدْر", "marks": [(20, 25)]},
+}
 
 
 def form(features: list[str]) -> str:
