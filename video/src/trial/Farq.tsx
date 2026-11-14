@@ -79,9 +79,9 @@ const slots = (n: number) => {
   return Array.from({ length: n }, (_, k) => W / 2 + ((n - 1) / 2) * gap - k * gap);
 };
 
-const PANEL = 235;
-const TOP_PANEL = 712;
-const BOTTOM_PANEL = 1085;
+const PANEL = 215;
+const TOP_PANEL = 752;     // under the longest line of narration (five phrases), with a margin
+const BOTTOM_PANEL = 1100;
 /** The two short pieces face to face; each word that changed place travels from under its place in the upper verse to
  * above its place in the lower one (`travel`), leaving its trace; `labels`: what each verse means, in the session's words. */
 const FaceToFace: React.FC<{ ep: Episode; t: number; since: number; travel: number; labels?: readonly string[]; labelsOn?: number }> = ({ ep, t, since, travel, labels, labelsOn = 0 }) => {
@@ -95,12 +95,12 @@ const FaceToFace: React.FC<{ ep: Episode; t: number; since: number; travel: numb
       <rect x={50} y={y0} width={W - 100} height={PANEL} rx={26} fill="#060a18" fillOpacity={0.86} stroke={GOLD} strokeOpacity={0.35} strokeWidth={2} />
       <text x={W - 84} y={y0 + 36} textAnchor="end" fontFamily={FONT.arabic} fontWeight={700} fontSize={28} fill={GOLD} opacity={0.8}>{`${piece.name} · ${AR(piece.ayah)}`}</text>
       {piece.words.map((word, k) => (
-        <text key={k} x={xs[k]} y={y0 + 146} textAnchor="middle" fontFamily={FONT.quran} fontSize={size}
+        <text key={k} x={xs[k]} y={y0 + 132} textAnchor="middle" fontFamily={FONT.quran} fontSize={size}
               fill={piece.gold.includes(k) && glow > 0 ? colourOf(ep, side, k) : DIM} opacity={piece.gold.includes(k) ? 0.4 + 0.6 * glow : 1}>
           {word}
         </text>
       ))}
-      {label ? <text x={W / 2} y={y0 + PANEL - 26} textAnchor="middle" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={38} fill={MINT} opacity={labelsOn}>{label}</text> : null}
+      {label ? <text x={W / 2} y={y0 + PANEL - 22} textAnchor="middle" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={38} fill={MINT} opacity={labelsOn}>{label}</text> : null}
     </g>
   );
   return (
@@ -254,8 +254,8 @@ const Faces: React.FC<{ ep: Episode; t: number; since: number; arrive: boolean }
   const size = Math.max(top.words.length, bottom.words.length) > 6 ? 60 : 68;
   return (
     <g>
-      <Card piece={top} y={700} size={size} lit={lit} dx={(1 - come) * 700} opacity={come} colours={colours(0)} perRow={5} />
-      <Card piece={bottom} y={1010} size={size} lit={lit} dx={-(1 - come) * 700} opacity={come} colours={colours(1)} perRow={5} />
+      <Card piece={top} y={720} size={size} lit={lit} dx={(1 - come) * 700} opacity={come} colours={colours(0)} perRow={5} />
+      <Card piece={bottom} y={1025} size={size} lit={lit} dx={-(1 - come) * 700} opacity={come} colours={colours(1)} perRow={5} />
     </g>
   );
 };
