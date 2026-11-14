@@ -61,7 +61,7 @@ partir du deuxième, c'est l'épisode d'avant.
 | --- | --- | --- | --- | --- |
 | ~~jeu. 12 nov., soir~~ | ~~Moussa et al-Khadir : le film~~ | YouTube (16:9) ; Facebook (vertical) | `khidr-film-16x9-ambience.mp4`, `khidr-film-9x16.mp4` | `publication-moussa-khidr.md` : « Le film » ; `publication-moussa-khidr-9x16.md` |
 | ~~ven. 13 nov.~~ | ~~Khidr, short 1 : la barque~~ | les quatre | `khidr-short-1-boat-ambience.mp4`, `-tiktok-ambience`, `couverture-1-bateau.jpg` | `publication-moussa-khidr.md` : « Short 1 » |
-| sam. 14 nov. | Khidr, short 2 : le garçon | les quatre | `khidr-short-2-boy-ambience.mp4`, `-tiktok-ambience`, `couverture-2-garcon.jpg` | `publication-moussa-khidr.md` : « Short 2 » |
+| ~~sam. 14 nov.~~ | ~~Khidr, short 2 : le garçon~~ | les quatre | `khidr-short-2-boy-ambience.mp4`, `-tiktok-ambience`, `couverture-2-garcon.jpg` | `publication-moussa-khidr.md` : « Short 2 » |
 | dim. 15 nov. | Khidr, short 3 : le mur | les quatre | `khidr-short-3-wall-ambience.mp4`, `-tiktok-ambience`, `couverture-3-mur.jpg` | « Short 3 » |
 | lun. 16 nov., soir | Du'a : le film | YouTube (16:9) ; Facebook (vertical) | releases `dua-candidate`, `dua-9x16-candidate` | `publication-dua.md` : « Le film » ; `publication-dua-9x16.md` |
 | mar. 17 nov. | Du'a, short 1 : Ayyoub | les quatre | release `dua-candidate` | `publication-dua.md` : « Short 1 » |
@@ -146,3 +146,7 @@ Une ligne par vidéo et par plateforme, remplie à 48 heures. L'heure de publica
 | 13 nov. | matin | Khidr, short 1 | Instagram | 1:33 | | | | | | |
 | 13 nov. | matin | Khidr, short 1 | YouTube Shorts | 1:33 | | | | | | |
 | 13 nov. | matin | Khidr, short 1 | TikTok | 1:33 | | | | | | |
+| 14 nov. | après-midi | Khidr, short 2 | Facebook | 1:47 | | | | | | |
+| 14 nov. | après-midi | Khidr, short 2 | Instagram | 1:47 | | | | | | |
+| 14 nov. | après-midi | Khidr, short 2 | YouTube Shorts | 1:47 | | | | | | |
+| 14 nov. | après-midi | Khidr, short 2 | TikTok | 1:47 | | | | | | |
