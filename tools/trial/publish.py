@@ -126,14 +126,12 @@ def footage(specs: list[dict], own: dict | None = None) -> str:
     return " · ".join(parts)
 
 
-def hashtags(conf: dict, theme: list[str], hadith: bool, verse: bool, most: int | None) -> str:
-    tags = [conf["hashtags"]["brand"], conf["hashtags"]["broad"][0], theme[0], *conf["hashtags"]["broad"][1:], *theme[1:]]
-    if hadith:
-        tags += conf["hashtags"]["hadith"]
-    if verse:
-        tags += conf["hashtags"]["reciters"]["sayegh"]
-    tags = list(dict.fromkeys(tags))
-    return " ".join(tags[:most] if most else tags)
+def hashtags(conf: dict, own: list[str], theme: list[str], platform: str) -> str:
+    """The hashtags of one video on one platform (content/publish.yaml, `model_hashtags`): the video's own first tag, the
+    broad Arabic tag, the film's or series' first tag, the broad English tag, then the other tags; the first ones kept."""
+    m = conf["model_hashtags"]
+    tags = [*own[:1], m["arabic"], *theme[:1], m["english"], *own[1:], *theme[1:]]
+    return " ".join(list(dict.fromkeys(tags))[:m["most"][platform]])
 
 
 def block(text: str) -> str:
@@ -184,6 +182,7 @@ def main() -> None:
     status = (f"Titres et descriptions **validés par le propriétaire le {when}**" if validated
               else "Titres et descriptions **proposés par la session, pas encore validés par le propriétaire**")
     limits = conf["platforms"]
+    most = conf["model_hashtags"]["most"]
     out = [
         f"# {pub['series']['en']} · {pub['series']['ar']} : textes de publication",
         "",
@@ -208,7 +207,7 @@ def main() -> None:
         caption = "\n\n".join([
             pub["title"]["en"] + "\n" + pub["title"]["ar"], pub["description"]["en"], pub["description"]["ar"],
             "Quoted:\n" + "\n".join(lines), narration + "\n" + footage(shorts, film.get("pictures")), conf["handle"],
-            hashtags(conf, pub["hashtags"], hadith, verse, limits["facebook"]["max_hashtags"]),
+            hashtags(conf, [], pub["hashtags"], "facebook"),
         ])
         said = ((film.get("tall") or {}).get("validated") or {})
         state = (f"**validé par le propriétaire le {said.get('on', said.get(True))}**" if "publish" in (said.get("what") or [])
@@ -218,7 +217,7 @@ def main() -> None:
                "il reprend le titre et la description du film, sans les chapitres.", "",
                f"## Le film en 9:16 · {pub['title']['en']} · {pub['title']['ar']}", "",
                f"`{files}-film-9x16.mp4` · {stamp(data['seconds'])} · 9:16 · Facebook", "",
-               f"**Facebook ({limits['facebook']['max_hashtags']} hashtags)**", "", block(caption)]
+               f"**Facebook ({most['facebook']} hashtags)**", "", block(caption)]
         # Beside the film's own texts: `publish.out` of its file, with « -9x16 » before the extension.
         own = ROOT / pub.get("out", f"docs/publication-{files}.md")
         target = args.out or own.with_name(own.stem + "-9x16" + own.suffix)
@@ -239,7 +238,7 @@ def main() -> None:
         body = "\n\n".join([
             pub["description"]["en"], pub["description"]["ar"], "Chapters:\n" + chapters,
             "Quoted:\n" + "\n".join(lines), narration + "\n" + footage(shorts, film.get("pictures")), conf["handle"],
-            hashtags(conf, pub["hashtags"], hadith, verse, None),
+            hashtags(conf, [], pub["hashtags"], "youtube"),
         ])
         if len(body) > limits["youtube"]["max_description"]:
             sys.exit(f"error: the film's YouTube description is {len(body)} characters")
@@ -262,14 +261,14 @@ def main() -> None:
         name = f"{files}-short-{n}-{spec['id']}"
         cover = (spec.get("cover") or {}).get("file", f"{name}-cover.jpg")
 
-        def caption(handle: str, most: int | None) -> str:
+        def caption(handle: str, platform: str) -> str:
             return "\n\n".join([
                 sp["title"]["en"] + "\n" + sp["title"]["ar"], sp["description"]["en"], sp["description"]["ar"], series,
                 "Quoted:\n" + "\n".join(lines), narration + "\n" + footage([spec]), handle,
-                hashtags(conf, pub["hashtags"], hadith, verse, most),
+                hashtags(conf, sp.get("hashtags") or [], pub["hashtags"], platform),
             ])
 
-        insta = caption(conf["handle"], limits["instagram_tiktok"]["max_hashtags"])
+        insta = caption(conf["handle"], "instagram")
         if len(insta) > limits["instagram_tiktok"]["max_caption"]:
             sys.exit(f"error: {name}: the Instagram caption is {len(insta)} characters")
         title = f"{sp['title']['en']} · {sp['title']['ar']}"
@@ -278,12 +277,12 @@ def main() -> None:
         out += [f"## Short {n} · {sp['title']['en']} · {sp['title']['ar']}", "",
                 f"`{name}{bed}.mp4` (TikTok : `{name}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`) · {stamp(data['seconds'])} · 9:16 · "
                 f"Facebook, Instagram, TikTok, YouTube Shorts · couverture : `{cover}`", "",
-                f"**Facebook ({limits['facebook']['max_hashtags']} hashtags)**", "", block(caption(conf["handle"], limits["facebook"]["max_hashtags"])),
-                f"**Instagram ({limits['instagram_tiktok']['max_hashtags']} hashtags)**", "", block(insta),
-                f"**TikTok : la vidéo `{name}-tiktok{bed}.mp4` ({limits['instagram_tiktok']['max_hashtags']} hashtags)**", "",
-                block(caption(conf["handles"]["tiktok"], limits["instagram_tiktok"]["max_hashtags"])),
+                f"**Facebook ({most['facebook']} hashtags)**", "", block(caption(conf["handle"], "facebook")),
+                f"**Instagram ({most['instagram']} hashtags)**", "", block(insta),
+                f"**TikTok : la vidéo `{name}-tiktok{bed}.mp4` ({most['tiktok']} hashtags)**", "",
+                block(caption(conf["handles"]["tiktok"], "tiktok")),
                 f"**Titre YouTube ({len(title)}/{limits['youtube']['max_title']})**", "", block(title),
-                "**Description YouTube (Shorts)**", "", block(caption(conf["handle"], None)),
+                "**Description YouTube (Shorts)**", "", block(caption(conf["handle"], "youtube")),
                 *([] if series_only else ["Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.", ""])]
 
     target = args.out or ROOT / pub.get("out", f"docs/publication-{files}.md")

@@ -21,6 +21,7 @@ cover: { scene: word, title: "كلمة شرحها القرآن بنفسه… و�
 publish:
   title: { en: "A word the Quran explains itself… and gives its cure", ar: "كلمة شرحها القرآن بنفسه… وكتب علاجها" }
   part: 3
+  hashtags: ["#سورة_المعارج", "#الصلاة"]      # les siens, d'abord (proposés par la session le 2026-11-14, à valider)
   description:
     en: "A word of the Quran explained by the two verses that follow it: when harm touches him he panics, when good comes to him he withholds. And its cure is written in the same place: prayer."
     ar: "كلمة في القرآن شرحتها الآيتين اللي بعدها: لو جاله شر ينهار، ولو جاله خير يمسكه. وعلاجها مكتوب في نفس المكان: الصلاة."

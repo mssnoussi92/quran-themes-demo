@@ -80,7 +80,12 @@ partir du deuxième, c'est l'épisode d'avant.
 | sam. 5 déc. | « سنريهم آياتنا » 3 : le ciel | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 3 » |
 | ven. 11 déc. | **« آية وحكايتها » 4** : le verset promis par le short 3 | les quatre | à faire | à faire |
 | sam. 12 déc. | « سنريهم آياتنا » 4 : l'embryon | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 4 » |
+| ven. 18 déc. | « لاحظت الفرق؟ » 1 : le rizq (6:151 et 17:31) | les quatre | release `farq-candidate` | `publication-farq.md` : « Short 1 » |
 | sam. 19 déc. | « سنريهم آياتنا » 5 : « بيقولوا 365… عدّيتها بنفسي » (annoncé par la fin de `womb`) | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 5 » |
+| ven. 25 déc. | « لاحظت الفرق؟ » 2 : l'adab (18:79 et 18:82) | les quatre | release `farq-candidate` | « Short 2 » |
+| ven. 1 janv. | « لاحظت الفرق؟ » 3 : la justice (4:135 et 5:8) | les quatre | release `farq-candidate` | « Short 3 » |
+
+« لاحظت الفرق؟ » prend le vendredi quand les séries déjà prévues finissent (décision du propriétaire, 2026-11-14 : « quand on termine les séries déjà planifiées, et mieux de lancer ça un vendredi ») : après le quatrième « آية وحكايتها » (11 décembre), une fois par semaine. Si « آية وحكايتها » continue au-delà, les deux séries se partagent le vendredi, ou l'une change de jour : à décider avec les mesures. L'épisode 2 reprend les versets du film de Moussa et al-Khadir : six semaines après lui.
 
 Une ligne barrée est publiée : la session la barre quand le propriétaire le lui dit, et republie sa page, qui montre ce
 calendrier. Les fichiers de Moussa et al-Khadir ne sont dans aucune release : ce sont ceux envoyés dans la conversation le

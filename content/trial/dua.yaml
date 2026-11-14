@@ -42,7 +42,7 @@ publish:
   description:
     en: "One in the depth of affliction, one in the belly of a whale, one whose hair had turned white and still asking: three who called on God in the Quran, and all three were answered. And three wrong ideas that keep us from asking: I'm content so I won't ask, it's all written, I asked and nothing happened."
     ar: "واحد في عز البلاء، واحد في بطن حوت، وواحد راسه شابت ولسه بيطلب: تلاتة نادوا ربنا في القرآن… والتلاتة اترد عليهم. وتلات أفكار غلط بتبعدنا عن الدعاء: أنا راضي مش هدعي، كله مكتوب، دعيت وما حصلش."
-  hashtags: ["#Dua", "#الدعاء", "#Islam"]      # ceux de l'ancien épisode, validés par le propriétaire le 2026-11-07
+  hashtags: ["#الدعاء", "#قصص_الأنبياء"]      # proposés par la session le 2026-11-14, à valider ; avant : ["#Dua", "#الدعاء", "#Islam"]
   narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }
 chapters:
   - id: open

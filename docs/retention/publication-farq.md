@@ -6,7 +6,7 @@ Pour chaque short : le titre, puis le texte à coller sur chaque plateforme. Tit
 
 `farq-short-1-rizq.mp4` (TikTok : `farq-short-1-rizq-tiktok.mp4`, signée `@quran.words.daily`) · 1:33 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `farq-short-1-rizq-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 Two words swapped places… why?
@@ -29,7 +29,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر #TawfiqAsSayegh #توفيق_الصايغ
+#الرزق #القرآن_الكريم #لاحظت_الفرق
 ```
 
 **Instagram (5 hashtags)**
@@ -55,7 +55,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر
+#الرزق #القرآن_الكريم #لاحظت_الفرق #Quran #تدبر_القرآن
 ```
 
 **TikTok : la vidéo `farq-short-1-rizq-tiktok.mp4` (5 hashtags)**
@@ -81,7 +81,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر
+#الرزق #القرآن_الكريم #لاحظت_الفرق #Quran #تدبر_القرآن
 ```
 
 **Titre YouTube (54/100)**
@@ -113,14 +113,14 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر #TawfiqAsSayegh #توفيق_الصايغ
+#الرزق #القرآن_الكريم #لاحظت_الفرق #Quran #تدبر_القرآن
 ```
 
 ## Short 2 · Once he said 'I'… once he said 'your Lord' · مرة قال «أنا»… ومرة قال «ربنا»
 
 `farq-short-2-adab.mp4` (TikTok : `farq-short-2-adab-tiktok.mp4`, signée `@quran.words.daily`) · 1:40 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `farq-short-2-adab-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 Once he said 'I'… once he said 'your Lord'
@@ -142,7 +142,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر #TawfiqAsSayegh #توفيق_الصايغ
+#الأدب_مع_الله #القرآن_الكريم #لاحظت_الفرق
 ```
 
 **Instagram (5 hashtags)**
@@ -167,7 +167,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر
+#الأدب_مع_الله #القرآن_الكريم #لاحظت_الفرق #Quran #سورة_الكهف
 ```
 
 **TikTok : la vidéo `farq-short-2-adab-tiktok.mp4` (5 hashtags)**
@@ -192,7 +192,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر
+#الأدب_مع_الله #القرآن_الكريم #لاحظت_الفرق #Quran #سورة_الكهف
 ```
 
 **Titre YouTube (75/100)**
@@ -223,14 +223,14 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر #TawfiqAsSayegh #توفيق_الصايغ
+#الأدب_مع_الله #القرآن_الكريم #لاحظت_الفرق #Quran #سورة_الكهف
 ```
 
 ## Short 3 · The same words… in reverse · نفس الكلمات… بالمقلوب
 
 `farq-short-3-qist.mp4` (TikTok : `farq-short-3-qist-tiktok.mp4`, signée `@quran.words.daily`) · 1:35 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `farq-short-3-qist-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 The same words… in reverse
@@ -253,7 +253,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر #TawfiqAsSayegh #توفيق_الصايغ
+#العدل #القرآن_الكريم #لاحظت_الفرق
 ```
 
 **Instagram (5 hashtags)**
@@ -279,7 +279,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر
+#العدل #القرآن_الكريم #لاحظت_الفرق #Quran #تدبر_القرآن
 ```
 
 **TikTok : la vidéo `farq-short-3-qist-tiktok.mp4` (5 hashtags)**
@@ -305,7 +305,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر
+#العدل #القرآن_الكريم #لاحظت_الفرق #Quran #تدبر_القرآن
 ```
 
 **Titre YouTube (50/100)**
@@ -337,5 +337,5 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر #TawfiqAsSayegh #توفيق_الصايغ
+#العدل #القرآن_الكريم #لاحظت_الفرق #Quran #تدبر_القرآن
 ```

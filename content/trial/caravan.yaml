@@ -44,6 +44,7 @@ cover: { scene: caravan, title: "سابوا خطبة الجمعة… ليه؟", 
 publish:
   title: { en: "They walked out of the Friday sermon… why?", ar: "سابوا خطبة الجمعة… ليه؟" }
   part: 1
+  hashtags: ["#يوم_الجمعة", "#سورة_الجمعة"]      # les siens, d'abord (proposés par la session le 2026-11-14, à valider)
   description:
     en: "One Friday, while the Prophet ﷺ stood giving the sermon, a caravan loaded with food arrived, and only twelve men stayed with him. A verse came down then, and it answers a fear inside every one of us: that our provision will slip away if we stop for God."
     ar: "يوم جمعة، والنبي ﷺ واقف بيخطب، جت قافلة محمّلة أكل… وما فضلش معاه غير اتناشر راجل. ساعتها نزلت آية بترد على خوف جوّه كل واحد فينا: إن الرزق يفوتنا لو وقفنا قدام ربنا."

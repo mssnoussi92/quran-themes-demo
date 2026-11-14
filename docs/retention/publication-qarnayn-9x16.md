@@ -6,7 +6,7 @@ Le même film, monté pour un écran vertical (les images des shorts, la même v
 
 `qarnayn-film-9x16.mp4` · 8:24 · 9:16 · Facebook
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 Dhul-Qarnayn: 3 tests of power
@@ -26,5 +26,5 @@ Footage: Pixabay (josefgadermaier, AttilaPergel, FlickrVideos, TeeFarm) · Ambie
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #DhulQarnayn #القرآن_الكريم #ذو_القرنين #SurahAlKahf #Hadith #حديث
+#القرآن_الكريم #ذو_القرنين #Quran
 ```

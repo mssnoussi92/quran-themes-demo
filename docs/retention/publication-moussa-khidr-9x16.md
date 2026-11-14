@@ -6,7 +6,7 @@ Le même film, monté pour un écran vertical (les images des shorts, la même v
 
 `khidr-film-9x16.mp4` · 7:47 · 9:16 · Facebook
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 Moses and al-Khidr: what looks bad is not always bad
@@ -32,5 +32,5 @@ Footage: Pixabay (Artvan93, Dans4, DancingSky) · Ambience: BigSoundBank (Joseph
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر #SurahAlKahf #Hadith #حديث
+#القرآن_الكريم #سورة_الكهف #Quran
 ```

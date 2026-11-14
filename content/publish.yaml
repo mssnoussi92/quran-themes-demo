@@ -27,6 +27,18 @@ hashtags:
     alafasy: ["#Alafasy", "#مشاري_العفاسي"]
     sayegh: ["#TawfiqAsSayegh", "#توفيق_الصايغ"]
 
+# The hashtags of the model (content/trial/, tools/trial/publish.py; owner, 2026-11-14: « améliorer les hashtags de tout
+# ce qui n'est pas publié »). Few, the most specific first: what people search before the page's own name. In order:
+# the short's own first tag (its subject: « #الرزق »), the broad Arabic tag, the film's or series' first tag, the
+# broad English tag (the subtitles are English), then the short's and the film's other tags. Each platform keeps the
+# first ones: Instagram announced a cap of five (December 2025) and recommends three to five; TikTok guides say three to
+# five; YouTube shows the first three above the title and ignores them all past fifteen; on Facebook they hardly carry.
+# No brand tag (nobody searches it; the page's name is in every caption and on every image), no reciter's tag.
+model_hashtags:
+  arabic: "#القرآن_الكريم"
+  english: "#Quran"
+  most: { facebook: 3, instagram: 5, tiktok: 5, youtube: 5 }
+
 platforms:
   facebook: { max_hashtags: 8 }
   instagram_tiktok: { max_hashtags: 5, max_caption: 2200 }   # Instagram's caps (2200 characters)

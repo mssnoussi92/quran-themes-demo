@@ -43,7 +43,7 @@ Footage: Pixabay (Artvan93, Dans4, DancingSky) · Ambience: BigSoundBank (Joseph
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر #SurahAlKahf #Hadith #حديث #TawfiqAsSayegh #توفيق_الصايغ
+#القرآن_الكريم #سورة_الكهف #Quran #قصص_القرآن
 ```
 
 Écran de fin (YouTube Studio) : les 12 dernières secondes sont une image calme, faite pour y poser le bouton d'abonnement et la vidéo suivante.
@@ -52,7 +52,7 @@ Footage: Pixabay (Artvan93, Dans4, DancingSky) · Ambience: BigSoundBank (Joseph
 
 `khidr-short-1-boat-ambience.mp4` (TikTok : `khidr-short-1-boat-tiktok-ambience.mp4`, signée `@quran.words.daily`) · 1:33 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-1-bateau.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 Why did he tear a hole in the boat?
@@ -73,7 +73,7 @@ Footage: Pixabay (Artvan93) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر #SurahAlKahf #TawfiqAsSayegh #توفيق_الصايغ
+#الخضر #القرآن_الكريم #سورة_الكهف
 ```
 
 **Instagram (5 hashtags)**
@@ -97,7 +97,7 @@ Footage: Pixabay (Artvan93) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر
+#الخضر #القرآن_الكريم #سورة_الكهف #Quran #القدر
 ```
 
 **TikTok : la vidéo `khidr-short-1-boat-tiktok-ambience.mp4` (5 hashtags)**
@@ -121,7 +121,7 @@ Footage: Pixabay (Artvan93) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر
+#الخضر #القرآن_الكريم #سورة_الكهف #Quran #القدر
 ```
 
 **Titre YouTube (54/100)**
@@ -151,7 +151,7 @@ Footage: Pixabay (Artvan93) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر #SurahAlKahf #TawfiqAsSayegh #توفيق_الصايغ
+#الخضر #القرآن_الكريم #سورة_الكهف #Quran #القدر
 ```
 
 Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.
@@ -160,7 +160,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 
 `khidr-short-2-boy-ambience.mp4` (TikTok : `khidr-short-2-boy-tiktok-ambience.mp4`, signée `@quran.words.daily`) · 1:47 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-2-garcon.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 They lost their son… why?
@@ -181,7 +181,7 @@ Footage: Pixabay (Dans4) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر #SurahAlKahf #TawfiqAsSayegh #توفيق_الصايغ
+#الخضر #القرآن_الكريم #سورة_الكهف
 ```
 
 **Instagram (5 hashtags)**
@@ -205,7 +205,7 @@ Footage: Pixabay (Dans4) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر
+#الخضر #القرآن_الكريم #سورة_الكهف #Quran #الصبر
 ```
 
 **TikTok : la vidéo `khidr-short-2-boy-tiktok-ambience.mp4` (5 hashtags)**
@@ -229,7 +229,7 @@ Footage: Pixabay (Dans4) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر
+#الخضر #القرآن_الكريم #سورة_الكهف #Quran #الصبر
 ```
 
 **Titre YouTube (45/100)**
@@ -259,7 +259,7 @@ Footage: Pixabay (Dans4) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر #SurahAlKahf #TawfiqAsSayegh #توفيق_الصايغ
+#الخضر #القرآن_الكريم #سورة_الكهف #Quran #الصبر
 ```
 
 Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.
@@ -268,7 +268,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 
 `khidr-short-3-wall-ambience.mp4` (TikTok : `khidr-short-3-wall-tiktok-ambience.mp4`, signée `@quran.words.daily`) · 2:03 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `couverture-3-mur.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 The secret under the wall
@@ -289,7 +289,7 @@ Footage: Pixabay (DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر #SurahAlKahf #TawfiqAsSayegh #توفيق_الصايغ
+#الخضر #القرآن_الكريم #سورة_الكهف
 ```
 
 **Instagram (5 hashtags)**
@@ -313,7 +313,7 @@ Footage: Pixabay (DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر
+#الخضر #القرآن_الكريم #سورة_الكهف #Quran #الحكمة
 ```
 
 **TikTok : la vidéo `khidr-short-3-wall-tiktok-ambience.mp4` (5 hashtags)**
@@ -337,7 +337,7 @@ Footage: Pixabay (DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر
+#الخضر #القرآن_الكريم #سورة_الكهف #Quran #الحكمة
 ```
 
 **Titre YouTube (41/100)**
@@ -367,7 +367,7 @@ Footage: Pixabay (DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Qadr #القرآن_الكريم #القدر #SurahAlKahf #TawfiqAsSayegh #توفيق_الصايغ
+#الخضر #القرآن_الكريم #سورة_الكهف #Quran #الحكمة
 ```
 
 Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.

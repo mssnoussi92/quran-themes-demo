@@ -1,12 +1,12 @@
 # We Will Show Them Our Signs · سنريهم آياتنا : textes de publication
 
-Pour chaque short : le titre, puis le texte à coller sur chaque plateforme. Titres et descriptions **proposés par la session, pas encore validés par le propriétaire** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, pas encore validée.
+Pour chaque short : le titre, puis le texte à coller sur chaque plateforme. Titres et descriptions **validés par le propriétaire le 2026-11-13** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, validée elle aussi.
 
 ## Short 1 · One sentence could have disproved the Quran · كلمة واحدة كانت هتكذّب القرآن
 
 `signs-short-1-lahab.mp4` (TikTok : `signs-short-1-lahab-tiktok.mp4`, signée `@quran.words.daily`) · 1:54 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `signs-short-1-lahab-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 One sentence could have disproved the Quran
@@ -34,7 +34,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science #Hadith #حديث #TawfiqAsSayegh
+#سورة_المسد #القرآن_الكريم #سنريهم_آياتنا
 ```
 
 **Instagram (5 hashtags)**
@@ -65,7 +65,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science
+#سورة_المسد #القرآن_الكريم #سنريهم_آياتنا #Quran #أبو_لهب
 ```
 
 **TikTok : la vidéo `signs-short-1-lahab-tiktok.mp4` (5 hashtags)**
@@ -96,7 +96,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science
+#سورة_المسد #القرآن_الكريم #سنريهم_آياتنا #Quran #أبو_لهب
 ```
 
 **Titre YouTube (75/100)**
@@ -133,14 +133,14 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science #Hadith #حديث #TawfiqAsSayegh #توفيق_الصايغ
+#سورة_المسد #القرآن_الكريم #سنريهم_آياتنا #Quran #أبو_لهب
 ```
 
 ## Short 2 · Even Einstein got this wrong · حتى أينشتاين غلط فيها
 
 `signs-short-2-universe.mp4` (TikTok : `signs-short-2-universe-tiktok.mp4`, signée `@quran.words.daily`) · 1:34 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `signs-short-2-universe-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 Even Einstein got this wrong
@@ -167,7 +167,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0), NASA, ESA, CSA, S
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science #TawfiqAsSayegh #توفيق_الصايغ
+#الكون #القرآن_الكريم #سنريهم_آياتنا
 ```
 
 **Instagram (5 hashtags)**
@@ -197,7 +197,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0), NASA, ESA, CSA, S
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science
+#الكون #القرآن_الكريم #سنريهم_آياتنا #Quran #سورة_الذاريات
 ```
 
 **TikTok : la vidéo `signs-short-2-universe-tiktok.mp4` (5 hashtags)**
@@ -227,7 +227,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0), NASA, ESA, CSA, S
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science
+#الكون #القرآن_الكريم #سنريهم_آياتنا #Quran #سورة_الذاريات
 ```
 
 **Titre YouTube (52/100)**
@@ -263,14 +263,14 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0), NASA, ESA, CSA, S
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science #TawfiqAsSayegh #توفيق_الصايغ
+#الكون #القرآن_الكريم #سنريهم_آياتنا #Quran #سورة_الذاريات
 ```
 
 ## Short 3 · What happens 8 km up… the Quran described it · اللي بيحصل فوق ٨ كيلو… القرآن وصفه
 
 `signs-short-3-sky.mp4` (TikTok : `signs-short-3-sky-tiktok.mp4`, signée `@quran.words.daily`) · 2:03 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `signs-short-3-sky-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 What happens 8 km up… the Quran described it
@@ -296,7 +296,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science #TawfiqAsSayegh #توفيق_الصايغ
+#ضيق_الصدر #القرآن_الكريم #سنريهم_آياتنا
 ```
 
 **Instagram (5 hashtags)**
@@ -325,7 +325,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science
+#ضيق_الصدر #القرآن_الكريم #سنريهم_آياتنا #Quran #سورة_الأنعام
 ```
 
 **TikTok : la vidéo `signs-short-3-sky-tiktok.mp4` (5 hashtags)**
@@ -354,7 +354,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science
+#ضيق_الصدر #القرآن_الكريم #سنريهم_آياتنا #Quran #سورة_الأنعام
 ```
 
 **Titre YouTube (81/100)**
@@ -389,14 +389,14 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science #TawfiqAsSayegh #توفيق_الصايغ
+#ضيق_الصدر #القرآن_الكريم #سنريهم_آياتنا #Quran #سورة_الأنعام
 ```
 
 ## Short 4 · 1,000 years before microscopes, the Quran described you · قبل الميكروسكوب بألف سنة… القرآن وصف شكلك
 
 `signs-short-4-womb.mp4` (TikTok : `signs-short-4-womb-tiktok.mp4`, signée `@quran.words.daily`) · 2:02 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `signs-short-4-womb-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 1,000 years before microscopes, the Quran described you
@@ -424,7 +424,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science #TawfiqAsSayegh #توفيق_الصايغ
+#خلق_الإنسان #القرآن_الكريم #سنريهم_آياتنا
 ```
 
 **Instagram (5 hashtags)**
@@ -455,7 +455,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science
+#خلق_الإنسان #القرآن_الكريم #سنريهم_آياتنا #Quran #الجنين
 ```
 
 **TikTok : la vidéo `signs-short-4-womb-tiktok.mp4` (5 hashtags)**
@@ -486,7 +486,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science
+#خلق_الإنسان #القرآن_الكريم #سنريهم_آياتنا #Quran #الجنين
 ```
 
 **Titre YouTube (99/100)**
@@ -523,14 +523,14 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science #TawfiqAsSayegh #توفيق_الصايغ
+#خلق_الإنسان #القرآن_الكريم #سنريهم_آياتنا #Quran #الجنين
 ```
 
 ## Short 5 · They say 365… I counted it myself · بيقولوا 365… عدّيتها بنفسي
 
 `signs-short-5-days.mp4` (TikTok : `signs-short-5-days-tiktok.mp4`, signée `@quran.words.daily`) · 2:18 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `signs-short-5-days-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 They say 365… I counted it myself
@@ -558,7 +558,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science #TawfiqAsSayegh #توفيق_الصايغ
+#الإعجاز_العددي #القرآن_الكريم #سنريهم_آياتنا
 ```
 
 **Instagram (5 hashtags)**
@@ -589,7 +589,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science
+#الإعجاز_العددي #القرآن_الكريم #سنريهم_آياتنا #Quran #تدبر
 ```
 
 **TikTok : la vidéo `signs-short-5-days-tiktok.mp4` (5 hashtags)**
@@ -620,7 +620,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science
+#الإعجاز_العددي #القرآن_الكريم #سنريهم_آياتنا #Quran #تدبر
 ```
 
 **Titre YouTube (62/100)**
@@ -657,5 +657,5 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Science #TawfiqAsSayegh #توفيق_الصايغ
+#الإعجاز_العددي #القرآن_الكريم #سنريهم_آياتنا #Quran #تدبر
 ```

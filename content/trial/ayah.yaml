@@ -24,5 +24,5 @@ handle: "@quran_words_daily"
 publish:
   out: docs/retention/publication-ayah.md
   series: { en: "A Verse and Its Story", ar: "آية وحكايتها" }
-  hashtags: ["#Quran", "#القرآن", "#Tafsir"]
+  hashtags: ["#أسباب_النزول", "#تفسير"]      # proposés par la session le 2026-11-14, à valider ; avant : ["#Quran", "#القرآن", "#Tafsir"]
   narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }

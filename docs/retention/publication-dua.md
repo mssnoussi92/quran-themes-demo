@@ -48,7 +48,7 @@ Footage: Pixabay (trilemedia, Natures_Embrace, adege) · Ambience: BigSoundBank 
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Dua #القرآن_الكريم #الدعاء #Islam #Hadith #حديث #TawfiqAsSayegh #توفيق_الصايغ
+#القرآن_الكريم #الدعاء #Quran #قصص_الأنبياء
 ```
 
 Écran de fin (YouTube Studio) : les 12 dernières secondes sont une image calme, faite pour y poser le bouton d'abonnement et la vidéo suivante.
@@ -57,7 +57,7 @@ Footage: Pixabay (trilemedia, Natures_Embrace, adege) · Ambience: BigSoundBank 
 
 `dua-short-1-asked.mp4` (TikTok : `dua-short-1-asked-tiktok.mp4`, signée `@quran.words.daily`) · 1:49 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `dua-short-1-asked-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 Patient… and he asked
@@ -79,7 +79,7 @@ Footage: Pixabay (trilemedia) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Dua #القرآن_الكريم #الدعاء #Islam #Hadith #حديث
+#سيدنا_أيوب #القرآن_الكريم #الدعاء
 ```
 
 **Instagram (5 hashtags)**
@@ -104,7 +104,7 @@ Footage: Pixabay (trilemedia) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Dua #القرآن_الكريم #الدعاء
+#سيدنا_أيوب #القرآن_الكريم #الدعاء #Quran #الصبر
 ```
 
 **TikTok : la vidéo `dua-short-1-asked-tiktok.mp4` (5 hashtags)**
@@ -129,7 +129,7 @@ Footage: Pixabay (trilemedia) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #Dua #القرآن_الكريم #الدعاء
+#سيدنا_أيوب #القرآن_الكريم #الدعاء #Quran #الصبر
 ```
 
 **Titre YouTube (35/100)**
@@ -160,7 +160,7 @@ Footage: Pixabay (trilemedia) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Dua #القرآن_الكريم #الدعاء #Islam #Hadith #حديث #TawfiqAsSayegh #توفيق_الصايغ
+#سيدنا_أيوب #القرآن_الكريم #الدعاء #Quran #الصبر
 ```
 
 Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.
@@ -169,7 +169,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 
 `dua-short-2-written.mp4` (TikTok : `dua-short-2-written-tiktok.mp4`, signée `@quran.words.daily`) · 2:04 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `dua-short-2-written-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 Inside the whale: who heard him?
@@ -192,7 +192,7 @@ Footage: Pixabay (Natures_Embrace) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Dua #القرآن_الكريم #الدعاء #Islam #Hadith #حديث
+#سيدنا_يونس #القرآن_الكريم #الدعاء
 ```
 
 **Instagram (5 hashtags)**
@@ -218,7 +218,7 @@ Footage: Pixabay (Natures_Embrace) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Dua #القرآن_الكريم #الدعاء
+#سيدنا_يونس #القرآن_الكريم #الدعاء #Quran #الكرب
 ```
 
 **TikTok : la vidéo `dua-short-2-written-tiktok.mp4` (5 hashtags)**
@@ -244,7 +244,7 @@ Footage: Pixabay (Natures_Embrace) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #Dua #القرآن_الكريم #الدعاء
+#سيدنا_يونس #القرآن_الكريم #الدعاء #Quran #الكرب
 ```
 
 **Titre YouTube (58/100)**
@@ -276,7 +276,7 @@ Footage: Pixabay (Natures_Embrace) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Dua #القرآن_الكريم #الدعاء #Islam #Hadith #حديث #TawfiqAsSayegh #توفيق_الصايغ
+#سيدنا_يونس #القرآن_الكريم #الدعاء #Quran #الكرب
 ```
 
 Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.
@@ -285,7 +285,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 
 `dua-short-3-waited.mp4` (TikTok : `dua-short-3-waited-tiktok.mp4`, signée `@quran.words.daily`) · 1:57 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `dua-short-3-waited-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 His hair turned white… and he never stopped asking
@@ -307,7 +307,7 @@ Footage: Pixabay (adege) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Dua #القرآن_الكريم #الدعاء #Islam #Hadith #حديث
+#سيدنا_زكريا #القرآن_الكريم #الدعاء
 ```
 
 **Instagram (5 hashtags)**
@@ -332,7 +332,7 @@ Footage: Pixabay (adege) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Dua #القرآن_الكريم #الدعاء
+#سيدنا_زكريا #القرآن_الكريم #الدعاء #Quran #الذرية
 ```
 
 **TikTok : la vidéo `dua-short-3-waited-tiktok.mp4` (5 hashtags)**
@@ -357,7 +357,7 @@ Footage: Pixabay (adege) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #Dua #القرآن_الكريم #الدعاء
+#سيدنا_زكريا #القرآن_الكريم #الدعاء #Quran #الذرية
 ```
 
 **Titre YouTube (78/100)**
@@ -388,7 +388,7 @@ Footage: Pixabay (adege) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Dua #القرآن_الكريم #الدعاء #Islam #Hadith #حديث #TawfiqAsSayegh #توفيق_الصايغ
+#سيدنا_زكريا #القرآن_الكريم #الدعاء #Quran #الذرية
 ```
 
 Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.

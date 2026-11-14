@@ -6,7 +6,7 @@ Le même film, monté pour un écran vertical (les images des shorts, la même v
 
 `dua-film-9x16.mp4` · 7:36 · 9:16 · Facebook
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 Du'a: 3 wrong ideas that keep you from asking
@@ -37,5 +37,5 @@ Footage: Pixabay (trilemedia, Natures_Embrace, adege) · Ambience: BigSoundBank 
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #Dua #القرآن_الكريم #الدعاء #Islam #Hadith #حديث
+#القرآن_الكريم #الدعاء #Quran
 ```

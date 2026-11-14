@@ -37,6 +37,7 @@ cover: { scene: call, title: "صابر… ودعا!", tag: "الدعاء · ١ �
 publish:
   title: { en: "Patient… and he asked", ar: "صابر… ودعا!" }
   part: 1
+  hashtags: ["#سيدنا_أيوب", "#الصبر"]      # les siens, d'abord (proposés par la session le 2026-11-14, à valider)
   description:
     en: "We say: I'm content, so I won't ask. Yet Job, peace be upon him, whose patience became a proverb, asked God to lift his suffering, and was answered. Contentment is not objecting to what happened; du'a is asking for what is to come."
     ar: "بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب عليه السلام، اللي بنقول على صبره: يا صبر أيوب، دعا ربنا يشيل عنه البلاء… واستجاب له. الرضا إنك ما تعترضش على اللي حصل، والدعاء إنك تطلب اللي جاي."

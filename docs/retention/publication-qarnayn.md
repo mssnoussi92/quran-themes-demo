@@ -38,7 +38,7 @@ Footage: Pixabay (josefgadermaier, AttilaPergel, FlickrVideos, TeeFarm) · Ambie
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #DhulQarnayn #القرآن_الكريم #ذو_القرنين #SurahAlKahf #Hadith #حديث #TawfiqAsSayegh #توفيق_الصايغ
+#القرآن_الكريم #ذو_القرنين #Quran #سورة_الكهف
 ```
 
 Écran de fin (YouTube Studio) : les 12 dernières secondes sont une image calme, faite pour y poser le bouton d'abonnement et la vidéo suivante.
@@ -47,7 +47,7 @@ Footage: Pixabay (josefgadermaier, AttilaPergel, FlickrVideos, TeeFarm) · Ambie
 
 `qarnayn-short-1-west.mp4` (TikTok : `qarnayn-short-1-west-tiktok.mp4`, signée `@quran.words.daily`) · 2:05 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qarnayn-short-1-west-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 The fate of a whole people… at his word
@@ -67,7 +67,7 @@ Footage: Pixabay (josefgadermaier) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #DhulQarnayn #القرآن_الكريم #ذو_القرنين #SurahAlKahf #TawfiqAsSayegh #توفيق_الصايغ
+#العدل #القرآن_الكريم #ذو_القرنين
 ```
 
 **Instagram (5 hashtags)**
@@ -90,7 +90,7 @@ Footage: Pixabay (josefgadermaier) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #DhulQarnayn #القرآن_الكريم #ذو_القرنين
+#العدل #القرآن_الكريم #ذو_القرنين #Quran #قصص_القرآن
 ```
 
 **TikTok : la vidéo `qarnayn-short-1-west-tiktok.mp4` (5 hashtags)**
@@ -113,7 +113,7 @@ Footage: Pixabay (josefgadermaier) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #DhulQarnayn #القرآن_الكريم #ذو_القرنين
+#العدل #القرآن_الكريم #ذو_القرنين #Quran #قصص_القرآن
 ```
 
 **Titre YouTube (69/100)**
@@ -142,7 +142,7 @@ Footage: Pixabay (josefgadermaier) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #DhulQarnayn #القرآن_الكريم #ذو_القرنين #SurahAlKahf #TawfiqAsSayegh #توفيق_الصايغ
+#العدل #القرآن_الكريم #ذو_القرنين #Quran #قصص_القرآن
 ```
 
 Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.
@@ -151,7 +151,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 
 `qarnayn-short-2-tribute.mp4` (TikTok : `qarnayn-short-2-tribute-tiktok.mp4`, signée `@quran.words.daily`) · 1:54 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qarnayn-short-2-tribute-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 They offered him money… he refused
@@ -171,7 +171,7 @@ Footage: Pixabay (AttilaPergel) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #DhulQarnayn #القرآن_الكريم #ذو_القرنين #SurahAlKahf #TawfiqAsSayegh #توفيق_الصايغ
+#القناعة #القرآن_الكريم #ذو_القرنين
 ```
 
 **Instagram (5 hashtags)**
@@ -194,7 +194,7 @@ Footage: Pixabay (AttilaPergel) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #DhulQarnayn #القرآن_الكريم #ذو_القرنين
+#القناعة #القرآن_الكريم #ذو_القرنين #Quran #قصص_القرآن
 ```
 
 **TikTok : la vidéo `qarnayn-short-2-tribute-tiktok.mp4` (5 hashtags)**
@@ -217,7 +217,7 @@ Footage: Pixabay (AttilaPergel) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #DhulQarnayn #القرآن_الكريم #ذو_القرنين
+#القناعة #القرآن_الكريم #ذو_القرنين #Quran #قصص_القرآن
 ```
 
 **Titre YouTube (59/100)**
@@ -246,7 +246,7 @@ Footage: Pixabay (AttilaPergel) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #DhulQarnayn #القرآن_الكريم #ذو_القرنين #SurahAlKahf #TawfiqAsSayegh #توفيق_الصايغ
+#القناعة #القرآن_الكريم #ذو_القرنين #Quran #قصص_القرآن
 ```
 
 Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.
@@ -255,7 +255,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 
 `qarnayn-short-3-barrier.mp4` (TikTok : `qarnayn-short-3-barrier-tiktok.mp4`, signée `@quran.words.daily`) · 1:51 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qarnayn-short-3-barrier-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 He built the barrier… and said: not from me
@@ -275,7 +275,7 @@ Footage: Pixabay (FlickrVideos) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #DhulQarnayn #القرآن_الكريم #ذو_القرنين #SurahAlKahf #TawfiqAsSayegh #توفيق_الصايغ
+#يأجوج_ومأجوج #القرآن_الكريم #ذو_القرنين
 ```
 
 **Instagram (5 hashtags)**
@@ -298,7 +298,7 @@ Footage: Pixabay (FlickrVideos) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #DhulQarnayn #القرآن_الكريم #ذو_القرنين
+#يأجوج_ومأجوج #القرآن_الكريم #ذو_القرنين #Quran #قصص_القرآن
 ```
 
 **TikTok : la vidéo `qarnayn-short-3-barrier-tiktok.mp4` (5 hashtags)**
@@ -321,7 +321,7 @@ Footage: Pixabay (FlickrVideos) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #DhulQarnayn #القرآن_الكريم #ذو_القرنين
+#يأجوج_ومأجوج #القرآن_الكريم #ذو_القرنين #Quran #قصص_القرآن
 ```
 
 **Titre YouTube (69/100)**
@@ -350,7 +350,7 @@ Footage: Pixabay (FlickrVideos) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #DhulQarnayn #القرآن_الكريم #ذو_القرنين #SurahAlKahf #TawfiqAsSayegh #توفيق_الصايغ
+#يأجوج_ومأجوج #القرآن_الكريم #ذو_القرنين #Quran #قصص_القرآن
 ```
 
 Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.

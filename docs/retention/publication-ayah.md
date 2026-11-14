@@ -6,7 +6,7 @@ Pour chaque short : le titre, puis le texte à coller sur chaque plateforme. Tit
 
 `ayah-short-1-caravan.mp4` (TikTok : `ayah-short-1-caravan-tiktok.mp4`, signée `@quran.words.daily`) · 1:40 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-1-caravan-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 They walked out of the Friday sermon… why?
@@ -30,7 +30,7 @@ Footage: Pixabay (AcornStudioSpain) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Tafsir #Hadith #حديث #TawfiqAsSayegh
+#يوم_الجمعة #القرآن_الكريم #أسباب_النزول
 ```
 
 **Instagram (5 hashtags)**
@@ -57,7 +57,7 @@ Footage: Pixabay (AcornStudioSpain) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Tafsir
+#يوم_الجمعة #القرآن_الكريم #أسباب_النزول #Quran #سورة_الجمعة
 ```
 
 **TikTok : la vidéo `ayah-short-1-caravan-tiktok.mp4` (5 hashtags)**
@@ -84,7 +84,7 @@ Footage: Pixabay (AcornStudioSpain) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Tafsir
+#يوم_الجمعة #القرآن_الكريم #أسباب_النزول #Quran #سورة_الجمعة
 ```
 
 **Titre YouTube (68/100)**
@@ -117,14 +117,14 @@ Footage: Pixabay (AcornStudioSpain) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Tafsir #Hadith #حديث #TawfiqAsSayegh #توفيق_الصايغ
+#يوم_الجمعة #القرآن_الكريم #أسباب_النزول #Quran #سورة_الجمعة
 ```
 
 ## Short 2 · She told him: you've been left… and the answer came down · قالتله: سابك… فنزل الرد
 
 `ayah-short-2-duha.mp4` (TikTok : `ayah-short-2-duha-tiktok.mp4`, signée `@quran.words.daily`) · 1:49 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-2-duha-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 She told him: you've been left… and the answer came down
@@ -151,7 +151,7 @@ Footage: Pixabay (bellergy) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Tafsir #Hadith #حديث #TawfiqAsSayegh
+#سورة_الضحى #القرآن_الكريم #أسباب_النزول
 ```
 
 **Instagram (5 hashtags)**
@@ -181,7 +181,7 @@ Footage: Pixabay (bellergy) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Tafsir
+#سورة_الضحى #القرآن_الكريم #أسباب_النزول #Quran #جبر_الخواطر
 ```
 
 **TikTok : la vidéo `ayah-short-2-duha-tiktok.mp4` (5 hashtags)**
@@ -211,7 +211,7 @@ Footage: Pixabay (bellergy) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Tafsir
+#سورة_الضحى #القرآن_الكريم #أسباب_النزول #Quran #جبر_الخواطر
 ```
 
 **Titre YouTube (82/100)**
@@ -247,14 +247,14 @@ Footage: Pixabay (bellergy) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Tafsir #Hadith #حديث #TawfiqAsSayegh #توفيق_الصايغ
+#سورة_الضحى #القرآن_الكريم #أسباب_النزول #Quran #جبر_الخواطر
 ```
 
 ## Short 3 · They had committed grave sins… and came to ask · عملوا ذنوب كبيرة… وجم يسألوا!
 
 `ayah-short-3-hope.mp4` (TikTok : `ayah-short-3-hope-tiktok.mp4`, signée `@quran.words.daily`) · 1:30 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-3-hope-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 They had committed grave sins… and came to ask
@@ -277,7 +277,7 @@ Footage: Pixabay (max_bbb) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Tafsir #Hadith #حديث #TawfiqAsSayegh
+#رحمة_الله #القرآن_الكريم #أسباب_النزول
 ```
 
 **Instagram (5 hashtags)**
@@ -303,7 +303,7 @@ Footage: Pixabay (max_bbb) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Tafsir
+#رحمة_الله #القرآن_الكريم #أسباب_النزول #Quran #التوبة
 ```
 
 **TikTok : la vidéo `ayah-short-3-hope-tiktok.mp4` (5 hashtags)**
@@ -329,7 +329,7 @@ Footage: Pixabay (max_bbb) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Tafsir
+#رحمة_الله #القرآن_الكريم #أسباب_النزول #Quran #التوبة
 ```
 
 **Titre YouTube (78/100)**
@@ -361,5 +361,5 @@ Footage: Pixabay (max_bbb) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #Tafsir #Hadith #حديث #TawfiqAsSayegh #توفيق_الصايغ
+#رحمة_الله #القرآن_الكريم #أسباب_النزول #Quran #التوبة
 ```

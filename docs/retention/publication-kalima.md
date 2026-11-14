@@ -6,7 +6,7 @@ Pour chaque short : le titre, puis le texte à coller sur chaque plateforme. Tit
 
 `kalima-short-1-kanud.mp4` (TikTok : `kalima-short-1-kanud-tiktok.mp4`, signée `@quran.words.daily`) · 1:28 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `kalima-short-1-kanud-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 A word in the Quran… that might describe you
@@ -29,7 +29,7 @@ Footage: Pixabay (TeeFarm) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر #TawfiqAsSayegh #توفيق_الصايغ
+#سورة_العاديات #القرآن_الكريم #كلمة_من_القرآن
 ```
 
 **Instagram (5 hashtags)**
@@ -55,7 +55,7 @@ Footage: Pixabay (TeeFarm) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر
+#سورة_العاديات #القرآن_الكريم #كلمة_من_القرآن #Quran #الشكر
 ```
 
 **TikTok : la vidéo `kalima-short-1-kanud-tiktok.mp4` (5 hashtags)**
@@ -81,7 +81,7 @@ Footage: Pixabay (TeeFarm) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر
+#سورة_العاديات #القرآن_الكريم #كلمة_من_القرآن #Quran #الشكر
 ```
 
 **Titre YouTube (73/100)**
@@ -113,14 +113,14 @@ Footage: Pixabay (TeeFarm) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر #TawfiqAsSayegh #توفيق_الصايغ
+#سورة_العاديات #القرآن_الكريم #كلمة_من_القرآن #Quran #الشكر
 ```
 
 ## Short 2 · The date stone… holds three words of the Quran · نواة التمرة… فيها تلات كلمات من القرآن
 
 `kalima-short-2-stone.mp4` (TikTok : `kalima-short-2-stone-tiktok.mp4`, signée `@quran.words.daily`) · 1:58 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `kalima-short-2-stone-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 The date stone… holds three words of the Quran
@@ -146,7 +146,7 @@ Footage: Pixabay (Felix-Mittermeier) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر #TawfiqAsSayegh #توفيق_الصايغ
+#قطمير #القرآن_الكريم #كلمة_من_القرآن
 ```
 
 **Instagram (5 hashtags)**
@@ -175,7 +175,7 @@ Footage: Pixabay (Felix-Mittermeier) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر
+#قطمير #القرآن_الكريم #كلمة_من_القرآن #Quran #لغة_القرآن
 ```
 
 **TikTok : la vidéo `kalima-short-2-stone-tiktok.mp4` (5 hashtags)**
@@ -204,7 +204,7 @@ Footage: Pixabay (Felix-Mittermeier) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر
+#قطمير #القرآن_الكريم #كلمة_من_القرآن #Quran #لغة_القرآن
 ```
 
 **Titre YouTube (87/100)**
@@ -239,14 +239,14 @@ Footage: Pixabay (Felix-Mittermeier) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر #TawfiqAsSayegh #توفيق_الصايغ
+#قطمير #القرآن_الكريم #كلمة_من_القرآن #Quran #لغة_القرآن
 ```
 
 ## Short 3 · A word the Quran explains itself… and gives its cure · كلمة شرحها القرآن بنفسه… وكتب علاجها
 
 `kalima-short-3-haluu.mp4` (TikTok : `kalima-short-3-haluu-tiktok.mp4`, signée `@quran.words.daily`) · 1:19 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `kalima-short-3-haluu-cover.jpg`
 
-**Facebook (8 hashtags)**
+**Facebook (3 hashtags)**
 
 ```text
 A word the Quran explains itself… and gives its cure
@@ -269,7 +269,7 @@ Footage: Pixabay (Macb3t) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر #TawfiqAsSayegh #توفيق_الصايغ
+#سورة_المعارج #القرآن_الكريم #كلمة_من_القرآن
 ```
 
 **Instagram (5 hashtags)**
@@ -295,7 +295,7 @@ Footage: Pixabay (Macb3t) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر
+#سورة_المعارج #القرآن_الكريم #كلمة_من_القرآن #Quran #الصلاة
 ```
 
 **TikTok : la vidéo `kalima-short-3-haluu-tiktok.mp4` (5 hashtags)**
@@ -321,7 +321,7 @@ Footage: Pixabay (Macb3t) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran.words.daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر
+#سورة_المعارج #القرآن_الكريم #كلمة_من_القرآن #Quran #الصلاة
 ```
 
 **Titre YouTube (91/100)**
@@ -353,5 +353,5 @@ Footage: Pixabay (Macb3t) · Ambience: BigSoundBank (Joseph Sardin)
 
 @quran_words_daily
 
-#QuranWordsDaily #Quran #القرآن_الكريم #القرآن #تدبر #TawfiqAsSayegh #توفيق_الصايغ
+#سورة_المعارج #القرآن_الكريم #كلمة_من_القرآن #Quran #الصلاة
 ```

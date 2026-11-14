@@ -35,6 +35,7 @@ cover: { scene: home, title: "خسروا ابنهم… ليه؟", tag: "موسى
 publish:
   title: { en: "They lost their son… why?", ar: "خسروا ابنهم… ليه؟" }
   part: 2
+  hashtags: ["#الخضر", "#الصبر"]      # les siens, d'abord (proposés par la session le 2026-11-14, à valider)
   description:
     en: "A believing father and mother lost their son, and may never have known why. God told us the reason in Surat al-Kahf. Not every wisdom is shown in this life: some answers are with God."
     ar: "أب وأم مؤمنين خسروا ابنهم… ويمكن عمرهم ما عرفوا ليه. السبب ربنا حكاه لنا في سورة الكهف. مش كل حكمة هتتكشف في الدنيا: فيه أسئلة إجابتها عند ربنا."

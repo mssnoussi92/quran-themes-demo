@@ -27,6 +27,7 @@ cover: { scene: einstein, title: "حتى أينشتاين غلط فيها", tag:
 publish:
   title: { en: "Even Einstein got this wrong", ar: "حتى أينشتاين غلط فيها" }
   part: 2
+  hashtags: ["#الكون", "#سورة_الذاريات"]      # les siens, d'abord (proposés par la session le 2026-11-14, à valider)
   description:
     en: "For more than two thousand years the greatest minds were sure the universe never changes; in 1917 even Einstein adjusted his equations to keep it still. In 1929, Hubble saw the galaxies moving away. What does a verse revealed fourteen centuries ago say about the sky?"
     ar: "أكتر من ألفين سنة وأذكى العقول متأكدة إن الكون ثابت، وحتى أينشتاين سنة ١٩١٧ عدّل معادلاته عشان يفضل ثابت. وسنة ١٩٢٩ هابل شاف المجرات بتبعد. طب آية نزلت من ١٤٠٠ سنة قالت إيه عن السما؟"

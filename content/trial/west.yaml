@@ -37,6 +37,7 @@ cover: { scene: sun, title: "مصير قوم كاملين… بكلمة منه!"
 publish:
   title: { en: "The fate of a whole people… at his word", ar: "مصير قوم كاملين… بكلمة منه!" }
   part: 1
+  hashtags: ["#العدل", "#قصص_القرآن"]      # les siens, d'abord (proposés par la session le 2026-11-14, à valider)
   description:
     en: "Dhul-Qarnayn reached the setting of the sun and found a people there, and the choice was left to him: punish them, or treat them well. His answer is justice: each one according to what he did. Power is a trust, not a license."
     ar: "ذو القرنين وصل لمغرب الشمس ولقى هناك قوم… واتخيّر: يعاقبهم ولا يحسن ليهم. وإجابته كانت العدل: كل واحد باللي عمله. القوة أمانة… مش رخصة."
