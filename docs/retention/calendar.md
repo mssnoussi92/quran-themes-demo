@@ -78,12 +78,20 @@ partir du deuxième, c'est l'épisode d'avant.
 | lun. 30 nov. → jeu. 3 déc. | **une histoire nouvelle** : son film, ses trois shorts | | à faire | à faire |
 | ven. 4 déc. | « آية وحكايتها » 3 : l'espoir | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 3 » |
 | sam. 5 déc. | « سنريهم آياتنا » 3 : le ciel | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 3 » |
+| lun. 7 déc. | « كلمة من القرآن » 1 : الكنود (100:1-8) | les quatre | release `kalima-candidate` | `publication-kalima.md` : « Short 1 » |
+| mar. 8 déc. | « كلمة من القرآن » 2 : نواة التمرة (فتيل، نقير، قطمير) | les quatre | release `kalima-candidate` | « Short 2 » |
+| mer. 9 déc. | « كلمة من القرآن » 3 : هلوع (70:19-23) | les quatre | release `kalima-candidate` | « Short 3 » |
 | ven. 11 déc. | **« آية وحكايتها » 4** : le verset promis par le short 3 | les quatre | à faire | à faire |
 | sam. 12 déc. | « سنريهم آياتنا » 4 : l'embryon | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 4 » |
+| lun. 14 déc. | « خريطة كلمة » 1 : القلب (132 fois) | les quatre | release `map-candidate` | `publication-map.md` : « Short 1 » |
+| mar. 15 déc. | « خريطة كلمة » 2 : النور (43 fois) | les quatre | release `map-candidate` | « Short 2 » |
+| mer. 16 déc. | « خريطة كلمة » 3 : الصدر (44 fois) | les quatre | release `map-candidate` | « Short 3 » |
 | ven. 18 déc. | « لاحظت الفرق؟ » 1 : le rizq (6:151 et 17:31) | les quatre | release `farq-candidate` | `publication-farq.md` : « Short 1 » |
 | sam. 19 déc. | « سنريهم آياتنا » 5 : « بيقولوا 365… عدّيتها بنفسي » (annoncé par la fin de `womb`) | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 5 » |
 | ven. 25 déc. | « لاحظت الفرق؟ » 2 : l'adab (18:79 et 18:82) | les quatre | release `farq-candidate` | « Short 2 » |
 | ven. 1 janv. | « لاحظت الفرق؟ » 3 : la justice (4:135 et 5:8) | les quatre | release `farq-candidate` | « Short 3 » |
+
+« كلمة من القرآن » et « خريطة كلمة » prennent les lundis, mardis et mercredis des semaines du 7 et du 14 décembre, où aucun film n'est encore prévu (décision du propriétaire, 2026-11-14, sur la proposition de la session : les deux séries qui attendaient une place, et les moins semblables) ; « خريطة كلمة », le format le plus éloigné de ce qui est mesuré (un début muet, des effets sonores), passe après trois semaines de mesures. Une histoire nouvelle, si elle est prête, peut reprendre ces semaines : à décider avec les mesures.
 
 « لاحظت الفرق؟ » prend le vendredi quand les séries déjà prévues finissent (décision du propriétaire, 2026-11-14 : « quand on termine les séries déjà planifiées, et mieux de lancer ça un vendredi ») : après le quatrième « آية وحكايتها » (11 décembre), une fois par semaine. Si « آية وحكايتها » continue au-delà, les deux séries se partagent le vendredi, ou l'une change de jour : à décider avec les mesures. L'épisode 2 reprend les versets du film de Moussa et al-Khadir : six semaines après lui.
 

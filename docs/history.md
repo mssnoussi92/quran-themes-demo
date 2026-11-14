@@ -223,6 +223,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 104. **« خريطة كلمة » validée** (propriétaire, 2026-11-14 : « je valide tout », après l'envoi des épisodes 2 et 3, des versions TikTok, des couvertures et des textes). Lu comme tout ce qui attendait son mot : les épisodes 2 et 3 tels que livrés (voix, montage, ambiance, sons), les trois couvertures telles qu'envoyées (le mot écrit en grand, proposé en option, n'est pas retenu), les textes à coller de la série ; les quinze sources des épisodes 2 et 3 passées à `validated`. Inscrit (`validated` de `qalb`, `nur`, `sadr` et `map.yaml`) ; textes refaits (`publication-map.md`, « validés ») ; page republiée (la série « vidéos validées »). Pas encore au calendrier : proposition faite dans la conversation.
 
+105. **« كلمة من القرآن » et « خريطة كلمة » au calendrier ; `main` mis à jour** (propriétaire, 2026-11-14 : « oui, fais ça, et je pense que c'est le temps de merger vers main ? »). **Calendrier** (`docs/retention/calendar.md`) : la proposition de la session, acceptée : « كلمة من القرآن » les lundi 7, mardi 8 et mercredi 9 décembre, « خريطة كلمة » les lundi 14, mardi 15 et mercredi 16 décembre, les semaines où aucun film n'est encore prévu ; page republiée. **`main`** : avis donné, oui : une session nouvelle part de la branche par défaut, et `main` n'avait rien depuis le 2026-11-11 (185 commits de retard : le modèle, ses outils, ses skills, ce fichier) ; `main` était un ancêtre de la branche, rien à résoudre ; un push sur `main` ne lance que `validate`. Fusion par une pull request (comme #28 et #29), `validate` vert avant la fusion.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```
