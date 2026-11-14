@@ -65,11 +65,13 @@ def lowpass(x: np.ndarray, cutoff: np.ndarray | float) -> np.ndarray:
 
 
 def tick(seed: int, gain: float = 1.0) -> np.ndarray:
-    n = int(0.018 * RATE)
+    """A dry tick: noise between 1.2 and 5 kHz, gone in a few milliseconds, its peak near -8 dBFS."""
+    n = int(0.03 * RATE)
     t = np.arange(n) / RATE
     noise = rng(seed).standard_normal(n)
-    bright = np.diff(noise, prepend=0.0)                    # the high part of the noise: a dry tick
-    return gain * 0.085 * bright * np.exp(-t / 0.0022)                 # a peak near -12 dBFS
+    band = lowpass(noise, 5000.0) - lowpass(noise, 1200.0)
+    x = band * np.exp(-t / 0.005)
+    return gain * 0.4 * x / np.max(np.abs(x))
 
 
 def knock() -> np.ndarray:
@@ -79,7 +81,7 @@ def knock() -> np.ndarray:
     freq = 42 + 53 * np.exp(-t / 0.08)
     body = np.sin(2 * np.pi * np.cumsum(freq) / RATE) * np.exp(-t / 0.22)
     burst = lowpass(rng(7).standard_normal(n), 900.0) * np.exp(-t / 0.025)
-    return 0.68 * (0.62 * body + 0.5 * burst)                          # a peak near -6 dBFS
+    return 0.95 * (0.62 * body + 0.5 * burst)                          # a peak near -3 dBFS
 
 
 def whoosh(seconds: float = 0.55, seed: int = 3) -> np.ndarray:
@@ -87,7 +89,7 @@ def whoosh(seconds: float = 0.55, seed: int = 3) -> np.ndarray:
     t = np.arange(n) / RATE
     shape = np.sin(np.pi * np.clip(t / seconds, 0, 1)) ** 2
     out = lowpass(rng(seed).standard_normal(n), 300 + 2600 * shape)
-    return 0.16 * out * shape
+    return 0.36 * out * shape
 
 
 def pop(seed: int) -> np.ndarray:
@@ -95,7 +97,7 @@ def pop(seed: int) -> np.ndarray:
     t = np.arange(n) / RATE
     noise = rng(seed).standard_normal(n)
     band = lowpass(noise, 2400.0) - lowpass(noise, 500.0)
-    return 0.22 * band * np.exp(-t / 0.006)
+    return 0.45 * band * np.exp(-t / 0.006)
 
 
 def pops(seconds: float = 0.8, count: int = 22, seed: int = 11) -> np.ndarray:
@@ -111,7 +113,7 @@ def pops(seconds: float = 0.8, count: int = 22, seed: int = 11) -> np.ndarray:
 def click(seed: int = 21) -> np.ndarray:
     out = np.zeros(int(0.06 * RATE))
     for at, gain in ((0.0, 1.0), (0.022, 0.45)):
-        c = tick(seed + int(at * 1000), 1.2 * gain)
+        c = tick(seed + int(at * 1000), 1.3 * gain)
         i = int(at * RATE)
         out[i:i + len(c)] += c
     return out
@@ -135,7 +137,7 @@ def scan(word: str) -> tuple[np.ndarray, int]:
     n = int((SCAN + 0.1) * RATE)
     t = np.arange(n) / RATE
     rise = np.clip(t / SCAN, 0, 1)
-    out = 0.05 * lowpass(rng(5).standard_normal(n), 400 + 1800 * rise) * rise ** 1.5 * (t <= SCAN)
+    out = 0.14 * lowpass(rng(5).standard_normal(n), 400 + 1800 * rise) * rise ** 1.5 * (t <= SCAN)
     for k, at in enumerate(times):
         c = tick(100 + k, 0.8 + 0.4 * at / SCAN)
         i = int(at * RATE)

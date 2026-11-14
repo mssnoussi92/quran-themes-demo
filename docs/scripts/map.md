@@ -62,7 +62,7 @@ Environ **1:25** · 0:27 de récitation, 0:00 de hadith lu · 16 répliques nouv
 
 **1:03 · narration** (image : `rest`) · d'après : sens d'après [Al-Tafsir al-Muyassar · التفسير الميسر](https://quran.com/13:28/tafsirs/ar-tafsir-muyassar) sur 13:28, source proposée · référence écrite à l'écran, jamais lue
 - يعني: القلب يهدى ويرتاح… بذكر ربنا… وطاعته.  
-  *Meaning: the heart grows calm and finds rest… in remembering God… and obeying Him.* · **nouvelle**
+  *Meaning: the heart grows calm… in remembering God… and obeying Him.* · **nouvelle**
 
 **1:08 · narration** (image : `rest`)
 - زي لما تبقى مخنوق ومش لاقي كلام… وتقول: سبحان الله… الحمد لله…  
