@@ -2279,3 +2279,54 @@
   notes: 'Al-Ma''ida 5:8, récité jusqu''à « ألا تعدلوا » (« لاحظت الفرق؟ », épisode qist)'
   text_ar: يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ كُونُوا۟ قَوَّٰمِينَ لِلَّهِ شُهَدَآءَ بِٱلْقِسْطِ ۖ وَلَا يَجْرِمَنَّكُمْ شَنَـَٔانُ قَوْمٍ عَلَىٰٓ أَلَّا تَعْدِلُوا۟ ۚ ٱعْدِلُوا۟ هُوَ أَقْرَبُ لِلتَّقْوَىٰ ۖ وَٱتَّقُوا۟ ٱللَّهَ ۚ إِنَّ ٱللَّهَ خَبِيرٌۢ بِمَا تَعْمَلُونَ
   text_en: O you who have believed, be persistently standing firm for Allāh, witnesses in justice, and do not let the hatred of a people prevent you from being just. Be just; that is nearer to righteousness. And fear Allāh; indeed, Allāh is [fully] Aware of what you do.
+
+- id: quran.2.7
+  type: ayah
+  ref: {surah: 2, ayah: 7}
+  url: https://quran.com/2/7
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:7
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:7
+    translator: Saheeh International
+    surah_ar: البقرة
+    surah_en: Al-Baqarah
+    retrieved: '2026-11-14'
+  status: proposed
+  notes: 'Al-Baqara 2:7, récité jusqu''à « وعلى سمعهم » (« خريطة كلمة », épisode qalb : la première fois que le mot قلب est dans le mushaf)'
+
+  text_ar: خَتَمَ ٱللَّهُ عَلَىٰ قُلُوبِهِمْ وَعَلَىٰ سَمْعِهِمْ ۖ وَعَلَىٰٓ أَبْصَـٰرِهِمْ غِشَـٰوَةٌ ۖ وَلَهُمْ عَذَابٌ عَظِيمٌ
+  text_en: Allāh has set a seal upon their hearts and upon their hearing, and over their vision is a veil. And for them is a great punishment.
+- id: quran.83.14
+  type: ayah
+  ref: {surah: 83, ayah: 14}
+  url: https://quran.com/83/14
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=83:14
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=83:14
+    translator: Saheeh International
+    surah_ar: المطففين
+    surah_en: Al-Mutaffifin
+    retrieved: '2026-11-14'
+  status: proposed
+  notes: 'Al-Mutaffifin 83:14 (« خريطة كلمة », épisode qalb : la dernière fois que le mot قلب est dans le mushaf)'
+
+  text_ar: كَلَّا ۖ بَلْ ۜ رَانَ عَلَىٰ قُلُوبِهِم مَّا كَانُوا۟ يَكْسِبُونَ
+  text_en: No! Rather, the stain has covered their hearts of that which they were earning.
+- id: quran.13.28
+  type: ayah
+  ref: {surah: 13, ayah: 28}
+  url: https://quran.com/13/28
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=13:28
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=13:28
+    translator: Saheeh International
+    surah_ar: الرعد
+    surah_en: Ar-Ra'd
+    retrieved: '2026-11-14'
+  status: proposed
+  notes: 'Ar-Ra''d 13:28 (« خريطة كلمة », épisode qalb : « ألا بذكر الله تطمئن القلوب »)'
+  text_ar: ٱلَّذِينَ ءَامَنُوا۟ وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ ٱللَّهِ ۗ أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ
+  text_en: Those who have believed and whose hearts are assured by the remembrance of Allāh. Unquestionably, by the remembrance of Allāh hearts are assured."

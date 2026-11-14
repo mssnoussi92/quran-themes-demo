@@ -27,21 +27,21 @@ const after = (t: number, from: number, seconds: number) => ease((t - from) / se
 
 const COLS = 96;
 const PITCH = 9.2;
-const GRID_TOP = 712;
-const GRID_LEFT = (W - (COLS - 1) * PITCH) / 2;
-const at = (k: number) => ({ x: W - GRID_LEFT - (k % COLS) * PITCH, y: GRID_TOP + Math.floor(k / COLS) * PITCH });
-const GRID_BOTTOM = at(COUNT.verses - 1).y;
-const GRID_MIDDLE = (GRID_TOP + GRID_BOTTOM) / 2;
+export const GRID_TOP = 712;
+export const GRID_LEFT = (W - (COLS - 1) * PITCH) / 2;
+export const at = (k: number) => ({ x: W - GRID_LEFT - (k % COLS) * PITCH, y: GRID_TOP + Math.floor(k / COLS) * PITCH });
+export const GRID_BOTTOM = at(COUNT.verses - 1).y;
+export const GRID_MIDDLE = (GRID_TOP + GRID_BOTTOM) / 2;
 
 /** Many dots as one path: a circle is two arcs. */
-const dots = (ks: readonly number[], r: number) =>
+export const dots = (ks: readonly number[], r: number) =>
   ks.map((k) => {
     const { x, y } = at(k);
     return `M${(x - r).toFixed(1)} ${y.toFixed(1)}a${r} ${r} 0 1 0 ${2 * r} 0a${r} ${r} 0 1 0 ${-2 * r} 0`;
   }).join("");
 const ALL = Array.from({ length: COUNT.verses }, (_, k) => k);
-const BASE = dots(ALL, 2);
-const BASE_GOLD = dots(ALL, 2.6);
+export const BASE = dots(ALL, 2);
+export const BASE_GOLD = dots(ALL, 2.6);
 const LIT = COUNT.lit.map((ks) => [...ks]);
 const GONE = LIT.map((ks) => LIT[0].filter((k) => !ks.includes(k)));
 
@@ -103,7 +103,7 @@ const Taken: React.FC<{ removed: number; from: { x: number; y: number } }> = ({ 
 
 // ---- numbers made of particles ---------------------------------------------------------------------------------------
 
-type Shape = { aspect: number; points: readonly (readonly number[])[] };
+export type Shape = { aspect: number; points: readonly (readonly number[])[] };
 const SHAPES = COUNT.particles as unknown as Record<string, Shape>;
 const place = (shape: Shape, i: number, cx: number, cy: number, h: number) => {
   const [px, py] = shape.points[i];
@@ -112,9 +112,9 @@ const place = (shape: Shape, i: number, cx: number, cy: number, h: number) => {
 
 /** A number made of particles: gathered from a cloud (`gather` 0 to 1), or turned from another number (`from`, `turn`),
  * or falling apart (`crumble` 0 to 1). The particles keep a small tremor, so that a still number is alive. */
-const Particles: React.FC<{ to: string; from?: string; turn?: number; gather?: number; crumble?: number; cx: number; cy: number; h: number; t: number; colour?: string }> = ({ to, from, turn = 1, gather = 1, crumble = 0, cx, cy, h, t, colour = GOLD }) => {
-  const target = SHAPES[to];
-  const source = from ? SHAPES[from] : null;
+export const Particles: React.FC<{ to: string; from?: string; turn?: number; gather?: number; crumble?: number; cx: number; cy: number; h: number; t: number; colour?: string; shapes?: Record<string, Shape> }> = ({ to, from, turn = 1, gather = 1, crumble = 0, cx, cy, h, t, colour = GOLD, shapes = SHAPES }) => {
+  const target = shapes[to];
+  const source = from ? shapes[from] : null;
   const k = ease(turn);
   const paths = ["", "", ""];
   for (let i = 0; i < target.points.length; i++) {
@@ -322,7 +322,7 @@ const Quill: React.FC<{ t: number }> = ({ t }) => {
 
 // ---- the episode -----------------------------------------------------------------------------------------------------
 
-const CountDefs: React.FC = () => (
+export const CountDefs: React.FC = () => (
   <defs>
     <radialGradient id="ct-halo"><stop offset="0" stopColor={INK} stopOpacity={0.97} /><stop offset=".72" stopColor={INK} stopOpacity={0.85} /><stop offset="1" stopColor={INK} stopOpacity={0} /></radialGradient>
   </defs>

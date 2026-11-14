@@ -311,6 +311,10 @@ def main() -> None:
         if "narration" in seg:
             wav = out_dir / f"{args.trial}-{args.voice}-{seg['narration']}.wav"
             made = narration(whole, starts, gaps, take_end, first[seg["narration"]], seg["lines"], wav, gain)
+            if seg.get("hold") and made["seconds"] < seg["hold"]:
+                # A series with no voice (« خريطة كلمة »): its text stays the time it takes to read it and to see what
+                # it shows, not the time a voice would take to say it.
+                made["seconds"] = made["lines"][-1]["end"] = float(seg["hold"])
             if seg.get("sources"):                         # what its lines rest on, written while they are said
                 if by_source is not None:
                     sys.exit("error: `sources` on a narration needs the registry (a file with no `verses`)")

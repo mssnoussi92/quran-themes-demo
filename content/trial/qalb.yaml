@@ -1,0 +1,91 @@
+# « خريطة كلمة », épisode 1, pilote (content/trial/map.yaml ; docs/themes.md). Sans voix : chaque réplique est un texte à
+# l'écran, tenu le temps de le lire (le brouillon, voix X, le minute d'après sa longueur). Les nombres viennent de
+# tools/trial/wordmap.py, jamais tapés. Les dessins : video/src/trial/WordMap.tsx. Personne n'est dessiné.
+# Écrit par la session le 2026-11-14 ; le propriétaire le juge sur la vidéo (« on discute après »).
+id: qalb
+handle: "@quran_words_daily"
+voices: { X: "no voice: the text is on screen" }
+text: 64-trial-qalb     # content/voice-test/<text>.txt : les répliques, dans l'ordre (aucune voix ne les dit)
+# Un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) : rien à créditer.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1300, veil: 0.7 }
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 80, level: -30 }
+cover: { scene: hook, title: "«القلب» في القرآن… 132 مرة", tag: "خريطة كلمة (١)", focus: 1000 }
+publish:
+  title: { en: "The heart in the Quran… 132 times", ar: "«القلب» في القرآن… 132 مرة" }
+  part: 1
+  hashtags: ["#القلب", "#ذكر_الله"]
+  description:
+    en: "The word 'heart' in the Quran: 132 times, in 124 verses, 112 of them 'hearts'. Its first time in the mushaf and its last both speak of hearts closed. And the heart finds rest in the remembrance of God (13:28)."
+    ar: "كلمة «القلب» في القرآن: 132 مرة، في 124 آية، منها 112 «قلوب». أول مرة في المصحف وآخر مرة… قلوب اتقفلت. والقلب يرتاح بذكر ربنا (الرعد 28)."
+segments:
+  - narration: hook
+    hold: 4.5
+    scene: hook
+    sources: [science.count-qalb]
+    lines:
+      - ar: "«القلب» في القرآن… 132 مرة."
+        en: "\"The heart\" in the Quran… 132 times."
+  - narration: verses
+    hold: 4.5
+    scene: grid
+    sources: [science.count-qalb]
+    lines:
+      - ar: "في 124 آية… من 6236."
+        en: "In 124 verses… out of 6,236."
+  - narration: forms
+    hold: 6
+    scene: forms
+    sources: [science.count-qalb]
+    lines:
+      - ar: "112 مرة «قلوب»… و19 مرة «قلب»… ومرة واحدة «قلبين»."
+        en: "112 times \"hearts\"… 19 times \"a heart\"… and once \"two hearts\"."
+  - narration: surahs
+    hold: 5
+    scene: surahs
+    sources: [science.count-qalb]
+    lines:
+      - ar: "وأكتر سورة فيها القلوب: التوبة… 13 مرة."
+        en: "The surah that speaks of hearts most: at-Tawba… 13 times."
+  - narration: first
+    hold: 2.6
+    scene: first
+    sources: [science.count-qalb]
+    lines:
+      - ar: "أول مرة في المصحف…"
+        en: "The first time in the mushaf…"
+  - verses: [quran.2.7]
+    upto: 6            # jusqu'au premier arrêt « ۖ », après « وعلى سمعهم »
+    scene: first
+  - narration: last
+    hold: 2.2
+    scene: last
+    sources: [science.count-qalb]
+    lines:
+      - ar: "وآخر مرة…"
+        en: "And the last time…"
+  - verse: quran.83.14
+    scene: last
+  - narration: closed
+    hold: 7
+    scene: closed
+    sources: [tafsir.muyassar.2.7, tafsir.muyassar.83.14]
+    lines:
+      - ar: "أول مرة… وآخر مرة… قلوب اتقفلت."
+        en: "The first time… and the last… hearts that were closed."
+      - ar: "طب إيه اللي يريّح القلب؟"
+        en: "So what gives the heart rest?"
+  - verse: quran.13.28
+    scene: rest
+  - narration: meaning
+    hold: 4.8
+    scene: rest
+    sources: [tafsir.muyassar.13.28]
+    lines:
+      - ar: "يعني: القلب يرتاح… بذكر ربنا."
+        en: "Meaning: the heart finds rest… in remembering God."
+  - narration: close
+    hold: 3.6
+    scene: end
+    lines:
+      - ar: "تابعنا عشان الكلمة الجاية."
+        en: "Follow us for the next word."

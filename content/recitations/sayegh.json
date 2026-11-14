@@ -4,6 +4,29 @@
   "label": "Tawfiq As-Sayegh",
   "surah_url": "https://cdn.mp3quran.net/audio/tawfeeq-sayegh/r1/{surah:03d}.mp3",
   "verses": {
+    "2:7": {
+      "file": "002.mp3",
+      "start": 72.83,
+      "end": 86.81,
+      "seconds": 13.98,
+      "words": [
+        [1, 0.0, 0.46],
+        [2, 0.46, 1.04],
+        [3, 1.04, 1.64],
+        [4, 1.64, 2.94],
+        [5, 2.94, 3.76],
+        [6, 3.76, 4.84],
+        [7, 4.84, 6.4],
+        [8, 6.4, 8.46],
+        [9, 8.46, 9.62],
+        [10, 9.62, 11.04],
+        [11, 11.04, 11.98],
+        [12, 11.98, 13.98]
+      ],
+      "heard": "ختم الله على قلوبهم وعلى سمعهم وعلى أبصارهم غشاوة ولهم عذاب عظيم",
+      "match": 1.0,
+      "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
+    },
     "2:45": {
       "file": "002.mp3",
       "start": 783.61,
@@ -506,6 +529,28 @@
         [13, 11.94, 14.08]
       ],
       "heard": "قال إنما أشكوا بثي وحزني إلى الله وأعلم من الله ما لا تعلمون",
+      "match": 1.0,
+      "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
+    },
+    "13:28": {
+      "file": "013.mp3",
+      "start": 616.47,
+      "end": 631.67,
+      "seconds": 15.2,
+      "words": [
+        [1, 0.0, 1.12],
+        [2, 1.12, 2.32],
+        [3, 2.32, 3.92],
+        [4, 3.92, 5.28],
+        [5, 5.28, 6.6],
+        [6, 6.6, 8.42],
+        [7, 8.42, 9.18],
+        [8, 9.18, 10.4],
+        [9, 10.4, 11.04],
+        [10, 11.04, 13.1],
+        [11, 13.1, 15.2]
+      ],
+      "heard": "الذين آمنوا وتطمئن قلوبهم بذكر الله أنا بذكر الله تطمئن القلوب",
       "match": 1.0,
       "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
     },
@@ -2733,6 +2778,26 @@
       "heard": "الذين هم على صلاتهم دائمون",
       "match": 1.0,
       "method": "mp3quran.net marks snapped to the quietest moment; words by Whisper (large-v3-turbo)"
+    },
+    "83:14": {
+      "file": "083.mp3",
+      "start": 71.5,
+      "end": 78.84,
+      "seconds": 7.34,
+      "words": [
+        [1, 0.0, 0.74],
+        [2, 0.74, 1.4],
+        [3, 1.4, 2.4],
+        [4, 2.4, 2.9],
+        [5, 2.9, 4.22],
+        [6, 4.22, 4.8],
+        [7, 4.8, 5.66],
+        [8, 5.66, 7.34]
+      ],
+      "heard": "كلا بل ران على قلوبهم ما كانوا يكسبون",
+      "match": 1.0,
+      "note": "start 71.50 s at -32 dB; end 78.84 s at -31 dB",
+      "method": "set by hand (envelope), words by Whisper"
     },
     "83:26": {
       "file": "083.mp3",

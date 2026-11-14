@@ -59,7 +59,7 @@ tools/trial/rules.py           les règles sur les fichiers d'un film ; tools/tr
 tools/audio/align.py           chaque phrase d'un texte retrouvée dans une longue prise
 tools/tts/gemini.py            la voix (dans le workflow voice-test : la clé est un secret du dépôt)
 video/src/trial/               Trial.tsx (short), Film.tsx (film), Cover.tsx (couverture, vignette),
-                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a), Signs.tsx, Kalima.tsx et Count.tsx (les séries) : les dessins
+                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a), Signs.tsx, Kalima.tsx, Count.tsx, Farq.tsx et WordMap.tsx (les séries) : les dessins
 video/public/trial/            (ignoré) données préparées, clips, audio
 build/trial/ambience/          (ignoré) enregistrements d'ambiance téléchargés
 video/out/                     (ignoré) rendus
@@ -105,6 +105,9 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
   dessus (`sources:`), jamais un verset ni une lecture.
 - `upto: N` sur un segment `verses` d'un seul verset : il n'en récite que les N premiers mots, jusqu'à un signe de
   pause (la signature : 41:53 jusqu'à « أنه الحق ۗ »).
+- `hold: N` sur un segment de narration d'un short **sans voix** (voix `X` seulement, « خريطة كلمة ») : la réplique
+  reste au moins N secondes, le temps de la lire et de voir ce que l'image montre ; sans `hold`, le brouillon la minute
+  comme une voix la dirait (dix lettres par seconde), trop vite pour lire.
 - `OVERLAYS` et `LAYOUTS` de `video/src/trial/Trial.tsx` : ce qu'un short dessine au-dessus du voile sans bouger
   (le badge de la série, la frise des dates) et où ses textes se placent ; les dessins, photos et frises de la série
   sont dans `video/src/trial/Signs.tsx`.
@@ -123,6 +126,10 @@ qui compare (un mot du Coran et ses occurrences, deux versets presque pareils, u
 d'un épisode « يوم 365 » de « سنريهم آياتنا »). **Construit le 2026-11-13** pour l'épisode `days` : `video/src/trial/Count.tsx`
 (les dessins, réglés sur le temps de chaque scène) et `tools/trial/count.py` (les comptes refaits sur le Quranic Arabic
 Corpus, écrits dans `video/src/trial/countData.ts`, avec leurs tests) ; un autre épisode y ajoute ses données et ses scènes.
+Repris le 2026-11-14 pour le pilote sans voix de « خريطة كلمة » (`qalb`) : `tools/trial/wordmap.py` (le mot, ses
+occurrences, ses formes, ses sourates, la première et la dernière fois, `video/src/trial/mapData.ts`) et
+`video/src/trial/WordMap.tsx` (la grille et les particules de `Count.tsx` ; les mêmes points regroupés en barres, une
+pastille par occurrence, par forme puis par sourate ; la première et la dernière fois entourées puis cadenassées).
 - **Un nombre fait de particules** qui se rassemblent ; un « = » entre deux comptes.
 - **Les comptes en chiffres « 365 »**, pas en chiffres arabes orientaux (propriétaire, 2026-11-13) : dans le nombre en
   particules, la bande des règles, les répliques et les légendes ; le badge de la série et la référence d'un verset

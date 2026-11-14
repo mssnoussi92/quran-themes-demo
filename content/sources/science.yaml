@@ -156,3 +156,13 @@
   status: validated
   validated_by: mssnoussi92
   notes: "Épisode days : « وفي واحد مشي ورا رقم… لحد ما قال إن آيتين مش من القرآن… عشان ما ظبطوش مع حسابه ». La voix dit « واحد » ; son nom s'écrit à l'écran (décision du propriétaire, 2026-11-13). Wikipedia cite Haddad et Smith pour ses livres, Submission.org pour 9:128-129 : à vérifier dans le livre si possible."
+
+- id: science.count-qalb
+  type: science
+  ref: { author: "Quranic Arabic Corpus (University of Leeds)", title: "Morphology of the Quran, word by word: every form of قلب (the heart), counted", publication: "corpus.quran.com; quran-morphology.txt (github.com/mustafa0x/quran-morphology)", year: 2011 }
+  url: https://corpus.quran.com/
+  label: { ar: "عدّ الكلمات: Quranic Arabic Corpus", en: "Word counts: Quranic Arabic Corpus" }
+  claim: "Le lemme قَلْب : 132 mots dans 124 versets ; 112 au pluriel (قلوب), 19 au singulier, 1 au duel ; le plus souvent dans at-Tawba (13), al-Baqara (11), al-Ahzab (10) ; la première fois en 2:7, la dernière en 83:14. Comptés par tools/trial/wordmap.py."
+  checked: { "on": '2026-11-14', sources: ["https://corpus.quran.com/", "https://github.com/mustafa0x/quran-morphology", "tools/trial/wordmap.py"] }
+  status: proposed
+  notes: "Épisode qalb de « خريطة كلمة » : chaque nombre à l'écran."

@@ -638,6 +638,15 @@ garder court ; une série de nombres glisse vite vers le « إعجاز عددي 
 écrite, aucune égalité cherchée entre deux mots ; un compte ne dit rien du sens : c'est le verset et son tafsir qui le
 disent. **À son mot** : une série sans voix, le nom, les trois premiers mots, des images de style d'abord.
 
+**Le pilote** (propriétaire, 2026-11-14 : « let's create a pilote et on discute après ») : `qalb`, le mot « قلب »
+(`content/trial/map.yaml`, `qalb.yaml`), écrit et rendu par la session, sans script validé avant (il le juge sur la
+vidéo). 1:13, aucune voix : douze textes à l'écran tenus le temps de les lire (`hold`), trois versets récités (2:7
+jusqu'à « وعلى سمعهم », 83:14, 13:28), l'ambiance de nuit sous les textes. Les faits (Quranic Arabic Corpus, le lemme
+قلب, `tools/trial/wordmap.py`) : 132 fois, dans 124 versets ; 112 « قلوب », 19 « قلب », 1 « قلبين » ; at-Tawba 13,
+al-Baqara 11, al-Ahzab 10 ; la première fois 2:7, la dernière 83:14, deux versets de cœurs fermés (al-Muyassar) ; puis
+13:28, le repos du cœur par le rappel de Dieu (al-Muyassar). Ses sept sources sont proposées. **À discuter avec lui** :
+le rythme d'un texte sans voix, le nom, les mots suivants.
+
 ### Le « إعجاز عددي » : une vidéo analysée et des comptes refaits (propriétaire, 2026-11-13)
 
 Demande : analyser le montage d'une vidéo Facebook (enregistrement d'écran, 1:33) pour « لاحظت الفرق », et une série

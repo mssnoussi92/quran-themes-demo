@@ -1,0 +1,16 @@
+# La série « خريطة كلمة » (demande du propriétaire, 2026-11-14 : une série dans le montage de la vidéo de « إعجاز عددي »
+# qu'il a trouvée attirante ; « let's create a pilote et on discute après »). Fiche : docs/themes.md. Sans voix : le
+# texte à l'écran, la récitation, une ambiance. Un mot du Coran et où il est dans les 6 236 versets, en faits comptés par
+# tools/trial/wordmap.py (video/src/trial/mapData.ts), jamais un « miracle », jamais deux comptes égalés. Les dessins :
+# video/src/trial/WordMap.tsx. Pilote d'un épisode, à discuter.
+id: map
+files: map                       # début du nom des vidéos livrées : map-short-<n>-<id>.mp4
+title: { ar: "خريطة كلمة", en: "The Map of a Word" }
+shorts: [qalb]
+handle: "@quran_words_daily"
+publish:
+  out: docs/retention/publication-map.md
+  series: { en: "The Map of a Word", ar: "خريطة كلمة" }
+  hashtags: ["#خريطة_كلمة", "#كلمات_القرآن"]
+  # Aucune voix de synthèse : la seule voix est celle du récitateur (publish.py --voice X ; une autre voix y échoue).
+  narration: { X: "No narration voice: the text is on screen · بدون صوت راوي: النص على الشاشة" }
