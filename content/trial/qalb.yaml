@@ -12,6 +12,10 @@ id: qalb
 # الران proposé en option (« mieux comme ça »), et le début du brouillon avec ses sons. Ni la voix, ni la vidéo finale,
 # ni les textes, ni les sources : il les valide sur les vidéos. Inscrit sur sa parole.
 script_validated: { by: mssnoussi92, on: 2026-11-14 }
+# « Je valide tout » du propriétaire (2026-11-14), après l'envoi de la vidéo finale (workflow `film`, run 26 ; la même
+# rendue au run 27 avec la série) : lu comme l'épisode 1 tel qu'il l'a vu (la voix D, le montage, les effets sonores,
+# l'ambiance) et ses sept sources, passées à `validated`. Ni la couverture ni les textes à coller, pas encore envoyés.
+validated: { by: mssnoussi92, on: 2026-11-14, what: [voice, montage, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 64-trial-qalb     # content/voice-test/<text>.txt : les répliques dites par la voix (pas celles du début muet)

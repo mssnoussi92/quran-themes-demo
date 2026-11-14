@@ -2292,7 +2292,8 @@
     surah_ar: البقرة
     surah_en: Al-Baqarah
     retrieved: '2026-11-14'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 'Al-Baqara 2:7, récité jusqu''à « وعلى سمعهم » (« خريطة كلمة », épisode qalb : la première fois que le mot قلب est dans le mushaf)'
 
   text_ar: خَتَمَ ٱللَّهُ عَلَىٰ قُلُوبِهِمْ وَعَلَىٰ سَمْعِهِمْ ۖ وَعَلَىٰٓ أَبْصَـٰرِهِمْ غِشَـٰوَةٌ ۖ وَلَهُمْ عَذَابٌ عَظِيمٌ
@@ -2309,7 +2310,8 @@
     surah_ar: المطففين
     surah_en: Al-Mutaffifin
     retrieved: '2026-11-14'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 'Al-Mutaffifin 83:14 (« خريطة كلمة », épisode qalb : la dernière fois que le mot قلب est dans le mushaf)'
 
   text_ar: كَلَّا ۖ بَلْ ۜ رَانَ عَلَىٰ قُلُوبِهِم مَّا كَانُوا۟ يَكْسِبُونَ
@@ -2326,7 +2328,8 @@
     surah_ar: الرعد
     surah_en: Ar-Ra'd
     retrieved: '2026-11-14'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 'Ar-Ra''d 13:28 (« خريطة كلمة », épisode qalb : « ألا بذكر الله تطمئن القلوب »)'
   text_ar: ٱلَّذِينَ ءَامَنُوا۟ وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ ٱللَّهِ ۗ أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ
   text_en: Those who have believed and whose hearts are assured by the remembrance of Allāh. Unquestionably, by the remembrance of Allāh hearts are assured."
