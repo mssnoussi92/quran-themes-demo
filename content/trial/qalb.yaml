@@ -1,0 +1,136 @@
+# « خريطة كلمة », épisode 1 (content/trial/map.yaml ; docs/themes.md ; script : docs/scripts/map.md). Deuxième version,
+# à la demande du propriétaire (2026-11-14, sur le pilote sans voix) : « il manque des effets sonores, sur le compteur ;
+# ne pas afficher le nombre directement mais créer un suspense au début ; la fin est bien ; mélanger les deux styles : le
+# début rapide animé, puis la voix, et finir par une leçon (ذكر ربنا بيريح القلوب) ». Le début est muet (`silent` : le
+# texte à l'écran, tenu `hold` secondes, des effets sonores `sfx`), la suite dite par la voix D. Les nombres viennent de
+# tools/trial/wordmap.py, jamais tapés ; les dessins : video/src/trial/WordMap.tsx ; les sons : tools/trial/sfx.py,
+# générés (rien à créditer, aucun son musical, jamais sous un verset). Personne n'est dessiné.
+# Script écrit par la session le 2026-11-14.
+id: qalb
+# « C'est mieux comme ça, et je veux 3 épisodes, et je valide tout » du propriétaire (2026-11-14), sur le brouillon v2 et
+# le script docs/scripts/map.md, seul script qui attendait son mot : lu comme le script tel qu'envoyé, sans le hadith du
+# الران proposé en option (« mieux comme ça »), et le début du brouillon avec ses sons. Ni la voix, ni la vidéo finale,
+# ni les textes, ni les sources : il les valide sur les vidéos. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-14 }
+# « Je valide tout » du propriétaire (2026-11-14), après l'envoi de la vidéo finale (workflow `film`, run 26 ; la même
+# rendue au run 27 avec la série) : lu comme l'épisode 1 tel qu'il l'a vu (la voix D, le montage, les effets sonores,
+# l'ambiance) et ses sept sources, passées à `validated`. Ni la couverture ni les textes à coller, pas encore envoyés.
+# « Je valide tout » du propriétaire (2026-11-14), après l'envoi des épisodes 2 et 3 (workflow `film`, run 27), des trois
+# versions TikTok, des trois couvertures et des textes à coller (docs/retention/publication-map.md) : lu comme tout ce qui
+# attendait son mot, les couvertures telles qu'envoyées (sans le mot écrit en grand, proposé en option). Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-14, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 64-trial-qalb     # content/voice-test/<text>.txt : les répliques dites par la voix (pas celles du début muet)
+# Un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) : rien à créditer.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1300, veil: 0.7 }
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 110, level: -36 }
+cover: { scene: scan, title: "«القلب» في القرآن… كام مرة؟", tag: "خريطة كلمة (١)", focus: 1000 }
+publish:
+  title: { en: "The heart in the Quran… how many times?", ar: "«القلب» في القرآن… كام مرة؟" }
+  part: 1
+  hashtags: ["#القلب", "#ذكر_الله"]
+  description:
+    en: "The word 'heart' in the Quran: 132 times, in 124 verses. Its first time in the mushaf and its last both speak of hearts closed. And the heart finds rest in the remembrance of God (13:28)."
+    ar: "كلمة «القلب» في القرآن: 132 مرة، في 124 آية. أول مرة في المصحف وآخر مرة… قلوب اتقفلت. والقلب يرتاح بذكر ربنا (الرعد 28)."
+segments:
+  # -- le début, muet et rapide : la grille balayée, le compteur qui monte au son des tics, le nombre qui tombe
+  - narration: hook
+    silent: true
+    hold: 2.6
+    scene: scan
+    sfx: [[scan, 0]]
+    lines:
+      - ar: "«القلب» في القرآن كام مرة؟"
+        en: "\"The heart\" in the Quran: how many times?"
+  - narration: land
+    silent: true
+    hold: 2.2
+    scene: land
+    sources: [science.count-qalb]
+    sfx: [[impact, 0.3]]
+    lines:
+      - ar: "132 مرة."
+        en: "132 times."
+  - narration: verses
+    silent: true
+    hold: 3.0
+    scene: grid
+    sources: [science.count-qalb]
+    sfx: [[whoosh, 0]]
+    lines:
+      - ar: "في 124 آية… من 6236."
+        en: "In 124 verses… out of 6,236."
+  - narration: forms
+    silent: true
+    hold: 4.2
+    scene: forms
+    sources: [science.count-qalb]
+    sfx: [[whoosh, 0], [pops, 1.05]]
+    lines:
+      - ar: "112 «قلوب»… 19 «قلب»… ومرة «قلبين»."
+        en: "112 \"hearts\"… 19 \"a heart\"… and once \"two hearts\"."
+  - narration: surahs
+    silent: true
+    hold: 3.4
+    scene: surahs
+    sources: [science.count-qalb]
+    sfx: [[whoosh, 0], [pops, 0.95]]
+    lines:
+      - ar: "وأكتر سورة: التوبة… 13 مرة."
+        en: "Most of all in at-Tawba… 13 times."
+  # -- la voix
+  - narration: turn
+    scene: first
+    sources: [science.count-qalb]
+    sfx: [[click, 0.4]]
+    lines:
+      - ar: "بس العدد… مش هو الحكاية."
+        en: "But the number… isn't the story."
+      - ar: "الحكاية… في أول مرة."
+        en: "The story… is in the first time."
+  - verses: [quran.2.7]
+    upto: 6            # jusqu'au premier arrêt « ۖ », après « وعلى سمعهم »
+    scene: first
+  - narration: last
+    scene: last
+    sources: [science.count-qalb]
+    sfx: [[whoosh, 0.1]]
+    lines:
+      - ar: "وآخر مرة…"
+        en: "And the last time…"
+  - verse: quran.83.14
+    scene: last
+  - narration: closed
+    scene: closed
+    sources: [tafsir.muyassar.2.7, tafsir.muyassar.83.14]
+    sfx: [[click, "phrase 0"], [click, "phrase 1"], [lock, "phrase 2"]]   # les cadenas, sur « أول مرة… وآخر مرة… قلوب اتقفلت »
+    lines:
+      - ar: "أول مرة… وآخر مرة… قلوب اتقفلت."
+        en: "The first time… and the last… hearts that were closed."
+      - ar: "وآخر آية بتقول السبب: ذنوب كتير… غطّت قلوبهم."
+        en: "And the last verse says why: many sins… covered their hearts."
+      - ar: "طب إيه اللي يريّح القلب؟"
+        en: "So what gives the heart rest?"
+  - verse: quran.13.28
+    scene: rest
+  - narration: meaning
+    scene: rest
+    sources: [tafsir.muyassar.13.28]
+    lines:
+      - ar: "يعني: القلب يهدى ويرتاح… بذكر ربنا… وطاعته."
+        en: "Meaning: the heart grows calm… in remembering God… and obeying Him."
+  - narration: example
+    scene: rest
+    lines:
+      - ar: "زي لما تبقى مخنوق ومش لاقي كلام… وتقول: سبحان الله… الحمد لله…"
+        en: "Like when you feel stifled and can't find words… and you say: Subhan Allah… Alhamdulillah…"
+      - ar: "الدنيا حواليك زي ما هي… بس قلبك يهدى."
+        en: "The world around you is the same… but your heart grows calm."
+  - narration: close
+    scene: end
+    lines:
+      - ar: "ذكر ربنا… بيريّح القلوب."
+        en: "Remembering God… gives hearts rest."
+      - ar: "تابعنا عشان الكلمة الجاية."
+        en: "Follow us for the next word."

@@ -9,7 +9,7 @@ import { reminderStarts, selectScenes } from "./scenes.ts";
 import { StyleContext } from "./styles/context";
 import { KITS } from "./styles/kits";
 import { PaperBackdrop } from "./styles/paper/render";
-import { AyahCard, NameCard, SceneCard, SourceCard, TitleCard } from "./templates/cards";
+import { AyahCard, NameCard, SceneCaption, SceneCard, SourceCard, TitleCard } from "./templates/cards";
 import { SubscribeReminder } from "./templates/SubscribeReminder";
 import { Subtitles } from "./templates/Subtitles";
 import { COLOR } from "./theme";
@@ -74,10 +74,18 @@ const SceneBody: React.FC<{ slot: Slot; format: Format }> = ({ slot, format }) =
   const { scene, lead, content } = slot;
   const style = useContext(StyleContext);
   const kit = KITS[style];
+  // A verse with a `background`: recited over its place, which goes on living behind the text, dimmed
+  // (half of the long khidr video was a verse on a dark card: docs/retention.md).
+  const over = scene.visual.template === "ayah-card" && scene.visual.background !== null;
   return (
     <AudioStart.Provider value={lead}>
       {scene.visual.template === "scene" ? (
         <AbsoluteFill style={{ background: BACKGROUND }} />
+      ) : over ? (
+        <>
+          <SceneCard scene={scene} format={format} />
+          <AbsoluteFill style={{ background: "rgba(8, 14, 26, 0.3)" }} />
+        </>
       ) : kit ? (
         <kit.Backdrop scene={scene} format={format} />
       ) : style === "paper" ? (
@@ -91,6 +99,7 @@ const SceneBody: React.FC<{ slot: Slot; format: Format }> = ({ slot, format }) =
         </Sequence>
       ) : null}
       <Card scene={scene} format={format} />
+      {scene.visual.template === "scene" && scene.visual.caption ? <SceneCaption scene={scene} format={format} /> : null}
       {/* No subtitle during a transition: nobody speaks, and two boxes would overlap. */}
       <Sequence from={lead} durationInFrames={content} layout="none">
         <Subtitles scene={scene} format={format} />

@@ -1,0 +1,524 @@
+name: film
+
+# Prepares and renders a film of the model (docs/model.md) and its shorts: the three shorts, their TikTok
+# versions, the film, the covers and the thumbnail, side by side in parallel jobs, into a DRAFT release
+# "<files>-candidate" that only the repository's owner sees (a try on a push: "<files>-workflow-test"). Until now this was done in an interactive
+# session, one video after the other (about 2.5 hours for a film and three shorts), because the filmed
+# clips are not in the repository.
+#
+#   prepare   once: the rules (tools/trial/rules.py), the filmed clip of each short (Pixabay,
+#             tools/trial/clip.py, repository secret PIXABAY_API_KEY), each short prepared with the voice
+#             takes kept in content/trial/takes/ (never a new voice request: Gemini is not called), then
+#             the film; video/public/trial/ goes to the next jobs as one artifact. The matrix of videos
+#             and stills comes from tools/trial/videos.py, read from the files, never from a table.
+#   render    one job per video (short, TikTok version, film), each checked (tools/trial/check.py: format,
+#             length against the timeline, loudness, sheets of frames), kept as an artifact for 7 days.
+#   stills    the covers and the thumbnail, as JPEG.
+#   release   the ONLY job that writes to the repository: the draft release with the videos, stills,
+#             check sheets and the texts to paste (tools/trial/publish.py) as its body. What succeeded is
+#             published even when a render failed; the notes name what is missing and the job fails.
+#
+# The owner's validation is still recorded on their word, after they watched the draft (skill
+# release-render): this workflow validates nothing. A render that failed is run again alone
+# (« Re-run failed jobs »); the others are not rendered twice. With `from_run` (the id of an earlier run, same
+# film, voice and `only`), nothing is prepared or rendered: the draft release is made again from that run's
+# artifacts (kept 7 days), for a release step that failed or for texts to paste that changed since.
+
+# A push that changes this file tries it on one short (film and short below): a workflow that exists only on
+# a branch cannot be dispatched before it has run once, and a change to it is worth a real run.
+on:
+  push:
+    branches: ["claude/**"]
+    paths: [".github/workflows/film.yml"]
+  workflow_dispatch:
+    inputs:
+      film:
+        description: "Film id (content/trial/<film>.yaml), e.g. dua"
+        required: true
+        type: string
+      voice:
+        description: "Narration voice label of the takes (content/trial/takes/<voice>-<text>.flac)"
+        default: D
+        type: string
+      only:
+        description: "all, shorts, film, tiktok, one short's id (it prepares only that short), or tall (the film in 9:16, alone, in a draft release of its own)"
+        default: all
+        type: string
+      ambience:
+        description: "Put the field recording under the narration (tools/trial/ambience.py)"
+        default: true
+        type: boolean
+      from_run:
+        description: "Only publish again what an earlier run rendered: its run id (same film, voice and only)"
+        default: ""
+        type: string
+
+permissions:
+  contents: read
+
+# One run per film at a time: two runs of the same film would replace each other's draft release.
+# The try on a push has its own group and its own release (<files>-workflow-test): it must never wait behind,
+# nor replace, the draft of a real run of the same film.
+concurrency:
+  group: film-${{ github.event_name == 'push' && 'workflow-test' || inputs.film }}
+  cancel-in-progress: false
+
+# On a push there are no inputs: the du'a film, its first short only, with the ambience.
+env:
+  FILM: ${{ inputs.film || 'dua' }}
+  VOICE: ${{ inputs.voice || 'D' }}
+  ONLY: ${{ inputs.only || 'asked' }}
+  AMBIENCE: ${{ github.event_name == 'push' || inputs.ambience }}
+
+jobs:
+  prepare:
+    name: prepare (clips, timelines)
+    if: ${{ !inputs.from_run }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    permissions:
+      contents: read
+    outputs:
+      videos: ${{ steps.matrix.outputs.videos }}
+      stills: ${{ steps.matrix.outputs.stills }}
+      n_videos: ${{ steps.matrix.outputs.n_videos }}
+      n_stills: ${{ steps.matrix.outputs.n_stills }}
+      files: ${{ steps.matrix.outputs.files }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Check the inputs
+        run: |
+          [[ "$FILM" =~ ^[a-z0-9-]+$ && "$ONLY" =~ ^[a-z0-9-]+$ && "$VOICE" =~ ^[A-Za-z]+$ ]] \
+            || { echo "::error::invalid film, only or voice"; exit 1; }
+          test -f "content/trial/$FILM.yaml" || { echo "::error::no content/trial/$FILM.yaml"; exit 1; }
+
+      # Where the key is, without ever printing it (as voice-test does): a repository secret is what the
+      # clip step reads; a repository *variable* of the same name is not a secret.
+      - name: Is the Pixabay key there?
+        env:
+          AS_SECRET: ${{ secrets.PIXABAY_API_KEY != '' }}
+          AS_VARIABLE: ${{ vars.PIXABAY_API_KEY != '' }}
+        run: |
+          echo "repository secret PIXABAY_API_KEY set: $AS_SECRET"
+          echo "repository variable PIXABAY_API_KEY set: $AS_VARIABLE"
+          if [ "$AS_SECRET" != true ]; then
+            echo "::error::the repository secret PIXABAY_API_KEY is not set: add it in Settings > Secrets and variables > Actions (a free Pixabay API key); the filmed clips are not in the repository"
+            exit 1
+          fi
+
+      - uses: astral-sh/setup-uv@v7
+
+      # No apt: the Ubuntu mirror can hang for an hour (voice-test, 2026-11-06). Static ffmpeg build from
+      # imageio-ffmpeg (pip, pinned as in render.yml), put on PATH as "ffmpeg".
+      - name: ffmpeg (static build)
+        run: |
+          uv venv .venv-tools
+          uv pip install --python .venv-tools/bin/python imageio-ffmpeg==0.8.1
+          mkdir -p "$HOME/.local/bin"
+          ln -sf "$(.venv-tools/bin/python -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())')" "$HOME/.local/bin/ffmpeg"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          "$HOME/.local/bin/ffmpeg" -hide_banner -version | head -1
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: video/package-lock.json
+
+      - name: Video dependencies
+        working-directory: video
+        run: npm ci --no-audit --no-fund
+
+      # clip.py, prepare.py and check.py call ffprobe, which imageio-ffmpeg does not ship. Remotion's package
+      # has one (video/node_modules, after npm ci), run with its own libraries: no download from another host.
+      - name: ffprobe (the one that ships with Remotion)
+        run: |
+          dir="$GITHUB_WORKSPACE/video/node_modules/@remotion/compositor-linux-x64-gnu"
+          test -x "$dir/ffprobe" || { echo "::error::no ffprobe in $dir"; exit 1; }
+          printf '#!/bin/sh\nLD_LIBRARY_PATH="%s" exec "%s/ffprobe" "$@"\n' "$dir" "$dir" > "$HOME/.local/bin/ffprobe"
+          chmod +x "$HOME/.local/bin/ffprobe"
+          "$HOME/.local/bin/ffprobe" -version | head -1
+
+      - name: Rules on the files of the film
+        run: uv run --with pyyaml python3 tools/trial/rules.py --film "$FILM"
+
+      # The first film (content/trial/film.yaml) reads its verses from an old episode prepared with
+      # tools/audio/build.py and npm run data: not done here. Every other film reads the registry.
+      - name: A film that reads the registry
+        run: |
+          ids=$(uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --ids)
+          files="content/trial/$FILM.yaml"
+          for id in $ids; do files="$files content/trial/$id.yaml"; done
+          if grep -l '^verses:' $files; then
+            echo "::error::these files name an old episode in 'verses' (the first film): this workflow prepares films that read the registry only"
+            exit 1
+          fi
+
+      - name: The videos and stills to render
+        id: matrix
+        run: |
+          videos=$(uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --voice "$VOICE" --only "$ONLY" --matrix)
+          stills=$(uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --voice "$VOICE" --only "$ONLY" --stills --matrix)
+          files=$(uv run --with pyyaml python3 -c "import sys, yaml; f = yaml.safe_load(open(sys.argv[1])); print(f.get('files', f['id']))" "content/trial/$FILM.yaml")
+          {
+            echo "videos=$videos"
+            echo "stills=$stills"
+            echo "n_videos=$(echo "$videos" | python3 -c 'import json,sys; print(len(json.load(sys.stdin)["include"]))')"
+            echo "n_stills=$(echo "$stills" | python3 -c 'import json,sys; print(len(json.load(sys.stdin)["include"]))')"
+            echo "files=$files"
+          } >> "$GITHUB_OUTPUT"
+          uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --voice "$VOICE" --only "$ONLY"
+          uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --voice "$VOICE" --only "$ONLY" --stills
+
+      # Whisper (faster-whisper, tools/audio/align.py) downloads its model here the first time.
+      - name: Cache model weights
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/huggingface
+          key: hf-film-whisper-v1
+
+      # What the sources and the ambience download once: the reciter's surah files (surah 2 is 110 MB),
+      # the readings (archive.org), the field recordings (BigSoundBank).
+      - name: Cache downloads
+        uses: actions/cache@v6
+        with:
+          path: |
+            build/recitations
+            build/trial
+          key: film-downloads-${{ env.FILM }}-${{ hashFiles('content/sources/**', 'content/recitations/**') }}
+          restore-keys: film-downloads-${{ env.FILM }}-
+
+      # Each short: its filmed clip prepared as its `clip.take` says (Pixabay, tools/trial/clip.py), then its
+      # timeline with the voice take of content/trial/takes/ (a take that exists is never asked for again:
+      # no request is made to Gemini here). The film comes after: it reuses the shorts' takes and clips.
+      - name: Clips and timelines of the shorts
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: |
+          flags=()
+          if [ "$AMBIENCE" != true ]; then flags+=(--no-ambience); fi
+          mkdir -p build/clips
+          for id in $(uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --ids --only "$ONLY"); do
+            echo "::group::$id"
+            uv run --with pyyaml python3 tools/trial/clip.py --trial "$id" --out "build/clips/$id.mp4"
+            uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py \
+              --trial "$id" --voice "$VOICE" --takes content/trial/takes --clip "build/clips/$id.mp4" "${flags[@]}"
+            echo "::endgroup::"
+          done
+
+      - name: Timeline of the film
+        if: ${{ env.ONLY == 'all' || env.ONLY == 'film' || env.ONLY == 'tall' }}
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: |
+          # A series (a file with `shorts` and no chapters: shorts that stand alone) has no film to prepare.
+          if ! grep -q '^chapters:' "content/trial/$FILM.yaml"; then echo "$FILM is a series: no film"; exit 0; fi
+          flags=()
+          if [ "$AMBIENCE" != true ]; then flags+=(--no-ambience); fi
+          # The film's own pictures (`pictures` of its file: a clip with nothing drawn, as the east of Dhul-Qarnayn).
+          for name in $(uv run --with pyyaml python3 -c "import sys, yaml; print(' '.join((yaml.safe_load(open(sys.argv[1])).get('pictures') or {})))" "content/trial/$FILM.yaml"); do
+            uv run --with pyyaml python3 tools/trial/clip.py --film "$FILM" --picture "$name" --out "build/clips/$FILM-$name.mp4"
+            flags+=(--picture "$name=build/clips/$FILM-$name.mp4")
+          done
+          uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py \
+            --film "$FILM" --voice "$VOICE" --takes content/trial/takes "${flags[@]}"
+
+      # The shorts' timelines are also needed for `--only tiktok` or `shorts`; the film's thumbnail data is
+      # written by the film step above. The film needs every short prepared: `--only <short id>` prepares
+      # one short, `all` and `film` all of them.
+      - name: Timelines prepared
+        run: |
+          ls -la video/public/trial | head -60
+          for f in video/public/trial/*-"$VOICE".json; do
+            echo "== $f"
+            tail -n 5 "$f" | cut -c1-300
+          done
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: trial-data
+          path: video/public/trial/
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0        # clips and audio are compressed already
+          overwrite: true
+
+  render:
+    needs: prepare
+    if: ${{ needs.prepare.outputs.n_videos != '0' }}
+    name: render (${{ matrix.name }})
+    runs-on: ubuntu-24.04
+    # About four frames a second on four vCPU: 70 minutes for a film of eight minutes, 13 to 20 for a short.
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false          # a video that fails does not stop the others: run it again alone
+      matrix: ${{ fromJSON(needs.prepare.outputs.videos) }}
+    env:
+      NAME: ${{ matrix.name }}
+      COMPOSITION: ${{ matrix.composition }}
+      PROPS: ${{ matrix.props }}
+      TIMELINE: ${{ matrix.timeline }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v7
+
+      # For check.py (lengths, loudness, sheets of frames). Remotion brings its own ffmpeg to encode.
+      - name: ffmpeg (static build)
+        run: |
+          uv venv .venv-tools
+          uv pip install --python .venv-tools/bin/python imageio-ffmpeg==0.8.1
+          mkdir -p "$HOME/.local/bin"
+          ln -sf "$(.venv-tools/bin/python -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())')" "$HOME/.local/bin/ffmpeg"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: video/package-lock.json
+
+      - name: Video dependencies
+        working-directory: video
+        run: npm ci --no-audit --no-fund
+
+      # clip.py, prepare.py and check.py call ffprobe, which imageio-ffmpeg does not ship. Remotion's package
+      # has one (video/node_modules, after npm ci), run with its own libraries: no download from another host.
+      - name: ffprobe (the one that ships with Remotion)
+        run: |
+          dir="$GITHUB_WORKSPACE/video/node_modules/@remotion/compositor-linux-x64-gnu"
+          test -x "$dir/ffprobe" || { echo "::error::no ffprobe in $dir"; exit 1; }
+          printf '#!/bin/sh\nLD_LIBRARY_PATH="%s" exec "%s/ffprobe" "$@"\n' "$dir" "$dir" > "$HOME/.local/bin/ffprobe"
+          chmod +x "$HOME/.local/bin/ffprobe"
+          "$HOME/.local/bin/ffprobe" -version | head -1
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: trial-data
+          path: video/public/trial
+
+      # The props travel in an environment variable: no quoting of the JSON through the shell.
+      - name: Render
+        working-directory: video
+        run: |
+          test -s "../$TIMELINE" || { echo "::error::no timeline $TIMELINE from the prepare job"; exit 1; }
+          echo "$COMPOSITION $NAME $PROPS"
+          npx remotion render src/index.ts "$COMPOSITION" "out/$NAME.mp4" --concurrency=100% --crf=21 --props="$PROPS"
+
+      # A problem found is shown, not fatal: the owner sees the video and its sheets all the same.
+      - name: Check
+        run: |
+          mkdir -p video/out/sheets
+          set -o pipefail
+          python3 tools/trial/check.py "video/out/$NAME.mp4" --data "$TIMELINE" --out "video/out/sheets/$NAME-frames.jpg" \
+            | tee "video/out/sheets/$NAME-check.txt" \
+            || echo "::warning::check.py found a problem in $NAME: see its output above"
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: video-${{ matrix.name }}
+          path: |
+            video/out/${{ matrix.name }}.mp4
+            video/out/sheets/${{ matrix.name }}-*
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
+          overwrite: true
+
+  stills:
+    needs: prepare
+    if: ${{ needs.prepare.outputs.n_stills != '0' }}
+    name: covers and thumbnail
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      STILLS: ${{ needs.prepare.outputs.stills }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v7
+
+      - name: ffmpeg (static build)
+        run: |
+          uv venv .venv-tools
+          uv pip install --python .venv-tools/bin/python imageio-ffmpeg==0.8.1
+          mkdir -p "$HOME/.local/bin"
+          ln -sf "$(.venv-tools/bin/python -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())')" "$HOME/.local/bin/ffmpeg"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: video/package-lock.json
+
+      - name: Video dependencies
+        working-directory: video
+        run: npm ci --no-audit --no-fund
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: trial-data
+          path: video/public/trial
+
+      # One bundle (made after the download: it copies public/), each still taken a moment into its clip
+      # (frame 45), converted to JPEG at quality 2.
+      - name: Covers and thumbnail
+        working-directory: video
+        run: |
+          npx remotion bundle src/index.ts --out-dir ../build/bundle
+          mkdir -p out/stills
+          echo "$STILLS" | python3 -c '
+          import json, sys
+          for r in json.load(sys.stdin)["include"]:
+              print("\t".join([r["name"], r["composition"], r["props"], str(r["frame"])]))
+          ' | while IFS=$'\t' read -r name composition props frame; do
+            echo "$composition $name"
+            # </dev/null and -nostdin: a command that read stdin here would eat the stills still to come
+            npx remotion still ../build/bundle "$composition" "out/stills/${name%.jpg}.png" --frame="$frame" --props="$props" </dev/null
+            ffmpeg -nostdin -y -loglevel error -i "out/stills/${name%.jpg}.png" -q:v 2 "out/stills/$name"
+            rm "out/stills/${name%.jpg}.png"
+          done
+          ls -la out/stills
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: stills
+          path: video/out/stills/
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
+          overwrite: true
+
+  release:
+    needs: [prepare, render, stills]
+    # Runs after failures and skipped jobs too: what succeeded is published. Not after a cancel, nor when
+    # there was nothing to publish from (prepare failed). With `from_run`, it is the only job that runs.
+    if: ${{ !cancelled() && (inputs.from_run || needs.prepare.result == 'success') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    # The only job that writes to the repository. `actions: read`: the artifacts of another run (`from_run`).
+    permissions:
+      contents: write
+      actions: read
+    env:
+      FROM_RUN: ${{ inputs.from_run || github.run_id }}
+      RENDER_RESULT: ${{ needs.render.result }}
+      STILLS_RESULT: ${{ needs.stills.result }}
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      SUFFIX: ${{ github.event_name == 'push' && 'workflow-test' || 'candidate' }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v7
+
+      # Listed again here, from the files, and not taken from the prepare job: with `from_run` it did not run.
+      - name: The videos and stills expected
+        run: |
+          [[ "$FILM" =~ ^[a-z0-9-]+$ && "$ONLY" =~ ^[a-z0-9-]+$ && "$VOICE" =~ ^[A-Za-z]+$ && "$FROM_RUN" =~ ^[0-9]+$ ]] \
+            || { echo "::error::invalid film, only, voice or from_run"; exit 1; }
+          {
+            echo "VIDEOS=$(uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --voice "$VOICE" --only "$ONLY" --matrix)"
+            echo "STILLS=$(uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --voice "$VOICE" --only "$ONLY" --stills --matrix)"
+            echo "FILES=$(uv run --with pyyaml python3 -c "import sys, yaml; f = yaml.safe_load(open(sys.argv[1])); print(f.get('files', f['id']))" "content/trial/$FILM.yaml")"
+          } >> "$GITHUB_ENV"
+          echo "artifacts of run $FROM_RUN"
+
+      # The timelines publish.py reads (durations, chapters), as prepared.
+      - uses: actions/download-artifact@v8
+        with:
+          name: trial-data
+          path: video/public/trial
+          run-id: ${{ env.FROM_RUN }}
+          github-token: ${{ github.token }}
+
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: video-*
+          merge-multiple: true
+          path: release
+          run-id: ${{ env.FROM_RUN }}
+          github-token: ${{ github.token }}
+        continue-on-error: true       # no video rendered at all: said below
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: stills
+          path: release
+          run-id: ${{ env.FROM_RUN }}
+          github-token: ${{ github.token }}
+        continue-on-error: true       # no still: said below
+
+      - name: What is there, what is missing
+        run: |
+          mkdir -p release
+          ls -la release release/sheets 2>/dev/null || true
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          out = Path("release")
+          missing = []
+          for kind, key in (("videos", "VIDEOS"), ("stills", "STILLS")):
+              for row in json.loads(os.environ[key])["include"]:
+                  name = row["name"] + (".mp4" if kind == "videos" else "")
+                  if not (out / name).is_file():
+                      missing.append(name)
+          Path("missing.txt").write_text("\n".join(missing) + ("\n" if missing else ""), encoding="utf-8")
+          print("missing:", missing or "nothing")
+          PY
+
+      # The texts to paste. It reads every timeline of the film and its shorts: with `only` other than all,
+      # or a film not prepared, it can fail; the release is then made without them, and says so.
+      - name: Publication texts
+        run: |
+          flags=()
+          if [ "$ONLY" = tall ]; then flags+=(--tall); fi      # the film in 9:16: its own text, for Facebook
+          if ! uv run --with pyyaml python3 tools/trial/publish.py --film "$FILM" --voice "$VOICE" --out publication.md "${flags[@]}"; then
+            echo "(The publication texts could not be written for this run: tools/trial/publish.py failed, see the run's log.)" > publication.md
+          fi
+
+      # One draft at a time: the previous draft of the same tag goes. A draft is seen by the owner only.
+      # No --target: a draft has no tag until it is published, and these never are. With --target "$GITHUB_SHA"
+      # a dispatched run was refused twice (HTTP 403, « Resource not accessible by integration », 2026-11-11)
+      # after its seven renders; without it, the same artifacts and the same notes were published (`from_run`).
+      - name: Draft release
+        run: |
+          tag="$FILES-$SUFFIX"
+          # The film in 9:16 has a draft of its own: the draft of the film and its shorts (validated or not) stays.
+          if [ "$ONLY" = tall ]; then tag="$FILES-9x16-$SUFFIX"; fi
+          title="Draft $FILM ($SUFFIX): videos to watch"
+          {
+            echo "Draft render of the film \`$FILM\` and its shorts, not validated. Narration: AI-generated voice (voice $VOICE, takes kept in content/trial/takes/). Verses: real recitation. Ambience under the narration: $AMBIENCE. Run: $RUN_URL"
+            echo
+            if [ -s missing.txt ]; then
+              echo "**Missing from this release (render or still failed, run again alone):**"
+              sed 's/^/- /' missing.txt
+              echo
+            fi
+            echo "Check sheets of every video: \`sheets/\`, to open and read before watching (a text that leaves the frame, the wrong signature)."
+            echo; echo "---"; echo
+            cat publication.md
+          } > notes.md
+          for id in $(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .id"); do
+            gh api -X DELETE "repos/$GH_REPO/releases/$id"
+          done
+          shopt -s nullglob
+          assets=(release/*.mp4 release/*.jpg release/sheets/*)
+          echo "assets: ${#assets[@]}"
+          if [ "${#assets[@]}" -eq 0 ]; then
+            echo "::error::nothing was rendered: no release"
+            exit 1
+          fi
+          gh release create "$tag" --draft --prerelease --title "$title" --notes-file notes.md "${assets[@]}"
+          echo "draft release: $(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .html_url")"
+
+      # What succeeded is published above; a failed render or still still fails the run.
+      - name: Fail if something is missing
+        run: |
+          if [ -s missing.txt ]; then
+            echo "::error::missing from the release (renders: $RENDER_RESULT, stills: $STILLS_RESULT): $(tr '\n' ' ' < missing.txt)"
+            exit 1
+          fi

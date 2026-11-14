@@ -3,6 +3,8 @@
 
   verses   API quran.com v4: Uthmani text (Hafs) and the translation named in content/policy.yaml
   hadiths  hadith-api (fawazahmed0, jsDelivr): Arabic text and its English edition
+  tafsir   API quran.com v4: the passage of a tafsir of content/policy.yaml about one verse, Arabic only (a
+           tafsir is what a line of meaning rests on: never read, never shown, so it has no English text)
 
 Texts are copied as published (outer whitespace and translation footnote markers removed),
 never retyped. Each filled entry gets an `origin` block (the exact URLs it came from) and a
@@ -37,6 +39,7 @@ from pathlib import Path
 
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap, CommentedSeq
+from ruamel.yaml.scalarstring import DoubleQuotedScalarString
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCES = ROOT / "content" / "sources"
@@ -162,6 +165,40 @@ class Quran:
         }
 
 
+# ---- Tafsir (quran.com v4) ------------------------------------------------------------------
+
+def clean_tafsir(text: str) -> str:
+    """The passage without its markup. Words are untouched; the verse's words quoted in it lose only their tags."""
+    text = re.sub(r"</(p|div|h[1-6])>|<br\s*/?>", "\n", text, flags=re.IGNORECASE)
+    text = html.unescape(_TAG.sub("", text))
+    return "\n".join(line for line in (re.sub(r"[ \t\u00a0]+", " ", row).strip() for row in text.split("\n")) if line)
+
+
+class Tafsir:
+    def __init__(self, editions: dict):
+        self.editions = editions          # content/policy.yaml, tafsir.editions
+
+    def fetch(self, src) -> dict:
+        ref = src["ref"]
+        edition = self.editions.get(ref["edition"])
+        if edition is None:
+            raise FetchError(f"tafsir '{ref['edition']}' is outside content/policy.yaml (tafsir.editions)")
+        key = f"{ref['surah']}:{ref['ayah']}"
+        url = f"{QURAN_API}/tafsirs/{edition['quran_com']}/by_ayah/{key}"
+        got = get_json(url).get("tafsir") or {}
+        verses = sorted(got.get("verses") or {}, key=lambda k: tuple(int(n) for n in k.split(":")))
+        if got.get("resource_id") != edition["quran_com"] or key not in verses:
+            raise FetchError(f"{url}: expected the passage of tafsir {edition['quran_com']} about {key}")
+        text = clean_tafsir(got.get("text") or "")
+        if not text:
+            raise FetchError(f"{url}: empty text")
+        return {
+            "text_ar": text,
+            "url": f"https://quran.com/{key}/tafsirs/{got['slug']}",
+            "origin": {"api": "quran.com v4", "text_ar": url, "edition": got["translated_name"]["name"], "verses": verses},
+        }
+
+
 # ---- Hadith (hadith-api) --------------------------------------------------------------------
 
 def split_number(value) -> tuple[int, int | None]:
@@ -277,6 +314,10 @@ def origin_map(origin: dict, today: str) -> CommentedMap:
         m["grades"] = CommentedSeq(CommentedMap(g) for g in m["grades"])
         for g in m["grades"]:
             g.fa.set_flow_style()          # - {name: Al-Albani, grade: Hasan}
+    if "verses" in m:
+        # Quoted: YAML 1.1 readers (PyYAML) take a bare 62:11 for a number in base sixty.
+        m["verses"] = CommentedSeq(DoubleQuotedScalarString(v) for v in m["verses"])
+        m["verses"].fa.set_flow_style()    # verses: ["93:1", "93:2", "93:3"]
     return m
 
 
@@ -293,6 +334,8 @@ def expected_id(src) -> str | None:
         return f"quran.{ref['surah']}.{ref['ayah']}"
     if src["type"] == "hadith":
         return f"hadith.{ref['collection']}.{ref['number']}{letter(ref.get('narration'))}"
+    if src["type"] == "tafsir":
+        return f"tafsir.{ref['edition']}.{ref['surah']}.{ref['ayah']}"
     return None
 
 
@@ -307,6 +350,7 @@ def main() -> int:
     policy = YAML(typ="safe").load((ROOT / "content" / "policy.yaml").read_text(encoding="utf-8")) or {}
     default_translation = policy.get("quran", {}).get("translation", "sahih-international")
     quran, hadith = Quran(args.refresh), Hadith(args.refresh)
+    tafsir = Tafsir((policy.get("tafsir") or {}).get("editions") or {})
     y = yaml_rt()
     today = dt.date.today().isoformat()
     errors, changed, seen = [], [], set()
@@ -327,6 +371,8 @@ def main() -> int:
                     got = quran.fetch(src, src.get("translation", default_translation))
                 elif src["type"] == "hadith":
                     got = hadith.fetch(src)
+                elif src["type"] == "tafsir":
+                    got = tafsir.fetch(src)
                 else:
                     print(f"skip    {sid}: type '{src['type']}' has no API yet")
                     continue
@@ -334,12 +380,13 @@ def main() -> int:
                 errors.append(f"{sid}: {e}")
                 continue
 
-            diffs = [k for k in ("text_ar", "text_en") if src.get(k) != got[k]]
+            texts = [k for k in ("text_ar", "text_en") if k in got]          # a tafsir has no English text
+            diffs = [k for k in texts if src.get(k) != got[k]]
             if plain((src.get("origin") or {}).get("grades")) != got["origin"].get("grades"):
                 diffs.append("grades")
             # Surah names: shown under a verse, metadata (a change does not undo a validation).
-            diffs += [k for k in ("surah_ar", "surah_en")
-                      if k in got["origin"] and (src.get("origin") or {}).get(k) != got["origin"][k]]
+            diffs += [k for k in ("surah_ar", "surah_en", "edition", "verses")
+                      if k in got["origin"] and plain((src.get("origin") or {}).get(k)) != got["origin"][k]]
             if not diffs:
                 print(f"ok      {sid}")
                 continue
@@ -348,7 +395,8 @@ def main() -> int:
                 errors.append(f"{sid}: {', '.join(diffs)} differ(s) from the API; run tools/sources/fetch.py")
                 continue
 
-            src["text_ar"], src["text_en"] = got["text_ar"], got["text_en"]
+            for k in texts:
+                src[k] = got[k]
             set_before(src, "url", got["url"], before="origin" if "origin" in src else "status")
             set_before(src, "origin", origin_map(got["origin"], today))
             note = ""

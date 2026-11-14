@@ -1,0 +1,92 @@
+# Essai, deuxième short (2026-11-11, docs/retention.md) : le garçon (Al-Kahf 18:74, 18:80-81), dans le modèle du
+# bateau (content/trial/boat.yaml) : une question, le verset, le sens, ce qu'on ne voit pas, un exemple de vie,
+# la phrase à retenir, comment la sagesse s'est dévoilée, l'annonce du suivant. Validé depuis par le propriétaire (`script_validated`, `validated`) ; ce fichier
+# n'est pas un épisode (validate.py ne le lit pas).
+# - L'accroche ne dit pas l'acte avec notre voix : elle part des parents (ce qu'ils ont perdu, ce qu'ils n'ont
+#   peut-être jamais su), et c'est le verset qui dit ce qui s'est passé.
+# - La garde de khidr-03 reste, mot pour mot (« والخضر عمل كده بأمر من ربنا… محدش غيره يقدر يعمل كده ») : elle
+#   ne se coupe jamais. L'exemple (quelqu'un qui a perdu un proche) ne dit jamais pourquoi : « إجابته عند ربنا ».
+# - Le garçon n'est jamais montré, ni personne : la maison des parents sous la lune (clip 29238 de Pixabay, déjà
+#   approuvé par le propriétaire pour quran-reels, « pb-full-moon »), une fenêtre allumée, puis une seconde
+#   quand le verset 18:81 parle de ce qui leur est donné à la place.
+# - Répliques reprises de khidr-03 (validées là-bas) : la garde, l'exemple ; les autres sont de l'IA.
+# Script validé par le propriétaire le 2026-11-11 (« je valide le script », après lecture des trois shorts) : les
+# répliques ci-dessous, telles qu'elles sont. Cela ne valide ni la voix, ni les images, ni les textes de
+# publication ; toute réplique changée ensuite redevient à valider.
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
+# « Je valide » du propriétaire (2026-11-11) sur la vidéo livrée dans la conversation : la voix D entendue sur la
+# vidéo entière, le montage, la couverture, les textes de publication (`publish`). Inscrit sur sa parole.
+# L'ambiance sonore (`ambience`), ajoutée après avec son accord, a reçu son propre « je valide » le même jour,
+# sur les vidéos `…-ambience.mp4` : ce sont elles, les vidéos finales.
+validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, cover, publish, ambience] }
+# Ambiance sous la narration, jamais sous un verset ni un hadith (accord du propriétaire, 2026-11-11) : un
+# enregistrement de terrain de BigSoundBank (Joseph Sardin, CC0 : tout usage, crédit non exigé), hors dépôt
+# (tools/trial/ambience.py). `level` : volume de la nappe en LUFS (la voix est à -16). La campagne le soir dans un pré : des grillons, de rares grenouilles.
+# Validée par le propriétaire le 2026-11-11, après l'avoir reçue sous les vidéos (`validated`).
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 80, level: -38 }
+id: boy
+handle: "@quran_words_daily"
+clip: { source: pixabay, id: 29238, author: Dans4, page: "https://pixabay.com/videos/id-29238/", position: "48.6% 50%", shift: 520, brightness: 0.95, ground: "#050a14", landscape: { side: right, horizon: 770, brightness: 0.95 } }
+verses: khidr          # épisode préparé d'où viennent les versets et leur récitation
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", E: "Gemini 3.8 Flash TTS, Sadaltager", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 21-trial-boy     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+cover: { scene: home, title: "خسروا ابنهم… ليه؟", tag: "موسى والخضر · ٢ من ٣", focus: 1190, file: couverture-2-garcon.jpg }   # couverture 9:16 du short (TrialCover916) ; titre validé par le propriétaire le 2026-11-11, avec le film
+# Textes de publication, proposés par la session (2026-11-11), pas encore validés (tools/trial/publish.py).
+publish:
+  title: { en: "They lost their son… why?", ar: "خسروا ابنهم… ليه؟" }
+  part: 2
+  hashtags: ["#الخضر", "#الصبر"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
+  description:
+    en: "A believing father and mother lost their son, and may never have known why. God told us the reason in Surat al-Kahf. Not every wisdom is shown in this life: some answers are with God."
+    ar: "أب وأم مؤمنين خسروا ابنهم… ويمكن عمرهم ما عرفوا ليه. السبب ربنا حكاه لنا في سورة الكهف. مش كل حكمة هتتكشف في الدنيا: فيه أسئلة إجابتها عند ربنا."
+segments:
+  - narration: open
+    scene: home
+    lines:
+      - ar: "أب وأم مؤمنين… خسروا ابنهم… ويمكن عمرهم ما عرفوا ليه."
+        en: "A believing father and mother… lost their son… and may never have known why."
+      - ar: "بس السبب… ربنا حكاه لنا… في سورة الكهف."
+        en: "But the reason… God told it to us… in Surat al-Kahf."
+  - verse: quran.18.74
+    scene: home
+  - narration: secret
+    scene: home
+    lines:
+      - ar: "موسى عليه السلام ما قدرش يسكت… والسر؟ الخَضِر قاله بعدين."
+        en: "Moses, peace be upon him, could not keep silent… The secret? Al-Khidr told him later."
+  - verse: quran.18.80
+    scene: home
+  - verse: quran.18.81
+    scene: given
+  - narration: meaning
+    scene: given
+    lines:
+      - ar: "الولد ده لو كبر… كان هيتعب أبوه وأمه… بطغيانه وكفره."
+        en: "Had this boy grown up… he would have worn his parents down… with his tyranny and disbelief."
+      - ar: "فربنا أراد يعوّضهم… باللي أطهر منه… وأحنّ عليهم."
+        en: "So God willed to give them in his place… one purer than him… and more loving to them."
+      - ar: "والخَضِر عمل كده بأمر من ربنا… حاجة خاصة بيه. محدش غيره يقدر يعمل كده."
+        en: "Al-Khidr did this by God's command… something given to him alone. No one else may ever do such a thing."
+  - narration: depth
+    scene: far
+    lines:
+      - ar: "الأب والأم شافوا الفراق… وما شافوش اللي ربنا حماهم منه."
+        en: "The parents saw the loss… not what God protected them from."
+      - ar: "وإحنا عرفنا… بس عشان ربنا حكاه لنا."
+        en: "And we know… only because God told us."
+  - narration: example
+    scene: sky
+    lines:
+      - ar: "زي حد خسر حد غالي عليه… ولسه بيسأل: ليه؟"
+        en: "Like someone who lost someone dear… and still asks: why?"
+      - ar: "السؤال ده… إجابته مش هنا. إجابته عند ربنا."
+        en: "That question… its answer isn't here. Its answer is with God."
+  - narration: close
+    scene: far
+    lines:
+      - ar: "مش كل حكمة… هتتكشف لك في الدنيا."
+        en: "Not every wisdom… will be shown to you in this life."
+      - ar: "هنا الحكمة ما اتكشفتش لأصحابها… بس في الموقف التالت… خير اتعمل لناس… وهم مش دريانين بيه."
+        en: "Here the wisdom was never shown to those who lived it… but in the third story… good was done for people… who never knew of it."
+      - ar: "تابعنا عشان تعرف بقية القصة."
+        en: "Follow us to know the rest of the story."

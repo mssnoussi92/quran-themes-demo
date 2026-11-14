@@ -12,7 +12,7 @@
       "additionalProperties": false,
       "properties": {
         "id": { "type": "string", "pattern": "^[a-z]+(\\.[a-z0-9-]+)+$" },
-        "type": { "enum": ["ayah", "hadith", "athar", "tafsir"] },
+        "type": { "enum": ["ayah", "hadith", "athar", "tafsir", "science"] },
         "ref": { "type": "object" },
         "text_ar": { "type": ["string", "null"] },
         "text_en": { "type": ["string", "null"] },
@@ -33,7 +33,7 @@
         "origin": {
           "description": "Where text_ar / text_en were fetched from (written by tools/sources/fetch.py)",
           "type": "object",
-          "required": ["api", "text_ar", "text_en", "retrieved"],
+          "required": ["api", "text_ar", "retrieved"],
           "additionalProperties": false,
           "properties": {
             "api": { "type": "string" },
@@ -42,6 +42,11 @@
             "translator": { "type": "string" },
             "surah_ar": { "type": "string", "description": "Name of the surah (verses), from quran.com" },
             "surah_en": { "type": "string" },
+            "edition": { "type": "string", "description": "Name of the tafsir as the API gives it" },
+            "verses": {
+              "description": "The verses the passage of a tafsir explains, as the API gives them (a passage may cover several)",
+              "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^[0-9]{1,3}:[0-9]{1,3}$" }
+            },
             "book": { "type": "integer" },
             "hadith_in_book": { "type": "integer" },
             "grades": {
@@ -55,6 +60,24 @@
               }
             },
             "retrieved": { "type": "string", "format": "date" }
+          }
+        },
+        "label": {
+          "description": "For a science source: the short names written on screen after the sources of a narration (ar for the Arabic part, en for the English part)",
+          "type": "object",
+          "required": ["ar", "en"],
+          "additionalProperties": false,
+          "properties": { "ar": { "type": "string" }, "en": { "type": "string" } }
+        },
+        "claim": { "type": "string", "description": "For a science source: what the paper or the data say, in a line (what the script may rest on)" },
+        "checked": {
+          "description": "For a science source: when the claim was checked and against which pages",
+          "type": "object",
+          "required": ["on", "sources"],
+          "additionalProperties": false,
+          "properties": {
+            "on": { "type": "string", "format": "date" },
+            "sources": { "type": "array", "minItems": 1, "items": { "type": "string", "format": "uri" } }
           }
         },
         "status": { "enum": ["proposed", "validated", "excluded"] },
@@ -83,6 +106,7 @@
           "if": { "properties": { "type": { "const": "ayah" } } },
           "then": {
             "properties": {
+              "origin": { "required": ["text_en"] },
               "id": { "pattern": "^quran\\.[0-9]{1,3}\\.[0-9]{1,3}$" },
               "ref": {
                 "type": "object",
@@ -101,6 +125,7 @@
           "then": {
             "required": ["grade", "graded_by"],
             "properties": {
+              "origin": { "required": ["text_en"] },
               "id": { "pattern": "^hadith\\.[a-z]+\\.[0-9]+[a-z]?$" },
               "ref": {
                 "type": "object",
@@ -119,8 +144,54 @@
           }
         },
         {
+          "if": { "properties": { "type": { "const": "tafsir" } } },
+          "then": {
+            "description": "The passage of a tafsir about one verse: what a line of meaning rests on. Never read, never shown: only its name is written (content/policy.yaml, tafsir.editions). No English text.",
+            "properties": {
+              "id": { "pattern": "^tafsir\\.[a-z-]+\\.[0-9]{1,3}\\.[0-9]{1,3}$" },
+              "text_en": false,
+              "ref": {
+                "type": "object",
+                "required": ["edition", "surah", "ayah"],
+                "additionalProperties": false,
+                "properties": {
+                  "edition": { "type": "string", "pattern": "^[a-z-]+$" },
+                  "surah": { "type": "integer", "minimum": 1, "maximum": 114 },
+                  "ayah": { "type": "integer", "minimum": 1, "maximum": 286 }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "science" } } },
+          "then": {
+            "description": "A paper or a dataset the script rests on, not a quoted text: it carries labels, a claim and the pages it was checked against. No text, nothing fetched.",
+            "required": ["url", "label", "checked"],
+            "properties": {
+              "id": { "pattern": "^science\\.[a-z0-9-]+$" },
+              "text_ar": false,
+              "text_en": false,
+              "origin": false,
+              "ref": {
+                "type": "object",
+                "required": ["year"],
+                "properties": { "year": { "type": "integer" } }
+              }
+            }
+          }
+        },
+        {
           "if": { "properties": { "status": { "const": "validated" } } },
-          "then": { "required": ["text_ar", "text_en", "validated_by"] }
+          "then": { "required": ["validated_by"] }
+        },
+        {
+          "if": { "properties": { "status": { "const": "validated" }, "type": { "enum": ["ayah", "hadith", "athar", "tafsir"] } } },
+          "then": { "required": ["text_ar"] }
+        },
+        {
+          "if": { "properties": { "status": { "const": "validated" }, "type": { "enum": ["ayah", "hadith", "athar"] } } },
+          "then": { "required": ["text_en"] }
         }
       ]
     }

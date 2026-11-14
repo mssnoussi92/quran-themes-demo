@@ -1,0 +1,84 @@
+# « كلمة من القرآن », épisode 2 (content/trial/kalima.yaml ; script : docs/scripts/kalima.md, validé). Un mot rare
+# du Coran, son sens d'après un tafsir nommé (sa référence écrite, jamais dite : content/wording.yaml), le mot écrit en or
+# et dit pour la première fois par le récitateur. Dessins : video/src/trial/Kalima.tsx. Personne n'est dessiné.
+id: stone
+# « Je valide le script » du propriétaire (2026-11-13), sur docs/scripts/kalima.md : les répliques, la place des versets,
+# ce sur quoi chaque narration repose, le titre. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication.
+script_validated: { by: mssnoussi92, on: 2026-11-13 }
+# « Je valide tout pour كلمة من القرآن » du propriétaire (2026-11-13), sur les vidéos rendues par le workflow `film` (runs 20
+# et 21) et envoyées dans la conversation : la voix D, le montage (le clip, les dessins, le mot en or), la couverture,
+# l'ambiance, les textes de publication (docs/retention/publication-kalima.md) ; et ses sources encore proposées, passées
+# à `validated` dans le registre. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 58-trial-stone     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Clip proposé au propriétaire le 2026-11-13 (planche envoyée), approuvé par lui avec les vidéos (« je valide tout »).
+clip: { source: pixabay, id: 8451, author: Felix-Mittermeier, page: "https://pixabay.com/videos/id-8451/", take: { slow: 7, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.85, ground: "#06050c", horizon: 1300 }
+# Ambiance sous la narration, jamais sous les versets : un des enregistrements validés à l'écoute (docs/model.md).
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 130, level: -38 }
+cover: { scene: stone, title: "نواة التمرة… فيها تلات كلمات من القرآن", tag: "كلمة من القرآن (٢)", focus: 1050 }
+publish:
+  title: { en: "The date stone… holds three words of the Quran", ar: "نواة التمرة… فيها تلات كلمات من القرآن" }
+  part: 2
+  hashtags: ["#قطمير", "#لغة_القرآن"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
+  description:
+    en: "Three tiny things in a date stone: the thread in its groove, the dent on its back, the skin around it. The Quran named all three, and measured with them God's justice, the reward of a good deed, and how little anyone else owns."
+    ar: "تلات حاجات صغيرة في نواة التمرة: الخيط اللي في شقها، والنقرة اللي على ضهرها، والقشرة اللي حواليها. والقرآن سمّى التلاتة، وقاس بيهم عدل ربنا، وأجر العمل الصالح، وإن غيره ما يملكش حاجة."
+segments:
+  - narration: stone
+    scene: stone
+    lines:
+      - ar: "نواة التمرة… فيها تلات كلمات من القرآن."
+        en: "The date stone… holds three words of the Quran."
+      - ar: "واللي هتعرفه… هيخليك ما تستصغرش أي حاجة تعملها."
+        en: "And what you'll learn… will stop you from belittling anything you do."
+  - verse: quran.4.49
+    scene: thread
+  - narration: thread
+    scene: thread
+    sources: [tafsir.muyassar.4.49]
+    lines:
+      - ar: "الأولى: الخيط الرفيع اللي في شق النواة."
+        en: "The first: the thin thread in the date stone's groove."
+      - ar: "ربنا مش بيظلم حد… ولا قد الخيط ده."
+        en: "God wrongs no one… not even by that thread."
+  - verse: quran.4.124
+    scene: speck
+  - narration: speck
+    scene: speck
+    sources: [tafsir.muyassar.4.124]
+    lines:
+      - ar: "التانية: النقرة الصغيرة اللي على ضهر النواة."
+        en: "The second: the tiny dent on the back of the stone."
+      - ar: "والعمل الصالح… مش هيضيع منه ولا قدها."
+        en: "And a good deed… won't lose even that much."
+  - verse: quran.35.13
+    scene: skin
+  - narration: skin
+    scene: skin
+    sources: [tafsir.muyassar.35.13, tafsir.ibn-kathir.35.13]
+    lines:
+      - ar: "التالتة: القشرة البيضا الرفيعة اللي حوالين النواة."
+        en: "The third: the thin white skin around the stone."
+      - ar: "واللي بيدعوهم الناس من غير ربنا… ما يملكوش ولا قدها."
+        en: "And those people call on besides God… don't own even that much."
+  - narration: cup
+    scene: cup
+    lines:
+      - ar: "زي كوباية مية… ادّيتها لعطشان… ومحدش شافك."
+        en: "Like a glass of water… you gave someone thirsty… and no one saw you."
+      - ar: "عند ربنا… مش هتضيع ولا قد النقرة."
+        en: "With God… it won't lose even a dent's worth."
+  - narration: remember
+    scene: remember
+    lines:
+      - ar: "ما تستصغرش حاجة تعملها… ربنا ما بيضيّعش ولا قد قشرة النواة."
+        en: "Don't belittle anything you do… God doesn't let slip even the skin of a date stone."
+  - narration: next
+    scene: next
+    lines:
+      - ar: "والكلمة الجاية: ربنا شرحها بنفسه… في الآيتين اللي بعدها."
+        en: "The next word: God explains it Himself… in the two verses after it."
+      - ar: "تابعنا عشان الكلمة الجاية."
+        en: "Follow us for the next word."

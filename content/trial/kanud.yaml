@@ -1,0 +1,78 @@
+# « كلمة من القرآن », épisode 1 (content/trial/kalima.yaml ; script : docs/scripts/kalima.md, validé). Un mot rare
+# du Coran, son sens d'après un tafsir nommé (sa référence écrite, jamais dite : content/wording.yaml), le mot écrit en or
+# et dit pour la première fois par le récitateur. Dessins : video/src/trial/Kalima.tsx. Personne n'est dessiné.
+id: kanud
+# « Je valide le script » du propriétaire (2026-11-13), sur docs/scripts/kalima.md : les répliques, la place des versets,
+# ce sur quoi chaque narration repose, le titre. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication.
+script_validated: { by: mssnoussi92, on: 2026-11-13 }
+# « Je valide tout pour كلمة من القرآن » du propriétaire (2026-11-13), sur les vidéos rendues par le workflow `film` (runs 20
+# et 21) et envoyées dans la conversation : la voix D, le montage (le clip, les dessins, le mot en or), la couverture,
+# l'ambiance, les textes de publication (docs/retention/publication-kalima.md) ; et ses sources encore proposées, passées
+# à `validated` dans le registre. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 57-trial-kanud     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Clip proposé au propriétaire le 2026-11-13 (planche envoyée), approuvé par lui avec les vidéos (« je valide tout »).
+clip: { source: pixabay, id: 26085, author: TeeFarm, page: "https://pixabay.com/videos/id-26085/", take: { from: 2, seconds: 18, height: 1440, pingpong: true }, rate: 0.85, position: "50% 50%", shift: 0, brightness: 0.8, ground: "#0a0705", horizon: 1300 }
+# Ambiance sous la narration, jamais sous les versets : un des enregistrements validés à l'écoute (docs/model.md).
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 110, level: -36 }
+cover: { scene: horses, title: "كلمة في القرآن… يمكن توصفك", tag: "كلمة من القرآن (١)", focus: 1050 }
+publish:
+  title: { en: "A word in the Quran… that might describe you", ar: "كلمة في القرآن… يمكن توصفك" }
+  part: 1
+  hashtags: ["#سورة_العاديات", "#الشكر"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
+  description:
+    en: "God swore by charging horses to say one word about man. Al-Hasan al-Basri explained it: the one who counts his misfortunes, and forgets his Lord's blessings."
+    ar: "ربنا أقسم بالخيل وهي بتجري عشان يقول كلمة واحدة عن الإنسان. والحسن البصري فسّرها: اللي بيعدّ المصايب، وينسى نعم ربه."
+segments:
+  - narration: word
+    scene: word
+    sources: [tafsir.ibn-kathir.100.6]
+    lines:
+      - ar: "فيه كلمة في القرآن… بتوصف اللي بيعدّ المصايب… وينسى النعم."
+        en: "There's a word in the Quran… for the one who counts his misfortunes… and forgets the blessings."
+      - ar: "وربنا أقسم بخيل بتجري… عشان يقولها عن الإنسان."
+        en: "God swore by charging horses… to say it about man."
+      - ar: "واللي هتعرفه عنها… هيغيّر الطريقة اللي بتحكي بيها عن يومك."
+        en: "And what you'll learn about it… will change the way you talk about your day."
+  - verses: [quran.100.1, quran.100.2, quran.100.3, quran.100.4, quran.100.5, quran.100.6, quran.100.7, quran.100.8]
+    scene: horses
+  - narration: meaning
+    scene: meaning
+    sources: [tafsir.muyassar.100.6, tafsir.ibn-kathir.100.6, tafsir.saadi.100.7]
+    lines:
+      - ar: "الكلمة دي… معناها: ناكر لنعمة ربه."
+        en: "This word… means: denying his Lord's blessings."
+      - ar: "والآية اللي بعدها قالت: وهو نفسه شاهد على كده… عارفها عن نفسه، ومش بينكرها."
+        en: "And the next verse says: he himself is witness to it… he knows it of himself, and doesn't deny it."
+  - narration: ledger
+    scene: ledger
+    lines:
+      - ar: "المصيبة… بنفتكرها باليوم والساعة."
+        en: "A misfortune… we remember it to the day and the hour."
+      - ar: "والنعمة… بنعيش جواها كل يوم… ومش شايفينها."
+        en: "A blessing… we live inside it every day… and don't see it."
+  - narration: day
+    scene: day
+    lines:
+      - ar: "زي يوم عدّى كله كويس: صحة… وأكل… وبيت."
+        en: "Like a day that went well: health… food… a home."
+      - ar: "وحاجة واحدة بس باظت."
+        en: "And just one thing went wrong."
+      - ar: "وبالليل… الحاجة الوحيدة اللي بتحكيها… هي اللي باظت."
+        en: "And at night… the only thing you talk about… is the thing that went wrong."
+  - narration: count
+    scene: count
+    lines:
+      - ar: "قبل ما تعدّ اللي راح… عدّ اللي لسه معاك."
+        en: "Before you count what's gone… count what you still have."
+      - ar: "والنهارده بالليل… قبل ما تحكي اللي باظ… قول تلات نعم."
+        en: "Tonight… before you tell what went wrong… name three blessings."
+  - narration: next
+    scene: next
+    lines:
+      - ar: "دي كلمة عن الإنسان والنعمة… والجاية: نواة التمرة… فيها تلات كلمات من القرآن."
+        en: "That was a word about man and blessings… next: the date stone… holds three words of the Quran."
+      - ar: "تابعنا عشان الكلمة الجاية."
+        en: "Follow us for the next word."

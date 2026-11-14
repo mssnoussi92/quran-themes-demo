@@ -1,5 +1,9 @@
 # Formats d'épisode : catalogue fermé
 
+> **Depuis le 2026-11-11**, chaque sujet devient un film et ses shorts (`docs/model.md`). Les formats disent encore le genre
+> de sujet et ses parties (« reel » se lit « short ») ; ils ne choisissent plus de style, et seul le format histoire est
+> éprouvé dans le modèle (skill `choose-format`). Les contrôles de `validate.py` cités ici portent sur l'ancien circuit.
+
 Décidé par le propriétaire le 2026-11-08 : chaque épisode suit un format de ce catalogue, choisi avant d'écrire
 (skill `choose-format`), noté dans l'épisode (`format:` de `content/episodes/<thème>.yaml`) et dans
 `docs/themes.md`. Comme les personnages et les fonds, un format nouveau n'entre ici que validé par le
@@ -84,9 +88,11 @@ propriétaire. `scripts/validate.py` vérifie la structure de chaque format dans
   le dernier, le texte entier à nouveau et la conclusion.
 - **Exemple** : Tirmidhi 2516, « احفظ الله يحفظك… » (al-Albani : Sahih, vérifié dans hadith-api).
 - **Vérifié** : chaque reel du milieu a le texte (carte) et une leçon suivie de son exemple.
-- **Pièges** : expliquer au-delà du sens apparent : le sens d'un mot ou l'avis d'un savant demanderait une
-  source de tafsir ou de charh au registre (pas encore possible) ; nos lignes d'explication sont signalées au
-  propriétaire.
+- **Pièges** : expliquer au-delà du sens apparent : le sens d'un mot ou l'avis d'un savant demande une source de
+  tafsir au registre (possible depuis le 2026-11-11 pour un verset : `content/sources/tafsir.yaml`, trois tafsirs
+  dans la politique ; pas de charh de hadith) ; nos lignes d'explication sont signalées au propriétaire.
+- **Dans le modèle** : la série « آية وحكايتها » (`docs/themes.md`) en est la forme courte : un verset, son récit de
+  révélation, son sens d'après un tafsir nommé, un short qui tient seul.
 
 ## 6. Deux chemins (`two-paths`)
 

@@ -1,0 +1,110 @@
+# Le du'a dans le modèle, short 2 (2026-11-11, docs/themes.md) : « tout est écrit, à quoi bon demander ». Le fait :
+# l'appel de Younous dans le ventre du poisson (Al-Anbiya 21:87-88), et ce que le Coran dit de ce qui serait
+# arrivé sinon (As-Saffat 37:143-144) ; puis Tirmidhi 2139 (rien ne repousse le décret sauf le du'a) et, à la fin,
+# l'invocation à dire, Tirmidhi 3505 (décision du propriétaire, 2026-11-11).
+# - « ضلمة فوق ضلمة » : le verset dit « الظلمات » ; la nuit et le fond de la mer viennent de récits de tafsir
+#   (Ibn Kathir, d'après Ibn Mas'ud et Ibn Abbas), on ne les affirme pas.
+# - 37:143 : deux lectures chez les exégètes (Ibn Kathir) : ses œuvres d'avant, ou son appel dans le poisson ;
+#   al-Sa'di et al-Muyassar disent les deux. D'où « ذِكره لربنا » (les deux), jamais « son du'a seul ».
+# - Le lien entre le décret et le du'a repose sur le hadith (2139), pas sur notre lecture du verset.
+# - Aucun mot du silence pour « ne pas demander » (refusés par le propriétaire) : « ساب الدعاء ».
+# - `kept` : réplique validée de l'ancien épisode, sans ses guillemets ; les autres sont de l'IA.
+# « Je valide le script » du propriétaire (2026-11-11), sur le script corrigé (docs/scripts/dua.md) : les
+# répliques, la place des versets et des hadiths, les titres. Ni la voix, ni les images, ni les textes de
+# publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
+id: written
+rule: 3                          # préparé avec la règle 3 (calage et niveau de la voix du 2026-11-11) : ses vidéos validées en sortent identiques (tools/trial/prepare.py, rule_of)
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
+# « Je valide tout » du propriétaire (2026-11-11) sur les vidéos corrigées, rendues par le workflow `film` et envoyées
+# dans la conversation : la voix D sur la vidéo entière, le montage, la couverture, l'ambiance. Inscrit sur sa parole.
+# Les textes de publication (`publish`, docs/retention/publication-dua.md, envoyés dans la conversation) : validés par
+# son « je valide le script » du 2026-11-11 au soir ; il a précisé le 2026-11-12 que ce mot portait sur eux.
+validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+clip: { source: pixabay, id: 138588, author: Natures_Embrace, page: "https://pixabay.com/videos/id-138588/", take: { height: 1440 }, position: "40% 50%", brightness: 0.62, horizon: 1195, rate: 0.7, landscape: { side: left, horizon: 640, brightness: 0.6 } }
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 31-trial-written
+# Ambiance sous la narration, jamais sous un verset ni un hadith : un des trois enregistrements validés par le
+# propriétaire sur le premier film (docs/model.md, « Ambiances »).
+ambience: { source: bigsoundbank, id: "1448", title: "Small waves and beach #2", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/detail-1448-small-waves-and-beach-2.html", from: 100, seconds: 80, level: -36 }
+# Couverture et textes de publication, proposés (à valider avec les vidéos ; le titre, avec le script).
+cover: { scene: deep, title: "في بطن الحوت… مين سمعه؟", tag: "الدعاء · ٢ من ٣", focus: 1100 }
+publish:
+  title: { en: "Inside the whale: who heard him?", ar: "في بطن الحوت… مين سمعه؟" }
+  part: 2
+  hashtags: ["#سيدنا_يونس", "#الكرب"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
+  description:
+    en: "It's all written, so why ask? Jonah, peace be upon him, called from inside the whale, in darkness upon darkness, and was heard. Nothing turns back the decree except du'a, and du'a itself is part of God's decree. With the call the Prophet ﷺ taught us."
+    ar: "كله مكتوب… أدعي ليه؟ سيدنا يونس عليه السلام نادى من بطن الحوت، في ضلمة فوق ضلمة… واتسمع. مفيش حاجة بترد القضاء غير الدعاء، والدعاء نفسه من قدر ربنا. ومعاها الدعوة اللي علّمهالنا النبي صلى الله عليه وسلم."
+segments:
+  - narration: open
+    scene: deep
+    lines:
+      - ar: "في بطن حوت… في ضلمة فوق ضلمة… مين هيسمعه؟"
+        en: "In the belly of a whale… darkness upon darkness… who will hear him?"
+      - ar: "ده سيدنا يونس عليه السلام… وإنت بتقول: كله مكتوب… أدعي ليه؟"
+        en: "That was Jonah, peace be upon him… and you say: it's all written… why ask?"
+  - verse: quran.21.87
+    scene: light
+  - narration: turn
+    scene: light
+    lines:
+      - ar: "وربنا سمعه؟"
+        en: "And did God hear him?"
+  - verse: quran.21.88
+    scene: shore
+  - narration: if
+    scene: shore
+    lines:
+      - ar: "طب… ولولا كده؟"
+        en: "And… had it not been so?"
+  - verse: quran.37.143
+    scene: deep
+  - verse: quran.37.144
+    scene: deep
+  - narration: meaning
+    scene: shore
+    lines:
+      - ar: "لولا تسبيحه… كان فضل في بطن الحوت… ليوم القيامة."
+        en: "Had he not glorified God… he would have stayed in the whale's belly… until the Day of Resurrection."
+      - ar: "يعني ذِكره لربنا… فرق."
+        en: "So his remembrance of God… made the difference."
+      - ar: "والنبي صلى الله عليه وسلم قال:"
+        en: "And the Prophet ﷺ said:"
+  - reading: hadith.tirmidhi.2139
+    scene: shore
+  - narration: means
+    scene: shore
+    lines:
+      - ar: "يعني فيه حاجة بترد القضاء… الدعاء."
+        en: "So there is something that turns back the decree… du'a."
+        kept: dua.decree-means
+  - narration: depth
+    scene: sea
+    lines:
+      - ar: "والدعاء نفسه… من قدر ربنا."
+        en: "And du'a itself… is part of God's decree."
+        kept: dua.decree-part
+      - ar: "إنت ما شفتش المكتوب… يمكن مكتوب إنك تدعي… فتنجى."
+        en: "You have not seen what is written… maybe it is written that you ask… and are saved."
+  - narration: example
+    scene: sea
+    lines:
+      - ar: "زي الرزق: مكتوب… وبرضه بتنزل شغلك كل يوم."
+        en: "Like your provision: it is written… and still you go to work every day."
+  - narration: close
+    scene: shore
+    lines:
+      - ar: "لما تقول كله مكتوب… افتكر الحوت."
+        en: "When you say: it's all written… remember the whale."
+      - ar: "والنبي صلى الله عليه وسلم علّمنا دعوته:"
+        en: "And the Prophet ﷺ taught us his call:"
+  - reading: hadith.tirmidhi.3505
+    scene: light
+  - narration: next
+    scene: shore
+    lines:
+      - ar: "ده اللي ساب الدعاء عشان كله مكتوب… بس فيه اللي دعا… ودعا… وما شافش حاجة. فبطّل."
+        en: "That is the one who gave up asking because it's all written… another asked… and asked… and saw nothing. So he stopped."
+      - ar: "تابعنا عشان تعرف."
+        en: "Follow us to find out."

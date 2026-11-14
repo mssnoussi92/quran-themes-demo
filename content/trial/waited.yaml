@@ -1,0 +1,103 @@
+# Le du'a dans le modèle, short 3 (2026-11-11, docs/themes.md) : « j'ai demandé et rien n'est venu ». Le fait :
+# Zakariya, vieux, qui demande encore et dit n'avoir jamais été déçu en demandant (Maryam 19:4), et la réponse
+# (Al-Anbiya 21:89-90) ; puis Bukhari 6340 (exaucé tant qu'on ne se hâte pas). Une idée par short : Tirmidhi 3573
+# (donné, ou un mal écarté) est dit dans le film seulement.
+# - Rien n'est dit de son âge au-delà du verset (les os affaiblis, la tête blanche) ; aucune durée.
+# - « عمري ما دعيتك ورجعت خايب » : le sens de la fin de 19:4, dit après le verset (al-Sa'di : Tu ne m'as
+#   jamais renvoyé déçu ni privé de réponse).
+# - L'exemple (la graine qu'on déterre chaque jour) est une scène type, bâtie sur le hadith : ce qui perd une
+#   demande, c'est la hâte, pas le retard.
+# - « راسه شابت », jamais « شاب » seul : lu « jeune » (le propriétaire, 2026-11-11).
+# - Dernier short : il résume les trois idées qui éloignent du du'a (aucun mot du silence : refusés par le
+#   propriétaire), puis l'appel à suivre que le propriétaire a
+#   validé pour le dernier short de Moussa et al-Khadir. Ce qu'il promet (« القصة الجاية ») est à lui de tenir.
+# - `kept` : réplique validée de l'ancien épisode, sans ses guillemets ; les autres sont de l'IA.
+# « Je valide le script » du propriétaire (2026-11-11), sur le script corrigé (docs/scripts/dua.md) : les
+# répliques, la place des versets et des hadiths, les titres. Ni la voix, ni les images, ni les textes de
+# publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
+id: waited
+rule: 3                          # préparé avec la règle 3 (calage et niveau de la voix du 2026-11-11) : ses vidéos validées en sortent identiques (tools/trial/prepare.py, rule_of)
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
+# « Je valide tout » du propriétaire (2026-11-11) sur les vidéos corrigées, rendues par le workflow `film` et envoyées
+# dans la conversation : la voix D sur la vidéo entière, le montage, la couverture, l'ambiance. Inscrit sur sa parole.
+# Les textes de publication (`publish`, docs/retention/publication-dua.md, envoyés dans la conversation) : validés par
+# son « je valide le script » du 2026-11-11 au soir ; il a précisé le 2026-11-12 que ce mot portait sur eux.
+validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+# Le clip : un ciel étoilé (accéléré), cherché pour ce short (2026-11-11 : la lune du garçon, Pixabay 29238,
+# faisait deux images semblables ; le propriétaire : « chercher des clips qui marchent avec notre plan et les
+# préparer »). Approuvé par lui le même jour sur la planche de comparaison (« parfait » ; l'image se valide sur
+# les vidéos ; docs/model.md, « Clips filmés »). `take` : les 12,5
+# premières secondes (avant les nuages), réduites, en aller-retour pour boucler sans saut des étoiles.
+clip: { source: pixabay, id: 14955, author: adege, page: "https://pixabay.com/videos/id-14955/", take: { seconds: 12.5, height: 1440, pingpong: true }, position: "62% 50%", shift: 300, brightness: 1.0, ground: "#0b0a18", rate: 0.5, landscape: { side: right, horizon: 770, brightness: 1.0 } }
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 32-trial-waited
+# Ambiance sous la narration, jamais sous un verset ni un hadith : un des trois enregistrements validés par le
+# propriétaire sur le premier film (docs/model.md, « Ambiances »).
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 80, level: -38 }
+# Couverture et textes de publication, proposés (à valider avec les vidéos ; le titre, avec le script).
+cover: { scene: niche, title: "راسه شابت… وما بطّلش يدعي", tag: "الدعاء · ٣ من ٣", focus: 1230 }
+publish:
+  title: { en: "His hair turned white… and he never stopped asking", ar: "راسه شابت… وما بطّلش يدعي" }
+  part: 3
+  hashtags: ["#سيدنا_زكريا", "#الذرية"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
+  description:
+    en: "I asked and nothing happened. Zechariah, peace be upon him, was old, his hair white, and still asking: never, he said, had he been disappointed in calling on his Lord. What loses a du'a is not the delay, it is the hurry."
+    ar: "دعيت… وما حصلش حاجة. سيدنا زكريا عليه السلام كان كبير، راسه شابت، ولسه بيدعي… وقال إنه عمره ما رجع من دعاء ربنا خايب. اللي بيضيّع الدعاء مش التأخير… الاستعجال."
+segments:
+  - narration: open
+    scene: niche
+    lines:
+      - ar: "راسه شابت… وعضمه ضعف… ولسه بيدعي! ليه ما بطّلش؟"
+        en: "His hair had turned white… his bones were weak… and still he asked! Why didn't he stop?"
+      - ar: "ده سيدنا زكريا عليه السلام… وإنت دعيت… وقلت: ما حصلش حاجة."
+        en: "That was Zechariah, peace be upon him… and you asked… and said: nothing happened."
+  - verse: quran.19.4
+    scene: niche
+  - narration: never
+    scene: niche
+    lines:
+      - ar: "بيقول: يا رب… عمري ما دعيتك ورجعت خايب."
+        en: "He is saying: my Lord… never have I called on You and come back empty-handed."
+      - ar: "وربنا رد عليه؟"
+        en: "And did God answer him?"
+  - verse: quran.21.89
+    scene: niche
+  - verse: quran.21.90
+    scene: two
+  - narration: meaning
+    scene: two
+    lines:
+      - ar: "استجاب له… وادّاله يحيى… وهو في السن ده."
+        en: "He answered him… and gave him John… at that age."
+      - ar: "والنبي صلى الله عليه وسلم قال:"
+        en: "And the Prophet ﷺ said:"
+  - reading: hadith.bukhari.6340
+    scene: two
+  - narration: haste
+    scene: two
+    lines:
+      - ar: "يعني متستعجلش… ومتقولش دعيت ومحدش رد."
+        en: "So don't rush… and don't say “I prayed and got no answer.”"
+        kept: dua.answer-haste
+  - narration: depth
+    scene: far
+    lines:
+      - ar: "اللي بيضيّع الدعاء… مش التأخير. الاستعجال."
+        en: "What loses a du'a… is not the delay. It is the hurry."
+  - narration: example
+    scene: sky
+    lines:
+      - ar: "زي اللي زرع بذرة… وكل يوم يحفر يشوفها طلعت ولا لأ."
+        en: "Like one who planted a seed… and digs it up every day to see if it has sprouted."
+      - ar: "التأخير ما موّتهاش… استعجاله هو اللي موّتها."
+        en: "The delay did not kill it… his hurry did."
+  - narration: close
+    scene: two
+    lines:
+      - ar: "لما تقول دعيت وما حصلش… افتكر سيدنا زكريا: راسه شابت… وما بطّلش."
+        en: "When you say: I asked and nothing happened… remember Zechariah: his hair turned white… and he never stopped."
+      - ar: "تلات أفكار بتبعدنا عن الدعاء… وتلات نداءات في القرآن بتردّ عليها."
+        en: "Three ideas keep us from du'a… and three calls in the Quran answer them."
+      - ar: "تابعنا عشان القصة الجاية."
+        en: "Follow us for the next story."

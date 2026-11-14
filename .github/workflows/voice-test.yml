@@ -5,13 +5,31 @@ name: voice-test
 # attaches them to the "voice-test-latest" pre-release (easy to download and play on a phone).
 # SILMA is no longer read here: its torchaudio needs the system FFmpeg libraries (apt), and the
 # owner chose VoiceTut (2026-11-06); its earlier takes stay in the release.
+# Voice comparison of 2026-11-11 (free first, docs/retention.md): `gemini_voices` has Gemini TTS
+# (Google AI Studio, free tier) say the five lines of content/voice-test/10-boat-standard.txt and
+# 11-boat-egyptian.txt, one file per voice and text, named by its label (C-boat-standard.mp3) so the
+# owner can listen without knowing which engine is which. The key is the repository secret
+# GEMINI_API_KEY: it never passes through a session. `voicetut_speakers: none` skips VoiceTut; an empty
+# `gemini_voices` skips Gemini.
 
 on:
   workflow_dispatch:
     inputs:
       voicetut_speakers:
-        description: "VoiceTut voices, comma-separated. Men: Ahmed, Ali, Hassan, Karim, Mahmoud, Mohammed, Mostafa, Ramy, Shaker, Tareq, Yehia, Youssef. Women: Hadeer, Hanan, Mariam, Rana, Sarah, Yasmin, Yara"
+        description: "VoiceTut voices, comma-separated, or none. Men: Ahmed, Ali, Hassan, Karim, Mahmoud, Mohammed, Mostafa, Ramy, Shaker, Tareq, Yehia, Youssef. Women: Hadeer, Hanan, Mariam, Rana, Sarah, Yasmin, Yara"
         default: Mohammed,Ahmed,Karim,Mahmoud,Hanan
+      gemini_voices:
+        description: "Gemini TTS voices as label=Voice, comma-separated (empty: none), e.g. C=Charon,D=Algieba. Needs the secret GEMINI_API_KEY"
+        default: ""
+      gemini_texts:
+        description: "Text files Gemini says, space-separated (each is one take per voice; a first line '# style:' directs the voice)"
+        default: "content/voice-test/10-boat-standard.txt content/voice-test/11-boat-egyptian.txt"
+      gemini_model:
+        description: "Gemini TTS model. Each model has its own daily quota (free tier of gemini-3.8-flash-tts: 10 requests a day)"
+        default: "gemini-3.8-flash-tts"
+      gemini_max_requests:
+        description: "Most requests this run may send (voices x texts); the run refuses to start above it"
+        default: "4"
   # By hand only: the voice is chosen (Mohammed, 2026-11-06). A push to main that touched tools/tts
   # or requirements/ used to start five synthesis jobs nobody listened to (3 runs out of 5).
 
@@ -27,24 +45,30 @@ jobs:
     runs-on: ubuntu-24.04
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
+      count: ${{ steps.matrix.outputs.count }}
     steps:
       - id: matrix
         env:
-          SPEAKERS: ${{ inputs.voicetut_speakers || 'Mohammed,Ahmed,Karim,Mahmoud,Hanan' }}
+          SPEAKERS: ${{ inputs.voicetut_speakers }}
         run: |
           python3 - >> "$GITHUB_OUTPUT" <<'EOF'
           import json, os, re
-          voices = [v.strip() for v in os.environ["SPEAKERS"].split(",") if v.strip()]
+          # "none" skips VoiceTut (an empty input is replaced by its default by GitHub: run 6 of 2026-11-11
+          # started five VoiceTut jobs nobody asked for).
+          asked = os.environ["SPEAKERS"].strip()
+          voices = [] if asked.lower() == "none" else [v.strip() for v in asked.split(",") if v.strip()]
           bad = [v for v in voices if not re.fullmatch(r"[A-Za-z]+", v)]
           if bad:
               raise SystemExit(f"invalid voice name(s): {bad}")
           egy = "content/voice-test/02-narration-egy.txt content/voice-test/03-hadith-bukhari-6340.txt"
           jobs = [{"engine": "voicetut", "voice": v, "texts": egy} for v in voices]
           print("matrix=" + json.dumps({"include": jobs}))
+          print(f"count={len(jobs)}")
           EOF
 
   synthesize:
     needs: plan
+    if: ${{ needs.plan.outputs.count != '0' }}
     name: synthesize (${{ matrix.engine }} ${{ matrix.voice }})
     runs-on: ubuntu-24.04
     timeout-minutes: 90
@@ -99,8 +123,77 @@ jobs:
           path: build/tts/*.mp3
           if-no-files-found: error
 
+  # Gemini TTS by its API: no model to install, a few requests spaced out (free tier).
+  gemini:
+    if: ${{ inputs.gemini_voices != '' }}
+    name: synthesize (gemini)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v7
+
+      - name: ffmpeg (static build)
+        run: |
+          uv venv .venv-tools
+          uv pip install --python .venv-tools/bin/python imageio-ffmpeg==0.8.1
+          mkdir -p "$HOME/.local/bin"
+          ln -sf "$(.venv-tools/bin/python -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())')" "$HOME/.local/bin/ffmpeg"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      # Where the key is, without ever printing it: a repository secret is what the next step reads; a
+      # repository *variable* of the same name is not a secret (its value shows in logs and settings).
+      - name: Is the key there?
+        env:
+          AS_SECRET: ${{ secrets.GEMINI_API_KEY != '' }}
+          AS_VARIABLE: ${{ vars.GEMINI_API_KEY != '' }}
+        run: |
+          echo "repository secret GEMINI_API_KEY set: $AS_SECRET"
+          echo "repository variable GEMINI_API_KEY set: $AS_VARIABLE"
+
+      - name: Synthesize and convert to MP3
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          VOICES: ${{ inputs.gemini_voices }}
+          TEXTS: ${{ inputs.gemini_texts }}
+          MODEL: ${{ inputs.gemini_model }}
+          MAX_REQUESTS: ${{ inputs.gemini_max_requests }}
+        run: |
+          case "$MODEL" in gemini-*tts*) ;; *) echo "not a Gemini TTS model: $MODEL"; exit 1 ;; esac
+          case "$MAX_REQUESTS" in ''|*[!0-9]*) echo "gemini_max_requests is not a number: $MAX_REQUESTS"; exit 1 ;; esac
+          # Only text files of content/voice-test/ (the input is a list of paths, split on spaces).
+          for f in $TEXTS; do
+            case "$f" in content/voice-test/*.txt) [ -f "$f" ] || { echo "no such text: $f"; exit 1; } ;; *) echo "not a text of content/voice-test/: $f"; exit 1 ;; esac
+          done
+          # A take refused (10 requests a day on the free tier) must not lose the ones already made: they are
+          # converted and uploaded all the same, and the job fails afterwards.
+          status=0
+          # shellcheck disable=SC2086  # TEXTS is a list of paths
+          python3 tools/tts/gemini.py --voices "$VOICES" --model "$MODEL" --max-requests "$MAX_REQUESTS" --out-dir build/tts --in $TEXTS || status=$?
+          for f in build/tts/*.wav; do
+            [ -f "$f" ] || continue
+            ffmpeg -loglevel error -y -i "$f" -codec:a libmp3lame -qscale:a 2 "${f%.wav}.mp3"
+            # The take as Gemini gave it, lossless: what a video is cut from, and what is kept so that the
+            # same lines are never asked for twice (10 requests a day).
+            ffmpeg -loglevel error -y -i "$f" "${f%.wav}.flac"
+          done
+          ls -la build/tts
+          exit "$status"
+
+      - uses: actions/upload-artifact@v7
+        if: ${{ !cancelled() }}
+        with:
+          name: voice-test-gemini
+          path: |
+            build/tts/*.mp3
+            build/tts/*.flac
+          if-no-files-found: warn
+
   publish:
-    needs: synthesize
+    needs: [synthesize, gemini]
     if: ${{ !cancelled() }}
     runs-on: ubuntu-24.04
     steps:
@@ -117,9 +210,10 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           ls mp3/*.mp3
-          notes="AI-generated voices. VoiceTut (Egyptian): one file per voice. SILMA (MSA + English): takes of 2026-11-06. Run: $RUN_URL"
+          notes="AI-generated voices. VoiceTut (Egyptian): one file per voice. SILMA (MSA + English): takes of 2026-11-06. Voice comparison of 2026-11-11: <label>-boat-standard.mp3 and <label>-boat-egyptian.mp3, the same five lines by each voice. Run: $RUN_URL"
           if ! gh release view voice-test-latest >/dev/null 2>&1; then
             gh release create voice-test-latest --prerelease --title "Voice test (latest)" --notes "$notes"
           fi
-          gh release upload voice-test-latest mp3/*.mp3 --clobber
+          shopt -s nullglob
+          gh release upload voice-test-latest mp3/*.mp3 mp3/*.flac --clobber
           gh release edit voice-test-latest --notes "$notes"

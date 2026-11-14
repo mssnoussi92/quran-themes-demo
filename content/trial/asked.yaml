@@ -1,0 +1,108 @@
+# Le du'a dans le modèle, short 1 (2026-11-11, docs/themes.md « Fiche : le du'a dans le modèle ») : « je suis satisfait,
+# je ne demande pas ». L'idée reçue est brisée par un fait : celui dont on fait le modèle de la patience a demandé
+# d'être soulagé (Al-Anbiya 21:83-84), puis par le hadith de Muslim 2679a (demander avec résolution).
+# - `kept` : réplique validée de l'ancien épisode (content/episodes/dua.yaml, scène nommée), reprise mot pour mot,
+#   sans ses guillemets ; les autres répliques sont de l'IA, à valider.
+# - « يا صبر أيوب » : le proverbe, tel qu'on le dit, pas un superlatif tiré d'un texte (le propriétaire a refusé
+#   « مضرب المثل في الصبر », 2026-11-11). Pas de « : » après « بنقول » : la première image n'aurait montré que ce mot
+#   (une réplique est coupée en phrases après « … ، . ! ؟ : »).
+# - « الدعاء هو العبادة » (propriétaire, 2026-11-11 : le mentionner « dans le bon emplacement et la bonne story,
+#   non le dupliquer partout ») : le hadith lui-même, Tirmidhi 3247 (1,5 s, lecture validée), lu UNE fois dans
+#   les shorts, ici : c'est la réponse à « je suis satisfait, je ne demande pas » (on ne laisse pas une adoration
+#   par satisfaction). Il vient après « الدعاء مش اعتراض… الدعاء احتياج », avant Muslim 2679a. Aucune réplique à
+#   nous ne le redit. Le film ne le relit pas ici : il l'a dit dans son chapitre « الدعاء عبادة ».
+# - Aucun mot du silence pour « ne pas demander » (refusés par le propriétaire) : « ساب الدعاء ».
+# - Le sens de 21:84 est dit après le verset, avec nos mots (« ومعاهم قدّهم » pour « ومثلهم معهم »).
+# - L'exemple (le malade qui prend son remède) est une scène type ; aucune comparaison de Dieu à une personne.
+# « Je valide le script » du propriétaire (2026-11-11), sur le script corrigé (docs/scripts/dua.md) : les
+# répliques, la place des versets et des hadiths, les titres. Ni la voix, ni les images, ni les textes de
+# publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
+id: asked
+rule: 3                          # préparé avec la règle 3 (calage et niveau de la voix du 2026-11-11) : ses vidéos validées en sortent identiques (tools/trial/prepare.py, rule_of)
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
+# « Je valide tout » du propriétaire (2026-11-11) sur les vidéos corrigées, rendues par le workflow `film` et envoyées
+# dans la conversation : la voix D sur la vidéo entière, le montage, la couverture, l'ambiance. Inscrit sur sa parole.
+# Les textes de publication (`publish`, docs/retention/publication-dua.md, envoyés dans la conversation) : validés par
+# son « je valide le script » du 2026-11-11 au soir ; il a précisé le 2026-11-12 que ce mot portait sur eux.
+validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+clip: { source: pixabay, id: 59291, author: trilemedia, page: "https://pixabay.com/videos/id-59291/", take: { height: 1440 }, position: "43% 50%", shift: 480, brightness: 0.7, ground: "#0a0b12", horizon: 1420, landscape: { side: left, horizon: 760, shift: 160, brightness: 0.65 } }
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 30-trial-asked     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Ambiance sous la narration, jamais sous un verset ni un hadith : un des trois enregistrements validés par le
+# propriétaire sur le premier film (docs/model.md, « Ambiances »).
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -36 }
+# Couverture et textes de publication, proposés (à valider avec les vidéos ; le titre, avec le script).
+cover: { scene: call, title: "صابر… ودعا!", tag: "الدعاء · ١ من ٣", focus: 1240 }
+publish:
+  title: { en: "Patient… and he asked", ar: "صابر… ودعا!" }
+  part: 1
+  hashtags: ["#سيدنا_أيوب", "#الصبر"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
+  description:
+    en: "We say: I'm content, so I won't ask. Yet Job, peace be upon him, whose patience became a proverb, asked God to lift his suffering, and was answered. Contentment is not objecting to what happened; du'a is asking for what is to come."
+    ar: "بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب عليه السلام، اللي بنقول على صبره: يا صبر أيوب، دعا ربنا يشيل عنه البلاء… واستجاب له. الرضا إنك ما تعترضش على اللي حصل، والدعاء إنك تطلب اللي جاي."
+segments:
+  - narration: open
+    scene: dark
+    lines:
+      - ar: "بنقول يا صبر أيوب… وهو نفسه دعا ربنا يشيل عنه البلاء!"
+        en: "We say “the patience of Job”… and he himself asked God to lift his suffering!"
+      - ar: "سيدنا أيوب عليه السلام دعا… وإحنا بنقول: أنا راضي… مش هدعي."
+        en: "Job, peace be upon him, asked… and we say: I'm content… I won't ask."
+  - verse: quran.21.83
+    scene: call
+  - narration: turn
+    scene: call
+    lines:
+      - ar: "وربنا رد عليه بإيه؟"
+        en: "And how did God answer him?"
+  - verse: quran.21.84
+    scene: lit
+  - narration: meaning
+    scene: lit
+    lines:
+      - ar: "استجاب له… شال عنه البلاء… ورجّع له أهله… ومعاهم قدّهم."
+        en: "He answered him… lifted his suffering… gave him back his family… and as many again."
+      - ar: "الدعاء مش اعتراض… الدعاء احتياج."
+        en: "Du'a isn't objecting… it's needing Him."
+        kept: dua.content-need
+      - ar: "والنبي صلى الله عليه وسلم قال:"
+        en: "And the Prophet ﷺ said:"
+  - reading: hadith.tirmidhi.3247
+    scene: lit
+  - narration: also
+    scene: lit
+    lines:
+      - ar: "وقال كمان:"
+        en: "And he also said:"
+  - reading: hadith.muslim.2679a
+    scene: lit
+  - narration: ask
+    scene: lit
+    lines:
+      - ar: "يعني اطلب… وإنت واثق إنه يقدر يديك."
+        en: "So ask… sure that He can give it to you."
+        kept: dua.content-ask
+  - narration: depth
+    scene: land
+    lines:
+      - ar: "الرضا… إنك ما تعترضش على اللي حصل. والدعاء… إنك تطلب اللي جاي."
+        en: "Contentment… is not objecting to what happened. Du'a… is asking for what is to come."
+  - narration: example
+    scene: land
+    lines:
+      - ar: "زي العيّان: راضي بقضاء ربنا… وبرضه بياخد الدوا."
+        en: "Like someone ill: content with God's decree… and still taking the medicine."
+      - ar: "الدوا مش اعتراض… والدعاء كمان."
+        en: "The medicine is not an objection… and neither is du'a."
+  - narration: close
+    scene: lit
+    lines:
+      - ar: "ارضى باللي فات… واطلب اللي جاي."
+        en: "Accept what has passed… and ask for what is to come."
+      - ar: "لما تقول أنا راضي… افتكر سيدنا أيوب: راضي… ودعا."
+        en: "When you say: I'm content… remember Job: content… and he asked."
+      - ar: "ده اللي ساب الدعاء عشان فاكره قلة رضا… بس فيه اللي سابه لسبب تاني: كله مكتوب… أدعي ليه؟"
+        en: "That is the one who gave up asking because he thinks it means discontent… another gave it up for another reason: it's all written… why ask?"
+      - ar: "تابعنا عشان تعرف."
+        en: "Follow us to find out."

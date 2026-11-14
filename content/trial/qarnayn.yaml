@@ -1,0 +1,180 @@
+# Le film de Dhul-Qarnayn (2026-11-11, docs/themes.md « Fiche : Dhul-Qarnayn dans le modèle ») : la réécriture de
+# l'épisode content/episodes/qarnayn.yaml dans le modèle « un film et ses shorts » (docs/model.md). Décisions du
+# propriétaire (2026-11-11, « ok go with your recommendations ») : trois shorts, un par épreuve de la force (sur les
+# gens, de prendre, d'avoir réussi) ; le levant et « إن شاء الله » dans le film seulement.
+# - Le film reprend les trois shorts (west, tribute, barrier) réplique par réplique, sans leurs appels à suivre, et
+#   ajoute : l'ouverture, qui il est (18:83-85), le levant (18:89-91), la conclusion (Tirmidhi 3153, 18:23-24) ; ses
+#   répliques propres tiennent en UNE requête de voix (content/voice-test/43-trial-qarnayn.txt).
+# - `kept` : réplique validée de l'ancien épisode, reprise mot pour mot.
+# - Le levant se montre par un clip seul (une plaine nue, le soleil bas : Pixabay 26085, PROPOSÉ), rien de dessiné :
+#   le verset dit qu'il n'y a rien entre eux et le soleil. Image propre au film (`pictures`).
+# - Gog et Magog ne sont jamais dessinés ; pendant le hadith, l'image est le barrage.
+# Script validé par le propriétaire le 2026-11-11 (« je valide le script ») : les répliques, la place des versets et
+# du hadith, les titres. Ni la voix, ni les images (clips proposés, dessins), ni l'ambiance, ni les textes de
+# publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
+id: qarnayn
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
+# « Je valide » du propriétaire (2026-11-12 : « je valide Dhul-Qarnayn, vidéo et textes ») sur les vidéos corrigées,
+# rendues par le workflow `film` et envoyées dans la conversation (release brouillon `qarnayn-candidate`) : la voix D
+# sur la vidéo entière, le montage, la vignette, le rappel d'abonnement, l'ambiance, et les textes de publication (`publish`,
+# docs/retention/publication-qarnayn.md, envoyés). Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, thumbnail, subscribe, publish, ambience] }
+# Le même film en vertical (9:16, pour Facebook : tools/trial/videos.py, `only: tall`). « Je valide tout » du propriétaire
+# (2026-11-12), sur la vidéo envoyée dans la conversation et son texte Facebook : le montage vertical (la voix et
+# l'ambiance sont celles du film, déjà validées) et ce texte. Inscrit sur sa parole.
+tall: { validated: { by: mssnoussi92, on: 2026-11-12, what: [montage, publish] } }
+files: qarnayn                   # début du nom des vidéos livrées : qarnayn-film-16x9.mp4, qarnayn-short-<n>-<id>.mp4
+title: { ar: "ذو القرنين… تلات اختبارات للقوة", en: "Dhul-Qarnayn: three tests of power" }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 43-trial-qarnayn
+outro: 12
+thumbnail: { title: "ذو القرنين", tag: "٣ اختبارات للقوة", panels: [west, tribute, barrier] }
+# Une image propre au film (aucun short) : le clip seul, rien de dessiné dessus.
+pictures:
+  east: { clip: { source: pixabay, id: 26085, author: TeeFarm, page: "https://pixabay.com/videos/id-26085/", take: { seconds: 30, height: 1440 }, brightness: 0.7, side: left, horizon: 640 }, ambience: tribute }
+publish:
+  out: docs/retention/publication-qarnayn.md      # où tools/trial/publish.py écrit les textes à coller
+  title: { en: "Dhul-Qarnayn: 3 tests of power", ar: "ذو القرنين: ٣ اختبارات للقوة" }
+  series: { en: "Dhul-Qarnayn", ar: "ذو القرنين" }
+  description:
+    en: "The fate of a whole people at his word, money offered to him, a barrier no one could pass: one man, three tests of power in Surat al-Kahf. What do you do when you have power over someone, what do you take from those who need you, and what do you say when you succeed?"
+    ar: "مصير قوم كاملين بكلمة منه، فلوس اتعرضت عليه، وسد محدش قدر يعدّيه: راجل واحد… وتلات اختبارات للقوة في سورة الكهف. تعمل إيه لما تقدر على حد، تاخد إيه من اللي محتاجك، وتقول إيه لما تنجح؟"
+  hashtags: ["#ذو_القرنين", "#سورة_الكهف"]      # validés par le propriétaire le 2026-11-14 (« je valide les hashtags ») ; avant : ["#DhulQarnayn", "#ذو_القرنين", "#SurahAlKahf"]
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }
+chapters:
+  - id: open
+    title: { ar: "تلات اختبارات", en: "Three tests" }
+    segments:
+      - narration: film-open
+        shots: [{ picture: west, scene: sun }, { picture: tribute, scene: offer }, { picture: barrier, scene: done }]
+        lines:
+          - ar: "مصير قوم كاملين بكلمة منه… فلوس اتعرضت عليه… وسد محدش قدر يعدّيه."
+            en: "The fate of a whole people at his word… money offered to him… and a barrier no one could pass."
+      - narration: film-promise
+        picture: east
+        scene: plain
+        lines:
+          - ar: "راجل واحد… وتلات اختبارات للقوة."
+            en: "One man… and three tests of power."
+          - ar: "قصة… هتعلمك تعمل إيه بكل نعمة في إيدك."
+            en: "A story… that will teach you what to do with every blessing in your hands."
+            kept: qarnayn.hook-4
+  - id: who
+    title: { ar: "مين ذو القرنين؟", en: "Who was Dhul-Qarnayn?" }
+    segments:
+      - narration: film-who
+        picture: east
+        scene: plain
+        lines:
+          - ar: "الناس سألوا النبي صلى الله عليه وسلم عن ذي القرنين… وربنا جاوبهم."
+            en: "People asked the Prophet ﷺ about Dhul-Qarnayn… and God answered them."
+            kept: qarnayn.who-1
+      - { verse: quran.18.83 }
+      - narration: film-name
+        lines:
+          - ar: "مين هو؟ القرآن ما قالش اسمه… ولا زمنه. قال اللي يهمنا: عمل إيه."
+            en: "Who was he? The Qur'an doesn't give his name… or his time. It tells us what matters: what he did."
+            kept: qarnayn.who-2
+      - { verse: quran.18.84 }
+      - { verse: quran.18.85 }
+      - narration: film-given
+        lines:
+          - ar: "النعمة من ربنا… بس لازم إنت تمشي فيها."
+            en: "The blessing is from God… but you have to walk with it."
+            kept: qarnayn.given-lesson
+  - id: west
+    number: 1
+    title: { ar: "مصير قوم بكلمة منه", en: "The fate of a people at his word" }
+    segments:
+      - { reuse: west.open, picture: west, scene: sun }
+      - { verse: quran.18.86 }
+      - { reuse: west.turn, scene: choice }
+      - { verse: quran.18.87 }
+      - { verse: quran.18.88, scene: just }
+      - { reuse: west.meaning }
+      - { reuse: west.depth, scene: land }
+      - { reuse: west.example }
+      - { reuse: west.close, lines: [0, 1], scene: just, subscribe: true }
+  - id: east
+    title: { ar: "مطلع الشمس", en: "The rising of the sun" }
+    segments:
+      - narration: film-east
+        picture: east
+        scene: plain
+        lines:
+          - ar: "وبعدها مشي… للناحية التانية خالص."
+            en: "Then he set out… all the way to the other side."
+      - { verse: quran.18.89 }
+      - { verse: quran.18.90 }
+      - { verse: quran.18.91 }
+      - narration: film-seen
+        lines:
+          - ar: "قوم… مفيش بينهم وبين الشمس حاجة تسترهم."
+            en: "A people… with nothing between them and the sun to shelter them."
+          - ar: "وربنا كان عارف كل حاجة في إيده… وإنت كمان: ربنا شايف بتعمل إيه باللي في إيدك."
+            en: "God knew everything in his hands… and you too: God sees what you do with what's in yours."
+            kept: qarnayn.east-lesson
+  - id: tribute
+    number: 2
+    title: { ar: "عرضوا عليه فلوس… ورفض", en: "They offered him money, he refused" }
+    segments:
+      - { reuse: tribute.open, picture: tribute, scene: pass }
+      - { verse: quran.18.92 }
+      - { verse: quran.18.93 }
+      - { verse: quran.18.94, scene: offer }
+      - { reuse: tribute.turn }
+      - { verse: quran.18.95, scene: refused }
+      - { reuse: tribute.meaning }
+      - { reuse: tribute.depth, scene: land }
+      - { reuse: tribute.example }
+      - { reuse: tribute.close, lines: [0, 1], scene: refused }
+  - id: barrier
+    number: 3
+    title: { ar: "ده رحمة من ربي", en: "This is a mercy from my Lord" }
+    segments:
+      - { reuse: barrier.open, picture: barrier, scene: blocks }
+      - { verse: quran.18.96, scene: fire }
+      - { reuse: barrier.stood, scene: done }
+      - { verse: quran.18.97 }
+      - { reuse: barrier.turn }
+      - { verse: quran.18.98 }
+      - { reuse: barrier.meaning }
+      - { reuse: barrier.depth, scene: land }
+      - { reuse: barrier.example }
+      - { reuse: barrier.close, lines: [0, 1], scene: done }
+  - id: insha
+    title: { ar: "إن شاء الله", en: "If God wills" }
+    segments:
+      - narration: film-digging
+        picture: barrier
+        scene: done
+        lines:
+          - ar: "النبي صلى الله عليه وسلم حكى عن السد ده… إن يأجوج ومأجوج بيحفروا فيه كل يوم."
+            en: "The Prophet ﷺ told us about this barrier… Gog and Magog dig into it every day."
+            kept: qarnayn.end-1
+          - ar: "والنبي صلى الله عليه وسلم قال:"
+            en: "And the Prophet ﷺ said:"
+            kept: qarnayn.end-hadith
+      - { reading: hadith.tirmidhi.3153 }
+      - narration: film-word
+        lines:
+          - ar: "ولما قالوا: إن شاء الله… رجعوا لقوه زي ما سابوه… وخرموه."
+            en: "And when they said: if God wills… they came back to find it as they had left it… and broke through."
+            kept: qarnayn.end-2
+          - ar: "كلمة واحدة… وربنا علّمهالنا في سورة الكهف نفسها."
+            en: "One word… and God taught it to us in Surat al-Kahf itself."
+            kept: qarnayn.end-3
+      - { verse: quran.18.23 }
+      - { verse: quran.18.24 }
+      - narration: film-recap
+        scene: land
+        lines:
+          - ar: "ذو القرنين علّمنا: النعمة من ربنا… والقوة أمانة… والمساعدة من غير استغلال… والنجاح رحمة."
+            en: "Dhul-Qarnayn taught us: blessings come from God… power is a trust… help without exploiting… and success is a mercy."
+            kept: qarnayn.end-recap
+      - narration: film-last
+        subscribe: true
+        lines:
+          - ar: "اشترك… عشان القصة الجاية."
+            en: "Subscribe… for the next story."

@@ -1,6 +1,6 @@
 ---
 name: find-hadith-recording
-description: Find a real person's recorded reading of a hadith on archive.org (Sahih al-Bukhari, Sahih Muslim, Jami' at-Tirmidhi), cut the Prophet's words out of it and register it as the hadith's `recording`, so the reel uses a human voice instead of VoiceTut once the owner has heard it. Use whenever a script quotes a hadith, when choosing between hadiths of the same meaning, and when the owner asks for a real reading.
+description: Find a real person's recorded reading of a hadith on archive.org (Sahih al-Bukhari, Sahih Muslim, Jami' at-Tirmidhi), cut the Prophet's words out of it and register it as the hadith's `recording`, so that a film plays a human voice for the hadith, never the synthetic one, once the owner has heard it. Use whenever a script quotes a hadith, when choosing between hadiths of the same meaning, and when the owner asks for a real reading.
 ---
 
 # Find a hadith recording
@@ -48,6 +48,26 @@ Most results are commentaries (شرح): look for readings (قراءة, مجال�
 Whisper puts « قال » before the first word of a clip that starts in the pause after the reader's « قال »
 (Tirmidhi 3153, twice): an invention, check the envelope rather than move the cut.
 
+## In the film-and-shorts model
+
+A film plays a reading with a `reading: hadith.<collection>.<n>` segment (`docs/model.md`): the
+reader's extract alone, the hadith's words on screen between « », its reference and « Reading:
+<reader> » under it, after a line of narration that introduces it (« والنبي صلى الله عليه وسلم حكى
+إن الخَضِر قال: »). The ambience is silent under it, and the subscribe reminder never passes over it.
+
+- `tools/trial/film.py` plays only a recording whose `status` is `validated`, taken from the episode
+  the film names in `verses:`; `python3 tools/audio/build.py --episode <episode>` cuts the extract into
+  `build/audio/<episode>/readings/<id>.level.wav`.
+- A new recording is `proposed`: send the owner the extract itself (an MP3, in the conversation) with
+  what Whisper hears differently; on their word write `status: validated` and `validated_by` with a
+  ruamel round trip. Never on your own judgement.
+- A short plays a reading the same way (`reading:` in its segments). Files that read the registry
+  (`tools/trial/sources.py`, every film but the first) play a recording still `proposed` and list it:
+  the owner hears it in the videos; with no recording at all, only a draft is prepared.
+
+Steps 1 to 5 below are the same for the model; steps 6 and 7 describe the mix and the validation of
+the episodes published before.
+
 ## Steps
 
 1. **Locate.** `curl -s https://archive.org/metadata/<item>` lists the files and their lengths.
@@ -78,7 +98,7 @@ Whisper puts « قال » before the first word of a clip that starts in the pau
    the reading once (`build/audio/<episode>/readings/`) and mixes the scene: the introduction cut
    from the locked narration take, 0.25 s, the reader. `listen.py --episode <episode> --only <scene>`
    must hear the introduction once, then the hadith once; if the synthetic voice starts the hadith
-   before the reader, the phrase start of the take is wrong (skill `narration-takes`, §5). Note the
+   before the reader, the phrase start of the take is wrong (`docs/legacy/skills/narration-takes.md`, §5). Note the
    differences (`heard`) in the PR: the candidate's list « à vérifier » shows the reading still
    `proposed`, with its minute in each video.
 7. **Owner.** The owner hears it in the candidate render (since 2026-11-08, one validation at the

@@ -4,7 +4,743 @@ Tenu à jour par les skills `choose-format` et `new-theme` (étape 1). Les plans
 sont dans `docs/design.md`, les formats dans `docs/formats.md` ; ici, ce qui a été décidé sur l'ordre, le
 format et l'angle des suivants.
 
-## Faits
+## Réécriture dans le modèle (décision du propriétaire, 2026-11-11)
+
+Les épisodes ci-dessous ont été publiés dans l'ancien circuit (reels en chapitres, personnages, styles). **Ils
+doivent être réécrits dans le modèle « un film et ses shorts »** (`docs/model.md`) : scènes nouvelles, scripts
+améliorés, ambiance. Leurs sources et leurs lectures de hadith, validées, restent.
+
+| Épisode | Dans le modèle |
+| --- | --- |
+| Moussa et al-Khadir (`khidr`) | **fait** : film de 7:47 et trois shorts (`content/trial/film.yaml`, `boat`, `boy`, `wall`), tout validé le 2026-11-11 |
+| Du'a (`dua`) | **fait** : film et trois shorts (`content/trial/dua.yaml`, `asked`, `written`, `waited`), vidéos et textes à coller validés le 2026-11-11 |
+| Dhul-Qarnayn (`qarnayn`) | **fait** : film de 8:24 et trois shorts (`content/trial/qarnayn.yaml`, `west`, `tribute`, `barrier`), vidéos et textes à coller validés le 2026-11-12 ; fiche ci-dessous |
+| Les gens de la caverne (`kahf`) | **choisi pour le 30 novembre** (2026-11-13) ; fiche dans le modèle plus bas, script après les premières mesures |
+| Patience, repentir, comparaisons, confiance en Dieu, الخشوع | à réécrire ; idées reçues, sur le modèle du du'a (chaque idée brisée par un fait du Coran qu'on peut montrer) |
+
+**Ordre** : la session proposait Dhul-Qarnayn, puis la caverne, puis les idées reçues une fois les outils
+complétés. **Le propriétaire a choisi autrement (2026-11-11) : le du'a d'abord**, « car c'est différent », puis
+les outils complétés avec les leçons retenues. La session s'y range : c'est le cas difficile, et six des huit
+épisodes restants lui ressemblent.
+
+### Fiche : le du'a dans le modèle (skill `choose-format`, 2026-11-11)
+
+**Ce qu'est l'épisode publié** (`content/episodes/dua.yaml`, cinq reels) : trois idées reçues (« je suis satisfait,
+je ne demande pas » ; « tout est écrit, à quoi bon » ; « j'ai demandé et rien n'est venu »), encadrées par un reel de
+promesse et un de conclusion. Ses sources, toutes validées : 40:60, 21:83, 13:39, 2:186 ; Tirmidhi 3247, 2139, 3573,
+Muslim 2679a, Bukhari 6340, lus par de vrais lecteurs.
+
+**Ce qui ne passe pas tel quel dans le modèle** (mesuré) :
+
+- **64 secondes de récitation en tout** (40:60 17 s, 21:83 12 s, 13:39 12 s, 2:186 23 s). Le reel « tout est écrit »
+  n'a que 12 s de verset, celui de « rien n'est venu » aucun : sous les 15 s qu'un short demande, alors que la
+  récitation est ce que les spectateurs restent écouter.
+- **Rien à dessiner.** Ses images étaient des personnes (la salle d'attente, le narrateur) ; le modèle ne dessine
+  personne, et une idée reçue n'est pas une chose.
+- **Ses accroches sont des questions au spectateur** (« عمرك قلت: أنا راضي… مش هدعي؟ »), le genre d'ouverture qui a
+  perdu trois spectateurs sur quatre sur khidr-01. Aucun reel du du'a n'a été mesuré lui-même.
+
+**Recommandé : chaque idée reçue brisée par l'appel d'un prophète, dans l'ordre de la sourate Al-Anbiya** (21:83-90),
+qui aligne elle-même Ayyoub, Younous et Zakariya avec les mêmes mots : il appela son Seigneur, « alors Nous lui
+avons répondu ». Le fait d'abord, l'idée reçue ensuite, dite avec les mots du spectateur.
+
+| Short | L'idée reçue | Le fait qui l'ouvre | Versets (récitation) | Seconde preuve (lecture validée) | Ce qui est dessiné |
+| --- | --- | --- | --- | --- | --- |
+| 1 | « je suis satisfait, je ne demande pas » | celui que le Coran donne en exemple de patience a demandé d'être soulagé | 21:83 (12 s, validé), 21:84 (18 s, nouveau) | Muslim 2679a (14 s) | une maison seule et éteinte sur une terre sèche, puis ses fenêtres allumées, et autant d'autres (21:84 : sa famille, et autant avec elle) |
+| 2 | « tout est écrit, à quoi bon » | un homme dans le ventre d'un poisson, au fond de la mer, la nuit : qu'est-ce qui peut encore changer ? | 21:87-88 (34 s, nouveaux), 37:143-144 (14 s, nouveaux) | Tirmidhi 2139 (4 s) ; Tirmidhi 3505 en option | la mer sombre, la forme du grand poisson sous la surface (une créature que le texte nomme ; personne n'est montré), une lueur dans le noir, puis le rivage |
+| 3 | « j'ai demandé et rien n'est venu » | un vieil homme, les os affaiblis, la tête blanche, qui demande encore, et dit n'avoir jamais été déçu en demandant | 19:4 (16 s, nouveau), 21:89-90 (39 s, nouveaux) | Bukhari 6340 (6 s), Tirmidhi 3573 (11 s) | une niche de prière et sa lampe, la nuit, puis une seconde lumière quand le verset dit ce qui lui est donné (aucune personne, aucun ange) |
+
+- **Ce qui distingue les parties** : trois raisons d'arrêter de demander. « Je ne dois pas » (le contentement), « ça
+  ne sert à rien » (le décret), « ça n'a pas marché » (l'attente). La fin de chaque short nomme la raison qu'il
+  vient de lever et annonce la suivante.
+- **Le film** (environ 7 min) : l'ouverture en une phrase sur les trois images ; le cadre, « الدعاء هو العبادة »
+  (Tirmidhi 3247) et 40:60 ; les trois parties ; 13:39 dans la deuxième ; la conclusion sur 2:186. Environ 3:05 de
+  récitation et 0:36 de hadiths lus.
+- **Plus de reel de promesse ni de reel de conclusion** : ce qu'ils disaient appartient au film, un short qui ne
+  fait qu'annoncer n'est pas un short.
+- **Répliques validées de l'ancien épisode à garder** : « الدعاء مش اعتراض… الدعاء احتياج », « دعاءك… عمره ما
+  بيضيع », « ربنا قريب… وبيجيب ».
+
+**Autre possibilité** : garder le du'a sur ses seules sources, en ajoutant le minimum (21:84, et un verset pour
+chacune des deux autres idées). Moins de travail, mais deux shorts sur trois restent sans scène à montrer.
+
+**Ce que la session se reproche à elle-même** : lire 37:143-144 comme la réponse à « tout est écrit » est notre
+rapprochement, pas une parole de savant ; à vérifier dans un tafsir avant le script, et la réplique sera marquée
+comme la nôtre. Et faire de trois idées reçues trois récits risque de noyer l'idée reçue : elle doit être dite dans
+les quinze premières secondes.
+
+**Chevauchement à trancher** : ces trois appels sont trois des cinq de la collection « دعوات في الشدة » (troisième de
+l'ordre validé le 2026-11-08 : Nouh, Ayyoub, Younous, Zakariya, Moussa). Proposé : le film du du'a la remplace ; Nouh
+(54:10-12) et Moussa (28:24-25) restent pour plus tard.
+
+**À faire de nouveau** : huit versets à inscrire au registre et à couper dans la récitation (21:84, 21:87, 21:88,
+37:143, 37:144, 21:89, 21:90, 19:4) ; Tirmidhi 3505 s'il est retenu (al-Albani : sahih ; lecture à trouver) ; trois
+dessins et trois ambiances ; clips de la liste approuvée. **Outils, avant le rendu** : faire lire le registre aux
+outils du modèle (une source nouvelle ne peut pas être jouée aujourd'hui) ; jouer un hadith dans un short, sauf si
+les hadiths ne sont cités que dans le film. **Voix** : quatre requêtes (trois shorts, le film), une journée.
+
+**Décisions du propriétaire (2026-11-11, « ok go with your recommendations »)** : les trois appels d'Al-Anbiya ; le
+film du du'a remplace la collection « دعوات في الشدة » (Nouh et Moussa restent pour plus tard) ; les hadiths dans
+chaque short ; Tirmidhi 3505 à la fin du deuxième short.
+
+**Fait depuis** (`content/trial/asked.yaml`, `written.yaml`, `waited.yaml`, `dua.yaml` ; script lisible :
+`docs/scripts/dua.md`) :
+
+- les huit versets et Tirmidhi 3505 au registre, **proposés** ; les versets coupés dans la récitation, trois coupes
+  posées à la main (le début de 21:87, la limite entre 37:143 et 37:144 que le récitateur enchaîne) ; la lecture de
+  3505 trouvée (Yusuf ibn Nuh Ahmad), **proposée** ;
+- le script des trois shorts et des répliques propres au film, **à valider par le propriétaire avant toute voix** ;
+  durées estimées 1:54, 2:04, 2:02, film 7:41 (avant ses corrections : 1:51, 2:03, 2:00, 7:40) ;
+- **corrections du propriétaire sur le premier script (2026-11-11)** : « مضرب المثل في الصبر » refusé (l'accroche
+  devient le proverbe : « بنقول يا صبر أيوب… وهو نفسه دعا ربنا يشيل عنه البلاء! ») ; **tous les mots du silence**
+  pour « ne pas demander » à changer (« اللي سكت », « مسكّتانا », « بتسكّتنا », le titre du film : remplacés par
+  « ساب الدعاء » et « بتبعدنا عن الدعاء ») ; « شاب » se lit « jeune » (« راسه شابت ») ; **« الدعاء هو العبادة » à mentionner
+  aussi**. La session l'avait d'abord mis dans chaque short par une réplique à elle ; le propriétaire a corrigé
+  (même jour) : « dans le bon emplacement et la bonne story, non le dupliquer partout », et **il trouve la
+  structure du film parfaite**. Donc : le hadith lui-même (Tirmidhi 3247, 1,5 s, lecture validée), **une seule
+  fois dans les shorts, dans le premier** (« je suis satisfait, je ne demande pas » : on ne laisse pas une
+  adoration par satisfaction), après « الدعاء مش اعتراض… الدعاء احتياج » et avant Muslim 2679a ; aucune réplique
+  ne le redit ; le film inchangé (il le lit dans son chapitre « الدعاء عبادة ») ;
+- une idée par short : le troisième garde Bukhari 6340 (ne pas se hâter), Tirmidhi 3573 (donné, ou un mal écarté)
+  passe dans le film ; 13:39 dans le film seulement ;
+- vérifié dans deux tafsirs (al-Sa'di, al-Muyassar ; Ibn Kathir pour les deux lectures de 37:143) : la réplique dit
+  « ذِكره لربنا », pas « son du'a seul » ; le lien entre décret et du'a repose sur le hadith 2139 ;
+- les dessins (`video/src/trial/Dua.tsx`) : la maison éteinte puis éclairée à l'aube, la queue du grand poisson
+  puis une lueur sous l'eau, le lieu de prière et sa lampe ; brouillons envoyés au propriétaire ;
+- **le clip du troisième short** : il reprenait la lune du garçon ; le propriétaire (2026-11-11) : « il faut chercher
+  des clips qui marchent avec notre plan et les préparer ». Cherché sur Pixabay (28 requêtes, environ 1 500 clips,
+  dix regardés en entier) : **un ciel étoilé, Pixabay 14955** (adege), 12,5 s gardées en aller-retour, **approuvé par le
+  propriétaire** (« parfait », 2026-11-11 ; l'image se valide sur les vidéos) ; écartés : étoiles jusqu'au lever du jour (137617 : terne, et l'aube reviendrait à chaque boucle),
+  soir bleu avec un palmier (20836 : ce n'est pas la nuit, 1080p), mer de nuages (368458 : trop clair sous le texte) ;
+- deux outils faits au passage : les sources lues dans le registre, un hadith lu dans un short.
+
+**Script validé par le propriétaire le 2026-11-11** (« je valide le script », `script_validated` des quatre
+fichiers). **Voix** : quatre requêtes, une par texte (run 15 de `voice-test`, aucune refusée), prises dans
+`content/trial/takes/` ; chaque phrase retrouvée. Durées avec la voix : 1:49, 2:04, 1:57, film 7:36.
+
+**Rendu et validation** (2026-11-11) : les sept vidéos par le workflow `film` (film 7:36 ; shorts 1:49, 2:04,
+1:57), corrigées d'un « ﷺ » mal dessiné dans les sous-titres anglais (`docs/history.md`, tâche 44), puis
+**validées par le propriétaire** (« je valide tout » : voix, montage, couvertures, vignette, rappel, ambiance),
+avec les huit versets, Tirmidhi 3505 et sa lecture. **Reste** : ses textes à coller
+(`docs/retention/publication-dua.md`), qu'il n'a pas encore validés.
+
+### Fiche : Dhul-Qarnayn dans le modèle (skill `choose-format`, 2026-11-11)
+
+**Choix du propriétaire (2026-11-11)** : Dhul-Qarnayn est le thème suivant, après le du'a.
+
+**Ce qu'est l'épisode publié** (`content/episodes/qarnayn.yaml`, cinq reels, 7:38) : qui il est et la force donnée
+(18:83-85), le couchant et le levant (18:86-91), le barrage demandé et l'argent refusé (18:92-95), le fer et le
+cuivre, « رحمة من ربي » (18:96-98), « إن شاء الله » (Tirmidhi 3153, 18:23-24). Ses 19 sources et la lecture de
+Tirmidhi 3153 (Yusuf ibn Nuh Ahmad, 15 s) sont validées et restent ; les versets sont déjà coupés dans la récitation.
+
+**Ce qui ne passe pas tel quel dans le modèle** :
+
+- **Il raconte puis récite** : chaque verset est d'abord dit en égyptien par la narration (« قال: اللي ظلم… هنعاقبه »),
+  puis récité. Dans le modèle, la narration pose la question, le verset répond, la narration dit le sens.
+- **Son premier reel ne fait qu'installer** (qui il est, la force donnée) et finit sur « تابعنا عشان تعرف لقى إيه
+  هناك » : c'est le défaut mesuré sur khidr-01. Son accroche est une question au spectateur (« ربنا فتحها عليك؟ »).
+- **Deux de ses quatre étapes montrent des gens** (le peuple du couchant, celui du levant, celui des deux
+  montagnes) : le modèle ne dessine personne. Il reste des lieux et des choses, et il y en a : une source sombre où
+  le soleil se couche, une plaine nue au lever, un défilé entre deux parois, des blocs de fer, un feu, du cuivre.
+
+**Durées de récitation** (Tawfiq As-Sayegh, coupes du dépôt) : 18:83-85, 19 s ; 18:86-88, 50 s ; 18:89-91, 22 s ;
+18:92-95, 48 s ; 18:96-98, 47 s ; soit 3:07 pour 18:83-98, plus 18:23-24, 27 s, et le hadith lu, 15 s. Un film
+d'environ 7:30.
+
+**Recommandé : trois shorts, un par épreuve de la force, et le film qui les relie.** La même force, trois questions
+différentes posées à celui qui l'a :
+
+| Short | Le fait qui l'ouvre | Versets (récitation) | La question | Ce qui est dessiné (des lieux, des choses) |
+| --- | --- | --- | --- | --- |
+| 1. Le couchant | il arrive là où le soleil se couche, et il lui est laissé le choix sur tout un peuple : punir, ou bien traiter | 18:86-88 (50 s) | que fais-tu de ceux qui sont sous ta main ? La justice : celui qui fait le mal en répond, celui qui fait le bien est bien traité | le soleil qui descend sur une eau sombre (le clip), des habitations au bord, éteintes puis éclairées |
+| 2. L'argent refusé | on lui propose de l'argent pour bâtir un barrage, il le refuse, et il demande leurs bras | 18:92-95 (48 s) | que prends-tu à ceux qui ont besoin de toi ? Rien : ce que Dieu lui a donné vaut mieux, et il les fait travailler avec lui | un défilé entre deux parois, de jour ; un tribut posé, laissé là ; des outils |
+| 3. « رحمة من ربي » | il bâtit ce que personne ne peut franchir ni percer, et il dit : ce n'est pas moi | 18:96-98 (47 s) | que dis-tu quand tu as réussi ? « C'est une miséricorde de mon Seigneur », et rien ne dure | les blocs de fer entre les deux parois, le feu, le cuivre coulé, le barrage fini |
+
+- **Ce qui distingue les parties** : le pouvoir sur les gens, le pouvoir de prendre, le pouvoir d'avoir réussi. La
+  fin de chaque short nomme l'épreuve qu'on vient de voir et annonce la suivante. C'est la lecture de la session
+  (l'ancien épisode disait : la force est un dépôt, l'aide sans profit, la réussite est une miséricorde) ; le
+  propriétaire a peut-être la sienne, comme il avait la sienne pour Moussa et al-Khadir.
+- **Le film** (environ 7:30) ajoute : l'ouverture sur les trois images ; qui il est, en trois versets (18:83-85 :
+  le Coran ne dit ni son nom ni son époque, il dit ce qu'il a fait de ce qu'il a reçu) ; **le levant** entre le
+  premier et le deuxième short (18:89-91, 22 s : un peuple sans abri devant le soleil, et « Nous savions tout ce
+  qu'il avait ») ; la conclusion, « إن شاء الله » (Tirmidhi 3153, puis 18:23-24).
+- **Le levant n'a pas son short** : 22 secondes de versets, et le Coran ne dit pas ce qu'il y fit. Dans le film,
+  il se montre par le clip seul : une plaine nue au lever du soleil, rien de dessiné, puisque le verset dit qu'il
+  n'y a rien entre eux et le soleil.
+
+**Autre possibilité : un quatrième short, « إن شاء الله »** (Tirmidhi 3153 et 18:23-24, 42 s de citations). Il
+tient seul et il se partage bien (une phrase que tout le monde dit). Contre : c'est un hadith sur la fin des temps
+(Gog et Magog creusent chaque jour), donc une image qui ne peut montrer que le barrage ; et il clôt mieux le film
+qu'il n'ouvre un short. La session le garde pour la conclusion du film et laisse le propriétaire trancher.
+
+**Ce que la session se reproche et surveille** :
+
+- **18:86** : le soleil « se couche dans une source boueuse » est ce qu'il voit de là où il est, pas un fait
+  d'astronomie. L'ancienne réplique validée disait « شافها كأنها بتغرب » ; la traduction du registre dit « [as if] ».
+  La réplique du modèle doit garder ce « كأنها », et se vérifie dans un tafsir avant le script.
+- **Gog et Magog ne sont jamais dessinés**, ni le barrage rasé de 18:98 (la promesse de la fin : l'invisible n'est
+  pas figuré). Le texte et la récitation seulement.
+- **Trois images qui risquent de se ressembler** : deux shorts sur trois se passent au même défilé. Il faut deux
+  clips différents (de jour et de loin pour l'argent refusé ; au crépuscule et de près, avec le feu, pour le
+  barrage), sinon on refait l'erreur de la lune du du'a.
+
+**À faire de nouveau** : aucune source (tout est validé) ; trois ou quatre clips à chercher pour le plan (un
+coucher de soleil sur une eau sombre, un défilé de jour, le même genre de lieu au crépuscule, une plaine nue au
+lever) et à montrer au propriétaire ; trois dessins ; trois ambiances à choisir (une eau calme le soir, le vent dans
+un défilé, un feu). **Voix** : quatre requêtes (trois shorts, le film), une journée. **Rendu** : par le workflow
+`film` s'il a tourné une fois, sinon dans la session.
+
+**Décisions du propriétaire (2026-11-11, « ok go with your recommendations »)** : trois shorts (le couchant,
+l'argent refusé, « رحمة من ربي ») et le film ; le levant et « إن شاء الله » dans le film seulement ; le fil des
+trois épreuves de la force (sur les gens, de prendre, d'avoir réussi).
+
+**État (2026-11-11)** : script **validé** (« je valide le script »), voix faite, **clips et ambiances approuvés**
+(« je valide tout », après les trois shorts ; les ambiances sont les trois enregistrements du premier film, et les
+candidates notées un moment ne sont pas retenues). Trois points faibles traités à sa demande (`docs/history.md`,
+tâche 46) : la voix du premier short remontée au niveau de ses versets, la réplique « وبعد كل ده… » coupée en
+deux lignes, le soleil sur la couverture du premier short. Durées : 2:06, 1:54, 1:51, film 8:24. **Vidéos et textes à
+coller validés par le propriétaire le 2026-11-12** (`validated` des quatre fichiers).
+
+## Série de shorts : « آية وحكايتها », un verset et son récit (2026-11-11)
+
+Demande du propriétaire : une série de shorts, « un ayah ou un mot ou plus », avec le tafsir et, si possible,
+l'histoire de l'ayah. Sa décision (« Ok go avec tes recommandations ») : les recommandations de la session, ci-dessous.
+
+**Ce qu'est un short de la série** (il tient seul ; pas de film) : le fait le plus étrange du récit de révélation, sur
+la première image ; ce que le verset change pour le spectateur ; le verset récité ; son sens, d'après un tafsir nommé ;
+ce qu'on ne voit pas ; un exemple de vie ; la phrase à retenir ; le short suivant ; l'appel à suivre.
+
+**Le choix d'un verset, cinq filtres** :
+
+1. un récit de révélation dans les recueils de la politique (Bukhari, Muslim, Tirmidhi jugé sahih ou hasan par
+   al-Albani), retrouvé sous son numéro dans hadith-api ; les autres récits des livres de causes de révélation ne se
+   racontent pas ;
+2. un fait qu'on peut montrer par une chose ou un lieu, rien de l'invisible ;
+3. 15 à 40 s de récitation, en versets entiers ;
+4. un sens sur lequel les tafsirs de la politique s'accordent : ni verset de jugement juridique, ni verset disputé ;
+5. ce que le spectateur y gagne, en une phrase.
+
+**Les sources** : le récit est raconté par la narration avec ses mots, sa référence écrite à l'écran (jamais lu par la
+voix de synthèse, aucune parole du Prophète ﷺ dite par elle) ; le sens vient d'al-Muyassar, la leçon d'as-Sa'di,
+écrits par leur nom ; nos répliques sans tafsir (exemples, « ce qu'on ne voit pas ») sont signalées au propriétaire.
+
+**Le pilote** (`content/trial/ayah.yaml` ; script : `docs/scripts/ayah.md`, à valider) :
+
+| Short | Verset | Le fait du récit | Ce qu'on y gagne | Estimé |
+| --- | --- | --- | --- | --- |
+| `caravan` | 62:11 (23 s) | un vendredi, une caravane de nourriture arrive pendant le prêche ; douze hommes restent (Muslim 863a, Bukhari 936) | la subsistance ne se perd pas à s'arrêter pour Dieu | 1:43 |
+| `duha` | 93:1-5 puis 93:6-8 (30 s) | malade deux ou trois nuits ; une femme vient dire qu'il a été abandonné (Bukhari 4950) | tard ne veut pas dire abandonné | 1:52 |
+| `hope` | 39:53 (23 s) | des gens qui avaient beaucoup tué et beaucoup commis l'adultère demandent s'il existe une expiation (Bukhari 4810) ; la narration dit « ذنوب كبيرة », sans les nommer (propriétaire, 2026-11-12) | aucun péché n'est trop grand pour revenir ; ce n'est pas une permission | 1:45 |
+
+**En réserve pour la série** : 49:2 et Thabit ibn Qays (Bukhari 4846, Muslim 119 : le récit vient après le verset) ; la
+sorte « un mot » (12:19, « سيارة » : « جماعة من المسافرين » selon al-Muyassar), plus légère, à essayer après le pilote.
+
+**État (2026-11-12)** : **le pilote est validé en entier par le propriétaire** : le script (« je valide le reste », une
+réplique changée à sa demande : l'accroche du short 3 dit « ناس عملوا ذنوب كبيرة… », sans nommer les deux péchés
+du récit), l'image de jour du short 1 (la prière du vendredi est à midi : plus de lampes, des traces de pas), puis
+« tout sur les 3 shorts » : les vidéos, les sources, les textes à coller. Release brouillon `ayah-candidate`, page
+du propriétaire à jour. **À publier par lui.** La dernière réplique du short 3 promet « le verset suivant et son
+récit » : la suite (réserve ci-dessus) attend son choix.
+
+### La suite de la série : trois versets candidats (session, 2026-11-12)
+
+**Décision du propriétaire (2026-11-12)** : « laisse-les comme candidats pour cette série ; je préfère qu'on commence à
+publier, ensuite on poursuit ». Rien n'est écrit ni enregistré avant son choix, qui se fera avec les premières
+mesures. Échéance : le short 3 (l'espoir) promet le verset suivant ; si la série sort un vendredi par semaine à
+partir du 20 novembre (`docs/retention/calendar.md`, proposé), le short 4 doit sortir le 11 décembre, donc le choix
+vers le 27 novembre (script, sa validation, voix, clips à lui montrer, dessins, rendu : environ une semaine).
+
+Cherchés avec les cinq filtres ; récits relus dans hadith-api, sens dans al-Muyassar et as-Sa'di (quran.ai),
+récitation de Tawfiq As-Sayegh mesurée sur mp3quran (lecture 17). Aucun n'est encore dans le registre.
+
+| Short | Verset | Le fait du récit | Ce qu'on y gagne | Dessin (choses et lieux) |
+| --- | --- | --- | --- | --- |
+| 4 | 24:22 (28 s) | Abou Bakr jure de ne plus rien donner à un parent pauvre, Mistah, qui avait pris part aux paroles contre sa fille ; le verset descend, il dit « بلى والله إني أحب أن يغفر الله لي » et rend la pension (Bukhari 4750 ; as-Sa'di le raconte) | pardonner à un proche qui t'a fait du mal : « ألا تحبون أن يغفر الله لكم » | une maison de Médine, une bourse posée devant une porte, qui revient |
+| 5 | 8:32-33 (40 s) | Abou Jahl demande à Dieu une pluie de pierres « si c'est la vérité » ; le verset répond (Bukhari 4648, Muslim 2796) | le pardon demandé retient le châtiment : « وهم يستغفرون » (al-Muyassar, as-Sa'di) | la vallée de La Mecque sous un ciel lourd, aucune pierre ; le ciel qui s'ouvre |
+| 6 | 9:118 (37 s) | Ka'b ibn Malik dit la vérité au lieu d'une excuse : cinquante nuits sans que personne lui parle, une lettre d'un roi qui l'invite, qu'il brûle dans un four ; la bonne nouvelle à l'aube, sur un toit (Bukhari 4418) | quand la terre se resserre, il n'y a de refuge qu'en Dieu ; la vérité l'a sauvé (as-Sa'di : « من عليهم بالصدق ») | une rue de marché vide, un four où brûle une lettre, un toit à l'aube |
+
+**Les points à trancher** :
+- **24:22** : le récit est dans celui de la calomnie contre Aïcha. La narration dirait « كلام وحش اتقال على بنته », sans
+  nommer l'accusation, comme pour `hope` (`sins-named`).
+- **9:118** commence par « وعلى الثلاثة », qui continue la phrase de 9:117 (« لقد تاب الله على النبي… »). Le sens tient
+  seul (al-Muyassar : « وكذلك تاب الله على الثلاثة »), mais 9:117-118 ferait environ une minute de récitation.
+- **Écartés** : 80:1-10 (Ibn Umm Maktum, Tirmidhi 3331), parce qu'al-Albani le juge « Sahih Isnaad », un jugement que
+  `content/policy.yaml` refuse ; 2:144 et 2:187, parce que ce sont des versets de jugement.
+- **En réserve** : 49:2 (Thabit ibn Qays, Bukhari 4846 : un gain moins direct pour le spectateur). 111:1-5 (Abou Lahab)
+  passe à la série « الإعجاز في القرآن » ci-dessous, à la demande du propriétaire.
+
+**Budget** : trois requêtes de voix (une par short, le jour où le script est validé), trois clips à vous montrer,
+trois dessins nouveaux, trois ambiances, un rendu GitHub Actions (environ 45 min).
+
+## Série proposée : « الإعجاز في القرآن » (idée du propriétaire, 2026-11-12)
+
+Demande du propriétaire : une série de deux ou trois shorts, comme la première. Son candidat : sourate al-Masad, parce
+que le Coran y annonce qu'Abou Lahab ira au Feu ; il l'a entendue, et s'il s'était fait musulman, il aurait démenti le
+Coran. La session en propose deux autres. **Rien n'est écrit** : comme la suite de « آية وحكايتها », la production
+attend les premières mesures (sa décision du même jour : publier d'abord).
+
+**Le cadre proposé** : des versets qui annoncent une chose avant qu'elle arrive, et la chose arrivée, écrite dans un
+tafsir de la politique ou un hadith de ses recueils. **Pas de « miracle scientifique »** : nos tafsirs ne le disent
+pas, ces lectures sont disputées entre savants, et une seule fausse expose la page et le Coran à la moquerie. Exemple :
+« في أدنى الأرض » (30:3) est souvent présenté comme « le point le plus bas de la terre » ; al-Muyassar lit « la terre
+la plus proche » (« أدنى أرض الشام إلى فارس »).
+
+| Short | Verset | Ce qu'il annonce | Ce qui est arrivé, et la source | Dessin (choses et lieux) |
+| --- | --- | --- | --- | --- |
+| 1 (propriétaire) | 111:1-5 (26 s) | Abou Lahab et sa femme iront au Feu | ils ne sont jamais devenus musulmans, « ni en apparence ni en secret » ; Ibn Kathir : « في هذه السورة معجزة ظاهرة ودليل واضح على النبوة… فكان هذا من أقوى الأدلة الباهرة على النبوة الظاهرة ». Le récit de la révélation : Bukhari 4971 (as-Safa, « تبا لك ») | la colline d'as-Safa au matin (« يا صباحاه »), des épines sur un chemin (al-Muyassar : elle en jetait sur le chemin du Prophète ﷺ) ; **aucune flamme** : le Feu est l'invisible |
+| 2 (session) | 54:43-46 (26 s) | « سيهزم الجمع ويولون الدبر », annoncé à La Mecque, avant l’émigration | al-Muyassar : « وقد حدث هذا يوم بدر » ; le Prophète ﷺ le récite à Badr (Bukhari 4875) ; Aïcha : ce passage est descendu à La Mecque quand elle était une petite fille qui jouait (Bukhari 4876, sur 54:46) | les puits et les dunes de Badr à l'aube, une tente ; aucun combat |
+| 3 (session) | 30:1-5 (38 s) | les Romains, vaincus par les Perses, vaincront « في بضع سنين » | al-Muyassar : « وقد تحقق ذلك فغلبت الروم الفرس بعد سبع سنين » ; as-Sa'di : « بضع », de trois à dix ans | deux empires sur une carte, une ville fortifiée, des étendards sans croix |
+
+**Les points à trancher** :
+- **Al-Masad, ce que nos sources ne disent pas** : qu'Abou Lahab a entendu la sourate. Le récit de la colère de sa femme
+  est chez Ibn Abi Hatim et al-Bazzar (cités par Ibn Kathir), hors des recueils de la politique. Le short dirait : elle est
+  descendue de son vivant, sur lui, par son nom, et il a vécu après. « S'il avait dit la shahada, même en mentant, le
+  Coran était démenti » est notre raisonnement, appuyé sur Ibn Kathir (« لا ظاهرا ولا باطنا ») : réplique signalée.
+- **L'objection qu'on entendra** (« un ennemi ne se convertit pas, ça ne prouve rien ») : Abou Soufyan, qui a combattu
+  le Prophète ﷺ, est devenu musulman (Bukhari 4280). Qu'un ennemi se convertisse était possible ; lui ne l'a pas fait.
+- **Ar-Rum** : le récit le plus connu, le pari d'Abou Bakr avec Quraysh, est jugé faible (« Daif ») par al-Albani
+  (Tirmidhi 3193, 3194) : il ne se raconte pas. Le récit jugé sahih (Tirmidhi 3192) dit autre chose : la sourate
+  serait descendue le jour de Badr, dans une autre lecture (« غَلَبَت »). Le short ne raconte donc pas de récit de
+  révélation : le verset, et son accomplissement d'après al-Muyassar.
+- **Badr** : Bukhari 4876 nomme 54:46, le verset suivant, et non 54:45 ; les deux sont dans le même passage, et
+  al-Muyassar dit l'accomplissement. Une bataille : rien du combat n'est dessiné.
+- **Écartés** : 48:27 (« لتدخلن المسجد الحرام ») : le retour de l'année suivante figurait déjà dans le traité
+  d'al-Hudaybiya (Bukhari 4252 : « وقاضاهم على أن يعتمر العام المقبل »), un sceptique dira que c'était négocié.
+  5:67 (« والله يعصمك من الناس », les gardes renvoyés, Tirmidhi 3046, hasan selon al-Albani) : fort, mais l'objection
+  du poison de Khaybar (Bukhari 4428) demande plus qu'un short.
+- **En réserve** : 2:23-24 (36 s), le défi lui-même (« ولن تفعلوا » ; al-Muyassar : « وستعجزون مستقبلا لا محالة ») :
+  le cœur du mot « إعجاز », mais sans fait qu'on peut montrer.
+- **La forme** : celle de « آية وحكايتها », sauf l'exemple de vie, qui va mal à une prophétie. À sa place, ce que ça
+  change pour le spectateur : si le Coran a dit vrai sur Abou Lahab, Badr et Rome, ses promesses sont vraies (réplique
+  de la session, signalée).
+- **Le nom** : « الإعجاز » promet souvent le scientifique ; « قالها القرآن… وحصلت » dit exactement ce que la série
+  montre. À lui de choisir.
+
+**Budget** : trois requêtes de voix, trois clips à lui montrer, trois dessins, trois ambiances, un rendu GitHub
+Actions ; quatre sources de hadith et trois de tafsir à inscrire au registre.
+
+### Décision du propriétaire (2026-11-12) : Abou Lahab et deux scientifiques
+
+« Je veux Abou Lahab et deux scientifiques ; je suis avec toi, on ne dit pas que la science a prouvé le Coran ; mon
+idée : le Coran le dit il y a plus de 1400 ans, et la science l'a établi il y a quelques années ; علم الأجنة في
+القرآن est un exemple. » Badr et Rome restent en réserve.
+
+**L'embryologie : objection de la session, à trancher par lui.** Nos trois tafsirs lisent 23:14 avec des étapes de
+quarante jours : as-Sa'di : علقة « بعد مضي أربعين يوما من النطفة », مضغة « بعد أربعين يوما », les os et la chair
+« في الأربعين الثالثة » ; al-Muyassar : « بعد أربعين يوما مضغة » ; Ibn Kathir : quarante jours à chaque étape
+(Bukhari 3208, le hadith d'Ibn Mas'oud). L'embryologie d'aujourd'hui place les membres, puis les premiers os, dans
+les huit premières semaines. Une réplique de sens doit reposer sur un tafsir nommé (règle du projet) : on dirait donc
+ce que la science contredit, ou l'on s'écarte des trois. Ibn Kathir écrit bien « علقة حمراء على شكل العلقة
+مستطيلة » (en forme de sangsue, allongée), mais aussi que la مضغة n'a « ni forme ni trait ». Muslim 2645 (quarante-deux
+nuits, puis forme, ouïe, vue, peau, chair, os) va dans le sens de la science, et les savants concilient les deux
+hadiths ; pas en 1:40. **Recommandation de la session** : 51:47 et 6:125, où un tafsir de la politique (al-Muyassar)
+porte les mots dont on a besoin.
+
+**Ce qu'on dira honnêtement** :
+- 6:125 : la chronique Han (~30 av. J.-C.) décrit déjà le malaise des hauts cols ; ce qu'on ne savait pas, c'est
+  pourquoi (l'air diminue avec la hauteur, Pascal 1648, à sourcer). Ne pas dire « personne ne savait qu'on respire
+  mal en hauteur ».
+- 51:47 : l'univers immuable d'Aristote et de Ptolémée ; Einstein qui, en 1917, ajoute une constante pour le garder
+  immobile ; Hubble en 1929 (à sourcer) ; nos tafsirs disent « لموسعون لأرجائها » (al-Muyassar).
+- « Il y a quelques années » : 1648 et 1929 ; on dira la date.
+- **Le registre** n'a pas de type pour une source scientifique : un fichier (`content/sources/science.yaml` : id,
+  référence, lien) et `rules.py` qui l'accepte, à faire avec le script.
+
+### Tout validé (propriétaire, 2026-11-13 : « je valide tout, garde إذا et la signature »)
+
+Les quatre vidéos (voix, montage, couvertures, ambiance), leurs textes à coller et leurs 38 sources (versets, hadiths,
+tafsir, sources scientifiques) ; « إذا » gardé dans « سألهم إذا كانوا بيصدقوه » ; la signature 41:53 gardée à la fin
+d'Abou Lahab. Release brouillon `signs-candidate`. À publier par lui.
+
+### Le script entier validé (propriétaire, 2026-11-12 : « je valide les titres et les nouveaux débuts »)
+
+Les quatre titres (ceux de `sky` et `womb` : les recommandations de la session) et les premières répliques qui les
+disent sont validés : **tout `docs/scripts/signs.md` est validé.** Aucune voix n'est faite ; la session recommande
+d'attendre les premières mesures (vendredi 13) avant les quatre prises, à sa décision. Avant la voix ou en même temps :
+les sources au registre (« proposé »), un type « source scientifique », les coupes de récitation (111:1-5, 51:47-49,
+6:125, 23:12-14, 41:53 jusqu'au premier arrêt), les fichiers des épisodes (`content/trial/`) et la composition du style.
+
+### Deux titres validés ; les débuts alignés sur les titres (propriétaire, 2026-11-12)
+
+« Je valide « كلمة واحدة كانت هتكذّب القرآن » et « حتى أينشتاين غلط فيها » ; ces titres attirent, je cherche ce style ; je
+cherche encore des titres pour les autres ; et il faut changer les hooks du début avec ce qui est dans le titre. »
+**Inscrit** : les titres de `lahab` et `universe` sont validés. **Proposés**, dans ce style : `sky` « اللي بيحصل فوق ٨
+كيلو… القرآن وصفه » (sur la lecture d'al-Muyassar), `womb` « قبل الميكروسكوب بألف سنة… القرآن وصف شكلك » (sur la forme
+qu'Ibn Kathir donne à la علقة ; premiers microscopes vers 1590-1620, à sourcer). **Les premières répliques disent
+maintenant le titre** (`docs/scripts/signs.md`, marquées « à valider ») ; pour `universe`, la première image devient
+l'équation d'Einstein, sa constante Λ en or, et le schéma de Ptolémée passe à la troisième réplique. Dans `lahab`, la
+réplique « ولو كان قالها… كان كذّب الآية » disparaît : la première la dit. Durées : 1:43, 1:31, 2:01, 2:04.
+
+### Les quatre scripts validés ; les titres à challenger (propriétaire, 2026-11-12)
+
+« Je valide l'épisode 2 et les deux répliques, mais il faut challenger les titres car ils attirent : que penses-tu ? »
+**Inscrit** : les quatre scripts sont validés (`docs/scripts/signs.md`). **Titres proposés par la session** (couverture,
+puis titre de publication « en · ar ») : `lahab` « كلمة واحدة كانت هتكذّب القرآن! » ; `universe` « حتى أينشتاين غلط
+فيها! » ; `sky` « طلعوا السما… واتنين ما رجعوش! » ; `womb` « شكلك وإنت ٣ مللي… القرآن سمّاه ». Avis donné : dans le fil
+des Reels et des Shorts, on voit la première image avant le titre ; le titre compte sur YouTube (recherche, suggestions)
+et sur la grille du profil. Un titre doit être tenu par la vidéo (khidr-01). À son choix.
+
+### Scripts validés, et l'épisode « الكون ثابت » ajouté (propriétaire, 2026-11-12)
+
+« Je valide ta recommandation et je valide les scripts. Mais où est le story « الكون ثابت » ? » **Inscrit** : les scripts
+de `lahab`, `sky` et `womb` sont validés, avec la réplique du miroir (« بص في المراية… أول آية شفتها في حياتك… هي
+إنت. »). La session avait lu « fais les 3 : Abou Lahab, 6:125 et l'embryologie » comme mettant 51:47 en réserve, et
+l'avait dit ; il le veut. **Ajouté en deuxième épisode, `universe`** (51:47-49, 19 s : 51:47 seul fait 8 s), à valider en
+entier ; deux répliques validées changent pour lui faire place, à revalider : l'annonce de la fin de `lahab` (« الحلقة
+الجاية: عن الكون كله. ») et le compte de la fin de `womb` (« أربع آيات: راجل… وكون… وصدر… وجنين. »). Ordre : un homme,
+le ciel qui s'étend, la poitrine qui se resserre, l'embryon. Durées : 1:47, 1:29, 1:57, 2:05. **La voix attend** : les
+répliques qui annoncent l'épisode suivant dépendent de cet ordre.
+
+### Ses corrections du script (propriétaire, 2026-11-12)
+
+« Pour l'embryologie, oui : ne cite pas ce qui est prouvé faux ; le Coran n'a pas mentionné les 40 jours ; le tafsir
+est un effort personnel d'Ibn Kathir et des autres. Et après « إحنا مش بنقول إن العلم أثبت القرآن… », mets toujours
+آيات et سنريهم آياتنا. Et enlève « المفسرين القدام، زي ابن كثير… حاجة مستحيلة ». » **Fait** : les quarante jours ne
+sont pas dits (avis donné : ils viennent de Bukhari 3208, un hadith de notre politique, et non d'un tafsir seul ;
+l'effort des savants porte sur sa lecture) ; la lecture des anciens de 6:125 est retirée ; après la réplique
+d'honnêteté, la voix dit « القرآن كتاب آيات » et **le récitateur** récite 41:53 jusqu'au premier arrêt (« ۗ »)
+pendant que « سنريهم آياتنا » s'écrit : la voix de synthèse ne dit pas des mots du Coran. Durées : 1:49, 2:05, 2:11.
+Question posée : la même signature pour clore l'épisode d'Abou Lahab, qui n'a pas de réplique d'honnêteté ?
+
+**Puis** (le même soir) : « إحنا مش بنقول إن العلم أثبت القرآن… القرآن مش كتاب xx… القرآن كتاب آيات : à supprimer ». Fait : la
+réplique disparaît des épisodes 2 et 3 ; la signature (41:53 récité, le titre écrit) suit directement la réplique qui
+dit ce que la science a vu bien plus tard. Aucune réplique ne dit que la science prouve le Coran. Durées : 1:49,
+1:57, 2:03.
+
+### Le style validé, les trois épisodes choisis (propriétaire, 2026-11-12 : « oui je valide ; et fais les 3 : Abou Lahab, 6:125 et l'embryologie »)
+
+Lu comme : **le style des images est validé** ; **les trois épisodes sont Abou Lahab (111:1-5), 6:125 et
+l'embryologie (23:12-14)** ; 51:47, qui a servi aux images de style, passe en réserve (dit au propriétaire, à lui de le
+démentir). L'embryologie est son choix, fait en connaissant l'objection de la session (les quarante jours de nos trois
+tafsirs). Script envoyé le même soir : `docs/scripts/signs.md` (épisodes `lahab`, `sky`, `womb` ; 1:49, 2:05, 1:59
+estimés), avec ce qu'il ne dit pas et pourquoi, et quatre points à trancher. **Aucune requête de voix avant son « je
+valide le script ».**
+
+### Le titre et les images de style (propriétaire, 2026-11-12 : « ok pour سنريهم آياتنا, fais les images de style »)
+
+**Titre validé : « سنريهم آياتنا »** (41:53), écrit à l'écran, jamais dit par la voix. Trois images de style d'un
+épisode sur 51:47 (`docs/retention/signs-style-51-47.jpg`, faites par `docs/retention/signs-style-frame.py`, sans
+voix ni script) : la certitude d'autrefois sur le schéma de Ptolémée ; « ١٩٢٩ » en grand sur le premier champ profond
+de Webb, la coupole en silhouette, la source écrite ; le verset (texte et traduction lus dans l'API de quran.com) avec
+« لموسعون » en or sur le champ ultra-profond de Hubble. En bas de chaque image, la frise des dates (أرسطو, بطليموس,
+القرآن en vert, أينشتاين, هابل), le point raconté allumé. Le numéro d'épisode est dans un anneau : « · ١ » se lisait
+« ١٠ ». **Les photos de l'ESA (Webb, Hubble) sont sous CC BY 4.0 et leurs conditions exigent le crédit sur la vidéo
+elle-même** (« not hidden… burned in »), pas seulement dans la description : il est écrit en bas de l'image.
+
+### Un style à part pour cette série (propriétaire, 2026-11-12 : « ne te limite pas à l'existant ; cette série demande un style différent pour le hook et l'histoire »)
+
+Il montre un article de quran-m.com (« كل في فلك يسبحون بين التفسير اللغوي والرؤية الفلكية الحديثة », 2025). **Ce
+qui s'en garde** : mettre côte à côte ce que disaient les savants anciens et ce que la science a vu. **Ce qui ne
+s'en garde pas** : sa conclusion (« preuve de l'origine divine »), et sa thèse : « فلك » au singulier serait la
+galaxie, quand al-Muyassar lit « ولكل منهما مدار يجري فيه » et Ibn Kathir « فلك بذاته… وفلك آخر » ; « chacun sur son
+orbite » est aussi le modèle de Ptolémée ; ses références ne donnent pas ses chiffres.
+
+**Proposé par la session** : une enquête, avec une frise des dates.
+1. La certitude d'autrefois, avec sa date, sur la première image (« لمدة ألفين سنة… أذكى عقول الدنيا كانت متأكدة:
+   السما ثابتة. »), sur un schéma dessiné (les sphères de Ptolémée).
+2. La date qui casse tout (« لحد سنة ١٩٢٩. »), la découverte en deux répliques, une image du ciel.
+3. La question (« طب كتاب نزل من ١٤٠٠ سنة… قال إيه؟ »), puis le verset récité.
+4. Ce que disaient nos tafsirs, nommés, et le mot en or.
+5. La réplique d'honnêteté, marque de la série (« مش بنقول إن العلم أثبت القرآن… »).
+6. Ce que ça change pour le spectateur, l'épisode suivant, l'appel à suivre.
+
+L'image : des photographies du ciel (NASA, domaine public ; ESA, Hubble et Webb, CC BY 4.0 : à vérifier) et des
+schémas animés dessinés par le code (orbites, sphères, frise des dates en or), la source scientifique écrite à
+l'écran comme une référence de hadith ; personne dessiné (le télescope et sa coupole, jamais l'astronome) ; pour Abou
+Lahab, aucune flamme. Un arc possible : 51:47 (le ciel qui s'élargit) et 6:125 (la poitrine qui se resserre). À
+montrer d'abord en trois images de style, sans voix.
+
+### Ce que la session retient d'un article d'al-Alukah (propriétaire, 2026-11-12 : « regarde s'il y a quelque chose d'utile »)
+
+« الإعجاز العلمي في القرآن », Salah Najib ad-Daqq, al-Alukah, 2017 : trente-six exemples, tirés d'ouvrages de seconde
+main (as-Sabouni, « التبيان » ; Nabil Haroun, « كشاف الإعجاز العلمي »), sans référence scientifique, sans règle, sans
+avis contraire. Sa définition est celle du propriétaire (« إخبار القرآن عن حقائق علمية لم تكن معروفة وقت نزوله ») ;
+il ne vérifie jamais la seconde moitié : c'est ce que notre frise des dates fera. **Ce qui sert** :
+- **41:53, cadre et titre possible de la série** : « سنريهم آياتنا في الآفاق وفي أنفسهم حتى يتبين لهم أنه الحق ».
+  Ibn Kathir y lit les victoires (Badr, la conquête de La Mecque : Mujahid, al-Hasan, as-Suddi) et ce dont l'homme est
+  fait, « كما هو مبسوط في علم التشريح » ; al-Muyassar : les victoires, ce qui arrive dans les cieux et la terre, et
+  « بديع آيات الله وعجائب صنعه » dans les hommes. Le verset couvre donc les deux sortes d'épisodes, prophéties et
+  création. Titre proposé : « سنريهم آياتنا », écrit à l'écran, jamais dit par la voix (elle ne dit pas le Coran).
+- **6:125** y figure (n° 10, d'après as-Sabouni) : un classique du genre, et al-Muyassar le dit.
+- **15:22, « وأرسلنا الرياح لواقح »**, candidat nouveau : al-Muyassar et Ibn Kathir disent que les vents fécondent les
+  nuages (Ibn Mas'oud) et les arbres. Pour la science, à sourcer avant d'en parler : les gouttes des nuages se forment
+  sur des poussières que porte le vent (Aitken, 1880) ; le rôle du vent dans la pollinisation (XVIIᵉ-XVIIIᵉ siècles).
+  Faiblesse : on fécondait déjà les palmiers à la main à Médine (Muslim 2363).
+- Sa phrase « القرآن ليس كتاب طب أو هندسة » va dans le sens de notre réplique d'honnêteté.
+
+**Ce qui ne sert pas** : la plupart des trente-six. Exemples : 10:61, « ذرة » serait l'atome, quand al-Muyassar lit
+« زنة نملة صغيرة » ; 96:2, le spermatozoïde serait la علقة, quand 23:14 met la نطفة avant elle ; 72:8-9, les météores,
+gardiens du ciel contre les djinns, c'est l'invisible ; 16:115, des chiffres de maladies sans source.
+
+### Le côté scientifique : la recherche demandée (propriétaire, 2026-11-12)
+
+Sa demande : « des choses que le Coran dit depuis plus de 1400 ans, prouvées scientifiquement ces dernières années, en
+disant ce qu'on savait à l'époque ». Onze affirmations courantes, chacune passée à trois questions : que disent nos
+tafsirs (al-Muyassar, as-Sa'di, Ibn Kathir, quran.ai) ; le savait-on avant 632 ; que dit la science. Les dates de
+science marquées « à sourcer » sont de mémoire et se vérifient avant tout script.
+
+| Verset | L'affirmation | Nos tafsirs | Connu avant 632 ? | Verdict |
+| --- | --- | --- | --- | --- |
+| 51:47 « وإنا لموسعون » | l'univers en expansion | Ibn Kathir : « قد وسعنا أرجاءها » (nous l'avons faite vaste) ; al-Muyassar et as-Sa'di : « لموسعون لأرجائها وأنحائها » (as-Sa'di ajoute : par la subsistance) | non : un ciel immuable (Aristote, Ptolémée) ; l'expansion : Lemaître 1927, Hubble 1929 (à sourcer) | **le meilleur candidat**, mais « qui s'étend » est une lecture moderne que la grammaire permet ; nos tafsirs disent « vaste » |
+| 6:125 « كأنما يصعد في السماء » | on respire mal en altitude | **al-Muyassar : « كحال من يصعد في طبقات الجو العليا فيصاب بضيق شديد في التنفس »** ; Ibn Kathir et as-Sa'di : l'image d'une chose impossible | en partie : maux de tête et vomissements sur les hauts cols, dans une chronique Han (~30 av. J.-C.) ; que l'air diminue avec la hauteur : Pascal, 1648 (à sourcer) | **candidat** : un de nos tafsirs le dit, les deux classiques non |
+| 24:40 « موج من فوقه موج » | les vagues internes | al-Muyassar : des vagues sur des vagues, puis des nuages : une parabole des œuvres des mécréants | l'obscurité du fond : connue des plongeurs ; les vagues internes : Nansen 1893, Ekman 1904 | faible : la lecture « vagues internes » est la nôtre, pas celle du tafsir |
+| 23:12-14 | l'embryologie | al-Muyassar : « علقة أي دما أحمر », quarante jours | Galien (années 170) décrit d'autres étapes : semence, croissance, trois organes, toutes les parties | **à éviter** : « des os puis la chair » est discuté (muscles et cartilage se forment ensemble), un embryon n'est pas du sang ; c'est l'affirmation la plus attaquée |
+| 21:30 « كانتا رتقا ففتقناهما » | le Big Bang | al-Muyassar : collés sans pluie ni plantes, puis séparés : la pluie et les plantes ; adressé aux mécréants (« أولم ير »), qui le voyaient | — | **rejeté** : le tafsir dit autre chose |
+| 55:19-20 « بينهما برزخ » | la barrière entre mers | al-Muyassar : l'eau douce et l'eau salée se rencontrent sans se mêler | oui : visible à l'embouchure de tout fleuve | faible |
+| 78:7 « والجبال أوتادا » | les racines des montagnes | al-Muyassar : « رواسي كي لا تتحرك بكم الأرض » | — | **risqué** : les montagnes ont des racines (isostasie, XIXᵉ siècle), mais n'empêchent pas les séismes ; l'argument se retourne |
+| 57:25 « وأنزلنا الحديد » | le fer venu de l'espace | al-Muyassar : « وأنزلنا لهم الحديد » ; le même verbe pour le bétail (39:6 : « وأنزل لكم من الأنعام ») | — | **rejeté** |
+| 75:4 « نسوي بنانه » | les empreintes digitales | al-Muyassar : les doigts refaits comme avant la mort, à la résurrection | — | **rejeté** |
+| 71:16, 25:61 | la lune reflète la lumière | al-Muyassar : la lune une lumière, le soleil une lampe | oui : Anaxagore, Vᵉ siècle av. J.-C. (à sourcer) | **rejeté** : on le savait |
+| 30:3 « في أدنى الأرض » | le point le plus bas du monde | al-Muyassar : « أدنى أرض الشام إلى فارس » (la terre la plus proche) | — | **rejeté** |
+
+**L'arme se retourne.** Dire « la science prouve le Coran », c'est accepter que la science le juge. Les critiques
+répondent alors avec nos propres sources : Muslim 315 (le sexe de l'enfant selon le liquide qui « l'emporte »,
+« فعلا مني الرجل مني المرأة أذكرا »), opposé à la génétique, et 18:86 (« تغرب في عين حمئة »), qui est dans notre
+film de Dhul-Qarnayn. Les savants y répondent, mais pas en 1:40, ni dans les commentaires.
+
+**Les savants sont partagés** : al-Shatibi (al-Muwafaqat) refuse de lire dans le Coran des sciences que les premiers
+Arabes ne connaissaient pas (« أمية الشريعة ») ; Ibn Ashour le discute dans la quatrième introduction de son tafsir.
+Ce n'est pas une affaire réglée.
+
+**Ce que la session recommande** : la série reste sur les prophéties. Si le propriétaire veut un épisode
+scientifique, un seul, et sans le mot « preuve » : 6:125 (al-Muyassar le dit) ou 51:47 (la lecture classique dite à
+côté de la moderne). Il faudrait alors une source scientifique dans le registre (Pascal, Hubble), qui n'a aujourd'hui
+aucun type pour elle : un outil et une règle à ajouter, à sa décision.
+
+## Séries proposées (session, 2026-11-13 ; rien n'est choisi)
+
+Demande du propriétaire : « what's next ? Peux-tu suggérer d'autres types de séries ? ». **Avis donné d'abord** : la
+grille validée n'a plus de place (vendredi et samedi pris, dimanche libre) ; une troisième série maintenant supprime le
+jour libre et divise les mesures (trois séries, une mesure chacune par semaine). Choisir les candidates maintenant, en
+lancer une quand une place s'ouvre (une série que les mesures jugent faible, ou après le 12 décembre). La seule
+échéance est l'histoire du 30 novembre : **les gens de la caverne recommandés** (dernière histoire d'Al-Kahf après
+Moussa et al-Khadir et Dhul-Qarnayn, fiche plus bas) ; sujet à décider maintenant, script après les premières mesures
+(vers le 18 novembre), production du 19 au 26.
+
+Faits des accroches vérifiés le 2026-11-13 (quran.ai : tafsirs et concordance ; hadith-api pour les numéros) :
+
+| Série | Ce que c'est | Accroches vérifiées | Pour | Contre |
+| --- | --- | --- | --- | --- |
+| **« كلمة من القرآن »** (recommandée) | un mot rare du Coran, son sens d'après un tafsir nommé, le verset récité, la leçon | فتيل، نقير، قطمير : trois mots pour trois choses minuscules de la noix de datte (al-Muyassar sur 4:49 : le fil dans la fente ; 4:53 et 4:124 : le creux au dos ; 35:13 : la fine peau blanche) ; كنود (100:6) : « الذي يعد المصائب، وينسى نعم ربه » (al-Hasan, cité par Ibn Kathir ; le hadith qu'il cite ensuite, il le dit faible : à ne pas employer) | le nom et le premier contenu de la page (Quran Words Daily : le sens d'un mot) ; un verset et un tafsir par short ; un objet à dessiner | une leçon de vocabulaire si l'accroche n'est pas le sens le plus étrange ; voisine du mot « اختارها القرآن » de l'épisode de l'embryon |
+| **« سورة اسمها… »** | une sourate qui porte le nom d'un animal ou d'une chose (العنكبوت، النمل، النحل، الفيل، البقرة، الحديد) | l'araignée n'est que dans 29:41 (deux fois dans ce verset) ; la fourmi n'est que dans 27:18 (concordance) | la plus visuelle : des animaux et des choses, ce que le modèle dessine | la tentation des « miracles » (l'araignée femelle, l'abeille) : le terrain de « سنريهم آياتنا », avec ses précautions |
+| **« سمعوا الآية… »** | ce qu'ont fait des Compagnons en entendant un verset | Abou Talha donne Bayruha, son plus beau jardin, en entendant 3:92 (Bukhari 1461) ; le vin versé jusqu'à couler dans les rues de Médine (Bukhari 2464) ; Omar s'arrête à 7:199 (Bukhari 4642) | des histoires vraies, des accroches fortes | proche de « آية وحكايتها » (une variante, plutôt qu'une série de plus) ; une lecture humaine de chaque hadith à trouver |
+| **« حكاية حكاها النبي ﷺ »** | une histoire racontée par le Prophète ﷺ, un short chacune | l'homme qui abreuve un chien assoiffé (Bukhari 2363) ; la femme et le chien (Bukhari 3467) ; le marchand qui faisait grâce aux débiteurs (Bukhari 2078) ; l'homme qui demande qu'on le brûle par crainte de Dieu (Bukhari 3481) ; les trois hommes de la grotte (Bukhari 2272) | le format éprouvé : une histoire | le hadith porte l'histoire : une lecture humaine par short à trouver, et la narration ne peut pas redire ses mots |
+| « آية لكل موقف » (déconseillée) | un verset pour un moment de vie (l'angoisse, l'injustice) | — | — | s'ouvre sur une question générale sur la vie du spectateur : l'accroche qui a perdu trois spectateurs sur quatre (khidr-01) |
+
+**Décision du propriétaire (2026-11-13, « go with your recommendations »)** : les gens de la caverne pour le 30 novembre
+(fiche plus bas) ; « كلمة من القرآن » est la troisième série, lancée quand une place s'ouvre, son script pilote écrit
+maintenant (`docs/scripts/kalima.md`, validé, puis produit et validé le 2026-11-13) ; « سمعوا الآية… » rangée comme variante de « آية وحكايتها » ;
+« سورة اسمها… » et « حكاية حكاها النبي ﷺ » gardées en réserve ; « آية لكل موقف » écartée.
+
+### « كلمة من القرآن » : la fiche (session, 2026-11-13)
+
+- **Ce qu'est un épisode** : un mot rare du Coran ; son sens le plus étonnant en première image, le mot écrit en or ;
+  le verset récité (le mot y est dit pour la première fois, par le récitateur : la voix de synthèse ne le dit jamais,
+  c'est un mot du Coran) ; son sens d'après un tafsir nommé ; ce qu'on ne voit pas ; un exemple de vie ; la phrase à
+  retenir ; le mot suivant annoncé.
+- **Le pilote** : كَنُود (100:1-8 : le serment sur les chevaux, puis le mot ; al-Muyassar, Ibn Kathir d'après al-Hasan,
+  as-Sa'di) ; **les trois mots du noyau de datte** (فتيل 4:49, نقير 4:124, قطمير 35:13 : le fil dans sa fente, le creux
+  sur son dos, la peau autour ; al-Muyassar, Ibn Kathir), qui remplacent le seul قطمير à la demande du propriétaire
+  (2026-11-13, « l'épisode 2 à réécrire ») ; هَلُوعًا (70:19-23 : le mot expliqué par les deux versets suivants, et
+  l'exception, « إلا المصلين » ; as-Sa'di, al-Muyassar). Durées estimées 1:37, 2:05, 1:23 ; l'épisode 2 est récité
+  pour moitié (trois versets, 1:03). Son titre et son début : « نواة التمرة… فيها تلات كلمات من القرآن » (« نواية بلحة
+  واحدة », jugé difficile par le propriétaire, remplacé le 2026-11-13 ; « النواة » et « التمرة » partout, son choix ;
+  « le reste est good »). 4:124 commence par « وَمَن » : une phrase entière, pas une suite.
+- **Le tafsir n'est pas nommé par la narration** (propriétaire, 2026-11-13) : la réplique dit le sens, la référence
+  s'écrit dessous (`content/wording.yaml`, `tafsir-named-in-narration`, et le skill `write-hook`). Les répliques validées
+  de « سنريهم آياتنا » qui le nomment restent telles quelles.
+- **L'image** : le modèle (un clip filmé, des silhouettes dessinées : des chevaux sans cavalier, un noyau de datte, le
+  soleil et la lune, un tapis de prière, personne) et, en plus, le mot en grand, en or, sur la première image et pendant
+  son sens (un `OVERLAYS` de la série, comme la frise de « سنريهم آياتنا »).
+- **Script validé par le propriétaire le 2026-11-13** (« je valide le script » : les répliques et les titres des trois
+  épisodes, `docs/scripts/kalima.md`).
+- **Produit et validé le 2026-11-13** (« je valide tout pour كلمة من القرآن ») : 1:29, 1:58, 1:16 ; vidéos, versions
+  TikTok, couvertures, ambiances, clips, textes à coller (`docs/retention/publication-kalima.md`) et 26 sources ; release
+  brouillon `kalima-candidate`. À publier par lui quand une place s'ouvre dans la grille.
+- **Fin d'un épisode** (propriétaire, 2026-11-13) : jamais le résumé de la série ; le mot suivant s'il est connu, sinon
+  « تابعنا عشان تعرف الكلمة اللي جاية. » (`haluu` changé, à confirmer avant la voix).
+- **Production lancée le 2026-11-13** (« oui, lance la production ») : sources, récitations, fichiers, dessins, voix,
+  rendu par le workflow `film` ; clips proposés, pas encore approuvés (`docs/history.md`, tâche 77).
+- **Quand** : pas dans la grille actuelle (elle n'a plus de place) ; prête pour le jour où une série cède la sienne, ou
+  après le 12 décembre.
+
+### Série proposée : deux versets presque pareils (idée du propriétaire, 2026-11-13 : « تدبر القرآن »)
+
+Deux versets presque identiques dont un mot change, ou change de place, et le sens avec lui ; le départ qu'il propose :
+6:151 et 17:31. Vérifié le 2026-11-13 (quran.ai : texte et tafsirs de la politique) :
+
+- **6:151 / 17:31** : « مِنْ إِمْلَاقٍ… نَحْنُ نَرْزُقُكُمْ وَإِيَّاهُمْ » et « خَشْيَةَ إِمْلَاقٍ… نَحْنُ نَرْزُقُهُمْ وَإِيَّاكُمْ ». **Ibn Kathir
+  explique la différence** : dans al-An'am la pauvreté est déjà là (« فلما كان الفقر حاصلا قال: نحن نرزقكم وإياهم؛ لأنه الأهم
+  هاهنا ») ; dans al-Isra c'est la peur d'une pauvreté à venir (« خشية حصول فقر في الآجل… فبدأ برزقهم للاهتمام بهم، أي: لا
+  تخافوا من فقركم بسببهم »). Al-Muyassar et as-Sa'di donnent le sens de chacun. Ibn Kathir cite le hadith des deux Sahih
+  (« أن تقتل ولدك خشية أن يطعم معك ») : numéro à vérifier dans hadith-api avant tout script.
+- **18:79 / 18:81 / 18:82** : « فَأَرَدتُّ أَنْ أَعِيبَهَا », « فَأَرَدْنَا », « فَأَرَادَ رَبُّكَ ». **As-Sa'di explique** : le mal, al-Khidr le
+  rapporte à lui-même, le bien à Dieu, par politesse envers Dieu (« استعمال الأدب مع الله تعالى في الألفاظ »), comme Ibrahim
+  (26:80) ; Ibn Kathir : la volonté rapportée à Dieu en 18:82 parce que seul Dieu fait atteindre l'âge adulte. Voisin du
+  film de Moussa et al-Khadir, sous un autre angle.
+- **14:34 / 16:18** : « وَإِن تَعُدُّوا نِعْمَةَ اللَّهِ لَا تُحْصُوهَا », puis « إِنَّ الْإِنسَانَ لَظَلُومٌ كَفَّارٌ » ou « إِنَّ اللَّهَ لَغَفُورٌ رَحِيمٌ ». Chaque
+  fin a son sens dans as-Sa'di et Ibn Kathir (l'homme, injuste et ingrat sauf celui que Dieu guide ; Dieu qui se contente de
+  peu de reconnaissance) ; **le rapprochement des deux n'est dans aucun de nos tafsirs** : il se dit comme une observation du
+  texte, signalée.
+
+**Avis de la session** : l'idée tient (trois paires vérifiées, dont deux expliquées par un tafsir de la politique) ; le
+filtre dur est là : une paire ne sert que si un de nos trois tafsirs explique la différence, ou si elle se voit dans le
+texte et se dit comme une observation. Le nom « تدبر القرآن » est trop large (toute la page en fait) : un titre qui est déjà
+l'accroche, « لاحظت الفرق؟ ». Pas de place dans la grille (deux séries publiées, « كلمة من القرآن » en attente) : fiche
+maintenant, script après les premières mesures. 6:151 / 17:31 parle de tuer ses enfants : la première image ne le montre
+pas, l'accroche est le mot qui change de place.
+
+**Rappel du propriétaire (2026-11-13 : « nous avons oublié ma proposition initiale des versets similaires mais
+différents dans le sens »)**, et une troisième paire cherchée le même soir dans nos tafsirs (quran.com, éditions 14, 16,
+91), parmi sept candidates (28:20 / 36:20, 31:17 / 42:43, 2:58 / 7:161, 3:126 / 8:10, 7:12 / 38:75, 2:35 / 7:19 : aucune
+différence expliquée par nos trois tafsirs) :
+- **4:135 / 5:8** : « كُونُوا قَوَّامِينَ بِالْقِسْطِ شُهَدَاءَ لِلَّهِ » puis « كُونُوا قَوَّامِينَ لِلَّهِ شُهَدَاءَ بِالْقِسْطِ ». As-Sa'di donne à
+  chacun son sens : en 4:135, la justice jusque contre soi et ceux qu'on aime (« حتى على الأحباب بل على النفس ») ; en 5:8,
+  la justice envers celui qu'on déteste (« على القريب والبعيد، والصديق والعدو »… « لا يحملنكم بغض قوم ») ; Ibn Kathir
+  cite 5:8 sous 4:135. L'ordre inversé des mots se dit comme une observation du texte, signalée ; le sens de chaque
+  verset repose sur as-Sa'di.
+
+**Le pilote proposé** (session, 2026-11-13), trois épisodes, chacun avec sa différence expliquée par un tafsir :
+
+| Épisode | Les versets (récitation de Tawfiq As-Sayegh) | Ce qui change | Le tafsir |
+| --- | --- | --- | --- |
+| 1 | 6:151 jusqu'à « وَإِيَّاهُمْ » (sur 42 s) · 17:31 (14,7 s) | « نَرْزُقُكُمْ وَإِيَّاهُمْ » / « نَرْزُقُهُمْ وَإِيَّاكُمْ » : la pauvreté déjà là, la peur de la pauvreté | Ibn Kathir |
+| 2 | 18:79 (17,9 s) · 18:81 (10,3 s) · 18:82 jusqu'à un arrêt (sur 35 s) ; coupes déjà faites pour le premier film | « فَأَرَدتُّ », « فَأَرَدْنَا », « فَأَرَادَ رَبُّكَ » : le mal rapporté à soi, le bien à Dieu | as-Sa'di |
+| 3 | 4:135 jusqu'à « وَالْأَقْرَبِينَ » (sur 49 s) · 5:8 jusqu'à « تَعْدِلُوا » (sur 36 s) | les mêmes mots en ordre inverse : contre ceux qu'on aime, pour ceux qu'on déteste | as-Sa'di |
+
+**L'image** : le style compteur, que le propriétaire veut voir servir ailleurs (`docs/model.md`) : les deux versets l'un
+sous l'autre, les mots pareils éteints, le mot qui change en or, qui glisse à sa nouvelle place. Images de style d'abord.
+Le nom : « لاحظت الفرق؟ » (le propriétaire l'emploie lui-même ; « تدبر القرآن » est trop large). **À son mot** : le pilote,
+le nom, et quand (aucune place dans la grille ; « كلمة من القرآن » attend déjà).
+
+**« Oui, commencer »** (propriétaire, 2026-11-13) : images de style (`docs/retention/farq-style.jpg`) et script pilote
+(`docs/scripts/farq.md`, à valider : `rizq`, `adab`, `qist` ; 18:81 laissé hors de l'épisode 2).
+
+### Série proposée dans le montage de la vidéo de référence : « خريطة كلمة » (session, 2026-11-14)
+
+Demande du propriétaire (2026-11-14) : « on est loin du style du montage de la vidéo ; j'aimerais explorer une série qui
+utilise ce type de montage ». **Ce qui fait ce montage**, et que nos séries n'ont pas pris : **aucune voix** (un fond
+sonore, le texte à l'écran) ; une **image qui bouge sans arrêt** (les nombres en particules qui se forment, la grille qui
+s'allume, des coupes toutes les cinq à six secondes) ; **beaucoup d'informations, vite** ; des données du Coran rendues
+visibles. Nos épisodes gardent le modèle : la voix égyptienne, des répliques de trois à huit secondes, des cartes posées.
+
+**Proposition** : une série sans voix, « خريطة كلمة » (une carte d'un mot) : un mot du Coran, ou une famille de mots, et
+**où** il est dans les 6 236 versets, en données vraies, comptées par l'outil (`tools/trial/count.py`), jamais un
+« miracle » : combien de fois, toutes formes comprises (la règle écrite) ; sa première et sa dernière apparition ; les
+sourates où il revient le plus ; mecquois ou médinois ; puis un verset récité où il est, le mot en or, et son sens en
+une ligne écrite (nos mots, d'après un tafsir nommé dessous) ; une soixantaine de secondes. Le nom de la page est
+« Quran Words Daily » : une série sur les mots du Coran, en données, lui va. **Ce qu'elle coûte** : aucune requête de
+voix ; des dessins à reprendre de `Count.tsx` (particules, grille) et à animer davantage (une caméra qui avance dans la
+grille, des sourates qui s'allument) ; des données de plus (le lieu de révélation de chaque sourate, quran.com).
+
+**Les risques** : sans voix, plus d'égyptien, ce qui distingue la page ; tout se lit (arabe et anglais à l'écran), à
+garder court ; une série de nombres glisse vite vers le « إعجاز عددي » : chaque nombre est un fait, la règle de comptage
+écrite, aucune égalité cherchée entre deux mots ; un compte ne dit rien du sens : c'est le verset et son tafsir qui le
+disent. **À son mot** : une série sans voix, le nom, les trois premiers mots, des images de style d'abord.
+
+**Le pilote** (propriétaire, 2026-11-14 : « let's create a pilote et on discute après ») : `qalb`, le mot « قلب »
+(`content/trial/map.yaml`, `qalb.yaml`), écrit et rendu par la session, sans script validé avant (il le juge sur la
+vidéo). 1:13, aucune voix : douze textes à l'écran tenus le temps de les lire (`hold`), trois versets récités (2:7
+jusqu'à « وعلى سمعهم », 83:14, 13:28), l'ambiance de nuit sous les textes. Les faits (Quranic Arabic Corpus, le lemme
+قلب, `tools/trial/wordmap.py`) : 132 fois, dans 124 versets ; 112 « قلوب », 19 « قلب », 1 « قلبين » ; at-Tawba 13,
+al-Baqara 11, al-Ahzab 10 ; la première fois 2:7, la dernière 83:14, deux versets de cœurs fermés (al-Muyassar) ; puis
+13:28, le repos du cœur par le rappel de Dieu (al-Muyassar). Ses sept sources sont proposées. **À discuter avec lui** :
+le rythme d'un texte sans voix, le nom, les mots suivants.
+
+**Deuxième version** (propriétaire, 2026-11-14, sur le pilote : « il manque des effets sonores, sur le compteur ; ne
+pas afficher le nombre directement mais créer un suspense pour qu'on reste au début ; la fin est bien ; mélanger les
+deux styles : le début rapide et animé, puis la voix, et finir sur une leçon : ذكر ربنا بيريح القلوب »). Le début est
+muet et rapide (17 s) : la question « «القلب» في القرآن كام مرة؟ », la grille balayée de haut en bas, chaque verset
+trouvé s'allume au son d'un tic, le compteur monte, le 132 tombe avec un choc ; puis les versets, les formes, les
+sourates, au son d'un souffle et de petits chocs. Puis la voix D : « بس العدد… مش هو الحكاية », la première et la
+dernière fois, la raison (al-Muyassar sur 83:14 : beaucoup de péchés ont couvert leurs cœurs), 13:28, son sens, un
+exemple de vie, « ذكر ربنا… بيريّح القلوب ». 1:28 en brouillon. Script : `docs/scripts/map.md`, à valider avant la voix.
+
+### Le « إعجاز عددي » : une vidéo analysée et des comptes refaits (propriétaire, 2026-11-13)
+
+Demande : analyser le montage d'une vidéo Facebook (enregistrement d'écran, 1:33) pour « لاحظت الفرق », et une série
+« الإعجاز العددي في القرآن: حقيقة أو وهم », d'après les points du Dr Iyad Qunaibi qu'il résume (comptes sélectifs, l'année
+lunaire de 354 jours, aucune méthode fixe, le danger pour la crédibilité du Coran si un calcul tombe).
+
+**La vidéo** est elle-même une vidéo de « إعجاز عددي » : fond bleu nuit, nombres faits de particules, une grille de 6 236
+points (« كل نقطة آية ») où s'allument les versets du mot compté, le signe « = » entre deux comptes, le verset en haut avec
+le mot coloré, sa traduction et sa référence ; aucune voix (Whisper n'entend rien), un fond sonore ; une quinzaine
+d'égalités en 92 secondes.
+
+**Les comptes refaits** (Quranic Arabic Corpus, `quran-morphology.txt` de mustafa0x/quran-morphology, un mot = une
+position s:a:w ; vérification sur le texte imlaei de quran.com pour قل, قالوا et جهنم) :
+
+| Ce que la vidéo affiche | Ce qu'on compte | Règle qu'il faut pour obtenir son nombre |
+| --- | --- | --- |
+| يوم 365 | le lemme يوم : 475 (dont يومئذ 70, pluriel 27, duel 3) ; singulier sans يومئذ : 375 | singulier, sans يومئذ, et sans les 10 formes à pronom (يومكم، يومهم…) : 365 ; c'est la critique du Dr Fahd ar-Rumi rapportée par islamqa 69741 |
+| شهر 12 | le lemme : 21 mots dans 17 versets (la recherche de quran.ksu.edu.sa donne 17 : des versets) ; singulier : 12 | singulier seulement : tient |
+| الدنيا 115 = الآخرة 115 | lemme دنيا : 115 ; le féminin de آخر : 115 | tient, à règle égale (le lemme) |
+| الملائكة 88 = الشيطان 88 | lemme مَلَك : 88 (pluriel 73, singulier 13, duel 2) ; lemme شيطان : 88 | tient en comptant « ange » au singulier, au duel et au pluriel ; « الملائكة » seul : 73 |
+| رجل 24 = امرأة 24 | رجل au singulier : 24 (29 avec le duel) ; امرأة (lemme امْرَأَت) au singulier : 24 (26 avec le duel) | tient au singulier (**corrigé le 2026-11-13** : le premier compte, « 25 sans le duel », avait pris aussi امْرُؤ, « un homme », 4:176) |
+| قل 332 = قالوا 332 | dans le corpus, par la forme grammaticale (impératif 2e masc. sing. de قالَ ; accompli 3e masc. plur.) : 332 et 332 | tient (**corrigé le 2026-11-13** : le premier compte, fait sur le texte, donnait 333 et 329) |
+| القرآن 70 = القيامة 70 ; عيسى 25 = آدم 25 ; القمر 27 ; جهنم 77 | 70 ; 70 ; 25 ; 25 ; 27 ; 77 | tiennent (lemme) |
+| الليل 92 (« et la sourate 92 est al-Layl ») | lemme ليل : 84 | toute la racine ليل (84 + ليلة 8) : 92 |
+| الصلاة 99 (« 99 noms de Dieu ») | lemme صلاة : 83 | toute la racine صلو (le verbe صلّى, مصلّين…) : 99 |
+| صبر 103 (« sourate 103 ») | lemme صبر : 15 | toute la racine : 103 |
+| نفع 50 = الفساد 50 | lemme فساد : 11 | toute la racine des deux : 50 et 50 |
+
+**Ce que ça montre** : la règle change d'une égalité à l'autre (un singulier, un lemme, une racine entière, deux mots
+additionnés, des formes écartées), elle est choisie après coup. **Recompté le 2026-11-13** (`count-style-frame.py`, le
+tableau des règles) : sauf يوم, chaque égalité tient sous une règle, mais pas la même ; une seule règle pour toutes, et la
+plupart tombent (le lemme : 2 sur 8 ; le singulier : 3 ; la racine : 3). Et même quand un
+compte tient, un auteur peut l'obtenir : ce n'est pas le défi du Coran (17:88, as-Sa'di : des gens de la langue et de
+l'éloquence n'ont pas pu en produire autant). Les mois du Coran sont lunaires (10:5, al-Muyassar : « وبالقمر تعرف الشهور
+والأعوام »). Le « code 19 » de Rashad Khalifa (publié de 1973 à 1982) l'a mené à retirer 9:128-129, qui « cassaient » son
+compte, et à se déclarer messager (Wikipedia). Pour la caverne : le calcul « 300 ans solaires = 309 lunaires » est rejeté
+par Ibn Uthaymin (islamqa 69741) ; notre fiche l'écarte déjà.
+
+**Avis de la session** : l'idée est bonne et utile, et elle demande d'être honnête dans les deux sens. Plusieurs égalités
+tiennent à règle égale : les dire, sinon on fait le même tri à l'envers. Plutôt qu'une cinquième série, deux épisodes de
+« سنريهم آياتنا » (le même public, le même style d'enquête, les sources vérifiées du type `science`, et une crédibilité
+qu'ils renforcent : « nous vérifions ») ; le style de la vidéo retourné contre elle : la grille des 6 236 versets qui
+s'allume, puis s'éteint forme par forme pendant que 475 devient 365. Sources nouvelles à décider : les comptes (un type
+`count`, la méthode écrite) ; les savants contemporains (Qunaibi, ar-Rumi, islamqa) ne sont pas dans la politique.
+
+**Ce que le propriétaire a ajouté** (2026-11-13, le texte d'islamqa 69741, « ça peut être utile ») :
+- **Le compte de يوم refait par la session est exactement celui que critique le Dr Fahd ar-Rumi** (« اتجاهات التفسير في القرن
+  الرابع عشر », 2/699-700) : 365 en gardant « اليوم » et « يوماً », en laissant « يومكم », « يومهم », « يومئذ ». Deux
+  vérifications indépendantes qui se rejoignent.
+- **Une étude critique** : Ashraf Abd ar-Razzaq Qutna, « رسم المصحف والإعجاز العددي » (Damas, 1999), sur trois livres (Bassam
+  Jarrar, Abd ar-Razzaq Nawfal, Adnan ar-Rifa'i) : des conditions « توجيهية حيناً وانتقائية حيناً آخر », jusqu'à s'écarter du
+  rasm othmanien.
+- **La distinction qui porte le script** : « اللطيفة » n'est pas « الإعجاز » ; un livre au nombre de mots voulu, tout auteur peut
+  l'écrire ; le défi est de produire une sourate comme lui.
+- **Les dérives** : des dates calculées (la fin d'un État, le Jour du Jugement) et le 11 septembre lu dans 9:110. Avis de la
+  session : garder l'exemple de Rashad Khalifa et « dater le Jour du Jugement », laisser les exemples politiques.
+
+**Décisions du propriétaire (2026-11-13, « je valide tes recommandations »)** : les épisodes de comptage entrent dans
+« سنريهم آياتنا » (pas de série à part) ; l'accroche montre l'affirmation **comme une affirmation** dès la première image
+(« بيقولوا », jamais notre voix : skill `write-hook`), puis le compte ; les exemples politiques sont laissés ; le style de
+montage est inscrit comme une option (`docs/model.md`, « Le style compteur »). **Puis** (« je valide les images, écris le
+script de l'épisode 5 ; et pour les auteurs, non ») : les images de style validées ; **aucun auteur contemporain** (ar-Rumi,
+Qutna, islamqa) n'est cité à l'écran, comme la session le recommandait : les comptes sont les nôtres, refaits par
+un script, leur règle écrite à l'écran, et tout spectateur peut les refaire ; une source de type nouveau, `count` (le
+corpus, le lemme, la règle), comme `science`.
+
+**L'épisode 5, « يوم 365 »** (`days` ; plan de la session, 2026-11-13 ; images de style validées,
+`docs/retention/count-style-yawm.jpg` ; **script écrit le 2026-11-13, refait le même soir à sa demande, à valider** : `docs/scripts/signs.md`,
+2:22 dans sa troisième version (plusieurs affirmations et le tableau des règles, à sa demande) ; 17:88, 2:169 et la signature 41:53 ; sans 10:5 ni l'année lunaire ; la voix après « je valide le script ».
+Le tableau ci-dessous est le plan montré avec les images ; le script l'a changé) :
+
+| Temps | Ce qui se passe | Image |
+| --- | --- | --- |
+| L'affirmation | « بيقولوا: «يوم» في القرآن 365 مرة… زي أيام السنة. أنا عدّيتها بنفسي. » | la carte « بيقولوا », 365 en particules, un « ؟ » ; la grille attend derrière |
+| Le compte | toutes les formes : 475 | la grille s'allume, 437 versets |
+| Les règles | 365 n'apparaît qu'en retirant 110 : أيام et يومين (30), يومئذ (70), يومكم et يومهم (10) ; « ليه دي تتعد… ودي لأ؟ » | la bande des règles, des versets qui s'éteignent en anneaux vides (341 restent) |
+| L'année du Coran | 10:5 récité : les phases de la lune pour compter les années (al-Muyassar) ; une année lunaire fait 354 jours (source `science` à inscrire) | le verset, « عَدَدَ ٱلسِّنِينَ وَٱلْحِسَابَ » en or, les phases de la lune |
+| Ce qui tient | الدنيا 115 = الآخرة 115, à règle égale ; « بس هل ده الإعجاز؟ » | le « = », les deux mots sur une petite grille |
+| Le vrai défi | 17:88 récité : produire un texte comme lui, pas un compte (as-Sa'di) | le verset, « لَا يَأْتُونَ بِمِثْلِهِۦ » en or |
+| À retenir | « قبل ما تنشر رقم عن القرآن… عِدّه. » | — |
+
+Sources à inscrire : 10:5, 17:88, leurs passages de tafsir, le compte (`count`), l'année lunaire (`science`). Suite
+possible : l'épisode 6, « ١٩ » (le code de Rashad Khalifa l'a mené à retirer 9:128-129), à décider avec lui.
+
+## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
 
@@ -138,6 +874,42 @@ l'épisode entier dure environ deux fois sa récitation (khidr et qarnayn), esti
 deux histoires comptent pour un) :
 الخشوع (`misconceptions`, choisi), les gens de la caverne, « دعوات في الشدة » (`collection`), الشكر (Bukhari 3464),
 l'homme aux deux jardins (`two-paths`), الإخلاص (Bukhari 2272), puis le reste ; Youssouf plus tard en série.
+
+### Fiche : les gens de la caverne dans le modèle (skill `choose-format`, 2026-11-13)
+
+**Choix du propriétaire (2026-11-13, « go with your recommendations »)** : l'histoire du lundi 30 novembre, la dernière
+d'Al-Kahf après Moussa et al-Khadir et Dhul-Qarnayn. Le script s'écrit après les premières mesures (vers le 18 novembre,
+pour que les débuts en profitent), la production du 19 au 26.
+
+**Ce qu'est l'épisode publié** (`content/episodes/kahf.yaml`, papier découpé, 8:48) : ses sources sont validées et
+restent (13 versets, Muslim 809a et Bukhari 6324 avec leurs lectures), et ses versets sont déjà coupés dans la
+récitation. Ce qui ne passe pas tel quel : des silhouettes de gens dans ses scènes de vie (le modèle ne dessine
+personne), la narration qui raconte puis récite, un premier reel qui ne fait qu'installer.
+
+**Durées de récitation** (coupes du dépôt) : 18:9, 9 s ; 18:10, 14 s ; 18:13, 13 s ; 18:14, 25 s ; 18:16, 21 s ;
+18:17, 31 s ; 18:18, 27 s ; 18:19, 47 s ; 18:20, 16 s ; 18:21, 34 s ; 18:22, 39 s ; 18:25, 8 s ; 18:26, 21 s.
+
+**Recommandé : trois shorts, un par moment du refuge, et le film qui les relie.**
+
+| Short | Le fait qui l'ouvre | Versets (récitation) | La leçon | Ce qui est dessiné (des lieux, des choses) |
+| --- | --- | --- | --- | --- |
+| 1. La fuite | des jeunes quittent leur ville et s'enferment dans une caverne, et ne demandent qu'une chose | 18:10, 18:14, 18:16 (61 s) | quand on est seul à croire, Dieu raffermit le cœur ; le lieu étroit choisi pour Lui s'ouvre en miséricorde | la ville au loin, une colline, l'entrée de la caverne au soir |
+| 2. Le sommeil | le soleil s'écarte d'eux à son lever et à son coucher ; on les croirait éveillés | 18:17-18 (57 s) | celui qui se réfugie en Dieu, Dieu prend soin du moindre détail | l'intérieur de la caverne, la lumière qui passe à droite puis à gauche sans toucher le fond, le chien couché à l'entrée |
+| 3. Le réveil | ils se réveillent et croient avoir dormi un jour ; c'était trois cent neuf ans | 18:19, 18:25 (55 s), Bukhari 6324 lu | chaque matin est un petit réveil : la du'a du réveil | la pièce d'argent, la ville ancienne, le soleil qui se lève |
+
+- **Ce qui distingue les parties** (lecture de la session) : choisir Dieu quand on est seul ; être gardé sans le savoir ;
+  se réveiller et voir que le temps était dans Sa main.
+- **Le film** ajoute : l'ouverture sur les trois images ; le cadre, Muslim 809a (les dix premiers versets d'Al-Kahf, où
+  l'histoire commence) et 18:9 ; la conclusion, 18:21 (pourquoi leur histoire a été montrée), 18:22 (leur nombre, qu'on
+  ne dispute pas : sa décision du 2026-11-09) et 18:26. Versets : 2:52 dans les shorts, 1:43 en plus dans le film,
+  soit 4:35 et un film d'environ 9:10, sous les dix minutes ; plus court sans 18:22 (39 s), à son choix.
+- **Ce que la session surveille** : les jeunes ne sont jamais dessinés (le chien peut l'être : un animal) ; rien hors
+  du texte (ni leur nombre, ni leurs noms, ni la ville, ni le roi, ni le nom du chien, ni le calcul des années) ;
+  rien de ce que Muslim 809a annonce n'est figuré.
+- **À faire** : trois ou quatre clips à chercher et à montrer (une colline et l'entrée d'une caverne au soir, l'intérieur
+  d'une caverne traversé d'un rayon, un lever de soleil sur des collines), trois dessins, trois ambiances (le vent à
+  l'entrée d'une caverne, le silence et les gouttes, les oiseaux du matin). **Voix** : quatre requêtes, une journée.
+  **Rendu** : workflow `film`.
 
 ## Choisis par le propriétaire (2026-11-07), dans l'ordre
 

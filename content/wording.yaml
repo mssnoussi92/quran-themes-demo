@@ -1,0 +1,73 @@
+# Words and turns the owner refused in the scripts of the film-and-shorts model (docs/model.md), as data.
+# tools/trial/rules.py warns when one of them appears in a narration line (kept lines too), a title, a cover
+# title or an Arabic description of content/trial/. The table of the skill write-hook (« Words and turns the
+# owner refused ») tells the story of each; add an entry here each time the owner refuses a word.
+#
+# patterns: regular expressions tried on the text with diacritics, Quranic marks and tatweel removed,
+#   alef with hamza (أ إ آ ٱ) written ا, ة written ه, ى written ي, ؤ written و, ئ written ي, hamza alone removed
+#   (so write them like that); each pattern must match a whole word (or the whole phrase), prefixes are
+#   written in the pattern. Patterns are folded the same way, so they may be written with the plain letters.
+# instead: what to write.
+# why: the owner's reason, or ours when he gave none.
+# where: « narration » for a turn refused only in what the voice says (titles, covers and descriptions are not checked).
+refused:
+  - id: shalathum
+    patterns: ["[وف]?شالتهم"]
+    instead: "« ركّبوهم السفينة »"
+    why: he does not like the word (2026-11-11)
+  - id: broke
+    patterns: ["[وفبهل]{0,2}(?:ات|تت)كسر[ا-ي]{0,3}"]
+    instead: "« حاجة وحشة حصلتلك », « اللي خسرناه »"
+    why: he does not like the word (2026-11-11)
+  - id: kinds-of-decree
+    patterns: ["انواع\\s+القدر"]
+    instead: "« تلات مواقف »"
+    why: three kinds of decree is a preachers' reading, not a classification of the Quran or of the books of creed
+  - id: silence-for-not-asking
+    # سكت, ساكت, بتسكّتنا, مسكّتانا, بتسكّتك: any word of silence said for « not asking ». Whole words only;
+    # « مسكت » (I grabbed) may be a false alarm: read the line. « يسكت » (he stays silent) is not matched: the
+    # validated first film says that Moses could not keep silent (« ما قدرش يسكت »), which is not « not asking ».
+    patterns: ["[وفبمت]{0,2}سكت[ا-ي]{0,4}", "[وفبمت]{0,2}ساكت[ا-ي]{0,3}"]
+    instead: "« ساب الدعاء », « بتبعدنا عن الدعاء »"
+    why: he asked for every word of silence to be changed (2026-11-11); a du'a can be said in the heart, the image was ours
+  - id: young-man
+    # « شاب » alone is read « young man » (شابّ). « شابت » (turned white) and « شباب » are other words and stay.
+    patterns: ["[وف]?شاب"]
+    instead: "« راسه شابت »"
+    why: read as « young man », on screen and by the voice
+  - id: under-your-hand
+    # « تحت إيدك », « تحت إيدنا », « تحت إيد ربنا »: said in several lines of the same short, and flat. « في إيدك »
+    # (something you hold) is another turn and stays.
+    patterns: ["تحت\\s+ايد[ا-ي]{0,3}"]
+    instead: "« تقدر على حد », « مصير… بكلمة منه », « ليك سلطة على حد »"
+    why: he found it repeated and not telling enough (2026-11-11), and asked for more expressive words
+  - id: proverb-of-patience
+    patterns: ["مضرب\\s+المثل"]
+    instead: "the proverb as people say it: « بنقول يا صبر أيوب… »"
+    why: he flagged the phrase without a reason; our reading is a standard-Arabic turn in an Egyptian line
+  - id: sins-named
+    # « قتلوا كتير… وزنوا كتير » : l'accroche du short `hope` nommait les deux péchés du récit (Bukhari 4810). Le
+    # verset, sa traduction et la référence écrite disent le reste ; notre voix ne les nomme pas.
+    patterns: ["[وف]?قتلوا\\s+كتير", "[وف]?زنوا", "(?:ال|بال|وال)?زنا", "[وف]?زني"]
+    instead: "« عملوا ذنوب كبيرة »"
+    why: he asked for the change and gave the words (2026-11-12), without a reason; our reading is that our voice does not name such sins bluntly
+  - id: tafsir-named-in-narration
+    # « ابن كثير قال… », « السعدي قال… », « والتفسير الميسر قال… » : the narration named the tafsir its line rests on.
+    # The validated lines of « سنريهم آياتنا » (2026-11-12) still say it and stay as they are; they warn. A scholar who is
+    # part of the story (« وابن كثير كتب الكلام ده من أكتر من ستمية سنة… ») warns too: read the line, keep it if the name
+    # is the fact told, not the citation.
+    patterns: ["[وف]?ابن\\s+كثير", "(?:وال|ال)سعدي", "(?:وال|ال)?تفسير\\s+الميسر", "(?:وال|ال)ميسر", "[وف]?الحسن\\s+البصري"]
+    where: narration
+    instead: "the line says the meaning (« معناها… », « يعني… »), and the tafsir's name is written under it on screen"
+    why: "he asked for it (2026-11-13, on the pilot of « كلمة من القرآن »): the written reference is enough; our reading: the name said costs time and sounds like a lecture"
+  - id: nawaya
+    # « نواية », « النواية », « نوايتها » : the Egyptian word for a date stone, in the pilot of « كلمة من القرآن ».
+    patterns: ["(?:[وفبل]|ال|وال|بال|فال|لل)?نوايه", "(?:[وفبل]|ال|وال|بال|فال|لل)?نوايت[ا-ي]{0,3}"]
+    instead: "« النواة », « نواة التمرة »"
+    why: "he chose the word (2026-11-13: « on prend la kalima النواة partout, et نواة البلحة ») after finding « نواية بلحة واحدة » difficult; our reading: النواة is understood by every Arabic speaker, as is the tafsir's word (al-Muyassar: نواة التمرة)"
+  - id: balah
+    # « بلحة », « البلحة », « البلح » : the Egyptian word for a date, in the pilot of « كلمة من القرآن ». A palm tree
+    # (« نخلة ») is another word and stays.
+    patterns: ["(?:[وفبل]|ال|وال|بال|فال|لل)?بلحه", "(?:[وفبل]|ال|وال|بال|فال|لل)?بلح"]
+    instead: "« التمرة », « التمر », « نواة التمرة »"
+    why: "he chose it (2026-11-13: « si التمر peut remplacer بلحة, prends-le »); our reading: التمر is the word of every Arabic speaker and of the tafsir (al-Muyassar: نواة التمرة), بلح is Egyptian and, there, the fresh date"

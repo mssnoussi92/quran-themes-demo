@@ -1,0 +1,90 @@
+# « سنريهم آياتنا », épisode 1 (content/trial/signs.yaml ; script : docs/scripts/signs.md, validé). Style d'enquête
+# validé (docs/retention/signs-style-51-47.jpg) : un ciel de nuit généré, les dessins et les photos de l'ESA de
+# video/src/trial/Signs.tsx, la frise des dates et le badge de la série en surimpression. Personne n'est dessiné ;
+# aucune flamme (le Feu est l'invisible). Les répliques sont celles du script validé, mot pour mot.
+id: lahab
+# « Je valide les scripts », puis « je valide l'épisode 2 et les deux répliques », puis « je valide les titres et les
+# nouveaux débuts » du propriétaire (2026-11-12) : les répliques, la place des versets, ce sur quoi chaque narration
+# repose, le titre. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication : il les valide sur les vidéos.
+script_validated: { by: mssnoussi92, on: 2026-11-12 }
+# « Je valide tout, garde إذا et la signature » du propriétaire (2026-11-13), sur les vidéos rendues par le workflow
+# `film` (run 18) et envoyées dans la conversation : la voix D, le montage (le ciel généré, les dessins, les photos de
+# l'ESA, la frise, la signature 41:53), la couverture, les textes de publication (docs/retention/publication-signs.md),
+# l'ambiance ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
+# « إذا » de « سألهم إذا كانوا بيصدقوه » gardé par lui (content/dialect.yaml le signale) ; la signature 41:53 gardée.
+validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 53-trial-lahab     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) : rien à créditer ; les images sont dans les dessins.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1300, veil: 0.7 }
+# Les photos montrées par les dessins (crédit écrit sur l'image, comme l'exigent les conditions de l'ESA, et dans la description).
+photos:
+  - { file: signs/hubble-udf.jpg, credit: "NASA, ESA, S. Beckwith (STScI), HUDF Team", licence: "CC BY 4.0", page: "https://esahubble.org/images/heic0406a/" }
+# Ambiance sous la narration, jamais sous les versets : un des enregistrements validés à l'écoute (docs/model.md).
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 110, level: -36 }
+cover: { scene: hourglass, title: "كلمة واحدة كانت هتكذّب القرآن", tag: "سنريهم آياتنا (١)", focus: 1100 }
+publish:
+  title: { en: "One sentence could have disproved the Quran", ar: "كلمة واحدة كانت هتكذّب القرآن" }
+  part: 1
+  hashtags: ["#سورة_المسد", "#أبو_لهب"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
+  description:
+    en: "A book said of a living man, by his name, that he would die a disbeliever. All he had to do to prove it wrong was say one sentence, even as a lie. He never said it. Surat al-Masad, and what Ibn Kathir wrote about it."
+    ar: "كتاب قال على راجل عايش، وباسمه، إنه هيموت على الكفر. وكل اللي كان عليه عشان يكذّبه: كلمة واحدة، ولو كدب. وما قالهاش. سورة المسد، وكلام ابن كثير عنها."
+segments:
+  - narration: open
+    scene: hourglass
+    sources: [tafsir.ibn-kathir.111.5]
+    lines:
+      - ar: "كلمة واحدة… كانت هتكذّب القرآن."
+        en: "One sentence… could have proved the Quran wrong."
+      - ar: "القرآن قال على راجل عايش… وباسمه: هيموت على الكفر."
+        en: "The Quran said of a living man… by his name: he will die a disbeliever."
+      - ar: "وكل اللي كان عليه: يقول الشهادة… ولو بلسانه بس."
+        en: "All he had to do: say the shahada… even with his tongue alone."
+      - ar: "وما قالهاش."
+        en: "And he never said it."
+  - narration: story
+    scene: safa
+    sources: [hadith.bukhari.4971, tafsir.ibn-kathir.111.1]
+    lines:
+      - ar: "الراجل ده… أبو لهب، عم النبي صلى الله عليه وسلم."
+        en: "That man… was Abu Lahab, the Prophet's ﷺ own uncle."
+      - ar: "النبي صلى الله عليه وسلم طلع على جبل الصفا… ونادى قريش كلها."
+        en: "The Prophet ﷺ climbed the hill of as-Safa… and called all of Quraysh."
+      - ar: "سألهم إذا كانوا بيصدقوه… قالوا: عمرنا ما شفنا منك كدب."
+        en: "He asked whether they trusted him… they said: we have never known you to lie."
+      - ar: "فلما حذّرهم… قام عمه قدام الناس كلها… ودعا عليه."
+        en: "And when he warned them… his uncle stood up in front of everyone… and cursed him."
+      - ar: "فنزلت سورة كاملة… فيها اسمه."
+        en: "And a whole surah came down… with his name in it."
+  - verses: [quran.111.1, quran.111.2, quran.111.3, quran.111.4, quran.111.5]
+    scene: thorns
+  - narration: meaning
+    scene: hourglass
+    sources: [tafsir.muyassar.111.1, tafsir.muyassar.111.2, tafsir.muyassar.111.3, tafsir.ibn-kathir.111.5]
+    lines:
+      - ar: "يعني: خسر أبو لهب… وماله وعياله مش هينفعوه… وهيدخل النار، هو ومراته."
+        en: "Meaning: Abu Lahab has lost… his wealth and his children will not help him… and he will enter the Fire, he and his wife."
+      - ar: "ابن كثير قال: من يوم ما نزلت… لا هو آمن ولا مراته… لا في الظاهر ولا في الباطن."
+        en: "Ibn Kathir wrote: from the day it came down… neither he nor his wife believed… not outwardly, not inwardly."
+  - narration: enemies
+    scene: safa
+    sources: [hadith.bukhari.4280]
+    lines:
+      - ar: "أعداء كتير للنبي صلى الله عليه وسلم أسلموا… حتى أبو سفيان."
+        en: "Many of the Prophet's ﷺ enemies embraced Islam… even Abu Sufyan."
+      - ar: "إلا أبو لهب… زي ما السورة قالت بالظبط."
+        en: "Except Abu Lahab… exactly as the surah said."
+  - verses: [quran.41.53]
+    upto: 11            # jusqu'au premier arrêt « ۗ », après « أنه الحق » : la signature de la série
+    scene: signs
+  - narration: close
+    scene: empty
+    lines:
+      - ar: "لو القرآن صدق في كلمة عن راجل واحد… يبقى وعده ليك إنت… صادق."
+        en: "If the Quran was true in one word about one man… then its promise to you… is true."
+      - ar: "ده كان عن راجل… الحلقة الجاية: عن الكون كله."
+        en: "That was about one man… next: the whole universe."
+      - ar: "تابعنا عشان الآية الجاية."
+        en: "Follow us for the next sign."

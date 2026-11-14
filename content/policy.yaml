@@ -12,6 +12,16 @@ hadith:
       # Refusés : tout jugement de faiblesse, le jugement sur la chaîne seule (Sahih Isnaad,
       # Hasan Isnaad, Hasan Sahih Isnaad) et les paroles d'un Compagnon ou d'un Successeur
       # (Sahih Muquf, Sahih Isnaad Mauquf, Maqtu...).
+# Tafsir (décision du propriétaire, 2026-11-11, « Ok go avec tes recommandations », pour la série « un verset et son
+# récit ») : trois tafsirs. Un passage de tafsir n'est ni lu ni affiché : c'est ce sur quoi repose une réplique de sens
+# (`sources:` d'un segment de narration) ; son nom s'écrit à l'écran pendant la réplique et dans la description. Son
+# texte vient de l'API quran.com par son id (tools/sources/fetch.py), jamais de la mémoire d'un modèle. Tout autre
+# tafsir : demander au propriétaire avant d'élargir.
+tafsir:
+  editions:
+    muyassar: { quran_com: 16, ar: "التفسير الميسر", en: "Al-Tafsir al-Muyassar" }
+    saadi: { quran_com: 91, ar: "تفسير السعدي", en: "Tafsir as-Sa'di" }
+    ibn-kathir: { quran_com: 14, ar: "تفسير ابن كثير", en: "Tafsir Ibn Kathir" }
 quran:
   translation: sahih-international
   reciter: sayegh

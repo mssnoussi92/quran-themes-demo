@@ -123,6 +123,7 @@ type EpisodeFile = {
       template: ResolvedScene["visual"]["template"];
       background?: string;
       icon?: string;
+      caption?: "big";
       highlight?: "words" | "none";
       characters?: { id: string; pose: string; mood: string; talking?: boolean }[];
     };
@@ -381,6 +382,7 @@ function main() {
           template: s.visual.template,
           background: s.visual.background ?? null,
           icon: s.visual.icon ?? null,
+          caption: s.visual.caption ?? null,
           highlight: s.visual.highlight ?? "none",
           characters: (s.visual.characters ?? []).map((c) => resolveCharacter(c, catalog, where, ep.style ?? "flat")),
         },

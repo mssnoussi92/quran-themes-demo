@@ -1,0 +1,83 @@
+# « سنريهم آياتنا », épisode 2 (content/trial/signs.yaml ; script : docs/scripts/signs.md, validé). Style d'enquête
+# validé (docs/retention/signs-style-51-47.jpg) : un ciel de nuit généré, les dessins et les photos de l'ESA de
+# video/src/trial/Signs.tsx, la frise des dates et le badge de la série en surimpression. Personne n'est dessiné ;
+# aucune flamme (le Feu est l'invisible). Les répliques sont celles du script validé, mot pour mot.
+id: universe
+# « Je valide les scripts », puis « je valide l'épisode 2 et les deux répliques », puis « je valide les titres et les
+# nouveaux débuts » du propriétaire (2026-11-12) : les répliques, la place des versets, ce sur quoi chaque narration
+# repose, le titre. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication : il les valide sur les vidéos.
+script_validated: { by: mssnoussi92, on: 2026-11-12 }
+# « Je valide tout, garde إذا et la signature » du propriétaire (2026-11-13), sur les vidéos rendues par le workflow
+# `film` (run 18) et envoyées dans la conversation : la voix D, le montage (le ciel généré, les dessins, les photos de
+# l'ESA, la frise, la signature 41:53), la couverture, les textes de publication (docs/retention/publication-signs.md),
+# l'ambiance ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 54-trial-universe     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) : rien à créditer ; les images sont dans les dessins.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1300, veil: 0.7 }
+# Les photos montrées par les dessins (crédit écrit sur l'image, comme l'exigent les conditions de l'ESA, et dans la description).
+photos:
+  - { file: signs/hubble-udf.jpg, credit: "NASA, ESA, S. Beckwith (STScI), HUDF Team", licence: "CC BY 4.0", page: "https://esahubble.org/images/heic0406a/" }
+  - { file: signs/webb-deep-field.jpg, credit: "NASA, ESA, CSA, STScI", licence: "CC BY 4.0", page: "https://esawebb.org/images/weic2209a/" }
+# Ambiance sous la narration, jamais sous les versets : un des enregistrements validés à l'écoute (docs/model.md).
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 100, level: -38 }
+cover: { scene: einstein, title: "حتى أينشتاين غلط فيها", tag: "سنريهم آياتنا (٢)", focus: 1100 }
+publish:
+  title: { en: "Even Einstein got this wrong", ar: "حتى أينشتاين غلط فيها" }
+  part: 2
+  hashtags: ["#الكون", "#سورة_الذاريات"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
+  description:
+    en: "For more than two thousand years the greatest minds were sure the universe never changes; in 1917 even Einstein adjusted his equations to keep it still. In 1929, Hubble saw the galaxies moving away. What does a verse revealed fourteen centuries ago say about the sky?"
+    ar: "أكتر من ألفين سنة وأذكى العقول متأكدة إن الكون ثابت، وحتى أينشتاين سنة ١٩١٧ عدّل معادلاته عشان يفضل ثابت. وسنة ١٩٢٩ هابل شاف المجرات بتبعد. طب آية نزلت من ١٤٠٠ سنة قالت إيه عن السما؟"
+segments:
+  - narration: einstein
+    scene: einstein
+    sources: [science.einstein-1917]
+    lines:
+      - ar: "حتى أينشتاين… غلط فيها."
+        en: "Even Einstein… got this one wrong."
+      - ar: "سنة ١٩١٧… زوّد رقم في معادلاته… عشان الكون يفضل ثابت."
+        en: "In 1917… he added a term to his equations… to keep the universe still."
+  - narration: ancients
+    scene: ptolemy
+    sources: [science.aristotle-heavens, science.ptolemy-almagest]
+    lines:
+      - ar: "زي ما أذكى عقول الدنيا كانت متأكدة… أكتر من ألفين سنة: الكون ثابت."
+        en: "As the greatest minds had been certain for over two thousand years: the universe does not change."
+  - narration: discovery
+    scene: webb
+    sources: [science.hubble-1929]
+    lines:
+      - ar: "لحد سنة ١٩٢٩… تلسكوب فوق جبل في كاليفورنيا شاف المجرات… بتبعد عننا."
+        en: "Until 1929… a telescope on a mountain in California saw the galaxies… moving away from us."
+      - ar: "يعني الكون… بيتمدد."
+        en: "Meaning the universe… is expanding."
+      - ar: "طب كتاب نزل في صحرا من ١٤٠٠ سنة… قال إيه عن السما؟"
+        en: "So a book revealed in a desert 1,400 years ago… what did it say about the sky?"
+  - verses: [quran.51.47, quran.51.48, quran.51.49]
+    scene: hubble
+  - narration: meaning
+    scene: hubble
+    sources: [tafsir.muyassar.51.47, science.hubble-1929]
+    lines:
+      - ar: "يعني: ربنا بنى السما بقوة… والتفسير الميسر قال: وبنوسّع نواحيها."
+        en: "Meaning: God built the sky with strength… and al-Tafsir al-Muyassar says: and We are widening its reaches."
+      - ar: "والصورة دي: سما بتتوسع… اتقالت قبل ما العلم يشوفها بحوالي ١٣٠٠ سنة."
+        en: "This image—a sky being widened—was spoken about 1,300 years before science saw it."
+  - verses: [quran.41.53]
+    upto: 11            # jusqu'au premier arrêt « ۗ », après « أنه الحق » : la signature de la série
+    scene: signs
+  - narration: close
+    scene: dawn
+    sources: [tafsir.saadi.51.47]
+    lines:
+      - ar: "والسعدي قال كمان: ربنا بيوسّع على عباده في الرزق."
+        en: "And as-Sa'di adds: God widens the provision of His servants."
+      - ar: "اللي وسّع السما… قادر يوسّع عليك."
+        en: "The One who widened the sky… can widen things for you."
+      - ar: "ده كان عن الكون كله… الحلقة الجاية: عن صدرك… لما يضيق."
+        en: "That was the whole universe… next: your chest… when it tightens."
+      - ar: "تابعنا عشان الآية الجاية."
+        en: "Follow us for the next sign."

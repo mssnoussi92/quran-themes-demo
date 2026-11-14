@@ -1,0 +1,130 @@
+# « خريطة كلمة », épisode 3 (content/trial/map.yaml ; script : docs/scripts/map.md). Le modèle de `qalb`, validé par le
+# propriétaire le 2026-11-14 : un début muet et rapide (`silent`, `hold`, effets `sfx`), puis la voix D et une leçon. La
+# première fois : ce qu'on cache dans la poitrine, Dieu le sait (3:29, jusqu'au premier arrêt) ; la dernière, dans la
+# dernière sourate du mushaf : celui qui souffle le mal dans les poitrines (114:5) ; le du'a de Moussa (20:25-28). La voix
+# ne dit jamais le du'a : il est récité. Personne n'est dessiné ; rien de l'invisible (ni celui qui souffle, ni rien de lui).
+# Script écrit par la session le 2026-11-14 (« je veux 3 épisodes »).
+id: sadr
+# « Je valide le script de nur et sadr » du propriétaire (2026-11-14), sur docs/scripts/map.md et les images fixes : les
+# répliques (la formule d'ouverture gardée identique aux trois épisodes), la place des versets, ce sur quoi chaque réplique
+# repose, le titre. Ni la voix, ni la vidéo, ni les textes, ni les sources : il les valide sur les vidéos.
+script_validated: { by: mssnoussi92, on: 2026-11-14 }
+# « Je valide tout » du propriétaire (2026-11-14), après l'envoi des épisodes 2 et 3 (workflow `film`, run 27), des trois
+# versions TikTok, des trois couvertures et des textes à coller (docs/retention/publication-map.md) : lu comme l'épisode
+# tel que livré (voix, montage, couverture telle qu'envoyée, ambiance, textes) et ses sources, passées à `validated`.
+# Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-14, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 66-trial-sadr
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1300, veil: 0.7 }
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 110, level: -36 }
+cover: { scene: scan, title: "«الصدر» في القرآن… كام مرة؟", tag: "خريطة كلمة (٣)", focus: 1000 }
+publish:
+  title: { en: "The chest in the Quran… how many times?", ar: "«الصدر» في القرآن… كام مرة؟" }
+  part: 3
+  hashtags: ["#ضيق_الصدر", "#دعاء"]
+  description:
+    en: "The word 'chest' in the Quran: 44 times, in 41 verses. The first time: what you hide in your chest, God knows it (3:29). The last, in the last surah: the one who whispers into the chests of people (114:5). And the prayer of Moses when the chest feels tight (20:25-28)."
+    ar: "كلمة «الصدر» في القرآن: 44 مرة، في 41 آية. أول مرة: اللي في صدرك ربنا عارفه (آل عمران 29). وآخر مرة، في آخر سورة: اللي بيوسوس في صدور الناس (الناس 5). ودعوة موسى عليه السلام لما الصدر يضيق (طه 25-28)."
+segments:
+  # -- le début, muet et rapide
+  - narration: hook
+    silent: true
+    hold: 2.6
+    scene: scan
+    sfx: [[scan, 0]]
+    lines:
+      - ar: "«الصدر» في القرآن كام مرة؟"
+        en: "\"The chest\" in the Quran: how many times?"
+  - narration: land
+    silent: true
+    hold: 2.2
+    scene: land
+    sources: [science.count-sadr]
+    sfx: [[impact, 0.3]]
+    lines:
+      - ar: "44 مرة."
+        en: "44 times."
+  - narration: verses
+    silent: true
+    hold: 3.0
+    scene: grid
+    sources: [science.count-sadr]
+    sfx: [[whoosh, 0]]
+    lines:
+      - ar: "في 41 آية… من 6236."
+        en: "In 41 verses… out of 6,236."
+  - narration: forms
+    silent: true
+    hold: 3.6
+    scene: forms
+    sources: [science.count-sadr]
+    sfx: [[whoosh, 0], [pops, 1.05]]
+    lines:
+      - ar: "34 «صدور»… و10 «صدر»."
+        en: "34 \"chests\"… and 10 \"chest\"."
+  - narration: surahs
+    silent: true
+    hold: 3.4
+    scene: surahs
+    sources: [science.count-sadr]
+    sfx: [[whoosh, 0], [pops, 0.95]]
+    lines:
+      - ar: "وأكتر سورة: آل عمران… 5 مرات."
+        en: "Most of all in Al 'Imran… 5 times."
+  # -- la voix
+  - narration: turn
+    scene: first
+    sources: [science.count-sadr]
+    sfx: [[click, 0.4]]
+    lines:
+      - ar: "بس العدد… مش هو الحكاية."
+        en: "But the number… isn't the story."
+      - ar: "الحكاية… في أول مرة."
+        en: "The story… is in the first time."
+  - verses: [quran.3.29]
+    upto: 10           # jusqu'au premier arrêt « ۗ », après « يعلمه الله »
+    scene: first
+  - narration: last
+    scene: last
+    sources: [science.count-sadr]
+    sfx: [[whoosh, 0.1]]
+    lines:
+      - ar: "وآخر مرة… في آخر سورة في المصحف."
+        en: "And the last time… in the last surah of the mushaf."
+  - verse: quran.114.5
+    scene: last
+  - narration: pair
+    scene: pair
+    sources: [tafsir.muyassar.3.29, tafsir.muyassar.114.5]
+    sfx: [[click, "phrase 0"], [click, "phrase 4"]]   # les deux anneaux, sur « أول مرة: » et « وآخر مرة: »
+    lines:
+      - ar: "أول مرة: اللي في صدرك… مخبّيه أو باينه… ربنا عارفه."
+        en: "The first time: what is in your chest… hidden or shown… God knows it."
+      - ar: "وآخر مرة: في حد بيرمي في الصدور… شر وشك."
+        en: "And the last time: someone casts into chests… evil and doubt."
+      - ar: "طب لما صدرك يضيق؟"
+        en: "So when your chest feels tight?"
+  - verses: [quran.20.25, quran.20.26, quran.20.27, quran.20.28]
+    scene: rest
+  - narration: meaning
+    scene: rest
+    sources: [tafsir.muyassar.20.25]
+    lines:
+      - ar: "يعني: موسى عليه السلام… طلب من ربنا يوسّع صدره… ويسهّل أمره."
+        en: "Meaning: Moses, peace be upon him… asked God to expand his chest… and make his task easy."
+  - narration: example
+    scene: rest
+    lines:
+      - ar: "زي لما تبقى داخل على حاجة صعبة… امتحان… مقابلة… كلام لازم يتقال."
+        en: "Like when you're walking into something hard… an exam… an interview… words that must be said."
+      - ar: "الدعوة دي… قولها قبلها."
+        en: "This prayer… say it before."
+  - narration: close
+    scene: end
+    lines:
+      - ar: "الصدر اللي يضيق… ربنا هو اللي يوسّعه."
+        en: "A chest that feels tight… God is the One who expands it."
+      - ar: "تابعنا عشان الكلمة الجاية."
+        en: "Follow us for the next word."

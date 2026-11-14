@@ -151,7 +151,8 @@ def test_a_reel_being_written_must_give_something_to_look_at(copy):
     of = lambda r: [s for s in ep["scenes"] if s.get("reel") == r["id"]]
     drawn = lambda r: sum(1 for s in of(r) if s["visual"]["template"] == "scene")
     reel = next(r for r in ep["reels"] if 3 * drawn(r) < len(of(r)))      # a reel of cards, as published
-    assert " 0 warning(s)" in copy.validate().stdout             # validated: nothing said
+    # Validated: nothing said about it (an episode being written may have warnings of its own).
+    assert f"[{reel['id']}]" not in copy.validate().stdout
     del reel["validated_by"]
     copy.save_episode(ep)
     done = copy.validate()

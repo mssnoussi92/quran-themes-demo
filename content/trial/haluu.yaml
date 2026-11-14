@@ -1,0 +1,71 @@
+# « كلمة من القرآن », épisode 3 (content/trial/kalima.yaml ; script : docs/scripts/kalima.md, validé). Un mot rare
+# du Coran, son sens d'après un tafsir nommé (sa référence écrite, jamais dite : content/wording.yaml), le mot écrit en or
+# et dit pour la première fois par le récitateur. Dessins : video/src/trial/Kalima.tsx. Personne n'est dessiné.
+id: haluu
+# « Je valide le script » du propriétaire (2026-11-13), sur docs/scripts/kalima.md : les répliques, la place des versets,
+# ce sur quoi chaque narration repose, le titre. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication.
+script_validated: { by: mssnoussi92, on: 2026-11-13 }
+# « Je valide tout pour كلمة من القرآن » du propriétaire (2026-11-13), sur les vidéos rendues par le workflow `film` (runs 20
+# et 21) et envoyées dans la conversation : la voix D, le montage (le clip, les dessins, le mot en or), la couverture,
+# l'ambiance, les textes de publication (docs/retention/publication-kalima.md) ; et ses sources encore proposées, passées
+# à `validated` dans le registre. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 59-trial-haluu     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Clip proposé au propriétaire le 2026-11-13 (planche envoyée), approuvé par lui avec les vidéos (« je valide tout »).
+clip: { source: pixabay, id: 16163, author: Macb3t, page: "https://pixabay.com/videos/id-16163/", take: { from: 8, seconds: 18, slow: 5 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.9, ground: "#04080a", horizon: 1300 }
+# Ambiance sous la narration, jamais sous les versets : un des enregistrements validés à l'écoute (docs/model.md).
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -36 }
+cover: { scene: word, title: "كلمة شرحها القرآن بنفسه… وكتب علاجها", tag: "كلمة من القرآن (٣)", focus: 1050 }
+publish:
+  title: { en: "A word the Quran explains itself… and gives its cure", ar: "كلمة شرحها القرآن بنفسه… وكتب علاجها" }
+  part: 3
+  hashtags: ["#سورة_المعارج", "#الصلاة"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
+  description:
+    en: "A word of the Quran explained by the two verses that follow it: when harm touches him he panics, when good comes to him he withholds. And its cure is written in the same place: prayer."
+    ar: "كلمة في القرآن شرحتها الآيتين اللي بعدها: لو جاله شر ينهار، ولو جاله خير يمسكه. وعلاجها مكتوب في نفس المكان: الصلاة."
+segments:
+  - narration: word
+    scene: word
+    lines:
+      - ar: "فيه كلمة في القرآن… ربنا شرحها بنفسه… في الآيتين اللي بعدها."
+        en: "There's a word in the Quran… God explains it Himself… in the two verses that follow."
+      - ar: "وفي نفس المكان… كتب علاجها."
+        en: "And right there… He wrote its cure."
+  - verses: [quran.70.19, quran.70.20, quran.70.21, quran.70.22, quran.70.23]
+    scene: storm
+  - narration: meaning
+    scene: meaning
+    sources: [tafsir.saadi.70.20, tafsir.saadi.70.22, tafsir.muyassar.70.19]
+    lines:
+      - ar: "لو جاله شر… ينهار… ويقلب الدنيا."
+        en: "When harm touches him… he falls apart… and turns the world upside down."
+      - ar: "ولو جاله خير… يمسكه… وما يدّيش منه حد."
+        en: "When good comes to him… he holds on to it… and gives none of it away."
+      - ar: "وده طبع في الإنسان… إلا صنف واحد: اللي بيصلّوا… وثابتين على صلاتهم."
+        en: "That is man's nature… except one kind: those who pray… and keep to their prayer."
+      - ar: "دول لو جالهم خير… شكروا وادّوا. ولو جالهم شر… صبروا."
+        en: "When good comes to them… they give thanks and give. When harm comes… they are patient."
+  - narration: salary
+    scene: salary
+    lines:
+      - ar: "زي واحد مرتبه اتأخر يومين… فقلب البيت."
+        en: "Like someone whose salary is two days late… and turns the house upside down."
+      - ar: "ولما نزل… مسكه… ومحدش شاف منه حاجة."
+        en: "And when it comes in… he holds on to it… and nobody sees a thing of it."
+  - narration: cure
+    scene: cure
+    lines:
+      - ar: "الطبع ده في كل واحد فينا… والقرآن كتب علاجه في نفس المكان: الصلاة."
+        en: "This nature is in each of us… and the Quran wrote its cure in the same place: prayer."
+      - ar: "لما تلاقي نفسك بتنهار… أو إيدك ماسكة… ارجع لصلاتك."
+        en: "When you find yourself falling apart… or tight-fisted… go back to your prayer."
+  # Le propriétaire (2026-11-13) : la fin ne résume plus la série (« تلات كلمات… »), qui aura d'autres épisodes ; chaque
+  # épisode tient seul et annonce le suivant s'il est connu, sinon une phrase générique, la sienne. Changée après sa
+  # validation du script, puis confirmée par lui le même jour (« oui, la fin de l'épisode 3, lance la voix »).
+  - narration: next
+    scene: next
+    lines:
+      - ar: "تابعنا عشان تعرف الكلمة اللي جاية."
+        en: "Follow us to find out the next word."

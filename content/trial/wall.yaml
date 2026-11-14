@@ -1,0 +1,90 @@
+# Essai, troisième short (2026-11-11, docs/retention.md) : le mur (Al-Kahf 18:77, 18:82), dans le modèle du
+# bateau (content/trial/boat.yaml). Validé depuis par le propriétaire (`script_validated`, `validated`) ; ce fichier n'est pas un épisode.
+# - L'accroche est le miroir de celle du bateau : là-bas des gens généreux et leur bateau percé, ici un village
+#   qui refuse de les recevoir et son mur réparé pour rien.
+# - La promesse est concrète : « sous ce mur, il y avait un secret ».
+# - Ce qu'on ne voit pas : un bien fait pour toi sans que tu le saches ; l'exemple : ce qui arrive tard, quand on
+#   est prêt (« يبلغا أشدهما » : le trésor attend qu'ils aient grandi).
+# - Dernier des trois : la fin redit comment la sagesse s'est dévoilée dans chacun (vite, jamais pour ceux qui
+#   l'ont vécue, cachée jusqu'à son heure), et l'appel à suivre annonce une autre histoire (à remplacer par le
+#   film quand il existera).
+# - Personne n'est montré : le village aux fenêtres éteintes, le mur qui penche puis redressé, la lueur du trésor
+#   dessous, sur un ciel de couchant (clip 190332 de Pixabay, déjà approuvé pour quran-reels, « pb-sunset-clouds »).
+# - Deux versets longs (28 s et 35,5 s) : leur texte s'affiche par pages, au fil de la récitation.
+# - Répliques : toutes de l'IA (« خير مستخبي… ومستني وقته » vient de khidr-04).
+# Script validé par le propriétaire le 2026-11-11 (« je valide le script », après lecture des trois shorts) : les
+# répliques ci-dessous, telles qu'elles sont. Cela ne valide ni la voix, ni les images, ni les textes de
+# publication ; toute réplique changée ensuite redevient à valider.
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
+# « Je valide » du propriétaire (2026-11-11) sur la vidéo livrée dans la conversation : la voix D entendue sur la
+# vidéo entière, le montage, la couverture, les textes de publication (`publish`). Inscrit sur sa parole.
+# L'ambiance sonore (`ambience`), ajoutée après avec son accord, a reçu son propre « je valide » le même jour,
+# sur les vidéos `…-ambience.mp4` : ce sont elles, les vidéos finales.
+validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, cover, publish, ambience] }
+# Ambiance sous la narration, jamais sous un verset ni un hadith (accord du propriétaire, 2026-11-11) : un
+# enregistrement de terrain de BigSoundBank (Joseph Sardin, CC0 : tout usage, crédit non exigé), hors dépôt
+# (tools/trial/ambience.py). `level` : volume de la nappe en LUFS (la voix est à -16). Le vent dans un arbre, quelques oiseaux.
+# Validée par le propriétaire le 2026-11-11, après l'avoir reçue sous les vidéos (`validated`).
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -36 }
+id: wall
+handle: "@quran_words_daily"
+clip: { source: pixabay, id: 190332, author: DancingSky, page: "https://pixabay.com/videos/id-190332/", position: "42% 50%", shift: -400, brightness: 0.62, ground: "#05060c", landscape: { side: left, horizon: 770, shift: -160, brightness: 0.62 } }
+verses: khidr
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", E: "Gemini 3.8 Flash TTS, Sadaltager", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 22-trial-wall
+cover: { scene: treasure, title: "سر تحت الجدار", tag: "موسى والخضر · ٣ من ٣", focus: 1230, file: couverture-3-mur.jpg }   # couverture 9:16 du short (TrialCover916) ; titre validé par le propriétaire le 2026-11-11, avec le film
+# Textes de publication, proposés par la session (2026-11-11), pas encore validés (tools/trial/publish.py).
+publish:
+  title: { en: "The secret under the wall", ar: "سر تحت الجدار" }
+  part: 3
+  hashtags: ["#الخضر", "#الحكمة"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
+  description:
+    en: "A town refused to host them… and one of them repaired its wall for free. Why? Under that wall was a treasure kept for two orphans until they grew up. How many walls were built in your life without your knowing?"
+    ar: "قرية رفضت تضيّفهم… وواحد منهم صلّح جدارها ببلاش. ليه؟ تحت الجدار كنز لولدين يتامى، ربنا حفظه لحد ما يكبروا. كام جدار اتبنى في حياتك… وإنت مش داري؟"
+segments:
+  - narration: open
+    scene: leaning
+    lines:
+      - ar: "قرية رفضت تضيّفهم… وواحد منهم صلّح جدارها ببلاش! ليه؟"
+        en: "A town refused to host them… and one of them repaired its wall for free! Why?"
+      - ar: "ده حصل بين موسى عليه السلام والخَضِر… وتحت الجدار ده… كان فيه سر."
+        en: "It happened between Moses, peace be upon him, and al-Khidr… and under that wall… there was a secret."
+  - verse: quran.18.77
+    scene: leaning
+  - narration: secret
+    scene: raised
+    lines:
+      - ar: "السر؟ الخَضِر قاله قبل ما يفترقوا."
+        en: "The secret? Al-Khidr told him before they parted."
+  - verse: quran.18.82
+    scene: treasure
+  - narration: meaning
+    scene: treasure
+    lines:
+      - ar: "تحت الجدار… كنز لولدين يتامى… أبوهم كان راجل صالح."
+        en: "Under the wall… a treasure for two orphan boys… whose father had been a righteous man."
+      - ar: "لو الجدار وقع… الكنز كان هيضيع منهم وهم صغيرين… فربنا حفظه لحد ما يكبروا."
+        en: "Had the wall fallen… the treasure would have been lost to them as children… so God kept it until they grew up."
+  - narration: depth
+    scene: far
+    lines:
+      - ar: "الولدين… يمكن عمرهم ما عرفوا مين صلّح جدارهم."
+        en: "The two boys… may never have known who repaired their wall."
+      - ar: "كام جدار اتبنى في حياتك… وإنت مش داري؟"
+        en: "How many walls were built in your life… without your knowing?"
+  - narration: example
+    scene: land
+    lines:
+      - ar: "زي رزق اتأخر عليك سنين… وجالك لما بقيت قدّه."
+        en: "Like a provision delayed for years… that came once you were ready for it."
+      - ar: "التأخير ده… كان حفظ. مش حرمان."
+        en: "That delay… was safekeeping. Not deprivation."
+  - narration: close
+    scene: far
+    lines:
+      - ar: "فيه خير مستخبي… ومستني وقته."
+        en: "Some good is hidden… waiting for its time."
+      - ar: "تلات مواقف: حكمة اتكشفت بسرعة… وحكمة ما اتكشفتش لأصحابها… وخير مستخبي لحد وقته."
+        en: "Three stories: a wisdom shown quickly… a wisdom never shown to those who lived it… and a good hidden until its time."
+      - ar: "تابعنا عشان القصة الجاية."
+        en: "Follow us for the next story."

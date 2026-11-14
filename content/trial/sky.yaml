@@ -1,0 +1,84 @@
+# « سنريهم آياتنا », épisode 3 (content/trial/signs.yaml ; script : docs/scripts/signs.md, validé). Style d'enquête
+# validé (docs/retention/signs-style-51-47.jpg) : un ciel de nuit généré, les dessins et les photos de l'ESA de
+# video/src/trial/Signs.tsx, la frise des dates et le badge de la série en surimpression. Personne n'est dessiné ;
+# aucune flamme (le Feu est l'invisible). Les répliques sont celles du script validé, mot pour mot.
+id: sky
+# « Je valide les scripts », puis « je valide l'épisode 2 et les deux répliques », puis « je valide les titres et les
+# nouveaux débuts » du propriétaire (2026-11-12) : les répliques, la place des versets, ce sur quoi chaque narration
+# repose, le titre. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication : il les valide sur les vidéos.
+script_validated: { by: mssnoussi92, on: 2026-11-12 }
+# « Je valide tout, garde إذا et la signature » du propriétaire (2026-11-13), sur les vidéos rendues par le workflow
+# `film` (run 18) et envoyées dans la conversation : la voix D, le montage (le ciel généré, les dessins, les photos de
+# l'ESA, la frise, la signature 41:53), la couverture, les textes de publication (docs/retention/publication-signs.md),
+# l'ambiance ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 55-trial-sky     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) : rien à créditer ; les images sont dans les dessins.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1300, veil: 0.7 }
+# Les photos montrées par les dessins (crédit écrit sur l'image, comme l'exigent les conditions de l'ESA, et dans la description).
+photos:
+  - { file: signs/hubble-udf.jpg, credit: "NASA, ESA, S. Beckwith (STScI), HUDF Team", licence: "CC BY 4.0", page: "https://esahubble.org/images/heic0406a/" }
+# Ambiance sous la narration, jamais sous les versets : un des enregistrements validés à l'écoute (docs/model.md).
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 130, level: -36 }
+cover: { scene: balloon, title: "اللي بيحصل فوق ٨ كيلو… القرآن وصفه", tag: "سنريهم آياتنا (٣)", focus: 1100 }
+publish:
+  title: { en: "What happens 8 km up… the Quran described it", ar: "اللي بيحصل فوق ٨ كيلو… القرآن وصفه" }
+  part: 3
+  hashtags: ["#ضيق_الصدر", "#سورة_الأنعام"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
+  description:
+    en: "In 1875 three men rose into the sky in a balloon; past eight kilometres, two of them never came back: the air was no longer enough. More than a thousand years before anyone flew, a verse spoke of a chest that tightens as one climbs into the sky."
+    ar: "سنة ١٨٧٥ تلات رجالة طلعوا في السما ببالون، وبعد تمانية كيلو اتنين منهم ما رجعوش: الهوا ما بقاش يكفي. وقبل ما إنسان يطير بأكتر من ألف سنة، آية وصفت صدر بيضيق كل ما يطلع في السما."
+segments:
+  - narration: balloon
+    scene: balloon
+    sources: [science.zenith-1875]
+    lines:
+      - ar: "اللي بيحصل فوق تمانية كيلو… القرآن وصفه."
+        en: "What happens eight kilometres up… the Quran described it."
+      - ar: "سنة ١٨٧٥… تلات رجالة طلعوا في السما ببالون."
+        en: "In 1875… three men rose into the sky in a balloon."
+      - ar: "ولما عدّوا تمانية كيلو… اتنين منهم ما رجعوش: الهوا ما بقاش يكفي."
+        en: "Past eight kilometres… two of them never came back: the air was no longer enough."
+  - narration: pascal
+    scene: puy
+    sources: [science.perier-pascal-1648, science.first-flight-1783]
+    lines:
+      - ar: "قبلها بقرنين… سنة ١٦٤٨… طلعوا بمقياس على جبل في فرنسا… ولقوا إن الهوا بيخف كل ما تطلع لفوق."
+        en: "Two centuries earlier, in 1648… they carried a gauge up a mountain in France… and found the air thins as you climb."
+      - ar: "طب كتاب نزل في صحرا من ١٤٠٠ سنة… قبل أول إنسان يطير بأكتر من ألف سنة… قال إيه؟"
+        en: "So a book revealed in a desert 1,400 years ago… more than a thousand years before the first human flew… what did it say?"
+  - verse: quran.6.125
+    scene: layers
+  - narration: meaning
+    scene: layers
+    sources: [tafsir.muyassar.6.125]
+    lines:
+      - ar: "يعني: اللي ربنا عايز يهديه… يفتح قلبه للإيمان… واللي يضله… يخلي صدره ضيق."
+        en: "Meaning: whomever God wills to guide… He opens his heart to faith… and whomever He sends astray… He makes his chest tight."
+      - ar: "والتفسير الميسر قال: زي اللي بيطلع لطبقات الجو العالية… فيضيق نفَسه."
+        en: "And al-Tafsir al-Muyassar says: like one rising into the upper air… whose breath grows short."
+  - narration: image
+    scene: layers
+    sources: [science.first-flight-1783]
+    lines:
+      - ar: "والصورة دي: صدر بيضيق كل ما تطلع لفوق… اتقالت قبل ما إنسان يطير بأكتر من ألف سنة."
+        en: "This image—a chest tightening as you rise—was spoken more than a thousand years before anyone flew."
+  - verses: [quran.41.53]
+    upto: 11            # jusqu'au premier arrêt « ۗ », après « أنه الحق » : la signature de la série
+    scene: signs
+  - narration: close
+    scene: open
+    sources: [tafsir.saadi.6.125]
+    lines:
+      - ar: "والآية أصلًا مش عن الطيران… عن قلب مقفول قدام الحق."
+        en: "And the verse isn't really about flying… it's about a heart closed to the truth."
+      - ar: "السعدي قال: الصدر اللي بيتفتح للخير… علامة هداية."
+        en: "As-Sa'di wrote: a chest that opens to good… is a sign of guidance."
+      - ar: "اطلب من ربنا يشرح صدرك."
+        en: "Ask God to open your chest."
+      - ar: "ده كان عن السما… الحلقة الجاية: عن جواك إنت… من قبل ما تتولد."
+        en: "That was the sky… next: what is inside you… before you were even born."
+      - ar: "تابعنا عشان الآية الجاية."
+        en: "Follow us for the next sign."

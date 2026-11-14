@@ -1,0 +1,176 @@
+# Le film du du'a (2026-11-11, docs/themes.md « Fiche : le du'a dans le modèle ») : la réécriture de l'épisode
+# content/episodes/dua.yaml dans le modèle « un film et ses shorts » (docs/model.md). Décisions du propriétaire
+# (2026-11-11, « ok go with your recommendations ») : chaque idée reçue brisée par l'appel d'un prophète dans
+# l'ordre d'Al-Anbiya (Ayyoub, Younous, Zakariya) ; ce film remplace la collection « دعوات في الشدة » ; les hadiths
+# dans chaque short ; Tirmidhi 3505 à la fin du deuxième.
+# - Le film reprend les trois shorts (asked, written, waited) réplique par réplique, sans leurs appels à suivre,
+#   et ajoute : l'ouverture, le cadre (« الدعاء هو العبادة », 40:60), 13:39 dans la deuxième partie, la conclusion
+#   (2:186) ; ses répliques propres tiennent en UNE requête de voix (content/voice-test/33-trial-dua.txt).
+# - `kept` : réplique validée de l'ancien épisode, reprise mot pour mot, sans ses guillemets.
+# - Corrections du propriétaire (2026-11-11) : aucun mot du silence pour « ne pas demander » (« بتبعدنا عن
+#   الدعاء »), « راسه شابت » au lieu de « شاب » (lu « jeune »). Le propriétaire trouve « la structure du film
+#   parfaite » (2026-11-11) : elle ne change pas ; « الدعاء هو العبادة » (Tirmidhi 3247) y est
+#   lu une fois, dans le chapitre `worship` ; le premier short le lit aussi, à sa place, et cette lecture et
+#   « وقال كمان: » ne sont pas reprises ici.
+# « Je valide le script » du propriétaire (2026-11-11), sur le script corrigé (docs/scripts/dua.md) : les
+# répliques, la place des versets et des hadiths, les titres. Ni la voix, ni les images, ni les textes de
+# publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
+id: dua
+rule: 3                          # préparé avec la règle 3 (calage et niveau de la voix du 2026-11-11) : ses vidéos validées en sortent identiques (tools/trial/prepare.py, rule_of)
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
+# « Je valide tout » du propriétaire (2026-11-11) sur le film corrigé, rendu par le workflow `film` et envoyé dans la
+# conversation : la voix D sur la vidéo entière, le montage, la vignette, le rappel d'abonnement, l'ambiance ; et les
+# sources du film et de ses shorts qui étaient encore proposées (huit versets, Tirmidhi 3505 et sa lecture). Inscrit
+# sur sa parole. Les textes de publication (`publish`, docs/retention/publication-dua.md, envoyés dans la conversation) :
+# validés par son « je valide le script » du 2026-11-11 au soir ; il a précisé le 2026-11-12 que ce mot portait sur eux.
+validated: { by: mssnoussi92, on: 2026-11-11, what: [voice, montage, thumbnail, subscribe, publish, ambience] }
+# Le même film en vertical (9:16, pour Facebook : tools/trial/videos.py, `only: tall`). « Je valide tout » du propriétaire
+# (2026-11-12), sur la vidéo envoyée dans la conversation et son texte Facebook : le montage vertical (la voix et
+# l'ambiance sont celles du film, déjà validées) et ce texte. Inscrit sur sa parole.
+tall: { validated: { by: mssnoussi92, on: 2026-11-12, what: [montage, publish] } }
+files: dua                       # début du nom des vidéos livrées : dua-film-16x9.mp4, dua-short-<n>-<id>.mp4
+title: { ar: "الدعاء… تلات أفكار غلط بتبعدك عنه", en: "Du'a: three wrong ideas that keep you from asking" }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 33-trial-dua
+outro: 12
+thumbnail: { title: "الدعاء", tag: "٣ أفكار غلط… و٣ نداءات", panels: [asked, written, waited] }
+publish:
+  out: docs/retention/publication-dua.md      # où tools/trial/publish.py écrit les textes à coller
+  title: { en: "Du'a: 3 wrong ideas that keep you from asking", ar: "الدعاء: ٣ أفكار غلط بتبعدك عنه" }
+  series: { en: "Du'a", ar: "الدعاء" }
+  description:
+    en: "One in the depth of affliction, one in the belly of a whale, one whose hair had turned white and still asking: three who called on God in the Quran, and all three were answered. And three wrong ideas that keep us from asking: I'm content so I won't ask, it's all written, I asked and nothing happened."
+    ar: "واحد في عز البلاء، واحد في بطن حوت، وواحد راسه شابت ولسه بيطلب: تلاتة نادوا ربنا في القرآن… والتلاتة اترد عليهم. وتلات أفكار غلط بتبعدنا عن الدعاء: أنا راضي مش هدعي، كله مكتوب، دعيت وما حصلش."
+  hashtags: ["#الدعاء", "#قصص_الأنبياء"]      # validés par le propriétaire le 2026-11-14 (« je valide les hashtags ») ; avant : ["#Dua", "#الدعاء", "#Islam"]
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }
+chapters:
+  - id: open
+    title: { ar: "تلات نداءات", en: "Three calls" }
+    segments:
+      - narration: film-open
+        shots: [{ picture: asked, scene: dark }, { picture: written, scene: deep }, { picture: waited, scene: niche }]
+        lines:
+          - ar: "واحد في عز البلاء… واحد في بطن حوت… وواحد راسه شابت ولسه بيطلب."
+            en: "One in the depth of affliction… one in the belly of a whale… and one whose hair had turned white, still asking."
+      - narration: film-promise
+        picture: written
+        scene: sea
+        lines:
+          - ar: "تلاتة نادوا ربنا… والتلاتة اترد عليهم."
+            en: "Three who called on God… and all three were answered."
+          - ar: "وإحنا… تلات أفكار غلط بتبعدنا عن الدعاء."
+            en: "And us… three wrong ideas keep us from asking."
+  - id: worship
+    title: { ar: "الدعاء عبادة", en: "Du'a is worship" }
+    segments:
+      - narration: film-worship
+        picture: waited
+        scene: sky
+        lines:
+          - ar: "يا رب… بنقولها كل يوم."
+            en: "Ya Rabb… we say it every day."
+          - ar: "دي مش مجرد عادة… دي عبادة."
+            en: "That's not just a habit… it's worship."
+            kept: dua.hook-4
+          - ar: "النبي صلى الله عليه وسلم قال:"
+            en: "The Prophet ﷺ said:"
+            kept: dua.anchor
+      - reading: hadith.tirmidhi.3247
+      - verse: quran.40.60
+      - narration: film-three
+        lines:
+          - ar: "بس فيه تلات أفكار غلط عن الدعاء… يمكن تكون مصدق واحدة منهم."
+            en: "But there are three wrong ideas about du'a… you might believe one of them."
+            kept: dua.outro
+  - id: asked
+    number: 1
+    title: { ar: "أنا راضي… مش هدعي", en: "I'm content, I won't ask" }
+    segments:
+      - { reuse: asked.open, picture: asked, scene: dark }
+      - { verse: quran.21.83, scene: call }
+      - { reuse: asked.turn }
+      - { verse: quran.21.84, scene: lit }
+      - { reuse: asked.meaning }
+      - { reading: hadith.muslim.2679a }
+      - { reuse: asked.ask }
+      - { reuse: asked.depth, scene: land }
+      - { reuse: asked.example }
+      - { reuse: asked.close, lines: [0, 1], scene: lit, subscribe: true }
+  - id: written
+    number: 2
+    title: { ar: "كله مكتوب… أدعي ليه؟", en: "It's all written, why ask?" }
+    segments:
+      - { reuse: written.open, picture: written, scene: deep }
+      - { verse: quran.21.87, scene: light }
+      - { reuse: written.turn }
+      - { verse: quran.21.88, scene: shore }
+      - { reuse: written.if }
+      - { verse: quran.37.143, scene: deep }
+      - { verse: quran.37.144 }
+      - { reuse: written.meaning, scene: shore }
+      - { reading: hadith.tirmidhi.2139 }
+      - { reuse: written.means }
+      - { verse: quran.13.39, scene: sea }
+      - { reuse: written.depth }
+      - { reuse: written.example }
+      - { reuse: written.close, scene: shore }
+      - { reading: hadith.tirmidhi.3505, scene: light }
+  - id: waited
+    number: 3
+    title: { ar: "دعيت… وما حصلش حاجة", en: "I asked and nothing happened" }
+    segments:
+      - { reuse: waited.open, picture: waited, scene: niche }
+      - { verse: quran.19.4 }
+      - { reuse: waited.never }
+      - { verse: quran.21.89 }
+      - { verse: quran.21.90, scene: two }
+      - { reuse: waited.meaning }
+      - { reading: hadith.bukhari.6340 }
+      - { reuse: waited.haste }
+      - { reuse: waited.depth, scene: far }
+      - { reuse: waited.example, scene: sky }
+      - narration: film-ask
+        scene: far
+        lines:
+          - ar: "طب ولو اللي طلبته محصلش؟"
+            en: "And if what you asked for doesn't happen?"
+            kept: dua.answer-question
+          - ar: "النبي صلى الله عليه وسلم قال:"
+            en: "The Prophet ﷺ said:"
+            kept: dua.answer-hadith-2
+      - { reading: hadith.tirmidhi.3573 }
+      - narration: film-lost
+        lines:
+          - ar: "يعني دعاءك… عمره ما بيضيع."
+            en: "So your du'a… is never wasted."
+            kept: dua.answer-never-lost
+          - ar: "إنت مستني رد واحد… وربنا عنده أكتر من رد: يديك… أو يصرف عنك شر قدّه."
+            en: "You wait for one answer… God has more than one: He gives it to you… or turns away from you a harm as great."
+      - { reuse: waited.close, lines: [0], scene: two }
+  - id: near
+    title: { ar: "ربنا قريب", en: "God is near" }
+    segments:
+      - narration: film-hear
+        picture: asked
+        scene: land
+        lines:
+          - ar: "طب هو سامعني أصلاً؟"
+            en: "But does He even hear me?"
+      - { verse: quran.2.186, scene: lit }
+      - narration: film-near
+        lines:
+          - ar: "ربنا قريب… وبيجيب."
+            en: "God is near… and He answers."
+            kept: dua.near-near
+          - ar: "الدعاء عبادة… مش عكس الرضا… بيرد القضاء… وعمره ما بيضيع."
+            en: "Du'a is worship… not against contentment… it turns back the decree… and it's never wasted."
+            kept: dua.near-recap
+          - ar: "فمتبطلش تدعي… وقول يا رب."
+            en: "So never stop making du'a… and say “Ya Rabb”."
+            kept: dua.near-outro
+      - narration: film-last
+        subscribe: true
+        lines:
+          - ar: "اشترك… عشان القصة الجاية."
+            en: "Subscribe… for the next story."

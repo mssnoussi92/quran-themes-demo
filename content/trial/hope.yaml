@@ -1,0 +1,102 @@
+# « آية وحكايتها », short 3 (pilote, 2026-11-11 ; content/trial/ayah.yaml, docs/themes.md) : Az-Zumar 39:53.
+# Le fait : des gens du polythéisme qui avaient beaucoup tué et beaucoup commis l'adultère viennent dire : ce à quoi
+# tu appelles est bon, si seulement tu nous disais qu'il y a une expiation à ce que nous avons fait (Bukhari 4810 ;
+# aussi Muslim 122). Les autres récits des livres de causes de révélation (Wahshi, des musulmans éprouvés) ne sont
+# pas racontés.
+# - Le sens (al-Muyassar) : ne désespérez pas à cause du nombre de vos péchés ; Il pardonne tous les péchés « لمن تاب
+#   منها ورجع عنها مهما كانت ». Cette condition est dite dans la réplique de sens.
+# - La leçon (as-Sa'di) : dire « nos péchés sont trop nombreux » fait rester dans la désobéissance ; qui ne revient
+#   pas « فقد أغلق على نفسه باب الرحمة والمغفرة ».
+# - LIGNE D'AVERTISSEMENT, jamais coupée : « ومش معناها اعمل اللي إنت عايزه… معناها: ارجع. » (le verset n'est pas
+#   une permission).
+# - « ما ناداهمش: يا مجرمين… ناداهم ونسبهم لنفسه » : notre remarque sur le premier mot du verset, qui vient d'être
+#   récité ; la voix de synthèse ne redit pas ce mot.
+# - L'exemple (celui qui a laissé la prière des années) est une scène type.
+# - Images prévues (personne, rien de l'invisible) : `road` une route dans la nuit ; `rain` la pluie sur une terre
+#   craquelée ; `gate` une porte ouverte, la lumière au travers.
+# - Dernier short du pilote : l'avant-dernière réplique rappelle les trois récits, l'appel promet le verset suivant
+#   (promesse à tenir seulement si la série continue : à garder ou à retirer, au propriétaire de le dire).
+id: hope
+# « Je valide le reste » du propriétaire (2026-11-12), en réponse au script envoyé (docs/scripts/ayah.md), après avoir
+# demandé de changer « قتلوا كتير… وزنوا كتير » par, « par exemple », « عملوا ذنوب كبيرة » : ses mots sont pris tels
+# quels dans la première réplique (la narration ne nomme plus les deux péchés du récit ; la référence de Bukhari 4810
+# reste écrite). Le titre de la couverture et le titre de publication portaient les mêmes mots : la session les a
+# alignés sur les siens et le lui a dit, à lui de le démentir. Validé : les répliques, la place du verset, ce sur quoi
+# chaque narration repose. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication, ni les sources
+# proposées : sur les vidéos. La prise faite avant ce mot ne sert plus : refaite après lui (une requête).
+script_validated: { by: mssnoussi92, on: 2026-11-12 }
+# « Je valide tout sur les 3 shorts » du propriétaire (2026-11-12), sur les vidéos rendues par le workflow `film` et
+# envoyées dans la conversation (livrée le même jour, avec sa réplique) : la voix D sur la vidéo entière, le montage (le clip
+# et les dessins), la couverture, l'ambiance, les textes de publication (`publish`, docs/retention/publication-ayah.md,
+# envoyés) ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 52-trial-hope     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Le clip (validé par le propriétaire sur la vidéo, 2026-11-12) : un ciel d'orage bleu sombre au-dessus d'une ligne d'arbres,
+# en accéléré, ralenti sept fois pour ne se jouer qu'une fois. Dessins : video/src/trial/Ayah.tsx.
+clip: { source: pixabay, id: 16495, author: max_bbb, page: "https://pixabay.com/videos/id-16495/", take: { slow: 7, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.8, ground: "#05070f", horizon: 1330 }
+# Ambiance sous la narration, jamais sous le verset : le vent, un des trois enregistrements validés à l'écoute par le
+# propriétaire (docs/model.md, « Ambiances »). Une pluie irait mieux à cette image : la recherche de la banque de sons
+# a refusé la session (403) ; il a validé le short avec le vent (2026-11-12).
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -36 }
+cover: { scene: gate, title: "عملوا ذنوب كبيرة… وجم يسألوا!", tag: "آية وحكايتها · ٣", focus: 1180 }
+publish:
+  title: { en: "They had committed grave sins… and came to ask", ar: "عملوا ذنوب كبيرة… وجم يسألوا!" }
+  part: 3
+  hashtags: ["#رحمة_الله", "#التوبة"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
+  description:
+    en: "People who had committed grave sins came to the Prophet ﷺ and asked: is there any expiation for what we have done? The verse that came down is for everyone who thinks his sin is too great to be forgiven. It does not mean: do as you please. It means: come back."
+    ar: "ناس عملوا ذنوب كبيرة… وجم للنبي ﷺ يسألوا: اللي عملناه ليه كفّارة؟ والآية اللي نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر. ومش معناها اعمل اللي إنت عايزه… معناها: ارجع."
+segments:
+  - narration: open
+    scene: road
+    sources: [hadith.bukhari.4810]
+    lines:
+      - ar: "ناس عملوا ذنوب كبيرة… وجم للنبي صلى الله عليه وسلم يسألوا!"
+        en: "People who had committed grave sins… came to the Prophet ﷺ with a question!"
+      - ar: "قالوله: اللي بتدعو له حلو… بس قولّنا: اللي عملناه… ليه كفّارة؟"
+        en: "They said: what you call to is good… but tell us: what we have done… is there any expiation for it?"
+      - ar: "والرد اللي نزل… لكل واحد شايف إن ذنبه أكبر من إنه يتغفر."
+        en: "And the answer that came down… is for everyone who thinks his sin is too great to be forgiven."
+  - verse: quran.39.53
+    scene: rain
+  - narration: meaning
+    scene: rain
+    sources: [tafsir.muyassar.39.53]
+    lines:
+      - ar: "يعني: يا اللي زوّدتوها على نفسكم في الذنوب… ما تيأسوش من رحمة ربنا."
+        en: "Meaning: you who have gone too far against yourselves in sin… do not despair of God's mercy."
+      - ar: "ربنا بيغفر الذنوب كلها… للي يتوب ويرجع… مهما كانت."
+        en: "God forgives all sins… for whoever repents and turns back… whatever they were."
+  - narration: depth
+    scene: rain
+    sources: [tafsir.saadi.39.53]
+    lines:
+      - ar: "ما ناداهمش: يا مجرمين… ناداهم ونسبهم لنفسه."
+        en: "He did not call them: you criminals… He called them and named them His own."
+      - ar: "واليأس… هو اللي بيخليك تكمّل في الغلط."
+        en: "And despair… is what keeps you going in the wrong."
+      - ar: "وإحنا… الذنب يكبر في عينينا لحد ما نقول: خلاص… ما ينفعش أرجع."
+        en: "And us… the sin grows in our eyes until we say: that's it… I can't come back."
+  - narration: example
+    scene: road
+    lines:
+      - ar: "زي واحد ساب الصلاة سنين… وكل ما ييجي يرجع يقول: بعد كل ده؟"
+        en: "Like someone who left prayer for years… and each time he is about to return says: after all this?"
+      - ar: "أيوه… بعد كل ده."
+        en: "Yes… after all this."
+      - ar: "ومش معناها اعمل اللي إنت عايزه… معناها: ارجع."
+        en: "It does not mean: do as you please… it means: come back."
+  - narration: close
+    scene: gate
+    sources: [tafsir.saadi.39.53]
+    lines:
+      - ar: "الباب مفتوح… واللي بيقفله على نفسه… هو اللي ما بيرجعش."
+        en: "The door is open… and the one who shuts it on himself… is the one who does not come back."
+      - ar: "لما تقول لنفسك: فات الأوان… افتكر مين اللي سألوا قبلك."
+        en: "When you tell yourself: it's too late… remember who asked before you."
+      - ar: "تلات آيات… وتلات حكايات: قافلة… وكلمة… وسؤال."
+        en: "Three verses… three stories: a caravan… a remark… and a question."
+      - ar: "تابعنا عشان الآية الجاية وحكايتها."
+        en: "Follow us for the next verse and its story."

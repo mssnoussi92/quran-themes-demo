@@ -1,0 +1,90 @@
+# Dhul-Qarnayn dans le modèle, short 2 (2026-11-11, docs/themes.md) : l'argent refusé. L'épreuve du pouvoir de
+# prendre : un peuple menacé lui offre un tribut pour un barrage (18:93-94), il le refuse et demande leurs bras
+# (18:95).
+# - `kept` : réplique validée de l'ancien épisode, reprise mot pour mot ; les autres sont de l'IA, à valider.
+# - 18:95 : al-Muyassar, « ما أعطانيه ربي من الملك والتمكين خير لي من مالكم » ; al-Sa'di, « تعينوني بقوة منكم
+#   بأيديكم » : d'où « إيديهم ».
+# - Gog et Magog ne sont jamais dessinés : le défilé, les habitations au pied des parois, le tribut posé, les outils.
+# - Clip et ambiance PROPOSÉS (le clip est à montrer au propriétaire ; l'ambiance est provisoire : le vent dans un
+#   défilé reste à chercher).
+# Script validé par le propriétaire le 2026-11-11 (« je valide le script ») : les répliques, la place des versets et
+# du hadith, les titres. Ni la voix, ni les images (clips proposés, dessins), ni l'ambiance, ni les textes de
+# publication : il les valide sur les vidéos. Toute réplique changée ensuite redevient à valider.
+id: tribute
+script_validated: { by: mssnoussi92, on: 2026-11-11 }
+# « Je valide » du propriétaire (2026-11-12 : « je valide Dhul-Qarnayn, vidéo et textes ») sur les vidéos corrigées,
+# rendues par le workflow `film` et envoyées dans la conversation (release brouillon `qarnayn-candidate`) : la voix D
+# sur la vidéo entière, le montage, la couverture, l'ambiance, et les textes de publication (`publish`,
+# docs/retention/publication-qarnayn.md, envoyés). Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+clip: { source: pixabay, id: 225408, author: AttilaPergel, page: "https://pixabay.com/videos/id-225408/", position: "50% 40%", brightness: 0.7, landscape: { side: left, horizon: 700, brightness: 0.65 } }
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 41-trial-tribute
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -36 }
+cover: { scene: offer, title: "عرضوا عليه فلوس… ورفض!", tag: "ذو القرنين · ٢ من ٣", focus: 1200 }
+publish:
+  title: { en: "They offered him money… he refused", ar: "عرضوا عليه فلوس… ورفض!" }
+  part: 2
+  hashtags: ["#القناعة", "#قصص_القرآن"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
+  description:
+    en: "A people living between two mountains offered Dhul-Qarnayn a tribute to build a barrier against Gog and Magog. He refused the money: what my Lord has given me is better. He asked for their hands instead, and built it with them."
+    ar: "قوم بين جبلين عرضوا على ذي القرنين فلوس عشان يبني لهم سد من يأجوج ومأجوج. رفض الفلوس: اللي ربنا إداهولي أحسن… وطلب منهم قوتهم، وبنى معاهم."
+segments:
+  - narration: open
+    scene: pass
+    lines:
+      - ar: "عرضوا عليه فلوس عشان يحميهم… ورفض الفلوس! ليه؟"
+        en: "They offered him money to protect them… and he refused the money! Why?"
+      - ar: "ده ذو القرنين… وصل لقوم بين جبلين… خايفين من يأجوج ومأجوج. واللي قاله لهم… هيغيّر نظرتك لكل حد محتاجك."
+        en: "That was Dhul-Qarnayn… a people between two mountains… feared Gog and Magog. His answer changes how you see anyone in need."
+  - verse: quran.18.93
+    scene: pass
+  - verse: quran.18.94
+    scene: offer
+  - narration: turn
+    scene: offer
+    lines:
+      - ar: "وهو رد بإيه؟"
+        en: "And what did he answer?"
+  - verse: quran.18.95
+    scene: refused
+  - narration: meaning
+    scene: refused
+    lines:
+      - ar: "قال: اللي ربنا إداهولي أحسن. ساعدوني بقوتكم… وأنا أعمل بينكم وبينهم ردم."
+        en: "He said: what my Lord has given me is better. Help me with your strength… and I will build a wall between you and them."
+        kept: qarnayn.dam-3
+      - ar: "ما خدش فلوس من ناس محتاجة… عشان اللي ربنا إداهوله أحسن."
+        en: "He took no money from people in need… because what God had given him was better."
+        kept: qarnayn.dam-lesson-1
+      - ar: "وما عملش كل حاجة لوحده: قالهم ساعدوني."
+        en: "And he didn't do everything alone: he told them, help me."
+        kept: qarnayn.dam-lesson-2
+  - narration: depth
+    scene: land
+    lines:
+      - ar: "هما شافوا إن اللي معاهم فلوس… وهو شاف اللي معاهم بجد: إيديهم."
+        en: "They thought what they had was money… he saw what they really had: their hands."
+      - ar: "وإحنا كده: يا نستغل المحتاج… يا نشيل عنه كل حاجة. وهو خلّاهم يشتغلوا معاه."
+        en: "And so are we: we either use the one in need… or do everything for him. He made them work with him."
+  - narration: example
+    scene: land
+    lines:
+      - ar: "زي لما حد محتاج يطلب منك مساعدة… وإنت تقدر تستغله."
+        en: "Like when someone in need asks you for help… and you could take advantage of him."
+        kept: qarnayn.dam-life-1
+      - ar: "أو تساعده… وتعلّمه يقف على رجله."
+        en: "Or you can help him… and teach him to stand on his own feet."
+        kept: qarnayn.dam-life-2
+  - narration: close
+    scene: refused
+    lines:
+      - ar: "اللي ربنا إداهولك… أحسن من اللي في جيب المحتاج."
+        en: "What God has given you… is better than what is in the pocket of the one in need."
+      - ar: "لما حد محتاجك… افتكر ذو القرنين: ساعده… وخلّيه يشتغل معاك."
+        en: "When someone needs you… remember Dhul-Qarnayn: help him… and let him work with you."
+      - ar: "ده اختبار القوة قدام المحتاج… وفاضل أصعب اختبار: لما تنجح."
+        en: "That was the test of power before the one in need… the hardest test remains: when you succeed."
+      - ar: "تابعنا عشان تعرف قال إيه."
+        en: "Follow us to find out what he said."

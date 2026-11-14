@@ -1,0 +1,101 @@
+# « آية وحكايتها », short 1 (pilote, 2026-11-11 ; content/trial/ayah.yaml, docs/themes.md) : Al-Jumu'ah 62:11.
+# Le fait : un vendredi, pendant que le Prophète ﷺ prêchait debout, une caravane arrive et il ne reste avec lui que
+# douze hommes (Muslim 863a : « كان يخطب قائما يوم الجمعة فجاءت عير من الشام… حتى لم يبق إلا اثنا عشر رجلا » ;
+# Bukhari 936 : « عير تحمل طعاما »). Rien d'autre du récit n'est dit : ni la faim à Médine ni un nom (les livres de
+# causes de révélation les rapportent sans chaîne de nos recueils).
+# - Le sens (al-Muyassar) : ils se sont dispersés vers le commerce et t'ont laissé debout sur le minbar ; ce qui est
+#   auprès d'Allah vaut mieux ; Il est le meilleur de ceux qui pourvoient.
+# - La leçon (as-Sa'di) : « ليس الصبر على طاعة الله مفوتًا للرزق » ; quand l'âme tire vers le jeu et le commerce à
+#   l'heure de l'adoration, lui rappeler ce qui est auprès d'Allah.
+# - Répliques de la session, à valider. Les nôtres sans tafsir : « العين راحت للرزق… » (ce qu'on ne voit pas), la
+#   ligne sur les Compagnons (pour que le fait ne les rabaisse pas : « ودول مين؟ الصحابة… »), les deux exemples.
+# - Images prévues (des choses et des lieux, personne) : `sermon` des troncs de palmier et les marches d'un minbar,
+#   vides ; `caravan` une file de chameaux chargés à l'horizon ; `twelve` douze lampes restées allumées parmi des
+#   lampes éteintes ; `phone` un téléphone allumé posé près d'un tapis de prière.
+# - La dernière réplique avant l'appel annonce le short 2 (la sourate 93) : promesse à tenir, ordre de publication.
+id: caravan
+# « Je valide le reste » du propriétaire (2026-11-12), en réponse au script envoyé (docs/scripts/ayah.md), une seule
+# réplique étant à changer, dans le short 3 (`hope`) : les répliques, la place des versets, ce sur quoi chaque narration
+# repose, les titres. Ni la voix, ni les images (clips proposés, dessins), ni l'ambiance, ni les textes de publication,
+# ni les sources proposées du registre : il les valide sur les vidéos. Toute réplique changée ensuite redevient à
+# valider. La prise de voix, faite avant ce mot par erreur (docs/history.md, tâche 50), dit ce script mot pour mot.
+script_validated: { by: mssnoussi92, on: 2026-11-12 }
+# « Je valide tout sur les 3 shorts » du propriétaire (2026-11-12), sur les vidéos rendues par le workflow `film` et
+# envoyées dans la conversation (la version de jour, rendue après son choix de l'image) : la voix D sur la vidéo entière, le montage (le clip
+# et les dessins), la couverture, l'ambiance, les textes de publication (`publish`, docs/retention/publication-ayah.md,
+# envoyés) ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
+text: 50-trial-caravan     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Le clip : des dunes filmées d'un drone qui avance lentement, de jour, ralenti cinq fois pour ne se jouer qu'une fois
+# sur tout le short. Dessins : video/src/trial/Ayah.tsx.
+# Le propriétaire (2026-11-12) : « l'heure de l'histoire, c'est midi, la prière du vendredi, et c'est un peu sombre ».
+# L'image de jour : le clip sans assombrissement (`brightness: 1.0`), le voile du haut allégé (`veil: 0.55`), plus de
+# lampes (une lumière ne se lit que la nuit, et vingt-quatre lampes dont douze s'éteignent comptaient ceux qui sont
+# partis, ce que le récit ne donne pas) : le lieu du prêche en plein jour, la caravane, des traces de pas.
+# APPROUVÉE par lui le même jour sur la planche de comparaison (« je valide l'image du jour ») : le clip ainsi posé
+# et les dessins ; puis validée sur la vidéo avec le reste (`validated`).
+clip: { source: pixabay, id: 16139, author: AcornStudioSpain, page: "https://pixabay.com/videos/id-16139/", take: { slow: 5, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 1.0, veil: 0.55, ground: "#0b0907", horizon: 1330 }
+# Ambiance sous la narration, jamais sous le verset : un des trois enregistrements validés à l'écoute par le propriétaire
+# sur le premier film (docs/model.md, « Ambiances ») : le vent.
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -36 }
+cover: { scene: caravan, title: "سابوا خطبة الجمعة… ليه؟", tag: "آية وحكايتها · ١", focus: 1180 }
+publish:
+  title: { en: "They walked out of the Friday sermon… why?", ar: "سابوا خطبة الجمعة… ليه؟" }
+  part: 1
+  hashtags: ["#يوم_الجمعة", "#سورة_الجمعة"]      # les siens, d'abord (validés par le propriétaire le 2026-11-14)
+  description:
+    en: "One Friday, while the Prophet ﷺ stood giving the sermon, a caravan loaded with food arrived, and only twelve men stayed with him. A verse came down then, and it answers a fear inside every one of us: that our provision will slip away if we stop for God."
+    ar: "يوم جمعة، والنبي ﷺ واقف بيخطب، جت قافلة محمّلة أكل… وما فضلش معاه غير اتناشر راجل. ساعتها نزلت آية بترد على خوف جوّه كل واحد فينا: إن الرزق يفوتنا لو وقفنا قدام ربنا."
+segments:
+  - narration: open
+    scene: sermon
+    sources: [hadith.muslim.863a, hadith.bukhari.936]
+    lines:
+      - ar: "الناس سابوا النبي صلى الله عليه وسلم واقف بيخطب الجمعة… وخرجوا! ليه؟"
+        en: "People left the Prophet ﷺ standing, giving the Friday sermon… and walked out! Why?"
+      - ar: "جت قافلة من الشام… محمّلة أكل… فراحولها. وما فضلش معاه غير اتناشر راجل."
+        en: "A caravan came from Syria… loaded with food… and they went to it. Only twelve men stayed with him."
+      - ar: "وساعتها نزلت آية… بترد على خوف جوّه كل واحد فينا."
+        en: "And then a verse came down… answering a fear inside every one of us."
+  - verse: quran.62.11
+    scene: caravan
+  - narration: meaning
+    scene: twelve
+    sources: [tafsir.muyassar.62.11]
+    lines:
+      - ar: "يعني: شافوا بيع وشرا… فجريوا عليه وسابوك واقف."
+        en: "Meaning: they saw buying and selling… ran to it and left you standing."
+      - ar: "والرد: اللي عند ربنا… أحسن من أي لعب وأي بيعة."
+        en: "And the answer: what is with God… is better than any amusement and any deal."
+      - ar: "وربنا هو اللي بيرزق… ومحدش بيرزق زيه."
+        en: "And God is the One who provides… and no one provides as He does."
+  - narration: depth
+    scene: twelve
+    lines:
+      - ar: "العين راحت للرزق… والآية رجّعتها للرازق."
+        en: "The eye went to the provision… and the verse turned it back to the Provider."
+      - ar: "ودول مين؟ الصحابة… أحسن ناس. طب وإحنا؟"
+        en: "And who were they? The Companions… the best of people. So what about us?"
+  - narration: example
+    scene: phone
+    sources: [tafsir.saadi.62.11]
+    lines:
+      - ar: "زي الأدان يأذّن وإنت في نص شغل… وتقول: أخلّص اللي في إيدي الأول."
+        en: "Like the call to prayer sounding while you're mid-task… and you say: let me finish what's in my hands first."
+      - ar: "أو الموبايل يهزّ في جيبك وإنت بتصلي… وقلبك يروحله."
+        en: "Or your phone buzzing in your pocket while you pray… and your heart goes to it."
+      - ar: "الشغل مش هيطير… والرزق مش هيفوتك عشان وقفت قدام ربنا."
+        en: "The work won't fly away… and your provision won't pass you by because you stood before God."
+  - narration: close
+    scene: caravan
+    lines:
+      - ar: "اللي واقف قدّامه… هو اللي بيرزقك."
+        en: "The One you stand before… is the One who provides for you."
+      - ar: "لما حاجة تشدّك من صلاتك… افتكر القافلة."
+        en: "When something pulls you from your prayer… remember the caravan."
+      - ar: "دي آية نزلت بسبب قافلة… وفيه سورة نزلت ترد على كلمة… واحدة قالتها للنبي صلى الله عليه وسلم."
+        en: "That verse came down because of a caravan… and a whole surah came down to answer one remark… a woman made to the Prophet ﷺ."
+      - ar: "تابعنا عشان تعرف حكايتها."
+        en: "Follow us to hear its story."

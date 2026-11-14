@@ -1,238 +1,174 @@
 ---
 name: new-theme
-description: Turn a new theme (patience, repentance, gratitude, trust in God...) into an episode of quran-themes-demo, from sources to videos - registry entries (proposed), an outline in the format chosen with the owner (choose-format skill, docs/formats.md), a hook per reel (write-hook skill), Egyptian narration with English subtitles, checked takes (narration-takes skill), real hadith readings where they exist (find-hadith-recording skill), publication texts (title, description, hashtags), the script sent to the owner for information before the voice, a candidate render for the owner's one validation at the end, a PR, then on their « je valide » the final videos (16:9 and 9:16, the reels, the texts to paste). Use when the owner asks for a new theme or episode, or for the next parts of one.
+description: Turn a theme, a story or an episode already published into one film (16:9, under 10 minutes) and the shorts cut from it (9:16), in the model the owner validated on 2026-11-11 (docs/model.md) - sources through the registry, the film's structure and what each short holds, the script validated by the owner before any voice request (write-hook), the scenes and their ambience (new-scene), one voice request per text (narration-takes), the film's montage, covers and publication texts, the renders checked and sent (release-render), the owner's validation recorded on their word. Use when the owner asks for a new theme or story, for the rewrite of an episode in the model, or for the next film.
 ---
 
-# New theme
+# From a theme to a film and its shorts
 
-The model is the du'a episode (`content/episodes/dua.yaml`, plan in `docs/design.md`: five reels
-validated by the owner on 2026-11-07) and the reference video it learned from
-(`reference/dua-video-analysis.md`). The owner publishes by hand on the Quran Words Daily page: the
-whole episode in 16:9 on YouTube, the reels in 9:16 on Facebook, Instagram and TikTok, and the whole
-episode in 9:16 too. Since 2026-11-08 the owner decides twice (their choice, design.md): the subject
-and its format at the start (skill `choose-format`), and **one validation at the end**, on the
-candidate videos, that covers everything (sources, script and translation, voice, readings,
-publication texts, thumbnail, backgrounds). In between, you work alone, checked by the automatic
-gates (`validate.py`, the episode hook, `listen.py`, `recitation.py`). Never mark anything validated
-yourself: only the owner's « je valide », recorded by `scripts/finalize.py validate`.
+On 2026-11-11 the owner validated the model on the story of Musa and al-Khidr (a film of 7:47, three
+shorts) and decided that **the episodes are to be rewritten in it**: new scenes, better scripts, an
+ambience. The example to read before anything is that film: `content/trial/boat.yaml`, `boy.yaml`,
+`wall.yaml`, `film.yaml`. What a video is made of, every field, every setting and what the tools do
+not do yet: `docs/model.md`. Why each choice was made, with its numbers: `docs/retention.md`.
 
-0. **Reference video** (when the owner shares one). Write its analysis in `reference/` following
-   `reference/dua-video-analysis.md`, text only (`reference/README.md`: no frame, audio or video of
-   a third party in this public repository). Method: timecoded contact sheets with ffmpeg (2 frames/s
-   for the hook, one per scene change after); the audio transcribed locally with faster-whisper
-   (`large-v3-turbo`, CPU int8; if PyAV fails to open the file, decode it to 16 kHz mono WAV with
-   ffmpeg and pass a numpy array); every quote on screen checked against `content/policy.yaml`. If
-   the hook uses a technique `write-hook` lacks, add it there.
+The owner decides three times, and nothing is validated by you:
 
-1. **Format, then angle.** Choose the format first: skill `choose-format` (catalog `docs/formats.md`:
-   misconceptions, story with suspense or in order, collection, one text explained, two paths,
-   practical). The owner decides; write `format:` in the episode and the decision in
-   `docs/themes.md`. Then the angle in that format. **Misconceptions**: one theme, one promise, and 3
-   misconceptions people really hold about it (the du'a episode: "asking means refusing destiny",
-   "everything is written, du'a changes nothing", "I was not answered"). Each misconception becomes a
-   reel and is refuted by at least one source. End with a conclusion. If a misconception has no
-   source in the policy, drop it.
-   - The next themes and their order are in `docs/themes.md` (the owner's ideas, what was decided,
-     the outlines already approved): start from there, and keep it up to date.
-   - When the owner shares theme ideas (2026-11-07: study cards « محور الموضوع / ما الذي ستتعلمه »
-     and a list of virtues), judge each against the format: a situation of everyday life for the
-     hook (inner states hook better than social duties: comparison, fear, a wandering mind in prayer),
-     three misconceptions really held, sources in the policy for each, and overlap with the episodes
-     already made (`docs/themes.md`). Merge cards that say the same thing (fear and trust in God),
-     leave a near-duplicate of a recent episode for later, check that each source you name exists in
-     hadith-api under that number (step 2), and give a ranked proposal with the three misconceptions
-     and their sources. The owner chooses; write the decision in `docs/themes.md`.
-   - Do not refute a misconception with the same evidence as an earlier reel (sabr-03 « patience is
-     waiting » used Muslim 2664: a tawakkul reel on effort takes Tirmidhi 2517 and 2344 instead).
-   - A **story** (khidr, 2026-11-08: Musa and al-Khidr, 18:60-82) needs no misconceptions: one event
-     and its meaning per reel, in the order of the Qur'an, and the whole episode told with suspense,
-     every event first and then every secret (`whole`, step 3): format `story-suspense`; a story
-     with no secret to keep is told in order, `story-linear` (qarnayn). The narration tells the
-     story from the Qur'an and the authentic hadith only (no names or details introduced by
-     « يزعمون », no israiliyyat), the verses prove it; never draw a prophet, never show a killing.
-     - **After each event told, its verse recited** (owner's rule, 2026-11-08): the narration says
-       the event in Egyptian, as close as it can to the verse's own words (« مش قلتلك إنك مش هتقدر
-       تصبر معايا؟ » for 18:72), then « قال ربنا سبحانه وتعالى: » and the verses of that event, one
-       intro for verses that follow each other (18:71-73). The synthetic voice never says the
-       Quran's text itself: a dialect rendering, then the reciter. Reels grow to about 2 min.
-     - **A life example after each lesson** (owner's request, 2026-11-08): a typical scene of
-       everyday life and feeling, two lines on a catalog character (« زي لما القطر يفوتك… »,
-       worried, then « وبعد ساعة تعرف… », smiling), presented as typical, never as a true story.
-     - A promise at the end of the hook, in Egyptian (« قصة… هتخليك تبص لكل ابتلاء عدّى عليك بعين
-       تانية »): what the story changes for the viewer, where viewers decide to stay.
+1. **the subject** and what the film will hold (step 1);
+2. **the script, before any voice request** (step 4): a take cannot be patched, and the free voice
+   gives ten requests a day;
+3. **the videos**, once, at the end (step 9).
 
-2. **Sources.** For each claim, a verse or a hadith, never a summary from memory.
-   - Verses: quran.ai MCP (`search_quran`, `fetch_word_concordance`; read its grounding rules
-     first and pass their nonce), or the quran.com API. Whole ayahs only.
-   - Each verse is recited by the reciter of `content/policy.yaml` (Tawfiq As-Sayegh since
-     2026-11-08, one file per surah on mp3quran.net): once the verse is in the registry, cut it in
-     his surah file, `uv run --with faster-whisper==1.1.1 --with pyyaml tools/audio/recitation.py
-     --reciter sayegh <surah:ayah>` (or `--all`). Whisper checks the cut (every word, the first and
-     the last above all, nothing of the neighbouring ayah). A cut it refuses is settled at the
-     envelope (`listen.py --envelope <build/recitations/sayegh/SSS.mp3>@<t>@2`: the dip before the
-     first word, the one after the last; a reciter who joins two ayahs leaves only a dip, 2:155) and
-     set by hand (`--set 13:39=891.68,903.25`). validate.py fails on a recited verse without a cut.
-     Tell the owner which cuts were set by hand: they listen to them first.
-   - A hadith too long for a card (the whole story of Musa and al-Khidr, Bukhari 122): the registry's
-     `excerpt_ar` (with `excerpt_en`) is the passage the card shows and the reader says, copied from
-     `text_ar` with a script, never typed (validate.py checks it). One excerpt per hadith: a second
-     passage of the same story comes from another narration of it (Bukhari 3401 for the sparrow).
-   - Hadiths: collections and grades allowed by `content/policy.yaml` (Bukhari, Muslim, Tirmidhi
-     if al-Albani grades it sahih or hasan). To search hadith-api, download
-     `editions/ara-<collection>1.min.json` (Arabic without diacritics) into the scratchpad and
-     search the text; take its `arabicnumber` as the number (Muslim: one letter per narration,
-     `.01` → a, `hadith.muslim.2679a`). Example: « الدعاء هو العبادة » → Tirmidhi 2969, 3247, 3372.
-     The per-hadith URL `editions/ara-muslim/<n>.json` counts in sequence, not by `arabicnumber`:
-     `ara-muslim/2963` is a chain-only narration, the hadith is `arabicnumber` 2963.03. Bukhari's and
-     Tirmidhi's sequence matches their numbers. A hadith without an `arabicnumber` in hadith-api
-     (Muslim 2759) cannot be registered: take another one of the same meaning.
-   - Verses: a whole sentence. A verse that opens in the middle of one (« إلا », « و » carrying on
-     the verse before) is replaced or flagged to the owner: tawba took 4:110 instead of 3:135, and
-     kept 25:70 alone, opening with « إلا », by the owner's choice.
-   - Between hadiths of the same meaning, prefer one with a recorded reading on archive.org (the
-     owner's preference, 2026-11-07): skill `find-hadith-recording` (Bukhari: one file per hadith).
-   - A collection outside the policy (Ahmad, the reference's « three outcomes ») is replaced, not
-     cited: dua found the same meaning in Tirmidhi 3573 (al-Albani: Hasan Sahih).
-   - Add each one to `content/sources/` with `status: proposed` and a `notes` line (which reel,
-     why); for a hadith shown in a reel, an `excerpt_en`: the passage of `text_en` used as the
-     subtitle, copied exactly without the chain of narrators (validate.py checks it), then `uv run --with ruamel.yaml tools/sources/fetch.py` and
-     `uv run --with jsonschema --with pyyaml scripts/validate.py` (policy, grades).
-   - They stay `proposed`: the candidate's list « à vérifier » shows each one with its link and its
-     minute in the videos, and the owner's final word validates them. Anything odd in a source
-     (missing punctuation, several narrations, a verse opening on « إلا ») goes in the PR and in the
-     message that sends the script.
-   - A reference video's quotes are leads, never sources: the du'a reference shows a weak sentence
-     attributed to the Prophet ﷺ, a paraphrase displayed as a verse, Companions' sayings without
-     source and a figure without source (its "citations" table). Each one goes through the registry.
+Between those, you work alone. Zero spending: free tiers only. No pull request unless they ask.
+The old circuit (episodes in reels, VoiceTut, the `render` workflow) is in `docs/legacy/skills/`: only
+to correct a video published before.
 
-3. **Outline.** A table like the one in `docs/design.md`: number, role, content, source, reel.
-   The whole episode (16:9 and 9:16) plays every scene in order (or its `whole` order); each reel is
-   one idea and stands alone. **Its length follows its content** (owner's decision, 2026-11-08:
-   quality before duration; misconceptions reels ran 0:41-1:09, story reels 1:14-2:12): the only
-   hard limit is Instagram's 3 min. Past 90 s, propose a relaunch in the middle of the reel, a
-   one-word question on a card (« وبعدين؟ »), never a cut for length alone.
-   - Tag each scene with its role in the format (`docs/formats.md`): `event` for what happened (then
-     its verse or hadith card), `lesson` for the lesson drawn (your own line: mark it for the
-     owner), `example` for the life example after it. `validate.py` warns, on reels not validated
-     yet, when an event has no verse or hadith before the lesson, a lesson no example, or the reel
-     misses a beat of its format: fix each warning or tell the owner why it stays.
+## 1. What is being made
 
-   Misconceptions format, as in dua:
-   - reel 1: the hook (write-hook) and the theme's promise, ending on an honest open loop (« three
-     wrong ideas… the first one is next »);
-   - one reel per misconception: a mirror line on a scene, the recurring narrator (`narrator`,
-     `open-hands`, background `plain`, `talking: true`) saying « أول فكرة غلط… », a title card with
-     the misconception, the evidence, a one-line takeaway (`lesson`), a life example (`example`, two
-     lines on a catalog character, added on 2026-11-08 as in the stories), the open loop to the next
-     reel;
-   - a conclusion reel: the closing verse, then a recap of the reels in one line (four pieces on a
-     title card) and a last line that loops back to the hook;
-   - every verse is introduced by « قال ربنا سبحانه وتعالى: » (the owner's formula; the locked take
-     is reused), every hadith by « النبي صلى الله عليه وسلم قال: » on its `source-card`;
-   - a prophet or a Companion appears only on a `name-card` (`mentions`), never drawn (Ayyub in dua);
-   - a visual change every 6 s or so; one colour per function (concepts, narrator, questions, quotes).
-   - **something to look at** (owner's decision, 2026-11-10, after the audit of the published
-     videos: 27 % of 480 scenes drawn, 48 % a card showing the sentence the voice says, the picture
-     unchanged for 60 to 83 % of a reel): at least a third of a reel's scenes are drawn (`scene`: a
-     place, people), and never three cards of narration in a row. `validate.py` warns on a reel
-     being written (the drawn share is not asked of a collection or an explained text, whose
-     picture is the text). A line of narration can be said over a drawn scene instead of a card:
-     the English subtitle carries it, the Arabic line is then not on screen, so keep on a card the
-     lines to remember (the misconception, the lesson, the open loop). Vary who and where: of 100
-     appearances 95 were the same three people, half of them `worried`; a place that says where
-     we are rather than the waiting room again.
-   - a story told with suspense in the whole episode (khidr): the episode's `whole` lists its parts
-     (a title each, a YouTube chapter) and their scenes in order. A scene without `reel` is said only
-     there (khidr: 18:78, the parting); a reel's scene left out of `whole` only in its reel (the
-     links « السر؟ الخضر قاله بعدين: »). The owner validates the order and those lines with the
-     reels: `whole.validated_by`, checked by `validate.py --release --whole <theme>`.
-   - new places: drawn in the episode's style, never a person in them. `flat`: shapes in
-     `video/src/backgrounds/`. `paper` (the stories since 2026-11-09): layers in
-     `video/src/styles/paper/places.ts`, the characters' faceless silhouettes in
-     `silhouettes.ts` (`paper_poses` in `content/characters.yaml`). Add each place to
-     `content/backgrounds.yaml` with the `styles` it is drawn in, render the board (`npm run
-     still -- BackgroundSheet ../docs/backgrounds.png --frame=40`) and look at it yourself. The
-     owner sees the new places in the candidate render, with the rest (the list « à vérifier »
-     names them; `finalize.py validate` writes their `validated_by` / `paper_validated_by`);
-     send the board earlier only if they ask.
+- **A rewrite** of a published episode (`content/episodes/<theme>.yaml`, `docs/themes.md`): its sources
+  and hadith readings are validated and stay; its lines, pictures and voice do not. Read what was
+  measured on the old videos first (`docs/retention.md`, « Ce qui est mesuré »): 26 % of viewers past
+  three seconds on khidr-01, eight seconds watched on average, half of the film a verse on a dark card.
+- **A new theme or story**: skill `choose-format` first (the kind of subject, its hard filters), then
+  here. A reference video the owner shares is analysed in `reference/`, text only (method in
+  `docs/legacy/skills/new-theme.md`, step 0).
+- **A short of the series « آية وحكايتها »** (one verse, the fact of its revelation report as the hook, its meaning
+  after a named tafsir; no film): the sheet and its five filters are in `docs/themes.md`, the files in
+  `content/trial/ayah.yaml`; the report must be found in a collection of the hadith policy under its number, the
+  tafsir passage registered by id (`content/sources/tafsir.yaml`), and the narration segment names both in `sources:`.
+- The model was proven on **a story**, then opened to misconceptions with the du'a (`content/trial/dua.yaml`,
+  `asked`, `written`, `waited`: each wrong idea broken by one concrete call in the Quran). For a collection or
+  one text explained, propose the structure of the film and of the shorts to the owner before writing.
 
-4. **Script.** Follow the `write-hook` skill for the episode opening and for each reel: mirror,
-   contrast, anchor, and an honest open loop to the next reel. Narration in Egyptian Arabic
-   (VoiceTut), English subtitles in `narration.en`.
-   - The open loop that only makes sense in a reel, the follow call « تابعنا عشان تعرف (أولها). »
-     (« Follow us to find out (the first one). », owner's choice, 2026-11-07), is marked
-     `reel_only_end: {ar, en}`: the whole-episode videos cut the line before it (owner's request).
-   - Title-card lines are punctuated where each piece should appear (« ، … . ؟ : »).
-   - The voice's spelling (`say_ar`) from the first draft: every word of `content/pronunciation.yaml`
-     (validate.py warns on a reel not yet validated that forgets one), no guillemets (skill
-     `voice-spelling`).
-   - Mark your own explanatory lines (not a quote, not a paraphrase of one) when you present the
-     script: the owner checks them first (dua: « الدعاء مش اعتراض… الدعاء احتياج »). Characters, poses and moods from
-   `content/characters.yaml`, backgrounds from `content/backgrounds.yaml` only (a new one is added to
-   the catalog and drawn in the episode's style, step 2; the owner sees it in the candidate render); no character in a scene that names a real person (`mentions`).
-   Typical situations are presented as such, never as true stories. No figure without a source.
+## 2. Sources
 
-5. **Publication texts.** What the owner pastes with each video: the episode's `publish` (title and
-   description of the whole episode, and the theme hashtags of all its videos) and each reel's
-   `publish` (title, description), Arabic and English, in `content/episodes/<theme>.yaml`. Take
-   them from the validated lines of the script, as dua did (title = the reel's hook, description =
-   its misconception and takeaway); a word of your own is marked for the owner, like a line of the
-   script.
-   - YouTube title « <en> · <ar> »: 100 characters at most (validate.py). The whole episode's title
-     names the promise (dua: « Du'a: 3 wrong ideas you might believe »).
-   - Theme hashtags: 2 or 3, the English word first (`#Dua`, `#الدعاء`, `#Islam`). The page's
-     (`#QuranWordsDaily`, `#Quran`...), hadith and reciter tags are added by
-     `video/scripts/publish.ts` from `content/publish.yaml`; Instagram and TikTok keep the first 5,
-     Facebook 8, YouTube all.
-   - Never type a source, a grade, a reciter, a reader or the AI-voice line: publish.ts writes them
-     from the data, with the YouTube chapters of the whole episode (one per reel).
-   - Check: `cd video && npm run data && node scripts/publish.ts <theme> all` (fails on a broken
-     limit). They are validated with the rest at the end (`publish.validated_by` on the episode and
-     on each reel, written by `finalize.py validate`, removed whenever one of them changes).
-   - YouTube thumbnail: the episode's `thumbnail`, layout `poster` in the flat style (2026-11-10:
-     eight thumbnails of nine looked the same and their subject was the smallest text): the line
-     that says the subject is drawn biggest (`big: kicker` when the headline is the formula
-     « ٣ أفكار غلط » and the kicker the theme « عن <الموضوع> »; a story's name is its headline, the
-     default), the other line sits in a tag above it, on the theme's `color` (closed palette of
-     the schema; not the colour of the last two episodes), with a character and mood from the
-     catalog (another face and another mood than the last episodes': read them all, `grep -A8
-     "^thumbnail:" content/episodes/*.yaml`; the board is `docs/thumbnails.png`). The paper,
-     chalk and illumination styles draw their own thumbnail from the same fields. `npm run still
-     -- Thumbnail169 out/<theme>-thumbnail.png --props='{"episode":"<theme>","layout":null,"data":null}'`
-     (without `--props` it draws dua's), then look at it at 170 px wide beside the others': the
-     subject must be what the eye reads first, and no English or Arabic line may run over the
-     face; the candidate release carries it, validated with the rest.
+A claim is a verse or a hadith of the registry, never a summary from memory.
 
-6. **Check, then audio.**
-   - `uv run --with jsonschema --with pyyaml scripts/validate.py`: no error, and every warning fixed
-     or explained (the episode hook shows them after each edit).
-   - In `video/`: `npm run data` (the estimate is pessimistic: 60 s estimated is about 50 s
-     real), `npm run typecheck`.
-   - **Send the owner the script before the voice, for information** (their choice, 2026-11-08: a
-     correction of substance found at the end costs every take of the lines it touches; on the text,
-     nothing): Arabic and English, scene by scene, with the sources, your own lines marked. Not a
-     validation: carry on with the voice unless they answer with a correction.
-   - The voice: skill `narration-takes` (synthesis in the background, Whisper on every take,
-     retakes, pronunciation, phrase starts, then `listen.py --save` and `build.py --candidate`), and
-     `find-hadith-recording` for the hadiths.
-   - Local draft renders where something new shows (`Episode169`, and `Reel916` with
-     `"reel":null` for the 9:16 version; `--concurrency=2`, the browser ran out of memory with more):
-     look at their frames yourself (new backgrounds, characters, cards, the 16:9's like/subscribe
-     reminder, `reminderStarts`). They are no longer sent to the owner.
+- **Verses**: quran.ai MCP (`search_quran`, `fetch_word_concordance`; read its grounding rules first
+  and pass their nonce), or the quran.com API. Whole ayahs, a whole sentence: a verse that opens in the
+  middle of one (« إلا », « و » carrying on) is replaced or flagged to the owner.
+- **Hadiths**: `content/policy.yaml` (Bukhari, Muslim, Tirmidhi if al-Albani grades it sahih or
+  hasan). Search hadith-api by downloading `editions/ara-<collection>1.min.json` into the scratchpad;
+  the number is its `arabicnumber` (Muslim: a letter per narration, `hadith.muslim.2679a`). Prefer one
+  that has a recorded reading: skill `find-hadith-recording`. A collection outside the policy is
+  replaced, not cited.
+- **Registry**: each one in `content/sources/` with `status: proposed` and a `notes` line, then
+  `uv run --with ruamel.yaml tools/sources/fetch.py` and `uv run --with jsonschema --with pyyaml
+  scripts/validate.py`. Never validate a source yourself. A hadith too long: `excerpt_ar` and
+  `excerpt_en`, copied from the text with a script, never typed.
+- **Recitation**: each verse cut in the reciter's surah file, `uv run --with faster-whisper==1.1.1
+  --with pyyaml tools/audio/recitation.py --reciter sayegh <surah:ayah>`; a cut Whisper refuses is set
+  at the envelope (`--set`), and the owner is told which ones were set by hand.
+- **Recitation length** decides the size: the film lasts about twice its recitation (3:50 of verses in
+  7:47). Sum it before the outline (`choose-format`, « Hard filters »).
+- **How a source reaches a video**: by its id, from the registry (`tools/trial/sources.py`: the text
+  shown, the reciter's cut, the reader's recording, all levelled). A verse needs its cut, a hadith its
+  recorded reading (in a draft a hadith with no reading yet is kept twelve seconds, silent). What the
+  owner has not validated yet is played and listed (« not validated by the owner yet »): they hear it in
+  the videos. Only the first film still reads an old episode (`verses:`).
 
-7. **PR.** Describe:
-   - the angle and the outline;
-   - each reel's script, Arabic and English, with its beats;
-   - the publication texts (titles, descriptions, hashtags);
-   - the sources and their status;
-   - the open questions.
+## 3. The film first, then its shorts
 
-   Then the candidate render (skill `release-render`: workflow `render`, `reel: all`, mode
-   `candidate`): a draft release only the owner sees, with the list « à vérifier » and every video.
-   Send the owner its link. Their corrections: fix, check, new candidate. Their « je valide »:
-   `scripts/finalize.py validate --episode <theme> --owner <owner>` records every validation and
-   locks the takes; after the PR is merged, the promote workflow turns those very videos into the
-   `<theme>-latest` pre-release, whose notes hold the texts to paste on each platform.
-   - Once the owner has merged the PR, the next piece of work starts again from `main` (the same
-     branch name, restarted on `origin/main`), never on top of the merged history; record the theme
-     as done in `docs/themes.md`.
+Write the outline as a table and send it with the script (step 4).
+
+- **Each short stands alone**: one event or one idea, its verse, its meaning, and the promise of its
+  first seconds kept before it ends. A viewer who saw nothing else must leave with something. A short
+  that only sets up the next one is not a short (khidr-01).
+- **Three to six shorts**, 1:30 to 2:05 each on the first film; Instagram's limit is 3 minutes.
+- **The film** repeats the shorts line for line (their voice takes are reused, no request spent) and
+  adds its own lines: an opening that shows every part in one sentence and promises, what frames the
+  story (the condition of 18:67-70), a link where two parts meet, a conclusion with the verse or the
+  hadith that ties them together (2:216, the sparrow of Bukhari 3401). Under ten minutes.
+- **Each part with its answer** (owner's choice over the order of the Quran with every secret at the
+  end): the first answer is recited at 1:41, where the old film gave it at 5:14.
+- **Say what tells the parts apart.** The owner's reading of the three stories is how the wisdom
+  shows: at once, never to those who lived it, years later. The end of each short says it, and the
+  line that announces the next part is built on it.
+- **Chapters**: one per part, a title in Arabic and English (they are the YouTube chapters).
+- **The subscribe reminder** passes twice in the film (`subscribe: true` on a narration segment): after
+  the first lesson and on the last line. Never over a verse, a hadith or a line of warning, never in
+  the first thirty seconds: `film.py` refuses it.
+
+## 4. The script, then the owner
+
+Skill `write-hook`: the beats of a short, the film's own lines, the words the owner refused, the
+checks. Then `uv run --with pyyaml python3 tools/trial/script.py --film <film>` writes the whole script
+as one page (`docs/scripts/<film>.md`): every segment, Arabic and English, each quote from the registry,
+your own lines marked « nouvelle » and the validated lines of an old episode « reprise » (`kept:`), with an
+estimate of each video's length (within six seconds on the first film). Send it to the owner with the
+draft pictures of step 5. **Wait for « je valide le script »** (or
+their corrections) before the voice: write `script_validated: { by: <owner>, on: <date> }` in each file
+on that word only. A line changed afterwards is to be validated again.
+
+## 5. The scenes and their sound
+
+Skill `new-scene`: a filmed clip the owner approved, the silhouettes of what the text says drawn over
+it (things and places, never a person), one state of the drawing per `scene` of the script, and the
+ambience under the narration. Look at it without any voice:
+
+```bash
+uv run --with pyyaml --with numpy python3 tools/trial/prepare.py --trial <id> --draft --clip <clip>
+cd video && npx remotion still Trial916 out/<id>-0.png --frame=0 --props='{"trial":"<id>","voice":"X","data":null}'
+```
+
+A draft times the silent narration from its length; the recitation is real. Take a still at the start
+of each segment (`start` of `video/public/trial/<id>-X.json`, times 30) and open it: is the first frame
+a reason to stay, does every line leave the drawing visible, does every scene say what its line says?
+
+## 6. The voice
+
+Skill `narration-takes`: one text file per short and one for the film's own lines, each said in one
+request by the workflow `voice-test`, the take committed in `content/trial/takes/`, every phrase found
+in it by `tools/audio/align.py`. A film and five shorts cost six requests.
+
+## 7. Prepare, then look again
+
+```bash
+uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py --trial <id> --voice D --takes content/trial/takes --clip <clip>
+uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py --film <film> --voice D --takes content/trial/takes
+```
+
+Each prints its timeline: every segment with its start, every phrase with the second the voice says
+it, the chapters of the film, where the reminder passes, what the ambience does. Read it: a phrase
+that starts at the same second as the one before was not found (step 6); a short far over two
+minutes has a line too many.
+
+The film's file (`content/trial/<film>.yaml`, fields in `docs/model.md`): `reuse: <short>.<narration>`
+for the lines of a short (`lines: [0, 1]` to take some), `narration:` for its own, `verse:`,
+`reading:` for a hadith read by a real voice, `picture` and `scene` for what is shown, `shots` for one
+picture per phrase (the opening), `subscribe: true`, `outro: 12`. A second film takes its own id: the
+first one is `film`.
+
+## 8. Covers and publication texts
+
+- **Cover of a short** (`cover`): the scene that says the story, a title of three to five words (the
+  question of the hook), a tag (« <series> · ١ من ٣ »), `focus`. **Thumbnail of the film**
+  (`thumbnail`): the stories side by side, its name in large, a tag. Readable at 170 px wide; nothing
+  in the bottom right corner of the 16:9 one. The owner validates the titles with the script.
+- **Texts** (`publish` of each file): title and description in Arabic and English, taken from the
+  validated lines; the film's `series`, two or three theme `hashtags`, and the line that declares the AI
+  voice. YouTube title « en · ar »: 100 characters at most. Never type a source, a reciter, a reader,
+  a credit or a chapter: `tools/trial/publish.py --film <film>` computes them and writes one block to
+  paste per platform (`publish.out`).
+
+## 9. Render, check, send, record
+
+Skill `release-render`: the renders in the session, each video looked at on its sheets of frames
+before it is sent, the TikTok versions, the covers, the texts, then the owner's answer. Their
+« je valide » is written as `validated: { by, on, what: [...] }` in each file, with exactly what they
+saw and heard; anything added afterwards waits for their word again.
+
+## 10. Leave the repository true
+
+- `docs/themes.md`: the theme as done in the model; `docs/model.md` when a setting, a clip, a
+  recording or a tool changed; `docs/history.md`: one task entry at the end (what was asked, decided,
+  validated); `CLAUDE.md`: only « Où on en est », kept current and short.
+- A tool gap closed (`docs/model.md`, « Ce que les outils ne font pas encore »): remove it there and
+  update the skill that mentioned it.
+- Commit and push on the session's branch.
+
+## Never
+
+- A line of narration that says the text of a verse, or a verse read by the synthetic voice.
+- A person drawn; a killing shown; paradise, hell, the Last Day or an angel pictured.
+- A validation written without the owner's word; a voice request before the script is validated.
+- A second Google project or account to get more requests; a paid service.
