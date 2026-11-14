@@ -1,8 +1,8 @@
 # La série « خريطة كلمة » (demande du propriétaire, 2026-11-14 : une série dans le montage de la vidéo de « إعجاز عددي »
-# qu'il a trouvée attirante ; « let's create a pilote et on discute après »). Fiche : docs/themes.md. Sans voix : le
+# qu'il a trouvée attirante ; « let's create a pilote et on discute après »). Fiche : docs/themes.md. Le début muet : le
 # texte à l'écran, la récitation, une ambiance. Un mot du Coran et où il est dans les 6 236 versets, en faits comptés par
 # tools/trial/wordmap.py (video/src/trial/mapData.ts), jamais un « miracle », jamais deux comptes égalés. Les dessins :
-# video/src/trial/WordMap.tsx. Pilote d'un épisode, à discuter.
+# video/src/trial/WordMap.tsx. Trois épisodes (qalb, nur, sadr) : un début muet et rapide, puis la voix D (2026-11-14).
 id: map
 files: map                       # début du nom des vidéos livrées : map-short-<n>-<id>.mp4
 title: { ar: "خريطة كلمة", en: "The Map of a Word" }
@@ -12,5 +12,6 @@ publish:
   out: docs/retention/publication-map.md
   series: { en: "The Map of a Word", ar: "خريطة كلمة" }
   hashtags: ["#خريطة_كلمة", "#كلمات_القرآن"]
-  # Aucune voix de synthèse : la seule voix est celle du récitateur (publish.py --voice X ; une autre voix y échoue).
-  narration: { X: "No narration voice: the text is on screen · بدون صوت راوي: النص على الشاشة" }
+  # Depuis la deuxième version (2026-11-14), le début est muet et la suite dite par la voix D : la voix IA se déclare
+  # (X : le brouillon sans voix).
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", X: "No narration voice: the text is on screen · بدون صوت راوي: النص على الشاشة" }
