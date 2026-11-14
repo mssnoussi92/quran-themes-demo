@@ -3,8 +3,12 @@
 # première fois : ce qu'on cache dans la poitrine, Dieu le sait (3:29, jusqu'au premier arrêt) ; la dernière, dans la
 # dernière sourate du mushaf : celui qui souffle le mal dans les poitrines (114:5) ; le du'a de Moussa (20:25-28). La voix
 # ne dit jamais le du'a : il est récité. Personne n'est dessiné ; rien de l'invisible (ni celui qui souffle, ni rien de lui).
-# Script écrit par la session le 2026-11-14 (« je veux 3 épisodes ») : pas encore validé ; aucune voix avant son mot.
+# Script écrit par la session le 2026-11-14 (« je veux 3 épisodes »).
 id: sadr
+# « Je valide le script de nur et sadr » du propriétaire (2026-11-14), sur docs/scripts/map.md et les images fixes : les
+# répliques (la formule d'ouverture gardée identique aux trois épisodes), la place des versets, ce sur quoi chaque réplique
+# repose, le titre. Ni la voix, ni la vidéo, ni les textes, ni les sources : il les valide sur les vidéos.
+script_validated: { by: mssnoussi92, on: 2026-11-14 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 66-trial-sadr
