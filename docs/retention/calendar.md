@@ -146,7 +146,7 @@ Une ligne par vidéo et par plateforme, remplie à 48 heures. L'heure de publica
 | 13 nov. | matin | Khidr, short 1 | Instagram | 1:33 | | | | | | |
 | 13 nov. | matin | Khidr, short 1 | YouTube Shorts | 1:33 | | | | | | |
 | 13 nov. | matin | Khidr, short 1 | TikTok | 1:33 | | | | | | |
-| 14 nov. | après-midi | Khidr, short 2 | Facebook | 1:47 | | | | | | |
-| 14 nov. | après-midi | Khidr, short 2 | Instagram | 1:47 | | | | | | |
-| 14 nov. | après-midi | Khidr, short 2 | YouTube Shorts | 1:47 | | | | | | |
-| 14 nov. | après-midi | Khidr, short 2 | TikTok | 1:47 | | | | | | |
+| 14 nov. | soir | Khidr, short 2 | Facebook | 1:47 | | | | | | |
+| 14 nov. | soir | Khidr, short 2 | Instagram | 1:47 | | | | | | |
+| 14 nov. | soir | Khidr, short 2 | YouTube Shorts | 1:47 | | | | | | |
+| 14 nov. | soir | Khidr, short 2 | TikTok | 1:47 | | | | | | |
