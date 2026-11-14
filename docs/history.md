@@ -211,6 +211,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 98. **Les hashtags validés** (propriétaire, 2026-11-14 : « oui, je valide les hashtags »). Inscrit dans les fichiers du modèle (le commentaire de chaque `hashtags`) ; les textes à coller refaits la veille restent validés là où ils l'étaient, leurs hashtags compris.
 
+99. **« لاحظت الفرق؟ » validé** (propriétaire, 2026-11-14 : « je valide tout pour لاحظت الفرق ; mais on est loin du style du montage de la vidéo [de « إعجاز عددي »] ; je ne demande pas de modifier les vidéos, je les valide comme elles sont, mais j'aimerais explorer une série qui utilise ce type de montage ; que penses-tu ? »). Inscrit : `validated` des trois épisodes (voix, montage, couverture, ambiance, textes) et de `farq.yaml` (textes) ; ses neuf sources passées à `validated`. Avis donné sur une série dans ce montage : dans la conversation et `docs/themes.md`.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```

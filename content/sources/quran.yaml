@@ -2220,7 +2220,8 @@
     surah_ar: الأنعام
     surah_en: Al-An'am
     retrieved: '2026-11-13'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 'Al-An''am 6:151, récité jusqu''à « نحن نرزقكم وإياهم » (« لاحظت الفرق؟ », épisode rizq)'
 
   text_ar: ۞ قُلْ تَعَالَوْا۟ أَتْلُ مَا حَرَّمَ رَبُّكُمْ عَلَيْكُمْ ۖ أَلَّا تُشْرِكُوا۟ بِهِۦ شَيْـًٔا ۖ وَبِٱلْوَٰلِدَيْنِ إِحْسَـٰنًا ۖ وَلَا تَقْتُلُوٓا۟ أَوْلَـٰدَكُم مِّنْ إِمْلَـٰقٍ ۖ نَّحْنُ نَرْزُقُكُمْ وَإِيَّاهُمْ ۖ وَلَا تَقْرَبُوا۟ ٱلْفَوَٰحِشَ مَا ظَهَرَ مِنْهَا وَمَا بَطَنَ ۖ وَلَا تَقْتُلُوا۟ ٱلنَّفْسَ ٱلَّتِى حَرَّمَ ٱللَّهُ إِلَّا بِٱلْحَقِّ ۚ ذَٰلِكُمْ وَصَّىٰكُم بِهِۦ لَعَلَّكُمْ تَعْقِلُونَ
@@ -2237,7 +2238,8 @@
     surah_ar: الإسراء
     surah_en: Al-Isra
     retrieved: '2026-11-13'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 'Al-Isra 17:31 (« لاحظت الفرق؟ », épisode rizq : « نحن نرزقهم وإياكم »)'
 
   text_ar: وَلَا تَقْتُلُوٓا۟ أَوْلَـٰدَكُمْ خَشْيَةَ إِمْلَـٰقٍ ۖ نَّحْنُ نَرْزُقُهُمْ وَإِيَّاكُمْ ۚ إِنَّ قَتْلَهُمْ كَانَ خِطْـًٔا كَبِيرًا
@@ -2254,7 +2256,8 @@
     surah_ar: النساء
     surah_en: An-Nisa
     retrieved: '2026-11-13'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 'An-Nisa 4:135, récité jusqu''à « والأقربين » (« لاحظت الفرق؟ », épisode qist)'
 
   text_ar: ۞ يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ كُونُوا۟ قَوَّٰمِينَ بِٱلْقِسْطِ شُهَدَآءَ لِلَّهِ وَلَوْ عَلَىٰٓ أَنفُسِكُمْ أَوِ ٱلْوَٰلِدَيْنِ وَٱلْأَقْرَبِينَ ۚ إِن يَكُنْ غَنِيًّا أَوْ فَقِيرًا فَٱللَّهُ أَوْلَىٰ بِهِمَا ۖ فَلَا تَتَّبِعُوا۟ ٱلْهَوَىٰٓ أَن تَعْدِلُوا۟ ۚ وَإِن تَلْوُۥٓا۟ أَوْ تُعْرِضُوا۟ فَإِنَّ ٱللَّهَ كَانَ بِمَا تَعْمَلُونَ خَبِيرًا
@@ -2271,7 +2274,8 @@
     surah_ar: المائدة
     surah_en: Al-Ma'idah
     retrieved: '2026-11-13'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 'Al-Ma''ida 5:8, récité jusqu''à « ألا تعدلوا » (« لاحظت الفرق؟ », épisode qist)'
   text_ar: يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ كُونُوا۟ قَوَّٰمِينَ لِلَّهِ شُهَدَآءَ بِٱلْقِسْطِ ۖ وَلَا يَجْرِمَنَّكُمْ شَنَـَٔانُ قَوْمٍ عَلَىٰٓ أَلَّا تَعْدِلُوا۟ ۚ ٱعْدِلُوا۟ هُوَ أَقْرَبُ لِلتَّقْوَىٰ ۖ وَٱتَّقُوا۟ ٱللَّهَ ۚ إِنَّ ٱللَّهَ خَبِيرٌۢ بِمَا تَعْمَلُونَ
   text_en: O you who have believed, be persistently standing firm for Allāh, witnesses in justice, and do not let the hatred of a people prevent you from being just. Be just; that is nearer to righteousness. And fear Allāh; indeed, Allāh is [fully] Aware of what you do.

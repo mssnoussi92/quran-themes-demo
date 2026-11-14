@@ -6,6 +6,10 @@ id: adab
 # « Je valide le script » du propriétaire (2026-11-13) : les répliques, la place des versets, ce sur quoi chaque narration
 # repose, le titre. Ni la voix, ni les images, ni l'ambiance, ni les textes de publication : il les valide sur les vidéos.
 script_validated: { by: mssnoussi92, on: 2026-11-13 }
+# « Je valide tout pour لاحظت الفرق » (2026-11-14), sur les vidéos du second rendu (workflow `film`, run 24) envoyées :
+# la voix D, le montage (les versets face à face), la couverture, l'ambiance, les textes à coller
+# (docs/retention/publication-farq.md) ; et ses sources encore proposées, passées à `validated`. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-14, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 62-trial-adab     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne

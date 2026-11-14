@@ -3,6 +3,7 @@
 # versets face à face, ce qui change, et son sens d'après un tafsir de la politique. Le style compteur (docs/model.md).
 # Une série : des shorts qui tiennent seuls, pas de film ; chaque épisode annonce le suivant s'il est connu.
 id: farq
+validated: { by: mssnoussi92, on: 2026-11-14, what: [publish] }      # « je valide tout pour لاحظت الفرق »
 files: farq                      # début du nom des vidéos livrées : farq-short-<n>-<id>.mp4
 title: { ar: "لاحظت الفرق؟", en: "Did You Notice the Difference?" }
 shorts: [rizq, adab, qist]
