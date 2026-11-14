@@ -1,6 +1,6 @@
 # The Map of a Word · خريطة كلمة : textes de publication
 
-Pour chaque short : le titre, puis le texte à coller sur chaque plateforme. Titres et descriptions **proposés par la session, pas encore validés par le propriétaire** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, pas encore validée.
+Pour chaque short : le titre, puis le texte à coller sur chaque plateforme. Titres et descriptions **validés par le propriétaire le 2026-11-14** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, validée elle aussi.
 
 ## Short 1 · The heart in the Quran… how many times? · «القلب» في القرآن… كام مرة؟
 

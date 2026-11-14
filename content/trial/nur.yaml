@@ -9,6 +9,11 @@ id: nur
 # répliques (la formule d'ouverture gardée identique aux trois épisodes), la place des versets, ce sur quoi chaque réplique
 # repose, le titre. Ni la voix, ni la vidéo, ni les textes, ni les sources : il les valide sur les vidéos.
 script_validated: { by: mssnoussi92, on: 2026-11-14 }
+# « Je valide tout » du propriétaire (2026-11-14), après l'envoi des épisodes 2 et 3 (workflow `film`, run 27), des trois
+# versions TikTok, des trois couvertures et des textes à coller (docs/retention/publication-map.md) : lu comme l'épisode
+# tel que livré (voix, montage, couverture telle qu'envoyée, ambiance, textes) et ses sources, passées à `validated`.
+# Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-14, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 65-trial-nur

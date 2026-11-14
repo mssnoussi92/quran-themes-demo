@@ -4,6 +4,7 @@
 # tools/trial/wordmap.py (video/src/trial/mapData.ts), jamais un « miracle », jamais deux comptes égalés. Les dessins :
 # video/src/trial/WordMap.tsx. Trois épisodes (qalb, nur, sadr) : un début muet et rapide, puis la voix D (2026-11-14).
 id: map
+validated: { by: mssnoussi92, on: 2026-11-14, what: [publish] }      # « je valide tout », après l'envoi des textes à coller
 files: map                       # début du nom des vidéos livrées : map-short-<n>-<id>.mp4
 title: { ar: "خريطة كلمة", en: "The Map of a Word" }
 shorts: [qalb, nur, sadr]
