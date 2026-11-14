@@ -203,8 +203,8 @@ def main() -> None:
         body = []
         for seg in spec["segments"]:
             if "narration" in seg:
-                seconds = spoken(seg["lines"])
-                body += [f"**{stamp(t)} · narration** (image : `{seg['scene']}`)"
+                seconds = max(spoken(seg["lines"]), seg.get("hold") or 0)
+                body += [f"**{stamp(t)} · {'texte à l’écran, sans voix' if seg.get('silent') else 'narration'}** (image : `{seg['scene']}`)"
                          + (f" · {rests_on(seg['sources'], sources, policy)}" if seg.get("sources") else ""), *narration(seg["lines"]), ""]
                 new += sum(1 for l in seg["lines"] if not l.get("kept"))
                 kept += sum(1 for l in seg["lines"] if l.get("kept"))

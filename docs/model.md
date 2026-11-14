@@ -105,9 +105,13 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
   dessus (`sources:`), jamais un verset ni une lecture.
 - `upto: N` sur un segment `verses` d'un seul verset : il n'en récite que les N premiers mots, jusqu'à un signe de
   pause (la signature : 41:53 jusqu'à « أنه الحق ۗ »).
-- `hold: N` sur un segment de narration d'un short **sans voix** (voix `X` seulement, « خريطة كلمة ») : la réplique
-  reste au moins N secondes, le temps de la lire et de voir ce que l'image montre ; sans `hold`, le brouillon la minute
-  comme une voix la dirait (dix lettres par seconde), trop vite pour lire.
+- `silent: true` sur un segment de narration (le début rapide de « خريطة كلمة », demande du propriétaire, 2026-11-14) :
+  la réplique est écrite à l'écran, aucune voix ne la dit, elle n'est pas dans le texte de la voix ; minutée d'après sa
+  longueur, comme un brouillon, et `hold: N` la tient au moins N secondes, le temps de la lire.
+- `sfx: [[son, secondes]]` sur un segment : des effets sonores (`tools/trial/sfx.py` : `scan`, les tics du compteur
+  sur la grille ; `impact`, le nombre qui tombe ; `whoosh` ; `pops` ; `click` ; `lock`), faits par le code (rien à
+  créditer), **aucun son musical**, **jamais sous un verset ni un hadith** (l'outil s'arrête plutôt) ; une piste
+  jouée sous la vidéo comme l'ambiance.
 - `OVERLAYS` et `LAYOUTS` de `video/src/trial/Trial.tsx` : ce qu'un short dessine au-dessus du voile sans bouger
   (le badge de la série, la frise des dates) et où ses textes se placent ; les dessins, photos et frises de la série
   sont dans `video/src/trial/Signs.tsx`.

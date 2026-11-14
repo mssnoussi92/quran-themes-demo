@@ -497,12 +497,14 @@ class Checker:
                     self.rests_on(file, seg, recited, hadiths)
                 else:
                     self.out.error(file, f"`sources` on a segment that is not a narration: {seg_name(seg)}")
-        lines = []
+        lines, voiced = [], []
         for seg in segments:
             if "narration" in seg:
                 self.narration_lines(file, seg.get("lines") or [], f"narration {seg['narration']}", hadiths)
                 lines += seg.get("lines") or []
-        self.voice_text(file, spec, lines)
+                if not seg.get("silent"):                  # a silent line is written on screen, never said
+                    voiced += seg.get("lines") or []
+        self.voice_text(file, spec, voiced)
         first = next(iter(lines), None)
         if first:
             phrase = [p for p in script.PHRASE_CUT.split(first["ar"].strip()) if p][0]
@@ -551,7 +553,7 @@ class Checker:
         if "reading" in seg:
             rec = (self.repo.sources.get(seg["reading"]) or {}).get("recording")
             return rec["end"] - rec["start"] if rec else script.UNKNOWN_READING
-        return script.spoken(seg.get("lines") or [])
+        return max(script.spoken(seg.get("lines") or []), seg.get("hold") or 0)
 
     def estimate_short(self, spec: dict) -> float:
         t = script.LEAD

@@ -647,6 +647,15 @@ al-Baqara 11, al-Ahzab 10 ; la première fois 2:7, la dernière 83:14, deux vers
 13:28, le repos du cœur par le rappel de Dieu (al-Muyassar). Ses sept sources sont proposées. **À discuter avec lui** :
 le rythme d'un texte sans voix, le nom, les mots suivants.
 
+**Deuxième version** (propriétaire, 2026-11-14, sur le pilote : « il manque des effets sonores, sur le compteur ; ne
+pas afficher le nombre directement mais créer un suspense pour qu'on reste au début ; la fin est bien ; mélanger les
+deux styles : le début rapide et animé, puis la voix, et finir sur une leçon : ذكر ربنا بيريح القلوب »). Le début est
+muet et rapide (17 s) : la question « «القلب» في القرآن كام مرة؟ », la grille balayée de haut en bas, chaque verset
+trouvé s'allume au son d'un tic, le compteur monte, le 132 tombe avec un choc ; puis les versets, les formes, les
+sourates, au son d'un souffle et de petits chocs. Puis la voix D : « بس العدد… مش هو الحكاية », la première et la
+dernière fois, la raison (al-Muyassar sur 83:14 : beaucoup de péchés ont couvert leurs cœurs), 13:28, son sens, un
+exemple de vie, « ذكر ربنا… بيريّح القلوب ». 1:28 en brouillon. Script : `docs/scripts/map.md`, à valider avant la voix.
+
 ### Le « إعجاز عددي » : une vidéo analysée et des comptes refaits (propriétaire, 2026-11-13)
 
 Demande : analyser le montage d'une vidéo Facebook (enregistrement d'écran, 1:33) pour « لاحظت الفرق », et une série

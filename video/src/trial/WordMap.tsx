@@ -34,15 +34,35 @@ const FORMS = Q.forms as Record<string, number>;
 
 // ---- the grid of the verses, the word lit in it ------------------------------------------------------------------------
 
-/** `appear`: how much of the verses that hold the word are lit yet, in the order of the mushaf; `lit`: how bright they are;
- * `breathe`: a slow pulse, three groups out of phase. */
-const MapGrid: React.FC<{ t: number; appear?: number; lit?: number; breathe?: number }> = ({ t, appear = 1, lit = 1, breathe = 0 }) => {
-  const shown = LIT.slice(0, Math.round(LIT.length * appear));
-  const fresh = appear < 1 ? shown.slice(-6) : [];
+// The scan of the opening (the same times as tools/trial/sfx.py, whose ticks fall on the rows it reaches): it starts at
+// the first frame, SCAN_LEAD before its segment, and goes 0.5x + 0.5x² of the rows in x of its time, faster and faster.
+const COLS = 96;
+const ROWS = Math.floor((MAP.verses - 1) / COLS);
+const SCAN_LEAD = 0.5;
+const SCAN = 3.3;
+const rowOf = (k: number) => Math.floor(k / COLS);
+const scanRow = (t: number, since: number) => {
+  const x = clamp((t - since + SCAN_LEAD) / SCAN);
+  return (0.5 * x + 0.5 * x * x) * ROWS;
+};
+
+/** `appear`: how much of the verses that hold the word are lit yet, in the order of the mushaf; `upto`: the row the scan
+ * has reached (its line drawn, what it passed lit); `lit`: how bright they are; `breathe`: a slow pulse. */
+const MapGrid: React.FC<{ t: number; appear?: number; upto?: number; lit?: number; breathe?: number }> = ({ t, appear = 1, upto, lit = 1, breathe = 0 }) => {
+  const shown = upto === undefined ? LIT.slice(0, Math.round(LIT.length * appear)) : LIT.filter((k) => rowOf(k) <= upto);
+  const fresh = upto !== undefined ? shown.filter((k) => rowOf(k) > upto - 1.5) : appear < 1 ? shown.slice(-6) : [];
+  const lineY = upto === undefined ? 0 : GRID_TOP + upto * (GRID_BOTTOM - GRID_TOP) / ROWS;
+  const scanning = upto !== undefined && upto < ROWS;
   return (
     <g>
       <rect x={GRID_LEFT - 30} y={GRID_TOP - 30} width={W - 2 * GRID_LEFT + 60} height={GRID_BOTTOM - GRID_TOP + 60} rx={24} fill={INK} opacity={0.6} />
       <path d={BASE} fill={PALE} opacity={0.16} />
+      {scanning ? (
+        <g>
+          <rect x={GRID_LEFT - 24} y={lineY - 70} width={W - 2 * GRID_LEFT + 48} height={70} fill="url(#wm-scan)" />
+          <line x1={GRID_LEFT - 24} y1={lineY} x2={W - GRID_LEFT + 24} y2={lineY} stroke={GOLD} strokeWidth={3} opacity={0.9} />
+        </g>
+      ) : null}
       <path d={dots(shown, 8)} fill={GOLD} opacity={0.13 * lit} />
       {[0, 1, 2].map((g) => (
         <path key={g} d={dots(shown.filter((_, i) => i % 3 === g), 3.4)} fill={GOLD}
@@ -202,9 +222,11 @@ const place = (s: { name: string; ayah: number }) => `${s.name} ${s.ayah}`;
 // ---- the episode -------------------------------------------------------------------------------------------------------
 
 const QalbPicture: Drawn = ({ t, show, since }) => {
-  const hook = show("hook");
-  const fall = show("grid") > 0 ? after(t, since("grid") + 0.1, 1.3) : 0;     // a cover (scene hook) never crumbles
+  const land = show("land");
+  const fall = show("grid") > 0 ? after(t, since("grid") + 0.1, 1.3) : 0;
+  const scan = show("scan");
   const grid = Math.max(show("grid"), show("first"), show("last"), show("closed"), show("rest"), show("end"));
+  const knock = after(t, since("land") + 0.3, 0.7);         // the knock of tools/trial/sfx.py (`impact` at 0.3 s)
   const gathered = Math.max(show("forms"), show("surahs"));
   const travel = after(t, since("last") + 0.1, 1.4);
   const moving = { x: mix(FIRST.x, LAST.x, travel), y: mix(FIRST.y, LAST.y, travel) };
@@ -217,15 +239,25 @@ const QalbPicture: Drawn = ({ t, show, since }) => {
       <Defs />
       <CountDefs />
       <Stars n={120} opacity={0.6} salt={700} />
-      {grid > 0 ? (
-        <g opacity={grid}>
-          <MapGrid t={t} appear={show("grid") > 0.5 ? after(t, since("grid") + 0.4, 2.6) : 1}
-                   lit={1 - 0.62 * dim} breathe={calm} />
+      <defs>
+        <linearGradient id="wm-scan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={GOLD} stopOpacity={0} /><stop offset="1" stopColor={GOLD} stopOpacity={0.22} /></linearGradient>
+      </defs>
+      {scan > 0 || land > 0 ? (
+        <g opacity={Math.max(scan, land)}>
+          <MapGrid t={t} upto={land > 0.5 ? ROWS : scanRow(t, since("scan"))} lit={1 - 0.7 * land} />
         </g>
       ) : null}
-      {hook > 0 || (fall > 0 && fall < 1) ? (
-        <Particles to={String(Q.total)} shapes={SHAPES} cx={540} cy={GRID_MIDDLE} h={300} t={t} crumble={fall}
-                   gather={0.9 + 0.1 * after(t, 0, 0.8)} />
+      {grid > 0 ? (
+        <g opacity={grid}>
+          <MapGrid t={t} lit={1 - 0.62 * dim} breathe={calm} />
+        </g>
+      ) : null}
+      {land > 0 || (fall > 0 && fall < 1) ? (
+        <g opacity={land > 0 && fall === 0 ? after(t, since("land") - 0.1, 0.2) : 1}>
+          {knock > 0 && knock < 1 ? <circle cx={540} cy={GRID_MIDDLE} r={60 + 520 * knock} fill="none" stroke={GOLD} strokeWidth={6 * (1 - knock)} opacity={0.8 * (1 - knock)} /> : null}
+          <Particles to={String(Q.total)} shapes={SHAPES} cx={540} cy={GRID_MIDDLE} h={300} t={t} crumble={fall}
+                     gather={land > 0 && fall === 0 ? after(t, since("land"), 0.35) : 1} />
+        </g>
       ) : null}
       {gathered > 0 ? (
         <g opacity={gathered}>
@@ -265,10 +297,14 @@ const QalbPicture: Drawn = ({ t, show, since }) => {
   );
 };
 
-/** Above the veil, still: the badge of the series; while the verses light up, how many are lit. */
+/** Above the veil, still: the badge of the series; the counter of the scan (how many times the word, so far), then how
+ * many verses. */
 const QalbOverlay: Drawn = ({ t, show, since }) => {
   const counting = show("grid");
-  const lit = Math.round(Q.verses * after(t, since("grid") + 0.4, 2.6));
+  const lit = Math.round(Q.verses * after(t, since("grid"), 0.8));
+  const scan = Math.max(show("scan"), show("land") * (1 - after(t, since("land") + 0.2, 0.4)));
+  const row = scanRow(t, since("scan"));
+  const found = Q.each.filter(([k]) => rowOf(k) <= row).length;
   return (
     <>
       <g>
@@ -276,6 +312,12 @@ const QalbOverlay: Drawn = ({ t, show, since }) => {
         <text x={114} y={281} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={30} fill={GOLD}>١</text>
         <text x={152} y={280} fontFamily={FONT.arabic} fontWeight={700} fontSize={34} fill={GOLD} style={{ filter: "drop-shadow(0 2px 10px rgba(4,7,20,.9))" }}>خريطة كلمة</text>
       </g>
+      {scan > 0 ? (
+        <g opacity={scan}>
+          <text x={W / 2} y={1745} textAnchor="middle" fontFamily={FONT.latin} fontWeight={700} fontSize={150} fill={GOLD}
+                style={{ filter: "drop-shadow(0 0 18px rgba(240,196,106,.45))" }}>{found}</text>
+        </g>
+      ) : null}
       {counting > 0 ? (
         <g opacity={counting}>
           <text x={W / 2} y={1740} textAnchor="middle" fontFamily={FONT.latin} fontWeight={700} fontSize={90} fill={GOLD}>{lit}</text>

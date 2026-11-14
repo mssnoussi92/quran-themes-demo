@@ -1,11 +1,12 @@
-# no voice: these lines are written on screen only (« خريطة كلمة » has no narration voice)
-«القلب» في القرآن… 132 مرة.
-في 124 آية… من 6236.
-112 مرة «قلوب»… و19 مرة «قلب»… ومرة واحدة «قلبين».
-وأكتر سورة فيها القلوب: التوبة… 13 مرة.
-أول مرة في المصحف…
+# style: A calm, warm storyteller telling a story to a friend, in Egyptian colloquial Arabic (Cairo). Unhurried, with suspense: a short pause at each « … », before each question and before the last sentence, and a clear pause between two lines.
+بس العدد… مش هو الحكاية.
+الحكاية… في أول مرة.
 وآخر مرة…
 أول مرة… وآخر مرة… قلوب اتقفلت.
+وآخر آية بتقول السبب: ذنوب كتير… غطّت قلوبهم.
 طب إيه اللي يريّح القلب؟
-يعني: القلب يرتاح… بذكر ربنا.
+يعني: القلب يهدى ويرتاح… بذكر ربنا… وطاعته.
+زي لما تبقى مخنوق ومش لاقي كلام… وتقول: سبحان الله… الحمد لله…
+الدنيا حواليك زي ما هي… بس قلبك يهدى.
+ذكر ربنا… بيريّح القلوب.
 تابعنا عشان الكلمة الجاية.

@@ -294,7 +294,9 @@ def main() -> None:
     # order), cut here between its segments, in the middle of the pause before each one.
     text = ROOT / "content" / "voice-test" / f"{spec['text']}.txt"
     said = [l.strip() for l in text.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
-    narrated = [seg for seg in spec["segments"] if "narration" in seg]
+    # A `silent` narration (the fast opening of « خريطة كلمة ») is written on screen only: no voice says it, it is not
+    # in the voice text, and it is timed from its length (and its `hold`), as a draft is.
+    narrated = [seg for seg in spec["segments"] if "narration" in seg and not seg.get("silent")]
     if said != [l["ar"] for seg in narrated for l in seg["lines"]]:
         sys.exit(f"error: {text.name} and the lines of the trial differ")
     phrases = [ph for seg in narrated for l in seg["lines"] for ph in PHRASE_CUT.split(l["ar"].strip())]
@@ -308,7 +310,15 @@ def main() -> None:
 
     t, segments = LEAD, []
     for seg in spec["segments"]:
-        if "narration" in seg:
+        if "narration" in seg and seg.get("silent"):
+            made = narration(None, *place([l["ar"] for l in seg["lines"]], None), 0, seg["lines"], Path("-"))
+            if seg.get("hold") and made["seconds"] < seg["hold"]:
+                made["seconds"] = made["lines"][-1]["end"] = float(seg["hold"])
+            made["silent"] = True
+            if seg.get("sources"):
+                made["refs"] = sources.references(seg["sources"])
+            segments.append({**made, "scene": seg["scene"], "start": round(t, 2)})
+        elif "narration" in seg:
             wav = out_dir / f"{args.trial}-{args.voice}-{seg['narration']}.wav"
             made = narration(whole, starts, gaps, take_end, first[seg["narration"]], seg["lines"], wav, gain)
             if seg.get("hold") and made["seconds"] < seg["hold"]:
@@ -339,6 +349,13 @@ def main() -> None:
         import ambience
         quiet = [(s["start"], s["start"] + s["seconds"]) for s in segments if s["kind"] != "narration"]
         bed = ambience.bed({args.trial: spec["ambience"]}, [(0.0, args.trial)], quiet, total, out_dir / f"{args.trial}-{args.voice}-ambience")
+    # The sound effects (tools/trial/sfx.py): made here from the times of the segments, never under a verse.
+    effects = None
+    if any(seg.get("sfx") for seg in spec["segments"]):
+        import sfx
+        events = [(made["start"] + at, sound) for seg, made in zip(spec["segments"], segments) for sound, at in seg.get("sfx") or []]
+        quiet = [(s["start"], s["start"] + s["seconds"]) for s in segments if s["kind"] != "narration"]
+        effects = sfx.track(events, quiet, total, out_dir / f"{args.trial}-{args.voice}-sfx.wav", word=args.trial)
     handles = yaml.safe_load((ROOT / "content" / "publish.yaml").read_text(encoding="utf-8")).get("handles", {})
     data = {"trial": args.trial, "voice": args.voice, "voice_name": spec["voices"][args.voice], "handle": spec["handle"],
             "handles": handles,                             # where the page has another name (TikTok): prop `platform`
@@ -350,16 +367,20 @@ def main() -> None:
             "seconds": total, "segments": segments}
     if bed:
         data["ambience"] = f"trial/{bed['file'].name}"
+    if effects:
+        data["sfx"] = f"trial/{effects['file'].name}"
     out = out_dir / f"{args.trial}-{args.voice}.json"
     out.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     if by_source is None and sources.proposed:
         print("not validated by the owner yet: " + "; ".join(sources.proposed))
     for s in segments:
         what = " | ".join(f"{ph['text']}@{ph['start']}" for l in s.get("lines", []) for ph in l["phrases"]) or s.get("reference")
-        print(f"{s['start']:6.2f}  {s['kind']:9s} {s['seconds']:5.2f} s  {s['scene']:6s} {what}")
+        print(f"{s['start']:6.2f}  {'(silent)' if s.get('silent') else s['kind']:9s} {s['seconds']:5.2f} s  {s['scene']:6s} {what}")
     if bed:
         print(f"ambience: {spec['ambience']['title']} at {spec['ambience'].get('level', -36)} LUFS, silent under "
               + ", ".join(f"{a:.1f}-{b:.1f} s" for a, b in bed["silent"]))
+    if effects:
+        print(f"sound effects: {effects['summary']}")
     print(f"{out.relative_to(ROOT)}: {total} s")
 
 

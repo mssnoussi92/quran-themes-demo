@@ -45,7 +45,7 @@ type Line = { ar: string; en: string; phrases: Phrase[]; end: number };
 /** `file` is null in a draft: the script and the scenes are looked at before any voice says them. */
 /** `refs`: what the lines rest on (the report the narration tells in its own words, the tafsir its meaning comes
  * from): a reference written small while they are said, never read (tools/trial/sources.py, `references`). */
-export type Narration = { kind: "narration"; scene: string; start: number; seconds: number; file: string | null; lines: Line[]; refs?: { ar: string; en: string } };
+export type Narration = { kind: "narration"; scene: string; start: number; seconds: number; file: string | null; lines: Line[]; refs?: { ar: string; en: string }; silent?: boolean };
 /** `verses`: a passage (verses recited without a break, tools/trial/sources.py `passage`): where each verse starts
  * and ends among the words, and its translation. The pages turn between two verses. */
 export type Verse = {
@@ -69,6 +69,8 @@ export type TrialData = {
   clip: string; clip_seconds: number; picture?: Picture; seconds: number; segments: Segment[];
   /** The ambience under the narration, as long as the video and already silent under each verse (tools/trial/ambience.py). */
   ambience?: string;
+  /** The sound effects (tools/trial/sfx.py): ticks, a knock, a breath of air, clicks; never under a verse. */
+  sfx?: string;
   /** The 9:16 cover of the short: the scene it shows, its title in large, a tag above it. */
   cover?: { scene: string; title: string; tag: string; focus?: number; at?: number } | null;
 };
@@ -639,6 +641,7 @@ export const Trial: React.FC<TrialProps> = ({ data, platform }) => {
         </svg>
       ) : null}
       {data.ambience ? <Html5Audio src={staticFile(data.ambience)} /> : null}
+      {data.sfx ? <Html5Audio src={staticFile(data.sfx)} /> : null}
       {data.segments.map((seg, i) =>
         seg.file ? (
           <Sequence key={i} from={Math.round(seg.start * fps)} durationInFrames={Math.ceil(seg.seconds * fps) + 2} layout="none">
