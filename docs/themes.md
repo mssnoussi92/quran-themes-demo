@@ -760,6 +760,45 @@ Le tableau ci-dessous est le plan montré avec les images ; le script l'a chang�
 Sources à inscrire : 10:5, 17:88, leurs passages de tafsir, le compte (`count`), l'année lunaire (`science`). Suite
 possible : l'épisode 6, « ١٩ » (le code de Rashad Khalifa l'a mené à retirer 9:128-129), à décider avec lui.
 
+## Série proposée : une image, puis le verset (pilote court, 2026-11-15)
+
+Née de deux reels analysés (`reference/fb-metaphor-reels-analysis.md`). Demande du propriétaire (2026-11-15) : « prépare
+le pilote, mais comme pour toute série trois candidats, et à la fin on utilise notre méthode et on donne des infos
+correctes, même si on récite deux ayat » ; il remarque que ce qui attire, c'est l'animation d'une personne qui court
+après un train. **Rien n'est écrit ni enregistré avant son choix.**
+
+**La forme proposée** (environ 45 à 55 s, contre 1:30 à 2:00 pour nos shorts) :
+1. Une métaphore en mouvement, sans voix : texte à l'écran tenu le temps de le lire, effets sonores (`silent`, `hold`,
+   `sfx` de « خريطة كلمة »), 15 à 20 s.
+2. Le verset récité, sur sa scène.
+3. Notre méthode : trois ou quatre répliques de la voix D. Le sens vient d'un tafsir nommé sous la réplique, et
+   l'information juste est celle que le tafsir donne, pas celle de la métaphore.
+4. L'appel au partage (« ابعتها لحد… »), puis la première image (la boucle).
+
+**Une personne qui court** : c'est bien le moteur de ces reels (un corps qui fait ce que fait le spectateur). Mais le
+modèle ne dessine personne (règle du propriétaire). Deux voies, au propriétaire de trancher :
+- **A, recommandée** : la règle reste. Le spectateur est la caméra (vue subjective) et ce sont les choses qui bougent.
+- **B** : une silhouette anonyme, noire, sans visage (jamais un prophète, un Compagnon ni une personne connue). Il
+  faudrait changer la règle pour cette série, et une partie du public refuse qu'on dessine des personnes.
+
+Les trains et l'arc sont les métaphores de l'auteur des reels : on ne les reprend pas.
+
+| Épisode | Métaphore (des choses, en mouvement) | Verset (Tawfiq As-Sayegh, repères de mp3quran) | L'information juste (tafsir) |
+| --- | --- | --- | --- |
+| 1 | Une coupure de courant : les fenêtres d'une ville s'éteignent bloc par bloc… et le ciel se remplit d'étoiles qu'on ne voyait pas | 94:5-6 (6,7 s) | As-Sa'di : l'aisance « يقارنه ويصاحبه », elle est **avec** la difficulté, pas après ; « العسر » est défini, donc une seule difficulté, et « يسرا » est indéfini et répété, donc deux aisances : « فلن يغلب عسر يسرين » |
+| 2 | Une terre craquelée, des nuages qui passent sans pleuvoir, deux fois ; une graine qui attend ; puis la pluie | 42:28 (10,6 s) | As-Sa'di : la pluie avait cessé si longtemps « ظنوا أنه لا يأتيهم، وأيسوا… فينزل الله الغيث » ; le verset dit « من بعد ما قنطوا » : après qu'ils ont désespéré, pas avant |
+| 3 | Un fil qui défile sans fin sur un écran, un sablier qui se vide, l'heure qui tourne | 103:1-3 (14,3 s) | As-Sa'di : « العصر » est la nuit et le jour, « محل أفعال العباد » ; tout homme perd, sauf quatre qualités : deux pour se compléter soi-même (la foi, les bonnes œuvres), deux pour compléter les autres (se recommander la vérité et la patience). L'appel au partage **est** ce « تواصي » |
+
+**Les points à trancher** :
+- **94:5-6** est le verset du reel de l'arc. On le garde, parce que notre information est autre (une difficulté, deux
+  aisances). As-Sa'di y cite une parole du Prophète ﷺ : elle n'est ni dite ni citée.
+- **42:28** est proche du short `hope` (39:53, le désespoir). Mais ici il s'agit d'attendre le soulagement, pas d'être
+  pardonné.
+- **Le nom** : « شوفها كده » proposé. « مثل وآية » ferait croire à une parabole du Coran : la métaphore est la nôtre.
+- **Le budget** : trois requêtes de voix (une par épisode, après le script validé), des dessins nouveaux, un rendu
+  GitHub Actions. Le stock du calendrier tient jusqu'au 1er janvier : à comparer aux shorts longs quand les premières
+  mesures arrivent, pas à ajouter tout de suite.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
