@@ -123,9 +123,10 @@ et 3 de Moussa et al-Khadir la précèdent, le samedi et le dimanche.
 
 ## Les mesures
 
-**Quand** : Facebook, Instagram et YouTube, rien à envoyer. TikTok : quand vous voulez ; le plus simple, une fois par
-semaine, la liste « Contenu » de TikTok Studio le dimanche, à la revue de la semaine (la page note le jour de chaque
-capture ; une capture tardive vaut mieux qu'aucune).
+**Quand** : Facebook, Instagram et YouTube, rien à envoyer. TikTok : quand vous voulez, dans n'importe quelle session.
+Le plus simple : une capture de la liste « Contenu » de TikTok Studio, une fois par semaine, le dimanche (Facebook,
+Instagram et YouTube sont relevés seuls). La page note le jour de chaque capture ; une capture tardive vaut mieux
+qu'aucune.
 
 **Où sont les chiffres** : sur la page « Statistiques » de quran-reels
 (https://mssnoussi92.github.io/quran-reels/catalog/stats.html), à 48 heures, 7 et 28 jours, les reels et les vidéos de
