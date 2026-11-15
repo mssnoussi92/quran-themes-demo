@@ -124,7 +124,8 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
 - `cut: {drop: [...]}` dans le fichier d'un short : la version courte pour Facebook et Instagram (60 à 75 s), la même
   prise de voix, les mêmes versets et images, moins ce que `drop` nomme : un segment de narration (`depth`), une
   réplique (`"close:2"`, indice à partir de 0) ou un verset (son id) ; un élément qui ne correspond à rien est une
-  erreur. `prepare.py --cut` écrit `<id>-<voix>-cut.json` (`"version": "cut"`) et des fichiers en `-cut` ; `videos.py`
+  erreur. `open_with: [<narration>]` met ces segments en tête de la version courte (propriétaire, 2026-11-15 :
+  « le hook doit partir d'abord » : la question la plus forte ouvre la vidéo), chacun avec ses phrases de la prise. `prepare.py --cut` écrit `<id>-<voix>-cut.json` (`"version": "cut"`) et des fichiers en `-cut` ; `videos.py`
   ajoute la vidéo `…-cut` (props `"version":"cut"`), jamais pour TikTok ni YouTube. **Pour quran-reels** (la convention, 2026-11-15) : une
   fois la coupe validée par le propriétaire (`cut.validated`), `publish.py` ajoute à la ligne des fichiers du short, après
   la couverture, « · version courte pour Facebook et Instagram : `<short>-cut.mp4`, 1:13 » ; `page-files` la rend

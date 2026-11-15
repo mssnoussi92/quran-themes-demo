@@ -73,3 +73,16 @@ def test_videos_lists_the_short_version_only_for_a_short_with_cut(tmp_path, monk
     assert "f-short-1-a-cut" not in [r["name"] for r in videos.listing("f", "D", "tiktok")[0]]
     assert "f-short-1-a-cut" in [r["name"] for r in videos.listing("f", "D", "a")[0]]
     assert "f-short-1-a-cut" in [r["name"] for r in videos.listing("f", "D", "shorts")[0]]
+
+
+def test_open_with_puts_the_named_segments_first():
+    spec = {**SPEC, "cut": {"drop": ["quran.1.1"], "open_with": ["close"]}}
+    assert [s.get("narration") or s.get("verse") or s["verses"][0] for s in prepare.opened_with(spec, set())] == [
+        "close", "open", "quran.1.1", "quran.2.1"]
+    assert prepare.opened_with(SPEC, set()) == SPEC["segments"]
+
+
+@pytest.mark.parametrize("name, dropped", [("nothing", set()), ("quran.1.1", set()), ("close", {"close"})])
+def test_open_with_a_segment_not_kept_is_refused(name, dropped):
+    with pytest.raises(SystemExit, match="open_with"):
+        prepare.opened_with({**SPEC, "cut": {"drop": ["x"], "open_with": [name]}}, dropped)

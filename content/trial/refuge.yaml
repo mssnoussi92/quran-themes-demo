@@ -2,6 +2,8 @@
 # propriétaire le 2026-11-15 (« la caverne, version courte » ; « oui, ce plan ») : un verset court par short, environ 60 à
 # 75 s, une image qui bouge dès la première seconde ; le reste de l'histoire va au film, pour YouTube. Pourquoi : les
 # premières mesures (docs/retention.md, 2026-11-15) : sur Facebook et Instagram, on part au bout de 4 à 8 s.
+# - La question d'abord (propriétaire, 2026-11-15 : « la question la plus forte d'abord ») : celle à laquelle le verset
+#   répond, ce qu'ils ont dit dans leur seule du'a.
 # - Le fait : ils quittent leur ville pour une caverne ; pourquoi (al-Muyassar : « خشية من فتنة قومهم لهم، وإرغامهم على
 #   عبادة الأصنام ») ; ce qu'ils demandent (al-Muyassar : « رحمة، تثبتنا بها، وتحفظنا من الشر، ويسِّر لنا الطريق الصواب »).
 # - La leçon (as-Sa'di) : « فجمعوا بين السعي والفرار من الفتنة… وبين تضرعهم وسؤالهم لله… وعدم اتكالهم على أنفسهم وعلى
@@ -30,12 +32,12 @@ segments:
     scene: leave
     sources: [tafsir.muyassar.18.10]
     lines:
-      - ar: "شباب سابوا مدينتهم… وبيوتهم… واستخبّوا في كهف! ليه؟"
-        en: "Young men left their city… their homes… and hid in a cave! Why?"
-      - ar: "قومهم كانوا عايزين يجبروهم يعبدوا أصنام… فهربوا بدينهم."
-        en: "Their people wanted to force them to worship idols… so they fled with their faith."
-      - ar: "ودخلوا الكهف بدعوة واحدة… دعوة لكل واحد حاسس إنه لوحده."
-        en: "They went into the cave with a single prayer… a prayer for anyone who feels alone."
+      - ar: "شباب هربوا بدينهم لكهف… ومعاهمش غير دعوة واحدة. قالوا إيه؟"
+        en: "Young men fled to a cave with their faith… with nothing but a single prayer. What did they say?"
+      - ar: "قومهم كانوا عايزين يجبروهم يعبدوا أصنام… فسابوا مدينتهم وبيوتهم."
+        en: "Their people wanted to force them to worship idols… so they left their city and their homes."
+      - ar: "ودعوتهم دي… لكل واحد حاسس إنه لوحده."
+        en: "And that prayer of theirs… is for anyone who feels alone."
   - verse: quran.18.10
     scene: cave
   - narration: meaning

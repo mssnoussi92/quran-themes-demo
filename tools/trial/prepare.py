@@ -268,6 +268,20 @@ def parse_drop(spec: dict) -> tuple[set[str], set[tuple[str, int]], set[str]]:
     return whole, lines, verses
 
 
+def opened_with(spec: dict, dropped: set[str]) -> list[dict]:
+    """The segments of the short version in the order it plays them: the narration segments `cut.open_with` names first,
+    in that order, then the others as in the file. The owner on the first try (2026-11-15, « le hook doit partir
+    d'abord »): the short version opens on its strongest question. Each segment keeps its own phrases of the take, so
+    the order can change without a new voice."""
+    names = [str(n) for n in (spec.get("cut") or {}).get("open_with") or []]
+    by_name = {seg["narration"]: seg for seg in spec["segments"] if "narration" in seg}
+    for name in names:
+        if name not in by_name or name in dropped:
+            sys.exit(f"error: {spec.get('id')}: cut.open_with « {name} » names no narration segment kept in the short version")
+    front = [by_name[n] for n in names]
+    return front + [seg for seg in spec["segments"] if all(seg is not f for f in front)]
+
+
 def kept_runs(lines: list[dict], dropped: set[int]) -> list[tuple[list[dict], int]]:
     """The contiguous runs of lines not in `dropped` (indexes into `lines`), each with the number of phrases that
     come before it in the segment: the phrases of a line are contiguous in the take, so a run is cut from the
@@ -355,7 +369,7 @@ def main() -> None:
         k += sum(len(PHRASE_CUT.split(l["ar"].strip())) for l in seg["lines"])
 
     t, segments, pairs = LEAD, [], []             # pairs: (the segment of the file, what it made), for the sound effects
-    for seg in spec["segments"]:
+    for seg in (opened_with(spec, drop_whole) if args.cut else spec["segments"]):
         if "narration" in seg:
             silent = bool(seg.get("silent"))
             if seg["narration"] in drop_whole:
