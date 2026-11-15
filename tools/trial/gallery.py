@@ -133,10 +133,25 @@ def film_data(film_id: str, folder: Path, out: Path, release: str | None, tall: 
     series = "chapters" not in film             # a series: shorts that stand alone, no film and no thumbnail
     shorts = [yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film.get("shorts") or film["thumbnail"]["panels"]]
     listed, stills = videos.listing(film_id, "D", "all")
+    if series:
+        # A series grows at its end: a short written but not delivered yet (no video in DIR) is left off the page,
+        # with its cover, its TikTok twin and its texts, until it is delivered.
+        delivered = [(folder / f"{v['name']}.mp4").is_file() for v in listed if v["kind"] == "short"]
+        kept = sum(delivered)
+        if delivered != [True] * kept + [False] * (len(delivered) - kept):
+            sys.exit(f"error: {film_id}: a short is missing from {folder} before one that is there")
+        if kept < len(shorts):
+            print(f"  {film_id}: {', '.join(s['id'] for s in shorts[kept:])} not delivered yet, left off the page", flush=True)
+        names = {f"{film.get('files', film_id)}-short-{s['publish']['part']}-{s['id']}" for s in shorts[kept:]}
+        listed = [v for v in listed if not any(v["name"].startswith(n) for n in names)]
+        stills = [s for s in stills if not any(s["name"].startswith(n) for n in names)]
+        shorts = shorts[:kept]
     written = ROOT / film["publish"].get("out", "")
     if not film["publish"].get("out") or not written.is_file():
         sys.exit(f"error: {film_id}: no publication texts (`publish.out` of content/trial/{film_id}.yaml, tools/trial/publish.py)")
     sections = texts(written)
+    if series:
+        sections = sections[:len(shorts)]
     media = out / "media"
     media.mkdir(parents=True, exist_ok=True)
     cards = []

@@ -19,7 +19,7 @@ id: ayah
 validated: { by: mssnoussi92, on: 2026-11-12, what: [publish] }
 files: ayah                      # début du nom des vidéos livrées : ayah-short-<n>-<id>.mp4
 title: { ar: "آية وحكايتها", en: "A Verse and Its Story" }
-shorts: [caravan, duha, hope]
+shorts: [caravan, duha, hope, forgive]
 handle: "@quran_words_daily"
 publish:
   out: docs/retention/publication-ayah.md

@@ -284,7 +284,11 @@ irait mieux à un film). **Ce qu'il faut tenir** : l'accusation contre Aïcha n'
 اتقال على بنته »), et les commentaires de ce récit attirent les polémiques : à surveiller ; l'exemple de vie ne dit
 jamais de revenir vers quelqu'un qui continue de faire du mal (as-Sa'di : ne pas couper le bien pour une faute). La fin
 du short 3 (« تلات آيات… وتلات حكايات… ») reste telle qu'elle est validée : sa promesse (« الآية الجاية وحكايتها ») est
-tenue.
+tenue. **Script écrit le 2026-11-15** (« oui, commence le script ») : `content/trial/forgive.yaml`, `docs/scripts/ayah.md`
+(1:59 estimée, 0:28 de récitation) ; quatre sources proposées (24:22, Bukhari 4750, al-Muyassar et as-Sa'di sur
+24:22) ; récitation coupée ; dessins `cut`, `back`, `whole` (deux maisons sous la lune, le chemin entre elles, la
+bourse) ; clip proposé : Pixabay 7215 (une pleine lune derrière des nuages). À valider par le propriétaire avant
+toute voix.
 
 ## Série proposée : « الإعجاز في القرآن » (idée du propriétaire, 2026-11-12)
 

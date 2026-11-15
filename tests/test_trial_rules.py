@@ -218,7 +218,8 @@ def set_sources(copy, short: str, narration: str, sources: list[str]) -> None:
 def test_a_series_is_checked_with_its_shorts(copy):
     done = copy.rules("--film", "ayah", "--draft")
     assert done.returncode == 0, done.stdout[-3000:]
-    assert "series ayah: 3 short(s), 0 error(s)" in done.stdout
+    shorts = len(copy.load("content/trial/ayah.yaml")["shorts"])
+    assert f"series ayah: {shorts} short(s), 0 error(s)" in done.stdout
 
 
 def test_a_narration_rests_on_a_hadith_or_a_tafsir_of_the_policy(copy):

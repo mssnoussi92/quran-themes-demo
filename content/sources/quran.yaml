@@ -2585,3 +2585,20 @@
   notes: 'Al-Hijr 15:50 (« سؤال صعب », épisode 3 : « وأن عذابي هو العذاب الأليم », la réponse, le verset suivant)'
   text_ar: وَأَنَّ عَذَابِى هُوَ ٱلْعَذَابُ ٱلْأَلِيمُ
   text_en: And that it is My punishment which is the painful punishment.
+
+- id: quran.24.22
+  type: ayah
+  ref: {surah: 24, ayah: 22}
+  url: https://quran.com/24/22
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=24:22
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=24:22
+    translator: Saheeh International
+    surah_ar: النور
+    surah_en: An-Nur
+    retrieved: '2026-11-15'
+  status: proposed
+  notes: "« ولا يأتل أولو الفضل منكم… ألا تحبون أن يغفر الله لكم » : le verset du short 4 de « آية وحكايتها » (pardonner à un proche ; récit : Bukhari 4750)"
+  text_ar: وَلَا يَأْتَلِ أُو۟لُوا۟ ٱلْفَضْلِ مِنكُمْ وَٱلسَّعَةِ أَن يُؤْتُوٓا۟ أُو۟لِى ٱلْقُرْبَىٰ وَٱلْمَسَـٰكِينَ وَٱلْمُهَـٰجِرِينَ فِى سَبِيلِ ٱللَّهِ ۖ وَلْيَعْفُوا۟ وَلْيَصْفَحُوٓا۟ ۗ أَلَا تُحِبُّونَ أَن يَغْفِرَ ٱللَّهُ لَكُمْ ۗ وَٱللَّهُ غَفُورٌ رَّحِيمٌ
+  text_en: And let not those of virtue among you and wealth swear not to give [aid] to their relatives and the needy and the emigrants for the cause of Allāh, and let them pardon and overlook. Would you not like that Allāh should forgive you? And Allāh is Forgiving and Merciful.
