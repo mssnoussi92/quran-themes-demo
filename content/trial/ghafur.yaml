@@ -2,13 +2,17 @@
 # (2026-11-15, « je valide tes recommandations ») : « لحظة… ركّز في الآية دي », le verset récité, son sens, l'objection
 # honnête dite comme une question, la réponse dans le sens du verset lui-même (tafsir nommé sous la réplique), un second
 # verset qui va plus loin, un exemple de vie, la phrase à retenir, l'appel à suivre. Ici : 15:49, et la réponse dans le verset suivant, 15:50.
-# Personne n'est dessiné ; rien de l'invisible. Script écrit par la session le 2026-11-15 : pas encore validé ; aucune voix
-# avant son « je valide le script ».
+# Personne n'est dessiné ; rien de l'invisible. Script écrit par la session le 2026-11-15.
 id: ghafur
+# « Je valide le script, les clips et le montage » du propriétaire (2026-11-15), sur docs/scripts/sual.md, les planches
+# docs/retention/sual-style-1.jpg et -2.jpg et les trois clips de Pixabay : les répliques, la place des versets, ce sur quoi
+# chaque réplique repose, le titre ; le clip de cet épisode ; le montage de la série (video/src/trial/Sual.tsx). Ni la voix,
+# ni la vidéo finale, ni les textes, ni les sources : il les valide sur les vidéos. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-15 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 69-trial-ghafur
-clip: { source: pixabay, id: 30850, author: adege, page: "https://pixabay.com/videos/id-30850/", take: { from: 0, seconds: 30, height: 1440, slow: 3 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.75, ground: "#05070f", horizon: 1300 }      # le soleil qui se lève sur une mer de brume, une seule fois sur tout le short : le retour ; à montrer au propriétaire
+clip: { source: pixabay, id: 30850, author: adege, page: "https://pixabay.com/videos/id-30850/", take: { from: 0, seconds: 30, height: 1440, slow: 3 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.75, ground: "#05070f", horizon: 1300 }      # le soleil qui se lève sur une mer de brume, une seule fois sur tout le short : le retour ; approuvé par le propriétaire le 2026-11-15
 ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 110, level: -38 }
 cover:
   scene: pause
