@@ -294,9 +294,15 @@ def main() -> None:
         title = f"{sp['title']['en']} · {sp['title']['ar']}"
         if len(title) > limits["youtube"]["max_title"]:
             sys.exit(f"error: {name}: the YouTube title is {len(title)} characters")
-        out += [f"## Short {n} · {sp['title']['en']} · {sp['title']['ar']}", "",
-                f"`{name}{bed}.mp4` (TikTok : `{name}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`) · {stamp(data['seconds'])} · 9:16 · "
-                f"Facebook, Instagram, TikTok, YouTube Shorts · couverture : `{cover}`", "",
+        # A series drawn twice (`casts`): the same texts for both drawings, each file named.
+        casts = film.get("casts") or []
+        files_line = (
+            " ; ".join(f"`{name}-{c}{bed}.mp4` (TikTok : `{name}-{c}-tiktok{bed}.mp4`, couverture : `{name}-{c}-cover.jpg`)" for c in casts)
+            + f", signées `{conf['handles']['tiktok']}` sur TikTok · {stamp(data['seconds'])} · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts"
+            if casts else
+            f"`{name}{bed}.mp4` (TikTok : `{name}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`) · {stamp(data['seconds'])} · 9:16 · "
+            f"Facebook, Instagram, TikTok, YouTube Shorts · couverture : `{cover}`")
+        out += [f"## Short {n} · {sp['title']['en']} · {sp['title']['ar']}", "", files_line, "",
                 *cards("Facebook", heading, description(conf["handle"]), credits, tags("facebook")),
                 *cards("Instagram", heading, description(conf["handle"]), credits, tags("instagram")),
                 f"Sur TikTok : la vidéo `{name}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`.", "",
