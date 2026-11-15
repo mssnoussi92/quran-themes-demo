@@ -539,6 +539,39 @@ sessions ».
   automatiquement les cinq règles sur ces fichiers, tout se rend dans une session. Ordre proposé : les deux
   histoires d'abord (Dhul-Qarnayn, la caverne), les idées reçues une fois ces manques comblés.
 
+## Premières mesures du modèle (2026-11-15)
+
+Lues dans `insights.json` (branche `state` de quran-reels, premier relevé du 2026-11-15) et dans les captures YouTube et
+TikTok du propriétaire que l'autre session y a saisies. Les chiffres vivent sur la page « Statistiques » de quran-reels ;
+ici, ce qu'on en tire. **Un seul film, deux shorts, 100 à 700 vues chacun, à 20-80 h** : une direction, pas une preuve.
+Comparer une vidéo à une autre sur la même plateforme : Facebook et Instagram comptent chaque lecture commencée (un
+défilement compte), YouTube ne garde que les vues « engagées ».
+
+| Vidéo (durée) | YouTube | Facebook | Instagram | TikTok |
+| --- | --- | --- | --- | --- |
+| Film (7:47 ; 9:16 sur Facebook) | 232 vues · 1:48 regardées (23 %) · 56 % encore là à 0:30 · 1 abonné | 250 vues · 6,0 s | 9 vues (posté en vidéo) | — |
+| Short 1, la barque (1:33) | 219 vues · passent l'accroche 32 % · 20 s (22 %) · 1 abonné | 173 vues · 4,4 s (5 %) | 132 vues · passent 3 s 28 % · 8,5 s (9 %) | 699 vues · 59 j'aime |
+| Short 2, le garçon (1:47) | 625 vues · accroche 42 % · **68 s (64 %)** · 3 abonnés | 204 vues · 7,8 s (7 %) | 109 vues · passent 3 s 14 % · 8,0 s (8 %) | 732 vues · 73 j'aime |
+| Reels quotidiens de la Page (19-36 s), pour comparer | 825 à 981 vues à 48 h | 228 à 298 vues · 5,8 à 6,9 s (9 à 37 %) | 108:1-3 : 141 vues · passent 3 s 38 % · 7,4 s (39 %) | 600 à 970 vues · 57 à 197 j'aime |
+
+**Ce qu'on en tire** :
+1. **Sur Facebook et Instagram, on part au bout de 4 à 8 secondes**, comme sur les reels de la Page : la durée regardée
+   en secondes est la même, mais nos shorts durent trois à cinq fois plus, donc 5 à 9 % regardés contre 16 à 39 %.
+   L'accroche d'Instagram le dit aussi : 28 % et 14 % passent 3 secondes, contre 38 % pour le reel de 108:1-3. Le
+   goulot est le début, pas le milieu.
+2. **YouTube est l'exception** : le short du garçon y est regardé à 64 % en moyenne (68 s sur 107) et gagne 3 abonnés ;
+   le film garde 56 % de ses spectateurs à 0:30 et les retient 1:48 en moyenne. Le format long tient là où l'on
+   choisit de regarder.
+3. **TikTok** : autant de vues que les reels, moins de j'aime (8 à 10 % des vues contre 13 à 28 %).
+4. **Un film sur Instagram, posté en vidéo, n'est pas vu** (9 vues) : ne pas l'y mettre.
+5. **Le garçon contre la barque** : bien meilleur sur YouTube, moins bon à l'accroche d'Instagram. Trop peu de vues
+   pour trancher entre deux accroches.
+
+**Ce que ça change** (recommandation de la session, à décider par le propriétaire) : pour Facebook et Instagram, des
+débuts en mouvement, compris en une seconde, et des shorts plus courts ; c'est exactement ce que teste « بص تاني »
+(40 à 50 s, une métaphore muette qui bouge dès la première image). Le stock déjà validé reste tel quel ; YouTube lui
+convient. L'histoire du 30 novembre s'écrit avec ces leçons.
+
 ## La demande
 
 Propriétaire, 2026-11-10, après le premier essai sur Instagram : les règles et les personnages des vidéos faites
