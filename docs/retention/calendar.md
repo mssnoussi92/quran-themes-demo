@@ -55,13 +55,31 @@ partir du deuxième, c'est l'épisode d'avant.
 **Le choix plus rapide** : un short chaque jour, sans jour libre. On apprend un peu plus vite, mais le stock est
 épuisé le 28 novembre, et la production suivante doit être prête à cette date.
 
+## Ce que la Page publie aussi (quran-reels)
+
+Les vidéos de ce calendrier passent sur la même Page que les reels de quran-reels, qui se publient seuls
+(proposé par la session le 2026-11-15, à la demande du propriétaire d'un seul calendrier) :
+
+| Quand (heure de France) | Quoi | Où |
+| --- | --- | --- |
+| chaque matin, 07:30 | un reel de lecture, dans l'ordre (Juz' 'Amma) | Facebook, Instagram ; TikTok en brouillon, YouTube à la main |
+| le vendredi, 07:30 | Al-Kahf, un passage par vendredi (18:17-26 du 20 novembre au 18 décembre : les gens de la caverne) | les mêmes |
+| chaque jour, 12:30 | « Word of the day », un carrousel de trois images | Facebook, Instagram |
+| le dimanche, 19:30 | un reel des séries de versets (المنجيات, puis الدعاء à partir du 6 décembre) | les mêmes |
+
+On n'en recopie ici que les règles, pas la liste : elle est recalculée chaque jour (un créneau manqué décale la suite,
+comme le 15 novembre au matin). Le calendrier de tout ce que publie la Page, reels et vidéos de ce fichier ensemble, est
+dans le catalogue de quran-reels : https://mssnoussi92.github.io/quran-reels/catalog/#calendar (les vidéos d'ici en
+bleu, lues dans ce fichier). Aucune collision entre les deux grilles : le reel le matin, l'image à midi, ces vidéos à
+19 h, et le dimanche soir, jour libre ici, la série des reels.
+
 ## Le calendrier
 
 | Date | Quoi | Où | Fichiers | Texte (section de `docs/retention/…`) |
 | --- | --- | --- | --- | --- |
 | ~~jeu. 12 nov., soir~~ | ~~Moussa et al-Khadir : le film~~ | YouTube (16:9) ; Facebook (vertical) | `khidr-film-16x9-ambience.mp4`, `khidr-film-9x16.mp4` | `publication-moussa-khidr.md` : « Le film » ; `publication-moussa-khidr-9x16.md` |
 | ~~ven. 13 nov.~~ | ~~Khidr, short 1 : la barque~~ | les quatre | `khidr-short-1-boat-ambience.mp4`, `-tiktok-ambience`, `couverture-1-bateau.jpg` | `publication-moussa-khidr.md` : « Short 1 » |
-| sam. 14 nov. | Khidr, short 2 : le garçon | les quatre | `khidr-short-2-boy-ambience.mp4`, `-tiktok-ambience`, `couverture-2-garcon.jpg` | `publication-moussa-khidr.md` : « Short 2 » |
+| ~~sam. 14 nov.~~ | ~~Khidr, short 2 : le garçon~~ | les quatre | `khidr-short-2-boy-ambience.mp4`, `-tiktok-ambience`, `couverture-2-garcon.jpg` | `publication-moussa-khidr.md` : « Short 2 » |
 | dim. 15 nov. | Khidr, short 3 : le mur | les quatre | `khidr-short-3-wall-ambience.mp4`, `-tiktok-ambience`, `couverture-3-mur.jpg` | « Short 3 » |
 | lun. 16 nov., soir | Du'a : le film | YouTube (16:9) ; Facebook (vertical) | releases `dua-candidate`, `dua-9x16-candidate` | `publication-dua.md` : « Le film » ; `publication-dua-9x16.md` |
 | mar. 17 nov. | Du'a, short 1 : Ayyoub | les quatre | release `dua-candidate` | `publication-dua.md` : « Short 1 » |
@@ -81,17 +99,20 @@ partir du deuxième, c'est l'épisode d'avant.
 | lun. 7 déc. | « كلمة من القرآن » 1 : الكنود (100:1-8) | les quatre | release `kalima-candidate` | `publication-kalima.md` : « Short 1 » |
 | mar. 8 déc. | « كلمة من القرآن » 2 : نواة التمرة (فتيل، نقير، قطمير) | les quatre | release `kalima-candidate` | « Short 2 » |
 | mer. 9 déc. | « كلمة من القرآن » 3 : هلوع (70:19-23) | les quatre | release `kalima-candidate` | « Short 3 » |
-| ven. 11 déc. | **« آية وحكايتها » 4** : le verset promis par le short 3 | les quatre | à faire | à faire |
+| ven. 11 déc. | « آية وحكايتها » 4 : 24:22, le pardon à un proche | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 4 » |
 | sam. 12 déc. | « سنريهم آياتنا » 4 : l'embryon | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 4 » |
 | lun. 14 déc. | « خريطة كلمة » 1 : القلب (132 fois) | les quatre | release `map-candidate` | `publication-map.md` : « Short 1 » |
 | mar. 15 déc. | « خريطة كلمة » 2 : النور (43 fois) | les quatre | release `map-candidate` | « Short 2 » |
 | mer. 16 déc. | « خريطة كلمة » 3 : الصدر (44 fois) | les quatre | release `map-candidate` | « Short 3 » |
 | ven. 18 déc. | « لاحظت الفرق؟ » 1 : le rizq (6:151 et 17:31) | les quatre | release `farq-candidate` | `publication-farq.md` : « Short 1 » |
 | sam. 19 déc. | « سنريهم آياتنا » 5 : « بيقولوا 365… عدّيتها بنفسي » (annoncé par la fin de `womb`) | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 5 » |
+| lun. 21 déc. | « سؤال صعب » 1 : بعيد عن ربنا… وعايش مرتاح؟ (20:124 et 6:44) | les quatre | release `sual-candidate` | `publication-sual.md` : « Short 1 » |
+| mar. 22 déc. | « سؤال صعب » 2 : مؤمن… وحياته صعبة؟ (16:97 et 29:2) | les quatre | release `sual-candidate` | « Short 2 » |
+| mer. 23 déc. | « سؤال صعب » 3 : ربنا غفور رحيم… أعمل اللي أنا عايزه؟ (15:49 et 15:50) | les quatre | release `sual-candidate` | « Short 3 » |
 | ven. 25 déc. | « لاحظت الفرق؟ » 2 : l'adab (18:79 et 18:82) | les quatre | release `farq-candidate` | « Short 2 » |
 | ven. 1 janv. | « لاحظت الفرق؟ » 3 : la justice (4:135 et 5:8) | les quatre | release `farq-candidate` | « Short 3 » |
 
-« كلمة من القرآن » et « خريطة كلمة » prennent les lundis, mardis et mercredis des semaines du 7 et du 14 décembre, où aucun film n'est encore prévu (décision du propriétaire, 2026-11-14, sur la proposition de la session : les deux séries qui attendaient une place, et les moins semblables) ; « خريطة كلمة », le format le plus éloigné de ce qui est mesuré (un début muet, des effets sonores), passe après trois semaines de mesures. Une histoire nouvelle, si elle est prête, peut reprendre ces semaines : à décider avec les mesures.
+« كلمة من القرآن », « خريطة كلمة » et « سؤال صعب » prennent les lundis, mardis et mercredis des semaines du 7, du 14 et du 21 décembre (« سؤال صعب » : décision du propriétaire, 2026-11-15 ; chaque épisode annonce le suivant, trois jours de suite tiennent la promesse), où aucun film n'est encore prévu (décision du propriétaire, 2026-11-14, sur la proposition de la session : les deux séries qui attendaient une place, et les moins semblables) ; « خريطة كلمة », le format le plus éloigné de ce qui est mesuré (un début muet, des effets sonores), passe après trois semaines de mesures. Une histoire nouvelle, si elle est prête, peut reprendre ces semaines : à décider avec les mesures.
 
 « لاحظت الفرق؟ » prend le vendredi quand les séries déjà prévues finissent (décision du propriétaire, 2026-11-14 : « quand on termine les séries déjà planifiées, et mieux de lancer ça un vendredi ») : après le quatrième « آية وحكايتها » (11 décembre), une fois par semaine. Si « آية وحكايتها » continue au-delà, les deux séries se partagent le vendredi, ou l'une change de jour : à décider avec les mesures. L'épisode 2 reprend les versets du film de Moussa et al-Khadir : six semaines après lui.
 
@@ -106,6 +127,12 @@ et 3 de Moussa et al-Khadir la précèdent, le samedi et le dimanche.
 où vous publiez une vidéo, envoyez la capture de celle d'avant-hier ; le lundi soir, envoyez aussi celle du film de la
 semaine d'avant. Pour Moussa et al-Khadir : le film samedi 14 au soir, le short 1 dimanche 15, le film à 7 jours jeudi
 19 au soir.
+
+**Facebook et Instagram : relevés seuls** depuis la PR #61 de quran-reels (2026-11-15, une fois fusionnée) : chaque nuit,
+à 48 heures, 7 et 28 jours, sur la page « Statistiques » (https://mssnoussi92.github.io/quran-reels/catalog/stats.html),
+les reels et les vidéos de ce fichier côte à côte (reconnues par la première ligne de leur légende, le titre de leur
+section dans `publication-*.md`). **YouTube et TikTok : par capture** (décision du propriétaire, 2026-11-15) ; la session
+propose de les envoyer une fois par semaine, le dimanche, à la revue de la semaine.
 
 **Comment** : envoyez une capture des statistiques de chaque vidéo, une par plateforme ; la session remplit la fiche
 ci-dessous. Les noms des chiffres changent d'une plateforme à l'autre ; ceux qui comptent sont :
@@ -146,3 +173,7 @@ Une ligne par vidéo et par plateforme, remplie à 48 heures. L'heure de publica
 | 13 nov. | matin | Khidr, short 1 | Instagram | 1:33 | | | | | | |
 | 13 nov. | matin | Khidr, short 1 | YouTube Shorts | 1:33 | | | | | | |
 | 13 nov. | matin | Khidr, short 1 | TikTok | 1:33 | | | | | | |
+| 14 nov. | soir | Khidr, short 2 | Facebook | 1:47 | | | | | | |
+| 14 nov. | soir | Khidr, short 2 | Instagram | 1:47 | | | | | | |
+| 14 nov. | soir | Khidr, short 2 | YouTube Shorts | 1:47 | | | | | | |
+| 14 nov. | soir | Khidr, short 2 | TikTok | 1:47 | | | | | | |

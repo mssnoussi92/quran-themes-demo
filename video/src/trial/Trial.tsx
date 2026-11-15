@@ -9,7 +9,7 @@ import { AbsoluteFill, Easing, Html5Audio, OffthreadVideo, Sequence, interpolate
 import { FONT, loadFonts } from "../fonts";
 import { subtitleChunks } from "../templates/Subtitles";
 import type { WordTiming } from "../types";
-import { Caravan, Footprints, Gate, Lantern, Palm, Rain, Sermon, Stars } from "./Ayah";
+import { Caravan, Footprints, Gate, Lantern, Palm, Purse, Rain, Sermon, Stars, Track, trackAt } from "./Ayah";
 import { Boat, Fleet } from "./Boat";
 import { Call, Niche, Whale } from "./Dua";
 import { House, Land } from "./Home";
@@ -20,6 +20,7 @@ import { KALIMA_OVERLAYS, KALIMA_PICTURES } from "./Kalima";
 import { COUNT_LAYOUTS, COUNT_OVERLAYS, COUNT_PICTURES } from "./Count";
 import { FARQ_LAYOUTS, FARQ_OVERLAYS, FARQ_PICTURES } from "./Farq";
 import { MAP_LAYOUTS, MAP_OVERLAYS, MAP_PICTURES } from "./WordMap";
+import { SUAL_LAYOUTS, SUAL_OVERLAYS, SUAL_PICTURES } from "./Sual";
 
 loadFonts();
 
@@ -390,21 +391,61 @@ const HopePicture: Drawn = ({ t, show, horizon }) => (
   </>
 );
 
+/** « آية وحكايتها », An-Nur 24:22, under a filmed moon: two houses and the track between their doors. `cut`: the
+ * purse stays at the door of the first, the track is broken in its middle, the second house dark (the oath); `back`:
+ * the track closes, the purse goes along it, and the window of the second house lights when it arrives (the
+ * answer); `whole`: the track whole, the purse at the second door, both lit. Nobody is drawn: the houses are kin. */
+const ForgivePicture: Drawn = ({ t, show, since, horizon }) => {
+  const rim = "#c9d4ee";
+  const from: [number, number] = [276, horizon + 46];
+  const c1: [number, number] = [380, horizon + 168];
+  const c2: [number, number] = [700, horizon + 172];
+  const to: [number, number] = [800, horizon + 66];
+  const sinceBack = t - since("back");
+  // each state of the drawing, and the scenes' weights: a crossfade between two scenes slides from one to the other
+  const states = [
+    { w: show("back"), gap: interpolate(sinceBack, [0.4, 2.4], [1, 0], CLAMP), u: interpolate(sinceBack, [2.4, 7.4], [0.06, 0.94], { ...CLAMP, easing: Easing.inOut(Easing.cubic) }), lit: interpolate(sinceBack, [7.2, 8.4], [0, 1], CLAMP) },
+    { w: show("whole"), gap: 0, u: 0.94, lit: 1 },
+  ];
+  const weight = states.reduce((s, x) => s + x.w, 0);
+  const cut = Math.max(0, 1 - weight);
+  const mix = (k: "gap" | "u" | "lit", rest: number) => (states.reduce((s, x) => s + x.w * x[k], 0) + cut * rest) / (weight + cut);
+  const gap = mix("gap", 1);
+  const u = mix("u", 0.06);
+  const lit = mix("lit", 0);
+  const [px, py] = trackAt(from, c1, c2, to, u);
+  return (
+    <>
+      <Land id="l-forgive" horizon={horizon} rim={rim} />
+      <House id="f-near" x={300} y={horizon + 40} scale={0.85} t={t} lights={1} rim={rim} />
+      <g opacity={1 - lit}>
+        <House id="f-far-dark" x={820} y={horizon + 60} scale={0.7} t={t} lights={0} rim={rim} />
+      </g>
+      <g opacity={lit}>
+        <House id="f-far-lit" x={820} y={horizon + 60} scale={0.7} t={t} lights={1} rim={rim} />
+      </g>
+      <Track from={from} c1={c1} c2={c2} to={to} gap={gap} rim={rim} />
+      <Purse id="f-purse" x={px} y={py + 10} scale={1.05} t={t} />
+    </>
+  );
+};
+
 export const PICTURES: Record<string, Drawn> = {
   boat: BoatPicture, boy: HomePicture, wall: WallPicture,
   asked: AskedPicture, written: WrittenPicture, waited: WaitedPicture,
   west: WestPicture, tribute: TributePicture, barrier: BarrierPicture,
-  caravan: CaravanPicture, duha: DuhaPicture, hope: HopePicture,
+  caravan: CaravanPicture, duha: DuhaPicture, hope: HopePicture, forgive: ForgivePicture,
   ...SIGNS_PICTURES,
   ...KALIMA_PICTURES,
   ...COUNT_PICTURES,
   ...FARQ_PICTURES,
   ...MAP_PICTURES,
+  ...SUAL_PICTURES,
 };
 
 /** What a short draws above its veil, under its texts, outside the slowly growing picture: a timeline, a badge,
  * anything that must not move. None by default; a short registers its own here. */
-export const OVERLAYS: Record<string, Drawn> = { ...SIGNS_OVERLAYS, ...KALIMA_OVERLAYS, ...COUNT_OVERLAYS, ...FARQ_OVERLAYS, ...MAP_OVERLAYS };
+export const OVERLAYS: Record<string, Drawn> = { ...SIGNS_OVERLAYS, ...KALIMA_OVERLAYS, ...COUNT_OVERLAYS, ...FARQ_OVERLAYS, ...MAP_OVERLAYS, ...SUAL_OVERLAYS };
 
 const hasLetter = (token: string) => /\p{L}/u.test(token);
 export const fit = (base: number, text: string, comfortable: number) => Math.round(base * Math.min(1, Math.sqrt(comfortable / Math.max(1, text.length))));
@@ -431,7 +472,7 @@ export const PORTRAIT: Layout = {
 /** A short that needs its texts elsewhere (a timeline above the picture, a narrower column) says so here: what it
  * gives is merged over PORTRAIT (`sub` and `credit` one level deeper, so that `sub: { top }` keeps the rest). */
 export type LayoutOverride = Omit<Partial<Layout>, "sub" | "credit"> & { sub?: Partial<Layout["sub"]>; credit?: Partial<Layout["credit"]> };
-export const LAYOUTS: Record<string, LayoutOverride> = { ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS };
+export const LAYOUTS: Record<string, LayoutOverride> = { ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS };
 const layoutOf = (trial: string): Layout => {
   const own = LAYOUTS[trial];
   return own ? { ...PORTRAIT, ...own, sub: { ...PORTRAIT.sub, ...own.sub }, credit: { ...PORTRAIT.credit, ...own.credit } } : PORTRAIT;

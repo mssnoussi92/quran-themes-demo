@@ -33,6 +33,10 @@ publish:
   description:
     en: "They say 'day' is in the Quran 365 times; in all its forms it comes 475 times. Most numbers that circulate are right, each under its own rule, but no single rule makes them all hold. Before you share a number about the Quran, count it."
     ar: "بيقولوا «يوم» في القرآن 365 مرة، وهي بكل أشكالها 475. وأغلب الأرقام اللي بتتنشر صح، بس كل رقم بقاعدة. قبل ما تنشر رقم عن القرآن، عِدّه، وشوف العلما بيقولوا إيه."
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (« je valide les 29 »)
+    ar: "قبل ما تنشر رقم عن القرآن، عِدّه."
+    en: "Before you share a number about the Quran, count it."
+    validated: 2026-11-15
 segments:
   - narration: open
     scene: cards

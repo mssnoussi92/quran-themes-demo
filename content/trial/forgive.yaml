@@ -1,0 +1,125 @@
+# « آية وحكايتها », short 4 (content/trial/ayah.yaml, docs/themes.md) : An-Nur 24:22. Choisi par la session à la
+# demande du propriétaire (2026-11-15 : « choisis le verset pour آية وحكايتها 4 », puis « oui, commence le script »).
+# Le fait : Abou Bakr faisait vivre Mistah « لقرابته منه وفقره » ; après ce que Mistah avait dit d'Aïcha, et une fois
+# son innocence descendue, il jure « والله لا أنفق على مسطح شيئا أبدا » ; 24:22 descend ; il dit « بلى والله إني أحب
+# أن يغفر الله لي », lui rend sa pension et jure « والله لا أنزعها منه أبدا » (Bukhari 4750 ; as-Sa'di le raconte).
+# - L'accusation n'est ni nommée ni racontée : « اتكلموا على بنته… كلام كذب » ; son innocence est dite (« وربنا نزّل
+#   براءتها في القرآن » : « فلما أنزل الله هذا في براءتي », dans le même hadith). Mistah n'est pas nommé : « قريبه ».
+# - Les mots d'Abou Bakr sont dits par la narration avec les siens (« أيوه والله… أنا بحب إن ربنا يغفرلي ») : ce
+#   ne sont pas des paroles du Prophète ﷺ ; la référence s'écrit à l'écran.
+# - Le sens (al-Muyassar) : que les gens de mérite et d'aisance ne jurent pas de couper le bien à leurs proches pauvres
+#   « بسبب ذنب فعلوه » ; qu'ils passent sur leur faute et ne les punissent pas ; « ألا تحبون أن يتجاوز الله عنكم؟
+#   فتجاوزوا عنهم ».
+# - La leçon (as-Sa'di) : « إذا عاملتم عبيده بالعفو والصفح عاملكم بذلك » ; « لا تترك النفقة والإحسان بمعصية
+#   الإنسان ».
+# - Les deux serments face à face (« حلف مرتين… ») : Ibn Kathir, « في مقابلة ما كان قال ». Répliques de la session sans
+#   tafsir : « وإحنا… بنعدّ اللي عملوه فينا… » (ce qu'on ne voit pas),
+#   l'exemple (une scène type : un mot dit en ton absence, jamais un mal qui continue).
+# - LIGNE D'AVERTISSEMENT, jamais coupée (idée du propriétaire, 2026-11-15 : « مش معناها إن نسامح إننا نسكت على الغلط
+#   لو تكرر ») : « فالمسامحة على اللي فات… مش سكوت على الغلط لو اتكرر. », avec la réplique qui la fonde sur le récit.
+#   Ibn Kathir : le pardon porte « عما تقدم منهم من الإساءة والأذى » ; il est venu après l'innocence descendue, quand
+#   celui qui avait parlé s'était repenti et avait reçu sa peine (« تاب الله عليه منها، وضرب الحد عليها »). Elle dit « ne
+#   pas se taire », jamais « ne plus pardonner » : al-Muyassar lit dans le verset le pardon « ولو قوبل بالإساءة ».
+#   Retirées pour la place : « والجرح ما كانش صغير… كان في بنته », « يسامحهم… ويعدّيها ».
+# - Images (personne, rien de l'invisible) : `cut` deux maisons sous la lune, la bourse à la porte de la première, le
+#   chemin coupé, la seconde éteinte ; `back` le chemin se referme, la bourse va, la fenêtre s'allume ; `whole` tout
+#   est rendu. Dessins : video/src/trial/Trial.tsx (ForgivePicture), video/src/trial/Ayah.tsx (Purse, Track).
+# - La dernière réplique : l'appel générique (l'épisode 5 n'est pas choisi ; skill write-hook).
+id: forgive
+# « Je valide » du propriétaire (2026-11-15), confirmé à la question de la session (« le script et le clip ») : le script
+# de docs/scripts/ayah.md (18 répliques, avec sa ligne d'avertissement sur Ibn Kathir), la place du verset, ce sur quoi
+# chaque narration repose, le titre ; et le clip (Pixabay 7215). Ni la voix, ni les dessins, ni l'ambiance, ni les
+# textes, ni les sources proposées : il les valide sur la vidéo.
+script_validated: { by: mssnoussi92, on: 2026-11-15 }
+# « Je valide tout » du propriétaire (2026-11-15), après l'envoi du short (workflow `film`, run 43707389321 : 1:52), de sa
+# version TikTok, de sa couverture, des textes à coller (docs/retention/publication-ayah.md) et de la page : lu comme le
+# short tel que livré (la voix, avec les deux mots signalés à écouter, « سامحهم » et « ما يحلفش » ; les dessins,
+# l'ambiance, la couverture), ses textes et ses cinq sources, passées à `validated`. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-15, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 70-trial-forgive     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
+# Le clip : une pleine lune derrière des nuages qui passent, ralentie trois fois pour ne se jouer qu'une fois.
+# APPROUVÉ par le propriétaire le 2026-11-15 (« je valide », confirmé : « le script et le clip »).
+clip: { source: pixabay, id: 7215, author: quimuns, page: "https://pixabay.com/videos/id-7215/", take: { slow: 3 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.85, ground: "#05070f", horizon: 1330 }
+# Ambiance sous la narration, jamais sous le verset : un pré la nuit, un des trois enregistrements validés à l'écoute
+# par le propriétaire (docs/model.md, « Ambiances »), comme le short 2.
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 120, level: -38 }
+cover: { scene: cut, title: "حلف يقطع قريبه… فنزلت آية", tag: "آية وحكايتها · ٤", focus: 1180 }
+publish:
+  title: { en: "He swore to cut off his relative… and a verse came down", ar: "حلف يقطع قريبه… فنزلت آية" }
+  part: 4
+  hashtags: ["#صلة_الرحم", "#التسامح"]
+  description:
+    en: "Abu Bakr as-Siddiq used to provide for a poor relative. That relative spoke lies against his daughter, and Abu Bakr swore never to give him anything again. Then a verse came down, and he answered: yes, by God, I love that God should forgive me… and gave it back to him."
+    ar: "أبو بكر الصديق رضي الله عنه كان بيصرف على قريبه الفقير… وقريبه اتكلم على بنته كلام كذب، فحلف ما يدّيلوش حاجة تاني. ونزلت آية… فقال: أيوه والله، أنا بحب إن ربنا يغفرلي، ورجّعله اللي كان بيدّيهوله."
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (« je valide les 29 »)
+    ar: "حلف ما يدّيلوش حاجة تاني… ونزلت آية."
+    en: "He swore never to give him anything again. Then a verse came down."
+    validated: 2026-11-15
+segments:
+  - narration: open
+    scene: cut
+    sources: [hadith.bukhari.4750]
+    lines:
+      - ar: "أبو بكر الصديق رضي الله عنه حلف… ما يصرفش تاني على قريبه الفقير! ليه؟"
+        en: "Abu Bakr as-Siddiq swore… never again to provide for his poor relative! Why?"
+      - ar: "قريبه ده… كان من اللي اتكلموا على بنته… كلام كذب، وربنا نزّل براءتها في القرآن."
+        en: "That relative… was among those who spoke against his daughter… lies, and God sent down her innocence in the Quran."
+      - ar: "وساعتها نزلت آية… لكل واحد فينا حد من أهله جرحه."
+        en: "And then a verse came down… for every one of us who was hurt by someone of their own family."
+  - verse: quran.24.22
+    scene: cut
+  - narration: meaning
+    scene: cut
+    sources: [tafsir.muyassar.24.22]
+    lines:
+      - ar: "يعني: اللي ربنا وسّع عليه… ما يحلفش يقطع خيره عن قرايبه المحتاجين… عشان غلطة عملوها."
+        en: "Meaning: whoever God has given plenty… should not swear to cut off his kindness to relatives in need… over a wrong they did."
+      - ar: "مش بتحب ربنا يسامحك؟ سامحهم."
+        en: "Don't you love for God to forgive you? Then forgive them."
+  - narration: answer
+    scene: back
+    sources: [hadith.bukhari.4750]
+    lines:
+      - ar: "أبو بكر سمعها… وقال: أيوه والله… أنا بحب إن ربنا يغفرلي."
+        en: "Abu Bakr heard it… and said: yes, by God… I do love for God to forgive me."
+      - ar: "ورجّع لقريبه اللي كان بيدّيهوله… وحلف تاني: عمري ما هقطعه عنه."
+        en: "He gave his relative back what he used to give him… and swore again: I will never take it from him."
+  - narration: depth
+    scene: back
+    sources: [tafsir.ibn-kathir.24.22, tafsir.saadi.24.22]
+    lines:
+      - ar: "حلف مرتين… الأولى عشان الجرح… والتانية عشان ربنا يسامحه."
+        en: "He swore twice… the first time for his wound… the second so that God would forgive him."
+      - ar: "اللي يسامح عباد ربنا… ربنا يسامحه."
+        en: "Whoever forgives God's servants… God forgives him."
+      - ar: "وإحنا… بنعدّ اللي عملوه فينا… وناسيين إننا كمان محتاجين مسامحة."
+        en: "And us… we count what they did to us… and forget that we too need forgiving."
+  - narration: example
+    scene: cut
+    sources: [tafsir.saadi.24.22]
+    lines:
+      - ar: "زي قريب اتكلم عليك في غيابك… والكلام وصلك."
+        en: "Like a relative who spoke about you behind your back… and the words reached you."
+      - ar: "فتقول: خلاص… لا هكلّمه… ولا هقف جنبه تاني."
+        en: "And you say: that's it… I won't speak to him… or stand by him again."
+      - ar: "ما تقطعش خيرك عنه… عشان غلطة."
+        en: "Don't cut your kindness off from him… over one wrong."
+  - narration: limit
+    scene: cut
+    sources: [tafsir.ibn-kathir.24.22]
+    lines:
+      - ar: "وأبو بكر سامح بعد ما الحق اتقال… واللي غلط اتحاسب وتاب."
+        en: "And Abu Bakr forgave after the truth had been told… and the one who did wrong had been held to account and repented."
+      - ar: "فالمسامحة على اللي فات… مش سكوت على الغلط لو اتكرر."
+        en: "So forgiving what is past… is not keeping silent about a wrong if it happens again."
+  - narration: close
+    scene: whole
+    lines:
+      - ar: "عايز ربنا يسامحك؟ سامح."
+        en: "Want God to forgive you? Forgive."
+      - ar: "ولما تحلف تقطع حد من أهلك… افتكر أبو بكر."
+        en: "And when you swear to cut off someone of your family… remember Abu Bakr."
+      - ar: "تابعنا عشان الآية الجاية وحكايتها."
+        en: "Follow us for the next verse and its story."

@@ -7,6 +7,7 @@ Script à valider avant toute voix. Les répliques **nouvelles** sont de la sess
 | 1 | `caravan` | 1:43 | 0:23 | 0:00 | 15 | 0 |
 | 2 | `duha` | 1:52 | 0:30 | 0:00 | 18 | 0 |
 | 3 | `hope` | 1:45 | 0:23 | 0:00 | 15 | 0 |
+| 4 | `forgive` | 2:04 | 0:28 | 0:00 | 18 | 0 |
 
 ## Short 1 · `caravan` · سابوا خطبة الجمعة… ليه؟
 
@@ -175,5 +176,63 @@ Environ **1:45** · 0:23 de récitation, 0:00 de hadith lu · 15 répliques nouv
   *When you tell yourself: it's too late… remember who asked before you.* · **nouvelle**
 - تلات آيات… وتلات حكايات: قافلة… وكلمة… وسؤال.  
   *Three verses… three stories: a caravan… a remark… and a question.* · **nouvelle**
+- تابعنا عشان الآية الجاية وحكايتها.  
+  *Follow us for the next verse and its story.* · **nouvelle**
+
+## Short 4 · `forgive` · حلف يقطع قريبه… فنزلت آية
+
+Environ **2:04** · 0:28 de récitation, 0:00 de hadith lu · 18 répliques nouvelles, 0 reprises.
+
+**0:00 · narration** (image : `cut`) · d'après : récit de [Sahih al-Bukhari 4750](https://sunnah.com/bukhari:4750), raconté avec nos mots, source proposée · référence écrite à l'écran, jamais lue
+- أبو بكر الصديق رضي الله عنه حلف… ما يصرفش تاني على قريبه الفقير! ليه؟  
+  *Abu Bakr as-Siddiq swore… never again to provide for his poor relative! Why?* · **nouvelle**
+- قريبه ده… كان من اللي اتكلموا على بنته… كلام كذب، وربنا نزّل براءتها في القرآن.  
+  *That relative… was among those who spoke against his daughter… lies, and God sent down her innocence in the Quran.* · **nouvelle**
+- وساعتها نزلت آية… لكل واحد فينا حد من أهله جرحه.  
+  *And then a verse came down… for every one of us who was hurt by someone of their own family.* · **nouvelle**
+
+**0:20** · **Verset récité** · An-Nur 24:22 · 28 s · **source proposée, à valider**  
+  وَلَا يَأْتَلِ أُو۟لُوا۟ ٱلْفَضْلِ مِنكُمْ وَٱلسَّعَةِ أَن يُؤْتُوٓا۟ أُو۟لِى ٱلْقُرْبَىٰ وَٱلْمَسَـٰكِينَ وَٱلْمُهَـٰجِرِينَ فِى سَبِيلِ ٱللَّهِ ۖ وَلْيَعْفُوا۟ وَلْيَصْفَحُوٓا۟ ۗ أَلَا تُحِبُّونَ أَن يَغْفِرَ ٱللَّهُ لَكُمْ ۗ وَٱللَّهُ غَفُورٌ رَّحِيمٌ  
+  *And let not those of virtue among you and wealth swear not to give [aid] to their relatives and the needy and the emigrants for the cause of Allāh, and let them pardon and overlook. Would you not like that Allāh should forgive you? And Allāh is Forgiving and Merciful.*
+
+**0:48 · narration** (image : `cut`) · d'après : sens d'après [Al-Tafsir al-Muyassar · التفسير الميسر](https://quran.com/24:22/tafsirs/ar-tafsir-muyassar) sur 24:22, source proposée · référence écrite à l'écran, jamais lue
+- يعني: اللي ربنا وسّع عليه… ما يحلفش يقطع خيره عن قرايبه المحتاجين… عشان غلطة عملوها.  
+  *Meaning: whoever God has given plenty… should not swear to cut off his kindness to relatives in need… over a wrong they did.* · **nouvelle**
+- مش بتحب ربنا يسامحك؟ سامحهم.  
+  *Don't you love for God to forgive you? Then forgive them.* · **nouvelle**
+
+**1:00 · narration** (image : `back`) · d'après : récit de [Sahih al-Bukhari 4750](https://sunnah.com/bukhari:4750), raconté avec nos mots, source proposée · référence écrite à l'écran, jamais lue
+- أبو بكر سمعها… وقال: أيوه والله… أنا بحب إن ربنا يغفرلي.  
+  *Abu Bakr heard it… and said: yes, by God… I do love for God to forgive me.* · **nouvelle**
+- ورجّع لقريبه اللي كان بيدّيهوله… وحلف تاني: عمري ما هقطعه عنه.  
+  *He gave his relative back what he used to give him… and swore again: I will never take it from him.* · **nouvelle**
+
+**1:13 · narration** (image : `back`) · d'après : sens d'après [Tafsir Ibn Kathir · تفسير ابن كثير](https://quran.com/24:22/tafsirs/ar-tafsir-ibn-kathir) sur 24:22, source proposée ; sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/24:22/tafsirs/ar-tafseer-al-saddi) sur 24:22, source proposée · référence écrite à l'écran, jamais lue
+- حلف مرتين… الأولى عشان الجرح… والتانية عشان ربنا يسامحه.  
+  *He swore twice… the first time for his wound… the second so that God would forgive him.* · **nouvelle**
+- اللي يسامح عباد ربنا… ربنا يسامحه.  
+  *Whoever forgives God's servants… God forgives him.* · **nouvelle**
+- وإحنا… بنعدّ اللي عملوه فينا… وناسيين إننا كمان محتاجين مسامحة.  
+  *And us… we count what they did to us… and forget that we too need forgiving.* · **nouvelle**
+
+**1:29 · narration** (image : `cut`) · d'après : sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/24:22/tafsirs/ar-tafseer-al-saddi) sur 24:22, source proposée · référence écrite à l'écran, jamais lue
+- زي قريب اتكلم عليك في غيابك… والكلام وصلك.  
+  *Like a relative who spoke about you behind your back… and the words reached you.* · **nouvelle**
+- فتقول: خلاص… لا هكلّمه… ولا هقف جنبه تاني.  
+  *And you say: that's it… I won't speak to him… or stand by him again.* · **nouvelle**
+- ما تقطعش خيرك عنه… عشان غلطة.  
+  *Don't cut your kindness off from him… over one wrong.* · **nouvelle**
+
+**1:42 · narration** (image : `cut`) · d'après : sens d'après [Tafsir Ibn Kathir · تفسير ابن كثير](https://quran.com/24:22/tafsirs/ar-tafsir-ibn-kathir) sur 24:22, source proposée · référence écrite à l'écran, jamais lue
+- وأبو بكر سامح بعد ما الحق اتقال… واللي غلط اتحاسب وتاب.  
+  *And Abu Bakr forgave after the truth had been told… and the one who did wrong had been held to account and repented.* · **nouvelle**
+- فالمسامحة على اللي فات… مش سكوت على الغلط لو اتكرر.  
+  *So forgiving what is past… is not keeping silent about a wrong if it happens again.* · **nouvelle**
+
+**1:52 · narration** (image : `whole`)
+- عايز ربنا يسامحك؟ سامح.  
+  *Want God to forgive you? Forgive.* · **nouvelle**
+- ولما تحلف تقطع حد من أهلك… افتكر أبو بكر.  
+  *And when you swear to cut off someone of your family… remember Abu Bakr.* · **nouvelle**
 - تابعنا عشان الآية الجاية وحكايتها.  
   *Follow us for the next verse and its story.* · **nouvelle**

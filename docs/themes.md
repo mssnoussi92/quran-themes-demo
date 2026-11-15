@@ -272,6 +272,26 @@ récitation de Tawfiq As-Sayegh mesurée sur mp3quran (lecture 17). Aucun n'est 
 **Budget** : trois requêtes de voix (une par short, le jour où le script est validé), trois clips à vous montrer,
 trois dessins nouveaux, trois ambiances, un rendu GitHub Actions (environ 45 min).
 
+**Le short 4 : 24:22, choisi par la session à la demande du propriétaire (2026-11-15 : « choisis le verset pour آية
+وحكايتها 4 »)**, avant toute mesure de la série (elle sort le 20 novembre). Les raisons : la récitation la plus courte
+(28 s, un verset entier qui commence une phrase) ; le gain le plus quotidien (un proche qui t'a fait du mal) ; la suite
+naturelle du short 3, qui finit sur le pardon de Dieu : celui qui le veut, le verset lui demande de pardonner à son
+tour (« ألا تحبون أن يغفر الله لكم ») ; un fait concret pour la première image (un serment de ne plus rien donner, rompu
+par un verset). Le récit relu dans hadith-api : Bukhari 4750 (« والله لا أنفق على مسطح شيئا أبدا… فأنزل الله… قال أبو
+بكر: بلى والله إني أحب أن يغفر الله لي، فرجع إلى مسطح النفقة »). Écartés pour ce short : 8:32-33 (un gain moins
+proche, une pluie de pierres à ne pas montrer), 9:118 (le verset continue une phrase de 9:117 ; le récit, très riche,
+irait mieux à un film). **Ce qu'il faut tenir** : l'accusation contre Aïcha n'est ni nommée ni racontée (« كلام وحش
+اتقال على بنته »), et les commentaires de ce récit attirent les polémiques : à surveiller ; l'exemple de vie ne dit
+jamais de revenir vers quelqu'un qui continue de faire du mal (as-Sa'di : ne pas couper le bien pour une faute). La fin
+du short 3 (« تلات آيات… وتلات حكايات… ») reste telle qu'elle est validée : sa promesse (« الآية الجاية وحكايتها ») est
+tenue. **Script écrit le 2026-11-15** (« oui, commence le script ») : `content/trial/forgive.yaml`, `docs/scripts/ayah.md`
+(2:04 estimée, 0:28 de récitation ; avec la ligne d'avertissement proposée par le propriétaire, « المسامحة على اللي
+فات… مش سكوت على الغلط لو اتكرر », sur Ibn Kathir) ; cinq sources proposées (24:22, Bukhari 4750, al-Muyassar, as-Sa'di
+et Ibn Kathir sur 24:22) ; récitation coupée ; dessins `cut`, `back`, `whole` (deux maisons sous la lune, le chemin entre elles, la
+bourse) ; clip : Pixabay 7215 (une pleine lune derrière des nuages). Script et clip validés le 2026-11-15, voix et
+rendu le même jour (1:52) ; **tout validé par le propriétaire le 2026-11-15** (« je valide tout »). Au calendrier le
+vendredi 11 décembre.
+
 ## Série proposée : « الإعجاز في القرآن » (idée du propriétaire, 2026-11-12)
 
 Demande du propriétaire : une série de deux ou trois shorts, comme la première. Son candidat : sourate al-Masad, parce
@@ -934,3 +954,25 @@ faire valider, une par une.
 - La liste du propriétaire : les états intérieurs d'abord (الإخلاص، الصدق، الشكر، علو الهمة،
   المراقبة، مجاهدة النفس), plus faciles à accrocher en 3 secondes que les devoirs de société
   (العدل، الوفاء بالعهود، النصح، الإصلاح بين الناس، قضاء حوائج الناس، ستر عورات المسلمين).
+
+### « سؤال صعب » (session et propriétaire, 2026-11-15)
+
+Née d'une vidéo Facebook que le propriétaire a fait analyser (son seul, 34 s : 20:124, l'objection « ils vivent bien »,
+6:44 en réponse « effrayante »). Avis de la session : l'accroche (une vraie objection du spectateur, posée à 0:17) est
+forte, mais la vidéo saute la meilleure réponse, que nos tafsirs donnent dans le verset lui-même (al-Muyassar : « وإن
+ظهر أنه من أهل الفضل واليسار » ; Ibn Kathir : le cœur dans l'inquiétude, même s'il mange et s'habille comme il veut).
+**L'ouverture est la sienne** : « لحظة ركّز في الآية دي » (« متمشيش » retiré sur l'avis de la session : il rappelle qu'on
+peut partir, et c'est la formule la plus usée). **Trois épisodes validés** (« je valide tes recommandations ») :
+1. `dank` : « بعيد عن ربنا… وعايش مرتاح؟ » : 20:124 (16,6 s), la réponse dans son sens (al-Muyassar, Ibn Kathir), puis
+   6:44, l'استدراج (23,7 s) ; 1:51 estimé.
+2. `tayyiba` : « مؤمن… وحياته صعبة؟ » : 16:97 jusqu'au premier arrêt (12,4 s), « ولو كان قليل المال » (al-Muyassar), la
+   قناعة (Ibn Kathir) et Muslim 1054 raconté avec nos mots, puis 29:2 (12 s) ; 1:32.
+3. `ghafur` : « ربنا غفور رحيم… أعمل اللي أنا عايزه؟ » : 15:49, et la réponse dans le verset suivant, 15:50 (al-Muyassar :
+   le Pardonneur pour ceux qui se repentent) ; 0:57.
+Écartés : la du'a non exaucée (le film du du'a a déjà 40:60, 2:186 et Bukhari 6340), 65:2-3 et 4:78-79 (la phrase utile au
+milieu de longs versets). En réserve : 14:42 (le إظالم), 76:30 (la volonté). **Le montage** (choisi par la session, à sa
+demande) : le clip filmé est le monde d'où vient la question (Dubaï au crépuscule, la pluie sur une vitre, l'aube sur la
+brume) ; dessus, le raisonnement : une pause qui devient « lecture » quand le verset commence, la question en carte avec
+« ؟ » et ce qu'elle nomme, la réponse au-dedans (une maison éclairée et un nœud sous la loupe ; une fenêtre sous la pluie et
+une lampe calme), les deux versets face à face (le second répond), une scène de la vie (des portes qui s'ouvrent, une copie
+d'examen, « بكرة » au calendrier). Images : `docs/retention/sual-style*.jpg`. Script : `docs/scripts/sual.md`.

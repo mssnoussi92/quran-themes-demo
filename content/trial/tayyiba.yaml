@@ -1,0 +1,108 @@
+# « سؤال صعب », épisode 2 (content/trial/sual.yaml ; script : docs/scripts/sual.md). La forme validée par le propriétaire
+# (2026-11-15, « je valide tes recommandations ») : « لحظة… ركّز في الآية دي », le verset récité, son sens, l'objection
+# honnête dite comme une question, la réponse dans le sens du verset lui-même (tafsir nommé sous la réplique), un second
+# verset qui va plus loin, un exemple de vie, la phrase à retenir, l'appel à suivre. Ici : 16:97 (jusqu'au premier arrêt) et 29:2 ; Muslim 1054 raconté avec nos mots.
+# Personne n'est dessiné ; rien de l'invisible. Script écrit par la session le 2026-11-15.
+id: tayyiba
+# « Je valide le script, les clips et le montage » du propriétaire (2026-11-15), sur docs/scripts/sual.md, les planches
+# docs/retention/sual-style-1.jpg et -2.jpg et les trois clips de Pixabay : les répliques, la place des versets, ce sur quoi
+# chaque réplique repose, le titre ; le clip de cet épisode ; le montage de la série (video/src/trial/Sual.tsx). Ni la voix,
+# ni la vidéo finale, ni les textes, ni les sources : il les valide sur les vidéos. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-15 }
+# « Je valide tout pour سؤال صعب » du propriétaire (2026-11-15), après l'envoi des trois vidéos (workflow `film`, run
+# 43664207279), des versions TikTok, des couvertures et des textes à coller (docs/retention/publication-sual.md) : lu comme
+# l'épisode tel que livré (voix, montage, couverture, ambiance, textes) et ses sources, passées à `validated`. Inscrit sur
+# sa parole.
+validated: { by: mssnoussi92, on: 2026-11-15, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 68-trial-tayyiba
+clip: { source: pixabay, id: 11722, author: Iconikmg, page: "https://pixabay.com/videos/id-11722/", take: { from: 1, seconds: 30, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.8, ground: "#05070f", horizon: 1300 }      # la pluie sur une vitre, une lumière chaude derrière : la peine dehors, la paix dedans ; approuvé par le propriétaire le 2026-11-15
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 110, level: -38 }
+cover:
+  scene: pause
+  title: مؤمن… وحياته صعبة؟
+  tag: سؤال صعب (٢)
+  focus: 1000
+publish:
+  title:
+    en: A believer… with a hard life?
+    ar: مؤمن… وحياته صعبة؟
+  part: 2
+  hashtags:
+  - '#الحياة_الطيبة'
+  - '#الابتلاء'
+  description:
+    en: 'The Quran promises the believer who does good a good life (16:97). So why is life hard for so many who pray and do good? The verse''s own meaning answers: a good life is a life at peace, even with
+      little money. And another verse tells the whole story (29:2).'
+    ar: 'القرآن بيوعد المؤمن اللي يعمل الخير بحياة طيبة (النحل 97). طب ليه ناس كتير بتصلي وبتعمل الخير وحياتها صعبة؟ الرد في معنى الآية نفسها: الحياة الطيبة حياة مطمئنة، ولو الفلوس قليلة. وآية تانية بتقول
+      الحكاية كلها (العنكبوت 2).'
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (« je valide les 29 »)
+    ar: "القرآن بيوعد المؤمن اللي يعمل الخير بحياة طيبة. طب ليه ناس كتير بتصلي وحياتها صعبة؟"
+    en: "The Quran promises the believer who does good a good life. So why is life hard for so many who pray?"
+    validated: 2026-11-15
+segments:
+- narration: open
+  scene: pause
+  lines:
+  - ar: لحظة ركّز في الآية دي.
+    en: Wait… focus on this verse.
+- verses:
+  - quran.16.97
+  upto: 12
+  scene: listen
+- narration: meaning
+  scene: listen
+  sources:
+  - tafsir.muyassar.16.97
+  lines:
+  - ar: 'يعني: اللي يعمل الخير وهو مؤمن… ربنا يعيّشه حياة طيبة.'
+    en: 'Meaning: whoever does good as a believer… God gives him a good life.'
+- narration: ask
+  scene: ask
+  lines:
+  - ar: بس استنى… في ناس بتصلي… وبتعمل الخير… وحياتها صعبة.
+    en: But wait… some people pray… do good… and their life is hard.
+  - ar: فلوس قليلة… وتعب… ومشاكل.
+    en: Little money… fatigue… problems.
+  - ar: فين الحياة الطيبة؟
+    en: Where is the good life?
+- narration: inside
+  scene: inside
+  sources:
+  - tafsir.muyassar.16.97
+  - tafsir.ibn-kathir.16.97
+  - hadith.muslim.1054
+  lines:
+  - ar: 'الرد في معنى الآية نفسها: الحياة الطيبة… مش حياة غنية… دي حياة مطمئنة… ولو الفلوس قليلة.'
+    en: 'The answer is in the verse''s own meaning: a good life… isn''t a rich life… it''s a life at peace… even with little money.'
+  - ar: والنبي صلى الله عليه وسلم قال إن الفايز… اللي أسلم… ورزقه على قده… وربنا قنّعه بيه.
+    en: And the Prophet ﷺ said the successful one… is who embraced Islam… had just enough… and God made him content with it.
+- narration: more
+  scene: facing
+  lines:
+  - ar: وفي آية تانية… الحكاية كلها.
+    en: And another verse… tells the whole story.
+- verse: quran.29.2
+  scene: answer
+- narration: meaning2
+  scene: answer
+  sources:
+  - tafsir.muyassar.29.2
+  lines:
+  - ar: 'يعني: فاكرين إن الواحد يقول آمنت… ومحدش يختبره؟'
+    en: 'Meaning: do people think one can say ''I believe''… and never be tested?'
+- narration: example
+  scene: example
+  lines:
+  - ar: زي طالب مذاكر… والامتحان صعب… مش عشان المدرّس كارهه.
+    en: Like a student who studied… and the exam is hard… not because the teacher hates him.
+  - ar: الصعوبة جزء من الطريق… مش علامة إنك ضايع.
+    en: Hardship is part of the road… not a sign that you're lost.
+- narration: close
+  scene: end
+  lines:
+  - ar: المؤمن ممكن حياته تتعب… بس قلبه يرتاح.
+    en: A believer's life may be tiring… but his heart finds rest.
+  - ar: 'والحلقة الجاية: ربنا غفور رحيم… يبقى أعمل اللي أنا عايزه؟ تابعنا.'
+    en: 'Next time: God is forgiving and merciful… so can I do whatever I want? Follow us.'

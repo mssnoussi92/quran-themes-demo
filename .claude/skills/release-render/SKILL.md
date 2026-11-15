@@ -29,6 +29,11 @@ reads an old episode in `verses`, is refused: it is rendered in the session (bel
 - **`from_run: <run id>`** (same `film`, `voice`, `only`): nothing is prepared or rendered, the draft is made
   again from that run's artifacts, in a minute. For a release step that failed, or texts to paste corrected
   after the render.
+- **A run of a part adds to the draft** (`only` other than `all` and `tall`, or `add: true`): its files go into
+  the draft already there, a file of the same name replaced, the others kept; `only: all` replaces the draft.
+  A new short of a series is rendered alone (`only: <id>`) without touching the shorts validated before it.
+  Before 2026-11-15 every run replaced the draft: `only: forgive` emptied `ayah-candidate` of its three validated
+  shorts, put back from their run with `from_run` and `add: true`.
 - **Check before the owner sees anything.** Download each video's artifact into the scratchpad
   (`actions_list` `list_workflow_run_artifacts`, then `actions_get` `download_workflow_run_artifact`: a
   temporary link, `curl -L -o`), read its `-check.txt`, open its sheets, and **look at a few frames at full
@@ -154,10 +159,14 @@ ffmpeg -i out/<name>.png -q:v 2 out/<name>.jpg
 uv run --with pyyaml python3 tools/trial/publish.py --film <film>
 ```
 
-Look at the thumbnail reduced to 170 px wide. `publish.py` writes the texts to paste, one block per
-platform, with the sources quoted, the chapters of the film, the credits (footage, ambience), the
-line that declares the AI voice and the page's hashtags; it stops on a title or a caption over a
-platform's limit. Give the covers the names of `cover.file` and `thumbnail.file`: the texts cite them.
+Look at the thumbnail reduced to 170 px wide. `publish.py` writes the texts to paste: on YouTube four
+cards (title, description with the line that declares the AI voice, credits with the sources quoted,
+the footage and the ambience, hashtags; the film's chapters in its description); on Facebook,
+Instagram and TikTok the short caption, three cards (title, the hook of `publish.hook` in Egyptian
+Arabic and English with the AI voice line, 3 or 5 hashtags; owner, 2026-11-15). It stops on a title or
+a caption over a platform's limit. Write the hook from the description the owner validates (a sentence
+or a question of it, both languages); it is validated with the texts (`hook.validated`), and until
+then the texts say so and quran-reels publishes nothing of them. Give the covers the names of `cover.file` and `thumbnail.file`: the texts cite them.
 
 ## 7. Hand over
 
@@ -208,6 +217,12 @@ uv run --with pyyaml python3 tools/trial/gallery.py --film film=<dir> --film dua
   files), commit, push. Never on your own judgement.
 - The owner publishes by hand. On YouTube: the end screen on the last twelve seconds of the film, and
   the film as the « related video » of each short. Shorts that promise a sequel go out close together.
+- **The public files of the Page** (owner's decision, 2026-11-15): once the videos and their texts are
+  validated, run the workflow `page-files` on `main` with the publication texts concerned (e.g.
+  `dua dua-9x16`). It copies the files each text names from the draft `<doc>-candidate` into the
+  public pre-release `page-<doc>`, which quran-reels publishes from at 19:00 (Facebook, Instagram,
+  TikTok draft, following `docs/retention/calendar.md`; YouTube stays by hand). After a correction of a
+  validated video, run it again for that text: the Page publishes what `page-<doc>` holds.
 
 ## 9. Record
 

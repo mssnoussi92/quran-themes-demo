@@ -32,6 +32,10 @@ publish:
   description:
     en: "Blocks of iron between two mountains, fire, molten copper: a barrier no one could climb or pierce. And when it stood, Dhul-Qarnayn said: this is a mercy from my Lord. Success is a mercy, and nothing lasts but God."
     ar: "قطع حديد بين جبلين، ونار، ونحاس دايب: سد محدش قدر يطلع عليه ولا يخرمه. ولما خلص، ذو القرنين قال: ده رحمة من ربي. النجاح رحمة… ومفيش حاجة دايمة غير ربنا."
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (« je valide les 29 »)
+    ar: "ولما خلص، ذو القرنين قال: ده رحمة من ربي."
+    en: "And when it stood, Dhul-Qarnayn said: this is a mercy from my Lord."
+    validated: 2026-11-15
 segments:
   - narration: open
     scene: blocks

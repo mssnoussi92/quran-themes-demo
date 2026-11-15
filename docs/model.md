@@ -59,7 +59,7 @@ tools/trial/rules.py           les règles sur les fichiers d'un film ; tools/tr
 tools/audio/align.py           chaque phrase d'un texte retrouvée dans une longue prise
 tools/tts/gemini.py            la voix (dans le workflow voice-test : la clé est un secret du dépôt)
 video/src/trial/               Trial.tsx (short), Film.tsx (film), Cover.tsx (couverture, vignette),
-                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a), Signs.tsx, Kalima.tsx, Count.tsx, Farq.tsx et WordMap.tsx (les séries) : les dessins
+                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a), Signs.tsx, Kalima.tsx, Count.tsx, Farq.tsx, WordMap.tsx et Sual.tsx (les séries) : les dessins
 video/public/trial/            (ignoré) données préparées, clips, audio
 build/trial/ambience/          (ignoré) enregistrements d'ambiance téléchargés
 video/out/                     (ignoré) rendus
@@ -77,7 +77,7 @@ video/out/                     (ignoré) rendus
 | `voices` | les voix connues : `D` (Gemini, Algieba), `V` (VoiceTut, secours), `X` (brouillon muet) |
 | `text` | son texte de voix : `content/voice-test/<text>.txt` |
 | `cover` | la couverture 9:16 : `scene` montrée, `title` en grand, `tag` au-dessus, `focus` (hauteur du sujet), `at` (la seconde du clip, tel que le short le joue, que montrent la couverture et le panneau de la vignette : sans lui, le début du clip), `file` (nom du fichier livré) |
-| `publish` | `title` et `description` (ar, en), `part` (son numéro dans la série) |
+| `publish` | `title` et `description` (ar, en), `hook` (`ar`, `en` : l'accroche de la légende courte de Facebook, Instagram et TikTok, reprise de la description ; `validated` : la date du « je valide » du propriétaire), `part` (son numéro dans la série) |
 | `segments` | dans l'ordre : `narration: <nom>` avec `scene` et `lines` (`ar`, `en` ; `kept: <épisode>.<scène>` pour une réplique validée reprise d'un ancien épisode), `verse: quran.S.A` ou `reading: hadith.<recueil>.<n>` (lu par une vraie voix) avec `scene` ; `verses: [quran.S.A, quran.S.B, …]` : des versets qui se suivent, récités d'une traite (un récitateur qui enchaîne des versets courts ne laisse aucun silence où couper : leurs coupes se touchent, posées par `recitation.py --set`) ; sur une narration, `sources: [<id>, …]` : ce sur quoi elle repose, écrit à l'écran en référence et dans la description, jamais lu (le hadith dont elle raconte le récit avec ses mots, le passage de tafsir d'où vient le sens qu'elle dit) |
 | `script_validated`, `validated` | la parole du propriétaire : le script, puis la vidéo (`what` : ce qu'elle couvre) ; jamais écrits par l'IA de son propre chef |
 
@@ -158,7 +158,7 @@ pastille par occurrence, par forme puis par sourate ; la première et la derniè
 | `verses` | seulement dans le premier film (ancien épisode préparé) ; sinon le registre |
 | `outro` | secondes d'image calme à la fin (12) |
 | `thumbnail` | la vignette : `title`, `tag`, `panels` (les shorts montrés côte à côte, le premier à droite), `file` |
-| `publish` | `title`, `series` (le nom de la série, repris par les shorts), `description`, `hashtags` (2 ou 3, ceux du thème), `narration` (la ligne qui déclare la voix IA, par voix), `out` (où écrire les textes à coller) |
+| `publish` | `title`, `series` (le nom de la série, repris par les shorts), `description`, `hook` (pour le film en 9:16 sur Facebook, comme un short), `hashtags` (2 ou 3, ceux du thème), `narration` (la ligne qui déclare la voix IA, par voix), `out` (où écrire les textes à coller) |
 | `chapters` | chacun : `id`, `title` (ar, en : un chapitre YouTube), `number`, `segments` |
 
 Un segment de film est l'un de : `reuse: <short>.<narration>` (les répliques d'un short, sa prise telle
@@ -332,7 +332,7 @@ dit quoi faire.
    dépôt **`PIXABAY_API_KEY`**. **Mesuré sur le du'a** : préparation 6 min, un short 13 à 18 min, le film 65 min,
    le tout en 70 minutes ; les timelines sont celles de la session à la seconde près. **`from_run` = l'id d'un run** :
    rien n'est préparé ni rendu, la release brouillon est refaite avec les artefacts de ce run (gardés 7 jours), en
-   une minute : pour une étape de release qui a échoué, ou des textes à coller corrigés après le rendu.
+   une minute : pour une étape de release qui a échoué, ou des textes à coller corrigés après le rendu. **Un run d'une partie complète la release** (`only` autre que `all` et `tall`, ou `add: true`) : ses fichiers entrent dans la release brouillon déjà là, un fichier du même nom remplacé, les autres gardés ; `only: all` la remplace (depuis le 2026-11-15).
    **Ce qu'il ne fait pas** : préparer le premier film (qui lit ses versets dans un ancien épisode, `verses`) : le
    chemin par la session (commandes ci-dessus, skill `release-render`) reste pour lui, et en secours. **Une machine
    de rendu n'a pas les polices de la session** : un signe absent des polices du projet y sort en carré vide (vu sur
