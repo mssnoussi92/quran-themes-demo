@@ -2,8 +2,13 @@
 # Le début est muet (`silent` : le texte à l'écran tenu `hold` secondes, des effets `sfx`), puis le verset récité, puis la
 # voix D : le sens et l'information juste d'après le tafsir nommé sous la réplique, puis l'appel au partage. Deux dessins,
 # `pov` et `figure` (video/src/trial/Lens.tsx) ; une silhouette anonyme sans visage seulement (règle du propriétaire, 2026-11-15).
-# Script écrit par la session le 2026-11-15, à valider par le propriétaire.
+# Script écrit par la session le 2026-11-15.
 id: drought
+# « Oui je valide les 3 » du propriétaire (2026-11-15), en réponse aux trois questions de la session (le script, le nom,
+# les deux dessins) : lu comme le script de docs/scripts/lens.md (les cartes muettes, la place du verset, les répliques de
+# la voix et ce sur quoi elles reposent, le titre), le nom « بص تاني » et les deux dessins `pov` et `figure` tels que
+# montrés sur les images de style. Ni la voix, ni les vidéos, ni les textes, ni les sources : sur les vidéos.
+script_validated: { by: mssnoussi92, on: 2026-11-15 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 72-trial-drought     # content/voice-test/<text>.txt : les répliques dites par la voix (pas celles du début muet)

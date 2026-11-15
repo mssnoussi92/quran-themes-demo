@@ -9,7 +9,7 @@
 # video/src/trial/Lens.tsx. Rien n'est validé.
 id: lens
 files: lens                      # début du nom des vidéos livrées : lens-short-<n>-<id>-<cast>.mp4
-title: { ar: "بص تاني", en: "Look Again" }        # nom proposé, à choisir par le propriétaire
+title: { ar: "بص تاني", en: "Look Again" }        # proposé par la session ; « oui je valide les 3 » du propriétaire (2026-11-15)
 shorts: [blackout, drought, scroll]
 casts: [pov, figure]
 handle: "@quran_words_daily"
