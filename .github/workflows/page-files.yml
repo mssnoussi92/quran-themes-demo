@@ -13,12 +13,14 @@ name: page-files
 #
 # When: once the owner has validated the videos and their texts (« je valide »), by a session
 # (skill release-render) or by hand: Actions → page-files → Run workflow, e.g. `dua dua-9x16`.
+# GitHub registers a workflow when a push to main changes its file: the merge that added this one
+# (2026-11-15, 17:23 UTC) was never processed by Actions, and the workflow stayed unknown (404).
 # After a correction of a validated video (a new draft release), run it again for that text.
 on:
   workflow_dispatch:
     inputs:
       docs:
-        description: "Publication texts, space-separated: dua dua-9x16 qarnayn qarnayn-9x16 ayah signs kalima map farq"
+        description: "Publication texts, space-separated: dua dua-9x16 qarnayn qarnayn-9x16 ayah signs kalima map farq sual"
         required: true
 
 permissions:
