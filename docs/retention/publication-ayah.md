@@ -1,6 +1,6 @@
 # A Verse and Its Story · آية وحكايتها : textes de publication
 
-Pour chaque short, sur chaque plateforme, quatre textes à copier : le titre, la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags ; là où la plateforme n'a pas de champ de titre, il ouvre la légende, et les quatre se collent dans la même légende, la ligne de la voix IA restant dans la description. Titres et descriptions **validés par le propriétaire le 2026-11-12** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, validée elle aussi.
+Pour chaque short, sur chaque plateforme, quatre textes à copier : le titre, la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags ; là où la plateforme n'a pas de champ de titre, il ouvre la légende, et les quatre se collent dans la même légende, la ligne de la voix IA restant dans la description. Titres et descriptions **proposés par la session, pas encore validés par le propriétaire** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, pas encore validée.
 
 ## Short 1 · They walked out of the Friday sermon… why? · سابوا خطبة الجمعة… ليه؟
 
@@ -503,4 +503,169 @@ Footage: Pixabay (max_bbb) · Ambience: BigSoundBank (Joseph Sardin)
 
 ```text
 #رحمة_الله #القرآن_الكريم #آية_وحكايتها #Quran #التوبة
+```
+
+## Short 4 · He swore to cut off his relative… and a verse came down · حلف يقطع قريبه… فنزلت آية
+
+`ayah-short-4-forgive.mp4` (TikTok : `ayah-short-4-forgive-tiktok.mp4`, signée `@quran.words.daily`) · 1:51 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-4-forgive-cover.jpg`
+
+**Facebook · Titre**
+
+```text
+He swore to cut off his relative… and a verse came down
+حلف يقطع قريبه… فنزلت آية
+```
+
+**Facebook · Description**
+
+```text
+Abu Bakr as-Siddiq used to provide for a poor relative. That relative spoke lies against his daughter, and Abu Bakr swore never to give him anything again. Then a verse came down, and he answered: yes, by God, I love that God should forgive me… and gave it back to him.
+
+أبو بكر الصديق رضي الله عنه كان بيصرف على قريبه الفقير… وقريبه اتكلم على بنته كلام كذب، فحلف ما يدّيلوش حاجة تاني. ونزلت آية… فقال: أيوه والله، أنا بحب إن ربنا يغفرلي، ورجّعله اللي كان بيدّيهوله.
+
+A Verse and Its Story · 4 · آية وحكايتها · ٤
+
+AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+
+@quran_words_daily
+```
+
+**Facebook · Crédits**
+
+```text
+Quoted:
+• Sahih al-Bukhari 4750 (told in the narration's own words) · https://sunnah.com/bukhari:4750
+• Surah An-Nur (24:22) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/24/22
+• Meaning after Al-Tafsir al-Muyassar (24:22) · https://quran.com/24:22/tafsirs/ar-tafsir-muyassar
+• Meaning after Tafsir Ibn Kathir (24:22) · https://quran.com/24:22/tafsirs/ar-tafsir-ibn-kathir
+• Meaning after Tafsir as-Sa'di (24:22) · https://quran.com/24:22/tafsirs/ar-tafseer-al-saddi
+
+Footage: Pixabay (quimuns) · Ambience: BigSoundBank (Joseph Sardin)
+```
+
+**Facebook · Hashtags (3)**
+
+```text
+#صلة_الرحم #القرآن_الكريم #آية_وحكايتها
+```
+
+**Instagram · Titre**
+
+```text
+He swore to cut off his relative… and a verse came down
+حلف يقطع قريبه… فنزلت آية
+```
+
+**Instagram · Description**
+
+```text
+Abu Bakr as-Siddiq used to provide for a poor relative. That relative spoke lies against his daughter, and Abu Bakr swore never to give him anything again. Then a verse came down, and he answered: yes, by God, I love that God should forgive me… and gave it back to him.
+
+أبو بكر الصديق رضي الله عنه كان بيصرف على قريبه الفقير… وقريبه اتكلم على بنته كلام كذب، فحلف ما يدّيلوش حاجة تاني. ونزلت آية… فقال: أيوه والله، أنا بحب إن ربنا يغفرلي، ورجّعله اللي كان بيدّيهوله.
+
+A Verse and Its Story · 4 · آية وحكايتها · ٤
+
+AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+
+@quran_words_daily
+```
+
+**Instagram · Crédits**
+
+```text
+Quoted:
+• Sahih al-Bukhari 4750 (told in the narration's own words) · https://sunnah.com/bukhari:4750
+• Surah An-Nur (24:22) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/24/22
+• Meaning after Al-Tafsir al-Muyassar (24:22) · https://quran.com/24:22/tafsirs/ar-tafsir-muyassar
+• Meaning after Tafsir Ibn Kathir (24:22) · https://quran.com/24:22/tafsirs/ar-tafsir-ibn-kathir
+• Meaning after Tafsir as-Sa'di (24:22) · https://quran.com/24:22/tafsirs/ar-tafseer-al-saddi
+
+Footage: Pixabay (quimuns) · Ambience: BigSoundBank (Joseph Sardin)
+```
+
+**Instagram · Hashtags (5)**
+
+```text
+#صلة_الرحم #القرآن_الكريم #آية_وحكايتها #Quran #التسامح
+```
+
+Sur TikTok : la vidéo `ayah-short-4-forgive-tiktok.mp4`, signée `@quran.words.daily`.
+
+**TikTok · Titre**
+
+```text
+He swore to cut off his relative… and a verse came down
+حلف يقطع قريبه… فنزلت آية
+```
+
+**TikTok · Description**
+
+```text
+Abu Bakr as-Siddiq used to provide for a poor relative. That relative spoke lies against his daughter, and Abu Bakr swore never to give him anything again. Then a verse came down, and he answered: yes, by God, I love that God should forgive me… and gave it back to him.
+
+أبو بكر الصديق رضي الله عنه كان بيصرف على قريبه الفقير… وقريبه اتكلم على بنته كلام كذب، فحلف ما يدّيلوش حاجة تاني. ونزلت آية… فقال: أيوه والله، أنا بحب إن ربنا يغفرلي، ورجّعله اللي كان بيدّيهوله.
+
+A Verse and Its Story · 4 · آية وحكايتها · ٤
+
+AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+
+@quran.words.daily
+```
+
+**TikTok · Crédits**
+
+```text
+Quoted:
+• Sahih al-Bukhari 4750 (told in the narration's own words) · https://sunnah.com/bukhari:4750
+• Surah An-Nur (24:22) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/24/22
+• Meaning after Al-Tafsir al-Muyassar (24:22) · https://quran.com/24:22/tafsirs/ar-tafsir-muyassar
+• Meaning after Tafsir Ibn Kathir (24:22) · https://quran.com/24:22/tafsirs/ar-tafsir-ibn-kathir
+• Meaning after Tafsir as-Sa'di (24:22) · https://quran.com/24:22/tafsirs/ar-tafseer-al-saddi
+
+Footage: Pixabay (quimuns) · Ambience: BigSoundBank (Joseph Sardin)
+```
+
+**TikTok · Hashtags (5)**
+
+```text
+#صلة_الرحم #القرآن_الكريم #آية_وحكايتها #Quran #التسامح
+```
+
+**YouTube · Titre (83/100)**
+
+```text
+He swore to cut off his relative… and a verse came down · حلف يقطع قريبه… فنزلت آية
+```
+
+**YouTube · Description**
+
+```text
+Abu Bakr as-Siddiq used to provide for a poor relative. That relative spoke lies against his daughter, and Abu Bakr swore never to give him anything again. Then a verse came down, and he answered: yes, by God, I love that God should forgive me… and gave it back to him.
+
+أبو بكر الصديق رضي الله عنه كان بيصرف على قريبه الفقير… وقريبه اتكلم على بنته كلام كذب، فحلف ما يدّيلوش حاجة تاني. ونزلت آية… فقال: أيوه والله، أنا بحب إن ربنا يغفرلي، ورجّعله اللي كان بيدّيهوله.
+
+A Verse and Its Story · 4 · آية وحكايتها · ٤
+
+AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+
+@quran_words_daily
+```
+
+**YouTube · Crédits**
+
+```text
+Quoted:
+• Sahih al-Bukhari 4750 (told in the narration's own words) · https://sunnah.com/bukhari:4750
+• Surah An-Nur (24:22) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/24/22
+• Meaning after Al-Tafsir al-Muyassar (24:22) · https://quran.com/24:22/tafsirs/ar-tafsir-muyassar
+• Meaning after Tafsir Ibn Kathir (24:22) · https://quran.com/24:22/tafsirs/ar-tafsir-ibn-kathir
+• Meaning after Tafsir as-Sa'di (24:22) · https://quran.com/24:22/tafsirs/ar-tafseer-al-saddi
+
+Footage: Pixabay (quimuns) · Ambience: BigSoundBank (Joseph Sardin)
+```
+
+**YouTube · Hashtags (5)**
+
+```text
+#صلة_الرحم #القرآن_الكريم #آية_وحكايتها #Quran #التسامح
 ```
