@@ -213,6 +213,12 @@ uv run --with pyyaml python3 tools/trial/gallery.py --film film=<dir> --film dua
   files), commit, push. Never on your own judgement.
 - The owner publishes by hand. On YouTube: the end screen on the last twelve seconds of the film, and
   the film as the « related video » of each short. Shorts that promise a sequel go out close together.
+- **The public files of the Page** (owner's decision, 2026-11-15): once the videos and their texts are
+  validated, run the workflow `page-files` on `main` with the publication texts concerned (e.g.
+  `dua dua-9x16`). It copies the files each text names from the draft `<doc>-candidate` into the
+  public pre-release `page-<doc>`, which quran-reels publishes from at 19:00 (Facebook, Instagram,
+  TikTok draft, following `docs/retention/calendar.md`; YouTube stays by hand). After a correction of a
+  validated video, run it again for that text: the Page publishes what `page-<doc>` holds.
 
 ## 9. Record
 
