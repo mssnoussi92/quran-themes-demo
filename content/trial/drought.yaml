@@ -25,9 +25,10 @@ publish:
   title: { en: "Waiting for something that never comes?", ar: "مستني حاجة… ومش بتيجي؟" }
   part: 2
   hashtags: ["#الفرج", "#سورة_الشورى"]
-  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, à valider
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (question à choix : « je valide les 3 »)
     ar: "مستني حاجة… والسحاب بيعدّي من غير مطر؟"
     en: "Waiting for something… while the clouds pass without rain?"
+    validated: 2026-11-15
   description:
     en: "A dry land, a seed, clouds that pass without rain… until you say: it's not coming. The verse: He sends down the rain after they had despaired (42:28). As-Sa'di: it had stopped so long they thought it would never come."
     ar: "أرض ناشفة، وبذرة، وسحاب بيعدّي من غير مطر… لحد ما تقول: مش جاي. والآية: ربنا بينزّل الغيث من بعد ما قنطوا (الشورى 28)."
