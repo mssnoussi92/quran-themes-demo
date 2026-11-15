@@ -138,6 +138,22 @@ def block(text: str) -> str:
     return "```text\n" + text.strip() + "\n```\n"
 
 
+def voice_line(narration: str) -> str:
+    """The line that declares the AI voice, as it stays in every description (CLAUDE.md, « Voix déclarée »), without
+    the « Narration: » label of the credits."""
+    return narration.split(": ", 1)[1] if narration.startswith("Narration: ") else narration
+
+
+def cards(platform: str, title: str, description: str, credits: str, tags: str, title_label: str = "Titre") -> list[str]:
+    """The four texts of one video on one platform, each with its own Copy button on the owner's page (owner's
+    request, 2026-11-15): the title, the description, the credits (the sources quoted, the clip and the ambience),
+    the hashtags. Where a platform has no title field, the title is the caption's first lines."""
+    return [f"**{platform} · {title_label}**", "", block(title),
+            f"**{platform} · Description**", "", block(description),
+            f"**{platform} · Crédits**", "", block(credits),
+            f"**{platform} · Hashtags ({len(tags.split())})**", "", block(tags)]
+
+
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--voice", default="D")
@@ -182,11 +198,12 @@ def main() -> None:
     status = (f"Titres et descriptions **validés par le propriétaire le {when}**" if validated
               else "Titres et descriptions **proposés par la session, pas encore validés par le propriétaire**")
     limits = conf["platforms"]
-    most = conf["model_hashtags"]["most"]
     out = [
         f"# {pub['series']['en']} · {pub['series']['ar']} : textes de publication",
         "",
-        f"Pour {'chaque short' if series_only else 'le film et chaque short'} : le titre, puis le texte à coller sur chaque plateforme. {status} ; "
+        f"Pour {'chaque short' if series_only else 'le film et chaque short'}, sur chaque plateforme, quatre textes à copier : le titre, la description, "
+        f"les crédits (les sources citées, le clip, l'ambiance) et les hashtags ; là où la plateforme n'a pas de champ de titre, il ouvre la légende, "
+        f"et les quatre se collent dans la même légende, la ligne de la voix IA restant dans la description. {status} ; "
         "les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés "
         "(`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation"
         + ((", avec l'ambiance sonore sous la narration, validée elle aussi (`…-ambience.mp4`)." if bed else
@@ -204,11 +221,10 @@ def main() -> None:
             sys.exit(f"error: --tall: {args.film} is a series, it has no film")
         data = json.loads((PUBLIC / "trial" / f"{args.film}-{timeline}.json").read_text(encoding="utf-8"))
         lines, hadith, verse = quoted(quotes_of([s for c in film["chapters"] for s in c["segments"]]), sources)
-        caption = "\n\n".join([
-            pub["title"]["en"] + "\n" + pub["title"]["ar"], pub["description"]["en"], pub["description"]["ar"],
-            "Quoted:\n" + "\n".join(lines), narration + "\n" + footage(shorts, film.get("pictures")), conf["handle"],
-            hashtags(conf, [], pub["hashtags"], "facebook"),
-        ])
+        tall_cards = cards("Facebook", pub["title"]["en"] + "\n" + pub["title"]["ar"],
+                           "\n\n".join([pub["description"]["en"], pub["description"]["ar"], voice_line(narration), conf["handle"]]),
+                           "Quoted:\n" + "\n".join(lines) + "\n\n" + footage(shorts, film.get("pictures")),
+                           hashtags(conf, [], pub["hashtags"], "facebook"))
         said = ((film.get("tall") or {}).get("validated") or {})
         state = (f"**validé par le propriétaire le {said.get('on', said.get(True))}**" if "publish" in (said.get("what") or [])
                  else "**proposé par la session, pas encore validé par le propriétaire**")
@@ -217,7 +233,7 @@ def main() -> None:
                "il reprend le titre et la description du film, sans les chapitres.", "",
                f"## Le film en 9:16 · {pub['title']['en']} · {pub['title']['ar']}", "",
                f"`{files}-film-9x16.mp4` · {stamp(data['seconds'])} · 9:16 · Facebook", "",
-               f"**Facebook ({most['facebook']} hashtags)**", "", block(caption)]
+               *tall_cards]
         # Beside the film's own texts: `publish.out` of its file, with « -9x16 » before the extension.
         own = ROOT / pub.get("out", f"docs/publication-{files}.md")
         target = args.out or own.with_name(own.stem + "-9x16" + own.suffix)
@@ -235,17 +251,16 @@ def main() -> None:
         if len(title) > limits["youtube"]["max_title"]:
             sys.exit(f"error: the film's YouTube title is {len(title)} characters (most: {limits['youtube']['max_title']})")
         chapters = "\n".join(f"{stamp(c['start'])} {c['title']['en']} · {c['title']['ar']}" for c in data["chapters"])
-        body = "\n\n".join([
-            pub["description"]["en"], pub["description"]["ar"], "Chapters:\n" + chapters,
-            "Quoted:\n" + "\n".join(lines), narration + "\n" + footage(shorts, film.get("pictures")), conf["handle"],
-            hashtags(conf, [], pub["hashtags"], "youtube"),
-        ])
-        if len(body) > limits["youtube"]["max_description"]:
-            sys.exit(f"error: the film's YouTube description is {len(body)} characters")
+        body = "\n\n".join([pub["description"]["en"], pub["description"]["ar"], "Chapters:\n" + chapters,
+                              voice_line(narration), conf["handle"]])
+        credits = "Quoted:\n" + "\n".join(lines) + "\n\n" + footage(shorts, film.get("pictures"))
+        tags = hashtags(conf, [], pub["hashtags"], "youtube")
+        whole = len(body) + len(credits) + len(tags) + 4          # the three pasted into one description
+        if whole > limits["youtube"]["max_description"]:
+            sys.exit(f"error: the film's YouTube description is {whole} characters")
         out += [f"## Le film · {pub['title']['en']} · {pub['title']['ar']}", "",
                 f"`{files}-film-16x9{bed}.mp4` · {stamp(data['seconds'])} · 16:9 · YouTube · miniature : `{film['thumbnail'].get('file', files + '-film-thumbnail.jpg')}`", "",
-                f"**Titre YouTube ({len(title)}/{limits['youtube']['max_title']})**", "", block(title),
-                "**Description YouTube**", "", block(body),
+                *cards("YouTube", title, body, credits, tags, f"Titre ({len(title)}/{limits['youtube']['max_title']})"),
                 "Écran de fin (YouTube Studio) : les 12 dernières secondes sont une image calme, faite pour y poser le bouton "
                 "d'abonnement et la vidéo suivante.", ""]
 
@@ -261,14 +276,17 @@ def main() -> None:
         name = f"{files}-short-{n}-{spec['id']}"
         cover = (spec.get("cover") or {}).get("file", f"{name}-cover.jpg")
 
-        def caption(handle: str, platform: str) -> str:
-            return "\n\n".join([
-                sp["title"]["en"] + "\n" + sp["title"]["ar"], sp["description"]["en"], sp["description"]["ar"], series,
-                "Quoted:\n" + "\n".join(lines), narration + "\n" + footage([spec]), handle,
-                hashtags(conf, sp.get("hashtags") or [], pub["hashtags"], platform),
-            ])
+        heading = sp["title"]["en"] + "\n" + sp["title"]["ar"]
+        credits = "Quoted:\n" + "\n".join(lines) + "\n\n" + footage([spec])
 
-        insta = caption(conf["handle"], "instagram")
+        def description(handle: str) -> str:
+            return "\n\n".join([sp["description"]["en"], sp["description"]["ar"], series, voice_line(narration), handle])
+
+        def tags(platform: str) -> str:
+            return hashtags(conf, sp.get("hashtags") or [], pub["hashtags"], platform)
+
+        # The four cards end up in one caption: its length is theirs together.
+        insta = "\n\n".join([heading, description(conf["handle"]), credits, tags("instagram")])
         if len(insta) > limits["instagram_tiktok"]["max_caption"]:
             sys.exit(f"error: {name}: the Instagram caption is {len(insta)} characters")
         title = f"{sp['title']['en']} · {sp['title']['ar']}"
@@ -277,12 +295,12 @@ def main() -> None:
         out += [f"## Short {n} · {sp['title']['en']} · {sp['title']['ar']}", "",
                 f"`{name}{bed}.mp4` (TikTok : `{name}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`) · {stamp(data['seconds'])} · 9:16 · "
                 f"Facebook, Instagram, TikTok, YouTube Shorts · couverture : `{cover}`", "",
-                f"**Facebook ({most['facebook']} hashtags)**", "", block(caption(conf["handle"], "facebook")),
-                f"**Instagram ({most['instagram']} hashtags)**", "", block(insta),
-                f"**TikTok : la vidéo `{name}-tiktok{bed}.mp4` ({most['tiktok']} hashtags)**", "",
-                block(caption(conf["handles"]["tiktok"], "tiktok")),
-                f"**Titre YouTube ({len(title)}/{limits['youtube']['max_title']})**", "", block(title),
-                "**Description YouTube (Shorts)**", "", block(caption(conf["handle"], "youtube")),
+                *cards("Facebook", heading, description(conf["handle"]), credits, tags("facebook")),
+                *cards("Instagram", heading, description(conf["handle"]), credits, tags("instagram")),
+                f"Sur TikTok : la vidéo `{name}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`.", "",
+                *cards("TikTok", heading, description(conf["handles"]["tiktok"]), credits, tags("tiktok")),
+                *cards("YouTube", title, description(conf["handle"]), credits, tags("youtube"),
+                       f"Titre ({len(title)}/{limits['youtube']['max_title']})"),
                 *([] if series_only else ["Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.", ""])]
 
     target = args.out or ROOT / pub.get("out", f"docs/publication-{files}.md")

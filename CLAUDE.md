@@ -137,7 +137,7 @@ La session est l'orchestrateur : elle fait le plan, confie ce qui s'y prête, re
 
 - **Pages** : la même page que Quran Words Daily (Facebook `quranwordsdaily`, Instagram et YouTube `quran_words_daily`, TikTok `quran.words.daily`). Le propriétaire publie **à la main**.
 - **Signature** : le nom de la page sur chaque image. Sur TikTok la page s'appelle `@quran.words.daily` (`@quran_words_daily` y est le compte de quelqu'un d'autre) : chaque 9:16 est rendu une seconde fois signé de ce nom (prop `platform`).
-- **Textes** : `tools/trial/publish.py` écrit un bloc à coller par plateforme (titre, description, sources avec leur lien, crédits du clip et de l'ambiance, ligne de la voix IA, hashtags de la page) ; titre et description du thème s'écrivent à la main dans `publish` de chaque fichier et se valident avec les vidéos.
+- **Textes** : `tools/trial/publish.py` écrit, pour chaque vidéo et chaque plateforme, **quatre textes à copier** (demande du propriétaire, 2026-11-15) : le titre, la description (avec la ligne de la voix IA), les crédits (sources citées avec leur lien, clip, ambiance), les hashtags ; titre et description du thème s'écrivent à la main dans `publish` de chaque fichier et se valident avec les vidéos.
 - **Récitateur** : Tawfiq As-Sayegh (aucune revendication de droits constatée ; Alafasy a vu une vidéo coupée par Rights Manager).
 - **Licence** : MIT ; Remotion garde la sienne (gratuite pour un particulier). Textes cités et récitations : à leurs éditeurs.
 

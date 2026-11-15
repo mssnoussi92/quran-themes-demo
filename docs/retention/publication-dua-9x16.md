@@ -6,16 +6,28 @@ Le même film, monté pour un écran vertical (les images des shorts, la même v
 
 `dua-film-9x16.mp4` · 7:36 · 9:16 · Facebook
 
-**Facebook (3 hashtags)**
+**Facebook · Titre**
 
 ```text
 Du'a: 3 wrong ideas that keep you from asking
 الدعاء: ٣ أفكار غلط بتبعدك عنه
+```
 
+**Facebook · Description**
+
+```text
 One in the depth of affliction, one in the belly of a whale, one whose hair had turned white and still asking: three who called on God in the Quran, and all three were answered. And three wrong ideas that keep us from asking: I'm content so I won't ask, it's all written, I asked and nothing happened.
 
 واحد في عز البلاء، واحد في بطن حوت، وواحد راسه شابت ولسه بيطلب: تلاتة نادوا ربنا في القرآن… والتلاتة اترد عليهم. وتلات أفكار غلط بتبعدنا عن الدعاء: أنا راضي مش هدعي، كله مكتوب، دعيت وما حصلش.
 
+AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+
+@quran_words_daily
+```
+
+**Facebook · Crédits**
+
+```text
 Quoted:
 • Jami' at-Tirmidhi 3247 · Al-Albani: Sahih · Reading: Yusuf ibn Nuh Ahmad · https://sunnah.com/tirmidhi:3247
 • Surah Ghafir (40:60) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/40/60
@@ -32,10 +44,11 @@ Quoted:
 • Jami' at-Tirmidhi 3573 · Al-Albani: Hasan Sahih · Reading: Yusuf ibn Nuh Ahmad · https://sunnah.com/tirmidhi:3573
 • Surah Al-Baqarah (2:186) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/2/186
 
-Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
 Footage: Pixabay (trilemedia, Natures_Embrace, adege) · Ambience: BigSoundBank (Joseph Sardin)
+```
 
-@quran_words_daily
+**Facebook · Hashtags (3)**
 
+```text
 #القرآن_الكريم #الدعاء #Quran
 ```
