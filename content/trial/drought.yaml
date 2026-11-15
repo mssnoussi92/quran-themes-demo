@@ -9,6 +9,11 @@ id: drought
 # la voix et ce sur quoi elles reposent, le titre), le nom « بص تاني » et les deux dessins `pov` et `figure` tels que
 # montrés sur les images de style. Ni la voix, ni les vidéos, ni les textes, ni les sources : sur les vidéos.
 script_validated: { by: mssnoussi92, on: 2026-11-15 }
+# « Je valide tout » du propriétaire (2026-11-15), après l'envoi des six vidéos (workflow `film`, run 43753923027 : cet
+# épisode en `pov` et en `figure`), des couvertures et des textes à coller (docs/retention/publication-lens.md) : lu comme
+# l'épisode tel que livré dans ses deux dessins (la voix, avec les mots signalés à écouter ; les dessins, l'ambiance, les
+# effets, les couvertures), ses textes et ses sources, passées à `validated`. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-15, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 72-trial-drought     # content/voice-test/<text>.txt : les répliques dites par la voix (pas celles du début muet)
@@ -20,6 +25,9 @@ publish:
   title: { en: "Waiting for something that never comes?", ar: "مستني حاجة… ومش بتيجي؟" }
   part: 2
   hashtags: ["#الفرج", "#سورة_الشورى"]
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, à valider
+    ar: "مستني حاجة… والسحاب بيعدّي من غير مطر؟"
+    en: "Waiting for something… while the clouds pass without rain?"
   description:
     en: "A dry land, a seed, clouds that pass without rain… until you say: it's not coming. The verse: He sends down the rain after they had despaired (42:28). As-Sa'di: it had stopped so long they thought it would never come."
     ar: "أرض ناشفة، وبذرة، وسحاب بيعدّي من غير مطر… لحد ما تقول: مش جاي. والآية: ربنا بينزّل الغيث من بعد ما قنطوا (الشورى 28)."

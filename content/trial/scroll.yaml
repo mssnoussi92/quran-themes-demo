@@ -9,6 +9,11 @@ id: scroll
 # la voix et ce sur quoi elles reposent, le titre), le nom « بص تاني » et les deux dessins `pov` et `figure` tels que
 # montrés sur les images de style. Ni la voix, ni les vidéos, ni les textes, ni les sources : sur les vidéos.
 script_validated: { by: mssnoussi92, on: 2026-11-15 }
+# « Je valide tout » du propriétaire (2026-11-15), après l'envoi des six vidéos (workflow `film`, run 43753923027 : cet
+# épisode en `pov` et en `figure`), des couvertures et des textes à coller (docs/retention/publication-lens.md) : lu comme
+# l'épisode tel que livré dans ses deux dessins (la voix, avec les mots signalés à écouter ; les dessins, l'ambiance, les
+# effets, les couvertures), ses textes et ses sources, passées à `validated`. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-15, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 73-trial-scroll     # content/voice-test/<text>.txt : les répliques dites par la voix (pas celles du début muet)
@@ -20,6 +25,9 @@ publish:
   title: { en: "How many hours did you scroll today?", ar: "قلّبت كام ساعة النهارده؟" }
   part: 3
   hashtags: ["#سورة_العصر", "#الوقت"]
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, à valider
+    ar: "قلّبت كام ساعة النهارده… والساعة بتجري وإنت مكانك؟"
+    en: "How many hours did you scroll today… while the clock ran and you stayed put?"
   description:
     en: "The feed keeps scrolling, the clock keeps running… and you haven't moved. God swore by time (103:1-3): as-Sa'di reads it as the night and the day, where every deed is done; every human is losing, except four things: two for yourself, two for others."
     ar: "الفيد بيقلّب، والساعة بتجري… وإنت مكانك. ربنا أقسم بالعصر: الليل والنهار، وقت كل عمل. وكل إنسان خسران… إلا أربع حاجات: اتنين ليك، واتنين لغيرك."

@@ -8,6 +8,7 @@
 # (le sens et l'information juste d'après un tafsir nommé sous la réplique, la voix D), l'appel au partage. Dessins :
 # video/src/trial/Lens.tsx. Script, nom et deux dessins validés le 2026-11-15 (voir les épisodes).
 id: lens
+validated: { by: mssnoussi92, on: 2026-11-15, what: [publish] }      # « je valide tout », après l'envoi des textes à coller
 files: lens                      # début du nom des vidéos livrées : lens-short-<n>-<id>-<cast>.mp4
 title: { ar: "بص تاني", en: "Look Again" }        # proposé par la session ; « oui je valide les 3 » du propriétaire (2026-11-15)
 shorts: [blackout, drought, scroll]

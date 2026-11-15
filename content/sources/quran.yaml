@@ -2615,7 +2615,8 @@
     surah_ar: الشرح
     surah_en: Ash-Sharh
     retrieved: '2026-11-15'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "« فإن مع العسر يسرا » (épisode 1), pilote « une image, puis le verset » (2026-11-15)"
 
   text_ar: فَإِنَّ مَعَ ٱلْعُسْرِ يُسْرًا
@@ -2632,7 +2633,8 @@
     surah_ar: الشرح
     surah_en: Ash-Sharh
     retrieved: '2026-11-15'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "« إن مع العسر يسرا » (épisode 1), pilote « une image, puis le verset » (2026-11-15)"
 
   text_ar: إِنَّ مَعَ ٱلْعُسْرِ يُسْرًا
@@ -2649,7 +2651,8 @@
     surah_ar: الشورى
     surah_en: Ash-Shuraa
     retrieved: '2026-11-15'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "la pluie « من بعد ما قنطوا » (épisode 2), pilote « une image, puis le verset » (2026-11-15)"
 
   text_ar: وَهُوَ ٱلَّذِى يُنَزِّلُ ٱلْغَيْثَ مِنۢ بَعْدِ مَا قَنَطُوا۟ وَيَنشُرُ رَحْمَتَهُۥ ۚ وَهُوَ ٱلْوَلِىُّ ٱلْحَمِيدُ
@@ -2666,7 +2669,8 @@
     surah_ar: العصر
     surah_en: Al-'Asr
     retrieved: '2026-11-15'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "« والعصر » (épisode 3), pilote « une image, puis le verset » (2026-11-15)"
 
   text_ar: وَٱلْعَصْرِ
@@ -2683,7 +2687,8 @@
     surah_ar: العصر
     surah_en: Al-'Asr
     retrieved: '2026-11-15'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "« إن الإنسان لفي خسر » (épisode 3), pilote « une image, puis le verset » (2026-11-15)"
 
   text_ar: إِنَّ ٱلْإِنسَـٰنَ لَفِى خُسْرٍ
@@ -2700,7 +2705,8 @@
     surah_ar: العصر
     surah_en: Al-'Asr
     retrieved: '2026-11-15'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "les quatre qualités (épisode 3), pilote « une image, puis le verset » (2026-11-15)"
   text_ar: إِلَّا ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّـٰلِحَـٰتِ وَتَوَاصَوْا۟ بِٱلْحَقِّ وَتَوَاصَوْا۟ بِٱلصَّبْرِ
   text_en: Except for those who have believed and done righteous deeds and advised each other to truth and advised each other to patience.

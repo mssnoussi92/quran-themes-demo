@@ -127,19 +127,26 @@ def covers(what: list[dict], key: str) -> bool:
     return all(key in ((s.get("validated") or {}).get("what") or []) for s in what)
 
 
+CASTS = {"pov": "A, vue subjective", "figure": "B, silhouette"}
+
+
 def film_data(film_id: str, folder: Path, out: Path, release: str | None, tall: Path | None = None,
               tall_release: str | None = None) -> dict:
     film = yaml.safe_load((TRIAL / f"{film_id}.yaml").read_text(encoding="utf-8"))
     series = "chapters" not in film             # a series: shorts that stand alone, no film and no thumbnail
     shorts = [yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film.get("shorts") or film["thumbnail"]["panels"]]
     listed, stills = videos.listing(film_id, "D", "all")
+    # A series drawn twice (`casts`): each short has a card per drawing, the same texts under both.
+    casts = film.get("casts") or [None]
+    per = len(casts)
     if series:
         # A series grows at its end: a short written but not delivered yet (no video in DIR) is left off the page,
         # with its cover, its TikTok twin and its texts, until it is delivered.
         delivered = [(folder / f"{v['name']}.mp4").is_file() for v in listed if v["kind"] == "short"]
         kept = sum(delivered)
-        if delivered != [True] * kept + [False] * (len(delivered) - kept):
+        if delivered != [True] * kept + [False] * (len(delivered) - kept) or kept % per:
             sys.exit(f"error: {film_id}: a short is missing from {folder} before one that is there")
+        kept //= per
         if kept < len(shorts):
             print(f"  {film_id}: {', '.join(s['id'] for s in shorts[kept:])} not delivered yet, left off the page", flush=True)
         names = {f"{film.get('files', film_id)}-short-{s['publish']['part']}-{s['id']}" for s in shorts[kept:]}
@@ -158,21 +165,24 @@ def film_data(film_id: str, folder: Path, out: Path, release: str | None, tall: 
     order = [v for v in listed if v["kind"] == "film"] + [v for v in listed if v["kind"] == "short"]
     twins = [v["name"] for v in listed if v["kind"] == "tiktok"]
     pictures = [s for s in stills if s["kind"] == "thumbnail"] + [s for s in stills if s["kind"] == "cover"]
-    if len(sections) != len(order) or len(pictures) != len(order):
+    if len(sections) * per != len(order) or len(pictures) != len(order):
         sys.exit(f"error: {film_id}: {len(order)} videos, {len(sections)} sections of texts, {len(pictures)} stills")
-    for n, (video, picture, section) in enumerate(zip(order, pictures, sections)):
+    for n, (video, picture) in enumerate(zip(order, pictures)):
         src, image = folder / f"{video['name']}.mp4", folder / picture["name"]
         for needed in (src, image):
             if not needed.is_file():
                 sys.exit(f"error: {film_id}: {needed} is missing")
         wide = video["kind"] == "film"
-        k = n if series else n - 1              # which short this is (the film, when there is one, comes first)
-        slug = f"{film.get('files', film_id)}-{'film' if wide else 'short-' + str(k + 1)}"
+        k = n // per if series else n - 1       # which short this is (the film, when there is one, comes first)
+        section = sections[k] if series else sections[n]
+        cast = casts[n % per] if series else None
+        slug = f"{film.get('files', film_id)}-{'film' if wide else 'short-' + str(k + 1)}" + (f"-{cast}" if cast else "")
         preview(src, media / f"{slug}.mp4", wide)
         still(image, media / f"{slug}.jpg", 960 if wide else 540)
         spec = film if wide else shorts[k]
         title = spec["publish"]["title"]
-        cards.append({"wide": wide, "slug": slug, "file": f"{video['name']}.mp4", "twin": None if wide else f"{twins[k]}.mp4",
+        cards.append({"wide": wide, "slug": slug, "file": f"{video['name']}.mp4", "twin": None if wide else f"{twins[n if series else k]}.mp4",
+                      "cast": CASTS.get(cast or "", cast),
                       "image": picture["name"], "length": stamp(seconds(src)), "ar": title["ar"], "en": title["en"],
                       "blocks": section["blocks"], "notes": section["notes"]})
         print(f"  {slug}: {(media / (slug + '.mp4')).stat().st_size / 1e6:.1f} MB", flush=True)
@@ -444,7 +454,7 @@ def card(c: dict) -> str:
                    f'<pre id="{ident}" dir="auto">{e(b["text"])}</pre></div>')
     notes = "".join(f'<p class="notes">{e(re.sub("`", "", n))}</p>' for n in c["notes"])
     twin = f' · version TikTok : <code>{e(c["twin"])}</code>' if c["twin"] else ""
-    kind = "Film 16:9" if c["wide"] else "Film 9:16, pour Facebook" if c.get("tall") else "Short 9:16"
+    kind = "Film 16:9" if c["wide"] else "Film 9:16, pour Facebook" if c.get("tall") else "Short 9:16" + (f" · {c['cast']}" if c.get("cast") else "")
     picture = "Vignette" if c["wide"] else "Couverture"
     if c.get("tall"):
         where = (f'release brouillon : <a href="{e(c["release"])}">sur GitHub</a>' if c["release"]
