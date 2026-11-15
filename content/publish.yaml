@@ -47,6 +47,10 @@ platforms:
 # Lines of every description. The synthetic voice is declared (CLAUDE.md, « Ce qui vaut toujours »).
 lines:
   narration: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي"
+  # The short captions of Facebook, Instagram and TikTok (owner, 2026-11-15: « un petit texte attirant, 3 à 5 hashtags,
+  # sans plus de détail »): the title, the hook (`publish.hook` of each file) with this line, the hashtags. YouTube keeps
+  # its four cards (description, credits with the sources and their links, chapters).
+  ai_voice: "🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي"
   characters: "Characters: Open Peeps by Pablo Stanley (CC0)"
   # A hadith with no recorded reading is read by the synthetic voice: said in its source line.
   hadith_ai_voice: "Reading: AI-generated voice"

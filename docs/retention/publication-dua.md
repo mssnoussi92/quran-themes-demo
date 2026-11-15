@@ -1,6 +1,6 @@
 # Du'a · الدعاء : textes de publication
 
-Pour le film et chaque short, sur chaque plateforme, quatre textes à copier : le titre, la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags ; là où la plateforme n'a pas de champ de titre, il ouvre la légende, et les quatre se collent dans la même légende, la ligne de la voix IA restant dans la description. Titres et descriptions **validés par le propriétaire le 2026-11-11** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, validée elle aussi.
+Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la légende courte en trois textes, le titre, l'accroche avec la ligne de la voix IA, les hashtags ; sur YouTube, quatre textes, le titre, la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags, collés dans la même description. Titres et descriptions **validés par le propriétaire le 2026-11-11** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **validées par le propriétaire le 2026-11-15**. Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, validée elle aussi.
 
 ## Le film · Du'a: 3 wrong ideas that keep you from asking · الدعاء: ٣ أفكار غلط بتبعدك عنه
 
@@ -76,26 +76,10 @@ Patient… and he asked
 **Facebook · Description**
 
 ```text
-We say: I'm content, so I won't ask. Yet Job, peace be upon him, whose patience became a proverb, asked God to lift his suffering, and was answered. Contentment is not objecting to what happened; du'a is asking for what is to come.
+بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب دعا… واستجاب له.
+We say: I'm content, so I won't ask. Yet Job asked, and was answered.
 
-بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب عليه السلام، اللي بنقول على صبره: يا صبر أيوب، دعا ربنا يشيل عنه البلاء… واستجاب له. الرضا إنك ما تعترضش على اللي حصل، والدعاء إنك تطلب اللي جاي.
-
-Du'a · part 1/3 · الدعاء · الجزء ١ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran_words_daily
-```
-
-**Facebook · Crédits**
-
-```text
-Quoted:
-• Surah Al-Anbya (21:83-84) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/21/83-84
-• Jami' at-Tirmidhi 3247 · Al-Albani: Sahih · Reading: Yusuf ibn Nuh Ahmad · https://sunnah.com/tirmidhi:3247
-• Sahih Muslim 2679a · Reading: Ryadussalihin.org · https://sunnah.com/muslim:2679a
-
-Footage: Pixabay (trilemedia) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **Facebook · Hashtags (3)**
@@ -114,26 +98,10 @@ Patient… and he asked
 **Instagram · Description**
 
 ```text
-We say: I'm content, so I won't ask. Yet Job, peace be upon him, whose patience became a proverb, asked God to lift his suffering, and was answered. Contentment is not objecting to what happened; du'a is asking for what is to come.
+بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب دعا… واستجاب له.
+We say: I'm content, so I won't ask. Yet Job asked, and was answered.
 
-بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب عليه السلام، اللي بنقول على صبره: يا صبر أيوب، دعا ربنا يشيل عنه البلاء… واستجاب له. الرضا إنك ما تعترضش على اللي حصل، والدعاء إنك تطلب اللي جاي.
-
-Du'a · part 1/3 · الدعاء · الجزء ١ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran_words_daily
-```
-
-**Instagram · Crédits**
-
-```text
-Quoted:
-• Surah Al-Anbya (21:83-84) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/21/83-84
-• Jami' at-Tirmidhi 3247 · Al-Albani: Sahih · Reading: Yusuf ibn Nuh Ahmad · https://sunnah.com/tirmidhi:3247
-• Sahih Muslim 2679a · Reading: Ryadussalihin.org · https://sunnah.com/muslim:2679a
-
-Footage: Pixabay (trilemedia) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **Instagram · Hashtags (5)**
@@ -154,26 +122,10 @@ Patient… and he asked
 **TikTok · Description**
 
 ```text
-We say: I'm content, so I won't ask. Yet Job, peace be upon him, whose patience became a proverb, asked God to lift his suffering, and was answered. Contentment is not objecting to what happened; du'a is asking for what is to come.
+بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب دعا… واستجاب له.
+We say: I'm content, so I won't ask. Yet Job asked, and was answered.
 
-بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب عليه السلام، اللي بنقول على صبره: يا صبر أيوب، دعا ربنا يشيل عنه البلاء… واستجاب له. الرضا إنك ما تعترضش على اللي حصل، والدعاء إنك تطلب اللي جاي.
-
-Du'a · part 1/3 · الدعاء · الجزء ١ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran.words.daily
-```
-
-**TikTok · Crédits**
-
-```text
-Quoted:
-• Surah Al-Anbya (21:83-84) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/21/83-84
-• Jami' at-Tirmidhi 3247 · Al-Albani: Sahih · Reading: Yusuf ibn Nuh Ahmad · https://sunnah.com/tirmidhi:3247
-• Sahih Muslim 2679a · Reading: Ryadussalihin.org · https://sunnah.com/muslim:2679a
-
-Footage: Pixabay (trilemedia) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **TikTok · Hashtags (5)**
@@ -235,27 +187,10 @@ Inside the whale: who heard him?
 **Facebook · Description**
 
 ```text
-It's all written, so why ask? Jonah, peace be upon him, called from inside the whale, in darkness upon darkness, and was heard. Nothing turns back the decree except du'a, and du'a itself is part of God's decree. With the call the Prophet ﷺ taught us.
+كله مكتوب… أدعي ليه؟ سيدنا يونس نادى من بطن الحوت… واتسمع.
+It's all written, so why ask? Jonah called from inside the whale, and was heard.
 
-كله مكتوب… أدعي ليه؟ سيدنا يونس عليه السلام نادى من بطن الحوت، في ضلمة فوق ضلمة… واتسمع. مفيش حاجة بترد القضاء غير الدعاء، والدعاء نفسه من قدر ربنا. ومعاها الدعوة اللي علّمهالنا النبي صلى الله عليه وسلم.
-
-Du'a · part 2/3 · الدعاء · الجزء ٢ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran_words_daily
-```
-
-**Facebook · Crédits**
-
-```text
-Quoted:
-• Surah Al-Anbya (21:87-88) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/21/87-88
-• Surah As-Saffat (37:143-144) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/37/143-144
-• Jami' at-Tirmidhi 2139 · Al-Albani: Hasan · Reading: Yusuf ibn Nuh Ahmad · https://sunnah.com/tirmidhi:2139
-• Jami' at-Tirmidhi 3505 · Al-Albani: Sahih · Reading: Yusuf ibn Nuh Ahmad · https://sunnah.com/tirmidhi:3505
-
-Footage: Pixabay (Natures_Embrace) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **Facebook · Hashtags (3)**
@@ -274,27 +209,10 @@ Inside the whale: who heard him?
 **Instagram · Description**
 
 ```text
-It's all written, so why ask? Jonah, peace be upon him, called from inside the whale, in darkness upon darkness, and was heard. Nothing turns back the decree except du'a, and du'a itself is part of God's decree. With the call the Prophet ﷺ taught us.
+كله مكتوب… أدعي ليه؟ سيدنا يونس نادى من بطن الحوت… واتسمع.
+It's all written, so why ask? Jonah called from inside the whale, and was heard.
 
-كله مكتوب… أدعي ليه؟ سيدنا يونس عليه السلام نادى من بطن الحوت، في ضلمة فوق ضلمة… واتسمع. مفيش حاجة بترد القضاء غير الدعاء، والدعاء نفسه من قدر ربنا. ومعاها الدعوة اللي علّمهالنا النبي صلى الله عليه وسلم.
-
-Du'a · part 2/3 · الدعاء · الجزء ٢ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran_words_daily
-```
-
-**Instagram · Crédits**
-
-```text
-Quoted:
-• Surah Al-Anbya (21:87-88) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/21/87-88
-• Surah As-Saffat (37:143-144) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/37/143-144
-• Jami' at-Tirmidhi 2139 · Al-Albani: Hasan · Reading: Yusuf ibn Nuh Ahmad · https://sunnah.com/tirmidhi:2139
-• Jami' at-Tirmidhi 3505 · Al-Albani: Sahih · Reading: Yusuf ibn Nuh Ahmad · https://sunnah.com/tirmidhi:3505
-
-Footage: Pixabay (Natures_Embrace) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **Instagram · Hashtags (5)**
@@ -315,27 +233,10 @@ Inside the whale: who heard him?
 **TikTok · Description**
 
 ```text
-It's all written, so why ask? Jonah, peace be upon him, called from inside the whale, in darkness upon darkness, and was heard. Nothing turns back the decree except du'a, and du'a itself is part of God's decree. With the call the Prophet ﷺ taught us.
+كله مكتوب… أدعي ليه؟ سيدنا يونس نادى من بطن الحوت… واتسمع.
+It's all written, so why ask? Jonah called from inside the whale, and was heard.
 
-كله مكتوب… أدعي ليه؟ سيدنا يونس عليه السلام نادى من بطن الحوت، في ضلمة فوق ضلمة… واتسمع. مفيش حاجة بترد القضاء غير الدعاء، والدعاء نفسه من قدر ربنا. ومعاها الدعوة اللي علّمهالنا النبي صلى الله عليه وسلم.
-
-Du'a · part 2/3 · الدعاء · الجزء ٢ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran.words.daily
-```
-
-**TikTok · Crédits**
-
-```text
-Quoted:
-• Surah Al-Anbya (21:87-88) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/21/87-88
-• Surah As-Saffat (37:143-144) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/37/143-144
-• Jami' at-Tirmidhi 2139 · Al-Albani: Hasan · Reading: Yusuf ibn Nuh Ahmad · https://sunnah.com/tirmidhi:2139
-• Jami' at-Tirmidhi 3505 · Al-Albani: Sahih · Reading: Yusuf ibn Nuh Ahmad · https://sunnah.com/tirmidhi:3505
-
-Footage: Pixabay (Natures_Embrace) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **TikTok · Hashtags (5)**
@@ -398,26 +299,10 @@ His hair turned white… and he never stopped asking
 **Facebook · Description**
 
 ```text
-I asked and nothing happened. Zechariah, peace be upon him, was old, his hair white, and still asking: never, he said, had he been disappointed in calling on his Lord. What loses a du'a is not the delay, it is the hurry.
+دعيت… وما حصلش حاجة. اللي بيضيّع الدعاء مش التأخير… الاستعجال.
+I asked and nothing happened. What loses a du'a is not the delay, it is the hurry.
 
-دعيت… وما حصلش حاجة. سيدنا زكريا عليه السلام كان كبير، راسه شابت، ولسه بيدعي… وقال إنه عمره ما رجع من دعاء ربنا خايب. اللي بيضيّع الدعاء مش التأخير… الاستعجال.
-
-Du'a · part 3/3 · الدعاء · الجزء ٣ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran_words_daily
-```
-
-**Facebook · Crédits**
-
-```text
-Quoted:
-• Surah Maryam (19:4) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/19/4
-• Surah Al-Anbya (21:89-90) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/21/89-90
-• Sahih al-Bukhari 6340 · Reading: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane · https://sunnah.com/bukhari:6340
-
-Footage: Pixabay (adege) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **Facebook · Hashtags (3)**
@@ -436,26 +321,10 @@ His hair turned white… and he never stopped asking
 **Instagram · Description**
 
 ```text
-I asked and nothing happened. Zechariah, peace be upon him, was old, his hair white, and still asking: never, he said, had he been disappointed in calling on his Lord. What loses a du'a is not the delay, it is the hurry.
+دعيت… وما حصلش حاجة. اللي بيضيّع الدعاء مش التأخير… الاستعجال.
+I asked and nothing happened. What loses a du'a is not the delay, it is the hurry.
 
-دعيت… وما حصلش حاجة. سيدنا زكريا عليه السلام كان كبير، راسه شابت، ولسه بيدعي… وقال إنه عمره ما رجع من دعاء ربنا خايب. اللي بيضيّع الدعاء مش التأخير… الاستعجال.
-
-Du'a · part 3/3 · الدعاء · الجزء ٣ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran_words_daily
-```
-
-**Instagram · Crédits**
-
-```text
-Quoted:
-• Surah Maryam (19:4) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/19/4
-• Surah Al-Anbya (21:89-90) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/21/89-90
-• Sahih al-Bukhari 6340 · Reading: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane · https://sunnah.com/bukhari:6340
-
-Footage: Pixabay (adege) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **Instagram · Hashtags (5)**
@@ -476,26 +345,10 @@ His hair turned white… and he never stopped asking
 **TikTok · Description**
 
 ```text
-I asked and nothing happened. Zechariah, peace be upon him, was old, his hair white, and still asking: never, he said, had he been disappointed in calling on his Lord. What loses a du'a is not the delay, it is the hurry.
+دعيت… وما حصلش حاجة. اللي بيضيّع الدعاء مش التأخير… الاستعجال.
+I asked and nothing happened. What loses a du'a is not the delay, it is the hurry.
 
-دعيت… وما حصلش حاجة. سيدنا زكريا عليه السلام كان كبير، راسه شابت، ولسه بيدعي… وقال إنه عمره ما رجع من دعاء ربنا خايب. اللي بيضيّع الدعاء مش التأخير… الاستعجال.
-
-Du'a · part 3/3 · الدعاء · الجزء ٣ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran.words.daily
-```
-
-**TikTok · Crédits**
-
-```text
-Quoted:
-• Surah Maryam (19:4) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/19/4
-• Surah Al-Anbya (21:89-90) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/21/89-90
-• Sahih al-Bukhari 6340 · Reading: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane · https://sunnah.com/bukhari:6340
-
-Footage: Pixabay (adege) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **TikTok · Hashtags (5)**

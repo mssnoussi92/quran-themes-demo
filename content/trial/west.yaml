@@ -41,6 +41,10 @@ publish:
   description:
     en: "Dhul-Qarnayn reached the setting of the sun and found a people there, and the choice was left to him: punish them, or treat them well. His answer is justice: each one according to what he did. Power is a trust, not a license."
     ar: "ذو القرنين وصل لمغرب الشمس ولقى هناك قوم… واتخيّر: يعاقبهم ولا يحسن ليهم. وإجابته كانت العدل: كل واحد باللي عمله. القوة أمانة… مش رخصة."
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (« je valide les 29 »)
+    ar: "اتخيّر: يعاقبهم ولا يحسن ليهم. القوة أمانة… مش رخصة."
+    en: "The choice was left to him: punish them, or treat them well. Power is a trust, not a license."
+    validated: 2026-11-15
 segments:
   - narration: open
     scene: sun

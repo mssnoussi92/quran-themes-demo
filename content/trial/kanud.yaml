@@ -25,6 +25,10 @@ publish:
   description:
     en: "God swore by charging horses to say one word about man. Al-Hasan al-Basri explained it: the one who counts his misfortunes, and forgets his Lord's blessings."
     ar: "ربنا أقسم بالخيل وهي بتجري عشان يقول كلمة واحدة عن الإنسان. والحسن البصري فسّرها: اللي بيعدّ المصايب، وينسى نعم ربه."
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (« je valide les 29 »)
+    ar: "ربنا أقسم بالخيل وهي بتجري عشان يقول كلمة واحدة عن الإنسان."
+    en: "God swore by charging horses to say one word about man."
+    validated: 2026-11-15
 segments:
   - narration: word
     scene: word

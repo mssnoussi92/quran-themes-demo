@@ -392,3 +392,68 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 - **Rappel « j'aime / abonne-toi »** (demande du propriétaire, 2026-11-07) : seulement dans l'épisode entier en 16:9 (YouTube), une pastille animée de 4,4 s (`SubscribeReminder`, icônes Material Icons, Apache 2.0) : un curseur touche j'aime, « اشترك · Subscribe » (qui devient « مشترك ✓ ») et la cloche. Deux passages (`reminderStarts`, `video/src/scenes.ts`) : à la fin du premier reel et sur la dernière carte ; jamais par-dessus un verset ou un hadith (un passage qui en couvrirait un est retiré).
 - **Licence** : MIT, comme quran-reels (`LICENSE`) ; Remotion garde sa propre licence (gratuite pour un particulier). Textes cités et récitations : à leurs éditeurs (README).
 - **Récitateur** : **Tawfiq As-Sayegh** dans tous les épisodes (demande du propriétaire, 2026-11-08 : aucune revendication de droits constatée sur ses récitations, alors qu'Alafasy a vu 93:1-11 coupée par Rights Manager sur Facebook le 2026-11-05, quran-reels). Il n'est pas sur quran.com : mp3quran.net a un fichier par sourate (comme dans quran-reels). `tools/audio/recitation.py` trouve chaque verset cité dans sa sourate (repères de mp3quran.net, coupe au moment le plus calme, vérifiée par Whisper : tous les mots, le premier et le dernier surtout, rien de l'ayah voisine) et le temps de chaque mot (surlignage, sous-titres) ; `content/recitations/sayegh.json` garde seulement ces temps, `build.py` télécharge la sourate (`build/recitations/`, jamais commité) et coupe le verset. Avant : Alafasy (quran.com, récitation 7, un fichier par ayah avec les temps des mots), garde possible (`reciter: alafasy` dans `content/policy.yaml`).
+
+## Statistiques et calendrier commun (2026-11-15)
+
+- **Demande du propriétaire** : un tableau de bord des statistiques, et les publications de quran-reels dans le calendrier.
+- **Fait dans quran-reels** (PR #61, à fusionner par lui) : un relevé chaque nuit des chiffres Facebook et Instagram de tout
+  ce que la Page publie, les vidéos d'ici reconnues par la première ligne de leur légende (le titre de leur section dans
+  `publication-*.md` : garder ce titre identique à la légende collée) ; une page « Statistiques » publique (son choix) ;
+  le calendrier du catalogue montre aussi ces vidéos, lues dans `docs/retention/calendar.md`.
+- **Ici** : `calendar.md` dit les règles des reels (pas leur liste, recalculée chaque jour : le reel du 15 novembre au
+  matin n'est pas sorti, le jeton Meta coupé par un changement de mot de passe) et que Facebook et Instagram se relèvent
+  seuls ; YouTube et TikTok restent des captures.
+- **Demandé aussi, à faire ensuite** : la publication automatique de ces vidéos par quran-reels sur Facebook et Instagram,
+  et en brouillon TikTok (lui publie le brouillon ; YouTube reste à la main). Avant : l'API Reels de Facebook n'accepte
+  que 3 à 90 s (nos shorts font 1:19 à 2:19, les films 7 à 8 min : passer par l'envoi de vidéo de la Page, droits
+  vérifiés par un essai sans publication) ; les releases brouillon ne sont pas lisibles par un workflow de quran-reels ;
+  un calendrier en fichier structuré, avec les textes validés par plateforme.
+
+## Publication automatique des vidéos thématiques : les fichiers publics (2026-11-15)
+
+- **Décision du propriétaire** (« je valide », 2026-11-15) : quran-reels publie les vidéos de ce dépôt à 19 h (heure de
+  France), d'après `docs/retention/calendar.md`, sur Facebook et Instagram (après la vérification des droits de Meta)
+  et en brouillon TikTok ; YouTube reste à la main. D'abord par un essai à blanc sur une vraie vidéo ; le premier jour
+  prévu est le lundi 23 novembre (le film de Dhul-Qarnayn). Il accepte que les fichiers deviennent publics.
+- **Ici** : le workflow `page-files` copie les fichiers que nomme chaque texte de publication validé (la vidéo, sa
+  version TikTok, sa couverture, le film 16:9 et sa vignette) de la release brouillon `<doc>-candidate` vers la
+  pré-release publique `page-<doc>`. Les brouillons restent des brouillons (ils gardent aussi les planches et les
+  anciennes prises) ; seuls les fichiers validés deviennent publics. À relancer après la correction d'une vidéo validée
+  (skill `release-render`, §8).
+- **Ce que lit quran-reels** : le calendrier (`docs/retention/calendar.md`, colonne « Texte » : le fichier
+  `publication-<doc>.md` et la section « Short N » ou « Le film », reprise de la ligne d'avant quand elle n'est pas
+  répétée) et les textes de chaque plateforme dans `publication-*.md`. Garder ces deux formats tels quels : une ligne
+  que quran-reels ne sait pas relier à une vidéo n'est pas publiée, et le propriétaire est prévenu.
+
+## Légendes courtes (2026-11-15)
+
+- **Demande du propriétaire** (dans la session des statistiques et de la publication automatique) : la légende des
+  vidéos « très longue et inutile » ; « un petit texte attirant, 3 à 5 hashtags, sans plus de détail ». Proposé par la
+  session, choisi par lui (questions à choix) : **bilingue** (une phrase en égyptien et la même en anglais), **la ligne
+  de la voix IA gardée** (sa règle « voix déclarée » ; Meta et TikTok demandent de signaler un son réaliste généré par
+  IA ; la retirer était plus faible, la session l'a dit), **3 hashtags sur Facebook, 5 sur Instagram et TikTok** (ceux
+  validés le 2026-11-14). YouTube garde ses quatre textes : liens cliquables, chapitres, recherche.
+- **Avec les quatre textes à copier** (même jour, autre session) : sur Facebook, Instagram et TikTok, trois textes, le
+  titre, l'accroche suivie de la ligne de la voix IA, les hashtags ; plus de carte « Crédits » ni de signature dans la
+  légende. 220 à 390 caractères en tout (la liste de qualité de Facebook demande 10 à 400). Chaque citation garde sa
+  référence à l'écran ; Pixabay n'exige aucun crédit, les ambiances BigSoundBank sont en CC0, le crédit des photos de
+  l'ESA (CC BY) est sur l'image.
+- **Les accroches** (`publish.hook` de 29 fichiers : les shorts et les deux films verticaux pas encore publiés ; Moussa
+  et al-Khadir, publié, garde ses textes) sont reprises des descriptions validées, une phrase ou une question, parfois
+  resserrée : proposées, pas encore validées. `publish.py` le dit en tête de chaque texte, et quran-reels ne publie rien
+  d'un texte qui le dit. `publish.py` garde les durées et les chapitres déjà écrits quand la session n'a pas les
+  timelines (textes refaits sans les vidéos) ; contrôles : sans accroche, les textes refaits sont identiques à ceux
+  d'avant ; avec, seules les cartes de Facebook, Instagram et TikTok et la phrase d'en-tête changent. `rules.py`
+  vérifie les mots refusés dans les accroches.
+
+## Les questions, toujours à choix (2026-11-15)
+
+- **Demande du propriétaire**, après une première série de questions posées avec l'outil de questions à choix (format des
+  légendes courtes, voix IA, hashtags, légendes des reels) : « toujours fait ça si t'as des questions, et je veux que
+  toutes les sessions futures feront ça ». Règle inscrite en tête de `CLAUDE.md`, ici et dans quran-reels : une
+  question au propriétaire se pose avec `AskUserQuestion`, recommandation en premier ; le message garde le contexte et
+  la contradiction franche ; une session sans cet outil met la question et ses options numérotées dans son rapport.
+- **Validées par le propriétaire le 2026-11-15** (question à choix : « Je valide les 29 », après la page « Légendes courtes
+  à valider » de son compte claude.ai) : `hook.validated` des 29 fichiers ; les textes refaits le disent, et
+  quran-reels les lit comme validés (contrôle : les 23 jours du 23 novembre au 1er janvier reliés, aucun texte en
+  attente).

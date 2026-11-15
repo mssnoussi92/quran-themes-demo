@@ -30,6 +30,10 @@ publish:
   description:
     en: "A people living between two mountains offered Dhul-Qarnayn a tribute to build a barrier against Gog and Magog. He refused the money: what my Lord has given me is better. He asked for their hands instead, and built it with them."
     ar: "قوم بين جبلين عرضوا على ذي القرنين فلوس عشان يبني لهم سد من يأجوج ومأجوج. رفض الفلوس: اللي ربنا إداهولي أحسن… وطلب منهم قوتهم، وبنى معاهم."
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (« je valide les 29 »)
+    ar: "رفض الفلوس: اللي ربنا إداهولي أحسن."
+    en: "He refused the money: what my Lord has given me is better."
+    validated: 2026-11-15
 segments:
   - narration: open
     scene: pass

@@ -55,6 +55,24 @@ partir du deuxième, c'est l'épisode d'avant.
 **Le choix plus rapide** : un short chaque jour, sans jour libre. On apprend un peu plus vite, mais le stock est
 épuisé le 28 novembre, et la production suivante doit être prête à cette date.
 
+## Ce que la Page publie aussi (quran-reels)
+
+Les vidéos de ce calendrier passent sur la même Page que les reels de quran-reels, qui se publient seuls
+(proposé par la session le 2026-11-15, à la demande du propriétaire d'un seul calendrier) :
+
+| Quand (heure de France) | Quoi | Où |
+| --- | --- | --- |
+| chaque matin, 07:30 | un reel de lecture, dans l'ordre (Juz' 'Amma) | Facebook, Instagram ; TikTok en brouillon, YouTube à la main |
+| le vendredi, 07:30 | Al-Kahf, un passage par vendredi (18:17-26 du 20 novembre au 18 décembre : les gens de la caverne) | les mêmes |
+| chaque jour, 12:30 | « Word of the day », un carrousel de trois images | Facebook, Instagram |
+| le dimanche, 19:30 | un reel des séries de versets (المنجيات, puis الدعاء à partir du 6 décembre) | les mêmes |
+
+On n'en recopie ici que les règles, pas la liste : elle est recalculée chaque jour (un créneau manqué décale la suite,
+comme le 15 novembre au matin). Le calendrier de tout ce que publie la Page, reels et vidéos de ce fichier ensemble, est
+dans le catalogue de quran-reels : https://mssnoussi92.github.io/quran-reels/catalog/#calendar (les vidéos d'ici en
+bleu, lues dans ce fichier). Aucune collision entre les deux grilles : le reel le matin, l'image à midi, ces vidéos à
+19 h, et le dimanche soir, jour libre ici, la série des reels.
+
 ## Le calendrier
 
 | Date | Quoi | Où | Fichiers | Texte (section de `docs/retention/…`) |
@@ -109,6 +127,12 @@ et 3 de Moussa et al-Khadir la précèdent, le samedi et le dimanche.
 où vous publiez une vidéo, envoyez la capture de celle d'avant-hier ; le lundi soir, envoyez aussi celle du film de la
 semaine d'avant. Pour Moussa et al-Khadir : le film samedi 14 au soir, le short 1 dimanche 15, le film à 7 jours jeudi
 19 au soir.
+
+**Facebook et Instagram : relevés seuls** depuis la PR #61 de quran-reels (2026-11-15, une fois fusionnée) : chaque nuit,
+à 48 heures, 7 et 28 jours, sur la page « Statistiques » (https://mssnoussi92.github.io/quran-reels/catalog/stats.html),
+les reels et les vidéos de ce fichier côte à côte (reconnues par la première ligne de leur légende, le titre de leur
+section dans `publication-*.md`). **YouTube et TikTok : par capture** (décision du propriétaire, 2026-11-15) ; la session
+propose de les envoyer une fois par semaine, le dimanche, à la revue de la semaine.
 
 **Comment** : envoyez une capture des statistiques de chaque vidéo, une par plateforme ; la session remplit la fiche
 ci-dessous. Les noms des chiffres changent d'une plateforme à l'autre ; ceux qui comptent sont :

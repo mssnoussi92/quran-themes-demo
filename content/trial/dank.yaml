@@ -36,6 +36,10 @@ publish:
     en: 'The Quran says whoever turns away from God''s remembrance will have a narrow life (20:124). So why do so many who are far from God seem to live in comfort? The verse''s own meaning answers first:
       the narrowness is in the heart. And another verse goes further (6:44).'
     ar: 'القرآن بيقول اللي يبعد عن ذكر ربنا حياته تبقى ضنك (طه 124). طب ليه ناس كتير بعيدة عن ربنا وعايشين مرتاحين؟ الرد الأول في معنى الآية نفسها: الضيق في القلب. وآية تانية بتقول حاجة أخطر (الأنعام 44).'
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (« je valide les 29 »)
+    ar: "القرآن بيقول اللي يبعد عن ذكر ربنا حياته تبقى ضنك… طب ليه ناس كتير عايشين مرتاحين؟"
+    en: "The Quran says whoever turns away from God's remembrance will have a narrow life. So why do so many seem to live in comfort?"
+    validated: 2026-11-15
 segments:
 - narration: open
   scene: pause
