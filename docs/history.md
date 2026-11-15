@@ -383,6 +383,22 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 - **Licence** : MIT, comme quran-reels (`LICENSE`) ; Remotion garde sa propre licence (gratuite pour un particulier). Textes cités et récitations : à leurs éditeurs (README).
 - **Récitateur** : **Tawfiq As-Sayegh** dans tous les épisodes (demande du propriétaire, 2026-11-08 : aucune revendication de droits constatée sur ses récitations, alors qu'Alafasy a vu 93:1-11 coupée par Rights Manager sur Facebook le 2026-11-05, quran-reels). Il n'est pas sur quran.com : mp3quran.net a un fichier par sourate (comme dans quran-reels). `tools/audio/recitation.py` trouve chaque verset cité dans sa sourate (repères de mp3quran.net, coupe au moment le plus calme, vérifiée par Whisper : tous les mots, le premier et le dernier surtout, rien de l'ayah voisine) et le temps de chaque mot (surlignage, sous-titres) ; `content/recitations/sayegh.json` garde seulement ces temps, `build.py` télécharge la sourate (`build/recitations/`, jamais commité) et coupe le verset. Avant : Alafasy (quran.com, récitation 7, un fichier par ayah avec les temps des mots), garde possible (`reciter: alafasy` dans `content/policy.yaml`).
 
+## Statistiques et calendrier commun (2026-11-15)
+
+- **Demande du propriétaire** : un tableau de bord des statistiques, et les publications de quran-reels dans le calendrier.
+- **Fait dans quran-reels** (PR #61, à fusionner par lui) : un relevé chaque nuit des chiffres Facebook et Instagram de tout
+  ce que la Page publie, les vidéos d'ici reconnues par la première ligne de leur légende (le titre de leur section dans
+  `publication-*.md` : garder ce titre identique à la légende collée) ; une page « Statistiques » publique (son choix) ;
+  le calendrier du catalogue montre aussi ces vidéos, lues dans `docs/retention/calendar.md`.
+- **Ici** : `calendar.md` dit les règles des reels (pas leur liste, recalculée chaque jour : le reel du 15 novembre au
+  matin n'est pas sorti, le jeton Meta coupé par un changement de mot de passe) et que Facebook et Instagram se relèvent
+  seuls ; YouTube et TikTok restent des captures.
+- **Demandé aussi, à faire ensuite** : la publication automatique de ces vidéos par quran-reels sur Facebook et Instagram,
+  et en brouillon TikTok (lui publie le brouillon ; YouTube reste à la main). Avant : l'API Reels de Facebook n'accepte
+  que 3 à 90 s (nos shorts font 1:19 à 2:19, les films 7 à 8 min : passer par l'envoi de vidéo de la Page, droits
+  vérifiés par un essai sans publication) ; les releases brouillon ne sont pas lisibles par un workflow de quran-reels ;
+  un calendrier en fichier structuré, avec les textes validés par plateforme.
+
 ## Publication automatique des vidéos thématiques : les fichiers publics (2026-11-15)
 
 - **Décision du propriétaire** (« je valide », 2026-11-15) : quran-reels publie les vidéos de ce dépôt à 19 h (heure de
