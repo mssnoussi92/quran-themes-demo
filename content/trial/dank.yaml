@@ -1,0 +1,95 @@
+# « سؤال صعب », épisode 1 (content/trial/sual.yaml ; script : docs/scripts/sual.md). La forme validée par le propriétaire
+# (2026-11-15, « je valide tes recommandations ») : « لحظة… ركّز في الآية دي », le verset récité, son sens, l'objection
+# honnête dite comme une question, la réponse dans le sens du verset lui-même (tafsir nommé sous la réplique), un second
+# verset qui va plus loin, un exemple de vie, la phrase à retenir, l'appel à suivre. Ici : 20:124 et 6:44.
+# Personne n'est dessiné ; rien de l'invisible. Script écrit par la session le 2026-11-15 : pas encore validé ; aucune voix
+# avant son « je valide le script ».
+id: dank
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 67-trial-dank
+clip: { source: pixabay, id: 296958, author: engrahmad2653, page: "https://pixabay.com/videos/id-296958/", take: { from: 2, seconds: 18, height: 1920, pingpong: true }, rate: 0.8, position: "50% 50%", shift: 0, brightness: 0.7, ground: "#05070f", horizon: 1300 }      # Dubaï au crépuscule, déjà vertical : la vie aisée de la question ; à montrer au propriétaire
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 110, level: -38 }
+cover:
+  scene: pause
+  title: بعيد عن ربنا… وعايش مرتاح؟
+  tag: سؤال صعب (١)
+  focus: 1000
+publish:
+  title:
+    en: Far from God… and living in comfort?
+    ar: بعيد عن ربنا… وعايش مرتاح؟
+  part: 1
+  hashtags:
+  - '#ذكر_الله'
+  - '#الاستدراج'
+  description:
+    en: 'The Quran says whoever turns away from God''s remembrance will have a narrow life (20:124). So why do so many who are far from God seem to live in comfort? The verse''s own meaning answers first:
+      the narrowness is in the heart. And another verse goes further (6:44).'
+    ar: 'القرآن بيقول اللي يبعد عن ذكر ربنا حياته تبقى ضنك (طه 124). طب ليه ناس كتير بعيدة عن ربنا وعايشين مرتاحين؟ الرد الأول في معنى الآية نفسها: الضيق في القلب. وآية تانية بتقول حاجة أخطر (الأنعام 44).'
+segments:
+- narration: open
+  scene: pause
+  lines:
+  - ar: لحظة ركّز في الآية دي.
+    en: Wait… focus on this verse.
+- verse: quran.20.124
+  scene: listen
+- narration: meaning
+  scene: listen
+  sources:
+  - tafsir.muyassar.20.124
+  lines:
+  - ar: 'يعني: اللي يبعد عن ذكر ربنا… حياته تبقى ضنك… ضيقة وصعبة.'
+    en: 'Meaning: whoever turns away from remembering God… his life becomes narrow… tight and hard.'
+- narration: ask
+  scene: ask
+  lines:
+  - ar: بس استنى… في ناس كتير بعيدة عن ربنا… وعايشين مرتاحين.
+    en: But wait… many people are far from God… and live in comfort.
+  - ar: فلوس… وبيت… وكل اللي نفسهم فيه.
+    en: Money… a house… everything they want.
+  - ar: فإزاي؟
+    en: So how?
+- narration: inside
+  scene: inside
+  sources:
+  - tafsir.muyassar.20.124
+  - tafsir.ibn-kathir.20.124
+  lines:
+  - ar: 'الرد في معنى الآية نفسها: الضيق ده… مش في الجيب… ده في القلب.'
+    en: 'The answer is in the verse''s own meaning: that narrowness… isn''t in the pocket… it''s in the heart.'
+  - ar: ممكن يلبس اللي هو عايزه… وياكل اللي هو عايزه… ويسكن فين ما يحب…
+    en: He may wear what he wants… eat what he wants… live where he likes…
+  - ar: وقلبه من جوّه… قلق وحيرة.
+    en: and inside, his heart… is anxious and lost.
+- narration: more
+  scene: facing
+  lines:
+  - ar: وفي آية تانية… حاجة أخطر.
+    en: And another verse… says something more serious.
+- verse: quran.6.44
+  scene: answer
+- narration: meaning2
+  scene: answer
+  sources:
+  - tafsir.muyassar.6.44
+  lines:
+  - ar: 'يعني: لما نسيوا… ربنا فتح عليهم الدنيا… رزق وصحة…'
+    en: 'Meaning: when they forgot… God opened the world to them… provision and health…'
+  - ar: استدراج… لحد ما فرحوا بيها… خدهم فجأة.
+    en: to draw them on… until they rejoiced in it… and He took them suddenly.
+- narration: example
+  scene: example
+  lines:
+  - ar: 'زي واحد كل حاجة ماشية معاه… وهو بعيد عن ربنا… فيقول: أكيد أنا كويس.'
+    en: 'Like someone for whom everything goes well… while far from God… who tells himself: I must be fine.'
+  - ar: النعمة مع البعد… مش علامة إنك كويس.
+    en: Blessings while far from God… are no sign that you're fine.
+- narration: close
+  scene: end
+  lines:
+  - ar: الراحة الحقيقية… في القلب… مش في الجيب.
+    en: Real comfort… is in the heart… not in the pocket.
+  - ar: 'والحلقة الجاية… العكس: مؤمن… وحياته صعبة؟ تابعنا.'
+    en: 'Next time… the opposite: a believer… whose life is hard? Follow us.'

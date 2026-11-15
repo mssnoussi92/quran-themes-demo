@@ -934,3 +934,25 @@ faire valider, une par une.
 - La liste du propriétaire : les états intérieurs d'abord (الإخلاص، الصدق، الشكر، علو الهمة،
   المراقبة، مجاهدة النفس), plus faciles à accrocher en 3 secondes que les devoirs de société
   (العدل، الوفاء بالعهود، النصح، الإصلاح بين الناس، قضاء حوائج الناس، ستر عورات المسلمين).
+
+### « سؤال صعب » (session et propriétaire, 2026-11-15)
+
+Née d'une vidéo Facebook que le propriétaire a fait analyser (son seul, 34 s : 20:124, l'objection « ils vivent bien »,
+6:44 en réponse « effrayante »). Avis de la session : l'accroche (une vraie objection du spectateur, posée à 0:17) est
+forte, mais la vidéo saute la meilleure réponse, que nos tafsirs donnent dans le verset lui-même (al-Muyassar : « وإن
+ظهر أنه من أهل الفضل واليسار » ; Ibn Kathir : le cœur dans l'inquiétude, même s'il mange et s'habille comme il veut).
+**L'ouverture est la sienne** : « لحظة ركّز في الآية دي » (« متمشيش » retiré sur l'avis de la session : il rappelle qu'on
+peut partir, et c'est la formule la plus usée). **Trois épisodes validés** (« je valide tes recommandations ») :
+1. `dank` : « بعيد عن ربنا… وعايش مرتاح؟ » : 20:124 (16,6 s), la réponse dans son sens (al-Muyassar, Ibn Kathir), puis
+   6:44, l'استدراج (23,7 s) ; 1:51 estimé.
+2. `tayyiba` : « مؤمن… وحياته صعبة؟ » : 16:97 jusqu'au premier arrêt (12,4 s), « ولو كان قليل المال » (al-Muyassar), la
+   قناعة (Ibn Kathir) et Muslim 1054 raconté avec nos mots, puis 29:2 (12 s) ; 1:32.
+3. `ghafur` : « ربنا غفور رحيم… أعمل اللي أنا عايزه؟ » : 15:49, et la réponse dans le verset suivant, 15:50 (al-Muyassar :
+   le Pardonneur pour ceux qui se repentent) ; 0:57.
+Écartés : la du'a non exaucée (le film du du'a a déjà 40:60, 2:186 et Bukhari 6340), 65:2-3 et 4:78-79 (la phrase utile au
+milieu de longs versets). En réserve : 14:42 (le إظالم), 76:30 (la volonté). **Le montage** (choisi par la session, à sa
+demande) : le clip filmé est le monde d'où vient la question (Dubaï au crépuscule, la pluie sur une vitre, l'aube sur la
+brume) ; dessus, le raisonnement : une pause qui devient « lecture » quand le verset commence, la question en carte avec
+« ؟ » et ce qu'elle nomme, la réponse au-dedans (une maison éclairée et un nœud sous la loupe ; une fenêtre sous la pluie et
+une lampe calme), les deux versets face à face (le second répond), une scène de la vie (des portes qui s'ouvrent, une copie
+d'examen, « بكرة » au calendrier). Images : `docs/retention/sual-style*.jpg`. Script : `docs/scripts/sual.md`.

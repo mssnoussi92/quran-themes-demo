@@ -1,0 +1,15 @@
+# La série « سؤال صعب » (proposée par la session sur une vidéo Facebook que le propriétaire a fait analyser, 2026-11-15 ;
+# l'ouverture « لحظة… ركّز في الآية دي » est la sienne, « متمشيش » retiré à la recommandation de la session ; « je valide tes
+# recommandations »). Une question honnête qu'un verset soulève, la réponse d'abord dans le sens du verset lui-même (un tafsir
+# de la politique), puis dans un autre verset. Des shorts qui tiennent seuls ; chaque épisode annonce le suivant s'il est connu.
+# Fiche : docs/themes.md ; script : docs/scripts/sual.md.
+id: sual
+files: sual                      # début du nom des vidéos livrées : sual-short-<n>-<id>.mp4
+title: { ar: "سؤال صعب", en: "A Hard Question" }
+shorts: [dank, tayyiba, ghafur]
+handle: "@quran_words_daily"
+publish:
+  out: docs/retention/publication-sual.md
+  series: { en: "A Hard Question", ar: "سؤال صعب" }
+  hashtags: ["#سؤال_صعب", "#تفسير_القرآن"]
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }

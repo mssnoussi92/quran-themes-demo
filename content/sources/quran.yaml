@@ -2477,3 +2477,105 @@
   notes: 'Taha 20:28, la fin du du''a de Moussa récité dans l''épisode sadr (« يفقهوا قولي »)'
   text_ar: يَفْقَهُوا۟ قَوْلِى
   text_en: That they may understand my speech.
+
+- id: quran.20.124
+  type: ayah
+  ref: {surah: 20, ayah: 124}
+  url: https://quran.com/20/124
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=20:124
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=20:124
+    translator: Saheeh International
+    surah_ar: طه
+    surah_en: Taha
+    retrieved: '2026-11-15'
+  status: proposed
+  notes: 'Taha 20:124 (« سؤال صعب », épisode 1 : « فإن له معيشة ضنكا », le verset de la question)'
+
+  text_ar: وَمَنْ أَعْرَضَ عَن ذِكْرِى فَإِنَّ لَهُۥ مَعِيشَةً ضَنكًا وَنَحْشُرُهُۥ يَوْمَ ٱلْقِيَـٰمَةِ أَعْمَىٰ
+  text_en: And whoever turns away from My remembrance - indeed, he will have a depressed [i.e., difficult] life, and We will gather [i.e., raise] him on the Day of Resurrection blind."
+- id: quran.6.44
+  type: ayah
+  ref: {surah: 6, ayah: 44}
+  url: https://quran.com/6/44
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=6:44
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=6:44
+    translator: Saheeh International
+    surah_ar: الأنعام
+    surah_en: Al-An'am
+    retrieved: '2026-11-15'
+  status: proposed
+  notes: 'Al-An''am 6:44 (« سؤال صعب », épisode 1 : « فتحنا عليهم أبواب كل شيء », la deuxième réponse)'
+
+  text_ar: فَلَمَّا نَسُوا۟ مَا ذُكِّرُوا۟ بِهِۦ فَتَحْنَا عَلَيْهِمْ أَبْوَٰبَ كُلِّ شَىْءٍ حَتَّىٰٓ إِذَا فَرِحُوا۟ بِمَآ أُوتُوٓا۟ أَخَذْنَـٰهُم بَغْتَةً فَإِذَا هُم مُّبْلِسُونَ
+  text_en: So when they forgot that by which they had been reminded, We opened to them the doors of every [good] thing until, when they rejoiced in that which they were given, We seized them suddenly, and they were [then] in despair.
+- id: quran.16.97
+  type: ayah
+  ref: {surah: 16, ayah: 97}
+  url: https://quran.com/16/97
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=16:97
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=16:97
+    translator: Saheeh International
+    surah_ar: النحل
+    surah_en: An-Nahl
+    retrieved: '2026-11-15'
+  status: proposed
+  notes: 'An-Nahl 16:97 (« سؤال صعب », épisode 2 : « فلنحيينه حياة طيبة », le verset de la question)'
+
+  text_ar: مَنْ عَمِلَ صَـٰلِحًا مِّن ذَكَرٍ أَوْ أُنثَىٰ وَهُوَ مُؤْمِنٌ فَلَنُحْيِيَنَّهُۥ حَيَوٰةً طَيِّبَةً ۖ وَلَنَجْزِيَنَّهُمْ أَجْرَهُم بِأَحْسَنِ مَا كَانُوا۟ يَعْمَلُونَ
+  text_en: Whoever does righteousness, whether male or female, while he is a believer - We will surely cause him to live a good life, and We will surely give them their reward [in the Hereafter] according to the best of what they used to do.
+- id: quran.29.2
+  type: ayah
+  ref: {surah: 29, ayah: 2}
+  url: https://quran.com/29/2
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=29:2
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=29:2
+    translator: Saheeh International
+    surah_ar: العنكبوت
+    surah_en: Al-'Ankabut
+    retrieved: '2026-11-15'
+  status: proposed
+  notes: 'Al-''Ankabut 29:2 (« سؤال صعب », épisode 2 : « وهم لا يفتنون », la deuxième réponse)'
+
+  text_ar: أَحَسِبَ ٱلنَّاسُ أَن يُتْرَكُوٓا۟ أَن يَقُولُوٓا۟ ءَامَنَّا وَهُمْ لَا يُفْتَنُونَ
+  text_en: Do the people think that they will be left to say, "We believe" and they will not be tried?
+- id: quran.15.49
+  type: ayah
+  ref: {surah: 15, ayah: 49}
+  url: https://quran.com/15/49
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=15:49
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=15:49
+    translator: Saheeh International
+    surah_ar: الحجر
+    surah_en: Al-Hijr
+    retrieved: '2026-11-15'
+  status: proposed
+  notes: 'Al-Hijr 15:49 (« سؤال صعب », épisode 3 : « أني أنا الغفور الرحيم », le verset de la question)'
+
+  text_ar: ۞ نَبِّئْ عِبَادِىٓ أَنِّىٓ أَنَا ٱلْغَفُورُ ٱلرَّحِيمُ
+  text_en: '[O Muḥammad], inform My servants that it is I who am the Forgiving, the Merciful,'
+- id: quran.15.50
+  type: ayah
+  ref: {surah: 15, ayah: 50}
+  url: https://quran.com/15/50
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=15:50
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=15:50
+    translator: Saheeh International
+    surah_ar: الحجر
+    surah_en: Al-Hijr
+    retrieved: '2026-11-15'
+  status: proposed
+  notes: 'Al-Hijr 15:50 (« سؤال صعب », épisode 3 : « وأن عذابي هو العذاب الأليم », la réponse, le verset suivant)'
+  text_ar: وَأَنَّ عَذَابِى هُوَ ٱلْعَذَابُ ٱلْأَلِيمُ
+  text_en: And that it is My punishment which is the painful punishment.
