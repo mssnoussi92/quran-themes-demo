@@ -12,8 +12,15 @@
 #   فتجاوزوا عنهم ».
 # - La leçon (as-Sa'di) : « إذا عاملتم عبيده بالعفو والصفح عاملكم بذلك » ; « لا تترك النفقة والإحسان بمعصية
 #   الإنسان ».
-# - Répliques de la session sans tafsir : « حلف مرتين… », « والجرح ما كانش صغير… », « وإحنا… بنعدّ اللي عملوه فينا… »
-#   (ce qu'on ne voit pas), l'exemple (une scène type : un mot dit en ton absence, jamais un mal qui continue).
+# - Les deux serments face à face (« حلف مرتين… ») : Ibn Kathir, « في مقابلة ما كان قال ». Répliques de la session sans
+#   tafsir : « وإحنا… بنعدّ اللي عملوه فينا… » (ce qu'on ne voit pas),
+#   l'exemple (une scène type : un mot dit en ton absence, jamais un mal qui continue).
+# - LIGNE D'AVERTISSEMENT, jamais coupée (idée du propriétaire, 2026-11-15 : « مش معناها إن نسامح إننا نسكت على الغلط
+#   لو تكرر ») : « فالمسامحة على اللي فات… مش سكوت على الغلط لو اتكرر. », avec la réplique qui la fonde sur le récit.
+#   Ibn Kathir : le pardon porte « عما تقدم منهم من الإساءة والأذى » ; il est venu après l'innocence descendue, quand
+#   celui qui avait parlé s'était repenti et avait reçu sa peine (« تاب الله عليه منها، وضرب الحد عليها »). Elle dit « ne
+#   pas se taire », jamais « ne plus pardonner » : al-Muyassar lit dans le verset le pardon « ولو قوبل بالإساءة ».
+#   Retirées pour la place : « والجرح ما كانش صغير… كان في بنته », « يسامحهم… ويعدّيها ».
 # - Images (personne, rien de l'invisible) : `cut` deux maisons sous la lune, la bourse à la porte de la première, le
 #   chemin coupé, la seconde éteinte ; `back` le chemin se referme, la bourse va, la fenêtre s'allume ; `whole` tout
 #   est rendu. Dessins : video/src/trial/Trial.tsx (ForgivePicture), video/src/trial/Ayah.tsx (Purse, Track).
@@ -55,8 +62,6 @@ segments:
     lines:
       - ar: "يعني: اللي ربنا وسّع عليه… ما يحلفش يقطع خيره عن قرايبه المحتاجين… عشان غلطة عملوها."
         en: "Meaning: whoever God has given plenty… should not swear to cut off his kindness to relatives in need… over a wrong they did."
-      - ar: "يسامحهم… ويعدّيها."
-        en: "Let him pardon them… and let it pass."
       - ar: "مش بتحب ربنا يسامحك؟ سامحهم."
         en: "Don't you love for God to forgive you? Then forgive them."
   - narration: answer
@@ -69,12 +74,10 @@ segments:
         en: "He gave his relative back what he used to give him… and swore again: I will never take it from him."
   - narration: depth
     scene: back
-    sources: [tafsir.saadi.24.22]
+    sources: [tafsir.ibn-kathir.24.22, tafsir.saadi.24.22]
     lines:
       - ar: "حلف مرتين… الأولى عشان الجرح… والتانية عشان ربنا يسامحه."
         en: "He swore twice… the first time for his wound… the second so that God would forgive him."
-      - ar: "والجرح ما كانش صغير… كان في بنته."
-        en: "And the wound was not small… it was about his daughter."
       - ar: "اللي يسامح عباد ربنا… ربنا يسامحه."
         en: "Whoever forgives God's servants… God forgives him."
       - ar: "وإحنا… بنعدّ اللي عملوه فينا… وناسيين إننا كمان محتاجين مسامحة."
@@ -89,6 +92,14 @@ segments:
         en: "And you say: that's it… I won't speak to him… or stand by him again."
       - ar: "ما تقطعش خيرك عنه… عشان غلطة."
         en: "Don't cut your kindness off from him… over one wrong."
+  - narration: limit
+    scene: cut
+    sources: [tafsir.ibn-kathir.24.22]
+    lines:
+      - ar: "وأبو بكر سامح بعد ما الحق اتقال… واللي غلط اتحاسب وتاب."
+        en: "And Abu Bakr forgave after the truth had been told… and the one who did wrong had been held to account and repented."
+      - ar: "فالمسامحة على اللي فات… مش سكوت على الغلط لو اتكرر."
+        en: "So forgiving what is past… is not keeping silent about a wrong if it happens again."
   - narration: close
     scene: whole
     lines:
