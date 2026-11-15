@@ -364,3 +364,20 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 - **Rappel « j'aime / abonne-toi »** (demande du propriétaire, 2026-11-07) : seulement dans l'épisode entier en 16:9 (YouTube), une pastille animée de 4,4 s (`SubscribeReminder`, icônes Material Icons, Apache 2.0) : un curseur touche j'aime, « اشترك · Subscribe » (qui devient « مشترك ✓ ») et la cloche. Deux passages (`reminderStarts`, `video/src/scenes.ts`) : à la fin du premier reel et sur la dernière carte ; jamais par-dessus un verset ou un hadith (un passage qui en couvrirait un est retiré).
 - **Licence** : MIT, comme quran-reels (`LICENSE`) ; Remotion garde sa propre licence (gratuite pour un particulier). Textes cités et récitations : à leurs éditeurs (README).
 - **Récitateur** : **Tawfiq As-Sayegh** dans tous les épisodes (demande du propriétaire, 2026-11-08 : aucune revendication de droits constatée sur ses récitations, alors qu'Alafasy a vu 93:1-11 coupée par Rights Manager sur Facebook le 2026-11-05, quran-reels). Il n'est pas sur quran.com : mp3quran.net a un fichier par sourate (comme dans quran-reels). `tools/audio/recitation.py` trouve chaque verset cité dans sa sourate (repères de mp3quran.net, coupe au moment le plus calme, vérifiée par Whisper : tous les mots, le premier et le dernier surtout, rien de l'ayah voisine) et le temps de chaque mot (surlignage, sous-titres) ; `content/recitations/sayegh.json` garde seulement ces temps, `build.py` télécharge la sourate (`build/recitations/`, jamais commité) et coupe le verset. Avant : Alafasy (quran.com, récitation 7, un fichier par ayah avec les temps des mots), garde possible (`reciter: alafasy` dans `content/policy.yaml`).
+
+## Publication automatique des vidéos thématiques : les fichiers publics (2026-11-15)
+
+- **Décision du propriétaire** (« je valide », 2026-11-15) : quran-reels publie les vidéos de ce dépôt à 19 h (heure de
+  France), d'après `docs/retention/calendar.md`, sur Facebook et Instagram (après la vérification des droits de Meta)
+  et en brouillon TikTok ; YouTube reste à la main. D'abord par un essai à blanc sur une vraie vidéo ; le premier jour
+  prévu est le lundi 23 novembre (le film de Dhul-Qarnayn). Il accepte que les fichiers deviennent publics.
+- **Ici** : le workflow `page-files` copie les fichiers que nomme chaque texte de publication validé (la vidéo, sa
+  version TikTok, sa couverture, le film 16:9 et sa vignette) de la release brouillon `<doc>-candidate` vers la
+  pré-release publique `page-<doc>`. Les brouillons restent des brouillons (ils gardent aussi les planches et les
+  anciennes prises) ; seuls les fichiers validés deviennent publics. À relancer après la correction d'une vidéo validée
+  (skill `release-render`, §8).
+- **Ce que lit quran-reels** : le calendrier (`docs/retention/calendar.md`, colonne « Texte » : le fichier
+  `publication-<doc>.md` et la section « Short N » ou « Le film », reprise de la ligne d'avant quand elle n'est pas
+  répétée) et les textes de chaque plateforme dans `publication-*.md`. Garder ces deux formats tels quels : une ligne
+  que quran-reels ne sait pas relier à une vidéo n'est pas publiée, et le propriétaire est prévenu.
+

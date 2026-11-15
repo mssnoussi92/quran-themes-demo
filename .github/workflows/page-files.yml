@@ -1,0 +1,81 @@
+name: page-files
+
+# The validated videos of a film or a series, made public for the Page's automatic publication
+# (quran-reels, workflow `themes`, 19:00 Paris: Facebook, Instagram, TikTok draft; YouTube by hand).
+# Decided with the owner on 2026-11-15 (« oui, d'accord pour rendre les releases publiques »).
+#
+# For each publication text given (docs/retention/publication-<doc>.md), the files it names on its
+# file lines (the video, its TikTok version, its cover, the 16:9 film and its thumbnail) are copied
+# from the draft release `<doc>-candidate` into the public pre-release `page-<doc>`, replaced whole.
+# Only those files: not the check sheets, not the other takes the draft may hold. The draft stays a
+# draft. A file the text names and the draft does not hold stops the run: nothing half-copied goes
+# public. quran-reels downloads https://github.com/<repo>/releases/download/page-<doc>/<file>.
+#
+# When: once the owner has validated the videos and their texts (« je valide »), by a session
+# (skill release-render) or by hand: Actions → page-files → Run workflow, e.g. `dua dua-9x16`.
+# After a correction of a validated video (a new draft release), run it again for that text.
+on:
+  workflow_dispatch:
+    inputs:
+      docs:
+        description: "Publication texts, space-separated: dua dua-9x16 qarnayn qarnayn-9x16 ayah signs kalima map farq"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: page-files
+  cancel-in-progress: false
+
+jobs:
+  copy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      DOCS: ${{ inputs.docs }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Copy the validated files into page-<doc>
+        run: |
+          set -euo pipefail
+          for doc in $DOCS; do
+            [[ "$doc" =~ ^[a-z0-9-]+$ ]] || { echo "::error::invalid name: $doc"; exit 1; }
+            md="docs/retention/publication-$doc.md"
+            [ -f "$md" ] || { echo "::error::$md does not exist"; exit 1; }
+            # The files a text names: the backticked names on the line under each « ## » heading.
+            files=$(python3 - "$md" <<'PY'
+          import re, sys
+          lines = open(sys.argv[1], encoding="utf-8").read().splitlines()
+          names = []
+          for i, line in enumerate(lines):
+              if line.startswith("## "):
+                  for nxt in lines[i + 1:i + 4]:
+                      if nxt.startswith("`"):
+                          names += re.findall(r"`([^`]+\.(?:mp4|jpg))`", nxt)
+                          break
+          print(" ".join(dict.fromkeys(names)))
+          PY
+            )
+            [ -n "$files" ] || { echo "::error::$md names no file"; exit 1; }
+            id=$(gh api "repos/$GH_REPO/releases?per_page=100" \
+                   --jq ".[] | select(.draft and .tag_name == \"$doc-candidate\") | .id" | head -1)
+            [ -n "$id" ] || { echo "::error::no draft release $doc-candidate"; exit 1; }
+            rm -rf "files/$doc" && mkdir -p "files/$doc"
+            for f in $files; do
+              asset=$(gh api "repos/$GH_REPO/releases/$id/assets?per_page=100" \
+                        --jq ".[] | select(.name == \"$f\") | .id")
+              [ -n "$asset" ] || { echo "::error::$f is not in the draft $doc-candidate"; exit 1; }
+              gh api -H "Accept: application/octet-stream" "repos/$GH_REPO/releases/assets/$asset" \
+                > "files/$doc/$f"
+              echo "$doc: $f ($(du -h "files/$doc/$f" | cut -f1))"
+            done
+            gh release delete "page-$doc" --yes --cleanup-tag 2>/dev/null || true
+            gh release create "page-$doc" --prerelease --title "Page: $doc (validated, public)" \
+              --notes "The validated files of docs/retention/publication-$doc.md, copied from the draft $doc-candidate by the workflow page-files ($GITHUB_SERVER_URL/$GH_REPO/actions/runs/$GITHUB_RUN_ID). Published on the Page by quran-reels (workflow themes)." \
+              files/"$doc"/*
+            echo "page-$doc: $(echo $files | wc -w) files public"
+          done
