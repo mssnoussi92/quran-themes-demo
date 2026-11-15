@@ -415,3 +415,23 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   répétée) et les textes de chaque plateforme dans `publication-*.md`. Garder ces deux formats tels quels : une ligne
   que quran-reels ne sait pas relier à une vidéo n'est pas publiée, et le propriétaire est prévenu.
 
+## Légendes courtes (2026-11-15)
+
+- **Demande du propriétaire** (dans la session des statistiques et de la publication automatique) : la légende des
+  vidéos « très longue et inutile » ; « un petit texte attirant, 3 à 5 hashtags, sans plus de détail ». Proposé par la
+  session, choisi par lui (questions à choix) : **bilingue** (une phrase en égyptien et la même en anglais), **la ligne
+  de la voix IA gardée** (sa règle « voix déclarée » ; Meta et TikTok demandent de signaler un son réaliste généré par
+  IA ; la retirer était plus faible, la session l'a dit), **3 hashtags sur Facebook, 5 sur Instagram et TikTok** (ceux
+  validés le 2026-11-14). YouTube garde ses quatre textes : liens cliquables, chapitres, recherche.
+- **Avec les quatre textes à copier** (même jour, autre session) : sur Facebook, Instagram et TikTok, trois textes, le
+  titre, l'accroche suivie de la ligne de la voix IA, les hashtags ; plus de carte « Crédits » ni de signature dans la
+  légende. 220 à 390 caractères en tout (la liste de qualité de Facebook demande 10 à 400). Chaque citation garde sa
+  référence à l'écran ; Pixabay n'exige aucun crédit, les ambiances BigSoundBank sont en CC0, le crédit des photos de
+  l'ESA (CC BY) est sur l'image.
+- **Les accroches** (`publish.hook` de 29 fichiers : les shorts et les deux films verticaux pas encore publiés ; Moussa
+  et al-Khadir, publié, garde ses textes) sont reprises des descriptions validées, une phrase ou une question, parfois
+  resserrée : proposées, pas encore validées. `publish.py` le dit en tête de chaque texte, et quran-reels ne publie rien
+  d'un texte qui le dit. `publish.py` garde les durées et les chapitres déjà écrits quand la session n'a pas les
+  timelines (textes refaits sans les vidéos) ; contrôles : sans accroche, les textes refaits sont identiques à ceux
+  d'avant ; avec, seules les cartes de Facebook, Instagram et TikTok et la phrase d'en-tête changent. `rules.py`
+  vérifie les mots refusés dans les accroches.

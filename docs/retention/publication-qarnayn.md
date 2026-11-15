@@ -1,6 +1,6 @@
 # Dhul-Qarnayn · ذو القرنين : textes de publication
 
-Pour le film et chaque short, sur chaque plateforme, quatre textes à copier : le titre, la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags ; là où la plateforme n'a pas de champ de titre, il ouvre la légende, et les quatre se collent dans la même légende, la ligne de la voix IA restant dans la description. Titres et descriptions **validés par le propriétaire le 2026-11-12** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, validée elle aussi.
+Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la légende courte en trois textes, le titre, l'accroche avec la ligne de la voix IA, les hashtags ; sur YouTube, quatre textes, le titre, la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags, collés dans la même description. Titres et descriptions **validés par le propriétaire le 2026-11-12** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **proposées par la session, pas encore validées par le propriétaire** : rien n'est publié avec elles avant. Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, validée elle aussi.
 
 ## Le film · Dhul-Qarnayn: 3 tests of power · ذو القرنين: ٣ اختبارات للقوة
 
@@ -66,24 +66,10 @@ The fate of a whole people… at his word
 **Facebook · Description**
 
 ```text
-Dhul-Qarnayn reached the setting of the sun and found a people there, and the choice was left to him: punish them, or treat them well. His answer is justice: each one according to what he did. Power is a trust, not a license.
+اتخيّر: يعاقبهم ولا يحسن ليهم. القوة أمانة… مش رخصة.
+The choice was left to him: punish them, or treat them well. Power is a trust, not a license.
 
-ذو القرنين وصل لمغرب الشمس ولقى هناك قوم… واتخيّر: يعاقبهم ولا يحسن ليهم. وإجابته كانت العدل: كل واحد باللي عمله. القوة أمانة… مش رخصة.
-
-Dhul-Qarnayn · part 1/3 · ذو القرنين · الجزء ١ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran_words_daily
-```
-
-**Facebook · Crédits**
-
-```text
-Quoted:
-• Surah Al-Kahf (18:86-88) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/86-88
-
-Footage: Pixabay (josefgadermaier) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **Facebook · Hashtags (3)**
@@ -102,24 +88,10 @@ The fate of a whole people… at his word
 **Instagram · Description**
 
 ```text
-Dhul-Qarnayn reached the setting of the sun and found a people there, and the choice was left to him: punish them, or treat them well. His answer is justice: each one according to what he did. Power is a trust, not a license.
+اتخيّر: يعاقبهم ولا يحسن ليهم. القوة أمانة… مش رخصة.
+The choice was left to him: punish them, or treat them well. Power is a trust, not a license.
 
-ذو القرنين وصل لمغرب الشمس ولقى هناك قوم… واتخيّر: يعاقبهم ولا يحسن ليهم. وإجابته كانت العدل: كل واحد باللي عمله. القوة أمانة… مش رخصة.
-
-Dhul-Qarnayn · part 1/3 · ذو القرنين · الجزء ١ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran_words_daily
-```
-
-**Instagram · Crédits**
-
-```text
-Quoted:
-• Surah Al-Kahf (18:86-88) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/86-88
-
-Footage: Pixabay (josefgadermaier) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **Instagram · Hashtags (5)**
@@ -140,24 +112,10 @@ The fate of a whole people… at his word
 **TikTok · Description**
 
 ```text
-Dhul-Qarnayn reached the setting of the sun and found a people there, and the choice was left to him: punish them, or treat them well. His answer is justice: each one according to what he did. Power is a trust, not a license.
+اتخيّر: يعاقبهم ولا يحسن ليهم. القوة أمانة… مش رخصة.
+The choice was left to him: punish them, or treat them well. Power is a trust, not a license.
 
-ذو القرنين وصل لمغرب الشمس ولقى هناك قوم… واتخيّر: يعاقبهم ولا يحسن ليهم. وإجابته كانت العدل: كل واحد باللي عمله. القوة أمانة… مش رخصة.
-
-Dhul-Qarnayn · part 1/3 · ذو القرنين · الجزء ١ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran.words.daily
-```
-
-**TikTok · Crédits**
-
-```text
-Quoted:
-• Surah Al-Kahf (18:86-88) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/86-88
-
-Footage: Pixabay (josefgadermaier) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **TikTok · Hashtags (5)**
@@ -217,24 +175,10 @@ They offered him money… he refused
 **Facebook · Description**
 
 ```text
-A people living between two mountains offered Dhul-Qarnayn a tribute to build a barrier against Gog and Magog. He refused the money: what my Lord has given me is better. He asked for their hands instead, and built it with them.
+رفض الفلوس: اللي ربنا إداهولي أحسن.
+He refused the money: what my Lord has given me is better.
 
-قوم بين جبلين عرضوا على ذي القرنين فلوس عشان يبني لهم سد من يأجوج ومأجوج. رفض الفلوس: اللي ربنا إداهولي أحسن… وطلب منهم قوتهم، وبنى معاهم.
-
-Dhul-Qarnayn · part 2/3 · ذو القرنين · الجزء ٢ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran_words_daily
-```
-
-**Facebook · Crédits**
-
-```text
-Quoted:
-• Surah Al-Kahf (18:93-95) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/93-95
-
-Footage: Pixabay (AttilaPergel) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **Facebook · Hashtags (3)**
@@ -253,24 +197,10 @@ They offered him money… he refused
 **Instagram · Description**
 
 ```text
-A people living between two mountains offered Dhul-Qarnayn a tribute to build a barrier against Gog and Magog. He refused the money: what my Lord has given me is better. He asked for their hands instead, and built it with them.
+رفض الفلوس: اللي ربنا إداهولي أحسن.
+He refused the money: what my Lord has given me is better.
 
-قوم بين جبلين عرضوا على ذي القرنين فلوس عشان يبني لهم سد من يأجوج ومأجوج. رفض الفلوس: اللي ربنا إداهولي أحسن… وطلب منهم قوتهم، وبنى معاهم.
-
-Dhul-Qarnayn · part 2/3 · ذو القرنين · الجزء ٢ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran_words_daily
-```
-
-**Instagram · Crédits**
-
-```text
-Quoted:
-• Surah Al-Kahf (18:93-95) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/93-95
-
-Footage: Pixabay (AttilaPergel) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **Instagram · Hashtags (5)**
@@ -291,24 +221,10 @@ They offered him money… he refused
 **TikTok · Description**
 
 ```text
-A people living between two mountains offered Dhul-Qarnayn a tribute to build a barrier against Gog and Magog. He refused the money: what my Lord has given me is better. He asked for their hands instead, and built it with them.
+رفض الفلوس: اللي ربنا إداهولي أحسن.
+He refused the money: what my Lord has given me is better.
 
-قوم بين جبلين عرضوا على ذي القرنين فلوس عشان يبني لهم سد من يأجوج ومأجوج. رفض الفلوس: اللي ربنا إداهولي أحسن… وطلب منهم قوتهم، وبنى معاهم.
-
-Dhul-Qarnayn · part 2/3 · ذو القرنين · الجزء ٢ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran.words.daily
-```
-
-**TikTok · Crédits**
-
-```text
-Quoted:
-• Surah Al-Kahf (18:93-95) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/93-95
-
-Footage: Pixabay (AttilaPergel) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **TikTok · Hashtags (5)**
@@ -368,24 +284,10 @@ He built the barrier… and said: not from me
 **Facebook · Description**
 
 ```text
-Blocks of iron between two mountains, fire, molten copper: a barrier no one could climb or pierce. And when it stood, Dhul-Qarnayn said: this is a mercy from my Lord. Success is a mercy, and nothing lasts but God.
+ولما خلص، ذو القرنين قال: ده رحمة من ربي.
+And when it stood, Dhul-Qarnayn said: this is a mercy from my Lord.
 
-قطع حديد بين جبلين، ونار، ونحاس دايب: سد محدش قدر يطلع عليه ولا يخرمه. ولما خلص، ذو القرنين قال: ده رحمة من ربي. النجاح رحمة… ومفيش حاجة دايمة غير ربنا.
-
-Dhul-Qarnayn · part 3/3 · ذو القرنين · الجزء ٣ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran_words_daily
-```
-
-**Facebook · Crédits**
-
-```text
-Quoted:
-• Surah Al-Kahf (18:96-98) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/96-98
-
-Footage: Pixabay (FlickrVideos) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **Facebook · Hashtags (3)**
@@ -404,24 +306,10 @@ He built the barrier… and said: not from me
 **Instagram · Description**
 
 ```text
-Blocks of iron between two mountains, fire, molten copper: a barrier no one could climb or pierce. And when it stood, Dhul-Qarnayn said: this is a mercy from my Lord. Success is a mercy, and nothing lasts but God.
+ولما خلص، ذو القرنين قال: ده رحمة من ربي.
+And when it stood, Dhul-Qarnayn said: this is a mercy from my Lord.
 
-قطع حديد بين جبلين، ونار، ونحاس دايب: سد محدش قدر يطلع عليه ولا يخرمه. ولما خلص، ذو القرنين قال: ده رحمة من ربي. النجاح رحمة… ومفيش حاجة دايمة غير ربنا.
-
-Dhul-Qarnayn · part 3/3 · ذو القرنين · الجزء ٣ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran_words_daily
-```
-
-**Instagram · Crédits**
-
-```text
-Quoted:
-• Surah Al-Kahf (18:96-98) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/96-98
-
-Footage: Pixabay (FlickrVideos) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **Instagram · Hashtags (5)**
@@ -442,24 +330,10 @@ He built the barrier… and said: not from me
 **TikTok · Description**
 
 ```text
-Blocks of iron between two mountains, fire, molten copper: a barrier no one could climb or pierce. And when it stood, Dhul-Qarnayn said: this is a mercy from my Lord. Success is a mercy, and nothing lasts but God.
+ولما خلص، ذو القرنين قال: ده رحمة من ربي.
+And when it stood, Dhul-Qarnayn said: this is a mercy from my Lord.
 
-قطع حديد بين جبلين، ونار، ونحاس دايب: سد محدش قدر يطلع عليه ولا يخرمه. ولما خلص، ذو القرنين قال: ده رحمة من ربي. النجاح رحمة… ومفيش حاجة دايمة غير ربنا.
-
-Dhul-Qarnayn · part 3/3 · ذو القرنين · الجزء ٣ من ٣
-
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
-
-@quran.words.daily
-```
-
-**TikTok · Crédits**
-
-```text
-Quoted:
-• Surah Al-Kahf (18:96-98) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/96-98
-
-Footage: Pixabay (FlickrVideos) · Ambience: BigSoundBank (Joseph Sardin)
+🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
 ```
 
 **TikTok · Hashtags (5)**

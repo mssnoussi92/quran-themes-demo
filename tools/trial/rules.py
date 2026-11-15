@@ -512,7 +512,8 @@ class Checker:
             if n < MIN_FIRST_PHRASE:
                 self.out.warn(file, f"the first phrase of the first line has {n} word(s), the first frame would show only « {phrase} »")
         for label, text in (("cover title", get(spec, "cover.title")), ("cover tag", get(spec, "cover.tag")),
-                            ("title", get(spec, "publish.title.ar")), ("description", get(spec, "publish.description.ar"))):
+                            ("title", get(spec, "publish.title.ar")), ("description", get(spec, "publish.description.ar")),
+                            ("hook", get(spec, "publish.hook.ar"))):
             if text:
                 self.wording(file, text, label)
         self.title_length(file, get(spec, "publish.title"), "short")
@@ -619,7 +620,7 @@ class Checker:
         self.voice_text(file, spec, own)
         for label, text in (("film title", get(spec, "title.ar")), ("thumbnail title", get(spec, "thumbnail.title")),
                             ("thumbnail tag", get(spec, "thumbnail.tag")), ("title", get(spec, "publish.title.ar")),
-                            ("description", get(spec, "publish.description.ar"))):
+                            ("description", get(spec, "publish.description.ar")), ("hook", get(spec, "publish.hook.ar"))):
             if text:
                 self.wording(file, text, label)
         self.title_length(file, get(spec, "publish.title"), "film")

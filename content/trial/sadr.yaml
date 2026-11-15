@@ -27,6 +27,9 @@ publish:
   description:
     en: "The word 'chest' in the Quran: 44 times, in 41 verses. The first time: what you hide in your chest, God knows it (3:29). The last, in the last surah: the one who whispers into the chests of people (114:5). And the prayer of Moses when the chest feels tight (20:25-28)."
     ar: "كلمة «الصدر» في القرآن: 44 مرة، في 41 آية. أول مرة: اللي في صدرك ربنا عارفه (آل عمران 29). وآخر مرة، في آخر سورة: اللي بيوسوس في صدور الناس (الناس 5). ودعوة موسى عليه السلام لما الصدر يضيق (طه 25-28)."
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, pas encore validée
+    ar: "آخر مرة، في آخر سورة: اللي بيوسوس في صدور الناس."
+    en: "The last time, in the last surah: the one who whispers into the chests of people."
 segments:
   # -- le début, muet et rapide
   - narration: hook

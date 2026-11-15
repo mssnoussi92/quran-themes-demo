@@ -159,10 +159,14 @@ ffmpeg -i out/<name>.png -q:v 2 out/<name>.jpg
 uv run --with pyyaml python3 tools/trial/publish.py --film <film>
 ```
 
-Look at the thumbnail reduced to 170 px wide. `publish.py` writes the texts to paste, one block per
-platform, with the sources quoted, the chapters of the film, the credits (footage, ambience), the
-line that declares the AI voice and the page's hashtags; it stops on a title or a caption over a
-platform's limit. Give the covers the names of `cover.file` and `thumbnail.file`: the texts cite them.
+Look at the thumbnail reduced to 170 px wide. `publish.py` writes the texts to paste: on YouTube four
+cards (title, description with the line that declares the AI voice, credits with the sources quoted,
+the footage and the ambience, hashtags; the film's chapters in its description); on Facebook,
+Instagram and TikTok the short caption, three cards (title, the hook of `publish.hook` in Egyptian
+Arabic and English with the AI voice line, 3 or 5 hashtags; owner, 2026-11-15). It stops on a title or
+a caption over a platform's limit. Write the hook from the description the owner validates (a sentence
+or a question of it, both languages); it is validated with the texts (`hook.validated`), and until
+then the texts say so and quran-reels publishes nothing of them. Give the covers the names of `cover.file` and `thumbnail.file`: the texts cite them.
 
 ## 7. Hand over
 

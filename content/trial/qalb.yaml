@@ -33,6 +33,9 @@ publish:
   description:
     en: "The word 'heart' in the Quran: 132 times, in 124 verses. Its first time in the mushaf and its last both speak of hearts closed. And the heart finds rest in the remembrance of God (13:28)."
     ar: "كلمة «القلب» في القرآن: 132 مرة، في 124 آية. أول مرة في المصحف وآخر مرة… قلوب اتقفلت. والقلب يرتاح بذكر ربنا (الرعد 28)."
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, pas encore validée
+    ar: "أول مرة في المصحف وآخر مرة… قلوب اتقفلت."
+    en: "Its first time in the mushaf and its last both speak of hearts closed."
 segments:
   # -- le début, muet et rapide : la grille balayée, le compteur qui monte au son des tics, le nombre qui tombe
   - narration: hook
