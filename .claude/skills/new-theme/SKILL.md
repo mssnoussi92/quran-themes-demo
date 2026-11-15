@@ -102,7 +102,7 @@ on that word only. A line changed afterwards is to be validated again.
 ## 5. The scenes and their sound
 
 Skill `new-scene`: a filmed clip the owner approved, the silhouettes of what the text says drawn over
-it (things and places, never a person), one state of the drawing per `scene` of the script, and the
+it (things and places; an anonymous person only as a faceless silhouette), one state of the drawing per `scene` of the script, and the
 ambience under the narration. Look at it without any voice:
 
 ```bash
@@ -169,6 +169,7 @@ saw and heard; anything added afterwards waits for their word again.
 ## Never
 
 - A line of narration that says the text of a verse, or a verse read by the synthetic voice.
-- A person drawn; a killing shown; paradise, hell, the Last Day or an angel pictured.
+- A prophet, a Companion, a known person or someone of a story drawn (an anonymous person: a silhouette or a stick
+  figure with no face only); a killing shown; paradise, hell, the Last Day or an angel pictured.
 - A validation written without the owner's word; a voice request before the script is validated.
 - A second Google project or account to get more requests; a paid service.

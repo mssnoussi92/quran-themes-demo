@@ -24,7 +24,9 @@ compositions `Trial916`, `TrialFilm169`, `TrialFilm916`, `TrialCover916`, `Trial
 ## Ce qu'est une vidéo du modèle
 
 - **L'image** : un clip filmé de nature (mer, lune, ciel), muet, ralenti et bouclé, et **dessus des silhouettes
-  dessinées à contre-jour** de ce que dit le texte : des choses et des lieux, jamais une personne. Le clip dit
+  dessinées à contre-jour** de ce que dit le texte : des choses et des lieux. Une personne anonyme (une scène type, le
+  spectateur) peut être une silhouette ou un bonhomme sans visage, jamais un prophète, un Compagnon, une personne connue
+  ni quelqu'un d'un récit du Coran ou d'un hadith (propriétaire, 2026-11-15). Le clip dit
   le lieu et l'heure, le dessin dit l'événement.
 - **Le verset est récité sur sa scène** (Tawfiq As-Sayegh), son texte au-dessus de l'image, le mot récité en
   or, la traduction dessous ; un verset long passe par pages de 14 mots au plus. Plus de carte sombre.
@@ -59,7 +61,7 @@ tools/trial/rules.py           les règles sur les fichiers d'un film ; tools/tr
 tools/audio/align.py           chaque phrase d'un texte retrouvée dans une longue prise
 tools/tts/gemini.py            la voix (dans le workflow voice-test : la clé est un secret du dépôt)
 video/src/trial/               Trial.tsx (short), Film.tsx (film), Cover.tsx (couverture, vignette),
-                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a), Signs.tsx, Kalima.tsx, Count.tsx, Farq.tsx, WordMap.tsx et Sual.tsx (les séries) : les dessins
+                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a), Signs.tsx, Kalima.tsx, Count.tsx, Farq.tsx, WordMap.tsx, Sual.tsx et Lens.tsx (les séries) : les dessins
 video/public/trial/            (ignoré) données préparées, clips, audio
 build/trial/ambience/          (ignoré) enregistrements d'ambiance téléchargés
 video/out/                     (ignoré) rendus
@@ -112,6 +114,12 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
   sur la grille ; `impact`, le nombre qui tombe ; `whoosh` ; `pops` ; `click` ; `lock`), faits par le code (rien à
   créditer), **aucun son musical**, **jamais sous un verset ni un hadith** (l'outil s'arrête plutôt) ; une piste
   jouée sous la vidéo comme l'ambiance.
+- `casts: [pov, figure]` dans le fichier d'une série (« une image, puis le verset », 2026-11-15 : « je veux qu'on essaye
+  A et B ») : chaque short est dessiné deux fois, la prop `cast` choisit le dessin (`pov` : le spectateur est la
+  caméra ; `figure` : une silhouette anonyme sans visage, `Figure` de `video/src/trial/Lens.tsx`, ses poses et sa
+  marche) ; `tools/trial/videos.py` liste chaque short dans chaque dessin (`…-blackout-pov.mp4`,
+  `…-blackout-figure.mp4`). La page et les textes à coller ne savent pas encore en montrer deux : à faire quand
+  le propriétaire aura choisi.
 - `OVERLAYS` et `LAYOUTS` de `video/src/trial/Trial.tsx` : ce qu'un short dessine au-dessus du voile sans bouger
   (le badge de la série, la frise des dates) et où ses textes se placent ; les dessins, photos et frises de la série
   sont dans `video/src/trial/Signs.tsx`.

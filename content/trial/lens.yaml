@@ -1,0 +1,21 @@
+# Une série proposée, « une image, puis le verset » (docs/themes.md ; reference/fb-metaphor-reels-analysis.md). Demande du
+# propriétaire (2026-11-15) : « prépare le pilote, mais comme pour toute série trois candidats, et à la fin on utilise notre
+# méthode et on donne des infos correctes, même si on récite deux ayat » ; ses réponses du même jour : les trois candidats
+# (94:5-6, 42:28, 103:1-3) « oui » ; « je veux qu'on essaye A et B » : chaque épisode est dessiné deux fois, `pov` (le
+# spectateur est la caméra, seules les choses bougent) et `figure` (une silhouette anonyme sans visage, que sa règle permet
+# depuis ce jour) ; le nom de la série : à choisir par lui parmi ceux que la session propose.
+# Chaque épisode : une métaphore en mouvement, muette (`silent`, `hold`, `sfx`), le verset récité sur sa scène, notre méthode
+# (le sens et l'information juste d'après un tafsir nommé sous la réplique, la voix D), l'appel au partage. Dessins :
+# video/src/trial/Lens.tsx. Script, nom et deux dessins validés le 2026-11-15 (voir les épisodes).
+id: lens
+validated: { by: mssnoussi92, on: 2026-11-15, what: [publish] }      # « je valide tout », après l'envoi des textes à coller
+files: lens                      # début du nom des vidéos livrées : lens-short-<n>-<id>-<cast>.mp4
+title: { ar: "بص تاني", en: "Look Again" }        # proposé par la session ; « oui je valide les 3 » du propriétaire (2026-11-15)
+shorts: [blackout, drought, scroll]
+casts: [pov, figure]
+handle: "@quran_words_daily"
+publish:
+  out: docs/retention/publication-lens.md
+  series: { en: "Look Again", ar: "بص تاني" }
+  hashtags: ["#بص_تاني", "#تدبر"]
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", X: "No narration voice yet: draft · مسودة بدون صوت" }

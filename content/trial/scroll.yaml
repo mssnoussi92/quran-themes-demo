@@ -1,0 +1,86 @@
+# Série « une image, puis le verset » (content/trial/lens.yaml), épisode 3. Le fil qui défile, l'heure qui court, le sablier : 103:1-3, as-Sa'di.
+# Le début est muet (`silent` : le texte à l'écran tenu `hold` secondes, des effets `sfx`), puis le verset récité, puis la
+# voix D : le sens et l'information juste d'après le tafsir nommé sous la réplique, puis l'appel au partage. Deux dessins,
+# `pov` et `figure` (video/src/trial/Lens.tsx) ; une silhouette anonyme sans visage seulement (règle du propriétaire, 2026-11-15).
+# Script écrit par la session le 2026-11-15.
+id: scroll
+# « Oui je valide les 3 » du propriétaire (2026-11-15), en réponse aux trois questions de la session (le script, le nom,
+# les deux dessins) : lu comme le script de docs/scripts/lens.md (les cartes muettes, la place du verset, les répliques de
+# la voix et ce sur quoi elles reposent, le titre), le nom « بص تاني » et les deux dessins `pov` et `figure` tels que
+# montrés sur les images de style. Ni la voix, ni les vidéos, ni les textes, ni les sources : sur les vidéos.
+script_validated: { by: mssnoussi92, on: 2026-11-15 }
+# « Je valide tout » du propriétaire (2026-11-15), après l'envoi des six vidéos (workflow `film`, run 43753923027 : cet
+# épisode en `pov` et en `figure`), des couvertures et des textes à coller (docs/retention/publication-lens.md) : lu comme
+# l'épisode tel que livré dans ses deux dessins (la voix, avec les mots signalés à écouter ; les dessins, l'ambiance, les
+# effets, les couvertures), ses textes et ses sources, passées à `validated`. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-15, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 73-trial-scroll     # content/voice-test/<text>.txt : les répliques dites par la voix (pas celles du début muet)
+# Un fond de nuit dessiné par ffmpeg (tools/trial/clip.py) : le ciel, la ville, la terre et la pièce sont dessinés dessus.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1330, veil: 0.55 }
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 70, level: -38 }
+cover: { scene: feed, title: "قلّبت كام ساعة النهارده؟", tag: "بص تاني · ٣", focus: 1100 }
+publish:
+  title: { en: "How many hours did you scroll today?", ar: "قلّبت كام ساعة النهارده؟" }
+  part: 3
+  hashtags: ["#سورة_العصر", "#الوقت"]
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (question à choix : « je valide les 3 »)
+    ar: "قلّبت كام ساعة النهارده… والساعة بتجري وإنت مكانك؟"
+    en: "How many hours did you scroll today… while the clock ran and you stayed put?"
+    validated: 2026-11-15
+  description:
+    en: "The feed keeps scrolling, the clock keeps running… and you haven't moved. God swore by time (103:1-3): as-Sa'di reads it as the night and the day, where every deed is done; every human is losing, except four things: two for yourself, two for others."
+    ar: "الفيد بيقلّب، والساعة بتجري… وإنت مكانك. ربنا أقسم بالعصر: الليل والنهار، وقت كل عمل. وكل إنسان خسران… إلا أربع حاجات: اتنين ليك، واتنين لغيرك."
+segments:
+  - narration: hook
+    silent: true
+    hold: 2.4
+    scene: feed
+    sfx: [[pops, 0.3]]
+    lines:
+      - ar: "قلّبت كام ساعة النهارده؟"
+        en: "How many hours did you scroll today?"
+  - narration: clock
+    silent: true
+    hold: 2.2
+    scene: clock
+    sfx: [[pops, 0.2]]
+    lines:
+      - ar: "الساعة بتجري…"
+        en: "The clock keeps running…"
+  - narration: still
+    silent: true
+    hold: 2.0
+    scene: still
+    lines:
+      - ar: "وإنت مكانك."
+        en: "And you haven't moved."
+  - narration: gone
+    silent: true
+    hold: 2.8
+    scene: gone
+    sfx: [[lock, 0.2]]
+    lines:
+      - ar: "والدقايق دي… مش هترجع."
+        en: "And these minutes… won't come back."
+  - verses: [quran.103.1, quran.103.2, quran.103.3]
+    scene: sand
+  - narration: meaning
+    scene: sand
+    sources: [tafsir.saadi.103.1, tafsir.saadi.103.2, tafsir.saadi.103.3]
+    lines:
+      - ar: "ربنا أقسم بالعصر… يعني الليل والنهار… الوقت اللي بنعمل فيه كل حاجة."
+        en: "God swore by time… the night and the day… the time in which we do everything."
+      - ar: "وكل إنسان خسران… إلا اللي فيه أربع حاجات."
+        en: "And every human is losing… except whoever has four things."
+      - ar: "اتنين ليك: الإيمان… والعمل الصالح."
+        en: "Two for yourself: faith… and good deeds."
+      - ar: "واتنين لغيرك: توصّيه بالحق… وتوصّيه بالصبر."
+        en: "Two for others: urge them to the truth… and urge them to patience."
+  - narration: share
+    scene: sand
+    sources: [tafsir.saadi.103.3]
+    lines:
+      - ar: "ابعتها لحد بتحبه… وابدأ التوصية."
+        en: "Send it to someone you love… and start urging each other."

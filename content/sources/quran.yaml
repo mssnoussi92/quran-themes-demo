@@ -2603,3 +2603,110 @@
   notes: "« ولا يأتل أولو الفضل منكم… ألا تحبون أن يغفر الله لكم » : le verset du short 4 de « آية وحكايتها » (pardonner à un proche ; récit : Bukhari 4750)"
   text_ar: وَلَا يَأْتَلِ أُو۟لُوا۟ ٱلْفَضْلِ مِنكُمْ وَٱلسَّعَةِ أَن يُؤْتُوٓا۟ أُو۟لِى ٱلْقُرْبَىٰ وَٱلْمَسَـٰكِينَ وَٱلْمُهَـٰجِرِينَ فِى سَبِيلِ ٱللَّهِ ۖ وَلْيَعْفُوا۟ وَلْيَصْفَحُوٓا۟ ۗ أَلَا تُحِبُّونَ أَن يَغْفِرَ ٱللَّهُ لَكُمْ ۗ وَٱللَّهُ غَفُورٌ رَّحِيمٌ
   text_en: And let not those of virtue among you and wealth swear not to give [aid] to their relatives and the needy and the emigrants for the cause of Allāh, and let them pardon and overlook. Would you not like that Allāh should forgive you? And Allāh is Forgiving and Merciful.
+- id: quran.94.5
+  type: ayah
+  ref: {surah: 94, ayah: 5}
+  url: https://quran.com/94/5
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=94:5
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=94:5
+    translator: Saheeh International
+    surah_ar: الشرح
+    surah_en: Ash-Sharh
+    retrieved: '2026-11-15'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« فإن مع العسر يسرا » (épisode 1), pilote « une image, puis le verset » (2026-11-15)"
+
+  text_ar: فَإِنَّ مَعَ ٱلْعُسْرِ يُسْرًا
+  text_en: For indeed, with hardship [will be] ease [i.e., relief].
+- id: quran.94.6
+  type: ayah
+  ref: {surah: 94, ayah: 6}
+  url: https://quran.com/94/6
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=94:6
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=94:6
+    translator: Saheeh International
+    surah_ar: الشرح
+    surah_en: Ash-Sharh
+    retrieved: '2026-11-15'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« إن مع العسر يسرا » (épisode 1), pilote « une image, puis le verset » (2026-11-15)"
+
+  text_ar: إِنَّ مَعَ ٱلْعُسْرِ يُسْرًا
+  text_en: Indeed, with hardship [will be] ease.
+- id: quran.42.28
+  type: ayah
+  ref: {surah: 42, ayah: 28}
+  url: https://quran.com/42/28
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=42:28
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=42:28
+    translator: Saheeh International
+    surah_ar: الشورى
+    surah_en: Ash-Shuraa
+    retrieved: '2026-11-15'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "la pluie « من بعد ما قنطوا » (épisode 2), pilote « une image, puis le verset » (2026-11-15)"
+
+  text_ar: وَهُوَ ٱلَّذِى يُنَزِّلُ ٱلْغَيْثَ مِنۢ بَعْدِ مَا قَنَطُوا۟ وَيَنشُرُ رَحْمَتَهُۥ ۚ وَهُوَ ٱلْوَلِىُّ ٱلْحَمِيدُ
+  text_en: And it is He who sends down the rain after they had despaired and spreads His mercy. And He is the Protector, the Praiseworthy.
+- id: quran.103.1
+  type: ayah
+  ref: {surah: 103, ayah: 1}
+  url: https://quran.com/103/1
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=103:1
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=103:1
+    translator: Saheeh International
+    surah_ar: العصر
+    surah_en: Al-'Asr
+    retrieved: '2026-11-15'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« والعصر » (épisode 3), pilote « une image, puis le verset » (2026-11-15)"
+
+  text_ar: وَٱلْعَصْرِ
+  text_en: By time,
+- id: quran.103.2
+  type: ayah
+  ref: {surah: 103, ayah: 2}
+  url: https://quran.com/103/2
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=103:2
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=103:2
+    translator: Saheeh International
+    surah_ar: العصر
+    surah_en: Al-'Asr
+    retrieved: '2026-11-15'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« إن الإنسان لفي خسر » (épisode 3), pilote « une image, puis le verset » (2026-11-15)"
+
+  text_ar: إِنَّ ٱلْإِنسَـٰنَ لَفِى خُسْرٍ
+  text_en: Indeed, mankind is in loss,
+- id: quran.103.3
+  type: ayah
+  ref: {surah: 103, ayah: 3}
+  url: https://quran.com/103/3
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=103:3
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=103:3
+    translator: Saheeh International
+    surah_ar: العصر
+    surah_en: Al-'Asr
+    retrieved: '2026-11-15'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "les quatre qualités (épisode 3), pilote « une image, puis le verset » (2026-11-15)"
+  text_ar: إِلَّا ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّـٰلِحَـٰتِ وَتَوَاصَوْا۟ بِٱلْحَقِّ وَتَوَاصَوْا۟ بِٱلصَّبْرِ
+  text_en: Except for those who have believed and done righteous deeds and advised each other to truth and advised each other to patience.
