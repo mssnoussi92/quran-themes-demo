@@ -1,0 +1,74 @@
+# Série « une image, puis le verset » (content/trial/lens.yaml), épisode 1. La coupure de courant et les étoiles : 94:5-6, as-Sa'di.
+# Le début est muet (`silent` : le texte à l'écran tenu `hold` secondes, des effets `sfx`), puis le verset récité, puis la
+# voix D : le sens et l'information juste d'après le tafsir nommé sous la réplique, puis l'appel au partage. Deux dessins,
+# `pov` et `figure` (video/src/trial/Lens.tsx) ; une silhouette anonyme sans visage seulement (règle du propriétaire, 2026-11-15).
+# Script écrit par la session le 2026-11-15, à valider par le propriétaire.
+id: blackout
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 71-trial-blackout     # content/voice-test/<text>.txt : les répliques dites par la voix (pas celles du début muet)
+# Un fond de nuit dessiné par ffmpeg (tools/trial/clip.py) : le ciel, la ville, la terre et la pièce sont dessinés dessus.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.55 }
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 70, level: -38 }
+cover: { scene: lit, title: "كل حاجة ضلمت فجأة؟", tag: "بص تاني · ١", focus: 1100 }
+publish:
+  title: { en: "Everything went dark… look up", ar: "كل حاجة ضلمت فجأة؟ بص لفوق" }
+  part: 1
+  hashtags: ["#فإن_مع_العسر_يسرا", "#سورة_الشرح"]
+  description:
+    en: "The power cuts, the city goes dark… and the sky fills with stars that were there all along. \"With hardship comes ease\": as-Sa'di reads ease as walking beside hardship, and one hardship never overcomes two eases."
+    ar: "النور قطع والمدينة ضلمت… والسما اتملت نجوم كانت موجودة طول الوقت. «فإن مع العسر يسرا»: اليسر ماشي جنب العسر… وعسر واحد مش هيغلب يسرين."
+segments:
+  # -- la métaphore, muette et rapide
+  - narration: hook
+    silent: true
+    hold: 2.4
+    scene: lit
+    sfx: [[impact, 0.75]]
+    lines:
+      - ar: "كل حاجة ضلمت فجأة؟"
+        en: "Everything went dark, all at once?"
+  - narration: dark
+    silent: true
+    hold: 2.2
+    scene: dark
+    lines:
+      - ar: "ومش شايف قدامك حاجة؟"
+        en: "Can't see anything ahead?"
+  - narration: up
+    silent: true
+    hold: 2.0
+    scene: up
+    sfx: [[whoosh, 0.2]]
+    lines:
+      - ar: "طب ارفع راسك."
+        en: "Then look up."
+  - narration: stars
+    silent: true
+    hold: 3.0
+    scene: stars
+    sfx: [[pops, 0.1]]
+    lines:
+      - ar: "النجوم دي… كانت موجودة طول الوقت."
+        en: "These stars… were there all along."
+  # -- le verset
+  - verses: [quran.94.5, quran.94.6]
+    scene: stars
+  # -- notre méthode
+  - narration: meaning
+    scene: sky
+    sources: [tafsir.saadi.94.5]
+    lines:
+      - ar: "يعني: كل ما ييجي عسر… اليسر بييجي معاه… ماشي جنبه."
+        en: "Meaning: whenever hardship comes… ease comes with it… walking beside it."
+      - ar: "وخد بالك: «العسر» جت بـ«ال» في المرتين… يعني هو هو."
+        en: "And notice: 'the hardship' comes with 'the' both times… it is the same one."
+      - ar: "و«يسرًا» جت من غيرها… يعني كل مرة يسر جديد."
+        en: "And 'ease' comes without it… a new ease each time."
+      - ar: "عسر واحد… مش هيغلب يسرين."
+        en: "One hardship… will never overcome two eases."
+  - narration: share
+    scene: sky
+    lines:
+      - ar: "ابعتها لحد… الدنيا ضلمت عليه."
+        en: "Send it to someone whose world went dark."

@@ -63,19 +63,23 @@ def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]
     said = [(s.get("validated") or {}) for s in [film, *shorts]]
     bed = "-ambience" if film.get("ambience_after") and all("ambience" in (v.get("what") or []) for v in said) else ""
     videos, stills = [], []
+    # A series drawn twice (`casts` of its file: the owner's A and B, 2026-11-15) has each short in each drawing, the
+    # cast at the end of the name: lens-short-1-blackout-pov.mp4, lens-short-1-blackout-figure.mp4.
+    casts = film.get("casts") or [None]
     for spec in shorts:
         if only == "film" or only in ids and only != spec["id"]:
             continue
-        name = f"{files}-short-{spec['publish']['part']}-{spec['id']}"
-        props = {"trial": spec["id"], "voice": voice, "data": None}
-        timeline = f"video/public/trial/{spec['id']}-{voice}.json"
-        if only != "tiktok":
-            videos.append({"name": name + bed, "composition": "Trial916", "props": compact(props), "timeline": timeline, "kind": "short"})
-        videos.append({"name": f"{name}-tiktok{bed}", "composition": "Trial916", "props": compact({**props, "platform": "tiktok"}),
-                       "timeline": timeline, "kind": "tiktok"})
-        if only != "tiktok":
-            stills.append({"name": (spec.get("cover") or {}).get("file", f"{name}-cover.jpg"), "composition": "TrialCover916",
-                           "props": compact(props), "frame": STILL_FRAME, "kind": "cover"})
+        for cast in casts:
+            name = f"{files}-short-{spec['publish']['part']}-{spec['id']}" + (f"-{cast}" if cast else "")
+            props = {"trial": spec["id"], "voice": voice, "data": None, **({"cast": cast} if cast else {})}
+            timeline = f"video/public/trial/{spec['id']}-{voice}.json"
+            if only != "tiktok":
+                videos.append({"name": name + bed, "composition": "Trial916", "props": compact(props), "timeline": timeline, "kind": "short"})
+            videos.append({"name": f"{name}-tiktok{bed}", "composition": "Trial916", "props": compact({**props, "platform": "tiktok"}),
+                           "timeline": timeline, "kind": "tiktok"})
+            if only != "tiktok":
+                cover = (spec.get("cover") or {}).get("file", f"{name}-cover.jpg") if not cast else f"{name}-cover.jpg"
+                stills.append({"name": cover, "composition": "TrialCover916", "props": compact(props), "frame": STILL_FRAME, "kind": "cover"})
     if only in ("all", "film") and has_film:
         videos.append({"name": f"{files}-film-16x9{bed}", "composition": "TrialFilm169",
                        "props": compact({"film": film_id, "voice": voice, "data": None}),

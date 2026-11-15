@@ -762,6 +762,17 @@ possible : l'épisode 6, « ١٩ » (le code de Rashad Khalifa l'a mené à reti
 
 ## Série proposée : une image, puis le verset (pilote court, 2026-11-15)
 
+**Les réponses du propriétaire (2026-11-15)** : les trois candidats, « oui » ; la personne, « je veux qu'on essaye A et
+B » (sa règle, précisée le même jour : une silhouette ou un bonhomme sans visage pour un anonyme est permis) ; le nom :
+« recommande d'autres noms » ; et « fais des efforts pour créer les personnages ; l'idée doit être rapide et facile à
+comprendre au début, et attirer ». **Fait le même jour** : onze sources proposées (94:5-6, 42:28, 103:1-3 ; as-Sa'di
+sur chacun), les récitations coupées (quatre coupes posées à la main : As-Sayegh enchaîne « والعصر إن الإنسان », et 94:5-6
+n'a pas de silence franc), trois scripts (`content/trial/lens.yaml`, `blackout`, `drought`, `scroll` ;
+`docs/scripts/lens.md` : 0:40, 0:44, 0:50 estimées), les dessins des deux versions (`video/src/trial/Lens.tsx` : une
+silhouette articulée, ses poses et sa marche ; une regarde vers le haut se lit mal sans visage : elle montre du doigt les
+étoiles, tend la main vers le nuage), les images de style et les couvertures. À valider par lui : les scripts, le nom,
+les deux versions. Aucune voix avant.
+
 Née de deux reels analysés (`reference/fb-metaphor-reels-analysis.md`). Demande du propriétaire (2026-11-15) : « prépare
 le pilote, mais comme pour toute série trois candidats, et à la fin on utilise notre méthode et on donne des infos
 correctes, même si on récite deux ayat » ; il remarque que ce qui attire, c'est l'animation d'une personne qui court

@@ -21,6 +21,7 @@ import { COUNT_LAYOUTS, COUNT_OVERLAYS, COUNT_PICTURES } from "./Count";
 import { FARQ_LAYOUTS, FARQ_OVERLAYS, FARQ_PICTURES } from "./Farq";
 import { MAP_LAYOUTS, MAP_OVERLAYS, MAP_PICTURES } from "./WordMap";
 import { SUAL_LAYOUTS, SUAL_OVERLAYS, SUAL_PICTURES } from "./Sual";
+import { LENS_PICTURES } from "./Lens";
 
 loadFonts();
 
@@ -76,7 +77,8 @@ export type TrialData = {
   cover?: { scene: string; title: string; tag: string; focus?: number; at?: number } | null;
 };
 /** `platform`: where the page has another name (TikTok: content/publish.yaml, `handles`), the video is signed with it. */
-export type TrialProps = { trial: string; voice: string; platform?: string; data: TrialData | null };
+/** `cast`: for a series drawn twice (content/trial/<series>.yaml, `casts`), which drawing: `pov` or `figure`. */
+export type TrialProps = { trial: string; voice: string; platform?: string; cast?: string; data: TrialData | null };
 
 export const TRIAL_FPS = 30;
 export const trialMetadata: CalculateMetadataFunction<TrialProps> = async ({ props, abortSignal }) => {
@@ -143,7 +145,7 @@ export const sceneOpacity = (segments: { scene: string; start: number }[], id: s
 /** What a short draws over its clip. `show(id)`: how much of that scene is there now; `since(id)`: when it first came. */
 /** `phrase(id, n)`: when the n-th phrase (counted over its lines) of the first narration on the scene `id` is said, in
  * seconds; a drawing that does not get it (a cover, the film) falls back on its own times. */
-export type Drawn = React.FC<{ t: number; show: (id: string) => number; since: (id: string) => number; horizon: number; phrase?: (id: string, n: number) => number }>;
+export type Drawn = React.FC<{ t: number; show: (id: string) => number; since: (id: string) => number; horizon: number; phrase?: (id: string, n: number) => number; cast?: string }>;
 
 /** The boat (18:71, 18:79): `holed` close, `fleet` the king's ships behind it, `sail` going on its way, `sea` the sea alone;
  * `bird`: the sparrow of the hadith on its edge, before anything was torn (a scene of the film, shown by its vertical version). */
@@ -441,6 +443,7 @@ export const PICTURES: Record<string, Drawn> = {
   ...FARQ_PICTURES,
   ...MAP_PICTURES,
   ...SUAL_PICTURES,
+  ...LENS_PICTURES,
 };
 
 /** What a short draws above its veil, under its texts, outside the slowly growing picture: a timeline, a badge,
@@ -650,7 +653,7 @@ export const ReadingText: React.FC<{ seg: Reading; t: number; layout?: Layout }>
   );
 };
 
-export const Trial: React.FC<TrialProps> = ({ data, platform }) => {
+export const Trial: React.FC<TrialProps> = ({ data, platform, cast }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   if (!data) throw new Error("no trial data: calculateMetadata did not run");
@@ -679,13 +682,13 @@ export const Trial: React.FC<TrialProps> = ({ data, platform }) => {
       <AbsoluteFill style={{ transform: `scale(${zoom})`, transformOrigin: `50% ${(horizon / H) * 100}%` }}>
         <Clip src={data.clip} clipSeconds={data.clip_seconds} picture={picture} />
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: "absolute", inset: 0 }}>
-          <Drawing t={t} show={show} since={since} horizon={horizon} phrase={phrase} />
+          <Drawing t={t} show={show} since={since} horizon={horizon} phrase={phrase} cast={cast} />
         </svg>
       </AbsoluteFill>
       <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(4,7,20,${0.78 * (picture.veil ?? 1)}) 0%, rgba(4,7,20,${0.45 * (picture.veil ?? 1)}) 30%, rgba(4,7,20,.05) 52%, rgba(4,7,20,.38) 100%)` }} />
       {Overlay ? (
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: "absolute", inset: 0 }}>
-          <Overlay t={t} show={show} since={since} horizon={horizon} phrase={phrase} />
+          <Overlay t={t} show={show} since={since} horizon={horizon} phrase={phrase} cast={cast} />
         </svg>
       ) : null}
       {data.ambience ? <Html5Audio src={staticFile(data.ambience)} /> : null}

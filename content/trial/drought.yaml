@@ -1,0 +1,71 @@
+# Série « une image, puis le verset » (content/trial/lens.yaml), épisode 2. La terre sèche, les nuages qui passent, la pluie : 42:28, as-Sa'di.
+# Le début est muet (`silent` : le texte à l'écran tenu `hold` secondes, des effets `sfx`), puis le verset récité, puis la
+# voix D : le sens et l'information juste d'après le tafsir nommé sous la réplique, puis l'appel au partage. Deux dessins,
+# `pov` et `figure` (video/src/trial/Lens.tsx) ; une silhouette anonyme sans visage seulement (règle du propriétaire, 2026-11-15).
+# Script écrit par la session le 2026-11-15, à valider par le propriétaire.
+id: drought
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 72-trial-drought     # content/voice-test/<text>.txt : les répliques dites par la voix (pas celles du début muet)
+# Un fond de nuit dessiné par ffmpeg (tools/trial/clip.py) : le ciel, la ville, la terre et la pièce sont dessinés dessus.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1280, veil: 0.55 }
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 70, level: -36 }
+cover: { scene: wait, title: "مستني حاجة… ومش بتيجي؟", tag: "بص تاني · ٢", focus: 1100 }
+publish:
+  title: { en: "Waiting for something that never comes?", ar: "مستني حاجة… ومش بتيجي؟" }
+  part: 2
+  hashtags: ["#الفرج", "#سورة_الشورى"]
+  description:
+    en: "A dry land, a seed, clouds that pass without rain… until you say: it's not coming. The verse: He sends down the rain after they had despaired (42:28). As-Sa'di: it had stopped so long they thought it would never come."
+    ar: "أرض ناشفة، وبذرة، وسحاب بيعدّي من غير مطر… لحد ما تقول: مش جاي. والآية: ربنا بينزّل الغيث من بعد ما قنطوا (الشورى 28)."
+segments:
+  - narration: hook
+    silent: true
+    hold: 2.4
+    scene: wait
+    lines:
+      - ar: "مستني حاجة… ومش بتيجي؟"
+        en: "Waiting for something that never comes?"
+  - narration: pass
+    silent: true
+    hold: 2.4
+    scene: pass
+    sfx: [[whoosh, 0.1]]
+    lines:
+      - ar: "سحابة عدّت… من غير مطر."
+        en: "A cloud passed… no rain."
+  - narration: again
+    silent: true
+    hold: 2.2
+    scene: again
+    sfx: [[whoosh, 0.1]]
+    lines:
+      - ar: "وسحابة كمان…"
+        en: "And another…"
+  - narration: gave
+    silent: true
+    hold: 2.6
+    scene: gave
+    sfx: [[impact, 2.0]]
+    lines:
+      - ar: "لحد ما قلت: خلاص… مش جاي."
+        en: "Until you said: that's it… it's not coming."
+  - verse: quran.42.28
+    scene: rain
+  - narration: meaning
+    scene: rain
+    sources: [tafsir.saadi.42.28]
+    lines:
+      - ar: "يعني: المطر كان اتقطع عنهم مدة… لحد ما ظنوا إنه مش جاي."
+        en: "Meaning: the rain had stopped for so long… they thought it would never come."
+      - ar: "ويئسوا… وساعتها ربنا نزّله."
+        en: "They gave up hope… and that is when God sent it down."
+      - ar: "وهو الولي… اللي بيتولّى أمور عباده… ويدبّرها."
+        en: "And He is the Protector… who takes charge of His servants' affairs… and arranges them."
+  - narration: share
+    scene: green
+    lines:
+      - ar: "السحابة اللي عدّت… ما كانتش آخر سحابة."
+        en: "The cloud that passed… was not the last cloud."
+      - ar: "ابعتها لحد… مستني حاجة من زمان."
+        en: "Send it to someone who has been waiting a long time."

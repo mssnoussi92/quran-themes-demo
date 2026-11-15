@@ -14,9 +14,12 @@ window lit, a wall about to fall). Read the three drawings before you draw: `vid
 
 ## What may be drawn
 
-- **Things and places only.** Nobody: not a prophet, not a Companion, not a known person (mandatory
-  rule), and in this model not an unnamed person either. A father and a mother are a house with a lit
-  window; two orphans are the glow of what is kept for them; a king is his ships on the horizon.
+- **Things and places**, and never a prophet, a Companion or a known person (mandatory rule). The people of a
+  story of the Quran or of a hadith are real people: not drawn either. A father and a mother are a house with
+  a lit window; two orphans are the glow of what is kept for them; a king is his ships on the horizon.
+- **An anonymous person** (a typical scene, the viewer) may be a silhouette or a stick figure with no face
+  (owner, 2026-11-15: « une silhouette ou un stickman pour les inconnus, j'autorise »): black, backlit like the
+  rest of the drawing, a round head, no eyes, no mouth, no clothes that name anyone.
 - **Never the act of a killing**, never paradise, hell, the Last Day or an angel (mandatory rule):
   the text and the recitation carry those.
 - A living creature only when the text names it and it is not a person (the sparrow of Bukhari 3401

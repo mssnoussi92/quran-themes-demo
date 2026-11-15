@@ -25,7 +25,7 @@ const load = async (trial: string, voice: string, signal: AbortSignal) => {
 /** The picture of a short at one of its scenes: its clip, what is drawn over it, the same veil as in the video.
  * `cover.at`: the second of the clip, as the short plays it, that the cover shows (the sun of the first short of
  * Dhul-Qarnayn is above the frame when the clip starts, and low over the water a minute and a half later). */
-const Scene: React.FC<{ data: TrialData; scene: string }> = ({ data, scene }) => {
+const Scene: React.FC<{ data: TrialData; scene: string; cast?: string }> = ({ data, scene, cast }) => {
   const picture = data.picture ?? {};
   const { fps } = useVideoConfig();
   const Drawing = PICTURES[data.trial];
@@ -36,7 +36,7 @@ const Scene: React.FC<{ data: TrialData; scene: string }> = ({ data, scene }) =>
         <Clip src={data.clip} clipSeconds={data.clip_seconds} picture={picture} />
       </Sequence>
       <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: "absolute", inset: 0 }}>
-        <Drawing t={2} show={(id) => (id === scene ? 1 : 0)} since={() => 0} horizon={picture.horizon ?? 1300} />
+        <Drawing t={2} show={(id) => (id === scene ? 1 : 0)} since={() => 0} horizon={picture.horizon ?? 1300} cast={cast} />
       </svg>
     </AbsoluteFill>
   );
@@ -48,12 +48,12 @@ const Tag: React.FC<{ text: string; size: number }> = ({ text, size }) => (
   </div>
 );
 
-export type CoverProps = { trial: string; voice: string; data: TrialData | null };
+export type CoverProps = { trial: string; voice: string; cast?: string; data: TrialData | null };
 export const coverMetadata: CalculateMetadataFunction<CoverProps> = async ({ props, abortSignal }) => ({
   props: { ...props, data: await load(props.trial, props.voice, abortSignal) },
 });
 
-export const TrialCover: React.FC<CoverProps> = ({ data }) => {
+export const TrialCover: React.FC<CoverProps> = ({ data, cast }) => {
   if (!data) throw new Error("no trial data: calculateMetadata did not run");
   if (!data.cover) throw new Error(`content/trial/${data.trial}.yaml has no cover`);
   const { scene, title, tag } = data.cover;
@@ -61,7 +61,7 @@ export const TrialCover: React.FC<CoverProps> = ({ data }) => {
   const veil = data.picture?.veil ?? 1;      // a picture in full daylight keeps a day sky behind its title
   return (
     <AbsoluteFill style={{ background: "#04070f" }}>
-      <Scene data={data} scene={scene} />
+      <Scene data={data} scene={scene} cast={cast} />
       <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(4,7,20,${0.82 * veil}) 0%, rgba(4,7,20,${0.62 * veil}) 34%, rgba(4,7,20,.06) 56%, rgba(4,7,20,.45) 100%)` }} />
       <div style={{ position: "absolute", top: 450, left: 50, right: 50, textAlign: "center" }}>
         <Tag text={tag} size={50} />
