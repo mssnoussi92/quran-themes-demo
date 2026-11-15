@@ -1,0 +1,69 @@
+# Les gens de la caverne (film `kahf`), short 3 : le réveil (18:19 jusqu'à « لبثنا يوما أو بعض يوم ۚ », puis 18:25). Version
+# courte (refuge.yaml).
+# - L'accroche dit le fait que le verset récite ensuite (comme la barque) : 309 ans, qu'ils prennent pour un jour.
+#   al-Muyassar sur 18:25 : « ثلاثمائة سنة وتسع سنين » (il ajoute « قمرية » : nos répliques n'en disent rien, et le
+#   calcul « 300 solaires = 309 lunaires » reste écarté, docs/themes.md).
+# - La leçon : Bukhari 6324, lu par une vraie voix, ce que le Prophète ﷺ disait en se réveillant (« الحمد لله الذي أحيانا
+#   بعد ما أماتنا وإليه النشور ») ; il est déjà au registre, validé, avec sa lecture.
+# - La fin : la phrase à retenir répond à la promesse (« كل يوم الصبح »), puis l'appel générique. Le résumé des trois
+#   parties (« دعوة في كهف… ») est dans le film seul : la place manque dans un short d'une minute.
+# - Images (personne, jamais les jeunes) : `years` l'entrée de la caverne, les jours et les nuits qui défilent, un
+#   compteur en or ; `wake` la lumière entre dans la caverne ; `dawn` le soleil se lève sur la ville ancienne.
+id: awake
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 76-trial-awake
+cover: { scene: years, title: "٣٠٩ سنين… وفاكرينها يوم!", tag: "أصحاب الكهف · ٣ من ٣", focus: 1200 }
+publish:
+  title: { en: "309 years… and they thought it was a day!", ar: "٣٠٩ سنين… وفاكرينها يوم!" }
+  part: 3
+  hashtags: ["#أذكار_الصباح", "#قصص_القرآن"]
+  description:
+    en: "The People of the Cave slept three hundred and nine years and woke up thinking it had been a day. Every morning, you too wake from a sleep: what the Prophet ﷺ said as soon as he woke."
+    ar: "أصحاب الكهف ناموا تلتمية وتسع سنين، وصحيوا فاكرينها يوم. وإنت كمان كل يوم الصبح بتصحى من نومة: اللي كان النبي صلى الله عليه وسلم بيقوله أول ما يصحى."
+  hook:      # légende courte de Facebook, Instagram et TikTok : proposée, à valider par le propriétaire
+    ar: "ناموا تلتمية وتسع سنين… وصحيوا فاكرينها يوم."
+    en: "They slept three hundred and nine years… and woke up thinking it was a day."
+segments:
+  - narration: open
+    scene: years
+    sources: [tafsir.muyassar.18.25]
+    lines:
+      - ar: "ناموا تلتمية وتسع سنين… وصحيوا فاكرينها يوم! إزاي؟"
+        en: "They slept three hundred and nine years… and woke up thinking it was a day! How?"
+      - ar: "دول أصحاب الكهف… وفي صحيانهم… حاجة بتحصلك إنت كل يوم الصبح."
+        en: "These are the People of the Cave… and in their waking… is something that happens to you every morning."
+  - verses: [quran.18.19]
+    upto: 15            # jusqu'au premier arrêt après « لبثنا يوما أو بعض يوم ۚ » (17,9 s)
+    scene: wake
+  - narration: turn
+    scene: wake
+    lines:
+      - ar: "والمدة الحقيقية… ربنا قالها:"
+        en: "And how long it really was… God told us:"
+  - verse: quran.18.25
+    scene: years
+  - narration: depth
+    scene: dawn
+    sources: [hadith.bukhari.6324]
+    lines:
+      - ar: "وكل صحيان… رجوع بعد نومة."
+        en: "Every waking… is a return after sleep."
+      - ar: "والنبي صلى الله عليه وسلم… كان أول ما يصحى يقول:"
+        en: "And the Prophet ﷺ… as soon as he woke, would say:"
+  - reading: hadith.bukhari.6324
+    scene: dawn
+  - narration: example
+    scene: dawn
+    lines:
+      - ar: "وإحنا… أول ما نصحى بنمسك الموبايل."
+        en: "And us… the moment we wake, we reach for the phone."
+      - ar: "قبل أي حاجة… قول الدعاء ده… واحمد ربنا إنه رجّعك."
+        en: "Before anything… say this prayer… and thank God for bringing you back."
+  - narration: close
+    scene: dawn
+    lines:
+      - ar: "بكرة الصبح… افتكر أصحاب الكهف."
+        en: "Tomorrow morning… remember the People of the Cave."
+      - ar: "تابعنا عشان القصة الجاية."
+        en: "Follow us for the next story."

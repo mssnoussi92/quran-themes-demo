@@ -106,7 +106,8 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
   écrits à l'écran, `claim`, `checked` : les pages où la session a vérifié le fait) : une narration peut reposer
   dessus (`sources:`), jamais un verset ni une lecture.
 - `upto: N` sur un segment `verses` d'un seul verset : il n'en récite que les N premiers mots, jusqu'à un signe de
-  pause (la signature : 41:53 jusqu'à « أنه الحق ۗ »).
+  pause (la signature : 41:53 jusqu'à « أنه الحق ۗ ») ; dans un short comme dans un film (`film.py`, 2026-11-15 : le film de la caverne
+  s'arrête dans 18:21 avant la mosquée bâtie sur eux).
 - `silent: true` sur un segment de narration (le début rapide de « خريطة كلمة », demande du propriétaire, 2026-11-14) :
   la réplique est écrite à l'écran, aucune voix ne la dit, elle n'est pas dans le texte de la voix ; minutée d'après sa
   longueur, comme un brouillon, et `hold: N` la tient au moins N secondes, le temps de la lire.

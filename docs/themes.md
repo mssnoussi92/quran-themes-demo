@@ -981,6 +981,20 @@ personne), la narration qui raconte puis récite, un premier reel qui ne fait qu
   l'entrée d'une caverne, le silence et les gouttes, les oiseaux du matin). **Voix** : quatre requêtes, une journée.
   **Rendu** : workflow `film`.
 
+**Version courte, choisie par le propriétaire le 2026-11-15** (« la caverne, version courte », puis « oui, ce plan »),
+après les premières mesures (`docs/retention.md` : sur Facebook et Instagram on part en 4 à 8 s ; YouTube retient) : un
+verset court par short, 60 à 75 s, une image qui bouge dès la première seconde ; le reste va au film, pour YouTube.
+
+| Short | Verset (récitation) | Ce qu'il dit | Estimé |
+| --- | --- | --- | --- |
+| 1. `refuge` | 18:10 (14 s) | la fuite et la du'a ; la leçon d'as-Sa'di : l'effort et la demande, sans compter sur soi | 1:15 |
+| 2. `sunpath` | 18:17 (31 s) | le soleil qui s'écarte, l'air qui passe : la réponse à leur du'a jusque dans ces détails (as-Sa'di) | 1:16 |
+| 3. `awake` | 18:19 jusqu'à « بعض يوم ۚ » (18 s), 18:25 (7 s), Bukhari 6324 lu | 309 ans pris pour un jour ; la du'a du réveil, chaque matin | 1:11 |
+
+Le film `kahf` (6:24 estimé) ajoute le cadre (Muslim 809a, 18:9), la conclusion (18:21 coupé avant la mosquée bâtie sur
+eux, 18:22, 18:26) et la phrase d'as-Sa'di sur 18:21 : « ومن أوى إلى الله، آواه الله ». Script : `docs/scripts/kahf.md`,
+envoyé au propriétaire le 2026-11-15, à valider avant toute voix.
+
 ## Choisis par le propriétaire (2026-11-07), dans l'ordre
 
 Le propriétaire a partagé des fiches de thèmes (الخشوع، الخوف والشعور بالعجز، فخ المقارنات، التوبة والخجل

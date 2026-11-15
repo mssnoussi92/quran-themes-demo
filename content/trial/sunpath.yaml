@@ -1,0 +1,64 @@
+# Les gens de la caverne (film `kahf`), short 2 : le soleil qui s'écarte d'eux (18:17). Version courte (refuge.yaml).
+# - Le sens (al-Muyassar) : « وهم في متسع من الكهف، فلا تؤذيهم حرارة الشمس ولا ينقطع عنهم الهواء ».
+# - La leçon (as-Sa'di) : « وذلك من آيات الله الدالة على قدرته ورحمته بهم، وإجابة دعائهم وهدايتهم حتى في هذه الأمور » :
+#   la réponse à la du'a du short 1, jusque dans l'angle du soleil et l'air (« طلبوا رحمة… والرحمة جت… »).
+# - Répliques de la session sans tafsir : « وهما نايمين… مش حاسين بحاجة من دي » (ce qu'on ne voit pas), l'exemple (une
+#   scène type, « يمكن… » : rien n'est promis), la phrase à retenir. Pas d'annonce du short 3 : la place manque.
+# - Le chien (18:18) n'est ni dit ni dessiné ici : son verset n'est pas récité dans le short.
+# - Images (personne, jamais les jeunes) : `rise` le soleil se lève à droite de l'entrée, son rayon glisse sans entrer ;
+#   `path` le soleil traverse le ciel pendant le verset et se couche à gauche ; `inside` l'intérieur large, la lumière qui
+#   reste au bord, un souffle qui fait bouger la poussière.
+id: sunpath
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 75-trial-sunpath
+cover: { scene: rise, title: "الشمس كانت بتميل عنهم!", tag: "أصحاب الكهف · ٢ من ٣", focus: 1200 }
+publish:
+  title: { en: "The sun turned away from them, every day!", ar: "الشمس كانت بتميل عنهم!" }
+  part: 2
+  hashtags: ["#الدعاء", "#قصص_القرآن"]
+  description:
+    en: "Every day the sun rose and turned away from the cave where the young men slept, and set without touching them, while they lay in a wide space where the air kept reaching them. They had asked for mercy, and the answer came even in the angle of the sun."
+    ar: "كل يوم الشمس تطلع وتميل عن الكهف اللي الشباب نايمين فيه، وتغرب من غير ما تلمسهم، وهما في مكان واسع والهوا واصلهم. طلبوا رحمة… والإجابة جت حتى في زاوية الشمس."
+  hook:      # légende courte de Facebook, Instagram et TikTok : proposée, à valider par le propriétaire
+    ar: "طلبوا رحمة… والإجابة جت في زاوية الشمس."
+    en: "They asked for mercy… and the answer came in the angle of the sun."
+segments:
+  - narration: open
+    scene: rise
+    sources: [tafsir.muyassar.18.17]
+    lines:
+      - ar: "الشمس كل يوم تطلع… وتميل عن كهف… فيه شباب نايمين! ليه؟"
+        en: "Every day the sun rises… and turns away from a cave… where young men lie asleep! Why?"
+      - ar: "دول أصحاب الكهف… واللي حصلهم وهما نايمين… هيغيّر نظرتك لدعواتك."
+        en: "These are the People of the Cave… and what happened to them as they slept… will change how you see your prayers."
+  - verse: quran.18.17
+    scene: path
+  - narration: meaning
+    scene: inside
+    sources: [tafsir.muyassar.18.17]
+    lines:
+      - ar: "وهما في مكان واسع… لا حر الشمس بيأذيهم… ولا الهوا بيتقطع عنهم."
+        en: "They lay in a wide space… the sun's heat never harmed them… and the air never stopped reaching them."
+  - narration: depth
+    scene: inside
+    sources: [tafsir.saadi.18.17]
+    lines:
+      - ar: "طلبوا رحمة… والرحمة جت في زاوية الشمس… وفي نسمة هوا."
+        en: "They asked for mercy… and mercy came in the angle of the sun… and in a breath of air."
+      - ar: "وهما نايمين… مش حاسين بحاجة من دي."
+        en: "And asleep… they felt none of it."
+  - narration: example
+    scene: inside
+    lines:
+      - ar: "زي دعوة بقالك سنين بتدعيها… ومفيش حاجة اتغيرت."
+        en: "Like a prayer you've made for years… and nothing seems to have changed."
+      - ar: "يمكن إجابتها شغالة… في تفاصيل إنت مش شايفها."
+        en: "Maybe its answer is at work… in details you can't see."
+  - narration: close
+    scene: rise
+    lines:
+      - ar: "لما تستنى إجابة دعوة… افتكر شمس الكهف."
+        en: "When you're waiting for a prayer to be answered… remember the sun of the cave."
+      - ar: "تابعنا عشان تعرف بقية القصة."
+        en: "Follow us to find out the rest of the story."

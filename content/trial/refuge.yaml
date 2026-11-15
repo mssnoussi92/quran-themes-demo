@@ -1,0 +1,70 @@
+# Les gens de la caverne (film `kahf`), short 1 : la fuite et leur du'a (18:10). Version courte, choisie par le
+# propriétaire le 2026-11-15 (« la caverne, version courte » ; « oui, ce plan ») : un verset court par short, environ 60 à
+# 75 s, une image qui bouge dès la première seconde ; le reste de l'histoire va au film, pour YouTube. Pourquoi : les
+# premières mesures (docs/retention.md, 2026-11-15) : sur Facebook et Instagram, on part au bout de 4 à 8 s.
+# - Le fait : ils quittent leur ville pour une caverne ; pourquoi (al-Muyassar : « خشية من فتنة قومهم لهم، وإرغامهم على
+#   عبادة الأصنام ») ; ce qu'ils demandent (al-Muyassar : « رحمة، تثبتنا بها، وتحفظنا من الشر، ويسِّر لنا الطريق الصواب »).
+# - La leçon (as-Sa'di) : « فجمعوا بين السعي والفرار من الفتنة… وبين تضرعهم وسؤالهم لله… وعدم اتكالهم على أنفسهم وعلى
+#   الخلق، فلذلك استجاب الله دعاءهم ».
+# - Répliques de la session sans tafsir : l'exemple (une scène type), la phrase à retenir, l'annonce du short 2.
+# - La du'a n'est pas dite par notre voix : la réplique donne sa référence (« سورة الكهف، آية عشرة »).
+# - Images (personne, jamais les jeunes ; rien de l'invisible) : `leave` la ville la nuit derrière, des traces de pas qui
+#   s'en éloignent vers la colline ; `cave` les traces entrent dans la caverne ; `dawn` le jour se lève sur l'entrée.
+id: refuge
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 74-trial-refuge
+cover: { scene: leave, title: "سابوا مدينتهم… واستخبّوا في كهف!", tag: "أصحاب الكهف · ١ من ٣", focus: 1200 }
+publish:
+  title: { en: "They left their city… and hid in a cave!", ar: "سابوا مدينتهم… واستخبّوا في كهف!" }
+  part: 1
+  hashtags: ["#الثبات", "#قصص_القرآن"]
+  description:
+    en: "Young men left their city and their homes to hide in a cave, because their people wanted to force them to worship idols. They went in with a single prayer. They did their part, and asked God for the rest."
+    ar: "شباب سابوا مدينتهم وبيوتهم واستخبّوا في كهف، عشان قومهم كانوا عايزين يجبروهم يعبدوا أصنام. ودخلوا بدعوة واحدة… عملوا اللي عليهم، وطلبوا الباقي من ربنا."
+  hook:      # légende courte de Facebook, Instagram et TikTok : proposée, à valider par le propriétaire
+    ar: "سابوا مدينتهم… واستخبّوا في كهف بدعوة واحدة."
+    en: "They left their city… and hid in a cave with a single prayer."
+segments:
+  - narration: open
+    scene: leave
+    sources: [tafsir.muyassar.18.10]
+    lines:
+      - ar: "شباب سابوا مدينتهم… وبيوتهم… واستخبّوا في كهف! ليه؟"
+        en: "Young men left their city… their homes… and hid in a cave! Why?"
+      - ar: "قومهم كانوا عايزين يجبروهم يعبدوا أصنام… فهربوا بدينهم."
+        en: "Their people wanted to force them to worship idols… so they fled with their faith."
+      - ar: "ودخلوا الكهف بدعوة واحدة… دعوة لكل واحد حاسس إنه لوحده."
+        en: "They went into the cave with a single prayer… a prayer for anyone who feels alone."
+  - verse: quran.18.10
+    scene: cave
+  - narration: meaning
+    scene: cave
+    sources: [tafsir.muyassar.18.10]
+    lines:
+      - ar: "طلبوا من ربنا رحمة… تثبّتهم وتحفظهم… وإنه يدلّهم على الطريق الصح."
+        en: "They asked God for mercy… to keep them firm and safe… and to show them the right path."
+  - narration: depth
+    scene: cave
+    sources: [tafsir.saadi.18.10]
+    lines:
+      - ar: "عملوا اللي عليهم: بعدوا عن الفتنة… وطلبوا الباقي من ربنا."
+        en: "They did their part: they got away from those who would turn them from their faith… and asked God for the rest."
+      - ar: "ما اعتمدوش على نفسهم… ولا على حد. وعشان كده… ربنا استجاب لهم."
+        en: "They relied neither on themselves… nor on anyone. And that is why… God answered them."
+  - narration: example
+    scene: cave
+    lines:
+      - ar: "زي لما تبقى الوحيد في الشلة… اللي رافض حاجة غلط."
+        en: "Like being the only one in your group… saying no to something wrong."
+      - ar: "ابعد خطوة… واطلب من ربنا يثبّتك."
+        en: "Step away… and ask God to keep you firm."
+  - narration: close
+    scene: dawn
+    lines:
+      - ar: "ولما تحس إنك لوحدك… ادعي بدعوتهم: سورة الكهف، آية عشرة."
+        en: "And when you feel alone… pray their prayer: Surat al-Kahf, verse ten."
+      - ar: "دخلوا الكهف… وناموا. واللي حصل وهما نايمين… أغرب."
+        en: "They went into the cave… and slept. And what happened while they slept… is stranger."
+      - ar: "تابعنا عشان تعرف بقية القصة."
+        en: "Follow us to find out the rest of the story."

@@ -256,6 +256,12 @@ def main() -> None:
                 body += [f"**{stamp(t)} · narration propre au film**" + (" · **rappel d'abonnement**" if seg.get("subscribe") else ""), *narration(seg["lines"]), ""]
                 own_new += sum(1 for l in seg["lines"] if not l.get("kept"))
                 own_kept += sum(1 for l in seg["lines"] if l.get("kept"))
+            elif "verses" in seg:
+                text, seconds = passage(seg["verses"], sources, cuts, seg.get("upto"))
+                first = text.split("  \n")[0]
+                in_short = any(s.get("verses") == seg["verses"] and s.get("upto") == seg.get("upto") for sp in shorts.values() for s in sp["segments"])
+                body += [f"- {stamp(t)} · {first}"] if in_short else [f"**{stamp(t)}** · {text}", ""]
+                recited += seconds
             else:
                 text, seconds = quote(seg.get("verse") or seg["reading"], sources, cuts)
                 first = text.split("  \n")[0]

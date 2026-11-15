@@ -118,6 +118,10 @@ def prepare(args) -> None:
                 made = take(name).segment(narration, seg.get("lines"), wav)
             elif "narration" in seg:
                 made = takes[fid].segment(seg["narration"], None, wav)
+            elif "verses" in seg and recited is None:
+                # Verses recited in one piece, or one verse cut at a pause sign (`upto`), as in a short: the film of
+                # the cave stops 18:21 before the building over them (tafsir.muyassar.18.21).
+                made = sources.passage(seg["verses"], out_dir, seg.get("upto"))
             elif "verse" in seg:
                 made = P.verse_segment(recited, seg["verse"], out_dir, episode_name) if recited is not None else sources.verse(seg["verse"], out_dir)
             elif read is None:
