@@ -120,6 +120,11 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
   marche) ; `tools/trial/videos.py` liste chaque short dans chaque dessin (`…-blackout-pov.mp4`,
   `…-blackout-figure.mp4`). La page et les textes à coller ne savent pas encore en montrer deux : à faire quand
   le propriétaire aura choisi.
+- `cut: {drop: [...]}` dans le fichier d'un short : la version courte pour Facebook et Instagram (60 à 75 s), la même
+  prise de voix, les mêmes versets et images, moins ce que `drop` nomme : un segment de narration (`depth`), une
+  réplique (`"close:2"`, indice à partir de 0) ou un verset (son id) ; un élément qui ne correspond à rien est une
+  erreur. `prepare.py --cut` écrit `<id>-<voix>-cut.json` (`"version": "cut"`) et des fichiers en `-cut` ; `videos.py`
+  ajoute la vidéo `…-cut` (props `"version":"cut"`), jamais pour TikTok ni YouTube.
 - `OVERLAYS` et `LAYOUTS` de `video/src/trial/Trial.tsx` : ce qu'un short dessine au-dessus du voile sans bouger
   (le badge de la série, la frise des dates) et où ses textes se placent ; les dessins, photos et frises de la série
   sont dans `video/src/trial/Signs.tsx`.

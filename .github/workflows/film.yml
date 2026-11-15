@@ -208,6 +208,11 @@ jobs:
             uv run --with pyyaml python3 tools/trial/clip.py --trial "$id" --out "build/clips/$id.mp4"
             uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py \
               --trial "$id" --voice "$VOICE" --takes content/trial/takes --clip "build/clips/$id.mp4" "${flags[@]}"
+            # The short version for Facebook and Instagram (`cut` in the file): same take, same clip.
+            if [ "$(uv run --with pyyaml python3 -c "import sys, yaml; print('cut' if yaml.safe_load(open(sys.argv[1])).get('cut') else '')" "content/trial/$id.yaml")" = cut ]; then
+              uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py \
+                --trial "$id" --voice "$VOICE" --takes content/trial/takes --clip "build/clips/$id.mp4" "${flags[@]}" --cut
+            fi
             echo "::endgroup::"
           done
 

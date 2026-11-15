@@ -77,6 +77,9 @@ def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]
                 videos.append({"name": name + bed, "composition": "Trial916", "props": compact(props), "timeline": timeline, "kind": "short"})
             videos.append({"name": f"{name}-tiktok{bed}", "composition": "Trial916", "props": compact({**props, "platform": "tiktok"}),
                            "timeline": timeline, "kind": "tiktok"})
+            if spec.get("cut") and only != "tiktok":     # the short version for Facebook and Instagram (prepare.py --cut)
+                videos.append({"name": f"{name}-cut{bed}", "composition": "Trial916", "props": compact({**props, "version": "cut"}),
+                               "timeline": f"video/public/trial/{spec['id']}-{voice}-cut.json", "kind": "cut"})
             if only != "tiktok":
                 cover = (spec.get("cover") or {}).get("file", f"{name}-cover.jpg") if not cast else f"{name}-cover.jpg"
                 stills.append({"name": cover, "composition": "TrialCover916", "props": compact(props), "frame": STILL_FRAME, "kind": "cover"})
