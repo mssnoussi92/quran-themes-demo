@@ -243,6 +243,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 114. **« آية وحكايتها » 4 validé** (propriétaire, 2026-11-15 : « je valide tout »). Seule chose qui attendait son mot, et aucune requête de voix n'en dépendait : lu comme le short tel que livré (voix, avec les deux mots signalés à écouter ; dessins, ambiance, couverture), ses textes et ses cinq sources ; dit dans la réponse. Inscrit : `validated` de `forgive.yaml` ; 24:22, Bukhari 4750, al-Muyassar, as-Sa'di et Ibn Kathir sur 24:22 passés à `validated` (textes identiques à l'API). `publish.py` date maintenant chaque jour de validation d'une série dont un short a été ajouté plus tard (« le 2026-11-12 et le 2026-11-15 ») ; les textes des autres films n'en changent pas. Calendrier : le 11 décembre a sa vidéo et ses textes. Page republiée (version 1794743180-6f22).
 
+115. **Deux reels Facebook analysés** (propriétaire, 2026-11-15 : « analyse ces vidéos »). Deux reels animés d'un même gabarit (le train, 33 s ; l'arc, 24 s) : une question sur ce qu'on ressent, une métaphore montrée sans voix, le verset écrit à la fin (65:3, 94:5-6), un appel au partage, une boucle. Analyse : `reference/fb-metaphor-reels-analysis.md`. Ce qui ne va pas avec nos règles : un personnage dessiné (anonyme, mais le modèle n'en dessine aucun), un sens que nos tafsirs ne donnent pas (« التأخير حماية » ; « إلى أبعد مما تخيل »), le verset écrit et non récité, une musique continue. Recommandation : un pilote court (environ 30 s) dans nos règles, sans voix de synthèse, avec la métaphore en choses, le verset récité et l'appel au partage, à comparer aux shorts longs une fois les mesures là.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```

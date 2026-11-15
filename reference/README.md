@@ -7,3 +7,4 @@ Règle du dossier : **texte seulement**. Le dépôt est public : aucune capture,
 | Fichier | Vidéo | Durée |
 | --- | --- | --- |
 | [dua-video-analysis.md](dua-video-analysis.md) | Vidéo animée en dialecte égyptien sur le du'a (vue sur Facebook, ré-upload d'une chaîne non identifiée) | 12 min 11 s |
+| [fb-metaphor-reels-analysis.md](fb-metaphor-reels-analysis.md) | Deux reels animés « une image, puis le verset » (le train, l'arc), vus sur Facebook le 15 novembre 2026 | 33 s et 24 s |
