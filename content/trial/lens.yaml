@@ -6,7 +6,7 @@
 # depuis ce jour) ; le nom de la série : à choisir par lui parmi ceux que la session propose.
 # Chaque épisode : une métaphore en mouvement, muette (`silent`, `hold`, `sfx`), le verset récité sur sa scène, notre méthode
 # (le sens et l'information juste d'après un tafsir nommé sous la réplique, la voix D), l'appel au partage. Dessins :
-# video/src/trial/Lens.tsx. Rien n'est validé.
+# video/src/trial/Lens.tsx. Script, nom et deux dessins validés le 2026-11-15 (voir les épisodes).
 id: lens
 files: lens                      # début du nom des vidéos livrées : lens-short-<n>-<id>-<cast>.mp4
 title: { ar: "بص تاني", en: "Look Again" }        # proposé par la session ; « oui je valide les 3 » du propriétaire (2026-11-15)
