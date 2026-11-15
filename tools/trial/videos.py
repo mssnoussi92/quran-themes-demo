@@ -15,7 +15,8 @@ or `<name>-cover.jpg`) and the film's thumbnail (TrialThumb169, `thumbnail.file`
 both taken at frame 45.
 
 --only: all (default); shorts (the shorts, their TikTok twins, their covers); film (the film and its thumbnail);
-tiktok (the TikTok twins only); or one short's id (that short, its twin and its cover); tall: the film in 9:16
+tiktok (the TikTok twins only); cut (the short versions only, of the shorts whose file has `cut`: added to
+the draft release, nothing validated rendered again); or one short's id (that short, its twin and its cover); tall: the film in 9:16
 (`<files>-film-9x16`, TrialFilm916: the same timeline laid out as the shorts are, for the platforms whose player is
 vertical). The vertical film is asked for by name and is never part of `all`: a film's validated videos stay what
 they are.
@@ -51,8 +52,8 @@ def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]
     shorts = [load(name) for name in film.get("shorts") or film["thumbnail"]["panels"]]
     ids = [s["id"] for s in shorts]
     has_film = "chapters" in film               # a series (a file with `shorts`, no chapters) has no film
-    if only not in ("all", "shorts", "film", "tall", "tiktok") and only not in ids:
-        sys.exit(f"error: --only {only}: not all, shorts, film, tall, tiktok or one of {', '.join(ids)}")
+    if only not in ("all", "shorts", "film", "tall", "tiktok", "cut") and only not in ids:
+        sys.exit(f"error: --only {only}: not all, shorts, film, tall, tiktok, cut or one of {', '.join(ids)}")
     if only == "tall":
         if not has_film:
             sys.exit(f"error: --only tall: {film_id} is a series, it has no film")
@@ -67,20 +68,21 @@ def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]
     # cast at the end of the name: lens-short-1-blackout-pov.mp4, lens-short-1-blackout-figure.mp4.
     casts = film.get("casts") or [None]
     for spec in shorts:
-        if only == "film" or only in ids and only != spec["id"]:
+        if only == "film" or only in ids and only != spec["id"] or only == "cut" and not spec.get("cut"):
             continue
         for cast in casts:
             name = f"{files}-short-{spec['publish']['part']}-{spec['id']}" + (f"-{cast}" if cast else "")
             props = {"trial": spec["id"], "voice": voice, "data": None, **({"cast": cast} if cast else {})}
             timeline = f"video/public/trial/{spec['id']}-{voice}.json"
-            if only != "tiktok":
+            if only not in ("tiktok", "cut"):
                 videos.append({"name": name + bed, "composition": "Trial916", "props": compact(props), "timeline": timeline, "kind": "short"})
-            videos.append({"name": f"{name}-tiktok{bed}", "composition": "Trial916", "props": compact({**props, "platform": "tiktok"}),
-                           "timeline": timeline, "kind": "tiktok"})
+            if only != "cut":
+                videos.append({"name": f"{name}-tiktok{bed}", "composition": "Trial916", "props": compact({**props, "platform": "tiktok"}),
+                               "timeline": timeline, "kind": "tiktok"})
             if spec.get("cut") and only != "tiktok":     # the short version for Facebook and Instagram (prepare.py --cut)
                 videos.append({"name": f"{name}-cut{bed}", "composition": "Trial916", "props": compact({**props, "version": "cut"}),
                                "timeline": f"video/public/trial/{spec['id']}-{voice}-cut.json", "kind": "cut"})
-            if only != "tiktok":
+            if only not in ("tiktok", "cut"):
                 cover = (spec.get("cover") or {}).get("file", f"{name}-cover.jpg") if not cast else f"{name}-cover.jpg"
                 stills.append({"name": cover, "composition": "TrialCover916", "props": compact(props), "frame": STILL_FRAME, "kind": "cover"})
     if only in ("all", "film") and has_film:
@@ -105,7 +107,8 @@ def main() -> int:
     if args.ids:
         spec = load(args.film)
         ids = [name for name in spec.get("shorts") or spec["thumbnail"]["panels"]]
-        print(" ".join([args.only] if args.only in ids else ids))
+        # --only cut: the shorts that have a short version (`cut`), alone.
+        print(" ".join([args.only] if args.only in ids else [i for i in ids if load(i).get("cut")] if args.only == "cut" else ids))
         return 0
     videos, stills = listing(args.film, args.voice, args.only)
     rows = stills if args.stills else videos

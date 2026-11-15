@@ -86,3 +86,13 @@ def test_open_with_puts_the_named_segments_first():
 def test_open_with_a_segment_not_kept_is_refused(name, dropped):
     with pytest.raises(SystemExit, match="open_with"):
         prepare.opened_with({**SPEC, "cut": {"drop": ["x"], "open_with": [name]}}, dropped)
+
+
+def test_videos_only_cut_lists_the_short_versions_alone(tmp_path, monkeypatch):
+    for name, part, cut in (("a", 1, True), ("b", 2, False)):
+        spec = {"id": name, "publish": {"part": part}, **({"cut": {"drop": ["x"]}} if cut else {})}
+        (tmp_path / f"{name}.yaml").write_text(yaml.safe_dump(spec), encoding="utf-8")
+    (tmp_path / "f.yaml").write_text(yaml.safe_dump({"id": "f", "shorts": ["a", "b"]}), encoding="utf-8")
+    monkeypatch.setattr(videos, "TRIAL", tmp_path)
+    rows, stills = videos.listing("f", "D", "cut")
+    assert [r["name"] for r in rows] == ["f-short-1-a-cut"] and stills == []

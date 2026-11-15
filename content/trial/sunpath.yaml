@@ -11,6 +11,11 @@
 #   `path` le soleil traverse le ciel pendant le verset et se couche à gauche ; `inside` l'intérieur large, la lumière qui
 #   reste au bord, un souffle qui fait bouger la poussière.
 id: sunpath
+# « Je valide le script de la caverne » du propriétaire (2026-11-15, question à choix), après la page docs/scripts/kahf.md
+# avec les premières répliques des shorts 1 et 2 refaites à sa demande (« la question la plus forte d'abord ») : les
+# répliques, la place des versets (18:19 et 18:21 coupés), ce sur quoi chaque narration repose, les titres. Ni la voix,
+# ni les clips, ni les dessins, ni les ambiances, ni les textes, ni les sources proposées : il les valide sur la vidéo.
+script_validated: { by: mssnoussi92, on: 2026-11-15 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 75-trial-sunpath

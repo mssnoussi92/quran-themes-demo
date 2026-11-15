@@ -131,7 +131,8 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
   la couverture, « · version courte pour Facebook et Instagram : `<short>-cut.mp4`, 1:13 » ; `page-files` la rend
   publique avec les autres. La ligne garde sa forme : le premier `.mp4` reste le short entier (YouTube, TikTok), et un
   lecteur qui l'ignore publie le short entier partout, comme avant. quran-reels prend `-cut.mp4` pour Facebook et
-  Instagram quand la ligne en nomme un ; les textes sont les mêmes.
+  Instagram quand la ligne en nomme un ; les textes sont les mêmes. Pour la mettre dans la release brouillon sans rien re-rendre
+  de validé : workflow `film` avec `only: cut` (les seules versions courtes du film), puis `page-files`.
 - `OVERLAYS` et `LAYOUTS` de `video/src/trial/Trial.tsx` : ce qu'un short dessine au-dessus du voile sans bouger
   (le badge de la série, la frise des dates) et où ses textes se placent ; les dessins, photos et frises de la série
   sont dans `video/src/trial/Signs.tsx`.

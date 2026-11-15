@@ -10,6 +10,11 @@
 # - La conclusion (as-Sa'di sur 18:21) : « من فر بدينه من الفتن، سلمه الله منها… ومن أوى إلى الله، آواه الله ».
 # - Répliques de la session sans tafsir : l'ouverture, les liaisons, « وكام خناقة… ».
 id: kahf
+# « Je valide le script de la caverne » du propriétaire (2026-11-15, question à choix), après la page docs/scripts/kahf.md
+# avec les premières répliques des shorts 1 et 2 refaites à sa demande (« la question la plus forte d'abord ») : les
+# répliques, la place des versets (18:19 et 18:21 coupés), ce sur quoi chaque narration repose, les titres. Ni la voix,
+# ni les clips, ni les dessins, ni les ambiances, ni les textes, ni les sources proposées : il les valide sur la vidéo.
+script_validated: { by: mssnoussi92, on: 2026-11-15 }
 files: kahf                      # kahf-film-16x9.mp4, kahf-short-<n>-<id>.mp4
 title: { ar: "أصحاب الكهف… تلات مواقف", en: "The People of the Cave: three moments" }
 handle: "@quran_words_daily"

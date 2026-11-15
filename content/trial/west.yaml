@@ -49,10 +49,13 @@ publish:
 # prise, moins 18:86 (24 s, que l'accroche décrit déjà ; la question « يعاقب… ولا يحسن. اختار إيه؟ » le remplace), le
 # sens mot à mot, la profondeur et l'exemple. Proposée par la session ; sa réponse sur le premier essai (2026-11-15,
 # « oui pour la version courte, mais le hook doit partir d'abord », précisé : « la question d'abord, puis le reste ») :
-# la question « مصير قوم كاملين… اختار إيه؟ » ouvre la vidéo. Rien de ce montage n'est validé tant qu'il ne l'a pas vu.
+# la question « مصير قوم كاملين… اختار إيه؟ » ouvre la vidéo. Validée par lui le 2026-11-15 (question à choix : « je valide
+# la version courte de west »), telle qu'envoyée : 1:13, la question d'abord, puis le coucher de soleil, 18:87-88, la
+# leçon et l'appel.
 cut:
   drop: [quran.18.86, "meaning:0", depth, example]
   open_with: [turn]
+  validated: { by: mssnoussi92, on: 2026-11-15 }
 segments:
   - narration: open
     scene: sun
