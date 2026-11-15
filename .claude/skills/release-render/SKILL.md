@@ -29,6 +29,11 @@ reads an old episode in `verses`, is refused: it is rendered in the session (bel
 - **`from_run: <run id>`** (same `film`, `voice`, `only`): nothing is prepared or rendered, the draft is made
   again from that run's artifacts, in a minute. For a release step that failed, or texts to paste corrected
   after the render.
+- **A run of a part adds to the draft** (`only` other than `all` and `tall`, or `add: true`): its files go into
+  the draft already there, a file of the same name replaced, the others kept; `only: all` replaces the draft.
+  A new short of a series is rendered alone (`only: <id>`) without touching the shorts validated before it.
+  Before 2026-11-15 every run replaced the draft: `only: forgive` emptied `ayah-candidate` of its three validated
+  shorts, put back from their run with `from_run` and `add: true`.
 - **Check before the owner sees anything.** Download each video's artifact into the scratchpad
   (`actions_list` `list_workflow_run_artifacts`, then `actions_get` `download_workflow_run_artifact`: a
   temporary link, `curl -L -o`), read its `-check.txt`, open its sheets, and **look at a few frames at full

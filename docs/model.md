@@ -332,7 +332,7 @@ dit quoi faire.
    dépôt **`PIXABAY_API_KEY`**. **Mesuré sur le du'a** : préparation 6 min, un short 13 à 18 min, le film 65 min,
    le tout en 70 minutes ; les timelines sont celles de la session à la seconde près. **`from_run` = l'id d'un run** :
    rien n'est préparé ni rendu, la release brouillon est refaite avec les artefacts de ce run (gardés 7 jours), en
-   une minute : pour une étape de release qui a échoué, ou des textes à coller corrigés après le rendu.
+   une minute : pour une étape de release qui a échoué, ou des textes à coller corrigés après le rendu. **Un run d'une partie complète la release** (`only` autre que `all` et `tall`, ou `add: true`) : ses fichiers entrent dans la release brouillon déjà là, un fichier du même nom remplacé, les autres gardés ; `only: all` la remplace (depuis le 2026-11-15).
    **Ce qu'il ne fait pas** : préparer le premier film (qui lit ses versets dans un ancien épisode, `verses`) : le
    chemin par la session (commandes ci-dessus, skill `release-render`) reste pour lui, et en secours. **Une machine
    de rendu n'a pas les polices de la session** : un signe absent des polices du projet y sort en carré vide (vu sur
