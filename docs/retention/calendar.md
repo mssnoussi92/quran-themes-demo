@@ -123,19 +123,22 @@ et 3 de Moussa et al-Khadir la précèdent, le samedi et le dimanche.
 
 ## Les mesures
 
-**Quand** : 48 heures après chaque publication, et une seconde fois à 7 jours pour un film. Le plus simple : le jour
-où vous publiez une vidéo, envoyez la capture de celle d'avant-hier ; le lundi soir, envoyez aussi celle du film de la
-semaine d'avant. Pour Moussa et al-Khadir : le film samedi 14 au soir, le short 1 dimanche 15, le film à 7 jours jeudi
-19 au soir.
+**Quand** : Facebook, Instagram et YouTube, rien à envoyer. TikTok : quand vous voulez, dans n'importe quelle session.
+Le plus simple : une capture de la liste « Contenu » de TikTok Studio, une fois par semaine, le dimanche (Facebook,
+Instagram et YouTube sont relevés seuls). La page note le jour de chaque capture ; une capture tardive vaut mieux
+qu'aucune.
 
-**Facebook et Instagram : relevés seuls** depuis la PR #61 de quran-reels (2026-11-15, une fois fusionnée) : chaque nuit,
-à 48 heures, 7 et 28 jours, sur la page « Statistiques » (https://mssnoussi92.github.io/quran-reels/catalog/stats.html),
-les reels et les vidéos de ce fichier côte à côte (reconnues par la première ligne de leur légende, le titre de leur
-section dans `publication-*.md`). **YouTube et TikTok : par capture** (décision du propriétaire, 2026-11-15) ; la session
-propose de les envoyer une fois par semaine, le dimanche, à la revue de la semaine.
+**Où sont les chiffres** : sur la page « Statistiques » de quran-reels
+(https://mssnoussi92.github.io/quran-reels/catalog/stats.html), à 48 heures, 7 et 28 jours, les reels et les vidéos de
+ce fichier côte à côte (reconnues par la première ligne de leur légende, le titre de leur section dans
+`publication-*.md`). **Facebook, Instagram et YouTube sont relevés seuls**, chaque nuit (YouTube depuis le 2026-11-15,
+décision du propriétaire). **TikTok, par capture** : envoyez la liste « Contenu » de TikTok Studio, ou la page d'une vidéo,
+**dans n'importe quelle session** (sa demande, 2026-11-15) ; la session reconnaît chaque vidéo, lit les chiffres, vous les
+montre et les enregistre sur cette page après votre accord (skill `record-stats`). Une capture YouTube ne sert plus que
+pour ce que YouTube ne donne pas par son API : « regardées » contre « balayées » d'un Short, la part encore là à 0:30 d'un
+film.
 
-**Comment** : envoyez une capture des statistiques de chaque vidéo, une par plateforme ; la session remplit la fiche
-ci-dessous. Les noms des chiffres changent d'une plateforme à l'autre ; ceux qui comptent sont :
+Les noms des chiffres changent d'une plateforme à l'autre ; ceux qui comptent sont :
 
 | Chiffre | Pourquoi | Où le trouver |
 | --- | --- | --- |
@@ -145,6 +148,7 @@ ci-dessous. Les noms des chiffres changent d'une plateforme à l'autre ; ceux qu
 | Part encore là à 0:30 | l'ouverture d'un film | YouTube, film : « Introduction » dans la rétention |
 | Partages, enregistrements | ce qui fait circuler | partout |
 | Abonnés gagnés | le but de l'appel à suivre | partout |
+| Part qui regarde jusqu'au bout | ce qu'un short garde jusqu'à sa fin | TikTok : « A regardé la vidéo en entier » |
 
 **Prudence** : à une centaine de vues, seul un écart de 12 à 14 points entre deux vidéos veut dire quelque chose
 (`docs/retention.md`, « Mesurer »). On regarde d'abord les tendances sur plusieurs vidéos.
@@ -163,17 +167,5 @@ ci-dessous. Les noms des chiffres changent d'une plateforme à l'autre ; ceux qu
 
 ## La fiche
 
-Une ligne par vidéo et par plateforme, remplie à 48 heures. L'heure de publication est celle de France.
-
-| Publiée le | Heure | Vidéo | Plateforme | Durée | Vues | Passent 3 s | Durée moyenne | % de la durée | Partages | Abonnés |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 12 nov. | soir | Khidr, film vertical | Facebook | 7:47 | | | | | | |
-| 12 nov. | soir | Khidr, film | YouTube | 7:47 | | | | | | |
-| 13 nov. | matin | Khidr, short 1 | Facebook | 1:33 | | | | | | |
-| 13 nov. | matin | Khidr, short 1 | Instagram | 1:33 | | | | | | |
-| 13 nov. | matin | Khidr, short 1 | YouTube Shorts | 1:33 | | | | | | |
-| 13 nov. | matin | Khidr, short 1 | TikTok | 1:33 | | | | | | |
-| 14 nov. | soir | Khidr, short 2 | Facebook | 1:47 | | | | | | |
-| 14 nov. | soir | Khidr, short 2 | Instagram | 1:47 | | | | | | |
-| 14 nov. | soir | Khidr, short 2 | YouTube Shorts | 1:47 | | | | | | |
-| 14 nov. | soir | Khidr, short 2 | TikTok | 1:47 | | | | | | |
+Remplacée le 2026-11-15 par la page « Statistiques » de quran-reels (lien ci-dessus) : une ligne par vidéo et par
+plateforme, relevée seule ou par capture, au même endroit pour toutes les vidéos de la Page. Elle était encore vide.
