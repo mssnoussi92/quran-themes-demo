@@ -435,3 +435,11 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   timelines (textes refaits sans les vidéos) ; contrôles : sans accroche, les textes refaits sont identiques à ceux
   d'avant ; avec, seules les cartes de Facebook, Instagram et TikTok et la phrase d'en-tête changent. `rules.py`
   vérifie les mots refusés dans les accroches.
+
+## Les questions, toujours à choix (2026-11-15)
+
+- **Demande du propriétaire**, après une première série de questions posées avec l'outil de questions à choix (format des
+  légendes courtes, voix IA, hashtags, légendes des reels) : « toujours fait ça si t'as des questions, et je veux que
+  toutes les sessions futures feront ça ». Règle inscrite en tête de `CLAUDE.md`, ici et dans quran-reels : une
+  question au propriétaire se pose avec `AskUserQuestion`, recommandation en premier ; le message garde le contexte et
+  la contradiction franche ; une session sans cet outil met la question et ses options numérotées dans son rapport.

@@ -6,6 +6,8 @@ Le propriétaire est développeur, il échange en français. Réponds en frança
 
 **Le contredire, toujours** (demande du propriétaire, 2026-11-08) : quand une de ses idées ou de ses décisions, ou une des tiennes, est fausse ou plus faible qu'une autre (source, format, angle, réplique, choix technique), dis-le franchement, avec la raison et ce que tu ferais à la place. Il tranche ; ne suis jamais en silence, ne passe jamais outre en silence.
 
+**Les questions, toujours à choix** (demande du propriétaire, 2026-11-15 : « toujours fait ça si t'as des questions, et je veux que toutes les sessions futures feront ça ») : toute question pour lui (une décision, une validation, un choix entre options) se pose avec l'outil de questions à choix (`AskUserQuestion`), pas dans un paragraphe : chaque question tient seule (il ne voit peut-être que la fenêtre de la question), 2 à 4 options, ta recommandation en premier marquée « (Recommandé) », un aperçu quand il aide (un texte, une légende) ; il peut toujours répondre autre chose. Le message garde le contexte, les chiffres et la contradiction franche. Une validation par un choix vaut sa parole si l'option nomme exactement ce qui est validé. Sans cet outil (session planifiée, personne en face) : la question va dans le rapport, ses options numérotées.
+
 **Ce fichier reste court** (décision du propriétaire, 2026-11-11) : il dit ce qu'une session doit savoir avant d'agir. Ce qui a été fait, essayé et décidé, avec ses chiffres, est dans `docs/history.md` : une tâche finie s'y ajoute (une entrée à la fin), pas ici. Ici, on met à jour « Où on en est » et on corrige une règle quand elle change.
 
 | Pour… | Lire |
