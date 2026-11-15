@@ -272,6 +272,20 @@ récitation de Tawfiq As-Sayegh mesurée sur mp3quran (lecture 17). Aucun n'est 
 **Budget** : trois requêtes de voix (une par short, le jour où le script est validé), trois clips à vous montrer,
 trois dessins nouveaux, trois ambiances, un rendu GitHub Actions (environ 45 min).
 
+**Le short 4 : 24:22, choisi par la session à la demande du propriétaire (2026-11-15 : « choisis le verset pour آية
+وحكايتها 4 »)**, avant toute mesure de la série (elle sort le 20 novembre). Les raisons : la récitation la plus courte
+(28 s, un verset entier qui commence une phrase) ; le gain le plus quotidien (un proche qui t'a fait du mal) ; la suite
+naturelle du short 3, qui finit sur le pardon de Dieu : celui qui le veut, le verset lui demande de pardonner à son
+tour (« ألا تحبون أن يغفر الله لكم ») ; un fait concret pour la première image (un serment de ne plus rien donner, rompu
+par un verset). Le récit relu dans hadith-api : Bukhari 4750 (« والله لا أنفق على مسطح شيئا أبدا… فأنزل الله… قال أبو
+بكر: بلى والله إني أحب أن يغفر الله لي، فرجع إلى مسطح النفقة »). Écartés pour ce short : 8:32-33 (un gain moins
+proche, une pluie de pierres à ne pas montrer), 9:118 (le verset continue une phrase de 9:117 ; le récit, très riche,
+irait mieux à un film). **Ce qu'il faut tenir** : l'accusation contre Aïcha n'est ni nommée ni racontée (« كلام وحش
+اتقال على بنته »), et les commentaires de ce récit attirent les polémiques : à surveiller ; l'exemple de vie ne dit
+jamais de revenir vers quelqu'un qui continue de faire du mal (as-Sa'di : ne pas couper le bien pour une faute). La fin
+du short 3 (« تلات آيات… وتلات حكايات… ») reste telle qu'elle est validée : sa promesse (« الآية الجاية وحكايتها ») est
+tenue.
+
 ## Série proposée : « الإعجاز في القرآن » (idée du propriétaire, 2026-11-12)
 
 Demande du propriétaire : une série de deux ou trois shorts, comme la première. Son candidat : sourate al-Masad, parce

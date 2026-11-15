@@ -235,6 +235,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 110. **« سؤال صعب » validé** (propriétaire, 2026-11-15 : « je valide tout pour سؤال صعب »). Inscrit : `validated` des trois épisodes (voix, montage, couverture, ambiance, textes) et de `sual.yaml` (textes) ; ses quatorze sources passées à `validated` (six versets, sept passages de tafsir, Muslim 1054). Textes refaits (« validés ») ; page republiée. Au calendrier les lundi 21, mardi 22 et mercredi 23 décembre (sa décision, « oui, inscris-les », sur la proposition de la session : chaque épisode annonce le suivant) ; page republiée.
 
+111. **« آية وحكايتها » 4 : 24:22** (propriétaire, 2026-11-15 : « choisis le verset pour آية وحكايتها 4 »). Choisi par la session parmi les trois candidats de la fiche (`docs/themes.md`), avant toute mesure de la série : 24:22 (Abou Bakr jure de ne plus rien donner à Mistah ; le verset descend ; « بلى والله إني أحب أن يغفر الله لي » : Bukhari 4750, relu dans hadith-api). Raisons : 28 s de récitation, un gain quotidien, la suite du short 3 (le pardon de Dieu, puis le nôtre). À tenir : l'accusation n'est ni nommée ni racontée ; les commentaires sont à surveiller ; l'exemple ne dit pas de revenir vers qui continue de nuire. La fin du short 3 reste telle quelle. Calendrier : vendredi 11 décembre.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```
