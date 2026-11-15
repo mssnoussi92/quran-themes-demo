@@ -188,7 +188,9 @@ def main() -> None:
     # « Je valide » of the owner on the texts: `validated` of every file, with `publish` in what it covers.
     said = [(s.get("validated") or {}) for s in [film, *shorts]]
     validated = all("publish" in (v.get("what") or []) for v in said)
-    when = said[0].get("on", said[0].get(True))      # PyYAML reads the key « on » as true (YAML 1.1)
+    # PyYAML reads the key « on » as true (YAML 1.1). A short added to a series later is validated on its own day.
+    days = sorted({str(v.get("on", v.get(True))) for v in said if v})
+    when = " et le ".join(days) if days else ""
     # The first film was rendered without its ambience, which was put under the rendered videos afterwards
     # (`ambience_after` of its file): once the owner has validated it, the videos to publish are those mixes,
     # `…-ambience.mp4`. Every film since is rendered with its ambience, and its videos keep their names.

@@ -81,7 +81,7 @@ partir du deuxième, c'est l'épisode d'avant.
 | lun. 7 déc. | « كلمة من القرآن » 1 : الكنود (100:1-8) | les quatre | release `kalima-candidate` | `publication-kalima.md` : « Short 1 » |
 | mar. 8 déc. | « كلمة من القرآن » 2 : نواة التمرة (فتيل، نقير، قطمير) | les quatre | release `kalima-candidate` | « Short 2 » |
 | mer. 9 déc. | « كلمة من القرآن » 3 : هلوع (70:19-23) | les quatre | release `kalima-candidate` | « Short 3 » |
-| ven. 11 déc. | **« آية وحكايتها » 4** : 24:22, le pardon à un proche (choisi le 2026-11-15) | les quatre | à faire | à faire |
+| ven. 11 déc. | « آية وحكايتها » 4 : 24:22, le pardon à un proche | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 4 » |
 | sam. 12 déc. | « سنريهم آياتنا » 4 : l'embryon | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 4 » |
 | lun. 14 déc. | « خريطة كلمة » 1 : القلب (132 fois) | les quatre | release `map-candidate` | `publication-map.md` : « Short 1 » |
 | mar. 15 déc. | « خريطة كلمة » 2 : النور (43 fois) | les quatre | release `map-candidate` | « Short 2 » |

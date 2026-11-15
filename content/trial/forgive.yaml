@@ -31,6 +31,11 @@ id: forgive
 # chaque narration repose, le titre ; et le clip (Pixabay 7215). Ni la voix, ni les dessins, ni l'ambiance, ni les
 # textes, ni les sources proposées : il les valide sur la vidéo.
 script_validated: { by: mssnoussi92, on: 2026-11-15 }
+# « Je valide tout » du propriétaire (2026-11-15), après l'envoi du short (workflow `film`, run 43707389321 : 1:52), de sa
+# version TikTok, de sa couverture, des textes à coller (docs/retention/publication-ayah.md) et de la page : lu comme le
+# short tel que livré (la voix, avec les deux mots signalés à écouter, « سامحهم » et « ما يحلفش » ; les dessins,
+# l'ambiance, la couverture), ses textes et ses cinq sources, passées à `validated`. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-15, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 70-trial-forgive     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne

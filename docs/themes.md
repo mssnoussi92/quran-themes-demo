@@ -288,8 +288,9 @@ tenue. **Script écrit le 2026-11-15** (« oui, commence le script ») : `conten
 (2:04 estimée, 0:28 de récitation ; avec la ligne d'avertissement proposée par le propriétaire, « المسامحة على اللي
 فات… مش سكوت على الغلط لو اتكرر », sur Ibn Kathir) ; cinq sources proposées (24:22, Bukhari 4750, al-Muyassar, as-Sa'di
 et Ibn Kathir sur 24:22) ; récitation coupée ; dessins `cut`, `back`, `whole` (deux maisons sous la lune, le chemin entre elles, la
-bourse) ; clip proposé : Pixabay 7215 (une pleine lune derrière des nuages). À valider par le propriétaire avant
-toute voix.
+bourse) ; clip : Pixabay 7215 (une pleine lune derrière des nuages). Script et clip validés le 2026-11-15, voix et
+rendu le même jour (1:52) ; **tout validé par le propriétaire le 2026-11-15** (« je valide tout »). Au calendrier le
+vendredi 11 décembre.
 
 ## Série proposée : « الإعجاز في القرآن » (idée du propriétaire, 2026-11-12)
 
