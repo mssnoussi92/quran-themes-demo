@@ -52,6 +52,10 @@ on:
         description: "Only publish again what an earlier run rendered: its run id (same film, voice and only)"
         default: ""
         type: string
+      add:
+        description: "Add this run's files to the draft release already there (a file of the same name is replaced, the others stay) instead of replacing the draft. Always so when `only` is not all (nor tall)"
+        default: false
+        type: boolean
 
 permissions:
   contents: read
@@ -410,6 +414,7 @@ jobs:
       GH_REPO: ${{ github.repository }}
       RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
       SUFFIX: ${{ github.event_name == 'push' && 'workflow-test' || 'candidate' }}
+      ADD: ${{ inputs.add || false }}
     steps:
       - uses: actions/checkout@v7
 
@@ -478,9 +483,13 @@ jobs:
           if [ "$ONLY" = tall ]; then flags+=(--tall); fi      # the film in 9:16: its own text, for Facebook
           if ! uv run --with pyyaml python3 tools/trial/publish.py --film "$FILM" --voice "$VOICE" --out publication.md "${flags[@]}"; then
             echo "(The publication texts could not be written for this run: tools/trial/publish.py failed, see the run's log.)" > publication.md
+            touch no-texts
           fi
 
       # One draft at a time: the previous draft of the same tag goes. A draft is seen by the owner only.
+      # Except a run of a part (`only` other than all and tall, or `add`): its files go into the draft already
+      # there, a file of the same name replaced, the others kept. On 2026-11-15 a run of one short of a series
+      # (`only: forgive`) replaced the draft that held the three shorts validated before it.
       # No --target: a draft has no tag until it is published, and these never are. With --target "$GITHUB_SHA"
       # a dispatched run was refused twice (HTTP 403, « Resource not accessible by integration », 2026-11-11)
       # after its seven renders; without it, the same artifacts and the same notes were published (`from_run`).
@@ -502,9 +511,6 @@ jobs:
             echo; echo "---"; echo
             cat publication.md
           } > notes.md
-          for id in $(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .id"); do
-            gh api -X DELETE "repos/$GH_REPO/releases/$id"
-          done
           shopt -s nullglob
           assets=(release/*.mp4 release/*.jpg release/sheets/*)
           echo "assets: ${#assets[@]}"
@@ -512,7 +518,27 @@ jobs:
             echo "::error::nothing was rendered: no release"
             exit 1
           fi
-          gh release create "$tag" --draft --prerelease --title "$title" --notes-file notes.md "${assets[@]}"
+          mode=replace
+          if [ "$ADD" = true ] || { [ "$ONLY" != all ] && [ "$ONLY" != tall ]; }; then mode=add; fi
+          existing=$(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .id" | head -n 1)
+          if [ "$mode" = add ] && [ -n "$existing" ]; then
+            echo "adding to the draft release $existing: the files of the same name are replaced, the others stay"
+            for file in "${assets[@]}"; do
+              name=$(basename "$file")
+              for old in $(gh api "repos/$GH_REPO/releases/$existing/assets?per_page=100" --paginate --jq ".[] | select(.name == \"$name\") | .id"); do
+                gh api -X DELETE "repos/$GH_REPO/releases/assets/$old"
+              done
+              gh api -X POST "https://uploads.github.com/repos/$GH_REPO/releases/$existing/assets?name=$name" \
+                -H "Content-Type: application/octet-stream" --input "$file" --jq .name
+            done
+            # The notes hold the texts of the whole film: kept as they were when this run could not write them.
+            if [ ! -e no-texts ]; then gh api -X PATCH "repos/$GH_REPO/releases/$existing" -F body=@notes.md --jq .id; fi
+          else
+            for id in $(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .id"); do
+              gh api -X DELETE "repos/$GH_REPO/releases/$id"
+            done
+            gh release create "$tag" --draft --prerelease --title "$title" --notes-file notes.md "${assets[@]}"
+          fi
           echo "draft release: $(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .html_url")"
 
       # What succeeded is published above; a failed render or still still fails the run.

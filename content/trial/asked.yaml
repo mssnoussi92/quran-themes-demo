@@ -41,6 +41,9 @@ publish:
   description:
     en: "We say: I'm content, so I won't ask. Yet Job, peace be upon him, whose patience became a proverb, asked God to lift his suffering, and was answered. Contentment is not objecting to what happened; du'a is asking for what is to come."
     ar: "بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب عليه السلام، اللي بنقول على صبره: يا صبر أيوب، دعا ربنا يشيل عنه البلاء… واستجاب له. الرضا إنك ما تعترضش على اللي حصل، والدعاء إنك تطلب اللي جاي."
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, pas encore validée
+    ar: "بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب دعا… واستجاب له."
+    en: "We say: I'm content, so I won't ask. Yet Job asked, and was answered."
 segments:
   - narration: open
     scene: dark

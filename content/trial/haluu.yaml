@@ -25,6 +25,9 @@ publish:
   description:
     en: "A word of the Quran explained by the two verses that follow it: when harm touches him he panics, when good comes to him he withholds. And its cure is written in the same place: prayer."
     ar: "كلمة في القرآن شرحتها الآيتين اللي بعدها: لو جاله شر ينهار، ولو جاله خير يمسكه. وعلاجها مكتوب في نفس المكان: الصلاة."
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, pas encore validée
+    ar: "لو جاله شر ينهار، ولو جاله خير يمسكه… وعلاجها مكتوب في نفس المكان."
+    en: "When harm touches him he panics, when good comes to him he withholds, and the cure is written in the same place."
 segments:
   - narration: word
     scene: word

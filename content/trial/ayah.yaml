@@ -19,10 +19,10 @@ id: ayah
 validated: { by: mssnoussi92, on: 2026-11-12, what: [publish] }
 files: ayah                      # début du nom des vidéos livrées : ayah-short-<n>-<id>.mp4
 title: { ar: "آية وحكايتها", en: "A Verse and Its Story" }
-shorts: [caravan, duha, hope]
+shorts: [caravan, duha, hope, forgive]
 handle: "@quran_words_daily"
 publish:
   out: docs/retention/publication-ayah.md
   series: { en: "A Verse and Its Story", ar: "آية وحكايتها" }
-  hashtags: ["#أسباب_النزول", "#تفسير"]      # validés par le propriétaire le 2026-11-14 (« je valide les hashtags ») ; avant : ["#Quran", "#القرآن", "#Tafsir"]
+  hashtags: ["#آية_وحكايتها", "#تفسير"]      # le nom de la série en 3e position, à la place de #أسباب_النزول : validé par le propriétaire le 2026-11-15 (« je valide #آية_وحكايتها ») ; avant : ["#أسباب_النزول", "#تفسير"], validés le 2026-11-14
   narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }

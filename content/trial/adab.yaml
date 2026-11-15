@@ -25,6 +25,9 @@ publish:
   description:
     en: "One man, one story: the damage to the boat he credited to himself, the good done to the two orphans to God. Courtesy toward God in words, though both were by His decree."
     ar: "راجل واحد في حكاية واحدة: العيب في المركب نسبه لنفسه، والخير لليتيمين نسبه لربنا. أدب مع ربنا في الكلام، مع إن الاتنين بقضائه."
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, pas encore validée
+    ar: "العيب في المركب نسبه لنفسه، والخير لليتيمين نسبه لربنا."
+    en: "The damage to the boat he credited to himself, the good done to the two orphans to God."
 segments:
   - narration: open
     scene: faces

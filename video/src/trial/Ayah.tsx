@@ -3,8 +3,9 @@
 // loaded camels (a creature the report names: « عير تحمل طعاما ») and the place of the Friday sermon is palm
 // trunks, a roof and the steps of a minbar, empty, in full daylight (the Friday prayer is at midday), and tracks
 // in the sand that leave its shade for the caravan. Ad-Duha is a night that lifts, then three lights for what the surah recalls
-// (a shelter, a guidance, a provision). Az-Zumar 39:53 is a road in the rain and a gate that opens.
-// Backlit shapes over a filmed desert, a filmed dawn and a filmed storm sky.
+// (a shelter, a guidance, a provision). Az-Zumar 39:53 is a road in the rain and a gate that opens. An-Nur 24:22
+// is two houses and the track between them: a purse that no longer goes, then goes again (`Purse`, `Track`).
+// Backlit shapes over a filmed desert, a filmed dawn, a filmed storm sky and a filmed moon.
 const INK = "#05060d";
 const LIGHT = "#ffd9a0";
 
@@ -228,3 +229,44 @@ export const Rain: React.FC<{ t: number; width?: number; height?: number }> = ({
     })}
   </g>
 );
+
+/** A purse of cloth tied at its neck, the provision given: dark, its edge and its knot in gold, a soft glow under
+ * it so that it reads at the size of a doorstep. (x, y): the middle of its foot. */
+export const Purse: React.FC<{ id: string; x: number; y: number; scale: number; t: number; glow?: number }> = ({ id, x, y, scale, t, glow = 1 }) => {
+  const body = "M -30 -44 C -48 -34 -56 -14 -50 -2 C -44 6 -20 8 0 8 C 20 8 44 6 50 -2 C 56 -14 48 -34 30 -44 C 22 -48 14 -50 12 -54 L -12 -54 C -14 -50 -22 -48 -30 -44 Z";
+  return (
+    <g transform={`translate(${x} ${y}) scale(${scale})`}>
+      <defs>
+        <filter id={`${id}-glow`} x="-200%" y="-200%" width="500%" height="500%">
+          <feGaussianBlur stdDeviation="16" />
+        </filter>
+      </defs>
+      <ellipse cx={0} cy={-20} rx={62} ry={42} fill={LIGHT} opacity={0.55 * glow * (0.9 + 0.1 * Math.sin(t * 1.7))} filter={`url(#${id}-glow)`} />
+      <path d={body} fill={INK} stroke={LIGHT} strokeWidth={3} opacity={0.95} />
+      {/* the gathered neck and its tie */}
+      <path d="M -12 -54 C -16 -62 -18 -70 -10 -74 M 12 -54 C 16 -62 18 -70 10 -74 M -6 -56 L -2 -72 M 6 -56 L 2 -72" stroke={LIGHT} strokeWidth={3} fill="none" strokeLinecap="round" />
+      <path d="M -16 -54 C -6 -50 6 -50 16 -54" stroke={LIGHT} strokeWidth={5} fill="none" strokeLinecap="round" />
+      <circle cx={18} cy={-46} r={5} fill={LIGHT} />
+    </g>
+  );
+};
+
+/** The track on the ground between two doors, a cubic curve (`from`, `c1`, `c2`, `to`); `gap`: 0 whole, up to 1 a
+ * stretch missing in its middle (cut). `at(u)` gives the point at u along the same curve (0 the first door). */
+export const trackAt = (from: [number, number], c1: [number, number], c2: [number, number], to: [number, number], u: number): [number, number] => {
+  const v = 1 - u;
+  const f = (i: 0 | 1) => v * v * v * from[i] + 3 * v * v * u * c1[i] + 3 * v * u * u * c2[i] + u * u * u * to[i];
+  return [f(0), f(1)];
+};
+
+export const Track: React.FC<{ from: [number, number]; c1: [number, number]; c2: [number, number]; to: [number, number]; gap: number; rim?: string }> = ({ from, c1, c2, to, gap, rim = "#c9d4ee" }) => {
+  const d = `M ${from[0]} ${from[1]} C ${c1[0]} ${c1[1]} ${c2[0]} ${c2[1]} ${to[0]} ${to[1]}`;
+  const g = Math.max(0, Math.min(1, gap)) * 0.3;
+  const dash = `${0.5 - g / 2} ${g} 1`;
+  return (
+    <g>
+      <path d={d} pathLength={1} strokeDasharray={dash} fill="none" stroke={rim} strokeOpacity={0.16} strokeWidth={40} strokeLinecap="round" />
+      <path d={d} pathLength={1} strokeDasharray={dash} fill="none" stroke={rim} strokeOpacity={0.5} strokeWidth={7} strokeLinecap="round" />
+    </g>
+  );
+};

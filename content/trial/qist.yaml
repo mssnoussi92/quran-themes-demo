@@ -25,6 +25,9 @@ publish:
   description:
     en: "The same words in reverse order, in two verses: justice even against yourself and those you love, and justice even toward someone you dislike."
     ar: "نفس الكلمات بالمقلوب في آيتين: العدل حتى على نفسك واللي بتحبهم، والعدل حتى مع اللي بتكرهه. العدل مش على مزاجك."
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, pas encore validée
+    ar: "العدل حتى على نفسك… والعدل حتى مع اللي بتكرهه."
+    en: "Justice even against yourself, and justice even toward someone you dislike."
 segments:
   - narration: open
     scene: faces

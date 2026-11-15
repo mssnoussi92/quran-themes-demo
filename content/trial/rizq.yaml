@@ -25,6 +25,9 @@ publish:
   description:
     en: "Two verses, almost the same words: 'We provide for you and them' and 'We provide for them and you'. In the first, poverty is already there; in the second, it is feared. Their provision is on God."
     ar: "آيتين تقريبًا نفس الكلام، بس كلمتين بدّلوا مكانهم. في الأولى الفقر موجود، فطمّنك إنت الأول؛ وفي التانية الخوف من فقر جاي، فطمّنك عليهم هما الأول. رزقهم على ربنا."
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, pas encore validée
+    ar: "في الأولى الفقر موجود… وفي التانية الخوف من فقر جاي."
+    en: "In the first, poverty is already there; in the second, it is feared."
 segments:
   - narration: open
     scene: faces
