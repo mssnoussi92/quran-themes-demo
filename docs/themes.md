@@ -987,13 +987,13 @@ verset court par short, 60 à 75 s, une image qui bouge dès la première second
 
 | Short | Verset (récitation) | Ce qu'il dit | Estimé |
 | --- | --- | --- | --- |
-| 1. `refuge` | 18:10 (14 s) | la fuite et la du'a ; la leçon d'as-Sa'di : l'effort et la demande, sans compter sur soi | 1:15 |
-| 2. `sunpath` | 18:17 (31 s) | le soleil qui s'écarte, l'air qui passe : la réponse à leur du'a jusque dans ces détails (as-Sa'di) | 1:16 |
-| 3. `awake` | 18:19 jusqu'à « بعض يوم ۚ » (18 s), 18:25 (7 s), Bukhari 6324 lu | 309 ans pris pour un jour ; la du'a du réveil, chaque matin | 1:11 |
+| 1. `refuge` | 18:10 (14 s) | la fuite et la du'a ; la leçon d'as-Sa'di : l'effort et la demande, sans compter sur soi | 1:11 |
+| 2. `sunpath` | 18:17 (31 s) | le soleil qui s'écarte, l'air qui passe : la réponse à leur du'a jusque dans ces détails (as-Sa'di) | 1:13 |
+| 3. `awake` | 18:19 jusqu'à « بعض يوم ۚ » (18 s), 18:25 (7 s), Bukhari 6324 lu | 309 ans pris pour un jour ; la du'a du réveil, chaque matin | 1:10 |
 
 Le film `kahf` (6:24 estimé) ajoute le cadre (Muslim 809a, 18:9), la conclusion (18:21 coupé avant la mosquée bâtie sur
 eux, 18:22, 18:26) et la phrase d'as-Sa'di sur 18:21 : « ومن أوى إلى الله، آواه الله ». Script : `docs/scripts/kahf.md`,
-envoyé au propriétaire le 2026-11-15, à valider avant toute voix.
+validé par lui le 2026-11-15 (avec « la question la plus forte d'abord ») ; produit le même soir (durées réelles ci-dessus ; le film : 6:10).
 
 ## Choisis par le propriétaire (2026-11-07), dans l'ordre
 
