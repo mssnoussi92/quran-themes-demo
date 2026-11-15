@@ -22,6 +22,9 @@ text: 76-trial-awake
 # sorte pendant la fin du short (le réveil). APPROUVÉ par le propriétaire le 2026-11-15 (question à choix : « 14955, 26085,
 # 30218 »). Cadrage, lumière et horizon provisoires : réglés sur les images de style, avec les dessins (skill new-scene).
 clip: { source: pixabay, id: 30218, author: adege, page: "https://pixabay.com/videos/id-30218/", take: { height: 1440 }, rate: 0.8, position: "50% 50%", shift: 0, brightness: 0.85, ground: "#06080e", horizon: 1300 }
+# Ambiance sous la narration, jamais sous le verset ni le hadith : le vent (validé à l'écoute par le propriétaire,
+# docs/model.md), le matin.
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 110, level: -37 }
 cover: { scene: years, title: "٣٠٩ سنين… وفاكرينها يوم!", tag: "أصحاب الكهف · ٣ من ٣", focus: 1200 }
 publish:
   title: { en: "309 years… and they thought it was a day!", ar: "٣٠٩ سنين… وفاكرينها يوم!" }
