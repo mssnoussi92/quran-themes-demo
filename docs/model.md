@@ -125,7 +125,12 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
   prise de voix, les mêmes versets et images, moins ce que `drop` nomme : un segment de narration (`depth`), une
   réplique (`"close:2"`, indice à partir de 0) ou un verset (son id) ; un élément qui ne correspond à rien est une
   erreur. `prepare.py --cut` écrit `<id>-<voix>-cut.json` (`"version": "cut"`) et des fichiers en `-cut` ; `videos.py`
-  ajoute la vidéo `…-cut` (props `"version":"cut"`), jamais pour TikTok ni YouTube.
+  ajoute la vidéo `…-cut` (props `"version":"cut"`), jamais pour TikTok ni YouTube. **Pour quran-reels** (la convention, 2026-11-15) : une
+  fois la coupe validée par le propriétaire (`cut.validated`), `publish.py` ajoute à la ligne des fichiers du short, après
+  la couverture, « · version courte pour Facebook et Instagram : `<short>-cut.mp4`, 1:13 » ; `page-files` la rend
+  publique avec les autres. La ligne garde sa forme : le premier `.mp4` reste le short entier (YouTube, TikTok), et un
+  lecteur qui l'ignore publie le short entier partout, comme avant. quran-reels prend `-cut.mp4` pour Facebook et
+  Instagram quand la ligne en nomme un ; les textes sont les mêmes.
 - `OVERLAYS` et `LAYOUTS` de `video/src/trial/Trial.tsx` : ce qu'un short dessine au-dessus du voile sans bouger
   (le badge de la série, la frise des dates) et où ses textes se placent ; les dessins, photos et frises de la série
   sont dans `video/src/trial/Signs.tsx`.

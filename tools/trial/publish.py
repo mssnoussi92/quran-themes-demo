@@ -386,6 +386,14 @@ def main() -> None:
             if casts else
             f"`{name}{bed}.mp4` (TikTok : `{name}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`) · {stamp(data['seconds'])} · 9:16 · "
             f"Facebook, Instagram, TikTok, YouTube Shorts · couverture : `{cover}`")
+        # The short version for Facebook and Instagram (`cut` of the file, prepare.py --cut), named once the owner has
+        # validated it, never before: page-files makes public what this line names, and quran-reels publishes it.
+        # After the first name, so that a reader taking the first .mp4 of the line keeps the full short.
+        cut = spec.get("cut") or {}
+        if cut.get("validated") and not casts:
+            cut_path = PUBLIC / "trial" / f"{spec['id']}-{timeline}-cut.json"
+            seconds = json.loads(cut_path.read_text(encoding="utf-8"))["seconds"] if cut_path.is_file() else None
+            files_line += f" · version courte pour Facebook et Instagram : `{name}-cut{bed}.mp4`" + (f", {stamp(seconds)}" if seconds else "")
         out += [f"## Short {n} · {sp['title']['en']} · {sp['title']['ar']}", "", files_line, "",
                 *social(conf["handle"], "facebook"),
                 *social(conf["handle"], "instagram"),

@@ -45,6 +45,12 @@ publish:
     ar: "اتخيّر: يعاقبهم ولا يحسن ليهم. القوة أمانة… مش رخصة."
     en: "The choice was left to him: punish them, or treat them well. Power is a trust, not a license."
     validated: 2026-11-15
+# La version courte pour Facebook et Instagram (choix du propriétaire, 2026-11-15 : « l'outil et un essai ») : la même
+# prise, moins 18:86 (24 s, que l'accroche décrit déjà ; la question « يعاقب… ولا يحسن. اختار إيه؟ » le remplace), le
+# sens mot à mot, la profondeur et l'exemple. Proposée par la session, à juger par le propriétaire : rien de ce montage
+# n'est validé tant qu'il ne l'a pas vu.
+cut:
+  drop: [quran.18.86, "meaning:0", depth, example]
 segments:
   - narration: open
     scene: sun
