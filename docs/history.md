@@ -461,3 +461,17 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   à valider » de son compte claude.ai) : `hook.validated` des 29 fichiers ; les textes refaits le disent, et
   quran-reels les lit comme validés (contrôle : les 23 jours du 23 novembre au 1er janvier reliés, aucun texte en
   attente).
+
+## Les statistiques au même endroit, les captures dans n'importe quelle session (2026-11-15)
+
+- **Demande du propriétaire** (dans la session des statistiques de quran-reels) : un skill pour les statistiques, « pour
+  que je puisse envoyer les captures TikTok dans n'importe quelle session ». Facebook, Instagram et, depuis le même soir,
+  YouTube sont relevés seuls chaque nuit par quran-reels ; TikTok n'a pas d'API pour nous : ses chiffres n'existent que
+  par ses captures.
+- **Fait** : le skill `record-stats` de quran-reels (reconnaître chaque vidéo, lire seulement les chiffres de l'image,
+  les montrer et demander, enregistrer par le workflow `insights` avec `manual`, vérifier la page), et ici son renvoi
+  (`.claude/skills/record-stats/`). Le chiffre TikTok « A regardé la vidéo en entier » a son nom (`finished`).
+- **La fiche de `docs/retention/calendar.md` est retirée** : encore vide, elle aurait doublé la page « Statistiques » de
+  quran-reels, où chaque vidéo de la Page est mesurée sur chaque plateforme (une chose va une fois, au bon endroit).
+  « Les mesures » dit maintenant où sont les chiffres et quoi envoyer : rien pour Facebook, Instagram et YouTube ; pour
+  TikTok, la liste « Contenu », le plus simple une fois par semaine.
