@@ -23,7 +23,7 @@ text: 75-trial-sunpath
 # soleil reste hors du cadre : seul le soleil dessiné bouge.
 # APPROUVÉ par le propriétaire le 2026-11-15 (question à choix : « 14955, 26085, 30218 »). Cadrage, lumière et horizon
 # provisoires : réglés sur les images de style, avec les dessins (skill new-scene).
-clip: { source: pixabay, id: 26085, author: TeeFarm, page: "https://pixabay.com/videos/id-26085/", take: { slow: 2, height: 1440 }, rate: 1, position: "0% 50%", shift: 0, brightness: 0.8, ground: "#0a0705", horizon: 1300 }
+clip: { source: pixabay, id: 26085, author: TeeFarm, page: "https://pixabay.com/videos/id-26085/", take: { slow: 2, height: 1440 }, rate: 1, position: "0% 50%", shift: 0, brightness: 0.8, ground: "#0a0705", horizon: 1300, landscape: { side: left, horizon: 820, brightness: 0.8 } }
 # Ambiance sous la narration, jamais sous le verset : le vent (validé à l'écoute par le propriétaire, docs/model.md), l'air
 # qui passe dans la caverne.
 ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 110, level: -37 }

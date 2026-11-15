@@ -235,3 +235,113 @@ const AwakePicture: Drawn = ({ t, show, since, horizon }) => {
 };
 
 export const KAHF_PICTURES: Record<string, Drawn> = { refuge: RefugePicture, sunpath: SunpathPicture, awake: AwakePicture };
+
+// ------------------------------------------------------------------------------------------------------------ wide
+
+// The same drawings for the film (16:9, 1920 x 1080): on the left of the frame, the text on the right.
+const WW = 1920;
+
+/** Short 1, wide: the city on the far left, the trail, the rock and its mouth. */
+const RefugeWide: Drawn = ({ t, show, since, horizon }) => {
+  const at = timeline(["leave", "cave", "dawn"], show, since);
+  const rim = "#b9c6e6";
+  const going = at.cover ? 0.55 : interpolate(t - at("leave"), [0, 9], [0.14, 0.86], { ...CLAMP, easing: Easing.out(Easing.quad) });
+  const walked = Math.min(1, Math.max(going, show("cave") + show("dawn")));
+  const dawn = show("dawn") * ramp(t - at("dawn"), 0, 6);
+  return (
+    <>
+      <defs>
+        <linearGradient id="krw-dawn" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#ffb877" stopOpacity={0} />
+          <stop offset=".7" stopColor="#ffb877" stopOpacity={0.22} />
+          <stop offset="1" stopColor="#ffd9a0" stopOpacity={0.5} />
+        </linearGradient>
+      </defs>
+      <rect x={0} y={horizon - 520} width={WW} height={540} fill="url(#krw-dawn)" opacity={dawn} />
+      <Dwellings id="krw-city" x={190} y={horizon + 14} scale={0.3} t={t} lit={dawn > 0.5 ? 2 : 5} rim={rim} />
+      <Land id="krw-land" horizon={horizon} rim={rim} width={WW} />
+      <Rock id="krw-rock" x={760} y={horizon + 24} scale={0.95} shape="hill" rim={rim} t={t} inner={0.45 * show("cave") + 0.75 * show("dawn")} />
+      <Footprints trails={[{ from: [250, horizon + 30], to: [740, horizon + 34], bend: 48 }]} shown={walked} ink="#cdd6ee" />
+    </>
+  );
+};
+
+/** Short 2, wide: the crag in front of the filmed sun (the whole clip shows here: the rock hides its sun and takes its
+ * backlight), the drawn sun going over it along its dashed path. */
+const SunpathWide: Drawn = ({ t, show, since, horizon }) => {
+  const at = timeline(["rise", "path", "inside"], show, since);
+  const rim = "#ffd2a0";
+  const cx = 900;
+  const rising = at.cover ? 0.1 : interpolate(t - at("rise"), [0, 12], [0.04, 0.12], CLAMP);
+  const crossing = at.cover ? 0.12 : interpolate(t - at("path"), [0, 30], [0.12, 0.97], { ...CLAMP, easing: Easing.inOut(Easing.sin) });
+  const u = show("inside") > 0.5 ? 1.08 : Math.max(rising, show("path") > 0 ? crossing : rising);
+  const sx = cx + 400 * Math.cos(Math.PI * u);
+  const sy = horizon - 60 - 400 * Math.sin(Math.PI * Math.min(1, Math.max(0, u)));
+  const up = interpolate(u, [1, 1.06], [1, 0], CLAMP);
+  return (
+    <>
+      <defs>
+        <radialGradient id="ksw-sun" cx="50%" cy="50%" r="50%">
+          <stop offset="0" stopColor="#fff4dc" />
+          <stop offset=".35" stopColor="#ffd9a0" stopOpacity={0.9} />
+          <stop offset="1" stopColor="#ffb877" stopOpacity={0} />
+        </radialGradient>
+      </defs>
+      <path d={`M ${cx + 400} ${horizon - 60} A 400 400 0 0 0 ${cx - 400} ${horizon - 60}`} fill="none" stroke={GOLD} strokeWidth={3} strokeDasharray="4 16" strokeLinecap="round" opacity={0.45 * show("path")} />
+      <g opacity={up}>
+        <circle cx={sx} cy={sy} r={150} fill="url(#ksw-sun)" opacity={0.6} />
+        <circle cx={sx} cy={sy} r={34} fill="#fff1d6" />
+      </g>
+      <Land id="ksw-land" horizon={horizon} rim={rim} top="#140f0b" width={WW} />
+      <Rock id="ksw-rock" x={cx} y={horizon + 30} scale={1.05} shape="crag" rim={rim} t={t} right={Math.max(0, Math.cos(Math.PI * u)) * up} left={Math.max(0, -Math.cos(Math.PI * u)) * up} air={show("inside")} />
+    </>
+  );
+};
+
+/** Short 3, wide: the arch of the cave's mouth on the left, the count in it; the rest of the frame is the cave. */
+const AwakeWide: Drawn = ({ t, show, since, horizon }) => {
+  const at = timeline(["years", "wake", "dawn"], show, since);
+  const floor = horizon + 40;
+  const arch = `M 240 ${floor} L 240 ${floor - 300} C 240 ${floor - 500} 400 ${floor - 580} 570 ${floor - 580} C 740 ${floor - 580} 900 ${floor - 500} 900 ${floor - 300} L 900 ${floor} Z`;
+  const p = at.cover ? 1 : interpolate(t - at("years"), [0.15, 3.0], [0, 1], { ...CLAMP, easing: Easing.out(Easing.cubic) });
+  const years = Math.max(1, Math.round(309 * p));
+  const turning = at.cover ? 0 : (1 - p) * show("years");
+  const night = turning * (0.5 + 0.5 * Math.sin(2 * Math.PI * (1.6 * (t - at("years")) + 3.2 * p)));
+  const light = show("wake") + show("dawn");
+  const city = show("dawn") * ramp(t - at("dawn"), 0.3, 3);
+  return (
+    <>
+      <defs>
+        <clipPath id="kaw-arch">
+          <path d={arch} />
+        </clipPath>
+        <linearGradient id="kaw-beam" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor={LIGHT} stopOpacity={0.5} />
+          <stop offset="1" stopColor={LIGHT} stopOpacity={0} />
+        </linearGradient>
+        <filter id="kaw-glow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="14" />
+        </filter>
+      </defs>
+      <g clipPath="url(#kaw-arch)">
+        <rect x={0} y={0} width={WW} height={1080} fill="#02030a" opacity={0.78 * night} />
+        <g opacity={city}>
+          <Dwellings id="kaw-city" x={570} y={floor - 24} scale={0.26} t={t} lit={0} rim="#ffd2a0" />
+        </g>
+      </g>
+      <path d={`M -20 -20 H ${WW + 20} V 1100 H -20 Z ${arch}`} fill={INK} fillRule="evenodd" opacity={0.96} />
+      <path d={arch} fill="none" stroke="#b9c6e6" strokeWidth={3} opacity={0.45} />
+      <path d={`M 240 ${floor} L 900 ${floor} L 1020 1080 L 120 1080 Z`} fill="url(#kaw-beam)" opacity={0.75 * light} />
+      <g opacity={show("years")}>
+        <text x={570} y={floor - 230} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={170} fill={GOLD} filter="url(#kaw-glow)" opacity={0.6}>
+          {arabic(years)}
+        </text>
+        <text x={570} y={floor - 230} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={170} fill={GOLD}>
+          {arabic(years)}
+        </text>
+      </g>
+    </>
+  );
+};
+
+export const KAHF_WIDE: Record<string, Drawn> = { refuge: RefugeWide, sunpath: SunpathWide, awake: AwakeWide };
