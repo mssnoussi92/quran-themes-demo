@@ -9,6 +9,11 @@ id: dank
 # chaque réplique repose, le titre ; le clip de cet épisode ; le montage de la série (video/src/trial/Sual.tsx). Ni la voix,
 # ni la vidéo finale, ni les textes, ni les sources : il les valide sur les vidéos. Inscrit sur sa parole.
 script_validated: { by: mssnoussi92, on: 2026-11-15 }
+# « Je valide tout pour سؤال صعب » du propriétaire (2026-11-15), après l'envoi des trois vidéos (workflow `film`, run
+# 43664207279), des versions TikTok, des couvertures et des textes à coller (docs/retention/publication-sual.md) : lu comme
+# l'épisode tel que livré (voix, montage, couverture, ambiance, textes) et ses sources, passées à `validated`. Inscrit sur
+# sa parole.
+validated: { by: mssnoussi92, on: 2026-11-15, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 67-trial-dank

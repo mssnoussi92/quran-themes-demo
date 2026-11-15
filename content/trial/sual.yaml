@@ -4,6 +4,7 @@
 # de la politique), puis dans un autre verset. Des shorts qui tiennent seuls ; chaque épisode annonce le suivant s'il est connu.
 # Fiche : docs/themes.md ; script : docs/scripts/sual.md.
 id: sual
+validated: { by: mssnoussi92, on: 2026-11-15, what: [publish] }      # « je valide tout pour سؤال صعب »
 files: sual                      # début du nom des vidéos livrées : sual-short-<n>-<id>.mp4
 title: { ar: "سؤال صعب", en: "A Hard Question" }
 shorts: [dank, tayyiba, ghafur]

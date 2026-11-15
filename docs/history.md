@@ -233,6 +233,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 109. **« سؤال صعب » livré** (2026-11-15). « Je valide le script, les clips et le montage » : inscrit (`script_validated` des trois épisodes ; leurs clips approuvés). Trois requêtes de voix, toutes les phrases retrouvées (à écouter : « قلق وحيرة », épisode 1, entendu « ألأ وحينة »). Rendu par le workflow `film` (run 43664207279, release brouillon `sual-candidate`) : 1:52, 1:30, 0:55 ; -16,0, -16,3, -16,2 LUFS ; les versions TikTok signées `@quran.words.daily` ; contrôlés sur leurs planches (la pause qui devient lecture, la carte de la question et ses dessins, la maison et le nœud sous la loupe, la fenêtre et la lampe, les deux versets face à face, les portes, la copie, « بكرة », l'aube à la fin du troisième) ; couvertures lisibles (la pause et la question). Envoyés avec les textes (`docs/retention/publication-sual.md`) ; la série ajoutée à sa page (`video/out/sual/ci-1/` de la session). À valider par lui : les vidéos, les couvertures, les textes et les quatorze sources.
 
+110. **« سؤال صعب » validé** (propriétaire, 2026-11-15 : « je valide tout pour سؤال صعب »). Inscrit : `validated` des trois épisodes (voix, montage, couverture, ambiance, textes) et de `sual.yaml` (textes) ; ses quatorze sources passées à `validated` (six versets, sept passages de tafsir, Muslim 1054). Textes refaits (« validés ») ; page republiée. Pas encore au calendrier : proposition faite dans la conversation.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```

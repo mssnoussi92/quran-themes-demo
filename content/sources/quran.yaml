@@ -2490,7 +2490,8 @@
     surah_ar: طه
     surah_en: Taha
     retrieved: '2026-11-15'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 'Taha 20:124 (« سؤال صعب », épisode 1 : « فإن له معيشة ضنكا », le verset de la question)'
 
   text_ar: وَمَنْ أَعْرَضَ عَن ذِكْرِى فَإِنَّ لَهُۥ مَعِيشَةً ضَنكًا وَنَحْشُرُهُۥ يَوْمَ ٱلْقِيَـٰمَةِ أَعْمَىٰ
@@ -2507,7 +2508,8 @@
     surah_ar: الأنعام
     surah_en: Al-An'am
     retrieved: '2026-11-15'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 'Al-An''am 6:44 (« سؤال صعب », épisode 1 : « فتحنا عليهم أبواب كل شيء », la deuxième réponse)'
 
   text_ar: فَلَمَّا نَسُوا۟ مَا ذُكِّرُوا۟ بِهِۦ فَتَحْنَا عَلَيْهِمْ أَبْوَٰبَ كُلِّ شَىْءٍ حَتَّىٰٓ إِذَا فَرِحُوا۟ بِمَآ أُوتُوٓا۟ أَخَذْنَـٰهُم بَغْتَةً فَإِذَا هُم مُّبْلِسُونَ
@@ -2524,7 +2526,8 @@
     surah_ar: النحل
     surah_en: An-Nahl
     retrieved: '2026-11-15'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 'An-Nahl 16:97 (« سؤال صعب », épisode 2 : « فلنحيينه حياة طيبة », le verset de la question)'
 
   text_ar: مَنْ عَمِلَ صَـٰلِحًا مِّن ذَكَرٍ أَوْ أُنثَىٰ وَهُوَ مُؤْمِنٌ فَلَنُحْيِيَنَّهُۥ حَيَوٰةً طَيِّبَةً ۖ وَلَنَجْزِيَنَّهُمْ أَجْرَهُم بِأَحْسَنِ مَا كَانُوا۟ يَعْمَلُونَ
@@ -2541,7 +2544,8 @@
     surah_ar: العنكبوت
     surah_en: Al-'Ankabut
     retrieved: '2026-11-15'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 'Al-''Ankabut 29:2 (« سؤال صعب », épisode 2 : « وهم لا يفتنون », la deuxième réponse)'
 
   text_ar: أَحَسِبَ ٱلنَّاسُ أَن يُتْرَكُوٓا۟ أَن يَقُولُوٓا۟ ءَامَنَّا وَهُمْ لَا يُفْتَنُونَ
@@ -2558,7 +2562,8 @@
     surah_ar: الحجر
     surah_en: Al-Hijr
     retrieved: '2026-11-15'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 'Al-Hijr 15:49 (« سؤال صعب », épisode 3 : « أني أنا الغفور الرحيم », le verset de la question)'
 
   text_ar: ۞ نَبِّئْ عِبَادِىٓ أَنِّىٓ أَنَا ٱلْغَفُورُ ٱلرَّحِيمُ
@@ -2575,7 +2580,8 @@
     surah_ar: الحجر
     surah_en: Al-Hijr
     retrieved: '2026-11-15'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: 'Al-Hijr 15:50 (« سؤال صعب », épisode 3 : « وأن عذابي هو العذاب الأليم », la réponse, le verset suivant)'
   text_ar: وَأَنَّ عَذَابِى هُوَ ٱلْعَذَابُ ٱلْأَلِيمُ
   text_en: And that it is My punishment which is the painful punishment.
