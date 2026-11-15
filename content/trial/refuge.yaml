@@ -21,6 +21,10 @@ script_validated: { by: mssnoussi92, on: 2026-11-15 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 74-trial-refuge
+# Le clip : un rocher sous les étoiles (Dolomites, accéléré de nuit), ralenti cinq fois pour couvrir le short sans boucler.
+# APPROUVÉ par le propriétaire le 2026-11-15 (question à choix : « 14955, 26085, 30218 »). Cadrage, lumière et horizon
+# provisoires : réglés sur les images de style, avec les dessins (skill new-scene).
+clip: { source: pixabay, id: 14955, author: adege, page: "https://pixabay.com/videos/id-14955/", take: { slow: 5 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.85, ground: "#05070f", horizon: 1300 }
 cover: { scene: leave, title: "سابوا مدينتهم… واستخبّوا في كهف!", tag: "أصحاب الكهف · ١ من ٣", focus: 1200 }
 publish:
   title: { en: "They left their city… and hid in a cave!", ar: "سابوا مدينتهم… واستخبّوا في كهف!" }
