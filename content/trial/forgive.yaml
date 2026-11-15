@@ -26,11 +26,16 @@
 #   est rendu. Dessins : video/src/trial/Trial.tsx (ForgivePicture), video/src/trial/Ayah.tsx (Purse, Track).
 # - La dernière réplique : l'appel générique (l'épisode 5 n'est pas choisi ; skill write-hook).
 id: forgive
+# « Je valide » du propriétaire (2026-11-15), confirmé à la question de la session (« le script et le clip ») : le script
+# de docs/scripts/ayah.md (18 répliques, avec sa ligne d'avertissement sur Ibn Kathir), la place du verset, ce sur quoi
+# chaque narration repose, le titre ; et le clip (Pixabay 7215). Ni la voix, ni les dessins, ni l'ambiance, ni les
+# textes, ni les sources proposées : il les valide sur la vidéo.
+script_validated: { by: mssnoussi92, on: 2026-11-15 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 70-trial-forgive     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
-# Le clip, à montrer au propriétaire : une pleine lune derrière des nuages qui passent, ralentie trois fois pour ne se
-# jouer qu'une fois. Proposé par la session, pas encore approuvé.
+# Le clip : une pleine lune derrière des nuages qui passent, ralentie trois fois pour ne se jouer qu'une fois.
+# APPROUVÉ par le propriétaire le 2026-11-15 (« je valide », confirmé : « le script et le clip »).
 clip: { source: pixabay, id: 7215, author: quimuns, page: "https://pixabay.com/videos/id-7215/", take: { slow: 3 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.85, ground: "#05070f", horizon: 1330 }
 # Ambiance sous la narration, jamais sous le verset : un pré la nuit, un des trois enregistrements validés à l'écoute
 # par le propriétaire (docs/model.md, « Ambiances »), comme le short 2.
