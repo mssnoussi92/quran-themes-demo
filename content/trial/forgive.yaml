@@ -53,9 +53,10 @@ publish:
   description:
     en: "Abu Bakr as-Siddiq used to provide for a poor relative. That relative spoke lies against his daughter, and Abu Bakr swore never to give him anything again. Then a verse came down, and he answered: yes, by God, I love that God should forgive me… and gave it back to him."
     ar: "أبو بكر الصديق رضي الله عنه كان بيصرف على قريبه الفقير… وقريبه اتكلم على بنته كلام كذب، فحلف ما يدّيلوش حاجة تاني. ونزلت آية… فقال: أيوه والله، أنا بحب إن ربنا يغفرلي، ورجّعله اللي كان بيدّيهوله."
-  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, pas encore validée
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (« je valide les 29 »)
     ar: "حلف ما يدّيلوش حاجة تاني… ونزلت آية."
     en: "He swore never to give him anything again. Then a verse came down."
+    validated: 2026-11-15
 segments:
   - narration: open
     scene: cut

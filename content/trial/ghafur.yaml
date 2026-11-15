@@ -36,9 +36,10 @@ publish:
     en: '"Inform My servants that I am the Forgiving, the Merciful" (15:49). Some take it as leave to do anything and repent later. The answer is in the very next verse (15:50): forgiveness for those who
       return, the painful punishment for those who persist.'
     ar: 'ربنا بيبلّغ عباده إنه الغفور الرحيم (الحجر 49). وفي ناس بتاخدها حجة: أعمل اللي أنا عايزه وأستغفر بعدين. والرد في الآية اللي بعدها على طول (الحجر 50): المغفرة للي يتوب، والعذاب الأليم للي يصرّ.'
-  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, pas encore validée
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (« je valide les 29 »)
     ar: "في ناس بتاخدها حجة: أعمل اللي أنا عايزه وأستغفر بعدين. والرد في الآية اللي بعدها على طول."
     en: "Some take it as leave to do anything and repent later. The answer is in the very next verse."
+    validated: 2026-11-15
 segments:
 - narration: open
   scene: pause

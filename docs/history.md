@@ -443,3 +443,7 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   toutes les sessions futures feront ça ». Règle inscrite en tête de `CLAUDE.md`, ici et dans quran-reels : une
   question au propriétaire se pose avec `AskUserQuestion`, recommandation en premier ; le message garde le contexte et
   la contradiction franche ; une session sans cet outil met la question et ses options numérotées dans son rapport.
+- **Validées par le propriétaire le 2026-11-15** (question à choix : « Je valide les 29 », après la page « Légendes courtes
+  à valider » de son compte claude.ai) : `hook.validated` des 29 fichiers ; les textes refaits le disent, et
+  quran-reels les lit comme validés (contrôle : les 23 jours du 23 novembre au 1er janvier reliés, aucun texte en
+  attente).

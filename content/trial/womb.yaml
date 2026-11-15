@@ -32,9 +32,10 @@ publish:
   description:
     en: "Since Aristotle, scholars thought the embryo was blood setting like milk; no one could see its shape at four weeks, three millimetres long. The Quran named that stage with one word: 'alaqa. Ibn Kathir, six centuries ago, described it."
     ar: "من أيام أرسطو والعلما فاكرين الجنين دم بيتجمد زي اللبن، ومحدش كان يقدر يشوف شكله وهو تلاتة مللي. والقرآن سمّى المرحلة دي بكلمة واحدة: علقة. وابن كثير وصفها من أكتر من ستمية سنة."
-  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, pas encore validée
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (« je valide les 29 »)
     ar: "القرآن سمّى المرحلة دي بكلمة واحدة: علقة."
     en: "The Quran named that stage with one word: 'alaqa."
+    validated: 2026-11-15
 segments:
   - narration: open
     scene: milk

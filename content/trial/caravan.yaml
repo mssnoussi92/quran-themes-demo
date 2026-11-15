@@ -48,9 +48,10 @@ publish:
   description:
     en: "One Friday, while the Prophet ﷺ stood giving the sermon, a caravan loaded with food arrived, and only twelve men stayed with him. A verse came down then, and it answers a fear inside every one of us: that our provision will slip away if we stop for God."
     ar: "يوم جمعة، والنبي ﷺ واقف بيخطب، جت قافلة محمّلة أكل… وما فضلش معاه غير اتناشر راجل. ساعتها نزلت آية بترد على خوف جوّه كل واحد فينا: إن الرزق يفوتنا لو وقفنا قدام ربنا."
-  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, pas encore validée
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (« je valide les 29 »)
     ar: "يوم جمعة، والنبي ﷺ بيخطب، جت قافلة… وما فضلش معاه غير اتناشر راجل."
     en: "One Friday, during the sermon, a caravan arrived, and only twelve men stayed with the Prophet ﷺ."
+    validated: 2026-11-15
 segments:
   - narration: open
     scene: sermon

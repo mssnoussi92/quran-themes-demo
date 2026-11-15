@@ -25,9 +25,10 @@ publish:
   description:
     en: "Three tiny things in a date stone: the thread in its groove, the dent on its back, the skin around it. The Quran named all three, and measured with them God's justice, the reward of a good deed, and how little anyone else owns."
     ar: "تلات حاجات صغيرة في نواة التمرة: الخيط اللي في شقها، والنقرة اللي على ضهرها، والقشرة اللي حواليها. والقرآن سمّى التلاتة، وقاس بيهم عدل ربنا، وأجر العمل الصالح، وإن غيره ما يملكش حاجة."
-  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, pas encore validée
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (« je valide les 29 »)
     ar: "تلات حاجات صغيرة في نواة التمرة… والقرآن سمّى التلاتة."
     en: "Three tiny things in a date stone, and the Quran named all three."
+    validated: 2026-11-15
 segments:
   - narration: stone
     scene: stone

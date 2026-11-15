@@ -31,9 +31,10 @@ publish:
   description:
     en: "A book said of a living man, by his name, that he would die a disbeliever. All he had to do to prove it wrong was say one sentence, even as a lie. He never said it. Surat al-Masad, and what Ibn Kathir wrote about it."
     ar: "كتاب قال على راجل عايش، وباسمه، إنه هيموت على الكفر. وكل اللي كان عليه عشان يكذّبه: كلمة واحدة، ولو كدب. وما قالهاش. سورة المسد، وكلام ابن كثير عنها."
-  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, pas encore validée
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (« je valide les 29 »)
     ar: "كتاب قال على راجل عايش، وباسمه، إنه هيموت على الكفر."
     en: "A book said of a living man, by his name, that he would die a disbeliever."
+    validated: 2026-11-15
 segments:
   - narration: open
     scene: hourglass

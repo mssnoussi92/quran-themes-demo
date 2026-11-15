@@ -37,9 +37,10 @@ publish:
       little money. And another verse tells the whole story (29:2).'
     ar: 'القرآن بيوعد المؤمن اللي يعمل الخير بحياة طيبة (النحل 97). طب ليه ناس كتير بتصلي وبتعمل الخير وحياتها صعبة؟ الرد في معنى الآية نفسها: الحياة الطيبة حياة مطمئنة، ولو الفلوس قليلة. وآية تانية بتقول
       الحكاية كلها (العنكبوت 2).'
-  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; proposée, pas encore validée
+  hook:      # légende courte de Facebook, Instagram et TikTok (format choisi par le propriétaire le 2026-11-15) ; validée par lui le 2026-11-15 (« je valide les 29 »)
     ar: "القرآن بيوعد المؤمن اللي يعمل الخير بحياة طيبة. طب ليه ناس كتير بتصلي وحياتها صعبة؟"
     en: "The Quran promises the believer who does good a good life. So why is life hard for so many who pray?"
+    validated: 2026-11-15
 segments:
 - narration: open
   scene: pause
