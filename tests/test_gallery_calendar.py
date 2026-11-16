@@ -68,3 +68,12 @@ def test_the_real_calendar_parses():
     assert dates == sorted(dates) and len(dates) >= 10
     html = gallery.schedule(cal)
     assert 'id="calendrier"' in html and html.count('<li class="day') == len(dates)
+
+
+def test_a_series_drawn_twice_links_the_published_drawing(tmp_path):
+    path = tmp_path / "calendar.md"
+    path.write_text(SAMPLE.replace("`publication-s.md`", "`publication-l.md`"), encoding="utf-8")
+    lens = {"out": "publication-l.md", "tall": None, "published": "figure",
+            "cards": [{"slug": f"lens-short-1-{c}", "wide": False} for c in ("pov", "figure")]}
+    january = gallery.calendar(path, FILMS + [lens])["rows"][-1]
+    assert january["links"] == [("Voir et copier", "lens-short-1-figure")]

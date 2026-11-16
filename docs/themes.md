@@ -15,7 +15,7 @@ améliorés, ambiance. Leurs sources et leurs lectures de hadith, validées, res
 | Moussa et al-Khadir (`khidr`) | **fait** : film de 7:47 et trois shorts (`content/trial/film.yaml`, `boat`, `boy`, `wall`), tout validé le 2026-11-11 |
 | Du'a (`dua`) | **fait** : film et trois shorts (`content/trial/dua.yaml`, `asked`, `written`, `waited`), vidéos et textes à coller validés le 2026-11-11 |
 | Dhul-Qarnayn (`qarnayn`) | **fait** : film de 8:24 et trois shorts (`content/trial/qarnayn.yaml`, `west`, `tribute`, `barrier`), vidéos et textes à coller validés le 2026-11-12 ; fiche ci-dessous |
-| Les gens de la caverne (`kahf`) | **choisi pour le 30 novembre** (2026-11-13) ; fiche dans le modèle plus bas, script après les premières mesures |
+| Les gens de la caverne (`kahf`) | **fait** en version courte : film de 6:11 (et son 9:16 pour Facebook) et trois shorts d'environ 1:10 (`content/trial/kahf.yaml`, `refuge`, `sunpath`, `awake`), tout validé le 2026-11-16 ; au calendrier du 30 novembre au 3 décembre |
 | Patience, repentir, comparaisons, confiance en Dieu, الخشوع | à réécrire ; idées reçues, sur le modèle du du'a (chaque idée brisée par un fait du Coran qu'on peut montrer) |
 
 **Ordre** : la session proposait Dhul-Qarnayn, puis la caverne, puis les idées reçues une fois les outils
@@ -761,6 +761,9 @@ Sources à inscrire : 10:5, 17:88, leurs passages de tafsir, le compte (`count`)
 possible : l'épisode 6, « ١٩ » (le code de Rashad Khalifa l'a mené à retirer 9:128-129), à décider avec lui.
 
 ## Série proposée : une image, puis le verset (pilote court, 2026-11-15)
+
+**Fait** : « بص تاني », trois shorts en deux dessins, tout validé le 2026-11-15 ; **publié en B, la silhouette** (son choix,
+2026-11-16), les jeudis 10, 17 et 24 décembre (`docs/retention/calendar.md`).
 
 **Les réponses du propriétaire (2026-11-15)** : les trois candidats, « oui » ; la personne, « je veux qu'on essaye A et
 B » (sa règle, précisée le même jour : une silhouette ou un bonhomme sans visage pour un anonyme est permis) ; le nom :

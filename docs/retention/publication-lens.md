@@ -4,7 +4,7 @@ Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la 
 
 ## Short 1 · Everything went dark… look up · كل حاجة ضلمت فجأة؟ بص لفوق
 
-`lens-short-1-blackout-pov.mp4` (TikTok : `lens-short-1-blackout-pov-tiktok.mp4`, couverture : `lens-short-1-blackout-pov-cover.jpg`) ; `lens-short-1-blackout-figure.mp4` (TikTok : `lens-short-1-blackout-figure-tiktok.mp4`, couverture : `lens-short-1-blackout-figure-cover.jpg`), signées `@quran.words.daily` sur TikTok · 0:41 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts
+`lens-short-1-blackout-figure.mp4` (TikTok : `lens-short-1-blackout-figure-tiktok.mp4`, couverture : `lens-short-1-blackout-figure-cover.jpg`) ; `lens-short-1-blackout-pov.mp4` (TikTok : `lens-short-1-blackout-pov-tiktok.mp4`, couverture : `lens-short-1-blackout-pov-cover.jpg`), signées `@quran.words.daily` sur TikTok · 0:41 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts
 
 **Facebook · Titre**
 
@@ -50,7 +50,7 @@ The power went out and the city went dark… and the sky filled with stars that 
 #فإن_مع_العسر_يسرا #القرآن_الكريم #بص_تاني #Quran #سورة_الشرح
 ```
 
-Sur TikTok : la vidéo `lens-short-1-blackout-pov-tiktok.mp4` ou `lens-short-1-blackout-figure-tiktok.mp4`, signée `@quran.words.daily`.
+Sur TikTok : la vidéo `lens-short-1-blackout-figure-tiktok.mp4` ou `lens-short-1-blackout-pov-tiktok.mp4`, signée `@quran.words.daily`.
 
 **TikTok · Titre**
 
@@ -112,7 +112,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 ## Short 2 · Waiting for something that never comes? · مستني حاجة… ومش بتيجي؟
 
-`lens-short-2-drought-pov.mp4` (TikTok : `lens-short-2-drought-pov-tiktok.mp4`, couverture : `lens-short-2-drought-pov-cover.jpg`) ; `lens-short-2-drought-figure.mp4` (TikTok : `lens-short-2-drought-figure-tiktok.mp4`, couverture : `lens-short-2-drought-figure-cover.jpg`), signées `@quran.words.daily` sur TikTok · 0:45 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts
+`lens-short-2-drought-figure.mp4` (TikTok : `lens-short-2-drought-figure-tiktok.mp4`, couverture : `lens-short-2-drought-figure-cover.jpg`) ; `lens-short-2-drought-pov.mp4` (TikTok : `lens-short-2-drought-pov-tiktok.mp4`, couverture : `lens-short-2-drought-pov-cover.jpg`), signées `@quran.words.daily` sur TikTok · 0:45 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts
 
 **Facebook · Titre**
 
@@ -158,7 +158,7 @@ Waiting for something… while the clouds pass without rain?
 #الفرج #القرآن_الكريم #بص_تاني #Quran #سورة_الشورى
 ```
 
-Sur TikTok : la vidéo `lens-short-2-drought-pov-tiktok.mp4` ou `lens-short-2-drought-figure-tiktok.mp4`, signée `@quran.words.daily`.
+Sur TikTok : la vidéo `lens-short-2-drought-figure-tiktok.mp4` ou `lens-short-2-drought-pov-tiktok.mp4`, signée `@quran.words.daily`.
 
 **TikTok · Titre**
 
@@ -220,7 +220,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 ## Short 3 · How many hours did you scroll today? · قلّبت كام ساعة النهارده؟
 
-`lens-short-3-scroll-pov.mp4` (TikTok : `lens-short-3-scroll-pov-tiktok.mp4`, couverture : `lens-short-3-scroll-pov-cover.jpg`) ; `lens-short-3-scroll-figure.mp4` (TikTok : `lens-short-3-scroll-figure-tiktok.mp4`, couverture : `lens-short-3-scroll-figure-cover.jpg`), signées `@quran.words.daily` sur TikTok · 0:51 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts
+`lens-short-3-scroll-figure.mp4` (TikTok : `lens-short-3-scroll-figure-tiktok.mp4`, couverture : `lens-short-3-scroll-figure-cover.jpg`) ; `lens-short-3-scroll-pov.mp4` (TikTok : `lens-short-3-scroll-pov-tiktok.mp4`, couverture : `lens-short-3-scroll-pov-cover.jpg`), signées `@quran.words.daily` sur TikTok · 0:51 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts
 
 **Facebook · Titre**
 
@@ -266,7 +266,7 @@ How many hours did you scroll today… while the clock ran and you stayed put?
 #سورة_العصر #القرآن_الكريم #بص_تاني #Quran #الوقت
 ```
 
-Sur TikTok : la vidéo `lens-short-3-scroll-pov-tiktok.mp4` ou `lens-short-3-scroll-figure-tiktok.mp4`, signée `@quran.words.daily`.
+Sur TikTok : la vidéo `lens-short-3-scroll-figure-tiktok.mp4` ou `lens-short-3-scroll-pov-tiktok.mp4`, signée `@quran.words.daily`.
 
 **TikTok · Titre**
 
