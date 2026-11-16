@@ -13,6 +13,9 @@ files: lens                      # début du nom des vidéos livrées : lens-sho
 title: { ar: "بص تاني", en: "Look Again" }        # proposé par la session ; « oui je valide les 3 » du propriétaire (2026-11-15)
 shorts: [blackout, drought, scroll]
 casts: [pov, figure]
+# Le dessin publié par quran-reels (le premier fichier de la ligne de publish.py) : B, la silhouette, choix du
+# propriétaire le 2026-11-16 (question à choix : « les 3 en B, la silhouette »), aux jeudis 10, 17 et 24 décembre.
+published_cast: figure
 handle: "@quran_words_daily"
 publish:
   out: docs/retention/publication-lens.md

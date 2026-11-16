@@ -119,8 +119,10 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
   A et B ») : chaque short est dessiné deux fois, la prop `cast` choisit le dessin (`pov` : le spectateur est la
   caméra ; `figure` : une silhouette anonyme sans visage, `Figure` de `video/src/trial/Lens.tsx`, ses poses et sa
   marche) ; `tools/trial/videos.py` liste chaque short dans chaque dessin (`…-blackout-pov.mp4`,
-  `…-blackout-figure.mp4`). La page et les textes à coller ne savent pas encore en montrer deux : à faire quand
-  le propriétaire aura choisi.
+  `…-blackout-figure.mp4`) ; la page montre les deux, les textes à coller les nomment tous deux.
+  `published_cast: figure` (« بص تاني », choix du propriétaire, 2026-11-16 : « les 3 en B, la silhouette ») met ce
+  dessin en tête de la ligne des fichiers de `publish.py` : c'est lui que quran-reels publie (il prend le premier
+  `.mp4` de la ligne).
 - `cut: {drop: [...]}` dans le fichier d'un short : la version courte pour Facebook et Instagram (60 à 75 s), la même
   prise de voix, les mêmes versets et images, moins ce que `drop` nomme : un segment de narration (`depth`), une
   réplique (`"close:2"`, indice à partir de 0) ou un verset (son id) ; un élément qui ne correspond à rien est une

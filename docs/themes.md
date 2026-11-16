@@ -762,6 +762,9 @@ possible : l'épisode 6, « ١٩ » (le code de Rashad Khalifa l'a mené à reti
 
 ## Série proposée : une image, puis le verset (pilote court, 2026-11-15)
 
+**Fait** : « بص تاني », trois shorts en deux dessins, tout validé le 2026-11-15 ; **publié en B, la silhouette** (son choix,
+2026-11-16), les jeudis 10, 17 et 24 décembre (`docs/retention/calendar.md`).
+
 **Les réponses du propriétaire (2026-11-15)** : les trois candidats, « oui » ; la personne, « je veux qu'on essaye A et
 B » (sa règle, précisée le même jour : une silhouette ou un bonhomme sans visage pour un anonyme est permis) ; le nom :
 « recommande d'autres noms » ; et « fais des efforts pour créer les personnages ; l'idée doit être rapide et facile à

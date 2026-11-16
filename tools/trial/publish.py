@@ -378,8 +378,11 @@ def main() -> None:
         title = f"{sp['title']['en']} · {sp['title']['ar']}"
         if len(title) > limits["youtube"]["max_title"]:
             sys.exit(f"error: {name}: the YouTube title is {len(title)} characters")
-        # A series drawn twice (`casts`): the same texts for both drawings, each file named.
+        # A series drawn twice (`casts`): the same texts for both drawings, each file named. The drawing the owner chose to
+        # publish (`published_cast`) comes first: quran-reels publishes the first .mp4 of the line (« بص تاني », 2026-11-16: B).
         casts = film.get("casts") or []
+        if film.get("published_cast") in casts:
+            casts = [film["published_cast"]] + [c for c in casts if c != film["published_cast"]]
         files_line = (
             " ; ".join(f"`{name}-{c}{bed}.mp4` (TikTok : `{name}-{c}-tiktok{bed}.mp4`, couverture : `{name}-{c}-cover.jpg`)" for c in casts)
             + f", signées `{conf['handles']['tiktok']}` sur TikTok · {stamp(data['seconds'])} · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts"
