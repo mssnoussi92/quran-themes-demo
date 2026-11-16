@@ -20,6 +20,9 @@ script_validated: { by: mssnoussi92, on: 2026-11-15 }
 # telles que livrées (la voix, avec « ربنا يأويه » signalé à écouter ; les dessins ; les ambiances ; les couvertures), les
 # textes et leurs accroches, et ses dix passages de tafsir, passés à `validated`. Inscrit sur sa parole.
 validated: { by: mssnoussi92, on: 2026-11-16, what: [voice, montage, thumbnail, subscribe, publish, ambience] }
+# Le film en 9:16 pour Facebook (sa demande, 2026-11-16 : « il faut préparer la version film pour Facebook ») : « je valide
+# le film vertical de la caverne » (question à choix), tel qu'envoyé avec son texte Facebook.
+tall: { validated: { by: mssnoussi92, on: 2026-11-16, what: [montage, publish] } }
 files: kahf                      # kahf-film-16x9.mp4, kahf-short-<n>-<id>.mp4
 title: { ar: "أصحاب الكهف… تلات مواقف", en: "The People of the Cave: three moments" }
 handle: "@quran_words_daily"
