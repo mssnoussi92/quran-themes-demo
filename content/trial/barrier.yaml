@@ -25,6 +25,12 @@ voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft
 text: 42-trial-barrier
 ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 80, level: -38 }
 cover: { scene: done, title: "بنى السد… وقال: مش مني!", tag: "ذو القرنين · ٣ من ٣", focus: 1200 }
+# La version courte pour Facebook et Instagram (essai sur les trois shorts de Dhul-Qarnayn, choix du propriétaire le
+# 2026-11-16 dans la session quran-reels : « les 3 de Dhul-Qarnayn ») : la même prise, moins « والسد وقف؟ » et 18:97
+# (11 s ; 18:97 commence par « فما », la suite de 18:96 : c'est lui qui part, pas 18:96, le sens du fait), la
+# reprise de la phrase du verset, la profondeur et l'exemple. Le fait et la question « وقال: ده مش مني! » ouvrent déjà
+# la vidéo. Proposée par la session, à valider par lui sur la vidéo.
+cut: { drop: [stood, quran.18.97, "meaning:0", depth, example] }
 publish:
   title: { en: "He built the barrier… and said: not from me", ar: "بنى السد… وقال: مش مني!" }
   part: 3

@@ -23,6 +23,11 @@ voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft
 text: 41-trial-tribute
 ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -36 }
 cover: { scene: offer, title: "عرضوا عليه فلوس… ورفض!", tag: "ذو القرنين · ٢ من ٣", focus: 1200 }
+# La version courte pour Facebook et Instagram (essai sur les trois shorts de Dhul-Qarnayn, choix du propriétaire le
+# 2026-11-16 dans la session quran-reels : « les 3 de Dhul-Qarnayn ») : la même prise, moins 18:93 (14 s : le lieu entre
+# les deux barrières, que l'accroche dit déjà), le sens mot à mot, la profondeur et l'exemple. La question « ورفض الفلوس!
+# ليه؟ » ouvre déjà la vidéo. Proposée par la session, à valider par lui sur la vidéo.
+cut: { drop: [quran.18.93, "meaning:0", depth, example] }
 publish:
   title: { en: "They offered him money… he refused", ar: "عرضوا عليه فلوس… ورفض!" }
   part: 2
