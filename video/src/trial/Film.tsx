@@ -14,6 +14,7 @@ import type { Layout, Narration, Picture, Reading, Verse } from "./Trial";
 import { Village, Wall } from "./Wall";
 import { Call, Niche, Whale } from "./Dua";
 import { Barrier, Chest, Cliffs, Dwellings } from "./Qarnayn";
+import { KAHF_WIDE } from "./Kahf";
 
 loadFonts();
 
@@ -236,6 +237,7 @@ const WIDE: Record<string, Drawn> = {
   boat: BoatWide, boy: HomeWide, wall: WallWide,
   asked: AskedWide, written: WrittenWide, waited: WaitedWide,
   west: WestWide, tribute: TributeWide, barrier: BarrierWide,
+  ...KAHF_WIDE,
 };
 
 /** One stretch of the film on the same clip: the clip, what is drawn over it scene after scene, a slow zoom. */

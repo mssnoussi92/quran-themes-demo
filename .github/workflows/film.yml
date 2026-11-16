@@ -208,6 +208,11 @@ jobs:
             uv run --with pyyaml python3 tools/trial/clip.py --trial "$id" --out "build/clips/$id.mp4"
             uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py \
               --trial "$id" --voice "$VOICE" --takes content/trial/takes --clip "build/clips/$id.mp4" "${flags[@]}"
+            # The short version for Facebook and Instagram (`cut` in the file): same take, same clip.
+            if [ "$(uv run --with pyyaml python3 -c "import sys, yaml; print('cut' if yaml.safe_load(open(sys.argv[1])).get('cut') else '')" "content/trial/$id.yaml")" = cut ]; then
+              uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/prepare.py \
+                --trial "$id" --voice "$VOICE" --takes content/trial/takes --clip "build/clips/$id.mp4" "${flags[@]}" --cut
+            fi
             echo "::endgroup::"
           done
 
@@ -532,7 +537,9 @@ jobs:
                 -H "Content-Type: application/octet-stream" --input "$file" --jq .name
             done
             # The notes hold the texts of the whole film: kept as they were when this run could not write them.
-            if [ ! -e no-texts ]; then gh api -X PATCH "repos/$GH_REPO/releases/$existing" -F body=@notes.md --jq .id; fi
+            # The tag is given again: a draft's tag does not exist yet, and an edit without it left the draft of the
+            # cave « untagged-… » on 2026-11-16, so that page-files and the next run of a part no longer found it.
+            if [ ! -e no-texts ]; then gh api -X PATCH "repos/$GH_REPO/releases/$existing" -F body=@notes.md -f tag_name="$tag" --jq .id; fi
           else
             for id in $(gh api "repos/$GH_REPO/releases?per_page=100" --jq ".[] | select(.draft and .tag_name == \"$tag\") | .id"); do
               gh api -X DELETE "repos/$GH_REPO/releases/$id"

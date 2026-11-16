@@ -22,6 +22,7 @@ import { FARQ_LAYOUTS, FARQ_OVERLAYS, FARQ_PICTURES } from "./Farq";
 import { MAP_LAYOUTS, MAP_OVERLAYS, MAP_PICTURES } from "./WordMap";
 import { SUAL_LAYOUTS, SUAL_OVERLAYS, SUAL_PICTURES } from "./Sual";
 import { LENS_PICTURES } from "./Lens";
+import { KAHF_PICTURES } from "./Kahf";
 
 loadFonts();
 
@@ -78,12 +79,14 @@ export type TrialData = {
 };
 /** `platform`: where the page has another name (TikTok: content/publish.yaml, `handles`), the video is signed with it. */
 /** `cast`: for a series drawn twice (content/trial/<series>.yaml, `casts`), which drawing: `pov` or `figure`. */
-export type TrialProps = { trial: string; voice: string; platform?: string; cast?: string; data: TrialData | null };
+/** `version`: "cut", the short version for Facebook and Instagram (`prepare.py --cut`: <trial>-<voice>-cut.json). */
+export type TrialProps = { trial: string; voice: string; platform?: string; cast?: string; version?: string; data: TrialData | null };
 
 export const TRIAL_FPS = 30;
 export const trialMetadata: CalculateMetadataFunction<TrialProps> = async ({ props, abortSignal }) => {
-  const res = await fetch(staticFile(`trial/${props.trial}-${props.voice}.json`), { signal: abortSignal });
-  if (!res.ok) throw new Error(`public/trial/${props.trial}-${props.voice}.json is missing: run tools/trial/prepare.py`);
+  const file = `${props.trial}-${props.voice}${props.version ? `-${props.version}` : ""}.json`;
+  const res = await fetch(staticFile(`trial/${file}`), { signal: abortSignal });
+  if (!res.ok) throw new Error(`public/trial/${file} is missing: run tools/trial/prepare.py${props.version === "cut" ? " --cut" : ""}`);
   const data = (await res.json()) as TrialData;
   return { durationInFrames: Math.ceil(data.seconds * TRIAL_FPS), props: { ...props, data } };
 };
@@ -444,6 +447,7 @@ export const PICTURES: Record<string, Drawn> = {
   ...MAP_PICTURES,
   ...SUAL_PICTURES,
   ...LENS_PICTURES,
+  ...KAHF_PICTURES,
 };
 
 /** What a short draws above its veil, under its texts, outside the slowly growing picture: a timeline, a badge,

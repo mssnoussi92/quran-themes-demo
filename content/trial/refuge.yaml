@@ -1,0 +1,90 @@
+# Les gens de la caverne (film `kahf`), short 1 : la fuite et leur du'a (18:10). Version courte, choisie par le
+# propriétaire le 2026-11-15 (« la caverne, version courte » ; « oui, ce plan ») : un verset court par short, environ 60 à
+# 75 s, une image qui bouge dès la première seconde ; le reste de l'histoire va au film, pour YouTube. Pourquoi : les
+# premières mesures (docs/retention.md, 2026-11-15) : sur Facebook et Instagram, on part au bout de 4 à 8 s.
+# - La question d'abord (propriétaire, 2026-11-15 : « la question la plus forte d'abord ») : celle à laquelle le verset
+#   répond, ce qu'ils ont dit dans leur seule du'a.
+# - Le fait : ils quittent leur ville pour une caverne ; pourquoi (al-Muyassar : « خشية من فتنة قومهم لهم، وإرغامهم على
+#   عبادة الأصنام ») ; ce qu'ils demandent (al-Muyassar : « رحمة، تثبتنا بها، وتحفظنا من الشر، ويسِّر لنا الطريق الصواب »).
+# - La leçon (as-Sa'di) : « فجمعوا بين السعي والفرار من الفتنة… وبين تضرعهم وسؤالهم لله… وعدم اتكالهم على أنفسهم وعلى
+#   الخلق، فلذلك استجاب الله دعاءهم ».
+# - Répliques de la session sans tafsir : l'exemple (une scène type), la phrase à retenir, l'annonce du short 2.
+# - La du'a n'est pas dite par notre voix : la réplique donne sa référence (« سورة الكهف، آية عشرة »).
+# - Images (personne, jamais les jeunes ; rien de l'invisible) : `leave` la ville la nuit derrière, des traces de pas qui
+#   s'en éloignent vers la colline ; `cave` les traces entrent dans la caverne ; `dawn` le jour se lève sur l'entrée.
+id: refuge
+# « Je valide le script de la caverne » du propriétaire (2026-11-15, question à choix), après la page docs/scripts/kahf.md
+# avec les premières répliques des shorts 1 et 2 refaites à sa demande (« la question la plus forte d'abord ») : les
+# répliques, la place des versets (18:19 et 18:21 coupés), ce sur quoi chaque narration repose, les titres. Ni la voix,
+# ni les clips, ni les dessins, ni les ambiances, ni les textes, ni les sources proposées : il les valide sur la vidéo.
+script_validated: { by: mssnoussi92, on: 2026-11-15 }
+# « Je valide tout pour la caverne » du propriétaire (2026-11-16, question à choix), après l'envoi des trois shorts, de
+# leurs versions TikTok et couvertures, du film (6:11), de sa miniature et des textes à coller : lu comme les vidéos
+# telles que livrées (la voix, avec « ربنا يأويه » signalé à écouter ; les dessins ; les ambiances ; les couvertures), les
+# textes et leurs accroches, et ses dix passages de tafsir, passés à `validated`. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-16, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 74-trial-refuge
+# Le clip : un rocher sous les étoiles (Dolomites, accéléré de nuit), ralenti cinq fois pour couvrir le short sans boucler.
+# APPROUVÉ par le propriétaire le 2026-11-15 (question à choix : « 14955, 26085, 30218 »). Cadrage, lumière et horizon
+# provisoires : réglés sur les images de style, avec les dessins (skill new-scene).
+clip: { source: pixabay, id: 14955, author: adege, page: "https://pixabay.com/videos/id-14955/", take: { slow: 5 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.85, ground: "#05070f", horizon: 1300, landscape: { side: left, horizon: 820, brightness: 0.85 } }
+# Ambiance sous la narration, jamais sous le verset : un pré la nuit (validé à l'écoute par le propriétaire, docs/model.md),
+# la nuit de la fuite.
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 120, level: -38 }
+cover: { scene: leave, title: "سابوا مدينتهم… واستخبّوا في كهف!", tag: "أصحاب الكهف · ١ من ٣", focus: 1200 }
+publish:
+  title: { en: "They left their city… and hid in a cave!", ar: "سابوا مدينتهم… واستخبّوا في كهف!" }
+  part: 1
+  hashtags: ["#الثبات", "#قصص_القرآن"]
+  description:
+    en: "Young men left their city and their homes to hide in a cave, because their people wanted to force them to worship idols. They went in with a single prayer. They did their part, and asked God for the rest."
+    ar: "شباب سابوا مدينتهم وبيوتهم واستخبّوا في كهف، عشان قومهم كانوا عايزين يجبروهم يعبدوا أصنام. ودخلوا بدعوة واحدة… عملوا اللي عليهم، وطلبوا الباقي من ربنا."
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-16 (« je valide tout pour la caverne »)
+    ar: "سابوا مدينتهم… واستخبّوا في كهف بدعوة واحدة."
+    en: "They left their city… and hid in a cave with a single prayer."
+    validated: 2026-11-16
+segments:
+  - narration: open
+    scene: leave
+    sources: [tafsir.muyassar.18.10]
+    lines:
+      - ar: "شباب هربوا بدينهم لكهف… ومعاهمش غير دعوة واحدة. قالوا إيه؟"
+        en: "Young men fled to a cave with their faith… with nothing but a single prayer. What did they say?"
+      - ar: "قومهم كانوا عايزين يجبروهم يعبدوا أصنام… فسابوا مدينتهم وبيوتهم."
+        en: "Their people wanted to force them to worship idols… so they left their city and their homes."
+      - ar: "ودعوتهم دي… لكل واحد حاسس إنه لوحده."
+        en: "And that prayer of theirs… is for anyone who feels alone."
+  - verse: quran.18.10
+    scene: cave
+  - narration: meaning
+    scene: cave
+    sources: [tafsir.muyassar.18.10]
+    lines:
+      - ar: "طلبوا من ربنا رحمة… تثبّتهم وتحفظهم… وإنه يدلّهم على الطريق الصح."
+        en: "They asked God for mercy… to keep them firm and safe… and to show them the right path."
+  - narration: depth
+    scene: cave
+    sources: [tafsir.saadi.18.10]
+    lines:
+      - ar: "عملوا اللي عليهم: بعدوا عن الفتنة… وطلبوا الباقي من ربنا."
+        en: "They did their part: they got away from those who would turn them from their faith… and asked God for the rest."
+      - ar: "ما اعتمدوش على نفسهم… ولا على حد. وعشان كده… ربنا استجاب لهم."
+        en: "They relied neither on themselves… nor on anyone. And that is why… God answered them."
+  - narration: example
+    scene: cave
+    lines:
+      - ar: "زي لما تبقى الوحيد في الشلة… اللي رافض حاجة غلط."
+        en: "Like being the only one in your group… saying no to something wrong."
+      - ar: "ابعد خطوة… واطلب من ربنا يثبّتك."
+        en: "Step away… and ask God to keep you firm."
+  - narration: close
+    scene: dawn
+    lines:
+      - ar: "ولما تحس إنك لوحدك… ادعي بدعوتهم: سورة الكهف، آية عشرة."
+        en: "And when you feel alone… pray their prayer: Surat al-Kahf, verse ten."
+      - ar: "دخلوا الكهف… وناموا. واللي حصل وهما نايمين… أغرب."
+        en: "They went into the cave… and slept. And what happened while they slept… is stranger."
+      - ar: "تابعنا عشان تعرف بقية القصة."
+        en: "Follow us to find out the rest of the story."

@@ -106,7 +106,8 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
   écrits à l'écran, `claim`, `checked` : les pages où la session a vérifié le fait) : une narration peut reposer
   dessus (`sources:`), jamais un verset ni une lecture.
 - `upto: N` sur un segment `verses` d'un seul verset : il n'en récite que les N premiers mots, jusqu'à un signe de
-  pause (la signature : 41:53 jusqu'à « أنه الحق ۗ »).
+  pause (la signature : 41:53 jusqu'à « أنه الحق ۗ ») ; dans un short comme dans un film (`film.py`, 2026-11-15 : le film de la caverne
+  s'arrête dans 18:21 avant la mosquée bâtie sur eux).
 - `silent: true` sur un segment de narration (le début rapide de « خريطة كلمة », demande du propriétaire, 2026-11-14) :
   la réplique est écrite à l'écran, aucune voix ne la dit, elle n'est pas dans le texte de la voix ; minutée d'après sa
   longueur, comme un brouillon, et `hold: N` la tient au moins N secondes, le temps de la lire.
@@ -120,6 +121,18 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
   marche) ; `tools/trial/videos.py` liste chaque short dans chaque dessin (`…-blackout-pov.mp4`,
   `…-blackout-figure.mp4`). La page et les textes à coller ne savent pas encore en montrer deux : à faire quand
   le propriétaire aura choisi.
+- `cut: {drop: [...]}` dans le fichier d'un short : la version courte pour Facebook et Instagram (60 à 75 s), la même
+  prise de voix, les mêmes versets et images, moins ce que `drop` nomme : un segment de narration (`depth`), une
+  réplique (`"close:2"`, indice à partir de 0) ou un verset (son id) ; un élément qui ne correspond à rien est une
+  erreur. `open_with: [<narration>]` met ces segments en tête de la version courte (propriétaire, 2026-11-15 :
+  « le hook doit partir d'abord » : la question la plus forte ouvre la vidéo), chacun avec ses phrases de la prise. `prepare.py --cut` écrit `<id>-<voix>-cut.json` (`"version": "cut"`) et des fichiers en `-cut` ; `videos.py`
+  ajoute la vidéo `…-cut` (props `"version":"cut"`), jamais pour TikTok ni YouTube. **Pour quran-reels** (la convention, 2026-11-15) : une
+  fois la coupe validée par le propriétaire (`cut.validated`), `publish.py` ajoute à la ligne des fichiers du short, après
+  la couverture, « · version courte pour Facebook et Instagram : `<short>-cut.mp4`, 1:13 » ; `page-files` la rend
+  publique avec les autres. La ligne garde sa forme : le premier `.mp4` reste le short entier (YouTube, TikTok), et un
+  lecteur qui l'ignore publie le short entier partout, comme avant. quran-reels prend `-cut.mp4` pour Facebook et
+  Instagram quand la ligne en nomme un ; les textes sont les mêmes. Pour la mettre dans la release brouillon sans rien re-rendre
+  de validé : workflow `film` avec `only: cut` (les seules versions courtes du film), puis `page-files`.
 - `OVERLAYS` et `LAYOUTS` de `video/src/trial/Trial.tsx` : ce qu'un short dessine au-dessus du voile sans bouger
   (le badge de la série, la frise des dates) et où ses textes se placent ; les dessins, photos et frises de la série
   sont dans `video/src/trial/Signs.tsx`.

@@ -1,0 +1,155 @@
+# Le film des gens de la caverne (18:9-26), pour YouTube, et ses trois shorts courts (refuge, sunpath, awake). Plan choisi
+# par le propriétaire le 2026-11-15 (« oui, ce plan ») : un verset court par short, le cadre (Muslim 809a, 18:9) et la
+# conclusion (18:21, 18:22, 18:26) dans le film seul. Remplace l'épisode publié (content/episodes/kahf.yaml), dont les
+# sources validées restent. Fiche : docs/themes.md.
+# - 18:21 s'arrête à « إذ يتنازعون بينهم أمرهم ۖ » (upto 17) : la suite, la mosquée bâtie sur eux, est ce que nos deux
+#   tafsirs disent interdit par le Prophète ﷺ (al-Muyassar, as-Sa'di) ; sans réplique d'avertissement et sans le
+#   hadith, le film ne la récite pas.
+# - 18:22, leur nombre : récité, aucun nombre dit par notre voix (décision du propriétaire, 2026-11-09) ; la leçon
+#   (as-Sa'di) : une dispute sans profit « تضييعا للزمان، وتأثيرا في مودة القلوب ».
+# - La conclusion (as-Sa'di sur 18:21) : « من فر بدينه من الفتن، سلمه الله منها… ومن أوى إلى الله، آواه الله ».
+# - Répliques de la session sans tafsir : l'ouverture, les liaisons, « وكام خناقة… ».
+id: kahf
+# « Je valide le script de la caverne » du propriétaire (2026-11-15, question à choix), après la page docs/scripts/kahf.md
+# avec les premières répliques des shorts 1 et 2 refaites à sa demande (« la question la plus forte d'abord ») : les
+# répliques, la place des versets (18:19 et 18:21 coupés), ce sur quoi chaque narration repose, les titres. Ni la voix,
+# ni les clips, ni les dessins, ni les ambiances, ni les textes, ni les sources proposées : il les valide sur la vidéo.
+script_validated: { by: mssnoussi92, on: 2026-11-15 }
+# « Je valide tout pour la caverne » du propriétaire (2026-11-16, question à choix), après l'envoi des trois shorts, de
+# leurs versions TikTok et couvertures, du film (6:11), de sa miniature et des textes à coller : lu comme les vidéos
+# telles que livrées (la voix, avec « ربنا يأويه » signalé à écouter ; les dessins ; les ambiances ; les couvertures), les
+# textes et leurs accroches, et ses dix passages de tafsir, passés à `validated`. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-16, what: [voice, montage, thumbnail, subscribe, publish, ambience] }
+# Le film en 9:16 pour Facebook (sa demande, 2026-11-16 : « il faut préparer la version film pour Facebook ») : « je valide
+# le film vertical de la caverne » (question à choix), tel qu'envoyé avec son texte Facebook.
+tall: { validated: { by: mssnoussi92, on: 2026-11-16, what: [montage, publish] } }
+files: kahf                      # kahf-film-16x9.mp4, kahf-short-<n>-<id>.mp4
+title: { ar: "أصحاب الكهف… تلات مواقف", en: "The People of the Cave: three moments" }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 77-trial-kahf
+outro: 12
+shorts: [refuge, sunpath, awake]
+thumbnail: { title: "أصحاب الكهف", tag: "٣ مواقف", panels: [refuge, sunpath, awake] }
+publish:
+  out: docs/retention/publication-kahf.md
+  title: { en: "The People of the Cave: 3 moments", ar: "أصحاب الكهف: ٣ مواقف" }
+  series: { en: "The People of the Cave", ar: "أصحاب الكهف" }
+  description:
+    en: "Young men who leave their city with a single prayer, a sun that turns away from their cave every day, and a sleep of three hundred and nine years they took for a day: the story at the start of Surat al-Kahf, in three moments. What God does for those who take refuge in Him."
+    ar: "شباب سابوا مدينتهم بدعوة واحدة، وشمس بتميل عن كهفهم كل يوم، ونومة تلتمية وتسع سنين فاكرينها يوم: القصة اللي في أول سورة الكهف، في تلات مواقف. ربنا بيعمل إيه مع اللي يلجأ له."
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-16 (« je valide tout pour la caverne »)
+    ar: "ربنا بيعمل إيه مع اللي يلجأ له؟"
+    en: "What does God do for those who take refuge in Him?"
+    validated: 2026-11-16
+  hashtags: ["#أصحاب_الكهف", "#سورة_الكهف"]
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }
+chapters:
+  - id: open
+    title: { ar: "تلات مواقف", en: "Three moments" }
+    segments:
+      - narration: film-open
+        shots: [{ picture: refuge, scene: leave }, { picture: sunpath, scene: rise }, { picture: awake, scene: years }]
+        lines:
+          - ar: "شباب سابوا مدينتهم… شمس بتميل عن كهفهم… ونومة فاكرينها يوم."
+            en: "Young men leave their city… a sun turns away from their cave… and a sleep they took for a day."
+      - narration: film-promise
+        picture: refuge
+        scene: cave
+        lines:
+          - ar: "تلات مواقف من قصة أصحاب الكهف… بيوروك ربنا بيعمل إيه… مع اللي يلجأ له."
+            en: "Three moments from the story of the People of the Cave… that show what God does… for those who take refuge in Him."
+  - id: frame
+    title: { ar: "أول سورة الكهف", en: "The opening of Surat al-Kahf" }
+    segments:
+      - narration: film-frame
+        picture: refuge
+        scene: leave
+        lines:
+          - ar: "النبي صلى الله عليه وسلم قال عن أول سورة الكهف:"
+            en: "The Prophet ﷺ said of the opening of Surat al-Kahf:"
+      - { reading: hadith.muslim.809a }
+      - narration: film-ten
+        lines:
+          - ar: "وقصة أصحاب الكهف… بتبدأ جوه العشر آيات دول… بسؤال:"
+            en: "And the story of the People of the Cave… begins within those ten verses… with a question:"
+      - { verse: quran.18.9 }
+      - narration: film-wonder
+        sources: [tafsir.muyassar.18.9]
+        lines:
+          - ar: "يعني: ما تفتكرش إن قصتهم أعجب حاجة… خلق السما والأرض أعجب منها."
+            en: "Meaning: don't think their story is the greatest wonder… the creation of the heavens and the earth is greater."
+  - id: refuge
+    number: 1
+    title: { ar: "دعوة في كهف", en: "A prayer in a cave" }
+    segments:
+      - { reuse: refuge.open, picture: refuge, scene: leave }
+      - { verse: quran.18.10, scene: cave }
+      - { reuse: refuge.meaning }
+      - { reuse: refuge.depth }
+      - { reuse: refuge.example }
+      - { reuse: refuge.close, lines: [0, 1], scene: dawn, subscribe: true }
+  - id: sunpath
+    number: 2
+    title: { ar: "شمس بتميل عنهم", en: "A sun that turned away" }
+    segments:
+      - { reuse: sunpath.open, picture: sunpath, scene: rise }
+      - { verse: quran.18.17, scene: path }
+      - { reuse: sunpath.meaning, scene: inside }
+      - { reuse: sunpath.depth }
+      - { reuse: sunpath.example }
+      - { reuse: sunpath.close, lines: [0], scene: rise }
+  - id: awake
+    number: 3
+    title: { ar: "فاكرينها يوم", en: "They thought it was a day" }
+    segments:
+      - { reuse: awake.open, picture: awake, scene: years }
+      - { verses: [quran.18.19], upto: 15, scene: wake }
+      - { reuse: awake.turn }
+      - { verse: quran.18.25, scene: years }
+      - { reuse: awake.depth, scene: dawn }
+      - { reading: hadith.bukhari.6324 }
+      - { reuse: awake.example }
+  - id: found
+    title: { ar: "ليه القصة دي؟", en: "Why this story?" }
+    segments:
+      - narration: film-found
+        picture: awake
+        scene: dawn
+        lines:
+          - ar: "ولما الناس لقوهم… ربنا خلّى قصتهم آية:"
+            en: "And when people found them… God made their story a sign:"
+      - { verses: [quran.18.21], upto: 17 }
+      - narration: film-promise-true
+        sources: [tafsir.muyassar.18.21]
+        lines:
+          - ar: "عشان الناس تعرف إن وعد ربنا بالبعث حق… والساعة جاية، مفيش فيها شك."
+            en: "So that people would know God's promise of resurrection is true… and the Hour is coming, without doubt."
+      - narration: film-number
+        lines:
+          - ar: "وبعدها الناس اختلفوا… كانوا كام واحد؟"
+            en: "Then people argued… how many were they?"
+      - { verse: quran.18.22 }
+      - narration: film-dispute
+        sources: [tafsir.saadi.18.22]
+        lines:
+          - ar: "خلاف ملوش فايدة… بيضيّع الوقت… ويبعّد القلوب عن بعض."
+            en: "An argument with no benefit… it wastes time… and pulls hearts apart."
+          - ar: "وكام خناقة بنعملها… على تفصيلة ما بتقرّبناش من ربنا؟"
+            en: "And how many fights do we have… over a detail that brings us no closer to God?"
+      - { verse: quran.18.26 }
+      - narration: film-whole
+        sources: [tafsir.saadi.18.26]
+        lines:
+          - ar: "دعوة في كهف… شمس بتميل عنهم… وصحيان بعد تلتمية وتسع سنين."
+            en: "A prayer in a cave… a sun that turned away from them… and a waking after three hundred and nine years."
+          - ar: "ربنا تولّاهم… وما سابهمش لحد."
+            en: "God took care of them… and left them to no one."
+      - narration: film-end
+        sources: [tafsir.saadi.18.21]
+        subscribe: true
+        lines:
+          - ar: "اللي يهرب بدينه… ربنا يحميه. واللي يلجأ لربنا… ربنا يأويه."
+            en: "Whoever flees with his faith… God protects him. Whoever takes refuge in God… God shelters him."
+          - ar: "اشترك… عشان القصة الجاية."
+            en: "Subscribe… for the next story."

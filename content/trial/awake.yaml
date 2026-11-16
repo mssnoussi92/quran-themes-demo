@@ -1,0 +1,87 @@
+# Les gens de la caverne (film `kahf`), short 3 : le réveil (18:19 jusqu'à « لبثنا يوما أو بعض يوم ۚ », puis 18:25). Version
+# courte (refuge.yaml).
+# - L'accroche dit le fait que le verset récite ensuite (comme la barque) : 309 ans, qu'ils prennent pour un jour.
+#   al-Muyassar sur 18:25 : « ثلاثمائة سنة وتسع سنين » (il ajoute « قمرية » : nos répliques n'en disent rien, et le
+#   calcul « 300 solaires = 309 lunaires » reste écarté, docs/themes.md).
+# - La leçon : Bukhari 6324, lu par une vraie voix, ce que le Prophète ﷺ disait en se réveillant (« الحمد لله الذي أحيانا
+#   بعد ما أماتنا وإليه النشور ») ; il est déjà au registre, validé, avec sa lecture.
+# - La fin : la phrase à retenir répond à la promesse (« كل يوم الصبح »), puis l'appel générique. Le résumé des trois
+#   parties (« دعوة في كهف… ») est dans le film seul : la place manque dans un short d'une minute.
+# - Images (personne, jamais les jeunes) : `years` l'entrée de la caverne, les jours et les nuits qui défilent, un
+#   compteur en or ; `wake` la lumière entre dans la caverne ; `dawn` le soleil se lève sur la ville ancienne.
+id: awake
+# « Je valide le script de la caverne » du propriétaire (2026-11-15, question à choix), après la page docs/scripts/kahf.md
+# avec les premières répliques des shorts 1 et 2 refaites à sa demande (« la question la plus forte d'abord ») : les
+# répliques, la place des versets (18:19 et 18:21 coupés), ce sur quoi chaque narration repose, les titres. Ni la voix,
+# ni les clips, ni les dessins, ni les ambiances, ni les textes, ni les sources proposées : il les valide sur la vidéo.
+script_validated: { by: mssnoussi92, on: 2026-11-15 }
+# « Je valide tout pour la caverne » du propriétaire (2026-11-16, question à choix), après l'envoi des trois shorts, de
+# leurs versions TikTok et couvertures, du film (6:11), de sa miniature et des textes à coller : lu comme les vidéos
+# telles que livrées (la voix, avec « ربنا يأويه » signalé à écouter ; les dessins ; les ambiances ; les couvertures), les
+# textes et leurs accroches, et ses dix passages de tafsir, passés à `validated`. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-16, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 76-trial-awake
+# Le clip : une aube en accéléré (des nuages qui filent, le soleil qui sort vers la fin), joué à 0,8 pour que le soleil
+# sorte pendant la fin du short (le réveil). APPROUVÉ par le propriétaire le 2026-11-15 (question à choix : « 14955, 26085,
+# 30218 »). Cadrage, lumière et horizon provisoires : réglés sur les images de style, avec les dessins (skill new-scene).
+clip: { source: pixabay, id: 30218, author: adege, page: "https://pixabay.com/videos/id-30218/", take: { height: 1440 }, rate: 0.8, position: "50% 50%", shift: 0, brightness: 0.85, ground: "#06080e", horizon: 1300, landscape: { side: left, horizon: 820, brightness: 0.85 } }
+# Ambiance sous la narration, jamais sous le verset ni le hadith : le vent (validé à l'écoute par le propriétaire,
+# docs/model.md), le matin.
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 110, level: -37 }
+cover: { scene: years, title: "٣٠٩ سنين… وفاكرينها يوم!", tag: "أصحاب الكهف · ٣ من ٣", focus: 1200 }
+publish:
+  title: { en: "309 years… and they thought it was a day!", ar: "٣٠٩ سنين… وفاكرينها يوم!" }
+  part: 3
+  hashtags: ["#أذكار_الصباح", "#قصص_القرآن"]
+  description:
+    en: "The People of the Cave slept three hundred and nine years and woke up thinking it had been a day. Every morning, you too wake from a sleep: what the Prophet ﷺ said as soon as he woke."
+    ar: "أصحاب الكهف ناموا تلتمية وتسع سنين، وصحيوا فاكرينها يوم. وإنت كمان كل يوم الصبح بتصحى من نومة: اللي كان النبي صلى الله عليه وسلم بيقوله أول ما يصحى."
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-16 (« je valide tout pour la caverne »)
+    ar: "ناموا تلتمية وتسع سنين… وصحيوا فاكرينها يوم."
+    en: "They slept three hundred and nine years… and woke up thinking it was a day."
+    validated: 2026-11-16
+segments:
+  - narration: open
+    scene: years
+    sources: [tafsir.muyassar.18.25]
+    lines:
+      - ar: "ناموا تلتمية وتسع سنين… وصحيوا فاكرينها يوم! إزاي؟"
+        en: "They slept three hundred and nine years… and woke up thinking it was a day! How?"
+      - ar: "دول أصحاب الكهف… وفي صحيانهم… حاجة بتحصلك إنت كل يوم الصبح."
+        en: "These are the People of the Cave… and in their waking… is something that happens to you every morning."
+  - verses: [quran.18.19]
+    upto: 15            # jusqu'au premier arrêt après « لبثنا يوما أو بعض يوم ۚ » (17,9 s)
+    scene: wake
+  - narration: turn
+    scene: wake
+    lines:
+      - ar: "والمدة الحقيقية… ربنا قالها:"
+        en: "And how long it really was… God told us:"
+  - verse: quran.18.25
+    scene: years
+  - narration: depth
+    scene: dawn
+    sources: [hadith.bukhari.6324]
+    lines:
+      - ar: "وكل صحيان… رجوع بعد نومة."
+        en: "Every waking… is a return after sleep."
+      - ar: "والنبي صلى الله عليه وسلم… كان أول ما يصحى يقول:"
+        en: "And the Prophet ﷺ… as soon as he woke, would say:"
+  - reading: hadith.bukhari.6324
+    scene: dawn
+  - narration: example
+    scene: dawn
+    lines:
+      - ar: "وإحنا… أول ما نصحى بنمسك الموبايل."
+        en: "And us… the moment we wake, we reach for the phone."
+      - ar: "قبل أي حاجة… قول الدعاء ده… واحمد ربنا إنه رجّعك."
+        en: "Before anything… say this prayer… and thank God for bringing you back."
+  - narration: close
+    scene: dawn
+    lines:
+      - ar: "بكرة الصبح… افتكر أصحاب الكهف."
+        en: "Tomorrow morning… remember the People of the Cave."
+      - ar: "تابعنا عشان القصة الجاية."
+        en: "Follow us for the next story."

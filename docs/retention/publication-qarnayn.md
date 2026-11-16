@@ -54,7 +54,7 @@ Footage: Pixabay (josefgadermaier, AttilaPergel, FlickrVideos, TeeFarm) · Ambie
 
 ## Short 1 · The fate of a whole people… at his word · مصير قوم كاملين… بكلمة منه!
 
-`qarnayn-short-1-west.mp4` (TikTok : `qarnayn-short-1-west-tiktok.mp4`, signée `@quran.words.daily`) · 2:05 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qarnayn-short-1-west-cover.jpg`
+`qarnayn-short-1-west.mp4` (TikTok : `qarnayn-short-1-west-tiktok.mp4`, signée `@quran.words.daily`) · 2:05 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qarnayn-short-1-west-cover.jpg` · version courte pour Facebook et Instagram : `qarnayn-short-1-west-cut.mp4`, 1:13
 
 **Facebook · Titre**
 
