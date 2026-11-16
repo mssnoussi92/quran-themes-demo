@@ -15,6 +15,11 @@ id: kahf
 # répliques, la place des versets (18:19 et 18:21 coupés), ce sur quoi chaque narration repose, les titres. Ni la voix,
 # ni les clips, ni les dessins, ni les ambiances, ni les textes, ni les sources proposées : il les valide sur la vidéo.
 script_validated: { by: mssnoussi92, on: 2026-11-15 }
+# « Je valide tout pour la caverne » du propriétaire (2026-11-16, question à choix), après l'envoi des trois shorts, de
+# leurs versions TikTok et couvertures, du film (6:11), de sa miniature et des textes à coller : lu comme les vidéos
+# telles que livrées (la voix, avec « ربنا يأويه » signalé à écouter ; les dessins ; les ambiances ; les couvertures), les
+# textes et leurs accroches, et ses dix passages de tafsir, passés à `validated`. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-16, what: [voice, montage, thumbnail, subscribe, publish, ambience] }
 files: kahf                      # kahf-film-16x9.mp4, kahf-short-<n>-<id>.mp4
 title: { ar: "أصحاب الكهف… تلات مواقف", en: "The People of the Cave: three moments" }
 handle: "@quran_words_daily"
@@ -30,9 +35,10 @@ publish:
   description:
     en: "Young men who leave their city with a single prayer, a sun that turns away from their cave every day, and a sleep of three hundred and nine years they took for a day: the story at the start of Surat al-Kahf, in three moments. What God does for those who take refuge in Him."
     ar: "شباب سابوا مدينتهم بدعوة واحدة، وشمس بتميل عن كهفهم كل يوم، ونومة تلتمية وتسع سنين فاكرينها يوم: القصة اللي في أول سورة الكهف، في تلات مواقف. ربنا بيعمل إيه مع اللي يلجأ له."
-  hook:      # légende courte de Facebook, Instagram et TikTok : proposée, à valider par le propriétaire
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-16 (« je valide tout pour la caverne »)
     ar: "ربنا بيعمل إيه مع اللي يلجأ له؟"
     en: "What does God do for those who take refuge in Him?"
+    validated: 2026-11-16
   hashtags: ["#أصحاب_الكهف", "#سورة_الكهف"]
   narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }
 chapters:

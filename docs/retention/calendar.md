@@ -32,7 +32,7 @@ Pourquoi :
 - **Les shorts d'une histoire sortent trois jours de suite** : chacun finit par « تابعنا عشان تعرف… ».
 - **Chaque série a son jour, une fois par semaine** : chaque épisode annonce le suivant (« الحلقة الجاية: عن الكون
   كله »). « آية وحكايتها » sort le vendredi, parce que son premier short parle de la prière du vendredi.
-- **Le stock tient jusqu'au 12 décembre.** Avant cette date, il faudra : une histoire nouvelle pour le 30 novembre,
+- **Le stock tient jusqu'au 12 décembre.** Avant cette date, il faudra : une histoire nouvelle pour le 30 novembre (faite : les gens de la caverne, validée le 16 novembre),
   le quatrième « آية وحكايتها » pour le 11 décembre (le short 3 le promet), le cinquième « سنريهم آياتنا » pour le
   19 décembre (le short 4 le promet). Ces choix se feront avec les mesures.
 - **La faiblesse de la grille** : chaque type de vidéo a son jour. Le jour de la semaine se mêle donc au type quand on
@@ -93,7 +93,10 @@ bleu, lues dans ce fichier). Aucune collision entre les deux grilles : le reel l
 | jeu. 26 nov. | Dhul-Qarnayn, short 3 : le barrage | les quatre | release `qarnayn-candidate` | « Short 3 » |
 | ven. 27 nov. | « آية وحكايتها » 2 : الضحى | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 2 » |
 | sam. 28 nov. | « سنريهم آياتنا » 2 : le cosmos | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 2 » |
-| lun. 30 nov. → jeu. 3 déc. | **une histoire nouvelle** : son film, ses trois shorts | | à faire | à faire |
+| lun. 30 nov., soir | Les gens de la caverne : le film | YouTube (16:9) ; Facebook (vertical) | releases `kahf-candidate`, `kahf-9x16-candidate` | `publication-kahf.md` : « Le film » ; `publication-kahf-9x16.md` |
+| mar. 1 déc. | Les gens de la caverne, short 1 : la fuite | les quatre | release `kahf-candidate` | `publication-kahf.md` : « Short 1 » |
+| mer. 2 déc. | Les gens de la caverne, short 2 : le soleil | les quatre | release `kahf-candidate` | « Short 2 » |
+| jeu. 3 déc. | Les gens de la caverne, short 3 : le réveil | les quatre | release `kahf-candidate` | « Short 3 » |
 | ven. 4 déc. | « آية وحكايتها » 3 : l'espoir | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 3 » |
 | sam. 5 déc. | « سنريهم آياتنا » 3 : le ciel | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 3 » |
 | lun. 7 déc. | « كلمة من القرآن » 1 : الكنود (100:1-8) | les quatre | release `kalima-candidate` | `publication-kalima.md` : « Short 1 » |

@@ -18,6 +18,11 @@ id: refuge
 # répliques, la place des versets (18:19 et 18:21 coupés), ce sur quoi chaque narration repose, les titres. Ni la voix,
 # ni les clips, ni les dessins, ni les ambiances, ni les textes, ni les sources proposées : il les valide sur la vidéo.
 script_validated: { by: mssnoussi92, on: 2026-11-15 }
+# « Je valide tout pour la caverne » du propriétaire (2026-11-16, question à choix), après l'envoi des trois shorts, de
+# leurs versions TikTok et couvertures, du film (6:11), de sa miniature et des textes à coller : lu comme les vidéos
+# telles que livrées (la voix, avec « ربنا يأويه » signalé à écouter ; les dessins ; les ambiances ; les couvertures), les
+# textes et leurs accroches, et ses dix passages de tafsir, passés à `validated`. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-16, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 74-trial-refuge
@@ -36,9 +41,10 @@ publish:
   description:
     en: "Young men left their city and their homes to hide in a cave, because their people wanted to force them to worship idols. They went in with a single prayer. They did their part, and asked God for the rest."
     ar: "شباب سابوا مدينتهم وبيوتهم واستخبّوا في كهف، عشان قومهم كانوا عايزين يجبروهم يعبدوا أصنام. ودخلوا بدعوة واحدة… عملوا اللي عليهم، وطلبوا الباقي من ربنا."
-  hook:      # légende courte de Facebook, Instagram et TikTok : proposée, à valider par le propriétaire
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-16 (« je valide tout pour la caverne »)
     ar: "سابوا مدينتهم… واستخبّوا في كهف بدعوة واحدة."
     en: "They left their city… and hid in a cave with a single prayer."
+    validated: 2026-11-16
 segments:
   - narration: open
     scene: leave

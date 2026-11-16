@@ -16,6 +16,11 @@ id: sunpath
 # répliques, la place des versets (18:19 et 18:21 coupés), ce sur quoi chaque narration repose, les titres. Ni la voix,
 # ni les clips, ni les dessins, ni les ambiances, ni les textes, ni les sources proposées : il les valide sur la vidéo.
 script_validated: { by: mssnoussi92, on: 2026-11-15 }
+# « Je valide tout pour la caverne » du propriétaire (2026-11-16, question à choix), après l'envoi des trois shorts, de
+# leurs versions TikTok et couvertures, du film (6:11), de sa miniature et des textes à coller : lu comme les vidéos
+# telles que livrées (la voix, avec « ربنا يأويه » signalé à écouter ; les dessins ; les ambiances ; les couvertures), les
+# textes et leurs accroches, et ses dix passages de tafsir, passés à `validated`. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-16, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 75-trial-sunpath
@@ -35,9 +40,10 @@ publish:
   description:
     en: "Every day the sun rose and turned away from the cave where the young men slept, and set without touching them, while they lay in a wide space where the air kept reaching them. They had asked for mercy, and the answer came even in the angle of the sun."
     ar: "كل يوم الشمس تطلع وتميل عن الكهف اللي الشباب نايمين فيه، وتغرب من غير ما تلمسهم، وهما في مكان واسع والهوا واصلهم. طلبوا رحمة… والإجابة جت حتى في زاوية الشمس."
-  hook:      # légende courte de Facebook, Instagram et TikTok : proposée, à valider par le propriétaire
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-16 (« je valide tout pour la caverne »)
     ar: "طلبوا رحمة… والإجابة جت في زاوية الشمس."
     en: "They asked for mercy… and the answer came in the angle of the sun."
+    validated: 2026-11-16
 segments:
   - narration: open
     scene: rise
