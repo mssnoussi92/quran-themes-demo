@@ -26,8 +26,11 @@ cover: { scene: offer, title: "عرضوا عليه فلوس… ورفض!", tag: 
 # La version courte pour Facebook et Instagram (essai sur les trois shorts de Dhul-Qarnayn, choix du propriétaire le
 # 2026-11-16 dans la session quran-reels : « les 3 de Dhul-Qarnayn ») : la même prise, moins 18:93 (14 s : le lieu entre
 # les deux barrières, que l'accroche dit déjà), le sens mot à mot, la profondeur et l'exemple. La question « ورفض الفلوس!
-# ليه؟ » ouvre déjà la vidéo. Proposée par la session, à valider par lui sur la vidéo.
-cut: { drop: [quran.18.93, "meaning:0", depth, example] }
+# ليه؟ » ouvre déjà la vidéo. Proposée par la session ; validée par lui le 2026-11-16 (question à choix : « je valide les
+# deux »), telle qu'envoyée : 1:13, la coupe sans pause avant « ما خدش فلوس » signalée à écouter.
+cut:
+  drop: [quran.18.93, "meaning:0", depth, example]
+  validated: { by: mssnoussi92, on: 2026-11-16 }
 publish:
   title: { en: "They offered him money… he refused", ar: "عرضوا عليه فلوس… ورفض!" }
   part: 2
