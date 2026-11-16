@@ -210,7 +210,7 @@ def film_data(film_id: str, folder: Path, out: Path, release: str | None, tall: 
     everyone = shorts if series else [film, *shorts]
     return {"id": film_id, "out": Path(film["publish"]["out"]).name, "series": series, "anchor": re.sub(r"[^a-z0-9]+", "-", film["publish"]["series"]["en"].lower()).strip("-"),
             "ar": film["publish"]["series"]["ar"], "en": film["publish"]["series"]["en"], "cards": cards, "release": release,
-            "tall": upright,
+            "tall": upright, "published": film.get("published_cast"),
             "videos_ok": all(s.get("validated") for s in everyone) and covers(everyone, "voice") and covers(everyone, "montage"),
             "texts_ok": covers(everyone, "publish"), "date": str((everyone[0].get("validated") or {}).get("on", (everyone[0].get("validated") or {}).get(True, "")))}
 
@@ -396,7 +396,9 @@ def calendar(path: Path, films: list[dict]) -> dict:
             if not part or not film:
                 continue
             ending = "-film" if part.group(1) == "Le film" else f"-short-{part.group(2)}"
-            card = next((c for c in film["cards"] if c["slug"].endswith(ending)), None)
+            # A series drawn twice: the row links to the drawing that is published (`published_cast`).
+            endings = [ending] + ([f"{ending}-{film['published']}"] if film.get("published") else [])
+            card = next((c for c in film["cards"] if c["slug"].endswith(tuple(endings))), None)
             if card:
                 links.append(("Film 16:9" if card["wide"] else "Voir et copier", card["slug"]))
         rows.append({"date": plain(date), "iso": f"{year}-{month:02d}-{int(day.group(1)):02d}", "what": plain(what),
