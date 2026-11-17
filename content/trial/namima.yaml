@@ -21,6 +21,10 @@ id: namima
 # shorts, la place des versets et des hadiths, les titres des couvertures. Ni la voix, ni les dessins, ni les sources
 # proposées, ni les deux lectures : il les valide sur les vidéos. Inscrit sur sa parole.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide montage, dessins, couvertures » du propriétaire (2026-11-17, question à choix nommant les 3 shorts sans voix du
+# run 44178359076 du workflow `film`, leur montage, leurs dessins et leurs 3 couvertures) : ni la voix ni l'ambiance, pas
+# encore faites ; il les valide sur les vidéos refaites avec la voix. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-17, what: [montage, cover] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 96-trial-namima
@@ -29,9 +33,10 @@ clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%
 cover: { scene: phone, title: "«شوف فلان قال عليك إيه»", tag: "وتحسبونه هيّنًا · 2 من 3", focus: 1000 }
 publish:
   title: { en: "“Look what he said about you”: the Quran has a name for it", ar: "«شوف فلان قال عليك إيه»… القرآن سمّاها" }
-  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session le 2026-11-17, à valider
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (« je valide les 3 accroches »)
     ar: "«شوف فلان قال عليك إيه»… الحركة دي ليها اسم في القرآن."
     en: "“Look what so-and-so said about you”… that move has a name in the Quran."
+    validated: 2026-11-17
   part: 2
   hashtags: ["#النميمة"]
   description:

@@ -20,6 +20,10 @@ id: ghiba
 # shorts, la place des versets et des hadiths, les titres des couvertures. Ni la voix, ni les dessins, ni les sources
 # proposées, ni les deux lectures : il les valide sur les vidéos. Inscrit sur sa parole.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide montage, dessins, couvertures » du propriétaire (2026-11-17, question à choix nommant les 3 shorts sans voix du
+# run 44178359076 du workflow `film`, leur montage, leurs dessins et leurs 3 couvertures) : ni la voix ni l'ambiance, pas
+# encore faites ; il les valide sur les vidéos refaites avec la voix. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-17, what: [montage, cover] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 95-trial-ghiba
@@ -29,9 +33,10 @@ clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%
 cover: { scene: cafe, title: "حسناتك رايحة لمين؟", tag: "وتحسبونه هيّنًا · 1 من 3", focus: 1100 }
 publish:
   title: { en: "“But it's true!”… and your good deeds may go to him", ar: "«هو فعلاً كده!»… وحسناتك ممكن تروح له" }
-  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session le 2026-11-17, à valider
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (« je valide les 3 accroches »)
     ar: "«هو فعلاً كده… أنا مش بفتري عليه!» الجملة دي ممكن تاخد من حسناتك… وتديها للي اتكلمت عليه."
     en: "“That's really how he is, I'm not making it up!” That sentence could take from your good deeds… and give them to the one you spoke about."
+    validated: 2026-11-17
   part: 1
   hashtags: ["#الغيبة"]
   description:

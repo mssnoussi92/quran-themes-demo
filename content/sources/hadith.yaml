@@ -1288,7 +1288,8 @@
     end: 34.25
     heard: من كانت له مظلمة لأحد من عرضه أو شيء فليتحلله منه اليوم قبل أن لا يكون دينار ولا درهم إن كان له عمل صالح أخذ منه بقدر مظلمته وإن لم تكن له حسنات أخذ من سيئات صاحبه فحمل عليه
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.muslim.2589
   type: hadith
   ref: {collection: muslim, number: 2589}
@@ -1335,7 +1336,8 @@
     end: 33.68
     heard: يعذبان وما يعذبان في كبير ثم قال بلى كان أحدهما لا يستتر من بوله وكان الآخر يمشي بالنميمة
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.muslim.1905a
   type: hadith
   ref: {collection: muslim, number: 1905, narration: 1}

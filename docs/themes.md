@@ -1064,6 +1064,11 @@ poussière qui a l'air d'une terre et sa coupe ; fond tout dessiné. Brouillons 
 **Rendu sans voix le même soir** (run 44178359076 du workflow `film`, 19 minutes, release brouillon `hayyin-candidate`) :
 **2:10, 1:28, 1:55**, leurs versions TikTok et les couvertures, contrôlés sur leurs planches (−16 LUFS), envoyés ; les
 accroches des légendes courtes proposées. Voix : trois requêtes, après les six des quiz.
+**Validé par lui le même soir** (questions à choix, chaque fois la recommandation) : **le montage, les dessins et les trois
+couvertures** des shorts sans voix (`validated`, `what: [montage, cover]`) ; **les trois accroches** (`hook.validated`) ; **les
+deux lectures** d'Abu Malik al-Asqalani (Bukhari 2449 et 216, `validated` au registre). **La voix le 19 novembre** (son choix :
+le 18 est aux six requêtes des quiz) : trois requêtes (textes 95 à 97), puis le rendu avec voix et ambiance, à valider sur
+les vidéos. Les sources du registre restent proposées : il les valide avec les vidéos finales.
 
 ## Faits (ancien circuit)
 
