@@ -1059,6 +1059,9 @@ filmée, les cœurs et le compteur, la roche de 2:264 sous la pluie (la poussiè
 poussière qui a l'air d'une terre et sa coupe ; fond tout dessiné. Brouillons sans voix : 2:10, 1:28, 1:55. Planches :
 `docs/retention/hayyin-style-1-ghiba.jpg`, `-2-namima.jpg`, `-3-riya.jpg`, couvertures `hayyin-covers.jpg`.
 
+**Script validé par lui le 2026-11-17** (« je valide le script, tu peux commencer le rendu sans voix », lu comme le script de
+`docs/scripts/hayyin.md` tel qu'envoyé ; `script_validated` des trois shorts) ; rendu sans voix par le workflow `film` (voix `X`).
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

@@ -16,6 +16,11 @@
 #   `bare` la roche nue après la pluie ; `soil` la poussière sur la roche, qui a l'air d'une terre ; `two` deux mains devant
 #   la même caisse, l'une avec un téléphone ; `dawn` le matin, la caisse seule.
 id: riya
+# « Je valide le script, tu peux commencer le rendu sans voix » du propriétaire (2026-11-17, dans la conversation où le
+# script de la série lui a été envoyé, docs/scripts/hayyin.md, seul script en attente) : lu comme les répliques des trois
+# shorts, la place des versets et des hadiths, les titres des couvertures. Ni la voix, ni les dessins, ni les sources
+# proposées, ni les deux lectures : il les valide sur les vidéos. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 97-trial-riya

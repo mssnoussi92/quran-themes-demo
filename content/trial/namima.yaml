@@ -16,6 +16,11 @@
 #   `graves` deux tombes au crépuscule, un palmier, personne ; `split` les deux maisons, une fenêtre s'éteint ; `still` le
 #   téléphone posé face contre la table.
 id: namima
+# « Je valide le script, tu peux commencer le rendu sans voix » du propriétaire (2026-11-17, dans la conversation où le
+# script de la série lui a été envoyé, docs/scripts/hayyin.md, seul script en attente) : lu comme les répliques des trois
+# shorts, la place des versets et des hadiths, les titres des couvertures. Ni la voix, ni les dessins, ni les sources
+# proposées, ni les deux lectures : il les valide sur les vidéos. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 96-trial-namima
