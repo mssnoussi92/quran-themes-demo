@@ -1136,7 +1136,7 @@ usage personnel » ; Hisn al-Muslim lu par un présentateur (Hamad ad-Duraihem) 
 trouvée. **Fait** : une partie d'un hadith peut nommer sa propre voix et son propre fichier (`schemas/source.schema.json`,
 `scripts/validate.py`, deux tests) ; Muslim 2709a a une partie `dhikr`, dite par Jibril (11,9 s, entendue mot pour mot) ;
 le short 1 la joue après la réponse du Prophète ﷺ, annoncée par une réplique nouvelle (« والذكر نفسه… بصوت الشيخ محمد
-جبريل: »), à valider ; il passe à 1:43. **Les droits** : sa première publication sur Facebook seul, avec la vérification
+جبريل: »), **validée par lui le même jour** (question à choix qui la citait) ; il passe à 1:43. **Les droits** : sa première publication sur Facebook seul, avec la vérification
 de Meta, avant Instagram et TikTok ; sur YouTube, à la main, Content ID à regarder.
 
 ## Faits (ancien circuit)

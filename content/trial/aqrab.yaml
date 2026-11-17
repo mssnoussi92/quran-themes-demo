@@ -43,7 +43,8 @@ segments:
     part: answer
     scene: sting
   # Essai voulu par le propriétaire (2026-11-17, après la recherche de récitateurs) : le dhikr seul, dit par Muhammad
-  # Jibril (partie `dhikr` du registre, son propre fichier) ; la réplique qui l'annonce est nouvelle, à valider.
+  # Jibril (partie `dhikr` du registre, son propre fichier) ; la réplique qui l'annonce, ajoutée après le script, est
+  # validée par le propriétaire le même jour (question à choix qui la citait : « je valide la réplique »).
   - narration: voice
     scene: dusk
     lines:
