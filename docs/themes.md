@@ -1189,6 +1189,8 @@ Rendu sans voix par le workflow `film` (run 44192660389, avec les versions TikTo
 format et volume conformes (−16,5 à −16,7 LUFS), cartes lisibles sur les clips, aucune ambiance sous Tawfiq ; envoyés le
 2026-11-17. À regarder : la lune du clip 7215 passe derrière le texte de quelques cartes (lisible, moins net) ; la
 traduction de سيد الاستغفار (Bukhari 6306, Muhsin Khan) n'est qu'une translittération.
+**Les trois vidéos validées par lui le 2026-11-17** (« je valide les trois » : cartes, nombres, clips, ambiances,
+couvertures, et les seize hadiths du registre) ; restent les textes à coller et leur place au calendrier.
 
 ## Faits (ancien circuit)
 
