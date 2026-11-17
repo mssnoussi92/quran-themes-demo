@@ -605,6 +605,26 @@ def test_a_part_takes_reader_and_file_from_the_recording(copy):
     assert script.part_view(entry, "nope") is None and "parts" not in view
 
 
+def test_a_part_said_by_another_voice_has_its_own_file(copy):
+    """A part may name its own reader, item, file and license (a dhikr said by a reciter, after the hadith read by the
+    collection's reader): its times are in its own file, not inside the entry's recording, and it is played from there."""
+    own = {"reader": "Another voice", "item": "https://archive.org/details/another-item",
+           "file": "https://archive.org/download/another-item/another.mp3", "license": "none stated on the archive.org item"}
+    add_part(copy, short=None, recording={"start": 5000.0, "end": 5010.0, "status": "proposed", **own})
+    checked = validate(copy)
+    assert checked.returncode == 0 and " 0 error(s)" in checked.stdout, checked.stdout[-2500:]
+    entry = next(e for e in copy.load("content/sources/hadith.yaml") if e["id"] == PART_SID)
+    view = tool("script").part_view(entry, "second")
+    assert {k: view["recording"][k] for k in own} == own and view["recording"]["start"] == 5000.0
+
+
+def test_a_part_naming_a_file_names_its_reader_too(copy):
+    add_part(copy, short=None, recording={"start": 1.0, "end": 2.0, "status": "proposed",
+                                          "file": "https://archive.org/download/another-item/another.mp3"})
+    checked = validate(copy)
+    assert checked.returncode == 1 and "schema" in checked.stdout, checked.stdout[-2500:]
+
+
 def test_the_film_reads_no_silent_line_in_a_short_s_voice_text():
     """A short whose opening is written on screen only (`silent`, the shorts of « مخيّر ولا مسيّر؟ »): its silent lines
     are not in its voice text, so the film, which takes its other lines from that take, must not count them either."""

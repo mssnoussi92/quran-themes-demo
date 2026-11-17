@@ -179,7 +179,8 @@ def check_recording(src: dict, where: str, report: Report) -> None:
 
 def check_parts(src: dict, where: str, report: Report) -> None:
     """The `parts` of a hadith (a short plays a part of the reading): excerpts copied from the texts, inside the
-    entry's recording, heard words compared with the excerpt, validation by the owner only."""
+    entry's recording (or in a file of their own, said by another voice: a dhikr said by a reciter), heard words
+    compared with the excerpt, validation by the owner only."""
     parts = src.get("parts")
     if not parts:
         return
@@ -195,7 +196,8 @@ def check_parts(src: dict, where: str, report: Report) -> None:
         rec = part["recording"]
         if rec["end"] <= rec["start"]:
             report.error(here, "recording: end must come after start")
-        if whole and not whole["start"] <= rec["start"] < rec["end"] <= whole["end"]:
+        own = rec.get("file") and (not whole or rec["file"] != whole.get("file"))    # another voice, its own file
+        if whole and not own and not whole["start"] <= rec["start"] < rec["end"] <= whole["end"]:
             report.error(here, f"recording {rec['start']}-{rec['end']} is outside the hadith's recording {whole['start']}-{whole['end']}")
         status = rec.get("status", "proposed")
         if status == "validated" and not rec.get("validated_by"):

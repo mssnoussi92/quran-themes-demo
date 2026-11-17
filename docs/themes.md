@@ -1128,6 +1128,17 @@ dire) ; un récitateur ne pourrait qu'ajouter le dhikr seul, au short 1 seulemen
 n'a rien hors d'Alafasy), pour 12 s, avec un outil à étendre (une partie jouée depuis un autre fichier que la lecture du
 hadith) et un risque de droits jamais vérifié sur un album.
 
+**Son choix (2026-11-17, question à choix)** : « 2 et chercher ailleurs » : **essayer Jibril au short 1**, et chercher
+d'autres sources. **Ailleurs, rien de mieux** : aucun enregistrement d'adhkar de Tawfiq As-Sayegh ; ceux d'Omar Hisham
+sont des disques du commerce (« Evening Adhkar » 2022, « Morning Dua and Remembrance » 2021 sur Apple Music : très
+probablement inscrits à Content ID et Rights Manager) ; Makkah Live propose les mêmes Fares Abbad et Jibril, « pour un
+usage personnel » ; Hisn al-Muslim lu par un présentateur (Hamad ad-Duraihem) dans des applications, sans licence
+trouvée. **Fait** : une partie d'un hadith peut nommer sa propre voix et son propre fichier (`schemas/source.schema.json`,
+`scripts/validate.py`, deux tests) ; Muslim 2709a a une partie `dhikr`, dite par Jibril (11,9 s, entendue mot pour mot) ;
+le short 1 la joue après la réponse du Prophète ﷺ, annoncée par une réplique nouvelle (« والذكر نفسه… بصوت الشيخ محمد
+جبريل: »), à valider ; il passe à 1:43. **Les droits** : sa première publication sur Facebook seul, avec la vérification
+de Meta, avant Instagram et TikTok ; sur YouTube, à la main, Content ID à regarder.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

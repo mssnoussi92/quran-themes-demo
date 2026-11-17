@@ -84,7 +84,7 @@
         "validated_by": { "type": "string" },
         "notes": { "type": "string" },
         "parts": {
-          "description": "For a hadith a short plays only in part: named parts of the reading (a film plays the whole). A part has its excerpts (copied from text_ar and text_en, never typed: validate.py checks them) and its own start and end inside the entry's recording; it takes reader, item, file and license from that recording. A segment names one with `part:`.",
+          "description": "For a hadith a short plays only in part: named parts of the reading (a film plays the whole). A part has its excerpts (copied from text_ar and text_en, never typed: validate.py checks them) and its own start and end inside the entry's recording; it takes reader, item, file and license from that recording, unless it names its own (all four: another voice saying these words, a dhikr said by a reciter; then its start and end are in its own file). A segment names one with `part:`.",
           "type": "object",
           "minProperties": 1,
           "propertyNames": { "pattern": "^[a-z][a-z0-9-]*$" },
@@ -99,12 +99,17 @@
                 "type": "object",
                 "required": ["start", "end"],
                 "additionalProperties": false,
+                "dependentRequired": { "file": ["reader", "item", "license"], "reader": ["file"], "item": ["file"], "license": ["file"] },
                 "properties": {
                   "start": { "type": "number", "minimum": 0 },
                   "end": { "type": "number", "exclusiveMinimum": 0 },
                   "heard": { "type": "string", "description": "What Whisper hears between start and end" },
                   "status": { "enum": ["proposed", "validated"] },
-                  "validated_by": { "type": "string" }
+                  "validated_by": { "type": "string" },
+                  "reader": { "type": "string", "description": "Another voice than the entry's reading, in a file of its own" },
+                  "item": { "type": "string", "format": "uri", "description": "Page of that recording (archive.org item)" },
+                  "file": { "type": "string", "format": "uri", "description": "That recording's audio file" },
+                  "license": { "type": "string", "description": "What the item says of its license" }
                 }
               }
             }

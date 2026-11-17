@@ -6,6 +6,8 @@
 #   arrêt à signaler au propriétaire ; la sourate entière est dans le short suivant).
 # - Le sens (as-Sa'di) : 113:2 couvre tout ce qu'Allah a créé, hommes, djinns et animaux, et l'on cherche refuge auprès de
 #   leur Créateur du mal qui est en eux ; 113:3, la nuit, quand se répandent les esprits mauvais et les animaux nuisibles.
+# - Le dhikr est dit ensuite par Muhammad Jibril (ses adhkar du soir, archive.org), essai voulu par le propriétaire le
+#   2026-11-17 : un album sans licence, droits jamais vérifiés ; première publication sur Facebook seul.
 # - Répliques de la session, à valider. Les nôtres sans tafsir : « بنفتكر ربنا بعد اللدغة… » (ce qu'on ne voit pas), la
 #   porte fermée (l'exemple), la phrase à retenir.
 # - Images prévues (des choses et des lieux, personne) : `sting` un scorpion en silhouette sur une pierre, la nuit ;
@@ -40,6 +42,16 @@ segments:
   - reading: hadith.muslim.2709a
     part: answer
     scene: sting
+  # Essai voulu par le propriétaire (2026-11-17, après la recherche de récitateurs) : le dhikr seul, dit par Muhammad
+  # Jibril (partie `dhikr` du registre, son propre fichier) ; la réplique qui l'annonce est nouvelle, à valider.
+  - narration: voice
+    scene: dusk
+    lines:
+      - ar: "والذكر نفسه… بصوت الشيخ محمد جبريل:"
+        en: "And the dhikr itself… in the voice of Sheikh Muhammad Jibril:"
+  - reading: hadith.muslim.2709a
+    part: dhikr
+    scene: dusk
   - narration: turn
     scene: dusk
     lines:

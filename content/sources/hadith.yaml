@@ -1294,6 +1294,21 @@
       excerpt_ar: أَمَا لَوْ قُلْتَ حِينَ أَمْسَيْتَ أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ لَمْ تَضُرُّكَ
       excerpt_en: Had you recited these words in the evening:" I seek refuge in the Perfect Word of Allah from the evil of what He created," it would not have done any harm to you
       recording: {start: 2765.62, end: 2774.5, heard: أما لو قلت حين أمسيت أعوذ بكلمات الله التامات من شر ما خلق لم تضرك, status: proposed}
+    # Short aqrab, essai voulu par le propriétaire (2026-11-17) : le dhikr seul, dit par Muhammad Jibril (ses adhkar du
+    # soir, archive.org, un album sans licence, droits jamais vérifiés : première publication sur Facebook seul) ; la
+    # première de ses trois répétitions.
+    dhikr:
+      excerpt_ar: أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ
+      excerpt_en: I seek refuge in the Perfect Word of Allah from the evil of what He created
+      recording:
+        reader: Muhammad Jibril
+        item: https://archive.org/details/adhkar-alsabah-walmasa-muhamad-jibril
+        file: https://archive.org/download/adhkar-alsabah-walmasa-muhamad-jibril/%D8%A3%D8%B0%D9%83%D8%A7%D8%B1%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%A1.mp3
+        start: 1222.8
+        end: 1234.7
+        heard: أعوذ بكلمات الله التامات من شر ما خلق
+        license: none stated on the archive.org item
+        status: proposed
 - id: hadith.tirmidhi.3575
   type: hadith
   ref: {collection: tirmidhi, number: 3575}

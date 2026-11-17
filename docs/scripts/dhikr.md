@@ -4,13 +4,13 @@ Script à valider avant toute voix. Les répliques **nouvelles** sont de la sess
 
 | | Short | Durée estimée | Récitation | Hadith lu | Répliques nouvelles | Reprises |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `aqrab` | 1:27 | 0:10 | 0:08 | 13 | 0 |
+| 1 | `aqrab` | 1:43 | 0:10 | 0:20 | 14 | 0 |
 | 2 | `qul` | 2:04 | 1:00 | 0:11 | 10 | 0 |
 | 3 | `dathur` | 1:59 | 0:28 | 0:27 | 13 | 0 |
 
 ## Short 1 · `aqrab` · عقرب لدغته بالليل… والرد جملة واحدة
 
-Environ **1:27** · 0:10 de récitation, 0:08 de hadith lu · 13 répliques nouvelles, 0 reprises.
+Environ **1:43** · 0:10 de récitation, 0:20 de hadith lu · 14 répliques nouvelles, 0 reprises.
 
 **0:00 · narration** (image : `sting`) · d'après : récit de [Sahih Muslim 2709a](https://sunnah.com/muslim:2709a), raconté avec nos mots, source proposée · référence écrite à l'écran, jamais lue
 - عقرب لدغت راجل بالليل… فجه للنبي صلى الله عليه وسلم يشتكي.  
@@ -25,10 +25,18 @@ Environ **1:27** · 0:10 de récitation, 0:08 de hadith lu · 13 répliques nouv
   *Had you recited these words in the evening:" I seek refuge in the Perfect Word of Allah from the evil of what He created," it would not have done any harm to you*
 
 **0:23 · narration** (image : `dusk`)
+- والذكر نفسه… بصوت الشيخ محمد جبريل:  
+  *And the dhikr itself… in the voice of Sheikh Muhammad Jibril:* · **nouvelle**
+
+**0:26** · **Hadith lu par une vraie voix** · Muslim 2709a · extrait « dhikr » · lu par Muhammad Jibril · 12 s · **lecture à valider** · **source proposée, à valider**  
+  أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ  
+  *I seek refuge in the Perfect Word of Allah from the evil of what He created*
+
+**0:39 · narration** (image : `dusk`)
 - وآخر الذكر ده… في سورة بتحفظها من وإنت صغير:  
   *And the end of this dhikr… is in a surah you've known since you were little:* · **nouvelle**
 
-**0:27** · **Versets récités d'une traite** · Al-Falaq 113:1-3 · 11 s · **sources proposées, à valider** · coupes posées à la main, à écouter  
+**0:43** · **Versets récités d'une traite** · Al-Falaq 113:1-3 · 11 s · **sources proposées, à valider** · coupes posées à la main, à écouter  
   قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ  
   *Say, "I seek refuge in the Lord of daybreak*  
   مِن شَرِّ مَا خَلَقَ  
@@ -36,25 +44,25 @@ Environ **1:27** · 0:10 de récitation, 0:08 de hadith lu · 13 répliques nouv
   وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ  
   *And from the evil of darkness when it settles*
 
-**0:38 · narration** (image : `dusk`) · d'après : sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/113:2/tafsirs/ar-tafseer-al-saddi) sur 113:2, source proposée ; sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/113:3/tafsirs/ar-tafseer-al-saddi) sur 113:3, source proposée · référence écrite à l'écran, jamais lue
+**0:54 · narration** (image : `dusk`) · d'après : sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/113:2/tafsirs/ar-tafseer-al-saddi) sur 113:2, source proposée ; sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/113:3/tafsirs/ar-tafseer-al-saddi) sur 113:3, source proposée · référence écrite à l'écran, jamais lue
 - يعني: بتلجأ لربنا… من شر كل حاجة خلقها: إنس، وجن، وحيوانات.  
   *Meaning: you turn to God for refuge… from the evil of all He created: people, jinn and animals.* · **nouvelle**
 - والليل بالذات… وقت ما الحيوانات المؤذية بتنتشر.  
   *And the night above all… when harmful creatures spread out.* · **nouvelle**
 
-**0:50 · narration** (image : `sting`)
+**1:06 · narration** (image : `sting`)
 - الراجل جه بعد اللدغة… والرد كان عن اللي قبلها.  
   *The man came after the sting… and the answer was about before it.* · **nouvelle**
 - وإحنا كده: بنفتكر ربنا بعد اللي يحصل… والذكر مكانه قبله.  
   *And that's us: we remember God after something happens… when the dhikr belongs before it.* · **nouvelle**
 
-**1:01 · narration** (image : `door`)
+**1:17 · narration** (image : `door`)
 - زي ما كل ليلة بتتأكد إن الباب مقفول… من غير ما تفكر.  
   *Like every night you make sure the door is locked… without even thinking.* · **nouvelle**
 - والذكر ده أسهل من كده… وبننساه.  
   *And this dhikr is easier than that… and we forget it.* · **nouvelle**
 
-**1:09 · narration** (image : `door`)
+**1:25 · narration** (image : `door`)
 - قولها لما المسا يدخل… قبل اللدغة، مش بعدها.  
   *Say it when evening comes… before the sting, not after.* · **nouvelle**
 - والجاية: ليلة مطر وضلمة… والنبي صلى الله عليه وسلم طلب من صاحبه يقول حاجة… وهو مش عارف يقول إيه.  

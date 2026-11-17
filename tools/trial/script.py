@@ -96,7 +96,7 @@ def registry() -> dict:
     return out
 
 
-INHERITED = ("reader", "item", "file", "license")      # what a part's recording takes from the entry's recording
+INHERITED = ("reader", "item", "file", "license")      # what a part's recording takes from the entry's recording, unless it names its own
 
 
 def part_view(src: dict, part: str) -> dict | None:
