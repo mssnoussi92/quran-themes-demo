@@ -19,6 +19,13 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 93-trial-qul
+# Le clip : un ciel d'orage bleu sombre au-dessus d'une ligne d'arbres (Pixabay 16495, max_bbb, approuvé pour « آية
+# وحكايتها » 3) : le plus proche de « ليلة مطيرة وظلمة شديدة » parmi les clips approuvés. APPROUVÉ pour ce short par le
+# propriétaire le 2026-11-17 (question à choix, sa recommandation). Réglages repris de `hope`, à revoir sur les images.
+clip: { source: pixabay, id: 16495, author: max_bbb, page: "https://pixabay.com/videos/id-16495/", take: { slow: 7, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.8, ground: "#05070f", horizon: 1330 }
+# Ambiance proposée (une des trois validées le 2026-11-11) : le vent dans un arbre ; jamais sous une lecture ni sous un
+# verset (ici, près d'une minute de récitation). À valider sur la vidéo.
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -37 }
 cover: { scene: rain, title: "طلب منه يقول حاجة… وهو مش عارف يقول إيه!", tag: "ذكر وحكايته · 2", focus: 1100 }
 publish:
   title: { en: "He was asked to say something… and didn't know what", ar: "طلب منه يقول حاجة… وهو مش عارف يقول إيه" }

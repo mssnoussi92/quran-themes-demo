@@ -22,6 +22,13 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 94-trial-dathur
+# Le clip : une aube en accéléré, des nuages qui filent et le soleil qui sort (Pixabay 30218, adege, approuvé pour la
+# caverne, short 3) : l'heure de la première prière, et des nuages qui font la course sous « سابقوا ». APPROUVÉ pour ce
+# short par le propriétaire le 2026-11-17 (question à choix, sa recommandation). Réglages repris de `awake`, à revoir.
+clip: { source: pixabay, id: 30218, author: adege, page: "https://pixabay.com/videos/id-30218/", take: { height: 1440 }, rate: 0.8, position: "50% 50%", shift: 0, brightness: 0.85, ground: "#06080e", horizon: 1300 }
+# Ambiance proposée (une des trois validées le 2026-11-11) : le vent dans un arbre, quelques oiseaux, le matin ; jamais
+# sous une lecture ni sous un verset. À valider sur la vidéo.
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 110, level: -37 }
 cover: { scene: coins, title: "الأغنيا سبقونا!… فعلّمهم حاجة من غير فلوس", tag: "ذكر وحكايته · 3", focus: 1100 }
 publish:
   title: { en: "\"The rich got ahead of us!\"… what he taught the poor", ar: "الأغنيا سبقونا!… فعلّمهم حاجة من غير فلوس" }

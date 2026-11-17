@@ -21,6 +21,13 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 92-trial-aqrab
+# Le clip : un coucher qui devient nuit (Pixabay 8451, Felix-Mittermeier, approuvé pour « الحجر » et le quiz 4) : le soir
+# qui tombe (« حين أمسيت »), puis la nuit de la piqûre ; le scorpion dessiné au premier plan. APPROUVÉ pour ce short par le
+# propriétaire le 2026-11-17 (question à choix, sa recommandation). Réglages repris du quiz 4, à revoir sur les images.
+clip: { source: pixabay, id: 8451, author: Felix-Mittermeier, page: "https://pixabay.com/videos/id-8451/", take: { slow: 7, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.7, ground: "#06050c", horizon: 1380, veil: 0.8 }
+# Ambiance proposée (une des trois validées à l'écoute le 2026-11-11) : un pré le soir, grillons ; jamais sous une
+# lecture ni sous un verset. À valider sur la vidéo.
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 100, level: -38 }
 cover: { scene: sting, title: "عقرب لدغته بالليل… والرد جملة واحدة", tag: "ذكر وحكايته · 1", focus: 1100 }
 publish:
   title: { en: "Stung by a scorpion at night… the answer was one sentence", ar: "عقرب لدغته بالليل… والرد جملة واحدة" }
