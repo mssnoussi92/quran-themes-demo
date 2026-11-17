@@ -891,6 +891,16 @@ s'ouvre sur LA question du sujet, « «لو كل حاجة مكتوبة… هتح
 sur 6:148 : « لا يحل بأسه إلا بمن استحقه »). Recoupement redit : « كله مكتوب… أدعي ليه؟ » du du'a est proche du début du
 short 1 ; ici c'est la question même des Compagnons. Estimé : 1:41, 1:26, 1:35, film 7:22 (`docs/retention/qadar-style-openings.jpg`).
 
+**Script validé par lui le 2026-11-17** (« je valide le script », question à choix nommant `docs/scripts/qadar.md` à jour :
+les répliques des trois shorts et du film avec les nouveaux débuts, la place des versets et des hadiths, les titres ;
+`script_validated` des quatre fichiers). **Fond : tout dessiné** (son choix, comme « بص تاني » en B). **Les scènes adaptées aux
+nouveaux débuts** (sa demande) : short 1, l'effort avant l'abandon (une pile de livres, il écrit, puis repousse le livre) ;
+short 2, le tapis de prière roulé dans le coin dès la première image, il le regarde, tire la couverture, et à la fin le
+déroule et s'y tient ; short 3, « كل ليلة » : une chambre à 3 h, assis au bord du lit la tête dans les mains, le magasin
+fermé en souvenir au-dessus de lui, les « لو » autour ; le verset sur le ciel par la fenêtre ; l'exemple (« يقفل المحل… »)
+de retour devant le magasin, puis l'aube (`docs/retention/qadar-style-scenes-*.jpg`). **Reste** : les deux chemins de
+92:5-10, la voix et le rendu après les premières mesures.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

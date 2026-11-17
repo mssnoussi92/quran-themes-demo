@@ -507,3 +507,6 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   que chacun se reconnaisse). Avis de la session : d'accord si la question est concrète, l'image en mouvement dès la
   première seconde et la promesse à la 3e seconde (khidr-01). Ses choix : les trois débuts proposés, et le film ouvert
   sur « لو كل حاجة مكتوبة… هتحاسب ليه؟ », auquel répond son dernier chapitre.
+- **Script validé par lui** (« je valide le script », 2026-11-17) ; fond tout dessiné ; les scènes jouées adaptées aux
+  nouveaux débuts (l'effort avant l'abandon ; le tapis roulé qu'il ne déroule pas ; une chambre à 3 h et le magasin en
+  souvenir). La voix attend les premières mesures.

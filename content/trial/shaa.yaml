@@ -17,6 +17,10 @@
 # seconde (demande du propriétaire, 2026-11-17 : « commencer par des questions ou un sentiment que la plupart des gens
 # ressentent » ; il a choisi ces débuts sur leur aperçu).
 id: shaa
+# « Je valide le script » du propriétaire (2026-11-17, question à choix nommant « docs/scripts/qadar.md à jour : les
+# répliques des 3 shorts et du film avec les nouveaux débuts, la place des versets et des hadiths, les titres »). Ni la
+# voix, ni les dessins, ni les sources proposées : il les valide sur les vidéos. La voix attend les premières mesures.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 79-trial-shaa

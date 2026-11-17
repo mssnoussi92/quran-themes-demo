@@ -164,6 +164,10 @@ const Study: React.FC<{ t: number; horizon: number; pose: Pose; open: number; da
       <rect x={deskX - 176} y={top + 16} width={14} height={floor - top - 16} fill={INK} />
       <rect x={deskX + 200} y={top + 16} width={14} height={floor - top - 16} fill={INK} />
       <Lamp id="qd-lamp" x={deskX + 150} y={top} on={lamp} />
+      {/* a stack of books: the effort already made */}
+      {[0, 1, 2, 3].map((i) => (
+        <rect key={i} x={deskX - 172 + 6 * chance(i, 50)} y={top - 22 * (i + 1)} width={120 - 10 * chance(i, 51)} height={20} rx={3} fill={i % 2 ? "#1b2238" : "#232b46"} stroke={RIM} strokeWidth={1.5} strokeOpacity={0.35} />
+      ))}
       <Book x={deskX - 20} y={top} open={open} lit={lamp} />
       <Figure id="qd-fig" x={px ?? 350} y={py ?? (seated ? seat : floor - LEGS * S)} scale={S} pose={pose} rim={RIM} lit={0.6 * lamp} light={LAMP} />
     </g>
@@ -279,12 +283,13 @@ const AMAL = ["shut", "ground", "paths", "desk", "open", "dawn"];
 
 const AmalPicture: Drawn = ({ t, show, since, horizon }) => {
   const at = timeline(AMAL, show, since);
-  // shut: bent over the book, it closes it and leans back; desk: it looks at the closed book; open: it opens it and
-  // writes; dawn: the morning comes, it stands up with the book under its arm
-  const close = ramp(t, at("shut") + 0.4, at("shut") + 1.1);
-  const back = ramp(t, at("shut") + 1.0, at("shut") + 1.8);
+  // shut (« لو كل حاجة مكتوبة… أتعب ليه؟ »): bent over the book beside a stack of books, it writes, stops, closes it and
+  // pushes it away; desk: it looks at the closed book; open: it opens it and writes; dawn: the morning, it stands up
+  const close = ramp(t, at("shut") + 1.0, at("shut") + 1.6);
+  const back = ramp(t, at("shut") + 1.5, at("shut") + 2.3);
   const reopen = ramp(t, at("open") + 0.3, at("open") + 1.2);
-  let pose: Pose = mix(MORE.study, MORE.loll, back);
+  const effort = 3 * Math.sin(t * 9) * (1 - close) * show("shut");
+  let pose: Pose = mix({ ...MORE.study, armF: [MORE.study.armF[0] + effort, MORE.study.armF[1]] }, MORE.loll, back);
   pose = mix(pose, { ...POSES.desk, head: -18, torso: 12 }, show("desk") * (1 - reopen));
   const writing = 3 * Math.sin(t * 9) * reopen;
   pose = mix(pose, { ...MORE.study, armF: [MORE.study.armF[0] + writing, MORE.study.armF[1]] }, reopen);
@@ -317,7 +322,7 @@ const AmalPicture: Drawn = ({ t, show, since, horizon }) => {
 /** The bedroom before dawn: the bed along the floor, the night table and its phone, the window, a prayer mat.
  * `ring` makes the phone shine and shake; `turned`: the figure has turned its back to the phone (0 to 1);
  * `up`: it sits up, then stands on the mat (0 to 2). */
-const Bedroom: React.FC<{ t: number; horizon: number; dawn: number; ring: number; turned: number; up: number; mat: number }> = ({ t, horizon, dawn, ring, turned, up, mat }) => {
+const Bedroom: React.FC<{ t: number; horizon: number; dawn: number; ring: number; looked: number; turned: number; up: number; mat: number }> = ({ t, horizon, dawn, ring, looked, turned, up, mat }) => {
   const floor = horizon + 140;
   const bedTop = floor - 120;
   const S = 1.25;
@@ -326,7 +331,8 @@ const Bedroom: React.FC<{ t: number; horizon: number; dawn: number; ring: number
   const sit = Math.min(1, up);
   const stand = Math.max(0, up - 1);
   const lying = mix({ ...POSES.stand, armF: [14, 20], armB: [8, 20] }, { ...POSES.stand, head: -10, armF: [150, 30], armB: [8, 20], legF: [30, -50], legB: [26, -46] }, turned);
-  let pose = mix(lying, MORE.edge, sit);
+  let pose = mix(lying, { ...lying, head: -34, torso: 8 }, looked * (1 - turned));
+  pose = mix(pose, MORE.edge, sit);
   pose = mix(pose, POSES.stand, stand);
   const turn = -90 * (1 - sit);
   // lying on the mattress, then sitting on its edge, then standing on the mat
@@ -342,7 +348,12 @@ const Bedroom: React.FC<{ t: number; horizon: number; dawn: number; ring: number
       <Window id="qs-win" x={620} y={horizon - 780} w={360} h={440} t={t} dawn={dawn} moon={false} />
       <rect x={0} y={floor} width={W} height={H - floor} fill="#05070d" />
       <path d={`M 620 ${floor} L 980 ${floor} L 1080 ${floor + 240} L 700 ${floor + 240} Z`} fill={LAMP} opacity={0.14 * dawn} />
-      {/* the prayer mat, on the floor in front of the window */}
+      {/* the prayer mat, rolled and standing in the corner (what it « can't start »), then unrolled on the floor */}
+      <g opacity={1 - mat}>
+        <rect x={1000} y={floor - 230} width={46} height={230} rx={22} fill="#3a1f2a" stroke={GOLD} strokeWidth={3} strokeOpacity={0.35 + 0.4 * looked} />
+        <ellipse cx={1023} cy={floor - 228} rx={22} ry={8} fill="#2a1520" stroke={GOLD} strokeWidth={2} strokeOpacity={0.6} />
+        <ellipse cx={1023} cy={floor - 120} rx={70} ry={150} fill={GOLD} opacity={0.08 * looked} />
+      </g>
       <g opacity={mat}>
         <path d={`M 690 ${floor + 30} L 1010 ${floor + 30} L 1060 ${floor + 150} L 650 ${floor + 150} Z`} fill="#3a1f2a" />
         <path d={`M 760 ${floor + 140} Q 850 ${floor + 40} 940 ${floor + 140}`} stroke={GOLD} strokeWidth={4} fill="none" opacity={0.7} />
@@ -375,15 +386,20 @@ const ShaaPicture: Drawn = ({ t, show, since, horizon }) => {
   // turn: the phone rings, the figure turns away; words: the window, the end of the night; rise: the phone rings again,
   // it sits up, stands on the mat, raises its hands; the morning comes
   const ring1 = show("turn") * (at.cover ? 1 : ramp(t, at("turn"), at("turn") + 0.3) * (1 - ramp(t, at("turn") + 2.6, at("turn") + 3.0)));
-  const turned = Math.max(ramp(t, at("turn") + 1.0, at("turn") + 1.8) * (1 - show("rise")), show("words") * (1 - show("rise")));
+  // the hook (« عارف إنك لازم تصلي… ومش قادر تبدأ؟ »): the phone rings, it raises its head towards the rolled mat, then
+  // pulls the blanket over its head
+  const looked = show("turn") * (at.cover ? 1 : ramp(t, at("turn") + 0.5, at("turn") + 1.1));
+  const turned = Math.max(ramp(t, at("turn") + 1.7, at("turn") + 2.5) * (1 - show("rise")), show("words") * (1 - show("rise")));
   const ring2 = show("rise") * ramp(t, at("rise"), at("rise") + 0.3) * (1 - ramp(t, at("rise") + 1.6, at("rise") + 2.0));
-  const up = show("rise") * (ramp(t, at("rise") + 1.6, at("rise") + 2.4) + ramp(t, at("rise") + 2.8, at("rise") + 3.8));
+  // it sits up, unrolls the mat, stands on it
+  const up = show("rise") * (ramp(t, at("rise") + 1.6, at("rise") + 2.4) + ramp(t, at("rise") + 3.2, at("rise") + 4.2));
+  const unrolled = show("rise") * ramp(t, at("rise") + 2.4, at("rise") + 3.2);
   const dawn = show("rise") * ramp(t, at("rise") + 1.0, at("rise") + 10);
   const close = show("words");
   return (
     <>
       <g opacity={1 - close}>
-        <Bedroom t={t} horizon={horizon} dawn={dawn} ring={Math.max(ring1, ring2)} turned={turned} up={up} mat={show("rise")} />
+        <Bedroom t={t} horizon={horizon} dawn={dawn} ring={Math.max(ring1, ring2)} looked={looked} turned={turned} up={up} mat={unrolled} />
       </g>
       <g opacity={close}>
         {/* close on the window: the last stars, the first light along the roofs */}
@@ -436,6 +452,49 @@ const Street: React.FC<{ t: number; horizon: number; dawn: number; lamp: number;
   );
 };
 
+/** The shop with its shutter down, small: a memory in the dark room. (x, y): its middle; `shown` 0 to 1. */
+const ShopMemory: React.FC<{ x: number; y: number; shown: number; t: number }> = ({ x, y, shown, t }) => (
+  <g opacity={shown * (0.75 + 0.1 * Math.sin(t * 1.3))}>
+    <defs>
+      <radialGradient id="ql-mem">
+        <stop offset="0" stopColor="#2a3150" stopOpacity=".9" />
+        <stop offset="1" stopColor="#2a3150" stopOpacity="0" />
+      </radialGradient>
+    </defs>
+    <ellipse cx={x} cy={y} rx={260} ry={170} fill="url(#ql-mem)" />
+    <rect x={x - 150} y={y - 110} width={300} height={34} fill="#070910" stroke="#5a6488" strokeWidth={2} />
+    <rect x={x - 140} y={y - 70} width={280} height={170} fill="#141826" stroke="#5a6488" strokeWidth={2} />
+    {Array.from({ length: 11 }, (_, i) => (
+      <path key={i} d={`M ${x - 140} ${y - 60 + i * 15} L ${x + 140} ${y - 60 + i * 15}`} stroke="#3a4262" strokeWidth={3} />
+    ))}
+  </g>
+);
+
+/** A bedroom at three in the morning: a small window and its curtains, the clock at 3:00, the bed on the right; the
+ * figure sits on its edge, the head in its hands. */
+const Insomnia: React.FC<{ t: number; horizon: number; pose: Pose }> = ({ t, horizon, pose }) => {
+  const floor = horizon + 140;
+  const bedTop = floor - 120;
+  const S = 1.25;
+  return (
+    <g>
+      <rect x={0} y={0} width={W} height={H} fill="#0c1020" />
+      <Window id="ql-win" x={110} y={horizon - 560} w={260} h={320} t={t} dawn={0} moon={false} />
+      <path d={`M 90 ${horizon - 580} Q 130 ${horizon - 380} 100 ${horizon - 220} L 80 ${horizon - 220} L 80 ${horizon - 580} Z M 390 ${horizon - 580} Q 350 ${horizon - 380} 380 ${horizon - 220} L 400 ${horizon - 220} L 400 ${horizon - 580} Z`} fill="#1a1f36" />
+      <Clock x={900} y={horizon - 470} r={62} minutes={180} />
+      <rect x={0} y={floor} width={W} height={H - floor} fill="#05070d" />
+      {/* the bed, the figure on its edge */}
+      <rect x={480} y={bedTop} width={580} height={60} rx={14} fill="#0e1322" />
+      <rect x={470} y={bedTop + 50} width={600} height={30} rx={8} fill={INK} />
+      <rect x={484} y={bedTop + 80} width={16} height={floor - bedTop - 80} fill={INK} />
+      <rect x={1040} y={bedTop - 150} width={26} height={230} rx={8} fill={INK} />
+      <ellipse cx={960} cy={bedTop - 6} rx={70} ry={26} fill="#151b30" />
+      <path d={`M 700 ${bedTop + 4} Q 820 ${bedTop - 30} 1000 ${bedTop - 4} L 1010 ${bedTop + 40} L 700 ${bedTop + 40} Z`} fill="#1a2140" />
+      <Figure id="ql-fig-room" x={560} y={bedTop + 8} scale={S} pose={pose} facing={-1} rim={RIM} lit={0.25} light="#cfe0ff" />
+    </g>
+  );
+};
+
 /** The « لو » around the figure: `count` how many have come (0 to N); `fade` 0 to 1 takes them away. */
 const Ifs: React.FC<{ t: number; horizon: number; count: number; fade: number }> = ({ t, horizon, count, fade }) => (
   <g>
@@ -459,34 +518,40 @@ const LAW = ["shop", "law", "night", "calm", "dawn"];
 
 const LawPicture: Drawn = ({ t, show, since, horizon }) => {
   const at = timeline(LAW, show, since);
-  // shop: it pulls the shutter down and sits on the step; law: the « لو » come; night: the camera looks up at the sky;
-  // calm: the « لو » go out, it stands up; dawn: the morning, it walks away
+  // shop (« بتفضل تعيد اللي حصل في دماغك… كل ليلة؟ »): 3 a.m., on the edge of the bed, the head sinks into the hands, the
+  // closed shop comes as a memory; law: the « لو » come one after the other; night: the sky through the window (57:22);
+  // calm: back in the street at the shop, it locks the shutter; dawn: it walks away
   const S = 1.3;
   const floor = horizon + 160;
-  const sat = at.cover ? 1 : ramp(t, at("shop") + 0.6, at("shop") + 1.6);
-  const ifs = Math.max(show("law"), show("night"), show("calm"));
-  const count = at.cover ? (show("law") ? 12 : 0) : ifs > 0 ? ramp(t, at("law") - 0.2, at("law") + 2.2) * 9 + ramp(t, at("law") + 2.2, at("law") + 12) * 7 : 0;
-  const fade = Math.max(ramp(t, at("calm") + 0.2, at("calm") + 2.5), show("dawn"), show("night"));
-  const stand = Math.max(ramp(t, at("calm") + 4, at("calm") + 5), show("dawn"));
+  const sink = at.cover ? 1 : ramp(t, at("shop") + 0.3, at("shop") + 1.4);
+  const roomPose = mix(MORE.edge, MORE.despair, sink);
+  const memory = at.cover ? 0.8 : Math.max(show("shop") * ramp(t, at("shop") + 1.2, at("shop") + 2.4), show("law"));
+  const count = at.cover ? (show("law") ? 12 : 0) : show("law") > 0 ? ramp(t, at("law") - 0.2, at("law") + 2.2) * 9 + ramp(t, at("law") + 2.2, at("law") + 12) * 7 : 0;
+  const room = Math.max(show("shop"), show("law"));
+  const street = Math.max(show("calm"), show("dawn"));
+  // in the street: bent to the lock, then upright, then walking away
+  const lock = show("calm") * (1 - ramp(t, at("calm") + 9, at("calm") + 10.5));
   const go = show("dawn") * interpolate(t, [at("dawn") + 0.5, at("dawn") + 6], [0, 1], CLAMP);
-  let pose: Pose = mix(POSES.stand, MORE.despair, sat);
-  pose = mix(pose, POSES.stand, stand);
+  let pose: Pose = mix(POSES.stand, { torso: 28, head: -24, armF: [38, 30], armB: [18, 14], legF: [6, -4], legB: [-6, -2] }, lock);
   if (go > 0 && go < 1) pose = walk(go * 9 * Math.PI);
-  const standY = floor - LEGS * S;
-  const seatY = floor - 20;
-  const sitting = standY + (seatY - standY) * sat;
-  const py = sitting + (standY - sitting) * stand;
-  const px = 460 + 520 * go;
-  const tilt = show("night") * 1100;
+  const px = 540 + 440 * go;
+  const py = floor - LEGS * S;
   const dawn = show("dawn") * ramp(t, at("dawn"), at("dawn") + 6);
   return (
     <>
-      <Street t={t} horizon={horizon} dawn={dawn} lamp={1 - dawn} tilt={tilt} />
-      <g transform={`translate(0 ${tilt})`}>
-        <Figure id="ql-fig" x={px} y={py} scale={S} pose={pose} facing={go > 0 ? 1 : -1} rim={RIM} lit={0.5 * (1 - dawn)} light={LAMP} />
+      <g opacity={street}>
+        <Street t={t} horizon={horizon} dawn={dawn} lamp={1 - dawn} tilt={0} />
+        <Figure id="ql-fig" x={px} y={py} scale={S} pose={pose} facing={1} rim={RIM} lit={0.5 * (1 - dawn)} light={LAMP} />
       </g>
-      <g transform={`translate(0 ${tilt})`}>
-        <Ifs t={t} horizon={horizon} count={count} fade={fade} />
+      <g opacity={show("night")}>
+        {/* close on the window of the room: the sky of three in the morning, the moon */}
+        <rect x={0} y={0} width={W} height={H} fill="#0a0e1c" />
+        <Window id="ql-near" x={90} y={horizon - 980} w={900} h={1000} t={t} dawn={0} moon={false} />
+      </g>
+      <g opacity={room}>
+        <Insomnia t={t} horizon={horizon} pose={roomPose} />
+        <ShopMemory x={540} y={horizon - 300} shown={memory} t={t} />
+        <Ifs t={t} horizon={horizon} count={count} fade={0} />
       </g>
     </>
   );

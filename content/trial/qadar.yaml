@@ -17,6 +17,10 @@
 # - Répliques de la session sans tafsir : l'ouverture, « مش هنتجادل… », les débuts de chapitre, « قبل ما الحاجة تحصل: اعمل.
 #   وبعد ما تحصل: سلّم لربنا » (lu sur l'ordre de Muslim 2664), l'appel.
 id: qadar
+# « Je valide le script » du propriétaire (2026-11-17, question à choix nommant « docs/scripts/qadar.md à jour : les
+# répliques des 3 shorts et du film avec les nouveaux débuts, la place des versets et des hadiths, les titres »). Ni la
+# voix, ni les dessins, ni les sources proposées : il les valide sur les vidéos. La voix attend les premières mesures.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
 files: qadar                     # qadar-film-16x9.mp4, qadar-short-<n>-<id>.mp4
 title: { ar: "مخيّر ولا مسيّر؟", en: "Free will or fate?" }
 handle: "@quran_words_daily"
