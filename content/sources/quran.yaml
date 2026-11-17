@@ -3118,3 +3118,67 @@
   notes: "« سننظر أصدقت أم كنت من الكاذبين » : Soulayman vérifie la nouvelle de la huppe (« معاك 5 ثواني », short 6, hudhud) ; récité après 27:22"
   text_ar: ۞ قَالَ سَنَنظُرُ أَصَدَقْتَ أَمْ كُنتَ مِنَ ٱلْكَـٰذِبِينَ
   text_en: '[Solomon] said, "We will see whether you were truthful or were of the liars.'
+- id: quran.49.12
+  type: ayah
+  ref: {surah: 49, ayah: 12}
+  url: https://quran.com/49/12
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=49:12
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=49:12
+    translator: Saheeh International
+    surah_ar: الحجرات
+    surah_en: Al-Hujurat
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« ولا يغتب بعضكم بعضا… » : la ghiba et l'image de la chair du frère mort (وتحسبونه هيّنًا, ghiba)"
+  text_ar: يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱجْتَنِبُوا۟ كَثِيرًا مِّنَ ٱلظَّنِّ إِنَّ بَعْضَ ٱلظَّنِّ إِثْمٌ ۖ وَلَا تَجَسَّسُوا۟ وَلَا يَغْتَب بَّعْضُكُم بَعْضًا ۚ أَيُحِبُّ أَحَدُكُمْ أَن يَأْكُلَ لَحْمَ أَخِيهِ مَيْتًا فَكَرِهْتُمُوهُ ۚ وَٱتَّقُوا۟ ٱللَّهَ ۚ إِنَّ ٱللَّهَ تَوَّابٌ رَّحِيمٌ
+  text_en: O you who have believed, avoid much [negative] assumption. Indeed, some assumption is sin. And do not spy or backbite each other. Would one of you like to eat the flesh of his brother when dead? You would detest it. And fear Allāh; indeed, Allāh is Accepting of Repentance and Merciful.
+- id: quran.68.10
+  type: ayah
+  ref: {surah: 68, ayah: 10}
+  url: https://quran.com/68/10
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=68:10
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=68:10
+    translator: Saheeh International
+    surah_ar: القلم
+    surah_en: Al-Qalam
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« ولا تطع كل حلاف مهين » : le début de la phrase de 68:11 (وتحسبونه هيّنًا, namima)"
+  text_ar: وَلَا تُطِعْ كُلَّ حَلَّافٍ مَّهِينٍ
+  text_en: And do not obey every worthless habitual swearer
+- id: quran.68.11
+  type: ayah
+  ref: {surah: 68, ayah: 11}
+  url: https://quran.com/68/11
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=68:11
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=68:11
+    translator: Saheeh International
+    surah_ar: القلم
+    surah_en: Al-Qalam
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« همّاز مشّاء بنميم » : celui qui marche avec la namima (وتحسبونه هيّنًا, namima)"
+  text_ar: هَمَّازٍ مَّشَّآءٍۭ بِنَمِيمٍ
+  text_en: '[And] scorner, going about with malicious gossip -'
+- id: quran.2.264
+  type: ayah
+  ref: {surah: 2, ayah: 264}
+  url: https://quran.com/2/264
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:264
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:264
+    translator: Saheeh International
+    surah_ar: البقرة
+    surah_en: Al-Baqarah
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« كالذي ينفق ماله رئاء الناس… فمثله كمثل صفوان عليه تراب » : la roche lavée par la pluie (وتحسبونه هيّنًا, riya)"
+  text_ar: يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تُبْطِلُوا۟ صَدَقَـٰتِكُم بِٱلْمَنِّ وَٱلْأَذَىٰ كَٱلَّذِى يُنفِقُ مَالَهُۥ رِئَآءَ ٱلنَّاسِ وَلَا يُؤْمِنُ بِٱللَّهِ وَٱلْيَوْمِ ٱلْـَٔاخِرِ ۖ فَمَثَلُهُۥ كَمَثَلِ صَفْوَانٍ عَلَيْهِ تُرَابٌ فَأَصَابَهُۥ وَابِلٌ فَتَرَكَهُۥ صَلْدًا ۖ لَّا يَقْدِرُونَ عَلَىٰ شَىْءٍ مِّمَّا كَسَبُوا۟ ۗ وَٱللَّهُ لَا يَهْدِى ٱلْقَوْمَ ٱلْكَـٰفِرِينَ
+  text_en: O you who have believed, do not invalidate your charities with reminders [of it] or injury as does one who spends his wealth [only] to be seen by the people and does not believe in Allāh and the Last Day. His example is like that of a [large] smooth stone upon which is dust and is hit by a downpour that leaves it bare. They are unable [to keep] anything of what they have earned. And Allāh does not guide the disbelieving people.

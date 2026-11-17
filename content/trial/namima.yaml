@@ -1,0 +1,96 @@
+# « وتحسبونه هيّنًا » (content/trial/hayyin.yaml), short 2 : la namima. Ouverture choisie par le propriétaire (2026-11-17,
+# question à choix, recommandation de la session) : la capture d'écran transférée, « الحركة دي… ليها اسم في القرآن ».
+# - La scène jouée, muette : un téléphone dans le noir, une main sans visage ; une capture d'écran (l'éclair), « transférer »,
+#   un autre fil : « شوف فلان قال عليك إيه ». La scène montre l'envie de semer la discorde : transmettre pour prévenir d'un
+#   vrai tort n'est pas la namima (as-Sa'di sur 68:11 : « لقصد الإفساد بينهم »).
+# - 68:10-11 récités d'une traite (le récitateur les enchaîne ; coupes posées à la main, docs/themes.md) ; le sens : as-Sa'di
+#   sur 68:11, al-Muyassar sur 68:10 (révélé sur un polythéiste, « فيها تحذيرًا للمسلم من موافقة من اتصف بهذه الصفات »).
+# - Bukhari 216, lu en extrait par Abu Malik al-Asqalani (bukhari_audiobook/0216.mp3, 21,40-33,68 s : « يعذبان، وما يعذبان في
+#   كبير، ثم قال: بلى… وكان الآخر يمشي بالنميمة », entendu mot pour mot ; proposée). Choisi plutôt que 6052 pour son « بلى » :
+#   sans lui, « وما يعذبان في كبير » se lirait « un petit péché », et nous n'avons pas de commentaire de hadith (charh) pour
+#   l'expliquer. Rien de l'intérieur des tombes n'est dessiné ; le Prophète ﷺ n'est pas dessiné.
+# - Le même verbe dans le verset et le hadith (« مشّاء », « يمشي ») : un fait des deux textes, dit sans l'expliquer davantage.
+# - Répliques de la session sans tafsir : « زمان كان بيمشي برجليه… », l'exemple, la phrase à retenir, l'annonce du suivant.
+# - Images (new-scene, après le script) : `phone` le téléphone, la capture, le transfert ; `sent` le message arrivé sur un
+#   autre téléphone, l'écran s'allume ; `path` deux maisons la nuit, un chemin entre elles ; `steps` des pas sur le chemin ;
+#   `graves` deux tombes au crépuscule, un palmier, personne ; `split` les deux maisons, une fenêtre s'éteint ; `still` le
+#   téléphone posé face contre la table.
+id: namima
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 96-trial-namima
+# Le fond, provisoire, pour le script (2026-11-17) : un ciel de nuit dessiné par ffmpeg ; la scène est dessinée par-dessus.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4, landscape: { side: right, horizon: 1260, brightness: 1 } }
+cover: { scene: phone, title: "«شوف فلان قال عليك إيه»", tag: "وتحسبونه هيّنًا · 2 من 3", focus: 1000 }
+publish:
+  title: { en: "“Look what he said about you”: the Quran has a name for it", ar: "«شوف فلان قال عليك إيه»… القرآن سمّاها" }
+  part: 2
+  hashtags: ["#النميمة"]
+  description:
+    en: "A screenshot, then “forward”. The Quran names the one who does it: a walker with tale-bearing (68:11). The Prophet ﷺ used the same word when he passed by two graves. Not every word passed on is namima: namima is passing it on to set people against each other."
+    ar: "سكرين شوت… وبعدين تحويل. القرآن سمّى اللي بيعمل كده: «مشّاء بنميم» (القلم 11). والنبي صلى الله عليه وسلم قال نفس الكلمة لما عدّى على قبرين. ومش كل كلام بيتنقل نميمة: النميمة إنك تنقله عشان توقّع بين الناس."
+segments:
+  # -- la scène jouée, muette
+  - narration: hook
+    silent: true
+    hold: 3.0
+    scene: phone
+    sfx: [[click, 0.4], [whoosh, 1.6]]
+    lines:
+      - ar: "«شوف فلان قال عليك إيه.»"
+        en: "“Look what so-and-so said about you.”"
+  - narration: open
+    scene: sent
+    lines:
+      - ar: "الحركة دي… ليها اسم في القرآن."
+        en: "That move… has a name in the Quran."
+      - ar: "اسمع الآية دي:"
+        en: "Listen to this verse:"
+  - verses: [quran.68.10, quran.68.11]
+    scene: path
+  # -- le sens
+  - narration: meaning
+    scene: path
+    sources: [tafsir.saadi.68.11, tafsir.muyassar.68.10]
+    lines:
+      - ar: "يعني: اللي بيمشي بين الناس… ينقل كلام ده لده… عشان يوقّع بينهم."
+        en: "Meaning: one who walks between people… carrying this one's words to that one… to set them against each other."
+      - ar: "والآية بتحذّرنا… إننا نبقى زيه."
+        en: "And the verse warns us… against becoming like him."
+  - narration: word
+    scene: steps
+    sources: [tafsir.saadi.68.11, hadith.bukhari.216]
+    lines:
+      - ar: "خد بالك من الكلمة: «مشّاء»… يعني ماشي بالكلام."
+        en: "Notice the word: “mashsha'”… one who walks around with words."
+      - ar: "والنبي صلى الله عليه وسلم قال نفس الكلمة… لما عدّى على قبرين:"
+        en: "And the Prophet ﷺ used the same word… when he passed by two graves:"
+  - reading: hadith.bukhari.216
+    scene: graves
+  # -- ce qu'on ne voit pas, ce qui n'est pas la namima
+  - narration: depth
+    scene: phone
+    lines:
+      - ar: "زمان كان بيمشي برجليه… النهارده بيمشي بصباع واحد."
+        en: "Back then he walked on his feet… today he walks with one finger."
+  - narration: honest
+    scene: sent
+    sources: [tafsir.saadi.68.11]
+    lines:
+      - ar: "بس مش كل كلام بيتنقل نميمة… النميمة: إنك تنقله عشان توقّع."
+        en: "But not every word passed on is namima… namima is passing it on to set people apart."
+  # -- l'exemple, la phrase à retenir
+  - narration: example
+    scene: split
+    lines:
+      - ar: "زي رسالة واحدة… اتنقلت في جروب العيلة… وأخين بطّلوا يكلموا بعض."
+        en: "Like one message… passed on in the family group… and two brothers stopped speaking to each other."
+  - narration: close
+    scene: still
+    lines:
+      - ar: "الكلام اللي يفرّق… خلّيه يقف عندك."
+        en: "Words that divide… let them stop with you."
+      - ar: "هنا الكلام اتنقل عشان يفرّق… والجاية: حاجة بنعملها… عشان الناس يشوفوها."
+        en: "Here, words were carried to divide… next: something we do… so that people see it."
+      - ar: "تابعنا عشان تشوف الصورة اللي القرآن رسمها لها."
+        en: "Follow us to see the picture the Quran painted of it."

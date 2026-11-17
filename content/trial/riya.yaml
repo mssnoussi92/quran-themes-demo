@@ -1,0 +1,97 @@
+# « وتحسبونه هيّنًا » (content/trial/hayyin.yaml), short 3 : le riya'. Ouverture choisie par le propriétaire (2026-11-17,
+# question à choix, recommandation de la session) : « عملتها عشان يتقال… واتقال », puis 2:264, la pluie qui lave la roche.
+# - La scène jouée, muette : une main sans visage glisse un billet dans une caisse, un téléphone la filme, la story part, les
+#   cœurs montent. La scène montre l'intention (filmer pour les cœurs), jamais le seul fait d'être vu : montrer une bonne
+#   action n'est pas du riya' (« إن تبدوا الصدقات فنعما هي », 2:271), et la Page publie elle-même du Coran.
+# - L'accroche raconte avec nos mots Muslim 1905 (le généreux : « فعلت ليقال هو جواد، فقد قيل »), sans la lire ; la suite du
+#   hadith (le feu) n'est ni dite ni montrée. « خد اللي كان عايزه… وبس » repose sur al-Muyassar sur 2:264 (« ولا يجدون شيئًا
+#   من الثواب على ما أنفقوه »).
+# - 2:264 récité entier (45,5 s) : « كالذي ينفق » prolonge la phrase de « لا تبطلوا صدقاتكم » ; le sens : al-Muyassar, Ibn
+#   Kathir (« ليشكر بين الناس، أو يقال: إنه كريم » ; « أعمال المرائين تذهب وتضمحل عند الله ») et as-Sa'di (le sol que le
+#   regard croit bon, « شرط العمل أن يكون لله وحده »).
+# - Répliques de la session sans tafsir : l'exemple, la phrase à retenir, l'appel final (le dernier épisode connu : il ne
+#   résume pas la série, il annonce d'autres péchés qu'on croit petits).
+# - Images (new-scene, après le script) : `box` la caisse, la main, le téléphone qui filme ; `hearts` les cœurs qui montent
+#   et s'éteignent ; `rock` une roche lisse sous la pluie (un clip de pluie filmé, la roche dessinée), la poussière emportée ;
+#   `bare` la roche nue après la pluie ; `soil` la poussière sur la roche, qui a l'air d'une terre ; `two` deux mains devant
+#   la même caisse, l'une avec un téléphone ; `dawn` le matin, la caisse seule.
+id: riya
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 97-trial-riya
+# Le fond, provisoire, pour le script (2026-11-17) : un ciel de nuit dessiné par ffmpeg. Pour 2:264, un clip de pluie filmé
+# se cherchera avec les images de style (skill new-scene).
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4, landscape: { side: left, horizon: 1260, brightness: 1 } }
+cover: { scene: box, title: "عملتها عشان يتقال؟", tag: "وتحسبونه هيّنًا · 3 من 3", focus: 1000 }
+publish:
+  title: { en: "You did it so they would say it… and they did", ar: "عملتها عشان يتقال… واتقال" }
+  part: 3
+  hashtags: ["#الرياء"]
+  description:
+    en: "The Prophet ﷺ told of a man who spent on every door of good, and was told on the Day of Resurrection: you did it so that people would say “generous”… and they said it. The Quran paints it: dust on a smooth rock, then heavy rain (2:264). The problem is not that people saw you; it is doing it so that they see you."
+    ar: "النبي صلى الله عليه وسلم حكى عن واحد صرف فلوسه في كل باب خير… واتقال له يوم القيامة: عملت كده عشان يتقال كريم… واتقال. والقرآن رسمها: تراب على صخرة ناعمة… ونزل مطر جامد (البقرة 264). المشكلة مش إن الناس شافوك… المشكلة إنك عملتها عشان يشوفوك."
+segments:
+  # -- la scène jouée, muette
+  - narration: hook
+    silent: true
+    hold: 3.0
+    scene: box
+    sfx: [[pops, 1.0]]
+    lines:
+      - ar: "عملتها عشان يتقال… واتقال."
+        en: "You did it so they would say it… and they did."
+  # -- le fait, raconté
+  - narration: open
+    scene: hearts
+    sources: [hadith.muslim.1905a]
+    lines:
+      - ar: "الجملة دي… هتتقال يوم القيامة لناس عملوا خير كتير."
+        en: "That sentence… will be said on the Day of Resurrection to people who did a lot of good."
+      - ar: "واحد منهم صرف فلوسه في كل باب خير…"
+        en: "One of them spent his money on every door of good…"
+      - ar: "واتقال له: عملت كده عشان يتقال كريم… واتقال."
+        en: "And he was told: you did it so they would say “generous”… and they said it."
+      - ar: "وربنا رسم الصورة دي في القرآن:"
+        en: "And God drew this picture in the Quran:"
+  - verse: quran.2.264
+    scene: rock
+  # -- le sens
+  - narration: meaning
+    scene: bare
+    sources: [tafsir.muyassar.2.264, tafsir.ibn-kathir.2.264]
+    lines:
+      - ar: "يعني: صخرة ناعمة عليها شوية تراب… نزل عليها مطر جامد… فمبقاش عليها حاجة."
+        en: "Meaning: a smooth rock with a little dust on it… heavy rain fell on it… and nothing was left."
+      - ar: "وكده عمل اللي بيعمل عشان الناس… بيروح عند ربنا… وما يلاقيش منه حاجة."
+        en: "That is the deed of one who acts for people… gone, in God's sight… and he finds nothing of it."
+  - narration: depth
+    scene: soil
+    sources: [tafsir.saadi.2.264]
+    lines:
+      - ar: "التراب كان شكله أرض كويسة… تطلّع زرع."
+        en: "The dust looked like good soil… that could grow a crop."
+      - ar: "الناس شافوا التراب… وربنا شايف الصخرة."
+        en: "People saw the dust… God sees the rock."
+  - narration: honest
+    scene: box
+    sources: [tafsir.ibn-kathir.2.264, tafsir.saadi.2.264]
+    lines:
+      - ar: "بس خد بالك: المشكلة مش إن الناس شافوك."
+        en: "But note: the problem isn't that people saw you."
+      - ar: "المشكلة… إنك عملتها عشان يشوفوك."
+        en: "The problem… is that you did it so they would see you."
+  # -- l'exemple, la phrase à retenir
+  - narration: example
+    scene: two
+    lines:
+      - ar: "زي اتنين حطّوا نفس الفلوس… في نفس الصندوق."
+        en: "Like two people who put the same money… in the same box."
+      - ar: "واحد عينه على ربنا… والتاني عينه على الكاميرا."
+        en: "One has his eyes on God… the other on the camera."
+  - narration: close
+    scene: dawn
+    lines:
+      - ar: "اعملها لربنا… واللي يشوف يشوف."
+        en: "Do it for God… and let whoever sees, see."
+      - ar: "تابعنا… فيه ذنوب تانية بنشوفها صغيرة."
+        en: "Follow us… there are other sins we think are small."

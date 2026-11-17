@@ -1,0 +1,20 @@
+# La série « وتحسبونه هيّنًا » (idée du propriétaire, 2026-11-17 : « je veux explorer une nouvelle série : الغيبة، النميمة،
+# الرياء… pour الغيبة on a l'idée que حسناتك ممكن تمشي لحد انت اغتبته ; il faut bien choisir le hook et bien créer une
+# situation »). Forme et titre choisis par lui le même jour (questions à choix, chaque fois la recommandation de la session) :
+# trois shorts qui tiennent seuls, sans film ; le titre de 24:15, qu'as-Sa'di étend à tous les péchés pris à la légère
+# (« الزجر البليغ، عن تعاطي بعض الذنوب على وجه التهاون بها ») ; chaque short s'ouvre sur une scène type jouée, muette, par
+# une silhouette anonyme sans visage (comme « مخيّر ولا مسيّر؟ ») ; les trois scripts tout de suite, aucune voix avant
+# « je valide le script ». Fiche et contradictions : docs/themes.md ; script : docs/scripts/hayyin.md.
+# - Ce qui distingue les parties : la ghiba, ce que tu dis sur lui ; la namima, ce que tu lui rapportes ; le riya', ce que
+#   tu fais pour qu'on te voie.
+# - Rien de l'invisible n'est dessiné (le Jour du Jugement, les tombes de l'intérieur, les حسنات qui passent).
+id: hayyin
+files: hayyin                    # début du nom des vidéos livrées : hayyin-short-<n>-<id>.mp4
+title: { ar: "وتحسبونه هيّنًا", en: "You Think It Is Small" }
+shorts: [ghiba, namima, riya]
+handle: "@quran_words_daily"
+publish:
+  out: docs/retention/publication-hayyin.md
+  series: { en: "You Think It Is Small", ar: "وتحسبونه هيّنًا" }
+  hashtags: ["#وتحسبونه_هينا", "#تزكية_النفس"]
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }

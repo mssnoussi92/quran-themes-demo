@@ -1004,6 +1004,51 @@ a demandé que 27:27 (Soulayman vérifie, 8 s) soit récité au short 6, puisqu'
 0:59 sans voix) envoyés ; **validés par lui le même jour** (questions à choix) : le rendu et les clips (8451 le coucher qui
 devient nuit, 2119 l'aube rose, 16139 les dunes), 27:27 récité au short 6, les trois accroches. **Placés plus tard** (son choix) : en réserve, décidés à la revue après les chiffres du 23 novembre.
 
+## Série : « وتحسبونه هيّنًا » (ghiba, namima, riya' ; idée du propriétaire, 2026-11-17)
+
+**Sa demande** : « je veux explorer une nouvelle série : الغيبة، النميمة، الرياء… pour الغيبة on a l'idée que حسناتك ممكن
+تمشي لحد انت اغتبته ; il faut bien choisir le hook et bien créer une situation ». **Fiche** (skill `choose-format`) :
+
+**Ce que la session lui a opposé** (dit avant de recommander) :
+- **Son idée tient, mais pas par le hadith qu'on cite d'habitude.** Le « المفلس » (Muslim 2581) énumère l'insulte, l'accusation
+  (قذف), l'argent, le sang et les coups, pas la ghiba. La source est **Bukhari 2449** (« مظلمة لأحد من عرضه… أخذ منه بقدر
+  مظلمته »), et **al-Qurtubi sur 49:12** range la ghiba parmi ces مظالم en le citant, avec la divergence qu'il rapporte (pour
+  certains, elle reste entre le serviteur et Dieu) : d'où « ممكن », jamais « le Prophète ﷺ a dit que celui qui médit perd
+  ses حسنات ». L'histoire d'al-Hasan al-Basri et des dattes est hors politique.
+- **Le transfert des حسنات est le Jour du Jugement** : jamais dessiné ; l'image reste la scène d'ici-bas (la chaise vide).
+- **Le riya' n'est pas de la même famille** (la langue contre les gens, le cœur devant Dieu). Le fil qui tient les trois :
+  les péchés qu'on croit petits, 24:15, qu'as-Sa'di étend (« الزجر البليغ، عن تعاطي بعض الذنوب على وجه التهاون بها »).
+  « حسنات بتضيع », son fil, tenait pour la ghiba et le riya', pas pour la namima.
+- **Deux pièges** : montrer une bonne action n'est pas du riya' (2:271 ; et la Page publie elle-même du Coran) : le short dit
+  l'intention ; transmettre pour prévenir d'un vrai tort n'est pas la namima (as-Sa'di sur 68:11 : « لقصد الإفساد »).
+- **Les ouvertures qui font peur** (les deux tombes de Bukhari 216, les trois premiers jugés de Muslim 1905) restent dans les
+  shorts, lues ou racontées, jamais en première image ni dessinées.
+
+**Décisions du propriétaire (2026-11-17, questions à choix, chaque fois la recommandation)** : **« وتحسبونه هيّنًا », trois
+shorts qui tiennent seuls, sans film** ; la ghiba ouverte sur **la chaise vide, l'excuse, puis son idée** ; la namima sur
+**la capture d'écran transférée**, le riya' sur **« عملتها عشان يتقال… واتقال »** puis 2:264 ; **les trois scripts tout de
+suite**, aucune voix avant « je valide le script ».
+
+| Short | Scène jouée, muette | Accroche | Récité, lu | Le sens repose sur | Estimé |
+| --- | --- | --- | --- | --- | --- |
+| 1. `ghiba` | un café le soir, trois silhouettes penchées, une chaise vide ; «هو فعلاً كده… أنا مش بفتري عليه!» | «الجملة دي… ممكن تاخد من حسناتك… وتديها لصاحب الكرسي الفاضي.» | 49:12 (36,5 s) ; Bukhari 2449 lu (21,2 s) ; Muslim 2589 raconté | al-Muyassar et al-Qurtubi sur 49:12 | 2:08 |
+| 2. `namima` | un téléphone dans le noir : capture, transfert, «شوف فلان قال عليك إيه.» | «الحركة دي… ليها اسم في القرآن.» | 68:10-11 (10,4 s) ; Bukhari 216 lu en extrait (12,3 s : les deux tombes, « يمشي بالنميمة ») | as-Sa'di sur 68:11, al-Muyassar sur 68:10 | 1:26 |
+| 3. `riya` | une main glisse un billet dans une caisse, un téléphone filme, les cœurs montent | «عملتها عشان يتقال… واتقال.» | 2:264 (45,5 s), sur la pluie qui lave la roche ; Muslim 1905 raconté | al-Muyassar, Ibn Kathir et as-Sa'di sur 2:264 | 1:53 |
+
+- **Ce qui distingue les parties** : la ghiba, ce que tu dis sur lui ; la namima, ce que tu lui rapportes ; le riya', ce que
+  tu fais pour qu'on te voie. Chaque short annonce le suivant ; le troisième, d'autres péchés qu'on croit petits.
+- **En réserve** (les « … » de sa demande, sources vérifiées) : la moquerie (49:11), le soupçon et l'espionnage (49:12), الهمز
+  واللمز (104:1), la jalousie (Muslim 2564), le mensonge (Muslim 2607). Pour le riya', 2:265 (la même pluie sur un jardin
+  qui donne le double) ferait un contraste, mais un short ne repose que sur le tafsir d'un verset qu'il récite.
+
+**Fait le même jour (le script, aucune voix)** : au registre, **proposés**, 4 versets (49:12, 68:10, 68:11, 2:264), 4 hadiths
+(Bukhari 2449 et 216, Muslim 2589 et 1905a) et 8 passages de tafsir (dont le premier d'al-Qurtubi, 49:12) ; les versets
+coupés dans la récitation (68:10-11, que le récitateur enchaîne, posés à la main : 68:10 à 45,05 s, où Whisper entend enfin
+« ولا ») ; deux lectures d'Abu Malik al-Asqalani trouvées et entendues mot pour mot (Bukhari 2449 : `2449.mp3`, 13,05-34,25 s ;
+Bukhari 216 : `0216.mp3`, 21,40-33,68 s, de « يعذبان » à « بالنميمة ») ; les fichiers (`content/trial/hayyin.yaml`, `ghiba`,
+`namima`, `riya`), les textes de voix 95 à 97 (92 à 94 pris par la série des adhkar d'une autre session), le script (`docs/scripts/hayyin.md`). Fond provisoire (la nuit générée) ; ni
+dessins, ni clips, ni ambiances. **À valider par le propriétaire avant toute voix.**
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
