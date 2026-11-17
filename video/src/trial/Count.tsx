@@ -74,7 +74,7 @@ const Grid: React.FC<{ opacity: number; stage?: number; appear?: number; whole?:
           ))}
           <circle cx={(a.x + b.x) / 2} cy={a.y} r={22} fill="none" stroke={removed > 0.5 ? "#e07a5f" : GOLD} strokeWidth={2.5} />
           <line x1={(a.x + b.x) / 2} y1={a.y - 22} x2={(a.x + b.x) / 2} y2={a.y - 70} stroke={PALE} strokeWidth={1.5} opacity={0.7} />
-          <text x={(a.x + b.x) / 2} y={a.y - 80} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={30} fill={PALE}>التوبة ١٢٨–١٢٩</text>
+          <text x={(a.x + b.x) / 2} y={a.y - 80} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={30} fill={PALE}>التوبة 128–129</text>
           <Taken removed={removed} from={{ x: (a.x + b.x) / 2, y: a.y }} />
         </g>
       ) : null}
@@ -90,7 +90,7 @@ const Taken: React.FC<{ removed: number; from: { x: number; y: number } }> = ({ 
       <line x1={from.x} y1={from.y + 22} x2={640} y2={cy - 80} stroke={PALE} strokeWidth={1.5} strokeDasharray="6 6" opacity={0.6} />
       <rect x={300} y={cy - 110} width={480} height={230} rx={24} fill={INK} opacity={0.92} stroke={GOLD} strokeOpacity={0.4} />
       <text x={540} y={cy - 62} textAnchor="middle" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={36} fill={PALE}>سورة التوبة</text>
-      {[{ x: 640, n: "١٢٨" }, { x: 440, n: "١٢٩" }].map((v, i) => (
+      {[{ x: 640, n: "128" }, { x: 440, n: "129" }].map((v, i) => (
         <g key={i}>
           <circle cx={v.x} cy={cy + 10} r={40} fill={GOLD} opacity={1 - removed} />
           <circle cx={v.x} cy={cy + 10} r={40} fill="none" stroke="#e07a5f" strokeWidth={4} strokeDasharray="10 8" opacity={removed} />
@@ -382,7 +382,7 @@ const DaysOverlay: Drawn = ({ t, show, since }) => {
   const counter = Math.max(out, back);
   return (
     <>
-      <Badge n="٥" />
+      <Badge n="5" />
       <Strip stage={show("rules") > 0.5 ? rules.stage : 0} opacity={strip} />
       {counter > 0 ? (
         <g opacity={counter}>

@@ -1,4 +1,4 @@
-# « معاك ٥ ثواني », short 1 (content/trial/quiz.yaml ; script : docs/scripts/quiz.md) : le sens d'un mot. « سَيَّارَةٌ » de
+# « معاك 5 ثواني », short 1 (content/trial/quiz.yaml ; script : docs/scripts/quiz.md) : le sens d'un mot. « سَيَّارَةٌ » de
 # 12:19 n'est pas une voiture : une caravane de voyageurs (al-Muyassar, as-Sa'di). La question et ses choix sont muets ;
 # le compteur, cinq secondes ; le récitateur dit 12:19 jusqu'à « هذا غلام » ; la voix dit le sens. Rien n'est dessiné
 # de Yusuf : le puits, le seau, la caravane. Script écrit par la session le 2026-11-17.
@@ -9,11 +9,11 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 78-trial-sayyara
-# proposé, à montrer au propriétaire : une plaine nue au soleil bas (Pixabay 26085, TeeFarm, approuvé pour le film de
-# Dhul-Qarnayn) ; le brouillon tourne sur la nuit générée
-clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1380, veil: 0.6 }
+# une plaine nue au soleil bas (Pixabay 26085, TeeFarm, déjà employé pour le film de Dhul-Qarnayn et pour الكنود) ;
+# APPROUVÉ pour ce short par le propriétaire le 2026-11-17 (question à choix : « 26085, nuit générée, 190332 »)
+clip: { source: pixabay, id: 26085, author: TeeFarm, page: "https://pixabay.com/videos/id-26085/", take: { from: 2, seconds: 18, height: 1440, pingpong: true }, rate: 0.85, position: "50% 50%", shift: 0, brightness: 0.72, ground: "#0a0705", horizon: 1380, veil: 0.8 }
 ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 10, seconds: 60, level: -36 }
-cover: { scene: ask, title: "«سيارة» في سورة يوسف؟", tag: "معاك ٥ ثواني · ١", focus: 1000 }
+cover: { scene: ask, title: "«سيارة» في سورة يوسف؟", tag: "معاك 5 ثواني · 1", focus: 1000 }
 quiz:
   head: { verse: quran.12.19, from: 2, to: 2 }        # le mot de la question, écrit en or au-dessus d'elle
   choices:

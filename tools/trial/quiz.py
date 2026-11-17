@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The pieces of verses that « معاك ٥ ثواني » writes on screen (content/trial/quiz.yaml; docs/scripts/quiz.md): the words
+"""The pieces of verses that « معاك 5 ثواني » writes on screen (content/trial/quiz.yaml; docs/scripts/quiz.md): the words
 of the question (a word, the start of a verse whose end is to be guessed, a sentence), the choices taken from verses
 (the names that close a verse), the end that fills the blank, and the verses face to face of « who said it », written
 as data for the drawings (video/src/trial/quizData.ts) with the choices typed in the files (an Egyptian word, never a

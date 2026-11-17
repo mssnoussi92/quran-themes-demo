@@ -1,4 +1,4 @@
-# « معاك ٥ ثواني », short 2 (content/trial/quiz.yaml ; script : docs/scripts/quiz.md) : la fin d'un verset. Après « وإن تغفر
+# « معاك 5 ثواني », short 2 (content/trial/quiz.yaml ; script : docs/scripts/quiz.md) : la fin d'un verset. Après « وإن تغفر
 # لهم », 5:118 finit par « العزيز الحكيم » : un pardon qui vient de la puissance, pas de la faiblesse (as-Sa'di). Les
 # choix sont pris dans des versets du registre (39:53, 5:118, 2:127) ; un mauvais choix n'est jamais écrit dans le verset.
 # La scène est une parole du Jour du Jugement (5:116-118) : jamais figurée, une nuit seulement. Script écrit par la
@@ -10,9 +10,10 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 79-trial-khatima
+# la nuit générée, choisie par le propriétaire le 2026-11-17 (la scène, au Jour du Jugement, n'est jamais figurée)
 clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1380, veil: 0.6 }
 ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 60, level: -38 }
-cover: { scene: ask, title: "تفتكر الآية دي خلصت بإيه؟", tag: "معاك ٥ ثواني · ٢", focus: 1000 }
+cover: { scene: ask, title: "تفتكر الآية دي خلصت بإيه؟", tag: "معاك 5 ثواني · 2", focus: 1000 }
 quiz:
   head: { verse: quran.5.118, from: 5, to: 9 }        # « وَإِن تَغْفِرْ لَهُمْ فَإِنَّكَ أَنتَ », puis la fin en blanc
   blank: { verse: quran.5.118, from: 10, to: 11 }     # ce qui remplit le blanc à la réponse : la bonne fin seulement

@@ -49,6 +49,7 @@ Le propriétaire est développeur, il échange en français. Réponds en frança
 - **Aucune requête de voix avant « je valide le script »** : une prise ne se retouche pas, et il y en a dix par jour.
 - **Zéro dépense** : paliers gratuits seulement ; jamais plusieurs projets ou comptes pour multiplier un quota.
 - **Une clé d'API n'est jamais tapée dans la conversation** ni affichée : secret du dépôt GitHub (`GEMINI_API_KEY`, lu par le workflow `voice-test`) ou variable de l'environnement (`PIXABAY_API_KEY`).
+- **Les nombres s'écrivent 123, jamais ١٢٣** (propriétaire, 2026-11-17 : « les nombres doivent être 123 et non pas ١٢٣ ; à mémoriser pour toutes les sessions ») : à l'écran (références, badges, compteurs, dates, chapitres), dans les titres, les couvertures et les textes à coller, en arabe comme ailleurs. **Seule exception, son choix** : le numéro qui ferme une ayah dans le texte coranique (۝١٩, ﴿١٩﴾) reste comme dans le mushaf. Les vidéos et les textes déjà validés ne sont pas refaits pour autant ; tout ce qui s'écrit ou se rend ensuite suit la règle.
 - **Exemples honnêtes** : une scène inventée est une scène type (« زي… »), jamais une histoire vraie ; aucun chiffre sans source.
 - **Voix déclarée** : la voix de synthèse est signalée comme générée par IA dans chaque description.
 - **Les mots qu'il a refusés** sont dans `content/wording.yaml` (et leur histoire dans le skill `write-hook`) : ajoute chaque nouveau refus aux deux.

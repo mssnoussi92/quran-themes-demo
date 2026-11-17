@@ -1,4 +1,4 @@
-// The series « معاك ٥ ثواني » (content/trial/quiz.yaml; docs/scripts/quiz.md, validated by the owner on 2026-11-17): a
+// The series « معاك 5 ثواني » (content/trial/quiz.yaml; docs/scripts/quiz.md, validated by the owner on 2026-11-17): a
 // question on the first frame, three choices, a countdown of five seconds, the answer; then the reciter says the verse
 // and the voice gives its meaning. What must not move (the question's words, the countdown, the choices, the two
 // speakers face to face) is drawn above the veil (QUIZ_OVERLAYS); the picture under it (QUIZ_PICTURES) is the place:
@@ -27,7 +27,8 @@ const after = (t: number, from: number, seconds: number) => ease((t - from) / se
 /** A right-to-left text in SVG: a right-to-left mark at both ends, so that a quote or a number at its edge sits on the
  * side Arabic puts it (Chromium's SVG text starts a paragraph left to right whatever `direction` says). */
 const RTL = (text: string) => `\u200F${text}\u200F`;
-const AR = (n: number) => String(n).replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[Number(d)]);
+/** Numbers are written 1 2 3, never ١ ٢ ٣ (the owner, 2026-11-17: « les nombres doivent être 123 et non pas ١٢٣ »). */
+const NUM = (n: number) => String(n);
 /** The letters a line of Quranic text takes on its row: its marks and vowels take no width. */
 const letters = (text: string) => text.replace(/[ً-ٰٟۖ-ۭـ]/g, "").length;
 /** The largest size, up to `most`, at which `text` stays within `width` (a letter of Amiri Quran is about 0.42 em). */
@@ -38,7 +39,7 @@ type Choice = { ar: string | null; en: string; right: boolean; icon: string | nu
 type Quiz = { head: Piece; choices: readonly Choice[]; both: boolean; blank?: Piece; speakers?: readonly { ar: string; en: string; quran: Piece }[] };
 type Id = keyof typeof QUIZ;
 const data = (id: Id) => QUIZ[id] as unknown as Quiz;
-const N: Record<Id, string> = { sayyara: "١", khatima: "٢", qalaha: "٣" };
+const N: Record<Id, string> = { sayyara: "1", khatima: "2", qalaha: "3" };
 
 // ---- the countdown -------------------------------------------------------------------------------------------------
 
@@ -57,7 +58,7 @@ const Countdown: React.FC<{ t: number; start: number; opacity: number; cy: numbe
       <circle r={r} fill="none" stroke={PALE} strokeOpacity={0.18} strokeWidth={12} />
       <circle r={r} fill="none" stroke={late ? ROSE : GOLD} strokeWidth={12} strokeLinecap="round"
               strokeDasharray={`${length * (1 - gone)} ${length}`} transform="rotate(-90)" />
-      <text y={30} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={86} fill={late ? ROSE : GOLD}>{AR(left)}</text>
+      <text y={30} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={86} fill={late ? ROSE : GOLD}>{NUM(left)}</text>
     </g>
   );
 };
@@ -120,7 +121,7 @@ const ChoicePill: React.FC<{ choice: Choice; y: number; t: number; k: number; an
 const Head: React.FC<{ quiz: Quiz; t: number; answer: number; opacity: number }> = ({ quiz, t, answer, opacity }) => {
   if (opacity <= 0) return null;
   const head = quiz.head.words.join(" ");
-  const ref = `${quiz.head.name} · ${AR(quiz.head.ayah)}`;
+  const ref = `${quiz.head.name} · ${NUM(quiz.head.ayah)}`;
   if (!quiz.blank) {
     const size = fitQuran(`«${head}»`, quiz.head.words.length === 1 ? 128 : 70);
     return (
@@ -157,7 +158,7 @@ const Speaker: React.FC<{ s: { ar: string; en: string; quran: Piece }; y: number
     <g opacity={0.35 + 0.65 * lit}>
       <rect x={70} y={y} width={W - 140} height={178} rx={26} fill={INK} fillOpacity={0.86} stroke={colour} strokeOpacity={0.4 + 0.6 * lit} strokeWidth={3 + 2 * lit} />
       <text x={W - 104} y={y + 56} textAnchor="start" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={44} fill={colour}>{RTL(s.ar)}</text>
-      <text x={104} y={y + 52} textAnchor="end" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={28} fill={colour} opacity={0.8}>{RTL(`${s.quran.name} · ${AR(s.quran.ayah)}`)}</text>
+      <text x={104} y={y + 52} textAnchor="end" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={28} fill={colour} opacity={0.8}>{RTL(`${s.quran.name} · ${NUM(s.quran.ayah)}`)}</text>
       <text x={104} y={y + 86} textAnchor="start" fontFamily={FONT.latin} fontStyle="italic" fontSize={24} fill={DIM}>{s.en}</text>
       <text x={540} y={y + 148} textAnchor="middle" direction="rtl" fontFamily={FONT.quran} fontSize={fitQuran(`«${words}»`, 56, 860)} fill={colour}>{RTL(`«${words}»`)}</text>
     </g>
@@ -188,7 +189,7 @@ const makeOverlay = (id: Id): Drawn => {
         <g>
           <circle cx={114} cy={268} r={24} fill="none" stroke={GOLD} strokeWidth={2.5} />
           <text x={114} y={281} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={30} fill={GOLD}>{N[id]}</text>
-          <text x={152} y={280} fontFamily={FONT.arabic} fontWeight={700} fontSize={34} fill={GOLD} style={{ filter: "drop-shadow(0 2px 10px rgba(4,7,20,.9))" }}>معاك ٥ ثواني</text>
+          <text x={152} y={280} fontFamily={FONT.arabic} fontWeight={700} fontSize={34} fill={GOLD} style={{ filter: "drop-shadow(0 2px 10px rgba(4,7,20,.9))" }}>معاك 5 ثواني</text>
         </g>
         <Head quiz={quiz} t={t} answer={answer} opacity={head} />
         <Countdown t={t} start={start} opacity={asking * (1 - after(t, answer + 0.1, 0.4))} cy={900} />
@@ -267,8 +268,7 @@ const SayyaraPicture: Drawn = ({ t, show, since, horizon }) => {
           <stop offset="100%" stopColor="#d9895a" stopOpacity={0} />
         </radialGradient>
       </defs>
-      <rect x={0} y={horizon - 520} width={W} height={540} fill="url(#quiz-dusk)" />
-      <Stars t={t} opacity={0.6} />
+      <rect x={0} y={horizon - 520} width={W} height={540} fill="url(#quiz-dusk)" opacity={0.5} />
       {[0, 1, 2, 3].map((k) => (
         <g key={k} transform={`translate(${940 + k * 140 - 16 * t} ${horizon + 10}) scale(${0.62 - k * 0.04})`} opacity={0.45 + 0.55 * place}>
           <Camel legs={t * 3.4 + k} />
@@ -300,8 +300,8 @@ const KhatimaPicture: Drawn = ({ t, show, since, horizon }) => {
   );
 };
 
-/** A plain under a low light (short 3): the verses are face to face above it; nobody is drawn. */
-const QalahaPicture: Drawn = ({ t, horizon }) => (
+/** A plain under a low light (short 3, over its filmed sunset): the verses are face to face above it; nobody is drawn. */
+const QalahaPicture: Drawn = ({ horizon }) => (
   <g>
     <defs>
       <radialGradient id="quiz-low" cx="50%" cy="100%" r="75%">
@@ -309,8 +309,7 @@ const QalahaPicture: Drawn = ({ t, horizon }) => (
         <stop offset="100%" stopColor="#c47a52" stopOpacity={0} />
       </radialGradient>
     </defs>
-    <Stars t={t} opacity={0.5} />
-    <rect x={0} y={horizon - 500} width={W} height={520} fill="url(#quiz-low)" />
+    <rect x={0} y={horizon - 500} width={W} height={520} fill="url(#quiz-low)" opacity={0.5} />
     <Ground horizon={horizon} />
   </g>
 );

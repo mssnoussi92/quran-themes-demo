@@ -16,7 +16,7 @@ The events come from the short's file, `sfx` of a segment: `[sound, seconds afte
   pops     the dots fall into their place (a roll of small pops)
   click    a ring is set on a dot
   lock     a padlock shuts
-  count    the countdown of « معاك ٥ ثواني »: five ticks, one a second, the last ones a little louder (its time 0 is the
+  count    the countdown of « معاك 5 ثواني »: five ticks, one a second, the last ones a little louder (its time 0 is the
            first tick, when the five seconds start; video/src/trial/Quiz.tsx empties its ring over the same five seconds)
 
 Called by tools/trial/prepare.py; alone, to listen: python3 tools/trial/sfx.py --word qalb --out <file.wav>

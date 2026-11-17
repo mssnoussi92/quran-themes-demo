@@ -1,4 +1,4 @@
-# « معاك ٥ ثواني », short 3 (content/trial/quiz.yaml ; script : docs/scripts/quiz.md) : qui l'a dit. « إني أخاف الله رب
+# « معاك 5 ثواني », short 3 (content/trial/quiz.yaml ; script : docs/scripts/quiz.md) : qui l'a dit. « إني أخاف الله رب
 # العالمين » est mot pour mot dans 5:28 (Habil, fils d'Adam, à son frère qui veut le tuer) et dans 59:16 (le Diable,
 # après avoir mené l'homme à la mécréance) : la réponse est « الاتنين ». Les deux versets récités, face à face ; personne
 # n'est dessiné, ni violence ni invisible. Le prénom, demandé par le propriétaire : al-Muyassar sur 5:28. Script écrit par
@@ -11,11 +11,11 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 80-trial-qalaha
-# proposé, à montrer au propriétaire : un ciel de nuages au couchant sur une plaine (Pixabay 190332, DancingSky, approuvé
-# pour le mur) ; le brouillon tourne sur la nuit générée
-clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1380, veil: 0.6 }
+# un ciel de nuages au couchant sur une plaine (Pixabay 190332, DancingSky, déjà employé pour le mur) ; APPROUVÉ pour ce
+# short par le propriétaire le 2026-11-17 (question à choix : « 26085, nuit générée, 190332 »)
+clip: { source: pixabay, id: 190332, author: DancingSky, page: "https://pixabay.com/videos/id-190332/", position: "42% 50%", shift: -400, brightness: 0.6, ground: "#05060c", horizon: 1380, veil: 0.8 }
 ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 10, seconds: 80, level: -36 }
-cover: { scene: ask, title: "مين قال الجملة دي في القرآن؟", tag: "معاك ٥ ثواني · ٣", focus: 1000 }
+cover: { scene: ask, title: "مين قال الجملة دي في القرآن؟", tag: "معاك 5 ثواني · 3", focus: 1000 }
 quiz:
   head: { verse: quran.59.16, from: -5, to: -1 }      # « إِنِّىٓ أَخَافُ ٱللَّهَ رَبَّ ٱلْعَـٰلَمِينَ »
   both: true                                          # la réponse est le dernier choix ; les deux autres en sont chacun la moitié

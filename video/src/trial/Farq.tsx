@@ -14,7 +14,7 @@ const GOLD = "#f0c46a";
 const MINT = "#9fe3c8";
 const PALE = "#f4efe2";
 const DIM = "rgba(244,239,226,.38)";
-const AR = (n: number) => String(n).replace(/[0-9]/g, (d) => "٠١٢٣٤٥٦٧٨٩"[Number(d)]);
+const AR = (n: number) => String(n);      // the owner, 2026-11-17: numbers are written 1 2 3, never 1 2 3 (CLAUDE.md)
 
 const ease = (x: number) => {
   const c = clamp(x);
@@ -310,6 +310,6 @@ const badge = (n: string): Drawn =>
   };
 
 export const FARQ_PICTURES: Record<string, Drawn> = { rizq: makePicture("rizq"), adab: makePicture("adab"), qist: makePicture("qist") };
-export const FARQ_OVERLAYS: Record<string, Drawn> = { rizq: badge("١"), adab: badge("٢"), qist: badge("٣") };
+export const FARQ_OVERLAYS: Record<string, Drawn> = { rizq: badge("1"), adab: badge("2"), qist: badge("3") };
 const LAYOUT: LayoutOverride = { top: 290, height: 495, size: 84, sub: { top: 1350 }, credit: { top: 1545, size: 26 } };
 export const FARQ_LAYOUTS: Record<string, LayoutOverride> = { rizq: LAYOUT, adab: LAYOUT, qist: LAYOUT };

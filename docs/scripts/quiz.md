@@ -1,8 +1,8 @@
-# معاك ٥ ثواني · You have 5 seconds
+# معاك 5 ثواني · You have 5 seconds
 
 **Script pilote validé par le propriétaire le 2026-11-17** (questions à choix nommant chaque partie) : shorts 1 et 2,
 « je valide, mais si on peut, on spécifie le prénom du fils d'Adam » ; short 3, « garder « الاتنين », je valide son
-script » ; le nom « معاك ٥ ثواني » ; la durée, « environ 40 s, comme écrit ». Lu ainsi : les trois scripts validés tels
+script » ; le nom « معاك 5 ثواني » ; la durée, « environ 40 s, comme écrit ». Lu ainsi : les trois scripts validés tels
 qu'ici, avec le prénom qu'il a demandé, **هابيل**, écrit dans le choix et dit dans la réplique du short 3 (d'après
 al-Muyassar sur 5:28, le verset récité : « وقال هابيلُ واعظًا أخاه » ; sur 5:27 il nomme les deux frères, et Ibn Kathir
 donne ces noms comme ceux que rapportent beaucoup de prédécesseurs ; le Coran ne nomme pas les deux frères). Aucune voix n'est encore faite.

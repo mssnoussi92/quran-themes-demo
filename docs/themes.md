@@ -813,7 +813,7 @@ Les trains et l'arc sont les métaphores de l'auteur des reels : on ne les repre
   GitHub Actions. Le stock du calendrier tient jusqu'au 1er janvier : à comparer aux shorts longs quand les premières
   mesures arrivent, pas à ajouter tout de suite.
 
-## Série proposée : le quiz, « معاك ٥ ثواني » (nom de travail, 2026-11-17)
+## Série proposée : le quiz, « معاك 5 ثواني » (nom de travail, 2026-11-17)
 
 **Demande du propriétaire (2026-11-17)** : un nouveau type de short, « comme un jeu pour attirer les commentaires » :
 une question, par exemple le tafsir d'un mot en QCM avec un compteur animé, ou une ayah à compléter ; « donne-moi ton
@@ -856,10 +856,22 @@ vraie question ouverte à la fin** ; **une question par short, environ 30 s**.
 comprises) ; le short 3 dure **1:19**, ses deux versets faisant 44 s, parce que la réponse honnête à 59:16 est « les
 deux » (la même phrase est dans 5:28). Plus court : la huppe (27:22), environ 0:40. Aucune voix avant sa validation.
 
-**Script validé par le propriétaire le 2026-11-17**, avec le nom « معاك ٥ ثواني », la durée d'environ 40 s et
+**Script validé par le propriétaire le 2026-11-17**, avec le nom « معاك 5 ثواني », la durée d'environ 40 s et
 « الاتنين » au short 3 ; à sa demande, le fils d'Adam est nommé **هابيل** (al-Muyassar le nomme sur 5:28, le verset récité, « وقال هابيلُ
 واعظًا أخاه », et sur 5:27 ; Ibn Kathir rapporte ces noms de beaucoup de prédécesseurs ; le Coran ne les dit pas). Ensuite : sources, coupes, clips à lui montrer, montage du
 quiz (`video/src/trial/Quiz.tsx`), trois requêtes de voix, rendu.
+
+**Fait le 2026-11-17, sans voix** : quatorze sources proposées au registre (versets 12:19, 5:118, 5:28, 59:16, 2:127 ;
+neuf passages de tafsir) ; les quatre récitations coupées et entendues en entier par Whisper (100 % des mots ; 12:19
+jusqu'à « غلام », 11,3 s) ; les fichiers (`content/trial/quiz.yaml`, `sayyara`, `khatima`, `qalaha`), les textes de
+voix 78 à 80, le tic du compteur (`count` de `tools/trial/sfx.py`), le montage (`video/src/trial/Quiz.tsx`, données
+`tools/trial/quiz.py`) ; brouillons de 0:42, 0:49 et 1:22. Une retouche d'écriture : la question du short 1 s'écrit
+« في سورة يوسف يعني إيه؟ », sans « … », pour être entière sur la première image. **Pas de voix ce jour** : le palier
+gratuit était presque épuisé par deux autres sessions (une requête refusée à refaire de leur côté) ; trois requêtes le
+lendemain. **Les clips** : les brouillons tournent sur la nuit générée ; la clé Pixabay n'est pas dans l'environnement
+de la session (le workflow `film` l'a) ; proposés au propriétaire, tous déjà approuvés pour d'autres shorts : 26085
+(une plaine au soleil bas) pour `sayyara`, 190332 (des nuages au couchant sur une plaine) pour `qalaha`, la nuit
+générée pour `khatima`.
 
 ## Faits (ancien circuit)
 
