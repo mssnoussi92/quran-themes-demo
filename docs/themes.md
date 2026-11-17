@@ -908,8 +908,15 @@ l'aube), les accroches proposées ; la voix (run 44065680087 de `voice-test`, qu
 à écouter : « يا رب ثبّتني », entendu « سبتني », le ث égyptien ; « مش ظن », entendu « ضمن ») ; `film.py` ne lit plus les
 cartes muettes d'un short comme des répliques ; rendu par le workflow `film` (run 44067852358, 42 minutes, release
 brouillon `qadar-candidate`) : **1:37, 1:21, 1:32, film 6:55**, contrôlés sur leurs planches et en taille réelle,
-**envoyés le 2026-11-17** avec les couvertures, la vignette et les textes (`docs/retention/publication-qadar.md`). À
-valider par lui.
+**envoyés le 2026-11-17** avec les couvertures, la vignette et les textes (`docs/retention/publication-qadar.md`).
+
+**Validé le 2026-11-17.** « Je valide tout sauf la fin du film, il faut changer اشترك عشان الفيلم الجاي » : les trois shorts,
+leurs couvertures, textes, accroches et sources, les deux lectures. Sa nouvelle fin, choisie sur aperçu : « ابعته لحد بيسأل
+نفس السؤال. » (l'appel au partage ; le bouton d'abonnement passe toujours à l'écran du 16:9). Répliques du film redites
+(une requête, run 44078801268 de `voice-test`), film refait (run 44079539962, **6:58**, chapitres décalés d'une à deux
+secondes), film vertical et jumeau TikTok (run 44079551978, release brouillon `qadar-9x16-candidate`). Puis « je valide le
+film », « le vertical », « le TikTok » (questions à choix). PR #42 fusionnée. **Au calendrier** (son choix) : le film le
+lundi 28 décembre (YouTube 16:9, Facebook vertical, TikTok signé), les shorts du mardi 29 au jeudi 31.
 
 ## Faits (ancien circuit)
 
