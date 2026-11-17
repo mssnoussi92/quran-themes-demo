@@ -17,6 +17,8 @@
 #   fenêtre allumée.
 # - La dernière réplique avant l'appel annonce le short 2 (« قل » trois fois, une nuit de pluie) : promesse à tenir.
 id: aqrab
+# Short refait à sa demande le 2026-11-17 (voir `segments`) : une réplique retirée, deux réécrites (« version A », son
+# choix) ; l'ensemble refait attend son « je valide ». Le `script_validated` qui suit vaut pour la première version.
 # « Je valide le script » du propriétaire (2026-11-17, question à choix nommant le script des 3 shorts de
 # docs/scripts/dhikr.md, avec 57:21 dans le short 3) : les répliques, la place des versets et des lectures. Ni la voix, ni
 # les images, ni les lectures (à juger sur les vidéos, son choix du même jour), ni les textes à coller. Inscrit sur sa parole.
@@ -48,10 +50,11 @@ segments:
     lines:
       - ar: "عقرب لدغت راجل بالليل… فجه للنبي صلى الله عليه وسلم يشتكي."
         en: "A scorpion stung a man at night… so he came to the Prophet ﷺ to complain."
-      - ar: "والنبي صلى الله عليه وسلم قاله إنه لو كان قال كلمات معيّنة لما المسا دخل… ما كانتش ضرّته."
-        en: "And the Prophet ﷺ told him that had he said certain words when evening came… it would not have harmed him."
-      - ar: "الكلمات دي… هتحتاجها كل ليلة. اسمعها بصوت الشيخ محمد جبريل:"
-        en: "Those words… you'll need them every night. Hear them in the voice of Sheikh Muhammad Jibril:"
+      # Version A, choisie par le propriétaire (2026-11-17, « à reformuler sans beaucoup de bla-bla »).
+      - ar: "والنبي صلى الله عليه وسلم دلّه على كلمات… لو قالها لما المسا دخل، ما كانتش ضرّته."
+        en: "The Prophet ﷺ showed him words… had he said them when evening came, it would not have harmed him."
+      - ar: "اسمعها بصوت الشيخ محمد جبريل:"
+        en: "Hear them in the voice of Sheikh Muhammad Jibril:"
   - reading: hadith.muslim.2709a
     part: dhikr
     scene: dusk
@@ -64,12 +67,12 @@ segments:
     scene: dusk
   - narration: meaning
     scene: dusk
-    sources: [tafsir.saadi.113.2, tafsir.saadi.113.3]
+    sources: [tafsir.saadi.113.2]
     lines:
       - ar: "يعني: بتلجأ لربنا… من شر كل حاجة خلقها… إنس وجن وحيوانات."
         en: "Meaning: you turn to God for refuge… from the evil of all He created… people, jinn and animals."
-      - ar: "والليل بالذات… وقت ما الحيوانات المؤذية بتنتشر."
-        en: "And the night above all… when harmful creatures spread out."
+      # « والليل بالذات… وقت ما الحيوانات المؤذية بتنتشر. » (as-Sa'di sur 113:3) retirée à la demande du propriétaire
+      # (2026-11-17).
   - narration: depth
     scene: sting
     lines:

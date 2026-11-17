@@ -4,31 +4,31 @@ Script à valider avant toute voix. Les répliques **nouvelles** sont de la sess
 
 | | Short | Durée estimée | Récitation | Hadith lu | Répliques nouvelles | Reprises |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `aqrab` | 1:41 | 0:10 | 0:11 | 15 | 0 |
+| 1 | `aqrab` | 1:33 | 0:10 | 0:11 | 14 | 0 |
 | 2 | `qul` | 2:04 | 1:00 | 0:11 | 10 | 0 |
 | 3 | `dathur` | 1:59 | 0:28 | 0:27 | 13 | 0 |
 
 ## Short 1 · `aqrab` · عقرب لدغته بالليل… والرد جملة واحدة
 
-Environ **1:41** · 0:10 de récitation, 0:11 de hadith lu · 15 répliques nouvelles, 0 reprises.
+Environ **1:33** · 0:10 de récitation, 0:11 de hadith lu · 14 répliques nouvelles, 0 reprises.
 
 **0:00 · narration** (image : `sting`) · d'après : récit de [Sahih Muslim 2709a](https://sunnah.com/muslim:2709a), raconté avec nos mots, source proposée · référence écrite à l'écran, jamais lue
 - عقرب لدغت راجل بالليل… فجه للنبي صلى الله عليه وسلم يشتكي.  
   *A scorpion stung a man at night… so he came to the Prophet ﷺ to complain.* · **nouvelle**
-- والنبي صلى الله عليه وسلم قاله إنه لو كان قال كلمات معيّنة لما المسا دخل… ما كانتش ضرّته.  
-  *And the Prophet ﷺ told him that had he said certain words when evening came… it would not have harmed him.* · **nouvelle**
-- الكلمات دي… هتحتاجها كل ليلة. اسمعها بصوت الشيخ محمد جبريل:  
-  *Those words… you'll need them every night. Hear them in the voice of Sheikh Muhammad Jibril:* · **nouvelle**
+- والنبي صلى الله عليه وسلم دلّه على كلمات… لو قالها لما المسا دخل، ما كانتش ضرّته.  
+  *The Prophet ﷺ showed him words… had he said them when evening came, it would not have harmed him.* · **nouvelle**
+- اسمعها بصوت الشيخ محمد جبريل:  
+  *Hear them in the voice of Sheikh Muhammad Jibril:* · **nouvelle**
 
-**0:20** · **Hadith lu par une vraie voix** · Muslim 2709a · extrait « dhikr » · lu par Muhammad Jibril · 12 s · **lecture à valider** · **source proposée, à valider**  
+**0:16** · **Hadith lu par une vraie voix** · Muslim 2709a · extrait « dhikr » · lu par Muhammad Jibril · 12 s · **lecture à valider** · **source proposée, à valider**  
   أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ  
   *I seek refuge in the Perfect Word of Allah from the evil of what He created*
 
-**0:32 · narration** (image : `dusk`)
+**0:29 · narration** (image : `dusk`)
 - وآخر الذكر ده… في سورة بتحفظها من وإنت صغير:  
   *And the end of this dhikr… is in a surah you've known since you were little:* · **nouvelle**
 
-**0:36** · **Versets récités d'une traite** · Al-Falaq 113:1-3 · 11 s · **sources proposées, à valider** · coupes posées à la main, à écouter  
+**0:33** · **Versets récités d'une traite** · Al-Falaq 113:1-3 · 11 s · **sources proposées, à valider** · coupes posées à la main, à écouter  
   قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ  
   *Say, "I seek refuge in the Lord of daybreak*  
   مِن شَرِّ مَا خَلَقَ  
@@ -36,29 +36,27 @@ Environ **1:41** · 0:10 de récitation, 0:11 de hadith lu · 15 répliques nouv
   وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ  
   *And from the evil of darkness when it settles*
 
-**0:47 · narration** (image : `dusk`) · d'après : sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/113:2/tafsirs/ar-tafseer-al-saddi) sur 113:2, source proposée ; sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/113:3/tafsirs/ar-tafseer-al-saddi) sur 113:3, source proposée · référence écrite à l'écran, jamais lue
+**0:44 · narration** (image : `dusk`) · d'après : sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/113:2/tafsirs/ar-tafseer-al-saddi) sur 113:2, source proposée · référence écrite à l'écran, jamais lue
 - يعني: بتلجأ لربنا… من شر كل حاجة خلقها… إنس وجن وحيوانات.  
   *Meaning: you turn to God for refuge… from the evil of all He created… people, jinn and animals.* · **nouvelle**
-- والليل بالذات… وقت ما الحيوانات المؤذية بتنتشر.  
-  *And the night above all… when harmful creatures spread out.* · **nouvelle**
 
-**0:59 · narration** (image : `sting`)
+**0:50 · narration** (image : `sting`)
 - الراجل جه بعد اللدغة… والرد كان عن اللي قبلها.  
   *The man came after the sting… and the answer was about before it.* · **nouvelle**
 - وإحنا كده: بنفتكر ربنا بعد اللي يحصل… والذكر مكانه قبله.  
   *And that's us: we remember God after something happens… when the dhikr belongs before it.* · **nouvelle**
 
-**1:09 · narration** (image : `drive`)
+**1:01 · narration** (image : `drive`)
 - زي لما تكون راجع بالليل… والطريق ضلمة.  
   *Like when you're driving home at night… and the road is dark.* · **nouvelle**
 
-**1:13 · narration** (image : `door`)
+**1:04 · narration** (image : `door`)
 - أو ولادك نايمين في أوضتهم… وإنت مش جنبهم.  
   *Or your children are asleep in their room… and you're not beside them.* · **nouvelle**
 - الباب بتقفله بإيدك… واللي مش في إيدك… بتستودعه ربنا.  
   *The door, you lock with your hand… and what's beyond your hand… you entrust to God.* · **nouvelle**
 
-**1:23 · narration** (image : `door`)
+**1:14 · narration** (image : `door`)
 - قولها لما المسا يدخل… قبل ما يحصل حاجة، مش بعدها.  
   *Say it when evening comes… before anything happens, not after.* · **nouvelle**
 - والجاية: ليلة مطر وضلمة…  
