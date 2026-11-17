@@ -16,6 +16,8 @@ The events come from the short's file, `sfx` of a segment: `[sound, seconds afte
   pops     the dots fall into their place (a roll of small pops)
   click    a ring is set on a dot
   lock     a padlock shuts
+  count    the countdown of « معاك ٥ ثواني »: five ticks, one a second, the last ones a little louder (its time 0 is the
+           first tick, when the five seconds start; video/src/trial/Quiz.tsx empties its ring over the same five seconds)
 
 Called by tools/trial/prepare.py; alone, to listen: python3 tools/trial/sfx.py --word qalb --out <file.wav>
 """
@@ -128,6 +130,16 @@ def lock() -> np.ndarray:
     return out
 
 
+def count() -> np.ndarray:
+    """Five dry ticks one second apart, a clock that counts down; the last two a little louder."""
+    out = np.zeros(int(4.1 * RATE))
+    for k, gain in enumerate((0.9, 0.9, 1.0, 1.15, 1.3)):
+        c = tick(60 + k, gain)
+        i = int(k * RATE)
+        out[i:i + len(c)] += c
+    return out
+
+
 def scan(word: str) -> tuple[np.ndarray, int]:
     """The ticks of the scan and the breath under it; returns the sound and how many ticks it has. Its time 0 is the
     start of the scan (SCAN_LEAD before its segment)."""
@@ -147,7 +159,7 @@ def scan(word: str) -> tuple[np.ndarray, int]:
 
 def track(events: list[tuple[float, str]], quiet: list[tuple[float, float]], total: float, out: Path, word: str) -> dict:
     """The track of `events` ((seconds, sound)), `total` seconds long, written to `out`. `quiet`: the verses."""
-    made = {"impact": knock, "whoosh": whoosh, "pops": pops, "click": click, "lock": lock}
+    made = {"impact": knock, "whoosh": whoosh, "pops": pops, "click": click, "lock": lock, "count": count}
     audio = np.zeros(int((total + 1) * RATE))
     counts: dict[str, int] = {}
     for at, sound in sorted(events):

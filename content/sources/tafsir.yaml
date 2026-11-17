@@ -1059,19 +1059,19 @@
   status: proposed
   notes: "pourquoi « العزيز الحكيم » : un pardon « عن تمام عزة وقدرة، لا… عن عجز », et sage, pour qui vient avec les causes du pardon (معاك ٥ ثواني, khatima)"
   text_ar: '{ إِنْ تُعَذِّبْهُمْ فَإِنَّهُمْ عِبَادُكَ } وأنت أرحم بهم من أنفسهم وأعلم بأحوالهم، فلولا أنهم عباد متمردون لم تعذبهم. { وَإِنْ تَغْفِرْ لَهُمْ فَإِنَّكَ أَنْتَ الْعَزِيزُ الْحَكِيمُ } أي: فمغفرتك صادرة عن تمام عزة وقدرة، لا كمن يغفر ويعفو عن عجز وعدم قدرة. الحكيم حيث كان من مقتضى حكمتك أن تغفر لمن أتى بأسباب المغفرة.'
-- id: tafsir.muyassar.5.27
+- id: tafsir.muyassar.5.28
   type: tafsir
-  ref: {edition: muyassar, surah: 5, ayah: 27}
-  url: https://quran.com/5:27/tafsirs/ar-tafsir-muyassar
+  ref: {edition: muyassar, surah: 5, ayah: 28}
+  url: https://quran.com/5:28/tafsirs/ar-tafsir-muyassar
   origin:
     api: quran.com v4
-    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/5:27
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/5:28
     edition: Tafsir Muyassar
-    verses: ["5:27"]
+    verses: ["5:28"]
     retrieved: '2026-11-17'
   status: proposed
-  notes: "le prénom du fils d'Adam : « خبر ابني آدم قابيل وهابيل… فتقبل الله قربان هابيل » (معاك ٥ ثواني, qalaha ; demande du propriétaire)"
-  text_ar: 'واقصص -أيها الرسول- على بني إسرائيل خَبَر ابنَيْ آدم قابيل وهابيل، وهو خبرٌ حقٌ: حين قَدَّم كلٌّ منهما قربانًا -وهو ما يُتَقرَّب به إلى الله تعالى- فتقبَّل الله قُربان هابيل; لأنه كان تقيًّا، ولم يتقبَّل قُربان قابيل; لأنه لم يكن تقيًّا، فحسد قابيلُ أخاه، وقال: لأقتلنَّك، فَردَّ هابيل: إنما يتقبل الله ممن يخشونه.'
+  notes: "le prénom du fils d'Adam, sur le verset récité : « وقال هابيلُ واعظًا أخاه… وإني أخشى الله ربَّ الخلائق أجمعين » (معاك ٥ ثواني, qalaha ; demande du propriétaire)"
+  text_ar: 'وقال هابيلُ واعظًا أخاه: لَئنْ مَدَدْتَ إليَّ يدكَ لتقتُلني لا تَجِدُ مني مثل فعْلك، وإني أخشى الله ربَّ الخلائق أجمعين.'
 - id: tafsir.saadi.5.28
   type: tafsir
   ref: {edition: saadi, surah: 5, ayah: 28}

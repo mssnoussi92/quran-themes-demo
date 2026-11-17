@@ -857,8 +857,8 @@ comprises) ; le short 3 dure **1:19**, ses deux versets faisant 44 s, parce que 
 deux » (la même phrase est dans 5:28). Plus court : la huppe (27:22), environ 0:40. Aucune voix avant sa validation.
 
 **Script validé par le propriétaire le 2026-11-17**, avec le nom « معاك ٥ ثواني », la durée d'environ 40 s et
-« الاتنين » au short 3 ; à sa demande, le fils d'Adam est nommé **هابيل** (al-Muyassar sur 5:27 le nomme ; Ibn Kathir
-le rapporte comme le nom connu ; le Coran ne le dit pas). Ensuite : sources, coupes, clips à lui montrer, montage du
+« الاتنين » au short 3 ; à sa demande, le fils d'Adam est nommé **هابيل** (al-Muyassar le nomme sur 5:28, le verset récité, « وقال هابيلُ
+واعظًا أخاه », et sur 5:27 ; Ibn Kathir rapporte ces noms de beaucoup de prédécesseurs ; le Coran ne les dit pas). Ensuite : sources, coupes, clips à lui montrer, montage du
 quiz (`video/src/trial/Quiz.tsx`), trois requêtes de voix, rendu.
 
 ## Faits (ancien circuit)

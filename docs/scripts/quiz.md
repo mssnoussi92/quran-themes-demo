@@ -4,8 +4,8 @@
 « je valide, mais si on peut, on spécifie le prénom du fils d'Adam » ; short 3, « garder « الاتنين », je valide son
 script » ; le nom « معاك ٥ ثواني » ; la durée, « environ 40 s, comme écrit ». Lu ainsi : les trois scripts validés tels
 qu'ici, avec le prénom qu'il a demandé, **هابيل**, écrit dans le choix et dit dans la réplique du short 3 (d'après
-al-Muyassar sur 5:27 : « خَبَر ابنَيْ آدم قابيل وهابيل… فتقبَّل الله قُربان هابيل » ; Ibn Kathir le donne comme le nom
-connu chez beaucoup de prédécesseurs ; le Coran ne nomme pas les deux frères). Aucune voix n'est encore faite.
+al-Muyassar sur 5:28, le verset récité : « وقال هابيلُ واعظًا أخاه » ; sur 5:27 il nomme les deux frères, et Ibn Kathir
+donne ces noms comme ceux que rapportent beaucoup de prédécesseurs ; le Coran ne nomme pas les deux frères). Aucune voix n'est encore faite.
 
 Proposé par la session le même jour. Le sujet a été choisi par le propriétaire le même jour, sur les recommandations de la session (fiche :
 `docs/themes.md`, « Série proposée : le quiz ») : **trois formats, un short chacun** (A le sens d'un mot, B la fin d'un
@@ -54,7 +54,7 @@ Environ **0:40** · ≈ 0:12 de récitation (12:19, de « وَجَآءَتْ » 
 caravane en silhouette, des chameaux chargés. Personne n'est dessiné.
 
 **Muet · `ask`** (première image ; 5 s de compteur ; aucune voix)
-- Écrit : « سَيَّارَةٌ » (12:19, en or, du registre) · « في سورة يوسف… يعني إيه؟ »  
+- Écrit : « سَيَّارَةٌ » (12:19, en or, du registre) · « في سورة يوسف يعني إيه؟ » (sans « … » : la question entière sur la première image)  
   *"Sayyara" in Surat Yusuf… what does it mean?*
 - Les trois choix : **عربية** (une petite voiture dessinée) · **قافلة مسافرين** · **كوكب سيّار**  
   *a car · a caravan of travellers · a planet*  
@@ -122,7 +122,7 @@ Diable, ni aucune violence.
   *Who said this in the Quran?*
 - Les trois choix : **هابيل ابن سيدنا آدم** · **الشيطان** · **الاتنين**  
   *Abel, son of Adam · Satan · both*  
-  Le prénom (demande du propriétaire) : al-Muyassar sur 5:27, référence écrite sous le choix à la réponse.
+  Le prénom (demande du propriétaire) : al-Muyassar sur 5:28, référence écrite sous le choix à la réponse.
 
 **Muet · `answer`** (le choc ; « الاتنين » en or ; les deux autres ne sont pas barrés, ils s'allument aussi : chacun
 est la moitié de la réponse ; écrit dessous : « الاتنين قالوها… بنفس الكلام » · *Both said it… in the very same words*)
@@ -134,7 +134,7 @@ quand il est récité)
 
 **narration · `meaning`** (les deux versets restent face à face ; la référence écrite sous chaque réplique)
 - هابيل ابن سيدنا آدم… أخوه هدده بالقتل… وما مدّش إيده عليه… عشان بيخاف من ربنا.  
-  *Abel, son of Adam… his brother threatened to kill him… he didn't raise his hand… because he feared God.* · al-Muyassar sur 5:27 (le prénom) ; Ibn Kathir et as-Sa'di sur 5:28
+  *Abel, son of Adam… his brother threatened to kill him… he didn't raise his hand… because he feared God.* · al-Muyassar sur 5:28 (le prénom : « وقال هابيلُ واعظًا أخاه ») ; Ibn Kathir et as-Sa'di sur 5:28
 - والشيطان… قالها بعد ما دعا الإنسان للكفر… واتبرّى منه.  
   *And Satan… said it after calling man to disbelief… and disowning him.* · al-Muyassar et as-Sa'di sur 59:16 ; Ibn Kathir (« تبرأ منه وتنصل »)
 - الخوف اللي بجد… بيمنعك قبل الغلط… مش كلمة بتتقال بعده.  
@@ -153,7 +153,7 @@ quand il est récité)
   face à face).
 - **Le son** : le tic du compteur et le choc existent (`sfx.py`) ; une ambiance par clip.
 - **Les sources** : 12:19, 5:118, 5:28, 59:16 (versets) ; les morceaux écrits de 39:53 et 2:127 ; neuf passages de tafsir
-  (al-Muyassar 12:19, 5:27, 59:16 ; as-Sa'di 12:19, 5:118, 5:28, 59:16 ; Ibn Kathir 5:28, 59:16).
+  (al-Muyassar 12:19, 5:28, 59:16 ; as-Sa'di 12:19, 5:118, 5:28, 59:16 ; Ibn Kathir 5:28, 59:16).
 - **Les récitations** : la coupe de 12:19 à l'arrêt après « غُلَـٰمٌ », et les temps des mots pour mettre le mot en or.
 - **La voix** : trois requêtes, une par short (le palier gratuit en a dix par jour).
 - **Le dessin** : seulement pour le short 1 (le puits, le seau, la caravane, une petite voiture dans le choix).

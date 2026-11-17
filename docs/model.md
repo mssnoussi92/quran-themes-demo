@@ -61,7 +61,7 @@ tools/trial/rules.py           les règles sur les fichiers d'un film ; tools/tr
 tools/audio/align.py           chaque phrase d'un texte retrouvée dans une longue prise
 tools/tts/gemini.py            la voix (dans le workflow voice-test : la clé est un secret du dépôt)
 video/src/trial/               Trial.tsx (short), Film.tsx (film), Cover.tsx (couverture, vignette),
-                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a), Signs.tsx, Kalima.tsx, Count.tsx, Farq.tsx, WordMap.tsx, Sual.tsx et Lens.tsx (les séries) : les dessins
+                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a), Signs.tsx, Kalima.tsx, Count.tsx, Farq.tsx, WordMap.tsx, Sual.tsx, Lens.tsx et Quiz.tsx (les séries) : les dessins
 video/public/trial/            (ignoré) données préparées, clips, audio
 build/trial/ambience/          (ignoré) enregistrements d'ambiance téléchargés
 video/out/                     (ignoré) rendus
@@ -143,6 +143,17 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
 mot de l'épisode écrit en grand, en or, dès la première image (jamais dit par la voix : le récitateur le dit le premier)
 et le badge de la série au-dessus du voile (`KALIMA_PICTURES`, `KALIMA_OVERLAYS` de `video/src/trial/Kalima.tsx`).
 Un épisode peut réciter plusieurs versets séparés (`stone` : 4:49, 4:124, 35:13, chacun avec sa narration).
+
+**« معاك ٥ ثواني », le quiz** (`quiz`, 2026-11-17 ; script validé le même jour) : la question écrite sur la première image,
+trois choix, un compteur de cinq secondes, la réponse, puis le verset récité et son sens. Ce qui s'ajoute au short :
+`quiz:` dans son fichier (`head`, les mots du Coran de la question, par leurs positions dans le verset, `-1` le dernier ;
+`blank`, la fin à deviner, qui ne se remplit qu'avec la bonne réponse ; `choices`, `ar` et `en` pour un choix en égyptien,
+ou `verse`, `from`, `to` pour des noms pris dans un verset, `right` sur la bonne, `icon` ; `both: true` quand la réponse
+est « les deux » ; `speakers`, les deux versets face à face de « qui l'a dit »), lu par `tools/trial/quiz.py`, qui écrit
+`video/src/trial/quizData.ts` depuis le registre ; la question est un segment muet (`silent`, `hold: 6.8`, la réponse
+à 5 s) avec `sfx: [[count, 0], [impact, 5.0]]` (`count` : cinq tics, `tools/trial/sfx.py`) ; ce qui ne bouge pas est
+dessiné au-dessus du voile (`QUIZ_OVERLAYS`), le lieu dessous. Un mauvais choix est un vrai sens ou un vrai nom du Coran,
+jamais une invention, et n'est jamais écrit dans le verset.
 
 **Le style compteur, une option** (propriétaire, 2026-11-13 : « enregistre ce style comme option à utiliser si ça
 fonctionne, pour une série ou dans une partie »). Il vient d'une vidéo de « إعجاز عددي » qu'il a trouvée attirante ; ce
