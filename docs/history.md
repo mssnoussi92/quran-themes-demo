@@ -549,4 +549,8 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   partir des fichiers publics `page-<doc>` de chaque film (`gallery.py`). Le film vertical du du'a, publié le 16 novembre,
   en est retiré : sans cela la page faisait 260 Mio, au-dessus des 256 d'un artefact (242 Mio maintenant). Fichiers
   publics : `page-qadar`, `page-qadar-9x16` (workflow `page-files`).
+- **Ce qui est publié sort de sa page** : la session a signalé que la page était de nouveau presque pleine (242 Mio sur
+  256) et proposé d'en retirer le du'a et Dhul-Qarnayn une fois tous leurs shorts publiés. **Sa réponse** : « oui je suis
+  d'accord, tu supprimes après publication ». Règle écrite dans `CLAUDE.md` et le skill `release-render` (§7) ; le du'a
+  après le 19 novembre, Dhul-Qarnayn après le 26 (la session avait écrit « le 25 » : son dernier short est le jeudi 26).
 

@@ -201,6 +201,10 @@ uv run --with pyyaml python3 tools/trial/gallery.py --film film=<dir> --film dua
   republish over; send `index.html` and the media that changed, 64 MiB at most a call (`files.json` lists them).
 - The page says what is validated from the files (`validated`): never mark by hand. It only shows; the files to
   publish are the full ones (the draft release, or the conversation for the first film).
+- **What is published leaves the page** (owner's decision, 2026-11-17: « tu supprimes après publication »; an artifact
+  holds 256 MiB at most): once a film and all its shorts are published (their dates struck in
+  `docs/retention/calendar.md`, or published in `themes.json` on the `state` branch of quran-reels), build the page
+  without its `--film` (and `--tall`), and list its media in `remove` when you republish.
 - **The calendar** opens the page: read from `docs/retention/calendar.md` (the hour, the week's grid, the measures
   routine, each dated row linked to its video's card), never typed in the tool; `--calendar none` leaves it out.
   When the owner says what he published, strike its date in that file (`~~sam. 14 nov.~~`) and republish the page:
