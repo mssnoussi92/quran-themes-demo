@@ -15,6 +15,10 @@
 #   compteur 33 · 33 · 33 ; `road` un chemin vers l'horizon à l'aube ; `mat` un tapis de prière.
 # - Le dernier short du pilote : un appel générique (aucun short 4 n'est encore choisi).
 id: dathur
+# « Je valide le script » du propriétaire (2026-11-17, question à choix nommant le script des 3 shorts de
+# docs/scripts/dhikr.md, avec 57:21 dans le short 3) : les répliques, la place des versets et des lectures. Ni la voix, ni
+# les images, ni les lectures (à juger sur les vidéos, son choix du même jour), ni les textes à coller. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 94-trial-dathur

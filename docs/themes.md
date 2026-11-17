@@ -1108,6 +1108,10 @@ toutes entendues. La règle des fichiers comptait la formule « صلى الله 
 par la voix : elle l'écarte désormais comme pour un récit raconté (`tools/trial/rules.py`, test ajouté). Aucune voix avant
 son « je valide le script ».
 
+**Script validé par le propriétaire le 2026-11-17** (question à choix nommant le script envoyé, avec 57:21 dans le short
+3 ; `script_validated` des trois shorts). **Les lectures** : à juger sur les vidéos (son choix), elles restent proposées.
+Ensuite : les clips et les dessins à lui montrer (skill `new-scene`), trois requêtes de voix, le rendu.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
