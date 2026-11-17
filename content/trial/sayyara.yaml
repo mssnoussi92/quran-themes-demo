@@ -24,6 +24,9 @@ publish:
   title: { en: "A \"car\" in Surat Yusuf?", ar: "«سيارة» في سورة يوسف؟" }
   part: 1
   hashtags: ["#سورة_يوسف", "#معاني_الكلمات"]
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session le 2026-11-17, à valider
+    ar: "«سيارة» في سورة يوسف… مش العربية اللي في بالك. معاك 5 ثواني."
+    en: '"Sayyara" in Surat Yusuf… not the car you''re thinking of. You have 5 seconds.'
   description:
     en: "\"Sayyara\" in Surat Yusuf (12:19) is not a car: al-Muyassar and as-Sa'di read it as a company of travellers, a caravan. They sent a man to fetch water, and Yusuf held on to his bucket."
     ar: "«سيارة» في سورة يوسف (يوسف 19) مش عربية: معناها قافلة مسافرين. بعتوا حد يجيب لهم مية… فاتعلّق في الدلو سيدنا يوسف عليه السلام."
