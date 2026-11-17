@@ -252,11 +252,12 @@ const Mat: React.FC<{ id: string; x: number; y: number; scale: number; t: number
   );
 };
 
-/** The counter under the beads: « 33 » three times, each written when its turn comes (`n`: 0 to 3 shown). */
+/** The counter under the beads: « 33 » three times, each written when its turn comes (`n`: 0 to 3 shown), the first on
+ * the right (read from right to left, as the Arabic above it). */
 const Counter: React.FC<{ y: number; n: number }> = ({ y, n }) => (
   <g>
     {[0, 1, 2].map((k) => (
-      <text key={k} x={W / 2 + (k - 1) * 220} y={y} textAnchor="middle" fontFamily={FONT.latin} fontSize={96} fontWeight={700} fill={GOLD} opacity={Math.max(0, Math.min(1, n - k))} style={{ paintOrder: "stroke" }} stroke={INK} strokeWidth={10}>
+      <text key={k} x={W / 2 + (1 - k) * 220} y={y} textAnchor="middle" fontFamily={FONT.latin} fontSize={96} fontWeight={700} fill={GOLD} opacity={Math.max(0, Math.min(1, n - k))} style={{ paintOrder: "stroke" }} stroke={INK} strokeWidth={10}>
         33
       </text>
     ))}

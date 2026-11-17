@@ -71,8 +71,10 @@ segments:
     scene: dusk
     sources: [tafsir.saadi.113.2, tafsir.saadi.113.3]
     lines:
-      - ar: "يعني: بتلجأ لربنا… من شر كل حاجة خلقها: إنس، وجن، وحيوانات."
-        en: "Meaning: you turn to God for refuge… from the evil of all He created: people, jinn and animals."
+      # Mêmes mots que la réplique validée ; ponctuation changée par la session (2026-11-17) : coupée en six morceaux
+      # (« : » et « ، »), elle s'écrivait en petit, un mot par ligne (brouillon muet, run 44176305883). À confirmer.
+      - ar: "يعني: بتلجأ لربنا… من شر كل حاجة خلقها… إنس وجن وحيوانات."
+        en: "Meaning: you turn to God for refuge… from the evil of all He created… people, jinn and animals."
       - ar: "والليل بالذات… وقت ما الحيوانات المؤذية بتنتشر."
         en: "And the night above all… when harmful creatures spread out."
   - narration: depth
@@ -94,7 +96,11 @@ segments:
     lines:
       - ar: "قولها لما المسا يدخل… قبل اللدغة، مش بعدها."
         en: "Say it when evening comes… before the sting, not after."
-      - ar: "والجاية: ليلة مطر وضلمة… والنبي صلى الله عليه وسلم طلب من صاحبه يقول حاجة… وهو مش عارف يقول إيه."
-        en: "Next: a night of rain and darkness… the Prophet ﷺ asked his companion to say something… and he didn't know what to say."
+      # Mêmes mots que la réplique validée, coupée en deux par la session (2026-11-17) : trop longue, elle s'écrivait en
+      # petit (brouillon muet, run 44176305883). À confirmer.
+      - ar: "والجاية: ليلة مطر وضلمة…"
+        en: "Next: a night of rain and darkness…"
+      - ar: "والنبي صلى الله عليه وسلم طلب من صاحبه يقول حاجة… وهو مش عارف يقول إيه."
+        en: "The Prophet ﷺ asked his companion to say something… and he didn't know what to say."
       - ar: "تابعنا عشان تعرف الحكاية."
         en: "Follow us to hear the story."

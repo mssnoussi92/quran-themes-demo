@@ -4,13 +4,13 @@ Script à valider avant toute voix. Les répliques **nouvelles** sont de la sess
 
 | | Short | Durée estimée | Récitation | Hadith lu | Répliques nouvelles | Reprises |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `aqrab` | 1:43 | 0:10 | 0:20 | 14 | 0 |
+| 1 | `aqrab` | 1:42 | 0:10 | 0:20 | 15 | 0 |
 | 2 | `qul` | 2:04 | 1:00 | 0:11 | 10 | 0 |
 | 3 | `dathur` | 1:59 | 0:28 | 0:27 | 13 | 0 |
 
 ## Short 1 · `aqrab` · عقرب لدغته بالليل… والرد جملة واحدة
 
-Environ **1:43** · 0:10 de récitation, 0:20 de hadith lu · 14 répliques nouvelles, 0 reprises.
+Environ **1:42** · 0:10 de récitation, 0:20 de hadith lu · 15 répliques nouvelles, 0 reprises.
 
 **0:00 · narration** (image : `sting`) · d'après : récit de [Sahih Muslim 2709a](https://sunnah.com/muslim:2709a), raconté avec nos mots, source proposée · référence écrite à l'écran, jamais lue
 - عقرب لدغت راجل بالليل… فجه للنبي صلى الله عليه وسلم يشتكي.  
@@ -45,28 +45,30 @@ Environ **1:43** · 0:10 de récitation, 0:20 de hadith lu · 14 répliques nouv
   *And from the evil of darkness when it settles*
 
 **0:54 · narration** (image : `dusk`) · d'après : sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/113:2/tafsirs/ar-tafseer-al-saddi) sur 113:2, source proposée ; sens d'après [Tafsir as-Sa'di · تفسير السعدي](https://quran.com/113:3/tafsirs/ar-tafseer-al-saddi) sur 113:3, source proposée · référence écrite à l'écran, jamais lue
-- يعني: بتلجأ لربنا… من شر كل حاجة خلقها: إنس، وجن، وحيوانات.  
-  *Meaning: you turn to God for refuge… from the evil of all He created: people, jinn and animals.* · **nouvelle**
+- يعني: بتلجأ لربنا… من شر كل حاجة خلقها… إنس وجن وحيوانات.  
+  *Meaning: you turn to God for refuge… from the evil of all He created… people, jinn and animals.* · **nouvelle**
 - والليل بالذات… وقت ما الحيوانات المؤذية بتنتشر.  
   *And the night above all… when harmful creatures spread out.* · **nouvelle**
 
-**1:06 · narration** (image : `sting`)
+**1:05 · narration** (image : `sting`)
 - الراجل جه بعد اللدغة… والرد كان عن اللي قبلها.  
   *The man came after the sting… and the answer was about before it.* · **nouvelle**
 - وإحنا كده: بنفتكر ربنا بعد اللي يحصل… والذكر مكانه قبله.  
   *And that's us: we remember God after something happens… when the dhikr belongs before it.* · **nouvelle**
 
-**1:17 · narration** (image : `door`)
+**1:16 · narration** (image : `door`)
 - زي ما كل ليلة بتتأكد إن الباب مقفول… من غير ما تفكر.  
   *Like every night you make sure the door is locked… without even thinking.* · **nouvelle**
 - والذكر ده أسهل من كده… وبننساه.  
   *And this dhikr is easier than that… and we forget it.* · **nouvelle**
 
-**1:25 · narration** (image : `door`)
+**1:24 · narration** (image : `door`)
 - قولها لما المسا يدخل… قبل اللدغة، مش بعدها.  
   *Say it when evening comes… before the sting, not after.* · **nouvelle**
-- والجاية: ليلة مطر وضلمة… والنبي صلى الله عليه وسلم طلب من صاحبه يقول حاجة… وهو مش عارف يقول إيه.  
-  *Next: a night of rain and darkness… the Prophet ﷺ asked his companion to say something… and he didn't know what to say.* · **nouvelle**
+- والجاية: ليلة مطر وضلمة…  
+  *Next: a night of rain and darkness…* · **nouvelle**
+- والنبي صلى الله عليه وسلم طلب من صاحبه يقول حاجة… وهو مش عارف يقول إيه.  
+  *The Prophet ﷺ asked his companion to say something… and he didn't know what to say.* · **nouvelle**
 - تابعنا عشان تعرف الحكاية.  
   *Follow us to hear the story.* · **nouvelle**
 

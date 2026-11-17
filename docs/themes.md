@@ -1139,6 +1139,15 @@ le short 1 la joue après la réponse du Prophète ﷺ, annoncée par une répli
 جبريل: »), **validée par lui le même jour** (question à choix qui la citait) ; il passe à 1:43. **Les droits** : sa première publication sur Facebook seul, avec la vérification
 de Meta, avant Instagram et TikTok ; sur YouTube, à la main, Content ID à regarder.
 
+**Clips, dessins, brouillons muets (2026-11-17)** : clips choisis par lui parmi ceux qu'il a déjà approuvés (questions à
+choix, chaque fois la recommandation) : 8451 (un coucher qui devient nuit) pour le scorpion, 16495 (un ciel d'orage
+sombre) pour « قل », 30218 (une aube en accéléré) pour les riches et les pauvres ; ambiances proposées parmi les trois
+validées à l'écoute (grillons le soir ; vent dans un arbre). Dessins : `video/src/trial/Dhikr.tsx`. Brouillons muets
+rendus par le workflow `film` (run 44176305883, voix X, avec leurs versions TikTok et couvertures) : 1:46, 2:06, 2:02 ;
+format et volume conformes (−16,1 à −16,4 LUFS), envoyés. Deux répliques du short 1 retouchées après les planches,
+mots inchangés (la ligne du sens, six morceaux, s'écrivait un mot par ligne ; l'annonce du short suivant, trop longue,
+coupée en deux), à confirmer par lui ; le compteur 33 se lit de droite à gauche. La voix : trois requêtes le 19 novembre.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
