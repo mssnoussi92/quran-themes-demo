@@ -110,7 +110,8 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
   s'arrête dans 18:21 avant la mosquée bâtie sur eux).
 - `silent: true` sur un segment de narration (le début rapide de « خريطة كلمة », demande du propriétaire, 2026-11-14) :
   la réplique est écrite à l'écran, aucune voix ne la dit, elle n'est pas dans le texte de la voix ; minutée d'après sa
-  longueur, comme un brouillon, et `hold: N` la tient au moins N secondes, le temps de la lire.
+  longueur, comme un brouillon, et `hold: N` la tient au moins N secondes, le temps de la lire. `at_once: true` l'écrit
+  entière dès son début, au lieu d'une phrase après l'autre (la question du quiz, coupée par un « … », 2026-11-17).
 - `sfx: [[son, secondes]]` sur un segment : des effets sonores (`tools/trial/sfx.py` : `scan`, les tics du compteur
   sur la grille ; `impact`, le nombre qui tombe ; `whoosh` ; `pops` ; `click` ; `lock`), faits par le code (rien à
   créditer), **aucun son musical**, **jamais sous un verset ni un hadith** (l'outil s'arrête plutôt) ; une piste

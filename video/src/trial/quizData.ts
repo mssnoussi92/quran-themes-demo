@@ -17,19 +17,22 @@ export const QUIZ = {
     "ar": "عربية",
     "en": "a car",
     "right": false,
-    "icon": "car"
+    "icon": "car",
+    "note": null
    },
    {
     "ar": "قافلة مسافرين",
     "en": "a caravan of travellers",
     "right": true,
-    "icon": "caravan"
+    "icon": "caravan",
+    "note": null
    },
    {
     "ar": "كوكب سيّار",
     "en": "a planet",
     "right": false,
-    "icon": "planet"
+    "icon": "planet",
+    "note": null
    }
   ],
   "both": false
@@ -56,6 +59,7 @@ export const QUIZ = {
     "en": "the Forgiving, the Merciful",
     "right": false,
     "icon": null,
+    "note": null,
     "quran": {
      "id": "quran.39.53",
      "surah": 39,
@@ -74,6 +78,7 @@ export const QUIZ = {
     "en": "the Almighty, the Wise",
     "right": true,
     "icon": null,
+    "note": null,
     "quran": {
      "id": "quran.5.118",
      "surah": 5,
@@ -92,6 +97,7 @@ export const QUIZ = {
     "en": "the Hearing, the Knowing",
     "right": false,
     "icon": null,
+    "note": null,
     "quran": {
      "id": "quran.2.127",
      "surah": 2,
@@ -141,19 +147,22 @@ export const QUIZ = {
     "ar": "هابيل ابن سيدنا آدم",
     "en": "Abel, son of Adam",
     "right": true,
-    "icon": null
+    "icon": null,
+    "note": null
    },
    {
     "ar": "الشيطان",
     "en": "Satan",
     "right": true,
-    "icon": null
+    "icon": null,
+    "note": null
    },
    {
     "ar": "الاتنين",
     "en": "both",
     "right": true,
-    "icon": null
+    "icon": null,
+    "note": null
    }
   ],
   "both": true,
@@ -197,5 +206,194 @@ export const QUIZ = {
     }
    }
   ]
+ },
+ "dabba": {
+  "head": {
+   "id": "quran.34.14",
+   "surah": 34,
+   "ayah": 14,
+   "name": "سبإ",
+   "first": 10,
+   "last": 11,
+   "words": [
+    "دَآبَّةُ",
+    "ٱلْأَرْضِ"
+   ]
+  },
+  "choices": [
+   {
+    "ar": "دابة آخر الزمان",
+    "en": "the beast of the end of time",
+    "right": false,
+    "icon": null,
+    "note": {
+     "ar": "في سورة النمل · 82",
+     "en": "in an-Naml, 82"
+    }
+   },
+   {
+    "ar": "حشرة بتاكل الخشب",
+    "en": "an insect that eats wood",
+    "right": true,
+    "icon": null,
+    "note": null
+   },
+   {
+    "ar": "دابة للركوب",
+    "en": "a mount to ride",
+    "right": false,
+    "icon": null,
+    "note": null
+   }
+  ],
+  "both": false
+ },
+ "sabr": {
+  "head": {
+   "id": "quran.12.83",
+   "surah": 12,
+   "ayah": 83,
+   "name": "يوسف",
+   "first": 7,
+   "last": 8,
+   "words": [
+    "فَصَبْرٌ",
+    "جَمِيلٌ"
+   ]
+  },
+  "choices": [
+   {
+    "ar": null,
+    "en": "and Allah is the one sought for help",
+    "right": false,
+    "icon": null,
+    "note": {
+     "ar": "المرة الأولى · يوسف 18",
+     "en": "the first time, Yusuf 18"
+    },
+    "quran": {
+     "id": "quran.12.18",
+     "surah": 12,
+     "ayah": 18,
+     "name": "يوسف",
+     "first": 14,
+     "last": 18,
+     "words": [
+      "وَٱللَّهُ",
+      "ٱلْمُسْتَعَانُ",
+      "عَلَىٰ",
+      "مَا",
+      "تَصِفُونَ"
+     ]
+    }
+   },
+   {
+    "ar": null,
+    "en": "perhaps Allah will bring them to me all together",
+    "right": true,
+    "icon": null,
+    "note": null,
+    "quran": {
+     "id": "quran.12.83",
+     "surah": 12,
+     "ayah": 83,
+     "name": "يوسف",
+     "first": 9,
+     "last": 14,
+     "words": [
+      "عَسَى",
+      "ٱللَّهُ",
+      "أَن",
+      "يَأْتِيَنِى",
+      "بِهِمْ",
+      "جَمِيعًا"
+     ]
+    }
+   },
+   {
+    "ar": null,
+    "en": "oh, my sorrow over Yusuf",
+    "right": false,
+    "icon": null,
+    "note": {
+     "ar": "بعدها · يوسف 84",
+     "en": "right after, Yusuf 84"
+    },
+    "quran": {
+     "id": "quran.12.84",
+     "surah": 12,
+     "ayah": 84,
+     "name": "يوسف",
+     "first": 4,
+     "last": 6,
+     "words": [
+      "يَـٰٓأَسَفَىٰ",
+      "عَلَىٰ",
+      "يُوسُفَ"
+     ]
+    }
+   }
+  ],
+  "both": false,
+  "blank": {
+   "id": "quran.12.83",
+   "surah": 12,
+   "ayah": 83,
+   "name": "يوسف",
+   "first": 9,
+   "last": 14,
+   "words": [
+    "عَسَى",
+    "ٱللَّهُ",
+    "أَن",
+    "يَأْتِيَنِى",
+    "بِهِمْ",
+    "جَمِيعًا"
+   ]
+  }
+ },
+ "hudhud": {
+  "head": {
+   "id": "quran.27.22",
+   "surah": 27,
+   "ayah": 22,
+   "name": "النمل",
+   "first": 5,
+   "last": 9,
+   "words": [
+    "أَحَطتُ",
+    "بِمَا",
+    "لَمْ",
+    "تُحِطْ",
+    "بِهِۦ"
+   ]
+  },
+  "choices": [
+   {
+    "ar": "سيدنا سليمان للهدهد",
+    "en": "Solomon to the hoopoe",
+    "right": false,
+    "icon": null,
+    "note": null
+   },
+   {
+    "ar": "الخضر لسيدنا موسى",
+    "en": "al-Khidr to Moses",
+    "right": false,
+    "icon": null,
+    "note": {
+     "ar": "قال قريب منها · الكهف 68",
+     "en": "said something close, al-Kahf 68"
+    }
+   },
+   {
+    "ar": "الهدهد لسيدنا سليمان",
+    "en": "the hoopoe to Solomon",
+    "right": true,
+    "icon": null,
+    "note": null
+   }
+  ],
+  "both": false
  }
 } as const;

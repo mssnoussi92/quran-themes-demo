@@ -992,7 +992,15 @@ rend désormais un brouillon muet avec la voix `X` (chaque short préparé avec 
 44103338443, release brouillon `quiz-candidate` : 0:42, 0:49, 1:22, leurs versions TikTok et couvertures, contrôlés sur
 leurs planches et envoyés. Accroches des légendes courtes **validées par lui le même jour** (« je valide les 3
 accroches »). Le lendemain : trois requêtes de voix, puis le même run en voix `D`.
-=======
+
+**Trois autres quiz** (sa demande, 2026-11-17 : « prépare 3 autres quiz sans voix, et demain matin tu envoies les 6
+voix ») : un par format, `dabba` (« دَآبَّةُ ٱلْأَرْضِ » 34:14 : la termite, pas la bête de la fin des temps de 27:82),
+`sabr` (« فَصَبْرٌ جَمِيلٌ » dit deux fois par Yaqoub, 12:18 et 12:83 : la seconde fois, il demande les trois fils) et
+`hudhud` (« أَحَطتُ بِمَا لَمْ تُحِطْ بِهِۦ » 27:22 : la huppe à Soulayman ; al-Khaḍir dit une phrase voisine à Moussa,
+18:68). **Scripts validés par lui le même jour** (questions à choix ; 34:14 coupé à « مِنسَأَتَهُۥ », sa suite dite par la
+voix). Un mauvais choix vrai ailleurs n'est plus barré : il pâlit, sa référence dessous (`note`). La règle des fichiers
+a demandé que 27:27 (Soulayman vérifie, 8 s) soit récité au short 6, puisqu'une réplique repose sur son tafsir : ajouté,
+à confirmer par lui. **Placés plus tard** (son choix) : en réserve, décidés à la revue après les chiffres du 23 novembre.
 
 ## Faits (ancien circuit)
 

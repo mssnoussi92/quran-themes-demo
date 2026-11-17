@@ -3101,3 +3101,20 @@
   notes: "« أحطت بما لم تحط به », dit par la huppe à Soulayman : « معاك 5 ثواني », short 6 (hudhud) ; la phrase de la question, récité en entier"
   text_ar: فَمَكَثَ غَيْرَ بَعِيدٍ فَقَالَ أَحَطتُ بِمَا لَمْ تُحِطْ بِهِۦ وَجِئْتُكَ مِن سَبَإٍۭ بِنَبَإٍ يَقِينٍ
   text_en: But he [i.e., the hoopoe] stayed not long and said, "I have encompassed [in knowledge] that which you have not encompassed, and I have come to you from Sheba with certain news.
+
+- id: quran.27.27
+  type: ayah
+  ref: {surah: 27, ayah: 27}
+  url: https://quran.com/27/27
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=27:27
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=27:27
+    translator: Saheeh International
+    surah_ar: النمل
+    surah_en: An-Naml
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« سننظر أصدقت أم كنت من الكاذبين » : Soulayman vérifie la nouvelle de la huppe (« معاك 5 ثواني », short 6, hudhud) ; récité après 27:22"
+  text_ar: ۞ قَالَ سَنَنظُرُ أَصَدَقْتَ أَمْ كُنتَ مِنَ ٱلْكَـٰذِبِينَ
+  text_en: '[Solomon] said, "We will see whether you were truthful or were of the liars.'

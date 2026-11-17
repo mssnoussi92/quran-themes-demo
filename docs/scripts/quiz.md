@@ -229,7 +229,7 @@ Environ **0:48** · 0:19 de récitation (12:83, entier).
 dessiné. Personne : ni Yaqoub, ni ses fils.
 
 **Muet · `ask`** (première image ; 5 s de compteur ; aucune voix)
-- Écrit : « فَصَبْرٌ جَمِيلٌ … » (12:83, du registre, la suite en blanc) · « قالها سيدنا يعقوب مرتين… المرة التانية كمّلها بإيه؟ »  
+- Écrit : « فَصَبْرٌ جَمِيلٌ … » (12:83, du registre, la suite en blanc) · « قالها سيدنا يعقوب مرتين، المرة التانية كمّلها بإيه؟ » (écrite entière dès la première image : `at_once`, le texte validé n'est pas retouché)  
   *Jacob said it twice… the second time, how did he go on?*
 - Les trois choix, trois vraies paroles de Yaqoub (du registre) : **وَٱللَّهُ ٱلْمُسْتَعَانُ عَلَىٰ مَا تَصِفُونَ** (12:18, la
   première fois) · **عَسَى ٱللَّهُ أَن يَأْتِيَنِى بِهِمْ جَمِيعًا** (12:83) · **يَـٰٓأَسَفَىٰ عَلَىٰ يُوسُفَ** (12:84, juste après)  
@@ -264,7 +264,7 @@ Environ **0:44** · 0:15 de récitation (27:22, entier).
 loin et se pose sur une branche. Personne n'est dessiné : ni Soulayman, ni Moussa, ni al-Khaḍir.
 
 **Muet · `ask`** (première image ; 5 s de compteur ; aucune voix)
-- Écrit : « أَحَطتُ بِمَا لَمْ تُحِطْ بِهِۦ » (27:22, du registre) · « مين قالها… ولمين؟ »  
+- Écrit : « أَحَطتُ بِمَا لَمْ تُحِطْ بِهِۦ » (27:22, du registre) · « مين قالها، ولمين؟ » (de même, `at_once`)  
   *Who said it… and to whom?*
 - Les trois choix : **سيدنا سليمان للهدهد** · **الخضر لسيدنا موسى** · **الهدهد لسيدنا سليمان**  
   *Solomon to the hoopoe · al-Khidr to Moses · the hoopoe to Solomon*  

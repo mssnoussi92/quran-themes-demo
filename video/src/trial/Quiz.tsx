@@ -2,7 +2,8 @@
 // question on the first frame, three choices, a countdown of five seconds, the answer; then the reciter says the verse
 // and the voice gives its meaning. What must not move (the question's words, the countdown, the choices, the two
 // speakers face to face) is drawn above the veil (QUIZ_OVERLAYS); the picture under it (QUIZ_PICTURES) is the place:
-// a well and a caravan at dusk (the word « سَيَّارَةٌ »), a night that slowly grows light, a plain. Every Quranic word
+// a well and a caravan at dusk (the word « سَيَّارَةٌ »), a night that slowly grows light, a plain; then (shorts 4 to 6)
+// the arches of a hall and a staff that the termite eats, a dawn, a hoopoe that comes to a branch. Every Quranic word
 // comes from the registry (tools/trial/quiz.py, quizData.ts), never typed here; the Egyptian choices come from the
 // short's file. Nobody is drawn, nothing of the unseen, no violence.
 import type React from "react";
@@ -35,11 +36,16 @@ const letters = (text: string) => text.replace(/[ً-ٰٟۖ-ۭـ]/g, "").length;
 const fitQuran = (text: string, most: number, width = 900) => Math.min(most, Math.floor(width / (0.42 * Math.max(1, letters(text)))));
 
 type Piece = { surah: number; ayah: number; name: string; first: number; last: number; words: readonly string[] };
-type Choice = { ar: string | null; en: string; right: boolean; icon: string | null; quran?: Piece };
+/** `note`: a wrong choice that is true elsewhere (a real meaning in another verse, real words said another time): at the
+ * answer it is not struck through, it fades and its reference is written under it instead of its English. */
+type Note = { ar: string; en: string };
+type Choice = { ar: string | null; en: string; right: boolean; icon: string | null; note?: Note | null; quran?: Piece };
 type Quiz = { head: Piece; choices: readonly Choice[]; both: boolean; blank?: Piece; speakers?: readonly { ar: string; en: string; quran: Piece }[] };
 type Id = keyof typeof QUIZ;
 const data = (id: Id) => QUIZ[id] as unknown as Quiz;
-const N: Record<Id, string> = { sayyara: "1", khatima: "2", qalaha: "3" };
+const N: Record<Id, string> = { sayyara: "1", khatima: "2", qalaha: "3", dabba: "4", sabr: "5", hudhud: "6" };
+/** The scenes where the question's words stay above the lines of the voice (not over a verse being recited). */
+const MEANING = ["meaning", "fall", "jinn", "patience", "check", "lesson"];
 
 // ---- the countdown -------------------------------------------------------------------------------------------------
 
@@ -92,11 +98,12 @@ const ChoicePill: React.FC<{ choice: Choice; y: number; t: number; k: number; an
   const right = choice.right;
   const breath = 1 + 0.012 * Math.sin(t * 2.4 + k * 1.3) * (1 - shown);
   const pop = right ? 1 + 0.06 * Math.sin(Math.PI * clamp((t - answer) / 0.45)) : 1;
-  const fade = right ? 1 : 1 - 0.62 * shown;
+  const fade = right ? 1 : 1 - (choice.note ? 0.45 : 0.62) * shown;
   const colour = right && shown > 0 ? GOLD : PALE;
   const quran = choice.quran ? choice.quran.words.join(" ") : null;
   const text = quran ?? choice.ar ?? "";
-  const strike = right ? 0 : after(t, answer + 0.1, 0.3);
+  const note = right ? null : choice.note ?? null;
+  const strike = right || note ? 0 : after(t, answer + 0.1, 0.3);
   const x0 = 120;
   const w = 840;
   const h = 122;
@@ -107,8 +114,11 @@ const ChoicePill: React.FC<{ choice: Choice; y: number; t: number; k: number; an
             stroke={colour} strokeOpacity={right && shown > 0 ? 1 : 0.55} strokeWidth={right && shown > 0 ? (both && last ? 7 : 5) : 3} />
       {choice.icon ? <Icon icon={choice.icon} x={x0 + 86} y={y - 4} colour={colour} /> : null}
       <text x={textX} y={quran ? y - 2 : y + 8} textAnchor="middle" direction="rtl" fontFamily={quran ? FONT.quran : FONT.arabic} fontWeight={quran ? 400 : 700}
-            fontSize={quran ? 52 : 52} fill={colour}>{RTL(text)}</text>
-      <text x={textX} y={y + 48} textAnchor="middle" fontFamily={FONT.latin} fontStyle="italic" fontSize={24} fill={DIM}>{choice.en}</text>
+            fontSize={quran ? fitQuran(text, 52, 700) : 52} fill={colour}>{RTL(text)}</text>
+      <text x={textX} y={y + 48} textAnchor="middle" fontFamily={FONT.latin} fontStyle="italic" fontSize={24} fill={DIM} opacity={note ? 1 - shown : 1}>{choice.en}</text>
+      {note && shown > 0 ? (
+        <text x={textX} y={y + 50} textAnchor="middle" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={28} fill={GOLD} opacity={shown}>{RTL(note.ar)}</text>
+      ) : null}
       {strike > 0 ? <line x1={textX + 180} y1={y - 4} x2={textX + 180 - 360 * strike} y2={y - 4} stroke={ROSE} strokeWidth={6} strokeLinecap="round" /> : null}
     </g>
   );
@@ -123,12 +133,13 @@ const Head: React.FC<{ quiz: Quiz; t: number; answer: number; opacity: number }>
   const head = quiz.head.words.join(" ");
   const ref = `${quiz.head.name} · ${NUM(quiz.head.ayah)}`;
   if (!quiz.blank) {
-    const size = fitQuran(`«${head}»`, quiz.head.words.length === 1 ? 128 : 70);
+    const short = quiz.head.words.length <= 2;              // a word or two: written large
+    const size = fitQuran(`«${head}»`, quiz.head.words.length === 1 ? 128 : short ? 112 : 70);
     return (
       <g opacity={opacity}>
-        <text x={540} y={quiz.head.words.length === 1 ? 470 : 450} textAnchor="middle" direction="rtl" fontFamily={FONT.quran} fontSize={size} fill={GOLD}
+        <text x={540} y={short ? 470 : 450} textAnchor="middle" direction="rtl" fontFamily={FONT.quran} fontSize={size} fill={GOLD}
               style={{ filter: "drop-shadow(0 2px 14px rgba(4,7,20,.9))" }}>{RTL(`«${head}»`)}</text>
-        <text x={540} y={quiz.head.words.length === 1 ? 528 : 512} textAnchor="middle" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={30} fill={PALE} opacity={0.7}>{RTL(ref)}</text>
+        <text x={540} y={short ? 528 : 512} textAnchor="middle" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={30} fill={PALE} opacity={0.7}>{RTL(ref)}</text>
       </g>
     );
   }
@@ -136,13 +147,13 @@ const Head: React.FC<{ quiz: Quiz; t: number; answer: number; opacity: number }>
   const filled = after(t, answer + 0.15, 0.5);
   return (
     <g opacity={opacity}>
-      <text x={540} y={410} textAnchor="middle" direction="rtl" fontFamily={FONT.quran} fontSize={fitQuran(head, 62)} fill={PALE}
+      <text x={540} y={410} textAnchor="middle" direction="rtl" fontFamily={FONT.quran} fontSize={fitQuran(head, quiz.head.words.length <= 2 ? 84 : 62)} fill={PALE}
             style={{ filter: "drop-shadow(0 2px 14px rgba(4,7,20,.9))" }}>{RTL(`«${head}`)}</text>
       <g opacity={1 - filled}>
         <rect x={330} y={444} width={420} height={92} rx={18} fill={INK} fillOpacity={0.6} stroke={GOLD} strokeOpacity={0.7} strokeWidth={3} strokeDasharray="12 9" />
         <text x={540} y={514} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={72} fill={GOLD} opacity={0.55 + 0.45 * Math.sin(t * 4) ** 2}>؟</text>
       </g>
-      <text x={540} y={516} textAnchor="middle" direction="rtl" fontFamily={FONT.quran} fontSize={fitQuran(end, 70)} fill={GOLD} opacity={filled}
+      <text x={540} y={516} textAnchor="middle" direction="rtl" fontFamily={FONT.quran} fontSize={fitQuran(end, quiz.blank.words.length > 3 ? 58 : 70)} fill={GOLD} opacity={filled}
             style={{ filter: "drop-shadow(0 2px 14px rgba(4,7,20,.9))" }}>{RTL(`${end}»`)}</text>
       <text x={540} y={570} textAnchor="middle" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={28} fill={PALE} opacity={0.7}>{RTL(ref)}</text>
     </g>
@@ -177,7 +188,7 @@ const makeOverlay = (id: Id): Drawn => {
     const asking = show("ask");
     const answered = show("answer");
     const choices = Math.max(asking, answered);
-    const meaning = show("meaning");
+    const meaning = Math.max(...MEANING.map((scene) => show(scene)));
     const head = Math.max(asking, answered * (quiz.speakers ? 0 : 1), meaning);
     const speakers = quiz.speakers
       ? Math.max(show("abel"), show("satan"), show("abel-meaning"), show("satan-meaning"))
@@ -314,8 +325,126 @@ const QalahaPicture: Drawn = ({ horizon }) => (
   </g>
 );
 
+/** The arches of a great hall (the « محاريب » the jinn built, 34:13), dark against the evening. */
+const Arches: React.FC<{ horizon: number }> = ({ horizon }) => {
+  const top = horizon - 560;
+  return (
+    <g fill="#03050c">
+      <path d={`M 0 ${top - 40} H ${W} V ${top + 30} H 0 Z`} />
+      {[0, 1, 2, 3].map((k) => {
+        const x = 40 + k * 260;
+        return (
+          <path key={k} d={`M ${x} ${top + 30} H ${x + 220} V ${horizon + 40} H ${x + 196} V ${top + 230} C ${x + 196} ${top + 120} ${x + 24} ${top + 120} ${x + 24} ${top + 230} V ${horizon + 40} H ${x} Z`} />
+        );
+      })}
+      <path d={`M 0 ${horizon + 40} H ${W} V 1920 H 0 Z`} />
+    </g>
+  );
+};
+
+/** A wooden staff standing alone (short 4); the termite eats it from the verse on (`holes` 0 to 1), it breaks and falls
+ * with the second line of the voice (`fall` 0 to 1). Nobody leans on it in the picture: Solomon is never drawn. */
+const Staff: React.FC<{ x: number; y: number; holes: number; fall: number }> = ({ x, y, holes, fall }) => {
+  const length = 430;
+  const marks = [0.12, 0.2, 0.31, 0.27, 0.42, 0.16, 0.36, 0.08];
+  const shown = Math.floor(holes * marks.length + 0.001);
+  return (
+    <g transform={`translate(${x} ${y})`}>
+      <ellipse cx={0} cy={4} rx={60} ry={8} fill="#000" opacity={0.5} />
+      <g transform={`translate(0 ${66 * fall}) rotate(${-86 * fall} 0 ${-length * 0.18})`}>
+        <path d={`M -9 ${-length * 0.18} L -7 ${-length} C -7 ${-length - 38} 40 ${-length - 40} 42 ${-length - 8}`} fill="none" stroke="#3a2c1c" strokeWidth={16} strokeLinecap="round" />
+        <path d={`M -9 ${-length * 0.18} L -7 ${-length}`} stroke={GOLD} strokeOpacity={0.35} strokeWidth={3} />
+        {marks.slice(0, shown).map((m, k) => (
+          <ellipse key={k} cx={k % 2 ? -5 : -11} cy={-length * (0.22 + m * 1.6)} rx={4} ry={6} fill="#0b0805" stroke={GOLD} strokeOpacity={0.5} strokeWidth={1.5} />
+        ))}
+      </g>
+      <path d={`M -9 0 L -9 ${-length * 0.18}`} stroke="#3a2c1c" strokeWidth={16} strokeLinecap="round" />
+      {fall > 0.05 ? <path d={`M -20 ${-length * 0.18} l 6 -8 l 6 6 l 7 -9 l 6 8`} fill="none" stroke={GOLD} strokeOpacity={0.6 * fall} strokeWidth={2} /> : null}
+    </g>
+  );
+};
+
+/** Short 4: the evening, the arches, the staff; nothing before the answer that could give it away. */
+const DabbaPicture: Drawn = ({ t, show, since, horizon }) => {
+  const place = Math.max(show("listen"), ...MEANING.map((scene) => show(scene)), 0.4 * show("close"));
+  const holes = show("listen") > 0 && show("meaning") === 0 ? after(t, since("listen") + 2, 10) : 1;
+  const fall = show("fall") > 0 ? after(t, since("fall") + 6.5, 1.1) : Math.max(show("jinn"), show("close"));
+  return (
+    <g>
+      <defs>
+        <radialGradient id="quiz-hall" cx="50%" cy="100%" r="75%">
+          <stop offset="0%" stopColor="#c9855a" stopOpacity={0.45} />
+          <stop offset="100%" stopColor="#c9855a" stopOpacity={0} />
+        </radialGradient>
+      </defs>
+      <rect x={0} y={horizon - 600} width={W} height={620} fill="url(#quiz-hall)" opacity={0.5} />
+      <Arches horizon={horizon} />
+      <g opacity={place}><Staff x={560} y={horizon + 40} holes={place > 0 ? holes : 0} fall={place > 0 ? fall : 0} /></g>
+    </g>
+  );
+};
+
+/** Short 5, over its filmed dawn: the light grows on the horizon from the answer on (relief when the hardship is at its
+ * height, as-Sa'di on 12:83); nothing and nobody is drawn. */
+const SabrPicture: Drawn = ({ t, show, since, horizon }) => {
+  const light = show("ask") > 0 ? after(t, since("ask") + SECONDS, 3) * 0.5 : Math.max(show("listen") * (0.5 + 0.5 * after(t, since("listen"), 14)), ...MEANING.map((scene) => show(scene)), show("close"));
+  return (
+    <g>
+      <defs>
+        <radialGradient id="quiz-rise" cx="50%" cy="100%" r="80%">
+          <stop offset="0%" stopColor="#f2b77e" stopOpacity={0.6} />
+          <stop offset="55%" stopColor="#c9855a" stopOpacity={0.2} />
+          <stop offset="100%" stopColor="#c9855a" stopOpacity={0} />
+        </radialGradient>
+      </defs>
+      <rect x={0} y={horizon - 900} width={W} height={920} fill="url(#quiz-rise)" opacity={0.1 + 0.9 * light} />
+      <Ground horizon={horizon} />
+    </g>
+  );
+};
+
+/** A hoopoe in silhouette, its crest open, facing left; `wing` beats (0: folded). Feet at y 0. */
+const Hoopoe: React.FC<{ wing: number }> = ({ wing }) => (
+  <g fill="#03050c" stroke={PALE} strokeOpacity={0.28} strokeWidth={1.5}>
+    <path d="M 46 -40 L 96 -30 L 92 -22 L 44 -26 Z" />
+    <ellipse cx={8} cy={-36} rx={44} ry={22} />
+    <circle cx={-34} cy={-58} r={15} />
+    <path d="M -46 -60 C -66 -60 -88 -56 -106 -50 C -88 -52 -66 -54 -46 -54 Z" />
+    {[-60, -40, -20, 0, 20].map((a, k) => (
+      <path key={k} d="M -30 -70 L -28 -104 L -24 -70 Z" transform={`rotate(${a} -30 -68)`} />
+    ))}
+    <g transform={`rotate(${-48 * wing} 0 -44)`}>
+      <path d="M -10 -46 C 10 -70 50 -78 74 -66 C 52 -58 30 -46 8 -38 Z" />
+    </g>
+    <path d="M -2 -16 L -6 0 M 10 -16 L 8 0" stroke="#03050c" strokeWidth={4} />
+  </g>
+);
+
+/** Short 6: a dry branch on the plain; with the verse a hoopoe comes from far away and lands on it. Before the answer
+ * nothing is drawn (it would give it away); nobody else is ever drawn. */
+const HudhudPicture: Drawn = ({ t, show, since, horizon }) => {
+  const place = Math.max(show("listen"), show("verify"), ...MEANING.map((scene) => show(scene)), 0.5 * show("close"));
+  const come = show("listen") > 0 && show("meaning") === 0 ? after(t, since("listen") + 0.5, 6) : 1;
+  const bx = 250 + (740 - 250) * come;
+  const by = horizon - 420 - 260 * Math.sin(Math.PI * come) * (1 - come) + 140 * come;
+  const scale = 0.5 + 0.9 * come;
+  const wing = come < 1 ? 0.5 + 0.5 * Math.sin(t * 14) : 0.08 * Math.max(0, Math.sin(t * 2));
+  return (
+    <g>
+      <Ground horizon={horizon} />
+      <g opacity={place}>
+        <path d={`M 860 ${horizon + 10} C 850 ${horizon - 120} 820 ${horizon - 210} 760 ${horizon - 270} M 812 ${horizon - 190} C 860 ${horizon - 240} 900 ${horizon - 250} 930 ${horizon - 300} M 790 ${horizon - 236} C 720 ${horizon - 260} 690 ${horizon - 250} 650 ${horizon - 290}`}
+              fill="none" stroke="#1a1410" strokeWidth={14} strokeLinecap="round" />
+        <g transform={`translate(${bx} ${by}) scale(${scale})`}><Hoopoe wing={wing} /></g>
+      </g>
+    </g>
+  );
+};
+
 const IDS = Object.keys(QUIZ) as Id[];
-export const QUIZ_PICTURES: Record<string, Drawn> = { sayyara: SayyaraPicture, khatima: KhatimaPicture, qalaha: QalahaPicture };
+export const QUIZ_PICTURES: Record<string, Drawn> = {
+  sayyara: SayyaraPicture, khatima: KhatimaPicture, qalaha: QalahaPicture, dabba: DabbaPicture, sabr: SabrPicture, hudhud: HudhudPicture,
+};
 export const QUIZ_OVERLAYS: Record<string, Drawn> = Object.fromEntries(IDS.map((id) => [id, makeOverlay(id)]));
 /** The question and the lines of the voice under the words of the question (to 600); the countdown, the choices and the
  * speakers in the middle of the frame; the translation and the references under them. */
