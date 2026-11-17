@@ -157,3 +157,143 @@ quand il est récité)
 - **Les récitations** : la coupe de 12:19 à l'arrêt après « غُلَـٰمٌ », et les temps des mots pour mettre le mot en or.
 - **La voix** : trois requêtes, une par short (le palier gratuit en a dix par jour).
 - **Le dessin** : seulement pour le short 1 (le puits, le seau, la caravane, une petite voiture dans le choix).
+
+# Shorts 4 à 6 (proposés le 2026-11-17)
+
+**Demande du propriétaire (2026-11-17)** : « prépare 3 autres quiz sans voix, et demain matin tu envoies les 6 voix ».
+Proposés par la session le même jour, **à valider** : rien n'est dit par la voix avant son « je valide ». Un short par
+format, comme le pilote ; mêmes règles (skill `write-hook`, « A short of the quiz ») ; sens vérifiés le 2026-11-17 dans
+al-Muyassar, as-Sa'di et Ibn Kathir (quran.ai) ; aucun des trois ne porte un statut de fiqh (al-Qurtubi pas nécessaire).
+Récitation de Tawfiq As-Sayegh coupée et entendue en entier par Whisper. Durées estimées comme plus haut.
+
+| | Short | Format | Question | Verset | Récitation | Durée estimée |
+| --- | --- | --- | --- | --- | --- | --- |
+| 4 | `dabba` | A · يعني إيه؟ | « دَآبَّةُ ٱلْأَرْضِ » في سورة سبأ يعني إيه؟ | 34:14 jusqu'à « مِنسَأَتَهُۥ » | 0:14 | ≈ 0:45 |
+| 5 | `sabr` | B · كمّلها بإيه؟ | « فَصَبْرٌ جَمِيلٌ … » : قالها سيدنا يعقوب مرتين… المرة التانية كمّلها بإيه؟ | 12:83 | 0:19 | ≈ 0:48 |
+| 6 | `hudhud` | C · مين قالها؟ | « أَحَطتُ بِمَا لَمْ تُحِطْ بِهِۦ » مين قالها… ولمين؟ | 27:22 | 0:15 | ≈ 0:44 |
+
+**Le piège de chacun** : 4, la « دابة الأرض » célèbre est celle de la fin des temps (27:82) ; ici, c'est la termite qui
+mange la canne de Soulayman. 5, la même phrase est deux fois dans la sourate (12:18 et 12:83) : qui connaît la première
+fin choisit la mauvaise ; la seconde fois, le père qui a perdu un fils de plus demande… les trois. 6, on attend le grand
+qui parle au petit : c'est la huppe qui le dit au roi prophète ; et al-Khaḍir dit à Moussa une phrase voisine (18:68).
+
+**Nouveau dans le montage** : un mauvais choix qui est un vrai sens ailleurs, ou une vraie parole, n'est pas barré à la
+réponse : il pâlit et sa référence s'écrit dessous (« في سورة النمل · 82 », « المرة الأولى · 12:18 »). Seul un choix
+sans référence est barré. Une phrase du Coran n'est plus barrée d'un trait.
+
+## Short 4 · `dabba` · «دابة الأرض» في سورة سبأ؟ · "The beast of the earth" in Surat Saba'? (titre proposé)
+
+Environ **0:45** · 0:14 de récitation (34:14, de « فَلَمَّا » à « تَأْكُلُ مِنسَأَتَهُۥ ۖ », un arrêt marqué, comme 12:19 au
+short 1). **Le verset entier dure 33,9 s** et mènerait le short à environ 1:05 : sa suite (« فَلَمَّا خَرَّ تَبَيَّنَتِ ٱلْجِنُّ… »)
+est dite par la voix, d'après al-Muyassar. À son choix.
+
+**L'image** : un clip du soir ; dessinés dessus, les arcs d'une grande salle en silhouette (les « محاريب » que les jinns
+bâtissaient, 34:13) et une canne de bois debout. Au verset, de petits trous la creusent ; au sens, elle se brise et
+tombe. Personne n'est dessiné : ni Soulayman, ni les jinns (l'invisible n'est jamais figuré).
+
+**Muet · `ask`** (première image ; 5 s de compteur ; aucune voix)
+- Écrit : « دَآبَّةُ ٱلْأَرْضِ » (34:14, en or, du registre) · « في سورة سبأ يعني إيه؟ »  
+  *"The beast of the earth" in Surat Saba': what does it mean?*
+- Les trois choix : **دابة آخر الزمان** · **حشرة بتاكل الخشب** · **دابة للركوب**  
+  *the beast of the end of time · an insect that eats wood · a mount to ride*  
+  Les deux mauvais sont de vrais sens : la bête qui sortira à la fin des temps, signe de l'Heure (27:82 ; al-Muyassar et
+  as-Sa'di sur 27:82) ; la monture, le sens de tous les jours.
+
+**Muet · `answer`** (le choc ; « حشرة بتاكل الخشب » en or ; « دابة آخر الزمان » pâlit, « في سورة النمل · 82 » dessous ;
+« دابة للركوب » barré)
+
+**verset 34:14, récité jusqu'à « مِنسَأَتَهُۥ »** (image : la canne se creuse ; « دَآبَّةُ ٱلْأَرْضِ » en or quand il est récité ;
+elle tombe à la deuxième réplique)
+
+**narration · `meaning`** (la référence écrite sous chaque réplique)
+- الكلمة دي هنا… معناها الأرَضة: حشرة صغيرة بتاكل الخشب.  
+  *Here this word… means the termite: a small insect that eats wood.* · al-Muyassar (« الأرَضَةُ تأكل عصاه ») et Ibn Kathir (« دابة الأرض، وهي الأرضة ») sur 34:14
+- سيدنا سليمان مات وهو متّكي على عصايته… والجن فضلوا شغالين، فاكرينه عايش… لحد ما الحشرة أكلت العصاية ووقع.  
+  *Solomon died leaning on his staff… the jinn kept working, thinking he was alive… until the insect ate the staff and he fell.* · al-Muyassar sur 34:14 (« عصاه التي كان متكئًا عليها، فوقع سليمان على الأرض… ظنًا منهم أنه من الأحياء »)
+- والجن اللي ناس كتير فاكرينهم بيعرفوا الغيب… ما عرفوش إنه مات قدامهم.  
+  *And the jinn, whom many think know the unseen… didn't know he had died before their eyes.* · al-Muyassar sur 34:14 (« وفي الآية إبطال لاعتقاد بعض الناس أن الجن يعلمون الغيب ») ; as-Sa'di (« فصاروا إذا مروا به وهو متكئ عليها، ظنوه حيا »)
+
+**narration · `close`**
+- وإنت… سمعت قبل كده حد بيقول إن الجن بيعرفوا الغيب؟  
+  *And you… have you ever heard someone say the jinn know the unseen?* · la question ouverte
+- والسؤال الجاي: جملة قالها سيدنا يعقوب مرتين… تفتكر كمّلها بإيه؟ تابعنا.  
+  *Next question: a sentence Jacob said twice… how do you think he went on? Follow us.*
+
+Rien n'est dit de la durée (« un an ») : Ibn Kathir la rapporte de récits qu'il dit venus des gens du Livre.
+
+## Short 5 · `sabr` · «فصبر جميل»… المرة التانية؟ · "Beautiful patience"… and the second time? (titre proposé)
+
+Environ **0:48** · 0:19 de récitation (12:83, entier).
+
+**L'image** : un clip filmé, un ciel sombre où une lumière monte doucement à l'horizon à partir de la réponse ; rien de
+dessiné. Personne : ni Yaqoub, ni ses fils.
+
+**Muet · `ask`** (première image ; 5 s de compteur ; aucune voix)
+- Écrit : « فَصَبْرٌ جَمِيلٌ … » (12:83, du registre, la suite en blanc) · « قالها سيدنا يعقوب مرتين… المرة التانية كمّلها بإيه؟ »  
+  *Jacob said it twice… the second time, how did he go on?*
+- Les trois choix, trois vraies paroles de Yaqoub (du registre) : **وَٱللَّهُ ٱلْمُسْتَعَانُ عَلَىٰ مَا تَصِفُونَ** (12:18, la
+  première fois) · **عَسَى ٱللَّهُ أَن يَأْتِيَنِى بِهِمْ جَمِيعًا** (12:83) · **يَـٰٓأَسَفَىٰ عَلَىٰ يُوسُفَ** (12:84, juste après)  
+  Un mauvais choix n'est jamais écrit dans le verset : le blanc ne se remplit qu'avec la bonne suite.
+
+**Muet · `answer`** (le choc ; le blanc se remplit de « عَسَى ٱللَّهُ أَن يَأْتِيَنِى بِهِمْ جَمِيعًا » en or ; les deux autres
+pâlissent, leur référence dessous : « المرة الأولى · يوسف 18 », « بعدها · يوسف 84 »)
+
+**verset 12:83, récité** (image : le verset ; la suite en or quand elle est récitée)
+
+**narration · `meaning`** (la référence écrite sous chaque réplique)
+- أول مرة قالها لما ضاع يوسف… والتانية لما ضاع أخوه، والكبير فضل في مصر.  
+  *The first time he said it when Yusuf was lost… the second when his brother was lost, and the eldest stayed in Egypt.* · al-Muyassar sur 12:18 et 12:83 (« يوسف وشقيقه وأخوهم الكبير المتخلف من أجل أخيه »)
+- الوجع زاد… بس رجاه في ربنا كبر: طلب التلاتة.  
+  *The pain grew… but his hope in God grew bigger: he asked for all three.* · al-Muyassar (« أبنائي الثلاثة ») et as-Sa'di (« ثم لجأ إلى حصول الفرج لما رأى أن الأمر اشتد ») sur 12:83
+- والصبر الجميل… مش إنك ما تزعلش… ده إنك ما تشتكيش غير لربنا.  
+  *And beautiful patience… isn't not being sad… it's complaining to no one but God.* · as-Sa'di sur 12:18 (« الشكوى إلى الخالق لا تنافي الصبر الجميل ») et 12:83 (« ولا شكوى للخلق ») ; la tristesse, 12:84 (« وَٱبْيَضَّتْ عَيْنَاهُ مِنَ ٱلْحُزْنِ »), écrite en référence
+
+**narration · `close`**
+- وإنت… إيه اللي بيخلّيك تستنى الفرج لما الدنيا تضيق؟  
+  *And you… what keeps you waiting for relief when life gets tight?* · la question ouverte
+- والسؤال الجاي: جملة قالها حد لملك… تعرف مين؟ تابعنا.  
+  *Next question: a sentence someone said to a king… do you know who? Follow us.*
+
+Les noms des frères (Ibn Kathir, as-Sa'di) ne sont pas dits : le Coran ne les donne pas.
+
+## Short 6 · `hudhud` · مين قال الجملة دي… ولمين؟ · Who said this… and to whom? (titre proposé)
+
+Environ **0:44** · 0:15 de récitation (27:22, entier).
+
+**L'image** : un ciel ouvert sur une plaine (clip filmé) ; au verset, la silhouette d'une huppe (sa crête) arrive de
+loin et se pose sur une branche. Personne n'est dessiné : ni Soulayman, ni Moussa, ni al-Khaḍir.
+
+**Muet · `ask`** (première image ; 5 s de compteur ; aucune voix)
+- Écrit : « أَحَطتُ بِمَا لَمْ تُحِطْ بِهِۦ » (27:22, du registre) · « مين قالها… ولمين؟ »  
+  *Who said it… and to whom?*
+- Les trois choix : **سيدنا سليمان للهدهد** · **الخضر لسيدنا موسى** · **الهدهد لسيدنا سليمان**  
+  *Solomon to the hoopoe · al-Khidr to Moses · the hoopoe to Solomon*  
+  Soulayman a parlé à la huppe (27:20-21, 27:27-28) ; al-Khaḍir a dit à Moussa « وَكَيْفَ تَصْبِرُ عَلَىٰ مَا لَمْ تُحِطْ بِهِۦ
+  خُبْرًا » (18:68), une phrase voisine : le piège est honnête. La phrase elle-même n'est que dans 27:22.
+
+**Muet · `answer`** (le choc ; « الهدهد لسيدنا سليمان » en or ; « الخضر لسيدنا موسى » pâlit, « قال قريب منها · الكهف 68 »
+dessous ; « سيدنا سليمان للهدهد » barré)
+
+**verset 27:22, récité** (image : la huppe se pose ; « أَحَطتُ بِمَا لَمْ تُحِطْ بِهِۦ » en or quand il est récité)
+
+**narration · `meaning`** (la référence écrite sous chaque réplique)
+- الهدهد… طائر صغير… عرف خبر ما وصلش لسيدنا سليمان ولا لجنوده.  
+  *The hoopoe… a small bird… knew news that hadn't reached Solomon or his armies.* · Ibn Kathir (« اطلعت على ما لم تطلع عليه أنت ولا جنودك ») et al-Muyassar sur 27:22
+- وسيدنا سليمان ما استصغرهوش… وما صدّقهوش على طول: قال هنتأكد الأول.  
+  *And Solomon didn't belittle him… nor believe him at once: he said, we'll check first.* · al-Muyassar sur 27:27 (« سنتأمل فيما جئتنا به من الخبر أصدقت… ») et as-Sa'di (« مثبتا لكمال عقله ورزانته ») ; « ما استصغرهوش », lecture de la session (il l'écoute, puis l'envoie avec sa lettre, 27:28)
+- العلم ممكن ييجي من أصغر واحد… بس الخبر يتأكد منه قبل ما يتصدق.  
+  *Knowledge can come from the smallest one… but news is checked before it's believed.* · raisonnement de la session, sur as-Sa'di (27:22 : « عندي العلم علم ما أحطت به على علمك الواسع وعلى درجتك فيه » ; 27:27)
+
+**narration · `close`**
+- وإنت… مين أصغر منك علّمك حاجة ما كنتش تعرفها؟  
+  *And you… who younger than you taught you something you didn't know?* · la question ouverte
+- تابعنا عشان السؤال الجاي.  
+  *Follow us for the next question.*
+
+## Ce qui est à faire pour 4 à 6 (après la validation)
+
+- **Les sources** : 34:14, 12:83, 12:18, 12:84, 27:22 (versets ; 18:68 est déjà au registre) ; treize passages de tafsir
+  (al-Muyassar 34:14, 27:82, 12:83, 27:22, 27:27 ; as-Sa'di 34:14, 12:83, 12:18, 27:22, 27:27 ; Ibn Kathir 34:14, 12:83,
+  27:22), proposés au registre le 2026-11-17.
+- **Le montage** : la référence sous un mauvais choix (`note`), la canne et les arcs (4), la lumière qui monte (5), la huppe (6).
+- **La voix** : trois requêtes, avec les trois du pilote : six le 2026-11-18 sur les dix du palier gratuit.
