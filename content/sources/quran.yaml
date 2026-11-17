@@ -3016,3 +3016,105 @@
   notes: "« إنك أنت السميع العليم » : « معاك ٥ ثواني », short 2 (khatima), un des trois choix écrits (non récité)"
   text_ar: وَإِذْ يَرْفَعُ إِبْرَٰهِـۧمُ ٱلْقَوَاعِدَ مِنَ ٱلْبَيْتِ وَإِسْمَـٰعِيلُ رَبَّنَا تَقَبَّلْ مِنَّآ ۖ إِنَّكَ أَنتَ ٱلسَّمِيعُ ٱلْعَلِيمُ
   text_en: And [mention] when Abraham was raising the foundations of the House and [with him] Ishmael, [saying], "Our Lord, accept [this] from us. Indeed, You are the Hearing, the Knowing.
+
+- id: quran.34.14
+  type: ayah
+  ref: {surah: 34, ayah: 14}
+  url: https://quran.com/34/14
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=34:14
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=34:14
+    translator: Saheeh International
+    surah_ar: سبإ
+    surah_en: Saba
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« ما دلهم على موته إلا دابة الأرض… » : « معاك 5 ثواني », short 4 (dabba) ; le mot de la question, récité en entier"
+
+  text_ar: فَلَمَّا قَضَيْنَا عَلَيْهِ ٱلْمَوْتَ مَا دَلَّهُمْ عَلَىٰ مَوْتِهِۦٓ إِلَّا دَآبَّةُ ٱلْأَرْضِ تَأْكُلُ مِنسَأَتَهُۥ ۖ فَلَمَّا خَرَّ تَبَيَّنَتِ ٱلْجِنُّ أَن لَّوْ كَانُوا۟ يَعْلَمُونَ ٱلْغَيْبَ مَا لَبِثُوا۟ فِى ٱلْعَذَابِ ٱلْمُهِينِ
+  text_en: And when We decreed for him [i.e., Solomon] death, nothing indicated to them [i.e., the jinn] his death except a creature of the earth eating his staff. But when he fell, it became clear to the jinn that if they had known the unseen, they would not have remained in humiliating punishment.
+- id: quran.12.83
+  type: ayah
+  ref: {surah: 12, ayah: 83}
+  url: https://quran.com/12/83
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=12:83
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=12:83
+    translator: Saheeh International
+    surah_ar: يوسف
+    surah_en: Yusuf
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« …فصبر جميل عسى الله أن يأتيني بهم جميعا » : « معاك 5 ثواني », short 5 (sabr) ; la suite à deviner, récité en entier"
+
+  text_ar: قَالَ بَلْ سَوَّلَتْ لَكُمْ أَنفُسُكُمْ أَمْرًا ۖ فَصَبْرٌ جَمِيلٌ ۖ عَسَى ٱللَّهُ أَن يَأْتِيَنِى بِهِمْ جَمِيعًا ۚ إِنَّهُۥ هُوَ ٱلْعَلِيمُ ٱلْحَكِيمُ
+  text_en: '[Jacob] said, "Rather, your souls have enticed you to something, so patience is most fitting. Perhaps Allāh will bring them to me all together. Indeed, it is He who is the Knowing, the Wise."'
+- id: quran.12.18
+  type: ayah
+  ref: {surah: 12, ayah: 18}
+  url: https://quran.com/12/18
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=12:18
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=12:18
+    translator: Saheeh International
+    surah_ar: يوسف
+    surah_en: Yusuf
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« …فصبر جميل والله المستعان على ما تصفون », la première fois : « معاك 5 ثواني », short 5 (sabr) ; un choix écrit"
+
+  text_ar: وَجَآءُو عَلَىٰ قَمِيصِهِۦ بِدَمٍ كَذِبٍ ۚ قَالَ بَلْ سَوَّلَتْ لَكُمْ أَنفُسُكُمْ أَمْرًا ۖ فَصَبْرٌ جَمِيلٌ ۖ وَٱللَّهُ ٱلْمُسْتَعَانُ عَلَىٰ مَا تَصِفُونَ
+  text_en: And they brought upon his shirt false blood. [Jacob] said, "Rather, your souls have enticed you to something, so patience is most fitting. And Allāh is the one sought for help against that which you describe."
+- id: quran.12.84
+  type: ayah
+  ref: {surah: 12, ayah: 84}
+  url: https://quran.com/12/84
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=12:84
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=12:84
+    translator: Saheeh International
+    surah_ar: يوسف
+    surah_en: Yusuf
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« يا أسفى على يوسف », dit juste après : « معاك 5 ثواني », short 5 (sabr) ; un choix écrit"
+
+  text_ar: وَتَوَلَّىٰ عَنْهُمْ وَقَالَ يَـٰٓأَسَفَىٰ عَلَىٰ يُوسُفَ وَٱبْيَضَّتْ عَيْنَاهُ مِنَ ٱلْحُزْنِ فَهُوَ كَظِيمٌ
+  text_en: And he turned away from them and said, "Oh, my sorrow over Joseph," and his eyes became white from grief, for he was [of that] a suppressor.
+- id: quran.27.22
+  type: ayah
+  ref: {surah: 27, ayah: 22}
+  url: https://quran.com/27/22
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=27:22
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=27:22
+    translator: Saheeh International
+    surah_ar: النمل
+    surah_en: An-Naml
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« أحطت بما لم تحط به », dit par la huppe à Soulayman : « معاك 5 ثواني », short 6 (hudhud) ; la phrase de la question, récité en entier"
+  text_ar: فَمَكَثَ غَيْرَ بَعِيدٍ فَقَالَ أَحَطتُ بِمَا لَمْ تُحِطْ بِهِۦ وَجِئْتُكَ مِن سَبَإٍۭ بِنَبَإٍ يَقِينٍ
+  text_en: But he [i.e., the hoopoe] stayed not long and said, "I have encompassed [in knowledge] that which you have not encompassed, and I have come to you from Sheba with certain news.
+
+- id: quran.27.27
+  type: ayah
+  ref: {surah: 27, ayah: 27}
+  url: https://quran.com/27/27
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=27:27
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=27:27
+    translator: Saheeh International
+    surah_ar: النمل
+    surah_en: An-Naml
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« سننظر أصدقت أم كنت من الكاذبين » : Soulayman vérifie la nouvelle de la huppe (« معاك 5 ثواني », short 6, hudhud) ; récité après 27:22"
+  text_ar: ۞ قَالَ سَنَنظُرُ أَصَدَقْتَ أَمْ كُنتَ مِنَ ٱلْكَـٰذِبِينَ
+  text_en: '[Solomon] said, "We will see whether you were truthful or were of the liars.'

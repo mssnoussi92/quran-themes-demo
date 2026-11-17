@@ -38,7 +38,8 @@ def short(sources: dict, spec: dict) -> dict:
     quiz = spec["quiz"]
     choices = []
     for c in quiz["choices"]:
-        made = {"ar": c.get("ar"), "en": c["en"], "right": bool(c.get("right")), "icon": c.get("icon")}
+        made = {"ar": c.get("ar"), "en": c["en"], "right": bool(c.get("right")), "icon": c.get("icon"),
+                "note": c.get("note")}        # a wrong choice true elsewhere: its reference, written under it at the answer
         if "verse" in c:
             made["quran"] = piece(sources, c)
         choices.append(made)

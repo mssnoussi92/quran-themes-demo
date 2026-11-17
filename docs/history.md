@@ -564,3 +564,11 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 - **Au-delà du verset** (sa demande : « ne te limite pas au Coran, il faut voir le tafsir et le fiqh si besoin ») :
   al-Qurtubi entre dans la politique pour le fiqh (son choix) ; un statut n'est une réponse de quiz que sans divergence ;
   écrit dans le skill `write-hook`.
+- **Trois autres quiz** (sa demande : « prépare 3 autres quiz sans voix, et demain matin tu envoies les 6 voix ») : `dabba`
+  (34:14), `sabr` (12:83), `hudhud` (27:22), un par format ; scripts validés par lui (questions à choix) ; dix-neuf sources
+  proposées, quatre récitations coupées (34:14 jusqu'à « منسأته », 12:83, 27:22, 27:27) ; textes de voix 89 à 91 ; le
+  montage gagne la référence sous un mauvais choix vrai ailleurs (`note`) et `at_once` (la question entière sur la première
+  image : un « … » la partageait en deux temps) ; dessins : la canne et les arcs, la lumière qui monte, la huppe. En réserve
+  (son choix), placés à la revue après les chiffres du premier quiz.
+  Brouillons muets envoyés (la huppe reposée sur sa branche après un premier rendu) ; **validés par lui** : rendu, clips
+  (8451, 2119, 16139), 27:27 récité au short 6, les trois accroches. Voix des six quiz le 2026-11-18.

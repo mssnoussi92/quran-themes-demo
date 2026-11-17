@@ -390,6 +390,13 @@ def main() -> None:
                     made["seconds"] = made["lines"][-1]["end"] = float(seg["hold"])
                 if silent:
                     made["silent"] = True
+                    if seg.get("at_once"):
+                        # A question written whole on the first frame (« معاك 5 ثواني »): every phrase of it is there
+                        # before the segment starts (the drawing lets a phrase in when its start is reached), not one
+                        # after the other at the pace of a voice.
+                        for line in made["lines"]:
+                            for phrase in line["phrases"]:
+                                phrase["start"] = -1.0
                 if seg.get("sources"):                         # what its lines rest on, written while they are said
                     if by_source is not None and not silent:
                         sys.exit("error: `sources` on a narration needs the registry (a file with no `verses`)")

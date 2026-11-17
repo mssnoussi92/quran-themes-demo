@@ -1,13 +1,14 @@
 # La série « معاك 5 ثواني » (demande du propriétaire, 2026-11-17 : « un nouveau type de short, comme un jeu pour attirer
 # les commentaires »). Une question écrite sur la première image, trois choix, un compteur de cinq secondes, la réponse ;
 # puis le récitateur dit le verset, et la voix en donne le sens d'après un tafsir nommé. Trois formats, un short chacun
-# (ses choix, 2026-11-17) : le sens d'un mot (sayyara), la fin d'un verset (khatima), qui l'a dit (qalaha).
+# (ses choix, 2026-11-17) : le sens d'un mot (sayyara), la fin d'un verset (khatima), qui l'a dit (qalaha) ; puis trois
+# autres, un par format (sa demande du même jour : « prépare 3 autres quiz ») : dabba, sabr, hudhud.
 # Fiche : docs/themes.md ; script : docs/scripts/quiz.md (validé le 2026-11-17). Le montage : video/src/trial/Quiz.tsx ;
 # les morceaux de versets écrits à l'écran : tools/trial/quiz.py (quizData.ts, depuis le registre).
 id: quiz
 files: quiz                      # début du nom des vidéos livrées : quiz-short-<n>-<id>.mp4
 title: { ar: "معاك 5 ثواني", en: "You Have 5 Seconds" }       # choisi par le propriétaire le 2026-11-17
-shorts: [sayyara, khatima, qalaha]
+shorts: [sayyara, khatima, qalaha, dabba, sabr, hudhud]
 handle: "@quran_words_daily"
 publish:
   out: docs/retention/publication-quiz.md
