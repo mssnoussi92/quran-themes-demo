@@ -54,6 +54,7 @@ Le propriétaire est développeur, il échange en français. Réponds en frança
 - **Les mots qu'il a refusés** sont dans `content/wording.yaml` (et leur histoire dans le skill `write-hook`) : ajoute chaque nouveau refus aux deux.
 - **Une chose à ajouter va une fois, au bon endroit** : quand une demande peut se lire « une fois » ou « partout », c'est une fois ; dis où et pourquoi.
 - **Pas de pull request** sauf demande. Commits sur la branche de la session, sans nom de modèle dans le message.
+- **Une PR, la session la suit et la fusionne elle-même** (choix du propriétaire, 2026-11-17 : « que toutes les sessions suivent la merge et la mergent automatiquement quand les checks passent » ; même règle dans quran-reels) : elle attend la fin de ses checks (`validate.yml` ; `pull_request_read`, `get_check_runs`), jamais avant ; verts et PR fusionnable : `merge_pull_request` (méthode `merge`) ; `main` a bougé : fusionner `main` dans la branche, repousser, attendre de nouveau (jamais de force push) ; rouges : corriger, jamais fusionner ni sauter un test. **Sauf une PR qui porte une décision de lui pas encore donnée** (son choix, même jour) : un script, une vidéo, un texte, une accroche ou une source pas encore validés, un changement de `docs/retention/calendar.md` qu'il n'a pas demandé : elle attend son « je valide » (question à choix qui nomme la PR), puis la fusionne. Après la fusion : ce que la PR annonçait (`page-files`, la page du propriétaire), dit en une ligne avec le lien. Seulement ses propres PR ; un commit poussé après la fusion part dans une nouvelle PR.
 
 ## Où sont les choses
 
@@ -125,6 +126,7 @@ cd video && npm run typecheck
 - `find-hadith-recording` : la lecture d'un hadith par une vraie voix, sur archive.org.
 - `release-render` : rendre, contrôler chaque vidéo sur ses planches, poser l'ambiance, livrer, inscrire le « je valide ».
 - `record-stats` : les captures de statistiques qu'il envoie (TikTok surtout), enregistrées sur la page « Statistiques » de quran-reels (la marche à suivre est le skill du même nom de quran-reels).
+- `weekly-review` : **la revue** (sa demande, 2026-11-17 : quand il dit « on commence la revue », « on fait le point » ou autre chose de ce genre, toute session sait quoi faire) : maintenant avec lui, ou dimanche par la revue automatique de 09:23 ; une seule revue pour toute la Page, la marche à suivre est le skill du même nom de quran-reels.
 
 ## Sous-agents (décision du propriétaire, 2026-11-11)
 
