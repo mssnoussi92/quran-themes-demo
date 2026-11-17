@@ -977,6 +977,15 @@ lendemain. **Les clips** : les brouillons tournent sur la nuit générée ; la c
 de la session (le workflow `film` l'a) ; proposés au propriétaire, tous déjà approuvés pour d'autres shorts : 26085
 (une plaine au soleil bas) pour `sayyara`, 190332 (des nuages au couchant sur une plaine) pour `qalaha`, la nuit
 générée pour `khatima`.
+
+**Les clips choisis par lui (2026-11-17)** : 26085 pour `sayyara`, la nuit générée pour `khatima`, 190332 pour `qalaha`.
+**Les chiffres** : « معاك 5 ثواني », compteur 5…1, références en 123 (sa règle du même jour, `CLAUDE.md`).
+
+**Au-delà du verset** (sa demande, 2026-11-17 : « ne te limite pas au Coran, il faut voir le tafsir et le fiqh si besoin
+pour plus de contexte ») : avant d'écrire une question, lire les tafsirs du verset et de ses voisins, et le fiqh quand un
+statut est en jeu. **Ses choix** : **al-Qurtubi**, quatrième tafsir de la politique, pour le fiqh (le tafsir des statuts,
+sur quran.com, id 90) ; un statut n'est la réponse d'un quiz que **sans divergence** dans nos sources, sinon il est le
+contexte dit après la réponse. Écrit dans le skill `write-hook` (« A short of the quiz »), avec les règles du format.
 =======
 
 ## Faits (ancien circuit)

@@ -546,3 +546,21 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   après ses checks, comme il l'avait dit. **Au calendrier** : film le lundi 28 décembre, shorts du 29 au 31 ; les quatre
   lignes vérifiées avec le lecteur du calendrier de quran-reels (chaque plateforme reliée à sa vidéo, aucun problème).
 
+## « معاك 5 ثواني », le quiz ; les chiffres 123 ; al-Qurtubi pour le fiqh (2026-11-17)
+
+- **Sa demande** : un nouveau type de short, un jeu pour faire commenter (un QCM sur le sens d'un mot avec un compteur, ou
+  une ayah à compléter), « ton avis d'abord ». Avis de la session : oui, il vise ce qui manque (Instagram : 1 commentaire
+  pour 29 publications) et le départ à 4-8 s ; contredit : pas de faux mot dans un verset (la fin d'un verset, de vrais
+  noms, le récitateur donne la réponse), aucune mauvaise réponse inventée, 5 s et non 10, pas de « اكتب إجابتك » (Meta
+  le diffuse moins), un pilote et pas une série tant que rien n'est mesuré. **Ses choix** : les trois formats A, B, C, une
+  question par short, une phrase de voix, une vraie question ouverte, le nom « معاك 5 ثواني », environ 40 s.
+- **Script validé** (shorts 1 à 3), le fils d'Adam nommé هابيل à sa demande (al-Muyassar sur 5:28). Fait le même jour :
+  quatorze sources proposées, quatre récitations coupées, `Quiz.tsx`, `tools/trial/quiz.py`, le tic `count`, brouillons
+  (0:42, 0:49, 1:22), le short 1 envoyé sans voix ; clips choisis par lui. La voix attend le lendemain (palier gratuit
+  presque épuisé par deux autres sessions). PR #44 fusionnée avec la règle des chiffres.
+- **Les chiffres** (sa règle, « à mémoriser pour toutes les sessions ») : 123, jamais ١٢٣, partout sauf le numéro qui ferme
+  une ayah dans le texte coranique (son choix) ; dans `CLAUDE.md` des deux dépôts, appliquée aux références, textes à
+  coller, badges, dates et chapitres ; quran-reels : la ligne de série du dimanche (PR #76).
+- **Au-delà du verset** (sa demande : « ne te limite pas au Coran, il faut voir le tafsir et le fiqh si besoin ») :
+  al-Qurtubi entre dans la politique pour le fiqh (son choix) ; un statut n'est une réponse de quiz que sans divergence ;
+  écrit dans le skill `write-hook`.
