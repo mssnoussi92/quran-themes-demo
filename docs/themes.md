@@ -918,6 +918,67 @@ secondes), film vertical et jumeau TikTok (run 44079551978, release brouillon `q
 film », « le vertical », « le TikTok » (questions à choix). PR #42 fusionnée. **Au calendrier** (son choix) : le film le
 lundi 28 décembre (YouTube 16:9, Facebook vertical, TikTok signé), les shorts du mardi 29 au jeudi 31.
 
+## Série proposée : le quiz, « معاك 5 ثواني » (2026-11-17)
+
+**Demande du propriétaire (2026-11-17)** : un nouveau type de short, « comme un jeu pour attirer les commentaires » :
+une question, par exemple le tafsir d'un mot en QCM avec un compteur animé, ou une ayah à compléter ; « donne-moi ton
+avis d'abord, on fait un brainstorming et on choisit les meilleurs candidats ».
+
+**L'avis de la session** : oui. Le quiz vise ce que la Page a le moins : les commentaires (au relevé du 2026-11-17,
+Instagram 1 pour 29 publications et 3 427 vues, YouTube 26 pour 17 812 vues ; Facebook ne les relève pas). Il vise aussi
+son goulot, le départ à 4-8 s sur Facebook et Instagram (`docs/retention.md`) : la question est sur la première image,
+et on reste pour la réponse. Et il coûte peu : pas d'histoire à dessiner, une requête de voix au plus par short.
+
+**Ce que la session a contredit** :
+- **Pas de verset à compléter avec de faux mots** : un faux mot dans un verset est un texte coranique inventé à l'écran,
+  et un verset connu est trop facile pour un public qui sait Juz' 'Amma par cœur. À la place, **la fin d'un verset**,
+  avec de vrais noms du Coran comme choix, et **le récitateur qui donne la réponse**.
+- **Aucune mauvaise réponse inventée** : chaque mauvais choix est un vrai sens (celui d'aujourd'hui, ou celui d'un autre
+  mot) ; le meilleur quiz est celui où la réponse évidente est fausse.
+- **Un compteur de 5 s, pas 10** ; la question sur la première image.
+- **Pas de « اكتب إجابتك في الكومنتات »** : Meta classe les publications qui demandent un commentaire précis dans
+  l'« engagement bait » et les diffuse moins (https://transparency.meta.com/features/approach-to-ranking/content-distribution-guidelines/engagement-bait/) ;
+  sa force sur les reels n'est pas connue. Pas non plus de « ٩٠٪ بيغلطوا فيها » (aucun chiffre sans source).
+- **Le stock va jusqu'au 1er janvier et rien n'est mesuré** : un pilote, une série seulement après sa mesure. La grille
+  est pleine du lundi au samedi ; le créneau de midi de quran-reels (Word of the day, en pause depuis le 2026-11-15) est
+  libre, et un quiz de mot est ce Word of the day en vidéo. La place se décidera après.
+
+**Les candidats** (exemples vérifiés le 2026-11-17 dans al-Muyassar, as-Sa'di et Ibn Kathir, quran.ai) :
+
+| Format | Exemples | Pour | Contre |
+| --- | --- | --- | --- |
+| A · « يعني إيه؟ », le sens d'un mot | سَيَّارَةٌ 12:19 (« جماعة من المسافرين ») ; وَأَبًّا 80:31 (le fourrage, « كلأ ») ; مِنسَأَتَهُۥ 34:14 (« عصاه ») ; يَظُنُّونَ 2:46 (« يوقنون ») ; بَعْدَ أُمَّةٍ 12:45 (« بعد مدة ») ; دُسُرٍ 54:13 (« مسامير ») | le nom de la Page, un objet à dessiner, le Muyassar déjà dans quran-reels | voisin de « كلمة من القرآن » |
+| B · « تخلص بإيه؟ », la fin d'un verset | 5:118 (العزيز الحكيم là où on attend الغفور الرحيم ; as-Sa'di : le pardon « عن تمام عزة وقدرة، لا… عن عجز ») ; 5:38 | l'idée du propriétaire sans texte inventé ; la récitation donne la réponse | peu de versets ont un piège aussi net |
+| C · « مين قالها؟ », qui l'a dit | « إني أخاف الله رب العالمين » : le Diable (59:16) et un fils d'Adam (5:28) ; 27:22, la huppe ; 12:28, le mari (pas Dieu) | la surprise la plus forte | rien de dessiné ; 12:28 attire des disputes |
+| D · « آية ولا مش آية؟ » (déconseillé) | un proverbe pris pour un verset | le plus de commentaires | une phrase qui n'est pas du Coran à l'écran, capturable sans sa réponse |
+
+**Décisions du propriétaire (2026-11-17, questions à choix, chaque fois la recommandation)** : **A, B et C, un short
+chacun** ; **une phrase de voix D pour le sens** (question et réponse muettes) ; **pas de demande de commentaire, une
+vraie question ouverte à la fin** ; **une question par short, environ 30 s**.
+
+**Le script pilote** : `docs/scripts/quiz.md` (`sayyara` 12:19, `khatima` 5:118, `qalaha` 5:28 et 59:16), écrit le
+2026-11-17, à valider. Deux écarts à ses choix, dits avec le script : environ **40 s** et non 30 (récitation et réponse
+comprises) ; le short 3 dure **1:19**, ses deux versets faisant 44 s, parce que la réponse honnête à 59:16 est « les
+deux » (la même phrase est dans 5:28). Plus court : la huppe (27:22), environ 0:40. Aucune voix avant sa validation.
+
+**Script validé par le propriétaire le 2026-11-17**, avec le nom « معاك 5 ثواني », la durée d'environ 40 s et
+« الاتنين » au short 3 ; à sa demande, le fils d'Adam est nommé **هابيل** (al-Muyassar le nomme sur 5:28, le verset récité, « وقال هابيلُ
+واعظًا أخاه », et sur 5:27 ; Ibn Kathir rapporte ces noms de beaucoup de prédécesseurs ; le Coran ne les dit pas). Ensuite : sources, coupes, clips à lui montrer, montage du
+quiz (`video/src/trial/Quiz.tsx`), trois requêtes de voix, rendu.
+
+**Fait le 2026-11-17, sans voix** : quatorze sources proposées au registre (versets 12:19, 5:118, 5:28, 59:16, 2:127 ;
+neuf passages de tafsir) ; les quatre récitations coupées et entendues en entier par Whisper (100 % des mots ; 12:19
+jusqu'à « غلام », 11,3 s) ; les fichiers (`content/trial/quiz.yaml`, `sayyara`, `khatima`, `qalaha`), les textes de
+voix 86 à 88 (82 à 85 pris par la série en cours d'une autre session), le tic du compteur (`count` de `tools/trial/sfx.py`), le montage (`video/src/trial/Quiz.tsx`, données
+`tools/trial/quiz.py`) ; brouillons de 0:42, 0:49 et 1:22. Une retouche d'écriture : la question du short 1 s'écrit
+« في سورة يوسف يعني إيه؟ », sans « … », pour être entière sur la première image. **Pas de voix ce jour** : le palier
+gratuit était presque épuisé par deux autres sessions (une requête refusée à refaire de leur côté) ; trois requêtes le
+lendemain. **Les clips** : les brouillons tournent sur la nuit générée ; la clé Pixabay n'est pas dans l'environnement
+de la session (le workflow `film` l'a) ; proposés au propriétaire, tous déjà approuvés pour d'autres shorts : 26085
+(une plaine au soleil bas) pour `sayyara`, 190332 (des nuages au couchant sur une plaine) pour `qalaha`, la nuit
+générée pour `khatima`.
+=======
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

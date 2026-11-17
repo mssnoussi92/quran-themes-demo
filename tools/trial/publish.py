@@ -37,7 +37,6 @@ import yaml
 ROOT = Path(__file__).resolve().parents[2]
 TRIAL = ROOT / "content" / "trial"
 PUBLIC = ROOT / "video" / "public"
-DIGITS = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")
 
 
 def stamp(seconds: float) -> str:
@@ -363,8 +362,9 @@ def main() -> None:
         lines, hadith, verse = quoted(quotes_of(spec["segments"]), sources)
         n, total = sp["part"], len(shorts)
         # A series goes on: its shorts are numbered, never « n of total ».
-        series = (f"{pub['series']['en']} · {n} · {pub['series']['ar']} · {str(n).translate(DIGITS)}" if series_only else
-                  f"{pub['series']['en']} · part {n}/{total} · {pub['series']['ar']} · الجزء {str(n).translate(DIGITS)} من {str(total).translate(DIGITS)}")
+        # Numbers are written 1 2 3, never ١ ٢ ٣ (the owner, 2026-11-17); texts already validated keep what they were validated with.
+        series = (f"{pub['series']['en']} · {n} · {pub['series']['ar']} · {n}" if series_only else
+                  f"{pub['series']['en']} · part {n}/{total} · {pub['series']['ar']} · الجزء {n} من {total}")
         name = f"{files}-short-{n}-{spec['id']}"
         cover = (spec.get("cover") or {}).get("file", f"{name}-cover.jpg")
 

@@ -30,7 +30,7 @@ import script  # noqa: E402  (first_words, first_sentence: the cut of a verse at
 WORK = ROOT / "build" / "trial" / "sources"
 RECITERS = {"alafasy": "Mishari Rashid al-Afasy", "sayegh": "Tawfiq As-Sayegh"}                 # as video/scripts/prepare.ts
 COLLECTIONS = {"bukhari": "Sahih al-Bukhari", "muslim": "Sahih Muslim", "tirmidhi": "Jami' at-Tirmidhi"}
-DIGITS = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")
+DIGITS = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")   # only for the number that closes an ayah inside the Quranic text (۝١٩), as the mushaf
 READING_RATE = 48000
 UNREAD = 12.0          # seconds given to a hadith with no reading yet, in a draft only
 
@@ -101,7 +101,7 @@ def described(sid: str, part: str | None = None) -> dict:
     translator = origin.get("translator")
     if e["type"] == "ayah":
         return {"type": "ayah", "id": sid,
-                "reference": f"سورة {origin['surah_ar']} · الآية {str(ref['ayah']).translate(DIGITS)}" if origin.get("surah_ar") else f"Quran {ref['surah']}:{ref['ayah']}",
+                "reference": f"سورة {origin['surah_ar']} · الآية {ref['ayah']}" if origin.get("surah_ar") else f"Quran {ref['surah']}:{ref['ayah']}",
                 "reference_en": f"{'Surah ' + origin['surah_en'] if origin.get('surah_en') else 'Quran'} ({ref['surah']}:{ref['ayah']})",
                 "display_ar": e["text_ar"], "display_en": e["text_en"], "translator": translator, "url": e.get("url"), "recording": None,
                 "grade_note": None}
@@ -199,7 +199,7 @@ def passage(ids: list[str], out_dir: Path, upto: int | None = None) -> dict:
         verses.append({"en": d["display_en"], "first": first, "last": position})
     origin = entry(ids[0]).get("origin") or {}
     one = len(ids) == 1                                  # a verse cut at a pause sign (`upto`): « الآية », not « الآيات »
-    span = str(refs[0]['ayah']).translate(DIGITS) if one else f"{str(refs[0]['ayah']).translate(DIGITS)}-{str(refs[-1]['ayah']).translate(DIGITS)}"
+    span = f"{refs[0]['ayah']}" if one else f"{refs[0]['ayah']}-{refs[-1]['ayah']}"     # 1 2 3, never ١ ٢ ٣ (the owner, 2026-11-17)
     span_en = f"{refs[0]['ayah']}" if one else f"{refs[0]['ayah']}-{refs[-1]['ayah']}"
     return {"kind": "verse", "seconds": round(build.seconds(wav), 3), "file": f"trial/{wav.name}",
             "reference": f"سورة {origin['surah_ar']} · {'الآية' if one else 'الآيات'} {span}" if origin.get("surah_ar") else f"Quran {refs[0]['surah']}:{span_en}",
@@ -212,7 +212,7 @@ REPORTED_BY = {"bukhari": ("البخاري", "al-Bukhari"), "muslim": ("مسلم
 
 def references(ids: list[str]) -> dict:
     """What a narration rests on (`sources:`), as it is written on screen while it is said: the reports it tells in
-    its own words (« رواه مسلم ٨٦٣ والبخاري ٩٣٦ »), the tafsir its meaning comes from (its name, from
+    its own words (« رواه مسلم 863 والبخاري 936 »), the tafsir its meaning comes from (its name, from
     content/policy.yaml) and the papers or data a claim rests on (a `science` source: its `label`, no text).
     Never read nor shown: a reference. An unvalidated source is listed as proposed."""
     policy = yaml.safe_load((ROOT / "content" / "policy.yaml").read_text(encoding="utf-8")) or {}
@@ -230,7 +230,7 @@ def references(ids: list[str]) -> dict:
         if e["type"] == "hadith":
             ar, en = REPORTED_BY[ref["collection"]]
             letter = chr(96 + ref["narration"]) if ref.get("narration") else ""
-            reports.append((f"{ar} {str(ref['number']).translate(DIGITS)}", f"{en} {ref['number']}{letter}"))
+            reports.append((f"{ar} {ref['number']}", f"{en} {ref['number']}{letter}"))
         elif e["type"] == "tafsir":
             name = editions.get(ref["edition"])
             if not name:

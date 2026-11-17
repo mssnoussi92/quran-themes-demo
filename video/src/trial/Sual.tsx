@@ -24,7 +24,7 @@ const ease = (x: number) => {
   return c * c * (3 - 2 * c);
 };
 const after = (t: number, from: number, seconds: number) => ease((t - from) / seconds);
-const AR = (n: number) => String(n).replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[Number(d)]);
+const AR = (n: number) => String(n);      // the owner, 2026-11-17: numbers are written 1 2 3, never 1 2 3 (CLAUDE.md)
 
 type Phrase = (id: string, n: number) => number;
 
@@ -237,9 +237,9 @@ const Tomorrow: React.FC<{ t: number; since: number }> = ({ t, since }) => {
 
 type Episode = { n: string; icons: readonly Icon[]; iconPhrases: number[]; inside?: "house" | "window"; lens?: number; knot?: number; glow?: number; example: "doors" | "exam" | "tomorrow" };
 const EPISODES: Record<keyof typeof SUAL, Episode> = {
-  dank: { n: "١", icons: ["coins", "house", "star"], iconPhrases: [3, 4, 5], inside: "house", lens: 3, knot: 7, example: "doors" },
-  tayyiba: { n: "٢", icons: ["purse", "hourglass", "knot"], iconPhrases: [4, 5, 6], inside: "window", glow: 3, example: "exam" },
-  ghafur: { n: "٣", icons: ["road", "clock"], iconPhrases: [2, 3], example: "tomorrow" },
+  dank: { n: "1", icons: ["coins", "house", "star"], iconPhrases: [3, 4, 5], inside: "house", lens: 3, knot: 7, example: "doors" },
+  tayyiba: { n: "2", icons: ["purse", "hourglass", "knot"], iconPhrases: [4, 5, 6], inside: "window", glow: 3, example: "exam" },
+  ghafur: { n: "3", icons: ["road", "clock"], iconPhrases: [2, 3], example: "tomorrow" },
 };
 
 const makePicture = (ep: keyof typeof SUAL): Drawn => {

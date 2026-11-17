@@ -240,9 +240,9 @@ const placeOf = (s: { name: string; ayah: number }) => `${s.name} ${s.ayah}`;
  * `pair`, none), and `fade`: the phrase of the scene `fade` on which the light of the first time goes out. */
 type Episode = { n: string; bars: readonly Bar[]; pair?: "locks" | "rings"; fade?: number };
 const EPISODES: Record<keyof typeof MAP.words, Episode> = {
-  qalb: { n: "١", bars: [{ form: "plural", word: "قلوب" }, { form: "singular", word: "قلب" }, { form: "dual", word: "قلبين" }], pair: "locks" },
-  nur: { n: "٢", bars: [], fade: 4 },
-  sadr: { n: "٣", bars: [{ form: "plural", word: "صدور" }, { form: "singular", word: "صدر" }], pair: "rings" },
+  qalb: { n: "1", bars: [{ form: "plural", word: "قلوب" }, { form: "singular", word: "قلب" }, { form: "dual", word: "قلبين" }], pair: "locks" },
+  nur: { n: "2", bars: [], fade: 4 },
+  sadr: { n: "3", bars: [{ form: "plural", word: "صدور" }, { form: "singular", word: "صدر" }], pair: "rings" },
 };
 
 const makePicture = (word: keyof typeof MAP.words): Drawn => {
