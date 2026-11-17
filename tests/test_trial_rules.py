@@ -581,3 +581,17 @@ def test_a_part_takes_reader_and_file_from_the_recording(copy):
         assert view["recording"][key] == entry["recording"][key]
     assert view["recording"]["start"] == entry["parts"]["second"]["recording"]["start"]
     assert script.part_view(entry, "nope") is None and "parts" not in view
+
+
+def test_the_film_reads_no_silent_line_in_a_short_s_voice_text():
+    """A short whose opening is written on screen only (`silent`, the shorts of « مخيّر ولا مسيّر؟ »): its silent lines
+    are not in its voice text, so the film, which takes its other lines from that take, must not count them either."""
+    film = tool("film")
+    spec = {"segments": [
+        {"narration": "hook", "silent": True, "lines": [{"ar": "«سطر على الشاشة»", "en": "on screen"}]},
+        {"verse": "quran.92.5"},
+        {"narration": "open", "lines": [{"ar": "سطر بالصوت", "en": "said"}, {"ar": "وسطر تاني", "en": "said too"}]},
+    ]}
+    lines = film.lines_of(spec)
+    assert [l["ar"] for l in lines] == ["سطر بالصوت", "وسطر تاني"]
+    assert [(l["narration"], l["index"]) for l in lines] == [("open", 0), ("open", 1)]

@@ -575,10 +575,10 @@ export const QADAR_PICTURES: Record<string, Drawn> = { amal: AmalPicture, shaa: 
 // ------------------------------------------------------------------------------------- the film (16:9)
 
 /** The same scenes in the film (1920 x 1080): the vertical drawing, cut around its action (the window, the figure,
- * the floor: y 520 to 1870 of the 9:16 frame) and scaled to the height of the frame, on the left; its right edge
+ * the floor: y 640 to 1990 of the 9:16 frame, below the chapter tag) and scaled to the height of the frame, on the left; its right edge
  * fades into the night, the text sits on the right. The drawing keeps its own horizon (the 9:16 one). */
 const WIDE_SCALE = 0.8;
-const WIDE_TOP = 520;
+const WIDE_TOP = 640;
 const WIDE_HORIZON = 1260;
 const wide = (Picture: Drawn, ground: string): Drawn => {
   const Wide: Drawn = (props) => {

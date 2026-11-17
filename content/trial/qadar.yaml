@@ -55,11 +55,11 @@ chapters:
             en: "“If everything is written… why will I be held to account?”"
           - ar: "سؤال بيقلق ناس كتير… والإجابة مش في الجدال."
             en: "A question that troubles many… and the answer isn't in arguing."
+          - ar: "بتبدأ من تلات جمل بنقولها كلنا:"
+            en: "It starts with three sentences we all say:"
       - narration: film-open
         shots: [{ picture: amal, scene: shut }, { picture: shaa, scene: turn }, { picture: law, scene: shop }]
         lines:
-          - ar: "بتبدأ من تلات جمل بنقولها كلنا:"
-            en: "It starts with three sentences we all say:"
           - ar: "«النتيجة مكتوبة»… «لما ربنا يهديني»… و«لو كنت عملت كذا»."
             en: "“The result is written”… “When God guides me”… and “If only I had…”"
   - id: frame
