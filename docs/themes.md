@@ -1061,6 +1061,9 @@ poussière qui a l'air d'une terre et sa coupe ; fond tout dessiné. Brouillons 
 
 **Script validé par lui le 2026-11-17** (« je valide le script, tu peux commencer le rendu sans voix », lu comme le script de
 `docs/scripts/hayyin.md` tel qu'envoyé ; `script_validated` des trois shorts) ; rendu sans voix par le workflow `film` (voix `X`).
+**Rendu sans voix le même soir** (run 44178359076 du workflow `film`, 19 minutes, release brouillon `hayyin-candidate`) :
+**2:10, 1:28, 1:55**, leurs versions TikTok et les couvertures, contrôlés sur leurs planches (−16 LUFS), envoyés ; les
+accroches des légendes courtes proposées. Voix : trois requêtes, après les six des quiz.
 
 ## Faits (ancien circuit)
 
