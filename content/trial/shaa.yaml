@@ -21,6 +21,10 @@ id: shaa
 # répliques des 3 shorts et du film avec les nouveaux débuts, la place des versets et des hadiths, les titres »). Ni la
 # voix, ni les dessins, ni les sources proposées : il les valide sur les vidéos. La voix attend les premières mesures.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide tout sauf la fin du film » du propriétaire (2026-11-17, question à choix nommant les 3 shorts et le film :
+# voix, dessins, montage, ambiances ; couvertures et vignette ; textes et 4 accroches ; sources et 2 lectures) : ce short
+# tel que livré (run 44067852358 du workflow `film`), sa couverture, son texte et son accroche. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-17, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 79-trial-shaa
@@ -32,9 +36,10 @@ ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: J
 cover: { scene: turn, title: "«لما ربنا يهديني»؟", tag: "مخيّر ولا مسيّر؟ · ٢ من ٣", focus: 1100 }
 publish:
   title: { en: "“When God guides me…” Two verses answer it", ar: "«لما ربنا يهديني»… آيتين بيردّوا عليها" }
-  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session (2026-11-17), à valider par le propriétaire
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-17 (« je valide tout sauf la fin du film »)
     ar: "«لما ربنا يهديني»… آيتين ورا بعض بيردّوا عليها."
     en: "“When God guides me…” Two verses in a row answer it."
+    validated: 2026-11-17
   part: 2
   hashtags: ["#القضاء_والقدر", "#مخير_ولا_مسير"]
   description:

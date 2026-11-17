@@ -15,12 +15,17 @@
 # - L'ouverture : LA question du sujet (« لو كل حاجة مكتوبة… هتحاسب ليه؟ », choix du propriétaire, 2026-11-17), à laquelle
 #   répond le chapitre `answer` : as-Sa'di sur 81:29 (et 74:56) et sur 6:148 (« لا يحل بأسه إلا بمن استحقه »).
 # - Répliques de la session sans tafsir : l'ouverture, « مش هنتجادل… », les débuts de chapitre, « قبل ما الحاجة تحصل: اعمل.
-#   وبعد ما تحصل: سلّم لربنا » (lu sur l'ordre de Muslim 2664), l'appel.
+#   وبعد ما تحصل: سلّم لربنا » (lu sur l'ordre de Muslim 2664) ; la dernière, l'appel au partage, est la sienne.
 id: qadar
 # « Je valide le script » du propriétaire (2026-11-17, question à choix nommant « docs/scripts/qadar.md à jour : les
 # répliques des 3 shorts et du film avec les nouveaux débuts, la place des versets et des hadiths, les titres »). Ni la
 # voix, ni les dessins, ni les sources proposées : il les valide sur les vidéos. La voix attend les premières mesures.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide tout sauf la fin du film, il faut changer اشترك عشان الفيلم الجاي » du propriétaire (2026-11-17, question à
+# choix nommant les 3 shorts et le film, voix, dessins, montage, ambiances, couvertures et vignette, textes et 4 accroches,
+# sources et 2 lectures) : lu comme le film tel que livré sauf sa dernière réplique ; ses répliques propres sont redites
+# par la voix pour cette réplique (une requête) : la voix du film et sa fin s'entendent sur la vidéo refaite.
+validated: { by: mssnoussi92, on: 2026-11-17, what: [montage, thumbnail, publish, ambience] }
 files: qadar                     # qadar-film-16x9.mp4, qadar-short-<n>-<id>.mp4
 title: { ar: "مخيّر ولا مسيّر؟", en: "Free will or fate?" }
 handle: "@quran_words_daily"
@@ -32,9 +37,10 @@ thumbnail: { title: "مخيّر ولا مسيّر؟", tag: "٣ جمل", panels: 
 publish:
   out: docs/retention/publication-qadar.md
   title: { en: "Free will or fate? 3 sentences we all say", ar: "مخيّر ولا مسيّر؟ تلات جمل بنقولها كلنا" }
-  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session (2026-11-17), à valider par le propriétaire
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-17 (« je valide tout sauf la fin du film »)
     ar: "لو كل حاجة مكتوبة… هتحاسب ليه؟"
     en: "If everything is written… why will I be held to account?"
+    validated: 2026-11-17
   series: { en: "Free will or fate?", ar: "مخيّر ولا مسيّر؟" }
   description:
     en: "“The result is written”, “When God guides me”, “If only I had…”: three sentences we all say, and behind each one the same question. Not a debate: the question the Companions asked, the answer they received, and what the Quran says. You have a real will and real deeds, and your will runs under God's will."
@@ -190,5 +196,7 @@ chapters:
         lines:
           - ar: "قبل ما الحاجة تحصل: اعمل. وبعد ما تحصل: سلّم لربنا."
             en: "Before it happens: act. After it happens: leave it to God."
-          - ar: "اشترك… عشان الفيلم الجاي."
-            en: "Subscribe… for the next film."
+          # Changée à sa demande (2026-11-17, « il faut changer اشترك عشان الفيلم الجاي », puis son choix sur aperçu) :
+          # l'appel au partage ; le bouton d'abonnement passe toujours à l'écran (`subscribe`).
+          - ar: "ابعته لحد بيسأل نفس السؤال."
+            en: "Send it to someone who asks the same question."

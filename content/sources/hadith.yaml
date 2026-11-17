@@ -322,7 +322,7 @@
     after:
       excerpt_ar: "وَإِنْ أَصَابَكَ شَىْءٌ فَلاَ تَقُلْ لَوْ أَنِّي فَعَلْتُ كَانَ كَذَا وَكَذَا ‏.‏ وَلَكِنْ قُلْ قَدَرُ اللَّهِ وَمَا شَاءَ فَعَلَ فَإِنَّ لَوْ تَفْتَحُ عَمَلَ الشَّيْطَانِ"
       excerpt_en: "if anything (in the form of trouble) comes to you, don't say: If I had not done that, it would not have happened so and so, but say: Allah did that what He had ordained to do and your\" if\" opens the (gate) for the Satan"
-      recording: {start: 2460.8, end: 2476.1, heard: "وإن أصابك شيء فلا تقل لو أني فعلت كان كذا وكذا ولكن قل قدر الله وما شاء فعل فإن لو تفتح عمل الشيطان", status: proposed}
+      recording: {start: 2460.8, end: 2476.1, heard: "وإن أصابك شيء فلا تقل لو أني فعلت كان كذا وكذا ولكن قل قدر الله وما شاء فعل فإن لو تفتح عمل الشيطان", status: validated, validated_by: mssnoussi92}
 - id: hadith.bukhari.1469
   type: hadith
   ref: {collection: bukhari, number: 1469}
@@ -1221,7 +1221,8 @@
     book: 65
     hadith_in_book: 471
     retrieved: '2026-11-17'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "'Ali : à un enterrement, « ما منكم من أحد إلا وقد كتب مقعده… » ; « أفلا نتكل على كتابنا وندع العمل؟ » « اعملوا فكل ميسر لما خلق له », puis 92:5. Aussi Bukhari 1362, 4945, 6605, 7552 ; Muslim 2647. Short 1 `amal` ; lecture à trouver ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
   text_ar: حَدَّثَنَا آدَمُ، حَدَّثَنَا شُعْبَةُ، عَنِ الأَعْمَشِ، قَالَ سَمِعْتُ سَعْدَ بْنَ عُبَيْدَةَ، يُحَدِّثُ عَنْ أَبِي عَبْدِ الرَّحْمَنِ السُّلَمِيِّ، عَنْ عَلِيٍّ ـ رضى الله عنه ـ قَالَ كَانَ النَّبِيُّ صلى الله عليه وسلم فِي جَنَازَةٍ فَأَخَذَ شَيْئًا فَجَعَلَ يَنْكُتُ بِهِ الأَرْضَ فَقَالَ ‏"‏ مَا مِنْكُمْ مِنْ أَحَدٍ إِلاَّ وَقَدْ كُتِبَ مَقْعَدُهُ مِنَ النَّارِ وَمَقْعَدُهُ مِنَ الْجَنَّةِ ‏"‏‏.‏ قَالُوا يَا رَسُولَ اللَّهِ أَفَلاَ نَتَّكِلُ عَلَى كِتَابِنَا وَنَدَعُ الْعَمَلَ قَالَ ‏"‏ اعْمَلُوا فَكُلٌّ مُيَسَّرٌ لِمَا خُلِقَ لَهُ، أَمَّا مَنْ كَانَ مِنْ أَهْلِ السَّعَادَةِ فَيُيَسَّرُ لِعَمَلِ أَهْلِ السَّعَادَةِ، وَأَمَّا مَنْ كَانَ مِنْ أَهْلِ الشَّقَاءِ فَيُيَسَّرُ لِعَمَلِ أَهْلِ الشَّقَاوَةِ ‏"‏‏.‏ ثُمَّ قَرَأَ ‏{‏فَأَمَّا مَنْ أَعْطَى وَاتَّقَى * وَصَدَّقَ بِالْحُسْنَى‏}‏ الآيَةَ‏.‏
   text_en: "Narrated `Ali:While the Prophet (ﷺ) was in a funeral procession. he picked up something and started scraping the ground with it, and said, \"There is none among you but has his place written for him either in the Hell Fire or in Paradise.\" They said, \"O Allah's Messenger (ﷺ)! Shall we not depend upon what has been written for us and give up deeds? He said, \"Carry on doing (good) deeds, for everybody will find easy to do such deeds as will lead him to his destined place for which he has been created. So he who is destined to be among the happy (in the Hereafter), will find it easy to do the deeds characteristic of such people, while he who is destined to be among the miserable ones, will find it easy to do the deeds characteristic of such people.\" Then he recited: 'As for him who gives (in charity) and fears Allah, and believes in the best"
@@ -1235,7 +1236,8 @@
     end: 35.1
     heard: ما منكم من أحد إلا وقد كتب مقعده من النار ومقعده من الجنة قالوا يا رسول الله أفلا نتكل على كتابنا وندع العمل قال اعملوا فكل ميسر لما خلق له
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.tirmidhi.2133
   type: hadith
   ref: {collection: tirmidhi, number: 2133}
@@ -1254,7 +1256,8 @@
     - {name: Al-Albani, grade: Hasan}
     - {name: Zubair Ali Zai, grade: Daif}
     retrieved: '2026-11-17'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "Abou Hourayra : il les trouve à se disputer sur le qadar, se fâche, « عزمت عليكم ألا تتنازعوا فيه ». Al-Albani : hasan ; Tirmidhi : غريب, Salih al-Murri. Raconté par la narration avec ses mots, référence écrite ; le film seul ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
   text_ar: حَدَّثَنَا عَبْدُ اللَّهِ بْنُ مُعَاوِيَةَ الْجُمَحِيُّ الْبَصْرِيُّ، قَالَ حَدَّثَنَا صَالِحٌ الْمُرِّيُّ، عَنْ هِشَامِ بْنِ حَسَّانَ، عَنْ مُحَمَّدِ بْنِ سِيرِينَ، عَنْ أَبِي هُرَيْرَةَ، قَالَ خَرَجَ عَلَيْنَا رَسُولُ اللَّهِ صلى الله عليه وسلم وَنَحْنُ نَتَنَازَعُ فِي الْقَدَرِ فَغَضِبَ حَتَّى احْمَرَّ وَجْهُهُ حَتَّى كَأَنَّمَا فُقِئَ فِي وَجْنَتَيْهِ الرُّمَّانُ فَقَالَ ‏ "‏ أَبِهَذَا أُمِرْتُمْ أَمْ بِهَذَا أُرْسِلْتُ إِلَيْكُمْ إِنَّمَا هَلَكَ مَنْ كَانَ قَبْلَكُمْ حِينَ تَنَازَعُوا فِي هَذَا الأَمْرِ عَزَمْتُ عَلَيْكُمْ أَلاَّ تَتَنَازَعُوا فِيهِ ‏"‏ ‏.‏ قَالَ أَبُو عِيسَى وَفِي الْبَابِ عَنْ عُمَرَ وَعَائِشَةَ وَأَنَسٍ ‏.‏ وَهَذَا حَدِيثٌ غَرِيبٌ لاَ نَعْرِفُهُ إِلاَّ مِنْ هَذَا الْوَجْهِ مِنْ حَدِيثِ صَالِحٍ الْمُرِّيِّ ‏.‏ وَصَالِحٌ الْمُرِّيُّ لَهُ غَرَائِبُ يَنْفَرِدُ بِهَا لاَ يُتَابَعُ عَلَيْهَا ‏.‏
   text_en: "Abu Hurairah narrated:\"The Messenger of Allah(s.a.w) came out to us while we were discussing about Al-Qadar. He became angry such that his face became red, as if a pomegranate was bursting through his cheeks. He said: 'Is this what I ordered you to do?' - or: 'Is this what I have been sent to you with? The people before you were only ruined when they differed about this matter. I order you [I order you] to not debate about it.'\". (Daif)"

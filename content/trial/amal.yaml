@@ -26,6 +26,10 @@ id: amal
 # répliques des 3 shorts et du film avec les nouveaux débuts, la place des versets et des hadiths, les titres »). Ni la
 # voix, ni les dessins, ni les sources proposées : il les valide sur les vidéos. La voix attend les premières mesures.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide tout sauf la fin du film » du propriétaire (2026-11-17, question à choix nommant les 3 shorts et le film :
+# voix, dessins, montage, ambiances ; couvertures et vignette ; textes et 4 accroches ; sources et 2 lectures) : ce short
+# tel que livré (run 44067852358 du workflow `film`), sa couverture, son texte et son accroche. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-17, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 78-trial-amal
@@ -38,9 +42,10 @@ ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", aut
 cover: { scene: shut, title: "كل حاجة مكتوبة… أتعب ليه؟", tag: "مخيّر ولا مسيّر؟ · ١ من ٣", focus: 1100 }
 publish:
   title: { en: "“It's all written, why bother?” The Companions asked it", ar: "«كله مكتوب… أتعب ليه؟» الصحابة سألوها" }
-  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session (2026-11-17), à valider par le propriétaire
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-17 (« je valide tout sauf la fin du film »)
     ar: "«لو كل حاجة مكتوبة… أتعب ليه؟» الصحابة سألوا السؤال ده… وده كان الرد."
     en: "“If everything is written, why bother?” The Companions asked this… and here is the answer."
+    validated: 2026-11-17
   part: 1
   hashtags: ["#القضاء_والقدر", "#مخير_ولا_مسير"]
   description:
