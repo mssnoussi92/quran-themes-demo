@@ -1089,3 +1089,14 @@ les quatre ; 114:4-6). Environ 1:20 à 1:25 chacun.
 qui accepte `fiqh.*` dans `sources:`, `publish.py` qui le crédite) ; les dessins (`video/src/trial/Sahw.tsx` : la pièce, la
 silhouette en prière, la piste, la carte des écoles, le compteur) ; les lectures de Muslim 572a et 571a (archive.org) ; les
 sources au registre. Voix : quatre requêtes, une journée. Rendu : le workflow `film`.
+
+### Décisions du propriétaire (2026-11-17, questions à choix)
+
+- **Source de fiqh** : « Encyclopédie koweïtienne » ; **règles** : « Fiqh partout, le reste ici » : la source et la règle
+  des quatre écoles entrent dans la politique de tout le dépôt (`content/policy.yaml`, `fiqh`), la silhouette qui prie,
+  un seul verset par short et « احفظ الفيديو » valent pour cette série seulement.
+- **Script** : « Je valide, sans la ligne-conseil » : les quatre scripts de `docs/scripts/sahw.md` tels qu'envoyés, sans
+  « اعمل بالمذهب اللي بتتّبعه » dans `khams` (`script_validated` de chaque fichier).
+- **Montage** : « je valide sauf je veux utiliser les numéros 1 2 3 et non pas ١ ٢ ٣ » : la pièce dessinée, la silhouette,
+  la piste et la carte des écoles ; tous les nombres que la série écrit en 1 2 3.
+- **Production maintenant** (son choix à la question précédente), sans attendre la revue du 30 novembre.

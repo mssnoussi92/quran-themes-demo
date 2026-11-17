@@ -1,6 +1,11 @@
 # « إزاي أعملها؟ » · pilote : سجود السهو (proposition, 2026-11-17)
 
-Script à valider avant toute voix. **Toutes les répliques sont nouvelles et de la session.** Les versets et les hadiths
+**Script validé par le propriétaire le 2026-11-17** (question à choix : « Je valide, sans la ligne-conseil » : les quatre
+scripts tels qu'envoyés, sans « اعمل بالمذهب اللي بتتّبعه » dans `khams`) ; **montage validé le même jour** (« je valide sauf je
+veux utiliser les numéros 1 2 3 et non pas ١ ٢ ٣ » : tous les nombres que la série dessine s'écrivent 1 2 3) ; **source de
+fiqh** : la Encyclopédie koweïtienne, dans la politique de tout le dépôt avec la règle des quatre écoles (son choix).
+
+Script écrit avant toute voix. **Toutes les répliques sont nouvelles et de la session.** Les versets et les hadiths
 sont vérifiés (quran.ai pour les textes et les tafsirs, hadith-api pour les numéros), **pas encore inscrits au
 registre**. Les avis des écoles viennent de la **الموسوعة الفقهية الكويتية**, vol. 24, p. 234-241 (texte lu sur
 turath.io, livre 11430, pagination de l'édition imprimée), une source **hors politique pour l'instant** : à valider
@@ -126,11 +131,9 @@ Images du montage proposé : `docs/retention/sahw-style.jpg` (et une image par s
 - الشافعي… والحنبلي: قبله.  
   *Shafi'i… and Hanbali: before it.*
 
-**1:01 · narration** (image : `end`) · **lignes à nous, à valider** (la seconde surtout : c'est un conseil)
+**1:01 · narration** (image : `end`) · **ligne à nous** (« اعمل بالمذهب اللي بتتّبعه » retirée : son choix, 2026-11-17)
 - وكل مذهب… ليه دليله.  
   *Each school… has its proof.*
-- اعمل بالمذهب اللي بتتّبعه.  
-  *Follow the school you follow.*
 - والجاية: قمت… من غير ما تقعد للتشهد. تابعنا… واحفظ الفيديو.  
   *Next: you stood up… without sitting for the tashahhud. Follow us… and save this video.*
 

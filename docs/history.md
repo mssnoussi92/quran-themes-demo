@@ -503,3 +503,20 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   `CLAUDE.md` (« Ce qui vaut toujours »), ici et dans quran-reels : la session attend ses checks (`validate.yml`),
   fusionne quand ils sont verts, corrige quand ils sont rouges ; une PR qui porte une décision de lui pas encore
   donnée attend son « je valide ».
+
+## Une série éducative, « إزاي أعملها؟ » ; une source de fiqh dans la politique (2026-11-17)
+
+- **Demande du propriétaire** : explorer une série éducative qui garde un début fort, par exemple سجود السهو. La session
+  (skill `choose-format`) : le début d'une série éducative tend vers la leçon d'abord, ce que les mesures punissent ; règle
+  proposée, un fait tiré d'un texte ou l'erreur en mouvement d'abord. Le vrai risque était le fiqh : les hadiths placent les
+  deux prosternations avant et après le salam, les écoles diffèrent, la politique n'avait aucune source pour le dire.
+- **Ses choix** (questions à choix) : élargir à une source de fiqh et dire les avis des écoles quand elles diffèrent ; des
+  shorts sans film, des scènes et un montage nouveaux, au moins un short « comment faire » (« souvent j'oublie comment
+  faire si j'oublie dans la salat ») ; tout produire maintenant (il revient sur « mesurer d'abord », 2026-11-16).
+- **La source** : la Encyclopédie de fiqh koweïtienne, lue depuis la session sur turath.io (livre 11430, pagination de
+  l'imprimé ; article « سجود السهو », vol. 24, p. 234-241). Dans la politique pour tout le dépôt, avec la règle des quatre
+  écoles (`content/policy.yaml`, `fiqh`).
+- **Le pilote** (`docs/scripts/sahw.md`) : `sahun`, `khams`, `nasit` (le « comment faire »), `shakk` ; Dhul-Yadayn écarté
+  (les pages lues ne donnent pas les quatre avis pour ce cas). Script validé sans la ligne « اعمل بالمذهب اللي بتتّبعه »
+  (un conseil de la session, retiré à sa demande) ; montage validé sur quatre images (`docs/retention/sahw-style*.jpg`),
+  les nombres en 1 2 3.
