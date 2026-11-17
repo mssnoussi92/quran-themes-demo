@@ -133,6 +133,7 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
                 if rule and src["status"] != "excluded":
                     check_grade(src, rule, where, report)
                 check_recording(src, where, report)
+                check_parts(src, where, report)
     return registry
 
 
@@ -174,6 +175,33 @@ def check_recording(src: dict, where: str, report: Report) -> None:
     shown, heard = plain_words(shown_words(src)), plain_words(rec["heard"])
     if shown != heard and rec["status"] != "validated":
         report.warn(where, f"recording: heard {len(heard)} words that differ from the {len(shown)} shown; listen to it")
+
+
+def check_parts(src: dict, where: str, report: Report) -> None:
+    """The `parts` of a hadith (a short plays a part of the reading): excerpts copied from the texts, inside the
+    entry's recording, heard words compared with the excerpt, validation by the owner only."""
+    parts = src.get("parts")
+    if not parts:
+        return
+    whole = src.get("recording")
+    if not whole:
+        report.error(where, "parts: the hadith has no recording to take them from")
+    for name, part in parts.items():
+        here = f"{where} part '{name}'"
+        if tidy(part["excerpt_ar"]) not in tidy(prophet_words(src.get("text_ar") or "")):
+            report.error(here, "excerpt_ar is not a passage of the Prophet's words in text_ar")
+        if part["excerpt_en"] not in (src.get("text_en") or ""):
+            report.error(here, "excerpt_en is not a passage of text_en")
+        rec = part["recording"]
+        if rec["end"] <= rec["start"]:
+            report.error(here, "recording: end must come after start")
+        if whole and not whole["start"] <= rec["start"] < rec["end"] <= whole["end"]:
+            report.error(here, f"recording {rec['start']}-{rec['end']} is outside the hadith's recording {whole['start']}-{whole['end']}")
+        status = rec.get("status", "proposed")
+        if status == "validated" and not rec.get("validated_by"):
+            report.error(here, "recording: validated needs validated_by (the owner, after listening)")
+        if "heard" in rec and status != "validated" and plain_words(part["excerpt_ar"]) != plain_words(rec["heard"]):
+            report.warn(here, f"recording: heard {len(plain_words(rec['heard']))} words that differ from the {len(plain_words(part['excerpt_ar']))} shown; listen to it")
 
 
 def check_episode(path: Path, registry: dict, catalog: dict, backgrounds: dict, release: bool, report: Report,

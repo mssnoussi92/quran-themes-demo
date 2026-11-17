@@ -813,6 +813,7 @@ Les trains et l'arc sont les métaphores de l'auteur des reels : on ne les repre
   GitHub Actions. Le stock du calendrier tient jusqu'au 1er janvier : à comparer aux shorts longs quand les premières
   mesures arrivent, pas à ajouter tout de suite.
 
+<<<<<<< HEAD
 ## Série proposée : le quiz, « معاك 5 ثواني » (nom de travail, 2026-11-17)
 
 **Demande du propriétaire (2026-11-17)** : un nouveau type de short, « comme un jeu pour attirer les commentaires » :
@@ -864,7 +865,7 @@ quiz (`video/src/trial/Quiz.tsx`), trois requêtes de voix, rendu.
 **Fait le 2026-11-17, sans voix** : quatorze sources proposées au registre (versets 12:19, 5:118, 5:28, 59:16, 2:127 ;
 neuf passages de tafsir) ; les quatre récitations coupées et entendues en entier par Whisper (100 % des mots ; 12:19
 jusqu'à « غلام », 11,3 s) ; les fichiers (`content/trial/quiz.yaml`, `sayyara`, `khatima`, `qalaha`), les textes de
-voix 78 à 80, le tic du compteur (`count` de `tools/trial/sfx.py`), le montage (`video/src/trial/Quiz.tsx`, données
+voix 86 à 88 (82 à 85 pris par la série en cours d'une autre session), le tic du compteur (`count` de `tools/trial/sfx.py`), le montage (`video/src/trial/Quiz.tsx`, données
 `tools/trial/quiz.py`) ; brouillons de 0:42, 0:49 et 1:22. Une retouche d'écriture : la question du short 1 s'écrit
 « في سورة يوسف يعني إيه؟ », sans « … », pour être entière sur la première image. **Pas de voix ce jour** : le palier
 gratuit était presque épuisé par deux autres sessions (une requête refusée à refaire de leur côté) ; trois requêtes le
@@ -872,6 +873,105 @@ lendemain. **Les clips** : les brouillons tournent sur la nuit générée ; la c
 de la session (le workflow `film` l'a) ; proposés au propriétaire, tous déjà approuvés pour d'autres shorts : 26085
 (une plaine au soleil bas) pour `sayyara`, 190332 (des nuages au couchant sur une plaine) pour `qalaha`, la nuit
 générée pour `khatima`.
+=======
+## Film : « مخيّر ولا مسيّر؟ » (`qadar`, idée du propriétaire, 2026-11-17)
+
+**Sa demande** : « je veux créer un film sur الانسان مخير او مسير ». **Fiche** (skill `choose-format`, 2026-11-17) :
+
+**Ce que la session lui a opposé** (dit avant de recommander) :
+- **La question est un faux choix d'après nos tafsirs.** As-Sa'di sur 74:56 : « ففيها رد على القدرية… والجبرية الذين يزعمون
+  أنه ليس للعبد مشيئة، ولا فعل حقيقة… فأثبت تعالى للعباد مشيئة حقيقة وفعلا، وجعل ذلك تابعا لمشيئته » ; sur 81:29, il
+  renvoie au même (« رد على فرقتي القدرية النفاة، والقدرية المجبرة كما تقدم مثلها »). Le film répond : ni l'un ni l'autre
+  comme on l'entend, une vraie volonté sous Sa volonté.
+- **Un film qui débat du qadar ferait ce que le Prophète ﷺ a défendu** : Tirmidhi 2133 (il sort, les trouve à se disputer
+  sur le qadar, se fâche : « عزمت عليكم ألا تتنازعوا فيه » ; al-Albani : hasan ; Tirmidhi lui-même : غريب, son rapporteur
+  Salih al-Murri faible). D'où : pas un débat, **la question que les Compagnons ont posée et la réponse qu'ils ont reçue**
+  (Bukhari 4949, 1362, 4945, 6605, 7552 ; Muslim 2647 : « أفلا نتكل على كتابنا وندع العمل؟ » « اعملوا فكل ميسر لما خلق
+  له », puis 92:5-10).
+- **La formule « مخيّر فيما يُحاسب عليه، مسيّر فيما لا يُحاسب عليه »** : un classement de prédicateurs, dans aucun de nos
+  trois tafsirs ; refusée pour la même raison que « أنواع القدر » (`content/wording.yaml`). Notre voix ne la dit pas.
+- **Adam et Moussa (Bukhari 6614) écarté** : il faudrait un charh (pas de type de source pour cela) ; mal entendu, il dit
+  « le qadar excuse le péché », le contraire du film. Les prophètes n'y seraient de toute façon pas dessinés.
+- **Recoupements** : le short 2 du du'a (« كله مكتوب… أدعي ليه؟ », publié le 18 novembre) est le cousin du short 1 (là
+  demander, ici agir ; autre preuve) : son accroche ne doit pas reprendre « كله مكتوب ». Muslim 2664 était dans sabr-03
+  (ancien circuit) : la réécriture de la patience en prendra un autre. 76:30, en réserve pour « سؤال صعب », est absorbé ici.
+
+**Recommandé et choisi : trois idées reçues, version courte (un verset court par short), et le film.**
+
+| Short | L'idée reçue | Le fait qui l'ouvre | Récité, lu | Le sens repose sur | Estimé |
+| --- | --- | --- | --- | --- | --- |
+| 1. `amal` | « مكتوب… يبقى ليه أتعب؟ » | les Compagnons ont posé cette question même | 92:5-10 (20,4 s), Bukhari 4949 lu | as-Sa'di 92:7 (« لأنه أتى بأسباب التيسير، فيسر الله له ذلك »), al-Muyassar 92:5 | 1:15 |
+| 2. `shaa` | « لما ربنا يهديني » | « شاء » deux fois en deux versets : une pour toi, une pour Dieu | 81:28-29 (17,4 s) | as-Sa'di 74:56 et 81:29, al-Muyassar 81:29 | 1:10 |
+| 3. `law` | « لو كنت عملت كذا… » | un mot de deux lettres dont le Prophète ﷺ a dit qu'il ouvre l'œuvre du Shaytan | 57:22 (21,5 s), Muslim 2664 lu (validé) | al-Muyassar 57:22, as-Sa'di 57:23 | 1:20 |
+
+- **Ce qui distingue les parties** : le qadar pris pour excuse avant d'agir, pour ne pas se corriger, et pour se ronger
+  après coup. Les deux premiers, la part qu'on choisit ; le troisième, celle qu'on ne choisit pas.
+- **Le film** (≈ 6 min) ajoute : l'ouverture sur les trois scènes ; Tirmidhi 2133 raconté avec nos mots (référence et
+  jugement d'al-Albani écrits) ; 54:49 ; 6:148 (42,2 s : l'excuse annoncée par le Coran et réfutée, as-Sa'di) ; 57:23 ;
+  76:3 ; la conclusion, Muslim 2664 en entier (avant : « احرص… ولا تعجز » ; après : « قدر الله وما شاء فعل »). Récitation :
+  0:59 dans les shorts, 2:10 en tout.
+- **À faire** : 13 versets et 2 hadiths au registre, 7 passages de tafsir ; coupes de récitation ; une lecture de
+  Bukhari 4949 (skill `find-hadith-recording`) ; trois clips, trois dessins, trois ambiances. **Voix** : quatre requêtes,
+  une journée. **Rendu** : workflow `film`.
+
+**Décisions du propriétaire (2026-11-17, questions à choix)** :
+- **la forme recommandée**, avec sa demande : « il faut avoir des animations, un cas de vie réel (situation) acté pour
+  attirer le spectateur ». Lu par la session comme : chaque short s'ouvre sur une situation de la vie jouée et animée, une
+  scène type (« زي… »), jouée par une silhouette anonyme sans visage (sa règle du 2026-11-15, `Figure` de
+  `video/src/trial/Lens.tsx`) ; pas une histoire vraie (règle des exemples honnêtes) ;
+- **le titre « مخيّر ولا مسيّر؟ »** (ce que les gens cherchent ; la réponse est celle d'as-Sa'di) ;
+- **le script maintenant, la production après les premières mesures** du film du du'a (vers le 24 novembre) ;
+  **publication du lundi 28 au jeudi 31 décembre** (le film le 28, les shorts du 29 au 31).
+
+**Fait le même jour** (le script, aucune voix) : les sources au registre (13 versets, Bukhari 4949, Tirmidhi 2133, dix
+passages de tafsir, tous **proposés**) ; les versets coupés dans la récitation (six coupes posées à la main : 92:5-9, que le
+récitateur enchaîne, et le début de 81:28) ; le script (`content/trial/amal.yaml`, `shaa.yaml`, `law.yaml`, `qadar.yaml` ;
+page : `docs/scripts/qadar.md`) : chaque short s'ouvre sur sa scène jouée, muette (`silent`), puis le fait, la source, le
+sens, la scène rejouée, la phrase à retenir. **Estimé : 1:38, 1:26, 1:52, film 7:10**, plus long que la fiche (≈ 1:15) : la
+lecture de Bukhari 4949 n'est pas trouvée (comptée 12 s) ; Muslim 2664 se lit entier (28 s : un extrait d'une lecture n'est
+pas encore possible) ; 57:23 et as-Sa'di sur lui passent au film seul (un short ne s'appuie que sur le tafsir d'un verset
+qu'il récite). **À valider par le propriétaire avant toute voix.**
+
+**Ses réponses sur le script (2026-11-17, questions à choix)** : le short 3 lit **un extrait** de Muslim 2664 (« وإن أصابك…
+عمل الشيطان », 15 s ; le film lit tout) ; **Tirmidhi 2133 gardé** ; **les images de style tout de suite** ; le script :
+« pas encore, je relis ». **Fait** : l'outil d'un extrait de lecture (`parts` au registre, `part:` d'un segment ; écrit par un
+agent, relu ligne à ligne : le contrôle de la voix porte sur tout le hadith, pas sur l'extrait), la partie `after` de
+Muslim 2664 (2460,80-2476,10 s, mesurée) ; **la lecture de Bukhari 4949 trouvée** (Abu Malik al-Asqalani, le lecteur de nos
+autres hadiths de Bukhari : `bukhari_audiobook/4949.mp3`, 19,32-35,10 s, de « ما منكم » à « لما خلق له », entendue mot pour
+mot, **proposée**) ; les dessins des scènes jouées (`video/src/trial/Qadar.tsx`, la silhouette de `Lens.tsx`) sur un ciel de
+nuit dessiné, provisoire ; brouillons sans voix 1:40, 1:28, 1:36 (estimés : 1:41, 1:26, 1:34 ; film 7:10).
+
+**Les débuts refaits (sa demande, 2026-11-17 : « les shorts et le film doivent commencer par des questions ou un sentiment
+que la plupart des gens ressentent… pour que tout le monde se trouve dans la vidéo »).** Avis de la session : oui, à trois
+conditions tirées des mesures (khidr-01 : une question générale sur une image fixe, cinq phrases avant le fait, 26 % passent
+3 s) : une question concrète, une image qui bouge dès la première seconde, la promesse à la 3e seconde ; « سؤال صعب »,
+qui s'ouvre ainsi, sera mesuré avant la production. **Ses choix (questions à choix, sur leur aperçu)** : les shorts s'ouvrent
+sur le sentiment de tous, la scène jouée l'illustre (« «لو كل حاجة مكتوبة… أتعب ليه؟» » puis « لو السؤال ده جه في بالك…
+الصحابة سألوه قبلك. » ; « عارف إنك لازم تصلي… ومش قادر تبدأ؟ » ; « بتفضل تعيد اللي حصل في دماغك… كل ليلة؟ ») ; le film
+s'ouvre sur LA question du sujet, « «لو كل حاجة مكتوبة… هتحاسب ليه؟» », et son dernier chapitre y répond (as-Sa'di sur 81:29 et
+sur 6:148 : « لا يحل بأسه إلا بمن استحقه »). Recoupement redit : « كله مكتوب… أدعي ليه؟ » du du'a est proche du début du
+short 1 ; ici c'est la question même des Compagnons. Estimé : 1:41, 1:26, 1:35, film 7:22 (`docs/retention/qadar-style-openings.jpg`).
+
+**Script validé par lui le 2026-11-17** (« je valide le script », question à choix nommant `docs/scripts/qadar.md` à jour :
+les répliques des trois shorts et du film avec les nouveaux débuts, la place des versets et des hadiths, les titres ;
+`script_validated` des quatre fichiers). **Fond : tout dessiné** (son choix, comme « بص تاني » en B). **Les scènes adaptées aux
+nouveaux débuts** (sa demande) : short 1, l'effort avant l'abandon (une pile de livres, il écrit, puis repousse le livre) ;
+short 2, le tapis de prière roulé dans le coin dès la première image, il le regarde, tire la couverture, et à la fin le
+déroule et s'y tient ; short 3, « كل ليلة » : une chambre à 3 h, assis au bord du lit la tête dans les mains, le magasin
+fermé en souvenir au-dessus de lui, les « لو » autour ; le verset sur le ciel par la fenêtre ; l'exemple (« يقفل المحل… »)
+de retour devant le magasin, puis l'aube (`docs/retention/qadar-style-scenes-*.jpg`). **Reste** : les deux chemins de
+92:5-10, la voix et le rendu après les premières mesures.
+
+**Produit le 2026-11-17, à sa demande** (« crée la PR vers main et commence le travail » ; la session lui a dit pourquoi
+attendre les mesures n'avait plus de raison : les débuts sont des cartes muettes, qu'on change sans requête de voix) :
+les deux chemins redessinés, les dessins larges du film (`QADAR_WIDE`), les ambiances (validées : la nuit, le vent à
+l'aube), les accroches proposées ; la voix (run 44065680087 de `voice-test`, quatre requêtes, chaque phrase retrouvée ;
+à écouter : « يا رب ثبّتني », entendu « سبتني », le ث égyptien ; « مش ظن », entendu « ضمن ») ; `film.py` ne lit plus les
+cartes muettes d'un short comme des répliques ; rendu par le workflow `film` (run 44067852358, 42 minutes, release
+brouillon `qadar-candidate`) : **1:37, 1:21, 1:32, film 6:55**, contrôlés sur leurs planches et en taille réelle,
+**envoyés le 2026-11-17** avec les couvertures, la vignette et les textes (`docs/retention/publication-qadar.md`). À
+valider par lui.
+>>>>>>> origin/main
 
 ## Faits (ancien circuit)
 

@@ -494,3 +494,104 @@ def test_a_turn_refused_in_the_narration_only_is_not_checked_on_titles():
     assert len(warned) == 1
     check.wording("f.yaml", "وكلام السعدي عنها.", "description")
     assert len(warned) == 1
+
+
+# ---- a part of a hadith's reading (`parts` of the registry, `part:` of a segment) --------------------------------
+
+PART_SID = "hadith.tirmidhi.3247"       # read by asked.yaml (a short), dua.yaml (a film)
+
+
+def add_part(copy, name: str = "second", short: str | None = "asked", **change) -> dict:
+    """Give PART_SID a part: its excerpts are cut from the copied registry's own text (never typed), its recording
+    is the second half of the entry's recording. `change` overrides fields of the part; `short`: its segment
+    plays the part."""
+    registry = copy.load("content/sources/hadith.yaml")
+    entry = next(e for e in registry if e["id"] == PART_SID)
+    words = entry["text_ar"][entry["text_ar"].find('"') + 1:entry["text_ar"].rfind('"')].split()
+    rec = entry["recording"]
+    middle = (rec["start"] + rec["end"]) / 2
+    part = {"excerpt_ar": " ".join(words[len(words) // 2:]), "excerpt_en": entry["text_en"][len(entry["text_en"]) // 2:],
+            "recording": {"start": round(middle, 2), "end": rec["end"], "status": "proposed"}, **change}
+    entry["parts"] = {name: part}
+    copy.dump("content/sources/hadith.yaml", registry)
+    if short:
+        spec = copy.load(f"content/trial/{short}.yaml")
+        seg = next(s for s in spec["segments"] if s.get("reading") == PART_SID)
+        seg["part"] = name
+        copy.dump(f"content/trial/{short}.yaml", spec)
+    return part
+
+
+def test_a_part_of_a_reading_is_accepted(copy):
+    add_part(copy)
+    done = copy.rules()
+    assert done.returncode == 0, done.stdout[-2500:]
+    checked = validate(copy)
+    assert checked.returncode == 0 and " 0 error(s)" in checked.stdout, checked.stdout[-2500:]
+
+
+def test_an_unknown_part_is_refused(copy):
+    add_part(copy)
+    spec = copy.load("content/trial/asked.yaml")
+    next(s for s in spec["segments"] if s.get("reading") == PART_SID)["part"] = "first"
+    copy.dump("content/trial/asked.yaml", spec)
+    refused(copy.rules(), f"reading {PART_SID}: unknown part « first »")
+
+
+def test_a_part_without_a_recording_is_an_error_but_a_warning_in_a_draft(copy):
+    add_part(copy)
+    registry = copy.load("content/sources/hadith.yaml")
+    del next(e for e in registry if e["id"] == PART_SID)["recording"]
+    copy.dump("content/sources/hadith.yaml", registry)
+    refused(copy.rules(), f"reading {PART_SID} part second has no recording")
+    assert copy.rules("--draft").returncode == 0
+
+
+def test_a_part_outside_the_recording_is_refused_by_validate(copy):
+    registry = copy.load("content/sources/hadith.yaml")
+    end = next(e for e in registry if e["id"] == PART_SID)["recording"]["end"]
+    add_part(copy, short=None, recording={"start": end - 1, "end": end + 5, "status": "proposed"})
+    checked = validate(copy)
+    assert checked.returncode == 1 and "is outside the hadith's recording" in checked.stdout, checked.stdout[-2500:]
+
+
+def test_a_part_excerpt_is_a_passage_of_the_text(copy):
+    add_part(copy, short=None, excerpt_ar="كلام ليس في الحديث")
+    checked = validate(copy)
+    assert checked.returncode == 1 and "excerpt_ar is not a passage of the Prophet's words" in checked.stdout, checked.stdout[-2500:]
+
+
+def test_the_script_counts_the_length_of_a_part(copy):
+    part = add_part(copy, short=None)
+    script = tool("script")
+    sources = {e["id"]: e for e in copy.load("content/sources/hadith.yaml")}
+    whole, seconds_whole = script.quote(PART_SID, sources, {})
+    shown, seconds = script.quote(PART_SID, sources, {}, "second")
+    assert seconds == pytest.approx(part["recording"]["end"] - part["recording"]["start"])
+    assert seconds < seconds_whole
+    assert part["excerpt_ar"] in shown and "extrait « second »" in shown and "extrait" not in whole
+
+
+def test_a_part_takes_reader_and_file_from_the_recording(copy):
+    add_part(copy, short=None)
+    script = tool("script")
+    entry = next(e for e in copy.load("content/sources/hadith.yaml") if e["id"] == PART_SID)
+    view = script.part_view(entry, "second")
+    for key in ("reader", "item", "file", "license"):
+        assert view["recording"][key] == entry["recording"][key]
+    assert view["recording"]["start"] == entry["parts"]["second"]["recording"]["start"]
+    assert script.part_view(entry, "nope") is None and "parts" not in view
+
+
+def test_the_film_reads_no_silent_line_in_a_short_s_voice_text():
+    """A short whose opening is written on screen only (`silent`, the shorts of « مخيّر ولا مسيّر؟ »): its silent lines
+    are not in its voice text, so the film, which takes its other lines from that take, must not count them either."""
+    film = tool("film")
+    spec = {"segments": [
+        {"narration": "hook", "silent": True, "lines": [{"ar": "«سطر على الشاشة»", "en": "on screen"}]},
+        {"verse": "quran.92.5"},
+        {"narration": "open", "lines": [{"ar": "سطر بالصوت", "en": "said"}, {"ar": "وسطر تاني", "en": "said too"}]},
+    ]}
+    lines = film.lines_of(spec)
+    assert [l["ar"] for l in lines] == ["سطر بالصوت", "وسطر تاني"]
+    assert [(l["narration"], l["index"]) for l in lines] == [("open", 0), ("open", 1)]

@@ -10,7 +10,7 @@ id: qalaha
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
-text: 80-trial-qalaha
+text: 88-trial-qalaha
 # un ciel de nuages au couchant sur une plaine (Pixabay 190332, DancingSky, déjà employé pour le mur) ; APPROUVÉ pour ce
 # short par le propriétaire le 2026-11-17 (question à choix : « 26085, nuit générée, 190332 »)
 clip: { source: pixabay, id: 190332, author: DancingSky, page: "https://pixabay.com/videos/id-190332/", position: "42% 50%", shift: -400, brightness: 0.6, ground: "#05060c", horizon: 1380, veil: 0.8 }

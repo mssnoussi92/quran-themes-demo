@@ -1,0 +1,206 @@
+# Le film « مخيّر ولا مسيّر؟ » (idée du propriétaire, 2026-11-17) et ses trois shorts (amal, shaa, law). Forme choisie par
+# lui le même jour : trois idées reçues, version courte, chaque short ouvert par une scène type jouée par une silhouette
+# anonyme ; titre « مخيّر ولا مسيّر؟ » ; le script maintenant, la production après les premières mesures ; publication du
+# lundi 28 au jeudi 31 décembre. Fiche : docs/themes.md.
+# - Pas un débat : Tirmidhi 2133 (le Prophète ﷺ se fâche de trouver ses Compagnons à se disputer sur le qadar et le leur
+#   défend ; al-Albani : hasan ; Tirmidhi : غريب, Salih al-Murri ; Zubair Ali Zai : da'if) raconté avec nos mots, référence
+#   et jugement écrits.
+# - La réponse : as-Sa'di sur 81:29, qui renvoie à 74:56 (une vraie volonté et un vrai acte, sous Sa volonté) ; jamais « مخيّر في كذا ومسيّر في
+#   كذا ».
+# - Ajouté aux shorts : 54:49 (le cadre) ; 6:148 (l'excuse annoncée et réfutée, as-Sa'di : « حجة فاسدة… لو كانت صحيحة، لم
+#   تحل بهم العقوبة… الحجة، لا بد أن تكون… مستندة إلى العلم ») ; 57:23 ; 76:3 et as-Sa'di (« وهداه الطريق… فانقسم الناس إلى
+#   شاكر… وإلى كفور »).
+# - Les débuts muets des shorts ne passent pas dans le film (film.py ne joue pas un segment `silent` repris) : chaque
+#   chapitre s'ouvre sur une réplique du film qui dit la phrase de sa scène.
+# - L'ouverture : LA question du sujet (« لو كل حاجة مكتوبة… هتحاسب ليه؟ », choix du propriétaire, 2026-11-17), à laquelle
+#   répond le chapitre `answer` : as-Sa'di sur 81:29 (et 74:56) et sur 6:148 (« لا يحل بأسه إلا بمن استحقه »).
+# - Répliques de la session sans tafsir : l'ouverture, « مش هنتجادل… », les débuts de chapitre, « قبل ما الحاجة تحصل: اعمل.
+#   وبعد ما تحصل: سلّم لربنا » (lu sur l'ordre de Muslim 2664) ; la dernière, l'appel au partage, est la sienne.
+id: qadar
+# « Je valide le script » du propriétaire (2026-11-17, question à choix nommant « docs/scripts/qadar.md à jour : les
+# répliques des 3 shorts et du film avec les nouveaux débuts, la place des versets et des hadiths, les titres »). Ni la
+# voix, ni les dessins, ni les sources proposées : il les valide sur les vidéos. La voix attend les premières mesures.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide tout sauf la fin du film, il faut changer اشترك عشان الفيلم الجاي » du propriétaire (2026-11-17, question à
+# choix nommant les 3 shorts et le film, voix, dessins, montage, ambiances, couvertures et vignette, textes et 4 accroches,
+# sources et 2 lectures) : lu comme le film tel que livré sauf sa dernière réplique ; ses répliques propres sont redites
+# par la voix pour cette réplique (une requête) : la voix du film et sa fin s'entendent sur la vidéo refaite.
+validated: { by: mssnoussi92, on: 2026-11-17, what: [montage, thumbnail, publish, ambience] }
+# Le film en 9:16 pour Facebook et son jumeau TikTok signé @quran.words.daily (son choix, 2026-11-17, question à choix :
+# « oui, les deux ») : rendus à part (`only: tall`, `only: tall-tiktok`), après la voix refaite pour la dernière réplique.
+tall:
+  tiktok: { asked: 2026-11-17 }
+files: qadar                     # qadar-film-16x9.mp4, qadar-short-<n>-<id>.mp4
+title: { ar: "مخيّر ولا مسيّر؟", en: "Free will or fate?" }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 81-trial-qadar
+outro: 12
+shorts: [amal, shaa, law]
+thumbnail: { title: "مخيّر ولا مسيّر؟", tag: "٣ جمل", panels: [amal, shaa, law] }
+publish:
+  out: docs/retention/publication-qadar.md
+  title: { en: "Free will or fate? 3 sentences we all say", ar: "مخيّر ولا مسيّر؟ تلات جمل بنقولها كلنا" }
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-17 (« je valide tout sauf la fin du film »)
+    ar: "لو كل حاجة مكتوبة… هتحاسب ليه؟"
+    en: "If everything is written… why will I be held to account?"
+    validated: 2026-11-17
+  series: { en: "Free will or fate?", ar: "مخيّر ولا مسيّر؟" }
+  description:
+    en: "“The result is written”, “When God guides me”, “If only I had…”: three sentences we all say, and behind each one the same question. Not a debate: the question the Companions asked, the answer they received, and what the Quran says. You have a real will and real deeds, and your will runs under God's will."
+    ar: "«النتيجة مكتوبة»، «لما ربنا يهديني»، «لو كنت عملت كذا»: تلات جمل بنقولها كلنا، وورا كل واحدة نفس السؤال. مش جدال: السؤال اللي الصحابة سألوه، والإجابة اللي خدوها، والقرآن قال إيه. ليك مشيئة حقيقية وفعل حقيقي، ومشيئتك ماشية تحت مشيئة ربنا."
+  hashtags: ["#القضاء_والقدر", "#مخير_ولا_مسير"]
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }
+chapters:
+  - id: open
+    title: { ar: "تلات جمل", en: "Three sentences" }
+    segments:
+      # LA question du sujet d'abord (choix du propriétaire, 2026-11-17, sur l'aperçu), dite comme celle des gens, entre
+      # guillemets ; le chapitre `answer` y répond.
+      - narration: film-question
+        picture: law
+        scene: law
+        lines:
+          - ar: "«لو كل حاجة مكتوبة… هتحاسب ليه؟»"
+            en: "“If everything is written… why will I be held to account?”"
+          - ar: "سؤال بيقلق ناس كتير… والإجابة مش في الجدال."
+            en: "A question that troubles many… and the answer isn't in arguing."
+          - ar: "بتبدأ من تلات جمل بنقولها كلنا:"
+            en: "It starts with three sentences we all say:"
+      - narration: film-open
+        shots: [{ picture: amal, scene: shut }, { picture: shaa, scene: turn }, { picture: law, scene: shop }]
+        lines:
+          - ar: "«النتيجة مكتوبة»… «لما ربنا يهديني»… و«لو كنت عملت كذا»."
+            en: "“The result is written”… “When God guides me”… and “If only I had…”"
+  - id: frame
+    title: { ar: "مش جدال", en: "Not a debate" }
+    segments:
+      - narration: film-frame
+        picture: shaa
+        scene: words
+        sources: [hadith.tirmidhi.2133]
+        lines:
+          - ar: "قبل ما نجاوب… النبي صلى الله عليه وسلم خرج مرة على أصحابه… لقاهم بيتجادلوا في القدر."
+            en: "Before we answer… the Prophet ﷺ once came out to his Companions… and found them arguing about decree."
+          - ar: "فزعل جدًا… ونهاهم يتجادلوا فيه."
+            en: "He was deeply upset… and forbade them to argue over it."
+          - ar: "عشان كده… مش هنتجادل. هنشوف القرآن والسنة قالوا إيه… ونعمل بيه."
+            en: "So… we won't argue. We'll see what the Quran and the Sunnah said… and act on it."
+      - narration: film-first
+        lines:
+          - ar: "وأول حاجة… ربنا قالها في آية قصيرة:"
+            en: "And the first thing… God said it in one short verse:"
+      - { verse: quran.54.49 }
+  - id: amal
+    number: 1
+    title: { ar: "«النتيجة مكتوبة»", en: "“The result is written”" }
+    segments:
+      - narration: film-amal
+        picture: amal
+        scene: shut
+        lines:
+          - ar: "أول جملة: «النتيجة مكتوبة… هذاكر ليه؟»"
+            en: "The first sentence: “The result is already written… so why study?”"
+          - ar: "والسؤال ده… الصحابة سألوه للنبي صلى الله عليه وسلم."
+            en: "And that very question… the Companions asked the Prophet ﷺ."
+      - { reuse: amal.open, scene: ground }
+      - { reading: hadith.bukhari.4949 }
+      - { reuse: amal.recite }
+      - { verses: [quran.92.5, quran.92.6, quran.92.7, quran.92.8, quran.92.9, quran.92.10], scene: paths }
+      - { reuse: amal.meaning }
+      - { reuse: amal.depth, scene: desk }
+      - { reuse: amal.example, scene: open }
+      - { reuse: amal.close, lines: [0], scene: dawn, subscribe: true }
+  - id: shaa
+    number: 2
+    title: { ar: "«لما ربنا يهديني»", en: "“When God guides me”" }
+    segments:
+      - narration: film-shaa
+        picture: shaa
+        scene: turn
+        lines:
+          - ar: "والجملة التانية: «لما ربنا يهديني… هبقى أصلّي.»"
+            en: "The second sentence: “When God guides me… I'll start praying.”"
+          - ar: "آيتين ورا بعض… بيردّوا عليها."
+            en: "Two verses, one after the other… answer it."
+      - { reuse: shaa.open, scene: words }
+      - { verses: [quran.81.28, quran.81.29] }
+      - { reuse: shaa.meaning }
+      - narration: film-old
+        sources: [tafsir.saadi.6.148]
+        lines:
+          - ar: "والحجة دي قديمة… القرآن قال إن المشركين هيقولوها، وقالوها:"
+            en: "And that excuse is old… the Quran said the idolaters would use it, and they did:"
+      - { verse: quran.6.148 }
+      - narration: film-old-meaning
+        sources: [tafsir.saadi.6.148]
+        lines:
+          - ar: "يعني: لو كانت حجة صحيحة… ما كانش العذاب نزل عليهم."
+            en: "Meaning: had it been a valid argument… punishment would not have fallen on them."
+          - ar: "والحجة لازم يكون وراها علم… مش ظن."
+            en: "And an argument needs knowledge behind it… not guesswork."
+      - { reuse: shaa.depth, scene: turn }
+      - { reuse: shaa.example, scene: rise }
+      - { reuse: shaa.close, lines: [0] }
+  - id: law
+    number: 3
+    title: { ar: "«لو»", en: "“If only”" }
+    segments:
+      - narration: film-law
+        picture: law
+        scene: shop
+        lines:
+          - ar: "والتالتة… بعد ما الحاجة تحصل: «لو كنت عملت كذا…»"
+            en: "And the third… after something has happened: “If only I had…”"
+          - ar: "كلمة من حرفين… النبي صلى الله عليه وسلم حذّر منها."
+            en: "A two-letter word… the Prophet ﷺ warned against it."
+      - { reuse: law.open, scene: law }
+      - { reading: hadith.muslim.2664 }
+      - { reuse: law.turn, scene: night }
+      - { verses: [quran.57.22, quran.57.23] }
+      - narration: film-why
+        sources: [tafsir.saadi.57.23]
+        lines:
+          - ar: "يعني اللي فاتك… ما كانش فيه طريق تمنعه."
+            en: "Meaning: what you lost… there was no way to stop it."
+      - { reuse: law.meaning }
+      - { reuse: law.depth, scene: calm }
+      - { reuse: law.example }
+      - { reuse: law.close, lines: [0], scene: dawn }
+  - id: answer
+    title: { ar: "مخيّرين ولا مسيّرين؟", en: "Do we choose, or are we driven?" }
+    segments:
+      - narration: film-answer
+        picture: shaa
+        scene: rise
+        sources: [tafsir.saadi.81.29, tafsir.saadi.6.148]
+        lines:
+          - ar: "نرجع للسؤال: لو كل حاجة مكتوبة… هتحاسب ليه؟"
+            en: "Back to the question: if everything is written… why will I be held to account?"
+          - ar: "عشان ليك مشيئة حقيقية… بتختار بيها وبتعمل… وهي ماشية تحت مشيئة ربنا."
+            en: "Because you have a real will… you choose and act by it… and it runs under God's will."
+          - ar: "وربنا ما بينزّلش عقابه… غير على اللي يستاهله."
+            en: "And God brings His punishment… only on those who deserve it."
+          - ar: "يعني مخيّرين ولا مسيّرين؟ مش واحدة من الاتنين لوحدها."
+            en: "So, do we choose or are we driven? Not one of the two on its own."
+      - narration: film-ways
+        lines:
+          - ar: "وربنا وراك الطريقين:"
+            en: "And God has shown you both roads:"
+      - { verse: quran.76.3 }
+      - narration: film-ways-meaning
+        sources: [tafsir.saadi.76.3]
+        lines:
+          - ar: "يعني: وراك طريق الخير وحبّبك فيه… ووراك طريق الهلاك وحذّرك منه."
+            en: "Meaning: He showed you the road of good and drew you to it… and the road to ruin, and warned you of it."
+          - ar: "والناس بعدها: شاكر… أو كفور."
+            en: "And then people are grateful… or ungrateful."
+      - narration: film-end
+        subscribe: true
+        lines:
+          - ar: "قبل ما الحاجة تحصل: اعمل. وبعد ما تحصل: سلّم لربنا."
+            en: "Before it happens: act. After it happens: leave it to God."
+          # Changée à sa demande (2026-11-17, « il faut changer اشترك عشان الفيلم الجاي », puis son choix sur aperçu) :
+          # l'appel au partage ; le bouton d'abonnement passe toujours à l'écran (`subscribe`).
+          - ar: "ابعته لحد بيسأل نفس السؤال."
+            en: "Send it to someone who asks the same question."

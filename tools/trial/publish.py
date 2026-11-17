@@ -112,7 +112,8 @@ def quotes_of(segments: list[dict]) -> list[tuple[str, str]]:
         elif "verses" in s:
             ids += [("verse", sid) for sid in s["verses"]]
         elif "reading" in s:
-            ids.append(("reading", s["reading"]))
+            if ("reading", s["reading"]) not in ids:       # a part and the whole of a hadith: one reference
+                ids.append(("reading", s["reading"]))
         for sid in s.get("sources") or []:
             ids.append(("report" if sid.startswith("hadith.") else "science" if sid.startswith("science.") else "tafsir", sid))
     return ids

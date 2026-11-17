@@ -23,6 +23,7 @@ import { MAP_LAYOUTS, MAP_OVERLAYS, MAP_PICTURES } from "./WordMap";
 import { SUAL_LAYOUTS, SUAL_OVERLAYS, SUAL_PICTURES } from "./Sual";
 import { LENS_PICTURES } from "./Lens";
 import { KAHF_PICTURES } from "./Kahf";
+import { QADAR_PICTURES } from "./Qadar";
 import { QUIZ_LAYOUTS, QUIZ_OVERLAYS, QUIZ_PICTURES } from "./Quiz";
 
 loadFonts();
@@ -449,6 +450,7 @@ export const PICTURES: Record<string, Drawn> = {
   ...SUAL_PICTURES,
   ...LENS_PICTURES,
   ...KAHF_PICTURES,
+  ...QADAR_PICTURES,
   ...QUIZ_PICTURES,
 };
 

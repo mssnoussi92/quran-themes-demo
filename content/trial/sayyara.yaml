@@ -8,7 +8,7 @@ id: sayyara
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
-text: 78-trial-sayyara
+text: 86-trial-sayyara
 # une plaine nue au soleil bas (Pixabay 26085, TeeFarm, déjà employé pour le film de Dhul-Qarnayn et pour الكنود) ;
 # APPROUVÉ pour ce short par le propriétaire le 2026-11-17 (question à choix : « 26085, nuit générée, 190332 »)
 clip: { source: pixabay, id: 26085, author: TeeFarm, page: "https://pixabay.com/videos/id-26085/", take: { from: 2, seconds: 18, height: 1440, pingpong: true }, rate: 0.85, position: "50% 50%", shift: 0, brightness: 0.72, ground: "#0a0705", horizon: 1380, veil: 0.8 }

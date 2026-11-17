@@ -96,11 +96,32 @@ def registry() -> dict:
     return out
 
 
-def quote(sid: str, sources: dict, cuts: dict) -> tuple[str, float]:
-    """One line for a verse or a hadith, and how long it lasts."""
+INHERITED = ("reader", "item", "file", "license")      # what a part's recording takes from the entry's recording
+
+
+def part_view(src: dict, part: str) -> dict | None:
+    """A hadith as one of its `parts` plays it (a short plays a part of the reading, the film the whole): the entry
+    with the part's excerpts as its own and the part's recording (start, end, heard, status, validated_by) over the
+    reader, item, file and license of the entry's recording. None when the entry has no such part."""
+    found = (src.get("parts") or {}).get(part)
+    if not found:
+        return None
+    view = {k: v for k, v in src.items() if k != "parts"}
+    view["excerpt_ar"], view["excerpt_en"] = found.get("excerpt_ar"), found.get("excerpt_en")
+    rec, own = src.get("recording"), found.get("recording")
+    view["recording"] = {**{k: rec[k] for k in INHERITED if k in rec}, **own} if rec and own else None
+    return view
+
+
+def quote(sid: str, sources: dict, cuts: dict, part: str | None = None) -> tuple[str, float]:
+    """One line for a verse or a hadith, and how long it lasts. `part`: the part of a hadith a short plays."""
     src = sources.get(sid)
     if src is None:
         sys.exit(f"error: {sid} is not in the registry")
+    if part is not None:
+        src = part_view(src, part)
+        if src is None:
+            sys.exit(f"error: {sid} has no part « {part} » in the registry")
     state = "" if src.get("status") == "validated" else " · **source proposée, à valider**"
     if src["type"] == "ayah":
         key = f"{src['ref']['surah']}:{src['ref']['ayah']}"
@@ -118,7 +139,8 @@ def quote(sid: str, sources: dict, cuts: dict) -> tuple[str, float]:
     if not src.get("excerpt_ar") and text.count('"') >= 2:
         text = text[text.index('"'):text.rindex('"') + 1]
     english = src.get("excerpt_en") or src.get("text_en", "")
-    return (f"**Hadith lu par une vraie voix** · {ref} · {reading}{state}  \n  {text}  \n  *{english}*", seconds)
+    extract = f" · extrait « {part} »" if part is not None else ""
+    return (f"**Hadith lu par une vraie voix** · {ref}{extract} · {reading}{state}  \n  {text}  \n  *{english}*", seconds)
 
 
 COLLECTIONS = {"bukhari": "Sahih al-Bukhari", "muslim": "Sahih Muslim", "tirmidhi": "Jami' at-Tirmidhi"}
@@ -213,7 +235,7 @@ def main() -> None:
                 body += [f"**{stamp(t)}** · {text}", ""]
                 recited += seconds
             else:
-                text, seconds = quote(seg.get("verse") or seg["reading"], sources, cuts)
+                text, seconds = quote(seg.get("verse") or seg["reading"], sources, cuts, seg.get("part"))
                 body += [f"**{stamp(t)}** · {text}", ""]
                 recited += seconds if "verse" in seg else 0
                 read += seconds if "reading" in seg else 0
@@ -263,9 +285,9 @@ def main() -> None:
                 body += [f"- {stamp(t)} · {first}"] if in_short else [f"**{stamp(t)}** · {text}", ""]
                 recited += seconds
             else:
-                text, seconds = quote(seg.get("verse") or seg["reading"], sources, cuts)
+                text, seconds = quote(seg.get("verse") or seg["reading"], sources, cuts, seg.get("part"))
                 first = text.split("  \n")[0]
-                in_short = any((s.get("verse") or s.get("reading")) == (seg.get("verse") or seg["reading"]) for sp in shorts.values() for s in sp["segments"])
+                in_short = any((s.get("verse") or s.get("reading"), s.get("part")) == (seg.get("verse") or seg["reading"], seg.get("part")) for sp in shorts.values() for s in sp["segments"])
                 body += [f"- {stamp(t)} · {first}"] if in_short else [f"**{stamp(t)}** · {text}", ""]
                 recited += seconds if "verse" in seg else 0
                 read += seconds if "reading" in seg else 0

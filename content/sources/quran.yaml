@@ -2710,6 +2710,227 @@
   notes: "les quatre qualités (épisode 3), pilote « une image, puis le verset » (2026-11-15)"
   text_ar: إِلَّا ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّـٰلِحَـٰتِ وَتَوَاصَوْا۟ بِٱلْحَقِّ وَتَوَاصَوْا۟ بِٱلصَّبْرِ
   text_en: Except for those who have believed and done righteous deeds and advised each other to truth and advised each other to patience.
+- id: quran.92.5
+  type: ayah
+  ref: {surah: 92, ayah: 5}
+  url: https://quran.com/92/5
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=92:5
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=92:5
+    translator: Saheeh International
+    surah_ar: الليل
+    surah_en: Al-Layl
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« فأما من أعطى واتقى » : récité par le Prophète ﷺ après « اعملوا » (Bukhari 4949) ; short 1 `amal` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: فَأَمَّا مَنْ أَعْطَىٰ وَٱتَّقَىٰ
+  text_en: As for he who gives and fears Allāh
+- id: quran.92.6
+  type: ayah
+  ref: {surah: 92, ayah: 6}
+  url: https://quran.com/92/6
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=92:6
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=92:6
+    translator: Saheeh International
+    surah_ar: الليل
+    surah_en: Al-Layl
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« وصدق بالحسنى » ; short 1 `amal` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: وَصَدَّقَ بِٱلْحُسْنَىٰ
+  text_en: And believes in the best [reward],
+- id: quran.92.7
+  type: ayah
+  ref: {surah: 92, ayah: 7}
+  url: https://quran.com/92/7
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=92:7
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=92:7
+    translator: Saheeh International
+    surah_ar: الليل
+    surah_en: Al-Layl
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« فسنيسره لليسرى » ; short 1 `amal` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: فَسَنُيَسِّرُهُۥ لِلْيُسْرَىٰ
+  text_en: We will ease him toward ease.
+- id: quran.92.8
+  type: ayah
+  ref: {surah: 92, ayah: 8}
+  url: https://quran.com/92/8
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=92:8
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=92:8
+    translator: Saheeh International
+    surah_ar: الليل
+    surah_en: Al-Layl
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« وأما من بخل واستغنى » ; short 1 `amal` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: وَأَمَّا مَنۢ بَخِلَ وَٱسْتَغْنَىٰ
+  text_en: But as for he who withholds and considers himself free of need
+- id: quran.92.9
+  type: ayah
+  ref: {surah: 92, ayah: 9}
+  url: https://quran.com/92/9
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=92:9
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=92:9
+    translator: Saheeh International
+    surah_ar: الليل
+    surah_en: Al-Layl
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« وكذب بالحسنى » ; short 1 `amal` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: وَكَذَّبَ بِٱلْحُسْنَىٰ
+  text_en: And denies the best [reward],
+- id: quran.92.10
+  type: ayah
+  ref: {surah: 92, ayah: 10}
+  url: https://quran.com/92/10
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=92:10
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=92:10
+    translator: Saheeh International
+    surah_ar: الليل
+    surah_en: Al-Layl
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« فسنيسره للعسرى » : la fin de ce que récite Bukhari 4945 (« إلى قوله للعسرى ») ; short 1 `amal` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: فَسَنُيَسِّرُهُۥ لِلْعُسْرَىٰ
+  text_en: We will ease him toward difficulty.
+- id: quran.81.28
+  type: ayah
+  ref: {surah: 81, ayah: 28}
+  url: https://quran.com/81/28
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=81:28
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=81:28
+    translator: Saheeh International
+    surah_ar: التكوير
+    surah_en: At-Takwir
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« لمن شاء منكم أن يستقيم » : une volonté donnée à l'homme ; short 2 `shaa` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: لِمَن شَآءَ مِنكُمْ أَن يَسْتَقِيمَ
+  text_en: For whoever wills among you to take a right course.
+- id: quran.81.29
+  type: ayah
+  ref: {surah: 81, ayah: 29}
+  url: https://quran.com/81/29
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=81:29
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=81:29
+    translator: Saheeh International
+    surah_ar: التكوير
+    surah_en: At-Takwir
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« وما تشاءون إلا أن يشاء الله رب العالمين » : sous la volonté de Dieu ; short 2 `shaa` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: وَمَا تَشَآءُونَ إِلَّآ أَن يَشَآءَ ٱللَّهُ رَبُّ ٱلْعَـٰلَمِينَ
+  text_en: And you do not will except that Allāh wills - Lord of the worlds.
+- id: quran.57.22
+  type: ayah
+  ref: {surah: 57, ayah: 22}
+  url: https://quran.com/57/22
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=57:22
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=57:22
+    translator: Saheeh International
+    surah_ar: الحديد
+    surah_en: Al-Hadid
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« ما أصاب من مصيبة… إلا في كتاب من قبل أن نبرأها » ; short 3 `law` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: مَآ أَصَابَ مِن مُّصِيبَةٍ فِى ٱلْأَرْضِ وَلَا فِىٓ أَنفُسِكُمْ إِلَّا فِى كِتَـٰبٍ مِّن قَبْلِ أَن نَّبْرَأَهَآ ۚ إِنَّ ذَٰلِكَ عَلَى ٱللَّهِ يَسِيرٌ
+  text_en: No disaster strikes upon the earth or among yourselves except that it is in a register before We bring it into being - indeed that, for Allāh, is easy -
+- id: quran.57.23
+  type: ayah
+  ref: {surah: 57, ayah: 23}
+  url: https://quran.com/57/23
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=57:23
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=57:23
+    translator: Saheeh International
+    surah_ar: الحديد
+    surah_en: Al-Hadid
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« لكيلا تأسوا على ما فاتكم » : pourquoi on le sait ; le film seul ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: لِّكَيْلَا تَأْسَوْا۟ عَلَىٰ مَا فَاتَكُمْ وَلَا تَفْرَحُوا۟ بِمَآ ءَاتَىٰكُمْ ۗ وَٱللَّهُ لَا يُحِبُّ كُلَّ مُخْتَالٍ فَخُورٍ
+  text_en: In order that you not despair over what has eluded you and not exult [in pride] over what He has given you. And Allāh does not like everyone self-deluded and boastful -
+- id: quran.54.49
+  type: ayah
+  ref: {surah: 54, ayah: 49}
+  url: https://quran.com/54/49
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=54:49
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=54:49
+    translator: Saheeh International
+    surah_ar: القمر
+    surah_en: Al-Qamar
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« إنا كل شيء خلقناه بقدر » : le cadre du film ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: إِنَّا كُلَّ شَىْءٍ خَلَقْنَـٰهُ بِقَدَرٍ
+  text_en: Indeed, all things We created with predestination.
+- id: quran.6.148
+  type: ayah
+  ref: {surah: 6, ayah: 148}
+  url: https://quran.com/6/148
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=6:148
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=6:148
+    translator: Saheeh International
+    surah_ar: الأنعام
+    surah_en: Al-An'am
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "l'excuse du décret annoncée (« سيقول الذين أشركوا لو شاء الله ») et réfutée ; le film seul ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: سَيَقُولُ ٱلَّذِينَ أَشْرَكُوا۟ لَوْ شَآءَ ٱللَّهُ مَآ أَشْرَكْنَا وَلَآ ءَابَآؤُنَا وَلَا حَرَّمْنَا مِن شَىْءٍ ۚ كَذَٰلِكَ كَذَّبَ ٱلَّذِينَ مِن قَبْلِهِمْ حَتَّىٰ ذَاقُوا۟ بَأْسَنَا ۗ قُلْ هَلْ عِندَكُم مِّنْ عِلْمٍ فَتُخْرِجُوهُ لَنَآ ۖ إِن تَتَّبِعُونَ إِلَّا ٱلظَّنَّ وَإِنْ أَنتُمْ إِلَّا تَخْرُصُونَ
+  text_en: Those who associated [others] with Allāh will say, "If Allāh had willed, we would not have associated [anything] and neither would our fathers, nor would we have prohibited anything." Likewise did those before deny until they tasted Our punishment. Say, "Do you have any knowledge that you can produce for us? You follow not except assumption, and you are not but misjudging."
+- id: quran.76.3
+  type: ayah
+  ref: {surah: 76, ayah: 3}
+  url: https://quran.com/76/3
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=76:3
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=76:3
+    translator: Saheeh International
+    surah_ar: الانسان
+    surah_en: Al-Insan
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« إنا هديناه السبيل إما شاكرا وإما كفورا » : la conclusion du film ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: إِنَّا هَدَيْنَـٰهُ ٱلسَّبِيلَ إِمَّا شَاكِرًا وَإِمَّا كَفُورًا
+  text_en: Indeed, We guided him to the way, be he grateful or be he ungrateful.
 
 - id: quran.12.19
   type: ayah
