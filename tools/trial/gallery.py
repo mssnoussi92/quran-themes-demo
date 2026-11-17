@@ -202,7 +202,11 @@ def film_data(film_id: str, folder: Path, out: Path, release: str | None, tall: 
         slug = f"{film.get('files', film_id)}-film-9x16"
         preview(tall, media / f"{slug}.mp4", False)
         frame(tall, media / f"{slug}.jpg", 1.0, 540)
-        upright = {"wide": False, "tall": True, "slug": slug, "file": tall.name, "twin": None, "image": None,
+        # Its TikTok twin, signed with the page's name there (publish.py --tall writes its caption): named on the card.
+        tiktok = (film.get("tall") or {}).get("tiktok")
+        heard = (tiktok or {}).get("validated") or {}
+        upright = {"wide": False, "tall": True, "slug": slug, "file": tall.name, "image": None,
+                   "twin": f"{slug}-tiktok.mp4" if tiktok is not None else None, "twin_on": str(heard.get("on", heard.get(True, ""))),
                    "length": stamp(seconds(tall)), "ar": film["publish"]["title"]["ar"], "en": film["publish"]["title"]["en"],
                    "blocks": part[0]["blocks"], "notes": part[0]["notes"], "release": tall_release,
                    "ok": all(k in (said.get("what") or []) for k in ("montage", "publish")), "on": str(said.get("on", said.get(True, "")))}
@@ -456,13 +460,16 @@ def card(c: dict) -> str:
                    f'<pre id="{ident}" dir="auto">{e(b["text"])}</pre></div>')
     notes = "".join(f'<p class="notes">{e(re.sub("`", "", n))}</p>' for n in c["notes"])
     twin = f' · version TikTok : <code>{e(c["twin"])}</code>' if c["twin"] else ""
-    kind = "Film 16:9" if c["wide"] else "Film 9:16, pour Facebook" if c.get("tall") else "Short 9:16" + (f" · {c['cast']}" if c.get("cast") else "")
+    kind = "Film 16:9" if c["wide"] else ("Film 9:16, pour Facebook" + (" et TikTok" if c["twin"] else "")) if c.get("tall") else "Short 9:16" + (f" · {c['cast']}" if c.get("cast") else "")
     picture = "Vignette" if c["wide"] else "Couverture"
     if c.get("tall"):
         where = (f'release brouillon : <a href="{e(c["release"])}">sur GitHub</a>' if c["release"]
                  else "envoyé dans la conversation, dans aucune release")
         state = (f'<span class="pill good">Montage et texte validés le {e(c["on"])}</span>' if c["ok"]
                  else '<span class="pill wait">À valider</span>')
+        if c["twin"]:
+            state += (f'<span class="pill good">Version TikTok validée le {e(c["twin_on"])}</span>' if c["twin_on"]
+                      else '<span class="pill wait">Version TikTok à valider</span>')
         shown = f'<div class="pills">{state}</div><p class="meta">Le même film, monté comme ses shorts : même voix, même minutage. Fichier : {where}.</p>'
     else:
         shown = f'<figure><img src="media/{c["slug"]}.jpg" alt="{picture} : {e(c["en"])}" loading="lazy"><figcaption>{picture} : <code>{e(c["image"])}</code></figcaption></figure>'

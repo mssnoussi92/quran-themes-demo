@@ -267,6 +267,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 124. **Les versions courtes des shorts 2 et 3 de Dhul-Qarnayn** (propriétaire, 2026-11-16). Dans la session quran-reels, il a choisi l'essai des versions courtes sur les trois shorts de Dhul-Qarnayn (24, 25 et 26 novembre) plutôt que sur le seul short 1 : sous trois vidéos, la page « Statistiques » n'affirme aucune différence (message de cette session-là). Mêmes prises, aucune requête de voix : `tribute` 2:06 → 1:13 (sans 18:93, que l'accroche dit déjà, le sens mot à mot, la profondeur, l'exemple ; une coupe sans pause avant « ما خدش فلوس », Whisper l'entend entière) ; `barrier` 1:51 → 1:20 (sans « والسد وقف؟ » ni 18:97, qui commence par « فما », la suite de 18:96 : il ne peut pas ouvrir seul ; sans la profondeur ni l'exemple ; « ولما ييجي وعد ربي… » gardée, le sens de la fin de 18:98). Rendues par le workflow `film` (`only: cut`, run 43918129835 ; tribute relancé une fois : le téléchargement du navigateur de Remotion avait dépassé son délai), contrôlées sur leurs planches (-16,2 LUFS), envoyées ; **« je valide les deux »** (question à choix). Nommées par `publication-qarnayn.md`, publiques dans `page-qarnayn` ; pull request vers `main` à sa demande, pour que quran-reels les prenne les 25 et 26. Avis de la session : trois versions courtes contre des shorts entiers, à des jours et sur des sujets différents, donnent une indication, pas une preuve.
 
+125. **Les films verticaux sur TikTok, signés du nom de la page là-bas** (propriétaire, 2026-11-16 et 17). Il a publié le film du du'a le 16 au soir sur YouTube, Facebook et TikTok ; le film vertical posté sur TikTok y est signé `@quran_words_daily`, le compte de quelqu'un d'autre sur TikTok (la page s'y appelle `@quran.words.daily`). **Son choix** (question à choix : « version TikTok pour les suivants ») : le post du du'a reste tel quel (le supprimer perdrait ses vues) ; les films suivants ont un jumeau TikTok, comme les shorts. **Fait** : `FilmTall` prend `platform` (le nom lu dans `handles` de `content/publish.yaml`, que `film.py` met dans la timeline du film) ; `videos.py --only tall` liste le film vertical et son jumeau `<files>-film-9x16-tiktok`, `--only tall-tiktok` le jumeau seul (un film vertical validé n'est pas re-rendu) ; le workflow `film` traite `tall-tiktok` comme `tall` (timeline, textes, release `<files>-9x16-candidate`) ; `publish.py --tall` nomme le jumeau sur la ligne des fichiers et écrit sa légende TikTok (titre, accroche et voix IA, hashtags) dès que le fichier du film a `tall.tiktok`. Rendus par le workflow `film` (runs 43994292241 et 43994296966) : Dhul-Qarnayn 8:25 et la caverne 6:11, -16,2 et -16,1 LUFS, signature lue de près sur une image (en haut et dans le rappel « تابعنا »), fin avec le nom en grand ; envoyés. **« Je valide les deux »** (2026-11-17, question à choix nommant la vidéo et la légende TikTok) : `tall.tiktok.validated` de `qarnayn.yaml` et `kahf.yaml`. TikTok ajouté aux lignes du 23 et du 30 novembre du calendrier ; `page-files` relancé pour `qarnayn-9x16` et `kahf-9x16`. La légende TikTok d'un film a quatre hashtags, pas cinq : le film n'en a que deux à lui (les mêmes que sur YouTube), aucun n'est ajouté pour remplir.
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```
@@ -485,6 +487,22 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   quran-reels, où chaque vidéo de la Page est mesurée sur chaque plateforme (une chose va une fois, au bon endroit).
   « Les mesures » dit maintenant où sont les chiffres et quoi envoyer : rien pour Facebook, Instagram et YouTube ; pour
   TikTok, la liste « Contenu », le plus simple une fois par semaine.
+
+## « On commence la revue » : toute session sait quoi faire (2026-11-17)
+
+- **Demande du propriétaire** : « que toutes les sessions futures comprennent quoi faire si je dis "on commence la
+  revue dimanche" ou quelque chose comme ça ». La revue est une seule pour toute la Page : le skill `weekly-review` de
+  quran-reels dit quoi faire selon le moment (maintenant avec lui, ou dimanche par la revue automatique de 09:23, et une
+  question à choix si ce n'est pas clair), et part des points notés pour elle dans `docs/insights.md` de quran-reels.
+  Ici, un skill du même nom y renvoie, comme `record-stats`.
+
+## Les sessions fusionnent leurs PR (2026-11-17)
+
+- **Demande du propriétaire** : « que toutes les sessions suivent la merge et la mergent automatiquement quand les
+  checks passent ». Question à choix sur les PR qui sont sa validation : « Non, elle attend ma parole ». Règle dans
+  `CLAUDE.md` (« Ce qui vaut toujours »), ici et dans quran-reels : la session attend ses checks (`validate.yml`),
+  fusionne quand ils sont verts, corrige quand ils sont rouges ; une PR qui porte une décision de lui pas encore
+  donnée attend son « je valide ».
 
 ## Le film « مخيّر ولا مسيّر؟ » : la fiche et le script (2026-11-17)
 

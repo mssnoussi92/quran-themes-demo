@@ -41,7 +41,7 @@ on:
         default: D
         type: string
       only:
-        description: "all, shorts, film, tiktok, one short's id (it prepares only that short), or tall (the film in 9:16, alone, in a draft release of its own)"
+        description: "all, shorts, film, tiktok, one short's id (it prepares only that short), tall (the film in 9:16 and its TikTok twin, in a draft release of their own), or tall-tiktok (the twin alone, added to that draft)"
         default: all
         type: string
       ambience:
@@ -217,7 +217,7 @@ jobs:
           done
 
       - name: Timeline of the film
-        if: ${{ env.ONLY == 'all' || env.ONLY == 'film' || env.ONLY == 'tall' }}
+        if: ${{ env.ONLY == 'all' || env.ONLY == 'film' || env.ONLY == 'tall' || env.ONLY == 'tall-tiktok' }}
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
@@ -485,7 +485,7 @@ jobs:
       - name: Publication texts
         run: |
           flags=()
-          if [ "$ONLY" = tall ]; then flags+=(--tall); fi      # the film in 9:16: its own text, for Facebook
+          if [ "$ONLY" = tall ] || [ "$ONLY" = tall-tiktok ]; then flags+=(--tall); fi      # the film in 9:16: its own text (Facebook, TikTok)
           if ! uv run --with pyyaml python3 tools/trial/publish.py --film "$FILM" --voice "$VOICE" --out publication.md "${flags[@]}"; then
             echo "(The publication texts could not be written for this run: tools/trial/publish.py failed, see the run's log.)" > publication.md
             touch no-texts
@@ -502,7 +502,7 @@ jobs:
         run: |
           tag="$FILES-$SUFFIX"
           # The film in 9:16 has a draft of its own: the draft of the film and its shorts (validated or not) stays.
-          if [ "$ONLY" = tall ]; then tag="$FILES-9x16-$SUFFIX"; fi
+          if [ "$ONLY" = tall ] || [ "$ONLY" = tall-tiktok ]; then tag="$FILES-9x16-$SUFFIX"; fi
           title="Draft $FILM ($SUFFIX): videos to watch"
           {
             echo "Draft render of the film \`$FILM\` and its shorts, not validated. Narration: AI-generated voice (voice $VOICE, takes kept in content/trial/takes/). Verses: real recitation. Ambience under the narration: $AMBIENCE. Run: $RUN_URL"

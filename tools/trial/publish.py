@@ -306,13 +306,27 @@ def main() -> None:
         said = ((film.get("tall") or {}).get("validated") or {})
         state = (f"**validé par le propriétaire le {said.get('on', said.get(True))}**" if "publish" in (said.get("what") or [])
                  else "**proposé par la session, pas encore validé par le propriétaire**")
+        # Its TikTok twin, signed with the page's name there (`tall.tiktok` of the film's file; owner, 2026-11-16): the
+        # film, the short caption for TikTok. The du'a film went to TikTok signed with someone else's account.
+        tiktok = (film.get("tall") or {}).get("tiktok")
+        twin = f"{files}-film-9x16-tiktok.mp4"
+        if tiktok is not None:
+            if not pub.get("hook"):
+                sys.exit(f"error: --tall: {args.film}: a TikTok caption needs `publish.hook`")
+            heard = (tiktok or {}).get("validated") or {}
+            tall_cards += [f"Sur TikTok : la vidéo `{twin}`, signée `{conf['handles']['tiktok']}`.", "",
+                           *cards("TikTok", pub["title"]["en"] + "\n" + pub["title"]["ar"], hooked(conf, pub["hook"]), "",
+                                  hashtags(conf, [], pub["hashtags"], "tiktok"))]
         out = [f"# {pub['series']['en']} · {pub['series']['ar']} : le film en 9:16", "",
                "Le même film, monté pour un écran vertical (les images des shorts, la même voix, le même minutage). "
                + ("Texte : la légende courte, le titre du film, son accroche avec la ligne de la voix IA, ses hashtags (titre et hashtags "
                   + state.replace("**validé", "**validés") + ")." + hooks_state([film]) if pub.get("hook") else
                   f"Texte {state} : il reprend le titre et la description du film, sans les chapitres."), "",
                f"## Le film en 9:16 · {pub['title']['en']} · {pub['title']['ar']}", "",
-               f"`{files}-film-9x16.mp4` · {stamp(data['seconds'])} · 9:16 · Facebook", "",
+               (f"`{files}-film-9x16.mp4` (TikTok : `{twin}`, signée `{conf['handles']['tiktok']}`) · {stamp(data['seconds'])} · 9:16 · Facebook, TikTok"
+                if tiktok is not None else f"`{files}-film-9x16.mp4` · {stamp(data['seconds'])} · 9:16 · Facebook"), "",
+               *([("La version TikTok (vidéo et légende) est " + (f"**validée par le propriétaire le {heard.get('on', heard.get(True))}**."
+                   if heard else "**proposée par la session, pas encore validée par le propriétaire**.")), ""] if tiktok is not None else []),
                *tall_cards]
         # Beside the film's own texts: `publish.out` of its file, with « -9x16 » before the extension (`target`).
         target.parent.mkdir(parents=True, exist_ok=True)
