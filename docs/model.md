@@ -186,7 +186,10 @@ pastille par occurrence, par forme puis par sourate ; la première et la derniè
 
 Un segment de film est l'un de : `reuse: <short>.<narration>` (les répliques d'un short, sa prise telle
 quelle ; `lines: [..]` pour n'en prendre que certaines), `narration: <nom>` avec ses `lines` (répliques propres
-au film), `verse: quran.S.A`, `reading: hadith.<recueil>.<n>` (hadith lu par une vraie voix). `picture` (un
+au film), `verse: quran.S.A`, `reading: hadith.<recueil>.<n>` (hadith lu par une vraie voix ; `part: <nom>` n'en joue qu'une partie : le registre
+du hadith liste `parts` (`excerpt_ar`, `excerpt_en` copiés du texte, `recording` : `start`, `end`, `heard`, `status` dans
+la lecture entière, qui lui donne lecteur, fichier et licence) ; sans `part`, toute la lecture : un short joue une
+partie, le film le tout). `picture` (un
 short) et `scene` disent l'image, gardés d'un segment au suivant ; `shots` donne une image par phrase
 (l'ouverture) ; `subscribe: true` fait passer le rappel d'abonnement pendant ce segment.
 

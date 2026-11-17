@@ -15,6 +15,7 @@ import { Village, Wall } from "./Wall";
 import { Call, Niche, Whale } from "./Dua";
 import { Barrier, Chest, Cliffs, Dwellings } from "./Qarnayn";
 import { KAHF_WIDE } from "./Kahf";
+import { QADAR_WIDE } from "./Qadar";
 
 loadFonts();
 
@@ -241,6 +242,7 @@ const WIDE: Record<string, Drawn> = {
   asked: AskedWide, written: WrittenWide, waited: WaitedWide,
   west: WestWide, tribute: TributeWide, barrier: BarrierWide,
   ...KAHF_WIDE,
+  ...QADAR_WIDE,
 };
 
 /** One stretch of the film on the same clip: the clip, what is drawn over it scene after scene, a slow zoom. */

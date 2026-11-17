@@ -236,8 +236,9 @@ class Checker:
         self.unvalidated: list[str] = []          # what is quoted and not validated yet (one line per film)
 
     # -- quotes
-    def quoted(self, file: str, sid: str, kind: str) -> dict | None:
-        """The registry entry of a `verse:` or a `reading:`, or an error."""
+    def quoted(self, file: str, sid: str, kind: str, part: str | None = None) -> dict | None:
+        """The registry entry of a `verse:` or a `reading:`, or an error. `part` (a reading): the entry as that part
+        of the hadith plays it (script.part_view); an unknown part is an error."""
         src = self.repo.sources.get(sid)
         want = "ayah" if kind == "verse" else "hadith"
         if src is None:
@@ -254,14 +255,24 @@ class Checker:
             return None
         if src.get("status") != "validated" and f"source {sid}" not in self.unvalidated:
             self.unvalidated.append(f"source {sid}")
+        if part is not None:
+            if kind != "reading":
+                self.out.error(file, f"`part` is for a `reading` segment, not for {kind} {sid}")
+                return None
+            whole = src
+            src = script.part_view(whole, part)
+            if src is None:
+                known = ", ".join(whole.get("parts") or {}) or "none"
+                self.out.error(file, f"reading {sid}: unknown part « {part} » (parts of its registry entry: {known})")
+                return None
         if kind == "verse":
             ref = src["ref"]
             if f"{ref['surah']}:{ref['ayah']}" not in self.repo.cuts:
                 self.out.error(file, f"verse {sid} has no cut in the reciter's file (content/recitations/)")
             self.glyphs(file, src["text_ar"], "quran", f"verse {sid}")
         else:
-            self.hadith(file, sid, src)
-            self.glyphs(file, src.get("excerpt_ar") or src["text_ar"], "arabic", f"reading {sid}")
+            self.hadith(file, sid, src, part)
+            self.glyphs(file, src.get("excerpt_ar") or src["text_ar"], "arabic", f"reading {sid}" + (f" part {part}" if part else ""))
         self.glyphs(file, src.get("excerpt_en") or src["text_en"], "latin", f"{kind} {sid}, its translation")
         return src
 
@@ -321,14 +332,15 @@ class Checker:
                 return False
         return True
 
-    def hadith(self, file: str, sid: str, src: dict) -> None:
+    def hadith(self, file: str, sid: str, src: dict, part: str | None = None) -> None:
         if not self.in_policy(file, sid, src):
             return
         rec = src.get("recording")
+        name = sid if part is None else f"{sid} part {part}"
         if not rec:
-            (self.out.warn if self.draft else self.out.error)(file, f"reading {sid} has no recording in the registry (skill find-hadith-recording)")
-        elif rec.get("status") != "validated" and f"reading of {sid}" not in self.unvalidated:
-            self.unvalidated.append(f"reading of {sid}")
+            (self.out.warn if self.draft else self.out.error)(file, f"reading {name} has no recording in the registry (skill find-hadith-recording)")
+        elif rec.get("status") != "validated" and f"reading of {name}" not in self.unvalidated:
+            self.unvalidated.append(f"reading of {name}")
 
     def rests_on(self, file: str, seg: dict, recited: set[str], told: dict) -> None:
         """`sources:` of a narration segment: what its lines rest on, written on screen as a reference and listed in
@@ -487,10 +499,12 @@ class Checker:
                 recited |= self.passage(file, seg["verses"], seg.get("upto"))
             elif "upto" in seg:
                 self.out.error(file, "`upto` is for a `verses` segment of one verse")
+            if "part" in seg and "reading" not in seg:
+                self.out.error(file, f"`part` is for a `reading` segment: {seg_name(seg)}")
             if "reading" in seg:
-                src = self.quoted(file, seg["reading"], "reading")
-                if src:
-                    add_runs(hadiths, words_of(shown_words(src)), seg["reading"])
+                src = self.quoted(file, seg["reading"], "reading", seg.get("part"))
+                if src:     # the whole hadith, even when only a part is read: the voice says none of its words
+                    add_runs(hadiths, words_of(shown_words(self.repo.sources[seg["reading"]])), seg["reading"])
         for seg in segments:
             if "sources" in seg:
                 if "narration" in seg:
@@ -552,7 +566,10 @@ class Checker:
             cut = self.repo.cuts.get(f"{ref.get('surah')}:{ref.get('ayah')}")
             return cut["seconds"] if cut else 0.0
         if "reading" in seg:
-            rec = (self.repo.sources.get(seg["reading"]) or {}).get("recording")
+            src = self.repo.sources.get(seg["reading"]) or {}
+            if seg.get("part"):
+                src = script.part_view(src, seg["part"]) or {}
+            rec = src.get("recording")
             return rec["end"] - rec["start"] if rec else script.UNKNOWN_READING
         return max(script.spoken(seg.get("lines") or []), seg.get("hold") or 0)
 
@@ -599,9 +616,9 @@ class Checker:
                 if "verse" in seg:
                     self.quoted(file, seg["verse"], "verse")
                 if "reading" in seg:
-                    src = self.quoted(file, seg["reading"], "reading")
-                    if src:
-                        add_runs(hadiths, words_of(shown_words(src)), seg["reading"])
+                    src = self.quoted(file, seg["reading"], "reading", seg.get("part"))
+                    if src:     # the whole hadith, even when only a part is read
+                        add_runs(hadiths, words_of(shown_words(self.repo.sources[seg["reading"]])), seg["reading"])
         for chapter in spec.get("chapters") or []:
             title = chapter.get("title") or {}
             if not title.get("ar") or not title.get("en"):
@@ -663,7 +680,7 @@ class Checker:
 
 
 def seg_name(seg: dict) -> str:
-    return next((f"{k}: {v}" for k, v in seg.items() if k in ("verse", "verses", "reading", "narration", "reuse")), "?")
+    return next((f"{k}: {v}" for k, v in seg.items() if k in ("verse", "verses", "reading", "narration", "reuse")), "?") + (f" (part {seg['part']})" if seg.get("part") else "")
 
 
 # ---- Main -----------------------------------------------------------------------------------------------------

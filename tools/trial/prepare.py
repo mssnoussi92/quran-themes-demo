@@ -410,7 +410,7 @@ def main() -> None:
             segments.append({**made, "scene": seg["scene"], "start": round(t, 2)})
         elif "reading" in seg and by_source is None:
             # A hadith read by a real voice, in a short as in the film; never the synthetic voice.
-            segments.append({**sources.reading(seg["reading"], out_dir, draft=args.draft), "scene": seg["scene"], "start": round(t, 2)})
+            segments.append({**sources.reading(seg["reading"], out_dir, draft=args.draft, part=seg.get("part")), "scene": seg["scene"], "start": round(t, 2)})
         else:
             sys.exit(f"error: a segment that is neither a narration, a verse nor a reading from the registry: {sorted(seg)}")
         pairs.append((seg, segments[-1]))

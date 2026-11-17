@@ -503,3 +503,31 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   `CLAUDE.md` (« Ce qui vaut toujours »), ici et dans quran-reels : la session attend ses checks (`validate.yml`),
   fusionne quand ils sont verts, corrige quand ils sont rouges ; une PR qui porte une décision de lui pas encore
   donnée attend son « je valide ».
+
+## Le film « مخيّر ولا مسيّر؟ » : la fiche et le script (2026-11-17)
+
+- **Demande du propriétaire** : « je veux créer un film sur الانسان مخير او مسير ». Fiche (skill `choose-format`) : la
+  question est un faux choix d'après as-Sa'di (74:56, 81:29 : une vraie volonté et un vrai acte, sous Sa volonté) ; pas un
+  débat (Tirmidhi 2133 : il a défendu la dispute sur le qadar), la question des Compagnons et sa réponse (Bukhari 4949 :
+  « اعملوا ») ; « مخيّر في كذا ومسيّر في كذا » et Adam et Moussa écartés ; recoupement avec le short 2 du du'a dit.
+- **Ses choix (questions à choix)** : trois idées reçues, version courte, avec « des animations, un cas de vie réel
+  (situation) acté pour attirer le spectateur » (lu : une scène type jouée par une silhouette anonyme, au début de chaque
+  short) ; le titre « مخيّر ولا مسيّر؟ » ; le script maintenant, la production après les premières mesures, publication du
+  28 au 31 décembre.
+- **Fait** : sources au registre (proposées), coupes de récitation, script des trois shorts et du film
+  (`docs/scripts/qadar.md`), estimés plus longs que la fiche (1:38, 1:26, 1:52 ; film 7:10). À valider par lui.
+- **Ses réponses sur le script** : un extrait de Muslim 2664 dans le short 3, Tirmidhi 2133 gardé, les images de style
+  tout de suite, le script relu par lui avant validation. **Fait** : l'outil d'un extrait de lecture (`parts`, `part:` ;
+  premier travail confié à un agent pour ce film, relu ligne à ligne, une correction : le contrôle de la voix sur tout le
+  hadith) ; la lecture de Bukhari 4949 (Abu Malik al-Asqalani, proposée), qu'il fallait aussi pour que `rules.py --all`
+  reste sans erreur ; les dessins des trois scènes jouées (`video/src/trial/Qadar.tsx`) et leurs images de style.
+- **Les débuts refaits** (sa demande : commencer par une question ou un sentiment que tous ressentent, la silhouette pour
+  que chacun se reconnaisse). Avis de la session : d'accord si la question est concrète, l'image en mouvement dès la
+  première seconde et la promesse à la 3e seconde (khidr-01). Ses choix : les trois débuts proposés, et le film ouvert
+  sur « لو كل حاجة مكتوبة… هتحاسب ليه؟ », auquel répond son dernier chapitre.
+- **Script validé par lui** (« je valide le script », 2026-11-17) ; fond tout dessiné ; les scènes jouées adaptées aux
+  nouveaux débuts (l'effort avant l'abandon ; le tapis roulé qu'il ne déroule pas ; une chambre à 3 h et le magasin en
+  souvenir). La voix attend les premières mesures.
+- **Produit et livré le même jour**, à sa demande (« commence le travail ») : voix (quatre requêtes), dessins larges
+  du film, chemins redessinés, ambiances, accroches proposées, rendu par le workflow `film` (42 minutes) ; un trou
+  d'outil fermé (`film.py` et les cartes muettes, avec un test). PR #42 ouverte vers `main`, qui attend sa validation.

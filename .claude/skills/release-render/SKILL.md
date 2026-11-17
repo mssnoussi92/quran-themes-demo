@@ -16,7 +16,7 @@ reads an old episode in `verses`, is refused: it is rendered in the session (bel
   inputs as strings), or from the Actions tab once the file is on the default branch. A push that changes
   the workflow file itself tries it on one short of the du'a (no inputs on a push; its draft is
   `<files>-workflow-test`).
-  Inputs: `film` (required: `content/trial/<film>.yaml`), `voice` (D), `only` (`all`, `shorts`, `film`,
+  Inputs: `film` (required: the film's id, `qadar`, whose file is `content/trial/<film>.yaml`; a path is refused), `voice` (D), `only` (`all`, `shorts`, `film`,
   `tiktok`, or one short's id: only that short is prepared), `ambience` (true: the bed is under the narration),
   `from_run` (see below).
 - **Needs** the repository secret `PIXABAY_API_KEY` (it fails at once, saying so, when it is missing), the
