@@ -1185,6 +1185,10 @@ seize hadiths au registre (proposés) et leurs extraits découpés par programme
 `sabah`, `masaa`) : 2:13, 2:26, 2:42. Deux cartes changées en les écrivant : « أستغفر الله » est l'explication d'al-Awza'i
 (hors des paroles du Prophète ﷺ dans Muslim 591) : notre étiquette « وقبلها: استغفر 3 مرات » ; Tirmidhi 2903 est la parole
 de 'Uqba : une ligne à nous avec sa référence annonce الفلق et الناس.
+Rendu sans voix par le workflow `film` (run 44192660389, avec les versions TikTok et les couvertures) : 2:13, 2:27, 2:43 ;
+format et volume conformes (−16,5 à −16,7 LUFS), cartes lisibles sur les clips, aucune ambiance sous Tawfiq ; envoyés le
+2026-11-17. À regarder : la lune du clip 7215 passe derrière le texte de quelques cartes (lisible, moins net) ; la
+traduction de سيد الاستغفار (Bukhari 6306, Muhsin Khan) n'est qu'une translittération.
 
 ## Faits (ancien circuit)
 
