@@ -125,6 +125,7 @@ cd video && npm run typecheck
 - `find-hadith-recording` : la lecture d'un hadith par une vraie voix, sur archive.org.
 - `release-render` : rendre, contrôler chaque vidéo sur ses planches, poser l'ambiance, livrer, inscrire le « je valide ».
 - `record-stats` : les captures de statistiques qu'il envoie (TikTok surtout), enregistrées sur la page « Statistiques » de quran-reels (la marche à suivre est le skill du même nom de quran-reels).
+- `weekly-review` : **la revue** (sa demande, 2026-11-17 : quand il dit « on commence la revue », « on fait le point » ou autre chose de ce genre, toute session sait quoi faire) : maintenant avec lui, ou dimanche par la revue automatique de 09:23 ; une seule revue pour toute la Page, la marche à suivre est le skill du même nom de quran-reels.
 
 ## Sous-agents (décision du propriétaire, 2026-11-11)
 
