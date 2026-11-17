@@ -1090,9 +1090,10 @@ propriétaire ; les coupes de récitation de Tawfiq (112, 113, 62:4) ; deux clip
 les dessins (un fichier `video/src/trial/Dhikr.tsx` : scorpion, pièces, compteur) ; trois requêtes de voix (un jour) ; un
 rendu par le workflow `film`.
 
-**Les décisions du propriétaire** : la forme ; rester dans la politique ou l'élargir à Abu Dawud et an-Nasa'i (avec le
-jugement d'al-Albani, comme pour Tirmidhi) ; les trois shorts du pilote ; le nom (proposé : « ذكر وحكايته », la sœur de
-« آية وحكايتها »).
+**Décisions du propriétaire (2026-11-17, questions à choix, chaque fois la recommandation)** : **la forme A**, un dhikr et
+son récit, en shorts sans film ; **rester dans la politique** (Bukhari, Muslim, Tirmidhi jugé sahih ou hasan par
+al-Albani), sans l'élargir ; **le pilote : le scorpion, « قل » trois fois, les riches et les pauvres** ; **le nom :
+« ذكر وحكايته »**. Ensuite : le script des trois shorts (skill `write-hook`), à valider avant toute voix.
 
 ## Faits (ancien circuit)
 
