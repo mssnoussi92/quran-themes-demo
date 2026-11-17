@@ -18,8 +18,9 @@ both taken at frame 45.
 tiktok (the TikTok twins only); cut (the short versions only, of the shorts whose file has `cut`: added to
 the draft release, nothing validated rendered again); or one short's id (that short, its twin and its cover); tall: the film in 9:16
 (`<files>-film-9x16`, TrialFilm916: the same timeline laid out as the shorts are, for the platforms whose player is
-vertical). The vertical film is asked for by name and is never part of `all`: a film's validated videos stay what
-they are.
+vertical), with its TikTok twin `<files>-film-9x16-tiktok`; tall-tiktok: that twin alone, added to the vertical film's draft
+(a vertical film already validated is not rendered again). The vertical film is asked for by name and is never part of
+`all`: a film's validated videos stay what they are.
 """
 from __future__ import annotations
 
@@ -52,13 +53,18 @@ def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]
     shorts = [load(name) for name in film.get("shorts") or film["thumbnail"]["panels"]]
     ids = [s["id"] for s in shorts]
     has_film = "chapters" in film               # a series (a file with `shorts`, no chapters) has no film
-    if only not in ("all", "shorts", "film", "tall", "tiktok", "cut") and only not in ids:
-        sys.exit(f"error: --only {only}: not all, shorts, film, tall, tiktok, cut or one of {', '.join(ids)}")
-    if only == "tall":
+    if only not in ("all", "shorts", "film", "tall", "tall-tiktok", "tiktok", "cut") and only not in ids:
+        sys.exit(f"error: --only {only}: not all, shorts, film, tall, tall-tiktok, tiktok, cut or one of {', '.join(ids)}")
+    if only in ("tall", "tall-tiktok"):
         if not has_film:
-            sys.exit(f"error: --only tall: {film_id} is a series, it has no film")
-        return [{"name": f"{files}-film-9x16", "composition": "TrialFilm916", "props": compact({"film": film_id, "voice": voice, "data": None}),
-                 "timeline": f"video/public/trial/{film_id}-{voice}.json", "kind": "tall"}], []
+            sys.exit(f"error: --only {only}: {film_id} is a series, it has no film")
+        props, timeline = {"film": film_id, "voice": voice, "data": None}, f"video/public/trial/{film_id}-{voice}.json"
+        tall = [{"name": f"{files}-film-9x16", "composition": "TrialFilm916", "props": compact(props), "timeline": timeline, "kind": "tall"}]
+        # Its TikTok twin, signed with the page's name there (owner, 2026-11-16: the du'a film went to TikTok signed
+        # with the account of someone else).
+        twin = [{"name": f"{files}-film-9x16-tiktok", "composition": "TrialFilm916", "props": compact({**props, "platform": "tiktok"}),
+                 "timeline": timeline, "kind": "tall-tiktok"}]
+        return (tall + twin if only == "tall" else twin), []
     # Same rule as publish.py: only the first film's videos (`ambience_after`: the ambience mixed under them
     # after the render) carry the ambience in their name, once the owner validated it.
     said = [(s.get("validated") or {}) for s in [film, *shorts]]
@@ -98,7 +104,7 @@ def main() -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--film", required=True, help="the film's id (content/trial/<id>.yaml)")
     p.add_argument("--voice", default="D")
-    p.add_argument("--only", default="all", help="all, shorts, film, tall (the film in 9:16), tiktok, or one short's id")
+    p.add_argument("--only", default="all", help="all, shorts, film, tall (the film in 9:16 and its TikTok twin), tall-tiktok (the twin alone), tiktok, or one short's id")
     p.add_argument("--matrix", action="store_true", help="one JSON object on one line, a GitHub Actions matrix")
     p.add_argument("--stills", action="store_true", help="the covers and the thumbnail instead of the videos")
     p.add_argument("--ids", action="store_true",

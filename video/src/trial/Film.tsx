@@ -33,13 +33,16 @@ type Shot = { start: number; picture: string; scene: string };
 type Chapter = { id: string; title: { ar: string; en: string }; number: number | null; start: number };
 export type FilmData = {
   film: string; voice: string; voice_name: string; handle: string; title: { ar: string; en: string };
+  /** Where the page has another name (TikTok: content/publish.yaml, `handles`): prop `platform` of the vertical film. */
+  handles?: Record<string, string>;
   seconds: number; outro: number; chapters: Chapter[]; pictures: Record<string, FilmPicture>;
   shots: Shot[]; subscribe: number[]; segments: FilmSegment[];
   /** The ambience under the narration: one recording per picture, silent under every verse and the hadith. */
   ambience?: string;
 };
 /** `film`: the id of the film (content/trial/<id>.yaml); the first one is « film ». */
-export type FilmProps = { film: string; voice: string; data: FilmData | null };
+/** `platform` (the vertical film only): where the page has another name (TikTok), the film is signed with it. */
+export type FilmProps = { film: string; voice: string; platform?: string; data: FilmData | null };
 
 export const filmMetadata: CalculateMetadataFunction<FilmProps> = async ({ props, abortSignal }) => {
   const res = await fetch(staticFile(`trial/${props.film}-${props.voice}.json`), { signal: abortSignal });
@@ -406,10 +409,14 @@ const Follow: React.FC<{ handle: string; reminders: number[]; t: number }> = ({ 
   );
 };
 
-export const FilmTall: React.FC<FilmProps> = ({ data }) => {
+export const FilmTall: React.FC<FilmProps> = ({ data, platform }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   if (!data) throw new Error("no film data: calculateMetadata did not run");
+  // A platform with no name of its own in `handles` fails the render rather than sign with the wrong account
+  // (on TikTok, @quran_words_daily is someone else's: the du'a film went there so on 2026-11-16).
+  const handle = platform ? data.handles?.[platform] : data.handle;
+  if (!handle) throw new Error(`no handle for the platform « ${platform} » (content/publish.yaml, handles)`);
   const t = frame / fps;
   const runs: { name: string; from: number; shots: Shot[] }[] = [];
   for (const shot of data.shots) {
@@ -445,7 +452,7 @@ export const FilmTall: React.FC<FilmProps> = ({ data }) => {
         ) : null,
       )}
       {ended ? null : current.kind === "narration" ? (
-        <NarrationText seg={{ ...current, scene: shot.scene }} t={t} last={current === final} handle={data.handle} />
+        <NarrationText seg={{ ...current, scene: shot.scene }} t={t} last={current === final} handle={handle} />
       ) : current.kind === "verse" ? (
         <VerseText seg={{ ...current, scene: shot.scene }} t={t} />
       ) : (
@@ -456,7 +463,7 @@ export const FilmTall: React.FC<FilmProps> = ({ data }) => {
         {chapter.number ? `${["٠", "١", "٢", "٣", "٤", "٥"][chapter.number]} · ` : ""}{chapter.title.ar}
       </div>
       {/* the reminder of the last line is the page's name under that line, as in a short */}
-      <Follow handle={data.handle} reminders={data.subscribe.filter((r) => r < final.start)} t={t} />
+      <Follow handle={handle} reminders={data.subscribe.filter((r) => r < final.start)} t={t} />
     </AbsoluteFill>
   );
 };
