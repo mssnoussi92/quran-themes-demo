@@ -1160,6 +1160,20 @@ Jibril. L'exemple : la route de nuit (scène `drive`, des phares), les enfants e
 كانتش ضرّته. », « اسمعها بصوت الشيخ محمد جبريل: » : sa version A) : **le short 1 refait validé par lui le 2026-11-17**
 (1:33). Les images des trois shorts sont bonnes pour lui (« oui, voix le 19 »).
 
+**L'affiche « الأذكار بعد الصلاة المفروضة » (envoyée par lui, 2026-11-17) et la suite** : comparée à la politique,
+presque tout y est (Muslim 591, 593-594, 595, 597 ; Bukhari 844 ; Tirmidhi 2903 pour الفلق et الناس, 3534 pour les dix
+tahlilas après le maghrib) ; hors de nos sources : les dix après le fajr (Tirmidhi 3474, da'if selon al-Albani), Ayat
+al-Kursi après la prière (as-Sunan al-Kubra, absente de hadith-api), al-Ikhlas après chaque prière (Tirmidhi 2903 dit
+« المعوذتين ») ; les trois sourates trois fois sont « حين تمسي وتصبح » (Tirmidhi 3575). **Sa condition** : « si on
+trouve le son de Jibril et que ça passe avec Meta, on continue, sinon ça ne sert à rien : dire le hadith n'attire pas ».
+**Recherche** : Jibril n'a pas enregistré les adhkar d'après la prière (archive.org, web, Makkah Live) ; seul Alafasy
+(écarté) ; la suite d'après la prière avec un récitateur n'est donc pas possible. Possible : les adhkar du matin et du
+soir de son album qui ont un récit (Juwayriya, سيد الاستغفار, Aban, Abou Bakr ; leurs places dans ses fichiers restent à
+trouver). **Ses choix (questions à choix)** : **garder le short 3 tel quel et mesurer** (short 1 avec Jibril, short 3 avec
+la lecture du recueil : la comparaison dira si la lecture retient moins) ; **le test des droits** : le short 1 publié
+d'abord **sur Facebook seul**, 48 h à surveiller les revendications (le contrôle de Meta avant publication n'a vu aucune
+des trois revendications passées), puis Instagram et TikTok ; la série ne continue avec Jibril que si c'est propre.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
