@@ -1148,6 +1148,16 @@ format et volume conformes (−16,1 à −16,4 LUFS), envoyés. Deux répliques 
 mots inchangés (la ligne du sens, six morceaux, s'écrivait un mot par ligne ; l'annonce du short suivant, trop longue,
 coupée en deux), à confirmer par lui ; le compteur 33 se lit de droite à gauche. La voix : trois requêtes le 19 novembre.
 
+**Le short 1 refait à sa demande (2026-11-17, sur le brouillon muet)** : « pas besoin de laisser le hadith récité ; la
+voix dit ce que le Prophète ﷺ a dit, le sens sans le hadith, puis le dhikr par la voix de Jibril ; les exemples à recréer
+dans nos jours, on n'a pas peur des scorpions ». Fait : la lecture de la réponse (partie `answer`) n'est plus jouée ; la
+narration la dit **au discours indirect** (« قاله إنه لو كان قال كلمات معيّنة… ما كانتش ضرّته »), jamais comme une
+citation : c'est la première fois qu'une réplique de la voix rapporte une parole du Prophète ﷺ, même par le sens (la
+règle du skill `write-hook` disait « jamais »), point dit au propriétaire ; le dhikr n'est entendu que dans la voix de
+Jibril. L'exemple : la route de nuit (scène `drive`, des phares), les enfants endormis, la porte qu'on ferme et ce qu'on
+« استودع » à Allah. Ses images (images fixes sur la nuit générée) envoyées ; ses répliques nouvelles, à valider. Les
+images des trois shorts sont bonnes pour lui (« oui, voix le 19 »).
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

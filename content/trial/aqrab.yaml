@@ -6,12 +6,15 @@
 #   arrêt à signaler au propriétaire ; la sourate entière est dans le short suivant).
 # - Le sens (as-Sa'di) : 113:2 couvre tout ce qu'Allah a créé, hommes, djinns et animaux, et l'on cherche refuge auprès de
 #   leur Créateur du mal qui est en eux ; 113:3, la nuit, quand se répandent les esprits mauvais et les animaux nuisibles.
-# - Le dhikr est dit ensuite par Muhammad Jibril (ses adhkar du soir, archive.org), essai voulu par le propriétaire le
-#   2026-11-17 : un album sans licence, droits jamais vérifiés ; première publication sur Facebook seul.
+# - Refait le 2026-11-17 à sa demande, sur le brouillon muet : la réponse du Prophète ﷺ n'est plus lue ; la narration
+#   en dit le sens au discours indirect, puis le dhikr est dit par Muhammad Jibril (ses adhkar du soir, archive.org : un
+#   album sans licence, droits jamais vérifiés ; première publication sur Facebook seul) ; l'exemple est d'aujourd'hui
+#   (la route de nuit, les enfants endormis), sa demande : « on n'a pas peur des scorpions ».
 # - Répliques de la session, à valider. Les nôtres sans tafsir : « بنفتكر ربنا بعد اللدغة… » (ce qu'on ne voit pas), la
 #   porte fermée (l'exemple), la phrase à retenir.
 # - Images prévues (des choses et des lieux, personne) : `sting` un scorpion en silhouette sur une pierre, la nuit ;
-#   `dusk` le ciel du soir ; `door` une porte fermée, une lampe allumée derrière la fenêtre.
+#   `dusk` le ciel du soir ; `drive` une route de nuit, deux phares qui approchent ; `door` une maison fermée, une
+#   fenêtre allumée.
 # - La dernière réplique avant l'appel annonce le short 2 (« قل » trois fois, une nuit de pluie) : promesse à tenir.
 id: aqrab
 # « Je valide le script » du propriétaire (2026-11-17, question à choix nommant le script des 3 shorts de
@@ -36,27 +39,19 @@ publish:
     ar: "عقرب لدغت راجل بالليل، فجه للنبي ﷺ يشتكي… والرد كان جملة يقولها لما المسا يدخل (صحيح مسلم 2709). وآخرها في القرآن: «من شر ما خلق» (الفلق 2)."
     en: "A scorpion stung a man at night, and he came to the Prophet ﷺ to complain. The answer was one sentence to say when evening comes (Sahih Muslim 2709), and its last words are in the Quran: \"From the evil of that which He created\" (113:2)."
 segments:
+  # Refait à la demande du propriétaire (2026-11-17, sur le brouillon muet) : plus de lecture du hadith par le lecteur du
+  # recueil ; la narration dit au discours indirect ce que le Prophète ﷺ a répondu (jamais comme une citation), puis le
+  # dhikr est entendu dit par Muhammad Jibril ; un exemple d'aujourd'hui (« on n'a plus peur des scorpions »).
   - narration: open
     scene: sting
     sources: [hadith.muslim.2709a]
     lines:
       - ar: "عقرب لدغت راجل بالليل… فجه للنبي صلى الله عليه وسلم يشتكي."
         en: "A scorpion stung a man at night… so he came to the Prophet ﷺ to complain."
-      - ar: "والرد كان جملة واحدة… هتحتاجها كل ليلة."
-        en: "And the answer was one sentence… you'll need it every night."
-      - ar: "اسمع النبي صلى الله عليه وسلم قاله إيه:"
-        en: "Hear what the Prophet ﷺ told him:"
-  - reading: hadith.muslim.2709a
-    part: answer
-    scene: sting
-  # Essai voulu par le propriétaire (2026-11-17, après la recherche de récitateurs) : le dhikr seul, dit par Muhammad
-  # Jibril (partie `dhikr` du registre, son propre fichier) ; la réplique qui l'annonce, ajoutée après le script, est
-  # validée par le propriétaire le même jour (question à choix qui la citait : « je valide la réplique »).
-  - narration: voice
-    scene: dusk
-    lines:
-      - ar: "والذكر نفسه… بصوت الشيخ محمد جبريل:"
-        en: "And the dhikr itself… in the voice of Sheikh Muhammad Jibril:"
+      - ar: "والنبي صلى الله عليه وسلم قاله إنه لو كان قال كلمات معيّنة لما المسا دخل… ما كانتش ضرّته."
+        en: "And the Prophet ﷺ told him that had he said certain words when evening came… it would not have harmed him."
+      - ar: "الكلمات دي… هتحتاجها كل ليلة. اسمعها بصوت الشيخ محمد جبريل:"
+        en: "Those words… you'll need them every night. Hear them in the voice of Sheikh Muhammad Jibril:"
   - reading: hadith.muslim.2709a
     part: dhikr
     scene: dusk
@@ -71,8 +66,6 @@ segments:
     scene: dusk
     sources: [tafsir.saadi.113.2, tafsir.saadi.113.3]
     lines:
-      # Mêmes mots que la réplique validée ; ponctuation changée par la session (2026-11-17) : coupée en six morceaux
-      # (« : » et « ، »), elle s'écrivait en petit, un mot par ligne (brouillon muet, run 44176305883). À confirmer.
       - ar: "يعني: بتلجأ لربنا… من شر كل حاجة خلقها… إنس وجن وحيوانات."
         en: "Meaning: you turn to God for refuge… from the evil of all He created… people, jinn and animals."
       - ar: "والليل بالذات… وقت ما الحيوانات المؤذية بتنتشر."
@@ -85,19 +78,22 @@ segments:
       - ar: "وإحنا كده: بنفتكر ربنا بعد اللي يحصل… والذكر مكانه قبله."
         en: "And that's us: we remember God after something happens… when the dhikr belongs before it."
   - narration: example
+    scene: drive
+    lines:
+      - ar: "زي لما تكون راجع بالليل… والطريق ضلمة."
+        en: "Like when you're driving home at night… and the road is dark."
+  - narration: entrust
     scene: door
     lines:
-      - ar: "زي ما كل ليلة بتتأكد إن الباب مقفول… من غير ما تفكر."
-        en: "Like every night you make sure the door is locked… without even thinking."
-      - ar: "والذكر ده أسهل من كده… وبننساه."
-        en: "And this dhikr is easier than that… and we forget it."
+      - ar: "أو ولادك نايمين في أوضتهم… وإنت مش جنبهم."
+        en: "Or your children are asleep in their room… and you're not beside them."
+      - ar: "الباب بتقفله بإيدك… واللي مش في إيدك… بتستودعه ربنا."
+        en: "The door, you lock with your hand… and what's beyond your hand… you entrust to God."
   - narration: close
     scene: door
     lines:
-      - ar: "قولها لما المسا يدخل… قبل اللدغة، مش بعدها."
-        en: "Say it when evening comes… before the sting, not after."
-      # Mêmes mots que la réplique validée, coupée en deux par la session (2026-11-17) : trop longue, elle s'écrivait en
-      # petit (brouillon muet, run 44176305883). À confirmer.
+      - ar: "قولها لما المسا يدخل… قبل ما يحصل حاجة، مش بعدها."
+        en: "Say it when evening comes… before anything happens, not after."
       - ar: "والجاية: ليلة مطر وضلمة…"
         en: "Next: a night of rain and darkness…"
       - ar: "والنبي صلى الله عليه وسلم طلب من صاحبه يقول حاجة… وهو مش عارف يقول إيه."

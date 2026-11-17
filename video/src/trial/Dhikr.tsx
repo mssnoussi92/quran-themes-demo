@@ -154,7 +154,7 @@ const Coins: React.FC<{ x: number; y: number; scale: number; t: number; glow: nu
 
 /** A road seen from where you stand, narrowing to the horizon, lit along its edges, small lights going up it (the race;
  * nobody drawn). */
-const Road: React.FC<{ id: string; horizon: number; t: number; rim: string }> = ({ id, horizon, t, rim }) => {
+const Road: React.FC<{ id: string; horizon: number; t: number; rim: string; motes?: boolean }> = ({ id, horizon, t, rim, motes = true }) => {
   const near = 1940;
   const left = (y: number) => interpolate(y, [horizon, near], [528, 250]);
   const right = (y: number) => interpolate(y, [horizon, near], [552, 830]);
@@ -169,7 +169,7 @@ const Road: React.FC<{ id: string; horizon: number; t: number; rim: string }> = 
       </defs>
       <path d={`M ${left(horizon)} ${horizon} L ${right(horizon)} ${horizon} L ${right(near)} ${near} L ${left(near)} ${near} Z`} fill={`url(#${id}-g)`} />
       <path d={`M ${left(horizon)} ${horizon} L ${left(near)} ${near} M ${right(horizon)} ${horizon} L ${right(near)} ${near}`} stroke={rim} strokeWidth={4} opacity={0.6} />
-      {Array.from({ length: 9 }, (_, k) => {
+      {(motes ? Array.from({ length: 9 }) : []).map((_, k) => {
         const u = (t * (0.05 + 0.03 * chance(k, 1)) + chance(k, 2)) % 1;       // 0 near, 1 at the horizon
         const y = near - (near - horizon) * (1 - (1 - u) * (1 - u));
         const lane = 0.3 + 0.4 * chance(k, 3);
@@ -177,6 +177,37 @@ const Road: React.FC<{ id: string; horizon: number; t: number; rim: string }> = 
         const size = interpolate(y, [horizon, near], [3, 22]);
         return <circle key={k} cx={x} cy={y} r={size} fill={LIGHT} opacity={0.85 * Math.sin(Math.PI * Math.min(1, u * 1.1))} />;
       })}
+    </g>
+  );
+};
+
+/** Two headlights coming up the road from the horizon at night, slowly, again and again: driving home in the dark. */
+const Headlights: React.FC<{ id: string; horizon: number; t: number }> = ({ id, horizon, t }) => {
+  const v = (t / 7) % 1;
+  const u = 0.32 + 0.68 * v;                              // never a pair of dots at the horizon (they read as eyes)
+  const y = horizon + (1700 - horizon) * u * u;
+  const half = interpolate(y, [horizon, 1700], [4, 110]);
+  const r = interpolate(y, [horizon, 1700], [3, 34]);
+  const fade = Math.min(1, v * 6) * (1 - ramp(v, 0.85, 1));
+  return (
+    <g opacity={fade}>
+      <defs>
+        <filter id={`${id}-glow`} x="-300%" y="-300%" width="700%" height="700%">
+          <feGaussianBlur stdDeviation={6 + r} />
+        </filter>
+        <linearGradient id={`${id}-beam`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#fff2d0" stopOpacity={0.5} />
+          <stop offset="1" stopColor="#fff2d0" stopOpacity={0} />
+        </linearGradient>
+      </defs>
+      {/* the beams on the road ahead of them, towards the viewer */}
+      <path d={`M ${540 - half - r} ${y} L ${540 + half + r} ${y} L ${540 + half * 2.6} ${y + 120 + half * 2} L ${540 - half * 2.6} ${y + 120 + half * 2} Z`} fill={`url(#${id}-beam)`} opacity={0.6} />
+      {[-1, 1].map((side) => (
+        <g key={side}>
+          <circle cx={540 + side * half} cy={y} r={r * 2.4} fill="#fff2d0" opacity={0.55} filter={`url(#${id}-glow)`} />
+          <circle cx={540 + side * half} cy={y} r={r} fill="#fffaf0" />
+        </g>
+      ))}
     </g>
   );
 };
@@ -266,11 +297,12 @@ const Counter: React.FC<{ y: number; n: number }> = ({ y, n }) => (
 
 // ------------------------------------------------------------------------------------------------------------ aqrab
 
-/** Short 1 (Muslim 2709, the evening): `sting`, nightfall, a scorpion on a flat stone, its tail raised; `dusk`, the
- * scorpion gone, the first stars over the stone (the dhikr said, 113:1-3 recited); `door`, a house shut for the night,
- * one window lit (the door checked every night). The clip: a sunset that becomes night. */
+/** Short 1 (Muslim 2709, the evening): `sting`, nightfall, a scorpion on the ground, its tail raised; `dusk`, the
+ * scorpion gone, the first stars over a stone (the dhikr said by Jibril, 113:1-3 recited); `drive`, a road at night and
+ * headlights coming home (the example of today); `door`, a house shut for the night, one window lit. The clip: a sunset
+ * that becomes night. */
 const AqrabPicture: Drawn = ({ t, show, since, horizon }) => {
-  const at = timeline(["sting", "dusk", "door"], show, since);
+  const at = timeline(["sting", "dusk", "drive", "door"], show, since);
   const rim = "#e8c2a8";
   const night = Math.max(0.25, at.cover ? 0.5 : ramp(t, 4, 60));
   return (
@@ -283,6 +315,10 @@ const AqrabPicture: Drawn = ({ t, show, since, horizon }) => {
       </g>
       <g opacity={show("sting")}>
         <Scorpion id="dq-scorpion" x={590} y={horizon + 30} scale={1.85} t={t} rim={rim} />
+      </g>
+      <g opacity={show("drive")}>
+        <Road id="dq-road" horizon={horizon} t={t} rim="#9fb6e6" motes={false} />
+        <Headlights id="dq-lights" horizon={horizon} t={t - at("drive")} />
       </g>
       <g opacity={show("door")}>
         <Afterglow id="dq-door-glow" x={540} y={horizon - 40} rx={420} ry={240} color="#9fb6e6" strength={0.7} />
