@@ -16,6 +16,9 @@
 # - Images (après le script) : `shop` une rue le soir, un magasin au rideau baissé, la silhouette assise sur la marche ;
 #   `law` des « لو » autour d'elle ; `night` le ciel au-dessus de la rue (jamais le Livre, l'invisible) ; `calm` les « لو »
 #   s'éteignent, elle se lève ; `dawn` la rue au matin.
+# Les débuts (cartes muettes) : le sentiment que tout le monde connaît, joué par la silhouette, puis la promesse à la 3e
+# seconde (demande du propriétaire, 2026-11-17 : « commencer par des questions ou un sentiment que la plupart des gens
+# ressentent » ; il a choisi ces débuts sur leur aperçu).
 id: law
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
@@ -35,20 +38,20 @@ segments:
   # -- la scène jouée, muette
   - narration: hook
     silent: true
-    hold: 2.8
+    hold: 3.0
     scene: shop
     sfx: [[impact, 0.3]]
     lines:
-      - ar: "«لو ما كنتش فتحت المحل ده…»"
-        en: "“If only I hadn't opened this shop…”"
+      - ar: "بتفضل تعيد اللي حصل في دماغك… كل ليلة؟"
+        en: "Do you keep replaying what happened… every night?"
   - narration: echo
     silent: true
     hold: 2.2
     scene: law
     sfx: [[pops, 0.1]]
     lines:
-      - ar: "«لو كنت سمعت الكلام…» «لو…»"
-        en: "“If only I had listened…” “If only…”"
+      - ar: "«لو كنت…» «لو ما كنتش…»"
+        en: "“If only I had…” “If only I hadn't…”"
   - narration: same
     silent: true
     hold: 3.0

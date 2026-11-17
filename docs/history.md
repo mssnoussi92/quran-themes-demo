@@ -503,3 +503,7 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   premier travail confié à un agent pour ce film, relu ligne à ligne, une correction : le contrôle de la voix sur tout le
   hadith) ; la lecture de Bukhari 4949 (Abu Malik al-Asqalani, proposée), qu'il fallait aussi pour que `rules.py --all`
   reste sans erreur ; les dessins des trois scènes jouées (`video/src/trial/Qadar.tsx`) et leurs images de style.
+- **Les débuts refaits** (sa demande : commencer par une question ou un sentiment que tous ressentent, la silhouette pour
+  que chacun se reconnaisse). Avis de la session : d'accord si la question est concrète, l'image en mouvement dès la
+  première seconde et la promesse à la 3e seconde (khidr-01). Ses choix : les trois débuts proposés, et le film ouvert
+  sur « لو كل حاجة مكتوبة… هتحاسب ليه؟ », auquel répond son dernier chapitre.

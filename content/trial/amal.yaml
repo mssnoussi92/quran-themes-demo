@@ -18,6 +18,9 @@
 #   des palmiers au crépuscule, une tombe fraîche, des lignes tracées dans le sable, personne (ni main ni bâton) ; `paths`
 #   deux chemins, l'un qui s'éclaire, l'autre de pierres ; `desk` le bureau, le livre fermé ; `open` la silhouette rouvre le
 #   livre ; `dawn` le matin à la fenêtre.
+# Les débuts (cartes muettes) : le sentiment que tout le monde connaît, joué par la silhouette, puis la promesse à la 3e
+# seconde (demande du propriétaire, 2026-11-17 : « commencer par des questions ou un sentiment que la plupart des gens
+# ressentent » ; il a choisi ces débuts sur leur aperçu).
 id: amal
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
@@ -25,9 +28,9 @@ text: 78-trial-amal
 # Le fond, provisoire, pour les images de style (2026-11-17) : un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) ; les
 # scènes jouées sont dessinées par-dessus (video/src/trial/Qadar.tsx). Un clip filmé se cherchera avec la production.
 clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4 }
-cover: { scene: shut, title: "النتيجة مكتوبة… أذاكر ليه؟", tag: "مخيّر ولا مسيّر؟ · ١ من ٣", focus: 1100 }
+cover: { scene: shut, title: "كل حاجة مكتوبة… أتعب ليه؟", tag: "مخيّر ولا مسيّر؟ · ١ من ٣", focus: 1100 }
 publish:
-  title: { en: "“It's written… why study?” The Companions asked it", ar: "«مكتوبة… أذاكر ليه؟» الصحابة سألوها" }
+  title: { en: "“It's all written, why bother?” The Companions asked it", ar: "«كله مكتوب… أتعب ليه؟» الصحابة سألوها" }
   part: 1
   hashtags: ["#القضاء_والقدر", "#مخير_ولا_مسير"]
   description:
@@ -41,16 +44,16 @@ segments:
     scene: shut
     sfx: [[impact, 0.5]]
     lines:
-      - ar: "«النتيجة مكتوبة… هذاكر ليه؟»"
-        en: "“The result is already written… so why study?”"
+      - ar: "«لو كل حاجة مكتوبة… أتعب ليه؟»"
+        en: "“If everything is written… why bother?”"
   - narration: same
     silent: true
     hold: 3.0
     scene: ground
     sfx: [[whoosh, 0.1]]
     lines:
-      - ar: "السؤال ده… الصحابة سألوه للنبي صلى الله عليه وسلم."
-        en: "That very question… the Companions asked the Prophet ﷺ."
+      - ar: "لو السؤال ده جه في بالك… الصحابة سألوه قبلك."
+        en: "If that question ever crossed your mind… the Companions asked it before you."
   # -- le fait, et la réponse lue par une vraie voix
   - narration: open
     scene: ground

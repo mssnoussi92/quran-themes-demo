@@ -12,6 +12,8 @@
 #   شاكر… وإلى كفور »).
 # - Les débuts muets des shorts ne passent pas dans le film (film.py ne joue pas un segment `silent` repris) : chaque
 #   chapitre s'ouvre sur une réplique du film qui dit la phrase de sa scène.
+# - L'ouverture : LA question du sujet (« لو كل حاجة مكتوبة… هتحاسب ليه؟ », choix du propriétaire, 2026-11-17), à laquelle
+#   répond le chapitre `answer` : as-Sa'di sur 81:29 (et 74:56) et sur 6:148 (« لا يحل بأسه إلا بمن استحقه »).
 # - Répliques de la session sans tafsir : l'ouverture, « مش هنتجادل… », les débuts de chapitre, « قبل ما الحاجة تحصل: اعمل.
 #   وبعد ما تحصل: سلّم لربنا » (lu sur l'ordre de Muslim 2664), l'appel.
 id: qadar
@@ -36,17 +38,23 @@ chapters:
   - id: open
     title: { ar: "تلات جمل", en: "Three sentences" }
     segments:
-      - narration: film-open
-        shots: [{ picture: amal, scene: shut }, { picture: shaa, scene: turn }, { picture: law, scene: law }]
+      # LA question du sujet d'abord (choix du propriétaire, 2026-11-17, sur l'aperçu), dite comme celle des gens, entre
+      # guillemets ; le chapitre `answer` y répond.
+      - narration: film-question
+        picture: law
+        scene: law
         lines:
+          - ar: "«لو كل حاجة مكتوبة… هتحاسب ليه؟»"
+            en: "“If everything is written… why will I be held to account?”"
+          - ar: "سؤال بيقلق ناس كتير… والإجابة مش في الجدال."
+            en: "A question that troubles many… and the answer isn't in arguing."
+      - narration: film-open
+        shots: [{ picture: amal, scene: shut }, { picture: shaa, scene: turn }, { picture: law, scene: shop }]
+        lines:
+          - ar: "بتبدأ من تلات جمل بنقولها كلنا:"
+            en: "It starts with three sentences we all say:"
           - ar: "«النتيجة مكتوبة»… «لما ربنا يهديني»… و«لو كنت عملت كذا»."
             en: "“The result is written”… “When God guides me”… and “If only I had…”"
-      - narration: film-promise
-        picture: shaa
-        scene: words
-        lines:
-          - ar: "تلات جمل بنقولها كلنا… وورا كل واحدة نفس السؤال: إحنا مخيّرين… ولا مسيّرين؟"
-            en: "Three sentences we all say… and behind each one, the same question: do we choose… or are we driven?"
   - id: frame
     title: { ar: "مش جدال", en: "Not a debate" }
     segments:
@@ -148,14 +156,16 @@ chapters:
       - narration: film-answer
         picture: shaa
         scene: rise
-        sources: [tafsir.saadi.81.29]
+        sources: [tafsir.saadi.81.29, tafsir.saadi.6.148]
         lines:
-          - ar: "طب يعني… مخيّرين ولا مسيّرين؟"
-            en: "So… do we choose, or are we driven?"
-          - ar: "مش واحدة من الاتنين لوحدها:"
-            en: "Not one of the two on its own:"
-          - ar: "ليك مشيئة حقيقية… بتختار بيها وبتعمل… وهي ماشية تحت مشيئة ربنا."
-            en: "You have a real will… you choose and act by it… and it runs under God's will."
+          - ar: "نرجع للسؤال: لو كل حاجة مكتوبة… هتحاسب ليه؟"
+            en: "Back to the question: if everything is written… why will I be held to account?"
+          - ar: "عشان ليك مشيئة حقيقية… بتختار بيها وبتعمل… وهي ماشية تحت مشيئة ربنا."
+            en: "Because you have a real will… you choose and act by it… and it runs under God's will."
+          - ar: "وربنا ما بينزّلش عقابه… غير على اللي يستاهله."
+            en: "And God brings His punishment… only on those who deserve it."
+          - ar: "يعني مخيّرين ولا مسيّرين؟ مش واحدة من الاتنين لوحدها."
+            en: "So, do we choose or are we driven? Not one of the two on its own."
       - narration: film-ways
         lines:
           - ar: "وربنا وراك الطريقين:"

@@ -880,6 +880,17 @@ autres hadiths de Bukhari : `bukhari_audiobook/4949.mp3`, 19,32-35,10 s, de « �
 mot, **proposée**) ; les dessins des scènes jouées (`video/src/trial/Qadar.tsx`, la silhouette de `Lens.tsx`) sur un ciel de
 nuit dessiné, provisoire ; brouillons sans voix 1:40, 1:28, 1:36 (estimés : 1:41, 1:26, 1:34 ; film 7:10).
 
+**Les débuts refaits (sa demande, 2026-11-17 : « les shorts et le film doivent commencer par des questions ou un sentiment
+que la plupart des gens ressentent… pour que tout le monde se trouve dans la vidéo »).** Avis de la session : oui, à trois
+conditions tirées des mesures (khidr-01 : une question générale sur une image fixe, cinq phrases avant le fait, 26 % passent
+3 s) : une question concrète, une image qui bouge dès la première seconde, la promesse à la 3e seconde ; « سؤال صعب »,
+qui s'ouvre ainsi, sera mesuré avant la production. **Ses choix (questions à choix, sur leur aperçu)** : les shorts s'ouvrent
+sur le sentiment de tous, la scène jouée l'illustre (« «لو كل حاجة مكتوبة… أتعب ليه؟» » puis « لو السؤال ده جه في بالك…
+الصحابة سألوه قبلك. » ; « عارف إنك لازم تصلي… ومش قادر تبدأ؟ » ; « بتفضل تعيد اللي حصل في دماغك… كل ليلة؟ ») ; le film
+s'ouvre sur LA question du sujet, « «لو كل حاجة مكتوبة… هتحاسب ليه؟» », et son dernier chapitre y répond (as-Sa'di sur 81:29 et
+sur 6:148 : « لا يحل بأسه إلا بمن استحقه »). Recoupement redit : « كله مكتوب… أدعي ليه؟ » du du'a est proche du début du
+short 1 ; ici c'est la question même des Compagnons. Estimé : 1:41, 1:26, 1:35, film 7:22 (`docs/retention/qadar-style-openings.jpg`).
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

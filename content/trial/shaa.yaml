@@ -13,6 +13,9 @@
 #   rejouée), la phrase à retenir, ce qui distingue ce short et l'annonce du suivant.
 # - Images (après le script) : `turn` une chambre avant l'aube, le téléphone allumé, la silhouette se retourne ; `words` la
 #   fenêtre, le ciel de nuit ; `rise` la silhouette se lève, la lumière de l'aube, un tapis de prière ; rien de l'invisible.
+# Les débuts (cartes muettes) : le sentiment que tout le monde connaît, joué par la silhouette, puis la promesse à la 3e
+# seconde (demande du propriétaire, 2026-11-17 : « commencer par des questions ou un sentiment que la plupart des gens
+# ressentent » ; il a choisi ces débuts sur leur aperçu).
 id: shaa
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
@@ -32,20 +35,20 @@ segments:
   # -- la scène jouée, muette
   - narration: hook
     silent: true
-    hold: 2.8
+    hold: 3.0
     scene: turn
     sfx: [[click, 0.2]]
     lines:
-      - ar: "«لما ربنا يهديني… هبقى أصلّي.»"
-        en: "“When God guides me… I'll start praying.”"
+      - ar: "عارف إنك لازم تصلي… ومش قادر تبدأ؟"
+        en: "You know you should pray… and can't bring yourself to start?"
   - narration: same
     silent: true
     hold: 3.0
     scene: words
     sfx: [[whoosh, 0.1]]
     lines:
-      - ar: "آيتين ورا بعض… بيردّوا على الجملة دي."
-        en: "Two verses, one after the other… answer that sentence."
+      - ar: "«لما ربنا يهديني…» آيتين ورا بعض بيردّوا عليها."
+        en: "“When God guides me…” Two verses in a row answer it."
   # -- le fait, dans le texte même
   - narration: open
     scene: words
