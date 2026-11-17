@@ -197,6 +197,8 @@ def prepare(args) -> None:
                           # the vertical film (9:16) shows the clip as its short does
                           "portrait": {k: base[k] for k in ("position", "shift", "brightness", "ground", "horizon", "rate", "veil") if k in base}}
     data = {"film": film["id"], "voice": args.voice, "voice_name": film["voices"][args.voice], "handle": film["handle"],
+            # where the page has another name (TikTok): prop `platform` of the vertical film, as for a short
+            "handles": yaml.safe_load((P.ROOT / "content" / "publish.yaml").read_text(encoding="utf-8")).get("handles", {}),
             "title": film["title"], "seconds": total, "outro": film["outro"], "chapters": chapters, "pictures": pictures,
             "shots": shots, "subscribe": subscribe, "segments": segments}
     # The ambience of each picture under the narration, silent under every verse and the hadith; it stays under
