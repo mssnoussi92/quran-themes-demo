@@ -387,4 +387,11 @@ const DathurPicture: Drawn = ({ t, show, since, horizon }) => {
   );
 };
 
-export const DHIKR_PICTURES: Record<string, Drawn> = { aqrab: AqrabPicture, qul: QulPicture, dathur: DathurPicture };
+/** Adhkar to read (content/trial/adhkar.yaml: salat, sabah, masaa): nothing drawn, the filmed sky alone; the words
+ * are the picture. */
+const Plain: Drawn = () => null;
+
+export const DHIKR_PICTURES: Record<string, Drawn> = {
+  aqrab: AqrabPicture, qul: QulPicture, dathur: DathurPicture,
+  salat: Plain, sabah: Plain, masaa: Plain,
+};

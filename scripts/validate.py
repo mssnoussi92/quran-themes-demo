@@ -185,15 +185,17 @@ def check_parts(src: dict, where: str, report: Report) -> None:
     if not parts:
         return
     whole = src.get("recording")
-    if not whole:
-        report.error(where, "parts: the hadith has no recording to take them from")
     for name, part in parts.items():
         here = f"{where} part '{name}'"
         if tidy(part["excerpt_ar"]) not in tidy(prophet_words(src.get("text_ar") or "")):
             report.error(here, "excerpt_ar is not a passage of the Prophet's words in text_ar")
         if part["excerpt_en"] not in (src.get("text_en") or ""):
             report.error(here, "excerpt_en is not a passage of text_en")
-        rec = part["recording"]
+        rec = part.get("recording")
+        if not rec:                         # shown on a card only (a dhikr to read), never read
+            continue
+        if not whole and not rec.get("file"):
+            report.error(here, "recording: a part read from the hadith's recording, and the hadith has none")
         if rec["end"] <= rec["start"]:
             report.error(here, "recording: end must come after start")
         own = rec.get("file") and (not whole or rec["file"] != whole.get("file"))    # another voice, its own file

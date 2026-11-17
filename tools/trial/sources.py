@@ -34,6 +34,7 @@ DIGITS = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")   # only for the nu
 READING_RATE = 48000
 UNREAD = 12.0          # seconds given to a hadith with no reading yet, in a draft only
 
+
 _registry: dict | None = None
 proposed: list[str] = []      # what was played without the owner's validation yet (printed by the caller)
 
@@ -121,6 +122,20 @@ def described(sid: str, part: str | None = None) -> dict:
             "display_ar": clean(text), "display_en": e.get("excerpt_en") or e["text_en"],
             "translator": translator if translator and translator != "Unknown" else None, "url": e.get("url"), "recording": e.get("recording"),
             "grade_note": grade_note(e)}
+
+
+def card(sid: str, part: str | None = None, count: str | None = None, label: str | None = None,
+         hold: float | None = None) -> dict:
+    """A dhikr to read (a `card:` segment): the words of a hadith of the registry (one of its `parts`, its excerpt),
+    on screen with their reference and translation, and no sound at all: nobody reads them, the viewer does. `count`
+    and `label` are our own words (« 3 مرات », « بعد المغرب »), written with it; `hold` overrides the reading time."""
+    d = described(sid, part)
+    if d["type"] != "hadith":
+        sys.exit(f"error: {sid}: a card shows a hadith")
+    seconds = script.card_seconds(d["display_ar"], hold)
+    return {"kind": "reading", "card": True, "reference": " · ".join(x for x in (d["reference"], d["grade_note"]) if x),
+            "text": d["display_ar"], "en": d["display_en"], "seconds": seconds, "file": None,
+            "credit": d["translator"] or "", "count": count, "label": label}
 
 
 def name_of(sid: str) -> str:

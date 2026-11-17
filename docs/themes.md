@@ -1174,6 +1174,18 @@ la lecture du recueil : la comparaison dira si la lecture retient moins) ; **le 
 d'abord **sur Facebook seul**, 48 h à surveiller les revendications (le contrôle de Meta avant publication n'a vu aucune
 des trois revendications passées), puis Instagram et TikTok ; la série ne continue avec Jibril que si c'est propre.
 
+**Adhkar à lire, sans voix, à enregistrer (son idée, 2026-11-17)** : « un montage animé sans voix, on laisse les gens lire
+les adhkar du matin, du soir et d'après la prière, et on dit : save it ». L'avis de la session : oui, un format à part,
+mesuré sur les enregistrements (Word of the day, un texte à lire, n'avait pas pris : la différence doit venir du format
+vidéo). Ses choix : les trois d'un coup ; une ambiance douce et Tawfiq pour les sourates ; **script validé par lui**
+(`docs/scripts/adhkar-cards.md` : les adhkar de la politique seulement, chacun avec sa référence et son nombre) ; le titre
+seul sur la couverture ; les clips 7215 (après la prière), 2119 (matin), 190332 (soir). Fait : un segment `card:` (un
+dhikr du registre à l'écran le temps de le lire, sans son ; une partie du registre peut n'avoir aucun enregistrement),
+seize hadiths au registre (proposés) et leurs extraits découpés par programme ; `content/trial/adhkar.yaml` (`salat`,
+`sabah`, `masaa`) : 2:13, 2:26, 2:42. Deux cartes changées en les écrivant : « أستغفر الله » est l'explication d'al-Awza'i
+(hors des paroles du Prophète ﷺ dans Muslim 591) : notre étiquette « وقبلها: استغفر 3 مرات » ; Tirmidhi 2903 est la parole
+de 'Uqba : une ligne à nous avec sa référence annonce الفلق et الناس.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

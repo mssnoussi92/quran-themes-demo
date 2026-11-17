@@ -625,6 +625,19 @@ def test_a_part_naming_a_file_names_its_reader_too(copy):
     assert checked.returncode == 1 and "schema" in checked.stdout, checked.stdout[-2500:]
 
 
+def test_a_card_shows_a_hadith_of_the_policy_and_needs_no_recording(copy):
+    """A `card:` (a dhikr to read, adhkar to save) shows the words of a hadith and no voice reads them: no recording is
+    needed (the real files pass, `test_the_real_repository_has_no_error`), but the hadith must be one of the policy."""
+    assert copy.rules("--film", "adhkar").returncode == 0
+    path = copy.root / "content" / "sources" / "hadith.yaml"
+    entries = yaml.safe_load(path.read_text(encoding="utf-8"))
+    entry = next(e for e in entries if e["id"] == "hadith.muslim.591")
+    assert "recording" not in entry and "recording" not in entry["parts"]["salam"]
+    entry["ref"]["collection"] = "wahidi"
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    refused(copy.rules("--film", "adhkar"), "hadith.muslim.591")
+
+
 def test_the_film_reads_no_silent_line_in_a_short_s_voice_text():
     """A short whose opening is written on screen only (`silent`, the shorts of « مخيّر ولا مسيّر؟ »): its silent lines
     are not in its voice text, so the film, which takes its other lines from that take, must not count them either."""

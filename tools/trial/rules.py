@@ -263,8 +263,8 @@ class Checker:
         if src.get("status") != "validated" and f"source {sid}" not in self.unvalidated:
             self.unvalidated.append(f"source {sid}")
         if part is not None:
-            if kind != "reading":
-                self.out.error(file, f"`part` is for a `reading` segment, not for {kind} {sid}")
+            if kind not in ("reading", "card"):
+                self.out.error(file, f"`part` is for a `reading` or a `card` segment, not for {kind} {sid}")
                 return None
             whole = src
             src = script.part_view(whole, part)
@@ -277,6 +277,9 @@ class Checker:
             if f"{ref['surah']}:{ref['ayah']}" not in self.repo.cuts:
                 self.out.error(file, f"verse {sid} has no cut in the reciter's file (content/recitations/)")
             self.glyphs(file, src["text_ar"], "quran", f"verse {sid}")
+        elif kind == "card":                       # shown only, never read: no recording to find
+            self.in_policy(file, sid, src)
+            self.glyphs(file, src.get("excerpt_ar") or src["text_ar"], "arabic", f"card {sid}" + (f" part {part}" if part else ""))
         else:
             self.hadith(file, sid, src, part)
             self.glyphs(file, src.get("excerpt_ar") or src["text_ar"], "arabic", f"reading {sid}" + (f" part {part}" if part else ""))
@@ -485,7 +488,9 @@ class Checker:
     def short(self, path: Path) -> dict | None:
         file = self.repo.rel(path)
         spec = yaml.safe_load(path.read_text(encoding="utf-8"))
-        self.required(file, spec, ["id", "text", "segments", "cover.title", "publish.title.ar", "publish.title.en",
+        # A short with no voice at all (adhkar to read: every narration `silent`) has no voice text.
+        voiced = any("narration" in s and not s.get("silent") for s in spec.get("segments") or [])
+        self.required(file, spec, ["id"] + (["text"] if voiced else []) + ["segments", "cover.title", "publish.title.ar", "publish.title.en",
                                    "publish.description.ar", "publish.description.en", "publish.part"])
         if not spec.get("clip") and not spec.get("validated"):      # the script and the voice come before the pictures
             self.out.warn(file, "no `clip` yet: the pictures come after the script (tools/trial/clip.py, shown to the owner)")
@@ -506,8 +511,15 @@ class Checker:
                 recited |= self.passage(file, seg["verses"], seg.get("upto"))
             elif "upto" in seg:
                 self.out.error(file, "`upto` is for a `verses` segment of one verse")
-            if "part" in seg and "reading" not in seg:
-                self.out.error(file, f"`part` is for a `reading` segment: {seg_name(seg)}")
+            if "part" in seg and "reading" not in seg and "card" not in seg:
+                self.out.error(file, f"`part` is for a `reading` or a `card` segment: {seg_name(seg)}")
+            if "card" in seg:
+                src = self.quoted(file, seg["card"], "card", seg.get("part"))
+                if src:     # the voice says none of its words (there is no voice under it, but a line elsewhere)
+                    add_reading(hadiths, self.repo.sources[seg["card"]], seg["card"])
+                for ours in (seg.get("label"), seg.get("count")):
+                    if ours:
+                        self.glyphs(file, ours, "lines", f"card {seg['card']}, « {ours} »")
             if "reading" in seg:
                 src = self.quoted(file, seg["reading"], "reading", seg.get("part"))
                 if src:     # the whole hadith, even when only a part is read: the voice says none of its words
@@ -578,6 +590,11 @@ class Checker:
                 src = script.part_view(src, seg["part"]) or {}
             rec = src.get("recording")
             return rec["end"] - rec["start"] if rec else script.UNKNOWN_READING
+        if "card" in seg:
+            src = self.repo.sources.get(seg["card"]) or {}
+            if seg.get("part"):
+                src = script.part_view(src, seg["part"]) or {}
+            return script.card_seconds(src.get("excerpt_ar") or src.get("text_ar") or "", seg.get("hold"))
         return max(script.spoken(seg.get("lines") or []), seg.get("hold") or 0)
 
     def estimate_short(self, spec: dict) -> float:
@@ -687,7 +704,7 @@ class Checker:
 
 
 def seg_name(seg: dict) -> str:
-    return next((f"{k}: {v}" for k, v in seg.items() if k in ("verse", "verses", "reading", "narration", "reuse")), "?") + (f" (part {seg['part']})" if seg.get("part") else "")
+    return next((f"{k}: {v}" for k, v in seg.items() if k in ("verse", "verses", "reading", "card", "narration", "reuse")), "?") + (f" (part {seg['part']})" if seg.get("part") else "")
 
 
 # ---- Main -----------------------------------------------------------------------------------------------------

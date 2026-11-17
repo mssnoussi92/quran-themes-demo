@@ -1,6 +1,6 @@
 # Adhkar à lire, sans voix, à enregistrer : le script des trois vidéos
 
-Demande du propriétaire (2026-11-17) : « un montage animé sans voix, on laisse les gens lire les adhkar du matin, du soir et d'après la prière, et on dit : save it » ; ses choix : les trois d'un coup ; une ambiance douce et Tawfiq pour les sourates. **À valider avant toute production.**
+Demande du propriétaire (2026-11-17) : « un montage animé sans voix, on laisse les gens lire les adhkar du matin, du soir et d'après la prière, et on dit : save it » ; ses choix : les trois d'un coup ; une ambiance douce et Tawfiq pour les sourates. **Validé par le propriétaire le 2026-11-17** (questions à choix : « je valide le script », le titre seul sur la couverture, les clips 2119, 190332 et 7215).
 
 Les textes des adhkar sont copiés de hadith-api par programme (jamais tapés) : ce fichier en est tiré. Seuls les adhkar de la politique (Bukhari, Muslim, Tirmidhi jugé sahih ou hasan par al-Albani). Chaque carte : le dhikr en grand, le nombre de fois, la référence dessous (et le jugement d'al-Albani pour Tirmidhi). Le temps de chaque carte : le temps de la lire (environ 0,4 s par mot, 4 s au moins). Aucune voix ; une ambiance sous les cartes, jamais sous une récitation. Les répliques **nôtres** (titres, étiquettes, appel) sont marquées « nôtre ».
 
