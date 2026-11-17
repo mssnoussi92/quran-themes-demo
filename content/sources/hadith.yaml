@@ -1333,6 +1333,17 @@
 
   text_ar: وَحَدَّثَنِي مُحَمَّدُ بْنُ أَحْمَدَ بْنِ أَبِي خَلَفٍ، حَدَّثَنَا مُوسَى بْنُ دَاوُدَ، حَدَّثَنَا سُلَيْمَانُ بْنُ بِلاَلٍ، عَنْ زَيْدِ بْنِ أَسْلَمَ، عَنْ عَطَاءِ بْنِ يَسَارٍ، عَنْ أَبِي سَعِيدٍ الْخُدْرِيِّ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏ "‏ إِذَا شَكَّ أَحَدُكُمْ فِي صَلاَتِهِ فَلَمْ يَدْرِ كَمْ صَلَّى ثَلاَثًا أَمْ أَرْبَعًا فَلْيَطْرَحِ الشَّكَّ وَلْيَبْنِ عَلَى مَا اسْتَيْقَنَ ثُمَّ يَسْجُدُ سَجْدَتَيْنِ قَبْلَ أَنْ يُسَلِّمَ فَإِنْ كَانَ صَلَّى خَمْسًا شَفَعْنَ لَهُ صَلاَتَهُ وَإِنْ كَانَ صَلَّى إِتْمَامًا لأَرْبَعٍ كَانَتَا تَرْغِيمًا لِلشَّيْطَانِ ‏"‏ ‏.‏
   text_en: "Abu Sa'id al-Khudri reported:The Messenger of Allah (ﷺ) said: When any one of you is in doubt about his prayer and he does Dot know how much he has prayed, three or four (rak'ahs). he should cast aside his doubt and base his prayer on what he is sure of. then perform two prostrations before giving salutations. If he has prayed five rak'ahs, they will make his prayer an even number for him, and if he has prayed exactly four, they will be humiliation for the devil"
+  excerpt_ar: إِذَا شَكَّ أَحَدُكُمْ فِي صَلاَتِهِ فَلَمْ يَدْرِ كَمْ صَلَّى ثَلاَثًا أَمْ أَرْبَعًا فَلْيَطْرَحِ الشَّكَّ وَلْيَبْنِ عَلَى مَا اسْتَيْقَنَ ثُمَّ يَسْجُدُ سَجْدَتَيْنِ قَبْلَ أَنْ يُسَلِّمَ فَإِنْ كَانَ صَلَّى خَمْسًا شَفَعْنَ لَهُ صَلاَتَهُ وَإِنْ كَانَ صَلَّى إِتْمَامًا لأَرْبَعٍ كَانَتَا تَرْغِيمًا لِلشَّيْطَانِ
+  excerpt_en: When any one of you is in doubt about his prayer and he does Dot know how much he has prayed, three or four (rak'ahs). he should cast aside his doubt and base his prayer on what he is sure of. then perform two prostrations before giving salutations. If he has prayed five rak'ahs, they will make his prayer an even number for him, and if he has prayed exactly four, they will be humiliation for the devil
+  recording:
+    reader: Ryadussalihin.org
+    item: https://archive.org/details/ar_Moslem_Reading_16
+    file: https://archive.org/download/ar_Moslem_Reading_16/ar_Moslem_Reading_06.mp3
+    start: 4117.33
+    end: 4141.15
+    heard: إذا شك أحدكم في صلاته فلم يدر كم صلى ثلاثا أم أربعة فليطرح الشك وليبني على مستيقا ثم يسجد سجدتين قبل أن يسلم فإن كان صلى خمسا شفعن له صلاته وإن كان صلى إتماما لأربع كانت ترغيما للشيطان
+    license: none stated on the archive.org item
+    status: proposed
 - id: hadith.muslim.572a
   type: hadith
   ref: {collection: muslim, number: 572, narration: 1}
@@ -1352,6 +1363,17 @@
 
   text_ar: وَحَدَّثَنَا عُثْمَانُ، وَأَبُو بَكْرٍ ابْنَا أَبِي شَيْبَةَ وَإِسْحَاقُ بْنُ إِبْرَاهِيمَ جَمِيعًا عَنْ جَرِيرٍ، - قَالَ عُثْمَانُ حَدَّثَنَا جَرِيرٌ، - عَنْ مَنْصُورٍ، عَنْ إِبْرَاهِيمَ، عَنْ عَلْقَمَةَ، قَالَ قَالَ عَبْدُ اللَّهِ صَلَّى رَسُولُ اللَّهِ صلى الله عليه وسلم - قَالَ إِبْرَاهِيمُ زَادَ أَوْ نَقَصَ - فَلَمَّا سَلَّمَ قِيلَ لَهُ يَا رَسُولَ اللَّهِ أَحَدَثَ فِي الصَّلاَةِ شَىْءٌ قَالَ ‏"‏ وَمَا ذَاكَ ‏"‏ ‏.‏ قَالُوا صَلَّيْتَ كَذَا وَكَذَا - قَالَ - فَثَنَى رِجْلَيْهِ وَاسْتَقْبَلَ الْقِبْلَةَ فَسَجَدَ سَجْدَتَيْنِ ثُمَّ سَلَّمَ ثُمَّ أَقْبَلَ عَلَيْنَا بِوَجْهِهِ فَقَالَ ‏"‏ إِنَّهُ لَوْ حَدَثَ فِي الصَّلاَةِ شَىْءٌ أَنْبَأْتُكُمْ بِهِ وَلَكِنْ إِنَّمَا أَنَا بَشَرٌ أَنْسَى كَمَا تَنْسَوْنَ فَإِذَا نَسِيتُ فَذَكِّرُونِي وَإِذَا شَكَّ أَحَدُكُمْ فِي صَلاَتِهِ فَلْيَتَحَرَّ الصَّوَابَ فَلْيُتِمَّ عَلَيْهِ ثُمَّ لْيَسْجُدْ سَجْدَتَيْنِ ‏"‏ ‏.‏
   text_en: "Alqama narrated It on the authority of 'Abdullah (b. Mas'ud) who said:The Messenger of Allah (ﷺ) said the prayer; (the narrator added): He made some act of omission or commission when he pronounced salutation; it was said to him: Messenger of Allah, is there something new about the prayer? He (the Holy Prophet) said: What is it? They said: You said prayer in such and such away. He (the narrator) said: He (the Holy Prophet) turned his feet and faced the Qibla and performed two prostrations and then pronounced salutations, and then turned his face towards us and said: If there is anything new about prayer (new command from the Lord) I informed you of that. But I am a human being and I forget as you for. get, so when I forget, remind me, and when any one of you is in doubt about his prayer. he should aim at what Is correct. and complete his prayer in that respect and then make two prostrations"
+  excerpt_ar: إِنَّمَا أَنَا بَشَرٌ أَنْسَى كَمَا تَنْسَوْنَ فَإِذَا نَسِيتُ فَذَكِّرُونِي
+  excerpt_en: But I am a human being and I forget as you for. get, so when I forget, remind me
+  recording:
+    reader: Ryadussalihin.org
+    item: https://archive.org/details/ar_Moslem_Reading_16
+    file: https://archive.org/download/ar_Moslem_Reading_16/ar_Moslem_Reading_06.mp3
+    start: 4209.0
+    end: 4214.85
+    heard: إنما أنا بشر أنسى كما تنسون فإذا نسيت فذكروني
+    license: none stated on the archive.org item
+    status: proposed
 - id: hadith.muslim.572j
   type: hadith
   ref: {collection: muslim, number: 572, narration: 10}
