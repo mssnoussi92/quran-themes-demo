@@ -173,7 +173,9 @@ La session est l'orchestrateur : elle fait le plan, confie ce qui s'y prête, re
   4 à 8 s, YouTube retient) : l'outil (`cut` du fichier d'un short, `prepare.py --cut`, la vidéo `<short>-cut.mp4` ;
   `docs/model.md`, avec la convention pour quran-reels) et un essai, le short 1 de Dhul-Qarnayn (2:06 → 1:13, la question d'abord) : **validé par lui le 2026-11-15**,
   dans `qarnayn-candidate` et public (`page-qarnayn`) ; à quran-reels de le prendre pour Facebook et Instagram (convention
-  dans `docs/model.md`). Le reste du stock : **mesurer d'abord** (sa décision). **La caverne en version courte** (son choix, « oui, ce plan ») : trois shorts d'un verset court (`refuge`
+  dans `docs/model.md`). **Puis les shorts 2 et 3** (son choix : l'essai sur les trois shorts de Dhul-Qarnayn, les
+  24, 25 et 26 novembre) : `tribute` 1:13 et `barrier` 1:20, **validés par lui le 2026-11-16**, publics, sur `main` (PR #38) ;
+  quran-reels les prend pour Facebook et Instagram. Le reste du stock : **mesurer d'abord** (sa décision). **La caverne en version courte** (son choix, « oui, ce plan ») : trois shorts d'un verset court (`refuge`
   18:10, `sunpath` 18:17, `awake` 18:19 coupé et 18:25) et le film `kahf` ; script envoyé le 2026-11-15
   (`docs/scripts/kahf.md`) : la question la plus forte d'abord (sa demande), **script validé par lui le 2026-11-15**,
   clips choisis par lui ; voix, dessins (`video/src/trial/Kahf.tsx`), ambiances faits ; shorts (1:11, 1:13, 1:10) et film
