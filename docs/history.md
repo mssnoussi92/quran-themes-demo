@@ -531,3 +531,18 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 - **Produit et livré le même jour**, à sa demande (« commence le travail ») : voix (quatre requêtes), dessins larges
   du film, chemins redessinés, ambiances, accroches proposées, rendu par le workflow `film` (42 minutes) ; un trou
   d'outil fermé (`film.py` et les cartes muettes, avec un test). PR #42 ouverte vers `main`, qui attend sa validation.
+
+## « مخيّر ولا مسيّر؟ » : validé, la fin du film refaite, au calendrier (2026-11-17)
+
+- **Sa réponse sur les vidéos** : « je valide tout sauf la fin du film, il faut changer اشترك عشان الفيلم الجاي ». Inscrit
+  sur les trois shorts (voix, montage, couverture, textes, ambiance) et les sources ; le film, sans sa voix ni sa fin.
+- **La fin** : trois propositions sur aperçu, son choix « ابعته لحد بيسأل نفس السؤال. ». Répliques propres du film redites
+  en une requête (chaque phrase retrouvée ; la reconnaissance entend la fin), film refait (6:58 ; les chapitres se
+  décalent d'une à deux secondes, recalculés par `publish.py` depuis les timelines du run). Le bouton d'abonnement reste
+  à l'écran, la voix ne dit plus « اشترك ».
+- **Le film vertical et son jumeau TikTok** (sa demande, « les deux ») : un seul run (`only: tall`), release brouillon
+  `qadar-9x16-candidate` ; même voix, même minutage, signés `@quran.words.daily` sur TikTok partout où on a regardé.
+- **Validé** : « je valide le film », « le vertical », « le TikTok » (questions à choix nommant chacun). PR #42 fusionnée
+  après ses checks, comme il l'avait dit. **Au calendrier** : film le lundi 28 décembre, shorts du 29 au 31 ; les quatre
+  lignes vérifiées avec le lecteur du calendrier de quran-reels (chaque plateforme reliée à sa vidéo, aucun problème).
+

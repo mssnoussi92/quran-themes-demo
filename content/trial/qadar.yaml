@@ -25,11 +25,16 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 # choix nommant les 3 shorts et le film, voix, dessins, montage, ambiances, couvertures et vignette, textes et 4 accroches,
 # sources et 2 lectures) : lu comme le film tel que livré sauf sa dernière réplique ; ses répliques propres sont redites
 # par la voix pour cette réplique (une requête) : la voix du film et sa fin s'entendent sur la vidéo refaite.
-validated: { by: mssnoussi92, on: 2026-11-17, what: [montage, thumbnail, publish, ambience] }
+# Puis « Je valide le film » (même jour, question à choix nommant « la voix du film et sa nouvelle fin « ابعته لحد بيسأل
+# نفس السؤال. » à 6:46 », sur le film refait : run 44079539962 du workflow `film`, 6:58) : la voix s'y ajoute.
+validated: { by: mssnoussi92, on: 2026-11-17, what: [voice, montage, thumbnail, publish, ambience] }
 # Le film en 9:16 pour Facebook et son jumeau TikTok signé @quran.words.daily (son choix, 2026-11-17, question à choix :
-# « oui, les deux ») : rendus à part (`only: tall`, `only: tall-tiktok`), après la voix refaite pour la dernière réplique.
+# « oui, les deux ») : rendus à part (`only: tall`, run 44079551978), après la voix refaite pour la dernière réplique.
+# « Je valide le vertical » et « Je valide le TikTok » (même jour, questions à choix nommant la vidéo verticale et son
+# texte Facebook, puis la vidéo signée @quran.words.daily et sa légende TikTok, tels qu'envoyés).
 tall:
-  tiktok: { asked: 2026-11-17 }
+  validated: { by: mssnoussi92, on: 2026-11-17, what: [montage, publish] }
+  tiktok: { asked: 2026-11-17, validated: { by: mssnoussi92, on: 2026-11-17, what: [video, publish] } }
 files: qadar                     # qadar-film-16x9.mp4, qadar-short-<n>-<id>.mp4
 title: { ar: "مخيّر ولا مسيّر؟", en: "Free will or fate?" }
 handle: "@quran_words_daily"

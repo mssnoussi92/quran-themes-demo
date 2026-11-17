@@ -4,7 +4,7 @@ Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et 
 
 ## Le film · Free will or fate? 3 sentences we all say · مخيّر ولا مسيّر؟ تلات جمل بنقولها كلنا
 
-`qadar-film-16x9.mp4` · 6:55 · 16:9 · YouTube · miniature : `qadar-film-thumbnail.jpg`
+`qadar-film-16x9.mp4` · 6:58 · 16:9 · YouTube · miniature : `qadar-film-thumbnail.jpg`
 
 **YouTube · Titre (82/100)**
 
@@ -21,11 +21,11 @@ Free will or fate? 3 sentences we all say · مخيّر ولا مسيّر؟ تل
 
 Chapters:
 0:00 Three sentences · تلات جمل
-0:15 Not a debate · مش جدال
-0:37 “The result is written” · «النتيجة مكتوبة»
-2:02 “When God guides me” · «لما ربنا يهديني»
-4:02 “If only” · «لو»
-5:55 Do we choose, or are we driven? · مخيّرين ولا مسيّرين؟
+0:16 Not a debate · مش جدال
+0:39 “The result is written” · «النتيجة مكتوبة»
+2:03 “When God guides me” · «لما ربنا يهديني»
+4:03 “If only” · «لو»
+5:54 Do we choose, or are we driven? · مخيّرين ولا مسيّرين؟
 
 AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
 
