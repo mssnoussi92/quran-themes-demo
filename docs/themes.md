@@ -1155,8 +1155,10 @@ narration la dit **au discours indirect** (« قاله إنه لو كان قال
 citation : c'est la première fois qu'une réplique de la voix rapporte une parole du Prophète ﷺ, même par le sens (la
 règle du skill `write-hook` disait « jamais »), point dit au propriétaire ; le dhikr n'est entendu que dans la voix de
 Jibril. L'exemple : la route de nuit (scène `drive`, des phares), les enfants endormis, la porte qu'on ferme et ce qu'on
-« استودع » à Allah. Ses images (images fixes sur la nuit générée) envoyées ; ses répliques nouvelles, à valider. Les
-images des trois shorts sont bonnes pour lui (« oui, voix le 19 »).
+« استودع » à Allah. Ses images (images fixes sur la nuit générée) envoyées. Puis, à sa demande, la réplique « والليل
+بالذات… » retirée et la réponse dite plus court (« والنبي صلى الله عليه وسلم دلّه على كلمات… لو قالها لما المسا دخل، ما
+كانتش ضرّته. », « اسمعها بصوت الشيخ محمد جبريل: » : sa version A) : **le short 1 refait validé par lui le 2026-11-17**
+(1:33). Les images des trois shorts sont bonnes pour lui (« oui, voix le 19 »).
 
 ## Faits (ancien circuit)
 
