@@ -125,8 +125,10 @@ def prepare(args) -> None:
             elif "verse" in seg:
                 made = P.verse_segment(recited, seg["verse"], out_dir, episode_name) if recited is not None else sources.verse(seg["verse"], out_dir)
             elif read is None:
-                made = sources.reading(seg["reading"], out_dir, draft=args.draft)
+                made = sources.reading(seg["reading"], out_dir, draft=args.draft, part=seg.get("part"))
             else:
+                if seg.get("part"):
+                    sys.exit(f"error: {seg['reading']}: `part` is for the registry path; a film that reads a prepared episode plays the whole reading")
                 source = read.get(seg["reading"])
                 if source is None:
                     sys.exit(f"error: {seg['reading']} has no validated reading in the prepared episode {episode_name}")

@@ -498,3 +498,8 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   28 au 31 décembre.
 - **Fait** : sources au registre (proposées), coupes de récitation, script des trois shorts et du film
   (`docs/scripts/qadar.md`), estimés plus longs que la fiche (1:38, 1:26, 1:52 ; film 7:10). À valider par lui.
+- **Ses réponses sur le script** : un extrait de Muslim 2664 dans le short 3, Tirmidhi 2133 gardé, les images de style
+  tout de suite, le script relu par lui avant validation. **Fait** : l'outil d'un extrait de lecture (`parts`, `part:` ;
+  premier travail confié à un agent pour ce film, relu ligne à ligne, une correction : le contrôle de la voix sur tout le
+  hadith) ; la lecture de Bukhari 4949 (Abu Malik al-Asqalani, proposée), qu'il fallait aussi pour que `rules.py --all`
+  reste sans erreur ; les dessins des trois scènes jouées (`video/src/trial/Qadar.tsx`) et leurs images de style.

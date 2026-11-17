@@ -83,6 +83,33 @@
         "status": { "enum": ["proposed", "validated", "excluded"] },
         "validated_by": { "type": "string" },
         "notes": { "type": "string" },
+        "parts": {
+          "description": "For a hadith a short plays only in part: named parts of the reading (a film plays the whole). A part has its excerpts (copied from text_ar and text_en, never typed: validate.py checks them) and its own start and end inside the entry's recording; it takes reader, item, file and license from that recording. A segment names one with `part:`.",
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": { "pattern": "^[a-z][a-z0-9-]*$" },
+          "additionalProperties": {
+            "type": "object",
+            "required": ["excerpt_ar", "excerpt_en", "recording"],
+            "additionalProperties": false,
+            "properties": {
+              "excerpt_ar": { "type": "string", "minLength": 1 },
+              "excerpt_en": { "type": "string", "minLength": 1 },
+              "recording": {
+                "type": "object",
+                "required": ["start", "end"],
+                "additionalProperties": false,
+                "properties": {
+                  "start": { "type": "number", "minimum": 0 },
+                  "end": { "type": "number", "exclusiveMinimum": 0 },
+                  "heard": { "type": "string", "description": "What Whisper hears between start and end" },
+                  "status": { "enum": ["proposed", "validated"] },
+                  "validated_by": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
         "recording": {
           "description": "A person reading the hadith aloud (a recorded reading of the book), heard instead of the synthetic voice for the words shown (display_ar). start/end found with Whisper; heard = what Whisper hears there, compared with the text by validate.py. The owner listens before validating it.",
           "type": "object",

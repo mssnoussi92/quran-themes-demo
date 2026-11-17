@@ -4,7 +4,8 @@
 #   le soir ; des « لو » qui se multiplient autour d'elle. Les phrases entre guillemets, les siennes.
 # - Le fait : un mot de deux lettres contre lequel le Prophète ﷺ a mis en garde ; ses paroles lues par une vraie voix
 #   (Muslim 2664, lecture validée, 28 s) : avant, « احرص على ما ينفعك واستعن بالله ولا تعجز » ; après, « ولا تقل لو… ولكن قل
-#   قدر الله وما شاء فعل ». La lecture est jouée entière : un extrait d'une lecture n'est pas encore possible.
+#   قدر الله وما شاء فعل ». Le short n'en joue que la fin (`part: after`, « وإن أصابك… عمل الشيطان », 15 s : choix du
+#   propriétaire, 2026-11-17) ; le film joue tout.
 # - 57:22 et le sens : al-Muyassar sur 57:22 (« مكتوب… من قبل أن تُخْلَق الخليقة ») ; as-Sa'di sur 57:22 (« وأخبر الله عباده
 #   بذلك لأجل أن تتقرر هذه القاعدة عندهم، ويبنوا عليها ما أصابهم من الخير والشر »). 57:23 (« لكيلا تأسوا على ما فاتكم »)
 #   et as-Sa'di sur lui (« فلا سبيل إلى دفعه ») : dans le film seul ; le short le dit en réplique de la session.
@@ -19,14 +20,17 @@ id: law
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 80-trial-law
+# Le fond, provisoire, pour les images de style (2026-11-17) : un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) ; les
+# scènes jouées sont dessinées par-dessus (video/src/trial/Qadar.tsx). Un clip filmé se cherchera avec la production.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4 }
 cover: { scene: law, title: "كلمة من حرفين…", tag: "مخيّر ولا مسيّر؟ · ٣ من ٣", focus: 1100 }
 publish:
   title: { en: "A two-letter word the Prophet ﷺ warned against", ar: "كلمة من حرفين… النبي ﷺ حذّر منها" }
   part: 3
   hashtags: ["#القضاء_والقدر", "#مخير_ولا_مسير"]
   description:
-    en: "“If only I had…” The Prophet ﷺ told us what to do before something happens and what to say after it, and warned against “if only”. Every misfortune was written before creation: what is gone could not have been stopped, so leave it to God and work on what is ahead."
-    ar: "«لو كنت عملت كذا…» النبي صلى الله عليه وسلم قال لنا نعمل إيه قبل ما الحاجة تحصل، ونقول إيه بعدها، وحذّر من «لو». كل مصيبة مكتوبة من قبل ما الخلق يتخلق: اللي فات ما كانش فيه طريق يتمنع… سيبه لربنا، واشتغل على اللي جاي."
+    en: "“If only I had…” The Prophet ﷺ told us what to say when something befalls us, and warned against “if only”. Every misfortune was written before creation: what is gone could not have been stopped, so leave it to God and work on what is ahead."
+    ar: "«لو كنت عملت كذا…» النبي صلى الله عليه وسلم قال لنا نقول إيه لما حاجة تحصلنا، وحذّر من «لو». كل مصيبة مكتوبة من قبل ما الخلق يتخلق: اللي فات ما كانش فيه طريق يتمنع… سيبه لربنا، واشتغل على اللي جاي."
 segments:
   # -- la scène jouée, muette
   - narration: hook
@@ -57,9 +61,10 @@ segments:
   - narration: open
     scene: law
     lines:
-      - ar: "وقال كلام… فيه اللي تعمله قبل ما الحاجة تحصل… واللي تقوله بعد ما تحصل:"
-        en: "And he said words… with what to do before something happens… and what to say after it does:"
+      - ar: "وقال لنا نقول إيه بدالها:"
+        en: "And he told us what to say instead:"
   - reading: hadith.muslim.2664
+    part: after
     scene: law
   - narration: turn
     scene: night

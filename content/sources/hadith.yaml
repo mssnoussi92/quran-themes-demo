@@ -315,6 +315,14 @@
     license: none stated on the archive.org item
     status: validated
     validated_by: mssnoussi92
+  parts:
+    # Le short 3 du film « مخيّر ولا مسيّر؟ » (law) n'en joue que la fin, « وإن أصابك… عمل الشيطان » (choix du propriétaire,
+    # 2026-11-17) ; le film joue tout. Temps mesurés par la session (Whisper, mots et silences) : « وإن » juste après le silence
+    # de 2460,45-2460,95 s ; la fin, celle de la lecture entière.
+    after:
+      excerpt_ar: "وَإِنْ أَصَابَكَ شَىْءٌ فَلاَ تَقُلْ لَوْ أَنِّي فَعَلْتُ كَانَ كَذَا وَكَذَا ‏.‏ وَلَكِنْ قُلْ قَدَرُ اللَّهِ وَمَا شَاءَ فَعَلَ فَإِنَّ لَوْ تَفْتَحُ عَمَلَ الشَّيْطَانِ"
+      excerpt_en: "if anything (in the form of trouble) comes to you, don't say: If I had not done that, it would not have happened so and so, but say: Allah did that what He had ordained to do and your\" if\" opens the (gate) for the Satan"
+      recording: {start: 2460.8, end: 2476.1, heard: "وإن أصابك شيء فلا تقل لو أني فعلت كان كذا وكذا ولكن قل قدر الله وما شاء فعل فإن لو تفتح عمل الشيطان", status: proposed}
 - id: hadith.bukhari.1469
   type: hadith
   ref: {collection: bukhari, number: 1469}
@@ -1219,6 +1227,15 @@
   text_en: "Narrated `Ali:While the Prophet (ﷺ) was in a funeral procession. he picked up something and started scraping the ground with it, and said, \"There is none among you but has his place written for him either in the Hell Fire or in Paradise.\" They said, \"O Allah's Messenger (ﷺ)! Shall we not depend upon what has been written for us and give up deeds? He said, \"Carry on doing (good) deeds, for everybody will find easy to do such deeds as will lead him to his destined place for which he has been created. So he who is destined to be among the happy (in the Hereafter), will find it easy to do the deeds characteristic of such people, while he who is destined to be among the miserable ones, will find it easy to do the deeds characteristic of such people.\" Then he recited: 'As for him who gives (in charity) and fears Allah, and believes in the best"
   excerpt_ar: "مَا مِنْكُمْ مِنْ أَحَدٍ إِلاَّ وَقَدْ كُتِبَ مَقْعَدُهُ مِنَ النَّارِ وَمَقْعَدُهُ مِنَ الْجَنَّةِ ‏\"‏‏.‏ قَالُوا يَا رَسُولَ اللَّهِ أَفَلاَ نَتَّكِلُ عَلَى كِتَابِنَا وَنَدَعُ الْعَمَلَ قَالَ ‏\"‏ اعْمَلُوا فَكُلٌّ مُيَسَّرٌ لِمَا خُلِقَ لَهُ"
   excerpt_en: "There is none among you but has his place written for him either in the Hell Fire or in Paradise.\" They said, \"O Allah's Messenger (ﷺ)! Shall we not depend upon what has been written for us and give up deeds? He said, \"Carry on doing (good) deeds, for everybody will find easy to do such deeds as will lead him to his destined place for which he has been created."
+  recording:
+    reader: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane
+    item: https://archive.org/details/bukhari_audiobook
+    file: https://archive.org/download/bukhari_audiobook/4949.mp3
+    start: 19.32
+    end: 35.1
+    heard: ما منكم من أحد إلا وقد كتب مقعده من النار ومقعده من الجنة قالوا يا رسول الله أفلا نتكل على كتابنا وندع العمل قال اعملوا فكل ميسر لما خلق له
+    license: none stated on the archive.org item
+    status: proposed
 - id: hadith.tirmidhi.2133
   type: hadith
   ref: {collection: tirmidhi, number: 2133}

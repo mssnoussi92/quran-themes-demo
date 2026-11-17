@@ -6,7 +6,8 @@
 # - L'idée reçue est montrée comme une parole (« … » entre guillemets), jamais dite par notre voix comme vraie.
 # - Le fait : les Compagnons ont posé cette question même (Bukhari 4949 ; aussi 1362, 4945, 6605, 7552 ; Muslim 2647). La
 #   narration raconte le lieu (une jenaza, il trace dans le sol avec un bâton : « عود », Bukhari 6605 et 7552) ; les paroles
-#   du Prophète ﷺ et la question des Compagnons sont lues par une vraie voix (lecture à trouver, skill find-hadith-recording).
+#   du Prophète ﷺ et la question des Compagnons sont lues par une vraie voix (Abu Malik al-Asqalani, le lecteur de nos autres
+#   hadiths de Bukhari : bukhari_audiobook/4949.mp3, 19,32-35,10 s, entendu mot pour mot ; proposée, à écouter par le propriétaire).
 # - 92:5-10 : ce qu'il récita juste après (Bukhari 4945 : « إلى قوله للعسرى »).
 # - Le sens : al-Muyassar sur 92:5-7 (« فسنرشده ونوفقه إلى أسباب الخير… ونيسِّر له أموره ») et as-Sa'di sur 92:7 (« لأنه أتى
 #   بأسباب التيسير، فيسر الله له ذلك »).
@@ -21,6 +22,9 @@ id: amal
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 78-trial-amal
+# Le fond, provisoire, pour les images de style (2026-11-17) : un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) ; les
+# scènes jouées sont dessinées par-dessus (video/src/trial/Qadar.tsx). Un clip filmé se cherchera avec la production.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4 }
 cover: { scene: shut, title: "النتيجة مكتوبة… أذاكر ليه؟", tag: "مخيّر ولا مسيّر؟ · ١ من ٣", focus: 1100 }
 publish:
   title: { en: "“It's written… why study?” The Companions asked it", ar: "«مكتوبة… أذاكر ليه؟» الصحابة سألوها" }

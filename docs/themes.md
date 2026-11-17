@@ -871,6 +871,15 @@ lecture de Bukhari 4949 n'est pas trouvée (comptée 12 s) ; Muslim 2664 se lit 
 pas encore possible) ; 57:23 et as-Sa'di sur lui passent au film seul (un short ne s'appuie que sur le tafsir d'un verset
 qu'il récite). **À valider par le propriétaire avant toute voix.**
 
+**Ses réponses sur le script (2026-11-17, questions à choix)** : le short 3 lit **un extrait** de Muslim 2664 (« وإن أصابك…
+عمل الشيطان », 15 s ; le film lit tout) ; **Tirmidhi 2133 gardé** ; **les images de style tout de suite** ; le script :
+« pas encore, je relis ». **Fait** : l'outil d'un extrait de lecture (`parts` au registre, `part:` d'un segment ; écrit par un
+agent, relu ligne à ligne : le contrôle de la voix porte sur tout le hadith, pas sur l'extrait), la partie `after` de
+Muslim 2664 (2460,80-2476,10 s, mesurée) ; **la lecture de Bukhari 4949 trouvée** (Abu Malik al-Asqalani, le lecteur de nos
+autres hadiths de Bukhari : `bukhari_audiobook/4949.mp3`, 19,32-35,10 s, de « ما منكم » à « لما خلق له », entendue mot pour
+mot, **proposée**) ; les dessins des scènes jouées (`video/src/trial/Qadar.tsx`, la silhouette de `Lens.tsx`) sur un ciel de
+nuit dessiné, provisoire ; brouillons sans voix 1:40, 1:28, 1:36 (estimés : 1:41, 1:26, 1:34 ; film 7:10).
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

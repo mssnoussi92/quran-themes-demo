@@ -17,6 +17,9 @@ id: shaa
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 79-trial-shaa
+# Le fond, provisoire, pour les images de style (2026-11-17) : un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) ; les
+# scènes jouées sont dessinées par-dessus (video/src/trial/Qadar.tsx). Un clip filmé se cherchera avec la production.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4 }
 cover: { scene: turn, title: "«لما ربنا يهديني»؟", tag: "مخيّر ولا مسيّر؟ · ٢ من ٣", focus: 1100 }
 publish:
   title: { en: "“When God guides me…” Two verses answer it", ar: "«لما ربنا يهديني»… آيتين بيردّوا عليها" }

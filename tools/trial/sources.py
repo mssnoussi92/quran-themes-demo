@@ -85,9 +85,18 @@ def clean(text: str) -> str:
     return " ".join(text.replace("‏", "").split())
 
 
-def described(sid: str) -> dict:
-    """How a source is named and shown: its references, the text on screen, its translation, who is credited."""
+def described(sid: str, part: str | None = None) -> dict:
+    """How a source is named and shown: its references, the text on screen, its translation, who is credited.
+    `part` (a hadith): one of its `parts` of the registry, the excerpts and the recording of that part."""
     e = entry(sid)
+    if part is not None:
+        if e["type"] != "hadith":
+            sys.exit(f"error: {sid} is not a hadith: it has no parts")
+        whole = e
+        e = script.part_view(whole, part)
+        if e is None:
+            sys.exit(f"error: {sid} has no part « {part} » (parts of its registry entry: "
+                     f"{', '.join(whole.get('parts') or {}) or 'none'})")
     ref, origin = e["ref"], e.get("origin") or {}
     translator = origin.get("translator")
     if e["type"] == "ayah":
@@ -242,9 +251,12 @@ def references(ids: list[str]) -> dict:
     return {"ar": " · ".join(ar), "en": " · ".join(en), "ids": list(ids)}
 
 
-def reading(sid: str, out_dir: Path, draft: bool = False) -> dict:
-    """A hadith segment: the Prophet's words read by a real voice (the registry's `recording`), levelled."""
-    d = described(sid)
+def reading(sid: str, out_dir: Path, draft: bool = False, part: str | None = None) -> dict:
+    """A hadith segment: the Prophet's words read by a real voice (the registry's `recording`), levelled.
+    `part`: only that part of the reading (its excerpts, its start and end inside the recording); the whole reading
+    when none. A part has its own clip and its own wav, so that a part and the whole never share a file."""
+    d = described(sid, part)
+    key = sid if part is None else f"{sid}.{part}"
     if d["type"] != "hadith":
         sys.exit(f"error: {sid} is not a hadith")
     # Under a hadith of Tirmidhi, al-Albani's grade as it is recorded (the hadith policy; as on the old cards).
@@ -253,15 +265,15 @@ def reading(sid: str, out_dir: Path, draft: bool = False) -> dict:
     if not rec:
         if not draft:
             sys.exit(f"error: {sid} has no recorded reading (skill find-hadith-recording): the synthetic voice does not read a hadith here")
-        proposed.append(f"reading of {sid}: none yet ({UNREAD:.0f} s kept for it)")
+        proposed.append(f"reading of {key}: none yet ({UNREAD:.0f} s kept for it)")
         return {**shown, "seconds": UNREAD, "file": None, "credit": " · ".join(x for x in ("Reading: to be found", d["translator"]) if x)}
     if rec.get("status") != "validated":
-        proposed.append(f"reading of {sid} by {rec['reader']}")
+        proposed.append(f"reading of {key} by {rec['reader']}")
     WORK.mkdir(parents=True, exist_ok=True)
-    clip = build.reading_clip(rec, sid, WORK, READING_RATE)
+    clip = build.reading_clip(rec, key, WORK, READING_RATE)
     levelled = clip.with_suffix(".level.wav")
     build.level(clip, levelled, build.LEVEL["reading"])
-    wav = out_dir / f"{name_of(sid)}.wav"
+    wav = out_dir / f"{name_of(key)}.wav"
     shutil.copyfile(levelled, wav)
     return {**shown, "seconds": round(build.seconds(wav), 2), "file": f"trial/{wav.name}",
             "credit": " · ".join(x for x in (f"Reading: {rec['reader']}", d["translator"]) if x)}
