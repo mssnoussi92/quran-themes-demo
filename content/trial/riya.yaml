@@ -30,6 +30,9 @@ clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%
 cover: { scene: box, title: "عملتها عشان يتقال؟", tag: "وتحسبونه هيّنًا · 3 من 3", focus: 1000 }
 publish:
   title: { en: "You did it so they would say it… and they did", ar: "عملتها عشان يتقال… واتقال" }
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session le 2026-11-17, à valider
+    ar: "عملتها عشان يتقال… واتقال. والقرآن رسم الصورة دي: تراب على صخرة… ونزل مطر."
+    en: "You did it so they would say it… and they did. The Quran paints it: dust on a rock… then the rain."
   part: 3
   hashtags: ["#الرياء"]
   description:

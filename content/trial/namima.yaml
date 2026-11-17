@@ -29,6 +29,9 @@ clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%
 cover: { scene: phone, title: "«شوف فلان قال عليك إيه»", tag: "وتحسبونه هيّنًا · 2 من 3", focus: 1000 }
 publish:
   title: { en: "“Look what he said about you”: the Quran has a name for it", ar: "«شوف فلان قال عليك إيه»… القرآن سمّاها" }
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session le 2026-11-17, à valider
+    ar: "«شوف فلان قال عليك إيه»… الحركة دي ليها اسم في القرآن."
+    en: "“Look what so-and-so said about you”… that move has a name in the Quran."
   part: 2
   hashtags: ["#النميمة"]
   description:

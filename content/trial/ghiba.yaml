@@ -29,6 +29,9 @@ clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%
 cover: { scene: cafe, title: "حسناتك رايحة لمين؟", tag: "وتحسبونه هيّنًا · 1 من 3", focus: 1100 }
 publish:
   title: { en: "“But it's true!”… and your good deeds may go to him", ar: "«هو فعلاً كده!»… وحسناتك ممكن تروح له" }
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session le 2026-11-17, à valider
+    ar: "«هو فعلاً كده… أنا مش بفتري عليه!» الجملة دي ممكن تاخد من حسناتك… وتديها للي اتكلمت عليه."
+    en: "“That's really how he is, I'm not making it up!” That sentence could take from your good deeds… and give them to the one you spoke about."
   part: 1
   hashtags: ["#الغيبة"]
   description:
