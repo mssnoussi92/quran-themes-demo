@@ -986,6 +986,12 @@ pour plus de contexte ») : avant d'écrire une question, lire les tafsirs du ve
 statut est en jeu. **Ses choix** : **al-Qurtubi**, quatrième tafsir de la politique, pour le fiqh (le tafsir des statuts,
 sur quran.com, id 90) ; un statut n'est la réponse d'un quiz que **sans divergence** dans nos sources, sinon il est le
 contexte dit après la réponse. Écrit dans le skill `write-hook` (« A short of the quiz »), avec les règles du format.
+
+**Prêt sans voix le 2026-11-17** (sa demande : « prépare tout sans voix maintenant, demain la voix ») : le workflow `film`
+rend désormais un brouillon muet avec la voix `X` (chaque short préparé avec `--draft` sur son vrai clip) ; run
+44103338443, release brouillon `quiz-candidate` : 0:42, 0:49, 1:22, leurs versions TikTok et couvertures, contrôlés sur
+leurs planches et envoyés. Accroches des légendes courtes **validées par lui le même jour** (« je valide les 3
+accroches »). Le lendemain : trois requêtes de voix, puis le même run en voix `D`.
 =======
 
 ## Faits (ancien circuit)

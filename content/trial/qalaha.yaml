@@ -8,6 +8,10 @@ id: qalaha
 # jour, « on spécifie le prénom du fils d'Adam » : هابيل, dans le choix et dans la réplique. Ni la voix, ni les images, ni
 # les textes à coller. Inscrit sur sa parole.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Oui je valide le rendu » du propriétaire (2026-11-17), sur le rendu sans voix du workflow `film` (run 44103338443, voix
+# X) : lu comme le montage, les dessins et le clip tels que rendus. La voix, la couverture et l'ambiance sous la voix restent
+# à valider sur la vidéo finale. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-17, what: [montage] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 88-trial-qalaha
@@ -30,6 +34,10 @@ publish:
   title: { en: "Who said this in the Quran?", ar: "مين قال الجملة دي في القرآن؟" }
   part: 3
   hashtags: ["#قصص_القرآن", "#خوف_الله"]
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (« je valide les 3 accroches »)
+    ar: "جملة واحدة في القرآن… قالها اتنين عكس بعض. تعرف مين؟"
+    en: 'One sentence in the Quran… said by two opposites. Do you know who?'
+    validated: 2026-11-17
   description:
     en: "\"I fear Allah, Lord of the worlds\": the same words in two verses. Abel, son of Adam, said them to the brother who threatened to kill him (5:28); Satan said them after leading man to disbelief (59:16). Real fear stops you before the wrong."
     ar: "جملة واحدة في القرآن… قالها اتنين: هابيل ابن سيدنا آدم لأخوه اللي هدده بالقتل (المائدة 28)، والشيطان بعد ما دعا الإنسان للكفر واتبرّى منه (الحشر 16)."
