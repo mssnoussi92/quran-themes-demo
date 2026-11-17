@@ -1100,3 +1100,15 @@ sources au registre. Voix : quatre requêtes, une journée. Rendu : le workflow 
 - **Montage** : « je valide sauf je veux utiliser les numéros 1 2 3 et non pas ١ ٢ ٣ » : la pièce dessinée, la silhouette,
   la piste et la carte des écoles ; tous les nombres que la série écrit en 1 2 3.
 - **Production maintenant** (son choix à la question précédente), sans attendre la revue du 30 novembre.
+
+### Production (2026-11-17)
+
+- **Sources au registre** (`proposed`) : 107:4-5, 2:286, 18:110, 33:21, 114:4-6 ; six passages de tafsir ; Bukhari 1224,
+  1226, 1232, Muslim 126, 389f, 570a, 571a, 572a, 572j ; six pages de l'Encyclopédie koweïtienne (24/234-239,
+  `content/sources/fiqh.yaml`, nouveau type `fiqh` des outils). **Lectures** : Muslim 571a (23,8 s) et 572a (5,9 s) par
+  Ryadussalihin.org (`ar_Moslem_Reading_06.mp3`, archive.org, licence non indiquée). **Coupes** de Tawfiq As-Sayegh : 107:4-5
+  et 114:4, 114:6 posées à la main (`--set`) ; dans 107:4-5 il s'arrête après « فويل للمصلين » et reprend « للمصلين الذين… ».
+- **Voix** : sahun (52 s), khams (41,7 s), nasit (54,9 s) ; **shakk refusée** (quota Gemini du jour atteint : quatre requêtes
+  d'une autre session le matin), à redemander le 2026-11-18 (tâche planifiée de la session).
+- **Dessins** : `video/src/trial/Sahw.tsx` ; les mots de 107:4-5 écrits en grand tirés du registre (`tools/trial/sahw.py`).
+  **Rendu** : workflow `film`, un short à la fois (`only`), release brouillon `sahw-candidate`.

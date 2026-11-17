@@ -61,7 +61,7 @@ tools/trial/rules.py           les règles sur les fichiers d'un film ; tools/tr
 tools/audio/align.py           chaque phrase d'un texte retrouvée dans une longue prise
 tools/tts/gemini.py            la voix (dans le workflow voice-test : la clé est un secret du dépôt)
 video/src/trial/               Trial.tsx (short), Film.tsx (film), Cover.tsx (couverture, vignette),
-                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a), Signs.tsx, Kalima.tsx, Count.tsx, Farq.tsx, WordMap.tsx, Sual.tsx et Lens.tsx (les séries) : les dessins
+                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a), Signs.tsx, Kalima.tsx, Count.tsx, Farq.tsx, WordMap.tsx, Sual.tsx, Lens.tsx et Sahw.tsx (les séries) : les dessins
 video/public/trial/            (ignoré) données préparées, clips, audio
 build/trial/ambience/          (ignoré) enregistrements d'ambiance téléchargés
 video/out/                     (ignoré) rendus
@@ -97,7 +97,7 @@ d'une narration), rendu par le workflow `film` (des shorts, pas de 16:9), textes
 
 **Le style d'enquête de « سنريهم آياتنا »** (`signs`, 2026-11-12, validé par le propriétaire sur trois images de
 style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
-- `clip: { source: generated, kind: night, seconds: 20 }` : un ciel de nuit que `tools/trial/clip.py` dessine avec
+- `clip: { source: generated, kind: night, seconds: 20 }` (ou `kind: room`, les murs d'une salle de prière à l'aube, pour « إزاي أعملها؟ » : la fenêtre, le rai de lumière et le tapis sont dessinés par `Sahw.tsx`) : un ciel de nuit que `tools/trial/clip.py` dessine avec
   ffmpeg (aucun téléchargement, rien à créditer ; `setsar=1`, sans quoi le compositeur de Remotion ne lit pas le clip).
 - `photos:` : les photographies que les dessins montrent (`{file, credit, licence, page}`, fichiers dans
   `video/public/signs/`, ici ESA/Webb et ESA/Hubble en CC BY 4.0, que leurs conditions veulent créditées sur l'image
