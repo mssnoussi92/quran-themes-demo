@@ -19,6 +19,12 @@ publish:
   title: { en: "Did I pray three or four?", ar: "صلّيت تلاتة ولا أربعة؟" }
   part: 4
   hashtags: ["#سجود_السهو", "#الصلاة"]
+  description:
+    en: "Did I pray three or four? The Prophet ﷺ taught the fix: drop the doubt, build on what you are sure of, and make two prostrations before the salam (Muslim 571). What each of the four schools says about doubt (Kuwaiti Encyclopedia of Fiqh), and the whisperer the Quran describes (114:4-6)."
+    ar: "صلّيت تلاتة ولا أربعة؟ النبي ﷺ علّمنا الحل: سيب الشك، وابني على اللي متأكد منه، واسجد سجدتين قبل السلام (مسلم ٥٧١). وقول كل مذهب من الأربعة في الشك (الموسوعة الفقهية الكويتية)، والوسواس اللي وصفه القرآن (الناس ٤-٦)."
+  hook:      # légende courte de Facebook, Instagram et TikTok : à valider par le propriétaire
+    ar: "صلّيت تلاتة ولا أربعة؟ النبي ﷺ علّمنا الحل… والمذاهب الأربعة فصّلت."
+    en: "Three or four? The Prophet ﷺ taught the fix… and the four schools explain it."
 segments:
 - narration: open
   scene: count
@@ -37,7 +43,7 @@ segments:
   - ar: 'والنبي صلى الله عليه وسلم علّمنا الحل:'
     en: "And the Prophet ﷺ taught us the fix:"
 - reading: hadith.muslim.571a
-  scene: count
+  scene: voice
 - narration: meaning
   scene: fix
   sources: [hadith.muslim.571a]

@@ -523,11 +523,11 @@ def test_the_references_merge_the_pages_of_fiqh_and_follow_the_digits_option(mon
     monkeypatch.setattr(sources, "_registry", {**sources.registry(), **{f"fiqh.kuwaiti.24.{n}": page(n) for n in (234, 238, 239)}})
     monkeypatch.setattr(sources, "proposed", [])
     refs = sources.references(["fiqh.kuwaiti.24.239", "fiqh.kuwaiti.24.238"])
-    assert refs["ar"] == "الموسوعة الفقهية الكويتية ٢٤/٢٣٨–٢٣٩"
+    assert refs["ar"] == "الموسوعة الفقهية الكويتية ٢٤/٢٣٨-٢٣٩"          # a hyphen-minus in Arabic: kept in order
     assert refs["en"] == "Kuwaiti Encyclopedia of Islamic Jurisprudence 24/238–239"
     apart = sources.references(["fiqh.kuwaiti.24.234", "fiqh.kuwaiti.24.238", "fiqh.kuwaiti.24.239"])
-    assert apart["ar"].endswith("٢٤/٢٣٤، ٢٣٨–٢٣٩") and apart["en"].endswith("24/234, 238–239")
-    assert sources.references(["fiqh.kuwaiti.24.238", "fiqh.kuwaiti.24.239"], "latin")["ar"] == "الموسوعة الفقهية الكويتية 24/238–239"
+    assert apart["ar"].endswith("٢٤/٢٣٤، ٢٣٨-٢٣٩") and apart["en"].endswith("24/234, 238–239")
+    assert sources.references(["fiqh.kuwaiti.24.238", "fiqh.kuwaiti.24.239"], "latin")["ar"] == "الموسوعة الفقهية الكويتية 24/238-239"
     assert sources.num(863) == "٨٦٣" and sources.num(863, "latin") == "863"
     outside = {**page(238), "id": "fiqh.shafii.24.238", "ref": {"edition": "shafii", "volume": 24, "page": 238}}
     monkeypatch.setitem(sources.registry(), outside["id"], outside)

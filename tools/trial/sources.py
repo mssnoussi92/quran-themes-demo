@@ -206,15 +206,17 @@ def passage(ids: list[str], out_dir: Path, upto: int | None = None, digits: str 
 REPORTED_BY = {"bukhari": ("البخاري", "al-Bukhari"), "muslim": ("مسلم", "Muslim"), "tirmidhi": ("الترمذي", "at-Tirmidhi")}
 
 
-def page_ranges(pages: list[int], digits: str | None = None, comma: str = ",") -> str:
-    """Sorted pages, contiguous ones merged: [238, 239] -> « 238–239 », [234, 238, 239] -> « 234, 238–239 »."""
+def page_ranges(pages: list[int], digits: str | None = None, comma: str = ",", dash: str = "–") -> str:
+    """Sorted pages, contiguous ones merged: [238, 239] -> « 238–239 », [234, 238, 239] -> « 234, 238–239 ». In an
+    Arabic line the dash is a hyphen-minus: between two numbers the bidirectional algorithm keeps « 238-239 » in its
+    order, where an en dash (a neutral) is laid out right to left and shows « 239–238 » (seen on a still, 2026-11-17)."""
     runs: list[list[int]] = []
     for pg in pages:
         if runs and pg == runs[-1][-1] + 1:
             runs[-1].append(pg)
         else:
             runs.append([pg])
-    return f"{comma} ".join(num(r[0], digits) if len(r) == 1 else f"{num(r[0], digits)}–{num(r[-1], digits)}" for r in runs)
+    return f"{comma} ".join(num(r[0], digits) if len(r) == 1 else f"{num(r[0], digits)}{dash}{num(r[-1], digits)}" for r in runs)
 
 
 def references(ids: list[str], digits: str | None = None) -> dict:
@@ -263,7 +265,7 @@ def references(ids: list[str], digits: str | None = None) -> dict:
     en += [b for _, b in tafsirs]
     for edition, volumes in fiqhs.items():       # the books of fiqh, after the tafsir names: « name volume/pages »
         name = fiqh_editions[edition]
-        ar.append(f"{name['ar']} " + "؛ ".join(f"{num(v, digits)}/{page_ranges(sorted(pages), digits, '،')}" for v, pages in volumes.items()))
+        ar.append(f"{name['ar']} " + "؛ ".join(f"{num(v, digits)}/{page_ranges(sorted(pages), digits, '،', '-')}" for v, pages in volumes.items()))
         en.append(f"{name['en'].removeprefix('The ')} " + "; ".join(f"{v}/{page_ranges(sorted(pages), 'latin', ',')}" for v, pages in volumes.items()))
     ar += [a for a, _ in sciences]              # the papers and the data come last, after the fiqh
     en += [b for _, b in sciences]

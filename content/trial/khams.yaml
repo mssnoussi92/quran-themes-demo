@@ -19,6 +19,12 @@ publish:
   title: { en: "He prayed dhuhr in five rak'ahs!", ar: "صلّى الضهر خمس ركعات!" }
   part: 2
   hashtags: ["#سجود_السهو", "#الصلاة"]
+  description:
+    en: "The Prophet ﷺ once prayed dhuhr in five rak'ahs, then made two prostrations after the salam (Bukhari 1226), and said: \"I am a human being; I forget as you forget, so when I forget, remind me\" (Muslim 572). Where do the two prostrations go when you add something by mistake? The four schools, as the Kuwaiti Encyclopedia of Fiqh gives them."
+    ar: "النبي ﷺ صلّى الضهر خمس ركعات، وسجد سجدتين بعد السلام (البخاري ١٢٢٦)، وقال: «إنما أنا بشر أنسى كما تنسون فإذا نسيت فذكروني» (مسلم ٥٧٢). ولو زوّدت حاجة وانت ساهي، السجدتين فين؟ المذاهب الأربعة، زي ما في الموسوعة الفقهية الكويتية."
+  hook:      # légende courte de Facebook, Instagram et TikTok : à valider par le propriétaire
+    ar: "النبي ﷺ صلّى الضهر خمس ركعات… وعلّمنا نعمل إيه لو زوّدنا."
+    en: "The Prophet ﷺ once prayed dhuhr in five rak'ahs… and taught us what to do when we add."
 segments:
 - narration: open
   scene: track5
@@ -44,7 +50,7 @@ segments:
   - ar: 'وقال:'
     en: "And he said:"
 - reading: hadith.muslim.572a
-  scene: rows
+  scene: voice
 - narration: same
   scene: human
   lines:

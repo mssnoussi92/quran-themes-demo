@@ -19,6 +19,12 @@ publish:
   title: { en: "Stood up without sitting for the tashahhud?", ar: "قمت من غير ما تقعد للتشهد؟" }
   part: 3
   hashtags: ["#سجود_السهو", "#الصلاة"]
+  description:
+    en: "You stood up for the third rak'ah without sitting for the tashahhud? It happened to the Prophet ﷺ: he went on, and before the salam he made two prostrations sitting (Bukhari 1224, Muslim 570). How to do it, step by step, and where the two prostrations go in each of the four schools (Kuwaiti Encyclopedia of Fiqh). Save it for the day you forget."
+    ar: "قمت للركعة التالتة من غير ما تقعد للتشهد؟ حصلت مع النبي ﷺ: كمّل صلاته، وقبل السلام سجد سجدتين وهو قاعد (البخاري ١٢٢٤، مسلم ٥٧٠). تعمل إيه خطوة بخطوة، وفين السجدتين في كل مذهب من الأربعة (الموسوعة الفقهية الكويتية). احفظه لليوم اللي تسهى فيه."
+  hook:      # légende courte de Facebook, Instagram et TikTok : à valider par le propriétaire
+    ar: "قمت من غير ما تقعد للتشهد؟ تعمل إيه خطوة بخطوة، في المذاهب الأربعة."
+    en: "Stood up without sitting for the tashahhud? What to do, step by step, in the four schools."
 segments:
 - narration: open
   scene: stand

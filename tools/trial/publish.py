@@ -104,7 +104,7 @@ def rests_on(kind: str, sid: str, fiqh_ids: list[str] | None = None) -> str:
         pages = sorted({registry.entry_of(i)["ref"]["page"] for i in fiqh_ids or [sid]
                         if registry.entry_of(i)["ref"]["edition"] == ref["edition"] and registry.entry_of(i)["ref"]["volume"] == ref["volume"]})
         return (f"• Rulings after {edition['en']}, vol. {ref['volume']}, p. {registry.page_ranges(pages, 'latin')} · "
-                f"{edition['ar']} {registry.num(ref['volume'])}/{registry.page_ranges(pages)} · {e['url']}")
+                f"{edition['ar']} {registry.num(ref['volume'])}/{registry.page_ranges(pages, None, '،', '-')} · {e['url']}")
     name = policy["tafsir"]["editions"][ref["edition"]]["en"]
     return f"• Meaning after {name} ({ref['surah']}:{ref['ayah']}) · {e['url']}"
 

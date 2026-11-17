@@ -19,6 +19,12 @@ publish:
   title: { en: 'A verse says "woe"… to people who pray!', ar: "آية بتقول «ويل»… للي بيصلّوا!" }
   part: 1
   hashtags: ["#سجود_السهو", "#الصلاة"]
+  description:
+    en: "A verse says \"woe to those who pray\" (107:4-5), and our minds drift in every prayer. The answer is one word: the verse speaks of those heedless \"about\" their prayer (they lose it, let its time pass), not \"in\" it; drifting in prayer happens to everyone, even to the Prophet ﷺ (as-Sa'di). And at the end of al-Baqarah: \"Our Lord, do not impose blame upon us if we forget\" (2:286)."
+    ar: "آية بتقول «فويل للمصلين» (الماعون ٤-٥)، وكلنا بنسهى في صلاتنا. الرد في كلمة: الآية بتتكلم عن اللي ساهين «عن» صلاتهم (ضيّعوها وفوّتوا وقتها)، مش «في» صلاتهم؛ السهو في الصلاة بيحصل من أي حد، حتى من النبي ﷺ (السعدي). وفي آخر البقرة: «ربنا لا تؤاخذنا إن نسينا أو أخطأنا» (٢٨٦)."
+  hook:      # légende courte de Facebook, Instagram et TikTok : à valider par le propriétaire
+    ar: "السهو «في» الصلاة بيحصل من أي حد… والآية بتتكلم عن السهو «عن» الصلاة."
+    en: "Drifting \"in\" prayer happens to everyone… the verse is about drifting \"away\" from it."
 segments:
 - narration: open
   scene: word
