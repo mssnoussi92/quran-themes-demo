@@ -1043,3 +1043,49 @@ brume) ; dessus, le raisonnement : une pause qui devient « lecture » quand le 
 « ؟ » et ce qu'elle nomme, la réponse au-dedans (une maison éclairée et un nœud sous la loupe ; une fenêtre sous la pluie et
 une lampe calme), les deux versets face à face (le second répond), une scène de la vie (des portes qui s'ouvrent, une copie
 d'examen, « بكرة » au calendrier). Images : `docs/retention/sual-style*.jpg`. Script : `docs/scripts/sual.md`.
+
+## Série proposée : « إزاي أعملها؟ », une série éducative ; pilote : سجود السهو (2026-11-17)
+
+**La demande** (propriétaire, 2026-11-17) : une série éducative qui garde un début fort, par exemple سجود السهو ; des
+scènes, un type de script et un montage nouveaux qui vont avec l'idée, puis décider ensemble s'il faut élargir les règles
+ou en faire une pour ce type de série seulement ; au moins un short qui dit **comment faire** quand on s'est trompé dans
+la prière (« souvent j'oublie comment faire ») ; quand les écoles diffèrent, dire leurs avis (malikite, hanafite,
+hanbalite, chaféite) ; **élargir la politique à une source de fiqh** (son choix, question à choix) ; des shorts, sans film ;
+**tout produire maintenant**, sans attendre la revue du 30 novembre (son choix : il revient sur sa décision du 16).
+
+**Avis de la session** :
+- Une série « éducative » attire vers le pire début mesuré : la leçon d'abord ou une question générale (khidr-01, trois
+  spectateurs sur quatre partis en trois secondes), ou un chiffre inventé (« ٩٠٪… », interdit). Règle proposée : chaque
+  short s'ouvre sur **un fait tiré d'un texte, ou l'erreur elle-même en mouvement**, jamais sur la leçon.
+- Le fiqh était le vrai risque : les hadiths montrent les deux prosternations avant le salam (Muslim 570a, 571a) et après
+  (Bukhari 1226, Muslim 573a), et les écoles ne font pas pareil. Aucune source de la politique ne le disait ; la source
+  proposée le dit, école par école.
+- Dhul-Yadayn (proposé d'abord) sort du pilote : l'accroche est forte, mais les pages lues ne donnent pas les quatre avis
+  pour ce cas.
+
+**La source de fiqh proposée** : **الموسوعة الفقهية الكويتية** (ministère des Awqaf du Koweït, 45 volumes, 1404-1427 H),
+comparée, quatre écoles, chaque avis avec ses références dans les livres de l'école, sans trancher ; lue sur turath.io
+(livre 11430, pagination de l'édition imprimée ; l'API répond depuis la session). Article « سجود السهو » : vol. 24,
+p. 234-241. Écartées : la « موسوعة » de dorar.net (une seule ligne, elle tranche), « الفقه على المذاهب الأربعة »
+d'al-Jaziri (azharie, chère à un public égyptien, mais plus ancienne et moins sourcée ; en secours). Comme un tafsir : ni
+lue ni affichée mot pour mot ; une réplique ou une carte des écoles repose sur un passage inscrit au registre
+(`content/sources/fiqh.yaml`, à créer), son nom et sa page écrits dessous.
+
+**Règles proposées pour la série** (à décider : pour elle seule, ou pour tout le dépôt) :
+1. Quand les écoles diffèrent, les quatre, chacune avec son avis tel que l'encyclopédie le donne ; jamais une seule,
+   jamais « الصح ». Un cas dont les pages lues ne donnent pas les quatre avis n'est pas traité.
+2. Une silhouette anonyme qui prie (règle du 2026-11-15), les positions justes ; jamais le Prophète ﷺ ni un Compagnon :
+   leur prière passe par la piste et des rangées de lumières.
+3. Un verset par short (11 à 23 s), pas un tiers à la moitié du short : ici, le hadith et les écoles portent la leçon.
+4. « احفظ الفيديو » en plus de l'appel à suivre (un short qu'on garde pour s'en servir).
+
+**Le pilote** (script : `docs/scripts/sahw.md` ; images du montage : `docs/retention/sahw-style*.jpg`) : `sahun`
+(107:4-5 : « عن » صلاتهم et non « في », d'après as-Sa'di et Ibn Kathir ; 2:286 et Muslim 126), `khams` (Bukhari 1226 :
+le dhuhr en cinq rak'ahs ; Muslim 572a lu ; 18:110 ; l'ajout chez les quatre écoles), `nasit` (Bukhari 1224, Muslim 570a :
+le tashahhud oublié ; où et comment, pas à pas, chez les quatre ; 33:21), `shakk` (Bukhari 1232, Muslim 571a lu : le doute ;
+les quatre ; 114:4-6). Environ 1:20 à 1:25 chacun.
+
+**À faire avant la voix** : le type `fiqh` du registre (politique, `fetch.py` depuis turath.io, `validate.py`, `rules.py`
+qui accepte `fiqh.*` dans `sources:`, `publish.py` qui le crédite) ; les dessins (`video/src/trial/Sahw.tsx` : la pièce, la
+silhouette en prière, la piste, la carte des écoles, le compteur) ; les lectures de Muslim 572a et 571a (archive.org) ; les
+sources au registre. Voix : quatre requêtes, une journée. Rendu : le workflow `film`.
