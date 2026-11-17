@@ -1112,6 +1112,22 @@ son « je valide le script ».
 3 ; `script_validated` des trois shorts). **Les lectures** : à juger sur les vidéos (son choix), elles restent proposées.
 Ensuite : les clips et les dessins à lui montrer (skill `new-scene`), trois requêtes de voix, le rendu.
 
+**Des récitateurs pour les adhkar ?** (sa question, 2026-11-17, avant les clips : « est-ce que tu peux chercher si tu
+trouves des récitateurs pour les adhkar ») : recherche sur archive.org le même jour. **Trouvés** : des « أذكار الصباح
+والمساء » complets (de 20 à 40 min par fichier) de Fares Abbad (dans la rotation de quran-reels), Muhammad Jibril, Idrees
+Abkar, Hani ar-Rifa'i, Maher al-Mu'aiqly, Yasser ad-Dossari, Faisal Labban, Abdulaziz bin Ibrahim, Salman al-Utaybi ; ceux
+d'Alafasy et d'al-Ghamdi aussi, écartés de la Page pour des revendications de droits. **Pas trouvés** : Tawfiq As-Sayegh,
+Omar Hisham (l'item à son nom est vide) ; **après la prière**, seulement Alafasy. **Ce qu'on en sait** : aucun ne donne de
+licence ; ce sont des albums (le fichier du soir de Fares Abbad finit sur une publicité, « الآن في الأسواق المصحف المرتل
+للقارئ فارس عباد » ; celui de Jibril sur le nom du site qui le diffuse) ; ils suivent Hisn al-Muslim, adhkar faibles
+compris (« رضيت بالله ربا » trois fois). Celui de Jibril dit « أعوذ بكلمات الله التامات من شر ما خلق » trois fois (à
+1222,8 s de `أذكار المساء.mp3`, item `adhkar-alsabah-walmasa-muhamad-jibril`, 11,9 s chaque fois) : un extrait envoyé au
+propriétaire. Dans le fichier du soir de Fares Abbad, on ne l'a pas trouvé aux endroits écoutés. **L'avis de la
+session** : le hadith reste lu par le lecteur du recueil (la réponse du Prophète ﷺ, sa promesse, que la voix ne peut pas
+dire) ; un récitateur ne pourrait qu'ajouter le dhikr seul, au short 1 seulement (le short 2 a déjà Tawfiq, le short 3
+n'a rien hors d'Alafasy), pour 12 s, avec un outil à étendre (une partie jouée depuis un autre fichier que la lecture du
+hadith) et un risque de droits jamais vérifié sur un album.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
