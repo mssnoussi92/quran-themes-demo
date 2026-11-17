@@ -87,13 +87,13 @@ bleu, lues dans ce fichier). Aucune collision entre les deux grilles : le reel l
 | jeu. 19 nov. | Du'a, short 3 : Zakariya | les quatre | release `dua-candidate` | « Short 3 » |
 | ven. 20 nov. | « آية وحكايتها » 1 : la caravane | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 1 » |
 | sam. 21 nov. | « سنريهم آياتنا » 1 : Abou Lahab | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 1 » |
-| lun. 23 nov., soir | Dhul-Qarnayn : le film | YouTube (16:9) ; Facebook (vertical) | releases `qarnayn-candidate`, `qarnayn-9x16-candidate` | `publication-qarnayn.md` : « Le film » ; `publication-qarnayn-9x16.md` |
+| lun. 23 nov., soir | Dhul-Qarnayn : le film | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical signé `@quran.words.daily`, `qarnayn-film-9x16-tiktok.mp4`) | releases `qarnayn-candidate`, `qarnayn-9x16-candidate` | `publication-qarnayn.md` : « Le film » ; `publication-qarnayn-9x16.md` |
 | mar. 24 nov. | Dhul-Qarnayn, short 1 : le couchant | les quatre | release `qarnayn-candidate` | `publication-qarnayn.md` : « Short 1 » |
 | mer. 25 nov. | Dhul-Qarnayn, short 2 : l'argent refusé | les quatre | release `qarnayn-candidate` | « Short 2 » |
 | jeu. 26 nov. | Dhul-Qarnayn, short 3 : le barrage | les quatre | release `qarnayn-candidate` | « Short 3 » |
 | ven. 27 nov. | « آية وحكايتها » 2 : الضحى | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 2 » |
 | sam. 28 nov. | « سنريهم آياتنا » 2 : le cosmos | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 2 » |
-| lun. 30 nov., soir | Les gens de la caverne : le film | YouTube (16:9) ; Facebook (vertical) | releases `kahf-candidate`, `kahf-9x16-candidate` | `publication-kahf.md` : « Le film » ; `publication-kahf-9x16.md` |
+| lun. 30 nov., soir | Les gens de la caverne : le film | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical signé `@quran.words.daily`, `kahf-film-9x16-tiktok.mp4`) | releases `kahf-candidate`, `kahf-9x16-candidate` | `publication-kahf.md` : « Le film » ; `publication-kahf-9x16.md` |
 | mar. 1 déc. | Les gens de la caverne, short 1 : la fuite | les quatre | release `kahf-candidate` | `publication-kahf.md` : « Short 1 » |
 | mer. 2 déc. | Les gens de la caverne, short 2 : le soleil | les quatre | release `kahf-candidate` | « Short 2 » |
 | jeu. 3 déc. | Les gens de la caverne, short 3 : le réveil | les quatre | release `kahf-candidate` | « Short 3 » |

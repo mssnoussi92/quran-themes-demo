@@ -6,7 +6,7 @@ Le même film, monté pour un écran vertical (les images des shorts, la même v
 
 `kahf-film-9x16.mp4` (TikTok : `kahf-film-9x16-tiktok.mp4`, signée `@quran.words.daily`) · 6:10 · 9:16 · Facebook, TikTok
 
-La version TikTok (vidéo et légende) est **proposée par la session, pas encore validée par le propriétaire**.
+La version TikTok (vidéo et légende) est **validée par le propriétaire le 2026-11-17**.
 
 **Facebook · Titre**
 

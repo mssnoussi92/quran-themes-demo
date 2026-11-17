@@ -24,10 +24,11 @@ validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, thumbnail, 
 # l'ambiance sont celles du film, déjà validées) et ce texte. Inscrit sur sa parole.
 # Sa version TikTok, signée @quran.words.daily (son choix, 2026-11-16, question à choix : « version TikTok pour les
 # suivants », après que le film du du'a est parti sur TikTok signé du compte de quelqu'un d'autre) : rendue à part
-# (`only: tall-tiktok`), à valider par lui, avec sa légende TikTok.
+# (`only: tall-tiktok`), avec sa légende TikTok. « Je valide les deux » (2026-11-17, question à choix nommant la
+# vidéo et la légende TikTok, sur la vidéo envoyée dans la conversation) : inscrit sur sa parole.
 tall:
   validated: { by: mssnoussi92, on: 2026-11-12, what: [montage, publish] }
-  tiktok: { asked: 2026-11-16 }
+  tiktok: { asked: 2026-11-16, validated: { by: mssnoussi92, on: 2026-11-17, what: [video, publish] } }
 files: qarnayn                   # début du nom des vidéos livrées : qarnayn-film-16x9.mp4, qarnayn-short-<n>-<id>.mp4
 title: { ar: "ذو القرنين… تلات اختبارات للقوة", en: "Dhul-Qarnayn: three tests of power" }
 handle: "@quran_words_daily"

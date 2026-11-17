@@ -24,10 +24,11 @@ validated: { by: mssnoussi92, on: 2026-11-16, what: [voice, montage, thumbnail, 
 # le film vertical de la caverne » (question à choix), tel qu'envoyé avec son texte Facebook.
 # Sa version TikTok, signée @quran.words.daily (son choix, 2026-11-16, question à choix : « version TikTok pour les
 # suivants », après que le film du du'a est parti sur TikTok signé du compte de quelqu'un d'autre) : rendue à part
-# (`only: tall-tiktok`), à valider par lui, avec sa légende TikTok.
+# (`only: tall-tiktok`), avec sa légende TikTok. « Je valide les deux » (2026-11-17, question à choix nommant la
+# vidéo et la légende TikTok, sur la vidéo envoyée dans la conversation) : inscrit sur sa parole.
 tall:
   validated: { by: mssnoussi92, on: 2026-11-16, what: [montage, publish] }
-  tiktok: { asked: 2026-11-16 }
+  tiktok: { asked: 2026-11-16, validated: { by: mssnoussi92, on: 2026-11-17, what: [video, publish] } }
 files: kahf                      # kahf-film-16x9.mp4, kahf-short-<n>-<id>.mp4
 title: { ar: "أصحاب الكهف… تلات مواقف", en: "The People of the Cave: three moments" }
 handle: "@quran_words_daily"
