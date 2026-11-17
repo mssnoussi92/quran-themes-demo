@@ -75,6 +75,11 @@ bleu, lues dans ce fichier). Aucune collision entre les deux grilles : le reel l
 
 ## Le calendrier
 
+**Le quiz « معاك 5 ثواني » sur Instagram, les lundis d'un film** (choix du propriétaire, 2026-11-17 : « à partir du lundi
+prochain, sur Instagram seulement, puisque c'est le jour du film et qu'on ne publie plus de films sur Instagram » ;
+publié par quran-reels, qui sort chaque ligne d'un même jour sur ses propres plateformes) : une ligne de plus sous le
+film du jour, Instagram seul, à 19 h ; les lundis d'un film sont le 23 et le 30 novembre, puis le 28 décembre.
+
 | Date | Quoi | Où | Fichiers | Texte (section de `docs/retention/…`) |
 | --- | --- | --- | --- | --- |
 | ~~jeu. 12 nov., soir~~ | ~~Moussa et al-Khadir : le film~~ | YouTube (16:9) ; Facebook (vertical) | `khidr-film-16x9-ambience.mp4`, `khidr-film-9x16.mp4` | `publication-moussa-khidr.md` : « Le film » ; `publication-moussa-khidr-9x16.md` |
@@ -88,12 +93,14 @@ bleu, lues dans ce fichier). Aucune collision entre les deux grilles : le reel l
 | ven. 20 nov. | « آية وحكايتها » 1 : la caravane | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 1 » |
 | sam. 21 nov. | « سنريهم آياتنا » 1 : Abou Lahab | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 1 » |
 | lun. 23 nov., soir | Dhul-Qarnayn : le film | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical signé `@quran.words.daily`, `qarnayn-film-9x16-tiktok.mp4`) | releases `qarnayn-candidate`, `qarnayn-9x16-candidate` | `publication-qarnayn.md` : « Le film » ; `publication-qarnayn-9x16.md` |
+| lun. 23 nov. | « معاك 5 ثواني » 1 : «سيارة» في سورة يوسف؟ (12:19) | Instagram | release `quiz-candidate` | `publication-quiz.md` : « Short 1 » |
 | mar. 24 nov. | Dhul-Qarnayn, short 1 : le couchant | les quatre | release `qarnayn-candidate` | `publication-qarnayn.md` : « Short 1 » |
 | mer. 25 nov. | Dhul-Qarnayn, short 2 : l'argent refusé | les quatre | release `qarnayn-candidate` | « Short 2 » |
 | jeu. 26 nov. | Dhul-Qarnayn, short 3 : le barrage | les quatre | release `qarnayn-candidate` | « Short 3 » |
 | ven. 27 nov. | « آية وحكايتها » 2 : الضحى | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 2 » |
 | sam. 28 nov. | « سنريهم آياتنا » 2 : le cosmos | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 2 » |
 | lun. 30 nov., soir | Les gens de la caverne : le film | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical signé `@quran.words.daily`, `kahf-film-9x16-tiktok.mp4`) | releases `kahf-candidate`, `kahf-9x16-candidate` | `publication-kahf.md` : « Le film » ; `publication-kahf-9x16.md` |
+| lun. 30 nov. | « معاك 5 ثواني » 2 : تفتكر الآية دي خلصت بإيه؟ (5:118) | Instagram | release `quiz-candidate` | `publication-quiz.md` : « Short 2 » |
 | mar. 1 déc. | Les gens de la caverne, short 1 : la fuite | les quatre | release `kahf-candidate` | `publication-kahf.md` : « Short 1 » |
 | mer. 2 déc. | Les gens de la caverne, short 2 : le soleil | les quatre | release `kahf-candidate` | « Short 2 » |
 | jeu. 3 déc. | Les gens de la caverne, short 3 : le réveil | les quatre | release `kahf-candidate` | « Short 3 » |
@@ -117,6 +124,7 @@ bleu, lues dans ce fichier). Aucune collision entre les deux grilles : le reel l
 | jeu. 24 déc. | « بص تاني » 3 : قلّبت كام ساعة النهارده؟ (103:1-3), dessin B | les quatre | release `lens-candidate` | `publication-lens.md` : « Short 3 » |
 | ven. 25 déc. | « لاحظت الفرق؟ » 2 : l'adab (18:79 et 18:82) | les quatre | release `farq-candidate` | « Short 2 » |
 | lun. 28 déc. | « مخيّر ولا مسيّر؟ » : le film | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical signé `@quran.words.daily`, `qadar-film-9x16-tiktok.mp4`) | releases `qadar-candidate`, `qadar-9x16-candidate` | `publication-qadar.md` : « Le film » ; `publication-qadar-9x16.md` |
+| lun. 28 déc. | « معاك 5 ثواني » 3 : مين قال الجملة دي في القرآن؟ (5:28, 59:16) | Instagram | release `quiz-candidate` | `publication-quiz.md` : « Short 3 » |
 | mar. 29 déc. | « مخيّر ولا مسيّر؟ », short 1 : «كله مكتوب… أتعب ليه؟» | les quatre | release `qadar-candidate` | `publication-qadar.md` : « Short 1 » |
 | mer. 30 déc. | « مخيّر ولا مسيّر؟ », short 2 : «لما ربنا يهديني» | les quatre | release `qadar-candidate` | « Short 2 » |
 | jeu. 31 déc. | « مخيّر ولا مسيّر؟ », short 3 : كلمة من حرفين («لو») | les quatre | release `qadar-candidate` | « Short 3 » |
