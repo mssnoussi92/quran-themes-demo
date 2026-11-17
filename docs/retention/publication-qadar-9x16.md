@@ -4,7 +4,7 @@ Le même film, monté pour un écran vertical (les images des shorts, la même v
 
 ## Le film en 9:16 · Free will or fate? 3 sentences we all say · مخيّر ولا مسيّر؟ تلات جمل بنقولها كلنا
 
-`qadar-film-9x16.mp4` (TikTok : `qadar-film-9x16-tiktok.mp4`, signée `@quran.words.daily`) · 6:55 · 9:16 · Facebook, TikTok
+`qadar-film-9x16.mp4` (TikTok : `qadar-film-9x16-tiktok.mp4`, signée `@quran.words.daily`) · 6:58 · 9:16 · Facebook, TikTok
 
 La version TikTok (vidéo et légende) est **proposée par la session, pas encore validée par le propriétaire**.
 
