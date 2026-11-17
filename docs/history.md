@@ -485,3 +485,11 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   quran-reels, où chaque vidéo de la Page est mesurée sur chaque plateforme (une chose va une fois, au bon endroit).
   « Les mesures » dit maintenant où sont les chiffres et quoi envoyer : rien pour Facebook, Instagram et YouTube ; pour
   TikTok, la liste « Contenu », le plus simple une fois par semaine.
+
+## « On commence la revue » : toute session sait quoi faire (2026-11-17)
+
+- **Demande du propriétaire** : « que toutes les sessions futures comprennent quoi faire si je dis "on commence la
+  revue dimanche" ou quelque chose comme ça ». La revue est une seule pour toute la Page : le skill `weekly-review` de
+  quran-reels dit quoi faire selon le moment (maintenant avec lui, ou dimanche par la revue automatique de 09:23, et une
+  question à choix si ce n'est pas clair), et part des points notés pour elle dans `docs/insights.md` de quran-reels.
+  Ici, un skill du même nom y renvoie, comme `record-stats`.
