@@ -29,10 +29,15 @@ voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 80-trial-law
 # Le fond, provisoire, pour les images de style (2026-11-17) : un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) ; les
 # scènes jouées sont dessinées par-dessus (video/src/trial/Qadar.tsx). Un clip filmé se cherchera avec la production.
-clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4 }
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4, landscape: { side: left, horizon: 1260, brightness: 1 } }
+# Ambiance : la nuit dehors (grillons ; validée à l'écoute par le propriétaire, docs/model.md), trois heures du matin.
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 120, level: -38 }
 cover: { scene: law, title: "كلمة من حرفين…", tag: "مخيّر ولا مسيّر؟ · ٣ من ٣", focus: 1100 }
 publish:
   title: { en: "A two-letter word the Prophet ﷺ warned against", ar: "كلمة من حرفين… النبي ﷺ حذّر منها" }
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session (2026-11-17), à valider par le propriétaire
+    ar: "كلمة من حرفين بنقولها كل ليلة… والنبي ﷺ حذّر منها."
+    en: "A two-letter word we say every night… and the Prophet ﷺ warned against it."
   part: 3
   hashtags: ["#القضاء_والقدر", "#مخير_ولا_مسير"]
   description:

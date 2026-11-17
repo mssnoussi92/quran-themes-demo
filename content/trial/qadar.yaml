@@ -32,6 +32,9 @@ thumbnail: { title: "مخيّر ولا مسيّر؟", tag: "٣ جمل", panels: 
 publish:
   out: docs/retention/publication-qadar.md
   title: { en: "Free will or fate? 3 sentences we all say", ar: "مخيّر ولا مسيّر؟ تلات جمل بنقولها كلنا" }
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session (2026-11-17), à valider par le propriétaire
+    ar: "لو كل حاجة مكتوبة… هتحاسب ليه؟"
+    en: "If everything is written… why will I be held to account?"
   series: { en: "Free will or fate?", ar: "مخيّر ولا مسيّر؟" }
   description:
     en: "“The result is written”, “When God guides me”, “If only I had…”: three sentences we all say, and behind each one the same question. Not a debate: the question the Companions asked, the answer they received, and what the Quran says. You have a real will and real deeds, and your will runs under God's will."

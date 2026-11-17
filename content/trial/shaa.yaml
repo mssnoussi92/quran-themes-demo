@@ -26,10 +26,15 @@ voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 79-trial-shaa
 # Le fond, provisoire, pour les images de style (2026-11-17) : un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) ; les
 # scènes jouées sont dessinées par-dessus (video/src/trial/Qadar.tsx). Un clip filmé se cherchera avec la production.
-clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4 }
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4, landscape: { side: left, horizon: 1260, brightness: 1 } }
+# Ambiance : le vent dans un arbre et quelques oiseaux (validée à l'écoute par le propriétaire, docs/model.md), l'aube.
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 100, level: -36 }
 cover: { scene: turn, title: "«لما ربنا يهديني»؟", tag: "مخيّر ولا مسيّر؟ · ٢ من ٣", focus: 1100 }
 publish:
   title: { en: "“When God guides me…” Two verses answer it", ar: "«لما ربنا يهديني»… آيتين بيردّوا عليها" }
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session (2026-11-17), à valider par le propriétaire
+    ar: "«لما ربنا يهديني»… آيتين ورا بعض بيردّوا عليها."
+    en: "“When God guides me…” Two verses in a row answer it."
   part: 2
   hashtags: ["#القضاء_والقدر", "#مخير_ولا_مسير"]
   description:

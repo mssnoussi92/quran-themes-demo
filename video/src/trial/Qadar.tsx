@@ -239,11 +239,15 @@ const Ground: React.FC<{ t: number; horizon: number; trace: number }> = ({ t, ho
   );
 };
 
-/** Two paths (92:5-10): from the bottom of the frame they part; the left one rises smooth to a light (« لليسرى »),
- * the right one goes down among stones (« للعسرى »). `glow`: how far the light has run up the left path. */
+/** Two paths (92:5-10): one road from the bottom of the frame, where the viewer stands, parts in two. The left one
+ * rises smooth to a light on the horizon (« لليسرى ») and its edges light up as the light runs up it; the right one goes
+ * down among stones into the dark (« للعسرى »). Two roads on the earth, nothing of the unseen. */
 const Paths: React.FC<{ t: number; horizon: number; glow: number; hard: number }> = ({ t, horizon, glow, hard }) => {
-  const left = `M 520 ${H} C 470 ${horizon + 420} 300 ${horizon + 160} 250 ${horizon - 10}`;
-  const right = `M 560 ${H} C 640 ${horizon + 470} 860 ${horizon + 420} 980 ${horizon + 300}`;
+  const fork = horizon + 320;
+  const stem = `M 330 ${H} L 750 ${H} L 600 ${fork} L 480 ${fork} Z`;
+  const left = `M 480 ${fork} L 560 ${fork} L 300 ${horizon + 4} L 262 ${horizon + 4} Z`;
+  const right = `M 530 ${fork} L 600 ${fork} L 1080 ${horizon + 330} L 1080 ${horizon + 230} Z`;
+  const leftMid = `M 520 ${fork} L 281 ${horizon + 4}`;
   return (
     <g>
       <defs>
@@ -256,23 +260,32 @@ const Paths: React.FC<{ t: number; horizon: number; glow: number; hard: number }
           <stop offset="0" stopColor="#fff1c8" stopOpacity=".95" />
           <stop offset="1" stopColor="#fff1c8" stopOpacity="0" />
         </radialGradient>
+        <linearGradient id="qd-dark" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stopColor="#000" stopOpacity="0" />
+          <stop offset="1" stopColor="#000" stopOpacity=".85" />
+        </linearGradient>
       </defs>
       <rect x={0} y={0} width={W} height={horizon} fill="url(#qd-pre)" />
       <Stars t={t} bright={0.7} top={60} bottom={horizon - 200} />
-      <ellipse cx={250} cy={horizon - 20} rx={260} ry={120} fill="url(#qd-aim)" opacity={0.25 + 0.75 * glow} />
+      <ellipse cx={281} cy={horizon - 10} rx={240} ry={110} fill="url(#qd-aim)" opacity={0.3 + 0.7 * glow} />
       <rect x={0} y={horizon} width={W} height={H - horizon} fill="#06070c" />
-      <path d={left} stroke="#6a5a40" strokeWidth={128} fill="none" strokeLinecap="round" opacity={0.35 + 0.4 * glow} />
-      <path d={left} stroke="#2c2a30" strokeWidth={116} fill="none" strokeLinecap="round" />
-      <path d={left} stroke={GOLD} strokeWidth={8} fill="none" strokeDasharray={`${1400 * glow} 1400`} opacity={0.9} />
-      <path d={right} stroke="#3a4060" strokeWidth={118} fill="none" strokeLinecap="round" opacity={0.5} />
-      <path d={right} stroke="#141724" strokeWidth={108} fill="none" strokeLinecap="round" />
-      {Array.from({ length: 16 }, (_, i) => {
-        const u = i / 15;
-        const x = 560 + (980 - 560) * u + 40 * (chance(i, 20) - 0.5);
-        const y = H - (H - (horizon + 300)) * u - 60 * Math.sin(u * Math.PI) + 30 * (chance(i, 21) - 0.5);
-        const r = 14 + 22 * chance(i, 22);
-        return <path key={i} d={`M ${x - r} ${y} L ${x - r * 0.4} ${y - r * 0.9} L ${x + r * 0.6} ${y - r * 0.7} L ${x + r} ${y} Z`} fill="#232838" stroke="#7a82a8" strokeWidth={3} opacity={0.65 + 0.35 * hard} />;
+      {/* the common road, then the fork */}
+      <path d={stem} fill="#2a2b34" />
+      <path d={left} fill={`rgb(${50 + 40 * glow},${46 + 34 * glow},${44 + 18 * glow})`} />
+      <path d={right} fill="#262a38" />
+      <path d={`M 330 ${H} L 480 ${fork} L 262 ${horizon + 4} M 750 ${H} L 600 ${fork} L 1080 ${horizon + 330}`} stroke={RIM} strokeWidth={3} fill="none" opacity={0.35} />
+      {/* the left road lights up from the fork to the light */}
+      <path d={`M 480 ${fork} L 262 ${horizon + 4} M 560 ${fork} L 300 ${horizon + 4}`} stroke={GOLD} strokeWidth={5} fill="none" strokeDasharray={`${560 * glow} 600`} opacity={0.9} />
+      <path d={leftMid} stroke="#fff1c8" strokeWidth={3} fill="none" strokeDasharray="10 22" strokeDashoffset={-t * 30} opacity={0.5 * glow} />
+      {/* the right road: stones, and the dark it goes into */}
+      {Array.from({ length: 14 }, (_, i) => {
+        const u = (i + 0.5) / 14;
+        const x = 565 + (1040 - 565) * u + 30 * (chance(i, 20) - 0.5);
+        const y = fork - (fork - (horizon + 280)) * u + 20 * (chance(i, 21) - 0.5);
+        const r = (26 - 14 * u) * (0.7 + 0.6 * chance(i, 22));
+        return <path key={i} d={`M ${x - r} ${y} L ${x - r * 0.4} ${y - r * 0.9} L ${x + r * 0.6} ${y - r * 0.7} L ${x + r} ${y} Z`} fill="#3a4058" stroke="#a8b0d4" strokeWidth={2.5} opacity={0.85 + 0.15 * hard} />;
       })}
+      <path d={right} fill="url(#qd-dark)" opacity={0.3 + 0.4 * hard} />
     </g>
   );
 };
@@ -558,3 +571,34 @@ const LawPicture: Drawn = ({ t, show, since, horizon }) => {
 };
 
 export const QADAR_PICTURES: Record<string, Drawn> = { amal: AmalPicture, shaa: ShaaPicture, law: LawPicture };
+
+// ------------------------------------------------------------------------------------- the film (16:9)
+
+/** The same scenes in the film (1920 x 1080): the vertical drawing, cut around its action (the window, the figure,
+ * the floor: y 520 to 1870 of the 9:16 frame) and scaled to the height of the frame, on the left; its right edge
+ * fades into the night, the text sits on the right. The drawing keeps its own horizon (the 9:16 one). */
+const WIDE_SCALE = 0.8;
+const WIDE_TOP = 520;
+const WIDE_HORIZON = 1260;
+const wide = (Picture: Drawn, ground: string): Drawn => {
+  const Wide: Drawn = (props) => {
+    const right = W * WIDE_SCALE;
+    return (
+      <>
+        <defs>
+          <linearGradient id={`qw-edge-${ground.slice(1)}`} x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stopColor={ground} stopOpacity={0} />
+            <stop offset="1" stopColor={ground} stopOpacity={1} />
+          </linearGradient>
+        </defs>
+        <g transform={`translate(0 ${-WIDE_TOP * WIDE_SCALE}) scale(${WIDE_SCALE})`}>
+          <Picture {...props} horizon={WIDE_HORIZON} />
+        </g>
+        <rect x={right - 160} y={0} width={162} height={1080} fill={`url(#qw-edge-${ground.slice(1)})`} />
+      </>
+    );
+  };
+  return Wide;
+};
+
+export const QADAR_WIDE: Record<string, Drawn> = { amal: wide(AmalPicture, "#0a1230"), shaa: wide(ShaaPicture, "#0a1230"), law: wide(LawPicture, "#0a1230") };
