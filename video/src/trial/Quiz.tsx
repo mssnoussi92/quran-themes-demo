@@ -413,8 +413,9 @@ const Hoopoe: React.FC<{ wing: number }> = ({ wing }) => (
     {[-60, -40, -20, 0, 20].map((a, k) => (
       <path key={k} d="M -30 -70 L -28 -104 L -24 -70 Z" transform={`rotate(${a} -30 -68)`} />
     ))}
-    <g transform={`rotate(${-48 * wing} 0 -44)`}>
+    <g transform={`rotate(${22 - 70 * wing} -6 -44)`}>
       <path d="M -10 -46 C 10 -70 50 -78 74 -66 C 52 -58 30 -46 8 -38 Z" />
+      {[0, 1, 2].map((k) => <path key={k} d={`M ${18 + 16 * k} ${-62 + 2 * k} L ${10 + 16 * k} ${-46 + 2 * k}`} stroke={PALE} strokeOpacity={0.35} strokeWidth={4} />)}
     </g>
     <path d="M -2 -16 L -6 0 M 10 -16 L 8 0" stroke="#03050c" strokeWidth={4} />
   </g>
@@ -426,7 +427,7 @@ const HudhudPicture: Drawn = ({ t, show, since, horizon }) => {
   const place = Math.max(show("listen"), show("verify"), ...MEANING.map((scene) => show(scene)), 0.5 * show("close"));
   const come = show("listen") > 0 && show("meaning") === 0 ? after(t, since("listen") + 0.5, 6) : 1;
   const bx = 250 + (740 - 250) * come;
-  const by = horizon - 420 - 260 * Math.sin(Math.PI * come) * (1 - come) + 140 * come;
+  const by = horizon - 420 - 260 * Math.sin(Math.PI * come) * (1 - come) + 158 * come;   // its feet on the top of the branch
   const scale = 0.5 + 0.9 * come;
   const wing = come < 1 ? 0.5 + 0.5 * Math.sin(t * 14) : 0.08 * Math.max(0, Math.sin(t * 2));
   return (
