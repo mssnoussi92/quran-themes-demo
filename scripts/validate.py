@@ -92,6 +92,10 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
             # An English excerpt is a selection of the published text, never a rewording.
             if "excerpt_en" in src and src["excerpt_en"] not in (src.get("text_en") or ""):
                 report.error(where, "excerpt_en is not a passage of text_en")
+            # A misprint corrected on screen only (owner, 2026-11-17): the published text stays, the misprint must be in it.
+            for fix in src.get("en_corrections") or []:
+                if fix.get("published") not in (src.get("excerpt_en") or src.get("text_en") or ""):
+                    report.error(where, f"en_corrections: « {fix.get('published')} » is not in the English text shown")
             if "excerpt_ar" in src:
                 if src["type"] != "hadith":
                     report.error(where, "excerpt_ar is only for a hadith")

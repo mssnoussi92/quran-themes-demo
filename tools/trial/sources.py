@@ -114,9 +114,20 @@ def described(sid: str, digits: str | None = None) -> dict:
             sys.exit(f"error: {sid}: no quotation marks in text_ar, cannot isolate the Prophet's words")
         text = e["text_ar"][first + 1:last]
     return {"type": "hadith", "id": sid, "reference": f"{name} {ref['number']}{letter}", "reference_en": f"{name} {ref['number']}{letter}",
-            "display_ar": clean(text), "display_en": e.get("excerpt_en") or e["text_en"],
+            "display_ar": clean(text), "display_en": corrected_en(e),
             "translator": translator if translator and translator != "Unknown" else None, "url": e.get("url"), "recording": e.get("recording"),
             "grade_note": grade_note(e)}
+
+
+def corrected_en(e: dict) -> str:
+    """The English subtitle of a hadith: its excerpt (or its text) as published, with the misprints the registry corrects
+    (`en_corrections`, decision of the owner, 2026-11-17) replaced; the registry's texts stay as published."""
+    text = e.get("excerpt_en") or e["text_en"]
+    for fix in e.get("en_corrections") or []:
+        if fix["published"] not in text:
+            sys.exit(f"error: {e['id']}: en_corrections « {fix['published']} » is not in the English text shown")
+        text = text.replace(fix["published"], fix["corrected"])
+    return text
 
 
 def name_of(sid: str) -> str:

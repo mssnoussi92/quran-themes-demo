@@ -1112,3 +1112,17 @@ sources au registre. Voix : quatre requêtes, une journée. Rendu : le workflow 
   d'une autre session le matin), à redemander le 2026-11-18 (tâche planifiée de la session).
 - **Dessins** : `video/src/trial/Sahw.tsx` ; les mots de 107:4-5 écrits en grand tirés du registre (`tools/trial/sahw.py`).
   **Rendu** : workflow `film`, un short à la fois (`only`), release brouillon `sahw-candidate`.
+
+### Corrections du propriétaire sur les trois premiers shorts (2026-11-17, questions à choix)
+
+- **Les coquilles de la traduction anglaise** (Siddiqui, hadith-api) : « Corriger, noté au registre » : « he does Dot know »
+  (Muslim 571a) et « as you for. get » (572a) corrigés dans le sous-titre seulement (`en_corrections` du registre, contrôlé
+  par `validate.py`) ; le texte publié reste tel quel au registre.
+- **Ce qu'on dit dans les deux prosternations** : « Ne rien ajouter » ; et la formule répandue « سبحان من لا ينام ولا يسهو »
+  (Ibn Hajar, التلخيص الحبير 2/839 : « لم أجد له أصلًا ») : « Non, ne pas en parler ». L'article de l'Encyclopédie koweïtienne
+  ne donne pas de formule propre ; al-Jaziri (1/409) dit, pour les chaféites, deux prosternations « كسجود الصلاة ».
+- **La silhouette** : « Il sort du sajada dans le soujoud et il semble qu'une position fausse ». Avec le long torse de la
+  silhouette, aucune pose de ses angles ne met genoux, orteils, mains et front au sol ensemble : l'ancien sujud gardait les
+  genoux en l'air et la tête hors du tapis. Le sujud est maintenant posé articulation par articulation (`SUJUD_BODY` de
+  `Sahw.tsx` : hanches au-dessus des genoux, dos qui descend, front et paumes au sol, coudes levés), et la silhouette est
+  ancrée sur ses genoux au milieu du tapis : elle ne glisse plus quand elle se prosterne ou se lève.

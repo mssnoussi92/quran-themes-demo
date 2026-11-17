@@ -10,7 +10,7 @@
 import React from "react";
 import { Easing, interpolate } from "remotion";
 import { FONT } from "../fonts";
-import { Figure, mix, SEG, type Pose } from "./Lens";
+import { mix, SEG, type Pose } from "./Lens";
 import { SAHW_WORDS } from "./sahwData";
 import type { Drawn, LayoutOverride } from "./Trial";
 
@@ -36,48 +36,101 @@ type Phrase = (id: string, n: number) => number;
 
 // ---------------------------------------------------------------------------------------------------- the figure
 
-/** The positions of the prayer, facing the qibla (to the right). */
+/** The positions of the prayer that the figure's kinematics (Lens.tsx) draw well, facing the qibla (to the right). */
 const PRAYER: Record<string, Pose> = {
   qiyam: { torso: 0, head: -10, armF: [12, -160], armB: [8, -158], legF: [3, -2], legB: [-3, -1] },
-  ruku: { torso: 90, head: 0, armF: [-52, 0], armB: [-48, 2], legF: [2, 0], legB: [-2, 0] },
   julus: { torso: 0, head: -12, armF: [24, 52], armB: [20, 56], legF: [90, -178], legB: [86, -176] },
-  sujud: { torso: 124, head: -22, armF: [18, 70], armB: [12, 74], legF: [12, -102], legB: [8, -98] },
   dua: { torso: 0, head: -6, armF: [36, 112], armB: [30, 116], legF: [90, -178], legB: [86, -176] },
   think: { torso: 6, head: -24, armF: [22, 56], armB: [18, 60], legF: [90, -178], legB: [86, -176] },
 };
 
-/** How far below the pelvis the lowest point of a pose is (a foot, a knee, a hand, the head on the ground). */
-const lowest = (p: Pose) => {
-  const down = (d: number): [number, number] => [Math.sin(rad(d)), Math.cos(rad(d))];
-  const at = (o: [number, number], d: [number, number], l: number): [number, number] => [o[0] + d[0] * l, o[1] + d[1] * l];
-  const up: [number, number] = [Math.sin(rad(p.torso)), -Math.cos(rad(p.torso))];
-  const neck = at([0, 0], up, SEG.torso);
-  const shoulder = at([0, 0], up, SEG.torso - 12);
-  const headDir: [number, number] = [Math.sin(rad(p.torso - p.head)), -Math.cos(rad(p.torso - p.head))];
-  const head = at(neck, headDir, SEG.neck + SEG.head * 0.8);
-  const limb = (o: [number, number], [a, b]: [number, number], l1: number, l2: number) => {
+type P2 = [number, number];
+/** A body as its joints (the figure's own units, pelvis of a pose at 0, y down, facing right). */
+type Body = { pelvis: P2; neck: P2; head: P2; shoulder: P2; elbowF: P2; handF: P2; elbowB: P2; handB: P2; kneeF: P2; toeF: P2; kneeB: P2; toeB: P2 };
+
+/** The joints of a pose, as Figure (Lens.tsx) computes them. */
+const bodyOf = (p: Pose): Body => {
+  const down = (d: number): P2 => [Math.sin(rad(d)), Math.cos(rad(d))];
+  const at = (o: P2, d: P2, l: number): P2 => [o[0] + d[0] * l, o[1] + d[1] * l];
+  const pelvis: P2 = [0, 0];
+  const up: P2 = [Math.sin(rad(p.torso)), -Math.cos(rad(p.torso))];
+  const neck = at(pelvis, up, SEG.torso);
+  const shoulder = at(pelvis, up, SEG.torso - 12);
+  const head = at(neck, [Math.sin(rad(p.torso - p.head)), -Math.cos(rad(p.torso - p.head))], SEG.neck + SEG.head * 0.8);
+  const limb = (o: P2, [a, b]: [number, number], l1: number, l2: number): [P2, P2] => {
     const j = at(o, down(a), l1);
     return [j, at(j, down(a + b), l2)];
   };
-  const pts = [...limb(shoulder, p.armF, SEG.upper, SEG.fore), ...limb(shoulder, p.armB, SEG.upper, SEG.fore),
-    ...limb([0, 0], p.legF, SEG.thigh, SEG.shin), ...limb([0, 0], p.legB, SEG.thigh, SEG.shin), [head[0], head[1] + SEG.head]];
-  return Math.max(...pts.map((q) => q[1])) + 13;
+  const [elbowF, handF] = limb(shoulder, p.armF, SEG.upper, SEG.fore);
+  const [elbowB, handB] = limb(shoulder, p.armB, SEG.upper, SEG.fore);
+  const [kneeF, toeF] = limb(pelvis, p.legF, SEG.thigh, SEG.shin);
+  const [kneeB, toeB] = limb(pelvis, p.legB, SEG.thigh, SEG.shin);
+  return { pelvis, neck, head, shoulder, elbowF, handF, elbowB, handB, kneeF, toeF, kneeB, toeB };
 };
 
-/** The figure in a pose, resting on the floor line. */
-const Praying: React.FC<{ id: string; x: number; pose: Pose; scale?: number; rim?: string }> = ({ id, x, pose, scale = 1.42, rim = "#f3c98b" }) => (
-  <Figure id={id} x={x} y={FEET - lowest(pose) * scale} scale={scale} pose={pose} rim={rim} />
-);
+/** The prostration, joint by joint (the owner, 2026-11-17: « il sort du sajada dans le soujoud et il semble qu'une position
+ * fausse »): with the figure's long torso no pose of its kinematics puts the knees, the toes, the hands and the forehead on
+ * the ground at once (the old one hung its knees in the air, its head off the rug). Here the toes and the knees stay where
+ * they were sitting, the hips rise above the knees, the back slopes down to the head, the forehead and both palms are on
+ * the ground beside it, the forearms lifted, the elbows off the ground. */
+const SUJUD_BODY: Body = {
+  pelvis: [66, -80], neck: [162, -44], head: [204, -29], shoulder: [150, -48],
+  elbowF: [128, -30], handF: [176, 2], elbowB: [122, -28], handB: [170, 2],
+  kneeF: [76, 0], toeF: [2, 3], kneeB: [72, 3], toeB: [0, 4],
+};
 
-/** Two prostrations, sitting between them, from `from` seconds: the pose at time `t`. */
-const twoProstrations = (t: number, from: number): Pose => {
-  const keys: [number, keyof typeof PRAYER][] = [[0, "julus"], [0.9, "julus"], [1.4, "sujud"], [2.5, "sujud"], [3.0, "julus"], [3.6, "julus"], [4.1, "sujud"], [5.2, "sujud"], [5.7, "julus"]];
+const lerpBody = (a: Body, b: Body, k: number): Body =>
+  Object.fromEntries((Object.keys(a) as (keyof Body)[]).map((key) => [key, [a[key][0] + (b[key][0] - a[key][0]) * k, a[key][1] + (b[key][1] - a[key][1]) * k]])) as Body;
+
+const FIG_INK = "#05060d";
+const FIG_FAR = "#0c0f1c";
+const KNEE_X = 520;          // the figure kneels, sits and stands on its knees' place, in the middle of the rug
+
+/** The figure drawn from its joints, black and backlit like the figure of « بص تاني », resting on the floor line with its
+ * front knee at KNEE_X: it never slides off the rug when it goes down or stands up. */
+const Praying: React.FC<{ id: string; body: Body; scale?: number; rim?: string }> = ({ id, body: b, scale = 1.42, rim = "#f3c98b" }) => {
+  const low = Math.max(b.handF[1], b.handB[1], b.toeF[1], b.toeB[1], b.kneeF[1], b.kneeB[1], b.head[1] + SEG.head) + 13;
+  const x = KNEE_X - b.kneeF[0] * scale;
+  const y = FEET - low * scale;
+  const path = (pts: P2[]) => `M ${pts.map((q) => `${q[0].toFixed(1)} ${q[1].toFixed(1)}`).join(" L ")}`;
+  const dir: P2 = [b.head[0] - b.neck[0], b.head[1] - b.neck[1]];
+  const look = Math.atan2(dir[1], dir[0]) + Math.PI / 2;
+  const r = SEG.head - 2;
+  const arcAt = (k: number) => [b.head[0] + r * Math.cos(look + k), b.head[1] + r * Math.sin(look + k)].map((v) => v.toFixed(1)).join(" ");
+  const shape = (stroke: string, extra: number, back: string) => (
+    <>
+      <path d={path([b.pelvis, b.kneeB, b.toeB])} stroke={back} strokeWidth={26 + extra} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <path d={path([b.shoulder, b.elbowB, b.handB])} stroke={back} strokeWidth={22 + extra} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <path d={path([b.pelvis, b.neck])} stroke={stroke} strokeWidth={44 + extra} fill="none" strokeLinecap="round" />
+      <path d={path([b.pelvis, b.kneeF, b.toeF])} stroke={stroke} strokeWidth={27 + extra} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <path d={path([b.shoulder, b.elbowF, b.handF])} stroke={stroke} strokeWidth={23 + extra} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx={b.head[0]} cy={b.head[1]} r={SEG.head + extra / 2} fill={stroke} />
+    </>
+  );
+  return (
+    <g transform={`translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(${scale})`}>
+      <defs>
+        <filter id={`${id}-rim`} x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" /></filter>
+      </defs>
+      <g filter={`url(#${id}-rim)`} opacity={0.8}>{shape(rim, 12, rim)}</g>
+      {shape(FIG_INK, 0, FIG_FAR)}
+      <path d={`M ${arcAt(-0.75)} A ${r} ${r} 0 0 1 ${arcAt(0.75)}`} stroke={rim} strokeWidth={7} fill="none" strokeLinecap="round" opacity={0.75} />
+    </g>
+  );
+};
+
+const QIYAM = bodyOf(PRAYER.qiyam);
+const JULUS = bodyOf(PRAYER.julus);
+
+/** Two prostrations, sitting between them, from `from` seconds (from standing first, if `start` says so). */
+const twoProstrations = (t: number, from: number, start: Body = JULUS): Body => {
+  const keys: [number, Body][] = [[0, start], [0.9, JULUS], [1.5, SUJUD_BODY], [2.6, SUJUD_BODY], [3.2, JULUS], [3.8, JULUS], [4.4, SUJUD_BODY], [5.5, SUJUD_BODY], [6.1, JULUS]];
   const u = t - from;
-  if (u <= 0) return PRAYER.julus;
+  if (u <= 0) return start;
   for (let k = 1; k < keys.length; k++) {
-    if (u <= keys[k][0]) return mix(PRAYER[keys[k - 1][1]], PRAYER[keys[k][1]], ease((u - keys[k - 1][0]) / (keys[k][0] - keys[k - 1][0])));
+    if (u <= keys[k][0]) return lerpBody(keys[k - 1][1], keys[k][1], ease((u - keys[k - 1][0]) / (keys[k][0] - keys[k - 1][0])));
   }
-  return PRAYER.julus;
+  return JULUS;
 };
 
 // ---------------------------------------------------------------------------------------------------- the room
@@ -271,17 +324,16 @@ const Counter: React.FC<{ t: number; settle: number }> = ({ t, settle }) => {
 // ---------------------------------------------------------------------------------------------------- the episodes
 
 type Ctx = { t: number; show: (id: string) => number; since: (id: string) => number; phrase: Phrase };
-const FIG_X = 440;
 
 const SahunPicture: Drawn = ({ t, show, since, phrase: said }) => {
   const phrase: Phrase = said ?? ((id, n) => since(id) + n);
   const letter = show("letter");
   const room = Math.max(show("room"), show("dua"), show("end"));
-  const pose = show("dua") > 0 ? mix(PRAYER.think, PRAYER.dua, ramp(t, since("dua") + 0.3, since("dua") + 1.4)) : show("end") > 0 ? twoProstrations(t, since("end") + 0.6) : PRAYER.think;
+  const body = show("dua") > 0 ? bodyOf(mix(PRAYER.think, PRAYER.dua, ramp(t, since("dua") + 0.3, since("dua") + 1.4))) : show("end") > 0 ? twoProstrations(t, since("end") + 0.6) : bodyOf(PRAYER.think);
   return (
     <g>
       <Room t={t} dim={0.55 * (t < since("word") + 0.5 ? 1 : Math.max(show("word"), letter))} />
-      <g opacity={room}><Praying id="sh-fig" x={FIG_X} pose={pose} /></g>
+      <g opacity={room}><Praying id="sh-fig" body={body} /></g>
       <BigWords t={t} wayl={t < since("word") + 0.5 ? 1 : Math.max(show("word"), letter)} letter={letter}
                 an={ramp(t, phrase("letter", 1) - 0.2, phrase("letter", 1) + 0.4)} fi={ramp(t, phrase("letter", 2) - 0.2, phrase("letter", 2) + 0.4)} />
     </g>
@@ -296,7 +348,7 @@ const KhamsPicture: Drawn = ({ t, show, since, phrase: said }) => {
     <g>
       <Room t={t} dim={0.35 * show("lanes")} rug={end > 0} />
       <Rows t={t} opacity={rows} whisper={show("rows") * ramp(t, since("rows"), since("rows") + 0.6) * (1 - ramp(t, phrase("rows", 6) - 0.3, phrase("rows", 6) + 0.3))} />
-      <g opacity={end}><Praying id="kh-fig" x={FIG_X} pose={twoProstrations(t, since("end") + 0.6)} /></g>
+      <g opacity={end}><Praying id="kh-fig" body={twoProstrations(t, since("end") + 0.6)} /></g>
       {show("lanes") > 0 ? (
         <g opacity={show("lanes")}>
           <Lanes t={t} lanes={[
@@ -318,16 +370,16 @@ const NasitPicture: Drawn = ({ t, show, since, phrase: said }) => {
   const ghost = ramp(t, since("stand") + 0.9, since("stand") + 1.4);
   const fix = show("fix");
   const room = Math.max(show("room"), show("end"));
-  const pose = stand > 0 ? mix(PRAYER.julus, PRAYER.qiyam, rise) : fix > 0 ? twoProstrations(t, since("fix") + 0.3)
-    : show("end") > 0 ? twoProstrations(t, since("end") + 0.6) : PRAYER.julus;
+  const body = stand > 0 ? bodyOf(mix(PRAYER.julus, PRAYER.qiyam, rise)) : fix > 0 ? twoProstrations(t, since("fix") + 0.3)
+    : show("end") > 0 ? twoProstrations(t, since("end") + 0.6) : JULUS;
   const lanes = show("lanes");
   const hanafi = show("hanafi");
   return (
     <g>
       <Room t={t} dim={0.35 * Math.max(lanes, hanafi)} />
       <Rows t={t} opacity={show("rows")} rise={ramp(t, phrase("rows", 0) + 0.6, phrase("rows", 0) + 1.6)} />
-      <g opacity={stand * ghost * 0.32}><Praying id="na-ghost" x={FIG_X - 70} pose={PRAYER.julus} rim={RED} /></g>
-      <g opacity={Math.max(stand, fix, room)}><Praying id="na-fig" x={FIG_X} pose={pose} /></g>
+      <g opacity={stand * ghost * 0.32}><Praying id="na-ghost" body={JULUS} rim={RED} /></g>
+      <g opacity={Math.max(stand, fix, room)}><Praying id="na-fig" body={body} /></g>
       {lanes > 0 ? (
         <g opacity={lanes}>
           <Lanes t={t} lanes={[
@@ -355,12 +407,12 @@ const ShakkPicture: Drawn = ({ t, show, since, phrase: said }) => {
   const count = Math.max(show("count"), show("voice"));
   const fix = show("fix");
   const settle = fix > 0 ? ramp(t, phrase("fix", 3) - 0.3, phrase("fix", 3) + 0.3) : 0;
-  const pose = fix > 0 ? (t < phrase("fix", 5) ? PRAYER.qiyam : twoProstrations(t, phrase("fix", 5))) : show("end") > 0 ? twoProstrations(t, since("end") + 0.6) : PRAYER.qiyam;
+  const body = fix > 0 ? twoProstrations(t, phrase("fix", 5) - 0.6, QIYAM) : show("end") > 0 ? twoProstrations(t, since("end") + 0.6) : QIYAM;
   const lanes = show("lanes");
   return (
     <g>
       <Room t={t} dim={0.4 * Math.max(lanes, count * 0.6)} />
-      <g opacity={Math.max(count, fix, show("room"), show("end"))}><Praying id="sk-fig" x={FIG_X - 40} pose={pose} /></g>
+      <g opacity={Math.max(count, fix, show("room"), show("end"))}><Praying id="sk-fig" body={body} /></g>
       <g opacity={Math.max(count, fix * (1 - ramp(t, phrase("fix", 4), phrase("fix", 4) + 0.6)))}>
         <g transform="translate(382 253) scale(0.7)"><Counter t={t} settle={settle} /></g>
       </g>

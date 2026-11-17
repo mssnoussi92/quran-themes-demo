@@ -537,3 +537,16 @@ def test_the_references_merge_the_pages_of_fiqh_and_follow_the_digits_option(mon
     monkeypatch.setitem(sources.registry(), nothing["id"], nothing)
     with pytest.raises(SystemExit):
         sources.references([nothing["id"]])
+
+
+def test_a_misprint_of_the_english_is_corrected_on_screen_only(copy):
+    # The owner's decision (2026-11-17): two misprints of the published translation are corrected in the subtitle, and
+    # noted in the registry; the registry's text stays as published.
+    sources = tool("sources")
+    entry = sources.registry()["hadith.muslim.572a"]
+    assert "for. get" in entry["text_en"] and "for. get" in entry["excerpt_en"]
+    assert sources.described("hadith.muslim.572a")["display_en"] == "But I am a human being and I forget as you forget, so when I forget, remind me"
+    entries = copy.load("content/sources/hadith.yaml")                         # a correction whose misprint is not there
+    next(e for e in entries if e["id"] == "hadith.muslim.572a")["en_corrections"][0]["published"] = "no such misprint"
+    copy.dump("content/sources/hadith.yaml", entries)
+    assert "en_corrections: « no such misprint » is not in the English text shown" in validate(copy).stdout

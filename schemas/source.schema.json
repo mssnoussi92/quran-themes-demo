@@ -27,6 +27,16 @@
           "type": "string",
           "minLength": 1
         },
+        "en_corrections": {
+          "description": "Misprints of the published English text corrected in the subtitle only (decision of the owner, 2026-11-17: « Corriger, noté au registre »): each `published` is found in excerpt_en (or text_en) and replaced by `corrected` on screen; text_en and excerpt_en stay as published. Never a rewording: a typo only",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["published", "corrected", "why"],
+            "additionalProperties": false,
+            "properties": { "published": { "type": "string", "minLength": 1 }, "corrected": { "type": "string", "minLength": 1 }, "why": { "type": "string", "minLength": 1 } }
+          }
+        },
         "grade": { "enum": ["sahih", "hasan", "daif", "mawdu"] },
         "graded_by": { "type": "string" },
         "url": { "type": "string", "format": "uri", "description": "Page to read the source (quran.com, sunnah.com)" },

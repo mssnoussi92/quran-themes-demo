@@ -1344,6 +1344,10 @@
     heard: إذا شك أحدكم في صلاته فلم يدر كم صلى ثلاثا أم أربعة فليطرح الشك وليبني على مستيقا ثم يسجد سجدتين قبل أن يسلم فإن كان صلى خمسا شفعن له صلاته وإن كان صلى إتماما لأربع كانت ترغيما للشيطان
     license: none stated on the archive.org item
     status: proposed
+  en_corrections:
+  - published: he does Dot know
+    corrected: he does not know
+    why: 'misprint of the published translation (hadith-api, eng-muslim): corrected on screen, decision of the owner, 2026-11-17'
 - id: hadith.muslim.572a
   type: hadith
   ref: {collection: muslim, number: 572, narration: 1}
@@ -1374,6 +1378,10 @@
     heard: إنما أنا بشر أنسى كما تنسون فإذا نسيت فذكروني
     license: none stated on the archive.org item
     status: proposed
+  en_corrections:
+  - published: as you for. get
+    corrected: as you forget
+    why: 'misprint of the published translation (hadith-api, eng-muslim): corrected on screen, decision of the owner, 2026-11-17'
 - id: hadith.muslim.572j
   type: hadith
   ref: {collection: muslim, number: 572, narration: 10}
