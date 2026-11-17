@@ -6,6 +6,11 @@ id: khams
 # répliques, la place des versets et des lectures, ce sur quoi chaque réplique repose. Ni la voix, ni la vidéo, ni les textes,
 # ni les sources : il les valide sur les vidéos. Inscrit sur sa parole.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide les 3 et leurs sources » du propriétaire (2026-11-17, question à choix), après les corrections qu'il a demandées
+# (le sujud refait sur le tapis, le sous-titre de Muslim 572a corrigé ; run du workflow `film` du même jour) : la voix, le
+# montage (la silhouette, la piste, la carte des écoles), la couverture, l'ambiance, et ses sources, passées à `validated`.
+# Pas encore les textes de publication ni l'accroche. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-17, what: [voice, montage, cover, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 digits: latin          # les nombres en 1 2 3, jamais ١ ٢ ٣ (le propriétaire, 2026-11-17)

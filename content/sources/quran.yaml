@@ -2723,11 +2723,12 @@
     surah_ar: الماعون
     surah_en: Al-Ma'un
     retrieved: '2026-11-17'
-  status: proposed
+  status: validated
   notes: "Al-Ma'un 107:4 (« إزاي أعملها؟ », سجود السهو, short sahun : « فويل للمصلين », récité avec 107:5)"
 
   text_ar: فَوَيْلٌ لِّلْمُصَلِّينَ
   text_en: So woe to those who pray
+  validated_by: mssnoussi92
 - id: quran.107.5
   type: ayah
   ref: {surah: 107, ayah: 5}
@@ -2740,11 +2741,12 @@
     surah_ar: الماعون
     surah_en: Al-Ma'un
     retrieved: '2026-11-17'
-  status: proposed
+  status: validated
   notes: "Al-Ma'un 107:5 (« إزاي أعملها؟ », سجود السهو, short sahun : « عن صلاتهم ساهون »)"
 
   text_ar: ٱلَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ
   text_en: '[But] who are heedless of their prayer -'
+  validated_by: mssnoussi92
 - id: quran.2.286
   type: ayah
   ref: {surah: 2, ayah: 286}
@@ -2757,11 +2759,12 @@
     surah_ar: البقرة
     surah_en: Al-Baqarah
     retrieved: '2026-11-17'
-  status: proposed
+  status: validated
   notes: "Al-Baqarah 2:286 (« إزاي أعملها؟ », سجود السهو, short sahun : récité jusqu'à « أو أخطأنا », mot 19)"
 
   text_ar: لَا يُكَلِّفُ ٱللَّهُ نَفْسًا إِلَّا وُسْعَهَا ۚ لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا ٱكْتَسَبَتْ ۗ رَبَّنَا لَا تُؤَاخِذْنَآ إِن نَّسِينَآ أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَآ إِصْرًا كَمَا حَمَلْتَهُۥ عَلَى ٱلَّذِينَ مِن قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِۦ ۖ وَٱعْفُ عَنَّا وَٱغْفِرْ لَنَا وَٱرْحَمْنَآ ۚ أَنتَ مَوْلَىٰنَا فَٱنصُرْنَا عَلَى ٱلْقَوْمِ ٱلْكَـٰفِرِينَ
   text_en: Allāh does not charge a soul except [with that within] its capacity. It will have [the consequence of] what [good] it has gained, and it will bear [the consequence of] what [evil] it has earned. "Our Lord, do not impose blame upon us if we have forgotten or erred. Our Lord, and lay not upon us a burden like that which You laid upon those before us. Our Lord, and burden us not with that which we have no ability to bear. And pardon us; and forgive us; and have mercy upon us. You are our protector, so give us victory over the disbelieving people."
+  validated_by: mssnoussi92
 - id: quran.18.110
   type: ayah
   ref: {surah: 18, ayah: 110}
@@ -2774,11 +2777,12 @@
     surah_ar: الكهف
     surah_en: Al-Kahf
     retrieved: '2026-11-17'
-  status: proposed
+  status: validated
   notes: "Al-Kahf 18:110 (« إزاي أعملها؟ », سجود السهو, short khams : récité jusqu'à « إله واحد », mot 11 ; les mots « إنما أنا بشر مثلكم » sont aussi dans Muslim 572a)"
 
   text_ar: قُلْ إِنَّمَآ أَنَا۠ بَشَرٌ مِّثْلُكُمْ يُوحَىٰٓ إِلَىَّ أَنَّمَآ إِلَـٰهُكُمْ إِلَـٰهٌ وَٰحِدٌ ۖ فَمَن كَانَ يَرْجُوا۟ لِقَآءَ رَبِّهِۦ فَلْيَعْمَلْ عَمَلًا صَـٰلِحًا وَلَا يُشْرِكْ بِعِبَادَةِ رَبِّهِۦٓ أَحَدًۢا
   text_en: Say, "I am only a man like you, to whom has been revealed that your god is one God. So whoever would hope for the meeting with his Lord - let him do righteous work and not associate in the worship of his Lord anyone."
+  validated_by: mssnoussi92
 - id: quran.33.21
   type: ayah
   ref: {surah: 33, ayah: 21}
@@ -2791,11 +2795,12 @@
     surah_ar: الأحزاب
     surah_en: Al-Ahzab
     retrieved: '2026-11-17'
-  status: proposed
+  status: validated
   notes: "Al-Ahzab 33:21 (« إزاي أعملها؟ », سجود السهو, short nasit : la أسوة حسنة, prendre de lui jusqu'à la réparation d'un oubli)"
 
   text_ar: لَّقَدْ كَانَ لَكُمْ فِى رَسُولِ ٱللَّهِ أُسْوَةٌ حَسَنَةٌ لِّمَن كَانَ يَرْجُوا۟ ٱللَّهَ وَٱلْيَوْمَ ٱلْـَٔاخِرَ وَذَكَرَ ٱللَّهَ كَثِيرًا
   text_en: There has certainly been for you in the Messenger of Allāh an excellent pattern for anyone whose hope is in Allāh and the Last Day and [who] remembers Allāh often.
+  validated_by: mssnoussi92
 - id: quran.114.4
   type: ayah
   ref: {surah: 114, ayah: 4}

@@ -1126,3 +1126,7 @@ sources au registre. Voix : quatre requêtes, une journée. Rendu : le workflow 
   genoux en l'air et la tête hors du tapis. Le sujud est maintenant posé articulation par articulation (`SUJUD_BODY` de
   `Sahw.tsx` : hanches au-dessus des genoux, dos qui descend, front et paumes au sol, coudes levés), et la silhouette est
   ancrée sur ses genoux au milieu du tapis : elle ne glisse plus quand elle se prosterne ou se lève.
+- **Validés par lui le 2026-11-17** (question à choix : « Je valide les 3 et leurs sources ») : `sahun`, `khams`, `nasit` tels que
+  rendus après ses corrections (voix, montage, couvertures, ambiance ; `video/out/sahw/ci-2/` de la session, release brouillon
+  `sahw-candidate`), la lecture de Muslim 572a, et leurs vingt sources passées à `validated`. Restent : `shakk` (sa voix le
+  2026-11-18), les textes de publication et les accroches, la date au calendrier.
