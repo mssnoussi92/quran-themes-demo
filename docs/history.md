@@ -545,4 +545,8 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 - **Validé** : « je valide le film », « le vertical », « le TikTok » (questions à choix nommant chacun). PR #42 fusionnée
   après ses checks, comme il l'avait dit. **Au calendrier** : film le lundi 28 décembre, shorts du 29 au 31 ; les quatre
   lignes vérifiées avec le lecteur du calendrier de quran-reels (chaque plateforme reliée à sa vidéo, aucun problème).
+- **Sa page** : « مخيّر ولا مسيّر؟ » ajouté en tête (le film, son film vertical, les trois shorts, leurs textes), refaite à
+  partir des fichiers publics `page-<doc>` de chaque film (`gallery.py`). Le film vertical du du'a, publié le 16 novembre,
+  en est retiré : sans cela la page faisait 260 Mio, au-dessus des 256 d'un artefact (242 Mio maintenant). Fichiers
+  publics : `page-qadar`, `page-qadar-9x16` (workflow `page-files`).
 
