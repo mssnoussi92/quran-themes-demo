@@ -2710,3 +2710,88 @@
   notes: "les quatre qualités (épisode 3), pilote « une image, puis le verset » (2026-11-15)"
   text_ar: إِلَّا ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّـٰلِحَـٰتِ وَتَوَاصَوْا۟ بِٱلْحَقِّ وَتَوَاصَوْا۟ بِٱلصَّبْرِ
   text_en: Except for those who have believed and done righteous deeds and advised each other to truth and advised each other to patience.
+
+- id: quran.12.19
+  type: ayah
+  ref: {surah: 12, ayah: 19}
+  url: https://quran.com/12/19
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=12:19
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=12:19
+    translator: Saheeh International
+    surah_ar: يوسف
+    surah_en: Yusuf
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« وجاءت سيارة… » : « معاك ٥ ثواني », short 1 (sayyara) : le mot de la question, récité jusqu'à « هذا غلام »"
+
+  text_ar: وَجَآءَتْ سَيَّارَةٌ فَأَرْسَلُوا۟ وَارِدَهُمْ فَأَدْلَىٰ دَلْوَهُۥ ۖ قَالَ يَـٰبُشْرَىٰ هَـٰذَا غُلَـٰمٌ ۚ وَأَسَرُّوهُ بِضَـٰعَةً ۚ وَٱللَّهُ عَلِيمٌۢ بِمَا يَعْمَلُونَ
+  text_en: And there came a company of travelers; then they sent their water drawer, and he let down his bucket. He said, "Good news! Here is a boy." And they concealed him, [taking him] as merchandise; and Allāh was Knowing of what they did.
+- id: quran.5.118
+  type: ayah
+  ref: {surah: 5, ayah: 118}
+  url: https://quran.com/5/118
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=5:118
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=5:118
+    translator: Saheeh International
+    surah_ar: المائدة
+    surah_en: Al-Ma'idah
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« إن تعذبهم فإنهم عبادك وإن تغفر لهم فإنك أنت العزيز الحكيم » : « معاك ٥ ثواني », short 2 (khatima) : la fin à deviner"
+
+  text_ar: إِن تُعَذِّبْهُمْ فَإِنَّهُمْ عِبَادُكَ ۖ وَإِن تَغْفِرْ لَهُمْ فَإِنَّكَ أَنتَ ٱلْعَزِيزُ ٱلْحَكِيمُ
+  text_en: If You should punish them - indeed they are Your servants; but if You forgive them - indeed it is You who is the Exalted in Might, the Wise."
+- id: quran.5.28
+  type: ayah
+  ref: {surah: 5, ayah: 28}
+  url: https://quran.com/5/28
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=5:28
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=5:28
+    translator: Saheeh International
+    surah_ar: المائدة
+    surah_en: Al-Ma'idah
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« … إني أخاف الله رب العالمين », dit par le fils d'Adam : « معاك ٥ ثواني », short 3 (qalaha)"
+
+  text_ar: لَئِنۢ بَسَطتَ إِلَىَّ يَدَكَ لِتَقْتُلَنِى مَآ أَنَا۠ بِبَاسِطٍ يَدِىَ إِلَيْكَ لِأَقْتُلَكَ ۖ إِنِّىٓ أَخَافُ ٱللَّهَ رَبَّ ٱلْعَـٰلَمِينَ
+  text_en: If you should raise your hand toward me to kill me - I shall not raise my hand toward you to kill you. Indeed, I fear Allāh, Lord of the worlds.
+- id: quran.59.16
+  type: ayah
+  ref: {surah: 59, ayah: 16}
+  url: https://quran.com/59/16
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=59:16
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=59:16
+    translator: Saheeh International
+    surah_ar: الحشر
+    surah_en: Al-Hashr
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« … إني أخاف الله رب العالمين », dit par le Diable : « معاك ٥ ثواني », short 3 (qalaha) ; la phrase de la question"
+
+  text_ar: كَمَثَلِ ٱلشَّيْطَـٰنِ إِذْ قَالَ لِلْإِنسَـٰنِ ٱكْفُرْ فَلَمَّا كَفَرَ قَالَ إِنِّى بَرِىٓءٌ مِّنكَ إِنِّىٓ أَخَافُ ٱللَّهَ رَبَّ ٱلْعَـٰلَمِينَ
+  text_en: '[The hypocrites are] like the example of Satan when he says to man, "Disbelieve." But when he disbelieves, he says, "Indeed, I am disassociated from you. Indeed, I fear Allāh, Lord of the worlds."'
+- id: quran.2.127
+  type: ayah
+  ref: {surah: 2, ayah: 127}
+  url: https://quran.com/2/127
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:127
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:127
+    translator: Saheeh International
+    surah_ar: البقرة
+    surah_en: Al-Baqarah
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« إنك أنت السميع العليم » : « معاك ٥ ثواني », short 2 (khatima), un des trois choix écrits (non récité)"
+  text_ar: وَإِذْ يَرْفَعُ إِبْرَٰهِـۧمُ ٱلْقَوَاعِدَ مِنَ ٱلْبَيْتِ وَإِسْمَـٰعِيلُ رَبَّنَا تَقَبَّلْ مِنَّآ ۖ إِنَّكَ أَنتَ ٱلسَّمِيعُ ٱلْعَلِيمُ
+  text_en: And [mention] when Abraham was raising the foundations of the House and [with him] Ishmael, [saying], "Our Lord, accept [this] from us. Indeed, You are the Hearing, the Knowing.
