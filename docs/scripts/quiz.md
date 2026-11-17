@@ -160,6 +160,10 @@ quand il est récité)
 
 # Shorts 4 à 6 (proposés le 2026-11-17)
 
+**Scripts validés par le propriétaire le 2026-11-17** (questions à choix nommant chaque short ; le 4 « verset coupé » à
+« مِنسَأَتَهُۥ »). Puis, sur les brouillons muets, **« je valide, avec 27:27 »** : la récitation de 27:27 au short 6, après
+« قال هنتأكد الأول » (une réplique repose sur son tafsir), et le rendu et les clips des trois.
+
 **Demande du propriétaire (2026-11-17)** : « prépare 3 autres quiz sans voix, et demain matin tu envoies les 6 voix ».
 Proposés par la session le même jour, **à valider** : rien n'est dit par la voix avant son « je valide ». Un short par
 format, comme le pilote ; mêmes règles (skill `write-hook`, « A short of the quiz ») ; sens vérifiés le 2026-11-17 dans

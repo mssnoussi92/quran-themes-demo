@@ -7,11 +7,15 @@ id: sabr
 # « Je valide » du propriétaire (2026-11-17, question à choix nommant le script du quiz 5 de docs/scripts/quiz.md) : les
 # répliques, la question, les choix. Ni la voix, ni les images, ni les textes à coller. Inscrit sur sa parole.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide rendu et clip » du propriétaire (2026-11-17, question à choix nommant le rendu sans voix du workflow `film`,
+# run 44121795304, et son clip) : le montage, les dessins et le clip tels que rendus. La voix, la couverture et l'ambiance
+# sous la voix restent à valider sur la vidéo finale. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-17, what: [montage] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 90-trial-sabr
-# PROPOSÉ (pas encore approuvé pour ce short) : une aube rose filmée d'un drone qui s'élève au-dessus d'une colline boisée
-# (Pixabay 2119, bellergy, validé pour « والضحى » de « آية وحكايتها ») : la lumière qui vient après la nuit
+# une aube rose filmée d'un drone qui s'élève au-dessus d'une colline boisée (Pixabay 2119, bellergy, validé pour « والضحى »
+# de « آية وحكايتها ») : la lumière qui vient après la nuit ; APPROUVÉ pour ce short par le propriétaire le 2026-11-17
 clip: { source: pixabay, id: 2119, author: bellergy, page: "https://pixabay.com/videos/id-2119/", take: { slow: 5, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.6, ground: "#07060b", horizon: 1380, veil: 0.8 }
 ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 10, seconds: 60, level: -36 }
 cover: { scene: ask, title: "«فصبر جميل»… المرة التانية؟", tag: "معاك 5 ثواني · 5", focus: 1000 }
@@ -26,9 +30,10 @@ publish:
   title: { en: "\"Beautiful patience\"… and the second time?", ar: "«فصبر جميل»… المرة التانية؟" }
   part: 5
   hashtags: ["#سورة_يوسف", "#الصبر_الجميل"]
-  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session le 2026-11-17, à valider
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (« je valide les 3 », quiz 4 à 6)
     ar: "سيدنا يعقوب قال «فصبر جميل» مرتين… المرة التانية كمّلها بحاجة محدش متوقعها."
     en: 'Jacob said "beautiful patience" twice… the second time, he went on with what no one expects.'
+    validated: 2026-11-17
   description:
     en: "Jacob said \"beautiful patience\" twice in Surat Yusuf: when Yusuf was lost (12:18), and when his brother was lost too (12:83). The second time, his pain grew and his hope grew more: he asked for all three sons (al-Muyassar), turning to relief when the hardship was at its peak (as-Sa'di)."
     ar: "سيدنا يعقوب قال «فصبر جميل» مرتين: لما ضاع يوسف (يوسف 18)، ولما ضاع أخوه (يوسف 83). المرة التانية الوجع زاد… بس رجاه في ربنا كبر: طلب التلاتة."

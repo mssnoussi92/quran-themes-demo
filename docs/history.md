@@ -570,3 +570,5 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   montage gagne la référence sous un mauvais choix vrai ailleurs (`note`) et `at_once` (la question entière sur la première
   image : un « … » la partageait en deux temps) ; dessins : la canne et les arcs, la lumière qui monte, la huppe. En réserve
   (son choix), placés à la revue après les chiffres du premier quiz.
+  Brouillons muets envoyés (la huppe reposée sur sa branche après un premier rendu) ; **validés par lui** : rendu, clips
+  (8451, 2119, 16139), 27:27 récité au short 6, les trois accroches. Voix des six quiz le 2026-11-18.

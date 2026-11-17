@@ -8,11 +8,15 @@ id: dabba
 # docs/scripts/quiz.md, 34:14 récité jusqu'à « منسأته ») : les répliques, la question, les choix. Ni la voix, ni les
 # images, ni les textes à coller. Inscrit sur sa parole.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide rendu et clip » du propriétaire (2026-11-17, question à choix nommant le rendu sans voix du workflow `film`,
+# run 44121795304, et son clip) : le montage, les dessins et le clip tels que rendus. La voix, la couverture et l'ambiance
+# sous la voix restent à valider sur la vidéo finale. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-17, what: [montage] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 89-trial-dabba
-# PROPOSÉ (pas encore approuvé pour ce short) : un coucher qui devient nuit (Pixabay 8451, Felix-Mittermeier, approuvé
-# pour « الحجر » de « كلمة من القرآن »), sous les arcs dessinés
+# un coucher qui devient nuit (Pixabay 8451, Felix-Mittermeier, approuvé pour « الحجر » de « كلمة من القرآن »), sous les
+# arcs dessinés ; APPROUVÉ pour ce short par le propriétaire le 2026-11-17 (« je valide rendu et clip »)
 clip: { source: pixabay, id: 8451, author: Felix-Mittermeier, page: "https://pixabay.com/videos/id-8451/", take: { slow: 7, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.7, ground: "#06050c", horizon: 1380, veil: 0.8 }
 ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 60, level: -38 }
 cover: { scene: ask, title: "«دابة الأرض» في سورة سبأ؟", tag: "معاك 5 ثواني · 4", focus: 1000 }
@@ -26,9 +30,10 @@ publish:
   title: { en: "\"The beast of the earth\" in Surat Saba'?", ar: "«دابة الأرض» في سورة سبأ؟" }
   part: 4
   hashtags: ["#سورة_سبأ", "#معاني_الكلمات"]
-  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session le 2026-11-17, à valider
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (« je valide les 3 », quiz 4 à 6)
     ar: "«دابة الأرض» في سورة سبأ… مش اللي في بالك. معاك 5 ثواني."
     en: '"The beast of the earth" in Surat Saba''… not the one you''re thinking of. You have 5 seconds.'
+    validated: 2026-11-17
   description:
     en: "\"The beast of the earth\" in Surat Saba' (34:14) is not the beast of the end of time (27:82): al-Muyassar and Ibn Kathir read it as the termite that ate Solomon's staff. He had died leaning on it, and the jinn, whom many think know the unseen, kept working without knowing."
     ar: "«دابة الأرض» في سورة سبأ (سبأ 14) مش دابة آخر الزمان: معناها الأرَضة، الحشرة اللي أكلت عصاية سيدنا سليمان. مات وهو متّكي عليها… والجن ما عرفوش."

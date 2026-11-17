@@ -6,11 +6,15 @@ id: hudhud
 # « Je valide » du propriétaire (2026-11-17, question à choix nommant le script du quiz 6 de docs/scripts/quiz.md) : les
 # répliques, la question, les choix. Ni la voix, ni les images, ni les textes à coller. Inscrit sur sa parole.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide, avec 27:27 » du propriétaire (2026-11-17, question à choix nommant le rendu sans voix du workflow `film`,
+# run 44127154394, son clip 16139 et 27:27 récité) : le montage, la huppe, le clip et la récitation de 27:27 tels que
+# rendus. La voix, la couverture et l'ambiance sous la voix restent à valider sur la vidéo finale. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-17, what: [montage] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 91-trial-hudhud
-# PROPOSÉ (pas encore approuvé pour ce short) : des dunes filmées d'un drone qui avance, de jour (Pixabay 16139,
-# AcornStudioSpain, approuvé pour « القافلة » de « آية وحكايتها ») : la huppe en silhouette sur le ciel clair
+# des dunes filmées d'un drone qui avance, de jour (Pixabay 16139, AcornStudioSpain, approuvé pour « القافلة » de « آية
+# وحكايتها ») : la huppe en silhouette sur le sable clair ; APPROUVÉ pour ce short par le propriétaire le 2026-11-17
 clip: { source: pixabay, id: 16139, author: AcornStudioSpain, page: "https://pixabay.com/videos/id-16139/", take: { slow: 5, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.85, ground: "#0b0907", horizon: 1380, veil: 0.8 }
 ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 10, seconds: 60, level: -36 }
 cover: { scene: ask, title: "مين قال الجملة دي… ولمين؟", tag: "معاك 5 ثواني · 6", focus: 1000 }
@@ -24,9 +28,10 @@ publish:
   title: { en: "Who said this… and to whom?", ar: "مين قال الجملة دي… ولمين؟" }
   part: 6
   hashtags: ["#سورة_النمل", "#قصص_القرآن"]
-  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session le 2026-11-17, à valider
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (« je valide les 3 », quiz 4 à 6)
     ar: "«أحطت بما لم تحط به»… مين قالها، ولمين؟ معاك 5 ثواني."
     en: '"I have encompassed what you have not"… who said it, and to whom? You have 5 seconds.'
+    validated: 2026-11-17
   description:
     en: "\"I have encompassed [in knowledge] that which you have not\" (27:22): the hoopoe said it to Solomon, a small bird to a king and prophet (al-Muyassar, Ibn Kathir). Solomon did not dismiss it, nor believe it at once: \"we will see whether you were truthful\" (27:27)."
     ar: "«أحطت بما لم تحط به» (النمل 22): قالها الهدهد لسيدنا سليمان… طائر صغير عرف خبر ما وصلش للملك. وسيدنا سليمان ما استصغرهوش، وما صدّقهوش على طول: قال هنتأكد الأول."
@@ -55,7 +60,7 @@ segments:
       - ar: "وسيدنا سليمان ما استصغرهوش… وما صدّقهوش على طول: قال هنتأكد الأول."
         en: "And Solomon didn't belittle him… nor believe him at once: he said, we'll check first."
   # 27:27 récité après la réplique qui le dit (une réplique de sens repose sur le tafsir d'un verset récité :
-  # tools/trial/rules.py) ; ajouté au script validé le 2026-11-17, à confirmer par le propriétaire avec le brouillon
+  # tools/trial/rules.py) ; ajouté au script validé, confirmé par le propriétaire le 2026-11-17 (« je valide, avec 27:27 »)
   - verse: quran.27.27
     scene: verify
   - narration: lesson
