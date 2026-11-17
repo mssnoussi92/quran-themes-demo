@@ -30,9 +30,10 @@ publish:
   title: { en: "Who said this in the Quran?", ar: "مين قال الجملة دي في القرآن؟" }
   part: 3
   hashtags: ["#قصص_القرآن", "#خوف_الله"]
-  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session le 2026-11-17, à valider
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (« je valide les 3 accroches »)
     ar: "جملة واحدة في القرآن… قالها اتنين عكس بعض. تعرف مين؟"
     en: 'One sentence in the Quran… said by two opposites. Do you know who?'
+    validated: 2026-11-17
   description:
     en: "\"I fear Allah, Lord of the worlds\": the same words in two verses. Abel, son of Adam, said them to the brother who threatened to kill him (5:28); Satan said them after leading man to disbelief (59:16). Real fear stops you before the wrong."
     ar: "جملة واحدة في القرآن… قالها اتنين: هابيل ابن سيدنا آدم لأخوه اللي هدده بالقتل (المائدة 28)، والشيطان بعد ما دعا الإنسان للكفر واتبرّى منه (الحشر 16)."

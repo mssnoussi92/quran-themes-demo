@@ -25,9 +25,10 @@ publish:
   title: { en: "How do you think this verse ends?", ar: "تفتكر الآية دي خلصت بإيه؟" }
   part: 2
   hashtags: ["#سورة_المائدة", "#أسماء_الله_الحسنى"]
-  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session le 2026-11-17, à valider
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (« je valide les 3 accroches »)
     ar: "آية فيها كلام عن المغفرة… تفتكر خلصت بإيه؟ الإجابة مش اللي متوقعها."
     en: 'A verse about forgiveness… how do you think it ends? Not what you''d expect.'
+    validated: 2026-11-17
   description:
     en: "After \"and if You forgive them\", you would expect \"the Forgiving, the Merciful\". The verse (5:118) ends with \"the Almighty, the Wise\": as-Sa'di explains a forgiveness that comes from full power, not from weakness, and given with wisdom."
     ar: "آية فيها كلام عن المغفرة… والطبيعي نستنى آخرها «غفور رحيم». بس الآية (المائدة 118) خلصت بـ«العزيز الحكيم»: مغفرة عن قدرة، مش عن عجز."
