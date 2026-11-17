@@ -1,0 +1,100 @@
+# « مخيّر ولا مسيّر؟ » (film `qadar`), short 1 : « النتيجة مكتوبة… هذاكر ليه؟ ». Idée du propriétaire (2026-11-17) ; forme
+# choisie par lui le même jour (trois idées reçues, version courte : un verset court par short), avec sa demande : « il faut
+# avoir des animations, un cas de vie réel (situation) acté pour attirer le spectateur ». Fiche : docs/themes.md.
+# - Le début est une scène type jouée, muette (`silent`, `hold`, `sfx` de « بص تاني ») : une silhouette anonyme sans visage
+#   (sa règle du 2026-11-15) referme son livre la veille d'un examen. Une scène type, jamais une histoire vraie.
+# - L'idée reçue est montrée comme une parole (« … » entre guillemets), jamais dite par notre voix comme vraie.
+# - Le fait : les Compagnons ont posé cette question même (Bukhari 4949 ; aussi 1362, 4945, 6605, 7552 ; Muslim 2647). La
+#   narration raconte le lieu (une jenaza, il trace dans le sol avec un bâton : « عود », Bukhari 6605 et 7552) ; les paroles
+#   du Prophète ﷺ et la question des Compagnons sont lues par une vraie voix (lecture à trouver, skill find-hadith-recording).
+# - 92:5-10 : ce qu'il récita juste après (Bukhari 4945 : « إلى قوله للعسرى »).
+# - Le sens : al-Muyassar sur 92:5-7 (« فسنرشده ونوفقه إلى أسباب الخير… ونيسِّر له أموره ») et as-Sa'di sur 92:7 (« لأنه أتى
+#   بأسباب التيسير، فيسر الله له ذلك »).
+# - Répliques de la session sans tafsir : « المكتوب… عمرك ما شفته », l'exemple (la scène rejouée), la phrase à retenir,
+#   ce qui distingue ce short et l'annonce du suivant.
+# - Recoupement : le short 2 du du'a (« كله مكتوب… أدعي ليه؟ ») ; ici l'idée reçue est dite autrement et la preuve est autre.
+# - Images (new-scene, après le script) : `shut` une chambre la nuit, une lampe, la silhouette referme le livre ; `ground`
+#   des palmiers au crépuscule, une tombe fraîche, des lignes tracées dans le sable, personne (ni main ni bâton) ; `paths`
+#   deux chemins, l'un qui s'éclaire, l'autre de pierres ; `desk` le bureau, le livre fermé ; `open` la silhouette rouvre le
+#   livre ; `dawn` le matin à la fenêtre.
+id: amal
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 78-trial-amal
+cover: { scene: shut, title: "النتيجة مكتوبة… أذاكر ليه؟", tag: "مخيّر ولا مسيّر؟ · ١ من ٣", focus: 1100 }
+publish:
+  title: { en: "“It's written… why study?” The Companions asked it", ar: "«مكتوبة… أذاكر ليه؟» الصحابة سألوها" }
+  part: 1
+  hashtags: ["#القضاء_والقدر", "#مخير_ولا_مسير"]
+  description:
+    en: "“The result is already written, so why work?” The Companions asked the Prophet ﷺ this very question at a funeral. His answer, and the verses he recited after it: whoever brings the means, God makes the way easy for him."
+    ar: "«النتيجة مكتوبة… أشتغل ليه؟» الصحابة سألوا النبي صلى الله عليه وسلم السؤال ده نفسه في جنازة. إجابته، والآيات اللي قرأها بعدها: اللي يجيب الأسباب… ربنا يسهّل له الطريق."
+segments:
+  # -- la scène jouée, muette
+  - narration: hook
+    silent: true
+    hold: 2.6
+    scene: shut
+    sfx: [[impact, 0.5]]
+    lines:
+      - ar: "«النتيجة مكتوبة… هذاكر ليه؟»"
+        en: "“The result is already written… so why study?”"
+  - narration: same
+    silent: true
+    hold: 3.0
+    scene: ground
+    sfx: [[whoosh, 0.1]]
+    lines:
+      - ar: "السؤال ده… الصحابة سألوه للنبي صلى الله عليه وسلم."
+        en: "That very question… the Companions asked the Prophet ﷺ."
+  # -- le fait, et la réponse lue par une vraie voix
+  - narration: open
+    scene: ground
+    sources: [hadith.bukhari.4949]
+    lines:
+      - ar: "كانوا في جنازة… والنبي صلى الله عليه وسلم قاعد، بيخطّ في الأرض بعود."
+        en: "They were at a funeral… and the Prophet ﷺ sat, tracing lines in the ground with a stick."
+      - ar: "وقال لهم كلام… خلّاهم يسألوا نفس سؤالك:"
+        en: "He told them something… that made them ask your very question:"
+  - reading: hadith.bukhari.4949
+    scene: ground
+  - narration: recite
+    scene: ground
+    lines:
+      - ar: "وبعدها قرأ الآيات دي:"
+        en: "Then he recited these verses:"
+  - verses: [quran.92.5, quran.92.6, quran.92.7, quran.92.8, quran.92.9, quran.92.10]
+    scene: paths
+  # -- le sens
+  - narration: meaning
+    scene: paths
+    sources: [tafsir.muyassar.92.5, tafsir.saadi.92.7]
+    lines:
+      - ar: "يعني: اللي يدّي… ويتّقي ربنا… ويصدّق… ربنا يسهّل له طريق الخير."
+        en: "Meaning: whoever gives… is mindful of God… and believes… God makes the road of good easy for him."
+      - ar: "ليه؟ عشان هو جاب الأسباب… فربنا يسّرها له."
+        en: "Why? Because he brought the means… so God made it easy for him."
+  - narration: depth
+    scene: desk
+    lines:
+      - ar: "المكتوب… عمرك ما شفته."
+        en: "What's written… you have never seen it."
+      - ar: "اللي إنت شايفه: الكتاب اللي قدامك… والوقت اللي معاك."
+        en: "What you do see: the book in front of you… and the time you have."
+  # -- la scène rejouée
+  - narration: example
+    scene: open
+    lines:
+      - ar: "فيرجع يفتح الكتاب… ويذاكر… ويقول: يا رب."
+        en: "So he opens the book again… studies… and says: O Lord."
+      - ar: "النتيجة عند ربنا… والمذاكرة عليك."
+        en: "The result is with God… the studying is on you."
+  - narration: close
+    scene: dawn
+    lines:
+      - ar: "المكتوب… مش عذر إنك تقعد."
+        en: "What's written… is no excuse to sit still."
+      - ar: "هنا «المكتوب» بقى عذر عشان ما نعملش… وفيه جملة تانية بنقولها: «لما ربنا يهديني»."
+        en: "Here, “it's written” became an excuse not to act… and there's another sentence we say: “When God guides me.”"
+      - ar: "تابعنا عشان تعرف القرآن ردّ عليها إزاي."
+        en: "Follow us to see how the Quran answers it."

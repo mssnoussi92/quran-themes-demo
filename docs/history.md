@@ -485,3 +485,16 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   quran-reels, où chaque vidéo de la Page est mesurée sur chaque plateforme (une chose va une fois, au bon endroit).
   « Les mesures » dit maintenant où sont les chiffres et quoi envoyer : rien pour Facebook, Instagram et YouTube ; pour
   TikTok, la liste « Contenu », le plus simple une fois par semaine.
+
+## Le film « مخيّر ولا مسيّر؟ » : la fiche et le script (2026-11-17)
+
+- **Demande du propriétaire** : « je veux créer un film sur الانسان مخير او مسير ». Fiche (skill `choose-format`) : la
+  question est un faux choix d'après as-Sa'di (74:56, 81:29 : une vraie volonté et un vrai acte, sous Sa volonté) ; pas un
+  débat (Tirmidhi 2133 : il a défendu la dispute sur le qadar), la question des Compagnons et sa réponse (Bukhari 4949 :
+  « اعملوا ») ; « مخيّر في كذا ومسيّر في كذا » et Adam et Moussa écartés ; recoupement avec le short 2 du du'a dit.
+- **Ses choix (questions à choix)** : trois idées reçues, version courte, avec « des animations, un cas de vie réel
+  (situation) acté pour attirer le spectateur » (lu : une scène type jouée par une silhouette anonyme, au début de chaque
+  short) ; le titre « مخيّر ولا مسيّر؟ » ; le script maintenant, la production après les premières mesures, publication du
+  28 au 31 décembre.
+- **Fait** : sources au registre (proposées), coupes de récitation, script des trois shorts et du film
+  (`docs/scripts/qadar.md`), estimés plus longs que la fiche (1:38, 1:26, 1:52 ; film 7:10). À valider par lui.

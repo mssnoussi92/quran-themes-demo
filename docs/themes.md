@@ -862,6 +862,15 @@ Les trains et l'arc sont les métaphores de l'auteur des reels : on ne les repre
 - **le script maintenant, la production après les premières mesures** du film du du'a (vers le 24 novembre) ;
   **publication du lundi 28 au jeudi 31 décembre** (le film le 28, les shorts du 29 au 31).
 
+**Fait le même jour** (le script, aucune voix) : les sources au registre (13 versets, Bukhari 4949, Tirmidhi 2133, dix
+passages de tafsir, tous **proposés**) ; les versets coupés dans la récitation (six coupes posées à la main : 92:5-9, que le
+récitateur enchaîne, et le début de 81:28) ; le script (`content/trial/amal.yaml`, `shaa.yaml`, `law.yaml`, `qadar.yaml` ;
+page : `docs/scripts/qadar.md`) : chaque short s'ouvre sur sa scène jouée, muette (`silent`), puis le fait, la source, le
+sens, la scène rejouée, la phrase à retenir. **Estimé : 1:38, 1:26, 1:52, film 7:10**, plus long que la fiche (≈ 1:15) : la
+lecture de Bukhari 4949 n'est pas trouvée (comptée 12 s) ; Muslim 2664 se lit entier (28 s : un extrait d'une lecture n'est
+pas encore possible) ; 57:23 et as-Sa'di sur lui passent au film seul (un short ne s'appuie que sur le tafsir d'un verset
+qu'il récite). **À valider par le propriétaire avant toute voix.**
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

@@ -1,0 +1,90 @@
+# « مخيّر ولا مسيّر؟ » (film `qadar`), short 2 : « لما ربنا يهديني ». Forme choisie par le propriétaire le 2026-11-17 (voir
+# amal.yaml) ; fiche : docs/themes.md.
+# - Le début est une scène type jouée, muette : une silhouette anonyme sans visage, le réveil qui sonne avant l'aube, elle
+#   se retourne dans son lit. L'idée reçue entre guillemets, jamais dite par notre voix comme vraie.
+# - Le fait : dans 81:28-29, « شاء » vient deux fois, une fois pour l'homme, une fois pour Dieu (lu dans le texte même).
+# - Le sens, et la réponse du film : as-Sa'di sur 81:29 et, là où il renvoie (« كما تقدم مثلها »), sur 74:56 (« فأثبت تعالى للعباد مشيئة حقيقة وفعلا، وجعل ذلك تابعا
+#   لمشيئته », contre ceux qui disent l'homme sans volonté ni acte et ceux qui mettent ses actes hors de la volonté de Dieu) ;
+#   sur 81:29 il renvoie au même (« رد على فرقتي القدرية النفاة، والقدرية المجبرة كما تقدم مثلها ») ; al-Muyassar sur 81:29
+#   (« وما تشاؤون الاستقامة، ولا تقدرون على ذلك، إلا بمشيئة الله »).
+# - Jamais dit : « مخيّر في كذا ومسيّر في كذا » (un classement de prédicateurs, dans aucun de nos trois tafsirs ; refusé
+#   comme « أنواع القدر »).
+# - Répliques de la session sans tafsir : « واخد آية من الاتنين بس », « قوم… واطلب من ربنا », l'exemple (la scène
+#   rejouée), la phrase à retenir, ce qui distingue ce short et l'annonce du suivant.
+# - Images (après le script) : `turn` une chambre avant l'aube, le téléphone allumé, la silhouette se retourne ; `words` la
+#   fenêtre, le ciel de nuit ; `rise` la silhouette se lève, la lumière de l'aube, un tapis de prière ; rien de l'invisible.
+id: shaa
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 79-trial-shaa
+cover: { scene: turn, title: "«لما ربنا يهديني»؟", tag: "مخيّر ولا مسيّر؟ · ٢ من ٣", focus: 1100 }
+publish:
+  title: { en: "“When God guides me…” Two verses answer it", ar: "«لما ربنا يهديني»… آيتين بيردّوا عليها" }
+  part: 2
+  hashtags: ["#القضاء_والقدر", "#مخير_ولا_مسير"]
+  description:
+    en: "“When God guides me, I'll start praying.” In two verses in a row, the word “wills” comes twice: once for you, once for God. You have a real will and real deeds, and your will runs under God's will: you are not forced, and your will is not outside His."
+    ar: "«لما ربنا يهديني… هبقى أصلّي.» في آيتين ورا بعض، كلمة «شاء» جت مرتين: مرة ليك ومرة لربنا. ليك مشيئة حقيقية وفعل حقيقي، ومشيئتك ماشية تحت مشيئة ربنا: لا إنت مجبور، ولا مشيئتك برّه مشيئته."
+segments:
+  # -- la scène jouée, muette
+  - narration: hook
+    silent: true
+    hold: 2.8
+    scene: turn
+    sfx: [[click, 0.2]]
+    lines:
+      - ar: "«لما ربنا يهديني… هبقى أصلّي.»"
+        en: "“When God guides me… I'll start praying.”"
+  - narration: same
+    silent: true
+    hold: 3.0
+    scene: words
+    sfx: [[whoosh, 0.1]]
+    lines:
+      - ar: "آيتين ورا بعض… بيردّوا على الجملة دي."
+        en: "Two verses, one after the other… answer that sentence."
+  # -- le fait, dans le texte même
+  - narration: open
+    scene: words
+    lines:
+      - ar: "في الآيتين دول… كلمة «شاء» جت مرتين."
+        en: "In these two verses… the word “wills” comes twice."
+      - ar: "مرة ليك… ومرة لربنا."
+        en: "Once for you… and once for God."
+  - verses: [quran.81.28, quran.81.29]
+    scene: words
+  # -- le sens : la réponse du film
+  - narration: meaning
+    scene: words
+    sources: [tafsir.saadi.81.29, tafsir.muyassar.81.29]
+    lines:
+      - ar: "يعني: ليك مشيئة حقيقية… وفعل حقيقي."
+        en: "Meaning: you have a real will… and real deeds."
+      - ar: "بس مشيئتك ماشية تحت مشيئة ربنا… وما تقدرش تستقيم إلا بيه."
+        en: "But your will runs under God's will… and you cannot go straight without Him."
+      - ar: "لا إنت مجبور… ولا مشيئتك برّه مشيئة ربنا."
+        en: "You are not forced… and your will is not outside God's will."
+  - narration: depth
+    scene: turn
+    lines:
+      - ar: "واللي مستنّي الهداية تنزل عليه وهو نايم… واخد آية من الاتنين بس."
+        en: "Whoever waits for guidance to land on him while he sleeps… took only one of the two verses."
+      - ar: "الأولى بتقولك: قوم. والتانية بتقولك: واطلب من ربنا."
+        en: "The first tells you: get up. The second tells you: and ask God."
+  # -- la scène rejouée
+  - narration: example
+    scene: rise
+    lines:
+      - ar: "المنبّه يرنّ تاني… فيقوم… ويتوضّا… ويقول: يا رب ثبّتني."
+        en: "The alarm rings again… he gets up… makes wudu… and says: O Lord, keep me firm."
+  - narration: close
+    scene: rise
+    lines:
+      - ar: "الهداية مش حاجة تستنّاها… دي طريق تمشيه، وإنت بتطلب من ربنا يوصّلك."
+        en: "Guidance isn't something you wait for… it's a road you walk, asking God to get you there."
+      - ar: "هنا «المكتوب» بقى عذر عشان نأجّل… بس فيه حاجات ما اخترناهاش أصلًا."
+        en: "Here, “it's written” became an excuse to put things off… but some things, we never chose at all."
+      - ar: "وبعدها بنقول كلمة من حرفين… النبي صلى الله عليه وسلم حذّر منها."
+        en: "And after them we say a two-letter word… that the Prophet ﷺ warned against."
+      - ar: "تابعنا عشان تعرفها."
+        en: "Follow us to find out which."
