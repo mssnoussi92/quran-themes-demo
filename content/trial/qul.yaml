@@ -1,0 +1,75 @@
+# « ذكر وحكايته », short 2 (pilote, 2026-11-17 ; content/trial/dhikr.yaml, docs/themes.md) : le dhikr du matin et du soir
+# de Tirmidhi 3575 (al-Albani : Hasan). Le fait : 'Abdallah ibn Khubayb et d'autres sortent par une nuit de pluie et de
+# grande obscurité chercher le Prophète ﷺ pour qu'il prie avec eux ; quand il le trouve, le Prophète ﷺ lui dit « قل »
+# trois fois sans qu'il sache quoi dire ; puis : Al-Ikhlas et les deux sourates de refuge, le soir et le matin, trois
+# fois, « تكفيك من كل شيء ». La narration raconte la nuit et la demande avec ses mots ; le dialogue est lu par une vraie voix.
+# - Les trois sourates récitées entières (Tawfiq : 112 en 10,7 s, 113 en 20,7 s, 114 en 26,6 s), une réplique de sens
+#   après chacune : al-Muyassar sur 112:1 (Il est seul dans la divinité, la seigneurie, les noms et les attributs), 113:2
+#   (le mal de toutes les créatures), 114:4 (le Satan qui souffle à l'heure de l'inattention et se retire au rappel d'Allah).
+# - Répliques de la session, à valider. Les nôtres sans tafsir : « التلات سور معانا من زمان… زي مفاتيح… » (ce qu'on ne
+#   voit pas et l'exemple en une réplique, pour tenir sous 2:05), la phrase à retenir.
+# - Images prévues (des choses et des lieux, personne ; rien sur 112, qui parle d'Allah : le clip seul) : `rain` une
+#   nuit de pluie, un chemin, une lanterne ; `sky` le ciel seul ; `keys` des clés posées près de la porte.
+# - La dernière réplique avant l'appel annonce le short 3 (les pauvres et les riches) : promesse à tenir.
+id: qul
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 93-trial-qul
+cover: { scene: rain, title: "طلب منه يقول حاجة… وهو مش عارف يقول إيه!", tag: "ذكر وحكايته · 2", focus: 1100 }
+publish:
+  title: { en: "He was asked to say something… and didn't know what", ar: "طلب منه يقول حاجة… وهو مش عارف يقول إيه" }
+  part: 2
+  description:
+    ar: "ليلة مطر وضلمة شديدة، والنبي ﷺ طلب من صاحبه يقول حاجة تلات مرات… وهو مش عارف يقول إيه. والإجابة: تلات سور بنحفظها من وإحنا صغيرين، الصبح وبالليل (جامع الترمذي 3575)."
+    en: "A night of rain and deep darkness: three times the Prophet ﷺ asked his companion to say something, and he did not know what to say. The answer: three surahs we have known since childhood, morning and evening (Jami' at-Tirmidhi 3575)."
+segments:
+  - narration: open
+    scene: rain
+    sources: [hadith.tirmidhi.3575]
+    lines:
+      - ar: "النبي صلى الله عليه وسلم طلب من صاحبه يقول حاجة… وهو مش عارف يقول إيه!"
+        en: "The Prophet ﷺ asked his companion to say something… and he didn't know what to say!"
+      - ar: "ليلة مطر وضلمة شديدة… كانوا بيدوّروا عليه عشان يصلي بيهم."
+        en: "A night of rain and deep darkness… they were looking for him to lead them in prayer."
+      - ar: "والإجابة؟ تلات سور بتحفظها. اسمع:"
+        en: "And the answer? Three surahs you know by heart. Listen:"
+  - reading: hadith.tirmidhi.3575
+    scene: rain
+  - verses: [quran.112.1, quran.112.2, quran.112.3, quran.112.4]
+    scene: sky
+  - narration: one
+    scene: sky
+    sources: [tafsir.muyassar.112.1]
+    lines:
+      - ar: "الأولى: ربنا واحد… ما حدش يشاركه في أي حاجة."
+        en: "The first: God is One… no one shares anything with Him."
+  - verses: [quran.113.1, quran.113.2, quran.113.3, quran.113.4, quran.113.5]
+    scene: rain
+  - narration: two
+    scene: rain
+    sources: [tafsir.muyassar.113.2]
+    lines:
+      - ar: "التانية: بتستعيذ بيه… من شر كل اللي خلقه."
+        en: "The second: you seek refuge in Him… from the evil of all He created."
+  - verses: [quran.114.1, quran.114.2, quran.114.3, quran.114.4, quran.114.5, quran.114.6]
+    scene: sky
+  - narration: three
+    scene: sky
+    sources: [tafsir.muyassar.114.4]
+    lines:
+      - ar: "والتالتة: من الوسواس… اللي بيوسوس لما تغفل… ويستخبّى لما تذكر ربنا."
+        en: "And the third: from the whisperer… who whispers when you're heedless… and hides when you remember God."
+  - narration: depth
+    scene: keys
+    lines:
+      - ar: "وإحنا كده: التلات سور معانا من زمان… زي مفاتيح عمرنا ما فتحنا بيها الباب ده."
+        en: "And that's us: these three surahs have been with us for years… like keys we never opened this door with."
+  - narration: close
+    scene: keys
+    lines:
+      - ar: "اللي حافظه من وإنت صغير… فيه كفايتك."
+        en: "What you've known since you were little… is enough for you."
+      - ar: "والجاية: الفقرا اشتكوا… الأغنيا سبقونا!"
+        en: "Next: the poor complained… the rich have got ahead of us!"
+      - ar: "تابعنا عشان تعرف ردّه."
+        en: "Follow us to hear his answer."

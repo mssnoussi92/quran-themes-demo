@@ -195,6 +195,13 @@ def add_runs(into: dict, words: list[str], owner: str, other: list[str] | None =
             into.setdefault(run, owner)
 
 
+def add_reading(into: dict, src: dict, sid: str) -> None:
+    """The runs of the words a hadith card shows, its formulas apart (« صلى الله عليه وسلم » after his name), as for a
+    report told: every line says them too, and they are not a quotation of the hadith."""
+    for piece in FORMULA.split(fold(shown_words(src))):
+        add_runs(into, words_of(piece), sid)
+
+
 def dagger_as_alef(text: str) -> str:
     return text.replace("\u0640\u0670", "ا").replace("\u0670", "ا")
 
@@ -504,7 +511,7 @@ class Checker:
             if "reading" in seg:
                 src = self.quoted(file, seg["reading"], "reading", seg.get("part"))
                 if src:     # the whole hadith, even when only a part is read: the voice says none of its words
-                    add_runs(hadiths, words_of(shown_words(self.repo.sources[seg["reading"]])), seg["reading"])
+                    add_reading(hadiths, self.repo.sources[seg["reading"]], seg["reading"])
         for seg in segments:
             if "sources" in seg:
                 if "narration" in seg:
@@ -618,7 +625,7 @@ class Checker:
                 if "reading" in seg:
                     src = self.quoted(file, seg["reading"], "reading", seg.get("part"))
                     if src:     # the whole hadith, even when only a part is read
-                        add_runs(hadiths, words_of(shown_words(self.repo.sources[seg["reading"]])), seg["reading"])
+                        add_reading(hadiths, self.repo.sources[seg["reading"]], seg["reading"])
         for chapter in spec.get("chapters") or []:
             title = chapter.get("title") or {}
             if not title.get("ar") or not title.get("en"):

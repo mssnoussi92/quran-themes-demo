@@ -259,6 +259,28 @@ def test_the_voice_tells_a_report_and_never_reads_it(copy):
     assert ("hadith.muslim.863a" in said or "hadith.bukhari.936" in said) and line in done.stdout
 
 
+def test_a_hadith_read_keeps_its_words_and_not_the_blessing(copy):
+    """The words of a hadith read by a real voice are never said by the synthetic one; the blessing after the
+    Prophet's name ﷺ, in every line and in the hadith's words too, is not a quotation of it (as for a report told).
+    The card of Muslim 2664 is made to show its whole text, chain and blessing included; no text is typed here."""
+    path = copy.root / "content" / "sources" / "hadith.yaml"
+    entries = yaml.safe_load(path.read_text(encoding="utf-8"))
+    entry = next(e for e in entries if e["id"] == "hadith.muslim.2664")
+    assert "صلى الله عليه وسلم" in entry["text_ar"]
+    entry["excerpt_ar"] = entry["text_ar"]
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    line = next(l["ar"] for s in copy.load("content/trial/law.yaml")["segments"] for l in s.get("lines") or []
+                if "صلى الله عليه وسلم" in l["ar"])
+    done = copy.rules("--film", "qadar", "--draft")
+    assert "the synthetic voice says" not in done.stdout, done.stdout[-2500:]     # the blessing alone: accepted
+    assert line in (copy.root / "content" / "trial" / "law.yaml").read_text(encoding="utf-8")
+    words = [w for w in entry["text_ar"].rsplit("وسلم", 1)[1].split() if re.search("[\u0621-\u064a]", w)][:5]
+    copy.change_line("law", "turn", 0, lambda old: old + " " + " ".join(words))
+    done = copy.rules("--film", "qadar", "--draft")
+    refused(done, "the synthetic voice says")
+    assert "hadith.muslim.2664" in done.stdout
+
+
 def test_a_passage_is_verses_that_follow_one_another_with_cuts_that_touch(copy):
     spec = copy.load("content/trial/duha.yaml")
     first = next(s for s in spec["segments"] if "verses" in s)

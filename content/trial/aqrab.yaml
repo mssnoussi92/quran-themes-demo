@@ -1,0 +1,76 @@
+# « ذكر وحكايته », short 1 (pilote, 2026-11-17 ; content/trial/dhikr.yaml, docs/themes.md) : le dhikr du soir de Muslim 2709.
+# Le fait : un homme vient dire au Prophète ﷺ qu'un scorpion l'a piqué la nuit d'avant ; il lui répond que s'il avait dit,
+# le soir venu, « أعوذ بكلمات الله التامات من شر ما خلق », il ne lui aurait pas nui (récit d'Abou Hourayra, à la fin de la
+# narration 1 de Muslim 2709 ; la narration le raconte avec ses mots, la réponse est lue par une vraie voix).
+# - Les mêmes mots, « من شر ما خلق », sont 113:2 : 113:1-3 récités (la sourate continue après 113:3, « ومن شر النفاثات… » :
+#   arrêt à signaler au propriétaire ; la sourate entière est dans le short suivant).
+# - Le sens (as-Sa'di) : 113:2 couvre tout ce qu'Allah a créé, hommes, djinns et animaux, et l'on cherche refuge auprès de
+#   leur Créateur du mal qui est en eux ; 113:3, la nuit, quand se répandent les esprits mauvais et les animaux nuisibles.
+# - Répliques de la session, à valider. Les nôtres sans tafsir : « بنفتكر ربنا بعد اللدغة… » (ce qu'on ne voit pas), la
+#   porte fermée (l'exemple), la phrase à retenir.
+# - Images prévues (des choses et des lieux, personne) : `sting` un scorpion en silhouette sur une pierre, la nuit ;
+#   `dusk` le ciel du soir ; `door` une porte fermée, une lampe allumée derrière la fenêtre.
+# - La dernière réplique avant l'appel annonce le short 2 (« قل » trois fois, une nuit de pluie) : promesse à tenir.
+id: aqrab
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 92-trial-aqrab
+cover: { scene: sting, title: "عقرب لدغته بالليل… والرد جملة واحدة", tag: "ذكر وحكايته · 1", focus: 1100 }
+publish:
+  title: { en: "Stung by a scorpion at night… the answer was one sentence", ar: "عقرب لدغته بالليل… والرد جملة واحدة" }
+  part: 1
+  description:
+    ar: "عقرب لدغت راجل بالليل، فجه للنبي ﷺ يشتكي… والرد كان جملة يقولها لما المسا يدخل (صحيح مسلم 2709). وآخرها في القرآن: «من شر ما خلق» (الفلق 2)."
+    en: "A scorpion stung a man at night, and he came to the Prophet ﷺ to complain. The answer was one sentence to say when evening comes (Sahih Muslim 2709), and its last words are in the Quran: \"From the evil of that which He created\" (113:2)."
+segments:
+  - narration: open
+    scene: sting
+    sources: [hadith.muslim.2709a]
+    lines:
+      - ar: "عقرب لدغت راجل بالليل… فجه للنبي صلى الله عليه وسلم يشتكي."
+        en: "A scorpion stung a man at night… so he came to the Prophet ﷺ to complain."
+      - ar: "والرد كان جملة واحدة… هتحتاجها كل ليلة."
+        en: "And the answer was one sentence… you'll need it every night."
+      - ar: "اسمع النبي صلى الله عليه وسلم قاله إيه:"
+        en: "Hear what the Prophet ﷺ told him:"
+  - reading: hadith.muslim.2709a
+    part: answer
+    scene: sting
+  - narration: turn
+    scene: dusk
+    lines:
+      - ar: "وآخر الذكر ده… في سورة بتحفظها من وإنت صغير:"
+        en: "And the end of this dhikr… is in a surah you've known since you were little:"
+  - verses: [quran.113.1, quran.113.2, quran.113.3]
+    scene: dusk
+  - narration: meaning
+    scene: dusk
+    sources: [tafsir.saadi.113.2, tafsir.saadi.113.3]
+    lines:
+      - ar: "يعني: بتلجأ لربنا… من شر كل حاجة خلقها: إنس، وجن، وحيوانات."
+        en: "Meaning: you turn to God for refuge… from the evil of all He created: people, jinn and animals."
+      - ar: "والليل بالذات… وقت ما الحيوانات المؤذية بتنتشر."
+        en: "And the night above all… when harmful creatures spread out."
+  - narration: depth
+    scene: sting
+    lines:
+      - ar: "الراجل جه بعد اللدغة… والرد كان عن اللي قبلها."
+        en: "The man came after the sting… and the answer was about before it."
+      - ar: "وإحنا كده: بنفتكر ربنا بعد اللي يحصل… والذكر مكانه قبله."
+        en: "And that's us: we remember God after something happens… when the dhikr belongs before it."
+  - narration: example
+    scene: door
+    lines:
+      - ar: "زي ما كل ليلة بتتأكد إن الباب مقفول… من غير ما تفكر."
+        en: "Like every night you make sure the door is locked… without even thinking."
+      - ar: "والذكر ده أسهل من كده… وبننساه."
+        en: "And this dhikr is easier than that… and we forget it."
+  - narration: close
+    scene: door
+    lines:
+      - ar: "قولها لما المسا يدخل… قبل اللدغة، مش بعدها."
+        en: "Say it when evening comes… before the sting, not after."
+      - ar: "والجاية: ليلة مطر وضلمة… والنبي صلى الله عليه وسلم طلب من صاحبه يقول حاجة… وهو مش عارف يقول إيه."
+        en: "Next: a night of rain and darkness… the Prophet ﷺ asked his companion to say something… and he didn't know what to say."
+      - ar: "تابعنا عشان تعرف الحكاية."
+        en: "Follow us to hear the story."

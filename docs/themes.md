@@ -1095,6 +1095,19 @@ son récit, en shorts sans film ; **rester dans la politique** (Bukhari, Muslim,
 al-Albani), sans l'élargir ; **le pilote : le scorpion, « قل » trois fois, les riches et les pauvres** ; **le nom :
 « ذكر وحكايته »**. Ensuite : le script des trois shorts (skill `write-hook`), à valider avant toute voix.
 
+**Le script pilote** (écrit par la session le 2026-11-17, à valider ; `docs/scripts/dhikr.md`, `content/trial/dhikr.yaml`,
+`aqrab`, `qul`, `dathur`) : 1:27, 2:04, 1:59 estimés. **Deux écarts à la fiche, dits avec le script** : 62:4 n'est pas
+récité dans le short 3, parce qu'al-Muyassar y lit l'envoi du Prophète ﷺ et non ce récit ; à sa place, **57:21**, « سابقوا
+إلى مغفرة… », le verset de la course, qui se ferme sur la même phrase (on ne dit pas que le Prophète ﷺ le citait : la phrase
+est aussi en 5:54 et 62:4) ; Muslim 597 (l'écume de la mer) n'y entre pas (2:20 avec lui) et reste pour un short suivant.
+Le short 1 récite 113:1-3 (la sourate continue après 113:3 ; elle est entière dans le short 2). **Préparé sans voix** :
+dix-neuf sources proposées au registre (trois hadiths, seize versets, six passages de tafsir) ; les lectures trouvées et
+coupées, entendues mot pour mot par Whisper (Muslim 2709, livre 48 : 8,9 s ; Tirmidhi 3575 : 11,3 s ; Muslim 595, livre
+5 : 23,4 s et 3,8 s), proposées ; les coupes de Tawfiq (112, 113, 114 entières, 57:21) posées à la main sur le creux du son,
+toutes entendues. La règle des fichiers comptait la formule « صلى الله عليه وسلم » d'un hadith lu comme une citation dite
+par la voix : elle l'écarte désormais comme pour un récit raconté (`tools/trial/rules.py`, test ajouté). Aucune voix avant
+son « je valide le script ».
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

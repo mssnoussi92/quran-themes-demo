@@ -1432,3 +1432,81 @@
   status: proposed
   notes: "« مثبتا لكمال عقله ورزانته » (معاك 5 ثواني, hudhud)"
   text_ar: وقال مثبتا لكمال عقله ورزانته سَنَنْظُرُ أَصَدَقْتَ أَمْ كُنْتَ مِنَ الْكَاذِبِينَ
+- id: tafsir.saadi.113.2
+  type: tafsir
+  ref: {edition: saadi, surah: 113, ayah: 2}
+  url: https://quran.com/113:2/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/113:2
+    edition: السعدي Al-Sa'di
+    verses: ["113:2"]
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "short aqrab : « من شر ما خلق » couvre tout ce qu'Allah a créé, hommes, djinns, animaux ; on cherche refuge auprès de leur Créateur (« ذكر وحكايته »)"
+  text_ar: '{ مِنْ شَرِّ مَا خَلَقَ } وهذا يشمل جميع ما خلق الله، من إنس، وجن، وحيوانات، فيستعاذ بخالقها، من الشر الذي فيها،'
+- id: tafsir.saadi.113.3
+  type: tafsir
+  ref: {edition: saadi, surah: 113, ayah: 3}
+  url: https://quran.com/113:3/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/113:3
+    edition: السعدي Al-Sa'di
+    verses: ["113:3"]
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "short aqrab : la nuit, quand se répandent les esprits mauvais et les animaux nuisibles (« ذكر وحكايته »)"
+  text_ar: 'ثم خص بعد ما عم، فقال: { وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ } أي: من شر ما يكون في الليل، حين يغشى الناس، وتنتشر فيه كثير من الأرواح الشريرة، والحيوانات المؤذية.'
+- id: tafsir.muyassar.112.1
+  type: tafsir
+  ref: {edition: muyassar, surah: 112, ayah: 1}
+  url: https://quran.com/112:1/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/112:1
+    edition: Tafsir Muyassar
+    verses: ["112:1"]
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "short qul : Il est seul dans la divinité, la seigneurie, les noms et les attributs (« ذكر وحكايته »)"
+  text_ar: 'قل -أيها الرسول-: هو الله المتفرد بالألوهية والربوبية والأسماء والصفات، لا يشاركه أحد فيها.'
+- id: tafsir.muyassar.113.2
+  type: tafsir
+  ref: {edition: muyassar, surah: 113, ayah: 2}
+  url: https://quran.com/113:2/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/113:2
+    edition: Tafsir Muyassar
+    verses: ["113:2"]
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "short qul : du mal de toutes les créatures et de leur nuisance (« ذكر وحكايته »)"
+  text_ar: من شر جميع المخلوقات وأذاها.
+- id: tafsir.muyassar.114.4
+  type: tafsir
+  ref: {edition: muyassar, surah: 114, ayah: 4}
+  url: https://quran.com/114:4/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/114:4
+    edition: Tafsir Muyassar
+    verses: ["114:4"]
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "short qul : du mal du Satan qui souffle à l'heure de l'inattention et se retire au rappel d'Allah (« ذكر وحكايته »)"
+  text_ar: من أذى الشيطان الذي يوسوس عند الغفلة، ويختفي عند ذكر الله.
+- id: tafsir.muyassar.57.21
+  type: tafsir
+  ref: {edition: muyassar, surah: 57, ayah: 21}
+  url: https://quran.com/57:21/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/57:21
+    edition: Tafsir Muyassar
+    verses: ["57:21"]
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "short dathur : rivalisez vers les causes du pardon, le repentir et l'éloignement des péchés ; le Paradis ne s'obtient que par la miséricorde et la faveur d'Allah, et l'œuvre bonne (« ذكر وحكايته »)"
+  text_ar: سابقوا -أيها الناس- في السعي إلى أسباب المغفرة من التوبة النصوح والابتعاد عن المعاصي؛ لِتُجْزَوْا مغفرة من ربكم وجنة عرضها كعرض السماء والأرض، وهي مُعَدَّة للذين وحَّدوا الله واتَّبَعوا رسله، ذلك فضل الله الذي يؤتيه مَن يشاء مِن خلقه، فالجنة لا تُنال إلا برحمة الله وفضله، والعمل الصالح. والله ذو الإحسان والعطاء الكثير الواسع على عباده المؤمنين.

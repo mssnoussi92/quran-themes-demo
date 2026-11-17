@@ -3118,3 +3118,243 @@
   notes: "« سننظر أصدقت أم كنت من الكاذبين » : Soulayman vérifie la nouvelle de la huppe (« معاك 5 ثواني », short 6, hudhud) ; récité après 27:22"
   text_ar: ۞ قَالَ سَنَنظُرُ أَصَدَقْتَ أَمْ كُنتَ مِنَ ٱلْكَـٰذِبِينَ
   text_en: '[Solomon] said, "We will see whether you were truthful or were of the liars.'
+- id: quran.112.1
+  type: ayah
+  ref: {surah: 112, ayah: 1}
+  url: https://quran.com/112/1
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=112:1
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=112:1
+    translator: Saheeh International
+    surah_ar: الإخلاص
+    surah_en: Al-Ikhlas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Ikhlas 112:1 (« ذكر وحكايته », short qul : la sourate entière, l'une des trois du hadith Tirmidhi 3575)"
+  text_ar: قُلْ هُوَ ٱللَّهُ أَحَدٌ
+  text_en: Say, "He is Allāh, [who is] One,
+- id: quran.112.2
+  type: ayah
+  ref: {surah: 112, ayah: 2}
+  url: https://quran.com/112/2
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=112:2
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=112:2
+    translator: Saheeh International
+    surah_ar: الإخلاص
+    surah_en: Al-Ikhlas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Ikhlas 112:2 (« ذكر وحكايته », short qul : la sourate entière, l'une des trois du hadith Tirmidhi 3575)"
+  text_ar: ٱللَّهُ ٱلصَّمَدُ
+  text_en: Allāh, the Eternal Refuge.
+- id: quran.112.3
+  type: ayah
+  ref: {surah: 112, ayah: 3}
+  url: https://quran.com/112/3
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=112:3
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=112:3
+    translator: Saheeh International
+    surah_ar: الإخلاص
+    surah_en: Al-Ikhlas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Ikhlas 112:3 (« ذكر وحكايته », short qul : la sourate entière, l'une des trois du hadith Tirmidhi 3575)"
+  text_ar: لَمْ يَلِدْ وَلَمْ يُولَدْ
+  text_en: He neither begets nor is born,
+- id: quran.112.4
+  type: ayah
+  ref: {surah: 112, ayah: 4}
+  url: https://quran.com/112/4
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=112:4
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=112:4
+    translator: Saheeh International
+    surah_ar: الإخلاص
+    surah_en: Al-Ikhlas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Ikhlas 112:4 (« ذكر وحكايته », short qul : la sourate entière, l'une des trois du hadith Tirmidhi 3575)"
+  text_ar: وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ
+  text_en: Nor is there to Him any equivalent."
+- id: quran.113.1
+  type: ayah
+  ref: {surah: 113, ayah: 1}
+  url: https://quran.com/113/1
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=113:1
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=113:1
+    translator: Saheeh International
+    surah_ar: الفلق
+    surah_en: Al-Falaq
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Falaq 113:1 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575) ; 113:1-3 aussi dans le short aqrab (« من شر ما خلق », les mots du dhikr de Muslim 2709))"
+  text_ar: قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ
+  text_en: Say, "I seek refuge in the Lord of daybreak
+- id: quran.113.2
+  type: ayah
+  ref: {surah: 113, ayah: 2}
+  url: https://quran.com/113/2
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=113:2
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=113:2
+    translator: Saheeh International
+    surah_ar: الفلق
+    surah_en: Al-Falaq
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Falaq 113:2 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575) ; 113:1-3 aussi dans le short aqrab (« من شر ما خلق », les mots du dhikr de Muslim 2709))"
+  text_ar: مِن شَرِّ مَا خَلَقَ
+  text_en: From the evil of that which He created
+- id: quran.113.3
+  type: ayah
+  ref: {surah: 113, ayah: 3}
+  url: https://quran.com/113/3
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=113:3
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=113:3
+    translator: Saheeh International
+    surah_ar: الفلق
+    surah_en: Al-Falaq
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Falaq 113:3 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575) ; 113:1-3 aussi dans le short aqrab (« من شر ما خلق », les mots du dhikr de Muslim 2709))"
+  text_ar: وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ
+  text_en: And from the evil of darkness when it settles
+- id: quran.113.4
+  type: ayah
+  ref: {surah: 113, ayah: 4}
+  url: https://quran.com/113/4
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=113:4
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=113:4
+    translator: Saheeh International
+    surah_ar: الفلق
+    surah_en: Al-Falaq
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Falaq 113:4 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575) ; 113:1-3 aussi dans le short aqrab (« من شر ما خلق », les mots du dhikr de Muslim 2709))"
+  text_ar: وَمِن شَرِّ ٱلنَّفَّـٰثَـٰتِ فِى ٱلْعُقَدِ
+  text_en: And from the evil of the blowers in knots
+- id: quran.113.5
+  type: ayah
+  ref: {surah: 113, ayah: 5}
+  url: https://quran.com/113/5
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=113:5
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=113:5
+    translator: Saheeh International
+    surah_ar: الفلق
+    surah_en: Al-Falaq
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Falaq 113:5 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575) ; 113:1-3 aussi dans le short aqrab (« من شر ما خلق », les mots du dhikr de Muslim 2709))"
+  text_ar: وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ
+  text_en: And from the evil of an envier when he envies."
+- id: quran.114.1
+  type: ayah
+  ref: {surah: 114, ayah: 1}
+  url: https://quran.com/114/1
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=114:1
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=114:1
+    translator: Saheeh International
+    surah_ar: الناس
+    surah_en: An-Nas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "An-Nas 114:1 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575))"
+  text_ar: قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ
+  text_en: Say, "I seek refuge in the Lord of mankind,
+- id: quran.114.2
+  type: ayah
+  ref: {surah: 114, ayah: 2}
+  url: https://quran.com/114/2
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=114:2
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=114:2
+    translator: Saheeh International
+    surah_ar: الناس
+    surah_en: An-Nas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "An-Nas 114:2 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575))"
+  text_ar: مَلِكِ ٱلنَّاسِ
+  text_en: The Sovereign of mankind,
+- id: quran.114.3
+  type: ayah
+  ref: {surah: 114, ayah: 3}
+  url: https://quran.com/114/3
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=114:3
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=114:3
+    translator: Saheeh International
+    surah_ar: الناس
+    surah_en: An-Nas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "An-Nas 114:3 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575))"
+  text_ar: إِلَـٰهِ ٱلنَّاسِ
+  text_en: The God of mankind,
+- id: quran.114.4
+  type: ayah
+  ref: {surah: 114, ayah: 4}
+  url: https://quran.com/114/4
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=114:4
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=114:4
+    translator: Saheeh International
+    surah_ar: الناس
+    surah_en: An-Nas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "An-Nas 114:4 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575))"
+  text_ar: مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ
+  text_en: From the evil of the retreating whisperer -
+- id: quran.114.6
+  type: ayah
+  ref: {surah: 114, ayah: 6}
+  url: https://quran.com/114/6
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=114:6
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=114:6
+    translator: Saheeh International
+    surah_ar: الناس
+    surah_en: An-Nas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "An-Nas 114:6 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575))"
+  text_ar: مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ
+  text_en: From among the jinn and mankind".
+- id: quran.57.21
+  type: ayah
+  ref: {surah: 57, ayah: 21}
+  url: https://quran.com/57/21
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=57:21
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=57:21
+    translator: Saheeh International
+    surah_ar: الحديد
+    surah_en: Al-Hadid
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Hadid 57:21 (« ذكر وحكايته », short dathur : « سابقوا إلى مغفرة… ذلك فضل الله يؤتيه من يشاء », la phrase que le Prophète ﷺ dit aux pauvres (Muslim 595) ferme ce verset de la course)"
+  text_ar: سَابِقُوٓا۟ إِلَىٰ مَغْفِرَةٍ مِّن رَّبِّكُمْ وَجَنَّةٍ عَرْضُهَا كَعَرْضِ ٱلسَّمَآءِ وَٱلْأَرْضِ أُعِدَّتْ لِلَّذِينَ ءَامَنُوا۟ بِٱللَّهِ وَرُسُلِهِۦ ۚ ذَٰلِكَ فَضْلُ ٱللَّهِ يُؤْتِيهِ مَن يَشَآءُ ۚ وَٱللَّهُ ذُو ٱلْفَضْلِ ٱلْعَظِيمِ
+  text_en: Race [i.e., compete] toward forgiveness from your Lord and a Garden whose width is like the width of the heavens and earth, prepared for those who believed in Allāh and His messengers. That is the bounty of Allāh which He gives to whom He wills, and Allāh is the possessor of great bounty.
