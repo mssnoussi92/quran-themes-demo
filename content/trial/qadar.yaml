@@ -26,6 +26,10 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 # sources et 2 lectures) : lu comme le film tel que livré sauf sa dernière réplique ; ses répliques propres sont redites
 # par la voix pour cette réplique (une requête) : la voix du film et sa fin s'entendent sur la vidéo refaite.
 validated: { by: mssnoussi92, on: 2026-11-17, what: [montage, thumbnail, publish, ambience] }
+# Le film en 9:16 pour Facebook et son jumeau TikTok signé @quran.words.daily (son choix, 2026-11-17, question à choix :
+# « oui, les deux ») : rendus à part (`only: tall`, `only: tall-tiktok`), après la voix refaite pour la dernière réplique.
+tall:
+  tiktok: { asked: 2026-11-17 }
 files: qadar                     # qadar-film-16x9.mp4, qadar-short-<n>-<id>.mp4
 title: { ar: "مخيّر ولا مسيّر؟", en: "Free will or fate?" }
 handle: "@quran_words_daily"
