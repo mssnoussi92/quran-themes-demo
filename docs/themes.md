@@ -1049,6 +1049,16 @@ Bukhari 216 : `0216.mp3`, 21,40-33,68 s, de « يعذبان » à « بالنم�
 `namima`, `riya`), les textes de voix 95 à 97 (92 à 94 pris par la série des adhkar d'une autre session), le script (`docs/scripts/hayyin.md`). Fond provisoire (la nuit générée) ; ni
 dessins, ni clips, ni ambiances. **À valider par le propriétaire avant toute voix.**
 
+**Ses réponses sur le script (2026-11-17, questions à choix)** : il **relit** le script ; la ghiba **garde 2:08**, une version
+courte pour Facebook et Instagram plus tard (l'outil `cut`) ; **les images de style tout de suite**. **Fait** : les dessins
+(`video/src/trial/Hayyin.tsx`, la silhouette de `Lens.tsx`) : le café le soir, trois silhouettes penchées, la chaise vide sous
+sa propre lampe, puis de près (la veste et les clés à sa place : il est sorti, il revient), le café vu de la rue pour 49:12,
+la poignée de main du matin ; le téléphone (la capture, le transfert, la confirmation), celui qui le reçoit, deux maisons et
+un chemin où marche une silhouette (« مشّاء »), deux tombes au crépuscule sous les palmiers, personne ; la caisse « صدقة »
+filmée, les cœurs et le compteur, la roche de 2:264 sous la pluie (la poussière emportée à « فأصابه وابل »), la même
+poussière qui a l'air d'une terre et sa coupe ; fond tout dessiné. Brouillons sans voix : 2:10, 1:28, 1:55. Planches :
+`docs/retention/hayyin-style-1-ghiba.jpg`, `-2-namima.jpg`, `-3-riya.jpg`, couvertures `hayyin-covers.jpg`.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
