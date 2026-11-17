@@ -493,3 +493,11 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   quran-reels dit quoi faire selon le moment (maintenant avec lui, ou dimanche par la revue automatique de 09:23, et une
   question à choix si ce n'est pas clair), et part des points notés pour elle dans `docs/insights.md` de quran-reels.
   Ici, un skill du même nom y renvoie, comme `record-stats`.
+
+## Les sessions fusionnent leurs PR (2026-11-17)
+
+- **Demande du propriétaire** : « que toutes les sessions suivent la merge et la mergent automatiquement quand les
+  checks passent ». Question à choix sur les PR qui sont sa validation : « Non, elle attend ma parole ». Règle dans
+  `CLAUDE.md` (« Ce qui vaut toujours »), ici et dans quran-reels : la session attend ses checks (`validate.yml`),
+  fusionne quand ils sont verts, corrige quand ils sont rouges ; une PR qui porte une décision de lui pas encore
+  donnée attend son « je valide ».
