@@ -1,7 +1,13 @@
-# معاك ٥ ثواني · You have 5 seconds (nom de travail)
+# معاك ٥ ثواني · You have 5 seconds
 
-**Script pilote proposé par la session le 2026-11-17, à valider par le propriétaire ; aucune voix avant son « je valide
-le script ».** Le sujet a été choisi par le propriétaire le même jour, sur les recommandations de la session (fiche :
+**Script pilote validé par le propriétaire le 2026-11-17** (questions à choix nommant chaque partie) : shorts 1 et 2,
+« je valide, mais si on peut, on spécifie le prénom du fils d'Adam » ; short 3, « garder « الاتنين », je valide son
+script » ; le nom « معاك ٥ ثواني » ; la durée, « environ 40 s, comme écrit ». Lu ainsi : les trois scripts validés tels
+qu'ici, avec le prénom qu'il a demandé, **هابيل**, écrit dans le choix et dit dans la réplique du short 3 (d'après
+al-Muyassar sur 5:27 : « خَبَر ابنَيْ آدم قابيل وهابيل… فتقبَّل الله قُربان هابيل » ; Ibn Kathir le donne comme le nom
+connu chez beaucoup de prédécesseurs ; le Coran ne nomme pas les deux frères). Aucune voix n'est encore faite.
+
+Proposé par la session le même jour. Le sujet a été choisi par le propriétaire le même jour, sur les recommandations de la session (fiche :
 `docs/themes.md`, « Série proposée : le quiz ») : **trois formats, un short chacun** (A le sens d'un mot, B la fin d'un
 verset, C qui l'a dit), **une question par short, environ 30 s**, **une phrase de voix D pour le sens** (la question
 reste écrite et muette), **pas de demande de commentaire** (« اكتب إجابتك… »), une vraie question ouverte à la fin.
@@ -36,7 +42,7 @@ As-Sayegh mesurée sur mp3quran (read 17). Durées estimées : environ dix lettr
 ouverte (qui resterait écrite).
 
 **Le short 3 dépasse la minute** : deux versets entiers (44 s). C'est le prix de sa réponse, « الاتنين » : la phrase est
-mot pour mot dans les deux versets. Une question sur 59:16 seul serait fausse si « ابن سيدنا آدم » était un mauvais choix.
+mot pour mot dans les deux versets. Une question sur 59:16 seul serait fausse si « هابيل » était un mauvais choix.
 Plus court : la huppe (27:22, 14,8 s : « أَحَطتُ بِمَا لَمْ تُحِطْ بِهِۦ », dite par la huppe à Soulayman, al-Muyassar),
 environ 0:40, mais sans la leçon. À son choix.
 
@@ -114,8 +120,9 @@ Diable, ni aucune violence.
 **Muet · `ask`** (première image ; 5 s de compteur ; aucune voix)
 - Écrit : « إِنِّىٓ أَخَافُ ٱللَّهَ رَبَّ ٱلْعَـٰلَمِينَ » (59:16, du registre) · « مين قالها في القرآن؟ »  
   *Who said this in the Quran?*
-- Les trois choix : **ابن سيدنا آدم** · **الشيطان** · **الاتنين**  
-  *a son of Adam · Satan · both*
+- Les trois choix : **هابيل ابن سيدنا آدم** · **الشيطان** · **الاتنين**  
+  *Abel, son of Adam · Satan · both*  
+  Le prénom (demande du propriétaire) : al-Muyassar sur 5:27, référence écrite sous le choix à la réponse.
 
 **Muet · `answer`** (le choc ; « الاتنين » en or ; les deux autres ne sont pas barrés, ils s'allument aussi : chacun
 est la moitié de la réponse ; écrit dessous : « الاتنين قالوها… بنفس الكلام » · *Both said it… in the very same words*)
@@ -126,8 +133,8 @@ quand il est récité)
 **verset 59:16, récité** (image : le verset à gauche ; la même phrase en or)
 
 **narration · `meaning`** (les deux versets restent face à face ; la référence écrite sous chaque réplique)
-- ابن سيدنا آدم… أخوه هدده بالقتل… وما مدّش إيده عليه… عشان بيخاف من ربنا.  
-  *A son of Adam… his brother threatened to kill him… he didn't raise his hand… because he feared God.* · Ibn Kathir et as-Sa'di sur 5:28
+- هابيل ابن سيدنا آدم… أخوه هدده بالقتل… وما مدّش إيده عليه… عشان بيخاف من ربنا.  
+  *Abel, son of Adam… his brother threatened to kill him… he didn't raise his hand… because he feared God.* · al-Muyassar sur 5:27 (le prénom) ; Ibn Kathir et as-Sa'di sur 5:28
 - والشيطان… قالها بعد ما دعا الإنسان للكفر… واتبرّى منه.  
   *And Satan… said it after calling man to disbelief… and disowning him.* · al-Muyassar et as-Sa'di sur 59:16 ; Ibn Kathir (« تبرأ منه وتنصل »)
 - الخوف اللي بجد… بيمنعك قبل الغلط… مش كلمة بتتقال بعده.  
@@ -145,8 +152,8 @@ quand il est récité)
   la réponse (barré, or, « les deux »), la fin à remplir (B) ; repris de `Count.tsx` (compteur) et `Farq.tsx` (deux versets
   face à face).
 - **Le son** : le tic du compteur et le choc existent (`sfx.py`) ; une ambiance par clip.
-- **Les sources** : 12:19, 5:118, 5:28, 59:16 (versets) ; les morceaux écrits de 39:53 et 2:127 ; huit passages de tafsir
-  (al-Muyassar 12:19, 59:16 ; as-Sa'di 12:19, 5:118, 5:28, 59:16 ; Ibn Kathir 5:28, 59:16).
+- **Les sources** : 12:19, 5:118, 5:28, 59:16 (versets) ; les morceaux écrits de 39:53 et 2:127 ; neuf passages de tafsir
+  (al-Muyassar 12:19, 5:27, 59:16 ; as-Sa'di 12:19, 5:118, 5:28, 59:16 ; Ibn Kathir 5:28, 59:16).
 - **Les récitations** : la coupe de 12:19 à l'arrêt après « غُلَـٰمٌ », et les temps des mots pour mettre le mot en or.
 - **La voix** : trois requêtes, une par short (le palier gratuit en a dix par jour).
 - **Le dessin** : seulement pour le short 1 (le puits, le seau, la caravane, une petite voiture dans le choix).
