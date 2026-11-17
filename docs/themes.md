@@ -813,6 +813,55 @@ Les trains et l'arc sont les métaphores de l'auteur des reels : on ne les repre
   GitHub Actions. Le stock du calendrier tient jusqu'au 1er janvier : à comparer aux shorts longs quand les premières
   mesures arrivent, pas à ajouter tout de suite.
 
+## Film : « مخيّر ولا مسيّر؟ » (`qadar`, idée du propriétaire, 2026-11-17)
+
+**Sa demande** : « je veux créer un film sur الانسان مخير او مسير ». **Fiche** (skill `choose-format`, 2026-11-17) :
+
+**Ce que la session lui a opposé** (dit avant de recommander) :
+- **La question est un faux choix d'après nos tafsirs.** As-Sa'di sur 74:56 : « ففيها رد على القدرية… والجبرية الذين يزعمون
+  أنه ليس للعبد مشيئة، ولا فعل حقيقة… فأثبت تعالى للعباد مشيئة حقيقة وفعلا، وجعل ذلك تابعا لمشيئته » ; sur 81:29, il
+  renvoie au même (« رد على فرقتي القدرية النفاة، والقدرية المجبرة كما تقدم مثلها »). Le film répond : ni l'un ni l'autre
+  comme on l'entend, une vraie volonté sous Sa volonté.
+- **Un film qui débat du qadar ferait ce que le Prophète ﷺ a défendu** : Tirmidhi 2133 (il sort, les trouve à se disputer
+  sur le qadar, se fâche : « عزمت عليكم ألا تتنازعوا فيه » ; al-Albani : hasan ; Tirmidhi lui-même : غريب, son rapporteur
+  Salih al-Murri faible). D'où : pas un débat, **la question que les Compagnons ont posée et la réponse qu'ils ont reçue**
+  (Bukhari 4949, 1362, 4945, 6605, 7552 ; Muslim 2647 : « أفلا نتكل على كتابنا وندع العمل؟ » « اعملوا فكل ميسر لما خلق
+  له », puis 92:5-10).
+- **La formule « مخيّر فيما يُحاسب عليه، مسيّر فيما لا يُحاسب عليه »** : un classement de prédicateurs, dans aucun de nos
+  trois tafsirs ; refusée pour la même raison que « أنواع القدر » (`content/wording.yaml`). Notre voix ne la dit pas.
+- **Adam et Moussa (Bukhari 6614) écarté** : il faudrait un charh (pas de type de source pour cela) ; mal entendu, il dit
+  « le qadar excuse le péché », le contraire du film. Les prophètes n'y seraient de toute façon pas dessinés.
+- **Recoupements** : le short 2 du du'a (« كله مكتوب… أدعي ليه؟ », publié le 18 novembre) est le cousin du short 1 (là
+  demander, ici agir ; autre preuve) : son accroche ne doit pas reprendre « كله مكتوب ». Muslim 2664 était dans sabr-03
+  (ancien circuit) : la réécriture de la patience en prendra un autre. 76:30, en réserve pour « سؤال صعب », est absorbé ici.
+
+**Recommandé et choisi : trois idées reçues, version courte (un verset court par short), et le film.**
+
+| Short | L'idée reçue | Le fait qui l'ouvre | Récité, lu | Le sens repose sur | Estimé |
+| --- | --- | --- | --- | --- | --- |
+| 1. `amal` | « مكتوب… يبقى ليه أتعب؟ » | les Compagnons ont posé cette question même | 92:5-10 (20,4 s), Bukhari 4949 lu | as-Sa'di 92:7 (« لأنه أتى بأسباب التيسير، فيسر الله له ذلك »), al-Muyassar 92:5 | 1:15 |
+| 2. `shaa` | « لما ربنا يهديني » | « شاء » deux fois en deux versets : une pour toi, une pour Dieu | 81:28-29 (17,4 s) | as-Sa'di 74:56 et 81:29, al-Muyassar 81:29 | 1:10 |
+| 3. `law` | « لو كنت عملت كذا… » | un mot de deux lettres dont le Prophète ﷺ a dit qu'il ouvre l'œuvre du Shaytan | 57:22 (21,5 s), Muslim 2664 lu (validé) | al-Muyassar 57:22, as-Sa'di 57:23 | 1:20 |
+
+- **Ce qui distingue les parties** : le qadar pris pour excuse avant d'agir, pour ne pas se corriger, et pour se ronger
+  après coup. Les deux premiers, la part qu'on choisit ; le troisième, celle qu'on ne choisit pas.
+- **Le film** (≈ 6 min) ajoute : l'ouverture sur les trois scènes ; Tirmidhi 2133 raconté avec nos mots (référence et
+  jugement d'al-Albani écrits) ; 54:49 ; 6:148 (42,2 s : l'excuse annoncée par le Coran et réfutée, as-Sa'di) ; 57:23 ;
+  76:3 ; la conclusion, Muslim 2664 en entier (avant : « احرص… ولا تعجز » ; après : « قدر الله وما شاء فعل »). Récitation :
+  0:59 dans les shorts, 2:10 en tout.
+- **À faire** : 13 versets et 2 hadiths au registre, 7 passages de tafsir ; coupes de récitation ; une lecture de
+  Bukhari 4949 (skill `find-hadith-recording`) ; trois clips, trois dessins, trois ambiances. **Voix** : quatre requêtes,
+  une journée. **Rendu** : workflow `film`.
+
+**Décisions du propriétaire (2026-11-17, questions à choix)** :
+- **la forme recommandée**, avec sa demande : « il faut avoir des animations, un cas de vie réel (situation) acté pour
+  attirer le spectateur ». Lu par la session comme : chaque short s'ouvre sur une situation de la vie jouée et animée, une
+  scène type (« زي… »), jouée par une silhouette anonyme sans visage (sa règle du 2026-11-15, `Figure` de
+  `video/src/trial/Lens.tsx`) ; pas une histoire vraie (règle des exemples honnêtes) ;
+- **le titre « مخيّر ولا مسيّر؟ »** (ce que les gens cherchent ; la réponse est celle d'as-Sa'di) ;
+- **le script maintenant, la production après les premières mesures** du film du du'a (vers le 24 novembre) ;
+  **publication du lundi 28 au jeudi 31 décembre** (le film le 28, les shorts du 29 au 31).
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
