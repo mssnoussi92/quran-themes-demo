@@ -121,9 +121,9 @@ def prepare(args) -> None:
             elif "verses" in seg and recited is None:
                 # Verses recited in one piece, or one verse cut at a pause sign (`upto`), as in a short: the film of
                 # the cave stops 18:21 before the building over them (tafsir.muyassar.18.21).
-                made = sources.passage(seg["verses"], out_dir, seg.get("upto"))
+                made = sources.passage(seg["verses"], out_dir, seg.get("upto"), film.get("digits"))
             elif "verse" in seg:
-                made = P.verse_segment(recited, seg["verse"], out_dir, episode_name) if recited is not None else sources.verse(seg["verse"], out_dir)
+                made = P.verse_segment(recited, seg["verse"], out_dir, episode_name) if recited is not None else sources.verse(seg["verse"], out_dir, film.get("digits"))
             elif read is None:
                 made = sources.reading(seg["reading"], out_dir, draft=args.draft)
             else:

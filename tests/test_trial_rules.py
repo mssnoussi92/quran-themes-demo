@@ -226,7 +226,7 @@ def test_a_narration_rests_on_a_hadith_or_a_tafsir_of_the_policy(copy):
     set_sources(copy, "caravan", "meaning", ["tafsir.muyassar.39.53"])           # the tafsir of a verse another short recites
     refused(copy.rules("--film", "ayah", "--draft"), "which this short does not recite")
     set_sources(copy, "caravan", "meaning", ["quran.62.11"])                     # a verse is recited, not rested on
-    refused(copy.rules("--film", "ayah", "--draft"), "a narration rests on a hadith or a tafsir")
+    refused(copy.rules("--film", "ayah", "--draft"), "a narration rests on a hadith, a tafsir or a page of fiqh")
     set_sources(copy, "caravan", "meaning", ["tafsir.razi.62.11"])               # not in the registry
     refused(copy.rules("--film", "ayah", "--draft"), "source tafsir.razi.62.11 is not in the registry")
     set_sources(copy, "caravan", "meaning", ["tafsir.muyassar.62.11"])
@@ -494,3 +494,46 @@ def test_a_turn_refused_in_the_narration_only_is_not_checked_on_titles():
     assert len(warned) == 1
     check.wording("f.yaml", "وكلام السعدي عنها.", "description")
     assert len(warned) == 1
+
+
+def test_a_narration_rests_on_a_page_of_fiqh_of_the_policy(copy):
+    set_sources(copy, "caravan", "meaning", ["fiqh.kuwaiti.24.238"])             # no recited verse needed, unlike a tafsir
+    done = copy.rules("--film", "ayah", "--draft")
+    assert done.returncode == 0, done.stdout[-2000:]
+    assert "source fiqh.kuwaiti.24.238" in done.stdout                           # proposed, listed like the others
+    path = copy.root / "content" / "sources" / "fiqh.yaml"
+    entries = yaml.safe_load(path.read_text(encoding="utf-8"))
+    entry = next(e for e in entries if e["id"] == "fiqh.kuwaiti.24.238")
+    text = entry.pop("text_ar")                                                  # a page with no text
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    refused(copy.rules("--film", "ayah", "--draft"), "source fiqh.kuwaiti.24.238 has no text in the registry")
+    entry["text_ar"] = text
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    policy = copy.load("content/policy.yaml")                                    # an edition the owner did not let in
+    del policy["fiqh"]["editions"]["kuwaiti"]
+    copy.dump("content/policy.yaml", policy)
+    refused(copy.rules("--film", "ayah", "--draft"), "fiqh « kuwaiti » is outside content/policy.yaml")
+    assert "fiqh 'kuwaiti' is outside content/policy.yaml" in validate(copy).stdout                # and the registry check says the same
+
+
+def test_the_references_merge_the_pages_of_fiqh_and_follow_the_digits_option(monkeypatch):
+    sources = tool("sources")
+    page = lambda n, text="x": {"id": f"fiqh.kuwaiti.24.{n}", "type": "fiqh", "ref": {"edition": "kuwaiti", "volume": 24, "page": n},
+                                "text_ar": text, "status": "proposed"}
+    monkeypatch.setattr(sources, "_registry", {**sources.registry(), **{f"fiqh.kuwaiti.24.{n}": page(n) for n in (234, 238, 239)}})
+    monkeypatch.setattr(sources, "proposed", [])
+    refs = sources.references(["fiqh.kuwaiti.24.239", "fiqh.kuwaiti.24.238"])
+    assert refs["ar"] == "الموسوعة الفقهية الكويتية ٢٤/٢٣٨–٢٣٩"
+    assert refs["en"] == "Kuwaiti Encyclopedia of Islamic Jurisprudence 24/238–239"
+    apart = sources.references(["fiqh.kuwaiti.24.234", "fiqh.kuwaiti.24.238", "fiqh.kuwaiti.24.239"])
+    assert apart["ar"].endswith("٢٤/٢٣٤، ٢٣٨–٢٣٩") and apart["en"].endswith("24/234, 238–239")
+    assert sources.references(["fiqh.kuwaiti.24.238", "fiqh.kuwaiti.24.239"], "latin")["ar"] == "الموسوعة الفقهية الكويتية 24/238–239"
+    assert sources.num(863) == "٨٦٣" and sources.num(863, "latin") == "863"
+    outside = {**page(238), "id": "fiqh.shafii.24.238", "ref": {"edition": "shafii", "volume": 24, "page": 238}}
+    monkeypatch.setitem(sources.registry(), outside["id"], outside)
+    with pytest.raises(SystemExit):
+        sources.references([outside["id"]])
+    nothing = {**page(235), "text_ar": None}
+    monkeypatch.setitem(sources.registry(), nothing["id"], nothing)
+    with pytest.raises(SystemExit):
+        sources.references([nothing["id"]])

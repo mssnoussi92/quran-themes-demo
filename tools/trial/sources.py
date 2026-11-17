@@ -31,6 +31,11 @@ WORK = ROOT / "build" / "trial" / "sources"
 RECITERS = {"alafasy": "Mishari Rashid al-Afasy", "sayegh": "Tawfiq As-Sayegh"}                 # as video/scripts/prepare.ts
 COLLECTIONS = {"bukhari": "Sahih al-Bukhari", "muslim": "Sahih Muslim", "tirmidhi": "Jami' at-Tirmidhi"}
 DIGITS = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")
+
+
+def num(n, digits: str | None = None) -> str:
+    """A number as it is written on screen: Arabic-Indic (١ ٢ ٣) unless the file says `digits: latin` (1 2 3)."""
+    return str(n) if digits == "latin" else str(n).translate(DIGITS)
 READING_RATE = 48000
 UNREAD = 12.0          # seconds given to a hadith with no reading yet, in a draft only
 
@@ -62,7 +67,7 @@ def entry(sid: str) -> dict:
 
 
 def entry_of(sid: str) -> dict:
-    """A source a narration rests on (a report told, a tafsir, a science source): its registry entry, or stop. It needs
+    """A source a narration rests on (a report told, a tafsir, a page of fiqh, a science source): its registry entry, or stop. It needs
     no English text; a science source needs its label, not a text."""
     found = registry().get(sid)
     usable = bool((found or {}).get("label")) if (found or {}).get("type") == "science" else bool((found or {}).get("text_ar"))
@@ -85,14 +90,14 @@ def clean(text: str) -> str:
     return " ".join(text.replace("‏", "").split())
 
 
-def described(sid: str) -> dict:
+def described(sid: str, digits: str | None = None) -> dict:
     """How a source is named and shown: its references, the text on screen, its translation, who is credited."""
     e = entry(sid)
     ref, origin = e["ref"], e.get("origin") or {}
     translator = origin.get("translator")
     if e["type"] == "ayah":
         return {"type": "ayah", "id": sid,
-                "reference": f"سورة {origin['surah_ar']} · الآية {str(ref['ayah']).translate(DIGITS)}" if origin.get("surah_ar") else f"Quran {ref['surah']}:{ref['ayah']}",
+                "reference": f"سورة {origin['surah_ar']} · الآية {num(ref['ayah'], digits)}" if origin.get("surah_ar") else f"Quran {ref['surah']}:{ref['ayah']}",
                 "reference_en": f"{'Surah ' + origin['surah_en'] if origin.get('surah_en') else 'Quran'} ({ref['surah']}:{ref['ayah']})",
                 "display_ar": e["text_ar"], "display_en": e["text_en"], "translator": translator, "url": e.get("url"), "recording": None,
                 "grade_note": None}
@@ -118,9 +123,9 @@ def name_of(sid: str) -> str:
     return sid.replace(".", "-")
 
 
-def verse(sid: str, out_dir: Path) -> dict:
+def verse(sid: str, out_dir: Path, digits: str | None = None) -> dict:
     """A verse segment: recited by the reciter of content/policy.yaml, cut from his surah, levelled."""
-    d = described(sid)
+    d = described(sid, digits)
     if d["type"] != "ayah":
         sys.exit(f"error: {sid} is not a verse")
     reciter = build.reciter_from_policy()
@@ -134,7 +139,7 @@ def verse(sid: str, out_dir: Path) -> dict:
             "credit": " · ".join(x for x in (RECITERS.get(reciter, reciter), d["translator"]) if x)}
 
 
-def passage(ids: list[str], out_dir: Path, upto: int | None = None) -> dict:
+def passage(ids: list[str], out_dir: Path, upto: int | None = None, digits: str | None = None) -> dict:
     """Verses that follow one another, recited without a break (`verses:`): one cut of the reciter's surah, from the
     start of the first verse to the end of the last (a reciter who chains short verses leaves no silence to cut
     at), levelled like a verse. One verse segment: the verses written one after the other, each closed by the sign
@@ -146,7 +151,7 @@ def passage(ids: list[str], out_dir: Path, upto: int | None = None) -> dict:
     long verse. The audio ends where word N ends (the same fades as at a verse end), the text keeps its first N
     words, the timings stop at N, the translation stops at the end of its first sentence. No sign of the end of a
     verse: the verse does not end there."""
-    described_ = [described(sid) for sid in ids]
+    described_ = [described(sid, digits) for sid in ids]
     if any(d["type"] != "ayah" for d in described_):
         sys.exit(f"error: a passage is made of verses: {', '.join(ids)}")
     refs = [entry(sid)["ref"] for sid in ids]
@@ -190,7 +195,7 @@ def passage(ids: list[str], out_dir: Path, upto: int | None = None) -> dict:
         verses.append({"en": d["display_en"], "first": first, "last": position})
     origin = entry(ids[0]).get("origin") or {}
     one = len(ids) == 1                                  # a verse cut at a pause sign (`upto`): « الآية », not « الآيات »
-    span = str(refs[0]['ayah']).translate(DIGITS) if one else f"{str(refs[0]['ayah']).translate(DIGITS)}-{str(refs[-1]['ayah']).translate(DIGITS)}"
+    span = num(refs[0]['ayah'], digits) if one else f"{num(refs[0]['ayah'], digits)}-{num(refs[-1]['ayah'], digits)}"
     span_en = f"{refs[0]['ayah']}" if one else f"{refs[0]['ayah']}-{refs[-1]['ayah']}"
     return {"kind": "verse", "seconds": round(build.seconds(wav), 3), "file": f"trial/{wav.name}",
             "reference": f"سورة {origin['surah_ar']} · {'الآية' if one else 'الآيات'} {span}" if origin.get("surah_ar") else f"Quran {refs[0]['surah']}:{span_en}",
@@ -201,14 +206,27 @@ def passage(ids: list[str], out_dir: Path, upto: int | None = None) -> dict:
 REPORTED_BY = {"bukhari": ("البخاري", "al-Bukhari"), "muslim": ("مسلم", "Muslim"), "tirmidhi": ("الترمذي", "at-Tirmidhi")}
 
 
-def references(ids: list[str]) -> dict:
+def page_ranges(pages: list[int], digits: str | None = None, comma: str = ",") -> str:
+    """Sorted pages, contiguous ones merged: [238, 239] -> « 238–239 », [234, 238, 239] -> « 234, 238–239 »."""
+    runs: list[list[int]] = []
+    for pg in pages:
+        if runs and pg == runs[-1][-1] + 1:
+            runs[-1].append(pg)
+        else:
+            runs.append([pg])
+    return f"{comma} ".join(num(r[0], digits) if len(r) == 1 else f"{num(r[0], digits)}–{num(r[-1], digits)}" for r in runs)
+
+
+def references(ids: list[str], digits: str | None = None) -> dict:
     """What a narration rests on (`sources:`), as it is written on screen while it is said: the reports it tells in
     its own words (« رواه مسلم ٨٦٣ والبخاري ٩٣٦ »), the tafsir its meaning comes from (its name, from
-    content/policy.yaml) and the papers or data a claim rests on (a `science` source: its `label`, no text).
+    content/policy.yaml), the pages of fiqh (the book's name and « volume/pages », contiguous pages merged: « ٢٤/٢٣٨–٢٣٩ »)
+    and the papers or data a claim rests on (a `science` source: its `label`, no text).
     Never read nor shown: a reference. An unvalidated source is listed as proposed."""
     policy = yaml.safe_load((ROOT / "content" / "policy.yaml").read_text(encoding="utf-8")) or {}
     editions = (policy.get("tafsir") or {}).get("editions") or {}
-    reports, tafsirs, sciences = [], [], []
+    reports, tafsirs, fiqhs, sciences = [], [], {}, []
+    fiqh_editions = (policy.get("fiqh") or {}).get("editions") or {}
     for sid in ids:
         e = registry().get(sid)
         # A science source has no text (its label is what is written): it needs the label, not a text.
@@ -221,23 +239,33 @@ def references(ids: list[str]) -> dict:
         if e["type"] == "hadith":
             ar, en = REPORTED_BY[ref["collection"]]
             letter = chr(96 + ref["narration"]) if ref.get("narration") else ""
-            reports.append((f"{ar} {str(ref['number']).translate(DIGITS)}", f"{en} {ref['number']}{letter}"))
+            reports.append((f"{ar} {num(ref['number'], digits)}", f"{en} {ref['number']}{letter}"))
         elif e["type"] == "tafsir":
             name = editions.get(ref["edition"])
             if not name:
                 sys.exit(f"error: {sid}: tafsir « {ref['edition']} » is outside content/policy.yaml")
             if (name["ar"], name["en"]) not in tafsirs:
                 tafsirs.append((name["ar"], name["en"]))
+        elif e["type"] == "fiqh":
+            if ref["edition"] not in fiqh_editions:
+                sys.exit(f"error: {sid}: fiqh « {ref['edition']} » is outside content/policy.yaml")
+            pages = fiqhs.setdefault(ref["edition"], {}).setdefault(ref["volume"], [])
+            if ref["page"] not in pages:
+                pages.append(ref["page"])
         elif e["type"] == "science":
             if (e["label"]["ar"], e["label"]["en"]) not in sciences:
                 sciences.append((e["label"]["ar"], e["label"]["en"]))
         else:
-            sys.exit(f"error: {sid}: a narration rests on a hadith, a tafsir or a science source, not on a source of type « {e['type']} »")
+            sys.exit(f"error: {sid}: a narration rests on a hadith, a tafsir, a page of fiqh or a science source, not on a source of type « {e['type']} »")
     ar = [("رواه " + " و".join(a for a, _ in reports))] if reports else []
     en = [", ".join(b for _, b in reports)] if reports else []
     ar += [a for a, _ in tafsirs]
     en += [b for _, b in tafsirs]
-    ar += [a for a, _ in sciences]              # the papers and the data come last, after the tafsir names
+    for edition, volumes in fiqhs.items():       # the books of fiqh, after the tafsir names: « name volume/pages »
+        name = fiqh_editions[edition]
+        ar.append(f"{name['ar']} " + "؛ ".join(f"{num(v, digits)}/{page_ranges(sorted(pages), digits, '،')}" for v, pages in volumes.items()))
+        en.append(f"{name['en'].removeprefix('The ')} " + "; ".join(f"{v}/{page_ranges(sorted(pages), 'latin', ',')}" for v, pages in volumes.items()))
+    ar += [a for a, _ in sciences]              # the papers and the data come last, after the fiqh
     en += [b for _, b in sciences]
     return {"ar": " · ".join(ar), "en": " · ".join(en), "ids": list(ids)}
 

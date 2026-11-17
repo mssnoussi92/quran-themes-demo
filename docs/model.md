@@ -311,6 +311,16 @@ Les cinq règles obligatoires de `CLAUDE.md` valent ici comme partout. Dans ce m
   (`content/policy.yaml`, `tafsir.editions` : al-Muyassar, as-Sa'di, Ibn Kathir) sur un verset que le short récite.
   Ni lu ni affiché : la référence s'écrit. `rules.py` refuse la voix qui dirait quatre mots de suite du récit. Un
   récit de révélation qui n'est pas dans les recueils de la politique ne se raconte pas.
+- **Une source de fiqh** (type `fiqh`, `content/sources/fiqh.yaml`, `content/policy.yaml`, `fiqh.editions` : l'Encyclopédie
+  koweïtienne, turath.io 11430) : comme un tafsir (`sources: [fiqh.kuwaiti.24.238]`, jamais lue ni affichée mot pour mot),
+  mais sans verset récité à relier. Id `fiqh.<édition>.<volume>.<page>`, une page imprimée par entrée (texte rempli par
+  `tools/sources/fetch.py` depuis l'API de turath.io, notes de bas de page comprises) ; à l'écran et dans la description :
+  le nom du livre, le volume et les pages, les pages qui se suivent réunies (`الموسوعة الفقهية الكويتية ٢٤/٢٣٨–٢٣٩`,
+  `Kuwaiti Encyclopedia of Islamic Jurisprudence 24/238–239`).
+- **`digits: latin`** (champ facultatif du fichier d'un short ou d'un film) : les références écrites par
+  `tools/trial/sources.py` (« سورة … · الآية 3 », « رواه مسلم 863 », volume et pages de fiqh) prennent les chiffres 0-9 au
+  lieu des chiffres arabes-indiens ; le signe de fin de verset dans le texte du verset ne change pas. Sans le champ,
+  rien ne change.
 - **Jamais de synthèse sur le Coran** : la narration dit la question et le sens avec ses mots à elle ; c'est le
   récitateur qui dit le verset. Un hadith est lu par une vraie voix (lecture validée du registre).
 - **Personne de connu dessiné**, et dans ce modèle **personne du tout** : des choses et des lieux. Ni le
