@@ -901,6 +901,16 @@ fermé en souvenir au-dessus de lui, les « لو » autour ; le verset sur le ci
 de retour devant le magasin, puis l'aube (`docs/retention/qadar-style-scenes-*.jpg`). **Reste** : les deux chemins de
 92:5-10, la voix et le rendu après les premières mesures.
 
+**Produit le 2026-11-17, à sa demande** (« crée la PR vers main et commence le travail » ; la session lui a dit pourquoi
+attendre les mesures n'avait plus de raison : les débuts sont des cartes muettes, qu'on change sans requête de voix) :
+les deux chemins redessinés, les dessins larges du film (`QADAR_WIDE`), les ambiances (validées : la nuit, le vent à
+l'aube), les accroches proposées ; la voix (run 44065680087 de `voice-test`, quatre requêtes, chaque phrase retrouvée ;
+à écouter : « يا رب ثبّتني », entendu « سبتني », le ث égyptien ; « مش ظن », entendu « ضمن ») ; `film.py` ne lit plus les
+cartes muettes d'un short comme des répliques ; rendu par le workflow `film` (run 44067852358, 42 minutes, release
+brouillon `qadar-candidate`) : **1:37, 1:21, 1:32, film 6:55**, contrôlés sur leurs planches et en taille réelle,
+**envoyés le 2026-11-17** avec les couvertures, la vignette et les textes (`docs/retention/publication-qadar.md`). À
+valider par lui.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

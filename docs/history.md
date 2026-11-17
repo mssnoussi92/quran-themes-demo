@@ -528,3 +528,6 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 - **Script validé par lui** (« je valide le script », 2026-11-17) ; fond tout dessiné ; les scènes jouées adaptées aux
   nouveaux débuts (l'effort avant l'abandon ; le tapis roulé qu'il ne déroule pas ; une chambre à 3 h et le magasin en
   souvenir). La voix attend les premières mesures.
+- **Produit et livré le même jour**, à sa demande (« commence le travail ») : voix (quatre requêtes), dessins larges
+  du film, chemins redessinés, ambiances, accroches proposées, rendu par le workflow `film` (42 minutes) ; un trou
+  d'outil fermé (`film.py` et les cartes muettes, avec un test). PR #42 ouverte vers `main`, qui attend sa validation.
