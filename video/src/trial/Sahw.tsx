@@ -280,9 +280,9 @@ const SahunPicture: Drawn = ({ t, show, since, phrase: said }) => {
   const pose = show("dua") > 0 ? mix(PRAYER.think, PRAYER.dua, ramp(t, since("dua") + 0.3, since("dua") + 1.4)) : show("end") > 0 ? twoProstrations(t, since("end") + 0.6) : PRAYER.think;
   return (
     <g>
-      <Room t={t} dim={0.55 * Math.max(show("word"), letter)} />
+      <Room t={t} dim={0.55 * (t < since("word") + 0.5 ? 1 : Math.max(show("word"), letter))} />
       <g opacity={room}><Praying id="sh-fig" x={FIG_X} pose={pose} /></g>
-      <BigWords t={t} wayl={Math.max(show("word"), letter) * ramp(t, since("word") - 0.1, since("word") + 0.5)} letter={letter}
+      <BigWords t={t} wayl={t < since("word") + 0.5 ? 1 : Math.max(show("word"), letter)} letter={letter}
                 an={ramp(t, phrase("letter", 1) - 0.2, phrase("letter", 1) + 0.4)} fi={ramp(t, phrase("letter", 2) - 0.2, phrase("letter", 2) + 0.4)} />
     </g>
   );
