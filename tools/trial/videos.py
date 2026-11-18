@@ -21,6 +21,9 @@ the draft release, nothing validated rendered again); or one short's id (that sh
 vertical), with its TikTok twin `<files>-film-9x16-tiktok`; tall-tiktok: that twin alone, added to the vertical film's draft
 (a vertical film already validated is not rendered again). The vertical film is asked for by name and is never part of
 `all`: a film's validated videos stay what they are.
+A key of the film's `elsewhere` (a page of its own, its name in `handles` of content/publish.yaml: `ma3ak`, the test
+page on Meta, owner's choice of 2026-11-18): the shorts it lists, signed with that page's name, and their covers
+(`<name>-<key>.mp4`, `<name>-<key>-cover.jpg`; props "platform": key), added to the draft release; never part of `all`.
 """
 from __future__ import annotations
 
@@ -53,8 +56,12 @@ def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]
     shorts = [load(name) for name in film.get("shorts") or film["thumbnail"]["panels"]]
     ids = [s["id"] for s in shorts]
     has_film = "chapters" in film               # a series (a file with `shorts`, no chapters) has no film
+    elsewhere = film.get("elsewhere") or {}
+    if only in elsewhere:                       # another page: its shorts signed with its name, and their covers
+        return signed_elsewhere(film, files, shorts, voice, only)
     if only not in ("all", "shorts", "film", "tall", "tall-tiktok", "tiktok", "cut") and only not in ids:
-        sys.exit(f"error: --only {only}: not all, shorts, film, tall, tall-tiktok, tiktok, cut or one of {', '.join(ids)}")
+        sys.exit(f"error: --only {only}: not all, shorts, film, tall, tall-tiktok, tiktok, cut, "
+                 f"one of {', '.join(ids)}" + (f" or a page of `elsewhere` ({', '.join(elsewhere)})" if elsewhere else ""))
     if only in ("tall", "tall-tiktok"):
         if not has_film:
             sys.exit(f"error: --only {only}: {film_id} is a series, it has no film")
@@ -100,11 +107,30 @@ def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]
     return videos, stills
 
 
+def signed_elsewhere(film: dict, files: str, shorts: list[dict], voice: str, page: str) -> tuple[list[dict], list[dict]]:
+    """The shorts `elsewhere[page]` of the film names, signed with that page's name, and their covers."""
+    wanted = film["elsewhere"][page] or []
+    unknown = [i for i in wanted if i not in [s["id"] for s in shorts]]
+    if unknown:
+        sys.exit(f"error: elsewhere.{page}: {', '.join(unknown)} not among the shorts of {film['id']}")
+    videos, stills = [], []
+    for spec in shorts:
+        if spec["id"] not in wanted:
+            continue
+        name = f"{files}-short-{spec['publish']['part']}-{spec['id']}-{page}"
+        props = compact({"trial": spec["id"], "voice": voice, "data": None, "platform": page})
+        videos.append({"name": name, "composition": "Trial916", "props": props,
+                       "timeline": f"video/public/trial/{spec['id']}-{voice}.json", "kind": page})
+        stills.append({"name": f"{name}-cover.jpg", "composition": "TrialCover916", "props": props,
+                       "frame": STILL_FRAME, "kind": "cover"})
+    return videos, stills
+
+
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--film", required=True, help="the film's id (content/trial/<id>.yaml)")
     p.add_argument("--voice", default="D")
-    p.add_argument("--only", default="all", help="all, shorts, film, tall (the film in 9:16 and its TikTok twin), tall-tiktok (the twin alone), tiktok, or one short's id")
+    p.add_argument("--only", default="all", help="all, shorts, film, tall (the film in 9:16 and its TikTok twin), tall-tiktok (the twin alone), tiktok, cut, one short's id, or a page of the film's `elsewhere`")
     p.add_argument("--matrix", action="store_true", help="one JSON object on one line, a GitHub Actions matrix")
     p.add_argument("--stills", action="store_true", help="the covers and the thumbnail instead of the videos")
     p.add_argument("--ids", action="store_true",
@@ -113,8 +139,10 @@ def main() -> int:
     if args.ids:
         spec = load(args.film)
         ids = [name for name in spec.get("shorts") or spec["thumbnail"]["panels"]]
-        # --only cut: the shorts that have a short version (`cut`), alone.
-        print(" ".join([args.only] if args.only in ids else [i for i in ids if load(i).get("cut")] if args.only == "cut" else ids))
+        # --only cut: the shorts that have a short version (`cut`), alone; a page of `elsewhere`: its shorts.
+        elsewhere = spec.get("elsewhere") or {}
+        print(" ".join([args.only] if args.only in ids else [i for i in ids if load(i).get("cut")] if args.only == "cut"
+                       else [i for i in ids if i in elsewhere[args.only]] if args.only in elsewhere else ids))
         return 0
     videos, stills = listing(args.film, args.voice, args.only)
     rows = stills if args.stills else videos
