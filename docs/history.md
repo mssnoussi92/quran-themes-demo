@@ -628,3 +628,20 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   envoyée, leurs médias restent ceux qu'elles ont mis. Les liens des releases brouillon sont relus (ceux des films
   verticaux de Dhul-Qarnayn et de la caverne avaient changé avec leur version TikTok).
 
+## La page test Meta « معاك 5 ثواني » et ses trois quiz (2026-11-18)
+
+- **Sa question** (session quran-reels) : les premières statistiques sont-elles bonnes, et faut-il de nouvelles pages
+  pour ne laisser que le Coran sur la Page ? Avis de la session : l'écart n'existe que sur YouTube (un short thématique
+  279 vues contre 904 pour un reel), probablement par la durée ; sur Instagram un short thématique fait autant qu'un reel
+  (132 contre 142). **Ses choix** : une seule Page, la décision à la revue du 6 décembre ; la version courte de
+  Dhul-Qarnayn aussi sur YouTube (quran-reels, PR #78).
+- **Puis son doute sur Meta** : une page test. La session l'a déconseillée (le point faible de Meta, 72 % partis avant 3 s,
+  est le même partout) et a refusé la même vidéo sur deux pages (Meta réduit la diffusion des copies). **Son choix** :
+  l'essai propre, les quiz 4 à 6 (en réserve) sur une page neuve, « معاك 5 ثواني » (Facebook et Instagram,
+  `@ma3ak.5.thawani`), le jour et l'heure des quiz 1 à 3 sur l'Instagram de la Page. Protocole : `docs/insights.md` de
+  quran-reels (PR #79).
+- **Fait** : sa photo de profil, sa couverture Facebook et sa bio (validées par lui) ; les quiz 4 à 6 rendus signés du
+  nom de la page test (`handles.ma3ak` de `content/publish.yaml`, `elsewhere` de `quiz.yaml`, `videos.py --only ma3ak`,
+  une couverture prend `platform` comme la vidéo ; PR #57, run 44375756327 : 0:58, 0:58, 1:01, −16 LUFS), contrôlés sur
+  leurs planches, envoyés ; **validés par lui le 2026-11-18**, numéros 4, 5 et 6 gardés (son choix). Ses textes : ceux
+  des « Short 4 » à « Short 6 » de `publication-quiz.md`, tels quels.
