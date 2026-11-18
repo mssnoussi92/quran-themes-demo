@@ -1,0 +1,95 @@
+# « إزاي أعملها؟ », pilote سجود السهو, épisode 3 (content/trial/sahw.yaml ; script : docs/scripts/sahw.md). Le short « comment faire » : le tashahhud oublié (Bukhari 1224, Muslim 570a), où et comment faire les deux prosternations chez les quatre écoles (Encyclopédie koweïtienne), 33:21.
+# Montage validé (docs/retention/sahw-style*.jpg) : la pièce, la silhouette anonyme qui prie (jamais le Prophète ﷺ ni un
+# Compagnon : leur prière passe par la piste et des rangées de lumières), la piste des rak'ahs, la carte des quatre écoles.
+id: nasit
+# « Je valide, sans la ligne-conseil » (question à choix du propriétaire, 2026-11-17, sur docs/scripts/sahw.md envoyé) : les
+# répliques, la place des versets et des lectures, ce sur quoi chaque réplique repose. Ni la voix, ni la vidéo, ni les textes,
+# ni les sources : il les valide sur les vidéos. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide les 3 et leurs sources » du propriétaire (2026-11-17, question à choix), après les corrections qu'il a demandées
+# (le sujud refait sur le tapis, le sous-titre de Muslim 572a corrigé ; run du workflow `film` du même jour) : la voix, le
+# montage (la silhouette, la piste, la carte des écoles), la couverture, l'ambiance, et ses sources, passées à `validated`.
+# Pas encore les textes de publication ni l'accroche. Inscrit sur sa parole.
+# Puis « Je valide les 4 accroches » du propriétaire (2026-11-18, question à choix) : l'accroche de la légende courte, et
+# les titres et les descriptions de docs/retention/publication-sahw.md (`publish`, ajouté ce jour-là ; le reste le 2026-11-17).
+validated: { by: mssnoussi92, on: 2026-11-18, what: [voice, montage, cover, ambience, publish] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+digits: latin          # les nombres en 1 2 3, jamais ١ ٢ ٣ (le propriétaire, 2026-11-17)
+# Une salle de prière au lever du jour : le fond généré par ffmpeg (tools/trial/clip.py, kind room), la fenêtre, le rai
+# de lumière, le tapis et la silhouette dessinés par video/src/trial/Sahw.tsx. Rien à créditer.
+clip: { source: generated, kind: room, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#120f18", horizon: 1300, veil: 0.6 }
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 130, level: -38 }
+text: 84-trial-nasit
+cover: { scene: stand, title: "قمت من غير ما تقعد للتشهد؟", tag: "إزاي أعملها؟ (3)", focus: 1000 }
+publish:
+  title: { en: "Stood up without sitting for the tashahhud?", ar: "قمت من غير ما تقعد للتشهد؟" }
+  part: 3
+  hashtags: ["#سجود_السهو", "#الصلاة"]
+  description:
+    en: "You stood up for the third rak'ah without sitting for the tashahhud? It happened to the Prophet ﷺ: he went on, and before the salam he made two prostrations sitting (Bukhari 1224, Muslim 570). How to do it, step by step, and where the two prostrations go in each of the four schools (Kuwaiti Encyclopedia of Fiqh). Save it for the day you forget."
+    ar: "قمت للركعة التالتة من غير ما تقعد للتشهد؟ حصلت مع النبي ﷺ: كمّل صلاته، وقبل السلام سجد سجدتين وهو قاعد (البخاري ١٢٢٤، مسلم ٥٧٠). تعمل إيه خطوة بخطوة، وفين السجدتين في كل مذهب من الأربعة (الموسوعة الفقهية الكويتية). احفظه لليوم اللي تسهى فيه."
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-18 (« Je valide les 4 accroches »)
+    ar: "قمت من غير ما تقعد للتشهد؟ تعمل إيه خطوة بخطوة، في المذاهب الأربعة."
+    en: "Stood up without sitting for the tashahhud? What to do, step by step, in the four schools."
+    validated: 2026-11-18
+segments:
+- narration: open
+  scene: stand
+  lines:
+  - ar: 'قمت من غير ما تقعد للتشهد؟'
+    en: "You stood up… without sitting for the tashahhud?"
+- narration: story
+  scene: rows
+  sources: [hadith.bukhari.1224, hadith.muslim.570a]
+  lines:
+  - ar: 'حصلت مع النبي صلى الله عليه وسلم… والناس قاموا وراه.'
+    en: "It happened to the Prophet ﷺ… and the people stood up behind him."
+  - ar: 'وكمّل صلاته…'
+    en: "He went on with his prayer…"
+  - ar: 'ولما قرّب يسلّم… كبّر… وسجد سجدتين وهو قاعد… وبعدين سلّم.'
+    en: "and just before the salam… he said Allahu akbar… made two prostrations, sitting… then gave the salam."
+- narration: fix
+  scene: fix
+  sources: [fiqh.kuwaiti.24.234]
+  lines:
+  - ar: 'السجدتين دول… بيصلّحوا اللي نقص.'
+    en: "Those two prostrations… repair what was missing."
+- narration: schools
+  scene: lanes
+  sources: [fiqh.kuwaiti.24.238, fiqh.kuwaiti.24.239]
+  lines:
+  - ar: 'بس فين السجدتين؟'
+    en: "But where do they go?"
+  - ar: 'المالكي… والشافعي… والحنبلي: قبل السلام… زي ما عمل النبي صلى الله عليه وسلم هنا.'
+    en: "Maliki… Shafi'i… Hanbali: before the salam… as the Prophet ﷺ did here."
+- narration: hanafi
+  scene: hanafi
+  sources: [fiqh.kuwaiti.24.238]
+  lines:
+  - ar: 'والحنفي: بعد السلام…'
+    en: "And Hanafi: after the salam…"
+  - ar: 'تتشهد… وتسلّم مرة واحدة… وتسجد السجدتين… وتتشهد… وتسلّم.'
+    en: "you say the tashahhud… one salam… the two prostrations… the tashahhud again… and the salam."
+- narration: why
+  scene: room
+  lines:
+  - ar: 'وليه ناخد حتى ده… من النبي صلى الله عليه وسلم؟'
+    en: "And why take even this… from the Prophet ﷺ?"
+- verse: quran.33.21
+  scene: room
+- narration: meaning
+  scene: room
+  sources: [tafsir.muyassar.33.21]
+  lines:
+  - ar: 'يعني: في كلامه… وأفعاله… قدوة… فامشوا على سنّته.'
+    en: "Meaning: in his words… and his deeds… a model… so keep to his way."
+- narration: close
+  scene: end
+  lines:
+  - ar: 'حتى غلطتك في الصلاة… ليها حل من سنّته.'
+    en: "Even your mistake in prayer… has its fix in his Sunnah."
+  - ar: 'احفظ الفيديو… عشان لما تسهى تلاقيه.'
+    en: "Save this video… so it's there when you forget."
+  - ar: 'والجاية: صلّيت تلاتة ولا أربعة؟ تابعنا.'
+    en: "Next: did I pray three or four? Follow us."

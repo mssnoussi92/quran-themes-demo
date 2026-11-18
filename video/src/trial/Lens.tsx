@@ -39,7 +39,7 @@ const timeline = (order: string[], show: (id: string) => number, since: (id: str
  * torso leans forward when positive; the head tilts back (looks up) when positive. [upper, lower] for each limb. */
 export type Pose = { torso: number; head: number; armF: [number, number]; armB: [number, number]; legF: [number, number]; legB: [number, number] };
 
-const SEG = { torso: 118, neck: 18, head: 34, upper: 64, fore: 60, thigh: 76, shin: 74 };
+export const SEG = { torso: 118, neck: 18, head: 34, upper: 64, fore: 60, thigh: 76, shin: 74 };
 /** From the pelvis to the sole, standing. */
 export const LEGS = SEG.thigh + SEG.shin;
 

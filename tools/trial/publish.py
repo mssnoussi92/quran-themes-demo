@@ -60,9 +60,12 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
 
     hadith = verse = False
     for kind, sid in ids:
-        if kind in ("report", "tafsir", "science"):      # what a narration rests on (`sources:`): told, explained or measured, never read
+        if kind in ("report", "tafsir", "fiqh", "science"):      # what a narration rests on (`sources:`): told, explained or measured, never read
             flush()
-            lines.append(rests_on(kind, sid))
+            line = rests_on(kind, sid, [i for k, i in ids if k == "fiqh"])
+            if kind == "fiqh" and any(l.split(" · ")[:2] == line.split(" · ")[:2] for l in lines):
+                continue                                         # one line per book and volume: its pages are merged in it
+            lines.append(line)
             hadith = hadith or kind == "report"
         elif kind == "verse":
             verse = True
@@ -89,9 +92,10 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
     return unique, hadith, verse
 
 
-def rests_on(kind: str, sid: str) -> str:
-    """The line of a report a narration tells in its own words, of the tafsir its meaning comes from, or of the
-    paper or the data (a `science` source) a claim rests on."""
+def rests_on(kind: str, sid: str, fiqh_ids: list[str] | None = None) -> str:
+    """The line of a report a narration tells in its own words, of the tafsir its meaning comes from, of the pages of
+    fiqh it rests on (one line per edition: `fiqh_ids` are all the fiqh sources of the video, those of this one's
+    edition and volume merged), or of the paper or the data (a `science` source) a claim rests on."""
     import sources as registry              # tools/trial/sources.py
 
     e = registry.entry_of(sid)
@@ -102,6 +106,12 @@ def rests_on(kind: str, sid: str) -> str:
         letter = chr(96 + ref["narration"]) if ref.get("narration") else ""
         return f"• {registry.COLLECTIONS[ref['collection']]} {ref['number']}{letter} (told in the narration's own words) · {e['url']}"
     policy = yaml.safe_load((ROOT / "content" / "policy.yaml").read_text(encoding="utf-8")) or {}
+    if kind == "fiqh":
+        edition = policy["fiqh"]["editions"][ref["edition"]]
+        pages = sorted({registry.entry_of(i)["ref"]["page"] for i in fiqh_ids or [sid]
+                        if registry.entry_of(i)["ref"]["edition"] == ref["edition"] and registry.entry_of(i)["ref"]["volume"] == ref["volume"]})
+        return (f"• Rulings after {edition['en']}, vol. {ref['volume']}, p. {registry.page_ranges(pages, 'latin')} · "
+                f"{edition['ar']} {registry.num(ref['volume'])}/{registry.page_ranges(pages, None, '،', '-')} · {e['url']}")
     name = policy["tafsir"]["editions"][ref["edition"]]["en"]
     return f"• Meaning after {name} ({ref['surah']}:{ref['ayah']}) · {e['url']}"
 
@@ -123,7 +133,7 @@ def quotes_of(segments: list[dict]) -> list[tuple[str, str]]:
             if ("card", s["card"]) not in ids:
                 ids.append(("card", s["card"]))
         for sid in s.get("sources") or []:
-            ids.append(("report" if sid.startswith("hadith.") else "science" if sid.startswith("science.") else "tafsir", sid))
+            ids.append(("report" if sid.startswith("hadith.") else "science" if sid.startswith("science.") else "fiqh" if sid.startswith("fiqh.") else "tafsir", sid))
     return ids
 
 

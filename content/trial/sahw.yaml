@@ -1,0 +1,18 @@
+# La série « إزاي أعملها؟ » (demande du propriétaire, 2026-11-17 : une série éducative qui garde un début fort ; nom proposé
+# par la session). Pilote : سجود السهو, quatre shorts sans film. Chaque short s'ouvre sur un fait tiré d'un texte ou sur
+# l'erreur elle-même en mouvement, jamais sur la leçon ; ce que le Prophète ﷺ a fait (hadith raconté ou lu), puis, quand
+# les écoles diffèrent, les quatre, d'après la Encyclopédie de fiqh koweïtienne (content/policy.yaml, `fiqh`), jamais une
+# seule ; un verset ; « احفظ الفيديو » (règles de cette série seulement, choix du propriétaire, 2026-11-17).
+# Fiche : docs/themes.md ; script : docs/scripts/sahw.md (validé) ; dessins : video/src/trial/Sahw.tsx.
+id: sahw
+validated: { by: mssnoussi92, on: 2026-11-18, what: [publish] }      # « Je valide les 4 accroches » (question à choix)
+files: sahw                      # début du nom des vidéos livrées : sahw-short-<n>-<id>.mp4
+title: { ar: "إزاي أعملها؟", en: "How Do I Do It?" }
+shorts: [sahun, khams, nasit, shakk]
+handle: "@quran_words_daily"
+digits: latin
+publish:
+  out: docs/retention/publication-sahw.md
+  series: { en: "How Do I Do It?", ar: "إزاي أعملها؟" }
+  hashtags: ["#إزاي_أعملها", "#سجود_السهو"]
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", X: "No narration voice yet: draft · مسودة بلا صوت" }

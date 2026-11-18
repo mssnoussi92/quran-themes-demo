@@ -1,0 +1,94 @@
+# « إزاي أعملها؟ », pilote سجود السهو, épisode 4 (content/trial/sahw.yaml ; script : docs/scripts/sahw.md). Le doute (Bukhari 1232, Muslim 389f ; Muslim 571a lu), les quatre écoles (Encyclopédie koweïtienne), 114:4-6.
+# Montage validé (docs/retention/sahw-style*.jpg) : la pièce, la silhouette anonyme qui prie (jamais le Prophète ﷺ ni un
+# Compagnon : leur prière passe par la piste et des rangées de lumières), la piste des rak'ahs, la carte des quatre écoles.
+id: shakk
+# « Je valide, sans la ligne-conseil » (question à choix du propriétaire, 2026-11-17, sur docs/scripts/sahw.md envoyé) : les
+# répliques, la place des versets et des lectures, ce sur quoi chaque réplique repose. Ni la voix, ni la vidéo, ni les textes,
+# ni les sources : il les valide sur les vidéos. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide shakk et ses sources » du propriétaire (2026-11-18, question à choix), sur la vidéo rendue par le workflow
+# `film` le même jour : la voix, le montage, la couverture, l'ambiance, la lecture de Muslim 571a et ses sources, passées à
+# `validated` ; puis « Je valide les 4 accroches » (les titres et les descriptions de docs/retention/publication-sahw.md
+# compris). Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-18, what: [voice, montage, cover, ambience, publish] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+digits: latin          # les nombres en 1 2 3, jamais ١ ٢ ٣ (le propriétaire, 2026-11-17)
+# Une salle de prière au lever du jour : le fond généré par ffmpeg (tools/trial/clip.py, kind room), la fenêtre, le rai
+# de lumière, le tapis et la silhouette dessinés par video/src/trial/Sahw.tsx. Rien à créditer.
+clip: { source: generated, kind: room, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#120f18", horizon: 1300, veil: 0.6 }
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 130, level: -38 }
+text: 85-trial-shakk
+cover: { scene: count, title: "صلّيت تلاتة ولا أربعة؟", tag: "إزاي أعملها؟ (4)", focus: 1000 }
+publish:
+  title: { en: "Did I pray three or four?", ar: "صلّيت تلاتة ولا أربعة؟" }
+  part: 4
+  hashtags: ["#سجود_السهو", "#الصلاة"]
+  description:
+    en: "Did I pray three or four? The Prophet ﷺ taught the fix: drop the doubt, build on what you are sure of, and make two prostrations before the salam (Muslim 571). What each of the four schools says about doubt (Kuwaiti Encyclopedia of Fiqh), and the whisperer the Quran describes (114:4-6)."
+    ar: "صلّيت تلاتة ولا أربعة؟ النبي ﷺ علّمنا الحل: سيب الشك، وابني على اللي متأكد منه، واسجد سجدتين قبل السلام (مسلم ٥٧١). وقول كل مذهب من الأربعة في الشك (الموسوعة الفقهية الكويتية)، والوسواس اللي وصفه القرآن (الناس ٤-٦)."
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-18 (« Je valide les 4 accroches »)
+    ar: "صلّيت تلاتة ولا أربعة؟ النبي ﷺ علّمنا الحل… والمذاهب الأربعة فصّلت."
+    en: "Three or four? The Prophet ﷺ taught the fix… and the four schools explain it."
+    validated: 2026-11-18
+segments:
+- narration: open
+  scene: count
+  lines:
+  - ar: 'صلّيت تلاتة ولا أربعة؟'
+    en: "Did I pray three… or four?"
+- narration: whisper
+  scene: count
+  sources: [hadith.bukhari.1232, hadith.muslim.389f]
+  lines:
+  - ar: 'ده مش صدفة… الشيطان بيلخبطك… لحد ما تنسى صلّيت كام.'
+    en: "It's no accident… Satan muddles you… until you forget how many you prayed."
+- narration: taught
+  scene: count
+  lines:
+  - ar: 'والنبي صلى الله عليه وسلم علّمنا الحل:'
+    en: "And the Prophet ﷺ taught us the fix:"
+- reading: hadith.muslim.571a
+  scene: voice
+- narration: meaning
+  scene: fix
+  sources: [hadith.muslim.571a]
+  lines:
+  - ar: 'يعني: سيب الشك… وابني على الأقل: تلاتة.'
+    en: "Meaning: drop the doubt… build on the lower number: three."
+  - ar: 'كمّل الرابعة… واسجد سجدتين قبل ما تسلّم.'
+    en: "Do the fourth… and two prostrations before the salam."
+  - ar: 'ولو طلعت صلّيت أربعة أصلاً؟ السجدتين دول… يغيظوا الشيطان.'
+    en: "And if you had prayed four after all? Those two prostrations… vex Satan."
+- narration: schools
+  scene: lanes
+  sources: [fiqh.kuwaiti.24.235, fiqh.kuwaiti.24.236, fiqh.kuwaiti.24.237]
+  lines:
+  - ar: 'وده قول المالكي… والشافعي… والحنبلي للي بيصلّي لوحده.'
+    en: "That's the view of the Maliki… the Shafi'i… and the Hanbali for someone praying alone."
+  - ar: 'والحنفي فصّل: أول مرة يحصلك… تعيد الصلاة.'
+    en: "The Hanafi school goes case by case: the first time it happens to you… you start the prayer again."
+  - ar: 'بيحصلك كتير… تاخد باللي غالب على ظنك.'
+    en: "If it happens often… you go with what you think most likely."
+  - ar: 'ومفيش ظن… تبني على الأقل.'
+    en: "With no leaning either way… you build on the lower number."
+- narration: describe
+  scene: room
+  lines:
+  - ar: 'واللي بيلخبطك ده… القرآن وصفه:'
+    en: "And the one who muddles you… the Quran describes him:"
+- verses: [quran.114.4, quran.114.5, quran.114.6]
+  scene: room
+- narration: meaning2
+  scene: room
+  sources: [tafsir.muyassar.114.4]
+  lines:
+  - ar: 'بيوسوس وقت الغفلة… ويستخبّى لما تذكر ربنا.'
+    en: "He whispers when you're heedless… and hides when you remember God."
+- narration: close
+  scene: end
+  lines:
+  - ar: 'الشك في صلاتك… ليه حل… وسجدتين تغيظ بيهم الشيطان.'
+    en: "Doubt in your prayer… has a fix… and two prostrations that vex Satan."
+  - ar: 'احفظ الفيديو… وتابعنا عشان الحلقة الجاية.'
+    en: "Save this video… and follow us for the next episode."
