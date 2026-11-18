@@ -63,7 +63,10 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
     for kind, sid in ids:
         if kind in ("report", "tafsir", "fiqh", "science"):      # what a narration rests on (`sources:`): told, explained or measured, never read
             flush()
-            lines.append(rests_on(kind, sid, [i for k, i in ids if k == "fiqh"]))
+            line = rests_on(kind, sid, [i for k, i in ids if k == "fiqh"])
+            if kind == "fiqh" and any(l.split(" · ")[:2] == line.split(" · ")[:2] for l in lines):
+                continue                                         # one line per book and volume: its pages are merged in it
+            lines.append(line)
             hadith = hadith or kind == "report"
         elif kind == "verse":
             verse = True
