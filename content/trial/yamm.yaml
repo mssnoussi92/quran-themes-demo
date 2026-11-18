@@ -11,9 +11,10 @@ script_validated: { by: mssnoussi92, on: 2026-11-18 }
 handle: "@ma3ak.5.thawani"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 101-trial-yamm
-# une eau calme au crépuscule, l'horizon rose (Pixabay 22183, Artvan93, approuvé pour la barque de Moussa et al-Khadir) :
-# le fleuve au petit jour, avec les roseaux dessinés ; PROPOSÉ pour ce short, à montrer au propriétaire sur le brouillon muet
-clip: { source: pixabay, id: 22183, author: Artvan93, page: "https://pixabay.com/videos/id-22183/", take: { height: 1440 }, rate: 0.85, position: "62% 50%", shift: 0, brightness: 0.75, ground: "#06070c", horizon: 1380, veil: 0.8 }
+# un fleuve entre deux parois de roche, vu d'en haut (Pixabay 225408, AttilaPergel, approuvé pour l'argent refusé de
+# Dhul-Qarnayn) : un fleuve, pas la mer (la mer de 22183, du premier brouillon, disait le mauvais choix) ; PROPOSÉ pour
+# ce short, à montrer au propriétaire sur le brouillon muet
+clip: { source: pixabay, id: 225408, author: AttilaPergel, page: "https://pixabay.com/videos/id-225408/", take: { height: 1440 }, rate: 1, position: "50% 40%", shift: 0, brightness: 0.7, ground: "#06070c", horizon: 1380, veil: 0.8 }
 ambience: { source: bigsoundbank, id: "1448", title: "Small waves and beach #2", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/detail-1448-small-waves-and-beach-2.html", from: 100, seconds: 70, level: -38 }
 cover: { scene: ask, title: "«اليمّ»… يعني إيه؟", tag: "معاك 5 ثواني", focus: 1000 }
 quiz:

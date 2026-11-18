@@ -9,9 +9,10 @@ script_validated: { by: mssnoussi92, on: 2026-11-18 }
 handle: "@ma3ak.5.thawani"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 98-trial-abb
-# une aube rose vue d'un drone au-dessus d'une colline boisée (Pixabay 2119, bellergy, approuvé pour « والضحى » et pour
-# « فصبر جميل ») : la terre qui donne ; PROPOSÉ pour ce short, à montrer au propriétaire sur le brouillon muet
-clip: { source: pixabay, id: 2119, author: bellergy, page: "https://pixabay.com/videos/id-2119/", take: { slow: 5, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.65, ground: "#07060b", horizon: 1380, veil: 0.8 }
+# des cumulus blancs sur un ciel bleu, en accéléré (Pixabay 116167, NickyPe, trouvé le 2026-11-13, jamais employé) : un
+# ciel clair où les plantes et les bêtes dessinées se lisent (sur la colline boisée de 2119, elles disparaissaient,
+# brouillon du 2026-11-18) ; PROPOSÉ pour ce short, à montrer au propriétaire sur le brouillon muet
+clip: { source: pixabay, id: 116167, author: NickyPe, page: "https://pixabay.com/videos/id-116167/", take: { height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.8, ground: "#07060b", horizon: 1380, veil: 0.8 }
 ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 10, seconds: 60, level: -36 }
 cover: { scene: ask, title: "«وأبًّا»… يعني إيه؟", tag: "معاك 5 ثواني", focus: 1000 }
 quiz:

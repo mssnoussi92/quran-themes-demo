@@ -510,16 +510,15 @@ const MarahPicture: Drawn = ({ t, show, since, horizon }) => {
   const prints = 12;
   return (
     <g>
-      <path d={`M 0 ${horizon + 10} L 140 ${horizon - 300} L 260 ${horizon - 180} L 420 ${horizon - 520} L 560 ${horizon - 260} L 700 ${horizon - 470} L 860 ${horizon - 200} L 980 ${horizon - 380} L ${W} ${horizon - 250} V ${horizon + 10} Z`} fill="#070912" opacity={0.95} />
       <Ground horizon={horizon} />
-      <path d={`M 400 1920 C 470 ${horizon + 300} 560 ${horizon + 120} 532 ${horizon + 14} L 548 ${horizon + 14} C 600 ${horizon + 120} 640 ${horizon + 300} 680 1920 Z`} fill="#11131c" opacity={place} />
+      <path d={`M 400 1920 C 470 ${horizon + 300} 560 ${horizon + 120} 532 ${horizon + 14} L 548 ${horizon + 14} C 600 ${horizon + 120} 640 ${horizon + 300} 680 1920 Z`} fill="#3a2f22" opacity={0.8 * place} />
       <g opacity={place}>
         {Array.from({ length: Math.floor(steps * prints + 0.001) }, (_, k) => {
           const u = k / prints;
           const y = 1880 - u * (1880 - horizon - 40);
           const x = 540 + (k % 2 ? 18 : -18) * (1 - u) + 16 * Math.sin(u * 3);
           const s = 1 - 0.75 * u;
-          return <ellipse key={k} cx={x} cy={y} rx={13 * s} ry={22 * s} fill={PALE} opacity={0.22} />;
+          return <ellipse key={k} cx={x} cy={y} rx={13 * s} ry={22 * s} fill="#1a140d" opacity={0.85} />;
         })}
       </g>
     </g>
@@ -551,10 +550,10 @@ const DhahibPicture: Drawn = ({ t, show, since, horizon }) => {
       </g>
       <g opacity={place}>
         <ellipse cx={420} cy={horizon - 10} rx={130} ry={60} fill="url(#quiz-embers)" opacity={0.85 * (1 - cool)} />
-        <ellipse cx={420} cy={horizon - 10} rx={130} ry={60} fill="#9fc4ff" opacity={0.25 * cool} />
+        <ellipse cx={420} cy={horizon - 4} rx={120} ry={22} fill="#5a5650" opacity={0.6 * cool} />
         {Array.from({ length: 14 }, (_, k) => (
           <circle key={k} cx={330 + ((k * 53) % 180)} cy={horizon - 10 - ((k * 37) % 50) - 30 * ((t * 0.4 + k * 0.13) % 1)} r={2.5}
-                  fill={cool > 0.5 ? "#cfe1ff" : "#ffb36b"} opacity={0.7 * (1 - ((t * 0.4 + k * 0.13) % 1))} />
+                  fill="#ffb36b" opacity={0.7 * (1 - cool) * (1 - ((t * 0.4 + k * 0.13) % 1))} />
         ))}
       </g>
       <Ground horizon={horizon} />
@@ -662,7 +661,7 @@ const FaqirPicture: Drawn = ({ t, show, since, horizon }) => {
       <Ground horizon={horizon} />
       <g opacity={place}>
         <Well x={330} y={horizon + 80} down={1} />
-        {[[520, 1], [600, 0.9], [680, 1]].map(([x, s], k) => <g key={k} transform={`translate(${x - 140 * (1 - drink)} ${horizon + 130})`}><Sheep s={s} /></g>)}
+        {[[540, 1.2], [640, 1.05], [740, 1.2]].map(([x, s], k) => <g key={k} transform={`translate(${x - 140 * (1 - drink)} ${horizon + 12})`}><Sheep s={s} /></g>)}
         <g opacity={shade}>
           <ellipse cx={890} cy={horizon + 170} rx={170} ry={36} fill="#000" opacity={0.55} />
           <path d={`M 900 ${horizon + 170} C 896 ${horizon + 60} 880 ${horizon - 10} 860 ${horizon - 80}`} stroke="#120d09" strokeWidth={18} fill="none" />
