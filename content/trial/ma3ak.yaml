@@ -1,0 +1,17 @@
+# « معاك 5 ثواني » sur la page test Meta (`@ma3ak.5.thawani`), un quiz par jour (demande du propriétaire, 2026-11-18 :
+# « continuer à publier un épisode par jour » ; essai d'une deuxième page : docs/insights.md de quran-reels). Une série à
+# part de `quiz` : ses shorts sont signés du nom de la page test (`handle`) et ne vont jamais sur la Page ; leur rendu ne
+# touche à aucune vidéo validée du quiz. Même montage (video/src/trial/Quiz.tsx, quizData.ts par tools/trial/quiz.py),
+# mêmes règles (skill `write-hook`, « A short of the quiz »), aucun numéro d'épisode (sa demande du même jour).
+# Lot 1 (quiz 7 à 13, du 21 au 27 novembre) : scripts proposés par la session et validés par lui le 2026-11-18
+# (« je valide les 7 scripts » ; le quiz 13 avec 20:39 récité entier, son choix) : docs/scripts/quiz.md.
+id: ma3ak
+files: ma3ak                     # début du nom des vidéos : ma3ak-short-<n>-<id>.mp4
+title: { ar: "معاك 5 ثواني", en: "You Have 5 Seconds" }
+shorts: [qitr, marah, dhahib, abb, khashi, faqir, yamm]
+handle: "@ma3ak.5.thawani"
+publish:
+  out: docs/retention/publication-ma3ak.md
+  series: { en: "You Have 5 Seconds", ar: "معاك 5 ثواني" }
+  hashtags: ["#معاك_5_ثواني", "#تفسير_القرآن"]
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", X: "No narration voice yet: draft · مسودة بدون صوت" }

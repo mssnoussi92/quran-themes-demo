@@ -1586,3 +1586,367 @@
 
   text_ar: لقد كان لكم -أيها المؤمنون- في أقوال رسول الله صلى الله عليه وسلم وأفعاله وأحواله قدوة حسنة تتأسون بها، فالزموا سنته، فإنما يسلكها ويتأسى بها مَن كان يرجو الله واليوم الآخر، وأكثرَ مِن ذكر الله واستغفاره، وشكره في كل حال.
   validated_by: mssnoussi92
+- id: tafsir.ibn-kathir.18.96
+  type: tafsir
+  ref: {edition: ibn-kathir, surah: 18, ayah: 96}
+  url: https://quran.com/18:96/tafsirs/ar-tafsir-ibn-kathir
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/14/by_ayah/18:96
+    edition: Tafsir Ibn Kathir
+    verses: ["18:96"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: "( أجعل بينكم وبينهم ردما آتوني زبر الحديد ) والزبر : جمع زبرة ، وهي القطعة منه ؛ قاله ابن عباس ، ومجاهد ، وقتادة . وهي كاللبنة ، يقال : كل لبنة [ زنة ] قنطار بالدمشقي ، أو تزيد عليه .\n( حتى إذا ساوى بين الصدفين ) أي : وضع بعضه على بعض من الأساس حتى إذا حاذى به رءوس الجبلين طولا وعرضا . واختلفوا في مساحة عرضه وطوله على أقوال . ( قال انفخوا ) أي : أجج عليه النار حتى صار كله نارا ، ( قال آتوني أفرغ عليه قطرا ) قال ابن عباس ، ومجاهد ، وعكرمة ، والضحاك ، وقتادة ، والسدي : هو النحاس . وزاد بعضهم : المذاب . ويستشهد بقوله تعالى : ( وأسلنا له عين القطر ) [ سبإ : 12 ] ولهذا يشبه بالبرد المحبر .\nقال ابن جرير : حدثنا بشر ، حدثنا يزيد ، حدثنا سعيد ، عن قتادة قال : ذكر لنا أن رجلا قال : يا رسول الله ، قد رأيت سد يأجوج ومأجوج ، قال : \" انعته لي \" قال : كالبرد المحبر ، طريقة سوداء . وطريقة حمراء . قال : \" قد رأيته \" . هذا حديث مرسل .\nوقد بعث الخليفة الواثق في دولته بعض أمرائه ، ووجه معه جيشا سرية ، لينظروا إلى السد ويعاينوه وينعتوه له إذا رجعوا . فتوصلوا من بلاد إلى بلاد ، ومن ملك إلى ملك ، حتى وصلوا إليه ، ورأوا بناءه من الحديد ومن النحاس ، وذكروا أنهم رأوا فيه بابا عظيما ، وعليه أقفال عظيمة ، ورأوا بقية اللبن والعمل في برج هناك . وأن عنده حرسا من الملوك المتاخمة له ، وأنه منيف عال ، شاهق ، لا يستطاع ولا ما حوله من الجبال . ثم رجعوا إلى بلادهم ، وكانت غيبتهم أكثر من سنتين ، وشاهدوا أهوالا وعجائب .\nثم قال الله تعالى :"
+- id: tafsir.ibn-kathir.28.24
+  type: tafsir
+  ref: {edition: ibn-kathir, surah: 28, ayah: 24}
+  url: https://quran.com/28:24/tafsirs/ar-tafsir-ibn-kathir
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/14/by_ayah/28:24
+    edition: Tafsir Ibn Kathir
+    verses: ["28:24"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: "قال الله تعالى : ( فسقى لهما ) قال أبو بكر بن أبي شيبة : حدثنا عبد الله ، أنبأنا إسرائيل ، عن أبى إسحاق ، عن عمرو بن ميمون الأودي ، عن عمر بن الخطاب ، رضي الله عنه ، أن موسى ، عليه السلام ، لما ورد ماء مدين ، وجد عليه أمة من الناس يسقون ، قال : فلما فرغوا أعادوا الصخرة على البئر ، ولا يطيق رفعها إلا عشرة رجال ، فإذا هو بامرأتين تذودان ، قال : ما خطبكما ؟ فحدثتاه ، فأتى الحجر فرفعه ، ثم لم يستق إلا ذنوبا واحدا حتى رويت الغنم . إسناد صحيح .\nوقوله : ( ثم تولى إلى الظل فقال رب إني لما أنزلت إلي من خير فقير ) قال ابن عباس : سار موسى من مصر إلى مدين ، ليس له طعام إلا البقل وورق الشجر ، وكان حافيا فما وصل مدين حتى سقطت نعل قدمه . وجلس في الظل وهو صفوة الله من خلقه ، وإن بطنه لاصق بظهره من الجوع ، وإن خضرة البقل لترى من داخل جوفه وإنه لمحتاج إلى شق تمرة .\nوقوله : ( إلى الظل ) قال ابن عباس ، وابن مسعود ، والسدي : جلس تحت شجرة .\nوقال ابن جرير : حدثني الحسين بن عمرو العنقزي ، حدثنا أبي ، حدثنا إسرائيل ، عن أبي إسحاق ، عن عمرو بن ميمون ، عن عبد الله - هو ابن مسعود - قال : حثثت على جمل ليلتين ، حتى صبحت مدين ، فسألت عن الشجرة التي أوى إليها موسى ، فإذا شجرة خضراء ترف ، فأهوى إليها جملي - وكان جائعا - فأخذها جملي فعالجها ساعة ، ثم لفظها ، فدعوت الله لموسى ، عليه السلام ، ثم انصرفت .\nوفي رواية عن ابن مسعود : أنه ذهب إلى الشجرة التي كلم الله منها لموسى ، كما سيأتي والله أعلم .\nوقال السدي : كانت من شجر السمر .\nوقال عطاء بن السائب : لما قال موسى ( رب إني لما أنزلت إلي من خير فقير ) ، أسمع المرأة ."
+- id: tafsir.ibn-kathir.28.25
+  type: tafsir
+  ref: {edition: ibn-kathir, surah: 28, ayah: 25}
+  url: https://quran.com/28:25/tafsirs/ar-tafsir-ibn-kathir
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/14/by_ayah/28:25
+    edition: Tafsir Ibn Kathir
+    verses: ["28:25"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: "لما رجعت المرأتان سراعا بالغنم إلى أبيهما ، أنكر حالهما ومجيئهما سريعا ، فسألهما عن خبرهما ، فقصتا عليه ما فعل موسى ، عليه السلام . فبعث إحداهما إليه لتدعوه إلى أبيها قال الله تعالى : ( فجاءته إحداهما تمشي على استحياء ) أي : مشي الحرائر ، كما روي عن أمير المؤمنين عمر رضي الله عنه ، أنه قال : كانت مستترة بكم درعها .\nوقال ابن أبي حاتم : حدثنا [ أبي ، حدثنا ] أبو نعيم ، حدثنا إسرائيل ، عن أبي إسحاق ، عن عمر بن ميمون قال : قال عمر رضي الله عنه : جاءت تمشي على استحياء ، قائلة بثوبها على وجهها ، ليست بسلفع خراجة ولاجة . هذا إسناد صحيح .\nقال الجوهري : السلفع من الرجال : الجسور ، ومن النساء : الجريئة السليطة ، ومن النوق : الشديدة .\n( قالت إن أبي يدعوك ليجزيك أجر ما سقيت لنا ) ، وهذا تأدب في العبارة ، لم تطلبه طلبا مطلقا لئلا يوهم ريبة ، بل قالت : ( إن أبي يدعوك ليجزيك أجر ما سقيت لنا ) يعني : ليثيبك ويكافئك على سقيك لغنمنا ، ( فلما جاءه وقص عليه القصص ) أي : ذكر له ما كان من أمره ، وما جرى له من السبب الذي خرج من أجله من بلده ، ( قال لا تخف نجوت من القوم الظالمين ) . يقول : طب نفسا وقر عينا ، فقد خرجت من مملكتهم فلا حكم لهم في بلادنا . ولهذا قال : ( نجوت من القوم الظالمين ) .\nوقد اختلف المفسرون في هذا الرجل : من هو ؟ على أقوال : أحدها أنه شعيب النبي عليه السلام الذي أرسل إلى أهل مدين . وهذا هو المشهور عند كثيرين ، وقد قاله الحسن البصري وغير واحد . ورواه ابن أبي حاتم .\nحدثنا أبي ، حدثنا عبد العزيز الأويسي ، حدثنا مالك بن أنس ; أنه بلغه أن شعيبا هو الذي قص عليه موسى القصص قال : ( لا تخف نجوت من القوم الظالمين ) .\nوقد روى الطبراني عن سلمة بن سعد العنزي أنه وفد على رسول الله - صلى الله عليه وسلم - فقال له : \" مرحبا بقوم شعيب وأختان موسى ، هديت \" .\nوقال آخرون : بل كان ابن أخي شعيب . وقيل : رجل مؤمن من قوم شعيب . وقال آخرون : كان شعيب قبل زمان موسى ، عليه السلام ، بمدة طويلة ; لأنه قال لقومه : ( وما قوم لوط منكم ببعيد ) [ هود : 95 ] . وقد كان هلاك قوم لوط في زمن الخليل ، عليه السلام بنص القرآن ، وقد علم أنه كان بين موسى والخليل ، عليهما السلام ، مدة طويلة تزيد على أربعمائة سنة ، كما ذكره غير واحد . وما قيل : إن شعيبا عاش مدة طويلة ، إنما هو - والله أعلم - احتراز من هذا الإشكال ، ثم من المقوي لكونه ليس بشعيب أنه لو كان إياه لأوشك أن ينص على اسمه في القرآن هاهنا . وما جاء في بعض الأحاديث من التصريح بذكره في قصة موسى لم يصح إسناده ، كما سنذكره قريبا إن شاء الله . ثم من الموجود في كتب بني إسرائيل أن هذا الرجل اسمه : \" ثبرون \" ، والله أعلم .\nوقال أبو عبيدة بن عبد الله بن مسعود : وأثرون وهو ابن أخي شعيب عليه السلام .\nوعن أبي حمزة عن ابن عباس : الذي استأجر موسى يثرى صاحب مدين . رواه ابن جرير ، ثم قال : الصواب أن هذا لا يدرك إلا بخبر ، ولا خبر تجب به الحجة في ذلك ."
+- id: tafsir.ibn-kathir.80.31
+  type: tafsir
+  ref: {edition: ibn-kathir, surah: 80, ayah: 31}
+  url: https://quran.com/80:31/tafsirs/ar-tafsir-ibn-kathir
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/14/by_ayah/80:31
+    edition: Tafsir Ibn Kathir
+    verses: ["80:31"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: "وقوله ( وفاكهة وأبا ) أما الفاكهة فهو ما يتفكه به من الثمار قال ابن عباس الفاكهة كل ما أكل رطبا والأب ما أنبتت الأرض مما تأكله الدواب ولا يأكله الناس وفي رواية عنه هو الحشيش للبهائم وقال مجاهد وسعيد بن جبير وأبو مالك الأب الكلأ . وعن مجاهد والحسن وقتادة وابن زيد الأب للبهائم كالفاكهة لبني آدم وعن عطاء كل شيء نبت على وجه الأرض فهو أب وقال الضحاك كل شيء أنبتته الأرض سوى الفاكهة فهو أب .\nوقال ابن إدريس عن عاصم بن كليب عن أبيه عن ابن عباس الأب نبت الأرض مما تأكله الدواب ولا يأكله الناس ورواه ابن جرير من ثلاث طرق عن ابن إدريس ثم قال حدثنا أبو كريب وأبو السائب قالا : حدثنا ابن إدريس حدثنا عبد الملك عن سعيد بن جبير قال : عد ابن عباس وقال : الأب ما أنبتت الأرض للأنعام هذا لفظ أبي كريب وقال أبو السائب ما أنبتت الأرض مما يأكل الناس وتأكل الأنعام\nوقال العوفي عن ابن عباس الأب الكلأ والمرعى وكذا قال مجاهد والحسن وقتادة وابن زيد وغير واحد\nوقال أبو عبيد القاسم بن سلام حدثنا محمد بن يزيد حدثنا العوام بن حوشب عن إبراهيم التيمي قال : سئل أبو بكر الصديق رضي الله عنه عن قوله تعالى ( وفاكهة وأبا ) فقال أي سماء تظلني وأي أرض تقلني إن قلت في كتاب الله ما لا أعلم .\nوهذا منقطع بين إبراهيم التيمي والصديق فأما ما رواه ابن جرير حيث قال حدثنا ابن بشار حدثنا ابن أبي عدي حدثنا حميد عن أنس قال : قرأ عمر بن الخطاب ( عبس وتولى ) فلما أتي على هذه الآية ( وفاكهة وأبا ) قال عرفنا ما الفاكهة فما الأب فقال لعمرك يا ابن الخطاب إن هذا لهو التكلف .\nفهو إسناد صحيح وقد رواه غير واحد عن أنس به وهذا محمول على أنه أراد أن يعرف شكله وجنسه وعينه وإلا فهو وكل من قرأ هذه الآية يعلم أنه من نبات الأرض لقوله ( فأنبتنا فيها حبا وعنبا وقضبا وزيتونا ونخلا وحدائق غلبا وفاكهة وأبا )"
+- id: tafsir.muyassar.17.37
+  type: tafsir
+  ref: {edition: muyassar, surah: 17, ayah: 37}
+  url: https://quran.com/17:37/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/17:37
+    edition: Tafsir Muyassar
+    verses: ["17:37"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: ولا تمش في الأرض مختالا متكبرا؛ فإنك لن تَخْرِق الأرض بمشيك عليها بهذه الصفة، ولن تبلغ الجبال طولا بخيلائك وفخرك وكبرك.
+- id: tafsir.muyassar.18.96
+  type: tafsir
+  ref: {edition: muyassar, surah: 18, ayah: 96}
+  url: https://quran.com/18:96/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/18:96
+    edition: Tafsir Muyassar
+    verses: ["18:96"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: 'أعطوني قطع الحديد، حتى إذا جاؤوا به ووضعوه وحاذوا به جانبي الجبلين، قال للعمال: أجِّجوا النار، حتى إذا صار الحديد كله نارًا، قال: أعطوني نحاسًا أُفرغه عليه.'
+- id: tafsir.muyassar.2.153
+  type: tafsir
+  ref: {edition: muyassar, surah: 2, ayah: 153}
+  url: https://quran.com/2:153/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/2:153
+    edition: Tafsir Muyassar
+    verses: ["2:153"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: 'يا أيها المؤمنون اطلبوا العون من الله في كل أموركم: بالصبر على النوائب والمصائب، وبالصبر على ترك المعاصي والذنوب، والصبر على الطاعات والقربات، وبالصلاة التي تطمئن بها النفس، وتنهى عن الفحشاء والمنكر. إن الله مع الصابرين بعونه وتوفيقه وتسديده. وفي الآية: إثبات معيَّة الله الخاصة بالمؤمنين، المقتضية لما سلف ذكره; أما المعية العامة، المقتضية للعلم والإحاطة فهي لجميع الخلق.'
+- id: tafsir.muyassar.2.45
+  type: tafsir
+  ref: {edition: muyassar, surah: 2, ayah: 45}
+  url: https://quran.com/2:45/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/2:45
+    edition: Tafsir Muyassar
+    verses: ["2:45"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: واستعينوا في كل أموركم بالصبر بجميع أنواعه، وكذلك الصلاة. وإنها لشاقة إلا على الخاشعين.
+- id: tafsir.muyassar.20.39
+  type: tafsir
+  ref: {edition: muyassar, surah: 20, ayah: 39}
+  url: https://quran.com/20:39/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/20:39
+    edition: Tafsir Muyassar
+    verses: ["20:38", "20:39"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: 'وذلك حين ألهمْنا أمَّك: أن ضعي ابنك موسى بعد ولادته في التابوت، ثم اطرحيه في النيل، فسوف يلقيه النيل على الساحل، فيأخذه فرعون عدوي وعدوه. وألقيت عليك محبة مني فصرت بذلك محبوبًا بين العباد، ولِتربى على عيني وفي حفظي. وفي الآية إثبات صفة العين لله - سبحانه وتعالى - كما يليق بجلاله وكماله.'
+- id: tafsir.muyassar.26.62
+  type: tafsir
+  ref: {edition: muyassar, surah: 26, ayah: 62}
+  url: https://quran.com/26:62/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/26:62
+    edition: Tafsir Muyassar
+    verses: ["26:62"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: 'قال موسى لهم: كلا ليس الأمر كما ذكرتم فلن تُدْرَكوا; إن معي ربي بالنصر، سيهديني لما فيه نجاتي ونجاتكم.'
+- id: tafsir.muyassar.28.24
+  type: tafsir
+  ref: {edition: muyassar, surah: 28, ayah: 24}
+  url: https://quran.com/28:24/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/28:24
+    edition: Tafsir Muyassar
+    verses: ["28:24"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: 'فسقى موسى للمرأتين ماشيتهما، ثم تولى إلى ظل شجرة فاستظلَّ بها وقال: رب إني مفتقر إلى ما تسوقه إليَّ مِن أي خير كان، كالطعام. وكان قد اشتد به الجوع.'
+- id: tafsir.muyassar.28.25
+  type: tafsir
+  ref: {edition: muyassar, surah: 28, ayah: 25}
+  url: https://quran.com/28:25/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/28:25
+    edition: Tafsir Muyassar
+    verses: ["28:25"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: 'فجاءت إحدى المرأتين اللتين سقى لهما تسير إليه في حياء، قالت: إن أبي يدعوك ليعطيك أجر ما سقيت لنا، فمضى موسى معها إلى أبيها، فلما جاء أباها وقصَّ عليه قصصه مع فرعون وقومه، قال له أبوها: لا تَخَفْ نجوت من القوم الظالمين، وهم فرعون وقومه؛ إذ لا سلطان لهم بأرضنا.'
+- id: tafsir.muyassar.28.7
+  type: tafsir
+  ref: {edition: muyassar, surah: 28, ayah: 7}
+  url: https://quran.com/28:7/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/28:7
+    edition: Tafsir Muyassar
+    verses: ["28:7"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: 'وألْهمنا أم موسى حين ولدته وخشيت عليه أن يذبحه فرعون كما يذبح أبناء بني إسرائيل: أن أرضعيه مطمئنة، فإذا خشيت أن يُعرف أمره فضعيه في صندوق وألقيه في النيل، دون خوف من فرعون وقومه أن يقتلوه، ودون حزن على فراقه، إنا رادُّو ولدك إليك وباعثوه رسولا. فوضعته في صندوق وألقته في النيل، فعثر عليه أعوان فرعون وأخذوه، فكانت عاقبةُ ذلك ما قدره الله بأن يكون موسى عدوا لهم بمخالفة دينهم، وموقعا لهم في الحزن بإغراقهم وزوال ملكهم على يده. إن فرعون وهامان وأعوانهما كانوا آثمين مشركين.'
+- id: tafsir.muyassar.31.18
+  type: tafsir
+  ref: {edition: muyassar, surah: 31, ayah: 18}
+  url: https://quran.com/31:18/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/31:18
+    edition: Tafsir Muyassar
+    verses: ["31:18"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: ولا تُمِلْ وجهك عن الناس إذا كلَّمتهم أو كلموك؛ احتقارًا منك لهم واستكبارًا عليهم، ولا تمش في الأرض بين الناس مختالا متبخترًا، إن الله لا يحب كل متكبر متباه في نفسه وهيئته وقوله.
+- id: tafsir.muyassar.37.97
+  type: tafsir
+  ref: {edition: muyassar, surah: 37, ayah: 97}
+  url: https://quran.com/37:97/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/37:97
+    edition: Tafsir Muyassar
+    verses: ["37:97"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: 'فلما قامت عليهم الحجة لجؤوا إلى القوة، وقالوا: ابنوا له بنيانًا واملؤوه حطبًا، ثم ألقوه فيه.'
+- id: tafsir.muyassar.37.98
+  type: tafsir
+  ref: {edition: muyassar, surah: 37, ayah: 98}
+  url: https://quran.com/37:98/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/37:98
+    edition: Tafsir Muyassar
+    verses: ["37:98"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: فأراد قوم إبراهيم به كيدًا لإهلاكه، فجعلناهم المقهورين المغلوبين، وردَّ الله كيدهم في نحورهم، وجعل النار على إبراهيم بردًا وسلامًا.
+- id: tafsir.muyassar.37.99
+  type: tafsir
+  ref: {edition: muyassar, surah: 37, ayah: 99}
+  url: https://quran.com/37:99/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/37:99
+    edition: Tafsir Muyassar
+    verses: ["37:99"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: 'وقال إبراهيم: إني مهاجر إلى ربي من بلد قومي إلى حيث أتمكن من عبادة ربي; فإنه سيدلني على الخير في ديني ودنياي. رب أعطني ولدًا صالحًا.'
+- id: tafsir.muyassar.7.136
+  type: tafsir
+  ref: {edition: muyassar, surah: 7, ayah: 136}
+  url: https://quran.com/7:136/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/7:136
+    edition: Tafsir Muyassar
+    verses: ["7:136"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: فانتقمنا منهم حين جاء الأجل المحدد لإهلاكهم، وذلك بإحلال نقمتنا عليهم، وهي إغراقهم في البحر; بسبب تكذيبهم بالمعجزات التي ظهرت على يد موسى، وكانوا عن هذه المعجزات غافلين، وتلك الغفلة هي سبب التكذيب.
+- id: tafsir.muyassar.80.31
+  type: tafsir
+  ref: {edition: muyassar, surah: 80, ayah: 31}
+  url: https://quran.com/80:31/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/80:31
+    edition: Tafsir Muyassar
+    verses: ["80:25", "80:26", "80:27", "80:28", "80:29", "80:30", "80:31", "80:32"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: 'فليتدبر الإنسان: كيف خلق الله طعامه الذي هو قوام حياته؟ أنَّا صببنا الماء على الأرض صَبًّا، ثم شققناها بما أخرجنا منها من نبات شتى، فأنبتنا فيها حبًا، وعنبًا وعلفًا للدواب، وزيتونًا ونخلا وحدائق عظيمة الأشجار، وثمارًا وكلأ تَنْعَمون بها أنتم وأنعامكم.'
+- id: tafsir.saadi.17.37
+  type: tafsir
+  ref: {edition: saadi, surah: 17, ayah: 37}
+  url: https://quran.com/17:37/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/17:37
+    edition: السعدي Al-Sa'di
+    verses: ["17:37"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: 'يقول تعالى: { وَلَا تَمْشِ فِي الْأَرْضِ مَرَحًا } أي: كبرا وتيها وبطرا متكبرا على الحق ومتعاظما على الخلق. { إِنَّكَ } في فعلك ذلك { لَنْ تَخْرِقَ الْأَرْضَ وَلَنْ تَبْلُغَ الْجِبَالَ طُولًا } في تكبرك بل تكون حقيرا عند الله ومحتقرا عند الخلق مبغوضا ممقوتا قد اكتسبت أشر الأخلاق واكتسيت أرذلها من غير إدراك لبعض ما تروم.'
+- id: tafsir.saadi.18.96
+  type: tafsir
+  ref: {edition: saadi, surah: 18, ayah: 96}
+  url: https://quran.com/18:96/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/18:96
+    edition: السعدي Al-Sa'di
+    verses: ["18:96"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: '{ آتُونِي زُبَرَ الْحَدِيدِ ْ} أي: قطع الحديد، فأعطوه ذلك. { حَتَّى إِذَا سَاوَى بَيْنَ الصَّدَفَيْنِ ْ} أي: الجبلين اللذين بني بينهما السد { قَالَ انْفُخُوا ْ} النار أي: أوقدوها إيقادا عظيما، واستعملوا لها المنافيخ لتشتد، فتذيب النحاس، فلما ذاب النحاس، الذي يريد أن يلصقه بين زبر الحديد { قَالَ آتُونِي أُفْرِغْ عَلَيْهِ قِطْرًا ْ} أي: نحاسا مذابا، فأفرغ عليه القطر، فاستحكم السد استحكاما هائلا، وامتنع من وراءه من الناس، من ضرر يأجوج ومأجوج.'
+- id: tafsir.saadi.2.45
+  type: tafsir
+  ref: {edition: saadi, surah: 2, ayah: 45}
+  url: https://quran.com/2:45/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/2:45
+    edition: السعدي Al-Sa'di
+    verses: ["2:45"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: 'أمرهم الله أن يستعينوا في أمورهم كلها بالصبر بجميع أنواعه، وهو الصبر على طاعة الله حتى يؤديها، والصبر عن معصية الله حتى يتركها, والصبر على أقدار الله المؤلمة فلا يتسخطها، فبالصبر وحبس النفس على ما أمر الله بالصبر عليه معونة عظيمة على كل أمر من الأمور, ومن يتصبر يصبره الله، وكذلك الصلاة التي هي ميزان الإيمان, وتنهى عن الفحشاء والمنكر, يستعان بها على كل أمر من الأمور { وَإِنَّهَا } أي: الصلاة { لَكَبِيرَةٌ } أي: شاقة { إِلَّا عَلَى الْخَاشِعِينَ } فإنها سهلة عليهم خفيفة؛ لأن الخشوع, وخشية الله, ورجاء ما عنده يوجب له فعلها, منشرحا صدره لترقبه للثواب, وخشيته من العقاب، بخلاف من لم يكن كذلك, فإنه لا داعي له يدعوه إليها, وإذا فعلها صارت من أثقل الأشياء عليه. والخشوع هو: خضوع القلب وطمأنينته, وسكونه لله تعالى, وانكساره بين يديه, ذلا وافتقارا, وإيمانا به وبلقائه.'
+- id: tafsir.saadi.20.39
+  type: tafsir
+  ref: {edition: saadi, surah: 20, ayah: 39}
+  url: https://quran.com/20:39/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/20:39
+    edition: السعدي Al-Sa'di
+    verses: ["20:39"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: 'تفسير الآيتين 38 و 39 :ـحيث ألهمنا أمك أن تقذفك في التابوت وقت الرضاع، خوفا من فرعون، لأنه أمر بذبح أبناء بني إسرائيل، فأخفته أمه، وخافت عليه خوفا شديدا فقذفته في التابوت، ثم قذفته في اليم، أي: شط نيل مصر، فأمر الله اليم، أن يلقيه في الساحل، وقيض أن يأخذه، أعدى الأعداء لله ولموسى، ويتربى في أولاده، ويكون قرة عين لمن رآه، ولهذا قال: { وَأَلْقَيْتُ عَلَيْكَ مَحَبَّةً مِنِّي } فكل من رآه أحبه { وَلِتُصْنَعَ عَلَى عَيْنِي } ولتتربى على نظري وفي حفظي وكلاءتي، وأي نظر وكفالة أجلّ وأكمل، من ولاية البر الرحيم، القادر على إيصال مصالح عبده، ودفع المضار عنه؟! فلا ينتقل من حالة إلى حالة، إلا والله تعالى هو الذي دبّر ذلك لمصلحة موسى،'
+- id: tafsir.saadi.28.24
+  type: tafsir
+  ref: {edition: saadi, surah: 28, ayah: 24}
+  url: https://quran.com/28:24/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/28:24
+    edition: السعدي Al-Sa'di
+    verses: ["28:24"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: 'فرق لهما موسى عليه السلام ورحمهما { فَسَقَى لَهُمَا } غير طالب منهما الأجرة، ولا له قصد غير وجه اللّه تعالى، فلما سقى لهما، وكان ذلك وقت شدة حر، وسط النهار، بدليل قوله: { ثُمَّ تَوَلَّى إِلَى الظِّلِّ } مستريحا لذلك الظلال بعد التعب.{ فَقَالَ } في تلك الحالة، مسترزقا ربه { رَبِّ إِنِّي لِمَا أَنْزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ } أي: إني مفتقر للخير الذي تسوقه إليَّ وتيسره لي. وهذا سؤال منه بحاله، والسؤال بالحال أبلغ من السؤال بلسان المقال، فلم يزل في هذه الحالة داعيا ربه متملقا. وأما المرأتان، فذهبتا إلى أبيهما، وأخبرتاه بما جرى.'
+- id: tafsir.saadi.31.18
+  type: tafsir
+  ref: {edition: saadi, surah: 31, ayah: 18}
+  url: https://quran.com/31:18/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/31:18
+    edition: السعدي Al-Sa'di
+    verses: ["31:18"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: '{ وَلَا تُصَعِّرْ خَدَّكَ لِلنَّاسِ } أي: لا تُمِلْهُ وتعبس بوجهك الناس، تكبُّرًا عليهم، وتعاظما.{ وَلَا تَمْشِ فِي الْأَرْضِ مَرَحًا } أي: بطرا، فخرا بالنعم، ناسيا المنعم، معجبا بنفسك. { إِنَّ اللَّهَ لَا يُحِبُّ كُلَّ مُخْتَالٍ } في نفسه وهيئته وتعاظمه { فَخُور } بقوله.'
+- id: tafsir.saadi.37.98
+  type: tafsir
+  ref: {edition: saadi, surah: 37, ayah: 98}
+  url: https://quran.com/37:98/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/37:98
+    edition: السعدي Al-Sa'di
+    verses: ["37:98"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: '{ فَأَرَادُوا بِهِ كَيْدًا } ليقتلوه أشنع قتلة { فَجَعَلْنَاهُمُ الْأَسْفَلِينَ } رد اللّه كيدهم في نحورهم، وجعل النار على إبراهيم بردا وسلاما.'
+- id: tafsir.saadi.37.99
+  type: tafsir
+  ref: {edition: saadi, surah: 37, ayah: 99}
+  url: https://quran.com/37:99/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/37:99
+    edition: السعدي Al-Sa'di
+    verses: ["37:99"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: '{ وَ } لما فعلوا فيه هذا الفعل، وأقام عليهم الحجة، وأعذر منهم، { قال إِنِّي ذَاهِبٌ إِلَى رَبِّي } أي: مهاجر إليه، قاصد إلى الأرض المباركة أرض الشام. { سَيَهْدِينِ } يدلني إلى ما فيه الخير لي، من أمر ديني ودنياي، وقال في الآية الأخرى: { وَأَعْتَزِلُكُمْ وَمَا تَدْعُونَ مِنْ دُونِ اللَّهِ وَأَدْعُو رَبِّي عَسَى أَلَّا أَكُونَ بِدُعَاءِ رَبِّي شَقِيًّا } .'
+- id: tafsir.saadi.80.32
+  type: tafsir
+  ref: {edition: saadi, surah: 80, ayah: 32}
+  url: https://quran.com/80:32/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/80:32
+    edition: السعدي Al-Sa'di
+    verses: ["80:32"]
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "معاك 5 ثواني, page test (ma3ak), proposé le 2026-11-18"
+  text_ar: 'والأب: ما تأكله البهائم والأنعام، ولهذا قال: { مَتَاعًا لَكُمْ وَلِأَنْعَامِكُمْ } التي خلقها الله وسخرها لكم، فمن نظر في هذه النعم أوجب له ذلك شكر ربه، وبذل الجهد في الإنابة إليه، والإقبال على طاعته، والتصديق بأخباره.'

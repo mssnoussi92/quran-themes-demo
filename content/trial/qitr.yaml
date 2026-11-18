@@ -1,0 +1,64 @@
+# « معاك 5 ثواني », page test, quiz 7 (content/trial/ma3ak.yaml ; script : docs/scripts/quiz.md) : le sens d'un mot.
+# « قِطْرًا » de 18:96 n'est ni le train (« قطر » en égyptien) ni le fer du même verset : c'est du cuivre fondu
+# (al-Muyassar, as-Sa'di, Ibn Kathir). Rien n'est dessiné de Dhul-Qarnayn ni de ses ouvriers : deux montagnes, le
+# barrage de blocs de fer, le feu, le cuivre qui coule. Script écrit par la session le 2026-11-18.
+id: qitr
+# « Je valide les 7 scripts » du propriétaire (2026-11-18, question à choix nommant les sept quiz du lot de la page test
+# et leurs répliques, choix et dessins) : inscrit sur sa parole. Ni la voix, ni les images, ni les textes à coller.
+script_validated: { by: mssnoussi92, on: 2026-11-18 }
+handle: "@ma3ak.5.thawani"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 95-trial-qitr
+# des falaises sombres dans la brume du soir (Pixabay 381, FlickrVideos, approuvé pour le barrage de Dhul-Qarnayn) ;
+# PROPOSÉ pour ce short, à montrer au propriétaire sur le brouillon muet
+clip: { source: pixabay, id: 381, author: FlickrVideos, page: "https://pixabay.com/videos/id-381/", take: { height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.75, ground: "#07060b", horizon: 1380, veil: 0.8 }
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 10, seconds: 60, level: -36 }
+cover: { scene: ask, title: "«قطرًا» في سورة الكهف؟", tag: "معاك 5 ثواني", focus: 1000 }
+quiz:
+  head: { verse: quran.18.96, from: -1, to: -1 }      # « قِطْرًا », écrit en or au-dessus de la question
+  choices:
+    - { ar: "قطر سكة حديد", en: "a train" }
+    - { ar: "حديد", en: "iron", note: { ar: "الحديد كان القطع · نفس الآية", en: "the iron was the pieces · same verse" } }
+    - { ar: "نحاس مدوّب", en: "molten copper", right: true }
+publish:
+  title: { en: "\"Qitran\" in Surat al-Kahf?", ar: "«قطرًا» في سورة الكهف؟" }
+  part: 7
+  hashtags: ["#سورة_الكهف", "#معاني_الكلمات"]
+  hook:      # légende courte de Facebook et Instagram ; proposée par la session, à valider
+    ar: "«قطرًا» في سورة الكهف… لا قطر ولا حديد. معاك 5 ثواني."
+    en: '"Qitran" in Surat al-Kahf… neither a train nor iron. You have 5 seconds.'
+  description:
+    en: "\"Qitran\" in Surat al-Kahf (18:96) is molten copper (al-Muyassar, as-Sa'di, Ibn Kathir): poured over the red-hot pieces of iron, it welded them into one barrier."
+    ar: "«قطرًا» في سورة الكهف (الكهف 96) معناها نحاس مدوّب: اتصبّ على قطع الحديد بعد ما احمرّت… ولحمها وبقت سد واحد."
+segments:
+  - narration: ask
+    silent: true
+    hold: 6.8
+    scene: ask
+    sfx: [[count, 0], [impact, 5.0]]
+    lines:
+      - ar: "في سورة الكهف يعني إيه؟"
+        en: "in Surat al-Kahf: what does it mean?"
+  - verse: quran.18.96
+    scene: listen
+  - narration: meaning
+    scene: meaning
+    sources: [tafsir.muyassar.18.96, tafsir.saadi.18.96, tafsir.ibn-kathir.18.96]
+    lines:
+      - ar: "القِطر هنا… نحاس مدوّب."
+        en: "\"Qitr\" here… is molten copper."
+      - ar: "رصّ قطع الحديد بين الجبلين… ولعّها نار… وبعدين صبّ عليها النحاس."
+        en: "He stacked the pieces of iron between the two mountains… set them ablaze… then poured the copper over them."
+  - narration: lesson
+    scene: lesson
+    sources: [tafsir.saadi.18.96]
+    lines:
+      - ar: "الحديد لوحده كان هيفضل قطع جنب بعض… النحاس هو اللي لحمها، وبقت سد واحد."
+        en: "Iron alone would have stayed pieces side by side… the copper welded them, and they became one barrier."
+  - narration: close
+    scene: close
+    lines:
+      - ar: "وإنت… فيه كلمة في القرآن كنت فاكر معناها حاجة… وطلعت حاجة تانية؟"
+        en: "And you… is there a word in the Quran you thought meant one thing… and it turned out to be another?"
+      - ar: "والسؤال الجاي: وصية أب لابنه… تفتكر خلصت بإيه؟ تابعنا."
+        en: "Next question: a father's advice to his son… how do you think it ended? Follow us."
