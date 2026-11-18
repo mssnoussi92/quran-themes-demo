@@ -9,6 +9,7 @@ id: quiz
 files: quiz                      # début du nom des vidéos livrées : quiz-short-<n>-<id>.mp4
 title: { ar: "معاك 5 ثواني", en: "You Have 5 Seconds" }       # choisi par le propriétaire le 2026-11-17
 shorts: [sayyara, khatima, qalaha, dabba, sabr, hudhud]
+validated: { by: mssnoussi92, on: 2026-11-18, what: [publish] }      # « je valide les textes », après l'envoi de publication-quiz.md
 handle: "@quran_words_daily"
 publish:
   out: docs/retention/publication-quiz.md

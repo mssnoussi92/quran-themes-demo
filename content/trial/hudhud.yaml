@@ -9,7 +9,11 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 # « Je valide, avec 27:27 » du propriétaire (2026-11-17, question à choix nommant le rendu sans voix du workflow `film`,
 # run 44127154394, son clip 16139 et 27:27 récité) : le montage, la huppe, le clip et la récitation de 27:27 tels que
 # rendus. La voix, la couverture et l'ambiance sous la voix restent à valider sur la vidéo finale. Inscrit sur sa parole.
-validated: { by: mssnoussi92, on: 2026-11-17, what: [montage] }
+# « Je valide les 3 » du propriétaire (2026-11-18, question à choix nommant la voix, les couvertures et l'ambiance sous
+# la voix des vidéos avec voix du workflow `film`, run 44270232504) : ajoutés au montage validé le 2026-11-17 ; puis
+# « je valide les textes » (même jour, question à choix nommant les titres et descriptions de publication-quiz.md).
+# Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-18, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 91-trial-hudhud
