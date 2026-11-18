@@ -1002,7 +1002,10 @@ voix). Un mauvais choix vrai ailleurs n'est plus barré : il pâlit, sa référe
 a demandé que 27:27 (Soulayman vérifie, 8 s) soit récité au short 6, puisqu'une réplique repose sur son tafsir : ajouté.
 **Brouillons muets** (workflow `film`, runs 44121795304 et 44127154394, release brouillon `quiz-candidate` : 0:59, 0:58,
 0:59 sans voix) envoyés ; **validés par lui le même jour** (questions à choix) : le rendu et les clips (8451 le coucher qui
-devient nuit, 2119 l'aube rose, 16139 les dunes), 27:27 récité au short 6, les trois accroches. **Placés plus tard** (son choix) : en réserve, décidés à la revue après les chiffres du 23 novembre.
+devient nuit, 2119 l'aube rose, 16139 les dunes), 27:27 récité au short 6, les trois accroches.
+
+**Les six avec voix** (2026-11-18) : six requêtes, rendu (run 44270232504 : 0:37, 0:48, 1:23, 0:59, 0:58, 1:01) ; **tout
+validé par lui** : voix, couvertures, ambiances, puis les textes à coller (`docs/retention/publication-quiz.md`). **Placés plus tard** (son choix) : en réserve, décidés à la revue après les chiffres du 23 novembre.
 
 ## Série proposée : les adhkar du matin, du soir et d'après la prière (2026-11-17)
 

@@ -572,3 +572,9 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   (son choix), placés à la revue après les chiffres du premier quiz.
   Brouillons muets envoyés (la huppe reposée sur sa branche après un premier rendu) ; **validés par lui** : rendu, clips
   (8451, 2119, 16139), 27:27 récité au short 6, les trois accroches. Voix des six quiz le 2026-11-18.
+- **Les six quiz avec voix** (2026-11-18) : une requête prise par une autre session ce matin-là, puis les six voix en une
+  fois (run 44269152104 de `voice-test`) ; toutes les phrases retrouvées par Whisper (82 % au plus bas, « فاكرينه عايش »,
+  signalé à son oreille) ; rendu par le workflow `film` (run 44270232504, release brouillon `quiz-candidate` : 0:37, 0:48,
+  1:23, 0:59, 0:58, 1:01, −16 LUFS), contrôlé sur les planches, envoyé. **Validé par lui** (questions à choix) : la voix,
+  les couvertures et l'ambiance des six, puis les textes à coller (`docs/retention/publication-quiz.md`). Les sources
+  restent proposées.
