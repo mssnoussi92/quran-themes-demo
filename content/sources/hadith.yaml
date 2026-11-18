@@ -315,6 +315,14 @@
     license: none stated on the archive.org item
     status: validated
     validated_by: mssnoussi92
+  parts:
+    # Le short 3 du film « مخيّر ولا مسيّر؟ » (law) n'en joue que la fin, « وإن أصابك… عمل الشيطان » (choix du propriétaire,
+    # 2026-11-17) ; le film joue tout. Temps mesurés par la session (Whisper, mots et silences) : « وإن » juste après le silence
+    # de 2460,45-2460,95 s ; la fin, celle de la lecture entière.
+    after:
+      excerpt_ar: "وَإِنْ أَصَابَكَ شَىْءٌ فَلاَ تَقُلْ لَوْ أَنِّي فَعَلْتُ كَانَ كَذَا وَكَذَا ‏.‏ وَلَكِنْ قُلْ قَدَرُ اللَّهِ وَمَا شَاءَ فَعَلَ فَإِنَّ لَوْ تَفْتَحُ عَمَلَ الشَّيْطَانِ"
+      excerpt_en: "if anything (in the form of trouble) comes to you, don't say: If I had not done that, it would not have happened so and so, but say: Allah did that what He had ordained to do and your\" if\" opens the (gate) for the Satan"
+      recording: {start: 2460.8, end: 2476.1, heard: "وإن أصابك شيء فلا تقل لو أني فعلت كان كذا وكذا ولكن قل قدر الله وما شاء فعل فإن لو تفتح عمل الشيطان", status: validated, validated_by: mssnoussi92}
 - id: hadith.bukhari.1469
   type: hadith
   ref: {collection: bukhari, number: 1469}
@@ -1199,7 +1207,573 @@
   notes: "Aïcha : Abou Bakr, qui faisait vivre Mistah « لقرابته منه وفقره », jure de ne plus rien lui donner après ce qu'il avait dit d'elle ; 24:22 descend ; « بلى والله إني أحب أن يغفر الله لي » ; il lui rend sa pension et jure de ne jamais la lui retirer. Source du récit du short 4 de « آية وحكايتها » : raconté par la narration avec ses mots (l'accusation n'est ni nommée ni racontée), référence écrite à l'écran."
   text_ar: حَدَّثَنَا يَحْيَى بْنُ بُكَيْرٍ، حَدَّثَنَا اللَّيْثُ، عَنْ يُونُسَ، عَنِ ابْنِ شِهَابٍ، قَالَ أَخْبَرَنِي عُرْوَةُ بْنُ الزُّبَيْرِ، وَسَعِيدُ بْنُ الْمُسَيَّبِ، وَعَلْقَمَةُ بْنُ وَقَّاصٍ، وَعُبَيْدُ اللَّهِ بْنُ عَبْدِ اللَّهِ بْنِ عُتْبَةَ بْنِ مَسْعُودٍ، عَنْ حَدِيثِ، عَائِشَةَ ـ رضى الله عنها ـ زَوْجِ النَّبِيِّ صلى الله عليه وسلم حِينَ قَالَ لَهَا أَهْلُ الإِفْكِ مَا قَالُوا، فَبَرَّأَهَا اللَّهُ مِمَّا قَالُوا وَكُلٌّ حَدَّثَنِي طَائِفَةً مِنَ الْحَدِيثِ، وَبَعْضُ حَدِيثِهِمْ يُصَدِّقُ بَعْضًا، وَإِنْ كَانَ بَعْضُهُمْ أَوْعَى لَهُ مِنْ بَعْضٍ الَّذِي حَدَّثَنِي عُرْوَةُ عَنْ عَائِشَةَ ـ رضى الله عنها ـ أَنَّ عَائِشَةَ ـ رضى الله عنها ـ زَوْجَ النَّبِيِّ صلى الله عليه وسلم قَالَتْ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم إِذَا أَرَادَ أَنْ يَخْرُجَ أَقْرَعَ بَيْنَ أَزْوَاجِهِ، فَأَيَّتُهُنَّ خَرَجَ سَهْمُهَا خَرَجَ بِهَا رَسُولُ اللَّهِ صلى الله عليه وسلم مَعَهُ، قَالَتْ عَائِشَةُ فَأَقْرَعَ بَيْنَنَا فِي غَزْوَةٍ غَزَاهَا، فَخَرَجَ سَهْمِي، فَخَرَجْتُ مَعَ رَسُولِ اللَّهِ صلى الله عليه وسلم بَعْدَ مَا نَزَلَ الْحِجَابُ، فَأَنَا أُحْمَلُ فِي هَوْدَجِي وَأُنْزَلُ فِيهِ فَسِرْنَا حَتَّى إِذَا فَرَغَ رَسُولُ اللَّهِ صلى الله عليه وسلم مِنْ غَزْوَتِهِ تِلْكَ وَقَفَلَ، وَدَنَوْنَا مِنَ الْمَدِينَةِ قَافِلِينَ آذَنَ لَيْلَةً بِالرَّحِيلِ، فَقُمْتُ حِينَ آذَنُوا بِالرَّحِيلِ، فَمَشَيْتُ حَتَّى جَاوَزْتُ الْجَيْشَ، فَلَمَّا قَضَيْتُ شَأْنِي أَقْبَلْتُ إِلَى رَحْلِي، فَإِذَا عِقْدٌ لِي مِنْ جَزْعِ ظَفَارِ قَدِ انْقَطَعَ فَالْتَمَسْتُ عِقْدِي وَحَبَسَنِي ابْتِغَاؤُهُ وَأَقْبَلَ الرَّهْطُ الَّذِينَ كَانُوا يَرْحَلُونَ لِي، فَاحْتَمَلُوا هَوْدَجِي، فَرَحَلُوهُ عَلَى بَعِيرِي الَّذِي كُنْتُ رَكِبْتُ، وَهُمْ يَحْسِبُونَ أَنِّي فِيهِ، وَكَانَ النِّسَاءُ إِذْ ذَاكَ خِفَافًا لَمْ يُثْقِلْهُنَّ اللَّحْمُ، إِنَّمَا تَأْكُلُ الْعُلْقَةَ مِنَ الطَّعَامِ فَلَمْ يَسْتَنْكِرِ الْقَوْمُ خِفَّةَ الْهَوْدَجِ حِينَ رَفَعُوهُ، وَكُنْتُ جَارِيَةً حَدِيثَةَ السِّنِّ، فَبَعَثُوا الْجَمَلَ وَسَارُوا، فَوَجَدْتُ عِقْدِي بَعْدَ مَا اسْتَمَرَّ الْجَيْشُ، فَجِئْتُ مَنَازِلَهُمْ، وَلَيْسَ بِهَا دَاعٍ وَلاَ مُجِيبٌ، فَأَمَمْتُ مَنْزِلِي الَّذِي كُنْتُ بِهِ وَظَنَنْتُ أَنَّهُمْ سَيَفْقِدُونِي فَيَرْجِعُونَ إِلَىَّ فَبَيْنَا أَنَا جَالِسَةٌ فِي مَنْزِلِي غَلَبَتْنِي عَيْنِي فَنِمْتُ، وَكَانَ صَفْوَانُ بْنُ الْمُعَطَّلِ السُّلَمِيُّ ثُمَّ الذَّكْوَانِيُّ مِنْ وَرَاءِ الْجَيْشِ، فَأَدْلَجَ فَأَصْبَحَ عِنْدَ مَنْزِلِي، فَرَأَى سَوَادَ إِنْسَانٍ نَائِمٍ، فَأَتَانِي فَعَرَفَنِي حِينَ رَآنِي، وَكَانَ يَرَانِي قَبْلَ الْحِجَابِ، فَاسْتَيْقَظْتُ بِاسْتِرْجَاعِهِ حِينَ عَرَفَنِي فَخَمَّرْتُ وَجْهِي بِجِلْبَابِي، وَاللَّهِ مَا كَلَّمَنِي كَلِمَةً وَلاَ سَمِعْتُ مِنْهُ كَلِمَةً غَيْرَ اسْتِرْجَاعِهِ، حَتَّى أَنَاخَ رَاحِلَتَهُ فَوَطِئَ عَلَى يَدَيْهَا فَرَكِبْتُهَا فَانْطَلَقَ يَقُودُ بِي الرَّاحِلَةَ حَتَّى أَتَيْنَا الْجَيْشَ، بَعْدَ مَا نَزَلُوا مُوغِرِينَ فِي نَحْرِ الظَّهِيرَةِ، فَهَلَكَ مَنْ هَلَكَ، وَكَانَ الَّذِي تَوَلَّى الإِفْكَ عَبْدَ اللَّهِ بْنَ أُبَىٍّ ابْنَ سَلُولَ فَقَدِمْنَا الْمَدِينَةَ، فَاشْتَكَيْتُ حِينَ قَدِمْتُ شَهْرًا، وَالنَّاسُ يُفِيضُونَ فِي قَوْلِ أَصْحَابِ الإِفْكِ، لاَ أَشْعُرُ بِشَىْءٍ مِنْ ذَلِكَ، وَهْوَ يَرِيبُنِي فِي وَجَعِي أَنِّي لاَ أَعْرِفُ مِنْ رَسُولِ اللَّهِ صلى الله عليه وسلم اللَّطَفَ الَّذِي كُنْتُ أَرَى مِنْهُ حِينَ أَشْتَكِي، إِنَّمَا يَدْخُلُ عَلَىَّ رَسُولُ اللَّهِ صلى الله عليه وسلم فَيُسَلِّمُ ثُمَّ يَقُولُ ‏"‏ كَيْفَ تِيكُمْ ‏"‏‏.‏ ثُمَّ يَنْصَرِفُ، فَذَاكَ الَّذِي يَرِيبُنِي، وَلاَ أَشْعُرُ حَتَّى خَرَجْتُ بَعْدَ مَا نَقَهْتُ، فَخَرَجَتْ مَعِي أُمُّ مِسْطَحٍ قِبَلَ الْمَنَاصِعِ، وَهْوَ مُتَبَرَّزُنَا، وَكُنَّا لاَ نَخْرُجُ إِلاَّ لَيْلاً إِلَى لَيْلٍ، وَذَلِكَ قَبْلَ أَنْ نَتَّخِذَ الْكُنُفَ قَرِيبًا مِنْ بُيُوتِنَا، وَأَمْرُنَا أَمْرُ الْعَرَبِ الأُوَلِ فِي التَّبَرُّزِ قِبَلَ الْغَائِطِ، فَكُنَّا نَتَأَذَّى بِالْكُنُفِ أَنْ نَتَّخِذَهَا عِنْدَ بُيُوتِنَا فَانْطَلَقْتُ أَنَا وَأُمُّ مِسْطَحٍ، وَهْىَ ابْنَةُ أَبِي رُهْمِ بْنِ عَبْدِ مَنَافٍ، وَأُمُّهَا بِنْتُ صَخْرِ بْنِ عَامِرٍ خَالَةُ أَبِي بَكْرٍ الصِّدِّيقِ، وَابْنُهَا مِسْطَحُ بْنُ أُثَاثَةَ، فَأَقْبَلْتُ أَنَا وَأُمُّ مِسْطَحٍ قِبَلَ بَيْتِي، قَدْ فَرَغْنَا مِنْ شَأْنِنَا، فَعَثَرَتْ أُمُّ مِسْطَحٍ فِي مِرْطِهَا فَقَالَتْ تَعِسَ مِسْطَحٌ‏.‏ فَقُلْتُ لَهَا بِئْسَ مَا قُلْتِ أَتَسُبِّينَ رَجُلاً شَهِدَ بَدْرًا قَالَتْ أَىْ هَنْتَاهُ، أَوَلَمْ تَسْمَعِي مَا قَالَ قَالَتْ قُلْتُ وَمَا قَالَ فَأَخْبَرَتْنِي بِقَوْلِ أَهْلِ الإِفْكِ فَازْدَدْتُ مَرَضًا عَلَى مَرَضِي، فَلَمَّا رَجَعْتُ إِلَى بَيْتِي وَدَخَلَ عَلَىَّ رَسُولُ اللَّهِ صلى الله عليه وسلم تَعْنِي سَلَّمَ ثُمَّ قَالَ ‏"‏ كَيْفَ تِيكُمْ ‏"‏‏.‏ فَقُلْتُ أَتَأْذَنُ لِي أَنْ آتِيَ أَبَوَىَّ قَالَتْ وَأَنَا حِينَئِذٍ أُرِيدُ أَنْ أَسْتَيْقِنَ الْخَبَرَ مِنْ قِبَلِهِمَا، قَالَتْ فَأَذِنَ لِي رَسُولُ اللَّهِ صلى الله عليه وسلم فَجِئْتُ أَبَوَىَّ فَقُلْتُ لأُمِّي يَا أُمَّتَاهْ، مَا يَتَحَدَّثُ النَّاسُ قَالَتْ يَا بُنَيَّةُ، هَوِّنِي عَلَيْكَ فَوَاللَّهِ، لَقَلَّمَا كَانَتِ امْرَأَةٌ قَطُّ وَضِيئَةً عِنْدَ رَجُلٍ يُحِبُّهَا وَلَهَا ضَرَائِرُ إِلاَّ كَثَّرْنَ عَلَيْهَا‏.‏ قَالَتْ فَقُلْتُ سُبْحَانَ اللَّهِ وَلَقَدْ تَحَدَّثَ النَّاسُ بِهَذَا قَالَتْ فَبَكَيْتُ تِلْكَ اللَّيْلَةَ حَتَّى أَصْبَحْتُ لاَ يَرْقَأُ لِي دَمْعٌ، وَلاَ أَكْتَحِلُ بِنَوْمٍ حَتَّى أَصْبَحْتُ أَبْكِي فَدَعَا رَسُولُ اللَّهِ صلى الله عليه وسلم عَلِيَّ بْنَ أَبِي طَالِبٍ، وَأُسَامَةَ بْنَ زَيْدٍ ـ رضى الله عنهما ـ حِينَ اسْتَلْبَثَ الْوَحْىُ، يَسْتَأْمِرُهُمَا فِي فِرَاقِ أَهْلِهِ، قَالَتْ فَأَمَّا أُسَامَةُ بْنُ زَيْدٍ فَأَشَارَ عَلَى رَسُولِ اللَّهِ صلى الله عليه وسلم بِالَّذِي يَعْلَمُ مِنْ بَرَاءَةِ أَهْلِهِ، وَبِالَّذِي يَعْلَمُ لَهُمْ فِي نَفْسِهِ مِنَ الْوُدِّ، فَقَالَ يَا رَسُولَ اللَّهِ، أَهْلَكَ، وَمَا نَعْلَمُ إِلاَّ خَيْرًا، وَأَمَّا عَلِيُّ بْنُ أَبِي طَالِبٍ فَقَالَ يَا رَسُولَ اللَّهِ، لَمْ يُضَيِّقِ اللَّهُ عَلَيْكَ وَالنِّسَاءُ سِوَاهَا كَثِيرٌ، وَإِنْ تَسْأَلِ الْجَارِيَةَ تَصْدُقْكَ، قَالَتْ فَدَعَا رَسُولُ اللَّهِ صلى الله عليه وسلم بَرِيرَةَ فَقَالَ ‏"‏ أَىْ بَرِيرَةُ، هَلْ رَأَيْتِ عَلَيْهَا مِنْ شَىْءٍ يَرِيبُكِ ‏"‏‏.‏ قَالَتْ بَرِيرَةُ لاَ وَالَّذِي بَعَثَكَ بِالْحَقِّ، إِنْ رَأَيْتُ عَلَيْهَا أَمْرًا أَغْمِصُهُ عَلَيْهَا أَكْثَرَ مِنْ أَنَّهَا جَارِيَةٌ حَدِيثَةُ السِّنِّ، تَنَامُ عَنْ عَجِينِ أَهْلِهَا، فَتَأْتِي الدَّاجِنُ فَتَأْكُلُهُ فَقَامَ رَسُولُ اللَّهِ صلى الله عليه وسلم فَاسْتَعْذَرَ يَوْمَئِذٍ مِنْ عَبْدِ اللَّهِ بْنِ أُبَىٍّ ابْنِ سَلُولَ، قَالَتْ، فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم وَهْوَ عَلَى الْمِنْبَرِ ‏"‏ يَا مَعْشَرَ الْمُسْلِمِينَ مَنْ يَعْذِرُنِي مِنْ رَجُلٍ، قَدْ بَلَغَنِي أَذَاهُ فِي أَهْلِ بَيْتِي، فَوَاللَّهِ مَا عَلِمْتُ عَلَى أَهْلِي إِلاَّ خَيْرًا، وَلَقَدْ ذَكَرُوا رَجُلاً، مَا عَلِمْتُ عَلَيْهِ إِلاَّ خَيْرًا، وَمَا كَانَ يَدْخُلُ عَلَى أَهْلِي إِلاَّ مَعِي ‏"‏‏.‏ فَقَامَ سَعْدُ بْنُ مُعَاذٍ الأَنْصَارِيُّ، فَقَالَ يَا رَسُولَ اللَّهِ أَنَا أَعْذِرُكَ مِنْهُ، إِنْ كَانَ مِنَ الأَوْسِ، ضَرَبْتُ عُنُقَهُ، وَإِنْ كَانَ مِنْ إِخْوَانِنَا مِنَ الْخَزْرَجِ، أَمَرْتَنَا، فَفَعَلْنَا أَمْرَكَ، قَالَتْ فَقَامَ سَعْدُ بْنُ عُبَادَةَ وَهْوَ سَيِّدُ الْخَزْرَجِ، وَكَانَ قَبْلَ ذَلِكَ رَجُلاً صَالِحًا، وَلَكِنِ احْتَمَلَتْهُ الْحَمِيَّةُ فَقَالَ لِسَعْدٍ كَذَبْتَ، لَعَمْرُ اللَّهِ لاَ تَقْتُلُهُ، وَلاَ تَقْدِرُ عَلَى قَتْلِهِ، فَقَامَ أُسَيْدُ بْنُ حُضَيْرٍ وَهْوَ ابْنُ عَمِّ سَعْدٍ، فَقَالَ لِسَعْدِ بْنِ عُبَادَةَ كَذَبْتَ، لَعَمْرُ اللَّهِ لَنَقْتُلَنَّهُ، فَإِنَّكَ مُنَافِقٌ تُجَادِلُ عَنِ الْمُنَافِقِينَ، فَتَثَاوَرَ الْحَيَّانِ الأَوْسُ وَالْخَزْرَجُ حَتَّى هَمُّوا أَنْ يَقْتَتِلُوا، وَرَسُولُ اللَّهِ صلى الله عليه وسلم قَائِمٌ عَلَى الْمِنْبَرِ، فَلَمْ يَزَلْ رَسُولُ اللَّهِ صلى الله عليه وسلم يُخَفِّضُهُمْ حَتَّى سَكَتُوا وَسَكَتَ، قَالَتْ فَمَكُثْتُ يَوْمِي ذَلِكَ لاَ يَرْقَأُ لِي دَمْعٌ وَلاَ أَكْتَحِلُ بِنَوْمٍ، قَالَتْ فَأَصْبَحَ أَبَوَاىَ عِنْدِي ـ وَقَدْ بَكَيْتُ لَيْلَتَيْنِ وَيَوْمًا لاَ أَكْتَحِلُ بِنَوْمٍ وَلاَ يَرْقَأُ لِي دَمْعٌ ـ يَظُنَّانِ أَنَّ الْبُكَاءَ فَالِقٌ كَبِدِي، قَالَتْ فَبَيْنَمَا هُمَا جَالِسَانِ عِنْدِي وَأَنَا أَبْكِي، فَاسْتَأْذَنَتْ عَلَىَّ امْرَأَةٌ مِنَ الأَنْصَارِ، فَأَذِنْتُ لَهَا، فَجَلَسَتْ تَبْكِي مَعِي، قَالَتْ فَبَيْنَا نَحْنُ عَلَى ذَلِكَ دَخَلَ عَلَيْنَا رَسُولُ اللَّهِ صلى الله عليه وسلم فَسَلَّمَ ثُمَّ جَلَسَ قَالَتْ وَلَمْ يَجْلِسْ عِنْدِي مُنْذُ قِيلَ مَا قِيلَ قَبْلَهَا، وَقَدْ لَبِثَ شَهْرًا، لاَ يُوحَى إِلَيْهِ فِي شَأْنِي، قَالَتْ فَتَشَهَّدَ رَسُولُ اللَّهِ صلى الله عليه وسلم حِينَ جَلَسَ ثُمَّ قَالَ ‏"‏ أَمَّا بَعْدُ يَا عَائِشَةُ، فَإِنَّهُ قَدْ بَلَغَنِي عَنْكِ كَذَا وَكَذَا، فَإِنْ كُنْتِ بَرِيئَةً فَسَيُبَرِّئُكِ اللَّهُ، وَإِنْ كُنْتِ أَلْمَمْتِ بِذَنْبٍ فَاسْتَغْفِرِي اللَّهَ وَتُوبِي إِلَيْهِ، فَإِنَّ الْعَبْدَ إِذَا اعْتَرَفَ بِذَنْبِهِ ثُمَّ تَابَ إِلَى اللَّهِ تَابَ اللَّهُ عَلَيْهِ ‏"‏‏.‏ قَالَتْ فَلَمَّا قَضَى رَسُولُ اللَّهِ صلى الله عليه وسلم مَقَالَتَهُ، قَلَصَ دَمْعِي حَتَّى مَا أُحِسُّ مِنْهُ قَطْرَةً، فَقُلْتُ لأَبِي أَجِبْ رَسُولَ اللَّهِ صلى الله عليه وسلم فِيمَا قَالَ‏.‏ قَالَ وَاللَّهِ مَا أَدْرِي مَا أَقُولُ لِرَسُولِ اللَّهِ صلى الله عليه وسلم فَقُلْتُ لأُمِّي أَجِيبِي رَسُولَ اللَّهِ صلى الله عليه وسلم‏.‏ قَالَتْ مَا أَدْرِي مَا أَقُولُ لِرَسُولِ اللَّهِ صلى الله عليه وسلم قَالَتْ فَقُلْتُ وَأَنَا جَارِيَةٌ حَدِيثَةُ السِّنِّ لاَ أَقْرَأُ كَثِيرًا مِنَ الْقُرْآنِ، إِنِّي وَاللَّهِ لَقَدْ عَلِمْتُ لَقَدْ سَمِعْتُمْ هَذَا الْحَدِيثَ حَتَّى اسْتَقَرَّ فِي أَنْفُسِكُمْ، وَصَدَّقْتُمْ بِهِ فَلَئِنْ قُلْتُ لَكُمْ إِنِّي بَرِيئَةٌ وَاللَّهُ يَعْلَمُ أَنِّي بَرِيئَةٌ لاَ تُصَدِّقُونِي بِذَلِكَ، وَلَئِنِ اعْتَرَفْتُ لَكُمْ بِأَمْرٍ، وَاللَّهُ يَعْلَمُ أَنِّي مِنْهُ بَرِيئَةٌ لَتُصَدِّقُنِّي، وَاللَّهِ مَا أَجِدُ لَكُمْ مَثَلاً إِلاَّ قَوْلَ أَبِي يُوسُفَ قَالَ ‏{‏فَصَبْرٌ جَمِيلٌ وَاللَّهُ الْمُسْتَعَانُ عَلَى مَا تَصِفُونَ‏}‏ قَالَتْ ثُمَّ تَحَوَّلْتُ فَاضْطَجَعْتُ عَلَى فِرَاشِي، قَالَتْ وَأَنَا حِينَئِذٍ أَعْلَمُ أَنِّي بَرِيئَةٌ، وَأَنَّ اللَّهَ مُبَرِّئِي بِبَرَاءَتِي، وَلَكِنْ وَاللَّهِ مَا كُنْتُ أَظُنُّ أَنَّ اللَّهَ مُنْزِلٌ فِي شَأْنِي وَحْيًا يُتْلَى، وَلَشَأْنِي فِي نَفْسِي كَانَ أَحْقَرَ مِنْ أَنْ يَتَكَلَّمَ اللَّهُ فِيَّ بِأَمْرٍ يُتْلَى، وَلَكِنْ كُنْتُ أَرْجُو أَنْ يَرَى رَسُولُ اللَّهِ صلى الله عليه وسلم فِي النَّوْمِ رُؤْيَا يُبَرِّئُنِي اللَّهُ بِهَا، قَالَتْ فَوَاللَّهِ مَا رَامَ رَسُولُ اللَّهِ صلى الله عليه وسلم وَلاَ خَرَجَ أَحَدٌ مِنْ أَهْلِ الْبَيْتِ حَتَّى أُنْزِلَ عَلَيْهِ، فَأَخَذَهُ مَا كَانَ يَأْخُذُهُ مِنَ الْبُرَحَاءِ حَتَّى إِنَّهُ لَيَتَحَدَّرُ مِنْهُ مِثْلُ الْجُمَانِ مِنَ الْعَرَقِ، وَهْوَ فِي يَوْمٍ شَاتٍ مِنْ ثِقَلِ الْقَوْلِ الَّذِي يُنْزَلُ عَلَيْهِ، قَالَتْ فَلَمَّا سُرِّيَ عَنْ رَسُولِ اللَّهِ صلى الله عليه وسلم سُرِّيَ عَنْهُ وَهْوَ يَضْحَكُ، فَكَانَتْ أَوَّلُ كَلِمَةٍ تَكَلَّمَ بِهَا ‏"‏ يَا عَائِشَةُ، أَمَّا اللَّهُ عَزَّ وَجَلَّ فَقَدْ بَرَّأَكِ ‏"‏‏.‏ فَقَالَتْ أُمِّي قُومِي إِلَيْهِ‏.‏ قَالَتْ فَقُلْتُ وَاللَّهِ، لاَ أَقُومُ إِلَيْهِ، وَلاَ أَحْمَدُ إِلاَّ اللَّهَ عَزَّ وَجَلَّ‏.‏ وَأَنْزَلَ اللَّهُ ‏{‏إِنَّ الَّذِينَ جَاءُوا بِالإِفْكِ عُصْبَةٌ مِنْكُمْ لاَ تَحْسِبُوهُ‏}‏ الْعَشْرَ الآيَاتِ كُلَّهَا، فَلَمَّا أَنْزَلَ اللَّهُ هَذَا فِي بَرَاءَتِي قَالَ أَبُو بَكْرٍ الصِّدِّيقُ ـ رضى الله عنه ـ وَكَانَ يُنْفِقُ عَلَى مِسْطَحِ بْنِ أُثَاثَةَ لِقَرَابَتِهِ مِنْهُ، وَفَقْرِهِ وَاللَّهِ لاَ أُنْفِقُ عَلَى مِسْطَحٍ شَيْئًا أَبَدًا بَعْدَ الَّذِي قَالَ لِعَائِشَةَ مَا قَالَ، فَأَنْزَلَ اللَّهُ ‏{‏وَلاَ يَأْتَلِ أُولُو الْفَضْلِ مِنْكُمْ وَالسَّعَةِ أَنْ يُؤْتُوا أُولِي الْقُرْبَى وَالْمَسَاكِينَ وَالْمُهَاجِرِينَ فِي سَبِيلِ اللَّهِ وَلْيَعْفُوا وَلْيَصْفَحُوا أَلاَ تُحِبُّونَ أَنْ يَغْفِرَ اللَّهُ لَكُمْ وَاللَّهُ غَفُورٌ رَحِيمٌ‏}‏ قَالَ أَبُو بَكْرٍ بَلَى، وَاللَّهِ إِنِّي أُحِبُّ أَنْ يَغْفِرَ اللَّهُ لِي، فَرَجَعَ إِلَى مِسْطَحٍ النَّفَقَةَ الَّتِي كَانَ يُنْفِقُ عَلَيْهِ، وَقَالَ وَاللَّهِ لاَ أَنْزِعُهَا مِنْهُ أَبَدًا‏.‏ قَالَتْ عَائِشَةُ وَكَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم يَسْأَلُ زَيْنَبَ ابْنَةَ جَحْشٍ عَنْ أَمْرِي، فَقَالَ ‏"‏ يَا زَيْنَبُ مَاذَا عَلِمْتِ أَوْ رَأَيْتِ ‏"‏‏.‏ فَقَالَتْ يَا رَسُولَ اللَّهِ، أَحْمِي سَمْعِي وَبَصَرِي، مَا عَلِمْتُ إِلاَّ خَيْرًا‏.‏ قَالَتْ وَهْىَ الَّتِي كَانَتْ تُسَامِينِي مِنْ أَزْوَاجِ رَسُولِ اللَّهِ صلى الله عليه وسلم فَعَصَمَهَا اللَّهُ بِالْوَرَعِ، وَطَفِقَتْ أُخْتُهَا حَمْنَةُ تُحَارِبُ لَهَا فَهَلَكَتْ فِيمَنْ هَلَكَ مِنْ أَصْحَابِ الإِفْكِ‏.‏
   text_en: "Narrated Aisha:(The wife of the Prophet) Whenever Allah's Messenger (ﷺ) intended to go on a journey, he used to draw lots among his wives and would take with him the one on whom the lot had fallen. Once he drew lots when he wanted to carry out a Ghazwa, and the lot came upon me. So I proceeded with Allah's Apostle after Allah's order of veiling (the women) had been revealed and thus I was carried in my howdah (on a camel) and dismounted while still in it. We carried on our journey, and when Allah's Apostle had finished his Ghazwa and returned and we approached Medina, Allah's Messenger (ﷺ) ordered to proceed at night. When the army was ordered to resume the homeward journey, I got up and walked on till I left the army (camp) behind. When I had answered the call of nature, I went towards my howdah, but behold ! A necklace of mine made of Jaz Azfar (a kind of black bead) was broken and I looked for it and my search for it detained me. The group of people who used to carry me, came and carried my howdah on to the back of my camel on which I was riding, considering that I was therein. At that time women were light in weight and were not fleshy for they used to eat little (food), so those people did not feel the lightness of the howdah while raising it up, and I was still a young lady. They drove away the camel and proceeded. Then I found my necklace after the army had gone. I came to their camp but found nobody therein so I went to the place where I used to stay, thinking that they would miss me and come back in my search. While I was sitting at my place, I felt sleepy and slept. Safwan bin Al-Mu'attil As-Sulami Adh- Dhakw-ani was behind the army. He had started in the last part of the night and reached my stationing place in the morning and saw the figure of a sleeping person. He came to me and recognized me on seeing me for he used to see me before veiling. I got up because of his saying: \"Inna Li l-lahi wa inna ilaihi rajiun,\" which he uttered on recognizing me. I covered my face with my garment, and by Allah, he did not say to me a single word except, \"Inna Li l-lahi wa inna ilaihi rajiun,\" till he made his she-camel kneel down whereupon he trod on its forelegs and I mounted it. Then Safwan set out, leading the she-camel that was carrying me, till we met the army while they were resting during the hot midday. Then whoever was meant for destruction, fell in destruction, and the leader of the Ifk (forged statement) was `Abdullah bin Ubai bin Salul. After this we arrived at Medina and I became ill for one month while the people were spreading the forged statements of the people of the Ifk, and I was not aware of anything thereof. But what aroused my doubt while I was sick, was that I was no longer receiving from Allah's Messenger (ﷺ) the same kindness as I used to receive when I fell sick. Allah's Messenger (ﷺ) would enter upon me, say a greeting and add, \"How is that (lady)?\" and then depart. That aroused my suspicion but I was not aware of the propagated evil till I recovered from my ailment. I went out with Um Mistah to answer the call of nature towards Al-Manasi, the place where we used to relieve ourselves, and used not to go out for this purpose except from night to night, and that was before we had lavatories close to our houses. And this habit of ours was similar to the habit of the old 'Arabs (in the deserts or in the tents) concerning the evacuation of the bowels, for we considered it troublesome and harmful to take lavatories in the houses. So I went out with Um Mistah who was the daughter of Abi Ruhm bin `Abd Manaf, and her mother was daughter of Sakhr bin Amir who was the aunt of Abi Bakr As-Siddiq, and her son was Mistah bin Uthatha. When we had finished our affair, Um Mistah and I came back towards my house. Um Mistah stumbled over her robe whereupon she said, \"Let Mistah be ruined ! \" I said to her, \"What a bad word you have said! Do you abuse a man who has taken part in the Battle of Badr?' She said, \"O you there! Didn't you hear what he has said?\" I said, \"And what did he say?\" She then told me the statement of the people of the Ifk (forged statement) which added to my ailment. When I returned home, Allah's Messenger (ﷺ) came to me, and after greeting, he said, \"How is that (lady)?\" I said, \"Will you allow me to go to my parents?\" At that time I intended to be sure of the news through them. Allah's Messenger (ﷺ) allowed me and I went to my parents and asked my mother, \"O my mother! What are the people talking about?\" My mother said, \"O my daughter! Take it easy, for by Allah, there is no charming lady who is loved by her husband who has other wives as well, but that those wives would find fault with her.\" I said, \"Subhan Allah! Did the people really talk about that?\" That night I kept on weeping the whole night till the morning. My tears never stopped, nor did I sleep, and morning broke while I was still weeping, Allah's Messenger (ﷺ) called `Ali bin Abi Talib and Usama bin Zaid when the Divine Inspiration delayed, in order to consult them as to the idea of divorcing his wife. Usama bin Zaid told Allah's Messenger (ﷺ) of what he knew about the innocence of his wife and of his affection he kept for her. He said, \"O Allah's Messenger (ﷺ)! She is your wife, and we do not know anything about her except good.\" But `Ali bin Abi Talib said, \"O Allah's Messenger (ﷺ)! Allah does not impose restrictions on you; and there are plenty of women other than her. If you however, ask (her) slave girl, she will tell you the truth.\" `Aisha added: So Allah's Messenger (ﷺ) called for Barira and said, \"O Barira! Did you ever see anything which might have aroused your suspicion? (as regards Aisha). Barira said, \"By Allah Who has sent you with the truth, I have never seen anything regarding Aisha which I would blame her for except that she is a girl of immature age who sometimes sleeps and leaves the dough of her family unprotected so that the domestic goats come and eat it.\" So Allah's Messenger (ﷺ) got up (and addressed) the people and asked for somebody who would take revenge on `Abdullah bin Ubai bin Salul then. Allah's Messenger (ﷺ), while on the pulpit, said, \"O Muslims! Who will help me against a man who has hurt me by slandering my family? By Allah, I know nothing except good about my family, and people have blamed a man of whom I know nothing except good, and he never used to visit my family except with me,\" Sa`d bin Mu`adh Al-Ansari got up and said, \"O Allah's Messenger (ﷺ)! By Allah, I will relieve you from him. If he be from the tribe of (Bani) Al-Aus, then I will chop his head off; and if he be from our brethren, the Khazraj, then you give us your order and we will obey it.\" On that, Sa`d bin 'Ubada got up, and he was the chief of the Khazraj, and before this incident he had been a pious man but he was incited by his zeal for his tribe. He said to Sa`d (bin Mu`adh), \"By Allah the Eternal, you have told a lie! You shall not kill him and you will never be able to kill him!\" On that, Usaid bin Hudair, the cousin of Sa`d (bin Mu`adh) got up and said to Sa`d bin 'Ubada, \"You are a liar! By Allah the Eternal, we will surely kill him; and you are a hypocrite defending the hypocrites!\" So the two tribes of Al-Aus and Al-Khazraj got excited till they were on the point of fighting with each other while Allah's Messenger (ﷺ) was standing on the pulpit. Allah's Messenger (ﷺ) continued quietening them till they became silent whereupon he became silent too. On that day I kept on weeping so much that neither did my tears stop, nor could I sleep. In the morning my parents were with me, and I had wept for two nights and a day without sleeping and with incessant tears till they thought that my liver would burst with weeping. While they were with me and I was weeping, an Ansari woman asked permission to see me. I admitted her and she sat and started weeping with me. While I was in that state, Allah's Apostle came to us, greeted, and sat down. He had never sat with me since the day what was said, was said. He had stayed a month without receiving any Divine Inspiration concerning my case. Allah's Messenger (ﷺ) recited the Tashahhud after he had sat down, and then said, \"Thereafter, O `Aisha! I have been informed such and-such a thing about you; and if you are innocent, Allah will reveal your innocence, and if you have committed a sin, then ask for Allah's forgiveness and repent to Him, for when a slave confesses his sin and then repents to Allah, Allah accepts his repentance.\" When Allah's Apostle had finished his speech, my tears ceased completely so that I no longer felt even a drop thereof. Then I said to my father, \"Reply to Allah's Messenger (ﷺ) on my behalf as to what he said.\" He said, \"By Allah, I do not know what to say to Allah's Messenger (ﷺ).\" Then I said to my mother, \"Reply to Allah's Apostle.\" She said, \"I do not know what to say to Allah's Messenger (ﷺ).\" Still a young girl as I was and though I had little knowledge of Qur'an, I said, \"By Allah, I know that you heard this story (of the Ifk) so much so that it has been planted in your minds and you have believed it. So now, if I tell you that I am innocent, and Allah knows that I am innocent, you will not believe me; and if I confess something, and Allah knows that I am innocent of it, you will believe me. By Allah, I cannot find of you an example except that of Joseph's father: \"So (for me) patience is most fitting against that which you assert and it is Allah (Alone) Whose help can be sought. Then I turned away and lay on my bed, and at that time I knew that I was innocent and that Allah would reveal my innocence. But by Allah, I never thought that Allah would sent down about my affair, Divine Inspiration that would be recited (forever), as I considered myself too unworthy to be talked of by Allah with something that was to be recited: but I hoped that Allah's Messenger (ﷺ) might have a vision in which Allah would prove my innocence. By Allah, Allah's Messenger (ﷺ) had not left his seat and nobody had left the house when the Divine Inspiration came to Allah's Messenger (ﷺ) . So there overtook him the same hard condition which used to overtake him (when he was Divinely Inspired) so that the drops of his sweat were running down, like pearls, though it was a (cold) winter day, and that was because of the heaviness of the Statement which was revealed to him. When that state of Allah's Messenger (ﷺ) was over, and he was smiling when he was relieved, the first word he said was, \"Aisha, Allah has declared your innocence.\" My mother said to me, \"Get up and go to him.\" I said, \"By Allah, I will not go to him and I will not thank anybody but Allah.\" So Allah revealed: \"Verily! They who spread the Slander are a gang among you. Think it not....\" (24.11-20). When Allah revealed this to confirm my innocence, Abu Bakr As-Siddiq who used to provide for Mistah bin Uthatha because of the latter's kinship to him and his poverty, said, \"By Allah, I will never provide for Mistah anything after what he has said about Aisha\". So Allah revealed: \"Let not those among you who are good and are wealthy swear not to give (help) to their kinsmen, those in need, and those who have left their homes for Allah's Cause. Let them Pardon and forgive (i.e. do not punish them). Do you not love that should forgive you? Verily Allah is Oft-forgiving. Most Merciful.\" (24.22) Abu Bakr said, \"Yes, by Allah, I wish that Allah should forgive me.\" So he resumed giving Mistah the aid he used to give him before and said, \"By Allah, I will never withhold it from him at all.\" Aisha further said: Allah's Messenger (ﷺ) also asked Zainab bint Jahsh about my case. He said, \"O Zainab! What have you seen?\" She replied, \"O Allah's Messenger (ﷺ)! I protect my hearing and my sight (by refraining from telling lies). I know nothing but good (about Aisha).\" Of all the wives of Allah's Messenger (ﷺ), it was Zainab who aspired to receive from him the same favor as I used to receive, yet, Allah saved her (from telling lies) because of her piety. But her sister, Hamna, kept on fighting on her behalf so she was destroyed as were those who invented and spread the slander"
-
+- id: hadith.bukhari.4949
+  type: hadith
+  ref: {collection: bukhari, number: 4949}
+  grade: sahih
+  graded_by: Sahih al-Bukhari
+  url: https://sunnah.com/bukhari:4949
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-bukhari/4949.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari/4949.min.json
+    translator: Muhsin Khan
+    book: 65
+    hadith_in_book: 471
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "'Ali : à un enterrement, « ما منكم من أحد إلا وقد كتب مقعده… » ; « أفلا نتكل على كتابنا وندع العمل؟ » « اعملوا فكل ميسر لما خلق له », puis 92:5. Aussi Bukhari 1362, 4945, 6605, 7552 ; Muslim 2647. Short 1 `amal` ; lecture à trouver ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: حَدَّثَنَا آدَمُ، حَدَّثَنَا شُعْبَةُ، عَنِ الأَعْمَشِ، قَالَ سَمِعْتُ سَعْدَ بْنَ عُبَيْدَةَ، يُحَدِّثُ عَنْ أَبِي عَبْدِ الرَّحْمَنِ السُّلَمِيِّ، عَنْ عَلِيٍّ ـ رضى الله عنه ـ قَالَ كَانَ النَّبِيُّ صلى الله عليه وسلم فِي جَنَازَةٍ فَأَخَذَ شَيْئًا فَجَعَلَ يَنْكُتُ بِهِ الأَرْضَ فَقَالَ ‏"‏ مَا مِنْكُمْ مِنْ أَحَدٍ إِلاَّ وَقَدْ كُتِبَ مَقْعَدُهُ مِنَ النَّارِ وَمَقْعَدُهُ مِنَ الْجَنَّةِ ‏"‏‏.‏ قَالُوا يَا رَسُولَ اللَّهِ أَفَلاَ نَتَّكِلُ عَلَى كِتَابِنَا وَنَدَعُ الْعَمَلَ قَالَ ‏"‏ اعْمَلُوا فَكُلٌّ مُيَسَّرٌ لِمَا خُلِقَ لَهُ، أَمَّا مَنْ كَانَ مِنْ أَهْلِ السَّعَادَةِ فَيُيَسَّرُ لِعَمَلِ أَهْلِ السَّعَادَةِ، وَأَمَّا مَنْ كَانَ مِنْ أَهْلِ الشَّقَاءِ فَيُيَسَّرُ لِعَمَلِ أَهْلِ الشَّقَاوَةِ ‏"‏‏.‏ ثُمَّ قَرَأَ ‏{‏فَأَمَّا مَنْ أَعْطَى وَاتَّقَى * وَصَدَّقَ بِالْحُسْنَى‏}‏ الآيَةَ‏.‏
+  text_en: "Narrated `Ali:While the Prophet (ﷺ) was in a funeral procession. he picked up something and started scraping the ground with it, and said, \"There is none among you but has his place written for him either in the Hell Fire or in Paradise.\" They said, \"O Allah's Messenger (ﷺ)! Shall we not depend upon what has been written for us and give up deeds? He said, \"Carry on doing (good) deeds, for everybody will find easy to do such deeds as will lead him to his destined place for which he has been created. So he who is destined to be among the happy (in the Hereafter), will find it easy to do the deeds characteristic of such people, while he who is destined to be among the miserable ones, will find it easy to do the deeds characteristic of such people.\" Then he recited: 'As for him who gives (in charity) and fears Allah, and believes in the best"
+  excerpt_ar: "مَا مِنْكُمْ مِنْ أَحَدٍ إِلاَّ وَقَدْ كُتِبَ مَقْعَدُهُ مِنَ النَّارِ وَمَقْعَدُهُ مِنَ الْجَنَّةِ ‏\"‏‏.‏ قَالُوا يَا رَسُولَ اللَّهِ أَفَلاَ نَتَّكِلُ عَلَى كِتَابِنَا وَنَدَعُ الْعَمَلَ قَالَ ‏\"‏ اعْمَلُوا فَكُلٌّ مُيَسَّرٌ لِمَا خُلِقَ لَهُ"
+  excerpt_en: "There is none among you but has his place written for him either in the Hell Fire or in Paradise.\" They said, \"O Allah's Messenger (ﷺ)! Shall we not depend upon what has been written for us and give up deeds? He said, \"Carry on doing (good) deeds, for everybody will find easy to do such deeds as will lead him to his destined place for which he has been created."
+  recording:
+    reader: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane
+    item: https://archive.org/details/bukhari_audiobook
+    file: https://archive.org/download/bukhari_audiobook/4949.mp3
+    start: 19.32
+    end: 35.1
+    heard: ما منكم من أحد إلا وقد كتب مقعده من النار ومقعده من الجنة قالوا يا رسول الله أفلا نتكل على كتابنا وندع العمل قال اعملوا فكل ميسر لما خلق له
+    license: none stated on the archive.org item
+    status: validated
+    validated_by: mssnoussi92
+- id: hadith.tirmidhi.2133
+  type: hadith
+  ref: {collection: tirmidhi, number: 2133}
+  grade: hasan
+  graded_by: al-Albani
+  url: https://sunnah.com/tirmidhi:2133
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-tirmidhi/2133.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-tirmidhi/2133.json
+    translator: Unknown
+    book: 32
+    hadith_in_book: 1
+    grades:
+    - {name: Ahmad Muhammad Shakir, grade: Hasan}
+    - {name: Al-Albani, grade: Hasan}
+    - {name: Zubair Ali Zai, grade: Daif}
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Abou Hourayra : il les trouve à se disputer sur le qadar, se fâche, « عزمت عليكم ألا تتنازعوا فيه ». Al-Albani : hasan ; Tirmidhi : غريب, Salih al-Murri. Raconté par la narration avec ses mots, référence écrite ; le film seul ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: حَدَّثَنَا عَبْدُ اللَّهِ بْنُ مُعَاوِيَةَ الْجُمَحِيُّ الْبَصْرِيُّ، قَالَ حَدَّثَنَا صَالِحٌ الْمُرِّيُّ، عَنْ هِشَامِ بْنِ حَسَّانَ، عَنْ مُحَمَّدِ بْنِ سِيرِينَ، عَنْ أَبِي هُرَيْرَةَ، قَالَ خَرَجَ عَلَيْنَا رَسُولُ اللَّهِ صلى الله عليه وسلم وَنَحْنُ نَتَنَازَعُ فِي الْقَدَرِ فَغَضِبَ حَتَّى احْمَرَّ وَجْهُهُ حَتَّى كَأَنَّمَا فُقِئَ فِي وَجْنَتَيْهِ الرُّمَّانُ فَقَالَ ‏ "‏ أَبِهَذَا أُمِرْتُمْ أَمْ بِهَذَا أُرْسِلْتُ إِلَيْكُمْ إِنَّمَا هَلَكَ مَنْ كَانَ قَبْلَكُمْ حِينَ تَنَازَعُوا فِي هَذَا الأَمْرِ عَزَمْتُ عَلَيْكُمْ أَلاَّ تَتَنَازَعُوا فِيهِ ‏"‏ ‏.‏ قَالَ أَبُو عِيسَى وَفِي الْبَابِ عَنْ عُمَرَ وَعَائِشَةَ وَأَنَسٍ ‏.‏ وَهَذَا حَدِيثٌ غَرِيبٌ لاَ نَعْرِفُهُ إِلاَّ مِنْ هَذَا الْوَجْهِ مِنْ حَدِيثِ صَالِحٍ الْمُرِّيِّ ‏.‏ وَصَالِحٌ الْمُرِّيُّ لَهُ غَرَائِبُ يَنْفَرِدُ بِهَا لاَ يُتَابَعُ عَلَيْهَا ‏.‏
+  text_en: "Abu Hurairah narrated:\"The Messenger of Allah(s.a.w) came out to us while we were discussing about Al-Qadar. He became angry such that his face became red, as if a pomegranate was bursting through his cheeks. He said: 'Is this what I ordered you to do?' - or: 'Is this what I have been sent to you with? The people before you were only ruined when they differed about this matter. I order you [I order you] to not debate about it.'\". (Daif)"
+- id: hadith.muslim.2709a
+  type: hadith
+  ref: {collection: muslim, number: 2709, narration: 1}
+  grade: sahih
+  graded_by: Sahih Muslim
+  url: https://sunnah.com/muslim:2709a
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim/6880.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim/6880.json
+    translator: Abdul Hamid Siddiqui
+    book: 48
+    hadith_in_book: 73
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: « ذكر وحكايته », short aqrab — un homme piqué par un scorpion la nuit ; s'il avait dit le soir « أعوذ بكلمات الله التامات من شر ما خلق », il ne lui aurait pas nui (récit d'Abou Hourayra, à la fin de la narration 1)
+  text_ar: وَحَدَّثَنَا هَارُونُ بْنُ مَعْرُوفٍ، وَأَبُو الطَّاهِرِ، كِلاَهُمَا عَنِ ابْنِ وَهْبٍ، - وَاللَّفْظُ لِهَارُونَ - حَدَّثَنَا عَبْدُ اللَّهِ بْنُ وَهْبٍ، قَالَ وَأَخْبَرَنَا عَمْرٌو، - وَهُوَ ابْنُ الْحَارِثِ - أَنَّ يَزِيدَ بْنَ أَبِي، حَبِيبٍ وَالْحَارِثَ بْنَ يَعْقُوبَ حَدَّثَاهُ عَنْ يَعْقُوبَ بْنِ عَبْدِ اللَّهِ بْنِ الأَشَجِّ، عَنْ بُسْرِ بْنِ سَعِيدٍ، عَنْ سَعْدِ بْنِ أَبِي وَقَّاصٍ، عَنْ خَوْلَةَ بِنْتِ حَكِيمٍ السُّلَمِيَّةِ، أَنَّهَا سَمِعَتْ رَسُولَ اللَّهِ صلى الله عليه وسلم يَقُولُ ‏"‏ إِذَا نَزَلَ أَحَدُكُمْ مَنْزِلاً فَلْيَقُلْ أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ ‏.‏ فَإِنَّهُ لاَ يَضُرُّهُ شَىْءٌ حَتَّى يَرْتَحِلَ مِنْهُ ‏"‏ ‏.‏ قَالَ يَعْقُوبُ وَقَالَ الْقَعْقَاعُ بْنُ حَكِيمٍ عَنْ ذَكْوَانَ أَبِي صَالِحٍ، عَنْ أَبِي هُرَيْرَةَ، أَنَّهُ قَالَ جَاءَ رَجُلٌ إِلَى النَّبِيِّ صلى الله عليه وسلم فَقَالَ يَا رَسُولَ اللَّهِ مَا لَقِيتُ مِنْ عَقْرَبٍ لَدَغَتْنِي الْبَارِحَةَ قَالَ ‏"‏ أَمَا لَوْ قُلْتَ حِينَ أَمْسَيْتَ أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ لَمْ تَضُرُّكَ ‏"‏ ‏.‏
+  text_en: "Khaula bint Hakim Sulamiyya reported:I heard Allah's Messenger (ﷺ) as saying: When any one of you stays at a place, he should say:\" I seek refuge in the Perfect Word of Allah from the evil of that He created.\" Nothing would then do him any harm until he moves from that place. Abu Huraira reported that a person came to Allah's Messenger (ﷺ) and said:\" Allah's Messenger, I was stung by a scorpion during the night. Thereupon he said: Had you recited these words in the evening:\" I seek refuge in the Perfect Word of Allah from the evil of what He created,\" it would not have done any harm to you"
+  recording:
+    reader: Ryadussalihin.org
+    item: https://archive.org/details/ar_Moslem_Reading_16
+    file: https://archive.org/download/ar_Moslem_Reading_16/ar_Moslem_Reading_49.mp3
+    start: 2731.14
+    end: 2774.5
+    heard: إذا نزل أحدكم منزلا فليقل أعوذ بكلمات الله التامات من شر ما خلق فإنه لا يضره شيء حتى يرتحل منه قال يعقوب وقال القعقاع بن حكيم عن ذكوان أبي صالح عن أبي هريرة أنه قال جاء رجل إلى النبي صلى الله عليه وسلم فقال يا رسول الله ما لقيت من عقرب لدغتني البارحة قال أما لو قلت حين أمسيت أعوذ بكلمات الله التامات من شر ما خلق لم تضرك
+    license: none stated on the archive.org item
+    status: proposed
+  parts:
+    # Short aqrab : la réponse du Prophète ﷺ à l'homme piqué par le scorpion, seule.
+    answer:
+      excerpt_ar: أَمَا لَوْ قُلْتَ حِينَ أَمْسَيْتَ أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ لَمْ تَضُرُّكَ
+      excerpt_en: Had you recited these words in the evening:" I seek refuge in the Perfect Word of Allah from the evil of what He created," it would not have done any harm to you
+      recording: {start: 2765.62, end: 2774.5, heard: أما لو قلت حين أمسيت أعوذ بكلمات الله التامات من شر ما خلق لم تضرك, status: proposed}
+    # Short aqrab, essai voulu par le propriétaire (2026-11-17) : le dhikr seul, dit par Muhammad Jibril (ses adhkar du
+    # soir, archive.org, un album sans licence, droits jamais vérifiés : première publication sur Facebook seul) ; la
+    # première de ses trois répétitions.
+    dhikr:
+      excerpt_ar: أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ
+      excerpt_en: I seek refuge in the Perfect Word of Allah from the evil of what He created
+      recording:
+        reader: Muhammad Jibril
+        item: https://archive.org/details/adhkar-alsabah-walmasa-muhamad-jibril
+        file: https://archive.org/download/adhkar-alsabah-walmasa-muhamad-jibril/%D8%A3%D8%B0%D9%83%D8%A7%D8%B1%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%A1.mp3
+        start: 1222.8
+        end: 1234.7
+        heard: أعوذ بكلمات الله التامات من شر ما خلق
+        license: none stated on the archive.org item
+        status: proposed
+- id: hadith.tirmidhi.3575
+  type: hadith
+  ref: {collection: tirmidhi, number: 3575}
+  grade: hasan
+  graded_by: al-Albani
+  url: https://sunnah.com/tirmidhi:3575
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-tirmidhi/3575.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-tirmidhi/3575.json
+    translator: Unknown
+    book: 48
+    hadith_in_book: 206
+    grades:
+    - {name: Ahmad Muhammad Shakir, grade: Hasan}
+    - {name: Al-Albani, grade: Hasan}
+    - {name: Bashar Awad Maarouf, grade: Hasan Sahih}
+    - {name: Zubair Ali Zai, grade: Isnaad Hasan}
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: « ذكر وحكايته », short qul — une nuit de pluie et de grande obscurité ; « قل » trois fois ; 112, 113 et 114 matin et soir, trois fois, « تكفيك من كل شيء »
+  text_ar: حَدَّثَنَا عَبْدُ بْنُ حُمَيْدٍ، حَدَّثَنَا مُحَمَّدُ بْنُ إِسْمَاعِيلَ بْنِ أَبِي فُدَيْكٍ، حَدَّثَنَا ابْنُ أَبِي ذِئْبٍ، عَنْ أَبِي سَعِيدٍ الْبَرَّادِ، عَنْ مُعَاذِ بْنِ عَبْدِ اللَّهِ بْنِ خُبَيْبٍ، عَنْ أَبِيهِ، قَالَ خَرَجْنَا فِي لَيْلَةٍ مَطِيرَةٍ وَظُلْمَةٍ شَدِيدَةٍ نَطْلُبُ رَسُولَ اللَّهِ صلى الله عليه وسلم يُصَلِّي لَنَا - قَالَ - فَأَدْرَكْتُهُ فَقَالَ ‏"‏ قُلْ ‏"‏ ‏.‏ فَلَمْ أَقُلْ شَيْئًا ثُمَّ قَالَ ‏"‏ قُلْ ‏"‏ ‏.‏ فَلَمْ أَقُلْ شَيْئًا ‏.‏ قَالَ ‏"‏ قُلْ ‏"‏ ‏.‏ قُلْتُ مَا أَقُولُ قَالَ ‏"‏ قُلْ ‏:‏ ‏(‏ هوَ اللَّهُ أَحَدٌ ‏)‏ وَالْمُعَوِّذَتَيْنِ حِينَ تُمْسِي وَتُصْبِحُ ثَلاَثَ مَرَّاتٍ تَكْفِيكَ مِنْ كُلِّ شَيْءٍ ‏"‏ ‏.‏ قَالَ أَبُو عِيسَى وَهَذَا حَدِيثٌ حَسَنٌ صَحِيحٌ غَرِيبٌ مِنْ هَذَا الْوَجْهِ وَأَبُو سَعِيدٍ الْبَرَّادُ هُوَ أَسِيدُ بْنُ أَبِي أَسِيدٍ مَدَنِيٌّ ‏.‏
+  text_en: 'Mu`adh bin `Abdullah bin Khubaib, narrated from his father, who said:“We went out on a rainy and extremely dark night, looking for the Messenger of Allah (ﷺ), so that he could lead us in Salat.” He said: “So I met him and he (ﷺ) said: ‘Speak’ but I did not say anything. Then he (ﷺ) said: ‘Speak.’ But I did not say anything. He (ﷺ) said: ‘Speak.’ So I said: ‘What should I say?’ He (ﷺ) said: ‘Say: “Say: He is Allah, the One” and Al-Mu`awwidhatain, when you reach evening, and when you reach morning, three times, they will suffice you against everything.’”'
+  recording:
+    reader: Yusuf ibn Nuh Ahmad
+    item: https://archive.org/details/yna-audiobook-arabic-sunan-altirmidhi
+    file: https://archive.org/download/yna-audiobook-arabic-sunan-altirmidhi/YNA-AudioBook-Arabic-Sunan-Al-Tirmidhi-3535-3800.mp3
+    start: 1481.5
+    end: 1492.78
+    heard: قل قال فلم أقل شيئا ثم قال قل فلم أقل شيئا قال قل فقلت ما أقول قال قل هو الله أحد والمعوذتين حين تمسي وتصبح ثلاث مرات تكفيك من كل شيء
+    license: none stated on the archive.org item
+    status: proposed
+  parts:
+    qul:
+      excerpt_ar: قُلْ ‏:‏ ‏(‏ هوَ اللَّهُ أَحَدٌ ‏)‏ وَالْمُعَوِّذَتَيْنِ حِينَ تُمْسِي وَتُصْبِحُ ثَلاَثَ مَرَّاتٍ
+      excerpt_en: '“Say: He is Allah, the One” and Al-Mu`awwidhatain, when you reach evening, and when you reach morning, three times'
+- id: hadith.muslim.595a
+  type: hadith
+  ref: {collection: muslim, number: 595, narration: 1}
+  grade: sahih
+  graded_by: Sahih Muslim
+  url: https://sunnah.com/muslim:595a
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim/1347.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim/1347.json
+    translator: Abdul Hamid Siddiqui
+    book: 5
+    hadith_in_book: 184
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: « ذكر وحكايته », short dathur — les pauvres des Muhajirun et les gens des richesses ; 33 après chaque prière ; les riches le font aussi, « ذلك فضل الله يؤتيه من يشاء »
+  text_ar: حَدَّثَنَا عَاصِمُ بْنُ النَّضْرِ التَّيْمِيُّ، حَدَّثَنَا الْمُعْتَمِرُ، حَدَّثَنَا عُبَيْدُ اللَّهِ، ح قَالَ وَحَدَّثَنَا قُتَيْبَةُ بْنُ سَعِيدٍ، حَدَّثَنَا لَيْثٌ، عَنِ ابْنِ عَجْلاَنَ، كِلاَهُمَا عَنْ سُمَىٍّ، عَنْ أَبِي صَالِحٍ، عَنْ أَبِي هُرَيْرَةَ، - وَهَذَا حَدِيثُ قُتَيْبَةَ أَنَّ فُقَرَاءَ، الْمُهَاجِرِينَ أَتَوْا رَسُولَ اللَّهِ صلى الله عليه وسلم فَقَالُوا ذَهَبَ أَهْلُ الدُّثُورِ بِالدَّرَجَاتِ الْعُلَى وَالنَّعِيمِ الْمُقِيمِ ‏.‏ فَقَالَ ‏"‏ وَمَا ذَاكَ ‏"‏ ‏.‏ قَالُوا يُصَلُّونَ كَمَا نُصَلِّي وَيَصُومُونَ كَمَا نَصُومُ وَيَتَصَدَّقُونَ وَلاَ نَتَصَدَّقُ وَيُعْتِقُونَ وَلاَ نُعْتِقُ ‏.‏ فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ أَفَلاَ أُعَلِّمُكُمْ شَيْئًا تُدْرِكُونَ بِهِ مَنْ سَبَقَكُمْ وَتَسْبِقُونَ بِهِ مَنْ بَعْدَكُمْ وَلاَ يَكُونُ أَحَدٌ أَفْضَلَ مِنْكُمْ إِلاَّ مَنْ صَنَعَ مِثْلَ مَا صَنَعْتُمْ ‏"‏ ‏.‏ قَالُوا بَلَى يَا رَسُولَ اللَّهِ ‏.‏ قَالَ ‏"‏ تُسَبِّحُونَ وَتُكَبِّرُونَ وَتَحْمَدُونَ دُبُرَ كُلِّ صَلاَةٍ ثَلاَثًا وَثَلاَثِينَ مَرَّةً ‏"‏ ‏.‏ قَالَ أَبُو صَالِحٍ فَرَجَعَ فُقَرَاءُ الْمُهَاجِرِينَ إِلَى رَسُولِ اللَّهِ صلى الله عليه وسلم فَقَالُوا سَمِعَ إِخْوَانُنَا أَهْلُ الأَمْوَالِ بِمَا فَعَلْنَا فَفَعَلُوا مِثْلَهُ ‏.‏ فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ ذَلِكَ فَضْلُ اللَّهِ يُؤْتِيهِ مَنْ يَشَاءُ ‏"‏ ‏.‏ وَزَادَ غَيْرُ قُتَيْبَةَ فِي هَذَا الْحَدِيثِ عَنِ اللَّيْثِ عَنِ ابْنِ عَجْلاَنَ قَالَ سُمَىٌّ فَحَدَّثْتُ بَعْضَ أَهْلِي هَذَا الْحَدِيثَ فَقَالَ وَهِمْتَ إِنَّمَا قَالَ ‏"‏ تُسَبِّحُ اللَّهَ ثَلاَثًا وَثَلاَثِينَ وَتَحْمَدُ اللَّهَ ثَلاَثًا وَثَلاَثِينَ وَتُكَبِّرُ اللَّهَ ثَلاَثًا وَثَلاَثِينَ ‏"‏ ‏.‏ فَرَجَعْتُ إِلَى أَبِي صَالِحٍ فَقُلْتُ لَهُ ذَلِكَ فَأَخَذَ بِيَدِي فَقَالَ اللَّهُ أَكْبَرُ وَسُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَاللَّهُ أَكْبَرُ وَسُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ حَتَّى تَبْلُغَ مِنْ جَمِيعِهِنَّ ثَلاَثَةً وَثَلاَثِينَ ‏.‏ قَالَ ابْنُ عَجْلاَنَ فَحَدَّثْتُ بِهَذَا الْحَدِيثِ رَجَاءَ بْنَ حَيْوَةَ فَحَدَّثَنِي بِمِثْلِهِ عَنْ أَبِي صَالِحٍ عَنْ أَبِي هُرَيْرَةَ عَنْ رَسُولِ اللَّهِ صلى الله عليه وسلم ‏.‏
+  text_en: "Abu Huraira reported:The poor amongst the emigrants came to the Messenger of Allah (ﷺ) and said: The possessors of great wealth have obtained the highest ranks and the lasting bliss. He (the Holy Prophet) said: How is that? They said: They pray as we pray, and they observe fast as we observe fast, and they give charity but we do not give charity, and they set slaves free but we do not set slaves free. Upon this the Messenger of Allah (ﷺ) said: Shall I not teach you something by which you will catch upon those who have preceded you, and get ahead of those who come after you, only those who do as you do being more excellent than you? They said: Yes, Messenger of Allah. He (the Holy Prophet) said: Extol Allah, declare His Greatness, and Praise Him thirty-three times after every prayer. Abu Salih said: The poor amongst the emigrants returned to the Messenger of Allah (may peace upon him) saying: Our brethren, the possessors, of property have heard what we have done and they did the same. So the Messenger of Allah (ﷺ) said: This is Allah's Grace which He gives to whom He wishes. Sumayy reported: I made a mention of this hadith to some members of my family (and one of them) said: You have forgotten; he (the Holy Prophet) had said (like this): \"Extol Allah thirty-three time, praise Allah thirty-three times and declare His Greatness thirty-three times.\" Ibn `Ajlan said: I made a mention of this hadith to Raja' b. Haiwa and he narrated to me a hadith like this from Abu Salih from the Messenger of Allah (ﷺ) on the authority of Abu Huraira"
+  recording:
+    reader: Ryadussalihin.org
+    item: https://archive.org/details/ar_Moslem_Reading_16
+    file: https://archive.org/download/ar_Moslem_Reading_16/ar_Moslem_Reading_06.mp3
+    start: 6658.16
+    end: 6739.18
+    heard: وماذاك قالوا يصلون كما نصلي ويصومون كما نصوم ويتصدقون ولا نتصدق ويعتقون ولا نعتق فقال رسول الله صلى الله عليه وسلم أفلا أعلمكم شيئا تدركون به من سبقكم وتسبقون به من بعدكم ولا يكون أحد أفضل منكم إلا من صنع مثل ما صنعتم قالوا بلى يا رسول الله قال تسبحون وتكبرون وتحمدون دبر كل صلاة ثلاثا وثلاثين مرة قال أبو صالح فرجع فقراء المهاجرين إلى رسول الله صلى الله عليه وسلم فقالوا سمع إخواننا أهل الأموال بما فعلنا ففعلوا مثله فقال رسول الله صلى الله عليه وسلم ذلك فضل الله يؤتيه من يشاء وزاد غير قتيبة في هذا الحديث عن الليث عن ابن عجلان قال سمي فحدثت بعض أهلي هذا الحديث فقال وهمت إنما قال تسبح الله ثلاثا وثلاثين وتحمد الله ثلاثا وثلاثين وتكبر الله ثلاثا وثلاثين
+    license: none stated on the archive.org item
+    status: proposed
+  parts:
+    # Short dathur : ce qu'il leur apprend, jusqu'à « ثلاثا وثلاثين مرة ».
+    teach:
+      excerpt_ar: أَفَلاَ أُعَلِّمُكُمْ شَيْئًا تُدْرِكُونَ بِهِ مَنْ سَبَقَكُمْ وَتَسْبِقُونَ بِهِ مَنْ بَعْدَكُمْ وَلاَ يَكُونُ أَحَدٌ أَفْضَلَ مِنْكُمْ إِلاَّ مَنْ صَنَعَ مِثْلَ مَا صَنَعْتُمْ ‏"‏ ‏.‏ قَالُوا بَلَى يَا رَسُولَ اللَّهِ ‏.‏ قَالَ ‏"‏ تُسَبِّحُونَ وَتُكَبِّرُونَ وَتَحْمَدُونَ دُبُرَ كُلِّ صَلاَةٍ ثَلاَثًا وَثَلاَثِينَ مَرَّةً
+      excerpt_en: 'Shall I not teach you something by which you will catch upon those who have preceded you, and get ahead of those who come after you, only those who do as you do being more excellent than you? They said: Yes, Messenger of Allah. He (the Holy Prophet) said: Extol Allah, declare His Greatness, and Praise Him thirty-three times after every prayer.'
+    # Short dathur : sa réponse quand les riches le font aussi.
+      recording: {start: 6673.05, end: 6696.4, heard: أفلا أعلمكم شيئا تدركون به من سبقكم وتسبقون به من بعدكم ولا يكون أحد أفضل منكم إلا من صنع مثل ما صنعتم قالوا بلى يا رسول الله قال تسبحون وتكبرون وتحمدون دبر كل صلاة ثلاثا وثلاثين مرة, status: proposed}
+    grace:
+      excerpt_ar: ذَلِكَ فَضْلُ اللَّهِ يُؤْتِيهِ مَنْ يَشَاءُ
+      excerpt_en: This is Allah's Grace which He gives to whom He wishes.
+      recording: {start: 6713.45, end: 6717.2, heard: ذلك فضل الله يؤتيه من يشاء, status: proposed}
+- id: hadith.muslim.591
+  type: hadith
+  ref: {collection: muslim, number: 591}
+  grade: sahih
+  graded_by: Sahih Muslim
+  url: https://sunnah.com/muslim:591
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim/1334.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim/1334.json
+    translator: Abdul Hamid Siddiqui
+    book: 5
+    hadith_in_book: 171
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), après la prière : « اللهم أنت السلام… »"
+  text_ar: حَدَّثَنَا دَاوُدُ بْنُ رُشَيْدٍ، حَدَّثَنَا الْوَلِيدُ، عَنِ الأَوْزَاعِيِّ، عَنْ أَبِي عَمَّارٍ، - اسْمُهُ شَدَّادُ بْنُ عَبْدِ اللَّهِ - عَنْ أَبِي أَسْمَاءَ، عَنْ ثَوْبَانَ، قَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم إِذَا انْصَرَفَ مِنْ صَلاَتِهِ اسْتَغْفَرَ ثَلاَثًا وَقَالَ ‏ "‏ اللَّهُمَّ أَنْتَ السَّلاَمُ وَمِنْكَ السَّلاَمُ تَبَارَكْتَ ذَا الْجَلاَلِ وَالإِكْرَامِ ‏"‏ ‏.‏ قَالَ الْوَلِيدُ فَقُلْتُ لِلأَوْزَاعِيِّ كَيْفَ الاِسْتِغْفَارُ قَالَ تَقُولُ أَسْتَغْفِرُ اللَّهَ أَسْتَغْفِرُ اللَّهَ ‏.‏
+  text_en: "Thauban reported:When the Messenger of Allah (ﷺ) finished his prayer. He begged forgiveness three times and said: O Allah! Thou art Peace, and peace comes from Thee; Blessed art Thou, O Possessor of Glory and Honour. Walid reported: I said to Auza'i: How is the seeking of forgiveness? He replied: You should say: I beg forgiveness from Allah, I beg forgiveness from Allah"
+  parts:
+    salam:
+      excerpt_ar: اللَّهُمَّ أَنْتَ السَّلاَمُ وَمِنْكَ السَّلاَمُ تَبَارَكْتَ ذَا الْجَلاَلِ وَالإِكْرَامِ
+      excerpt_en: O Allah! Thou art Peace, and peace comes from Thee; Blessed art Thou, O Possessor of Glory and Honour
+- id: hadith.bukhari.844
+  type: hadith
+  ref: {collection: bukhari, number: 844}
+  grade: sahih
+  graded_by: Sahih al-Bukhari
+  url: https://sunnah.com/bukhari:844
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-bukhari/844.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari/844.json
+    translator: Muhsin Khan
+    book: 10
+    hadith_in_book: 236
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), après la prière : la lettre d'al-Mughira, « لا مانع لما أعطيت »"
+  text_ar: حَدَّثَنَا مُحَمَّدُ بْنُ يُوسُفَ، قَالَ حَدَّثَنَا سُفْيَانُ، عَنْ عَبْدِ الْمَلِكِ بْنِ عُمَيْرٍ، عَنْ وَرَّادٍ، كَاتِبِ الْمُغِيرَةِ بْنِ شُعْبَةَ قَالَ أَمْلَى عَلَىَّ الْمُغِيرَةُ بْنُ شُعْبَةَ فِي كِتَابٍ إِلَى مُعَاوِيَةَ أَنَّ النَّبِيَّ صلى الله عليه وسلم كَانَ يَقُولُ فِي دُبُرِ كُلِّ صَلاَةٍ مَكْتُوبَةٍ ‏ "‏ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ، وَلَهُ الْحَمْدُ، وَهْوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ، اللَّهُمَّ لاَ مَانِعَ لِمَا أَعْطَيْتَ، وَلاَ مُعْطِيَ لِمَا مَنَعْتَ، وَلاَ يَنْفَعُ ذَا الْجَدِّ مِنْكَ الْجَدُّ ‏"‏‏.‏ وَقَالَ شُعْبَةُ عَنْ عَبْدِ الْمَلِكِ بِهَذَا، وَعَنِ الْحَكَمِ عَنِ الْقَاسِمِ بْنِ مُخَيْمِرَةَ عَنْ وَرَّادٍ بِهَذَا‏.‏ وَقَالَ الْحَسَنُ الْجَدُّ غِنًى‏.‏
+  text_en: Narrated Warrad:(the clerk of Al-Mughira bin Shu`ba) Once Al-Mughira dictated to me in a letter addressed to Muawiya that the Prophet (ﷺ) used to say after every compulsory prayer, "La ilaha illa l-lahu wahdahu la sharika lahu, lahu l-mulku wa lahu l-hamdu, wa huwa `ala kulli shay'in qadir. Allahumma la mani`a lima a`taita, wa la mu`tiya lima mana`ta, wa la yanfa`u dhal-jaddi minka l-jadd. [There is no Deity but Allah, Alone, no Partner to Him. His is the Kingdom and all praise, and Omnipotent is He. O Allah! Nobody can hold back what you gave, nobody can give what You held back, and no struggler's effort can benefit against You]." And Al-Hasan said, "Al-jadd' means prosperity [??]
+  parts:
+    la-mani:
+      excerpt_ar: لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ، وَلَهُ الْحَمْدُ، وَهْوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ، اللَّهُمَّ لاَ مَانِعَ لِمَا أَعْطَيْتَ، وَلاَ مُعْطِيَ لِمَا مَنَعْتَ، وَلاَ يَنْفَعُ ذَا الْجَدِّ مِنْكَ الْجَدُّ
+      excerpt_en: There is no Deity but Allah, Alone, no Partner to Him. His is the Kingdom and all praise, and Omnipotent is He. O Allah! Nobody can hold back what you gave, nobody can give what You held back, and no struggler's effort can benefit against You
+- id: hadith.muslim.594a
+  type: hadith
+  ref: {collection: muslim, number: 594, narration: 1}
+  grade: sahih
+  graded_by: Sahih Muslim
+  url: https://sunnah.com/muslim:594a
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim/1343.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim/1343.json
+    translator: Abdul Hamid Siddiqui
+    book: 5
+    hadith_in_book: 180
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), après la prière : Ibn az-Zubayr, « لا حول ولا قوة إلا بالله… »"
+  text_ar: وَحَدَّثَنَا مُحَمَّدُ بْنُ عَبْدِ اللَّهِ بْنِ نُمَيْرٍ، حَدَّثَنَا أَبِي، حَدَّثَنَا هِشَامٌ، عَنْ أَبِي الزُّبَيْرِ، قَالَ كَانَ ابْنُ الزُّبَيْرِ يَقُولُ فِي دُبُرِ كُلِّ صَلاَةٍ حِينَ يُسَلِّمُ ‏ "‏ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ لاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ لاَ إِلَهَ إِلاَّ اللَّهُ وَلاَ نَعْبُدُ إِلاَّ إِيَّاهُ لَهُ النِّعْمَةُ وَلَهُ الْفَضْلُ وَلَهُ الثَّنَاءُ الْحَسَنُ لاَ إِلَهَ إِلاَّ اللَّهُ مُخْلِصِينَ لَهُ الدِّينَ وَلَوْ كَرِهَ الْكَافِرُونَ ‏"‏ ‏.‏ وَقَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم يُهَلِّلُ بِهِنَّ دُبُرَ كُلِّ صَلاَةٍ ‏.‏
+  text_en: 'Abu Zubair reported:Ibn Zubair uttered at the end of every prayer after pronouncing salutation (these words):" There is no god but Allah. He is alone. There is no partner with Him. Sovereignty belongs to Him and He is Potent over everything. There is no might or power except with Allah. There is no god but Allah and we do not worship but Him alone. To Him belong all bounties, to Him belongs all Grace, and to Him is worthy praise accorded. There is no god but Allah, to Whom we are sincere in devotion, even though the unbelievers should disapprove it." (The narrator said): He (the Holy Prophet) uttered it at the end of every (obligatory) prayer'
+  parts:
+    tahlil:
+      excerpt_ar: لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ لاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ لاَ إِلَهَ إِلاَّ اللَّهُ وَلاَ نَعْبُدُ إِلاَّ إِيَّاهُ لَهُ النِّعْمَةُ وَلَهُ الْفَضْلُ وَلَهُ الثَّنَاءُ الْحَسَنُ لاَ إِلَهَ إِلاَّ اللَّهُ مُخْلِصِينَ لَهُ الدِّينَ وَلَوْ كَرِهَ الْكَافِرُونَ
+      excerpt_en: There is no god but Allah. He is alone. There is no partner with Him. Sovereignty belongs to Him and He is Potent over everything. There is no might or power except with Allah. There is no god but Allah and we do not worship but Him alone. To Him belong all bounties, to Him belongs all Grace, and to Him is worthy praise accorded. There is no god but Allah, to Whom we are sincere in devotion, even though the unbelievers should disapprove it.
+- id: hadith.bukhari.843
+  type: hadith
+  ref: {collection: bukhari, number: 843}
+  grade: sahih
+  graded_by: Sahih al-Bukhari
+  url: https://sunnah.com/bukhari:843
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-bukhari/843.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari/843.json
+    translator: Muhsin Khan
+    book: 10
+    hadith_in_book: 235
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), après la prière : « سبحان الله، والحمد لله، والله أكبر », 33 chacune"
+  text_ar: حَدَّثَنَا مُحَمَّدُ بْنُ أَبِي بَكْرٍ، قَالَ حَدَّثَنَا مُعْتَمِرٌ، عَنْ عُبَيْدِ اللَّهِ، عَنْ سُمَىٍّ، عَنْ أَبِي صَالِحٍ، عَنْ أَبِي هُرَيْرَةَ ـ رضى الله عنه ـ قَالَ جَاءَ الْفُقَرَاءُ إِلَى النَّبِيِّ صلى الله عليه وسلم فَقَالُوا ذَهَبَ أَهْلُ الدُّثُورِ مِنَ الأَمْوَالِ بِالدَّرَجَاتِ الْعُلاَ وَالنَّعِيمِ الْمُقِيمِ، يُصَلُّونَ كَمَا نُصَلِّي، وَيَصُومُونَ كَمَا نَصُومُ، وَلَهُمْ فَضْلٌ مِنْ أَمْوَالٍ يَحُجُّونَ بِهَا، وَيَعْتَمِرُونَ، وَيُجَاهِدُونَ، وَيَتَصَدَّقُونَ قَالَ ‏"‏ أَلاَ أُحَدِّثُكُمْ بِأَمْرٍ إِنْ أَخَذْتُمْ بِهِ أَدْرَكْتُمْ مَنْ سَبَقَكُمْ وَلَمْ يُدْرِكْكُمْ أَحَدٌ بَعْدَكُمْ، وَكُنْتُمْ خَيْرَ مَنْ أَنْتُمْ بَيْنَ ظَهْرَانَيْهِ، إِلاَّ مَنْ عَمِلَ مِثْلَهُ تُسَبِّحُونَ وَتَحْمَدُونَ، وَتُكَبِّرُونَ خَلْفَ كُلِّ صَلاَةٍ ثَلاَثًا وَثَلاَثِينَ ‏"‏‏.‏ فَاخْتَلَفْنَا بَيْنَنَا فَقَالَ بَعْضُنَا نُسَبِّحُ ثَلاَثًا وَثَلاَثِينَ، وَنَحْمَدُ ثَلاَثًا وَثَلاَثِينَ، وَنُكَبِّرُ أَرْبَعًا وَثَلاَثِينَ‏.‏ فَرَجَعْتُ إِلَيْهِ فَقَالَ ‏"‏ تَقُولُ سُبْحَانَ اللَّهِ، وَالْحَمْدُ لِلَّهِ، وَاللَّهُ أَكْبَرُ، حَتَّى يَكُونَ مِنْهُنَّ كُلِّهِنَّ ثَلاَثًا وَثَلاَثِينَ ‏"‏‏.‏
+  text_en: Narrated Abu Huraira:Some poor people came to the Prophet (ﷺ) and said, "The wealthy people will get higher grades and will have permanent enjoyment and they pray like us and fast as we do. They have more money by which they perform the Hajj, and `Umra; fight and struggle in Allah's Cause and give in charity." The Prophet said, "Shall I not tell you a thing upon which if you acted you would catch up with those who have surpassed you? Nobody would overtake you and you would be better than the people amongst whom you live except those who would do the same. Say "Subhana l-lah", "Al hamdu li l-lah" and "Allahu Akbar" thirty three times each after every (compulsory) prayer." We differed and some of us said that we should say, "Subhan-al-lah" thirty three times and "Al hamdu li l-lah" thirty three times and "Allahu Akbar" thirty four times. I went to the Prophet (ﷺ) who said, "Say, "Subhan-al-lah" and "Al hamdu li l-lah" and "Allahu Akbar" all together [??], thirty three times
+  parts:
+    tasbih:
+      excerpt_ar: سُبْحَانَ اللَّهِ، وَالْحَمْدُ لِلَّهِ، وَاللَّهُ أَكْبَرُ
+      excerpt_en: '"Subhan-al-lah" and "Al hamdu li l-lah" and "Allahu Akbar"'
+- id: hadith.muslim.597a
+  type: hadith
+  ref: {collection: muslim, number: 597, narration: 1}
+  grade: sahih
+  graded_by: Sahih Muslim
+  url: https://sunnah.com/muslim:597a
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim/1352.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim/1352.json
+    translator: Abdul Hamid Siddiqui
+    book: 5
+    hadith_in_book: 188
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), après la prière : le centième, et l'écume de la mer"
+  text_ar: حَدَّثَنِي عَبْدُ الْحَمِيدِ بْنُ بَيَانٍ الْوَاسِطِيُّ، أَخْبَرَنَا خَالِدُ بْنُ عَبْدِ اللَّهِ، عَنْ سُهَيْلٍ، عَنْ أَبِي عُبَيْدٍ الْمَذْحِجِيِّ، - قَالَ مُسْلِمٌ أَبُو عُبَيْدٍ مَوْلَى سُلَيْمَانَ بْنِ عَبْدِ الْمَلِكِ - عَنْ عَطَاءِ بْنِ يَزِيدَ اللَّيْثِيِّ، عَنْ أَبِي هُرَيْرَةَ، عَنْ رَسُولِ اللَّهِ صلى الله عليه وسلم ‏ "‏ مَنْ سَبَّحَ اللَّهَ فِي دُبُرِ كُلِّ صَلاَةٍ ثَلاَثًا وَثَلاَثِينَ وَحَمِدَ اللَّهَ ثَلاَثًا وَثَلاَثِينَ وَكَبَّرَ اللَّهَ ثَلاَثًا وَثَلاَثِينَ فَتِلْكَ تِسْعَةٌ وَتِسْعُونَ وَقَالَ تَمَامَ الْمِائَةِ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ غُفِرَتْ خَطَايَاهُ وَإِنْ كَانَتْ مِثْلَ زَبَدِ الْبَحْرِ ‏"‏ ‏.‏
+  text_en: Abu Huraira reported Allah's Messenger (ﷺ) as saying:If anyone extols Allah after every prayer thirty-three times, and praises Allah thirty-three times, and declares His Greatness thirty-three times, ninety-nine times in all, and says to complete a hundred:" There is no god but Allah, having no partner with Him, to Him belongs sovereignty and to Him is praise due, and He is Potent over everything," his sins will be forgiven even If these are as abundant as the foam of the sea
+  parts:
+    tamam:
+      excerpt_ar: لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ
+      excerpt_en: There is no god but Allah, having no partner with Him, to Him belongs sovereignty and to Him is praise due, and He is Potent over everything
+- id: hadith.tirmidhi.2903
+  type: hadith
+  ref: {collection: tirmidhi, number: 2903}
+  grade: sahih
+  graded_by: al-Albani
+  url: https://sunnah.com/tirmidhi:2903
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-tirmidhi/2903.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-tirmidhi/2903.json
+    translator: Unknown
+    book: 45
+    hadith_in_book: 29
+    grades:
+    - {name: Ahmad Muhammad Shakir, grade: Sahih}
+    - {name: Al-Albani, grade: Sahih}
+    - {name: Zubair Ali Zai, grade: Isnaad Hasan}
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), après la prière : الفلق et الناس (« المعوذتين »)"
+  text_ar: حَدَّثَنَا قُتَيْبَةُ، قَالَ حَدَّثَنَا ابْنُ لَهِيعَةَ، عَنْ يَزِيدَ بْنِ أَبِي حَبِيبٍ، عَنْ عُلَىِّ بْنِ رَبَاحٍ، عَنْ عُقْبَةَ بْنِ عَامِرٍ، قَالَ أَمَرَنِي رَسُولُ اللَّهِ صلى الله عليه وسلم أَنْ أَقْرَأَ بِالْمُعَوِّذَتَيْنِ فِي دُبُرِ كُلِّ صَلاَةٍ ‏.‏ قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ غَرِيبٌ ‏.‏
+  text_en: Narrated 'Uqbah bin 'Amir:"The Messenger of Allah (ﷺ) ordered me to recite Al-Mu'awwidhatain at the end of every Salat
+- id: hadith.tirmidhi.3534
+  type: hadith
+  ref: {collection: tirmidhi, number: 3534}
+  grade: hasan
+  graded_by: al-Albani
+  url: https://sunnah.com/tirmidhi:3534
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-tirmidhi/3534.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-tirmidhi/3534.json
+    translator: Unknown
+    book: 48
+    hadith_in_book: 165
+    grades:
+    - {name: Ahmad Muhammad Shakir, grade: Hasan}
+    - {name: Al-Albani, grade: Hasan Sahih}
+    - {name: Bashar Awad Maarouf, grade: Hasan}
+    - {name: Zubair Ali Zai, grade: Hasan}
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), après le maghrib : dix tahlilas"
+  text_ar: حَدَّثَنَا قُتَيْبَةُ، حَدَّثَنَا اللَّيْثُ، عَنِ الْجُلاَحِ أَبِي كَثِيرٍ، عَنْ أَبِي عَبْدِ الرَّحْمَنِ الْحُبُلِيِّ، عَنْ عُمَارَةَ بْنِ شَبِيبٍ السَّبَئِيِّ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏ "‏ مَنْ قَالَ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ يُحْيِي وَيُمِيتُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ‏.‏ عَشْرَ مَرَّاتٍ عَلَى إِثْرِ الْمَغْرِبِ بَعَثَ اللَّهُ لَهُ مَسْلَحَةً يَحْفَظُونَهُ مِنَ الشَّيْطَانِ حَتَّى يُصْبِحَ وَكَتَبَ اللَّهُ لَهُ بِهَا عَشْرَ حَسَنَاتٍ مُوجِبَاتٍ وَمَحَا عَنْهُ عَشْرَ سَيِّئَاتٍ مُوبِقَاتٍ وَكَانَتْ لَهُ بِعَدْلِ عَشْرِ رِقَابٍ مُؤْمِنَاتٍ ‏"‏ ‏.‏ قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ غَرِيبٌ لاَ نَعْرِفُهُ إِلاَّ مِنْ حَدِيثِ لَيْثِ بْنِ سَعْدٍ ‏.‏ وَلاَ نَعْرِفُ لِعُمَارَةَ بْنِ شَبِيبٍ سَمَاعًا عَنِ النَّبِيِّ صلى الله عليه وسلم ‏.‏
+  text_en: 'Umarah bin Shabib As-Saba’i narrated that the Messenger of Allah (ﷺ) said:“Whoever says: none has the right to be worshipped but Allah, Alone, without partner, to Him belongs all that exists, and to Him belongs the praise, He gives life and causes death, and He is powerful over all things, (Lā ilāha illallāh, waḥdahu lā sharīka lahu, lahul-mulku wa lahul-ḥamdu, yuḥyī wa yumītu, wa huwa `alā kulli shai’in qadīr)’ ten times at the end of Al-Maghrib - Allah shall send for him protectors to guard him from Shaitan until he reaches morning, and Allah writes for him ten good deeds, Mujibat, and He wipes from him ten of the destructive evil deeds, and it shall be for him the equal of freeing ten believing slaves.”'
+  parts:
+    maghrib:
+      excerpt_ar: لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ يُحْيِي وَيُمِيتُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ
+      excerpt_en: none has the right to be worshipped but Allah, Alone, without partner, to Him belongs all that exists, and to Him belongs the praise, He gives life and causes death, and He is powerful over all things
+- id: hadith.bukhari.6306
+  type: hadith
+  ref: {collection: bukhari, number: 6306}
+  grade: sahih
+  graded_by: Sahih al-Bukhari
+  url: https://sunnah.com/bukhari:6306
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-bukhari/6306.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari/6306.json
+    translator: Muhsin Khan
+    book: 80
+    hadith_in_book: 3
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), matin et soir : سيد الاستغفار"
+  text_ar: حَدَّثَنَا أَبُو مَعْمَرٍ، حَدَّثَنَا عَبْدُ الْوَارِثِ، حَدَّثَنَا الْحُسَيْنُ، حَدَّثَنَا عَبْدُ اللَّهِ بْنُ بُرَيْدَةَ، عَنْ بُشَيْرِ بْنِ كَعْبٍ الْعَدَوِيِّ، قَالَ حَدَّثَنِي شَدَّادُ بْنُ أَوْسٍ ـ رضى الله عنه ـ عَنِ النَّبِيِّ صلى الله عليه وسلم ‏"‏ سَيِّدُ الاِسْتِغْفَارِ أَنْ تَقُولَ اللَّهُمَّ أَنْتَ رَبِّي، لاَ إِلَهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَىَّ وَأَبُوءُ لَكَ بِذَنْبِي، فَاغْفِرْ لِي، فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ ‏"‏‏.‏ قَالَ ‏"‏ وَمَنْ قَالَهَا مِنَ النَّهَارِ مُوقِنًا بِهَا، فَمَاتَ مِنْ يَوْمِهِ قَبْلَ أَنْ يُمْسِيَ، فَهُوَ مِنْ أَهْلِ الْجَنَّةِ، وَمَنْ قَالَهَا مِنَ اللَّيْلِ وَهْوَ مُوقِنٌ بِهَا، فَمَاتَ قَبْلَ أَنْ يُصْبِحَ، فَهْوَ مِنْ أَهْلِ الْجَنَّةِ ‏"‏‏.‏
+  text_en: "Narrated Shaddad bin Aus:The Prophet (ﷺ) said \"The most superior way of asking for forgiveness from Allah is: 'Allahumma anta Rabbi la ilaha illa anta, Khalaqtani wa ana `Abduka, wa ana `ala `ahdika wa wa`dika mastata`tu, A`udhu bika min Sharri ma sana`tu, abu'u Laka bini`matika `alaiya, wa abu'u laka bidhanbi faghfir lee fa innahu la yaghfiru adhdhunuba illa anta.\" The Prophet (ﷺ) added. \"If somebody recites it during the day with firm faith in it, and dies on the same day before the evening, he will be from the people of Paradise; and if somebody recites it at night with firm faith in it, and dies before the morning, he will be from the people of Paradise"
+  parts:
+    sayyid:
+      excerpt_ar: اللَّهُمَّ أَنْتَ رَبِّي، لاَ إِلَهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَىَّ وَأَبُوءُ لَكَ بِذَنْبِي، فَاغْفِرْ لِي، فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ
+      excerpt_en: Allahumma anta Rabbi la ilaha illa anta
+- id: hadith.tirmidhi.3391
+  type: hadith
+  ref: {collection: tirmidhi, number: 3391}
+  grade: sahih
+  graded_by: al-Albani
+  url: https://sunnah.com/tirmidhi:3391
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-tirmidhi/3391.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-tirmidhi/3391.json
+    translator: Unknown
+    book: 48
+    hadith_in_book: 22
+    grades:
+    - {name: Ahmad Muhammad Shakir, grade: Sahih}
+    - {name: Al-Albani, grade: Sahih}
+    - {name: Bashar Awad Maarouf, grade: Hasan}
+    - {name: Zubair Ali Zai, grade: Hasan}
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), matin et soir : « اللهم بك أصبحنا » / « اللهم بك أمسينا »"
+  text_ar: حَدَّثَنَا عَلِيُّ بْنُ حُجْرٍ، حَدَّثَنَا عَبْدُ اللَّهِ بْنُ جَعْفَرٍ، أَخْبَرَنَا سُهَيْلُ بْنُ أَبِي صَالِحٍ، عَنْ أَبِيهِ، عَنْ أَبِي هُرَيْرَةَ، قَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم يُعَلِّمُ أَصْحَابَهُ يَقُولُ ‏ "‏ إِذَا أَصْبَحَ أَحَدُكُمْ فَلْيَقُلِ اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ الْمَصِيرُ ‏.‏ وَإِذَا أَمْسَى فَلْيَقُلِ اللَّهُمَّ بِكَ أَمْسَيْنَا وَبِكَ أَصْبَحْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ ‏"‏ ‏.‏ قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ ‏.‏
+  text_en: 'Abu Hurairah (ra) said:The Messenger of Allah (ﷺ) used to teach his Companions, saying: “When one of you reached the morning, then let him say: ‘O Allah, by You we enter the morning, and by You we enter the evening, and be You we live, and by You we died, and to You is the Return (Allāhumma bika aṣbaḥnā wa bika amsainā wa bika naḥyā wa bika namūtu wa ilaikal-maṣīr). And when he reaches the evening let him say: ‘O Allah, by You we enter the evening, and by You we enter the morning, and by You we live, and by You we die, and to You is the Resurrection (Allāhumma bika amsainā wa bika aṣbaḥnā wa bika naḥyā wa bika namūtu wa ilaikan-nushūr).’”'
+  parts:
+    sabah:
+      excerpt_ar: اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ الْمَصِيرُ
+      excerpt_en: O Allah, by You we enter the morning, and by You we enter the evening, and be You we live, and by You we died, and to You is the Return
+    masaa:
+      excerpt_ar: اللَّهُمَّ بِكَ أَمْسَيْنَا وَبِكَ أَصْبَحْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ
+      excerpt_en: O Allah, by You we enter the evening, and by You we enter the morning, and by You we live, and by You we die, and to You is the Resurrection
+- id: hadith.tirmidhi.3392
+  type: hadith
+  ref: {collection: tirmidhi, number: 3392}
+  grade: sahih
+  graded_by: al-Albani
+  url: https://sunnah.com/tirmidhi:3392
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-tirmidhi/3392.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-tirmidhi/3392.json
+    translator: Unknown
+    book: 48
+    hadith_in_book: 23
+    grades:
+    - {name: Ahmad Muhammad Shakir, grade: Sahih}
+    - {name: Al-Albani, grade: Sahih}
+    - {name: Bashar Awad Maarouf, grade: Hasan Sahih}
+    - {name: Zubair Ali Zai, grade: Isnaad Sahih}
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), matin, soir, coucher : « اللهم عالم الغيب والشهادة » (Abou Bakr)"
+  text_ar: حَدَّثَنَا مَحْمُودُ بْنُ غَيْلاَنَ، حَدَّثَنَا أَبُو دَاوُدَ، قَالَ أَنْبَأَنَا شُعْبَةُ، عَنْ يَعْلَى بْنِ عَطَاءٍ، قَالَ سَمِعْتُ عَمْرَو بْنَ عَاصِمٍ الثَّقَفِيَّ، يُحَدِّثُ عَنْ أَبِي هُرَيْرَةَ، رضى الله عنه قَالَ قَالَ أَبُو بَكْرٍ يَا رَسُولَ اللَّهِ مُرْنِي بِشَيْءٍ أَقُولُهُ إِذَا أَصْبَحْتُ وَإِذَا أَمْسَيْتُ قَالَ ‏ "‏ قُلِ اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَوَاتِ وَالأَرْضِ رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ أَنْتَ أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ قَالَ قُلْهُ إِذَا أَصْبَحْتَ وَإِذَا أَمْسَيْتَ وَإِذَا أَخَذْتَ مَضْجَعَكَ ‏"‏ ‏.‏ قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ صَحِيحٌ ‏.‏
+  text_en: 'Abu Hurairah, may Allah be pleased with him, said:“Abu Bakr said: ‘O Messenger of Allah, command me with something that I may say when I reach morning and evening.’ He said: ‘Say: “O Allah Knower of the Unseen and the Seen, Originator of the heavens and the earth, Lord of everything and its Possessor, I bear witness that there is none worthy of worship except You, I seek refuge from You from the evil of my soul and from the evil of Shaitan and his Shirk (Allāhumma `ālimal-ghaibi wash-shahādati fāṭiras-samāwāti wal-arḍ, rabba kulli shai’in wa malīkahu, ash-hadu an lā ilāha illā anta, a`ūdhu bika min sharri nafsī wa min sharrish-shaiṭāni washirkihi).’” He said: ‘Say it when you reach morning, and evening, and when you go to bed.’”'
+  parts:
+    alim:
+      excerpt_ar: اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَوَاتِ وَالأَرْضِ رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ أَنْتَ أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ
+      excerpt_en: O Allah Knower of the Unseen and the Seen, Originator of the heavens and the earth, Lord of everything and its Possessor, I bear witness that there is none worthy of worship except You, I seek refuge from You from the evil of my soul and from the evil of Shaitan and his Shirk
+- id: hadith.tirmidhi.3388
+  type: hadith
+  ref: {collection: tirmidhi, number: 3388}
+  grade: hasan
+  graded_by: al-Albani
+  url: https://sunnah.com/tirmidhi:3388
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-tirmidhi/3388.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-tirmidhi/3388.json
+    translator: Unknown
+    book: 48
+    hadith_in_book: 19
+    grades:
+    - {name: Ahmad Muhammad Shakir, grade: Hasan Sahih}
+    - {name: Al-Albani, grade: Hasan Sahih}
+    - {name: Bashar Awad Maarouf, grade: Hasan Sahih}
+    - {name: Zubair Ali Zai, grade: Isnaad Hasan}
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), matin et soir : « بسم الله الذي لا يضر مع اسمه شيء » trois fois"
+  text_ar: حَدَّثَنَا مُحَمَّدُ بْنُ بَشَّارٍ، حَدَّثَنَا أَبُو دَاوُدَ، - وَهُوَ الطَّيَالِسِيُّ حَدَّثَنَا عَبْدُ الرَّحْمَنِ بْنُ أَبِي الزِّنَادِ، عَنْ أَبِيهِ، عَنْ أَبَانَ بْنِ عُثْمَانَ، قَالَ سَمِعْتُ عُثْمَانَ بْنَ عَفَّانَ، رضى الله عنه يَقُولُ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏ "‏ مَا مِنْ عَبْدٍ يَقُولُ فِي صَبَاحِ كُلِّ يَوْمٍ وَمَسَاءِ كُلِّ لَيْلَةٍ بِسْمِ اللَّهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الأَرْضِ وَلاَ فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ ثَلاَثَ مَرَّاتٍ فَيَضُرُّهُ شَيْءٌ ‏"‏ ‏.‏ وَكَانَ أَبَانُ قَدْ أَصَابَهُ طَرَفُ فَالَجِ فَجَعَلَ الرَّجُلُ يَنْظُرُ إِلَيْهِ فَقَالَ لَهُ أَبَانُ مَا تَنْظُرُ أَمَا إِنَّ الْحَدِيثَ كَمَا حَدَّثْتُكَ وَلَكِنِّي لَمْ أَقُلْهُ يَوْمَئِذٍ لِيُمْضِيَ اللَّهُ عَلَىَّ قَدَرَهُ ‏.‏ قَالَ هَذَا حَدِيثٌ حَسَنٌ صَحِيحٌ غَرِيبٌ ‏.‏
+  text_en: "Aban bin `Uthman said:“I heard `Uthman bin `Affan (ra) saying: ‘The Messenger of Allah (ﷺ) said: “There is no worshiper who says, in the morning of every day, and the evening of every night: ‘In the Name of Allah, who with His Name, nothing in the earth or the heavens can cause harm, and He is the Hearing, the Knowing (Bismillāh, alladhi lā yaḍurru ma`a ismihi shai'un fil-arḍi wa lā fis-samā', wa huwas-Samī`ul `Alīm)’ – three times, (except that) nothing shall harm him.” And Aban had been stricken with a type of semi-paralysis, so a man began to look at him, so Aban said to him, “What are you looking at? Indeed the Hadith is as I reported it to you, but I did not say it one day, so Allah brought about His decree upon me.”"
+  parts:
+    bismillah:
+      excerpt_ar: بِسْمِ اللَّهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الأَرْضِ وَلاَ فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ
+      excerpt_en: In the Name of Allah, who with His Name, nothing in the earth or the heavens can cause harm, and He is the Hearing, the Knowing
+- id: hadith.muslim.2726a
+  type: hadith
+  ref: {collection: muslim, number: 2726, narration: 1}
+  grade: sahih
+  graded_by: Sahih Muslim
+  url: https://sunnah.com/muslim:2726a
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim/6913.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim/6913.json
+    translator: Abdul Hamid Siddiqui
+    book: 48
+    hadith_in_book: 106
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), matin : « سبحان الله وبحمده عدد خلقه… » trois fois (Juwayriya)"
+  text_ar: حَدَّثَنَا قُتَيْبَةُ بْنُ سَعِيدٍ، وَعَمْرٌو النَّاقِدُ، وَابْنُ أَبِي عُمَرَ، - وَاللَّفْظُ لاِبْنِ أَبِي عُمَرَ - قَالُوا حَدَّثَنَا سُفْيَانُ، عَنْ مُحَمَّدِ بْنِ عَبْدِ الرَّحْمَنِ، مَوْلَى آلِ طَلْحَةَ عَنْ كُرَيْبٍ، عَنِ ابْنِ عَبَّاسٍ، عَنْ جُوَيْرِيَةَ، أَنَّ النَّبِيَّ صلى الله عليه وسلم خَرَجَ مِنْ عِنْدِهَا بُكْرَةً حِينَ صَلَّى الصُّبْحَ وَهِيَ فِي مَسْجِدِهَا ثُمَّ رَجَعَ بَعْدَ أَنْ أَضْحَى وَهِيَ جَالِسَةٌ فَقَالَ ‏"‏ مَا زِلْتِ عَلَى الْحَالِ الَّتِي فَارَقْتُكِ عَلَيْهَا ‏"‏ ‏.‏ قَالَتْ نَعَمْ ‏.‏ قَالَ النَّبِيُّ صلى الله عليه وسلم ‏"‏ لَقَدْ قُلْتُ بَعْدَكِ أَرْبَعَ كَلِمَاتٍ ثَلاَثَ مَرَّاتٍ لَوْ وُزِنَتْ بِمَا قُلْتِ مُنْذُ الْيَوْمِ لَوَزَنَتْهُنَّ سُبْحَانَ اللَّهِ وَبِحَمْدِهِ عَدَدَ خَلْقِهِ وَرِضَا نَفْسِهِ وَزِنَةَ عَرْشِهِ وَمِدَادَ كَلِمَاتِهِ ‏"‏ ‏.‏
+  text_en: "Juwairiya reported that Allah's Messenger (ﷺ) came out from (her apartment) in the morning as she was busy in observing her dawn prayer in her place of worship. He came back in the forenoon and she was still sitting there. He (the Holy Prophet) said to her:You have been in the same seat since I left you. She said: Yes. Thereupon Allah's Apostle (ﷺ) said: I recited four words three times after I left you and if these are to be weighed against what you have recited since morning these would outweigh them and (these words) are:\" Hallowed be Allah and praise is due to Him according to the number of His creation and according to the pleasure of His Self and according to the weight of His Throne and according to the ink (used in recording) words (for His Praise)"
+  parts:
+    kalimat:
+      excerpt_ar: سُبْحَانَ اللَّهِ وَبِحَمْدِهِ عَدَدَ خَلْقِهِ وَرِضَا نَفْسِهِ وَزِنَةَ عَرْشِهِ وَمِدَادَ كَلِمَاتِهِ
+      excerpt_en: Hallowed be Allah and praise is due to Him according to the number of His creation and according to the pleasure of His Self and according to the weight of His Throne and according to the ink (used in recording) words (for His Praise)
+- id: hadith.muslim.2692
+  type: hadith
+  ref: {collection: muslim, number: 2692}
+  grade: sahih
+  graded_by: Sahih Muslim
+  url: https://sunnah.com/muslim:2692
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim/6843.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim/6843.json
+    translator: Abdul Hamid Siddiqui
+    book: 48
+    hadith_in_book: 39
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), matin et soir : « سبحان الله وبحمده » cent fois"
+  text_ar: حَدَّثَنِي مُحَمَّدُ بْنُ عَبْدِ الْمَلِكِ الأُمَوِيُّ، حَدَّثَنَا عَبْدُ الْعَزِيزِ بْنُ الْمُخْتَارِ، عَنْ سُهَيْلٍ، عَنْ سُمَىٍّ، عَنْ أَبِي صَالِحٍ، عَنْ أَبِي هُرَيْرَةَ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏ "‏ مَنْ قَالَ حِينَ يُصْبِحُ وَحِينَ يُمْسِي سُبْحَانَ اللَّهِ وَبِحَمْدِهِ مِائَةَ مَرَّةٍ ‏.‏ لَمْ يَأْتِ أَحَدٌ يَوْمَ الْقِيَامَةِ بِأَفْضَلَ مِمَّا جَاءَ بِهِ إِلاَّ أَحَدٌ قَالَ مِثْلَ مَا قَالَ أَوْ زَادَ عَلَيْهِ ‏"‏ ‏.‏
+  text_en: Abu Huraira reported Allah's Messenger (ﷺ) as saying:He who recites in the morning and in the evening (these words):" Hallowed be Allah and all praise is due to Him" one hundred times, he would not bring on the Day of Resurrection anything excellent than this except one who utters these words or utters more than these words
+  parts:
+    subhan:
+      excerpt_ar: سُبْحَانَ اللَّهِ وَبِحَمْدِهِ
+      excerpt_en: Hallowed be Allah and all praise is due to Him
+- id: hadith.bukhari.3293
+  type: hadith
+  ref: {collection: bukhari, number: 3293}
+  grade: sahih
+  graded_by: Sahih al-Bukhari
+  url: https://sunnah.com/bukhari:3293
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-bukhari/3293.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari/3293.json
+    translator: Muhsin Khan
+    book: 59
+    hadith_in_book: 102
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), dans la journée : la tahlila cent fois"
+  text_ar: حَدَّثَنَا عَبْدُ اللَّهِ بْنُ يُوسُفَ، أَخْبَرَنَا مَالِكٌ، عَنْ سُمَىٍّ، مَوْلَى أَبِي بَكْرٍ عَنْ أَبِي صَالِحٍ، عَنْ أَبِي هُرَيْرَةَ ـ رضى الله عنه ـ أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ ‏ "‏ مَنْ قَالَ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ، وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ‏.‏ فِي يَوْمٍ مِائَةَ مَرَّةٍ، كَانَتْ لَهُ عَدْلَ عَشْرِ رِقَابٍ، وَكُتِبَتْ لَهُ مِائَةُ حَسَنَةٍ، وَمُحِيَتْ عَنْهُ مِائَةُ سَيِّئَةٍ، وَكَانَتْ لَهُ حِرْزًا مِنَ الشَّيْطَانِ يَوْمَهُ ذَلِكَ حَتَّى يُمْسِيَ، وَلَمْ يَأْتِ أَحَدٌ بِأَفْضَلَ مِمَّا جَاءَ بِهِ، إِلاَّ أَحَدٌ عَمِلَ أَكْثَرَ مِنْ ذَلِكَ ‏"‏‏.‏
+  text_en: "Narrated Abu Huraira:Allah's Messenger (ﷺ) said, \"If one says one-hundred times in one day: \"None has the right to be worshipped but Allah, the Alone Who has no partners, to Him belongs Dominion and to Him belong all the Praises, and He has power over all things (i.e. Omnipotent)\", one will get the reward of manumitting ten slaves, and one-hundred good deeds will be written in his account, and one-hundred bad deeds will be wiped off or erased from his account, and on that day he will be protected from the morning till evening from Satan, and nobody will be superior to him except one who has done more than that which he has done"
+  parts:
+    tahlil:
+      excerpt_ar: لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ، وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ‏
+      excerpt_en: None has the right to be worshipped but Allah, the Alone Who has no partners, to Him belongs Dominion and to Him belong all the Praises, and He has power over all things
+- id: hadith.muslim.2723c
+  type: hadith
+  ref: {collection: muslim, number: 2723, narration: 3}
+  grade: sahih
+  graded_by: Sahih Muslim
+  url: https://sunnah.com/muslim:2723c
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim/6909.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim/6909.json
+    translator: Abdul Hamid Siddiqui
+    book: 48
+    hadith_in_book: 102
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), soir : « أمسينا وأمسى الملك لله… »"
+  text_ar: حَدَّثَنَا أَبُو بَكْرِ بْنُ أَبِي شَيْبَةَ، حَدَّثَنَا حُسَيْنُ بْنُ عَلِيٍّ، عَنْ زَائِدَةَ، عَنِ الْحَسَنِ بْنِ، عُبَيْدِ اللَّهِ عَنْ إِبْرَاهِيمَ بْنِ سُوَيْدٍ، عَنْ عَبْدِ الرَّحْمَنِ بْنِ يَزِيدَ، عَنْ عَبْدِ اللَّهِ، قَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم إِذَا أَمْسَى قَالَ ‏"‏ أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ خَيْرِ هَذِهِ اللَّيْلَةِ وَخَيْرِ مَا فِيهَا وَأَعُوذُ بِكَ مِنْ شَرِّهَا وَشَرِّ مَا فِيهَا اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكَسَلِ وَالْهَرَمِ وَسُوءِ الْكِبَرِ وَفِتْنَةِ الدُّنْيَا وَعَذَابِ الْقَبْرِ ‏"‏ ‏.‏ قَالَ الْحَسَنُ بْنُ عُبَيْدِ اللَّهِ وَزَادَنِي فِيهِ زُبَيْدٌ عَنْ إِبْرَاهِيمَ بْنِ سُوَيْدٍ عَنْ عَبْدِ الرَّحْمَنِ بْنِ يَزِيدَ عَنْ عَبْدِ اللَّهِ رَفَعَهُ أَنَّهُ قَالَ ‏"‏ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ ‏"‏ ‏.‏
+  text_en: Abdullah reported that when it was evening Allah's Messenger (ﷺ) used to supplicate:" We have entered upon evening and so has the Kingdom of Allah entere d upon evening; praise is due to Allah, there is no god but Allah the One, and there is no partner with Him. O Allah, I beg of Thee the blessing of this night and the blessing of that which lies in it. I seek refuge in Thee from the evil of it and what lies in it. O Allah, I seek refuge in Thee from sloth, from decrepitude, from the evil of vanity, from trial of the world, and from torment of the grave." Zubaid, through another chain of transmitters, has narrated on the authority of Abdullah directly this addition:" There is no god but Allah, the One, there is no partner with Him, His is the Sovereignty and to Him is praise due and He is Potent over everything
+  parts:
+    amsayna:
+      excerpt_ar: أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ خَيْرِ هَذِهِ اللَّيْلَةِ وَخَيْرِ مَا فِيهَا وَأَعُوذُ بِكَ مِنْ شَرِّهَا وَشَرِّ مَا فِيهَا اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكَسَلِ وَالْهَرَمِ وَسُوءِ الْكِبَرِ وَفِتْنَةِ الدُّنْيَا وَعَذَابِ الْقَبْرِ
+      excerpt_en: We have entered upon evening and so has the Kingdom of Allah entere d upon evening; praise is due to Allah, there is no god but Allah the One, and there is no partner with Him. O Allah, I beg of Thee the blessing of this night and the blessing of that which lies in it. I seek refuge in Thee from the evil of it and what lies in it. O Allah, I seek refuge in Thee from sloth, from decrepitude, from the evil of vanity, from trial of the world, and from torment of the grave
+- id: hadith.bukhari.5009
+  type: hadith
+  ref: {collection: bukhari, number: 5009}
+  grade: sahih
+  graded_by: Sahih al-Bukhari
+  url: https://sunnah.com/bukhari:5009
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-bukhari/5009.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari/5009.json
+    translator: Muhsin Khan
+    book: 66
+    hadith_in_book: 31
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "Adhkar à lire (sans voix, à enregistrer), soir : les deux derniers versets d'al-Baqara la nuit"
+  text_ar: حَدَّثَنَا أَبُو نُعَيْمٍ، حَدَّثَنَا سُفْيَانُ، عَنْ مَنْصُورٍ، عَنْ إِبْرَاهِيمَ، عَنْ عَبْدِ الرَّحْمَنِ بْنِ يَزِيدَ، عَنْ أَبِي مَسْعُودٍ ـ رضى الله عنه ـ قَالَ قَالَ النَّبِيُّ صلى الله عليه وسلم ‏ "‏ مَنْ قَرَأَ بِالآيَتَيْنِ مِنْ آخِرِ سُورَةِ الْبَقَرَةِ فِي لَيْلَةٍ كَفَتَاهُ‏"‏‏.‏
+  text_en: "Narrated Abu Mas'ud: The Prophet (ﷺ) said, \"If somebody recited the last two Verses of Surat Al-Baqara at night, that will be sufficient for him"
+  parts:
+    baqara:
+      excerpt_ar: مَنْ قَرَأَ بِالآيَتَيْنِ مِنْ آخِرِ سُورَةِ الْبَقَرَةِ فِي لَيْلَةٍ كَفَتَاهُ‏
+      excerpt_en: If somebody recited the last two Verses of Surat Al-Baqara at night, that will be sufficient for him
 - id: hadith.bukhari.1226
   type: hadith
   ref: {collection: bukhari, number: 1226}

@@ -37,7 +37,7 @@ on:
         required: true
         type: string
       voice:
-        description: "Narration voice label of the takes (content/trial/takes/<voice>-<text>.flac)"
+        description: "Narration voice label of the takes (content/trial/takes/<voice>-<text>.flac); X: no voice yet, the silent draft"
         default: D
         type: string
       only:
@@ -202,6 +202,9 @@ jobs:
         run: |
           flags=()
           if [ "$AMBIENCE" != true ]; then flags+=(--no-ambience); fi
+          # Voice X: no take yet, the silent draft (each line timed from its length), to look at the shorts on their
+          # real clips the day before the voice (the owner, 2026-11-17: « prépare tout sans voix, demain la voix »).
+          if [ "$VOICE" = X ]; then flags+=(--draft); fi
           mkdir -p build/clips
           for id in $(uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --ids --only "$ONLY"); do
             echo "::group::$id"

@@ -2710,7 +2710,689 @@
   notes: "les quatre qualités (épisode 3), pilote « une image, puis le verset » (2026-11-15)"
   text_ar: إِلَّا ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّـٰلِحَـٰتِ وَتَوَاصَوْا۟ بِٱلْحَقِّ وَتَوَاصَوْا۟ بِٱلصَّبْرِ
   text_en: Except for those who have believed and done righteous deeds and advised each other to truth and advised each other to patience.
+- id: quran.92.5
+  type: ayah
+  ref: {surah: 92, ayah: 5}
+  url: https://quran.com/92/5
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=92:5
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=92:5
+    translator: Saheeh International
+    surah_ar: الليل
+    surah_en: Al-Layl
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« فأما من أعطى واتقى » : récité par le Prophète ﷺ après « اعملوا » (Bukhari 4949) ; short 1 `amal` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: فَأَمَّا مَنْ أَعْطَىٰ وَٱتَّقَىٰ
+  text_en: As for he who gives and fears Allāh
+- id: quran.92.6
+  type: ayah
+  ref: {surah: 92, ayah: 6}
+  url: https://quran.com/92/6
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=92:6
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=92:6
+    translator: Saheeh International
+    surah_ar: الليل
+    surah_en: Al-Layl
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« وصدق بالحسنى » ; short 1 `amal` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: وَصَدَّقَ بِٱلْحُسْنَىٰ
+  text_en: And believes in the best [reward],
+- id: quran.92.7
+  type: ayah
+  ref: {surah: 92, ayah: 7}
+  url: https://quran.com/92/7
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=92:7
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=92:7
+    translator: Saheeh International
+    surah_ar: الليل
+    surah_en: Al-Layl
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« فسنيسره لليسرى » ; short 1 `amal` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: فَسَنُيَسِّرُهُۥ لِلْيُسْرَىٰ
+  text_en: We will ease him toward ease.
+- id: quran.92.8
+  type: ayah
+  ref: {surah: 92, ayah: 8}
+  url: https://quran.com/92/8
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=92:8
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=92:8
+    translator: Saheeh International
+    surah_ar: الليل
+    surah_en: Al-Layl
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« وأما من بخل واستغنى » ; short 1 `amal` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: وَأَمَّا مَنۢ بَخِلَ وَٱسْتَغْنَىٰ
+  text_en: But as for he who withholds and considers himself free of need
+- id: quran.92.9
+  type: ayah
+  ref: {surah: 92, ayah: 9}
+  url: https://quran.com/92/9
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=92:9
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=92:9
+    translator: Saheeh International
+    surah_ar: الليل
+    surah_en: Al-Layl
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« وكذب بالحسنى » ; short 1 `amal` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: وَكَذَّبَ بِٱلْحُسْنَىٰ
+  text_en: And denies the best [reward],
+- id: quran.92.10
+  type: ayah
+  ref: {surah: 92, ayah: 10}
+  url: https://quran.com/92/10
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=92:10
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=92:10
+    translator: Saheeh International
+    surah_ar: الليل
+    surah_en: Al-Layl
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« فسنيسره للعسرى » : la fin de ce que récite Bukhari 4945 (« إلى قوله للعسرى ») ; short 1 `amal` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: فَسَنُيَسِّرُهُۥ لِلْعُسْرَىٰ
+  text_en: We will ease him toward difficulty.
+- id: quran.81.28
+  type: ayah
+  ref: {surah: 81, ayah: 28}
+  url: https://quran.com/81/28
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=81:28
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=81:28
+    translator: Saheeh International
+    surah_ar: التكوير
+    surah_en: At-Takwir
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« لمن شاء منكم أن يستقيم » : une volonté donnée à l'homme ; short 2 `shaa` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: لِمَن شَآءَ مِنكُمْ أَن يَسْتَقِيمَ
+  text_en: For whoever wills among you to take a right course.
+- id: quran.81.29
+  type: ayah
+  ref: {surah: 81, ayah: 29}
+  url: https://quran.com/81/29
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=81:29
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=81:29
+    translator: Saheeh International
+    surah_ar: التكوير
+    surah_en: At-Takwir
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« وما تشاءون إلا أن يشاء الله رب العالمين » : sous la volonté de Dieu ; short 2 `shaa` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: وَمَا تَشَآءُونَ إِلَّآ أَن يَشَآءَ ٱللَّهُ رَبُّ ٱلْعَـٰلَمِينَ
+  text_en: And you do not will except that Allāh wills - Lord of the worlds.
+- id: quran.57.22
+  type: ayah
+  ref: {surah: 57, ayah: 22}
+  url: https://quran.com/57/22
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=57:22
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=57:22
+    translator: Saheeh International
+    surah_ar: الحديد
+    surah_en: Al-Hadid
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« ما أصاب من مصيبة… إلا في كتاب من قبل أن نبرأها » ; short 3 `law` ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: مَآ أَصَابَ مِن مُّصِيبَةٍ فِى ٱلْأَرْضِ وَلَا فِىٓ أَنفُسِكُمْ إِلَّا فِى كِتَـٰبٍ مِّن قَبْلِ أَن نَّبْرَأَهَآ ۚ إِنَّ ذَٰلِكَ عَلَى ٱللَّهِ يَسِيرٌ
+  text_en: No disaster strikes upon the earth or among yourselves except that it is in a register before We bring it into being - indeed that, for Allāh, is easy -
+- id: quran.57.23
+  type: ayah
+  ref: {surah: 57, ayah: 23}
+  url: https://quran.com/57/23
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=57:23
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=57:23
+    translator: Saheeh International
+    surah_ar: الحديد
+    surah_en: Al-Hadid
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« لكيلا تأسوا على ما فاتكم » : pourquoi on le sait ; le film seul ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: لِّكَيْلَا تَأْسَوْا۟ عَلَىٰ مَا فَاتَكُمْ وَلَا تَفْرَحُوا۟ بِمَآ ءَاتَىٰكُمْ ۗ وَٱللَّهُ لَا يُحِبُّ كُلَّ مُخْتَالٍ فَخُورٍ
+  text_en: In order that you not despair over what has eluded you and not exult [in pride] over what He has given you. And Allāh does not like everyone self-deluded and boastful -
+- id: quran.54.49
+  type: ayah
+  ref: {surah: 54, ayah: 49}
+  url: https://quran.com/54/49
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=54:49
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=54:49
+    translator: Saheeh International
+    surah_ar: القمر
+    surah_en: Al-Qamar
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« إنا كل شيء خلقناه بقدر » : le cadre du film ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: إِنَّا كُلَّ شَىْءٍ خَلَقْنَـٰهُ بِقَدَرٍ
+  text_en: Indeed, all things We created with predestination.
+- id: quran.6.148
+  type: ayah
+  ref: {surah: 6, ayah: 148}
+  url: https://quran.com/6/148
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=6:148
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=6:148
+    translator: Saheeh International
+    surah_ar: الأنعام
+    surah_en: Al-An'am
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "l'excuse du décret annoncée (« سيقول الذين أشركوا لو شاء الله ») et réfutée ; le film seul ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: سَيَقُولُ ٱلَّذِينَ أَشْرَكُوا۟ لَوْ شَآءَ ٱللَّهُ مَآ أَشْرَكْنَا وَلَآ ءَابَآؤُنَا وَلَا حَرَّمْنَا مِن شَىْءٍ ۚ كَذَٰلِكَ كَذَّبَ ٱلَّذِينَ مِن قَبْلِهِمْ حَتَّىٰ ذَاقُوا۟ بَأْسَنَا ۗ قُلْ هَلْ عِندَكُم مِّنْ عِلْمٍ فَتُخْرِجُوهُ لَنَآ ۖ إِن تَتَّبِعُونَ إِلَّا ٱلظَّنَّ وَإِنْ أَنتُمْ إِلَّا تَخْرُصُونَ
+  text_en: Those who associated [others] with Allāh will say, "If Allāh had willed, we would not have associated [anything] and neither would our fathers, nor would we have prohibited anything." Likewise did those before deny until they tasted Our punishment. Say, "Do you have any knowledge that you can produce for us? You follow not except assumption, and you are not but misjudging."
+- id: quran.76.3
+  type: ayah
+  ref: {surah: 76, ayah: 3}
+  url: https://quran.com/76/3
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=76:3
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=76:3
+    translator: Saheeh International
+    surah_ar: الانسان
+    surah_en: Al-Insan
+    retrieved: '2026-11-17'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "« إنا هديناه السبيل إما شاكرا وإما كفورا » : la conclusion du film ; film « مخيّر ولا مسيّر؟ » (qadar, 2026-11-17)"
+  text_ar: إِنَّا هَدَيْنَـٰهُ ٱلسَّبِيلَ إِمَّا شَاكِرًا وَإِمَّا كَفُورًا
+  text_en: Indeed, We guided him to the way, be he grateful or be he ungrateful.
 
+- id: quran.12.19
+  type: ayah
+  ref: {surah: 12, ayah: 19}
+  url: https://quran.com/12/19
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=12:19
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=12:19
+    translator: Saheeh International
+    surah_ar: يوسف
+    surah_en: Yusuf
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« وجاءت سيارة… » : « معاك ٥ ثواني », short 1 (sayyara) : le mot de la question, récité jusqu'à « هذا غلام »"
+
+  text_ar: وَجَآءَتْ سَيَّارَةٌ فَأَرْسَلُوا۟ وَارِدَهُمْ فَأَدْلَىٰ دَلْوَهُۥ ۖ قَالَ يَـٰبُشْرَىٰ هَـٰذَا غُلَـٰمٌ ۚ وَأَسَرُّوهُ بِضَـٰعَةً ۚ وَٱللَّهُ عَلِيمٌۢ بِمَا يَعْمَلُونَ
+  text_en: And there came a company of travelers; then they sent their water drawer, and he let down his bucket. He said, "Good news! Here is a boy." And they concealed him, [taking him] as merchandise; and Allāh was Knowing of what they did.
+- id: quran.5.118
+  type: ayah
+  ref: {surah: 5, ayah: 118}
+  url: https://quran.com/5/118
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=5:118
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=5:118
+    translator: Saheeh International
+    surah_ar: المائدة
+    surah_en: Al-Ma'idah
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« إن تعذبهم فإنهم عبادك وإن تغفر لهم فإنك أنت العزيز الحكيم » : « معاك ٥ ثواني », short 2 (khatima) : la fin à deviner"
+
+  text_ar: إِن تُعَذِّبْهُمْ فَإِنَّهُمْ عِبَادُكَ ۖ وَإِن تَغْفِرْ لَهُمْ فَإِنَّكَ أَنتَ ٱلْعَزِيزُ ٱلْحَكِيمُ
+  text_en: If You should punish them - indeed they are Your servants; but if You forgive them - indeed it is You who is the Exalted in Might, the Wise."
+- id: quran.5.28
+  type: ayah
+  ref: {surah: 5, ayah: 28}
+  url: https://quran.com/5/28
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=5:28
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=5:28
+    translator: Saheeh International
+    surah_ar: المائدة
+    surah_en: Al-Ma'idah
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« … إني أخاف الله رب العالمين », dit par le fils d'Adam : « معاك ٥ ثواني », short 3 (qalaha)"
+
+  text_ar: لَئِنۢ بَسَطتَ إِلَىَّ يَدَكَ لِتَقْتُلَنِى مَآ أَنَا۠ بِبَاسِطٍ يَدِىَ إِلَيْكَ لِأَقْتُلَكَ ۖ إِنِّىٓ أَخَافُ ٱللَّهَ رَبَّ ٱلْعَـٰلَمِينَ
+  text_en: If you should raise your hand toward me to kill me - I shall not raise my hand toward you to kill you. Indeed, I fear Allāh, Lord of the worlds.
+- id: quran.59.16
+  type: ayah
+  ref: {surah: 59, ayah: 16}
+  url: https://quran.com/59/16
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=59:16
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=59:16
+    translator: Saheeh International
+    surah_ar: الحشر
+    surah_en: Al-Hashr
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« … إني أخاف الله رب العالمين », dit par le Diable : « معاك ٥ ثواني », short 3 (qalaha) ; la phrase de la question"
+
+  text_ar: كَمَثَلِ ٱلشَّيْطَـٰنِ إِذْ قَالَ لِلْإِنسَـٰنِ ٱكْفُرْ فَلَمَّا كَفَرَ قَالَ إِنِّى بَرِىٓءٌ مِّنكَ إِنِّىٓ أَخَافُ ٱللَّهَ رَبَّ ٱلْعَـٰلَمِينَ
+  text_en: '[The hypocrites are] like the example of Satan when he says to man, "Disbelieve." But when he disbelieves, he says, "Indeed, I am disassociated from you. Indeed, I fear Allāh, Lord of the worlds."'
+- id: quran.2.127
+  type: ayah
+  ref: {surah: 2, ayah: 127}
+  url: https://quran.com/2/127
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:127
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:127
+    translator: Saheeh International
+    surah_ar: البقرة
+    surah_en: Al-Baqarah
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« إنك أنت السميع العليم » : « معاك ٥ ثواني », short 2 (khatima), un des trois choix écrits (non récité)"
+  text_ar: وَإِذْ يَرْفَعُ إِبْرَٰهِـۧمُ ٱلْقَوَاعِدَ مِنَ ٱلْبَيْتِ وَإِسْمَـٰعِيلُ رَبَّنَا تَقَبَّلْ مِنَّآ ۖ إِنَّكَ أَنتَ ٱلسَّمِيعُ ٱلْعَلِيمُ
+  text_en: And [mention] when Abraham was raising the foundations of the House and [with him] Ishmael, [saying], "Our Lord, accept [this] from us. Indeed, You are the Hearing, the Knowing.
+
+- id: quran.34.14
+  type: ayah
+  ref: {surah: 34, ayah: 14}
+  url: https://quran.com/34/14
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=34:14
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=34:14
+    translator: Saheeh International
+    surah_ar: سبإ
+    surah_en: Saba
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« ما دلهم على موته إلا دابة الأرض… » : « معاك 5 ثواني », short 4 (dabba) ; le mot de la question, récité en entier"
+
+  text_ar: فَلَمَّا قَضَيْنَا عَلَيْهِ ٱلْمَوْتَ مَا دَلَّهُمْ عَلَىٰ مَوْتِهِۦٓ إِلَّا دَآبَّةُ ٱلْأَرْضِ تَأْكُلُ مِنسَأَتَهُۥ ۖ فَلَمَّا خَرَّ تَبَيَّنَتِ ٱلْجِنُّ أَن لَّوْ كَانُوا۟ يَعْلَمُونَ ٱلْغَيْبَ مَا لَبِثُوا۟ فِى ٱلْعَذَابِ ٱلْمُهِينِ
+  text_en: And when We decreed for him [i.e., Solomon] death, nothing indicated to them [i.e., the jinn] his death except a creature of the earth eating his staff. But when he fell, it became clear to the jinn that if they had known the unseen, they would not have remained in humiliating punishment.
+- id: quran.12.83
+  type: ayah
+  ref: {surah: 12, ayah: 83}
+  url: https://quran.com/12/83
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=12:83
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=12:83
+    translator: Saheeh International
+    surah_ar: يوسف
+    surah_en: Yusuf
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« …فصبر جميل عسى الله أن يأتيني بهم جميعا » : « معاك 5 ثواني », short 5 (sabr) ; la suite à deviner, récité en entier"
+
+  text_ar: قَالَ بَلْ سَوَّلَتْ لَكُمْ أَنفُسُكُمْ أَمْرًا ۖ فَصَبْرٌ جَمِيلٌ ۖ عَسَى ٱللَّهُ أَن يَأْتِيَنِى بِهِمْ جَمِيعًا ۚ إِنَّهُۥ هُوَ ٱلْعَلِيمُ ٱلْحَكِيمُ
+  text_en: '[Jacob] said, "Rather, your souls have enticed you to something, so patience is most fitting. Perhaps Allāh will bring them to me all together. Indeed, it is He who is the Knowing, the Wise."'
+- id: quran.12.18
+  type: ayah
+  ref: {surah: 12, ayah: 18}
+  url: https://quran.com/12/18
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=12:18
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=12:18
+    translator: Saheeh International
+    surah_ar: يوسف
+    surah_en: Yusuf
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« …فصبر جميل والله المستعان على ما تصفون », la première fois : « معاك 5 ثواني », short 5 (sabr) ; un choix écrit"
+
+  text_ar: وَجَآءُو عَلَىٰ قَمِيصِهِۦ بِدَمٍ كَذِبٍ ۚ قَالَ بَلْ سَوَّلَتْ لَكُمْ أَنفُسُكُمْ أَمْرًا ۖ فَصَبْرٌ جَمِيلٌ ۖ وَٱللَّهُ ٱلْمُسْتَعَانُ عَلَىٰ مَا تَصِفُونَ
+  text_en: And they brought upon his shirt false blood. [Jacob] said, "Rather, your souls have enticed you to something, so patience is most fitting. And Allāh is the one sought for help against that which you describe."
+- id: quran.12.84
+  type: ayah
+  ref: {surah: 12, ayah: 84}
+  url: https://quran.com/12/84
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=12:84
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=12:84
+    translator: Saheeh International
+    surah_ar: يوسف
+    surah_en: Yusuf
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« يا أسفى على يوسف », dit juste après : « معاك 5 ثواني », short 5 (sabr) ; un choix écrit"
+
+  text_ar: وَتَوَلَّىٰ عَنْهُمْ وَقَالَ يَـٰٓأَسَفَىٰ عَلَىٰ يُوسُفَ وَٱبْيَضَّتْ عَيْنَاهُ مِنَ ٱلْحُزْنِ فَهُوَ كَظِيمٌ
+  text_en: And he turned away from them and said, "Oh, my sorrow over Joseph," and his eyes became white from grief, for he was [of that] a suppressor.
+- id: quran.27.22
+  type: ayah
+  ref: {surah: 27, ayah: 22}
+  url: https://quran.com/27/22
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=27:22
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=27:22
+    translator: Saheeh International
+    surah_ar: النمل
+    surah_en: An-Naml
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« أحطت بما لم تحط به », dit par la huppe à Soulayman : « معاك 5 ثواني », short 6 (hudhud) ; la phrase de la question, récité en entier"
+  text_ar: فَمَكَثَ غَيْرَ بَعِيدٍ فَقَالَ أَحَطتُ بِمَا لَمْ تُحِطْ بِهِۦ وَجِئْتُكَ مِن سَبَإٍۭ بِنَبَإٍ يَقِينٍ
+  text_en: But he [i.e., the hoopoe] stayed not long and said, "I have encompassed [in knowledge] that which you have not encompassed, and I have come to you from Sheba with certain news.
+
+- id: quran.27.27
+  type: ayah
+  ref: {surah: 27, ayah: 27}
+  url: https://quran.com/27/27
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=27:27
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=27:27
+    translator: Saheeh International
+    surah_ar: النمل
+    surah_en: An-Naml
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "« سننظر أصدقت أم كنت من الكاذبين » : Soulayman vérifie la nouvelle de la huppe (« معاك 5 ثواني », short 6, hudhud) ; récité après 27:22"
+  text_ar: ۞ قَالَ سَنَنظُرُ أَصَدَقْتَ أَمْ كُنتَ مِنَ ٱلْكَـٰذِبِينَ
+  text_en: '[Solomon] said, "We will see whether you were truthful or were of the liars.'
+- id: quran.112.1
+  type: ayah
+  ref: {surah: 112, ayah: 1}
+  url: https://quran.com/112/1
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=112:1
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=112:1
+    translator: Saheeh International
+    surah_ar: الإخلاص
+    surah_en: Al-Ikhlas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Ikhlas 112:1 (« ذكر وحكايته », short qul : la sourate entière, l'une des trois du hadith Tirmidhi 3575)"
+  text_ar: قُلْ هُوَ ٱللَّهُ أَحَدٌ
+  text_en: Say, "He is Allāh, [who is] One,
+- id: quran.112.2
+  type: ayah
+  ref: {surah: 112, ayah: 2}
+  url: https://quran.com/112/2
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=112:2
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=112:2
+    translator: Saheeh International
+    surah_ar: الإخلاص
+    surah_en: Al-Ikhlas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Ikhlas 112:2 (« ذكر وحكايته », short qul : la sourate entière, l'une des trois du hadith Tirmidhi 3575)"
+  text_ar: ٱللَّهُ ٱلصَّمَدُ
+  text_en: Allāh, the Eternal Refuge.
+- id: quran.112.3
+  type: ayah
+  ref: {surah: 112, ayah: 3}
+  url: https://quran.com/112/3
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=112:3
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=112:3
+    translator: Saheeh International
+    surah_ar: الإخلاص
+    surah_en: Al-Ikhlas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Ikhlas 112:3 (« ذكر وحكايته », short qul : la sourate entière, l'une des trois du hadith Tirmidhi 3575)"
+  text_ar: لَمْ يَلِدْ وَلَمْ يُولَدْ
+  text_en: He neither begets nor is born,
+- id: quran.112.4
+  type: ayah
+  ref: {surah: 112, ayah: 4}
+  url: https://quran.com/112/4
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=112:4
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=112:4
+    translator: Saheeh International
+    surah_ar: الإخلاص
+    surah_en: Al-Ikhlas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Ikhlas 112:4 (« ذكر وحكايته », short qul : la sourate entière, l'une des trois du hadith Tirmidhi 3575)"
+  text_ar: وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ
+  text_en: Nor is there to Him any equivalent."
+- id: quran.113.1
+  type: ayah
+  ref: {surah: 113, ayah: 1}
+  url: https://quran.com/113/1
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=113:1
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=113:1
+    translator: Saheeh International
+    surah_ar: الفلق
+    surah_en: Al-Falaq
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Falaq 113:1 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575) ; 113:1-3 aussi dans le short aqrab (« من شر ما خلق », les mots du dhikr de Muslim 2709))"
+  text_ar: قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ
+  text_en: Say, "I seek refuge in the Lord of daybreak
+- id: quran.113.2
+  type: ayah
+  ref: {surah: 113, ayah: 2}
+  url: https://quran.com/113/2
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=113:2
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=113:2
+    translator: Saheeh International
+    surah_ar: الفلق
+    surah_en: Al-Falaq
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Falaq 113:2 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575) ; 113:1-3 aussi dans le short aqrab (« من شر ما خلق », les mots du dhikr de Muslim 2709))"
+  text_ar: مِن شَرِّ مَا خَلَقَ
+  text_en: From the evil of that which He created
+- id: quran.113.3
+  type: ayah
+  ref: {surah: 113, ayah: 3}
+  url: https://quran.com/113/3
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=113:3
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=113:3
+    translator: Saheeh International
+    surah_ar: الفلق
+    surah_en: Al-Falaq
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Falaq 113:3 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575) ; 113:1-3 aussi dans le short aqrab (« من شر ما خلق », les mots du dhikr de Muslim 2709))"
+  text_ar: وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ
+  text_en: And from the evil of darkness when it settles
+- id: quran.113.4
+  type: ayah
+  ref: {surah: 113, ayah: 4}
+  url: https://quran.com/113/4
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=113:4
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=113:4
+    translator: Saheeh International
+    surah_ar: الفلق
+    surah_en: Al-Falaq
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Falaq 113:4 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575) ; 113:1-3 aussi dans le short aqrab (« من شر ما خلق », les mots du dhikr de Muslim 2709))"
+  text_ar: وَمِن شَرِّ ٱلنَّفَّـٰثَـٰتِ فِى ٱلْعُقَدِ
+  text_en: And from the evil of the blowers in knots
+- id: quran.113.5
+  type: ayah
+  ref: {surah: 113, ayah: 5}
+  url: https://quran.com/113/5
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=113:5
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=113:5
+    translator: Saheeh International
+    surah_ar: الفلق
+    surah_en: Al-Falaq
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Falaq 113:5 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575) ; 113:1-3 aussi dans le short aqrab (« من شر ما خلق », les mots du dhikr de Muslim 2709))"
+  text_ar: وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ
+  text_en: And from the evil of an envier when he envies."
+- id: quran.114.1
+  type: ayah
+  ref: {surah: 114, ayah: 1}
+  url: https://quran.com/114/1
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=114:1
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=114:1
+    translator: Saheeh International
+    surah_ar: الناس
+    surah_en: An-Nas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "An-Nas 114:1 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575))"
+  text_ar: قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ
+  text_en: Say, "I seek refuge in the Lord of mankind,
+- id: quran.114.2
+  type: ayah
+  ref: {surah: 114, ayah: 2}
+  url: https://quran.com/114/2
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=114:2
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=114:2
+    translator: Saheeh International
+    surah_ar: الناس
+    surah_en: An-Nas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "An-Nas 114:2 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575))"
+  text_ar: مَلِكِ ٱلنَّاسِ
+  text_en: The Sovereign of mankind,
+- id: quran.114.3
+  type: ayah
+  ref: {surah: 114, ayah: 3}
+  url: https://quran.com/114/3
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=114:3
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=114:3
+    translator: Saheeh International
+    surah_ar: الناس
+    surah_en: An-Nas
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "An-Nas 114:3 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575))"
+  text_ar: إِلَـٰهِ ٱلنَّاسِ
+  text_en: The God of mankind,
+- id: quran.114.4
+  type: ayah
+  ref: {surah: 114, ayah: 4}
+  url: https://quran.com/114/4
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=114:4
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=114:4
+    translator: Saheeh International
+    surah_ar: الناس
+    surah_en: An-Nas
+    retrieved: '2026-11-17'
+  status: validated
+  notes: "An-Nas 114:4 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575)) ; An-Nas 114:4 (« إزاي أعملها؟ », سجود السهو, short shakk : الوسواس الخناس, récité avec 114:5-6)"
+  text_ar: مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ
+  text_en: From the evil of the retreating whisperer -
+  validated_by: mssnoussi92
+- id: quran.114.6
+  type: ayah
+  ref: {surah: 114, ayah: 6}
+  url: https://quran.com/114/6
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=114:6
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=114:6
+    translator: Saheeh International
+    surah_ar: الناس
+    surah_en: An-Nas
+    retrieved: '2026-11-17'
+  status: validated
+  notes: "An-Nas 114:6 (« ذكر وحكايته », short qul : la sourate entière (Tirmidhi 3575)) ; An-Nas 114:6 (« إزاي أعملها؟ », سجود السهو, short shakk, récité avec 114:4-5)"
+  text_ar: مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ
+  text_en: From among the jinn and mankind".
+  validated_by: mssnoussi92
+- id: quran.57.21
+  type: ayah
+  ref: {surah: 57, ayah: 21}
+  url: https://quran.com/57/21
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=57:21
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=57:21
+    translator: Saheeh International
+    surah_ar: الحديد
+    surah_en: Al-Hadid
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "Al-Hadid 57:21 (« ذكر وحكايته », short dathur : « سابقوا إلى مغفرة… ذلك فضل الله يؤتيه من يشاء », la phrase que le Prophète ﷺ dit aux pauvres (Muslim 595) ferme ce verset de la course)"
+  text_ar: سَابِقُوٓا۟ إِلَىٰ مَغْفِرَةٍ مِّن رَّبِّكُمْ وَجَنَّةٍ عَرْضُهَا كَعَرْضِ ٱلسَّمَآءِ وَٱلْأَرْضِ أُعِدَّتْ لِلَّذِينَ ءَامَنُوا۟ بِٱللَّهِ وَرُسُلِهِۦ ۚ ذَٰلِكَ فَضْلُ ٱللَّهِ يُؤْتِيهِ مَن يَشَآءُ ۚ وَٱللَّهُ ذُو ٱلْفَضْلِ ٱلْعَظِيمِ
+  text_en: Race [i.e., compete] toward forgiveness from your Lord and a Garden whose width is like the width of the heavens and earth, prepared for those who believed in Allāh and His messengers. That is the bounty of Allāh which He gives to whom He wills, and Allāh is the possessor of great bounty.
+- id: quran.2.285
+  type: ayah
+  ref: {surah: 2, ayah: 285}
+  url: https://quran.com/2/285
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:285
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:285
+    translator: Saheeh International
+    surah_ar: البقرة
+    surah_en: Al-Baqarah
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "Al-Baqarah 2:285 (adhkar à lire, le soir : les deux derniers versets d'al-Baqara, Bukhari 5009, récités ; choix du propriétaire, 2026-11-17)"
+  text_ar: ءَامَنَ ٱلرَّسُولُ بِمَآ أُنزِلَ إِلَيْهِ مِن رَّبِّهِۦ وَٱلْمُؤْمِنُونَ ۚ كُلٌّ ءَامَنَ بِٱللَّهِ وَمَلَـٰٓئِكَتِهِۦ وَكُتُبِهِۦ وَرُسُلِهِۦ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِّن رُّسُلِهِۦ ۚ وَقَالُوا۟ سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ ٱلْمَصِيرُ
+  text_en: The Messenger has believed in what was revealed to him from his Lord, and [so have] the believers. All of them have believed in Allāh and His angels and His books and His messengers, [saying], "We make no distinction between any of His messengers." And they say, "We hear and we obey. [We seek] Your forgiveness, our Lord, and to You is the [final] destination."
+- id: quran.2.286
+  type: ayah
+  ref: {surah: 2, ayah: 286}
+  url: https://quran.com/2/286
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:286
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:286
+    translator: Saheeh International
+    surah_ar: البقرة
+    surah_en: Al-Baqarah
+    retrieved: '2026-11-18'
+  status: validated
+  notes: "Al-Baqarah 2:286 (adhkar à lire, le soir : les deux derniers versets d'al-Baqara, Bukhari 5009, récités ; choix du propriétaire, 2026-11-17) ; Al-Baqarah 2:286 (« إزاي أعملها؟ », سجود السهو, short sahun : récité jusqu'à « أو أخطأنا », mot 19)"
+  text_ar: لَا يُكَلِّفُ ٱللَّهُ نَفْسًا إِلَّا وُسْعَهَا ۚ لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا ٱكْتَسَبَتْ ۗ رَبَّنَا لَا تُؤَاخِذْنَآ إِن نَّسِينَآ أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَآ إِصْرًا كَمَا حَمَلْتَهُۥ عَلَى ٱلَّذِينَ مِن قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِۦ ۖ وَٱعْفُ عَنَّا وَٱغْفِرْ لَنَا وَٱرْحَمْنَآ ۚ أَنتَ مَوْلَىٰنَا فَٱنصُرْنَا عَلَى ٱلْقَوْمِ ٱلْكَـٰفِرِينَ
+  text_en: Allāh does not charge a soul except [with that within] its capacity. It will have [the consequence of] what [good] it has gained, and it will bear [the consequence of] what [evil] it has earned. "Our Lord, do not impose blame upon us if we have forgotten or erred. Our Lord, and lay not upon us a burden like that which You laid upon those before us. Our Lord, and burden us not with that which we have no ability to bear. And pardon us; and forgive us; and have mercy upon us. You are our protector, so give us victory over the disbelieving people."
+  validated_by: mssnoussi92
 - id: quran.107.4
   type: ayah
   ref: {surah: 107, ayah: 4}
@@ -2747,24 +3429,6 @@
   text_ar: ٱلَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ
   text_en: '[But] who are heedless of their prayer -'
   validated_by: mssnoussi92
-- id: quran.2.286
-  type: ayah
-  ref: {surah: 2, ayah: 286}
-  url: https://quran.com/2/286
-  origin:
-    api: quran.com v4
-    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:286
-    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:286
-    translator: Saheeh International
-    surah_ar: البقرة
-    surah_en: Al-Baqarah
-    retrieved: '2026-11-17'
-  status: validated
-  notes: "Al-Baqarah 2:286 (« إزاي أعملها؟ », سجود السهو, short sahun : récité jusqu'à « أو أخطأنا », mot 19)"
-
-  text_ar: لَا يُكَلِّفُ ٱللَّهُ نَفْسًا إِلَّا وُسْعَهَا ۚ لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا ٱكْتَسَبَتْ ۗ رَبَّنَا لَا تُؤَاخِذْنَآ إِن نَّسِينَآ أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَآ إِصْرًا كَمَا حَمَلْتَهُۥ عَلَى ٱلَّذِينَ مِن قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِۦ ۖ وَٱعْفُ عَنَّا وَٱغْفِرْ لَنَا وَٱرْحَمْنَآ ۚ أَنتَ مَوْلَىٰنَا فَٱنصُرْنَا عَلَى ٱلْقَوْمِ ٱلْكَـٰفِرِينَ
-  text_en: Allāh does not charge a soul except [with that within] its capacity. It will have [the consequence of] what [good] it has gained, and it will bear [the consequence of] what [evil] it has earned. "Our Lord, do not impose blame upon us if we have forgotten or erred. Our Lord, and lay not upon us a burden like that which You laid upon those before us. Our Lord, and burden us not with that which we have no ability to bear. And pardon us; and forgive us; and have mercy upon us. You are our protector, so give us victory over the disbelieving people."
-  validated_by: mssnoussi92
 - id: quran.18.110
   type: ayah
   ref: {surah: 18, ayah: 110}
@@ -2800,39 +3464,4 @@
 
   text_ar: لَّقَدْ كَانَ لَكُمْ فِى رَسُولِ ٱللَّهِ أُسْوَةٌ حَسَنَةٌ لِّمَن كَانَ يَرْجُوا۟ ٱللَّهَ وَٱلْيَوْمَ ٱلْـَٔاخِرَ وَذَكَرَ ٱللَّهَ كَثِيرًا
   text_en: There has certainly been for you in the Messenger of Allāh an excellent pattern for anyone whose hope is in Allāh and the Last Day and [who] remembers Allāh often.
-  validated_by: mssnoussi92
-- id: quran.114.4
-  type: ayah
-  ref: {surah: 114, ayah: 4}
-  url: https://quran.com/114/4
-  origin:
-    api: quran.com v4
-    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=114:4
-    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=114:4
-    translator: Saheeh International
-    surah_ar: الناس
-    surah_en: An-Nas
-    retrieved: '2026-11-17'
-  status: validated
-  notes: "An-Nas 114:4 (« إزاي أعملها؟ », سجود السهو, short shakk : الوسواس الخناس, récité avec 114:5-6)"
-
-  text_ar: مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ
-  text_en: From the evil of the retreating whisperer -
-  validated_by: mssnoussi92
-- id: quran.114.6
-  type: ayah
-  ref: {surah: 114, ayah: 6}
-  url: https://quran.com/114/6
-  origin:
-    api: quran.com v4
-    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=114:6
-    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=114:6
-    translator: Saheeh International
-    surah_ar: الناس
-    surah_en: An-Nas
-    retrieved: '2026-11-17'
-  status: validated
-  notes: "An-Nas 114:6 (« إزاي أعملها؟ », سجود السهو, short shakk, récité avec 114:4-5)"
-  text_ar: مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ
-  text_en: From among the jinn and mankind".
   validated_by: mssnoussi92

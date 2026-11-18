@@ -37,7 +37,6 @@ import yaml
 ROOT = Path(__file__).resolve().parents[2]
 TRIAL = ROOT / "content" / "trial"
 PUBLIC = ROOT / "video" / "public"
-DIGITS = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")
 
 
 def stamp(seconds: float) -> str:
@@ -74,6 +73,11 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
                 flush()
             if sid not in run:
                 run.append(sid)
+        elif kind == "card":                             # a dhikr written to be read: no reader
+            flush()
+            hadith = True
+            src = sources[sid]
+            lines.append(" · ".join(x for x in (f"• {src['reference_en']}", src.get("grade_note"), src["url"]) if x))
         else:
             flush()
             hadith = True
@@ -123,7 +127,11 @@ def quotes_of(segments: list[dict]) -> list[tuple[str, str]]:
         elif "verses" in s:
             ids += [("verse", sid) for sid in s["verses"]]
         elif "reading" in s:
-            ids.append(("reading", s["reading"]))
+            if ("reading", s["reading"]) not in ids:       # a part and the whole of a hadith: one reference
+                ids.append(("reading", s["reading"]))
+        elif "card" in s:                                  # a dhikr to read: shown, never read
+            if ("card", s["card"]) not in ids:
+                ids.append(("card", s["card"]))
         for sid in s.get("sources") or []:
             ids.append(("report" if sid.startswith("hadith.") else "science" if sid.startswith("science.") else "fiqh" if sid.startswith("fiqh.") else "tafsir", sid))
     return ids
@@ -372,8 +380,9 @@ def main() -> None:
         lines, hadith, verse = quoted(quotes_of(spec["segments"]), sources)
         n, total = sp["part"], len(shorts)
         # A series goes on: its shorts are numbered, never « n of total ».
-        series = (f"{pub['series']['en']} · {n} · {pub['series']['ar']} · {str(n).translate(DIGITS)}" if series_only else
-                  f"{pub['series']['en']} · part {n}/{total} · {pub['series']['ar']} · الجزء {str(n).translate(DIGITS)} من {str(total).translate(DIGITS)}")
+        # Numbers are written 1 2 3, never ١ ٢ ٣ (the owner, 2026-11-17); texts already validated keep what they were validated with.
+        series = (f"{pub['series']['en']} · {n} · {pub['series']['ar']} · {n}" if series_only else
+                  f"{pub['series']['en']} · part {n}/{total} · {pub['series']['ar']} · الجزء {n} من {total}")
         name = f"{files}-short-{n}-{spec['id']}"
         cover = (spec.get("cover") or {}).get("file", f"{name}-cover.jpg")
 

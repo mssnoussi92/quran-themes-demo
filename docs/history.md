@@ -504,6 +504,75 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   fusionne quand ils sont verts, corrige quand ils sont rouges ; une PR qui porte une décision de lui pas encore
   donnée attend son « je valide ».
 
+## Le film « مخيّر ولا مسيّر؟ » : la fiche et le script (2026-11-17)
+
+- **Demande du propriétaire** : « je veux créer un film sur الانسان مخير او مسير ». Fiche (skill `choose-format`) : la
+  question est un faux choix d'après as-Sa'di (74:56, 81:29 : une vraie volonté et un vrai acte, sous Sa volonté) ; pas un
+  débat (Tirmidhi 2133 : il a défendu la dispute sur le qadar), la question des Compagnons et sa réponse (Bukhari 4949 :
+  « اعملوا ») ; « مخيّر في كذا ومسيّر في كذا » et Adam et Moussa écartés ; recoupement avec le short 2 du du'a dit.
+- **Ses choix (questions à choix)** : trois idées reçues, version courte, avec « des animations, un cas de vie réel
+  (situation) acté pour attirer le spectateur » (lu : une scène type jouée par une silhouette anonyme, au début de chaque
+  short) ; le titre « مخيّر ولا مسيّر؟ » ; le script maintenant, la production après les premières mesures, publication du
+  28 au 31 décembre.
+- **Fait** : sources au registre (proposées), coupes de récitation, script des trois shorts et du film
+  (`docs/scripts/qadar.md`), estimés plus longs que la fiche (1:38, 1:26, 1:52 ; film 7:10). À valider par lui.
+- **Ses réponses sur le script** : un extrait de Muslim 2664 dans le short 3, Tirmidhi 2133 gardé, les images de style
+  tout de suite, le script relu par lui avant validation. **Fait** : l'outil d'un extrait de lecture (`parts`, `part:` ;
+  premier travail confié à un agent pour ce film, relu ligne à ligne, une correction : le contrôle de la voix sur tout le
+  hadith) ; la lecture de Bukhari 4949 (Abu Malik al-Asqalani, proposée), qu'il fallait aussi pour que `rules.py --all`
+  reste sans erreur ; les dessins des trois scènes jouées (`video/src/trial/Qadar.tsx`) et leurs images de style.
+- **Les débuts refaits** (sa demande : commencer par une question ou un sentiment que tous ressentent, la silhouette pour
+  que chacun se reconnaisse). Avis de la session : d'accord si la question est concrète, l'image en mouvement dès la
+  première seconde et la promesse à la 3e seconde (khidr-01). Ses choix : les trois débuts proposés, et le film ouvert
+  sur « لو كل حاجة مكتوبة… هتحاسب ليه؟ », auquel répond son dernier chapitre.
+- **Script validé par lui** (« je valide le script », 2026-11-17) ; fond tout dessiné ; les scènes jouées adaptées aux
+  nouveaux débuts (l'effort avant l'abandon ; le tapis roulé qu'il ne déroule pas ; une chambre à 3 h et le magasin en
+  souvenir). La voix attend les premières mesures.
+- **Produit et livré le même jour**, à sa demande (« commence le travail ») : voix (quatre requêtes), dessins larges
+  du film, chemins redessinés, ambiances, accroches proposées, rendu par le workflow `film` (42 minutes) ; un trou
+  d'outil fermé (`film.py` et les cartes muettes, avec un test). PR #42 ouverte vers `main`, qui attend sa validation.
+
+## « مخيّر ولا مسيّر؟ » : validé, la fin du film refaite, au calendrier (2026-11-17)
+
+- **Sa réponse sur les vidéos** : « je valide tout sauf la fin du film, il faut changer اشترك عشان الفيلم الجاي ». Inscrit
+  sur les trois shorts (voix, montage, couverture, textes, ambiance) et les sources ; le film, sans sa voix ni sa fin.
+- **La fin** : trois propositions sur aperçu, son choix « ابعته لحد بيسأل نفس السؤال. ». Répliques propres du film redites
+  en une requête (chaque phrase retrouvée ; la reconnaissance entend la fin), film refait (6:58 ; les chapitres se
+  décalent d'une à deux secondes, recalculés par `publish.py` depuis les timelines du run). Le bouton d'abonnement reste
+  à l'écran, la voix ne dit plus « اشترك ».
+- **Le film vertical et son jumeau TikTok** (sa demande, « les deux ») : un seul run (`only: tall`), release brouillon
+  `qadar-9x16-candidate` ; même voix, même minutage, signés `@quran.words.daily` sur TikTok partout où on a regardé.
+- **Validé** : « je valide le film », « le vertical », « le TikTok » (questions à choix nommant chacun). PR #42 fusionnée
+  après ses checks, comme il l'avait dit. **Au calendrier** : film le lundi 28 décembre, shorts du 29 au 31 ; les quatre
+  lignes vérifiées avec le lecteur du calendrier de quran-reels (chaque plateforme reliée à sa vidéo, aucun problème).
+
+## « معاك 5 ثواني », le quiz ; les chiffres 123 ; al-Qurtubi pour le fiqh (2026-11-17)
+
+- **Sa demande** : un nouveau type de short, un jeu pour faire commenter (un QCM sur le sens d'un mot avec un compteur, ou
+  une ayah à compléter), « ton avis d'abord ». Avis de la session : oui, il vise ce qui manque (Instagram : 1 commentaire
+  pour 29 publications) et le départ à 4-8 s ; contredit : pas de faux mot dans un verset (la fin d'un verset, de vrais
+  noms, le récitateur donne la réponse), aucune mauvaise réponse inventée, 5 s et non 10, pas de « اكتب إجابتك » (Meta
+  le diffuse moins), un pilote et pas une série tant que rien n'est mesuré. **Ses choix** : les trois formats A, B, C, une
+  question par short, une phrase de voix, une vraie question ouverte, le nom « معاك 5 ثواني », environ 40 s.
+- **Script validé** (shorts 1 à 3), le fils d'Adam nommé هابيل à sa demande (al-Muyassar sur 5:28). Fait le même jour :
+  quatorze sources proposées, quatre récitations coupées, `Quiz.tsx`, `tools/trial/quiz.py`, le tic `count`, brouillons
+  (0:42, 0:49, 1:22), le short 1 envoyé sans voix ; clips choisis par lui. La voix attend le lendemain (palier gratuit
+  presque épuisé par deux autres sessions). PR #44 fusionnée avec la règle des chiffres.
+- **Les chiffres** (sa règle, « à mémoriser pour toutes les sessions ») : 123, jamais ١٢٣, partout sauf le numéro qui ferme
+  une ayah dans le texte coranique (son choix) ; dans `CLAUDE.md` des deux dépôts, appliquée aux références, textes à
+  coller, badges, dates et chapitres ; quran-reels : la ligne de série du dimanche (PR #76).
+- **Au-delà du verset** (sa demande : « ne te limite pas au Coran, il faut voir le tafsir et le fiqh si besoin ») :
+  al-Qurtubi entre dans la politique pour le fiqh (son choix) ; un statut n'est une réponse de quiz que sans divergence ;
+  écrit dans le skill `write-hook`.
+- **Trois autres quiz** (sa demande : « prépare 3 autres quiz sans voix, et demain matin tu envoies les 6 voix ») : `dabba`
+  (34:14), `sabr` (12:83), `hudhud` (27:22), un par format ; scripts validés par lui (questions à choix) ; dix-neuf sources
+  proposées, quatre récitations coupées (34:14 jusqu'à « منسأته », 12:83, 27:22, 27:27) ; textes de voix 89 à 91 ; le
+  montage gagne la référence sous un mauvais choix vrai ailleurs (`note`) et `at_once` (la question entière sur la première
+  image : un « … » la partageait en deux temps) ; dessins : la canne et les arcs, la lumière qui monte, la huppe. En réserve
+  (son choix), placés à la revue après les chiffres du premier quiz.
+  Brouillons muets envoyés (la huppe reposée sur sa branche après un premier rendu) ; **validés par lui** : rendu, clips
+  (8451, 2119, 16139), 27:27 récité au short 6, les trois accroches. Voix des six quiz le 2026-11-18.
+
 ## Une série éducative, « إزاي أعملها؟ » ; une source de fiqh dans la politique (2026-11-17)
 
 - **Demande du propriétaire** : explorer une série éducative qui garde un début fort, par exemple سجود السهو. La session

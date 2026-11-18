@@ -87,7 +87,7 @@ A verse says "woe to those who pray" (107:4-5), and our minds drift in every pra
 
 آية بتقول «فويل للمصلين» (الماعون ٤-٥)، وكلنا بنسهى في صلاتنا. الرد في كلمة: الآية بتتكلم عن اللي ساهين «عن» صلاتهم (ضيّعوها وفوّتوا وقتها)، مش «في» صلاتهم؛ السهو في الصلاة بيحصل من أي حد، حتى من النبي ﷺ (السعدي). وفي آخر البقرة: «ربنا لا تؤاخذنا إن نسينا أو أخطأنا» (٢٨٦).
 
-How Do I Do It? · 1 · إزاي أعملها؟ · ١
+How Do I Do It? · 1 · إزاي أعملها؟ · 1
 
 AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
 
@@ -199,7 +199,7 @@ The Prophet ﷺ once prayed dhuhr in five rak'ahs, then made two prostrations af
 
 النبي ﷺ صلّى الضهر خمس ركعات، وسجد سجدتين بعد السلام (البخاري ١٢٢٦)، وقال: «إنما أنا بشر أنسى كما تنسون فإذا نسيت فذكروني» (مسلم ٥٧٢). ولو زوّدت حاجة وانت ساهي، السجدتين فين؟ المذاهب الأربعة، زي ما في الموسوعة الفقهية الكويتية.
 
-How Do I Do It? · 2 · إزاي أعملها؟ · ٢
+How Do I Do It? · 2 · إزاي أعملها؟ · 2
 
 AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
 
@@ -215,7 +215,7 @@ Quoted:
 • Sahih Muslim 572a · Reading: Ryadussalihin.org · https://sunnah.com/muslim:572a
 • Surah Al-Kahf (18:110) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/110
 • Meaning after Tafsir as-Sa'di (18:110) · https://quran.com/18:110/tafsirs/ar-tafseer-al-saddi
-• Rulings after The Kuwaiti Encyclopedia of Islamic Jurisprudence, vol. 24, p. 235, 238–239 · الموسوعة الفقهية الكويتية ٢٤/٢٣٥، ٢٣٨-٢٣٩ · https://app.turath.io/book/11430?page=15869
+• Rulings after The Kuwaiti Encyclopedia of Islamic Jurisprudence, vol. 24, p. 235, 238–239 · الموسوعة الفقهية الكويتية 24/235، 238-239 · https://app.turath.io/book/11430?page=15869
 
 Ambience: BigSoundBank (Joseph Sardin)
 ```
@@ -311,7 +311,7 @@ You stood up for the third rak'ah without sitting for the tashahhud? It happened
 
 قمت للركعة التالتة من غير ما تقعد للتشهد؟ حصلت مع النبي ﷺ: كمّل صلاته، وقبل السلام سجد سجدتين وهو قاعد (البخاري ١٢٢٤، مسلم ٥٧٠). تعمل إيه خطوة بخطوة، وفين السجدتين في كل مذهب من الأربعة (الموسوعة الفقهية الكويتية). احفظه لليوم اللي تسهى فيه.
 
-How Do I Do It? · 3 · إزاي أعملها؟ · ٣
+How Do I Do It? · 3 · إزاي أعملها؟ · 3
 
 AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
 
@@ -324,7 +324,7 @@ AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَ
 Quoted:
 • Sahih al-Bukhari 1224 (told in the narration's own words) · https://sunnah.com/bukhari:1224
 • Sahih Muslim 570a (told in the narration's own words) · https://sunnah.com/muslim:570a
-• Rulings after The Kuwaiti Encyclopedia of Islamic Jurisprudence, vol. 24, p. 234, 238–239 · الموسوعة الفقهية الكويتية ٢٤/٢٣٤، ٢٣٨-٢٣٩ · https://app.turath.io/book/11430?page=15867
+• Rulings after The Kuwaiti Encyclopedia of Islamic Jurisprudence, vol. 24, p. 234, 238–239 · الموسوعة الفقهية الكويتية 24/234، 238-239 · https://app.turath.io/book/11430?page=15867
 • Surah Al-Ahzab (33:21) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/33/21
 • Meaning after Al-Tafsir al-Muyassar (33:21) · https://quran.com/33:21/tafsirs/ar-tafsir-muyassar
 
@@ -422,7 +422,7 @@ Did I pray three or four? The Prophet ﷺ taught the fix: drop the doubt, build 
 
 صلّيت تلاتة ولا أربعة؟ النبي ﷺ علّمنا الحل: سيب الشك، وابني على اللي متأكد منه، واسجد سجدتين قبل السلام (مسلم ٥٧١). وقول كل مذهب من الأربعة في الشك (الموسوعة الفقهية الكويتية)، والوسواس اللي وصفه القرآن (الناس ٤-٦).
 
-How Do I Do It? · 4 · إزاي أعملها؟ · ٤
+How Do I Do It? · 4 · إزاي أعملها؟ · 4
 
 AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
 
@@ -437,7 +437,7 @@ Quoted:
 • Sahih Muslim 389f (told in the narration's own words) · https://sunnah.com/muslim:389f
 • Sahih Muslim 571a · Reading: Ryadussalihin.org · https://sunnah.com/muslim:571a
 • Sahih Muslim 571a (told in the narration's own words) · https://sunnah.com/muslim:571a
-• Rulings after The Kuwaiti Encyclopedia of Islamic Jurisprudence, vol. 24, p. 235–237 · الموسوعة الفقهية الكويتية ٢٤/٢٣٥-٢٣٧ · https://app.turath.io/book/11430?page=15869
+• Rulings after The Kuwaiti Encyclopedia of Islamic Jurisprudence, vol. 24, p. 235–237 · الموسوعة الفقهية الكويتية 24/235-237 · https://app.turath.io/book/11430?page=15869
 • Surah An-Nas (114:4-6) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/114/4-6
 • Meaning after Al-Tafsir al-Muyassar (114:4) · https://quran.com/114:4/tafsirs/ar-tafsir-muyassar
 

@@ -15,6 +15,7 @@ import { Village, Wall } from "./Wall";
 import { Call, Niche, Whale } from "./Dua";
 import { Barrier, Chest, Cliffs, Dwellings } from "./Qarnayn";
 import { KAHF_WIDE } from "./Kahf";
+import { QADAR_WIDE } from "./Qadar";
 
 loadFonts();
 
@@ -241,6 +242,7 @@ const WIDE: Record<string, Drawn> = {
   asked: AskedWide, written: WrittenWide, waited: WaitedWide,
   west: WestWide, tribute: TributeWide, barrier: BarrierWide,
   ...KAHF_WIDE,
+  ...QADAR_WIDE,
 };
 
 /** One stretch of the film on the same clip: the clip, what is drawn over it scene after scene, a slow zoom. */
@@ -351,7 +353,7 @@ export const Film: React.FC<FilmProps> = ({ data }) => {
       )}
       {/* where we are in the story: the chapter, top left */}
       <div dir="rtl" lang="ar" style={{ position: "absolute", top: 50, left: 70, opacity: 0.86 * chapterIn * (ended ? 0 : 1), fontFamily: FONT.arabic, fontWeight: 700, fontSize: 36, color: GOLD, textShadow: SHADOW }}>
-        {chapter.number ? `${["٠", "١", "٢", "٣", "٤", "٥"][chapter.number]} · ` : ""}{chapter.title.ar}
+        {chapter.number ? `${chapter.number} · ` : ""}{chapter.title.ar}
       </div>
       <Signature handle={data.handle} reminders={data.subscribe} t={t} />
     </AbsoluteFill>
@@ -460,7 +462,7 @@ export const FilmTall: React.FC<FilmProps> = ({ data, platform }) => {
       )}
       {/* where we are in the story: the chapter, top left, facing the name of the page */}
       <div dir="rtl" lang="ar" style={{ position: "absolute", top: 240, left: 90, opacity: 0.86 * chapterIn * (ended ? 0 : 1), fontFamily: FONT.arabic, fontWeight: 700, fontSize: 36, color: GOLD, textShadow: SHADOW }}>
-        {chapter.number ? `${["٠", "١", "٢", "٣", "٤", "٥"][chapter.number]} · ` : ""}{chapter.title.ar}
+        {chapter.number ? `${chapter.number} · ` : ""}{chapter.title.ar}
       </div>
       {/* the reminder of the last line is the page's name under that line, as in a short */}
       <Follow handle={handle} reminders={data.subscribe.filter((r) => r < final.start)} t={t} />

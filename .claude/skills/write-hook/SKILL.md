@@ -71,6 +71,52 @@ yet when this was written). The beats are the same with three differences:
 - **Beat 10 names the next short of the series** (a promise to keep: the order of `shorts` is the order of
   publication); never « every verse has a story », which is false.
 
+## A short of the quiz (« معاك 5 ثواني »)
+
+A game to make people comment (the owner's idea, 2026-11-17): a question written on the first frame, three choices, a
+countdown of five seconds, the answer; then the reciter says the verse and the voice gives its meaning
+(`content/trial/quiz.yaml`; fiche `docs/themes.md`; validated pilot `docs/scripts/quiz.md`: `sayyara`, `khatima`,
+`qalaha`). His choices: **one question per short, about 40 s**; three formats, A **the meaning of a word** (« يعني
+إيه؟ »), B **the end of a verse** (« تخلص بإيه؟ »), C **who said it** (« مين قالها؟ »); the question and the countdown
+silent, **one or two lines of voice for the meaning**; no request to comment, a **real open question** at the end.
+
+**Choosing the question**
+
+- **The obvious answer is wrong**, or the answer surprises: « سَيَّارَةٌ » of 12:19 is not a car; after « وإن تغفر لهم »
+  5:118 ends with « العزيز الحكيم ». A question a viewer answers without thinking (a verse of Juz' 'Amma known by heart)
+  brings no comment.
+- **A wrong choice is never invented.** It is a real meaning (the word's meaning today; the meaning of the same word
+  elsewhere in the Quran: « أمة », a people in 2:128, a time in 12:45), or real words of the Quran taken by id (the names
+  that close another verse: 39:53, 2:127). **Never a false word inside a verse**: a blank is filled by the right end only;
+  a wrong choice is written beside the verse, never in it.
+- **One sure answer.** Check the whole Quran and the context before writing it: « إني أخاف الله رب العالمين » is in 59:16
+  (Satan) **and** in 5:28 (Abel, son of Adam), so the honest answer is « الاتنين ». A question with two true answers and one
+  marked right is a false question.
+- **Do not stop at the verse** (the owner, 2026-11-17: « ne te limite pas au Coran, il faut voir le tafsir et le fiqh si
+  besoin pour plus de contexte »). Before writing a question, read what the policy's tafsirs say of the verse and of its
+  neighbours (who speaks in 5:118 is told by 5:116; Abel is named by al-Muyassar on 5:28), and **when the verse carries a
+  ruling, read the fiqh: al-Qurtubi**, the fourth tafsir of `content/policy.yaml`, kept for that (the conditions, the
+  schools, what the verse alone does not say). 5:38 (the thief) looks like an easy « end of the verse »; al-Qurtubi counts
+  twenty-five questions on it (the amount, the place it was kept in, who carries out the ruling): a short that gives
+  the ending without that context misleads. Its meaning lines then carry the conditions, on al-Qurtubi named under them,
+  or another verse is chosen.
+- **A ruling is the answer only when our sources give it without divergence** (his choice, 2026-11-17). Where the schools
+  differ, the fiqh is context said after the answer (« العلما اختلفوا… »), never « the » right choice.
+
+**What the short never does**
+
+- **No call to comment with a precise answer**: no letter or number on the choices, no « اكتب إجابتك في الكومنتات », no
+  score to post. Meta ranks such posts as engagement bait and shows them less. The surprise brings the comments; the
+  last line is a real open question (« فيه كلمة كنت فاكر معناها حاجة… وطلعت حاجة تانية؟ »), whose answers can give the next
+  questions.
+- **No figure without a source** (« ٩٠٪ بيغلطوا فيها » is invented); numbers written 123.
+- **The voice never says the question's Quranic words**: they are drawn from the registry (`quiz.head`); the question line
+  is silent and holds the countdown.
+
+**Length**: the question and its answer 7 s, the recitation 12 to 16 s, the voice about 20 s (four or five short lines):
+about 40 s. Two verses recited whole (« الاتنين ») make about 1:20: say it before writing. Encoding: `quiz:` of the short
+and its segments (`docs/model.md`, « معاك 5 ثواني »).
+
 ## The film's own lines
 
 The film says the shorts' lines again and adds few (twelve in the first film, one voice request):

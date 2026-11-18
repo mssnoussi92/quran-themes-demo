@@ -25,8 +25,7 @@ const chance = (i: number, salt = 0) => {
   const v = Math.sin(i * 127.1 + salt * 311.7) * 43758.5453;
   return v - Math.floor(v);
 };
-const ARABIC_DIGITS = "٠١٢٣٤٥٦٧٨٩";
-const arabic = (n: number) => String(n).replace(/[0-9]/g, (d) => ARABIC_DIGITS[Number(d)]);
+const arabic = (n: number) => String(n);      // the owner, 2026-11-17: numbers are written 1 2 3, never 1 2 3 (CLAUDE.md)
 
 /** When each scene starts. In the video: when its segment first starts. On a cover (every scene starts at 0 and only
  * the cover's own scene is shown), the scenes before the cover's are long over and the ones after it far away. */

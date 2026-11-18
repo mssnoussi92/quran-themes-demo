@@ -30,14 +30,16 @@ import script  # noqa: E402  (first_words, first_sentence: the cut of a verse at
 WORK = ROOT / "build" / "trial" / "sources"
 RECITERS = {"alafasy": "Mishari Rashid al-Afasy", "sayegh": "Tawfiq As-Sayegh"}                 # as video/scripts/prepare.ts
 COLLECTIONS = {"bukhari": "Sahih al-Bukhari", "muslim": "Sahih Muslim", "tirmidhi": "Jami' at-Tirmidhi"}
-DIGITS = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")
+DIGITS = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")   # only for the number that closes an ayah inside the Quranic text (۝١٩), as the mushaf
 
 
 def num(n, digits: str | None = None) -> str:
-    """A number as it is written on screen: Arabic-Indic (١ ٢ ٣) unless the file says `digits: latin` (1 2 3)."""
-    return str(n) if digits == "latin" else str(n).translate(DIGITS)
+    """A number as it is written on screen: 1 2 3, never ١ ٢ ٣ (the owner, 2026-11-17, for every video). `digits` (the
+    `digits: latin` of a file, written before the rule held for all) is kept for its callers and changes nothing."""
+    return str(n)
 READING_RATE = 48000
 UNREAD = 12.0          # seconds given to a hadith with no reading yet, in a draft only
+
 
 _registry: dict | None = None
 proposed: list[str] = []      # what was played without the owner's validation yet (printed by the caller)
@@ -90,14 +92,23 @@ def clean(text: str) -> str:
     return " ".join(text.replace("‏", "").split())
 
 
-def described(sid: str, digits: str | None = None) -> dict:
-    """How a source is named and shown: its references, the text on screen, its translation, who is credited."""
+def described(sid: str, part: str | None = None) -> dict:
+    """How a source is named and shown: its references, the text on screen, its translation, who is credited.
+    `part` (a hadith): one of its `parts` of the registry, the excerpts and the recording of that part."""
     e = entry(sid)
+    if part is not None:
+        if e["type"] != "hadith":
+            sys.exit(f"error: {sid} is not a hadith: it has no parts")
+        whole = e
+        e = script.part_view(whole, part)
+        if e is None:
+            sys.exit(f"error: {sid} has no part « {part} » (parts of its registry entry: "
+                     f"{', '.join(whole.get('parts') or {}) or 'none'})")
     ref, origin = e["ref"], e.get("origin") or {}
     translator = origin.get("translator")
     if e["type"] == "ayah":
         return {"type": "ayah", "id": sid,
-                "reference": f"سورة {origin['surah_ar']} · الآية {num(ref['ayah'], digits)}" if origin.get("surah_ar") else f"Quran {ref['surah']}:{ref['ayah']}",
+                "reference": f"سورة {origin['surah_ar']} · الآية {ref['ayah']}" if origin.get("surah_ar") else f"Quran {ref['surah']}:{ref['ayah']}",
                 "reference_en": f"{'Surah ' + origin['surah_en'] if origin.get('surah_en') else 'Quran'} ({ref['surah']}:{ref['ayah']})",
                 "display_ar": e["text_ar"], "display_en": e["text_en"], "translator": translator, "url": e.get("url"), "recording": None,
                 "grade_note": None}
@@ -130,13 +141,27 @@ def corrected_en(e: dict) -> str:
     return text
 
 
+def card(sid: str, part: str | None = None, count: str | None = None, label: str | None = None,
+         hold: float | None = None, pace: dict | None = None) -> dict:
+    """A dhikr to read (a `card:` segment): the words of a hadith of the registry (one of its `parts`, its excerpt),
+    on screen with their reference and translation, and no sound at all: nobody reads them, the viewer does. `count`
+    and `label` are our own words (« 3 مرات », « بعد المغرب »), written with it; `hold` overrides the reading time."""
+    d = described(sid, part)
+    if d["type"] != "hadith":
+        sys.exit(f"error: {sid}: a card shows a hadith")
+    seconds = script.card_seconds(d["display_ar"], hold, pace)
+    return {"kind": "reading", "card": True, "reference": " · ".join(x for x in (d["reference"], d["grade_note"]) if x),
+            "text": d["display_ar"], "en": d["display_en"], "seconds": seconds, "file": None,
+            "credit": d["translator"] or "", "count": count, "label": label}
+
+
 def name_of(sid: str) -> str:
     return sid.replace(".", "-")
 
 
 def verse(sid: str, out_dir: Path, digits: str | None = None) -> dict:
     """A verse segment: recited by the reciter of content/policy.yaml, cut from his surah, levelled."""
-    d = described(sid, digits)
+    d = described(sid)
     if d["type"] != "ayah":
         sys.exit(f"error: {sid} is not a verse")
     reciter = build.reciter_from_policy()
@@ -162,7 +187,7 @@ def passage(ids: list[str], out_dir: Path, upto: int | None = None, digits: str 
     long verse. The audio ends where word N ends (the same fades as at a verse end), the text keeps its first N
     words, the timings stop at N, the translation stops at the end of its first sentence. No sign of the end of a
     verse: the verse does not end there."""
-    described_ = [described(sid, digits) for sid in ids]
+    described_ = [described(sid) for sid in ids]
     if any(d["type"] != "ayah" for d in described_):
         sys.exit(f"error: a passage is made of verses: {', '.join(ids)}")
     refs = [entry(sid)["ref"] for sid in ids]
@@ -206,7 +231,7 @@ def passage(ids: list[str], out_dir: Path, upto: int | None = None, digits: str 
         verses.append({"en": d["display_en"], "first": first, "last": position})
     origin = entry(ids[0]).get("origin") or {}
     one = len(ids) == 1                                  # a verse cut at a pause sign (`upto`): « الآية », not « الآيات »
-    span = num(refs[0]['ayah'], digits) if one else f"{num(refs[0]['ayah'], digits)}-{num(refs[-1]['ayah'], digits)}"
+    span = f"{refs[0]['ayah']}" if one else f"{refs[0]['ayah']}-{refs[-1]['ayah']}"     # 1 2 3, never ١ ٢ ٣ (the owner, 2026-11-17)
     span_en = f"{refs[0]['ayah']}" if one else f"{refs[0]['ayah']}-{refs[-1]['ayah']}"
     return {"kind": "verse", "seconds": round(build.seconds(wav), 3), "file": f"trial/{wav.name}",
             "reference": f"سورة {origin['surah_ar']} · {'الآية' if one else 'الآيات'} {span}" if origin.get("surah_ar") else f"Quran {refs[0]['surah']}:{span_en}",
@@ -232,8 +257,8 @@ def page_ranges(pages: list[int], digits: str | None = None, comma: str = ",", d
 
 def references(ids: list[str], digits: str | None = None) -> dict:
     """What a narration rests on (`sources:`), as it is written on screen while it is said: the reports it tells in
-    its own words (« رواه مسلم ٨٦٣ والبخاري ٩٣٦ »), the tafsir its meaning comes from (its name, from
-    content/policy.yaml), the pages of fiqh (the book's name and « volume/pages », contiguous pages merged: « ٢٤/٢٣٨–٢٣٩ »)
+    its own words (« رواه مسلم 863 والبخاري 936 »), the tafsir its meaning comes from (its name, from
+    content/policy.yaml), the pages of fiqh (the book's name and « volume/pages », contiguous pages merged: « 24/238-239 »)
     and the papers or data a claim rests on (a `science` source: its `label`, no text).
     Never read nor shown: a reference. An unvalidated source is listed as proposed."""
     policy = yaml.safe_load((ROOT / "content" / "policy.yaml").read_text(encoding="utf-8")) or {}
@@ -252,7 +277,7 @@ def references(ids: list[str], digits: str | None = None) -> dict:
         if e["type"] == "hadith":
             ar, en = REPORTED_BY[ref["collection"]]
             letter = chr(96 + ref["narration"]) if ref.get("narration") else ""
-            reports.append((f"{ar} {num(ref['number'], digits)}", f"{en} {ref['number']}{letter}"))
+            reports.append((f"{ar} {ref['number']}", f"{en} {ref['number']}{letter}"))
         elif e["type"] == "tafsir":
             name = editions.get(ref["edition"])
             if not name:
@@ -283,9 +308,12 @@ def references(ids: list[str], digits: str | None = None) -> dict:
     return {"ar": " · ".join(ar), "en": " · ".join(en), "ids": list(ids)}
 
 
-def reading(sid: str, out_dir: Path, draft: bool = False) -> dict:
-    """A hadith segment: the Prophet's words read by a real voice (the registry's `recording`), levelled."""
-    d = described(sid)
+def reading(sid: str, out_dir: Path, draft: bool = False, part: str | None = None) -> dict:
+    """A hadith segment: the Prophet's words read by a real voice (the registry's `recording`), levelled.
+    `part`: only that part of the reading (its excerpts, its start and end inside the recording); the whole reading
+    when none. A part has its own clip and its own wav, so that a part and the whole never share a file."""
+    d = described(sid, part)
+    key = sid if part is None else f"{sid}.{part}"
     if d["type"] != "hadith":
         sys.exit(f"error: {sid} is not a hadith")
     # Under a hadith of Tirmidhi, al-Albani's grade as it is recorded (the hadith policy; as on the old cards).
@@ -294,15 +322,15 @@ def reading(sid: str, out_dir: Path, draft: bool = False) -> dict:
     if not rec:
         if not draft:
             sys.exit(f"error: {sid} has no recorded reading (skill find-hadith-recording): the synthetic voice does not read a hadith here")
-        proposed.append(f"reading of {sid}: none yet ({UNREAD:.0f} s kept for it)")
+        proposed.append(f"reading of {key}: none yet ({UNREAD:.0f} s kept for it)")
         return {**shown, "seconds": UNREAD, "file": None, "credit": " · ".join(x for x in ("Reading: to be found", d["translator"]) if x)}
     if rec.get("status") != "validated":
-        proposed.append(f"reading of {sid} by {rec['reader']}")
+        proposed.append(f"reading of {key} by {rec['reader']}")
     WORK.mkdir(parents=True, exist_ok=True)
-    clip = build.reading_clip(rec, sid, WORK, READING_RATE)
+    clip = build.reading_clip(rec, key, WORK, READING_RATE)
     levelled = clip.with_suffix(".level.wav")
     build.level(clip, levelled, build.LEVEL["reading"])
-    wav = out_dir / f"{name_of(sid)}.wav"
+    wav = out_dir / f"{name_of(key)}.wav"
     shutil.copyfile(levelled, wav)
     return {**shown, "seconds": round(build.seconds(wav), 2), "file": f"trial/{wav.name}",
             "credit": " · ".join(x for x in (f"Reading: {rec['reader']}", d["translator"]) if x)}

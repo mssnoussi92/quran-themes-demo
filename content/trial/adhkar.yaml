@@ -1,0 +1,14 @@
+# Adhkar à lire, sans voix, à enregistrer (demande du propriétaire, 2026-11-17 : « un montage animé sans voix, on laisse
+# les gens lire les adhkar du matin, du soir et d'après la prière, et on dit : save it ») : trois vidéos, une par moment ;
+# script validé par lui le même jour (docs/scripts/adhkar-cards.md : les adhkar de la politique seulement, chacun avec sa
+# référence et son nombre ; le titre seul sur la couverture ; les clips 7215, 2119, 190332). Aucune voix de synthèse.
+id: adhkar
+files: adhkar                    # début du nom des vidéos livrées : adhkar-short-<n>-<id>.mp4
+title: { ar: "أذكار", en: "Adhkar to keep" }
+shorts: [salat, sabah, masaa]
+handle: "@quran_words_daily"
+publish:
+  out: docs/retention/publication-adhkar.md
+  series: { en: "Adhkar to keep", ar: "أذكار" }
+  hashtags: ["#أذكار", "#حصن_المسلم"]      # proposés par la session, à valider avec les textes
+  narration: { X: "No narration: the adhkar are written to be read · بدون صوت راوي" }

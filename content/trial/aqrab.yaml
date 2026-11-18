@@ -1,0 +1,106 @@
+# « ذكر وحكايته », short 1 (pilote, 2026-11-17 ; content/trial/dhikr.yaml, docs/themes.md) : le dhikr du soir de Muslim 2709.
+# Le fait : un homme vient dire au Prophète ﷺ qu'un scorpion l'a piqué la nuit d'avant ; il lui répond que s'il avait dit,
+# le soir venu, « أعوذ بكلمات الله التامات من شر ما خلق », il ne lui aurait pas nui (récit d'Abou Hourayra, à la fin de la
+# narration 1 de Muslim 2709 ; la narration le raconte avec ses mots, la réponse est lue par une vraie voix).
+# - Les mêmes mots, « من شر ما خلق », sont 113:2 : 113:1-3 récités (la sourate continue après 113:3, « ومن شر النفاثات… » :
+#   arrêt à signaler au propriétaire ; la sourate entière est dans le short suivant).
+# - Le sens (as-Sa'di) : 113:2 couvre tout ce qu'Allah a créé, hommes, djinns et animaux, et l'on cherche refuge auprès de
+#   leur Créateur du mal qui est en eux ; 113:3, la nuit, quand se répandent les esprits mauvais et les animaux nuisibles.
+# - Refait le 2026-11-17 à sa demande, sur le brouillon muet : la réponse du Prophète ﷺ n'est plus lue ; la narration
+#   en dit le sens au discours indirect, puis le dhikr est dit par Muhammad Jibril (ses adhkar du soir, archive.org : un
+#   album sans licence, droits jamais vérifiés ; première publication sur Facebook seul) ; l'exemple est d'aujourd'hui
+#   (la route de nuit, les enfants endormis), sa demande : « on n'a pas peur des scorpions ».
+# - Répliques de la session, à valider. Les nôtres sans tafsir : « بنفتكر ربنا بعد اللدغة… » (ce qu'on ne voit pas), la
+#   porte fermée (l'exemple), la phrase à retenir.
+# - Images prévues (des choses et des lieux, personne) : `sting` un scorpion en silhouette sur une pierre, la nuit ;
+#   `dusk` le ciel du soir ; `drive` une route de nuit, deux phares qui approchent ; `door` une maison fermée, une
+#   fenêtre allumée.
+# - La dernière réplique avant l'appel annonce le short 2 (« قل » trois fois, une nuit de pluie) : promesse à tenir.
+id: aqrab
+# Short refait à sa demande le 2026-11-17 (voir `segments`) : une réplique retirée, deux réécrites (« version A », son
+# choix) ; **le short refait validé par lui le même jour** (question à choix qui citait ses quatorze répliques : « je
+# valide le short 1 »). Inscrit sur sa parole ; `script_validated` vaut pour cette version.
+# « Je valide le script » du propriétaire (2026-11-17, question à choix nommant le script des 3 shorts de
+# docs/scripts/dhikr.md, avec 57:21 dans le short 3) : les répliques, la place des versets et des lectures. Ni la voix, ni
+# les images, ni les lectures (à juger sur les vidéos, son choix du même jour), ni les textes à coller. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 92-trial-aqrab
+# Le clip : un coucher qui devient nuit (Pixabay 8451, Felix-Mittermeier, approuvé pour « الحجر » et le quiz 4) : le soir
+# qui tombe (« حين أمسيت »), puis la nuit de la piqûre ; le scorpion dessiné au premier plan. APPROUVÉ pour ce short par le
+# propriétaire le 2026-11-17 (question à choix, sa recommandation). Réglages repris du quiz 4, à revoir sur les images.
+clip: { source: pixabay, id: 8451, author: Felix-Mittermeier, page: "https://pixabay.com/videos/id-8451/", take: { slow: 7, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.7, ground: "#06050c", horizon: 1380, veil: 0.8 }
+# Ambiance proposée (une des trois validées à l'écoute le 2026-11-11) : un pré le soir, grillons ; jamais sous une
+# lecture ni sous un verset. À valider sur la vidéo.
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 100, level: -38 }
+cover: { scene: sting, title: "عقرب لدغته بالليل… والرد جملة واحدة", tag: "ذكر وحكايته · 1", focus: 1100 }
+publish:
+  title: { en: "Stung by a scorpion at night… the answer was one sentence", ar: "عقرب لدغته بالليل… والرد جملة واحدة" }
+  part: 1
+  description:
+    ar: "عقرب لدغت راجل بالليل، فجه للنبي ﷺ يشتكي… والرد كان جملة يقولها لما المسا يدخل (صحيح مسلم 2709). وآخرها في القرآن: «من شر ما خلق» (الفلق 2)."
+    en: "A scorpion stung a man at night, and he came to the Prophet ﷺ to complain. The answer was one sentence to say when evening comes (Sahih Muslim 2709), and its last words are in the Quran: \"From the evil of that which He created\" (113:2)."
+segments:
+  # Refait à la demande du propriétaire (2026-11-17, sur le brouillon muet) : plus de lecture du hadith par le lecteur du
+  # recueil ; la narration dit au discours indirect ce que le Prophète ﷺ a répondu (jamais comme une citation), puis le
+  # dhikr est entendu dit par Muhammad Jibril ; un exemple d'aujourd'hui (« on n'a plus peur des scorpions »).
+  - narration: open
+    scene: sting
+    sources: [hadith.muslim.2709a]
+    lines:
+      - ar: "عقرب لدغت راجل بالليل… فجه للنبي صلى الله عليه وسلم يشتكي."
+        en: "A scorpion stung a man at night… so he came to the Prophet ﷺ to complain."
+      # Version A, choisie par le propriétaire (2026-11-17, « à reformuler sans beaucoup de bla-bla »).
+      - ar: "والنبي صلى الله عليه وسلم دلّه على كلمات… لو قالها لما المسا دخل، ما كانتش ضرّته."
+        en: "The Prophet ﷺ showed him words… had he said them when evening came, it would not have harmed him."
+      - ar: "اسمعها بصوت الشيخ محمد جبريل:"
+        en: "Hear them in the voice of Sheikh Muhammad Jibril:"
+  - reading: hadith.muslim.2709a
+    part: dhikr
+    scene: dusk
+  - narration: turn
+    scene: dusk
+    lines:
+      - ar: "وآخر الذكر ده… في سورة بتحفظها من وإنت صغير:"
+        en: "And the end of this dhikr… is in a surah you've known since you were little:"
+  - verses: [quran.113.1, quran.113.2, quran.113.3]
+    scene: dusk
+  - narration: meaning
+    scene: dusk
+    sources: [tafsir.saadi.113.2]
+    lines:
+      - ar: "يعني: بتلجأ لربنا… من شر كل حاجة خلقها… إنس وجن وحيوانات."
+        en: "Meaning: you turn to God for refuge… from the evil of all He created… people, jinn and animals."
+      # « والليل بالذات… وقت ما الحيوانات المؤذية بتنتشر. » (as-Sa'di sur 113:3) retirée à la demande du propriétaire
+      # (2026-11-17).
+  - narration: depth
+    scene: sting
+    lines:
+      - ar: "الراجل جه بعد اللدغة… والرد كان عن اللي قبلها."
+        en: "The man came after the sting… and the answer was about before it."
+      - ar: "وإحنا كده: بنفتكر ربنا بعد اللي يحصل… والذكر مكانه قبله."
+        en: "And that's us: we remember God after something happens… when the dhikr belongs before it."
+  - narration: example
+    scene: drive
+    lines:
+      - ar: "زي لما تكون راجع بالليل… والطريق ضلمة."
+        en: "Like when you're driving home at night… and the road is dark."
+  - narration: entrust
+    scene: door
+    lines:
+      - ar: "أو ولادك نايمين في أوضتهم… وإنت مش جنبهم."
+        en: "Or your children are asleep in their room… and you're not beside them."
+      - ar: "الباب بتقفله بإيدك… واللي مش في إيدك… بتستودعه ربنا."
+        en: "The door, you lock with your hand… and what's beyond your hand… you entrust to God."
+  - narration: close
+    scene: door
+    lines:
+      - ar: "قولها لما المسا يدخل… قبل ما يحصل حاجة، مش بعدها."
+        en: "Say it when evening comes… before anything happens, not after."
+      - ar: "والجاية: ليلة مطر وضلمة…"
+        en: "Next: a night of rain and darkness…"
+      - ar: "والنبي صلى الله عليه وسلم طلب من صاحبه يقول حاجة… وهو مش عارف يقول إيه."
+        en: "The Prophet ﷺ asked his companion to say something… and he didn't know what to say."
+      - ar: "تابعنا عشان تعرف الحكاية."
+        en: "Follow us to hear the story."

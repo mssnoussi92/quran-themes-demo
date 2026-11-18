@@ -1,0 +1,123 @@
+# « مخيّر ولا مسيّر؟ » (film `qadar`), short 3 : « لو… ». Forme choisie par le propriétaire le 2026-11-17 (voir amal.yaml) ;
+# fiche : docs/themes.md.
+# - Le début est une scène type jouée, muette : une silhouette anonyme sans visage assise devant un magasin au rideau baissé,
+#   le soir ; des « لو » qui se multiplient autour d'elle. Les phrases entre guillemets, les siennes.
+# - Le fait : un mot de deux lettres contre lequel le Prophète ﷺ a mis en garde ; ses paroles lues par une vraie voix
+#   (Muslim 2664, lecture validée, 28 s) : avant, « احرص على ما ينفعك واستعن بالله ولا تعجز » ; après, « ولا تقل لو… ولكن قل
+#   قدر الله وما شاء فعل ». Le short n'en joue que la fin (`part: after`, « وإن أصابك… عمل الشيطان », 15 s : choix du
+#   propriétaire, 2026-11-17) ; le film joue tout.
+# - 57:22 et le sens : al-Muyassar sur 57:22 (« مكتوب… من قبل أن تُخْلَق الخليقة ») ; as-Sa'di sur 57:22 (« وأخبر الله عباده
+#   بذلك لأجل أن تتقرر هذه القاعدة عندهم، ويبنوا عليها ما أصابهم من الخير والشر »). 57:23 (« لكيلا تأسوا على ما فاتكم »)
+#   et as-Sa'di sur lui (« فلا سبيل إلى دفعه ») : dans le film seul ; le short le dit en réplique de la session.
+# - La part qu'on ne choisit pas : ce short ; jamais dit « مسيّر في كذا » (voir shaa.yaml).
+# - Répliques de la session : « قبل… وبعد… » (lue sur l'ordre du hadith), l'exemple (la scène rejouée), la phrase à retenir,
+#   le résumé des trois jumelles (dernier short) et l'appel.
+# - Recoupement : Muslim 2664 était dans sabr-03 (ancien circuit) : la réécriture de la patience en prendra un autre.
+# - Images (après le script) : `shop` une rue le soir, un magasin au rideau baissé, la silhouette assise sur la marche ;
+#   `law` des « لو » autour d'elle ; `night` le ciel au-dessus de la rue (jamais le Livre, l'invisible) ; `calm` les « لو »
+#   s'éteignent, elle se lève ; `dawn` la rue au matin.
+# Les débuts (cartes muettes) : le sentiment que tout le monde connaît, joué par la silhouette, puis la promesse à la 3e
+# seconde (demande du propriétaire, 2026-11-17 : « commencer par des questions ou un sentiment que la plupart des gens
+# ressentent » ; il a choisi ces débuts sur leur aperçu).
+id: law
+# « Je valide le script » du propriétaire (2026-11-17, question à choix nommant « docs/scripts/qadar.md à jour : les
+# répliques des 3 shorts et du film avec les nouveaux débuts, la place des versets et des hadiths, les titres »). Ni la
+# voix, ni les dessins, ni les sources proposées : il les valide sur les vidéos. La voix attend les premières mesures.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide tout sauf la fin du film » du propriétaire (2026-11-17, question à choix nommant les 3 shorts et le film :
+# voix, dessins, montage, ambiances ; couvertures et vignette ; textes et 4 accroches ; sources et 2 lectures) : ce short
+# tel que livré (run 44067852358 du workflow `film`), sa couverture, son texte et son accroche. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-17, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 80-trial-law
+# Le fond, provisoire, pour les images de style (2026-11-17) : un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) ; les
+# scènes jouées sont dessinées par-dessus (video/src/trial/Qadar.tsx). Un clip filmé se cherchera avec la production.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4, landscape: { side: left, horizon: 1260, brightness: 1 } }
+# Ambiance : la nuit dehors (grillons ; validée à l'écoute par le propriétaire, docs/model.md), trois heures du matin.
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 120, level: -38 }
+cover: { scene: law, title: "كلمة من حرفين…", tag: "مخيّر ولا مسيّر؟ · ٣ من ٣", focus: 1100 }
+publish:
+  title: { en: "A two-letter word the Prophet ﷺ warned against", ar: "كلمة من حرفين… النبي ﷺ حذّر منها" }
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-17 (« je valide tout sauf la fin du film »)
+    ar: "كلمة من حرفين بنقولها كل ليلة… والنبي ﷺ حذّر منها."
+    en: "A two-letter word we say every night… and the Prophet ﷺ warned against it."
+    validated: 2026-11-17
+  part: 3
+  hashtags: ["#القضاء_والقدر", "#مخير_ولا_مسير"]
+  description:
+    en: "“If only I had…” The Prophet ﷺ told us what to say when something befalls us, and warned against “if only”. Every misfortune was written before creation: what is gone could not have been stopped, so leave it to God and work on what is ahead."
+    ar: "«لو كنت عملت كذا…» النبي صلى الله عليه وسلم قال لنا نقول إيه لما حاجة تحصلنا، وحذّر من «لو». كل مصيبة مكتوبة من قبل ما الخلق يتخلق: اللي فات ما كانش فيه طريق يتمنع… سيبه لربنا، واشتغل على اللي جاي."
+segments:
+  # -- la scène jouée, muette
+  - narration: hook
+    silent: true
+    hold: 3.0
+    scene: shop
+    sfx: [[impact, 0.3]]
+    lines:
+      - ar: "بتفضل تعيد اللي حصل في دماغك… كل ليلة؟"
+        en: "Do you keep replaying what happened… every night?"
+  - narration: echo
+    silent: true
+    hold: 2.2
+    scene: law
+    sfx: [[pops, 0.1]]
+    lines:
+      - ar: "«لو كنت…» «لو ما كنتش…»"
+        en: "“If only I had…” “If only I hadn't…”"
+  - narration: same
+    silent: true
+    hold: 3.0
+    scene: law
+    sfx: [[whoosh, 0.1]]
+    lines:
+      - ar: "كلمة من حرفين… النبي صلى الله عليه وسلم حذّر منها."
+        en: "A two-letter word… the Prophet ﷺ warned against it."
+  # -- ses paroles, lues par une vraie voix
+  - narration: open
+    scene: law
+    lines:
+      - ar: "وقال لنا نقول إيه بدالها:"
+        en: "And he told us what to say instead:"
+  - reading: hadith.muslim.2664
+    part: after
+    scene: law
+  - narration: turn
+    scene: night
+    lines:
+      - ar: "وفي القرآن آية… بتقولك ليه:"
+        en: "And a verse in the Quran… tells you why:"
+  - verse: quran.57.22
+    scene: night
+  # -- le sens
+  - narration: meaning
+    scene: night
+    sources: [tafsir.muyassar.57.22, tafsir.saadi.57.22]
+    lines:
+      - ar: "يعني: أي مصيبة… في الدنيا أو في نفسك… مكتوبة من قبل ما ربنا يخلق الخلق."
+        en: "Meaning: any misfortune… in the world or in yourself… was written before God created creation."
+      - ar: "وربنا قال لنا كده… عشان نبني عليه كل اللي يحصلنا، خير أو شر."
+        en: "And God told us so… for us to build on it whatever befalls us, good or bad."
+  - narration: depth
+    scene: calm
+    lines:
+      - ar: "قبل ما الحاجة تحصل: اعمل اللي عليك."
+        en: "Before it happens: do your part."
+      - ar: "وبعد ما تحصل: «لو» بتشدّك لورا… ومش بترجّع حاجة."
+        en: "After it happens: “if only” pulls you backwards… and brings nothing back."
+  # -- la scène rejouée
+  - narration: example
+    scene: calm
+    lines:
+      - ar: "يقفل المحل… ويسلّمها لربنا… ويدوّر على باب تاني."
+        en: "He locks up the shop… hands it over to God… and looks for another door."
+  - narration: close
+    scene: dawn
+    lines:
+      - ar: "اللي فات سيبه لربنا… واللي جاي اشتغل عليه."
+        en: "Leave what's gone to God… and work on what's ahead."
+      - ar: "تلات جمل: واحدة بتقعّدك… وواحدة بتأجّلك… وواحدة بتشدّك لورا."
+        en: "Three sentences: one sits you down… one puts you off… one pulls you back."
+      - ar: "تابعنا عشان اللي جاي."
+        en: "Follow us for what's next."

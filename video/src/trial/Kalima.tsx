@@ -356,4 +356,4 @@ const badge = (n: string): Drawn => function KalimaBadge() { return <Badge n={n}
 // ---- the registries Trial.tsx reads ------------------------------------------------------------------------------
 
 export const KALIMA_PICTURES: Record<string, Drawn> = { kanud: KanudPicture, stone: StonePicture, haluu: HaluuPicture };
-export const KALIMA_OVERLAYS: Record<string, Drawn> = { kanud: badge("١"), stone: badge("٢"), haluu: badge("٣") };
+export const KALIMA_OVERLAYS: Record<string, Drawn> = { kanud: badge("1"), stone: badge("2"), haluu: badge("3") };
