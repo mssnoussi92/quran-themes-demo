@@ -498,12 +498,15 @@ def test_a_turn_refused_in_the_narration_only_is_not_checked_on_titles():
 
 def test_a_narration_rests_on_a_page_of_fiqh_of_the_policy(copy):
     set_sources(copy, "caravan", "meaning", ["fiqh.kuwaiti.24.238"])             # no recited verse needed, unlike a tafsir
-    done = copy.rules("--film", "ayah", "--draft")
-    assert done.returncode == 0, done.stdout[-2000:]
-    assert "source fiqh.kuwaiti.24.238" in done.stdout                           # proposed, listed like the others
     path = copy.root / "content" / "sources" / "fiqh.yaml"
     entries = yaml.safe_load(path.read_text(encoding="utf-8"))
     entry = next(e for e in entries if e["id"] == "fiqh.kuwaiti.24.238")
+    entry["status"] = "proposed"                                                 # whatever the owner has validated since
+    entry.pop("validated_by", None)
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    done = copy.rules("--film", "ayah", "--draft")
+    assert done.returncode == 0, done.stdout[-2000:]
+    assert "source fiqh.kuwaiti.24.238" in done.stdout                           # proposed, listed like the others
     text = entry.pop("text_ar")                                                  # a page with no text
     path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
     refused(copy.rules("--film", "ayah", "--draft"), "source fiqh.kuwaiti.24.238 has no text in the registry")
