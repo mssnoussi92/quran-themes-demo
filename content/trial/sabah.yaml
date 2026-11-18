@@ -23,8 +23,8 @@ publish:
     en: "Morning adhkar, only from al-Bukhari, Muslim and at-Tirmidhi. Save it for tomorrow morning."
     validated: 2026-11-17
   description:
-    ar: "أذكار الصباح، من الأحاديث الصحيحة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله كل صباح."
-    en: "The morning adhkar, only from authentic hadiths (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it every morning."
+    ar: "أذكار الصباح، من أحاديث صحيحة وحسنة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله كل صباح."
+    en: "The morning adhkar, only from hadiths graded sahih or hasan (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it every morning."
 segments:
   - narration: open
     silent: true

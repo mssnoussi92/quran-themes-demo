@@ -29,8 +29,8 @@ publish:
     en: "Evening adhkar, only from al-Bukhari, Muslim and at-Tirmidhi. Save it for every evening."
     validated: 2026-11-17
   description:
-    ar: "أذكار المساء، من الأحاديث الصحيحة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله كل مسا."
-    en: "The evening adhkar, only from authentic hadiths (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it every evening."
+    ar: "أذكار المساء، من أحاديث صحيحة وحسنة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله كل مسا."
+    en: "The evening adhkar, only from hadiths graded sahih or hasan (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it every evening."
 segments:
   - narration: open
     silent: true

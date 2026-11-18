@@ -77,9 +77,9 @@ Adhkar after prayer, from Bukhari, Muslim, Tirmidhi · أذكار بعد الص�
 **YouTube · Description**
 
 ```text
-The adhkar after the obligatory prayer, only from authentic hadiths (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it after every prayer.
+The adhkar after the obligatory prayer, only from hadiths graded sahih or hasan (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it after every prayer.
 
-أذكار بعد الصلاة المفروضة، من الأحاديث الصحيحة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله بعد كل صلاة.
+أذكار بعد الصلاة المفروضة، من أحاديث صحيحة وحسنة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله بعد كل صلاة.
 
 Adhkar to keep · 1 · أذكار · 1
 
@@ -186,9 +186,9 @@ Morning adhkar, from Bukhari, Muslim, Tirmidhi · أذكار الصباح… م�
 **YouTube · Description**
 
 ```text
-The morning adhkar, only from authentic hadiths (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it every morning.
+The morning adhkar, only from hadiths graded sahih or hasan (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it every morning.
 
-أذكار الصباح، من الأحاديث الصحيحة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله كل صباح.
+أذكار الصباح، من أحاديث صحيحة وحسنة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله كل صباح.
 
 Adhkar to keep · 2 · أذكار · 2
 
@@ -297,9 +297,9 @@ Evening adhkar, from Bukhari, Muslim, Tirmidhi · أذكار المساء… م�
 **YouTube · Description**
 
 ```text
-The evening adhkar, only from authentic hadiths (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it every evening.
+The evening adhkar, only from hadiths graded sahih or hasan (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it every evening.
 
-أذكار المساء، من الأحاديث الصحيحة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله كل مسا.
+أذكار المساء، من أحاديث صحيحة وحسنة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله كل مسا.
 
 Adhkar to keep · 3 · أذكار · 3
 
