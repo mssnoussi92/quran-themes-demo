@@ -412,6 +412,35 @@ def calendar(path: Path, films: list[dict]) -> dict:
             "grid": [(plain(a), plain(b)) for a, b, *_ in table(text, "La grille de la semaine")], "rows": rows}
 
 
+def published_off(cal: dict, films: list[dict], media: Path) -> list[dict]:
+    """A video published (its date struck in the calendar) leaves the page, its card and its media (owner, 2026-11-18:
+    « supprimer ceux qui sont publiés »); a film or a series with nothing left goes. Its struck row stays, unlinked."""
+    gone = {slug for row in cal["rows"] if row["done"] for _, slug in row["links"]}
+    for row in cal["rows"]:
+        row["links"] = [] if row["done"] else row["links"]
+    for f in films:
+        f["cards"] = [c for c in f["cards"] if c["slug"] not in gone]
+        f["tall"] = None if f["tall"] and f["tall"]["slug"] in gone else f["tall"]
+    for slug in sorted(gone):
+        for kind in ("mp4", "jpg"):
+            (media / f"{slug}.{kind}").unlink(missing_ok=True)
+        print(f"  {slug}: published, left off the page", flush=True)
+    return [f for f in films if f["cards"] or f["tall"]]
+
+
+def contents(f: dict) -> str:
+    """What a film's section holds, as its link says it: its published videos have left the page (main)."""
+    if f["series"]:
+        return f"une série, {len(f['cards'])} shorts"
+    n = sum(not c["wide"] for c in f["cards"])
+    shorts = f"{n} short{'s' if n > 1 else ''}" if n else ""
+    if any(c["wide"] for c in f["cards"]):
+        said = "un film" + (f" et {shorts}" if shorts else "") + (", le film en 9:16" if f["tall"] else "")
+    else:
+        said = ", ".join(x for x in (shorts, "le film en 9:16" if f["tall"] else "") if x) + " (le film 16:9 est publié)"
+    return said
+
+
 ARABIC = re.compile(r"[\u0600-\u06ff\ufb50-\ufdff\ufe70-\ufeff]+(?:\s+[\u0600-\u06ff\ufb50-\ufdff\ufe70-\ufeff]+)*")
 
 
@@ -487,7 +516,7 @@ def card(c: dict) -> str:
 def page(films: list[dict], made: str, cal: dict | None = None) -> str:
     e = html.escape
     summary = "".join(
-        f'<a href="#{f["anchor"]}"><span class="ar" dir="rtl" lang="ar">{e(f["ar"])}</span><span class="en">{e(f["en"])} · {f"une série, {len(f['cards'])} shorts" if f["series"] else f"un film et {len(f['cards']) - 1} shorts" + (", le film en 9:16" if f["tall"] else "")}</span>{pills(f)}</a>'
+        f'<a href="#{f["anchor"]}"><span class="ar" dir="rtl" lang="ar">{e(f["ar"])}</span><span class="en">{e(f["en"])} · {contents(f)}</span>{pills(f)}</a>'
         for f in films)
     sections = ""
     for f in films:
@@ -547,6 +576,8 @@ def main() -> int:
     from datetime import date
     args.out.mkdir(parents=True, exist_ok=True)
     cal = None if args.calendar == "none" else calendar(Path(args.calendar), films)
+    if cal:
+        films = published_off(cal, films, args.out / "media")
     (args.out / "index.html").write_text(page(films[::-1], args.date or date.today().isoformat(), cal), encoding="utf-8")
     files = sorted(args.out.rglob("*"))
     total = sum(f.stat().st_size for f in files if f.is_file())

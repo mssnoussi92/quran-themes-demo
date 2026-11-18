@@ -204,7 +204,10 @@ uv run --with pyyaml python3 tools/trial/gallery.py --film film=<dir> --film dua
 - **The calendar** opens the page: read from `docs/retention/calendar.md` (the hour, the week's grid, the measures
   routine, each dated row linked to its video's card), never typed in the tool; `--calendar none` leaves it out.
   When the owner says what he published, strike its date in that file (`~~sam. 14 nov.~~`) and republish the page:
-  `index.html` alone, the media did not change. The page marks the next row itself, from the reader's date.
+  a struck row's videos leave it by themselves, their cards and their media (owner, 2026-11-18: « supprimer ceux qui
+  sont publiés »); send `index.html` and `remove` the media `files.json` no longer lists. The page marks the next row
+  itself, from the reader's date. A film delivered by another session whose videos you do not have: a witness video of
+  the right length (read in its texts) and a witness still, never sent (only `index.html` is).
 
 ## 8. The owner's answer
 

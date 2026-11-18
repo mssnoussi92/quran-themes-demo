@@ -87,7 +87,7 @@ film du jour, Instagram seul, à 19 h ; les lundis d'un film sont le 23 et le 30
 | ~~sam. 14 nov.~~ | ~~Khidr, short 2 : le garçon~~ | les quatre | `khidr-short-2-boy-ambience.mp4`, `-tiktok-ambience`, `couverture-2-garcon.jpg` | `publication-moussa-khidr.md` : « Short 2 » |
 | ~~dim. 15 nov.~~ | ~~Khidr, short 3 : le mur~~ | les quatre | `khidr-short-3-wall-ambience.mp4`, `-tiktok-ambience`, `couverture-3-mur.jpg` | « Short 3 » |
 | ~~lun. 16 nov., soir~~ | ~~Du'a : le film~~ | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical, ajouté par lui) | releases `dua-candidate`, `dua-9x16-candidate` | `publication-dua.md` : « Le film » ; `publication-dua-9x16.md` |
-| mar. 17 nov. | Du'a, short 1 : Ayyoub | les quatre | release `dua-candidate` | `publication-dua.md` : « Short 1 » |
+| ~~mar. 17 nov.~~ | ~~Du'a, short 1 : Ayyoub~~ | les quatre | release `dua-candidate` | `publication-dua.md` : « Short 1 » |
 | mer. 18 nov. | Du'a, short 2 : Younous | les quatre | release `dua-candidate` | « Short 2 » |
 | jeu. 19 nov. | Du'a, short 3 : Zakariya | les quatre | release `dua-candidate` | « Short 3 » |
 | ven. 20 nov. | « آية وحكايتها » 1 : la caravane | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 1 » |
