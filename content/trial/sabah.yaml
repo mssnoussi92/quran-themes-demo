@@ -18,6 +18,10 @@ publish:
   title: { en: "Morning adhkar, from Bukhari, Muslim, Tirmidhi", ar: "أذكار الصباح… من البخاري ومسلم والترمذي" }
   part: 2
   hashtags: ["#أذكار_الصباح"]
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (question à choix : « je valide les trois »)
+    ar: "أذكار الصباح… من البخاري ومسلم والترمذي بس. احفظها وارجعلها بكرة الصبح."
+    en: "Morning adhkar, only from al-Bukhari, Muslim and at-Tirmidhi. Save it for tomorrow morning."
+    validated: 2026-11-17
   description:
     ar: "أذكار الصباح، من الأحاديث الصحيحة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله كل صباح."
     en: "The morning adhkar, only from authentic hadiths (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it every morning."

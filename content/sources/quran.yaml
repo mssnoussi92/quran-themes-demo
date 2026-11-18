@@ -3358,3 +3358,35 @@
   notes: "Al-Hadid 57:21 (« ذكر وحكايته », short dathur : « سابقوا إلى مغفرة… ذلك فضل الله يؤتيه من يشاء », la phrase que le Prophète ﷺ dit aux pauvres (Muslim 595) ferme ce verset de la course)"
   text_ar: سَابِقُوٓا۟ إِلَىٰ مَغْفِرَةٍ مِّن رَّبِّكُمْ وَجَنَّةٍ عَرْضُهَا كَعَرْضِ ٱلسَّمَآءِ وَٱلْأَرْضِ أُعِدَّتْ لِلَّذِينَ ءَامَنُوا۟ بِٱللَّهِ وَرُسُلِهِۦ ۚ ذَٰلِكَ فَضْلُ ٱللَّهِ يُؤْتِيهِ مَن يَشَآءُ ۚ وَٱللَّهُ ذُو ٱلْفَضْلِ ٱلْعَظِيمِ
   text_en: Race [i.e., compete] toward forgiveness from your Lord and a Garden whose width is like the width of the heavens and earth, prepared for those who believed in Allāh and His messengers. That is the bounty of Allāh which He gives to whom He wills, and Allāh is the possessor of great bounty.
+- id: quran.2.285
+  type: ayah
+  ref: {surah: 2, ayah: 285}
+  url: https://quran.com/2/285
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:285
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:285
+    translator: Saheeh International
+    surah_ar: البقرة
+    surah_en: Al-Baqarah
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "Al-Baqarah 2:285 (adhkar à lire, le soir : les deux derniers versets d'al-Baqara, Bukhari 5009, récités ; choix du propriétaire, 2026-11-17)"
+  text_ar: ءَامَنَ ٱلرَّسُولُ بِمَآ أُنزِلَ إِلَيْهِ مِن رَّبِّهِۦ وَٱلْمُؤْمِنُونَ ۚ كُلٌّ ءَامَنَ بِٱللَّهِ وَمَلَـٰٓئِكَتِهِۦ وَكُتُبِهِۦ وَرُسُلِهِۦ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِّن رُّسُلِهِۦ ۚ وَقَالُوا۟ سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ ٱلْمَصِيرُ
+  text_en: The Messenger has believed in what was revealed to him from his Lord, and [so have] the believers. All of them have believed in Allāh and His angels and His books and His messengers, [saying], "We make no distinction between any of His messengers." And they say, "We hear and we obey. [We seek] Your forgiveness, our Lord, and to You is the [final] destination."
+- id: quran.2.286
+  type: ayah
+  ref: {surah: 2, ayah: 286}
+  url: https://quran.com/2/286
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=2:286
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=2:286
+    translator: Saheeh International
+    surah_ar: البقرة
+    surah_en: Al-Baqarah
+    retrieved: '2026-11-18'
+  status: proposed
+  notes: "Al-Baqarah 2:286 (adhkar à lire, le soir : les deux derniers versets d'al-Baqara, Bukhari 5009, récités ; choix du propriétaire, 2026-11-17)"
+  text_ar: لَا يُكَلِّفُ ٱللَّهُ نَفْسًا إِلَّا وُسْعَهَا ۚ لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا ٱكْتَسَبَتْ ۗ رَبَّنَا لَا تُؤَاخِذْنَآ إِن نَّسِينَآ أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَآ إِصْرًا كَمَا حَمَلْتَهُۥ عَلَى ٱلَّذِينَ مِن قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِۦ ۖ وَٱعْفُ عَنَّا وَٱغْفِرْ لَنَا وَٱرْحَمْنَآ ۚ أَنتَ مَوْلَىٰنَا فَٱنصُرْنَا عَلَى ٱلْقَوْمِ ٱلْكَـٰفِرِينَ
+  text_en: Allāh does not charge a soul except [with that within] its capacity. It will have [the consequence of] what [good] it has gained, and it will bear [the consequence of] what [evil] it has earned. "Our Lord, do not impose blame upon us if we have forgotten or erred. Our Lord, and lay not upon us a burden like that which You laid upon those before us. Our Lord, and burden us not with that which we have no ability to bear. And pardon us; and forgive us; and have mercy upon us. You are our protector, so give us victory over the disbelieving people."

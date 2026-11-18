@@ -240,6 +240,7 @@ class Checker:
     def __init__(self, repo: Repo, out: Findings, draft: bool):
         self.repo, self.out, self.draft = repo, out, draft
         self.delivered = False                    # the file being read has videos the owner validated: its lines are settled
+        self.pace = None                          # the `pace` of the short being estimated (adhkar to read)
         self.unvalidated: list[str] = []          # what is quoted and not validated yet (one line per film)
 
     # -- quotes
@@ -594,14 +595,15 @@ class Checker:
             src = self.repo.sources.get(seg["card"]) or {}
             if seg.get("part"):
                 src = script.part_view(src, seg["part"]) or {}
-            return script.card_seconds(src.get("excerpt_ar") or src.get("text_ar") or "", seg.get("hold"))
+            return script.card_seconds(src.get("excerpt_ar") or src.get("text_ar") or "", seg.get("hold"), self.pace)
         return max(script.spoken(seg.get("lines") or []), seg.get("hold") or 0)
 
     def estimate_short(self, spec: dict) -> float:
-        t = script.LEAD
+        t, self.pace = script.LEAD, spec.get("pace")
         for seg in spec.get("segments") or []:
-            t += self.seconds_of(seg) + script.GAP
-        return t - script.GAP + script.TAIL
+            t += self.seconds_of(seg) + script.gap_of(spec)
+        self.pace = None
+        return t - script.gap_of(spec) + script.TAIL
 
     # -- a series: shorts that stand alone, no film
     def series(self, path: Path, spec: dict) -> tuple[dict, dict]:

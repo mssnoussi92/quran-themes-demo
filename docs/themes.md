@@ -1191,6 +1191,12 @@ format et volume conformes (−16,5 à −16,7 LUFS), cartes lisibles sur les cl
 traduction de سيد الاستغفار (Bukhari 6306, Muhsin Khan) n'est qu'une translittération.
 **Les trois vidéos validées par lui le 2026-11-17** (« je valide les trois » : cartes, nombres, clips, ambiances,
 couvertures, et les seize hadiths du registre) ; restent les textes à coller et leur place au calendrier.
+**Ensuite (2026-11-17, questions à choix)** : les accroches des légendes courtes validées par lui ; la vidéo du soir avec
+**al-Baqara récitée** (2:285-286, Bukhari 5009 ; sa demande) sous 3 min : الإخلاص والفلق والناس sur la carte « 3 مرات »
+sans récitation (elles le sont le matin), des passages plus courts et des cartes un peu plus rapides (`pace` du fichier) :
+2:55 ; à rendre et à lui montrer. **La publication le dimanche** (sa proposition retenue d'abord) : quran-reels ne publie
+les vidéos thématiques que du lundi au samedi (la tâche planifiée qui lance `themes.yml`) ; **sa décision : on décide plus
+tard**, rien n'est au calendrier. **PR et fusion** demandées par lui, pour que tout arrive sur `main`.
 
 ## Faits (ancien circuit)
 

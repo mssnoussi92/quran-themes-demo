@@ -8,7 +8,11 @@ id: masaa
 # workflow `film`, run 44192660389) : les cartes, les nombres, le clip, l'ambiance, la couverture, et les seize hadiths
 # proposés au registre. Le script l'était le même jour. Les textes à coller restent à valider. Inscrit sur sa parole.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
-validated: { by: mssnoussi92, on: 2026-11-17, what: [montage, cover, ambience] }
+# Puis sa demande (2026-11-17, sur la vidéo validée) : réciter les deux derniers versets d'al-Baqara (Bukhari 5009) et
+# rester sous 3 min (la limite d'Instagram) en raccourcissant le passage entre les adhkar ; son choix : al-Baqara récitée,
+# الإخلاص والفلق والناس sur la carte « 3 مرات » sans récitation (elles le sont le matin), des passages plus courts et des
+# cartes un peu plus rapides (`pace`). La vidéo refaite attend son regard (la validation d'avant portait sur l'ancienne).
+pace: { gap: 0.15, card_lead: 1.0, card_word: 0.36 }
 handle: "@quran_words_daily"
 voices: { X: "no voice: the adhkar are written to be read" }
 clip: { source: pixabay, id: 190332, author: DancingSky, page: "https://pixabay.com/videos/id-190332/", position: "42% 50%", shift: -400, brightness: 0.55, ground: "#05060c", horizon: 1380, veil: 0.8 }
@@ -18,13 +22,17 @@ publish:
   title: { en: "Evening adhkar, from Bukhari, Muslim, Tirmidhi", ar: "أذكار المساء… من البخاري ومسلم والترمذي" }
   part: 3
   hashtags: ["#أذكار_المساء"]
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (question à choix : « je valide les trois »)
+    ar: "أذكار المساء… من البخاري ومسلم والترمذي بس. احفظها وارجعلها كل مسا."
+    en: "Evening adhkar, only from al-Bukhari, Muslim and at-Tirmidhi. Save it for every evening."
+    validated: 2026-11-17
   description:
     ar: "أذكار المساء، من الأحاديث الصحيحة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله كل مسا."
     en: "The evening adhkar, only from authentic hadiths (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it every evening."
 segments:
   - narration: open
     silent: true
-    hold: 5.5
+    hold: 4.5
     scene: sky
     lines:
       - ar: "أذكار المساء… من البخاري ومسلم والترمذي."
@@ -63,18 +71,14 @@ segments:
     part: qul
     scene: sky
     count: "3 مرات"
-  - verses: [quran.112.1, quran.112.2, quran.112.3, quran.112.4]
-    scene: sky
-  - verses: [quran.113.1, quran.113.2, quran.113.3, quran.113.4, quran.113.5]
-    scene: sky
-  - verses: [quran.114.1, quran.114.2, quran.114.3, quran.114.4, quran.114.5, quran.114.6]
-    scene: sky
   - card: hadith.bukhari.5009
     part: baqara
     scene: sky
+  - verses: [quran.2.285, quran.2.286]
+    scene: sky
   - narration: close
     silent: true
-    hold: 4
+    hold: 3.5
     scene: sky
     lines:
       - ar: "احفظه… وارجعله كل مسا."

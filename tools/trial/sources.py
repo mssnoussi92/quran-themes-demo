@@ -125,14 +125,14 @@ def described(sid: str, part: str | None = None) -> dict:
 
 
 def card(sid: str, part: str | None = None, count: str | None = None, label: str | None = None,
-         hold: float | None = None) -> dict:
+         hold: float | None = None, pace: dict | None = None) -> dict:
     """A dhikr to read (a `card:` segment): the words of a hadith of the registry (one of its `parts`, its excerpt),
     on screen with their reference and translation, and no sound at all: nobody reads them, the viewer does. `count`
     and `label` are our own words (« 3 مرات », « بعد المغرب »), written with it; `hold` overrides the reading time."""
     d = described(sid, part)
     if d["type"] != "hadith":
         sys.exit(f"error: {sid}: a card shows a hadith")
-    seconds = script.card_seconds(d["display_ar"], hold)
+    seconds = script.card_seconds(d["display_ar"], hold, pace)
     return {"kind": "reading", "card": True, "reference": " · ".join(x for x in (d["reference"], d["grade_note"]) if x),
             "text": d["display_ar"], "en": d["display_en"], "seconds": seconds, "file": None,
             "credit": d["translator"] or "", "count": count, "label": label}

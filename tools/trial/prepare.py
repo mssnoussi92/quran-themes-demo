@@ -369,6 +369,7 @@ def main() -> None:
         first[seg["narration"]] = k
         k += sum(len(PHRASE_CUT.split(l["ar"].strip())) for l in seg["lines"])
 
+    gap = float((spec.get("pace") or {}).get("gap", GAP))      # a short's `pace.gap`: a quicker passage between segments
     t, segments, pairs = LEAD, [], []             # pairs: (the segment of the file, what it made), for the sound effects
     for seg in (opened_with(spec, drop_whole) if args.cut else spec["segments"]):
         if "narration" in seg:
@@ -404,7 +405,7 @@ def main() -> None:
                     made["refs"] = sources.references(seg["sources"])
                 segments.append({**made, "scene": seg["scene"], "start": round(t, 2)})
                 pairs.append((seg if n == 0 else {**seg, "sfx": None}, segments[-1]))   # sfx on the first run only
-                t += segments[-1]["seconds"] + GAP
+                t += segments[-1]["seconds"] + gap
             continue
         elif "verses" in seg and by_source is None:
             if drop_verses & set(seg["verses"]):
@@ -418,7 +419,7 @@ def main() -> None:
             segments.append({**made, "scene": seg["scene"], "start": round(t, 2)})
         elif "card" in seg and by_source is None:
             # A dhikr to read, shown and never said (adhkar to save): the ambience goes on under it.
-            segments.append({**sources.card(seg["card"], seg.get("part"), seg.get("count"), seg.get("label"), seg.get("hold")),
+            segments.append({**sources.card(seg["card"], seg.get("part"), seg.get("count"), seg.get("label"), seg.get("hold"), spec.get("pace")),
                              "scene": seg["scene"], "start": round(t, 2)})
         elif "reading" in seg and by_source is None:
             # A hadith read by a real voice, in a short as in the film; never the synthetic voice.
@@ -426,8 +427,8 @@ def main() -> None:
         else:
             sys.exit(f"error: a segment that is neither a narration, a verse, a reading nor a card from the registry: {sorted(seg)}")
         pairs.append((seg, segments[-1]))
-        t += segments[-1]["seconds"] + GAP
-    total = round(t - GAP + TAIL, 2)
+        t += segments[-1]["seconds"] + gap
+    total = round(t - gap + TAIL, 2)
     # The ambience under the narration, silent under each verse (tools/trial/ambience.py).
     bed = None
     if spec.get("ambience") and not args.no_ambience:

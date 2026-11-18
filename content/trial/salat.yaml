@@ -18,6 +18,10 @@ publish:
   title: { en: "Adhkar after prayer, from Bukhari, Muslim, Tirmidhi", ar: "أذكار بعد الصلاة… من البخاري ومسلم والترمذي" }
   part: 1
   hashtags: ["#أذكار_بعد_الصلاة"]
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (question à choix : « je valide les trois »)
+    ar: "أذكار بعد الصلاة… من البخاري ومسلم والترمذي بس. احفظها وارجعلها بعد كل صلاة."
+    en: "Adhkar after the prayer, only from al-Bukhari, Muslim and at-Tirmidhi. Save it for after every prayer."
+    validated: 2026-11-17
   description:
     ar: "أذكار بعد الصلاة المفروضة، من الأحاديث الصحيحة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله بعد كل صلاة."
     en: "The adhkar after the obligatory prayer, only from authentic hadiths (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it after every prayer."
