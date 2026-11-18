@@ -614,3 +614,17 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 - **Sa page** (« Films et shorts à publier », son accord du 2026-11-18) : le quiz ajouté, ses six shorts. Sans retélécharger
   les films déjà en ligne : pour eux, des vidéos-témoins de la bonne durée (lue dans leurs textes) et des images-témoins ;
   `gallery.py` refait la page, et seuls `index.html` et les douze médias du quiz sont envoyés (les 92 autres restent).
+
+## Sa page sans ce qui est publié (2026-11-18)
+
+- **Sa demande** : « mettre à jour la page et supprimer ceux qui sont publiés ; pour info, du'a short 1 est publié ». Le
+  short 1 du du'a est barré dans le calendrier (mardi 17), après le film du 16.
+- **Fait** : `gallery.py` laisse hors de la page chaque vidéo d'une ligne barrée du calendrier, sa carte et ses médias
+  (`published_off`) ; un film ou une série dont tout est publié en sort ; la ligne reste, barrée, sans lien. Le lien d'un
+  film dit ce qui reste (« 2 shorts (le film 16:9 est publié) »). Test : `test_a_published_video_leaves_the_page`.
+  Retirés le 18 : le film du du'a, son film vertical et son short 1 (les médias du film vertical étaient déjà partis).
+- **Le quiz et le film « مخيّر ولا مسيّر؟ »**, ajoutés à la page par d'autres sessions, y restent : refaits ici avec des
+  vidéos-témoins de la bonne durée (lue dans leurs textes), comme l'avait fait la session du quiz ; seule la page est
+  envoyée, leurs médias restent ceux qu'elles ont mis. Les liens des releases brouillon sont relus (ceux des films
+  verticaux de Dhul-Qarnayn et de la caverne avaient changé avec leur version TikTok).
+

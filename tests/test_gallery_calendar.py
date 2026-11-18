@@ -77,3 +77,27 @@ def test_a_series_drawn_twice_links_the_published_drawing(tmp_path):
             "cards": [{"slug": f"lens-short-1-{c}", "wide": False} for c in ("pov", "figure")]}
     january = gallery.calendar(path, FILMS + [lens])["rows"][-1]
     assert january["links"] == [("Voir et copier", "lens-short-1-figure")]
+
+
+def test_a_published_video_leaves_the_page(tmp_path):
+    """A struck row takes its cards and their media off the page; the row stays, unlinked."""
+    path = tmp_path / "calendar.md"
+    path.write_text(SAMPLE, encoding="utf-8")
+    films = [{**f, "series": f["out"] == "publication-s.md", "cards": [dict(c) for c in f["cards"]]} for f in FILMS]
+    media = tmp_path / "media"
+    media.mkdir()
+    for name in ("khidr-film.mp4", "khidr-film.jpg", "khidr-film-9x16.mp4", "khidr-short-2.mp4"):
+        (media / name).write_bytes(b"x")
+    cal = gallery.calendar(path, films)
+    kept = gallery.published_off(cal, films, media)
+    khidr = kept[0]
+    assert [c["slug"] for c in khidr["cards"]] == ["khidr-short-1", "khidr-short-2", "khidr-short-3"] and khidr["tall"] is None
+    assert sorted(p.name for p in media.iterdir()) == ["khidr-short-2.mp4"]
+    assert cal["rows"][0]["done"] and cal["rows"][0]["links"] == []
+    assert cal["rows"][1]["links"] == [("Voir et copier", "khidr-short-2")]
+    assert gallery.contents(khidr) == "3 shorts (le film 16:9 est publié)"
+    # A series whose every short is published leaves the page.
+    done = SAMPLE.replace("| ven. 1 janv. | Série, short 1 |", "| ~~ven. 1 janv.~~ | Série, short 1 |")
+    path.write_text(done, encoding="utf-8")
+    films = [{**f, "series": f["out"] == "publication-s.md", "cards": [dict(c) for c in f["cards"]]} for f in FILMS]
+    assert [f["out"] for f in gallery.published_off(gallery.calendar(path, films), films, media)] == ["publication-k.md"]
