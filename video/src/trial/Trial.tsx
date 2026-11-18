@@ -24,7 +24,7 @@ import { SUAL_LAYOUTS, SUAL_OVERLAYS, SUAL_PICTURES } from "./Sual";
 import { LENS_PICTURES } from "./Lens";
 import { KAHF_PICTURES } from "./Kahf";
 import { QADAR_PICTURES } from "./Qadar";
-import { DHIKR_PICTURES } from "./Dhikr";
+import { DHIKR_LAYOUTS, DHIKR_PICTURES } from "./Dhikr";
 import { QUIZ_LAYOUTS, QUIZ_OVERLAYS, QUIZ_PICTURES } from "./Quiz";
 
 loadFonts();
@@ -474,6 +474,9 @@ export type Layout = {
   top: number; size: number; height: number;
   /** A verse: the top of its reference, its largest size, the length it is comfortable at that size. */
   verseTop: number; verseSize: number; verseComfortable: number;
+  /** From the top of the reference to the top of the verse (50 when not said). Amiri Quran draws a pause sign
+   * (ۚ ۖ ۗ) high above its line: on the first line, 50 px puts it in the reference (masaa, 2:286, 2026-11-18). */
+  verseGap?: number;
   /** The translation: `rows`, the most rows it may take before the bottom of the frame (it is written smaller to fit). */
   sub: { top: number; left: number; right: number; size: number; rows?: number };
   credit: { top: number; size: number };
@@ -488,7 +491,7 @@ export const PORTRAIT: Layout = {
 /** A short that needs its texts elsewhere (a timeline above the picture, a narrower column) says so here: what it
  * gives is merged over PORTRAIT (`sub` and `credit` one level deeper, so that `sub: { top }` keeps the rest). */
 export type LayoutOverride = Omit<Partial<Layout>, "sub" | "credit"> & { sub?: Partial<Layout["sub"]>; credit?: Partial<Layout["credit"]> };
-export const LAYOUTS: Record<string, LayoutOverride> = { ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS };
+export const LAYOUTS: Record<string, LayoutOverride> = { ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS, ...DHIKR_LAYOUTS };
 const layoutOf = (trial: string): Layout => {
   const own = LAYOUTS[trial];
   return own ? { ...PORTRAIT, ...own, sub: { ...PORTRAIT.sub, ...own.sub }, credit: { ...PORTRAIT.credit, ...own.credit } } : PORTRAIT;
@@ -619,7 +622,7 @@ export const VerseText: React.FC<{ seg: Verse; t: number; layout?: Layout }> = (
       <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.verseTop, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.arabic, fontSize: 34, color: "rgba(255,255,255,.72)", textShadow: SHADOW }}>
         {seg.reference}
       </div>
-      <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.verseTop + 50, left: layout.left - 6, right: layout.right - 6, textAlign: "center", opacity: turn, fontFamily: FONT.quran, fontSize: fit(layout.verseSize, "x".repeat(longestPage), layout.verseComfortable), lineHeight: 1.95, color: "#fff", textShadow: SHADOW, textWrap: "balance" }}>
+      <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.verseTop + (layout.verseGap ?? 50), left: layout.left - 6, right: layout.right - 6, textAlign: "center", opacity: turn, fontFamily: FONT.quran, fontSize: fit(layout.verseSize, "x".repeat(longestPage), layout.verseComfortable), lineHeight: 1.95, color: "#fff", textShadow: SHADOW, textWrap: "balance" }}>
         {shown.map(({ token, position: p }, i) => (
           <Fragment key={`${page}-${i}`}>
             {i > 0 ? " " : null}

@@ -10,7 +10,7 @@ import { Easing, interpolate } from "remotion";
 import { FONT } from "../fonts";
 import { Lantern, Purse, Rain, Stars } from "./Ayah";
 import { House, Land } from "./Home";
-import type { Drawn } from "./Trial";
+import type { Drawn, LayoutOverride } from "./Trial";
 
 const W = 1080;
 const INK = "#05060d";
@@ -395,3 +395,7 @@ export const DHIKR_PICTURES: Record<string, Drawn> = {
   aqrab: AqrabPicture, qul: QulPicture, dathur: DathurPicture,
   salat: Plain, sabah: Plain, masaa: Plain,
 };
+
+/** The evening's al-Baqarah 2:285-286 is long, so written small, and pause signs stand on its first lines: room for
+ * them under the reference (at 66 px a sign needs about 70 px, at 40 px about 62). */
+export const DHIKR_LAYOUTS: Record<string, LayoutOverride> = { masaa: { verseGap: 72 } };

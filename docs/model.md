@@ -138,7 +138,9 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
   de validé : workflow `film` avec `only: cut` (les seules versions courtes du film), puis `page-files`.
 - `OVERLAYS` et `LAYOUTS` de `video/src/trial/Trial.tsx` : ce qu'un short dessine au-dessus du voile sans bouger
   (le badge de la série, la frise des dates) et où ses textes se placent ; les dessins, photos et frises de la série
-  sont dans `video/src/trial/Signs.tsx`.
+  sont dans `video/src/trial/Signs.tsx`. `verseGap` (50 par défaut) : de la référence d'un verset à son texte ; Amiri
+  Quran dessine un signe de pause (ۚ ۖ ۗ) haut au-dessus de sa ligne, et sur la première ligne d'un verset il entre dans
+  la référence à 50 px (2:286 de `masaa`, 72 px ; il faut environ 70 px à 66 px de texte, 62 à 40).
 
 **« كلمة من القرآن »** (`kalima`, 2026-11-13) : le short du modèle (un clip filmé, des silhouettes dessinées), plus le
 mot de l'épisode écrit en grand, en or, dès la première image (jamais dit par la voix : le récitateur le dit le premier)
