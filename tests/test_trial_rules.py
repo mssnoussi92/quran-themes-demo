@@ -226,7 +226,7 @@ def test_a_narration_rests_on_a_hadith_or_a_tafsir_of_the_policy(copy):
     set_sources(copy, "caravan", "meaning", ["tafsir.muyassar.39.53"])           # the tafsir of a verse another short recites
     refused(copy.rules("--film", "ayah", "--draft"), "which this short does not recite")
     set_sources(copy, "caravan", "meaning", ["quran.62.11"])                     # a verse is recited, not rested on
-    refused(copy.rules("--film", "ayah", "--draft"), "a narration rests on a hadith or a tafsir")
+    refused(copy.rules("--film", "ayah", "--draft"), "a narration rests on a hadith, a tafsir or a page of fiqh")
     set_sources(copy, "caravan", "meaning", ["tafsir.razi.62.11"])               # not in the registry
     refused(copy.rules("--film", "ayah", "--draft"), "source tafsir.razi.62.11 is not in the registry")
     set_sources(copy, "caravan", "meaning", ["tafsir.muyassar.62.11"])
@@ -516,6 +516,65 @@ def test_a_turn_refused_in_the_narration_only_is_not_checked_on_titles():
     assert len(warned) == 1
     check.wording("f.yaml", "وكلام السعدي عنها.", "description")
     assert len(warned) == 1
+
+
+def test_a_narration_rests_on_a_page_of_fiqh_of_the_policy(copy):
+    set_sources(copy, "caravan", "meaning", ["fiqh.kuwaiti.24.238"])             # no recited verse needed, unlike a tafsir
+    path = copy.root / "content" / "sources" / "fiqh.yaml"
+    entries = yaml.safe_load(path.read_text(encoding="utf-8"))
+    entry = next(e for e in entries if e["id"] == "fiqh.kuwaiti.24.238")
+    entry["status"] = "proposed"                                                 # whatever the owner has validated since
+    entry.pop("validated_by", None)
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    done = copy.rules("--film", "ayah", "--draft")
+    assert done.returncode == 0, done.stdout[-2000:]
+    assert "source fiqh.kuwaiti.24.238" in done.stdout                           # proposed, listed like the others
+    text = entry.pop("text_ar")                                                  # a page with no text
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    refused(copy.rules("--film", "ayah", "--draft"), "source fiqh.kuwaiti.24.238 has no text in the registry")
+    entry["text_ar"] = text
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    policy = copy.load("content/policy.yaml")                                    # an edition the owner did not let in
+    del policy["fiqh"]["editions"]["kuwaiti"]
+    copy.dump("content/policy.yaml", policy)
+    refused(copy.rules("--film", "ayah", "--draft"), "fiqh « kuwaiti » is outside content/policy.yaml")
+    assert "fiqh 'kuwaiti' is outside content/policy.yaml" in validate(copy).stdout                # and the registry check says the same
+
+
+def test_the_references_merge_the_pages_of_fiqh(monkeypatch):
+    sources = tool("sources")
+    page = lambda n, text="x": {"id": f"fiqh.kuwaiti.24.{n}", "type": "fiqh", "ref": {"edition": "kuwaiti", "volume": 24, "page": n},
+                                "text_ar": text, "status": "proposed"}
+    monkeypatch.setattr(sources, "_registry", {**sources.registry(), **{f"fiqh.kuwaiti.24.{n}": page(n) for n in (234, 238, 239)}})
+    monkeypatch.setattr(sources, "proposed", [])
+    refs = sources.references(["fiqh.kuwaiti.24.239", "fiqh.kuwaiti.24.238"])
+    assert refs["ar"] == "الموسوعة الفقهية الكويتية 24/238-239"          # 1 2 3 (the owner, 2026-11-17); a hyphen-minus in Arabic
+    assert refs["en"] == "Kuwaiti Encyclopedia of Islamic Jurisprudence 24/238–239"
+    apart = sources.references(["fiqh.kuwaiti.24.234", "fiqh.kuwaiti.24.238", "fiqh.kuwaiti.24.239"])
+    assert apart["ar"].endswith("24/234، 238-239") and apart["en"].endswith("24/234, 238–239")
+    assert sources.references(["fiqh.kuwaiti.24.238", "fiqh.kuwaiti.24.239"], "latin")["ar"] == "الموسوعة الفقهية الكويتية 24/238-239"
+    assert sources.num(863) == "863" and sources.num(863, "latin") == "863"               # the old option changes nothing
+    outside = {**page(238), "id": "fiqh.shafii.24.238", "ref": {"edition": "shafii", "volume": 24, "page": 238}}
+    monkeypatch.setitem(sources.registry(), outside["id"], outside)
+    with pytest.raises(SystemExit):
+        sources.references([outside["id"]])
+    nothing = {**page(235), "text_ar": None}
+    monkeypatch.setitem(sources.registry(), nothing["id"], nothing)
+    with pytest.raises(SystemExit):
+        sources.references([nothing["id"]])
+
+
+def test_a_misprint_of_the_english_is_corrected_on_screen_only(copy):
+    # The owner's decision (2026-11-17): two misprints of the published translation are corrected in the subtitle, and
+    # noted in the registry; the registry's text stays as published.
+    sources = tool("sources")
+    entry = sources.registry()["hadith.muslim.572a"]
+    assert "for. get" in entry["text_en"] and "for. get" in entry["excerpt_en"]
+    assert sources.described("hadith.muslim.572a")["display_en"] == "But I am a human being and I forget as you forget, so when I forget, remind me"
+    entries = copy.load("content/sources/hadith.yaml")                         # a correction whose misprint is not there
+    next(e for e in entries if e["id"] == "hadith.muslim.572a")["en_corrections"][0]["published"] = "no such misprint"
+    copy.dump("content/sources/hadith.yaml", entries)
+    assert "en_corrections: « no such misprint » is not in the English text shown" in validate(copy).stdout
 
 
 # ---- a part of a hadith's reading (`parts` of the registry, `part:` of a segment) --------------------------------

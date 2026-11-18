@@ -578,3 +578,36 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   1:23, 0:59, 0:58, 1:01, −16 LUFS), contrôlé sur les planches, envoyé. **Validé par lui** (questions à choix) : la voix,
   les couvertures et l'ambiance des six, puis les textes à coller (`docs/retention/publication-quiz.md`). Les sources
   restent proposées.
+
+## Une série éducative, « إزاي أعملها؟ » ; une source de fiqh dans la politique (2026-11-17)
+
+- **Demande du propriétaire** : explorer une série éducative qui garde un début fort, par exemple سجود السهو. La session
+  (skill `choose-format`) : le début d'une série éducative tend vers la leçon d'abord, ce que les mesures punissent ; règle
+  proposée, un fait tiré d'un texte ou l'erreur en mouvement d'abord. Le vrai risque était le fiqh : les hadiths placent les
+  deux prosternations avant et après le salam, les écoles diffèrent, la politique n'avait aucune source pour le dire.
+- **Ses choix** (questions à choix) : élargir à une source de fiqh et dire les avis des écoles quand elles diffèrent ; des
+  shorts sans film, des scènes et un montage nouveaux, au moins un short « comment faire » (« souvent j'oublie comment
+  faire si j'oublie dans la salat ») ; tout produire maintenant (il revient sur « mesurer d'abord », 2026-11-16).
+- **La source** : la Encyclopédie de fiqh koweïtienne, lue depuis la session sur turath.io (livre 11430, pagination de
+  l'imprimé ; article « سجود السهو », vol. 24, p. 234-241). Dans la politique pour tout le dépôt, avec la règle des quatre
+  écoles (`content/policy.yaml`, `fiqh`).
+- **Le pilote** (`docs/scripts/sahw.md`) : `sahun`, `khams`, `nasit` (le « comment faire »), `shakk` ; Dhul-Yadayn écarté
+  (les pages lues ne donnent pas les quatre avis pour ce cas). Script validé sans la ligne « اعمل بالمذهب اللي بتتّبعه »
+  (un conseil de la session, retiré à sa demande) ; montage validé sur quatre images (`docs/retention/sahw-style*.jpg`),
+  les nombres en 1 2 3.
+
+### « إزاي أعملها؟ » produite, corrigée, validée, au calendrier (2026-11-17 et 18)
+
+- **Produit** : sources (dont six pages de l'Encyclopédie koweïtienne, type `fiqh` construit par un agent et relu ligne à
+  ligne), lectures de Muslim 571a et 572a (Ryadussalihin.org), coupes de Tawfiq As-Sayegh (107:4-5 et 114:4, 114:6 posées à la
+  main), dessins (`Sahw.tsx`), voix (trois prises le 17, celle de `shakk` le 18 : le quota du 17 était épuisé), rendus par le
+  workflow `film`, un short à la fois.
+- **Ses corrections** (questions à choix) : le sujud (genoux en l'air, tête hors du tapis) refait articulation par articulation
+  et la silhouette ancrée sur ses genoux ; deux coquilles de la traduction anglaise corrigées dans le sous-titre seulement,
+  notées au registre (`en_corrections`) ; rien d'ajouté sur ce qu'on dit dans les deux prosternations (l'encyclopédie n'en dit
+  rien ; « سبحان من لا ينام ولا يسهو » : Ibn Hajar, « لم أجد له أصلًا », pas mentionné, son choix).
+- **Validé par lui** : les trois premiers shorts et leurs sources le 17, `shakk` et ses sources, les quatre accroches et les
+  textes à coller le 18. **Au calendrier** du lundi 4 au jeudi 7 janvier (son choix).
+- **Fusion avec `main`** (le quiz et le film « مخيّر ولا مسيّر؟ » d'une autre session) : la règle « 1 2 3 » vaut désormais
+  partout, l'option `digits: latin` de cette série ne change plus rien ; le registre reconstruit depuis `main` avec les
+  entrées de cette branche.

@@ -16,9 +16,9 @@ voice) is listed at the end, to check by eye.
 
 Errors: a quoted id absent from the registry, excluded, without text or of the wrong type; a hadith outside
 content/policy.yaml; a reading with no recording; a verse with no cut in the reciter's file; what a narration
-rests on (`sources:` of a narration segment: the report it tells in its own words, the tafsir its meaning comes
-from; written on screen as a reference, never read) when it is not a hadith of the policy or the passage of a
-tafsir of the policy about a verse recited in that short; the synthetic
+rests on (`sources:` of a narration segment: the report it tells in its own words, the tafsir or the page of fiqh its meaning
+comes from; written on screen as a reference, never read) when it is not a hadith of the policy, the passage of a
+tafsir of the policy about a verse recited in that short or a page of fiqh of the policy; the synthetic
 voice saying a quote (four words in a row of a verse of the registry, in its Uthmani or its everyday spelling,
 or of a hadith quoted in that file; a net, not a proof: a line is still read by a person);
 a voice text that differs from the lines; a broken `reuse`, `lines` or `subscribe` in a film; a missing
@@ -397,8 +397,13 @@ class Checker:
                 if not about & recited:
                     self.out.error(file, f"{where}: source {sid} explains {', '.join(sorted(about))}, which this short does not recite")
                     continue
+            elif src.get("type") == "fiqh":
+                # A page of a book of fiqh: no recited verse needed; its edition must be the policy's.
+                if src["ref"]["edition"] not in ((self.repo.policy.get("fiqh") or {}).get("editions") or {}):
+                    self.out.error(file, f"{where}: source {sid}: fiqh « {src['ref']['edition']} » is outside content/policy.yaml")
+                    continue
             else:
-                self.out.error(file, f"{where}: source {sid} is of type « {src.get('type')} »: a narration rests on a hadith or a tafsir, or on a science source (a verse is recited: `verse:`)")
+                self.out.error(file, f"{where}: source {sid} is of type « {src.get('type')} »: a narration rests on a hadith, a tafsir or a page of fiqh, or on a science source (a verse is recited: `verse:`)")
                 continue
             if src.get("status") != "validated" and f"source {sid}" not in self.unvalidated:
                 self.unvalidated.append(f"source {sid}")

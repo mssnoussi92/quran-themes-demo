@@ -8,7 +8,7 @@ id: salat
 # workflow `film`, run 44192660389) : les cartes, les nombres, le clip, l'ambiance, la couverture, et les seize hadiths
 # proposés au registre. Le script l'était le même jour. Les textes à coller restent à valider. Inscrit sur sa parole.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
-validated: { by: mssnoussi92, on: 2026-11-17, what: [montage, cover, ambience] }
+validated: { by: mssnoussi92, on: 2026-11-18, what: [montage, cover, ambience, publish] }   # la vidéo le 2026-11-17 (« je valide les trois »), ses textes YouTube le 2026-11-18
 handle: "@quran_words_daily"
 voices: { X: "no voice: the adhkar are written to be read" }
 clip: { source: pixabay, id: 7215, author: quimuns, page: "https://pixabay.com/videos/id-7215/", take: { slow: 3 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.75, ground: "#05070f", horizon: 1330 }
@@ -23,8 +23,8 @@ publish:
     en: "Adhkar after the prayer, only from al-Bukhari, Muslim and at-Tirmidhi. Save it for after every prayer."
     validated: 2026-11-17
   description:
-    ar: "أذكار بعد الصلاة المفروضة، من الأحاديث الصحيحة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله بعد كل صلاة."
-    en: "The adhkar after the obligatory prayer, only from authentic hadiths (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it after every prayer."
+    ar: "أذكار بعد الصلاة المفروضة، من أحاديث صحيحة وحسنة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله بعد كل صلاة."
+    en: "The adhkar after the obligatory prayer, only from hadiths graded sahih or hasan (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it after every prayer."
 segments:
   - narration: open
     silent: true

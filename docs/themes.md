@@ -1200,6 +1200,16 @@ sans récitation (elles le sont le matin), des passages plus courts et des carte
 2:55 ; à rendre et à lui montrer. **La publication le dimanche** (sa proposition retenue d'abord) : quran-reels ne publie
 les vidéos thématiques que du lundi au samedi (la tâche planifiée qui lance `themes.yml`) ; **sa décision : on décide plus
 tard**, rien n'est au calendrier. **PR et fusion** demandées par lui, pour que tout arrive sur `main`.
+**La vidéo du soir refaite** (PR #49 et #50, 2026-11-18) : 2:55 (175,3 s, −16,2 LUFS), al-Baqara récitée par Tawfiq
+As-Sayegh de 1:21 à 2:50, l'ambiance muette dessous (−91 dB sur sa piste) ; au premier rendu, le « ۚ » de « وُسْعَهَا »
+(2:286) entrait dans la référence écrite au-dessus du verset (Amiri Quran dessine un signe de pause haut au-dessus de sa
+ligne) : `verseGap` 72 pour `masaa` (PR #50), rien d'autre ne bouge ; le même heurt peut exister dans d'autres shorts quand
+la première ligne d'un verset porte un signe de pause. **Validée par lui le 2026-11-18** (question à choix : « Je valide
+la vidéo du soir »). Textes : `docs/retention/publication-adhkar.md` ; la ligne « 🎙️ AI-generated voice » n'y est plus
+(ces vidéos n'ont pas de voix ; `publish.py` ne la met que sous un short où la voix parle) ; les descriptions disent
+« من أحاديث صحيحة وحسنة » (Tirmidhi 3534, 3388 et 3575 sont hasan). **Titres et descriptions YouTube validés par lui le
+2026-11-18** (« Je valide les textes YouTube ») ; fichiers publics par `page-files` (`page-adhkar`). Reste leur date au
+calendrier (sa décision : plus tard).
 
 ## Faits (ancien circuit)
 
@@ -1431,3 +1441,93 @@ brume) ; dessus, le raisonnement : une pause qui devient « lecture » quand le 
 « ؟ » et ce qu'elle nomme, la réponse au-dedans (une maison éclairée et un nœud sous la loupe ; une fenêtre sous la pluie et
 une lampe calme), les deux versets face à face (le second répond), une scène de la vie (des portes qui s'ouvrent, une copie
 d'examen, « بكرة » au calendrier). Images : `docs/retention/sual-style*.jpg`. Script : `docs/scripts/sual.md`.
+
+## Série proposée : « إزاي أعملها؟ », une série éducative ; pilote : سجود السهو (2026-11-17)
+
+**La demande** (propriétaire, 2026-11-17) : une série éducative qui garde un début fort, par exemple سجود السهو ; des
+scènes, un type de script et un montage nouveaux qui vont avec l'idée, puis décider ensemble s'il faut élargir les règles
+ou en faire une pour ce type de série seulement ; au moins un short qui dit **comment faire** quand on s'est trompé dans
+la prière (« souvent j'oublie comment faire ») ; quand les écoles diffèrent, dire leurs avis (malikite, hanafite,
+hanbalite, chaféite) ; **élargir la politique à une source de fiqh** (son choix, question à choix) ; des shorts, sans film ;
+**tout produire maintenant**, sans attendre la revue du 30 novembre (son choix : il revient sur sa décision du 16).
+
+**Avis de la session** :
+- Une série « éducative » attire vers le pire début mesuré : la leçon d'abord ou une question générale (khidr-01, trois
+  spectateurs sur quatre partis en trois secondes), ou un chiffre inventé (« ٩٠٪… », interdit). Règle proposée : chaque
+  short s'ouvre sur **un fait tiré d'un texte, ou l'erreur elle-même en mouvement**, jamais sur la leçon.
+- Le fiqh était le vrai risque : les hadiths montrent les deux prosternations avant le salam (Muslim 570a, 571a) et après
+  (Bukhari 1226, Muslim 573a), et les écoles ne font pas pareil. Aucune source de la politique ne le disait ; la source
+  proposée le dit, école par école.
+- Dhul-Yadayn (proposé d'abord) sort du pilote : l'accroche est forte, mais les pages lues ne donnent pas les quatre avis
+  pour ce cas.
+
+**La source de fiqh proposée** : **الموسوعة الفقهية الكويتية** (ministère des Awqaf du Koweït, 45 volumes, 1404-1427 H),
+comparée, quatre écoles, chaque avis avec ses références dans les livres de l'école, sans trancher ; lue sur turath.io
+(livre 11430, pagination de l'édition imprimée ; l'API répond depuis la session). Article « سجود السهو » : vol. 24,
+p. 234-241. Écartées : la « موسوعة » de dorar.net (une seule ligne, elle tranche), « الفقه على المذاهب الأربعة »
+d'al-Jaziri (azharie, chère à un public égyptien, mais plus ancienne et moins sourcée ; en secours). Comme un tafsir : ni
+lue ni affichée mot pour mot ; une réplique ou une carte des écoles repose sur un passage inscrit au registre
+(`content/sources/fiqh.yaml`, à créer), son nom et sa page écrits dessous.
+
+**Règles proposées pour la série** (à décider : pour elle seule, ou pour tout le dépôt) :
+1. Quand les écoles diffèrent, les quatre, chacune avec son avis tel que l'encyclopédie le donne ; jamais une seule,
+   jamais « الصح ». Un cas dont les pages lues ne donnent pas les quatre avis n'est pas traité.
+2. Une silhouette anonyme qui prie (règle du 2026-11-15), les positions justes ; jamais le Prophète ﷺ ni un Compagnon :
+   leur prière passe par la piste et des rangées de lumières.
+3. Un verset par short (11 à 23 s), pas un tiers à la moitié du short : ici, le hadith et les écoles portent la leçon.
+4. « احفظ الفيديو » en plus de l'appel à suivre (un short qu'on garde pour s'en servir).
+
+**Le pilote** (script : `docs/scripts/sahw.md` ; images du montage : `docs/retention/sahw-style*.jpg`) : `sahun`
+(107:4-5 : « عن » صلاتهم et non « في », d'après as-Sa'di et Ibn Kathir ; 2:286 et Muslim 126), `khams` (Bukhari 1226 :
+le dhuhr en cinq rak'ahs ; Muslim 572a lu ; 18:110 ; l'ajout chez les quatre écoles), `nasit` (Bukhari 1224, Muslim 570a :
+le tashahhud oublié ; où et comment, pas à pas, chez les quatre ; 33:21), `shakk` (Bukhari 1232, Muslim 571a lu : le doute ;
+les quatre ; 114:4-6). Environ 1:20 à 1:25 chacun.
+
+**À faire avant la voix** : le type `fiqh` du registre (politique, `fetch.py` depuis turath.io, `validate.py`, `rules.py`
+qui accepte `fiqh.*` dans `sources:`, `publish.py` qui le crédite) ; les dessins (`video/src/trial/Sahw.tsx` : la pièce, la
+silhouette en prière, la piste, la carte des écoles, le compteur) ; les lectures de Muslim 572a et 571a (archive.org) ; les
+sources au registre. Voix : quatre requêtes, une journée. Rendu : le workflow `film`.
+
+### Décisions du propriétaire (2026-11-17, questions à choix)
+
+- **Source de fiqh** : « Encyclopédie koweïtienne » ; **règles** : « Fiqh partout, le reste ici » : la source et la règle
+  des quatre écoles entrent dans la politique de tout le dépôt (`content/policy.yaml`, `fiqh`), la silhouette qui prie,
+  un seul verset par short et « احفظ الفيديو » valent pour cette série seulement.
+- **Script** : « Je valide, sans la ligne-conseil » : les quatre scripts de `docs/scripts/sahw.md` tels qu'envoyés, sans
+  « اعمل بالمذهب اللي بتتّبعه » dans `khams` (`script_validated` de chaque fichier).
+- **Montage** : « je valide sauf je veux utiliser les numéros 1 2 3 et non pas ١ ٢ ٣ » : la pièce dessinée, la silhouette,
+  la piste et la carte des écoles ; tous les nombres que la série écrit en 1 2 3.
+- **Production maintenant** (son choix à la question précédente), sans attendre la revue du 30 novembre.
+
+### Production (2026-11-17)
+
+- **Sources au registre** (`proposed`) : 107:4-5, 2:286, 18:110, 33:21, 114:4-6 ; six passages de tafsir ; Bukhari 1224,
+  1226, 1232, Muslim 126, 389f, 570a, 571a, 572a, 572j ; six pages de l'Encyclopédie koweïtienne (24/234-239,
+  `content/sources/fiqh.yaml`, nouveau type `fiqh` des outils). **Lectures** : Muslim 571a (23,8 s) et 572a (5,9 s) par
+  Ryadussalihin.org (`ar_Moslem_Reading_06.mp3`, archive.org, licence non indiquée). **Coupes** de Tawfiq As-Sayegh : 107:4-5
+  et 114:4, 114:6 posées à la main (`--set`) ; dans 107:4-5 il s'arrête après « فويل للمصلين » et reprend « للمصلين الذين… ».
+- **Voix** : sahun (52 s), khams (41,7 s), nasit (54,9 s) ; **shakk refusée** (quota Gemini du jour atteint : quatre requêtes
+  d'une autre session le matin), à redemander le 2026-11-18 (tâche planifiée de la session).
+- **Dessins** : `video/src/trial/Sahw.tsx` ; les mots de 107:4-5 écrits en grand tirés du registre (`tools/trial/sahw.py`).
+  **Rendu** : workflow `film`, un short à la fois (`only`), release brouillon `sahw-candidate`.
+
+### Corrections du propriétaire sur les trois premiers shorts (2026-11-17, questions à choix)
+
+- **Les coquilles de la traduction anglaise** (Siddiqui, hadith-api) : « Corriger, noté au registre » : « he does Dot know »
+  (Muslim 571a) et « as you for. get » (572a) corrigés dans le sous-titre seulement (`en_corrections` du registre, contrôlé
+  par `validate.py`) ; le texte publié reste tel quel au registre.
+- **Ce qu'on dit dans les deux prosternations** : « Ne rien ajouter » ; et la formule répandue « سبحان من لا ينام ولا يسهو »
+  (Ibn Hajar, التلخيص الحبير 2/839 : « لم أجد له أصلًا ») : « Non, ne pas en parler ». L'article de l'Encyclopédie koweïtienne
+  ne donne pas de formule propre ; al-Jaziri (1/409) dit, pour les chaféites, deux prosternations « كسجود الصلاة ».
+- **La silhouette** : « Il sort du sajada dans le soujoud et il semble qu'une position fausse ». Avec le long torse de la
+  silhouette, aucune pose de ses angles ne met genoux, orteils, mains et front au sol ensemble : l'ancien sujud gardait les
+  genoux en l'air et la tête hors du tapis. Le sujud est maintenant posé articulation par articulation (`SUJUD_BODY` de
+  `Sahw.tsx` : hanches au-dessus des genoux, dos qui descend, front et paumes au sol, coudes levés), et la silhouette est
+  ancrée sur ses genoux au milieu du tapis : elle ne glisse plus quand elle se prosterne ou se lève.
+- **Validés par lui le 2026-11-17** (question à choix : « Je valide les 3 et leurs sources ») : `sahun`, `khams`, `nasit` tels que
+  rendus après ses corrections (voix, montage, couvertures, ambiance ; `video/out/sahw/ci-2/` de la session, release brouillon
+  `sahw-candidate`), la lecture de Muslim 572a, et leurs vingt sources passées à `validated`. Restent : `shakk` (sa voix le
+  2026-11-18), les textes de publication et les accroches, la date au calendrier.
+
+- **Sur `main`** (PR #52, fusionnée le 2026-11-18) ; **fichiers publics** `page-sahw` (workflow `page-files`) : les quatre shorts,
+  leurs versions TikTok et leurs couvertures, ceux que quran-reels publie du 4 au 7 janvier.

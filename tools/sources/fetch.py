@@ -5,6 +5,8 @@
   hadiths  hadith-api (fawazahmed0, jsDelivr): Arabic text and its English edition
   tafsir   API quran.com v4: the passage of a tafsir of content/policy.yaml about one verse, Arabic only (a
            tafsir is what a line of meaning rests on: never read, never shown, so it has no English text)
+  fiqh     API turath.io: the printed pages (volume, page) of a book of content/policy.yaml (fiqh.editions), Arabic
+           only, footnotes kept (they are the schools' references); like a tafsir, never read nor shown
 
 Texts are copied as published (outer whitespace and translation footnote markers removed),
 never retyped. Each filled entry gets an `origin` block (the exact URLs it came from) and a
@@ -199,6 +201,62 @@ class Tafsir:
         }
 
 
+# ---- Fiqh (turath.io) -----------------------------------------------------------------------
+
+TURATH_API = "https://api.turath.io"
+
+
+def clean_page(text: str) -> str:
+    """A turath.io page without its markup: tags out, entities unescaped, whitespace tidied per line. The footnotes stay."""
+    text = re.sub(r"</(p|div|h[1-6])>|<br\s*/?>", "\n", text, flags=re.IGNORECASE)
+    text = html.unescape(_TAG.sub("", text))
+    return "\n".join(line for line in (re.sub(r"[ \t\u00a0]+", " ", row).strip() for row in text.split("\n")) if line)
+
+
+class Fiqh:
+    def __init__(self, editions: dict, refresh: bool):
+        self.editions = editions          # content/policy.yaml, fiqh.editions
+        self.refresh = refresh
+
+    def page_ids(self, book: int, volume: int, page: int) -> tuple[list[int], str]:
+        """The page_ids of one printed page (one or two, in order), from the book's page_map: entry i is
+        "<volume>,<printed page>" for page_id i+1."""
+        url = f"{TURATH_API}/book?id={book}&include=indexes&ver=3"
+        page_map = cached_json(f"turath/{book}-index.json", url, self.refresh)["indexes"]["page_map"]
+        ids = [i + 1 for i, v in enumerate(page_map) if v == f"{volume},{page}"]
+        if not ids:
+            raise FetchError(f"{url}: no page {volume},{page} in the page_map")
+        return ids, url
+
+    def fetch(self, src) -> dict:
+        ref = src["ref"]
+        edition = self.editions.get(ref["edition"])
+        if edition is None:
+            raise FetchError(f"fiqh '{ref['edition']}' is outside content/policy.yaml (fiqh.editions)")
+        book, volume, page = edition["turath"], ref["volume"], ref["page"]
+        ids, index_url = self.page_ids(book, volume, page)
+        texts, urls = [], []
+        for pg in ids:
+            url = f"{TURATH_API}/page?book_id={book}&pg={pg}&ver=3"
+            got = get_json(url)
+            meta = got.get("meta")
+            if isinstance(meta, str):
+                meta = json.loads(meta)
+            if not isinstance(meta, dict) or str(meta.get("vol")) != str(volume) or str(meta.get("page")) != str(page):
+                raise FetchError(f"{url}: expected volume {volume} page {page}, got {meta}")
+            text = clean_page(got.get("text") or "")
+            if not text:
+                raise FetchError(f"{url}: empty text")
+            texts.append(text)
+            urls.append(url)
+        return {
+            "text_ar": "\n".join(texts),
+            "url": f"https://app.turath.io/book/{book}?page={ids[0]}",
+            "origin": {"api": "turath.io", "book": book, "page_ids": ids, "index": index_url,
+                       "text_ar": urls[0], **({"more_pages": urls[1:]} if len(urls) > 1 else {})},
+        }
+
+
 # ---- Hadith (hadith-api) --------------------------------------------------------------------
 
 def split_number(value) -> tuple[int, int | None]:
@@ -336,6 +394,8 @@ def expected_id(src) -> str | None:
         return f"hadith.{ref['collection']}.{ref['number']}{letter(ref.get('narration'))}"
     if src["type"] == "tafsir":
         return f"tafsir.{ref['edition']}.{ref['surah']}.{ref['ayah']}"
+    if src["type"] == "fiqh":
+        return f"fiqh.{ref['edition']}.{ref['volume']}.{ref['page']}"
     return None
 
 
@@ -351,6 +411,7 @@ def main() -> int:
     default_translation = policy.get("quran", {}).get("translation", "sahih-international")
     quran, hadith = Quran(args.refresh), Hadith(args.refresh)
     tafsir = Tafsir((policy.get("tafsir") or {}).get("editions") or {})
+    fiqh = Fiqh((policy.get("fiqh") or {}).get("editions") or {}, args.refresh)
     y = yaml_rt()
     today = dt.date.today().isoformat()
     errors, changed, seen = [], [], set()
@@ -373,6 +434,8 @@ def main() -> int:
                     got = hadith.fetch(src)
                 elif src["type"] == "tafsir":
                     got = tafsir.fetch(src)
+                elif src["type"] == "fiqh":
+                    got = fiqh.fetch(src)
                 else:
                     print(f"skip    {sid}: type '{src['type']}' has no API yet")
                     continue
@@ -385,7 +448,7 @@ def main() -> int:
             if plain((src.get("origin") or {}).get("grades")) != got["origin"].get("grades"):
                 diffs.append("grades")
             # Surah names: shown under a verse, metadata (a change does not undo a validation).
-            diffs += [k for k in ("surah_ar", "surah_en", "edition", "verses")
+            diffs += [k for k in ("surah_ar", "surah_en", "edition", "verses", "page_ids")
                       if k in got["origin"] and plain((src.get("origin") or {}).get(k)) != got["origin"][k]]
             if not diffs:
                 print(f"ok      {sid}")

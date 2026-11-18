@@ -1,0 +1,93 @@
+# « إزاي أعملها؟ », pilote سجود السهو, épisode 1 (content/trial/sahw.yaml ; script : docs/scripts/sahw.md). Le mot « ساهون » de 107:5 : « عن » صلاتهم et non « في » (as-Sa'di, Ibn Kathir), puis 2:286 et Muslim 126.
+# Montage validé (docs/retention/sahw-style*.jpg) : la pièce, la silhouette anonyme qui prie (jamais le Prophète ﷺ ni un
+# Compagnon : leur prière passe par la piste et des rangées de lumières), la piste des rak'ahs, la carte des quatre écoles.
+id: sahun
+# « Je valide, sans la ligne-conseil » (question à choix du propriétaire, 2026-11-17, sur docs/scripts/sahw.md envoyé) : les
+# répliques, la place des versets et des lectures, ce sur quoi chaque réplique repose. Ni la voix, ni la vidéo, ni les textes,
+# ni les sources : il les valide sur les vidéos. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide les 3 et leurs sources » du propriétaire (2026-11-17, question à choix), après les corrections qu'il a demandées
+# (le sujud refait sur le tapis, le sous-titre de Muslim 572a corrigé ; run du workflow `film` du même jour) : la voix, le
+# montage (la silhouette, la piste, la carte des écoles), la couverture, l'ambiance, et ses sources, passées à `validated`.
+# Pas encore les textes de publication ni l'accroche. Inscrit sur sa parole.
+# Puis « Je valide les 4 accroches » du propriétaire (2026-11-18, question à choix) : l'accroche de la légende courte, et
+# les titres et les descriptions de docs/retention/publication-sahw.md (`publish`, ajouté ce jour-là ; le reste le 2026-11-17).
+validated: { by: mssnoussi92, on: 2026-11-18, what: [voice, montage, cover, ambience, publish] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+digits: latin          # les nombres en 1 2 3, jamais ١ ٢ ٣ (le propriétaire, 2026-11-17)
+# Une salle de prière au lever du jour : le fond généré par ffmpeg (tools/trial/clip.py, kind room), la fenêtre, le rai
+# de lumière, le tapis et la silhouette dessinés par video/src/trial/Sahw.tsx. Rien à créditer.
+clip: { source: generated, kind: room, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#120f18", horizon: 1300, veil: 0.6 }
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 130, level: -38 }
+text: 82-trial-sahun
+cover: { scene: word, title: "آية بتقول «ويل»… للي بيصلّوا!", tag: "إزاي أعملها؟ (1)", focus: 1000 }
+publish:
+  title: { en: 'A verse says "woe"… to people who pray!', ar: "آية بتقول «ويل»… للي بيصلّوا!" }
+  part: 1
+  hashtags: ["#سجود_السهو", "#الصلاة"]
+  description:
+    en: "A verse says \"woe to those who pray\" (107:4-5), and our minds drift in every prayer. The answer is one word: the verse speaks of those heedless \"about\" their prayer (they lose it, let its time pass), not \"in\" it; drifting in prayer happens to everyone, even to the Prophet ﷺ (as-Sa'di). And at the end of al-Baqarah: \"Our Lord, do not impose blame upon us if we forget\" (2:286)."
+    ar: "آية بتقول «فويل للمصلين» (الماعون ٤-٥)، وكلنا بنسهى في صلاتنا. الرد في كلمة: الآية بتتكلم عن اللي ساهين «عن» صلاتهم (ضيّعوها وفوّتوا وقتها)، مش «في» صلاتهم؛ السهو في الصلاة بيحصل من أي حد، حتى من النبي ﷺ (السعدي). وفي آخر البقرة: «ربنا لا تؤاخذنا إن نسينا أو أخطأنا» (٢٨٦)."
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-18 (« Je valide les 4 accroches »)
+    ar: "السهو «في» الصلاة بيحصل من أي حد… والآية بتتكلم عن السهو «عن» الصلاة."
+    en: "Drifting \"in\" prayer happens to everyone… the verse is about drifting \"away\" from it."
+    validated: 2026-11-18
+segments:
+- narration: open
+  scene: word
+  lines:
+  - ar: 'آية بتقول «ويل» للي بيصلّوا!'
+    en: "A verse says \"woe\"… to people who pray!"
+- verses: [quran.107.4, quran.107.5]
+  scene: word
+- narration: fear
+  scene: room
+  lines:
+  - ar: 'وأنا بسهى في صلاتي… كل يوم.'
+    en: "And my mind drifts in my prayer… every day."
+  - ar: 'يبقى أنا منهم؟'
+    en: "So am I one of them?"
+- narration: letter
+  scene: letter
+  sources: [tafsir.saadi.107.5, tafsir.ibn-kathir.107.5]
+  lines:
+  - ar: 'ركّز في كلمة واحدة: «عن» صلاتهم… مش «في» صلاتهم.'
+    en: "Look at one word: \"about\" their prayer… not \"in\" their prayer."
+  - ar: '«عن صلاتهم» يعني: ضيّعوها… فوّتوا وقتها… وما عملوش أركانها.'
+    en: "\"About their prayer\" means: they lost it… let its time pass… skipped what it is made of."
+  - ar: 'لكن السهو «في» الصلاة… بيحصل من أي حد… حتى من النبي صلى الله عليه وسلم.'
+    en: "But drifting \"in\" the prayer… happens to anyone… even to the Prophet ﷺ."
+- narration: worry
+  scene: room
+  sources: [tafsir.saadi.107.5]
+  lines:
+  - ar: 'واللي قلقان إنه سها… ده أصلاً شايل هم صلاته.'
+    en: "And whoever worries he drifted… already cares about his prayer."
+- narration: intro
+  scene: dua
+  lines:
+  - ar: 'وفي آخر سورة البقرة… الدعوة دي:'
+    en: "And at the end of al-Baqarah… this prayer:"
+- verses: [quran.2.286]
+  upto: 19          # « … ربنا لا تؤاخذنا إن نسينا أو أخطأنا ۚ »
+  scene: dua
+- narration: meaning
+  scene: dua
+  sources: [tafsir.muyassar.2.286]
+  lines:
+  - ar: 'يعني: يا رب ما تعاقبناش… لو نسينا حاجة فرضتها علينا.'
+    en: "Meaning: Lord, don't punish us… if we forget something You made our duty."
+- narration: answer
+  scene: dua
+  sources: [hadith.muslim.126]
+  lines:
+  - ar: 'ولما نزلت… ربنا استجاب.'
+    en: "And when it was revealed… God answered it."
+- narration: close
+  scene: end
+  lines:
+  - ar: 'السهو «في» الصلاة بيتصلّح… والخطر: السهو «عنها».'
+    en: "Drifting \"in\" the prayer can be fixed… the danger is drifting \"away\" from it."
+  - ar: 'طب بيتصلّح إزاي؟ النبي صلى الله عليه وسلم نفسه… صلّى الضهر خمس ركعات. تابعنا.'
+    en: "So how is it fixed? The Prophet ﷺ himself… once prayed dhuhr in five rak'ahs. Follow us."

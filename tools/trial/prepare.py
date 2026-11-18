@@ -402,7 +402,7 @@ def main() -> None:
                 if seg.get("sources"):                         # what its lines rest on, written while they are said
                     if by_source is not None and not silent:
                         sys.exit("error: `sources` on a narration needs the registry (a file with no `verses`)")
-                    made["refs"] = sources.references(seg["sources"])
+                    made["refs"] = sources.references(seg["sources"], spec.get("digits"))
                 segments.append({**made, "scene": seg["scene"], "start": round(t, 2)})
                 pairs.append((seg if n == 0 else {**seg, "sfx": None}, segments[-1]))   # sfx on the first run only
                 t += segments[-1]["seconds"] + gap
@@ -411,11 +411,11 @@ def main() -> None:
             if drop_verses & set(seg["verses"]):
                 continue
             # Verses that follow one another, recited without a break: one cut, one segment.
-            segments.append({**sources.passage(seg["verses"], out_dir, seg.get("upto")), "scene": seg["scene"], "start": round(t, 2)})
+            segments.append({**sources.passage(seg["verses"], out_dir, seg.get("upto"), spec.get("digits")), "scene": seg["scene"], "start": round(t, 2)})
         elif "verse" in seg:
             if seg["verse"] in drop_verses:
                 continue
-            made = verse_segment(by_source, seg["verse"], out_dir, args.episode) if by_source is not None else sources.verse(seg["verse"], out_dir)
+            made = verse_segment(by_source, seg["verse"], out_dir, args.episode) if by_source is not None else sources.verse(seg["verse"], out_dir, spec.get("digits"))
             segments.append({**made, "scene": seg["scene"], "start": round(t, 2)})
         elif "card" in seg and by_source is None:
             # A dhikr to read, shown and never said (adhkar to save): the ambience goes on under it.

@@ -77,6 +77,7 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
     allowed = set(policy.get("hadith", {}).get("collections", []))
     graded = policy.get("hadith", {}).get("graded", {})
     tafsirs = set((policy.get("tafsir") or {}).get("editions") or {})
+    fiqhs = set((policy.get("fiqh") or {}).get("editions") or {})
     registry: dict[str, dict] = {}
     for path in sorted((CONTENT / "sources").glob("*.yaml")):
         entries = load_yaml(path) or []
@@ -91,6 +92,10 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
             # An English excerpt is a selection of the published text, never a rewording.
             if "excerpt_en" in src and src["excerpt_en"] not in (src.get("text_en") or ""):
                 report.error(where, "excerpt_en is not a passage of text_en")
+            # A misprint corrected on screen only (owner, 2026-11-17): the published text stays, the misprint must be in it.
+            for fix in src.get("en_corrections") or []:
+                if fix.get("published") not in (src.get("excerpt_en") or src.get("text_en") or ""):
+                    report.error(where, f"en_corrections: « {fix.get('published')} » is not in the English text shown")
             if "excerpt_ar" in src:
                 if src["type"] != "hadith":
                     report.error(where, "excerpt_ar is only for a hadith")
@@ -108,6 +113,16 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
                     report.error(where, "id does not match ref")
                 if ref["edition"] not in tafsirs and src["status"] != "excluded":
                     report.error(where, f"tafsir '{ref['edition']}' is outside content/policy.yaml; status must be excluded")
+            if src["type"] == "fiqh":
+                for key in ("volume", "page"):
+                    if not isinstance(ref.get(key), int) or isinstance(ref.get(key), bool):
+                        report.error(where, f"a fiqh source needs ref.{key}, an integer")
+                if sid != f"fiqh.{ref.get('edition')}.{ref.get('volume')}.{ref.get('page')}":
+                    report.error(where, "id does not match ref")
+                if ref.get("edition") not in fiqhs and src["status"] != "excluded":
+                    report.error(where, f"fiqh '{ref.get('edition')}' is outside content/policy.yaml; status must be excluded")
+                if src["status"] != "excluded" and not src.get("text_ar"):
+                    report.error(where, "a fiqh source needs text_ar (tools/sources/fetch.py)")
             if src["type"] == "science":
                 # A paper or a dataset a script rests on: labels and a checked claim, never a quoted text.
                 # (The schema says the same; these messages name the rule.)

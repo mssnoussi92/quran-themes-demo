@@ -220,6 +220,9 @@ def rests_on(ids: list[str], sources: dict, policy: dict) -> str:
             out.append(f"récit de [{name} {ref['number']}{letter}]({src.get('url')}), raconté avec nos mots{state}")
         elif src["type"] == "science":
             out.append(f"source scientifique [{src['label']['en']}]({src.get('url')}) : {src.get('claim', '')}{state}")
+        elif src["type"] == "fiqh":
+            edition = ((policy.get("fiqh") or {}).get("editions") or {}).get(ref["edition"]) or {}
+            out.append(f"fiqh d'après [{edition.get('en', ref['edition'])} · {edition.get('ar', '')}]({src.get('url')}) {ref['volume']}/{ref['page']}{state}")
         else:
             edition = ((policy.get("tafsir") or {}).get("editions") or {}).get(ref["edition"]) or {}
             out.append(f"sens d'après [{edition.get('en', ref['edition'])} · {edition.get('ar', '')}]({src.get('url')}) sur {ref['surah']}:{ref['ayah']}{state}")

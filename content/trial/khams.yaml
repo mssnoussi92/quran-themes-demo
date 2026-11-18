@@ -1,0 +1,95 @@
+# « إزاي أعملها؟ », pilote سجود السهو, épisode 2 (content/trial/sahw.yaml ; script : docs/scripts/sahw.md). Le dhuhr prié en cinq rak'ahs (Bukhari 1226, Muslim 572), « إنما أنا بشر… » lu (Muslim 572a), 18:110, puis l'ajout chez les quatre écoles (Encyclopédie koweïtienne).
+# Montage validé (docs/retention/sahw-style*.jpg) : la pièce, la silhouette anonyme qui prie (jamais le Prophète ﷺ ni un
+# Compagnon : leur prière passe par la piste et des rangées de lumières), la piste des rak'ahs, la carte des quatre écoles.
+id: khams
+# « Je valide, sans la ligne-conseil » (question à choix du propriétaire, 2026-11-17, sur docs/scripts/sahw.md envoyé) : les
+# répliques, la place des versets et des lectures, ce sur quoi chaque réplique repose. Ni la voix, ni la vidéo, ni les textes,
+# ni les sources : il les valide sur les vidéos. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide les 3 et leurs sources » du propriétaire (2026-11-17, question à choix), après les corrections qu'il a demandées
+# (le sujud refait sur le tapis, le sous-titre de Muslim 572a corrigé ; run du workflow `film` du même jour) : la voix, le
+# montage (la silhouette, la piste, la carte des écoles), la couverture, l'ambiance, et ses sources, passées à `validated`.
+# Pas encore les textes de publication ni l'accroche. Inscrit sur sa parole.
+# Puis « Je valide les 4 accroches » du propriétaire (2026-11-18, question à choix) : l'accroche de la légende courte, et
+# les titres et les descriptions de docs/retention/publication-sahw.md (`publish`, ajouté ce jour-là ; le reste le 2026-11-17).
+validated: { by: mssnoussi92, on: 2026-11-18, what: [voice, montage, cover, ambience, publish] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+digits: latin          # les nombres en 1 2 3, jamais ١ ٢ ٣ (le propriétaire, 2026-11-17)
+# Une salle de prière au lever du jour : le fond généré par ffmpeg (tools/trial/clip.py, kind room), la fenêtre, le rai
+# de lumière, le tapis et la silhouette dessinés par video/src/trial/Sahw.tsx. Rien à créditer.
+clip: { source: generated, kind: room, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#120f18", horizon: 1300, veil: 0.6 }
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 130, level: -38 }
+text: 83-trial-khams
+cover: { scene: track5, title: "صلّى الضهر خمس ركعات!", tag: "إزاي أعملها؟ (2)", focus: 1000 }
+publish:
+  title: { en: "He prayed dhuhr in five rak'ahs!", ar: "صلّى الضهر خمس ركعات!" }
+  part: 2
+  hashtags: ["#سجود_السهو", "#الصلاة"]
+  description:
+    en: "The Prophet ﷺ once prayed dhuhr in five rak'ahs, then made two prostrations after the salam (Bukhari 1226), and said: \"I am a human being; I forget as you forget, so when I forget, remind me\" (Muslim 572). Where do the two prostrations go when you add something by mistake? The four schools, as the Kuwaiti Encyclopedia of Fiqh gives them."
+    ar: "النبي ﷺ صلّى الضهر خمس ركعات، وسجد سجدتين بعد السلام (البخاري ١٢٢٦)، وقال: «إنما أنا بشر أنسى كما تنسون فإذا نسيت فذكروني» (مسلم ٥٧٢). ولو زوّدت حاجة وانت ساهي، السجدتين فين؟ المذاهب الأربعة، زي ما في الموسوعة الفقهية الكويتية."
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-18 (« Je valide les 4 accroches »)
+    ar: "النبي ﷺ صلّى الضهر خمس ركعات… وعلّمنا نعمل إيه لو زوّدنا."
+    en: "The Prophet ﷺ once prayed dhuhr in five rak'ahs… and taught us what to do when we add."
+    validated: 2026-11-18
+segments:
+- narration: open
+  scene: track5
+  sources: [hadith.bukhari.1226]
+  lines:
+  - ar: 'صلّى الضهر خمس ركعات!'
+    en: "He prayed dhuhr… in five rak'ahs!"
+  - ar: 'النبي صلى الله عليه وسلم… بنفسه.'
+    en: "The Prophet ﷺ… himself."
+- narration: story
+  scene: rows
+  sources: [hadith.bukhari.1226, hadith.muslim.572j]
+  lines:
+  - ar: 'ولما سلّم… الناس بقوا يوشوشوا بعض.'
+    en: "When he finished… people started whispering."
+  - ar: 'سألوه: هي الصلاة زادت؟ قالوا: صلّيت خمسة.'
+    en: "They asked him: has the prayer been increased? They said: you prayed five."
+  - ar: 'فسجد سجدتين… بعد السلام.'
+    en: "So he made two prostrations… after the salam."
+- narration: said
+  scene: rows
+  lines:
+  - ar: 'وقال:'
+    en: "And he said:"
+- reading: hadith.muslim.572a
+  scene: voice
+- narration: same
+  scene: human
+  lines:
+  - ar: 'ونفس الكلام ده… في القرآن:'
+    en: "And these same words… are in the Quran:"
+- verses: [quran.18.110]
+  upto: 11          # « … أنما إلهكم إله واحد ۖ »
+  scene: human
+- narration: meaning
+  scene: human
+  sources: [tafsir.saadi.18.110]
+  lines:
+  - ar: 'يعني: بشر زيكم… والفرق: الوحي.'
+    en: "Meaning: a human like you… the difference is the revelation."
+- narration: schools
+  scene: lanes
+  sources: [fiqh.kuwaiti.24.235, fiqh.kuwaiti.24.238, fiqh.kuwaiti.24.239]
+  lines:
+  - ar: 'ولو زوّدت حاجة في صلاتك وانت ساهي… تسجد سجدتين للسهو.'
+    en: "If you add something to your prayer by mistake… you make two prostrations of forgetfulness."
+  - ar: 'بس فين؟'
+    en: "But where?"
+  - ar: 'الحنفي… والمالكي: بعد السلام.'
+    en: "Hanafi… and Maliki: after the salam."
+  - ar: 'الشافعي… والحنبلي: قبله.'
+    en: "Shafi'i… and Hanbali: before it."
+- narration: close
+  scene: end
+  sources: [fiqh.kuwaiti.24.238, fiqh.kuwaiti.24.239]
+  lines:
+  - ar: 'وكل مذهب… ليه دليله.'
+    en: "Each school… has its proof."
+  - ar: 'والجاية: قمت… من غير ما تقعد للتشهد. تابعنا… واحفظ الفيديو.'
+    en: "Next: you stood up… without sitting for the tashahhud. Follow us… and save this video."
