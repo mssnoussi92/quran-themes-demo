@@ -10,7 +10,9 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 # (le sujud refait sur le tapis, le sous-titre de Muslim 572a corrigé ; run du workflow `film` du même jour) : la voix, le
 # montage (la silhouette, la piste, la carte des écoles), la couverture, l'ambiance, et ses sources, passées à `validated`.
 # Pas encore les textes de publication ni l'accroche. Inscrit sur sa parole.
-validated: { by: mssnoussi92, on: 2026-11-17, what: [voice, montage, cover, ambience] }
+# Puis « Je valide les 4 accroches » du propriétaire (2026-11-18, question à choix) : l'accroche de la légende courte, et
+# les titres et les descriptions de docs/retention/publication-sahw.md (`publish`, ajouté ce jour-là ; le reste le 2026-11-17).
+validated: { by: mssnoussi92, on: 2026-11-18, what: [voice, montage, cover, ambience, publish] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 digits: latin          # les nombres en 1 2 3, jamais ١ ٢ ٣ (le propriétaire, 2026-11-17)
@@ -27,9 +29,10 @@ publish:
   description:
     en: "The Prophet ﷺ once prayed dhuhr in five rak'ahs, then made two prostrations after the salam (Bukhari 1226), and said: \"I am a human being; I forget as you forget, so when I forget, remind me\" (Muslim 572). Where do the two prostrations go when you add something by mistake? The four schools, as the Kuwaiti Encyclopedia of Fiqh gives them."
     ar: "النبي ﷺ صلّى الضهر خمس ركعات، وسجد سجدتين بعد السلام (البخاري ١٢٢٦)، وقال: «إنما أنا بشر أنسى كما تنسون فإذا نسيت فذكروني» (مسلم ٥٧٢). ولو زوّدت حاجة وانت ساهي، السجدتين فين؟ المذاهب الأربعة، زي ما في الموسوعة الفقهية الكويتية."
-  hook:      # légende courte de Facebook, Instagram et TikTok : à valider par le propriétaire
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-18 (« Je valide les 4 accroches »)
     ar: "النبي ﷺ صلّى الضهر خمس ركعات… وعلّمنا نعمل إيه لو زوّدنا."
     en: "The Prophet ﷺ once prayed dhuhr in five rak'ahs… and taught us what to do when we add."
+    validated: 2026-11-18
 segments:
 - narration: open
   scene: track5

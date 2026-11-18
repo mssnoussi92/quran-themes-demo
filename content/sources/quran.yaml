@@ -2813,11 +2813,12 @@
     surah_ar: الناس
     surah_en: An-Nas
     retrieved: '2026-11-17'
-  status: proposed
+  status: validated
   notes: "An-Nas 114:4 (« إزاي أعملها؟ », سجود السهو, short shakk : الوسواس الخناس, récité avec 114:5-6)"
 
   text_ar: مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ
   text_en: From the evil of the retreating whisperer -
+  validated_by: mssnoussi92
 - id: quran.114.6
   type: ayah
   ref: {surah: 114, ayah: 6}
@@ -2830,7 +2831,8 @@
     surah_ar: الناس
     surah_en: An-Nas
     retrieved: '2026-11-17'
-  status: proposed
+  status: validated
   notes: "An-Nas 114:6 (« إزاي أعملها؟ », سجود السهو, short shakk, récité avec 114:4-5)"
   text_ar: مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ
   text_en: From among the jinn and mankind".
+  validated_by: mssnoussi92

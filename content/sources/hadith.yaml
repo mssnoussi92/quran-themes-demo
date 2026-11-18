@@ -1254,11 +1254,12 @@
     book: 22
     hadith_in_book: 10
     retrieved: '2026-11-17'
-  status: proposed
+  status: validated
   notes: "le Shaytan embrouille celui qui prie jusqu'à ce qu'il ne sache plus combien il a prié (Abu Hurayra) : raconté (short shakk)"
 
   text_ar: حَدَّثَنَا عَبْدُ اللَّهِ بْنُ يُوسُفَ، أَخْبَرَنَا مَالِكٌ، عَنِ ابْنِ شِهَابٍ، عَنْ أَبِي سَلَمَةَ بْنِ عَبْدِ الرَّحْمَنِ، عَنْ أَبِي هُرَيْرَةَ ـ رضى الله عنه ـ أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ ‏ "‏ إِنَّ أَحَدَكُمْ إِذَا قَامَ يُصَلِّي جَاءَ الشَّيْطَانُ فَلَبَسَ عَلَيْهِ حَتَّى لاَ يَدْرِيَ كَمْ صَلَّى، فَإِذَا وَجَدَ ذَلِكَ أَحَدُكُمْ فَلْيَسْجُدْ سَجْدَتَيْنِ وَهُوَ جَالِسٌ ‏"‏‏.‏
   text_en: Narrated Abu Huraira:Allah's Messenger (ﷺ) said, "When anyone of you stands for the prayers, Satan comes and puts him in doubts till he forgets how many rak`at he has prayed. So if this happens to anyone of you, he should perform two prostrations of Sahu while sitting
+  validated_by: mssnoussi92
 - id: hadith.muslim.126
   type: hadith
   ref: {collection: muslim, number: 126}
@@ -1293,11 +1294,12 @@
     book: 5
     hadith_in_book: 103
     retrieved: '2026-11-17'
-  status: proposed
+  status: validated
   notes: "comme Bukhari 1232 (short shakk)"
 
   text_ar: حَدَّثَنَا يَحْيَى بْنُ يَحْيَى، قَالَ قَرَأْتُ عَلَى مَالِكٍ عَنِ ابْنِ شِهَابٍ، عَنْ أَبِي سَلَمَةَ بْنِ عَبْدِ الرَّحْمَنِ، عَنْ أَبِي هُرَيْرَةَ، أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ ‏ "‏ إِنَّ أَحَدَكُمْ إِذَا قَامَ يُصَلِّي جَاءَهُ الشَّيْطَانُ فَلَبَسَ عَلَيْهِ حَتَّى لاَ يَدْرِي كَمْ صَلَّى فَإِذَا وَجَدَ ذَلِكَ أَحَدُكُمْ فَلْيَسْجُدْ سَجْدَتَيْنِ وَهُوَ جَالِسٌ ‏"‏ ‏.‏
   text_en: "Abu Huraira reported:The Messenger of Allah (ﷺ) said: When any one of you stands up to pray, the devil comes to him and confuses him to that he does not know how much he has prayed. If any one of you has such an experience he should perform two prostrations while sitting down (in qa'da)"
+  validated_by: mssnoussi92
 - id: hadith.muslim.570a
   type: hadith
   ref: {collection: muslim, number: 570, narration: 1}
@@ -1332,7 +1334,7 @@
     book: 5
     hadith_in_book: 110
     retrieved: '2026-11-17'
-  status: proposed
+  status: validated
   notes: "le doute : rejeter le doute, bâtir sur la certitude, deux prosternations avant le salam, « ترغيما للشيطان » (Abu Sa'id al-Khudri) : à lire par une vraie voix (short shakk)"
 
   text_ar: وَحَدَّثَنِي مُحَمَّدُ بْنُ أَحْمَدَ بْنِ أَبِي خَلَفٍ، حَدَّثَنَا مُوسَى بْنُ دَاوُدَ، حَدَّثَنَا سُلَيْمَانُ بْنُ بِلاَلٍ، عَنْ زَيْدِ بْنِ أَسْلَمَ، عَنْ عَطَاءِ بْنِ يَسَارٍ، عَنْ أَبِي سَعِيدٍ الْخُدْرِيِّ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏ "‏ إِذَا شَكَّ أَحَدُكُمْ فِي صَلاَتِهِ فَلَمْ يَدْرِ كَمْ صَلَّى ثَلاَثًا أَمْ أَرْبَعًا فَلْيَطْرَحِ الشَّكَّ وَلْيَبْنِ عَلَى مَا اسْتَيْقَنَ ثُمَّ يَسْجُدُ سَجْدَتَيْنِ قَبْلَ أَنْ يُسَلِّمَ فَإِنْ كَانَ صَلَّى خَمْسًا شَفَعْنَ لَهُ صَلاَتَهُ وَإِنْ كَانَ صَلَّى إِتْمَامًا لأَرْبَعٍ كَانَتَا تَرْغِيمًا لِلشَّيْطَانِ ‏"‏ ‏.‏
@@ -1347,11 +1349,13 @@
     end: 4141.15
     heard: إذا شك أحدكم في صلاته فلم يدر كم صلى ثلاثا أم أربعة فليطرح الشك وليبني على مستيقا ثم يسجد سجدتين قبل أن يسلم فإن كان صلى خمسا شفعن له صلاته وإن كان صلى إتماما لأربع كانت ترغيما للشيطان
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
   en_corrections:
   - published: he does Dot know
     corrected: he does not know
     why: 'misprint of the published translation (hadith-api, eng-muslim): corrected on screen, decision of the owner, 2026-11-17'
+  validated_by: mssnoussi92
 - id: hadith.muslim.572a
   type: hadith
   ref: {collection: muslim, number: 572, narration: 1}

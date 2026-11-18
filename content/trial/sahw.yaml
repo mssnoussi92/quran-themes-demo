@@ -5,6 +5,7 @@
 # seule ; un verset ; « احفظ الفيديو » (règles de cette série seulement, choix du propriétaire, 2026-11-17).
 # Fiche : docs/themes.md ; script : docs/scripts/sahw.md (validé) ; dessins : video/src/trial/Sahw.tsx.
 id: sahw
+validated: { by: mssnoussi92, on: 2026-11-18, what: [publish] }      # « Je valide les 4 accroches » (question à choix)
 files: sahw                      # début du nom des vidéos livrées : sahw-short-<n>-<id>.mp4
 title: { ar: "إزاي أعملها؟", en: "How Do I Do It?" }
 shorts: [sahun, khams, nasit, shakk]

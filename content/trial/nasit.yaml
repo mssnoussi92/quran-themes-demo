@@ -10,7 +10,9 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 # (le sujud refait sur le tapis, le sous-titre de Muslim 572a corrigé ; run du workflow `film` du même jour) : la voix, le
 # montage (la silhouette, la piste, la carte des écoles), la couverture, l'ambiance, et ses sources, passées à `validated`.
 # Pas encore les textes de publication ni l'accroche. Inscrit sur sa parole.
-validated: { by: mssnoussi92, on: 2026-11-17, what: [voice, montage, cover, ambience] }
+# Puis « Je valide les 4 accroches » du propriétaire (2026-11-18, question à choix) : l'accroche de la légende courte, et
+# les titres et les descriptions de docs/retention/publication-sahw.md (`publish`, ajouté ce jour-là ; le reste le 2026-11-17).
+validated: { by: mssnoussi92, on: 2026-11-18, what: [voice, montage, cover, ambience, publish] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 digits: latin          # les nombres en 1 2 3, jamais ١ ٢ ٣ (le propriétaire, 2026-11-17)
@@ -27,9 +29,10 @@ publish:
   description:
     en: "You stood up for the third rak'ah without sitting for the tashahhud? It happened to the Prophet ﷺ: he went on, and before the salam he made two prostrations sitting (Bukhari 1224, Muslim 570). How to do it, step by step, and where the two prostrations go in each of the four schools (Kuwaiti Encyclopedia of Fiqh). Save it for the day you forget."
     ar: "قمت للركعة التالتة من غير ما تقعد للتشهد؟ حصلت مع النبي ﷺ: كمّل صلاته، وقبل السلام سجد سجدتين وهو قاعد (البخاري ١٢٢٤، مسلم ٥٧٠). تعمل إيه خطوة بخطوة، وفين السجدتين في كل مذهب من الأربعة (الموسوعة الفقهية الكويتية). احفظه لليوم اللي تسهى فيه."
-  hook:      # légende courte de Facebook, Instagram et TikTok : à valider par le propriétaire
+  hook:      # légende courte de Facebook, Instagram et TikTok ; validée par lui le 2026-11-18 (« Je valide les 4 accroches »)
     ar: "قمت من غير ما تقعد للتشهد؟ تعمل إيه خطوة بخطوة، في المذاهب الأربعة."
     en: "Stood up without sitting for the tashahhud? What to do, step by step, in the four schools."
+    validated: 2026-11-18
 segments:
 - narration: open
   scene: stand

@@ -1106,6 +1106,7 @@
     edition: Tafsir Muyassar
     verses: ["114:4"]
     retrieved: '2026-11-17'
-  status: proposed
+  status: validated
   notes: "le sens de 114:4 : il souffle au moment de l'inattention et se cache quand on évoque Dieu (short shakk)"
   text_ar: من أذى الشيطان الذي يوسوس عند الغفلة، ويختفي عند ذكر الله.
+  validated_by: mssnoussi92
