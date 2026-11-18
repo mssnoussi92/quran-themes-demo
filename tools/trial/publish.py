@@ -70,6 +70,11 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
                 flush()
             if sid not in run:
                 run.append(sid)
+        elif kind == "card":                             # a dhikr written to be read: no reader
+            flush()
+            hadith = True
+            src = sources[sid]
+            lines.append(" · ".join(x for x in (f"• {src['reference_en']}", src.get("grade_note"), src["url"]) if x))
         else:
             flush()
             hadith = True
@@ -114,6 +119,9 @@ def quotes_of(segments: list[dict]) -> list[tuple[str, str]]:
         elif "reading" in s:
             if ("reading", s["reading"]) not in ids:       # a part and the whole of a hadith: one reference
                 ids.append(("reading", s["reading"]))
+        elif "card" in s:                                  # a dhikr to read: shown, never read
+            if ("card", s["card"]) not in ids:
+                ids.append(("card", s["card"]))
         for sid in s.get("sources") or []:
             ids.append(("report" if sid.startswith("hadith.") else "science" if sid.startswith("science.") else "tafsir", sid))
     return ids

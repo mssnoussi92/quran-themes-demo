@@ -1004,6 +1004,200 @@ a demandé que 27:27 (Soulayman vérifie, 8 s) soit récité au short 6, puisqu'
 0:59 sans voix) envoyés ; **validés par lui le même jour** (questions à choix) : le rendu et les clips (8451 le coucher qui
 devient nuit, 2119 l'aube rose, 16139 les dunes), 27:27 récité au short 6, les trois accroches. **Placés plus tard** (son choix) : en réserve, décidés à la revue après les chiffres du 23 novembre.
 
+## Série proposée : les adhkar du matin, du soir et d'après la prière (2026-11-17)
+
+**Demande du propriétaire (2026-11-17)** : « explorer une série pour أذكار الصباح والمساء et أذكار بعد الصلاة ».
+
+**L'avis de la session** : oui pour le sujet, non pour la forme qu'on attend. Le sujet est au cœur de la Page (« Quran &
+Sunnah for everyday life »), et le catalogue des formats le cite déjà en exemple (`practical`, `docs/formats.md`). La forme
+attendue, la carte du dhikr (le texte à l'écran, lu une fois), est très produite ailleurs. Nous avons aussi notre propre
+mesure : Word of the day, un texte à apprendre, n'a fait que 4 vues en médiane par publication sur Instagram, et il est en
+pause depuis le 2026-11-15 (quran-reels). Ce que nos sources ont en plus : **presque chaque dhikr authentique a, dans le
+hadith même, un petit récit ou une promesse concrète** (un homme piqué la veille par un scorpion, des pauvres qui se
+plaignent que les riches les devancent, Juwayriya assise de l'aube au duha, « قل » trois fois dans une nuit de pluie).
+D'où la forme recommandée : **un dhikr et son récit**, la sœur de « آية وحكايتها ». Chaque short tient seul : le fait du
+récit en accroche, le hadith lu par une vraie voix avec le dhikr à l'écran, puis quand le dire et combien de fois, et ce
+qu'il promet, deux choses prises dans les mots du hadith ; enfin un exemple de vie et la phrase à retenir.
+
+**Ce que la session contredit** :
+- **Une série « complète » est impossible dans la politique, et c'est mieux ainsi** (tout vérifié le 2026-11-17 dans
+  hadith-api) : Ayat al-Kursi après chaque prière n'est dans aucune édition de hadith-api (cherché dans an-Nasa'i et Abu
+  Dawud), donc elle ne peut pas entrer au registre, même si on élargissait la politique ; « رضيت بالله ربا… » le soir est
+  Tirmidhi 3389, que al-Albani juge da'if ; la tahlila dix fois après le fajr est Tirmidhi 3474, da'if aussi ; « حسبي الله
+  لا إله إلا هو » sept fois est Abu Dawud 5081, que al-Albani juge mawdu' ; « اللهم ما أصبح بي من نعمة » est Abu Dawud
+  5073, da'if. Le titre ne promettra donc jamais « كاملة ». Deux adhkar connus sont sahih selon al-Albani mais hors de la
+  politique (Abu Dawud) : « اللهم أعني على ذكرك وشكرك… » (1522, aussi an-Nasa'i 1303) et « اللهم إني أسألك العفو
+  والعافية… » (5074). Les prendre voudrait dire élargir la politique, une décision du propriétaire.
+- **La voix ne dit aucun mot du dhikr** : la voix ne dit aucun mot d'un hadith cité (`tools/trial/rules.py`). Le dhikr
+  s'entend lu une fois par le lecteur du recueil, avec un débit de livre lu et non de psalmodie, et trois lecteurs
+  différents selon le recueil. Pas de « قولها معايا » que la voix répéterait.
+- **Pas de sens au-delà du texte** : la politique n'a pas de commentaire (charh) de hadith. Une réplique de sens repose
+  sur le hadith lui-même, ou sur le tafsir d'un verset qui porte les mêmes mots (« من شر ما خلق » est 113:2).
+- **Pas dans quran-reels** : les adhkar du Coran y passent déjà (Ayat al-Kursi en série, 112-114 dans la lecture), et une
+  carte de dhikr automatique y demanderait du code nouveau pour la forme la plus faible.
+- **L'heure** : les vidéos thématiques sortent à 19:00, après le maghrib pour tout le public. Un dhikr du matin s'annonce
+  pour « بكرة الصبح », jamais pour « دلوقتي ». L'heure exacte de chaque dhikr (une divergence de fiqh) n'est pas tranchée
+  par nous : on dit les mots du hadith (« حين يصبح »، « دبر كل صلاة »).
+- **Le stock va jusqu'au 1er janvier, et rien n'est encore mesuré sur les séries** : un pilote de trois shorts, la place
+  décidée à la revue avec les chiffres, comme pour le quiz.
+
+**Les adhkar dans la politique** (vérifiés le 2026-11-17 dans hadith-api ; jugement d'al-Albani pour Tirmidhi ; aucun
+n'est encore au registre). Pour chaque lecture, l'item archive.org est indiqué ; le fichier existe, la position reste à
+trouver (skill `find-hadith-recording`).
+
+| Moment | Hadith | Le dhikr | Le récit ou la promesse (l'accroche) | Lecture |
+| --- | --- | --- | --- | --- |
+| soir | Muslim 2709 | « أعوذ بكلمات الله التامات من شر ما خلق » | un homme : un scorpion l'a piqué la nuit d'avant ; s'il l'avait dit le soir, il ne lui aurait pas nui | Muslim, livre 48 (`_49.mp3`) |
+| matin et soir | Tirmidhi 3575 (Hasan) | 112, 113 et 114, trois fois | une nuit de pluie et de grande obscurité ; « قل » trois fois, sans réponse ; « تكفيك من كل شيء » | Tirmidhi 3535-3800 ; sourates récitées par Tawfiq (58 s) |
+| matin | Muslim 2726 | « سبحان الله وبحمده عدد خلقه… », trois fois | il la quitte après la prière de l'aube, la retrouve assise au duha : quatre mots dits trois fois pèsent plus que tout ce qu'elle a dit | Muslim, livre 48 |
+| matin et soir | Tirmidhi 3388 (Hasan Sahih) | « بسم الله الذي لا يضر مع اسمه شيء… », trois fois | Aban, à demi paralysé, à l'homme qui le regarde : il ne l'avait pas dit ce jour-là, « ليمضي الله على قدره » (piège : la peur ; à raconter avec sa fin, qui rejoint le film `qadar`) | Tirmidhi 3302-3534 |
+| matin, soir, coucher | Tirmidhi 3392 (Sahih) | « اللهم عالم الغيب والشهادة… » | Abou Bakr demande ce qu'il doit dire matin et soir | Tirmidhi 3302-3534 |
+| matin et soir | Bukhari 6306 | سيد الاستغفار | dit le jour avec certitude, mort avant le soir : « من أهل الجنة » (et de même la nuit) | `bukhari_audiobook` |
+| matin et soir | Muslim 2692 (Tirmidhi 3469, Sahih) | « سبحان الله وبحمده », cent fois | personne ne viendra avec mieux, sauf qui en a dit autant ou plus | Muslim, livre 48 |
+| dans la journée | Bukhari 3293 (Muslim 2691) | la tahlila, cent fois | « حرزا من الشيطان يومه ذلك حتى يمسي » | `bukhari_audiobook` |
+| après le maghrib | Tirmidhi 3534 (Hasan Sahih) | la tahlila, dix fois | une garde contre le diable jusqu'au matin | Tirmidhi 3302-3534 |
+| soir | Muslim 2723 (Tirmidhi 3390) | « أمسينا وأمسى الملك لله… » | pas de récit | Muslim, livre 48 |
+| matin et soir | Tirmidhi 3391 (Sahih) | « اللهم بك أصبحنا… » | pas de récit | Tirmidhi 3302-3534 |
+| nuit | Bukhari 5009 (Muslim 807) | 2:285-286 | « كفتاه » | récitation de 90 s : trop longue pour un short |
+| après la prière | Muslim 595 et 597 (Bukhari 843) | 33 + 33 + 33, et la tahlila pour faire cent | les pauvres des Muhajirun : « les riches ont pris les degrés » ; puis les riches l'apprennent et le font aussi : « ذلك فضل الله يؤتيه من يشاء » (62:4, 10 s) ; 597 : « même comme l'écume de la mer » | Muslim, livre 5 (`_06.mp3`) ; `bukhari_audiobook` |
+| après la prière | Tirmidhi 3410 (Sahih) | 10 + 10 + 10, et 100 au coucher | « deux choses faciles, et peu les font » : le diable vient dire « souviens-toi de ceci » pendant la prière, et endort au coucher | Tirmidhi 3302-3534 |
+| après la prière | Bukhari 844 (Muslim 593) | « لا إله إلا الله وحده… اللهم لا مانع لما أعطيت… » | une lettre : al-Mughira la dicte à son secrétaire pour Mu'awiya | `bukhari_audiobook` |
+| après la prière | Muslim 591 | l'istighfar trois fois, « اللهم أنت السلام… » | le premier après le salam ; pas de récit | Muslim, livre 5 |
+| après la prière | Bukhari 2822 | « اللهم إني أعوذ بك من الجبن… » | Sa'd l'apprenait à ses fils « comme le maître apprend l'écriture aux enfants » | `bukhari_audiobook` |
+| après la prière | Tirmidhi 2903 (Sahih) | les mu'awwidhat | 'Uqba : « il m'a ordonné » ; pas de récit | Tirmidhi 2817-3104 |
+
+**Les formes** :
+- **A, recommandée : « un dhikr et son récit »**, des shorts d'environ 1:00 à 1:30, sans film. Chacun tient seul, et le
+  premier plan est une chose à dessiner (un scorpion, des pièces, un chapelet qui compte jusqu'à 33, l'écume filmée). Une
+  requête de voix par short.
+- **B : un film `practical`** (« أذكار الصبح والمسا… من البخاري ومسلم ») et ses shorts. Les parties restent les mêmes ; le
+  film n'ajoute qu'un enchaînement, et coûte une requête et un rendu de plus. Une compilation pour la recherche YouTube peut
+  se monter plus tard avec les shorts de A.
+- **C, déconseillée : la carte du dhikr**, pour la raison du Word of the day.
+
+**Le pilote recommandé** (trois shorts, un par moment, chacun avec son récit et sa chose à dessiner) :
+1. **Le scorpion** (le soir, Muslim 2709) : la nuit, la silhouette d'un scorpion ; 113:1-2 récités (6,6 s, les mêmes mots
+   « من شر ما خلق ») ; le sens repose sur le tafsir de 113:2 (à lire dans nos trois tafsirs).
+2. **« قل » trois fois** (matin et soir, Tirmidhi 3575) : un clip de nuit de pluie (à trouver) ; 112, 113 et 114 récitées
+   (58 s : la moitié du short).
+3. **Les riches et les pauvres** (après la prière, Muslim 595 et 597) : des pièces, puis le chapelet compté 33 · 33 · 33 ·
+   1, puis l'écume de la mer filmée ; 62:4 récité (10 s).
+
+Autre choix pour le pilote : Juwayriya (Muslim 2726) à la place du scorpion, si on veut un dhikr du matin.
+
+**Ce qu'il faut faire** : trois lectures à trouver et à couper (Muslim livres 48 et 5, Tirmidhi), à faire écouter au
+propriétaire ; les coupes de récitation de Tawfiq (112, 113, 62:4) ; deux clips à lui montrer (une nuit de pluie, la mer) ;
+les dessins (un fichier `video/src/trial/Dhikr.tsx` : scorpion, pièces, compteur) ; trois requêtes de voix (un jour) ; un
+rendu par le workflow `film`.
+
+**Décisions du propriétaire (2026-11-17, questions à choix, chaque fois la recommandation)** : **la forme A**, un dhikr et
+son récit, en shorts sans film ; **rester dans la politique** (Bukhari, Muslim, Tirmidhi jugé sahih ou hasan par
+al-Albani), sans l'élargir ; **le pilote : le scorpion, « قل » trois fois, les riches et les pauvres** ; **le nom :
+« ذكر وحكايته »**. Ensuite : le script des trois shorts (skill `write-hook`), à valider avant toute voix.
+
+**Le script pilote** (écrit par la session le 2026-11-17, à valider ; `docs/scripts/dhikr.md`, `content/trial/dhikr.yaml`,
+`aqrab`, `qul`, `dathur`) : 1:27, 2:04, 1:59 estimés. **Deux écarts à la fiche, dits avec le script** : 62:4 n'est pas
+récité dans le short 3, parce qu'al-Muyassar y lit l'envoi du Prophète ﷺ et non ce récit ; à sa place, **57:21**, « سابقوا
+إلى مغفرة… », le verset de la course, qui se ferme sur la même phrase (on ne dit pas que le Prophète ﷺ le citait : la phrase
+est aussi en 5:54 et 62:4) ; Muslim 597 (l'écume de la mer) n'y entre pas (2:20 avec lui) et reste pour un short suivant.
+Le short 1 récite 113:1-3 (la sourate continue après 113:3 ; elle est entière dans le short 2). **Préparé sans voix** :
+dix-neuf sources proposées au registre (trois hadiths, seize versets, six passages de tafsir) ; les lectures trouvées et
+coupées, entendues mot pour mot par Whisper (Muslim 2709, livre 48 : 8,9 s ; Tirmidhi 3575 : 11,3 s ; Muslim 595, livre
+5 : 23,4 s et 3,8 s), proposées ; les coupes de Tawfiq (112, 113, 114 entières, 57:21) posées à la main sur le creux du son,
+toutes entendues. La règle des fichiers comptait la formule « صلى الله عليه وسلم » d'un hadith lu comme une citation dite
+par la voix : elle l'écarte désormais comme pour un récit raconté (`tools/trial/rules.py`, test ajouté). Aucune voix avant
+son « je valide le script ».
+
+**Script validé par le propriétaire le 2026-11-17** (question à choix nommant le script envoyé, avec 57:21 dans le short
+3 ; `script_validated` des trois shorts). **Les lectures** : à juger sur les vidéos (son choix), elles restent proposées.
+Ensuite : les clips et les dessins à lui montrer (skill `new-scene`), trois requêtes de voix, le rendu.
+
+**Des récitateurs pour les adhkar ?** (sa question, 2026-11-17, avant les clips : « est-ce que tu peux chercher si tu
+trouves des récitateurs pour les adhkar ») : recherche sur archive.org le même jour. **Trouvés** : des « أذكار الصباح
+والمساء » complets (de 20 à 40 min par fichier) de Fares Abbad (dans la rotation de quran-reels), Muhammad Jibril, Idrees
+Abkar, Hani ar-Rifa'i, Maher al-Mu'aiqly, Yasser ad-Dossari, Faisal Labban, Abdulaziz bin Ibrahim, Salman al-Utaybi ; ceux
+d'Alafasy et d'al-Ghamdi aussi, écartés de la Page pour des revendications de droits. **Pas trouvés** : Tawfiq As-Sayegh,
+Omar Hisham (l'item à son nom est vide) ; **après la prière**, seulement Alafasy. **Ce qu'on en sait** : aucun ne donne de
+licence ; ce sont des albums (le fichier du soir de Fares Abbad finit sur une publicité, « الآن في الأسواق المصحف المرتل
+للقارئ فارس عباد » ; celui de Jibril sur le nom du site qui le diffuse) ; ils suivent Hisn al-Muslim, adhkar faibles
+compris (« رضيت بالله ربا » trois fois). Celui de Jibril dit « أعوذ بكلمات الله التامات من شر ما خلق » trois fois (à
+1222,8 s de `أذكار المساء.mp3`, item `adhkar-alsabah-walmasa-muhamad-jibril`, 11,9 s chaque fois) : un extrait envoyé au
+propriétaire. Dans le fichier du soir de Fares Abbad, on ne l'a pas trouvé aux endroits écoutés. **L'avis de la
+session** : le hadith reste lu par le lecteur du recueil (la réponse du Prophète ﷺ, sa promesse, que la voix ne peut pas
+dire) ; un récitateur ne pourrait qu'ajouter le dhikr seul, au short 1 seulement (le short 2 a déjà Tawfiq, le short 3
+n'a rien hors d'Alafasy), pour 12 s, avec un outil à étendre (une partie jouée depuis un autre fichier que la lecture du
+hadith) et un risque de droits jamais vérifié sur un album.
+
+**Son choix (2026-11-17, question à choix)** : « 2 et chercher ailleurs » : **essayer Jibril au short 1**, et chercher
+d'autres sources. **Ailleurs, rien de mieux** : aucun enregistrement d'adhkar de Tawfiq As-Sayegh ; ceux d'Omar Hisham
+sont des disques du commerce (« Evening Adhkar » 2022, « Morning Dua and Remembrance » 2021 sur Apple Music : très
+probablement inscrits à Content ID et Rights Manager) ; Makkah Live propose les mêmes Fares Abbad et Jibril, « pour un
+usage personnel » ; Hisn al-Muslim lu par un présentateur (Hamad ad-Duraihem) dans des applications, sans licence
+trouvée. **Fait** : une partie d'un hadith peut nommer sa propre voix et son propre fichier (`schemas/source.schema.json`,
+`scripts/validate.py`, deux tests) ; Muslim 2709a a une partie `dhikr`, dite par Jibril (11,9 s, entendue mot pour mot) ;
+le short 1 la joue après la réponse du Prophète ﷺ, annoncée par une réplique nouvelle (« والذكر نفسه… بصوت الشيخ محمد
+جبريل: »), **validée par lui le même jour** (question à choix qui la citait) ; il passe à 1:43. **Les droits** : sa première publication sur Facebook seul, avec la vérification
+de Meta, avant Instagram et TikTok ; sur YouTube, à la main, Content ID à regarder.
+
+**Clips, dessins, brouillons muets (2026-11-17)** : clips choisis par lui parmi ceux qu'il a déjà approuvés (questions à
+choix, chaque fois la recommandation) : 8451 (un coucher qui devient nuit) pour le scorpion, 16495 (un ciel d'orage
+sombre) pour « قل », 30218 (une aube en accéléré) pour les riches et les pauvres ; ambiances proposées parmi les trois
+validées à l'écoute (grillons le soir ; vent dans un arbre). Dessins : `video/src/trial/Dhikr.tsx`. Brouillons muets
+rendus par le workflow `film` (run 44176305883, voix X, avec leurs versions TikTok et couvertures) : 1:46, 2:06, 2:02 ;
+format et volume conformes (−16,1 à −16,4 LUFS), envoyés. Deux répliques du short 1 retouchées après les planches,
+mots inchangés (la ligne du sens, six morceaux, s'écrivait un mot par ligne ; l'annonce du short suivant, trop longue,
+coupée en deux), à confirmer par lui ; le compteur 33 se lit de droite à gauche. La voix : trois requêtes le 19 novembre.
+
+**Le short 1 refait à sa demande (2026-11-17, sur le brouillon muet)** : « pas besoin de laisser le hadith récité ; la
+voix dit ce que le Prophète ﷺ a dit, le sens sans le hadith, puis le dhikr par la voix de Jibril ; les exemples à recréer
+dans nos jours, on n'a pas peur des scorpions ». Fait : la lecture de la réponse (partie `answer`) n'est plus jouée ; la
+narration la dit **au discours indirect** (« قاله إنه لو كان قال كلمات معيّنة… ما كانتش ضرّته »), jamais comme une
+citation : c'est la première fois qu'une réplique de la voix rapporte une parole du Prophète ﷺ, même par le sens (la
+règle du skill `write-hook` disait « jamais »), point dit au propriétaire ; le dhikr n'est entendu que dans la voix de
+Jibril. L'exemple : la route de nuit (scène `drive`, des phares), les enfants endormis, la porte qu'on ferme et ce qu'on
+« استودع » à Allah. Ses images (images fixes sur la nuit générée) envoyées. Puis, à sa demande, la réplique « والليل
+بالذات… » retirée et la réponse dite plus court (« والنبي صلى الله عليه وسلم دلّه على كلمات… لو قالها لما المسا دخل، ما
+كانتش ضرّته. », « اسمعها بصوت الشيخ محمد جبريل: » : sa version A) : **le short 1 refait validé par lui le 2026-11-17**
+(1:33). Les images des trois shorts sont bonnes pour lui (« oui, voix le 19 »).
+
+**L'affiche « الأذكار بعد الصلاة المفروضة » (envoyée par lui, 2026-11-17) et la suite** : comparée à la politique,
+presque tout y est (Muslim 591, 593-594, 595, 597 ; Bukhari 844 ; Tirmidhi 2903 pour الفلق et الناس, 3534 pour les dix
+tahlilas après le maghrib) ; hors de nos sources : les dix après le fajr (Tirmidhi 3474, da'if selon al-Albani), Ayat
+al-Kursi après la prière (as-Sunan al-Kubra, absente de hadith-api), al-Ikhlas après chaque prière (Tirmidhi 2903 dit
+« المعوذتين ») ; les trois sourates trois fois sont « حين تمسي وتصبح » (Tirmidhi 3575). **Sa condition** : « si on
+trouve le son de Jibril et que ça passe avec Meta, on continue, sinon ça ne sert à rien : dire le hadith n'attire pas ».
+**Recherche** : Jibril n'a pas enregistré les adhkar d'après la prière (archive.org, web, Makkah Live) ; seul Alafasy
+(écarté) ; la suite d'après la prière avec un récitateur n'est donc pas possible. Possible : les adhkar du matin et du
+soir de son album qui ont un récit (Juwayriya, سيد الاستغفار, Aban, Abou Bakr ; leurs places dans ses fichiers restent à
+trouver). **Ses choix (questions à choix)** : **garder le short 3 tel quel et mesurer** (short 1 avec Jibril, short 3 avec
+la lecture du recueil : la comparaison dira si la lecture retient moins) ; **le test des droits** : le short 1 publié
+d'abord **sur Facebook seul**, 48 h à surveiller les revendications (le contrôle de Meta avant publication n'a vu aucune
+des trois revendications passées), puis Instagram et TikTok ; la série ne continue avec Jibril que si c'est propre.
+
+**Adhkar à lire, sans voix, à enregistrer (son idée, 2026-11-17)** : « un montage animé sans voix, on laisse les gens lire
+les adhkar du matin, du soir et d'après la prière, et on dit : save it ». L'avis de la session : oui, un format à part,
+mesuré sur les enregistrements (Word of the day, un texte à lire, n'avait pas pris : la différence doit venir du format
+vidéo). Ses choix : les trois d'un coup ; une ambiance douce et Tawfiq pour les sourates ; **script validé par lui**
+(`docs/scripts/adhkar-cards.md` : les adhkar de la politique seulement, chacun avec sa référence et son nombre) ; le titre
+seul sur la couverture ; les clips 7215 (après la prière), 2119 (matin), 190332 (soir). Fait : un segment `card:` (un
+dhikr du registre à l'écran le temps de le lire, sans son ; une partie du registre peut n'avoir aucun enregistrement),
+seize hadiths au registre (proposés) et leurs extraits découpés par programme ; `content/trial/adhkar.yaml` (`salat`,
+`sabah`, `masaa`) : 2:13, 2:26, 2:42. Deux cartes changées en les écrivant : « أستغفر الله » est l'explication d'al-Awza'i
+(hors des paroles du Prophète ﷺ dans Muslim 591) : notre étiquette « وقبلها: استغفر 3 مرات » ; Tirmidhi 2903 est la parole
+de 'Uqba : une ligne à nous avec sa référence annonce الفلق et الناس.
+Rendu sans voix par le workflow `film` (run 44192660389, avec les versions TikTok et les couvertures) : 2:13, 2:27, 2:43 ;
+format et volume conformes (−16,5 à −16,7 LUFS), cartes lisibles sur les clips, aucune ambiance sous Tawfiq ; envoyés le
+2026-11-17. À regarder : la lune du clip 7215 passe derrière le texte de quelques cartes (lisible, moins net) ; la
+traduction de سيد الاستغفار (Bukhari 6306, Muhsin Khan) n'est qu'une translittération.
+**Les trois vidéos validées par lui le 2026-11-17** (« je valide les trois » : cartes, nombres, clips, ambiances,
+couvertures, et les seize hadiths du registre) ; restent les textes à coller et leur place au calendrier.
+**Ensuite (2026-11-17, questions à choix)** : les accroches des légendes courtes validées par lui ; la vidéo du soir avec
+**al-Baqara récitée** (2:285-286, Bukhari 5009 ; sa demande) sous 3 min : الإخلاص والفلق والناس sur la carte « 3 مرات »
+sans récitation (elles le sont le matin), des passages plus courts et des cartes un peu plus rapides (`pace` du fichier) :
+2:55 ; à rendre et à lui montrer. **La publication le dimanche** (sa proposition retenue d'abord) : quran-reels ne publie
+les vidéos thématiques que du lundi au samedi (la tâche planifiée qui lance `themes.yml`) ; **sa décision : on décide plus
+tard**, rien n'est au calendrier. **PR et fusion** demandées par lui, pour que tout arrive sur `main`.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :

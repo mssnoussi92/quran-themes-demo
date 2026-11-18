@@ -259,6 +259,28 @@ def test_the_voice_tells_a_report_and_never_reads_it(copy):
     assert ("hadith.muslim.863a" in said or "hadith.bukhari.936" in said) and line in done.stdout
 
 
+def test_a_hadith_read_keeps_its_words_and_not_the_blessing(copy):
+    """The words of a hadith read by a real voice are never said by the synthetic one; the blessing after the
+    Prophet's name ﷺ, in every line and in the hadith's words too, is not a quotation of it (as for a report told).
+    The card of Muslim 2664 is made to show its whole text, chain and blessing included; no text is typed here."""
+    path = copy.root / "content" / "sources" / "hadith.yaml"
+    entries = yaml.safe_load(path.read_text(encoding="utf-8"))
+    entry = next(e for e in entries if e["id"] == "hadith.muslim.2664")
+    assert "صلى الله عليه وسلم" in entry["text_ar"]
+    entry["excerpt_ar"] = entry["text_ar"]
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    line = next(l["ar"] for s in copy.load("content/trial/law.yaml")["segments"] for l in s.get("lines") or []
+                if "صلى الله عليه وسلم" in l["ar"])
+    done = copy.rules("--film", "qadar", "--draft")
+    assert "the synthetic voice says" not in done.stdout, done.stdout[-2500:]     # the blessing alone: accepted
+    assert line in (copy.root / "content" / "trial" / "law.yaml").read_text(encoding="utf-8")
+    words = [w for w in entry["text_ar"].rsplit("وسلم", 1)[1].split() if re.search("[\u0621-\u064a]", w)][:5]
+    copy.change_line("law", "turn", 0, lambda old: old + " " + " ".join(words))
+    done = copy.rules("--film", "qadar", "--draft")
+    refused(done, "the synthetic voice says")
+    assert "hadith.muslim.2664" in done.stdout
+
+
 def test_a_passage_is_verses_that_follow_one_another_with_cuts_that_touch(copy):
     spec = copy.load("content/trial/duha.yaml")
     first = next(s for s in spec["segments"] if "verses" in s)
@@ -581,6 +603,39 @@ def test_a_part_takes_reader_and_file_from_the_recording(copy):
         assert view["recording"][key] == entry["recording"][key]
     assert view["recording"]["start"] == entry["parts"]["second"]["recording"]["start"]
     assert script.part_view(entry, "nope") is None and "parts" not in view
+
+
+def test_a_part_said_by_another_voice_has_its_own_file(copy):
+    """A part may name its own reader, item, file and license (a dhikr said by a reciter, after the hadith read by the
+    collection's reader): its times are in its own file, not inside the entry's recording, and it is played from there."""
+    own = {"reader": "Another voice", "item": "https://archive.org/details/another-item",
+           "file": "https://archive.org/download/another-item/another.mp3", "license": "none stated on the archive.org item"}
+    add_part(copy, short=None, recording={"start": 5000.0, "end": 5010.0, "status": "proposed", **own})
+    checked = validate(copy)
+    assert checked.returncode == 0 and " 0 error(s)" in checked.stdout, checked.stdout[-2500:]
+    entry = next(e for e in copy.load("content/sources/hadith.yaml") if e["id"] == PART_SID)
+    view = tool("script").part_view(entry, "second")
+    assert {k: view["recording"][k] for k in own} == own and view["recording"]["start"] == 5000.0
+
+
+def test_a_part_naming_a_file_names_its_reader_too(copy):
+    add_part(copy, short=None, recording={"start": 1.0, "end": 2.0, "status": "proposed",
+                                          "file": "https://archive.org/download/another-item/another.mp3"})
+    checked = validate(copy)
+    assert checked.returncode == 1 and "schema" in checked.stdout, checked.stdout[-2500:]
+
+
+def test_a_card_shows_a_hadith_of_the_policy_and_needs_no_recording(copy):
+    """A `card:` (a dhikr to read, adhkar to save) shows the words of a hadith and no voice reads them: no recording is
+    needed (the real files pass, `test_the_real_repository_has_no_error`), but the hadith must be one of the policy."""
+    assert copy.rules("--film", "adhkar").returncode == 0
+    path = copy.root / "content" / "sources" / "hadith.yaml"
+    entries = yaml.safe_load(path.read_text(encoding="utf-8"))
+    entry = next(e for e in entries if e["id"] == "hadith.muslim.591")
+    assert "recording" not in entry and "recording" not in entry["parts"]["salam"]
+    entry["ref"]["collection"] = "wahidi"
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    refused(copy.rules("--film", "adhkar"), "hadith.muslim.591")
 
 
 def test_the_film_reads_no_silent_line_in_a_short_s_voice_text():
