@@ -13,7 +13,7 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 # الإخلاص والفلق والناس sur la carte « 3 مرات » sans récitation (elles le sont le matin), des passages plus courts et des
 # cartes un peu plus rapides (`pace`). La vidéo refaite (2:55, le signe de pause de 2:286 hors de la référence : PR #50)
 # validée par lui le 2026-11-18 (question à choix : « Je valide la vidéo du soir »).
-validated: { by: mssnoussi92, on: 2026-11-18, what: [montage, cover, ambience] }
+validated: { by: mssnoussi92, on: 2026-11-18, what: [montage, cover, ambience, publish] }   # ses textes YouTube aussi, le même jour
 pace: { gap: 0.15, card_lead: 1.0, card_word: 0.36 }
 handle: "@quran_words_daily"
 voices: { X: "no voice: the adhkar are written to be read" }
