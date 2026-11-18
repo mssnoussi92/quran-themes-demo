@@ -181,10 +181,18 @@ def cards(platform: str, title: str, description: str, credits: str, tags: str, 
             f"**{platform} · Hashtags ({len(tags.split())})**", "", block(tags)]
 
 
-def hooked(conf: dict, hook: dict) -> str:
+def hooked(conf: dict, hook: dict, voiced: bool = True) -> str:
     """The description of a short caption (Facebook, Instagram, TikTok): the hook in Egyptian Arabic and in English,
-    then the line of the AI voice (owner, 2026-11-15)."""
-    return hook["ar"] + "\n" + hook["en"] + "\n\n" + conf["lines"]["ai_voice"]
+    then the line of the AI voice (owner, 2026-11-15). A short no voice says (adhkar to read: every narration
+    `silent`) has no AI voice to declare: the line would be false."""
+    return hook["ar"] + "\n" + hook["en"] + ("\n\n" + conf["lines"]["ai_voice"] if voiced else "")
+
+
+def voiced(spec: dict) -> bool:
+    """Whether the synthetic voice says something in a short: a narration that is not `silent` (written on screen
+    only). The same test as tools/trial/rules.py, which asks a voice text of such a short only."""
+    segments = (spec.get("segments") or []) + [s for c in spec.get("chapters") or [] for s in c.get("segments") or []]
+    return any("narration" in s and not s.get("silent") for s in segments)
 
 
 def hooks_state(specs: list[dict]) -> str:
@@ -192,10 +200,11 @@ def hooks_state(specs: list[dict]) -> str:
     hooks = [(s.get("publish") or {}).get("hook") for s in specs]
     if not any(hooks):
         return ""
+    ai = " et voix IA" if any(voiced(s) for s in specs) else ""
     if all(h and h.get("validated") for h in hooks):
-        return (" Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **validées par "
+        return (f" Légendes courtes de Facebook, Instagram et TikTok (titre, accroche{ai}, hashtags) **validées par "
                 f"le propriétaire le {max(str(h['validated']) for h in hooks)}**.")
-    return (" Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **proposées par la "
+    return (f" Légendes courtes de Facebook, Instagram et TikTok (titre, accroche{ai}, hashtags) **proposées par la "
             "session, pas encore validées par le propriétaire** : rien n'est publié avec elles avant.")
 
 
@@ -289,7 +298,8 @@ def main() -> None:
         f"# {pub['series']['en']} · {pub['series']['ar']} : textes de publication",
         "",
         (f"Pour {'chaque short' if series_only else 'le film et chaque short'}, les textes à copier : sur Facebook, Instagram et TikTok, "
-         "la légende courte en trois textes, le titre, l'accroche avec la ligne de la voix IA, les hashtags ; sur YouTube, quatre textes, le titre, "
+         "la légende courte en trois textes, le titre, l'accroche " + ("avec la ligne de la voix IA" if any(voiced(s) for s in shorts) else "(pas de voix, pas de ligne de la voix IA)")
+         + ", les hashtags ; sur YouTube, quatre textes, le titre, "
          f"la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags, collés dans la même description. {status} ; "
          if short_captions else
          f"Pour {'chaque short' if series_only else 'le film et chaque short'}, sur chaque plateforme, quatre textes à copier : le titre, la description, "
@@ -400,11 +410,11 @@ def main() -> None:
 
         def social(handle: str, platform: str) -> list[str]:
             if hook:
-                return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading, hooked(conf, hook), "", tags(platform))
+                return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading, hooked(conf, hook, voiced(spec)), "", tags(platform))
             return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading, description(handle), credits, tags(platform))
 
         # The cards end up in one caption: its length is theirs together.
-        insta = ("\n\n".join([heading, hooked(conf, hook), tags("instagram")]) if hook else
+        insta = ("\n\n".join([heading, hooked(conf, hook, voiced(spec)), tags("instagram")]) if hook else
                  "\n\n".join([heading, description(conf["handle"]), credits, tags("instagram")]))
         if len(insta) > limits["instagram_tiktok"]["max_caption"]:
             sys.exit(f"error: {name}: the Instagram caption is {len(insta)} characters")
