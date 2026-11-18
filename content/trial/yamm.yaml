@@ -8,12 +8,15 @@ id: yamm
 # et leurs répliques, choix et dessins ; « le verset entier » pour celui-ci) : inscrit sur sa parole. Ni la voix, ni les
 # images, ni les textes à coller.
 script_validated: { by: mssnoussi92, on: 2026-11-18 }
+# « Je valide les 7 clips et dessins » du propriétaire (2026-11-18, question à choix nommant les brouillons muets
+# du workflow `film`, run 44391880850) : le montage, les dessins et le clip tels que rendus. La voix, la couverture
+# et l'ambiance sous la voix restent à valider sur la vidéo finale. Inscrit sur sa parole.
 handle: "@ma3ak.5.thawani"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 101-trial-yamm
 # un fleuve entre deux parois de roche, vu d'en haut (Pixabay 225408, AttilaPergel, approuvé pour l'argent refusé de
-# Dhul-Qarnayn) : un fleuve, pas la mer (la mer de 22183, du premier brouillon, disait le mauvais choix) ; PROPOSÉ pour
-# ce short, à montrer au propriétaire sur le brouillon muet
+# Dhul-Qarnayn) : un fleuve, pas la mer (la mer de 22183, du premier brouillon, disait le mauvais choix) ; APPROUVÉ pour
+# ce short par le propriétaire le 2026-11-18 (« je valide les 7 clips et dessins »)
 clip: { source: pixabay, id: 225408, author: AttilaPergel, page: "https://pixabay.com/videos/id-225408/", take: { height: 1440 }, rate: 1, position: "50% 40%", shift: 0, brightness: 0.7, ground: "#06070c", horizon: 1380, veil: 0.8 }
 ambience: { source: bigsoundbank, id: "1448", title: "Small waves and beach #2", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/detail-1448-small-waves-and-beach-2.html", from: 100, seconds: 70, level: -38 }
 cover: { scene: ask, title: "«اليمّ»… يعني إيه؟", tag: "معاك 5 ثواني", focus: 1000 }
