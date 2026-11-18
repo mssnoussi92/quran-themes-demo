@@ -23,7 +23,7 @@ text: 89-trial-dabba
 # arcs dessinés ; APPROUVÉ pour ce short par le propriétaire le 2026-11-17 (« je valide rendu et clip »)
 clip: { source: pixabay, id: 8451, author: Felix-Mittermeier, page: "https://pixabay.com/videos/id-8451/", take: { slow: 7, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.7, ground: "#06050c", horizon: 1380, veil: 0.8 }
 ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 60, level: -38 }
-cover: { scene: ask, title: "«دابة الأرض» في سورة سبأ؟", tag: "معاك 5 ثواني · 4", focus: 1000 }
+cover: { scene: ask, title: "«دابة الأرض» في سورة سبأ؟", tag: "معاك 5 ثواني", focus: 1000 }
 quiz:
   head: { verse: quran.34.14, from: 10, to: 11 }      # « دَآبَّةُ ٱلْأَرْضِ », écrit en or au-dessus de la question
   choices:
