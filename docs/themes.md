@@ -1197,6 +1197,16 @@ sans récitation (elles le sont le matin), des passages plus courts et des carte
 2:55 ; à rendre et à lui montrer. **La publication le dimanche** (sa proposition retenue d'abord) : quran-reels ne publie
 les vidéos thématiques que du lundi au samedi (la tâche planifiée qui lance `themes.yml`) ; **sa décision : on décide plus
 tard**, rien n'est au calendrier. **PR et fusion** demandées par lui, pour que tout arrive sur `main`.
+**La vidéo du soir refaite** (PR #49 et #50, 2026-11-18) : 2:55 (175,3 s, −16,2 LUFS), al-Baqara récitée par Tawfiq
+As-Sayegh de 1:21 à 2:50, l'ambiance muette dessous (−91 dB sur sa piste) ; au premier rendu, le « ۚ » de « وُسْعَهَا »
+(2:286) entrait dans la référence écrite au-dessus du verset (Amiri Quran dessine un signe de pause haut au-dessus de sa
+ligne) : `verseGap` 72 pour `masaa` (PR #50), rien d'autre ne bouge ; le même heurt peut exister dans d'autres shorts quand
+la première ligne d'un verset porte un signe de pause. **Validée par lui le 2026-11-18** (question à choix : « Je valide
+la vidéo du soir »). Textes : `docs/retention/publication-adhkar.md` ; la ligne « 🎙️ AI-generated voice » n'y est plus
+(ces vidéos n'ont pas de voix ; `publish.py` ne la met que sous un short où la voix parle) ; les descriptions disent
+« من أحاديث صحيحة وحسنة » (Tirmidhi 3534, 3388 et 3575 sont hasan). **Titres et descriptions YouTube validés par lui le
+2026-11-18** (« Je valide les textes YouTube ») ; fichiers publics par `page-files` (`page-adhkar`). Reste leur date au
+calendrier (sa décision : plus tard).
 
 ## Faits (ancien circuit)
 
