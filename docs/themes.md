@@ -1525,3 +1525,6 @@ sources au registre. Voix : quatre requêtes, une journée. Rendu : le workflow 
   rendus après ses corrections (voix, montage, couvertures, ambiance ; `video/out/sahw/ci-2/` de la session, release brouillon
   `sahw-candidate`), la lecture de Muslim 572a, et leurs vingt sources passées à `validated`. Restent : `shakk` (sa voix le
   2026-11-18), les textes de publication et les accroches, la date au calendrier.
+
+- **Sur `main`** (PR #52, fusionnée le 2026-11-18) ; **fichiers publics** `page-sahw` (workflow `page-files`) : les quatre shorts,
+  leurs versions TikTok et leurs couvertures, ceux que quran-reels publie du 4 au 7 janvier.
