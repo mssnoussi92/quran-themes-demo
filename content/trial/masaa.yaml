@@ -11,7 +11,9 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 # Puis sa demande (2026-11-17, sur la vidéo validée) : réciter les deux derniers versets d'al-Baqara (Bukhari 5009) et
 # rester sous 3 min (la limite d'Instagram) en raccourcissant le passage entre les adhkar ; son choix : al-Baqara récitée,
 # الإخلاص والفلق والناس sur la carte « 3 مرات » sans récitation (elles le sont le matin), des passages plus courts et des
-# cartes un peu plus rapides (`pace`). La vidéo refaite attend son regard (la validation d'avant portait sur l'ancienne).
+# cartes un peu plus rapides (`pace`). La vidéo refaite (2:55, le signe de pause de 2:286 hors de la référence : PR #50)
+# validée par lui le 2026-11-18 (question à choix : « Je valide la vidéo du soir »).
+validated: { by: mssnoussi92, on: 2026-11-18, what: [montage, cover, ambience] }
 pace: { gap: 0.15, card_lead: 1.0, card_word: 0.36 }
 handle: "@quran_words_daily"
 voices: { X: "no voice: the adhkar are written to be read" }
