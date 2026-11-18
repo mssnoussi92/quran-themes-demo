@@ -611,3 +611,6 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 - **Fusion avec `main`** (le quiz et le film « مخيّر ولا مسيّر؟ » d'une autre session) : la règle « 1 2 3 » vaut désormais
   partout, l'option `digits: latin` de cette série ne change plus rien ; le registre reconstruit depuis `main` avec les
   entrées de cette branche.
+- **Sa page** (« Films et shorts à publier », son accord du 2026-11-18) : le quiz ajouté, ses six shorts. Sans retélécharger
+  les films déjà en ligne : pour eux, des vidéos-témoins de la bonne durée (lue dans leurs textes) et des images-témoins ;
+  `gallery.py` refait la page, et seuls `index.html` et les douze médias du quiz sont envoyés (les 92 autres restent).
