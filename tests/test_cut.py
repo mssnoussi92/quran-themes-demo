@@ -96,3 +96,22 @@ def test_videos_only_cut_lists_the_short_versions_alone(tmp_path, monkeypatch):
     monkeypatch.setattr(videos, "TRIAL", tmp_path)
     rows, stills = videos.listing("f", "D", "cut")
     assert [r["name"] for r in rows] == ["f-short-1-a-cut"] and stills == []
+
+
+def test_a_page_of_elsewhere_lists_its_shorts_signed_with_its_name_and_their_covers(tmp_path, monkeypatch):
+    """2026-11-18 (owner's choice): the test page on Meta gets quizzes 4 to 6, signed with its name; never in `all`."""
+    for name, part in (("a", 1), ("b", 2), ("c", 3)):
+        (tmp_path / f"{name}.yaml").write_text(yaml.safe_dump({"id": name, "publish": {"part": part}}), encoding="utf-8")
+    (tmp_path / "f.yaml").write_text(yaml.safe_dump({"id": "f", "shorts": ["a", "b", "c"],
+                                                     "elsewhere": {"page": ["b", "c"]}}), encoding="utf-8")
+    monkeypatch.setattr(videos, "TRIAL", tmp_path)
+    rows, stills = videos.listing("f", "D", "page")
+    assert [r["name"] for r in rows] == ["f-short-2-b-page", "f-short-3-c-page"]
+    assert all('"platform":"page"' in r["props"] and r["composition"] == "Trial916" for r in rows)
+    assert [s["name"] for s in stills] == ["f-short-2-b-page-cover.jpg", "f-short-3-c-page-cover.jpg"]
+    assert all('"platform":"page"' in s["props"] for s in stills)
+    assert not any(r["name"].endswith("-page") for r in videos.listing("f", "D", "all")[0])
+    (tmp_path / "f.yaml").write_text(yaml.safe_dump({"id": "f", "shorts": ["a"], "elsewhere": {"page": ["z"]}}),
+                                     encoding="utf-8")
+    with pytest.raises(SystemExit, match="not among the shorts"):
+        videos.listing("f", "D", "page")

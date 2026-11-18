@@ -15,6 +15,11 @@ handle: "@quran_words_daily"
 # (<video>-tiktok.mp4, workflow render), and its TikTok caption ends with it.
 handles:
   tiktok: "@quran.words.daily"
+  # The test page on Meta (Facebook and Instagram), « معاك 5 ثواني » (owner's choice, 2026-11-18: does a page of one
+  # kind of video do better there than the Page that mixes them?). The quizzes it publishes (`elsewhere` of
+  # content/trial/quiz.yaml) are rendered a second time signed with its name, so that nothing in them looks like a
+  # video taken from another account (docs/insights.md of quran-reels, « Essai d'une deuxième page Meta »).
+  ma3ak: "@ma3ak.5.thawani"
 
 hashtags:
   # Order: brand, broad[0], the episode's first tag, broad[1:], the episode's other tags, the
