@@ -726,3 +726,6 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 - **Validés le même jour** : le nom « الصاحب ساحب » et les trois scripts (`docs/scripts/sahib.md`), `yuhibb` fini sur
   le fragment de 59:9 (« ويؤثرون… »), que la session jugeait nécessaire : sans lui, ce short, le plus doux des trois, n'a
   pas de chute.
+- **Puis, le même jour** : les neuf sources au registre (proposées), les trois lectures trouvées dans `bukhari_audiobook`
+  et coupées sur les paroles du Prophète ﷺ, les images de style (`video/src/trial/Sahib.tsx`, `SahibStyle`). **Validés par
+  lui** (questions à choix) : le style, et les trois lectures.
