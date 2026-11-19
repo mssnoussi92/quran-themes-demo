@@ -16,7 +16,7 @@ text: 99-trial-khashi
 # la pièce de prière générée de « إزاي أعملها؟ » (la fenêtre, le rayon, le tapis) ; APPROUVÉ pour ce short par le propriétaire le 2026-11-18 (« je valide les 7 clips et dessins »)
 clip: { source: generated, kind: room, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#120f18", horizon: 1300, veil: 0.6 }
 ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 60, level: -38 }
-cover: { scene: ask, title: "«واستعينوا بالصبر والصلاة»… كمّلها؟", tag: "معاك 5 ثواني", focus: 1000 }
+cover: { scene: ask, title: "«واستعينوا بالصبر والصلاة»…\nكمّلها؟", tag: "معاك 5 ثواني", focus: 1000 }
 quiz:
   head: { verse: quran.2.45, from: 1, to: 3 }         # « وَٱسْتَعِينُوا۟ بِٱلصَّبْرِ وَٱلصَّلَوٰةِ », puis la suite en blanc
   blank: { verse: quran.2.45, from: 4, to: -1 }       # ce qui remplit le blanc à la réponse : la bonne suite seulement

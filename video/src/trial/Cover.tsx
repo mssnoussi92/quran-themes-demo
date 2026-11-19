@@ -62,7 +62,10 @@ export const TrialCover: React.FC<CoverProps> = ({ data, cast, platform }) => {
   const handle = platform ? data.handles?.[platform] : data.handle;
   if (!handle) throw new Error(`no handle for the platform « ${platform} » (content/publish.yaml, handles)`);
   const { scene, title, tag } = data.cover;
-  const size = Math.round(Math.min(190, (W - 120) / (title.length * 0.43)));
+  // A title may be cut in two lines by « \n » (the long quote of quiz 11 was half the size of the others): its size
+  // is that of its longest line. A title without one is sized as before.
+  const longest = Math.max(...title.split("\n").map((line) => line.length));
+  const size = Math.round(Math.min(190, (W - 120) / (longest * 0.43)));
   const veil = data.picture?.veil ?? 1;      // a picture in full daylight keeps a day sky behind its title
   return (
     <AbsoluteFill style={{ background: "#04070f" }}>
@@ -70,7 +73,7 @@ export const TrialCover: React.FC<CoverProps> = ({ data, cast, platform }) => {
       <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(4,7,20,${0.82 * veil}) 0%, rgba(4,7,20,${0.62 * veil}) 34%, rgba(4,7,20,.06) 56%, rgba(4,7,20,.45) 100%)` }} />
       <div style={{ position: "absolute", top: 450, left: 50, right: 50, textAlign: "center" }}>
         <Tag text={tag} size={50} />
-        <div dir="rtl" lang="ar" style={{ marginTop: 26, fontFamily: FONT.arabic, fontWeight: 700, fontSize: size, lineHeight: 1.35, color: "#fff", textShadow: INK_SHADOW, textWrap: "balance" }}>
+        <div dir="rtl" lang="ar" style={{ marginTop: 26, fontFamily: FONT.arabic, fontWeight: 700, fontSize: size, lineHeight: 1.35, color: "#fff", textShadow: INK_SHADOW, textWrap: "balance", whiteSpace: "pre-line" }}>
           {title}
         </div>
       </div>
