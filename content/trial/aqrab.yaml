@@ -24,6 +24,7 @@ id: aqrab
 # docs/scripts/dhikr.md, avec 57:21 dans le short 3) : les répliques, la place des versets et des lectures. Ni la voix, ni
 # les images, ni les lectures (à juger sur les vidéos, son choix du même jour), ni les textes à coller. Inscrit sur sa parole.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
+validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, ambience] }   # « Je valide les trois » (question à choix, après la voix)
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 92-trial-aqrab

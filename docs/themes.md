@@ -1162,6 +1162,15 @@ Jibril. L'exemple : la route de nuit (scène `drive`, des phares), les enfants e
 بالذات… » retirée et la réponse dite plus court (« والنبي صلى الله عليه وسلم دلّه على كلمات… لو قالها لما المسا دخل، ما
 كانتش ضرّته. », « اسمعها بصوت الشيخ محمد جبريل: » : sa version A) : **le short 1 refait validé par lui le 2026-11-17**
 (1:33). Les images des trois shorts sont bonnes pour lui (« oui, voix le 19 »).
+**La voix (2026-11-19)** : trois requêtes (run 44484641328 de `voice-test`), un premier run annulé par celui d'une autre
+session (la prise d'aqrab, faite, perdue : `cancel-in-progress` de `voice-test`, passé à `false` le même jour à sa
+demande) ; chaque phrase retrouvée dans sa prise, aucune manquante (à écouter : « بتستودعه ربنا » et « ما تحتاجش فلوس »,
+Whisper les entend mal). Rendus (workflow `film`, release brouillon `dhikr-candidate`) : 1:30, 2:02, 1:58, −16 LUFS ; deux
+défauts vus sur les planches et corrigés avant l'envoi : dans qul, la quatrième ligne de « زي مفاتيح… » touchait l'anneau
+des clés (les clés descendues de 70 px), dans dathur le « ۚ » de 57:21 écrivait « سوجة » dans la référence (`verseGap` 72).
+**Les trois shorts validés par lui le 2026-11-19** (« Je valide les trois » : voix, montage, dessins, couvertures,
+ambiances). Restent : les textes à coller (accroches et titres à valider), la date, et le short 1 d'abord sur Facebook seul
+(le test des droits de la lecture de Jibril).
 
 **L'affiche « الأذكار بعد الصلاة المفروضة » (envoyée par lui, 2026-11-17) et la suite** : comparée à la politique,
 presque tout y est (Muslim 591, 593-594, 595, 597 ; Bukhari 844 ; Tirmidhi 2903 pour الفلق et الناس, 3534 pour les dix

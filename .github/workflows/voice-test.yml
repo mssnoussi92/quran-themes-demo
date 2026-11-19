@@ -36,9 +36,13 @@ on:
 permissions:
   contents: write
 
+# One run at a time, the next one waiting for its turn: every request counts (10 a day, shared by every session).
+# With cancel-in-progress a dispatch from another session killed a run in the middle of its requests, the requests already
+# spent lost (2026-11-19: the take of aqrab, 59.6 s, made then cancelled). GitHub keeps one waiting run per group:
+# a third dispatch replaces the waiting one, never the one running.
 concurrency:
   group: voice-test
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   plan:
