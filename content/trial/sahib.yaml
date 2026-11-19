@@ -1,0 +1,20 @@
+# La série « الصاحب ساحب » (2026-11-19 : née de trois shorts de bonshommes de la chaîne « STICK TO IT » que le propriétaire a
+# fait analyser, reference/stickman-shorts-analysis.md). Ses décisions du même jour (questions à choix, chaque fois la
+# recommandation de la session ; fiche dans docs/themes.md, script dans docs/scripts/sahib.md) : trois shorts sur les hadiths
+# de la fraternité, sans narration (aucune voix de synthèse), un décor dessiné à part (video/src/trial/Sahib.tsx), des
+# visages simples (sa règle du même jour), le nom « الصاحب ساحب » ; chaque verset récité en entier (sa règle du même jour).
+# Chaque short : trois moments joués deux fois, sans un mot (`pause`), l'ami gris qui fait mal puis l'ami blanc qui fait
+# bien, une étiquette en haut (dessinée) · une ligne de fin · le hadith lu par une vraie voix · le verset récité · son sens
+# en une ligne, d'après al-Muyassar · l'appel au partage.
+# - Rien de l'invisible n'est dessiné (43:67 parle du Jour dernier : le texte et la récitation seulement).
+# - Personne d'un hadith n'est dessiné : le porteur de musc et le forgeron ne sont que les compagnons d'une scène type.
+id: sahib
+files: sahib                     # début du nom des vidéos livrées : sahib-short-<n>-<id>.mp4
+title: { ar: "الصاحب ساحب", en: "Your Friend Pulls You" }
+shorts: [jalis, yuhibb, nasr]
+handle: "@quran_words_daily"
+publish:
+  out: docs/retention/publication-sahib.md
+  series: { en: "Your Friend Pulls You", ar: "الصاحب ساحب" }
+  hashtags: ["#الصاحب_ساحب", "#الصحبة"]      # proposés par la session, à valider avec les textes
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }

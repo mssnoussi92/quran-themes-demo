@@ -1,0 +1,71 @@
+# « الصاحب ساحب » (content/trial/sahib.yaml), short 3 : انصره ظالمًا. Bukhari 2444 (« انصر أخاك ظالمًا أو مظلومًا… تأخذ فوق
+# يديه »), lu par Abu Malik al-Asqalani ; 9:71 récité en entier (à la place de 5:2, 67 s : sa règle du 2026-11-19, son
+# choix) ; le sens d'après al-Muyassar. Script : docs/scripts/sahib.md.
+# - Trois moments à un kiosque, chacun joué deux fois : l'ami gris (« بيشجّعك ») puis l'ami blanc (« بينصرك ») ; le héros
+#   d'abord « مظلوم » (on lui passe devant), puis « ظالم » (il passe devant un vieil homme, il garde la monnaie en trop) ; la
+#   main retenue est la parole du hadith, « تأخذ فوق يديه ».
+# - Images (video/src/trial/Sahib.tsx) : `n-bad-1`… `n-good-3` les moments ; `n-end` les deux amis ; `n-read` la main sur la
+#   main, de près ; `n-night` la rue, le kiosque, les deux amis qui s'en vont côte à côte.
+id: nasr
+# « Je valide ce script » du propriétaire (2026-11-19, question à choix nommant le script de ce short tel qu'envoyé :
+# docs/scripts/sahib.md), puis 9:71 entier et sa ligne de sens (même jour, « Je valide cette ligne ») ; le style et la
+# lecture de Bukhari 2444 le même jour.
+script_validated: { by: mssnoussi92, on: 2026-11-19 }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#1b1f3a", horizon: 1420, veil: 0.45 }
+ambience: { source: bigsoundbank, id: "0680", title: "Paris by Night", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/paris-by-night-s0680.html", from: 2, seconds: 76, level: -38 }
+cover: { scene: n-good-2, title: "بيشجّعك… ولا بينصرك؟", tag: "الصاحب ساحب · 3 من 3", focus: 1100 }
+publish:
+  title: { en: "Cheering you on… or truly helping you?", ar: "بيشجّعك… ولا بينصرك؟" }
+  part: 3
+  hashtags: ["#انصر_أخاك"]
+  description:
+    ar: "نفس الطابور، مرتين: صاحب بيشجّعك، وصاحب بينصرك. والنبي ﷺ قال: انصر أخاك ظالمًا أو مظلومًا، ولما سألوه إزاي ننصره ظالم قال: تأخذ فوق يديه (صحيح البخاري 2444). وربنا قال: والمؤمنون والمؤمنات بعضهم أولياء بعض (التوبة 71)."
+    en: "The same queue, twice: a friend who cheers you on, and a friend who truly helps you. The Prophet ﷺ said: help your brother, whether he is wronging or wronged; asked how to help him when he wrongs, he said: you take hold of his hands (Sahih al-Bukhari 2444). And God said: the believing men and women are allies of one another (9:71)."
+segments:
+  - pause: 6
+    scene: n-bad-1
+    sfx: [[click, 3.2]]
+  - pause: 6
+    scene: n-good-1
+    sfx: [[pop, 2.4]]
+  - pause: 6
+    scene: n-bad-2
+    sfx: [[pop, 2.6]]
+  - pause: 6
+    scene: n-good-2
+    sfx: [[impact, 2.4]]
+  - pause: 6
+    scene: n-bad-3
+    sfx: [[coins, 1.6], [pop, 3.0]]
+  - pause: 6
+    scene: n-good-3
+    sfx: [[coins, 1.6], [impact, 2.6], [coins, 4.2]]
+  - narration: end
+    silent: true
+    hold: 3.4
+    scene: n-end
+    sfx: [[impact, 0.2]]
+    lines:
+      - ar: "مش كل اللي بيشجّعك… بينصرك."
+        en: "Not everyone who cheers you on… is on your side."
+  - reading: hadith.bukhari.2444
+    scene: n-read
+  - verse: quran.9.71
+    scene: n-night
+  - narration: meaning
+    silent: true
+    hold: 4.5
+    scene: n-night
+    sources: [tafsir.muyassar.9.71]
+    lines:
+      - ar: "المؤمنين أنصار بعض… بيأمروا بالخير، وبيمنعوا بعض عن الغلط."
+        en: "Believers are each other's helpers… they urge good, and hold each other back from wrong."
+  - narration: share
+    silent: true
+    hold: 3
+    scene: n-good-2
+    lines:
+      - ar: "ابعتها لصاحبك اللي بيمسك إيدك."
+        en: "Send it to the friend who holds your hand back."
