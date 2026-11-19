@@ -43,8 +43,12 @@ you as for himself ».
 | 0:30 | Blanc : il le retient : « مش ده… ». |
 | 0:36 | « صاحبك ده… بيحب لك إيه؟ » · *That friend… what does he want for you?* |
 | 0:39 | Bukhari 13 lu (vraie voix), son texte et sa référence. |
-| 0:46 | Le banc, une seule place : le blanc y fait asseoir le héros. 59:9 récité, le fragment « ويؤثرون على أنفسهم ولو كان بهم خصاصة » (≈ 6 s, coupe à poser). Sens, d'après al-Muyassar : « الأنصار كانوا بيقدّموا المهاجرين على نفسهم… حتى وهم محتاجين. » |
-| 0:58 | « ابعتها لصاحبك اللي بيبعتلك الفرص. » · *Send it to the friend who sends you the chances.* → la boucle. |
+| 0:46 | Le banc, une seule place : le blanc y fait asseoir le héros. 59:9 récité **du début jusqu'à « خصاصة ۚ »** (`upto: 24`, ≈ 25 s ; changé le 2026-11-19, voir plus bas). Sens, d'après al-Muyassar : « الأنصار كانوا بيقدّموا المهاجرين على نفسهم… حتى وهم محتاجين. » |
+| 1:12 | « ابعتها لصاحبك اللي بيبعتلك الفرص. » · *Send it to the friend who sends you the chances.* → la boucle. |
+
+**Changé le 2026-11-19, à sa demande (question à choix)** : le fragment validé « ويؤثرون… خصاصة » commençait au milieu
+d'une phrase, sans signe de pause (la session l'avait proposé sans le voir) ; le verset se récite du début jusqu'à son
+premier signe de pause, après « خصاصة ». Son choix : « Du début jusqu'à خصاصة ».
 
 ## Short 3 · `nasr` · انصره ظالمًا
 
@@ -65,8 +69,8 @@ Décor : un kiosque et sa file. Gris = « بيشجّعك · Cheers you on », bl
 
 ## Ce qui reste à faire
 
-1. Les sources au registre (proposées) : Bukhari 5534, 13, 2444, 43:67, 59:9, 5:2, al-Muyassar sur chaque verset.
-2. Les lectures : transcrire `5534.mp3`, `0013.mp3` ou `0014.mp3`, `2444.mp3`, couper les paroles du Prophète ﷺ, les
-   faire écouter au propriétaire. Les coupes des deux fragments de verset.
-3. **Les images de style d'abord** : les bonshommes avec visage et les trois décors, à valider avant d'animer.
+1. ~~Les sources au registre~~ (fait, proposées ; les trois lectures validées le 2026-11-19).
+2. ~~Les images de style~~ (validées le 2026-11-19).
+3. L'outil : réciter le milieu d'un verset (5:2, mots 38 à 46, après le signe ۘ jusqu'au signe ۚ ; la traduction : sa
+   phrase entière de Sahih International). Les coupes de 43:67, 59:9 (`upto: 24`) et 5:2.
 4. Les fichiers `content/trial/`, les dessins animés, les bruitages, les ambiances, le rendu, les textes à coller.

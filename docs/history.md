@@ -729,3 +729,5 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 - **Puis, le même jour** : les neuf sources au registre (proposées), les trois lectures trouvées dans `bukhari_audiobook`
   et coupées sur les paroles du Prophète ﷺ, les images de style (`video/src/trial/Sahib.tsx`, `SahibStyle`). **Validés par
   lui** (questions à choix) : le style, et les trois lectures.
+- **59:9 changé** : le fragment validé (« ويؤثرون… خصاصة ») commençait au milieu d'une phrase, sans signe de pause ; la
+  session l'a dit, son choix : réciter le verset du début jusqu'à « خصاصة ۚ » (≈ 25 s ; `yuhibb` passe à environ 1:15).
