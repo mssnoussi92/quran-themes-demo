@@ -9,6 +9,7 @@
 #   tu fais pour qu'on te voie.
 # - Rien de l'invisible n'est dessiné (le Jour du Jugement, les tombes de l'intérieur, les حسنات qui passent).
 id: hayyin
+validated: { by: mssnoussi92, on: 2026-11-19, what: [publish] }      # « je valide titres et descriptions » (question à choix nommant les 3 titres et les 3 descriptions)
 files: hayyin                    # début du nom des vidéos livrées : hayyin-short-<n>-<id>.mp4
 title: { ar: "وتحسبونه هيّنًا", en: "You Think It Is Small" }
 shorts: [ghiba, namima, riya]
