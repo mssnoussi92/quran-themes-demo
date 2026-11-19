@@ -573,17 +573,26 @@ const BusStopSet: React.FC<{ poster?: boolean; cart?: boolean; t?: number }> = (
   );
 };
 
-/** « مطلوب » on the shelter: its lines and the tabs to tear off. */
+/** A job offer on the shelter, readable at a glance: « فرصة شغل » on an orange band, a briefcase, « مطلوب موظفين », and
+ * the tabs with a phone to tear off (the owner asked for a poster that says more than « مطلوب », 2026-11-19). */
 const Poster: React.FC = () => (
-  <g transform="rotate(-3 740 965)">
-    <rect x={640} y={840} width={200} height={250} fill="#fffdf6" stroke={INK} strokeWidth={5} />
-    <text x={740} y={915} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={50} fill="#c0392b">مطلوب</text>
-    <g fill="#9aa3ad">
-      <rect x={670} y={940} width={140} height={10} rx={5} />
-      <rect x={680} y={964} width={120} height={10} rx={5} />
-      <rect x={670} y={988} width={140} height={10} rx={5} />
-      {[0, 1, 2, 3, 4, 5].map((i) => <rect key={i} x={652 + i * 31} y={1040} width={22} height={44} fill="#e8e4d6" stroke={INK} strokeWidth={2} />)}
+  <g transform="translate(-42 0) rotate(-3 745 965)">
+    <rect x={630} y={815} width={230} height={300} rx={8} fill="#fffdf6" stroke={INK} strokeWidth={5} />
+    <rect x={630} y={815} width={230} height={70} rx={8} fill="#e8833a" stroke={INK} strokeWidth={5} />
+    <text x={745} y={866} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={44} fill="#ffffff">فرصة شغل</text>
+    <g transform="translate(745 935)" stroke={INK} strokeWidth={4} strokeLinejoin="round">
+      <rect x={-46} y={-26} width={92} height={62} rx={8} fill="#8a5a32" />
+      <path d="M -18 -26 L -18 -40 Q -18 -46 -12 -46 L 12 -46 Q 18 -46 18 -40 L 18 -26" fill="none" />
+      <path d="M -46 2 L 46 2" />
+      <rect x={-8} y={-4} width={16} height={12} rx={2} fill="#f2c66d" />
     </g>
+    <text x={745} y={1015} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={32} fill={INK}>مطلوب موظفين</text>
+    {[0, 1, 2, 3, 4, 5].map((i) => (
+      <g key={i} transform={`translate(${646 + i * 35} 1040)`}>
+        <rect x={0} y={0} width={26} height={60} fill="#efe9da" stroke={INK} strokeWidth={2} />
+        <path d="M 8 14 q 4 -4 7 0 l -2 4 q 3 8 8 11 l 3 -3 q 4 3 0 7 q -12 2 -16 -19 Z" fill={INK} transform="scale(0.8) translate(2 2)" />
+      </g>
+    ))}
   </g>
 );
 
