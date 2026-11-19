@@ -1211,6 +1211,84 @@ la vidéo du soir »). Textes : `docs/retention/publication-adhkar.md` ; la lign
 2026-11-18** (« Je valide les textes YouTube ») ; fichiers publics par `page-files` (`page-adhkar`). Reste leur date au
 calendrier (sa décision : plus tard).
 
+## Série : « وتحسبونه هيّنًا » (ghiba, namima, riya' ; idée du propriétaire, 2026-11-17)
+
+**Sa demande** : « je veux explorer une nouvelle série : الغيبة، النميمة، الرياء… pour الغيبة on a l'idée que حسناتك ممكن
+تمشي لحد انت اغتبته ; il faut bien choisir le hook et bien créer une situation ». **Fiche** (skill `choose-format`) :
+
+**Ce que la session lui a opposé** (dit avant de recommander) :
+- **Son idée tient, mais pas par le hadith qu'on cite d'habitude.** Le « المفلس » (Muslim 2581) énumère l'insulte, l'accusation
+  (قذف), l'argent, le sang et les coups, pas la ghiba. La source est **Bukhari 2449** (« مظلمة لأحد من عرضه… أخذ منه بقدر
+  مظلمته »), et **al-Qurtubi sur 49:12** range la ghiba parmi ces مظالم en le citant, avec la divergence qu'il rapporte (pour
+  certains, elle reste entre le serviteur et Dieu) : d'où « ممكن », jamais « le Prophète ﷺ a dit que celui qui médit perd
+  ses حسنات ». L'histoire d'al-Hasan al-Basri et des dattes est hors politique.
+- **Le transfert des حسنات est le Jour du Jugement** : jamais dessiné ; l'image reste la scène d'ici-bas (la chaise vide).
+- **Le riya' n'est pas de la même famille** (la langue contre les gens, le cœur devant Dieu). Le fil qui tient les trois :
+  les péchés qu'on croit petits, 24:15, qu'as-Sa'di étend (« الزجر البليغ، عن تعاطي بعض الذنوب على وجه التهاون بها »).
+  « حسنات بتضيع », son fil, tenait pour la ghiba et le riya', pas pour la namima.
+- **Deux pièges** : montrer une bonne action n'est pas du riya' (2:271 ; et la Page publie elle-même du Coran) : le short dit
+  l'intention ; transmettre pour prévenir d'un vrai tort n'est pas la namima (as-Sa'di sur 68:11 : « لقصد الإفساد »).
+- **Les ouvertures qui font peur** (les deux tombes de Bukhari 216, les trois premiers jugés de Muslim 1905) restent dans les
+  shorts, lues ou racontées, jamais en première image ni dessinées.
+
+**Décisions du propriétaire (2026-11-17, questions à choix, chaque fois la recommandation)** : **« وتحسبونه هيّنًا », trois
+shorts qui tiennent seuls, sans film** ; la ghiba ouverte sur **la chaise vide, l'excuse, puis son idée** ; la namima sur
+**la capture d'écran transférée**, le riya' sur **« عملتها عشان يتقال… واتقال »** puis 2:264 ; **les trois scripts tout de
+suite**, aucune voix avant « je valide le script ».
+
+| Short | Scène jouée, muette | Accroche | Récité, lu | Le sens repose sur | Estimé |
+| --- | --- | --- | --- | --- | --- |
+| 1. `ghiba` | un café le soir, trois silhouettes penchées, une chaise vide ; «هو فعلاً كده… أنا مش بفتري عليه!» | «الجملة دي… ممكن تاخد من حسناتك… وتديها لصاحب الكرسي الفاضي.» | 49:12 (36,5 s) ; Bukhari 2449 lu (21,2 s) ; Muslim 2589 raconté | al-Muyassar et al-Qurtubi sur 49:12 | 2:08 |
+| 2. `namima` | un téléphone dans le noir : capture, transfert, «شوف فلان قال عليك إيه.» | «الحركة دي… ليها اسم في القرآن.» | 68:10-11 (10,4 s) ; Bukhari 216 lu en extrait (12,3 s : les deux tombes, « يمشي بالنميمة ») | as-Sa'di sur 68:11, al-Muyassar sur 68:10 | 1:26 |
+| 3. `riya` | une main glisse un billet dans une caisse, un téléphone filme, les cœurs montent | «عملتها عشان يتقال… واتقال.» | 2:264 (45,5 s), sur la pluie qui lave la roche ; Muslim 1905 raconté | al-Muyassar, Ibn Kathir et as-Sa'di sur 2:264 | 1:53 |
+
+- **Ce qui distingue les parties** : la ghiba, ce que tu dis sur lui ; la namima, ce que tu lui rapportes ; le riya', ce que
+  tu fais pour qu'on te voie. Chaque short annonce le suivant ; le troisième, d'autres péchés qu'on croit petits.
+- **En réserve** (les « … » de sa demande, sources vérifiées) : la moquerie (49:11), le soupçon et l'espionnage (49:12), الهمز
+  واللمز (104:1), la jalousie (Muslim 2564), le mensonge (Muslim 2607). Pour le riya', 2:265 (la même pluie sur un jardin
+  qui donne le double) ferait un contraste, mais un short ne repose que sur le tafsir d'un verset qu'il récite.
+
+**Fait le même jour (le script, aucune voix)** : au registre, **proposés**, 4 versets (49:12, 68:10, 68:11, 2:264), 4 hadiths
+(Bukhari 2449 et 216, Muslim 2589 et 1905a) et 8 passages de tafsir (dont le premier d'al-Qurtubi, 49:12) ; les versets
+coupés dans la récitation (68:10-11, que le récitateur enchaîne, posés à la main : 68:10 à 45,05 s, où Whisper entend enfin
+« ولا ») ; deux lectures d'Abu Malik al-Asqalani trouvées et entendues mot pour mot (Bukhari 2449 : `2449.mp3`, 13,05-34,25 s ;
+Bukhari 216 : `0216.mp3`, 21,40-33,68 s, de « يعذبان » à « بالنميمة ») ; les fichiers (`content/trial/hayyin.yaml`, `ghiba`,
+`namima`, `riya`), les textes de voix 102 à 104 (92 à 101 pris par les séries des adhkar et des quiz d'autres sessions), le script (`docs/scripts/hayyin.md`). Fond provisoire (la nuit générée) ; ni
+dessins, ni clips, ni ambiances. **À valider par le propriétaire avant toute voix.**
+
+**Ses réponses sur le script (2026-11-17, questions à choix)** : il **relit** le script ; la ghiba **garde 2:08**, une version
+courte pour Facebook et Instagram plus tard (l'outil `cut`) ; **les images de style tout de suite**. **Fait** : les dessins
+(`video/src/trial/Hayyin.tsx`, la silhouette de `Lens.tsx`) : le café le soir, trois silhouettes penchées, la chaise vide sous
+sa propre lampe, puis de près (la veste et les clés à sa place : il est sorti, il revient), le café vu de la rue pour 49:12,
+la poignée de main du matin ; le téléphone (la capture, le transfert, la confirmation), celui qui le reçoit, deux maisons et
+un chemin où marche une silhouette (« مشّاء »), deux tombes au crépuscule sous les palmiers, personne ; la caisse « صدقة »
+filmée, les cœurs et le compteur, la roche de 2:264 sous la pluie (la poussière emportée à « فأصابه وابل »), la même
+poussière qui a l'air d'une terre et sa coupe ; fond tout dessiné. Brouillons sans voix : 2:10, 1:28, 1:55. Planches :
+`docs/retention/hayyin-style-1-ghiba.jpg`, `-2-namima.jpg`, `-3-riya.jpg`, couvertures `hayyin-covers.jpg`.
+
+**Script validé par lui le 2026-11-17** (« je valide le script, tu peux commencer le rendu sans voix », lu comme le script de
+`docs/scripts/hayyin.md` tel qu'envoyé ; `script_validated` des trois shorts) ; rendu sans voix par le workflow `film` (voix `X`).
+**Rendu sans voix le même soir** (run 44178359076 du workflow `film`, 19 minutes, release brouillon `hayyin-candidate`) :
+**2:10, 1:28, 1:55**, leurs versions TikTok et les couvertures, contrôlés sur leurs planches (−16 LUFS), envoyés ; les
+accroches des légendes courtes proposées. Voix : trois requêtes, après les six des quiz.
+**Validé par lui le même soir** (questions à choix, chaque fois la recommandation) : **le montage, les dessins et les trois
+couvertures** des shorts sans voix (`validated`, `what: [montage, cover]`) ; **les trois accroches** (`hook.validated`) ; **les
+deux lectures** d'Abu Malik al-Asqalani (Bukhari 2449 et 216, `validated` au registre). **La voix le 19 novembre** (son choix :
+le 18 est aux six requêtes des quiz) : trois requêtes (textes 102 à 104), puis le rendu avec voix et ambiance, à valider sur
+les vidéos. Les sources du registre restent proposées : il les valide avec les vidéos finales.
+
+**La voix le 19 novembre** (run 44484203959 de `voice-test`, trois requêtes ; textes renumérotés 102 à 104, 95 à 101 étant
+pris par la série des quiz) : chaque phrase retrouvée dans les prises (`align.py`) ; Whisper entend autrement quelques mots, à
+écouter : « بصباع » (« بصباح »), « اتنقل » (« يتنقل ») dans la namima, « الصندوق » (« السندوق ») dans le riya'. **Ambiances**
+(proposées) : un café (BigSoundBank 2561, aucune parole distincte) pour la ghiba, la nuit validée (1880) pour la namima, la nuit
+après la pluie (0621) pour le riya'. **Rendu** (run 44484912562 du workflow `film`, release brouillon `hayyin-candidate`) :
+**2:06, 1:23, 1:46**, −16 LUFS, contrôlés sur leurs planches, envoyés le même matin.
+**Validé par lui le même matin** (questions à choix, chaque fois la recommandation) : **la voix et les ambiances** (`validated`,
+`what: [voice, montage, cover, ambience]`) ; **les seize sources** (`validated` au registre). **Au calendrier : pas encore** (son
+choix) : en réserve, placé à la revue, après les premières mesures. Textes à coller : `docs/retention/publication-hayyin.md`
+(accroches validées ; **titres et descriptions validés par lui le 2026-11-19**). Sur `main` par une PR (son choix) ; sa page
+« Films et shorts à publier » : la série y entrera avec ses dates (son choix).
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
