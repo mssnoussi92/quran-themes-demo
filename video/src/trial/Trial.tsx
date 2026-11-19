@@ -25,6 +25,7 @@ import { LENS_PICTURES } from "./Lens";
 import { KAHF_PICTURES } from "./Kahf";
 import { QADAR_PICTURES } from "./Qadar";
 import { HAYYIN_PICTURES } from "./Hayyin";
+import { SAHIB_OVERLAYS, SAHIB_PICTURES } from "./Sahib";
 import { DHIKR_LAYOUTS, DHIKR_PICTURES } from "./Dhikr";
 import { QUIZ_LAYOUTS, QUIZ_OVERLAYS, QUIZ_PICTURES } from "./Quiz";
 import { SAHW_LAYOUTS, SAHW_OVERLAYS, SAHW_PICTURES } from "./Sahw";
@@ -463,11 +464,12 @@ export const PICTURES: Record<string, Drawn> = {
   ...DHIKR_PICTURES,
   ...QUIZ_PICTURES,
   ...SAHW_PICTURES,
+  ...SAHIB_PICTURES,
 };
 
 /** What a short draws above its veil, under its texts, outside the slowly growing picture: a timeline, a badge,
  * anything that must not move. None by default; a short registers its own here. */
-export const OVERLAYS: Record<string, Drawn> = { ...SIGNS_OVERLAYS, ...KALIMA_OVERLAYS, ...COUNT_OVERLAYS, ...FARQ_OVERLAYS, ...MAP_OVERLAYS, ...SUAL_OVERLAYS, ...QUIZ_OVERLAYS, ...SAHW_OVERLAYS };
+export const OVERLAYS: Record<string, Drawn> = { ...SIGNS_OVERLAYS, ...KALIMA_OVERLAYS, ...COUNT_OVERLAYS, ...FARQ_OVERLAYS, ...MAP_OVERLAYS, ...SUAL_OVERLAYS, ...QUIZ_OVERLAYS, ...SAHW_OVERLAYS, ...SAHIB_OVERLAYS };
 
 const hasLetter = (token: string) => /\p{L}/u.test(token);
 export const fit = (base: number, text: string, comfortable: number) => Math.round(base * Math.min(1, Math.sqrt(comfortable / Math.max(1, text.length))));

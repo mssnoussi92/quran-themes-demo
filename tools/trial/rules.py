@@ -56,7 +56,8 @@ MAX_TITLE = 100                # YouTube
 MIN_FIRST_PHRASE = 2           # words: the first frame shows only the first phrase (« بنقول: » alone was the fault seen)
 
 TO_CHECK_BY_EYE = [
-    "nobody is drawn (no person, not the boy, his parents, a prophet): things and places only",
+    "nobody of a text is drawn (a prophet, a Companion, a known person, anyone of a story of the Quran or a hadith); an "
+    "anonymous person only as a silhouette or a stick figure, a simple face only when it shows the difference",
     "the unseen is never pictured (paradise, hell, the Day of Judgement, angels)",
     "the first frame: the strangest fact of the story, written large, readable at once",
     "what the voice sounds like: the take is listened to, mispronounced words are reported to the owner",
