@@ -109,6 +109,7 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
 - Une source `science` dans le registre (`content/sources/science.yaml` : `ref.year`, `url`, `label` ar et en
   écrits à l'écran, `claim`, `checked` : les pages où la session a vérifié le fait) : une narration peut reposer
   dessus (`sources:`), jamais un verset ni une lecture.
+- **Plus de verset coupé** (propriétaire, 2026-11-19 : « ne jamais couper ayah au milieu ») : un verset se récite entier ; `upto` ne reste que dans les 18 shorts validés avant (`CUT_BEFORE_THE_RULE` de `tools/trial/rules.py`, qui le refuse ailleurs). Ce qui suit les décrit.
 - `upto: N` sur un segment `verses` d'un seul verset : il n'en récite que les N premiers mots, jusqu'à un signe de
   pause (la signature : 41:53 jusqu'à « أنه الحق ۗ ») ; dans un short comme dans un film (`film.py`, 2026-11-15 : le film de la caverne
   s'arrête dans 18:21 avant la mosquée bâtie sur eux).

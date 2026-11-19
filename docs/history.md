@@ -731,3 +731,8 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   lui** (questions à choix) : le style, et les trois lectures.
 - **59:9 changé** : le fragment validé (« ويؤثرون… خصاصة ») commençait au milieu d'une phrase, sans signe de pause ; la
   session l'a dit, son choix : réciter le verset du début jusqu'à « خصاصة ۚ » (≈ 25 s ; `yuhibb` passe à environ 1:15).
+- **Sa règle, juste après : « ne jamais couper ayah au milieu »** (un verset se récite toujours entier). La session a dit
+  ce qu'elle touchait (21 récitations de 18 shorts validés, arrêtées à un signe de pause) ; ses choix (questions à choix) :
+  désormais seulement, le stock reste ; 59:9 entier ; 9:71 entier à la place de 5:2 (67 s). Fait : CLAUDE.md,
+  `docs/model.md`, `tools/trial/rules.py` refuse `upto` hors des 18 shorts d'avant (`CUT_BEFORE_THE_RULE`, et ses tests),
+  le registre (5:2 et son Muyassar remplacés par 9:71), les coupes de Tawfiq (43:67, 59:9, 9:71 ; celle de 5:2 retirée).

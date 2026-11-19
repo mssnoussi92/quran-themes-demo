@@ -43,12 +43,12 @@ you as for himself ».
 | 0:30 | Blanc : il le retient : « مش ده… ». |
 | 0:36 | « صاحبك ده… بيحب لك إيه؟ » · *That friend… what does he want for you?* |
 | 0:39 | Bukhari 13 lu (vraie voix), son texte et sa référence. |
-| 0:46 | Le banc, une seule place : le blanc y fait asseoir le héros. 59:9 récité **du début jusqu'à « خصاصة ۚ »** (`upto: 24`, ≈ 25 s ; changé le 2026-11-19, voir plus bas). Sens, d'après al-Muyassar : « الأنصار كانوا بيقدّموا المهاجرين على نفسهم… حتى وهم محتاجين. » |
-| 1:12 | « ابعتها لصاحبك اللي بيبعتلك الفرص. » · *Send it to the friend who sends you the chances.* → la boucle. |
+| 0:46 | Le banc, une seule place : le blanc y fait asseoir le héros. **59:9 récité en entier** (33 s ; changé deux fois le 2026-11-19, voir plus bas). Sens, d'après al-Muyassar : « الأنصار كانوا بيقدّموا المهاجرين على نفسهم… حتى وهم محتاجين. » |
+| 1:20 | « ابعتها لصاحبك اللي بيبعتلك الفرص. » · *Send it to the friend who sends you the chances.* → la boucle. |
 
-**Changé le 2026-11-19, à sa demande (question à choix)** : le fragment validé « ويؤثرون… خصاصة » commençait au milieu
-d'une phrase, sans signe de pause (la session l'avait proposé sans le voir) ; le verset se récite du début jusqu'à son
-premier signe de pause, après « خصاصة ». Son choix : « Du début jusqu'à خصاصة ».
+**Changé le 2026-11-19, à sa demande (questions à choix)** : le fragment validé « ويؤثرون… خصاصة » commençait au milieu
+d'une phrase, sans signe de pause (la session l'avait proposé sans le voir) ; d'abord du début jusqu'à « خصاصة ۚ », puis
+**sa règle** : « ne jamais couper ayah au milieu ». Son choix : « 59:9 entier ».
 
 ## Short 3 · `nasr` · انصره ظالمًا
 
@@ -63,14 +63,18 @@ Décor : un kiosque et sa file. Gris = « بيشجّعك · Cheers you on », bl
 | 0:24 | Gris : le vendeur rend trop de monnaie : « اجري! ». |
 | 0:30 | Blanc : il retient la main du héros, qui rend l'argent. |
 | 0:36 | « مش كل اللي بيشجّعك… بينصرك. » · *Not everyone who cheers you on… is on your side.* |
-| 0:39 | Bukhari 2444 lu, jusqu'à « تأخذ فوق يديه » (la main qu'on vient de voir). |
-| 0:48 | 5:2 récité, le fragment « وتعاونوا على البر والتقوى ولا تعاونوا على الإثم والعدوان » (≈ 10 s, coupe à poser). Sens, d'après al-Muyassar : « اتعاونوا على الخير… ومتتعاونوش على الغلط. » |
-| 1:02 | « ابعتها لصاحبك اللي بيمسك إيدك. » · *Send it to the friend who holds your hand back.* → la boucle. |
+| 0:39 | Bukhari 2444 lu (13,6 s), jusqu'à « تأخذ فوق يديه » (la main qu'on vient de voir). |
+| 0:54 | **9:71 récité en entier** (31,8 s ; à la place de 5:2, voir plus bas). Sens, d'après al-Muyassar : « المؤمنين أنصار بعض… بيأمروا بالخير، وبيمنعوا بعض عن الغلط. » (**ligne nouvelle, à valider**) |
+| 1:30 | « ابعتها لصاحبك اللي بيمسك إيدك. » · *Send it to the friend who holds your hand back.* → la boucle. |
+
+**Changé le 2026-11-19, à sa demande (question à choix)** : sa règle, « ne jamais couper ayah au milieu », écarte le
+fragment de 5:2 ; 5:2 entier dure 67 s et s'ouvre sur les rites du pèlerinage. Son choix : « 9:71 entier » (al-Muyassar :
+« بعضهم أنصار بعض… وينهونهم عن الكفر والمعاصي »). La lecture de 2444 dure 13,6 s : elle va de 0:39 à 0:53.
 
 ## Ce qui reste à faire
 
 1. ~~Les sources au registre~~ (fait, proposées ; les trois lectures validées le 2026-11-19).
 2. ~~Les images de style~~ (validées le 2026-11-19).
-3. L'outil : réciter le milieu d'un verset (5:2, mots 38 à 46, après le signe ۘ jusqu'au signe ۚ ; la traduction : sa
-   phrase entière de Sahih International). Les coupes de 43:67, 59:9 (`upto: 24`) et 5:2.
+3. ~~Les coupes de Tawfiq~~ : 43:67 (11,7 s), 59:9 (33,0 s), 9:71 (31,8 s), toutes entières (fait le 2026-11-19).
+   L'outil d'abord : un segment sans texte (`pause`) pour les moments muets.
 4. Les fichiers `content/trial/`, les dessins animés, les bruitages, les ambiances, le rendu, les textes à coller.
