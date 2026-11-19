@@ -25,7 +25,9 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 # encore faites ; il les valide sur les vidéos refaites avec la voix. Inscrit sur sa parole.
 # Puis « Je valide la voix et les ambiances » (2026-11-19, question à choix nommant les 3 shorts avec voix du run 44484912562 :
 # la voix des 3 prises et les ambiances sous la narration) : la voix et l'ambiance s'ajoutent. Inscrit sur sa parole.
-validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, ambience] }
+# Puis « Je valide titres et descriptions » (même jour, question à choix nommant les 3 titres, arabe et anglais, et les 3
+# descriptions de docs/retention/publication-hayyin.md tels qu'envoyés) : les textes de publication s'ajoutent.
+validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, ambience, publish] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 102-trial-ghiba

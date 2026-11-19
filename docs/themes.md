@@ -1079,7 +1079,8 @@ après la pluie (0621) pour le riya'. **Rendu** (run 44484912562 du workflow `fi
 **Validé par lui le même matin** (questions à choix, chaque fois la recommandation) : **la voix et les ambiances** (`validated`,
 `what: [voice, montage, cover, ambience]`) ; **les seize sources** (`validated` au registre). **Au calendrier : pas encore** (son
 choix) : en réserve, placé à la revue, après les premières mesures. Textes à coller : `docs/retention/publication-hayyin.md`
-(accroches validées ; titres et descriptions YouTube proposés, à valider).
+(accroches validées ; **titres et descriptions validés par lui le 2026-11-19**). Sur `main` par une PR (son choix) ; sa page
+« Films et shorts à publier » : la série y entrera avec ses dates (son choix).
 
 ## Faits (ancien circuit)
 
