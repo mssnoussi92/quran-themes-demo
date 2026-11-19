@@ -692,3 +692,13 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   compte n'était pas relié à la Page dans le jeton) ; il a relié @ma3ak.5.thawani et refait le jeton en suivant les
   étapes données ; **second essai à blanc propre sur les deux** (droits : aucune correspondance).
 
+## La Page à 18 h aussi (2026-11-19)
+
+- **Sa demande** : « Je veux modifier la publication automatique pour la page principale pour être aussi à 18h ». **Son
+  choix** (question à choix) : les vidéos thématiques (19 h → 18 h, du lundi au samedi, à partir du 23 novembre) **et** le
+  reel des séries du dimanche soir (19 h 30 → 18 h). Le reel du matin ne bouge pas. Avis donné : aucun chiffre ne dit si
+  18 h fait mieux que 19 h (19 h au Caire) ; le gain sûr est la comparaison avec la page test, à la même heure.
+- **Fait** : quran-reels PR #83 (`config/themes.yaml`, `config/schedule.yaml`, docs) ; les tâches du planificateur à
+  17 h 40 (la Page) et 17 h 42 (la page test, juste après) ; ici `calendar.md` (le paragraphe de l'heure, la ligne du
+  quiz du lundi) et CLAUDE.md.
+
