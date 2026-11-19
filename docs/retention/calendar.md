@@ -38,7 +38,9 @@ Pourquoi :
 - **La faiblesse de la grille** : chaque type de vidéo a son jour. Le jour de la semaine se mêle donc au type quand on
   compare. À une centaine de vues, ce biais pèse moins que l'accroche, mais il faut le garder en tête.
 
-**L'heure : 19 h, heure de France**, pour les shorts comme pour les films (décision du propriétaire, 2026-11-13 :
+**L'heure : 18 h, heure de France, depuis le 2026-11-19** (sa demande : « modifier la publication automatique pour la
+page principale pour être aussi à 18h », comme la page test ; 19 h au Caire, 18 h à Alger, 20 h à Riyad et à Bagdad ;
+aucun chiffre ne dit encore si 18 h fait mieux ou moins bien que 19 h). **Avant : 19 h**, pour les shorts comme pour les films (décision du propriétaire, 2026-11-13 :
 « le soir à 20 h heure du Caire, mais mets l'heure de France pour moi »). C'est 20 h au Caire, 19 h à Alger, 21 h à
 Riyad et à Bagdad. Le décalage reste d'une heure jusqu'au passage de la France à l'heure d'été, le 28 mars 2027 :
 de cette date jusqu'à celui de l'Égypte (fin avril), 20 h au Caire sera 20 h en France. Avis de la session qui l'a
@@ -70,15 +72,15 @@ Les vidéos de ce calendrier passent sur la même Page que les reels de quran-re
 On n'en recopie ici que les règles, pas la liste : elle est recalculée chaque jour (un créneau manqué décale la suite,
 comme le 15 novembre au matin). Le calendrier de tout ce que publie la Page, reels et vidéos de ce fichier ensemble, est
 dans le catalogue de quran-reels : https://mssnoussi92.github.io/quran-reels/catalog/#calendar (les vidéos d'ici en
-bleu, lues dans ce fichier). Aucune collision entre les deux grilles : le reel le matin, l'image à midi, ces vidéos à
-19 h, et le dimanche soir, jour libre ici, la série des reels.
+bleu, lues dans ce fichier). Aucune collision entre les deux grilles : le reel le matin, ces vidéos à 18 h, et le
+dimanche soir à 18 h, jour libre ici, la série des reels (à 19 h 30 jusqu'au 2026-11-19).
 
 ## Le calendrier
 
 **Le quiz « معاك 5 ثواني » sur Instagram, les lundis d'un film** (choix du propriétaire, 2026-11-17 : « à partir du lundi
 prochain, sur Instagram seulement, puisque c'est le jour du film et qu'on ne publie plus de films sur Instagram » ;
 publié par quran-reels, qui sort chaque ligne d'un même jour sur ses propres plateformes) : une ligne de plus sous le
-film du jour, Instagram seul, à 19 h ; les lundis d'un film sont le 23 et le 30 novembre, puis le 28 décembre.
+film du jour, Instagram seul, à 18 h (19 h jusqu'au 2026-11-19) ; les lundis d'un film sont le 23 et le 30 novembre, puis le 28 décembre.
 
 | Date | Quoi | Où | Fichiers | Texte (section de `docs/retention/…`) |
 | --- | --- | --- | --- | --- |
