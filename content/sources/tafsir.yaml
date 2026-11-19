@@ -2072,7 +2072,8 @@
     edition: Tafsir Muyassar
     verses: ["43:67"]
     retrieved: '2026-11-19'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "الصاحب ساحب (sahib), proposé le 2026-11-19 : la ligne de sens du short `jalis`"
   text_ar: الأصدقاء على معاصي الله في الدنيا يتبرأ بعضهم من بعض يوم القيامة، لكن الذين تصادقوا على تقوى الله، فإن صداقتهم دائمة في الدنيا والآخرة.
 - id: tafsir.muyassar.59.9
@@ -2085,7 +2086,8 @@
     edition: Tafsir Muyassar
     verses: ["59:9"]
     retrieved: '2026-11-19'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "الصاحب ساحب (sahib), proposé le 2026-11-19 : la ligne de sens du short `yuhibb`"
   text_ar: والذين استوطنوا «المدينة» ، وآمنوا من قبل هجرة المهاجرين -وهم الأنصار- يحبون المهاجرين، ويواسونهم بأموالهم، ولا يجدون في أنفسهم حسدًا لهم مما أُعْطوا من مال الفيء وغيره، ويُقَدِّمون المهاجرين وذوي الحاجة على أنفسهم، ولو كان بهم حاجة وفقر، ومن سَلِم من البخل ومَنْعِ الفضل من المال فأولئك هم الفائزون الذين فازوا بمطلوبهم.
 - id: tafsir.muyassar.9.71
@@ -2098,6 +2100,7 @@
     edition: Tafsir Muyassar
     verses: ["9:71"]
     retrieved: '2026-11-19'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "الصاحب ساحب (sahib), proposé le 2026-11-19 : la ligne de sens du short `nasr`"
   text_ar: والمؤمنون والمؤمنات بالله ورسوله بعضهم أنصار بعض، يأمرون الناس بالإيمان والعمل الصالح، وينهونهم عن الكفر والمعاصي، ويؤدون الصلاة، ويعطون الزكاة، ويطيعون الله ورسوله، وينتهون عما نُهوا عنه، أولئك سيرحمهم الله فينقذهم من عذابه ويدخلهم جنته. إن الله عزيز في ملكه، حكيم في تشريعاته وأحكامه.

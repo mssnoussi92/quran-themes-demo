@@ -9,6 +9,7 @@
 # - Rien de l'invisible n'est dessiné (43:67 parle du Jour dernier : le texte et la récitation seulement).
 # - Personne d'un hadith n'est dessiné : le porteur de musc et le forgeron ne sont que les compagnons d'une scène type.
 id: sahib
+validated: { by: mssnoussi92, on: 2026-11-19, what: [publish] }      # « Je valide titres, descriptions et accroches » (question à choix)
 files: sahib                     # début du nom des vidéos livrées : sahib-short-<n>-<id>.mp4
 title: { ar: "الصاحب ساحب", en: "Your Friend Pulls You" }
 shorts: [jalis, yuhibb, nasr]
@@ -16,5 +17,5 @@ handle: "@quran_words_daily"
 publish:
   out: docs/retention/publication-sahib.md
   series: { en: "Your Friend Pulls You", ar: "الصاحب ساحب" }
-  hashtags: ["#الصاحب_ساحب", "#الصحبة"]      # proposés par la session, à valider avec les textes
+  hashtags: ["#الصاحب_ساحب", "#الصحبة"]      # validés avec les textes (2026-11-19)
   narration: { X: "No narration: the moments are played without a word · بدون صوت راوي" }

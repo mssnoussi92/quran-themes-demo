@@ -11,6 +11,9 @@ id: nasr
 # docs/scripts/sahib.md), puis 9:71 entier et sa ligne de sens (même jour, « Je valide cette ligne ») ; le style et la
 # lecture de Bukhari 2444 le même jour.
 script_validated: { by: mssnoussi92, on: 2026-11-19 }
+# « Je valide titres, descriptions et accroches » (2026-11-19, question à choix nommant les trois titres, descriptions et
+# accroches de docs/retention/publication-sahib.md tels qu'envoyés) : les textes. Les vidéos attendent ses corrections.
+validated: { by: mssnoussi92, on: 2026-11-19, what: [publish] }
 handle: "@quran_words_daily"
 voices: { X: "no voice: the moments are played without a word" }      # aucune voix de synthèse (son choix, 2026-11-19), comme les adhkar
 clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#1b1f3a", horizon: 1420, veil: 0.45 }
@@ -18,9 +21,10 @@ ambience: { source: bigsoundbank, id: "0680", title: "Paris by Night", author: J
 cover: { scene: n-good-2, title: "بيشجّعك… ولا بينصرك؟", tag: "الصاحب ساحب · 3 من 3", focus: 1100 }
 publish:
   title: { en: "Cheering you on… or truly helping you?", ar: "بيشجّعك… ولا بينصرك؟" }
-  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session (2026-11-19), à valider
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-19 (« Je valide titres, descriptions et accroches », question à choix)
     ar: "نفس الطابور مرتين… صاحب بيشجّعك، وصاحب بينصرك."
     en: "The same queue, twice… a friend who cheers you on, and one who truly helps you."
+    validated: 2026-11-19
   part: 3
   hashtags: ["#انصر_أخاك"]
   description:

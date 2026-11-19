@@ -9,6 +9,9 @@ id: yuhibb
 # « Je valide, avec 59:9 » du propriétaire (2026-11-19, question à choix nommant le script de ce short tel qu'envoyé :
 # docs/scripts/sahib.md), puis 59:9 entier (même jour, sa règle) ; le style et la lecture de Bukhari 13 le même jour.
 script_validated: { by: mssnoussi92, on: 2026-11-19 }
+# « Je valide titres, descriptions et accroches » (2026-11-19, question à choix nommant les trois titres, descriptions et
+# accroches de docs/retention/publication-sahib.md tels qu'envoyés) : les textes. Les vidéos attendent ses corrections.
+validated: { by: mssnoussi92, on: 2026-11-19, what: [publish] }
 handle: "@quran_words_daily"
 voices: { X: "no voice: the moments are played without a word" }      # aucune voix de synthèse (son choix, 2026-11-19), comme les adhkar
 clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#4a4f5a", horizon: 1420, veil: 0.55 }
@@ -16,9 +19,10 @@ ambience: { source: bigsoundbank, id: "0608", title: "Street and Roads", author:
 cover: { scene: y-good-2, title: "صاحبك بيحب لك إيه؟", tag: "الصاحب ساحب · 2 من 3", focus: 1100 }
 publish:
   title: { en: "Does your friend want for you what he wants for himself?", ar: "صاحبك… بيحب لك اللي بيحبه لنفسه؟" }
-  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session (2026-11-19), à valider
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-19 (« Je valide titres, descriptions et accroches », question à choix)
     ar: "نفس المحطة مرتين… صاحب بيحب لنفسه، وصاحب بيحب لك زي نفسه."
     en: "The same bus stop, twice… a friend who loves for himself, and one who loves for you as he loves for himself."
+    validated: 2026-11-19
   part: 2
   hashtags: ["#الأخوة"]
   description:
