@@ -38,6 +38,10 @@ Pourquoi :
 - **La faiblesse de la grille** : chaque type de vidéo a son jour. Le jour de la semaine se mêle donc au type quand on
   compare. À une centaine de vues, ce biais pèse moins que l'accroche, mais il faut le garder en tête.
 
+**Publiée par quran-reels depuis le jeudi 19 novembre** (choix du propriétaire, 2026-11-19 : le départ
+prévu le lundi 23 avancé à ce jour, le short 3 du du'a) : Facebook et Instagram après la vérification des droits
+de Meta, TikTok en brouillon (il le publie), YouTube à la main ; une ligne barrée ici n'est jamais publiée.
+
 **L'heure : 18 h, heure de France, depuis le 2026-11-19** (sa demande : « modifier la publication automatique pour la
 page principale pour être aussi à 18h », comme la page test ; 19 h au Caire, 18 h à Alger, 20 h à Riyad et à Bagdad ;
 aucun chiffre ne dit encore si 18 h fait mieux ou moins bien que 19 h). **Avant : 19 h**, pour les shorts comme pour les films (décision du propriétaire, 2026-11-13 :
@@ -90,7 +94,7 @@ film du jour, Instagram seul, à 18 h (19 h jusqu'au 2026-11-19) ; les lundis d'
 | ~~dim. 15 nov.~~ | ~~Khidr, short 3 : le mur~~ | les quatre | `khidr-short-3-wall-ambience.mp4`, `-tiktok-ambience`, `couverture-3-mur.jpg` | « Short 3 » |
 | ~~lun. 16 nov., soir~~ | ~~Du'a : le film~~ | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical, ajouté par lui) | releases `dua-candidate`, `dua-9x16-candidate` | `publication-dua.md` : « Le film » ; `publication-dua-9x16.md` |
 | ~~mar. 17 nov.~~ | ~~Du'a, short 1 : Ayyoub~~ | les quatre | release `dua-candidate` | `publication-dua.md` : « Short 1 » |
-| mer. 18 nov. | Du'a, short 2 : Younous | les quatre | release `dua-candidate` | « Short 2 » |
+| ~~mer. 18 nov.~~ | ~~Du'a, short 2 : Younous~~ | les quatre | release `dua-candidate` | « Short 2 » |
 | jeu. 19 nov. | Du'a, short 3 : Zakariya | les quatre | release `dua-candidate` | « Short 3 » |
 | ven. 20 nov. | « آية وحكايتها » 1 : la caravane | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 1 » |
 | sam. 21 nov. | « سنريهم آياتنا » 1 : Abou Lahab | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 1 » |
