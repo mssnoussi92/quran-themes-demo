@@ -402,22 +402,23 @@ def cut_at_a_pause(copy) -> tuple[str, str, int]:
     raise AssertionError("no verse with a pause sign among the ones the shorts recite")
 
 
-def test_a_verse_is_cut_at_a_pause_sign(copy):
+def test_a_verse_is_never_cut_in_a_new_short(copy):
+    # The owner's rule (2026-11-19): « ne jamais couper ayah au milieu ». A short made after it recites whole verses,
+    # even at a pause sign; the shorts validated before it keep their cut (rules.CUT_BEFORE_THE_RULE).
     sid, short, n = cut_at_a_pause(copy)
+    assert short not in tool("rules").CUT_BEFORE_THE_RULE
     spec = copy.load(f"content/trial/{short}.yaml")
     verse = next(s for s in spec["segments"] if s.get("verse") == sid)
     del verse["verse"]
     verse.update({"verses": [sid], "upto": n})
     copy.dump(f"content/trial/{short}.yaml", spec)
-    done = copy.rules("--film", "ayah", "--draft")
-    assert done.returncode == 0 and "not followed by a pause sign" not in done.stdout, done.stdout[-2000:]
-    verse["upto"] = n + 1                                          # the middle of a sentence: a warning, not an error
-    copy.dump(f"content/trial/{short}.yaml", spec)
-    done = copy.rules("--film", "ayah", "--draft")
-    assert done.returncode == 0 and "not followed by a pause sign" in done.stdout, done.stdout[-2000:]
-    verse["upto"] = 400                                            # more words than the verse has
-    copy.dump(f"content/trial/{short}.yaml", spec)
-    refused(copy.rules("--film", "ayah", "--draft"), "recited words")
+    refused(copy.rules("--film", "ayah", "--draft"), "a verse is always recited whole")
+
+
+def test_the_shorts_cut_before_the_rule_still_pass(copy):
+    rules = tool("rules")
+    cut = {p.stem for p in (copy.root / "content" / "trial").glob("*.yaml") if "upto:" in p.read_text(encoding="utf-8")}
+    assert cut == rules.CUT_BEFORE_THE_RULE
 
 
 def test_upto_cuts_one_verse_only(copy):

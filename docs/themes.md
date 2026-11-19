@@ -1325,8 +1325,11 @@ style (les bonshommes avec visage, les trois décors) à faire valider avant d'a
 soir, un arrêt de bus le matin, un kiosque à la nuit tombante) ; les trois lectures de `bukhari_audiobook` (5534 :
 11,57-31,05 s, 19,5 s ; 13 : 21,81-29,55 s ; 2444 : 9,80-23,33 s ; ce qu'entend Whisper égale le texte affiché). Les
 versets et le Muyassar restent proposés. Avis donné : la lecture de 5534 dure 19,5 s (estimée à 10), `jalis` passe à
-environ 1:15, gardé entier (ses mots sont nos moments). À faire d'abord : réciter le milieu d'un verset (59:9, 5:2), que
-`upto` ne fait pas.
+environ 1:15, gardé entier (ses mots sont nos moments).
+
+**Sa règle (2026-11-19) : « ne jamais couper ayah au milieu »** : 59:9 se récite entier (33 s), 5:2 (67 s) est remplacé par
+9:71 entier (31,8 s), ses choix (questions à choix) ; le stock validé arrêté aux signes de pause reste tel quel (son choix).
+Les trois shorts font donc environ 1:20 à 1:35.
 
 **La forme** (environ 1:00) : trois moments de la vie de tous les jours dans un même décor, chacun joué deux fois
 (l'ami qui fait mal, puis celui qui fait bien, environ 6 s chacun), un code couleur dès la première image (le premier
@@ -1337,8 +1340,8 @@ texte et sa référence ; le verset récité ; le sens en une ligne (al-Muyassar
 | Short | Source (hadith-api ; lecture sur archive.org) | Verset (Tawfiq As-Sayegh) | Décor, étiquettes |
 | --- | --- | --- | --- |
 | `jalis` · الجليس | Bukhari 5534, Muslim 2628 : le porteur de musc et le forgeron (`5534.mp3` existe, à transcrire) | 43:67 (11,7 s), al-Muyassar : l'amitié dans le péché devient hostilité au Jour dernier, celle dans la piété dure | une ahwa le soir · « جليس السوء » / « الجليس الصالح » (les mots du hadith) |
-| `yuhibb` · زي ما تحب لنفسك | Bukhari 13, Muslim 45 (`0013.mp3` / `0014.mp3` : vérifier lequel lit 13) | 59:9, « ويؤثرون على أنفسهم ولو كان بهم خصاصة » (≈ 6 s, coupe à poser), ou rien | un arrêt de bus le matin · « بيحب لنفسه » / « بيحب لك زي نفسه » |
-| `nasr` · انصره ظالمًا | Bukhari 2444, avec « تأخذ فوق يديه » (`2444.mp3`) | 5:2, « وتعاونوا على البر والتقوى ولا تعاونوا على الإثم والعدوان » (≈ 10 s, coupe à poser) | un kiosque et sa file · « بيشجّعك » / « بينصرك » |
+| `yuhibb` · زي ما تحب لنفسك | Bukhari 13, Muslim 45 (`0013.mp3` lit bien 13) | **59:9 entier** (33 s, règle du 2026-11-19) | un arrêt de bus le matin · « بيحب لنفسه » / « بيحب لك زي نفسه » |
+| `nasr` · انصره ظالمًا | Bukhari 2444, avec « تأخذ فوق يديه » (`2444.mp3`) | **9:71 entier** (31,8 s ; à la place de 5:2, règle du 2026-11-19), al-Muyassar : « بعضهم أنصار بعض… وينهونهم عن… المعاصي » | un kiosque et sa file · « بيشجّعك » / « بينصرك » |
 
 **Le premier test** : leurs moments (la flaque, la glace, les copies, le parapluie, la rupture) ne sont pas repris ;
 pas de couple dessiné ; jamais de violence ; un moment de chaque short suit le texte (le musc offert et la braise qui

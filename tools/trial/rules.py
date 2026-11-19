@@ -156,6 +156,12 @@ def no_glyph(text: str, face: str) -> list[str]:
             if not (c.isspace() or unicodedata.category(c) in ("Cf", "Cc") or any(ord(c) in codepoints(f) for f in fonts))]
 
 
+
+# The owner's rule (2026-11-19): « ne jamais couper ayah au milieu »: a verse is always recited whole, never `upto`. The
+# shorts validated before the rule, each cut at a pause sign of the mushaf, stay as they are (his choice, the same day).
+CUT_BEFORE_THE_RULE = {"adab", "awake", "dabba", "days", "kahf", "khams", "lahab", "nur", "qalb", "qist", "rizq", "sadr",
+                       "sahun", "sayyara", "sky", "tayyiba", "universe", "womb"}
+
 class Repo:
     def __init__(self, root: Path):
         self.root = root
@@ -297,6 +303,10 @@ class Checker:
                 return set()
             if not isinstance(upto, int) or isinstance(upto, bool) or upto < 1:
                 self.out.error(file, f"`upto: {upto}` is the number of recited words kept, an integer from 1")
+                return set()
+            if Path(file).stem not in CUT_BEFORE_THE_RULE:
+                self.out.error(file, f"`upto: {upto}`: a verse is always recited whole (the owner's rule, 2026-11-19: "
+                                     "« ne jamais couper ayah au milieu »); only the shorts validated before it keep their cut")
                 return set()
         elif not isinstance(ids, list) or len(ids) < 2:
             self.out.error(file, f"`verses` is a list of two verses or more (one verse: `verse:`): {ids}")
