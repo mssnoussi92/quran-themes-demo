@@ -24,7 +24,7 @@ id: aqrab
 # docs/scripts/dhikr.md, avec 57:21 dans le short 3) : les répliques, la place des versets et des lectures. Ni la voix, ni
 # les images, ni les lectures (à juger sur les vidéos, son choix du même jour), ni les textes à coller. Inscrit sur sa parole.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
-validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, ambience] }   # « Je valide les trois » (question à choix, après la voix)
+validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, ambience, publish] }   # « Je valide les trois » (après la voix), puis « Je valide titres et accroches »
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 92-trial-aqrab
@@ -42,6 +42,10 @@ publish:
   description:
     ar: "عقرب لدغت راجل بالليل، فجه للنبي ﷺ يشتكي… والرد كان جملة يقولها لما المسا يدخل (صحيح مسلم 2709). وآخرها في القرآن: «من شر ما خلق» (الفلق 2)."
     en: "A scorpion stung a man at night, and he came to the Prophet ﷺ to complain. The answer was one sentence to say when evening comes (Sahih Muslim 2709), and its last words are in the Quran: \"From the evil of that which He created\" (113:2)."
+  hook:   # written by the session from the validated lines; « Je valide titres et accroches » (question à choix)
+    ar: "عقرب لدغت راجل بالليل… والنبي ﷺ دلّه على كلمات، لو قالها لما المسا دخل، ما كانتش ضرّته."
+    en: "A scorpion stung a man at night. The Prophet ﷺ showed him words: had he said them when evening came, it would not have harmed him."
+    validated: 2026-11-19
 segments:
   # Refait à la demande du propriétaire (2026-11-17, sur le brouillon muet) : plus de lecture du hadith par le lecteur du
   # recueil ; la narration dit au discours indirect ce que le Prophète ﷺ a répondu (jamais comme une citation), puis le

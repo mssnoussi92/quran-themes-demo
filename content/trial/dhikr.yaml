@@ -12,6 +12,7 @@
 # - La politique n'a pas de commentaire de hadith : une réplique de sens repose sur le tafsir d'un verset récité.
 # - L'ordre de publication est celui de `shorts` : chaque short annonce le suivant (une promesse à tenir).
 id: dhikr
+validated: { by: mssnoussi92, on: 2026-11-19, what: [publish] }      # « Je valide titres et accroches » (question à choix)
 files: dhikr                     # début du nom des vidéos livrées : dhikr-short-<n>-<id>.mp4
 title: { ar: "ذكر وحكايته", en: "A Dhikr and Its Story" }
 shorts: [aqrab, qul, dathur]

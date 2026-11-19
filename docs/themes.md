@@ -1169,8 +1169,10 @@ Whisper les entend mal). Rendus (workflow `film`, release brouillon `dhikr-candi
 défauts vus sur les planches et corrigés avant l'envoi : dans qul, la quatrième ligne de « زي مفاتيح… » touchait l'anneau
 des clés (les clés descendues de 70 px), dans dathur le « ۚ » de 57:21 écrivait « سوجة » dans la référence (`verseGap` 72).
 **Les trois shorts validés par lui le 2026-11-19** (« Je valide les trois » : voix, montage, dessins, couvertures,
-ambiances). Restent : les textes à coller (accroches et titres à valider), la date, et le short 1 d'abord sur Facebook seul
-(le test des droits de la lecture de Jibril).
+ambiances). **Titres, descriptions et accroches validés par lui le même jour** (« Je valide titres et accroches » ;
+`docs/retention/publication-dhikr.md`, où la lecture de Jibril est créditée à son nom : `publish.py` prend le lecteur de la
+partie lue) ; fichiers publics (`page-dhikr`). Restent : la date, et le short 1 d'abord sur Facebook seul (le test des
+droits de la lecture de Jibril).
 
 **L'affiche « الأذكار بعد الصلاة المفروضة » (envoyée par lui, 2026-11-17) et la suite** : comparée à la politique,
 presque tout y est (Muslim 591, 593-594, 595, 597 ; Bukhari 844 ; Tirmidhi 2903 pour الفلق et الناس, 3534 pour les dix

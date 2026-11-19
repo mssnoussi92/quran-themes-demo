@@ -127,8 +127,12 @@ def quotes_of(segments: list[dict]) -> list[tuple[str, str]]:
         elif "verses" in s:
             ids += [("verse", sid) for sid in s["verses"]]
         elif "reading" in s:
-            if ("reading", s["reading"]) not in ids:       # a part and the whole of a hadith: one reference
-                ids.append(("reading", s["reading"]))
+            # A part is named with its hadith (« sid#part »): a part can have its own reader (the dhikr of Muslim 2709a,
+            # read by Muhammad Jibril, 2026-11-19: the credits named the reader of the whole). Two parts read by the
+            # same reader give the same line, written once.
+            rid = f"{s['reading']}#{s['part']}" if s.get("part") else s["reading"]
+            if ("reading", rid) not in ids:
+                ids.append(("reading", rid))
         elif "card" in s:                                  # a dhikr to read: shown, never read
             if ("card", s["card"]) not in ids:
                 ids.append(("card", s["card"]))
@@ -258,7 +262,7 @@ def main() -> None:
 
         class FromRegistry(dict):
             def __missing__(self, sid: str) -> dict:
-                self[sid] = registry.described(sid)
+                self[sid] = registry.described(*sid.split("#", 1))      # « sid#part »: that part, its own reader
                 return self[sid]
 
         sources = FromRegistry()
