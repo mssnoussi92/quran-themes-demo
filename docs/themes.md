@@ -1070,6 +1070,13 @@ deux lectures** d'Abu Malik al-Asqalani (Bukhari 2449 et 216, `validated` au reg
 le 18 est aux six requêtes des quiz) : trois requêtes (textes 102 à 104), puis le rendu avec voix et ambiance, à valider sur
 les vidéos. Les sources du registre restent proposées : il les valide avec les vidéos finales.
 
+**La voix le 19 novembre** (run 44484203959 de `voice-test`, trois requêtes ; textes renumérotés 102 à 104, 95 à 101 étant
+pris par la série des quiz) : chaque phrase retrouvée dans les prises (`align.py`) ; Whisper entend autrement quelques mots, à
+écouter : « بصباع » (« بصباح »), « اتنقل » (« يتنقل ») dans la namima, « الصندوق » (« السندوق ») dans le riya'. **Ambiances**
+(proposées) : un café (BigSoundBank 2561, aucune parole distincte) pour la ghiba, la nuit validée (1880) pour la namima, la nuit
+après la pluie (0621) pour le riya'. **Rendu** (run 44484912562 du workflow `film`, release brouillon `hayyin-candidate`) :
+**2:06, 1:23, 1:46**, −16 LUFS, contrôlés sur leurs planches, envoyés le même matin.
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
