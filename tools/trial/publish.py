@@ -241,6 +241,10 @@ def main() -> None:
     p.add_argument("--film", default="film", help="the film's id (content/trial/<id>.yaml)")
     p.add_argument("--out", type=Path, help="default: `publish.out` of the film, or docs/publication-<files>.md")
     p.add_argument("--draft", action="store_true", help="before the voice: the timelines of the silent draft (voice X)")
+    p.add_argument("--elsewhere", metavar="PAGE",
+                   help="the texts of the shorts the film's `elsewhere` gives that page (`ma3ak`, the test page on Meta): their "
+                        "files signed with its name (`<name>-<page>.mp4`), Facebook and Instagram only; written beside the "
+                        "film's texts (`…-<page>.md`) unless --out (2026-11-19: quiz 5 and 6 published by quran-reels there)")
     p.add_argument("--tall", action="store_true",
                    help="only the text of the film in 9:16 (`<files>-film-9x16.mp4`), for Facebook; written beside the film's texts (`…-9x16.md`) unless --out")
     args = p.parse_args()
@@ -269,9 +273,19 @@ def main() -> None:
     # page's name, and has texts only for its `platforms` (every platform of the Page by default).
     handle = film.get("handle") or conf["handle"]
     platforms = film.get("platforms") or ["facebook", "instagram", "tiktok", "youtube"]
+    page = args.elsewhere
+    if page:                                      # the shorts another page gets, signed with its name
+        wanted = (film.get("elsewhere") or {}).get(page)
+        if not wanted:
+            sys.exit(f"error: --elsewhere {page}: {args.film} gives that page no short (`elsewhere`)")
+        if page not in conf.get("handles", {}):
+            sys.exit(f"error: --elsewhere {page}: no handle for it in content/publish.yaml (`handles`)")
+        handle, platforms = conf["handles"][page], ["facebook", "instagram"]
     social_names = [n for p, n in (("facebook", "Facebook"), ("instagram", "Instagram"), ("tiktok", "TikTok")) if p in platforms]
     socials = " et ".join([", ".join(social_names[:-1]), social_names[-1]] if len(social_names) > 1 else social_names)
     shorts = [yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film.get("shorts") or film["thumbnail"]["panels"]]
+    if page:
+        shorts = [s for s in shorts if s["id"] in film["elsewhere"][page]]
     # « Je valide » of the owner on the texts: `validated` of every file, with `publish` in what it covers.
     said = [(s.get("validated") or {}) for s in [film, *shorts]]
     validated = all("publish" in (v.get("what") or []) for v in said)
@@ -288,7 +302,8 @@ def main() -> None:
               else "Titres et descriptions **proposés par la session, pas encore validés par le propriétaire**")
     limits = conf["platforms"]
     own = ROOT / pub.get("out", f"docs/publication-{files}.md")
-    target = args.out or (own.with_name(own.stem + "-9x16" + own.suffix) if args.tall else own)
+    target = args.out or (own.with_name(own.stem + "-9x16" + own.suffix) if args.tall else
+                          own.with_name(f"{own.stem}-{args.elsewhere}{own.suffix}") if args.elsewhere else own)
     before = {} if args.draft else written(target)
 
     def timeline_of(ident: str, key: str) -> dict:
@@ -368,7 +383,7 @@ def main() -> None:
         print(f"{target.relative_to(ROOT) if target.is_relative_to(ROOT) else target}: the film in 9:16")
         return
 
-    if not series_only:
+    if not series_only and not page:
         # The film
         data = timeline_of(args.film, "film")
         ids = quotes_of([s for c in film["chapters"] for s in c["segments"]])
@@ -400,8 +415,8 @@ def main() -> None:
         # Numbers are written 1 2 3, never ١ ٢ ٣ (the owner, 2026-11-17); texts already validated keep what they were validated with.
         series = (f"{pub['series']['en']} · {n} · {pub['series']['ar']} · {n}" if series_only else
                   f"{pub['series']['en']} · part {n}/{total} · {pub['series']['ar']} · الجزء {n} من {total}")
-        name = f"{files}-short-{n}-{spec['id']}"
-        cover = (spec.get("cover") or {}).get("file", f"{name}-cover.jpg")
+        name = f"{files}-short-{n}-{spec['id']}" + (f"-{page}" if page else "")
+        cover = f"{name}-cover.jpg" if page else (spec.get("cover") or {}).get("file", f"{name}-cover.jpg")
 
         heading = sp["title"]["en"] + "\n" + sp["title"]["ar"]
         credits = "Quoted:\n" + "\n".join(lines) + "\n\n" + footage([spec])
