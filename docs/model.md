@@ -94,6 +94,9 @@ Des shorts qui tiennent seuls, sans film (la première : `ayah`, « آية وح�
 (`series`, `hashtags`, `narration`, `out`). `script.py --film <série>` et `rules.py --film <série>` la lisent comme un
 film, et toute la chaîne aussi depuis le 2026-11-12 : préparation (des versets récités d'une traite, la référence
 d'une narration), rendu par le workflow `film` (des shorts, pas de 16:9), textes à coller, page du propriétaire.
+Une série pour une autre page (`ma3ak`, la page test Meta, 2026-11-18) a son `handle` (`@ma3ak.5.thawani`) et ses
+`platforms` (`[facebook, instagram]` ; par défaut les quatre de la Page) : ni jumeau TikTok au rendu (il serait signé du
+nom TikTok de la Page), et `publish.py` n'écrit que les textes de ses plateformes, signés de son nom (2026-11-19).
 
 **Le style d'enquête de « سنريهم آياتنا »** (`signs`, 2026-11-12, validé par le propriétaire sur trois images de
 style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
@@ -372,7 +375,7 @@ dit quoi faire.
    à l'oreille. Pas de schéma des fichiers : seuls les champs ci-dessus sont exigés. (Le registre reste vérifié par
    `validate.py`.)
 3. **Rendu en CI : en service depuis le 2026-11-11, sauf pour le premier film.** Le workflow `film`
-   (`.github/workflows/film.yml`, à la main : `film`, `voice` D, `only` all|shorts|film|tiktok|<id d'un short>,
+   (`.github/workflows/film.yml`, à la main : `film`, `voice` D, `only` all|shorts|film|tiktok|<id d'un short ou plusieurs, séparés par des virgules : `qitr,marah`>,
    `ambience`, `from_run`) prépare puis rend en jobs parallèles : `prepare` (règles, clip Pixabay de chaque short,
    timelines avec les prises de `content/trial/takes/` : aucune requête de voix, puis le film), un job `render` par
    vidéo (short, version TikTok, film : `check.py` et ses planches), `stills` (couvertures et vignette), `release`

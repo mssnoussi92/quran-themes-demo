@@ -265,6 +265,12 @@ def main() -> None:
     pub = film["publish"]
     narration = pub["narration"][args.voice]
     series_only = "chapters" not in film          # a series: shorts that stand alone, no film
+    # A series for another page (`handle` of its file: the test page on Meta, `ma3ak`, 2026-11-18) is signed with that
+    # page's name, and has texts only for its `platforms` (every platform of the Page by default).
+    handle = film.get("handle") or conf["handle"]
+    platforms = film.get("platforms") or ["facebook", "instagram", "tiktok", "youtube"]
+    social_names = [n for p, n in (("facebook", "Facebook"), ("instagram", "Instagram"), ("tiktok", "TikTok")) if p in platforms]
+    socials = " et ".join([", ".join(social_names[:-1]), social_names[-1]] if len(social_names) > 1 else social_names)
     shorts = [yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film.get("shorts") or film["thumbnail"]["panels"]]
     # « Je valide » of the owner on the texts: `validated` of every file, with `publish` in what it covers.
     said = [(s.get("validated") or {}) for s in [film, *shorts]]
@@ -297,10 +303,11 @@ def main() -> None:
     out = [
         f"# {pub['series']['en']} · {pub['series']['ar']} : textes de publication",
         "",
-        (f"Pour {'chaque short' if series_only else 'le film et chaque short'}, les textes à copier : sur Facebook, Instagram et TikTok, "
+        (f"Pour {'chaque short' if series_only else 'le film et chaque short'}, les textes à copier : sur {socials}, "
          "la légende courte en trois textes, le titre, l'accroche " + ("avec la ligne de la voix IA" if any(voiced(s) for s in shorts) else "(pas de voix, pas de ligne de la voix IA)")
-         + ", les hashtags ; sur YouTube, quatre textes, le titre, "
-         f"la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags, collés dans la même description. {status} ; "
+         + ", les hashtags" + ("" if "youtube" in platforms else f" ; la page `{handle}` n'est que sur {socials}") + (" ; sur YouTube, quatre textes, le titre, "
+         f"la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags, collés dans la même description" if "youtube" in platforms else "")
+         + f". {status} ; "
          if short_captions else
          f"Pour {'chaque short' if series_only else 'le film et chaque short'}, sur chaque plateforme, quatre textes à copier : le titre, la description, "
          f"les crédits (les sources citées, le clip, l'ambiance) et les hashtags ; là où la plateforme n'a pas de champ de titre, il ouvre la légende, "
@@ -399,8 +406,8 @@ def main() -> None:
         heading = sp["title"]["en"] + "\n" + sp["title"]["ar"]
         credits = "Quoted:\n" + "\n".join(lines) + "\n\n" + footage([spec])
 
-        def description(handle: str) -> str:
-            return "\n\n".join([sp["description"]["en"], sp["description"]["ar"], series, voice_line(narration), handle])
+        def description(signed: str) -> str:
+            return "\n\n".join([sp["description"]["en"], sp["description"]["ar"], series, voice_line(narration), signed])
 
         def tags(platform: str) -> str:
             return hashtags(conf, sp.get("hashtags") or [], pub["hashtags"], platform)
@@ -408,18 +415,20 @@ def main() -> None:
         # Facebook, Instagram and TikTok: the short caption when the file has a hook (owner, 2026-11-15), three cards.
         hook = sp.get("hook")
 
-        def social(handle: str, platform: str) -> list[str]:
+        def social(signed: str, platform: str) -> list[str]:
+            if platform not in platforms:
+                return []
             if hook:
                 return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading, hooked(conf, hook, voiced(spec)), "", tags(platform))
-            return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading, description(handle), credits, tags(platform))
+            return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading, description(signed), credits, tags(platform))
 
         # The cards end up in one caption: its length is theirs together.
         insta = ("\n\n".join([heading, hooked(conf, hook, voiced(spec)), tags("instagram")]) if hook else
-                 "\n\n".join([heading, description(conf["handle"]), credits, tags("instagram")]))
+                 "\n\n".join([heading, description(handle), credits, tags("instagram")]))
         if len(insta) > limits["instagram_tiktok"]["max_caption"]:
             sys.exit(f"error: {name}: the Instagram caption is {len(insta)} characters")
         title = f"{sp['title']['en']} · {sp['title']['ar']}"
-        if len(title) > limits["youtube"]["max_title"]:
+        if "youtube" in platforms and len(title) > limits["youtube"]["max_title"]:
             sys.exit(f"error: {name}: the YouTube title is {len(title)} characters")
         # A series drawn twice (`casts`): the same texts for both drawings, each file named. The drawing the owner chose to
         # publish (`published_cast`) comes first: quran-reels publishes the first .mp4 of the line (« بص تاني », 2026-11-16: B).
@@ -431,7 +440,9 @@ def main() -> None:
             + f", signées `{conf['handles']['tiktok']}` sur TikTok · {stamp(data['seconds'])} · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts"
             if casts else
             f"`{name}{bed}.mp4` (TikTok : `{name}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`) · {stamp(data['seconds'])} · 9:16 · "
-            f"Facebook, Instagram, TikTok, YouTube Shorts · couverture : `{cover}`")
+            f"Facebook, Instagram, TikTok, YouTube Shorts · couverture : `{cover}`"
+            if "tiktok" in platforms else
+            f"`{name}{bed}.mp4`, signée `{handle}` · {stamp(data['seconds'])} · 9:16 · {socials} · couverture : `{cover}`")
         # The short version for Facebook and Instagram (`cut` of the file, prepare.py --cut), named once the owner has
         # validated it, never before: page-files makes public what this line names, and quran-reels publishes it.
         # After the first name, so that a reader taking the first .mp4 of the line keeps the full short.
@@ -441,13 +452,13 @@ def main() -> None:
             seconds = json.loads(cut_path.read_text(encoding="utf-8"))["seconds"] if cut_path.is_file() else None
             files_line += f" · version courte pour Facebook et Instagram : `{name}-cut{bed}.mp4`" + (f", {stamp(seconds)}" if seconds else "")
         out += [f"## Short {n} · {sp['title']['en']} · {sp['title']['ar']}", "", files_line, "",
-                *social(conf["handle"], "facebook"),
-                *social(conf["handle"], "instagram"),
-                (f"Sur TikTok : la vidéo `{name}-{casts[0]}-tiktok{bed}.mp4` ou `{name}-{casts[-1]}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`." if casts else
-                 f"Sur TikTok : la vidéo `{name}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`."), "",
+                *social(handle, "facebook"),
+                *social(handle, "instagram"),
+                *([(f"Sur TikTok : la vidéo `{name}-{casts[0]}-tiktok{bed}.mp4` ou `{name}-{casts[-1]}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`." if casts else
+                    f"Sur TikTok : la vidéo `{name}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`."), ""] if "tiktok" in platforms else []),
                 *social(conf["handles"]["tiktok"], "tiktok"),
-                *cards("YouTube", title, description(conf["handle"]), credits, tags("youtube"),
-                       f"Titre ({len(title)}/{limits['youtube']['max_title']})"),
+                *(cards("YouTube", title, description(handle), credits, tags("youtube"),
+                        f"Titre ({len(title)}/{limits['youtube']['max_title']})") if "youtube" in platforms else []),
                 *([] if series_only else ["Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.", ""])]
 
     target.parent.mkdir(parents=True, exist_ok=True)
