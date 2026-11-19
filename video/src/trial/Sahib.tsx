@@ -558,10 +558,10 @@ const BusStopSet: React.FC<{ poster?: boolean; cart?: boolean; t?: number }> = (
         <path d="M 720 1272 L 720 1420 M 980 1272 L 980 1420" strokeWidth={12} />
       </g>
       <g stroke={INK} strokeWidth={6}>
-        <path d="M 520 1420 L 520 640" strokeWidth={14} />
-        <circle cx={520} cy={600} r={58} fill="#f2c94c" />
+        <path d="M 500 1420 L 500 800" strokeWidth={14} />
+        <circle cx={500} cy={760} r={54} fill="#f2c94c" />
       </g>
-      <g transform="translate(520 600)">
+      <g transform="translate(500 760) scale(0.92)">
         <rect x={-30} y={-22} width={60} height={36} rx={8} fill="#2f6f9e" stroke={INK} strokeWidth={4} />
         <rect x={-22} y={-14} width={18} height={12} fill="#dff1ff" />
         <rect x={4} y={-14} width={18} height={12} fill="#dff1ff" />
@@ -1069,7 +1069,7 @@ const NBad1: Moment = ({ u }) => {
   return (
     <g>
       <Stick x={lerp(640, 470, pushed)} y={KIOSK.stand} pose={POSES.stand} facing={1} tone="white" face={pushed > 0.5 ? "worried" : "neutral"} scarf look={pushed > 0.5 ? -1 : 1} />
-      <Stick x={cut.x} y={KIOSK.stand} pose={cut.pose} facing={1} tone="white" face="neutral" cap="#2f6f9e" />
+      <Stick x={cut.x} y={KIOSK.stand} pose={cut.pose} facing={1} tone="white" face="neutral" cap="#3f8a5a" />
       <Stick x={230} y={KIOSK.stand} pose={{ ...POSES.stand, torso: -6 }} facing={1} tone="grey" face={u > 2.4 ? "laugh" : "neutral"}
         handF={u > 2.6 ? [300, 1000] : undefined} bendF={1} heldF={u > 2.6 ? <Phone r={-6} flash={u > 3.2 && u < 3.5 ? 1 : 0} /> : null} />
     </g>
@@ -1085,7 +1085,7 @@ const NGood1: Moment = ({ u }) => {
   return (
     <g>
       <Stick x={lerp(640, 470, pushed)} y={KIOSK.stand} pose={POSES.stand} facing={1} tone="white" face={back > 0.5 ? "smile" : pushed > 0.5 ? "worried" : "neutral"} scarf />
-      <Stick x={u < 3.0 ? cut.x : lerp(640, 300, back)} y={KIOSK.stand} pose={u < 3.0 ? cut.pose : back > 0 && back < 1 ? walk(back * 6) : POSES.stand} facing={u < 3.0 ? 1 : -1} tone="white" face={back > 0 ? "worried" : "neutral"} cap="#2f6f9e" />
+      <Stick x={u < 3.0 ? cut.x : lerp(640, 300, back)} y={KIOSK.stand} pose={u < 3.0 ? cut.pose : back > 0 && back < 1 ? walk(back * 6) : POSES.stand} facing={u < 3.0 ? 1 : -1} tone="white" face={back > 0 ? "worried" : "neutral"} cap="#3f8a5a" />
       <Stick x={lerp(230, 380, friend)} y={KIOSK.stand} pose={POSES.stand} facing={1} tone="white" face="kind" handF={friend > 0.5 && back < 0.5 ? [520, 1060] : undefined} bendF={1} />
       <Bubble x={360} y={860} text="لو سمحت، الدور" k={ramp(u, 2.4, 2.8) * (1 - ramp(u, 4.6, 5.2))} tail={-1} size={42} />
     </g>
