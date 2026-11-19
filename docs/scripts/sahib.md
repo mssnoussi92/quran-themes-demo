@@ -64,7 +64,7 @@ Décor : un kiosque et sa file. Gris = « بيشجّعك · Cheers you on », bl
 | 0:30 | Blanc : il retient la main du héros, qui rend l'argent. |
 | 0:36 | « مش كل اللي بيشجّعك… بينصرك. » · *Not everyone who cheers you on… is on your side.* |
 | 0:39 | Bukhari 2444 lu (13,6 s), jusqu'à « تأخذ فوق يديه » (la main qu'on vient de voir). |
-| 0:54 | **9:71 récité en entier** (31,8 s ; à la place de 5:2, voir plus bas). Sens, d'après al-Muyassar : « المؤمنين أنصار بعض… بيأمروا بالخير، وبيمنعوا بعض عن الغلط. » (**ligne nouvelle, à valider**) |
+| 0:54 | **9:71 récité en entier** (31,8 s ; à la place de 5:2, voir plus bas). Sens, d'après al-Muyassar : « المؤمنين أنصار بعض… بيأمروا بالخير، وبيمنعوا بعض عن الغلط. » (ligne nouvelle, **validée par lui le 2026-11-19**, question à choix) |
 | 1:30 | « ابعتها لصاحبك اللي بيمسك إيدك. » · *Send it to the friend who holds your hand back.* → la boucle. |
 
 **Changé le 2026-11-19, à sa demande (question à choix)** : sa règle, « ne jamais couper ayah au milieu », écarte le

@@ -736,3 +736,5 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   désormais seulement, le stock reste ; 59:9 entier ; 9:71 entier à la place de 5:2 (67 s). Fait : CLAUDE.md,
   `docs/model.md`, `tools/trial/rules.py` refuse `upto` hors des 18 shorts d'avant (`CUT_BEFORE_THE_RULE`, et ses tests),
   le registre (5:2 et son Muyassar remplacés par 9:71), les coupes de Tawfiq (43:67, 59:9, 9:71 ; celle de 5:2 retirée).
+  La nouvelle ligne de sens de `nasr` sur 9:71 (« المؤمنين أنصار بعض… بيأمروا بالخير، وبيمنعوا بعض عن الغلط. ») **validée par
+  lui** le même jour.
