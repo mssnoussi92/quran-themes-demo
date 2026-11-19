@@ -1,0 +1,80 @@
+# « معاك 5 ثواني », page test, quiz 13 (content/trial/ma3ak.yaml ; script : docs/scripts/quiz.md) : le sens d'un mot.
+# « ٱلْيَمِّ » de 20:39 est le Nil (al-Muyassar, as-Sa'di) ; le même mot est la mer où Pharaon fut noyé (7:136,
+# al-Muyassar : « في البحر ») : le piège honnête. 20:39 récité entier (choix du propriétaire, 2026-11-18). Rien n'est
+# dessiné de la mère de Moussa ni de Pharaon : un fleuve, des roseaux, une caisse de bois, un palais. Script écrit par la
+# session le 2026-11-18.
+id: yamm
+# « Je valide les 7 scripts » du propriétaire (2026-11-18, question à choix nommant les sept quiz du lot de la page test
+# et leurs répliques, choix et dessins ; « le verset entier » pour celui-ci) : inscrit sur sa parole. Ni la voix, ni les
+# images, ni les textes à coller.
+script_validated: { by: mssnoussi92, on: 2026-11-18 }
+# « Je valide les 7 clips et dessins » du propriétaire (2026-11-18, question à choix nommant les brouillons muets
+# du workflow `film`, run 44391880850) : le montage, les dessins et le clip tels que rendus. La voix, la couverture
+# et l'ambiance sous la voix restent à valider sur la vidéo finale. Inscrit sur sa parole.
+# « Je valide les 7 vidéos » et « je valide les 7 textes » du propriétaire (2026-11-19, questions à choix nommant les
+# quiz 7 à 13 tels qu'envoyés : voix, couvertures, ambiance et montage, run 44487100813, le 11 et le 13 rendus de
+# nouveau, runs 44490586411 et 44491699532 ; titres, accroches et hashtags de docs/retention/publication-ma3ak.md).
+validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, publish, ambience] }
+handle: "@ma3ak.5.thawani"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 101-trial-yamm
+# un fleuve entre deux parois de roche, vu d'en haut (Pixabay 225408, AttilaPergel, approuvé pour l'argent refusé de
+# Dhul-Qarnayn) : un fleuve, pas la mer (la mer de 22183, du premier brouillon, disait le mauvais choix) ; APPROUVÉ pour
+# ce short par le propriétaire le 2026-11-18 (« je valide les 7 clips et dessins »)
+clip: { source: pixabay, id: 225408, author: AttilaPergel, page: "https://pixabay.com/videos/id-225408/", take: { height: 1440 }, rate: 1, position: "50% 40%", shift: 0, brightness: 0.7, ground: "#06070c", horizon: 1380, veil: 0.8 }
+ambience: { source: bigsoundbank, id: "1448", title: "Small waves and beach #2", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/detail-1448-small-waves-and-beach-2.html", from: 100, seconds: 70, level: -38 }
+cover: { scene: ask, title: "«اليمّ»… يعني إيه؟", tag: "معاك 5 ثواني", focus: 1000 }
+quiz:
+  head: { verse: quran.20.39, from: 7, to: 7 }        # « ٱلْيَمِّ », écrit en or au-dessus de la question
+  choices:
+    - { ar: "البحر", en: "the sea", note: { ar: "بمعنى البحر · الأعراف 136", en: "meaning the sea, al-A'raf 136" } }
+    - { ar: "نهر النيل", en: "the Nile", right: true }
+    - { ar: "البير", en: "the well" }
+publish:
+  title: { en: "\"Al-yamm\"… what does it mean?", ar: "«اليمّ»… يعني إيه؟" }
+  part: 13
+  hashtags: ["#سورة_طه", "#معاني_الكلمات"]
+  hook:      # légende courte de Facebook et Instagram ; proposée par la session, validée par le propriétaire le 2026-11-19 (« je valide les 7 textes »)
+    ar: "أم موسى رمته في «اليمّ»… يعني فين بالظبط؟ معاك 5 ثواني."
+    en: "Moses' mother cast him into \"al-yamm\"… where exactly? You have 5 seconds."
+    validated: 2026-11-19
+  description:
+    en: "\"Al-yamm\" in Surat Taha (20:39) is the Nile (al-Muyassar, as-Sa'di): the river that carried baby Moses in his box to Pharaoh's palace. The same word in al-A'raf (7:136) is the sea where Pharaoh drowned."
+    ar: "«اليمّ» في سورة طه (طه 39) معناها نهر النيل: النيل هو اللي ودّى موسى الرضيع في صندوقه لحد قصر فرعون. ونفس الكلمة في سورة الأعراف (الأعراف 136) معناها البحر اللي غرق فيه فرعون."
+segments:
+  - narration: ask
+    silent: true
+    hold: 6.8
+    at_once: true
+    scene: ask
+    sfx: [[count, 0], [impact, 5.0]]
+    lines:
+      - ar: "في قصة سيدنا موسى وهو رضيع… يعني إيه؟"
+        en: "In the story of Moses as a baby… what does it mean?"
+  - verse: quran.20.39
+    scene: listen
+  - narration: meaning
+    scene: meaning
+    sources: [tafsir.muyassar.20.39, tafsir.saadi.20.39]
+    lines:
+      - ar: "اليمّ هنا… نهر النيل."
+        en: "\"Al-yamm\" here… is the Nile."
+  - narration: lesson
+    scene: lesson
+    sources: [tafsir.muyassar.20.39, tafsir.saadi.20.39]
+    lines:
+      - ar: "أم موسى حطّته في صندوق ورمته في النيل… والنيل هو اللي ودّاه لحد قصر فرعون."
+        en: "Moses' mother put him in a box and cast it into the Nile… and the Nile carried him to Pharaoh's palace."
+  - narration: check
+    scene: check
+    sources: [tafsir.muyassar.20.39]
+    lines:
+      - ar: "ونفس الكلمة في سورة الأعراف معناها البحر… اللي غرق فيه فرعون."
+        en: "And the same word in Surat al-A'raf means the sea… where Pharaoh drowned."
+  - narration: close
+    scene: close
+    lines:
+      - ar: "وإنت… حصلت لك حاجة كنت خايف منها… وطلعت هي سبب الخير؟"
+        en: "And you… did something you feared happen to you… and turn out to be the cause of good?"
+      - ar: "تابعنا عشان السؤال الجاي."
+        en: "Follow us for the next question."

@@ -9,6 +9,7 @@
 import type React from "react";
 import { FONT } from "../fonts";
 import { QUIZ } from "./quizData";
+import { Praying, Room, twoProstrations } from "./Sahw";
 import { clamp } from "./Signs";
 import type { Drawn, LayoutOverride } from "./Trial";
 
@@ -125,6 +126,9 @@ const ChoicePill: React.FC<{ choice: Choice; y: number; t: number; k: number; an
 
 // ---- the words of the question -------------------------------------------------------------------------------------
 
+/** The final letters whose tail goes well below the line in the Quran font (ج ح خ ع غ م ن ق ي ى ل س ش ص ض). */
+const DESCENDS = /[جحخعغمنقيىلسشصض]/;
+
 /** The Quranic words of the question, in gold between « », with their reference; the verse to finish has a blank
  * after them, which only the right end fills, at the answer. */
 const Head: React.FC<{ quiz: Quiz; t: number; answer: number; opacity: number }> = ({ quiz, t, answer, opacity }) => {
@@ -134,11 +138,15 @@ const Head: React.FC<{ quiz: Quiz; t: number; answer: number; opacity: number }>
   if (!quiz.blank) {
     const short = quiz.head.words.length <= 2;              // a word or two: written large
     const size = fitQuran(`«${head}»`, quiz.head.words.length === 1 ? 128 : short ? 112 : 70);
+    // A large word whose last letter goes below the line (the tail of « ٱلْيَمِّ », quiz 13, crossed its reference):
+    // the word 18 px higher, its reference 48 px lower (the tail and its kasra go 93 px under the line at 128 px).
+    // The other words keep their place.
+    const tail = short && DESCENDS.test(head.replace(/[^\u0621-\u064A]/g, "").slice(-1)) ? 1 : 0;
     return (
       <g opacity={opacity}>
-        <text x={540} y={short ? 470 : 450} textAnchor="middle" direction="rtl" fontFamily={FONT.quran} fontSize={size} fill={GOLD}
+        <text x={540} y={(short ? 470 : 450) - 18 * tail} textAnchor="middle" direction="rtl" fontFamily={FONT.quran} fontSize={size} fill={GOLD}
               style={{ filter: "drop-shadow(0 2px 14px rgba(4,7,20,.9))" }}>{RTL(`«${head}»`)}</text>
-        <text x={540} y={short ? 528 : 512} textAnchor="middle" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={30} fill={PALE} opacity={0.7}>{RTL(ref)}</text>
+        <text x={540} y={(short ? 528 : 512) + 48 * tail} textAnchor="middle" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={30} fill={PALE} opacity={0.7}>{RTL(ref)}</text>
       </g>
     );
   }
@@ -443,9 +451,273 @@ const HudhudPicture: Drawn = ({ t, show, since, horizon }) => {
   );
 };
 
+
+// ---- the test page's quizzes (content/trial/ma3ak.yaml, 2026-11-18): one picture each, nobody drawn ------------------
+
+/** The scene of the verse and its meaning: what tells the answer is never drawn before it. */
+const placeOf = (show: (id: string) => number) => Math.max(show("listen"), ...MEANING.map((scene) => show(scene)), 0.5 * show("close"));
+
+/** Two dark mountains, a gap between them (the « صدفين » of 18:96). */
+const Mountains: React.FC<{ horizon: number }> = ({ horizon }) => (
+  <g fill="#05060c">
+    <path d={`M 0 ${horizon + 20} V ${horizon - 640} L 110 ${horizon - 700} L 220 ${horizon - 820} L 300 ${horizon - 600} L 360 ${horizon - 420} L 380 ${horizon + 20} Z`} />
+    <path d={`M ${W} ${horizon + 20} V ${horizon - 620} L 980 ${horizon - 780} L 860 ${horizon - 690} L 780 ${horizon - 560} L 720 ${horizon - 400} L 700 ${horizon + 20} Z`} />
+  </g>
+);
+
+/** Short 7 (18:96): the barrier rises block by block between the two mountains with the verse; the fire reddens the iron;
+ * after the answer's verse the molten copper runs down over it and welds it into one wall. Nobody is drawn. */
+const QitrPicture: Drawn = ({ t, show, since, horizon }) => {
+  const place = placeOf(show);
+  const listening = show("listen") > 0 && show("meaning") === 0;
+  const built = listening ? after(t, since("listen"), 9) : place > 0 ? 1 : 0;
+  const fire = listening ? after(t, since("listen") + 8, 3) * (1 - after(t, since("listen") + 16, 3)) : 0;
+  const pour = listening ? after(t, since("listen") + 16, 4) : place > 0 ? 1 : 0;
+  const rows = 9;
+  const height = 62;
+  const shown = Math.round(built * rows);
+  return (
+    <g>
+      <Mountains horizon={horizon} />
+      <g opacity={place}>
+        {Array.from({ length: shown }, (_, r) => {
+          const y = horizon - (r + 1) * height;
+          return Array.from({ length: 5 }, (__, k) => {
+            const x = 372 + k * 70 - (r % 2 ? 35 : 0);
+            return (
+              <g key={`${r}-${k}`}>
+                <rect x={Math.max(372, x)} y={y} width={Math.min(68, 722 - Math.max(372, x))} height={height - 4} rx={4} fill="#1b1f27" stroke={PALE} strokeOpacity={0.18} strokeWidth={2} />
+                <rect x={Math.max(372, x)} y={y} width={Math.min(68, 722 - Math.max(372, x))} height={height - 4} rx={4} fill="#c2492a" opacity={0.75 * fire} />
+              </g>
+            );
+          });
+        })}
+        <defs>
+          <linearGradient id="quiz-copper" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#f0a35a" stopOpacity={0.9} />
+            <stop offset="1" stopColor="#b8642e" stopOpacity={0.75} />
+          </linearGradient>
+        </defs>
+        <rect x={372} y={horizon - rows * height} width={350} height={rows * height * pour} fill="url(#quiz-copper)" opacity={0.85} />
+        {[410, 470, 545, 610, 680].map((x, k) => (
+          <path key={k} d={`M ${x} ${horizon - rows * height} v ${rows * height * Math.min(1, pour * (1.1 + 0.15 * k))}`} stroke="#ffcf8a" strokeOpacity={0.55 * pour} strokeWidth={5} strokeLinecap="round" />
+        ))}
+        {fire > 0 ? <ellipse cx={547} cy={horizon - 120} rx={260} ry={150} fill="#ff7a3a" opacity={0.18 * fire} /> : null}
+      </g>
+      <Ground horizon={horizon} />
+    </g>
+  );
+};
+
+/** Short 8 (31:18): a path across the plain to great mountains far away; calm steps appear on it one by one. */
+const MarahPicture: Drawn = ({ t, show, since, horizon }) => {
+  const place = placeOf(show);
+  const listening = show("listen") > 0 && show("meaning") === 0;
+  const steps = listening ? after(t, since("listen"), 11) : place > 0 ? 1 : 0;
+  const prints = 12;
+  return (
+    <g>
+      <Ground horizon={horizon} />
+      <path d={`M 400 1920 C 470 ${horizon + 300} 560 ${horizon + 120} 532 ${horizon + 14} L 548 ${horizon + 14} C 600 ${horizon + 120} 640 ${horizon + 300} 680 1920 Z`} fill="#3a2f22" opacity={0.8 * place} />
+      <g opacity={place}>
+        {Array.from({ length: Math.floor(steps * prints + 0.001) }, (_, k) => {
+          const u = k / prints;
+          const y = 1880 - u * (1880 - horizon - 40);
+          const x = 540 + (k % 2 ? 18 : -18) * (1 - u) + 16 * Math.sin(u * 3);
+          const s = 1 - 0.75 * u;
+          return <ellipse key={k} cx={x} cy={y} rx={13 * s} ry={22 * s} fill="#1a140d" opacity={0.85} />;
+        })}
+      </g>
+    </g>
+  );
+};
+
+/** Short 9 (37:97-99): a town far away, the embers of a great fire beside it that cool with the meaning (« بردًا
+ * وسلامًا »), a road toward the dawn and footprints on it. Nobody is drawn: neither Abraham, nor Moses, nor Noah. */
+const DhahibPicture: Drawn = ({ t, show, since, horizon }) => {
+  const place = placeOf(show);
+  const cool = Math.max(show("meaning") > 0 ? after(t, since("meaning") + 3, 2) : 0, show("lesson"), show("check"), show("close"));
+  const leave = Math.max(show("lesson") > 0 ? after(t, since("lesson"), 6) : 0, show("check"), show("close"));
+  const prints = 9;
+  return (
+    <g>
+      <defs>
+        <radialGradient id="quiz-dawn9" cx="85%" cy="100%" r="60%">
+          <stop offset="0%" stopColor="#f7c487" stopOpacity={0.7} />
+          <stop offset="100%" stopColor="#f7c487" stopOpacity={0} />
+        </radialGradient>
+        <radialGradient id="quiz-embers" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#ff8a3d" stopOpacity={0.9} />
+          <stop offset="100%" stopColor="#ff8a3d" stopOpacity={0} />
+        </radialGradient>
+      </defs>
+      <rect x={0} y={horizon - 700} width={W} height={720} fill="url(#quiz-dawn9)" opacity={0.2 + 0.8 * leave} />
+      <g fill="#04050b">
+        {[[40, 70, 90], [120, 60, 120], [190, 80, 80], [280, 50, 105]].map(([x, w, h], k) => <rect key={k} x={x} y={horizon - h} width={w} height={h + 20} />)}
+      </g>
+      <g opacity={place}>
+        <ellipse cx={420} cy={horizon - 10} rx={130} ry={60} fill="url(#quiz-embers)" opacity={0.85 * (1 - cool)} />
+        <ellipse cx={420} cy={horizon - 4} rx={120} ry={22} fill="#5a5650" opacity={0.6 * cool} />
+        {Array.from({ length: 14 }, (_, k) => (
+          <circle key={k} cx={330 + ((k * 53) % 180)} cy={horizon - 10 - ((k * 37) % 50) - 30 * ((t * 0.4 + k * 0.13) % 1)} r={2.5}
+                  fill="#ffb36b" opacity={0.7 * (1 - cool) * (1 - ((t * 0.4 + k * 0.13) % 1))} />
+        ))}
+      </g>
+      <Ground horizon={horizon} />
+      <path d={`M 300 ${horizon + 16} C 520 ${horizon + 60} 760 ${horizon + 30} ${W} ${horizon + 6}`} fill="none" stroke="#141722" strokeWidth={34} opacity={place} />
+      <g opacity={place}>
+        {Array.from({ length: Math.floor(leave * prints + 0.001) }, (_, k) => {
+          const u = (k + 1) / (prints + 1);
+          const x = 330 + u * (W - 360);
+          const y = horizon + 16 + 40 * Math.sin(Math.PI * u) * 0.9 - 10 * u + (k % 2 ? 6 : -6);
+          return <ellipse key={k} cx={x} cy={y} rx={9} ry={5} fill={PALE} opacity={0.3} />;
+        })}
+      </g>
+    </g>
+  );
+};
+
+/** A cow and a sheep, small silhouettes grazing, heads down, facing left. Feet at y 0. */
+const Cow: React.FC<{ s?: number }> = ({ s = 1 }) => (
+  <g transform={`scale(${s})`} fill="#04050a">
+    <path d="M -60 -70 C -60 -96 60 -100 64 -72 L 64 -40 C 64 -32 56 -30 50 -30 L -48 -30 C -58 -30 -60 -36 -60 -44 Z" />
+    <path d="M -60 -66 C -78 -60 -92 -40 -96 -22 C -100 -12 -86 -8 -80 -18 C -74 -30 -66 -42 -56 -48 Z" />
+    {[-44, -28, 36, 50].map((x, k) => <rect key={k} x={x - 5} y={-34} width={10} height={34} rx={3} />)}
+    <path d="M 64 -66 C 76 -60 78 -44 74 -30" stroke="#04050a" strokeWidth={4} fill="none" />
+  </g>
+);
+const Sheep: React.FC<{ s?: number }> = ({ s = 1 }) => (
+  <g transform={`scale(${s})`} fill="#04050a">
+    <ellipse cx={0} cy={-44} rx={46} ry={26} />
+    <ellipse cx={-48} cy={-28} rx={14} ry={10} />
+    {[-26, -12, 16, 30].map((x, k) => <rect key={k} x={x - 4} y={-24} width={8} height={24} rx={3} />)}
+  </g>
+);
+
+/** Short 10 (80:27-32): the earth gives, one by one with the verses: grain, vines, olives, palms, thick gardens, fruit;
+ * at « وَأَبًّا » grass spreads and cattle come to graze on it. Nobody is drawn. */
+const AbbPicture: Drawn = ({ t, show, since, horizon }) => {
+  const place = placeOf(show);
+  const listening = show("listen") > 0 && show("meaning") === 0;
+  const grow = listening ? after(t, since("listen"), 16) : place > 0 ? 1 : 0;
+  const graze = listening ? after(t, since("listen") + 14, 4) : place > 0 ? 1 : 0;
+  const stage = (k: number) => clamp(grow * 6 - k);
+  const dark = "#04060a";
+  return (
+    <g>
+      <Ground horizon={horizon} />
+      <g opacity={place}>
+        <g opacity={stage(0)}>{[70, 100, 130, 160, 190].map((x, k) => <path key={k} d={`M ${x} ${horizon + 10} q 6 -90 ${k % 2 ? 10 : -6} -150 m 0 0 q -12 20 -4 40 m 4 -40 q 12 20 4 40`} stroke={dark} strokeWidth={6} fill="none" />)}</g>
+        <g opacity={stage(1)}>
+          <path d={`M 250 ${horizon + 10} V ${horizon - 170} H 360 V ${horizon + 10}`} stroke={dark} strokeWidth={8} fill="none" />
+          {[270, 305, 340].map((x, k) => <g key={k}>{[0, 1, 2, 3].map((j) => <circle key={j} cx={x + (j % 2) * 10} cy={horizon - 150 + j * 14} r={8} fill={dark} />)}</g>)}
+        </g>
+        <g opacity={stage(2)}>
+          <path d={`M 450 ${horizon + 10} C 448 ${horizon - 80} 440 ${horizon - 120} 452 ${horizon - 160}`} stroke={dark} strokeWidth={14} fill="none" />
+          <ellipse cx={452} cy={horizon - 200} rx={80} ry={52} fill={dark} />
+        </g>
+        <g opacity={stage(3)}>
+          <path d={`M 580 ${horizon + 10} C 576 ${horizon - 160} 590 ${horizon - 300} 584 ${horizon - 420}`} stroke={dark} strokeWidth={14} fill="none" />
+          {[-70, -35, 0, 35, 70, 110, -110].map((a, k) => <path key={k} d={`M 584 ${horizon - 420} q ${60 * Math.sin((a * Math.PI) / 180)} ${-30} ${120 * Math.sin((a * Math.PI) / 180)} ${30 + Math.abs(a) * 0.4}`} stroke={dark} strokeWidth={9} fill="none" />)}
+        </g>
+        <g opacity={stage(4)}>{[[690, 120], [760, 160], [830, 130]].map(([x, h], k) => <g key={k}><rect x={x - 6} y={horizon - h + 40} width={12} height={h - 30} fill={dark} /><circle cx={x} cy={horizon - h + 20} r={52} fill={dark} /></g>)}</g>
+        <g opacity={stage(5)}>
+          <rect x={944} y={horizon - 120} width={12} height={130} fill={dark} />
+          <ellipse cx={950} cy={horizon - 170} rx={70} ry={60} fill={dark} />
+          {[[920, -180], [960, -200], [985, -160], [935, -145]].map(([x, dy], k) => <circle key={k} cx={x} cy={horizon + dy} r={9} fill={GOLD} opacity={0.55} />)}
+        </g>
+        <g opacity={graze}>
+          {Array.from({ length: 22 }, (_, k) => <path key={k} d={`M ${30 + k * 48} ${horizon + 120 + (k % 3) * 14} l 6 -26 l 6 26 l 6 -20 l 4 20`} stroke="#0d1a12" strokeWidth={4} fill="none" />)}
+          <g transform={`translate(${W + 120 - 380 * graze} ${horizon + 150})`}><Cow s={1.1} /></g>
+          <g transform={`translate(${W + 260 - 380 * graze} ${horizon + 170})`}><Sheep s={1.1} /></g>
+          <g transform={`translate(${W + 380 - 380 * graze} ${horizon + 160})`}><Sheep /></g>
+        </g>
+      </g>
+    </g>
+  );
+};
+
+/** Short 11 (2:45): the prayer room of « إزاي أعملها؟ »; an anonymous figure, faceless, bows down from the answer's verse
+ * (the owner's rule, 2026-11-15: a silhouette for the unknown). Dimmed under the question. */
+const KhashiPicture: Drawn = ({ t, show, since }) => {
+  const place = placeOf(show);
+  return (
+    <g>
+      <Room t={t} dim={0.55 * (1 - place)} />
+      <g opacity={place}><Praying id="kh-fig" body={twoProstrations(t, since("listen") + 1)} /></g>
+    </g>
+  );
+};
+
+/** Short 12 (28:24): a well in the desert at noon (short 1's), sheep that drink at it with the verse, then the shade of a
+ * lone tree. Nobody is drawn: neither Moses nor the two women. */
+const FaqirPicture: Drawn = ({ t, show, since, horizon }) => {
+  const place = placeOf(show);
+  const listening = show("listen") > 0 && show("meaning") === 0;
+  const drink = listening ? after(t, since("listen"), 3) : place > 0 ? 1 : 0;
+  const shade = listening ? after(t, since("listen") + 5, 3) : place > 0 ? 1 : 0;
+  return (
+    <g>
+      <defs>
+        <radialGradient id="quiz-noon" cx="50%" cy="0%" r="80%">
+          <stop offset="0%" stopColor="#fff1c9" stopOpacity={0.35} />
+          <stop offset="100%" stopColor="#fff1c9" stopOpacity={0} />
+        </radialGradient>
+      </defs>
+      <rect x={0} y={0} width={W} height={horizon} fill="url(#quiz-noon)" opacity={0.6} />
+      <Ground horizon={horizon} />
+      <g opacity={place}>
+        <Well x={330} y={horizon + 80} down={1} />
+        {[[540, 1.2], [640, 1.05], [740, 1.2]].map(([x, s], k) => <g key={k} transform={`translate(${x - 140 * (1 - drink)} ${horizon + 12})`}><Sheep s={s} /></g>)}
+        <g opacity={shade}>
+          <ellipse cx={890} cy={horizon + 170} rx={170} ry={36} fill="#000" opacity={0.55} />
+          <path d={`M 900 ${horizon + 170} C 896 ${horizon + 60} 880 ${horizon - 10} 860 ${horizon - 80}`} stroke="#120d09" strokeWidth={18} fill="none" />
+          <path d={`M 740 ${horizon - 90} C 800 ${horizon - 150} 960 ${horizon - 160} 1040 ${horizon - 100} C 980 ${horizon - 70} 820 ${horizon - 60} 740 ${horizon - 90} Z`} fill="#120d09" />
+        </g>
+      </g>
+    </g>
+  );
+};
+
+/** Short 13 (20:39): a river at dawn between reeds; a closed wooden box floats down it with the verse and comes to the bank
+ * where a palace stands. Nobody is drawn: neither Moses' mother nor Pharaoh. */
+const YammPicture: Drawn = ({ t, show, since, horizon }) => {
+  const place = placeOf(show);
+  const listening = show("listen") > 0 && show("meaning") === 0;
+  const drift = listening ? after(t, since("listen") + 1, 18) : place > 0 ? 1 : 0;
+  const bx = 120 + 640 * drift;
+  const by = horizon + 70 + 6 * Math.sin(t * 2);
+  return (
+    <g>
+      <rect x={0} y={horizon} width={W} height={160} fill="#0d1322" opacity={0.85} />
+      {Array.from({ length: 10 }, (_, k) => <path key={k} d={`M ${((k * 137 + t * 40) % (W + 200)) - 100} ${horizon + 30 + (k % 4) * 30} h 70`} stroke={PALE} strokeOpacity={0.12} strokeWidth={3} />)}
+      <g fill="#04050a" opacity={place}>
+        <path d={`M 800 ${horizon + 4} V ${horizon - 170} H 1080 V ${horizon + 4} Z`} />
+        <path d={`M 780 ${horizon - 170} H 1080 V ${horizon - 196} H 780 Z`} />
+        {[820, 880, 940, 1000].map((x, k) => <rect key={k} x={x} y={horizon - 150} width={18} height={150} fill="#0b0d16" />)}
+      </g>
+      <g opacity={place}>
+        <g transform={`translate(${bx} ${by}) rotate(${3 * Math.sin(t * 1.6)})`}>
+          <rect x={-46} y={-30} width={92} height={36} rx={4} fill="#3a2a1a" stroke={GOLD} strokeOpacity={0.5} strokeWidth={2} />
+          <path d="M -46 -30 L 0 -48 L 46 -30 Z" fill="#2c2014" stroke={GOLD} strokeOpacity={0.4} strokeWidth={2} />
+        </g>
+      </g>
+      <path d={`M 0 ${horizon + 160} H ${W} V 1920 H 0 Z`} fill="#03050c" />
+      <g stroke="#06080e" strokeWidth={6} fill="none">
+        {Array.from({ length: 26 }, (_, k) => {
+          const x = 20 + k * 41;
+          const h = 160 + ((k * 53) % 120);
+          return <path key={k} d={`M ${x} ${horizon + 200} q ${8 * Math.sin(t + k)} ${-h / 2} ${4 + 6 * Math.sin(t * 0.8 + k)} ${-h}`} />;
+        })}
+      </g>
+    </g>
+  );
+};
+
 const IDS = Object.keys(QUIZ) as Id[];
 export const QUIZ_PICTURES: Record<string, Drawn> = {
   sayyara: SayyaraPicture, khatima: KhatimaPicture, qalaha: QalahaPicture, dabba: DabbaPicture, sabr: SabrPicture, hudhud: HudhudPicture,
+  qitr: QitrPicture, marah: MarahPicture, dhahib: DhahibPicture, abb: AbbPicture, khashi: KhashiPicture, faqir: FaqirPicture, yamm: YammPicture,
 };
 export const QUIZ_OVERLAYS: Record<string, Drawn> = Object.fromEntries(IDS.map((id) => [id, makeOverlay(id)]));
 /** The question and the lines of the voice under the words of the question (to 600); the countdown, the choices and the

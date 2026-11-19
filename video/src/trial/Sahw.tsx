@@ -88,7 +88,7 @@ const KNEE_X = 520;          // the figure kneels, sits and stands on its knees'
 
 /** The figure drawn from its joints, black and backlit like the figure of « بص تاني », resting on the floor line with its
  * front knee at KNEE_X: it never slides off the rug when it goes down or stands up. */
-const Praying: React.FC<{ id: string; body: Body; scale?: number; rim?: string }> = ({ id, body: b, scale = 1.42, rim = "#f3c98b" }) => {
+export const Praying: React.FC<{ id: string; body: Body; scale?: number; rim?: string }> = ({ id, body: b, scale = 1.42, rim = "#f3c98b" }) => {
   const low = Math.max(b.handF[1], b.handB[1], b.toeF[1], b.toeB[1], b.kneeF[1], b.kneeB[1], b.head[1] + SEG.head) + 13;
   const x = KNEE_X - b.kneeF[0] * scale;
   const y = FEET - low * scale;
@@ -123,7 +123,7 @@ const QIYAM = bodyOf(PRAYER.qiyam);
 const JULUS = bodyOf(PRAYER.julus);
 
 /** Two prostrations, sitting between them, from `from` seconds (from standing first, if `start` says so). */
-const twoProstrations = (t: number, from: number, start: Body = JULUS): Body => {
+export const twoProstrations = (t: number, from: number, start: Body = JULUS): Body => {
   const keys: [number, Body][] = [[0, start], [0.9, JULUS], [1.5, SUJUD_BODY], [2.6, SUJUD_BODY], [3.2, JULUS], [3.8, JULUS], [4.4, SUJUD_BODY], [5.5, SUJUD_BODY], [6.1, JULUS]];
   const u = t - from;
   if (u <= 0) return start;
@@ -136,7 +136,7 @@ const twoProstrations = (t: number, from: number, start: Body = JULUS): Body => 
 // ---------------------------------------------------------------------------------------------------- the room
 
 /** A prayer room at dawn: an arched window on the right (the qibla), its beam on the floor, a rug. */
-const Room: React.FC<{ t: number; dim?: number; rug?: boolean }> = ({ t, dim = 0, rug = true }) => {
+export const Room: React.FC<{ t: number; dim?: number; rug?: boolean }> = ({ t, dim = 0, rug = true }) => {
   const breathe = 0.9 + 0.1 * Math.sin(t * 0.5);
   return (
     <g>

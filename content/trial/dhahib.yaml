@@ -1,0 +1,79 @@
+# « معاك 5 ثواني », page test, quiz 9 (content/trial/ma3ak.yaml ; script : docs/scripts/quiz.md) : qui l'a dit.
+# « إِنِّى ذَاهِبٌ إِلَىٰ رَبِّى سَيَهْدِينِ » (37:99) : Ibrahim, sauvé du feu, quittant sa terre (al-Muyassar, as-Sa'di) ; le
+# piège honnête, Moussa devant la mer : « إِنَّ مَعِىَ رَبِّى سَيَهْدِينِ » (26:62). Rien n'est dessiné d'Ibrahim, de Moussa
+# ni de Nouh : les braises d'un grand feu, une route vers l'aube, une trace de pas. Script écrit par la session le 2026-11-18.
+# Le lundi 23 novembre, jour de la paire avec le quiz 1 de la Page.
+id: dhahib
+# « Je valide les 7 scripts » du propriétaire (2026-11-18, question à choix nommant les sept quiz du lot de la page test
+# et leurs répliques, choix et dessins) : inscrit sur sa parole. Ni la voix, ni les images, ni les textes à coller.
+script_validated: { by: mssnoussi92, on: 2026-11-18 }
+# « Je valide les 7 clips et dessins » du propriétaire (2026-11-18, question à choix nommant les brouillons muets
+# du workflow `film`, run 44391880850) : le montage, les dessins et le clip tels que rendus. La voix, la couverture
+# et l'ambiance sous la voix restent à valider sur la vidéo finale. Inscrit sur sa parole.
+# « Je valide les 7 vidéos » et « je valide les 7 textes » du propriétaire (2026-11-19, questions à choix nommant les
+# quiz 7 à 13 tels qu'envoyés : voix, couvertures, ambiance et montage, run 44487100813, le 11 et le 13 rendus de
+# nouveau, runs 44490586411 et 44491699532 ; titres, accroches et hashtags de docs/retention/publication-ma3ak.md).
+# Sa prise gardée telle quelle (son choix du même jour) : à 0:35, Whisper entend « بردًا وسلامًا » (les tanwin de
+# 21:69) là où le texte dit « برد وسلام » ; la session proposait de la refaire voyellée.
+validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, publish, ambience] }
+handle: "@ma3ak.5.thawani"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 97-trial-dhahib
+# le soleil au-dessus d'une vallée de brume (Pixabay 59291, trilemedia, approuvé pour la maison du du'a) : l'aube du départ ;
+# APPROUVÉ pour ce short par le propriétaire le 2026-11-18 (« je valide les 7 clips et dessins »)
+clip: { source: pixabay, id: 59291, author: trilemedia, page: "https://pixabay.com/videos/id-59291/", take: { height: 1440 }, rate: 1, position: "43% 50%", shift: 0, brightness: 0.7, ground: "#0a0b12", horizon: 1380, veil: 0.8 }
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 10, seconds: 60, level: -36 }
+cover: { scene: ask, title: "مين قالها… وإمتى؟", tag: "معاك 5 ثواني", focus: 1000 }
+quiz:
+  head: { verse: quran.37.99, from: 2, to: -1 }       # « إِنِّى ذَاهِبٌ إِلَىٰ رَبِّى سَيَهْدِينِ »
+  choices:
+    - { ar: "سيدنا إبراهيم وهو سايب بلده", en: "Abraham, leaving his land", right: true }
+    - { ar: "سيدنا موسى قدّام البحر", en: "Moses, before the sea", note: { ar: "قال قريب منها · الشعراء 62", en: "said one close to it, ash-Shu'ara' 62" } }
+    - { ar: "سيدنا نوح وهو بيركب السفينة", en: "Noah, boarding the ark" }
+publish:
+  title: { en: "\"I am going to my Lord\"… who said it?", ar: "«إني ذاهب إلى ربي»… مين قالها؟" }
+  part: 9
+  hashtags: ["#سورة_الصافات", "#قصص_القرآن"]
+  hook:      # légende courte de Facebook et Instagram ; proposée par la session, validée par le propriétaire le 2026-11-19 (« je valide les 7 textes »)
+    ar: "«إني ذاهب إلى ربي سيهدين»… ناس كتير هتقول موسى. مين قالها؟ معاك 5 ثواني."
+    en: "\"I am going to my Lord; He will guide me\"… many will say Moses. Who said it? You have 5 seconds."
+    validated: 2026-11-19
+  description:
+    en: "\"I am going to my Lord; He will guide me\" (37:99) was said by Abraham, saved from the fire, leaving his land for a place to worship his Lord (al-Muyassar, as-Sa'di). Before the sea, Moses said a close sentence (26:62)."
+    ar: "«إني ذاهب إلى ربي سيهدين» (الصافات 99) قالها سيدنا إبراهيم بعد ما ربنا نجّاه من النار، وهو سايب بلده لمكان يعبد فيه ربنا. وسيدنا موسى قال جملة قريبة قدّام البحر (الشعراء 62)."
+segments:
+  - narration: ask
+    silent: true
+    hold: 6.8
+    scene: ask
+    sfx: [[count, 0], [impact, 5.0]]
+    lines:
+      - ar: "مين قالها… وإمتى؟"
+        en: "Who said it… and when?"
+  - verses: [quran.37.97, quran.37.98, quran.37.99]
+    scene: listen
+  - narration: meaning
+    scene: meaning
+    sources: [tafsir.muyassar.37.97, tafsir.muyassar.37.98, tafsir.saadi.37.98]
+    lines:
+      - ar: "قومه بنوا نار كبيرة ورموه فيها… وربنا خلّاها برد وسلام عليه."
+        en: "His people built a great fire and threw him into it… and God made it cool and safe for him."
+  - narration: lesson
+    scene: lesson
+    sources: [tafsir.muyassar.37.99, tafsir.saadi.37.99]
+    lines:
+      - ar: "وبعدها قرر يسيب بلده: رايح لمكان يعبد فيه ربنا… ومتأكد إن ربنا هيدلّه على الخير."
+        en: "Then he decided to leave his land: going to a place where he could worship God… sure that God would guide him to good."
+  - narration: check
+    scene: check
+    sources: [tafsir.muyassar.37.99]
+    lines:
+      - ar: "وسيدنا موسى قال جملة قريبة قدّام البحر… الاتنين ما كانوش شايفين الطريق لسه… وكانوا متأكدين."
+        en: "And Moses said a close sentence before the sea… neither could see the way yet… and both were sure."
+  - narration: close
+    scene: close
+    lines:
+      - ar: "وإنت… سبت قبل كده حاجة… وربنا عوّضك بأحسن منها؟"
+        en: "And you… have you ever left something behind… and God gave you better?"
+      - ar: "والسؤال الجاي: كلمة صغيرة في سورة عبس… ناس كتير فاكرين معناها حاجة تانية. تابعنا."
+        en: "Next question: a small word in Surat 'Abasa… many think it means something else. Follow us."

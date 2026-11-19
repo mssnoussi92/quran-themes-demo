@@ -16,7 +16,8 @@ both taken at frame 45.
 
 --only: all (default); shorts (the shorts, their TikTok twins, their covers); film (the film and its thumbnail);
 tiktok (the TikTok twins only); cut (the short versions only, of the shorts whose file has `cut`: added to
-the draft release, nothing validated rendered again); or one short's id (that short, its twin and its cover); tall: the film in 9:16
+the draft release, nothing validated rendered again); or one short's id (that short, its twin and its cover), or several
+joined by commas (`qitr,marah`: the shorts whose voice is there, 2026-11-19); tall: the film in 9:16
 (`<files>-film-9x16`, TrialFilm916: the same timeline laid out as the shorts are, for the platforms whose player is
 vertical), with its TikTok twin `<files>-film-9x16-tiktok`; tall-tiktok: that twin alone, added to the vertical film's draft
 (a vertical film already validated is not rendered again). The vertical film is asked for by name and is never part of
@@ -24,6 +25,8 @@ vertical), with its TikTok twin `<files>-film-9x16-tiktok`; tall-tiktok: that tw
 A key of the film's `elsewhere` (a page of its own, its name in `handles` of content/publish.yaml: `ma3ak`, the test
 page on Meta, owner's choice of 2026-11-18): the shorts it lists, signed with that page's name, and their covers
 (`<name>-<key>.mp4`, `<name>-<key>-cover.jpg`; props "platform": key), added to the draft release; never part of `all`.
+A series whose file lists its `platforms` without tiktok has no TikTok twins: `ma3ak`, signed with the test page's name,
+which is on Meta only (a twin would be signed with the Page's TikTok name, for a page that has no TikTok).
 """
 from __future__ import annotations
 
@@ -50,18 +53,41 @@ def compact(obj: dict) -> str:
     return json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
 
 
+PLATFORMS = ("facebook", "instagram", "tiktok", "youtube")
+
+
+def platforms_of(film: dict) -> list[str]:
+    """Where the shorts of a film or a series go: `platforms` of its file, every platform of the Page by default."""
+    asked = film.get("platforms") or list(PLATFORMS)
+    unknown = [p for p in asked if p not in PLATFORMS]
+    if unknown:
+        sys.exit(f"error: {film['id']}: unknown platform(s) {', '.join(unknown)} (known: {', '.join(PLATFORMS)})")
+    return asked
+
+
+def named(only: str, ids: list[str]) -> list[str]:
+    """The short ids `only` names: one id, or several joined by commas (`qitr,marah`); none if it names something else."""
+    asked = only.split(",")
+    return asked if all(a in ids for a in asked) else []
+
+
 def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]]:
     film = load(film_id)
     files = film.get("files", film["id"])
     shorts = [load(name) for name in film.get("shorts") or film["thumbnail"]["panels"]]
     ids = [s["id"] for s in shorts]
     has_film = "chapters" in film               # a series (a file with `shorts`, no chapters) has no film
+    twins = "tiktok" in platforms_of(film)     # a series for a page that is not on TikTok has no twins
     elsewhere = film.get("elsewhere") or {}
     if only in elsewhere:                       # another page: its shorts signed with its name, and their covers
         return signed_elsewhere(film, files, shorts, voice, only)
-    if only not in ("all", "shorts", "film", "tall", "tall-tiktok", "tiktok", "cut") and only not in ids:
+    chosen = named(only, ids)
+    if only not in ("all", "shorts", "film", "tall", "tall-tiktok", "tiktok", "cut") and not chosen:
         sys.exit(f"error: --only {only}: not all, shorts, film, tall, tall-tiktok, tiktok, cut, "
-                 f"one of {', '.join(ids)}" + (f" or a page of `elsewhere` ({', '.join(elsewhere)})" if elsewhere else ""))
+                 f"one or more of {', '.join(ids)} (joined by commas)"
+                 + (f" or a page of `elsewhere` ({', '.join(elsewhere)})" if elsewhere else ""))
+    if only == "tiktok" and not twins:
+        sys.exit(f"error: --only tiktok: the platforms of {film_id} have no tiktok, its shorts have no TikTok twin")
     if only in ("tall", "tall-tiktok"):
         if not has_film:
             sys.exit(f"error: --only {only}: {film_id} is a series, it has no film")
@@ -81,7 +107,7 @@ def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]
     # cast at the end of the name: lens-short-1-blackout-pov.mp4, lens-short-1-blackout-figure.mp4.
     casts = film.get("casts") or [None]
     for spec in shorts:
-        if only == "film" or only in ids and only != spec["id"] or only == "cut" and not spec.get("cut"):
+        if only == "film" or chosen and spec["id"] not in chosen or only == "cut" and not spec.get("cut"):
             continue
         for cast in casts:
             name = f"{files}-short-{spec['publish']['part']}-{spec['id']}" + (f"-{cast}" if cast else "")
@@ -89,7 +115,7 @@ def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]
             timeline = f"video/public/trial/{spec['id']}-{voice}.json"
             if only not in ("tiktok", "cut"):
                 videos.append({"name": name + bed, "composition": "Trial916", "props": compact(props), "timeline": timeline, "kind": "short"})
-            if only != "cut":
+            if only != "cut" and twins:
                 videos.append({"name": f"{name}-tiktok{bed}", "composition": "Trial916", "props": compact({**props, "platform": "tiktok"}),
                                "timeline": timeline, "kind": "tiktok"})
             if spec.get("cut") and only != "tiktok":     # the short version for Facebook and Instagram (prepare.py --cut)
@@ -130,7 +156,7 @@ def main() -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--film", required=True, help="the film's id (content/trial/<id>.yaml)")
     p.add_argument("--voice", default="D")
-    p.add_argument("--only", default="all", help="all, shorts, film, tall (the film in 9:16 and its TikTok twin), tall-tiktok (the twin alone), tiktok, cut, one short's id, or a page of the film's `elsewhere`")
+    p.add_argument("--only", default="all", help="all, shorts, film, tall (the film in 9:16 and its TikTok twin), tall-tiktok (the twin alone), tiktok, cut, one short's id or several joined by commas, or a page of the film's `elsewhere`")
     p.add_argument("--matrix", action="store_true", help="one JSON object on one line, a GitHub Actions matrix")
     p.add_argument("--stills", action="store_true", help="the covers and the thumbnail instead of the videos")
     p.add_argument("--ids", action="store_true",
@@ -141,8 +167,8 @@ def main() -> int:
         ids = [name for name in spec.get("shorts") or spec["thumbnail"]["panels"]]
         # --only cut: the shorts that have a short version (`cut`), alone; a page of `elsewhere`: its shorts.
         elsewhere = spec.get("elsewhere") or {}
-        print(" ".join([args.only] if args.only in ids else [i for i in ids if load(i).get("cut")] if args.only == "cut"
-                       else [i for i in ids if i in elsewhere[args.only]] if args.only in elsewhere else ids))
+        print(" ".join(named(args.only, ids) or ([i for i in ids if load(i).get("cut")] if args.only == "cut"
+                       else [i for i in ids if i in elsewhere[args.only]] if args.only in elsewhere else ids)))
         return 0
     videos, stills = listing(args.film, args.voice, args.only)
     rows = stills if args.stills else videos

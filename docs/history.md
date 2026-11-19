@@ -647,3 +647,32 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   une couverture prend `platform` comme la vidéo ; PR #57, run 44375756327 : 0:58, 0:58, 1:01, −16 LUFS), contrôlés sur
   leurs planches, envoyés ; **validés par lui le 2026-11-18**, numéros 4, 5 et 6 gardés (son choix). Ses textes : ceux
   des « Short 4 » à « Short 6 » de `publication-quiz.md`, tels quels.
+
+## Un quiz par jour sur la page test : les quiz 7 à 13 (2026-11-18 et 19)
+
+- **Sa demande** (2026-11-18, après avoir publié le quiz 4 sur la page test) : produire d'autres épisodes pour en publier un
+  par jour, comparer le 23 quand les deux pages publient, et ôter le numéro d'épisode des prochains rendus. **Ses choix** :
+  sept quiz, du 21 au 27 novembre ; les quiz 5 et 6 refaits sans numéro (un chronomètre à sa place, PR #59) ; un dessin pour
+  chaque épisode ; les trois formats en alternance.
+- **Fait le 18** : une série à part, `ma3ak` (`content/trial/ma3ak.yaml`, signée `@ma3ak.5.thawani` par son `handle`), pour
+  que son rendu ne touche aucune vidéo validée du quiz ; sept scripts (`docs/scripts/quiz.md`), **validés par lui** (le quiz 13
+  avec 20:39 récité entier, son choix) ; registre (18 versets, 28 passages de tafsir, proposés), coupes de Tawfiq As-Sayegh
+  (80:28-30 posées à la main sur l'enregistrement, une seule respiration), dessins dans `Quiz.tsx` (le barrage et le cuivre,
+  le chemin, les braises qui s'éteignent, les plantes et le bétail, la salle de prière, le puits et les moutons, le fleuve et
+  le coffre) ; brouillons muets (run 44391880850) refaits une fois (le 13 montrait la mer, contraire à sa réponse) ; **clips et
+  dessins validés par lui**. `rules.py` a refusé deux fois un tafsir qui expliquait un verset non récité : remplacés.
+- **La voix, le 19** : quatre requêtes (run 44485664240), passées alors que deux autres sessions en avaient fait sept ce matin-là
+  (la limite du jour semble au-dessus de 10). Un run de voix en annulait un autre en cours (`cancel-in-progress`) : la prise
+  déjà faite était perdue et comptée ; désormais le second attend. Chaque phrase retrouvée (91 % ou plus) ; « سقى لهم » et
+  « قصر » sont dits à l'égyptienne (entendus « سألهم », « أصر »). **Quiz 9** : la voix semble dire « بردًا وسلامًا » (les
+  tanwin de 21:69) là où le texte dit « برد وسلام » ; la session proposait de refaire la prise voyellée ; **son choix : la
+  garder**.
+- **Le rendu** (run 44487100813) : sept vidéos de 0:46 à 1:08, −16,1 à −16,5 LUFS, sans jumeau TikTok (`platforms` d'une série :
+  la page test n'est que sur Meta ; `publish.py` n'écrit que ses textes, signés de son nom). Deux défauts vus sur les planches
+  et corrigés : la queue du « م » de « ٱلْيَمِّ » touchait sa référence (un mot qui finit par une lettre qui descend est écrit
+  plus haut, sa référence 48 px plus bas ; vérifié sur une image rendue dans la session avant le run 44491699532) ; le titre de
+  la couverture du 11, à moitié de la taille des autres, sur deux lignes (`\n` dans un titre de couverture, run 44490586411).
+  `only` du workflow `film` prend plusieurs shorts séparés par des virgules.
+- **Validés par lui le 2026-11-19** (« je valide les 7 vidéos », « je valide les 7 textes ») : voix, couvertures, ambiance,
+  montage, titres, accroches et hashtags (`docs/retention/publication-ma3ak.md`). Sources encore proposées.
+
