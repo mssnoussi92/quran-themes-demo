@@ -28,3 +28,21 @@ def test_a_short_with_only_silent_lines_declares_no_voice():
 
 def test_a_film_is_voiced_by_its_chapters():
     assert publish.voiced({"chapters": [{"segments": [{"narration": "hook", "lines": ["…"]}]}]})
+
+
+def test_a_part_read_by_its_own_reader_is_credited_to_that_reader():
+    """The dhikr of Muslim 2709a is read by Muhammad Jibril, the rest of the hadith by the collection's reader
+    (2026-11-19: the credits named the reader of the whole)."""
+    ids = publish.quotes_of([{"reading": "hadith.muslim.2709a", "part": "dhikr"}, {"reading": "hadith.muslim.595a"}])
+    assert ids == [("reading", "hadith.muslim.2709a#dhikr"), ("reading", "hadith.muslim.595a")]
+    sources = {"hadith.muslim.2709a#dhikr": {"reference_en": "Sahih Muslim 2709a", "url": "u", "recording": {"reader": "Muhammad Jibril"}},
+               "hadith.muslim.595a": {"reference_en": "Sahih Muslim 595a", "url": "v", "recording": {"reader": "Ryadussalihin.org"}}}
+    lines, hadith, verse = publish.quoted(ids, sources)
+    assert lines[0] == "• Sahih Muslim 2709a · Reading: Muhammad Jibril · u" and hadith and not verse
+
+
+def test_two_parts_with_one_reader_are_one_line():
+    ids = publish.quotes_of([{"reading": "hadith.muslim.595a", "part": "teach"}, {"reading": "hadith.muslim.595a", "part": "grace"}])
+    one = {"reference_en": "Sahih Muslim 595a", "url": "v", "recording": {"reader": "Ryadussalihin.org"}}
+    lines, _, _ = publish.quoted(ids, {"hadith.muslim.595a#teach": one, "hadith.muslim.595a#grace": one})
+    assert lines == ["• Sahih Muslim 595a · Reading: Ryadussalihin.org · v"]

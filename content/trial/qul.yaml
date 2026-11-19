@@ -16,6 +16,7 @@ id: qul
 # docs/scripts/dhikr.md, avec 57:21 dans le short 3) : les répliques, la place des versets et des lectures. Ni la voix, ni
 # les images, ni les lectures (à juger sur les vidéos, son choix du même jour), ni les textes à coller. Inscrit sur sa parole.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
+validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, ambience, publish] }   # « Je valide les trois » (après la voix), puis « Je valide titres et accroches »
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 93-trial-qul
@@ -33,6 +34,10 @@ publish:
   description:
     ar: "ليلة مطر وضلمة شديدة، والنبي ﷺ طلب من صاحبه يقول حاجة تلات مرات… وهو مش عارف يقول إيه. والإجابة: تلات سور بنحفظها من وإحنا صغيرين، الصبح وبالليل (جامع الترمذي 3575)."
     en: "A night of rain and deep darkness: three times the Prophet ﷺ asked his companion to say something, and he did not know what to say. The answer: three surahs we have known since childhood, morning and evening (Jami' at-Tirmidhi 3575)."
+  hook:   # written by the session from the validated lines; « Je valide titres et accroches » (question à choix)
+    ar: "النبي ﷺ طلب من صاحبه يقول حاجة… وهو مش عارف يقول إيه! والإجابة؟ تلات سور بتحفظها."
+    en: "The Prophet ﷺ asked his companion to say something, and he didn't know what. The answer: three surahs you already know."
+    validated: 2026-11-19
 segments:
   - narration: open
     scene: rain

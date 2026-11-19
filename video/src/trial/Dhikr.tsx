@@ -347,7 +347,7 @@ const QulPicture: Drawn = ({ t, show, since, horizon }) => {
         <Lantern id="dl-lantern" x={250} y={horizon + 40} scale={1.5} t={t} lit={1} />
       </g>
       <g opacity={show("keys")}>
-        <Keys id="dl-keys" x={W / 2} y={830} scale={1.6} t={t} glow={golden} />
+        <Keys id="dl-keys" x={W / 2} y={900} scale={1.5} t={t} glow={golden} />
       </g>
     </>
   );
@@ -396,6 +396,7 @@ export const DHIKR_PICTURES: Record<string, Drawn> = {
   salat: Plain, sabah: Plain, masaa: Plain,
 };
 
-/** The evening's al-Baqarah 2:285-286 is long, so written small, and pause signs stand on its first lines: room for
- * them under the reference (at 66 px a sign needs about 70 px, at 40 px about 62). */
-export const DHIKR_LAYOUTS: Record<string, LayoutOverride> = { masaa: { verseGap: 72 } };
+/** The evening's al-Baqarah 2:285-286 and the race of 57:21 (dathur: the « ۚ » after « وَرُسُلِهِۦ » wrote « سوجة »
+ * in the reference, 2026-11-19) have pause signs on the first line of a page: room for them under the reference (at
+ * 66 px a sign needs about 70 px, at 40 px about 62). */
+export const DHIKR_LAYOUTS: Record<string, LayoutOverride> = { masaa: { verseGap: 72 }, dathur: { verseGap: 72 } };

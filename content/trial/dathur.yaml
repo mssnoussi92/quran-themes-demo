@@ -19,6 +19,7 @@ id: dathur
 # docs/scripts/dhikr.md, avec 57:21 dans le short 3) : les répliques, la place des versets et des lectures. Ni la voix, ni
 # les images, ni les lectures (à juger sur les vidéos, son choix du même jour), ni les textes à coller. Inscrit sur sa parole.
 script_validated: { by: mssnoussi92, on: 2026-11-17 }
+validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, ambience, publish] }   # « Je valide les trois » (après la voix), puis « Je valide titres et accroches »
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 94-trial-dathur
@@ -36,6 +37,10 @@ publish:
   description:
     ar: "الفقرا جم للنبي ﷺ يشتكوا: الأغنيا سبقونا… فعلّمهم حاجة بعد كل صلاة ما تحتاجش فلوس. ولما الأغنيا عملوا زيهم، ردّ بجملة بتختم آية في القرآن عن السباق (صحيح مسلم 595، الحديد 21)."
     en: "The poor came to the Prophet ﷺ: the rich have got ahead of us. He taught them something to do after every prayer that needs no money. When the rich did the same, he answered with words that also close a verse about a race (Sahih Muslim 595; al-Hadid 57:21)."
+  hook:   # written by the session from the validated lines; « Je valide titres et accroches » (question à choix)
+    ar: "الفقرا اشتكوا: الأغنيا سبقونا! فعلّمهم حاجة بعد كل صلاة… ما تحتاجش فلوس."
+    en: "The poor complained: the rich have got ahead of us! He taught them something after every prayer that needs no money."
+    validated: 2026-11-19
 segments:
   - narration: open
     scene: coins
