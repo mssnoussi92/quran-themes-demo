@@ -126,6 +126,9 @@ const ChoicePill: React.FC<{ choice: Choice; y: number; t: number; k: number; an
 
 // ---- the words of the question -------------------------------------------------------------------------------------
 
+/** The final letters whose tail goes well below the line in the Quran font (ج ح خ ع غ م ن ق ي ى ل س ش ص ض). */
+const DESCENDS = /[جحخعغمنقيىلسشصض]/;
+
 /** The Quranic words of the question, in gold between « », with their reference; the verse to finish has a blank
  * after them, which only the right end fills, at the answer. */
 const Head: React.FC<{ quiz: Quiz; t: number; answer: number; opacity: number }> = ({ quiz, t, answer, opacity }) => {
@@ -135,11 +138,14 @@ const Head: React.FC<{ quiz: Quiz; t: number; answer: number; opacity: number }>
   if (!quiz.blank) {
     const short = quiz.head.words.length <= 2;              // a word or two: written large
     const size = fitQuran(`«${head}»`, quiz.head.words.length === 1 ? 128 : short ? 112 : 70);
+    // A large word whose last letter goes below the line (the tail of « ٱلْيَمِّ », quiz 13, crossed its reference):
+    // the word a little higher, its reference a little lower. The other words keep their place.
+    const tail = short && DESCENDS.test(head.replace(/[^\u0621-\u064A]/g, "").slice(-1)) ? 1 : 0;
     return (
       <g opacity={opacity}>
-        <text x={540} y={short ? 470 : 450} textAnchor="middle" direction="rtl" fontFamily={FONT.quran} fontSize={size} fill={GOLD}
+        <text x={540} y={(short ? 470 : 450) - 18 * tail} textAnchor="middle" direction="rtl" fontFamily={FONT.quran} fontSize={size} fill={GOLD}
               style={{ filter: "drop-shadow(0 2px 14px rgba(4,7,20,.9))" }}>{RTL(`«${head}»`)}</text>
-        <text x={540} y={short ? 528 : 512} textAnchor="middle" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={30} fill={PALE} opacity={0.7}>{RTL(ref)}</text>
+        <text x={540} y={(short ? 528 : 512) + 14 * tail} textAnchor="middle" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={30} fill={PALE} opacity={0.7}>{RTL(ref)}</text>
       </g>
     );
   }
