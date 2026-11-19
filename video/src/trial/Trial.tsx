@@ -69,7 +69,9 @@ export type Reading = {
   reference: string; text: string; en: string; credit: string;
   card?: boolean; count?: string | null; label?: string | null;
 };
-type Segment = Narration | Verse | Reading;
+/** A moment with no text at all (« الصاحب ساحب »: a moment played without a word): only the picture and its sounds. */
+export type Pause = { kind: "pause"; scene: string; start: number; seconds: number; file: null };
+type Segment = Narration | Verse | Reading | Pause;
 /** How the filmed clip sits in the frame: where it is cropped, how far down (or up) it is moved to leave the
  * text its place, how dark, the colour behind it, where its horizon is (the picture grows around it). */
 /** `veil`: how much of the dark veil behind the text is laid over the top of the clip (1 when not said; less for a
@@ -750,9 +752,9 @@ export const Trial: React.FC<TrialProps> = ({ data, platform, cast }) => {
         <NarrationText seg={current} t={t} last={current === data.segments[data.segments.length - 1]} handle={handle} layout={layout} />
       ) : current.kind === "verse" ? (
         <VerseText seg={current} t={t} layout={layout} />
-      ) : (
+      ) : current.kind === "reading" ? (
         <ReadingText seg={current} t={t} layout={layout} />
-      )}
+      ) : null}
       <div style={{ position: "absolute", top: 250, right: 90, fontFamily: FONT.latin, fontWeight: 600, fontSize: 30, color: GOLD, opacity: 0.9, textShadow: SHADOW }}>
         {handle}
       </div>

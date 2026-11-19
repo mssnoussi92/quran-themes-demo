@@ -421,6 +421,21 @@ def test_the_shorts_cut_before_the_rule_still_pass(copy):
     assert cut == rules.CUT_BEFORE_THE_RULE
 
 
+def test_a_pause_is_a_moment_with_no_text(copy):
+    # « الصاحب ساحب »: moments played without a word, the drawing alone (a `pause` segment, tools/trial/prepare.py).
+    spec = copy.load("content/trial/caravan.yaml")
+    spec["segments"].insert(0, {"pause": 6, "scene": spec["segments"][0]["scene"]})
+    copy.dump("content/trial/caravan.yaml", spec)
+    done = copy.rules("--film", "ayah", "--draft")
+    assert done.returncode == 0, done.stdout[-2000:]
+    spec["segments"][0] = {"pause": 0, "scene": spec["segments"][1]["scene"]}
+    copy.dump("content/trial/caravan.yaml", spec)
+    refused(copy.rules("--film", "ayah", "--draft"), "is a length in seconds, a positive number")
+    spec["segments"][0] = {"pause": 6}
+    copy.dump("content/trial/caravan.yaml", spec)
+    refused(copy.rules("--film", "ayah", "--draft"), "a pause shows a scene")
+
+
 def test_upto_cuts_one_verse_only(copy):
     spec = copy.load("content/trial/duha.yaml")
     first = next(s for s in spec["segments"] if "verses" in s)

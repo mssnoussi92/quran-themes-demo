@@ -527,6 +527,12 @@ class Checker:
                 recited |= self.passage(file, seg["verses"], seg.get("upto"))
             elif "upto" in seg:
                 self.out.error(file, "`upto` is for a `verses` segment of one verse")
+            if "pause" in seg:
+                p = seg["pause"]
+                if not isinstance(p, (int, float)) or isinstance(p, bool) or p <= 0:
+                    self.out.error(file, f"`pause: {p}` is a length in seconds, a positive number")
+                if not seg.get("scene"):
+                    self.out.error(file, f"a pause shows a scene: `scene` is missing ({seg_name(seg)})")
             if "part" in seg and "reading" not in seg and "card" not in seg:
                 self.out.error(file, f"`part` is for a `reading` or a `card` segment: {seg_name(seg)}")
             if "card" in seg:
@@ -606,6 +612,8 @@ class Checker:
                 src = script.part_view(src, seg["part"]) or {}
             rec = src.get("recording")
             return rec["end"] - rec["start"] if rec else script.UNKNOWN_READING
+        if "pause" in seg:
+            return float(seg["pause"]) if isinstance(seg["pause"], (int, float)) else 0.0
         if "card" in seg:
             src = self.repo.sources.get(seg["card"]) or {}
             if seg.get("part"):
@@ -721,7 +729,7 @@ class Checker:
 
 
 def seg_name(seg: dict) -> str:
-    return next((f"{k}: {v}" for k, v in seg.items() if k in ("verse", "verses", "reading", "card", "narration", "reuse")), "?") + (f" (part {seg['part']})" if seg.get("part") else "")
+    return next((f"{k}: {v}" for k, v in seg.items() if k in ("verse", "verses", "reading", "card", "narration", "pause", "reuse")), "?") + (f" (part {seg['part']})" if seg.get("part") else "")
 
 
 # ---- Main -----------------------------------------------------------------------------------------------------
