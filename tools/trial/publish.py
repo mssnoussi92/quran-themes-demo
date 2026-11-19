@@ -195,16 +195,16 @@ def voiced(spec: dict) -> bool:
     return any("narration" in s and not s.get("silent") for s in segments)
 
 
-def hooks_state(specs: list[dict]) -> str:
+def hooks_state(specs: list[dict], socials: str = "Facebook, Instagram et TikTok") -> str:
     """What the texts say of the short captions: validated by the owner (the date), or proposed; "" without hooks."""
     hooks = [(s.get("publish") or {}).get("hook") for s in specs]
     if not any(hooks):
         return ""
     ai = " et voix IA" if any(voiced(s) for s in specs) else ""
     if all(h and h.get("validated") for h in hooks):
-        return (f" Légendes courtes de Facebook, Instagram et TikTok (titre, accroche{ai}, hashtags) **validées par "
+        return (f" Légendes courtes de {socials} (titre, accroche{ai}, hashtags) **validées par "
                 f"le propriétaire le {max(str(h['validated']) for h in hooks)}**.")
-    return (f" Légendes courtes de Facebook, Instagram et TikTok (titre, accroche{ai}, hashtags) **proposées par la "
+    return (f" Légendes courtes de {socials} (titre, accroche{ai}, hashtags) **proposées par la "
             "session, pas encore validées par le propriétaire** : rien n'est publié avec elles avant.")
 
 
@@ -313,7 +313,7 @@ def main() -> None:
          f"les crédits (les sources citées, le clip, l'ambiance) et les hashtags ; là où la plateforme n'a pas de champ de titre, il ouvre la légende, "
          f"et les quatre se collent dans la même légende, la ligne de la voix IA restant dans la description. {status} ; ")
         + "les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés "
-        "(`tools/trial/publish.py`, à relancer après tout changement)." + hooks_state(shorts) + " Fichiers : ceux envoyés dans la conversation"
+        "(`tools/trial/publish.py`, à relancer après tout changement)." + hooks_state(shorts, socials) + " Fichiers : ceux envoyés dans la conversation"
         + ((", avec l'ambiance sonore sous la narration, validée elle aussi (`…-ambience.mp4`)." if bed else
             " ; avec l'ambiance sonore sous la narration, pas encore validée, les mêmes noms terminés par `-ambience.mp4`.")
            if film.get("ambience_after") else
