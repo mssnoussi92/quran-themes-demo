@@ -1300,6 +1300,53 @@ choix) : en réserve, placé à la revue, après les premières mesures. Textes 
 (accroches validées ; **titres et descriptions validés par lui le 2026-11-19**). Sur `main` par une PR (son choix) ; sa page
 « Films et shorts à publier » : la série y entrera avec ses dates (son choix).
 
+## Série proposée : le style des bonshommes de « STICK TO IT », deux amis et les mêmes moments rejoués (2026-11-19)
+
+Née de trois shorts qu'il a fait analyser (`reference/stickman-shorts-analysis.md`) : celui des amis (« Fake Friend vs
+Real Friend », 2,6 M vues, 86 000 j'aime) a fait 40 à 80 fois mieux que les deux autres de la même chaîne (une idée
+abstraite en boucle). Ce qui le distingue : deux personnes et une relation, des visages, de l'humour, cinq petits
+moments rejoués (le faux ami, puis le vrai, environ 6 s chacun), aucun mot sauf une étiquette, une musique.
+
+**Ses décisions (2026-11-19, questions à choix)** :
+- **Les visages** : « j'autorise les visages pour les inconnus, et si nécessaire pour montrer la différence » (règle
+  écrite dans CLAUDE.md, PR #66).
+- **Un pilote de trois shorts** : `الجليس`, `زي ما تحب لنفسك`, `انصره ظالمًا` (les trois recommandés).
+- **Sans narration** : des étiquettes, puis le hadith lu par une vraie voix, le verset récité, le sens en une ligne à
+  l'écran sous le nom du tafsir ; aucune requête de voix.
+- **Un décor dessiné à part**, propre à la série (pas leur rue de nuit), comme « سنريهم آياتنا » a le sien.
+- **Les sujets à compteur, en réserve** (plus bas).
+
+**La forme** (environ 1:00) : trois moments de la vie de tous les jours dans un même décor, chacun joué deux fois
+(l'ami qui fait mal, puis celui qui fait bien, environ 6 s chacun), un code couleur dès la première image (le premier
+gris, le second blanc), une étiquette en haut (arabe, anglais dessous), des visages simples, des bruitages et une
+ambiance, jamais de musique ; une ligne de fin ; le hadith lu (bukhari_audiobook, à couper et à faire écouter), son
+texte et sa référence ; le verset récité ; le sens en une ligne (al-Muyassar) ; l'appel au partage ; la boucle.
+
+| Short | Source (hadith-api ; lecture sur archive.org) | Verset (Tawfiq As-Sayegh) | Décor, étiquettes |
+| --- | --- | --- | --- |
+| `jalis` · الجليس | Bukhari 5534, Muslim 2628 : le porteur de musc et le forgeron (`5534.mp3` existe, à transcrire) | 43:67 (11,7 s), al-Muyassar : l'amitié dans le péché devient hostilité au Jour dernier, celle dans la piété dure | une ahwa le soir · « جليس السوء » / « الجليس الصالح » (les mots du hadith) |
+| `yuhibb` · زي ما تحب لنفسك | Bukhari 13, Muslim 45 (`0013.mp3` / `0014.mp3` : vérifier lequel lit 13) | 59:9, « ويؤثرون على أنفسهم ولو كان بهم خصاصة » (≈ 6 s, coupe à poser), ou rien | un arrêt de bus le matin · « بيحب لنفسه » / « بيحب لك زي نفسه » |
+| `nasr` · انصره ظالمًا | Bukhari 2444, avec « تأخذ فوق يديه » (`2444.mp3`) | 5:2, « وتعاونوا على البر والتقوى ولا تعاونوا على الإثم والعدوان » (≈ 10 s, coupe à poser) | un kiosque et sa file · « بيشجّعك » / « بينصرك » |
+
+**Le premier test** : leurs moments (la flaque, la glace, les copies, le parapluie, la rupture) ne sont pas repris ;
+pas de couple dessiné ; jamais de violence ; un moment de chaque short suit le texte (le musc offert et la braise qui
+brûle la manche : « إما أن يحذيك… إما أن يحرق ثيابك » ; la main retenue : « تأخذ فوق يديه »).
+
+**Écartés pour ce style** : 14:24-26 (al-Muyassar : la parole de l'unicité contre celle de la mécréance, le spectateur
+ne se voit que dans le bon arbre) ; 92:5-10 (dans « مخيّر ولا مسيّر؟ ») ; 2:265-266 (72 s) ; Bukhari 6412 (proche du
+`scroll` de « بص تاني ») ; Bukhari 3464 (un ange au cœur du récit, et des gens d'un hadith).
+
+**En réserve, les sujets à compteur, sans visage** (son choix : après les mesures du pilote) :
+- **رسمة** : Bukhari 6417, le dessin du Prophète ﷺ (le carré du terme, la ligne de l'espoir, les petites lignes des
+  accidents) ; Bukhari 6436 (deux vallées, il en veut une troisième) ; la sourate 102 entière (36,3 s).
+- **نفس المطر** : Bukhari 79, une même pluie sur trois terres ; 7:58 (17 s ; al-Muyassar : la terre bonne et le croyant
+  qui profite des versets).
+- **حبة واحدة** : 2:261 (28,2 s ; 1 → 7 épis → 700) ; Muslim 2588 (« ما نقصت صدقة من مال »).
+- **كل يوم شوية** : Bukhari 6464, Muslim 783 (l'œuvre la plus constante, même petite) ; 15:99 (6,6 s). Le hadith dit
+  « le plus aimé d'Allah », pas « va plus loin ».
+- Aussi : Bukhari 6011, Muslim 2586 (le corps qui veille et a de la fièvre ; 49:10, 10,9 s) ; Bukhari 6114 et 3:134
+  (21,6 s : le fort est celui qui se maîtrise) ; Muslim 2626 (le visage souriant).
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
