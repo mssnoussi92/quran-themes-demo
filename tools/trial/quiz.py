@@ -51,10 +51,18 @@ def short(sources: dict, spec: dict) -> dict:
     return out
 
 
+# The series drawn by the quiz montage: the Page's (`quiz`) and the test page's on Meta (`ma3ak`, 2026-11-18: one
+# quiz a day, signed with its name, never on the Page).
+SERIES = ("quiz", "ma3ak")
+
+
 def build(sources: dict) -> dict:
-    series = yaml.safe_load((ROOT / "content" / "trial" / "quiz.yaml").read_text(encoding="utf-8"))
-    return {sid: short(sources, yaml.safe_load((ROOT / "content" / "trial" / f"{sid}.yaml").read_text(encoding="utf-8")))
-            for sid in series["shorts"]}
+    out = {}
+    for name in SERIES:
+        series = yaml.safe_load((ROOT / "content" / "trial" / f"{name}.yaml").read_text(encoding="utf-8"))
+        for sid in series["shorts"]:
+            out[sid] = short(sources, yaml.safe_load((ROOT / "content" / "trial" / f"{sid}.yaml").read_text(encoding="utf-8")))
+    return out
 
 
 def main() -> None:

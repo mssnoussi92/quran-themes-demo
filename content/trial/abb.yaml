@@ -1,0 +1,77 @@
+# « معاك 5 ثواني », page test, quiz 10 (content/trial/ma3ak.yaml ; script : docs/scripts/quiz.md) : le sens d'un mot.
+# « وَأَبًّا » de 80:31 n'est pas le père ni un fruit : c'est l'herbe que mangent les bêtes (as-Sa'di, Ibn Kathir,
+# al-Muyassar) ; « le fruit pour vous, le « أب » pour vos bêtes » (Ibn Kathir d'après Mujahid, al-Hasan et Qatada).
+# Rien n'est dessiné que des plantes et des bêtes. Script écrit par la session le 2026-11-18.
+id: abb
+# « Je valide les 7 scripts » du propriétaire (2026-11-18, question à choix nommant les sept quiz du lot de la page test
+# et leurs répliques, choix et dessins) : inscrit sur sa parole. Ni la voix, ni les images, ni les textes à coller.
+script_validated: { by: mssnoussi92, on: 2026-11-18 }
+# « Je valide les 7 clips et dessins » du propriétaire (2026-11-18, question à choix nommant les brouillons muets
+# du workflow `film`, run 44391880850) : le montage, les dessins et le clip tels que rendus. La voix, la couverture
+# et l'ambiance sous la voix restent à valider sur la vidéo finale. Inscrit sur sa parole.
+# « Je valide les 7 vidéos » et « je valide les 7 textes » du propriétaire (2026-11-19, questions à choix nommant les
+# quiz 7 à 13 tels qu'envoyés : voix, couvertures, ambiance et montage, run 44487100813, le 11 et le 13 rendus de
+# nouveau, runs 44490586411 et 44491699532 ; titres, accroches et hashtags de docs/retention/publication-ma3ak.md).
+validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, publish, ambience] }
+handle: "@ma3ak.5.thawani"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 98-trial-abb
+# des cumulus blancs sur un ciel bleu, en accéléré (Pixabay 116167, NickyPe, trouvé le 2026-11-13, jamais employé) : un
+# ciel clair où les plantes et les bêtes dessinées se lisent (sur la colline boisée de 2119, elles disparaissaient,
+# brouillon du 2026-11-18) ; APPROUVÉ pour ce short par le propriétaire le 2026-11-18 (« je valide les 7 clips et dessins »)
+clip: { source: pixabay, id: 116167, author: NickyPe, page: "https://pixabay.com/videos/id-116167/", take: { height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.8, ground: "#07060b", horizon: 1380, veil: 0.8 }
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 10, seconds: 60, level: -36 }
+cover: { scene: ask, title: "«وأبًّا»… يعني إيه؟", tag: "معاك 5 ثواني", focus: 1000 }
+quiz:
+  head: { verse: quran.80.31, from: 2, to: 2 }        # « وَأَبًّا », écrit en or au-dessus de la question
+  choices:
+    - { ar: "الأب (الوالد)", en: "the father" }
+    - { ar: "نوع فاكهة", en: "a kind of fruit" }
+    - { ar: "عشب بتاكله البهايم", en: "grass that cattle eat", right: true }
+publish:
+  title: { en: "\"Wa abba\"… what does it mean?", ar: "«وأبًّا»… يعني إيه؟" }
+  part: 10
+  hashtags: ["#سورة_عبس", "#معاني_الكلمات"]
+  hook:      # légende courte de Facebook et Instagram ; proposée par la session, validée par le propriétaire le 2026-11-19 (« je valide les 7 textes »)
+    ar: "«وأبًّا» في سورة عبس… مش الأب خالص. معاك 5 ثواني."
+    en: "\"Wa abba\" in Surat 'Abasa… nothing to do with a father. You have 5 seconds."
+    validated: 2026-11-19
+  description:
+    en: "\"Abb\" in Surat 'Abasa (80:31) is the grass that cattle eat (as-Sa'di, Ibn Kathir, al-Muyassar): the fruit for you, the \"abb\" for your cattle (80:32)."
+    ar: "«أبًّا» في سورة عبس (عبس 31) معناها العشب اللي بتاكله البهايم: الفاكهة ليك، والأبّ لبهايمك (عبس 32)."
+segments:
+  - narration: ask
+    silent: true
+    hold: 6.8
+    scene: ask
+    sfx: [[count, 0], [impact, 5.0]]
+    lines:
+      - ar: "في سورة عبس… يعني إيه؟"
+        en: "In Surat 'Abasa… what does it mean?"
+  - verses: [quran.80.27, quran.80.28, quran.80.29, quran.80.30, quran.80.31, quran.80.32]
+    scene: listen
+  - narration: meaning
+    scene: meaning
+    sources: [tafsir.saadi.80.32, tafsir.ibn-kathir.80.31, tafsir.muyassar.80.31]
+    lines:
+      - ar: "الأبّ هنا… العشب اللي بتاكله البهايم."
+        en: "\"Abb\" here… is the grass that cattle eat."
+  - narration: lesson
+    scene: lesson
+    sources: [tafsir.ibn-kathir.80.31, tafsir.saadi.80.32]
+    lines:
+      - ar: "الفاكهة ليك… والأبّ لبهايمك."
+        en: "The fruit is for you… and the \"abb\" for your cattle."
+  - narration: check
+    scene: check
+    sources: [tafsir.muyassar.80.31, tafsir.saadi.80.32]
+    lines:
+      - ar: "ربنا بيعدّ عليك نعمه في أكلك… لحد أكل بهايمك."
+        en: "God counts His blessings to you in your food… down to the food of your cattle."
+  - narration: close
+    scene: close
+    lines:
+      - ar: "وإنت… آخر مرة بصّيت في طبقك وفكّرت هو جه منين؟"
+        en: "And you… when did you last look at your plate and think where it came from?"
+      - ar: "والسؤال الجاي: آية بتبدأ بنفس الكلام في مكانين… بتخلص إزاي؟ تابعنا."
+        en: "Next question: a verse that starts the same in two places… how does it end? Follow us."

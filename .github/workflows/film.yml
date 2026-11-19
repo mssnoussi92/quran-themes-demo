@@ -41,7 +41,7 @@ on:
         default: D
         type: string
       only:
-        description: "all, shorts, film, tiktok, one short's id (it prepares only that short), tall (the film in 9:16 and its TikTok twin, in a draft release of their own), or tall-tiktok (the twin alone, added to that draft)"
+        description: "all, shorts, film, tiktok, one short's id (it prepares only that short) or several joined by commas (qitr,marah), tall (the film in 9:16 and its TikTok twin, in a draft release of their own), or tall-tiktok (the twin alone, added to that draft)"
         default: all
         type: string
       ambience:
@@ -93,7 +93,7 @@ jobs:
 
       - name: Check the inputs
         run: |
-          [[ "$FILM" =~ ^[a-z0-9-]+$ && "$ONLY" =~ ^[a-z0-9-]+$ && "$VOICE" =~ ^[A-Za-z]+$ ]] \
+          [[ "$FILM" =~ ^[a-z0-9-]+$ && "$ONLY" =~ ^[a-z0-9,-]+$ && "$VOICE" =~ ^[A-Za-z]+$ ]] \
             || { echo "::error::invalid film, only or voice"; exit 1; }
           test -f "content/trial/$FILM.yaml" || { echo "::error::no content/trial/$FILM.yaml"; exit 1; }
 
@@ -431,7 +431,7 @@ jobs:
       # Listed again here, from the files, and not taken from the prepare job: with `from_run` it did not run.
       - name: The videos and stills expected
         run: |
-          [[ "$FILM" =~ ^[a-z0-9-]+$ && "$ONLY" =~ ^[a-z0-9-]+$ && "$VOICE" =~ ^[A-Za-z]+$ && "$FROM_RUN" =~ ^[0-9]+$ ]] \
+          [[ "$FILM" =~ ^[a-z0-9-]+$ && "$ONLY" =~ ^[a-z0-9,-]+$ && "$VOICE" =~ ^[A-Za-z]+$ && "$FROM_RUN" =~ ^[0-9]+$ ]] \
             || { echo "::error::invalid film, only, voice or from_run"; exit 1; }
           {
             echo "VIDEOS=$(uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --voice "$VOICE" --only "$ONLY" --matrix)"

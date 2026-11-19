@@ -395,5 +395,432 @@ export const QUIZ = {
    }
   ],
   "both": false
+ },
+ "qitr": {
+  "head": {
+   "id": "quran.18.96",
+   "surah": 18,
+   "ayah": 96,
+   "name": "الكهف",
+   "first": 19,
+   "last": 19,
+   "words": [
+    "قِطْرًا"
+   ]
+  },
+  "choices": [
+   {
+    "ar": "قطر سكة حديد",
+    "en": "a train",
+    "right": false,
+    "icon": null,
+    "note": null
+   },
+   {
+    "ar": "حديد",
+    "en": "iron",
+    "right": false,
+    "icon": null,
+    "note": {
+     "ar": "الحديد كان القطع · نفس الآية",
+     "en": "the iron was the pieces · same verse"
+    }
+   },
+   {
+    "ar": "نحاس مدوّب",
+    "en": "molten copper",
+    "right": true,
+    "icon": null,
+    "note": null
+   }
+  ],
+  "both": false
+ },
+ "marah": {
+  "head": {
+   "id": "quran.31.18",
+   "surah": 31,
+   "ayah": 18,
+   "name": "لقمان",
+   "first": 5,
+   "last": 9,
+   "words": [
+    "وَلَا",
+    "تَمْشِ",
+    "فِى",
+    "ٱلْأَرْضِ",
+    "مَرَحًا"
+   ]
+  },
+  "choices": [
+   {
+    "ar": null,
+    "en": "indeed, you will never tear the earth apart, and you will never reach the mountains in height",
+    "right": false,
+    "icon": null,
+    "note": {
+     "ar": "نفس البداية · الإسراء 37",
+     "en": "same start, al-Isra' 37"
+    },
+    "quran": {
+     "id": "quran.17.37",
+     "surah": 17,
+     "ayah": 37,
+     "name": "الإسراء",
+     "first": 6,
+     "last": 13,
+     "words": [
+      "إِنَّكَ",
+      "لَن",
+      "تَخْرِقَ",
+      "ٱلْأَرْضَ",
+      "وَلَن",
+      "تَبْلُغَ",
+      "ٱلْجِبَالَ",
+      "طُولًا"
+     ]
+    }
+   },
+   {
+    "ar": null,
+    "en": "indeed, Allah does not like everyone self-deluded and boastful",
+    "right": true,
+    "icon": null,
+    "note": null,
+    "quran": {
+     "id": "quran.31.18",
+     "surah": 31,
+     "ayah": 18,
+     "name": "لقمان",
+     "first": 10,
+     "last": 16,
+     "words": [
+      "إِنَّ",
+      "ٱللَّهَ",
+      "لَا",
+      "يُحِبُّ",
+      "كُلَّ",
+      "مُخْتَالٍ",
+      "فَخُورٍ"
+     ]
+    }
+   },
+   {
+    "ar": null,
+    "en": "indeed, Allah does not like transgressors",
+    "right": false,
+    "icon": null,
+    "note": {
+     "ar": "البقرة 190",
+     "en": "al-Baqarah 190"
+    },
+    "quran": {
+     "id": "quran.2.190",
+     "surah": 2,
+     "ayah": 190,
+     "name": "البقرة",
+     "first": 9,
+     "last": 13,
+     "words": [
+      "إِنَّ",
+      "ٱللَّهَ",
+      "لَا",
+      "يُحِبُّ",
+      "ٱلْمُعْتَدِينَ"
+     ]
+    }
+   }
+  ],
+  "both": false,
+  "blank": {
+   "id": "quran.31.18",
+   "surah": 31,
+   "ayah": 18,
+   "name": "لقمان",
+   "first": 10,
+   "last": 16,
+   "words": [
+    "إِنَّ",
+    "ٱللَّهَ",
+    "لَا",
+    "يُحِبُّ",
+    "كُلَّ",
+    "مُخْتَالٍ",
+    "فَخُورٍ"
+   ]
+  }
+ },
+ "dhahib": {
+  "head": {
+   "id": "quran.37.99",
+   "surah": 37,
+   "ayah": 99,
+   "name": "الصافات",
+   "first": 2,
+   "last": 6,
+   "words": [
+    "إِنِّى",
+    "ذَاهِبٌ",
+    "إِلَىٰ",
+    "رَبِّى",
+    "سَيَهْدِينِ"
+   ]
+  },
+  "choices": [
+   {
+    "ar": "سيدنا إبراهيم وهو سايب بلده",
+    "en": "Abraham, leaving his land",
+    "right": true,
+    "icon": null,
+    "note": null
+   },
+   {
+    "ar": "سيدنا موسى قدّام البحر",
+    "en": "Moses, before the sea",
+    "right": false,
+    "icon": null,
+    "note": {
+     "ar": "قال قريب منها · الشعراء 62",
+     "en": "said one close to it, ash-Shu'ara' 62"
+    }
+   },
+   {
+    "ar": "سيدنا نوح وهو بيركب السفينة",
+    "en": "Noah, boarding the ark",
+    "right": false,
+    "icon": null,
+    "note": null
+   }
+  ],
+  "both": false
+ },
+ "abb": {
+  "head": {
+   "id": "quran.80.31",
+   "surah": 80,
+   "ayah": 31,
+   "name": "عبس",
+   "first": 2,
+   "last": 2,
+   "words": [
+    "وَأَبًّا"
+   ]
+  },
+  "choices": [
+   {
+    "ar": "الأب (الوالد)",
+    "en": "the father",
+    "right": false,
+    "icon": null,
+    "note": null
+   },
+   {
+    "ar": "نوع فاكهة",
+    "en": "a kind of fruit",
+    "right": false,
+    "icon": null,
+    "note": null
+   },
+   {
+    "ar": "عشب بتاكله البهايم",
+    "en": "grass that cattle eat",
+    "right": true,
+    "icon": null,
+    "note": null
+   }
+  ],
+  "both": false
+ },
+ "khashi": {
+  "head": {
+   "id": "quran.2.45",
+   "surah": 2,
+   "ayah": 45,
+   "name": "البقرة",
+   "first": 1,
+   "last": 3,
+   "words": [
+    "وَٱسْتَعِينُوا۟",
+    "بِٱلصَّبْرِ",
+    "وَٱلصَّلَوٰةِ"
+   ]
+  },
+  "choices": [
+   {
+    "ar": null,
+    "en": "indeed, Allah is with the patient",
+    "right": false,
+    "icon": null,
+    "note": {
+     "ar": "المرة التانية · البقرة 153",
+     "en": "the second time, al-Baqarah 153"
+    },
+    "quran": {
+     "id": "quran.2.153",
+     "surah": 2,
+     "ayah": 153,
+     "name": "البقرة",
+     "first": 7,
+     "last": 10,
+     "words": [
+      "إِنَّ",
+      "ٱللَّهَ",
+      "مَعَ",
+      "ٱلصَّـٰبِرِينَ"
+     ]
+    }
+   },
+   {
+    "ar": null,
+    "en": "and indeed, it is difficult except for the humbly submissive",
+    "right": true,
+    "icon": null,
+    "note": null,
+    "quran": {
+     "id": "quran.2.45",
+     "surah": 2,
+     "ayah": 45,
+     "name": "البقرة",
+     "first": 4,
+     "last": 8,
+     "words": [
+      "وَإِنَّهَا",
+      "لَكَبِيرَةٌ",
+      "إِلَّا",
+      "عَلَى",
+      "ٱلْخَـٰشِعِينَ"
+     ]
+    }
+   },
+   {
+    "ar": null,
+    "en": "indeed, the earth belongs to Allah",
+    "right": false,
+    "icon": null,
+    "note": {
+     "ar": "قالها موسى لقومه · الأعراف 128",
+     "en": "Moses to his people, al-A'raf 128"
+    },
+    "quran": {
+     "id": "quran.7.128",
+     "surah": 7,
+     "ayah": 128,
+     "name": "الأعراف",
+     "first": 7,
+     "last": 9,
+     "words": [
+      "إِنَّ",
+      "ٱلْأَرْضَ",
+      "لِلَّهِ"
+     ]
+    }
+   }
+  ],
+  "both": false,
+  "blank": {
+   "id": "quran.2.45",
+   "surah": 2,
+   "ayah": 45,
+   "name": "البقرة",
+   "first": 4,
+   "last": 8,
+   "words": [
+    "وَإِنَّهَا",
+    "لَكَبِيرَةٌ",
+    "إِلَّا",
+    "عَلَى",
+    "ٱلْخَـٰشِعِينَ"
+   ]
+  }
+ },
+ "faqir": {
+  "head": {
+   "id": "quran.28.24",
+   "surah": 28,
+   "ayah": 24,
+   "name": "القصص",
+   "first": 8,
+   "last": 15,
+   "words": [
+    "رَبِّ",
+    "إِنِّى",
+    "لِمَآ",
+    "أَنزَلْتَ",
+    "إِلَىَّ",
+    "مِنْ",
+    "خَيْرٍ",
+    "فَقِيرٌ"
+   ]
+  },
+  "choices": [
+   {
+    "ar": "سيدنا موسى بعد ما سقى للبنتين",
+    "en": "Moses, after watering the two women's flock",
+    "right": true,
+    "icon": null,
+    "note": null
+   },
+   {
+    "ar": "سيدنا أيوب في مرضه",
+    "en": "Job, in his illness",
+    "right": false,
+    "icon": null,
+    "note": {
+     "ar": "دعاؤه · الأنبياء 83",
+     "en": "his prayer, al-Anbiya' 83"
+    }
+   },
+   {
+    "ar": "سيدنا يونس في بطن الحوت",
+    "en": "Jonah, in the whale's belly",
+    "right": false,
+    "icon": null,
+    "note": {
+     "ar": "دعاؤه · الأنبياء 87",
+     "en": "his prayer, al-Anbiya' 87"
+    }
+   }
+  ],
+  "both": false
+ },
+ "yamm": {
+  "head": {
+   "id": "quran.20.39",
+   "surah": 20,
+   "ayah": 39,
+   "name": "طه",
+   "first": 7,
+   "last": 7,
+   "words": [
+    "ٱلْيَمِّ"
+   ]
+  },
+  "choices": [
+   {
+    "ar": "البحر",
+    "en": "the sea",
+    "right": false,
+    "icon": null,
+    "note": {
+     "ar": "بمعنى البحر · الأعراف 136",
+     "en": "meaning the sea, al-A'raf 136"
+    }
+   },
+   {
+    "ar": "نهر النيل",
+    "en": "the Nile",
+    "right": true,
+    "icon": null,
+    "note": null
+   },
+   {
+    "ar": "البير",
+    "en": "the well",
+    "right": false,
+    "icon": null,
+    "note": null
+   }
+  ],
+  "both": false
  }
 } as const;

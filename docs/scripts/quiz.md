@@ -301,3 +301,296 @@ dessous ; « سيدنا سليمان للهدهد » barré)
   27:22), proposés au registre le 2026-11-17.
 - **Le montage** : la référence sous un mauvais choix (`note`), la canne et les arcs (4), la lumière qui monte (5), la huppe (6).
 - **La voix** : trois requêtes, avec les trois du pilote : six le 2026-11-18 sur les dix du palier gratuit.
+
+## Quiz 7 à 13 : la page test `@ma3ak.5.thawani` (du 21 au 27 novembre ; série `ma3ak`)
+
+**Scripts validés par le propriétaire le 2026-11-18** (question à choix : « je valide les 7 scripts » ; le quiz 13 avec
+20:39 récité entier, son choix). Proposés par la session le même jour. Fichiers : `content/trial/ma3ak.yaml` et ses
+shorts. Montage : l'ordre des choix des quiz 8 et 11 change (la bonne réponse au milieu), et le quiz 13 n'écrit que
+« ٱلْيَمِّ » en tête (comme « دَآبَّةُ ٱلْأَرْضِ » du quiz 4).
+
+Ce lot suit ta demande du 2026-11-18 : un quiz par jour sur la page test `@ma3ak.5.thawani`, 7 quiz, les trois formats en
+alternance, un dessin pour chacun, et aucun numéro d'épisode. Les règles sont celles du pilote (skill `write-hook`,
+« A short of the quiz ») :
+
+- **Chaque mauvais choix est vrai quelque part, ou c'est une idée reçue barrée.** Un choix vrai ailleurs pâlit et sa
+  référence s'écrit dessous. Un choix qui n'est qu'une idée reçue est barré.
+- **Une seule bonne réponse**, vérifiée dans tout le Coran et dans le contexte.
+- **Pas de demande de commentaire.** La fin est une vraie question ouverte.
+- **La voix ne dit jamais les mots du Coran de la question**, et ne récite jamais un verset : c'est Tawfiq As-Sayegh qui
+  récite.
+
+**Les sources** : chaque sens a été vérifié le 2026-11-18 dans al-Muyassar, as-Sa'di et Ibn Kathir (quran.ai). Leur
+référence s'écrit sous chaque réplique. Une réplique qui est un raisonnement de la session, et pas un tafsir, est
+signalée. Aucun de ces quiz ne porte une règle de fiqh.
+
+**Les durées** : les récitations de 18:96, 80:27-32 et 2:45 sont mesurées sur les découpes de Tawfiq As-Sayegh de
+quran-reels ; les autres sont estimées et seront mesurées à la coupe. Personne n'est dessiné : ni prophète, ni
+Compagnon, ni aucune personne d'un récit.
+
+| | Date | Short | Format | Question | Verset récité | Récitation | Durée |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 7 | sam. 21 | `qitr` | A · يعني إيه؟ | « قِطْرًا » في سورة الكهف | 18:96 | 0:21 | ≈ 0:50 |
+| 8 | dim. 22 | `marah` | B · كمّلها بإيه؟ | « وَلَا تَمْشِ فِى ٱلْأَرْضِ مَرَحًا… » وصية لقمان | 31:18 | ≈ 0:12 | ≈ 0:42 |
+| 9 | lun. 23 | `dhahib` | C · مين قالها؟ | « إِنِّى ذَاهِبٌ إِلَىٰ رَبِّى سَيَهْدِينِ » | 37:97-99 | ≈ 0:14 | ≈ 0:45 |
+| 10 | mar. 24 | `abb` | A · يعني إيه؟ | « وَأَبًّا » في سورة عبس | 80:27-32 | 0:20 | ≈ 0:48 |
+| 11 | mer. 25 | `khashi` | B · كمّلها بإيه؟ | « وَٱسْتَعِينُوا۟ بِٱلصَّبْرِ وَٱلصَّلَوٰةِ… » | 2:45 | 0:09 | ≈ 0:38 |
+| 12 | jeu. 26 | `faqir` | C · مين قالها؟ | « رَبِّ إِنِّى لِمَآ أَنزَلْتَ إِلَىَّ مِنْ خَيْرٍ فَقِيرٌ » | 28:24 | ≈ 0:12 | ≈ 0:44 |
+| 13 | ven. 27 | `yamm` | A · يعني إيه؟ | « ٱلْيَمِّ » في قصة موسى الرضيع | 20:39 | 0:22 | ≈ 0:57 |
+
+**Le lundi 23**, jour de la paire avec la page principale (son quiz 1, `sayyara`), c'est le quiz 9 qui sort sur la page
+test. Je l'ai choisi parce que son piège est le plus fort : on s'attend à Moussa.
+
+---
+
+### 7 · `qitr` · «قطرًا» في سورة الكهف؟ · "Qitran" in Surat al-Kahf? (titre proposé)
+
+**L'image** : deux montagnes ; entre elles, le barrage monte, bloc de fer après bloc de fer. Puis le feu rougit les blocs,
+et le cuivre fondu coule dessus, orange. Personne n'est dessiné : ni Dhul-Qarnayn, ni ses ouvriers.
+
+**Muet · `ask`** (première image ; 5 s de compteur ; aucune voix)
+- Écrit : « قِطْرًا » (18:96, en or, du registre) · « في سورة الكهف يعني إيه؟ »  
+  *"Qitran" in Surat al-Kahf: what does it mean?*
+- Les trois choix : **قطر سكة حديد** · **حديد** · **نحاس مدوّب**  
+  *a train · iron · molten copper*  
+  « قطر » est le train en égyptien (une idée reçue, barrée). Le fer est dans le même verset (« زُبَرَ ٱلْحَدِيدِ ») : c'est
+  le piège honnête.
+
+**Muet · `answer`** (le choc ; « نحاس مدوّب » en or ; « حديد » pâlit, « الحديد كان القطع · نفس الآية » dessous ;
+« قطر سكة حديد » barré)
+
+**verset 18:96, récité entier** (image : les blocs, le feu, puis le cuivre qui coule ; « قِطْرًا » en or quand il est récité)
+
+**narration · `meaning`**
+- القِطر هنا… نحاس مدوّب.  
+  *"Qitr" here… is molten copper.* · al-Muyassar (« أعطوني نحاسًا أفرغه عليه »), as-Sa'di (« نحاسا مذابا »), Ibn Kathir (« هو النحاس، وزاد بعضهم: المذاب »)
+- رصّ قطع الحديد بين الجبلين… ولعّها نار… وبعدين صبّ عليها النحاس.  
+  *He stacked the pieces of iron between the two mountains… set them ablaze… then poured the copper over them.* · al-Muyassar et as-Sa'di sur 18:96
+- الحديد لوحده كان هيفضل قطع جنب بعض… النحاس هو اللي لحمها، وبقت سد واحد.  
+  *Iron alone would have stayed pieces side by side… the copper welded them, and they became one barrier.* · as-Sa'di (« الذي يريد أن يلصقه بين زبر الحديد… فاستحكم السد استحكاما هائلا »)
+
+**narration · `close`**
+- وإنت… فيه كلمة في القرآن كنت فاكر معناها حاجة… وطلعت حاجة تانية؟  
+  *And you… is there a word in the Quran you thought meant one thing… and it turned out to be another?* · la question ouverte (ses réponses peuvent donner les prochains quiz)
+- والسؤال الجاي: وصية أب لابنه… تفتكر خلصت بإيه؟ تابعنا.  
+  *Next question: a father's advice to his son… how do you think it ended? Follow us.*
+
+---
+
+### 8 · `marah` · وصية لقمان… خلصت بإيه؟ · Luqman's advice… how did it end? (titre proposé)
+
+**L'image** : un long chemin sur une plaine, des pas qui s'y posent un à un, calmement ; au fond, des montagnes immenses.
+Personne n'est dessiné : ni Luqman, ni son fils.
+
+**Muet · `ask`** (première image ; 5 s de compteur ; aucune voix)
+- Écrit : « وَلَا تَمْشِ فِى ٱلْأَرْضِ مَرَحًا ۖ … » (31:18, du registre, la suite en blanc) · « في وصية لقمان لابنه… كمّلها بإيه؟ »  
+  *In Luqman's advice to his son… how does it go on?*
+- Les trois choix, trois vraies fins du Coran (du registre) : **إِنَّ ٱللَّهَ لَا يُحِبُّ كُلَّ مُخْتَالٍ فَخُورٍ** (31:18) ·
+  **إِنَّكَ لَن تَخْرِقَ ٱلْأَرْضَ وَلَن تَبْلُغَ ٱلْجِبَالَ طُولًا** (17:37) · **إِنَّ ٱللَّهَ لَا يُحِبُّ ٱلْمُعْتَدِينَ** (2:190)  
+  Le piège : la même phrase, « وَلَا تَمْشِ فِى ٱلْأَرْضِ مَرَحًا », est aussi dans al-Isra' (17:37), avec une autre fin.
+
+**Muet · `answer`** (le choc ; le blanc se remplit de la fin de 31:18 en or ; « نفس البداية · الإسراء 37 » et
+« البقرة 190 » sous les deux autres, qui pâlissent)
+
+**verset 31:18, récité entier** (image : les pas sur le chemin ; la fin en or quand elle est récitée)
+
+**narration · `meaning`**
+- المرح هنا مش الفرح… ده إنك تمشي متكبّر ومتباهي.  
+  *"Marah" here isn't joy… it's walking proud and showing off.* · al-Muyassar (« مختالا متبخترًا ») et as-Sa'di (« بطرا، فخرا بالنعم، ناسيا المنعم، معجبا بنفسك ») sur 31:18
+- ونفس الجملة جت في سورة الإسراء… بس خلصت بإنك مش هتخرق الأرض، ولا هتطول الجبال.  
+  *The same sentence comes in al-Isra'… but it ends: you won't tear the earth, nor reach the mountains in height.* · al-Muyassar sur 17:37
+- هناك: إنت صغير قدّام خلق ربنا… وهنا: ربنا ما بيحبش المتكبّر اللي بيتفاخر.  
+  *There: you are small before God's creation… here: God does not love the proud boaster.* · as-Sa'di sur 17:37 (« من غير إدراك لبعض ما تروم ») et al-Muyassar sur 31:18 (« إن الله لا يحب كل متكبر متباه ») ; le rapprochement des deux versets est une **lecture de la session**
+
+**narration · `close`**
+- وإنت… تعرف حد متواضع بجد؟ إيه اللي بيعمله؟  
+  *And you… do you know someone truly humble? What does he do?* · la question ouverte
+- والسؤال الجاي: جملة اتقالت وقت رحيل… مين قالها؟ تابعنا.  
+  *Next question: a sentence said at a departure… who said it? Follow us.*
+
+---
+
+### 9 · `dhahib` · «إني ذاهب إلى ربي سيهدين»… مين قالها؟ · Who said it? (titre proposé)
+
+**L'image** : une ville au loin ; à côté, les braises d'un très grand feu qui s'éteignent ; une route vers l'aube, et une
+seule trace de pas sur elle. Personne n'est dessiné : ni Ibrahim, ni Moussa, ni Nouh.
+
+**Muet · `ask`** (première image ; 5 s de compteur ; aucune voix)
+- Écrit : « إِنِّى ذَاهِبٌ إِلَىٰ رَبِّى سَيَهْدِينِ » (37:99, du registre) · « مين قالها… وإمتى؟ »  
+  *Who said it… and when?*
+- Les trois choix : **سيدنا إبراهيم وهو سايب بلده** · **سيدنا موسى قدّام البحر** · **سيدنا نوح وهو بيركب السفينة**  
+  *Abraham leaving his land · Moses before the sea · Noah boarding the ark*  
+  Moussa a dit devant la mer une phrase voisine, « إِنَّ مَعِىَ رَبِّى سَيَهْدِينِ » (26:62) : c'est le piège honnête. Nouh,
+  en montant dans l'arche, a dit autre chose (11:41) : ce choix est barré.
+
+**Muet · `answer`** (le choc ; « سيدنا إبراهيم » en or ; « سيدنا موسى » pâlit, « قال قريب منها · الشعراء 62 » dessous ;
+« سيدنا نوح » barré)
+
+**versets 37:97-99, récités** (image : les braises, puis la route ; « إِنِّى ذَاهِبٌ إِلَىٰ رَبِّى سَيَهْدِينِ » en or quand il est récité)
+
+**narration · `meaning`**
+- قومه بنوا نار كبيرة ورموه فيها… وربنا خلّاها برد وسلام عليه.  
+  *His people built a great fire and threw him into it… and God made it cool and safe for him.* · al-Muyassar sur 37:97-98 (« ابنوا له بنيانًا واملؤوه حطبًا… وجعل النار على إبراهيم بردًا وسلامًا ») et as-Sa'di sur 37:98
+- وبعدها قرر يسيب بلده: رايح لمكان يعبد فيه ربنا… ومتأكد إن ربنا هيدلّه على الخير.  
+  *Then he decided to leave his land: going to a place where he could worship God… sure that God would guide him to good.* · al-Muyassar (« إني مهاجر إلى ربي… فإنه سيدلني على الخير في ديني ودنياي ») et as-Sa'di (« مهاجر إليه، قاصد إلى الأرض المباركة أرض الشام ») sur 37:99
+- وسيدنا موسى قال جملة قريبة قدّام البحر… الاتنين ما كانوش شايفين الطريق لسه… وكانوا متأكدين.  
+  *And Moses said a close sentence before the sea… neither could see the way yet… and both were sure.* · al-Muyassar sur 26:62 (« سيهديني لما فيه نجاتي ونجاتكم ») ; « ما كانوش شايفين الطريق » est une **lecture de la session**
+
+**narration · `close`**
+- وإنت… سبت قبل كده حاجة… وربنا عوّضك بأحسن منها؟  
+  *And you… have you ever left something behind… and God gave you better?* · la question ouverte
+- والسؤال الجاي: كلمة صغيرة في سورة عبس… ناس كتير فاكرين معناها حاجة تانية. تابعنا.  
+  *Next question: a small word in Surat 'Abasa… many think it means something else. Follow us.*
+
+---
+
+### 10 · `abb` · «وأبًّا»… يعني إيه؟ · "Wa abba"… what does it mean? (titre proposé)
+
+**L'image** : la terre s'ouvre et donne, une à une, les plantes du passage : épis, vigne, oliviers, palmiers, jardins
+épais, fruits. Au mot « أبًّا », une herbe se répand, et des silhouettes de vaches et de moutons viennent la brouter.
+Personne n'est dessiné.
+
+**Muet · `ask`** (première image ; 5 s de compteur ; aucune voix)
+- Écrit : « وَأَبًّا » (80:31, en or, du registre) · « في سورة عبس… يعني إيه؟ »  
+  *In Surat 'Abasa… what does it mean?*
+- Les trois choix : **الأب (الوالد)** · **نوع فاكهة** · **عشب بتاكله البهايم**  
+  *the father · a kind of fruit · grass that cattle eat*  
+  Les deux mauvais choix sont des idées reçues : le mot s'écrit comme « أب », et il vient juste après « فاكهة ». Les deux
+  sont barrés.
+
+**Muet · `answer`** (le choc ; « عشب بتاكله البهايم » en or ; les deux autres barrés)
+
+**versets 80:27-32, récités** (image : les plantes une à une ; « وَأَبًّا » en or quand il est récité ; les bêtes viennent
+brouter au dernier verset)
+
+**narration · `meaning`**
+- الأبّ هنا… العشب اللي بتاكله البهايم.  
+  *"Abb" here… is the grass that cattle eat.* · as-Sa'di (« الأب: ما تأكله البهائم والأنعام »), Ibn Kathir (d'après Ibn 'Abbas : « ما أنبتت الأرض مما تأكله الدواب ولا يأكله الناس »), al-Muyassar (« وثمارًا وكلأ »)
+- الفاكهة ليك… والأبّ لبهايمك.  
+  *The fruit is for you… and the "abb" for your cattle.* · Ibn Kathir (d'après Mujahid, al-Hasan et Qatada : « الأب للبهائم كالفاكهة لبني آدم ») et as-Sa'di sur 80:32
+- ربنا بيعدّ عليك نعمه في أكلك… لحد أكل بهايمك.  
+  *God counts His blessings to you in your food… down to the food of your cattle.* · al-Muyassar (« فليتدبر الإنسان: كيف خلق الله طعامه ») et as-Sa'di (« فمن نظر في هذه النعم أوجب له ذلك شكر ربه ») sur 80:24-32
+
+**narration · `close`**
+- وإنت… آخر مرة بصّيت في طبقك وفكّرت هو جه منين؟  
+  *And you… when did you last look at your plate and think where it came from?* · la question ouverte
+- والسؤال الجاي: آية بتبدأ بنفس الكلام في مكانين… بتخلص إزاي؟ تابعنا.  
+  *Next question: a verse that starts the same in two places… how does it end? Follow us.*
+
+Ibn Kathir rapporte aussi qu'Omar se demandait ce qu'est « الأب » ; ce n'est pas dit : le récit n'est pas dans les
+recueils de notre politique des hadiths.
+
+---
+
+### 11 · `khashi` · «واستعينوا بالصبر والصلاة»… كمّلها بإيه؟ · How does it go on? (titre proposé)
+
+**L'image** : la pièce de prière de « إزاي أعملها؟ » (la fenêtre, le rayon de lumière, le tapis), reprise ; une
+silhouette anonyme sans visage s'y prosterne, comme tu l'as autorisé pour les inconnus.
+
+**Muet · `ask`** (première image ; 5 s de compteur ; aucune voix)
+- Écrit : « وَٱسْتَعِينُوا۟ بِٱلصَّبْرِ وَٱلصَّلَوٰةِ ۚ … » (2:45, du registre, la suite en blanc) · « أول مرة في سورة البقرة… كمّلها بإيه؟ »  
+  *The first time in Surat al-Baqarah… how does it go on?*
+- Les trois choix, trois vraies fins du Coran (du registre) : **وَإِنَّهَا لَكَبِيرَةٌ إِلَّا عَلَى ٱلْخَـٰشِعِينَ** (2:45) ·
+  **إِنَّ ٱللَّهَ مَعَ ٱلصَّـٰبِرِينَ** (2:153) · **إِنَّ ٱلْأَرْضَ لِلَّهِ** (7:128)  
+  Le piège : la fin la plus connue est celle de 2:153, la deuxième fois dans la même sourate. Et Moussa a dit à son
+  peuple « ٱسْتَعِينُوا۟ بِٱللَّهِ وَٱصْبِرُوٓا۟ » (7:128).
+
+**Muet · `answer`** (le choc ; le blanc se remplit de la fin de 2:45 en or ; « المرة التانية · البقرة 153 » et « قالها
+موسى لقومه · الأعراف 128 » sous les deux autres, qui pâlissent)
+
+**verset 2:45, récité** (image : la silhouette se prosterne ; la fin en or quand elle est récitée)
+
+**narration · `meaning`**
+- الصلاة تقيلة على ناس كتير… إلا اللي قلبه خاشع: عليه خفيفة.  
+  *Prayer is heavy for many… except the one whose heart is humble: for him it's light.* · al-Muyassar (« وإنها لشاقة إلا على الخاشعين ») et as-Sa'di (« فإنها سهلة عليهم خفيفة ») sur 2:45
+- والخشوع إن قلبك يهدا ويسكن قدّام ربنا.  
+  *And humility is your heart calming down and resting before God.* · as-Sa'di sur 2:45 (« خضوع القلب وطمأنينته، وسكونه لله تعالى »)
+- وفي نفس السورة… نفس الأمر جه تاني، وخلص بإن ربنا مع اللي بيصبروا.  
+  *And in the same surah… the same command comes again, and ends with God being with those who are patient.* · al-Muyassar sur 2:153
+
+**narration · `close`**
+- وإنت… إيه اللي بيخلّي الصلاة أخف عليك؟  
+  *And you… what makes prayer lighter for you?* · la question ouverte
+- والسؤال الجاي: دعوة قالها نبي وهو جعان ولوحده… مين؟ تابعنا.  
+  *Next question: a prayer a prophet said, hungry and alone… who? Follow us.*
+
+---
+
+### 12 · `faqir` · مين دعا الدعوة دي؟ · Who made this prayer? (titre proposé)
+
+**L'image** : un puits dans le désert à midi (celui du quiz 1, repris), une grosse pierre à côté ; des moutons qui
+boivent ; puis l'ombre d'un arbre seul. Personne n'est dessiné : ni Moussa, ni les deux femmes.
+
+**Muet · `ask`** (première image ; 5 s de compteur ; aucune voix)
+- Écrit : « رَبِّ إِنِّى لِمَآ أَنزَلْتَ إِلَىَّ مِنْ خَيْرٍ فَقِيرٌ » (28:24, du registre) · « مين دعا الدعوة دي… وإمتى؟ »  
+  *Who made this prayer… and when?*
+- Les trois choix : **سيدنا موسى بعد ما سقى للبنتين** · **سيدنا أيوب في مرضه** · **سيدنا يونس في بطن الحوت**  
+  *Moses after watering the two women's flock · Job in his illness · Jonah in the whale's belly*  
+  Les deux autres sont de vraies prières de détresse : celle d'Ayyoub (21:83) et celle de Younous (21:87).
+
+**Muet · `answer`** (le choc ; « سيدنا موسى » en or ; « دعاؤه في الأنبياء 83 » et « دعاؤه في الأنبياء 87 » sous les deux
+autres, qui pâlissent)
+
+**verset 28:24, récité entier** (image : les moutons boivent, puis l'ombre de l'arbre ; la prière en or quand elle est récitée)
+
+**narration · `meaning`**
+- سيدنا موسى كان هربان من فرعون… ماشي من مصر لمدين… جعان ولوحده.  
+  *Moses was fleeing Pharaoh… walking from Egypt to Midian… hungry and alone.* · al-Muyassar sur 28:24-25 (« وكان قد اشتد به الجوع » ; « قصصه مع فرعون وقومه… نجوت من القوم الظالمين ») et Ibn Kathir sur 28:24 (d'après Ibn 'Abbas : « سار موسى من مصر إلى مدين »)
+- ساعد البنتين وسقى لهم من غير ما يطلب أجر… وبعدين قعد في الضل ودعا.  
+  *He helped the two women and watered their flock without asking for a wage… then he sat in the shade and prayed.* · as-Sa'di sur 28:24 (« غير طالب منهما الأجرة… ثم تولى إلى الظل مستريحا »)
+- ما طلبش حاجة معيّنة… قال: أنا محتاج لأي خير تبعتهولي… وعلى طول جاله الفرج.  
+  *He didn't ask for anything specific… he said: I need any good You send me… and relief came at once.* · al-Muyassar (« إني مفتقر إلى ما تسوقه إليَّ مِن أي خير كان ») et as-Sa'di (« السؤال بالحال أبلغ ») sur 28:24 ; « على طول » : 28:25 et Ibn Kathir (« لما رجعت المرأتان سراعا »)
+
+**narration · `close`**
+- وإنت… إيه الدعوة اللي بتقولها لما تحس إنك محتاج؟  
+  *And you… what prayer do you say when you feel in need?* · la question ouverte
+- والسؤال الجاي: كلمة في قصة سيدنا موسى وهو رضيع… تفتكر معناها إيه؟ تابعنا.  
+  *Next question: a word in the story of Moses as a baby… what do you think it means? Follow us.*
+
+---
+
+### 13 · `yamm` · «اليمّ»… يعني إيه؟ · "Al-yamm"… what does it mean? (titre proposé)
+
+**L'image** : un fleuve à l'aube, des roseaux ; une caisse de bois fermée flotte, et le courant la porte vers la rive où
+se dresse un palais en silhouette. Personne n'est dessiné : ni la mère de Moussa, ni Pharaon.
+
+**Muet · `ask`** (première image ; 5 s de compteur ; aucune voix)
+- Écrit : « فَٱقْذِفِيهِ فِى ٱلْيَمِّ » (20:39, du registre ; « ٱلْيَمِّ » en or) · « هنا يعني إيه؟ »  
+  *Here, what does it mean?*
+- Les trois choix : **البحر** · **نهر النيل** · **البير**  
+  *the sea · the Nile · the well*  
+  « اليم » veut dire la mer ailleurs : Pharaon y a été noyé (7:136, al-Muyassar : « في البحر »). C'est le piège honnête.
+  Le puits est celui de Youssouf : une idée reçue, barrée.
+
+**Muet · `answer`** (le choc ; « نهر النيل » en or ; « البحر » pâlit, « بمعنى البحر · الأعراف 136 » dessous ; « البير »
+barré)
+
+**verset 20:39, récité entier** (21,8 s ; choix du propriétaire, 2026-11-18 ; image : la caisse descend le fleuve).
+
+**narration · `meaning`**
+- اليمّ هنا… نهر النيل.  
+  *"Al-yamm" here… is the Nile.* · al-Muyassar (« ثم اطرحيه في النيل ») et as-Sa'di (« في اليم، أي: شط نيل مصر ») sur 20:39
+- أم موسى حطّته في صندوق ورمته في النيل… والنيل هو اللي ودّاه لحد قصر فرعون.  
+  *Moses' mother put him in a box and cast it into the Nile… and the Nile carried him to Pharaoh's palace.* · al-Muyassar sur 20:39 et 28:7, as-Sa'di sur 20:39 (« فأمر الله اليم أن يلقيه في الساحل »)
+- ونفس الكلمة في سورة الأعراف معناها البحر… اللي غرق فيه فرعون.  
+  *And the same word in Surat al-A'raf means the sea… where Pharaoh drowned.* · al-Muyassar sur 7:136 (« إغراقهم في البحر »)
+
+**narration · `close`**
+- وإنت… حصلت لك حاجة كنت خايف منها… وطلعت هي سبب الخير؟  
+  *And you… did something you feared happen to you… and turn out to be the cause of good?* · la question ouverte
+- تابعنا عشان السؤال الجاي.  
+  *Follow us for the next question.*
+
+---
+
+### Ce qui est à faire après ta validation
+
+- **Les sources** : versets 18:96, 31:18, 17:37, 2:190, 37:97-99, 26:62, 11:41, 80:27-32, 2:45, 2:153, 7:128, 28:24,
+  21:83, 21:87, 20:39, 7:136 ; les passages de tafsir cités sous les répliques, proposés au registre.
+- **Les récitations** de Tawfiq As-Sayegh, coupées et entendues en entier par Whisper : 18:96 ; 31:18 ; 37:97-99 ;
+  80:27-32 ; 2:45 ; 28:24 ; 20:39 jusqu'à « لَّهُۥ ».
+- **Les clips** : un par quiz, cherchés pour l'image et **montrés à toi avant d'être employés** (des images, un choix).
+- **Les dessins** : le barrage et le cuivre ; le chemin et les montagnes ; les braises et la route ; les plantes et les
+  bêtes ; la pièce de prière, reprise ; le puits, repris ; le fleuve et la caisse.
+- **La voix** : 7 requêtes, une par quiz (sur les 10 du palier gratuit), le jour de ta validation.
+- **Les textes** des légendes (titre, accroche, hashtags) : avec les vidéos, à valider.
