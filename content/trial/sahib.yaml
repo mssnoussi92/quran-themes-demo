@@ -17,4 +17,4 @@ publish:
   out: docs/retention/publication-sahib.md
   series: { en: "Your Friend Pulls You", ar: "الصاحب ساحب" }
   hashtags: ["#الصاحب_ساحب", "#الصحبة"]      # proposés par la session, à valider avec les textes
-  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }
+  narration: { X: "No narration: the moments are played without a word · بدون صوت راوي" }

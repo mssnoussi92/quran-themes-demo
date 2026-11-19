@@ -12,7 +12,7 @@ id: nasr
 # lecture de Bukhari 2444 le même jour.
 script_validated: { by: mssnoussi92, on: 2026-11-19 }
 handle: "@quran_words_daily"
-voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+voices: { X: "no voice: the moments are played without a word" }      # aucune voix de synthèse (son choix, 2026-11-19), comme les adhkar
 clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#1b1f3a", horizon: 1420, veil: 0.45 }
 ambience: { source: bigsoundbank, id: "0680", title: "Paris by Night", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/paris-by-night-s0680.html", from: 2, seconds: 76, level: -38 }
 cover: { scene: n-good-2, title: "بيشجّعك… ولا بينصرك؟", tag: "الصاحب ساحب · 3 من 3", focus: 1100 }

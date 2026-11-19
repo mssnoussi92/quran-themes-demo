@@ -10,7 +10,7 @@ id: jalis
 # docs/scripts/sahib.md) ; le style (« Je valide ce style ») et la lecture de Bukhari 5534 le même jour.
 script_validated: { by: mssnoussi92, on: 2026-11-19 }
 handle: "@quran_words_daily"
-voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+voices: { X: "no voice: the moments are played without a word" }      # aucune voix de synthèse (son choix, 2026-11-19), comme les adhkar
 # Le fond est tout dessiné (Sahib.tsx couvre l'image) : le clip généré n'est qu'un fond de secours.
 clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#132623", horizon: 1400, veil: 0.45 }
 # Ambiance sous les moments et les textes, jamais sous le verset ni le hadith : un café (murmures sans paroles distinctes,

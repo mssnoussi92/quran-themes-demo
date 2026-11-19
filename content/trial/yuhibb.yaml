@@ -10,7 +10,7 @@ id: yuhibb
 # docs/scripts/sahib.md), puis 59:9 entier (même jour, sa règle) ; le style et la lecture de Bukhari 13 le même jour.
 script_validated: { by: mssnoussi92, on: 2026-11-19 }
 handle: "@quran_words_daily"
-voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+voices: { X: "no voice: the moments are played without a word" }      # aucune voix de synthèse (son choix, 2026-11-19), comme les adhkar
 clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#4a4f5a", horizon: 1420, veil: 0.55 }
 ambience: { source: bigsoundbank, id: "0608", title: "Street and Roads", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/street-and-roads-s0608.html", from: 5, seconds: 110, level: -38 }
 cover: { scene: y-good-2, title: "صاحبك بيحب لك إيه؟", tag: "الصاحب ساحب · 2 من 3", focus: 1100 }
