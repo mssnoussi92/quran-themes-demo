@@ -723,3 +723,6 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 - **Ses choix (questions à choix)** : un pilote de trois shorts sur les hadiths de la fraternité (`الجليس`, `زي ما تحب
   لنفسك`, `انصره ظالمًا`), sans narration, dans un décor dessiné à part ; les sujets à compteur en réserve. Fiche :
   `docs/themes.md`. Le script (les moments, les étiquettes, les lignes de fin) lui est envoyé avant tout dessin.
+- **Validés le même jour** : le nom « الصاحب ساحب » et les trois scripts (`docs/scripts/sahib.md`), `yuhibb` fini sur
+  le fragment de 59:9 (« ويؤثرون… »), que la session jugeait nécessaire : sans lui, ce short, le plus doux des trois, n'a
+  pas de chute.

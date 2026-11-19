@@ -1316,6 +1316,10 @@ moments rejoués (le faux ami, puis le vrai, environ 6 s chacun), aucun mot sauf
 - **Un décor dessiné à part**, propre à la série (pas leur rue de nuit), comme « سنريهم آياتنا » a le sien.
 - **Les sujets à compteur, en réserve** (plus bas).
 
+**Nom et scripts validés (2026-11-19, questions à choix)** : « الصاحب ساحب » (*Your friend pulls you*) ; les trois
+scripts tels qu'envoyés, `yuhibb` avec le fragment de 59:9 (`docs/scripts/sahib.md`). Prochaine étape : les images de
+style (les bonshommes avec visage, les trois décors) à faire valider avant d'animer.
+
 **La forme** (environ 1:00) : trois moments de la vie de tous les jours dans un même décor, chacun joué deux fois
 (l'ami qui fait mal, puis celui qui fait bien, environ 6 s chacun), un code couleur dès la première image (le premier
 gris, le second blanc), une étiquette en haut (arabe, anglais dessous), des visages simples, des bruitages et une
