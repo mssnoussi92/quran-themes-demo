@@ -1181,7 +1181,6 @@ const NRead: Moment = ({ t }) => (
       <path d="M -520 120 L -40 20" stroke={WHITE} strokeWidth={84} strokeLinecap="round" />
       <path d="M 560 220 L 60 60" stroke={INK} strokeWidth={98} strokeLinecap="round" />
       <path d="M 560 220 L 60 60" stroke={WHITE} strokeWidth={84} strokeLinecap="round" />
-      <path d="M 300 136 Q 240 110 270 160" stroke={SCARF} strokeWidth={30} fill="none" strokeLinecap="round" opacity={0.9} />
       <circle cx={-30} cy={22} r={62} fill={WHITE} stroke={INK} strokeWidth={8} />
       <circle cx={20} cy={-24} r={64} fill={WHITE} stroke={INK} strokeWidth={8} />
       <circle cx={20} cy={-24} r={92} fill="none" stroke="#ffe7a3" strokeWidth={6} opacity={0.6 + 0.2 * Math.sin(t * 2)} />
