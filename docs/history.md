@@ -738,3 +738,16 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   le registre (5:2 et son Muyassar remplacés par 9:71), les coupes de Tawfiq (43:67, 59:9, 9:71 ; celle de 5:2 retirée).
   La nouvelle ligne de sens de `nasr` sur 9:71 (« المؤمنين أنصار بعض… بيأمروا بالخير، وبيمنعوا بعض عن الغلط. ») **validée par
   lui** le même jour.
+
+## « الصاحب ساحب » : la production (2026-11-19)
+
+- **Sa demande** : « oui continue », après les scripts, le style, les lectures et les versets entiers validés.
+- **Fait** : un segment sans texte (`pause` : un moment joué sans un mot, l'ambiance continue dessous ; prepare.py,
+  Trial.tsx, rules.py, script.py, tests) ; les fichiers de la série (`content/trial/sahib.yaml`, `jalis`, `yuhibb`, `nasr`) ;
+  l'animation (`video/src/trial/Sahib.tsx` : les décors tirés des images de style, chaque moment dessiné aux secondes de
+  sa scène, l'étiquette du moment dans un calque au-dessus du voile, l'appel au partage sur une scène à lui) ; des bruitages
+  faits de bruit, sans note (`tools/trial/sfx.py` : braise, scintillement, bouffée, bulle, vibration, moteur, pièces) ;
+  deux ambiances de rue de BigSoundBank (CC0 ; Whisper n'y entend aucune parole) ; la voix déclarée absente, comme les
+  adhkar (voix `X`, « بدون صوت راوي »). Trois brouillons rendus dans la session, regardés image par image et corrigés (le
+  serveur derrière la table, la lanterne et le panneau du bus sous les textes, le rire écrit en arabe), puis le rendu par
+  le workflow `film` (voix X).
