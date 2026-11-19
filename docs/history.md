@@ -751,3 +751,8 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   adhkar (voix `X`, « بدون صوت راوي »). Trois brouillons rendus dans la session, regardés image par image et corrigés (le
   serveur derrière la table, la lanterne et le panneau du bus sous les textes, le rire écrit en arabe), puis le rendu par
   le workflow `film` (voix X).
+- **Livré, corrigé, validé (2026-11-19)** : ses corrections (questions à choix) : les débuts des lectures de Bukhari 13 et 2444
+  (la session avait laissé le « قال » du lecteur et la fin de son « وسلم » ; Whisper l'entendait, la session l'avait pris pour
+  une erreur de reconnaissance), et une affiche plus parlante (« فرصة شغل », une mallette). Rendus de nouveau, vérifiés
+  (Whisper entend « لا » et « انصر » en premier), envoyés ; **tout validé par lui** : titres, descriptions, accroches, les neuf
+  sources, les trois vidéos. En réserve, placés à la revue avec les mesures de « بص تاني » (son choix).

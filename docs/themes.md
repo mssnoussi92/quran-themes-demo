@@ -1334,8 +1334,11 @@ Les trois shorts font donc environ 1:20 à 1:35.
 **Production (2026-11-19)** : rendus par le workflow `film` (voix X, sans voix : runs 44541437483 et 44545396270, release
 brouillon `sahib-candidate`), 1:25, 1:34, 1:39, envoyés avec leurs couvertures. **Validés par lui le même jour** (questions
 à choix) : les titres, descriptions et accroches (`docs/retention/publication-sahib.md`), les trois versets et le Muyassar
-sur chacun. **En réserve, placés à la revue** avec les mesures de « بص تاني » (son choix). Les vidéos attendent ses
-corrections.
+sur chacun, puis les trois hadiths. **En réserve, placés à la revue** avec les mesures de « بص تاني » (son choix). Ses
+corrections : les coupes des lectures (13 et 2444 commençaient par le « قال » du lecteur et la fin de son « وسلم » : recoupées
+à 22,80 s et 10,62 s) et une affiche plus parlante (« فرصة شغل », une mallette) ; rendus de nouveau (run 44551065589 ;
+1:25, 1:33, 1:38). **Tout validé par lui le 2026-11-19** (« Je valide les trois » : vidéos, lectures recoupées, bruitages,
+ambiances, couvertures).
 
 **La forme** (environ 1:00) : trois moments de la vie de tous les jours dans un même décor, chacun joué deux fois
 (l'ami qui fait mal, puis celui qui fait bien, environ 6 s chacun), un code couleur dès la première image (le premier

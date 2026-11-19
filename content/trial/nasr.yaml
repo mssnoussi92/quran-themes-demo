@@ -12,8 +12,10 @@ id: nasr
 # lecture de Bukhari 2444 le même jour.
 script_validated: { by: mssnoussi92, on: 2026-11-19 }
 # « Je valide titres, descriptions et accroches » (2026-11-19, question à choix nommant les trois titres, descriptions et
-# accroches de docs/retention/publication-sahib.md tels qu'envoyés) : les textes. Les vidéos attendent ses corrections.
-validated: { by: mssnoussi92, on: 2026-11-19, what: [publish] }
+# accroches de docs/retention/publication-sahib.md tels qu'envoyés) : les textes. Puis « Je valide les trois » (même jour,
+# question à choix nommant les trois vidéos telles qu'envoyées, les deux corrigées (lectures recoupées, affiche) et
+# « الجليس » : montage, dessins, bruitages, ambiances, couvertures, lectures). Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-19, what: [montage, cover, ambience, publish] }
 handle: "@quran_words_daily"
 voices: { X: "no voice: the moments are played without a word" }      # aucune voix de synthèse (son choix, 2026-11-19), comme les adhkar
 clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#1b1f3a", horizon: 1420, veil: 0.45 }
