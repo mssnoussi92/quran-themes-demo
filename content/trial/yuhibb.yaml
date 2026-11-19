@@ -63,7 +63,7 @@ segments:
   - narration: share
     silent: true
     hold: 3
-    scene: y-good-2
+    scene: y-share
     lines:
       - ar: "ابعتها لصاحبك اللي بيبعتلك الفرص."
         en: "Send it to the friend who sends you the chances."

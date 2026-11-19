@@ -65,7 +65,7 @@ segments:
   - narration: share
     silent: true
     hold: 3
-    scene: n-good-2
+    scene: n-share
     lines:
       - ar: "ابعتها لصاحبك اللي بيمسك إيدك."
         en: "Send it to the friend who holds your hand back."

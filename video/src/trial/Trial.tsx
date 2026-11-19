@@ -25,7 +25,7 @@ import { LENS_PICTURES } from "./Lens";
 import { KAHF_PICTURES } from "./Kahf";
 import { QADAR_PICTURES } from "./Qadar";
 import { HAYYIN_PICTURES } from "./Hayyin";
-import { SAHIB_OVERLAYS, SAHIB_PICTURES } from "./Sahib";
+import { SAHIB_LAYOUTS, SAHIB_OVERLAYS, SAHIB_PICTURES } from "./Sahib";
 import { DHIKR_LAYOUTS, DHIKR_PICTURES } from "./Dhikr";
 import { QUIZ_LAYOUTS, QUIZ_OVERLAYS, QUIZ_PICTURES } from "./Quiz";
 import { SAHW_LAYOUTS, SAHW_OVERLAYS, SAHW_PICTURES } from "./Sahw";
@@ -499,7 +499,7 @@ export const PORTRAIT: Layout = {
 /** A short that needs its texts elsewhere (a timeline above the picture, a narrower column) says so here: what it
  * gives is merged over PORTRAIT (`sub` and `credit` one level deeper, so that `sub: { top }` keeps the rest). */
 export type LayoutOverride = Omit<Partial<Layout>, "sub" | "credit"> & { sub?: Partial<Layout["sub"]>; credit?: Partial<Layout["credit"]> };
-export const LAYOUTS: Record<string, LayoutOverride> = { ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS, ...DHIKR_LAYOUTS, ...SAHW_LAYOUTS };
+export const LAYOUTS: Record<string, LayoutOverride> = { ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS, ...DHIKR_LAYOUTS, ...SAHW_LAYOUTS, ...SAHIB_LAYOUTS };
 const layoutOf = (trial: string): Layout => {
   const own = LAYOUTS[trial];
   return own ? { ...PORTRAIT, ...own, sub: { ...PORTRAIT.sub, ...own.sub }, credit: { ...PORTRAIT.credit, ...own.credit } } : PORTRAIT;

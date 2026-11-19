@@ -68,7 +68,7 @@ segments:
   - narration: share
     silent: true
     hold: 3
-    scene: j-good-3
+    scene: j-share
     lines:
       - ar: "ابعتها لجليسك الصالح."
         en: "Send it to your good companion."

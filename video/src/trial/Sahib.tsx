@@ -11,7 +11,7 @@ import React from "react";
 import { AbsoluteFill, Easing, interpolate } from "remotion";
 import { FONT, loadFonts } from "../fonts";
 import { walk } from "./Lens";
-import type { Drawn } from "./Trial";
+import type { Drawn, LayoutOverride } from "./Trial";
 
 loadFonts();
 
@@ -321,7 +321,7 @@ const Phone: React.FC<{ glow?: boolean; r?: number; flash?: number }> = ({ glow,
 
 /** A small flask of musk, gold and brown, its cap. */
 const Musk: React.FC = () => (
-  <g stroke={INK} strokeWidth={3.5} strokeLinejoin="round">
+  <g stroke={INK} strokeWidth={3.5} strokeLinejoin="round" transform="scale(1.7)">
     <path d="M -12 -6 L 12 -6 L 15 26 Q 0 34 -15 26 Z" fill="#b8742a" />
     <rect x={-6} y={-18} width={12} height={12} rx={2} fill="#f2c66d" />
   </g>
@@ -367,15 +367,15 @@ const Coin: React.FC<{ x: number; y: number }> = ({ x, y }) => (
 /** Little four-pointed stars of gold around a point: the musk, the good that stays on you. `k`: how many, 0 to 1. */
 const Sparkles: React.FC<{ x: number; y: number; k: number; t: number; spread?: number; seed?: number }> = ({ x, y, k, t, spread = 90, seed = 0 }) => (
   <g>
-    {Array.from({ length: 14 }, (_, i) => {
-      const on = k * 14 - i;
+    {Array.from({ length: 18 }, (_, i) => {
+      const on = k * 18 - i;
       if (on <= 0) return null;
       const a = chance(i, seed) * Math.PI * 2;
       const r = spread * (0.35 + 0.65 * chance(i, seed + 1));
       const rise = ((t * 0.6 + chance(i, seed + 2)) % 1) * 60;
       const cx = x + Math.cos(a) * r;
       const cy = y + Math.sin(a) * r * 0.7 - rise;
-      const size = 7 + 9 * chance(i, seed + 3);
+      const size = 11 + 13 * chance(i, seed + 3);
       const tw = 0.55 + 0.45 * Math.sin(t * 5 + i);
       return (
         <path key={i} d={`M ${cx} ${cy - size} L ${cx + size * 0.28} ${cy - size * 0.28} L ${cx + size} ${cy} L ${cx + size * 0.28} ${cy + size * 0.28} L ${cx} ${cy + size} L ${cx - size * 0.28} ${cy + size * 0.28} L ${cx - size} ${cy} L ${cx - size * 0.28} ${cy - size * 0.28} Z`}
@@ -492,7 +492,7 @@ const AhwaSet: React.FC<{ glasses?: boolean; night?: number; t?: number }> = ({ 
       <rect x={0} y={1100} width={W} height={14} fill="#c99a3e" />
       <rect x={0} y={floor} width={W} height={H - floor} fill="url(#ahwa-floor)" />
       <rect x={0} y={floor} width={W} height={10} fill={INK} opacity={0.6} />
-      <Fanoos x={540} y={600} />
+      <Fanoos x={540} y={740} />
       <path d="M 540 1170 L 540 1390 M 490 1396 L 590 1396" stroke={INK} strokeWidth={22} strokeLinecap="round" />
       <path d="M 540 1170 L 540 1390 M 490 1396 L 590 1396" stroke="#c99a3e" strokeWidth={10} strokeLinecap="round" />
       <ellipse cx={540} cy={1166} rx={130} ry={22} fill="#d9ab4f" stroke={INK} strokeWidth={7} />
@@ -814,13 +814,19 @@ const JGood1: Moment = ({ u, t }) => {
 
 /** The ahwa's waiter, his tarboosh, his tray. */
 const Waiter: React.FC<{ u: number; face: Face; leaveFace: Face }> = ({ u, face, leaveFace }) => {
-  const come = walking(u, 0, 1.2, 1180, 900);
-  const go = walking(u, 4.0, 6.0, 900, 1200);
+  const come = walking(u, 0, 1.4, 1180, 560);
+  const go = walking(u, 4.0, 6.0, 560, 1200);
   const leaving = u >= 4.0;
   const at = leaving ? go : come;
   return (
-    <Stick x={at.x} y={AHWA.floor - 200} pose={at.pose} facing={leaving ? 1 : -1} tone="white" face={leaving ? leaveFace : face} cap="#9b2c2c"
-      handF={[at.x + (leaving ? 70 : -70), 1110]} bendF={-1} heldF={<Tray cup={u < 1.4 || u > 6} />} />
+    <g>
+      <Stick x={at.x} y={AHWA.floor - 230} s={1.15} pose={at.pose} facing={leaving ? 1 : -1} tone="white" face={leaving ? leaveFace : face} cap="#9b2c2c"
+        handF={[at.x + (leaving ? 60 : -60), 1060]} bendF={-1} heldF={<Tray cup={u < 1.4 || u > 6} />} />
+      {/* the table again, in front of him */}
+      <path d="M 540 1170 L 540 1390" stroke={INK} strokeWidth={22} strokeLinecap="round" />
+      <path d="M 540 1170 L 540 1390" stroke="#c99a3e" strokeWidth={10} strokeLinecap="round" />
+      <ellipse cx={540} cy={1166} rx={130} ry={22} fill="#d9ab4f" stroke={INK} strokeWidth={7} />
+    </g>
   );
 };
 
@@ -876,11 +882,7 @@ const JBad3: Moment = ({ u, t }) => {
       <Shisha x={150} floor={AHWA.floor + 6} bowl={930} />
       <Stick x={AHWA.left} y={AHWA.seat - 22} pose={{ ...SEATED, torso: -14 + 4 * Math.sin(t * 9) * ramp(u, 0.6, 1), head: 14 }} facing={1} tone="grey" face={u > 0.6 ? "laugh" : "smile"}
         handF={[390, 1010]} bendF={1} heldF={<Phone glow r={-12} />} />
-      {u > 0.8 ? (
-        <g transform="translate(250 840)" opacity={ramp(u, 0.8, 1.2)}>
-          <text x={0} y={0} textAnchor="middle" fontFamily={FONT.latin} fontWeight={700} fontSize={44} fill="#ffdf6b">ha ha</text>
-        </g>
-      ) : null}
+      <Bubble x={280} y={820} text="ههههه" k={ramp(u, 0.8, 1.2)} tail={-1} />
       {up < 1 && u < 4.6 ? heroSeated(0.35, { face: "worried", handF: [600, 1150], bendF: -1 }) : (
         <Stick x={leave.x} y={AHWA.floor - 200} pose={leave.pose} facing={1} tone="white" face="worried" scarf />
       )}
@@ -923,7 +925,10 @@ const JRead: Moment = ({ t }) => (
   </g>
 );
 
-const JALIS: Record<string, Moment> = { "j-bad-1": JBad1, "j-good-1": JGood1, "j-bad-2": JBad2, "j-good-2": JGood2, "j-bad-3": JBad3, "j-good-3": JGood3, "j-end": JEnd, "j-read": JRead };
+/** Behind the call to share: a good moment held still, with no label over it. */
+const held = (M: Moment, at: number): Moment => ({ t }) => <M u={at} t={t} />;
+
+const JALIS: Record<string, Moment> = { "j-bad-1": JBad1, "j-good-1": JGood1, "j-bad-2": JBad2, "j-good-2": JGood2, "j-bad-3": JBad3, "j-good-3": JGood3, "j-end": JEnd, "j-read": JRead, "j-share": held(JGood1, 4.4) };
 
 // -- 2. زي ما تحب لنفسك, the bus stop ----------------------------------------------------------------------------
 
@@ -1049,7 +1054,7 @@ const YBench: Moment = ({ u }) => {
   );
 };
 
-const YUHIBB: Record<string, Moment> = { "y-bad-1": YBad1, "y-good-1": YGood1, "y-bad-2": YBad2, "y-good-2": YGood2, "y-bad-3": YBad3, "y-good-3": YGood3, "y-end": YEnd, "y-bench": YBench };
+const YUHIBB: Record<string, Moment> = { "y-bad-1": YBad1, "y-good-1": YGood1, "y-bad-2": YBad2, "y-good-2": YGood2, "y-bad-3": YBad3, "y-good-3": YGood3, "y-end": YEnd, "y-bench": YBench, "y-share": held(YGood2, 4.6) };
 
 // -- 3. انصره ظالمًا, the kiosk ----------------------------------------------------------------------------------
 
@@ -1196,7 +1201,7 @@ const NNight: Moment = ({ u }) => {
   );
 };
 
-const NASR: Record<string, Moment> = { "n-bad-1": NBad1, "n-good-1": NGood1, "n-bad-2": NBad2, "n-good-2": NGood2, "n-bad-3": NBad3, "n-good-3": NGood3, "n-end": NEnd, "n-read": NRead, "n-night": NNight };
+const NASR: Record<string, Moment> = { "n-bad-1": NBad1, "n-good-1": NGood1, "n-bad-2": NBad2, "n-good-2": NGood2, "n-bad-3": NBad3, "n-good-3": NGood3, "n-end": NEnd, "n-read": NRead, "n-night": NNight, "n-share": held(NGood2, 3.0) };
 
 // ------------------------------------------------------------------------------------------ pictures and labels
 
@@ -1222,7 +1227,7 @@ const picture = (set: (t: number, show: (id: string) => number) => React.ReactNo
 };
 
 const JalisPicture = picture((t, show) => <AhwaSet t={t} night={show("j-night")} glasses={show("j-bad-2") + show("j-good-2") < 0.5} />, JALIS);
-const YuhibbPicture = picture((t, show) => <BusStopSet t={t} poster={show("y-bad-2") + show("y-good-2") + show("y-read") > 0.01} cart={show("y-bad-1") + show("y-good-1") < 0.99} />, YUHIBB);
+const YuhibbPicture = picture((t, show) => <BusStopSet t={t} poster={show("y-bad-2") + show("y-good-2") + show("y-read") + show("y-share") > 0.01} cart={show("y-bad-1") + show("y-good-1") < 0.99} />, YUHIBB);
 const NasrPicture = picture((t, show) => <KioskSet t={t} dark={show("n-night")} keeper={show("n-good-3") > 0.5 ? "smile" : "neutral"} />, NASR);
 
 export const SAHIB_PICTURES: Record<string, Drawn> = { jalis: JalisPicture, yuhibb: YuhibbPicture, nasr: NasrPicture };
@@ -1254,7 +1259,7 @@ const labels = (short: string): Drawn => ({ show }) => (
           <text x={W / 2 - 20} y={410} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={84} fill="#fffaf0"
             style={{ direction: "rtl", filter: "drop-shadow(0 4px 10px rgba(0,0,0,.6))" }}>{l.ar}</text>
           <circle cx={W / 2 + width / 2 + 6} cy={384} r={15} fill={l.tone === "grey" ? GREY : WHITE} stroke={INK} strokeWidth={5} />
-          <text x={W / 2} y={466} textAnchor="middle" fontFamily={FONT.latin} fontSize={30} letterSpacing={7} fill="#fffaf0" opacity={0.8}
+          <text x={W / 2} y={492} textAnchor="middle" fontFamily={FONT.latin} fontSize={30} letterSpacing={7} fill="#fffaf0" opacity={0.8}
             style={{ filter: "drop-shadow(0 3px 8px rgba(0,0,0,.6))" }}>{l.en.toUpperCase()}</text>
         </g>
       );
@@ -1263,3 +1268,7 @@ const labels = (short: string): Drawn => ({ show }) => (
 );
 
 export const SAHIB_OVERLAYS: Record<string, Drawn> = { jalis: labels("jalis"), yuhibb: labels("yuhibb"), nasr: labels("nasr") };
+
+/** The texts (the end line, the hadith, the verse, its meaning, the call to share) above the drawing. */
+const LAYOUT: LayoutOverride = { top: 300, size: 86, height: 330 };
+export const SAHIB_LAYOUTS: Record<string, LayoutOverride> = { jalis: LAYOUT, yuhibb: LAYOUT, nasr: LAYOUT };
