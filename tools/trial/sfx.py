@@ -16,6 +16,13 @@ The events come from the short's file, `sfx` of a segment: `[sound, seconds afte
   pops     the dots fall into their place (a roll of small pops)
   click    a ring is set on a dot
   lock     a padlock shuts
+  sizzle   a coal on cloth (« الصاحب ساحب »): a short hiss, a few crackles
+  shimmer  a breath of air that glitters: the musk, the good that stays on you (high noise, no note)
+  puff     a puff of smoke, a low breath
+  pop      one soft pop: a bubble, a label
+  buzz     a phone that vibrates: two short rattles
+  engine   a bus that comes and goes: a low rumble that swells and fades
+  coins    coins on a counter: a few bright dry ticks
   count    the countdown of « معاك 5 ثواني »: five ticks, one a second, the last ones a little louder (its time 0 is the
            first tick, when the five seconds start; video/src/trial/Quiz.tsx empties its ring over the same five seconds)
 
@@ -130,6 +137,72 @@ def lock() -> np.ndarray:
     return out
 
 
+def sizzle() -> np.ndarray:
+    n = int(0.9 * RATE)
+    t = np.arange(n) / RATE
+    noise = rng(41).standard_normal(n)
+    hiss = (lowpass(noise, 9000.0) - lowpass(noise, 3000.0)) * np.exp(-t / 0.35) * np.clip(t / 0.02, 0, 1)
+    out = 0.5 * hiss / np.max(np.abs(hiss))
+    r = rng(43)
+    for k, at in enumerate(np.sort(r.uniform(0.02, 0.6, 7))):
+        c = tick(50 + k, r.uniform(0.4, 0.9))
+        i = int(at * RATE)
+        out[i:i + len(c)] += c[: n - i]
+    return out
+
+
+def shimmer() -> np.ndarray:
+    n = int(1.1 * RATE)
+    t = np.arange(n) / RATE
+    shape = np.sin(np.pi * np.clip(t / 1.1, 0, 1)) ** 2
+    noise = rng(61).standard_normal(n)
+    air = lowpass(noise, 4000 + 6000 * shape) - lowpass(noise, 3000.0)
+    out = 0.22 * air * shape / max(1e-9, float(np.max(np.abs(air))))
+    r = rng(63)
+    for k, at in enumerate(np.sort(r.uniform(0.1, 0.9, 9))):
+        c = tick(70 + k, r.uniform(0.15, 0.35))
+        i = int(at * RATE)
+        out[i:i + len(c)] += c[: n - i]
+    return out
+
+
+def puff() -> np.ndarray:
+    n = int(0.6 * RATE)
+    t = np.arange(n) / RATE
+    shape = np.sin(np.pi * np.clip(t / 0.6, 0, 1)) ** 1.5
+    out = lowpass(rng(81).standard_normal(n), 300 + 500 * shape) * shape
+    return 0.45 * out / max(1e-9, float(np.max(np.abs(out))))
+
+
+def buzz() -> np.ndarray:
+    n = int(0.95 * RATE)
+    t = np.arange(n) / RATE
+    rattle = lowpass(rng(91).standard_normal(n), 260.0)
+    gate = ((t < 0.35) | ((t > 0.55) & (t < 0.9))).astype(float)
+    tremble = 0.5 + 0.5 * np.sign(np.sin(2 * np.pi * 24 * t))
+    out = rattle * gate * tremble
+    return 0.6 * out / max(1e-9, float(np.max(np.abs(out))))
+
+
+def engine() -> np.ndarray:
+    n = int(3.2 * RATE)
+    t = np.arange(n) / RATE
+    shape = np.sin(np.pi * np.clip(t / 3.2, 0, 1)) ** 2
+    rumble = lowpass(rng(101).standard_normal(n), 140 + 120 * shape) * shape
+    return 0.7 * rumble / max(1e-9, float(np.max(np.abs(rumble))))
+
+
+def coins() -> np.ndarray:
+    n = int(0.5 * RATE)
+    out = np.zeros(n)
+    r = rng(111)
+    for k, at in enumerate(np.sort(r.uniform(0.0, 0.35, 6))):
+        c = tick(120 + k, r.uniform(0.6, 1.1))
+        i = int(at * RATE)
+        out[i:i + len(c)] += c[: n - i]
+    return out
+
+
 def count() -> np.ndarray:
     """Five dry ticks one second apart, a clock that counts down; the last two a little louder."""
     out = np.zeros(int(4.1 * RATE))
@@ -159,7 +232,8 @@ def scan(word: str) -> tuple[np.ndarray, int]:
 
 def track(events: list[tuple[float, str]], quiet: list[tuple[float, float]], total: float, out: Path, word: str) -> dict:
     """The track of `events` ((seconds, sound)), `total` seconds long, written to `out`. `quiet`: the verses."""
-    made = {"impact": knock, "whoosh": whoosh, "pops": pops, "click": click, "lock": lock, "count": count}
+    made = {"impact": knock, "whoosh": whoosh, "pops": pops, "click": click, "lock": lock, "count": count,
+            "sizzle": sizzle, "shimmer": shimmer, "puff": puff, "pop": lambda: 1.4 * pop(5), "buzz": buzz, "engine": engine, "coins": coins}
     audio = np.zeros(int((total + 1) * RATE))
     counts: dict[str, int] = {}
     for at, sound in sorted(events):

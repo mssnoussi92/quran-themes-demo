@@ -25,6 +25,7 @@ import { LENS_PICTURES } from "./Lens";
 import { KAHF_PICTURES } from "./Kahf";
 import { QADAR_PICTURES } from "./Qadar";
 import { HAYYIN_PICTURES } from "./Hayyin";
+import { SAHIB_LAYOUTS, SAHIB_OVERLAYS, SAHIB_PICTURES } from "./Sahib";
 import { DHIKR_LAYOUTS, DHIKR_PICTURES } from "./Dhikr";
 import { QUIZ_LAYOUTS, QUIZ_OVERLAYS, QUIZ_PICTURES } from "./Quiz";
 import { SAHW_LAYOUTS, SAHW_OVERLAYS, SAHW_PICTURES } from "./Sahw";
@@ -69,7 +70,9 @@ export type Reading = {
   reference: string; text: string; en: string; credit: string;
   card?: boolean; count?: string | null; label?: string | null;
 };
-type Segment = Narration | Verse | Reading;
+/** A moment with no text at all (« الصاحب ساحب »: a moment played without a word): only the picture and its sounds. */
+export type Pause = { kind: "pause"; scene: string; start: number; seconds: number; file: null };
+type Segment = Narration | Verse | Reading | Pause;
 /** How the filmed clip sits in the frame: where it is cropped, how far down (or up) it is moved to leave the
  * text its place, how dark, the colour behind it, where its horizon is (the picture grows around it). */
 /** `veil`: how much of the dark veil behind the text is laid over the top of the clip (1 when not said; less for a
@@ -461,11 +464,12 @@ export const PICTURES: Record<string, Drawn> = {
   ...DHIKR_PICTURES,
   ...QUIZ_PICTURES,
   ...SAHW_PICTURES,
+  ...SAHIB_PICTURES,
 };
 
 /** What a short draws above its veil, under its texts, outside the slowly growing picture: a timeline, a badge,
  * anything that must not move. None by default; a short registers its own here. */
-export const OVERLAYS: Record<string, Drawn> = { ...SIGNS_OVERLAYS, ...KALIMA_OVERLAYS, ...COUNT_OVERLAYS, ...FARQ_OVERLAYS, ...MAP_OVERLAYS, ...SUAL_OVERLAYS, ...QUIZ_OVERLAYS, ...SAHW_OVERLAYS };
+export const OVERLAYS: Record<string, Drawn> = { ...SIGNS_OVERLAYS, ...KALIMA_OVERLAYS, ...COUNT_OVERLAYS, ...FARQ_OVERLAYS, ...MAP_OVERLAYS, ...SUAL_OVERLAYS, ...QUIZ_OVERLAYS, ...SAHW_OVERLAYS, ...SAHIB_OVERLAYS };
 
 const hasLetter = (token: string) => /\p{L}/u.test(token);
 export const fit = (base: number, text: string, comfortable: number) => Math.round(base * Math.min(1, Math.sqrt(comfortable / Math.max(1, text.length))));
@@ -495,7 +499,7 @@ export const PORTRAIT: Layout = {
 /** A short that needs its texts elsewhere (a timeline above the picture, a narrower column) says so here: what it
  * gives is merged over PORTRAIT (`sub` and `credit` one level deeper, so that `sub: { top }` keeps the rest). */
 export type LayoutOverride = Omit<Partial<Layout>, "sub" | "credit"> & { sub?: Partial<Layout["sub"]>; credit?: Partial<Layout["credit"]> };
-export const LAYOUTS: Record<string, LayoutOverride> = { ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS, ...DHIKR_LAYOUTS, ...SAHW_LAYOUTS };
+export const LAYOUTS: Record<string, LayoutOverride> = { ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS, ...DHIKR_LAYOUTS, ...SAHW_LAYOUTS, ...SAHIB_LAYOUTS };
 const layoutOf = (trial: string): Layout => {
   const own = LAYOUTS[trial];
   return own ? { ...PORTRAIT, ...own, sub: { ...PORTRAIT.sub, ...own.sub }, credit: { ...PORTRAIT.credit, ...own.credit } } : PORTRAIT;
@@ -750,9 +754,9 @@ export const Trial: React.FC<TrialProps> = ({ data, platform, cast }) => {
         <NarrationText seg={current} t={t} last={current === data.segments[data.segments.length - 1]} handle={handle} layout={layout} />
       ) : current.kind === "verse" ? (
         <VerseText seg={current} t={t} layout={layout} />
-      ) : (
+      ) : current.kind === "reading" ? (
         <ReadingText seg={current} t={t} layout={layout} />
-      )}
+      ) : null}
       <div style={{ position: "absolute", top: 250, right: 90, fontFamily: FONT.latin, fontWeight: 600, fontSize: 30, color: GOLD, opacity: 0.9, textShadow: SHADOW }}>
         {handle}
       </div>

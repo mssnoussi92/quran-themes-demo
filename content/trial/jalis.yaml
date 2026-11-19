@@ -1,0 +1,83 @@
+# « الصاحب ساحب » (content/trial/sahib.yaml), short 1 : الجليس. Bukhari 5534 (le porteur de musc et le forgeron), lu par Abu
+# Malik al-Asqalani ; 43:67 récité en entier ; le sens d'après al-Muyassar. Script : docs/scripts/sahib.md.
+# - Trois moments dans une ahwa le soir, chacun joué deux fois : l'ami gris (« جليس السوء ») puis l'ami blanc (« الجليس
+#   الصالح ») ; ils suivent les mots du hadith : ce qu'il te donne ou te brûle (le musc au poignet, la braise sur l'écharpe),
+#   ce que tu prends de lui (l'insulte au serveur, le merci), ce qui te reste rien qu'à être assis à côté (la fumée, l'or).
+# - Images (video/src/trial/Sahib.tsx) : `j-bad-1`… `j-good-3` les moments ; `j-end` les deux héros côte à côte ; `j-read` la
+#   table vide, les deux verres ; `j-night` la porte de l'ahwa sur la nuit.
+id: jalis
+# « Je valide ce script » du propriétaire (2026-11-19, question à choix nommant le script de ce short tel qu'envoyé :
+# docs/scripts/sahib.md) ; le style (« Je valide ce style ») et la lecture de Bukhari 5534 le même jour.
+script_validated: { by: mssnoussi92, on: 2026-11-19 }
+# « Je valide titres, descriptions et accroches » (2026-11-19, question à choix nommant les trois titres, descriptions et
+# accroches de docs/retention/publication-sahib.md tels qu'envoyés) : les textes. Puis « Je valide les trois » (même jour,
+# question à choix nommant les trois vidéos telles qu'envoyées, les deux corrigées (lectures recoupées, affiche) et
+# « الجليس » : montage, dessins, bruitages, ambiances, couvertures, lectures). Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-19, what: [montage, cover, ambience, publish] }
+handle: "@quran_words_daily"
+voices: { X: "no voice: the moments are played without a word" }      # aucune voix de synthèse (son choix, 2026-11-19), comme les adhkar
+# Le fond est tout dessiné (Sahib.tsx couvre l'image) : le clip généré n'est qu'un fond de secours.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#132623", horizon: 1400, veil: 0.45 }
+# Ambiance sous les moments et les textes, jamais sous le verset ni le hadith : un café (murmures sans paroles distinctes,
+# tasses ; déjà entendu par Whisper pour « وتحسبونه هيّنًا » : aucune parole reconnue).
+ambience: { source: bigsoundbank, id: "2561", title: "Coffee Shop at the Capucins", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/coffee-shop-at-the-capucins-s2561.html", from: 20, seconds: 110, level: -36 }
+cover: { scene: j-bad-1, title: "قاعد جنب مين؟", tag: "الصاحب ساحب · 1 من 3", focus: 1100 }
+publish:
+  title: { en: "The one you sit with: musk… or sparks", ar: "اللي قاعد جنبك: مسك… ولا شرار؟" }
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-19 (« Je valide titres, descriptions et accroches », question à choix)
+    ar: "نفس القعدة مرتين… مرة جنب جليس السوء، ومرة جنب الجليس الصالح. وانت قاعد جنب مين؟"
+    en: "The same sitting, twice… once beside a bad companion, once beside a good one. And you, who do you sit with?"
+    validated: 2026-11-19
+  part: 1
+  hashtags: ["#الجليس_الصالح"]
+  description:
+    ar: "نفس القعدة، مرتين: مرة جنب جليس السوء، ومرة جنب الجليس الصالح. والنبي ﷺ قال: مثل الجليس الصالح والسوء كحامل المسك ونافخ الكير (صحيح البخاري 5534). وربنا قال: الأخلاء يومئذ بعضهم لبعض عدو إلا المتقين (الزخرف 67)."
+    en: "The same sitting, twice: once beside a bad companion, once beside a good one. The Prophet ﷺ compared them to the one carrying musk and the one blowing the bellows (Sahih al-Bukhari 5534). And God said: close friends, that Day, will be enemies to each other, except for the righteous (43:67)."
+segments:
+  # -- trois moments, chacun deux fois, sans un mot
+  - pause: 6
+    scene: j-bad-1
+    sfx: [[sizzle, 2.4]]
+  - pause: 6
+    scene: j-good-1
+    sfx: [[shimmer, 2.6]]
+  - pause: 6
+    scene: j-bad-2
+    sfx: [[puff, 3.2]]
+  - pause: 6
+    scene: j-good-2
+    sfx: [[shimmer, 3.4]]
+  - pause: 6
+    scene: j-bad-3
+    sfx: [[puff, 3.6]]
+  - pause: 6
+    scene: j-good-3
+    sfx: [[shimmer, 3.6]]
+  # -- la ligne de fin, puis la réponse
+  - narration: end
+    silent: true
+    hold: 3.2
+    scene: j-end
+    sfx: [[impact, 0.2]]
+    lines:
+      - ar: "وانت… قاعد جنب مين؟"
+        en: "And you… who do you sit with?"
+  - reading: hadith.bukhari.5534
+    scene: j-read
+  - verse: quran.43.67
+    scene: j-night
+  - narration: meaning
+    silent: true
+    hold: 4.5
+    scene: j-night
+    sources: [tafsir.muyassar.43.67]
+    lines:
+      - ar: "الصحاب على الغلط يوم القيامة يبقوا أعداء… إلا اللي اتصاحبوا على تقوى ربنا."
+        en: "Friends in wrongdoing will be enemies on the Day of Resurrection… except those whose friendship was in fear of God."
+  - narration: share
+    silent: true
+    hold: 3
+    scene: j-share
+    lines:
+      - ar: "ابعتها لجليسك الصالح."
+        en: "Send it to your good companion."

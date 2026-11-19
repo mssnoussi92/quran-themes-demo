@@ -2098,7 +2098,8 @@
     book: 72
     hadith_in_book: 59
     retrieved: '2026-11-19'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "الصاحب ساحب (sahib), proposé le 2026-11-19 : short `jalis`, lu (le porteur de musc et le forgeron) ; aussi Bukhari 2101, Muslim 2628"
   text_ar: حَدَّثَنَا مُحَمَّدُ بْنُ الْعَلاَءِ، حَدَّثَنَا أَبُو أُسَامَةَ، عَنْ بُرَيْدٍ، عَنْ أَبِي بُرْدَةَ، عَنْ أَبِي مُوسَى ـ رضى الله عنه ـ عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ ‏ "‏ مَثَلُ الْجَلِيسِ الصَّالِحِ وَالسَّوْءِ كَحَامِلِ الْمِسْكِ وَنَافِخِ الْكِيرِ، فَحَامِلُ الْمِسْكِ إِمَّا أَنْ يُحْذِيَكَ، وَإِمَّا أَنْ تَبْتَاعَ مِنْهُ، وَإِمَّا أَنْ تَجِدَ مِنْهُ رِيحًا طَيِّبَةً، وَنَافِخُ الْكِيرِ إِمَّا أَنْ يُحْرِقَ ثِيَابَكَ، وَإِمَّا أَنْ تَجِدَ رِيحًا خَبِيثَةً ‏"‏‏.‏
   text_en: Narrated Abu Musa:The Prophet (ﷺ) said, 'The example of a good pious companion and an evil one is that of a person carrying musk and another blowing a pair of bellows. The one who is carrying musk will either give you some perfume as a present, or you will buy some from him, or you will get a good smell from him, but the one who is blowing a pair of bellows will either burn your clothes or you will get a bad smell from him
@@ -2126,7 +2127,8 @@
     book: 2
     hadith_in_book: 6
     retrieved: '2026-11-19'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "الصاحب ساحب (sahib), proposé le 2026-11-19 : short `yuhibb`, lu (« لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه ») ; aussi Muslim 45"
   text_ar: حَدَّثَنَا مُسَدَّدٌ، قَالَ حَدَّثَنَا يَحْيَى، عَنْ شُعْبَةَ، عَنْ قَتَادَةَ، عَنْ أَنَسٍ ـ رضى الله عنه ـ عَنِ النَّبِيِّ صلى الله عليه وسلم‏.‏ وَعَنْ حُسَيْنٍ الْمُعَلِّمِ، قَالَ حَدَّثَنَا قَتَادَةُ، عَنْ أَنَسٍ، عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ ‏ "‏ لا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ ‏"‏‏.‏
   text_en: 'Narrated Anas: The Prophet (ﷺ) said, "None of you will have faith till he wishes for his (Muslim) brother what he likes for himself'
@@ -2134,7 +2136,7 @@
     reader: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane
     item: https://archive.org/details/bukhari_audiobook
     file: https://archive.org/download/bukhari_audiobook/0013.mp3
-    start: 21.81
+    start: 22.8
     end: 29.55
     heard: لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه
     license: none stated on the archive.org item
@@ -2154,7 +2156,8 @@
     book: 46
     hadith_in_book: 5
     retrieved: '2026-11-19'
-  status: proposed
+  status: validated
+  validated_by: mssnoussi92
   notes: "الصاحب ساحب (sahib), proposé le 2026-11-19 : short `nasr`, lu jusqu'à « تأخذ فوق يديه »"
   text_ar: حَدَّثَنَا مُسَدَّدٌ، حَدَّثَنَا مُعْتَمِرٌ، عَنْ حُمَيْدٍ، عَنْ أَنَسٍ ـ رضى الله عنه ـ قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ انْصُرْ أَخَاكَ ظَالِمًا أَوْ مَظْلُومًا ‏"‏‏.‏ قَالُوا يَا رَسُولَ اللَّهِ هَذَا نَنْصُرُهُ مَظْلُومًا، فَكَيْفَ نَنْصُرُهُ ظَالِمًا قَالَ ‏"‏ تَأْخُذُ فَوْقَ يَدَيْهِ ‏"‏‏.‏
   text_en: Narrated Anas:Allah's Messenger (ﷺ) said, "Help your brother, whether he is an oppressor or he is an oppressed one. People asked, "O Allah's Messenger (ﷺ)! It is all right to help him if he is oppressed, but how should we help him if he is an oppressor?" The Prophet (ﷺ) said, "By preventing him from oppressing others
@@ -2162,7 +2165,7 @@
     reader: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane
     item: https://archive.org/details/bukhari_audiobook
     file: https://archive.org/download/bukhari_audiobook/2444.mp3
-    start: 9.8
+    start: 10.62
     end: 23.33
     heard: انصر أخاك ظالما أو مظلوما قالوا يا رسول الله هذا ننصره مظلوما فكيف ننصره ظالما قال تأخذ فوق يديه
     license: none stated on the archive.org item

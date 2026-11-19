@@ -424,8 +424,12 @@ def main() -> None:
         elif "reading" in seg and by_source is None:
             # A hadith read by a real voice, in a short as in the film; never the synthetic voice.
             segments.append({**sources.reading(seg["reading"], out_dir, draft=args.draft, part=seg.get("part")), "scene": seg["scene"], "start": round(t, 2)})
+        elif "pause" in seg:
+            # A moment with no text at all (« الصاحب ساحب »: the moments played without a word, the drawing alone and its
+            # sounds): the ambience goes on under it, as under a narration.
+            segments.append({"kind": "pause", "seconds": float(seg["pause"]), "file": None, "scene": seg["scene"], "start": round(t, 2)})
         else:
-            sys.exit(f"error: a segment that is neither a narration, a verse, a reading nor a card from the registry: {sorted(seg)}")
+            sys.exit(f"error: a segment that is neither a narration, a pause, a verse, a reading nor a card from the registry: {sorted(seg)}")
         pairs.append((seg, segments[-1]))
         t += segments[-1]["seconds"] + gap
     total = round(t - gap + TAIL, 2)
@@ -433,7 +437,7 @@ def main() -> None:
     bed = None
     if spec.get("ambience") and not args.no_ambience:
         import ambience
-        quiet = [(s["start"], s["start"] + s["seconds"]) for s in segments if s["kind"] != "narration" and not s.get("card")]
+        quiet = [(s["start"], s["start"] + s["seconds"]) for s in segments if s["kind"] not in ("narration", "pause") and not s.get("card")]
         bed = ambience.bed({args.trial: spec["ambience"]}, [(0.0, args.trial)], quiet, total, out_dir / f"{tag}-ambience")
     # The sound effects (tools/trial/sfx.py): made here from the times of the segments, never under a verse.
     effects = None
@@ -446,7 +450,7 @@ def main() -> None:
                 return made["start"] + said[int(at.split()[1])]["start"]
             return made["start"] + at
         events = [(when(made, at), sound) for seg, made in pairs for sound, at in seg.get("sfx") or []]
-        quiet = [(s["start"], s["start"] + s["seconds"]) for s in segments if s["kind"] != "narration" and not s.get("card")]
+        quiet = [(s["start"], s["start"] + s["seconds"]) for s in segments if s["kind"] not in ("narration", "pause") and not s.get("card")]
         effects = sfx.track(events, quiet, total, out_dir / f"{tag}-sfx.wav", word=args.trial)
     handles = yaml.safe_load((ROOT / "content" / "publish.yaml").read_text(encoding="utf-8")).get("handles", {})
     data = {"trial": args.trial, "voice": args.voice, "voice_name": spec["voices"][args.voice], "handle": spec["handle"],

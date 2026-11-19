@@ -274,6 +274,9 @@ def main() -> None:
             elif "card" in seg:
                 text, seconds = card_line(seg, sources, spec.get("pace"))
                 body += [f"**{stamp(t)}** · {text}", ""]
+            elif "pause" in seg:
+                seconds = float(seg["pause"])
+                body += [f"**{stamp(t)} · moment sans texte, {seconds:g} s** (image : `{seg['scene']}`)", ""]
             else:
                 text, seconds = quote(seg.get("verse") or seg["reading"], sources, cuts, seg.get("part"))
                 body += [f"**{stamp(t)}** · {text}", ""]
