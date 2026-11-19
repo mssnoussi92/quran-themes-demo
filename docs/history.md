@@ -676,3 +676,19 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 - **Validés par lui le 2026-11-19** (« je valide les 7 vidéos », « je valide les 7 textes ») : voix, couvertures, ambiance,
   montage, titres, accroches et hashtags (`docs/retention/publication-ma3ak.md`). Sources encore proposées.
 
+## La page test publiée seule, chaque jour à 18 h (2026-11-19)
+
+- **Sa demande** : « J'ai ajouté le token meta pour la nouvelle page META_PAGE_TOKEN_5. Je veux que tu commences la
+  publication automatique chaque jour à 18h et avec ce token tu peux suivre les stats. » **Son choix** (question à choix) :
+  dès ce soir, avec le quiz 5 (la session recommandait le 21, avec le quiz 7, pour avoir de la marge).
+- **Fait ici** (PR #63) : `docs/retention/calendar-ma3ak.md`, au format de `calendar.md` (quiz 5 le 19 → quiz 13 le 27,
+  puis « à faire ») ; `publish.py --elsewhere ma3ak` écrit `publication-quiz-ma3ak.md`, les textes validés des quiz 4 à 6
+  mot pour mot, pour leurs fichiers signés `@ma3ak.5.thawani` (Facebook et Instagram) ; `page-files` prend
+  `<doc>:<draft>` : `page-quiz-ma3ak` vient de `quiz-candidate`. Fichiers publics vérifiés octet par octet contre ceux
+  qu'il a validés.
+- **Fait dans quran-reels** (PR #82) : `themes.yml` avec `page: ma3ak` (une étape qui n'a que ce jeton, son état, son
+  ticket d'échec), `config/themes-ma3ak.yaml` (18:00 chaque jour), statistiques dans `insights-ma3ak.json` ; une tâche
+  planifiée à 17:41 dans la session planificateur. **Premier essai à blanc** : Facebook propre, Instagram introuvable (le
+  compte n'était pas relié à la Page dans le jeton) ; il a relié @ma3ak.5.thawani et refait le jeton en suivant les
+  étapes données ; **second essai à blanc propre sur les deux** (droits : aucune correspondance).
+
