@@ -27,7 +27,7 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 validated: { by: mssnoussi92, on: 2026-11-17, what: [montage, cover] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
-text: 97-trial-riya
+text: 104-trial-riya
 # Le fond, provisoire, pour le script (2026-11-17) : un ciel de nuit dessiné par ffmpeg. Pour 2:264, un clip de pluie filmé
 # se cherchera avec les images de style (skill new-scene).
 clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4, landscape: { side: left, horizon: 1260, brightness: 1 } }

@@ -27,7 +27,7 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 validated: { by: mssnoussi92, on: 2026-11-17, what: [montage, cover] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
-text: 96-trial-namima
+text: 103-trial-namima
 # Le fond, provisoire, pour le script (2026-11-17) : un ciel de nuit dessiné par ffmpeg ; la scène est dessinée par-dessus.
 clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4, landscape: { side: right, horizon: 1260, brightness: 1 } }
 cover: { scene: phone, title: "«شوف فلان قال عليك إيه»", tag: "وتحسبونه هيّنًا · 2 من 3", focus: 1000 }

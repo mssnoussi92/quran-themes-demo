@@ -1046,7 +1046,7 @@ suite**, aucune voix avant « je valide le script ».
 coupés dans la récitation (68:10-11, que le récitateur enchaîne, posés à la main : 68:10 à 45,05 s, où Whisper entend enfin
 « ولا ») ; deux lectures d'Abu Malik al-Asqalani trouvées et entendues mot pour mot (Bukhari 2449 : `2449.mp3`, 13,05-34,25 s ;
 Bukhari 216 : `0216.mp3`, 21,40-33,68 s, de « يعذبان » à « بالنميمة ») ; les fichiers (`content/trial/hayyin.yaml`, `ghiba`,
-`namima`, `riya`), les textes de voix 95 à 97 (92 à 94 pris par la série des adhkar d'une autre session), le script (`docs/scripts/hayyin.md`). Fond provisoire (la nuit générée) ; ni
+`namima`, `riya`), les textes de voix 102 à 104 (92 à 101 pris par les séries des adhkar et des quiz d'autres sessions), le script (`docs/scripts/hayyin.md`). Fond provisoire (la nuit générée) ; ni
 dessins, ni clips, ni ambiances. **À valider par le propriétaire avant toute voix.**
 
 **Ses réponses sur le script (2026-11-17, questions à choix)** : il **relit** le script ; la ghiba **garde 2:08**, une version
@@ -1067,7 +1067,7 @@ accroches des légendes courtes proposées. Voix : trois requêtes, après les s
 **Validé par lui le même soir** (questions à choix, chaque fois la recommandation) : **le montage, les dessins et les trois
 couvertures** des shorts sans voix (`validated`, `what: [montage, cover]`) ; **les trois accroches** (`hook.validated`) ; **les
 deux lectures** d'Abu Malik al-Asqalani (Bukhari 2449 et 216, `validated` au registre). **La voix le 19 novembre** (son choix :
-le 18 est aux six requêtes des quiz) : trois requêtes (textes 95 à 97), puis le rendu avec voix et ambiance, à valider sur
+le 18 est aux six requêtes des quiz) : trois requêtes (textes 102 à 104), puis le rendu avec voix et ambiance, à valider sur
 les vidéos. Les sources du registre restent proposées : il les valide avec les vidéos finales.
 
 ## Faits (ancien circuit)
