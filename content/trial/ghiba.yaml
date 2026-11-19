@@ -1,0 +1,122 @@
+# « وتحسبونه هيّنًا » (content/trial/hayyin.yaml), short 1 : la ghiba. Idée du propriétaire (2026-11-17) : « حسناتك ممكن
+# تمشي لحد انت اغتبته ». Ouverture choisie par lui le même jour (question à choix, recommandation de la session) : la chaise
+# vide, l'excuse que tout le monde a dite, puis son idée en accroche, avec « ممكن ».
+# - La scène jouée, muette : un café le soir, trois silhouettes anonymes sans visage penchées l'une vers l'autre, une chaise
+#   vide (celui dont on parle n'est pas là : la ghiba, « بظهر الغيب », al-Muyassar et al-Qurtubi sur 49:12). L'excuse est
+#   montrée comme une parole (entre « »), jamais dite par notre voix comme vraie.
+# - L'accroche repose sur Bukhari 2449 (« مظلمة… من عرضه… أخذ منه بقدر مظلمته »), pas sur le hadith du « المفلس » (Muslim
+#   2581), qui ne nomme pas la ghiba ; al-Qurtubi sur 49:12 range la ghiba parmi ces مظالم en citant 2449, et rapporte la
+#   divergence (pour certains, elle reste entre le serviteur et Dieu) : d'où « ممكن ». L'histoire d'al-Hasan al-Basri et des
+#   dattes est hors politique et n'est pas racontée.
+# - Muslim 2589 (« إن كان فيه ما تقول فقد اغتبته… ») est raconté par la narration avec ses mots, pas lu ; Bukhari 2449 est lu
+#   par Abu Malik al-Asqalani (bukhari_audiobook/2449.mp3, 13,05-34,25 s, entendu mot pour mot ; proposée).
+# - Répliques de la session sans tafsir : « إنت شايف الكرسي فاضي… », l'exemple, la phrase à retenir, l'annonce du suivant.
+# - Images (new-scene, après le script) : `cafe` le café, les trois silhouettes, la chaise vide, la bulle ; `chair` la chaise
+#   vide de près, la lumière dessus ; `table` la table vue d'en haut, les tasses ; `night` le ciel au-dessus du café pour
+#   le verset ; `alone` la chaise seule, le café vidé ; `dawn` le matin, les deux silhouettes se serrent la main.
+id: ghiba
+# « Je valide le script, tu peux commencer le rendu sans voix » du propriétaire (2026-11-17, dans la conversation où le
+# script de la série lui a été envoyé, docs/scripts/hayyin.md, seul script en attente) : lu comme les répliques des trois
+# shorts, la place des versets et des hadiths, les titres des couvertures. Ni la voix, ni les dessins, ni les sources
+# proposées, ni les deux lectures : il les valide sur les vidéos. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide montage, dessins, couvertures » du propriétaire (2026-11-17, question à choix nommant les 3 shorts sans voix du
+# run 44178359076 du workflow `film`, leur montage, leurs dessins et leurs 3 couvertures) : ni la voix ni l'ambiance, pas
+# encore faites ; il les valide sur les vidéos refaites avec la voix. Inscrit sur sa parole.
+# Puis « Je valide la voix et les ambiances » (2026-11-19, question à choix nommant les 3 shorts avec voix du run 44484912562 :
+# la voix des 3 prises et les ambiances sous la narration) : la voix et l'ambiance s'ajoutent. Inscrit sur sa parole.
+# Puis « Je valide titres et descriptions » (même jour, question à choix nommant les 3 titres, arabe et anglais, et les 3
+# descriptions de docs/retention/publication-hayyin.md tels qu'envoyés) : les textes de publication s'ajoutent.
+validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, ambience, publish] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 102-trial-ghiba
+# Le fond, provisoire, pour le script (2026-11-17) : un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) ; la scène est
+# dessinée par-dessus. Un clip filmé ou un fond tout dessiné se décidera avec les images de style.
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4, landscape: { side: left, horizon: 1260, brightness: 1 } }
+# Ambiance sous la narration, jamais sous le verset ni le hadith : un café (murmures sans paroles distinctes,
+# tasses ; entendu par Whisper : aucune parole reconnue), proposée le 2026-11-19, à valider à l'écoute par le propriétaire.
+ambience: { source: bigsoundbank, id: "2561", title: "Coffee Shop at the Capucins", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/coffee-shop-at-the-capucins-s2561.html", from: 20, seconds: 140, level: -38 }
+cover: { scene: cafe, title: "حسناتك رايحة لمين؟", tag: "وتحسبونه هيّنًا · 1 من 3", focus: 1100 }
+publish:
+  title: { en: "“But it's true!”… and your good deeds may go to him", ar: "«هو فعلاً كده!»… وحسناتك ممكن تروح له" }
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (« je valide les 3 accroches »)
+    ar: "«هو فعلاً كده… أنا مش بفتري عليه!» الجملة دي ممكن تاخد من حسناتك… وتديها للي اتكلمت عليه."
+    en: "“That's really how he is, I'm not making it up!” That sentence could take from your good deeds… and give them to the one you spoke about."
+    validated: 2026-11-17
+  part: 1
+  hashtags: ["#الغيبة"]
+  description:
+    en: "“I'm not making anything up, that's really how he is.” The Prophet ﷺ was asked about exactly this, and answered: if it is true, that is backbiting. And whoever wronged someone in his honour has his good deeds taken, as much as the wrong. The way out is in the same hadith: today."
+    ar: "«أنا مش بفتري عليه… هو فعلاً كده». النبي صلى الله عليه وسلم اتسأل عن ده بالظبط، وقال: لو فيه فعلاً… يبقى دي الغيبة. واللي ظلم حد في عِرضه… يتاخد من حسناته على قد ما ظلمه. والحل في نفس الحديث: النهارده."
+segments:
+  # -- la scène jouée, muette
+  - narration: hook
+    silent: true
+    hold: 2.8
+    scene: cafe
+    sfx: [[impact, 0.5]]
+    lines:
+      - ar: "«هو فعلاً كده… أنا مش بفتري عليه!»"
+        en: "“That's really how he is… I'm not making anything up!”"
+  # -- l'accroche, et la réponse lue par une vraie voix
+  - narration: open
+    scene: chair
+    sources: [hadith.bukhari.2449, tafsir.qurtubi.49.12]
+    lines:
+      - ar: "الجملة دي… ممكن تاخد من حسناتك… وتديها لصاحب الكرسي الفاضي."
+        en: "That sentence… could take from your good deeds… and give them to the owner of the empty chair."
+      - ar: "النبي صلى الله عليه وسلم قال إمتى ده بيحصل… وإزاي تلحق نفسك:"
+        en: "The Prophet ﷺ said when this happens… and how to save yourself:"
+  - reading: hadith.bukhari.2449
+    scene: chair
+  - narration: meaning
+    scene: table
+    sources: [hadith.bukhari.2449]
+    lines:
+      - ar: "يعني: اللي ظلم حد في عِرضه… يتاخد من حسناته… على قد ما ظلمه."
+        en: "Meaning: whoever wronged someone in his honour… has his good deeds taken… as much as the wrong."
+  # -- l'excuse
+  - narration: turn
+    scene: cafe
+    sources: [tafsir.qurtubi.49.12, hadith.muslim.2589]
+    lines:
+      - ar: "والغيبة ظلم في العِرض… حتى لو اللي بتقوله صح."
+        en: "And backbiting wrongs someone's honour… even if what you say is true."
+      - ar: "النبي صلى الله عليه وسلم اتسأل: طب ولو فيه فعلاً؟"
+        en: "The Prophet ﷺ was asked: and if it really is in him?"
+      - ar: "قال: يبقى دي الغيبة… ولو مش فيه… يبقى بهتان."
+        en: "He said: then that is backbiting… and if it isn't… that is slander."
+      - ar: "وربنا قال:"
+        en: "And God said:"
+  - verse: quran.49.12
+    scene: night
+  # -- le sens
+  - narration: sense
+    scene: chair
+    sources: [tafsir.muyassar.49.12, tafsir.qurtubi.49.12]
+    lines:
+      - ar: "يعني: تقول على حد حاجة يكرهها… وهو غايب."
+        en: "Meaning: saying something about someone that he would hate… while he is absent."
+  - narration: depth
+    scene: alone
+    sources: [tafsir.qurtubi.49.12]
+    lines:
+      - ar: "إنت شايف الكرسي فاضي… بس صاحبه ليه عندك حق."
+        en: "You see the chair empty… but its owner has a right over you."
+  # -- l'exemple, la sortie, la phrase à retenir
+  - narration: example
+    scene: cafe
+    lines:
+      - ar: "زي واحد تعب طول السنة في حسناته… ووزّعها في قعدة واحدة… على ناس مش موجودين."
+        en: "Like someone who worked all year for his good deeds… and gave them away in one sitting… to people who weren't there."
+  - narration: close
+    scene: dawn
+    sources: [hadith.bukhari.2449, tafsir.qurtubi.49.12]
+    lines:
+      - ar: "والحل في نفس الحديث: النهارده… توب لربنا، واتحلّل منه."
+        en: "And the way out is in the same hadith: today… repent to God, and ask him to forgive you."
+      - ar: "والجاية: مش كلام عليه… كلام بيتنقل له… والقرآن سمّاه باسمه."
+        en: "Next: not words about him… words carried to him… and the Quran gave it a name."
+      - ar: "تابعنا عشان تعرف الاسم ده."
+        en: "Follow us to learn that name."
