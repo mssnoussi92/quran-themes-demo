@@ -15,6 +15,8 @@ import { THUMB, TrialCover, TrialThumb, coverMetadata, thumbMetadata } from "./t
 import type { CoverProps, ThumbProps } from "./trial/Cover";
 import { Film, FilmTall, filmMetadata } from "./trial/Film";
 import type { FilmProps } from "./trial/Film";
+import { SahibStyle } from "./trial/Sahib";
+import type { SahibStyleProps } from "./trial/Sahib";
 
 // One composition per format, both fed by the same episode script.
 // Pick another episode or reel with --props, e.g. --props='{"episode":"dua","reel":"dua-01"}'.
@@ -48,6 +50,7 @@ export const RemotionRoot: React.FC = () => (
       defaultProps={{ style: "paper", shot: "office" } satisfies StyleLabProps} />
     {/* Trial short of 2026-11-11 (docs/retention.md): filmed sea, drawn silhouette, the verse over the scene.
         Session only (tools/trial/prepare.py). */}
+    <Still id="SahibStyle" component={SahibStyle} width={1080} height={1920} defaultProps={{ shot: "jalis" } as SahibStyleProps} />
     <Composition id="Trial916" component={Trial} fps={TRIAL_FPS} durationInFrames={1} width={1080} height={1920}
       defaultProps={{ trial: "boat", voice: "D", data: null } satisfies TrialProps} calculateMetadata={trialMetadata} />
     {/* Covers of the trial videos, proposed: one 9:16 cover per short, the 16:9 thumbnail of the long film. Their
