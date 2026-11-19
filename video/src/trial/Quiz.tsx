@@ -139,13 +139,14 @@ const Head: React.FC<{ quiz: Quiz; t: number; answer: number; opacity: number }>
     const short = quiz.head.words.length <= 2;              // a word or two: written large
     const size = fitQuran(`«${head}»`, quiz.head.words.length === 1 ? 128 : short ? 112 : 70);
     // A large word whose last letter goes below the line (the tail of « ٱلْيَمِّ », quiz 13, crossed its reference):
-    // the word a little higher, its reference a little lower. The other words keep their place.
+    // the word 18 px higher, its reference 48 px lower (the tail and its kasra go 93 px under the line at 128 px).
+    // The other words keep their place.
     const tail = short && DESCENDS.test(head.replace(/[^\u0621-\u064A]/g, "").slice(-1)) ? 1 : 0;
     return (
       <g opacity={opacity}>
         <text x={540} y={(short ? 470 : 450) - 18 * tail} textAnchor="middle" direction="rtl" fontFamily={FONT.quran} fontSize={size} fill={GOLD}
               style={{ filter: "drop-shadow(0 2px 14px rgba(4,7,20,.9))" }}>{RTL(`«${head}»`)}</text>
-        <text x={540} y={(short ? 528 : 512) + 14 * tail} textAnchor="middle" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={30} fill={PALE} opacity={0.7}>{RTL(ref)}</text>
+        <text x={540} y={(short ? 528 : 512) + 48 * tail} textAnchor="middle" direction="rtl" fontFamily={FONT.arabic} fontWeight={700} fontSize={30} fill={PALE} opacity={0.7}>{RTL(ref)}</text>
       </g>
     );
   }
