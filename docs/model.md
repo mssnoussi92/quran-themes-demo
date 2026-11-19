@@ -25,8 +25,9 @@ compositions `Trial916`, `TrialFilm169`, `TrialFilm916`, `TrialCover916`, `Trial
 
 - **L'image** : un clip filmé de nature (mer, lune, ciel), muet, ralenti et bouclé, et **dessus des silhouettes
   dessinées à contre-jour** de ce que dit le texte : des choses et des lieux. Une personne anonyme (une scène type, le
-  spectateur) peut être une silhouette ou un bonhomme sans visage, jamais un prophète, un Compagnon, une personne connue
-  ni quelqu'un d'un récit du Coran ou d'un hadith (propriétaire, 2026-11-15). Le clip dit
+  spectateur) peut être une silhouette ou un bonhomme, sans visage sauf quand un visage simple montre la différence
+  (propriétaire, 2026-11-19), jamais un prophète, un Compagnon, une personne connue ni quelqu'un d'un récit du Coran
+  ou d'un hadith (propriétaire, 2026-11-15). Le clip dit
   le lieu et l'heure, le dessin dit l'événement.
 - **Le verset est récité sur sa scène** (Tawfiq As-Sayegh), son texte au-dessus de l'image, le mot récité en
   or, la traduction dessous ; un verset long passe par pages de 14 mots au plus. Plus de carte sombre.
