@@ -19,7 +19,10 @@ window lit, a wall about to fall). Read the three drawings before you draw: `vid
   a lit window; two orphans are the glow of what is kept for them; a king is his ships on the horizon.
 - **An anonymous person** (a typical scene, the viewer) may be a silhouette or a stick figure with no face
   (owner, 2026-11-15: « une silhouette ou un stickman pour les inconnus, j'autorise »): black, backlit like the
-  rest of the drawing, a round head, no eyes, no mouth, no clothes that name anyone.
+  rest of the drawing, a round head, no clothes that name anyone; no face, unless the difference the short shows
+  is in an expression (anger held, a smile, a grin behind someone's back): then a simple face, eyes, brows and a
+  mouth in a few strokes (owner, 2026-11-19: « j'autorise les visages pour les inconnus, et si nécessaire pour
+  montrer la différence »). Never a face on anyone of a story of the Quran or a hadith: they are not drawn at all.
 - **Never the act of a killing**, never paradise, hell, the Last Day or an angel (mandatory rule):
   the text and the recitation carry those.
 - A living creature only when the text names it and it is not a person (the sparrow of Bukhari 3401

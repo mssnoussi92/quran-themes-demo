@@ -702,3 +702,16 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   17 h 40 (la Page) et 17 h 42 (la page test, juste après) ; ici `calendar.md` (le paragraphe de l'heure, la ligne du
   quiz du lundi) et CLAUDE.md.
 
+
+## Les visages permis pour les inconnus (2026-11-19)
+
+- **Sa décision**, en réponse à l'analyse de trois shorts de la chaîne « STICK TO IT » (des bonshommes, la même situation
+  rejouée, deux issues ; le plus vu, « Fake Friend vs Real Friend », 2,6 M vues, repose sur les visages) : « j'autorise les
+  visages pour les inconnus, et si nécessaire pour montrer la différence ». La règle du 2026-11-15 (une silhouette ou un
+  bonhomme sans visage pour un anonyme) devient : un visage simple (yeux, sourcils, bouche) quand l'expression porte la
+  différence, sans visage sinon ; rien ne change pour les prophètes, les Compagnons, les personnes connues et les gens
+  d'un récit du Coran ou d'un hadith, jamais dessinés.
+- **Fait** : CLAUDE.md, `docs/model.md`, skills `new-scene`, `new-theme`, `choose-format`. Sa deuxième demande, explorer les
+  sujets qui se font dans ce style, lui est envoyée dans la conversation ; la fiche entre dans `docs/themes.md` après son
+  choix. L'analyse des trois shorts entre dans `reference/` quand il les aura envoyés filmés (YouTube refuse le
+  téléchargement depuis la session).

@@ -49,9 +49,10 @@ Drop a candidate that fails one:
   A film lasts about twice its recitation (3:50 of verses in 7:47), and stays under ten minutes: over
   about 4:30 of verses, choose among them. A third to a half of a short is recited: a part with under
   fifteen seconds of verse is thin for a short of its own.
-- **Nothing that needs a person drawn**: the model draws things and places only. A part that cannot be
-  shown by a thing or a place (a face, a gesture, a crowd) is told on the clip alone, or goes. Violence
-  is never shown; the unseen is never pictured.
+- **No one of a text drawn**: things and places, and an anonymous person as a silhouette or a stick figure
+  (owner, 2026-11-15), with a simple face only when an expression shows the difference (owner, 2026-11-19).
+  A part that needs a prophet, a Companion, a known person or anyone of a story of the Quran or a hadith
+  drawn is told on the clip alone, or goes. Violence is never shown; the unseen is never pictured.
 - **Every short stands alone**: its promise is kept before it ends. A part that only prepares another
   belongs to the film, not to a short.
 - **What the tools do not do yet** (`docs/model.md`, « Ce que les outils ne font pas encore »): no
