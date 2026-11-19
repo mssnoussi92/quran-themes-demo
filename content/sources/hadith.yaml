@@ -2110,7 +2110,8 @@
     end: 31.05
     heard: مثل الجليس الصالح والسوء كحامل المسك ونافخ الكير فحامل المسك إما أن يحذيك وإما أن تبتاع منه وإما أن تجد منه ريحا طيبة ونافخ الكير إما أن يحرق ثيابك وإما أن تجد ريحا خبيثة
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.bukhari.13
   type: hadith
   ref: {collection: bukhari, number: 13}
@@ -2137,7 +2138,8 @@
     end: 29.55
     heard: لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
 - id: hadith.bukhari.2444
   type: hadith
   ref: {collection: bukhari, number: 2444}
@@ -2164,4 +2166,5 @@
     end: 23.33
     heard: انصر أخاك ظالما أو مظلوما قالوا يا رسول الله هذا ننصره مظلوما فكيف ننصره ظالما قال تأخذ فوق يديه
     license: none stated on the archive.org item
-    status: proposed
+    status: validated
+    validated_by: mssnoussi92
