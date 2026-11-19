@@ -10,6 +10,10 @@ script_validated: { by: mssnoussi92, on: 2026-11-18 }
 # « Je valide les 7 clips et dessins » du propriétaire (2026-11-18, question à choix nommant les brouillons muets
 # du workflow `film`, run 44391880850) : le montage, les dessins et le clip tels que rendus. La voix, la couverture
 # et l'ambiance sous la voix restent à valider sur la vidéo finale. Inscrit sur sa parole.
+# « Je valide les 7 vidéos » et « je valide les 7 textes » du propriétaire (2026-11-19, questions à choix nommant les
+# quiz 7 à 13 tels qu'envoyés : voix, couvertures, ambiance et montage, run 44487100813, le 11 et le 13 rendus de
+# nouveau, runs 44490586411 et 44491699532 ; titres, accroches et hashtags de docs/retention/publication-ma3ak.md).
+validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, publish, ambience] }
 handle: "@ma3ak.5.thawani"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 99-trial-khashi
@@ -28,9 +32,10 @@ publish:
   title: { en: "\"Seek help through patience and prayer\"… then?", ar: "«واستعينوا بالصبر والصلاة»… كمّلها بإيه؟" }
   part: 11
   hashtags: ["#سورة_البقرة", "#الخشوع"]
-  hook:      # légende courte de Facebook et Instagram ; proposée par la session, à valider
+  hook:      # légende courte de Facebook et Instagram ; proposée par la session, validée par le propriétaire le 2026-11-19 (« je valide les 7 textes »)
     ar: "«واستعينوا بالصبر والصلاة» جت مرتين في سورة البقرة… أول مرة خلصت بإيه؟ معاك 5 ثواني."
     en: "\"Seek help through patience and prayer\" comes twice in al-Baqarah… how did it end the first time? You have 5 seconds."
+    validated: 2026-11-19
   description:
     en: "\"Seek help through patience and prayer\" comes twice in Surat al-Baqarah: the first time (2:45) it ends \"and indeed, it is difficult except for the humbly submissive\"; prayer is heavy, except for those whose heart is humble (al-Muyassar, as-Sa'di)."
     ar: "«واستعينوا بالصبر والصلاة» جت مرتين في سورة البقرة: أول مرة (البقرة 45) خلصت بإن الصلاة تقيلة إلا على الخاشعين، والتانية (البقرة 153) بإن ربنا مع الصابرين."

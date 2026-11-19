@@ -9,6 +9,10 @@ script_validated: { by: mssnoussi92, on: 2026-11-18 }
 # « Je valide les 7 clips et dessins » du propriétaire (2026-11-18, question à choix nommant les brouillons muets
 # du workflow `film`, run 44391880850) : le montage, les dessins et le clip tels que rendus. La voix, la couverture
 # et l'ambiance sous la voix restent à valider sur la vidéo finale. Inscrit sur sa parole.
+# « Je valide les 7 vidéos » et « je valide les 7 textes » du propriétaire (2026-11-19, questions à choix nommant les
+# quiz 7 à 13 tels qu'envoyés : voix, couvertures, ambiance et montage, run 44487100813, le 11 et le 13 rendus de
+# nouveau, runs 44490586411 et 44491699532 ; titres, accroches et hashtags de docs/retention/publication-ma3ak.md).
+validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, publish, ambience] }
 handle: "@ma3ak.5.thawani"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 96-trial-marah
@@ -28,9 +32,10 @@ publish:
   title: { en: "Luqman's advice… how did it end?", ar: "وصية لقمان… خلصت بإيه؟" }
   part: 8
   hashtags: ["#سورة_لقمان", "#وصايا_لقمان"]
-  hook:      # légende courte de Facebook et Instagram ; proposée par la session, à valider
+  hook:      # légende courte de Facebook et Instagram ; proposée par la session, validée par le propriétaire le 2026-11-19 (« je valide les 7 textes »)
     ar: "نفس الجملة في سورتين… وكل مرة خلصت بحاجة مختلفة. وصية لقمان خلصت بإيه؟ معاك 5 ثواني."
     en: "The same sentence in two surahs… each time with a different ending. How did Luqman's advice end? You have 5 seconds."
+    validated: 2026-11-19
   description:
     en: "\"Do not walk upon the earth exultantly\" is in Luqman's advice to his son (31:18) and in al-Isra' (17:37), with two endings. \"Marah\" is not joy: it is walking with pride and showing off (al-Muyassar, as-Sa'di)."
     ar: "«ولا تمش في الأرض مرحا» في وصية لقمان (لقمان 18) وفي سورة الإسراء (الإسراء 37)، بنهايتين مختلفتين. والمرح هنا مش الفرح: ده المشي بتكبّر وتباهي."

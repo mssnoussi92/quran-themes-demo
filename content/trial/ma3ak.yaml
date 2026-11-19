@@ -10,6 +10,7 @@ files: ma3ak                     # début du nom des vidéos : ma3ak-short-<n>-<
 title: { ar: "معاك 5 ثواني", en: "You Have 5 Seconds" }
 shorts: [qitr, marah, dhahib, abb, khashi, faqir, yamm]
 handle: "@ma3ak.5.thawani"
+validated: { by: mssnoussi92, on: 2026-11-19, what: [publish] }      # « je valide les 7 textes » (question à choix, docs/retention/publication-ma3ak.md)
 platforms: [facebook, instagram]  # la page test n'est que sur Meta : ni jumeau TikTok (signé du nom de la Page), ni texte TikTok ou YouTube
 publish:
   out: docs/retention/publication-ma3ak.md

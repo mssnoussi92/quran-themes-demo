@@ -10,6 +10,12 @@ script_validated: { by: mssnoussi92, on: 2026-11-18 }
 # « Je valide les 7 clips et dessins » du propriétaire (2026-11-18, question à choix nommant les brouillons muets
 # du workflow `film`, run 44391880850) : le montage, les dessins et le clip tels que rendus. La voix, la couverture
 # et l'ambiance sous la voix restent à valider sur la vidéo finale. Inscrit sur sa parole.
+# « Je valide les 7 vidéos » et « je valide les 7 textes » du propriétaire (2026-11-19, questions à choix nommant les
+# quiz 7 à 13 tels qu'envoyés : voix, couvertures, ambiance et montage, run 44487100813, le 11 et le 13 rendus de
+# nouveau, runs 44490586411 et 44491699532 ; titres, accroches et hashtags de docs/retention/publication-ma3ak.md).
+# Sa prise gardée telle quelle (son choix du même jour) : à 0:35, Whisper entend « بردًا وسلامًا » (les tanwin de
+# 21:69) là où le texte dit « برد وسلام » ; la session proposait de la refaire voyellée.
+validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, publish, ambience] }
 handle: "@ma3ak.5.thawani"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 97-trial-dhahib
@@ -28,9 +34,10 @@ publish:
   title: { en: "\"I am going to my Lord\"… who said it?", ar: "«إني ذاهب إلى ربي»… مين قالها؟" }
   part: 9
   hashtags: ["#سورة_الصافات", "#قصص_القرآن"]
-  hook:      # légende courte de Facebook et Instagram ; proposée par la session, à valider
+  hook:      # légende courte de Facebook et Instagram ; proposée par la session, validée par le propriétaire le 2026-11-19 (« je valide les 7 textes »)
     ar: "«إني ذاهب إلى ربي سيهدين»… ناس كتير هتقول موسى. مين قالها؟ معاك 5 ثواني."
     en: "\"I am going to my Lord; He will guide me\"… many will say Moses. Who said it? You have 5 seconds."
+    validated: 2026-11-19
   description:
     en: "\"I am going to my Lord; He will guide me\" (37:99) was said by Abraham, saved from the fire, leaving his land for a place to worship his Lord (al-Muyassar, as-Sa'di). Before the sea, Moses said a close sentence (26:62)."
     ar: "«إني ذاهب إلى ربي سيهدين» (الصافات 99) قالها سيدنا إبراهيم بعد ما ربنا نجّاه من النار، وهو سايب بلده لمكان يعبد فيه ربنا. وسيدنا موسى قال جملة قريبة قدّام البحر (الشعراء 62)."
