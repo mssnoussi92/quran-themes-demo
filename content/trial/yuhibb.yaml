@@ -16,6 +16,9 @@ ambience: { source: bigsoundbank, id: "0608", title: "Street and Roads", author:
 cover: { scene: y-good-2, title: "صاحبك بيحب لك إيه؟", tag: "الصاحب ساحب · 2 من 3", focus: 1100 }
 publish:
   title: { en: "Does your friend want for you what he wants for himself?", ar: "صاحبك… بيحب لك اللي بيحبه لنفسه؟" }
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session (2026-11-19), à valider
+    ar: "نفس المحطة مرتين… صاحب بيحب لنفسه، وصاحب بيحب لك زي نفسه."
+    en: "The same bus stop, twice… a friend who loves for himself, and one who loves for you as he loves for himself."
   part: 2
   hashtags: ["#الأخوة"]
   description:

@@ -18,6 +18,9 @@ ambience: { source: bigsoundbank, id: "0680", title: "Paris by Night", author: J
 cover: { scene: n-good-2, title: "بيشجّعك… ولا بينصرك؟", tag: "الصاحب ساحب · 3 من 3", focus: 1100 }
 publish:
   title: { en: "Cheering you on… or truly helping you?", ar: "بيشجّعك… ولا بينصرك؟" }
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session (2026-11-19), à valider
+    ar: "نفس الطابور مرتين… صاحب بيشجّعك، وصاحب بينصرك."
+    en: "The same queue, twice… a friend who cheers you on, and one who truly helps you."
   part: 3
   hashtags: ["#انصر_أخاك"]
   description:

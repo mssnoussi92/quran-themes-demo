@@ -19,6 +19,9 @@ ambience: { source: bigsoundbank, id: "2561", title: "Coffee Shop at the Capucin
 cover: { scene: j-bad-1, title: "قاعد جنب مين؟", tag: "الصاحب ساحب · 1 من 3", focus: 1100 }
 publish:
   title: { en: "The one you sit with: musk… or sparks", ar: "اللي قاعد جنبك: مسك… ولا شرار؟" }
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session (2026-11-19), à valider
+    ar: "نفس القعدة مرتين… مرة جنب جليس السوء، ومرة جنب الجليس الصالح. وانت قاعد جنب مين؟"
+    en: "The same sitting, twice… once beside a bad companion, once beside a good one. And you, who do you sit with?"
   part: 1
   hashtags: ["#الجليس_الصالح"]
   description:
