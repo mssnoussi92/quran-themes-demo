@@ -23,7 +23,9 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 # « Je valide montage, dessins, couvertures » du propriétaire (2026-11-17, question à choix nommant les 3 shorts sans voix du
 # run 44178359076 du workflow `film`, leur montage, leurs dessins et leurs 3 couvertures) : ni la voix ni l'ambiance, pas
 # encore faites ; il les valide sur les vidéos refaites avec la voix. Inscrit sur sa parole.
-validated: { by: mssnoussi92, on: 2026-11-17, what: [montage, cover] }
+# Puis « Je valide la voix et les ambiances » (2026-11-19, question à choix nommant les 3 shorts avec voix du run 44484912562 :
+# la voix des 3 prises et les ambiances sous la narration) : la voix et l'ambiance s'ajoutent. Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 102-trial-ghiba

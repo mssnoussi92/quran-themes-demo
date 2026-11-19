@@ -1076,6 +1076,10 @@ pris par la série des quiz) : chaque phrase retrouvée dans les prises (`align.
 (proposées) : un café (BigSoundBank 2561, aucune parole distincte) pour la ghiba, la nuit validée (1880) pour la namima, la nuit
 après la pluie (0621) pour le riya'. **Rendu** (run 44484912562 du workflow `film`, release brouillon `hayyin-candidate`) :
 **2:06, 1:23, 1:46**, −16 LUFS, contrôlés sur leurs planches, envoyés le même matin.
+**Validé par lui le même matin** (questions à choix, chaque fois la recommandation) : **la voix et les ambiances** (`validated`,
+`what: [voice, montage, cover, ambience]`) ; **les seize sources** (`validated` au registre). **Au calendrier : pas encore** (son
+choix) : en réserve, placé à la revue, après les premières mesures. Textes à coller : `docs/retention/publication-hayyin.md`
+(accroches validées ; titres et descriptions YouTube proposés, à valider).
 
 ## Faits (ancien circuit)
 
