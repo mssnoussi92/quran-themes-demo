@@ -715,3 +715,14 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   sujets qui se font dans ce style, lui est envoyée dans la conversation ; la fiche entre dans `docs/themes.md` après son
   choix. L'analyse des trois shorts entre dans `reference/` quand il les aura envoyés filmés (YouTube refuse le
   téléchargement depuis la session).
+
+## Le style des bonshommes : l'analyse, puis un pilote de trois shorts (2026-11-19)
+
+- **L'analyse** de trois shorts de la chaîne « STICK TO IT », d'après ses enregistrements d'écran :
+  `reference/stickman-shorts-analysis.md` (PR #67). Celui des amis a fait 40 à 80 fois mieux que les deux autres.
+- **Ses choix (questions à choix)** : un pilote de trois shorts sur les hadiths de la fraternité (`الجليس`, `زي ما تحب
+  لنفسك`, `انصره ظالمًا`), sans narration, dans un décor dessiné à part ; les sujets à compteur en réserve. Fiche :
+  `docs/themes.md`. Le script (les moments, les étiquettes, les lignes de fin) lui est envoyé avant tout dessin.
+- **Validés le même jour** : le nom « الصاحب ساحب » et les trois scripts (`docs/scripts/sahib.md`), `yuhibb` fini sur
+  le fragment de 59:9 (« ويؤثرون… »), que la session jugeait nécessaire : sans lui, ce short, le plus doux des trois, n'a
+  pas de chute.
