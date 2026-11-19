@@ -1544,3 +1544,157 @@
   validated_by: mssnoussi92
   notes: "« ليشكر بين الناس، أو يقال: إنه كريم » ; « أعمال المرائين تذهب وتضمحل عند الله » (وتحسبونه هيّنًا, riya)"
   text_ar: "ولهذا قال تعالى : ( يا أيها الذين آمنوا لا تبطلوا صدقاتكم بالمن والأذى ) فأخبر أن الصدقة تبطل بما يتبعها من المن والأذى ، فما يفي ثواب الصدقة بخطيئة المن والأذى .\nثم قال تعالى : ( كالذي ينفق ماله رئاء الناس ) أي : لا تبطلوا صدقاتكم بالمن والأذى ، كما تبطل صدقة من راءى بها الناس ، فأظهر لهم أنه يريد وجه الله وإنما قصده مدح الناس له أو شهرته بالصفات الجميلة ، ليشكر بين الناس ، أو يقال : إنه كريم ونحو ذلك من المقاصد الدنيوية ، مع قطع نظره عن معاملة الله تعالى وابتغاء مرضاته وجزيل ثوابه ; ولهذا قال : ( ولا يؤمن بالله واليوم الآخر )\nثم ضرب تعالى مثل ذلك المرائي بإنفاقه قال الضحاك : والذي يتبع نفقته منا أو أذى فقال : ( فمثله كمثل صفوان ) وهو جمع صفوانة ، ومنهم من يقول : الصفوان يستعمل مفردا أيضا ، وهو الصفا ، وهو الصخر الأملس ( عليه تراب فأصابه وابل ) وهو المطر الشديد ( فتركه صلدا ) أي : فترك الوابل ذلك الصفوان صلدا ، أي : أملس يابسا ، أي : لا شيء عليه من ذلك التراب ، بل قد ذهب كله ، أي : وكذلك أعمال المرائين تذهب وتضمحل عند الله وإن ظهر لهم أعمال فيما يرى الناس كالتراب ; ولهذا قال : ( لا يقدرون على شيء مما كسبوا والله لا يهدي القوم الكافرين ) ."
+- id: tafsir.saadi.113.2
+  type: tafsir
+  ref: {edition: saadi, surah: 113, ayah: 2}
+  url: https://quran.com/113:2/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/113:2
+    edition: السعدي Al-Sa'di
+    verses: ["113:2"]
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "short aqrab : « من شر ما خلق » couvre tout ce qu'Allah a créé, hommes, djinns, animaux ; on cherche refuge auprès de leur Créateur (« ذكر وحكايته »)"
+  text_ar: '{ مِنْ شَرِّ مَا خَلَقَ } وهذا يشمل جميع ما خلق الله، من إنس، وجن، وحيوانات، فيستعاذ بخالقها، من الشر الذي فيها،'
+- id: tafsir.saadi.113.3
+  type: tafsir
+  ref: {edition: saadi, surah: 113, ayah: 3}
+  url: https://quran.com/113:3/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/113:3
+    edition: السعدي Al-Sa'di
+    verses: ["113:3"]
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "short aqrab : la nuit, quand se répandent les esprits mauvais et les animaux nuisibles (« ذكر وحكايته »)"
+  text_ar: 'ثم خص بعد ما عم، فقال: { وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ } أي: من شر ما يكون في الليل، حين يغشى الناس، وتنتشر فيه كثير من الأرواح الشريرة، والحيوانات المؤذية.'
+- id: tafsir.muyassar.112.1
+  type: tafsir
+  ref: {edition: muyassar, surah: 112, ayah: 1}
+  url: https://quran.com/112:1/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/112:1
+    edition: Tafsir Muyassar
+    verses: ["112:1"]
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "short qul : Il est seul dans la divinité, la seigneurie, les noms et les attributs (« ذكر وحكايته »)"
+  text_ar: 'قل -أيها الرسول-: هو الله المتفرد بالألوهية والربوبية والأسماء والصفات، لا يشاركه أحد فيها.'
+- id: tafsir.muyassar.113.2
+  type: tafsir
+  ref: {edition: muyassar, surah: 113, ayah: 2}
+  url: https://quran.com/113:2/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/113:2
+    edition: Tafsir Muyassar
+    verses: ["113:2"]
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "short qul : du mal de toutes les créatures et de leur nuisance (« ذكر وحكايته »)"
+  text_ar: من شر جميع المخلوقات وأذاها.
+- id: tafsir.muyassar.114.4
+  type: tafsir
+  ref: {edition: muyassar, surah: 114, ayah: 4}
+  url: https://quran.com/114:4/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/114:4
+    edition: Tafsir Muyassar
+    verses: ["114:4"]
+    retrieved: '2026-11-17'
+  status: validated
+  notes: "short qul : du mal du Satan qui souffle à l'heure de l'inattention et se retire au rappel d'Allah (« ذكر وحكايته »)"
+  text_ar: من أذى الشيطان الذي يوسوس عند الغفلة، ويختفي عند ذكر الله.
+  validated_by: mssnoussi92
+- id: tafsir.muyassar.57.21
+  type: tafsir
+  ref: {edition: muyassar, surah: 57, ayah: 21}
+  url: https://quran.com/57:21/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/57:21
+    edition: Tafsir Muyassar
+    verses: ["57:21"]
+    retrieved: '2026-11-17'
+  status: proposed
+  notes: "short dathur : rivalisez vers les causes du pardon, le repentir et l'éloignement des péchés ; le Paradis ne s'obtient que par la miséricorde et la faveur d'Allah, et l'œuvre bonne (« ذكر وحكايته »)"
+  text_ar: سابقوا -أيها الناس- في السعي إلى أسباب المغفرة من التوبة النصوح والابتعاد عن المعاصي؛ لِتُجْزَوْا مغفرة من ربكم وجنة عرضها كعرض السماء والأرض، وهي مُعَدَّة للذين وحَّدوا الله واتَّبَعوا رسله، ذلك فضل الله الذي يؤتيه مَن يشاء مِن خلقه، فالجنة لا تُنال إلا برحمة الله وفضله، والعمل الصالح. والله ذو الإحسان والعطاء الكثير الواسع على عباده المؤمنين.
+- id: tafsir.saadi.107.5
+  type: tafsir
+  ref: {edition: saadi, surah: 107, ayah: 5}
+  url: https://quran.com/107:5/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/107:5
+    edition: السعدي Al-Sa'di
+    verses: ["107:5"]
+    retrieved: '2026-11-17'
+  status: validated
+  notes: "le sens de 107:5 : « عن » صلاتهم et non « في » ; le sahw dans la prière arrive à tous, même au Prophète ﷺ (short sahun)"
+
+  text_ar: 'أي: مضيعون لها، تاركون لوقتها، مفوتون لأركانها وهذا لعدم اهتمامهم بأمر الله حيث ضيعوا الصلاة، التي هي أهم الطاعات وأفضل القربات، والسهو عن الصلاة، هو الذي يستحق صاحبه الذم واللوم وأما السهو في الصلاة، فهذا يقع من كل أحد، حتى من النبي صلى الله عليه وسلم.'
+  validated_by: mssnoussi92
+- id: tafsir.ibn-kathir.107.5
+  type: tafsir
+  ref: {edition: ibn-kathir, surah: 107, ayah: 5}
+  url: https://quran.com/107:5/tafsirs/ar-tafsir-ibn-kathir
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/14/by_ayah/107:5
+    edition: Tafsir Ibn Kathir
+    verses: ["107:5"]
+    retrieved: '2026-11-17'
+  status: validated
+  notes: "la remarque de 'Ata' ibn Dinar sur « عن صلاتهم » et non « في صلاتهم » (short sahun)"
+
+  text_ar: "وقال عطاء بن دينار : والحمد لله الذي قال : ( عن صلاتهم ساهون ) ولم يقل : في صلاتهم ساهون .\nوإما عن وقتها الأول فيؤخرونها إلى آخره دائما أو غالبا . وإما عن أدائها بأركانها وشروطها على الوجه المأمور به . وإما عن الخشوع فيها والتدبر لمعانيها ، فاللفظ يشمل هذا كله ، ولكل من اتصف بشيء من ذلك قسط من هذه الآية . ومن اتصف بجميع ذلك ، فقد تم نصيبه منها ، وكمل له النفاق العملي . كما ثبت في الصحيحين أن رسول الله صلى الله عليه وسلم قال : \" تلك صلاة المنافق ، تلك صلاة المنافق ، تلك صلاة المنافق ، يجلس يرقب الشمس ، حتى إذا كانت بين قرني الشيطان قام فنقر أربعا لا يذكر الله فيها إلا قليلا \" فهذا آخر صلاة العصر التي هي الوسطى ، كما ثبت به النص إلى آخر وقتها ، وهو وقت كراهة ، ثم قام إليها فنقرها نقر الغراب ، لم يطمئن ولا خشع فيها أيضا ; ولهذا قال : \" لا يذكر الله فيها إلا قليلا \" . ولعله إنما حمله على القيام إليها مراءاة الناس ، لا ابتغاء وجه الله ، فهو إذا لم يصل بالكلية . قال تعالى : ( إن المنافقين يخادعون الله وهو خادعهم وإذا قاموا إلى الصلاة قاموا كسالى يراءون الناس ولا يذكرون الله إلا قليلا ) [ النساء : 142 ] ."
+  validated_by: mssnoussi92
+- id: tafsir.muyassar.2.286
+  type: tafsir
+  ref: {edition: muyassar, surah: 2, ayah: 286}
+  url: https://quran.com/2:286/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/2:286
+    edition: Tafsir Muyassar
+    verses: ["2:286"]
+    retrieved: '2026-11-17'
+  status: validated
+  notes: "le sens de 2:286 : « ربنا لا تعاقبنا إن نسينا شيئًا مما افترضته علينا » (short sahun)"
+
+  text_ar: دين الله يسر لا مشقة فيه، فلا يطلب الله مِن عباده ما لا يطيقونه، فمن فعل خيرًا نال خيرًا، ومن فعل شرّاً نال شرّاً. ربنا لا تعاقبنا إن نسينا شيئًا مما افترضته علينا، أو أخطأنا في فِعْل شيء نهيتنا عن فعله، ربَّنا ولا تكلفنا من الأعمال الشاقة ما كلفته مَن قبلنا من العصاة عقوبة لهم، ربنا ولا تُحَمِّلْنَا ما لا نستطيعه من التكاليف والمصائب، وامح ذنوبنا، واستر عيوبنا، وأحسن إلينا، أنت مالك أمرنا ومدبره، فانصرنا على مَن جحدوا دينك وأنكروا وحدانيتك، وكذَّبوا نبيك محمدًا صلى الله عليه وسلم، واجعل العاقبة لنا عليهم في الدنيا والآخرة.
+  validated_by: mssnoussi92
+- id: tafsir.saadi.18.110
+  type: tafsir
+  ref: {edition: saadi, surah: 18, ayah: 110}
+  url: https://quran.com/18:110/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/18:110
+    edition: السعدي Al-Sa'di
+    verses: ["18:110"]
+    retrieved: '2026-11-17'
+  status: validated
+  notes: "le sens de 18:110 : un humain, distingué par la révélation (short khams)"
+
+  text_ar: 'أي: { قُلْ ْ} يا محمد للكفار وغيرهم: { إِنَّمَا أَنَا بَشَرٌ مِثْلُكُمْ ْ} أي: لست بإله، ولا لي شركة في الملك، ولا علم بالغيب، ولا عندي خزائن الله، { إِنَّمَا أَنَا بَشَرٌ مِثْلُكُمْ ْ} عبد من عبيد ربي، { يُوحَى إِلَيَّ أَنَّمَا إِلَهُكُمْ إِلَهٌ وَاحِدٌ ْ} أي: فضلت عليكم بالوحي، الذي يوحيه الله إلي، الذي أجله الإخبار لكم: أنما إلهكم إله واحد، أي: لا شريك له، ولا أحد يستحق من العبادة مثقال ذرة غيره، وأدعوكم إلى العمل الذي يقربكم منه، وينيلكم ثوابه، ويدفع عنكم عقابه. ولهذا قال: { فَمَنْ كَانَ يَرْجُوا لِقَاءَ رَبِّهِ فَلْيَعْمَلْ عَمَلًا صَالِحًا ْ} وهو الموافق لشرع الله، من واجب ومستحب، { وَلَا يُشْرِكْ بِعِبَادَةِ رَبِّهِ أَحَدًا ْ} أي: لا يرائي بعمله بل يعمله خالصا لوجه الله تعالى، فهذا الذي جمع بين الإخلاص والمتابعة، هو الذي ينال ما يرجو ويطلب، وأما من عدا ذلك، فإنه خاسر في دنياه وأخراه، وقد فاته القرب من مولاه، ونيل رضاه. آخر تفسير سورة الكهف، ولله الحمد.'
+  validated_by: mssnoussi92
+- id: tafsir.muyassar.33.21
+  type: tafsir
+  ref: {edition: muyassar, surah: 33, ayah: 21}
+  url: https://quran.com/33:21/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/33:21
+    edition: Tafsir Muyassar
+    verses: ["33:21"]
+    retrieved: '2026-11-17'
+  status: validated
+  notes: "le sens de 33:21 : un modèle dans ses paroles et ses actes, suivre sa Sunna (short nasit)"
+
+  text_ar: لقد كان لكم -أيها المؤمنون- في أقوال رسول الله صلى الله عليه وسلم وأفعاله وأحواله قدوة حسنة تتأسون بها، فالزموا سنته، فإنما يسلكها ويتأسى بها مَن كان يرجو الله واليوم الآخر، وأكثرَ مِن ذكر الله واستغفاره، وشكره في كل حال.
+  validated_by: mssnoussi92

@@ -25,7 +25,9 @@ import { LENS_PICTURES } from "./Lens";
 import { KAHF_PICTURES } from "./Kahf";
 import { QADAR_PICTURES } from "./Qadar";
 import { HAYYIN_PICTURES } from "./Hayyin";
+import { DHIKR_LAYOUTS, DHIKR_PICTURES } from "./Dhikr";
 import { QUIZ_LAYOUTS, QUIZ_OVERLAYS, QUIZ_PICTURES } from "./Quiz";
+import { SAHW_LAYOUTS, SAHW_OVERLAYS, SAHW_PICTURES } from "./Sahw";
 
 loadFonts();
 
@@ -59,10 +61,13 @@ export type Verse = {
   reference: string; text: string; en: string; words: WordTiming[]; credit: string;
   verses?: { en: string; first: number; last: number }[];
 };
-/** A hadith read by a real voice (the registry's recording); `file` is null in a draft when no reading is found yet. */
+/** A hadith read by a real voice (the registry's recording); `file` is null in a draft when no reading is found yet.
+ * `card`: a dhikr to read (adhkar to save): never read, no sound; `count` and `label` are our own words written with
+ * it (« 3 مرات », « بعد المغرب »). */
 export type Reading = {
   kind: "reading"; scene: string; start: number; seconds: number; file: string | null;
   reference: string; text: string; en: string; credit: string;
+  card?: boolean; count?: string | null; label?: string | null;
 };
 type Segment = Narration | Verse | Reading;
 /** How the filmed clip sits in the frame: where it is cropped, how far down (or up) it is moved to leave the
@@ -453,12 +458,14 @@ export const PICTURES: Record<string, Drawn> = {
   ...KAHF_PICTURES,
   ...QADAR_PICTURES,
   ...HAYYIN_PICTURES,
+  ...DHIKR_PICTURES,
   ...QUIZ_PICTURES,
+  ...SAHW_PICTURES,
 };
 
 /** What a short draws above its veil, under its texts, outside the slowly growing picture: a timeline, a badge,
  * anything that must not move. None by default; a short registers its own here. */
-export const OVERLAYS: Record<string, Drawn> = { ...SIGNS_OVERLAYS, ...KALIMA_OVERLAYS, ...COUNT_OVERLAYS, ...FARQ_OVERLAYS, ...MAP_OVERLAYS, ...SUAL_OVERLAYS, ...QUIZ_OVERLAYS };
+export const OVERLAYS: Record<string, Drawn> = { ...SIGNS_OVERLAYS, ...KALIMA_OVERLAYS, ...COUNT_OVERLAYS, ...FARQ_OVERLAYS, ...MAP_OVERLAYS, ...SUAL_OVERLAYS, ...QUIZ_OVERLAYS, ...SAHW_OVERLAYS };
 
 const hasLetter = (token: string) => /\p{L}/u.test(token);
 export const fit = (base: number, text: string, comfortable: number) => Math.round(base * Math.min(1, Math.sqrt(comfortable / Math.max(1, text.length))));
@@ -471,6 +478,9 @@ export type Layout = {
   top: number; size: number; height: number;
   /** A verse: the top of its reference, its largest size, the length it is comfortable at that size. */
   verseTop: number; verseSize: number; verseComfortable: number;
+  /** From the top of the reference to the top of the verse (50 when not said). Amiri Quran draws a pause sign
+   * (ۚ ۖ ۗ) high above its line: on the first line, 50 px puts it in the reference (masaa, 2:286, 2026-11-18). */
+  verseGap?: number;
   /** The translation: `rows`, the most rows it may take before the bottom of the frame (it is written smaller to fit). */
   sub: { top: number; left: number; right: number; size: number; rows?: number };
   credit: { top: number; size: number };
@@ -485,7 +495,7 @@ export const PORTRAIT: Layout = {
 /** A short that needs its texts elsewhere (a timeline above the picture, a narrower column) says so here: what it
  * gives is merged over PORTRAIT (`sub` and `credit` one level deeper, so that `sub: { top }` keeps the rest). */
 export type LayoutOverride = Omit<Partial<Layout>, "sub" | "credit"> & { sub?: Partial<Layout["sub"]>; credit?: Partial<Layout["credit"]> };
-export const LAYOUTS: Record<string, LayoutOverride> = { ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS };
+export const LAYOUTS: Record<string, LayoutOverride> = { ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS, ...DHIKR_LAYOUTS, ...SAHW_LAYOUTS };
 const layoutOf = (trial: string): Layout => {
   const own = LAYOUTS[trial];
   return own ? { ...PORTRAIT, ...own, sub: { ...PORTRAIT.sub, ...own.sub }, credit: { ...PORTRAIT.credit, ...own.credit } } : PORTRAIT;
@@ -616,7 +626,7 @@ export const VerseText: React.FC<{ seg: Verse; t: number; layout?: Layout }> = (
       <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.verseTop, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.arabic, fontSize: 34, color: "rgba(255,255,255,.72)", textShadow: SHADOW }}>
         {seg.reference}
       </div>
-      <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.verseTop + 50, left: layout.left - 6, right: layout.right - 6, textAlign: "center", opacity: turn, fontFamily: FONT.quran, fontSize: fit(layout.verseSize, "x".repeat(longestPage), layout.verseComfortable), lineHeight: 1.95, color: "#fff", textShadow: SHADOW, textWrap: "balance" }}>
+      <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.verseTop + (layout.verseGap ?? 50), left: layout.left - 6, right: layout.right - 6, textAlign: "center", opacity: turn, fontFamily: FONT.quran, fontSize: fit(layout.verseSize, "x".repeat(longestPage), layout.verseComfortable), lineHeight: 1.95, color: "#fff", textShadow: SHADOW, textWrap: "balance" }}>
         {shown.map(({ token, position: p }, i) => (
           <Fragment key={`${page}-${i}`}>
             {i > 0 ? " " : null}
@@ -650,7 +660,7 @@ export const ReadingText: React.FC<{ seg: Reading; t: number; layout?: Layout }>
       <div style={{ position: "absolute", top: layout.verseTop, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.latin, fontSize: 30, color: "rgba(255,255,255,.72)", textShadow: SHADOW }}>
         {seg.reference}
       </div>
-      <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.verseTop + 56, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.arabic, fontSize: brief ? 96 : fit(64, seg.text, layout.readingComfortable ?? 90), lineHeight: 1.8, color: "#fff", textShadow: SHADOW, textWrap: "balance" }}>
+      <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.verseTop + 56, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.arabic, fontSize: seg.card ? cardSize(seg.text) : brief ? 96 : fit(64, seg.text, layout.readingComfortable ?? 90), lineHeight: 1.8, color: "#fff", textShadow: SHADOW, textWrap: "balance" }}>
         « {seg.text} »
       </div>
       <div lang="en" style={{ position: "absolute", top: layout.sub.top, left: layout.sub.left, right: layout.sub.right, textAlign: "center", fontFamily: ENGLISH, fontStyle: "italic", fontSize: layout.sub.size, lineHeight: 1.4, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
@@ -659,6 +669,32 @@ export const ReadingText: React.FC<{ seg: Reading; t: number; layout?: Layout }>
       <div style={{ position: "absolute", top: layout.credit.top, left: layout.left, right: layout.right, textAlign: "center", fontFamily: FONT.latin, fontSize: layout.credit.size, color: "rgba(255,255,255,.62)", textShadow: SHADOW }}>
         {seg.credit}
       </div>
+      {seg.card && (seg.label || seg.count) ? <CardCount seg={seg} local={local} layout={layout} /> : null}
+    </div>
+  );
+};
+
+/** A dhikr to read has the middle of the frame to itself (nothing is drawn there): from under its reference down to its
+ * count, about 730 px; the largest size at which its letters (vowel signs apart) fill that height, never above 96. */
+const cardSize = (text: string) => {
+  const letters = text.replace(/[\u064B-\u0652\u0670\u0640\u200e\u200f]/g, "").length;
+  return Math.min(96, Math.floor(Math.sqrt(780000 / Math.max(1, letters))));
+};
+
+/** Under a dhikr to read: when to say it (`label`) and how many times (`count`), our own words, in gold, large enough to
+ * be read on a phone at a glance; the count comes in a moment after the text. */
+const CardCount: React.FC<{ seg: Reading; local: number; layout: Layout }> = ({ seg, local, layout }) => {
+  const come = interpolate(local, [0.6, 1.2], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  return (
+    <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.sub.top - 300, left: layout.left, right: layout.right, textAlign: "center", opacity: come, transform: `scale(${0.92 + 0.08 * come})` }}>
+      {seg.label ? (
+        <div style={{ fontFamily: FONT.arabic, fontSize: 46, color: "rgba(255,255,255,.88)", textShadow: SHADOW, marginBottom: 14 }}>{seg.label}</div>
+      ) : null}
+      {seg.count ? (
+        <div style={{ display: "inline-block", padding: "10px 46px", borderRadius: 60, border: `3px solid ${GOLD}`, background: "rgba(4,7,20,.55)", fontFamily: FONT.arabic, fontSize: 64, lineHeight: 1.3, color: GOLD, textShadow: SHADOW }}>
+          {seg.count}
+        </div>
+      ) : null}
     </div>
   );
 };

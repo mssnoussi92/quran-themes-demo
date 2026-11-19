@@ -48,14 +48,19 @@ const Tag: React.FC<{ text: string; size: number }> = ({ text, size }) => (
   </div>
 );
 
-export type CoverProps = { trial: string; voice: string; cast?: string; data: TrialData | null };
+/** `platform`: where the page has another name (content/publish.yaml, `handles`), the cover is signed with it (the
+ * quizzes of the test page on Meta, 2026-11-18), as the video is (Trial.tsx). */
+export type CoverProps = { trial: string; voice: string; cast?: string; platform?: string; data: TrialData | null };
 export const coverMetadata: CalculateMetadataFunction<CoverProps> = async ({ props, abortSignal }) => ({
   props: { ...props, data: await load(props.trial, props.voice, abortSignal) },
 });
 
-export const TrialCover: React.FC<CoverProps> = ({ data, cast }) => {
+export const TrialCover: React.FC<CoverProps> = ({ data, cast, platform }) => {
   if (!data) throw new Error("no trial data: calculateMetadata did not run");
   if (!data.cover) throw new Error(`content/trial/${data.trial}.yaml has no cover`);
+  // A platform with no name of its own in `handles` fails the render rather than sign with the wrong account.
+  const handle = platform ? data.handles?.[platform] : data.handle;
+  if (!handle) throw new Error(`no handle for the platform « ${platform} » (content/publish.yaml, handles)`);
   const { scene, title, tag } = data.cover;
   const size = Math.round(Math.min(190, (W - 120) / (title.length * 0.43)));
   const veil = data.picture?.veil ?? 1;      // a picture in full daylight keeps a day sky behind its title
@@ -70,7 +75,7 @@ export const TrialCover: React.FC<CoverProps> = ({ data, cast }) => {
         </div>
       </div>
       <div style={{ position: "absolute", bottom: 300, left: 0, right: 0, textAlign: "center", fontFamily: FONT.latin, fontWeight: 600, fontSize: 36, color: GOLD, opacity: 0.92, textShadow: INK_SHADOW }}>
-        {data.handle}
+        {handle}
       </div>
     </AbsoluteFill>
   );

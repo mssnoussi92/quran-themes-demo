@@ -226,7 +226,7 @@ def test_a_narration_rests_on_a_hadith_or_a_tafsir_of_the_policy(copy):
     set_sources(copy, "caravan", "meaning", ["tafsir.muyassar.39.53"])           # the tafsir of a verse another short recites
     refused(copy.rules("--film", "ayah", "--draft"), "which this short does not recite")
     set_sources(copy, "caravan", "meaning", ["quran.62.11"])                     # a verse is recited, not rested on
-    refused(copy.rules("--film", "ayah", "--draft"), "a narration rests on a hadith or a tafsir")
+    refused(copy.rules("--film", "ayah", "--draft"), "a narration rests on a hadith, a tafsir or a page of fiqh")
     set_sources(copy, "caravan", "meaning", ["tafsir.razi.62.11"])               # not in the registry
     refused(copy.rules("--film", "ayah", "--draft"), "source tafsir.razi.62.11 is not in the registry")
     set_sources(copy, "caravan", "meaning", ["tafsir.muyassar.62.11"])
@@ -257,6 +257,28 @@ def test_the_voice_tells_a_report_and_never_reads_it(copy):
     # sources were validated, a warning listed every proposed source and this passed whatever the error named.)
     said = next(row for row in done.stdout.splitlines() if "the synthetic voice says" in row)
     assert ("hadith.muslim.863a" in said or "hadith.bukhari.936" in said) and line in done.stdout
+
+
+def test_a_hadith_read_keeps_its_words_and_not_the_blessing(copy):
+    """The words of a hadith read by a real voice are never said by the synthetic one; the blessing after the
+    Prophet's name ﷺ, in every line and in the hadith's words too, is not a quotation of it (as for a report told).
+    The card of Muslim 2664 is made to show its whole text, chain and blessing included; no text is typed here."""
+    path = copy.root / "content" / "sources" / "hadith.yaml"
+    entries = yaml.safe_load(path.read_text(encoding="utf-8"))
+    entry = next(e for e in entries if e["id"] == "hadith.muslim.2664")
+    assert "صلى الله عليه وسلم" in entry["text_ar"]
+    entry["excerpt_ar"] = entry["text_ar"]
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    line = next(l["ar"] for s in copy.load("content/trial/law.yaml")["segments"] for l in s.get("lines") or []
+                if "صلى الله عليه وسلم" in l["ar"])
+    done = copy.rules("--film", "qadar", "--draft")
+    assert "the synthetic voice says" not in done.stdout, done.stdout[-2500:]     # the blessing alone: accepted
+    assert line in (copy.root / "content" / "trial" / "law.yaml").read_text(encoding="utf-8")
+    words = [w for w in entry["text_ar"].rsplit("وسلم", 1)[1].split() if re.search("[\u0621-\u064a]", w)][:5]
+    copy.change_line("law", "turn", 0, lambda old: old + " " + " ".join(words))
+    done = copy.rules("--film", "qadar", "--draft")
+    refused(done, "the synthetic voice says")
+    assert "hadith.muslim.2664" in done.stdout
 
 
 def test_a_passage_is_verses_that_follow_one_another_with_cuts_that_touch(copy):
@@ -496,6 +518,65 @@ def test_a_turn_refused_in_the_narration_only_is_not_checked_on_titles():
     assert len(warned) == 1
 
 
+def test_a_narration_rests_on_a_page_of_fiqh_of_the_policy(copy):
+    set_sources(copy, "caravan", "meaning", ["fiqh.kuwaiti.24.238"])             # no recited verse needed, unlike a tafsir
+    path = copy.root / "content" / "sources" / "fiqh.yaml"
+    entries = yaml.safe_load(path.read_text(encoding="utf-8"))
+    entry = next(e for e in entries if e["id"] == "fiqh.kuwaiti.24.238")
+    entry["status"] = "proposed"                                                 # whatever the owner has validated since
+    entry.pop("validated_by", None)
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    done = copy.rules("--film", "ayah", "--draft")
+    assert done.returncode == 0, done.stdout[-2000:]
+    assert "source fiqh.kuwaiti.24.238" in done.stdout                           # proposed, listed like the others
+    text = entry.pop("text_ar")                                                  # a page with no text
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    refused(copy.rules("--film", "ayah", "--draft"), "source fiqh.kuwaiti.24.238 has no text in the registry")
+    entry["text_ar"] = text
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    policy = copy.load("content/policy.yaml")                                    # an edition the owner did not let in
+    del policy["fiqh"]["editions"]["kuwaiti"]
+    copy.dump("content/policy.yaml", policy)
+    refused(copy.rules("--film", "ayah", "--draft"), "fiqh « kuwaiti » is outside content/policy.yaml")
+    assert "fiqh 'kuwaiti' is outside content/policy.yaml" in validate(copy).stdout                # and the registry check says the same
+
+
+def test_the_references_merge_the_pages_of_fiqh(monkeypatch):
+    sources = tool("sources")
+    page = lambda n, text="x": {"id": f"fiqh.kuwaiti.24.{n}", "type": "fiqh", "ref": {"edition": "kuwaiti", "volume": 24, "page": n},
+                                "text_ar": text, "status": "proposed"}
+    monkeypatch.setattr(sources, "_registry", {**sources.registry(), **{f"fiqh.kuwaiti.24.{n}": page(n) for n in (234, 238, 239)}})
+    monkeypatch.setattr(sources, "proposed", [])
+    refs = sources.references(["fiqh.kuwaiti.24.239", "fiqh.kuwaiti.24.238"])
+    assert refs["ar"] == "الموسوعة الفقهية الكويتية 24/238-239"          # 1 2 3 (the owner, 2026-11-17); a hyphen-minus in Arabic
+    assert refs["en"] == "Kuwaiti Encyclopedia of Islamic Jurisprudence 24/238–239"
+    apart = sources.references(["fiqh.kuwaiti.24.234", "fiqh.kuwaiti.24.238", "fiqh.kuwaiti.24.239"])
+    assert apart["ar"].endswith("24/234، 238-239") and apart["en"].endswith("24/234, 238–239")
+    assert sources.references(["fiqh.kuwaiti.24.238", "fiqh.kuwaiti.24.239"], "latin")["ar"] == "الموسوعة الفقهية الكويتية 24/238-239"
+    assert sources.num(863) == "863" and sources.num(863, "latin") == "863"               # the old option changes nothing
+    outside = {**page(238), "id": "fiqh.shafii.24.238", "ref": {"edition": "shafii", "volume": 24, "page": 238}}
+    monkeypatch.setitem(sources.registry(), outside["id"], outside)
+    with pytest.raises(SystemExit):
+        sources.references([outside["id"]])
+    nothing = {**page(235), "text_ar": None}
+    monkeypatch.setitem(sources.registry(), nothing["id"], nothing)
+    with pytest.raises(SystemExit):
+        sources.references([nothing["id"]])
+
+
+def test_a_misprint_of_the_english_is_corrected_on_screen_only(copy):
+    # The owner's decision (2026-11-17): two misprints of the published translation are corrected in the subtitle, and
+    # noted in the registry; the registry's text stays as published.
+    sources = tool("sources")
+    entry = sources.registry()["hadith.muslim.572a"]
+    assert "for. get" in entry["text_en"] and "for. get" in entry["excerpt_en"]
+    assert sources.described("hadith.muslim.572a")["display_en"] == "But I am a human being and I forget as you forget, so when I forget, remind me"
+    entries = copy.load("content/sources/hadith.yaml")                         # a correction whose misprint is not there
+    next(e for e in entries if e["id"] == "hadith.muslim.572a")["en_corrections"][0]["published"] = "no such misprint"
+    copy.dump("content/sources/hadith.yaml", entries)
+    assert "en_corrections: « no such misprint » is not in the English text shown" in validate(copy).stdout
+
+
 # ---- a part of a hadith's reading (`parts` of the registry, `part:` of a segment) --------------------------------
 
 PART_SID = "hadith.tirmidhi.3247"       # read by asked.yaml (a short), dua.yaml (a film)
@@ -581,6 +662,39 @@ def test_a_part_takes_reader_and_file_from_the_recording(copy):
         assert view["recording"][key] == entry["recording"][key]
     assert view["recording"]["start"] == entry["parts"]["second"]["recording"]["start"]
     assert script.part_view(entry, "nope") is None and "parts" not in view
+
+
+def test_a_part_said_by_another_voice_has_its_own_file(copy):
+    """A part may name its own reader, item, file and license (a dhikr said by a reciter, after the hadith read by the
+    collection's reader): its times are in its own file, not inside the entry's recording, and it is played from there."""
+    own = {"reader": "Another voice", "item": "https://archive.org/details/another-item",
+           "file": "https://archive.org/download/another-item/another.mp3", "license": "none stated on the archive.org item"}
+    add_part(copy, short=None, recording={"start": 5000.0, "end": 5010.0, "status": "proposed", **own})
+    checked = validate(copy)
+    assert checked.returncode == 0 and " 0 error(s)" in checked.stdout, checked.stdout[-2500:]
+    entry = next(e for e in copy.load("content/sources/hadith.yaml") if e["id"] == PART_SID)
+    view = tool("script").part_view(entry, "second")
+    assert {k: view["recording"][k] for k in own} == own and view["recording"]["start"] == 5000.0
+
+
+def test_a_part_naming_a_file_names_its_reader_too(copy):
+    add_part(copy, short=None, recording={"start": 1.0, "end": 2.0, "status": "proposed",
+                                          "file": "https://archive.org/download/another-item/another.mp3"})
+    checked = validate(copy)
+    assert checked.returncode == 1 and "schema" in checked.stdout, checked.stdout[-2500:]
+
+
+def test_a_card_shows_a_hadith_of_the_policy_and_needs_no_recording(copy):
+    """A `card:` (a dhikr to read, adhkar to save) shows the words of a hadith and no voice reads them: no recording is
+    needed (the real files pass, `test_the_real_repository_has_no_error`), but the hadith must be one of the policy."""
+    assert copy.rules("--film", "adhkar").returncode == 0
+    path = copy.root / "content" / "sources" / "hadith.yaml"
+    entries = yaml.safe_load(path.read_text(encoding="utf-8"))
+    entry = next(e for e in entries if e["id"] == "hadith.muslim.591")
+    assert "recording" not in entry and "recording" not in entry["parts"]["salam"]
+    entry["ref"]["collection"] = "wahidi"
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    refused(copy.rules("--film", "adhkar"), "hadith.muslim.591")
 
 
 def test_the_film_reads_no_silent_line_in_a_short_s_voice_text():

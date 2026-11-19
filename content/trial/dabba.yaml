@@ -11,7 +11,11 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 # « Je valide rendu et clip » du propriétaire (2026-11-17, question à choix nommant le rendu sans voix du workflow `film`,
 # run 44121795304, et son clip) : le montage, les dessins et le clip tels que rendus. La voix, la couverture et l'ambiance
 # sous la voix restent à valider sur la vidéo finale. Inscrit sur sa parole.
-validated: { by: mssnoussi92, on: 2026-11-17, what: [montage] }
+# « Je valide les 3 » du propriétaire (2026-11-18, question à choix nommant la voix, les couvertures et l'ambiance sous
+# la voix des vidéos avec voix du workflow `film`, run 44270232504) : ajoutés au montage validé le 2026-11-17 ; puis
+# « je valide les textes » (même jour, question à choix nommant les titres et descriptions de publication-quiz.md).
+# Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-18, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 89-trial-dabba
@@ -19,7 +23,7 @@ text: 89-trial-dabba
 # arcs dessinés ; APPROUVÉ pour ce short par le propriétaire le 2026-11-17 (« je valide rendu et clip »)
 clip: { source: pixabay, id: 8451, author: Felix-Mittermeier, page: "https://pixabay.com/videos/id-8451/", take: { slow: 7, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.7, ground: "#06050c", horizon: 1380, veil: 0.8 }
 ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 60, level: -38 }
-cover: { scene: ask, title: "«دابة الأرض» في سورة سبأ؟", tag: "معاك 5 ثواني · 4", focus: 1000 }
+cover: { scene: ask, title: "«دابة الأرض» في سورة سبأ؟", tag: "معاك 5 ثواني", focus: 1000 }
 quiz:
   head: { verse: quran.34.14, from: 10, to: 11 }      # « دَآبَّةُ ٱلْأَرْضِ », écrit en or au-dessus de la question
   choices:

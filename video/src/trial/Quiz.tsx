@@ -43,7 +43,6 @@ type Choice = { ar: string | null; en: string; right: boolean; icon: string | nu
 type Quiz = { head: Piece; choices: readonly Choice[]; both: boolean; blank?: Piece; speakers?: readonly { ar: string; en: string; quran: Piece }[] };
 type Id = keyof typeof QUIZ;
 const data = (id: Id) => QUIZ[id] as unknown as Quiz;
-const N: Record<Id, string> = { sayyara: "1", khatima: "2", qalaha: "3", dabba: "4", sabr: "5", hudhud: "6" };
 /** The scenes where the question's words stay above the lines of the voice (not over a verse being recited). */
 const MEANING = ["meaning", "fall", "jinn", "patience", "check", "lesson"];
 
@@ -196,10 +195,12 @@ const makeOverlay = (id: Id): Drawn => {
     const lit = (k: number) => (k === 0 ? Math.max(show("abel"), show("abel-meaning")) : Math.max(show("satan"), show("satan-meaning")));
     return (
       <g>
-        {/* the name of the series, a stopwatch and the number of the episode */}
+        {/* the name of the series and a stopwatch; no episode number (owner, 2026-11-18: « supprime le numéro de
+            l'épisode sur les prochains rendus », the test page on Meta publishing one quiz a day) */}
         <g>
-          <circle cx={114} cy={268} r={24} fill="none" stroke={GOLD} strokeWidth={2.5} />
-          <text x={114} y={281} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={30} fill={GOLD}>{N[id]}</text>
+          <circle cx={114} cy={270} r={22} fill="none" stroke={GOLD} strokeWidth={2.5} />
+          <rect x={108} y={240} width={12} height={6} rx={2} fill={GOLD} />
+          <path d="M 114 270 L 114 256 M 114 270 L 123 276" stroke={GOLD} strokeWidth={2.5} strokeLinecap="round" />
           <text x={152} y={280} fontFamily={FONT.arabic} fontWeight={700} fontSize={34} fill={GOLD} style={{ filter: "drop-shadow(0 2px 10px rgba(4,7,20,.9))" }}>معاك 5 ثواني</text>
         </g>
         <Head quiz={quiz} t={t} answer={answer} opacity={head} />

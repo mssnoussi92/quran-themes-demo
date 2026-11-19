@@ -87,7 +87,7 @@ film du jour, Instagram seul, à 19 h ; les lundis d'un film sont le 23 et le 30
 | ~~sam. 14 nov.~~ | ~~Khidr, short 2 : le garçon~~ | les quatre | `khidr-short-2-boy-ambience.mp4`, `-tiktok-ambience`, `couverture-2-garcon.jpg` | `publication-moussa-khidr.md` : « Short 2 » |
 | ~~dim. 15 nov.~~ | ~~Khidr, short 3 : le mur~~ | les quatre | `khidr-short-3-wall-ambience.mp4`, `-tiktok-ambience`, `couverture-3-mur.jpg` | « Short 3 » |
 | ~~lun. 16 nov., soir~~ | ~~Du'a : le film~~ | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical, ajouté par lui) | releases `dua-candidate`, `dua-9x16-candidate` | `publication-dua.md` : « Le film » ; `publication-dua-9x16.md` |
-| mar. 17 nov. | Du'a, short 1 : Ayyoub | les quatre | release `dua-candidate` | `publication-dua.md` : « Short 1 » |
+| ~~mar. 17 nov.~~ | ~~Du'a, short 1 : Ayyoub~~ | les quatre | release `dua-candidate` | `publication-dua.md` : « Short 1 » |
 | mer. 18 nov. | Du'a, short 2 : Younous | les quatre | release `dua-candidate` | « Short 2 » |
 | jeu. 19 nov. | Du'a, short 3 : Zakariya | les quatre | release `dua-candidate` | « Short 3 » |
 | ven. 20 nov. | « آية وحكايتها » 1 : la caravane | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 1 » |
@@ -129,12 +129,18 @@ film du jour, Instagram seul, à 19 h ; les lundis d'un film sont le 23 et le 30
 | mer. 30 déc. | « مخيّر ولا مسيّر؟ », short 2 : «لما ربنا يهديني» | les quatre | release `qadar-candidate` | « Short 2 » |
 | jeu. 31 déc. | « مخيّر ولا مسيّر؟ », short 3 : كلمة من حرفين («لو») | les quatre | release `qadar-candidate` | « Short 3 » |
 | ven. 1 janv. | « لاحظت الفرق؟ » 3 : la justice (4:135 et 5:8) | les quatre | release `farq-candidate` | « Short 3 » |
+| lun. 4 janv. | « إزاي أعملها؟ » 1 : آية بتقول «ويل» للي بيصلّوا! (107:4-5) | les quatre | release `sahw-candidate` | `publication-sahw.md` : « Short 1 » |
+| mar. 5 janv. | « إزاي أعملها؟ » 2 : صلّى الضهر خمس ركعات! (Bukhari 1226, 18:110) | les quatre | release `sahw-candidate` | « Short 2 » |
+| mer. 6 janv. | « إزاي أعملها؟ » 3 : قمت من غير ما تقعد للتشهد؟ (le « comment faire », 33:21) | les quatre | release `sahw-candidate` | « Short 3 » |
+| jeu. 7 janv. | « إزاي أعملها؟ » 4 : صلّيت تلاتة ولا أربعة؟ (Muslim 571, 114:4-6) | les quatre | release `sahw-candidate` | « Short 4 » |
 
 « كلمة من القرآن », « خريطة كلمة » et « سؤال صعب » prennent les lundis, mardis et mercredis des semaines du 7, du 14 et du 21 décembre (« سؤال صعب » : décision du propriétaire, 2026-11-15 ; chaque épisode annonce le suivant, trois jours de suite tiennent la promesse), où aucun film n'est encore prévu (décision du propriétaire, 2026-11-14, sur la proposition de la session : les deux séries qui attendaient une place, et les moins semblables) ; « خريطة كلمة », le format le plus éloigné de ce qui est mesuré (un début muet, des effets sonores), passe après trois semaines de mesures. Une histoire nouvelle, si elle est prête, peut reprendre ces semaines : à décider avec les mesures.
 
 « لاحظت الفرق؟ » prend le vendredi quand les séries déjà prévues finissent (décision du propriétaire, 2026-11-14 : « quand on termine les séries déjà planifiées, et mieux de lancer ça un vendredi ») : après le quatrième « آية وحكايتها » (11 décembre), une fois par semaine. Si « آية وحكايتها » continue au-delà, les deux séries se partagent le vendredi, ou l'une change de jour : à décider avec les mesures. L'épisode 2 reprend les versets du film de Moussa et al-Khadir : six semaines après lui.
 
 « مخيّر ولا مسيّر؟ » prend la semaine du 28 décembre (décision du propriétaire, 2026-11-17) : le film le lundi, ses trois shorts du mardi au jeudi (chacun annonce le suivant).
+
+« إزاي أعملها؟ » prend la semaine du 4 janvier (décision du propriétaire, 2026-11-18, question à choix : « Lun 4 → jeu 7 janvier ») : ses quatre shorts du lundi au jeudi, chacun annonce le suivant.
 
 Une ligne barrée est publiée : la session la barre quand le propriétaire le lui dit, et republie sa page, qui montre ce
 calendrier. Les fichiers de Moussa et al-Khadir ne sont dans aucune release : ce sont ceux envoyés dans la conversation le

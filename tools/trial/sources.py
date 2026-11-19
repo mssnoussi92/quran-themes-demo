@@ -31,8 +31,15 @@ WORK = ROOT / "build" / "trial" / "sources"
 RECITERS = {"alafasy": "Mishari Rashid al-Afasy", "sayegh": "Tawfiq As-Sayegh"}                 # as video/scripts/prepare.ts
 COLLECTIONS = {"bukhari": "Sahih al-Bukhari", "muslim": "Sahih Muslim", "tirmidhi": "Jami' at-Tirmidhi"}
 DIGITS = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")   # only for the number that closes an ayah inside the Quranic text (۝١٩), as the mushaf
+
+
+def num(n, digits: str | None = None) -> str:
+    """A number as it is written on screen: 1 2 3, never ١ ٢ ٣ (the owner, 2026-11-17, for every video). `digits` (the
+    `digits: latin` of a file, written before the rule held for all) is kept for its callers and changes nothing."""
+    return str(n)
 READING_RATE = 48000
 UNREAD = 12.0          # seconds given to a hadith with no reading yet, in a draft only
+
 
 _registry: dict | None = None
 proposed: list[str] = []      # what was played without the owner's validation yet (printed by the caller)
@@ -62,7 +69,7 @@ def entry(sid: str) -> dict:
 
 
 def entry_of(sid: str) -> dict:
-    """A source a narration rests on (a report told, a tafsir, a science source): its registry entry, or stop. It needs
+    """A source a narration rests on (a report told, a tafsir, a page of fiqh, a science source): its registry entry, or stop. It needs
     no English text; a science source needs its label, not a text."""
     found = registry().get(sid)
     usable = bool((found or {}).get("label")) if (found or {}).get("type") == "science" else bool((found or {}).get("text_ar"))
@@ -118,16 +125,41 @@ def described(sid: str, part: str | None = None) -> dict:
             sys.exit(f"error: {sid}: no quotation marks in text_ar, cannot isolate the Prophet's words")
         text = e["text_ar"][first + 1:last]
     return {"type": "hadith", "id": sid, "reference": f"{name} {ref['number']}{letter}", "reference_en": f"{name} {ref['number']}{letter}",
-            "display_ar": clean(text), "display_en": e.get("excerpt_en") or e["text_en"],
+            "display_ar": clean(text), "display_en": corrected_en(e),
             "translator": translator if translator and translator != "Unknown" else None, "url": e.get("url"), "recording": e.get("recording"),
             "grade_note": grade_note(e)}
+
+
+def corrected_en(e: dict) -> str:
+    """The English subtitle of a hadith: its excerpt (or its text) as published, with the misprints the registry corrects
+    (`en_corrections`, decision of the owner, 2026-11-17) replaced; the registry's texts stay as published."""
+    text = e.get("excerpt_en") or e["text_en"]
+    for fix in e.get("en_corrections") or []:
+        if fix["published"] not in text:
+            sys.exit(f"error: {e['id']}: en_corrections « {fix['published']} » is not in the English text shown")
+        text = text.replace(fix["published"], fix["corrected"])
+    return text
+
+
+def card(sid: str, part: str | None = None, count: str | None = None, label: str | None = None,
+         hold: float | None = None, pace: dict | None = None) -> dict:
+    """A dhikr to read (a `card:` segment): the words of a hadith of the registry (one of its `parts`, its excerpt),
+    on screen with their reference and translation, and no sound at all: nobody reads them, the viewer does. `count`
+    and `label` are our own words (« 3 مرات », « بعد المغرب »), written with it; `hold` overrides the reading time."""
+    d = described(sid, part)
+    if d["type"] != "hadith":
+        sys.exit(f"error: {sid}: a card shows a hadith")
+    seconds = script.card_seconds(d["display_ar"], hold, pace)
+    return {"kind": "reading", "card": True, "reference": " · ".join(x for x in (d["reference"], d["grade_note"]) if x),
+            "text": d["display_ar"], "en": d["display_en"], "seconds": seconds, "file": None,
+            "credit": d["translator"] or "", "count": count, "label": label}
 
 
 def name_of(sid: str) -> str:
     return sid.replace(".", "-")
 
 
-def verse(sid: str, out_dir: Path) -> dict:
+def verse(sid: str, out_dir: Path, digits: str | None = None) -> dict:
     """A verse segment: recited by the reciter of content/policy.yaml, cut from his surah, levelled."""
     d = described(sid)
     if d["type"] != "ayah":
@@ -143,7 +175,7 @@ def verse(sid: str, out_dir: Path) -> dict:
             "credit": " · ".join(x for x in (RECITERS.get(reciter, reciter), d["translator"]) if x)}
 
 
-def passage(ids: list[str], out_dir: Path, upto: int | None = None) -> dict:
+def passage(ids: list[str], out_dir: Path, upto: int | None = None, digits: str | None = None) -> dict:
     """Verses that follow one another, recited without a break (`verses:`): one cut of the reciter's surah, from the
     start of the first verse to the end of the last (a reciter who chains short verses leaves no silence to cut
     at), levelled like a verse. One verse segment: the verses written one after the other, each closed by the sign
@@ -210,14 +242,29 @@ def passage(ids: list[str], out_dir: Path, upto: int | None = None) -> dict:
 REPORTED_BY = {"bukhari": ("البخاري", "al-Bukhari"), "muslim": ("مسلم", "Muslim"), "tirmidhi": ("الترمذي", "at-Tirmidhi")}
 
 
-def references(ids: list[str]) -> dict:
+def page_ranges(pages: list[int], digits: str | None = None, comma: str = ",", dash: str = "–") -> str:
+    """Sorted pages, contiguous ones merged: [238, 239] -> « 238–239 », [234, 238, 239] -> « 234, 238–239 ». In an
+    Arabic line the dash is a hyphen-minus: between two numbers the bidirectional algorithm keeps « 238-239 » in its
+    order, where an en dash (a neutral) is laid out right to left and shows « 239–238 » (seen on a still, 2026-11-17)."""
+    runs: list[list[int]] = []
+    for pg in pages:
+        if runs and pg == runs[-1][-1] + 1:
+            runs[-1].append(pg)
+        else:
+            runs.append([pg])
+    return f"{comma} ".join(num(r[0], digits) if len(r) == 1 else f"{num(r[0], digits)}{dash}{num(r[-1], digits)}" for r in runs)
+
+
+def references(ids: list[str], digits: str | None = None) -> dict:
     """What a narration rests on (`sources:`), as it is written on screen while it is said: the reports it tells in
     its own words (« رواه مسلم 863 والبخاري 936 »), the tafsir its meaning comes from (its name, from
-    content/policy.yaml) and the papers or data a claim rests on (a `science` source: its `label`, no text).
+    content/policy.yaml), the pages of fiqh (the book's name and « volume/pages », contiguous pages merged: « 24/238-239 »)
+    and the papers or data a claim rests on (a `science` source: its `label`, no text).
     Never read nor shown: a reference. An unvalidated source is listed as proposed."""
     policy = yaml.safe_load((ROOT / "content" / "policy.yaml").read_text(encoding="utf-8")) or {}
     editions = (policy.get("tafsir") or {}).get("editions") or {}
-    reports, tafsirs, sciences = [], [], []
+    reports, tafsirs, fiqhs, sciences = [], [], {}, []
+    fiqh_editions = (policy.get("fiqh") or {}).get("editions") or {}
     for sid in ids:
         e = registry().get(sid)
         # A science source has no text (its label is what is written): it needs the label, not a text.
@@ -237,16 +284,26 @@ def references(ids: list[str]) -> dict:
                 sys.exit(f"error: {sid}: tafsir « {ref['edition']} » is outside content/policy.yaml")
             if (name["ar"], name["en"]) not in tafsirs:
                 tafsirs.append((name["ar"], name["en"]))
+        elif e["type"] == "fiqh":
+            if ref["edition"] not in fiqh_editions:
+                sys.exit(f"error: {sid}: fiqh « {ref['edition']} » is outside content/policy.yaml")
+            pages = fiqhs.setdefault(ref["edition"], {}).setdefault(ref["volume"], [])
+            if ref["page"] not in pages:
+                pages.append(ref["page"])
         elif e["type"] == "science":
             if (e["label"]["ar"], e["label"]["en"]) not in sciences:
                 sciences.append((e["label"]["ar"], e["label"]["en"]))
         else:
-            sys.exit(f"error: {sid}: a narration rests on a hadith, a tafsir or a science source, not on a source of type « {e['type']} »")
+            sys.exit(f"error: {sid}: a narration rests on a hadith, a tafsir, a page of fiqh or a science source, not on a source of type « {e['type']} »")
     ar = [("رواه " + " و".join(a for a, _ in reports))] if reports else []
     en = [", ".join(b for _, b in reports)] if reports else []
     ar += [a for a, _ in tafsirs]
     en += [b for _, b in tafsirs]
-    ar += [a for a, _ in sciences]              # the papers and the data come last, after the tafsir names
+    for edition, volumes in fiqhs.items():       # the books of fiqh, after the tafsir names: « name volume/pages »
+        name = fiqh_editions[edition]
+        ar.append(f"{name['ar']} " + "؛ ".join(f"{num(v, digits)}/{page_ranges(sorted(pages), digits, '،', '-')}" for v, pages in volumes.items()))
+        en.append(f"{name['en'].removeprefix('The ')} " + "; ".join(f"{v}/{page_ranges(sorted(pages), 'latin', ',')}" for v, pages in volumes.items()))
+    ar += [a for a, _ in sciences]              # the papers and the data come last, after the fiqh
     en += [b for _, b in sciences]
     return {"ar": " · ".join(ar), "en": " · ".join(en), "ids": list(ids)}
 

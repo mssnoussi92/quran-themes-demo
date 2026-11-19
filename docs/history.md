@@ -574,3 +574,76 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   (son choix), placés à la revue après les chiffres du premier quiz.
   Brouillons muets envoyés (la huppe reposée sur sa branche après un premier rendu) ; **validés par lui** : rendu, clips
   (8451, 2119, 16139), 27:27 récité au short 6, les trois accroches. Voix des six quiz le 2026-11-18.
+- **Les six quiz avec voix** (2026-11-18) : une requête prise par une autre session ce matin-là, puis les six voix en une
+  fois (run 44269152104 de `voice-test`) ; toutes les phrases retrouvées par Whisper (82 % au plus bas, « فاكرينه عايش »,
+  signalé à son oreille) ; rendu par le workflow `film` (run 44270232504, release brouillon `quiz-candidate` : 0:37, 0:48,
+  1:23, 0:59, 0:58, 1:01, −16 LUFS), contrôlé sur les planches, envoyé. **Validé par lui** (questions à choix) : la voix,
+  les couvertures et l'ambiance des six, puis les textes à coller (`docs/retention/publication-quiz.md`). Les sources
+  restent proposées.
+
+## Une série éducative, « إزاي أعملها؟ » ; une source de fiqh dans la politique (2026-11-17)
+
+- **Demande du propriétaire** : explorer une série éducative qui garde un début fort, par exemple سجود السهو. La session
+  (skill `choose-format`) : le début d'une série éducative tend vers la leçon d'abord, ce que les mesures punissent ; règle
+  proposée, un fait tiré d'un texte ou l'erreur en mouvement d'abord. Le vrai risque était le fiqh : les hadiths placent les
+  deux prosternations avant et après le salam, les écoles diffèrent, la politique n'avait aucune source pour le dire.
+- **Ses choix** (questions à choix) : élargir à une source de fiqh et dire les avis des écoles quand elles diffèrent ; des
+  shorts sans film, des scènes et un montage nouveaux, au moins un short « comment faire » (« souvent j'oublie comment
+  faire si j'oublie dans la salat ») ; tout produire maintenant (il revient sur « mesurer d'abord », 2026-11-16).
+- **La source** : la Encyclopédie de fiqh koweïtienne, lue depuis la session sur turath.io (livre 11430, pagination de
+  l'imprimé ; article « سجود السهو », vol. 24, p. 234-241). Dans la politique pour tout le dépôt, avec la règle des quatre
+  écoles (`content/policy.yaml`, `fiqh`).
+- **Le pilote** (`docs/scripts/sahw.md`) : `sahun`, `khams`, `nasit` (le « comment faire »), `shakk` ; Dhul-Yadayn écarté
+  (les pages lues ne donnent pas les quatre avis pour ce cas). Script validé sans la ligne « اعمل بالمذهب اللي بتتّبعه »
+  (un conseil de la session, retiré à sa demande) ; montage validé sur quatre images (`docs/retention/sahw-style*.jpg`),
+  les nombres en 1 2 3.
+
+### « إزاي أعملها؟ » produite, corrigée, validée, au calendrier (2026-11-17 et 18)
+
+- **Produit** : sources (dont six pages de l'Encyclopédie koweïtienne, type `fiqh` construit par un agent et relu ligne à
+  ligne), lectures de Muslim 571a et 572a (Ryadussalihin.org), coupes de Tawfiq As-Sayegh (107:4-5 et 114:4, 114:6 posées à la
+  main), dessins (`Sahw.tsx`), voix (trois prises le 17, celle de `shakk` le 18 : le quota du 17 était épuisé), rendus par le
+  workflow `film`, un short à la fois.
+- **Ses corrections** (questions à choix) : le sujud (genoux en l'air, tête hors du tapis) refait articulation par articulation
+  et la silhouette ancrée sur ses genoux ; deux coquilles de la traduction anglaise corrigées dans le sous-titre seulement,
+  notées au registre (`en_corrections`) ; rien d'ajouté sur ce qu'on dit dans les deux prosternations (l'encyclopédie n'en dit
+  rien ; « سبحان من لا ينام ولا يسهو » : Ibn Hajar, « لم أجد له أصلًا », pas mentionné, son choix).
+- **Validé par lui** : les trois premiers shorts et leurs sources le 17, `shakk` et ses sources, les quatre accroches et les
+  textes à coller le 18. **Au calendrier** du lundi 4 au jeudi 7 janvier (son choix).
+- **Fusion avec `main`** (le quiz et le film « مخيّر ولا مسيّر؟ » d'une autre session) : la règle « 1 2 3 » vaut désormais
+  partout, l'option `digits: latin` de cette série ne change plus rien ; le registre reconstruit depuis `main` avec les
+  entrées de cette branche.
+- **Sa page** (« Films et shorts à publier », son accord du 2026-11-18) : le quiz ajouté, ses six shorts. Sans retélécharger
+  les films déjà en ligne : pour eux, des vidéos-témoins de la bonne durée (lue dans leurs textes) et des images-témoins ;
+  `gallery.py` refait la page, et seuls `index.html` et les douze médias du quiz sont envoyés (les 92 autres restent).
+
+## Sa page sans ce qui est publié (2026-11-18)
+
+- **Sa demande** : « mettre à jour la page et supprimer ceux qui sont publiés ; pour info, du'a short 1 est publié ». Le
+  short 1 du du'a est barré dans le calendrier (mardi 17), après le film du 16.
+- **Fait** : `gallery.py` laisse hors de la page chaque vidéo d'une ligne barrée du calendrier, sa carte et ses médias
+  (`published_off`) ; un film ou une série dont tout est publié en sort ; la ligne reste, barrée, sans lien. Le lien d'un
+  film dit ce qui reste (« 2 shorts (le film 16:9 est publié) »). Test : `test_a_published_video_leaves_the_page`.
+  Retirés le 18 : le film du du'a, son film vertical et son short 1 (les médias du film vertical étaient déjà partis).
+- **Le quiz et le film « مخيّر ولا مسيّر؟ »**, ajoutés à la page par d'autres sessions, y restent : refaits ici avec des
+  vidéos-témoins de la bonne durée (lue dans leurs textes), comme l'avait fait la session du quiz ; seule la page est
+  envoyée, leurs médias restent ceux qu'elles ont mis. Les liens des releases brouillon sont relus (ceux des films
+  verticaux de Dhul-Qarnayn et de la caverne avaient changé avec leur version TikTok).
+
+## La page test Meta « معاك 5 ثواني » et ses trois quiz (2026-11-18)
+
+- **Sa question** (session quran-reels) : les premières statistiques sont-elles bonnes, et faut-il de nouvelles pages
+  pour ne laisser que le Coran sur la Page ? Avis de la session : l'écart n'existe que sur YouTube (un short thématique
+  279 vues contre 904 pour un reel), probablement par la durée ; sur Instagram un short thématique fait autant qu'un reel
+  (132 contre 142). **Ses choix** : une seule Page, la décision à la revue du 6 décembre ; la version courte de
+  Dhul-Qarnayn aussi sur YouTube (quran-reels, PR #78).
+- **Puis son doute sur Meta** : une page test. La session l'a déconseillée (le point faible de Meta, 72 % partis avant 3 s,
+  est le même partout) et a refusé la même vidéo sur deux pages (Meta réduit la diffusion des copies). **Son choix** :
+  l'essai propre, les quiz 4 à 6 (en réserve) sur une page neuve, « معاك 5 ثواني » (Facebook et Instagram,
+  `@ma3ak.5.thawani`), le jour et l'heure des quiz 1 à 3 sur l'Instagram de la Page. Protocole : `docs/insights.md` de
+  quran-reels (PR #79).
+- **Fait** : sa photo de profil, sa couverture Facebook et sa bio (validées par lui) ; les quiz 4 à 6 rendus signés du
+  nom de la page test (`handles.ma3ak` de `content/publish.yaml`, `elsewhere` de `quiz.yaml`, `videos.py --only ma3ak`,
+  une couverture prend `platform` comme la vidéo ; PR #57, run 44375756327 : 0:58, 0:58, 1:01, −16 LUFS), contrôlés sur
+  leurs planches, envoyés ; **validés par lui le 2026-11-18**, numéros 4, 5 et 6 gardés (son choix). Ses textes : ceux
+  des « Short 4 » à « Short 6 » de `publication-quiz.md`, tels quels.

@@ -10,7 +10,11 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 # « Je valide rendu et clip » du propriétaire (2026-11-17, question à choix nommant le rendu sans voix du workflow `film`,
 # run 44121795304, et son clip) : le montage, les dessins et le clip tels que rendus. La voix, la couverture et l'ambiance
 # sous la voix restent à valider sur la vidéo finale. Inscrit sur sa parole.
-validated: { by: mssnoussi92, on: 2026-11-17, what: [montage] }
+# « Je valide les 3 » du propriétaire (2026-11-18, question à choix nommant la voix, les couvertures et l'ambiance sous
+# la voix des vidéos avec voix du workflow `film`, run 44270232504) : ajoutés au montage validé le 2026-11-17 ; puis
+# « je valide les textes » (même jour, question à choix nommant les titres et descriptions de publication-quiz.md).
+# Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-18, what: [voice, montage, cover, publish, ambience] }
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 90-trial-sabr
@@ -18,7 +22,7 @@ text: 90-trial-sabr
 # de « آية وحكايتها ») : la lumière qui vient après la nuit ; APPROUVÉ pour ce short par le propriétaire le 2026-11-17
 clip: { source: pixabay, id: 2119, author: bellergy, page: "https://pixabay.com/videos/id-2119/", take: { slow: 5, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.6, ground: "#07060b", horizon: 1380, veil: 0.8 }
 ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 10, seconds: 60, level: -36 }
-cover: { scene: ask, title: "«فصبر جميل»… المرة التانية؟", tag: "معاك 5 ثواني · 5", focus: 1000 }
+cover: { scene: ask, title: "«فصبر جميل»… المرة التانية؟", tag: "معاك 5 ثواني", focus: 1000 }
 quiz:
   head: { verse: quran.12.83, from: 7, to: 8 }        # « فَصَبْرٌ جَمِيلٌ », puis la suite en blanc
   blank: { verse: quran.12.83, from: 9, to: 14 }      # ce qui remplit le blanc à la réponse : la bonne suite seulement

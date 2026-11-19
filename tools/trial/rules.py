@@ -16,9 +16,9 @@ voice) is listed at the end, to check by eye.
 
 Errors: a quoted id absent from the registry, excluded, without text or of the wrong type; a hadith outside
 content/policy.yaml; a reading with no recording; a verse with no cut in the reciter's file; what a narration
-rests on (`sources:` of a narration segment: the report it tells in its own words, the tafsir its meaning comes
-from; written on screen as a reference, never read) when it is not a hadith of the policy or the passage of a
-tafsir of the policy about a verse recited in that short; the synthetic
+rests on (`sources:` of a narration segment: the report it tells in its own words, the tafsir or the page of fiqh its meaning
+comes from; written on screen as a reference, never read) when it is not a hadith of the policy, the passage of a
+tafsir of the policy about a verse recited in that short or a page of fiqh of the policy; the synthetic
 voice saying a quote (four words in a row of a verse of the registry, in its Uthmani or its everyday spelling,
 or of a hadith quoted in that file; a net, not a proof: a line is still read by a person);
 a voice text that differs from the lines; a broken `reuse`, `lines` or `subscribe` in a film; a missing
@@ -195,6 +195,13 @@ def add_runs(into: dict, words: list[str], owner: str, other: list[str] | None =
             into.setdefault(run, owner)
 
 
+def add_reading(into: dict, src: dict, sid: str) -> None:
+    """The runs of the words a hadith card shows, its formulas apart (« صلى الله عليه وسلم » after his name), as for a
+    report told: every line says them too, and they are not a quotation of the hadith."""
+    for piece in FORMULA.split(fold(shown_words(src))):
+        add_runs(into, words_of(piece), sid)
+
+
 def dagger_as_alef(text: str) -> str:
     return text.replace("\u0640\u0670", "ا").replace("\u0670", "ا")
 
@@ -233,6 +240,7 @@ class Checker:
     def __init__(self, repo: Repo, out: Findings, draft: bool):
         self.repo, self.out, self.draft = repo, out, draft
         self.delivered = False                    # the file being read has videos the owner validated: its lines are settled
+        self.pace = None                          # the `pace` of the short being estimated (adhkar to read)
         self.unvalidated: list[str] = []          # what is quoted and not validated yet (one line per film)
 
     # -- quotes
@@ -256,8 +264,8 @@ class Checker:
         if src.get("status") != "validated" and f"source {sid}" not in self.unvalidated:
             self.unvalidated.append(f"source {sid}")
         if part is not None:
-            if kind != "reading":
-                self.out.error(file, f"`part` is for a `reading` segment, not for {kind} {sid}")
+            if kind not in ("reading", "card"):
+                self.out.error(file, f"`part` is for a `reading` or a `card` segment, not for {kind} {sid}")
                 return None
             whole = src
             src = script.part_view(whole, part)
@@ -270,6 +278,9 @@ class Checker:
             if f"{ref['surah']}:{ref['ayah']}" not in self.repo.cuts:
                 self.out.error(file, f"verse {sid} has no cut in the reciter's file (content/recitations/)")
             self.glyphs(file, src["text_ar"], "quran", f"verse {sid}")
+        elif kind == "card":                       # shown only, never read: no recording to find
+            self.in_policy(file, sid, src)
+            self.glyphs(file, src.get("excerpt_ar") or src["text_ar"], "arabic", f"card {sid}" + (f" part {part}" if part else ""))
         else:
             self.hadith(file, sid, src, part)
             self.glyphs(file, src.get("excerpt_ar") or src["text_ar"], "arabic", f"reading {sid}" + (f" part {part}" if part else ""))
@@ -386,8 +397,13 @@ class Checker:
                 if not about & recited:
                     self.out.error(file, f"{where}: source {sid} explains {', '.join(sorted(about))}, which this short does not recite")
                     continue
+            elif src.get("type") == "fiqh":
+                # A page of a book of fiqh: no recited verse needed; its edition must be the policy's.
+                if src["ref"]["edition"] not in ((self.repo.policy.get("fiqh") or {}).get("editions") or {}):
+                    self.out.error(file, f"{where}: source {sid}: fiqh « {src['ref']['edition']} » is outside content/policy.yaml")
+                    continue
             else:
-                self.out.error(file, f"{where}: source {sid} is of type « {src.get('type')} »: a narration rests on a hadith or a tafsir, or on a science source (a verse is recited: `verse:`)")
+                self.out.error(file, f"{where}: source {sid} is of type « {src.get('type')} »: a narration rests on a hadith, a tafsir or a page of fiqh, or on a science source (a verse is recited: `verse:`)")
                 continue
             if src.get("status") != "validated" and f"source {sid}" not in self.unvalidated:
                 self.unvalidated.append(f"source {sid}")
@@ -478,7 +494,9 @@ class Checker:
     def short(self, path: Path) -> dict | None:
         file = self.repo.rel(path)
         spec = yaml.safe_load(path.read_text(encoding="utf-8"))
-        self.required(file, spec, ["id", "text", "segments", "cover.title", "publish.title.ar", "publish.title.en",
+        # A short with no voice at all (adhkar to read: every narration `silent`) has no voice text.
+        voiced = any("narration" in s and not s.get("silent") for s in spec.get("segments") or [])
+        self.required(file, spec, ["id"] + (["text"] if voiced else []) + ["segments", "cover.title", "publish.title.ar", "publish.title.en",
                                    "publish.description.ar", "publish.description.en", "publish.part"])
         if not spec.get("clip") and not spec.get("validated"):      # the script and the voice come before the pictures
             self.out.warn(file, "no `clip` yet: the pictures come after the script (tools/trial/clip.py, shown to the owner)")
@@ -499,12 +517,19 @@ class Checker:
                 recited |= self.passage(file, seg["verses"], seg.get("upto"))
             elif "upto" in seg:
                 self.out.error(file, "`upto` is for a `verses` segment of one verse")
-            if "part" in seg and "reading" not in seg:
-                self.out.error(file, f"`part` is for a `reading` segment: {seg_name(seg)}")
+            if "part" in seg and "reading" not in seg and "card" not in seg:
+                self.out.error(file, f"`part` is for a `reading` or a `card` segment: {seg_name(seg)}")
+            if "card" in seg:
+                src = self.quoted(file, seg["card"], "card", seg.get("part"))
+                if src:     # the voice says none of its words (there is no voice under it, but a line elsewhere)
+                    add_reading(hadiths, self.repo.sources[seg["card"]], seg["card"])
+                for ours in (seg.get("label"), seg.get("count")):
+                    if ours:
+                        self.glyphs(file, ours, "lines", f"card {seg['card']}, « {ours} »")
             if "reading" in seg:
                 src = self.quoted(file, seg["reading"], "reading", seg.get("part"))
                 if src:     # the whole hadith, even when only a part is read: the voice says none of its words
-                    add_runs(hadiths, words_of(shown_words(self.repo.sources[seg["reading"]])), seg["reading"])
+                    add_reading(hadiths, self.repo.sources[seg["reading"]], seg["reading"])
         for seg in segments:
             if "sources" in seg:
                 if "narration" in seg:
@@ -571,13 +596,19 @@ class Checker:
                 src = script.part_view(src, seg["part"]) or {}
             rec = src.get("recording")
             return rec["end"] - rec["start"] if rec else script.UNKNOWN_READING
+        if "card" in seg:
+            src = self.repo.sources.get(seg["card"]) or {}
+            if seg.get("part"):
+                src = script.part_view(src, seg["part"]) or {}
+            return script.card_seconds(src.get("excerpt_ar") or src.get("text_ar") or "", seg.get("hold"), self.pace)
         return max(script.spoken(seg.get("lines") or []), seg.get("hold") or 0)
 
     def estimate_short(self, spec: dict) -> float:
-        t = script.LEAD
+        t, self.pace = script.LEAD, spec.get("pace")
         for seg in spec.get("segments") or []:
-            t += self.seconds_of(seg) + script.GAP
-        return t - script.GAP + script.TAIL
+            t += self.seconds_of(seg) + script.gap_of(spec)
+        self.pace = None
+        return t - script.gap_of(spec) + script.TAIL
 
     # -- a series: shorts that stand alone, no film
     def series(self, path: Path, spec: dict) -> tuple[dict, dict]:
@@ -618,7 +649,7 @@ class Checker:
                 if "reading" in seg:
                     src = self.quoted(file, seg["reading"], "reading", seg.get("part"))
                     if src:     # the whole hadith, even when only a part is read
-                        add_runs(hadiths, words_of(shown_words(self.repo.sources[seg["reading"]])), seg["reading"])
+                        add_reading(hadiths, self.repo.sources[seg["reading"]], seg["reading"])
         for chapter in spec.get("chapters") or []:
             title = chapter.get("title") or {}
             if not title.get("ar") or not title.get("en"):
@@ -680,7 +711,7 @@ class Checker:
 
 
 def seg_name(seg: dict) -> str:
-    return next((f"{k}: {v}" for k, v in seg.items() if k in ("verse", "verses", "reading", "narration", "reuse")), "?") + (f" (part {seg['part']})" if seg.get("part") else "")
+    return next((f"{k}: {v}" for k, v in seg.items() if k in ("verse", "verses", "reading", "card", "narration", "reuse")), "?") + (f" (part {seg['part']})" if seg.get("part") else "")
 
 
 # ---- Main -----------------------------------------------------------------------------------------------------

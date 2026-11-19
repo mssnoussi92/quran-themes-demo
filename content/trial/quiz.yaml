@@ -9,6 +9,12 @@ id: quiz
 files: quiz                      # début du nom des vidéos livrées : quiz-short-<n>-<id>.mp4
 title: { ar: "معاك 5 ثواني", en: "You Have 5 Seconds" }       # choisi par le propriétaire le 2026-11-17
 shorts: [sayyara, khatima, qalaha, dabba, sabr, hudhud]
+# Published on another page only (owner's choice, 2026-11-18): the test page on Meta, « معاك 5 ثواني », gets the
+# quizzes 4 to 6, the same days and hours as the quizzes 1 to 3 on the Page's Instagram (23 and 30 November, 28
+# December), signed with its name (`handles` of content/publish.yaml): `--only ma3ak` of tools/trial/videos.py renders
+# them and their covers as <name>-ma3ak.mp4 and <name>-ma3ak-cover.jpg. They never go to the Page itself.
+elsewhere: { ma3ak: [dabba, sabr, hudhud] }
+validated: { by: mssnoussi92, on: 2026-11-18, what: [publish] }      # « je valide les textes », après l'envoi de publication-quiz.md
 handle: "@quran_words_daily"
 publish:
   out: docs/retention/publication-quiz.md

@@ -27,6 +27,22 @@ tafsir:
     # sur quoi repose une réplique qui dit un statut, ses conditions ou la divergence des écoles. Un statut n'est la réponse
     # d'un quiz que s'il est donné sans divergence (skill write-hook).
     qurtubi: { quran_com: 90, ar: "تفسير القرطبي", en: "Tafsir al-Qurtubi" }
+# Fiqh (décision du propriétaire, 2026-11-17, questions à choix : « Élargir à une source de fiqh », « Encyclopédie
+# koweïtienne », « Fiqh partout, le reste ici ») : une source comparée des quatre écoles, pour tout le dépôt. Comme un
+# tafsir : un passage n'est ni lu ni affiché mot pour mot ; une réplique (ou une carte des écoles) repose dessus
+# (`sources:` d'un segment de narration), son nom et sa page s'écrivent dessous et dans la description. Texte lu sur
+# turath.io (pagination de l'édition imprimée) par tools/sources/fetch.py, jamais depuis la mémoire d'un modèle.
+# La règle qui va avec : quand les écoles diffèrent, les quatre sont dites, chacune avec son avis tel que le passage le
+# donne, jamais une seule et jamais « الصح » ; un cas dont le passage ne donne pas les quatre avis n'est pas traité.
+# Tout autre livre de fiqh : demander au propriétaire avant d'élargir.
+fiqh:
+  editions:
+    kuwaiti:
+      turath: 11430
+      ar: "الموسوعة الفقهية الكويتية"
+      en: "The Kuwaiti Encyclopedia of Islamic Jurisprudence"
+      publisher: "وزارة الأوقاف والشئون الإسلامية - الكويت"
+  schools: [hanafi, maliki, shafii, hanbali]
 quran:
   translation: sahih-international
   reciter: sayegh

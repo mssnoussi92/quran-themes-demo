@@ -26,7 +26,7 @@ the clip's `rate: 1`).
 
 `clip: {source: generated, kind: night, seconds: 20}` of a short needs no clip from anywhere: ffmpeg draws it
 (`generated()`; 1080x1920, 30 fps, H.264), for a short whose picture is all drawn over a plain ground. No network,
-no key, nothing to credit. The only kind is `night`: a deep sky from #02040b at the top to #0a1230 at the
+no key, nothing to credit. Kinds: `room` (#121a33 to #2a2026, a prayer room at dawn) and `night`: a deep sky from #02040b at the top to #0a1230 at the
 bottom, a very faint grain that moves slowly so that the encoder does not band the gradient; no star, the
 drawings add them.
 
@@ -171,7 +171,12 @@ def prepared(source: Path, out: Path, take: dict) -> None:
 
 
 # Generated clips (`clip.source: generated`): kind -> (RGB at the top, RGB at the bottom): #02040b, #0a1230.
-GENERATED = {"night": ((2, 4, 11), (10, 18, 48))}
+GENERATED = {
+    "night": ((2, 4, 11), (10, 18, 48)),
+    # a prayer room at dawn (« إزاي أعملها؟ »): the walls in the half-light, warmer near the floor; the window, the beam
+    # and the rug are drawn over it (video/src/trial/Sahw.tsx)
+    "room": ((18, 26, 51), (42, 32, 38)),
+}
 
 
 def generated(clip: dict, out: Path) -> None:

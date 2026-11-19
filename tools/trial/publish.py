@@ -60,9 +60,12 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
 
     hadith = verse = False
     for kind, sid in ids:
-        if kind in ("report", "tafsir", "science"):      # what a narration rests on (`sources:`): told, explained or measured, never read
+        if kind in ("report", "tafsir", "fiqh", "science"):      # what a narration rests on (`sources:`): told, explained or measured, never read
             flush()
-            lines.append(rests_on(kind, sid))
+            line = rests_on(kind, sid, [i for k, i in ids if k == "fiqh"])
+            if kind == "fiqh" and any(l.split(" · ")[:2] == line.split(" · ")[:2] for l in lines):
+                continue                                         # one line per book and volume: its pages are merged in it
+            lines.append(line)
             hadith = hadith or kind == "report"
         elif kind == "verse":
             verse = True
@@ -70,6 +73,11 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
                 flush()
             if sid not in run:
                 run.append(sid)
+        elif kind == "card":                             # a dhikr written to be read: no reader
+            flush()
+            hadith = True
+            src = sources[sid]
+            lines.append(" · ".join(x for x in (f"• {src['reference_en']}", src.get("grade_note"), src["url"]) if x))
         else:
             flush()
             hadith = True
@@ -84,9 +92,10 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
     return unique, hadith, verse
 
 
-def rests_on(kind: str, sid: str) -> str:
-    """The line of a report a narration tells in its own words, of the tafsir its meaning comes from, or of the
-    paper or the data (a `science` source) a claim rests on."""
+def rests_on(kind: str, sid: str, fiqh_ids: list[str] | None = None) -> str:
+    """The line of a report a narration tells in its own words, of the tafsir its meaning comes from, of the pages of
+    fiqh it rests on (one line per edition: `fiqh_ids` are all the fiqh sources of the video, those of this one's
+    edition and volume merged), or of the paper or the data (a `science` source) a claim rests on."""
     import sources as registry              # tools/trial/sources.py
 
     e = registry.entry_of(sid)
@@ -97,6 +106,12 @@ def rests_on(kind: str, sid: str) -> str:
         letter = chr(96 + ref["narration"]) if ref.get("narration") else ""
         return f"• {registry.COLLECTIONS[ref['collection']]} {ref['number']}{letter} (told in the narration's own words) · {e['url']}"
     policy = yaml.safe_load((ROOT / "content" / "policy.yaml").read_text(encoding="utf-8")) or {}
+    if kind == "fiqh":
+        edition = policy["fiqh"]["editions"][ref["edition"]]
+        pages = sorted({registry.entry_of(i)["ref"]["page"] for i in fiqh_ids or [sid]
+                        if registry.entry_of(i)["ref"]["edition"] == ref["edition"] and registry.entry_of(i)["ref"]["volume"] == ref["volume"]})
+        return (f"• Rulings after {edition['en']}, vol. {ref['volume']}, p. {registry.page_ranges(pages, 'latin')} · "
+                f"{edition['ar']} {registry.num(ref['volume'])}/{registry.page_ranges(pages, None, '،', '-')} · {e['url']}")
     name = policy["tafsir"]["editions"][ref["edition"]]["en"]
     return f"• Meaning after {name} ({ref['surah']}:{ref['ayah']}) · {e['url']}"
 
@@ -114,8 +129,11 @@ def quotes_of(segments: list[dict]) -> list[tuple[str, str]]:
         elif "reading" in s:
             if ("reading", s["reading"]) not in ids:       # a part and the whole of a hadith: one reference
                 ids.append(("reading", s["reading"]))
+        elif "card" in s:                                  # a dhikr to read: shown, never read
+            if ("card", s["card"]) not in ids:
+                ids.append(("card", s["card"]))
         for sid in s.get("sources") or []:
-            ids.append(("report" if sid.startswith("hadith.") else "science" if sid.startswith("science.") else "tafsir", sid))
+            ids.append(("report" if sid.startswith("hadith.") else "science" if sid.startswith("science.") else "fiqh" if sid.startswith("fiqh.") else "tafsir", sid))
     return ids
 
 
@@ -163,10 +181,18 @@ def cards(platform: str, title: str, description: str, credits: str, tags: str, 
             f"**{platform} · Hashtags ({len(tags.split())})**", "", block(tags)]
 
 
-def hooked(conf: dict, hook: dict) -> str:
+def hooked(conf: dict, hook: dict, voiced: bool = True) -> str:
     """The description of a short caption (Facebook, Instagram, TikTok): the hook in Egyptian Arabic and in English,
-    then the line of the AI voice (owner, 2026-11-15)."""
-    return hook["ar"] + "\n" + hook["en"] + "\n\n" + conf["lines"]["ai_voice"]
+    then the line of the AI voice (owner, 2026-11-15). A short no voice says (adhkar to read: every narration
+    `silent`) has no AI voice to declare: the line would be false."""
+    return hook["ar"] + "\n" + hook["en"] + ("\n\n" + conf["lines"]["ai_voice"] if voiced else "")
+
+
+def voiced(spec: dict) -> bool:
+    """Whether the synthetic voice says something in a short: a narration that is not `silent` (written on screen
+    only). The same test as tools/trial/rules.py, which asks a voice text of such a short only."""
+    segments = (spec.get("segments") or []) + [s for c in spec.get("chapters") or [] for s in c.get("segments") or []]
+    return any("narration" in s and not s.get("silent") for s in segments)
 
 
 def hooks_state(specs: list[dict]) -> str:
@@ -174,10 +200,11 @@ def hooks_state(specs: list[dict]) -> str:
     hooks = [(s.get("publish") or {}).get("hook") for s in specs]
     if not any(hooks):
         return ""
+    ai = " et voix IA" if any(voiced(s) for s in specs) else ""
     if all(h and h.get("validated") for h in hooks):
-        return (" Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **validées par "
+        return (f" Légendes courtes de Facebook, Instagram et TikTok (titre, accroche{ai}, hashtags) **validées par "
                 f"le propriétaire le {max(str(h['validated']) for h in hooks)}**.")
-    return (" Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **proposées par la "
+    return (f" Légendes courtes de Facebook, Instagram et TikTok (titre, accroche{ai}, hashtags) **proposées par la "
             "session, pas encore validées par le propriétaire** : rien n'est publié avec elles avant.")
 
 
@@ -271,7 +298,8 @@ def main() -> None:
         f"# {pub['series']['en']} · {pub['series']['ar']} : textes de publication",
         "",
         (f"Pour {'chaque short' if series_only else 'le film et chaque short'}, les textes à copier : sur Facebook, Instagram et TikTok, "
-         "la légende courte en trois textes, le titre, l'accroche avec la ligne de la voix IA, les hashtags ; sur YouTube, quatre textes, le titre, "
+         "la légende courte en trois textes, le titre, l'accroche " + ("avec la ligne de la voix IA" if any(voiced(s) for s in shorts) else "(pas de voix, pas de ligne de la voix IA)")
+         + ", les hashtags ; sur YouTube, quatre textes, le titre, "
          f"la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags, collés dans la même description. {status} ; "
          if short_captions else
          f"Pour {'chaque short' if series_only else 'le film et chaque short'}, sur chaque plateforme, quatre textes à copier : le titre, la description, "
@@ -382,11 +410,11 @@ def main() -> None:
 
         def social(handle: str, platform: str) -> list[str]:
             if hook:
-                return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading, hooked(conf, hook), "", tags(platform))
+                return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading, hooked(conf, hook, voiced(spec)), "", tags(platform))
             return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading, description(handle), credits, tags(platform))
 
         # The cards end up in one caption: its length is theirs together.
-        insta = ("\n\n".join([heading, hooked(conf, hook), tags("instagram")]) if hook else
+        insta = ("\n\n".join([heading, hooked(conf, hook, voiced(spec)), tags("instagram")]) if hook else
                  "\n\n".join([heading, description(conf["handle"]), credits, tags("instagram")]))
         if len(insta) > limits["instagram_tiktok"]["max_caption"]:
             sys.exit(f"error: {name}: the Instagram caption is {len(insta)} characters")
