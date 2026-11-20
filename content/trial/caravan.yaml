@@ -25,6 +25,12 @@ script_validated: { by: mssnoussi92, on: 2026-11-12 }
 # et les dessins), la couverture, l'ambiance, les textes de publication (`publish`, docs/retention/publication-ayah.md,
 # envoyés) ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
 validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
+# Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
+# on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). Publié le 20 novembre : refait seulement pour là où il n'est
+# pas encore en ligne (le brouillon TikTok, YouTube à la main), son choix. Les deux phrases qui redisent 62:11
+# sortent (`drop`, la prise gardée) ; l'exemple joué par un bonhomme au visage simple (`work`, Played.tsx) ; la
+# narration après le verset en sous-titre. À valider sur images, puis sur la vidéo.
+drop: ["meaning:0", "meaning:1"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 50-trial-caravan     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
@@ -83,7 +89,7 @@ segments:
       - ar: "ودول مين؟ الصحابة… أحسن ناس. طب وإحنا؟"
         en: "And who were they? The Companions… the best of people. So what about us?"
   - narration: example
-    scene: phone
+    scene: work
     sources: [tafsir.saadi.62.11]
     lines:
       - ar: "زي الأدان يأذّن وإنت في نص شغل… وتقول: أخلّص اللي في إيدي الأول."

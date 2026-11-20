@@ -266,20 +266,19 @@ def drop_items(spec: dict, items: list, field: str) -> tuple[set[str], set[tuple
 
 
 def parse_drop(spec: dict) -> tuple[set[str], set[tuple[str, int]], set[str]]:
-    """What `cut.drop` of a short names (the version for Facebook and Instagram), with what its `drop` leaves out of
-    every version."""
+    """What `cut.drop` of a short names: the version for Facebook and Instagram has its own list, validated on its own
+    (the owner, 2026-11-20, on Dhul-Qarnayn: « le reste de sa coupe ne change pas »); `drop` does not add to it."""
     items = (spec.get("cut") or {}).get("drop")
     if not items:
         sys.exit(f"error: {spec.get('id')}: --cut needs a `cut: {{drop: [...]}}` in its file")
-    whole, lines, verses = drop_items(spec, items, "cut.drop")
-    w, l, v = left_out(spec)
-    return whole | w, lines | l, verses | v
+    return drop_items(spec, items, "cut.drop")
 
 
 def left_out(spec: dict) -> tuple[set[str], set[tuple[str, int]], set[str]]:
-    """What `drop` of a short leaves out of every version (the owner, 2026-11-20, on « آية وحكايتها »: « après le verset
-    on parle trop »): lines the take still says, so that the voice text stays the take and no voice request is spent,
-    and that no video plays. Same grammar as `cut.drop`."""
+    """What `drop` of a short leaves out of its full version and its TikTok twin (the owner, 2026-11-20, on « آية
+    وحكايتها »: « après le verset on parle trop »): lines the take still says, so that the voice text stays the take and
+    no voice request is spent, and that these videos do not play. The short version has its own list (`cut.drop`).
+    Same grammar."""
     items = spec.get("drop") or []
     return drop_items(spec, items, "drop") if items else (set(), set(), set())
 

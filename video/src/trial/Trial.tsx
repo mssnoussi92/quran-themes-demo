@@ -11,6 +11,7 @@ import { subtitleChunks } from "../templates/Subtitles";
 import type { WordTiming } from "../types";
 import { Caravan, Footprints, Gate, Lantern, Palm, Purse, Rain, Sermon, Stars, Track, trackAt } from "./Ayah";
 import { DoorPlayed, PrayPlayed, RumorPlayed, type Played } from "./AyahPlayed";
+import { OfficePlayed, StagePlayed, WorkPlayed, WorkshopPlayed } from "./Played";
 import { Boat, Fleet } from "./Boat";
 import { Call, Niche, Whale } from "./Dua";
 import { House, Land } from "./Home";
@@ -479,6 +480,48 @@ export const PICTURES: Record<string, Drawn> = {
   ...SAHIB_PICTURES,
 };
 
+/** Scenes played by stick figures over a short's own picture (the audit of 2026-11-20, docs/scripts/audit-apres-verset.md:
+ * « sur toute la vidéo, si on peut jouer une scène, on la joue »). Each entry is drawn while its `scene` is shown; with
+ * `from`, only from the phrase `from` of the first narration on that scene to the end of that narration: an « annonce »,
+ * a few seconds of the played scene on the opening line that speaks to the viewer, the story's picture before it. */
+type PlayedAt = { scene: string; set: Played; variant?: string; from?: number };
+export const PLAYED: Record<string, PlayedAt[]> = {
+  caravan: [{ scene: "work", set: WorkPlayed }],
+  west: [{ scene: "sun", set: OfficePlayed, variant: "tease", from: 5 }, { scene: "office-us", set: OfficePlayed, variant: "us" }, { scene: "office", set: OfficePlayed, variant: "ex" }],
+  tribute: [{ scene: "pass", set: WorkshopPlayed, variant: "tease", from: 7 }, { scene: "workshop-us", set: WorkshopPlayed, variant: "us" }, { scene: "workshop", set: WorkshopPlayed, variant: "ex" }],
+  barrier: [{ scene: "blocks", set: StagePlayed, variant: "tease", from: 7 }, { scene: "stage-us", set: StagePlayed, variant: "us" }, { scene: "stage", set: StagePlayed, variant: "ex" }],
+};
+
+const PlayedLayer: React.FC<{ p: PlayedAt; t: number; segments: Segment[]; show: (id: string) => number; since: (id: string) => number; phrase: (id: string, n: number) => number }> = ({ p, t, segments, show, since, phrase }) => {
+  let o: number;
+  let origin: number;
+  if (p.from !== undefined) {
+    const seg = segments.find((s) => s.scene === p.scene && s.kind === "narration");
+    if (!seg) return null;
+    origin = phrase(p.scene, p.from);
+    const end = seg.start + seg.seconds;
+    o = interpolate(t, [origin - 0.3, origin, end, end + 0.35], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  } else {
+    o = show(p.scene);
+    origin = since(p.scene);
+  }
+  if (o <= 0.001) return null;
+  const Set = p.set;
+  const drawn = <Set u={t - origin} t={t} at={(n) => phrase(p.scene, n) - origin} variant={p.variant} />;
+  if (p.from === undefined) return <g opacity={o}>{drawn}</g>;
+  // An annonce plays in a card under the opening's large text (which ends near 790) and above the translation (1490):
+  // the part of the set where its figures stand (x 40 to 1040, y 690 to 1357), at nine tenths, framed in gold.
+  const id = `card-${p.scene}-${p.variant ?? ""}`;
+  return (
+    <g opacity={o}>
+      <rect x={82} y={824} width={916} height={616} rx={38} fill="#000" opacity={0.35} />
+      <clipPath id={id}><rect x={90} y={830} width={900} height={600} rx={32} /></clipPath>
+      <g clipPath={`url(#${id})`}><g transform="translate(90 830) scale(0.9) translate(-40 -690)">{drawn}</g></g>
+      <rect x={90} y={830} width={900} height={600} rx={32} fill="none" stroke={GOLD} strokeWidth={6} />
+    </g>
+  );
+};
+
 /** What a short draws above its veil, under its texts, outside the slowly growing picture: a timeline, a badge,
  * anything that must not move. None by default; a short registers its own here. */
 export const OVERLAYS: Record<string, Drawn> = { ...SIGNS_OVERLAYS, ...KALIMA_OVERLAYS, ...COUNT_OVERLAYS, ...FARQ_OVERLAYS, ...MAP_OVERLAYS, ...SUAL_OVERLAYS, ...QUIZ_OVERLAYS, ...SAHW_OVERLAYS, ...SAHIB_OVERLAYS };
@@ -519,7 +562,10 @@ export type LayoutOverride = Omit<Partial<Layout>, "sub" | "credit"> & { sub?: P
 /** « آية وحكايتها », the shorts redone on 2026-11-20 (the first, published, keeps its texts): the narration after the
  * verse is a subtitle under the drawings, which stand on the horizon (1330) and rise to about 1170. */
 const AYAH_CAPTION: LayoutOverride = { caption: { top: 1392, size: 56, sub: 1584 } };
-export const LAYOUTS: Record<string, LayoutOverride> = { duha: AYAH_CAPTION, hope: AYAH_CAPTION, forgive: AYAH_CAPTION, ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS, ...DHIKR_LAYOUTS, ...SAHW_LAYOUTS, ...SAHIB_LAYOUTS };
+/** Dhul-Qarnayn's west: its dwellings stand on a horizon at 1420, down to about 1450: the subtitle goes lower. */
+const WEST_CAPTION: LayoutOverride = { caption: { top: 1474, size: 52, sub: 1640 } };
+export const LAYOUTS: Record<string, LayoutOverride> = { duha: AYAH_CAPTION, hope: AYAH_CAPTION, forgive: AYAH_CAPTION,
+  caravan: AYAH_CAPTION, west: WEST_CAPTION, tribute: AYAH_CAPTION, barrier: AYAH_CAPTION, ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS, ...DHIKR_LAYOUTS, ...SAHW_LAYOUTS, ...SAHIB_LAYOUTS };
 const layoutOf = (trial: string): Layout => {
   const own = LAYOUTS[trial];
   return own ? { ...PORTRAIT, ...own, sub: { ...PORTRAIT.sub, ...own.sub }, credit: { ...PORTRAIT.credit, ...own.credit } } : PORTRAIT;
@@ -581,7 +627,7 @@ export const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean;
             return <span key={i} style={{ opacity: k, color: point ? GOLD : "#fff" }}>{whole(phrase.text)}{i < line.phrases.length - 1 ? " " : ""}</span>;
           })}
         </div>
-        <div lang="en" style={{ position: "absolute", top: caption.sub, left: layout.sub.left, right: layout.sub.right, textAlign: "center", opacity: show, fontFamily: ENGLISH, fontStyle: "italic", fontSize: Math.min(38, layout.sub.size), lineHeight: 1.35, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
+        <div lang="en" style={{ position: "absolute", top: caption.sub, left: layout.sub.left, right: layout.sub.right, textAlign: "center", opacity: show, fontFamily: ENGLISH, fontStyle: "italic", fontSize: Math.min(38, layout.sub.size, Math.floor((2 * (layout.width - layout.sub.left - layout.sub.right) * 0.9) / (0.49 * Math.max(1, line.en.length)))), lineHeight: 1.35, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
           <English text={line.en} />
         </div>
         {seg.refs ? (
@@ -785,6 +831,7 @@ export const Trial: React.FC<TrialProps> = ({ data, platform, cast }) => {
         <Clip src={data.clip} clipSeconds={data.clip_seconds} picture={picture} />
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: "absolute", inset: 0 }}>
           <Drawing t={t} show={show} since={since} horizon={horizon} phrase={phrase} cast={cast} />
+          {(PLAYED[data.trial] ?? []).map((p, i) => <PlayedLayer key={i} p={p} t={t} segments={data.segments} show={show} since={since} phrase={phrase} />)}
         </svg>
       </AbsoluteFill>
       <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(4,7,20,${0.78 * (picture.veil ?? 1)}) 0%, rgba(4,7,20,${0.45 * (picture.veil ?? 1)}) 30%, rgba(4,7,20,.05) 52%, rgba(4,7,20,.38) 100%)` }} />

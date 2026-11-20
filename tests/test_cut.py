@@ -117,14 +117,14 @@ def test_a_page_of_elsewhere_lists_its_shorts_signed_with_its_name_and_their_cov
         videos.listing("f", "D", "page")
 
 
-def test_a_top_level_drop_leaves_lines_out_of_every_version():
-    """`drop` of a short (the owner, 2026-11-20): the lines stay in the take and the voice text, no version plays them;
-    the short version adds what `cut.drop` names to it."""
+def test_a_top_level_drop_leaves_lines_out_of_the_full_version_only():
+    """`drop` of a short (the owner, 2026-11-20): the lines stay in the take and the voice text, the full version and its
+    TikTok twin do not play them; the short version keeps its own list (`cut.drop`), validated on its own."""
     spec = {**SPEC, "drop": ["open:1", "quran.1.1"]}
     assert prepare.left_out(spec) == (set(), {("open", 1)}, {"quran.1.1"})
     assert prepare.left_out(SPEC) == (set(), set(), set())
     both = {**spec, "cut": {"drop": ["close"]}}
-    assert prepare.parse_drop(both) == ({"close"}, {("open", 1)}, {"quran.1.1"})
+    assert prepare.parse_drop(both) == ({"close"}, set(), set())
 
 
 def test_a_top_level_drop_that_matches_nothing_is_refused():

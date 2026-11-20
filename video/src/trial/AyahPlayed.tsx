@@ -13,31 +13,31 @@ import { Purse } from "./Ayah";
 import { walk } from "./Lens";
 import { Bubble, Phone, POSES, Stick, type Pose } from "./Sahib";
 
-const W = 1080;
-const H = 1920;
-const INK = "#17181d";
+export const W = 1080;
+export const H = 1920;
+export const INK = "#17181d";
 /** Where the figures stand: above the subtitle, which starts at 1392 (`caption` of the layout, Trial.tsx). */
-const FLOOR = 1320;
+export const FLOOR = 1320;
 const CLAMP = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
-const ramp = (u: number, a: number, b: number) => interpolate(u, [a, b], [0, 1], { ...CLAMP, easing: Easing.inOut(Easing.cubic) });
-const lerp = (a: number, b: number, k: number) => a + (b - a) * k;
-type P2 = [number, number];
-const lp = (a: P2, b: P2, k: number): P2 => [lerp(a[0], b[0], k), lerp(a[1], b[1], k)];
+export const ramp = (u: number, a: number, b: number) => interpolate(u, [a, b], [0, 1], { ...CLAMP, easing: Easing.inOut(Easing.cubic) });
+export const lerp = (a: number, b: number, k: number) => a + (b - a) * k;
+export type P2 = [number, number];
+export const lp = (a: P2, b: P2, k: number): P2 => [lerp(a[0], b[0], k), lerp(a[1], b[1], k)];
 const frac = (v: number) => v - Math.floor(v);
-const chance = (i: number, salt = 0) => frac(Math.sin(i * 127.1 + salt * 311.7) * 43758.5453);
+export const chance = (i: number, salt = 0) => frac(Math.sin(i * 127.1 + salt * 311.7) * 43758.5453);
 
-export type Played = React.FC<{ u: number; t: number; at: (n: number) => number }>;
+export type Played = React.FC<{ u: number; t: number; at: (n: number) => number; variant?: string }>;
 
 /** A figure that walks from `a` to `b` between `u0` and `u1`, its legs in step while it moves. */
-const walking = (u: number, u0: number, u1: number, a: number, b: number, rest: Pose = POSES.stand) => {
+export const walking = (u: number, u0: number, u1: number, a: number, b: number, rest: Pose = POSES.stand) => {
   const k = interpolate(u, [u0, u1], [0, 1], CLAMP);
   const x = lerp(a, b, k);
   return { x, pose: u > u0 && u < u1 ? { ...walk(Math.abs(x - a) / 30), torso: 6 } : rest };
 };
 
 /** The scale of the figures and the height of their pelvis above the floor (thigh and shin, 154 units). */
-const S = 1.45;
-const PELVIS = FLOOR - 154 * S;
+export const S = 1.45;
+export const PELVIS = FLOOR - 154 * S;
 
 // -------------------------------------------------------------------------------------------- 93: the du'a at night
 

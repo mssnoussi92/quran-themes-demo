@@ -143,10 +143,11 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
   Instagram quand la ligne en nomme un ; les textes sont les mêmes. Pour la mettre dans la release brouillon sans rien re-rendre
   de validé : workflow `film` avec `only: cut` (les seules versions courtes du film), puis `page-files`.
 - `drop: [...]` dans le fichier d'un short (propriétaire, 2026-11-20, « après le verset on parle trop ») : ce qui sort de
-  **toutes** les versions (entière, TikTok, courte), même grammaire que `cut.drop` (`"meaning:0"`, un segment, un verset).
+  la version entière et de son jumeau TikTok, même grammaire que `cut.drop` (`"meaning:0"`, un segment, un verset) ; la
+  version courte garde sa propre liste, `cut.drop`, validée à part (« le reste de sa coupe ne change pas »).
   Les répliques restent dans le fichier, dans le texte de la voix et dans la prise : aucune requête de voix, `rules.py`
   compare toujours le texte à toutes les répliques ; `prepare.py` coupe la prise autour d'elles, `script.py` les barre
-  (« coupée ») et ne les compte pas, `rules.py` non plus dans sa durée. La version courte ajoute `cut.drop` à `drop`.
+  (« coupée ») et ne les compte pas, `rules.py` non plus dans sa durée.
 - `caption` du layout d'un short (`LAYOUTS` de `Trial.tsx` ; « آية وحكايتها » 2 à 4, 2026-11-20) : la narration après le
   premier verset en sous-titre, en bas et plus petite (deux lignes au plus), l'anglais dessous ; le dessin garde le
   milieu. L'accroche (avant le verset) et l'appel à s'abonner (la dernière réplique, son choix) gardent leur place en grand.

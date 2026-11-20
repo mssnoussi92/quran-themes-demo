@@ -360,7 +360,7 @@ const Sandwich: React.FC = () => (
   </g>
 );
 
-const Coin: React.FC<{ x: number; y: number }> = ({ x, y }) => (
+export const Coin: React.FC<{ x: number; y: number }> = ({ x, y }) => (
   <g>
     <ellipse cx={x} cy={y} rx={13} ry={6} fill="#e8c35a" stroke={INK} strokeWidth={3} />
     <ellipse cx={x - 3} cy={y - 1} rx={4} ry={2} fill="#fff1b8" />
@@ -425,7 +425,7 @@ export const Bubble: React.FC<{ x: number; y: number; text: string; k: number; t
 };
 
 /** A jagged bubble of shouting: signs, never words. */
-const Burst: React.FC<{ x: number; y: number; k: number }> = ({ x, y, k }) => {
+export const Burst: React.FC<{ x: number; y: number; k: number }> = ({ x, y, k }) => {
   if (k <= 0) return null;
   const pts = Array.from({ length: 16 }, (_, i) => {
     const a = (i / 16) * Math.PI * 2;
@@ -441,7 +441,7 @@ const Burst: React.FC<{ x: number; y: number; k: number }> = ({ x, y, k }) => {
 };
 
 /** A small bubble with a heart: a thank-you without a word. */
-const Heart: React.FC<{ x: number; y: number; k: number }> = ({ x, y, k }) => {
+export const Heart: React.FC<{ x: number; y: number; k: number }> = ({ x, y, k }) => {
   if (k <= 0) return null;
   return (
     <g transform={`translate(${x} ${y}) scale(${Math.min(1, 0.4 + 0.6 * k)})`} opacity={Math.min(1, k * 2)}>

@@ -17,6 +17,13 @@ script_validated: { by: mssnoussi92, on: 2026-11-11 }
 # sur la vidéo entière, le montage, la couverture, l'ambiance, et les textes de publication (`publish`,
 # docs/retention/publication-qarnayn.md, envoyés). Inscrit sur sa parole.
 validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
+# Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
+# on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). « Change tout », confirmé : la version entière (YouTube,
+# TikTok) sans les phrases qui redisent le verset (`drop`), « وإحنا كده » joué en gris (ce qu'on fait de travers)
+# puis l'exemple en blanc (le juste), une annonce jouée dans l'ouverture dès « هيغيّر نظرتك لكل حد محتاجك »
+# (PLAYED de Trial.tsx) ; la version courte garde l'annonce et l'exemple joués, le reste de sa coupe ne change pas.
+# Dhul-Qarnayn et le peuple ne sont jamais dessinés. À valider sur images, puis sur la vidéo.
+drop: ["meaning:0", "meaning:2"]
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 225408, author: AttilaPergel, page: "https://pixabay.com/videos/id-225408/", position: "50% 40%", brightness: 0.7, landscape: { side: left, horizon: 700, brightness: 0.65 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
@@ -29,7 +36,7 @@ cover: { scene: offer, title: "عرضوا عليه فلوس… ورفض!", tag: 
 # ليه؟ » ouvre déjà la vidéo. Proposée par la session ; validée par lui le 2026-11-16 (question à choix : « je valide les
 # deux »), telle qu'envoyée : 1:13, la coupe sans pause avant « ما خدش فلوس » signalée à écouter.
 cut:
-  drop: [quran.18.93, "meaning:0", depth, example]
+  drop: [quran.18.93, "meaning:0", depth, depth-us]
   validated: { by: mssnoussi92, on: 2026-11-16 }
 publish:
   title: { en: "They offered him money… he refused", ar: "عرضوا عليه فلوس… ورفض!" }
@@ -78,10 +85,14 @@ segments:
     lines:
       - ar: "هما شافوا إن اللي معاهم فلوس… وهو شاف اللي معاهم بجد: إيديهم."
         en: "They thought what they had was money… he saw what they really had: their hands."
+  # « وإحنا كده », joué en gris (2026-11-20)
+  - narration: depth-us
+    scene: workshop-us
+    lines:
       - ar: "وإحنا كده: يا نستغل المحتاج… يا نشيل عنه كل حاجة. وهو خلّاهم يشتغلوا معاه."
         en: "And so are we: we either use the one in need… or do everything for him. He made them work with him."
   - narration: example
-    scene: land
+    scene: workshop
     lines:
       - ar: "زي لما حد محتاج يطلب منك مساعدة… وإنت تقدر تستغله."
         en: "Like when someone in need asks you for help… and you could take advantage of him."
