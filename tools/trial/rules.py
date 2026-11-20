@@ -623,8 +623,19 @@ class Checker:
         return max(script.spoken(seg.get("lines") or []), seg.get("hold") or 0)
 
     def estimate_short(self, spec: dict) -> float:
+        """What the short lasts, about; what its `drop` leaves out of every version (prepare.py) does not count."""
         t, self.pace = script.LEAD, spec.get("pace")
+        gone, struck = script.left_out(spec)
         for seg in spec.get("segments") or []:
+            if "narration" in seg:
+                if seg["narration"] in gone:
+                    continue
+                dropped = {i for name, i in struck if name == seg["narration"]}
+                seg = {**seg, "lines": [l for i, l in enumerate(seg.get("lines") or []) if i not in dropped]}
+                if not seg["lines"]:
+                    continue
+            elif any(sid in (spec.get("drop") or []) for sid in ([seg["verse"]] if "verse" in seg else seg.get("verses") or [])):
+                continue
             t += self.seconds_of(seg) + script.gap_of(spec)
         self.pace = None
         return t - script.gap_of(spec) + script.TAIL

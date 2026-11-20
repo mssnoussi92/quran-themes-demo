@@ -27,6 +27,16 @@ script_validated: { by: mssnoussi92, on: 2026-11-12 }
 # et les dessins), la couverture, l'ambiance, les textes de publication (`publish`, docs/retention/publication-ayah.md,
 # envoyés) ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
 validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
+# Refait à la demande du propriétaire (2026-11-20, après la publication du short 1 : « après le verset on parle trop, et
+# l'écran est presque le même, et on écrit ce que le narrateur dit ») : après le verset, une seule phrase de sens, puis
+# l'exemple de vie joué à l'écran par des bonshommes avec un visage simple (sa règle du 2026-11-19 : des inconnus,
+# jamais une personne du récit) ; la narration après le premier verset en sous-titre, en bas (`caption` du layout,
+# video/src/trial/Trial.tsx). Ses trois choix par l'outil de questions : les 3 shorts restants de la série (le short 1,
+# publié, reste tel quel), le texte en sous-titre, l'ouverture inchangée (le fait de la révélation reste l'accroche).
+# Les coupes ci-dessous et la scène jouée validées par lui le même jour sur l'aperçu de la question (« Je valide »).
+# Aucune requête de voix : les phrases coupées restent dans la prise et dans le texte de la voix (`drop`, prepare.py),
+# aucune vidéo ne les joue. Le nouveau montage (scène, sous-titre) est à valider sur ses images puis sur la vidéo.
+drop: ["meaning:0", "meaning:2", "proof:0", "proof:2"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 51-trial-duha     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
@@ -98,11 +108,15 @@ segments:
         en: "The One who lifted all that from you then… will lift what you are in now."
       - ar: "وإحنا كده: أول ما حاجة تتأخر… نقول ربنا سابنا."
         en: "And that's us: the moment something is late… we say God has left us."
+  # L'exemple joué (2026-11-20) : un bonhomme lève les mains, la nuit ; à « ولسه ما جاتش » ses sourcils tombent ; puis
+  # 3 s sans texte, les nuits passent (lune, matin, lune), les mains toujours levées.
   - narration: example
-    scene: night
+    scene: pray
     lines:
       - ar: "زي دعوة بتدعيها من شهور… ولسه ما جاتش."
         en: "Like a prayer you have been making for months… that still hasn't come."
+  - pause: 3
+    scene: pray
   - narration: close
     scene: dawn
     lines:

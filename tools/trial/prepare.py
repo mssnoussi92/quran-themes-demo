@@ -245,13 +245,10 @@ def verse_segment(by_source: dict, source: str, out_dir: Path, episode: str) -> 
             "credit": f"{media['credit'].split(': ')[-1]} · {src['translator']}"}
 
 
-def parse_drop(spec: dict) -> tuple[set[str], set[tuple[str, int]], set[str]]:
-    """What `cut.drop` of a short names (the version for Facebook and Instagram): narration segments by name, one line
-    of a narration as `name:i` (0-based), verse segments by a source id they recite. An item that matches nothing is
-    an error: a typo must not leave the short as long as it was."""
-    items = (spec.get("cut") or {}).get("drop")
-    if not items:
-        sys.exit(f"error: {spec.get('id')}: --cut needs a `cut: {{drop: [...]}}` in its file")
+def drop_items(spec: dict, items: list, field: str) -> tuple[set[str], set[tuple[str, int]], set[str]]:
+    """What a list of `drop` names: narration segments by name, one line of a narration as `name:i` (0-based), verse
+    segments by a source id they recite. An item that matches nothing is an error: a typo must not leave the short as
+    long as it was."""
     names = {seg["narration"]: len(seg["lines"]) for seg in spec["segments"] if "narration" in seg}
     ids = {i for seg in spec["segments"] for i in ([seg["verse"]] if "verse" in seg else seg.get("verses") or [])}
     whole, lines, verses = set(), set(), set()
@@ -264,8 +261,27 @@ def parse_drop(spec: dict) -> tuple[set[str], set[tuple[str, int]], set[str]]:
         elif item in ids:
             verses.add(item)
         else:
-            sys.exit(f"error: {spec.get('id')}: cut.drop « {item} » matches no narration, line (name:i) or verse of the file")
+            sys.exit(f"error: {spec.get('id')}: {field} « {item} » matches no narration, line (name:i) or verse of the file")
     return whole, lines, verses
+
+
+def parse_drop(spec: dict) -> tuple[set[str], set[tuple[str, int]], set[str]]:
+    """What `cut.drop` of a short names (the version for Facebook and Instagram), with what its `drop` leaves out of
+    every version."""
+    items = (spec.get("cut") or {}).get("drop")
+    if not items:
+        sys.exit(f"error: {spec.get('id')}: --cut needs a `cut: {{drop: [...]}}` in its file")
+    whole, lines, verses = drop_items(spec, items, "cut.drop")
+    w, l, v = left_out(spec)
+    return whole | w, lines | l, verses | v
+
+
+def left_out(spec: dict) -> tuple[set[str], set[tuple[str, int]], set[str]]:
+    """What `drop` of a short leaves out of every version (the owner, 2026-11-20, on « آية وحكايتها »: « après le verset
+    on parle trop »): lines the take still says, so that the voice text stays the take and no voice request is spent,
+    and that no video plays. Same grammar as `cut.drop`."""
+    items = spec.get("drop") or []
+    return drop_items(spec, items, "drop") if items else (set(), set(), set())
 
 
 def opened_with(spec: dict, dropped: set[str]) -> list[dict]:
@@ -363,7 +379,8 @@ def main() -> None:
     starts, gaps, take_end = place(said, whole, args.by_pauses, rule_of(spec)) if said else ([], [], 0.0)
     gain = trim(whole, rule_of(spec))
     tag = f"{args.trial}-{args.voice}" + ("-cut" if args.cut else "")   # the names of the files of this version
-    drop_whole, drop_lines, drop_verses = parse_drop(spec) if args.cut else (set(), set(), set())
+    drop_whole, drop_lines, drop_verses = parse_drop(spec) if args.cut else left_out(spec)
+    trimmed = args.cut or bool(drop_whole or drop_lines or drop_verses)      # a segment may be played in several runs
     first, k = {}, 0                                        # narration id -> its first phrase in the take
     for seg in narrated:
         first[seg["narration"]] = k
@@ -377,14 +394,14 @@ def main() -> None:
             if seg["narration"] in drop_whole:
                 continue
             dropped = {i for name, i in drop_lines if name == seg["narration"]}
-            # A cut version splits a segment at the lines left out: one segment per contiguous run, in the same
-            # scene, from the same take; the full version is one run of every line.
-            runs = kept_runs(seg["lines"], dropped) if args.cut else [(seg["lines"], 0)]
+            # A cut version, or a short with `drop`, splits a segment at the lines left out: one segment per
+            # contiguous run, in the same scene, from the same take; otherwise a segment is one run of every line.
+            runs = kept_runs(seg["lines"], dropped) if trimmed else [(seg["lines"], 0)]
             for n, (lines, before) in enumerate(runs):
                 if silent:
                     made = narration(None, *place([l["ar"] for l in lines], None), 0, lines, Path("-"))
                 else:
-                    wav = out_dir / (f"{tag}-{seg['narration']}-{n}.wav" if args.cut else f"{args.trial}-{args.voice}-{seg['narration']}.wav")
+                    wav = out_dir / (f"{tag}-{seg['narration']}-{n}.wav" if trimmed else f"{args.trial}-{args.voice}-{seg['narration']}.wav")
                     made = narration(whole, starts, gaps, take_end, first[seg["narration"]] + before, lines, wav, gain)
                 if seg.get("hold") and made["seconds"] < seg["hold"]:
                     # A series with no voice (« خريطة كلمة »): its text stays the time it takes to read it and to see what
