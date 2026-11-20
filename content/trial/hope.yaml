@@ -38,7 +38,9 @@ validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publ
 # publié, reste tel quel), le texte en sous-titre, l'ouverture inchangée (le fait de la révélation reste l'accroche).
 # Les coupes ci-dessous et la scène jouée validées par lui le même jour sur l'aperçu de la question (« Je valide »).
 # Aucune requête de voix : les phrases coupées restent dans la prise et dans le texte de la voix (`drop`, prepare.py),
-# aucune vidéo ne les joue. Le nouveau montage (scène, sous-titre) est à valider sur ses images puis sur la vidéo.
+# aucune vidéo ne les joue. Le nouveau montage validé par lui sur ses images le même jour (« Je valide les 3 scènes » :
+# les trois scènes jouées et la narration en sous-titre après le verset ; l'appel à s'abonner reste en grand en haut,
+# son choix) ; la vidéo refaite est à valider avant que les fichiers publics (`page-ayah`) changent.
 drop: ["meaning:0", "depth:1", "depth:2"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
