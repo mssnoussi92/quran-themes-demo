@@ -42,7 +42,7 @@ export const POSES = {
   bent: { torso: 16, head: 10, armF: [24, 30], armB: [-6, 8], legF: [10, -14], legB: [-8, -10] } as Pose,
 };
 
-export type Face = "neutral" | "smile" | "happy" | "shock" | "smirk" | "kind" | "puff" | "angry" | "worried" | "laugh" | "calm";
+export type Face = "neutral" | "smile" | "happy" | "shock" | "smirk" | "kind" | "puff" | "angry" | "worried" | "laugh" | "calm" | "cross";
 
 /** A simple face, drawn looking to +x (the figure's front); (0, 0) is the centre of the head. */
 const FaceMarks: React.FC<{ face: Face }> = ({ face }) => {
@@ -102,6 +102,9 @@ const FaceMarks: React.FC<{ face: Face }> = ({ face }) => {
           <path d={`M ${c - 15} 12 L ${c + 15} 12 L ${c + 10} 30 L ${c - 10} 30 Z`} fill={INK} />
         </>
       );
+    case "cross":
+      // hurt and closed (« آية وحكايتها », the one who cuts off a relative): brows down to the middle, the mouth shut and down
+      return <>{eye(-15, 5.5, 6)}{eye(15, 5.5, 6)}{line(`M ${c - 27} -27 L ${c - 6} -17`, 6)}{line(`M ${c + 6} -17 L ${c + 27} -27`, 6)}{line(`M ${c - 13} 24 Q ${c} 14 ${c + 13} 24`, 6)}</>;
     case "worried":
       // sad and unsure: brows up in the middle, the mouth down
       return <>{eye(-15)}{eye(15)}{line(`M ${c - 26} -20 L ${c - 7} -28`)}{line(`M ${c + 7} -28 L ${c + 26} -20`)}{line(`M ${c - 12} 22 Q ${c} 13 ${c + 12} 22`)}</>;
@@ -310,7 +313,7 @@ const TeaGlass: React.FC<{ x: number; y: number }> = ({ x, y }) => (
 
 // ------------------------------------------------------------------------------------------------- small props
 
-const Phone: React.FC<{ glow?: boolean; r?: number; flash?: number }> = ({ glow, r = 0, flash = 0 }) => (
+export const Phone: React.FC<{ glow?: boolean; r?: number; flash?: number }> = ({ glow, r = 0, flash = 0 }) => (
   <g transform={`rotate(${r})`}>
     {glow ? <rect x={-34} y={-58} width={68} height={116} rx={18} fill="#bfe3ff" opacity={0.35} /> : null}
     {flash > 0 ? <circle cx={0} cy={-30} r={70} fill="#ffffff" opacity={0.85 * flash} /> : null}
@@ -406,7 +409,7 @@ const chance = (i: number, salt = 0) => {
 };
 
 /** A speech bubble with our words in it, its tail towards the one who speaks; `k` makes it pop in (0 to 1). */
-const Bubble: React.FC<{ x: number; y: number; text: string; k: number; tail?: number; size?: number }> = ({ x, y, text, k, tail = -1, size = 46 }) => {
+export const Bubble: React.FC<{ x: number; y: number; text: string; k: number; tail?: number; size?: number }> = ({ x, y, text, k, tail = -1, size = 46 }) => {
   if (k <= 0) return null;
   const w = Math.max(150, text.length * size * 0.46 + 60);
   const h = size * 1.7;
