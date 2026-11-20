@@ -41,7 +41,8 @@ validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publ
 # aucune vidéo ne les joue. Puis l'audit du même jour, validé par lui : une annonce jouée dans l'ouverture
 # (« …لكل واحد شايف إن ذنبه أكبر من إنه يتغفر », PLAYED de Trial.tsx). Le nouveau montage validé par lui sur ses images le même jour (« Je valide les 3 scènes » :
 # les trois scènes jouées et la narration en sous-titre après le verset ; l'appel à s'abonner reste en grand en haut,
-# son choix) ; la vidéo refaite est à valider avant que les fichiers publics (`page-ayah`) changent.
+# son choix) ; les ajouts de l'audit validés par lui sur images le même jour (« Je valide tout le lot ») ; la vidéo
+# refaite est à valider avant que les fichiers publics (`page-ayah`) changent.
 drop: ["meaning:0", "depth:1", "depth:2"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
