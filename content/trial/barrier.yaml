@@ -24,7 +24,8 @@ validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publ
 # TikTok) sans les phrases qui redisent le verset (`drop`), « وإحنا كده » joué en gris (ce qu'on fait de travers)
 # puis l'exemple en blanc (le juste), une annonce jouée dans l'ouverture dès « هتغيّر نظرتك لكل نجاح في حياتك »
 # (PLAYED de Trial.tsx) ; la version courte garde l'annonce et l'exemple joués, le reste de sa coupe ne change pas.
-# Dhul-Qarnayn et le peuple ne sont jamais dessinés. À valider sur images, puis sur la vidéo.
+# Dhul-Qarnayn et le peuple ne sont jamais dessinés. Scènes validées par lui sur images le même jour (« Je valide les
+# 4 ») ; la vidéo refaite est à valider avant `page-files`.
 drop: ["meaning:0", "meaning:1"]
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 381, author: FlickrVideos, page: "https://pixabay.com/videos/id-381/", position: "50% 50%", brightness: 0.85, landscape: { side: right, horizon: 700, brightness: 0.8 } }
