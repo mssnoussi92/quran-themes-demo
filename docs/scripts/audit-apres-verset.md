@@ -1,69 +1,78 @@
-# Audit : après le verset (2026-11-20)
+# Audit : les vidéos thématiques à venir, en entier (2026-11-20)
 
-La règle du propriétaire (2026-11-20, après « آية وحكايتها » 1) : **après un verset, une seule phrase de sens**, rien qui redise
-le verset ou sa traduction, puis **l'exemple de vie joué à l'écran** (bonshommes, visage simple, inconnus seulement), la
-narration après le verset **en sous-titre**. Sa demande, le même jour : auditer les vidéos thématiques à venir dans l'ordre du
-calendrier (`docs/retention/calendar.md`), **et toujours préparer une scène animée quand c'est possible**.
+**Les demandes du propriétaire, le 2026-11-20** : après « آية وحكايتها » 1, « après le verset, une seule phrase de sens, puis
+l'exemple de vie joué à l'écran par des personnes avec visage » ; puis « auditer les prochaines vidéos thématiques du
+calendrier, par date de publication, avec cette règle, et toujours préparer une scène animée quand c'est possible » ; puis,
+sur la première version de cet audit : « je veux sur toute la vidéo : si on peut jouer une scène, on la joue », et « même
+la caravane ».
 
-Comment c'est mesuré : chaque short lu réplique par réplique (`content/trial/<id>.yaml`), la voix après le premier verset
-estimée comme `tools/trial/script.py`. Une coupe ne coûte aucune requête de voix (`drop`, `docs/model.md`) ; une scène jouée
-coûte un dessin (session) et un rendu (workflow `film`). Rien n'est changé sans son accord, short par short.
+**Ce qui peut être joué** : des inconnus dans une scène type d'aujourd'hui (bonshommes du style « الصاحب ساحب », visage simple,
+sa règle du 2026-11-19), c'est-à-dire chaque réplique qui parle **du spectateur** (« إنت », « وإحنا كده », « لما تحس… »),
+**un exemple** (« زي… ») ou **un geste à faire** (« ادعي », « قول », « ارجع لصلاتك »). **Jamais** : une personne d'un récit du
+Coran ou d'un hadith (le Prophète ﷺ, les Compagnons, Abou Lahab, Dhul-Qarnayn, les gens de la caverne, Moussa et al-Khidr),
+une personne connue (Einstein, les aéronautes de 1875, Khalifa), l'invisible, ni un verset récité (il garde sa scène).
+**Le jeu « gris puis blanc »** de « الصاحب ساحب » sert les répliques « وإحنا كده » : on joue ce qu'on fait de travers (gris),
+puis l'exemple juste (blanc), au lieu de couper la réplique.
 
-Ce qui ne s'applique pas, et pourquoi :
+**Ce qui se coupe** : une phrase de sens qui redit le verset ou sa traduction (`drop` : aucune requête de voix).
 
-- **Les films** (Dhul-Qarnayn le 23 nov., la caverne le 30 nov., « مخيّر ولا مسيّر؟ » le 28 déc.) : format long, déjà rendus ;
-  la règle vise les shorts. Un film refait plus tard prendrait les scènes jouées de ses shorts.
-- **Les quiz** (« معاك 5 ثواني », 23 et 30 nov., 28 déc.) : 0:41 à 1:21 ; après le verset, c'est la réponse du quiz.
-- **« سنريهم آياتنا »** (21 et 28 nov., 5, 12 et 19 déc.) : une enquête ; ce qui suit le verset est la preuve (ce que dit le
-  tafsir, la date, la phrase « la science ne prouve pas le Coran »), pas une redite. Pas d'exemple de vie à jouer.
-- **« إزاي أعملها؟ »** (4 au 7 janv.) : du fiqh ; après le verset, c'est la règle et les quatre écoles. Déjà dessiné (la pièce,
-  la silhouette qui prie, la piste des rak'ahs).
-- **« بص تاني »** 1 et 3 (10 et 24 déc.) : déjà une métaphore jouée ; après le verset, le point du tafsir (les deux يسر, les
-  quatre conditions d'al-'Asr), qui est le short.
+**Une « annonce »** : la réplique de l'ouverture qui parle au spectateur (« …لكل واحد فينا… ») montre 2 à 3 s de la scène jouée
+qui viendra : des visages dès les premières secondes, là où Facebook et Instagram nous quittent (4 à 13 s regardées).
+
+Rien n'est changé sans son accord, short par short ; chaque short refait se valide sur images, puis sur la vidéo.
 
 ## Par date
 
-| Date | Vidéo | Après le 1er verset | Proposition |
-| --- | --- | --- | --- |
-| sam. 21 nov. | « سنريهم آياتنا » 1, Abou Lahab | 7 répliques, 38 s | rien (enquête ; demain : un rendu pour 5 s ne vaut pas le risque) |
-| lun. 23 nov. | Dhul-Qarnayn, le film ; quiz 1 | — | rien (film ; quiz) |
-| mar. 24 nov. | Dhul-Qarnayn 1, `west` (2:10) | 11 répliques, 62 s | **version entière** (YouTube, TikTok) : couper `meaning:0` (redit 18:87-88), `depth:1` ; **jouer l'exemple** (un chef dans un bureau : celui qui a mal fait est repris, celui qui a bien travaillé est remercié) ; sous-titre. Version courte Facebook/Instagram : inchangée (l'essai en cours) |
-| mer. 25 nov. | Dhul-Qarnayn 2, `tribute` (2:04) | 12 répliques, 59 s | version entière : couper `meaning:0` (redit 18:95), `meaning:2`, `depth:1` ; garder `meaning:1` (répond au « ليه؟ » de l'ouverture) ; **jouer l'exemple** (quelqu'un demande de l'aide ; on lui apprend à se tenir debout : on travaille avec lui) |
-| jeu. 26 nov. | Dhul-Qarnayn 3, `barrier` (1:56) | 13 répliques, 51 s | version entière : couper `meaning:0`, `meaning:1` (redisent 18:98), `depth:1` ; **jouer l'exemple** (une réussite applaudie ; il lève les yeux : « الحمد لله ») |
-| sam. 28 nov. | « سنريهم آياتنا » 2, le cosmos | 6, 30 s | rien |
-| lun. 30 nov. | la caverne, le film ; quiz 2 | — | rien |
-| mar. 1 déc. | la caverne 1, `refuge` (1:14) | 8, 41 s | déjà une phrase de sens ; **jouer l'exemple** (le seul de la bande qui refuse, il s'écarte et lève les mains) ; sous-titre |
-| mer. 2 déc. | la caverne 2, `sunpath` (1:15) | 7, 30 s | **jouer l'exemple** (une du'a de longues années ; autour de lui, des détails changent qu'il ne voit pas) ; sous-titre |
-| jeu. 3 déc. | la caverne 3, `awake` (1:11) | 7, 24 s | **jouer l'exemple** (il se réveille, sa main va au téléphone, s'arrête ; il dit le dou'a) ; sous-titre |
-| sam. 5 déc. | « سنريهم آياتنا » 3, le ciel | 8, 44 s | rien |
-| lun. 7 déc. | « كلمة من القرآن » 1, `kanud` (1:39) | 11, 52 s | couper `meaning:1` (un deuxième sens), `ledger` (ce que l'exemple montre) ; **jouer l'exemple** (une journée bonne, une seule chose casse ; le soir il ne raconte qu'elle) |
-| mar. 8 déc. | « كلمة من القرآن » 2, `stone` (2:03) | 11, 47 s | les trois mots sont le short : rien à couper ; **jouer l'exemple** (un verre d'eau donné à un assoiffé, personne ne voit) |
-| mer. 9 déc. | « كلمة من القرآن » 3, `haluu` (1:18) | 9, 43 s | couper `meaning:0`, `meaning:1` (redisent 70:20-21), `meaning:3` ; **jouer l'exemple** (le salaire en retard, il renverse la maison ; arrivé, il le serre) |
-| jeu. 10 déc. | « بص تاني » 1 | 5, 21 s | rien (déjà joué) |
-| sam. 12 déc. | « سنريهم آياتنا » 4, l'embryon | 8, 49 s | rien |
-| lun. 14 déc. | « خريطة كلمة » 1, `qalb` (1:25) | 9, 32 s | déjà une phrase de sens ; **jouer l'exemple** (étouffé dans le bruit, il dit « سبحان الله… الحمد لله » ; autour rien ne change, son visage se calme) |
-| mar. 15 déc. | « خريطة كلمة » 2, `nur` (1:23) | 8, 35 s | **jouer l'exemple** (une pièce noire, il cherche à tâtons ; la lumière vient du dehors) |
-| mer. 16 déc. | « خريطة كلمة » 3, `sadr` (1:26) | 9, 36 s | **jouer l'exemple** (devant la porte d'un examen, il dit le dou'a de Moussa, puis entre) |
-| jeu. 17 déc. | « بص تاني » 2, `drought` | 5, 20 s | couper `meaning:0`, `meaning:1` (redisent l'ouverture jouée et le verset) |
-| ven. 18 déc. | « لاحظت الفرق؟ » 1, `rizq` (1:33) | 9, 43 s | couper `meaning:2` ; **jouer l'exemple** (un père qui attend un enfant fait ses comptes chaque nuit) |
-| sam. 19 déc. | « سنريهم آياتنا » 5, 365 | 9, 48 s | rien |
-| lun. 21 déc. | « سؤال صعب » 1, `dank` (1:51) | 14, 65 s | couper `meaning2:0` (redit 6:44) ; la question et sa réponse sont le short ; **jouer l'exemple** (tout lui réussit, loin de Dieu : « أكيد أنا كويس ») |
-| mar. 22 déc. | « سؤال صعب » 2, `tayyiba` (1:32) | 12, 61 s | déjà une phrase de sens par verset ; **jouer l'exemple** (l'étudiant qui a travaillé, l'examen difficile) |
-| mer. 23 déc. | « سؤال صعب » 3, `ghafur` (0:57) | 10, 38 s | **jouer l'exemple** (« بكرة », chaque jour, la page du calendrier tourne) |
-| jeu. 24 déc. | « بص تاني » 3 | 5, 23 s | rien |
-| ven. 25 déc. | « لاحظت الفرق؟ » 2, `adab` (1:42) | 7, 37 s | **jouer l'exemple** (il tombe : « أنا اللي قصّرت » ; un bien arrive : « ده من ربنا ») |
-| lun. 28 déc. | « مخيّر ولا مسيّر؟ », le film ; quiz 3 | — | rien |
-| mar. 29 déc. | « مخيّر… » 1, `amal` (1:41) | 9, 42 s | couper `meaning:0` (redit 92:5-7) ; l'exemple est déjà joué (sa scène d'ouverture) |
-| mer. 30 déc. | « مخيّر… » 2, `shaa` (1:26) | 10, 52 s | rien : les trois phrases de sens sont la précision qu'il a demandée (ni مجبور ni hors de Sa volonté) |
-| jeu. 31 déc. | « مخيّر… » 3, `law` (1:35) | 8, 39 s | couper `meaning:0` (redit 57:22) |
-| ven. 1 janv. | « لاحظت الفرق؟ » 3, `qist` (1:35) | 8, 36 s | couper `meaning:2` ; **jouer l'exemple** (le frère en tort : il dit la vérité ; celui qu'il n'aime pas a raison : il le dit) |
-| 4 au 7 janv. | « إزاي أعملها؟ » 1 à 4 | — | rien |
+| Date | Vidéo | Joué (proposé) | Coupé (proposé) | Pas joué, et pourquoi |
+| --- | --- | --- | --- | --- |
+| ven. 20 nov. (publié) | « آية وحكايتها » 1, la caravane | l'exemple : au travail l'adhan sonne, « أخلّص اللي في إيدي » ; en prière le téléphone vibre, son regard y va ; il le range, calme (« الشغل مش هيطير… ») | `meaning:0`, `meaning:1` (redisent 62:11) | l'ouverture (le Prophète ﷺ, les Compagnons). Publié aujourd'hui : à refaire seulement pour TikTok si le brouillon n'est pas encore publié |
+| sam. 21 nov. | « سنريهم آياتنا » 1, Abou Lahab | — | — | une enquête sur une personne réelle ; demain |
+| lun. 23 nov. | Dhul-Qarnayn, le film ; quiz 1 | — | — | film déjà rendu (ses scènes sont dans son propre fichier) ; quiz (Joseph) |
+| mar. 24 nov. | Dhul-Qarnayn 1, `west` (entier) | annonce (« …لما يبقى ليك سلطة على حد ») ; « وإحنا كده: شوية سلطة… » en gris : un chef qui crie ; l'exemple en blanc : il reprend calmement celui qui a raté, remercie celui qui a travaillé | `meaning:0` | Dhul-Qarnayn et le peuple. La version courte Facebook/Instagram (l'essai) ne change pas |
+| mer. 25 nov. | Dhul-Qarnayn 2, `tribute` (entier) | annonce (« …لكل حد محتاجك ») ; « وإحنا كده: يا نستغل المحتاج… يا نشيل عنه كل حاجة » en gris ; l'exemple en blanc : il lui met un outil dans la main, ils travaillent ensemble | `meaning:0`, `meaning:2` | idem |
+| jeu. 26 nov. | Dhul-Qarnayn 3, `barrier` (entier) | annonce (« …لكل نجاح في حياتك ») ; « وإحنا كده: …ده شطارتي » en gris : il bombe le torse ; l'exemple en blanc : applaudi, il lève les yeux, « الحمد لله » | `meaning:0`, `meaning:1` | idem |
+| ven. 27 nov. | « آية وحكايتها » 2, الضحى (en rendu) | déjà : l'exemple (la du'a, les nuits). En plus : annonce (« ولو حسّيت يوم إن ربنا سابك… ») ; « وإحنا كده: أول ما حاجة تتأخر… » ; « لما تحس إنك لوحدك… عدّ اللي عمله معاك » : il compte sur ses doigts, sourit | (fait) | le récit (le Prophète ﷺ, la femme) |
+| sam. 28 nov. | « سنريهم آياتنا » 2, le cosmos | « اللي وسّع السما… قادر يوسّع عليك » : dans une pièce étroite, il compte quelques pièces ; les murs s'écartent sur le ciel | — | Einstein, Aristote, Ptolémée (personnes connues) |
+| lun. 30 nov. | la caverne, le film ; quiz 2 | — | — | film ; quiz (ʿĪsā) |
+| mar. 1 déc. | la caverne 1, `refuge` | **validé** : l'exemple (l'antisèche refusée). En plus : annonce (« …لكل واحد حاسس إنه لوحده ») ; « ولما تحس إنك لوحدك… ادعي بدعوتهم » : il lève les mains | — | les jeunes de la caverne |
+| mer. 2 déc. | la caverne 2, `sunpath` | **validé** : l'exemple (la du'a, les détails qui changent). En plus : annonce (« …هيغيّر نظرتك لدعواتك ») | — | idem |
+| jeu. 3 déc. | la caverne 3, `awake` | **validé** : l'exemple (le téléphone au réveil). En plus : annonce (« …حاجة بتحصلك إنت كل يوم الصبح ») : le réveil sonne | — | idem ; le hadith lu (Bukhari 6324) garde sa scène |
+| ven. 4 déc. | « آية وحكايتها » 3, l'espoir (en rendu) | déjà : l'exemple (la porte). En plus : annonce (« …لكل واحد شايف إن ذنبه أكبر من إنه يتغفر ») : il hésite devant la porte | (fait) | les gens du récit |
+| sam. 5 déc. | « سنريهم آياتنا » 3, le ciel | « اطلب من ربنا يشرح صدرك » : la main sur la poitrine, il lève les mains, respire | — | les aéronautes de 1875, Pascal (personnes réelles) |
+| lun. 7 déc. | « كلمة من القرآن » 1, `kanud` | annonce (« …اللي بيعدّ المصايب… وينسى النعم ») ; « المصيبة… بنفتكرها باليوم والساعة » : il note la panne dans un carnet ; l'exemple : une bonne journée, une tasse cassée, le soir il ne raconte qu'elle ; « عدّ اللي لسه معاك… قول تلات نعم » : il compte trois bienfaits | `meaning:1` | — |
+| mar. 8 déc. | « كلمة من القرآن » 2, `stone` | l'exemple : un verre d'eau donné à un assoiffé, personne ne voit ; « ما تستصغرش حاجة تعملها » | — | les trois mots (la datte) restent sur leur dessin |
+| mer. 9 déc. | « كلمة من القرآن » 3, `haluu` | l'exemple : le salaire en retard, il renverse la maison ; arrivé, il le serre ; « ارجع لصلاتك » : il prie, calme | `meaning:0`, `meaning:1`, `meaning:3` | — |
+| jeu. 10 déc. | « بص تاني » 1 | déjà joué (la silhouette B) ; visage possible | — | — |
+| ven. 11 déc. | « آية وحكايتها » 4, le pardon (en rendu) | déjà : l'exemple (les paroles dans le dos). En plus : annonce (« …لكل واحد فينا حد من أهله جرحه ») | (fait) | Abou Bakr, Mistah |
+| sam. 12 déc. | « سنريهم آياتنا » 4, l'embryon | « بص في المراية… أول آية شفتها في حياتك… هي إنت » : il se regarde dans un miroir | — | Aristote, Ibn Kathir |
+| lun. 14 déc. | « خريطة كلمة » 1, `qalb` | l'exemple : étouffé dans le bruit, « سبحان الله… الحمد لله » ; autour rien ne change, son visage se calme | — | l'ouverture muette (le compte) ; « قلوب اتقفلت » (on ne dessine pas des mécréants) |
+| mar. 15 déc. | « خريطة كلمة » 2, `nur` | l'exemple : une pièce noire, il cherche à tâtons ; la lumière vient du dehors | — | la parabole de 2:17 (les hypocrites) |
+| mer. 16 déc. | « خريطة كلمة » 3, `sadr` | l'exemple : devant la porte d'un examen, il dit le dou'a, puis entre | — | Moussa (20:25-28) |
+| jeu. 17 déc. | « بص تاني » 2, `drought` | déjà joué | `meaning:0`, `meaning:1` | — |
+| ven. 18 déc. | « لاحظت الفرق؟ » 1, `rizq` | l'exemple : un père attend un enfant, fait ses comptes chaque nuit ; « …عشان قلبك يرتاح » : il range les papiers, sourit | `meaning:2` | — |
+| sam. 19 déc. | « سنريهم آياتنا » 5, 365 | « قبل ما تنشر رقم عن القرآن… عِدّه » : il va partager « 365 », s'arrête, compte | — | Khalifa (personne réelle) |
+| lun. 21 déc. | « سؤال صعب » 1, `dank` | la question : riche, maison, tout ce qu'il veut (souriant) ; la réponse : le même, la nuit, seul, inquiet ; l'exemple : « أكيد أنا كويس » | `meaning2:0` | — |
+| mar. 22 déc. | « سؤال صعب » 2, `tayyiba` | la question : il prie, peu d'argent, fatigué ; la réponse : le même, content, il partage son pain ; l'exemple : l'étudiant, l'examen difficile | — | — |
+| mer. 23 déc. | « سؤال صعب » 3, `ghafur` | la question : il hausse les épaules, « أستغفر بعدين » ; l'exemple : « بكرة », la page du calendrier tourne | — | — |
+| jeu. 24 déc. | « بص تاني » 3 | déjà joué | — | — |
+| ven. 25 déc. | « لاحظت الفرق؟ » 2, `adab` | l'exemple : il trébuche, « أنا اللي قصّرت » ; un bien arrive, « ده من ربنا » | — | Moussa et al-Khidr |
+| lun. 28 déc. | « مخيّر ولا مسيّر؟ », le film ; quiz 3 | — | — | film ; quiz |
+| 29 au 31 déc. | « مخيّر ولا مسيّر؟ » 1 à 3 | déjà joués (silhouettes) ; visage possible | `amal` : `meaning:0` ; `law` : `meaning:0` | `shaa` : ses trois phrases de sens sont la précision qu'il a demandée |
+| ven. 1 janv. | « لاحظت الفرق؟ » 3, `qist` | l'exemple : son frère en tort, il dit la vérité ; celui qu'il n'aime pas a raison, il le dit | `meaning:2` | — |
+| 4 au 7 janv. | « إزاي أعملها؟ » 1 à 4 | déjà joués (la silhouette qui prie) ; visage possible (« يبقى أنا منهم؟ ») | — | le Prophète ﷺ ; la règle des écoles |
+| quiz (23 et 30 nov., 28 déc.) | « معاك 5 ثواني » | — | — | 0:41 à 1:21 ; Joseph, ʿĪsā, les prophètes |
 
-En tout : **18 scènes jouées** à dessiner, des coupes dans 11 shorts, 15 shorts laissés tels quels (et les 3 films).
+## Le coût
+
+- **Des scènes nouvelles** dans 26 shorts (dessins dans la session ; 6 d'entre eux en ont déjà une, à compléter), des
+  annonces dans 10, des coupes dans 12 ; aucune requête de voix.
+- **Un rendu par lot** (workflow `film`, environ 30 min pour trois shorts), puis sa validation sur la vidéo, puis `page-files`.
+- **Les films** ne changent pas : leurs scènes sont dans leur propre fichier ; un film refait plus tard pourrait les prendre.
 
 ## Ce qui reste à dire franchement
 
-- Sur Facebook et Instagram, on regarde nos shorts 4 à 13 s en moyenne : ces changements y comptent peu. Ils comptent sur
-  YouTube (45 à 62 % d'un short regardé). Pour Dhul-Qarnayn, Facebook et Instagram ont déjà leur version courte (l'essai des
-  24 au 26 nov.), qui ne change pas : le changer en cours fausserait l'essai.
-- Chaque short refait redevient à valider (coupes, scène, puis vidéo) : par lots, dans l'ordre des dates.
+- Sur Facebook et Instagram, nos shorts sont regardés 4 à 13 s en moyenne : seules les annonces jouées (dans les 10 premières
+  secondes) peuvent y changer quelque chose. Les scènes après le verset comptent sur YouTube (45 à 62 % regardés).
+- Beaucoup de scènes jouées se ressemblent (lever les mains : الضحى, la caverne 1 et 2, le ciel, la caverne 1) : je varie
+  les décors, mais une série de trois du'as en huit jours restera proche. Mieux vaut en garder une sur deux.
+- La version courte de Dhul-Qarnayn (Facebook, Instagram) reste telle qu'elle est : la changer en cours fausserait l'essai.
