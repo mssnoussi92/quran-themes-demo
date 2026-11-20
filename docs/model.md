@@ -142,6 +142,14 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
   lecteur qui l'ignore publie le short entier partout, comme avant. quran-reels prend `-cut.mp4` pour Facebook et
   Instagram quand la ligne en nomme un ; les textes sont les mêmes. Pour la mettre dans la release brouillon sans rien re-rendre
   de validé : workflow `film` avec `only: cut` (les seules versions courtes du film), puis `page-files`.
+- `drop: [...]` dans le fichier d'un short (propriétaire, 2026-11-20, « après le verset on parle trop ») : ce qui sort de
+  **toutes** les versions (entière, TikTok, courte), même grammaire que `cut.drop` (`"meaning:0"`, un segment, un verset).
+  Les répliques restent dans le fichier, dans le texte de la voix et dans la prise : aucune requête de voix, `rules.py`
+  compare toujours le texte à toutes les répliques ; `prepare.py` coupe la prise autour d'elles, `script.py` les barre
+  (« coupée ») et ne les compte pas, `rules.py` non plus dans sa durée. La version courte ajoute `cut.drop` à `drop`.
+- `caption` du layout d'un short (`LAYOUTS` de `Trial.tsx` ; « آية وحكايتها » 2 à 4, 2026-11-20) : la narration après le
+  premier verset en sous-titre, en bas et plus petite (deux lignes au plus), l'anglais dessous ; le dessin garde le
+  milieu. L'accroche (avant le verset) et l'appel à s'abonner (la dernière réplique, son choix) gardent leur place en grand.
 - `OVERLAYS` et `LAYOUTS` de `video/src/trial/Trial.tsx` : ce qu'un short dessine au-dessus du voile sans bouger
   (le badge de la série, la frise des dates) et où ses textes se placent ; les dessins, photos et frises de la série
   sont dans `video/src/trial/Signs.tsx`. `verseGap` (50 par défaut) : de la référence d'un verset à son texte ; Amiri

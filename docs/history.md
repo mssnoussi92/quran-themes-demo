@@ -756,3 +756,28 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   une erreur de reconnaissance), et une affiche plus parlante (« فرصة شغل », une mallette). Rendus de nouveau, vérifiés
   (Whisper entend « لا » et « انصر » en premier), envoyés ; **tout validé par lui** : titres, descriptions, accroches, les neuf
   sources, les trois vidéos. En réserve, placés à la revue avec les mesures de « بص تاني » (son choix).
+
+## « آية وحكايتها » : moins de paroles après le verset, l'exemple joué (2026-11-20)
+
+- **Sa remarque**, le jour où le short 1 (la caravane) est publié par quran-reels : « après le verset on parle trop et
+  l'écran est presque le même, et on écrit ce que le narrateur dit… on peut se limiter à dire رَبّنا هو الرازق et enchaîner
+  par l'exemple de vie, mais il faut créer la situation dans l'écran avec les personnes avec visage ».
+- **Ce que la session a vu** : une planche du short 1 (le même minbar de 0:03 à 1:35, seul le texte change ; le récit dit
+  trois fois ; 23 s après le verset sur une image) ; les chiffres des shorts thématiques publiés (durée moyenne regardée :
+  Facebook 4 à 8 s, Instagram 8 à 13 s, YouTube 45 à 62 %). **Son avis, franc** : d'accord sur le diagnostic ; garder la
+  ligne sur les Compagnons (elle les défend et amène l'exemple) ; des visages seulement dans l'exemple, jamais pour une
+  personne du récit ; le texte réduit en sous-titre plutôt que supprimé (on regarde souvent sans le son) ; et sa correction
+  aide surtout YouTube : sur Facebook et Instagram on part avant le verset, c'est le début qui compte.
+- **Ses choix** (questions à choix) : les 3 shorts restants de la série (le short 1, publié, reste tel quel) et la même règle
+  pour tout nouveau script (skill `write-hook`, « After the verse ») ; la narration en sous-titre ; l'ouverture inchangée.
+  Puis, sur l'aperçu de chaque short, **les coupes et la scène jouée validées** (« Je valide » × 3) : `duha` 4 répliques
+  coupées (« ما كنتش تعرف الكتاب… » gardée pour « وَوَجَدَكَ ضَالًّا »), `hope` 3, `forgive` 3 (la réponse d'Abou Bakr et sa
+  limite d'Ibn Kathir restent).
+- **Fait** : `drop` dans le fichier d'un short (ce qui sort de toutes les versions, la prise gardée : aucune requête de voix ;
+  prepare.py, script.py, rules.py, tests) ; `caption` du layout (Trial.tsx) ; trois décors joués dans le style des bonshommes
+  (`video/src/trial/AyahPlayed.tsx` : la du'a et les nuits qui passent ; la porte de la mosquée ; les paroles dans le dos
+  puis la bourse tendue), un visage de plus (`cross`, Sahib.tsx). Images fixes rendues dans la session, regardées, corrigées
+  (l'homme plus grand que la porte, le tapis sous le sous-titre, la lune, les mains de la du'a), envoyées : **les trois scènes
+  et le sous-titre validés par lui** ; l'appel à s'abonner reste en grand (son choix). Rendu par le workflow `film`
+  (`only: duha,hope,forgive`, voix D, ajouté à la release brouillon `ayah-candidate`).
+
