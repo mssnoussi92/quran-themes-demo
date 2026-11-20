@@ -35,7 +35,8 @@ validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publ
 # publié, reste tel quel), le texte en sous-titre, l'ouverture inchangée (le fait de la révélation reste l'accroche).
 # Les coupes ci-dessous et la scène jouée validées par lui le même jour sur l'aperçu de la question (« Je valide »).
 # Aucune requête de voix : les phrases coupées restent dans la prise et dans le texte de la voix (`drop`, prepare.py),
-# aucune vidéo ne les joue. Le nouveau montage validé par lui sur ses images le même jour (« Je valide les 3 scènes » :
+# aucune vidéo ne les joue. Puis l'audit du même jour, validé par lui : une annonce jouée dans l'ouverture (« ولو حسّيت
+# يوم إن ربنا سابك… »), « وإحنا كده » et « عدّ اللي عمله معاك » joués. Le nouveau montage validé par lui sur ses images le même jour (« Je valide les 3 scènes » :
 # les trois scènes jouées et la narration en sous-titre après le verset ; l'appel à s'abonner reste en grand en haut,
 # son choix) ; la vidéo refaite est à valider avant que les fichiers publics (`page-ayah`) changent.
 drop: ["meaning:0", "meaning:2", "proof:0", "proof:2"]
@@ -108,6 +109,10 @@ segments:
     lines:
       - ar: "اللي شال عنك ده كله زمان… هيشيل عنك اللي إنت فيه دلوقتي."
         en: "The One who lifted all that from you then… will lift what you are in now."
+  # « وإحنا كده », joué (audit du 2026-11-20) : il attend à la fenêtre, puis se détourne
+  - narration: depth-us
+    scene: pray-us
+    lines:
       - ar: "وإحنا كده: أول ما حاجة تتأخر… نقول ربنا سابنا."
         en: "And that's us: the moment something is late… we say God has left us."
   # L'exemple joué (2026-11-20) : un bonhomme lève les mains, la nuit ; à « ولسه ما جاتش » ses sourcils tombent ; puis
@@ -124,8 +129,15 @@ segments:
     lines:
       - ar: "اتأخر عليك… بس ما سابكش."
         en: "It is late for you… but He has not left you."
+  # « لما تحس إنك لوحدك… عدّ اللي عمله معاك » joué : il compte sur ses doigts, sourit
+  - narration: close-count
+    scene: pray-count
+    lines:
       - ar: "لما تحس إنك لوحدك… عدّ اللي عمله معاك قبل كده."
         en: "When you feel alone… count what He has done for you before."
+  - narration: close-next
+    scene: dawn
+    lines:
       - ar: "دي سورة ردّت على كلمة… وفيه آية نزلت لناس… عملوا أكبر الذنوب وجم يسألوا."
         en: "That surah answered a remark… and there is a verse that came down for people… who had done the gravest sins and came to ask."
       - ar: "تابعنا عشان تعرف حكايتها."

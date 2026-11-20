@@ -44,12 +44,18 @@ export const PELVIS = FLOOR - 154 * S;
 /** « زي دعوة بتدعيها من شهور… ولسه ما جاتش. », then three seconds with no text. A room at night, a window: a man stands
  * on his prayer rug and raises his hands, hopeful; the sky of the window turns, night, morning, night, again and again;
  * at « ولسه ما جاتش » his eyebrows fall, and his hands stay raised. */
-export const PrayPlayed: Played = ({ u, at }) => {
+export const PrayPlayed: Played = ({ u, at: said, variant }) => {
+  // tease: the scene already under way (hands raised, worried, the nights turning); us: waiting at the window, then he
+  // turns away; count: in the morning, he counts on his fingers what was given to him, and smiles.
+  const at = variant === "tease" ? () => -2 : said;
+  const us = variant === "us";
+  const count = variant === "count";
   const start = at(0);
   const phase = Math.max(0, u - start) / 1.7;                  // one night and one day in 1.7 s: months go by
-  const day = 0.5 - 0.5 * Math.cos(2 * Math.PI * phase);      // 0 at night, 1 at noon
-  const raise = ramp(u, 0.2, 1.2);
-  const sad = ramp(u, at(1), at(1) + 0.5);
+  const day = us ? 0.85 : count ? 0.7 : 0.5 - 0.5 * Math.cos(2 * Math.PI * phase);      // 0 at night, 1 at noon
+  const raise = us || count ? 0 : ramp(u, variant === "tease" ? -1 : 0.2, variant === "tease" ? 0 : 1.2);
+  const sad = us ? ramp(u, said(2) - 0.2, said(2) + 0.4) : count ? 0 : ramp(u, at(1), at(1) + 0.5);
+  const fingers = count ? [0, 1, 2].map((i) => ramp(u, 0.4 + i * 0.9, 0.7 + i * 0.9)) : [0, 0, 0];
   const x = 700;
   const shoulder: P2 = [x, PELVIS - 106 * S];
   const palmF: P2 = [shoulder[0] - 112, shoulder[1] - 26];       // in front of the chest, at the height of the shoulders
@@ -95,14 +101,27 @@ export const PrayPlayed: Played = ({ u, at }) => {
       <rect x={0} y={FLOOR} width={W} height={10} fill={INK} opacity={0.6} />
       <path d={`M ${win.x + 40} ${FLOOR} L ${win.x + win.w + 40} ${FLOOR} L ${win.x + win.w + 260} ${H} L ${win.x + 140} ${H} Z`} fill="#ffe7a8" opacity={0.18 * day} />
       {/* the prayer rug */}
-      <path d={`M ${x - 160} ${FLOOR - 6} L ${x + 140} ${FLOOR - 6} L ${x + 170} ${FLOOR + 50} L ${x - 190} ${FLOOR + 50} Z`} fill="#2f6b4f" stroke={INK} strokeWidth={6} strokeLinejoin="round" />
-      <path d={`M ${x - 140} ${FLOOR + 4} L ${x + 120} ${FLOOR + 4} L ${x + 142} ${FLOOR + 40} L ${x - 166} ${FLOOR + 40} Z`} fill="none" stroke="#e7c76a" strokeWidth={5} strokeLinejoin="round" />
-      <Stick x={x} y={PELVIS} s={S} facing={-1} tone="white" face={sad > 0.5 ? "worried" : "calm"}
-        pose={{ ...POSES.stand, head: lerp(lerp(0, 10, raise), -8, sad) }}
-        handF={lp([x - 6, PELVIS + 20], palmF, raise)} bendF={1}
-        handB={lp([x + 4, PELVIS + 24], palmB, raise)} bendB={1} />
+      <path opacity={us ? 0 : 1} d={`M ${x - 160} ${FLOOR - 6} L ${x + 140} ${FLOOR - 6} L ${x + 170} ${FLOOR + 50} L ${x - 190} ${FLOOR + 50} Z`} fill="#2f6b4f" stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+      <path opacity={us ? 0 : 1} d={`M ${x - 140} ${FLOOR + 4} L ${x + 120} ${FLOOR + 4} L ${x + 142} ${FLOOR + 40} L ${x - 166} ${FLOOR + 40} Z`} fill="none" stroke="#e7c76a" strokeWidth={5} strokeLinejoin="round" />
+      {count ? (
+        // the morning sky in the window, and the three things he counts, one by one
+        <g>
+          <rect x={win.x} y={win.y} width={win.w} height={win.h} fill="#ffb98a" opacity={0.35} />
+          {fingers.map((k, i) => (
+            <g key={i} opacity={k} transform={`translate(${x - 150 + i * 70} ${shoulder[1] - 150 - 30 * k})`}>
+              <circle r={28} fill="#f2c66d" stroke={INK} strokeWidth={5} />
+              <text y={11} textAnchor="middle" fontFamily="Lora, serif" fontWeight={700} fontSize={32} fill={INK}>{i + 1}</text>
+            </g>
+          ))}
+        </g>
+      ) : null}
+      <Stick x={us ? 380 : x} y={PELVIS} s={S} facing={-1} tone="white"
+        face={count ? (fingers[2] > 0.5 ? "smile" : "kind") : us ? (sad > 0.5 ? "worried" : "neutral") : sad > 0.5 ? "worried" : "calm"}
+        pose={{ ...POSES.stand, head: count ? 6 : us ? lerp(4, -14, sad) : lerp(lerp(0, 10, raise), -8, sad) }}
+        {...(count ? { handF: [x - 120, shoulder[1] - 100] as P2, bendF: 1 } : us ? { handF: lp([370, PELVIS - 10], [356, PELVIS + 40], sad), bendF: -1 } : {})}
+        {...(count || us ? {} : { handF: lp([x - 6, PELVIS + 20], palmF, raise), bendF: 1, handB: lp([x + 4, PELVIS + 24], palmB, raise), bendB: 1 })} />
       {/* the open hands of a du'a, palms up, once raised */}
-      <g opacity={ramp(raise, 0.7, 1)}>
+      <g opacity={count || us ? 0 : ramp(raise, 0.7, 1)}>
         {[palmB, palmF].map(([px, py], i) => (
           <path key={i} d={`M ${px - 26} ${py - 10} Q ${px - 22} ${py + 16} ${px} ${py + 16} Q ${px + 22} ${py + 16} ${px + 26} ${py - 10}`} fill="#f6f3ec" stroke={INK} strokeWidth={6} strokeLinejoin="round" />
         ))}
@@ -119,11 +138,14 @@ export const PrayPlayed: Played = ({ u, at }) => {
  * ساب الصلاة سنين… وكل ما ييجي يرجع يقول: بعد كل ده؟ »: he steps towards it, then back, his face unsure. « أيوه… »: the
  * door opens and its light falls on the street; « بعد كل ده. »: he walks in. Phrases: 0 « زي واحد… », 1 « وكل ما ييجي
  * يرجع يقول: », 2 « بعد كل ده؟ », 3 « أيوه… », 4 « بعد كل ده. », 5-7 the last line. */
-export const DoorPlayed: Played = ({ u, t, at }) => {
+export const DoorPlayed: Played = ({ u, t, at: said, variant }) => {
+  // tease: he stands before the closed door, unsure, and does not go in
+  const tease = variant === "tease";
+  const at = tease ? (n: number) => (n === 0 ? -1 : 999) : said;
   const door = { x: 770, w: 270, top: 720 };
   const open = ramp(u, at(3), at(3) + 1.3);
   // where he is: he comes in, stops; one step forward, one step back; then into the door
-  const come = walking(u, 0, 2.2, -90, 290);
+  const come = tease ? { x: 280, pose: POSES.stand } : walking(u, 0, 2.2, -90, 290);
   const forth = walking(u, at(1), at(1) + 0.9, 290, 360);
   const back = walking(u, at(2), at(2) + 0.9, 360, 280);
   const goIn = walking(u, at(4), at(4) + 2.6, 280, door.x);
@@ -206,7 +228,9 @@ export const DoorPlayed: Played = ({ u, t, at }) => {
  * shocked. « فتقول: خلاص… لا هكلّمه… ولا هقف جنبه تاني. »: he turns his back, arms crossed. « ما تقطعش خيرك عنه… »: he turns
  * round, opens the door between the rooms and holds out the purse of the series; the relative's face softens. Phrases:
  * 0 « زي قريب… », 1 « والكلام وصلك. », 2-5 the second line, 6 « ما تقطعش خيرك عنه… », 7 « عشان غلطة. ». */
-export const RumorPlayed: Played = ({ u, t, at }) => {
+export const RumorPlayed: Played = ({ u, t, at: said, variant }) => {
+  // tease: the words already said; he reads them on his phone, hurt
+  const at = variant === "tease" ? (n: number) => (n <= 1 ? -1 : 999) : said;
   const wall = 540;
   const ceiling = 660;
   const read = ramp(u, at(1), at(1) + 0.5);
@@ -260,7 +284,7 @@ export const RumorPlayed: Played = ({ u, t, at }) => {
       ) : null}
       {/* the left room: the man and his phone */}
       <Stick x={x} y={PELVIS} s={S} facing={away ? -1 : 1} tone="white"
-        face={kind ? "kind" : away ? "cross" : read > 0.5 ? "shock" : "calm"}
+        face={kind ? "kind" : away ? "cross" : read > 0.5 ? (variant === "tease" ? "cross" : "shock") : "calm"}
         pose={kind ? step.pose : { ...POSES.stand, head: read > 0.5 && !away ? -10 : 0 }}
         handF={away ? [x - 40, heroShoulder[1] + 40] : kind ? lp([x + 50, PELVIS + 20], [x + 150, heroShoulder[1] + 20], give) : phoneHand} bendF={away ? 1 : -1}
         handB={away ? [x - 46, heroShoulder[1] + 54] : undefined} bendB={1}

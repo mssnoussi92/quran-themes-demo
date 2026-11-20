@@ -297,3 +297,202 @@ export const StagePlayed: Played = ({ u, t, at, variant }) => {
     </g>
   );
 };
+
+// ------------------------------------------------------------------------------------- 51:47, the sky widened
+
+/** « اللي وسّع السما… قادر يوسّع عليك. »: a narrow room, a low ceiling, he counts a few coins in his palm, worried; at
+ * « قادر يوسّع عليك » the walls slide apart and the ceiling lifts on a sky full of stars; he looks up and smiles. */
+export const WallsPlayed: Played = ({ u, t, at }) => {
+  const open = ramp(u, at(1), at(1) + 1.6);
+  const x = 540;
+  const left = lerp(300, -260, open);
+  const right = lerp(780, 1340, open);
+  const ceiling = lerp(700, -300, open);
+  return (
+    <g>
+      <rect width={W} height={H} fill="#0b1230" />
+      {Array.from({ length: 70 }, (_, i) => (
+        <circle key={i} cx={(i * 137.5) % W} cy={80 + ((i * 89) % 1100)} r={1.5 + (i % 3)} fill="#e8eefc" opacity={open * (0.5 + 0.4 * Math.sin(t * 1.3 + i))} />
+      ))}
+      <rect x={0} y={FLOOR} width={W} height={H - FLOOR} fill="#3a3346" />
+      <rect x={0} y={FLOOR} width={W} height={8} fill={INK} opacity={0.6} />
+      {/* the walls and the ceiling of the narrow room */}
+      <g stroke={INK} strokeWidth={8}>
+        <rect x={left - 400} y={-400} width={400} height={FLOOR + 400} fill="#4a4560" />
+        <rect x={right} y={-400} width={400} height={FLOOR + 400} fill="#4a4560" />
+        <rect x={left - 400} y={ceiling - 400} width={right - left + 800} height={400} fill="#3d3852" />
+      </g>
+      <Stick x={x} y={PELVIS} s={S} facing={1} tone="white" face={open > 0.5 ? "smile" : "worried"}
+        pose={{ ...POSES.stand, head: lerp(-16, 18, open) }} handF={[x + 70, shoulderY + 60]} bendF={-1} />
+      <g opacity={1 - open} transform={`translate(${x + 78} ${shoulderY + 44}) scale(1.6)`}>
+        <Coin x={0} y={0} />
+        <Coin x={8} y={-6} />
+      </g>
+    </g>
+  );
+};
+
+// ---------------------------------------------------------------------------------------- 18:10, the one who refuses
+
+/** A classroom: desks, a blackboard. `ex` « زي لما تبقى الوحيد في الشلة… اللي رافض حاجة غلط. ابعد خطوة… واطلب من ربنا
+ * يثبّتك. »: two classmates pass a crib sheet; it is held out to him, he raises his palm: no; he steps aside, and raises
+ * his hands. `tease`: they laugh over the sheet, he stands apart, unsure. `dua` « ولما تحس إنك لوحدك… ادعي بدعوتهم »: alone
+ * in the empty classroom, his hands raised. */
+export const CheatPlayed: Played = ({ u, at, variant }) => {
+  const ex = variant === "ex" || variant === undefined;
+  const alone = variant === "dua";
+  const offer = ex ? ramp(u, at(1) - 0.4, at(1)) : 0;
+  const no = ex ? ramp(u, at(1), at(1) + 0.4) : 0;
+  const step = ex ? walking(u, at(2), at(2) + 1.0, 700, 860) : { x: variant === "tease" ? 820 : 600, pose: POSES.stand };
+  const pray = alone ? ramp(u, 0, 0.6) : ex ? ramp(u, at(3), at(3) + 0.6) : 0;
+  const x = step.x;
+  const palms: P2[] = [[x - 70, shoulderY - 20], [x - 40, shoulderY - 8]];
+  const sheet = (
+    <g transform="rotate(-6)">
+      <rect x={-22} y={-30} width={44} height={56} fill="#fffaf0" stroke={INK} strokeWidth={4} />
+      <path d="M -14 -18 L 14 -18 M -14 -8 L 10 -8 M -14 2 L 14 2 M -14 12 L 6 12" stroke="#3d7cc9" strokeWidth={3} />
+    </g>
+  );
+  return (
+    <g>
+      <Room wall="#d8dcc8" floor="#6b6252" />
+      <rect x={140} y={600} width={800} height={300} fill="#2f4a3a" stroke="#7a4b2a" strokeWidth={16} />
+      <path d="M 200 680 l 120 0 M 200 730 l 200 0 M 200 780 l 90 0" stroke="#e8e6e0" strokeWidth={6} opacity={0.6} />
+      {/* desks */}
+      {[160, 420].map((dx) => (
+        <g key={dx} stroke={INK} strokeWidth={6}>
+          <rect x={dx} y={1150} width={220} height={22} fill="#a87b55" />
+          <path d={`M ${dx + 20} 1172 L ${dx + 20} ${FLOOR} M ${dx + 200} 1172 L ${dx + 200} ${FLOOR}`} />
+        </g>
+      ))}
+      {!alone ? (
+        <>
+          <Stick x={220} y={PELVIS} s={S * 0.92} facing={1} tone="white" cap="#3d7cc9" face={variant === "tease" ? "laugh" : "smirk"} pose={POSES.stand}
+            handF={[300, shoulderY + 30]} bendF={-1} heldF={offer < 0.5 ? sheet : undefined} />
+          <Stick x={440} y={PELVIS} s={S * 0.92} facing={1} tone="white" cap="#e88a3a" face={variant === "tease" ? "laugh" : "smirk"} pose={POSES.stand}
+            handF={lp([500, shoulderY + 40], [600, shoulderY + 20], offer)} bendF={-1} heldF={offer > 0.5 ? sheet : undefined} />
+        </>
+      ) : null}
+      <Stick x={x} y={PELVIS} s={S} facing={-1} tone="white"
+        face={pray > 0.5 ? "calm" : variant === "tease" ? "worried" : no > 0.5 ? "neutral" : "neutral"}
+        pose={step.pose}
+        {...(pray > 0.01 ? { handF: lp([x - 6, PELVIS + 20], palms[0], pray), bendF: 1, handB: lp([x + 4, PELVIS + 24], palms[1], pray), bendB: 1 } : no > 0.01 && u < at(2) ? { handF: lp([x - 6, PELVIS + 20], [x - 70, shoulderY - 96], no), bendF: 1, look: -1 as const } : {})} />
+      {pray > 0.5 ? (
+        <g opacity={ramp(pray, 0.7, 1)}>
+          {palms.map(([px, py], i) => (
+            <path key={i} d={`M ${px - 22} ${py - 8} Q ${px - 18} ${py + 14} ${px} ${py + 14} Q ${px + 18} ${py + 14} ${px + 22} ${py - 8}`} fill="#f6f3ec" stroke={INK} strokeWidth={5} />
+          ))}
+        </g>
+      ) : null}
+      {variant === "tease" ? <g transform="translate(330 1000)">{sheet}</g> : null}
+      {no > 0.01 && u < at(2) + 0.6 ? (
+        <g opacity={no} stroke="#c0392b" strokeWidth={12} strokeLinecap="round">
+          <path d={`M ${600 + 10} ${shoulderY - 10} l 50 50 M ${600 + 60} ${shoulderY - 10} l -50 50`} />
+        </g>
+      ) : null}
+    </g>
+  );
+};
+
+// ----------------------------------------------------------------------------------- 18:17, the answer unseen
+
+/** A balcony at night: « زي دعوة بقالك سنين بتدعيها… ومفيش حاجة اتغيرت. »: he raises his hands to the sky, then his face
+ * falls; « يمكن إجابتها شغالة… في تفاصيل إنت مش شايفها. »: behind him, where he does not look, a seed sprouts in a pot, a
+ * window lights across the street, a door opens a little. `tease`: his hands raised, the details not there yet. */
+export const BalconyPlayed: Played = ({ u, t, at, variant }) => {
+  const tease = variant === "tease";
+  const x = 700;
+  const fall = tease ? 0 : ramp(u, at(1), at(1) + 0.5);
+  const sprout = tease ? 0 : ramp(u, at(2), at(2) + 1.2);
+  const lamp = tease ? 0 : ramp(u, at(2) + 0.9, at(2) + 1.4);
+  const door = tease ? 0 : ramp(u, at(3), at(3) + 1.0);
+  const palms: P2[] = [[x + 118, shoulderY + 4], [x + 86, shoulderY + 20]];
+  return (
+    <g>
+      <rect width={W} height={H} fill="#141a3a" />
+      {Array.from({ length: 30 }, (_, i) => <circle key={i} cx={(i * 211) % W} cy={70 + ((i * 97) % 520)} r={1.5 + (i % 2)} fill="#e8eefc" opacity={0.5 + 0.3 * Math.sin(t + i)} />)}
+      <circle cx={900} cy={420} r={46} fill="#f3eccf" opacity={0.9} />
+      {/* the building across the street, its windows; one lights */}
+      <rect x={40} y={640} width={420} height={680} fill="#262b48" stroke={INK} strokeWidth={6} />
+      {[0, 1, 2].map((r) => [0, 1, 2].map((c) => (
+        <rect key={`${r}${c}`} x={80 + c * 130} y={690 + r * 150} width={70} height={90} fill="#ffcf7a" opacity={r === 1 && c === 1 ? 0.08 + 0.8 * lamp : 0.08} />
+      )))}
+      {/* the door behind him, ajar */}
+      <rect x={480} y={900} width={150} height={FLOOR - 900} fill="#3a2c22" stroke={INK} strokeWidth={6} />
+      <path d={`M 480 900 L ${480 + 150 * (1 - 0.35 * door)} ${900 - 10 * door} L ${480 + 150 * (1 - 0.35 * door)} ${FLOOR + 10 * door} L 480 ${FLOOR} Z`} fill="#5c3a22" stroke={INK} strokeWidth={5} />
+      <rect x={480 + 150 * (1 - 0.35 * door)} y={900} width={150 * 0.35 * door} height={FLOOR - 900} fill="#ffe2a8" opacity={0.9} />
+      {/* the balcony floor and railing */}
+      <rect x={0} y={FLOOR} width={W} height={H - FLOOR} fill="#2c2b38" />
+      <path d={`M 660 ${FLOOR - 160} L 1080 ${FLOOR - 160}`} stroke={INK} strokeWidth={10} />
+      {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M ${680 + i * 50} ${FLOOR - 160} L ${680 + i * 50} ${FLOOR}`} stroke={INK} strokeWidth={6} />)}
+      {/* the pot and its sprout */}
+      <path d={`M 400 ${FLOOR} L 384 ${FLOOR - 70} L 456 ${FLOOR - 70} L 440 ${FLOOR} Z`} fill="#c46a3c" stroke={INK} strokeWidth={5} />
+      <g opacity={sprout > 0.01 ? 1 : 0}>
+        <path d={`M 420 ${FLOOR - 70} L 420 ${FLOOR - 70 - 90 * sprout}`} stroke="#3fa36b" strokeWidth={8} strokeLinecap="round" />
+        <ellipse cx={420 - 20 * sprout} cy={FLOOR - 70 - 70 * sprout} rx={22 * sprout} ry={10 * sprout} fill="#3fa36b" stroke={INK} strokeWidth={3} />
+        <ellipse cx={420 + 22 * sprout} cy={FLOOR - 70 - 90 * sprout} rx={22 * sprout} ry={10 * sprout} fill="#3fa36b" stroke={INK} strokeWidth={3} />
+      </g>
+      <Stick x={x} y={PELVIS} s={S} facing={1} tone="white" face={fall > 0.5 ? "worried" : "calm"} pose={{ ...POSES.stand, head: lerp(14, -6, fall) }}
+        handF={palms[0]} bendF={1} handB={palms[1]} bendB={1} />
+      {palms.map(([px, py], i) => (
+        <path key={i} d={`M ${px - 22} ${py - 8} Q ${px - 18} ${py + 14} ${px} ${py + 14} Q ${px + 18} ${py + 14} ${px + 22} ${py - 8}`} fill="#f6f3ec" stroke={INK} strokeWidth={5} />
+      ))}
+    </g>
+  );
+};
+
+// ------------------------------------------------------------------------------------------ 18:19, waking up
+
+/** A bedroom in the morning. `ex` « وإحنا… أول ما نصحى بنمسك الموبايل. قبل أي حاجة… قول الدعاء ده… واحمد ربنا إنه
+ * رجّعك. »: the alarm rings on the night table, his hand goes to the phone; it stops; he sits up, raises his hands, smiles.
+ * `tease`: the alarm rings, he opens his eyes. Phrases of `ex`: 0 « وإحنا… », 1 the phone, 2 « قبل أي حاجة… », 3, 4. */
+export const BedPlayed: Played = ({ u, t, at, variant }) => {
+  const tease = variant === "tease";
+  const reach = tease ? 0 : ramp(u, at(1), at(1) + 0.7) * (1 - ramp(u, at(2), at(2) + 0.5));
+  const up = tease ? 0 : ramp(u, at(2) + 0.3, at(2) + 0.9);
+  const pray = tease ? 0 : ramp(u, at(3), at(3) + 0.6);
+  const ring = tease ? u < 3 : u < at(2);
+  const bed = { x: 260, y: 1180, w: 560 };
+  const lyingY = bed.y - 40;
+  const seatY = bed.y - 20;
+  const sx = bed.x + 380;
+  const palms: P2[] = [[sx + 104, seatY - 106 * S * 0.95 + 26], [sx + 76, seatY - 106 * S * 0.95 + 40]];
+  return (
+    <g>
+      <Room wall="#e9dcc3" floor="#8a6a4a" />
+      <rect x={640} y={600} width={300} height={300} fill="#ffd9a0" stroke={INK} strokeWidth={10} />
+      <circle cx={790} cy={760} r={50} fill="#ffb347" opacity={0.8} />
+      <path d="M 790 600 L 790 900 M 640 750 L 940 750" stroke={INK} strokeWidth={7} />
+      {/* the night table and the phone */}
+      <rect x={90} y={1130} width={140} height={190} fill="#a87b55" stroke={INK} strokeWidth={6} />
+      <g transform={`translate(${160 + (ring ? 3 * Math.sin(t * 50) : 0)} 1110) rotate(90) scale(0.9)`}><Phone glow={ring} /></g>
+      {ring ? (
+        <g stroke="#e0533f" strokeWidth={5} strokeLinecap="round" opacity={0.7}>
+          <path d="M 110 1060 l -16 -16 M 160 1050 l 0 -22 M 210 1060 l 16 -16" />
+        </g>
+      ) : null}
+      {/* the bed */}
+      <g stroke={INK} strokeWidth={7} strokeLinejoin="round">
+        <rect x={bed.x} y={bed.y} width={bed.w} height={90} fill="#f6f3ec" />
+        <rect x={bed.x - 20} y={bed.y - 120} width={30} height={260} fill="#7a4b2a" />
+        <rect x={bed.x + bed.w - 10} y={bed.y - 40} width={30} height={180} fill="#7a4b2a" />
+        <rect x={bed.x + 20} y={bed.y - 40} width={120} height={46} rx={18} fill="#fffaf0" />
+      </g>
+      {/* lying, then sitting up */}
+      <g opacity={1 - up}>
+        <g transform={`rotate(-90 ${bed.x + 260} ${lyingY})`}>
+          <Stick x={bed.x + 260} y={lyingY} s={S * 0.95} facing={1} tone="white" face={tease && u < 1 ? "calm" : "neutral"}
+            pose={POSES.stand} handF={reach > 0.01 ? lp([bed.x + 290, lyingY + 40], [bed.x + 120, lyingY + 260], reach) : undefined} bendF={1} />
+        </g>
+        <rect x={bed.x + 160} y={bed.y - 30} width={bed.w - 170} height={50} rx={14} fill="#9cc1e4" stroke={INK} strokeWidth={6} />
+      </g>
+      <g opacity={up}>
+        <Stick x={sx} y={seatY} s={S * 0.95} facing={1} tone="white" face={u > at(4) ? "smile" : pray > 0.5 ? "calm" : "neutral"}
+          pose={POSES.seat} {...(pray > 0.01 ? { handF: lp([sx + 40, seatY], palms[0], pray), bendF: 1, handB: lp([sx + 30, seatY], palms[1], pray), bendB: 1 } : {})} />
+        {pray > 0.5 ? palms.map(([px, py], i) => (
+          <path key={i} d={`M ${px - 22} ${py - 8} Q ${px - 18} ${py + 14} ${px} ${py + 14} Q ${px + 18} ${py + 14} ${px + 22} ${py - 8}`} fill="#f6f3ec" stroke={INK} strokeWidth={5} />
+        )) : null}
+      </g>
+    </g>
+  );
+};

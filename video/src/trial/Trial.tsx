@@ -11,7 +11,7 @@ import { subtitleChunks } from "../templates/Subtitles";
 import type { WordTiming } from "../types";
 import { Caravan, Footprints, Gate, Lantern, Palm, Purse, Rain, Sermon, Stars, Track, trackAt } from "./Ayah";
 import { DoorPlayed, PrayPlayed, RumorPlayed, type Played } from "./AyahPlayed";
-import { OfficePlayed, StagePlayed, WorkPlayed, WorkshopPlayed } from "./Played";
+import { BalconyPlayed, BedPlayed, CheatPlayed, OfficePlayed, StagePlayed, WallsPlayed, WorkPlayed, WorkshopPlayed } from "./Played";
 import { Boat, Fleet } from "./Boat";
 import { Call, Niche, Whale } from "./Dua";
 import { House, Land } from "./Home";
@@ -484,12 +484,19 @@ export const PICTURES: Record<string, Drawn> = {
  * « sur toute la vidéo, si on peut jouer une scène, on la joue »). Each entry is drawn while its `scene` is shown; with
  * `from`, only from the phrase `from` of the first narration on that scene to the end of that narration: an « annonce »,
  * a few seconds of the played scene on the opening line that speaks to the viewer, the story's picture before it. */
-type PlayedAt = { scene: string; set: Played; variant?: string; from?: number };
+type PlayedAt = { scene: string; set: Played; variant?: string; from?: number; to?: number; card?: boolean };
 export const PLAYED: Record<string, PlayedAt[]> = {
   caravan: [{ scene: "work", set: WorkPlayed }],
-  west: [{ scene: "sun", set: OfficePlayed, variant: "tease", from: 5 }, { scene: "office-us", set: OfficePlayed, variant: "us" }, { scene: "office", set: OfficePlayed, variant: "ex" }],
-  tribute: [{ scene: "pass", set: WorkshopPlayed, variant: "tease", from: 7 }, { scene: "workshop-us", set: WorkshopPlayed, variant: "us" }, { scene: "workshop", set: WorkshopPlayed, variant: "ex" }],
-  barrier: [{ scene: "blocks", set: StagePlayed, variant: "tease", from: 7 }, { scene: "stage-us", set: StagePlayed, variant: "us" }, { scene: "stage", set: StagePlayed, variant: "ex" }],
+  west: [{ scene: "sun", set: OfficePlayed, variant: "tease", from: 5, card: true }, { scene: "office-us", set: OfficePlayed, variant: "us" }, { scene: "office", set: OfficePlayed, variant: "ex" }],
+  tribute: [{ scene: "pass", set: WorkshopPlayed, variant: "tease", from: 7, card: true }, { scene: "workshop-us", set: WorkshopPlayed, variant: "us" }, { scene: "workshop", set: WorkshopPlayed, variant: "ex" }],
+  barrier: [{ scene: "blocks", set: StagePlayed, variant: "tease", from: 7, card: true }, { scene: "stage-us", set: StagePlayed, variant: "us" }, { scene: "stage", set: StagePlayed, variant: "ex" }],
+  duha: [{ scene: "night", set: PrayPlayed, variant: "tease", from: 8, card: true }, { scene: "pray-us", set: PrayPlayed, variant: "us" }, { scene: "pray-count", set: PrayPlayed, variant: "count" }],
+  hope: [{ scene: "road", set: DoorPlayed, variant: "tease", from: 8, card: true }],
+  forgive: [{ scene: "cut", set: RumorPlayed, variant: "tease", from: 8, card: true }],
+  universe: [{ scene: "walls", set: WallsPlayed }],
+  refuge: [{ scene: "leave", set: CheatPlayed, variant: "tease", from: 6, card: true }, { scene: "cheat", set: CheatPlayed, variant: "ex" }, { scene: "dawn", set: CheatPlayed, variant: "dua", from: 0, to: 4 }],
+  sunpath: [{ scene: "rise", set: BalconyPlayed, variant: "tease", from: 5, card: true }, { scene: "balcony", set: BalconyPlayed, variant: "ex" }],
+  awake: [{ scene: "years", set: BedPlayed, variant: "tease", from: 5, card: true }, { scene: "bed", set: BedPlayed, variant: "ex" }],
 };
 
 const PlayedLayer: React.FC<{ p: PlayedAt; t: number; segments: Segment[]; show: (id: string) => number; since: (id: string) => number; phrase: (id: string, n: number) => number }> = ({ p, t, segments, show, since, phrase }) => {
@@ -499,7 +506,7 @@ const PlayedLayer: React.FC<{ p: PlayedAt; t: number; segments: Segment[]; show:
     const seg = segments.find((s) => s.scene === p.scene && s.kind === "narration");
     if (!seg) return null;
     origin = phrase(p.scene, p.from);
-    const end = seg.start + seg.seconds;
+    const end = p.to !== undefined ? phrase(p.scene, p.to) - 0.2 : seg.start + seg.seconds;
     o = interpolate(t, [origin - 0.3, origin, end, end + 0.35], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   } else {
     o = show(p.scene);
@@ -508,7 +515,7 @@ const PlayedLayer: React.FC<{ p: PlayedAt; t: number; segments: Segment[]; show:
   if (o <= 0.001) return null;
   const Set = p.set;
   const drawn = <Set u={t - origin} t={t} at={(n) => phrase(p.scene, n) - origin} variant={p.variant} />;
-  if (p.from === undefined) return <g opacity={o}>{drawn}</g>;
+  if (!p.card) return <g opacity={o}>{drawn}</g>;
   // An annonce plays in a card under the opening's large text (which ends near 790) and above the translation (1490):
   // the part of the set where its figures stand (x 40 to 1040, y 690 to 1357), at nine tenths, framed in gold.
   const id = `card-${p.scene}-${p.variant ?? ""}`;
@@ -565,7 +572,7 @@ const AYAH_CAPTION: LayoutOverride = { caption: { top: 1392, size: 56, sub: 1584
 /** Dhul-Qarnayn's west: its dwellings stand on a horizon at 1420, down to about 1450: the subtitle goes lower. */
 const WEST_CAPTION: LayoutOverride = { caption: { top: 1474, size: 52, sub: 1640 } };
 export const LAYOUTS: Record<string, LayoutOverride> = { duha: AYAH_CAPTION, hope: AYAH_CAPTION, forgive: AYAH_CAPTION,
-  caravan: AYAH_CAPTION, west: WEST_CAPTION, tribute: AYAH_CAPTION, barrier: AYAH_CAPTION, ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS, ...DHIKR_LAYOUTS, ...SAHW_LAYOUTS, ...SAHIB_LAYOUTS };
+  caravan: AYAH_CAPTION, west: WEST_CAPTION, tribute: AYAH_CAPTION, barrier: AYAH_CAPTION, refuge: AYAH_CAPTION, sunpath: AYAH_CAPTION, awake: AYAH_CAPTION, ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS, ...DHIKR_LAYOUTS, ...SAHW_LAYOUTS, ...SAHIB_LAYOUTS };
 const layoutOf = (trial: string): Layout => {
   const own = LAYOUTS[trial];
   return own ? { ...PORTRAIT, ...own, sub: { ...PORTRAIT.sub, ...own.sub }, credit: { ...PORTRAIT.credit, ...own.credit } } : PORTRAIT;
