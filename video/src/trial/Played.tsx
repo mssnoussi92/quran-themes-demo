@@ -496,3 +496,259 @@ export const BedPlayed: Played = ({ u, t, at, variant }) => {
     </g>
   );
 };
+
+// ------------------------------------------------------------------------------------------- small shared props
+
+const Icon: React.FC<{ x: number; y: number; kind: "heart" | "plate" | "house" | "crack"; k: number; mark?: "ok" | "no" }> = ({ x, y, kind, k, mark }) => {
+  if (k <= 0.01) return null;
+  return (
+    <g transform={`translate(${x} ${y}) scale(${0.6 + 0.4 * k})`} opacity={k}>
+      <circle r={52} fill="#fffaf0" stroke={INK} strokeWidth={5} />
+      {kind === "heart" ? <path d="M 0 22 C -40 -6 -26 -36 0 -16 C 26 -36 40 -6 0 22 Z" fill="#e0533f" stroke={INK} strokeWidth={4} /> : null}
+      {kind === "plate" ? (
+        <g stroke={INK} strokeWidth={4}>
+          <ellipse cx={0} cy={8} rx={34} ry={12} fill="#f6f3ec" />
+          <path d="M -22 4 Q 0 -30 22 4 Z" fill="#e8a33a" />
+        </g>
+      ) : null}
+      {kind === "house" ? <path d="M -26 24 L -26 -4 L 0 -26 L 26 -4 L 26 24 Z M -8 24 L -8 6 L 8 6 L 8 24" fill="#d9a873" stroke={INK} strokeWidth={4} strokeLinejoin="round" /> : null}
+      {kind === "crack" ? (
+        <g>
+          <rect x={-18} y={-30} width={36} height={60} rx={6} fill="#3b4a63" stroke={INK} strokeWidth={4} />
+          <path d="M -12 -20 L 2 -4 L -6 6 L 10 22" stroke="#fffaf0" strokeWidth={4} fill="none" />
+        </g>
+      ) : null}
+      {mark === "ok" ? <path d="M 26 30 l 12 12 l 22 -26" stroke="#3fa36b" strokeWidth={9} fill="none" strokeLinecap="round" /> : null}
+      {mark === "no" ? <path d="M 30 22 l 26 26 M 56 22 l -26 26" stroke="#c0392b" strokeWidth={9} strokeLinecap="round" /> : null}
+    </g>
+  );
+};
+
+const Palms: React.FC<{ palms: P2[]; k?: number }> = ({ palms, k = 1 }) => (
+  <g opacity={k}>
+    {palms.map(([px, py], i) => (
+      <path key={i} d={`M ${px - 22} ${py - 8} Q ${px - 18} ${py + 14} ${px} ${py + 14} Q ${px + 18} ${py + 14} ${px + 22} ${py - 8}`} fill="#f6f3ec" stroke={INK} strokeWidth={5} />
+    ))}
+  </g>
+);
+
+// ---------------------------------------------------------------------------- 100:6, the one who counts misfortunes
+
+/** A living room. `tease` (on « …بتوصف اللي بيعدّ المصايب… وينسى النعم »): he counts on his fingers, three red crosses.
+ * `ledger` « المصيبة… بنفتكرها باليوم والساعة. والنعمة… بنعيش جواها كل يوم… ومش شايفينها. »: he writes the broken thing
+ * and its hour in a notebook; around him the sun, the meal, the family picture light up, and he does not look up.
+ * `day` « زي يوم عدّى كله كويس: صحة… وأكل… وبيت. وحاجة واحدة بس باظت. وبالليل… الحاجة الوحيدة اللي بتحكيها… هي اللي
+ * باظت. »: health, food, home, each ticked; one cracked phone; at night, on the phone with a friend, only the crack in
+ * his bubble. `count` « قبل ما تعدّ اللي راح… عدّ اللي لسه معاك. … قول تلات نعم. »: he counts three blessings, smiling. */
+export const DayPlayed: Played = ({ u, t, at, variant }) => {
+  const x = 640;
+  const night = variant === "day" ? ramp(u, at(5) - 0.3, at(5) + 0.3) : variant === "count" ? 1 : 0;
+  const icons: { kind: "heart" | "plate" | "house" | "crack"; k: number; mark?: "ok" | "no" }[] =
+    variant === "day" ? [
+      { kind: "heart", k: ramp(u, at(1), at(1) + 0.3) * (1 - 0.7 * night), mark: "ok" },
+      { kind: "plate", k: ramp(u, at(2), at(2) + 0.3) * (1 - 0.7 * night), mark: "ok" },
+      { kind: "house", k: ramp(u, at(3), at(3) + 0.3) * (1 - 0.7 * night), mark: "ok" },
+      { kind: "crack", k: ramp(u, at(4), at(4) + 0.3), mark: "no" },
+    ] : variant === "count" ? [
+      { kind: "heart", k: ramp(u, at(4), at(4) + 0.3), mark: "ok" },
+      { kind: "plate", k: ramp(u, at(4) + 0.5, at(4) + 0.8), mark: "ok" },
+      { kind: "house", k: ramp(u, at(4) + 1.0, at(4) + 1.3), mark: "ok" },
+    ] : variant === "tease" ? [
+      { kind: "crack", k: ramp(u, 0, 0.3), mark: "no" },
+      { kind: "crack", k: ramp(u, 0.4, 0.7), mark: "no" },
+      { kind: "crack", k: ramp(u, 0.8, 1.1), mark: "no" },
+    ] : [];
+  const blessings = variant === "ledger" ? ramp(u, at(2), at(3)) : 0;
+  const writing = variant === "ledger";
+  const call = variant === "day" ? ramp(u, at(6) - 0.2, at(6) + 0.3) : 0;
+  const face: Face = variant === "count" ? (u > at(4) + 1.2 ? "smile" : "kind") : variant === "ledger" ? "cross" : variant === "tease" ? "cross" : call > 0.5 ? "cross" : u > at(4) ? "worried" : "smile";
+  return (
+    <g>
+      <Room wall="#e6d6bd" floor="#8a6a4a" />
+      {/* the window: day, then night */}
+      <rect x={760} y={620} width={260} height={260} fill="#8fc6f2" stroke={INK} strokeWidth={10} />
+      <rect x={760} y={620} width={260} height={260} fill="#0b1230" opacity={night} />
+      <circle cx={840} cy={700} r={34} fill="#ffd36b" stroke={INK} strokeWidth={5} opacity={(1 - night) * (variant === "ledger" ? 0.4 + 0.6 * blessings : 1)} />
+      <path d="M 890 620 L 890 880 M 760 750 L 1020 750" stroke={INK} strokeWidth={7} />
+      {/* the family picture and the meal: they glow in `ledger` */}
+      <rect x={90} y={640} width={150} height={120} fill="#fffaf0" stroke={INK} strokeWidth={6} />
+      <g opacity={0.5 + 0.5 * blessings}>
+        <circle cx={135} cy={690} r={16} fill="#f6f3ec" stroke={INK} strokeWidth={3} />
+        <circle cx={190} cy={692} r={13} fill="#f6f3ec" stroke={INK} strokeWidth={3} />
+      </g>
+      {variant === "ledger" ? (
+        <g>
+          <circle cx={165} cy={700} r={110} fill="#ffe7a8" opacity={0.25 * blessings} />
+          <circle cx={840} cy={700} r={90} fill="#ffe7a8" opacity={0.25 * blessings} />
+          {/* the desk, the notebook, the hour he writes */}
+          <rect x={x - 80} y={1120} width={420} height={24} fill="#a87b55" stroke={INK} strokeWidth={6} />
+          <path d={`M ${x - 60} 1144 L ${x - 60} ${FLOOR} M ${x + 320} 1144 L ${x + 320} ${FLOOR}`} stroke={INK} strokeWidth={6} />
+          <rect x={x + 90} y={1060} width={150} height={60} fill="#fffaf0" stroke={INK} strokeWidth={5} />
+          <text x={x + 165} y={1102} textAnchor="middle" fontFamily="Lora, serif" fontWeight={700} fontSize={34} fill="#c0392b" opacity={ramp(u, at(1) - 0.2, at(1) + 0.3)}>12:30</text>
+          <g transform={`translate(${x + 290} 1080) scale(0.9)`} opacity={blessings}>
+            <ellipse cx={0} cy={8} rx={34} ry={12} fill="#f6f3ec" stroke={INK} strokeWidth={4} />
+            <path d="M -22 4 Q 0 -30 22 4 Z" fill="#e8a33a" stroke={INK} strokeWidth={4} />
+          </g>
+        </g>
+      ) : null}
+      <Stick x={x} y={PELVIS} s={S} facing={1} tone="white" face={face}
+        pose={{ ...POSES.stand, head: writing ? -18 : face === "smile" ? 8 : 0, torso: writing ? 10 : 0 }}
+        {...(writing ? { handF: [x + 160 + 10 * Math.sin(t * 8), 1080] as P2, bendF: -1 }
+          : call > 0.01 ? { handF: lp([x + 40, PELVIS + 20], [x + 20, headY + 20], call), bendF: -1, heldF: <Phone glow /> }
+          : variant === "count" || variant === "tease" ? { handF: [x + 110, shoulderY - 60] as P2, bendF: -1 } : {})} />
+      {icons.map((ic, i) => <Icon key={i} x={110 + i * 125} y={i === 3 ? 1130 : 990} kind={ic.kind} k={ic.k} mark={ic.mark} />)}
+      {call > 0.5 ? (
+        <g opacity={ramp(u, at(6), at(6) + 0.4)}>
+          <Bubble x={x + 230} y={headY - 150} text="" k={1} tail={-1} size={70} />
+          <g transform={`translate(${x + 230} ${headY - 156}) scale(0.7)`}>
+            <rect x={-18} y={-30} width={36} height={60} rx={6} fill="#3b4a63" stroke={INK} strokeWidth={4} />
+            <path d="M -12 -20 L 2 -4 L -6 6 L 10 22" stroke="#fffaf0" strokeWidth={4} fill="none" />
+          </g>
+        </g>
+      ) : null}
+    </g>
+  );
+};
+
+// --------------------------------------------------------------------------------- 4:124, a glass of water
+
+/** « زي كوباية مية… ادّيتها لعطشان… ومحدش شافك. عند ربنا… مش هتضيع ولا قد النقرة. »: a hot street, a worker sits
+ * exhausted on the kerb; he walks up and holds out a glass of water; nobody else is there; at « عند ربنا » a small light. */
+export const CupPlayed: Played = ({ u, t, at }) => {
+  const walk = walking(u, 0, Math.max(0.6, at(1) - 0.2), 1180, 720);
+  const give = ramp(u, at(1), at(1) + 0.6);
+  const drink = ramp(u, at(2), at(2) + 0.6);
+  const light = ramp(u, at(3), at(3) + 0.8);
+  const seated = { x: 420, y: FLOOR - 70 - 22 };
+  const glass = (
+    <g>
+      <path d="M -16 -34 L -12 18 L 12 18 L 16 -34 Z" fill="#cfe6ff" stroke={INK} strokeWidth={4} />
+      <path d="M -14 -14 L -12 16 L 12 16 L 14 -14 Z" fill="#7fb6e6" opacity={1 - 0.7 * drink} />
+    </g>
+  );
+  return (
+    <g>
+      <rect width={W} height={H} fill="#f2c27a" />
+      <circle cx={860} cy={520} r={90} fill="#fff1b8" stroke={INK} strokeWidth={6} />
+      {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => <path key={i} d={`M ${860 + Math.cos(i * 0.785) * 110} ${520 + Math.sin(i * 0.785) * 110} l ${Math.cos(i * 0.785) * 40} ${Math.sin(i * 0.785) * 40}`} stroke="#fff1b8" strokeWidth={8} strokeLinecap="round" />)}
+      <rect x={0} y={760} width={W} height={FLOOR - 760} fill="#d9a873" />
+      {[0, 1, 2].map((i) => <rect key={i} x={60 + i * 330} y={820} width={240} height={330} fill="#c99a5e" stroke={INK} strokeWidth={6} />)}
+      <rect x={0} y={FLOOR - 70} width={W} height={70} fill="#b9b2a2" stroke={INK} strokeWidth={6} />
+      <rect x={0} y={FLOOR} width={W} height={H - FLOOR} fill="#6d7686" />
+      {/* the worker on the kerb */}
+      <Stick x={seated.x} y={seated.y} s={S * 0.92} facing={1} tone="white" cap="#e88a3a" face={drink > 0.5 ? "smile" : "worried"} pose={POSES.seat}
+        handF={give > 0.5 ? [seated.x + 70, headY + 40] : [seated.x + 60, seated.y]} bendF={-1} heldF={give > 0.5 ? glass : undefined} />
+      {drink < 0.5 ? [0, 1].map((i) => <path key={i} d={`M ${seated.x + 60 + i * 30} ${headY - 30 + ((t * 40 + i * 20) % 40)} q 6 10 0 16 q -6 -6 0 -16`} fill="#7fb6e6" />) : null}
+      {/* the one who gives */}
+      <Stick x={walk.x} y={PELVIS} s={S} facing={-1} tone="white" face={light > 0.5 ? "kind" : "neutral"} pose={walk.pose}
+        handF={give < 0.5 ? lp([walk.x - 40, PELVIS + 10], [walk.x - 130, shoulderY + 70], give * 2) : [walk.x - 40, PELVIS + 20]} bendF={1}
+        heldF={give < 0.5 && u > 0 ? glass : undefined} />
+      {light > 0.01 ? <g opacity={light}><circle cx={seated.x + 90} cy={headY - 40} r={50 + 6 * Math.sin(t * 4)} fill="#fff1b8" opacity={0.5} /><circle cx={seated.x + 90} cy={headY - 40} r={10} fill="#fff8dc" /></g> : null}
+    </g>
+  );
+};
+
+// ------------------------------------------------------------------------------------ 70:19-23, the late salary
+
+/** A home. `salary` « زي واحد مرتبه اتأخر يومين… فقلب البيت. ولما نزل… مسكه… ومحدش شاف منه حاجة. »: his phone shows
+ * nothing, he shouts; a child watches; the money comes, he clutches his wallet; the child's hand stays empty. `cure` « …
+ * والقرآن كتب علاجه في نفس المكان: الصلاة. لما تلاقي نفسك بتنهار… أو إيدك ماسكة… ارجع لصلاتك. »: he prays, calm. */
+export const SalaryPlayed: Played = ({ u, at, variant }) => {
+  const x = 520;
+  const cure = variant === "cure";
+  const angry = cure ? 0 : ramp(u, at(0) + 0.6, at(1) + 0.3) * (1 - ramp(u, at(2) - 0.3, at(2)));
+  const paid = cure ? 0 : ramp(u, at(2), at(2) + 0.4);
+  const clutch = cure ? 0 : ramp(u, at(3), at(3) + 0.4);
+  const turned = cure ? 0 : ramp(u, at(4), at(4) + 0.4);
+  const wallet = (
+    <g>
+      <rect x={-26} y={-18} width={52} height={36} rx={6} fill="#7a4b2a" stroke={INK} strokeWidth={4} />
+      <rect x={-20} y={-26} width={36} height={14} fill="#3fa36b" stroke={INK} strokeWidth={3} />
+    </g>
+  );
+  return (
+    <g>
+      <Room wall="#dcd3c3" floor="#7a6a58" />
+      <rect x={720} y={640} width={240} height={220} fill="#9cc1e4" stroke={INK} strokeWidth={10} />
+      {cure ? (
+        <g>
+          <path d={`M ${x - 150} ${FLOOR - 6} L ${x + 130} ${FLOOR - 6} L ${x + 160} ${FLOOR + 50} L ${x - 180} ${FLOOR + 50} Z`} fill="#2f6b4f" stroke={INK} strokeWidth={6} strokeLinejoin="round" />
+          <circle cx={x} cy={headY} r={150} fill="#fff1b8" opacity={0.2 * ramp(u, at(5) - 0.3, at(5) + 0.5)} />
+          <Stick x={x} y={PELVIS} s={S} facing={-1} tone="white" face="calm" pose={{ ...POSES.stand, head: -4 }}
+            handF={[x - 34, shoulderY + 46]} bendF={1} handB={[x - 26, shoulderY + 62]} bendB={1} />
+          <g opacity={ramp(u, at(3), at(3) + 0.3) * (1 - ramp(u, at(5) - 0.4, at(5)))}>
+            <Burst x={x + 250} y={headY - 120} k={1} />
+          </g>
+          <g opacity={ramp(u, at(4), at(4) + 0.3) * (1 - ramp(u, at(5) - 0.4, at(5)))} transform={`translate(${x + 250} ${headY + 60})`}>{wallet}</g>
+        </g>
+      ) : (
+        <g>
+          {/* the child */}
+          <Stick x={860} y={FLOOR - 154 * S * 0.62} s={S * 0.62} facing={-1} tone="white" face={turned > 0.5 ? "worried" : angry > 0.5 ? "shock" : "neutral"} pose={POSES.stand}
+            handF={turned > 0.01 ? lp([840, FLOOR - 60], [740, shoulderY + 160], ramp(u, at(3), at(3) + 0.5)) : undefined} bendF={1} />
+          <Stick x={x} y={PELVIS} s={S} facing={turned > 0.5 ? -1 : 1} tone="white" face={turned > 0.5 ? "smirk" : clutch > 0.5 ? "smirk" : angry > 0.5 ? "angry" : "worried"}
+            pose={{ ...POSES.stand, torso: angry > 0.5 ? 8 : 0 }}
+            handF={clutch > 0.5 ? [x + (turned > 0.5 ? -24 : 24), shoulderY + 50] : [x + 70, headY + 40]} bendF={-1}
+            heldF={clutch > 0.5 ? wallet : <Phone glow={paid > 0.5} />} />
+          {angry > 0.01 ? <Burst x={x + 180} y={headY - 140} k={angry} /> : null}
+          {paid > 0.01 && clutch < 0.5 ? (
+            <g opacity={paid} transform={`translate(${x + 100} ${headY - 70}) scale(2)`}>
+              <Coin x={0} y={0} />
+              <Coin x={10} y={-8} />
+            </g>
+          ) : null}
+        </g>
+      )}
+    </g>
+  );
+};
+
+// ------------------------------------------------------------------------------------ 6:125, the chest widened
+
+/** « اطلب من ربنا يشرح صدرك. »: a dim room; his hand on his chest, grey lines tight around it; he raises his hands, the
+ * lines loosen, a soft light opens from his chest. */
+export const BreathPlayed: Played = ({ u }) => {
+  const x = 540;
+  const open = ramp(u, 0.9, 2.2);
+  const palms: P2[] = [[x + 118, shoulderY + 4], [x + 86, shoulderY + 20]];
+  return (
+    <g>
+      <Room wall="#2b2f52" floor="#3a3346" dark={0.2 * (1 - open)} />
+      <circle cx={x + 10} cy={shoulderY + 40} r={60 + 160 * open} fill="#fff1b8" opacity={0.25 * open} />
+      <Stick x={x} y={PELVIS} s={S} facing={1} tone="white" face={open > 0.5 ? "calm" : "worried"} pose={{ ...POSES.stand, head: lerp(-10, 14, open) }}
+        handF={open > 0.3 ? palms[0] : [x + 20, shoulderY + 40]} bendF={1} handB={open > 0.3 ? palms[1] : undefined} bendB={1} />
+      {open > 0.3 ? <Palms palms={palms} k={ramp(open, 0.3, 0.6)} /> : null}
+      <g opacity={1 - open} stroke="#9aa0b4" strokeWidth={6} fill="none">
+        <ellipse cx={x + 6} cy={shoulderY + 40} rx={60} ry={40} />
+        <ellipse cx={x + 6} cy={shoulderY + 40} rx={80} ry={56} opacity={0.6} />
+      </g>
+    </g>
+  );
+};
+
+// ----------------------------------------------------------------------------------- 23:14, look in the mirror
+
+/** « بص في المراية… أول آية شفتها في حياتك… هي إنت. »: he stands before a mirror; his reflection; surprise, then a smile. */
+export const MirrorPlayed: Played = ({ u, at }) => {
+  const x = 380;
+  const mirror = { x: 680, y: 640, w: 300, h: 620 };
+  const wonder = ramp(u, at(1), at(1) + 0.4);
+  const smile = ramp(u, at(2), at(2) + 0.4);
+  const face: Face = smile > 0.5 ? "smile" : wonder > 0.5 ? "shock" : "neutral";
+  return (
+    <g>
+      <Room wall="#cfd8e2" floor="#7a6a58" />
+      <rect x={mirror.x - 16} y={mirror.y - 16} width={mirror.w + 32} height={mirror.h + 32} rx={20} fill="#a87b55" stroke={INK} strokeWidth={8} />
+      <clipPath id="mirror-glass"><rect x={mirror.x} y={mirror.y} width={mirror.w} height={mirror.h} rx={10} /></clipPath>
+      <rect x={mirror.x} y={mirror.y} width={mirror.w} height={mirror.h} rx={10} fill="#dfeaf4" />
+      <g clipPath="url(#mirror-glass)">
+        <g opacity={0.85}>
+          <Stick x={mirror.x + 150} y={PELVIS} s={S} facing={-1} tone="white" face={face} pose={{ ...POSES.stand, head: 4 }} />
+        </g>
+        <path d={`M ${mirror.x + 40} ${mirror.y + 40} l 60 -30 M ${mirror.x + 40} ${mirror.y + 90} l 120 -60`} stroke="#ffffff" strokeWidth={10} opacity={0.6} />
+      </g>
+      <circle cx={mirror.x + 150} cy={headY} r={120} fill="#fff1b8" opacity={0.25 * smile} />
+      <Stick x={x} y={PELVIS} s={S} facing={1} tone="white" face={face} pose={{ ...POSES.stand, head: 4 }} />
+    </g>
+  );
+};
