@@ -76,3 +76,20 @@ Rien n'est changé sans son accord, short par short ; chaque short refait se val
 - Beaucoup de scènes jouées se ressemblent (lever les mains : الضحى, la caverne 1 et 2, le ciel, la caverne 1) : je varie
   les décors, mais une série de trois du'as en huit jours restera proche. Mieux vaut en garder une sur deux.
 - La version courte de Dhul-Qarnayn (Facebook, Instagram) reste telle qu'elle est : la changer en cours fausserait l'essai.
+
+## Ses décisions (2026-11-20, questions à choix, sur les aperçus de chaque lot)
+
+- **La caravane** : refaite selon l'audit, utilisée seulement là où elle n'est pas encore en ligne (le brouillon TikTok,
+  YouTube à la main) ; rien de retiré là où elle est publiée.
+- **Dhul-Qarnayn 1 à 3** : « change tout », confirmé : la version entière comme dans l'audit, et la version courte (Facebook,
+  Instagram) aussi : l'annonce et l'exemple joués y gardent leur place, le reste de sa coupe ne change pas (on mesure
+  « courte et jouée »).
+- **« آية وحكايتها » 2 à 4** : ajouter les annonces et, dans الضحى, les deux répliques de plus (second rendu).
+- **La caverne 1 à 3** : les trois exemples joués (validés), plus les annonces et la fin du 1 jouée.
+- **« سنريهم آياتنا » 2 à 5** : la fin jouée dans les quatre ; Abou Lahab inchangé.
+- **« كلمة من القرآن » 1 à 3**, **« خريطة كلمة » 1 à 3**, **« بص تاني » 2**, **« لاحظت الفرق؟ » 1 à 3** : validés tels
+  que dans l'audit.
+- **« سؤال صعب » 1 à 3** : la question, la réponse et l'exemple joués ; la phrase coupée dans le 1.
+- **« مخيّر ولا مسيّر؟ » 1 à 3** : les coupes, et un visage simple pour la silhouette.
+- **« بص تاني » 1 et 3, « إزاي أعملها؟ » 1 à 4** : un visage simple pour la silhouette.
+- Chaque short refait se valide encore sur ses images, puis sur la vidéo, avant `page-files`.
