@@ -4,9 +4,9 @@ Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et 
 
 ## Le film · Sins we think are small · ذنوب بنحسبها صغيرة
 
-Textes du film (titre, description, chapitres) **proposés par la session, pas encore validés par le propriétaire**.
+Textes du film **validés par le propriétaire le 2026-11-21**.
 
-`hayyin-film-16x9.mp4` · 6:33 · 16:9 · YouTube · miniature : `hayyin-film-thumbnail.jpg`
+`hayyin-film-16x9.mp4` · 6:33 · 16:9 · YouTube · miniature : `hayyin-film-thumbnail-chair-art.jpg`
 
 **YouTube · Titre (44/100)**
 

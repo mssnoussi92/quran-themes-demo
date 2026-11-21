@@ -12,19 +12,22 @@ id: hayyin
 validated: { by: mssnoussi92, on: 2026-11-19, what: [publish] }      # « je valide titres et descriptions » (question à choix nommant les 3 titres et les 3 descriptions)
 files: hayyin                    # début du nom des vidéos livrées : hayyin-short-<n>-<id>.mp4
 tall:                            # le film en 9:16 pour Facebook et son jumeau TikTok (son choix du 2026-11-16 pour chaque film)
-  tiktok: { asked: 2026-11-21 }
+  validated: { by: mssnoussi92, on: 2026-11-21, what: [montage, publish] }      # « je valide les 12 vidéos », « je valide les 3 textes »
+  tiktok: { asked: 2026-11-21, validated: { by: mssnoussi92, on: 2026-11-21, what: [video, publish] } }
 title: { ar: "وتحسبونه هيّنًا", en: "You Think It Is Small" }
 shorts: [ghiba, namima, riya]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 publish:
   title: { en: "Sins we think are small", ar: "ذنوب بنحسبها صغيرة" }      # le titre du film, proposé par la session (2026-11-21), à valider
-  description:      # le film : proposée par la session (2026-11-21), à valider
+  description:      # le film : proposée par la session, validée par le propriétaire le 2026-11-21 (« je valide les 3 textes »)
     ar: "الغيبة، والنميمة، والرياء: تلات ذنوب بنشوفها صغيرة. في الفيلم ده: كلمة بتاخد من حسناتك وتديها للي اتكلمت عليه، ورسالة بتفرّق بين اتنين، وخير بيضيع عشان اتعمل للناس… والآية اللي بتقول إن اللي بنحسبه هيّن… عند ربنا عظيم."
     en: "Backbiting, tale-bearing and showing off: three sins we see as small. In this film: a word that takes from your good deeds and gives them to the one you spoke about, a message that sets two people apart, a good deed lost because it was done for people… and the verse that says that what we think is small is, with God, great."
-  hook:             # légende courte du film vertical (Facebook, TikTok) : proposée par la session (2026-11-21), à valider
+  hook:             # légende courte du film vertical (Facebook, TikTok) : proposée par la session, validée par le propriétaire le 2026-11-21 (« je valide les 3 textes »)
     ar: "كلمة في غياب حد… رسالة اتنقلت… وعمل خير اتصوّر عشان الناس تشوفه. تلات حاجات بنعملها كل يوم… ومش بنفكر فيها مرتين."
     en: "A word about someone who isn't there… a message forwarded… a good deed filmed so people see it. Three things we do every day… without a second thought."
+    validated: 2026-11-21
+  film_validated: 2026-11-21      # les textes du film (titre, description, chapitres, accroche) : « je valide les 3 textes »
   out: docs/retention/publication-hayyin.md
   series: { en: "You Think It Is Small", ar: "وتحسبونه هيّنًا" }
   hashtags: ["#وتحسبونه_هينا", "#تزكية_النفس"]
@@ -46,6 +49,7 @@ thumbnail:
   title: "وتحسبونه هيّنًا"
   tag: "3 ذنوب بنشوفها صغيرة"
   panels: [ghiba, namima, riya]
+  use: chair-art                 # choisie par le propriétaire le 2026-11-21 (« les 3 dessinées »)
   options:      # proposées par la session (2026-11-21), à choisir par le propriétaire : des moments du film, tout dessiné
     - { name: chair-art, art: hayyin-chair, lines: ["كلمة في غيابه…", "تمنها حسناتك!"], tag: "وتحسبونه هيّنًا", place: left }      # dessinée pour la vignette seule (son choix du 2026-11-21 : « entièrement dessinée »), recommandée
     - { name: chair, at: 80, lines: ["كلمة في غيابه…", "تمنها حسناتك!"], tag: "وتحسبونه هيّنًا", place: right }
@@ -54,6 +58,9 @@ thumbnail:
 # Script du film (répliques propres, ouverture, fin, titre) validé par lui le 2026-11-21 (« Script et lecture », question à choix) ;
 # le 16:9 : « dessins refaits en 16:9 » (son choix, même jour).
 script_validated: { by: mssnoussi92, on: 2026-11-21 }
+# Le film rendu (16:9 redessiné, 9:16, jumeau TikTok) validé par lui le 2026-11-21 (« je valide les 12 vidéos », question à choix
+# qui les nommait), ses textes (« je valide les 3 textes ») et sa vignette dessinée (« les 3 dessinées »).
+film_validated: { by: mssnoussi92, on: 2026-11-21, what: [video, montage, voice, ambience, publish, thumbnail] }
 chapters:
   - id: open
     title: { ar: "تلات حاجات صغيرة", en: "Three small things" }

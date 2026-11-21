@@ -8,7 +8,8 @@ id: sahw
 validated: { by: mssnoussi92, on: 2026-11-18, what: [publish] }      # « Je valide les 4 accroches » (question à choix)
 files: sahw                      # début du nom des vidéos livrées : sahw-short-<n>-<id>.mp4
 tall:                            # le film en 9:16 pour Facebook et son jumeau TikTok (son choix du 2026-11-16 pour chaque film)
-  tiktok: { asked: 2026-11-21 }
+  validated: { by: mssnoussi92, on: 2026-11-21, what: [montage, publish] }      # « je valide les 12 vidéos », « je valide les 3 textes »
+  tiktok: { asked: 2026-11-21, validated: { by: mssnoussi92, on: 2026-11-21, what: [video, publish] } }
 title: { ar: "إزاي أعملها؟", en: "How Do I Do It?" }
 shorts: [sahun, khams, nasit, shakk]
 handle: "@quran_words_daily"
@@ -16,12 +17,14 @@ voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 digits: latin
 publish:
   title: { en: "Sujud as-sahw: added, left out, or unsure?", ar: "سجود السهو: زوّدت، نقصت، ولا شكّيت؟" }      # le titre du film, proposé par la session (2026-11-21), à valider
-  description:      # le film : proposée par la session (2026-11-21), à valider
+  description:      # le film : proposée par la session, validée par le propriétaire le 2026-11-21 (« je valide les 3 textes »)
     ar: "سجود السهو من الأول للآخر: ركعة زيادة، تشهد نسيته، وشك في عدد الركعات. لكل غلطة: اللي عمله النبي صلى الله عليه وسلم وعلّمه، وأقوال المذاهب الأربعة من الموسوعة الفقهية الكويتية، وفي الآخر جدول: السجدتين قبل السلام ولا بعده."
     en: "Sujud as-sahw from start to finish: an extra rak'ah, a forgotten tashahhud, and doubt about how many rak'ahs. For each mistake: what the Prophet ﷺ did and taught, the views of the four schools from the Kuwaiti Encyclopedia of Fiqh, and a table at the end: the two prostrations before or after the salam."
-  hook:             # légende courte du film vertical (Facebook, TikTok) : proposée par la session (2026-11-21), à valider
+  hook:             # légende courte du film vertical (Facebook, TikTok) : proposée par la session, validée par le propriétaire le 2026-11-21 (« je valide les 3 textes »)
     ar: "النبي صلى الله عليه وسلم نفسه… سها في صلاته. وعلّمنا نعمل إيه… لما نسهى إحنا."
     en: "The Prophet ﷺ himself… forgot in his prayer. And he taught us what to do… when we forget."
+    validated: 2026-11-21
+  film_validated: 2026-11-21      # les textes du film (titre, description, chapitres, accroche) : « je valide les 3 textes »
   out: docs/retention/publication-sahw.md
   series: { en: "How Do I Do It?", ar: "إزاي أعملها؟" }
   hashtags: ["#إزاي_أعملها", "#سجود_السهو"]
@@ -44,6 +47,7 @@ thumbnail:
   title: "سجود السهو"
   tag: "زيادة · نقص · شك"
   panels: [sahun, khams, nasit, shakk]
+  use: doubt-art                 # choisie par le propriétaire le 2026-11-21 (« les 3 dessinées »)
   options:      # proposées par la session (2026-11-21), à choisir par le propriétaire : des moments du film
     - { name: doubt-art, art: sahw-doubt, lines: ["صلّيت 3 ولا 4؟", "الحل في سجدتين"], tag: "سجود السهو", place: left }      # dessinée pour la vignette seule (son choix du 2026-11-21 : « entièrement dessinée »), recommandée
     - { name: doubt, at: 300, lines: ["صلّيت 3 ولا 4؟", "الحل في سجدتين"], tag: "سجود السهو", place: right }
@@ -51,6 +55,9 @@ thumbnail:
 # Script du film (répliques propres, ouverture, fin, titre) validé par lui le 2026-11-21 (« Je valide le script », question à choix) ;
 # le 16:9 : « dessins refaits en 16:9 » (son choix, même jour).
 script_validated: { by: mssnoussi92, on: 2026-11-21 }
+# Le film rendu (16:9 redessiné, 9:16, jumeau TikTok) validé par lui le 2026-11-21 (« je valide les 12 vidéos », question à choix
+# qui les nommait), ses textes (« je valide les 3 textes ») et sa vignette dessinée (« les 3 dessinées »).
+film_validated: { by: mssnoussi92, on: 2026-11-21, what: [video, montage, voice, ambience, publish, thumbnail] }
 chapters:
   - id: open
     title: { ar: "حتى النبي ﷺ سها", en: "Even the Prophet ﷺ forgot" }

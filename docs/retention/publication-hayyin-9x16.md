@@ -1,12 +1,12 @@
 # You Think It Is Small · وتحسبونه هيّنًا : le film en 9:16
 
-Le même film, monté pour un écran vertical (les images des shorts, la même voix, le même minutage). Texte : la légende courte, le titre du film, son accroche avec la ligne de la voix IA, ses hashtags (titre et hashtags **proposé par la session, pas encore validé par le propriétaire**). Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **proposées par la session, pas encore validées par le propriétaire** : rien n'est publié avec elles avant.
+Le même film, monté pour un écran vertical (les images des shorts, la même voix, le même minutage). Texte : la légende courte, le titre du film, son accroche avec la ligne de la voix IA, ses hashtags (titre et hashtags **validés par le propriétaire le 2026-11-21**). Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **validées par le propriétaire le 2026-11-21**.
 
 ## Le film en 9:16 · Sins we think are small · ذنوب بنحسبها صغيرة
 
 `hayyin-film-9x16.mp4` (TikTok : `hayyin-film-9x16-tiktok.mp4`, signée `@quran.words.daily`) · 6:33 · 9:16 · Facebook, TikTok
 
-La version TikTok (vidéo et légende) est **proposée par la session, pas encore validée par le propriétaire**.
+La version TikTok (vidéo et légende) est **validée par le propriétaire le 2026-11-21**.
 
 **Facebook · Titre**
 

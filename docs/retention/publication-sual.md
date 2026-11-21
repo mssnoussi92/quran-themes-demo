@@ -4,9 +4,9 @@ Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et 
 
 ## Le film · 3 hard questions… and the Quran's answer · تلات أسئلة صعبة… والقرآن ردّ عليها
 
-Textes du film (titre, description, chapitres) **proposés par la session, pas encore validés par le propriétaire**.
+Textes du film **validés par le propriétaire le 2026-11-21**.
 
-`sual-film-16x9.mp4` · 5:17 · 16:9 · YouTube · miniature : `sual-film-thumbnail.jpg`
+`sual-film-16x9.mp4` · 5:17 · 16:9 · YouTube · miniature : `sual-film-thumbnail-bed-art.jpg`
 
 **YouTube · Titre (77/100)**
 
