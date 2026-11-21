@@ -858,3 +858,16 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   (questions à choix) : « je valide les 12 vidéos », « je valide les 3 textes », « les 3 dessinées » (vignettes), « je valide les 7
   sources » (24:15 et ses deux tafsirs, Bukhari 6478, l'Encyclopédie koweïtienne 24/240, 244, 245) ; fichiers rendus publics par
   `page-files`.
+
+## La page du propriétaire refaite, avec les trois films du lundi (2026-11-21)
+
+- **Sa demande** : « oui fais le » (ajouter les trois films à sa page « Films et shorts à publier »). La page datait du 18 :
+  ses aperçus étaient ceux d'avant l'audit (scènes jouées, nom de la série), et elle touchait déjà la limite d'un artefact
+  (254 Mio sur 256). Refaite entière depuis les releases publiques `page-<doc>` (les fichiers validés que quran-reels publie),
+  plus les trois films du lundi en 16:9 et en vertical.
+- **`gallery.py`** : la vignette que YouTube reçoit (`thumbnail.use`), et plus d'arrêt sur les vignettes dédiées ajoutées le
+  même jour ; une série dessinée deux fois montre le dessin que le calendrier publie (`published_cast` : « بص تاني » en B) ;
+  les aperçus des films à 360 px sur leur petit côté (crf 29, son à 64 kb/s), les shorts inchangés ; la page s'arrête si elle
+  dépasse les 256 Mio (243 Mio, 115 fichiers).
+- **Le calendrier** : les 19 et 20 novembre barrés, publiés par quran-reels (`themes.json` de sa branche `state`) ; leurs
+  vidéos sortent de la page (sa règle du 2026-11-18).

@@ -70,8 +70,8 @@ def preview(src: Path, dest: Path, wide: bool, film: bool = False) -> None:
         return
     scale = ("scale=640:360" if wide else "scale=360:640") if film else ("scale=854:480" if wide else "scale=540:960")
     base = ["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(src), "-vf", scale, "-c:v", "libx264", "-preset", "medium",
-            "-pix_fmt", "yuv420p", "-g", "60", "-c:a", "aac", "-b:a", "80k", "-ac", "2", "-movflags", "+faststart"]
-    run(base + ["-crf", "28" if film else "27", str(dest)])
+            "-pix_fmt", "yuv420p", "-g", "60", "-c:a", "aac", "-b:a", "64k" if film else "80k", "-ac", "2", "-movflags", "+faststart"]
+    run(base + ["-crf", "29" if film else "27", str(dest)])
     if dest.stat().st_size > MOST:
         rate = int(MOST * 8 / seconds(src) / 1000) - 90          # kbit/s left for the picture
         run(base + ["-b:v", f"{rate}k", "-maxrate", f"{rate}k", "-bufsize", f"{2 * rate}k", str(dest)])
