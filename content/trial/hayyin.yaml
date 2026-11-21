@@ -42,7 +42,14 @@ publish:
 # est à trouver (archive.org, skill find-hadith-recording) et à faire écouter au propriétaire.
 text: 107-trial-hayyin-film
 outro: 12
-thumbnail: { title: "وتحسبونه هيّنًا", tag: "3 ذنوب بنشوفها صغيرة", panels: [ghiba, namima, riya] }
+thumbnail:
+  title: "وتحسبونه هيّنًا"
+  tag: "3 ذنوب بنشوفها صغيرة"
+  panels: [ghiba, namima, riya]
+  options:      # proposées par la session (2026-11-21), à choisir par le propriétaire : des moments du film, tout dessiné
+    - { name: chair, at: 80, lines: ["كلمة في غيابه…", "تاخد من حسناتك!"], tag: "وتحسبونه هيّنًا", place: right }
+    - { name: houses, at: 225, lines: ["رسالة واحدة…", "فرّقت بين اتنين!"], tag: "وتحسبونه هيّنًا", place: left }
+    - { name: rock, at: 300, lines: ["خير كتير…", "وضاع كله!"], tag: "وتحسبونه هيّنًا", place: right }
 # Script du film (répliques propres, ouverture, fin, titre) validé par lui le 2026-11-21 (« Script et lecture », question à choix) ;
 # le 16:9 : « dessins refaits en 16:9 » (son choix, même jour).
 script_validated: { by: mssnoussi92, on: 2026-11-21 }

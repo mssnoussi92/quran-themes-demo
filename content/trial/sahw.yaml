@@ -40,7 +40,13 @@ publish:
 # voix (une requête, texte 106-trial-sahw-film).
 text: 106-trial-sahw-film
 outro: 12
-thumbnail: { title: "سجود السهو", tag: "زيادة · نقص · شك", panels: [sahun, khams, nasit, shakk] }
+thumbnail:
+  title: "سجود السهو"
+  tag: "زيادة · نقص · شك"
+  panels: [sahun, khams, nasit, shakk]
+  options:      # proposées par la session (2026-11-21), à choisir par le propriétaire : des moments du film
+    - { name: doubt, at: 300, lines: ["صلّيت 3 ولا 4؟", "الحل في سجدتين"], tag: "سجود السهو", place: right }
+    - { name: table, at: 420, lines: ["قبل السلام…", "ولا بعده؟"], tag: "سجود السهو", place: right }
 # Script du film (répliques propres, ouverture, fin, titre) validé par lui le 2026-11-21 (« Je valide le script », question à choix) ;
 # le 16:9 : « dessins refaits en 16:9 » (son choix, même jour).
 script_validated: { by: mssnoussi92, on: 2026-11-21 }
