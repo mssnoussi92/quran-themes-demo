@@ -11,8 +11,8 @@ La version TikTok (vidéo et légende) est **validée par le propriétaire le 20
 **Facebook · Titre**
 
 ```text
-Sujud as-sahw: added, left out, or unsure?
 سجود السهو: زوّدت، نقصت، ولا شكّيت؟
+Sujud as-sahw: added, left out, or unsure?
 ```
 
 **Facebook · Description**
@@ -21,7 +21,7 @@ Sujud as-sahw: added, left out, or unsure?
 النبي صلى الله عليه وسلم نفسه… سها في صلاته. وعلّمنا نعمل إيه… لما نسهى إحنا.
 The Prophet ﷺ himself… forgot in his prayer. And he taught us what to do… when we forget.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -35,8 +35,8 @@ Sur TikTok : la vidéo `sahw-film-9x16-tiktok.mp4`, signée `@quran.words.daily`
 **TikTok · Titre**
 
 ```text
-Sujud as-sahw: added, left out, or unsure?
 سجود السهو: زوّدت، نقصت، ولا شكّيت؟
+Sujud as-sahw: added, left out, or unsure?
 ```
 
 **TikTok · Description**
@@ -45,7 +45,7 @@ Sujud as-sahw: added, left out, or unsure?
 النبي صلى الله عليه وسلم نفسه… سها في صلاته. وعلّمنا نعمل إيه… لما نسهى إحنا.
 The Prophet ﷺ himself… forgot in his prayer. And he taught us what to do… when we forget.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (4)**

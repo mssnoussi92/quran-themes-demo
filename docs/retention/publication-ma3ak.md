@@ -9,8 +9,8 @@ Pour chaque short, les textes à copier : sur Facebook et Instagram, la légende
 **Facebook · Titre**
 
 ```text
-"Qitran" in Surat al-Kahf?
 «قطرًا» في سورة الكهف؟
+"Qitran" in Surat al-Kahf?
 ```
 
 **Facebook · Description**
@@ -19,7 +19,7 @@ Pour chaque short, les textes à copier : sur Facebook et Instagram, la légende
 «قطرًا» في سورة الكهف… لا قطر ولا حديد. معاك 5 ثواني.
 "Qitran" in Surat al-Kahf… neither a train nor iron. You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -31,8 +31,8 @@ Pour chaque short, les textes à copier : sur Facebook et Instagram, la légende
 **Instagram · Titre**
 
 ```text
-"Qitran" in Surat al-Kahf?
 «قطرًا» في سورة الكهف؟
+"Qitran" in Surat al-Kahf?
 ```
 
 **Instagram · Description**
@@ -41,7 +41,7 @@ Pour chaque short, les textes à copier : sur Facebook et Instagram, la légende
 «قطرًا» في سورة الكهف… لا قطر ولا حديد. معاك 5 ثواني.
 "Qitran" in Surat al-Kahf… neither a train nor iron. You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -57,8 +57,8 @@ Pour chaque short, les textes à copier : sur Facebook et Instagram, la légende
 **Facebook · Titre**
 
 ```text
-Luqman's advice… how did it end?
 وصية لقمان… خلصت بإيه؟
+Luqman's advice… how did it end?
 ```
 
 **Facebook · Description**
@@ -67,7 +67,7 @@ Luqman's advice… how did it end?
 نفس الجملة في سورتين… وكل مرة خلصت بحاجة مختلفة. وصية لقمان خلصت بإيه؟ معاك 5 ثواني.
 The same sentence in two surahs… each time with a different ending. How did Luqman's advice end? You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -79,8 +79,8 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 **Instagram · Titre**
 
 ```text
-Luqman's advice… how did it end?
 وصية لقمان… خلصت بإيه؟
+Luqman's advice… how did it end?
 ```
 
 **Instagram · Description**
@@ -89,7 +89,7 @@ Luqman's advice… how did it end?
 نفس الجملة في سورتين… وكل مرة خلصت بحاجة مختلفة. وصية لقمان خلصت بإيه؟ معاك 5 ثواني.
 The same sentence in two surahs… each time with a different ending. How did Luqman's advice end? You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -105,8 +105,8 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 **Facebook · Titre**
 
 ```text
-"I am going to my Lord"… who said it?
 «إني ذاهب إلى ربي»… مين قالها؟
+"I am going to my Lord"… who said it?
 ```
 
 **Facebook · Description**
@@ -115,7 +115,7 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 «إني ذاهب إلى ربي سيهدين»… ناس كتير هتقول موسى. مين قالها؟ معاك 5 ثواني.
 "I am going to my Lord; He will guide me"… many will say Moses. Who said it? You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -127,8 +127,8 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 **Instagram · Titre**
 
 ```text
-"I am going to my Lord"… who said it?
 «إني ذاهب إلى ربي»… مين قالها؟
+"I am going to my Lord"… who said it?
 ```
 
 **Instagram · Description**
@@ -137,7 +137,7 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 «إني ذاهب إلى ربي سيهدين»… ناس كتير هتقول موسى. مين قالها؟ معاك 5 ثواني.
 "I am going to my Lord; He will guide me"… many will say Moses. Who said it? You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -153,8 +153,8 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 **Facebook · Titre**
 
 ```text
-"Wa abba"… what does it mean?
 «وأبًّا»… يعني إيه؟
+"Wa abba"… what does it mean?
 ```
 
 **Facebook · Description**
@@ -163,7 +163,7 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 «وأبًّا» في سورة عبس… مش الأب خالص. معاك 5 ثواني.
 "Wa abba" in Surat 'Abasa… nothing to do with a father. You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -175,8 +175,8 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 **Instagram · Titre**
 
 ```text
-"Wa abba"… what does it mean?
 «وأبًّا»… يعني إيه؟
+"Wa abba"… what does it mean?
 ```
 
 **Instagram · Description**
@@ -185,7 +185,7 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 «وأبًّا» في سورة عبس… مش الأب خالص. معاك 5 ثواني.
 "Wa abba" in Surat 'Abasa… nothing to do with a father. You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -201,8 +201,8 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 **Facebook · Titre**
 
 ```text
-"Seek help through patience and prayer"… then?
 «واستعينوا بالصبر والصلاة»… كمّلها بإيه؟
+"Seek help through patience and prayer"… then?
 ```
 
 **Facebook · Description**
@@ -211,7 +211,7 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 «واستعينوا بالصبر والصلاة» جت مرتين في سورة البقرة… أول مرة خلصت بإيه؟ معاك 5 ثواني.
 "Seek help through patience and prayer" comes twice in al-Baqarah… how did it end the first time? You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -223,8 +223,8 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 **Instagram · Titre**
 
 ```text
-"Seek help through patience and prayer"… then?
 «واستعينوا بالصبر والصلاة»… كمّلها بإيه؟
+"Seek help through patience and prayer"… then?
 ```
 
 **Instagram · Description**
@@ -233,7 +233,7 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 «واستعينوا بالصبر والصلاة» جت مرتين في سورة البقرة… أول مرة خلصت بإيه؟ معاك 5 ثواني.
 "Seek help through patience and prayer" comes twice in al-Baqarah… how did it end the first time? You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -249,8 +249,8 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 **Facebook · Titre**
 
 ```text
-Who made this prayer?
 مين دعا الدعوة دي؟
+Who made this prayer?
 ```
 
 **Facebook · Description**
@@ -259,7 +259,7 @@ Who made this prayer?
 «رب إني لما أنزلت إلي من خير فقير»… نبي قالها وهو جعان ولوحده. مين؟ معاك 5 ثواني.
 "My Lord, I am in need of whatever good You send me"… a prophet said it, hungry and alone. Who? You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -271,8 +271,8 @@ Who made this prayer?
 **Instagram · Titre**
 
 ```text
-Who made this prayer?
 مين دعا الدعوة دي؟
+Who made this prayer?
 ```
 
 **Instagram · Description**
@@ -281,7 +281,7 @@ Who made this prayer?
 «رب إني لما أنزلت إلي من خير فقير»… نبي قالها وهو جعان ولوحده. مين؟ معاك 5 ثواني.
 "My Lord, I am in need of whatever good You send me"… a prophet said it, hungry and alone. Who? You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -297,8 +297,8 @@ Who made this prayer?
 **Facebook · Titre**
 
 ```text
-"Al-yamm"… what does it mean?
 «اليمّ»… يعني إيه؟
+"Al-yamm"… what does it mean?
 ```
 
 **Facebook · Description**
@@ -307,7 +307,7 @@ Who made this prayer?
 أم موسى رمته في «اليمّ»… يعني فين بالظبط؟ معاك 5 ثواني.
 Moses' mother cast him into "al-yamm"… where exactly? You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -319,8 +319,8 @@ Moses' mother cast him into "al-yamm"… where exactly? You have 5 seconds.
 **Instagram · Titre**
 
 ```text
-"Al-yamm"… what does it mean?
 «اليمّ»… يعني إيه؟
+"Al-yamm"… what does it mean?
 ```
 
 **Instagram · Description**
@@ -329,7 +329,7 @@ Moses' mother cast him into "al-yamm"… where exactly? You have 5 seconds.
 أم موسى رمته في «اليمّ»… يعني فين بالظبط؟ معاك 5 ثواني.
 Moses' mother cast him into "al-yamm"… where exactly? You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**

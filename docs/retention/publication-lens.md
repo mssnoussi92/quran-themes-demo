@@ -9,8 +9,8 @@ Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la 
 **Facebook · Titre**
 
 ```text
-Everything went dark… look up
 كل حاجة ضلمت فجأة؟ بص لفوق
+Everything went dark… look up
 ```
 
 **Facebook · Description**
@@ -19,7 +19,7 @@ Everything went dark… look up
 النور قطع والمدينة ضلمت… والسما اتملت نجوم كانت موجودة طول الوقت.
 The power went out and the city went dark… and the sky filled with stars that were there all along.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -31,8 +31,8 @@ The power went out and the city went dark… and the sky filled with stars that 
 **Instagram · Titre**
 
 ```text
-Everything went dark… look up
 كل حاجة ضلمت فجأة؟ بص لفوق
+Everything went dark… look up
 ```
 
 **Instagram · Description**
@@ -41,7 +41,7 @@ Everything went dark… look up
 النور قطع والمدينة ضلمت… والسما اتملت نجوم كانت موجودة طول الوقت.
 The power went out and the city went dark… and the sky filled with stars that were there all along.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -55,8 +55,8 @@ Sur TikTok : la vidéo `lens-short-1-blackout-figure-tiktok.mp4` ou `lens-short-
 **TikTok · Titre**
 
 ```text
-Everything went dark… look up
 كل حاجة ضلمت فجأة؟ بص لفوق
+Everything went dark… look up
 ```
 
 **TikTok · Description**
@@ -65,7 +65,7 @@ Everything went dark… look up
 النور قطع والمدينة ضلمت… والسما اتملت نجوم كانت موجودة طول الوقت.
 The power went out and the city went dark… and the sky filled with stars that were there all along.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -83,13 +83,13 @@ The power went out and the city went dark… and the sky filled with stars that 
 **YouTube · Description**
 
 ```text
-The power cuts, the city goes dark… and the sky fills with stars that were there all along. "With hardship comes ease": as-Sa'di reads ease as walking beside hardship, and one hardship never overcomes two eases.
-
 النور قطع والمدينة ضلمت… والسما اتملت نجوم كانت موجودة طول الوقت. «فإن مع العسر يسرا»: اليسر ماشي جنب العسر… وعسر واحد مش هيغلب يسرين.
 
-Look Again · 1 · بص تاني · ١
+The power cuts, the city goes dark… and the sky fills with stars that were there all along. "With hardship comes ease": as-Sa'di reads ease as walking beside hardship, and one hardship never overcomes two eases.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+بص تاني · ١ · Look Again · 1
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -117,8 +117,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-Waiting for something that never comes?
 مستني حاجة… ومش بتيجي؟
+Waiting for something that never comes?
 ```
 
 **Facebook · Description**
@@ -127,7 +127,7 @@ Waiting for something that never comes?
 مستني حاجة… والسحاب بيعدّي من غير مطر؟
 Waiting for something… while the clouds pass without rain?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -139,8 +139,8 @@ Waiting for something… while the clouds pass without rain?
 **Instagram · Titre**
 
 ```text
-Waiting for something that never comes?
 مستني حاجة… ومش بتيجي؟
+Waiting for something that never comes?
 ```
 
 **Instagram · Description**
@@ -149,7 +149,7 @@ Waiting for something that never comes?
 مستني حاجة… والسحاب بيعدّي من غير مطر؟
 Waiting for something… while the clouds pass without rain?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -163,8 +163,8 @@ Sur TikTok : la vidéo `lens-short-2-drought-figure-tiktok.mp4`, signée `@quran
 **TikTok · Titre**
 
 ```text
-Waiting for something that never comes?
 مستني حاجة… ومش بتيجي؟
+Waiting for something that never comes?
 ```
 
 **TikTok · Description**
@@ -173,7 +173,7 @@ Waiting for something that never comes?
 مستني حاجة… والسحاب بيعدّي من غير مطر؟
 Waiting for something… while the clouds pass without rain?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -191,13 +191,13 @@ Waiting for something… while the clouds pass without rain?
 **YouTube · Description**
 
 ```text
-A dry land, a seed, clouds that pass without rain… until you say: it's not coming. The verse: He sends down the rain after they had despaired (42:28). As-Sa'di: it had stopped so long they thought it would never come.
-
 أرض ناشفة، وبذرة، وسحاب بيعدّي من غير مطر… لحد ما تقول: مش جاي. والآية: ربنا بينزّل الغيث من بعد ما قنطوا (الشورى 28).
 
-Look Again · 2 · بص تاني · ٢
+A dry land, a seed, clouds that pass without rain… until you say: it's not coming. The verse: He sends down the rain after they had despaired (42:28). As-Sa'di: it had stopped so long they thought it would never come.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+بص تاني · ٢ · Look Again · 2
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -225,8 +225,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-How many hours did you scroll today?
 قلّبت كام ساعة النهارده؟
+How many hours did you scroll today?
 ```
 
 **Facebook · Description**
@@ -235,7 +235,7 @@ How many hours did you scroll today?
 قلّبت كام ساعة النهارده… والساعة بتجري وإنت مكانك؟
 How many hours did you scroll today… while the clock ran and you stayed put?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -247,8 +247,8 @@ How many hours did you scroll today… while the clock ran and you stayed put?
 **Instagram · Titre**
 
 ```text
-How many hours did you scroll today?
 قلّبت كام ساعة النهارده؟
+How many hours did you scroll today?
 ```
 
 **Instagram · Description**
@@ -257,7 +257,7 @@ How many hours did you scroll today?
 قلّبت كام ساعة النهارده… والساعة بتجري وإنت مكانك؟
 How many hours did you scroll today… while the clock ran and you stayed put?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -271,8 +271,8 @@ Sur TikTok : la vidéo `lens-short-3-scroll-figure-tiktok.mp4` ou `lens-short-3-
 **TikTok · Titre**
 
 ```text
-How many hours did you scroll today?
 قلّبت كام ساعة النهارده؟
+How many hours did you scroll today?
 ```
 
 **TikTok · Description**
@@ -281,7 +281,7 @@ How many hours did you scroll today?
 قلّبت كام ساعة النهارده… والساعة بتجري وإنت مكانك؟
 How many hours did you scroll today… while the clock ran and you stayed put?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -299,13 +299,13 @@ How many hours did you scroll today… while the clock ran and you stayed put?
 **YouTube · Description**
 
 ```text
-The feed keeps scrolling, the clock keeps running… and you haven't moved. God swore by time (103:1-3): as-Sa'di reads it as the night and the day, where every deed is done; every human is losing, except four things: two for yourself, two for others.
-
 الفيد بيقلّب، والساعة بتجري… وإنت مكانك. ربنا أقسم بالعصر: الليل والنهار، وقت كل عمل. وكل إنسان خسران… إلا أربع حاجات: اتنين ليك، واتنين لغيرك.
 
-Look Again · 3 · بص تاني · ٣
+The feed keeps scrolling, the clock keeps running… and you haven't moved. God swore by time (103:1-3): as-Sa'di reads it as the night and the day, where every deed is done; every human is losing, except four things: two for yourself, two for others.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+بص تاني · ٣ · Look Again · 3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```

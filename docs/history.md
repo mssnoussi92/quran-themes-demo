@@ -884,3 +884,21 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   dépasse les 256 Mio (243 Mio, 115 fichiers).
 - **Le calendrier** : les 19 et 20 novembre barrés, publiés par quran-reels (`themes.json` de sa branche `state`) ; leurs
   vidéos sortent de la page (sa règle du 2026-11-18).
+
+## 2026-11-21 — L'arabe d'abord partout, titres et descriptions
+
+Le propriétaire, dans la session des miniatures : « je veux l'arabe d'abord partout titres et description ». Une autre
+session avait compris « l'anglais d'abord sur Facebook, Instagram et TikTok » et l'avait appliqué (PR #83, et quran-reels
+PR #100) ; corrigé le même jour.
+
+- `tools/trial/publish.py` : sur Facebook, Instagram et TikTok, le titre écrit la ligne arabe puis l'anglaise ; chaque
+  description donne le paragraphe arabe d'abord, la ligne de la série en arabe d'abord, les chapitres « 0:14 <arabe> ·
+  <anglais> » (le temps reste en tête pour YouTube ; la relecture des chapitres déjà écrits reconnaît les deux ordres), la
+  ligne de la voix IA en arabe d'abord (`arabic_first`).
+- Les textes de `docs/retention/publication-*.md` remis dans cet ordre **sans changer un mot** : seulement l'ordre des
+  lignes, des paragraphes et des deux moitiés d'une ligne. Régénérés avec le nouveau `publish.py`, ils ne diffèrent que de
+  ce qui différait avant (chiffres ١٢٣ des textes validés avant sa règle du 2026-11-17, durées des versions courtes, note de
+  validation de la caverne). Les titres YouTube des vidéos déjà en ligne restent tels qu'ils ont été publiés (les
+  statistiques de quran-reels reconnaissent ces vidéos par ce titre).
+- `tests/test_title_order.py` vérifie l'inverse de la veille : chaque titre Facebook, Instagram et TikTok et chaque
+  description commencent en arabe.

@@ -9,8 +9,8 @@ Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la 
 **Facebook · Titre**
 
 ```text
-Stung by a scorpion at night… the answer was one sentence
 عقرب لدغته بالليل… والرد جملة واحدة
+Stung by a scorpion at night… the answer was one sentence
 ```
 
 **Facebook · Description**
@@ -19,7 +19,7 @@ Stung by a scorpion at night… the answer was one sentence
 عقرب لدغت راجل بالليل… والنبي ﷺ دلّه على كلمات، لو قالها لما المسا دخل، ما كانتش ضرّته.
 A scorpion stung a man at night. The Prophet ﷺ showed him words: had he said them when evening came, it would not have harmed him.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -31,8 +31,8 @@ A scorpion stung a man at night. The Prophet ﷺ showed him words: had he said t
 **Instagram · Titre**
 
 ```text
-Stung by a scorpion at night… the answer was one sentence
 عقرب لدغته بالليل… والرد جملة واحدة
+Stung by a scorpion at night… the answer was one sentence
 ```
 
 **Instagram · Description**
@@ -41,7 +41,7 @@ Stung by a scorpion at night… the answer was one sentence
 عقرب لدغت راجل بالليل… والنبي ﷺ دلّه على كلمات، لو قالها لما المسا دخل، ما كانتش ضرّته.
 A scorpion stung a man at night. The Prophet ﷺ showed him words: had he said them when evening came, it would not have harmed him.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (4)**
@@ -55,8 +55,8 @@ Sur TikTok : la vidéo `dhikr-short-1-aqrab-tiktok.mp4`, signée `@quran.words.d
 **TikTok · Titre**
 
 ```text
-Stung by a scorpion at night… the answer was one sentence
 عقرب لدغته بالليل… والرد جملة واحدة
+Stung by a scorpion at night… the answer was one sentence
 ```
 
 **TikTok · Description**
@@ -65,7 +65,7 @@ Stung by a scorpion at night… the answer was one sentence
 عقرب لدغت راجل بالليل… والنبي ﷺ دلّه على كلمات، لو قالها لما المسا دخل، ما كانتش ضرّته.
 A scorpion stung a man at night. The Prophet ﷺ showed him words: had he said them when evening came, it would not have harmed him.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (4)**
@@ -83,13 +83,13 @@ A scorpion stung a man at night. The Prophet ﷺ showed him words: had he said t
 **YouTube · Description**
 
 ```text
-A scorpion stung a man at night, and he came to the Prophet ﷺ to complain. The answer was one sentence to say when evening comes (Sahih Muslim 2709), and its last words are in the Quran: "From the evil of that which He created" (113:2).
-
 عقرب لدغت راجل بالليل، فجه للنبي ﷺ يشتكي… والرد كان جملة يقولها لما المسا يدخل (صحيح مسلم 2709). وآخرها في القرآن: «من شر ما خلق» (الفلق 2).
 
-A Dhikr and Its Story · 1 · ذكر وحكايته · 1
+A scorpion stung a man at night, and he came to the Prophet ﷺ to complain. The answer was one sentence to say when evening comes (Sahih Muslim 2709), and its last words are in the Quran: "From the evil of that which He created" (113:2).
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+ذكر وحكايته · 1 · A Dhikr and Its Story · 1
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -119,8 +119,8 @@ Footage: Pixabay (Felix-Mittermeier) · Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-He was asked to say something… and didn't know what
 طلب منه يقول حاجة… وهو مش عارف يقول إيه
+He was asked to say something… and didn't know what
 ```
 
 **Facebook · Description**
@@ -129,7 +129,7 @@ He was asked to say something… and didn't know what
 النبي ﷺ طلب من صاحبه يقول حاجة… وهو مش عارف يقول إيه! والإجابة؟ تلات سور بتحفظها.
 The Prophet ﷺ asked his companion to say something, and he didn't know what. The answer: three surahs you already know.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -141,8 +141,8 @@ The Prophet ﷺ asked his companion to say something, and he didn't know what. T
 **Instagram · Titre**
 
 ```text
-He was asked to say something… and didn't know what
 طلب منه يقول حاجة… وهو مش عارف يقول إيه
+He was asked to say something… and didn't know what
 ```
 
 **Instagram · Description**
@@ -151,7 +151,7 @@ He was asked to say something… and didn't know what
 النبي ﷺ طلب من صاحبه يقول حاجة… وهو مش عارف يقول إيه! والإجابة؟ تلات سور بتحفظها.
 The Prophet ﷺ asked his companion to say something, and he didn't know what. The answer: three surahs you already know.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (4)**
@@ -165,8 +165,8 @@ Sur TikTok : la vidéo `dhikr-short-2-qul-tiktok.mp4`, signée `@quran.words.dai
 **TikTok · Titre**
 
 ```text
-He was asked to say something… and didn't know what
 طلب منه يقول حاجة… وهو مش عارف يقول إيه
+He was asked to say something… and didn't know what
 ```
 
 **TikTok · Description**
@@ -175,7 +175,7 @@ He was asked to say something… and didn't know what
 النبي ﷺ طلب من صاحبه يقول حاجة… وهو مش عارف يقول إيه! والإجابة؟ تلات سور بتحفظها.
 The Prophet ﷺ asked his companion to say something, and he didn't know what. The answer: three surahs you already know.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (4)**
@@ -193,13 +193,13 @@ The Prophet ﷺ asked his companion to say something, and he didn't know what. T
 **YouTube · Description**
 
 ```text
-A night of rain and deep darkness: three times the Prophet ﷺ asked his companion to say something, and he did not know what to say. The answer: three surahs we have known since childhood, morning and evening (Jami' at-Tirmidhi 3575).
-
 ليلة مطر وضلمة شديدة، والنبي ﷺ طلب من صاحبه يقول حاجة تلات مرات… وهو مش عارف يقول إيه. والإجابة: تلات سور بنحفظها من وإحنا صغيرين، الصبح وبالليل (جامع الترمذي 3575).
 
-A Dhikr and Its Story · 2 · ذكر وحكايته · 2
+A night of rain and deep darkness: three times the Prophet ﷺ asked his companion to say something, and he did not know what to say. The answer: three surahs we have known since childhood, morning and evening (Jami' at-Tirmidhi 3575).
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+ذكر وحكايته · 2 · A Dhikr and Its Story · 2
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -233,8 +233,8 @@ Footage: Pixabay (max_bbb) · Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-"The rich got ahead of us!"… what he taught the poor
 الأغنيا سبقونا!… فعلّمهم حاجة من غير فلوس
+"The rich got ahead of us!"… what he taught the poor
 ```
 
 **Facebook · Description**
@@ -243,7 +243,7 @@ Footage: Pixabay (max_bbb) · Ambience: BigSoundBank (Joseph Sardin)
 الفقرا اشتكوا: الأغنيا سبقونا! فعلّمهم حاجة بعد كل صلاة… ما تحتاجش فلوس.
 The poor complained: the rich have got ahead of us! He taught them something after every prayer that needs no money.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -255,8 +255,8 @@ The poor complained: the rich have got ahead of us! He taught them something aft
 **Instagram · Titre**
 
 ```text
-"The rich got ahead of us!"… what he taught the poor
 الأغنيا سبقونا!… فعلّمهم حاجة من غير فلوس
+"The rich got ahead of us!"… what he taught the poor
 ```
 
 **Instagram · Description**
@@ -265,7 +265,7 @@ The poor complained: the rich have got ahead of us! He taught them something aft
 الفقرا اشتكوا: الأغنيا سبقونا! فعلّمهم حاجة بعد كل صلاة… ما تحتاجش فلوس.
 The poor complained: the rich have got ahead of us! He taught them something after every prayer that needs no money.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (4)**
@@ -279,8 +279,8 @@ Sur TikTok : la vidéo `dhikr-short-3-dathur-tiktok.mp4`, signée `@quran.words.
 **TikTok · Titre**
 
 ```text
-"The rich got ahead of us!"… what he taught the poor
 الأغنيا سبقونا!… فعلّمهم حاجة من غير فلوس
+"The rich got ahead of us!"… what he taught the poor
 ```
 
 **TikTok · Description**
@@ -289,7 +289,7 @@ Sur TikTok : la vidéo `dhikr-short-3-dathur-tiktok.mp4`, signée `@quran.words.
 الفقرا اشتكوا: الأغنيا سبقونا! فعلّمهم حاجة بعد كل صلاة… ما تحتاجش فلوس.
 The poor complained: the rich have got ahead of us! He taught them something after every prayer that needs no money.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (4)**
@@ -307,13 +307,13 @@ The poor complained: the rich have got ahead of us! He taught them something aft
 **YouTube · Description**
 
 ```text
-The poor came to the Prophet ﷺ: the rich have got ahead of us. He taught them something to do after every prayer that needs no money. When the rich did the same, he answered with words that also close a verse about a race (Sahih Muslim 595; al-Hadid 57:21).
-
 الفقرا جم للنبي ﷺ يشتكوا: الأغنيا سبقونا… فعلّمهم حاجة بعد كل صلاة ما تحتاجش فلوس. ولما الأغنيا عملوا زيهم، ردّ بجملة بتختم آية في القرآن عن السباق (صحيح مسلم 595، الحديد 21).
 
-A Dhikr and Its Story · 3 · ذكر وحكايته · 3
+The poor came to the Prophet ﷺ: the rich have got ahead of us. He taught them something to do after every prayer that needs no money. When the rich did the same, he answered with words that also close a verse about a race (Sahih Muslim 595; al-Hadid 57:21).
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+ذكر وحكايته · 3 · A Dhikr and Its Story · 3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```

@@ -11,8 +11,8 @@ La version TikTok (vidéo et légende) est **validée par le propriétaire le 20
 **Facebook · Titre**
 
 ```text
-3 hard questions… and the Quran's answer
 تلات أسئلة صعبة… والقرآن ردّ عليها
+3 hard questions… and the Quran's answer
 ```
 
 **Facebook · Description**
@@ -21,7 +21,7 @@ La version TikTok (vidéo et légende) est **validée par le propriétaire le 20
 بعيد عن ربنا… وعايش مرتاح؟ مؤمن… وحياته صعبة؟ تلات أسئلة ناس كتير بتفكر فيها… ومحدش بيقولها بصوت عالي.
 Far from God… and living in comfort? A believer… and his life is hard? Three questions many people think about… and nobody asks out loud.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -35,8 +35,8 @@ Sur TikTok : la vidéo `sual-film-9x16-tiktok.mp4`, signée `@quran.words.daily`
 **TikTok · Titre**
 
 ```text
-3 hard questions… and the Quran's answer
 تلات أسئلة صعبة… والقرآن ردّ عليها
+3 hard questions… and the Quran's answer
 ```
 
 **TikTok · Description**
@@ -45,7 +45,7 @@ Sur TikTok : la vidéo `sual-film-9x16-tiktok.mp4`, signée `@quran.words.daily`
 بعيد عن ربنا… وعايش مرتاح؟ مؤمن… وحياته صعبة؟ تلات أسئلة ناس كتير بتفكر فيها… ومحدش بيقولها بصوت عالي.
 Far from God… and living in comfort? A believer… and his life is hard? Three questions many people think about… and nobody asks out loud.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (4)**

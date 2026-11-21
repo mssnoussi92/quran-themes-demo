@@ -17,18 +17,18 @@ Textes du film **validés par le propriétaire le 2026-11-21**.
 **YouTube · Description**
 
 ```text
-Backbiting, tale-bearing and showing off: three sins we see as small. In this film: a word that takes from your good deeds and gives them to the one you spoke about, a message that sets two people apart, a good deed lost because it was done for people… and the verse that says that what we think is small is, with God, great.
-
 الغيبة، والنميمة، والرياء: تلات ذنوب بنشوفها صغيرة. في الفيلم ده: كلمة بتاخد من حسناتك وتديها للي اتكلمت عليه، ورسالة بتفرّق بين اتنين، وخير بيضيع عشان اتعمل للناس… والآية اللي بتقول إن اللي بنحسبه هيّن… عند ربنا عظيم.
 
-Chapters:
-0:00 Three small things · تلات حاجات صغيرة
-0:40 Backbiting · الغيبة
-2:41 Tale-bearing · النميمة
-3:57 Showing off · الرياء
-5:38 You think it is small · وتحسبونه هيّنًا
+Backbiting, tale-bearing and showing off: three sins we see as small. In this film: a word that takes from your good deeds and gives them to the one you spoke about, a message that sets two people apart, a good deed lost because it was done for people… and the verse that says that what we think is small is, with God, great.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+Chapters:
+0:00 تلات حاجات صغيرة · Three small things
+0:40 الغيبة · Backbiting
+2:41 النميمة · Tale-bearing
+3:57 الرياء · Showing off
+5:38 وتحسبونه هيّنًا · You think it is small
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -66,8 +66,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-“But it's true!”… and your good deeds may go to him
 «هو فعلاً كده!»… وحسناتك ممكن تروح له
+“But it's true!”… and your good deeds may go to him
 ```
 
 **Facebook · Description**
@@ -76,7 +76,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 «هو فعلاً كده… أنا مش بفتري عليه!» الجملة دي ممكن تاخد من حسناتك… وتديها للي اتكلمت عليه.
 “That's really how he is, I'm not making it up!” That sentence could take from your good deeds… and give them to the one you spoke about.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -88,8 +88,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 **Instagram · Titre**
 
 ```text
-“But it's true!”… and your good deeds may go to him
 «هو فعلاً كده!»… وحسناتك ممكن تروح له
+“But it's true!”… and your good deeds may go to him
 ```
 
 **Instagram · Description**
@@ -98,7 +98,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 «هو فعلاً كده… أنا مش بفتري عليه!» الجملة دي ممكن تاخد من حسناتك… وتديها للي اتكلمت عليه.
 “That's really how he is, I'm not making it up!” That sentence could take from your good deeds… and give them to the one you spoke about.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -112,8 +112,8 @@ Sur TikTok : la vidéo `hayyin-short-1-ghiba-tiktok.mp4`, signée `@quran.words.
 **TikTok · Titre**
 
 ```text
-“But it's true!”… and your good deeds may go to him
 «هو فعلاً كده!»… وحسناتك ممكن تروح له
+“But it's true!”… and your good deeds may go to him
 ```
 
 **TikTok · Description**
@@ -122,7 +122,7 @@ Sur TikTok : la vidéo `hayyin-short-1-ghiba-tiktok.mp4`, signée `@quran.words.
 «هو فعلاً كده… أنا مش بفتري عليه!» الجملة دي ممكن تاخد من حسناتك… وتديها للي اتكلمت عليه.
 “That's really how he is, I'm not making it up!” That sentence could take from your good deeds… and give them to the one you spoke about.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -140,13 +140,13 @@ Sur TikTok : la vidéo `hayyin-short-1-ghiba-tiktok.mp4`, signée `@quran.words.
 **YouTube · Description**
 
 ```text
-“I'm not making anything up, that's really how he is.” The Prophet ﷺ was asked about exactly this, and answered: if it is true, that is backbiting. And whoever wronged someone in his honour has his good deeds taken, as much as the wrong. The way out is in the same hadith: today.
-
 «أنا مش بفتري عليه… هو فعلاً كده». النبي صلى الله عليه وسلم اتسأل عن ده بالظبط، وقال: لو فيه فعلاً… يبقى دي الغيبة. واللي ظلم حد في عِرضه… يتاخد من حسناته على قد ما ظلمه. والحل في نفس الحديث: النهارده.
 
-You Think It Is Small · 1 · وتحسبونه هيّنًا · 1
+“I'm not making anything up, that's really how he is.” The Prophet ﷺ was asked about exactly this, and answered: if it is true, that is backbiting. And whoever wronged someone in his honour has his good deeds taken, as much as the wrong. The way out is in the same hadith: today.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+وتحسبونه هيّنًا · 1 · You Think It Is Small · 1
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -180,8 +180,8 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 **Facebook · Titre**
 
 ```text
-“Look what he said about you”: the Quran has a name for it
 «شوف فلان قال عليك إيه»… القرآن سمّاها
+“Look what he said about you”: the Quran has a name for it
 ```
 
 **Facebook · Description**
@@ -190,7 +190,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 «شوف فلان قال عليك إيه»… الحركة دي ليها اسم في القرآن.
 “Look what so-and-so said about you”… that move has a name in the Quran.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -202,8 +202,8 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 **Instagram · Titre**
 
 ```text
-“Look what he said about you”: the Quran has a name for it
 «شوف فلان قال عليك إيه»… القرآن سمّاها
+“Look what he said about you”: the Quran has a name for it
 ```
 
 **Instagram · Description**
@@ -212,7 +212,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 «شوف فلان قال عليك إيه»… الحركة دي ليها اسم في القرآن.
 “Look what so-and-so said about you”… that move has a name in the Quran.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -226,8 +226,8 @@ Sur TikTok : la vidéo `hayyin-short-2-namima-tiktok.mp4`, signée `@quran.words
 **TikTok · Titre**
 
 ```text
-“Look what he said about you”: the Quran has a name for it
 «شوف فلان قال عليك إيه»… القرآن سمّاها
+“Look what he said about you”: the Quran has a name for it
 ```
 
 **TikTok · Description**
@@ -236,7 +236,7 @@ Sur TikTok : la vidéo `hayyin-short-2-namima-tiktok.mp4`, signée `@quran.words
 «شوف فلان قال عليك إيه»… الحركة دي ليها اسم في القرآن.
 “Look what so-and-so said about you”… that move has a name in the Quran.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -254,13 +254,13 @@ Sur TikTok : la vidéo `hayyin-short-2-namima-tiktok.mp4`, signée `@quran.words
 **YouTube · Description**
 
 ```text
-A screenshot, then “forward”. The Quran names the one who does it: a walker with tale-bearing (68:11). The Prophet ﷺ used the same word when he passed by two graves. Not every word passed on is namima: namima is passing it on to set people against each other.
-
 سكرين شوت… وبعدين تحويل. القرآن سمّى اللي بيعمل كده: «مشّاء بنميم» (القلم 11). والنبي صلى الله عليه وسلم قال نفس الكلمة لما عدّى على قبرين. ومش كل كلام بيتنقل نميمة: النميمة إنك تنقله عشان توقّع بين الناس.
 
-You Think It Is Small · 2 · وتحسبونه هيّنًا · 2
+A screenshot, then “forward”. The Quran names the one who does it: a walker with tale-bearing (68:11). The Prophet ﷺ used the same word when he passed by two graves. Not every word passed on is namima: namima is passing it on to set people against each other.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+وتحسبونه هيّنًا · 2 · You Think It Is Small · 2
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -293,8 +293,8 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 **Facebook · Titre**
 
 ```text
-You did it so they would say it… and they did
 عملتها عشان يتقال… واتقال
+You did it so they would say it… and they did
 ```
 
 **Facebook · Description**
@@ -303,7 +303,7 @@ You did it so they would say it… and they did
 عملتها عشان يتقال… واتقال. والقرآن رسم الصورة دي: تراب على صخرة… ونزل مطر.
 You did it so they would say it… and they did. The Quran paints it: dust on a rock… then the rain.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -315,8 +315,8 @@ You did it so they would say it… and they did. The Quran paints it: dust on a 
 **Instagram · Titre**
 
 ```text
-You did it so they would say it… and they did
 عملتها عشان يتقال… واتقال
+You did it so they would say it… and they did
 ```
 
 **Instagram · Description**
@@ -325,7 +325,7 @@ You did it so they would say it… and they did
 عملتها عشان يتقال… واتقال. والقرآن رسم الصورة دي: تراب على صخرة… ونزل مطر.
 You did it so they would say it… and they did. The Quran paints it: dust on a rock… then the rain.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -339,8 +339,8 @@ Sur TikTok : la vidéo `hayyin-short-3-riya-tiktok.mp4`, signée `@quran.words.d
 **TikTok · Titre**
 
 ```text
-You did it so they would say it… and they did
 عملتها عشان يتقال… واتقال
+You did it so they would say it… and they did
 ```
 
 **TikTok · Description**
@@ -349,7 +349,7 @@ You did it so they would say it… and they did
 عملتها عشان يتقال… واتقال. والقرآن رسم الصورة دي: تراب على صخرة… ونزل مطر.
 You did it so they would say it… and they did. The Quran paints it: dust on a rock… then the rain.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -367,13 +367,13 @@ You did it so they would say it… and they did. The Quran paints it: dust on a 
 **YouTube · Description**
 
 ```text
-The Prophet ﷺ told of a man who spent on every door of good, and was told on the Day of Resurrection: you did it so that people would say “generous”… and they said it. The Quran paints it: dust on a smooth rock, then heavy rain (2:264). The problem is not that people saw you; it is doing it so that they see you.
-
 النبي صلى الله عليه وسلم حكى عن واحد صرف فلوسه في كل باب خير… واتقال له يوم القيامة: عملت كده عشان يتقال كريم… واتقال. والقرآن رسمها: تراب على صخرة ناعمة… ونزل مطر جامد (البقرة 264). المشكلة مش إن الناس شافوك… المشكلة إنك عملتها عشان يشوفوك.
 
-You Think It Is Small · 3 · وتحسبونه هيّنًا · 3
+The Prophet ﷺ told of a man who spent on every door of good, and was told on the Day of Resurrection: you did it so that people would say “generous”… and they said it. The Quran paints it: dust on a smooth rock, then heavy rain (2:264). The problem is not that people saw you; it is doing it so that they see you.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+وتحسبونه هيّنًا · 3 · You Think It Is Small · 3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```

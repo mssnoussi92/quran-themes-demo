@@ -11,8 +11,8 @@ La version TikTok (vidéo et légende) est **validée par le propriétaire le 20
 **Facebook · Titre**
 
 ```text
-Sins we think are small
 ذنوب بنحسبها صغيرة
+Sins we think are small
 ```
 
 **Facebook · Description**
@@ -21,7 +21,7 @@ Sins we think are small
 كلمة في غياب حد… رسالة اتنقلت… وعمل خير اتصوّر عشان الناس تشوفه. تلات حاجات بنعملها كل يوم… ومش بنفكر فيها مرتين.
 A word about someone who isn't there… a message forwarded… a good deed filmed so people see it. Three things we do every day… without a second thought.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -35,8 +35,8 @@ Sur TikTok : la vidéo `hayyin-film-9x16-tiktok.mp4`, signée `@quran.words.dail
 **TikTok · Titre**
 
 ```text
-Sins we think are small
 ذنوب بنحسبها صغيرة
+Sins we think are small
 ```
 
 **TikTok · Description**
@@ -45,7 +45,7 @@ Sins we think are small
 كلمة في غياب حد… رسالة اتنقلت… وعمل خير اتصوّر عشان الناس تشوفه. تلات حاجات بنعملها كل يوم… ومش بنفكر فيها مرتين.
 A word about someone who isn't there… a message forwarded… a good deed filmed so people see it. Three things we do every day… without a second thought.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (4)**
