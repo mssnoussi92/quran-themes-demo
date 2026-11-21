@@ -29,6 +29,7 @@ validated: { by: mssnoussi92, on: 2026-11-16, what: [voice, montage, cover, publ
 # de Trial.tsx) ; la narration après le verset en sous-titre ; aucune réplique coupée. Les jeunes de la caverne ne sont
 # jamais dessinés ; le film `kahf` ne change pas. Scènes validées par lui sur images le même jour (« Je valide tout le lot ») ;
 # la vidéo refaite est à valider avant `page-files`.
+# La vidéo refaite avec le nom de la série en haut à gauche (sa demande du même jour) validée par lui le 2026-11-21 (« Je valide les 7 »).
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 74-trial-refuge

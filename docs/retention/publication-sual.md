@@ -4,7 +4,7 @@ Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la 
 
 ## Short 1 · Far from God… and living in comfort? · بعيد عن ربنا… وعايش مرتاح؟
 
-`sual-short-1-dank.mp4` (TikTok : `sual-short-1-dank-tiktok.mp4`, signée `@quran.words.daily`) · 1:51 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `sual-short-1-dank-cover.jpg`
+`sual-short-1-dank.mp4` (TikTok : `sual-short-1-dank-tiktok.mp4`, signée `@quran.words.daily`) · 1:44 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `sual-short-1-dank-cover.jpg`
 
 **Facebook · Titre**
 

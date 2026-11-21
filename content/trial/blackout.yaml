@@ -17,6 +17,7 @@ validated: { by: mssnoussi92, on: 2026-11-15, what: [voice, montage, cover, publ
 # Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md) : un visage simple sur la silhouette (dessin B, `Figure` de
 # Lens.tsx, `face`), validé par lui sur l'aperçu le même jour puis sur images le 2026-11-21 ; la vidéo refaite est à valider
 # avant `page-files`.
+# La vidéo refaite avec le nom de la série en haut à gauche (sa demande du même jour) validée par lui le 2026-11-21 (« Je valide les 4 », avec « سؤال صعب » 1).
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 71-trial-blackout     # content/voice-test/<text>.txt : les répliques dites par la voix (pas celles du début muet)

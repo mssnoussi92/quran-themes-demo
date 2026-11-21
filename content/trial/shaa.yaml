@@ -29,6 +29,7 @@ validated: { by: mssnoussi92, on: 2026-11-17, what: [voice, montage, cover, publ
 # on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). Un visage simple (ses trois phrases de sens restent, la précision qu'il a demandée) sur la silhouette (`face`, Qadar.tsx). Le film `qadar` ne change pas.
 # Validé par lui sur images le 2026-11-21 (« Je valide ») ; la vidéo refaite
 # est à valider avant `page-files`.
+# La vidéo refaite avec le nom de la série en haut à gauche (sa demande du même jour) validée par lui le 2026-11-21 (« Je valide les 3 »).
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 79-trial-shaa

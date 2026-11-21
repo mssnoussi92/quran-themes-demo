@@ -19,7 +19,7 @@ validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publ
 # rien d'autre ne change. Scènes validées par lui sur images le 2026-11-21 (« Je valide tout le lot ») ;
 # la vidéo refaite validée par lui le 2026-11-21 (« Je valide les 6 »), sauf les chiffres : à sa demande du même jour (« En 123
 # dans les 3 signes »), les années des répliques et des crédits à l'écran passent en 123 (le texte de la voix aussi, sa prise
-# ne change pas ; ni les textes à coller ni la couverture) ; la vidéo ainsi refaite est à valider.
+# ne change pas ; ni les textes à coller ni la couverture) ; la vidéo ainsi refaite validée par lui le même jour (« Je valide les 3 »).
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 56-trial-womb     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
