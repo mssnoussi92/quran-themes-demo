@@ -26,6 +26,7 @@ script_validated: { by: mssnoussi92, on: 2026-11-12 }
 # envoyées dans la conversation (livrée le même jour) : la voix D sur la vidéo entière, le montage (le clip
 # et les dessins), la couverture, l'ambiance, les textes de publication (`publish`, docs/retention/publication-ayah.md,
 # envoyés) ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
+# La vidéo refaite (audit du 2026-11-20) validée par lui le 2026-11-21 (« Je valide les 7 »).
 validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
 # Refait à la demande du propriétaire (2026-11-20, après la publication du short 1 : « après le verset on parle trop, et
 # l'écran est presque le même, et on écrit ce que le narrateur dit ») : après le verset, une seule phrase de sens, puis

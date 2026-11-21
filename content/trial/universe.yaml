@@ -11,6 +11,7 @@ script_validated: { by: mssnoussi92, on: 2026-11-12 }
 # `film` (run 18) et envoyées dans la conversation : la voix D, le montage (le ciel généré, les dessins, les photos de
 # l'ESA, la frise, la signature 41:53), la couverture, les textes de publication (docs/retention/publication-signs.md),
 # l'ambiance ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
+# La vidéo refaite (audit du 2026-11-20) validée par lui le 2026-11-21 (« Je valide les 7 »).
 validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
 # Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
 # on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). La fin qui parle au spectateur jouée (« اللي وسّع السما… قادر

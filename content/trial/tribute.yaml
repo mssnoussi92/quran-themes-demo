@@ -16,6 +16,7 @@ script_validated: { by: mssnoussi92, on: 2026-11-11 }
 # rendues par le workflow `film` et envoyées dans la conversation (release brouillon `qarnayn-candidate`) : la voix D
 # sur la vidéo entière, le montage, la couverture, l'ambiance, et les textes de publication (`publish`,
 # docs/retention/publication-qarnayn.md, envoyés). Inscrit sur sa parole.
+# La vidéo refaite (audit du 2026-11-20) validée par lui le 2026-11-21 (« Je valide ces 6 »).
 validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
 # Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
 # on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). « Change tout », confirmé : la version entière (YouTube,
@@ -38,7 +39,7 @@ cover: { scene: offer, title: "عرضوا عليه فلوس… ورفض!", tag: 
 # deux »), telle qu'envoyée : 1:13, la coupe sans pause avant « ما خدش فلوس » signalée à écouter.
 cut:
   drop: [quran.18.93, "meaning:0", depth, depth-us]
-  validated: { by: mssnoussi92, on: 2026-11-16 }
+  validated: { by: mssnoussi92, on: 2026-11-16 }   # la version courte refaite (annonce et exemple joués) validée par lui le 2026-11-21
 publish:
   title: { en: "They offered him money… he refused", ar: "عرضوا عليه فلوس… ورفض!" }
   part: 2

@@ -119,7 +119,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 
 ## Short 2 · Even Einstein got this wrong · حتى أينشتاين غلط فيها
 
-`signs-short-2-universe.mp4` (TikTok : `signs-short-2-universe-tiktok.mp4`, signée `@quran.words.daily`) · 1:34 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `signs-short-2-universe-cover.jpg`
+`signs-short-2-universe.mp4` (TikTok : `signs-short-2-universe-tiktok.mp4`, signée `@quran.words.daily`) · 1:35 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `signs-short-2-universe-cover.jpg`
 
 **Facebook · Titre**
 
