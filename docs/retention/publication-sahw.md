@@ -1,6 +1,66 @@
 # How Do I Do It? · إزاي أعملها؟ : textes de publication
 
-Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la légende courte en trois textes, le titre, l'accroche avec la ligne de la voix IA, les hashtags ; sur YouTube, quatre textes, le titre, la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags, collés dans la même description. Titres et descriptions **validés par le propriétaire le 2026-11-18** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **validées par le propriétaire le 2026-11-18**. Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, validée elle aussi.
+Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la légende courte en trois textes, le titre, l'accroche avec la ligne de la voix IA, les hashtags ; sur YouTube, quatre textes, le titre, la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags, collés dans la même description. Titres et descriptions **validés par le propriétaire le 2026-11-18** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **validées par le propriétaire le 2026-11-18**. Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, validée elle aussi.
+
+## Le film · Sujud as-sahw: added, left out, or unsure? · سجود السهو: زوّدت، نقصت، ولا شكّيت؟
+
+Textes du film (titre, description, chapitres) **proposés par la session, pas encore validés par le propriétaire**.
+
+`sahw-film-16x9.mp4` · 7:14 · 16:9 · YouTube · miniature : `sahw-film-thumbnail.jpg`
+
+**YouTube · Titre (80/100)**
+
+```text
+سجود السهو: زوّدت، نقصت، ولا شكّيت؟ · Sujud as-sahw: added, left out, or unsure?
+```
+
+**YouTube · Description**
+
+```text
+Sujud as-sahw from start to finish: an extra rak'ah, a forgotten tashahhud, and doubt about how many rak'ahs. For each mistake: what the Prophet ﷺ did and taught, the views of the four schools from the Kuwaiti Encyclopedia of Fiqh, and a table at the end: the two prostrations before or after the salam.
+
+سجود السهو من الأول للآخر: ركعة زيادة، تشهد نسيته، وشك في عدد الركعات. لكل غلطة: اللي عمله النبي صلى الله عليه وسلم وعلّمه، وأقوال المذاهب الأربعة من الموسوعة الفقهية الكويتية، وفي الآخر جدول: السجدتين قبل السلام ولا بعده.
+
+Chapters:
+0:00 Even the Prophet ﷺ forgot · حتى النبي ﷺ سها
+0:22 “Woe” to those who pray? · «ويل» للي بيصلّوا؟
+2:17 An extra rak'ah · ركعة زيادة
+3:35 A forgotten tashahhud · نسيت التشهد
+4:57 How many did I pray? · صلّيت كام؟
+6:30 Two questions that keep coming · سؤالين بيتكرروا
+6:45 In short · الخلاصة
+
+AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+
+@quran_words_daily
+```
+
+**YouTube · Crédits**
+
+```text
+Quoted:
+• Sahih al-Bukhari 1226 (told in the narration's own words) · https://sunnah.com/bukhari:1226
+• Sahih al-Bukhari 1224 (told in the narration's own words) · https://sunnah.com/bukhari:1224
+• Surah Al-Ma'un (107:4-5) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/107/4-5
+• Surah Al-Baqarah (2:286) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/2/286
+• Sahih Muslim 572a · Reading: Ryadussalihin.org · https://sunnah.com/muslim:572a
+• Surah Al-Kahf (18:110) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/18/110
+• Rulings after The Kuwaiti Encyclopedia of Islamic Jurisprudence, vol. 24, p. 238–240, 244–245 · الموسوعة الفقهية الكويتية 24/238-240، 244-245 · https://app.turath.io/book/11430?page=15887
+• Surah Al-Ahzab (33:21) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/33/21
+• Sahih Muslim 571a · Reading: Ryadussalihin.org · https://sunnah.com/muslim:571a
+• Surah An-Nas (114:4-6) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/114/4-6
+• Sahih Muslim 571a (told in the narration's own words) · https://sunnah.com/muslim:571a
+
+Ambience: BigSoundBank (Joseph Sardin)
+```
+
+**YouTube · Hashtags (4)**
+
+```text
+#القرآن_الكريم #إزاي_أعملها #Quran #سجود_السهو
+```
+
+Écran de fin (YouTube Studio) : les 12 dernières secondes sont une image calme, faite pour y poser le bouton d'abonnement et la vidéo suivante.
 
 ## Short 1 · A verse says "woe"… to people who pray! · آية بتقول «ويل»… للي بيصلّوا!
 
@@ -114,6 +174,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 #سجود_السهو #القرآن_الكريم #إزاي_أعملها #Quran #الصلاة
 ```
 
+Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.
+
 ## Short 2 · He prayed dhuhr in five rak'ahs! · صلّى الضهر خمس ركعات!
 
 `sahw-short-2-khams.mp4` (TikTok : `sahw-short-2-khams-tiktok.mp4`, signée `@quran.words.daily`) · 1:06 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `sahw-short-2-khams-cover.jpg`
@@ -226,6 +288,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 #سجود_السهو #القرآن_الكريم #إزاي_أعملها #Quran #الصلاة
 ```
 
+Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.
+
 ## Short 3 · Stood up without sitting for the tashahhud? · قمت من غير ما تقعد للتشهد؟
 
 `sahw-short-3-nasit.mp4` (TikTok : `sahw-short-3-nasit-tiktok.mp4`, signée `@quran.words.daily`) · 1:20 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `sahw-short-3-nasit-cover.jpg`
@@ -336,6 +400,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 ```text
 #سجود_السهو #القرآن_الكريم #إزاي_أعملها #Quran #الصلاة
 ```
+
+Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.
 
 ## Short 4 · Did I pray three or four? · صلّيت تلاتة ولا أربعة؟
 
@@ -449,3 +515,5 @@ Ambience: BigSoundBank (Joseph Sardin)
 ```text
 #سجود_السهو #القرآن_الكريم #إزاي_أعملها #Quran #الصلاة
 ```
+
+Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.
