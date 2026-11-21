@@ -1,6 +1,63 @@
 # You Think It Is Small · وتحسبونه هيّنًا : textes de publication
 
-Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la légende courte en trois textes, le titre, l'accroche avec la ligne de la voix IA, les hashtags ; sur YouTube, quatre textes, le titre, la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags, collés dans la même description. Titres et descriptions **validés par le propriétaire le 2026-11-19** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **validées par le propriétaire le 2026-11-17**. Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, validée elle aussi.
+Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la légende courte en trois textes, le titre, l'accroche avec la ligne de la voix IA, les hashtags ; sur YouTube, quatre textes, le titre, la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags, collés dans la même description. Titres et descriptions **validés par le propriétaire le 2026-11-19** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **validées par le propriétaire le 2026-11-17**. Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, validée elle aussi.
+
+## Le film · Sins we think are small · ذنوب بنحسبها صغيرة
+
+`hayyin-film-16x9.mp4` · 6:33 · 16:9 · YouTube · miniature : `hayyin-film-thumbnail-chair-art.jpg`
+
+Textes du film **validés par le propriétaire le 2026-11-21**.
+
+**YouTube · Titre (44/100)**
+
+```text
+ذنوب بنحسبها صغيرة · Sins we think are small
+```
+
+**YouTube · Description**
+
+```text
+Backbiting, tale-bearing and showing off: three sins we see as small. In this film: a word that takes from your good deeds and gives them to the one you spoke about, a message that sets two people apart, a good deed lost because it was done for people… and the verse that says that what we think is small is, with God, great.
+
+الغيبة، والنميمة، والرياء: تلات ذنوب بنشوفها صغيرة. في الفيلم ده: كلمة بتاخد من حسناتك وتديها للي اتكلمت عليه، ورسالة بتفرّق بين اتنين، وخير بيضيع عشان اتعمل للناس… والآية اللي بتقول إن اللي بنحسبه هيّن… عند ربنا عظيم.
+
+Chapters:
+0:00 Three small things · تلات حاجات صغيرة
+0:40 Backbiting · الغيبة
+2:41 Tale-bearing · النميمة
+3:57 Showing off · الرياء
+5:38 You think it is small · وتحسبونه هيّنًا
+
+AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+
+@quran_words_daily
+```
+
+**YouTube · Crédits**
+
+```text
+Quoted:
+• Sahih al-Bukhari 6478 · Reading: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane · https://sunnah.com/bukhari:6478
+• Sahih al-Bukhari 6478 (told in the narration's own words) · https://sunnah.com/bukhari:6478
+• Sahih al-Bukhari 2449 · Reading: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane · https://sunnah.com/bukhari:2449
+• Surah Al-Hujurat (49:12) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/49/12
+• Surah Al-Qalam (68:10-11) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/68/10-11
+• Sahih al-Bukhari 216 · Reading: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane · https://sunnah.com/bukhari:216
+• Surah Al-Baqarah (2:264) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/2/264
+• Meaning after Al-Tafsir al-Muyassar (24:15) · https://quran.com/24:15/tafsirs/ar-tafsir-muyassar
+• Surah An-Nur (24:15) · Recitation: Tawfiq As-Sayegh · Translation: Saheeh International · https://quran.com/24/15
+• Meaning after Tafsir as-Sa'di (24:15) · https://quran.com/24:15/tafsirs/ar-tafseer-al-saddi
+
+Ambience: BigSoundBank (Joseph Sardin)
+```
+
+**YouTube · Hashtags (4)**
+
+```text
+#القرآن_الكريم #وتحسبونه_هينا #Quran #تزكية_النفس
+```
+
+Écran de fin (YouTube Studio) : les 12 dernières secondes sont une image calme, faite pour y poser le bouton d'abonnement et la vidéo suivante.
 
 ## Short 1 · “But it's true!”… and your good deeds may go to him · «هو فعلاً كده!»… وحسناتك ممكن تروح له
 
@@ -114,6 +171,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 #الغيبة #القرآن_الكريم #وتحسبونه_هينا #Quran #تزكية_النفس
 ```
 
+Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.
+
 ## Short 2 · “Look what he said about you”: the Quran has a name for it · «شوف فلان قال عليك إيه»… القرآن سمّاها
 
 `hayyin-short-2-namima.mp4` (TikTok : `hayyin-short-2-namima-tiktok.mp4`, signée `@quran.words.daily`) · 1:22 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `hayyin-short-2-namima-cover.jpg`
@@ -225,6 +284,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 #النميمة #القرآن_الكريم #وتحسبونه_هينا #Quran #تزكية_النفس
 ```
 
+Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.
+
 ## Short 3 · You did it so they would say it… and they did · عملتها عشان يتقال… واتقال
 
 `hayyin-short-3-riya.mp4` (TikTok : `hayyin-short-3-riya-tiktok.mp4`, signée `@quran.words.daily`) · 1:45 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `hayyin-short-3-riya-cover.jpg`
@@ -335,3 +396,5 @@ Ambience: BigSoundBank (Joseph Sardin)
 ```text
 #الرياء #القرآن_الكريم #وتحسبونه_هينا #Quran #تزكية_النفس
 ```
+
+Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.

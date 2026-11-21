@@ -2104,3 +2104,31 @@
   validated_by: mssnoussi92
   notes: "الصاحب ساحب (sahib), proposé le 2026-11-19 : la ligne de sens du short `nasr`"
   text_ar: والمؤمنون والمؤمنات بالله ورسوله بعضهم أنصار بعض، يأمرون الناس بالإيمان والعمل الصالح، وينهونهم عن الكفر والمعاصي، ويؤدون الصلاة، ويعطون الزكاة، ويطيعون الله ورسوله، وينتهون عما نُهوا عنه، أولئك سيرحمهم الله فينقذهم من عذابه ويدخلهم جنته. إن الله عزيز في ملكه، حكيم في تشريعاته وأحكامه.
+- id: tafsir.muyassar.24.15
+  type: tafsir
+  ref: {edition: muyassar, surah: 24, ayah: 15}
+  url: https://quran.com/24:15/tafsirs/ar-tafsir-muyassar
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/16/by_ayah/24:15
+    edition: Tafsir Muyassar
+    verses: ["24:15"]
+    retrieved: '2026-11-21'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "le sens de « وتحسبونه هيّنًا وهو عند الله عظيم », pour le film « وتحسبونه هيّنًا » (2026-11-21)"
+  text_ar: 'حين تتلقفون الإفك وتتناقلونه بأفواهكم، وهو قول باطل، وليس عندكم به علم، وهما محظوران: التكلم بالباطل، والقول بلا علم، وتظنون ذلك شيئًا هيِّنًا، وهو عند الله عظيم. وفي هذا زجر بليغ عن التهاون في إشاعة الباطل.'
+- id: tafsir.saadi.24.15
+  type: tafsir
+  ref: {edition: saadi, surah: 24, ayah: 15}
+  url: https://quran.com/24:15/tafsirs/ar-tafseer-al-saddi
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/tafsirs/91/by_ayah/24:15
+    edition: السعدي Al-Sa'di
+    verses: ["24:15"]
+    retrieved: '2026-11-21'
+  status: validated
+  validated_by: mssnoussi92
+  notes: "le sens de 24:15, pour le film « وتحسبونه هيّنًا » (2026-11-21)"
+  text_ar: '{ إِذْ تَلَقَّوْنَهُ بِأَلْسِنَتِكُمْ } أي: تلقفونه، ويلقيه بعضكم إلى بعض، وتستوشون حديثه، وهو قول باطل. { وَتَقُولُونَ بِأَفْوَاهِكُمْ مَا لَيْسَ لَكُمْ بِهِ عِلْمٌ } والأمران محظوران، التكلم بالباطل، والقول بلا علم، { وَتَحْسَبُونَهُ هَيِّنًا } فلذلك أقدم عليه من أقدم من المؤمنين الذين تابوا منه، وتطهروا بعد ذلك، { وَهُوَ عِنْدَ اللَّهِ عَظِيمٌ } وهذا فيه الزجر البليغ، عن تعاطي بعض الذنوب على وجه التهاون بها، فإن العبد لا يفيده حسبانه شيئا، ولا يخفف من عقوبة الذنب، بل يضاعف الذنب، ويسهل عليه مواقعته مرة أخرى.'

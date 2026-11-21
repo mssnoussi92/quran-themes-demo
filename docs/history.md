@@ -825,6 +825,40 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   session : **« A · le barrage » choisi par lui** (`thumbnail.use`) ; `only: thumbnail` du workflow `film` les ajoute à la
   release brouillon. Et l'amélioration continue, pour toutes les sessions (CLAUDE.md).
 
+## Trois films faits de séries entières : « وتحسبونه هيّنًا », « سؤال صعب », « سجود السهو » (2026-11-21)
+
+- **Sa demande** : « continuer d'avoir un film chaque lundi » (grille validée, `docs/retention/calendar.md`), et pour ces
+  films « ne pas se limiter aux répliques de liaison » : travailler le début et la fin, et ce qu'on peut ajouter. Ses choix,
+  questions à choix : tous les ajouts proposés (24:15 récité et Bukhari 6478 lu par une vraie voix pour « وتحسبونه هيّنًا »,
+  13:28 en conclusion pour « سؤال صعب », l'ouverture sur les oublis du Prophète ﷺ, les deux questions fréquentes et la carte
+  qui récapitule pour « سجود السهو ») ; **les trois scripts et la lecture de Bukhari 6478 validés par lui** ; la voix des
+  répliques propres, une requête par film (prises `D-trial-<film>-film.flac`).
+- **Le 16:9 : « dessins refaits en 16:9 »** (son choix, contre le recadrage de l'image verticale du film « مخيّر ولا مسيّر؟ ») :
+  « وتحسبونه هيّنًا », tout dessiné, a chaque scène posée pour le cadre large (`HAYYIN_WIDE`, Hayyin.tsx : `Span`, le mur, la
+  rue, les collines, le ciel continuent sur toute la largeur, avec ce qui s'y trouve : fenêtres, maisons, palmiers, arcades,
+  sous le texte) ; « سؤال صعب » et « سجود السهو » posent leurs cartes, leur salle de prière et leurs scènes jouées à gauche
+  (`wideTall`, Film.tsx), les pièces des scènes jouées et le sol de la salle continuent au-delà du cadre du short
+  (`BLEED`, Played.tsx et Sahw.tsx : rien n'en paraît dans un short, son svg s'arrête au cadre), la frise des rak'ahs au-dessus.
+  Les films minutent désormais les dessins d'un short sur ses phrases (`phrase`), et le film vertical joue les scènes jouées
+  et la frise, ses textes là où le short les met (`layoutOf`). Planches d'images contrôlées par la session : deux éléments
+  passaient sous le texte (une villa voisine, un cadre au mur), retirés.
+- **La carte qui récapitule** (« سجود السهو ») : les trois erreurs puis, école par école, où vont les deux prosternations,
+  d'après l'Encyclopédie koweïtienne 24/238-239 : الحنفي après le salam, toujours ; المالكي avant pour un manque, après pour
+  un ajout ; الشافعي avant ; الحنبلي avant, sauf deux cas. La règle de chaque école telle que la page la donne, pas une case par
+  erreur : la page ne donne pas chaque cas (le doute chez les malikites), rien n'est inventé.
+- **Textes et vignettes** : description et accroche de chaque film proposées (`publish.description`, `publish.hook`) ; le
+  fichier d'une série qui porte aussi son film garde la numérotation de ses shorts et dit que les textes du film ne sont pas
+  validés (publish.py) ; vignettes : une scène dessinée pour la vignette seule (son choix du même jour, « entièrement
+  dessinée » : la chaise vide, le riche éveillé, « 3 ولا 4؟ », `ThumbArt.tsx`), recommandée, et des moments du film.
+  Les vignettes « moment du film » (`at`) sortaient toutes sur l'ouverture du film : la composition `TrialThumbFrame` durait
+  60 images, et une séquence du film qui commence après n'était jamais montrée ; elle dure désormais autant que le film.
+- **Rendus** : workflow `film`, `only: all` pour « وتحسبونه هيّنًا » (les shorts refaits avec le nom de la série, leurs versions
+  TikTok, le film), `only: film` pour les deux autres, puis `only: tall` (le film vertical et son jumeau TikTok) pour les trois.
+  Contrôlés sur leurs planches (−16,1 à −16,2 LUFS) et envoyés : 6:33, 5:17, 7:14. **Tout validé par lui le même jour**
+  (questions à choix) : « je valide les 12 vidéos », « je valide les 3 textes », « les 3 dessinées » (vignettes), « je valide les 7
+  sources » (24:15 et ses deux tafsirs, Bukhari 6478, l'Encyclopédie koweïtienne 24/240, 244, 245) ; fichiers rendus publics par
+  `page-files`.
+
 ## 2026-11-21 · Vignettes dessinées de la caverne et de Moussa et al-Khadir
 
 - **Ses choix** (questions à choix, 2026-11-21, après celle de Dhul-Qarnayn) : pour le film de la caverne (lundi 30),

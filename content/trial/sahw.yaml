@@ -7,12 +7,197 @@
 id: sahw
 validated: { by: mssnoussi92, on: 2026-11-18, what: [publish] }      # « Je valide les 4 accroches » (question à choix)
 files: sahw                      # début du nom des vidéos livrées : sahw-short-<n>-<id>.mp4
+tall:                            # le film en 9:16 pour Facebook et son jumeau TikTok (son choix du 2026-11-16 pour chaque film)
+  validated: { by: mssnoussi92, on: 2026-11-21, what: [montage, publish] }      # « je valide les 12 vidéos », « je valide les 3 textes »
+  tiktok: { asked: 2026-11-21, validated: { by: mssnoussi92, on: 2026-11-21, what: [video, publish] } }
 title: { ar: "إزاي أعملها؟", en: "How Do I Do It?" }
 shorts: [sahun, khams, nasit, shakk]
 handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 digits: latin
 publish:
+  title: { en: "Sujud as-sahw: added, left out, or unsure?", ar: "سجود السهو: زوّدت، نقصت، ولا شكّيت؟" }      # le titre du film, proposé par la session (2026-11-21), à valider
+  description:      # le film : proposée par la session, validée par le propriétaire le 2026-11-21 (« je valide les 3 textes »)
+    ar: "سجود السهو من الأول للآخر: ركعة زيادة، تشهد نسيته، وشك في عدد الركعات. لكل غلطة: اللي عمله النبي صلى الله عليه وسلم وعلّمه، وأقوال المذاهب الأربعة من الموسوعة الفقهية الكويتية، وفي الآخر جدول: السجدتين قبل السلام ولا بعده."
+    en: "Sujud as-sahw from start to finish: an extra rak'ah, a forgotten tashahhud, and doubt about how many rak'ahs. For each mistake: what the Prophet ﷺ did and taught, the views of the four schools from the Kuwaiti Encyclopedia of Fiqh, and a table at the end: the two prostrations before or after the salam."
+  hook:             # légende courte du film vertical (Facebook, TikTok) : proposée par la session, validée par le propriétaire le 2026-11-21 (« je valide les 3 textes »)
+    ar: "النبي صلى الله عليه وسلم نفسه… سها في صلاته. وعلّمنا نعمل إيه… لما نسهى إحنا."
+    en: "The Prophet ﷺ himself… forgot in his prayer. And he taught us what to do… when we forget."
+    validated: 2026-11-21
+  film_validated: 2026-11-21      # les textes du film (titre, description, chapitres, accroche) : « je valide les 3 textes »
   out: docs/retention/publication-sahw.md
   series: { en: "How Do I Do It?", ar: "إزاي أعملها؟" }
   hashtags: ["#إزاي_أعملها", "#سجود_السهو"]
   narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", X: "No narration voice yet: draft · مسودة بلا صوت" }
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Le film « سجود السهو » (décision du propriétaire, 2026-11-21 : « un film chaque lundi », les films faits des séries
+# qui forment un tout ; ses ajouts, question à choix : « carte récapitulative », « ouverture sur le Prophète ﷺ »,
+# « chapitre comment le faire »). Il reprend les quatre shorts réplique par réplique (sans leurs appels à suivre), les
+# versets entiers (2:286, 18:110 : sa règle du 2026-11-19), et ajoute : l'ouverture (les oublis du Prophète ﷺ dans sa
+# prière, puis les trois erreurs, une image chacune), les liaisons, ce que dit l'Encyclopédie koweïtienne de deux cas
+# pratiques (plusieurs oublis dans la même prière, l'oubli derrière l'imam : 24/240, 24/244) et du tashahhud dont on se
+# souvient avant d'être debout (24/244-245), la carte qui récapitule (les cartes des shorts, réunies), la fin. L'article
+# de l'Encyclopédie (24/234-245) ne décrit pas les deux prosternations au-delà de « deux prosternations » et de l'ordre
+# des hanafites : le « comment faire » devient ces cas pratiques (dit au propriétaire). Répliques à valider avant toute
+# voix (une requête, texte 106-trial-sahw-film).
+text: 106-trial-sahw-film
+outro: 12
+thumbnail:
+  title: "سجود السهو"
+  tag: "زيادة · نقص · شك"
+  panels: [sahun, khams, nasit, shakk]
+  use: doubt-art                 # choisie par le propriétaire le 2026-11-21 (« les 3 dessinées »)
+  options:      # proposées par la session (2026-11-21), à choisir par le propriétaire : des moments du film
+    - { name: doubt-art, art: sahw-doubt, lines: ["صلّيت 3 ولا 4؟", "الحل في سجدتين"], tag: "سجود السهو", place: left }      # dessinée pour la vignette seule (son choix du 2026-11-21 : « entièrement dessinée »), recommandée
+    - { name: doubt, at: 300, lines: ["صلّيت 3 ولا 4؟", "الحل في سجدتين"], tag: "سجود السهو", place: right }
+    - { name: table, at: 420, lines: ["قبل السلام…", "ولا بعده؟"], tag: "سجود السهو", place: right }
+# Script du film (répliques propres, ouverture, fin, titre) validé par lui le 2026-11-21 (« Je valide le script », question à choix) ;
+# le 16:9 : « dessins refaits en 16:9 » (son choix, même jour).
+script_validated: { by: mssnoussi92, on: 2026-11-21 }
+# Le film rendu (16:9 redessiné, 9:16, jumeau TikTok) validé par lui le 2026-11-21 (« je valide les 12 vidéos », question à choix
+# qui les nommait), ses textes (« je valide les 3 textes ») et sa vignette dessinée (« les 3 dessinées »).
+film_validated: { by: mssnoussi92, on: 2026-11-21, what: [video, montage, voice, ambience, publish, thumbnail] }
+chapters:
+  - id: open
+    title: { ar: "حتى النبي ﷺ سها", en: "Even the Prophet ﷺ forgot" }
+    segments:
+      - narration: film-open
+        picture: khams
+        scene: track5
+        sources: [hadith.bukhari.1226, hadith.bukhari.1224]
+        lines:
+          - ar: "النبي صلى الله عليه وسلم نفسه… سها في صلاته."
+            en: "The Prophet ﷺ himself… forgot in his prayer."
+          - ar: "مرة صلّى الضهر خمسة… ومرة قام من غير ما يقعد للتشهد."
+            en: "Once he prayed dhuhr in five… once he stood up without sitting for the tashahhud."
+          - ar: "وعلّمنا نعمل إيه… لما نسهى إحنا."
+            en: "And he taught us what to do… when we forget."
+      - narration: film-three
+        shots: [{ picture: khams, scene: track5 }, { picture: nasit, scene: stand }, { picture: shakk, scene: count }, { picture: shakk, scene: count }, { picture: shakk, scene: count }, { picture: shakk, scene: count }]
+        lines:
+          - ar: "ركعة زيادة… تشهد نسيته… وشك: صلّيت كام؟"
+            en: "An extra rak'ah… a forgotten tashahhud… and doubt: how many did I pray?"
+          - ar: "تلات غلطات بتحصل لكلنا… ولكل واحدة حل من السنة."
+            en: "Three mistakes that happen to all of us… and each has its fix in the Sunnah."
+  - id: sahun
+    number: 1
+    title: { ar: "«ويل» للي بيصلّوا؟", en: "“Woe” to those who pray?" }
+    segments:
+      - narration: film-first
+        picture: sahun
+        scene: word
+        lines:
+          - ar: "بس قبل الحل… سؤال بيقلق ناس كتير."
+            en: "But before the fix… a question that worries many."
+      - { reuse: sahun.open, scene: word }
+      - { verses: [quran.107.4, quran.107.5] }
+      - { reuse: sahun.fear, scene: room }
+      - { reuse: sahun.letter, scene: letter }
+      - { reuse: sahun.worry, scene: room }
+      - { reuse: sahun.intro, scene: dua }
+      - { verses: [quran.2.286] }    # entier dans le film (sa règle du 2026-11-19)
+      - { reuse: sahun.meaning }
+      - { reuse: sahun.answer }
+      - { reuse: sahun.close, lines: [0], scene: end, subscribe: true }
+  - id: khams
+    number: 2
+    title: { ar: "ركعة زيادة", en: "An extra rak'ah" }
+    segments:
+      - narration: film-add
+        picture: khams
+        scene: track5
+        lines:
+          - ar: "طب بيتصلّح إزاي؟ نبدأ بأول غلطة: الزيادة."
+            en: "So how is it fixed? We start with the first mistake: adding."
+      - { reuse: khams.open, scene: track5 }
+      - { reuse: khams.story, scene: rows }
+      - { reuse: khams.said }
+      - { reading: hadith.muslim.572a, scene: voice }
+      - { reuse: khams.same, scene: human }
+      - { verses: [quran.18.110] }   # entier dans le film (sa règle du 2026-11-19)
+      - { reuse: khams.meaning }
+      - { reuse: khams.schools, scene: lanes }
+      - { reuse: khams.close, lines: [0], scene: end }
+  - id: nasit
+    number: 3
+    title: { ar: "نسيت التشهد", en: "A forgotten tashahhud" }
+    segments:
+      - narration: film-miss
+        picture: nasit
+        scene: stand
+        lines:
+          - ar: "والغلطة التانية: النقص."
+            en: "The second mistake: leaving something out."
+      - { reuse: nasit.open, scene: stand }
+      - { reuse: nasit.story, scene: rows }
+      - { reuse: nasit.fix, scene: fix }
+      - { reuse: nasit.schools, scene: lanes }
+      - { reuse: nasit.hanafi, scene: hanafi }
+      - narration: film-back
+        scene: stand
+        sources: [fiqh.kuwaiti.24.244, fiqh.kuwaiti.24.245]
+        lines:
+          - ar: "ولو افتكرت قبل ما تقف خالص… ارجع اقعد للتشهد."
+            en: "And if you remember before standing fully… go back and sit for the tashahhud."
+          - ar: "ولو وقفت خلاص… كمّل… واسجد للسهو."
+            en: "If you're already standing… carry on… and prostrate for forgetfulness."
+      - { reuse: nasit.why, scene: room }
+      - { verse: quran.33.21 }
+      - { reuse: nasit.meaning }
+      - { reuse: nasit.close, lines: [0], scene: end }
+  - id: shakk
+    number: 4
+    title: { ar: "صلّيت كام؟", en: "How many did I pray?" }
+    segments:
+      - narration: film-doubt
+        picture: shakk
+        scene: count
+        lines:
+          - ar: "والتالتة… أصعبهم: الشك."
+            en: "And the third… the hardest: doubt."
+      - { reuse: shakk.open, scene: count }
+      - { reuse: shakk.whisper }
+      - { reuse: shakk.taught }
+      - { reading: hadith.muslim.571a, scene: voice }
+      - { reuse: shakk.meaning, scene: fix }
+      - { reuse: shakk.schools, scene: lanes }
+      - { reuse: shakk.describe, scene: room }
+      - { verses: [quran.114.4, quran.114.5, quran.114.6] }
+      - { reuse: shakk.meaning2 }
+      - { reuse: shakk.close, lines: [0], scene: end }
+  - id: cases
+    title: { ar: "سؤالين بيتكرروا", en: "Two questions that keep coming" }
+    segments:
+      - narration: film-cases
+        picture: sahun
+        scene: room
+        sources: [fiqh.kuwaiti.24.240, fiqh.kuwaiti.24.244]
+        lines:
+          - ar: "وسؤالين بيتكرروا كتير:"
+            en: "And two questions that come up a lot:"
+          - ar: "سهيت أكتر من مرة في نفس الصلاة؟ سجدتين بس… عند أغلب العلما."
+            en: "Forgot more than once in the same prayer? Just two prostrations… for most scholars."
+          - ar: "وسهيت وانت ورا الإمام؟ مفيش عليك سجود… والعلما متفقين على كده."
+            en: "Forgot while praying behind the imam? No prostration on you… the scholars agree on that."
+          - ar: "ولو الإمام سجد للسهو… تسجد معاه."
+            en: "And if the imam prostrates for forgetfulness… you prostrate with him."
+  - id: recap
+    title: { ar: "الخلاصة", en: "In short" }
+    segments:
+      - narration: film-recap
+        picture: khams
+        scene: recap
+        sources: [fiqh.kuwaiti.24.238, fiqh.kuwaiti.24.239, hadith.muslim.571a]
+        lines:
+          - ar: "الخلاصة: زوّدت… نقصت… أو شكّيت؟ سجدتين."
+            en: "In short: added… left out… or in doubt? Two prostrations."
+          - ar: "قبل السلام ولا بعده؟ على حسب المذهب… والجدول ده بيقولك."
+            en: "Before the salam or after? It depends on the school… and this table tells you."
+      - narration: film-end
+        subscribe: true
+        lines:
+          - ar: "السهو بيحصل لكلنا… والمهم إنك تعرف تصلّحه."
+            en: "Forgetting happens to all of us… what matters is knowing how to fix it."
+          - ar: "احفظ الفيديو… وابعته لحد بيسأل."
+            en: "Save this video… and send it to someone who asks."

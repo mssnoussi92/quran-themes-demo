@@ -119,7 +119,17 @@ def prepare(args) -> None:
             wav = out_dir / f"{fid}-{args.voice}-{n:03d}.wav"
             if "reuse" in seg:
                 name, narration = seg["reuse"].split(".")
-                made = take(name).segment(narration, seg.get("lines"), wav)
+                own = next((s for s in trial(name)["segments"] if s.get("narration") == narration), None)
+                if own is not None and own.get("silent"):
+                    # A line written on screen and never said (the opening card of « وتحسبونه هيّنًا »): no take to cut,
+                    # timed from its length and its `hold`, as the short does (prepare.py).
+                    lines = [l for i, l in enumerate(own["lines"]) if seg.get("lines") is None or i in seg["lines"]]
+                    made = P.narration(None, *P.place([l["ar"] for l in lines], None), 0, lines, Path("-"))
+                    if own.get("hold") and made["seconds"] < own["hold"]:
+                        made["seconds"] = made["lines"][-1]["end"] = float(own["hold"])
+                    made["silent"] = True
+                else:
+                    made = take(name).segment(narration, seg.get("lines"), wav)
             elif "narration" in seg:
                 made = takes[fid].segment(seg["narration"], None, wav)
             elif "verses" in seg and recited is None:

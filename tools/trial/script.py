@@ -216,7 +216,7 @@ def rests_on(ids: list[str], sources: dict, policy: dict) -> str:
         ref = src["ref"]
         if src["type"] == "hadith":
             name = COLLECTIONS.get(ref["collection"], ref["collection"].capitalize())
-            letter = "abcdefgh"[ref["narration"] - 1] if ref.get("narration") else ""
+            letter = "abcdefghijklmnopqrstuvwxyz"[ref["narration"] - 1] if ref.get("narration") else ""
             out.append(f"récit de [{name} {ref['number']}{letter}]({src.get('url')}), raconté avec nos mots{state}")
         elif src["type"] == "science":
             out.append(f"source scientifique [{src['label']['en']}]({src.get('url')}) : {src.get('claim', '')}{state}")
