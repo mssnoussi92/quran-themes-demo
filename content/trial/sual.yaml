@@ -34,7 +34,7 @@ chapters:
     title: { ar: "تلات أسئلة", en: "Three questions" }
     segments:
       - narration: film-open
-        shots: [{ picture: dank, scene: ask }, { picture: tayyiba, scene: ask }, { picture: ghafur, scene: ask }]
+        shots: [{ picture: dank, scene: ask }, { picture: dank, scene: ask }, { picture: tayyiba, scene: ask }, { picture: tayyiba, scene: ask }, { picture: ghafur, scene: ask }, { picture: ghafur, scene: ask }]
         lines:
           - ar: "بعيد عن ربنا… وعايش مرتاح؟"
             en: "Far from God… and living in comfort?"

@@ -51,7 +51,7 @@ chapters:
           - ar: "وعلّمنا نعمل إيه… لما نسهى إحنا."
             en: "And he taught us what to do… when we forget."
       - narration: film-three
-        shots: [{ picture: khams, scene: track5 }, { picture: nasit, scene: stand }, { picture: shakk, scene: count }]
+        shots: [{ picture: khams, scene: track5 }, { picture: nasit, scene: stand }, { picture: shakk, scene: count }, { picture: shakk, scene: count }, { picture: shakk, scene: count }, { picture: shakk, scene: count }]
         lines:
           - ar: "ركعة زيادة… تشهد نسيته… وشك: صلّيت كام؟"
             en: "An extra rak'ah… a forgotten tashahhud… and doubt: how many did I pray?"

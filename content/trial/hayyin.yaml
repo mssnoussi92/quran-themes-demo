@@ -42,7 +42,7 @@ chapters:
     title: { ar: "تلات حاجات صغيرة", en: "Three small things" }
     segments:
       - narration: film-open
-        shots: [{ picture: ghiba, scene: cafe }, { picture: namima, scene: phone }, { picture: riya, scene: box }]
+        shots: [{ picture: ghiba, scene: cafe }, { picture: namima, scene: phone }, { picture: riya, scene: box }, { picture: riya, scene: box }]
         lines:
           - ar: "كلمة في غياب حد…"
             en: "A word about someone who isn't there…"
