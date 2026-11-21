@@ -40,9 +40,13 @@ Pourquoi :
 
 **Publiée par quran-reels depuis le jeudi 19 novembre** (choix du propriétaire, 2026-11-19 : le départ
 prévu le lundi 23 avancé à ce jour, le short 3 du du'a) : Facebook et Instagram après la vérification des droits
-de Meta, TikTok en brouillon (il le publie), YouTube à la main ; une ligne barrée ici n'est jamais publiée.
+de Meta, TikTok en brouillon (il le publie), YouTube aussi depuis le 2026-11-21 (avant : à la main) ; une ligne barrée ici n'est jamais publiée.
 
-**L'heure : 18 h, heure de France, depuis le 2026-11-19** (sa demande : « modifier la publication automatique pour la
+**L'heure : 13 h, heure de France, à partir du vendredi 27 novembre** (sa décision, 2026-11-21, après sa capture de
+YouTube Studio : ses spectateurs YouTube sont là surtout de 14 h à 16 h en semaine ; 14 h au Caire, 13 h à Alger, 15 h à
+Riyad ; après le dhuhr et après la prière du vendredi ; à partir du 27 pour ne pas mêler l'essai des versions courtes de
+Dhul-Qarnayn, du 24 au 26 ; toutes les plateformes, quran-reels publie d'un coup ; mesuré comme un essai sur la page
+« Statistiques »). **Avant : 18 h, heure de France, depuis le 2026-11-19** (sa demande : « modifier la publication automatique pour la
 page principale pour être aussi à 18h », comme la page test ; 19 h au Caire, 18 h à Alger, 20 h à Riyad et à Bagdad ;
 aucun chiffre ne dit encore si 18 h fait mieux ou moins bien que 19 h). **Avant : 19 h**, pour les shorts comme pour les films (décision du propriétaire, 2026-11-13 :
 « le soir à 20 h heure du Caire, mais mets l'heure de France pour moi »). C'est 20 h au Caire, 19 h à Alger, 21 h à
@@ -76,7 +80,7 @@ Les vidéos de ce calendrier passent sur la même Page que les reels de quran-re
 On n'en recopie ici que les règles, pas la liste : elle est recalculée chaque jour (un créneau manqué décale la suite,
 comme le 15 novembre au matin). Le calendrier de tout ce que publie la Page, reels et vidéos de ce fichier ensemble, est
 dans le catalogue de quran-reels : https://mssnoussi92.github.io/quran-reels/catalog/#calendar (les vidéos d'ici en
-bleu, lues dans ce fichier). Aucune collision entre les deux grilles : le reel le matin, ces vidéos à 18 h, et le
+bleu, lues dans ce fichier). Aucune collision entre les deux grilles : le reel le matin, ces vidéos à 18 h (13 h à partir du 27 novembre), et le
 dimanche soir à 18 h, jour libre ici, la série des reels (à 19 h 30 jusqu'au 2026-11-19).
 
 ## Le calendrier
@@ -84,7 +88,7 @@ dimanche soir à 18 h, jour libre ici, la série des reels (à 19 h 30 jusqu'au 
 **Le quiz « معاك 5 ثواني » sur Instagram, les lundis d'un film** (choix du propriétaire, 2026-11-17 : « à partir du lundi
 prochain, sur Instagram seulement, puisque c'est le jour du film et qu'on ne publie plus de films sur Instagram » ;
 publié par quran-reels, qui sort chaque ligne d'un même jour sur ses propres plateformes) : une ligne de plus sous le
-film du jour, Instagram seul, à 18 h (19 h jusqu'au 2026-11-19) ; les lundis d'un film sont le 23 et le 30 novembre, puis le 7 décembre (le film de « مخيّر ولا مسيّر؟ », avancé ; le stock de la Page n'a que trois quiz).
+film du jour, Instagram seul, à 18 h (19 h jusqu'au 2026-11-19 ; 13 h à partir du 27 novembre, donc le lundi 30) ; les lundis d'un film sont le 23 et le 30 novembre, puis le 7 décembre (le film de « مخيّر ولا مسيّر؟ », avancé ; le stock de la Page n'a que trois quiz).
 
 | Date | Quoi | Où | Fichiers | Texte (section de `docs/retention/…`) |
 | --- | --- | --- | --- | --- |
