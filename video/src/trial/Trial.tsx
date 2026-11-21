@@ -484,7 +484,7 @@ export const PICTURES: Record<string, Drawn> = {
  * « sur toute la vidéo, si on peut jouer une scène, on la joue »). Each entry is drawn while its `scene` is shown; with
  * `from`, only from the phrase `from` of the first narration on that scene to the end of that narration: an « annonce »,
  * a few seconds of the played scene on the opening line that speaks to the viewer, the story's picture before it. */
-type PlayedAt = { scene: string; set: Played; variant?: string; from?: number; to?: number; card?: boolean };
+export type PlayedAt = { scene: string; set: Played; variant?: string; from?: number; to?: number; card?: boolean };
 export const PLAYED: Record<string, PlayedAt[]> = {
   caravan: [{ scene: "work", set: WorkPlayed }],
   west: [{ scene: "sun", set: OfficePlayed, variant: "tease", from: 5, card: true }, { scene: "office-us", set: OfficePlayed, variant: "us" }, { scene: "office", set: OfficePlayed, variant: "ex" }],
@@ -514,7 +514,7 @@ export const PLAYED: Record<string, PlayedAt[]> = {
   qist: [{ scene: "scales", set: JusticePlayed }],
 };
 
-const PlayedLayer: React.FC<{ p: PlayedAt; t: number; segments: Segment[]; show: (id: string) => number; since: (id: string) => number; phrase: (id: string, n: number) => number }> = ({ p, t, segments, show, since, phrase }) => {
+export const PlayedLayer: React.FC<{ p: PlayedAt; t: number; segments: Segment[]; show: (id: string) => number; since: (id: string) => number; phrase: (id: string, n: number) => number }> = ({ p, t, segments, show, since, phrase }) => {
   let o: number;
   let origin: number;
   if (p.from !== undefined) {
@@ -618,7 +618,7 @@ export const LAYOUTS: Record<string, LayoutOverride> = { duha: AYAH_CAPTION, hop
   ...Object.fromEntries(["rizq", "adab", "qist"].map((id) => [id, { ...FARQ_LAYOUTS[id], caption: { top: 1385, size: 54, sub: 1545, credit: 1690 } }])),
   ...Object.fromEntries(["dank", "tayyiba", "ghafur"].map((id) => [id, { ...SUAL_LAYOUTS[id], caption: { top: 1385, size: 54, sub: 1545, credit: 1690 } }])),
 };
-const layoutOf = (trial: string): Layout => {
+export const layoutOf = (trial: string): Layout => {
   const own = LAYOUTS[trial];
   return own ? { ...PORTRAIT, ...own, sub: { ...PORTRAIT.sub, ...own.sub }, credit: { ...PORTRAIT.credit, ...own.credit } } : PORTRAIT;
 };

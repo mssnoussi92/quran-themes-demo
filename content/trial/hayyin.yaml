@@ -11,11 +11,147 @@
 id: hayyin
 validated: { by: mssnoussi92, on: 2026-11-19, what: [publish] }      # « je valide titres et descriptions » (question à choix nommant les 3 titres et les 3 descriptions)
 files: hayyin                    # début du nom des vidéos livrées : hayyin-short-<n>-<id>.mp4
+tall:                            # le film en 9:16 pour Facebook et son jumeau TikTok (son choix du 2026-11-16 pour chaque film)
+  validated: { by: mssnoussi92, on: 2026-11-21, what: [montage, publish] }      # « je valide les 12 vidéos », « je valide les 3 textes »
+  tiktok: { asked: 2026-11-21, validated: { by: mssnoussi92, on: 2026-11-21, what: [video, publish] } }
 title: { ar: "وتحسبونه هيّنًا", en: "You Think It Is Small" }
 shorts: [ghiba, namima, riya]
 handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 publish:
+  title: { en: "Sins we think are small", ar: "ذنوب بنحسبها صغيرة" }      # le titre du film, proposé par la session (2026-11-21), à valider
+  description:      # le film : proposée par la session, validée par le propriétaire le 2026-11-21 (« je valide les 3 textes »)
+    ar: "الغيبة، والنميمة، والرياء: تلات ذنوب بنشوفها صغيرة. في الفيلم ده: كلمة بتاخد من حسناتك وتديها للي اتكلمت عليه، ورسالة بتفرّق بين اتنين، وخير بيضيع عشان اتعمل للناس… والآية اللي بتقول إن اللي بنحسبه هيّن… عند ربنا عظيم."
+    en: "Backbiting, tale-bearing and showing off: three sins we see as small. In this film: a word that takes from your good deeds and gives them to the one you spoke about, a message that sets two people apart, a good deed lost because it was done for people… and the verse that says that what we think is small is, with God, great."
+  hook:             # légende courte du film vertical (Facebook, TikTok) : proposée par la session, validée par le propriétaire le 2026-11-21 (« je valide les 3 textes »)
+    ar: "كلمة في غياب حد… رسالة اتنقلت… وعمل خير اتصوّر عشان الناس تشوفه. تلات حاجات بنعملها كل يوم… ومش بنفكر فيها مرتين."
+    en: "A word about someone who isn't there… a message forwarded… a good deed filmed so people see it. Three things we do every day… without a second thought."
+    validated: 2026-11-21
+  film_validated: 2026-11-21      # les textes du film (titre, description, chapitres, accroche) : « je valide les 3 textes »
   out: docs/retention/publication-hayyin.md
   series: { en: "You Think It Is Small", ar: "وتحسبونه هيّنًا" }
   hashtags: ["#وتحسبونه_هينا", "#تزكية_النفس"]
   narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Le film (décision du propriétaire, 2026-11-21 : « un film chaque lundi », les films faits des séries qui forment un
+# tout ; la série sort de la réserve, son film le 14 décembre ; ses ajouts, question à choix : « 24:15 récité »,
+# « Bukhari 6478 », « ouverture : 3 gestes du quotidien »). Il reprend les trois shorts réplique par réplique (sans
+# leurs appels à suivre ; les annonces « والجاية » servent de liaisons) et ajoute : l'ouverture (les trois gestes, une
+# image chacun), Bukhari 6478 lu par une vraie voix (« لا يلقي لها بالًا » : la parole qu'on dit sans y penser) et son
+# sens, la fin sur 24:15, le verset du nom de la série, jamais récité dans les shorts (al-Muyassar : il est venu sur la
+# calomnie colportée sans savoir ; as-Sa'di : tenir un péché pour léger ne l'allège pas, cela le rend plus facile à
+# refaire). Répliques à valider avant toute voix (une requête, texte 107-trial-hayyin-film) ; la lecture de Bukhari 6478
+# est à trouver (archive.org, skill find-hadith-recording) et à faire écouter au propriétaire.
+text: 107-trial-hayyin-film
+outro: 12
+thumbnail:
+  title: "وتحسبونه هيّنًا"
+  tag: "3 ذنوب بنشوفها صغيرة"
+  panels: [ghiba, namima, riya]
+  use: chair-art                 # choisie par le propriétaire le 2026-11-21 (« les 3 dessinées »)
+  options:      # proposées par la session (2026-11-21), à choisir par le propriétaire : des moments du film, tout dessiné
+    - { name: chair-art, art: hayyin-chair, lines: ["كلمة في غيابه…", "تمنها حسناتك!"], tag: "وتحسبونه هيّنًا", place: left }      # dessinée pour la vignette seule (son choix du 2026-11-21 : « entièrement dessinée »), recommandée
+    - { name: chair, at: 80, lines: ["كلمة في غيابه…", "تمنها حسناتك!"], tag: "وتحسبونه هيّنًا", place: right }
+    - { name: houses, at: 225, lines: ["رسالة واحدة…", "فرّقت بين اتنين!"], tag: "وتحسبونه هيّنًا", place: left }
+    - { name: rock, at: 300, lines: ["خير كتير…", "وضاع كله!"], tag: "وتحسبونه هيّنًا", place: right }
+# Script du film (répliques propres, ouverture, fin, titre) validé par lui le 2026-11-21 (« Script et lecture », question à choix) ;
+# le 16:9 : « dessins refaits en 16:9 » (son choix, même jour).
+script_validated: { by: mssnoussi92, on: 2026-11-21 }
+# Le film rendu (16:9 redessiné, 9:16, jumeau TikTok) validé par lui le 2026-11-21 (« je valide les 12 vidéos », question à choix
+# qui les nommait), ses textes (« je valide les 3 textes ») et sa vignette dessinée (« les 3 dessinées »).
+film_validated: { by: mssnoussi92, on: 2026-11-21, what: [video, montage, voice, ambience, publish, thumbnail] }
+chapters:
+  - id: open
+    title: { ar: "تلات حاجات صغيرة", en: "Three small things" }
+    segments:
+      - narration: film-open
+        shots: [{ picture: ghiba, scene: cafe }, { picture: namima, scene: phone }, { picture: riya, scene: box }, { picture: riya, scene: box }]
+        lines:
+          - ar: "كلمة في غياب حد…"
+            en: "A word about someone who isn't there…"
+          - ar: "رسالة اتنقلت…"
+            en: "A message forwarded…"
+          - ar: "وعمل خير… اتصوّر عشان الناس تشوفه."
+            en: "And a good deed… filmed so that people see it."
+      - narration: film-small
+        picture: ghiba
+        scene: chair
+        lines:
+          - ar: "تلات حاجات بنعملها كل يوم… ومش بنفكر فيها مرتين."
+            en: "Three things we do every day… without a second thought."
+          - ar: "والنبي صلى الله عليه وسلم قال عن الكلمة اللي بنقولها من غير ما نفكر:"
+            en: "And the Prophet ﷺ spoke of the word we say without thinking:"
+      - { reading: hadith.bukhari.6478 }
+      - narration: film-weight
+        sources: [hadith.bukhari.6478]
+        lines:
+          - ar: "يعني: كلمة واحدة… ممكن ترفعك درجات… وممكن تهوي بيك في النار… وانت مش واخد بالك منها."
+            en: "Meaning: a single word… can raise you by degrees… or drop you into the Fire… without you even noticing it."
+  - id: ghiba
+    number: 1
+    title: { ar: "الغيبة", en: "Backbiting" }
+    segments:
+      - { reuse: ghiba.hook, picture: ghiba, scene: cafe }
+      - { reuse: ghiba.open, scene: chair }
+      - { reading: hadith.bukhari.2449, scene: chair }
+      - { reuse: ghiba.meaning, scene: table }
+      - { reuse: ghiba.turn, scene: cafe }
+      - { verse: quran.49.12, scene: night }
+      - { reuse: ghiba.sense, scene: chair }
+      - { reuse: ghiba.depth, scene: alone }
+      - { reuse: ghiba.example, scene: cafe }
+      - { reuse: ghiba.close, lines: [0, 1], scene: dawn, subscribe: true }
+  - id: namima
+    number: 2
+    title: { ar: "النميمة", en: "Tale-bearing" }
+    segments:
+      - { reuse: namima.hook, picture: namima, scene: phone }
+      - { reuse: namima.open, scene: sent }
+      - { verses: [quran.68.10, quran.68.11], scene: path }
+      - { reuse: namima.meaning, scene: path }
+      - { reuse: namima.word, scene: steps }
+      - { reading: hadith.bukhari.216, scene: graves }
+      - { reuse: namima.depth, scene: phone }
+      - { reuse: namima.honest, scene: sent }
+      - { reuse: namima.example, scene: split }
+      - { reuse: namima.close, lines: [0, 1], scene: still }
+  - id: riya
+    number: 3
+    title: { ar: "الرياء", en: "Showing off" }
+    segments:
+      - { reuse: riya.hook, picture: riya, scene: box }
+      - { reuse: riya.open, scene: hearts }
+      - { verse: quran.2.264, scene: rock }
+      - { reuse: riya.meaning, scene: bare }
+      - { reuse: riya.depth, scene: soil }
+      - { reuse: riya.honest, scene: box }
+      - { reuse: riya.example, scene: two }
+      - { reuse: riya.close, lines: [0], scene: dawn }
+  - id: end
+    title: { ar: "وتحسبونه هيّنًا", en: "You think it is small" }
+    segments:
+      - narration: film-name
+        picture: ghiba
+        scene: dawn
+        sources: [tafsir.muyassar.24.15]
+        lines:
+          - ar: "تلات ذنوب… بنشوفها صغيرة."
+            en: "Three sins… that we see as small."
+          - ar: "والقرآن وصف الإحساس ده… في آية نزلت في كلام اتنقل على لسان الناس من غير علم:"
+            en: "And the Quran described that feeling… in a verse revealed about words passed from tongue to tongue without knowledge:"
+      - { verse: quran.24.15 }
+      - narration: film-weight2
+        sources: [tafsir.saadi.24.15]
+        lines:
+          - ar: "يعني: لما تشوف الذنب صغير… مش بيصغر عند ربنا."
+            en: "Meaning: when you see a sin as small… it doesn't become small with God."
+          - ar: "بالعكس… بيسهل عليك ترجعله تاني."
+            en: "On the contrary… it makes it easier to go back to it."
+      - narration: film-end
+        subscribe: true
+        lines:
+          - ar: "قبل الكلمة… وقبل الرسالة… وقبل الصورة: افتكر الآية دي."
+            en: "Before the word… before the message… before the photo: remember this verse."
+          - ar: "ابعته لحد بتحبه."
+            en: "Send it to someone you love."

@@ -12,14 +12,25 @@ import { walk } from "./Lens";
 const shoulderY = PELVIS - 106 * S;
 const headY = PELVIS - 182 * S;
 
+/** How far a set's wall and floor go on beyond the short's frame on each side: nothing of it shows in a short (its svg
+ * stops at the frame), the wide film (16:9) shows the room going on under its text (Film.tsx, `wideTall`). */
+export const BLEED = 1600;
+
 /** A plain room: a wall, a skirting, a floor; `tint` the wall. */
 const Room: React.FC<{ wall: string; floor?: string; dark?: number }> = ({ wall, floor = "#6b5440", dark = 0 }) => (
   <g>
-    <rect width={W} height={H} fill={wall} />
-    <rect x={0} y={FLOOR} width={W} height={H - FLOOR} fill={floor} />
-    <rect x={0} y={FLOOR - 14} width={W} height={18} fill="#00000022" />
-    <rect x={0} y={FLOOR} width={W} height={8} fill={INK} opacity={0.55} />
-    {dark > 0 ? <rect width={W} height={H} fill="#050914" opacity={dark} /> : null}
+    <rect x={-BLEED} width={W + 2 * BLEED} height={H} fill={wall} />
+    <rect x={-BLEED} y={FLOOR} width={W + 2 * BLEED} height={H - FLOOR} fill={floor} />
+    <rect x={-BLEED} y={FLOOR - 14} width={W + 2 * BLEED} height={18} fill="#00000022" />
+    <rect x={-BLEED} y={FLOOR} width={W + 2 * BLEED} height={8} fill={INK} opacity={0.55} />
+    {/* beyond the short's frame: a door on the left, a floor lamp on the right, low, under the film's text */}
+    <g opacity={0.9}>
+      <rect x={-560} y={FLOOR - 470} width={230} height={470} fill="#00000018" stroke={INK} strokeWidth={8} />
+      <circle cx={-360} cy={FLOOR - 240} r={9} fill={INK} />
+      <path d={`M 1900 ${FLOOR} L 1900 ${FLOOR - 330} M 1850 ${FLOOR} L 1950 ${FLOOR}`} stroke={INK} strokeWidth={8} strokeLinecap="round" />
+      <path d={`M 1840 ${FLOOR - 330} L 1960 ${FLOOR - 330} L 1930 ${FLOOR - 410} L 1870 ${FLOOR - 410} Z`} fill="#f3e3b8" stroke={INK} strokeWidth={6} />
+    </g>
+    {dark > 0 ? <rect x={-BLEED} width={W + 2 * BLEED} height={H} fill="#050914" opacity={dark} /> : null}
   </g>
 );
 
@@ -954,10 +965,14 @@ export const RichPlayed: Played = ({ u, t, at, variant }) => {
   );
   return (
     <g>
-      <rect width={W} height={H} fill={night ? "#141836" : "#9cc1e4"} />
+      <rect x={-BLEED} width={W + 2 * BLEED} height={H} fill={night ? "#141836" : "#9cc1e4"} />
       {night ? (
         <g>
-          <rect x={0} y={560} width={W} height={FLOOR - 560} fill="#2b2f52" />
+          <rect x={-BLEED} y={560} width={W + 2 * BLEED} height={FLOOR - 560} fill="#2b2f52" />
+          {/* beyond the short's frame: the bedroom goes on, a wardrobe, a second window and its moon light */}
+          <rect x={1300} y={980} width={300} height={FLOOR - 980} fill="#1f2342" stroke={INK} strokeWidth={8} />
+          <path d={`M 1300 1100 L 1600 1100`} stroke={INK} strokeWidth={6} />
+          <rect x={-480} y={640} width={300} height={260} fill="#0b1230" stroke={INK} strokeWidth={8} />
           <rect x={680} y={640} width={300} height={260} fill="#0b1230" stroke={INK} strokeWidth={8} />
           <circle cx={900} cy={700} r={24} fill="#f3eccf" />
           <rect x={120} y={1180} width={520} height={80} fill="#7a4b8a" stroke={INK} strokeWidth={6} />
@@ -976,7 +991,12 @@ export const RichPlayed: Played = ({ u, t, at, variant }) => {
             {[600, 700, 900, 1000].map((cx) => <rect key={cx} x={cx - 14} y={800} width={28} height={FLOOR - 800} fill="#e6e1d6" />)}
             <rect x={760} y={1080} width={80} height={FLOOR - 1080} fill="#7a4b2a" />
           </g>
-          <rect x={0} y={FLOOR} width={W} height={H - FLOOR} fill="#7a8a5a" />
+          <rect x={-BLEED} y={FLOOR} width={W + 2 * BLEED} height={H - FLOOR} fill="#7a8a5a" />
+          {/* beyond the short's frame: the garden of the villa goes on, a low hedge, under the film's text */}
+          <g stroke={INK} strokeWidth={7} strokeLinejoin="round">
+            <rect x={1090} y={FLOOR - 96} width={1200} height={96} rx={44} fill="#5f7a45" />
+            <rect x={-520} y={1060} width={480} height={FLOOR - 1060} fill="#e6e1d6" />
+          </g>
         </g>
       )}
       {night ? (

@@ -33,7 +33,7 @@ voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 102-trial-ghiba
 # Le fond, provisoire, pour le script (2026-11-17) : un ciel de nuit dessiné par ffmpeg (tools/trial/clip.py) ; la scène est
 # dessinée par-dessus. Un clip filmé ou un fond tout dessiné se décidera avec les images de style.
-clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4, landscape: { side: left, horizon: 1260, brightness: 1 } }
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#02040b", horizon: 1260, veil: 0.4, landscape: { side: left, horizon: 700, brightness: 1 } }
 # Ambiance sous la narration, jamais sous le verset ni le hadith : un café (murmures sans paroles distinctes,
 # tasses ; entendu par Whisper : aucune parole reconnue), proposée le 2026-11-19, à valider à l'écoute par le propriétaire.
 ambience: { source: bigsoundbank, id: "2561", title: "Coffee Shop at the Capucins", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/coffee-shop-at-the-capucins-s2561.html", from: 20, seconds: 140, level: -38 }

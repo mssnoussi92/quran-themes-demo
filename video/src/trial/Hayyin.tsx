@@ -26,6 +26,14 @@ const chance = (i: number, salt = 0) => {
   return v - Math.floor(v);
 };
 
+/** Where the frame's left and right edges are, in the drawing's own units: the short's frame (0 to 1080), or the film's
+ * wide frame (1920 x 1080), where the scene is drawn at WIDE_SCALE on one side and its room, street or sky goes on under
+ * the text on the other (`wide`, at the end of this file). */
+type Span = { left: number; right: number };
+const TALL: Span = { left: 0, right: W };
+/** What lies beyond the short's frame on each side (none in the short). */
+const beyond = (span: Span) => ({ before: span.left < 0, after: span.right > W });
+
 /** When each scene starts (as in Lens.tsx): in the video, when its segment starts; on a cover, two seconds into the
  * cover's own scene, the others long over or far away. */
 const timeline = (order: string[], show: (id: string) => number, since: (id: string) => number) => {
@@ -67,7 +75,7 @@ const Stars: React.FC<{ t: number; bright: number; top: number; bottom: number; 
 );
 
 /** A café chair seen from the side, its back on the side opposite to `facing`. (x, seat): the middle of the seat. */
-const Chair: React.FC<{ x: number; seat: number; floor: number; facing: number; lit?: number; s?: number }> = ({ x, seat, floor, facing, lit = 0, s = 1 }) => {
+export const Chair: React.FC<{ x: number; seat: number; floor: number; facing: number; lit?: number; s?: number }> = ({ x, seat, floor, facing, lit = 0, s = 1 }) => {
   const back = -facing * 58;
   const leg = (floor - seat) / s;
   return (
@@ -83,7 +91,7 @@ const Chair: React.FC<{ x: number; seat: number; floor: number; facing: number; 
 };
 
 /** A small cup on a saucer, its steam rising. (x, y): its foot on the table. */
-const Cup: React.FC<{ x: number; y: number; t: number; steam?: number; i?: number }> = ({ x, y, t, steam = 1, i = 0 }) => (
+export const Cup: React.FC<{ x: number; y: number; t: number; steam?: number; i?: number }> = ({ x, y, t, steam = 1, i = 0 }) => (
   <g>
     <path d={`M ${x - 26} ${y} L ${x + 26} ${y}`} stroke={RIM} strokeWidth={5} strokeLinecap="round" opacity={0.5} />
     <path d={`M ${x - 16} ${y - 4} L ${x - 13} ${y - 34} L ${x + 13} ${y - 34} L ${x + 16} ${y - 4} Z`} fill="#e9dcc0" opacity={0.85} />
@@ -96,7 +104,7 @@ const Cup: React.FC<{ x: number; y: number; t: number; steam?: number; i?: numbe
 );
 
 /** A pendant lamp hanging from the top and its cone of warm light down to `to`. */
-const Pendant: React.FC<{ id: string; x: number; top: number; y: number; to: number; spread: number; on: number; t: number }> = ({ id, x, top, y, to, spread, on, t }) => {
+export const Pendant: React.FC<{ id: string; x: number; top: number; y: number; to: number; spread: number; on: number; t: number }> = ({ id, x, top, y, to, spread, on, t }) => {
   const flicker = 0.94 + 0.06 * Math.sin(t * 7.3) * Math.sin(t * 3.1);
   return (
     <g>
@@ -120,7 +128,7 @@ const Pendant: React.FC<{ id: string; x: number; top: number; y: number; to: num
 
 /** A jacket hung over the back of a chair: a panel falls on each side of the back, a sleeve hangs on the seat's side;
  * dark cloth, its edges in the lamp's light. (x, y): the top of the back; `facing` -1 when the seat is on the left. */
-const Jacket: React.FC<{ x: number; y: number; facing: number; shown: number; s?: number }> = ({ x, y, facing, shown, s = 1 }) => (
+export const Jacket: React.FC<{ x: number; y: number; facing: number; shown: number; s?: number }> = ({ x, y, facing, shown, s = 1 }) => (
   <g opacity={shown} transform={`translate(${x} ${y}) scale(${-facing * s} ${s})`}>
     {/* the panel behind the back */}
     <path d="M 4 -2 C 14 -2 22 6 26 20 L 34 150 C 26 158 12 160 4 156 Z" fill="#0f1422" stroke={LAMP} strokeWidth={2} strokeOpacity={0.35} />
@@ -137,10 +145,54 @@ const Jacket: React.FC<{ x: number; y: number; facing: number; shown: number; s?
 
 // --------------------------------------------------------------------------------------- 1. الغيبة, the café
 
+/** Houses and shops in a row, dark against the sky, between `left` and `right` on the ground `y`: roofs between
+ * `low` and `high` above it, a few windows lit (`lit` 0 to 1). The film's frame goes on beyond the short's with them. */
+const Skyline: React.FC<{ left: number; right: number; y: number; low: number; high: number; lit: number; fill: string; salt?: number }> = ({ left, right, y, low, high, lit, fill, salt = 0 }) => {
+  const blocks: React.ReactNode[] = [];
+  let x = left;
+  for (let i = 0; x < right; i++) {
+    const w = 150 + 170 * chance(i, salt + 11);
+    const h = low + (high - low) * chance(i, salt + 12);
+    blocks.push(
+      <g key={i}>
+        <rect x={x} y={y - h} width={w + 2} height={h} fill={fill} />
+        {lit > 0 ? Array.from({ length: Math.floor(w / 70) * Math.floor(h / 110) }, (_, k) => {
+          const cols = Math.floor(w / 70);
+          const on = chance(k, salt + 13 + i) > 0.62;
+          return on ? <rect key={k} x={x + 26 + 70 * (k % cols)} y={y - h + 40 + 110 * Math.floor(k / cols)} width={22} height={30} fill={LAMP} opacity={lit * (0.35 + 0.3 * chance(k, i))} /> : null;
+        }) : null}
+      </g>,
+    );
+    x += w;
+  }
+  return <g>{blocks}</g>;
+};
+
+/** The lights of a village far away on the hills, between `left` and `right`, on the line `y`. */
+const FarLights: React.FC<{ t: number; y: number; left: number; right: number }> = ({ t, y, left, right }) => (
+  <g>
+    {Array.from({ length: Math.max(0, Math.round((right - left) / 60)) }, (_, k) => (
+      <circle key={k} cx={left + (right - left) * chance(k, 21)} cy={y + 30 * chance(k, 22)} r={2.5 + 2 * chance(k, 23)} fill={LAMP} opacity={(0.45 + 0.3 * chance(k, 24)) * (0.85 + 0.15 * Math.sin(t * 1.5 + k))} />
+    ))}
+  </g>
+);
+
+/** A window of the café on the street at night: the houses across, a few lit windows. `x`: from its usual place. */
+const CafeWindow: React.FC<{ t: number; x: number; horizon: number; salt?: number }> = ({ t, x, horizon, salt = 0 }) => (
+  <g transform={`translate(${x} 0)`}>
+    <rect x={40} y={horizon - 470} width={300} height={330} fill="#0b1226" />
+    <Stars t={t + salt} bright={0.8} top={horizon - 460} bottom={horizon - 320} left={50} right={330} count={16} />
+    <path d={`M 40 ${horizon - 140} L 40 ${horizon - 230 + (salt ? 20 * chance(salt, 8) : 0)} L 130 ${horizon - 230 + (salt ? 20 * chance(salt, 8) : 0)} L 130 ${horizon - 270} L 240 ${horizon - 270} L 240 ${horizon - 210} L 340 ${horizon - 210} L 340 ${horizon - 140} Z`} fill="#070a14" />
+    {[0, 1, 2].map((k) => <rect key={k} x={80 + 95 * k} y={horizon - 196 + 14 * (k % 2)} width={20} height={26} fill={LAMP} opacity={(0.5 + 0.2 * chance(k + salt, 3)) * (chance(k, salt + 9) > 0.25 || salt === 0 ? 1 : 0.15)} />)}
+    <rect x={40} y={horizon - 470} width={300} height={330} fill="none" stroke={INK} strokeWidth={20} />
+    <path d={`M 190 ${horizon - 470} L 190 ${horizon - 140}`} stroke={INK} strokeWidth={10} />
+  </g>
+);
+
 /** The café in the evening: a dark wall, a window on the street, a round table under a pendant lamp; three figures
  * lean in over the table, one of them speaks; the fourth chair is empty, in its own light. `people` 0 to 1: how much
  * of the three figures shows (they fade out in `alone`). */
-const Cafe: React.FC<{ t: number; horizon: number; people: number; jacket: number; spot: number; talk: number }> = ({ t, horizon, people, jacket, spot, talk }) => {
+const Cafe: React.FC<{ t: number; horizon: number; people: number; jacket: number; spot: number; talk: number; span?: Span }> = ({ t, horizon, people, jacket, spot, talk, span = TALL }) => {
   const S = 1.5;
   const floor = horizon + 200;
   const seat = floor - 92 * S;
@@ -163,21 +215,23 @@ const Cafe: React.FC<{ t: number; horizon: number; people: number; jacket: numbe
           <stop offset="1" stopColor={LAMP} stopOpacity="0" />
         </radialGradient>
       </defs>
-      <rect x={0} y={0} width={W} height={floor} fill="url(#hy-wall)" />
+      <rect x={span.left} y={0} width={span.right - span.left} height={floor} fill="url(#hy-wall)" />
       {/* the window on the street, at night: the houses across */}
-      <g>
-        <rect x={40} y={horizon - 470} width={300} height={330} fill="#0b1226" />
-        <Stars t={t} bright={0.8} top={horizon - 460} bottom={horizon - 320} left={50} right={330} count={16} />
-        <path d={`M 40 ${horizon - 140} L 40 ${horizon - 230} L 130 ${horizon - 230} L 130 ${horizon - 270} L 240 ${horizon - 270} L 240 ${horizon - 210} L 340 ${horizon - 210} L 340 ${horizon - 140} Z`} fill="#070a14" />
-        {[0, 1, 2].map((k) => <rect key={k} x={80 + 95 * k} y={horizon - 196 + 14 * (k % 2)} width={20} height={26} fill={LAMP} opacity={0.5 + 0.2 * chance(k, 3)} />)}
-        <rect x={40} y={horizon - 470} width={300} height={330} fill="none" stroke={INK} strokeWidth={20} />
-        <path d={`M 190 ${horizon - 470} L 190 ${horizon - 140}`} stroke={INK} strokeWidth={10} />
-      </g>
+      <CafeWindow t={t} x={0} horizon={horizon} />
+      {/* beyond the short's frame (the film): the café goes on, two more windows, a coat rack, the counter */}
+      {beyond(span).after ? (
+        <g>
+          <CafeWindow t={t} x={1320} horizon={horizon} salt={4} />
+          <CafeWindow t={t} x={1760} horizon={horizon} salt={7} />
+          <path d={`M 1180 ${floor} L 1180 ${horizon - 330} M 1150 ${horizon - 330} L 1210 ${horizon - 330}`} stroke={INK} strokeWidth={10} strokeLinecap="round" />
+          <path d={`M 2140 ${floor} L 2140 ${horizon - 60} L ${span.right} ${horizon - 60} L ${span.right} ${floor} Z`} fill="#0d0c12" stroke={LAMP} strokeWidth={2} strokeOpacity={0.2} />
+        </g>
+      ) : null}
       {/* a shelf of cups on the wall */}
       <path d={`M 560 ${horizon - 380} L 780 ${horizon - 380}`} stroke={INK} strokeWidth={14} />
       {[0, 1, 2, 3].map((k) => <path key={k} d={`M ${578 + 52 * k} ${horizon - 387} l 4 -32 l 28 0 l 4 32 Z`} fill="#1a1f30" stroke={RIM} strokeWidth={1.5} strokeOpacity={0.3} />)}
-      <rect x={0} y={floor} width={W} height={H - floor} fill="#07060a" />
-      <path d={`M 0 ${floor} L ${W} ${floor}`} stroke={LAMP} strokeWidth={2} opacity={0.18} />
+      <rect x={span.left} y={floor} width={span.right - span.left} height={H - floor} fill="#07060a" />
+      <path d={`M ${span.left} ${floor} L ${span.right} ${floor}`} stroke={LAMP} strokeWidth={2} opacity={0.18} />
       <Pendant id="hy-p1" x={tableX} top={0} y={horizon - 400} to={floor + 40} spread={330} on={0.85} t={t} />
       <Pendant id="hy-p3" x={chairX} top={0} y={horizon - 470} to={floor + 30} spread={190} on={0.35 + 0.65 * spot} t={t + 1.3} />
       {/* the two who listen, behind the table */}
@@ -207,7 +261,7 @@ const Cafe: React.FC<{ t: number; horizon: number; people: number; jacket: numbe
 
 /** The empty chair, close: the edge of the table on the left, the cup at its place, the lamp right above it; `things`:
  * his jacket on the back of the chair, his keys at his place (he stepped out, he is coming back). */
-const ChairClose: React.FC<{ t: number; horizon: number; things: number; others: number }> = ({ t, horizon, things, others }) => {
+const ChairClose: React.FC<{ t: number; horizon: number; things: number; others: number; span?: Span }> = ({ t, horizon, things, others, span = TALL }) => {
   const floor = horizon + 230;
   const s = 2;
   const seat = floor - 92 * 1.2 * s;
@@ -225,8 +279,9 @@ const ChairClose: React.FC<{ t: number; horizon: number; things: number; others:
           <stop offset="1" stopColor={LAMP} stopOpacity="0" />
         </radialGradient>
       </defs>
-      <rect x={0} y={0} width={W} height={floor} fill="url(#hy-wall2)" />
-      <rect x={0} y={floor} width={W} height={H - floor} fill="#07060a" />
+      <rect x={span.left} y={0} width={span.right - span.left} height={floor} fill="url(#hy-wall2)" />
+      <rect x={span.left} y={floor} width={span.right - span.left} height={H - floor} fill="#07060a" />
+      {beyond(span).after ? <g opacity={0.55}><CafeWindow t={t} x={1380} horizon={horizon - 60} salt={3} /></g> : null}
       <Pendant id="hy-p2" x={cx} top={0} y={horizon - 560} to={floor + 60} spread={380} on={0.95} t={t} />
       <ellipse cx={cx} cy={floor} rx={320} ry={64} fill="url(#hy-pool)" />
       {/* the others, dark at the edge of the light, on the left */}
@@ -251,7 +306,7 @@ const ChairClose: React.FC<{ t: number; horizon: number; things: number; others:
 };
 
 /** The café seen from across the street at night: its lit window, small figures inside, the empty chair. */
-const CafeOutside: React.FC<{ t: number; horizon: number }> = ({ t, horizon }) => {
+const CafeOutside: React.FC<{ t: number; horizon: number; span?: Span }> = ({ t, horizon, span = TALL }) => {
   const street = horizon + 120;
   return (
     <g>
@@ -261,8 +316,9 @@ const CafeOutside: React.FC<{ t: number; horizon: number }> = ({ t, horizon }) =
           <stop offset="1" stopColor="#141a36" />
         </linearGradient>
       </defs>
-      <rect x={0} y={0} width={W} height={street} fill="url(#hy-night)" />
-      <Stars t={t} bright={0.9} top={40} bottom={horizon - 560} count={120} />
+      <rect x={span.left} y={0} width={span.right - span.left} height={street} fill="url(#hy-night)" />
+      <Stars t={t} bright={0.9} top={40} bottom={horizon - 560} left={span.left} right={span.right} count={Math.round(120 * (span.right - span.left) / W)} />
+      {beyond(span).after ? <Skyline left={1040} right={span.right} y={street} low={420} high={640} lit={0.8} fill="#070912" salt={2} /> : null}
       {/* the building and its lit window */}
       <path d={`M 120 ${street} L 120 ${horizon - 470} L 960 ${horizon - 470} L 960 ${street} Z`} fill="#070912" />
       <rect x={210} y={horizon - 330} width={660} height={350} fill="#3a2614" />
@@ -276,14 +332,14 @@ const CafeOutside: React.FC<{ t: number; horizon: number }> = ({ t, horizon }) =
       </g>
       <rect x={210} y={horizon - 330} width={660} height={350} fill="none" stroke={INK} strokeWidth={20} />
       <path d={`M 540 ${horizon - 330} L 540 ${horizon + 20}`} stroke={INK} strokeWidth={10} />
-      <rect x={0} y={street} width={W} height={H - street} fill="#06070c" />
+      <rect x={span.left} y={street} width={span.right - span.left} height={H - street} fill="#06070c" />
       <path d={`M 210 ${street} L 870 ${street} L 1000 ${H} L 80 ${H} Z`} fill={LAMP} opacity={0.06} />
     </g>
   );
 };
 
 /** The morning, in the street before the café: two figures meet, one holds out his hand. */
-const Morning: React.FC<{ horizon: number; shake: number }> = ({ horizon, shake }) => {
+const Morning: React.FC<{ horizon: number; shake: number; span?: Span }> = ({ horizon, shake, span = TALL }) => {
   const S = 1.35;
   const floor = horizon + 150;
   const reach = shake;
@@ -298,11 +354,12 @@ const Morning: React.FC<{ horizon: number; shake: number }> = ({ horizon, shake 
           <stop offset="1" stopColor="#f2c48a" />
         </linearGradient>
       </defs>
-      <rect x={0} y={0} width={W} height={floor} fill="url(#hy-dawn)" />
+      <rect x={span.left} y={0} width={span.right - span.left} height={floor} fill="url(#hy-dawn)" />
       <circle cx={540} cy={floor - 40} r={120} fill="#fff1c8" opacity={0.5} />
+      {beyond(span).after ? <Skyline left={1080} right={span.right} y={floor} low={260} high={470} lit={0} fill="#0b0d16" salt={5} /> : null}
       <path d={`M 0 ${floor} L 0 ${horizon - 300} L 200 ${horizon - 300} L 200 ${horizon - 360} L 330 ${horizon - 360} L 330 ${floor} Z`} fill="#0b0d16" />
       <path d={`M 760 ${floor} L 760 ${horizon - 380} L 920 ${horizon - 380} L 920 ${horizon - 320} L 1080 ${horizon - 320} L 1080 ${floor} Z`} fill="#0b0d16" />
-      <rect x={0} y={floor} width={W} height={H - floor} fill="#0a0a10" />
+      <rect x={span.left} y={floor} width={span.right - span.left} height={H - floor} fill="#0a0a10" />
       <Figure id="hy-m1" x={370} y={floor - LEGS * S} scale={S} pose={a} facing={1} rim="#ffd2a0" />
       <Figure id="hy-m2" x={710} y={floor - LEGS * S} scale={S} pose={b} facing={-1} rim="#ffd2a0" />
     </g>
@@ -311,7 +368,7 @@ const Morning: React.FC<{ horizon: number; shake: number }> = ({ horizon, shake 
 
 const GHIBA = ["cafe", "chair", "table", "night", "alone", "dawn"];
 
-const GhibaPicture: Drawn = ({ t, show, since, horizon }) => {
+const GhibaPicture: React.FC<React.ComponentProps<Drawn> & { span?: Span }> = ({ t, show, since, horizon, span = TALL }) => {
   const at = timeline(GHIBA, show, since);
   const cafe = Math.max(show("cafe"), show("alone"));
   // alone: the three fade out and leave the empty chair alone in its light
@@ -320,16 +377,16 @@ const GhibaPicture: Drawn = ({ t, show, since, horizon }) => {
   return (
     <>
       <g opacity={cafe}>
-        <Cafe t={t} horizon={horizon} people={people} jacket={0} spot={0.6 + 0.4 * show("alone")} talk={1 - show("alone")} />
+        <Cafe t={t} horizon={horizon} span={span} people={people} jacket={0} spot={0.6 + 0.4 * show("alone")} talk={1 - show("alone")} />
       </g>
       <g opacity={close}>
-        <ChairClose t={t} horizon={horizon} things={show("table")} others={show("chair")} />
+        <ChairClose t={t} horizon={horizon} span={span} things={show("table")} others={show("chair")} />
       </g>
       <g opacity={show("night")}>
-        <CafeOutside t={t} horizon={horizon} />
+        <CafeOutside t={t} horizon={horizon} span={span} />
       </g>
       <g opacity={show("dawn")}>
-        <Morning horizon={horizon} shake={at.cover ? 1 : ramp(t, at("dawn") + 1, at("dawn") + 3)} />
+        <Morning horizon={horizon} span={span} shake={at.cover ? 1 : ramp(t, at("dawn") + 1, at("dawn") + 3)} />
       </g>
     </>
   );
@@ -412,15 +469,25 @@ const ChatPhone: React.FC<{ x: number; y: number; w: number; h: number; shot: nu
 };
 
 /** A dark room at night: a figure on a sofa, a phone in its hands lit on its face; `light` 0 to 1 the screen's glow. */
-const Sofa: React.FC<{ t: number; horizon: number; light: number; pose: Pose; x: number; facing: number; id: string }> = ({ t, horizon, light, pose, x, facing, id }) => {
+const Sofa: React.FC<{ t: number; horizon: number; light: number; pose: Pose; x: number; facing: number; id: string; span?: Span }> = ({ t, horizon, light, pose, x, facing, id, span = TALL }) => {
   const S = 1.35;
   const floor = horizon + 160;
   const seat = floor - 92 * S;
   return (
     <g>
-      <rect x={0} y={0} width={W} height={floor} fill="#080a12" />
-      <rect x={0} y={floor} width={W} height={H - floor} fill="#040509" />
+      <rect x={span.left} y={0} width={span.right - span.left} height={floor} fill="#080a12" />
+      <rect x={span.left} y={floor} width={span.right - span.left} height={H - floor} fill="#040509" />
       <Stars t={t} bright={0.6} top={horizon - 640} bottom={horizon - 380} left={640} right={980} count={14} />
+      {/* beyond the short's frame (the film): the room goes on, a bookcase, a door left ajar on a dark corridor */}
+      {beyond(span).before ? (
+        <g>
+          <rect x={-560} y={horizon - 560} width={300} height={720} fill="#0b0e18" stroke="#1a2134" strokeWidth={6} />
+          {[0, 1, 2, 3].map((k) => <path key={k} d={`M -560 ${horizon - 400 + 170 * k} L -260 ${horizon - 400 + 170 * k}`} stroke="#1a2134" strokeWidth={8} />)}
+          {Array.from({ length: 18 }, (_, k) => <rect key={k} x={-548 + 16 * (k % 9) + 120 * Math.floor(k / 9)} y={horizon - 400 + 170 * (k % 3) - 70 - 30 * chance(k, 2)} width={12} height={70 + 30 * chance(k, 2)} fill="#141a2a" />)}
+          <rect x={-1040} y={horizon - 520} width={260} height={680} fill="#04050a" stroke="#141a2a" strokeWidth={14} />
+          <path d={`M -780 ${horizon - 520} L -700 ${horizon - 490} L -700 ${floor - 10} L -780 ${floor - 20} Z`} fill="#0d111d" />
+        </g>
+      ) : null}
       <rect x={640} y={horizon - 640} width={340} height={300} fill="none" stroke="#141a2a" strokeWidth={18} />
       {/* the sofa */}
       <path d={`M ${x - 220} ${seat + 4} L ${x + 220} ${seat + 4} L ${x + 220} ${floor - 20} L ${x - 220} ${floor - 20} Z`} fill="#0e1220" />
@@ -433,7 +500,7 @@ const Sofa: React.FC<{ t: number; horizon: number; light: number; pose: Pose; x:
 
 /** Two houses on two hills at night, a path between them; `walker` 0 to 1 how far a figure has walked from the left
  * house to the right one (null: nobody), `dark` 0 to 1 the right house's window goes out, `broken` the path fades. */
-const Houses: React.FC<{ t: number; horizon: number; walker: number | null; dark: number; broken: number; steps: number }> = ({ t, horizon, walker, dark, broken, steps }) => {
+const Houses: React.FC<{ t: number; horizon: number; walker: number | null; dark: number; broken: number; steps: number; span?: Span }> = ({ t, horizon, walker, dark, broken, steps, span = TALL }) => {
   const path = `M 250 ${horizon + 40} C 380 ${horizon + 250} 560 ${horizon + 260} 640 ${horizon + 160} S 800 ${horizon + 20} 850 ${horizon - 10}`;
   const at = (u: number) => {
     // a few points along the path, interpolated (enough for a walker at this size)
@@ -461,9 +528,11 @@ const Houses: React.FC<{ t: number; horizon: number; walker: number | null; dark
           <stop offset="1" stopColor="#18203e" />
         </linearGradient>
       </defs>
-      <rect x={0} y={0} width={W} height={horizon} fill="url(#hy-hills)" />
-      <Stars t={t} bright={1} top={40} bottom={horizon - 300} count={140} />
-      <path d={`M 0 ${horizon + 80} Q 220 ${horizon - 40} 380 ${horizon + 60} Q 600 ${horizon + 300} 760 ${horizon + 30} Q 900 ${horizon - 80} ${W} ${horizon - 10} L ${W} ${H} L 0 ${H} Z`} fill="#070912" />
+      <rect x={span.left} y={0} width={span.right - span.left} height={horizon} fill="url(#hy-hills)" />
+      <Stars t={t} bright={1} top={40} bottom={horizon - 300} left={span.left} right={span.right} count={Math.round(140 * (span.right - span.left) / W)} />
+      {/* beyond the short's frame (the film): the hills go on, a village far away */}
+      {span.left < 0 ? <FarLights t={t} y={horizon - 40} left={span.left + 120} right={-180} /> : null}
+      <path d={`M ${span.left} ${horizon + (span.left < 0 ? 30 : 80)} ${span.left < 0 ? `Q ${span.left / 2} ${horizon - 70} 0 ${horizon + 80}` : ""} Q 220 ${horizon - 40} 380 ${horizon + 60} Q 600 ${horizon + 300} 760 ${horizon + 30} Q 900 ${horizon - 80} ${W} ${horizon - 10} ${span.right > W ? `Q ${(W + span.right) / 2} ${horizon + 50} ${span.right} ${horizon - 30}` : ""} L ${span.right} ${H} L ${span.left} ${H} Z`} fill="#070912" />
       <path d={path} stroke="#c9b48a" strokeWidth={10} fill="none" opacity={0.35 * (1 - broken)} strokeDasharray={broken > 0 ? `${40 * (1 - broken) + 4} 30` : undefined} />
       {/* footprints, lit one after the other behind the walker */}
       {Array.from({ length: 16 }, (_, i) => {
@@ -482,7 +551,7 @@ const Houses: React.FC<{ t: number; horizon: number; walker: number | null; dark
 };
 
 /** Al-Baqi' or the gardens of Madina at dusk (Bukhari 216): palms, a low wall, two graves side by side; nobody. */
-const Graves: React.FC<{ t: number; horizon: number }> = ({ t, horizon }) => {
+const Graves: React.FC<{ t: number; horizon: number; span?: Span }> = ({ t, horizon, span = TALL }) => {
   const palm = (x: number, y: number, h: number, lean: number, i: number) => {
     const sway = 6 * Math.sin(t * 0.7 + i);
     const topX = x + lean + sway;
@@ -519,12 +588,14 @@ const Graves: React.FC<{ t: number; horizon: number }> = ({ t, horizon }) => {
           <stop offset="1" stopColor="#0c0806" />
         </linearGradient>
       </defs>
-      <rect x={0} y={0} width={W} height={horizon} fill="url(#hy-dusk)" />
+      <rect x={span.left} y={0} width={span.right - span.left} height={horizon} fill="url(#hy-dusk)" />
       {palm(120, horizon + 10, 440, 40, 1)}
       {palm(250, horizon + 20, 320, -30, 2)}
       {palm(900, horizon + 10, 460, -50, 3)}
-      <path d={`M 0 ${horizon - 40} L ${W} ${horizon - 30} L ${W} ${horizon + 20} L 0 ${horizon + 20} Z`} fill="#0b0807" />
-      <rect x={0} y={horizon + 10} width={W} height={H - horizon} fill="url(#hy-sand)" />
+      {/* beyond the short's frame (the film): more palms on the left, lower, further */}
+      {beyond(span).before ? [-180, -560, -880, -1150].map((x, k) => palm(x, horizon + 10, 300 + 120 * chance(k, 51), 40 * (chance(k, 52) - 0.5), 4 + k)) : null}
+      <path d={`M ${span.left} ${horizon - 40} L ${span.right} ${horizon - 30} L ${span.right} ${horizon + 20} L ${span.left} ${horizon + 20} Z`} fill="#0b0807" />
+      <rect x={span.left} y={horizon + 10} width={span.right - span.left} height={H - horizon} fill="url(#hy-sand)" />
       <g transform={`translate(760 ${horizon + 190}) scale(0.8) translate(-760 ${-(horizon + 190)}) translate(0 -40)`}>{grave(760)}</g>
       {grave(330)}
     </g>
@@ -532,17 +603,24 @@ const Graves: React.FC<{ t: number; horizon: number }> = ({ t, horizon }) => {
 };
 
 /** A phone face down on a table, a thin glow at its edges, the light of the morning through a window. */
-const Still: React.FC<{ t: number; horizon: number; dawn: number }> = ({ t, horizon, dawn }) => {
+const Still: React.FC<{ t: number; horizon: number; dawn: number; span?: Span }> = ({ t, horizon, dawn, span = TALL }) => {
   const top = horizon + 40;
   return (
     <g>
-      <rect x={0} y={0} width={W} height={top} fill={`rgb(${14 + 30 * dawn},${16 + 24 * dawn},${28 + 20 * dawn})`} />
+      <rect x={span.left} y={0} width={span.right - span.left} height={top} fill={`rgb(${14 + 30 * dawn},${16 + 24 * dawn},${28 + 20 * dawn})`} />
       <rect x={620} y={horizon - 440} width={360} height={400} fill={`rgb(${40 + 180 * dawn},${50 + 120 * dawn},${90 + 60 * dawn})`} />
       <rect x={620} y={horizon - 440} width={360} height={400} fill="none" stroke={INK} strokeWidth={22} />
       <path d={`M 800 ${horizon - 440} L 800 ${horizon - 40} M 620 ${horizon - 240} L 980 ${horizon - 240}`} stroke={INK} strokeWidth={10} />
-      <rect x={0} y={top} width={W} height={H - top} fill="#100c0a" />
-      <path d={`M 0 ${top} L ${W} ${top}`} stroke={LAMP} strokeWidth={3} opacity={0.3} />
+      <rect x={span.left} y={top} width={span.right - span.left} height={H - top} fill="#100c0a" />
+      <path d={`M ${span.left} ${top} L ${span.right} ${top}`} stroke={LAMP} strokeWidth={3} opacity={0.3} />
       <path d={`M 560 ${top} L 960 ${top} L 1080 ${top + 300} L 600 ${top + 300} Z`} fill={LAMP} opacity={0.12 * dawn} />
+      {beyond(span).before ? (
+        <g>
+          <rect x={-620} y={horizon - 440} width={360} height={400} fill={`rgb(${30 + 120 * dawn},${36 + 80 * dawn},${70 + 40 * dawn})`} />
+          <rect x={-620} y={horizon - 440} width={360} height={400} fill="none" stroke={INK} strokeWidth={22} />
+          <path d={`M -440 ${horizon - 440} L -440 ${horizon - 40} M -620 ${horizon - 240} L -260 ${horizon - 240}`} stroke={INK} strokeWidth={10} />
+        </g>
+      ) : null}
       {/* the phone, face down, a faint glow at its edges that dies */}
       <g transform={`translate(440 ${top + 150}) rotate(-8) scale(1.7)`}>
         <rect x={-150} y={-60} width={300} height={120} rx={24} fill="#cfe0ff" opacity={0.18 * (1 - dawn) * (0.7 + 0.3 * Math.sin(t * 2))} filter="url(#hy-soft)" />
@@ -560,7 +638,7 @@ const Still: React.FC<{ t: number; horizon: number; dawn: number }> = ({ t, hori
 
 const NAMIMA = ["phone", "sent", "path", "steps", "graves", "split", "still"];
 
-const NamimaPicture: Drawn = ({ t, show, since, horizon }) => {
+const NamimaPicture: React.FC<React.ComponentProps<Drawn> & { span?: Span }> = ({ t, show, since, horizon, span = TALL }) => {
   const at = timeline(NAMIMA, show, since);
   // phone (« شوف فلان قال عليك إيه »): the chat, the screenshot's flash, the sheet, the picture flies away
   const shot = at.cover ? 1 : ramp(t, at("phone") + 0.3, at("phone") + 0.9);
@@ -577,21 +655,21 @@ const NamimaPicture: Drawn = ({ t, show, since, horizon }) => {
   return (
     <>
       <g opacity={phoneScene}>
-        <rect x={0} y={0} width={W} height={H} fill="#06080f" />
+        <rect x={span.left} y={0} width={span.right - span.left} height={H} fill="#06080f" />
         <ellipse cx={540} cy={1150} rx={520} ry={600} fill="#cfe0ff" opacity={0.05} />
         <ChatPhone x={240} y={820} w={600} h={640} shot={shot} share={share} sent={sent} />
       </g>
       <g opacity={show("sent")}>
-        <Sofa t={t} horizon={horizon} light={lit} pose={recv} x={560} facing={-1} id="hy-recv" />
+        <Sofa t={t} horizon={horizon} span={span} light={lit} pose={recv} x={560} facing={-1} id="hy-recv" />
       </g>
       <g opacity={houses}>
-        <Houses t={t} horizon={horizon} walker={show("steps") > 0.01 ? walker : null} dark={broken} broken={broken} steps={show("steps") > 0 ? (walker ?? 0) : show("split") > 0 ? 1 : 0} />
+        <Houses t={t} horizon={horizon} span={span} walker={show("steps") > 0.01 ? walker : null} dark={broken} broken={broken} steps={show("steps") > 0 ? (walker ?? 0) : show("split") > 0 ? 1 : 0} />
       </g>
       <g opacity={show("graves")}>
-        <Graves t={t} horizon={horizon} />
+        <Graves t={t} horizon={horizon} span={span} />
       </g>
       <g opacity={show("still")}>
-        <Still t={t} horizon={horizon} dawn={at.cover ? 0.6 : ramp(t, at("still") + 1, at("still") + 8)} />
+        <Still t={t} horizon={horizon} span={span} dawn={at.cover ? 0.6 : ramp(t, at("still") + 1, at("still") + 8)} />
       </g>
     </>
   );
@@ -627,7 +705,7 @@ const FilmingPhone: React.FC<{ t: number }> = ({ t }) => (
 
 /** The street in the evening: a mosque's wall, a lamp, the box; the figure gives with one hand and films with the
  * other; hearts rise from the phone and a counter grows. */
-const Giving: React.FC<{ t: number; horizon: number; drop: number; hearts: number; count: number }> = ({ t, horizon, drop, hearts, count }) => {
+const Giving: React.FC<{ t: number; horizon: number; drop: number; hearts: number; count: number; span?: Span }> = ({ t, horizon, drop, hearts, count, span = TALL }) => {
   const S = 1.35;
   const floor = horizon + 160;
   const fx = 430;
@@ -649,13 +727,20 @@ const Giving: React.FC<{ t: number; horizon: number; drop: number; hearts: numbe
           <stop offset="1" stopColor={LAMP} stopOpacity="0" />
         </radialGradient>
       </defs>
-      <rect x={0} y={0} width={W} height={floor} fill="url(#hy-eve)" />
+      <rect x={span.left} y={0} width={span.right - span.left} height={floor} fill="url(#hy-eve)" />
       {/* a mosque's wall and its arched door, the lamp above */}
-      <path d={`M 0 ${floor} L 0 ${horizon - 520} L ${W} ${horizon - 520} L ${W} ${floor} Z`} fill="#0b0d18" />
+      <path d={`M ${span.left} ${floor} L ${span.left} ${horizon - 520} L ${span.right} ${horizon - 520} L ${span.right} ${floor} Z`} fill="#0b0d18" />
       <path d={`M 800 ${floor} L 800 ${horizon - 210} Q 900 ${horizon - 340} 1000 ${horizon - 210} L 1000 ${floor} Z`} fill="#1a1420" stroke={LAMP} strokeWidth={2} strokeOpacity={0.3} />
+      {beyond(span).after ? [1340, 1820, 2300].map((x, k) => (
+        <g key={k}>
+          <path d={`M ${x - 80} ${floor} L ${x - 80} ${horizon - 170} Q ${x} ${horizon - 280} ${x + 80} ${horizon - 170} L ${x + 80} ${floor} Z`} fill="#15111c" stroke={LAMP} strokeWidth={2} strokeOpacity={0.2} />
+          {k === 1 ? <circle cx={x} cy={horizon - 420} r={130} fill="url(#hy-street-lamp)" /> : null}
+          {k === 1 ? <circle cx={x} cy={horizon - 420} r={10} fill="#fff1c8" /> : null}
+        </g>
+      )) : null}
       <circle cx={900} cy={horizon - 420} r={150} fill="url(#hy-street-lamp)" />
       <circle cx={900} cy={horizon - 420} r={12} fill="#fff1c8" />
-      <rect x={0} y={floor} width={W} height={H - floor} fill="#07070c" />
+      <rect x={span.left} y={floor} width={span.right - span.left} height={H - floor} fill="#07070c" />
       <Box x={slotX + 12} y={floor} s={0.8} />
       {/* the note going from the hand into the slot */}
       <g opacity={1 - ramp(drop, 0.85, 1)}>
@@ -681,7 +766,7 @@ const Giving: React.FC<{ t: number; horizon: number; drop: number; hearts: numbe
 /** The rock of 2:264, a smooth stone (« صفوان »), the dust on it (« عليه تراب »), the heavy rain (« فأصابه وابل ») that
  * leaves it bare (« فتركه صلدا »). `dust` 1 to 0, `rain` 0 to 1, `wet` 0 to 1, `cut` 0 to 1: a slice that shows the
  * thin dust over the stone (« الناس شافوا التراب… وربنا شايف الصخرة »); `sprouts`: what the eye takes for good soil. */
-const Rock: React.FC<{ t: number; horizon: number; dust: number; rain: number; wet: number; cut: number; sprouts: number }> = ({ t, horizon, dust, rain, wet, cut, sprouts }) => {
+const Rock: React.FC<{ t: number; horizon: number; dust: number; rain: number; wet: number; cut: number; sprouts: number; span?: Span }> = ({ t, horizon, dust, rain, wet, cut, sprouts, span = TALL }) => {
   const base = horizon + 210;
   const cx = 545;
   const half = 410;
@@ -715,14 +800,14 @@ const Rock: React.FC<{ t: number; horizon: number; dust: number; rain: number; w
           <path d={outline} />
         </clipPath>
       </defs>
-      <rect x={0} y={0} width={W} height={base} fill="url(#hy-storm)" />
+      <rect x={span.left} y={0} width={span.right - span.left} height={base} fill="url(#hy-storm)" />
       {/* clouds, low and heavy */}
-      {[0, 1, 2, 3, 4].map((k) => (
-        <ellipse key={k} cx={((120 + 260 * k + t * (10 + 4 * k)) % 1400) - 160} cy={horizon - 420 + 50 * chance(k, 6)} rx={240 + 60 * chance(k, 7)} ry={60} fill="#262c3c" opacity={0.55 + 0.35 * rain} />
+      {Array.from({ length: Math.round(5 * (span.right - span.left) / W) }, (_, k) => (
+        <ellipse key={k} cx={span.left + ((120 + 260 * k + t * (10 + 4 * k)) % (span.right - span.left + 320)) - 160} cy={horizon - 420 + 50 * chance(k, 6)} rx={240 + 60 * chance(k, 7)} ry={60} fill="#262c3c" opacity={0.55 + 0.35 * rain} />
       ))}
       {/* the ground: flat, dark, wet when the rain falls */}
-      <rect x={0} y={base} width={W} height={H - base} fill="#0b0c11" />
-      <path d={`M 0 ${base} L ${W} ${base}`} stroke={RIM} strokeWidth={2} opacity={0.2 + 0.3 * wet} />
+      <rect x={span.left} y={base} width={span.right - span.left} height={H - base} fill="#0b0c11" />
+      <path d={`M ${span.left} ${base} L ${span.right} ${base}`} stroke={RIM} strokeWidth={2} opacity={0.2 + 0.3 * wet} />
       <ellipse cx={cx} cy={base + 8} rx={half + 60} ry={22} fill="#000" opacity={0.5} />
       {/* the stone */}
       <path d={outline} fill="url(#hy-stone)" />
@@ -765,8 +850,10 @@ const Rock: React.FC<{ t: number; horizon: number; dust: number; rain: number; w
       {/* the water running off at the foot */}
       <path d={`M ${cx - half - 20} ${base + 24} Q ${cx} ${base + 60} ${cx + half + 20} ${base + 24}`} stroke="#7a5634" strokeWidth={12} fill="none" opacity={0.6 * washing} strokeDasharray="40 30" strokeDashoffset={-t * 120} />
       <g opacity={rain}>
-        <Rain t={t * 1.6} />
-        <Rain t={t * 1.6 + 0.37} />
+        <g transform={`translate(${span.left} 0)`}>
+          <Rain t={t * 1.6} width={span.right - span.left} />
+          <Rain t={t * 1.6 + 0.37} width={span.right - span.left} />
+        </g>
       </g>
     </g>
   );
@@ -774,7 +861,7 @@ const Rock: React.FC<{ t: number; horizon: number; dust: number; rain: number; w
 
 const RIYA = ["box", "hearts", "rock", "bare", "soil", "two", "dawn"];
 
-const RiyaPicture: Drawn = ({ t, show, since, horizon }) => {
+const RiyaPicture: React.FC<React.ComponentProps<Drawn> & { span?: Span }> = ({ t, show, since, horizon, span = TALL }) => {
   const at = timeline(RIYA, show, since);
   const drop = at.cover ? 0.6 : ramp(t, at("box") + 0.4, at("box") + 1.4);
   const hearts = at.cover ? 1 : Math.max(show("box") * ramp(t, at("box") + 1.2, at("box") + 1.8), show("hearts"));
@@ -790,30 +877,36 @@ const RiyaPicture: Drawn = ({ t, show, since, horizon }) => {
   return (
     <>
       <g opacity={giving}>
-        <Giving t={t} horizon={horizon} drop={drop} hearts={hearts} count={count} />
+        <Giving t={t} horizon={horizon} span={span} drop={drop} hearts={hearts} count={count} />
       </g>
       <g opacity={stone}>
-        <Rock t={t} horizon={horizon} dust={dust} rain={rain} wet={wet} cut={cut} sprouts={show("soil")} />
+        <Rock t={t} horizon={horizon} span={span} dust={dust} rain={rain} wet={wet} cut={cut} sprouts={show("soil")} />
       </g>
       <g opacity={show("two")}>
-        <TwoGivers t={t} horizon={horizon} />
+        <TwoGivers t={t} horizon={horizon} span={span} />
       </g>
       <g opacity={show("dawn")}>
-        <BoxAtDawn t={t} horizon={horizon} />
+        <BoxAtDawn t={t} horizon={horizon} span={span} />
       </g>
     </>
   );
 };
 
 /** Two figures at the same box: on the left one gives, the head bowed; on the right the other gives and films. */
-const TwoGivers: React.FC<{ t: number; horizon: number }> = ({ t, horizon }) => {
+const TwoGivers: React.FC<{ t: number; horizon: number; span?: Span }> = ({ t, horizon, span = TALL }) => {
   const S = 1.2;
   const floor = horizon + 160;
   const fy = floor - LEGS * S;
   return (
     <g>
-      <rect x={0} y={0} width={W} height={floor} fill="#0b0d18" />
-      <rect x={0} y={floor} width={W} height={H - floor} fill="#07070c" />
+      <rect x={span.left} y={0} width={span.right - span.left} height={floor} fill="#0b0d18" />
+      <rect x={span.left} y={floor} width={span.right - span.left} height={H - floor} fill="#07070c" />
+      {beyond(span).after ? (
+        <g>
+          <path d={`M 1500 ${floor} L 1500 ${horizon - 190} Q 1600 ${horizon - 310} 1700 ${horizon - 190} L 1700 ${floor} Z`} fill="#15111c" stroke={LAMP} strokeWidth={2} strokeOpacity={0.2} />
+          <circle cx={1220} cy={horizon - 440} r={10} fill="#fff1c8" opacity={0.8} />
+        </g>
+      ) : null}
       <Box x={540} y={floor} s={0.7} />
       <Figure id="hy-g1" x={340} y={fy} scale={S} pose={STANDING.give} facing={1} rim={LAMP} />
       <Figure id="hy-g2" x={740} y={fy} scale={S} pose={STANDING.film} facing={-1} rim={LAMP} lit={0.5} light="#cfe0ff" held={<FilmingPhone t={t} />} />
@@ -822,7 +915,7 @@ const TwoGivers: React.FC<{ t: number; horizon: number }> = ({ t, horizon }) => 
 };
 
 /** The morning: the box alone in the light. */
-const BoxAtDawn: React.FC<{ t: number; horizon: number }> = ({ horizon }) => {
+const BoxAtDawn: React.FC<{ t: number; horizon: number; span?: Span }> = ({ horizon, span = TALL }) => {
   const floor = horizon + 160;
   return (
     <g>
@@ -833,8 +926,8 @@ const BoxAtDawn: React.FC<{ t: number; horizon: number }> = ({ horizon }) => {
           <stop offset="1" stopColor="#f2c48a" />
         </linearGradient>
       </defs>
-      <rect x={0} y={0} width={W} height={floor} fill="url(#hy-morn)" />
-      <rect x={0} y={floor} width={W} height={H - floor} fill="#0d0b10" />
+      <rect x={span.left} y={0} width={span.right - span.left} height={floor} fill="url(#hy-morn)" />
+      <rect x={span.left} y={floor} width={span.right - span.left} height={H - floor} fill="#0d0b10" />
       <path d={`M 540 ${floor} L 340 ${floor} L 200 ${H} L 880 ${H} L 740 ${floor} Z`} fill={LAMP} opacity={0.1} />
       <Box x={540} y={floor} s={1.1} />
     </g>
@@ -842,3 +935,27 @@ const BoxAtDawn: React.FC<{ t: number; horizon: number }> = ({ horizon }) => {
 };
 
 export const HAYYIN_PICTURES: Record<string, Drawn> = { ghiba: GhibaPicture, namima: NamimaPicture, riya: RiyaPicture };
+
+// ------------------------------------------------------------------------------------- the film (16:9)
+
+/** The same scenes in the film (1920 x 1080, the owner's choice of 2026-11-21: drawn again for the wide frame, not the
+ * vertical picture cut out): each scene at WIDE_SCALE on its side of the frame (`landscape.side` of the short), its
+ * horizon at `landscape.horizon` of the frame; its wall, street, hills or sky go on across the whole width, with what
+ * belongs there (more windows, houses, palms, arches), under the text on the other side. */
+const WIDE_SCALE = 0.8;
+const WIDE_W = 1920;
+const wide = (Picture: React.FC<React.ComponentProps<Drawn> & { span?: Span }>, side: "left" | "right"): Drawn => {
+  const Wide: Drawn = (props) => {
+    const own = 1260;                                  // the short's horizon: every scene is drawn around it
+    const dx = side === "left" ? 0 : WIDE_W - W * WIDE_SCALE;
+    const dy = props.horizon - own * WIDE_SCALE;
+    return (
+      <g transform={`translate(${dx} ${dy}) scale(${WIDE_SCALE})`}>
+        <Picture {...props} horizon={own} span={{ left: -dx / WIDE_SCALE, right: (WIDE_W - dx) / WIDE_SCALE }} />
+      </g>
+    );
+  };
+  return Wide;
+};
+
+export const HAYYIN_WIDE: Record<string, Drawn> = { ghiba: wide(GhibaPicture, "left"), namima: wide(NamimaPicture, "right"), riya: wide(RiyaPicture, "left") };

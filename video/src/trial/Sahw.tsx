@@ -16,6 +16,8 @@ import type { Drawn, LayoutOverride } from "./Trial";
 
 const W = 1080;
 const H = 1920;
+/** The floor and the dark go on beyond the short's frame (nothing of it shows in a short): the wide film shows it. */
+const BLEED = 1600;
 const GOLD = "#f2c75c";
 const PALE = "#f4efe6";
 const DIM = "#8a8f9e";
@@ -121,7 +123,7 @@ export const Praying: React.FC<{ id: string; body: Body; scale?: number; rim?: s
   );
 };
 
-const QIYAM = bodyOf(PRAYER.qiyam);
+export const QIYAM = bodyOf(PRAYER.qiyam);
 const JULUS = bodyOf(PRAYER.julus);
 
 /** Two prostrations, sitting between them, from `from` seconds (from standing first, if `start` says so). */
@@ -165,7 +167,10 @@ export const Room: React.FC<{ t: number; dim?: number; rug?: boolean }> = ({ t, 
       <rect x={0} y={0} width={W} height={H} fill="url(#sahw-glow)" />
       <path d="M 600 1230 L 600 960 A 140 140 0 0 1 880 960 L 880 1230 Z" fill="url(#sahw-window)" opacity={0.5 * breathe} filter="url(#sahw-soft)" />
       <path d="M 600 1230 L 600 960 A 140 140 0 0 1 880 960 L 880 1230" fill="none" stroke="#e8b878" strokeOpacity={0.35} strokeWidth={4} />
-      <rect x={0} y={FLOOR} width={W} height={H - FLOOR} fill="url(#sahw-floor)" />
+      <rect x={-BLEED} y={FLOOR} width={W + 2 * BLEED} height={H - FLOOR} fill="url(#sahw-floor)" />
+      {/* beyond the short's frame (the wide film): the room goes on, a second arched window, dimmer, on the right */}
+      <path d="M 1500 1230 L 1500 1000 A 110 110 0 0 1 1720 1000 L 1720 1230 Z" fill="url(#sahw-window)" opacity={0.28 * breathe} filter="url(#sahw-soft)" />
+      <path d="M 1500 1230 L 1500 1000 A 110 110 0 0 1 1720 1000 L 1720 1230" fill="none" stroke="#e8b878" strokeOpacity={0.25} strokeWidth={4} />
       <path d={`M 600 ${FLOOR} L 880 ${FLOOR} L 1000 ${H} L 300 ${H} Z`} fill="url(#sahw-beam)" />
       {Array.from({ length: 26 }, (_, i) => {
         const x = 610 + 260 * chance(i, 1) + 30 * Math.sin(t * 0.3 + i);
@@ -178,7 +183,7 @@ export const Room: React.FC<{ t: number; dim?: number; rug?: boolean }> = ({ t, 
           <path d={`M 268 ${FEET - 18} L 812 ${FEET - 18} L 856 ${FEET + 22} L 224 ${FEET + 22} Z`} fill="none" stroke="#b8894c" strokeOpacity={0.6} strokeWidth={2} />
         </g>
       ) : null}
-      {dim > 0 ? <rect x={0} y={0} width={W} height={H} fill="#05060d" opacity={dim} /> : null}
+      {dim > 0 ? <rect x={-BLEED} y={0} width={W + 2 * BLEED} height={H} fill="#05060d" opacity={dim} /> : null}
     </g>
   );
 };
@@ -346,9 +351,10 @@ const KhamsPicture: Drawn = ({ t, show, since, phrase: said }) => {
   const phrase: Phrase = said ?? ((id, n) => since(id) + n);
   const rows = Math.max(show("track5"), show("rows"), show("voice"));
   const end = show("end");
+  const recap = show("recap");
   return (
     <g>
-      <Room t={t} dim={0.35 * show("lanes")} rug={end > 0} />
+      <Room t={t} dim={0.35 * Math.max(show("lanes"), recap)} rug={end > 0} />
       <Rows t={t} opacity={rows} whisper={show("rows") * ramp(t, since("rows"), since("rows") + 0.6) * (1 - ramp(t, phrase("rows", 6) - 0.3, phrase("rows", 6) + 0.3))} />
       <g opacity={end}><Praying id="kh-fig" body={twoProstrations(t, since("end") + 0.6)} face="calm" /></g>
       {show("lanes") > 0 ? (
@@ -359,6 +365,30 @@ const KhamsPicture: Drawn = ({ t, show, since, phrase: said }) => {
             { school: "الشافعي", cells: before(1), on: ramp(t, phrase("lanes", 6) - 0.2, phrase("lanes", 6) + 0.4) },
             { school: "الحنبلي", cells: before(1), on: ramp(t, phrase("lanes", 7) - 0.2, phrase("lanes", 7) + 0.4) },
           ]} />
+        </g>
+      ) : null}
+      {recap > 0 ? (
+        <g opacity={recap}>
+          {/* the film's recap. « الخلاصة: زوّدت… نقصت… أو شكّيت؟ سجدتين. »: the three mistakes, then the two prostrations.
+              « قبل السلام ولا بعده؟ على حسب المذهب… والجدول ده بيقولك. »: where each school puts them, as the Kuwaiti
+              Encyclopedia gives it (24/238-239): the Hanafis after the salam in every case; the Malikis before it for what
+              was left out, after it for what was added; the Shafi'is before it; the Hanbalis before it, but in two cases. */}
+          <g opacity={1 - ramp(t, phrase("recap", 5) - 0.3, phrase("recap", 5) + 0.2)}>
+            <Track t={t} y={960} tiles={[
+              { label: "زوّدت", state: "miss", on: ramp(t, phrase("recap", 1) - 0.2, phrase("recap", 1) + 0.3) },
+              { label: "نقصت", state: "miss", on: ramp(t, phrase("recap", 2) - 0.2, phrase("recap", 2) + 0.3) },
+              { label: "شكّيت", state: "miss", on: ramp(t, phrase("recap", 3) - 0.2, phrase("recap", 3) + 0.3) },
+              SUJUD(ramp(t, phrase("recap", 4) - 0.2, phrase("recap", 4) + 0.4)),
+            ]} />
+          </g>
+          <g opacity={ramp(t, phrase("recap", 5) - 0.2, phrase("recap", 5) + 0.3)}>
+            <Lanes t={t} lanes={[
+              { school: "الحنفي", cells: [], note: "بعد السلام… دايمًا", on: ramp(t, phrase("recap", 6) - 0.2, phrase("recap", 6) + 0.4) },
+              { school: "المالكي", cells: [], note: "نقصت: قبل · زوّدت: بعد", on: ramp(t, phrase("recap", 6) + 0.3, phrase("recap", 6) + 0.9) },
+              { school: "الشافعي", cells: [], note: "قبل السلام", on: ramp(t, phrase("recap", 6) + 0.8, phrase("recap", 6) + 1.4) },
+              { school: "الحنبلي", cells: [], note: "قبل… إلا حالتين", on: ramp(t, phrase("recap", 6) + 1.3, phrase("recap", 6) + 1.9) },
+            ]} />
+          </g>
         </g>
       ) : null}
     </g>
