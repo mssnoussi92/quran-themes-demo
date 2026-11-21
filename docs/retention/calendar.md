@@ -84,7 +84,7 @@ dimanche soir à 18 h, jour libre ici, la série des reels (à 19 h 30 jusqu'au 
 **Le quiz « معاك 5 ثواني » sur Instagram, les lundis d'un film** (choix du propriétaire, 2026-11-17 : « à partir du lundi
 prochain, sur Instagram seulement, puisque c'est le jour du film et qu'on ne publie plus de films sur Instagram » ;
 publié par quran-reels, qui sort chaque ligne d'un même jour sur ses propres plateformes) : une ligne de plus sous le
-film du jour, Instagram seul, à 18 h (19 h jusqu'au 2026-11-19) ; les lundis d'un film sont le 23 et le 30 novembre, puis le 28 décembre.
+film du jour, Instagram seul, à 18 h (19 h jusqu'au 2026-11-19) ; les lundis d'un film sont le 23 et le 30 novembre, puis le 7 décembre (le film de « مخيّر ولا مسيّر؟ », avancé ; le stock de la Page n'a que trois quiz).
 
 | Date | Quoi | Où | Fichiers | Texte (section de `docs/retention/…`) |
 | --- | --- | --- | --- | --- |
@@ -112,33 +112,41 @@ film du jour, Instagram seul, à 18 h (19 h jusqu'au 2026-11-19) ; les lundis d'
 | jeu. 3 déc. | Les gens de la caverne, short 3 : le réveil | les quatre | release `kahf-candidate` | « Short 3 » |
 | ven. 4 déc. | « آية وحكايتها » 3 : l'espoir | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 3 » |
 | sam. 5 déc. | « سنريهم آياتنا » 3 : le ciel | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 3 » |
-| lun. 7 déc. | « كلمة من القرآن » 1 : الكنود (100:1-8) | les quatre | release `kalima-candidate` | `publication-kalima.md` : « Short 1 » |
-| mar. 8 déc. | « كلمة من القرآن » 2 : نواة التمرة (فتيل، نقير، قطمير) | les quatre | release `kalima-candidate` | « Short 2 » |
-| mer. 9 déc. | « كلمة من القرآن » 3 : هلوع (70:19-23) | les quatre | release `kalima-candidate` | « Short 3 » |
-| jeu. 10 déc. | « بص تاني » 1 : كل حاجة ضلمت فجأة؟ (94:5-6), dessin B | les quatre | release `lens-candidate` | `publication-lens.md` : « Short 1 » |
+| lun. 7 déc. | « مخيّر ولا مسيّر؟ » : le film | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical signé `@quran.words.daily`, `qadar-film-9x16-tiktok.mp4`) | releases `qadar-candidate`, `qadar-9x16-candidate` | `publication-qadar.md` : « Le film » ; `publication-qadar-9x16.md` |
+| lun. 7 déc. | « معاك 5 ثواني » 3 : مين قال الجملة دي في القرآن؟ (5:28, 59:16) | Instagram | release `quiz-candidate` | `publication-quiz.md` : « Short 3 » |
+| mar. 8 déc. | « مخيّر ولا مسيّر؟ », short 1 : «كله مكتوب… أتعب ليه؟» | les quatre | release `qadar-candidate` | `publication-qadar.md` : « Short 1 » |
+| mer. 9 déc. | « مخيّر ولا مسيّر؟ », short 2 : «لما ربنا يهديني» | les quatre | release `qadar-candidate` | « Short 2 » |
+| jeu. 10 déc. | « مخيّر ولا مسيّر؟ », short 3 : كلمة من حرفين («لو») | les quatre | release `qadar-candidate` | « Short 3 » |
 | ven. 11 déc. | « آية وحكايتها » 4 : 24:22, le pardon à un proche | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 4 » |
 | sam. 12 déc. | « سنريهم آياتنا » 4 : l'embryon | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 4 » |
-| lun. 14 déc. | « خريطة كلمة » 1 : القلب (132 fois) | les quatre | release `map-candidate` | `publication-map.md` : « Short 1 » |
-| mar. 15 déc. | « خريطة كلمة » 2 : النور (43 fois) | les quatre | release `map-candidate` | « Short 2 » |
-| mer. 16 déc. | « خريطة كلمة » 3 : الصدر (44 fois) | les quatre | release `map-candidate` | « Short 3 » |
-| jeu. 17 déc. | « بص تاني » 2 : مستني حاجة… ومش بتيجي؟ (42:28), dessin B | les quatre | release `lens-candidate` | `publication-lens.md` : « Short 2 » |
+| lun. 14 déc. | « وتحسبونه هيّنًا » : le film (à produire : ses trois shorts, 24:15, Bukhari 6478) | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical signé `@quran.words.daily`, `hayyin-film-9x16-tiktok.mp4`) | releases `hayyin-candidate`, `hayyin-9x16-candidate` | `publication-hayyin.md` : « Le film » ; `publication-hayyin-9x16.md` |
+| mar. 15 déc. | « وتحسبونه هيّنًا » 1 : «هو فعلاً كده!»… وحسناتك ممكن تروح له (la ghiba, Bukhari 2449, 49:12) | les quatre | release `hayyin-candidate` | `publication-hayyin.md` : « Short 1 » |
+| mer. 16 déc. | « وتحسبونه هيّنًا » 2 : «شوف فلان قال عليك إيه»… القرآن سمّاها (la namima, 68:10-11, Bukhari 216) | les quatre | release `hayyin-candidate` | « Short 2 » |
+| jeu. 17 déc. | « وتحسبونه هيّنًا » 3 : عملتها عشان يتقال… واتقال (le riya', Muslim 1905, 2:264) | les quatre | release `hayyin-candidate` | « Short 3 » |
 | ven. 18 déc. | « لاحظت الفرق؟ » 1 : le rizq (6:151 et 17:31) | les quatre | release `farq-candidate` | `publication-farq.md` : « Short 1 » |
 | sam. 19 déc. | « سنريهم آياتنا » 5 : « بيقولوا 365… عدّيتها بنفسي » (annoncé par la fin de `womb`) | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 5 » |
-| lun. 21 déc. | « سؤال صعب » 1 : بعيد عن ربنا… وعايش مرتاح؟ (20:124 et 6:44) | les quatre | release `sual-candidate` | `publication-sual.md` : « Short 1 » |
-| mar. 22 déc. | « سؤال صعب » 2 : مؤمن… وحياته صعبة؟ (16:97 et 29:2) | les quatre | release `sual-candidate` | « Short 2 » |
-| mer. 23 déc. | « سؤال صعب » 3 : ربنا غفور رحيم… أعمل اللي أنا عايزه؟ (15:49 et 15:50) | les quatre | release `sual-candidate` | « Short 3 » |
-| jeu. 24 déc. | « بص تاني » 3 : قلّبت كام ساعة النهارده؟ (103:1-3), dessin B | les quatre | release `lens-candidate` | `publication-lens.md` : « Short 3 » |
+| lun. 21 déc. | « سؤال صعب » : le film (à produire : ses trois questions, 13:28 en conclusion) | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical signé `@quran.words.daily`, `sual-film-9x16-tiktok.mp4`) | releases `sual-candidate`, `sual-9x16-candidate` | `publication-sual.md` : « Le film » ; `publication-sual-9x16.md` |
+| mar. 22 déc. | « سؤال صعب » 1 : بعيد عن ربنا… وعايش مرتاح؟ (20:124 et 6:44) | les quatre | release `sual-candidate` | `publication-sual.md` : « Short 1 » |
+| mer. 23 déc. | « سؤال صعب » 2 : مؤمن… وحياته صعبة؟ (16:97 et 29:2) | les quatre | release `sual-candidate` | « Short 2 » |
+| jeu. 24 déc. | « سؤال صعب » 3 : ربنا غفور رحيم… أعمل اللي أنا عايزه؟ (15:49 et 15:50) | les quatre | release `sual-candidate` | « Short 3 » |
 | ven. 25 déc. | « لاحظت الفرق؟ » 2 : l'adab (18:79 et 18:82) | les quatre | release `farq-candidate` | « Short 2 » |
-| lun. 28 déc. | « مخيّر ولا مسيّر؟ » : le film | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical signé `@quran.words.daily`, `qadar-film-9x16-tiktok.mp4`) | releases `qadar-candidate`, `qadar-9x16-candidate` | `publication-qadar.md` : « Le film » ; `publication-qadar-9x16.md` |
-| lun. 28 déc. | « معاك 5 ثواني » 3 : مين قال الجملة دي في القرآن؟ (5:28, 59:16) | Instagram | release `quiz-candidate` | `publication-quiz.md` : « Short 3 » |
-| mar. 29 déc. | « مخيّر ولا مسيّر؟ », short 1 : «كله مكتوب… أتعب ليه؟» | les quatre | release `qadar-candidate` | `publication-qadar.md` : « Short 1 » |
-| mer. 30 déc. | « مخيّر ولا مسيّر؟ », short 2 : «لما ربنا يهديني» | les quatre | release `qadar-candidate` | « Short 2 » |
-| jeu. 31 déc. | « مخيّر ولا مسيّر؟ », short 3 : كلمة من حرفين («لو») | les quatre | release `qadar-candidate` | « Short 3 » |
-| ven. 1 janv. | « لاحظت الفرق؟ » 3 : la justice (4:135 et 5:8) | les quatre | release `farq-candidate` | « Short 3 » |
-| lun. 4 janv. | « إزاي أعملها؟ » 1 : آية بتقول «ويل» للي بيصلّوا! (107:4-5) | les quatre | release `sahw-candidate` | `publication-sahw.md` : « Short 1 » |
-| mar. 5 janv. | « إزاي أعملها؟ » 2 : صلّى الضهر خمس ركعات! (Bukhari 1226, 18:110) | les quatre | release `sahw-candidate` | « Short 2 » |
-| mer. 6 janv. | « إزاي أعملها؟ » 3 : قمت من غير ما تقعد للتشهد؟ (le « comment faire », 33:21) | les quatre | release `sahw-candidate` | « Short 3 » |
-| jeu. 7 janv. | « إزاي أعملها؟ » 4 : صلّيت تلاتة ولا أربعة؟ (Muslim 571, 114:4-6) | les quatre | release `sahw-candidate` | « Short 4 » |
+| sam. 26 déc. | « كلمة من القرآن » 1 : الكنود (100:1-8) | les quatre | release `kalima-candidate` | `publication-kalima.md` : « Short 1 » |
+| lun. 28 déc. | « إزاي أعملها؟ » : le film « سجود السهو » (à produire : ses quatre shorts, la carte qui récapitule, le comment faire) | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical signé `@quran.words.daily`, `sahw-film-9x16-tiktok.mp4`) | releases `sahw-candidate`, `sahw-9x16-candidate` | `publication-sahw.md` : « Le film » ; `publication-sahw-9x16.md` |
+| mar. 29 déc. | « إزاي أعملها؟ » 1 : آية بتقول «ويل» للي بيصلّوا! (107:4-5) | les quatre | release `sahw-candidate` | `publication-sahw.md` : « Short 1 » |
+| mer. 30 déc. | « إزاي أعملها؟ » 2 : صلّى الضهر خمس ركعات! (Bukhari 1226, 18:110) | les quatre | release `sahw-candidate` | « Short 2 » |
+| jeu. 31 déc. | « إزاي أعملها؟ » 3 : قمت من غير ما تقعد للتشهد؟ (le « comment faire », 33:21) | les quatre | release `sahw-candidate` | « Short 3 » |
+| ven. 1 janv. | « إزاي أعملها؟ » 4 : صلّيت تلاتة ولا أربعة؟ (Muslim 571, 114:4-6) | les quatre | release `sahw-candidate` | « Short 4 » |
+| sam. 2 janv. | « لاحظت الفرق؟ » 3 : la justice (4:135 et 5:8) | les quatre | release `farq-candidate` | `publication-farq.md` : « Short 3 » |
+| lun. 4 janv. | « كلمة من القرآن » 2 : نواة التمرة (فتيل، نقير، قطمير) | les quatre | release `kalima-candidate` | `publication-kalima.md` : « Short 2 » |
+| mar. 5 janv. | « كلمة من القرآن » 3 : هلوع (70:19-23) | les quatre | release `kalima-candidate` | « Short 3 » |
+| mer. 6 janv. | « بص تاني » 1 : كل حاجة ضلمت فجأة؟ (94:5-6), dessin B | les quatre | release `lens-candidate` | `publication-lens.md` : « Short 1 » |
+| jeu. 7 janv. | « خريطة كلمة » 1 : القلب (132 fois) | les quatre | release `map-candidate` | `publication-map.md` : « Short 1 » |
+| ven. 8 janv. | « خريطة كلمة » 2 : النور (43 fois) | les quatre | release `map-candidate` | « Short 2 » |
+| sam. 9 janv. | « خريطة كلمة » 3 : الصدر (44 fois) | les quatre | release `map-candidate` | « Short 3 » |
+| lun. 11 janv. | « بص تاني » 2 : مستني حاجة… ومش بتيجي؟ (42:28), dessin B | les quatre | release `lens-candidate` | `publication-lens.md` : « Short 2 » |
+| mar. 12 janv. | « بص تاني » 3 : قلّبت كام ساعة النهارده؟ (103:1-3), dessin B | les quatre | release `lens-candidate` | `publication-lens.md` : « Short 3 » |
+
+**Un film chaque lundi** (décision du propriétaire, 2026-11-21, questions à choix : « continuer d'avoir un film chaque lundi », puis « avancer aussi le film du 28 décembre » et la grille proposée par la session, validée telle quelle) : le lundi le film, du mardi au jeudi ses shorts. « مخيّر ولا مسيّر؟ » passe au 7 décembre ; trois films sont faits des séries qui forment un tout, à produire (leurs répliques propres, leur ouverture et leur fin à valider avant toute voix) : « وتحسبونه هيّنًا » le 14 décembre (sortie de la réserve, avec 24:15, le verset de son nom, et Bukhari 6478), « سؤال صعب » le 21 (13:28 en conclusion), « إزاي أعملها؟ » le 28, « سجود السهو » (la carte qui récapitule, le comment faire, une ouverture sur les oublis du Prophète ﷺ dans sa prière). « كلمة من القرآن », « خريطة كلمة » et « بص تاني » prennent les samedis libres et la semaine du 4 janvier ; le lundi 4 janvier n'a pas encore de film : à décider à la revue. Le paragraphe suivant dit la grille d'avant.
 
 « كلمة من القرآن », « خريطة كلمة » et « سؤال صعب » prennent les lundis, mardis et mercredis des semaines du 7, du 14 et du 21 décembre (« سؤال صعب » : décision du propriétaire, 2026-11-15 ; chaque épisode annonce le suivant, trois jours de suite tiennent la promesse), où aucun film n'est encore prévu (décision du propriétaire, 2026-11-14, sur la proposition de la session : les deux séries qui attendaient une place, et les moins semblables) ; « خريطة كلمة », le format le plus éloigné de ce qui est mesuré (un début muet, des effets sonores), passe après trois semaines de mesures. Une histoire nouvelle, si elle est prête, peut reprendre ces semaines : à décider avec les mesures.
 

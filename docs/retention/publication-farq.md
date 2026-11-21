@@ -223,7 +223,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 ## Short 3 · The same words… in reverse · نفس الكلمات… بالمقلوب
 
-`farq-short-3-qist.mp4` (TikTok : `farq-short-3-qist-tiktok.mp4`, signée `@quran.words.daily`) · 1:35 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `farq-short-3-qist-cover.jpg`
+`farq-short-3-qist.mp4` (TikTok : `farq-short-3-qist-tiktok.mp4`, signée `@quran.words.daily`) · 1:31 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `farq-short-3-qist-cover.jpg`
 
 **Facebook · Titre**
 

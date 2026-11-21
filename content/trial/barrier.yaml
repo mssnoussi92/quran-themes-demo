@@ -29,6 +29,8 @@ validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publ
 # 4 ») ; la vidéo refaite est à valider avant `page-files`.
 # « والسد وقف؟ » sort aussi de la version longue (sa correction sur la vidéo, 2026-11-21 : « il y a une coupe dans le verset,
 # والسد وقف à enlever » : la réplique tombait entre 18:96 et 18:97) ; « وهو قال إيه؟ » reste (son choix, même jour).
+# Le nom de la série en haut à gauche (« ذو القرنين », son numéro), ajouté le même jour à sa demande ; les 9 vidéos refaites
+# (entière, TikTok, courte des trois shorts) validées par lui (« Je valide les 9 »).
 drop: ["meaning:0", "meaning:1", "stood"]
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 381, author: FlickrVideos, page: "https://pixabay.com/videos/id-381/", position: "50% 50%", brightness: 0.85, landscape: { side: right, horizon: 700, brightness: 0.8 } }

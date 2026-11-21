@@ -63,7 +63,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 ## Short 1 · “It's all written, why bother?” The Companions asked it · «كله مكتوب… أتعب ليه؟» الصحابة سألوها
 
-`qadar-short-1-amal.mp4` (TikTok : `qadar-short-1-amal-tiktok.mp4`, signée `@quran.words.daily`) · 1:36 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qadar-short-1-amal-cover.jpg`
+`qadar-short-1-amal.mp4` (TikTok : `qadar-short-1-amal-tiktok.mp4`, signée `@quran.words.daily`) · 1:30 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qadar-short-1-amal-cover.jpg`
 
 **Facebook · Titre**
 
@@ -287,7 +287,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 
 ## Short 3 · A two-letter word the Prophet ﷺ warned against · كلمة من حرفين… النبي ﷺ حذّر منها
 
-`qadar-short-3-law.mp4` (TikTok : `qadar-short-3-law-tiktok.mp4`, signée `@quran.words.daily`) · 1:32 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qadar-short-3-law-cover.jpg`
+`qadar-short-3-law.mp4` (TikTok : `qadar-short-3-law-tiktok.mp4`, signée `@quran.words.daily`) · 1:25 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qadar-short-3-law-cover.jpg`
 
 **Facebook · Titre**
 

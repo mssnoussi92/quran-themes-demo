@@ -50,6 +50,7 @@ validated: { by: mssnoussi92, on: 2026-11-15, what: [voice, montage, cover, publ
 # les trois scènes jouées et la narration en sous-titre après le verset ; l'appel à s'abonner reste en grand en haut,
 # son choix) ; les ajouts de l'audit validés par lui sur images le même jour (« Je valide tout le lot ») ; la vidéo
 # refaite est à valider avant que les fichiers publics (`page-ayah`) changent.
+# La vidéo refaite avec le nom de la série en haut à gauche (sa demande du même jour) validée par lui le 2026-11-21 (« Je valide les 7 »).
 drop: ["meaning:0", "depth:1", "depth:2"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }

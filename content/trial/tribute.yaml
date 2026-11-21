@@ -17,6 +17,8 @@ script_validated: { by: mssnoussi92, on: 2026-11-11 }
 # sur la vidéo entière, le montage, la couverture, l'ambiance, et les textes de publication (`publish`,
 # docs/retention/publication-qarnayn.md, envoyés). Inscrit sur sa parole.
 # La vidéo refaite (audit du 2026-11-20) validée par lui le 2026-11-21 (« Je valide ces 6 »).
+# Le nom de la série en haut à gauche (« ذو القرنين », son numéro), ajouté le même jour à sa demande ; les 9 vidéos refaites
+# (entière, TikTok, courte des trois shorts) validées par lui (« Je valide les 9 »).
 validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
 # Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
 # on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). « Change tout », confirmé : la version entière (YouTube,
