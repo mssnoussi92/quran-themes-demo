@@ -14,6 +14,7 @@ files: hayyin                    # début du nom des vidéos livrées : hayyin-s
 title: { ar: "وتحسبونه هيّنًا", en: "You Think It Is Small" }
 shorts: [ghiba, namima, riya]
 handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 publish:
   title: { en: "Sins we think are small", ar: "ذنوب بنحسبها صغيرة" }      # le titre du film, proposé par la session (2026-11-21), à valider
   out: docs/retention/publication-hayyin.md

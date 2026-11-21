@@ -9,6 +9,7 @@ files: sual                      # début du nom des vidéos livrées : sual-sho
 title: { ar: "سؤال صعب", en: "A Hard Question" }
 shorts: [dank, tayyiba, ghafur]
 handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 publish:
   title: { en: "3 hard questions… and the Quran's answer", ar: "تلات أسئلة صعبة… والقرآن ردّ عليها" }      # le titre du film, proposé par la session (2026-11-21), à valider
   out: docs/retention/publication-sual.md

@@ -10,6 +10,7 @@ files: sahw                      # début du nom des vidéos livrées : sahw-sho
 title: { ar: "إزاي أعملها؟", en: "How Do I Do It?" }
 shorts: [sahun, khams, nasit, shakk]
 handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 digits: latin
 publish:
   title: { en: "Sujud as-sahw: added, left out, or unsure?", ar: "سجود السهو: زوّدت، نقصت، ولا شكّيت؟" }      # le titre du film, proposé par la session (2026-11-21), à valider

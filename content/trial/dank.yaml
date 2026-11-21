@@ -26,7 +26,7 @@ drop: ["meaning2:0"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 67-trial-dank
-clip: { source: pixabay, id: 296958, author: engrahmad2653, page: "https://pixabay.com/videos/id-296958/", take: { from: 2, seconds: 18, height: 1920, pingpong: true }, rate: 0.8, position: "50% 50%", shift: 0, brightness: 0.7, ground: "#05070f", horizon: 1300 }      # Dubaï au crépuscule, déjà vertical : la vie aisée de la question ; approuvé par le propriétaire le 2026-11-15
+clip: { source: pixabay, id: 296958, author: engrahmad2653, page: "https://pixabay.com/videos/id-296958/", take: { from: 2, seconds: 18, height: 1920, pingpong: true }, rate: 0.8, position: "50% 50%", shift: 0, brightness: 0.7, ground: "#05070f", horizon: 1300, landscape: { side: left, horizon: 700, brightness: 0.7 } }      # Dubaï au crépuscule, déjà vertical : la vie aisée de la question ; approuvé par le propriétaire le 2026-11-15
 ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 110, level: -38 }
 cover:
   scene: pause

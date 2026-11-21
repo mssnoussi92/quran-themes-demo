@@ -22,7 +22,7 @@ voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 digits: latin          # les nombres en 1 2 3, jamais ١ ٢ ٣ (le propriétaire, 2026-11-17)
 # Une salle de prière au lever du jour : le fond généré par ffmpeg (tools/trial/clip.py, kind room), la fenêtre, le rai
 # de lumière, le tapis et la silhouette dessinés par video/src/trial/Sahw.tsx. Rien à créditer.
-clip: { source: generated, kind: room, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#120f18", horizon: 1300, veil: 0.6 }
+clip: { source: generated, kind: room, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#120f18", horizon: 1300, veil: 0.6, landscape: { side: left, horizon: 700, brightness: 1 } }
 ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 130, level: -38 }
 text: 82-trial-sahun
 cover: { scene: word, title: "آية بتقول «ويل»… للي بيصلّوا!", tag: "إزاي أعملها؟ (1)", focus: 1000 }
