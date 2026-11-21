@@ -559,6 +559,8 @@ const NAMED: Record<string, [string, string]> = {
   west: ["ذو القرنين", "1"], tribute: ["ذو القرنين", "2"], barrier: ["ذو القرنين", "3"],
   refuge: ["أصحاب الكهف", "1"], sunpath: ["أصحاب الكهف", "2"], awake: ["أصحاب الكهف", "3"],
   amal: ["مخيّر ولا مسيّر؟", "1"], shaa: ["مخيّر ولا مسيّر؟", "2"], law: ["مخيّر ولا مسيّر؟", "3"],
+  // out of the reserve for the calendar of 2026-11-21 (its film on 14 December): the same badge
+  ghiba: ["وتحسبونه هيّنًا", "1"], namima: ["وتحسبونه هيّنًا", "2"], riya: ["وتحسبونه هيّنًا", "3"],
 };
 
 const SeriesBadge: React.FC<{ name: string; n: string }> = ({ name, n }) => (
