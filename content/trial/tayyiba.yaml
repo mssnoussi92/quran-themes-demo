@@ -14,6 +14,10 @@ script_validated: { by: mssnoussi92, on: 2026-11-15 }
 # l'épisode tel que livré (voix, montage, couverture, ambiance, textes) et ses sources, passées à `validated`. Inscrit sur
 # sa parole.
 validated: { by: mssnoussi92, on: 2026-11-15, what: [voice, montage, cover, publish, ambience] }
+# Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
+# on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). La question, la réponse et l'exemple joués (ModestPlayed, StudentPlayed, Played.tsx) ; la narration après le verset en
+# sous-titre. Scènes validées par lui sur images le 2026-11-21 (« Je valide tout le lot ») ;
+# la vidéo refaite est à valider avant `page-files`.
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 68-trial-tayyiba

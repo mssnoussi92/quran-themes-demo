@@ -272,7 +272,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 
 ## Short 3 · He built the barrier… and said: not from me · بنى السد… وقال: مش مني!
 
-`qarnayn-short-3-barrier.mp4` (TikTok : `qarnayn-short-3-barrier-tiktok.mp4`, signée `@quran.words.daily`) · 1:51 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qarnayn-short-3-barrier-cover.jpg` · version courte pour Facebook et Instagram : `qarnayn-short-3-barrier-cut.mp4`, 1:26
+`qarnayn-short-3-barrier.mp4` (TikTok : `qarnayn-short-3-barrier-tiktok.mp4`, signée `@quran.words.daily`) · 1:40 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qarnayn-short-3-barrier-cover.jpg` · version courte pour Facebook et Instagram : `qarnayn-short-3-barrier-cut.mp4`, 1:26
 
 **Facebook · Titre**
 

@@ -10,7 +10,7 @@
 import React from "react";
 import { Easing, interpolate } from "remotion";
 import { FONT } from "../fonts";
-import { mix, SEG, type Pose } from "./Lens";
+import { mix, SEG, type Pose, LightFace, type FigureFace } from "./Lens";
 import { SAHW_WORDS } from "./sahwData";
 import type { Drawn, LayoutOverride } from "./Trial";
 
@@ -88,7 +88,7 @@ const KNEE_X = 520;          // the figure kneels, sits and stands on its knees'
 
 /** The figure drawn from its joints, black and backlit like the figure of « بص تاني », resting on the floor line with its
  * front knee at KNEE_X: it never slides off the rug when it goes down or stands up. */
-export const Praying: React.FC<{ id: string; body: Body; scale?: number; rim?: string }> = ({ id, body: b, scale = 1.42, rim = "#f3c98b" }) => {
+export const Praying: React.FC<{ id: string; body: Body; scale?: number; rim?: string; face?: FigureFace }> = ({ id, body: b, scale = 1.42, rim = "#f3c98b", face }) => {
   const low = Math.max(b.handF[1], b.handB[1], b.toeF[1], b.toeB[1], b.kneeF[1], b.kneeB[1], b.head[1] + SEG.head) + 13;
   const x = KNEE_X - b.kneeF[0] * scale;
   const y = FEET - low * scale;
@@ -115,6 +115,8 @@ export const Praying: React.FC<{ id: string; body: Body; scale?: number; rim?: s
       <g filter={`url(#${id}-rim)`} opacity={0.8}>{shape(rim, 12, rim)}</g>
       {shape(FIG_INK, 0, FIG_FAR)}
       <path d={`M ${arcAt(-0.75)} A ${r} ${r} 0 0 1 ${arcAt(0.75)}`} stroke={rim} strokeWidth={7} fill="none" strokeLinecap="round" opacity={0.75} />
+      {/* a simple face (the audit of 2026-11-20, validated by the owner): the worry of the one who doubts, the calm after */}
+      {face ? <g transform={`translate(${b.head[0].toFixed(1)} ${b.head[1].toFixed(1)}) rotate(${((look * 180) / Math.PI).toFixed(1)})`}><LightFace face={face} color="#f6ecd8" /></g> : null}
     </g>
   );
 };
@@ -333,7 +335,7 @@ const SahunPicture: Drawn = ({ t, show, since, phrase: said }) => {
   return (
     <g>
       <Room t={t} dim={0.55 * (t < since("word") + 0.5 ? 1 : Math.max(show("word"), letter))} />
-      <g opacity={room}><Praying id="sh-fig" body={body} /></g>
+      <g opacity={room}><Praying id="sh-fig" body={body} face={t < since("letter") ? "worried" : "calm"} /></g>
       <BigWords t={t} wayl={t < since("word") + 0.5 ? 1 : Math.max(show("word"), letter)} letter={letter}
                 an={ramp(t, phrase("letter", 1) - 0.2, phrase("letter", 1) + 0.4)} fi={ramp(t, phrase("letter", 2) - 0.2, phrase("letter", 2) + 0.4)} />
     </g>
@@ -348,7 +350,7 @@ const KhamsPicture: Drawn = ({ t, show, since, phrase: said }) => {
     <g>
       <Room t={t} dim={0.35 * show("lanes")} rug={end > 0} />
       <Rows t={t} opacity={rows} whisper={show("rows") * ramp(t, since("rows"), since("rows") + 0.6) * (1 - ramp(t, phrase("rows", 6) - 0.3, phrase("rows", 6) + 0.3))} />
-      <g opacity={end}><Praying id="kh-fig" body={twoProstrations(t, since("end") + 0.6)} /></g>
+      <g opacity={end}><Praying id="kh-fig" body={twoProstrations(t, since("end") + 0.6)} face="calm" /></g>
       {show("lanes") > 0 ? (
         <g opacity={show("lanes")}>
           <Lanes t={t} lanes={[
@@ -379,7 +381,7 @@ const NasitPicture: Drawn = ({ t, show, since, phrase: said }) => {
       <Room t={t} dim={0.35 * Math.max(lanes, hanafi)} />
       <Rows t={t} opacity={show("rows")} rise={ramp(t, phrase("rows", 0) + 0.6, phrase("rows", 0) + 1.6)} />
       <g opacity={stand * ghost * 0.32}><Praying id="na-ghost" body={JULUS} rim={RED} /></g>
-      <g opacity={Math.max(stand, fix, room)}><Praying id="na-fig" body={body} /></g>
+      <g opacity={Math.max(stand, fix, room)}><Praying id="na-fig" body={body} face={stand > 0.5 ? "neutral" : "calm"} /></g>
       {lanes > 0 ? (
         <g opacity={lanes}>
           <Lanes t={t} lanes={[
@@ -412,7 +414,7 @@ const ShakkPicture: Drawn = ({ t, show, since, phrase: said }) => {
   return (
     <g>
       <Room t={t} dim={0.4 * Math.max(lanes, count * 0.6)} />
-      <g opacity={Math.max(count, fix, show("room"), show("end"))}><Praying id="sk-fig" body={body} /></g>
+      <g opacity={Math.max(count, fix, show("room"), show("end"))}><Praying id="sk-fig" body={body} face={fix > 0 && settle > 0.5 ? "calm" : show("end") > 0.5 ? "calm" : "worried"} /></g>
       <g opacity={Math.max(count, fix * (1 - ramp(t, phrase("fix", 4), phrase("fix", 4) + 0.6)))}>
         <g transform="translate(382 253) scale(0.7)"><Counter t={t} settle={settle} /></g>
       </g>

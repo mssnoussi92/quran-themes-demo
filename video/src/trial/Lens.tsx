@@ -79,7 +79,29 @@ const down = (deg: number): [number, number] => [Math.sin(rad(deg)), Math.cos(ra
 
 /** The figure: (x, y) is its pelvis; `facing` 1 to the right, -1 to the left; `turn` turns the whole body (degrees);
  * `rim`: the colour of the light behind it; `lit`: a light in front of it (a screen) on its edges, 0 to 1. */
-export const Figure: React.FC<{ id: string; x: number; y: number; scale: number; pose: Pose; facing?: number; turn?: number; rim?: string; lit?: number; light?: string; held?: React.ReactNode }> = ({ id, x, y, scale, pose, facing = 1, turn = 0, rim = "#9fb6e6", lit = 0, light = "#ffd9a0", held }) => {
+/** A simple face drawn in light on the dark head, looking to +x (the figure's front); (0, 0) the centre of the head. The
+ * owner, 2026-11-20 (audit): a face on the anonymous silhouette when the feeling shows the difference (his rule of
+ * 2026-11-19). */
+export type FigureFace = "neutral" | "worried" | "calm" | "smile" | "shock";
+export const LightFace: React.FC<{ face: FigureFace; color: string }> = ({ face, color }) => {
+  const c = 9;
+  const line = (d: string, w = 4) => <path d={d} stroke={color} strokeWidth={w} fill="none" strokeLinecap="round" strokeLinejoin="round" />;
+  const eye = (dx: number, rx = 3.6, ry = 4.8) => <ellipse cx={c + dx} cy={-4} rx={rx} ry={ry} fill={color} />;
+  switch (face) {
+    case "worried":
+      return <>{eye(-9)}{eye(9)}{line(`M ${c - 16} -12 L ${c - 4} -17`)}{line(`M ${c + 4} -17 L ${c + 16} -12`)}{line(`M ${c - 8} 14 Q ${c} 8 ${c + 8} 14`)}</>;
+    case "calm":
+      return <>{line(`M ${c - 14} -3 Q ${c - 9} 1 ${c - 4} -3`)}{line(`M ${c + 4} -3 Q ${c + 9} 1 ${c + 14} -3`)}{line(`M ${c - 6} 10 Q ${c} 15 ${c + 6} 10`)}</>;
+    case "smile":
+      return <>{eye(-9)}{eye(9)}{line(`M ${c - 9} 9 Q ${c} 18 ${c + 9} 9`)}</>;
+    case "shock":
+      return <>{eye(-9, 4.2, 5.6)}{eye(9, 4.2, 5.6)}<ellipse cx={c} cy={12} rx={5} ry={6.5} fill={color} /></>;
+    default:
+      return <>{eye(-9)}{eye(9)}{line(`M ${c - 6} 11 L ${c + 6} 11`)}</>;
+  }
+};
+
+export const Figure: React.FC<{ id: string; x: number; y: number; scale: number; pose: Pose; facing?: number; turn?: number; rim?: string; lit?: number; light?: string; held?: React.ReactNode; face?: FigureFace }> = ({ id, x, y, scale, pose, facing = 1, turn = 0, rim = "#9fb6e6", lit = 0, light = "#ffd9a0", held, face: feeling }) => {
   const P: [number, number] = [0, 0];
   const up: [number, number] = [Math.sin(rad(pose.torso)), -Math.cos(rad(pose.torso))];
   const at = (o: [number, number], d: [number, number], len: number): [number, number] => [o[0] + d[0] * len, o[1] + d[1] * len];
@@ -123,6 +145,11 @@ export const Figure: React.FC<{ id: string; x: number; y: number; scale: number;
       {body(INK, 0, FAR)}
       <path d={face} stroke={rim} strokeWidth={7} fill="none" strokeLinecap="round" opacity={0.75} />
       {lit > 0 ? <path d={face} stroke={light} strokeWidth={8} fill="none" strokeLinecap="round" opacity={0.9 * lit} /> : null}
+      {feeling ? (
+        <g transform={`translate(${head[0].toFixed(1)} ${head[1].toFixed(1)}) rotate(${((look * 180) / Math.PI).toFixed(1)})`}>
+          <LightFace face={feeling} color="#e6ecfa" />
+        </g>
+      ) : null}
       {held ? <g transform={`translate(${armF[2][0].toFixed(1)} ${armF[2][1].toFixed(1)})`}>{held}</g> : null}
     </g>
   );
@@ -301,7 +328,8 @@ const BlackoutPicture: Drawn = ({ t, show, since, horizon, cast }) => {
         <rect x={0} y={horizon - 6} width={W} height={10} fill="#11162a" />
         <path d={`M 0 ${horizon + 4} L ${W} ${horizon + 4}`} stroke="#9fb6e6" strokeWidth={2} opacity={0.3 + 0.2 * (1 - dark)} />
         <Desk id="bo-desk" x={figure ? 470 : 760} y={floor} scale={S} on={1 - ramp(t, cut, cut + 0.1)} />
-        {figure ? <Figure id="bo-fig" x={px} y={py} scale={S} pose={pose} rim="#9fb6e6" lit={lit} light="#dbe8ff" /> : null}
+        {figure ? <Figure id="bo-fig" x={px} y={py} scale={S} pose={pose} rim="#9fb6e6" lit={lit} light="#dbe8ff"
+          face={at.cover ? "worried" : t > at("sky") ? "calm" : t > lookAt + 0.6 ? "smile" : t > at("dark") ? "worried" : t > cut ? "shock" : "neutral"} /> : null}
       </g>
     </>
   );
@@ -621,7 +649,8 @@ const ScrollPicture: Drawn = ({ t, show, since, horizon, cast }) => {
           <rect x={150} y={horizon - 120} width={780} height={130} rx={34} fill="#0e1220" />
           <rect x={120} y={horizon - 190} width={90} height={200} rx={36} fill="#0e1220" />
           <rect x={870} y={horizon - 190} width={90} height={200} rx={36} fill="#0e1220" />
-          <Figure id="sc-fig" x={470} y={horizon - 120} scale={S} pose={pose} rim="#9fb6e6" lit={on} light="#cfe0ff" held={<HeldPhone on={on} t={t} />} />
+          <Figure id="sc-fig" x={470} y={horizon - 120} scale={S} pose={pose} rim="#9fb6e6" lit={on} light="#cfe0ff" held={<HeldPhone on={on} t={t} />}
+            face={t > dead + 1.6 ? "worried" : t > dead + 0.2 ? "shock" : "neutral"} />
         </g>
       ) : (
         <g opacity={room}>
