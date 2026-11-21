@@ -23,12 +23,10 @@ const Room: React.FC<{ wall: string; floor?: string; dark?: number }> = ({ wall,
     <rect x={-BLEED} y={FLOOR} width={W + 2 * BLEED} height={H - FLOOR} fill={floor} />
     <rect x={-BLEED} y={FLOOR - 14} width={W + 2 * BLEED} height={18} fill="#00000022" />
     <rect x={-BLEED} y={FLOOR} width={W + 2 * BLEED} height={8} fill={INK} opacity={0.55} />
-    {/* beyond the short's frame: a door on the left, a framed picture and a lamp on the right */}
+    {/* beyond the short's frame: a door on the left, a floor lamp on the right, low, under the film's text */}
     <g opacity={0.9}>
       <rect x={-560} y={FLOOR - 470} width={230} height={470} fill="#00000018" stroke={INK} strokeWidth={8} />
       <circle cx={-360} cy={FLOOR - 240} r={9} fill={INK} />
-      <rect x={1340} y={560} width={220} height={160} fill="#00000014" stroke={INK} strokeWidth={8} />
-      <path d={`M 1360 700 l 60 -70 l 40 40 l 30 -30 l 50 60`} stroke={INK} strokeWidth={5} fill="none" opacity={0.5} />
       <path d={`M 1900 ${FLOOR} L 1900 ${FLOOR - 330} M 1850 ${FLOOR} L 1950 ${FLOOR}`} stroke={INK} strokeWidth={8} strokeLinecap="round" />
       <path d={`M 1840 ${FLOOR - 330} L 1960 ${FLOOR - 330} L 1930 ${FLOOR - 410} L 1870 ${FLOOR - 410} Z`} fill="#f3e3b8" stroke={INK} strokeWidth={6} />
     </g>
@@ -972,8 +970,8 @@ export const RichPlayed: Played = ({ u, t, at, variant }) => {
         <g>
           <rect x={-BLEED} y={560} width={W + 2 * BLEED} height={FLOOR - 560} fill="#2b2f52" />
           {/* beyond the short's frame: the bedroom goes on, a wardrobe, a second window and its moon light */}
-          <rect x={1300} y={720} width={260} height={FLOOR - 720} fill="#1f2342" stroke={INK} strokeWidth={8} />
-          <path d={`M 1430 720 L 1430 ${FLOOR}`} stroke={INK} strokeWidth={6} />
+          <rect x={1300} y={980} width={300} height={FLOOR - 980} fill="#1f2342" stroke={INK} strokeWidth={8} />
+          <path d={`M 1300 1100 L 1600 1100`} stroke={INK} strokeWidth={6} />
           <rect x={-480} y={640} width={300} height={260} fill="#0b1230" stroke={INK} strokeWidth={8} />
           <rect x={680} y={640} width={300} height={260} fill="#0b1230" stroke={INK} strokeWidth={8} />
           <circle cx={900} cy={700} r={24} fill="#f3eccf" />
@@ -994,10 +992,9 @@ export const RichPlayed: Played = ({ u, t, at, variant }) => {
             <rect x={760} y={1080} width={80} height={FLOOR - 1080} fill="#7a4b2a" />
           </g>
           <rect x={-BLEED} y={FLOOR} width={W + 2 * BLEED} height={H - FLOOR} fill="#7a8a5a" />
-          {/* beyond the short's frame: the street of villas goes on, a palm, the neighbour's wall */}
+          {/* beyond the short's frame: the garden of the villa goes on, a low hedge, under the film's text */}
           <g stroke={INK} strokeWidth={7} strokeLinejoin="round">
-            <rect x={1120} y={900} width={420} height={FLOOR - 900} fill="#efe9dc" />
-            <path d="M 1100 910 L 1330 790 L 1560 910 Z" fill="#c9986a" />
+            <rect x={1090} y={FLOOR - 96} width={1200} height={96} rx={44} fill="#5f7a45" />
             <rect x={-520} y={1060} width={480} height={FLOOR - 1060} fill="#e6e1d6" />
           </g>
         </g>
