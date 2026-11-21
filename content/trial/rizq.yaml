@@ -14,7 +14,7 @@ validated: { by: mssnoussi92, on: 2026-11-14, what: [voice, montage, cover, publ
 # on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). « يعني رزقهم مش من جيبك… » sort (`drop`) ; l'exemple joué (le père qui
 # fait ses comptes) et « كلمة اتقدّمت… عشان قلبك يرتاح » joué (FatherPlayed) ; la narration après le verset en sous-titre.
 # Scènes validées par lui sur images le 2026-11-21 (« Je valide tout le lot ») ;
-# la vidéo refaite est à valider avant `page-files`.
+# la vidéo refaite validée par lui le 2026-11-21 (« Je valide les 5 »).
 drop: ["meaning:2"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }

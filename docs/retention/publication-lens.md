@@ -112,7 +112,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 ## Short 2 · Waiting for something that never comes? · مستني حاجة… ومش بتيجي؟
 
-`lens-short-2-drought-figure.mp4` (TikTok : `lens-short-2-drought-figure-tiktok.mp4`, couverture : `lens-short-2-drought-figure-cover.jpg`) ; `lens-short-2-drought-pov.mp4` (TikTok : `lens-short-2-drought-pov-tiktok.mp4`, couverture : `lens-short-2-drought-pov-cover.jpg`), signées `@quran.words.daily` sur TikTok · 0:45 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts
+`lens-short-2-drought-figure.mp4` (TikTok : `lens-short-2-drought-figure-tiktok.mp4`, couverture : `lens-short-2-drought-figure-cover.jpg`), signées `@quran.words.daily` sur TikTok · 0:35 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts
 
 **Facebook · Titre**
 
@@ -158,7 +158,7 @@ Waiting for something… while the clouds pass without rain?
 #الفرج #القرآن_الكريم #بص_تاني #Quran #سورة_الشورى
 ```
 
-Sur TikTok : la vidéo `lens-short-2-drought-figure-tiktok.mp4` ou `lens-short-2-drought-pov-tiktok.mp4`, signée `@quran.words.daily`.
+Sur TikTok : la vidéo `lens-short-2-drought-figure-tiktok.mp4`, signée `@quran.words.daily`.
 
 **TikTok · Titre**
 

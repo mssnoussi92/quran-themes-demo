@@ -4,7 +4,7 @@ Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la 
 
 ## Short 1 · Two words swapped places… why? · كلمتين اتبدّلوا… ليه؟
 
-`farq-short-1-rizq.mp4` (TikTok : `farq-short-1-rizq-tiktok.mp4`, signée `@quran.words.daily`) · 1:33 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `farq-short-1-rizq-cover.jpg`
+`farq-short-1-rizq.mp4` (TikTok : `farq-short-1-rizq-tiktok.mp4`, signée `@quran.words.daily`) · 1:29 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `farq-short-1-rizq-cover.jpg`
 
 **Facebook · Titre**
 

@@ -4,7 +4,7 @@ Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la 
 
 ## Short 1 · A word in the Quran… that might describe you · كلمة في القرآن… يمكن توصفك
 
-`kalima-short-1-kanud.mp4` (TikTok : `kalima-short-1-kanud-tiktok.mp4`, signée `@quran.words.daily`) · 1:28 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `kalima-short-1-kanud-cover.jpg`
+`kalima-short-1-kanud.mp4` (TikTok : `kalima-short-1-kanud-tiktok.mp4`, signée `@quran.words.daily`) · 1:22 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `kalima-short-1-kanud-cover.jpg`
 
 **Facebook · Titre**
 
@@ -227,7 +227,7 @@ Footage: Pixabay (Felix-Mittermeier) · Ambience: BigSoundBank (Joseph Sardin)
 
 ## Short 3 · A word the Quran explains itself… and gives its cure · كلمة شرحها القرآن بنفسه… وكتب علاجها
 
-`kalima-short-3-haluu.mp4` (TikTok : `kalima-short-3-haluu-tiktok.mp4`, signée `@quran.words.daily`) · 1:19 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `kalima-short-3-haluu-cover.jpg`
+`kalima-short-3-haluu.mp4` (TikTok : `kalima-short-3-haluu-tiktok.mp4`, signée `@quran.words.daily`) · 1:01 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `kalima-short-3-haluu-cover.jpg`
 
 **Facebook · Titre**
 

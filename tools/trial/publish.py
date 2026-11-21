@@ -452,6 +452,9 @@ def main() -> None:
         # A series drawn twice (`casts`): the same texts for both drawings, each file named. The drawing the owner chose to
         # publish (`published_cast`) comes first: quran-reels publishes the first .mp4 of the line (« بص تاني », 2026-11-16: B).
         casts = film.get("casts") or []
+        # A short may keep fewer drawings than its series (`casts` of the short's file): « بص تاني » 2 keeps only B (the owner,
+        # 2026-11-21: « la retirer des fichiers », A never published): only those drawings are named, so made public.
+        casts = [c for c in casts if c in (spec.get("casts") or casts)]
         if film.get("published_cast") in casts:
             casts = [film["published_cast"]] + [c for c in casts if c != film["published_cast"]]
         files_line = (
@@ -473,7 +476,7 @@ def main() -> None:
         out += [f"## Short {n} · {sp['title']['en']} · {sp['title']['ar']}", "", files_line, "",
                 *social(handle, "facebook"),
                 *social(handle, "instagram"),
-                *([(f"Sur TikTok : la vidéo `{name}-{casts[0]}-tiktok{bed}.mp4` ou `{name}-{casts[-1]}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`." if casts else
+                *([(f"Sur TikTok : la vidéo " + " ou ".join(f"`{name}-{c}-tiktok{bed}.mp4`" for c in casts) + f", signée `{conf['handles']['tiktok']}`." if casts else
                     f"Sur TikTok : la vidéo `{name}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`."), ""] if "tiktok" in platforms else []),
                 *social(conf["handles"]["tiktok"], "tiktok"),
                 *(cards("YouTube", title, description(handle), credits, tags("youtube"),
