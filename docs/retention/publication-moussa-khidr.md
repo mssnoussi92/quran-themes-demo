@@ -4,12 +4,12 @@ Pour le film et chaque short, sur chaque plateforme, quatre textes à copier : l
 
 ## Le film · Moses and al-Khidr: what looks bad is not always bad · موسى والخضر: مش كل شر… شر
 
-`khidr-film-16x9-ambience.mp4` · 7:47 · 16:9 · YouTube · miniature : `miniature-film-16x9.jpg`
+`khidr-film-16x9-ambience.mp4` · 7:47 · 16:9 · YouTube · miniature : `khidr-film-thumbnail-boat.jpg`
 
-**YouTube · Titre (80/100)**
+**YouTube · Titre (97/100)**
 
 ```text
-Moses and al-Khidr: what looks bad is not always bad · موسى والخضر: مش كل شر… شر
+قصة موسى والخضر: مش كل شر… شر · The story of Moses and al-Khidr: what looks bad is not always bad
 ```
 
 **YouTube · Description**
