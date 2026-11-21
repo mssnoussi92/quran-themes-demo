@@ -30,6 +30,10 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 # voix, dessins, montage, ambiances ; couvertures et vignette ; textes et 4 accroches ; sources et 2 lectures) : ce short
 # tel que livré (run 44067852358 du workflow `film`), sa couverture, son texte et son accroche. Inscrit sur sa parole.
 validated: { by: mssnoussi92, on: 2026-11-17, what: [voice, montage, cover, publish, ambience] }
+# Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
+# on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). La phrase qui redit 92:5-7 sort (`drop`) ; un visage simple sur la silhouette (`face`, Qadar.tsx). Le film `qadar` ne change pas.
+# À valider sur images, puis sur la vidéo.
+drop: ["meaning:0"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 78-trial-amal

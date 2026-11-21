@@ -8,7 +8,7 @@
 import React from "react";
 import { Easing, interpolate } from "remotion";
 import { FONT } from "../fonts";
-import { Figure, LEGS, POSES, mix, walk, type Pose } from "./Lens";
+import { Figure, LEGS, POSES, mix, walk, type FigureFace, type Pose } from "./Lens";
 import type { Drawn } from "./Trial";
 
 const W = 1080;
@@ -141,7 +141,7 @@ const Book: React.FC<{ x: number; y: number; open: number; lit: number }> = ({ x
 };
 
 /** The study at night: a window, a clock, the desk, the lamp, the book, a chair; the figure sits at the desk. */
-const Study: React.FC<{ t: number; horizon: number; pose: Pose; open: number; dawn: number; minutes: number; lamp: number; px?: number; py?: number; seated?: boolean }> = ({ t, horizon, pose, open, dawn, minutes, lamp, px, py, seated = true }) => {
+const Study: React.FC<{ t: number; horizon: number; pose: Pose; open: number; dawn: number; minutes: number; lamp: number; px?: number; py?: number; seated?: boolean; face?: FigureFace }> = ({ t, horizon, pose, open, dawn, minutes, lamp, px, py, seated = true, face }) => {
   const S = 1.3;
   const floor = horizon + 120;
   const deskX = 610;
@@ -169,7 +169,7 @@ const Study: React.FC<{ t: number; horizon: number; pose: Pose; open: number; da
         <rect key={i} x={deskX - 172 + 6 * chance(i, 50)} y={top - 22 * (i + 1)} width={120 - 10 * chance(i, 51)} height={20} rx={3} fill={i % 2 ? "#1b2238" : "#232b46"} stroke={RIM} strokeWidth={1.5} strokeOpacity={0.35} />
       ))}
       <Book x={deskX - 20} y={top} open={open} lit={lamp} />
-      <Figure id="qd-fig" x={px ?? 350} y={py ?? (seated ? seat : floor - LEGS * S)} scale={S} pose={pose} rim={RIM} lit={0.6 * lamp} light={LAMP} />
+      <Figure id="qd-fig" x={px ?? 350} y={py ?? (seated ? seat : floor - LEGS * S)} scale={S} pose={pose} rim={RIM} lit={0.6 * lamp} light={LAMP} face={face} />
     </g>
   );
 };
@@ -318,7 +318,8 @@ const AmalPicture: Drawn = ({ t, show, since, horizon }) => {
   return (
     <>
       <g opacity={room}>
-        <Study t={t} horizon={horizon} pose={pose} open={Math.min(1, open)} dawn={show("dawn")} minutes={minutes} lamp={1 - 0.6 * show("dawn")} py={py} px={350 + 30 * rise} />
+        <Study t={t} horizon={horizon} pose={pose} open={Math.min(1, open)} dawn={show("dawn")} minutes={minutes} lamp={1 - 0.6 * show("dawn")} py={py} px={350 + 30 * rise}
+          face={rise > 0.3 ? "smile" : reopen > 0.5 ? "calm" : back > 0.3 || show("desk") > 0.5 ? "worried" : "neutral"} />
       </g>
       <g opacity={show("ground")}>
         <Ground t={t} horizon={horizon} trace={at.cover ? 0.7 : ramp(t, at("ground") + 0.3, at("ground") + 9)} />
@@ -335,7 +336,7 @@ const AmalPicture: Drawn = ({ t, show, since, horizon }) => {
 /** The bedroom before dawn: the bed along the floor, the night table and its phone, the window, a prayer mat.
  * `ring` makes the phone shine and shake; `turned`: the figure has turned its back to the phone (0 to 1);
  * `up`: it sits up, then stands on the mat (0 to 2). */
-const Bedroom: React.FC<{ t: number; horizon: number; dawn: number; ring: number; looked: number; turned: number; up: number; mat: number }> = ({ t, horizon, dawn, ring, looked, turned, up, mat }) => {
+const Bedroom: React.FC<{ t: number; horizon: number; dawn: number; ring: number; looked: number; turned: number; up: number; mat: number; face?: FigureFace }> = ({ t, horizon, dawn, ring, looked, turned, up, mat, face }) => {
   const floor = horizon + 140;
   const bedTop = floor - 120;
   const S = 1.25;
@@ -378,7 +379,7 @@ const Bedroom: React.FC<{ t: number; horizon: number; dawn: number; ring: number
       <rect x={694} y={bedTop + 80} width={16} height={floor - bedTop - 80} fill={INK} />
       <rect x={140} y={bedTop - 150} width={26} height={230} rx={8} fill={INK} />
       <ellipse cx={230} cy={bedTop - 6} rx={70} ry={26} fill="#151b30" />
-      <Figure id="qs-fig" x={px} y={py} scale={S} pose={pose} facing={facing} turn={turn} rim={RIM} lit={0.7 * ring * (1 - turned * 0.6)} light="#cfe0ff" />
+      <Figure id="qs-fig" x={px} y={py} scale={S} pose={pose} facing={facing} turn={turn} rim={RIM} lit={0.7 * ring * (1 - turned * 0.6)} light="#cfe0ff" face={face} />
       {/* the blanket over the lying figure, gone once it sits up */}
       <path d={`M ${300 - 130 * turned} ${bedTop + 4} Q ${300 - 110 * turned} ${bedTop - 60 - 40 * turned} ${430 - 40 * turned} ${bedTop - 64 - 16 * turned} Q 600 ${bedTop - 70} 690 ${bedTop - 10} L 700 ${bedTop + 40} L ${300 - 130 * turned} ${bedTop + 40} Z`} fill="#1a2140" stroke={RIM} strokeWidth={2} strokeOpacity={0.35} opacity={1 - sit} />
       {/* the night table and the phone */}
@@ -412,7 +413,8 @@ const ShaaPicture: Drawn = ({ t, show, since, horizon }) => {
   return (
     <>
       <g opacity={1 - close}>
-        <Bedroom t={t} horizon={horizon} dawn={dawn} ring={Math.max(ring1, ring2)} looked={looked} turned={turned} up={up} mat={unrolled} />
+        <Bedroom t={t} horizon={horizon} dawn={dawn} ring={Math.max(ring1, ring2)} looked={looked} turned={turned} up={up} mat={unrolled}
+          face={up > 1.5 ? (dawn > 0.4 ? "smile" : "calm") : looked > 0.5 ? "worried" : "neutral"} />
       </g>
       <g opacity={close}>
         {/* close on the window: the last stars, the first light along the roofs */}
@@ -485,7 +487,7 @@ const ShopMemory: React.FC<{ x: number; y: number; shown: number; t: number }> =
 
 /** A bedroom at three in the morning: a small window and its curtains, the clock at 3:00, the bed on the right; the
  * figure sits on its edge, the head in its hands. */
-const Insomnia: React.FC<{ t: number; horizon: number; pose: Pose }> = ({ t, horizon, pose }) => {
+const Insomnia: React.FC<{ t: number; horizon: number; pose: Pose; face?: FigureFace }> = ({ t, horizon, pose, face }) => {
   const floor = horizon + 140;
   const bedTop = floor - 120;
   const S = 1.25;
@@ -503,7 +505,7 @@ const Insomnia: React.FC<{ t: number; horizon: number; pose: Pose }> = ({ t, hor
       <rect x={1040} y={bedTop - 150} width={26} height={230} rx={8} fill={INK} />
       <ellipse cx={960} cy={bedTop - 6} rx={70} ry={26} fill="#151b30" />
       <path d={`M 700 ${bedTop + 4} Q 820 ${bedTop - 30} 1000 ${bedTop - 4} L 1010 ${bedTop + 40} L 700 ${bedTop + 40} Z`} fill="#1a2140" />
-      <Figure id="ql-fig-room" x={560} y={bedTop + 8} scale={S} pose={pose} facing={-1} rim={RIM} lit={0.25} light="#cfe0ff" />
+      <Figure id="ql-fig-room" x={560} y={bedTop + 8} scale={S} pose={pose} facing={-1} rim={RIM} lit={0.25} light="#cfe0ff" face={face} />
     </g>
   );
 };
@@ -554,7 +556,7 @@ const LawPicture: Drawn = ({ t, show, since, horizon }) => {
     <>
       <g opacity={street}>
         <Street t={t} horizon={horizon} dawn={dawn} lamp={1 - dawn} tilt={0} />
-        <Figure id="ql-fig" x={px} y={py} scale={S} pose={pose} facing={1} rim={RIM} lit={0.5 * (1 - dawn)} light={LAMP} />
+        <Figure id="ql-fig" x={px} y={py} scale={S} pose={pose} facing={1} rim={RIM} lit={0.5 * (1 - dawn)} light={LAMP} face={go > 0.05 ? "smile" : "calm"} />
       </g>
       <g opacity={show("night")}>
         {/* close on the window of the room: the sky of three in the morning, the moon */}
@@ -562,7 +564,7 @@ const LawPicture: Drawn = ({ t, show, since, horizon }) => {
         <Window id="ql-near" x={90} y={horizon - 980} w={900} h={1000} t={t} dawn={0} moon={false} />
       </g>
       <g opacity={room}>
-        <Insomnia t={t} horizon={horizon} pose={roomPose} />
+        <Insomnia t={t} horizon={horizon} pose={roomPose} face="worried" />
         <ShopMemory x={540} y={horizon - 300} shown={memory} t={t} />
         <Ifs t={t} horizon={horizon} count={count} fade={0} />
       </g>

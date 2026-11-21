@@ -83,7 +83,7 @@ const down = (deg: number): [number, number] => [Math.sin(rad(deg)), Math.cos(ra
  * owner, 2026-11-20 (audit): a face on the anonymous silhouette when the feeling shows the difference (his rule of
  * 2026-11-19). */
 export type FigureFace = "neutral" | "worried" | "calm" | "smile" | "shock";
-const LightFace: React.FC<{ face: FigureFace; color: string }> = ({ face, color }) => {
+export const LightFace: React.FC<{ face: FigureFace; color: string }> = ({ face, color }) => {
   const c = 9;
   const line = (d: string, w = 4) => <path d={d} stroke={color} strokeWidth={w} fill="none" strokeLinecap="round" strokeLinejoin="round" />;
   const eye = (dx: number, rx = 3.6, ry = 4.8) => <ellipse cx={c + dx} cy={-4} rx={rx} ry={ry} fill={color} />;
