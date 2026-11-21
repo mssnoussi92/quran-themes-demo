@@ -11,7 +11,12 @@ script_validated: { by: mssnoussi92, on: 2026-11-12 }
 # `film` (run 18) et envoyées dans la conversation : la voix D, le montage (le ciel généré, les dessins, les photos de
 # l'ESA, la frise, la signature 41:53), la couverture, les textes de publication (docs/retention/publication-signs.md),
 # l'ambiance ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
+# La vidéo refaite (audit du 2026-11-20) validée par lui le 2026-11-21 (« Je valide les 7 »).
 validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
+# Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
+# on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). La fin qui parle au spectateur jouée (« اللي وسّع السما… قادر
+# يوسّع عليك » : la pièce étroite s'ouvre sur le ciel, Played.tsx) ; rien d'autre ne change. Scènes validées par lui sur images le même jour (« Je valide tout le lot ») ;
+# la vidéo refaite est à valider avant `page-files`.
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 54-trial-universe     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
@@ -79,8 +84,15 @@ segments:
     lines:
       - ar: "والسعدي قال كمان: ربنا بيوسّع على عباده في الرزق."
         en: "And as-Sa'di adds: God widens the provision of His servants."
+  # « اللي وسّع السما… قادر يوسّع عليك », joué (audit du 2026-11-20)
+  - narration: close-you
+    scene: walls
+    lines:
       - ar: "اللي وسّع السما… قادر يوسّع عليك."
         en: "The One who widened the sky… can widen things for you."
+  - narration: close-next
+    scene: dawn
+    lines:
       - ar: "ده كان عن الكون كله… الحلقة الجاية: عن صدرك… لما يضيق."
         en: "That was the whole universe… next: your chest… when it tightens."
       - ar: "تابعنا عشان الآية الجاية."

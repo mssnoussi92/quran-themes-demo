@@ -22,7 +22,13 @@ script_validated: { by: mssnoussi92, on: 2026-11-15 }
 # leurs versions TikTok et couvertures, du film (6:11), de sa miniature et des textes à coller : lu comme les vidéos
 # telles que livrées (la voix, avec « ربنا يأويه » signalé à écouter ; les dessins ; les ambiances ; les couvertures), les
 # textes et leurs accroches, et ses dix passages de tafsir, passés à `validated`. Inscrit sur sa parole.
+# La vidéo refaite (audit du 2026-11-20) validée par lui le 2026-11-21 (« Je valide les 7 »).
 validated: { by: mssnoussi92, on: 2026-11-16, what: [voice, montage, cover, publish, ambience] }
+# Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
+# on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). L'exemple joué (l'antisèche refusée ; annonce ; la fin « ادعي بدعوتهم » jouée, Played.tsx et PLAYED
+# de Trial.tsx) ; la narration après le verset en sous-titre ; aucune réplique coupée. Les jeunes de la caverne ne sont
+# jamais dessinés ; le film `kahf` ne change pas. Scènes validées par lui sur images le même jour (« Je valide tout le lot ») ;
+# la vidéo refaite est à valider avant `page-files`.
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 74-trial-refuge
@@ -73,7 +79,7 @@ segments:
       - ar: "ما اعتمدوش على نفسهم… ولا على حد. وعشان كده… ربنا استجاب لهم."
         en: "They relied neither on themselves… nor on anyone. And that is why… God answered them."
   - narration: example
-    scene: cave
+    scene: cheat
     lines:
       - ar: "زي لما تبقى الوحيد في الشلة… اللي رافض حاجة غلط."
         en: "Like being the only one in your group… saying no to something wrong."

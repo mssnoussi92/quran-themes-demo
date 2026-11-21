@@ -54,7 +54,7 @@ Footage: Pixabay (josefgadermaier, AttilaPergel, FlickrVideos, TeeFarm) · Ambie
 
 ## Short 1 · The fate of a whole people… at his word · مصير قوم كاملين… بكلمة منه!
 
-`qarnayn-short-1-west.mp4` (TikTok : `qarnayn-short-1-west-tiktok.mp4`, signée `@quran.words.daily`) · 2:05 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qarnayn-short-1-west-cover.jpg` · version courte pour Facebook et Instagram : `qarnayn-short-1-west-cut.mp4`, 1:13
+`qarnayn-short-1-west.mp4` (TikTok : `qarnayn-short-1-west-tiktok.mp4`, signée `@quran.words.daily`) · 1:57 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qarnayn-short-1-west-cover.jpg` · version courte pour Facebook et Instagram : `qarnayn-short-1-west-cut.mp4`, 1:21
 
 **Facebook · Titre**
 
@@ -163,7 +163,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 
 ## Short 2 · They offered him money… he refused · عرضوا عليه فلوس… ورفض!
 
-`qarnayn-short-2-tribute.mp4` (TikTok : `qarnayn-short-2-tribute-tiktok.mp4`, signée `@quran.words.daily`) · 1:54 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qarnayn-short-2-tribute-cover.jpg` · version courte pour Facebook et Instagram : `qarnayn-short-2-tribute-cut.mp4`, 1:13
+`qarnayn-short-2-tribute.mp4` (TikTok : `qarnayn-short-2-tribute-tiktok.mp4`, signée `@quran.words.daily`) · 1:44 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qarnayn-short-2-tribute-cover.jpg` · version courte pour Facebook et Instagram : `qarnayn-short-2-tribute-cut.mp4`, 1:21
 
 **Facebook · Titre**
 
@@ -272,7 +272,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 
 ## Short 3 · He built the barrier… and said: not from me · بنى السد… وقال: مش مني!
 
-`qarnayn-short-3-barrier.mp4` (TikTok : `qarnayn-short-3-barrier-tiktok.mp4`, signée `@quran.words.daily`) · 1:51 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qarnayn-short-3-barrier-cover.jpg` · version courte pour Facebook et Instagram : `qarnayn-short-3-barrier-cut.mp4`, 1:19
+`qarnayn-short-3-barrier.mp4` (TikTok : `qarnayn-short-3-barrier-tiktok.mp4`, signée `@quran.words.daily`) · 1:51 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qarnayn-short-3-barrier-cover.jpg` · version courte pour Facebook et Instagram : `qarnayn-short-3-barrier-cut.mp4`, 1:26
 
 **Facebook · Titre**
 

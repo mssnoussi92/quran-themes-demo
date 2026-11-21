@@ -104,6 +104,7 @@ chapters:
       - { verse: quran.18.88, scene: just }
       - { reuse: west.meaning }
       - { reuse: west.depth, scene: land }
+      - { reuse: west.depth-us, scene: land }   # la 2e réplique de `depth`, séparée dans le short le 2026-11-20 (jouée là) : le film ne change pas
       - { reuse: west.example }
       - { reuse: west.close, lines: [0, 1], scene: just, subscribe: true }
   - id: east
@@ -137,6 +138,7 @@ chapters:
       - { verse: quran.18.95, scene: refused }
       - { reuse: tribute.meaning }
       - { reuse: tribute.depth, scene: land }
+      - { reuse: tribute.depth-us, scene: land }   # la 2e réplique de `depth`, séparée dans le short le 2026-11-20 (jouée là) : le film ne change pas
       - { reuse: tribute.example }
       - { reuse: tribute.close, lines: [0, 1], scene: refused }
   - id: barrier
@@ -151,6 +153,7 @@ chapters:
       - { verse: quran.18.98 }
       - { reuse: barrier.meaning }
       - { reuse: barrier.depth, scene: land }
+      - { reuse: barrier.depth-us, scene: land }   # la 2e réplique de `depth`, séparée dans le short le 2026-11-20 (jouée là) : le film ne change pas
       - { reuse: barrier.example }
       - { reuse: barrier.close, lines: [0, 1], scene: done }
   - id: insha

@@ -229,12 +229,29 @@ def rests_on(ids: list[str], sources: dict, policy: dict) -> str:
     return "d'après : " + " ; ".join(out) + " · référence écrite à l'écran, jamais lue"
 
 
-def narration(lines: list[dict]) -> list[str]:
+def narration(lines: list[dict], dropped: set[int] = frozenset()) -> list[str]:
+    """The lines of a narration; a line its short's `drop` leaves out (the take says it, no video plays it) is struck."""
     out = []
-    for line in lines:
+    for i, line in enumerate(lines):
+        if i in dropped:
+            out += [f"- ~~{line['ar']}~~  ", f"  ~~*{line['en']}*~~ · **coupée** (`drop` : dans la prise, dans aucune vidéo)"]
+            continue
         mark = f"reprise de `{line['kept']}`" if line.get("kept") else "**nouvelle**"
         out += [f"- {line['ar']}  ", f"  *{line['en']}* · {mark}"]
     return out
+
+
+def left_out(spec: dict) -> tuple[set[str], set[tuple[str, int]]]:
+    """The narration segments and the lines (`name:i`) the short's `drop` leaves out of every version (prepare.py)."""
+    names = {seg["narration"] for seg in spec["segments"] if "narration" in seg}
+    whole, lines = set(), set()
+    for item in map(str, spec.get("drop") or []):
+        name, _, at = item.rpartition(":")
+        if item in names:
+            whole.add(item)
+        elif name in names and at.isdigit():
+            lines.add((name, int(at)))
+    return whole, lines
 
 
 def main() -> None:
@@ -260,13 +277,18 @@ def main() -> None:
     for n, (name, spec) in enumerate(shorts.items(), 1):
         t, recited, read, new, kept = LEAD, 0.0, 0.0, 0, 0
         body = []
+        gone, struck = left_out(spec)
         for seg in spec["segments"]:
             if "narration" in seg:
-                seconds = max(spoken(seg["lines"]), seg.get("hold") or 0)
+                dropped = set(range(len(seg["lines"]))) if seg["narration"] in gone else {i for name, i in struck if name == seg["narration"]}
+                played = [l for i, l in enumerate(seg["lines"]) if i not in dropped]
+                seconds = max(spoken(played), seg.get("hold") or 0) if played else 0.0
                 body += [f"**{stamp(t)} · {'texte à l’écran, sans voix' if seg.get('silent') else 'narration'}** (image : `{seg['scene']}`)"
-                         + (f" · {rests_on(seg['sources'], sources, policy)}" if seg.get("sources") else ""), *narration(seg["lines"]), ""]
-                new += sum(1 for l in seg["lines"] if not l.get("kept"))
-                kept += sum(1 for l in seg["lines"] if l.get("kept"))
+                         + (f" · {rests_on(seg['sources'], sources, policy)}" if seg.get("sources") else ""), *narration(seg["lines"], dropped), ""]
+                new += sum(1 for l in played if not l.get("kept"))
+                kept += sum(1 for l in played if l.get("kept"))
+                if not played:
+                    continue
             elif "verses" in seg:
                 text, seconds = passage(seg["verses"], sources, cuts, seg.get("upto"))
                 body += [f"**{stamp(t)}** · {text}", ""]

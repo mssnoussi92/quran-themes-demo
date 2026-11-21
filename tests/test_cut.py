@@ -115,3 +115,25 @@ def test_a_page_of_elsewhere_lists_its_shorts_signed_with_its_name_and_their_cov
                                      encoding="utf-8")
     with pytest.raises(SystemExit, match="not among the shorts"):
         videos.listing("f", "D", "page")
+
+
+def test_a_top_level_drop_leaves_lines_out_of_the_full_version_only():
+    """`drop` of a short (the owner, 2026-11-20): the lines stay in the take and the voice text, the full version and its
+    TikTok twin do not play them; the short version keeps its own list (`cut.drop`), validated on its own."""
+    spec = {**SPEC, "drop": ["open:1", "quran.1.1"]}
+    assert prepare.left_out(spec) == (set(), {("open", 1)}, {"quran.1.1"})
+    assert prepare.left_out(SPEC) == (set(), set(), set())
+    both = {**spec, "cut": {"drop": ["close"]}}
+    assert prepare.parse_drop(both) == ({"close"}, set(), set())
+
+
+def test_a_top_level_drop_that_matches_nothing_is_refused():
+    with pytest.raises(SystemExit, match="drop « open:9 » matches no"):
+        prepare.left_out({**SPEC, "drop": ["open:9"]})
+
+
+def test_the_script_strikes_the_dropped_lines():
+    script = pytest.importorskip("script")
+    out = "\n".join(script.narration([{"ar": "أ.", "en": "a"}, {"ar": "ب.", "en": "b"}], {1}))
+    assert "~~ب.~~" in out and "**coupée**" in out and "~~أ.~~" not in out
+    assert script.left_out({**SPEC, "drop": ["close", "open:2"]}) == ({"close"}, {("open", 2)})

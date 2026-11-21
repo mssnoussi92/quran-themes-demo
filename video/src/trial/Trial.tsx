@@ -10,6 +10,8 @@ import { FONT, loadFonts } from "../fonts";
 import { subtitleChunks } from "../templates/Subtitles";
 import type { WordTiming } from "../types";
 import { Caravan, Footprints, Gate, Lantern, Palm, Purse, Rain, Sermon, Stars, Track, trackAt } from "./Ayah";
+import { DoorPlayed, PrayPlayed, RumorPlayed, type Played } from "./AyahPlayed";
+import { BalconyPlayed, BedPlayed, BreathPlayed, CheatPlayed, CupPlayed, DayPlayed, MirrorPlayed, OfficePlayed, SalaryPlayed, StagePlayed, WallsPlayed, WorkPlayed, WorkshopPlayed } from "./Played";
 import { Boat, Fleet } from "./Boat";
 import { Call, Niche, Whale } from "./Dua";
 import { House, Land } from "./Home";
@@ -338,6 +340,14 @@ const BarrierPicture: Drawn = ({ t, show, since, horizon }) => {
 
 const CLAMP = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
+/** A life example played on a drawn set of its own (AyahPlayed.tsx), over the landscape while its scene is shown. */
+const played = (Set: Played, id: string, t: number, show: (id: string) => number, since: (id: string) => number, phrase?: (id: string, n: number) => number) => {
+  const o = show(id);
+  if (o <= 0.001) return null;
+  const from = since(id);
+  return <g opacity={o}><Set u={t - from} t={t} at={(n) => (phrase ? phrase(id, n) : from + 2 + 1.5 * n) - from} /></g>;
+};
+
 /** « آية وحكايتها », the caravan (62:11), at midday (the Friday prayer): where the sermon is given, in full daylight
  * (`sermon`: palm trunks, a roof of leaves, the steps of a minbar); the loaded camels come in while the verse is
  * recited and tracks leave the shade for them (`caravan`, `twelve`); any other scene (`phone`): the desert alone, the
@@ -373,7 +383,7 @@ const CaravanPicture: Drawn = ({ t, show, since, horizon }) => {
  * lifts and the filmed dawn is there (`dawn`); then three lights, one for each thing the surah recalls, each when
  * its verse is recited (`day`: the house lit, a shelter; a lantern, a guidance; a palm heavy with dates, a
  * provision). They stay lit when the night comes back. */
-const DuhaPicture: Drawn = ({ t, show, since, horizon }) => {
+const DuhaPicture: Drawn = ({ t, show, since, horizon, phrase }) => {
   const night = show("night");
   const day = t - since("day");
   const lit = (at: number) => interpolate(day, [at, at + 1.4], [0, 1], CLAMP);
@@ -390,6 +400,7 @@ const DuhaPicture: Drawn = ({ t, show, since, horizon }) => {
       </g>
       <Lantern id="d-lantern" x={590} y={horizon + 28} scale={0.95} t={t} lit={lit(4.2)} rim="#ffb9a0" />
       <Palm id="d-palm" x={880} y={horizon + 16} scale={0.95} t={t} fruit={lit(9.16)} rim="#ffb9a0" />
+      {played(PrayPlayed, "pray", t, show, since, phrase)}
     </>
   );
 };
@@ -397,13 +408,14 @@ const DuhaPicture: Drawn = ({ t, show, since, horizon }) => {
 /** « آية وحكايتها », Az-Zumar 39:53: a road in the dark, a gate at its end, closed (`road`); the rain comes
  * (`rain`, while the verse is recited and its meaning said); the gate opens and its light pours down the road
  * (`gate`). Nobody on the road: the viewer is the one who comes back. */
-const HopePicture: Drawn = ({ t, show, horizon }) => (
+const HopePicture: Drawn = ({ t, show, since, horizon, phrase }) => (
   <>
     <Land id="l-hope" horizon={horizon} rim="#9fb6e6" path />
     <Gate id="g-hope" x={490} y={horizon + 24} scale={0.92} t={t} open={show("gate")} />
     <g opacity={show("rain")}>
       <Rain t={t} />
     </g>
+    {played(DoorPlayed, "door", t, show, since, phrase)}
   </>
 );
 
@@ -411,7 +423,7 @@ const HopePicture: Drawn = ({ t, show, horizon }) => (
  * purse stays at the door of the first, the track is broken in its middle, the second house dark (the oath); `back`:
  * the track closes, the purse goes along it, and the window of the second house lights when it arrives (the
  * answer); `whole`: the track whole, the purse at the second door, both lit. Nobody is drawn: the houses are kin. */
-const ForgivePicture: Drawn = ({ t, show, since, horizon }) => {
+const ForgivePicture: Drawn = ({ t, show, since, horizon, phrase }) => {
   const rim = "#c9d4ee";
   const from: [number, number] = [276, horizon + 46];
   const c1: [number, number] = [380, horizon + 168];
@@ -442,6 +454,7 @@ const ForgivePicture: Drawn = ({ t, show, since, horizon }) => {
       </g>
       <Track from={from} c1={c1} c2={c2} to={to} gap={gap} rim={rim} />
       <Purse id="f-purse" x={px} y={py + 10} scale={1.05} t={t} />
+      {played(RumorPlayed, "rumor", t, show, since, phrase)}
     </>
   );
 };
@@ -467,6 +480,60 @@ export const PICTURES: Record<string, Drawn> = {
   ...SAHIB_PICTURES,
 };
 
+/** Scenes played by stick figures over a short's own picture (the audit of 2026-11-20, docs/scripts/audit-apres-verset.md:
+ * « sur toute la vidéo, si on peut jouer une scène, on la joue »). Each entry is drawn while its `scene` is shown; with
+ * `from`, only from the phrase `from` of the first narration on that scene to the end of that narration: an « annonce »,
+ * a few seconds of the played scene on the opening line that speaks to the viewer, the story's picture before it. */
+type PlayedAt = { scene: string; set: Played; variant?: string; from?: number; to?: number; card?: boolean };
+export const PLAYED: Record<string, PlayedAt[]> = {
+  caravan: [{ scene: "work", set: WorkPlayed }],
+  west: [{ scene: "sun", set: OfficePlayed, variant: "tease", from: 5, card: true }, { scene: "office-us", set: OfficePlayed, variant: "us" }, { scene: "office", set: OfficePlayed, variant: "ex" }],
+  tribute: [{ scene: "pass", set: WorkshopPlayed, variant: "tease", from: 7, card: true }, { scene: "workshop-us", set: WorkshopPlayed, variant: "us" }, { scene: "workshop", set: WorkshopPlayed, variant: "ex" }],
+  barrier: [{ scene: "blocks", set: StagePlayed, variant: "tease", from: 7, card: true }, { scene: "stage-us", set: StagePlayed, variant: "us" }, { scene: "stage", set: StagePlayed, variant: "ex" }],
+  duha: [{ scene: "night", set: PrayPlayed, variant: "tease", from: 8, card: true }, { scene: "pray-us", set: PrayPlayed, variant: "us" }, { scene: "pray-count", set: PrayPlayed, variant: "count" }],
+  hope: [{ scene: "road", set: DoorPlayed, variant: "tease", from: 8, card: true }],
+  forgive: [{ scene: "cut", set: RumorPlayed, variant: "tease", from: 8, card: true }],
+  universe: [{ scene: "walls", set: WallsPlayed }],
+  refuge: [{ scene: "leave", set: CheatPlayed, variant: "tease", from: 6, card: true }, { scene: "cheat", set: CheatPlayed, variant: "ex" }, { scene: "dawn", set: CheatPlayed, variant: "dua", from: 0, to: 4 }],
+  sunpath: [{ scene: "rise", set: BalconyPlayed, variant: "tease", from: 5, card: true }, { scene: "balcony", set: BalconyPlayed, variant: "ex" }],
+  awake: [{ scene: "years", set: BedPlayed, variant: "tease", from: 5, card: true }, { scene: "bed", set: BedPlayed, variant: "ex" }],
+  sky: [{ scene: "open", set: BreathPlayed, from: 5, to: 6 }],
+  kanud: [{ scene: "word", set: DayPlayed, variant: "tease", from: 1, to: 3, card: true }, { scene: "ledger", set: DayPlayed, variant: "ledger" }, { scene: "day", set: DayPlayed, variant: "day" }, { scene: "count", set: DayPlayed, variant: "count" }],
+  stone: [{ scene: "cup", set: CupPlayed }],
+  haluu: [{ scene: "salary", set: SalaryPlayed, variant: "salary" }, { scene: "cure", set: SalaryPlayed, variant: "cure" }],
+  womb: [{ scene: "mirror", set: MirrorPlayed, from: 0, to: 3 }],
+};
+
+const PlayedLayer: React.FC<{ p: PlayedAt; t: number; segments: Segment[]; show: (id: string) => number; since: (id: string) => number; phrase: (id: string, n: number) => number }> = ({ p, t, segments, show, since, phrase }) => {
+  let o: number;
+  let origin: number;
+  if (p.from !== undefined) {
+    const seg = segments.find((s) => s.scene === p.scene && s.kind === "narration");
+    if (!seg) return null;
+    origin = phrase(p.scene, p.from);
+    const end = p.to !== undefined ? phrase(p.scene, p.to) - 0.2 : seg.start + seg.seconds;
+    o = interpolate(t, [origin - 0.3, origin, end, end + 0.35], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  } else {
+    o = show(p.scene);
+    origin = since(p.scene);
+  }
+  if (o <= 0.001) return null;
+  const Set = p.set;
+  const drawn = <Set u={t - origin} t={t} at={(n) => phrase(p.scene, n) - origin} variant={p.variant} />;
+  if (!p.card) return <g opacity={o}>{drawn}</g>;
+  // An annonce plays in a card under the opening's large text (which ends near 790) and above the translation (1490):
+  // the part of the set where its figures stand (x 40 to 1040, y 690 to 1357), at nine tenths, framed in gold.
+  const id = `card-${p.scene}-${p.variant ?? ""}`;
+  return (
+    <g opacity={o}>
+      <rect x={82} y={824} width={916} height={616} rx={38} fill="#000" opacity={0.35} />
+      <clipPath id={id}><rect x={90} y={830} width={900} height={600} rx={32} /></clipPath>
+      <g clipPath={`url(#${id})`}><g transform="translate(90 830) scale(0.9) translate(-40 -690)">{drawn}</g></g>
+      <rect x={90} y={830} width={900} height={600} rx={32} fill="none" stroke={GOLD} strokeWidth={6} />
+    </g>
+  );
+};
+
 /** What a short draws above its veil, under its texts, outside the slowly growing picture: a timeline, a badge,
  * anything that must not move. None by default; a short registers its own here. */
 export const OVERLAYS: Record<string, Drawn> = { ...SIGNS_OVERLAYS, ...KALIMA_OVERLAYS, ...COUNT_OVERLAYS, ...FARQ_OVERLAYS, ...MAP_OVERLAYS, ...SUAL_OVERLAYS, ...QUIZ_OVERLAYS, ...SAHW_OVERLAYS, ...SAHIB_OVERLAYS };
@@ -490,6 +557,11 @@ export type Layout = {
   credit: { top: number; size: number };
   /** The length a hadith's text is comfortable at, at its largest size (90 when not said: the film). */
   readingComfortable?: number;
+  /** A narration after the first verse written as a subtitle, low and smaller, the translation under it: the picture
+   * keeps the middle of the frame (the owner, 2026-11-20, on « آية وحكايتها »: « on écrit ce que le narrateur dit »).
+   * `top`: the top of the Arabic; `size`: its largest size (smaller to stay on two rows); `sub`: the top of the English.
+   * The call to follow, the last line of the short, keeps its large place: it is a card, not a subtitle. */
+  caption?: { top: number; size: number; sub: number };
 };
 export const PORTRAIT: Layout = {
   width: W, left: 70, right: 70, top: 340, size: 104, height: 450, verseTop: 316, verseSize: 66, verseComfortable: 150,
@@ -499,7 +571,14 @@ export const PORTRAIT: Layout = {
 /** A short that needs its texts elsewhere (a timeline above the picture, a narrower column) says so here: what it
  * gives is merged over PORTRAIT (`sub` and `credit` one level deeper, so that `sub: { top }` keeps the rest). */
 export type LayoutOverride = Omit<Partial<Layout>, "sub" | "credit"> & { sub?: Partial<Layout["sub"]>; credit?: Partial<Layout["credit"]> };
-export const LAYOUTS: Record<string, LayoutOverride> = { ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS, ...DHIKR_LAYOUTS, ...SAHW_LAYOUTS, ...SAHIB_LAYOUTS };
+/** « آية وحكايتها », the shorts redone on 2026-11-20 (the first, published, keeps its texts): the narration after the
+ * verse is a subtitle under the drawings, which stand on the horizon (1330) and rise to about 1170. */
+const AYAH_CAPTION: LayoutOverride = { caption: { top: 1392, size: 56, sub: 1584 } };
+/** Dhul-Qarnayn's west: its dwellings stand on a horizon at 1420, down to about 1450: the subtitle goes lower. */
+const WEST_CAPTION: LayoutOverride = { caption: { top: 1474, size: 52, sub: 1640 } };
+export const LAYOUTS: Record<string, LayoutOverride> = { duha: AYAH_CAPTION, hope: AYAH_CAPTION, forgive: AYAH_CAPTION,
+  caravan: AYAH_CAPTION, west: WEST_CAPTION, tribute: AYAH_CAPTION, barrier: AYAH_CAPTION, refuge: AYAH_CAPTION, sunpath: AYAH_CAPTION, awake: AYAH_CAPTION,
+  kanud: AYAH_CAPTION, stone: AYAH_CAPTION, haluu: AYAH_CAPTION, ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS, ...DHIKR_LAYOUTS, ...SAHW_LAYOUTS, ...SAHIB_LAYOUTS };
 const layoutOf = (trial: string): Layout => {
   const own = LAYOUTS[trial];
   return own ? { ...PORTRAIT, ...own, sub: { ...PORTRAIT.sub, ...own.sub }, credit: { ...PORTRAIT.credit, ...own.credit } } : PORTRAIT;
@@ -530,7 +609,14 @@ const subSize = (text: string, layout: Layout) => {
 const FORMULAS = ["صلى الله عليه وسلم", "عليه السلام", "عليهم السلام", "رضي الله عنه", "رضي الله عنها", "رضي الله عنهم"];
 const whole = (text: string) => FORMULAS.reduce((out, formula) => out.split(formula).join(formula.replace(/ /g, " ")), text);
 
-export const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean; handle: string; layout?: Layout }> = ({ seg, t, last, handle, layout = PORTRAIT }) => {
+/** The size of a subtitle: its largest, or smaller so that the line stays on two rows. */
+const captionSize = (text: string, layout: Layout, largest: number) => {
+  const width = layout.width - layout.left - layout.right;
+  for (let size = largest; size > 40; size -= 2) if (Math.ceil((text.length * 0.41 * size) / (width * 0.94)) <= 2) return size;
+  return 40;
+};
+
+export const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean; handle: string; layout?: Layout; low?: boolean }> = ({ seg, t, last, handle, layout = PORTRAIT, low = false }) => {
   const { fps } = useVideoConfig();
   const local = t - seg.start;
   const index = seg.lines.findIndex((l, i) => local < l.end || i === seg.lines.length - 1);
@@ -541,6 +627,31 @@ export const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean;
   const opening = seg.start < 1 && index === 0;
   const show = interpolate(local, [opening ? -10 : lineStart - 0.25, opening ? -9 : lineStart - 0.05, lineEnd - 0.2, lineEnd], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const size = narrationSize(line.phrases.map((p) => p.text), layout);
+  const caption = low && layout.caption && !(last && index === seg.lines.length - 1) ? layout.caption : null;
+  if (caption) {
+    // A subtitle: the phrases on one row after the other, each as the voice reaches it, the last one in gold.
+    const small = captionSize(line.phrases.map((p) => p.text).join(" "), layout, caption.size);
+    return (
+      <>
+        <div dir="rtl" lang="ar" style={{ position: "absolute", top: caption.top, left: layout.left, right: layout.right, textAlign: "center", opacity: show, fontFamily: FONT.arabic, fontWeight: 700, fontSize: small, lineHeight: 1.45, color: "#fff", textShadow: SHADOW, textWrap: "balance" }}>
+          {line.phrases.map((phrase, i) => {
+            const k = spring({ frame: Math.round((local - phrase.start + 0.1) * fps), fps, config: { damping: 200 }, durationInFrames: 8 });
+            const point = line.phrases.length > 1 && i === line.phrases.length - 1;
+            return <span key={i} style={{ opacity: k, color: point ? GOLD : "#fff" }}>{whole(phrase.text)}{i < line.phrases.length - 1 ? " " : ""}</span>;
+          })}
+        </div>
+        <div lang="en" style={{ position: "absolute", top: caption.sub, left: layout.sub.left, right: layout.sub.right, textAlign: "center", opacity: show, fontFamily: ENGLISH, fontStyle: "italic", fontSize: Math.min(38, layout.sub.size, Math.floor((2 * (layout.width - layout.sub.left - layout.sub.right) * 0.9) / (0.49 * Math.max(1, line.en.length)))), lineHeight: 1.35, color: "rgba(255,255,255,.92)", textShadow: SHADOW, textWrap: "balance" }}>
+          <English text={line.en} />
+        </div>
+        {seg.refs ? (
+          <div style={{ position: "absolute", top: layout.credit.top, left: layout.left, right: layout.right, textAlign: "center", fontSize: layout.credit.size, color: "rgba(255,255,255,.62)", textShadow: SHADOW, opacity: interpolate(local, [0, 0.4, seg.seconds - 0.1, seg.seconds + 0.25], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
+            <span dir="rtl" lang="ar" style={{ fontFamily: FONT.arabic, fontSize: layout.credit.size * 1.15 }}>{seg.refs.ar}</span>
+            <span style={{ fontFamily: FONT.latin }}>{`  ·  ${seg.refs.en}`}</span>
+          </div>
+        ) : null}
+      </>
+    );
+  }
   return (
     <>
       <div dir="rtl" lang="ar" style={{ position: "absolute", top: layout.top, left: layout.left, right: layout.right, textAlign: "center", opacity: show, fontFamily: FONT.arabic, fontWeight: 700, fontSize: size, lineHeight: 1.5, color: "#fff", textShadow: SHADOW }}>
@@ -733,6 +844,7 @@ export const Trial: React.FC<TrialProps> = ({ data, platform, cast }) => {
         <Clip src={data.clip} clipSeconds={data.clip_seconds} picture={picture} />
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: "absolute", inset: 0 }}>
           <Drawing t={t} show={show} since={since} horizon={horizon} phrase={phrase} cast={cast} />
+          {(PLAYED[data.trial] ?? []).map((p, i) => <PlayedLayer key={i} p={p} t={t} segments={data.segments} show={show} since={since} phrase={phrase} />)}
         </svg>
       </AbsoluteFill>
       <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(4,7,20,${0.78 * (picture.veil ?? 1)}) 0%, rgba(4,7,20,${0.45 * (picture.veil ?? 1)}) 30%, rgba(4,7,20,.05) 52%, rgba(4,7,20,.38) 100%)` }} />
@@ -751,7 +863,8 @@ export const Trial: React.FC<TrialProps> = ({ data, platform, cast }) => {
         ) : null,
       )}
       {current.kind === "narration" ? (
-        <NarrationText seg={current} t={t} last={current === data.segments[data.segments.length - 1]} handle={handle} layout={layout} />
+        <NarrationText seg={current} t={t} last={current === data.segments[data.segments.length - 1]} handle={handle} layout={layout}
+          low={data.segments.findIndex((s) => s.kind === "verse") >= 0 && data.segments.indexOf(current) > data.segments.findIndex((s) => s.kind === "verse")} />
       ) : current.kind === "verse" ? (
         <VerseText seg={current} t={t} layout={layout} />
       ) : current.kind === "reading" ? (

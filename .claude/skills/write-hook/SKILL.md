@@ -56,6 +56,30 @@ Two other shorts, two other ways in (`boy.yaml`, `wall.yaml`):
   حكمة اتكشفت بسرعة… وحكمة ما اتكشفتش لأصحابها… وخير مستخبي لحد وقته. » « تابعنا عشان القصة الجاية. »).
   A line that promises something to come is the owner's to keep: say so when you write one.
 
+## After the verse: one line, then the example played (the owner, 2026-11-20)
+
+Seen on « آية وحكايتها » 1 once it was published: after the verse the voice told the story again, three lines of meaning
+repeated the translation already on screen, then « ce qu'on ne voit pas »: 23 s on one picture, the narration written
+large. The owner: « après le verset on parle trop, et l'écran est presque le même, et on écrit ce que le narrateur dit ».
+His rule for every new script (and the three shorts left of that series, redone the same day):
+
+- **After a verse, one line of meaning** (its tafsir written under it, as always), and nothing that says the verse or its
+  translation again. Keep only what still has to be told: the rest of the report (Abu Bakr's answer), a condition the
+  tafsir states (« للي يتوب ويرجع »), a line of warning or a limit the owner asked for, a line whose translation would
+  mislead without it (« وَوَجَدَكَ ضَالًّا », *found you lost*: « ما كنتش تعرف الكتاب ولا الإيمان… فعلّمك »). Say which you
+  kept and why when the script goes to him.
+- **Then the life example, played on screen**: anonymous stick figures with a simple face (his rule of 2026-11-19), in the
+  style of « الصاحب ساحب » (`video/src/trial/AyahPlayed.tsx` for the three of « آية وحكايتها »), a moment with no text
+  (`pause`) for the action, the set drawn for that scene. Nobody of the story is ever drawn: the example is a typical
+  scene of today, the story stays in its landscape.
+- **The narration after the first verse is a subtitle** (`caption` of the layout, `video/src/trial/Trial.tsx`): low,
+  smaller, the picture keeps the middle. The first line (the hook) and the follow call keep their large place.
+- What it does not fix: on Facebook and Instagram our theme shorts are watched 4 to 8 s and 8 to 13 s on average
+  (to 2026-11-20), so most viewers leave before the verse; the rule is for those who stay (YouTube: 45 to 62 % of a
+  short). The first seconds stay the lever there. A series whose hook is its report keeps it (his choice); an opening
+  on a played scene is measured with « مخيّر ولا مسيّر؟ » and, once placed, « وتحسبونه هيّنًا » and « الصاحب ساحب ».
+- A validated script trimmed this way costs no voice request: `drop` (docs/model.md) leaves the lines in the take.
+
 ## A short of a series (« آية وحكايتها »)
 
 One verse and its revelation report, no film (`content/trial/caravan.yaml`, `duha.yaml`, `hope.yaml`; not validated

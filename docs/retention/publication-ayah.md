@@ -4,7 +4,7 @@ Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la 
 
 ## Short 1 · They walked out of the Friday sermon… why? · سابوا خطبة الجمعة… ليه؟
 
-`ayah-short-1-caravan.mp4` (TikTok : `ayah-short-1-caravan-tiktok.mp4`, signée `@quran.words.daily`) · 1:40 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-1-caravan-cover.jpg`
+`ayah-short-1-caravan.mp4` (TikTok : `ayah-short-1-caravan-tiktok.mp4`, signée `@quran.words.daily`) · 1:31 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-1-caravan-cover.jpg`
 
 **Facebook · Titre**
 
@@ -115,7 +115,7 @@ Footage: Pixabay (AcornStudioSpain) · Ambience: BigSoundBank (Joseph Sardin)
 
 ## Short 2 · She told him: you've been left… and the answer came down · قالتله: سابك… فنزل الرد
 
-`ayah-short-2-duha.mp4` (TikTok : `ayah-short-2-duha-tiktok.mp4`, signée `@quran.words.daily`) · 1:49 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-2-duha-cover.jpg`
+`ayah-short-2-duha.mp4` (TikTok : `ayah-short-2-duha-tiktok.mp4`, signée `@quran.words.daily`) · 1:36 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-2-duha-cover.jpg`
 
 **Facebook · Titre**
 
@@ -229,7 +229,7 @@ Footage: Pixabay (bellergy) · Ambience: BigSoundBank (Joseph Sardin)
 
 ## Short 3 · They had committed grave sins… and came to ask · عملوا ذنوب كبيرة… وجم يسألوا!
 
-`ayah-short-3-hope.mp4` (TikTok : `ayah-short-3-hope-tiktok.mp4`, signée `@quran.words.daily`) · 1:30 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-3-hope-cover.jpg`
+`ayah-short-3-hope.mp4` (TikTok : `ayah-short-3-hope-tiktok.mp4`, signée `@quran.words.daily`) · 1:19 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-3-hope-cover.jpg`
 
 **Facebook · Titre**
 
@@ -339,7 +339,7 @@ Footage: Pixabay (max_bbb) · Ambience: BigSoundBank (Joseph Sardin)
 
 ## Short 4 · He swore to cut off his relative… and a verse came down · حلف يقطع قريبه… فنزلت آية
 
-`ayah-short-4-forgive.mp4` (TikTok : `ayah-short-4-forgive-tiktok.mp4`, signée `@quran.words.daily`) · 1:51 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-4-forgive-cover.jpg`
+`ayah-short-4-forgive.mp4` (TikTok : `ayah-short-4-forgive-tiktok.mp4`, signée `@quran.words.daily`) · 1:38 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-4-forgive-cover.jpg`
 
 **Facebook · Titre**
 

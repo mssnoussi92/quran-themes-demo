@@ -27,7 +27,16 @@ script_validated: { by: mssnoussi92, on: 2026-11-11 }
 # rendues par le workflow `film` et envoyées dans la conversation (release brouillon `qarnayn-candidate`) : la voix D
 # sur la vidéo entière, le montage, la couverture, l'ambiance, et les textes de publication (`publish`,
 # docs/retention/publication-qarnayn.md, envoyés). Inscrit sur sa parole.
+# La vidéo refaite (audit du 2026-11-20) validée par lui le 2026-11-21 (« Je valide ces 6 »).
 validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
+# Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
+# on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). « Change tout », confirmé : la version entière (YouTube,
+# TikTok) sans les phrases qui redisent le verset (`drop`), « وإحنا كده » joué en gris (ce qu'on fait de travers)
+# puis l'exemple en blanc (le juste), une annonce jouée dans l'ouverture dès « هيوريك تعمل إيه لما يبقى ليك سلطة على حد »
+# (PLAYED de Trial.tsx) ; la version courte garde l'annonce et l'exemple joués, le reste de sa coupe ne change pas.
+# Dhul-Qarnayn et le peuple ne sont jamais dessinés. Scènes validées par lui sur images le même jour (« Je valide les
+# 4 ») ; la vidéo refaite est à valider avant `page-files`.
+drop: ["meaning:0"]
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 21488, author: josefgadermaier, page: "https://pixabay.com/videos/id-21488/", take: { slow: 5 }, rate: 1, position: "12% 50%", shift: 200, brightness: 0.8, ground: "#0b0d16", horizon: 1420, landscape: { side: left, horizon: 760, brightness: 0.7 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
@@ -53,9 +62,9 @@ publish:
 # la version courte de west »), telle qu'envoyée : 1:13, la question d'abord, puis le coucher de soleil, 18:87-88, la
 # leçon et l'appel.
 cut:
-  drop: [quran.18.86, "meaning:0", depth, example]
+  drop: [quran.18.86, "meaning:0", depth, depth-us]
   open_with: [turn]
-  validated: { by: mssnoussi92, on: 2026-11-15 }
+  validated: { by: mssnoussi92, on: 2026-11-15 }   # la version courte refaite (annonce et exemple joués) validée par lui le 2026-11-21
 segments:
   - narration: open
     scene: sun
@@ -88,10 +97,14 @@ segments:
     lines:
       - ar: "كان يقدر يعمل اللي هو عايزه… بس هو فاكر إن الكل راجع لربنا… وهو أولهم."
         en: "He could have done as he pleased… but he remembered that everyone returns to God… himself first."
+  # « وإحنا كده », joué en gris (2026-11-20)
+  - narration: depth-us
+    scene: office-us
+    lines:
       - ar: "وإحنا كده: شوية سلطة… وننسى إن إحنا كمان هنتحاسب."
         en: "And so are we: a little authority… and we forget that we too will be held to account."
   - narration: example
-    scene: land
+    scene: office
     lines:
       - ar: "زي لما يبقى في إيدك سلطة… في شغلك… أو في بيتك."
         en: "Like when you have authority… at work… or at home."

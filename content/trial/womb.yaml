@@ -14,6 +14,10 @@ script_validated: { by: mssnoussi92, on: 2026-11-12 }
 # La fin changée le 2026-11-13 (sa décision) : la voix redite en entier et la vidéo rendue à nouveau (workflow `film`,
 # run 22) ; « je valide l'épisode 4 et 5 » (2026-11-13) : la nouvelle voix et le nouveau montage. Inscrit sur sa parole.
 validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
+# Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
+# on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). La fin qui parle au spectateur : « بص في المراية… هي إنت » joué (MirrorPlayed), Played.tsx ;
+# rien d'autre ne change. Scènes validées par lui sur images le 2026-11-21 (« Je valide tout le lot ») ;
+# la vidéo refaite est à valider avant `page-files`.
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 56-trial-womb     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
