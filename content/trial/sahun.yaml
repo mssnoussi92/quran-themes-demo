@@ -14,8 +14,8 @@ script_validated: { by: mssnoussi92, on: 2026-11-17 }
 # les titres et les descriptions de docs/retention/publication-sahw.md (`publish`, ajouté ce jour-là ; le reste le 2026-11-17).
 validated: { by: mssnoussi92, on: 2026-11-18, what: [voice, montage, cover, ambience, publish] }
 # Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md) : un visage simple sur la silhouette qui prie (`face` de
-# `Praying`, Sahw.tsx : l'inquiétude du doute, le calme après), validé par lui sur l'aperçu le même jour. À valider sur
-# images, puis sur la vidéo.
+# `Praying`, Sahw.tsx : l'inquiétude du doute, le calme après), validé par lui sur l'aperçu le même jour. Validé par lui sur images le 2026-11-21 (« Je valide ») ; la vidéo refaite
+# est à valider avant `page-files`.
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 digits: latin          # les nombres en 1 2 3, jamais ١ ٢ ٣ (le propriétaire, 2026-11-17)
