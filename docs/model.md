@@ -254,6 +254,11 @@ autres fichiers. Le propriétaire choisit l'option sur les images ; rien n'est v
 `thumbnail.use` (le nom de l'option) : `publish.py` nomme alors ce fichier sur la ligne du film (« miniature : … »), et
 `page-files` le rend public avec les autres (Dhul-Qarnayn : `barrier`, choisi le 2026-11-21).
 
+**Un film tout dessiné se rend sans être préparé** (2026-11-21) : quand toutes les options sont des `art` (aucune `at`) et
+que `only` vaut `thumbnail`, le workflow `film` saute les clips, les prises, Whisper et les récitations : il n'écrit que
+`<film>.json` (`prepare.py --film` sans voix) et rend les images en quelques minutes au lieu d'une douzaine (décision :
+`videos.py --light`). Une seule option `at` garde la préparation complète.
+
 **Une scène dessinée d'abord** (son choix, 2026-11-21) : un ciel vif au crépuscule, une seule chose en grand (le barrage
 chauffé au rouge, le coffre d'or, le soleil dans l'eau sombre), la lumière dessinée pour une image lue à 170 px ; les
 silhouettes du film (`Qarnayn.tsx`) en plus grand et plus clair, personne dessiné, rien de l'invisible. Une scène dessinée ne

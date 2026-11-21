@@ -74,6 +74,14 @@ def named(only: str, ids: list[str]) -> list[str]:
     return asked if all(a in ids for a in asked) else []
 
 
+def light_thumbnails(film: dict, only: str) -> bool:
+    """True when `only: thumbnail` needs nothing of the film but its light data file (<film>.json, written by
+    `prepare.py --film` with no voice): the film has options and every one is a drawn scene (`art`, none with `at`;
+    ThumbArt.tsx needs no clip, no take, no timeline). One `at` option takes the full preparation as before."""
+    options = (film.get("thumbnail") or {}).get("options") or []
+    return only == "thumbnail" and bool(options) and all(o.get("art") and o.get("at") is None for o in options)
+
+
 def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]]:
     film = load(film_id)
     files = film.get("files", film["id"])
@@ -178,9 +186,14 @@ def main() -> int:
     p.add_argument("--only", default="all", help="all, shorts, film, thumbnail (the film's dedicated thumbnails alone), tall (the film in 9:16 and its TikTok twin), tall-tiktok (the twin alone), tiktok, cut, one short's id or several joined by commas, or a page of the film's `elsewhere`")
     p.add_argument("--matrix", action="store_true", help="one JSON object on one line, a GitHub Actions matrix")
     p.add_argument("--stills", action="store_true", help="the covers and the thumbnail instead of the videos")
+    p.add_argument("--light", action="store_true",
+                   help="print `true` when --only thumbnail needs no preparation of the film (every option is a drawn scene), else `false`")
     p.add_argument("--ids", action="store_true",
                    help="the ids of the shorts to prepare, space-separated (every short unless --only names one: the film and the TikTok twins need them all)")
     args = p.parse_args()
+    if args.light:
+        print("true" if light_thumbnails(load(args.film), args.only) else "false")
+        return 0
     if args.ids:
         spec = load(args.film)
         ids = [name for name in spec.get("shorts") or spec["thumbnail"]["panels"]]

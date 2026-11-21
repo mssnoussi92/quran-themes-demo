@@ -99,9 +99,20 @@ jobs:
             || { echo "::error::invalid film, only or voice"; exit 1; }
           test -f "content/trial/$FILM.yaml" || { echo "::error::no content/trial/$FILM.yaml"; exit 1; }
 
+      - uses: astral-sh/setup-uv@v7
+
+      # `only: thumbnail` of a film whose every thumbnail option is a drawn scene (`art`, never `at`) needs nothing
+      # of the film but its light data file (<film>.json: the options, the title): no clip, no take, no Whisper, no
+      # recitation. Then the heavy preparation below is skipped (videos.py --light); one `at` option keeps the full path.
+      - name: Is the preparation light?
+        id: light
+        run: |
+          echo "light=$(uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --only "$ONLY" --light)" >> "$GITHUB_OUTPUT"
+
       # Where the key is, without ever printing it (as voice-test does): a repository secret is what the
       # clip step reads; a repository *variable* of the same name is not a secret.
       - name: Is the Pixabay key there?
+        if: ${{ steps.light.outputs.light != 'true' }}
         env:
           AS_SECRET: ${{ secrets.PIXABAY_API_KEY != '' }}
           AS_VARIABLE: ${{ vars.PIXABAY_API_KEY != '' }}
@@ -113,11 +124,10 @@ jobs:
             exit 1
           fi
 
-      - uses: astral-sh/setup-uv@v7
-
       # No apt: the Ubuntu mirror can hang for an hour (voice-test, 2026-11-06). Static ffmpeg build from
       # imageio-ffmpeg (pip, pinned as in render.yml), put on PATH as "ffmpeg".
       - name: ffmpeg (static build)
+        if: ${{ steps.light.outputs.light != 'true' }}
         run: |
           uv venv .venv-tools
           uv pip install --python .venv-tools/bin/python imageio-ffmpeg==0.8.1
@@ -127,18 +137,21 @@ jobs:
           "$HOME/.local/bin/ffmpeg" -hide_banner -version | head -1
 
       - uses: actions/setup-node@v7
+        if: ${{ steps.light.outputs.light != 'true' }}
         with:
           node-version: 22
           cache: npm
           cache-dependency-path: video/package-lock.json
 
       - name: Video dependencies
+        if: ${{ steps.light.outputs.light != 'true' }}
         working-directory: video
         run: npm ci --no-audit --no-fund
 
       # clip.py, prepare.py and check.py call ffprobe, which imageio-ffmpeg does not ship. Remotion's package
       # has one (video/node_modules, after npm ci), run with its own libraries: no download from another host.
       - name: ffprobe (the one that ships with Remotion)
+        if: ${{ steps.light.outputs.light != 'true' }}
         run: |
           dir="$GITHUB_WORKSPACE/video/node_modules/@remotion/compositor-linux-x64-gnu"
           test -x "$dir/ffprobe" || { echo "::error::no ffprobe in $dir"; exit 1; }
@@ -179,6 +192,7 @@ jobs:
 
       # Whisper (faster-whisper, tools/audio/align.py) downloads its model here the first time.
       - name: Cache model weights
+        if: ${{ steps.light.outputs.light != 'true' }}
         uses: actions/cache@v6
         with:
           path: ~/.cache/huggingface
@@ -187,6 +201,7 @@ jobs:
       # What the sources and the ambience download once: the reciter's surah files (surah 2 is 110 MB),
       # the readings (archive.org), the field recordings (BigSoundBank).
       - name: Cache downloads
+        if: ${{ steps.light.outputs.light != 'true' }}
         uses: actions/cache@v6
         with:
           path: |
@@ -199,6 +214,7 @@ jobs:
       # timeline with the voice take of content/trial/takes/ (a take that exists is never asked for again:
       # no request is made to Gemini here). The film comes after: it reuses the shorts' takes and clips.
       - name: Clips and timelines of the shorts
+        if: ${{ steps.light.outputs.light != 'true' }}
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
@@ -221,8 +237,14 @@ jobs:
             echo "::endgroup::"
           done
 
+      # The light path: `prepare.py --film` with no voice and no takes writes <film>.json alone (the thumbnail options),
+      # and nothing else (tools/trial/film.py: « the thumbnail only »).
+      - name: Light data of the film (drawn thumbnails only)
+        if: ${{ steps.light.outputs.light == 'true' }}
+        run: uv run --with pyyaml python3 tools/trial/prepare.py --film "$FILM"
+
       - name: Timeline of the film
-        if: ${{ env.ONLY == 'all' || env.ONLY == 'film' || env.ONLY == 'thumbnail' || env.ONLY == 'tall' || env.ONLY == 'tall-tiktok' }}
+        if: ${{ steps.light.outputs.light != 'true' && (env.ONLY == 'all' || env.ONLY == 'film' || env.ONLY == 'thumbnail' || env.ONLY == 'tall' || env.ONLY == 'tall-tiktok') }}
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
