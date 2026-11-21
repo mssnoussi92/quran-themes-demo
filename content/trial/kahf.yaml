@@ -36,10 +36,22 @@ voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 77-trial-kahf
 outro: 12
 shorts: [refuge, sunpath, awake]
-thumbnail: { title: "أصحاب الكهف", tag: "٣ مواقف", panels: [refuge, sunpath, awake] }
+# Les vignettes dessinées (choix du propriétaire, 2026-11-21 : « entièrement dessinée », video/src/trial/ThumbArt.tsx) ; les
+# lignes sont les titres des trois shorts, validés par lui (309 en chiffres 123). `use` : « C · 309 ans », **choisie par lui
+# le 2026-11-21** (question à choix), avec le titre YouTube `publish.youtube_title`, choisi le même jour.
+thumbnail:
+  title: "أصحاب الكهف"
+  tag: "٣ مواقف"
+  panels: [refuge, sunpath, awake]
+  use: awake
+  options:
+    - { name: refuge, art: kahf-refuge, lines: ["سابوا مدينتهم…", "واستخبّوا في كهف!"], tag: "أصحاب الكهف", place: right }
+    - { name: sunpath, art: kahf-sunpath, lines: ["الشمس كانت", "بتميل عنهم!"], tag: "أصحاب الكهف", place: left }
+    - { name: awake, art: kahf-awake, lines: ["309 سنين…", "وفاكرينها يوم!"], tag: "أصحاب الكهف", place: right }
 publish:
   out: docs/retention/publication-kahf.md
   title: { en: "The People of the Cave: 3 moments", ar: "أصحاب الكهف: ٣ مواقف" }
+  youtube_title: { en: "The story of the People of the Cave: 3 moments", ar: "قصة أصحاب الكهف: 3 مواقف" }   # son choix, 2026-11-21
   series: { en: "The People of the Cave", ar: "أصحاب الكهف" }
   description:
     en: "Young men who leave their city with a single prayer, a sun that turns away from their cave every day, and a sleep of three hundred and nine years they took for a day: the story at the start of Surat al-Kahf, in three moments. What God does for those who take refuge in Him."

@@ -5,7 +5,8 @@
 // workflow `film` (`only: thumbnail`, or with `all` and `film`); the picture is the film itself, `clean` (Film.tsx:
 // no text layer, no sound), frozen at the option's moment.
 import type { CalculateMetadataFunction } from "remotion";
-import { AbsoluteFill, Freeze, staticFile, useVideoConfig } from "remotion";
+import { useLayoutEffect, useRef, useState } from "react";
+import { AbsoluteFill, continueRender, delayRender, Freeze, staticFile, useVideoConfig } from "remotion";
 import { FONT } from "../fonts";
 import { INK_SHADOW, Tag, THUMB } from "./Cover";
 import { Film } from "./Film";
@@ -68,9 +69,7 @@ export const TrialThumbFrame: React.FC<ThumbFrameProps> = ({ film: id, voice, da
   const scale = THUMB.width / 1920;                  // the film is 1920x1080, reduced to 1280x720
   const side = option.place !== "top";
   const [first, second] = option.lines;
-  // Arabic in this font is about 0.38 em a letter, spaces included: a line that would leave its block is reduced.
   const room = side ? THUMB.width * 0.47 : THUMB.width - 80;
-  const size = Math.round(Math.min(122, room / (Math.max(first.length, second.length) * 0.38)));
   // A drawn scene leaves its text side calm already: a lighter veil, so that its colours stay.
   const k = option.art ? 0.6 : 1;
   const ink = (a: number) => `rgba(4,7,20,${(a * k).toFixed(2)})`;
@@ -83,7 +82,6 @@ export const TrialThumbFrame: React.FC<ThumbFrameProps> = ({ film: id, voice, da
   const block: React.CSSProperties = side
     ? { position: "absolute", top: 120, [option.place]: 40, width: THUMB.width * 0.47, textAlign: "right" }
     : { position: "absolute", top: 26, left: 40, right: 40, textAlign: "center" };
-  const line: React.CSSProperties = { fontFamily: FONT.arabic, fontWeight: 700, fontSize: size, lineHeight: 1.12, textShadow: INK_SHADOW, whiteSpace: "nowrap" };
   return (
     <AbsoluteFill style={{ background: "#04070f" }}>
       <AbsoluteFill style={{ filter: option.brightness && option.brightness !== 1 ? `brightness(${option.brightness})` : undefined }}>
@@ -98,11 +96,37 @@ export const TrialThumbFrame: React.FC<ThumbFrameProps> = ({ film: id, voice, da
       <AbsoluteFill style={{ background: veil }} />
       <div style={block}>
         <Tag text={option.tag} size={50} />
-        <div dir="rtl" lang="ar" style={{ marginTop: 14 }}>
-          <div style={{ ...line, color: "#fff" }}>{first}</div>
-          <div style={{ ...line, color: GOLD }}>{second}</div>
-        </div>
+        <HookLines first={first} second={second} room={room} align={side ? "right" : "center"} />
       </div>
     </AbsoluteFill>
+  );
+};
+
+/** The two lines of hook at 122 px, both reduced by the same factor when the longer one would leave its block: measured
+ * once the fonts are loaded (2026-11-21: « وقال: مش مني! », sized by an estimate of 0.38 em a letter, ran 30 px past its
+ * block and touched the edge of the frame). */
+const HookLines: React.FC<{ first: string; second: string; room: number; align: "right" | "center" }> = ({ first, second, room, align }) => {
+  const refs = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)];
+  const [k, setK] = useState(1);
+  const [handle] = useState(() => delayRender("thumbnail: measuring the hook"));
+  useLayoutEffect(() => {
+    let live = true;
+    document.fonts.ready.then(() => {
+      if (!live) return;
+      const widest = Math.max(...refs.map((r) => r.current?.scrollWidth ?? 0));
+      setK(widest > room ? room / widest : 1);
+      continueRender(handle);
+    });
+    return () => {
+      live = false;
+    };
+  }, [first, second, room, handle]);   // eslint-disable-line react-hooks/exhaustive-deps
+  const line: React.CSSProperties = { fontFamily: FONT.arabic, fontWeight: 700, fontSize: 122 * k, lineHeight: 1.12, textShadow: INK_SHADOW,
+    whiteSpace: "nowrap", width: "max-content", marginLeft: "auto", marginRight: align === "center" ? "auto" : 0 };
+  return (
+    <div dir="rtl" lang="ar" style={{ marginTop: 14 }}>
+      <div ref={refs[0]} style={{ ...line, color: "#fff" }}>{first}</div>
+      <div ref={refs[1]} style={{ ...line, color: GOLD }}>{second}</div>
+    </div>
   );
 };

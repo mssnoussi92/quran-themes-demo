@@ -3,7 +3,10 @@
 // sky, ONE thing in large, the light made for a picture seen 170 px wide; the film's own silhouettes (Qarnayn.tsx) drawn
 // bigger and brighter. Nobody drawn, nothing unseen. Drawn in 1920x1080 (TrialThumbFrame scales it to 1280x720); the text
 // side of the option (`place`) is left calm, and the bottom right corner holds nothing that matters (YouTube's duration).
+import { Boat } from "./Boat";
+import { KAHF_WIDE } from "./Kahf";
 import { Barrier, Chest, Cliffs, Dwellings } from "./Qarnayn";
+import { Village, Wall } from "./Wall";
 
 const W = 1920;
 const H = 1080;
@@ -147,10 +150,131 @@ const QarnaynSunset: React.FC = () => {
   );
 };
 
+/** A scene of a film's wide drawings (KAHF_WIDE…) shown as on a cover: `scene` alone, the others long over. */
+const wide = (Scene: React.FC<{ t: number; show: (id: string) => number; since: (id: string) => number; horizon: number }>, scene: string, horizon: number) => (
+  <Scene t={T} show={(id) => (id === scene ? 1 : 0)} since={() => 0} horizon={horizon} />
+);
+
+/** The People of the Cave, 18:10: the rock and the mouth of the cave, warm inside, the trail from the city far away. */
+const KahfRefuge: React.FC = () => {
+  const horizon = 800;
+  return (
+    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
+      <defs>
+        <radialGradient id="kr-in" cx={760} cy={horizon - 20} r={260} gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#ffd27a" stopOpacity=".95" />
+          <stop offset=".45" stopColor="#ffb04a" stopOpacity=".45" />
+          <stop offset="1" stopColor="#ff8a2e" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <Sky id="kr-s" horizon={horizon} stars={80} stops={[[0, "#0f1740"], [0.5, "#33307a"], [0.8, "#b0507e"], [1, "#ff9a5a"]]} />
+      {wide(KAHF_WIDE.refuge, "cave", horizon)}
+      <ellipse cx={760} cy={horizon - 10} rx={300} ry={190} fill="url(#kr-in)" style={{ mixBlendMode: "screen" }} />
+    </svg>
+  );
+};
+
+/** The People of the Cave, 18:17: the sun going over the crag along its path, never into the mouth. */
+const KahfSunpath: React.FC = () => {
+  const horizon = 820;
+  return (
+    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
+      <Sky id="ks-s" horizon={horizon} stops={[[0, "#1d2a6a"], [0.45, "#5a4a9a"], [0.78, "#f0866a"], [1, "#ffcf7a"]]} />
+      <g transform="translate(330 0)">{wide(KAHF_WIDE.sunpath, "path", horizon)}</g>
+    </svg>
+  );
+};
+
+/** The People of the Cave, 18:25: the mouth of the cave seen from inside, the years counted in gold. */
+const KahfAwake: React.FC = () => {
+  const horizon = 800;
+  return (
+    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
+      <Sky id="ka-s" horizon={horizon} stars={120} stops={[[0, "#0b1238"], [0.6, "#2b2f6e"], [1, "#6a5aa0"]]} />
+      {wide(KAHF_WIDE.awake, "years", horizon)}
+    </svg>
+  );
+};
+
+/** Moses and al-Khidr, 18:71: the boat with the plank torn out, at sunset on the sea. */
+const MoussaBoat: React.FC = () => {
+  const horizon = 640;
+  const sun = { x: 1560, r: 110 };
+  return (
+    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
+      <defs>
+        <radialGradient id="mb-halo" cx={sun.x} cy={horizon - 40} r={700} gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#fff1c4" stopOpacity=".9" />
+          <stop offset=".3" stopColor="#ffb04a" stopOpacity=".5" />
+          <stop offset="1" stopColor="#ff6a3a" stopOpacity="0" />
+        </radialGradient>
+        <linearGradient id="mb-sea" x1="0" y1={horizon} x2="0" y2={H} gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#3a2a4a" />
+          <stop offset=".5" stopColor="#152036" />
+          <stop offset="1" stopColor="#070b16" />
+        </linearGradient>
+      </defs>
+      <Sky id="mb-s" horizon={horizon} stops={[[0, "#1b1a4a"], [0.45, "#5b2f6e"], [0.8, "#e0605a"], [1, "#ffb862"]]} />
+      <ellipse cx={sun.x} cy={horizon - 40} rx={820} ry={420} fill="url(#mb-halo)" />
+      <circle cx={sun.x} cy={horizon - 50} r={sun.r} fill="#fff0c0" />
+      <rect y={horizon} width={W} height={H - horizon} fill="url(#mb-sea)" />
+      {Array.from({ length: 10 }, (_, i) => (
+        <rect key={i} x={sun.x - (220 - i * 18) / 2 + Math.sin(i * 2.1) * 26} y={horizon + 16 + i * 24} width={220 - i * 18} height={6} rx={3} fill="#ffcf7a" opacity={0.7 - i * 0.06} />
+      ))}
+      <Boat id="mb-boat" x={1380} y={horizon + 190} scale={1.25} t={T} holed splash plank />
+    </svg>
+  );
+};
+
+/** Moses and al-Khidr, 18:82: the wall set straight, and under it the glow of what was kept for two orphans. */
+const MoussaWall: React.FC = () => {
+  const horizon = 760;
+  return (
+    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
+      <defs>
+        <linearGradient id="mw-ground" x1="0" y1={horizon} x2="0" y2={H} gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#2a1a14" />
+          <stop offset="1" stopColor="#08060a" />
+        </linearGradient>
+      </defs>
+      <Sky id="mw-s" horizon={horizon} stars={40} stops={[[0, "#161447"], [0.5, "#4a2a72"], [0.82, "#d0587a"], [1, "#ffb562"]]} />
+      <Village horizon={horizon} wide />
+      <rect y={horizon + 20} width={W} height={H - horizon - 20} fill="url(#mw-ground)" />
+      <Wall id="mw-wall" x={1380} y={horizon + 150} scale={1.3} t={T} treasure />
+    </svg>
+  );
+};
+
+/** Moses and al-Khidr, 18:80-81: a house at night, one window lit; nobody drawn (the boy is a person of the story). */
+const MoussaHome: React.FC = () => {
+  const horizon = 820;
+  return (
+    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
+      <defs>
+        <radialGradient id="mh-moon" cx={1480} cy={260} r={260} gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#e8eeff" stopOpacity=".55" />
+          <stop offset="1" stopColor="#8fa6e6" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <Sky id="mh-s" horizon={horizon} stars={160} stops={[[0, "#070b26"], [0.6, "#16245a"], [1, "#3a4a8a"]]} />
+      <circle cx={1480} cy={260} r={260} fill="url(#mh-moon)" />
+      <circle cx={1480} cy={260} r={92} fill="#f4f1e2" />
+      <rect y={horizon} width={W} height={H - horizon} fill="#05060d" />
+      <Dwellings id="mh-d" x={1420} y={horizon + 10} scale={1.15} t={T} lit={1} rim="#9fb6e6" />
+    </svg>
+  );
+};
+
 const ART: Record<string, React.FC> = {
   "qarnayn-barrier": QarnaynBarrier,
   "qarnayn-chest": QarnaynChest,
   "qarnayn-sunset": QarnaynSunset,
+  "kahf-refuge": KahfRefuge,
+  "kahf-sunpath": KahfSunpath,
+  "kahf-awake": KahfAwake,
+  "moussa-boat": MoussaBoat,
+  "moussa-wall": MoussaWall,
+  "moussa-home": MoussaHome,
 };
 
 export const ART_NAMES = Object.keys(ART);
