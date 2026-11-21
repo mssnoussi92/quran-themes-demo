@@ -850,5 +850,7 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   fichier d'une série qui porte aussi son film garde la numérotation de ses shorts et dit que les textes du film ne sont pas
   validés (publish.py) ; vignettes : une scène dessinée pour la vignette seule (son choix du même jour, « entièrement
   dessinée » : la chaise vide, le riche éveillé, « 3 ولا 4؟ », `ThumbArt.tsx`), recommandée, et des moments du film.
+  Les vignettes « moment du film » (`at`) sortaient toutes sur l'ouverture du film : la composition `TrialThumbFrame` durait
+  60 images, et une séquence du film qui commence après n'était jamais montrée ; elle dure désormais autant que le film.
 - **Rendus** : workflow `film`, `only: all` pour « وتحسبونه هيّنًا » (les shorts refaits avec le nom de la série, leurs versions
   TikTok, le film), `only: film` pour les deux autres, puis `only: tall` (le film vertical et son jumeau TikTok) pour les trois.
