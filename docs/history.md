@@ -919,3 +919,17 @@ thématiques, shorts et films (quran-reels PR #104 et #106 ; pas d'audit demand�
 - Ce que ça change ici : une vidéo du calendrier doit avoir son titre et sa description YouTube validés (sinon elle ne part
   pas sur YouTube, l'alerte le dit) ; une miniature corrigée ne sert qu'une fois `page-files` relancé (les textes, eux, sont lus sur `main`).
 
+## 2026-11-21 — Les vidéos thématiques à 13 h à partir du 27 novembre
+
+Sa capture de YouTube Studio (« Quand vos spectateurs sont sur YouTube ? », 28 jours, heure de France) : très peu de monde
+de minuit à 10 h, le pic de 14 h à 16 h en semaine, 13 h le samedi, 17 h le dimanche, encore du monde de 18 h à 21 h. Sur
+YouTube, ses reels mis en ligne à la main entre 9 h et 12 h 30 faisaient 1 047 vues à 48 h en médiane, ceux mis entre 19 h 45
+et 23 h, 577 (le contenu change aussi : les séries du soir, une ayah). Son choix : le reel du matin ne bouge pas, les vidéos
+thématiques passent à **13 h**, une heure avant le pic, **à partir du vendredi 27** (après les versions courtes de
+Dhul-Qarnayn, 24-26, pour ne pas mêler les deux essais) ; toutes les plateformes, puisque quran-reels les publie d'un coup
+après la vérification de Meta (quran-reels PR #109, `times` de `config/themes.yaml`). Mesuré comme un essai à 48 h.
+
+La session a rappelé ce que dit YouTube : l'heure n'a « a priori pas de conséquences directes sur les performances à long
+terme » ; ce qui freine les shorts thématiques sur YouTube est surtout la part regardée (49 % en médiane contre 105 % pour les
+reels, 246 vues contre 977) : l'essai des versions courtes reste le levier principal.
+
