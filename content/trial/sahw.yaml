@@ -45,6 +45,7 @@ thumbnail:
   tag: "زيادة · نقص · شك"
   panels: [sahun, khams, nasit, shakk]
   options:      # proposées par la session (2026-11-21), à choisir par le propriétaire : des moments du film
+    - { name: doubt-art, art: sahw-doubt, lines: ["صلّيت 3 ولا 4؟", "الحل في سجدتين"], tag: "سجود السهو", place: left }      # dessinée pour la vignette seule (son choix du 2026-11-21 : « entièrement dessinée »), recommandée
     - { name: doubt, at: 300, lines: ["صلّيت 3 ولا 4؟", "الحل في سجدتين"], tag: "سجود السهو", place: right }
     - { name: table, at: 420, lines: ["قبل السلام…", "ولا بعده؟"], tag: "سجود السهو", place: right }
 # Script du film (répliques propres, ouverture, fin, titre) validé par lui le 2026-11-21 (« Je valide le script », question à choix) ;

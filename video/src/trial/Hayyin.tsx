@@ -75,7 +75,7 @@ const Stars: React.FC<{ t: number; bright: number; top: number; bottom: number; 
 );
 
 /** A café chair seen from the side, its back on the side opposite to `facing`. (x, seat): the middle of the seat. */
-const Chair: React.FC<{ x: number; seat: number; floor: number; facing: number; lit?: number; s?: number }> = ({ x, seat, floor, facing, lit = 0, s = 1 }) => {
+export const Chair: React.FC<{ x: number; seat: number; floor: number; facing: number; lit?: number; s?: number }> = ({ x, seat, floor, facing, lit = 0, s = 1 }) => {
   const back = -facing * 58;
   const leg = (floor - seat) / s;
   return (
@@ -91,7 +91,7 @@ const Chair: React.FC<{ x: number; seat: number; floor: number; facing: number; 
 };
 
 /** A small cup on a saucer, its steam rising. (x, y): its foot on the table. */
-const Cup: React.FC<{ x: number; y: number; t: number; steam?: number; i?: number }> = ({ x, y, t, steam = 1, i = 0 }) => (
+export const Cup: React.FC<{ x: number; y: number; t: number; steam?: number; i?: number }> = ({ x, y, t, steam = 1, i = 0 }) => (
   <g>
     <path d={`M ${x - 26} ${y} L ${x + 26} ${y}`} stroke={RIM} strokeWidth={5} strokeLinecap="round" opacity={0.5} />
     <path d={`M ${x - 16} ${y - 4} L ${x - 13} ${y - 34} L ${x + 13} ${y - 34} L ${x + 16} ${y - 4} Z`} fill="#e9dcc0" opacity={0.85} />
@@ -104,7 +104,7 @@ const Cup: React.FC<{ x: number; y: number; t: number; steam?: number; i?: numbe
 );
 
 /** A pendant lamp hanging from the top and its cone of warm light down to `to`. */
-const Pendant: React.FC<{ id: string; x: number; top: number; y: number; to: number; spread: number; on: number; t: number }> = ({ id, x, top, y, to, spread, on, t }) => {
+export const Pendant: React.FC<{ id: string; x: number; top: number; y: number; to: number; spread: number; on: number; t: number }> = ({ id, x, top, y, to, spread, on, t }) => {
   const flicker = 0.94 + 0.06 * Math.sin(t * 7.3) * Math.sin(t * 3.1);
   return (
     <g>
@@ -128,7 +128,7 @@ const Pendant: React.FC<{ id: string; x: number; top: number; y: number; to: num
 
 /** A jacket hung over the back of a chair: a panel falls on each side of the back, a sleeve hangs on the seat's side;
  * dark cloth, its edges in the lamp's light. (x, y): the top of the back; `facing` -1 when the seat is on the left. */
-const Jacket: React.FC<{ x: number; y: number; facing: number; shown: number; s?: number }> = ({ x, y, facing, shown, s = 1 }) => (
+export const Jacket: React.FC<{ x: number; y: number; facing: number; shown: number; s?: number }> = ({ x, y, facing, shown, s = 1 }) => (
   <g opacity={shown} transform={`translate(${x} ${y}) scale(${-facing * s} ${s})`}>
     {/* the panel behind the back */}
     <path d="M 4 -2 C 14 -2 22 6 26 20 L 34 150 C 26 158 12 160 4 156 Z" fill="#0f1422" stroke={LAMP} strokeWidth={2} strokeOpacity={0.35} />

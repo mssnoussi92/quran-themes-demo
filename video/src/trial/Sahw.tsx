@@ -123,7 +123,7 @@ export const Praying: React.FC<{ id: string; body: Body; scale?: number; rim?: s
   );
 };
 
-const QIYAM = bodyOf(PRAYER.qiyam);
+export const QIYAM = bodyOf(PRAYER.qiyam);
 const JULUS = bodyOf(PRAYER.julus);
 
 /** Two prostrations, sitting between them, from `from` seconds (from standing first, if `start` says so). */

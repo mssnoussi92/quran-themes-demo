@@ -39,8 +39,9 @@ thumbnail:
   tag: "3 أسئلة"
   panels: [dank, tayyiba, ghafur]
   options:      # proposées par la session (2026-11-21), à choisir par le propriétaire : des moments du film, scènes jouées
+    - { name: bed-art, art: sual-bed, lines: ["عنده كل حاجة", "ومش بينام؟"], tag: "سؤال صعب", place: left }      # dessinée pour la vignette seule (son choix du 2026-11-21 : « entièrement dessinée »), recommandée
     - { name: villa, at: 50, lines: ["بعيد عن ربنا…", "وعايش مرتاح؟"], tag: "سؤال صعب", place: right }
-    - { name: bed, at: 62, lines: ["عنده كل حاجة…", "ومش بينام؟"], tag: "سؤال صعب", place: right }
+    - { name: bed, at: 62, lines: ["عنده كل حاجة", "ومش بينام؟"], tag: "سؤال صعب", place: right }
     - { name: exam, at: 207, lines: ["مؤمن…", "وحياته صعبة؟"], tag: "سؤال صعب", place: right }
 # Script du film (répliques propres, ouverture, fin, titre) validé par lui le 2026-11-21 (« Je valide le script », question à choix) ;
 # le 16:9 : « dessins refaits en 16:9 » (son choix, même jour).
