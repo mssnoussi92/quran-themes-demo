@@ -162,6 +162,21 @@ def test_a_missing_field_and_an_empty_line(copy):
     assert "an empty ar or en" in done.stdout
 
 
+def test_the_dedicated_thumbnails_of_a_film_are_checked(copy):
+    spec = copy.load("content/trial/qarnayn.yaml")
+    assert spec["thumbnail"]["options"]                  # the real file declares them (2026-11-21)
+    spec["thumbnail"]["options"] = [
+        {"name": "Bad Name", "at": "soon", "lines": ["one only"], "place": "middle", "extra": 1},
+        {"name": "ok", "at": 340, "lines": ["a", "b"], "tag": "t", "place": "top", "brightness": 1.3},
+    ]
+    copy.dump("content/trial/qarnayn.yaml", spec)
+    done = copy.rules("--film", "qarnayn")
+    refused(done, "thumbnail.options[1]: `name` is lowercase")
+    for message in ("`at` is a time of the film", "`lines` is two lines", "missing `tag`", "`place` is top, left or right", "unknown field(s) extra"):
+        assert message in done.stdout, done.stdout[-2500:]
+    assert "thumbnail.options[2]" not in done.stdout
+
+
 def test_a_sign_no_font_of_the_project_can_draw_is_refused(copy):
     """Left to the machine's own font, « ﷺ » was a pixel font in a session and an empty box on a GitHub runner."""
     spec = copy.load("content/trial/asked.yaml")

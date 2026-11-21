@@ -35,7 +35,18 @@ handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 43-trial-qarnayn
 outro: 12
-thumbnail: { title: "ذو القرنين", tag: "٣ اختبارات للقوة", panels: [west, tribute, barrier] }
+# Les vignettes dédiées (choix du propriétaire, 2026-11-21 : une scène du film en pleine résolution, sans aucun de ses textes,
+# deux lignes d'accroche ; `only: thumbnail` du workflow `film`, docs/model.md). `at` : un moment du film (m:ss), pris dans
+# la vidéo publiée (barrière 5:40, coffre 4:13, coucher de soleil 1:52). Les lignes sont les titres des trois shorts, validés
+# par le propriétaire : rien d'inventé. À valider par lui sur les images avant d'en choisir une.
+thumbnail:
+  title: "ذو القرنين"
+  tag: "٣ اختبارات للقوة"
+  panels: [west, tribute, barrier]
+  options:
+    - { name: barrier, at: "5:40", lines: ["بنى السد…", "وقال: مش مني!"], tag: "ذو القرنين", place: left }
+    - { name: chest, at: "4:13", lines: ["عرضوا عليه فلوس…", "ورفض!"], tag: "ذو القرنين", place: top }
+    - { name: sunset, at: "1:52", lines: ["مصير قوم كاملين…", "بكلمة منه!"], tag: "ذو القرنين", place: right }
 # Une image propre au film (aucun short) : le clip seul, rien de dessiné dessus.
 pictures:
   east: { clip: { source: pixabay, id: 26085, author: TeeFarm, page: "https://pixabay.com/videos/id-26085/", take: { seconds: 30, height: 1440 }, brightness: 0.7, side: left, horizon: 640 }, ambience: tribute }

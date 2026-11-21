@@ -1,7 +1,9 @@
 name: film
 
 # Prepares and renders a film of the model (docs/model.md) and its shorts: the three shorts, their TikTok
-# versions, the film, the covers and the thumbnail, side by side in parallel jobs, into a DRAFT release
+# versions, the film, the covers and the thumbnails (the three-panel one and the dedicated ones, `thumbnail.options`
+# of the film's file: one clean scene of the film and two lines of hook; `only: thumbnail` renders those alone, no
+# video job, added to the draft), side by side in parallel jobs, into a DRAFT release
 # "<files>-candidate" that only the repository's owner sees (a try on a push: "<files>-workflow-test"). Until now this was done in an interactive
 # session, one video after the other (about 2.5 hours for a film and three shorts), because the filmed
 # clips are not in the repository.
@@ -41,7 +43,7 @@ on:
         default: D
         type: string
       only:
-        description: "all, shorts, film, tiktok, one short's id (it prepares only that short) or several joined by commas (qitr,marah), tall (the film in 9:16 and its TikTok twin, in a draft release of their own), or tall-tiktok (the twin alone, added to that draft)"
+        description: "all, shorts, film, thumbnail (the film's dedicated thumbnails alone, `thumbnail.options` of its file: no video, added to the draft release), tiktok, one short's id (it prepares only that short) or several joined by commas (qitr,marah), tall (the film in 9:16 and its TikTok twin, in a draft release of their own), or tall-tiktok (the twin alone, added to that draft)"
         default: all
         type: string
       ambience:
@@ -220,7 +222,7 @@ jobs:
           done
 
       - name: Timeline of the film
-        if: ${{ env.ONLY == 'all' || env.ONLY == 'film' || env.ONLY == 'tall' || env.ONLY == 'tall-tiktok' }}
+        if: ${{ env.ONLY == 'all' || env.ONLY == 'film' || env.ONLY == 'thumbnail' || env.ONLY == 'tall' || env.ONLY == 'tall-tiktok' }}
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
