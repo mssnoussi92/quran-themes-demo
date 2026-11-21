@@ -10,7 +10,7 @@ import { FONT } from "../fonts";
 import { INK_SHADOW, Tag, THUMB } from "./Cover";
 import { Film } from "./Film";
 import type { FilmData } from "./Film";
-import { GOLD } from "./Trial";
+import { GOLD, TRIAL_FPS } from "./Trial";
 import { ThumbArt } from "./ThumbArt";
 
 export type ThumbOption = {
@@ -46,7 +46,10 @@ export const thumbFrameMetadata: CalculateMetadataFunction<ThumbFrameProps> = as
     if (!res.ok) throw new Error(`public/trial/${file} is missing: ${hint}`);
     return res.json();
   };
-  if (props.data) return { props };                // given whole (a still rendered in a session: --props)
+  // A moment of the film is drawn by the film's own sequences: the composition lasts as long as the film, or a sequence
+  // that starts after its 60 frames is never shown (every moment came out as the film's opening, 2026-11-21).
+  const lasting = (film: FilmData | null) => (film ? { durationInFrames: Math.max(60, Math.ceil(film.seconds * TRIAL_FPS) + 1) } : {});
+  if (props.data) return { props, ...lasting(props.data.film) };   // given whole (a still rendered in a session: --props)
   // The thumbnail data (tools/trial/film.py) and, for a moment of the film, its timeline: both by prepare.py --film.
   const shown = (await get(`${props.film}.json`, `run tools/trial/prepare.py --film ${props.film}`)) as { thumbnail: { options?: ThumbOption[] } };
   const option = (shown.thumbnail.options ?? []).find((o) => o.name === props.option);
@@ -55,7 +58,7 @@ export const thumbFrameMetadata: CalculateMetadataFunction<ThumbFrameProps> = as
   if (option.at === undefined) throw new Error(`thumbnail option « ${option.name} »: neither \`art\` nor \`at\``);
   momentOf(option.at);
   const film = (await get(`${props.film}-${props.voice}.json`, `run tools/trial/prepare.py --film ${props.film} --voice ${props.voice}`)) as FilmData;
-  return { props: { ...props, data: { film, option } } };
+  return { props: { ...props, data: { film, option } }, ...lasting(film) };
 };
 
 export const TrialThumbFrame: React.FC<ThumbFrameProps> = ({ film: id, voice, data }) => {
