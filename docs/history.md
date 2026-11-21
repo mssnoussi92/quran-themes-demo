@@ -902,3 +902,20 @@ PR #100) ; corrigé le même jour.
   statistiques de quran-reels reconnaissent ces vidéos par ce titre).
 - `tests/test_title_order.py` vérifie l'inverse de la veille : chaque titre Facebook, Instagram et TikTok et chaque
   description commencent en arabe.
+
+## 2026-11-21 — YouTube publié par quran-reels, vidéos thématiques comprises
+
+Depuis le 2026-11-02, YouTube ne verrouille plus en privé ce qu'un projet non audité met en ligne par l'API. Le
+propriétaire a choisi (questions à choix, 2026-11-21) que quran-reels mette en ligne lui-même les reels, puis les vidéos
+thématiques, shorts et films (quran-reels PR #104 et #106 ; pas d'audit demandé, PR #105).
+
+- Le run `themes` de quran-reels envoie à YouTube, après Facebook, Instagram et TikTok et seulement si Meta a vu la vidéo
+  propre, le fichier de la page « À publier » : le short (ou sa version courte) ou le film 16:9, celui-ci sur la
+  vérification de son jumeau 9:16 (même son ; sa décision). En public, avec le titre et la description validés de
+  `publication-<doc>.md` suivis des hashtags, **jamais les crédits** (« je ne veux pas que les crédits passent dans la
+  description ») ; la miniature : `thumbnail.use` d'un film, la couverture d'un short. « Contenu modifié ou synthétique » :
+  non (son choix : le narrateur n'imite personne, la description dit déjà que la voix est générée par IA).
+- Reste à la main : la « vidéo associée » d'un Short (le film), que l'API n'offre pas.
+- Ce que ça change ici : une vidéo du calendrier doit avoir son titre et sa description YouTube validés (sinon elle ne part
+  pas sur YouTube, l'alerte le dit) ; une miniature corrigée ne sert qu'une fois `page-files` relancé (les textes, eux, sont lus sur `main`).
+
