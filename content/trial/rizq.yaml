@@ -13,7 +13,8 @@ validated: { by: mssnoussi92, on: 2026-11-14, what: [voice, montage, cover, publ
 # Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
 # on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). « يعني رزقهم مش من جيبك… » sort (`drop`) ; l'exemple joué (le père qui
 # fait ses comptes) et « كلمة اتقدّمت… عشان قلبك يرتاح » joué (FatherPlayed) ; la narration après le verset en sous-titre.
-# À valider sur images, puis sur la vidéo.
+# Scènes validées par lui sur images le 2026-11-21 (« Je valide tout le lot ») ;
+# la vidéo refaite est à valider avant `page-files`.
 drop: ["meaning:2"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
