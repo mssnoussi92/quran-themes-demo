@@ -854,3 +854,7 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   60 images, et une séquence du film qui commence après n'était jamais montrée ; elle dure désormais autant que le film.
 - **Rendus** : workflow `film`, `only: all` pour « وتحسبونه هيّنًا » (les shorts refaits avec le nom de la série, leurs versions
   TikTok, le film), `only: film` pour les deux autres, puis `only: tall` (le film vertical et son jumeau TikTok) pour les trois.
+  Contrôlés sur leurs planches (−16,1 à −16,2 LUFS) et envoyés : 6:33, 5:17, 7:14. **Tout validé par lui le même jour**
+  (questions à choix) : « je valide les 12 vidéos », « je valide les 3 textes », « les 3 dessinées » (vignettes), « je valide les 7
+  sources » (24:15 et ses deux tafsirs, Bukhari 6478, l'Encyclopédie koweïtienne 24/240, 244, 245) ; fichiers rendus publics par
+  `page-files`.
