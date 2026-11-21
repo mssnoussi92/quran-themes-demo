@@ -781,3 +781,23 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   et le sous-titre validés par lui** ; l'appel à s'abonner reste en grand (son choix). Rendu par le workflow `film`
   (`only: duha,hope,forgive`, voix D, ajouté à la release brouillon `ayah-candidate`).
 
+
+## 2026-11-21 · YouTube : titres en arabe d'abord, vignettes dessinées
+
+- **D'où ça vient** : l'export « Contenu » de YouTube Studio (4–20 nov.) et une lecture de l'API YouTube Analytics par
+  quran-reels (`insights.yml`, `youtube_detail`). 86,7 % des vues viennent du fil des Shorts (la vignette n'y compte pas),
+  10,6 % de la recherche, toutes les recherches en arabe ; 74 % des vues de pays arabophones, aucun pays anglophone
+  dans les 15 premiers. Le film de Moussa et al-Khadir : 74 % de ses vues en vidéo suggérée, 6 963 impressions, 2,54 %
+  de clics (sa vignette à trois panneaux, sombre, lue à 170 px). Les shorts thématiques perdent leurs spectateurs entre
+  5 et 10 s (le bateau : de 100 % à 41 %, sur la promesse « والسبب… هيغيّر نظرتك »).
+- **Ses choix** : les titres YouTube en arabe d'abord (vidéos thématiques et reels ; `publish.py` : `youtube_title`,
+  chiffres 123 ; les blocs « YouTube · Titre » des vidéos pas encore sur YouTube réécrits, rien d'autre : les fichiers
+  entiers régénérés auraient perdu la durée des versions courtes et changé des descriptions validées) ; pour le film de
+  Dhul-Qarnayn, « قصة ذو القرنين: 3 اختبارات للقوة · The story of Dhul-Qarnayn: 3 tests of power » (parmi quatre
+  propositions ; la sienne, « 3 دروس… هتغيّر نظرتك », déconseillée : promesse générique, celle où le bateau perd ses
+  spectateurs) ; **des vignettes dessinées pour elles-mêmes** : un premier essai fait d'images du film publié, puis
+  le code d'une vignette tirée du film propre (`TrialThumbFrame`, `clean`, `at`) ; sa correction : « il ne faut pas toujours
+  choisir des images du film, on essaie de créer une » image, « entièrement dessinée » parmi trois façons. Trois scènes
+  dessinées (`ThumbArt.tsx` : le barrage chauffé au rouge, le coffre d'or, le soleil dans l'eau sombre), rendues dans la
+  session : **« A · le barrage » choisi par lui** (`thumbnail.use`) ; `only: thumbnail` du workflow `film` les ajoute à la
+  release brouillon. Et l'amélioration continue, pour toutes les sessions (CLAUDE.md).

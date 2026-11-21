@@ -77,7 +77,7 @@ Drifting "in" prayer happens to everyone… the verse is about drifting "away" f
 **YouTube · Titre (71/100)**
 
 ```text
-A verse says "woe"… to people who pray! · آية بتقول «ويل»… للي بيصلّوا!
+آية بتقول «ويل»… للي بيصلّوا! · A verse says "woe"… to people who pray!
 ```
 
 **YouTube · Description**
@@ -189,7 +189,7 @@ The Prophet ﷺ once prayed dhuhr in five rak'ahs… and taught us what to do wh
 **YouTube · Titre (56/100)**
 
 ```text
-He prayed dhuhr in five rak'ahs! · صلّى الضهر خمس ركعات!
+صلّى الضهر خمس ركعات! · He prayed dhuhr in five rak'ahs!
 ```
 
 **YouTube · Description**
@@ -301,7 +301,7 @@ Stood up without sitting for the tashahhud? What to do, step by step, in the fou
 **YouTube · Titre (72/100)**
 
 ```text
-Stood up without sitting for the tashahhud? · قمت من غير ما تقعد للتشهد؟
+قمت من غير ما تقعد للتشهد؟ · Stood up without sitting for the tashahhud?
 ```
 
 **YouTube · Description**
@@ -412,7 +412,7 @@ Three or four? The Prophet ﷺ taught the fix… and the four schools explain it
 **YouTube · Titre (50/100)**
 
 ```text
-Did I pray three or four? · صلّيت تلاتة ولا أربعة؟
+صلّيت تلاتة ولا أربعة؟ · Did I pray three or four?
 ```
 
 **YouTube · Description**

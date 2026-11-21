@@ -100,3 +100,10 @@ def test_only_thumbnail_needs_options_and_a_film(tmp_path, monkeypatch):
     series(tmp_path, monkeypatch)
     with pytest.raises(SystemExit, match="series"):
         videos.listing("f", "D", "thumbnail")
+
+
+def test_a_drawn_option_is_rendered_like_the_others(tmp_path, monkeypatch):
+    """2026-11-21: a thumbnail drawn for itself (`art`) goes through the same composition and the same names."""
+    a_film(tmp_path, monkeypatch, options=[{"name": "barrier", "art": "qarnayn-barrier", "lines": ["a", "b"], "tag": "t", "place": "left"}])
+    _, stills = videos.listing("f", "D", "thumbnail")
+    assert [(s["name"], s["composition"]) for s in stills] == [("ff-film-thumbnail-barrier.jpg", "TrialThumbFrame")]

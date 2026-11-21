@@ -71,7 +71,7 @@ Adhkar after the prayer, only from al-Bukhari, Muslim and at-Tirmidhi. Save it f
 **YouTube · Titre (97/100)**
 
 ```text
-Adhkar after prayer, from Bukhari, Muslim, Tirmidhi · أذكار بعد الصلاة… من البخاري ومسلم والترمذي
+أذكار بعد الصلاة… من البخاري ومسلم والترمذي · Adhkar after prayer, from Bukhari, Muslim, Tirmidhi
 ```
 
 **YouTube · Description**
@@ -180,7 +180,7 @@ Morning adhkar, only from al-Bukhari, Muslim and at-Tirmidhi. Save it for tomorr
 **YouTube · Titre (88/100)**
 
 ```text
-Morning adhkar, from Bukhari, Muslim, Tirmidhi · أذكار الصباح… من البخاري ومسلم والترمذي
+أذكار الصباح… من البخاري ومسلم والترمذي · Morning adhkar, from Bukhari, Muslim, Tirmidhi
 ```
 
 **YouTube · Description**
@@ -291,7 +291,7 @@ Evening adhkar, only from al-Bukhari, Muslim and at-Tirmidhi. Save it for every 
 **YouTube · Titre (88/100)**
 
 ```text
-Evening adhkar, from Bukhari, Muslim, Tirmidhi · أذكار المساء… من البخاري ومسلم والترمذي
+أذكار المساء… من البخاري ومسلم والترمذي · Evening adhkar, from Bukhari, Muslim, Tirmidhi
 ```
 
 **YouTube · Description**

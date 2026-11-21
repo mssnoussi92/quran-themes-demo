@@ -77,7 +77,7 @@ The power went out and the city went dark… and the sky filled with stars that 
 **YouTube · Titre (58/100)**
 
 ```text
-Everything went dark… look up · كل حاجة ضلمت فجأة؟ بص لفوق
+كل حاجة ضلمت فجأة؟ بص لفوق · Everything went dark… look up
 ```
 
 **YouTube · Description**
@@ -185,7 +185,7 @@ Waiting for something… while the clouds pass without rain?
 **YouTube · Titre (64/100)**
 
 ```text
-Waiting for something that never comes? · مستني حاجة… ومش بتيجي؟
+مستني حاجة… ومش بتيجي؟ · Waiting for something that never comes?
 ```
 
 **YouTube · Description**
@@ -293,7 +293,7 @@ How many hours did you scroll today… while the clock ran and you stayed put?
 **YouTube · Titre (63/100)**
 
 ```text
-How many hours did you scroll today? · قلّبت كام ساعة النهارده؟
+قلّبت كام ساعة النهارده؟ · How many hours did you scroll today?
 ```
 
 **YouTube · Description**

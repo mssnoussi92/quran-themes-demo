@@ -9,7 +9,7 @@ Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et 
 **YouTube · Titre (56/100)**
 
 ```text
-The People of the Cave: 3 moments · أصحاب الكهف: ٣ مواقف
+أصحاب الكهف: 3 مواقف · The People of the Cave: 3 moments
 ```
 
 **YouTube · Description**
@@ -138,7 +138,7 @@ They left their city… and hid in a cave with a single prayer.
 **YouTube · Titre (75/100)**
 
 ```text
-They left their city… and hid in a cave! · سابوا مدينتهم… واستخبّوا في كهف!
+سابوا مدينتهم… واستخبّوا في كهف! · They left their city… and hid in a cave!
 ```
 
 **YouTube · Description**
@@ -249,7 +249,7 @@ They asked for mercy… and the answer came in the angle of the sun.
 **YouTube · Titre (66/100)**
 
 ```text
-The sun turned away from them, every day! · الشمس كانت بتميل عنهم!
+الشمس كانت بتميل عنهم! · The sun turned away from them, every day!
 ```
 
 **YouTube · Description**
@@ -360,7 +360,7 @@ They slept three hundred and nine years… and woke up thinking it was a day.
 **YouTube · Titre (68/100)**
 
 ```text
-309 years… and they thought it was a day! · ٣٠٩ سنين… وفاكرينها يوم!
+309 سنين… وفاكرينها يوم! · 309 years… and they thought it was a day!
 ```
 
 **YouTube · Description**

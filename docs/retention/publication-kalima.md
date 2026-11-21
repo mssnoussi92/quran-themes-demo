@@ -77,7 +77,7 @@ God swore by charging horses to say one word about man.
 **YouTube · Titre (73/100)**
 
 ```text
-A word in the Quran… that might describe you · كلمة في القرآن… يمكن توصفك
+كلمة في القرآن… يمكن توصفك · A word in the Quran… that might describe you
 ```
 
 **YouTube · Description**
@@ -187,7 +187,7 @@ Three tiny things in a date stone, and the Quran named all three.
 **YouTube · Titre (87/100)**
 
 ```text
-The date stone… holds three words of the Quran · نواة التمرة… فيها تلات كلمات من القرآن
+نواة التمرة… فيها تلات كلمات من القرآن · The date stone… holds three words of the Quran
 ```
 
 **YouTube · Description**
@@ -300,7 +300,7 @@ When harm touches him he panics, when good comes to him he withholds, and the cu
 **YouTube · Titre (91/100)**
 
 ```text
-A word the Quran explains itself… and gives its cure · كلمة شرحها القرآن بنفسه… وكتب علاجها
+كلمة شرحها القرآن بنفسه… وكتب علاجها · A word the Quran explains itself… and gives its cure
 ```
 
 **YouTube · Description**

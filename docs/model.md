@@ -238,7 +238,8 @@ ligne dépasserait son bloc). Le coin en bas à droite reste vide (YouTube y éc
 | Champ | Ce que c'est |
 | --- | --- |
 | `name` | son nom (minuscules, chiffres, tirets) ; il fait le nom du fichier : `<files>-film-thumbnail-<name>.jpg` |
-| `at` | un moment du film, `"5:40"` ou des secondes (le temps du film terminé, pas d'une scène) |
+| `art` | **ou** une scène dessinée pour la vignette seule (`video/src/trial/ThumbArt.tsx`, table `ART` : `qarnayn-barrier`…) : le choix du propriétaire du 2026-11-21 (« il ne faut pas toujours choisir des images du film, on essaie de créer une » image ; « entièrement dessinée ») |
+| `at` | **ou** un moment du film, `"5:40"` ou des secondes (le temps du film terminé, pas d'une scène) |
 | `lines` | les deux lignes d'accroche (jamais une citation ; les mots refusés s'appliquent) |
 | `tag` | l'étiquette dorée |
 | `place` | `top` (centré en haut), `left` ou `right` (un bloc d'environ 45 % de la largeur de ce côté, texte aligné à droite) |
@@ -249,7 +250,16 @@ Les options passent par `video/public/trial/<film>.json` (écrit par `prepare.py
 composition lit aussi la ligne de temps `<film>-<voix>.json`. Le workflow `film` les rend avec `only: all` ou `film`, à côté
 de `TrialThumb169` (qui reste), et **seules, avec `only: thumbnail`** : il prépare le film (clips et ligne de temps comme
 pour `only: film`), ne rend aucune vidéo et **ajoute** les images à la release brouillon `<files>-candidate` sans retirer les
-autres fichiers. Le propriétaire choisit l'option sur les images ; rien n'est validé sans lui.
+autres fichiers. Le propriétaire choisit l'option sur les images ; rien n'est validé sans lui. Son choix s'inscrit dans
+`thumbnail.use` (le nom de l'option) : `publish.py` nomme alors ce fichier sur la ligne du film (« miniature : … »), et
+`page-files` le rend public avec les autres (Dhul-Qarnayn : `barrier`, choisi le 2026-11-21).
+
+**Une scène dessinée d'abord** (son choix, 2026-11-21) : un ciel vif au crépuscule, une seule chose en grand (le barrage
+chauffé au rouge, le coffre d'or, le soleil dans l'eau sombre), la lumière dessinée pour une image lue à 170 px ; les
+silhouettes du film (`Qarnayn.tsx`) en plus grand et plus clair, personne dessiné, rien de l'invisible. Une scène dessinée ne
+demande aucun clip : elle se rend dans la session (`npx remotion still … TrialThumbFrame … --props='{"film": …, "option": …,
+"data": {"film": null, "option": {…}}}'`), et le voile sous le texte y est plus léger. Le moment du film (`at`) reste
+possible quand une image du film est la plus forte.
 
 ```bash
 uv run --with pyyaml python3 tools/trial/videos.py --film <film> --only thumbnail --stills   # ce qui serait rendu

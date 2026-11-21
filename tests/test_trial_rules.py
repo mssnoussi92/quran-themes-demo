@@ -740,3 +740,23 @@ def test_the_film_reads_no_silent_line_in_a_short_s_voice_text():
     lines = film.lines_of(spec)
     assert [l["ar"] for l in lines] == ["سطر بالصوت", "وسطر تاني"]
     assert [(l["narration"], l["index"]) for l in lines] == [("open", 0), ("open", 1)]
+
+
+def test_a_drawn_thumbnail_and_the_chosen_one_are_checked(copy):
+    """2026-11-21 (owner's choice): a thumbnail drawn for itself (`art`, a scene of ThumbArt.tsx) or a moment of the film
+    (`at`), never both; `thumbnail.use` names the option YouTube gets."""
+    spec = copy.load("content/trial/qarnayn.yaml")
+    assert spec["thumbnail"]["use"] == "barrier"         # his choice, in the real file
+    assert {o["art"] for o in spec["thumbnail"]["options"]} == {"qarnayn-barrier", "qarnayn-chest", "qarnayn-sunset"}
+    spec["thumbnail"]["options"] = [
+        {"name": "drawn", "art": "qarnayn-barrier", "lines": ["a", "b"], "tag": "t", "place": "left"},
+        {"name": "both", "art": "qarnayn-chest", "at": "4:13", "lines": ["a", "b"], "tag": "t", "place": "top"},
+        {"name": "nowhere", "art": "a-scene-nobody-drew", "lines": ["a", "b"], "tag": "t", "place": "top"},
+    ]
+    spec["thumbnail"]["use"] = "missing"
+    copy.dump("content/trial/qarnayn.yaml", spec)
+    done = copy.rules("--film", "qarnayn")
+    refused(done, "thumbnail.options[2]: one of `art`")
+    for message in ("« a-scene-nobody-drew » is not drawn in video/src/trial/ThumbArt.tsx", "thumbnail.use: « missing » is not one of"):
+        assert message in done.stdout, done.stdout[-2500:]
+    assert "thumbnail.options[1]" not in done.stdout

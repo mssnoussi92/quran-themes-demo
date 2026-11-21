@@ -77,7 +77,7 @@ Sur TikTok : la vidéo `hayyin-short-1-ghiba-tiktok.mp4`, signée `@quran.words.
 **YouTube · Titre (91/100)**
 
 ```text
-“But it's true!”… and your good deeds may go to him · «هو فعلاً كده!»… وحسناتك ممكن تروح له
+«هو فعلاً كده!»… وحسناتك ممكن تروح له · “But it's true!”… and your good deeds may go to him
 ```
 
 **YouTube · Description**
@@ -189,7 +189,7 @@ Sur TikTok : la vidéo `hayyin-short-2-namima-tiktok.mp4`, signée `@quran.words
 **YouTube · Titre (99/100)**
 
 ```text
-“Look what he said about you”: the Quran has a name for it · «شوف فلان قال عليك إيه»… القرآن سمّاها
+«شوف فلان قال عليك إيه»… القرآن سمّاها · “Look what he said about you”: the Quran has a name for it
 ```
 
 **YouTube · Description**
@@ -300,7 +300,7 @@ You did it so they would say it… and they did. The Quran paints it: dust on a 
 **YouTube · Titre (73/100)**
 
 ```text
-You did it so they would say it… and they did · عملتها عشان يتقال… واتقال
+عملتها عشان يتقال… واتقال · You did it so they would say it… and they did
 ```
 
 **YouTube · Description**

@@ -11,11 +11,15 @@ import { INK_SHADOW, Tag, THUMB } from "./Cover";
 import { Film } from "./Film";
 import type { FilmData } from "./Film";
 import { GOLD } from "./Trial";
+import { ThumbArt } from "./ThumbArt";
 
 export type ThumbOption = {
   name: string;
-  /** A moment of the film: "5:40", "1:05:10" or a number of seconds. */
-  at: string | number;
+  /** A moment of the film: "5:40", "1:05:10" or a number of seconds (the picture is the clean film then). */
+  at?: string | number;
+  /** Or a scene drawn for the thumbnail alone (ThumbArt.tsx: « qarnayn-barrier »…; the owner, 2026-11-21: « entièrement
+   * dessinée », not always a picture of the film). */
+  art?: string;
   /** Two lines of Arabic: the first white, the second gold. */
   lines: [string, string];
   tag: string;
@@ -25,7 +29,7 @@ export type ThumbOption = {
   brightness?: number;
   file?: string;
 };
-export type ThumbFrameData = { film: FilmData; option: ThumbOption };
+export type ThumbFrameData = { film: FilmData | null; option: ThumbOption };
 export type ThumbFrameProps = { film: string; voice: string; option: string; data: ThumbFrameData | null };
 
 /** "5:40" -> 340, "1:05:10" -> 3910, a number of seconds stays. */
@@ -42,12 +46,15 @@ export const thumbFrameMetadata: CalculateMetadataFunction<ThumbFrameProps> = as
     if (!res.ok) throw new Error(`public/trial/${file} is missing: ${hint}`);
     return res.json();
   };
-  // The timeline (what the clean film shows) and the thumbnail data (tools/trial/film.py): both by prepare.py --film.
-  const film = (await get(`${props.film}-${props.voice}.json`, `run tools/trial/prepare.py --film ${props.film} --voice ${props.voice}`)) as FilmData;
+  if (props.data) return { props };                // given whole (a still rendered in a session: --props)
+  // The thumbnail data (tools/trial/film.py) and, for a moment of the film, its timeline: both by prepare.py --film.
   const shown = (await get(`${props.film}.json`, `run tools/trial/prepare.py --film ${props.film}`)) as { thumbnail: { options?: ThumbOption[] } };
   const option = (shown.thumbnail.options ?? []).find((o) => o.name === props.option);
   if (!option) throw new Error(`content/trial/${props.film}.yaml: no thumbnail option « ${props.option} » (thumbnail.options)`);
+  if (option.art) return { props: { ...props, data: { film: null, option } } };
+  if (option.at === undefined) throw new Error(`thumbnail option « ${option.name} »: neither \`art\` nor \`at\``);
   momentOf(option.at);
+  const film = (await get(`${props.film}-${props.voice}.json`, `run tools/trial/prepare.py --film ${props.film} --voice ${props.voice}`)) as FilmData;
   return { props: { ...props, data: { film, option } } };
 };
 
@@ -55,19 +62,23 @@ export const TrialThumbFrame: React.FC<ThumbFrameProps> = ({ film: id, voice, da
   const { fps } = useVideoConfig();
   if (!data) throw new Error("no thumbnail data: calculateMetadata did not run");
   const { option } = data;
-  const at = momentOf(option.at);
-  if (at < 0 || at >= data.film.seconds) throw new Error(`thumbnail option « ${option.name} »: ${option.at} is outside the film (${Math.floor(data.film.seconds)} s)`);
+  const at = option.art ? 0 : momentOf(option.at ?? -1);
+  if (!option.art && (!data.film || at < 0 || at >= data.film.seconds))
+    throw new Error(`thumbnail option « ${option.name} »: ${option.at} is outside the film`);
   const scale = THUMB.width / 1920;                  // the film is 1920x1080, reduced to 1280x720
   const side = option.place !== "top";
   const [first, second] = option.lines;
   // Arabic in this font is about 0.38 em a letter, spaces included: a line that would leave its block is reduced.
   const room = side ? THUMB.width * 0.47 : THUMB.width - 80;
   const size = Math.round(Math.min(122, room / (Math.max(first.length, second.length) * 0.38)));
+  // A drawn scene leaves its text side calm already: a lighter veil, so that its colours stay.
+  const k = option.art ? 0.6 : 1;
+  const ink = (a: number) => `rgba(4,7,20,${(a * k).toFixed(2)})`;
   const veil = option.place === "left"
-    ? "linear-gradient(90deg, rgba(4,7,20,.78) 0%, rgba(4,7,20,.55) 40%, rgba(4,7,20,0) 62%)"
+    ? `linear-gradient(90deg, ${ink(0.78)} 0%, ${ink(0.55)} 40%, rgba(4,7,20,0) 62%)`
     : option.place === "right"
-      ? "linear-gradient(270deg, rgba(4,7,20,.78) 0%, rgba(4,7,20,.55) 40%, rgba(4,7,20,0) 62%)"
-      : "linear-gradient(180deg, rgba(4,7,20,.8) 0%, rgba(4,7,20,.55) 34%, rgba(4,7,20,0) 58%)";
+      ? `linear-gradient(270deg, ${ink(0.78)} 0%, ${ink(0.55)} 40%, rgba(4,7,20,0) 62%)`
+      : `linear-gradient(180deg, ${ink(0.8)} 0%, ${ink(0.55)} 34%, rgba(4,7,20,0) 58%)`;
   // The bottom right corner stays empty: YouTube writes the duration there.
   const block: React.CSSProperties = side
     ? { position: "absolute", top: 120, [option.place]: 40, width: THUMB.width * 0.47, textAlign: "right" }
@@ -77,9 +88,11 @@ export const TrialThumbFrame: React.FC<ThumbFrameProps> = ({ film: id, voice, da
     <AbsoluteFill style={{ background: "#04070f" }}>
       <AbsoluteFill style={{ filter: option.brightness && option.brightness !== 1 ? `brightness(${option.brightness})` : undefined }}>
         <div style={{ position: "absolute", top: 0, left: 0, width: 1920, height: 1080, transform: `scale(${scale})`, transformOrigin: "0 0" }}>
-          <Freeze frame={Math.round(at * fps)}>
-            <Film film={id} voice={voice} data={data.film} clean />
-          </Freeze>
+          {option.art ? <ThumbArt art={option.art} /> : (
+            <Freeze frame={Math.round(at * fps)}>
+              <Film film={id} voice={voice} data={data.film} clean />
+            </Freeze>
+          )}
         </div>
       </AbsoluteFill>
       <AbsoluteFill style={{ background: veil }} />
