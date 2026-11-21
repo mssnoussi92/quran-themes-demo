@@ -4,12 +4,12 @@ Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et 
 
 ## Le film · The People of the Cave: 3 moments · أصحاب الكهف: ٣ مواقف
 
-`kahf-film-16x9.mp4` · 6:10 · 16:9 · YouTube · miniature : `kahf-film-thumbnail.jpg`
+`kahf-film-16x9.mp4` · 6:10 · 16:9 · YouTube · miniature : `kahf-film-thumbnail-awake.jpg`
 
-**YouTube · Titre (56/100)**
+**YouTube · Titre (73/100)**
 
 ```text
-أصحاب الكهف: 3 مواقف · The People of the Cave: 3 moments
+قصة أصحاب الكهف: 3 مواقف · The story of the People of the Cave: 3 moments
 ```
 
 **YouTube · Description**

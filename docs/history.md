@@ -858,3 +858,16 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   (questions à choix) : « je valide les 12 vidéos », « je valide les 3 textes », « les 3 dessinées » (vignettes), « je valide les 7
   sources » (24:15 et ses deux tafsirs, Bukhari 6478, l'Encyclopédie koweïtienne 24/240, 244, 245) ; fichiers rendus publics par
   `page-files`.
+
+## 2026-11-21 · Vignettes dessinées de la caverne et de Moussa et al-Khadir
+
+- **Ses choix** (questions à choix, 2026-11-21, après celle de Dhul-Qarnayn) : pour le film de la caverne (lundi 30),
+  « C · 309 ans » (l'arche vue de l'intérieur, 309 en or) et le titre YouTube « قصة أصحاب الكهف: 3 مواقف · The story of
+  the People of the Cave: 3 moments » ; pour le film de Moussa et al-Khadir, déjà en ligne, « A · le bateau » et le titre
+  « قصة موسى والخضر: مش كل شر… شر · The story of Moses and al-Khidr: what looks bad is not always bad », à changer à la main
+  dans YouTube Studio (sa vignette à trois panneaux : 2,54 % de clics sur 6 963 impressions). Six scènes proposées
+  (`ThumbArt.tsx` : la caverne éclairée, le trajet du soleil, 309 ans ; le bateau, le mur, la maison), les lignes prises
+  des titres validés des shorts ; personne dessiné (le garçon du récit non plus).
+- **Le texte d'une vignette se mesure** (`HookLines`, `ThumbFrame.tsx`) : estimée à 0,38 em par lettre, « وقال: مش مني! »
+  dépassait son bloc de 30 px et touchait le bord ; les deux lignes sont maintenant mesurées une fois les polices
+  chargées et réduites ensemble.
