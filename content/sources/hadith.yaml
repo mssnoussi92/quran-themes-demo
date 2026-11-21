@@ -2171,3 +2171,30 @@
     license: none stated on the archive.org item
     status: validated
     validated_by: mssnoussi92
+- id: hadith.bukhari.6478
+  type: hadith
+  ref: {collection: bukhari, number: 6478}
+  grade: sahih
+  graded_by: Sahih al-Bukhari
+  url: https://sunnah.com/bukhari:6478
+  origin:
+    api: hadith-api (fawazahmed0)
+    text_ar: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-bukhari/6478.json
+    text_en: https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari/6478.min.json
+    translator: Muhsin Khan
+    book: 81
+    hadith_in_book: 67
+    retrieved: '2026-11-21'
+  status: proposed
+  notes: "« إن العبد ليتكلم بالكلمة… لا يلقي لها بالًا » : la parole dite sans y penser, dans le film « وتحسبونه هيّنًا » (choix du propriétaire, 2026-11-21)"
+  text_ar: حَدَّثَنِي عَبْدُ اللَّهِ بْنُ مُنِيرٍ، سَمِعَ أَبَا النَّضْرِ، حَدَّثَنَا عَبْدُ الرَّحْمَنِ بْنُ عَبْدِ اللَّهِ ـ يَعْنِي ابْنَ دِينَارٍ ـ عَنْ أَبِيهِ، عَنْ أَبِي صَالِحٍ، عَنْ أَبِي هُرَيْرَةَ، عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ ‏ "‏ إِنَّ الْعَبْدَ لَيَتَكَلَّمُ بِالْكَلِمَةِ مِنْ رِضْوَانِ اللَّهِ لاَ يُلْقِي لَهَا بَالاً، يَرْفَعُ اللَّهُ بِهَا دَرَجَاتٍ، وَإِنَّ الْعَبْدَ لَيَتَكَلَّمُ بِالْكَلِمَةِ مِنْ سَخَطِ اللَّهِ لاَ يُلْقِي لَهَا بَالاً يَهْوِي بِهَا فِي جَهَنَّمَ ‏"‏‏.‏
+  text_en: 'Narrated Abu Huraira:The Prophet; said, "A slave (of Allah) may utter a word which pleases Allah without giving it much importance, and because of that Allah will raise him to degrees (of reward): a slave (of Allah) may utter a word (carelessly) which displeases Allah without thinking of its gravity and because of that he will be thrown into the Hell-Fire'
+  recording:
+    reader: Abu Malik Ibn Abd'Azeez as-Salafi al-Asqalane
+    item: https://archive.org/details/bukhari_audiobook
+    file: https://archive.org/download/bukhari_audiobook/6478.mp3
+    start: 13.6
+    end: 30.24
+    heard: إن العبد لا يتكلم بالكلمة من رضوان الله لا يلقي لها بالا يرفعه الله بها درجات وإن العبد لا يتكلم بالكلمة من سخط الله لا يلقي لها بالا يهوي بها في جهنم
+    license: none stated on the archive.org item
+    status: proposed

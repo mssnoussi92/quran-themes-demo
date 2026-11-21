@@ -3872,3 +3872,19 @@
   notes: "الصاحب ساحب (sahib), proposé le 2026-11-19 : short `nasr`, récité en entier (à la place de 5:2, trop long : règle du propriétaire, jamais une ayah coupée)"
   text_ar: وَٱلْمُؤْمِنُونَ وَٱلْمُؤْمِنَـٰتُ بَعْضُهُمْ أَوْلِيَآءُ بَعْضٍ ۚ يَأْمُرُونَ بِٱلْمَعْرُوفِ وَيَنْهَوْنَ عَنِ ٱلْمُنكَرِ وَيُقِيمُونَ ٱلصَّلَوٰةَ وَيُؤْتُونَ ٱلزَّكَوٰةَ وَيُطِيعُونَ ٱللَّهَ وَرَسُولَهُۥٓ ۚ أُو۟لَـٰٓئِكَ سَيَرْحَمُهُمُ ٱللَّهُ ۗ إِنَّ ٱللَّهَ عَزِيزٌ حَكِيمٌ
   text_en: The believing men and believing women are allies of one another. They enjoin what is right and forbid what is wrong and establish prayer and give zakāh and obey Allāh and His Messenger. Those - Allāh will have mercy upon them. Indeed, Allāh is Exalted in Might and Wise.
+- id: quran.24.15
+  type: ayah
+  ref: {surah: 24, ayah: 15}
+  url: https://quran.com/24/15
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=24:15
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=24:15
+    translator: Saheeh International
+    surah_ar: النور
+    surah_en: An-Nur
+    retrieved: '2026-11-21'
+  status: proposed
+  notes: "« وتحسبونه هيّنًا وهو عند الله عظيم » : le verset qui donne son nom à la série, récité dans son film (choix du propriétaire, 2026-11-21)"
+  text_ar: إِذْ تَلَقَّوْنَهُۥ بِأَلْسِنَتِكُمْ وَتَقُولُونَ بِأَفْوَاهِكُم مَّا لَيْسَ لَكُم بِهِۦ عِلْمٌ وَتَحْسَبُونَهُۥ هَيِّنًا وَهُوَ عِندَ ٱللَّهِ عَظِيمٌ
+  text_en: When you received it with your tongues and said with your mouths that of which you had no knowledge and thought it was insignificant while it was, in the sight of Allāh, tremendous.

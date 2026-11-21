@@ -10,7 +10,120 @@ title: { ar: "سؤال صعب", en: "A Hard Question" }
 shorts: [dank, tayyiba, ghafur]
 handle: "@quran_words_daily"
 publish:
+  title: { en: "3 hard questions… and the Quran's answer", ar: "تلات أسئلة صعبة… والقرآن ردّ عليها" }      # le titre du film, proposé par la session (2026-11-21), à valider
   out: docs/retention/publication-sual.md
   series: { en: "A Hard Question", ar: "سؤال صعب" }
   hashtags: ["#سؤال_صعب", "#تفسير_القرآن"]
   narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Le film (décision du propriétaire, 2026-11-21 : « un film chaque lundi », les films faits des séries qui forment un
+# tout ; ses ajouts, question à choix : « 13:28 en conclusion », « liaison entre 1 et 2 », « ouverture : les 3
+# questions »). Il reprend les trois shorts réplique par réplique (sans leurs appels à suivre) et ajoute ses répliques
+# propres : l'ouverture (les trois questions, une image chacune), le cadre, deux liaisons, la conclusion sur 13:28, qui
+# répond à 20:124, le premier verset du film (« أعرض عن ذكري » → « بذكر الله تطمئن القلوب »). Répliques à valider avant
+# toute voix (une requête, texte 105-trial-sual-film).
+text: 105-trial-sual-film
+outro: 12
+thumbnail: { title: "سؤال صعب", tag: "3 أسئلة", panels: [dank, tayyiba, ghafur] }
+chapters:
+  - id: open
+    title: { ar: "تلات أسئلة", en: "Three questions" }
+    segments:
+      - narration: film-open
+        shots: [{ picture: dank, scene: ask }, { picture: tayyiba, scene: ask }, { picture: ghafur, scene: ask }]
+        lines:
+          - ar: "بعيد عن ربنا… وعايش مرتاح؟"
+            en: "Far from God… and living in comfort?"
+          - ar: "مؤمن… وحياته صعبة؟"
+            en: "A believer… and his life is hard?"
+          - ar: "وربنا غفور رحيم… يبقى أعمل اللي أنا عايزه؟"
+            en: "And God is forgiving… so I can do whatever I want?"
+      - narration: film-frame
+        picture: dank
+        scene: pause
+        lines:
+          - ar: "تلات أسئلة… ناس كتير بتفكر فيها… ومحدش بيقولها بصوت عالي."
+            en: "Three questions… many people think about… and nobody asks out loud."
+          - ar: "والقرآن مش بيهرب منها: الرد في الآية نفسها… وفي آية تانية."
+            en: "And the Quran doesn't run from them: the answer is in the verse itself… and in another verse."
+  - id: dank
+    number: 1
+    title: { ar: "بعيد عن ربنا… وعايش مرتاح؟", en: "Far from God… and living in comfort?" }
+    segments:
+      - { reuse: dank.open, picture: dank, scene: pause }
+      - { verse: quran.20.124, scene: listen }
+      - { reuse: dank.meaning }
+      - { reuse: dank.ask, scene: ask }
+      - { reuse: dank.inside, scene: inside }
+      - { reuse: dank.more, scene: facing }
+      - { verse: quran.6.44, scene: answer }
+      - { reuse: dank.meaning2, lines: [1] }
+      - { reuse: dank.example, scene: example }
+      - { reuse: dank.close, lines: [0], scene: end, subscribe: true }
+  - id: tayyiba
+    number: 2
+    title: { ar: "مؤمن… وحياته صعبة؟", en: "A believer… with a hard life?" }
+    segments:
+      - narration: film-mirror
+        picture: tayyiba
+        scene: pause
+        lines:
+          - ar: "السؤال الأولاني: مرتاح… وهو بعيد."
+            en: "The first question: comfortable… while far away."
+          - ar: "والتاني بالعكس… وردّه من نفس المكان: القلب."
+            en: "The second is the reverse… and its answer comes from the same place: the heart."
+      - { reuse: tayyiba.open }
+      - { verse: quran.16.97, scene: listen }    # entier dans le film (sa règle du 2026-11-19 : un verset se récite toujours entier)
+      - { reuse: tayyiba.meaning }
+      - { reuse: tayyiba.ask, scene: ask }
+      - { reuse: tayyiba.inside, scene: inside }
+      - { reuse: tayyiba.more, scene: facing }
+      - { verse: quran.29.2, scene: answer }
+      - { reuse: tayyiba.meaning2 }
+      - { reuse: tayyiba.example, scene: example }
+      - { reuse: tayyiba.close, lines: [0], scene: end }
+  - id: ghafur
+    number: 3
+    title: { ar: "ربنا غفور رحيم… أعمل اللي أنا عايزه؟", en: "God is forgiving… so can I do what I want?" }
+    segments:
+      - narration: film-third
+        picture: ghafur
+        scene: pause
+        lines:
+          - ar: "والسؤال التالت… مش عن الدنيا. عن الرحمة نفسها."
+            en: "And the third question… isn't about this world. It's about mercy itself."
+      - { reuse: ghafur.open }
+      - { verse: quran.15.49, scene: listen }
+      - { reuse: ghafur.meaning }
+      - { reuse: ghafur.ask, scene: ask }
+      - { reuse: ghafur.more, scene: facing }
+      - { verse: quran.15.50, scene: answer }
+      - { reuse: ghafur.meaning2 }
+      - { reuse: ghafur.example, scene: example }
+      - { reuse: ghafur.close, lines: [0], scene: end }
+  - id: end
+    title: { ar: "الراحة فين؟", en: "Where is comfort?" }
+    segments:
+      - narration: film-back
+        picture: dank
+        scene: end
+        sources: [tafsir.muyassar.20.124]
+        lines:
+          - ar: "أول آية في الفيلم قالت: اللي يبعد عن ذكر ربنا… حياته ضنك."
+            en: "The first verse of this film said: whoever turns away from God's remembrance… has a narrow life."
+          - ar: "وفي آية تانية… الوش التاني:"
+            en: "And another verse… the other side:"
+      - { verse: quran.13.28 }
+      - narration: film-heart
+        sources: [tafsir.muyassar.13.28]
+        lines:
+          - ar: "يعني: القلوب بتسكن وتطمّن… بذكر ربنا وطاعته."
+            en: "Meaning: hearts settle and find rest… in remembering God and obeying Him."
+      - narration: film-end
+        subscribe: true
+        lines:
+          - ar: "الراحة مش في اللي في جيبك… في اللي في قلبك."
+            en: "Comfort isn't in what's in your pocket… it's in what's in your heart."
+          - ar: "ابعته لحد عنده سؤال من دول."
+            en: "Send it to someone who has one of these questions."
