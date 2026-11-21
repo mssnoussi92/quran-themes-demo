@@ -40,6 +40,7 @@ import videos  # noqa: E402  (the names of a film's videos and stills, read from
 ROOT = Path(__file__).resolve().parents[2]
 TRIAL = ROOT / "content" / "trial"
 MOST = 20 * 1024 * 1024 - 400_000        # bytes: a file of the page, under the 20 MiB a page may serve
+ARTIFACT = 256 * 1024 * 1024              # bytes: the whole page, what an artifact holds
 PLATFORMS = (("facebook", "Facebook"), ("instagram", "Instagram"), ("tiktok", "TikTok"), ("youtube", "YouTube"))
 CALENDAR = ROOT / "docs" / "retention" / "calendar.md"
 MONTHS = {"janv": 1, "févr": 2, "mars": 3, "avr": 4, "mai": 5, "juin": 6, "juil": 7, "août": 8, "sept": 9, "oct": 10,
@@ -61,15 +62,16 @@ def stamp(t: float) -> str:
     return f"{int(t // 60)}:{int(t % 60):02d}"
 
 
-def preview(src: Path, dest: Path, wide: bool) -> None:
-    """`src` encoded small into `dest`: 480p for a film, 540 px wide for a short or a vertical film; again at a set
-    bitrate if too big."""
+def preview(src: Path, dest: Path, wide: bool, film: bool = False) -> None:
+    """`src` encoded small into `dest`: 540 px wide for a short; a film (16:9 or 9:16) smaller, 360 px on its short side
+    (2026-11-21: the page had reached the 256 MiB an artifact holds, and a film is watched there to be checked, not
+    enjoyed); again at a set bitrate if too big."""
     if dest.exists() and dest.stat().st_mtime >= src.stat().st_mtime and dest.stat().st_size <= MOST:
         return
-    scale = "scale=854:480" if wide else "scale=540:960"
+    scale = ("scale=640:360" if wide else "scale=360:640") if film else ("scale=854:480" if wide else "scale=540:960")
     base = ["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(src), "-vf", scale, "-c:v", "libx264", "-preset", "medium",
-            "-pix_fmt", "yuv420p", "-g", "60", "-c:a", "aac", "-b:a", "80k", "-ac", "2", "-movflags", "+faststart"]
-    run(base + ["-crf", "27", str(dest)])
+            "-pix_fmt", "yuv420p", "-g", "60", "-c:a", "aac", "-b:a", "64k" if film else "80k", "-ac", "2", "-movflags", "+faststart"]
+    run(base + ["-crf", "29" if film else "27", str(dest)])
     if dest.stat().st_size > MOST:
         rate = int(MOST * 8 / seconds(src) / 1000) - 90          # kbit/s left for the picture
         run(base + ["-b:v", f"{rate}k", "-maxrate", f"{rate}k", "-bufsize", f"{2 * rate}k", str(dest)])
@@ -138,6 +140,14 @@ def film_data(film_id: str, folder: Path, out: Path, release: str | None, tall: 
     listed, stills = videos.listing(film_id, "D", "all")
     # A series drawn twice (`casts`): each short has a card per drawing, the same texts under both.
     casts = film.get("casts") or [None]
+    if film.get("published_cast") and film["published_cast"] in casts:
+        # The drawing the calendar publishes (`published_cast`: « les 3 en B », the owner's choice of 2026-11-16) is the
+        # one the page shows: the other was validated, it is not to be published (2026-11-21).
+        gone = [c for c in casts if c != film["published_cast"]]
+        drop = lambda name: any(name.endswith(f"-{c}") or f"-{c}-" in name for c in gone)
+        listed = [v for v in listed if not drop(v["name"])]
+        stills = [s for s in stills if not drop(s["name"])]
+        casts = [film["published_cast"]]
     per = len(casts)
     if series:
         # A series grows at its end: a short written but not delivered yet (no video in DIR) is left off the page,
@@ -164,7 +174,15 @@ def film_data(film_id: str, folder: Path, out: Path, release: str | None, tall: 
     cards = []
     order = [v for v in listed if v["kind"] == "film"] + [v for v in listed if v["kind"] == "short"]
     twins = [v["name"] for v in listed if v["kind"] == "tiktok"]
-    pictures = [s for s in stills if s["kind"] == "thumbnail"] + [s for s in stills if s["kind"] == "cover"]
+    # The film's thumbnail: the one YouTube gets (`thumbnail.use`, a dedicated one the owner chose, 2026-11-21; else the
+    # three panels), not every option drawn for him to choose from.
+    th = film.get("thumbnail") or {}
+    files_name = film.get("files", film_id)
+    chosen = next((o.get("file") or f"{files_name}-film-thumbnail-{o['name']}.jpg" for o in th.get("options") or [] if o["name"] == th.get("use")),
+                  th.get("file", f"{files_name}-film-thumbnail.jpg"))
+    thumbs = [s for s in stills if s["kind"] == "thumbnail"]
+    thumbs = [next((s for s in thumbs if s["name"] == chosen), thumbs[0])] if thumbs else []
+    pictures = thumbs + [s for s in stills if s["kind"] == "cover"]
     if len(sections) * per != len(order) or len(pictures) != len(order):
         sys.exit(f"error: {film_id}: {len(order)} videos, {len(sections)} sections of texts, {len(pictures)} stills")
     for n, (video, picture) in enumerate(zip(order, pictures)):
@@ -177,7 +195,7 @@ def film_data(film_id: str, folder: Path, out: Path, release: str | None, tall: 
         section = sections[k] if series else sections[n]
         cast = casts[n % per] if series else None
         slug = f"{film.get('files', film_id)}-{'film' if wide else 'short-' + str(k + 1)}" + (f"-{cast}" if cast else "")
-        preview(src, media / f"{slug}.mp4", wide)
+        preview(src, media / f"{slug}.mp4", wide, film=wide)
         still(image, media / f"{slug}.jpg", 960 if wide else 540)
         spec = film if wide else shorts[k]
         title = spec["publish"]["title"]
@@ -200,7 +218,7 @@ def film_data(film_id: str, folder: Path, out: Path, release: str | None, tall: 
         if len(part) != 1:
             sys.exit(f"error: {written}: {len(part)} sections, one expected")
         slug = f"{film.get('files', film_id)}-film-9x16"
-        preview(tall, media / f"{slug}.mp4", False)
+        preview(tall, media / f"{slug}.mp4", False, film=True)
         frame(tall, media / f"{slug}.jpg", 1.0, 540)
         # Its TikTok twin, signed with the page's name there (publish.py --tall writes its caption): named on the card.
         tiktok = (film.get("tall") or {}).get("tiktok")
@@ -583,6 +601,8 @@ def main() -> int:
     total = sum(f.stat().st_size for f in files if f.is_file())
     (args.out / "files.json").write_text(json.dumps([{"as": str(f.relative_to(args.out)), "bytes": f.stat().st_size} for f in files if f.is_file() and f.name != "files.json"], indent=1), encoding="utf-8")
     print(f"{args.out}: index.html and {sum(1 for f in files if f.is_file()) - 1} media files, {total / 1e6:.0f} MB")
+    if total > ARTIFACT:
+        sys.exit(f"error: the page is {total / 2**20:.0f} MiB, over the {ARTIFACT // 2**20} MiB an artifact holds")
     return 0
 
 
