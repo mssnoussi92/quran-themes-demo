@@ -7,6 +7,7 @@
 import React from "react";
 import { FLOOR, H, INK, PELVIS, S, W, lerp, lp, ramp, walking, type P2, type Played } from "./AyahPlayed";
 import { Bubble, Burst, Coin, Heart, Phone, POSES, Stick, type Face } from "./Sahib";
+import { walk } from "./Lens";
 
 const shoulderY = PELVIS - 106 * S;
 const headY = PELVIS - 182 * S;
@@ -749,6 +750,178 @@ export const MirrorPlayed: Played = ({ u, at }) => {
       </g>
       <circle cx={mirror.x + 150} cy={headY} r={120} fill="#fff1b8" opacity={0.25 * smile} />
       <Stick x={x} y={PELVIS} s={S} facing={1} tone="white" face={face} pose={{ ...POSES.stand, head: 4 }} />
+    </g>
+  );
+};
+
+// ------------------------------------------------------------------------------------- 13:28, hearts at rest
+
+/** « زي لما تبقى مخنوق ومش لاقي كلام… وتقول: سبحان الله… الحمد لله… الدنيا حواليك زي ما هي… بس قلبك يهدى. »: a crowded
+ * street, people pass both ways, horns; he stands in the middle, his hands at his head; he says his dhikr, a soft light
+ * at his chest; the crowd goes on, his face calms. */
+export const CrowdPlayed: Played = ({ u, t, at }) => {
+  const x = 540;
+  const calm = ramp(u, at(2), at(3) + 0.6);
+  const passers = [0, 1, 2, 3, 4, 5].map((i) => {
+    const dir = i % 2 ? 1 : -1;
+    const speed = 110 + 30 * (i % 3);
+    const x0 = (i * 211) % 1300 - 110;
+    const px = ((x0 + dir * speed * (t + i)) % 1400 + 1400) % 1400 - 160;
+    return { px, dir: dir as 1 | -1, phase: Math.abs(px) / 30, cap: ["#3d7cc9", "#e88a3a", "#3fa36b", "#b05fc2", "#c46a3c", "#4cc3c9"][i] };
+  });
+  return (
+    <g>
+      <rect width={W} height={H} fill="#bcc3cf" />
+      {[0, 1, 2, 3].map((i) => <rect key={i} x={20 + i * 270} y={520 + (i % 2) * 60} width={230} height={800} fill={["#8a93a6", "#9aa2b4", "#7d8699", "#a3abbc"][i]} stroke={INK} strokeWidth={6} />)}
+      {[0, 1, 2, 3].map((i) => [0, 1, 2].map((r) => <rect key={`${i}${r}`} x={50 + i * 270} y={620 + r * 160} width={60} height={80} fill="#e6ebf2" opacity={0.7} />))}
+      <rect x={0} y={FLOOR} width={W} height={H - FLOOR} fill="#5e6472" />
+      {passers.map((p, i) => (
+        <g key={i} opacity={0.75}>
+          <Stick x={p.px} y={PELVIS - 60} s={S * 0.72} facing={p.dir} tone="grey" face="neutral" cap={p.cap} pose={{ ...walk(p.phase), torso: 6 }} />
+        </g>
+      ))}
+      {/* the noise of the street: horns, in waves */}
+      <g opacity={1 - 0.7 * calm} stroke="#c0392b" strokeWidth={8} fill="none" strokeLinecap="round">
+        {[[170, 760, 1], [910, 820, -1]].map(([nx, ny, d], k) => [0, 1, 2].map((i) => {
+          const r = 30 + ((t * 70 + i * 30) % 90);
+          return <path key={`${k}${i}`} d={`M ${nx} ${ny - r} A ${r} ${r} 0 0 ${d > 0 ? 1 : 0} ${nx} ${ny + r}`} opacity={1 - ((t * 70 + i * 30) % 90) / 90} />;
+        }))}
+      </g>
+      <circle cx={x + 10} cy={shoulderY + 40} r={50 + 120 * calm} fill="#fff1b8" opacity={0.3 * calm} />
+      <Stick x={x} y={PELVIS} s={S} facing={1} tone="white" face={calm > 0.5 ? "calm" : "worried"} pose={{ ...POSES.stand, head: lerp(-12, 6, calm) }}
+        handF={calm > 0.5 ? [x + 20, shoulderY + 40] : [x + 50, headY - 10]} bendF={-1} handB={calm > 0.5 ? undefined : [x - 40, headY - 10]} bendB={1} />
+    </g>
+  );
+};
+
+// ------------------------------------------------------------------------------------------- 24:35, the light
+
+/** « زي أوضة ضلمة… مهما تدوّر فيها… مش هتلاقي حاجة. لحد ما النور ييجي… من برّه. »: a dark room, he gropes forward, his
+ * hands out; at « لحد ما النور ييجي » a door opens on the right and its light pours in; his face lifts. */
+export const DarkRoomPlayed: Played = ({ u, t, at }) => {
+  const light = ramp(u, at(3), at(3) + 1.0);
+  const grope = walking(u, 0, Math.max(0.6, at(3)), 260, 520);
+  const x = grope.x;
+  return (
+    <g>
+      <Room wall="#1a1c26" floor="#14151c" />
+      <path d={`M 860 ${FLOOR} L 860 760 L 1000 760 L 1000 ${FLOOR} Z`} fill="#fff1cf" opacity={light} />
+      <path d={`M 860 760 L 1000 760 L ${1000 - 140 * light} ${780} L ${1000 - 140 * light} ${FLOOR - 10} L 860 ${FLOOR}`} fill="#3a2c22" stroke={INK} strokeWidth={5} opacity={0.9} />
+      <path d={`M 860 ${FLOOR} L 1000 ${FLOOR} L 600 ${H} L -200 ${H} Z`} fill="#fff1cf" opacity={0.35 * light} />
+      <path d={`M 860 760 L 860 ${FLOOR} L 100 ${FLOOR - 100} L 300 700 Z`} fill="#fff1cf" opacity={0.18 * light} />
+      <rect width={W} height={H} fill="#000" opacity={0.45 * (1 - light)} />
+      <Stick x={x} y={PELVIS} s={S} facing={1} tone="white" face={light > 0.5 ? "smile" : "worried"} pose={light > 0.5 ? { ...POSES.stand, head: 8 } : { ...grope.pose, torso: 10 }}
+        handF={light > 0.5 ? undefined : [x + 120 + 10 * Math.sin(t * 3), shoulderY + 10]} bendF={-1} handB={light > 0.5 ? undefined : [x + 100, shoulderY + 40 + 10 * Math.cos(t * 3)]} bendB={-1} />
+    </g>
+  );
+};
+
+// ----------------------------------------------------------------------------------- 20:25-28, before the exam
+
+/** « زي لما تبقى داخل على حاجة صعبة… امتحان… مقابلة… كلام لازم يتقال. الدعوة دي… قولها قبلها. »: a corridor, a closed
+ * door, a clock; he waits, unsure; at « الدعوة دي » he raises his hands; at « قولها قبلها » he walks in. */
+export const ExamPlayed: Played = ({ u, t, at }) => {
+  const pray = ramp(u, at(4), at(4) + 0.5) * (1 - ramp(u, at(5) + 0.6, at(5) + 1.0));
+  const go = walking(u, at(5) + 0.8, at(5) + 2.6, 420, 760);
+  const open = ramp(u, at(5) + 0.4, at(5) + 1.0);
+  const x = go.x;
+  const palms: P2[] = [[x + 118, shoulderY + 4], [x + 86, shoulderY + 20]];
+  const hand = (t * 6) % (2 * Math.PI);
+  return (
+    <g>
+      <Room wall="#d6dbe3" floor="#8f8678" />
+      <rect x={700} y={700} width={240} height={FLOOR - 700} fill="#fff1cf" opacity={open} />
+      <path d={`M 700 700 L 940 700 L ${940 - 200 * open} 720 L ${940 - 200 * open} ${FLOOR - 10} L 700 ${FLOOR} Z`} fill="#7a4b2a" stroke={INK} strokeWidth={6} />
+      <circle cx={820} cy={600} r={60} fill="#fffaf0" stroke={INK} strokeWidth={6} />
+      <path d={`M 820 600 L ${820 + 40 * Math.sin(hand)} ${600 - 40 * Math.cos(hand)} M 820 600 L 820 565`} stroke={INK} strokeWidth={5} strokeLinecap="round" />
+      <g stroke={INK} strokeWidth={6}>
+        <rect x={120} y={1180} width={180} height={18} fill="#a87b55" />
+        <path d={`M 140 1198 L 140 ${FLOOR} M 280 1198 L 280 ${FLOOR}`} />
+      </g>
+      <g opacity={1 - ramp(u, at(5) + 2.0, at(5) + 2.6)}>
+        <Stick x={x} y={PELVIS} s={S} facing={1} tone="white" face={pray > 0.5 ? "calm" : u > at(5) ? "smile" : "worried"} pose={go.pose}
+          {...(pray > 0.01 ? { handF: palms[0], bendF: 1, handB: palms[1], bendB: 1 } : {})} />
+        {pray > 0.5 ? <Palms palms={palms} k={pray} /> : null}
+      </g>
+    </g>
+  );
+};
+
+// -------------------------------------------------------------------------------- 6:151 and 17:31, the father
+
+/** `ex` « زي أب مستني مولود… وكل ليلة يحسبها: هقدر أصرف عليه؟ الآية بتقوله: رزقه قبل رزقك… ورزقك معاه. »: at night, at
+ * the table, papers and a few coins, a cradle waiting; he counts, worried; a soft light from the cradle, he looks up.
+ * `calm` « كلمة اتقدّمت… عشان قلبك يرتاح. »: he puts the papers away and smiles at the cradle. */
+export const FatherPlayed: Played = ({ u, t, at, variant }) => {
+  const calm = variant === "calm";
+  const eased = calm ? 1 : ramp(u, at(3), at(4) + 0.4);
+  const x = 420;
+  return (
+    <g>
+      <Room wall="#2b2f52" floor="#3a3346" />
+      <rect x={760} y={640} width={220} height={200} fill="#0b1230" stroke={INK} strokeWidth={8} />
+      <circle cx={900} cy={700} r={26} fill="#f3eccf" />
+      {/* the cradle, and its light */}
+      <circle cx={820} cy={1220} r={60 + 80 * eased} fill="#fff1b8" opacity={0.25 * eased} />
+      <g stroke={INK} strokeWidth={6}>
+        <path d="M 720 1160 Q 820 1290 920 1160 Z" fill="#f6f3ec" />
+        <path d="M 740 1240 L 720 1320 M 900 1240 L 920 1320" />
+      </g>
+      {/* the table, the papers, the coins */}
+      <g opacity={calm ? 1 - ramp(u, 0.2, 1.0) : 1}>
+        <rect x={150} y={1120} width={330} height={22} fill="#a87b55" stroke={INK} strokeWidth={6} />
+        <path d="M 170 1142 L 170 1320 M 460 1142 L 460 1320" stroke={INK} strokeWidth={6} />
+        {[0, 1, 2].map((i) => <rect key={i} x={200 + i * 40} y={1090 - i * 6} width={70} height={30} fill="#fffaf0" stroke={INK} strokeWidth={3} transform={`rotate(${-8 + i * 6} ${235 + i * 40} 1105)`} />)}
+        <g transform="translate(420 1110) scale(1.6)"><Coin x={0} y={0} /><Coin x={8} y={-5} /></g>
+      </g>
+      <Stick x={x + (calm ? 160 * ramp(u, 0.2, 1.2) : 0)} y={PELVIS} s={S} facing={1} tone="white"
+        face={calm ? "smile" : eased > 0.5 ? "kind" : "worried"} pose={{ ...POSES.stand, head: calm ? -6 : lerp(-16, 6, eased), torso: calm ? 0 : lerp(12, 0, eased) }}
+        handF={calm ? undefined : [x + 10 + 12 * Math.sin(t * 7), 1100]} bendF={-1} />
+    </g>
+  );
+};
+
+// ------------------------------------------------------------------------------------------ 17:88, before you share
+
+/** « قبل ما تنشر رقم عن القرآن… عِدّه… وشوف العلما بيقولوا إيه. »: his phone shows a post « 365 » and its share button; his
+ * thumb goes to it, stops; he counts on his fingers, then opens a book. */
+export const SharePlayed: Played = ({ u, at }) => {
+  const x = 420;
+  // phrases of the closing segment it plays over: 2 « قبل ما تنشر رقم عن القرآن… », 3 « عِدّه… », 4 « وشوف العلما بيقولوا إيه. »
+  const stop = ramp(u, at(3) - 0.2, at(3) + 0.2);
+  const count = [0, 1, 2].map((i) => ramp(u, at(3) + 0.1 + i * 0.3, at(3) + 0.3 + i * 0.3));
+  const book = ramp(u, at(4) + 0.2, at(4) + 0.7);
+  const phone = { x: 760, y: 900 };
+  return (
+    <g>
+      <Room wall="#d9dde4" floor="#7a6a58" />
+      {/* the phone, large, with the post */}
+      <g transform={`translate(${phone.x} ${phone.y})`}>
+        <rect x={-150} y={-260} width={300} height={520} rx={36} fill={INK} />
+        <rect x={-132} y={-236} width={264} height={472} rx={20} fill="#f6f3ec" />
+        <rect x={-110} y={-200} width={220} height={150} rx={12} fill="#e6ebf2" stroke={INK} strokeWidth={3} />
+        <text x={0} y={-105} textAnchor="middle" fontFamily="Lora, serif" fontWeight={700} fontSize={64} fill={INK}>365</text>
+        <rect x={-110} y={-30} width={220} height={14} rx={7} fill="#c9ced8" />
+        <rect x={-110} y={0} width={160} height={14} rx={7} fill="#c9ced8" />
+        <g transform="translate(70 150)">
+          <circle r={40} fill={stop > 0.5 ? "#c9ced8" : "#3d7cc9"} stroke={INK} strokeWidth={4} />
+          <path d="M -14 10 L 10 -10 M 10 -10 L -4 -10 M 10 -10 L 10 4" stroke="#fff" strokeWidth={6} fill="none" strokeLinecap="round" />
+        </g>
+      </g>
+      <Stick x={x} y={PELVIS} s={S} facing={1} tone="white" face={book > 0.5 ? "kind" : stop > 0.5 ? "neutral" : "smile"} pose={{ ...POSES.stand, head: 4 }}
+        handF={stop < 0.5 ? lp([x + 60, PELVIS], [phone.x + 70, phone.y + 150], ramp(u, 0, Math.max(0.4, at(3) - 0.3))) : book > 0.5 ? [x + 110, shoulderY + 40] : [x + 100, shoulderY - 80]} bendF={-1}
+        heldF={book > 0.5 ? (
+          <g transform="rotate(-10)">
+            <rect x={-40} y={-30} width={80} height={60} fill="#7a4b2a" stroke={INK} strokeWidth={4} />
+            <path d="M 0 -30 L 0 30" stroke="#f2c66d" strokeWidth={4} />
+          </g>
+        ) : undefined} />
+      {count.map((k, i) => (
+        <g key={i} opacity={k * (1 - book)} transform={`translate(${x + 40 + i * 70} ${headY - 180 - 20 * k})`}>
+          <circle r={28} fill="#f2c66d" stroke={INK} strokeWidth={5} />
+          <text y={11} textAnchor="middle" fontFamily="Lora, serif" fontWeight={700} fontSize={32} fill={INK}>{i + 1}</text>
+        </g>
+      ))}
     </g>
   );
 };

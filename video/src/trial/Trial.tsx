@@ -11,7 +11,7 @@ import { subtitleChunks } from "../templates/Subtitles";
 import type { WordTiming } from "../types";
 import { Caravan, Footprints, Gate, Lantern, Palm, Purse, Rain, Sermon, Stars, Track, trackAt } from "./Ayah";
 import { DoorPlayed, PrayPlayed, RumorPlayed, type Played } from "./AyahPlayed";
-import { BalconyPlayed, BedPlayed, BreathPlayed, CheatPlayed, CupPlayed, DayPlayed, MirrorPlayed, OfficePlayed, SalaryPlayed, StagePlayed, WallsPlayed, WorkPlayed, WorkshopPlayed } from "./Played";
+import { BalconyPlayed, BedPlayed, BreathPlayed, CheatPlayed, CrowdPlayed, CupPlayed, DarkRoomPlayed, DayPlayed, ExamPlayed, FatherPlayed, MirrorPlayed, OfficePlayed, SalaryPlayed, SharePlayed, StagePlayed, WallsPlayed, WorkPlayed, WorkshopPlayed } from "./Played";
 import { Boat, Fleet } from "./Boat";
 import { Call, Niche, Whale } from "./Dua";
 import { House, Land } from "./Home";
@@ -502,6 +502,11 @@ export const PLAYED: Record<string, PlayedAt[]> = {
   stone: [{ scene: "cup", set: CupPlayed }],
   haluu: [{ scene: "salary", set: SalaryPlayed, variant: "salary" }, { scene: "cure", set: SalaryPlayed, variant: "cure" }],
   womb: [{ scene: "mirror", set: MirrorPlayed, from: 0, to: 3 }],
+  qalb: [{ scene: "crowd", set: CrowdPlayed }],
+  nur: [{ scene: "darkroom", set: DarkRoomPlayed }],
+  sadr: [{ scene: "exam", set: ExamPlayed }],
+  rizq: [{ scene: "father", set: FatherPlayed, variant: "ex" }, { scene: "again", set: FatherPlayed, variant: "calm", from: 0, to: 2 }],
+  days: [{ scene: "whole", set: SharePlayed, from: 2, to: 5 }],
 };
 
 const PlayedLayer: React.FC<{ p: PlayedAt; t: number; segments: Segment[]; show: (id: string) => number; since: (id: string) => number; phrase: (id: string, n: number) => number }> = ({ p, t, segments, show, since, phrase }) => {
@@ -561,7 +566,7 @@ export type Layout = {
    * keeps the middle of the frame (the owner, 2026-11-20, on « آية وحكايتها »: « on écrit ce que le narrateur dit »).
    * `top`: the top of the Arabic; `size`: its largest size (smaller to stay on two rows); `sub`: the top of the English.
    * The call to follow, the last line of the short, keeps its large place: it is a card, not a subtitle. */
-  caption?: { top: number; size: number; sub: number };
+  caption?: { top: number; size: number; sub: number; credit?: number };
 };
 export const PORTRAIT: Layout = {
   width: W, left: 70, right: 70, top: 340, size: 104, height: 450, verseTop: 316, verseSize: 66, verseComfortable: 150,
@@ -578,7 +583,12 @@ const AYAH_CAPTION: LayoutOverride = { caption: { top: 1392, size: 56, sub: 1584
 const WEST_CAPTION: LayoutOverride = { caption: { top: 1474, size: 52, sub: 1640 } };
 export const LAYOUTS: Record<string, LayoutOverride> = { duha: AYAH_CAPTION, hope: AYAH_CAPTION, forgive: AYAH_CAPTION,
   caravan: AYAH_CAPTION, west: WEST_CAPTION, tribute: AYAH_CAPTION, barrier: AYAH_CAPTION, refuge: AYAH_CAPTION, sunpath: AYAH_CAPTION, awake: AYAH_CAPTION,
-  kanud: AYAH_CAPTION, stone: AYAH_CAPTION, haluu: AYAH_CAPTION, ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS, ...DHIKR_LAYOUTS, ...SAHW_LAYOUTS, ...SAHIB_LAYOUTS };
+  kanud: AYAH_CAPTION, stone: AYAH_CAPTION, haluu: AYAH_CAPTION, ...SIGNS_LAYOUTS, ...COUNT_LAYOUTS, ...FARQ_LAYOUTS, ...MAP_LAYOUTS, ...SUAL_LAYOUTS, ...QUIZ_LAYOUTS, ...DHIKR_LAYOUTS, ...SAHW_LAYOUTS, ...SAHIB_LAYOUTS,
+  // « خريطة كلمة » and « لاحظت الفرق؟ » keep their own layouts; their narration after the verse becomes a subtitle too (the
+  // audit of 2026-11-20), its tafsir reference under it, lower than their verse credit.
+  ...Object.fromEntries(["qalb", "nur", "sadr"].map((id) => [id, { ...MAP_LAYOUTS[id], caption: { top: 1385, size: 54, sub: 1545, credit: 1690 } }])),
+  ...Object.fromEntries(["rizq"].map((id) => [id, { ...FARQ_LAYOUTS[id], caption: { top: 1385, size: 54, sub: 1545, credit: 1690 } }])),
+};
 const layoutOf = (trial: string): Layout => {
   const own = LAYOUTS[trial];
   return own ? { ...PORTRAIT, ...own, sub: { ...PORTRAIT.sub, ...own.sub }, credit: { ...PORTRAIT.credit, ...own.credit } } : PORTRAIT;
@@ -644,7 +654,7 @@ export const NarrationText: React.FC<{ seg: Narration; t: number; last: boolean;
           <English text={line.en} />
         </div>
         {seg.refs ? (
-          <div style={{ position: "absolute", top: layout.credit.top, left: layout.left, right: layout.right, textAlign: "center", fontSize: layout.credit.size, color: "rgba(255,255,255,.62)", textShadow: SHADOW, opacity: interpolate(local, [0, 0.4, seg.seconds - 0.1, seg.seconds + 0.25], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
+          <div style={{ position: "absolute", top: caption.credit ?? layout.credit.top, left: layout.left, right: layout.right, textAlign: "center", fontSize: layout.credit.size, color: "rgba(255,255,255,.62)", textShadow: SHADOW, opacity: interpolate(local, [0, 0.4, seg.seconds - 0.1, seg.seconds + 0.25], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
             <span dir="rtl" lang="ar" style={{ fontFamily: FONT.arabic, fontSize: layout.credit.size * 1.15 }}>{seg.refs.ar}</span>
             <span style={{ fontFamily: FONT.latin }}>{`  ·  ${seg.refs.en}`}</span>
           </div>
