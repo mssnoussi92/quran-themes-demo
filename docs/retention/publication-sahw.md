@@ -4,9 +4,9 @@ Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et 
 
 ## Le film · Sujud as-sahw: added, left out, or unsure? · سجود السهو: زوّدت، نقصت، ولا شكّيت؟
 
-Textes du film **validés par le propriétaire le 2026-11-21**.
-
 `sahw-film-16x9.mp4` · 7:14 · 16:9 · YouTube · miniature : `sahw-film-thumbnail-doubt-art.jpg`
+
+Textes du film **validés par le propriétaire le 2026-11-21**.
 
 **YouTube · Titre (80/100)**
 

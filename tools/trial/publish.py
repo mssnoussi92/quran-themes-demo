@@ -429,8 +429,9 @@ def main() -> None:
         own_state = ([("Textes du film **validés par le propriétaire le " + str(pub["film_validated"]) + "**." if pub.get("film_validated")
                        else "Textes du film (titre, description, chapitres) **proposés par la session, pas encore validés par le propriétaire**."), ""]
                      if film.get("shorts") else [])
-        out += [f"## Le film · {pub['title']['en']} · {pub['title']['ar']}", "", *own_state,
-                f"`{files}-film-16x9{bed}.mp4` · {stamp(data['seconds'])} · 16:9 · YouTube · miniature : `{thumbnail_file(film, files)}`", "",
+        # The line of the files comes first under the heading: page-files reads the files it names there.
+        out += [f"## Le film · {pub['title']['en']} · {pub['title']['ar']}", "",
+                f"`{files}-film-16x9{bed}.mp4` · {stamp(data['seconds'])} · 16:9 · YouTube · miniature : `{thumbnail_file(film, files)}`", "", *own_state,
                 *cards("YouTube", title, body, credits, tags, f"Titre ({len(title)}/{limits['youtube']['max_title']})"),
                 "Écran de fin (YouTube Studio) : les 12 dernières secondes sont une image calme, faite pour y poser le bouton "
                 "d'abonnement et la vidéo suivante.", ""]
