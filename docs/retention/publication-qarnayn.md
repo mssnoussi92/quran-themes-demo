@@ -4,12 +4,12 @@ Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et 
 
 ## Le film · Dhul-Qarnayn: 3 tests of power · ذو القرنين: ٣ اختبارات للقوة
 
-`qarnayn-film-16x9.mp4` · 8:24 · 16:9 · YouTube · miniature : `qarnayn-film-thumbnail.jpg`
+`qarnayn-film-16x9.mp4` · 8:24 · 16:9 · YouTube · miniature : `qarnayn-film-thumbnail-barrier.jpg`
 
-**YouTube · Titre (61/100)**
+**YouTube · Titre (78/100)**
 
 ```text
-Dhul-Qarnayn: 3 tests of power · ذو القرنين: ٣ اختبارات للقوة
+قصة ذو القرنين: 3 اختبارات للقوة · The story of Dhul-Qarnayn: 3 tests of power
 ```
 
 **YouTube · Description**
@@ -127,7 +127,7 @@ The choice was left to him: punish them, or treat them well. Power is a trust, n
 **YouTube · Titre (69/100)**
 
 ```text
-The fate of a whole people… at his word · مصير قوم كاملين… بكلمة منه!
+مصير قوم كاملين… بكلمة منه! · The fate of a whole people… at his word
 ```
 
 **YouTube · Description**
@@ -236,7 +236,7 @@ He refused the money: what my Lord has given me is better.
 **YouTube · Titre (59/100)**
 
 ```text
-They offered him money… he refused · عرضوا عليه فلوس… ورفض!
+عرضوا عليه فلوس… ورفض! · They offered him money… he refused
 ```
 
 **YouTube · Description**
@@ -345,7 +345,7 @@ And when it stood, Dhul-Qarnayn said: this is a mercy from my Lord.
 **YouTube · Titre (69/100)**
 
 ```text
-He built the barrier… and said: not from me · بنى السد… وقال: مش مني!
+بنى السد… وقال: مش مني! · He built the barrier… and said: not from me
 ```
 
 **YouTube · Description**

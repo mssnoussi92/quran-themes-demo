@@ -76,6 +76,8 @@ def prepare(args) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     thumb = out_dir / f"{fid}.json"
     shown = {k: film["thumbnail"][k] for k in ("title", "tag", "panels")}
+    if film["thumbnail"].get("options"):           # the dedicated thumbnails (TrialThumbFrame, 2026-11-21)
+        shown["options"] = film["thumbnail"]["options"]
     thumb.write_text(json.dumps({"title": film["title"], "handle": film["handle"], "thumbnail": shown}, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{thumb.relative_to(P.ROOT)}: thumbnail of the film ({', '.join(film['thumbnail']['panels'])})")
     if args.draft:

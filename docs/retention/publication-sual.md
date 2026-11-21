@@ -77,7 +77,7 @@ The Quran says whoever turns away from God's remembrance will have a narrow life
 **YouTube · Titre (65/100)**
 
 ```text
-Far from God… and living in comfort? · بعيد عن ربنا… وعايش مرتاح؟
+بعيد عن ربنا… وعايش مرتاح؟ · Far from God… and living in comfort?
 ```
 
 **YouTube · Description**
@@ -188,7 +188,7 @@ The Quran promises the believer who does good a good life. So why is life hard f
 **YouTube · Titre (50/100)**
 
 ```text
-A believer… with a hard life? · مؤمن… وحياته صعبة؟
+مؤمن… وحياته صعبة؟ · A believer… with a hard life?
 ```
 
 **YouTube · Description**
@@ -300,7 +300,7 @@ Some take it as leave to do anything and repent later. The answer is in the very
 **YouTube · Titre (81/100)**
 
 ```text
-God is forgiving… so can I do what I want? · ربنا غفور رحيم… أعمل اللي أنا عايزه؟
+ربنا غفور رحيم… أعمل اللي أنا عايزه؟ · God is forgiving… so can I do what I want?
 ```
 
 **YouTube · Description**

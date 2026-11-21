@@ -77,7 +77,7 @@ In the first, poverty is already there; in the second, it is feared.
 **YouTube · Titre (54/100)**
 
 ```text
-Two words swapped places… why? · كلمتين اتبدّلوا… ليه؟
+كلمتين اتبدّلوا… ليه؟ · Two words swapped places… why?
 ```
 
 **YouTube · Description**
@@ -187,7 +187,7 @@ The damage to the boat he credited to himself, the good done to the two orphans 
 **YouTube · Titre (75/100)**
 
 ```text
-Once he said 'I'… once he said 'your Lord' · مرة قال «أنا»… ومرة قال «ربنا»
+مرة قال «أنا»… ومرة قال «ربنا» · Once he said 'I'… once he said 'your Lord'
 ```
 
 **YouTube · Description**
@@ -296,7 +296,7 @@ Justice even against yourself, and justice even toward someone you dislike.
 **YouTube · Titre (50/100)**
 
 ```text
-The same words… in reverse · نفس الكلمات… بالمقلوب
+نفس الكلمات… بالمقلوب · The same words… in reverse
 ```
 
 **YouTube · Description**

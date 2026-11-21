@@ -174,6 +174,27 @@ def voice_line(narration: str) -> str:
     return narration.split(": ", 1)[1] if narration.startswith("Narration: ") else narration
 
 
+def thumbnail_file(film: dict, files: str) -> str:
+    """The thumbnail YouTube gets: the dedicated one the owner chose (`thumbnail.use`, an option of `thumbnail.options`, 2026-11-21),
+    else the three-panel one."""
+    th = film["thumbnail"]
+    if th.get("use"):
+        option = next(o for o in th.get("options") or [] if o["name"] == th["use"])
+        return option.get("file") or f"{files}-film-thumbnail-{option['name']}.jpg"
+    return th.get("file", f"{files}-film-thumbnail.jpg")
+
+
+LATIN_DIGITS = str.maketrans("٠١٢٣٤٥٦٧٨٩", "0123456789")
+
+
+def youtube_title(title: dict) -> str:
+    """The YouTube title of a film or a short: the Arabic first, then the English (the owner, 2026-11-21: 74 % of the
+    channel's views come from Arabic-speaking countries, and the searches that bring views are in Arabic), numbers written
+    123 (the owner, 2026-11-17). `youtube_title` of the file's `publish` (or of a short's) when YouTube gets a title of its
+    own (the film of Dhul-Qarnayn: « قصة ذو القرنين: 3 اختبارات للقوة », his choice of 2026-11-21); else its title."""
+    return f"{title['ar']} · {title['en']}".translate(LATIN_DIGITS)
+
+
 def cards(platform: str, title: str, description: str, credits: str, tags: str, title_label: str = "Titre") -> list[str]:
     """The four texts of one video on one platform, each with its own Copy button on the owner's page (owner's
     request, 2026-11-15): the title, the description, the credits (the sources quoted, the clip and the ambience),
@@ -392,7 +413,7 @@ def main() -> None:
         data = timeline_of(args.film, "film")
         ids = quotes_of([s for c in film["chapters"] for s in c["segments"]])
         lines, hadith, verse = quoted(ids, sources)
-        title = f"{pub['title']['en']} · {pub['title']['ar']}"
+        title = youtube_title(pub.get("youtube_title") or pub["title"])
         if len(title) > limits["youtube"]["max_title"]:
             sys.exit(f"error: the film's YouTube title is {len(title)} characters (most: {limits['youtube']['max_title']})")
         chapters = "\n".join(f"{stamp(c['start'])} {c['title']['en']} · {c['title']['ar']}" for c in data["chapters"])
@@ -409,7 +430,7 @@ def main() -> None:
                        else "Textes du film (titre, description, chapitres) **proposés par la session, pas encore validés par le propriétaire**."), ""]
                      if film.get("shorts") else [])
         out += [f"## Le film · {pub['title']['en']} · {pub['title']['ar']}", "", *own_state,
-                f"`{files}-film-16x9{bed}.mp4` · {stamp(data['seconds'])} · 16:9 · YouTube · miniature : `{film['thumbnail'].get('file', files + '-film-thumbnail.jpg')}`", "",
+                f"`{files}-film-16x9{bed}.mp4` · {stamp(data['seconds'])} · 16:9 · YouTube · miniature : `{thumbnail_file(film, files)}`", "",
                 *cards("YouTube", title, body, credits, tags, f"Titre ({len(title)}/{limits['youtube']['max_title']})"),
                 "Écran de fin (YouTube Studio) : les 12 dernières secondes sont une image calme, faite pour y poser le bouton "
                 "d'abonnement et la vidéo suivante.", ""]
@@ -452,7 +473,7 @@ def main() -> None:
                  "\n\n".join([heading, description(handle), credits, tags("instagram")]))
         if len(insta) > limits["instagram_tiktok"]["max_caption"]:
             sys.exit(f"error: {name}: the Instagram caption is {len(insta)} characters")
-        title = f"{sp['title']['en']} · {sp['title']['ar']}"
+        title = youtube_title(sp.get("youtube_title") or sp["title"])
         if "youtube" in platforms and len(title) > limits["youtube"]["max_title"]:
             sys.exit(f"error: {name}: the YouTube title is {len(title)} characters")
         # A series drawn twice (`casts`): the same texts for both drawings, each file named. The drawing the owner chose to

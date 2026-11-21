@@ -163,6 +163,11 @@ def no_glyph(text: str, face: str) -> list[str]:
 CUT_BEFORE_THE_RULE = {"adab", "awake", "dabba", "days", "kahf", "khams", "lahab", "nur", "qalb", "qist", "rizq", "sadr",
                        "sahun", "sayyara", "sky", "tayyiba", "universe", "womb"}
 
+# The scenes drawn for thumbnails (video/src/trial/ThumbArt.tsx, its `ART` table): what `thumbnail.options[].art` may name.
+_ART_TSX = REPO / "video" / "src" / "trial" / "ThumbArt.tsx"
+THUMB_ART = set(re.findall(r'^\s*"([a-z0-9-]+)":\s*[A-Z]\w*,\s*$', _ART_TSX.read_text(encoding="utf-8"), re.M)) if _ART_TSX.exists() else set()
+
+
 class Repo:
     def __init__(self, root: Path):
         self.root = root
@@ -568,8 +573,8 @@ class Checker:
             if n < MIN_FIRST_PHRASE:
                 self.out.warn(file, f"the first phrase of the first line has {n} word(s), the first frame would show only « {phrase} »")
         for label, text in (("cover title", get(spec, "cover.title")), ("cover tag", get(spec, "cover.tag")),
-                            ("title", get(spec, "publish.title.ar")), ("description", get(spec, "publish.description.ar")),
-                            ("hook", get(spec, "publish.hook.ar"))):
+                            ("title", get(spec, "publish.title.ar")), ("youtube title", get(spec, "publish.youtube_title.ar")),
+                            ("description", get(spec, "publish.description.ar")), ("hook", get(spec, "publish.hook.ar"))):
             if text:
                 self.wording(file, text, label)
         self.title_length(file, get(spec, "publish.title"), "short")
@@ -698,15 +703,70 @@ class Checker:
         self.voice_text(file, spec, own)
         for label, text in (("film title", get(spec, "title.ar")), ("thumbnail title", get(spec, "thumbnail.title")),
                             ("thumbnail tag", get(spec, "thumbnail.tag")), ("title", get(spec, "publish.title.ar")),
+                            ("youtube title", get(spec, "publish.youtube_title.ar")),
                             ("description", get(spec, "publish.description.ar")), ("hook", get(spec, "publish.hook.ar"))):
             if text:
                 self.wording(file, text, label)
+        self.thumbnail_options(file, spec)
         self.title_length(file, get(spec, "publish.title"), "film")
         seconds = self.estimate_film(spec, shorts)
         if seconds > MAX_FILM:
             self.out.warn(file, f"estimated {stamp(seconds)}, over {stamp(MAX_FILM)}: the film lasts under 10 minutes")
         self.validation(file, spec)
         return spec, shorts
+
+    def thumbnail_options(self, file: str, spec: dict) -> None:
+        """`thumbnail.options` (the dedicated thumbnails, TrialThumbFrame, 2026-11-21): a name, a scene drawn for the thumbnail
+        (`art`, ThumbArt.tsx: the owner's choice, « entièrement dessinée ») or a moment of the film (`at`), two lines of hook, a
+        tag, a place; `thumbnail.use`: the option YouTube gets, once the owner chose it. The lines are the owner's titles, not
+        citations: only the refused wording applies."""
+        options = get(spec, "thumbnail.options")
+        if options is None:
+            return
+        if not isinstance(options, list):
+            self.out.error(file, "thumbnail.options: a list of {name, at, lines, tag, place}")
+            return
+        names: set[str] = set()
+        for n, option in enumerate(options, 1):
+            where = f"thumbnail.options[{n}]"
+            if not isinstance(option, dict):
+                self.out.error(file, f"{where}: {{name, at, lines, tag, place}} expected")
+                continue
+            name = option.get("name")
+            if not isinstance(name, str) or not re.fullmatch(r"[a-z0-9-]+", name):
+                self.out.error(file, f"{where}: `name` is lowercase letters, digits and hyphens")
+            elif name in names:
+                self.out.error(file, f"{where}: the name « {name} » is used twice")
+            names.add(str(name))
+            at, art = option.get("at"), option.get("art")
+            if (at is None) == (art is None):
+                self.out.error(file, f"{where}: one of `art` (a scene drawn for the thumbnail) or `at` (a moment of the film), not both")
+            elif art is not None:
+                if art not in THUMB_ART:
+                    self.out.error(file, f"{where}: `art` « {art} » is not drawn in video/src/trial/ThumbArt.tsx ({', '.join(sorted(THUMB_ART))})")
+            elif isinstance(at, bool) or not (isinstance(at, (int, float)) and at >= 0 or isinstance(at, str) and re.fullmatch(r"\d+(:\d{1,2}){1,2}", at)):
+                self.out.error(file, f"{where}: `at` is a time of the film (\"5:40\" or seconds), not {at!r}")
+            lines = option.get("lines")
+            if not (isinstance(lines, list) and len(lines) == 2 and all(isinstance(l, str) and l.strip() for l in lines)):
+                self.out.error(file, f"{where}: `lines` is two lines of text")
+            else:
+                for l in lines:
+                    self.wording(file, l, f"{where} line")
+            if not option.get("tag"):
+                self.out.error(file, f"{where}: missing `tag`")
+            else:
+                self.wording(file, option["tag"], f"{where} tag")
+            if option.get("place") not in ("top", "left", "right"):
+                self.out.error(file, f"{where}: `place` is top, left or right, not {option.get('place')!r}")
+            brightness = option.get("brightness")
+            if brightness is not None and not (isinstance(brightness, (int, float)) and not isinstance(brightness, bool) and 0.3 <= brightness <= 2):
+                self.out.error(file, f"{where}: `brightness` is a number between 0.3 and 2")
+            unknown = set(option) - {"name", "at", "art", "lines", "tag", "place", "brightness", "file"}
+            if unknown:
+                self.out.error(file, f"{where}: unknown field(s) {', '.join(sorted(unknown))}")
+        use = get(spec, "thumbnail.use")
+        if use is not None and use not in names:
+            self.out.error(file, f"thumbnail.use: « {use} » is not one of thumbnail.options ({', '.join(sorted(names))})")
 
     def reuse(self, file: str, where: str, seg: dict, shorts: dict) -> None:
         name, _, part = str(seg["reuse"]).partition(".")
