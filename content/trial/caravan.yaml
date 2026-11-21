@@ -32,6 +32,7 @@ validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publ
 # sortent (`drop`, la prise gardée) ; l'exemple joué par un bonhomme au visage simple (`work`, Played.tsx) ; la
 # narration après le verset en sous-titre. Scènes validées par lui sur images le même jour (« Je valide les
 # 4 ») ; la vidéo refaite est à valider avant `page-files`.
+# La vidéo refaite avec le nom de la série en haut à gauche (sa demande du même jour) validée par lui le 2026-11-21 (« Je valide les 7 »).
 drop: ["meaning:0", "meaning:1"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }

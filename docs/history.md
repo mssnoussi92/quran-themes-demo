@@ -790,16 +790,17 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   contrôlée sur sa planche et à −16 LUFS, envoyée, **validée par lui** (questions à choix) : « آية وحكايتها » 1 à 4, la
   caverne 1 à 3, Dhul-Qarnayn 1 à 3 et leurs versions courtes (le 3 refait sans « والسد وقف؟ », sa correction : une coupe
   dans le verset), « سنريهم آياتنا » 2 à 5, « كلمة من القرآن » 1 à 3, « خريطة كلمة » 1 à 3, « بص تاني » 2,
-  « لاحظت الفرق؟ » 1 à 3, « سؤال صعب » 2 et 3. Rendus publics (`page-files`) : `ayah`, `kahf`, `qarnayn`, `kalima`, `map`,
-  `signs`.
+  « لاحظت الفرق؟ » 1 à 3, « سؤال صعب » 1 à 3, « بص تاني » 1 à 3 (B), « مخيّر ولا مسيّر؟ » 1 à 3, « إزاي أعملها؟ » 1 à 4. Tout est
+  rendu public (`page-files`) : `ayah`, `kahf`, `qarnayn`, `kalima`, `map`, `signs`, `farq`, `sual`, `lens`, `qadar`, `sahw`.
 - **Les années en 123** dans le ciel, le cosmos et l'embryon (son choix : « En 123 dans les 3 signes ») : les répliques, leur
   texte de voix et les crédits scientifiques ; la prise ne change pas (l'alignement retrouve chaque phrase au même temps, et
   entend mieux les années) ; ni couvertures ni textes à coller. Vidéos refaites, validées (« Je valide les 3 »).
 - **Le nom de la série** manquait sur une partie des shorts (sa remarque : « il manque parfois le nom de la série, même sur
   certaines vidéos que j'ai validées ») ; « partout où il manque » : « آية وحكايتها », « بص تاني », « إزاي أعملها؟ » et les
   shorts de Dhul-Qarnayn, de la caverne et de « مخيّر ولا مسيّر؟ » ont le badge de « سؤال صعب » (`NAMED`, Trial.tsx) ; planche
-  des vingt ouvertures validée par lui. Vidéos refaites, à valider, Dhul-Qarnayn d'abord (publié du 24 au 26 novembre).
+  des vingt ouvertures validée par lui. Vidéos refaites, contrôlées, **validées par lui le même jour** (Dhul-Qarnayn d'abord,
+  publié du 24 au 26 novembre, puis les autres), et rendues publiques.
 - **« سؤال صعب » 1** : vers 40 s, l'homme était assis au bord du lit « comme sur une chaise » ; il y reste allongé, éveillé,
-  et met la main sur sa poitrine à « قلق وحيرة » (scène validée sur images). **« بص تاني » 2** : il préfère B, celle où il y a
+  et met la main sur sa poitrine à « قلق وحيرة » (scène validée sur images, puis la vidéo). **« بص تاني » 2** : il préfère B, celle où il y a
   une personne à la fin, déjà au calendrier ; A, refaite avec la même coupe, est retirée des fichiers (`casts: [figure]` du
   short, publish.py), son choix.
