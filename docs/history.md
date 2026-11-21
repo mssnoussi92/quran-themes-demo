@@ -871,3 +871,16 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 - **Le texte d'une vignette se mesure** (`HookLines`, `ThumbFrame.tsx`) : estimée à 0,38 em par lettre, « وقال: مش مني! »
   dépassait son bloc de 30 px et touchait le bord ; les deux lignes sont maintenant mesurées une fois les polices
   chargées et réduites ensemble.
+
+## La page du propriétaire refaite, avec les trois films du lundi (2026-11-21)
+
+- **Sa demande** : « oui fais le » (ajouter les trois films à sa page « Films et shorts à publier »). La page datait du 18 :
+  ses aperçus étaient ceux d'avant l'audit (scènes jouées, nom de la série), et elle touchait déjà la limite d'un artefact
+  (254 Mio sur 256). Refaite entière depuis les releases publiques `page-<doc>` (les fichiers validés que quran-reels publie),
+  plus les trois films du lundi en 16:9 et en vertical.
+- **`gallery.py`** : la vignette que YouTube reçoit (`thumbnail.use`), et plus d'arrêt sur les vignettes dédiées ajoutées le
+  même jour ; une série dessinée deux fois montre le dessin que le calendrier publie (`published_cast` : « بص تاني » en B) ;
+  les aperçus des films à 360 px sur leur petit côté (crf 29, son à 64 kb/s), les shorts inchangés ; la page s'arrête si elle
+  dépasse les 256 Mio (243 Mio, 115 fichiers).
+- **Le calendrier** : les 19 et 20 novembre barrés, publiés par quran-reels (`themes.json` de sa branche `state`) ; leurs
+  vidéos sortent de la page (sa règle du 2026-11-18).

@@ -95,8 +95,8 @@ film du jour, Instagram seul, à 18 h (19 h jusqu'au 2026-11-19) ; les lundis d'
 | ~~lun. 16 nov., soir~~ | ~~Du'a : le film~~ | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical, ajouté par lui) | releases `dua-candidate`, `dua-9x16-candidate` | `publication-dua.md` : « Le film » ; `publication-dua-9x16.md` |
 | ~~mar. 17 nov.~~ | ~~Du'a, short 1 : Ayyoub~~ | les quatre | release `dua-candidate` | `publication-dua.md` : « Short 1 » |
 | ~~mer. 18 nov.~~ | ~~Du'a, short 2 : Younous~~ | les quatre | release `dua-candidate` | « Short 2 » |
-| jeu. 19 nov. | Du'a, short 3 : Zakariya | les quatre | release `dua-candidate` | « Short 3 » |
-| ven. 20 nov. | « آية وحكايتها » 1 : la caravane | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 1 » |
+| ~~jeu. 19 nov.~~ | ~~Du'a, short 3 : Zakariya~~ | les quatre | release `dua-candidate` | « Short 3 » |
+| ~~ven. 20 nov.~~ | ~~« آية وحكايتها » 1 : la caravane~~ | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 1 » |
 | sam. 21 nov. | « سنريهم آياتنا » 1 : Abou Lahab | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 1 » |
 | lun. 23 nov., soir | Dhul-Qarnayn : le film | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical signé `@quran.words.daily`, `qarnayn-film-9x16-tiktok.mp4`) | releases `qarnayn-candidate`, `qarnayn-9x16-candidate` | `publication-qarnayn.md` : « Le film » ; `publication-qarnayn-9x16.md` |
 | lun. 23 nov. | « معاك 5 ثواني » 1 : «سيارة» في سورة يوسف؟ (12:19) | Instagram | release `quiz-candidate` | `publication-quiz.md` : « Short 1 » |
