@@ -300,7 +300,7 @@ def main() -> None:
     # (`ambience_after` of its file): once the owner has validated it, the videos to publish are those mixes,
     # `…-ambience.mp4`. Every film since is rendered with its ambience, and its videos keep their names.
     # A series' own file has no ambience: only its shorts say whether theirs was validated.
-    heard = all("ambience" in (v.get("what") or []) for v in (said[1:] if series_only else said))
+    heard = all("ambience" in (v.get("what") or []) for v in (said[1:] if series_only or film.get("shorts") else said))
     bed = "-ambience" if film.get("ambience_after") and heard else ""
     status = (f"Titres et descriptions **validés par le propriétaire le {when}**" if validated
               else "Titres et descriptions **proposés par la session, pas encore validés par le propriétaire**")
@@ -403,7 +403,12 @@ def main() -> None:
         whole = len(body) + len(credits) + len(tags) + 4          # the three pasted into one description
         if whole > limits["youtube"]["max_description"]:
             sys.exit(f"error: the film's YouTube description is {whole} characters")
-        out += [f"## Le film · {pub['title']['en']} · {pub['title']['ar']}", "",
+        # A series whose file holds its film too (« un film chaque lundi », 2026-11-21): the film's texts are validated on
+        # their own (`publish.film_validated`), after the series' (`validated` of the file).
+        own_state = ([("Textes du film **validés par le propriétaire le " + str(pub["film_validated"]) + "**." if pub.get("film_validated")
+                       else "Textes du film (titre, description, chapitres) **proposés par la session, pas encore validés par le propriétaire**."), ""]
+                     if film.get("shorts") else [])
+        out += [f"## Le film · {pub['title']['en']} · {pub['title']['ar']}", "", *own_state,
                 f"`{files}-film-16x9{bed}.mp4` · {stamp(data['seconds'])} · 16:9 · YouTube · miniature : `{film['thumbnail'].get('file', files + '-film-thumbnail.jpg')}`", "",
                 *cards("YouTube", title, body, credits, tags, f"Titre ({len(title)}/{limits['youtube']['max_title']})"),
                 "Écran de fin (YouTube Studio) : les 12 dernières secondes sont une image calme, faite pour y poser le bouton "
@@ -417,7 +422,8 @@ def main() -> None:
         n, total = sp["part"], len(shorts)
         # A series goes on: its shorts are numbered, never « n of total ».
         # Numbers are written 1 2 3, never ١ ٢ ٣ (the owner, 2026-11-17); texts already validated keep what they were validated with.
-        series = (f"{pub['series']['en']} · {n} · {pub['series']['ar']} · {n}" if series_only else
+        # A series whose file holds its film too (`shorts` of the file, 2026-11-21) keeps the numbering its shorts were validated with.
+        series = (f"{pub['series']['en']} · {n} · {pub['series']['ar']} · {n}" if series_only or film.get("shorts") else
                   f"{pub['series']['en']} · part {n}/{total} · {pub['series']['ar']} · الجزء {n} من {total}")
         name = f"{files}-short-{n}-{spec['id']}" + (f"-{page}" if page else "")
         cover = f"{name}-cover.jpg" if page else (spec.get("cover") or {}).get("file", f"{name}-cover.jpg")

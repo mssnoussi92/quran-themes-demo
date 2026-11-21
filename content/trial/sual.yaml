@@ -6,12 +6,20 @@
 id: sual
 validated: { by: mssnoussi92, on: 2026-11-15, what: [publish] }      # « je valide tout pour سؤال صعب »
 files: sual                      # début du nom des vidéos livrées : sual-short-<n>-<id>.mp4
+tall:                            # le film en 9:16 pour Facebook et son jumeau TikTok (son choix du 2026-11-16 pour chaque film)
+  tiktok: { asked: 2026-11-21 }
 title: { ar: "سؤال صعب", en: "A Hard Question" }
 shorts: [dank, tayyiba, ghafur]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 publish:
   title: { en: "3 hard questions… and the Quran's answer", ar: "تلات أسئلة صعبة… والقرآن ردّ عليها" }      # le titre du film, proposé par la session (2026-11-21), à valider
+  description:      # le film : proposée par la session (2026-11-21), à valider
+    ar: "تلات أسئلة صعبة بتطلع من آيات القرآن نفسه: اللي بعيد عن ربنا وعايش مرتاح، والمؤمن اللي حياته صعبة، واللي بيقول ربنا غفور رحيم يبقى أعمل اللي أنا عايزه. لكل سؤال: الرد في الآية نفسها، بالتفسير، وفي آية تانية."
+    en: "Three hard questions that come from the Quran's own verses: the one far from God who lives in comfort, the believer whose life is hard, and the one who says God is forgiving, so I can do as I like. For each one: the answer in the verse itself, with its tafsir, and in another verse."
+  hook:             # légende courte du film vertical (Facebook, TikTok) : proposée par la session (2026-11-21), à valider
+    ar: "بعيد عن ربنا… وعايش مرتاح؟ مؤمن… وحياته صعبة؟ تلات أسئلة ناس كتير بتفكر فيها… ومحدش بيقولها بصوت عالي."
+    en: "Far from God… and living in comfort? A believer… and his life is hard? Three questions many people think about… and nobody asks out loud."
   out: docs/retention/publication-sual.md
   series: { en: "A Hard Question", ar: "سؤال صعب" }
   hashtags: ["#سؤال_صعب", "#تفسير_القرآن"]

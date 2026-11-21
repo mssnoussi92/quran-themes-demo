@@ -7,6 +7,8 @@
 id: sahw
 validated: { by: mssnoussi92, on: 2026-11-18, what: [publish] }      # « Je valide les 4 accroches » (question à choix)
 files: sahw                      # début du nom des vidéos livrées : sahw-short-<n>-<id>.mp4
+tall:                            # le film en 9:16 pour Facebook et son jumeau TikTok (son choix du 2026-11-16 pour chaque film)
+  tiktok: { asked: 2026-11-21 }
 title: { ar: "إزاي أعملها؟", en: "How Do I Do It?" }
 shorts: [sahun, khams, nasit, shakk]
 handle: "@quran_words_daily"
@@ -14,6 +16,12 @@ voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 digits: latin
 publish:
   title: { en: "Sujud as-sahw: added, left out, or unsure?", ar: "سجود السهو: زوّدت، نقصت، ولا شكّيت؟" }      # le titre du film, proposé par la session (2026-11-21), à valider
+  description:      # le film : proposée par la session (2026-11-21), à valider
+    ar: "سجود السهو من الأول للآخر: ركعة زيادة، تشهد نسيته، وشك في عدد الركعات. لكل غلطة: اللي عمله النبي صلى الله عليه وسلم وعلّمه، وأقوال المذاهب الأربعة من الموسوعة الفقهية الكويتية، وفي الآخر جدول: السجدتين قبل السلام ولا بعده."
+    en: "Sujud as-sahw from start to finish: an extra rak'ah, a forgotten tashahhud, and doubt about how many rak'ahs. For each mistake: what the Prophet ﷺ did and taught, the views of the four schools from the Kuwaiti Encyclopedia of Fiqh, and a table at the end: the two prostrations before or after the salam."
+  hook:             # légende courte du film vertical (Facebook, TikTok) : proposée par la session (2026-11-21), à valider
+    ar: "النبي صلى الله عليه وسلم نفسه… سها في صلاته. وعلّمنا نعمل إيه… لما نسهى إحنا."
+    en: "The Prophet ﷺ himself… forgot in his prayer. And he taught us what to do… when we forget."
   out: docs/retention/publication-sahw.md
   series: { en: "How Do I Do It?", ar: "إزاي أعملها؟" }
   hashtags: ["#إزاي_أعملها", "#سجود_السهو"]
