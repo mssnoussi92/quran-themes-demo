@@ -34,6 +34,9 @@ publish:
 text: 107-trial-hayyin-film
 outro: 12
 thumbnail: { title: "وتحسبونه هيّنًا", tag: "3 ذنوب بنشوفها صغيرة", panels: [ghiba, namima, riya] }
+# Script du film (répliques propres, ouverture, fin, titre) validé par lui le 2026-11-21 (« Script et lecture », question à choix) ;
+# le 16:9 : « dessins refaits en 16:9 » (son choix, même jour).
+script_validated: { by: mssnoussi92, on: 2026-11-21 }
 chapters:
   - id: open
     title: { ar: "تلات حاجات صغيرة", en: "Three small things" }

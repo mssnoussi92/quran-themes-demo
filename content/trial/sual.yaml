@@ -26,6 +26,9 @@ publish:
 text: 105-trial-sual-film
 outro: 12
 thumbnail: { title: "سؤال صعب", tag: "3 أسئلة", panels: [dank, tayyiba, ghafur] }
+# Script du film (répliques propres, ouverture, fin, titre) validé par lui le 2026-11-21 (« Je valide le script », question à choix) ;
+# le 16:9 : « dessins refaits en 16:9 » (son choix, même jour).
+script_validated: { by: mssnoussi92, on: 2026-11-21 }
 chapters:
   - id: open
     title: { ar: "تلات أسئلة", en: "Three questions" }

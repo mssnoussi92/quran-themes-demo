@@ -32,6 +32,9 @@ publish:
 text: 106-trial-sahw-film
 outro: 12
 thumbnail: { title: "سجود السهو", tag: "زيادة · نقص · شك", panels: [sahun, khams, nasit, shakk] }
+# Script du film (répliques propres, ouverture, fin, titre) validé par lui le 2026-11-21 (« Je valide le script », question à choix) ;
+# le 16:9 : « dessins refaits en 16:9 » (son choix, même jour).
+script_validated: { by: mssnoussi92, on: 2026-11-21 }
 chapters:
   - id: open
     title: { ar: "حتى النبي ﷺ سها", en: "Even the Prophet ﷺ forgot" }
