@@ -18,7 +18,9 @@ validated: { by: mssnoussi92, on: 2026-11-15, what: [voice, montage, cover, publ
 # on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). La question, la réponse et l'exemple joués (RichPlayed, Played.tsx) ; « يعني: لما نسيوا… فتح عليهم
 # الدنيا » sort (`drop`, redit 6:44) ; la narration après le verset en
 # sous-titre. Scènes validées par lui sur images le 2026-11-21 (« Je valide tout le lot ») ;
-# la vidéo refaite est à valider avant `page-files`.
+# la vidéo refaite : « vers 40 secondes la personne ne devrait pas être assise », puis « qu'il reste dans le lit, mais pas assis
+# comme sur une chaise » (2026-11-21) : allongé, éveillé, la main sur la poitrine (RichPlayed), scène validée sur images ; la
+# vidéo refaite avec elle est à valider avant `page-files`.
 drop: ["meaning2:0"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }

@@ -13,7 +13,7 @@ validated: { by: mssnoussi92, on: 2026-11-14, what: [voice, montage, cover, publ
 # Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
 # on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). L'exemple joué (JusticePlayed, Played.tsx) ; « نفس الكلمات… وكل ترتيب جه في مكانه » sort (`drop`) ; la narration après le verset en
 # sous-titre. Scènes validées par lui sur images le 2026-11-21 (« Je valide tout le lot ») ;
-# la vidéo refaite est à valider avant `page-files`.
+# la vidéo refaite validée par lui le 2026-11-21 (« Je valide sauf pour sual-1 vers 40 sec »).
 drop: ["meaning:2"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
