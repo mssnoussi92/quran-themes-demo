@@ -11,7 +11,7 @@ import { subtitleChunks } from "../templates/Subtitles";
 import type { WordTiming } from "../types";
 import { Caravan, Footprints, Gate, Lantern, Palm, Purse, Rain, Sermon, Stars, Track, trackAt } from "./Ayah";
 import { DoorPlayed, PrayPlayed, RumorPlayed, type Played } from "./AyahPlayed";
-import { BalconyPlayed, BedPlayed, BreathPlayed, CheatPlayed, CrowdPlayed, CupPlayed, DarkRoomPlayed, DayPlayed, ExamPlayed, FatherPlayed, MirrorPlayed, OfficePlayed, SalaryPlayed, SharePlayed, StagePlayed, WallsPlayed, WorkPlayed, WorkshopPlayed } from "./Played";
+import { BalconyPlayed, BedPlayed, BreathPlayed, CheatPlayed, CrowdPlayed, CupPlayed, DarkRoomPlayed, DayPlayed, ExamPlayed, FatherPlayed, JusticePlayed, LaterPlayed, MannerPlayed, MirrorPlayed, ModestPlayed, OfficePlayed, RichPlayed, SalaryPlayed, SharePlayed, StagePlayed, StudentPlayed, WallsPlayed, WorkPlayed, WorkshopPlayed } from "./Played";
 import { Boat, Fleet } from "./Boat";
 import { Call, Niche, Whale } from "./Dua";
 import { House, Land } from "./Home";
@@ -507,6 +507,11 @@ export const PLAYED: Record<string, PlayedAt[]> = {
   sadr: [{ scene: "exam", set: ExamPlayed }],
   rizq: [{ scene: "father", set: FatherPlayed, variant: "ex" }, { scene: "again", set: FatherPlayed, variant: "calm", from: 0, to: 2 }],
   days: [{ scene: "whole", set: SharePlayed, from: 2, to: 5 }],
+  dank: [{ scene: "ask", set: RichPlayed, variant: "ask" }, { scene: "inside", set: RichPlayed, variant: "inside" }, { scene: "example", set: RichPlayed, variant: "ex" }],
+  tayyiba: [{ scene: "ask", set: ModestPlayed, variant: "ask" }, { scene: "inside", set: ModestPlayed, variant: "inside" }, { scene: "example", set: StudentPlayed }],
+  ghafur: [{ scene: "ask", set: LaterPlayed, variant: "ask" }, { scene: "example", set: LaterPlayed, variant: "ex" }],
+  adab: [{ scene: "lamp", set: MannerPlayed }],
+  qist: [{ scene: "scales", set: JusticePlayed }],
 };
 
 const PlayedLayer: React.FC<{ p: PlayedAt; t: number; segments: Segment[]; show: (id: string) => number; since: (id: string) => number; phrase: (id: string, n: number) => number }> = ({ p, t, segments, show, since, phrase }) => {
@@ -587,7 +592,8 @@ export const LAYOUTS: Record<string, LayoutOverride> = { duha: AYAH_CAPTION, hop
   // « خريطة كلمة » and « لاحظت الفرق؟ » keep their own layouts; their narration after the verse becomes a subtitle too (the
   // audit of 2026-11-20), its tafsir reference under it, lower than their verse credit.
   ...Object.fromEntries(["qalb", "nur", "sadr"].map((id) => [id, { ...MAP_LAYOUTS[id], caption: { top: 1385, size: 54, sub: 1545, credit: 1690 } }])),
-  ...Object.fromEntries(["rizq"].map((id) => [id, { ...FARQ_LAYOUTS[id], caption: { top: 1385, size: 54, sub: 1545, credit: 1690 } }])),
+  ...Object.fromEntries(["rizq", "adab", "qist"].map((id) => [id, { ...FARQ_LAYOUTS[id], caption: { top: 1385, size: 54, sub: 1545, credit: 1690 } }])),
+  ...Object.fromEntries(["dank", "tayyiba", "ghafur"].map((id) => [id, { ...SUAL_LAYOUTS[id], caption: { top: 1385, size: 54, sub: 1545, credit: 1690 } }])),
 };
 const layoutOf = (trial: string): Layout => {
   const own = LAYOUTS[trial];
