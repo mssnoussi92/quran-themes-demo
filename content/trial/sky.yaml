@@ -15,7 +15,9 @@ validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publ
 # Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
 # on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). La fin qui parle au spectateur : « اطلب من ربنا يشرح صدرك » joué (BreathPlayed), Played.tsx ;
 # rien d'autre ne change. Scènes validées par lui sur images le 2026-11-21 (« Je valide tout le lot ») ;
-# la vidéo refaite est à valider avant `page-files`.
+# la vidéo refaite validée par lui le 2026-11-21 (« Je valide les 6 »), sauf les chiffres : à sa demande du même jour (« En 123
+# dans les 3 signes »), les années des répliques et des crédits à l'écran passent en 123 (le texte de la voix aussi, sa prise
+# ne change pas ; ni les textes à coller ni la couverture) ; la vidéo ainsi refaite est à valider.
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 55-trial-sky     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
@@ -45,7 +47,7 @@ segments:
     lines:
       - ar: "اللي بيحصل فوق تمانية كيلو… القرآن وصفه."
         en: "What happens eight kilometres up… the Quran described it."
-      - ar: "سنة ١٨٧٥… تلات رجالة طلعوا في السما ببالون."
+      - ar: "سنة 1875… تلات رجالة طلعوا في السما ببالون."
         en: "In 1875… three men rose into the sky in a balloon."
       - ar: "ولما عدّوا تمانية كيلو… اتنين منهم ما رجعوش: الهوا ما بقاش يكفي."
         en: "Past eight kilometres… two of them never came back: the air was no longer enough."
@@ -53,9 +55,9 @@ segments:
     scene: puy
     sources: [science.perier-pascal-1648, science.first-flight-1783]
     lines:
-      - ar: "قبلها بقرنين… سنة ١٦٤٨… طلعوا بمقياس على جبل في فرنسا… ولقوا إن الهوا بيخف كل ما تطلع لفوق."
+      - ar: "قبلها بقرنين… سنة 1648… طلعوا بمقياس على جبل في فرنسا… ولقوا إن الهوا بيخف كل ما تطلع لفوق."
         en: "Two centuries earlier, in 1648… they carried a gauge up a mountain in France… and found the air thins as you climb."
-      - ar: "طب كتاب نزل في صحرا من ١٤٠٠ سنة… قبل أول إنسان يطير بأكتر من ألف سنة… قال إيه؟"
+      - ar: "طب كتاب نزل في صحرا من 1400 سنة… قبل أول إنسان يطير بأكتر من ألف سنة… قال إيه؟"
         en: "So a book revealed in a desert 1,400 years ago… more than a thousand years before the first human flew… what did it say?"
   - verse: quran.6.125
     scene: layers

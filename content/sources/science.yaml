@@ -7,7 +7,7 @@
   type: science
   ref: { author: "Gaston Tissandier, Joseph Crocé-Spinelli, Théodore Sivel", title: "L'ascension du ballon Zénith", publication: "15 avril 1875", year: 1875 }
   url: https://en.wikipedia.org/wiki/Th%C3%A9odore_Sivel
-  label: { ar: "بالون زينيث، ١٨٧٥", en: "Zénith balloon, 1875" }
+  label: { ar: "بالون زينيث، 1875", en: "Zénith balloon, 1875" }
   claim: "Le 15 avril 1875, le ballon Zénith monte à environ 8 600 m ; Sivel et Crocé-Spinelli meurent faute d'oxygène, Tissandier survit."
   checked: { "on": '2026-11-12', sources: ["https://en.wikipedia.org/wiki/Th%C3%A9odore_Sivel", "https://en.wikipedia.org/wiki/Joseph_Croc%C3%A9-Spinelli", "https://centennialofflight.net/essay/Lighter_than_air/early_scientific_balloons/LTA7.htm"] }
   status: validated
@@ -18,7 +18,7 @@
   type: science
   ref: { author: "Florin Périer, Blaise Pascal", title: "Récit de la grande expérience de l'équilibre des liqueurs", publication: "Puy de Dôme, 19 septembre 1648", year: 1648 }
   url: https://www.whipplemuseum.cam.ac.uk/explore-whipple-collections/meteorology/barometers
-  label: { ar: "تجربة باسكال، ١٦٤٨", en: "Pascal's experiment, 1648" }
+  label: { ar: "تجربة باسكال، 1648", en: "Pascal's experiment, 1648" }
   claim: "Le 19 septembre 1648, Périer porte un baromètre au sommet du Puy de Dôme à la demande de Pascal : la colonne de mercure y est plus basse, l'air pèse moins en altitude."
   checked: { "on": '2026-11-12', sources: ["https://www.whipplemuseum.cam.ac.uk/explore-whipple-collections/meteorology/barometers", "https://core-prod.cambridgecore.org/core/journals/dialogue-canadian-philosophical-review-revue-canadienne-de-philosophie/article/pascals-great-experiment/FD9B1366AA6ABE167BD36AEE1052853A"] }
   status: validated
@@ -29,7 +29,7 @@
   type: science
   ref: { author: "Jean-François Pilâtre de Rozier, François Laurent d'Arlandes", title: "Premier vol libre habité, en montgolfière", publication: "Paris, 21 novembre 1783", year: 1783 }
   url: https://en.wikipedia.org/wiki/Jean-Fran%C3%A7ois_Pil%C3%A2tre_de_Rozier
-  label: { ar: "أول طيران للإنسان، ١٧٨٣", en: "First human flight, 1783" }
+  label: { ar: "أول طيران للإنسان، 1783", en: "First human flight, 1783" }
   claim: "Le 21 novembre 1783, Pilâtre de Rozier et d'Arlandes font le premier vol libre habité : plus de mille ans après la révélation (610-632)."
   checked: { "on": '2026-11-12', sources: ["https://en.wikipedia.org/wiki/Jean-Fran%C3%A7ois_Pil%C3%A2tre_de_Rozier", "https://www.guinnessworldrecords.com/world-records/385167-first-free-manned-balloon-flight"] }
   status: validated
@@ -40,7 +40,7 @@
   type: science
   ref: { author: "Albert Einstein", title: "Kosmologische Betrachtungen zur allgemeinen Relativitätstheorie", publication: "Sitzungsberichte der Preußischen Akademie der Wissenschaften", year: 1917 }
   url: https://en.wikipedia.org/wiki/Einstein%27s_static_universe
-  label: { ar: "أينشتاين، ١٩١٧", en: "Einstein, 1917" }
+  label: { ar: "أينشتاين، 1917", en: "Einstein, 1917" }
   claim: "En 1917, Einstein ajoute à ses équations la constante cosmologique pour que son modèle d'univers reste statique ; il l'abandonne après Hubble."
   checked: { "on": '2026-11-12', sources: ["https://en.wikipedia.org/wiki/Einstein%27s_static_universe", "https://physicstoday.aip.org/news/einstein-ushers-in-modern-cosmology", "https://epjh.epj.org/articles/epjh/abs/2017/03/h170002/h170002.html"] }
   status: validated
@@ -51,7 +51,7 @@
   type: science
   ref: { author: "Edwin Hubble", title: "A Relation between Distance and Radial Velocity among Extra-Galactic Nebulae", publication: "Proceedings of the National Academy of Sciences 15: 168-173", year: 1929 }
   url: https://ui.adsabs.harvard.edu/abs/1929PNAS...15..168H/abstract
-  label: { ar: "هابل، ١٩٢٩", en: "Hubble, PNAS, 1929" }
+  label: { ar: "هابل، 1929", en: "Hubble, PNAS, 1929" }
   claim: "En 1929, depuis l'observatoire du mont Wilson (Californie), Hubble montre que les galaxies s'éloignent d'autant plus vite qu'elles sont loin : l'univers s'étend."
   checked: { "on": '2026-11-12', sources: ["https://ui.adsabs.harvard.edu/abs/1929PNAS...15..168H/abstract", "https://apod.nasa.gov/diamond_jubilee/1996/hub_1929.html"] }
   status: validated
@@ -95,7 +95,7 @@
   type: science
   ref: { author: "R. O'Rahilly, F. Müller", title: "Developmental Stages in Human Embryos, stade 11", publication: "Carnegie Institution of Washington", year: 1987 }
   url: https://embryology.med.unsw.edu.au/embryology/index.php/Carnegie_stage_11
-  label: { ar: "مراحل كارنيجي، ١٩٨٧", en: "Carnegie stages, 1987" }
+  label: { ar: "مراحل كارنيجي، 1987", en: "Carnegie stages, 1987" }
   claim: "Vers 24 jours (stade 11 de Carnegie), l'embryon mesure environ 2,5 à 4,5 mm ; la classification vient de la collection Carnegie, commencée en 1914."
   checked: { "on": '2026-11-12', sources: ["https://embryology.med.unsw.edu.au/embryology/index.php/Carnegie_stage_11", "https://embryology.med.unsw.edu.au/embryology/index.php/1987_Developmental_Stages_In_Human_Embryos_-_Stage_11"] }
   status: validated
@@ -106,7 +106,7 @@
   type: science
   ref: { author: "Zacharias Janssen (attribué), Cornelis Drebbel", title: "Les premiers microscopes composés", publication: "Pays-Bas et Londres, années 1590-1620 (première description datée : Boreel, 1619)", year: 1619 }
   url: https://en.wikipedia.org/wiki/Timeline_of_microscope_technology
-  label: { ar: "أول ميكروسكوب، حوالي ١٦٢٠", en: "First microscopes, c. 1620" }
+  label: { ar: "أول ميكروسكوب، حوالي 1620", en: "First microscopes, c. 1620" }
   claim: "Les premiers microscopes composés datent des années 1590-1620 (Janssen, attribution discutée ; Drebbel, 1619-1622) : environ mille ans après la révélation."
   checked: { "on": '2026-11-12', sources: ["https://en.wikipedia.org/wiki/Timeline_of_microscope_technology", "https://www.encyclopedia.com/medicine/medical-journals/microscope-compound"] }
   status: validated
@@ -117,7 +117,7 @@
   type: science
   ref: { author: "Ibn Kathir", title: "Ismaïl ibn Kathir, auteur du Tafsir, mort à Damas", publication: "774 H / 1373", year: 1373 }
   url: https://en.wikipedia.org/wiki/Ibn_Kathir
-  label: { ar: "ابن كثير، توفي ١٣٧٣", en: "Ibn Kathir, d. 1373" }
+  label: { ar: "ابن كثير، توفي 1373", en: "Ibn Kathir, d. 1373" }
   claim: "Ibn Kathir meurt à Damas en 774 H (1373) : plus de six cents ans avant nous."
   checked: { "on": '2026-11-12', sources: ["https://en.wikipedia.org/wiki/Ibn_Kathir"] }
   status: validated
