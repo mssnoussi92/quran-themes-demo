@@ -77,7 +77,7 @@ A "car" in Surat Yusuf?
 **YouTube · Titre (47/100)**
 
 ```text
-A "car" in Surat Yusuf? · «سيارة» في سورة يوسف؟
+«سيارة» في سورة يوسف؟ · A "car" in Surat Yusuf?
 ```
 
 **YouTube · Description**
@@ -186,7 +186,7 @@ A verse about forgiveness… how do you think it ends? Not what you'd expect.
 **YouTube · Titre (61/100)**
 
 ```text
-How do you think this verse ends? · تفتكر الآية دي خلصت بإيه؟
+تفتكر الآية دي خلصت بإيه؟ · How do you think this verse ends?
 ```
 
 **YouTube · Description**
@@ -294,7 +294,7 @@ One sentence in the Quran… said by two opposites. Do you know who?
 **YouTube · Titre (58/100)**
 
 ```text
-Who said this in the Quran? · مين قال الجملة دي في القرآن؟
+مين قال الجملة دي في القرآن؟ · Who said this in the Quran?
 ```
 
 **YouTube · Description**
@@ -408,7 +408,7 @@ Sur TikTok : la vidéo `quiz-short-4-dabba-tiktok.mp4`, signée `@quran.words.da
 **YouTube · Titre (68/100)**
 
 ```text
-"The beast of the earth" in Surat Saba'? · «دابة الأرض» في سورة سبأ؟
+«دابة الأرض» في سورة سبأ؟ · "The beast of the earth" in Surat Saba'?
 ```
 
 **YouTube · Description**
@@ -518,7 +518,7 @@ Jacob said "beautiful patience" twice… the second time, he went on with what n
 **YouTube · Titre (72/100)**
 
 ```text
-"Beautiful patience"… and the second time? · «فصبر جميل»… المرة التانية؟
+«فصبر جميل»… المرة التانية؟ · "Beautiful patience"… and the second time?
 ```
 
 **YouTube · Description**
@@ -628,7 +628,7 @@ Who said this… and to whom?
 **YouTube · Titre (55/100)**
 
 ```text
-Who said this… and to whom? · مين قال الجملة دي… ولمين؟
+مين قال الجملة دي… ولمين؟ · Who said this… and to whom?
 ```
 
 **YouTube · Description**

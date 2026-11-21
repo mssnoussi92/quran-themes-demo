@@ -14,7 +14,10 @@ plus "platform":"tiktok"); the film is `<files>-film-16x9` (TrialFilm169). The f
 or `<name>-cover.jpg`) and the film's thumbnail (TrialThumb169, `thumbnail.file` or `<files>-film-thumbnail.jpg`),
 both taken at frame 45.
 
---only: all (default); shorts (the shorts, their TikTok twins, their covers); film (the film and its thumbnail);
+--only: all (default); shorts (the shorts, their TikTok twins, their covers); film (the film, its thumbnail and its
+dedicated thumbnails); thumbnail (the dedicated thumbnails alone, `thumbnail.options` of the film's file: one scene of the
+film with none of its text and two lines of hook, TrialThumbFrame, `<files>-film-thumbnail-<name>.jpg`; no video; added
+to the draft release, 2026-11-21);
 tiktok (the TikTok twins only); cut (the short versions only, of the shorts whose file has `cut`: added to
 the draft release, nothing validated rendered again); or one short's id (that short, its twin and its cover), or several
 joined by commas (`qitr,marah`: the shorts whose voice is there, 2026-11-19); tall: the film in 9:16
@@ -82,12 +85,19 @@ def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]
     if only in elsewhere:                       # another page: its shorts signed with its name, and their covers
         return signed_elsewhere(film, files, shorts, voice, only)
     chosen = named(only, ids)
-    if only not in ("all", "shorts", "film", "tall", "tall-tiktok", "tiktok", "cut") and not chosen:
-        sys.exit(f"error: --only {only}: not all, shorts, film, tall, tall-tiktok, tiktok, cut, "
+    if only not in ("all", "shorts", "film", "thumbnail", "tall", "tall-tiktok", "tiktok", "cut") and not chosen:
+        sys.exit(f"error: --only {only}: not all, shorts, film, thumbnail, tall, tall-tiktok, tiktok, cut, "
                  f"one or more of {', '.join(ids)} (joined by commas)"
                  + (f" or a page of `elsewhere` ({', '.join(elsewhere)})" if elsewhere else ""))
     if only == "tiktok" and not twins:
         sys.exit(f"error: --only tiktok: the platforms of {film_id} have no tiktok, its shorts have no TikTok twin")
+    if only == "thumbnail":
+        if not has_film:
+            sys.exit(f"error: --only thumbnail: {film_id} is a series, it has no film")
+        options = thumbnail_stills(film, files, film_id, voice)
+        if not options:
+            sys.exit(f"error: --only thumbnail: {film_id} has no `thumbnail.options` (content/trial/{film_id}.yaml)")
+        return [], options
     if only in ("tall", "tall-tiktok"):
         if not has_film:
             sys.exit(f"error: --only {only}: {film_id} is a series, it has no film")
@@ -130,7 +140,16 @@ def listing(film_id: str, voice: str, only: str) -> tuple[list[dict], list[dict]
                        "timeline": f"video/public/trial/{film_id}-{voice}.json", "kind": "film"})
         stills.append({"name": film["thumbnail"].get("file", f"{files}-film-thumbnail.jpg"), "composition": "TrialThumb169",
                        "props": compact({"film": film_id, "voice": voice, "data": None, "panels": None}), "frame": STILL_FRAME, "kind": "thumbnail"})
+        stills += thumbnail_stills(film, files, film_id, voice)
     return videos, stills
+
+
+def thumbnail_stills(film: dict, files: str, film_id: str, voice: str) -> list[dict]:
+    """The dedicated thumbnails of the film (`thumbnail.options`, TrialThumbFrame, owner's choice of 2026-11-21): one still
+    each, one scene of the film with none of its text, named `option.file` or `<files>-film-thumbnail-<name>.jpg`."""
+    return [{"name": o.get("file") or f"{files}-film-thumbnail-{o['name']}.jpg", "composition": "TrialThumbFrame",
+             "props": compact({"film": film_id, "voice": voice, "option": o["name"], "data": None}), "frame": STILL_FRAME, "kind": "thumbnail"}
+            for o in film["thumbnail"].get("options") or []]
 
 
 def signed_elsewhere(film: dict, files: str, shorts: list[dict], voice: str, page: str) -> tuple[list[dict], list[dict]]:
@@ -156,7 +175,7 @@ def main() -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--film", required=True, help="the film's id (content/trial/<id>.yaml)")
     p.add_argument("--voice", default="D")
-    p.add_argument("--only", default="all", help="all, shorts, film, tall (the film in 9:16 and its TikTok twin), tall-tiktok (the twin alone), tiktok, cut, one short's id or several joined by commas, or a page of the film's `elsewhere`")
+    p.add_argument("--only", default="all", help="all, shorts, film, thumbnail (the film's dedicated thumbnails alone), tall (the film in 9:16 and its TikTok twin), tall-tiktok (the twin alone), tiktok, cut, one short's id or several joined by commas, or a page of the film's `elsewhere`")
     p.add_argument("--matrix", action="store_true", help="one JSON object on one line, a GitHub Actions matrix")
     p.add_argument("--stills", action="store_true", help="the covers and the thumbnail instead of the videos")
     p.add_argument("--ids", action="store_true",

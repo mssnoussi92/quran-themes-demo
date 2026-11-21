@@ -8,7 +8,7 @@ avec quels réglages, et ce que les outils ne font pas encore. La marche à suiv
 des décisions dans `docs/retention.md`.
 
 Le dossier s'appelle encore `trial` (l'essai) : `content/trial/`, `tools/trial/`, `video/src/trial/`, et les
-compositions `Trial916`, `TrialFilm169`, `TrialFilm916`, `TrialCover916`, `TrialThumb169`. Ce n'est plus un essai.
+compositions `Trial916`, `TrialFilm169`, `TrialFilm916`, `TrialCover916`, `TrialThumb169`, `TrialThumbFrame`. Ce n'est plus un essai.
 
 ## Ce qu'on livre
 
@@ -210,7 +210,7 @@ pastille par occurrence, par forme puis par sourate ; la première et la derniè
 | `text` | le texte de voix de ses répliques propres (une requête pour toutes) |
 | `verses` | seulement dans le premier film (ancien épisode préparé) ; sinon le registre |
 | `outro` | secondes d'image calme à la fin (12) |
-| `thumbnail` | la vignette : `title`, `tag`, `panels` (les shorts montrés côte à côte, le premier à droite), `file` |
+| `thumbnail` | la vignette : `title`, `tag`, `panels` (les shorts montrés côte à côte, le premier à droite), `file` ; et ses **vignettes dédiées**, `options` (voir plus bas) |
 | `publish` | `title`, `series` (le nom de la série, repris par les shorts), `description`, `hook` (pour le film en 9:16 sur Facebook, comme un short), `hashtags` (2 ou 3, ceux du thème), `narration` (la ligne qui déclare la voix IA, par voix), `out` (où écrire les textes à coller) |
 | `chapters` | chacun : `id`, `title` (ar, en : un chapitre YouTube), `number`, `segments` |
 
@@ -223,6 +223,48 @@ le dhikr dit par un récitateur dans « ذكر وحكايته », ses temps sont
 partie, le film le tout). `picture` (un
 short) et `scene` disent l'image, gardés d'un segment au suivant ; `shots` donne une image par phrase
 (l'ouverture) ; `subscribe: true` fait passer le rappel d'abonnement pendant ce segment.
+
+### Les vignettes dédiées d'un film (`thumbnail.options`, choix du propriétaire, 2026-11-21)
+
+La vignette à trois panneaux (`TrialThumb169`) a fait 2,54 % de clics sur 6 963 impressions, surtout en vidéo suggérée,
+où elle mesure environ 170 px de large. Le propriétaire veut des vignettes dédiées : **une seule scène du film, en pleine
+résolution, sans aucun de ses textes, avec une accroche en deux lignes**. `TrialThumbFrame` (1280×720,
+`video/src/trial/ThumbFrame.tsx`) montre le film propre (`Film`, prop `clean` : ni verset, ni traduction, ni narration,
+ni sous-titre, ni crédit, ni chapitre, ni nom de la page, ni bouton d'abonnement, ni son ; le clip, les dessins et le
+voile restent) arrêté (`Freeze`) au moment `at` de l'option, réduit de 1920×1080 à 1280×720. Dessus : un dégradé sombre du
+côté du texte, une étiquette dorée (`Tag`) et deux lignes d'arabe (blanche, puis dorée ; 122 px au plus, réduites si une
+ligne dépasserait son bloc). Le coin en bas à droite reste vide (YouTube y écrit la durée). Chaque option du fichier du film :
+
+| Champ | Ce que c'est |
+| --- | --- |
+| `name` | son nom (minuscules, chiffres, tirets) ; il fait le nom du fichier : `<files>-film-thumbnail-<name>.jpg` |
+| `art` | **ou** une scène dessinée pour la vignette seule (`video/src/trial/ThumbArt.tsx`, table `ART` : `qarnayn-barrier`…) : le choix du propriétaire du 2026-11-21 (« il ne faut pas toujours choisir des images du film, on essaie de créer une » image ; « entièrement dessinée ») |
+| `at` | **ou** un moment du film, `"5:40"` ou des secondes (le temps du film terminé, pas d'une scène) |
+| `lines` | les deux lignes d'accroche (jamais une citation ; les mots refusés s'appliquent) |
+| `tag` | l'étiquette dorée |
+| `place` | `top` (centré en haut), `left` ou `right` (un bloc d'environ 45 % de la largeur de ce côté, texte aligné à droite) |
+| `brightness` | facultatif, 1 par défaut : éclaircit l'image seulement (1,3), jamais le texte |
+| `file` | facultatif : un autre nom de fichier |
+
+Les options passent par `video/public/trial/<film>.json` (écrit par `prepare.py --film`, avec `thumbnail.options`) ; la
+composition lit aussi la ligne de temps `<film>-<voix>.json`. Le workflow `film` les rend avec `only: all` ou `film`, à côté
+de `TrialThumb169` (qui reste), et **seules, avec `only: thumbnail`** : il prépare le film (clips et ligne de temps comme
+pour `only: film`), ne rend aucune vidéo et **ajoute** les images à la release brouillon `<files>-candidate` sans retirer les
+autres fichiers. Le propriétaire choisit l'option sur les images ; rien n'est validé sans lui. Son choix s'inscrit dans
+`thumbnail.use` (le nom de l'option) : `publish.py` nomme alors ce fichier sur la ligne du film (« miniature : … »), et
+`page-files` le rend public avec les autres (Dhul-Qarnayn : `barrier`, choisi le 2026-11-21).
+
+**Une scène dessinée d'abord** (son choix, 2026-11-21) : un ciel vif au crépuscule, une seule chose en grand (le barrage
+chauffé au rouge, le coffre d'or, le soleil dans l'eau sombre), la lumière dessinée pour une image lue à 170 px ; les
+silhouettes du film (`Qarnayn.tsx`) en plus grand et plus clair, personne dessiné, rien de l'invisible. Une scène dessinée ne
+demande aucun clip : elle se rend dans la session (`npx remotion still … TrialThumbFrame … --props='{"film": …, "option": …,
+"data": {"film": null, "option": {…}}}'`), et le voile sous le texte y est plus léger. Le moment du film (`at`) reste
+possible quand une image du film est la plus forte.
+
+```bash
+uv run --with pyyaml python3 tools/trial/videos.py --film <film> --only thumbnail --stills   # ce qui serait rendu
+npx remotion still <bundle> TrialThumbFrame out/<film>-thumb.png --frame=45 --props='{"film":"<film>","voice":"D","option":"<nom>","data":null}'
+```
 
 ## La chaîne, dans l'ordre
 
@@ -387,7 +429,7 @@ dit quoi faire.
    à l'oreille. Pas de schéma des fichiers : seuls les champs ci-dessus sont exigés. (Le registre reste vérifié par
    `validate.py`.)
 3. **Rendu en CI : en service depuis le 2026-11-11, sauf pour le premier film.** Le workflow `film`
-   (`.github/workflows/film.yml`, à la main : `film`, `voice` D, `only` all|shorts|film|tiktok|<id d'un short ou plusieurs, séparés par des virgules : `qitr,marah`>,
+   (`.github/workflows/film.yml`, à la main : `film`, `voice` D, `only` all|shorts|film|thumbnail|tiktok|<id d'un short ou plusieurs, séparés par des virgules : `qitr,marah`>,
    `ambience`, `from_run`) prépare puis rend en jobs parallèles : `prepare` (règles, clip Pixabay de chaque short,
    timelines avec les prises de `content/trial/takes/` : aucune requête de voix, puis le film), un job `render` par
    vidéo (short, version TikTok, film : `check.py` et ses planches), `stills` (couvertures et vignette), `release`

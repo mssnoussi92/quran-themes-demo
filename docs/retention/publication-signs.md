@@ -77,7 +77,7 @@ A book said of a living man, by his name, that he would die a disbeliever.
 **YouTube · Titre (75/100)**
 
 ```text
-One sentence could have disproved the Quran · كلمة واحدة كانت هتكذّب القرآن
+كلمة واحدة كانت هتكذّب القرآن · One sentence could have disproved the Quran
 ```
 
 **YouTube · Description**
@@ -192,7 +192,7 @@ What does a verse revealed fourteen centuries ago say about the sky?
 **YouTube · Titre (52/100)**
 
 ```text
-Even Einstein got this wrong · حتى أينشتاين غلط فيها
+حتى أينشتاين غلط فيها · Even Einstein got this wrong
 ```
 
 **YouTube · Description**
@@ -306,7 +306,7 @@ More than a thousand years before anyone flew, a verse spoke of a chest that tig
 **YouTube · Titre (81/100)**
 
 ```text
-What happens 8 km up… the Quran described it · اللي بيحصل فوق ٨ كيلو… القرآن وصفه
+اللي بيحصل فوق 8 كيلو… القرآن وصفه · What happens 8 km up… the Quran described it
 ```
 
 **YouTube · Description**
@@ -419,7 +419,7 @@ The Quran named that stage with one word: 'alaqa.
 **YouTube · Titre (99/100)**
 
 ```text
-1,000 years before microscopes, the Quran described you · قبل الميكروسكوب بألف سنة… القرآن وصف شكلك
+قبل الميكروسكوب بألف سنة… القرآن وصف شكلك · 1,000 years before microscopes, the Quran described you
 ```
 
 **YouTube · Description**
@@ -534,7 +534,7 @@ Before you share a number about the Quran, count it.
 **YouTube · Titre (62/100)**
 
 ```text
-They say 365… I counted it myself · بيقولوا 365… عدّيتها بنفسي
+بيقولوا 365… عدّيتها بنفسي · They say 365… I counted it myself
 ```
 
 **YouTube · Description**

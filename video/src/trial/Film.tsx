@@ -43,7 +43,10 @@ export type FilmData = {
 };
 /** `film`: the id of the film (content/trial/<id>.yaml); the first one is « film ». */
 /** `platform` (the vertical film only): where the page has another name (TikTok), the film is signed with it. */
-export type FilmProps = { film: string; voice: string; platform?: string; data: FilmData | null };
+/** `clean` (2026-11-21, the thumbnails of the film, TrialThumbFrame): the picture alone, no text layer at all (the verse,
+ * its translation, the narration and its subtitles, the credit line, the chapter label, the page's name, the subscribe
+ * button) and no sound; the clip, the drawings and the veil stay. Off by default: every render is as it was. */
+export type FilmProps = { film: string; voice: string; platform?: string; data: FilmData | null; clean?: boolean };
 
 export const filmMetadata: CalculateMetadataFunction<FilmProps> = async ({ props, abortSignal }) => {
   const res = await fetch(staticFile(`trial/${props.film}-${props.voice}.json`), { signal: abortSignal });
@@ -305,7 +308,7 @@ const Signature: React.FC<{ handle: string; reminders: number[]; t: number }> = 
   );
 };
 
-export const Film: React.FC<FilmProps> = ({ data }) => {
+export const Film: React.FC<FilmProps> = ({ data, clean = false }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   if (!data) throw new Error("no film data: calculateMetadata did not run");
@@ -336,15 +339,15 @@ export const Film: React.FC<FilmProps> = ({ data }) => {
           </Sequence>
         );
       })}
-      {data.ambience ? <Html5Audio src={staticFile(data.ambience)} /> : null}
+      {data.ambience && !clean ? <Html5Audio src={staticFile(data.ambience)} /> : null}
       {data.segments.map((seg, i) =>
-        seg.file ? (
+        seg.file && !clean ? (
           <Sequence key={i} from={Math.round(seg.start * fps)} durationInFrames={Math.ceil(seg.seconds * fps) + 2} layout="none">
             <Html5Audio src={staticFile(seg.file)} />
           </Sequence>
         ) : null,
       )}
-      {ended ? null : current.kind === "narration" ? (
+      {clean || ended ? null : current.kind === "narration" ? (
         <NarrationText seg={{ ...current, scene: shot.scene }} t={t} last={current === data.segments[data.segments.length - 1]} handle="" layout={layout} />
       ) : current.kind === "verse" ? (
         <VerseText seg={{ ...current, scene: shot.scene }} t={t} layout={layout} />
@@ -352,10 +355,12 @@ export const Film: React.FC<FilmProps> = ({ data }) => {
         <ReadingText seg={{ ...current, scene: shot.scene }} t={t} layout={layout} />
       )}
       {/* where we are in the story: the chapter, top left */}
-      <div dir="rtl" lang="ar" style={{ position: "absolute", top: 50, left: 70, opacity: 0.86 * chapterIn * (ended ? 0 : 1), fontFamily: FONT.arabic, fontWeight: 700, fontSize: 36, color: GOLD, textShadow: SHADOW }}>
-        {chapter.number ? `${chapter.number} · ` : ""}{chapter.title.ar}
-      </div>
-      <Signature handle={data.handle} reminders={data.subscribe} t={t} />
+      {clean ? null : (
+        <div dir="rtl" lang="ar" style={{ position: "absolute", top: 50, left: 70, opacity: 0.86 * chapterIn * (ended ? 0 : 1), fontFamily: FONT.arabic, fontWeight: 700, fontSize: 36, color: GOLD, textShadow: SHADOW }}>
+          {chapter.number ? `${chapter.number} · ` : ""}{chapter.title.ar}
+        </div>
+      )}
+      {clean ? null : <Signature handle={data.handle} reminders={data.subscribe} t={t} />}
     </AbsoluteFill>
   );
 };

@@ -14,7 +14,7 @@ import type { TrialData } from "./Trial";
 
 loadFonts();
 
-const INK_SHADOW = "0 4px 30px rgba(4,7,20,.95), 0 0 80px rgba(4,7,20,.8)";
+export const INK_SHADOW = "0 4px 30px rgba(4,7,20,.95), 0 0 80px rgba(4,7,20,.8)";
 
 const load = async (trial: string, voice: string, signal: AbortSignal) => {
   const res = await fetch(staticFile(`trial/${trial}-${voice}.json`), { signal });
@@ -42,7 +42,7 @@ const Scene: React.FC<{ data: TrialData; scene: string; cast?: string }> = ({ da
   );
 };
 
-const Tag: React.FC<{ text: string; size: number }> = ({ text, size }) => (
+export const Tag: React.FC<{ text: string; size: number }> = ({ text, size }) => (
   <div dir="rtl" lang="ar" style={{ display: "inline-block", padding: `${size * 0.16}px ${size * 0.6}px ${size * 0.26}px`, borderRadius: size * 0.36, background: GOLD, color: "#141006", fontFamily: FONT.arabic, fontWeight: 700, fontSize: size, lineHeight: 1.3 }}>
     {text}
   </div>

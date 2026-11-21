@@ -77,7 +77,7 @@ A scorpion stung a man at night. The Prophet ﷺ showed him words: had he said t
 **YouTube · Titre (95/100)**
 
 ```text
-Stung by a scorpion at night… the answer was one sentence · عقرب لدغته بالليل… والرد جملة واحدة
+عقرب لدغته بالليل… والرد جملة واحدة · Stung by a scorpion at night… the answer was one sentence
 ```
 
 **YouTube · Description**
@@ -187,7 +187,7 @@ The Prophet ﷺ asked his companion to say something, and he didn't know what. T
 **YouTube · Titre (93/100)**
 
 ```text
-He was asked to say something… and didn't know what · طلب منه يقول حاجة… وهو مش عارف يقول إيه
+طلب منه يقول حاجة… وهو مش عارف يقول إيه · He was asked to say something… and didn't know what
 ```
 
 **YouTube · Description**
@@ -301,7 +301,7 @@ The poor complained: the rich have got ahead of us! He taught them something aft
 **YouTube · Titre (96/100)**
 
 ```text
-"The rich got ahead of us!"… what he taught the poor · الأغنيا سبقونا!… فعلّمهم حاجة من غير فلوس
+الأغنيا سبقونا!… فعلّمهم حاجة من غير فلوس · "The rich got ahead of us!"… what he taught the poor
 ```
 
 **YouTube · Description**

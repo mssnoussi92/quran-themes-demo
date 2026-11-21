@@ -71,7 +71,7 @@ The same sitting, twice… once beside a bad companion, once beside a good one. 
 **YouTube · Titre (70/100)**
 
 ```text
-The one you sit with: musk… or sparks · اللي قاعد جنبك: مسك… ولا شرار؟
+اللي قاعد جنبك: مسك… ولا شرار؟ · The one you sit with: musk… or sparks
 ```
 
 **YouTube · Description**
@@ -174,7 +174,7 @@ The same bus stop, twice… a friend who loves for himself, and one who loves fo
 **YouTube · Titre (91/100)**
 
 ```text
-Does your friend want for you what he wants for himself? · صاحبك… بيحب لك اللي بيحبه لنفسه؟
+صاحبك… بيحب لك اللي بيحبه لنفسه؟ · Does your friend want for you what he wants for himself?
 ```
 
 **YouTube · Description**
@@ -277,7 +277,7 @@ The same queue, twice… a friend who cheers you on, and one who truly helps you
 **YouTube · Titre (61/100)**
 
 ```text
-Cheering you on… or truly helping you? · بيشجّعك… ولا بينصرك؟
+بيشجّعك… ولا بينصرك؟ · Cheering you on… or truly helping you?
 ```
 
 **YouTube · Description**

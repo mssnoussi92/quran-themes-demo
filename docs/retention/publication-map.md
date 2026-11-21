@@ -77,7 +77,7 @@ Its first time in the mushaf and its last both speak of hearts closed.
 **YouTube · Titre (69/100)**
 
 ```text
-The heart in the Quran… how many times? · «القلب» في القرآن… كام مرة؟
+«القلب» في القرآن… كام مرة؟ · The heart in the Quran… how many times?
 ```
 
 **YouTube · Description**
@@ -190,7 +190,7 @@ Its first time in the Quran: a light that is lost.
 **YouTube · Titre (65/100)**
 
 ```text
-Light in the Quran… how many times? · «النور» في القرآن… كام مرة؟
+«النور» في القرآن… كام مرة؟ · Light in the Quran… how many times?
 ```
 
 **YouTube · Description**
@@ -301,7 +301,7 @@ The last time, in the last surah: the one who whispers into the chests of people
 **YouTube · Titre (69/100)**
 
 ```text
-The chest in the Quran… how many times? · «الصدر» في القرآن… كام مرة؟
+«الصدر» في القرآن… كام مرة؟ · The chest in the Quran… how many times?
 ```
 
 **YouTube · Description**

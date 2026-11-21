@@ -9,7 +9,7 @@ Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et 
 **YouTube · Titre (82/100)**
 
 ```text
-Free will or fate? 3 sentences we all say · مخيّر ولا مسيّر؟ تلات جمل بنقولها كلنا
+مخيّر ولا مسيّر؟ تلات جمل بنقولها كلنا · Free will or fate? 3 sentences we all say
 ```
 
 **YouTube · Description**
@@ -136,7 +136,7 @@ Sur TikTok : la vidéo `qadar-short-1-amal-tiktok.mp4`, signée `@quran.words.da
 **YouTube · Titre (95/100)**
 
 ```text
-“It's all written, why bother?” The Companions asked it · «كله مكتوب… أتعب ليه؟» الصحابة سألوها
+«كله مكتوب… أتعب ليه؟» الصحابة سألوها · “It's all written, why bother?” The Companions asked it
 ```
 
 **YouTube · Description**
@@ -249,7 +249,7 @@ Sur TikTok : la vidéo `qadar-short-2-shaa-tiktok.mp4`, signée `@quran.words.da
 **YouTube · Titre (83/100)**
 
 ```text
-“When God guides me…” Two verses answer it · «لما ربنا يهديني»… آيتين بيردّوا عليها
+«لما ربنا يهديني»… آيتين بيردّوا عليها · “When God guides me…” Two verses answer it
 ```
 
 **YouTube · Description**
@@ -360,7 +360,7 @@ A two-letter word we say every night… and the Prophet ﷺ warned against it.
 **YouTube · Titre (81/100)**
 
 ```text
-A two-letter word the Prophet ﷺ warned against · كلمة من حرفين… النبي ﷺ حذّر منها
+كلمة من حرفين… النبي ﷺ حذّر منها · A two-letter word the Prophet ﷺ warned against
 ```
 
 **YouTube · Description**

@@ -162,6 +162,21 @@ def test_a_missing_field_and_an_empty_line(copy):
     assert "an empty ar or en" in done.stdout
 
 
+def test_the_dedicated_thumbnails_of_a_film_are_checked(copy):
+    spec = copy.load("content/trial/qarnayn.yaml")
+    assert spec["thumbnail"]["options"]                  # the real file declares them (2026-11-21)
+    spec["thumbnail"]["options"] = [
+        {"name": "Bad Name", "at": "soon", "lines": ["one only"], "place": "middle", "extra": 1},
+        {"name": "ok", "at": 340, "lines": ["a", "b"], "tag": "t", "place": "top", "brightness": 1.3},
+    ]
+    copy.dump("content/trial/qarnayn.yaml", spec)
+    done = copy.rules("--film", "qarnayn")
+    refused(done, "thumbnail.options[1]: `name` is lowercase")
+    for message in ("`at` is a time of the film", "`lines` is two lines", "missing `tag`", "`place` is top, left or right", "unknown field(s) extra"):
+        assert message in done.stdout, done.stdout[-2500:]
+    assert "thumbnail.options[2]" not in done.stdout
+
+
 def test_a_sign_no_font_of_the_project_can_draw_is_refused(copy):
     """Left to the machine's own font, « ﷺ » was a pixel font in a session and an empty box on a GitHub runner."""
     spec = copy.load("content/trial/asked.yaml")
@@ -725,3 +740,23 @@ def test_the_film_reads_no_silent_line_in_a_short_s_voice_text():
     lines = film.lines_of(spec)
     assert [l["ar"] for l in lines] == ["سطر بالصوت", "وسطر تاني"]
     assert [(l["narration"], l["index"]) for l in lines] == [("open", 0), ("open", 1)]
+
+
+def test_a_drawn_thumbnail_and_the_chosen_one_are_checked(copy):
+    """2026-11-21 (owner's choice): a thumbnail drawn for itself (`art`, a scene of ThumbArt.tsx) or a moment of the film
+    (`at`), never both; `thumbnail.use` names the option YouTube gets."""
+    spec = copy.load("content/trial/qarnayn.yaml")
+    assert spec["thumbnail"]["use"] == "barrier"         # his choice, in the real file
+    assert {o["art"] for o in spec["thumbnail"]["options"]} == {"qarnayn-barrier", "qarnayn-chest", "qarnayn-sunset"}
+    spec["thumbnail"]["options"] = [
+        {"name": "drawn", "art": "qarnayn-barrier", "lines": ["a", "b"], "tag": "t", "place": "left"},
+        {"name": "both", "art": "qarnayn-chest", "at": "4:13", "lines": ["a", "b"], "tag": "t", "place": "top"},
+        {"name": "nowhere", "art": "a-scene-nobody-drew", "lines": ["a", "b"], "tag": "t", "place": "top"},
+    ]
+    spec["thumbnail"]["use"] = "missing"
+    copy.dump("content/trial/qarnayn.yaml", spec)
+    done = copy.rules("--film", "qarnayn")
+    refused(done, "thumbnail.options[2]: one of `art`")
+    for message in ("« a-scene-nobody-drew » is not drawn in video/src/trial/ThumbArt.tsx", "thumbnail.use: « missing » is not one of"):
+        assert message in done.stdout, done.stdout[-2500:]
+    assert "thumbnail.options[1]" not in done.stdout

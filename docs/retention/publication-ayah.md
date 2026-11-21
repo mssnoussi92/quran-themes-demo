@@ -188,7 +188,7 @@ A woman told the Prophet ﷺ: the one who comes to you has left you. The answer 
 **YouTube · Titre (82/100)**
 
 ```text
-She told him: you've been left… and the answer came down · قالتله: سابك… فنزل الرد
+قالتله: سابك… فنزل الرد · She told him: you've been left… and the answer came down
 ```
 
 **YouTube · Description**
@@ -302,7 +302,7 @@ A verse for everyone who thinks his sin is too great to be forgiven.
 **YouTube · Titre (78/100)**
 
 ```text
-They had committed grave sins… and came to ask · عملوا ذنوب كبيرة… وجم يسألوا!
+عملوا ذنوب كبيرة… وجم يسألوا! · They had committed grave sins… and came to ask
 ```
 
 **YouTube · Description**
@@ -412,7 +412,7 @@ He swore never to give him anything again. Then a verse came down.
 **YouTube · Titre (83/100)**
 
 ```text
-He swore to cut off his relative… and a verse came down · حلف يقطع قريبه… فنزلت آية
+حلف يقطع قريبه… فنزلت آية · He swore to cut off his relative… and a verse came down
 ```
 
 **YouTube · Description**

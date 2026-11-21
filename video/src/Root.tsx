@@ -13,6 +13,8 @@ import { TRIAL_FPS, Trial, trialMetadata } from "./trial/Trial";
 import type { TrialProps } from "./trial/Trial";
 import { THUMB, TrialCover, TrialThumb, coverMetadata, thumbMetadata } from "./trial/Cover";
 import type { CoverProps, ThumbProps } from "./trial/Cover";
+import { TrialThumbFrame, thumbFrameMetadata } from "./trial/ThumbFrame";
+import type { ThumbFrameProps } from "./trial/ThumbFrame";
 import { Film, FilmTall, filmMetadata } from "./trial/Film";
 import type { FilmProps } from "./trial/Film";
 import { SahibStyle } from "./trial/Sahib";
@@ -65,6 +67,10 @@ export const RemotionRoot: React.FC = () => (
       defaultProps={{ film: "film", voice: "D", data: null } satisfies FilmProps} calculateMetadata={filmMetadata} />
     <Composition id="TrialThumb169" component={TrialThumb} fps={TRIAL_FPS} durationInFrames={60} width={THUMB.width} height={THUMB.height}
       defaultProps={{ film: "film", voice: "X", data: null, panels: null } satisfies ThumbProps} calculateMetadata={thumbMetadata} />
+    {/* The dedicated thumbnail of a film (2026-11-21): one scene of the clean film, frozen at the option's moment, two lines
+        of hook (`thumbnail.options` of the film's file). 60 frames like the covers: the still is taken at frame 45. */}
+    <Composition id="TrialThumbFrame" component={TrialThumbFrame} fps={TRIAL_FPS} durationInFrames={60} width={THUMB.width} height={THUMB.height}
+      defaultProps={{ film: "film", voice: "D", option: "", data: null } satisfies ThumbFrameProps} calculateMetadata={thumbFrameMetadata} />
     <Still
       id="Thumbnail169"
       component={Thumbnail}
