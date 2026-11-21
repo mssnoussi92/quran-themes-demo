@@ -548,6 +548,27 @@ const PlayedLayer: React.FC<{ p: PlayedAt; t: number; segments: Segment[]; show:
  * anything that must not move. None by default; a short registers its own here. */
 export const OVERLAYS: Record<string, Drawn> = { ...SIGNS_OVERLAYS, ...KALIMA_OVERLAYS, ...COUNT_OVERLAYS, ...FARQ_OVERLAYS, ...MAP_OVERLAYS, ...SUAL_OVERLAYS, ...QUIZ_OVERLAYS, ...SAHW_OVERLAYS, ...SAHIB_OVERLAYS };
 
+/** The name of the series, or of the film a short comes from, and the number of the short in a ring, top left, still, as
+ * every series drawn with its own badge (« سؤال صعب », « كلمة من القرآن »…). The owner, 2026-11-21: « il manque parfois le nom
+ * de la série, même sur certaines vidéos que j'ai validées », then « partout où il manque » (question à choix): the shorts
+ * that had none. */
+const NAMED: Record<string, [string, string]> = {
+  caravan: ["آية وحكايتها", "1"], duha: ["آية وحكايتها", "2"], hope: ["آية وحكايتها", "3"], forgive: ["آية وحكايتها", "4"],
+  blackout: ["بص تاني", "1"], drought: ["بص تاني", "2"], scroll: ["بص تاني", "3"],
+  sahun: ["إزاي أعملها؟", "1"], khams: ["إزاي أعملها؟", "2"], nasit: ["إزاي أعملها؟", "3"], shakk: ["إزاي أعملها؟", "4"],
+  west: ["ذو القرنين", "1"], tribute: ["ذو القرنين", "2"], barrier: ["ذو القرنين", "3"],
+  refuge: ["أصحاب الكهف", "1"], sunpath: ["أصحاب الكهف", "2"], awake: ["أصحاب الكهف", "3"],
+  amal: ["مخيّر ولا مسيّر؟", "1"], shaa: ["مخيّر ولا مسيّر؟", "2"], law: ["مخيّر ولا مسيّر؟", "3"],
+};
+
+const SeriesBadge: React.FC<{ name: string; n: string }> = ({ name, n }) => (
+  <g>
+    <circle cx={114} cy={268} r={24} fill="none" stroke={GOLD} strokeWidth={2.5} />
+    <text x={114} y={281} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={30} fill={GOLD}>{n}</text>
+    <text x={152} y={280} fontFamily={FONT.arabic} fontWeight={700} fontSize={34} fill={GOLD} style={{ filter: "drop-shadow(0 2px 10px rgba(4,7,20,.9))" }}>{name}</text>
+  </g>
+);
+
 const hasLetter = (token: string) => /\p{L}/u.test(token);
 export const fit = (base: number, text: string, comfortable: number) => Math.round(base * Math.min(1, Math.sqrt(comfortable / Math.max(1, text.length))));
 
@@ -867,6 +888,11 @@ export const Trial: React.FC<TrialProps> = ({ data, platform, cast }) => {
       {Overlay ? (
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: "absolute", inset: 0 }}>
           <Overlay t={t} show={show} since={since} horizon={horizon} phrase={phrase} cast={cast} />
+        </svg>
+      ) : null}
+      {NAMED[data.trial] ? (
+        <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: "absolute", inset: 0 }}>
+          <SeriesBadge name={NAMED[data.trial][0]} n={NAMED[data.trial][1]} />
         </svg>
       ) : null}
       {data.ambience ? <Html5Audio src={staticFile(data.ambience)} /> : null}

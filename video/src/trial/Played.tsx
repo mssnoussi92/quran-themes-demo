@@ -931,12 +931,19 @@ export const SharePlayed: Played = ({ u, at }) => {
 /** A rich man. `ask` « في ناس كتير بعيدة عن ربنا… وعايشين مرتاحين. فلوس… وبيت… وكل اللي نفسهم فيه. فإزاي؟ »: before his
  * villa, smiling, his car keys; money, a house, shopping bags pop as they are named; a question mark. `inside` « …الضيق ده…
  * مش في الجيب… ده في القلب. ممكن يلبس… وياكل… ويسكن… وقلبه من جوّه… قلق وحيرة. »: the same man at night in his big room,
- * alone on his bed, a dark scribble over his head that grows. `ex` « زي واحد كل حاجة ماشية معاه… وهو بعيد عن ربنا… فيقول:
+ * lying in his bed under the blanket, awake (the owner, 2026-11-21: « qu'il reste dans le lit, mais pas assis comme sur une
+ * chaise »), his wardrobe and his plate as they are named; he tosses, his hand on his chest, a dark scribble over his head
+ * that grows. `ex` « زي واحد كل حاجة ماشية معاه… وهو بعيد عن ربنا… فيقول:
  * أكيد أنا كويس. النعمة مع البعد… مش علامة إنك كويس. »: he shows his things, pleased with himself; then his smile falls. */
 export const RichPlayed: Played = ({ u, t, at, variant }) => {
   const x = 420;
   const night = variant === "inside";
   const worry = night ? Math.max(0.65, ramp(u, at(7), at(8) + 0.6)) : 0;
+  // at night: lying in his bed (BedPlayed), awake; he tosses from « وقلبه من جوّه », his hand goes to his chest
+  const lie = { x: 430, y: 1140, s: S * 0.8 };
+  const toss = night ? ramp(u, at(7), at(7) + 0.4) * (1 - ramp(u, at(8) + 1.2, at(8) + 1.8)) : 0;
+  const chest = night ? ramp(u, at(8), at(8) + 0.6) : 0;
+  const lieShoulder = lie.y - 106 * lie.s;
   const doubt = variant === "ex" ? ramp(u, at(4), at(5) + 0.4) : 0;
   const pop = (n: number) => (variant === "ask" ? ramp(u, at(n), at(n) + 0.3) : 0);
   const bag = (bx: number) => (
@@ -972,14 +979,25 @@ export const RichPlayed: Played = ({ u, t, at, variant }) => {
           <rect x={0} y={FLOOR} width={W} height={H - FLOOR} fill="#7a8a5a" />
         </g>
       )}
-      <Stick x={night ? 380 : x} y={night ? FLOOR - 154 * S + 20 - 70 : PELVIS} s={S} facing={1} tone="white"
-        face={night ? "worried" : variant === "ex" ? (doubt > 0.5 ? "worried" : "smirk") : u > at(6) ? "neutral" : "smile"}
-        pose={night ? { ...POSES.seat, head: -14 } : { ...POSES.stand, torso: variant === "ex" ? -6 : 0 }}
-        handF={night ? [380 + 40, PELVIS - 20] : variant === "ex" && doubt < 0.5 ? [x + 120, shoulderY - 40] : [x + 70, shoulderY + 50]} bendF={-1} />
+      {night ? (
+        <g>
+          <g transform={`rotate(${-90 + 5 * toss * Math.sin(t * 4)} ${lie.x} ${lie.y})`}>
+            <Stick x={lie.x} y={lie.y} s={lie.s} facing={1} tone="white" face="worried" pose={{ ...POSES.stand, head: 6 * toss * Math.sin(t * 4 + 1) }}
+              handF={chest > 0.01 ? lp([lie.x + 30, lie.y + 30], [lie.x + 24, lieShoulder + 40], chest) : undefined} bendF={1} />
+          </g>
+          {/* the blanket, up to his chest */}
+          <rect x={380} y={1106} width={258} height={66} rx={20} fill="#5a4a8a" stroke={INK} strokeWidth={6} transform={`translate(0 ${-4 * toss * Math.sin(t * 4)})`} />
+        </g>
+      ) : (
+        <Stick x={x} y={PELVIS} s={S} facing={1} tone="white"
+          face={variant === "ex" ? (doubt > 0.5 ? "worried" : "smirk") : u > at(6) ? "neutral" : "smile"}
+          pose={{ ...POSES.stand, torso: variant === "ex" ? -6 : 0 }}
+          handF={variant === "ex" && doubt < 0.5 ? [x + 120, shoulderY - 40] : [x + 70, shoulderY + 50]} bendF={-1} />
+      )}
       {night ? (
         <g opacity={worry}>
           {[0, 1, 2, 3].map((i) => (
-            <path key={i} d={`M ${300 + i * 30} ${headY - 210 + 20 * Math.sin(t * 3 + i)} q 30 -40 60 0 q 30 40 60 0`} stroke="#3b3a4a" strokeWidth={10 + 6 * worry} fill="none" strokeLinecap="round" />
+            <path key={i} d={`M ${110 + i * 30} ${1000 + 20 * Math.sin(t * 3 + i)} q 30 -40 60 0 q 30 40 60 0`} stroke="#3b3a4a" strokeWidth={10 + 6 * worry} fill="none" strokeLinecap="round" />
           ))}
         </g>
       ) : null}
