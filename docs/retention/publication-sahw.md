@@ -17,20 +17,20 @@ Textes du film **validés par le propriétaire le 2026-11-21**.
 **YouTube · Description**
 
 ```text
-Sujud as-sahw from start to finish: an extra rak'ah, a forgotten tashahhud, and doubt about how many rak'ahs. For each mistake: what the Prophet ﷺ did and taught, the views of the four schools from the Kuwaiti Encyclopedia of Fiqh, and a table at the end: the two prostrations before or after the salam.
-
 سجود السهو من الأول للآخر: ركعة زيادة، تشهد نسيته، وشك في عدد الركعات. لكل غلطة: اللي عمله النبي صلى الله عليه وسلم وعلّمه، وأقوال المذاهب الأربعة من الموسوعة الفقهية الكويتية، وفي الآخر جدول: السجدتين قبل السلام ولا بعده.
 
-Chapters:
-0:00 Even the Prophet ﷺ forgot · حتى النبي ﷺ سها
-0:22 “Woe” to those who pray? · «ويل» للي بيصلّوا؟
-2:17 An extra rak'ah · ركعة زيادة
-3:35 A forgotten tashahhud · نسيت التشهد
-4:57 How many did I pray? · صلّيت كام؟
-6:30 Two questions that keep coming · سؤالين بيتكرروا
-6:45 In short · الخلاصة
+Sujud as-sahw from start to finish: an extra rak'ah, a forgotten tashahhud, and doubt about how many rak'ahs. For each mistake: what the Prophet ﷺ did and taught, the views of the four schools from the Kuwaiti Encyclopedia of Fiqh, and a table at the end: the two prostrations before or after the salam.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+Chapters:
+0:00 حتى النبي ﷺ سها · Even the Prophet ﷺ forgot
+0:22 «ويل» للي بيصلّوا؟ · “Woe” to those who pray?
+2:17 ركعة زيادة · An extra rak'ah
+3:35 نسيت التشهد · A forgotten tashahhud
+4:57 صلّيت كام؟ · How many did I pray?
+6:30 سؤالين بيتكرروا · Two questions that keep coming
+6:45 الخلاصة · In short
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -69,8 +69,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-A verse says "woe"… to people who pray!
 آية بتقول «ويل»… للي بيصلّوا!
+A verse says "woe"… to people who pray!
 ```
 
 **Facebook · Description**
@@ -79,7 +79,7 @@ A verse says "woe"… to people who pray!
 السهو «في» الصلاة بيحصل من أي حد… والآية بتتكلم عن السهو «عن» الصلاة.
 Drifting "in" prayer happens to everyone… the verse is about drifting "away" from it.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -91,8 +91,8 @@ Drifting "in" prayer happens to everyone… the verse is about drifting "away" f
 **Instagram · Titre**
 
 ```text
-A verse says "woe"… to people who pray!
 آية بتقول «ويل»… للي بيصلّوا!
+A verse says "woe"… to people who pray!
 ```
 
 **Instagram · Description**
@@ -101,7 +101,7 @@ A verse says "woe"… to people who pray!
 السهو «في» الصلاة بيحصل من أي حد… والآية بتتكلم عن السهو «عن» الصلاة.
 Drifting "in" prayer happens to everyone… the verse is about drifting "away" from it.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -115,8 +115,8 @@ Sur TikTok : la vidéo `sahw-short-1-sahun-tiktok.mp4`, signée `@quran.words.da
 **TikTok · Titre**
 
 ```text
-A verse says "woe"… to people who pray!
 آية بتقول «ويل»… للي بيصلّوا!
+A verse says "woe"… to people who pray!
 ```
 
 **TikTok · Description**
@@ -125,7 +125,7 @@ A verse says "woe"… to people who pray!
 السهو «في» الصلاة بيحصل من أي حد… والآية بتتكلم عن السهو «عن» الصلاة.
 Drifting "in" prayer happens to everyone… the verse is about drifting "away" from it.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -143,13 +143,13 @@ Drifting "in" prayer happens to everyone… the verse is about drifting "away" f
 **YouTube · Description**
 
 ```text
-A verse says "woe to those who pray" (107:4-5), and our minds drift in every prayer. The answer is one word: the verse speaks of those heedless "about" their prayer (they lose it, let its time pass), not "in" it; drifting in prayer happens to everyone, even to the Prophet ﷺ (as-Sa'di). And at the end of al-Baqarah: "Our Lord, do not impose blame upon us if we forget" (2:286).
-
 آية بتقول «فويل للمصلين» (الماعون ٤-٥)، وكلنا بنسهى في صلاتنا. الرد في كلمة: الآية بتتكلم عن اللي ساهين «عن» صلاتهم (ضيّعوها وفوّتوا وقتها)، مش «في» صلاتهم؛ السهو في الصلاة بيحصل من أي حد، حتى من النبي ﷺ (السعدي). وفي آخر البقرة: «ربنا لا تؤاخذنا إن نسينا أو أخطأنا» (٢٨٦).
 
-How Do I Do It? · 1 · إزاي أعملها؟ · 1
+A verse says "woe to those who pray" (107:4-5), and our minds drift in every prayer. The answer is one word: the verse speaks of those heedless "about" their prayer (they lose it, let its time pass), not "in" it; drifting in prayer happens to everyone, even to the Prophet ﷺ (as-Sa'di). And at the end of al-Baqarah: "Our Lord, do not impose blame upon us if we forget" (2:286).
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+إزاي أعملها؟ · 1 · How Do I Do It? · 1
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -183,8 +183,8 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 **Facebook · Titre**
 
 ```text
-He prayed dhuhr in five rak'ahs!
 صلّى الضهر خمس ركعات!
+He prayed dhuhr in five rak'ahs!
 ```
 
 **Facebook · Description**
@@ -193,7 +193,7 @@ He prayed dhuhr in five rak'ahs!
 النبي ﷺ صلّى الضهر خمس ركعات… وعلّمنا نعمل إيه لو زوّدنا.
 The Prophet ﷺ once prayed dhuhr in five rak'ahs… and taught us what to do when we add.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -205,8 +205,8 @@ The Prophet ﷺ once prayed dhuhr in five rak'ahs… and taught us what to do wh
 **Instagram · Titre**
 
 ```text
-He prayed dhuhr in five rak'ahs!
 صلّى الضهر خمس ركعات!
+He prayed dhuhr in five rak'ahs!
 ```
 
 **Instagram · Description**
@@ -215,7 +215,7 @@ He prayed dhuhr in five rak'ahs!
 النبي ﷺ صلّى الضهر خمس ركعات… وعلّمنا نعمل إيه لو زوّدنا.
 The Prophet ﷺ once prayed dhuhr in five rak'ahs… and taught us what to do when we add.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -229,8 +229,8 @@ Sur TikTok : la vidéo `sahw-short-2-khams-tiktok.mp4`, signée `@quran.words.da
 **TikTok · Titre**
 
 ```text
-He prayed dhuhr in five rak'ahs!
 صلّى الضهر خمس ركعات!
+He prayed dhuhr in five rak'ahs!
 ```
 
 **TikTok · Description**
@@ -239,7 +239,7 @@ He prayed dhuhr in five rak'ahs!
 النبي ﷺ صلّى الضهر خمس ركعات… وعلّمنا نعمل إيه لو زوّدنا.
 The Prophet ﷺ once prayed dhuhr in five rak'ahs… and taught us what to do when we add.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -257,13 +257,13 @@ The Prophet ﷺ once prayed dhuhr in five rak'ahs… and taught us what to do wh
 **YouTube · Description**
 
 ```text
-The Prophet ﷺ once prayed dhuhr in five rak'ahs, then made two prostrations after the salam (Bukhari 1226), and said: "I am a human being; I forget as you forget, so when I forget, remind me" (Muslim 572). Where do the two prostrations go when you add something by mistake? The four schools, as the Kuwaiti Encyclopedia of Fiqh gives them.
-
 النبي ﷺ صلّى الضهر خمس ركعات، وسجد سجدتين بعد السلام (البخاري ١٢٢٦)، وقال: «إنما أنا بشر أنسى كما تنسون فإذا نسيت فذكروني» (مسلم ٥٧٢). ولو زوّدت حاجة وانت ساهي، السجدتين فين؟ المذاهب الأربعة، زي ما في الموسوعة الفقهية الكويتية.
 
-How Do I Do It? · 2 · إزاي أعملها؟ · 2
+The Prophet ﷺ once prayed dhuhr in five rak'ahs, then made two prostrations after the salam (Bukhari 1226), and said: "I am a human being; I forget as you forget, so when I forget, remind me" (Muslim 572). Where do the two prostrations go when you add something by mistake? The four schools, as the Kuwaiti Encyclopedia of Fiqh gives them.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+إزاي أعملها؟ · 2 · How Do I Do It? · 2
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -297,8 +297,8 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 **Facebook · Titre**
 
 ```text
-Stood up without sitting for the tashahhud?
 قمت من غير ما تقعد للتشهد؟
+Stood up without sitting for the tashahhud?
 ```
 
 **Facebook · Description**
@@ -307,7 +307,7 @@ Stood up without sitting for the tashahhud?
 قمت من غير ما تقعد للتشهد؟ تعمل إيه خطوة بخطوة، في المذاهب الأربعة.
 Stood up without sitting for the tashahhud? What to do, step by step, in the four schools.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -319,8 +319,8 @@ Stood up without sitting for the tashahhud? What to do, step by step, in the fou
 **Instagram · Titre**
 
 ```text
-Stood up without sitting for the tashahhud?
 قمت من غير ما تقعد للتشهد؟
+Stood up without sitting for the tashahhud?
 ```
 
 **Instagram · Description**
@@ -329,7 +329,7 @@ Stood up without sitting for the tashahhud?
 قمت من غير ما تقعد للتشهد؟ تعمل إيه خطوة بخطوة، في المذاهب الأربعة.
 Stood up without sitting for the tashahhud? What to do, step by step, in the four schools.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -343,8 +343,8 @@ Sur TikTok : la vidéo `sahw-short-3-nasit-tiktok.mp4`, signée `@quran.words.da
 **TikTok · Titre**
 
 ```text
-Stood up without sitting for the tashahhud?
 قمت من غير ما تقعد للتشهد؟
+Stood up without sitting for the tashahhud?
 ```
 
 **TikTok · Description**
@@ -353,7 +353,7 @@ Stood up without sitting for the tashahhud?
 قمت من غير ما تقعد للتشهد؟ تعمل إيه خطوة بخطوة، في المذاهب الأربعة.
 Stood up without sitting for the tashahhud? What to do, step by step, in the four schools.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -371,13 +371,13 @@ Stood up without sitting for the tashahhud? What to do, step by step, in the fou
 **YouTube · Description**
 
 ```text
-You stood up for the third rak'ah without sitting for the tashahhud? It happened to the Prophet ﷺ: he went on, and before the salam he made two prostrations sitting (Bukhari 1224, Muslim 570). How to do it, step by step, and where the two prostrations go in each of the four schools (Kuwaiti Encyclopedia of Fiqh). Save it for the day you forget.
-
 قمت للركعة التالتة من غير ما تقعد للتشهد؟ حصلت مع النبي ﷺ: كمّل صلاته، وقبل السلام سجد سجدتين وهو قاعد (البخاري ١٢٢٤، مسلم ٥٧٠). تعمل إيه خطوة بخطوة، وفين السجدتين في كل مذهب من الأربعة (الموسوعة الفقهية الكويتية). احفظه لليوم اللي تسهى فيه.
 
-How Do I Do It? · 3 · إزاي أعملها؟ · 3
+You stood up for the third rak'ah without sitting for the tashahhud? It happened to the Prophet ﷺ: he went on, and before the salam he made two prostrations sitting (Bukhari 1224, Muslim 570). How to do it, step by step, and where the two prostrations go in each of the four schools (Kuwaiti Encyclopedia of Fiqh). Save it for the day you forget.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+إزاي أعملها؟ · 3 · How Do I Do It? · 3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -410,8 +410,8 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 **Facebook · Titre**
 
 ```text
-Did I pray three or four?
 صلّيت تلاتة ولا أربعة؟
+Did I pray three or four?
 ```
 
 **Facebook · Description**
@@ -420,7 +420,7 @@ Did I pray three or four?
 صلّيت تلاتة ولا أربعة؟ النبي ﷺ علّمنا الحل… والمذاهب الأربعة فصّلت.
 Three or four? The Prophet ﷺ taught the fix… and the four schools explain it.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -432,8 +432,8 @@ Three or four? The Prophet ﷺ taught the fix… and the four schools explain it
 **Instagram · Titre**
 
 ```text
-Did I pray three or four?
 صلّيت تلاتة ولا أربعة؟
+Did I pray three or four?
 ```
 
 **Instagram · Description**
@@ -442,7 +442,7 @@ Did I pray three or four?
 صلّيت تلاتة ولا أربعة؟ النبي ﷺ علّمنا الحل… والمذاهب الأربعة فصّلت.
 Three or four? The Prophet ﷺ taught the fix… and the four schools explain it.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -456,8 +456,8 @@ Sur TikTok : la vidéo `sahw-short-4-shakk-tiktok.mp4`, signée `@quran.words.da
 **TikTok · Titre**
 
 ```text
-Did I pray three or four?
 صلّيت تلاتة ولا أربعة؟
+Did I pray three or four?
 ```
 
 **TikTok · Description**
@@ -466,7 +466,7 @@ Did I pray three or four?
 صلّيت تلاتة ولا أربعة؟ النبي ﷺ علّمنا الحل… والمذاهب الأربعة فصّلت.
 Three or four? The Prophet ﷺ taught the fix… and the four schools explain it.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -484,13 +484,13 @@ Three or four? The Prophet ﷺ taught the fix… and the four schools explain it
 **YouTube · Description**
 
 ```text
-Did I pray three or four? The Prophet ﷺ taught the fix: drop the doubt, build on what you are sure of, and make two prostrations before the salam (Muslim 571). What each of the four schools says about doubt (Kuwaiti Encyclopedia of Fiqh), and the whisperer the Quran describes (114:4-6).
-
 صلّيت تلاتة ولا أربعة؟ النبي ﷺ علّمنا الحل: سيب الشك، وابني على اللي متأكد منه، واسجد سجدتين قبل السلام (مسلم ٥٧١). وقول كل مذهب من الأربعة في الشك (الموسوعة الفقهية الكويتية)، والوسواس اللي وصفه القرآن (الناس ٤-٦).
 
-How Do I Do It? · 4 · إزاي أعملها؟ · 4
+Did I pray three or four? The Prophet ﷺ taught the fix: drop the doubt, build on what you are sure of, and make two prostrations before the salam (Muslim 571). What each of the four schools says about doubt (Kuwaiti Encyclopedia of Fiqh), and the whisperer the Quran describes (114:4-6).
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+إزاي أعملها؟ · 4 · How Do I Do It? · 4
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```

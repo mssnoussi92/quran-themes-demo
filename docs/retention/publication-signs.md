@@ -9,8 +9,8 @@ Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la 
 **Facebook · Titre**
 
 ```text
-One sentence could have disproved the Quran
 كلمة واحدة كانت هتكذّب القرآن
+One sentence could have disproved the Quran
 ```
 
 **Facebook · Description**
@@ -19,7 +19,7 @@ One sentence could have disproved the Quran
 كتاب قال على راجل عايش، وباسمه، إنه هيموت على الكفر.
 A book said of a living man, by his name, that he would die a disbeliever.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -31,8 +31,8 @@ A book said of a living man, by his name, that he would die a disbeliever.
 **Instagram · Titre**
 
 ```text
-One sentence could have disproved the Quran
 كلمة واحدة كانت هتكذّب القرآن
+One sentence could have disproved the Quran
 ```
 
 **Instagram · Description**
@@ -41,7 +41,7 @@ One sentence could have disproved the Quran
 كتاب قال على راجل عايش، وباسمه، إنه هيموت على الكفر.
 A book said of a living man, by his name, that he would die a disbeliever.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -55,8 +55,8 @@ Sur TikTok : la vidéo `signs-short-1-lahab-tiktok.mp4`, signée `@quran.words.d
 **TikTok · Titre**
 
 ```text
-One sentence could have disproved the Quran
 كلمة واحدة كانت هتكذّب القرآن
+One sentence could have disproved the Quran
 ```
 
 **TikTok · Description**
@@ -65,7 +65,7 @@ One sentence could have disproved the Quran
 كتاب قال على راجل عايش، وباسمه، إنه هيموت على الكفر.
 A book said of a living man, by his name, that he would die a disbeliever.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -83,13 +83,13 @@ A book said of a living man, by his name, that he would die a disbeliever.
 **YouTube · Description**
 
 ```text
-A book said of a living man, by his name, that he would die a disbeliever. All he had to do to prove it wrong was say one sentence, even as a lie. He never said it. Surat al-Masad, and what Ibn Kathir wrote about it.
-
 كتاب قال على راجل عايش، وباسمه، إنه هيموت على الكفر. وكل اللي كان عليه عشان يكذّبه: كلمة واحدة، ولو كدب. وما قالهاش. سورة المسد، وكلام ابن كثير عنها.
 
-We Will Show Them Our Signs · 1 · سنريهم آياتنا · ١
+A book said of a living man, by his name, that he would die a disbeliever. All he had to do to prove it wrong was say one sentence, even as a lie. He never said it. Surat al-Masad, and what Ibn Kathir wrote about it.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+سنريهم آياتنا · ١ · We Will Show Them Our Signs · 1
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -124,8 +124,8 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 **Facebook · Titre**
 
 ```text
-Even Einstein got this wrong
 حتى أينشتاين غلط فيها
+Even Einstein got this wrong
 ```
 
 **Facebook · Description**
@@ -134,7 +134,7 @@ Even Einstein got this wrong
 طب آية نزلت من ١٤٠٠ سنة قالت إيه عن السما؟
 What does a verse revealed fourteen centuries ago say about the sky?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -146,8 +146,8 @@ What does a verse revealed fourteen centuries ago say about the sky?
 **Instagram · Titre**
 
 ```text
-Even Einstein got this wrong
 حتى أينشتاين غلط فيها
+Even Einstein got this wrong
 ```
 
 **Instagram · Description**
@@ -156,7 +156,7 @@ Even Einstein got this wrong
 طب آية نزلت من ١٤٠٠ سنة قالت إيه عن السما؟
 What does a verse revealed fourteen centuries ago say about the sky?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -170,8 +170,8 @@ Sur TikTok : la vidéo `signs-short-2-universe-tiktok.mp4`, signée `@quran.word
 **TikTok · Titre**
 
 ```text
-Even Einstein got this wrong
 حتى أينشتاين غلط فيها
+Even Einstein got this wrong
 ```
 
 **TikTok · Description**
@@ -180,7 +180,7 @@ Even Einstein got this wrong
 طب آية نزلت من ١٤٠٠ سنة قالت إيه عن السما؟
 What does a verse revealed fourteen centuries ago say about the sky?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -198,13 +198,13 @@ What does a verse revealed fourteen centuries ago say about the sky?
 **YouTube · Description**
 
 ```text
-For more than two thousand years the greatest minds were sure the universe never changes; in 1917 even Einstein adjusted his equations to keep it still. In 1929, Hubble saw the galaxies moving away. What does a verse revealed fourteen centuries ago say about the sky?
-
 أكتر من ألفين سنة وأذكى العقول متأكدة إن الكون ثابت، وحتى أينشتاين سنة ١٩١٧ عدّل معادلاته عشان يفضل ثابت. وسنة ١٩٢٩ هابل شاف المجرات بتبعد. طب آية نزلت من ١٤٠٠ سنة قالت إيه عن السما؟
 
-We Will Show Them Our Signs · 2 · سنريهم آياتنا · ٢
+For more than two thousand years the greatest minds were sure the universe never changes; in 1917 even Einstein adjusted his equations to keep it still. In 1929, Hubble saw the galaxies moving away. What does a verse revealed fourteen centuries ago say about the sky?
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+سنريهم آياتنا · ٢ · We Will Show Them Our Signs · 2
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -238,8 +238,8 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0), NASA, ESA, CSA, S
 **Facebook · Titre**
 
 ```text
-What happens 8 km up… the Quran described it
 اللي بيحصل فوق ٨ كيلو… القرآن وصفه
+What happens 8 km up… the Quran described it
 ```
 
 **Facebook · Description**
@@ -248,7 +248,7 @@ What happens 8 km up… the Quran described it
 قبل ما إنسان يطير بأكتر من ألف سنة، آية وصفت صدر بيضيق كل ما يطلع في السما.
 More than a thousand years before anyone flew, a verse spoke of a chest that tightens as one climbs into the sky.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -260,8 +260,8 @@ More than a thousand years before anyone flew, a verse spoke of a chest that tig
 **Instagram · Titre**
 
 ```text
-What happens 8 km up… the Quran described it
 اللي بيحصل فوق ٨ كيلو… القرآن وصفه
+What happens 8 km up… the Quran described it
 ```
 
 **Instagram · Description**
@@ -270,7 +270,7 @@ What happens 8 km up… the Quran described it
 قبل ما إنسان يطير بأكتر من ألف سنة، آية وصفت صدر بيضيق كل ما يطلع في السما.
 More than a thousand years before anyone flew, a verse spoke of a chest that tightens as one climbs into the sky.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -284,8 +284,8 @@ Sur TikTok : la vidéo `signs-short-3-sky-tiktok.mp4`, signée `@quran.words.dai
 **TikTok · Titre**
 
 ```text
-What happens 8 km up… the Quran described it
 اللي بيحصل فوق ٨ كيلو… القرآن وصفه
+What happens 8 km up… the Quran described it
 ```
 
 **TikTok · Description**
@@ -294,7 +294,7 @@ What happens 8 km up… the Quran described it
 قبل ما إنسان يطير بأكتر من ألف سنة، آية وصفت صدر بيضيق كل ما يطلع في السما.
 More than a thousand years before anyone flew, a verse spoke of a chest that tightens as one climbs into the sky.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -312,13 +312,13 @@ More than a thousand years before anyone flew, a verse spoke of a chest that tig
 **YouTube · Description**
 
 ```text
-In 1875 three men rose into the sky in a balloon; past eight kilometres, two of them never came back: the air was no longer enough. More than a thousand years before anyone flew, a verse spoke of a chest that tightens as one climbs into the sky.
-
 سنة ١٨٧٥ تلات رجالة طلعوا في السما ببالون، وبعد تمانية كيلو اتنين منهم ما رجعوش: الهوا ما بقاش يكفي. وقبل ما إنسان يطير بأكتر من ألف سنة، آية وصفت صدر بيضيق كل ما يطلع في السما.
 
-We Will Show Them Our Signs · 3 · سنريهم آياتنا · ٣
+In 1875 three men rose into the sky in a balloon; past eight kilometres, two of them never came back: the air was no longer enough. More than a thousand years before anyone flew, a verse spoke of a chest that tightens as one climbs into the sky.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+سنريهم آياتنا · ٣ · We Will Show Them Our Signs · 3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -351,8 +351,8 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 **Facebook · Titre**
 
 ```text
-1,000 years before microscopes, the Quran described you
 قبل الميكروسكوب بألف سنة… القرآن وصف شكلك
+1,000 years before microscopes, the Quran described you
 ```
 
 **Facebook · Description**
@@ -361,7 +361,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 القرآن سمّى المرحلة دي بكلمة واحدة: علقة.
 The Quran named that stage with one word: 'alaqa.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -373,8 +373,8 @@ The Quran named that stage with one word: 'alaqa.
 **Instagram · Titre**
 
 ```text
-1,000 years before microscopes, the Quran described you
 قبل الميكروسكوب بألف سنة… القرآن وصف شكلك
+1,000 years before microscopes, the Quran described you
 ```
 
 **Instagram · Description**
@@ -383,7 +383,7 @@ The Quran named that stage with one word: 'alaqa.
 القرآن سمّى المرحلة دي بكلمة واحدة: علقة.
 The Quran named that stage with one word: 'alaqa.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -397,8 +397,8 @@ Sur TikTok : la vidéo `signs-short-4-womb-tiktok.mp4`, signée `@quran.words.da
 **TikTok · Titre**
 
 ```text
-1,000 years before microscopes, the Quran described you
 قبل الميكروسكوب بألف سنة… القرآن وصف شكلك
+1,000 years before microscopes, the Quran described you
 ```
 
 **TikTok · Description**
@@ -407,7 +407,7 @@ Sur TikTok : la vidéo `signs-short-4-womb-tiktok.mp4`, signée `@quran.words.da
 القرآن سمّى المرحلة دي بكلمة واحدة: علقة.
 The Quran named that stage with one word: 'alaqa.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -425,13 +425,13 @@ The Quran named that stage with one word: 'alaqa.
 **YouTube · Description**
 
 ```text
-Since Aristotle, scholars thought the embryo was blood setting like milk; no one could see its shape at four weeks, three millimetres long. The Quran named that stage with one word: 'alaqa. Ibn Kathir, six centuries ago, described it.
-
 من أيام أرسطو والعلما فاكرين الجنين دم بيتجمد زي اللبن، ومحدش كان يقدر يشوف شكله وهو تلاتة مللي. والقرآن سمّى المرحلة دي بكلمة واحدة: علقة. وابن كثير وصفها من أكتر من ستمية سنة.
 
-We Will Show Them Our Signs · 4 · سنريهم آياتنا · ٤
+Since Aristotle, scholars thought the embryo was blood setting like milk; no one could see its shape at four weeks, three millimetres long. The Quran named that stage with one word: 'alaqa. Ibn Kathir, six centuries ago, described it.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+سنريهم آياتنا · ٤ · We Will Show Them Our Signs · 4
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -466,8 +466,8 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 **Facebook · Titre**
 
 ```text
-They say 365… I counted it myself
 بيقولوا 365… عدّيتها بنفسي
+They say 365… I counted it myself
 ```
 
 **Facebook · Description**
@@ -476,7 +476,7 @@ They say 365… I counted it myself
 قبل ما تنشر رقم عن القرآن، عِدّه.
 Before you share a number about the Quran, count it.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -488,8 +488,8 @@ Before you share a number about the Quran, count it.
 **Instagram · Titre**
 
 ```text
-They say 365… I counted it myself
 بيقولوا 365… عدّيتها بنفسي
+They say 365… I counted it myself
 ```
 
 **Instagram · Description**
@@ -498,7 +498,7 @@ They say 365… I counted it myself
 قبل ما تنشر رقم عن القرآن، عِدّه.
 Before you share a number about the Quran, count it.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -512,8 +512,8 @@ Sur TikTok : la vidéo `signs-short-5-days-tiktok.mp4`, signée `@quran.words.da
 **TikTok · Titre**
 
 ```text
-They say 365… I counted it myself
 بيقولوا 365… عدّيتها بنفسي
+They say 365… I counted it myself
 ```
 
 **TikTok · Description**
@@ -522,7 +522,7 @@ They say 365… I counted it myself
 قبل ما تنشر رقم عن القرآن، عِدّه.
 Before you share a number about the Quran, count it.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -540,13 +540,13 @@ Before you share a number about the Quran, count it.
 **YouTube · Description**
 
 ```text
-They say 'day' is in the Quran 365 times; in all its forms it comes 475 times. Most numbers that circulate are right, each under its own rule, but no single rule makes them all hold. Before you share a number about the Quran, count it.
-
 بيقولوا «يوم» في القرآن 365 مرة، وهي بكل أشكالها 475. وأغلب الأرقام اللي بتتنشر صح، بس كل رقم بقاعدة. قبل ما تنشر رقم عن القرآن، عِدّه، وشوف العلما بيقولوا إيه.
 
-We Will Show Them Our Signs · 5 · سنريهم آياتنا · ٥
+They say 'day' is in the Quran 365 times; in all its forms it comes 475 times. Most numbers that circulate are right, each under its own rule, but no single rule makes them all hold. Before you share a number about the Quran, count it.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+سنريهم آياتنا · ٥ · We Will Show Them Our Signs · 5
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```

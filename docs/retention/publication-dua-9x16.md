@@ -9,8 +9,8 @@ Le même film, monté pour un écran vertical (les images des shorts, la même v
 **Facebook · Titre**
 
 ```text
-Du'a: 3 wrong ideas that keep you from asking
 الدعاء: ٣ أفكار غلط بتبعدك عنه
+Du'a: 3 wrong ideas that keep you from asking
 ```
 
 **Facebook · Description**
@@ -19,7 +19,7 @@ Du'a: 3 wrong ideas that keep you from asking
 تلاتة نادوا ربنا في القرآن… والتلاتة اترد عليهم.
 Three who called on God in the Quran, and all three were answered.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**

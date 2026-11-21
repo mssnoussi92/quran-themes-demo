@@ -9,7 +9,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools" / "trial"))
 publish = pytest.importorskip("publish")
 
-CONF = {"lines": {"ai_voice": "🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي"}}
+CONF = {"lines": {"ai_voice": "🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice"}}
 HOOK = {"ar": "احفظها.", "en": "Save it."}
 
 

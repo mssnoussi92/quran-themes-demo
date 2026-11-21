@@ -9,8 +9,8 @@ Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la 
 **Facebook · Titre**
 
 ```text
-The one you sit with: musk… or sparks
 اللي قاعد جنبك: مسك… ولا شرار؟
+The one you sit with: musk… or sparks
 ```
 
 **Facebook · Description**
@@ -29,8 +29,8 @@ The same sitting, twice… once beside a bad companion, once beside a good one. 
 **Instagram · Titre**
 
 ```text
-The one you sit with: musk… or sparks
 اللي قاعد جنبك: مسك… ولا شرار؟
+The one you sit with: musk… or sparks
 ```
 
 **Instagram · Description**
@@ -51,8 +51,8 @@ Sur TikTok : la vidéo `sahib-short-1-jalis-tiktok.mp4`, signée `@quran.words.d
 **TikTok · Titre**
 
 ```text
-The one you sit with: musk… or sparks
 اللي قاعد جنبك: مسك… ولا شرار؟
+The one you sit with: musk… or sparks
 ```
 
 **TikTok · Description**
@@ -77,13 +77,13 @@ The same sitting, twice… once beside a bad companion, once beside a good one. 
 **YouTube · Description**
 
 ```text
-The same sitting, twice: once beside a bad companion, once beside a good one. The Prophet ﷺ compared them to the one carrying musk and the one blowing the bellows (Sahih al-Bukhari 5534). And God said: close friends, that Day, will be enemies to each other, except for the righteous (43:67).
-
 نفس القعدة، مرتين: مرة جنب جليس السوء، ومرة جنب الجليس الصالح. والنبي ﷺ قال: مثل الجليس الصالح والسوء كحامل المسك ونافخ الكير (صحيح البخاري 5534). وربنا قال: الأخلاء يومئذ بعضهم لبعض عدو إلا المتقين (الزخرف 67).
 
-Your Friend Pulls You · 1 · الصاحب ساحب · 1
+The same sitting, twice: once beside a bad companion, once beside a good one. The Prophet ﷺ compared them to the one carrying musk and the one blowing the bellows (Sahih al-Bukhari 5534). And God said: close friends, that Day, will be enemies to each other, except for the righteous (43:67).
 
-No narration: the moments are played without a word · بدون صوت راوي
+الصاحب ساحب · 1 · Your Friend Pulls You · 1
+
+بدون صوت راوي · No narration: the moments are played without a word
 
 @quran_words_daily
 ```
@@ -112,8 +112,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-Does your friend want for you what he wants for himself?
 صاحبك… بيحب لك اللي بيحبه لنفسه؟
+Does your friend want for you what he wants for himself?
 ```
 
 **Facebook · Description**
@@ -132,8 +132,8 @@ The same bus stop, twice… a friend who loves for himself, and one who loves fo
 **Instagram · Titre**
 
 ```text
-Does your friend want for you what he wants for himself?
 صاحبك… بيحب لك اللي بيحبه لنفسه؟
+Does your friend want for you what he wants for himself?
 ```
 
 **Instagram · Description**
@@ -154,8 +154,8 @@ Sur TikTok : la vidéo `sahib-short-2-yuhibb-tiktok.mp4`, signée `@quran.words.
 **TikTok · Titre**
 
 ```text
-Does your friend want for you what he wants for himself?
 صاحبك… بيحب لك اللي بيحبه لنفسه؟
+Does your friend want for you what he wants for himself?
 ```
 
 **TikTok · Description**
@@ -180,13 +180,13 @@ The same bus stop, twice… a friend who loves for himself, and one who loves fo
 **YouTube · Description**
 
 ```text
-The same bus stop, twice: a friend who loves for himself, and a friend who loves for you what he loves for himself. The Prophet ﷺ said: none of you believes until he loves for his brother what he loves for himself (Sahih al-Bukhari 13). And God said of the Ansar: they give preference over themselves, even though they are in privation (59:9).
-
 نفس محطة الأتوبيس، مرتين: صاحب بيحب لنفسه، وصاحب بيحب لك زي نفسه. والنبي ﷺ قال: لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه (صحيح البخاري 13). وربنا قال عن الأنصار: ويؤثرون على أنفسهم ولو كان بهم خصاصة (الحشر 9).
 
-Your Friend Pulls You · 2 · الصاحب ساحب · 2
+The same bus stop, twice: a friend who loves for himself, and a friend who loves for you what he loves for himself. The Prophet ﷺ said: none of you believes until he loves for his brother what he loves for himself (Sahih al-Bukhari 13). And God said of the Ansar: they give preference over themselves, even though they are in privation (59:9).
 
-No narration: the moments are played without a word · بدون صوت راوي
+الصاحب ساحب · 2 · Your Friend Pulls You · 2
+
+بدون صوت راوي · No narration: the moments are played without a word
 
 @quran_words_daily
 ```
@@ -215,8 +215,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-Cheering you on… or truly helping you?
 بيشجّعك… ولا بينصرك؟
+Cheering you on… or truly helping you?
 ```
 
 **Facebook · Description**
@@ -235,8 +235,8 @@ The same queue, twice… a friend who cheers you on, and one who truly helps you
 **Instagram · Titre**
 
 ```text
-Cheering you on… or truly helping you?
 بيشجّعك… ولا بينصرك؟
+Cheering you on… or truly helping you?
 ```
 
 **Instagram · Description**
@@ -257,8 +257,8 @@ Sur TikTok : la vidéo `sahib-short-3-nasr-tiktok.mp4`, signée `@quran.words.da
 **TikTok · Titre**
 
 ```text
-Cheering you on… or truly helping you?
 بيشجّعك… ولا بينصرك؟
+Cheering you on… or truly helping you?
 ```
 
 **TikTok · Description**
@@ -283,13 +283,13 @@ The same queue, twice… a friend who cheers you on, and one who truly helps you
 **YouTube · Description**
 
 ```text
-The same queue, twice: a friend who cheers you on, and a friend who truly helps you. The Prophet ﷺ said: help your brother, whether he is wronging or wronged; asked how to help him when he wrongs, he said: you take hold of his hands (Sahih al-Bukhari 2444). And God said: the believing men and women are allies of one another (9:71).
-
 نفس الطابور، مرتين: صاحب بيشجّعك، وصاحب بينصرك. والنبي ﷺ قال: انصر أخاك ظالمًا أو مظلومًا، ولما سألوه إزاي ننصره ظالم قال: تأخذ فوق يديه (صحيح البخاري 2444). وربنا قال: والمؤمنون والمؤمنات بعضهم أولياء بعض (التوبة 71).
 
-Your Friend Pulls You · 3 · الصاحب ساحب · 3
+The same queue, twice: a friend who cheers you on, and a friend who truly helps you. The Prophet ﷺ said: help your brother, whether he is wronging or wronged; asked how to help him when he wrongs, he said: you take hold of his hands (Sahih al-Bukhari 2444). And God said: the believing men and women are allies of one another (9:71).
 
-No narration: the moments are played without a word · بدون صوت راوي
+الصاحب ساحب · 3 · Your Friend Pulls You · 3
+
+بدون صوت راوي · No narration: the moments are played without a word
 
 @quran_words_daily
 ```

@@ -9,8 +9,8 @@ Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la 
 **Facebook · Titre**
 
 ```text
-A "car" in Surat Yusuf?
 «سيارة» في سورة يوسف؟
+A "car" in Surat Yusuf?
 ```
 
 **Facebook · Description**
@@ -19,7 +19,7 @@ A "car" in Surat Yusuf?
 «سيارة» في سورة يوسف… مش العربية اللي في بالك. معاك 5 ثواني.
 "Sayyara" in Surat Yusuf… not the car you're thinking of. You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -31,8 +31,8 @@ A "car" in Surat Yusuf?
 **Instagram · Titre**
 
 ```text
-A "car" in Surat Yusuf?
 «سيارة» في سورة يوسف؟
+A "car" in Surat Yusuf?
 ```
 
 **Instagram · Description**
@@ -41,7 +41,7 @@ A "car" in Surat Yusuf?
 «سيارة» في سورة يوسف… مش العربية اللي في بالك. معاك 5 ثواني.
 "Sayyara" in Surat Yusuf… not the car you're thinking of. You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -55,8 +55,8 @@ Sur TikTok : la vidéo `quiz-short-1-sayyara-tiktok.mp4`, signée `@quran.words.
 **TikTok · Titre**
 
 ```text
-A "car" in Surat Yusuf?
 «سيارة» في سورة يوسف؟
+A "car" in Surat Yusuf?
 ```
 
 **TikTok · Description**
@@ -65,7 +65,7 @@ A "car" in Surat Yusuf?
 «سيارة» في سورة يوسف… مش العربية اللي في بالك. معاك 5 ثواني.
 "Sayyara" in Surat Yusuf… not the car you're thinking of. You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -83,13 +83,13 @@ A "car" in Surat Yusuf?
 **YouTube · Description**
 
 ```text
-"Sayyara" in Surat Yusuf (12:19) is not a car: al-Muyassar and as-Sa'di read it as a company of travellers, a caravan. They sent a man to fetch water, and Yusuf held on to his bucket.
-
 «سيارة» في سورة يوسف (يوسف 19) مش عربية: معناها قافلة مسافرين. بعتوا حد يجيب لهم مية… فاتعلّق في الدلو سيدنا يوسف عليه السلام.
 
-You Have 5 Seconds · 1 · معاك 5 ثواني · 1
+"Sayyara" in Surat Yusuf (12:19) is not a car: al-Muyassar and as-Sa'di read it as a company of travellers, a caravan. They sent a man to fetch water, and Yusuf held on to his bucket.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+معاك 5 ثواني · 1 · You Have 5 Seconds · 1
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -118,8 +118,8 @@ Footage: Pixabay (TeeFarm) · Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-How do you think this verse ends?
 تفتكر الآية دي خلصت بإيه؟
+How do you think this verse ends?
 ```
 
 **Facebook · Description**
@@ -128,7 +128,7 @@ How do you think this verse ends?
 آية فيها كلام عن المغفرة… تفتكر خلصت بإيه؟ الإجابة مش اللي متوقعها.
 A verse about forgiveness… how do you think it ends? Not what you'd expect.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -140,8 +140,8 @@ A verse about forgiveness… how do you think it ends? Not what you'd expect.
 **Instagram · Titre**
 
 ```text
-How do you think this verse ends?
 تفتكر الآية دي خلصت بإيه؟
+How do you think this verse ends?
 ```
 
 **Instagram · Description**
@@ -150,7 +150,7 @@ How do you think this verse ends?
 آية فيها كلام عن المغفرة… تفتكر خلصت بإيه؟ الإجابة مش اللي متوقعها.
 A verse about forgiveness… how do you think it ends? Not what you'd expect.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -164,8 +164,8 @@ Sur TikTok : la vidéo `quiz-short-2-khatima-tiktok.mp4`, signée `@quran.words.
 **TikTok · Titre**
 
 ```text
-How do you think this verse ends?
 تفتكر الآية دي خلصت بإيه؟
+How do you think this verse ends?
 ```
 
 **TikTok · Description**
@@ -174,7 +174,7 @@ How do you think this verse ends?
 آية فيها كلام عن المغفرة… تفتكر خلصت بإيه؟ الإجابة مش اللي متوقعها.
 A verse about forgiveness… how do you think it ends? Not what you'd expect.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -192,13 +192,13 @@ A verse about forgiveness… how do you think it ends? Not what you'd expect.
 **YouTube · Description**
 
 ```text
-After "and if You forgive them", you would expect "the Forgiving, the Merciful". The verse (5:118) ends with "the Almighty, the Wise": as-Sa'di explains a forgiveness that comes from full power, not from weakness, and given with wisdom.
-
 آية فيها كلام عن المغفرة… والطبيعي نستنى آخرها «غفور رحيم». بس الآية (المائدة 118) خلصت بـ«العزيز الحكيم»: مغفرة عن قدرة، مش عن عجز.
 
-You Have 5 Seconds · 2 · معاك 5 ثواني · 2
+After "and if You forgive them", you would expect "the Forgiving, the Merciful". The verse (5:118) ends with "the Almighty, the Wise": as-Sa'di explains a forgiveness that comes from full power, not from weakness, and given with wisdom.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+معاك 5 ثواني · 2 · You Have 5 Seconds · 2
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -226,8 +226,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-Who said this in the Quran?
 مين قال الجملة دي في القرآن؟
+Who said this in the Quran?
 ```
 
 **Facebook · Description**
@@ -236,7 +236,7 @@ Who said this in the Quran?
 جملة واحدة في القرآن… قالها اتنين عكس بعض. تعرف مين؟
 One sentence in the Quran… said by two opposites. Do you know who?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -248,8 +248,8 @@ One sentence in the Quran… said by two opposites. Do you know who?
 **Instagram · Titre**
 
 ```text
-Who said this in the Quran?
 مين قال الجملة دي في القرآن؟
+Who said this in the Quran?
 ```
 
 **Instagram · Description**
@@ -258,7 +258,7 @@ Who said this in the Quran?
 جملة واحدة في القرآن… قالها اتنين عكس بعض. تعرف مين؟
 One sentence in the Quran… said by two opposites. Do you know who?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -272,8 +272,8 @@ Sur TikTok : la vidéo `quiz-short-3-qalaha-tiktok.mp4`, signée `@quran.words.d
 **TikTok · Titre**
 
 ```text
-Who said this in the Quran?
 مين قال الجملة دي في القرآن؟
+Who said this in the Quran?
 ```
 
 **TikTok · Description**
@@ -282,7 +282,7 @@ Who said this in the Quran?
 جملة واحدة في القرآن… قالها اتنين عكس بعض. تعرف مين؟
 One sentence in the Quran… said by two opposites. Do you know who?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -300,13 +300,13 @@ One sentence in the Quran… said by two opposites. Do you know who?
 **YouTube · Description**
 
 ```text
-"I fear Allah, Lord of the worlds": the same words in two verses. Abel, son of Adam, said them to the brother who threatened to kill him (5:28); Satan said them after leading man to disbelief (59:16). Real fear stops you before the wrong.
-
 جملة واحدة في القرآن… قالها اتنين: هابيل ابن سيدنا آدم لأخوه اللي هدده بالقتل (المائدة 28)، والشيطان بعد ما دعا الإنسان للكفر واتبرّى منه (الحشر 16).
 
-You Have 5 Seconds · 3 · معاك 5 ثواني · 3
+"I fear Allah, Lord of the worlds": the same words in two verses. Abel, son of Adam, said them to the brother who threatened to kill him (5:28); Satan said them after leading man to disbelief (59:16). Real fear stops you before the wrong.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+معاك 5 ثواني · 3 · You Have 5 Seconds · 3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -340,8 +340,8 @@ Footage: Pixabay (DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-"The beast of the earth" in Surat Saba'?
 «دابة الأرض» في سورة سبأ؟
+"The beast of the earth" in Surat Saba'?
 ```
 
 **Facebook · Description**
@@ -350,7 +350,7 @@ Footage: Pixabay (DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 «دابة الأرض» في سورة سبأ… مش اللي في بالك. معاك 5 ثواني.
 "The beast of the earth" in Surat Saba'… not the one you're thinking of. You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -362,8 +362,8 @@ Footage: Pixabay (DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 **Instagram · Titre**
 
 ```text
-"The beast of the earth" in Surat Saba'?
 «دابة الأرض» في سورة سبأ؟
+"The beast of the earth" in Surat Saba'?
 ```
 
 **Instagram · Description**
@@ -372,7 +372,7 @@ Footage: Pixabay (DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 «دابة الأرض» في سورة سبأ… مش اللي في بالك. معاك 5 ثواني.
 "The beast of the earth" in Surat Saba'… not the one you're thinking of. You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -386,8 +386,8 @@ Sur TikTok : la vidéo `quiz-short-4-dabba-tiktok.mp4`, signée `@quran.words.da
 **TikTok · Titre**
 
 ```text
-"The beast of the earth" in Surat Saba'?
 «دابة الأرض» في سورة سبأ؟
+"The beast of the earth" in Surat Saba'?
 ```
 
 **TikTok · Description**
@@ -396,7 +396,7 @@ Sur TikTok : la vidéo `quiz-short-4-dabba-tiktok.mp4`, signée `@quran.words.da
 «دابة الأرض» في سورة سبأ… مش اللي في بالك. معاك 5 ثواني.
 "The beast of the earth" in Surat Saba'… not the one you're thinking of. You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -414,13 +414,13 @@ Sur TikTok : la vidéo `quiz-short-4-dabba-tiktok.mp4`, signée `@quran.words.da
 **YouTube · Description**
 
 ```text
-"The beast of the earth" in Surat Saba' (34:14) is not the beast of the end of time (27:82): al-Muyassar and Ibn Kathir read it as the termite that ate Solomon's staff. He had died leaning on it, and the jinn, whom many think know the unseen, kept working without knowing.
-
 «دابة الأرض» في سورة سبأ (سبأ 14) مش دابة آخر الزمان: معناها الأرَضة، الحشرة اللي أكلت عصاية سيدنا سليمان. مات وهو متّكي عليها… والجن ما عرفوش.
 
-You Have 5 Seconds · 4 · معاك 5 ثواني · 4
+"The beast of the earth" in Surat Saba' (34:14) is not the beast of the end of time (27:82): al-Muyassar and Ibn Kathir read it as the termite that ate Solomon's staff. He had died leaning on it, and the jinn, whom many think know the unseen, kept working without knowing.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+معاك 5 ثواني · 4 · You Have 5 Seconds · 4
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -450,8 +450,8 @@ Footage: Pixabay (Felix-Mittermeier) · Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-"Beautiful patience"… and the second time?
 «فصبر جميل»… المرة التانية؟
+"Beautiful patience"… and the second time?
 ```
 
 **Facebook · Description**
@@ -460,7 +460,7 @@ Footage: Pixabay (Felix-Mittermeier) · Ambience: BigSoundBank (Joseph Sardin)
 سيدنا يعقوب قال «فصبر جميل» مرتين… المرة التانية كمّلها بحاجة محدش متوقعها.
 Jacob said "beautiful patience" twice… the second time, he went on with what no one expects.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -472,8 +472,8 @@ Jacob said "beautiful patience" twice… the second time, he went on with what n
 **Instagram · Titre**
 
 ```text
-"Beautiful patience"… and the second time?
 «فصبر جميل»… المرة التانية؟
+"Beautiful patience"… and the second time?
 ```
 
 **Instagram · Description**
@@ -482,7 +482,7 @@ Jacob said "beautiful patience" twice… the second time, he went on with what n
 سيدنا يعقوب قال «فصبر جميل» مرتين… المرة التانية كمّلها بحاجة محدش متوقعها.
 Jacob said "beautiful patience" twice… the second time, he went on with what no one expects.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -496,8 +496,8 @@ Sur TikTok : la vidéo `quiz-short-5-sabr-tiktok.mp4`, signée `@quran.words.dai
 **TikTok · Titre**
 
 ```text
-"Beautiful patience"… and the second time?
 «فصبر جميل»… المرة التانية؟
+"Beautiful patience"… and the second time?
 ```
 
 **TikTok · Description**
@@ -506,7 +506,7 @@ Sur TikTok : la vidéo `quiz-short-5-sabr-tiktok.mp4`, signée `@quran.words.dai
 سيدنا يعقوب قال «فصبر جميل» مرتين… المرة التانية كمّلها بحاجة محدش متوقعها.
 Jacob said "beautiful patience" twice… the second time, he went on with what no one expects.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -524,13 +524,13 @@ Jacob said "beautiful patience" twice… the second time, he went on with what n
 **YouTube · Description**
 
 ```text
-Jacob said "beautiful patience" twice in Surat Yusuf: when Yusuf was lost (12:18), and when his brother was lost too (12:83). The second time, his pain grew and his hope grew more: he asked for all three sons (al-Muyassar), turning to relief when the hardship was at its peak (as-Sa'di).
-
 سيدنا يعقوب قال «فصبر جميل» مرتين: لما ضاع يوسف (يوسف 18)، ولما ضاع أخوه (يوسف 83). المرة التانية الوجع زاد… بس رجاه في ربنا كبر: طلب التلاتة.
 
-You Have 5 Seconds · 5 · معاك 5 ثواني · 5
+Jacob said "beautiful patience" twice in Surat Yusuf: when Yusuf was lost (12:18), and when his brother was lost too (12:83). The second time, his pain grew and his hope grew more: he asked for all three sons (al-Muyassar), turning to relief when the hardship was at its peak (as-Sa'di).
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+معاك 5 ثواني · 5 · You Have 5 Seconds · 5
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -560,8 +560,8 @@ Footage: Pixabay (bellergy) · Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-Who said this… and to whom?
 مين قال الجملة دي… ولمين؟
+Who said this… and to whom?
 ```
 
 **Facebook · Description**
@@ -570,7 +570,7 @@ Who said this… and to whom?
 «أحطت بما لم تحط به»… مين قالها، ولمين؟ معاك 5 ثواني.
 "I have encompassed what you have not"… who said it, and to whom? You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -582,8 +582,8 @@ Who said this… and to whom?
 **Instagram · Titre**
 
 ```text
-Who said this… and to whom?
 مين قال الجملة دي… ولمين؟
+Who said this… and to whom?
 ```
 
 **Instagram · Description**
@@ -592,7 +592,7 @@ Who said this… and to whom?
 «أحطت بما لم تحط به»… مين قالها، ولمين؟ معاك 5 ثواني.
 "I have encompassed what you have not"… who said it, and to whom? You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -606,8 +606,8 @@ Sur TikTok : la vidéo `quiz-short-6-hudhud-tiktok.mp4`, signée `@quran.words.d
 **TikTok · Titre**
 
 ```text
-Who said this… and to whom?
 مين قال الجملة دي… ولمين؟
+Who said this… and to whom?
 ```
 
 **TikTok · Description**
@@ -616,7 +616,7 @@ Who said this… and to whom?
 «أحطت بما لم تحط به»… مين قالها، ولمين؟ معاك 5 ثواني.
 "I have encompassed what you have not"… who said it, and to whom? You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -634,13 +634,13 @@ Who said this… and to whom?
 **YouTube · Description**
 
 ```text
-"I have encompassed [in knowledge] that which you have not" (27:22): the hoopoe said it to Solomon, a small bird to a king and prophet (al-Muyassar, Ibn Kathir). Solomon did not dismiss it, nor believe it at once: "we will see whether you were truthful" (27:27).
-
 «أحطت بما لم تحط به» (النمل 22): قالها الهدهد لسيدنا سليمان… طائر صغير عرف خبر ما وصلش للملك. وسيدنا سليمان ما استصغرهوش، وما صدّقهوش على طول: قال هنتأكد الأول.
 
-You Have 5 Seconds · 6 · معاك 5 ثواني · 6
+"I have encompassed [in knowledge] that which you have not" (27:22): the hoopoe said it to Solomon, a small bird to a king and prophet (al-Muyassar, Ibn Kathir). Solomon did not dismiss it, nor believe it at once: "we will see whether you were truthful" (27:27).
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+معاك 5 ثواني · 6 · You Have 5 Seconds · 6
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```

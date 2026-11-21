@@ -11,8 +11,8 @@ La version TikTok (vidéo et légende) est **validée par le propriétaire le 20
 **Facebook · Titre**
 
 ```text
-Dhul-Qarnayn: 3 tests of power
 ذو القرنين: ٣ اختبارات للقوة
+Dhul-Qarnayn: 3 tests of power
 ```
 
 **Facebook · Description**
@@ -21,7 +21,7 @@ Dhul-Qarnayn: 3 tests of power
 تعمل إيه لما تقدر على حد؟
 What do you do when you have power over someone?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -35,8 +35,8 @@ Sur TikTok : la vidéo `qarnayn-film-9x16-tiktok.mp4`, signée `@quran.words.dai
 **TikTok · Titre**
 
 ```text
-Dhul-Qarnayn: 3 tests of power
 ذو القرنين: ٣ اختبارات للقوة
+Dhul-Qarnayn: 3 tests of power
 ```
 
 **TikTok · Description**
@@ -45,7 +45,7 @@ Dhul-Qarnayn: 3 tests of power
 تعمل إيه لما تقدر على حد؟
 What do you do when you have power over someone?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (4)**

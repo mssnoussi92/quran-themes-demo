@@ -9,8 +9,8 @@ Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la 
 **Facebook · Titre**
 
 ```text
-Adhkar after prayer, from Bukhari, Muslim, Tirmidhi
 أذكار بعد الصلاة… من البخاري ومسلم والترمذي
+Adhkar after prayer, from Bukhari, Muslim, Tirmidhi
 ```
 
 **Facebook · Description**
@@ -29,8 +29,8 @@ Adhkar after the prayer, only from al-Bukhari, Muslim and at-Tirmidhi. Save it f
 **Instagram · Titre**
 
 ```text
-Adhkar after prayer, from Bukhari, Muslim, Tirmidhi
 أذكار بعد الصلاة… من البخاري ومسلم والترمذي
+Adhkar after prayer, from Bukhari, Muslim, Tirmidhi
 ```
 
 **Instagram · Description**
@@ -51,8 +51,8 @@ Sur TikTok : la vidéo `adhkar-short-1-salat-tiktok.mp4`, signée `@quran.words.
 **TikTok · Titre**
 
 ```text
-Adhkar after prayer, from Bukhari, Muslim, Tirmidhi
 أذكار بعد الصلاة… من البخاري ومسلم والترمذي
+Adhkar after prayer, from Bukhari, Muslim, Tirmidhi
 ```
 
 **TikTok · Description**
@@ -77,13 +77,13 @@ Adhkar after the prayer, only from al-Bukhari, Muslim and at-Tirmidhi. Save it f
 **YouTube · Description**
 
 ```text
-The adhkar after the obligatory prayer, only from hadiths graded sahih or hasan (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it after every prayer.
-
 أذكار بعد الصلاة المفروضة، من أحاديث صحيحة وحسنة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله بعد كل صلاة.
 
-Adhkar to keep · 1 · أذكار · 1
+The adhkar after the obligatory prayer, only from hadiths graded sahih or hasan (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it after every prayer.
 
-No narration: the adhkar are written to be read · بدون صوت راوي
+أذكار · 1 · Adhkar to keep · 1
+
+بدون صوت راوي · No narration: the adhkar are written to be read
 
 @quran_words_daily
 ```
@@ -118,8 +118,8 @@ Footage: Pixabay (quimuns) · Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-Morning adhkar, from Bukhari, Muslim, Tirmidhi
 أذكار الصباح… من البخاري ومسلم والترمذي
+Morning adhkar, from Bukhari, Muslim, Tirmidhi
 ```
 
 **Facebook · Description**
@@ -138,8 +138,8 @@ Morning adhkar, only from al-Bukhari, Muslim and at-Tirmidhi. Save it for tomorr
 **Instagram · Titre**
 
 ```text
-Morning adhkar, from Bukhari, Muslim, Tirmidhi
 أذكار الصباح… من البخاري ومسلم والترمذي
+Morning adhkar, from Bukhari, Muslim, Tirmidhi
 ```
 
 **Instagram · Description**
@@ -160,8 +160,8 @@ Sur TikTok : la vidéo `adhkar-short-2-sabah-tiktok.mp4`, signée `@quran.words.
 **TikTok · Titre**
 
 ```text
-Morning adhkar, from Bukhari, Muslim, Tirmidhi
 أذكار الصباح… من البخاري ومسلم والترمذي
+Morning adhkar, from Bukhari, Muslim, Tirmidhi
 ```
 
 **TikTok · Description**
@@ -186,13 +186,13 @@ Morning adhkar, only from al-Bukhari, Muslim and at-Tirmidhi. Save it for tomorr
 **YouTube · Description**
 
 ```text
-The morning adhkar, only from hadiths graded sahih or hasan (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it every morning.
-
 أذكار الصباح، من أحاديث صحيحة وحسنة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله كل صباح.
 
-Adhkar to keep · 2 · أذكار · 2
+The morning adhkar, only from hadiths graded sahih or hasan (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it every morning.
 
-No narration: the adhkar are written to be read · بدون صوت راوي
+أذكار · 2 · Adhkar to keep · 2
+
+بدون صوت راوي · No narration: the adhkar are written to be read
 
 @quran_words_daily
 ```
@@ -229,8 +229,8 @@ Footage: Pixabay (bellergy) · Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-Evening adhkar, from Bukhari, Muslim, Tirmidhi
 أذكار المساء… من البخاري ومسلم والترمذي
+Evening adhkar, from Bukhari, Muslim, Tirmidhi
 ```
 
 **Facebook · Description**
@@ -249,8 +249,8 @@ Evening adhkar, only from al-Bukhari, Muslim and at-Tirmidhi. Save it for every 
 **Instagram · Titre**
 
 ```text
-Evening adhkar, from Bukhari, Muslim, Tirmidhi
 أذكار المساء… من البخاري ومسلم والترمذي
+Evening adhkar, from Bukhari, Muslim, Tirmidhi
 ```
 
 **Instagram · Description**
@@ -271,8 +271,8 @@ Sur TikTok : la vidéo `adhkar-short-3-masaa-tiktok.mp4`, signée `@quran.words.
 **TikTok · Titre**
 
 ```text
-Evening adhkar, from Bukhari, Muslim, Tirmidhi
 أذكار المساء… من البخاري ومسلم والترمذي
+Evening adhkar, from Bukhari, Muslim, Tirmidhi
 ```
 
 **TikTok · Description**
@@ -297,13 +297,13 @@ Evening adhkar, only from al-Bukhari, Muslim and at-Tirmidhi. Save it for every 
 **YouTube · Description**
 
 ```text
-The evening adhkar, only from hadiths graded sahih or hasan (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it every evening.
-
 أذكار المساء، من أحاديث صحيحة وحسنة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله كل مسا.
 
-Adhkar to keep · 3 · أذكار · 3
+The evening adhkar, only from hadiths graded sahih or hasan (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it every evening.
 
-No narration: the adhkar are written to be read · بدون صوت راوي
+أذكار · 3 · Adhkar to keep · 3
+
+بدون صوت راوي · No narration: the adhkar are written to be read
 
 @quran_words_daily
 ```

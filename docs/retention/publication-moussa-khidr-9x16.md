@@ -9,18 +9,18 @@ Le même film, monté pour un écran vertical (les images des shorts, la même v
 **Facebook · Titre**
 
 ```text
-Moses and al-Khidr: what looks bad is not always bad
 موسى والخضر: مش كل شر… شر
+Moses and al-Khidr: what looks bad is not always bad
 ```
 
 **Facebook · Description**
 
 ```text
-A boat torn open, a father and mother who lost their son, a wall rebuilt for free: three things Moses, peace be upon him, could not keep silent about on his journey with al-Khidr (Surat al-Kahf), and the secret of each. A wisdom shown quickly, a wisdom never shown to those who lived it, and a good hidden until its time.
-
 سفينة اتخرقت، أب وأم خسروا ابنهم، وجدار اتبنى ببلاش: تلات مواقف موسى عليه السلام ما قدرش يسكت عليها في رحلته مع الخضر (سورة الكهف)، وسر كل واحد منهم. حكمة اتكشفت بسرعة، وحكمة ما اتكشفتش لأصحابها، وخير مستخبي لحد وقته.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+A boat torn open, a father and mother who lost their son, a wall rebuilt for free: three things Moses, peace be upon him, could not keep silent about on his journey with al-Khidr (Surat al-Kahf), and the secret of each. A wisdom shown quickly, a wisdom never shown to those who lived it, and a good hidden until its time.
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```

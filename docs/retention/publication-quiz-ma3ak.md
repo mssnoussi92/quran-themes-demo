@@ -9,8 +9,8 @@ Pour chaque short, les textes à copier : sur Facebook et Instagram, la légende
 **Facebook · Titre**
 
 ```text
-"The beast of the earth" in Surat Saba'?
 «دابة الأرض» في سورة سبأ؟
+"The beast of the earth" in Surat Saba'?
 ```
 
 **Facebook · Description**
@@ -19,7 +19,7 @@ Pour chaque short, les textes à copier : sur Facebook et Instagram, la légende
 «دابة الأرض» في سورة سبأ… مش اللي في بالك. معاك 5 ثواني.
 "The beast of the earth" in Surat Saba'… not the one you're thinking of. You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -31,8 +31,8 @@ Pour chaque short, les textes à copier : sur Facebook et Instagram, la légende
 **Instagram · Titre**
 
 ```text
-"The beast of the earth" in Surat Saba'?
 «دابة الأرض» في سورة سبأ؟
+"The beast of the earth" in Surat Saba'?
 ```
 
 **Instagram · Description**
@@ -41,7 +41,7 @@ Pour chaque short, les textes à copier : sur Facebook et Instagram, la légende
 «دابة الأرض» في سورة سبأ… مش اللي في بالك. معاك 5 ثواني.
 "The beast of the earth" in Surat Saba'… not the one you're thinking of. You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -57,8 +57,8 @@ Pour chaque short, les textes à copier : sur Facebook et Instagram, la légende
 **Facebook · Titre**
 
 ```text
-"Beautiful patience"… and the second time?
 «فصبر جميل»… المرة التانية؟
+"Beautiful patience"… and the second time?
 ```
 
 **Facebook · Description**
@@ -67,7 +67,7 @@ Pour chaque short, les textes à copier : sur Facebook et Instagram, la légende
 سيدنا يعقوب قال «فصبر جميل» مرتين… المرة التانية كمّلها بحاجة محدش متوقعها.
 Jacob said "beautiful patience" twice… the second time, he went on with what no one expects.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -79,8 +79,8 @@ Jacob said "beautiful patience" twice… the second time, he went on with what n
 **Instagram · Titre**
 
 ```text
-"Beautiful patience"… and the second time?
 «فصبر جميل»… المرة التانية؟
+"Beautiful patience"… and the second time?
 ```
 
 **Instagram · Description**
@@ -89,7 +89,7 @@ Jacob said "beautiful patience" twice… the second time, he went on with what n
 سيدنا يعقوب قال «فصبر جميل» مرتين… المرة التانية كمّلها بحاجة محدش متوقعها.
 Jacob said "beautiful patience" twice… the second time, he went on with what no one expects.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -105,8 +105,8 @@ Jacob said "beautiful patience" twice… the second time, he went on with what n
 **Facebook · Titre**
 
 ```text
-Who said this… and to whom?
 مين قال الجملة دي… ولمين؟
+Who said this… and to whom?
 ```
 
 **Facebook · Description**
@@ -115,7 +115,7 @@ Who said this… and to whom?
 «أحطت بما لم تحط به»… مين قالها، ولمين؟ معاك 5 ثواني.
 "I have encompassed what you have not"… who said it, and to whom? You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -127,8 +127,8 @@ Who said this… and to whom?
 **Instagram · Titre**
 
 ```text
-Who said this… and to whom?
 مين قال الجملة دي… ولمين؟
+Who said this… and to whom?
 ```
 
 **Instagram · Description**
@@ -137,7 +137,7 @@ Who said this… and to whom?
 «أحطت بما لم تحط به»… مين قالها، ولمين؟ معاك 5 ثواني.
 "I have encompassed what you have not"… who said it, and to whom? You have 5 seconds.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**

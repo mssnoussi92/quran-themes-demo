@@ -9,8 +9,8 @@ Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la 
 **Facebook · Titre**
 
 ```text
-The heart in the Quran… how many times?
 «القلب» في القرآن… كام مرة؟
+The heart in the Quran… how many times?
 ```
 
 **Facebook · Description**
@@ -19,7 +19,7 @@ The heart in the Quran… how many times?
 أول مرة في المصحف وآخر مرة… قلوب اتقفلت.
 Its first time in the mushaf and its last both speak of hearts closed.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -31,8 +31,8 @@ Its first time in the mushaf and its last both speak of hearts closed.
 **Instagram · Titre**
 
 ```text
-The heart in the Quran… how many times?
 «القلب» في القرآن… كام مرة؟
+The heart in the Quran… how many times?
 ```
 
 **Instagram · Description**
@@ -41,7 +41,7 @@ The heart in the Quran… how many times?
 أول مرة في المصحف وآخر مرة… قلوب اتقفلت.
 Its first time in the mushaf and its last both speak of hearts closed.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -55,8 +55,8 @@ Sur TikTok : la vidéo `map-short-1-qalb-tiktok.mp4`, signée `@quran.words.dail
 **TikTok · Titre**
 
 ```text
-The heart in the Quran… how many times?
 «القلب» في القرآن… كام مرة؟
+The heart in the Quran… how many times?
 ```
 
 **TikTok · Description**
@@ -65,7 +65,7 @@ The heart in the Quran… how many times?
 أول مرة في المصحف وآخر مرة… قلوب اتقفلت.
 Its first time in the mushaf and its last both speak of hearts closed.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -83,13 +83,13 @@ Its first time in the mushaf and its last both speak of hearts closed.
 **YouTube · Description**
 
 ```text
-The word 'heart' in the Quran: 132 times, in 124 verses. Its first time in the mushaf and its last both speak of hearts closed. And the heart finds rest in the remembrance of God (13:28).
-
 كلمة «القلب» في القرآن: 132 مرة، في 124 آية. أول مرة في المصحف وآخر مرة… قلوب اتقفلت. والقلب يرتاح بذكر ربنا (الرعد 28).
 
-The Map of a Word · 1 · خريطة كلمة · ١
+The word 'heart' in the Quran: 132 times, in 124 verses. Its first time in the mushaf and its last both speak of hearts closed. And the heart finds rest in the remembrance of God (13:28).
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+خريطة كلمة · ١ · The Map of a Word · 1
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -122,8 +122,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-Light in the Quran… how many times?
 «النور» في القرآن… كام مرة؟
+Light in the Quran… how many times?
 ```
 
 **Facebook · Description**
@@ -132,7 +132,7 @@ Light in the Quran… how many times?
 أول مرة في القرآن: نور بيروح.
 Its first time in the Quran: a light that is lost.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -144,8 +144,8 @@ Its first time in the Quran: a light that is lost.
 **Instagram · Titre**
 
 ```text
-Light in the Quran… how many times?
 «النور» في القرآن… كام مرة؟
+Light in the Quran… how many times?
 ```
 
 **Instagram · Description**
@@ -154,7 +154,7 @@ Light in the Quran… how many times?
 أول مرة في القرآن: نور بيروح.
 Its first time in the Quran: a light that is lost.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -168,8 +168,8 @@ Sur TikTok : la vidéo `map-short-2-nur-tiktok.mp4`, signée `@quran.words.daily
 **TikTok · Titre**
 
 ```text
-Light in the Quran… how many times?
 «النور» في القرآن… كام مرة؟
+Light in the Quran… how many times?
 ```
 
 **TikTok · Description**
@@ -178,7 +178,7 @@ Light in the Quran… how many times?
 أول مرة في القرآن: نور بيروح.
 Its first time in the Quran: a light that is lost.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -196,13 +196,13 @@ Its first time in the Quran: a light that is lost.
 **YouTube · Description**
 
 ```text
-The word 'light' in the Quran: 43 times, in 33 verses, and most of all in the surah that bears its name, an-Nur. The first time, a light that is lost (2:17). And where the true light comes from (24:35).
-
 كلمة «النور» في القرآن: 43 مرة، في 33 آية، وأكتر سورة فيها… سورة «النور». أول مرة: نور بيروح (البقرة 17). والنور الحقيقي… من ربنا (النور 35).
 
-The Map of a Word · 2 · خريطة كلمة · ٢
+The word 'light' in the Quran: 43 times, in 33 verses, and most of all in the surah that bears its name, an-Nur. The first time, a light that is lost (2:17). And where the true light comes from (24:35).
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+خريطة كلمة · ٢ · The Map of a Word · 2
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -233,8 +233,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-The chest in the Quran… how many times?
 «الصدر» في القرآن… كام مرة؟
+The chest in the Quran… how many times?
 ```
 
 **Facebook · Description**
@@ -243,7 +243,7 @@ The chest in the Quran… how many times?
 آخر مرة، في آخر سورة: اللي بيوسوس في صدور الناس.
 The last time, in the last surah: the one who whispers into the chests of people.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -255,8 +255,8 @@ The last time, in the last surah: the one who whispers into the chests of people
 **Instagram · Titre**
 
 ```text
-The chest in the Quran… how many times?
 «الصدر» في القرآن… كام مرة؟
+The chest in the Quran… how many times?
 ```
 
 **Instagram · Description**
@@ -265,7 +265,7 @@ The chest in the Quran… how many times?
 آخر مرة، في آخر سورة: اللي بيوسوس في صدور الناس.
 The last time, in the last surah: the one who whispers into the chests of people.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -279,8 +279,8 @@ Sur TikTok : la vidéo `map-short-3-sadr-tiktok.mp4`, signée `@quran.words.dail
 **TikTok · Titre**
 
 ```text
-The chest in the Quran… how many times?
 «الصدر» في القرآن… كام مرة؟
+The chest in the Quran… how many times?
 ```
 
 **TikTok · Description**
@@ -289,7 +289,7 @@ The chest in the Quran… how many times?
 آخر مرة، في آخر سورة: اللي بيوسوس في صدور الناس.
 The last time, in the last surah: the one who whispers into the chests of people.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -307,13 +307,13 @@ The last time, in the last surah: the one who whispers into the chests of people
 **YouTube · Description**
 
 ```text
-The word 'chest' in the Quran: 44 times, in 41 verses. The first time: what you hide in your chest, God knows it (3:29). The last, in the last surah: the one who whispers into the chests of people (114:5). And the prayer of Moses when the chest feels tight (20:25-28).
-
 كلمة «الصدر» في القرآن: 44 مرة، في 41 آية. أول مرة: اللي في صدرك ربنا عارفه (آل عمران 29). وآخر مرة، في آخر سورة: اللي بيوسوس في صدور الناس (الناس 5). ودعوة موسى عليه السلام لما الصدر يضيق (طه 25-28).
 
-The Map of a Word · 3 · خريطة كلمة · ٣
+The word 'chest' in the Quran: 44 times, in 41 verses. The first time: what you hide in your chest, God knows it (3:29). The last, in the last surah: the one who whispers into the chests of people (114:5). And the prayer of Moses when the chest feels tight (20:25-28).
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+خريطة كلمة · ٣ · The Map of a Word · 3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```

@@ -168,10 +168,24 @@ def block(text: str) -> str:
     return "```text\n" + text.strip() + "\n```\n"
 
 
+ARABIC = re.compile(r"[\u0600-\u06ff]")
+
+
+def arabic_first(line: str) -> str:
+    """A line of two halves joined by « · », the Arabic half first (the owner, 2026-11-21: « l'arabe d'abord partout,
+    titres et description »)."""
+    parts = line.split(" · ")
+    if len(parts) != 2 or not ARABIC.search(parts[1]) or ARABIC.search(parts[0]):
+        return line
+    lead = "🎙️ " if parts[0].startswith("🎙️ ") else ""
+    return lead + parts[1] + " · " + parts[0].removeprefix(lead)
+
+
 def voice_line(narration: str) -> str:
     """The line that declares the AI voice, as it stays in every description (CLAUDE.md, « Voix déclarée »), without
     the « Narration: » label of the credits."""
-    return narration.split(": ", 1)[1] if narration.startswith("Narration: ") else narration
+    line = narration.split(": ", 1)[1] if narration.startswith("Narration: ") else narration
+    return arabic_first(line)
 
 
 def thumbnail_file(film: dict, files: str) -> str:
@@ -256,7 +270,10 @@ def written(path: Path) -> dict[str, dict]:
             for row in lines[i + 1:]:
                 if not (m := CHAPTER.match(row)):
                     break
-                known[key]["chapters"].append({"start": int(m[1]) * 60 + int(m[2]), "title": {"en": m[3], "ar": m[4]}})
+                # a chapter is written « 0:14 <Arabic> · <English> » since 2026-11-21 (the Arabic first), « 0:14 <English> ·
+                # <Arabic> » before: each half is told by its script
+                first, second = (m[3], m[4]) if ARABIC.search(m[4]) else (m[4], m[3])
+                known[key]["chapters"].append({"start": int(m[1]) * 60 + int(m[2]), "title": {"en": first, "ar": second}})
     return {k: v for k, v in known.items() if "seconds" in v}
 
 
@@ -370,11 +387,11 @@ def main() -> None:
         data = timeline_of(args.film, "film")
         lines, hadith, verse = quoted(quotes_of([s for c in film["chapters"] for s in c["segments"]]), sources)
         if pub.get("hook"):         # the short caption (owner, 2026-11-15)
-            tall_cards = cards("Facebook", pub["title"]["en"] + "\n" + pub["title"]["ar"], hooked(conf, pub["hook"]), "",
+            tall_cards = cards("Facebook", pub["title"]["ar"] + "\n" + pub["title"]["en"], hooked(conf, pub["hook"]), "",
                                hashtags(conf, [], pub["hashtags"], "facebook"))
         else:
-            tall_cards = cards("Facebook", pub["title"]["en"] + "\n" + pub["title"]["ar"],
-                               "\n\n".join([pub["description"]["en"], pub["description"]["ar"], voice_line(narration), conf["handle"]]),
+            tall_cards = cards("Facebook", pub["title"]["ar"] + "\n" + pub["title"]["en"],
+                               "\n\n".join([pub["description"]["ar"], pub["description"]["en"], voice_line(narration), conf["handle"]]),
                                "Quoted:\n" + "\n".join(lines) + "\n\n" + footage(shorts, film.get("pictures")),
                                hashtags(conf, [], pub["hashtags"], "facebook"))
         said = ((film.get("tall") or {}).get("validated") or {})
@@ -389,7 +406,7 @@ def main() -> None:
                 sys.exit(f"error: --tall: {args.film}: a TikTok caption needs `publish.hook`")
             heard = (tiktok or {}).get("validated") or {}
             tall_cards += [f"Sur TikTok : la vidéo `{twin}`, signée `{conf['handles']['tiktok']}`.", "",
-                           *cards("TikTok", pub["title"]["en"] + "\n" + pub["title"]["ar"], hooked(conf, pub["hook"]), "",
+                           *cards("TikTok", pub["title"]["ar"] + "\n" + pub["title"]["en"], hooked(conf, pub["hook"]), "",
                                   hashtags(conf, [], pub["hashtags"], "tiktok"))]
         out = [f"# {pub['series']['en']} · {pub['series']['ar']} : le film en 9:16", "",
                "Le même film, monté pour un écran vertical (les images des shorts, la même voix, le même minutage). "
@@ -416,8 +433,8 @@ def main() -> None:
         title = youtube_title(pub.get("youtube_title") or pub["title"])
         if len(title) > limits["youtube"]["max_title"]:
             sys.exit(f"error: the film's YouTube title is {len(title)} characters (most: {limits['youtube']['max_title']})")
-        chapters = "\n".join(f"{stamp(c['start'])} {c['title']['en']} · {c['title']['ar']}" for c in data["chapters"])
-        body = "\n\n".join([pub["description"]["en"], pub["description"]["ar"], "Chapters:\n" + chapters,
+        chapters = "\n".join(f"{stamp(c['start'])} {c['title']['ar']} · {c['title']['en']}" for c in data["chapters"])
+        body = "\n\n".join([pub["description"]["ar"], pub["description"]["en"], "Chapters:\n" + chapters,
                               voice_line(narration), conf["handle"]])
         credits = "Quoted:\n" + "\n".join(lines) + "\n\n" + footage(shorts, film.get("pictures"))
         tags = hashtags(conf, [], pub["hashtags"], "youtube")
@@ -445,16 +462,16 @@ def main() -> None:
         # A series goes on: its shorts are numbered, never « n of total ».
         # Numbers are written 1 2 3, never ١ ٢ ٣ (the owner, 2026-11-17); texts already validated keep what they were validated with.
         # A series whose file holds its film too (`shorts` of the file, 2026-11-21) keeps the numbering its shorts were validated with.
-        series = (f"{pub['series']['en']} · {n} · {pub['series']['ar']} · {n}" if series_only or film.get("shorts") else
-                  f"{pub['series']['en']} · part {n}/{total} · {pub['series']['ar']} · الجزء {n} من {total}")
+        series = (f"{pub['series']['ar']} · {n} · {pub['series']['en']} · {n}" if series_only or film.get("shorts") else
+                  f"{pub['series']['ar']} · الجزء {n} من {total} · {pub['series']['en']} · part {n}/{total}")
         name = f"{files}-short-{n}-{spec['id']}" + (f"-{page}" if page else "")
         cover = f"{name}-cover.jpg" if page else (spec.get("cover") or {}).get("file", f"{name}-cover.jpg")
 
-        heading = sp["title"]["en"] + "\n" + sp["title"]["ar"]
+        heading = sp["title"]["ar"] + "\n" + sp["title"]["en"]
         credits = "Quoted:\n" + "\n".join(lines) + "\n\n" + footage([spec])
 
         def description(signed: str) -> str:
-            return "\n\n".join([sp["description"]["en"], sp["description"]["ar"], series, voice_line(narration), signed])
+            return "\n\n".join([sp["description"]["ar"], sp["description"]["en"], series, voice_line(narration), signed])
 
         def tags(platform: str) -> str:
             return hashtags(conf, sp.get("hashtags") or [], pub["hashtags"], platform)
