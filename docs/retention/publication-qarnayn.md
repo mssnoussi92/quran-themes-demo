@@ -69,7 +69,7 @@ The fate of a whole people… at his word
 اتخيّر: يعاقبهم ولا يحسن ليهم. القوة أمانة… مش رخصة.
 The choice was left to him: punish them, or treat them well. Power is a trust, not a license.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -178,7 +178,7 @@ They offered him money… he refused
 رفض الفلوس: اللي ربنا إداهولي أحسن.
 He refused the money: what my Lord has given me is better.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -287,7 +287,7 @@ He built the barrier… and said: not from me
 ولما خلص، ذو القرنين قال: ده رحمة من ربي.
 And when it stood, Dhul-Qarnayn said: this is a mercy from my Lord.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

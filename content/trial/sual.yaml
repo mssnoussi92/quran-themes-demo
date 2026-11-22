@@ -20,8 +20,8 @@ publish:
     en: "Three hard questions that come from the Quran's own verses: the one far from God who lives in comfort, the believer whose life is hard, and the one who says God is forgiving, so I can do as I like. For each one: the answer in the verse itself, with its tafsir, and in another verse."
   hook:             # légende courte du film vertical (Facebook, TikTok) : proposée par la session, validée par le propriétaire le 2026-11-21 (« je valide les 3 textes »)
     ar: "بعيد عن ربنا… وعايش مرتاح؟ مؤمن… وحياته صعبة؟ تلات أسئلة ناس كتير بتفكر فيها… ومحدش بيقولها بصوت عالي."
-    en: "Far from God… and living in comfort? A believer… and his life is hard? Three questions many people think about… and nobody asks out loud."
-    validated: 2026-11-21
+    en: "Far from God… yet at ease? A believer… yet life is hard? Three questions many think about… and nobody asks out loud."      # resserrée pour Facebook (≤ 400 caractères), validée par le propriétaire le 2026-11-22 (« je valide les 3 lignes »)
+    validated: 2026-11-22
   film_validated: 2026-11-21      # les textes du film (titre, description, chapitres, accroche) : « je valide les 3 textes »
   out: docs/retention/publication-sual.md
   series: { en: "A Hard Question", ar: "سؤال صعب" }

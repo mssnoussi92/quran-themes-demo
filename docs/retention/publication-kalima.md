@@ -19,7 +19,7 @@ A word in the Quran… that might describe you
 ربنا أقسم بالخيل وهي بتجري عشان يقول كلمة واحدة عن الإنسان.
 God swore by charging horses to say one word about man.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -129,7 +129,7 @@ The date stone… holds three words of the Quran
 تلات حاجات صغيرة في نواة التمرة… والقرآن سمّى التلاتة.
 Three tiny things in a date stone, and the Quran named all three.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -242,7 +242,7 @@ A word the Quran explains itself… and gives its cure
 لو جاله شر ينهار، ولو جاله خير يمسكه… وعلاجها مكتوب في نفس المكان.
 When harm touches him he panics, when good comes to him he withholds, and the cure is written in the same place.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

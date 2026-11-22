@@ -74,7 +74,7 @@ Far from God… and living in comfort?
 القرآن بيقول اللي يبعد عن ذكر ربنا حياته تبقى ضنك… طب ليه ناس كتير عايشين مرتاحين؟
 The Quran says whoever turns away from God's remembrance will have a narrow life. So why do so many seem to live in comfort?
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -187,7 +187,7 @@ A believer… with a hard life?
 القرآن بيوعد المؤمن اللي يعمل الخير بحياة طيبة. طب ليه ناس كتير بتصلي وحياتها صعبة؟
 The Quran promises the believer who does good a good life. So why is life hard for so many who pray?
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -301,7 +301,7 @@ God is forgiving… so can I do what I want?
 في ناس بتاخدها حجة: أعمل اللي أنا عايزه وأستغفر بعدين. والرد في الآية اللي بعدها على طول.
 Some take it as leave to do anything and repent later. The answer is in the very next verse.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

@@ -79,7 +79,7 @@ A verse says "woe"… to people who pray!
 السهو «في» الصلاة بيحصل من أي حد… والآية بتتكلم عن السهو «عن» الصلاة.
 Drifting "in" prayer happens to everyone… the verse is about drifting "away" from it.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -193,7 +193,7 @@ He prayed dhuhr in five rak'ahs!
 النبي ﷺ صلّى الضهر خمس ركعات… وعلّمنا نعمل إيه لو زوّدنا.
 The Prophet ﷺ once prayed dhuhr in five rak'ahs… and taught us what to do when we add.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -307,7 +307,7 @@ Stood up without sitting for the tashahhud?
 قمت من غير ما تقعد للتشهد؟ تعمل إيه خطوة بخطوة، في المذاهب الأربعة.
 Stood up without sitting for the tashahhud? What to do, step by step, in the four schools.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -420,7 +420,7 @@ Did I pray three or four?
 صلّيت تلاتة ولا أربعة؟ النبي ﷺ علّمنا الحل… والمذاهب الأربعة فصّلت.
 Three or four? The Prophet ﷺ taught the fix… and the four schools explain it.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

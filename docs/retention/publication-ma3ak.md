@@ -115,7 +115,7 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 «إني ذاهب إلى ربي سيهدين»… ناس كتير هتقول موسى. مين قالها؟ معاك 5 ثواني.
 "I am going to my Lord; He will guide me"… many will say Moses. Who said it? You have 5 seconds.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -163,7 +163,7 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 «وأبًّا» في سورة عبس… مش الأب خالص. معاك 5 ثواني.
 "Wa abba" in Surat 'Abasa… nothing to do with a father. You have 5 seconds.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -211,7 +211,7 @@ The same sentence in two surahs… each time with a different ending. How did Lu
 «واستعينوا بالصبر والصلاة» جت مرتين في سورة البقرة… أول مرة خلصت بإيه؟ معاك 5 ثواني.
 "Seek help through patience and prayer" comes twice in al-Baqarah… how did it end the first time? You have 5 seconds.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -259,7 +259,7 @@ Who made this prayer?
 «رب إني لما أنزلت إلي من خير فقير»… نبي قالها وهو جعان ولوحده. مين؟ معاك 5 ثواني.
 "My Lord, I am in need of whatever good You send me"… a prophet said it, hungry and alone. Who? You have 5 seconds.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -307,7 +307,7 @@ Who made this prayer?
 أم موسى رمته في «اليمّ»… يعني فين بالظبط؟ معاك 5 ثواني.
 Moses' mother cast him into "al-yamm"… where exactly? You have 5 seconds.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

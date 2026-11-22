@@ -19,7 +19,7 @@ A "car" in Surat Yusuf?
 «سيارة» في سورة يوسف… مش العربية اللي في بالك. معاك 5 ثواني.
 "Sayyara" in Surat Yusuf… not the car you're thinking of. You have 5 seconds.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -128,7 +128,7 @@ How do you think this verse ends?
 آية فيها كلام عن المغفرة… تفتكر خلصت بإيه؟ الإجابة مش اللي متوقعها.
 A verse about forgiveness… how do you think it ends? Not what you'd expect.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -236,7 +236,7 @@ Who said this in the Quran?
 جملة واحدة في القرآن… قالها اتنين عكس بعض. تعرف مين؟
 One sentence in the Quran… said by two opposites. Do you know who?
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -350,7 +350,7 @@ Footage: Pixabay (DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 «دابة الأرض» في سورة سبأ… مش اللي في بالك. معاك 5 ثواني.
 "The beast of the earth" in Surat Saba'… not the one you're thinking of. You have 5 seconds.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -460,7 +460,7 @@ Footage: Pixabay (Felix-Mittermeier) · Ambience: BigSoundBank (Joseph Sardin)
 سيدنا يعقوب قال «فصبر جميل» مرتين… المرة التانية كمّلها بحاجة محدش متوقعها.
 Jacob said "beautiful patience" twice… the second time, he went on with what no one expects.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -570,7 +570,7 @@ Who said this… and to whom?
 «أحطت بما لم تحط به»… مين قالها، ولمين؟ معاك 5 ثواني.
 "I have encompassed what you have not"… who said it, and to whom? You have 5 seconds.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

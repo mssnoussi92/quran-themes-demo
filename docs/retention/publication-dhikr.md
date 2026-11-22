@@ -19,7 +19,7 @@ Stung by a scorpion at night… the answer was one sentence
 عقرب لدغت راجل بالليل… والنبي ﷺ دلّه على كلمات، لو قالها لما المسا دخل، ما كانتش ضرّته.
 A scorpion stung a man at night. The Prophet ﷺ showed him words: had he said them when evening came, it would not have harmed him.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -129,7 +129,7 @@ He was asked to say something… and didn't know what
 النبي ﷺ طلب من صاحبه يقول حاجة… وهو مش عارف يقول إيه! والإجابة؟ تلات سور بتحفظها.
 The Prophet ﷺ asked his companion to say something, and he didn't know what. The answer: three surahs you already know.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -243,7 +243,7 @@ Footage: Pixabay (max_bbb) · Ambience: BigSoundBank (Joseph Sardin)
 الفقرا اشتكوا: الأغنيا سبقونا! فعلّمهم حاجة بعد كل صلاة… ما تحتاجش فلوس.
 The poor complained: the rich have got ahead of us! He taught them something after every prayer that needs no money.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

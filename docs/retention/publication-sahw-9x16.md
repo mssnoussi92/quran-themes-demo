@@ -21,7 +21,7 @@ Sujud as-sahw: added, left out, or unsure?
 النبي صلى الله عليه وسلم نفسه… سها في صلاته. وعلّمنا نعمل إيه… لما نسهى إحنا.
 The Prophet ﷺ himself… forgot in his prayer. And he taught us what to do… when we forget.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

@@ -1,6 +1,6 @@
 # You Think It Is Small · وتحسبونه هيّنًا : textes de publication
 
-Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la légende courte en trois textes, le titre, l'accroche avec la ligne de la voix IA, les hashtags ; sur YouTube, quatre textes, le titre, la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags, collés dans la même description. Titres et descriptions **validés par le propriétaire le 2026-11-19** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **validées par le propriétaire le 2026-11-17**. Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, validée elle aussi.
+Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la légende courte en trois textes, le titre, l'accroche avec la ligne de la voix IA, les hashtags ; sur YouTube, quatre textes, le titre, la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags, collés dans la même description. Titres et descriptions **validés par le propriétaire le 2026-11-19** ; les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés (`tools/trial/publish.py`, à relancer après tout changement). Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **validées par le propriétaire le 2026-11-22**. Fichiers : ceux envoyés dans la conversation et dans la release brouillon du workflow `film`, l'ambiance sonore sous la narration comprise, validée elle aussi.
 
 ## Le film · Sins we think are small · ذنوب بنحسبها صغيرة
 
@@ -74,9 +74,9 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 ```text
 «هو فعلاً كده… أنا مش بفتري عليه!» الجملة دي ممكن تاخد من حسناتك… وتديها للي اتكلمت عليه.
-“That's really how he is, I'm not making it up!” That sentence could take from your good deeds… and give them to the one you spoke about.
+“That's really how he is, I'm not making it up!” That sentence could take from your good deeds… and give them to him.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -96,7 +96,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 ```text
 «هو فعلاً كده… أنا مش بفتري عليه!» الجملة دي ممكن تاخد من حسناتك… وتديها للي اتكلمت عليه.
-“That's really how he is, I'm not making it up!” That sentence could take from your good deeds… and give them to the one you spoke about.
+“That's really how he is, I'm not making it up!” That sentence could take from your good deeds… and give them to him.
 
 🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
@@ -120,7 +120,7 @@ Sur TikTok : la vidéo `hayyin-short-1-ghiba-tiktok.mp4`, signée `@quran.words.
 
 ```text
 «هو فعلاً كده… أنا مش بفتري عليه!» الجملة دي ممكن تاخد من حسناتك… وتديها للي اتكلمت عليه.
-“That's really how he is, I'm not making it up!” That sentence could take from your good deeds… and give them to the one you spoke about.
+“That's really how he is, I'm not making it up!” That sentence could take from your good deeds… and give them to him.
 
 🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
@@ -190,7 +190,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 «شوف فلان قال عليك إيه»… الحركة دي ليها اسم في القرآن.
 “Look what so-and-so said about you”… that move has a name in the Quran.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -303,7 +303,7 @@ You did it so they would say it… and they did
 عملتها عشان يتقال… واتقال. والقرآن رسم الصورة دي: تراب على صخرة… ونزل مطر.
 You did it so they would say it… and they did. The Quran paints it: dust on a rock… then the rain.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

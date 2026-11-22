@@ -80,7 +80,7 @@ They left their city… and hid in a cave!
 سابوا مدينتهم… واستخبّوا في كهف بدعوة واحدة.
 They left their city… and hid in a cave with a single prayer.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -191,7 +191,7 @@ The sun turned away from them, every day!
 طلبوا رحمة… والإجابة جت في زاوية الشمس.
 They asked for mercy… and the answer came in the angle of the sun.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -302,7 +302,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 ناموا تلتمية وتسع سنين… وصحيوا فاكرينها يوم.
 They slept three hundred and nine years… and woke up thinking it was a day.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

@@ -21,7 +21,7 @@ The People of the Cave: 3 moments
 ربنا بيعمل إيه مع اللي يلجأ له؟
 What does God do for those who take refuge in Him?
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
