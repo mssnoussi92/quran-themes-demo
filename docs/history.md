@@ -962,3 +962,24 @@ et qui attire ». L'avis de la session, donné avant : la page de la chaîne pè
   (`publication-trailer-9x16.md`) ; les fichiers rendus par le workflow `trailer` dans les pré-releases publiques `page-trailer`
   et `page-trailer-9x16`. L'avis de la session, donné avant : pour une seule publication, la main est plus simple (5 minutes) ;
   son choix : l'automatique, réutilisable à la prochaine version.
+
+## 2026-11-22 · Les légendes Facebook en 400 caractères (la revue du dimanche)
+
+- **Pourquoi** : Meta a marqué la bande-annonce « Qualité du contenu : légendes de qualité » (capture du propriétaire à la
+  revue) ; sa liste de qualité veut une légende de 10 à 400 caractères, hashtags compris, et celle de la bande-annonce en
+  faisait 408. Trois textes à venir dépassaient aussi : le film « وتحسبونه هيّنًا » (401, 14 décembre), son short 1 (411,
+  15 décembre) et le film « سؤال صعب » (404, 21 décembre).
+- **Ce qui a été proposé** : retirer le dernier hashtag (refusé par le propriétaire : « je n'ai pas aimé les solutions
+  proposées »), puis une ligne de la voix IA plus courte sur Facebook, ou les accroches anglaises resserrées. **Son choix :
+  les deux.**
+- **Fait** : sur Facebook seulement, « 🎙️ صوت بالذكاء الاصطناعي · AI voice » (35 caractères, au lieu de 52 ;
+  `ai_voice_facebook` de `content/publish.yaml`, `hooked(…, platform)` de `tools/trial/publish.py`), dans les légendes
+  Facebook de toutes les vidéos pas encore publiées (celles déjà en ligne gardent leur texte) ; les trois accroches
+  anglaises resserrées, **validées par lui le 2026-11-22** (« je valide les 3 lignes » : `hayyin`, `sual`, `ghiba`), donc
+  aussi sur Instagram et TikTok. Les trois légendes passent à 364, 366 et 374 caractères. `publish.py` s'arrête sur une
+  légende Facebook au-delà de `platforms.facebook.max_caption` (400), et `tests/test_facebook_length.py` lit tous les
+  textes (la bande-annonce, publiée avant, est la seule exception).
+- **Pas régénéré** : `publish.py` réécrirait aussi les numéros de série des descriptions YouTube (« ١ » → « 1 ») et le titre
+  YouTube d'une vidéo déjà en ligne ; les textes validés ne sont pas refaits pour autant (règle des chiffres, 2026-11-17).
+  Seules les lignes changées l'ont été, dans les fichiers.
+

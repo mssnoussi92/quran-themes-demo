@@ -19,7 +19,7 @@ Two words swapped places… why?
 في الأولى الفقر موجود… وفي التانية الخوف من فقر جاي.
 In the first, poverty is already there; in the second, it is feared.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -129,7 +129,7 @@ Once he said 'I'… once he said 'your Lord'
 العيب في المركب نسبه لنفسه، والخير لليتيمين نسبه لربنا.
 The damage to the boat he credited to himself, the good done to the two orphans to God.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -238,7 +238,7 @@ The same words… in reverse
 العدل حتى على نفسك… والعدل حتى مع اللي بتكرهه.
 Justice even against yourself, and justice even toward someone you dislike.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

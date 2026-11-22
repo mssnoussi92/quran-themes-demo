@@ -45,7 +45,7 @@ model_hashtags:
   most: { facebook: 3, instagram: 5, tiktok: 5, youtube: 5 }
 
 platforms:
-  facebook: { max_hashtags: 8 }
+  facebook: { max_hashtags: 8, max_caption: 400 }             # Meta's quality list: a caption of 10 to 400 characters
   instagram_tiktok: { max_hashtags: 5, max_caption: 2200 }   # Instagram's caps (2200 characters)
   youtube: { max_title: 100, max_description: 5000 }
 
@@ -56,6 +56,10 @@ lines:
   # sans plus de détail »): the title, the hook (`publish.hook` of each file) with this line, the hashtags. YouTube keeps
   # its four cards (description, credits with the sources and their links, chapters).
   ai_voice: "🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice"     # the Arabic first (owner, 2026-11-21)
+  # On Facebook, a shorter line (owner, 2026-11-22, the Sunday review): Meta's quality list wants a caption of 10 to 400
+  # characters, hashtags included (« légendes de qualité » on the trailer, 408), and three captions to come went past it.
+  # The voice stays declared; the hook and the hashtags stay word for word.
+  ai_voice_facebook: "🎙️ صوت بالذكاء الاصطناعي · AI voice"
   characters: "Characters: Open Peeps by Pablo Stanley (CC0)"
   # A hadith with no recorded reading is read by the synthetic voice: said in its source line.
   hadith_ai_voice: "Reading: AI-generated voice"

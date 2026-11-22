@@ -21,7 +21,7 @@ Free will or fate? 3 sentences we all say
 لو كل حاجة مكتوبة… هتحاسب ليه؟
 If everything is written… why will I be held to account?
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

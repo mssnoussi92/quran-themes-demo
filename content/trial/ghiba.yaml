@@ -42,8 +42,8 @@ publish:
   title: { en: "“But it's true!”… and your good deeds may go to him", ar: "«هو فعلاً كده!»… وحسناتك ممكن تروح له" }
   hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (« je valide les 3 accroches »)
     ar: "«هو فعلاً كده… أنا مش بفتري عليه!» الجملة دي ممكن تاخد من حسناتك… وتديها للي اتكلمت عليه."
-    en: "“That's really how he is, I'm not making it up!” That sentence could take from your good deeds… and give them to the one you spoke about."
-    validated: 2026-11-17
+    en: "“That's really how he is, I'm not making it up!” That sentence could take from your good deeds… and give them to him."      # resserrée pour Facebook (≤ 400 caractères), validée par le propriétaire le 2026-11-22 (« je valide les 3 lignes »)
+    validated: 2026-11-22
   part: 1
   hashtags: ["#الغيبة"]
   description:

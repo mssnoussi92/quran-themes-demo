@@ -21,7 +21,7 @@ Dhul-Qarnayn: 3 tests of power
 تعمل إيه لما تقدر على حد؟
 What do you do when you have power over someone?
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

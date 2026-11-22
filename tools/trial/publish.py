@@ -220,11 +220,22 @@ def cards(platform: str, title: str, description: str, credits: str, tags: str, 
             f"**{platform} · Hashtags ({len(tags.split())})**", "", block(tags)]
 
 
-def hooked(conf: dict, hook: dict, voiced: bool = True) -> str:
+def hooked(conf: dict, hook: dict, voiced: bool = True, platform: str = "") -> str:
     """The description of a short caption (Facebook, Instagram, TikTok): the hook in Egyptian Arabic and in English,
     then the line of the AI voice (owner, 2026-11-15). A short no voice says (adhkar to read: every narration
-    `silent`) has no AI voice to declare: the line would be false."""
-    return hook["ar"] + "\n" + hook["en"] + ("\n\n" + conf["lines"]["ai_voice"] if voiced else "")
+    `silent`) has no AI voice to declare: the line would be false. On Facebook the line is shorter (`ai_voice_facebook`,
+    owner, 2026-11-22): Meta wants a caption of at most 400 characters."""
+    line = conf["lines"].get("ai_voice_facebook") if platform.lower() == "facebook" else None
+    return hook["ar"] + "\n" + hook["en"] + ("\n\n" + (line or conf["lines"]["ai_voice"]) if voiced else "")
+
+
+def facebook_short(conf: dict, name: str, title: str, description: str, tags: str) -> None:
+    """Stop when a Facebook short caption (its cards joined by a blank line, as quran-reels publishes them) is longer
+    than Meta's quality list allows (`platforms.facebook.max_caption`, 400; owner, 2026-11-22)."""
+    most = conf["platforms"]["facebook"].get("max_caption")
+    size = len("\n\n".join([title, description, tags]))
+    if most and size > most:
+        sys.exit(f"error: {name}: the Facebook caption is {size} characters (most: {most}); shorten the hook")
 
 
 def voiced(spec: dict) -> bool:
@@ -387,8 +398,9 @@ def main() -> None:
         data = timeline_of(args.film, "film")
         lines, hadith, verse = quoted(quotes_of([s for c in film["chapters"] for s in c["segments"]]), sources)
         if pub.get("hook"):         # the short caption (owner, 2026-11-15)
-            tall_cards = cards("Facebook", pub["title"]["ar"] + "\n" + pub["title"]["en"], hooked(conf, pub["hook"]), "",
-                               hashtags(conf, [], pub["hashtags"], "facebook"))
+            fb_title, fb_tags = pub["title"]["ar"] + "\n" + pub["title"]["en"], hashtags(conf, [], pub["hashtags"], "facebook")
+            facebook_short(conf, f"{args.film} (9:16)", fb_title, hooked(conf, pub["hook"], platform="facebook"), fb_tags)
+            tall_cards = cards("Facebook", fb_title, hooked(conf, pub["hook"], platform="facebook"), "", fb_tags)
         else:
             tall_cards = cards("Facebook", pub["title"]["ar"] + "\n" + pub["title"]["en"],
                                "\n\n".join([pub["description"]["ar"], pub["description"]["en"], voice_line(narration), conf["handle"]]),
@@ -483,12 +495,15 @@ def main() -> None:
             if platform not in platforms:
                 return []
             if hook:
-                return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading, hooked(conf, hook, voiced(spec)), "", tags(platform))
+                return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading,
+                             hooked(conf, hook, voiced(spec), platform), "", tags(platform))
             return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading, description(signed), credits, tags(platform))
 
         # The cards end up in one caption: its length is theirs together.
         insta = ("\n\n".join([heading, hooked(conf, hook, voiced(spec)), tags("instagram")]) if hook else
                  "\n\n".join([heading, description(handle), credits, tags("instagram")]))
+        if hook and "facebook" in platforms:
+            facebook_short(conf, name, heading, hooked(conf, hook, voiced(spec), "facebook"), tags("facebook"))
         if len(insta) > limits["instagram_tiktok"]["max_caption"]:
             sys.exit(f"error: {name}: the Instagram caption is {len(insta)} characters")
         title = youtube_title(sp.get("youtube_title") or sp["title"])

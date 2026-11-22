@@ -134,7 +134,7 @@ Even Einstein got this wrong
 طب آية نزلت من ١٤٠٠ سنة قالت إيه عن السما؟
 What does a verse revealed fourteen centuries ago say about the sky?
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -248,7 +248,7 @@ What happens 8 km up… the Quran described it
 قبل ما إنسان يطير بأكتر من ألف سنة، آية وصفت صدر بيضيق كل ما يطلع في السما.
 More than a thousand years before anyone flew, a verse spoke of a chest that tightens as one climbs into the sky.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -361,7 +361,7 @@ Images: NASA, ESA, S. Beckwith (STScI), HUDF Team (CC BY 4.0) · Ambience: BigSo
 القرآن سمّى المرحلة دي بكلمة واحدة: علقة.
 The Quran named that stage with one word: 'alaqa.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -476,7 +476,7 @@ They say 365… I counted it myself
 قبل ما تنشر رقم عن القرآن، عِدّه.
 Before you share a number about the Quran, count it.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

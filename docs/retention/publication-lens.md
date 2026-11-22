@@ -19,7 +19,7 @@ Everything went dark… look up
 النور قطع والمدينة ضلمت… والسما اتملت نجوم كانت موجودة طول الوقت.
 The power went out and the city went dark… and the sky filled with stars that were there all along.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -127,7 +127,7 @@ Waiting for something that never comes?
 مستني حاجة… والسحاب بيعدّي من غير مطر؟
 Waiting for something… while the clouds pass without rain?
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -235,7 +235,7 @@ How many hours did you scroll today?
 قلّبت كام ساعة النهارده… والساعة بتجري وإنت مكانك؟
 How many hours did you scroll today… while the clock ran and you stayed put?
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

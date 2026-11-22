@@ -130,7 +130,7 @@ She told him: you've been left… and the answer came down
 واحدة قالت للنبي ﷺ: اللي بيجيلك سابك. والرد ما جاش منه: نزلت سورة.
 A woman told the Prophet ﷺ: the one who comes to you has left you. The answer did not come from him: a surah came down.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -244,7 +244,7 @@ They had committed grave sins… and came to ask
 آية نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر.
 A verse for everyone who thinks his sin is too great to be forgiven.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -354,7 +354,7 @@ He swore to cut off his relative… and a verse came down
 حلف ما يدّيلوش حاجة تاني… ونزلت آية.
 He swore never to give him anything again. Then a verse came down.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

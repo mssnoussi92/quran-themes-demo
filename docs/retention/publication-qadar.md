@@ -78,7 +78,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 «لو كل حاجة مكتوبة… أتعب ليه؟» الصحابة سألوا السؤال ده… وده كان الرد.
 “If everything is written, why bother?” The Companions asked this… and here is the answer.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -191,7 +191,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 «لما ربنا يهديني»… آيتين ورا بعض بيردّوا عليها.
 “When God guides me…” Two verses in a row answer it.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -302,7 +302,7 @@ A two-letter word the Prophet ﷺ warned against
 كلمة من حرفين بنقولها كل ليلة… والنبي ﷺ حذّر منها.
 A two-letter word we say every night… and the Prophet ﷺ warned against it.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

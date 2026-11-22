@@ -19,7 +19,7 @@ The heart in the Quran… how many times?
 أول مرة في المصحف وآخر مرة… قلوب اتقفلت.
 Its first time in the mushaf and its last both speak of hearts closed.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -132,7 +132,7 @@ Light in the Quran… how many times?
 أول مرة في القرآن: نور بيروح.
 Its first time in the Quran: a light that is lost.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -243,7 +243,7 @@ The chest in the Quran… how many times?
 آخر مرة، في آخر سورة: اللي بيوسوس في صدور الناس.
 The last time, in the last surah: the one who whispers into the chests of people.
 
-🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**

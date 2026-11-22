@@ -25,8 +25,8 @@ publish:
     en: "Backbiting, tale-bearing and showing off: three sins we see as small. In this film: a word that takes from your good deeds and gives them to the one you spoke about, a message that sets two people apart, a good deed lost because it was done for people… and the verse that says that what we think is small is, with God, great."
   hook:             # légende courte du film vertical (Facebook, TikTok) : proposée par la session, validée par le propriétaire le 2026-11-21 (« je valide les 3 textes »)
     ar: "كلمة في غياب حد… رسالة اتنقلت… وعمل خير اتصوّر عشان الناس تشوفه. تلات حاجات بنعملها كل يوم… ومش بنفكر فيها مرتين."
-    en: "A word about someone who isn't there… a message forwarded… a good deed filmed so people see it. Three things we do every day… without a second thought."
-    validated: 2026-11-21
+    en: "A word behind someone's back… a forwarded message… a good deed filmed for show. Three things we do daily… without a second thought."      # resserrée pour Facebook (≤ 400 caractères), validée par le propriétaire le 2026-11-22 (« je valide les 3 lignes »)
+    validated: 2026-11-22
   film_validated: 2026-11-21      # les textes du film (titre, description, chapitres, accroche) : « je valide les 3 textes »
   out: docs/retention/publication-hayyin.md
   series: { en: "You Think It Is Small", ar: "وتحسبونه هيّنًا" }
