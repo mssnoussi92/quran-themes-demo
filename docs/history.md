@@ -983,3 +983,20 @@ et qui attire ». L'avis de la session, donné avant : la page de la chaîne pè
   YouTube d'une vidéo déjà en ligne ; les textes validés ne sont pas refaits pour autant (règle des chiffres, 2026-11-17).
   Seules les lignes changées l'ont été, dans les fichiers.
 
+## 2026-11-22 · Les bordures : le sol éclairé, essai sur les shorts de la caverne (la revue du dimanche)
+
+- **Pourquoi** : Facebook a noté « Qualité du contenu : vidéo avec bordures » sur deux vidéos (captures du propriétaire à la
+  revue). Mesuré par la session : les vidéos thématiques ont, sous l'horizon, une bande presque noire qui ne bouge pas (le sol
+  `Land` de `Home.tsx` et les rochers d'encre : 170 à 590 px sur 1920, luminosité du dernier dixième de l'image autour de 6
+  sur 255) ; les reels de quran-reels n'en ont plus depuis leur correction du 13 novembre (la colline de la nuit).
+- **Décidé par le propriétaire le 2026-11-22** (questions à choix) : le gabarit corrigé, la scène descend sous les
+  sous-titres, **essai sur les trois shorts de la caverne** (1er au 3 décembre ; pas sur Dhul-Qarnayn, déjà dans l'essai de
+  la version courte), jugé à la revue du 6 décembre ; puis, sur images fixes (ciel de remplacement, faute de clé Pixabay dans
+  la session) : « Oui, rends-les ainsi ».
+- **Fait** : `LitGround` (`Home.tsx`) et `Land … lit`, un sol de la couleur de la pierre (froide la nuit, chaude au couchant),
+  un grain et des plaques de bruit fractal, une lueur sous la crête, trois bancs de brume qui passent chacun à son pas ;
+  `Rock … lit` (`Kahf.tsx`), une pierre en dégradé avec son grain, l'entrée de la caverne toujours sombre ; le short 3, les
+  parois autour de l'arche en pierre éclairée par l'ouverture, une poussière qui passe dans la lumière. Le dernier dixième
+  de l'image passe d'environ 6 à 35 de luminosité ; les scènes jouées (bonshommes) ne changent pas. Seuls les dessins de la
+  caverne l'emploient (vertical) ; les autres vidéos et le film 16:9 restent tels quels.
+
