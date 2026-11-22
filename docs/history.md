@@ -983,3 +983,30 @@ et qui attire ». L'avis de la session, donné avant : la page de la chaîne pè
   YouTube d'une vidéo déjà en ligne ; les textes validés ne sont pas refaits pour autant (règle des chiffres, 2026-11-17).
   Seules les lignes changées l'ont été, dans les fichiers.
 
+## 2026-11-22 · Les bordures : le sol éclairé, essai sur les shorts de la caverne (la revue du dimanche)
+
+- **Pourquoi** : Facebook a noté « Qualité du contenu : vidéo avec bordures » sur deux vidéos (captures du propriétaire à la
+  revue). Mesuré par la session : les vidéos thématiques ont, sous l'horizon, une bande presque noire qui ne bouge pas (le sol
+  `Land` de `Home.tsx` et les rochers d'encre : 170 à 590 px sur 1920, luminosité du dernier dixième de l'image autour de 6
+  sur 255) ; les reels de quran-reels n'en ont plus depuis leur correction du 13 novembre (la colline de la nuit).
+- **Décidé par le propriétaire le 2026-11-22** (questions à choix) : le gabarit corrigé, la scène descend sous les
+  sous-titres, **essai sur les trois shorts de la caverne** (1er au 3 décembre ; pas sur Dhul-Qarnayn, déjà dans l'essai de
+  la version courte), jugé à la revue du 6 décembre ; puis, sur images fixes (ciel de remplacement, faute de clé Pixabay dans
+  la session) : « Oui, rends-les ainsi ».
+- **Fait** : `LitGround` (`Home.tsx`) et `Land … lit`, un sol de la couleur de la pierre (froide la nuit, chaude au couchant),
+  un grain et des plaques de bruit fractal, une lueur sous la crête, trois bancs de brume qui passent chacun à son pas ;
+  `Rock … lit` (`Kahf.tsx`), une pierre en dégradé avec son grain, l'entrée de la caverne toujours sombre ; le short 3, les
+  parois autour de l'arche en pierre éclairée par l'ouverture, une poussière qui passe dans la lumière. Le dernier dixième
+  de l'image passe d'environ 6 à 35 de luminosité ; les scènes jouées (bonshommes) ne changent pas. Seuls les dessins de la
+  caverne l'emploient (vertical) ; les autres vidéos et le film 16:9 restent tels quels.
+- **Rendu par le workflow `film`** (run 45066355335, les trois shorts, leurs versions TikTok et leurs couvertures, release
+  brouillon `kahf-candidate`) : la bande sombre du bas a disparu (0 image sur 70 à 73, contre 57 à 64 avant), les bandes des
+  côtés de l'arche du short 3 aussi ; durées inchangées. Reste le haut du short 1, un ciel de nuit presque noir (le clip de la
+  fuite), laissé tel quel. **Les shorts 1 et 3 validés par le propriétaire le 2026-11-22** (question à choix : « 1 et 3
+  validés, adoucir le 2 ») ; le short 2, dont la pierre chaude faisait des taches, refait avec un grain plus fin et le pied du
+  rocher fondu dans le sol (les shorts 1 et 3 rendus à l'identique), à valider sur vidéo avant `page-files kahf`.
+- **Le short 2 refait** (run 45070698270 : 1:12, −16,1 LUFS, aucune bande en bas) **validé par le propriétaire le 2026-11-22**
+  (« je valide le short 2 », avec sa version TikTok et sa couverture). Les trois shorts de la caverne à sol éclairé sont
+  publics (`page-files kahf`) : ce sont eux qui sortent les 1er, 2 et 3 décembre. L'essai se juge à la revue du 6 décembre
+  (quran-reels, `docs/insights.md`, `trials`).
+
