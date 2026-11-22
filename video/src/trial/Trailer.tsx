@@ -451,7 +451,7 @@ const Sources: React.FC<{ t: number; w: number; h: number; wide: boolean }> = ({
 
 // ------------------------------------------------------------------------------------------------- 7. the call
 
-const Follow: React.FC<{ t: number; w: number; h: number; wide: boolean }> = ({ t, w, h, wide }) => {
+const Follow: React.FC<{ t: number; w: number; h: number; wide: boolean; handle: string }> = ({ t, w, h, wide, handle }) => {
   const show = rise(t, T.follow, 0.35);
   if (show <= 0) return null;
   const second = T.say8 + D.voice[7].phrases[1];
@@ -477,7 +477,7 @@ const Follow: React.FC<{ t: number; w: number; h: number; wide: boolean }> = ({ 
             <circle cx={32} cy={49} r={6} fill={pressed ? GOLD : PALE} />
           </svg>
         </div>
-        <div style={{ fontFamily: FONT.latin, fontWeight: 700, fontSize: wide ? 56 : 60, color: GOLD, opacity: rise(t, T.press + 0.3, 0.4) }}>{D.handle}</div>
+        <div style={{ fontFamily: FONT.latin, fontWeight: 700, fontSize: wide ? 56 : 60, color: GOLD, opacity: rise(t, T.press + 0.3, 0.4) }}>{handle}</div>
       </div>
     </AbsoluteFill>
   );
@@ -485,7 +485,11 @@ const Follow: React.FC<{ t: number; w: number; h: number; wide: boolean }> = ({ 
 
 // ------------------------------------------------------------------------------------------------- the video
 
-export const Trailer: React.FC = () => {
+/** `handle`: the page's name at the end; on TikTok the page is `@quran.words.daily` (`@quran_words_daily` is someone
+ * else's account there): the 9:16 is rendered a second time signed with it (Trailer916TikTok). */
+export type TrailerProps = { handle: string };
+
+export const Trailer: React.FC<TrailerProps> = ({ handle }) => {
   const frame = useCurrentFrame();
   const { fps, width: w, height: h } = useVideoConfig();
   const t = frame / fps;
@@ -500,7 +504,7 @@ export const Trailer: React.FC = () => {
       <Life t={t} w={w} wide={wide} fps={fps} />
       <Series t={t} w={w} wide={wide} />
       <Sources t={t} w={w} h={h} wide={wide} />
-      <Follow t={t} w={w} h={h} wide={wide} />
+      <Follow t={t} w={w} h={h} wide={wide} handle={handle} />
       <Html5Audio src={staticFile("trial/trailer/audio.wav")} />
     </AbsoluteFill>
   );
@@ -508,3 +512,5 @@ export const Trailer: React.FC = () => {
 
 export const TRAILER_FRAMES = Math.ceil(D.seconds * D.fps);
 export const TRAILER_FPS = D.fps;
+export const TRAILER_HANDLE = D.handle;
+export const TIKTOK_HANDLE = "@quran.words.daily";

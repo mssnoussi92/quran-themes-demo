@@ -956,3 +956,9 @@ et qui attire ». L'avis de la session, donné avant : la page de la chaîne pè
   `video/src/trial/Trailer.tsx` (compositions `Trailer169`, `Trailer916`) ; rendus dans la session (49,2 s), envoyés dans la
   conversation. Texte YouTube (titre, description, voix IA déclarée, sans crédits) validé par lui. **Tout validé par lui le
   2026-11-22.** À mettre en ligne par lui, puis Studio → Personnalisation → Page d'accueil → « Bande-annonce de la chaîne ».
+- **Publiée par quran-reels** (sa demande, la même nuit : « publie-les automatiquement, je gère l'épingle et la bande-annonce ») :
+  dimanche 22 à 14 h, comme un film et son jumeau 9:16 (YouTube le 16:9, Facebook et Instagram le 9:16 après la vérification
+  de Meta, TikTok en brouillon le jumeau signé `@quran.words.daily`), sa légende courte validée par lui
+  (`publication-trailer-9x16.md`) ; les fichiers rendus par le workflow `trailer` dans les pré-releases publiques `page-trailer`
+  et `page-trailer-9x16`. L'avis de la session, donné avant : pour une seule publication, la main est plus simple (5 minutes) ;
+  son choix : l'automatique, réutilisable à la prochaine version.
