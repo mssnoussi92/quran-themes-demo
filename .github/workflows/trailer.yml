@@ -1,0 +1,107 @@
+name: trailer
+
+# The channel's trailer (content/trial/trailer.yaml; validated by the owner on 2026-11-22), rendered here and made public
+# for quran-reels, which publishes it like a film and its 9:16 twin (docs/retention/publication-trailer*.md, the row of
+# docs/retention/calendar.md):
+#   - tools/trial/trailer.py: the reel's 105:3, the covers, the played scenes (all from public releases), the voice's lines
+#     found in the committed take (Whisper: no request is made to Gemini here), the mix, video/src/trial/trailerData.ts;
+#   - Remotion: Trailer169 (YouTube), Trailer916 (Facebook, Instagram), Trailer916TikTok (signed @quran.words.daily),
+#     the YouTube thumbnail (Trailer169 at 2.75 s, 1280x720) and the 9:16 cover (Trailer916 at 2.75 s);
+#   - the public pre-releases page-trailer (16:9, thumbnail) and page-trailer-9x16 (9:16, TikTok, cover), made again.
+# By hand only (Actions → trailer → Run workflow): a new series in the calendar means a new trailer (CLAUDE.md).
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trailer
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v7
+
+      # No apt (CLAUDE.md of quran-reels: the Ubuntu mirror can hang for an hour): a static ffmpeg on PATH.
+      - name: ffmpeg (static build)
+        run: |
+          uv venv .venv-tools
+          uv pip install --python .venv-tools/bin/python imageio-ffmpeg==0.8.1
+          mkdir -p "$HOME/.local/bin"
+          ln -sf "$(.venv-tools/bin/python -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())')" "$HOME/.local/bin/ffmpeg"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: video/package-lock.json
+
+      - name: Video dependencies
+        working-directory: video
+        run: npm ci --no-audit --no-fund
+
+      # check.py calls ffprobe: the one that ships with Remotion, run with its own libraries.
+      - name: ffprobe (the one that ships with Remotion)
+        run: |
+          dir="$GITHUB_WORKSPACE/video/node_modules/@remotion/compositor-linux-x64-gnu"
+          test -x "$dir/ffprobe" || { echo "::error::no ffprobe in $dir"; exit 1; }
+          printf '#!/bin/sh\nLD_LIBRARY_PATH="%s" exec "%s/ffprobe" "$@"\n' "$dir" "$dir" > "$HOME/.local/bin/ffprobe"
+          chmod +x "$HOME/.local/bin/ffprobe"
+
+      - name: Cache model weights
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/huggingface
+          key: hf-film-whisper-v1
+
+      - name: Extract, voice, mix
+        run: uv run --with pyyaml --with faster-whisper==1.1.1 --with numpy python3 tools/trial/trailer.py
+
+      - name: Render
+        working-directory: video
+        run: |
+          mkdir -p out/trailer
+          npx remotion render src/index.ts Trailer169 out/trailer/trailer-film-16x9.mp4 --concurrency=100% --crf=18
+          npx remotion render src/index.ts Trailer916 out/trailer/trailer-film-9x16.mp4 --concurrency=100% --crf=18
+          npx remotion render src/index.ts Trailer916TikTok out/trailer/trailer-film-9x16-tiktok.mp4 --concurrency=100% --crf=18
+          npx remotion still src/index.ts Trailer169 out/trailer/thumbnail.png --frame=82 --scale=0.6667
+          npx remotion still src/index.ts Trailer916 out/trailer/cover.png --frame=82
+          ffmpeg -loglevel error -y -i out/trailer/thumbnail.png -q:v 3 out/trailer/trailer-thumbnail.jpg
+          ffmpeg -loglevel error -y -i out/trailer/cover.png -q:v 3 out/trailer/trailer-film-9x16-cover.jpg
+          ls -la out/trailer
+
+      - name: Check
+        run: |
+          for f in trailer-film-16x9 trailer-film-9x16 trailer-film-9x16-tiktok; do
+            python3 tools/trial/check.py "video/out/trailer/$f.mp4" --at 0.5 2.7 5.5 9.6 11.6 16.5 20 25 28 32.5 35.2 39.5 41.8 46.5 \
+              --out "video/out/trailer/$f-frames.jpg" || echo "::warning::check.py found a problem in $f"
+          done
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: trailer
+          path: video/out/trailer/
+          if-no-files-found: error
+
+      # Public pre-releases, made again each time (quran-reels reads its files there, by their names).
+      - name: Publish the files
+        run: |
+          publish() {
+            tag="$1"; title="$2"; shift 2
+            gh release delete "$tag" --yes --cleanup-tag 2>/dev/null || true
+            gh release create "$tag" --prerelease --title "$title" \
+              --notes "The channel's trailer, validated by the owner on 2026-11-22 (content/trial/trailer.yaml). Made by the workflow trailer, run ${{ github.run_id }}." "$@"
+          }
+          cd video/out/trailer
+          publish page-trailer "Page: trailer (validated, public)" trailer-film-16x9.mp4 trailer-thumbnail.jpg
+          publish page-trailer-9x16 "Page: trailer-9x16 (validated, public)" trailer-film-9x16.mp4 trailer-film-9x16-tiktok.mp4 trailer-film-9x16-cover.jpg

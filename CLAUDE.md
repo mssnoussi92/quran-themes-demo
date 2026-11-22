@@ -231,6 +231,8 @@ La session est l'orchestrateur : elle fait le plan, confie ce qui s'y prête, re
 - **La bande-annonce de la chaîne** (sa demande, 2026-11-22) : 49 s, 16:9 pour la page d'accueil de YouTube et 9:16 à épingler
   ailleurs, le mot « أبابيل » et son reel, 1887 passages, les histoires dessinées, les leçons de vie jouées, les dix séries,
   les sources ; **tout validé par lui le 2026-11-22** (script, voix, vidéos, texte YouTube ; `content/trial/trailer.yaml`,
-  `docs/history.md`). Rendue dans la session, envoyée dans la conversation ; à mettre en ligne par lui. Une série nouvelle
-  au calendrier : refaire le temps des séries (`series` du fichier, `tools/trial/trailer.py`, rendu des deux formats).
+  `docs/history.md`). **Publiée par quran-reels le dimanche 22 à 14 h** (sa demande : une ligne du calendrier,
+  `publication-trailer.md` et `-9x16.md`, ses fichiers rendus par le workflow `trailer` dans `page-trailer` et `page-trailer-9x16`) ;
+  il l'épingle et la met en bande-annonce lui-même. Une série nouvelle au calendrier : refaire le temps des séries (`series`
+  du fichier), puis le workflow `trailer`.
 - **Rendu dans GitHub Actions** : en service depuis le 2026-11-11 (workflow `film`, skill `release-render` §0) : sept vidéos en 70 minutes, release brouillon `<files>-candidate`, `from_run` pour republier sans re-rendre. Le premier film (qui lit un ancien épisode) se rend encore dans la session.

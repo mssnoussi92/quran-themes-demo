@@ -102,6 +102,7 @@ film du jour, Instagram seul, à 18 h (19 h jusqu'au 2026-11-19 ; 13 h à partir
 | ~~jeu. 19 nov.~~ | ~~Du'a, short 3 : Zakariya~~ | les quatre | release `dua-candidate` | « Short 3 » |
 | ~~ven. 20 nov.~~ | ~~« آية وحكايتها » 1 : la caravane~~ | les quatre | release `ayah-candidate` | `publication-ayah.md` : « Short 1 » |
 | sam. 21 nov. | « سنريهم آياتنا » 1 : Abou Lahab | les quatre | release `signs-candidate` | `publication-signs.md` : « Short 1 » |
+| dim. 22 nov., 14 h | La bande-annonce de la chaîne (sa demande du 2026-11-22 : publiée par quran-reels à 14 h ; il l'épingle et la met en bande-annonce lui-même) | YouTube (16:9) ; Facebook, Instagram, TikTok (vertical ; TikTok : `trailer-film-9x16-tiktok.mp4`, signé `@quran.words.daily`) | releases `page-trailer`, `page-trailer-9x16` | `publication-trailer.md` : « Le film » ; `publication-trailer-9x16.md` |
 | lun. 23 nov., soir | Dhul-Qarnayn : le film | YouTube (16:9) ; Facebook (vertical) ; TikTok (le film vertical signé `@quran.words.daily`, `qarnayn-film-9x16-tiktok.mp4`) | releases `qarnayn-candidate`, `qarnayn-9x16-candidate` | `publication-qarnayn.md` : « Le film » ; `publication-qarnayn-9x16.md` |
 | lun. 23 nov. | « معاك 5 ثواني » 1 : «سيارة» في سورة يوسف؟ (12:19) | Instagram | release `quiz-candidate` | `publication-quiz.md` : « Short 1 » |
 | mar. 24 nov. | Dhul-Qarnayn, short 1 : le couchant | les quatre | release `qarnayn-candidate` | `publication-qarnayn.md` : « Short 1 » |
