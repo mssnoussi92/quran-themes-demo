@@ -999,4 +999,10 @@ et qui attire ». L'avis de la session, donné avant : la page de la chaîne pè
   parois autour de l'arche en pierre éclairée par l'ouverture, une poussière qui passe dans la lumière. Le dernier dixième
   de l'image passe d'environ 6 à 35 de luminosité ; les scènes jouées (bonshommes) ne changent pas. Seuls les dessins de la
   caverne l'emploient (vertical) ; les autres vidéos et le film 16:9 restent tels quels.
+- **Rendu par le workflow `film`** (run 45066355335, les trois shorts, leurs versions TikTok et leurs couvertures, release
+  brouillon `kahf-candidate`) : la bande sombre du bas a disparu (0 image sur 70 à 73, contre 57 à 64 avant), les bandes des
+  côtés de l'arche du short 3 aussi ; durées inchangées. Reste le haut du short 1, un ciel de nuit presque noir (le clip de la
+  fuite), laissé tel quel. **Les shorts 1 et 3 validés par le propriétaire le 2026-11-22** (question à choix : « 1 et 3
+  validés, adoucir le 2 ») ; le short 2, dont la pierre chaude faisait des taches, refait avec un grain plus fin et le pied du
+  rocher fondu dans le sol (les shorts 1 et 3 rendus à l'identique), à valider sur vidéo avant `page-files kahf`.
 
