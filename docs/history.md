@@ -933,3 +933,26 @@ La session a rappelé ce que dit YouTube : l'heure n'a « a priori pas de consé
 terme » ; ce qui freine les shorts thématiques sur YouTube est surtout la part regardée (49 % en médiane contre 105 % pour les
 reels, 246 vues contre 977) : l'essai des versions courtes reste le levier principal.
 
+## 2026-11-22 — La bande-annonce de la chaîne
+
+Sa demande : une vidéo bande-annonce pour la page d'accueil de la chaîne YouTube, « qui décrit nos contenus de façon animée
+et qui attire ». L'avis de la session, donné avant : la page de la chaîne pèse peu (122 vues sur 21 240 du 4 au 21 novembre,
+0,6 % ; le fil des Shorts 86,7 %, la recherche 10,6 %), donc un montage léger plutôt qu'un film, en 16:9 pour YouTube et en
+9:16 à épingler sur Instagram, TikTok et Facebook. Son choix : « montage seulement », avec la voix du narrateur.
+
+- **Le script** (validé par lui, sept temps, puis un huitième à sa demande) : « « أبابيل »… تعرف معناها؟ » sur le mot
+  pris du registre (105:3, ajouté) ; l'extrait de son reel le plus vu (سورة الفيل, 1 709 vues, 105:3 récité en entier par
+  Tawfiq As-Sayegh, mots vérifiés par Whisper), puis le crédit du récitateur et l'encadré du Muyassar entourés en or ; un
+  point par passage jusqu'à 1887 (compté dans `config/plan.yaml` de quran-reels) ; les histoires dans les vignettes
+  dessinées de ses films (`ThumbArt.tsx`) ; les leçons de vie (« إجابات من القرآن والسنة في كل جوانب حياتك », sa phrase,
+  et trois scènes jouées par des personnages, muettes et recadrées sans leur texte) ; les dix séries du calendrier sur YouTube
+  (sans le quiz d'Instagram, son choix) avec leurs couvertures ; les sources ; « اشترك… ».
+- **La voix** ne dit ni « أبابيل » (pas de synthèse vocale sur le Coran) ni le nom du tafsir (sa règle du 2026-11-13) : écrits
+  à l'écran. Deux requêtes dans la journée (le texte v1, puis le texte v2 de huit lignes), validés avant chacune.
+- **Le 16:9** (sa remarque sur la version 1 : « on ne voit pas bien le contenu ») : le reel filmé de près, la caméra sur le
+  verset pendant la récitation puis sur le crédit et l'encadré ; les images verticales trois par trois, côte à côte. Le 9:16
+  garde une image à la fois.
+- **Fichiers** : `content/trial/trailer.yaml`, `tools/trial/trailer.py` (extraits, mixage à −16 LUFS, `trailerData.ts`),
+  `video/src/trial/Trailer.tsx` (compositions `Trailer169`, `Trailer916`) ; rendus dans la session (49,2 s), envoyés dans la
+  conversation. Texte YouTube (titre, description, voix IA déclarée, sans crédits) validé par lui. **Tout validé par lui le
+  2026-11-22.** À mettre en ligne par lui, puis Studio → Personnalisation → Page d'accueil → « Bande-annonce de la chaîne ».

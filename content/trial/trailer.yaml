@@ -1,0 +1,115 @@
+# The channel's trailer (YouTube: the video the channel's home shows to visitors who are not subscribed; owner,
+# 2026-11-22: « je veux créer une vidéo bande annonce de la chaîne », then « je veux que le montage décrit nos contenus
+# de façon animée et qui attire »). About 40 s, in 16:9 (the trailer) and 9:16 (to pin on Instagram, TikTok and
+# Facebook). Built by tools/trial/trailer.py (the audio, the extract, video/src/trial/trailerData.ts) and drawn by
+# video/src/trial/Trailer.tsx (compositions Trailer169 and Trailer916).
+#
+# The session's view, given before (2026-11-22): visits from the channel's page were 0.6 % of the views (122 of 21 240,
+# 4 to 21 November; Shorts feed 86.7 %, search 10.6 %): a light montage, not a film. His choice: « montage seulement »,
+# animated. No filmed clip but the reel's: the stories are the thumbnails he had drawn for his films (ThumbArt.tsx, his
+# choice of 2026-11-21: « entièrement dessinée »), the series their validated covers (releases page-<doc>).
+#
+# Script validated by the owner on 2026-11-22 (question with choices: « Je valide ce script », the seven beats and
+# their texts as written below), then the narration (« Avec la voix du narrateur ») and its text (« Je valide ce
+# texte »: the six lines of content/voice-test/108-trial-trailer.txt). The voice never says the Quran's word « أبابيل »
+# (rule: no synthetic voice on the Quran; the reciter says it first) nor the tafsir's name (his rule of 2026-11-13):
+# both stay written on screen.
+#
+# Second version (2026-11-22), the owner's requests on the first videos: « mentionner toutes les séries » (those of the
+# calendar: the ten of YouTube, without the Instagram quiz, his choice), « améliorer l'affichage sur le 16:9 » (the reel
+# filmed close: verse, credit, gloss box; the vertical pictures side by side), and the life lessons: « إجابات من القرآن
+# والسنة في كامل جوانب حياتك… mettre en avant que les situations sont jouées par des personnages ». His « je valide » on
+# the new voice text (eight lines, the fifth and sixth new: « كامل » written « كل », same meaning).
+script_validated: { by: mssnoussi92, on: 2026-11-22, what: [script, voice text, voice text v2] }
+# His « je valide » on the second version as sent in the conversation (49.2 s, 16:9 and 9:16, 2026-11-22): the voice,
+# the montage, the sound. Recorded on his word.
+validated: { by: mssnoussi92, on: 2026-11-22, what: [voice, montage, sound] }
+# Its YouTube title and description, validated by him the same day (« Je valide ce titre et cette description »).
+publish:
+  youtube:
+    title: "القرآن كل صباح… آية تفهمها · The Quran every morning, a verse you understand"
+    description: |-
+      كل صباح مقطع من القرآن بصوت قارئ حقيقي، مع الترجمة ومعنى الكلمة الصعبة. وقصص القرآن بالرسم، وسلاسل من الاثنين إلى السبت. كل آية وكل حديث من مصدر منشور.
+
+      A passage of the Quran every morning, recited by a real reciter, with the translation and the hard word explained. Stories of the Quran, drawn, and series, Monday to Saturday. Every verse and hadith from a published source.
+
+      🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+
+      #القرآن_الكريم #QuranWordsDaily #Quran
+    validated: { by: mssnoussi92, on: 2026-11-22 }
+handle: "@quran_words_daily"
+voice: D
+text: 108-trial-trailer
+take: content/trial/takes/D-trial-trailer.flac
+sources: [quran.105.3]
+
+# The reel of Surah Al-Fil (quran-reels, 2026-11-17, the channel's most watched video: 1 709 views on 2026-11-21), its
+# YouTube version recited by Tawfiq As-Sayegh: 105:3 alone, its screen from 11.97 s to 16.85 s (the verse's words
+# checked by Whisper on the cut, nothing of 105:2 nor 105:4 in it; 105:3 recited whole: the owner's rule).
+reel:
+  url: https://github.com/mssnoussi92/quran-reels/releases/download/reels/2026-11-17-morning-105_001-005-youtube.mp4
+  verse: quran.105.3
+  word: -1                    # « أبابيل »: the verse's last word, taken from the registry
+  start: 11.97
+  end: 16.85
+
+# The whole Quran in the passages of quran-reels' plan, counted from its file, never typed.
+plan: https://raw.githubusercontent.com/mssnoussi92/quran-reels/main/config/plan.yaml
+
+stories:                      # ThumbArt.tsx scenes; `focus`: the x (of 1920) the 9:16 frame centres on
+  - { art: moussa-boat, focus: 1380, ar: "موسى والخضر", en: "Moses and al-Khidr" }
+  - { art: qarnayn-barrier, focus: 1290, ar: "ذو القرنين", en: "Dhul-Qarnayn" }
+  - { art: kahf-refuge, focus: 760, ar: "أصحاب الكهف", en: "The People of the Cave" }
+
+# Situations played by drawn characters (the life lessons): six seconds of three shorts, muted (their narration is the
+# synthetic voice), cropped to the played scene (`crop`: from and to, shares of the height, the same 0.37 for all; between
+# their narration above and their subtitles under it: no text of theirs in the picture).
+life:
+  - { video: page-ayah/ayah-short-2-duha.mp4, start: 67.5, crop: [0.33, 0.70] }
+  - { video: page-hayyin/hayyin-short-1-ghiba.mp4, start: 45.0, crop: [0.395, 0.765] }
+  - { video: page-qadar/qadar-short-1-amal.mp4, start: 63.0, crop: [0.405, 0.775] }
+
+series:                       # the series of the calendar on YouTube, in its order (validated covers, public releases)
+  - { cover: page-ayah/ayah-short-1-caravan-cover.jpg, ar: "آية وحكايتها", en: "A Verse and Its Story" }
+  - { cover: page-signs/signs-short-1-lahab-cover.jpg, ar: "سنريهم آياتنا", en: "We Will Show Them Our Signs" }
+  - { cover: page-qadar/qadar-short-1-amal-cover.jpg, ar: "مخيّر ولا مسيّر؟", en: "Free will or fate?" }
+  - { cover: page-hayyin/hayyin-short-1-ghiba-cover.jpg, ar: "وتحسبونه هيّنًا", en: "You Think It Is Small" }
+  - { cover: page-farq/farq-short-1-rizq-cover.jpg, ar: "لاحظت الفرق؟", en: "Did You Notice the Difference?" }
+  - { cover: page-sual/sual-short-1-dank-cover.jpg, ar: "سؤال صعب", en: "A Hard Question" }
+  - { cover: page-kalima/kalima-short-1-kanud-cover.jpg, ar: "كلمة من القرآن", en: "A Word of the Quran" }
+  - { cover: page-sahw/sahw-short-1-sahun-cover.jpg, ar: "إزاي أعملها؟", en: "How Do I Do It?" }
+  - { cover: page-lens/lens-short-1-blackout-figure-cover.jpg, ar: "بص تاني", en: "Look Again" }
+  - { cover: page-map/map-short-1-qalb-cover.jpg, ar: "خريطة كلمة", en: "The Map of a Word" }
+
+# The beats, as validated. `say`: the line(s) of the voice text said in it (1 to 8).
+beats:
+  hook:
+    ar: "«{word}»… تعرف معناها؟"
+    en: "\"Ababil\"… do you know what it means?"
+    say: 1
+  verse:
+    labels:
+      - { ar: "تلاوة بصوت قارئ حقيقي", en: "Recited by a real reciter" }
+      - { ar: "ومعنى الكلمة الصعبة من التفسير الميسر", en: "The hard word explained, from Tafsir al-Muyassar" }
+    say: 2
+  count:
+    ar: ["كل صباح مقطع…", "والقرآن كله {passages} مقطع"]
+    en: ["A passage every morning…", "the whole Quran in {passages}"]
+    say: 3
+  stories:
+    ar: "قصص القرآن… بالرسم"
+    en: "Stories of the Quran, drawn"
+    say: 4
+  life:
+    ar: ["إجابات من القرآن والسنة في كل جوانب حياتك", "مواقف من حياتنا… بتمثّلها شخصيات مرسومة"]
+    en: ["Answers from the Quran and the Sunnah, for every part of your life", "Situations from our lives, acted out by drawn characters"]
+    say: [5, 6]
+  series: {}
+  sources:
+    ar: "كل آية وكل حديث من مصدر منشور"
+    en: "Every verse and hadith from a published source"
+    say: 7
+  follow:
+    ar: ["اشترك…", "كل صباح آية تفهمها"]
+    en: ["Subscribe:", "every morning, a verse you understand"]
+    say: 8

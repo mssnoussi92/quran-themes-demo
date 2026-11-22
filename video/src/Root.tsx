@@ -18,6 +18,7 @@ import type { ThumbFrameProps } from "./trial/ThumbFrame";
 import { Film, FilmTall, filmMetadata } from "./trial/Film";
 import type { FilmProps } from "./trial/Film";
 import { SahibStyle } from "./trial/Sahib";
+import { TRAILER_FPS, TRAILER_FRAMES, Trailer } from "./trial/Trailer";
 import type { SahibStyleProps } from "./trial/Sahib";
 
 // One composition per format, both fed by the same episode script.
@@ -65,6 +66,9 @@ export const RemotionRoot: React.FC = () => (
     {/* The same film in 9:16, laid out as its shorts are: for the platforms whose player is vertical. */}
     <Composition id="TrialFilm916" component={FilmTall} fps={TRIAL_FPS} durationInFrames={1} width={1080} height={1920}
       defaultProps={{ film: "film", voice: "D", data: null } satisfies FilmProps} calculateMetadata={filmMetadata} />
+    {/* The channel's trailer (content/trial/trailer.yaml, 2026-11-22): 16:9 for YouTube, 9:16 to pin elsewhere. */}
+    <Composition id="Trailer169" component={Trailer} fps={TRAILER_FPS} durationInFrames={TRAILER_FRAMES} width={1920} height={1080} />
+    <Composition id="Trailer916" component={Trailer} fps={TRAILER_FPS} durationInFrames={TRAILER_FRAMES} width={1080} height={1920} />
     <Composition id="TrialThumb169" component={TrialThumb} fps={TRIAL_FPS} durationInFrames={60} width={THUMB.width} height={THUMB.height}
       defaultProps={{ film: "film", voice: "X", data: null, panels: null } satisfies ThumbProps} calculateMetadata={thumbMetadata} />
     {/* The dedicated thumbnail of a film (2026-11-21): one scene of the clean film, frozen at the option's moment, two lines

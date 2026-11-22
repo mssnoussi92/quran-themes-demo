@@ -3889,3 +3889,19 @@
   notes: "« وتحسبونه هيّنًا وهو عند الله عظيم » : le verset qui donne son nom à la série, récité dans son film (choix du propriétaire, 2026-11-21)"
   text_ar: إِذْ تَلَقَّوْنَهُۥ بِأَلْسِنَتِكُمْ وَتَقُولُونَ بِأَفْوَاهِكُم مَّا لَيْسَ لَكُم بِهِۦ عِلْمٌ وَتَحْسَبُونَهُۥ هَيِّنًا وَهُوَ عِندَ ٱللَّهِ عَظِيمٌ
   text_en: When you received it with your tongues and said with your mouths that of which you had no knowledge and thought it was insignificant while it was, in the sight of Allāh, tremendous.
+- id: quran.105.3
+  type: ayah
+  ref: {surah: 105, ayah: 3}
+  url: https://quran.com/105/3
+  origin:
+    api: quran.com v4
+    text_ar: https://api.quran.com/api/v4/quran/verses/uthmani?verse_key=105:3
+    text_en: https://api.quran.com/api/v4/quran/translations/20?verse_key=105:3
+    translator: Saheeh International
+    surah_ar: الفيل
+    surah_en: Al-Fil
+    retrieved: '2026-11-22'
+  status: proposed
+  notes: Al-Fil 105:3, « طيرًا أبابيل » ; le mot « أبابيل » écrit en or au début de la bande-annonce de la chaîne (trailer), récité par Tawfiq As-Sayegh dans l'extrait du reel de quran-reels (2026-11-17)
+  text_ar: وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ
+  text_en: And He sent against them birds in flocks,
