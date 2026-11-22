@@ -1005,4 +1005,8 @@ et qui attire ». L'avis de la session, donné avant : la page de la chaîne pè
   fuite), laissé tel quel. **Les shorts 1 et 3 validés par le propriétaire le 2026-11-22** (question à choix : « 1 et 3
   validés, adoucir le 2 ») ; le short 2, dont la pierre chaude faisait des taches, refait avec un grain plus fin et le pied du
   rocher fondu dans le sol (les shorts 1 et 3 rendus à l'identique), à valider sur vidéo avant `page-files kahf`.
+- **Le short 2 refait** (run 45070698270 : 1:12, −16,1 LUFS, aucune bande en bas) **validé par le propriétaire le 2026-11-22**
+  (« je valide le short 2 », avec sa version TikTok et sa couverture). Les trois shorts de la caverne à sol éclairé sont
+  publics (`page-files kahf`) : ce sont eux qui sortent les 1er, 2 et 3 décembre. L'essai se juge à la revue du 6 décembre
+  (quran-reels, `docs/insights.md`, `trials`).
 
