@@ -43,6 +43,7 @@ DATA = ROOT / "video" / "src" / "trial" / "trailerData.ts"
 RELEASES = "https://github.com/mssnoussi92/quran-themes-demo/releases/download"
 TARGET, PEAK = -16.0, 10 ** (-1.9 / 20)
 SFX_GAIN = 0.32                      # effects under the voice, never over it
+LIFE_SECONDS = 9                     # each played scene's extract
 
 
 def fetch(url: str, path: Path) -> Path:
@@ -145,9 +146,24 @@ def main() -> int:
     # Covers of the series.
     covers = []
     for i, s in enumerate(spec["series"]):
-        name = f"series-{i + 1}.jpg"
+        name = f"series-{Path(s['cover']).stem}.jpg"      # named after the cover: a cached file is never another's
         fetch(f"{RELEASES}/{s['cover']}", OUT / name)
         covers.append({"file": f"trial/trailer/{name}", "ar": s["ar"], "en": s["en"]})
+
+    # The situations played by drawn characters: nine seconds each (the beat lasts about eight), muted, cropped.
+    life = []
+    for i, c in enumerate(spec["life"]):
+        src = fetch(f"{RELEASES}/{c['video']}", CACHE / Path(c["video"]).name)
+        top, bottom = c["crop"]
+        name = f"life-{i + 1}.mp4"
+        ffmpeg("-ss", f"{c['start']:.3f}", "-t", str(LIFE_SECONDS), "-i", str(src), "-an", "-r", str(FPS),
+               "-vf", f"crop=1080:{round((bottom - top) * 1920)}:0:{round(top * 1920)},scale=1080:-2",
+               "-c:v", "libx264", "-preset", "fast", "-crf", "17", "-pix_fmt", "yuv420p", str(OUT / name))
+        life.append(f"trial/trailer/{name}")
+    heights = {round(c["crop"][1] - c["crop"][0], 3) for c in spec["life"]}
+    if len(heights) > 1:
+        raise SystemExit(f"error: the played scenes must be cropped to one height (life.crop): {sorted(heights)}")
+    life_ratio = round(1080 / (heights.pop() * 1920), 4)
 
     # The voice.
     lines = voice_lines(ROOT / spec["take"], ROOT / "content" / "voice-test" / f"{spec['text']}.txt")
@@ -169,20 +185,24 @@ def main() -> int:
     t["stories"] = round(t["say3"] + dur[2] + 0.55, 2)
     t["say4"] = round(t["stories"] + 0.2, 2)
     scene = 2.3
-    t["series"] = round(t["stories"] + 3 * scene, 2)
-    card = 1.15
-    t["sources"] = round(t["series"] + len(covers) * card + 0.15, 2)
-    t["say5"] = round(t["sources"] + 0.2, 2)
-    t["follow"] = round(t["say5"] + dur[4] + 0.5, 2)
-    t["say6"] = round(t["follow"] + 0.2, 2)
-    t["press"] = round(t["say6"] + lines[5]["phrases"][1] - 0.25, 2)
-    t["end"] = round(t["say6"] + dur[5] + 2.2, 2)
+    t["life"] = round(t["stories"] + 3 * scene, 2)
+    t["say5"] = round(t["life"] + 0.2, 2)
+    t["say6"] = round(t["say5"] + dur[4] + 0.35, 2)
+    t["series"] = round(t["say6"] + dur[5] + 0.45, 2)
+    card = 0.6                       # a cover every 0.6 s (in 16:9, three side by side: 3, 3, 2, 2)
+    t["sources"] = round(t["series"] + len(covers) * card + 0.2, 2)
+    t["say7"] = round(t["sources"] + 0.2, 2)
+    t["follow"] = round(t["say7"] + dur[6] + 0.5, 2)
+    t["say8"] = round(t["follow"] + 0.2, 2)
+    t["press"] = round(t["say8"] + lines[7]["phrases"][1] - 0.25, 2)
+    t["end"] = round(t["say8"] + dur[7] + 2.2, 2)
     quiet = [(t["verse"], t["verse_end"])]
 
     # The effects: never under the verse.
     events = [(0.05, "impact"), (t["verse"] - 0.8, "whoosh"), (t["labels"], "pop"), (t["label2"], "pop"),
               (t["count"] - 0.3, "whoosh"), (t["number"], "pops"), (t["number"] + 1.15, "impact"),
-              (t["stories"] - 0.3, "whoosh"), (t["stories"] + scene - 0.25, "whoosh"), (t["stories"] + 2 * scene - 0.25, "whoosh")]
+              (t["stories"] - 0.3, "whoosh"), (t["stories"] + scene - 0.25, "whoosh"), (t["stories"] + 2 * scene - 0.25, "whoosh"),
+              (t["life"] - 0.3, "whoosh"), (t["say6"] - 0.1, "whoosh"), (t["series"] - 0.3, "whoosh")]
     events += [(t["series"] + k * card, "pop") for k in range(len(covers))]
     events += [(t["sources"] + 1.0 + k * 0.35, "click") for k in range(4)]
     events += [(t["follow"] - 0.3, "whoosh"), (t["press"], "click")]
@@ -228,6 +248,8 @@ def main() -> int:
         "count": {"ar": [fill(x) for x in beats["count"]["ar"]],
                   "en": [x.replace("{passages}", f"{passages:,}") for x in beats["count"]["en"]]},
         "stories": {"ar": beats["stories"]["ar"], "en": beats["stories"]["en"], "scenes": spec["stories"]},
+        "life": {"ar": beats["life"]["ar"], "en": beats["life"]["en"], "clips": life, "ratio": life_ratio,
+                 "seconds": LIFE_SECONDS},
         "series": covers,
         "sources": {"ar": beats["sources"]["ar"], "en": beats["sources"]["en"]},
         "follow": {"ar": beats["follow"]["ar"], "en": beats["follow"]["en"]},

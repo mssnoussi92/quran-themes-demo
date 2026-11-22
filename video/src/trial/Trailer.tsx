@@ -120,36 +120,45 @@ const CREDIT = { x: 0.2, y: 0.725, w: 0.6, h: 0.06 };
 const Verse: React.FC<{ t: number; w: number; h: number; wide: boolean; fps: number }> = ({ t, w, h, wide, fps }) => {
   const show = window_(t, T.verse - 0.05, T.count, 0.3);
   if (show <= 0) return null;
-  const cardH = wide ? 940 : 1180;
-  const cardW = (cardH * 9) / 16;
-  const slide = rise(t, T.labels - 0.15, 0.5);
-  const cx = wide ? w / 2 + slide * (w * 0.2) : w / 2;
-  const cy = wide ? h / 2 : 140 + cardH / 2;
   const enter = pop(t, T.verse - 0.05, 0.5);
-  const box = (r: { x: number; y: number; w: number; h: number }, on: number, key: string) => on <= 0 ? null : (
-    <div key={key} style={{ position: "absolute", left: r.x * cardW - 8, top: r.y * cardH - 8, width: r.w * cardW + 16, height: r.h * cardH + 16, border: `5px solid ${GOLD}`, borderRadius: 22, opacity: on, boxShadow: `0 0 ${24 + 16 * Math.sin(t * 5)}px rgba(240,196,106,.7)` }} />
-  );
   const first = rise(t, T.labels, 0.3) * (1 - rise(t, T.label2 - 0.1, 0.3));
   const second = rise(t, T.label2, 0.3);
+  // 16:9: a window on the reel, the reel twice as large as a whole card would be, the camera on what is said: the verse
+  // and its translation while it is recited, then the reciter's credit, then the box of the hard word. 9:16: the card.
+  const winW = wide ? 1100 : (1180 * 9) / 16;
+  const winH = wide ? 1000 : 1180;
+  const reelW = wide ? winW * (1 + 0.05 * rise(t, T.verse, D.verseSeconds)) : winW;
+  const reelH = (reelW * 16) / 9;
+  const focus = 0.33 + (0.745 - 0.33) * rise(t, T.labels - 0.1, 0.6) + (0.625 - 0.745) * rise(t, T.label2 - 0.1, 0.6);
+  const offY = wide ? Math.min(0, Math.max(winH - reelH, winH / 2 - focus * reelH)) : 0;
+  const offX = (winW - reelW) / 2;
+  const slide = rise(t, T.labels - 0.15, 0.5);
+  const cx = wide ? w / 2 + slide * (w - 60 - winW / 2 - w / 2) : w / 2;
+  const cy = wide ? h / 2 : 140 + winH / 2;
+  const box = (r: { x: number; y: number; w: number; h: number }, on: number, key: string) => on <= 0 ? null : (
+    <div key={key} style={{ position: "absolute", left: offX + r.x * reelW - 8, top: offY + r.y * reelH - 8, width: r.w * reelW + 16, height: r.h * reelH + 16, border: `5px solid ${GOLD}`, borderRadius: 22, opacity: on, boxShadow: `0 0 ${24 + 16 * Math.sin(t * 5)}px rgba(240,196,106,.7)` }} />
+  );
   return (
     <AbsoluteFill style={{ opacity: show }}>
-      <div style={{ position: "absolute", left: cx - cardW / 2, top: cy - cardH / 2, width: cardW, height: cardH, borderRadius: 34, overflow: "hidden", transform: `scale(${0.85 + 0.15 * enter})`, boxShadow: "0 30px 80px rgba(0,0,0,.6), 0 0 0 3px rgba(240,196,106,.5)" }}>
-        <Sequence from={Math.round(T.verse * fps)} durationInFrames={Math.round(D.verseSeconds * fps)} layout="none">
-          <OffthreadVideo src={staticFile("trial/trailer/verse.mp4")} muted style={{ width: cardW, height: cardH }} />
-        </Sequence>
-        {t >= T.verse_end - 0.02 ? <Img src={staticFile("trial/trailer/verse-end.png")} style={{ position: "absolute", inset: 0, width: cardW, height: cardH }} /> : null}
+      <div style={{ position: "absolute", left: cx - winW / 2, top: cy - winH / 2, width: winW, height: winH, borderRadius: 34, overflow: "hidden", transform: `scale(${0.85 + 0.15 * enter})`, boxShadow: "0 30px 80px rgba(0,0,0,.6), 0 0 0 3px rgba(240,196,106,.5)", background: INK }}>
+        <div style={{ position: "absolute", left: offX, top: offY, width: reelW, height: reelH }}>
+          <Sequence from={Math.round(T.verse * fps)} durationInFrames={Math.round(D.verseSeconds * fps)} layout="none">
+            <OffthreadVideo src={staticFile("trial/trailer/verse.mp4")} muted style={{ width: reelW, height: reelH }} />
+          </Sequence>
+          {t >= T.verse_end - 0.02 ? <Img src={staticFile("trial/trailer/verse-end.png")} style={{ position: "absolute", inset: 0, width: reelW, height: reelH }} /> : null}
+        </div>
         {box(CREDIT, first, "c")}
         {box(GLOSS, second, "g")}
       </div>
       {/* the labels: on the left in 16:9, under the reel in 9:16 */}
-      <div style={{ position: "absolute", left: wide ? 90 : 60, top: wide ? h * 0.3 : cy + cardH / 2 + 50, width: wide ? w * 0.5 - 40 : w - 120, display: "flex", flexDirection: "column", gap: wide ? 44 : 30 }}>
+      <div style={{ position: "absolute", left: wide ? 60 : 60, top: wide ? h * 0.26 : cy + winH / 2 + 50, width: wide ? w - winW - 160 : w - 120, display: "flex", flexDirection: "column", gap: wide ? 44 : 30 }}>
         {D.labels.map((l, i) => {
           const at = i === 0 ? T.labels : T.label2;
           const k = pop(t, at, 0.5);
           const on = rise(t, at, 0.25);
           return on <= 0 ? null : (
             <div key={i} style={{ opacity: on, transform: `scale(${0.7 + 0.3 * k})`, transformOrigin: wide ? "right center" : "center", background: "rgba(10,14,34,.72)", border: `2px solid ${i === 1 ? GOLD : "rgba(240,196,106,.45)"}`, borderRadius: 24, padding: wide ? "22px 30px" : "16px 24px", display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
-              <div style={{ direction: "rtl", fontFamily: FONT.arabic, fontWeight: 700, fontSize: wide ? 58 : 50, color: i === 1 ? GOLD : PALE, textAlign: "center" }}>{l.ar}</div>
+              <div style={{ direction: "rtl", fontFamily: FONT.arabic, fontWeight: 700, fontSize: wide ? 54 : 50, color: i === 1 ? GOLD : PALE, textAlign: "center", lineHeight: 1.4 }}>{l.ar}</div>
               <div style={{ fontFamily: FONT.latin, fontStyle: "italic", fontSize: wide ? 30 : 28, color: MUTED, textAlign: "center" }}>{l.en}</div>
             </div>
           );
@@ -207,7 +216,7 @@ const Count: React.FC<{ t: number; w: number; h: number; wide: boolean }> = ({ t
 // ------------------------------------------------------------------------------------------------- 4. the stories
 
 const Stories: React.FC<{ t: number; w: number; h: number; wide: boolean }> = ({ t, w, h, wide }) => {
-  const show = window_(t, T.stories, T.series, 0.25);
+  const show = window_(t, T.stories, T.life + 0.15, 0.25);
   if (show <= 0) return null;
   const scenes = D.stories.scenes;
   return (
@@ -253,15 +262,123 @@ const Stories: React.FC<{ t: number; w: number; h: number; wide: boolean }> = ({
   );
 };
 
+// ------------------------------------------------------------------------------------------------- 4b. the life lessons
+
+/** Situations played by drawn characters (three shorts, muted, cropped to the played scene): side by side in 16:9, one
+ * after the other in 9:16; the answers line above, the line on the characters under them. */
+const Life: React.FC<{ t: number; w: number; wide: boolean; fps: number }> = ({ t, w, wide, fps }) => {
+  const show = window_(t, T.life - 0.1, T.series + 0.1, 0.3);
+  if (show <= 0) return null;
+  const clips = D.life.clips;
+  const ratio = D.life.ratio;
+  const played = rise(t, T.say6 - 0.1, 0.4);
+  const panel = (file: string, x: number, y: number, pw: number, on: number, from: number) => (
+    <div key={file} style={{ position: "absolute", left: x, top: y, width: pw, height: pw / ratio, borderRadius: 26, overflow: "hidden", opacity: on, transform: `scale(${(0.8 + 0.2 * pop(t, from, 0.5)) * (1 + 0.035 * played)})`, boxShadow: played > 0.5 ? `0 0 0 4px ${GOLD}, 0 24px 60px rgba(0,0,0,.6)` : "0 0 0 2px rgba(240,196,106,.45), 0 20px 50px rgba(0,0,0,.55)" }}>
+      <Sequence from={Math.round(from * fps)} durationInFrames={Math.round(D.life.seconds * fps)} layout="none">
+        <OffthreadVideo src={staticFile(file)} muted style={{ width: pw, height: pw / ratio }} />
+      </Sequence>
+    </div>
+  );
+  // 9:16: each line in two, cut where the voice pauses (after the words of its first phrase)
+  const cut = (text: string, k: number) => {
+    const n = D.voice[k].line.split("…")[0].trim().split(" ").length;
+    const words = text.split(" ");
+    return [words.slice(0, n).join(" "), words.slice(n).join(" ")];
+  };
+  const lines = (text: string, k: number, at: number, size: number, color?: string) => wide ? (
+    <ArWords text={text} t={t} at={at} size={size} color={color} />
+  ) : (
+    <>
+      <ArWords text={cut(text, k)[0]} t={t} at={at} size={size} color={color} />
+      <ArWords text={cut(text, k)[1]} t={t} at={at + D.voice[k].phrases[1]} size={size} color={color} />
+    </>
+  );
+  const top = (
+    <Stack top={wide ? 50 : 150} left={60} width={w - 120} gap={wide ? 8 : 0}>
+      {lines(D.life.ar[0], 4, T.say5, wide ? 76 : 84)}
+      <En text={D.life.en[0]} t={t} at={wide ? T.say5 + 0.4 : T.say5 + D.voice[4].phrases[1] + 0.3} size={wide ? 34 : 38} />
+    </Stack>
+  );
+  if (wide) {
+    const pw = 600;
+    const gap = 30;
+    const x0 = (w - (3 * pw + 2 * gap)) / 2;
+    return (
+      <AbsoluteFill style={{ opacity: show }}>
+        {top}
+        {clips.map((file, i) => panel(file, x0 + (clips.length - 1 - i) * (pw + gap), 230, pw, rise(t, T.life + 0.1 + 0.25 * i, 0.3), T.life + 0.1 + 0.25 * i))}
+        <Stack top={230 + pw / ratio + 50} left={60} width={w - 120} gap={6}>
+          {lines(D.life.ar[1], 5, T.say6, 70, GOLD)}
+          <En text={D.life.en[1]} t={t} at={T.say6 + 0.4} size={32} />
+        </Stack>
+      </AbsoluteFill>
+    );
+  }
+  const slot = (T.series - T.life) / clips.length;
+  const pw = w - 80;
+  return (
+    <AbsoluteFill style={{ opacity: show }}>
+      {top}
+      {clips.map((file, i) => {
+        const a = T.life + i * slot;
+        const on = window_(t, a, a + slot + (i < clips.length - 1 ? 0.25 : 0.4), 0.25);
+        return on <= 0 ? null : panel(file, 40, 560, pw, on, a);
+      })}
+      <Stack top={560 + pw / ratio + 50} left={60} width={w - 120} gap={0}>
+        {lines(D.life.ar[1], 5, T.say6, 80, GOLD)}
+        <En text={D.life.en[1]} t={t} at={T.say6 + D.voice[5].phrases[1] + 0.3} size={38} />
+      </Stack>
+    </AbsoluteFill>
+  );
+};
+
 // ------------------------------------------------------------------------------------------------- 5. the series
 
-const Series: React.FC<{ t: number; w: number; h: number; wide: boolean }> = ({ t, w, h, wide }) => {
+const GROUPS = [[0, 1, 2], [3, 4, 5], [6, 7], [8, 9]];   // 16:9: up to three covers side by side, the first on the right
+
+const Series: React.FC<{ t: number; w: number; wide: boolean }> = ({ t, w, wide }) => {
   const show = window_(t, T.series - 0.1, T.sources, 0.25);
   if (show <= 0) return null;
   const covers = D.series;
-  const ch = wide ? 700 : 1120;
+  const appear = (k: number) => T.series + k * D.card;
+  if (wide) {
+    const ch = 720;
+    const cw = (ch * 9) / 16;
+    const gap = 80;
+    return (
+      <AbsoluteFill style={{ opacity: show }}>
+        {GROUPS.map((group, g) => {
+          const a = appear(group[0]);
+          const b = g < GROUPS.length - 1 ? appear(GROUPS[g + 1][0]) : T.sources + 0.3;
+          const on = window_(t, a - 0.05, b, 0.15);
+          if (on <= 0) return null;
+          const x0 = (w - (group.length * cw + (group.length - 1) * gap)) / 2;
+          return (
+            <div key={g} style={{ position: "absolute", inset: 0, opacity: on }}>
+              {group.map((k, i) => {
+                const c = covers[k];
+                const at = appear(k);
+                const e = pop(t, at, 0.45);
+                const vis = rise(t, at, 0.15);
+                return (
+                  <div key={c.file} style={{ position: "absolute", left: x0 + (group.length - 1 - i) * (cw + gap), top: 70, width: cw, opacity: vis, transform: `translateY(${(1 - clamp(e)) * 60}px) scale(${0.85 + 0.15 * e})` }}>
+                    <div style={{ width: cw, height: ch, borderRadius: 24, overflow: "hidden", boxShadow: `0 0 0 3px ${GOLD}, 0 24px 60px rgba(0,0,0,.6)` }}>
+                      <Img src={staticFile(c.file)} style={{ width: cw, height: ch, objectFit: "cover" }} />
+                    </div>
+                    <div style={{ direction: "rtl", fontFamily: FONT.arabic, fontWeight: 700, fontSize: 52, color: GOLD, textAlign: "center", marginTop: 14, whiteSpace: "nowrap" }}>{c.ar}</div>
+                    <div style={{ fontFamily: FONT.latin, fontStyle: "italic", fontSize: 26, color: MUTED, textAlign: "center", whiteSpace: "nowrap" }}>{c.en}</div>
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
+      </AbsoluteFill>
+    );
+  }
+  const ch = 1120;
   const cw = (ch * 9) / 16;
-  const step = cw * (wide ? 1.12 : 1.06);
+  const step = cw * 1.06;
   // the focus moves from one cover to the next, the row sliding the way Arabic is read
   const focus = Math.min(covers.length - 1, Math.max(0, (t - T.series) / D.card - 0.5));
   const eased = Math.floor(focus) + smooth(focus - Math.floor(focus));
@@ -270,19 +387,20 @@ const Series: React.FC<{ t: number; w: number; h: number; wide: boolean }> = ({ 
     <AbsoluteFill style={{ opacity: show }}>
       {covers.map((c, i) => {
         const d = i - eased;
+        if (Math.abs(d) > 2) return null;
         const x = w / 2 - d * step - cw / 2;
         const near = clamp(1 - Math.abs(d));
         const s = 0.72 + 0.28 * near;
-        const y = (wide ? h * 0.08 : 170) + (1 - s) * ch * 0.5;
+        const y = 170 + (1 - s) * ch * 0.5;
         return (
           <div key={c.file} style={{ position: "absolute", left: x, top: y, width: cw, height: ch, transform: `scale(${s})`, transformOrigin: "50% 0", opacity: 0.35 + 0.65 * near, borderRadius: 26, overflow: "hidden", boxShadow: near > 0.5 ? `0 0 0 4px ${GOLD}, 0 24px 60px rgba(0,0,0,.6)` : "0 18px 40px rgba(0,0,0,.5)" }}>
             <Img src={staticFile(c.file)} style={{ width: cw, height: ch, objectFit: "cover" }} />
           </div>
         );
       })}
-      <Stack top={wide ? h * 0.08 + ch + 20 : 170 + ch + 40} left={0} width={w} gap={2}>
-        <div key={current} style={{ direction: "rtl", fontFamily: FONT.arabic, fontWeight: 700, fontSize: wide ? 72 : 88, color: GOLD, transform: `scale(${0.85 + 0.15 * pop(t, T.series + current * D.card, 0.4)})` }}>{covers[current].ar}</div>
-        <div style={{ fontFamily: FONT.latin, fontStyle: "italic", fontSize: wide ? 32 : 38, color: MUTED }}>{covers[current].en}</div>
+      <Stack top={170 + ch + 40} left={0} width={w} gap={2}>
+        <div key={current} style={{ direction: "rtl", fontFamily: FONT.arabic, fontWeight: 700, fontSize: 88, color: GOLD, transform: `scale(${0.85 + 0.15 * pop(t, appear(current), 0.35)})` }}>{covers[current].ar}</div>
+        <div style={{ fontFamily: FONT.latin, fontStyle: "italic", fontSize: 38, color: MUTED }}>{covers[current].en}</div>
       </Stack>
     </AbsoluteFill>
   );
@@ -303,14 +421,14 @@ const Sources: React.FC<{ t: number; w: number; h: number; wide: boolean }> = ({
   return (
     <AbsoluteFill style={{ opacity: show }}>
       <Stack top={wide ? h * 0.2 : h * 0.24} left={60} width={w - 120} gap={12}>
-        {wide ? <ArWords text={D.sources.ar} t={t} at={T.say5} size={92} /> : (
+        {wide ? <ArWords text={D.sources.ar} t={t} at={T.say7} size={92} /> : (
           // two lines, cut where the voice pauses (« كل آية وكل حديث… من مصدر منشور »)
           <>
-            <ArWords text={D.sources.ar.split(" ").slice(0, 4).join(" ")} t={t} at={T.say5} size={100} />
-            <ArWords text={D.sources.ar.split(" ").slice(4).join(" ")} t={t} at={T.say5 + D.voice[4].phrases[1]} size={100} />
+            <ArWords text={D.sources.ar.split(" ").slice(0, 4).join(" ")} t={t} at={T.say7} size={100} />
+            <ArWords text={D.sources.ar.split(" ").slice(4).join(" ")} t={t} at={T.say7 + D.voice[6].phrases[1]} size={100} />
           </>
         )}
-        <En text={D.sources.en} t={t} at={wide ? T.say5 + 0.4 : T.say5 + D.voice[4].phrases[1] + 0.3} size={wide ? 40 : 42} />
+        <En text={D.sources.en} t={t} at={wide ? T.say7 + 0.4 : T.say7 + D.voice[6].phrases[1] + 0.3} size={wide ? 40 : 42} />
       </Stack>
       <div style={{ position: "absolute", top: wide ? h * 0.6 : h * 0.5, left: 60, width: w - 120, display: "flex", flexWrap: "wrap", justifyContent: "center", gap: wide ? 26 : 22, direction: "rtl" }}>
         {CHIPS.map((c, i) => {
@@ -336,14 +454,14 @@ const Sources: React.FC<{ t: number; w: number; h: number; wide: boolean }> = ({
 const Follow: React.FC<{ t: number; w: number; h: number; wide: boolean }> = ({ t, w, h, wide }) => {
   const show = rise(t, T.follow, 0.35);
   if (show <= 0) return null;
-  const second = T.say6 + D.voice[5].phrases[1];
+  const second = T.say8 + D.voice[7].phrases[1];
   const pressed = t >= T.press + 0.12;
   const press = t >= T.press && t < T.press + 0.25 ? 0.9 : 1;
   const bell = pressed ? Math.sin((t - T.press) * 26) * Math.exp(-(t - T.press) * 3) * 18 : 0;
   return (
     <AbsoluteFill style={{ opacity: show }}>
       <Stack top={wide ? h * 0.12 : h * 0.2} left={0} width={w} gap={10}>
-        <div style={{ direction: "rtl", fontFamily: FONT.arabic, fontWeight: 700, fontSize: wide ? 130 : 150, color: GOLD, transform: `scale(${0.8 + 0.2 * pop(t, T.say6, 0.5)})`, textShadow: "0 0 30px rgba(240,196,106,.45)" }}>{D.follow.ar[0]}</div>
+        <div style={{ direction: "rtl", fontFamily: FONT.arabic, fontWeight: 700, fontSize: wide ? 130 : 150, color: GOLD, transform: `scale(${0.8 + 0.2 * pop(t, T.say8, 0.5)})`, textShadow: "0 0 30px rgba(240,196,106,.45)" }}>{D.follow.ar[0]}</div>
         <ArWords text={D.follow.ar[1]} t={t} at={second} size={wide ? 84 : 92} />
         <En text={`${D.follow.en[0]} ${D.follow.en[1]}`} t={t} at={second + 0.35} size={wide ? 38 : 42} />
       </Stack>
@@ -379,7 +497,8 @@ export const Trailer: React.FC = () => {
       <Verse t={t} w={w} h={h} wide={wide} fps={fps} />
       <Count t={t} w={w} h={h} wide={wide} />
       <Stories t={t} w={w} h={h} wide={wide} />
-      <Series t={t} w={w} h={h} wide={wide} />
+      <Life t={t} w={w} wide={wide} fps={fps} />
+      <Series t={t} w={w} wide={wide} />
       <Sources t={t} w={w} h={h} wide={wide} />
       <Follow t={t} w={w} h={h} wide={wide} />
       <Html5Audio src={staticFile("trial/trailer/audio.wav")} />
