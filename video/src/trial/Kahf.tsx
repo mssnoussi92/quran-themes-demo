@@ -77,20 +77,36 @@ const Rock: React.FC<{ id: string; x: number; y: number; scale: number; shape: k
           <stop offset="0" stopColor={warm ? "#43332a" : "#2d344c"} />
           <stop offset="1" stopColor={warm ? "#2a2019" : "#1d2234"} />
         </linearGradient>
+        {/* the warm stone (short 2) takes a finer, softer grain: the owner found the first one blotchy (2026-11-22);
+            the cool one (shorts 1 and 3) stays as validated */}
         <filter id={`${id}-grain`} x="0" y="0" width="100%" height="100%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.018 0.026" numOctaves={4} seed={11} result="n" />
-          <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.3 -0.55" />
+          <feTurbulence type="fractalNoise" baseFrequency={warm ? "0.045 0.06" : "0.018 0.026"} numOctaves={warm ? 3 : 4} seed={11} result="n" />
+          <feColorMatrix in="n" type="matrix" values={warm ? "0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.7 -0.25" : "0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.3 -0.55"} />
         </filter>
       </defs>
-      {/* the rock: a backlit silhouette; lit (the cave's shorts, owner 2026-11-22), a dim stone with its grain */}
-      <path d={body} fill={lit ? `url(#${id}-stone)` : INK} />
-      {lit ? (
-        <g clipPath={`url(#${id}-body)`}>
-          <rect x={-700} y={-420} width={1400} height={520} filter={`url(#${id}-grain)`} opacity={0.22} />
-        </g>
+      {/* the rock: a backlit silhouette; lit (the cave's shorts, owner 2026-11-22), a dim stone with its grain. The warm
+          one (short 2, a crag standing on the land) fades into the land at its foot: lit, its straight base showed */}
+      {lit && warm ? (
+        <>
+          <linearGradient id={`${id}-foot`} x1="0" y1="0" x2="0" y2="90" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stopColor="#fff" />
+            <stop offset="1" stopColor="#000" />
+          </linearGradient>
+          <mask id={`${id}-fade`} maskUnits="userSpaceOnUse" x={-700} y={-420} width={1400} height={520}>
+            <rect x={-700} y={-420} width={1400} height={520} fill={`url(#${id}-foot)`} />
+          </mask>
+        </>
       ) : null}
+      <g mask={lit && warm ? `url(#${id}-fade)` : undefined}>
+        <path d={body} fill={lit ? `url(#${id}-stone)` : INK} />
+        {lit ? (
+          <g clipPath={`url(#${id}-body)`}>
+            <rect x={-700} y={-420} width={1400} height={520} filter={`url(#${id}-grain)`} opacity={warm ? 0.12 : 0.22} />
+          </g>
+        ) : null}
+      </g>
       {/* the sun on one wall of the rock: a warm wash on that side, never past the mouth */}
-      <g clipPath={`url(#${id}-body)`}>
+      <g clipPath={`url(#${id}-body)`} mask={lit && warm ? `url(#${id}-fade)` : undefined}>
         <rect x={80} y={-420} width={600} height={520} fill={`url(#${id}-r)`} opacity={right} />
         <rect x={-680} y={-420} width={600} height={520} fill={`url(#${id}-l)`} opacity={left} />
         {/* cracks and ledges of the rock */}
