@@ -21,6 +21,9 @@
 # والسنة في كامل جوانب حياتك… mettre en avant que les situations sont jouées par des personnages ». His « je valide » on
 # the new voice text (eight lines, the fifth and sixth new: « كامل » written « كل », same meaning).
 script_validated: { by: mssnoussi92, on: 2026-11-22, what: [script, voice text, voice text v2] }
+# His « je valide » on the second version as sent in the conversation (49.2 s, 16:9 and 9:16, 2026-11-22): the voice,
+# the montage, the sound. Recorded on his word.
+validated: { by: mssnoussi92, on: 2026-11-22, what: [voice, montage, sound] }
 # Its YouTube title and description, validated by him the same day (« Je valide ce titre et cette description »).
 publish:
   youtube:
