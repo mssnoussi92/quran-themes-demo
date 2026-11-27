@@ -547,6 +547,15 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
 - **Validé** : « je valide le film », « le vertical », « le TikTok » (questions à choix nommant chacun). PR #42 fusionnée
   après ses checks, comme il l'avait dit. **Au calendrier** : film le lundi 28 décembre, shorts du 29 au 31 ; les quatre
   lignes vérifiées avec le lecteur du calendrier de quran-reels (chaque plateforme reliée à sa vidéo, aucun problème).
+- **Sa page** : « مخيّر ولا مسيّر؟ » ajouté en tête (le film, son film vertical, les trois shorts, leurs textes), refaite à
+  partir des fichiers publics `page-<doc>` de chaque film (`gallery.py`). Le film vertical du du'a, publié le 16 novembre,
+  en est retiré : sans cela la page faisait 260 Mio, au-dessus des 256 d'un artefact (242 Mio maintenant). Fichiers
+  publics : `page-qadar`, `page-qadar-9x16` (workflow `page-files`).
+- **Ce qui est publié sort de sa page** : la session a signalé que la page était de nouveau presque pleine (242 Mio sur
+  256) et proposé d'en retirer le du'a et Dhul-Qarnayn une fois tous leurs shorts publiés. **Sa réponse** : « oui je suis
+  d'accord, tu supprimes après publication ». Le du'a après le 19 novembre, Dhul-Qarnayn après le 26 (la session avait
+  écrit « le 25 » : son dernier short est le jeudi 26). Le lendemain, une autre session a fait de même pour toute la page,
+  à sa demande (« supprimer ceux qui sont publiés ») : une date barrée en sort d'elle-même (`published_off`).
 
 ## « معاك 5 ثواني », le quiz ; les chiffres 123 ; al-Qurtubi pour le fiqh (2026-11-17)
 
@@ -1009,4 +1018,16 @@ et qui attire ». L'avis de la session, donné avant : la page de la chaîne pè
   (« je valide le short 2 », avec sa version TikTok et sa couverture). Les trois shorts de la caverne à sol éclairé sont
   publics (`page-files kahf`) : ce sont eux qui sortent les 1er, 2 et 3 décembre. L'essai se juge à la revue du 6 décembre
   (quran-reels, `docs/insights.md`, `trials`).
+
+## Dhul-Qarnayn sorti de sa page ; le calendrier barré jusqu'au 26 novembre (2026-11-27)
+
+- **Le rappel du 27** (sa décision du 2026-11-17 : « tu supprimes après publication ») : le du'a et Dhul-Qarnayn, une fois
+  tous leurs shorts publiés. Le du'a était déjà sorti (barré par une autre session, `published_off`).
+- **Vérifié dans `themes.json`** (branche `state` de quran-reels) : du 21 au 26 novembre, tout est publié sur Facebook,
+  Instagram et YouTube, TikTok en brouillon (le quiz 1 du 23 : sur Instagram seul, comme prévu). Ces dates sont barrées :
+  le 21 (« سنريهم آياتنا » 1), le 22 (la bande-annonce), le 23 (le film de Dhul-Qarnayn et le quiz 1), les 24, 25 et 26 (ses
+  trois shorts).
+- **Sa page refaite** sans Dhul-Qarnayn, avec des vidéos-témoins de la bonne durée pour les films qui restent ; seul
+  `index.html` est envoyé, et quatorze médias sont retirés (Dhul-Qarnayn, le short 1 de « سنريهم آياتنا », le quiz 1),
+  soit 39 Mio libérés.
 
