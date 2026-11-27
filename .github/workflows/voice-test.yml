@@ -36,9 +36,12 @@ on:
 permissions:
   contents: write
 
+# A second run waits for the first instead of cancelling it: a cancelled run loses the takes it has already
+# been given, and they count against the ten requests of the day all the same (2026-11-19: the take of
+# 92-trial-aqrab, made at 08:01 UTC, was lost when another session started its run; asked for again at 08:05).
 concurrency:
   group: voice-test
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   plan:

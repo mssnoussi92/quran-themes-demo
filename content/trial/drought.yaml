@@ -14,6 +14,14 @@ script_validated: { by: mssnoussi92, on: 2026-11-15 }
 # l'épisode tel que livré dans ses deux dessins (la voix, avec les mots signalés à écouter ; les dessins, l'ambiance, les
 # effets, les couvertures), ses textes et ses sources, passées à `validated`. Inscrit sur sa parole.
 validated: { by: mssnoussi92, on: 2026-11-15, what: [voice, montage, cover, publish, ambience] }
+# Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
+# on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). Les deux phrases qui redisent l'ouverture jouée et le verset sortent
+# (`drop`) ; rien d'autre ne change. La vidéo refaite en B (la silhouette, celle du calendrier) validée par lui le 2026-11-21
+# (« Je valide les 5 ») ; en A, la même coupe : « je préfère la première où il y a une personne à la fin », puis « la retirer des
+# fichiers » (question à choix, même jour) : seul B est nommé dans les textes à coller, donc rendu public (tools/trial/publish.py).
+# La vidéo refaite avec le nom de la série en haut à gauche (sa demande du même jour) validée par lui le 2026-11-21 (« Je valide les 4 », avec « سؤال صعب » 1).
+casts: [figure]
+drop: ["meaning:0", "meaning:1"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 72-trial-drought     # content/voice-test/<text>.txt : les répliques dites par la voix (pas celles du début muet)

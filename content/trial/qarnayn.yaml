@@ -35,13 +35,29 @@ handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 43-trial-qarnayn
 outro: 12
-thumbnail: { title: "ذو القرنين", tag: "٣ اختبارات للقوة", panels: [west, tribute, barrier] }
+# Les vignettes dédiées (choix du propriétaire, 2026-11-21 : « il ne faut pas toujours choisir des images du film, on essaie
+# de créer une » image ; parmi trois façons, « entièrement dessinée ») : une scène dessinée pour la vignette (`art`,
+# video/src/trial/ThumbArt.tsx), deux lignes d'accroche, les titres des trois shorts validés par lui (rien d'inventé) ;
+# `only: thumbnail` du workflow `film`, docs/model.md. `use` : celle que YouTube reçoit, **choisie par lui le 2026-11-21**
+# (question à choix : « A · le barrage »), avec le titre YouTube `publish.youtube_title`.
+thumbnail:
+  title: "ذو القرنين"
+  tag: "٣ اختبارات للقوة"
+  panels: [west, tribute, barrier]
+  use: barrier
+  options:
+    - { name: barrier, art: qarnayn-barrier, lines: ["بنى السد…", "وقال: مش مني!"], tag: "ذو القرنين", place: left }
+    - { name: chest, art: qarnayn-chest, lines: ["عرضوا عليه فلوس…", "ورفض!"], tag: "ذو القرنين", place: top }
+    - { name: sunset, art: qarnayn-sunset, lines: ["مصير قوم كاملين…", "بكلمة منه!"], tag: "ذو القرنين", place: right }
 # Une image propre au film (aucun short) : le clip seul, rien de dessiné dessus.
 pictures:
   east: { clip: { source: pixabay, id: 26085, author: TeeFarm, page: "https://pixabay.com/videos/id-26085/", take: { seconds: 30, height: 1440 }, brightness: 0.7, side: left, horizon: 640 }, ambience: tribute }
 publish:
   out: docs/retention/publication-qarnayn.md      # où tools/trial/publish.py écrit les textes à coller
   title: { en: "Dhul-Qarnayn: 3 tests of power", ar: "ذو القرنين: ٣ اختبارات للقوة" }
+  # Le titre de YouTube, à part (choix du propriétaire, 2026-11-21, parmi quatre propositions : ce qu'on cherche, puis la
+  # promesse précise ; la vignette fait la curiosité) ; les autres plateformes gardent `title`.
+  youtube_title: { en: "The story of Dhul-Qarnayn: 3 tests of power", ar: "قصة ذو القرنين: 3 اختبارات للقوة" }
   series: { en: "Dhul-Qarnayn", ar: "ذو القرنين" }
   description:
     en: "The fate of a whole people at his word, money offered to him, a barrier no one could pass: one man, three tests of power in Surat al-Kahf. What do you do when you have power over someone, what do you take from those who need you, and what do you say when you succeed?"
@@ -104,6 +120,7 @@ chapters:
       - { verse: quran.18.88, scene: just }
       - { reuse: west.meaning }
       - { reuse: west.depth, scene: land }
+      - { reuse: west.depth-us, scene: land }   # la 2e réplique de `depth`, séparée dans le short le 2026-11-20 (jouée là) : le film ne change pas
       - { reuse: west.example }
       - { reuse: west.close, lines: [0, 1], scene: just, subscribe: true }
   - id: east
@@ -137,6 +154,7 @@ chapters:
       - { verse: quran.18.95, scene: refused }
       - { reuse: tribute.meaning }
       - { reuse: tribute.depth, scene: land }
+      - { reuse: tribute.depth-us, scene: land }   # la 2e réplique de `depth`, séparée dans le short le 2026-11-20 (jouée là) : le film ne change pas
       - { reuse: tribute.example }
       - { reuse: tribute.close, lines: [0, 1], scene: refused }
   - id: barrier
@@ -151,6 +169,7 @@ chapters:
       - { verse: quran.18.98 }
       - { reuse: barrier.meaning }
       - { reuse: barrier.depth, scene: land }
+      - { reuse: barrier.depth-us, scene: land }   # la 2e réplique de `depth`, séparée dans le short le 2026-11-20 (jouée là) : le film ne change pas
       - { reuse: barrier.example }
       - { reuse: barrier.close, lines: [0, 1], scene: done }
   - id: insha

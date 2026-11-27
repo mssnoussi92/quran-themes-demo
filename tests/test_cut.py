@@ -96,3 +96,44 @@ def test_videos_only_cut_lists_the_short_versions_alone(tmp_path, monkeypatch):
     monkeypatch.setattr(videos, "TRIAL", tmp_path)
     rows, stills = videos.listing("f", "D", "cut")
     assert [r["name"] for r in rows] == ["f-short-1-a-cut"] and stills == []
+
+
+def test_a_page_of_elsewhere_lists_its_shorts_signed_with_its_name_and_their_covers(tmp_path, monkeypatch):
+    """2026-11-18 (owner's choice): the test page on Meta gets quizzes 4 to 6, signed with its name; never in `all`."""
+    for name, part in (("a", 1), ("b", 2), ("c", 3)):
+        (tmp_path / f"{name}.yaml").write_text(yaml.safe_dump({"id": name, "publish": {"part": part}}), encoding="utf-8")
+    (tmp_path / "f.yaml").write_text(yaml.safe_dump({"id": "f", "shorts": ["a", "b", "c"],
+                                                     "elsewhere": {"page": ["b", "c"]}}), encoding="utf-8")
+    monkeypatch.setattr(videos, "TRIAL", tmp_path)
+    rows, stills = videos.listing("f", "D", "page")
+    assert [r["name"] for r in rows] == ["f-short-2-b-page", "f-short-3-c-page"]
+    assert all('"platform":"page"' in r["props"] and r["composition"] == "Trial916" for r in rows)
+    assert [s["name"] for s in stills] == ["f-short-2-b-page-cover.jpg", "f-short-3-c-page-cover.jpg"]
+    assert all('"platform":"page"' in s["props"] for s in stills)
+    assert not any(r["name"].endswith("-page") for r in videos.listing("f", "D", "all")[0])
+    (tmp_path / "f.yaml").write_text(yaml.safe_dump({"id": "f", "shorts": ["a"], "elsewhere": {"page": ["z"]}}),
+                                     encoding="utf-8")
+    with pytest.raises(SystemExit, match="not among the shorts"):
+        videos.listing("f", "D", "page")
+
+
+def test_a_top_level_drop_leaves_lines_out_of_the_full_version_only():
+    """`drop` of a short (the owner, 2026-11-20): the lines stay in the take and the voice text, the full version and its
+    TikTok twin do not play them; the short version keeps its own list (`cut.drop`), validated on its own."""
+    spec = {**SPEC, "drop": ["open:1", "quran.1.1"]}
+    assert prepare.left_out(spec) == (set(), {("open", 1)}, {"quran.1.1"})
+    assert prepare.left_out(SPEC) == (set(), set(), set())
+    both = {**spec, "cut": {"drop": ["close"]}}
+    assert prepare.parse_drop(both) == ({"close"}, set(), set())
+
+
+def test_a_top_level_drop_that_matches_nothing_is_refused():
+    with pytest.raises(SystemExit, match="drop « open:9 » matches no"):
+        prepare.left_out({**SPEC, "drop": ["open:9"]})
+
+
+def test_the_script_strikes_the_dropped_lines():
+    script = pytest.importorskip("script")
+    out = "\n".join(script.narration([{"ar": "أ.", "en": "a"}, {"ar": "ب.", "en": "b"}], {1}))
+    assert "~~ب.~~" in out and "**coupée**" in out and "~~أ.~~" not in out
+    assert script.left_out({**SPEC, "drop": ["close", "open:2"]}) == ({"close"}, {("open", 2)})

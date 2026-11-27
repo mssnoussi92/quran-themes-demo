@@ -14,7 +14,7 @@ import type { TrialData } from "./Trial";
 
 loadFonts();
 
-const INK_SHADOW = "0 4px 30px rgba(4,7,20,.95), 0 0 80px rgba(4,7,20,.8)";
+export const INK_SHADOW = "0 4px 30px rgba(4,7,20,.95), 0 0 80px rgba(4,7,20,.8)";
 
 const load = async (trial: string, voice: string, signal: AbortSignal) => {
   const res = await fetch(staticFile(`trial/${trial}-${voice}.json`), { signal });
@@ -42,22 +42,30 @@ const Scene: React.FC<{ data: TrialData; scene: string; cast?: string }> = ({ da
   );
 };
 
-const Tag: React.FC<{ text: string; size: number }> = ({ text, size }) => (
+export const Tag: React.FC<{ text: string; size: number }> = ({ text, size }) => (
   <div dir="rtl" lang="ar" style={{ display: "inline-block", padding: `${size * 0.16}px ${size * 0.6}px ${size * 0.26}px`, borderRadius: size * 0.36, background: GOLD, color: "#141006", fontFamily: FONT.arabic, fontWeight: 700, fontSize: size, lineHeight: 1.3 }}>
     {text}
   </div>
 );
 
-export type CoverProps = { trial: string; voice: string; cast?: string; data: TrialData | null };
+/** `platform`: where the page has another name (content/publish.yaml, `handles`), the cover is signed with it (the
+ * quizzes of the test page on Meta, 2026-11-18), as the video is (Trial.tsx). */
+export type CoverProps = { trial: string; voice: string; cast?: string; platform?: string; data: TrialData | null };
 export const coverMetadata: CalculateMetadataFunction<CoverProps> = async ({ props, abortSignal }) => ({
   props: { ...props, data: await load(props.trial, props.voice, abortSignal) },
 });
 
-export const TrialCover: React.FC<CoverProps> = ({ data, cast }) => {
+export const TrialCover: React.FC<CoverProps> = ({ data, cast, platform }) => {
   if (!data) throw new Error("no trial data: calculateMetadata did not run");
   if (!data.cover) throw new Error(`content/trial/${data.trial}.yaml has no cover`);
+  // A platform with no name of its own in `handles` fails the render rather than sign with the wrong account.
+  const handle = platform ? data.handles?.[platform] : data.handle;
+  if (!handle) throw new Error(`no handle for the platform « ${platform} » (content/publish.yaml, handles)`);
   const { scene, title, tag } = data.cover;
-  const size = Math.round(Math.min(190, (W - 120) / (title.length * 0.43)));
+  // A title may be cut in two lines by « \n » (the long quote of quiz 11 was half the size of the others): its size
+  // is that of its longest line. A title without one is sized as before.
+  const longest = Math.max(...title.split("\n").map((line) => line.length));
+  const size = Math.round(Math.min(190, (W - 120) / (longest * 0.43)));
   const veil = data.picture?.veil ?? 1;      // a picture in full daylight keeps a day sky behind its title
   return (
     <AbsoluteFill style={{ background: "#04070f" }}>
@@ -65,12 +73,12 @@ export const TrialCover: React.FC<CoverProps> = ({ data, cast }) => {
       <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(4,7,20,${0.82 * veil}) 0%, rgba(4,7,20,${0.62 * veil}) 34%, rgba(4,7,20,.06) 56%, rgba(4,7,20,.45) 100%)` }} />
       <div style={{ position: "absolute", top: 450, left: 50, right: 50, textAlign: "center" }}>
         <Tag text={tag} size={50} />
-        <div dir="rtl" lang="ar" style={{ marginTop: 26, fontFamily: FONT.arabic, fontWeight: 700, fontSize: size, lineHeight: 1.35, color: "#fff", textShadow: INK_SHADOW, textWrap: "balance" }}>
+        <div dir="rtl" lang="ar" style={{ marginTop: 26, fontFamily: FONT.arabic, fontWeight: 700, fontSize: size, lineHeight: 1.35, color: "#fff", textShadow: INK_SHADOW, textWrap: "balance", whiteSpace: "pre-line" }}>
           {title}
         </div>
       </div>
       <div style={{ position: "absolute", bottom: 300, left: 0, right: 0, textAlign: "center", fontFamily: FONT.latin, fontWeight: 600, fontSize: 36, color: GOLD, opacity: 0.92, textShadow: INK_SHADOW }}>
-        {data.handle}
+        {handle}
       </div>
     </AbsoluteFill>
   );

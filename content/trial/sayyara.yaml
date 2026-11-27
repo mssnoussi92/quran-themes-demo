@@ -1,0 +1,68 @@
+# « معاك 5 ثواني », short 1 (content/trial/quiz.yaml ; script : docs/scripts/quiz.md) : le sens d'un mot. « سَيَّارَةٌ » de
+# 12:19 n'est pas une voiture : une caravane de voyageurs (al-Muyassar, as-Sa'di). La question et ses choix sont muets ;
+# le compteur, cinq secondes ; le récitateur dit 12:19 jusqu'à « هذا غلام » ; la voix dit le sens. Rien n'est dessiné
+# de Yusuf : le puits, le seau, la caravane. Script écrit par la session le 2026-11-17.
+id: sayyara
+# « Je valide » du propriétaire (2026-11-17, question à choix nommant le script des shorts 1 et 2 de docs/scripts/quiz.md) :
+# les répliques, la question, les choix. Ni la voix, ni les images, ni les textes à coller. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Oui je valide le rendu » du propriétaire (2026-11-17), sur le rendu sans voix du workflow `film` (run 44103338443, voix
+# X) : lu comme le montage, les dessins et le clip tels que rendus. La voix, la couverture et l'ambiance sous la voix restent
+# à valider sur la vidéo finale. Inscrit sur sa parole.
+# « Je valide les 3 » du propriétaire (2026-11-18, question à choix nommant la voix, les couvertures et l'ambiance sous
+# la voix des vidéos avec voix du workflow `film`, run 44270232504) : ajoutés au montage validé le 2026-11-17 ; puis
+# « je valide les textes » (même jour, question à choix nommant les titres et descriptions de publication-quiz.md).
+# Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-18, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 86-trial-sayyara
+# une plaine nue au soleil bas (Pixabay 26085, TeeFarm, déjà employé pour le film de Dhul-Qarnayn et pour الكنود) ;
+# APPROUVÉ pour ce short par le propriétaire le 2026-11-17 (question à choix : « 26085, nuit générée, 190332 »)
+clip: { source: pixabay, id: 26085, author: TeeFarm, page: "https://pixabay.com/videos/id-26085/", take: { from: 2, seconds: 18, height: 1440, pingpong: true }, rate: 0.85, position: "50% 50%", shift: 0, brightness: 0.72, ground: "#0a0705", horizon: 1380, veil: 0.8 }
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 10, seconds: 60, level: -36 }
+cover: { scene: ask, title: "«سيارة» في سورة يوسف؟", tag: "معاك 5 ثواني · 1", focus: 1000 }
+quiz:
+  head: { verse: quran.12.19, from: 2, to: 2 }        # le mot de la question, écrit en or au-dessus d'elle
+  choices:
+    - { ar: "عربية", en: "a car", icon: car }
+    - { ar: "قافلة مسافرين", en: "a caravan of travellers", icon: caravan, right: true }
+    - { ar: "كوكب سيّار", en: "a planet", icon: planet }
+publish:
+  title: { en: "A \"car\" in Surat Yusuf?", ar: "«سيارة» في سورة يوسف؟" }
+  part: 1
+  hashtags: ["#سورة_يوسف", "#معاني_الكلمات"]
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (« je valide les 3 accroches »)
+    ar: "«سيارة» في سورة يوسف… مش العربية اللي في بالك. معاك 5 ثواني."
+    en: '"Sayyara" in Surat Yusuf… not the car you''re thinking of. You have 5 seconds.'
+    validated: 2026-11-17
+  description:
+    en: "\"Sayyara\" in Surat Yusuf (12:19) is not a car: al-Muyassar and as-Sa'di read it as a company of travellers, a caravan. They sent a man to fetch water, and Yusuf held on to his bucket."
+    ar: "«سيارة» في سورة يوسف (يوسف 19) مش عربية: معناها قافلة مسافرين. بعتوا حد يجيب لهم مية… فاتعلّق في الدلو سيدنا يوسف عليه السلام."
+segments:
+  - narration: ask
+    silent: true
+    hold: 6.8
+    scene: ask
+    sfx: [[count, 0], [impact, 5.0]]
+    lines:
+      - ar: "في سورة يوسف يعني إيه؟"
+        en: "in Surat Yusuf: what does it mean?"
+  - verses: [quran.12.19]
+    upto: 10
+    scene: listen
+  - narration: meaning
+    scene: meaning
+    sources: [tafsir.muyassar.12.19, tafsir.saadi.12.19]
+    lines:
+      - ar: "الكلمة دي… معناها: قافلة مسافرين."
+        en: "This word… means: a caravan of travellers."
+      - ar: "بعتوا حد يجيب لهم مية… فاتعلّق في الدلو سيدنا يوسف عليه السلام."
+        en: "They sent someone to fetch water… and Yusuf, peace be upon him, held on to the bucket."
+  - narration: close
+    scene: close
+    lines:
+      - ar: "وإنت… فيه كلمة كنت فاكر معناها حاجة… وطلعت حاجة تانية؟"
+        en: "And you… is there a word you thought meant one thing… and it turned out to mean another?"
+      - ar: "والسؤال الجاي: آية… تفتكر خلصت بإيه؟ تابعنا."
+        en: "Next question: a verse… how do you think it ends? Follow us."

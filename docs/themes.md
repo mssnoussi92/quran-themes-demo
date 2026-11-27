@@ -918,6 +918,459 @@ secondes), film vertical et jumeau TikTok (run 44079551978, release brouillon `q
 film », « le vertical », « le TikTok » (questions à choix). PR #42 fusionnée. **Au calendrier** (son choix) : le film le
 lundi 28 décembre (YouTube 16:9, Facebook vertical, TikTok signé), les shorts du mardi 29 au jeudi 31.
 
+## Série proposée : le quiz, « معاك 5 ثواني » (2026-11-17)
+
+**Demande du propriétaire (2026-11-17)** : un nouveau type de short, « comme un jeu pour attirer les commentaires » :
+une question, par exemple le tafsir d'un mot en QCM avec un compteur animé, ou une ayah à compléter ; « donne-moi ton
+avis d'abord, on fait un brainstorming et on choisit les meilleurs candidats ».
+
+**L'avis de la session** : oui. Le quiz vise ce que la Page a le moins : les commentaires (au relevé du 2026-11-17,
+Instagram 1 pour 29 publications et 3 427 vues, YouTube 26 pour 17 812 vues ; Facebook ne les relève pas). Il vise aussi
+son goulot, le départ à 4-8 s sur Facebook et Instagram (`docs/retention.md`) : la question est sur la première image,
+et on reste pour la réponse. Et il coûte peu : pas d'histoire à dessiner, une requête de voix au plus par short.
+
+**Ce que la session a contredit** :
+- **Pas de verset à compléter avec de faux mots** : un faux mot dans un verset est un texte coranique inventé à l'écran,
+  et un verset connu est trop facile pour un public qui sait Juz' 'Amma par cœur. À la place, **la fin d'un verset**,
+  avec de vrais noms du Coran comme choix, et **le récitateur qui donne la réponse**.
+- **Aucune mauvaise réponse inventée** : chaque mauvais choix est un vrai sens (celui d'aujourd'hui, ou celui d'un autre
+  mot) ; le meilleur quiz est celui où la réponse évidente est fausse.
+- **Un compteur de 5 s, pas 10** ; la question sur la première image.
+- **Pas de « اكتب إجابتك في الكومنتات »** : Meta classe les publications qui demandent un commentaire précis dans
+  l'« engagement bait » et les diffuse moins (https://transparency.meta.com/features/approach-to-ranking/content-distribution-guidelines/engagement-bait/) ;
+  sa force sur les reels n'est pas connue. Pas non plus de « ٩٠٪ بيغلطوا فيها » (aucun chiffre sans source).
+- **Le stock va jusqu'au 1er janvier et rien n'est mesuré** : un pilote, une série seulement après sa mesure. La grille
+  est pleine du lundi au samedi ; le créneau de midi de quran-reels (Word of the day, en pause depuis le 2026-11-15) est
+  libre, et un quiz de mot est ce Word of the day en vidéo. La place se décidera après.
+
+**Les candidats** (exemples vérifiés le 2026-11-17 dans al-Muyassar, as-Sa'di et Ibn Kathir, quran.ai) :
+
+| Format | Exemples | Pour | Contre |
+| --- | --- | --- | --- |
+| A · « يعني إيه؟ », le sens d'un mot | سَيَّارَةٌ 12:19 (« جماعة من المسافرين ») ; وَأَبًّا 80:31 (le fourrage, « كلأ ») ; مِنسَأَتَهُۥ 34:14 (« عصاه ») ; يَظُنُّونَ 2:46 (« يوقنون ») ; بَعْدَ أُمَّةٍ 12:45 (« بعد مدة ») ; دُسُرٍ 54:13 (« مسامير ») | le nom de la Page, un objet à dessiner, le Muyassar déjà dans quran-reels | voisin de « كلمة من القرآن » |
+| B · « تخلص بإيه؟ », la fin d'un verset | 5:118 (العزيز الحكيم là où on attend الغفور الرحيم ; as-Sa'di : le pardon « عن تمام عزة وقدرة، لا… عن عجز ») ; 5:38 | l'idée du propriétaire sans texte inventé ; la récitation donne la réponse | peu de versets ont un piège aussi net |
+| C · « مين قالها؟ », qui l'a dit | « إني أخاف الله رب العالمين » : le Diable (59:16) et un fils d'Adam (5:28) ; 27:22, la huppe ; 12:28, le mari (pas Dieu) | la surprise la plus forte | rien de dessiné ; 12:28 attire des disputes |
+| D · « آية ولا مش آية؟ » (déconseillé) | un proverbe pris pour un verset | le plus de commentaires | une phrase qui n'est pas du Coran à l'écran, capturable sans sa réponse |
+
+**Décisions du propriétaire (2026-11-17, questions à choix, chaque fois la recommandation)** : **A, B et C, un short
+chacun** ; **une phrase de voix D pour le sens** (question et réponse muettes) ; **pas de demande de commentaire, une
+vraie question ouverte à la fin** ; **une question par short, environ 30 s**.
+
+**Le script pilote** : `docs/scripts/quiz.md` (`sayyara` 12:19, `khatima` 5:118, `qalaha` 5:28 et 59:16), écrit le
+2026-11-17, à valider. Deux écarts à ses choix, dits avec le script : environ **40 s** et non 30 (récitation et réponse
+comprises) ; le short 3 dure **1:19**, ses deux versets faisant 44 s, parce que la réponse honnête à 59:16 est « les
+deux » (la même phrase est dans 5:28). Plus court : la huppe (27:22), environ 0:40. Aucune voix avant sa validation.
+
+**Script validé par le propriétaire le 2026-11-17**, avec le nom « معاك 5 ثواني », la durée d'environ 40 s et
+« الاتنين » au short 3 ; à sa demande, le fils d'Adam est nommé **هابيل** (al-Muyassar le nomme sur 5:28, le verset récité, « وقال هابيلُ
+واعظًا أخاه », et sur 5:27 ; Ibn Kathir rapporte ces noms de beaucoup de prédécesseurs ; le Coran ne les dit pas). Ensuite : sources, coupes, clips à lui montrer, montage du
+quiz (`video/src/trial/Quiz.tsx`), trois requêtes de voix, rendu.
+
+**Fait le 2026-11-17, sans voix** : quatorze sources proposées au registre (versets 12:19, 5:118, 5:28, 59:16, 2:127 ;
+neuf passages de tafsir) ; les quatre récitations coupées et entendues en entier par Whisper (100 % des mots ; 12:19
+jusqu'à « غلام », 11,3 s) ; les fichiers (`content/trial/quiz.yaml`, `sayyara`, `khatima`, `qalaha`), les textes de
+voix 86 à 88 (82 à 85 pris par la série en cours d'une autre session), le tic du compteur (`count` de `tools/trial/sfx.py`), le montage (`video/src/trial/Quiz.tsx`, données
+`tools/trial/quiz.py`) ; brouillons de 0:42, 0:49 et 1:22. Une retouche d'écriture : la question du short 1 s'écrit
+« في سورة يوسف يعني إيه؟ », sans « … », pour être entière sur la première image. **Pas de voix ce jour** : le palier
+gratuit était presque épuisé par deux autres sessions (une requête refusée à refaire de leur côté) ; trois requêtes le
+lendemain. **Les clips** : les brouillons tournent sur la nuit générée ; la clé Pixabay n'est pas dans l'environnement
+de la session (le workflow `film` l'a) ; proposés au propriétaire, tous déjà approuvés pour d'autres shorts : 26085
+(une plaine au soleil bas) pour `sayyara`, 190332 (des nuages au couchant sur une plaine) pour `qalaha`, la nuit
+générée pour `khatima`.
+
+**Les clips choisis par lui (2026-11-17)** : 26085 pour `sayyara`, la nuit générée pour `khatima`, 190332 pour `qalaha`.
+**Les chiffres** : « معاك 5 ثواني », compteur 5…1, références en 123 (sa règle du même jour, `CLAUDE.md`).
+
+**Au-delà du verset** (sa demande, 2026-11-17 : « ne te limite pas au Coran, il faut voir le tafsir et le fiqh si besoin
+pour plus de contexte ») : avant d'écrire une question, lire les tafsirs du verset et de ses voisins, et le fiqh quand un
+statut est en jeu. **Ses choix** : **al-Qurtubi**, quatrième tafsir de la politique, pour le fiqh (le tafsir des statuts,
+sur quran.com, id 90) ; un statut n'est la réponse d'un quiz que **sans divergence** dans nos sources, sinon il est le
+contexte dit après la réponse. Écrit dans le skill `write-hook` (« A short of the quiz »), avec les règles du format.
+
+**Prêt sans voix le 2026-11-17** (sa demande : « prépare tout sans voix maintenant, demain la voix ») : le workflow `film`
+rend désormais un brouillon muet avec la voix `X` (chaque short préparé avec `--draft` sur son vrai clip) ; run
+44103338443, release brouillon `quiz-candidate` : 0:42, 0:49, 1:22, leurs versions TikTok et couvertures, contrôlés sur
+leurs planches et envoyés. Accroches des légendes courtes **validées par lui le même jour** (« je valide les 3
+accroches »). Le lendemain : trois requêtes de voix, puis le même run en voix `D`.
+
+**Trois autres quiz** (sa demande, 2026-11-17 : « prépare 3 autres quiz sans voix, et demain matin tu envoies les 6
+voix ») : un par format, `dabba` (« دَآبَّةُ ٱلْأَرْضِ » 34:14 : la termite, pas la bête de la fin des temps de 27:82),
+`sabr` (« فَصَبْرٌ جَمِيلٌ » dit deux fois par Yaqoub, 12:18 et 12:83 : la seconde fois, il demande les trois fils) et
+`hudhud` (« أَحَطتُ بِمَا لَمْ تُحِطْ بِهِۦ » 27:22 : la huppe à Soulayman ; al-Khaḍir dit une phrase voisine à Moussa,
+18:68). **Scripts validés par lui le même jour** (questions à choix ; 34:14 coupé à « مِنسَأَتَهُۥ », sa suite dite par la
+voix). Un mauvais choix vrai ailleurs n'est plus barré : il pâlit, sa référence dessous (`note`). La règle des fichiers
+a demandé que 27:27 (Soulayman vérifie, 8 s) soit récité au short 6, puisqu'une réplique repose sur son tafsir : ajouté.
+**Brouillons muets** (workflow `film`, runs 44121795304 et 44127154394, release brouillon `quiz-candidate` : 0:59, 0:58,
+0:59 sans voix) envoyés ; **validés par lui le même jour** (questions à choix) : le rendu et les clips (8451 le coucher qui
+devient nuit, 2119 l'aube rose, 16139 les dunes), 27:27 récité au short 6, les trois accroches.
+
+**Les six avec voix** (2026-11-18) : six requêtes, rendu (run 44270232504 : 0:37, 0:48, 1:23, 0:59, 0:58, 1:01) ; **tout
+validé par lui** : voix, couvertures, ambiances, puis les textes à coller (`docs/retention/publication-quiz.md`). **Placés plus tard** (son choix) : en réserve, décidés à la revue après les chiffres du 23 novembre.
+
+## Série proposée : les adhkar du matin, du soir et d'après la prière (2026-11-17)
+
+**Demande du propriétaire (2026-11-17)** : « explorer une série pour أذكار الصباح والمساء et أذكار بعد الصلاة ».
+
+**L'avis de la session** : oui pour le sujet, non pour la forme qu'on attend. Le sujet est au cœur de la Page (« Quran &
+Sunnah for everyday life »), et le catalogue des formats le cite déjà en exemple (`practical`, `docs/formats.md`). La forme
+attendue, la carte du dhikr (le texte à l'écran, lu une fois), est très produite ailleurs. Nous avons aussi notre propre
+mesure : Word of the day, un texte à apprendre, n'a fait que 4 vues en médiane par publication sur Instagram, et il est en
+pause depuis le 2026-11-15 (quran-reels). Ce que nos sources ont en plus : **presque chaque dhikr authentique a, dans le
+hadith même, un petit récit ou une promesse concrète** (un homme piqué la veille par un scorpion, des pauvres qui se
+plaignent que les riches les devancent, Juwayriya assise de l'aube au duha, « قل » trois fois dans une nuit de pluie).
+D'où la forme recommandée : **un dhikr et son récit**, la sœur de « آية وحكايتها ». Chaque short tient seul : le fait du
+récit en accroche, le hadith lu par une vraie voix avec le dhikr à l'écran, puis quand le dire et combien de fois, et ce
+qu'il promet, deux choses prises dans les mots du hadith ; enfin un exemple de vie et la phrase à retenir.
+
+**Ce que la session contredit** :
+- **Une série « complète » est impossible dans la politique, et c'est mieux ainsi** (tout vérifié le 2026-11-17 dans
+  hadith-api) : Ayat al-Kursi après chaque prière n'est dans aucune édition de hadith-api (cherché dans an-Nasa'i et Abu
+  Dawud), donc elle ne peut pas entrer au registre, même si on élargissait la politique ; « رضيت بالله ربا… » le soir est
+  Tirmidhi 3389, que al-Albani juge da'if ; la tahlila dix fois après le fajr est Tirmidhi 3474, da'if aussi ; « حسبي الله
+  لا إله إلا هو » sept fois est Abu Dawud 5081, que al-Albani juge mawdu' ; « اللهم ما أصبح بي من نعمة » est Abu Dawud
+  5073, da'if. Le titre ne promettra donc jamais « كاملة ». Deux adhkar connus sont sahih selon al-Albani mais hors de la
+  politique (Abu Dawud) : « اللهم أعني على ذكرك وشكرك… » (1522, aussi an-Nasa'i 1303) et « اللهم إني أسألك العفو
+  والعافية… » (5074). Les prendre voudrait dire élargir la politique, une décision du propriétaire.
+- **La voix ne dit aucun mot du dhikr** : la voix ne dit aucun mot d'un hadith cité (`tools/trial/rules.py`). Le dhikr
+  s'entend lu une fois par le lecteur du recueil, avec un débit de livre lu et non de psalmodie, et trois lecteurs
+  différents selon le recueil. Pas de « قولها معايا » que la voix répéterait.
+- **Pas de sens au-delà du texte** : la politique n'a pas de commentaire (charh) de hadith. Une réplique de sens repose
+  sur le hadith lui-même, ou sur le tafsir d'un verset qui porte les mêmes mots (« من شر ما خلق » est 113:2).
+- **Pas dans quran-reels** : les adhkar du Coran y passent déjà (Ayat al-Kursi en série, 112-114 dans la lecture), et une
+  carte de dhikr automatique y demanderait du code nouveau pour la forme la plus faible.
+- **L'heure** : les vidéos thématiques sortent à 19:00, après le maghrib pour tout le public. Un dhikr du matin s'annonce
+  pour « بكرة الصبح », jamais pour « دلوقتي ». L'heure exacte de chaque dhikr (une divergence de fiqh) n'est pas tranchée
+  par nous : on dit les mots du hadith (« حين يصبح »، « دبر كل صلاة »).
+- **Le stock va jusqu'au 1er janvier, et rien n'est encore mesuré sur les séries** : un pilote de trois shorts, la place
+  décidée à la revue avec les chiffres, comme pour le quiz.
+
+**Les adhkar dans la politique** (vérifiés le 2026-11-17 dans hadith-api ; jugement d'al-Albani pour Tirmidhi ; aucun
+n'est encore au registre). Pour chaque lecture, l'item archive.org est indiqué ; le fichier existe, la position reste à
+trouver (skill `find-hadith-recording`).
+
+| Moment | Hadith | Le dhikr | Le récit ou la promesse (l'accroche) | Lecture |
+| --- | --- | --- | --- | --- |
+| soir | Muslim 2709 | « أعوذ بكلمات الله التامات من شر ما خلق » | un homme : un scorpion l'a piqué la nuit d'avant ; s'il l'avait dit le soir, il ne lui aurait pas nui | Muslim, livre 48 (`_49.mp3`) |
+| matin et soir | Tirmidhi 3575 (Hasan) | 112, 113 et 114, trois fois | une nuit de pluie et de grande obscurité ; « قل » trois fois, sans réponse ; « تكفيك من كل شيء » | Tirmidhi 3535-3800 ; sourates récitées par Tawfiq (58 s) |
+| matin | Muslim 2726 | « سبحان الله وبحمده عدد خلقه… », trois fois | il la quitte après la prière de l'aube, la retrouve assise au duha : quatre mots dits trois fois pèsent plus que tout ce qu'elle a dit | Muslim, livre 48 |
+| matin et soir | Tirmidhi 3388 (Hasan Sahih) | « بسم الله الذي لا يضر مع اسمه شيء… », trois fois | Aban, à demi paralysé, à l'homme qui le regarde : il ne l'avait pas dit ce jour-là, « ليمضي الله على قدره » (piège : la peur ; à raconter avec sa fin, qui rejoint le film `qadar`) | Tirmidhi 3302-3534 |
+| matin, soir, coucher | Tirmidhi 3392 (Sahih) | « اللهم عالم الغيب والشهادة… » | Abou Bakr demande ce qu'il doit dire matin et soir | Tirmidhi 3302-3534 |
+| matin et soir | Bukhari 6306 | سيد الاستغفار | dit le jour avec certitude, mort avant le soir : « من أهل الجنة » (et de même la nuit) | `bukhari_audiobook` |
+| matin et soir | Muslim 2692 (Tirmidhi 3469, Sahih) | « سبحان الله وبحمده », cent fois | personne ne viendra avec mieux, sauf qui en a dit autant ou plus | Muslim, livre 48 |
+| dans la journée | Bukhari 3293 (Muslim 2691) | la tahlila, cent fois | « حرزا من الشيطان يومه ذلك حتى يمسي » | `bukhari_audiobook` |
+| après le maghrib | Tirmidhi 3534 (Hasan Sahih) | la tahlila, dix fois | une garde contre le diable jusqu'au matin | Tirmidhi 3302-3534 |
+| soir | Muslim 2723 (Tirmidhi 3390) | « أمسينا وأمسى الملك لله… » | pas de récit | Muslim, livre 48 |
+| matin et soir | Tirmidhi 3391 (Sahih) | « اللهم بك أصبحنا… » | pas de récit | Tirmidhi 3302-3534 |
+| nuit | Bukhari 5009 (Muslim 807) | 2:285-286 | « كفتاه » | récitation de 90 s : trop longue pour un short |
+| après la prière | Muslim 595 et 597 (Bukhari 843) | 33 + 33 + 33, et la tahlila pour faire cent | les pauvres des Muhajirun : « les riches ont pris les degrés » ; puis les riches l'apprennent et le font aussi : « ذلك فضل الله يؤتيه من يشاء » (62:4, 10 s) ; 597 : « même comme l'écume de la mer » | Muslim, livre 5 (`_06.mp3`) ; `bukhari_audiobook` |
+| après la prière | Tirmidhi 3410 (Sahih) | 10 + 10 + 10, et 100 au coucher | « deux choses faciles, et peu les font » : le diable vient dire « souviens-toi de ceci » pendant la prière, et endort au coucher | Tirmidhi 3302-3534 |
+| après la prière | Bukhari 844 (Muslim 593) | « لا إله إلا الله وحده… اللهم لا مانع لما أعطيت… » | une lettre : al-Mughira la dicte à son secrétaire pour Mu'awiya | `bukhari_audiobook` |
+| après la prière | Muslim 591 | l'istighfar trois fois, « اللهم أنت السلام… » | le premier après le salam ; pas de récit | Muslim, livre 5 |
+| après la prière | Bukhari 2822 | « اللهم إني أعوذ بك من الجبن… » | Sa'd l'apprenait à ses fils « comme le maître apprend l'écriture aux enfants » | `bukhari_audiobook` |
+| après la prière | Tirmidhi 2903 (Sahih) | les mu'awwidhat | 'Uqba : « il m'a ordonné » ; pas de récit | Tirmidhi 2817-3104 |
+
+**Les formes** :
+- **A, recommandée : « un dhikr et son récit »**, des shorts d'environ 1:00 à 1:30, sans film. Chacun tient seul, et le
+  premier plan est une chose à dessiner (un scorpion, des pièces, un chapelet qui compte jusqu'à 33, l'écume filmée). Une
+  requête de voix par short.
+- **B : un film `practical`** (« أذكار الصبح والمسا… من البخاري ومسلم ») et ses shorts. Les parties restent les mêmes ; le
+  film n'ajoute qu'un enchaînement, et coûte une requête et un rendu de plus. Une compilation pour la recherche YouTube peut
+  se monter plus tard avec les shorts de A.
+- **C, déconseillée : la carte du dhikr**, pour la raison du Word of the day.
+
+**Le pilote recommandé** (trois shorts, un par moment, chacun avec son récit et sa chose à dessiner) :
+1. **Le scorpion** (le soir, Muslim 2709) : la nuit, la silhouette d'un scorpion ; 113:1-2 récités (6,6 s, les mêmes mots
+   « من شر ما خلق ») ; le sens repose sur le tafsir de 113:2 (à lire dans nos trois tafsirs).
+2. **« قل » trois fois** (matin et soir, Tirmidhi 3575) : un clip de nuit de pluie (à trouver) ; 112, 113 et 114 récitées
+   (58 s : la moitié du short).
+3. **Les riches et les pauvres** (après la prière, Muslim 595 et 597) : des pièces, puis le chapelet compté 33 · 33 · 33 ·
+   1, puis l'écume de la mer filmée ; 62:4 récité (10 s).
+
+Autre choix pour le pilote : Juwayriya (Muslim 2726) à la place du scorpion, si on veut un dhikr du matin.
+
+**Ce qu'il faut faire** : trois lectures à trouver et à couper (Muslim livres 48 et 5, Tirmidhi), à faire écouter au
+propriétaire ; les coupes de récitation de Tawfiq (112, 113, 62:4) ; deux clips à lui montrer (une nuit de pluie, la mer) ;
+les dessins (un fichier `video/src/trial/Dhikr.tsx` : scorpion, pièces, compteur) ; trois requêtes de voix (un jour) ; un
+rendu par le workflow `film`.
+
+**Décisions du propriétaire (2026-11-17, questions à choix, chaque fois la recommandation)** : **la forme A**, un dhikr et
+son récit, en shorts sans film ; **rester dans la politique** (Bukhari, Muslim, Tirmidhi jugé sahih ou hasan par
+al-Albani), sans l'élargir ; **le pilote : le scorpion, « قل » trois fois, les riches et les pauvres** ; **le nom :
+« ذكر وحكايته »**. Ensuite : le script des trois shorts (skill `write-hook`), à valider avant toute voix.
+
+**Le script pilote** (écrit par la session le 2026-11-17, à valider ; `docs/scripts/dhikr.md`, `content/trial/dhikr.yaml`,
+`aqrab`, `qul`, `dathur`) : 1:27, 2:04, 1:59 estimés. **Deux écarts à la fiche, dits avec le script** : 62:4 n'est pas
+récité dans le short 3, parce qu'al-Muyassar y lit l'envoi du Prophète ﷺ et non ce récit ; à sa place, **57:21**, « سابقوا
+إلى مغفرة… », le verset de la course, qui se ferme sur la même phrase (on ne dit pas que le Prophète ﷺ le citait : la phrase
+est aussi en 5:54 et 62:4) ; Muslim 597 (l'écume de la mer) n'y entre pas (2:20 avec lui) et reste pour un short suivant.
+Le short 1 récite 113:1-3 (la sourate continue après 113:3 ; elle est entière dans le short 2). **Préparé sans voix** :
+dix-neuf sources proposées au registre (trois hadiths, seize versets, six passages de tafsir) ; les lectures trouvées et
+coupées, entendues mot pour mot par Whisper (Muslim 2709, livre 48 : 8,9 s ; Tirmidhi 3575 : 11,3 s ; Muslim 595, livre
+5 : 23,4 s et 3,8 s), proposées ; les coupes de Tawfiq (112, 113, 114 entières, 57:21) posées à la main sur le creux du son,
+toutes entendues. La règle des fichiers comptait la formule « صلى الله عليه وسلم » d'un hadith lu comme une citation dite
+par la voix : elle l'écarte désormais comme pour un récit raconté (`tools/trial/rules.py`, test ajouté). Aucune voix avant
+son « je valide le script ».
+
+**Script validé par le propriétaire le 2026-11-17** (question à choix nommant le script envoyé, avec 57:21 dans le short
+3 ; `script_validated` des trois shorts). **Les lectures** : à juger sur les vidéos (son choix), elles restent proposées.
+Ensuite : les clips et les dessins à lui montrer (skill `new-scene`), trois requêtes de voix, le rendu.
+
+**Des récitateurs pour les adhkar ?** (sa question, 2026-11-17, avant les clips : « est-ce que tu peux chercher si tu
+trouves des récitateurs pour les adhkar ») : recherche sur archive.org le même jour. **Trouvés** : des « أذكار الصباح
+والمساء » complets (de 20 à 40 min par fichier) de Fares Abbad (dans la rotation de quran-reels), Muhammad Jibril, Idrees
+Abkar, Hani ar-Rifa'i, Maher al-Mu'aiqly, Yasser ad-Dossari, Faisal Labban, Abdulaziz bin Ibrahim, Salman al-Utaybi ; ceux
+d'Alafasy et d'al-Ghamdi aussi, écartés de la Page pour des revendications de droits. **Pas trouvés** : Tawfiq As-Sayegh,
+Omar Hisham (l'item à son nom est vide) ; **après la prière**, seulement Alafasy. **Ce qu'on en sait** : aucun ne donne de
+licence ; ce sont des albums (le fichier du soir de Fares Abbad finit sur une publicité, « الآن في الأسواق المصحف المرتل
+للقارئ فارس عباد » ; celui de Jibril sur le nom du site qui le diffuse) ; ils suivent Hisn al-Muslim, adhkar faibles
+compris (« رضيت بالله ربا » trois fois). Celui de Jibril dit « أعوذ بكلمات الله التامات من شر ما خلق » trois fois (à
+1222,8 s de `أذكار المساء.mp3`, item `adhkar-alsabah-walmasa-muhamad-jibril`, 11,9 s chaque fois) : un extrait envoyé au
+propriétaire. Dans le fichier du soir de Fares Abbad, on ne l'a pas trouvé aux endroits écoutés. **L'avis de la
+session** : le hadith reste lu par le lecteur du recueil (la réponse du Prophète ﷺ, sa promesse, que la voix ne peut pas
+dire) ; un récitateur ne pourrait qu'ajouter le dhikr seul, au short 1 seulement (le short 2 a déjà Tawfiq, le short 3
+n'a rien hors d'Alafasy), pour 12 s, avec un outil à étendre (une partie jouée depuis un autre fichier que la lecture du
+hadith) et un risque de droits jamais vérifié sur un album.
+
+**Son choix (2026-11-17, question à choix)** : « 2 et chercher ailleurs » : **essayer Jibril au short 1**, et chercher
+d'autres sources. **Ailleurs, rien de mieux** : aucun enregistrement d'adhkar de Tawfiq As-Sayegh ; ceux d'Omar Hisham
+sont des disques du commerce (« Evening Adhkar » 2022, « Morning Dua and Remembrance » 2021 sur Apple Music : très
+probablement inscrits à Content ID et Rights Manager) ; Makkah Live propose les mêmes Fares Abbad et Jibril, « pour un
+usage personnel » ; Hisn al-Muslim lu par un présentateur (Hamad ad-Duraihem) dans des applications, sans licence
+trouvée. **Fait** : une partie d'un hadith peut nommer sa propre voix et son propre fichier (`schemas/source.schema.json`,
+`scripts/validate.py`, deux tests) ; Muslim 2709a a une partie `dhikr`, dite par Jibril (11,9 s, entendue mot pour mot) ;
+le short 1 la joue après la réponse du Prophète ﷺ, annoncée par une réplique nouvelle (« والذكر نفسه… بصوت الشيخ محمد
+جبريل: »), **validée par lui le même jour** (question à choix qui la citait) ; il passe à 1:43. **Les droits** : sa première publication sur Facebook seul, avec la vérification
+de Meta, avant Instagram et TikTok ; sur YouTube, à la main, Content ID à regarder.
+
+**Clips, dessins, brouillons muets (2026-11-17)** : clips choisis par lui parmi ceux qu'il a déjà approuvés (questions à
+choix, chaque fois la recommandation) : 8451 (un coucher qui devient nuit) pour le scorpion, 16495 (un ciel d'orage
+sombre) pour « قل », 30218 (une aube en accéléré) pour les riches et les pauvres ; ambiances proposées parmi les trois
+validées à l'écoute (grillons le soir ; vent dans un arbre). Dessins : `video/src/trial/Dhikr.tsx`. Brouillons muets
+rendus par le workflow `film` (run 44176305883, voix X, avec leurs versions TikTok et couvertures) : 1:46, 2:06, 2:02 ;
+format et volume conformes (−16,1 à −16,4 LUFS), envoyés. Deux répliques du short 1 retouchées après les planches,
+mots inchangés (la ligne du sens, six morceaux, s'écrivait un mot par ligne ; l'annonce du short suivant, trop longue,
+coupée en deux), à confirmer par lui ; le compteur 33 se lit de droite à gauche. La voix : trois requêtes le 19 novembre.
+
+**Le short 1 refait à sa demande (2026-11-17, sur le brouillon muet)** : « pas besoin de laisser le hadith récité ; la
+voix dit ce que le Prophète ﷺ a dit, le sens sans le hadith, puis le dhikr par la voix de Jibril ; les exemples à recréer
+dans nos jours, on n'a pas peur des scorpions ». Fait : la lecture de la réponse (partie `answer`) n'est plus jouée ; la
+narration la dit **au discours indirect** (« قاله إنه لو كان قال كلمات معيّنة… ما كانتش ضرّته »), jamais comme une
+citation : c'est la première fois qu'une réplique de la voix rapporte une parole du Prophète ﷺ, même par le sens (la
+règle du skill `write-hook` disait « jamais »), point dit au propriétaire ; le dhikr n'est entendu que dans la voix de
+Jibril. L'exemple : la route de nuit (scène `drive`, des phares), les enfants endormis, la porte qu'on ferme et ce qu'on
+« استودع » à Allah. Ses images (images fixes sur la nuit générée) envoyées. Puis, à sa demande, la réplique « والليل
+بالذات… » retirée et la réponse dite plus court (« والنبي صلى الله عليه وسلم دلّه على كلمات… لو قالها لما المسا دخل، ما
+كانتش ضرّته. », « اسمعها بصوت الشيخ محمد جبريل: » : sa version A) : **le short 1 refait validé par lui le 2026-11-17**
+(1:33). Les images des trois shorts sont bonnes pour lui (« oui, voix le 19 »).
+**La voix (2026-11-19)** : trois requêtes (run 44484641328 de `voice-test`), un premier run annulé par celui d'une autre
+session (la prise d'aqrab, faite, perdue : `cancel-in-progress` de `voice-test`, passé à `false` le même jour par la PR #61,
+ce qu'il demandait aussi ici) ; chaque phrase retrouvée dans sa prise, aucune manquante (à écouter : « بتستودعه ربنا » et « ما تحتاجش فلوس »,
+Whisper les entend mal). Rendus (workflow `film`, release brouillon `dhikr-candidate`) : 1:30, 2:02, 1:58, −16 LUFS ; deux
+défauts vus sur les planches et corrigés avant l'envoi : dans qul, la quatrième ligne de « زي مفاتيح… » touchait l'anneau
+des clés (les clés descendues de 70 px), dans dathur le « ۚ » de 57:21 écrivait « سوجة » dans la référence (`verseGap` 72).
+**Les trois shorts validés par lui le 2026-11-19** (« Je valide les trois » : voix, montage, dessins, couvertures,
+ambiances). **Titres, descriptions et accroches validés par lui le même jour** (« Je valide titres et accroches » ;
+`docs/retention/publication-dhikr.md`, où la lecture de Jibril est créditée à son nom : `publish.py` prend le lecteur de la
+partie lue) ; fichiers publics (`page-dhikr`). Restent : la date, et le short 1 d'abord sur Facebook seul (le test des
+droits de la lecture de Jibril).
+
+**L'affiche « الأذكار بعد الصلاة المفروضة » (envoyée par lui, 2026-11-17) et la suite** : comparée à la politique,
+presque tout y est (Muslim 591, 593-594, 595, 597 ; Bukhari 844 ; Tirmidhi 2903 pour الفلق et الناس, 3534 pour les dix
+tahlilas après le maghrib) ; hors de nos sources : les dix après le fajr (Tirmidhi 3474, da'if selon al-Albani), Ayat
+al-Kursi après la prière (as-Sunan al-Kubra, absente de hadith-api), al-Ikhlas après chaque prière (Tirmidhi 2903 dit
+« المعوذتين ») ; les trois sourates trois fois sont « حين تمسي وتصبح » (Tirmidhi 3575). **Sa condition** : « si on
+trouve le son de Jibril et que ça passe avec Meta, on continue, sinon ça ne sert à rien : dire le hadith n'attire pas ».
+**Recherche** : Jibril n'a pas enregistré les adhkar d'après la prière (archive.org, web, Makkah Live) ; seul Alafasy
+(écarté) ; la suite d'après la prière avec un récitateur n'est donc pas possible. Possible : les adhkar du matin et du
+soir de son album qui ont un récit (Juwayriya, سيد الاستغفار, Aban, Abou Bakr ; leurs places dans ses fichiers restent à
+trouver). **Ses choix (questions à choix)** : **garder le short 3 tel quel et mesurer** (short 1 avec Jibril, short 3 avec
+la lecture du recueil : la comparaison dira si la lecture retient moins) ; **le test des droits** : le short 1 publié
+d'abord **sur Facebook seul**, 48 h à surveiller les revendications (le contrôle de Meta avant publication n'a vu aucune
+des trois revendications passées), puis Instagram et TikTok ; la série ne continue avec Jibril que si c'est propre.
+
+**Adhkar à lire, sans voix, à enregistrer (son idée, 2026-11-17)** : « un montage animé sans voix, on laisse les gens lire
+les adhkar du matin, du soir et d'après la prière, et on dit : save it ». L'avis de la session : oui, un format à part,
+mesuré sur les enregistrements (Word of the day, un texte à lire, n'avait pas pris : la différence doit venir du format
+vidéo). Ses choix : les trois d'un coup ; une ambiance douce et Tawfiq pour les sourates ; **script validé par lui**
+(`docs/scripts/adhkar-cards.md` : les adhkar de la politique seulement, chacun avec sa référence et son nombre) ; le titre
+seul sur la couverture ; les clips 7215 (après la prière), 2119 (matin), 190332 (soir). Fait : un segment `card:` (un
+dhikr du registre à l'écran le temps de le lire, sans son ; une partie du registre peut n'avoir aucun enregistrement),
+seize hadiths au registre (proposés) et leurs extraits découpés par programme ; `content/trial/adhkar.yaml` (`salat`,
+`sabah`, `masaa`) : 2:13, 2:26, 2:42. Deux cartes changées en les écrivant : « أستغفر الله » est l'explication d'al-Awza'i
+(hors des paroles du Prophète ﷺ dans Muslim 591) : notre étiquette « وقبلها: استغفر 3 مرات » ; Tirmidhi 2903 est la parole
+de 'Uqba : une ligne à nous avec sa référence annonce الفلق et الناس.
+Rendu sans voix par le workflow `film` (run 44192660389, avec les versions TikTok et les couvertures) : 2:13, 2:27, 2:43 ;
+format et volume conformes (−16,5 à −16,7 LUFS), cartes lisibles sur les clips, aucune ambiance sous Tawfiq ; envoyés le
+2026-11-17. À regarder : la lune du clip 7215 passe derrière le texte de quelques cartes (lisible, moins net) ; la
+traduction de سيد الاستغفار (Bukhari 6306, Muhsin Khan) n'est qu'une translittération.
+**Les trois vidéos validées par lui le 2026-11-17** (« je valide les trois » : cartes, nombres, clips, ambiances,
+couvertures, et les seize hadiths du registre) ; restent les textes à coller et leur place au calendrier.
+**Ensuite (2026-11-17, questions à choix)** : les accroches des légendes courtes validées par lui ; la vidéo du soir avec
+**al-Baqara récitée** (2:285-286, Bukhari 5009 ; sa demande) sous 3 min : الإخلاص والفلق والناس sur la carte « 3 مرات »
+sans récitation (elles le sont le matin), des passages plus courts et des cartes un peu plus rapides (`pace` du fichier) :
+2:55 ; à rendre et à lui montrer. **La publication le dimanche** (sa proposition retenue d'abord) : quran-reels ne publie
+les vidéos thématiques que du lundi au samedi (la tâche planifiée qui lance `themes.yml`) ; **sa décision : on décide plus
+tard**, rien n'est au calendrier. **PR et fusion** demandées par lui, pour que tout arrive sur `main`.
+**La vidéo du soir refaite** (PR #49 et #50, 2026-11-18) : 2:55 (175,3 s, −16,2 LUFS), al-Baqara récitée par Tawfiq
+As-Sayegh de 1:21 à 2:50, l'ambiance muette dessous (−91 dB sur sa piste) ; au premier rendu, le « ۚ » de « وُسْعَهَا »
+(2:286) entrait dans la référence écrite au-dessus du verset (Amiri Quran dessine un signe de pause haut au-dessus de sa
+ligne) : `verseGap` 72 pour `masaa` (PR #50), rien d'autre ne bouge ; le même heurt peut exister dans d'autres shorts quand
+la première ligne d'un verset porte un signe de pause. **Validée par lui le 2026-11-18** (question à choix : « Je valide
+la vidéo du soir »). Textes : `docs/retention/publication-adhkar.md` ; la ligne « 🎙️ AI-generated voice » n'y est plus
+(ces vidéos n'ont pas de voix ; `publish.py` ne la met que sous un short où la voix parle) ; les descriptions disent
+« من أحاديث صحيحة وحسنة » (Tirmidhi 3534, 3388 et 3575 sont hasan). **Titres et descriptions YouTube validés par lui le
+2026-11-18** (« Je valide les textes YouTube ») ; fichiers publics par `page-files` (`page-adhkar`). Reste leur date au
+calendrier (sa décision : plus tard).
+
+## Série : « وتحسبونه هيّنًا » (ghiba, namima, riya' ; idée du propriétaire, 2026-11-17)
+
+**Sa demande** : « je veux explorer une nouvelle série : الغيبة، النميمة، الرياء… pour الغيبة on a l'idée que حسناتك ممكن
+تمشي لحد انت اغتبته ; il faut bien choisir le hook et bien créer une situation ». **Fiche** (skill `choose-format`) :
+
+**Ce que la session lui a opposé** (dit avant de recommander) :
+- **Son idée tient, mais pas par le hadith qu'on cite d'habitude.** Le « المفلس » (Muslim 2581) énumère l'insulte, l'accusation
+  (قذف), l'argent, le sang et les coups, pas la ghiba. La source est **Bukhari 2449** (« مظلمة لأحد من عرضه… أخذ منه بقدر
+  مظلمته »), et **al-Qurtubi sur 49:12** range la ghiba parmi ces مظالم en le citant, avec la divergence qu'il rapporte (pour
+  certains, elle reste entre le serviteur et Dieu) : d'où « ممكن », jamais « le Prophète ﷺ a dit que celui qui médit perd
+  ses حسنات ». L'histoire d'al-Hasan al-Basri et des dattes est hors politique.
+- **Le transfert des حسنات est le Jour du Jugement** : jamais dessiné ; l'image reste la scène d'ici-bas (la chaise vide).
+- **Le riya' n'est pas de la même famille** (la langue contre les gens, le cœur devant Dieu). Le fil qui tient les trois :
+  les péchés qu'on croit petits, 24:15, qu'as-Sa'di étend (« الزجر البليغ، عن تعاطي بعض الذنوب على وجه التهاون بها »).
+  « حسنات بتضيع », son fil, tenait pour la ghiba et le riya', pas pour la namima.
+- **Deux pièges** : montrer une bonne action n'est pas du riya' (2:271 ; et la Page publie elle-même du Coran) : le short dit
+  l'intention ; transmettre pour prévenir d'un vrai tort n'est pas la namima (as-Sa'di sur 68:11 : « لقصد الإفساد »).
+- **Les ouvertures qui font peur** (les deux tombes de Bukhari 216, les trois premiers jugés de Muslim 1905) restent dans les
+  shorts, lues ou racontées, jamais en première image ni dessinées.
+
+**Décisions du propriétaire (2026-11-17, questions à choix, chaque fois la recommandation)** : **« وتحسبونه هيّنًا », trois
+shorts qui tiennent seuls, sans film** ; la ghiba ouverte sur **la chaise vide, l'excuse, puis son idée** ; la namima sur
+**la capture d'écran transférée**, le riya' sur **« عملتها عشان يتقال… واتقال »** puis 2:264 ; **les trois scripts tout de
+suite**, aucune voix avant « je valide le script ».
+
+| Short | Scène jouée, muette | Accroche | Récité, lu | Le sens repose sur | Estimé |
+| --- | --- | --- | --- | --- | --- |
+| 1. `ghiba` | un café le soir, trois silhouettes penchées, une chaise vide ; «هو فعلاً كده… أنا مش بفتري عليه!» | «الجملة دي… ممكن تاخد من حسناتك… وتديها لصاحب الكرسي الفاضي.» | 49:12 (36,5 s) ; Bukhari 2449 lu (21,2 s) ; Muslim 2589 raconté | al-Muyassar et al-Qurtubi sur 49:12 | 2:08 |
+| 2. `namima` | un téléphone dans le noir : capture, transfert, «شوف فلان قال عليك إيه.» | «الحركة دي… ليها اسم في القرآن.» | 68:10-11 (10,4 s) ; Bukhari 216 lu en extrait (12,3 s : les deux tombes, « يمشي بالنميمة ») | as-Sa'di sur 68:11, al-Muyassar sur 68:10 | 1:26 |
+| 3. `riya` | une main glisse un billet dans une caisse, un téléphone filme, les cœurs montent | «عملتها عشان يتقال… واتقال.» | 2:264 (45,5 s), sur la pluie qui lave la roche ; Muslim 1905 raconté | al-Muyassar, Ibn Kathir et as-Sa'di sur 2:264 | 1:53 |
+
+- **Ce qui distingue les parties** : la ghiba, ce que tu dis sur lui ; la namima, ce que tu lui rapportes ; le riya', ce que
+  tu fais pour qu'on te voie. Chaque short annonce le suivant ; le troisième, d'autres péchés qu'on croit petits.
+- **En réserve** (les « … » de sa demande, sources vérifiées) : la moquerie (49:11), le soupçon et l'espionnage (49:12), الهمز
+  واللمز (104:1), la jalousie (Muslim 2564), le mensonge (Muslim 2607). Pour le riya', 2:265 (la même pluie sur un jardin
+  qui donne le double) ferait un contraste, mais un short ne repose que sur le tafsir d'un verset qu'il récite.
+
+**Fait le même jour (le script, aucune voix)** : au registre, **proposés**, 4 versets (49:12, 68:10, 68:11, 2:264), 4 hadiths
+(Bukhari 2449 et 216, Muslim 2589 et 1905a) et 8 passages de tafsir (dont le premier d'al-Qurtubi, 49:12) ; les versets
+coupés dans la récitation (68:10-11, que le récitateur enchaîne, posés à la main : 68:10 à 45,05 s, où Whisper entend enfin
+« ولا ») ; deux lectures d'Abu Malik al-Asqalani trouvées et entendues mot pour mot (Bukhari 2449 : `2449.mp3`, 13,05-34,25 s ;
+Bukhari 216 : `0216.mp3`, 21,40-33,68 s, de « يعذبان » à « بالنميمة ») ; les fichiers (`content/trial/hayyin.yaml`, `ghiba`,
+`namima`, `riya`), les textes de voix 102 à 104 (92 à 101 pris par les séries des adhkar et des quiz d'autres sessions), le script (`docs/scripts/hayyin.md`). Fond provisoire (la nuit générée) ; ni
+dessins, ni clips, ni ambiances. **À valider par le propriétaire avant toute voix.**
+
+**Ses réponses sur le script (2026-11-17, questions à choix)** : il **relit** le script ; la ghiba **garde 2:08**, une version
+courte pour Facebook et Instagram plus tard (l'outil `cut`) ; **les images de style tout de suite**. **Fait** : les dessins
+(`video/src/trial/Hayyin.tsx`, la silhouette de `Lens.tsx`) : le café le soir, trois silhouettes penchées, la chaise vide sous
+sa propre lampe, puis de près (la veste et les clés à sa place : il est sorti, il revient), le café vu de la rue pour 49:12,
+la poignée de main du matin ; le téléphone (la capture, le transfert, la confirmation), celui qui le reçoit, deux maisons et
+un chemin où marche une silhouette (« مشّاء »), deux tombes au crépuscule sous les palmiers, personne ; la caisse « صدقة »
+filmée, les cœurs et le compteur, la roche de 2:264 sous la pluie (la poussière emportée à « فأصابه وابل »), la même
+poussière qui a l'air d'une terre et sa coupe ; fond tout dessiné. Brouillons sans voix : 2:10, 1:28, 1:55. Planches :
+`docs/retention/hayyin-style-1-ghiba.jpg`, `-2-namima.jpg`, `-3-riya.jpg`, couvertures `hayyin-covers.jpg`.
+
+**Script validé par lui le 2026-11-17** (« je valide le script, tu peux commencer le rendu sans voix », lu comme le script de
+`docs/scripts/hayyin.md` tel qu'envoyé ; `script_validated` des trois shorts) ; rendu sans voix par le workflow `film` (voix `X`).
+**Rendu sans voix le même soir** (run 44178359076 du workflow `film`, 19 minutes, release brouillon `hayyin-candidate`) :
+**2:10, 1:28, 1:55**, leurs versions TikTok et les couvertures, contrôlés sur leurs planches (−16 LUFS), envoyés ; les
+accroches des légendes courtes proposées. Voix : trois requêtes, après les six des quiz.
+**Validé par lui le même soir** (questions à choix, chaque fois la recommandation) : **le montage, les dessins et les trois
+couvertures** des shorts sans voix (`validated`, `what: [montage, cover]`) ; **les trois accroches** (`hook.validated`) ; **les
+deux lectures** d'Abu Malik al-Asqalani (Bukhari 2449 et 216, `validated` au registre). **La voix le 19 novembre** (son choix :
+le 18 est aux six requêtes des quiz) : trois requêtes (textes 102 à 104), puis le rendu avec voix et ambiance, à valider sur
+les vidéos. Les sources du registre restent proposées : il les valide avec les vidéos finales.
+
+**La voix le 19 novembre** (run 44484203959 de `voice-test`, trois requêtes ; textes renumérotés 102 à 104, 95 à 101 étant
+pris par la série des quiz) : chaque phrase retrouvée dans les prises (`align.py`) ; Whisper entend autrement quelques mots, à
+écouter : « بصباع » (« بصباح »), « اتنقل » (« يتنقل ») dans la namima, « الصندوق » (« السندوق ») dans le riya'. **Ambiances**
+(proposées) : un café (BigSoundBank 2561, aucune parole distincte) pour la ghiba, la nuit validée (1880) pour la namima, la nuit
+après la pluie (0621) pour le riya'. **Rendu** (run 44484912562 du workflow `film`, release brouillon `hayyin-candidate`) :
+**2:06, 1:23, 1:46**, −16 LUFS, contrôlés sur leurs planches, envoyés le même matin.
+**Validé par lui le même matin** (questions à choix, chaque fois la recommandation) : **la voix et les ambiances** (`validated`,
+`what: [voice, montage, cover, ambience]`) ; **les seize sources** (`validated` au registre). **Au calendrier : pas encore** (son
+choix) : en réserve, placé à la revue, après les premières mesures. Textes à coller : `docs/retention/publication-hayyin.md`
+(accroches validées ; **titres et descriptions validés par lui le 2026-11-19**). Sur `main` par une PR (son choix) ; sa page
+« Films et shorts à publier » : la série y entrera avec ses dates (son choix).
+
+## Série proposée : le style des bonshommes de « STICK TO IT », deux amis et les mêmes moments rejoués (2026-11-19)
+
+Née de trois shorts qu'il a fait analyser (`reference/stickman-shorts-analysis.md`) : celui des amis (« Fake Friend vs
+Real Friend », 2,6 M vues, 86 000 j'aime) a fait 40 à 80 fois mieux que les deux autres de la même chaîne (une idée
+abstraite en boucle). Ce qui le distingue : deux personnes et une relation, des visages, de l'humour, cinq petits
+moments rejoués (le faux ami, puis le vrai, environ 6 s chacun), aucun mot sauf une étiquette, une musique.
+
+**Ses décisions (2026-11-19, questions à choix)** :
+- **Les visages** : « j'autorise les visages pour les inconnus, et si nécessaire pour montrer la différence » (règle
+  écrite dans CLAUDE.md, PR #66).
+- **Un pilote de trois shorts** : `الجليس`, `زي ما تحب لنفسك`, `انصره ظالمًا` (les trois recommandés).
+- **Sans narration** : des étiquettes, puis le hadith lu par une vraie voix, le verset récité, le sens en une ligne à
+  l'écran sous le nom du tafsir ; aucune requête de voix.
+- **Un décor dessiné à part**, propre à la série (pas leur rue de nuit), comme « سنريهم آياتنا » a le sien.
+- **Les sujets à compteur, en réserve** (plus bas).
+
+**Nom et scripts validés (2026-11-19, questions à choix)** : « الصاحب ساحب » (*Your friend pulls you*) ; les trois
+scripts tels qu'envoyés, `yuhibb` avec le fragment de 59:9 (`docs/scripts/sahib.md`). Prochaine étape : les images de
+style (les bonshommes avec visage, les trois décors) à faire valider avant d'animer.
+
+**Style et lectures validés (2026-11-19, questions à choix)** : les trois images de style (`SahibStyle` de
+`video/src/trial/Sahib.tsx` : l'ami gris, l'ami blanc, le héros à l'écharpe terracotta, des visages simples ; une ahwa le
+soir, un arrêt de bus le matin, un kiosque à la nuit tombante) ; les trois lectures de `bukhari_audiobook` (5534 :
+11,57-31,05 s, 19,5 s ; 13 : 21,81-29,55 s ; 2444 : 9,80-23,33 s ; ce qu'entend Whisper égale le texte affiché). Les
+versets et le Muyassar restent proposés. Avis donné : la lecture de 5534 dure 19,5 s (estimée à 10), `jalis` passe à
+environ 1:15, gardé entier (ses mots sont nos moments).
+
+**Sa règle (2026-11-19) : « ne jamais couper ayah au milieu »** : 59:9 se récite entier (33 s), 5:2 (67 s) est remplacé par
+9:71 entier (31,8 s), ses choix (questions à choix) ; le stock validé arrêté aux signes de pause reste tel quel (son choix).
+Les trois shorts font donc environ 1:20 à 1:35.
+
+**Production (2026-11-19)** : rendus par le workflow `film` (voix X, sans voix : runs 44541437483 et 44545396270, release
+brouillon `sahib-candidate`), 1:25, 1:34, 1:39, envoyés avec leurs couvertures. **Validés par lui le même jour** (questions
+à choix) : les titres, descriptions et accroches (`docs/retention/publication-sahib.md`), les trois versets et le Muyassar
+sur chacun, puis les trois hadiths. **En réserve, placés à la revue** avec les mesures de « بص تاني » (son choix). Ses
+corrections : les coupes des lectures (13 et 2444 commençaient par le « قال » du lecteur et la fin de son « وسلم » : recoupées
+à 22,80 s et 10,62 s) et une affiche plus parlante (« فرصة شغل », une mallette) ; rendus de nouveau (run 44551065589 ;
+1:25, 1:33, 1:38). **Tout validé par lui le 2026-11-19** (« Je valide les trois » : vidéos, lectures recoupées, bruitages,
+ambiances, couvertures).
+
+**La forme** (environ 1:00) : trois moments de la vie de tous les jours dans un même décor, chacun joué deux fois
+(l'ami qui fait mal, puis celui qui fait bien, environ 6 s chacun), un code couleur dès la première image (le premier
+gris, le second blanc), une étiquette en haut (arabe, anglais dessous), des visages simples, des bruitages et une
+ambiance, jamais de musique ; une ligne de fin ; le hadith lu (bukhari_audiobook, à couper et à faire écouter), son
+texte et sa référence ; le verset récité ; le sens en une ligne (al-Muyassar) ; l'appel au partage ; la boucle.
+
+| Short | Source (hadith-api ; lecture sur archive.org) | Verset (Tawfiq As-Sayegh) | Décor, étiquettes |
+| --- | --- | --- | --- |
+| `jalis` · الجليس | Bukhari 5534, Muslim 2628 : le porteur de musc et le forgeron (`5534.mp3` existe, à transcrire) | 43:67 (11,7 s), al-Muyassar : l'amitié dans le péché devient hostilité au Jour dernier, celle dans la piété dure | une ahwa le soir · « جليس السوء » / « الجليس الصالح » (les mots du hadith) |
+| `yuhibb` · زي ما تحب لنفسك | Bukhari 13, Muslim 45 (`0013.mp3` lit bien 13) | **59:9 entier** (33 s, règle du 2026-11-19) | un arrêt de bus le matin · « بيحب لنفسه » / « بيحب لك زي نفسه » |
+| `nasr` · انصره ظالمًا | Bukhari 2444, avec « تأخذ فوق يديه » (`2444.mp3`) | **9:71 entier** (31,8 s ; à la place de 5:2, règle du 2026-11-19), al-Muyassar : « بعضهم أنصار بعض… وينهونهم عن… المعاصي » | un kiosque et sa file · « بيشجّعك » / « بينصرك » |
+
+**Le premier test** : leurs moments (la flaque, la glace, les copies, le parapluie, la rupture) ne sont pas repris ;
+pas de couple dessiné ; jamais de violence ; un moment de chaque short suit le texte (le musc offert et la braise qui
+brûle la manche : « إما أن يحذيك… إما أن يحرق ثيابك » ; la main retenue : « تأخذ فوق يديه »).
+
+**Écartés pour ce style** : 14:24-26 (al-Muyassar : la parole de l'unicité contre celle de la mécréance, le spectateur
+ne se voit que dans le bon arbre) ; 92:5-10 (dans « مخيّر ولا مسيّر؟ ») ; 2:265-266 (72 s) ; Bukhari 6412 (proche du
+`scroll` de « بص تاني ») ; Bukhari 3464 (un ange au cœur du récit, et des gens d'un hadith).
+
+**En réserve, les sujets à compteur, sans visage** (son choix : après les mesures du pilote) :
+- **رسمة** : Bukhari 6417, le dessin du Prophète ﷺ (le carré du terme, la ligne de l'espoir, les petites lignes des
+  accidents) ; Bukhari 6436 (deux vallées, il en veut une troisième) ; la sourate 102 entière (36,3 s).
+- **نفس المطر** : Bukhari 79, une même pluie sur trois terres ; 7:58 (17 s ; al-Muyassar : la terre bonne et le croyant
+  qui profite des versets).
+- **حبة واحدة** : 2:261 (28,2 s ; 1 → 7 épis → 700) ; Muslim 2588 (« ما نقصت صدقة من مال »).
+- **كل يوم شوية** : Bukhari 6464, Muslim 783 (l'œuvre la plus constante, même petite) ; 15:99 (6,6 s). Le hadith dit
+  « le plus aimé d'Allah », pas « va plus loin ».
+- Aussi : Bukhari 6011, Muslim 2586 (le corps qui veille et a de la fièvre ; 49:10, 10,9 s) ; Bukhari 6114 et 3:134
+  (21,6 s : le fort est celui qui se maîtrise) ; Muslim 2626 (le visage souriant).
+
 ## Faits (ancien circuit)
 
 Format `misconceptions` (avant l'exemple de vie ajouté au format le 2026-11-08) :
@@ -1148,3 +1601,93 @@ brume) ; dessus, le raisonnement : une pause qui devient « lecture » quand le 
 « ؟ » et ce qu'elle nomme, la réponse au-dedans (une maison éclairée et un nœud sous la loupe ; une fenêtre sous la pluie et
 une lampe calme), les deux versets face à face (le second répond), une scène de la vie (des portes qui s'ouvrent, une copie
 d'examen, « بكرة » au calendrier). Images : `docs/retention/sual-style*.jpg`. Script : `docs/scripts/sual.md`.
+
+## Série proposée : « إزاي أعملها؟ », une série éducative ; pilote : سجود السهو (2026-11-17)
+
+**La demande** (propriétaire, 2026-11-17) : une série éducative qui garde un début fort, par exemple سجود السهو ; des
+scènes, un type de script et un montage nouveaux qui vont avec l'idée, puis décider ensemble s'il faut élargir les règles
+ou en faire une pour ce type de série seulement ; au moins un short qui dit **comment faire** quand on s'est trompé dans
+la prière (« souvent j'oublie comment faire ») ; quand les écoles diffèrent, dire leurs avis (malikite, hanafite,
+hanbalite, chaféite) ; **élargir la politique à une source de fiqh** (son choix, question à choix) ; des shorts, sans film ;
+**tout produire maintenant**, sans attendre la revue du 30 novembre (son choix : il revient sur sa décision du 16).
+
+**Avis de la session** :
+- Une série « éducative » attire vers le pire début mesuré : la leçon d'abord ou une question générale (khidr-01, trois
+  spectateurs sur quatre partis en trois secondes), ou un chiffre inventé (« ٩٠٪… », interdit). Règle proposée : chaque
+  short s'ouvre sur **un fait tiré d'un texte, ou l'erreur elle-même en mouvement**, jamais sur la leçon.
+- Le fiqh était le vrai risque : les hadiths montrent les deux prosternations avant le salam (Muslim 570a, 571a) et après
+  (Bukhari 1226, Muslim 573a), et les écoles ne font pas pareil. Aucune source de la politique ne le disait ; la source
+  proposée le dit, école par école.
+- Dhul-Yadayn (proposé d'abord) sort du pilote : l'accroche est forte, mais les pages lues ne donnent pas les quatre avis
+  pour ce cas.
+
+**La source de fiqh proposée** : **الموسوعة الفقهية الكويتية** (ministère des Awqaf du Koweït, 45 volumes, 1404-1427 H),
+comparée, quatre écoles, chaque avis avec ses références dans les livres de l'école, sans trancher ; lue sur turath.io
+(livre 11430, pagination de l'édition imprimée ; l'API répond depuis la session). Article « سجود السهو » : vol. 24,
+p. 234-241. Écartées : la « موسوعة » de dorar.net (une seule ligne, elle tranche), « الفقه على المذاهب الأربعة »
+d'al-Jaziri (azharie, chère à un public égyptien, mais plus ancienne et moins sourcée ; en secours). Comme un tafsir : ni
+lue ni affichée mot pour mot ; une réplique ou une carte des écoles repose sur un passage inscrit au registre
+(`content/sources/fiqh.yaml`, à créer), son nom et sa page écrits dessous.
+
+**Règles proposées pour la série** (à décider : pour elle seule, ou pour tout le dépôt) :
+1. Quand les écoles diffèrent, les quatre, chacune avec son avis tel que l'encyclopédie le donne ; jamais une seule,
+   jamais « الصح ». Un cas dont les pages lues ne donnent pas les quatre avis n'est pas traité.
+2. Une silhouette anonyme qui prie (règle du 2026-11-15), les positions justes ; jamais le Prophète ﷺ ni un Compagnon :
+   leur prière passe par la piste et des rangées de lumières.
+3. Un verset par short (11 à 23 s), pas un tiers à la moitié du short : ici, le hadith et les écoles portent la leçon.
+4. « احفظ الفيديو » en plus de l'appel à suivre (un short qu'on garde pour s'en servir).
+
+**Le pilote** (script : `docs/scripts/sahw.md` ; images du montage : `docs/retention/sahw-style*.jpg`) : `sahun`
+(107:4-5 : « عن » صلاتهم et non « في », d'après as-Sa'di et Ibn Kathir ; 2:286 et Muslim 126), `khams` (Bukhari 1226 :
+le dhuhr en cinq rak'ahs ; Muslim 572a lu ; 18:110 ; l'ajout chez les quatre écoles), `nasit` (Bukhari 1224, Muslim 570a :
+le tashahhud oublié ; où et comment, pas à pas, chez les quatre ; 33:21), `shakk` (Bukhari 1232, Muslim 571a lu : le doute ;
+les quatre ; 114:4-6). Environ 1:20 à 1:25 chacun.
+
+**À faire avant la voix** : le type `fiqh` du registre (politique, `fetch.py` depuis turath.io, `validate.py`, `rules.py`
+qui accepte `fiqh.*` dans `sources:`, `publish.py` qui le crédite) ; les dessins (`video/src/trial/Sahw.tsx` : la pièce, la
+silhouette en prière, la piste, la carte des écoles, le compteur) ; les lectures de Muslim 572a et 571a (archive.org) ; les
+sources au registre. Voix : quatre requêtes, une journée. Rendu : le workflow `film`.
+
+### Décisions du propriétaire (2026-11-17, questions à choix)
+
+- **Source de fiqh** : « Encyclopédie koweïtienne » ; **règles** : « Fiqh partout, le reste ici » : la source et la règle
+  des quatre écoles entrent dans la politique de tout le dépôt (`content/policy.yaml`, `fiqh`), la silhouette qui prie,
+  un seul verset par short et « احفظ الفيديو » valent pour cette série seulement.
+- **Script** : « Je valide, sans la ligne-conseil » : les quatre scripts de `docs/scripts/sahw.md` tels qu'envoyés, sans
+  « اعمل بالمذهب اللي بتتّبعه » dans `khams` (`script_validated` de chaque fichier).
+- **Montage** : « je valide sauf je veux utiliser les numéros 1 2 3 et non pas ١ ٢ ٣ » : la pièce dessinée, la silhouette,
+  la piste et la carte des écoles ; tous les nombres que la série écrit en 1 2 3.
+- **Production maintenant** (son choix à la question précédente), sans attendre la revue du 30 novembre.
+
+### Production (2026-11-17)
+
+- **Sources au registre** (`proposed`) : 107:4-5, 2:286, 18:110, 33:21, 114:4-6 ; six passages de tafsir ; Bukhari 1224,
+  1226, 1232, Muslim 126, 389f, 570a, 571a, 572a, 572j ; six pages de l'Encyclopédie koweïtienne (24/234-239,
+  `content/sources/fiqh.yaml`, nouveau type `fiqh` des outils). **Lectures** : Muslim 571a (23,8 s) et 572a (5,9 s) par
+  Ryadussalihin.org (`ar_Moslem_Reading_06.mp3`, archive.org, licence non indiquée). **Coupes** de Tawfiq As-Sayegh : 107:4-5
+  et 114:4, 114:6 posées à la main (`--set`) ; dans 107:4-5 il s'arrête après « فويل للمصلين » et reprend « للمصلين الذين… ».
+- **Voix** : sahun (52 s), khams (41,7 s), nasit (54,9 s) ; **shakk refusée** (quota Gemini du jour atteint : quatre requêtes
+  d'une autre session le matin), à redemander le 2026-11-18 (tâche planifiée de la session).
+- **Dessins** : `video/src/trial/Sahw.tsx` ; les mots de 107:4-5 écrits en grand tirés du registre (`tools/trial/sahw.py`).
+  **Rendu** : workflow `film`, un short à la fois (`only`), release brouillon `sahw-candidate`.
+
+### Corrections du propriétaire sur les trois premiers shorts (2026-11-17, questions à choix)
+
+- **Les coquilles de la traduction anglaise** (Siddiqui, hadith-api) : « Corriger, noté au registre » : « he does Dot know »
+  (Muslim 571a) et « as you for. get » (572a) corrigés dans le sous-titre seulement (`en_corrections` du registre, contrôlé
+  par `validate.py`) ; le texte publié reste tel quel au registre.
+- **Ce qu'on dit dans les deux prosternations** : « Ne rien ajouter » ; et la formule répandue « سبحان من لا ينام ولا يسهو »
+  (Ibn Hajar, التلخيص الحبير 2/839 : « لم أجد له أصلًا ») : « Non, ne pas en parler ». L'article de l'Encyclopédie koweïtienne
+  ne donne pas de formule propre ; al-Jaziri (1/409) dit, pour les chaféites, deux prosternations « كسجود الصلاة ».
+- **La silhouette** : « Il sort du sajada dans le soujoud et il semble qu'une position fausse ». Avec le long torse de la
+  silhouette, aucune pose de ses angles ne met genoux, orteils, mains et front au sol ensemble : l'ancien sujud gardait les
+  genoux en l'air et la tête hors du tapis. Le sujud est maintenant posé articulation par articulation (`SUJUD_BODY` de
+  `Sahw.tsx` : hanches au-dessus des genoux, dos qui descend, front et paumes au sol, coudes levés), et la silhouette est
+  ancrée sur ses genoux au milieu du tapis : elle ne glisse plus quand elle se prosterne ou se lève.
+- **Validés par lui le 2026-11-17** (question à choix : « Je valide les 3 et leurs sources ») : `sahun`, `khams`, `nasit` tels que
+  rendus après ses corrections (voix, montage, couvertures, ambiance ; `video/out/sahw/ci-2/` de la session, release brouillon
+  `sahw-candidate`), la lecture de Muslim 572a, et leurs vingt sources passées à `validated`. Restent : `shakk` (sa voix le
+  2026-11-18), les textes de publication et les accroches, la date au calendrier.
+
+- **Sur `main`** (PR #52, fusionnée le 2026-11-18) ; **fichiers publics** `page-sahw` (workflow `page-files`) : les quatre shorts,
+  leurs versions TikTok et leurs couvertures, ceux que quran-reels publie du 4 au 7 janvier.

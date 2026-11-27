@@ -11,8 +11,8 @@ La version TikTok (vidéo et légende) est **validée par le propriétaire le 20
 **Facebook · Titre**
 
 ```text
-Free will or fate? 3 sentences we all say
 مخيّر ولا مسيّر؟ تلات جمل بنقولها كلنا
+Free will or fate? 3 sentences we all say
 ```
 
 **Facebook · Description**
@@ -21,7 +21,7 @@ Free will or fate? 3 sentences we all say
 لو كل حاجة مكتوبة… هتحاسب ليه؟
 If everything is written… why will I be held to account?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -35,8 +35,8 @@ Sur TikTok : la vidéo `qadar-film-9x16-tiktok.mp4`, signée `@quran.words.daily
 **TikTok · Titre**
 
 ```text
-Free will or fate? 3 sentences we all say
 مخيّر ولا مسيّر؟ تلات جمل بنقولها كلنا
+Free will or fate? 3 sentences we all say
 ```
 
 **TikTok · Description**
@@ -45,7 +45,7 @@ Free will or fate? 3 sentences we all say
 لو كل حاجة مكتوبة… هتحاسب ليه؟
 If everything is written… why will I be held to account?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (4)**

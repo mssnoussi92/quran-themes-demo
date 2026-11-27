@@ -77,6 +77,7 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
     allowed = set(policy.get("hadith", {}).get("collections", []))
     graded = policy.get("hadith", {}).get("graded", {})
     tafsirs = set((policy.get("tafsir") or {}).get("editions") or {})
+    fiqhs = set((policy.get("fiqh") or {}).get("editions") or {})
     registry: dict[str, dict] = {}
     for path in sorted((CONTENT / "sources").glob("*.yaml")):
         entries = load_yaml(path) or []
@@ -91,6 +92,10 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
             # An English excerpt is a selection of the published text, never a rewording.
             if "excerpt_en" in src and src["excerpt_en"] not in (src.get("text_en") or ""):
                 report.error(where, "excerpt_en is not a passage of text_en")
+            # A misprint corrected on screen only (owner, 2026-11-17): the published text stays, the misprint must be in it.
+            for fix in src.get("en_corrections") or []:
+                if fix.get("published") not in (src.get("excerpt_en") or src.get("text_en") or ""):
+                    report.error(where, f"en_corrections: « {fix.get('published')} » is not in the English text shown")
             if "excerpt_ar" in src:
                 if src["type"] != "hadith":
                     report.error(where, "excerpt_ar is only for a hadith")
@@ -108,6 +113,16 @@ def check_registry(report: Report, policy: dict) -> dict[str, dict]:
                     report.error(where, "id does not match ref")
                 if ref["edition"] not in tafsirs and src["status"] != "excluded":
                     report.error(where, f"tafsir '{ref['edition']}' is outside content/policy.yaml; status must be excluded")
+            if src["type"] == "fiqh":
+                for key in ("volume", "page"):
+                    if not isinstance(ref.get(key), int) or isinstance(ref.get(key), bool):
+                        report.error(where, f"a fiqh source needs ref.{key}, an integer")
+                if sid != f"fiqh.{ref.get('edition')}.{ref.get('volume')}.{ref.get('page')}":
+                    report.error(where, "id does not match ref")
+                if ref.get("edition") not in fiqhs and src["status"] != "excluded":
+                    report.error(where, f"fiqh '{ref.get('edition')}' is outside content/policy.yaml; status must be excluded")
+                if src["status"] != "excluded" and not src.get("text_ar"):
+                    report.error(where, "a fiqh source needs text_ar (tools/sources/fetch.py)")
             if src["type"] == "science":
                 # A paper or a dataset a script rests on: labels and a checked claim, never a quoted text.
                 # (The schema says the same; these messages name the rule.)
@@ -179,23 +194,27 @@ def check_recording(src: dict, where: str, report: Report) -> None:
 
 def check_parts(src: dict, where: str, report: Report) -> None:
     """The `parts` of a hadith (a short plays a part of the reading): excerpts copied from the texts, inside the
-    entry's recording, heard words compared with the excerpt, validation by the owner only."""
+    entry's recording (or in a file of their own, said by another voice: a dhikr said by a reciter), heard words
+    compared with the excerpt, validation by the owner only."""
     parts = src.get("parts")
     if not parts:
         return
     whole = src.get("recording")
-    if not whole:
-        report.error(where, "parts: the hadith has no recording to take them from")
     for name, part in parts.items():
         here = f"{where} part '{name}'"
         if tidy(part["excerpt_ar"]) not in tidy(prophet_words(src.get("text_ar") or "")):
             report.error(here, "excerpt_ar is not a passage of the Prophet's words in text_ar")
         if part["excerpt_en"] not in (src.get("text_en") or ""):
             report.error(here, "excerpt_en is not a passage of text_en")
-        rec = part["recording"]
+        rec = part.get("recording")
+        if not rec:                         # shown on a card only (a dhikr to read), never read
+            continue
+        if not whole and not rec.get("file"):
+            report.error(here, "recording: a part read from the hadith's recording, and the hadith has none")
         if rec["end"] <= rec["start"]:
             report.error(here, "recording: end must come after start")
-        if whole and not whole["start"] <= rec["start"] < rec["end"] <= whole["end"]:
+        own = rec.get("file") and (not whole or rec["file"] != whole.get("file"))    # another voice, its own file
+        if whole and not own and not whole["start"] <= rec["start"] < rec["end"] <= whole["end"]:
             report.error(here, f"recording {rec['start']}-{rec['end']} is outside the hadith's recording {whole['start']}-{whole['end']}")
         status = rec.get("status", "proposed")
         if status == "validated" and not rec.get("validated_by"):

@@ -13,8 +13,14 @@ import { TRIAL_FPS, Trial, trialMetadata } from "./trial/Trial";
 import type { TrialProps } from "./trial/Trial";
 import { THUMB, TrialCover, TrialThumb, coverMetadata, thumbMetadata } from "./trial/Cover";
 import type { CoverProps, ThumbProps } from "./trial/Cover";
+import { TrialThumbFrame, thumbFrameMetadata } from "./trial/ThumbFrame";
+import type { ThumbFrameProps } from "./trial/ThumbFrame";
 import { Film, FilmTall, filmMetadata } from "./trial/Film";
 import type { FilmProps } from "./trial/Film";
+import { SahibStyle } from "./trial/Sahib";
+import { TIKTOK_HANDLE, TRAILER_FPS, TRAILER_FRAMES, TRAILER_HANDLE, Trailer } from "./trial/Trailer";
+import type { TrailerProps } from "./trial/Trailer";
+import type { SahibStyleProps } from "./trial/Sahib";
 
 // One composition per format, both fed by the same episode script.
 // Pick another episode or reel with --props, e.g. --props='{"episode":"dua","reel":"dua-01"}'.
@@ -48,6 +54,7 @@ export const RemotionRoot: React.FC = () => (
       defaultProps={{ style: "paper", shot: "office" } satisfies StyleLabProps} />
     {/* Trial short of 2026-11-11 (docs/retention.md): filmed sea, drawn silhouette, the verse over the scene.
         Session only (tools/trial/prepare.py). */}
+    <Still id="SahibStyle" component={SahibStyle} width={1080} height={1920} defaultProps={{ shot: "jalis" } as SahibStyleProps} />
     <Composition id="Trial916" component={Trial} fps={TRIAL_FPS} durationInFrames={1} width={1080} height={1920}
       defaultProps={{ trial: "boat", voice: "D", data: null } satisfies TrialProps} calculateMetadata={trialMetadata} />
     {/* Covers of the trial videos, proposed: one 9:16 cover per short, the 16:9 thumbnail of the long film. Their
@@ -60,8 +67,19 @@ export const RemotionRoot: React.FC = () => (
     {/* The same film in 9:16, laid out as its shorts are: for the platforms whose player is vertical. */}
     <Composition id="TrialFilm916" component={FilmTall} fps={TRIAL_FPS} durationInFrames={1} width={1080} height={1920}
       defaultProps={{ film: "film", voice: "D", data: null } satisfies FilmProps} calculateMetadata={filmMetadata} />
+    {/* The channel's trailer (content/trial/trailer.yaml, 2026-11-22): 16:9 for YouTube, 9:16 to pin elsewhere. */}
+    <Composition id="Trailer169" component={Trailer} fps={TRAILER_FPS} durationInFrames={TRAILER_FRAMES} width={1920} height={1080}
+      defaultProps={{ handle: TRAILER_HANDLE } satisfies TrailerProps} />
+    <Composition id="Trailer916" component={Trailer} fps={TRAILER_FPS} durationInFrames={TRAILER_FRAMES} width={1080} height={1920}
+      defaultProps={{ handle: TRAILER_HANDLE } satisfies TrailerProps} />
+    <Composition id="Trailer916TikTok" component={Trailer} fps={TRAILER_FPS} durationInFrames={TRAILER_FRAMES} width={1080} height={1920}
+      defaultProps={{ handle: TIKTOK_HANDLE } satisfies TrailerProps} />
     <Composition id="TrialThumb169" component={TrialThumb} fps={TRIAL_FPS} durationInFrames={60} width={THUMB.width} height={THUMB.height}
       defaultProps={{ film: "film", voice: "X", data: null, panels: null } satisfies ThumbProps} calculateMetadata={thumbMetadata} />
+    {/* The dedicated thumbnail of a film (2026-11-21): one scene of the clean film, frozen at the option's moment, two lines
+        of hook (`thumbnail.options` of the film's file). 60 frames like the covers: the still is taken at frame 45. */}
+    <Composition id="TrialThumbFrame" component={TrialThumbFrame} fps={TRIAL_FPS} durationInFrames={60} width={THUMB.width} height={THUMB.height}
+      defaultProps={{ film: "film", voice: "D", option: "", data: null } satisfies ThumbFrameProps} calculateMetadata={thumbFrameMetadata} />
     <Still
       id="Thumbnail169"
       component={Thumbnail}

@@ -15,19 +15,19 @@ Du'a: 3 wrong ideas that keep you from asking · الدعاء: ٣ أفكار غ�
 **YouTube · Description**
 
 ```text
-One in the depth of affliction, one in the belly of a whale, one whose hair had turned white and still asking: three who called on God in the Quran, and all three were answered. And three wrong ideas that keep us from asking: I'm content so I won't ask, it's all written, I asked and nothing happened.
-
 واحد في عز البلاء، واحد في بطن حوت، وواحد راسه شابت ولسه بيطلب: تلاتة نادوا ربنا في القرآن… والتلاتة اترد عليهم. وتلات أفكار غلط بتبعدنا عن الدعاء: أنا راضي مش هدعي، كله مكتوب، دعيت وما حصلش.
 
-Chapters:
-0:00 Three calls · تلات نداءات
-0:16 Du'a is worship · الدعاء عبادة
-0:49 I'm content, I won't ask · أنا راضي… مش هدعي
-2:25 It's all written, why ask? · كله مكتوب… أدعي ليه؟
-4:29 I asked and nothing happened · دعيت… وما حصلش حاجة
-6:42 God is near · ربنا قريب
+One in the depth of affliction, one in the belly of a whale, one whose hair had turned white and still asking: three who called on God in the Quran, and all three were answered. And three wrong ideas that keep us from asking: I'm content so I won't ask, it's all written, I asked and nothing happened.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+Chapters:
+0:00 تلات نداءات · Three calls
+0:16 الدعاء عبادة · Du'a is worship
+0:49 أنا راضي… مش هدعي · I'm content, I won't ask
+2:25 كله مكتوب… أدعي ليه؟ · It's all written, why ask?
+4:29 دعيت… وما حصلش حاجة · I asked and nothing happened
+6:42 ربنا قريب · God is near
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -69,8 +69,8 @@ Footage: Pixabay (trilemedia, Natures_Embrace, adege) · Ambience: BigSoundBank 
 **Facebook · Titre**
 
 ```text
-Patient… and he asked
 صابر… ودعا!
+Patient… and he asked
 ```
 
 **Facebook · Description**
@@ -79,7 +79,7 @@ Patient… and he asked
 بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب دعا… واستجاب له.
 We say: I'm content, so I won't ask. Yet Job asked, and was answered.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -91,8 +91,8 @@ We say: I'm content, so I won't ask. Yet Job asked, and was answered.
 **Instagram · Titre**
 
 ```text
-Patient… and he asked
 صابر… ودعا!
+Patient… and he asked
 ```
 
 **Instagram · Description**
@@ -101,7 +101,7 @@ Patient… and he asked
 بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب دعا… واستجاب له.
 We say: I'm content, so I won't ask. Yet Job asked, and was answered.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -115,8 +115,8 @@ Sur TikTok : la vidéo `dua-short-1-asked-tiktok.mp4`, signée `@quran.words.dai
 **TikTok · Titre**
 
 ```text
-Patient… and he asked
 صابر… ودعا!
+Patient… and he asked
 ```
 
 **TikTok · Description**
@@ -125,7 +125,7 @@ Patient… and he asked
 بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب دعا… واستجاب له.
 We say: I'm content, so I won't ask. Yet Job asked, and was answered.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -143,13 +143,13 @@ Patient… and he asked · صابر… ودعا!
 **YouTube · Description**
 
 ```text
-We say: I'm content, so I won't ask. Yet Job, peace be upon him, whose patience became a proverb, asked God to lift his suffering, and was answered. Contentment is not objecting to what happened; du'a is asking for what is to come.
-
 بنقول: أنا راضي… مش هدعي. بس سيدنا أيوب عليه السلام، اللي بنقول على صبره: يا صبر أيوب، دعا ربنا يشيل عنه البلاء… واستجاب له. الرضا إنك ما تعترضش على اللي حصل، والدعاء إنك تطلب اللي جاي.
 
-Du'a · part 1/3 · الدعاء · الجزء ١ من ٣
+We say: I'm content, so I won't ask. Yet Job, peace be upon him, whose patience became a proverb, asked God to lift his suffering, and was answered. Contentment is not objecting to what happened; du'a is asking for what is to come.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+الدعاء · الجزء ١ من ٣ · Du'a · part 1/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -180,8 +180,8 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 **Facebook · Titre**
 
 ```text
-Inside the whale: who heard him?
 في بطن الحوت… مين سمعه؟
+Inside the whale: who heard him?
 ```
 
 **Facebook · Description**
@@ -190,7 +190,7 @@ Inside the whale: who heard him?
 كله مكتوب… أدعي ليه؟ سيدنا يونس نادى من بطن الحوت… واتسمع.
 It's all written, so why ask? Jonah called from inside the whale, and was heard.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -202,8 +202,8 @@ It's all written, so why ask? Jonah called from inside the whale, and was heard.
 **Instagram · Titre**
 
 ```text
-Inside the whale: who heard him?
 في بطن الحوت… مين سمعه؟
+Inside the whale: who heard him?
 ```
 
 **Instagram · Description**
@@ -212,7 +212,7 @@ Inside the whale: who heard him?
 كله مكتوب… أدعي ليه؟ سيدنا يونس نادى من بطن الحوت… واتسمع.
 It's all written, so why ask? Jonah called from inside the whale, and was heard.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -226,8 +226,8 @@ Sur TikTok : la vidéo `dua-short-2-written-tiktok.mp4`, signée `@quran.words.d
 **TikTok · Titre**
 
 ```text
-Inside the whale: who heard him?
 في بطن الحوت… مين سمعه؟
+Inside the whale: who heard him?
 ```
 
 **TikTok · Description**
@@ -236,7 +236,7 @@ Inside the whale: who heard him?
 كله مكتوب… أدعي ليه؟ سيدنا يونس نادى من بطن الحوت… واتسمع.
 It's all written, so why ask? Jonah called from inside the whale, and was heard.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -254,13 +254,13 @@ Inside the whale: who heard him? · في بطن الحوت… مين سمعه؟
 **YouTube · Description**
 
 ```text
-It's all written, so why ask? Jonah, peace be upon him, called from inside the whale, in darkness upon darkness, and was heard. Nothing turns back the decree except du'a, and du'a itself is part of God's decree. With the call the Prophet ﷺ taught us.
-
 كله مكتوب… أدعي ليه؟ سيدنا يونس عليه السلام نادى من بطن الحوت، في ضلمة فوق ضلمة… واتسمع. مفيش حاجة بترد القضاء غير الدعاء، والدعاء نفسه من قدر ربنا. ومعاها الدعوة اللي علّمهالنا النبي صلى الله عليه وسلم.
 
-Du'a · part 2/3 · الدعاء · الجزء ٢ من ٣
+It's all written, so why ask? Jonah, peace be upon him, called from inside the whale, in darkness upon darkness, and was heard. Nothing turns back the decree except du'a, and du'a itself is part of God's decree. With the call the Prophet ﷺ taught us.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+الدعاء · الجزء ٢ من ٣ · Du'a · part 2/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -292,8 +292,8 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 **Facebook · Titre**
 
 ```text
-His hair turned white… and he never stopped asking
 راسه شابت… وما بطّلش يدعي
+His hair turned white… and he never stopped asking
 ```
 
 **Facebook · Description**
@@ -302,7 +302,7 @@ His hair turned white… and he never stopped asking
 دعيت… وما حصلش حاجة. اللي بيضيّع الدعاء مش التأخير… الاستعجال.
 I asked and nothing happened. What loses a du'a is not the delay, it is the hurry.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -314,8 +314,8 @@ I asked and nothing happened. What loses a du'a is not the delay, it is the hurr
 **Instagram · Titre**
 
 ```text
-His hair turned white… and he never stopped asking
 راسه شابت… وما بطّلش يدعي
+His hair turned white… and he never stopped asking
 ```
 
 **Instagram · Description**
@@ -324,7 +324,7 @@ His hair turned white… and he never stopped asking
 دعيت… وما حصلش حاجة. اللي بيضيّع الدعاء مش التأخير… الاستعجال.
 I asked and nothing happened. What loses a du'a is not the delay, it is the hurry.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -338,8 +338,8 @@ Sur TikTok : la vidéo `dua-short-3-waited-tiktok.mp4`, signée `@quran.words.da
 **TikTok · Titre**
 
 ```text
-His hair turned white… and he never stopped asking
 راسه شابت… وما بطّلش يدعي
+His hair turned white… and he never stopped asking
 ```
 
 **TikTok · Description**
@@ -348,7 +348,7 @@ His hair turned white… and he never stopped asking
 دعيت… وما حصلش حاجة. اللي بيضيّع الدعاء مش التأخير… الاستعجال.
 I asked and nothing happened. What loses a du'a is not the delay, it is the hurry.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -366,13 +366,13 @@ His hair turned white… and he never stopped asking · راسه شابت… و�
 **YouTube · Description**
 
 ```text
-I asked and nothing happened. Zechariah, peace be upon him, was old, his hair white, and still asking: never, he said, had he been disappointed in calling on his Lord. What loses a du'a is not the delay, it is the hurry.
-
 دعيت… وما حصلش حاجة. سيدنا زكريا عليه السلام كان كبير، راسه شابت، ولسه بيدعي… وقال إنه عمره ما رجع من دعاء ربنا خايب. اللي بيضيّع الدعاء مش التأخير… الاستعجال.
 
-Du'a · part 3/3 · الدعاء · الجزء ٣ من ٣
+I asked and nothing happened. Zechariah, peace be upon him, was old, his hair white, and still asking: never, he said, had he been disappointed in calling on his Lord. What loses a du'a is not the delay, it is the hurry.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+الدعاء · الجزء ٣ من ٣ · Du'a · part 3/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```

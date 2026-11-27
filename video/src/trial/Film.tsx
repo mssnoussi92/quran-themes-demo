@@ -9,13 +9,15 @@ import { AbsoluteFill, Html5Audio, Sequence, interpolate, spring, staticFile, us
 import { FONT, loadFonts } from "../fonts";
 import { Boat, Fleet } from "./Boat";
 import { House, Land } from "./Home";
-import { Clip, GOLD, H as TALL_H, NarrationText, PICTURES, ReadingText, SHADOW, TRIAL_FPS, VerseText, W as TALL_W, sceneOpacity } from "./Trial";
+import { Clip, GOLD, H as TALL_H, NarrationText, PICTURES, PLAYED, PlayedLayer, ReadingText, SHADOW, TRIAL_FPS, VerseText, W as TALL_W, layoutOf, sceneOpacity } from "./Trial";
+import { SAHW_OVERLAYS } from "./Sahw";
 import type { Layout, Narration, Picture, Reading, Verse } from "./Trial";
 import { Village, Wall } from "./Wall";
 import { Call, Niche, Whale } from "./Dua";
 import { Barrier, Chest, Cliffs, Dwellings } from "./Qarnayn";
 import { KAHF_WIDE } from "./Kahf";
 import { QADAR_WIDE } from "./Qadar";
+import { HAYYIN_WIDE } from "./Hayyin";
 
 loadFonts();
 
@@ -43,7 +45,10 @@ export type FilmData = {
 };
 /** `film`: the id of the film (content/trial/<id>.yaml); the first one is « film ». */
 /** `platform` (the vertical film only): where the page has another name (TikTok), the film is signed with it. */
-export type FilmProps = { film: string; voice: string; platform?: string; data: FilmData | null };
+/** `clean` (2026-11-21, the thumbnails of the film, TrialThumbFrame): the picture alone, no text layer at all (the verse,
+ * its translation, the narration and its subtitles, the credit line, the chapter label, the page's name, the subscribe
+ * button) and no sound; the clip, the drawings and the veil stay. Off by default: every render is as it was. */
+export type FilmProps = { film: string; voice: string; platform?: string; data: FilmData | null; clean?: boolean };
 
 export const filmMetadata: CalculateMetadataFunction<FilmProps> = async ({ props, abortSignal }) => {
   const res = await fetch(staticFile(`trial/${props.film}-${props.voice}.json`), { signal: abortSignal });
@@ -63,7 +68,7 @@ const layoutFor = (side: Column): Layout => ({
   credit: { top: 846, size: 26 },
 });
 
-type Drawn = React.FC<{ t: number; show: (id: string) => number; since: (id: string) => number; horizon: number }>;
+type Drawn = React.FC<{ t: number; show: (id: string) => number; since: (id: string) => number; horizon: number; phrase?: (id: string, n: number) => number }>;
 
 /** The boat, on the left of the wide frame: `holed`, `fleet` (the king's ships on the horizon), `sail`,
  * `bird` (the sparrow of the hadith on its edge, before anything was torn), `sea` (the sea alone). */
@@ -237,16 +242,62 @@ const BarrierWide: Drawn = ({ t, show, since, horizon }) => {
 /** A picture of the film alone (`pictures` of the film's file): the filmed clip, nothing drawn over it. */
 const Bare: Drawn = () => null;
 
+/** A short's own picture laid out again for the wide frame (the owner's choice of 2026-11-21 for the films of whole series:
+ * « Dessins refaits en 16:9 »): what the short draws (its cards, its prayer room, the scenes its figures play), at `scale`
+ * on the left of the frame, from the line `top` of the short down; the rooms the figures play in and the floor of the
+ * prayer room go on across the whole width (Played.tsx and Sahw.tsx, `BLEED`), under the text on the right. The track
+ * of the prayer that a short of « إزاي أعملها؟ » draws above its text is drawn above the picture, at `track`. */
+const wideTall = (name: string, o: { scale: number; top: number; track?: number }): Drawn => {
+  const Wide: Drawn = ({ t, show, since, phrase }) => {
+    const Picture = PICTURES[name];
+    const Overlay = (SAHW_OVERLAYS as Record<string, Drawn | undefined>)[name];
+    const said = phrase ?? ((id: string, n: number) => since(id) + n);
+    const played = (PLAYED[name] ?? []).filter((p) => p.from === undefined);
+    return (
+      <>
+        <g transform={`translate(0 ${-o.top * o.scale}) scale(${o.scale})`}>
+          <Picture t={t} show={show} since={since} horizon={1300} phrase={said} />
+          {played.map((p, i) => <PlayedLayer key={i} p={p} t={t} segments={[]} show={show} since={since} phrase={said} />)}
+        </g>
+        {Overlay && o.track !== undefined ? (
+          <g transform={`translate(0 ${o.track - 300 * o.scale}) scale(${o.scale})`}>
+            <Overlay t={t} show={show} since={since} horizon={1300} phrase={said} />
+          </g>
+        ) : null}
+      </>
+    );
+  };
+  return Wide;
+};
+/** « سؤال صعب »: the cards and the played scenes stand between 690 and 1360 in the short. */
+const SUAL_WIDE = Object.fromEntries(["dank", "tayyiba", "ghafur"].map((id) => [id, wideTall(id, { scale: 0.8, top: 412 })]));
+/** « إزاي أعملها؟ »: the room, the figure and the cards between 800 and 1420; the track above, under the chapter's name. */
+const SAHW_WIDE = Object.fromEntries(["sahun", "khams", "nasit", "shakk"].map((id) => [id, wideTall(id, { scale: 0.8, top: 487, track: 118 })]));
+
 const WIDE: Record<string, Drawn> = {
   boat: BoatWide, boy: HomeWide, wall: WallWide,
   asked: AskedWide, written: WrittenWide, waited: WaitedWide,
   west: WestWide, tribute: TributeWide, barrier: BarrierWide,
   ...KAHF_WIDE,
   ...QADAR_WIDE,
+  ...HAYYIN_WIDE,
+  ...SUAL_WIDE,
+  ...SAHW_WIDE,
+};
+
+/** When the n-th phrase is said of the narration a scene is shown on (its last time so far in this stretch), as a short's
+ * `phrase` (Trial.tsx): what a short's drawing times by the words (a figure that turns, a row of a table) keeps its time. */
+const phraseIn = (shots: Shot[], segments: FilmSegment[], t: number, from: number) => (id: string, n: number) => {
+  const mine = shots.filter((s) => s.scene === id);
+  const shot = [...mine].reverse().find((s) => s.start <= t + 0.05) ?? mine[0];
+  if (!shot) return from + n;
+  const seg = segments.find((s) => s.kind === "narration" && s.start <= shot.start + 0.05 && shot.start < s.start + s.seconds);
+  const said = seg && seg.kind === "narration" ? seg.lines.flatMap((l) => l.phrases) : [];
+  return seg && said[n] ? seg.start + said[n].start : shot.start + n;
 };
 
 /** One stretch of the film on the same clip: the clip, what is drawn over it scene after scene, a slow zoom. */
-const Stage: React.FC<{ picture: FilmPicture; name: string; shots: Shot[]; from: number; fade: number }> = ({ picture, name, shots, from, fade }) => {
+const Stage: React.FC<{ picture: FilmPicture; name: string; shots: Shot[]; from: number; fade: number; segments: FilmSegment[] }> = ({ picture, name, shots, from, fade, segments }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const t = from + frame / fps;
@@ -262,7 +313,7 @@ const Stage: React.FC<{ picture: FilmPicture; name: string; shots: Shot[]; from:
       <AbsoluteFill style={{ transform: `scale(${zoom})`, transformOrigin: `${picture.side === "left" ? 28 : 72}% ${(picture.horizon / H) * 100}%` }}>
         <Clip src={picture.clip} clipSeconds={picture.clip_seconds} picture={{ shift: picture.shift, brightness: picture.brightness, rate: picture.rate }} />
         <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: "absolute", inset: 0 }}>
-          <Drawing t={t} show={(id) => sceneOpacity(shots, id, t)} since={(id) => shots.find((s) => s.scene === id)?.start ?? from} horizon={picture.horizon} />
+          <Drawing t={t} show={(id) => sceneOpacity(shots, id, t)} since={(id) => shots.find((s) => s.scene === id)?.start ?? from} horizon={picture.horizon} phrase={phraseIn(shots, segments, t, from)} />
         </svg>
       </AbsoluteFill>
       <AbsoluteFill style={{ background: veil }} />
@@ -305,7 +356,7 @@ const Signature: React.FC<{ handle: string; reminders: number[]; t: number }> = 
   );
 };
 
-export const Film: React.FC<FilmProps> = ({ data }) => {
+export const Film: React.FC<FilmProps> = ({ data, clean = false }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   if (!data) throw new Error("no film data: calculateMetadata did not run");
@@ -332,19 +383,19 @@ export const Film: React.FC<FilmProps> = ({ data }) => {
         const end = i + 1 < runs.length ? runs[i + 1].from + FADE : data.seconds;
         return (
           <Sequence key={i} from={Math.round(start * fps)} durationInFrames={Math.ceil((end - start) * fps)} layout="none">
-            <Stage picture={data.pictures[run.name]} name={run.name} shots={run.shots} from={start} fade={first ? 0 : FADE} />
+            <Stage picture={data.pictures[run.name]} name={run.name} shots={run.shots} from={start} fade={first ? 0 : FADE} segments={data.segments} />
           </Sequence>
         );
       })}
-      {data.ambience ? <Html5Audio src={staticFile(data.ambience)} /> : null}
+      {data.ambience && !clean ? <Html5Audio src={staticFile(data.ambience)} /> : null}
       {data.segments.map((seg, i) =>
-        seg.file ? (
+        seg.file && !clean ? (
           <Sequence key={i} from={Math.round(seg.start * fps)} durationInFrames={Math.ceil(seg.seconds * fps) + 2} layout="none">
             <Html5Audio src={staticFile(seg.file)} />
           </Sequence>
         ) : null,
       )}
-      {ended ? null : current.kind === "narration" ? (
+      {clean || ended ? null : current.kind === "narration" ? (
         <NarrationText seg={{ ...current, scene: shot.scene }} t={t} last={current === data.segments[data.segments.length - 1]} handle="" layout={layout} />
       ) : current.kind === "verse" ? (
         <VerseText seg={{ ...current, scene: shot.scene }} t={t} layout={layout} />
@@ -352,10 +403,12 @@ export const Film: React.FC<FilmProps> = ({ data }) => {
         <ReadingText seg={{ ...current, scene: shot.scene }} t={t} layout={layout} />
       )}
       {/* where we are in the story: the chapter, top left */}
-      <div dir="rtl" lang="ar" style={{ position: "absolute", top: 50, left: 70, opacity: 0.86 * chapterIn * (ended ? 0 : 1), fontFamily: FONT.arabic, fontWeight: 700, fontSize: 36, color: GOLD, textShadow: SHADOW }}>
-        {chapter.number ? `${["٠", "١", "٢", "٣", "٤", "٥"][chapter.number]} · ` : ""}{chapter.title.ar}
-      </div>
-      <Signature handle={data.handle} reminders={data.subscribe} t={t} />
+      {clean ? null : (
+        <div dir="rtl" lang="ar" style={{ position: "absolute", top: 50, left: 70, opacity: 0.86 * chapterIn * (ended ? 0 : 1), fontFamily: FONT.arabic, fontWeight: 700, fontSize: 36, color: GOLD, textShadow: SHADOW }}>
+          {chapter.number ? `${chapter.number} · ` : ""}{chapter.title.ar}
+        </div>
+      )}
+      {clean ? null : <Signature handle={data.handle} reminders={data.subscribe} t={t} />}
     </AbsoluteFill>
   );
 };
@@ -366,7 +419,7 @@ export const Film: React.FC<FilmProps> = ({ data }) => {
 // middle of a phone, and this picture is text to read.
 
 /** One stretch of the vertical film on the same clip: the clip in its 9:16 setting, the short's drawing, its veil. */
-const StageTall: React.FC<{ picture: FilmPicture; name: string; shots: Shot[]; from: number; fade: number }> = ({ picture, name, shots, from, fade }) => {
+const StageTall: React.FC<{ picture: FilmPicture; name: string; shots: Shot[]; from: number; fade: number; segments: FilmSegment[] }> = ({ picture, name, shots, from, fade, segments }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const t = from + frame / fps;
@@ -376,15 +429,28 @@ const StageTall: React.FC<{ picture: FilmPicture; name: string; shots: Shot[]; f
   if (!Drawing) throw new Error(`no picture is drawn for « ${name} »`);
   const zoom = interpolate(frame, [0, durationInFrames], [1, 1.05]);
   const veil = tall.veil ?? 1;
+  const show = (id: string) => sceneOpacity(shots, id, t);
+  const since = (id: string) => shots.find((s) => s.scene === id)?.start ?? from;
+  const phrase = phraseIn(shots, segments, t, from);
+  const played = picture.bare ? [] : (PLAYED[name] ?? []).filter((p) => p.from === undefined);
+  const Overlay = picture.bare ? undefined : (SAHW_OVERLAYS as Record<string, Drawn | undefined>)[name];
   return (
     <AbsoluteFill style={{ background: tall.ground ?? "#04070f", opacity: fade ? interpolate(frame, [0, fade * fps], [0, 1], { extrapolateRight: "clamp" }) : 1 }}>
       <AbsoluteFill style={{ transform: `scale(${zoom})`, transformOrigin: `50% ${(horizon / TALL_H) * 100}%` }}>
         <Clip src={picture.clip} clipSeconds={picture.clip_seconds} picture={tall} />
         <svg width={TALL_W} height={TALL_H} viewBox={`0 0 ${TALL_W} ${TALL_H}`} style={{ position: "absolute", inset: 0 }}>
-          <Drawing t={t} show={(id) => sceneOpacity(shots, id, t)} since={(id) => shots.find((s) => s.scene === id)?.start ?? from} horizon={horizon} />
+          <Drawing t={t} show={show} since={since} horizon={horizon} phrase={phrase} />
+          {/* the scenes its figures play, as the short plays them (its teasers in a card are the short's opening only) */}
+          {played.map((p, i) => <PlayedLayer key={i} p={p} t={t} segments={[]} show={show} since={since} phrase={phrase} />)}
         </svg>
       </AbsoluteFill>
       <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(4,7,20,${0.78 * veil}) 0%, rgba(4,7,20,${0.45 * veil}) 30%, rgba(4,7,20,.05) 52%, rgba(4,7,20,.38) 100%)` }} />
+      {/* the track of the prayer above the text (« إزاي أعملها؟ »), still, as in the short */}
+      {Overlay ? (
+        <svg width={TALL_W} height={TALL_H} viewBox={`0 0 ${TALL_W} ${TALL_H}`} style={{ position: "absolute", inset: 0 }}>
+          <Overlay t={t} show={show} since={since} horizon={horizon} phrase={phrase} />
+        </svg>
+      ) : null}
       {/* a clip with nothing drawn has no dark land under the translation: it is given one */}
       {picture.bare ? <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(4,7,20,0) 62%, rgba(4,7,20,.82) 76%, rgba(4,7,20,.94) 100%)" }} /> : null}
     </AbsoluteFill>
@@ -433,6 +499,8 @@ export const FilmTall: React.FC<FilmProps> = ({ data, platform }) => {
   const chapterIn = interpolate(t - chapter.start, [0.2, 0.7], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const final = data.segments[data.segments.length - 1];
   const ended = t > data.seconds - data.outro + 4.6;      // the last line stays with the page's name under it, then the picture alone
+  // the texts where the short of this picture puts them (a series whose cards or track take part of the frame)
+  const tallLayout = data.pictures[shot.picture]?.bare ? undefined : layoutOf(shot.picture);
   return (
     <AbsoluteFill style={{ background: "#04070f" }}>
       {runs.map((run, i) => {
@@ -441,7 +509,7 @@ export const FilmTall: React.FC<FilmProps> = ({ data, platform }) => {
         const end = i + 1 < runs.length ? runs[i + 1].from + FADE : data.seconds;
         return (
           <Sequence key={i} from={Math.round(start * fps)} durationInFrames={Math.ceil((end - start) * fps)} layout="none">
-            <StageTall picture={data.pictures[run.name]} name={run.name} shots={run.shots} from={start} fade={first ? 0 : FADE} />
+            <StageTall picture={data.pictures[run.name]} name={run.name} shots={run.shots} from={start} fade={first ? 0 : FADE} segments={data.segments} />
           </Sequence>
         );
       })}
@@ -454,15 +522,15 @@ export const FilmTall: React.FC<FilmProps> = ({ data, platform }) => {
         ) : null,
       )}
       {ended ? null : current.kind === "narration" ? (
-        <NarrationText seg={{ ...current, scene: shot.scene }} t={t} last={current === final} handle={handle} />
+        <NarrationText seg={{ ...current, scene: shot.scene }} t={t} last={current === final} handle={handle} layout={tallLayout} />
       ) : current.kind === "verse" ? (
-        <VerseText seg={{ ...current, scene: shot.scene }} t={t} />
+        <VerseText seg={{ ...current, scene: shot.scene }} t={t} layout={tallLayout} />
       ) : (
-        <ReadingText seg={{ ...current, scene: shot.scene }} t={t} />
+        <ReadingText seg={{ ...current, scene: shot.scene }} t={t} layout={tallLayout} />
       )}
       {/* where we are in the story: the chapter, top left, facing the name of the page */}
       <div dir="rtl" lang="ar" style={{ position: "absolute", top: 240, left: 90, opacity: 0.86 * chapterIn * (ended ? 0 : 1), fontFamily: FONT.arabic, fontWeight: 700, fontSize: 36, color: GOLD, textShadow: SHADOW }}>
-        {chapter.number ? `${["٠", "١", "٢", "٣", "٤", "٥"][chapter.number]} · ` : ""}{chapter.title.ar}
+        {chapter.number ? `${chapter.number} · ` : ""}{chapter.title.ar}
       </div>
       {/* the reminder of the last line is the page's name under that line, as in a short */}
       <Follow handle={handle} reminders={data.subscribe.filter((r) => r < final.start)} t={t} />

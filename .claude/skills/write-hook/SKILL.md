@@ -56,6 +56,30 @@ Two other shorts, two other ways in (`boy.yaml`, `wall.yaml`):
   حكمة اتكشفت بسرعة… وحكمة ما اتكشفتش لأصحابها… وخير مستخبي لحد وقته. » « تابعنا عشان القصة الجاية. »).
   A line that promises something to come is the owner's to keep: say so when you write one.
 
+## After the verse: one line, then the example played (the owner, 2026-11-20)
+
+Seen on « آية وحكايتها » 1 once it was published: after the verse the voice told the story again, three lines of meaning
+repeated the translation already on screen, then « ce qu'on ne voit pas »: 23 s on one picture, the narration written
+large. The owner: « après le verset on parle trop, et l'écran est presque le même, et on écrit ce que le narrateur dit ».
+His rule for every new script (and the three shorts left of that series, redone the same day):
+
+- **After a verse, one line of meaning** (its tafsir written under it, as always), and nothing that says the verse or its
+  translation again. Keep only what still has to be told: the rest of the report (Abu Bakr's answer), a condition the
+  tafsir states (« للي يتوب ويرجع »), a line of warning or a limit the owner asked for, a line whose translation would
+  mislead without it (« وَوَجَدَكَ ضَالًّا », *found you lost*: « ما كنتش تعرف الكتاب ولا الإيمان… فعلّمك »). Say which you
+  kept and why when the script goes to him.
+- **Then the life example, played on screen**: anonymous stick figures with a simple face (his rule of 2026-11-19), in the
+  style of « الصاحب ساحب » (`video/src/trial/AyahPlayed.tsx` for the three of « آية وحكايتها »), a moment with no text
+  (`pause`) for the action, the set drawn for that scene. Nobody of the story is ever drawn: the example is a typical
+  scene of today, the story stays in its landscape.
+- **The narration after the first verse is a subtitle** (`caption` of the layout, `video/src/trial/Trial.tsx`): low,
+  smaller, the picture keeps the middle. The first line (the hook) and the follow call keep their large place.
+- What it does not fix: on Facebook and Instagram our theme shorts are watched 4 to 8 s and 8 to 13 s on average
+  (to 2026-11-20), so most viewers leave before the verse; the rule is for those who stay (YouTube: 45 to 62 % of a
+  short). The first seconds stay the lever there. A series whose hook is its report keeps it (his choice); an opening
+  on a played scene is measured with « مخيّر ولا مسيّر؟ » and, once placed, « وتحسبونه هيّنًا » and « الصاحب ساحب ».
+- A validated script trimmed this way costs no voice request: `drop` (docs/model.md) leaves the lines in the take.
+
 ## A short of a series (« آية وحكايتها »)
 
 One verse and its revelation report, no film (`content/trial/caravan.yaml`, `duha.yaml`, `hope.yaml`; not validated
@@ -70,6 +94,52 @@ yet when this was written). The beats are the same with three differences:
   ويرجع »). Lines that rest on no tafsir (the example, « ce qu'on ne voit pas ») are marked as ours for the owner.
 - **Beat 10 names the next short of the series** (a promise to keep: the order of `shorts` is the order of
   publication); never « every verse has a story », which is false.
+
+## A short of the quiz (« معاك 5 ثواني »)
+
+A game to make people comment (the owner's idea, 2026-11-17): a question written on the first frame, three choices, a
+countdown of five seconds, the answer; then the reciter says the verse and the voice gives its meaning
+(`content/trial/quiz.yaml`; fiche `docs/themes.md`; validated pilot `docs/scripts/quiz.md`: `sayyara`, `khatima`,
+`qalaha`). His choices: **one question per short, about 40 s**; three formats, A **the meaning of a word** (« يعني
+إيه؟ »), B **the end of a verse** (« تخلص بإيه؟ »), C **who said it** (« مين قالها؟ »); the question and the countdown
+silent, **one or two lines of voice for the meaning**; no request to comment, a **real open question** at the end.
+
+**Choosing the question**
+
+- **The obvious answer is wrong**, or the answer surprises: « سَيَّارَةٌ » of 12:19 is not a car; after « وإن تغفر لهم »
+  5:118 ends with « العزيز الحكيم ». A question a viewer answers without thinking (a verse of Juz' 'Amma known by heart)
+  brings no comment.
+- **A wrong choice is never invented.** It is a real meaning (the word's meaning today; the meaning of the same word
+  elsewhere in the Quran: « أمة », a people in 2:128, a time in 12:45), or real words of the Quran taken by id (the names
+  that close another verse: 39:53, 2:127). **Never a false word inside a verse**: a blank is filled by the right end only;
+  a wrong choice is written beside the verse, never in it.
+- **One sure answer.** Check the whole Quran and the context before writing it: « إني أخاف الله رب العالمين » is in 59:16
+  (Satan) **and** in 5:28 (Abel, son of Adam), so the honest answer is « الاتنين ». A question with two true answers and one
+  marked right is a false question.
+- **Do not stop at the verse** (the owner, 2026-11-17: « ne te limite pas au Coran, il faut voir le tafsir et le fiqh si
+  besoin pour plus de contexte »). Before writing a question, read what the policy's tafsirs say of the verse and of its
+  neighbours (who speaks in 5:118 is told by 5:116; Abel is named by al-Muyassar on 5:28), and **when the verse carries a
+  ruling, read the fiqh: al-Qurtubi**, the fourth tafsir of `content/policy.yaml`, kept for that (the conditions, the
+  schools, what the verse alone does not say). 5:38 (the thief) looks like an easy « end of the verse »; al-Qurtubi counts
+  twenty-five questions on it (the amount, the place it was kept in, who carries out the ruling): a short that gives
+  the ending without that context misleads. Its meaning lines then carry the conditions, on al-Qurtubi named under them,
+  or another verse is chosen.
+- **A ruling is the answer only when our sources give it without divergence** (his choice, 2026-11-17). Where the schools
+  differ, the fiqh is context said after the answer (« العلما اختلفوا… »), never « the » right choice.
+
+**What the short never does**
+
+- **No call to comment with a precise answer**: no letter or number on the choices, no « اكتب إجابتك في الكومنتات », no
+  score to post. Meta ranks such posts as engagement bait and shows them less. The surprise brings the comments; the
+  last line is a real open question (« فيه كلمة كنت فاكر معناها حاجة… وطلعت حاجة تانية؟ »), whose answers can give the next
+  questions.
+- **No figure without a source** (« ٩٠٪ بيغلطوا فيها » is invented); numbers written 123.
+- **The voice never says the question's Quranic words**: they are drawn from the registry (`quiz.head`); the question line
+  is silent and holds the countdown.
+
+**Length**: the question and its answer 7 s, the recitation 12 to 16 s, the voice about 20 s (four or five short lines):
+about 40 s. Two verses recited whole (« الاتنين ») make about 1:20: say it before writing. Encoding: `quiz:` of the short
+and its segments (`docs/model.md`, « معاك 5 ثواني »).
 
 ## The film's own lines
 

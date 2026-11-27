@@ -4,13 +4,13 @@ Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la 
 
 ## Short 1 · They walked out of the Friday sermon… why? · سابوا خطبة الجمعة… ليه؟
 
-`ayah-short-1-caravan.mp4` (TikTok : `ayah-short-1-caravan-tiktok.mp4`, signée `@quran.words.daily`) · 1:40 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-1-caravan-cover.jpg`
+`ayah-short-1-caravan.mp4` (TikTok : `ayah-short-1-caravan-tiktok.mp4`, signée `@quran.words.daily`) · 1:31 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-1-caravan-cover.jpg`
 
 **Facebook · Titre**
 
 ```text
-They walked out of the Friday sermon… why?
 سابوا خطبة الجمعة… ليه؟
+They walked out of the Friday sermon… why?
 ```
 
 **Facebook · Description**
@@ -19,7 +19,7 @@ They walked out of the Friday sermon… why?
 يوم جمعة، والنبي ﷺ بيخطب، جت قافلة… وما فضلش معاه غير اتناشر راجل.
 One Friday, during the sermon, a caravan arrived, and only twelve men stayed with the Prophet ﷺ.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -31,8 +31,8 @@ One Friday, during the sermon, a caravan arrived, and only twelve men stayed wit
 **Instagram · Titre**
 
 ```text
-They walked out of the Friday sermon… why?
 سابوا خطبة الجمعة… ليه؟
+They walked out of the Friday sermon… why?
 ```
 
 **Instagram · Description**
@@ -41,7 +41,7 @@ They walked out of the Friday sermon… why?
 يوم جمعة، والنبي ﷺ بيخطب، جت قافلة… وما فضلش معاه غير اتناشر راجل.
 One Friday, during the sermon, a caravan arrived, and only twelve men stayed with the Prophet ﷺ.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -55,8 +55,8 @@ Sur TikTok : la vidéo `ayah-short-1-caravan-tiktok.mp4`, signée `@quran.words.
 **TikTok · Titre**
 
 ```text
-They walked out of the Friday sermon… why?
 سابوا خطبة الجمعة… ليه؟
+They walked out of the Friday sermon… why?
 ```
 
 **TikTok · Description**
@@ -65,7 +65,7 @@ They walked out of the Friday sermon… why?
 يوم جمعة، والنبي ﷺ بيخطب، جت قافلة… وما فضلش معاه غير اتناشر راجل.
 One Friday, during the sermon, a caravan arrived, and only twelve men stayed with the Prophet ﷺ.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -83,13 +83,13 @@ They walked out of the Friday sermon… why? · سابوا خطبة الجمعة
 **YouTube · Description**
 
 ```text
-One Friday, while the Prophet ﷺ stood giving the sermon, a caravan loaded with food arrived, and only twelve men stayed with him. A verse came down then, and it answers a fear inside every one of us: that our provision will slip away if we stop for God.
-
 يوم جمعة، والنبي ﷺ واقف بيخطب، جت قافلة محمّلة أكل… وما فضلش معاه غير اتناشر راجل. ساعتها نزلت آية بترد على خوف جوّه كل واحد فينا: إن الرزق يفوتنا لو وقفنا قدام ربنا.
 
-A Verse and Its Story · 1 · آية وحكايتها · ١
+One Friday, while the Prophet ﷺ stood giving the sermon, a caravan loaded with food arrived, and only twelve men stayed with him. A verse came down then, and it answers a fear inside every one of us: that our provision will slip away if we stop for God.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+آية وحكايتها · ١ · A Verse and Its Story · 1
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -115,13 +115,13 @@ Footage: Pixabay (AcornStudioSpain) · Ambience: BigSoundBank (Joseph Sardin)
 
 ## Short 2 · She told him: you've been left… and the answer came down · قالتله: سابك… فنزل الرد
 
-`ayah-short-2-duha.mp4` (TikTok : `ayah-short-2-duha-tiktok.mp4`, signée `@quran.words.daily`) · 1:49 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-2-duha-cover.jpg`
+`ayah-short-2-duha.mp4` (TikTok : `ayah-short-2-duha-tiktok.mp4`, signée `@quran.words.daily`) · 1:36 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-2-duha-cover.jpg`
 
 **Facebook · Titre**
 
 ```text
-She told him: you've been left… and the answer came down
 قالتله: سابك… فنزل الرد
+She told him: you've been left… and the answer came down
 ```
 
 **Facebook · Description**
@@ -130,7 +130,7 @@ She told him: you've been left… and the answer came down
 واحدة قالت للنبي ﷺ: اللي بيجيلك سابك. والرد ما جاش منه: نزلت سورة.
 A woman told the Prophet ﷺ: the one who comes to you has left you. The answer did not come from him: a surah came down.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -142,8 +142,8 @@ A woman told the Prophet ﷺ: the one who comes to you has left you. The answer 
 **Instagram · Titre**
 
 ```text
-She told him: you've been left… and the answer came down
 قالتله: سابك… فنزل الرد
+She told him: you've been left… and the answer came down
 ```
 
 **Instagram · Description**
@@ -152,7 +152,7 @@ She told him: you've been left… and the answer came down
 واحدة قالت للنبي ﷺ: اللي بيجيلك سابك. والرد ما جاش منه: نزلت سورة.
 A woman told the Prophet ﷺ: the one who comes to you has left you. The answer did not come from him: a surah came down.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -166,8 +166,8 @@ Sur TikTok : la vidéo `ayah-short-2-duha-tiktok.mp4`, signée `@quran.words.dai
 **TikTok · Titre**
 
 ```text
-She told him: you've been left… and the answer came down
 قالتله: سابك… فنزل الرد
+She told him: you've been left… and the answer came down
 ```
 
 **TikTok · Description**
@@ -176,7 +176,7 @@ She told him: you've been left… and the answer came down
 واحدة قالت للنبي ﷺ: اللي بيجيلك سابك. والرد ما جاش منه: نزلت سورة.
 A woman told the Prophet ﷺ: the one who comes to you has left you. The answer did not come from him: a surah came down.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -188,19 +188,19 @@ A woman told the Prophet ﷺ: the one who comes to you has left you. The answer 
 **YouTube · Titre (82/100)**
 
 ```text
-She told him: you've been left… and the answer came down · قالتله: سابك… فنزل الرد
+قالتله: سابك… فنزل الرد · She told him: you've been left… and the answer came down
 ```
 
 **YouTube · Description**
 
 ```text
-The Prophet ﷺ had been ill for two or three nights when a woman came to gloat: the one who comes to you has left you. The answer did not come from him: a surah came down. Late does not mean left.
-
 النبي ﷺ كان تعبان ليلتين تلاتة… فجت واحدة تشمت وتقوله: اللي بيجيلك سابك. والرد ما جاش منه: نزلت سورة. اتأخر عليك… بس ما سابكش.
 
-A Verse and Its Story · 2 · آية وحكايتها · ٢
+The Prophet ﷺ had been ill for two or three nights when a woman came to gloat: the one who comes to you has left you. The answer did not come from him: a surah came down. Late does not mean left.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+آية وحكايتها · ٢ · A Verse and Its Story · 2
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -229,13 +229,13 @@ Footage: Pixabay (bellergy) · Ambience: BigSoundBank (Joseph Sardin)
 
 ## Short 3 · They had committed grave sins… and came to ask · عملوا ذنوب كبيرة… وجم يسألوا!
 
-`ayah-short-3-hope.mp4` (TikTok : `ayah-short-3-hope-tiktok.mp4`, signée `@quran.words.daily`) · 1:30 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-3-hope-cover.jpg`
+`ayah-short-3-hope.mp4` (TikTok : `ayah-short-3-hope-tiktok.mp4`, signée `@quran.words.daily`) · 1:19 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-3-hope-cover.jpg`
 
 **Facebook · Titre**
 
 ```text
-They had committed grave sins… and came to ask
 عملوا ذنوب كبيرة… وجم يسألوا!
+They had committed grave sins… and came to ask
 ```
 
 **Facebook · Description**
@@ -244,7 +244,7 @@ They had committed grave sins… and came to ask
 آية نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر.
 A verse for everyone who thinks his sin is too great to be forgiven.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -256,8 +256,8 @@ A verse for everyone who thinks his sin is too great to be forgiven.
 **Instagram · Titre**
 
 ```text
-They had committed grave sins… and came to ask
 عملوا ذنوب كبيرة… وجم يسألوا!
+They had committed grave sins… and came to ask
 ```
 
 **Instagram · Description**
@@ -266,7 +266,7 @@ They had committed grave sins… and came to ask
 آية نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر.
 A verse for everyone who thinks his sin is too great to be forgiven.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -280,8 +280,8 @@ Sur TikTok : la vidéo `ayah-short-3-hope-tiktok.mp4`, signée `@quran.words.dai
 **TikTok · Titre**
 
 ```text
-They had committed grave sins… and came to ask
 عملوا ذنوب كبيرة… وجم يسألوا!
+They had committed grave sins… and came to ask
 ```
 
 **TikTok · Description**
@@ -290,7 +290,7 @@ They had committed grave sins… and came to ask
 آية نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر.
 A verse for everyone who thinks his sin is too great to be forgiven.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -302,19 +302,19 @@ A verse for everyone who thinks his sin is too great to be forgiven.
 **YouTube · Titre (78/100)**
 
 ```text
-They had committed grave sins… and came to ask · عملوا ذنوب كبيرة… وجم يسألوا!
+عملوا ذنوب كبيرة… وجم يسألوا! · They had committed grave sins… and came to ask
 ```
 
 **YouTube · Description**
 
 ```text
-People who had committed grave sins came to the Prophet ﷺ and asked: is there any expiation for what we have done? The verse that came down is for everyone who thinks his sin is too great to be forgiven. It does not mean: do as you please. It means: come back.
-
 ناس عملوا ذنوب كبيرة… وجم للنبي ﷺ يسألوا: اللي عملناه ليه كفّارة؟ والآية اللي نزلت لكل واحد شايف إن ذنبه أكبر من إنه يتغفر. ومش معناها اعمل اللي إنت عايزه… معناها: ارجع.
 
-A Verse and Its Story · 3 · آية وحكايتها · ٣
+People who had committed grave sins came to the Prophet ﷺ and asked: is there any expiation for what we have done? The verse that came down is for everyone who thinks his sin is too great to be forgiven. It does not mean: do as you please. It means: come back.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+آية وحكايتها · ٣ · A Verse and Its Story · 3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -339,13 +339,13 @@ Footage: Pixabay (max_bbb) · Ambience: BigSoundBank (Joseph Sardin)
 
 ## Short 4 · He swore to cut off his relative… and a verse came down · حلف يقطع قريبه… فنزلت آية
 
-`ayah-short-4-forgive.mp4` (TikTok : `ayah-short-4-forgive-tiktok.mp4`, signée `@quran.words.daily`) · 1:51 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-4-forgive-cover.jpg`
+`ayah-short-4-forgive.mp4` (TikTok : `ayah-short-4-forgive-tiktok.mp4`, signée `@quran.words.daily`) · 1:38 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `ayah-short-4-forgive-cover.jpg`
 
 **Facebook · Titre**
 
 ```text
-He swore to cut off his relative… and a verse came down
 حلف يقطع قريبه… فنزلت آية
+He swore to cut off his relative… and a verse came down
 ```
 
 **Facebook · Description**
@@ -354,7 +354,7 @@ He swore to cut off his relative… and a verse came down
 حلف ما يدّيلوش حاجة تاني… ونزلت آية.
 He swore never to give him anything again. Then a verse came down.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -366,8 +366,8 @@ He swore never to give him anything again. Then a verse came down.
 **Instagram · Titre**
 
 ```text
-He swore to cut off his relative… and a verse came down
 حلف يقطع قريبه… فنزلت آية
+He swore to cut off his relative… and a verse came down
 ```
 
 **Instagram · Description**
@@ -376,7 +376,7 @@ He swore to cut off his relative… and a verse came down
 حلف ما يدّيلوش حاجة تاني… ونزلت آية.
 He swore never to give him anything again. Then a verse came down.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -390,8 +390,8 @@ Sur TikTok : la vidéo `ayah-short-4-forgive-tiktok.mp4`, signée `@quran.words.
 **TikTok · Titre**
 
 ```text
-He swore to cut off his relative… and a verse came down
 حلف يقطع قريبه… فنزلت آية
+He swore to cut off his relative… and a verse came down
 ```
 
 **TikTok · Description**
@@ -400,7 +400,7 @@ He swore to cut off his relative… and a verse came down
 حلف ما يدّيلوش حاجة تاني… ونزلت آية.
 He swore never to give him anything again. Then a verse came down.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -412,19 +412,19 @@ He swore never to give him anything again. Then a verse came down.
 **YouTube · Titre (83/100)**
 
 ```text
-He swore to cut off his relative… and a verse came down · حلف يقطع قريبه… فنزلت آية
+حلف يقطع قريبه… فنزلت آية · He swore to cut off his relative… and a verse came down
 ```
 
 **YouTube · Description**
 
 ```text
-Abu Bakr as-Siddiq used to provide for a poor relative. That relative spoke lies against his daughter, and Abu Bakr swore never to give him anything again. Then a verse came down, and he answered: yes, by God, I love that God should forgive me… and gave it back to him.
-
 أبو بكر الصديق رضي الله عنه كان بيصرف على قريبه الفقير… وقريبه اتكلم على بنته كلام كذب، فحلف ما يدّيلوش حاجة تاني. ونزلت آية… فقال: أيوه والله، أنا بحب إن ربنا يغفرلي، ورجّعله اللي كان بيدّيهوله.
 
-A Verse and Its Story · 4 · آية وحكايتها · ٤
+Abu Bakr as-Siddiq used to provide for a poor relative. That relative spoke lies against his daughter, and Abu Bakr swore never to give him anything again. Then a verse came down, and he answered: yes, by God, I love that God should forgive me… and gave it back to him.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+آية وحكايتها · ٤ · A Verse and Its Story · 4
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```

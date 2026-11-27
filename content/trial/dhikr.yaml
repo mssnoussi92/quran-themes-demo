@@ -1,0 +1,24 @@
+# La série « ذكر وحكايته » (un dhikr et le récit de son hadith), pilote de trois shorts. Demande du propriétaire
+# (2026-11-17) : « explorer une série pour أذكار الصباح والمساء et أذكار بعد الصلاة ». Ses décisions du même jour (questions
+# à choix, chaque fois la recommandation de la session ; fiche dans docs/themes.md) : un dhikr et son récit, en shorts
+# sans film ; la politique des hadiths telle qu'elle est (Bukhari, Muslim, Tirmidhi jugé sahih ou hasan par al-Albani) ;
+# le pilote : le scorpion (le soir, Muslim 2709), « قل » trois fois (matin et soir, Tirmidhi 3575), les riches et les
+# pauvres (après la prière, Muslim 595) ; le nom « ذكر وحكايته », la sœur de « آية وحكايتها ».
+# Chaque short : le fait du récit (première image), raconté avec nos mots · la promesse · le dhikr, dit par le Prophète ﷺ,
+# lu par une vraie voix (`reading:` et sa partie) · un verset qui porte les mêmes mots, récité, et son sens d'après un
+# tafsir nommé · ce qu'on ne voit pas · un exemple de vie · la phrase à retenir · le short suivant · l'appel à suivre.
+# - La voix ne dit aucun mot du hadith (ni le dhikr, ni une parole du Prophète ﷺ) : le récit est raconté avec nos mots,
+#   le dhikr est entendu dans la lecture et écrit à l'écran.
+# - La politique n'a pas de commentaire de hadith : une réplique de sens repose sur le tafsir d'un verset récité.
+# - L'ordre de publication est celui de `shorts` : chaque short annonce le suivant (une promesse à tenir).
+id: dhikr
+validated: { by: mssnoussi92, on: 2026-11-19, what: [publish] }      # « Je valide titres et accroches » (question à choix)
+files: dhikr                     # début du nom des vidéos livrées : dhikr-short-<n>-<id>.mp4
+title: { ar: "ذكر وحكايته", en: "A Dhikr and Its Story" }
+shorts: [aqrab, qul, dathur]
+handle: "@quran_words_daily"
+publish:
+  out: docs/retention/publication-dhikr.md
+  series: { en: "A Dhikr and Its Story", ar: "ذكر وحكايته" }
+  hashtags: ["#ذكر_وحكايته", "#أذكار"]      # proposés par la session, à valider avec les textes
+  narration: { D: "Narration: AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي", V: "Narration: AI-generated voice (VoiceTut, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي" }

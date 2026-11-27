@@ -8,7 +8,7 @@ avec quels réglages, et ce que les outils ne font pas encore. La marche à suiv
 des décisions dans `docs/retention.md`.
 
 Le dossier s'appelle encore `trial` (l'essai) : `content/trial/`, `tools/trial/`, `video/src/trial/`, et les
-compositions `Trial916`, `TrialFilm169`, `TrialFilm916`, `TrialCover916`, `TrialThumb169`. Ce n'est plus un essai.
+compositions `Trial916`, `TrialFilm169`, `TrialFilm916`, `TrialCover916`, `TrialThumb169`, `TrialThumbFrame`. Ce n'est plus un essai.
 
 ## Ce qu'on livre
 
@@ -25,8 +25,9 @@ compositions `Trial916`, `TrialFilm169`, `TrialFilm916`, `TrialCover916`, `Trial
 
 - **L'image** : un clip filmé de nature (mer, lune, ciel), muet, ralenti et bouclé, et **dessus des silhouettes
   dessinées à contre-jour** de ce que dit le texte : des choses et des lieux. Une personne anonyme (une scène type, le
-  spectateur) peut être une silhouette ou un bonhomme sans visage, jamais un prophète, un Compagnon, une personne connue
-  ni quelqu'un d'un récit du Coran ou d'un hadith (propriétaire, 2026-11-15). Le clip dit
+  spectateur) peut être une silhouette ou un bonhomme, sans visage sauf quand un visage simple montre la différence
+  (propriétaire, 2026-11-19), jamais un prophète, un Compagnon, une personne connue ni quelqu'un d'un récit du Coran
+  ou d'un hadith (propriétaire, 2026-11-15). Le clip dit
   le lieu et l'heure, le dessin dit l'événement.
 - **Le verset est récité sur sa scène** (Tawfiq As-Sayegh), son texte au-dessus de l'image, le mot récité en
   or, la traduction dessous ; un verset long passe par pages de 14 mots au plus. Plus de carte sombre.
@@ -61,7 +62,7 @@ tools/trial/rules.py           les règles sur les fichiers d'un film ; tools/tr
 tools/audio/align.py           chaque phrase d'un texte retrouvée dans une longue prise
 tools/tts/gemini.py            la voix (dans le workflow voice-test : la clé est un secret du dépôt)
 video/src/trial/               Trial.tsx (short), Film.tsx (film), Cover.tsx (couverture, vignette),
-                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a), Signs.tsx, Kalima.tsx, Count.tsx, Farq.tsx, WordMap.tsx, Sual.tsx et Lens.tsx (les séries) : les dessins
+                               Boat.tsx, Home.tsx, Wall.tsx (premier film), Dua.tsx (le du'a), Signs.tsx, Kalima.tsx, Count.tsx, Farq.tsx, WordMap.tsx, Sual.tsx, Lens.tsx, Quiz.tsx, Dhikr.tsx, Sahw.tsx et Hayyin.tsx (les séries) : les dessins
 video/public/trial/            (ignoré) données préparées, clips, audio
 build/trial/ambience/          (ignoré) enregistrements d'ambiance téléchargés
 video/out/                     (ignoré) rendus
@@ -80,7 +81,7 @@ video/out/                     (ignoré) rendus
 | `text` | son texte de voix : `content/voice-test/<text>.txt` |
 | `cover` | la couverture 9:16 : `scene` montrée, `title` en grand, `tag` au-dessus, `focus` (hauteur du sujet), `at` (la seconde du clip, tel que le short le joue, que montrent la couverture et le panneau de la vignette : sans lui, le début du clip), `file` (nom du fichier livré) |
 | `publish` | `title` et `description` (ar, en), `hook` (`ar`, `en` : l'accroche de la légende courte de Facebook, Instagram et TikTok, reprise de la description ; `validated` : la date du « je valide » du propriétaire), `part` (son numéro dans la série) |
-| `segments` | dans l'ordre : `narration: <nom>` avec `scene` et `lines` (`ar`, `en` ; `kept: <épisode>.<scène>` pour une réplique validée reprise d'un ancien épisode), `verse: quran.S.A` ou `reading: hadith.<recueil>.<n>` (lu par une vraie voix) avec `scene` ; `verses: [quran.S.A, quran.S.B, …]` : des versets qui se suivent, récités d'une traite (un récitateur qui enchaîne des versets courts ne laisse aucun silence où couper : leurs coupes se touchent, posées par `recitation.py --set`) ; sur une narration, `sources: [<id>, …]` : ce sur quoi elle repose, écrit à l'écran en référence et dans la description, jamais lu (le hadith dont elle raconte le récit avec ses mots, le passage de tafsir d'où vient le sens qu'elle dit) |
+| `segments` | dans l'ordre : `narration: <nom>` avec `scene` et `lines` (`ar`, `en` ; `kept: <épisode>.<scène>` pour une réplique validée reprise d'un ancien épisode), `verse: quran.S.A` ou `reading: hadith.<recueil>.<n>` (lu par une vraie voix) avec `scene` ; `card: hadith.<recueil>.<n>` avec `part` (un dhikr à lire, adhkar à enregistrer, 2026-11-17 : l'extrait d'une partie du registre, sans enregistrement, à l'écran le temps de le lire, sans aucun son que l'ambiance ; `count` et `label`, nos mots, « 3 مرات », « بعد المغرب » ; `hold` pour forcer sa durée) ; `verses: [quran.S.A, quran.S.B, …]` : des versets qui se suivent, récités d'une traite (un récitateur qui enchaîne des versets courts ne laisse aucun silence où couper : leurs coupes se touchent, posées par `recitation.py --set`) ; sur une narration, `sources: [<id>, …]` : ce sur quoi elle repose, écrit à l'écran en référence et dans la description, jamais lu (le hadith dont elle raconte le récit avec ses mots, le passage de tafsir d'où vient le sens qu'elle dit) |
 | `script_validated`, `validated` | la parole du propriétaire : le script, puis la vidéo (`what` : ce qu'elle couvre) ; jamais écrits par l'IA de son propre chef |
 
 Une réplique (`lines`) est coupée en phrases après « ، … . ! ؟ : » : chaque phrase s'écrit quand la voix la
@@ -94,10 +95,13 @@ Des shorts qui tiennent seuls, sans film (la première : `ayah`, « آية وح�
 (`series`, `hashtags`, `narration`, `out`). `script.py --film <série>` et `rules.py --film <série>` la lisent comme un
 film, et toute la chaîne aussi depuis le 2026-11-12 : préparation (des versets récités d'une traite, la référence
 d'une narration), rendu par le workflow `film` (des shorts, pas de 16:9), textes à coller, page du propriétaire.
+Une série pour une autre page (`ma3ak`, la page test Meta, 2026-11-18) a son `handle` (`@ma3ak.5.thawani`) et ses
+`platforms` (`[facebook, instagram]` ; par défaut les quatre de la Page) : ni jumeau TikTok au rendu (il serait signé du
+nom TikTok de la Page), et `publish.py` n'écrit que les textes de ses plateformes, signés de son nom (2026-11-19).
 
 **Le style d'enquête de « سنريهم آياتنا »** (`signs`, 2026-11-12, validé par le propriétaire sur trois images de
 style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
-- `clip: { source: generated, kind: night, seconds: 20 }` : un ciel de nuit que `tools/trial/clip.py` dessine avec
+- `clip: { source: generated, kind: night, seconds: 20 }` (ou `kind: room`, les murs d'une salle de prière à l'aube, pour « إزاي أعملها؟ » : la fenêtre, le rai de lumière et le tapis sont dessinés par `Sahw.tsx`) : un ciel de nuit que `tools/trial/clip.py` dessine avec
   ffmpeg (aucun téléchargement, rien à créditer ; `setsar=1`, sans quoi le compositeur de Remotion ne lit pas le clip).
 - `photos:` : les photographies que les dessins montrent (`{file, credit, licence, page}`, fichiers dans
   `video/public/signs/`, ici ESA/Webb et ESA/Hubble en CC BY 4.0, que leurs conditions veulent créditées sur l'image
@@ -105,12 +109,15 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
 - Une source `science` dans le registre (`content/sources/science.yaml` : `ref.year`, `url`, `label` ar et en
   écrits à l'écran, `claim`, `checked` : les pages où la session a vérifié le fait) : une narration peut reposer
   dessus (`sources:`), jamais un verset ni une lecture.
+- **Plus de verset coupé** (propriétaire, 2026-11-19 : « ne jamais couper ayah au milieu ») : un verset se récite entier ; `upto` ne reste que dans les 18 shorts validés avant (`CUT_BEFORE_THE_RULE` de `tools/trial/rules.py`, qui le refuse ailleurs). Ce qui suit les décrit.
 - `upto: N` sur un segment `verses` d'un seul verset : il n'en récite que les N premiers mots, jusqu'à un signe de
   pause (la signature : 41:53 jusqu'à « أنه الحق ۗ ») ; dans un short comme dans un film (`film.py`, 2026-11-15 : le film de la caverne
   s'arrête dans 18:21 avant la mosquée bâtie sur eux).
+- `pause: N` avec `scene` (et des `sfx` si besoin) : un moment sans aucun texte, le dessin seul et ses bruitages (« الصاحب ساحب », 2026-11-19 : les moments joués sans un mot) ; l'ambiance continue dessous, comme sous une narration.
 - `silent: true` sur un segment de narration (le début rapide de « خريطة كلمة », demande du propriétaire, 2026-11-14) :
   la réplique est écrite à l'écran, aucune voix ne la dit, elle n'est pas dans le texte de la voix ; minutée d'après sa
-  longueur, comme un brouillon, et `hold: N` la tient au moins N secondes, le temps de la lire.
+  longueur, comme un brouillon, et `hold: N` la tient au moins N secondes, le temps de la lire. `at_once: true` l'écrit
+  entière dès son début, au lieu d'une phrase après l'autre (la question du quiz, coupée par un « … », 2026-11-17).
 - `sfx: [[son, secondes]]` sur un segment : des effets sonores (`tools/trial/sfx.py` : `scan`, les tics du compteur
   sur la grille ; `impact`, le nombre qui tombe ; `whoosh` ; `pops` ; `click` ; `lock`), faits par le code (rien à
   créditer), **aucun son musical**, **jamais sous un verset ni un hadith** (l'outil s'arrête plutôt) ; une piste
@@ -135,14 +142,36 @@ style) : ce qui s'ajoute au short, et sert à toute série qui en aurait besoin.
   lecteur qui l'ignore publie le short entier partout, comme avant. quran-reels prend `-cut.mp4` pour Facebook et
   Instagram quand la ligne en nomme un ; les textes sont les mêmes. Pour la mettre dans la release brouillon sans rien re-rendre
   de validé : workflow `film` avec `only: cut` (les seules versions courtes du film), puis `page-files`.
+- `drop: [...]` dans le fichier d'un short (propriétaire, 2026-11-20, « après le verset on parle trop ») : ce qui sort de
+  la version entière et de son jumeau TikTok, même grammaire que `cut.drop` (`"meaning:0"`, un segment, un verset) ; la
+  version courte garde sa propre liste, `cut.drop`, validée à part (« le reste de sa coupe ne change pas »).
+  Les répliques restent dans le fichier, dans le texte de la voix et dans la prise : aucune requête de voix, `rules.py`
+  compare toujours le texte à toutes les répliques ; `prepare.py` coupe la prise autour d'elles, `script.py` les barre
+  (« coupée ») et ne les compte pas, `rules.py` non plus dans sa durée.
+- `caption` du layout d'un short (`LAYOUTS` de `Trial.tsx` ; « آية وحكايتها » 2 à 4, 2026-11-20) : la narration après le
+  premier verset en sous-titre, en bas et plus petite (deux lignes au plus), l'anglais dessous ; le dessin garde le
+  milieu. L'accroche (avant le verset) et l'appel à s'abonner (la dernière réplique, son choix) gardent leur place en grand.
 - `OVERLAYS` et `LAYOUTS` de `video/src/trial/Trial.tsx` : ce qu'un short dessine au-dessus du voile sans bouger
   (le badge de la série, la frise des dates) et où ses textes se placent ; les dessins, photos et frises de la série
-  sont dans `video/src/trial/Signs.tsx`.
+  sont dans `video/src/trial/Signs.tsx`. `verseGap` (50 par défaut) : de la référence d'un verset à son texte ; Amiri
+  Quran dessine un signe de pause (ۚ ۖ ۗ) haut au-dessus de sa ligne, et sur la première ligne d'un verset il entre dans
+  la référence à 50 px (2:286 de `masaa`, 72 px ; il faut environ 70 px à 66 px de texte, 62 à 40).
 
 **« كلمة من القرآن »** (`kalima`, 2026-11-13) : le short du modèle (un clip filmé, des silhouettes dessinées), plus le
 mot de l'épisode écrit en grand, en or, dès la première image (jamais dit par la voix : le récitateur le dit le premier)
 et le badge de la série au-dessus du voile (`KALIMA_PICTURES`, `KALIMA_OVERLAYS` de `video/src/trial/Kalima.tsx`).
 Un épisode peut réciter plusieurs versets séparés (`stone` : 4:49, 4:124, 35:13, chacun avec sa narration).
+
+**« معاك 5 ثواني », le quiz** (`quiz`, 2026-11-17 ; script validé le même jour) : la question écrite sur la première image,
+trois choix, un compteur de cinq secondes, la réponse, puis le verset récité et son sens. Ce qui s'ajoute au short :
+`quiz:` dans son fichier (`head`, les mots du Coran de la question, par leurs positions dans le verset, `-1` le dernier ;
+`blank`, la fin à deviner, qui ne se remplit qu'avec la bonne réponse ; `choices`, `ar` et `en` pour un choix en égyptien,
+ou `verse`, `from`, `to` pour des noms pris dans un verset, `right` sur la bonne, `icon` ; `both: true` quand la réponse
+est « les deux » ; `speakers`, les deux versets face à face de « qui l'a dit »), lu par `tools/trial/quiz.py`, qui écrit
+`video/src/trial/quizData.ts` depuis le registre ; la question est un segment muet (`silent`, `hold: 6.8`, la réponse
+à 5 s) avec `sfx: [[count, 0], [impact, 5.0]]` (`count` : cinq tics, `tools/trial/sfx.py`) ; ce qui ne bouge pas est
+dessiné au-dessus du voile (`QUIZ_OVERLAYS`), le lieu dessous. Un mauvais choix est un vrai sens ou un vrai nom du Coran,
+jamais une invention, et n'est jamais écrit dans le verset.
 
 **Le style compteur, une option** (propriétaire, 2026-11-13 : « enregistre ce style comme option à utiliser si ça
 fonctionne, pour une série ou dans une partie »). Il vient d'une vidéo de « إعجاز عددي » qu'il a trouvée attirante ; ce
@@ -159,8 +188,9 @@ occurrences, ses formes, ses sourates, la première et la dernière fois, `video
 pastille par occurrence, par forme puis par sourate ; la première et la dernière fois entourées puis cadenassées).
 - **Un nombre fait de particules** qui se rassemblent ; un « = » entre deux comptes.
 - **Les comptes en chiffres « 365 »**, pas en chiffres arabes orientaux (propriétaire, 2026-11-13) : dans le nombre en
-  particules, la bande des règles, les répliques et les légendes ; le badge de la série et la référence d'un verset
-  gardent ceux de la série.
+  particules, la bande des règles, les répliques et les légendes. **Depuis le 2026-11-17, tous les nombres** (sa règle,
+  `CLAUDE.md`) : badges, références, dates et chapitres compris ; seul le numéro qui ferme une ayah dans le texte
+  coranique (۝١٩) reste comme dans le mushaf.
 - **La grille des 6 236 versets** (une pastille par verset, dans l'ordre du mushaf, de droite à gauche) : en or les
   versets du mot compté ; en anneau vide ceux qu'une règle retire ; un second mot dans une autre couleur.
 - **La bande des règles**, au pied de l'image, à la place de la frise des dates de « سنريهم آياتنا » : chaque règle de
@@ -180,7 +210,7 @@ pastille par occurrence, par forme puis par sourate ; la première et la derniè
 | `text` | le texte de voix de ses répliques propres (une requête pour toutes) |
 | `verses` | seulement dans le premier film (ancien épisode préparé) ; sinon le registre |
 | `outro` | secondes d'image calme à la fin (12) |
-| `thumbnail` | la vignette : `title`, `tag`, `panels` (les shorts montrés côte à côte, le premier à droite), `file` |
+| `thumbnail` | la vignette : `title`, `tag`, `panels` (les shorts montrés côte à côte, le premier à droite), `file` ; et ses **vignettes dédiées**, `options` (voir plus bas) |
 | `publish` | `title`, `series` (le nom de la série, repris par les shorts), `description`, `hook` (pour le film en 9:16 sur Facebook, comme un short), `hashtags` (2 ou 3, ceux du thème), `narration` (la ligne qui déclare la voix IA, par voix), `out` (où écrire les textes à coller) |
 | `chapters` | chacun : `id`, `title` (ar, en : un chapitre YouTube), `number`, `segments` |
 
@@ -188,10 +218,58 @@ Un segment de film est l'un de : `reuse: <short>.<narration>` (les répliques d'
 quelle ; `lines: [..]` pour n'en prendre que certaines), `narration: <nom>` avec ses `lines` (répliques propres
 au film), `verse: quran.S.A`, `reading: hadith.<recueil>.<n>` (hadith lu par une vraie voix ; `part: <nom>` n'en joue qu'une partie : le registre
 du hadith liste `parts` (`excerpt_ar`, `excerpt_en` copiés du texte, `recording` : `start`, `end`, `heard`, `status` dans
-la lecture entière, qui lui donne lecteur, fichier et licence) ; sans `part`, toute la lecture : un short joue une
+la lecture entière, qui lui donne lecteur, fichier et licence, sauf si la partie nomme les siens : une autre voix qui dit ces mots,
+le dhikr dit par un récitateur dans « ذكر وحكايته », ses temps sont alors dans son propre fichier) ; sans `part`, toute la lecture : un short joue une
 partie, le film le tout). `picture` (un
 short) et `scene` disent l'image, gardés d'un segment au suivant ; `shots` donne une image par phrase
 (l'ouverture) ; `subscribe: true` fait passer le rappel d'abonnement pendant ce segment.
+
+### Les vignettes dédiées d'un film (`thumbnail.options`, choix du propriétaire, 2026-11-21)
+
+La vignette à trois panneaux (`TrialThumb169`) a fait 2,54 % de clics sur 6 963 impressions, surtout en vidéo suggérée,
+où elle mesure environ 170 px de large. Le propriétaire veut des vignettes dédiées : **une seule scène du film, en pleine
+résolution, sans aucun de ses textes, avec une accroche en deux lignes**. `TrialThumbFrame` (1280×720,
+`video/src/trial/ThumbFrame.tsx`) montre le film propre (`Film`, prop `clean` : ni verset, ni traduction, ni narration,
+ni sous-titre, ni crédit, ni chapitre, ni nom de la page, ni bouton d'abonnement, ni son ; le clip, les dessins et le
+voile restent) arrêté (`Freeze`) au moment `at` de l'option, réduit de 1920×1080 à 1280×720. Dessus : un dégradé sombre du
+côté du texte, une étiquette dorée (`Tag`) et deux lignes d'arabe (blanche, puis dorée ; 122 px au plus, réduites si une
+ligne dépasserait son bloc). Le coin en bas à droite reste vide (YouTube y écrit la durée). Chaque option du fichier du film :
+
+| Champ | Ce que c'est |
+| --- | --- |
+| `name` | son nom (minuscules, chiffres, tirets) ; il fait le nom du fichier : `<files>-film-thumbnail-<name>.jpg` |
+| `art` | **ou** une scène dessinée pour la vignette seule (`video/src/trial/ThumbArt.tsx`, table `ART` : `qarnayn-barrier`…) : le choix du propriétaire du 2026-11-21 (« il ne faut pas toujours choisir des images du film, on essaie de créer une » image ; « entièrement dessinée ») |
+| `at` | **ou** un moment du film, `"5:40"` ou des secondes (le temps du film terminé, pas d'une scène) |
+| `lines` | les deux lignes d'accroche (jamais une citation ; les mots refusés s'appliquent) |
+| `tag` | l'étiquette dorée |
+| `place` | `top` (centré en haut), `left` ou `right` (un bloc d'environ 45 % de la largeur de ce côté, texte aligné à droite) |
+| `brightness` | facultatif, 1 par défaut : éclaircit l'image seulement (1,3), jamais le texte |
+| `file` | facultatif : un autre nom de fichier |
+
+Les options passent par `video/public/trial/<film>.json` (écrit par `prepare.py --film`, avec `thumbnail.options`) ; la
+composition lit aussi la ligne de temps `<film>-<voix>.json`. Le workflow `film` les rend avec `only: all` ou `film`, à côté
+de `TrialThumb169` (qui reste), et **seules, avec `only: thumbnail`** : il prépare le film (clips et ligne de temps comme
+pour `only: film`), ne rend aucune vidéo et **ajoute** les images à la release brouillon `<files>-candidate` sans retirer les
+autres fichiers. Le propriétaire choisit l'option sur les images ; rien n'est validé sans lui. Son choix s'inscrit dans
+`thumbnail.use` (le nom de l'option) : `publish.py` nomme alors ce fichier sur la ligne du film (« miniature : … »), et
+`page-files` le rend public avec les autres (Dhul-Qarnayn : `barrier`, choisi le 2026-11-21).
+
+**Un film tout dessiné se rend sans être préparé** (2026-11-21) : quand toutes les options sont des `art` (aucune `at`) et
+que `only` vaut `thumbnail`, le workflow `film` saute les clips, les prises, Whisper et les récitations : il n'écrit que
+`<film>.json` (`prepare.py --film` sans voix) et rend les images en quelques minutes au lieu d'une douzaine (décision :
+`videos.py --light`). Une seule option `at` garde la préparation complète.
+
+**Une scène dessinée d'abord** (son choix, 2026-11-21) : un ciel vif au crépuscule, une seule chose en grand (le barrage
+chauffé au rouge, le coffre d'or, le soleil dans l'eau sombre), la lumière dessinée pour une image lue à 170 px ; les
+silhouettes du film (`Qarnayn.tsx`) en plus grand et plus clair, personne dessiné, rien de l'invisible. Une scène dessinée ne
+demande aucun clip : elle se rend dans la session (`npx remotion still … TrialThumbFrame … --props='{"film": …, "option": …,
+"data": {"film": null, "option": {…}}}'`), et le voile sous le texte y est plus léger. Le moment du film (`at`) reste
+possible quand une image du film est la plus forte.
+
+```bash
+uv run --with pyyaml python3 tools/trial/videos.py --film <film> --only thumbnail --stills   # ce qui serait rendu
+npx remotion still <bundle> TrialThumbFrame out/<film>-thumb.png --frame=45 --props='{"film":"<film>","voice":"D","option":"<nom>","data":null}'
+```
 
 ## La chaîne, dans l'ordre
 
@@ -314,6 +392,16 @@ Les cinq règles obligatoires de `CLAUDE.md` valent ici comme partout. Dans ce m
   (`content/policy.yaml`, `tafsir.editions` : al-Muyassar, as-Sa'di, Ibn Kathir) sur un verset que le short récite.
   Ni lu ni affiché : la référence s'écrit. `rules.py` refuse la voix qui dirait quatre mots de suite du récit. Un
   récit de révélation qui n'est pas dans les recueils de la politique ne se raconte pas.
+- **Une source de fiqh** (type `fiqh`, `content/sources/fiqh.yaml`, `content/policy.yaml`, `fiqh.editions` : l'Encyclopédie
+  koweïtienne, turath.io 11430) : comme un tafsir (`sources: [fiqh.kuwaiti.24.238]`, jamais lue ni affichée mot pour mot),
+  mais sans verset récité à relier. Id `fiqh.<édition>.<volume>.<page>`, une page imprimée par entrée (texte rempli par
+  `tools/sources/fetch.py` depuis l'API de turath.io, notes de bas de page comprises) ; à l'écran et dans la description :
+  le nom du livre, le volume et les pages, les pages qui se suivent réunies (`الموسوعة الفقهية الكويتية ٢٤/٢٣٨–٢٣٩`,
+  `Kuwaiti Encyclopedia of Islamic Jurisprudence 24/238–239`).
+- **`digits: latin`** (champ facultatif du fichier d'un short ou d'un film) : les références écrites par
+  `tools/trial/sources.py` (« سورة … · الآية 3 », « رواه مسلم 863 », volume et pages de fiqh) prennent les chiffres 0-9 au
+  lieu des chiffres arabes-indiens ; le signe de fin de verset dans le texte du verset ne change pas. Sans le champ,
+  rien ne change.
 - **Jamais de synthèse sur le Coran** : la narration dit la question et le sens avec ses mots à elle ; c'est le
   récitateur qui dit le verset. Un hadith est lu par une vraie voix (lecture validée du registre).
 - **Personne de connu dessiné**, et dans ce modèle **personne du tout** : des choses et des lieux. Ni le
@@ -346,7 +434,7 @@ dit quoi faire.
    à l'oreille. Pas de schéma des fichiers : seuls les champs ci-dessus sont exigés. (Le registre reste vérifié par
    `validate.py`.)
 3. **Rendu en CI : en service depuis le 2026-11-11, sauf pour le premier film.** Le workflow `film`
-   (`.github/workflows/film.yml`, à la main : `film`, `voice` D, `only` all|shorts|film|tiktok|<id d'un short>,
+   (`.github/workflows/film.yml`, à la main : `film`, `voice` D, `only` all|shorts|film|thumbnail|tiktok|<id d'un short ou plusieurs, séparés par des virgules : `qitr,marah`>,
    `ambience`, `from_run`) prépare puis rend en jobs parallèles : `prepare` (règles, clip Pixabay de chaque short,
    timelines avec les prises de `content/trial/takes/` : aucune requête de voix, puis le film), un job `render` par
    vidéo (short, version TikTok, film : `check.py` et ses planches), `stills` (couvertures et vignette), `release`

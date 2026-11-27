@@ -16,9 +16,9 @@ voice) is listed at the end, to check by eye.
 
 Errors: a quoted id absent from the registry, excluded, without text or of the wrong type; a hadith outside
 content/policy.yaml; a reading with no recording; a verse with no cut in the reciter's file; what a narration
-rests on (`sources:` of a narration segment: the report it tells in its own words, the tafsir its meaning comes
-from; written on screen as a reference, never read) when it is not a hadith of the policy or the passage of a
-tafsir of the policy about a verse recited in that short; the synthetic
+rests on (`sources:` of a narration segment: the report it tells in its own words, the tafsir or the page of fiqh its meaning
+comes from; written on screen as a reference, never read) when it is not a hadith of the policy, the passage of a
+tafsir of the policy about a verse recited in that short or a page of fiqh of the policy; the synthetic
 voice saying a quote (four words in a row of a verse of the registry, in its Uthmani or its everyday spelling,
 or of a hadith quoted in that file; a net, not a proof: a line is still read by a person);
 a voice text that differs from the lines; a broken `reuse`, `lines` or `subscribe` in a film; a missing
@@ -56,7 +56,8 @@ MAX_TITLE = 100                # YouTube
 MIN_FIRST_PHRASE = 2           # words: the first frame shows only the first phrase (« بنقول: » alone was the fault seen)
 
 TO_CHECK_BY_EYE = [
-    "nobody is drawn (no person, not the boy, his parents, a prophet): things and places only",
+    "nobody of a text is drawn (a prophet, a Companion, a known person, anyone of a story of the Quran or a hadith); an "
+    "anonymous person only as a silhouette or a stick figure, a simple face only when it shows the difference",
     "the unseen is never pictured (paradise, hell, the Day of Judgement, angels)",
     "the first frame: the strangest fact of the story, written large, readable at once",
     "what the voice sounds like: the take is listened to, mispronounced words are reported to the owner",
@@ -156,6 +157,17 @@ def no_glyph(text: str, face: str) -> list[str]:
             if not (c.isspace() or unicodedata.category(c) in ("Cf", "Cc") or any(ord(c) in codepoints(f) for f in fonts))]
 
 
+
+# The owner's rule (2026-11-19): « ne jamais couper ayah au milieu »: a verse is always recited whole, never `upto`. The
+# shorts validated before the rule, each cut at a pause sign of the mushaf, stay as they are (his choice, the same day).
+CUT_BEFORE_THE_RULE = {"adab", "awake", "dabba", "days", "kahf", "khams", "lahab", "nur", "qalb", "qist", "rizq", "sadr",
+                       "sahun", "sayyara", "sky", "tayyiba", "universe", "womb"}
+
+# The scenes drawn for thumbnails (video/src/trial/ThumbArt.tsx, its `ART` table): what `thumbnail.options[].art` may name.
+_ART_TSX = REPO / "video" / "src" / "trial" / "ThumbArt.tsx"
+THUMB_ART = set(re.findall(r'^\s*"([a-z0-9-]+)":\s*[A-Z]\w*,\s*$', _ART_TSX.read_text(encoding="utf-8"), re.M)) if _ART_TSX.exists() else set()
+
+
 class Repo:
     def __init__(self, root: Path):
         self.root = root
@@ -193,6 +205,13 @@ def add_runs(into: dict, words: list[str], owner: str, other: list[str] | None =
         forms = [{words[k]} | ({other[k]} if other else set()) for k in range(i, i + QUOTE_RUN)]
         for run in itertools.product(*forms):
             into.setdefault(run, owner)
+
+
+def add_reading(into: dict, src: dict, sid: str) -> None:
+    """The runs of the words a hadith card shows, its formulas apart (« صلى الله عليه وسلم » after his name), as for a
+    report told: every line says them too, and they are not a quotation of the hadith."""
+    for piece in FORMULA.split(fold(shown_words(src))):
+        add_runs(into, words_of(piece), sid)
 
 
 def dagger_as_alef(text: str) -> str:
@@ -233,6 +252,7 @@ class Checker:
     def __init__(self, repo: Repo, out: Findings, draft: bool):
         self.repo, self.out, self.draft = repo, out, draft
         self.delivered = False                    # the file being read has videos the owner validated: its lines are settled
+        self.pace = None                          # the `pace` of the short being estimated (adhkar to read)
         self.unvalidated: list[str] = []          # what is quoted and not validated yet (one line per film)
 
     # -- quotes
@@ -256,8 +276,8 @@ class Checker:
         if src.get("status") != "validated" and f"source {sid}" not in self.unvalidated:
             self.unvalidated.append(f"source {sid}")
         if part is not None:
-            if kind != "reading":
-                self.out.error(file, f"`part` is for a `reading` segment, not for {kind} {sid}")
+            if kind not in ("reading", "card"):
+                self.out.error(file, f"`part` is for a `reading` or a `card` segment, not for {kind} {sid}")
                 return None
             whole = src
             src = script.part_view(whole, part)
@@ -270,6 +290,9 @@ class Checker:
             if f"{ref['surah']}:{ref['ayah']}" not in self.repo.cuts:
                 self.out.error(file, f"verse {sid} has no cut in the reciter's file (content/recitations/)")
             self.glyphs(file, src["text_ar"], "quran", f"verse {sid}")
+        elif kind == "card":                       # shown only, never read: no recording to find
+            self.in_policy(file, sid, src)
+            self.glyphs(file, src.get("excerpt_ar") or src["text_ar"], "arabic", f"card {sid}" + (f" part {part}" if part else ""))
         else:
             self.hadith(file, sid, src, part)
             self.glyphs(file, src.get("excerpt_ar") or src["text_ar"], "arabic", f"reading {sid}" + (f" part {part}" if part else ""))
@@ -286,6 +309,10 @@ class Checker:
                 return set()
             if not isinstance(upto, int) or isinstance(upto, bool) or upto < 1:
                 self.out.error(file, f"`upto: {upto}` is the number of recited words kept, an integer from 1")
+                return set()
+            if Path(file).stem not in CUT_BEFORE_THE_RULE:
+                self.out.error(file, f"`upto: {upto}`: a verse is always recited whole (the owner's rule, 2026-11-19: "
+                                     "« ne jamais couper ayah au milieu »); only the shorts validated before it keep their cut")
                 return set()
         elif not isinstance(ids, list) or len(ids) < 2:
             self.out.error(file, f"`verses` is a list of two verses or more (one verse: `verse:`): {ids}")
@@ -386,8 +413,13 @@ class Checker:
                 if not about & recited:
                     self.out.error(file, f"{where}: source {sid} explains {', '.join(sorted(about))}, which this short does not recite")
                     continue
+            elif src.get("type") == "fiqh":
+                # A page of a book of fiqh: no recited verse needed; its edition must be the policy's.
+                if src["ref"]["edition"] not in ((self.repo.policy.get("fiqh") or {}).get("editions") or {}):
+                    self.out.error(file, f"{where}: source {sid}: fiqh « {src['ref']['edition']} » is outside content/policy.yaml")
+                    continue
             else:
-                self.out.error(file, f"{where}: source {sid} is of type « {src.get('type')} »: a narration rests on a hadith or a tafsir, or on a science source (a verse is recited: `verse:`)")
+                self.out.error(file, f"{where}: source {sid} is of type « {src.get('type')} »: a narration rests on a hadith, a tafsir or a page of fiqh, or on a science source (a verse is recited: `verse:`)")
                 continue
             if src.get("status") != "validated" and f"source {sid}" not in self.unvalidated:
                 self.unvalidated.append(f"source {sid}")
@@ -478,7 +510,9 @@ class Checker:
     def short(self, path: Path) -> dict | None:
         file = self.repo.rel(path)
         spec = yaml.safe_load(path.read_text(encoding="utf-8"))
-        self.required(file, spec, ["id", "text", "segments", "cover.title", "publish.title.ar", "publish.title.en",
+        # A short with no voice at all (adhkar to read: every narration `silent`) has no voice text.
+        voiced = any("narration" in s and not s.get("silent") for s in spec.get("segments") or [])
+        self.required(file, spec, ["id"] + (["text"] if voiced else []) + ["segments", "cover.title", "publish.title.ar", "publish.title.en",
                                    "publish.description.ar", "publish.description.en", "publish.part"])
         if not spec.get("clip") and not spec.get("validated"):      # the script and the voice come before the pictures
             self.out.warn(file, "no `clip` yet: the pictures come after the script (tools/trial/clip.py, shown to the owner)")
@@ -499,12 +533,25 @@ class Checker:
                 recited |= self.passage(file, seg["verses"], seg.get("upto"))
             elif "upto" in seg:
                 self.out.error(file, "`upto` is for a `verses` segment of one verse")
-            if "part" in seg and "reading" not in seg:
-                self.out.error(file, f"`part` is for a `reading` segment: {seg_name(seg)}")
+            if "pause" in seg:
+                p = seg["pause"]
+                if not isinstance(p, (int, float)) or isinstance(p, bool) or p <= 0:
+                    self.out.error(file, f"`pause: {p}` is a length in seconds, a positive number")
+                if not seg.get("scene"):
+                    self.out.error(file, f"a pause shows a scene: `scene` is missing ({seg_name(seg)})")
+            if "part" in seg and "reading" not in seg and "card" not in seg:
+                self.out.error(file, f"`part` is for a `reading` or a `card` segment: {seg_name(seg)}")
+            if "card" in seg:
+                src = self.quoted(file, seg["card"], "card", seg.get("part"))
+                if src:     # the voice says none of its words (there is no voice under it, but a line elsewhere)
+                    add_reading(hadiths, self.repo.sources[seg["card"]], seg["card"])
+                for ours in (seg.get("label"), seg.get("count")):
+                    if ours:
+                        self.glyphs(file, ours, "lines", f"card {seg['card']}, « {ours} »")
             if "reading" in seg:
                 src = self.quoted(file, seg["reading"], "reading", seg.get("part"))
                 if src:     # the whole hadith, even when only a part is read: the voice says none of its words
-                    add_runs(hadiths, words_of(shown_words(self.repo.sources[seg["reading"]])), seg["reading"])
+                    add_reading(hadiths, self.repo.sources[seg["reading"]], seg["reading"])
         for seg in segments:
             if "sources" in seg:
                 if "narration" in seg:
@@ -526,8 +573,8 @@ class Checker:
             if n < MIN_FIRST_PHRASE:
                 self.out.warn(file, f"the first phrase of the first line has {n} word(s), the first frame would show only « {phrase} »")
         for label, text in (("cover title", get(spec, "cover.title")), ("cover tag", get(spec, "cover.tag")),
-                            ("title", get(spec, "publish.title.ar")), ("description", get(spec, "publish.description.ar")),
-                            ("hook", get(spec, "publish.hook.ar"))):
+                            ("title", get(spec, "publish.title.ar")), ("youtube title", get(spec, "publish.youtube_title.ar")),
+                            ("description", get(spec, "publish.description.ar")), ("hook", get(spec, "publish.hook.ar"))):
             if text:
                 self.wording(file, text, label)
         self.title_length(file, get(spec, "publish.title"), "short")
@@ -571,13 +618,32 @@ class Checker:
                 src = script.part_view(src, seg["part"]) or {}
             rec = src.get("recording")
             return rec["end"] - rec["start"] if rec else script.UNKNOWN_READING
+        if "pause" in seg:
+            return float(seg["pause"]) if isinstance(seg["pause"], (int, float)) else 0.0
+        if "card" in seg:
+            src = self.repo.sources.get(seg["card"]) or {}
+            if seg.get("part"):
+                src = script.part_view(src, seg["part"]) or {}
+            return script.card_seconds(src.get("excerpt_ar") or src.get("text_ar") or "", seg.get("hold"), self.pace)
         return max(script.spoken(seg.get("lines") or []), seg.get("hold") or 0)
 
     def estimate_short(self, spec: dict) -> float:
-        t = script.LEAD
+        """What the short lasts, about; what its `drop` leaves out of every version (prepare.py) does not count."""
+        t, self.pace = script.LEAD, spec.get("pace")
+        gone, struck = script.left_out(spec)
         for seg in spec.get("segments") or []:
-            t += self.seconds_of(seg) + script.GAP
-        return t - script.GAP + script.TAIL
+            if "narration" in seg:
+                if seg["narration"] in gone:
+                    continue
+                dropped = {i for name, i in struck if name == seg["narration"]}
+                seg = {**seg, "lines": [l for i, l in enumerate(seg.get("lines") or []) if i not in dropped]}
+                if not seg["lines"]:
+                    continue
+            elif any(sid in (spec.get("drop") or []) for sid in ([seg["verse"]] if "verse" in seg else seg.get("verses") or [])):
+                continue
+            t += self.seconds_of(seg) + script.gap_of(spec)
+        self.pace = None
+        return t - script.gap_of(spec) + script.TAIL
 
     # -- a series: shorts that stand alone, no film
     def series(self, path: Path, spec: dict) -> tuple[dict, dict]:
@@ -618,7 +684,7 @@ class Checker:
                 if "reading" in seg:
                     src = self.quoted(file, seg["reading"], "reading", seg.get("part"))
                     if src:     # the whole hadith, even when only a part is read
-                        add_runs(hadiths, words_of(shown_words(self.repo.sources[seg["reading"]])), seg["reading"])
+                        add_reading(hadiths, self.repo.sources[seg["reading"]], seg["reading"])
         for chapter in spec.get("chapters") or []:
             title = chapter.get("title") or {}
             if not title.get("ar") or not title.get("en"):
@@ -637,15 +703,70 @@ class Checker:
         self.voice_text(file, spec, own)
         for label, text in (("film title", get(spec, "title.ar")), ("thumbnail title", get(spec, "thumbnail.title")),
                             ("thumbnail tag", get(spec, "thumbnail.tag")), ("title", get(spec, "publish.title.ar")),
+                            ("youtube title", get(spec, "publish.youtube_title.ar")),
                             ("description", get(spec, "publish.description.ar")), ("hook", get(spec, "publish.hook.ar"))):
             if text:
                 self.wording(file, text, label)
+        self.thumbnail_options(file, spec)
         self.title_length(file, get(spec, "publish.title"), "film")
         seconds = self.estimate_film(spec, shorts)
         if seconds > MAX_FILM:
             self.out.warn(file, f"estimated {stamp(seconds)}, over {stamp(MAX_FILM)}: the film lasts under 10 minutes")
         self.validation(file, spec)
         return spec, shorts
+
+    def thumbnail_options(self, file: str, spec: dict) -> None:
+        """`thumbnail.options` (the dedicated thumbnails, TrialThumbFrame, 2026-11-21): a name, a scene drawn for the thumbnail
+        (`art`, ThumbArt.tsx: the owner's choice, « entièrement dessinée ») or a moment of the film (`at`), two lines of hook, a
+        tag, a place; `thumbnail.use`: the option YouTube gets, once the owner chose it. The lines are the owner's titles, not
+        citations: only the refused wording applies."""
+        options = get(spec, "thumbnail.options")
+        if options is None:
+            return
+        if not isinstance(options, list):
+            self.out.error(file, "thumbnail.options: a list of {name, at, lines, tag, place}")
+            return
+        names: set[str] = set()
+        for n, option in enumerate(options, 1):
+            where = f"thumbnail.options[{n}]"
+            if not isinstance(option, dict):
+                self.out.error(file, f"{where}: {{name, at, lines, tag, place}} expected")
+                continue
+            name = option.get("name")
+            if not isinstance(name, str) or not re.fullmatch(r"[a-z0-9-]+", name):
+                self.out.error(file, f"{where}: `name` is lowercase letters, digits and hyphens")
+            elif name in names:
+                self.out.error(file, f"{where}: the name « {name} » is used twice")
+            names.add(str(name))
+            at, art = option.get("at"), option.get("art")
+            if (at is None) == (art is None):
+                self.out.error(file, f"{where}: one of `art` (a scene drawn for the thumbnail) or `at` (a moment of the film), not both")
+            elif art is not None:
+                if art not in THUMB_ART:
+                    self.out.error(file, f"{where}: `art` « {art} » is not drawn in video/src/trial/ThumbArt.tsx ({', '.join(sorted(THUMB_ART))})")
+            elif isinstance(at, bool) or not (isinstance(at, (int, float)) and at >= 0 or isinstance(at, str) and re.fullmatch(r"\d+(:\d{1,2}){1,2}", at)):
+                self.out.error(file, f"{where}: `at` is a time of the film (\"5:40\" or seconds), not {at!r}")
+            lines = option.get("lines")
+            if not (isinstance(lines, list) and len(lines) == 2 and all(isinstance(l, str) and l.strip() for l in lines)):
+                self.out.error(file, f"{where}: `lines` is two lines of text")
+            else:
+                for l in lines:
+                    self.wording(file, l, f"{where} line")
+            if not option.get("tag"):
+                self.out.error(file, f"{where}: missing `tag`")
+            else:
+                self.wording(file, option["tag"], f"{where} tag")
+            if option.get("place") not in ("top", "left", "right"):
+                self.out.error(file, f"{where}: `place` is top, left or right, not {option.get('place')!r}")
+            brightness = option.get("brightness")
+            if brightness is not None and not (isinstance(brightness, (int, float)) and not isinstance(brightness, bool) and 0.3 <= brightness <= 2):
+                self.out.error(file, f"{where}: `brightness` is a number between 0.3 and 2")
+            unknown = set(option) - {"name", "at", "art", "lines", "tag", "place", "brightness", "file"}
+            if unknown:
+                self.out.error(file, f"{where}: unknown field(s) {', '.join(sorted(unknown))}")
+        use = get(spec, "thumbnail.use")
+        if use is not None and use not in names:
+            self.out.error(file, f"thumbnail.use: « {use} » is not one of thumbnail.options ({', '.join(sorted(names))})")
 
     def reuse(self, file: str, where: str, seg: dict, shorts: dict) -> None:
         name, _, part = str(seg["reuse"]).partition(".")
@@ -680,7 +801,7 @@ class Checker:
 
 
 def seg_name(seg: dict) -> str:
-    return next((f"{k}: {v}" for k, v in seg.items() if k in ("verse", "verses", "reading", "narration", "reuse")), "?") + (f" (part {seg['part']})" if seg.get("part") else "")
+    return next((f"{k}: {v}" for k, v in seg.items() if k in ("verse", "verses", "reading", "card", "narration", "pause", "reuse")), "?") + (f" (part {seg['part']})" if seg.get("part") else "")
 
 
 # ---- Main -----------------------------------------------------------------------------------------------------

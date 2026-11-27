@@ -1,0 +1,78 @@
+# « الصاحب ساحب » (content/trial/sahib.yaml), short 2 : زي ما تحب لنفسك. Bukhari 13 (« لا يؤمن أحدكم حتى يحب لأخيه ما يحب
+# لنفسه »), lu par Abu Malik al-Asqalani ; 59:9 récité en entier (sa règle du 2026-11-19, son choix) ; le sens d'après
+# al-Muyassar (les Ansar). Script : docs/scripts/sahib.md.
+# - Trois moments à un arrêt de bus le matin, chacun joué deux fois : l'ami gris (« بيحب لنفسه ») puis l'ami blanc (« بيحب
+#   لك زي نفسه ») : les deux derniers sandwichs, l'affiche « مطلوب », le mauvais bus.
+# - Images (video/src/trial/Sahib.tsx) : `y-bad-1`… `y-good-3` les moments ; `y-end` les deux amis ; `y-read` l'affiche ;
+#   `y-bench` le banc, une seule place, le blanc y fait asseoir le héros.
+id: yuhibb
+# « Je valide, avec 59:9 » du propriétaire (2026-11-19, question à choix nommant le script de ce short tel qu'envoyé :
+# docs/scripts/sahib.md), puis 59:9 entier (même jour, sa règle) ; le style et la lecture de Bukhari 13 le même jour.
+script_validated: { by: mssnoussi92, on: 2026-11-19 }
+# « Je valide titres, descriptions et accroches » (2026-11-19, question à choix nommant les trois titres, descriptions et
+# accroches de docs/retention/publication-sahib.md tels qu'envoyés) : les textes. Puis « Je valide les trois » (même jour,
+# question à choix nommant les trois vidéos telles qu'envoyées, les deux corrigées (lectures recoupées, affiche) et
+# « الجليس » : montage, dessins, bruitages, ambiances, couvertures, lectures). Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-19, what: [montage, cover, ambience, publish] }
+handle: "@quran_words_daily"
+voices: { X: "no voice: the moments are played without a word" }      # aucune voix de synthèse (son choix, 2026-11-19), comme les adhkar
+clip: { source: generated, kind: night, seconds: 20, rate: 1, position: "50% 50%", shift: 0, brightness: 1, ground: "#4a4f5a", horizon: 1420, veil: 0.55 }
+ambience: { source: bigsoundbank, id: "0608", title: "Street and Roads", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/street-and-roads-s0608.html", from: 5, seconds: 110, level: -38 }
+cover: { scene: y-good-2, title: "صاحبك بيحب لك إيه؟", tag: "الصاحب ساحب · 2 من 3", focus: 1100 }
+publish:
+  title: { en: "Does your friend want for you what he wants for himself?", ar: "صاحبك… بيحب لك اللي بيحبه لنفسه؟" }
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-19 (« Je valide titres, descriptions et accroches », question à choix)
+    ar: "نفس المحطة مرتين… صاحب بيحب لنفسه، وصاحب بيحب لك زي نفسه."
+    en: "The same bus stop, twice… a friend who loves for himself, and one who loves for you as he loves for himself."
+    validated: 2026-11-19
+  part: 2
+  hashtags: ["#الأخوة"]
+  description:
+    ar: "نفس محطة الأتوبيس، مرتين: صاحب بيحب لنفسه، وصاحب بيحب لك زي نفسه. والنبي ﷺ قال: لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه (صحيح البخاري 13). وربنا قال عن الأنصار: ويؤثرون على أنفسهم ولو كان بهم خصاصة (الحشر 9)."
+    en: "The same bus stop, twice: a friend who loves for himself, and a friend who loves for you what he loves for himself. The Prophet ﷺ said: none of you believes until he loves for his brother what he loves for himself (Sahih al-Bukhari 13). And God said of the Ansar: they give preference over themselves, even though they are in privation (59:9)."
+segments:
+  - pause: 6
+    scene: y-bad-1
+    sfx: [[pop, 3.0]]
+  - pause: 6
+    scene: y-good-1
+    sfx: [[pop, 3.0]]
+  - pause: 6
+    scene: y-bad-2
+    sfx: [[click, 2.6]]
+  - pause: 6
+    scene: y-good-2
+    sfx: [[click, 2.2], [buzz, 3.4]]
+  - pause: 6
+    scene: y-bad-3
+    sfx: [[engine, 0.4]]
+  - pause: 6
+    scene: y-good-3
+    sfx: [[engine, 0.4], [pop, 3.0]]
+  - narration: end
+    silent: true
+    hold: 3.2
+    scene: y-end
+    sfx: [[impact, 0.2]]
+    lines:
+      - ar: "صاحبك ده… بيحب لك إيه؟"
+        en: "That friend… what does he want for you?"
+  - reading: hadith.bukhari.13
+    scene: y-read
+  - verse: quran.59.9
+    scene: y-bench
+  - narration: meaning
+    silent: true
+    hold: 4.5
+    scene: y-bench
+    sources: [tafsir.muyassar.59.9]
+    lines:
+      - ar: "الأنصار كانوا بيقدّموا المهاجرين على نفسهم… حتى وهم محتاجين."
+        en: "The Ansar put the emigrants before themselves… even when they were in need."
+  - narration: share
+    silent: true
+    hold: 3
+    scene: y-share
+    lines:
+      - ar: "ابعتها لصاحبك اللي بيبعتلك الفرص."
+        en: "Send it to the friend who sends you the chances."

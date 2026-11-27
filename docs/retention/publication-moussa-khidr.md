@@ -4,30 +4,30 @@ Pour le film et chaque short, sur chaque plateforme, quatre textes à copier : l
 
 ## Le film · Moses and al-Khidr: what looks bad is not always bad · موسى والخضر: مش كل شر… شر
 
-`khidr-film-16x9-ambience.mp4` · 7:47 · 16:9 · YouTube · miniature : `miniature-film-16x9.jpg`
+`khidr-film-16x9-ambience.mp4` · 7:47 · 16:9 · YouTube · miniature : `khidr-film-thumbnail-boat.jpg`
 
-**YouTube · Titre (80/100)**
+**YouTube · Titre (97/100)**
 
 ```text
-Moses and al-Khidr: what looks bad is not always bad · موسى والخضر: مش كل شر… شر
+قصة موسى والخضر: مش كل شر… شر · The story of Moses and al-Khidr: what looks bad is not always bad
 ```
 
 **YouTube · Description**
 
 ```text
-A boat torn open, a father and mother who lost their son, a wall rebuilt for free: three things Moses, peace be upon him, could not keep silent about on his journey with al-Khidr (Surat al-Kahf), and the secret of each. A wisdom shown quickly, a wisdom never shown to those who lived it, and a good hidden until its time.
-
 سفينة اتخرقت، أب وأم خسروا ابنهم، وجدار اتبنى ببلاش: تلات مواقف موسى عليه السلام ما قدرش يسكت عليها في رحلته مع الخضر (سورة الكهف)، وسر كل واحد منهم. حكمة اتكشفت بسرعة، وحكمة ما اتكشفتش لأصحابها، وخير مستخبي لحد وقته.
 
-Chapters:
-0:00 Three stories · تلات مواقف
-0:19 The condition · الشرط
-1:00 The boat · السفينة
-2:32 The boy · الغلام
-4:31 The wall · الجدار
-6:29 Why can't we see it? · ليه مش بنشوفها؟
+A boat torn open, a father and mother who lost their son, a wall rebuilt for free: three things Moses, peace be upon him, could not keep silent about on his journey with al-Khidr (Surat al-Kahf), and the secret of each. A wisdom shown quickly, a wisdom never shown to those who lived it, and a good hidden until its time.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+Chapters:
+0:00 تلات مواقف · Three stories
+0:19 الشرط · The condition
+1:00 السفينة · The boat
+2:32 الغلام · The boy
+4:31 الجدار · The wall
+6:29 ليه مش بنشوفها؟ · Why can't we see it?
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -64,20 +64,20 @@ Footage: Pixabay (Artvan93, Dans4, DancingSky) · Ambience: BigSoundBank (Joseph
 **Facebook · Titre**
 
 ```text
-Why did he tear a hole in the boat?
 ليه خرق السفينة؟
+Why did he tear a hole in the boat?
 ```
 
 **Facebook · Description**
 
 ```text
-They let them board for free… and one of them tore a hole in the boat. Why? The answer is in Surat al-Kahf: a king was seizing every sound boat, and the damage is what saved this one. Not everything that looks bad is bad.
-
 ركّبوهم السفينة ببلاش… وواحد منهم خرقها. ليه؟ الإجابة في سورة الكهف: ملك بياخد كل سفينة سليمة، والعيب هو اللي حماها. مش كل حاجة شايفها شر… تبقى شر.
 
-Moses and al-Khidr · part 1/3 · موسى والخضر · الجزء ١ من ٣
+They let them board for free… and one of them tore a hole in the boat. Why? The answer is in Surat al-Kahf: a king was seizing every sound boat, and the damage is what saved this one. Not everything that looks bad is bad.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+موسى والخضر · الجزء ١ من ٣ · Moses and al-Khidr · part 1/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -101,20 +101,20 @@ Footage: Pixabay (Artvan93) · Ambience: BigSoundBank (Joseph Sardin)
 **Instagram · Titre**
 
 ```text
-Why did he tear a hole in the boat?
 ليه خرق السفينة؟
+Why did he tear a hole in the boat?
 ```
 
 **Instagram · Description**
 
 ```text
-They let them board for free… and one of them tore a hole in the boat. Why? The answer is in Surat al-Kahf: a king was seizing every sound boat, and the damage is what saved this one. Not everything that looks bad is bad.
-
 ركّبوهم السفينة ببلاش… وواحد منهم خرقها. ليه؟ الإجابة في سورة الكهف: ملك بياخد كل سفينة سليمة، والعيب هو اللي حماها. مش كل حاجة شايفها شر… تبقى شر.
 
-Moses and al-Khidr · part 1/3 · موسى والخضر · الجزء ١ من ٣
+They let them board for free… and one of them tore a hole in the boat. Why? The answer is in Surat al-Kahf: a king was seizing every sound boat, and the damage is what saved this one. Not everything that looks bad is bad.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+موسى والخضر · الجزء ١ من ٣ · Moses and al-Khidr · part 1/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -140,20 +140,20 @@ Sur TikTok : la vidéo `khidr-short-1-boat-tiktok-ambience.mp4`, signée `@quran
 **TikTok · Titre**
 
 ```text
-Why did he tear a hole in the boat?
 ليه خرق السفينة؟
+Why did he tear a hole in the boat?
 ```
 
 **TikTok · Description**
 
 ```text
-They let them board for free… and one of them tore a hole in the boat. Why? The answer is in Surat al-Kahf: a king was seizing every sound boat, and the damage is what saved this one. Not everything that looks bad is bad.
-
 ركّبوهم السفينة ببلاش… وواحد منهم خرقها. ليه؟ الإجابة في سورة الكهف: ملك بياخد كل سفينة سليمة، والعيب هو اللي حماها. مش كل حاجة شايفها شر… تبقى شر.
 
-Moses and al-Khidr · part 1/3 · موسى والخضر · الجزء ١ من ٣
+They let them board for free… and one of them tore a hole in the boat. Why? The answer is in Surat al-Kahf: a king was seizing every sound boat, and the damage is what saved this one. Not everything that looks bad is bad.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+موسى والخضر · الجزء ١ من ٣ · Moses and al-Khidr · part 1/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran.words.daily
 ```
@@ -183,13 +183,13 @@ Why did he tear a hole in the boat? · ليه خرق السفينة؟
 **YouTube · Description**
 
 ```text
-They let them board for free… and one of them tore a hole in the boat. Why? The answer is in Surat al-Kahf: a king was seizing every sound boat, and the damage is what saved this one. Not everything that looks bad is bad.
-
 ركّبوهم السفينة ببلاش… وواحد منهم خرقها. ليه؟ الإجابة في سورة الكهف: ملك بياخد كل سفينة سليمة، والعيب هو اللي حماها. مش كل حاجة شايفها شر… تبقى شر.
 
-Moses and al-Khidr · part 1/3 · موسى والخضر · الجزء ١ من ٣
+They let them board for free… and one of them tore a hole in the boat. Why? The answer is in Surat al-Kahf: a king was seizing every sound boat, and the damage is what saved this one. Not everything that looks bad is bad.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+موسى والخضر · الجزء ١ من ٣ · Moses and al-Khidr · part 1/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -219,20 +219,20 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 **Facebook · Titre**
 
 ```text
-They lost their son… why?
 خسروا ابنهم… ليه؟
+They lost their son… why?
 ```
 
 **Facebook · Description**
 
 ```text
-A believing father and mother lost their son, and may never have known why. God told us the reason in Surat al-Kahf. Not every wisdom is shown in this life: some answers are with God.
-
 أب وأم مؤمنين خسروا ابنهم… ويمكن عمرهم ما عرفوا ليه. السبب ربنا حكاه لنا في سورة الكهف. مش كل حكمة هتتكشف في الدنيا: فيه أسئلة إجابتها عند ربنا.
 
-Moses and al-Khidr · part 2/3 · موسى والخضر · الجزء ٢ من ٣
+A believing father and mother lost their son, and may never have known why. God told us the reason in Surat al-Kahf. Not every wisdom is shown in this life: some answers are with God.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+موسى والخضر · الجزء ٢ من ٣ · Moses and al-Khidr · part 2/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -256,20 +256,20 @@ Footage: Pixabay (Dans4) · Ambience: BigSoundBank (Joseph Sardin)
 **Instagram · Titre**
 
 ```text
-They lost their son… why?
 خسروا ابنهم… ليه؟
+They lost their son… why?
 ```
 
 **Instagram · Description**
 
 ```text
-A believing father and mother lost their son, and may never have known why. God told us the reason in Surat al-Kahf. Not every wisdom is shown in this life: some answers are with God.
-
 أب وأم مؤمنين خسروا ابنهم… ويمكن عمرهم ما عرفوا ليه. السبب ربنا حكاه لنا في سورة الكهف. مش كل حكمة هتتكشف في الدنيا: فيه أسئلة إجابتها عند ربنا.
 
-Moses and al-Khidr · part 2/3 · موسى والخضر · الجزء ٢ من ٣
+A believing father and mother lost their son, and may never have known why. God told us the reason in Surat al-Kahf. Not every wisdom is shown in this life: some answers are with God.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+موسى والخضر · الجزء ٢ من ٣ · Moses and al-Khidr · part 2/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -295,20 +295,20 @@ Sur TikTok : la vidéo `khidr-short-2-boy-tiktok-ambience.mp4`, signée `@quran.
 **TikTok · Titre**
 
 ```text
-They lost their son… why?
 خسروا ابنهم… ليه؟
+They lost their son… why?
 ```
 
 **TikTok · Description**
 
 ```text
-A believing father and mother lost their son, and may never have known why. God told us the reason in Surat al-Kahf. Not every wisdom is shown in this life: some answers are with God.
-
 أب وأم مؤمنين خسروا ابنهم… ويمكن عمرهم ما عرفوا ليه. السبب ربنا حكاه لنا في سورة الكهف. مش كل حكمة هتتكشف في الدنيا: فيه أسئلة إجابتها عند ربنا.
 
-Moses and al-Khidr · part 2/3 · موسى والخضر · الجزء ٢ من ٣
+A believing father and mother lost their son, and may never have known why. God told us the reason in Surat al-Kahf. Not every wisdom is shown in this life: some answers are with God.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+موسى والخضر · الجزء ٢ من ٣ · Moses and al-Khidr · part 2/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran.words.daily
 ```
@@ -338,13 +338,13 @@ They lost their son… why? · خسروا ابنهم… ليه؟
 **YouTube · Description**
 
 ```text
-A believing father and mother lost their son, and may never have known why. God told us the reason in Surat al-Kahf. Not every wisdom is shown in this life: some answers are with God.
-
 أب وأم مؤمنين خسروا ابنهم… ويمكن عمرهم ما عرفوا ليه. السبب ربنا حكاه لنا في سورة الكهف. مش كل حكمة هتتكشف في الدنيا: فيه أسئلة إجابتها عند ربنا.
 
-Moses and al-Khidr · part 2/3 · موسى والخضر · الجزء ٢ من ٣
+A believing father and mother lost their son, and may never have known why. God told us the reason in Surat al-Kahf. Not every wisdom is shown in this life: some answers are with God.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+موسى والخضر · الجزء ٢ من ٣ · Moses and al-Khidr · part 2/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -374,20 +374,20 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 **Facebook · Titre**
 
 ```text
-The secret under the wall
 سر تحت الجدار
+The secret under the wall
 ```
 
 **Facebook · Description**
 
 ```text
-A town refused to host them… and one of them repaired its wall for free. Why? Under that wall was a treasure kept for two orphans until they grew up. How many walls were built in your life without your knowing?
-
 قرية رفضت تضيّفهم… وواحد منهم صلّح جدارها ببلاش. ليه؟ تحت الجدار كنز لولدين يتامى، ربنا حفظه لحد ما يكبروا. كام جدار اتبنى في حياتك… وإنت مش داري؟
 
-Moses and al-Khidr · part 3/3 · موسى والخضر · الجزء ٣ من ٣
+A town refused to host them… and one of them repaired its wall for free. Why? Under that wall was a treasure kept for two orphans until they grew up. How many walls were built in your life without your knowing?
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+موسى والخضر · الجزء ٣ من ٣ · Moses and al-Khidr · part 3/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -411,20 +411,20 @@ Footage: Pixabay (DancingSky) · Ambience: BigSoundBank (Joseph Sardin)
 **Instagram · Titre**
 
 ```text
-The secret under the wall
 سر تحت الجدار
+The secret under the wall
 ```
 
 **Instagram · Description**
 
 ```text
-A town refused to host them… and one of them repaired its wall for free. Why? Under that wall was a treasure kept for two orphans until they grew up. How many walls were built in your life without your knowing?
-
 قرية رفضت تضيّفهم… وواحد منهم صلّح جدارها ببلاش. ليه؟ تحت الجدار كنز لولدين يتامى، ربنا حفظه لحد ما يكبروا. كام جدار اتبنى في حياتك… وإنت مش داري؟
 
-Moses and al-Khidr · part 3/3 · موسى والخضر · الجزء ٣ من ٣
+A town refused to host them… and one of them repaired its wall for free. Why? Under that wall was a treasure kept for two orphans until they grew up. How many walls were built in your life without your knowing?
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+موسى والخضر · الجزء ٣ من ٣ · Moses and al-Khidr · part 3/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -450,20 +450,20 @@ Sur TikTok : la vidéo `khidr-short-3-wall-tiktok-ambience.mp4`, signée `@quran
 **TikTok · Titre**
 
 ```text
-The secret under the wall
 سر تحت الجدار
+The secret under the wall
 ```
 
 **TikTok · Description**
 
 ```text
-A town refused to host them… and one of them repaired its wall for free. Why? Under that wall was a treasure kept for two orphans until they grew up. How many walls were built in your life without your knowing?
-
 قرية رفضت تضيّفهم… وواحد منهم صلّح جدارها ببلاش. ليه؟ تحت الجدار كنز لولدين يتامى، ربنا حفظه لحد ما يكبروا. كام جدار اتبنى في حياتك… وإنت مش داري؟
 
-Moses and al-Khidr · part 3/3 · موسى والخضر · الجزء ٣ من ٣
+A town refused to host them… and one of them repaired its wall for free. Why? Under that wall was a treasure kept for two orphans until they grew up. How many walls were built in your life without your knowing?
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+موسى والخضر · الجزء ٣ من ٣ · Moses and al-Khidr · part 3/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran.words.daily
 ```
@@ -493,13 +493,13 @@ The secret under the wall · سر تحت الجدار
 **YouTube · Description**
 
 ```text
-A town refused to host them… and one of them repaired its wall for free. Why? Under that wall was a treasure kept for two orphans until they grew up. How many walls were built in your life without your knowing?
-
 قرية رفضت تضيّفهم… وواحد منهم صلّح جدارها ببلاش. ليه؟ تحت الجدار كنز لولدين يتامى، ربنا حفظه لحد ما يكبروا. كام جدار اتبنى في حياتك… وإنت مش داري؟
 
-Moses and al-Khidr · part 3/3 · موسى والخضر · الجزء ٣ من ٣
+A town refused to host them… and one of them repaired its wall for free. Why? Under that wall was a treasure kept for two orphans until they grew up. How many walls were built in your life without your knowing?
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+موسى والخضر · الجزء ٣ من ٣ · Moses and al-Khidr · part 3/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```

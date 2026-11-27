@@ -1,0 +1,88 @@
+# « معاك 5 ثواني », short 3 (content/trial/quiz.yaml ; script : docs/scripts/quiz.md) : qui l'a dit. « إني أخاف الله رب
+# العالمين » est mot pour mot dans 5:28 (Habil, fils d'Adam, à son frère qui veut le tuer) et dans 59:16 (le Diable,
+# après avoir mené l'homme à la mécréance) : la réponse est « الاتنين ». Les deux versets récités, face à face ; personne
+# n'est dessiné, ni violence ni invisible. Le prénom, demandé par le propriétaire : al-Muyassar sur 5:28. Script écrit par
+# la session le 2026-11-17.
+id: qalaha
+# « Garder « الاتنين », je valide son script » du propriétaire (2026-11-17, question à choix), avec sa demande du même
+# jour, « on spécifie le prénom du fils d'Adam » : هابيل, dans le choix et dans la réplique. Ni la voix, ni les images, ni
+# les textes à coller. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Oui je valide le rendu » du propriétaire (2026-11-17), sur le rendu sans voix du workflow `film` (run 44103338443, voix
+# X) : lu comme le montage, les dessins et le clip tels que rendus. La voix, la couverture et l'ambiance sous la voix restent
+# à valider sur la vidéo finale. Inscrit sur sa parole.
+# « Je valide les 3 » du propriétaire (2026-11-18, question à choix nommant la voix, les couvertures et l'ambiance sous
+# la voix des vidéos avec voix du workflow `film`, run 44270232504) : ajoutés au montage validé le 2026-11-17 ; puis
+# « je valide les textes » (même jour, question à choix nommant les titres et descriptions de publication-quiz.md).
+# Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-18, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 88-trial-qalaha
+# un ciel de nuages au couchant sur une plaine (Pixabay 190332, DancingSky, déjà employé pour le mur) ; APPROUVÉ pour ce
+# short par le propriétaire le 2026-11-17 (question à choix : « 26085, nuit générée, 190332 »)
+clip: { source: pixabay, id: 190332, author: DancingSky, page: "https://pixabay.com/videos/id-190332/", position: "42% 50%", shift: -400, brightness: 0.6, ground: "#05060c", horizon: 1380, veil: 0.8 }
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 10, seconds: 80, level: -36 }
+cover: { scene: ask, title: "مين قال الجملة دي في القرآن؟", tag: "معاك 5 ثواني · 3", focus: 1000 }
+quiz:
+  head: { verse: quran.59.16, from: -5, to: -1 }      # « إِنِّىٓ أَخَافُ ٱللَّهَ رَبَّ ٱلْعَـٰلَمِينَ »
+  both: true                                          # la réponse est le dernier choix ; les deux autres en sont chacun la moitié
+  choices:
+    - { ar: "هابيل ابن سيدنا آدم", en: "Abel, son of Adam", right: true }
+    - { ar: "الشيطان", en: "Satan", right: true }
+    - { ar: "الاتنين", en: "both", right: true }
+  speakers:                                           # pendant les versets et le sens : qui l'a dit, et où
+    - { ar: "هابيل ابن سيدنا آدم", en: "Abel, son of Adam", verse: quran.5.28, from: -5, to: -1 }
+    - { ar: "الشيطان", en: "Satan", verse: quran.59.16, from: -5, to: -1 }
+publish:
+  title: { en: "Who said this in the Quran?", ar: "مين قال الجملة دي في القرآن؟" }
+  part: 3
+  hashtags: ["#قصص_القرآن", "#خوف_الله"]
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (« je valide les 3 accroches »)
+    ar: "جملة واحدة في القرآن… قالها اتنين عكس بعض. تعرف مين؟"
+    en: 'One sentence in the Quran… said by two opposites. Do you know who?'
+    validated: 2026-11-17
+  description:
+    en: "\"I fear Allah, Lord of the worlds\": the same words in two verses. Abel, son of Adam, said them to the brother who threatened to kill him (5:28); Satan said them after leading man to disbelief (59:16). Real fear stops you before the wrong."
+    ar: "جملة واحدة في القرآن… قالها اتنين: هابيل ابن سيدنا آدم لأخوه اللي هدده بالقتل (المائدة 28)، والشيطان بعد ما دعا الإنسان للكفر واتبرّى منه (الحشر 16)."
+segments:
+  - narration: ask
+    silent: true
+    hold: 5.0
+    scene: ask
+    sfx: [[count, 0], [impact, 5.0]]
+    lines:
+      - ar: "مين قالها في القرآن؟"
+        en: "Who said this in the Quran?"
+  - narration: answer
+    silent: true
+    hold: 3.0
+    scene: answer
+    lines:
+      - ar: "الاتنين قالوها… بنفس الكلام."
+        en: "Both said it… in the very same words."
+  - verse: quran.5.28
+    scene: abel
+  - verse: quran.59.16
+    scene: satan
+  - narration: abel-meaning
+    scene: abel-meaning
+    sources: [tafsir.muyassar.5.28, tafsir.ibn-kathir.5.28, tafsir.saadi.5.28]
+    lines:
+      - ar: "هابيل ابن سيدنا آدم… أخوه هدده بالقتل… وما مدّش إيده عليه… عشان بيخاف من ربنا."
+        en: "Abel, son of Adam… his brother threatened to kill him… he didn't raise his hand… because he feared God."
+  - narration: satan-meaning
+    scene: satan-meaning
+    sources: [tafsir.muyassar.59.16, tafsir.saadi.59.16, tafsir.ibn-kathir.59.16, tafsir.saadi.5.28]
+    lines:
+      - ar: "والشيطان… قالها بعد ما دعا الإنسان للكفر… واتبرّى منه."
+        en: "And Satan… said it after calling man to disbelief… and disowning him."
+      - ar: "الخوف اللي بجد… بيمنعك قبل الغلط… مش كلمة بتتقال بعده."
+        en: "Real fear… stops you before the wrong… it isn't a word said after it."
+  - narration: close
+    scene: close
+    lines:
+      - ar: "وإنت… إيه جملة في القرآن فاجئتك لما عرفت مين قالها؟"
+        en: "And you… which sentence in the Quran surprised you when you learned who said it?"
+      - ar: "تابعنا عشان السؤال الجاي."
+        en: "Follow us for the next question."

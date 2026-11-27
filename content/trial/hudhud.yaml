@@ -1,0 +1,82 @@
+# « معاك 5 ثواني », short 6 (content/trial/quiz.yaml ; script : docs/scripts/quiz.md) : qui l'a dit, et à qui. « أَحَطتُ
+# بِمَا لَمْ تُحِطْ بِهِۦ » (27:22) : la huppe à Soulayman (al-Muyassar, Ibn Kathir) ; al-Khaḍir dit à Moussa une phrase
+# voisine (18:68) ; Soulayman vérifie la nouvelle (27:27). Une huppe dessinée en silhouette ; personne d'autre n'est
+# dessiné. Script écrit par la session le 2026-11-17.
+id: hudhud
+# « Je valide » du propriétaire (2026-11-17, question à choix nommant le script du quiz 6 de docs/scripts/quiz.md) : les
+# répliques, la question, les choix. Ni la voix, ni les images, ni les textes à coller. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide, avec 27:27 » du propriétaire (2026-11-17, question à choix nommant le rendu sans voix du workflow `film`,
+# run 44127154394, son clip 16139 et 27:27 récité) : le montage, la huppe, le clip et la récitation de 27:27 tels que
+# rendus. La voix, la couverture et l'ambiance sous la voix restent à valider sur la vidéo finale. Inscrit sur sa parole.
+# « Je valide les 3 » du propriétaire (2026-11-18, question à choix nommant la voix, les couvertures et l'ambiance sous
+# la voix des vidéos avec voix du workflow `film`, run 44270232504) : ajoutés au montage validé le 2026-11-17 ; puis
+# « je valide les textes » (même jour, question à choix nommant les titres et descriptions de publication-quiz.md).
+# Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-18, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 91-trial-hudhud
+# des dunes filmées d'un drone qui avance, de jour (Pixabay 16139, AcornStudioSpain, approuvé pour « القافلة » de « آية
+# وحكايتها ») : la huppe en silhouette sur le sable clair ; APPROUVÉ pour ce short par le propriétaire le 2026-11-17
+clip: { source: pixabay, id: 16139, author: AcornStudioSpain, page: "https://pixabay.com/videos/id-16139/", take: { slow: 5, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.85, ground: "#0b0907", horizon: 1380, veil: 0.8 }
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 10, seconds: 60, level: -36 }
+cover: { scene: ask, title: "مين قال الجملة دي… ولمين؟", tag: "معاك 5 ثواني", focus: 1000 }
+quiz:
+  head: { verse: quran.27.22, from: 5, to: 9 }        # « أَحَطتُ بِمَا لَمْ تُحِطْ بِهِۦ »
+  choices:
+    - { ar: "سيدنا سليمان للهدهد", en: "Solomon to the hoopoe" }
+    - { ar: "الخضر لسيدنا موسى", en: "al-Khidr to Moses", note: { ar: "قال قريب منها · الكهف 68", en: "said something close, al-Kahf 68" } }
+    - { ar: "الهدهد لسيدنا سليمان", en: "the hoopoe to Solomon", right: true }
+publish:
+  title: { en: "Who said this… and to whom?", ar: "مين قال الجملة دي… ولمين؟" }
+  part: 6
+  hashtags: ["#سورة_النمل", "#قصص_القرآن"]
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (« je valide les 3 », quiz 4 à 6)
+    ar: "«أحطت بما لم تحط به»… مين قالها، ولمين؟ معاك 5 ثواني."
+    en: '"I have encompassed what you have not"… who said it, and to whom? You have 5 seconds.'
+    validated: 2026-11-17
+  description:
+    en: "\"I have encompassed [in knowledge] that which you have not\" (27:22): the hoopoe said it to Solomon, a small bird to a king and prophet (al-Muyassar, Ibn Kathir). Solomon did not dismiss it, nor believe it at once: \"we will see whether you were truthful\" (27:27)."
+    ar: "«أحطت بما لم تحط به» (النمل 22): قالها الهدهد لسيدنا سليمان… طائر صغير عرف خبر ما وصلش للملك. وسيدنا سليمان ما استصغرهوش، وما صدّقهوش على طول: قال هنتأكد الأول."
+segments:
+  - narration: ask
+    silent: true
+    hold: 6.8
+    at_once: true                                   # la question entière sur la première image
+    scene: ask
+    sfx: [[count, 0], [impact, 5.0]]
+    lines:
+      - ar: "مين قالها… ولمين؟"
+        en: "Who said it… and to whom?"
+  - verse: quran.27.22
+    scene: listen
+  - narration: meaning
+    scene: meaning
+    sources: [tafsir.ibn-kathir.27.22, tafsir.muyassar.27.22]
+    lines:
+      - ar: "الهدهد… طائر صغير… عرف خبر ما وصلش لسيدنا سليمان ولا لجنوده."
+        en: "The hoopoe… a small bird… knew news that hadn't reached Solomon or his armies."
+  - narration: check
+    scene: check
+    sources: [tafsir.muyassar.27.27, tafsir.saadi.27.27]
+    lines:
+      - ar: "وسيدنا سليمان ما استصغرهوش… وما صدّقهوش على طول: قال هنتأكد الأول."
+        en: "And Solomon didn't belittle him… nor believe him at once: he said, we'll check first."
+  # 27:27 récité après la réplique qui le dit (une réplique de sens repose sur le tafsir d'un verset récité :
+  # tools/trial/rules.py) ; ajouté au script validé, confirmé par le propriétaire le 2026-11-17 (« je valide, avec 27:27 »)
+  - verse: quran.27.27
+    scene: verify
+  - narration: lesson
+    scene: lesson
+    sources: [tafsir.saadi.27.22, tafsir.saadi.27.27]
+    lines:
+      - ar: "العلم ممكن ييجي من أصغر واحد… بس الخبر يتأكد منه قبل ما يتصدق."
+        en: "Knowledge can come from the smallest one… but news is checked before it's believed."
+  - narration: close
+    scene: close
+    lines:
+      - ar: "وإنت… مين أصغر منك علّمك حاجة ما كنتش تعرفها؟"
+        en: "And you… who younger than you taught you something you didn't know?"
+      - ar: "تابعنا عشان السؤال الجاي."
+        en: "Follow us for the next question."

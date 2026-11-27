@@ -245,13 +245,10 @@ def verse_segment(by_source: dict, source: str, out_dir: Path, episode: str) -> 
             "credit": f"{media['credit'].split(': ')[-1]} · {src['translator']}"}
 
 
-def parse_drop(spec: dict) -> tuple[set[str], set[tuple[str, int]], set[str]]:
-    """What `cut.drop` of a short names (the version for Facebook and Instagram): narration segments by name, one line
-    of a narration as `name:i` (0-based), verse segments by a source id they recite. An item that matches nothing is
-    an error: a typo must not leave the short as long as it was."""
-    items = (spec.get("cut") or {}).get("drop")
-    if not items:
-        sys.exit(f"error: {spec.get('id')}: --cut needs a `cut: {{drop: [...]}}` in its file")
+def drop_items(spec: dict, items: list, field: str) -> tuple[set[str], set[tuple[str, int]], set[str]]:
+    """What a list of `drop` names: narration segments by name, one line of a narration as `name:i` (0-based), verse
+    segments by a source id they recite. An item that matches nothing is an error: a typo must not leave the short as
+    long as it was."""
     names = {seg["narration"]: len(seg["lines"]) for seg in spec["segments"] if "narration" in seg}
     ids = {i for seg in spec["segments"] for i in ([seg["verse"]] if "verse" in seg else seg.get("verses") or [])}
     whole, lines, verses = set(), set(), set()
@@ -264,8 +261,26 @@ def parse_drop(spec: dict) -> tuple[set[str], set[tuple[str, int]], set[str]]:
         elif item in ids:
             verses.add(item)
         else:
-            sys.exit(f"error: {spec.get('id')}: cut.drop « {item} » matches no narration, line (name:i) or verse of the file")
+            sys.exit(f"error: {spec.get('id')}: {field} « {item} » matches no narration, line (name:i) or verse of the file")
     return whole, lines, verses
+
+
+def parse_drop(spec: dict) -> tuple[set[str], set[tuple[str, int]], set[str]]:
+    """What `cut.drop` of a short names: the version for Facebook and Instagram has its own list, validated on its own
+    (the owner, 2026-11-20, on Dhul-Qarnayn: « le reste de sa coupe ne change pas »); `drop` does not add to it."""
+    items = (spec.get("cut") or {}).get("drop")
+    if not items:
+        sys.exit(f"error: {spec.get('id')}: --cut needs a `cut: {{drop: [...]}}` in its file")
+    return drop_items(spec, items, "cut.drop")
+
+
+def left_out(spec: dict) -> tuple[set[str], set[tuple[str, int]], set[str]]:
+    """What `drop` of a short leaves out of its full version and its TikTok twin (the owner, 2026-11-20, on « آية
+    وحكايتها »: « après le verset on parle trop »): lines the take still says, so that the voice text stays the take and
+    no voice request is spent, and that these videos do not play. The short version has its own list (`cut.drop`).
+    Same grammar."""
+    items = spec.get("drop") or []
+    return drop_items(spec, items, "drop") if items else (set(), set(), set())
 
 
 def opened_with(spec: dict, dropped: set[str]) -> list[dict]:
@@ -350,24 +365,27 @@ def main() -> None:
 
     # The narration: one take per voice for the whole short (the lines of content/voice-test/<text>.txt, in
     # order), cut here between its segments, in the middle of the pause before each one.
-    text = ROOT / "content" / "voice-test" / f"{spec['text']}.txt"
-    said = [l.strip() for l in text.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
+    # A short with no voice at all (adhkar to read: every narration `silent`) has no voice text.
+    text = ROOT / "content" / "voice-test" / f"{spec['text']}.txt" if spec.get("text") else None
+    said = [l.strip() for l in text.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")] if text else []
     # A `silent` narration (the fast opening of « خريطة كلمة ») is written on screen only: no voice says it, it is not
     # in the voice text, and it is timed from its length (and its `hold`), as a draft is.
     narrated = [seg for seg in spec["segments"] if "narration" in seg and not seg.get("silent")]
     if said != [l["ar"] for seg in narrated for l in seg["lines"]]:
-        sys.exit(f"error: {text.name} and the lines of the trial differ")
+        sys.exit(f"error: {text.name if text else 'no voice text'} and the lines of the trial differ")
     phrases = [ph for seg in narrated for l in seg["lines"] for ph in PHRASE_CUT.split(l["ar"].strip())]
-    whole = None if args.draft else take_of(args.takes, args.voice, spec["text"], out_dir, args.trial)
-    starts, gaps, take_end = place(said, whole, args.by_pauses, rule_of(spec))
+    whole = None if args.draft or not narrated else take_of(args.takes, args.voice, spec["text"], out_dir, args.trial)
+    starts, gaps, take_end = place(said, whole, args.by_pauses, rule_of(spec)) if said else ([], [], 0.0)
     gain = trim(whole, rule_of(spec))
     tag = f"{args.trial}-{args.voice}" + ("-cut" if args.cut else "")   # the names of the files of this version
-    drop_whole, drop_lines, drop_verses = parse_drop(spec) if args.cut else (set(), set(), set())
+    drop_whole, drop_lines, drop_verses = parse_drop(spec) if args.cut else left_out(spec)
+    trimmed = args.cut or bool(drop_whole or drop_lines or drop_verses)      # a segment may be played in several runs
     first, k = {}, 0                                        # narration id -> its first phrase in the take
     for seg in narrated:
         first[seg["narration"]] = k
         k += sum(len(PHRASE_CUT.split(l["ar"].strip())) for l in seg["lines"])
 
+    gap = float((spec.get("pace") or {}).get("gap", GAP))      # a short's `pace.gap`: a quicker passage between segments
     t, segments, pairs = LEAD, [], []             # pairs: (the segment of the file, what it made), for the sound effects
     for seg in (opened_with(spec, drop_whole) if args.cut else spec["segments"]):
         if "narration" in seg:
@@ -375,14 +393,14 @@ def main() -> None:
             if seg["narration"] in drop_whole:
                 continue
             dropped = {i for name, i in drop_lines if name == seg["narration"]}
-            # A cut version splits a segment at the lines left out: one segment per contiguous run, in the same
-            # scene, from the same take; the full version is one run of every line.
-            runs = kept_runs(seg["lines"], dropped) if args.cut else [(seg["lines"], 0)]
+            # A cut version, or a short with `drop`, splits a segment at the lines left out: one segment per
+            # contiguous run, in the same scene, from the same take; otherwise a segment is one run of every line.
+            runs = kept_runs(seg["lines"], dropped) if trimmed else [(seg["lines"], 0)]
             for n, (lines, before) in enumerate(runs):
                 if silent:
                     made = narration(None, *place([l["ar"] for l in lines], None), 0, lines, Path("-"))
                 else:
-                    wav = out_dir / (f"{tag}-{seg['narration']}-{n}.wav" if args.cut else f"{args.trial}-{args.voice}-{seg['narration']}.wav")
+                    wav = out_dir / (f"{tag}-{seg['narration']}-{n}.wav" if trimmed else f"{args.trial}-{args.voice}-{seg['narration']}.wav")
                     made = narration(whole, starts, gaps, take_end, first[seg["narration"]] + before, lines, wav, gain)
                 if seg.get("hold") and made["seconds"] < seg["hold"]:
                     # A series with no voice (« خريطة كلمة »): its text stays the time it takes to read it and to see what
@@ -390,37 +408,52 @@ def main() -> None:
                     made["seconds"] = made["lines"][-1]["end"] = float(seg["hold"])
                 if silent:
                     made["silent"] = True
+                    if seg.get("at_once"):
+                        # A question written whole on the first frame (« معاك 5 ثواني »): every phrase of it is there
+                        # before the segment starts (the drawing lets a phrase in when its start is reached), not one
+                        # after the other at the pace of a voice.
+                        for line in made["lines"]:
+                            for phrase in line["phrases"]:
+                                phrase["start"] = -1.0
                 if seg.get("sources"):                         # what its lines rest on, written while they are said
                     if by_source is not None and not silent:
                         sys.exit("error: `sources` on a narration needs the registry (a file with no `verses`)")
-                    made["refs"] = sources.references(seg["sources"])
+                    made["refs"] = sources.references(seg["sources"], spec.get("digits"))
                 segments.append({**made, "scene": seg["scene"], "start": round(t, 2)})
                 pairs.append((seg if n == 0 else {**seg, "sfx": None}, segments[-1]))   # sfx on the first run only
-                t += segments[-1]["seconds"] + GAP
+                t += segments[-1]["seconds"] + gap
             continue
         elif "verses" in seg and by_source is None:
             if drop_verses & set(seg["verses"]):
                 continue
             # Verses that follow one another, recited without a break: one cut, one segment.
-            segments.append({**sources.passage(seg["verses"], out_dir, seg.get("upto")), "scene": seg["scene"], "start": round(t, 2)})
+            segments.append({**sources.passage(seg["verses"], out_dir, seg.get("upto"), spec.get("digits")), "scene": seg["scene"], "start": round(t, 2)})
         elif "verse" in seg:
             if seg["verse"] in drop_verses:
                 continue
-            made = verse_segment(by_source, seg["verse"], out_dir, args.episode) if by_source is not None else sources.verse(seg["verse"], out_dir)
+            made = verse_segment(by_source, seg["verse"], out_dir, args.episode) if by_source is not None else sources.verse(seg["verse"], out_dir, spec.get("digits"))
             segments.append({**made, "scene": seg["scene"], "start": round(t, 2)})
+        elif "card" in seg and by_source is None:
+            # A dhikr to read, shown and never said (adhkar to save): the ambience goes on under it.
+            segments.append({**sources.card(seg["card"], seg.get("part"), seg.get("count"), seg.get("label"), seg.get("hold"), spec.get("pace")),
+                             "scene": seg["scene"], "start": round(t, 2)})
         elif "reading" in seg and by_source is None:
             # A hadith read by a real voice, in a short as in the film; never the synthetic voice.
             segments.append({**sources.reading(seg["reading"], out_dir, draft=args.draft, part=seg.get("part")), "scene": seg["scene"], "start": round(t, 2)})
+        elif "pause" in seg:
+            # A moment with no text at all (« الصاحب ساحب »: the moments played without a word, the drawing alone and its
+            # sounds): the ambience goes on under it, as under a narration.
+            segments.append({"kind": "pause", "seconds": float(seg["pause"]), "file": None, "scene": seg["scene"], "start": round(t, 2)})
         else:
-            sys.exit(f"error: a segment that is neither a narration, a verse nor a reading from the registry: {sorted(seg)}")
+            sys.exit(f"error: a segment that is neither a narration, a pause, a verse, a reading nor a card from the registry: {sorted(seg)}")
         pairs.append((seg, segments[-1]))
-        t += segments[-1]["seconds"] + GAP
-    total = round(t - GAP + TAIL, 2)
+        t += segments[-1]["seconds"] + gap
+    total = round(t - gap + TAIL, 2)
     # The ambience under the narration, silent under each verse (tools/trial/ambience.py).
     bed = None
     if spec.get("ambience") and not args.no_ambience:
         import ambience
-        quiet = [(s["start"], s["start"] + s["seconds"]) for s in segments if s["kind"] != "narration"]
+        quiet = [(s["start"], s["start"] + s["seconds"]) for s in segments if s["kind"] not in ("narration", "pause") and not s.get("card")]
         bed = ambience.bed({args.trial: spec["ambience"]}, [(0.0, args.trial)], quiet, total, out_dir / f"{tag}-ambience")
     # The sound effects (tools/trial/sfx.py): made here from the times of the segments, never under a verse.
     effects = None
@@ -433,7 +466,7 @@ def main() -> None:
                 return made["start"] + said[int(at.split()[1])]["start"]
             return made["start"] + at
         events = [(when(made, at), sound) for seg, made in pairs for sound, at in seg.get("sfx") or []]
-        quiet = [(s["start"], s["start"] + s["seconds"]) for s in segments if s["kind"] != "narration"]
+        quiet = [(s["start"], s["start"] + s["seconds"]) for s in segments if s["kind"] not in ("narration", "pause") and not s.get("card")]
         effects = sfx.track(events, quiet, total, out_dir / f"{tag}-sfx.wav", word=args.trial)
     handles = yaml.safe_load((ROOT / "content" / "publish.yaml").read_text(encoding="utf-8")).get("handles", {})
     data = {"trial": args.trial, "voice": args.voice, "voice_name": spec["voices"][args.voice], "handle": spec["handle"],

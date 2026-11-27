@@ -10,6 +10,12 @@ script_validated: { by: mssnoussi92, on: 2026-11-13 }
 # la voix D, le montage (les versets face à face), la couverture, l'ambiance, les textes à coller
 # (docs/retention/publication-farq.md) ; et ses sources encore proposées, passées à `validated`. Inscrit sur sa parole.
 validated: { by: mssnoussi92, on: 2026-11-14, what: [voice, montage, cover, publish, ambience] }
+# Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
+# on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). « يعني رزقهم مش من جيبك… » sort (`drop`) ; l'exemple joué (le père qui
+# fait ses comptes) et « كلمة اتقدّمت… عشان قلبك يرتاح » joué (FatherPlayed) ; la narration après le verset en sous-titre.
+# Scènes validées par lui sur images le 2026-11-21 (« Je valide tout le lot ») ;
+# la vidéo refaite validée par lui le 2026-11-21 (« Je valide les 5 »).
+drop: ["meaning:2"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 61-trial-rizq     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
@@ -58,7 +64,7 @@ segments:
       - ar: "يعني رزقهم مش من جيبك… رزقهم على ربنا."
         en: "Meaning: their provision does not come from your pocket… it is on God."
   - narration: example
-    scene: cradle
+    scene: father
     lines:
       - ar: "زي أب مستني مولود… وكل ليلة يحسبها: هقدر أصرف عليه؟"
         en: "Like a father waiting for a baby… counting every night: will I manage to provide for it?"

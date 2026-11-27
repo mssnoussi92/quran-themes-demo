@@ -201,14 +201,14 @@ uv run --with pyyaml python3 tools/trial/gallery.py --film film=<dir> --film dua
   republish over; send `index.html` and the media that changed, 64 MiB at most a call (`files.json` lists them).
 - The page says what is validated from the files (`validated`): never mark by hand. It only shows; the files to
   publish are the full ones (the draft release, or the conversation for the first film).
-- **What is published leaves the page** (owner's decision, 2026-11-17: « tu supprimes après publication »; an artifact
-  holds 256 MiB at most): once a film and all its shorts are published (their dates struck in
-  `docs/retention/calendar.md`, or published in `themes.json` on the `state` branch of quran-reels), build the page
-  without its `--film` (and `--tall`), and list its media in `remove` when you republish.
 - **The calendar** opens the page: read from `docs/retention/calendar.md` (the hour, the week's grid, the measures
   routine, each dated row linked to its video's card), never typed in the tool; `--calendar none` leaves it out.
-  When the owner says what he published, strike its date in that file (`~~sam. 14 nov.~~`) and republish the page:
-  `index.html` alone, the media did not change. The page marks the next row itself, from the reader's date.
+  When the owner says what he published, or quran-reels published it (`themes.json` of its `state` branch: since
+  23 November it publishes the calendar), strike its date in that file (`~~sam. 14 nov.~~`) and republish the page:
+  a struck row's videos leave it by themselves, their cards and their media (owner, 2026-11-18: « supprimer ceux qui
+  sont publiés »); send `index.html` and `remove` the media `files.json` no longer lists. The page marks the next row
+  itself, from the reader's date. A film delivered by another session whose videos you do not have: a witness video of
+  the right length (read in its texts) and a witness still, never sent (only `index.html` is).
 
 ## 8. The owner's answer
 

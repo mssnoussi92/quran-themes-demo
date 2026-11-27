@@ -16,11 +16,14 @@ name: page-files
 # GitHub registers a workflow when a push to main changes its file: the merge that added this one
 # (2026-11-15, 17:23 UTC) was never processed by Actions, and the workflow stayed unknown (404).
 # After a correction of a validated video (a new draft release), run it again for that text.
+# A text whose files are in another draft is given as <doc>:<draft> (2026-11-19: `quiz-ma3ak:quiz`, the
+# quizzes 4 to 6 signed for the test page, held by the draft quiz-candidate): page-quiz-ma3ak is made from
+# publication-quiz-ma3ak.md and quiz-candidate.
 on:
   workflow_dispatch:
     inputs:
       docs:
-        description: "Publication texts, space-separated: dua dua-9x16 qarnayn qarnayn-9x16 ayah signs kalima map farq sual"
+        description: "Publication texts, space-separated: dua dua-9x16 qarnayn qarnayn-9x16 ayah signs kalima map farq sual; <doc>:<draft> when the files are in the draft <draft>-candidate (quiz-ma3ak:quiz)"
         required: true
 
 permissions:
@@ -44,8 +47,10 @@ jobs:
       - name: Copy the validated files into page-<doc>
         run: |
           set -euo pipefail
-          for doc in $DOCS; do
-            [[ "$doc" =~ ^[a-z0-9-]+$ ]] || { echo "::error::invalid name: $doc"; exit 1; }
+          for item in $DOCS; do
+            [[ "$item" =~ ^[a-z0-9-]+(:[a-z0-9-]+)?$ ]] || { echo "::error::invalid name: $item"; exit 1; }
+            doc=${item%%:*}
+            draft=${item#*:}            # the draft that holds the files: <doc>-candidate unless named
             md="docs/retention/publication-$doc.md"
             [ -f "$md" ] || { echo "::error::$md does not exist"; exit 1; }
             # The files a text names: the backticked names on the line under each « ## » heading.
@@ -64,20 +69,20 @@ jobs:
             )
             [ -n "$files" ] || { echo "::error::$md names no file"; exit 1; }
             id=$(gh api "repos/$GH_REPO/releases?per_page=100" \
-                   --jq ".[] | select(.draft and .tag_name == \"$doc-candidate\") | .id" | head -1)
-            [ -n "$id" ] || { echo "::error::no draft release $doc-candidate"; exit 1; }
+                   --jq ".[] | select(.draft and .tag_name == \"$draft-candidate\") | .id" | head -1)
+            [ -n "$id" ] || { echo "::error::no draft release $draft-candidate"; exit 1; }
             rm -rf "files/$doc" && mkdir -p "files/$doc"
             for f in $files; do
               asset=$(gh api "repos/$GH_REPO/releases/$id/assets?per_page=100" \
                         --jq ".[] | select(.name == \"$f\") | .id")
-              [ -n "$asset" ] || { echo "::error::$f is not in the draft $doc-candidate"; exit 1; }
+              [ -n "$asset" ] || { echo "::error::$f is not in the draft $draft-candidate"; exit 1; }
               gh api -H "Accept: application/octet-stream" "repos/$GH_REPO/releases/assets/$asset" \
                 > "files/$doc/$f"
               echo "$doc: $f ($(du -h "files/$doc/$f" | cut -f1))"
             done
             gh release delete "page-$doc" --yes --cleanup-tag 2>/dev/null || true
             gh release create "page-$doc" --prerelease --title "Page: $doc (validated, public)" \
-              --notes "The validated files of docs/retention/publication-$doc.md, copied from the draft $doc-candidate by the workflow page-files ($GITHUB_SERVER_URL/$GH_REPO/actions/runs/$GITHUB_RUN_ID). Published on the Page by quran-reels (workflow themes)." \
+              --notes "The validated files of docs/retention/publication-$doc.md, copied from the draft $draft-candidate by the workflow page-files ($GITHUB_SERVER_URL/$GH_REPO/actions/runs/$GITHUB_RUN_ID). Published on the Page by quran-reels (workflow themes)." \
               files/"$doc"/*
             echo "page-$doc: $(echo $files | wc -w) files public"
           done

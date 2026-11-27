@@ -11,7 +11,14 @@ script_validated: { by: mssnoussi92, on: 2026-11-12 }
 # `film` (run 18) et envoyées dans la conversation : la voix D, le montage (le ciel généré, les dessins, les photos de
 # l'ESA, la frise, la signature 41:53), la couverture, les textes de publication (docs/retention/publication-signs.md),
 # l'ambiance ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
+# La vidéo refaite (audit du 2026-11-20) validée par lui le 2026-11-21 (« Je valide les 7 »). Puis, à sa demande du même jour (« En 123
+# dans les 3 signes »), les années des répliques et des crédits à l'écran passent en 123 (le texte de la voix aussi, sa prise ne
+# change pas ; ni les textes à coller ni la couverture) ; la vidéo ainsi refaite validée par lui le même jour (« Je valide les 3 »).
 validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
+# Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
+# on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). La fin qui parle au spectateur jouée (« اللي وسّع السما… قادر
+# يوسّع عليك » : la pièce étroite s'ouvre sur le ciel, Played.tsx) ; rien d'autre ne change. Scènes validées par lui sur images le même jour (« Je valide tout le lot ») ;
+# la vidéo refaite est à valider avant `page-files`.
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 54-trial-universe     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
@@ -42,7 +49,7 @@ segments:
     lines:
       - ar: "حتى أينشتاين… غلط فيها."
         en: "Even Einstein… got this one wrong."
-      - ar: "سنة ١٩١٧… زوّد رقم في معادلاته… عشان الكون يفضل ثابت."
+      - ar: "سنة 1917… زوّد رقم في معادلاته… عشان الكون يفضل ثابت."
         en: "In 1917… he added a term to his equations… to keep the universe still."
   - narration: ancients
     scene: ptolemy
@@ -54,11 +61,11 @@ segments:
     scene: webb
     sources: [science.hubble-1929]
     lines:
-      - ar: "لحد سنة ١٩٢٩… تلسكوب فوق جبل في كاليفورنيا شاف المجرات… بتبعد عننا."
+      - ar: "لحد سنة 1929… تلسكوب فوق جبل في كاليفورنيا شاف المجرات… بتبعد عننا."
         en: "Until 1929… a telescope on a mountain in California saw the galaxies… moving away from us."
       - ar: "يعني الكون… بيتمدد."
         en: "Meaning the universe… is expanding."
-      - ar: "طب كتاب نزل في صحرا من ١٤٠٠ سنة… قال إيه عن السما؟"
+      - ar: "طب كتاب نزل في صحرا من 1400 سنة… قال إيه عن السما؟"
         en: "So a book revealed in a desert 1,400 years ago… what did it say about the sky?"
   - verses: [quran.51.47, quran.51.48, quran.51.49]
     scene: hubble
@@ -68,7 +75,7 @@ segments:
     lines:
       - ar: "يعني: ربنا بنى السما بقوة… والتفسير الميسر قال: وبنوسّع نواحيها."
         en: "Meaning: God built the sky with strength… and al-Tafsir al-Muyassar says: and We are widening its reaches."
-      - ar: "والصورة دي: سما بتتوسع… اتقالت قبل ما العلم يشوفها بحوالي ١٣٠٠ سنة."
+      - ar: "والصورة دي: سما بتتوسع… اتقالت قبل ما العلم يشوفها بحوالي 1300 سنة."
         en: "This image—a sky being widened—was spoken about 1,300 years before science saw it."
   - verses: [quran.41.53]
     upto: 11            # jusqu'au premier arrêt « ۗ », après « أنه الحق » : la signature de la série
@@ -79,8 +86,15 @@ segments:
     lines:
       - ar: "والسعدي قال كمان: ربنا بيوسّع على عباده في الرزق."
         en: "And as-Sa'di adds: God widens the provision of His servants."
+  # « اللي وسّع السما… قادر يوسّع عليك », joué (audit du 2026-11-20)
+  - narration: close-you
+    scene: walls
+    lines:
       - ar: "اللي وسّع السما… قادر يوسّع عليك."
         en: "The One who widened the sky… can widen things for you."
+  - narration: close-next
+    scene: dawn
+    lines:
       - ar: "ده كان عن الكون كله… الحلقة الجاية: عن صدرك… لما يضيق."
         en: "That was the whole universe… next: your chest… when it tightens."
       - ar: "تابعنا عشان الآية الجاية."

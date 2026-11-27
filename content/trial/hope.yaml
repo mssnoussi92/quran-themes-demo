@@ -29,7 +29,23 @@ script_validated: { by: mssnoussi92, on: 2026-11-12 }
 # envoyées dans la conversation (livrée le même jour, avec sa réplique) : la voix D sur la vidéo entière, le montage (le clip
 # et les dessins), la couverture, l'ambiance, les textes de publication (`publish`, docs/retention/publication-ayah.md,
 # envoyés) ; et ses sources encore proposées, passées à `validated` dans le registre. Inscrit sur sa parole.
+# La vidéo refaite (audit du 2026-11-20) validée par lui le 2026-11-21 (« Je valide les 7 »).
 validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
+# Refait à la demande du propriétaire (2026-11-20, après la publication du short 1 : « après le verset on parle trop, et
+# l'écran est presque le même, et on écrit ce que le narrateur dit ») : après le verset, une seule phrase de sens, puis
+# l'exemple de vie joué à l'écran par des bonshommes avec un visage simple (sa règle du 2026-11-19 : des inconnus,
+# jamais une personne du récit) ; la narration après le premier verset en sous-titre, en bas (`caption` du layout,
+# video/src/trial/Trial.tsx). Ses trois choix par l'outil de questions : les 3 shorts restants de la série (le short 1,
+# publié, reste tel quel), le texte en sous-titre, l'ouverture inchangée (le fait de la révélation reste l'accroche).
+# Les coupes ci-dessous et la scène jouée validées par lui le même jour sur l'aperçu de la question (« Je valide »).
+# Aucune requête de voix : les phrases coupées restent dans la prise et dans le texte de la voix (`drop`, prepare.py),
+# aucune vidéo ne les joue. Puis l'audit du même jour, validé par lui : une annonce jouée dans l'ouverture
+# (« …لكل واحد شايف إن ذنبه أكبر من إنه يتغفر », PLAYED de Trial.tsx). Le nouveau montage validé par lui sur ses images le même jour (« Je valide les 3 scènes » :
+# les trois scènes jouées et la narration en sous-titre après le verset ; l'appel à s'abonner reste en grand en haut,
+# son choix) ; les ajouts de l'audit validés par lui sur images le même jour (« Je valide tout le lot ») ; la vidéo
+# refaite est à valider avant que les fichiers publics (`page-ayah`) changent.
+# La vidéo refaite avec le nom de la série en haut à gauche (sa demande du même jour) validée par lui le 2026-11-21 (« Je valide les 7 »).
+drop: ["meaning:0", "depth:1", "depth:2"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 52-trial-hope     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne
@@ -83,8 +99,12 @@ segments:
         en: "And despair… is what keeps you going in the wrong."
       - ar: "وإحنا… الذنب يكبر في عينينا لحد ما نقول: خلاص… ما ينفعش أرجع."
         en: "And us… the sin grows in our eyes until we say: that's it… I can't come back."
+  # L'exemple joué (2026-11-20) : 2,5 s sans texte, un bonhomme marche vers la porte d'une mosquée et s'arrête ; il
+  # avance puis recule, le visage hésitant (« بعد كل ده؟ ») ; à « أيوه », la porte s'ouvre et il entre.
+  - pause: 2.5
+    scene: door
   - narration: example
-    scene: road
+    scene: door
     lines:
       - ar: "زي واحد ساب الصلاة سنين… وكل ما ييجي يرجع يقول: بعد كل ده؟"
         en: "Like someone who left prayer for years… and each time he is about to return says: after all this?"

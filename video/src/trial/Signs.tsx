@@ -316,7 +316,7 @@ const UniversePicture: Drawn = ({ t, show, since }) => {
       <g opacity={show("ptolemy")}><Spheres t={t} /></g>
       <g opacity={show("webb")}>
         <Photo file="signs/webb-deep-field.jpg" opacity={1} bottom={1420} />
-        <text x={W / 2} y={1040} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={210} fill={GOLD} style={{ filter: "drop-shadow(0 0 50px rgba(240,196,106,.45))" }}>١٩٢٩</text>
+        <text x={W / 2} y={1040} textAnchor="middle" fontFamily={FONT.arabic} fontWeight={700} fontSize={210} fill={GOLD} style={{ filter: "drop-shadow(0 0 50px rgba(240,196,106,.45))" }}>1929</text>
         <Observatory />
       </g>
       {/* the deep field recedes: the galaxies move away while the verse is recited and explained */}
@@ -516,29 +516,29 @@ const WombPicture: Drawn = ({ t, show, since }) => {
 export const SIGNS_PICTURES: Record<string, Drawn> = { lahab: LahabPicture, universe: UniversePicture, sky: SkyPicture, womb: WombPicture };
 
 export const SIGNS_OVERLAYS: Record<string, Drawn> = {
-  lahab: overlay("١", [
+  lahab: overlay("1", [
     { who: "نزلت السورة", quran: true, scenes: ["safa", "thorns", "signs"] },
     { who: "الأيام بتعدّي", scenes: ["hourglass"] },
     { who: "مات… وما قالهاش", scenes: ["empty"] },
   ]),
-  universe: overlay("٢", [
-    { date: "٣٥٠ ق.م", who: "أرسطو", scenes: ["ptolemy"] },
-    { date: "١٥٠", who: "بطليموس", scenes: ["ptolemy"] },
-    { date: "٦١٠", who: "القرآن", quran: true, scenes: ["hubble", "signs"] },
-    { date: "١٩١٧", who: "أينشتاين", scenes: ["einstein"] },
-    { date: "١٩٢٩", who: "هابل", scenes: ["webb"] },
+  universe: overlay("2", [
+    { date: "350 ق.م", who: "أرسطو", scenes: ["ptolemy"] },
+    { date: "150", who: "بطليموس", scenes: ["ptolemy"] },
+    { date: "610", who: "القرآن", quran: true, scenes: ["hubble", "signs"] },
+    { date: "1917", who: "أينشتاين", scenes: ["einstein"] },
+    { date: "1929", who: "هابل", scenes: ["webb"] },
   ]),
-  sky: overlay("٣", [
-    { date: "٦١٠", who: "القرآن", quran: true, scenes: ["layers", "signs"] },
-    { date: "١٦٤٨", who: "باسكال", scenes: ["puy"] },
-    { date: "١٧٨٣", who: "أول طيران", scenes: ["layers"] },
-    { date: "١٨٧٥", who: "زينيث", scenes: ["balloon"] },
+  sky: overlay("3", [
+    { date: "610", who: "القرآن", quran: true, scenes: ["layers", "signs"] },
+    { date: "1648", who: "باسكال", scenes: ["puy"] },
+    { date: "1783", who: "أول طيران", scenes: ["layers"] },
+    { date: "1875", who: "زينيث", scenes: ["balloon"] },
   ]),
-  womb: overlay("٤", [
-    { date: "٣٥٠ ق.م", who: "أرسطو", scenes: ["milk"] },
-    { date: "٦١٠", who: "القرآن", quran: true, scenes: ["lens", "leech", "signs"] },
-    { date: "١٣٧٣", who: "ابن كثير", scenes: ["leech"] },
-    { date: "١٦٢٠", who: "الميكروسكوب", scenes: ["microscope"] },
+  womb: overlay("4", [
+    { date: "350 ق.م", who: "أرسطو", scenes: ["milk"] },
+    { date: "610", who: "القرآن", quran: true, scenes: ["lens", "leech", "signs"] },
+    { date: "1373", who: "ابن كثير", scenes: ["leech"] },
+    { date: "1620", who: "الميكروسكوب", scenes: ["microscope"] },
   ]),
 };
 

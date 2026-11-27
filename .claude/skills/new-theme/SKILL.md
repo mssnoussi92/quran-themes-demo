@@ -102,7 +102,7 @@ on that word only. A line changed afterwards is to be validated again.
 ## 5. The scenes and their sound
 
 Skill `new-scene`: a filmed clip the owner approved, the silhouettes of what the text says drawn over
-it (things and places; an anonymous person only as a faceless silhouette), one state of the drawing per `scene` of the script, and the
+it (things and places; an anonymous person only as a silhouette or a stick figure, a simple face only when it shows the difference), one state of the drawing per `scene` of the script, and the
 ambience under the narration. Look at it without any voice:
 
 ```bash

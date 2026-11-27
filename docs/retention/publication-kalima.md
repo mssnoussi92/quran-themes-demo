@@ -4,13 +4,13 @@ Pour chaque short, les textes à copier : sur Facebook, Instagram et TikTok, la 
 
 ## Short 1 · A word in the Quran… that might describe you · كلمة في القرآن… يمكن توصفك
 
-`kalima-short-1-kanud.mp4` (TikTok : `kalima-short-1-kanud-tiktok.mp4`, signée `@quran.words.daily`) · 1:28 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `kalima-short-1-kanud-cover.jpg`
+`kalima-short-1-kanud.mp4` (TikTok : `kalima-short-1-kanud-tiktok.mp4`, signée `@quran.words.daily`) · 1:22 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `kalima-short-1-kanud-cover.jpg`
 
 **Facebook · Titre**
 
 ```text
-A word in the Quran… that might describe you
 كلمة في القرآن… يمكن توصفك
+A word in the Quran… that might describe you
 ```
 
 **Facebook · Description**
@@ -19,7 +19,7 @@ A word in the Quran… that might describe you
 ربنا أقسم بالخيل وهي بتجري عشان يقول كلمة واحدة عن الإنسان.
 God swore by charging horses to say one word about man.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -31,8 +31,8 @@ God swore by charging horses to say one word about man.
 **Instagram · Titre**
 
 ```text
-A word in the Quran… that might describe you
 كلمة في القرآن… يمكن توصفك
+A word in the Quran… that might describe you
 ```
 
 **Instagram · Description**
@@ -41,7 +41,7 @@ A word in the Quran… that might describe you
 ربنا أقسم بالخيل وهي بتجري عشان يقول كلمة واحدة عن الإنسان.
 God swore by charging horses to say one word about man.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -55,8 +55,8 @@ Sur TikTok : la vidéo `kalima-short-1-kanud-tiktok.mp4`, signée `@quran.words.
 **TikTok · Titre**
 
 ```text
-A word in the Quran… that might describe you
 كلمة في القرآن… يمكن توصفك
+A word in the Quran… that might describe you
 ```
 
 **TikTok · Description**
@@ -65,7 +65,7 @@ A word in the Quran… that might describe you
 ربنا أقسم بالخيل وهي بتجري عشان يقول كلمة واحدة عن الإنسان.
 God swore by charging horses to say one word about man.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -77,19 +77,19 @@ God swore by charging horses to say one word about man.
 **YouTube · Titre (73/100)**
 
 ```text
-A word in the Quran… that might describe you · كلمة في القرآن… يمكن توصفك
+كلمة في القرآن… يمكن توصفك · A word in the Quran… that might describe you
 ```
 
 **YouTube · Description**
 
 ```text
-God swore by charging horses to say one word about man. Al-Hasan al-Basri explained it: the one who counts his misfortunes, and forgets his Lord's blessings.
-
 ربنا أقسم بالخيل وهي بتجري عشان يقول كلمة واحدة عن الإنسان. والحسن البصري فسّرها: اللي بيعدّ المصايب، وينسى نعم ربه.
 
-A Word of the Quran · 1 · كلمة من القرآن · ١
+God swore by charging horses to say one word about man. Al-Hasan al-Basri explained it: the one who counts his misfortunes, and forgets his Lord's blessings.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+كلمة من القرآن · ١ · A Word of the Quran · 1
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -119,8 +119,8 @@ Footage: Pixabay (TeeFarm) · Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-The date stone… holds three words of the Quran
 نواة التمرة… فيها تلات كلمات من القرآن
+The date stone… holds three words of the Quran
 ```
 
 **Facebook · Description**
@@ -129,7 +129,7 @@ The date stone… holds three words of the Quran
 تلات حاجات صغيرة في نواة التمرة… والقرآن سمّى التلاتة.
 Three tiny things in a date stone, and the Quran named all three.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -141,8 +141,8 @@ Three tiny things in a date stone, and the Quran named all three.
 **Instagram · Titre**
 
 ```text
-The date stone… holds three words of the Quran
 نواة التمرة… فيها تلات كلمات من القرآن
+The date stone… holds three words of the Quran
 ```
 
 **Instagram · Description**
@@ -151,7 +151,7 @@ The date stone… holds three words of the Quran
 تلات حاجات صغيرة في نواة التمرة… والقرآن سمّى التلاتة.
 Three tiny things in a date stone, and the Quran named all three.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -165,8 +165,8 @@ Sur TikTok : la vidéo `kalima-short-2-stone-tiktok.mp4`, signée `@quran.words.
 **TikTok · Titre**
 
 ```text
-The date stone… holds three words of the Quran
 نواة التمرة… فيها تلات كلمات من القرآن
+The date stone… holds three words of the Quran
 ```
 
 **TikTok · Description**
@@ -175,7 +175,7 @@ The date stone… holds three words of the Quran
 تلات حاجات صغيرة في نواة التمرة… والقرآن سمّى التلاتة.
 Three tiny things in a date stone, and the Quran named all three.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -187,19 +187,19 @@ Three tiny things in a date stone, and the Quran named all three.
 **YouTube · Titre (87/100)**
 
 ```text
-The date stone… holds three words of the Quran · نواة التمرة… فيها تلات كلمات من القرآن
+نواة التمرة… فيها تلات كلمات من القرآن · The date stone… holds three words of the Quran
 ```
 
 **YouTube · Description**
 
 ```text
-Three tiny things in a date stone: the thread in its groove, the dent on its back, the skin around it. The Quran named all three, and measured with them God's justice, the reward of a good deed, and how little anyone else owns.
-
 تلات حاجات صغيرة في نواة التمرة: الخيط اللي في شقها، والنقرة اللي على ضهرها، والقشرة اللي حواليها. والقرآن سمّى التلاتة، وقاس بيهم عدل ربنا، وأجر العمل الصالح، وإن غيره ما يملكش حاجة.
 
-A Word of the Quran · 2 · كلمة من القرآن · ٢
+Three tiny things in a date stone: the thread in its groove, the dent on its back, the skin around it. The Quran named all three, and measured with them God's justice, the reward of a good deed, and how little anyone else owns.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+كلمة من القرآن · ٢ · A Word of the Quran · 2
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -227,13 +227,13 @@ Footage: Pixabay (Felix-Mittermeier) · Ambience: BigSoundBank (Joseph Sardin)
 
 ## Short 3 · A word the Quran explains itself… and gives its cure · كلمة شرحها القرآن بنفسه… وكتب علاجها
 
-`kalima-short-3-haluu.mp4` (TikTok : `kalima-short-3-haluu-tiktok.mp4`, signée `@quran.words.daily`) · 1:19 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `kalima-short-3-haluu-cover.jpg`
+`kalima-short-3-haluu.mp4` (TikTok : `kalima-short-3-haluu-tiktok.mp4`, signée `@quran.words.daily`) · 1:01 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `kalima-short-3-haluu-cover.jpg`
 
 **Facebook · Titre**
 
 ```text
-A word the Quran explains itself… and gives its cure
 كلمة شرحها القرآن بنفسه… وكتب علاجها
+A word the Quran explains itself… and gives its cure
 ```
 
 **Facebook · Description**
@@ -242,7 +242,7 @@ A word the Quran explains itself… and gives its cure
 لو جاله شر ينهار، ولو جاله خير يمسكه… وعلاجها مكتوب في نفس المكان.
 When harm touches him he panics, when good comes to him he withholds, and the cure is written in the same place.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -254,8 +254,8 @@ When harm touches him he panics, when good comes to him he withholds, and the cu
 **Instagram · Titre**
 
 ```text
-A word the Quran explains itself… and gives its cure
 كلمة شرحها القرآن بنفسه… وكتب علاجها
+A word the Quran explains itself… and gives its cure
 ```
 
 **Instagram · Description**
@@ -264,7 +264,7 @@ A word the Quran explains itself… and gives its cure
 لو جاله شر ينهار، ولو جاله خير يمسكه… وعلاجها مكتوب في نفس المكان.
 When harm touches him he panics, when good comes to him he withholds, and the cure is written in the same place.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -278,8 +278,8 @@ Sur TikTok : la vidéo `kalima-short-3-haluu-tiktok.mp4`, signée `@quran.words.
 **TikTok · Titre**
 
 ```text
-A word the Quran explains itself… and gives its cure
 كلمة شرحها القرآن بنفسه… وكتب علاجها
+A word the Quran explains itself… and gives its cure
 ```
 
 **TikTok · Description**
@@ -288,7 +288,7 @@ A word the Quran explains itself… and gives its cure
 لو جاله شر ينهار، ولو جاله خير يمسكه… وعلاجها مكتوب في نفس المكان.
 When harm touches him he panics, when good comes to him he withholds, and the cure is written in the same place.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -300,19 +300,19 @@ When harm touches him he panics, when good comes to him he withholds, and the cu
 **YouTube · Titre (91/100)**
 
 ```text
-A word the Quran explains itself… and gives its cure · كلمة شرحها القرآن بنفسه… وكتب علاجها
+كلمة شرحها القرآن بنفسه… وكتب علاجها · A word the Quran explains itself… and gives its cure
 ```
 
 **YouTube · Description**
 
 ```text
-A word of the Quran explained by the two verses that follow it: when harm touches him he panics, when good comes to him he withholds. And its cure is written in the same place: prayer.
-
 كلمة في القرآن شرحتها الآيتين اللي بعدها: لو جاله شر ينهار، ولو جاله خير يمسكه. وعلاجها مكتوب في نفس المكان: الصلاة.
 
-A Word of the Quran · 3 · كلمة من القرآن · ٣
+A word of the Quran explained by the two verses that follow it: when harm touches him he panics, when good comes to him he withholds. And its cure is written in the same place: prayer.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+كلمة من القرآن · ٣ · A Word of the Quran · 3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```

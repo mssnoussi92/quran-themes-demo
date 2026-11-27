@@ -15,6 +15,10 @@ script_validated: { by: mssnoussi92, on: 2026-11-13 }
 # l'épisode tel que livré (la voix D, le montage du style compteur, la couverture, l'ambiance, les textes à coller de
 # docs/retention/publication-signs.md) et ses sources encore proposées, passées à `validated`. Inscrit sur sa parole.
 validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
+# Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
+# on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). « قبل ما تنشر رقم عن القرآن… عِدّه… » joué (SharePlayed, Played.tsx) ;
+# rien d'autre ne change. Scènes validées par lui sur images le 2026-11-21 (« Je valide tout le lot ») ;
+# la vidéo refaite validée par lui le 2026-11-21 (« Je valide les 6 »).
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 60-trial-days     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne

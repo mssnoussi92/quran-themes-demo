@@ -10,6 +10,12 @@ script_validated: { by: mssnoussi92, on: 2026-11-13 }
 # l'ambiance, les textes de publication (docs/retention/publication-kalima.md) ; et ses sources encore proposées, passées
 # à `validated` dans le registre. Inscrit sur sa parole.
 validated: { by: mssnoussi92, on: 2026-11-13, what: [voice, montage, cover, publish, ambience] }
+# Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
+# on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). Les phrases qui redisent 70:20-21 et la quatrième sortent
+# (`drop`) ; le salaire en retard et « ارجع لصلاتك » joués (SalaryPlayed, Played.tsx) ; la narration après le verset en
+# sous-titre. Scènes validées par lui sur images le 2026-11-21 (« Je valide tout le lot ») ;
+# la vidéo refaite validée par lui le 2026-11-21 (« Je valide les 6 »).
+drop: ["meaning:0", "meaning:1", "meaning:3"]
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
 text: 59-trial-haluu     # content/voice-test/<text>.txt : toutes les répliques, dans l'ordre, une par ligne

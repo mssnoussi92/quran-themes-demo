@@ -162,6 +162,21 @@ def test_a_missing_field_and_an_empty_line(copy):
     assert "an empty ar or en" in done.stdout
 
 
+def test_the_dedicated_thumbnails_of_a_film_are_checked(copy):
+    spec = copy.load("content/trial/qarnayn.yaml")
+    assert spec["thumbnail"]["options"]                  # the real file declares them (2026-11-21)
+    spec["thumbnail"]["options"] = [
+        {"name": "Bad Name", "at": "soon", "lines": ["one only"], "place": "middle", "extra": 1},
+        {"name": "ok", "at": 340, "lines": ["a", "b"], "tag": "t", "place": "top", "brightness": 1.3},
+    ]
+    copy.dump("content/trial/qarnayn.yaml", spec)
+    done = copy.rules("--film", "qarnayn")
+    refused(done, "thumbnail.options[1]: `name` is lowercase")
+    for message in ("`at` is a time of the film", "`lines` is two lines", "missing `tag`", "`place` is top, left or right", "unknown field(s) extra"):
+        assert message in done.stdout, done.stdout[-2500:]
+    assert "thumbnail.options[2]" not in done.stdout
+
+
 def test_a_sign_no_font_of_the_project_can_draw_is_refused(copy):
     """Left to the machine's own font, « ﷺ » was a pixel font in a session and an empty box on a GitHub runner."""
     spec = copy.load("content/trial/asked.yaml")
@@ -226,7 +241,7 @@ def test_a_narration_rests_on_a_hadith_or_a_tafsir_of_the_policy(copy):
     set_sources(copy, "caravan", "meaning", ["tafsir.muyassar.39.53"])           # the tafsir of a verse another short recites
     refused(copy.rules("--film", "ayah", "--draft"), "which this short does not recite")
     set_sources(copy, "caravan", "meaning", ["quran.62.11"])                     # a verse is recited, not rested on
-    refused(copy.rules("--film", "ayah", "--draft"), "a narration rests on a hadith or a tafsir")
+    refused(copy.rules("--film", "ayah", "--draft"), "a narration rests on a hadith, a tafsir or a page of fiqh")
     set_sources(copy, "caravan", "meaning", ["tafsir.razi.62.11"])               # not in the registry
     refused(copy.rules("--film", "ayah", "--draft"), "source tafsir.razi.62.11 is not in the registry")
     set_sources(copy, "caravan", "meaning", ["tafsir.muyassar.62.11"])
@@ -257,6 +272,28 @@ def test_the_voice_tells_a_report_and_never_reads_it(copy):
     # sources were validated, a warning listed every proposed source and this passed whatever the error named.)
     said = next(row for row in done.stdout.splitlines() if "the synthetic voice says" in row)
     assert ("hadith.muslim.863a" in said or "hadith.bukhari.936" in said) and line in done.stdout
+
+
+def test_a_hadith_read_keeps_its_words_and_not_the_blessing(copy):
+    """The words of a hadith read by a real voice are never said by the synthetic one; the blessing after the
+    Prophet's name ﷺ, in every line and in the hadith's words too, is not a quotation of it (as for a report told).
+    The card of Muslim 2664 is made to show its whole text, chain and blessing included; no text is typed here."""
+    path = copy.root / "content" / "sources" / "hadith.yaml"
+    entries = yaml.safe_load(path.read_text(encoding="utf-8"))
+    entry = next(e for e in entries if e["id"] == "hadith.muslim.2664")
+    assert "صلى الله عليه وسلم" in entry["text_ar"]
+    entry["excerpt_ar"] = entry["text_ar"]
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    line = next(l["ar"] for s in copy.load("content/trial/law.yaml")["segments"] for l in s.get("lines") or []
+                if "صلى الله عليه وسلم" in l["ar"])
+    done = copy.rules("--film", "qadar", "--draft")
+    assert "the synthetic voice says" not in done.stdout, done.stdout[-2500:]     # the blessing alone: accepted
+    assert line in (copy.root / "content" / "trial" / "law.yaml").read_text(encoding="utf-8")
+    words = [w for w in entry["text_ar"].rsplit("وسلم", 1)[1].split() if re.search("[\u0621-\u064a]", w)][:5]
+    copy.change_line("law", "turn", 0, lambda old: old + " " + " ".join(words))
+    done = copy.rules("--film", "qadar", "--draft")
+    refused(done, "the synthetic voice says")
+    assert "hadith.muslim.2664" in done.stdout
 
 
 def test_a_passage_is_verses_that_follow_one_another_with_cuts_that_touch(copy):
@@ -380,22 +417,38 @@ def cut_at_a_pause(copy) -> tuple[str, str, int]:
     raise AssertionError("no verse with a pause sign among the ones the shorts recite")
 
 
-def test_a_verse_is_cut_at_a_pause_sign(copy):
+def test_a_verse_is_never_cut_in_a_new_short(copy):
+    # The owner's rule (2026-11-19): « ne jamais couper ayah au milieu ». A short made after it recites whole verses,
+    # even at a pause sign; the shorts validated before it keep their cut (rules.CUT_BEFORE_THE_RULE).
     sid, short, n = cut_at_a_pause(copy)
+    assert short not in tool("rules").CUT_BEFORE_THE_RULE
     spec = copy.load(f"content/trial/{short}.yaml")
     verse = next(s for s in spec["segments"] if s.get("verse") == sid)
     del verse["verse"]
     verse.update({"verses": [sid], "upto": n})
     copy.dump(f"content/trial/{short}.yaml", spec)
+    refused(copy.rules("--film", "ayah", "--draft"), "a verse is always recited whole")
+
+
+def test_the_shorts_cut_before_the_rule_still_pass(copy):
+    rules = tool("rules")
+    cut = {p.stem for p in (copy.root / "content" / "trial").glob("*.yaml") if "upto:" in p.read_text(encoding="utf-8")}
+    assert cut == rules.CUT_BEFORE_THE_RULE
+
+
+def test_a_pause_is_a_moment_with_no_text(copy):
+    # « الصاحب ساحب »: moments played without a word, the drawing alone (a `pause` segment, tools/trial/prepare.py).
+    spec = copy.load("content/trial/caravan.yaml")
+    spec["segments"].insert(0, {"pause": 6, "scene": spec["segments"][0]["scene"]})
+    copy.dump("content/trial/caravan.yaml", spec)
     done = copy.rules("--film", "ayah", "--draft")
-    assert done.returncode == 0 and "not followed by a pause sign" not in done.stdout, done.stdout[-2000:]
-    verse["upto"] = n + 1                                          # the middle of a sentence: a warning, not an error
-    copy.dump(f"content/trial/{short}.yaml", spec)
-    done = copy.rules("--film", "ayah", "--draft")
-    assert done.returncode == 0 and "not followed by a pause sign" in done.stdout, done.stdout[-2000:]
-    verse["upto"] = 400                                            # more words than the verse has
-    copy.dump(f"content/trial/{short}.yaml", spec)
-    refused(copy.rules("--film", "ayah", "--draft"), "recited words")
+    assert done.returncode == 0, done.stdout[-2000:]
+    spec["segments"][0] = {"pause": 0, "scene": spec["segments"][1]["scene"]}
+    copy.dump("content/trial/caravan.yaml", spec)
+    refused(copy.rules("--film", "ayah", "--draft"), "is a length in seconds, a positive number")
+    spec["segments"][0] = {"pause": 6}
+    copy.dump("content/trial/caravan.yaml", spec)
+    refused(copy.rules("--film", "ayah", "--draft"), "a pause shows a scene")
 
 
 def test_upto_cuts_one_verse_only(copy):
@@ -496,6 +549,65 @@ def test_a_turn_refused_in_the_narration_only_is_not_checked_on_titles():
     assert len(warned) == 1
 
 
+def test_a_narration_rests_on_a_page_of_fiqh_of_the_policy(copy):
+    set_sources(copy, "caravan", "meaning", ["fiqh.kuwaiti.24.238"])             # no recited verse needed, unlike a tafsir
+    path = copy.root / "content" / "sources" / "fiqh.yaml"
+    entries = yaml.safe_load(path.read_text(encoding="utf-8"))
+    entry = next(e for e in entries if e["id"] == "fiqh.kuwaiti.24.238")
+    entry["status"] = "proposed"                                                 # whatever the owner has validated since
+    entry.pop("validated_by", None)
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    done = copy.rules("--film", "ayah", "--draft")
+    assert done.returncode == 0, done.stdout[-2000:]
+    assert "source fiqh.kuwaiti.24.238" in done.stdout                           # proposed, listed like the others
+    text = entry.pop("text_ar")                                                  # a page with no text
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    refused(copy.rules("--film", "ayah", "--draft"), "source fiqh.kuwaiti.24.238 has no text in the registry")
+    entry["text_ar"] = text
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    policy = copy.load("content/policy.yaml")                                    # an edition the owner did not let in
+    del policy["fiqh"]["editions"]["kuwaiti"]
+    copy.dump("content/policy.yaml", policy)
+    refused(copy.rules("--film", "ayah", "--draft"), "fiqh « kuwaiti » is outside content/policy.yaml")
+    assert "fiqh 'kuwaiti' is outside content/policy.yaml" in validate(copy).stdout                # and the registry check says the same
+
+
+def test_the_references_merge_the_pages_of_fiqh(monkeypatch):
+    sources = tool("sources")
+    page = lambda n, text="x": {"id": f"fiqh.kuwaiti.24.{n}", "type": "fiqh", "ref": {"edition": "kuwaiti", "volume": 24, "page": n},
+                                "text_ar": text, "status": "proposed"}
+    monkeypatch.setattr(sources, "_registry", {**sources.registry(), **{f"fiqh.kuwaiti.24.{n}": page(n) for n in (234, 238, 239)}})
+    monkeypatch.setattr(sources, "proposed", [])
+    refs = sources.references(["fiqh.kuwaiti.24.239", "fiqh.kuwaiti.24.238"])
+    assert refs["ar"] == "الموسوعة الفقهية الكويتية 24/238-239"          # 1 2 3 (the owner, 2026-11-17); a hyphen-minus in Arabic
+    assert refs["en"] == "Kuwaiti Encyclopedia of Islamic Jurisprudence 24/238–239"
+    apart = sources.references(["fiqh.kuwaiti.24.234", "fiqh.kuwaiti.24.238", "fiqh.kuwaiti.24.239"])
+    assert apart["ar"].endswith("24/234، 238-239") and apart["en"].endswith("24/234, 238–239")
+    assert sources.references(["fiqh.kuwaiti.24.238", "fiqh.kuwaiti.24.239"], "latin")["ar"] == "الموسوعة الفقهية الكويتية 24/238-239"
+    assert sources.num(863) == "863" and sources.num(863, "latin") == "863"               # the old option changes nothing
+    outside = {**page(238), "id": "fiqh.shafii.24.238", "ref": {"edition": "shafii", "volume": 24, "page": 238}}
+    monkeypatch.setitem(sources.registry(), outside["id"], outside)
+    with pytest.raises(SystemExit):
+        sources.references([outside["id"]])
+    nothing = {**page(235), "text_ar": None}
+    monkeypatch.setitem(sources.registry(), nothing["id"], nothing)
+    with pytest.raises(SystemExit):
+        sources.references([nothing["id"]])
+
+
+def test_a_misprint_of_the_english_is_corrected_on_screen_only(copy):
+    # The owner's decision (2026-11-17): two misprints of the published translation are corrected in the subtitle, and
+    # noted in the registry; the registry's text stays as published.
+    sources = tool("sources")
+    entry = sources.registry()["hadith.muslim.572a"]
+    assert "for. get" in entry["text_en"] and "for. get" in entry["excerpt_en"]
+    assert sources.described("hadith.muslim.572a")["display_en"] == "But I am a human being and I forget as you forget, so when I forget, remind me"
+    entries = copy.load("content/sources/hadith.yaml")                         # a correction whose misprint is not there
+    next(e for e in entries if e["id"] == "hadith.muslim.572a")["en_corrections"][0]["published"] = "no such misprint"
+    copy.dump("content/sources/hadith.yaml", entries)
+    assert "en_corrections: « no such misprint » is not in the English text shown" in validate(copy).stdout
+
+
 # ---- a part of a hadith's reading (`parts` of the registry, `part:` of a segment) --------------------------------
 
 PART_SID = "hadith.tirmidhi.3247"       # read by asked.yaml (a short), dua.yaml (a film)
@@ -583,6 +695,39 @@ def test_a_part_takes_reader_and_file_from_the_recording(copy):
     assert script.part_view(entry, "nope") is None and "parts" not in view
 
 
+def test_a_part_said_by_another_voice_has_its_own_file(copy):
+    """A part may name its own reader, item, file and license (a dhikr said by a reciter, after the hadith read by the
+    collection's reader): its times are in its own file, not inside the entry's recording, and it is played from there."""
+    own = {"reader": "Another voice", "item": "https://archive.org/details/another-item",
+           "file": "https://archive.org/download/another-item/another.mp3", "license": "none stated on the archive.org item"}
+    add_part(copy, short=None, recording={"start": 5000.0, "end": 5010.0, "status": "proposed", **own})
+    checked = validate(copy)
+    assert checked.returncode == 0 and " 0 error(s)" in checked.stdout, checked.stdout[-2500:]
+    entry = next(e for e in copy.load("content/sources/hadith.yaml") if e["id"] == PART_SID)
+    view = tool("script").part_view(entry, "second")
+    assert {k: view["recording"][k] for k in own} == own and view["recording"]["start"] == 5000.0
+
+
+def test_a_part_naming_a_file_names_its_reader_too(copy):
+    add_part(copy, short=None, recording={"start": 1.0, "end": 2.0, "status": "proposed",
+                                          "file": "https://archive.org/download/another-item/another.mp3"})
+    checked = validate(copy)
+    assert checked.returncode == 1 and "schema" in checked.stdout, checked.stdout[-2500:]
+
+
+def test_a_card_shows_a_hadith_of_the_policy_and_needs_no_recording(copy):
+    """A `card:` (a dhikr to read, adhkar to save) shows the words of a hadith and no voice reads them: no recording is
+    needed (the real files pass, `test_the_real_repository_has_no_error`), but the hadith must be one of the policy."""
+    assert copy.rules("--film", "adhkar").returncode == 0
+    path = copy.root / "content" / "sources" / "hadith.yaml"
+    entries = yaml.safe_load(path.read_text(encoding="utf-8"))
+    entry = next(e for e in entries if e["id"] == "hadith.muslim.591")
+    assert "recording" not in entry and "recording" not in entry["parts"]["salam"]
+    entry["ref"]["collection"] = "wahidi"
+    path.write_text(yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100_000), encoding="utf-8")
+    refused(copy.rules("--film", "adhkar"), "hadith.muslim.591")
+
+
 def test_the_film_reads_no_silent_line_in_a_short_s_voice_text():
     """A short whose opening is written on screen only (`silent`, the shorts of « مخيّر ولا مسيّر؟ »): its silent lines
     are not in its voice text, so the film, which takes its other lines from that take, must not count them either."""
@@ -595,3 +740,23 @@ def test_the_film_reads_no_silent_line_in_a_short_s_voice_text():
     lines = film.lines_of(spec)
     assert [l["ar"] for l in lines] == ["سطر بالصوت", "وسطر تاني"]
     assert [(l["narration"], l["index"]) for l in lines] == [("open", 0), ("open", 1)]
+
+
+def test_a_drawn_thumbnail_and_the_chosen_one_are_checked(copy):
+    """2026-11-21 (owner's choice): a thumbnail drawn for itself (`art`, a scene of ThumbArt.tsx) or a moment of the film
+    (`at`), never both; `thumbnail.use` names the option YouTube gets."""
+    spec = copy.load("content/trial/qarnayn.yaml")
+    assert spec["thumbnail"]["use"] == "barrier"         # his choice, in the real file
+    assert {o["art"] for o in spec["thumbnail"]["options"]} == {"qarnayn-barrier", "qarnayn-chest", "qarnayn-sunset"}
+    spec["thumbnail"]["options"] = [
+        {"name": "drawn", "art": "qarnayn-barrier", "lines": ["a", "b"], "tag": "t", "place": "left"},
+        {"name": "both", "art": "qarnayn-chest", "at": "4:13", "lines": ["a", "b"], "tag": "t", "place": "top"},
+        {"name": "nowhere", "art": "a-scene-nobody-drew", "lines": ["a", "b"], "tag": "t", "place": "top"},
+    ]
+    spec["thumbnail"]["use"] = "missing"
+    copy.dump("content/trial/qarnayn.yaml", spec)
+    done = copy.rules("--film", "qarnayn")
+    refused(done, "thumbnail.options[2]: one of `art`")
+    for message in ("« a-scene-nobody-drew » is not drawn in video/src/trial/ThumbArt.tsx", "thumbnail.use: « missing » is not one of"):
+        assert message in done.stdout, done.stdout[-2500:]
+    assert "thumbnail.options[1]" not in done.stdout

@@ -1,0 +1,76 @@
+# « معاك 5 ثواني », short 5 (content/trial/quiz.yaml ; script : docs/scripts/quiz.md) : la suite d'un verset. Yaqoub dit
+# « بَلْ سَوَّلَتْ لَكُمْ أَنفُسُكُمْ أَمْرًا ۖ فَصَبْرٌ جَمِيلٌ » deux fois (12:18, 12:83) ; la seconde, après avoir perdu un
+# fils de plus, il demande les trois (al-Muyassar) : le secours quand l'épreuve est à son comble (as-Sa'di). Les trois
+# choix sont trois vraies paroles de Yaqoub (12:18, 12:83, 12:84), du registre ; le blanc ne se remplit qu'avec la bonne.
+# Rien n'est dessiné. Script écrit par la session le 2026-11-17.
+id: sabr
+# « Je valide » du propriétaire (2026-11-17, question à choix nommant le script du quiz 5 de docs/scripts/quiz.md) : les
+# répliques, la question, les choix. Ni la voix, ni les images, ni les textes à coller. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# « Je valide rendu et clip » du propriétaire (2026-11-17, question à choix nommant le rendu sans voix du workflow `film`,
+# run 44121795304, et son clip) : le montage, les dessins et le clip tels que rendus. La voix, la couverture et l'ambiance
+# sous la voix restent à valider sur la vidéo finale. Inscrit sur sa parole.
+# « Je valide les 3 » du propriétaire (2026-11-18, question à choix nommant la voix, les couvertures et l'ambiance sous
+# la voix des vidéos avec voix du workflow `film`, run 44270232504) : ajoutés au montage validé le 2026-11-17 ; puis
+# « je valide les textes » (même jour, question à choix nommant les titres et descriptions de publication-quiz.md).
+# Inscrit sur sa parole.
+validated: { by: mssnoussi92, on: 2026-11-18, what: [voice, montage, cover, publish, ambience] }
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 90-trial-sabr
+# une aube rose filmée d'un drone qui s'élève au-dessus d'une colline boisée (Pixabay 2119, bellergy, validé pour « والضحى »
+# de « آية وحكايتها ») : la lumière qui vient après la nuit ; APPROUVÉ pour ce short par le propriétaire le 2026-11-17
+clip: { source: pixabay, id: 2119, author: bellergy, page: "https://pixabay.com/videos/id-2119/", take: { slow: 5, height: 1440 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.6, ground: "#07060b", horizon: 1380, veil: 0.8 }
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 10, seconds: 60, level: -36 }
+cover: { scene: ask, title: "«فصبر جميل»… المرة التانية؟", tag: "معاك 5 ثواني", focus: 1000 }
+quiz:
+  head: { verse: quran.12.83, from: 7, to: 8 }        # « فَصَبْرٌ جَمِيلٌ », puis la suite en blanc
+  blank: { verse: quran.12.83, from: 9, to: 14 }      # ce qui remplit le blanc à la réponse : la bonne suite seulement
+  choices:
+    - { verse: quran.12.18, from: -5, to: -1, en: "and Allah is the one sought for help", note: { ar: "المرة الأولى · يوسف 18", en: "the first time, Yusuf 18" } }
+    - { verse: quran.12.83, from: 9, to: 14, en: "perhaps Allah will bring them to me all together", right: true }
+    - { verse: quran.12.84, from: 4, to: 6, en: "oh, my sorrow over Yusuf", note: { ar: "بعدها · يوسف 84", en: "right after, Yusuf 84" } }
+publish:
+  title: { en: "\"Beautiful patience\"… and the second time?", ar: "«فصبر جميل»… المرة التانية؟" }
+  part: 5
+  hashtags: ["#سورة_يوسف", "#الصبر_الجميل"]
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (« je valide les 3 », quiz 4 à 6)
+    ar: "سيدنا يعقوب قال «فصبر جميل» مرتين… المرة التانية كمّلها بحاجة محدش متوقعها."
+    en: 'Jacob said "beautiful patience" twice… the second time, he went on with what no one expects.'
+    validated: 2026-11-17
+  description:
+    en: "Jacob said \"beautiful patience\" twice in Surat Yusuf: when Yusuf was lost (12:18), and when his brother was lost too (12:83). The second time, his pain grew and his hope grew more: he asked for all three sons (al-Muyassar), turning to relief when the hardship was at its peak (as-Sa'di)."
+    ar: "سيدنا يعقوب قال «فصبر جميل» مرتين: لما ضاع يوسف (يوسف 18)، ولما ضاع أخوه (يوسف 83). المرة التانية الوجع زاد… بس رجاه في ربنا كبر: طلب التلاتة."
+segments:
+  - narration: ask
+    silent: true
+    hold: 6.8
+    at_once: true                                   # la question entière sur la première image
+    scene: ask
+    sfx: [[count, 0], [impact, 5.0]]
+    lines:
+      - ar: "قالها سيدنا يعقوب مرتين… المرة التانية كمّلها بإيه؟"
+        en: "Jacob said it twice… the second time, how did he go on?"
+  - verse: quran.12.83
+    scene: listen
+  - narration: meaning
+    scene: meaning
+    sources: [tafsir.muyassar.12.83, tafsir.saadi.12.83, tafsir.ibn-kathir.12.83]
+    lines:
+      - ar: "أول مرة قالها لما ضاع يوسف… والتانية لما ضاع أخوه، والكبير فضل في مصر."
+        en: "The first time he said it when Yusuf was lost… the second when his brother was lost, and the eldest stayed in Egypt."
+      - ar: "الوجع زاد… بس رجاه في ربنا كبر: طلب التلاتة."
+        en: "The pain grew… but his hope in God grew bigger: he asked for all three."
+  - narration: patience
+    scene: patience
+    sources: [tafsir.saadi.12.83]
+    lines:
+      - ar: "والصبر الجميل… مش إنك ما تزعلش… ده إنك ما تشتكيش غير لربنا."
+        en: "And beautiful patience… isn't not being sad… it's complaining to no one but God."
+  - narration: close
+    scene: close
+    lines:
+      - ar: "وإنت… إيه اللي بيخلّيك تستنى الفرج لما الدنيا تضيق؟"
+        en: "And you… what keeps you waiting for relief when life gets tight?"
+      - ar: "والسؤال الجاي: جملة قالها حد لملك… تعرف مين؟ تابعنا."
+        en: "Next question: a sentence someone said to a king… do you know who? Follow us."

@@ -37,7 +37,6 @@ import yaml
 ROOT = Path(__file__).resolve().parents[2]
 TRIAL = ROOT / "content" / "trial"
 PUBLIC = ROOT / "video" / "public"
-DIGITS = str.maketrans("0123456789", "٠١٢٣٤٥٦٧٨٩")
 
 
 def stamp(seconds: float) -> str:
@@ -61,9 +60,12 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
 
     hadith = verse = False
     for kind, sid in ids:
-        if kind in ("report", "tafsir", "science"):      # what a narration rests on (`sources:`): told, explained or measured, never read
+        if kind in ("report", "tafsir", "fiqh", "science"):      # what a narration rests on (`sources:`): told, explained or measured, never read
             flush()
-            lines.append(rests_on(kind, sid))
+            line = rests_on(kind, sid, [i for k, i in ids if k == "fiqh"])
+            if kind == "fiqh" and any(l.split(" · ")[:2] == line.split(" · ")[:2] for l in lines):
+                continue                                         # one line per book and volume: its pages are merged in it
+            lines.append(line)
             hadith = hadith or kind == "report"
         elif kind == "verse":
             verse = True
@@ -71,6 +73,11 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
                 flush()
             if sid not in run:
                 run.append(sid)
+        elif kind == "card":                             # a dhikr written to be read: no reader
+            flush()
+            hadith = True
+            src = sources[sid]
+            lines.append(" · ".join(x for x in (f"• {src['reference_en']}", src.get("grade_note"), src["url"]) if x))
         else:
             flush()
             hadith = True
@@ -85,9 +92,10 @@ def quoted(ids: list[tuple[str, str]], sources: dict) -> tuple[list[str], bool, 
     return unique, hadith, verse
 
 
-def rests_on(kind: str, sid: str) -> str:
-    """The line of a report a narration tells in its own words, of the tafsir its meaning comes from, or of the
-    paper or the data (a `science` source) a claim rests on."""
+def rests_on(kind: str, sid: str, fiqh_ids: list[str] | None = None) -> str:
+    """The line of a report a narration tells in its own words, of the tafsir its meaning comes from, of the pages of
+    fiqh it rests on (one line per edition: `fiqh_ids` are all the fiqh sources of the video, those of this one's
+    edition and volume merged), or of the paper or the data (a `science` source) a claim rests on."""
     import sources as registry              # tools/trial/sources.py
 
     e = registry.entry_of(sid)
@@ -98,6 +106,12 @@ def rests_on(kind: str, sid: str) -> str:
         letter = chr(96 + ref["narration"]) if ref.get("narration") else ""
         return f"• {registry.COLLECTIONS[ref['collection']]} {ref['number']}{letter} (told in the narration's own words) · {e['url']}"
     policy = yaml.safe_load((ROOT / "content" / "policy.yaml").read_text(encoding="utf-8")) or {}
+    if kind == "fiqh":
+        edition = policy["fiqh"]["editions"][ref["edition"]]
+        pages = sorted({registry.entry_of(i)["ref"]["page"] for i in fiqh_ids or [sid]
+                        if registry.entry_of(i)["ref"]["edition"] == ref["edition"] and registry.entry_of(i)["ref"]["volume"] == ref["volume"]})
+        return (f"• Rulings after {edition['en']}, vol. {ref['volume']}, p. {registry.page_ranges(pages, 'latin')} · "
+                f"{edition['ar']} {registry.num(ref['volume'])}/{registry.page_ranges(pages, None, '،', '-')} · {e['url']}")
     name = policy["tafsir"]["editions"][ref["edition"]]["en"]
     return f"• Meaning after {name} ({ref['surah']}:{ref['ayah']}) · {e['url']}"
 
@@ -113,10 +127,17 @@ def quotes_of(segments: list[dict]) -> list[tuple[str, str]]:
         elif "verses" in s:
             ids += [("verse", sid) for sid in s["verses"]]
         elif "reading" in s:
-            if ("reading", s["reading"]) not in ids:       # a part and the whole of a hadith: one reference
-                ids.append(("reading", s["reading"]))
+            # A part is named with its hadith (« sid#part »): a part can have its own reader (the dhikr of Muslim 2709a,
+            # read by Muhammad Jibril, 2026-11-19: the credits named the reader of the whole). Two parts read by the
+            # same reader give the same line, written once.
+            rid = f"{s['reading']}#{s['part']}" if s.get("part") else s["reading"]
+            if ("reading", rid) not in ids:
+                ids.append(("reading", rid))
+        elif "card" in s:                                  # a dhikr to read: shown, never read
+            if ("card", s["card"]) not in ids:
+                ids.append(("card", s["card"]))
         for sid in s.get("sources") or []:
-            ids.append(("report" if sid.startswith("hadith.") else "science" if sid.startswith("science.") else "tafsir", sid))
+            ids.append(("report" if sid.startswith("hadith.") else "science" if sid.startswith("science.") else "fiqh" if sid.startswith("fiqh.") else "tafsir", sid))
     return ids
 
 
@@ -147,10 +168,45 @@ def block(text: str) -> str:
     return "```text\n" + text.strip() + "\n```\n"
 
 
+ARABIC = re.compile(r"[\u0600-\u06ff]")
+
+
+def arabic_first(line: str) -> str:
+    """A line of two halves joined by « · », the Arabic half first (the owner, 2026-11-21: « l'arabe d'abord partout,
+    titres et description »)."""
+    parts = line.split(" · ")
+    if len(parts) != 2 or not ARABIC.search(parts[1]) or ARABIC.search(parts[0]):
+        return line
+    lead = "🎙️ " if parts[0].startswith("🎙️ ") else ""
+    return lead + parts[1] + " · " + parts[0].removeprefix(lead)
+
+
 def voice_line(narration: str) -> str:
     """The line that declares the AI voice, as it stays in every description (CLAUDE.md, « Voix déclarée »), without
     the « Narration: » label of the credits."""
-    return narration.split(": ", 1)[1] if narration.startswith("Narration: ") else narration
+    line = narration.split(": ", 1)[1] if narration.startswith("Narration: ") else narration
+    return arabic_first(line)
+
+
+def thumbnail_file(film: dict, files: str) -> str:
+    """The thumbnail YouTube gets: the dedicated one the owner chose (`thumbnail.use`, an option of `thumbnail.options`, 2026-11-21),
+    else the three-panel one."""
+    th = film["thumbnail"]
+    if th.get("use"):
+        option = next(o for o in th.get("options") or [] if o["name"] == th["use"])
+        return option.get("file") or f"{files}-film-thumbnail-{option['name']}.jpg"
+    return th.get("file", f"{files}-film-thumbnail.jpg")
+
+
+LATIN_DIGITS = str.maketrans("٠١٢٣٤٥٦٧٨٩", "0123456789")
+
+
+def youtube_title(title: dict) -> str:
+    """The YouTube title of a film or a short: the Arabic first, then the English (the owner, 2026-11-21: 74 % of the
+    channel's views come from Arabic-speaking countries, and the searches that bring views are in Arabic), numbers written
+    123 (the owner, 2026-11-17). `youtube_title` of the file's `publish` (or of a short's) when YouTube gets a title of its
+    own (the film of Dhul-Qarnayn: « قصة ذو القرنين: 3 اختبارات للقوة », his choice of 2026-11-21); else its title."""
+    return f"{title['ar']} · {title['en']}".translate(LATIN_DIGITS)
 
 
 def cards(platform: str, title: str, description: str, credits: str, tags: str, title_label: str = "Titre") -> list[str]:
@@ -164,21 +220,41 @@ def cards(platform: str, title: str, description: str, credits: str, tags: str, 
             f"**{platform} · Hashtags ({len(tags.split())})**", "", block(tags)]
 
 
-def hooked(conf: dict, hook: dict) -> str:
+def hooked(conf: dict, hook: dict, voiced: bool = True, platform: str = "") -> str:
     """The description of a short caption (Facebook, Instagram, TikTok): the hook in Egyptian Arabic and in English,
-    then the line of the AI voice (owner, 2026-11-15)."""
-    return hook["ar"] + "\n" + hook["en"] + "\n\n" + conf["lines"]["ai_voice"]
+    then the line of the AI voice (owner, 2026-11-15). A short no voice says (adhkar to read: every narration
+    `silent`) has no AI voice to declare: the line would be false. On Facebook the line is shorter (`ai_voice_facebook`,
+    owner, 2026-11-22): Meta wants a caption of at most 400 characters."""
+    line = conf["lines"].get("ai_voice_facebook") if platform.lower() == "facebook" else None
+    return hook["ar"] + "\n" + hook["en"] + ("\n\n" + (line or conf["lines"]["ai_voice"]) if voiced else "")
 
 
-def hooks_state(specs: list[dict]) -> str:
+def facebook_short(conf: dict, name: str, title: str, description: str, tags: str) -> None:
+    """Stop when a Facebook short caption (its cards joined by a blank line, as quran-reels publishes them) is longer
+    than Meta's quality list allows (`platforms.facebook.max_caption`, 400; owner, 2026-11-22)."""
+    most = conf["platforms"]["facebook"].get("max_caption")
+    size = len("\n\n".join([title, description, tags]))
+    if most and size > most:
+        sys.exit(f"error: {name}: the Facebook caption is {size} characters (most: {most}); shorten the hook")
+
+
+def voiced(spec: dict) -> bool:
+    """Whether the synthetic voice says something in a short: a narration that is not `silent` (written on screen
+    only). The same test as tools/trial/rules.py, which asks a voice text of such a short only."""
+    segments = (spec.get("segments") or []) + [s for c in spec.get("chapters") or [] for s in c.get("segments") or []]
+    return any("narration" in s and not s.get("silent") for s in segments)
+
+
+def hooks_state(specs: list[dict], socials: str = "Facebook, Instagram et TikTok") -> str:
     """What the texts say of the short captions: validated by the owner (the date), or proposed; "" without hooks."""
     hooks = [(s.get("publish") or {}).get("hook") for s in specs]
     if not any(hooks):
         return ""
+    ai = " et voix IA" if any(voiced(s) for s in specs) else ""
     if all(h and h.get("validated") for h in hooks):
-        return (" Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **validées par "
+        return (f" Légendes courtes de {socials} (titre, accroche{ai}, hashtags) **validées par "
                 f"le propriétaire le {max(str(h['validated']) for h in hooks)}**.")
-    return (" Légendes courtes de Facebook, Instagram et TikTok (titre, accroche et voix IA, hashtags) **proposées par la "
+    return (f" Légendes courtes de {socials} (titre, accroche{ai}, hashtags) **proposées par la "
             "session, pas encore validées par le propriétaire** : rien n'est publié avec elles avant.")
 
 
@@ -205,7 +281,10 @@ def written(path: Path) -> dict[str, dict]:
             for row in lines[i + 1:]:
                 if not (m := CHAPTER.match(row)):
                     break
-                known[key]["chapters"].append({"start": int(m[1]) * 60 + int(m[2]), "title": {"en": m[3], "ar": m[4]}})
+                # a chapter is written « 0:14 <Arabic> · <English> » since 2026-11-21 (the Arabic first), « 0:14 <English> ·
+                # <Arabic> » before: each half is told by its script
+                first, second = (m[3], m[4]) if ARABIC.search(m[4]) else (m[4], m[3])
+                known[key]["chapters"].append({"start": int(m[1]) * 60 + int(m[2]), "title": {"en": first, "ar": second}})
     return {k: v for k, v in known.items() if "seconds" in v}
 
 
@@ -215,6 +294,10 @@ def main() -> None:
     p.add_argument("--film", default="film", help="the film's id (content/trial/<id>.yaml)")
     p.add_argument("--out", type=Path, help="default: `publish.out` of the film, or docs/publication-<files>.md")
     p.add_argument("--draft", action="store_true", help="before the voice: the timelines of the silent draft (voice X)")
+    p.add_argument("--elsewhere", metavar="PAGE",
+                   help="the texts of the shorts the film's `elsewhere` gives that page (`ma3ak`, the test page on Meta): their "
+                        "files signed with its name (`<name>-<page>.mp4`), Facebook and Instagram only; written beside the "
+                        "film's texts (`…-<page>.md`) unless --out (2026-11-19: quiz 5 and 6 published by quran-reels there)")
     p.add_argument("--tall", action="store_true",
                    help="only the text of the film in 9:16 (`<files>-film-9x16.mp4`), for Facebook; written beside the film's texts (`…-9x16.md`) unless --out")
     args = p.parse_args()
@@ -232,14 +315,30 @@ def main() -> None:
 
         class FromRegistry(dict):
             def __missing__(self, sid: str) -> dict:
-                self[sid] = registry.described(sid)
+                self[sid] = registry.described(*sid.split("#", 1))      # « sid#part »: that part, its own reader
                 return self[sid]
 
         sources = FromRegistry()
     pub = film["publish"]
     narration = pub["narration"][args.voice]
     series_only = "chapters" not in film          # a series: shorts that stand alone, no film
+    # A series for another page (`handle` of its file: the test page on Meta, `ma3ak`, 2026-11-18) is signed with that
+    # page's name, and has texts only for its `platforms` (every platform of the Page by default).
+    handle = film.get("handle") or conf["handle"]
+    platforms = film.get("platforms") or ["facebook", "instagram", "tiktok", "youtube"]
+    page = args.elsewhere
+    if page:                                      # the shorts another page gets, signed with its name
+        wanted = (film.get("elsewhere") or {}).get(page)
+        if not wanted:
+            sys.exit(f"error: --elsewhere {page}: {args.film} gives that page no short (`elsewhere`)")
+        if page not in conf.get("handles", {}):
+            sys.exit(f"error: --elsewhere {page}: no handle for it in content/publish.yaml (`handles`)")
+        handle, platforms = conf["handles"][page], ["facebook", "instagram"]
+    social_names = [n for p, n in (("facebook", "Facebook"), ("instagram", "Instagram"), ("tiktok", "TikTok")) if p in platforms]
+    socials = " et ".join([", ".join(social_names[:-1]), social_names[-1]] if len(social_names) > 1 else social_names)
     shorts = [yaml.safe_load((TRIAL / f"{name}.yaml").read_text(encoding="utf-8")) for name in film.get("shorts") or film["thumbnail"]["panels"]]
+    if page:
+        shorts = [s for s in shorts if s["id"] in film["elsewhere"][page]]
     # « Je valide » of the owner on the texts: `validated` of every file, with `publish` in what it covers.
     said = [(s.get("validated") or {}) for s in [film, *shorts]]
     validated = all("publish" in (v.get("what") or []) for v in said)
@@ -250,13 +349,14 @@ def main() -> None:
     # (`ambience_after` of its file): once the owner has validated it, the videos to publish are those mixes,
     # `…-ambience.mp4`. Every film since is rendered with its ambience, and its videos keep their names.
     # A series' own file has no ambience: only its shorts say whether theirs was validated.
-    heard = all("ambience" in (v.get("what") or []) for v in (said[1:] if series_only else said))
+    heard = all("ambience" in (v.get("what") or []) for v in (said[1:] if series_only or film.get("shorts") else said))
     bed = "-ambience" if film.get("ambience_after") and heard else ""
     status = (f"Titres et descriptions **validés par le propriétaire le {when}**" if validated
               else "Titres et descriptions **proposés par la session, pas encore validés par le propriétaire**")
     limits = conf["platforms"]
     own = ROOT / pub.get("out", f"docs/publication-{files}.md")
-    target = args.out or (own.with_name(own.stem + "-9x16" + own.suffix) if args.tall else own)
+    target = args.out or (own.with_name(own.stem + "-9x16" + own.suffix) if args.tall else
+                          own.with_name(f"{own.stem}-{args.elsewhere}{own.suffix}") if args.elsewhere else own)
     before = {} if args.draft else written(target)
 
     def timeline_of(ident: str, key: str) -> dict:
@@ -271,15 +371,17 @@ def main() -> None:
     out = [
         f"# {pub['series']['en']} · {pub['series']['ar']} : textes de publication",
         "",
-        (f"Pour {'chaque short' if series_only else 'le film et chaque short'}, les textes à copier : sur Facebook, Instagram et TikTok, "
-         "la légende courte en trois textes, le titre, l'accroche avec la ligne de la voix IA, les hashtags ; sur YouTube, quatre textes, le titre, "
-         f"la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags, collés dans la même description. {status} ; "
+        (f"Pour {'chaque short' if series_only else 'le film et chaque short'}, les textes à copier : sur {socials}, "
+         "la légende courte en trois textes, le titre, l'accroche " + ("avec la ligne de la voix IA" if any(voiced(s) for s in shorts) else "(pas de voix, pas de ligne de la voix IA)")
+         + ", les hashtags" + ("" if "youtube" in platforms else f" ; la page `{handle}` n'est que sur {socials}") + (" ; sur YouTube, quatre textes, le titre, "
+         f"la description, les crédits (les sources citées, le clip, l'ambiance) et les hashtags, collés dans la même description" if "youtube" in platforms else "")
+         + f". {status} ; "
          if short_captions else
          f"Pour {'chaque short' if series_only else 'le film et chaque short'}, sur chaque plateforme, quatre textes à copier : le titre, la description, "
          f"les crédits (les sources citées, le clip, l'ambiance) et les hashtags ; là où la plateforme n'a pas de champ de titre, il ouvre la légende, "
          f"et les quatre se collent dans la même légende, la ligne de la voix IA restant dans la description. {status} ; ")
         + "les sources, les crédits, les durées, les chapitres et les hashtags de la page sont calculés "
-        "(`tools/trial/publish.py`, à relancer après tout changement)." + hooks_state(shorts) + " Fichiers : ceux envoyés dans la conversation"
+        "(`tools/trial/publish.py`, à relancer après tout changement)." + hooks_state(shorts, socials) + " Fichiers : ceux envoyés dans la conversation"
         + ((", avec l'ambiance sonore sous la narration, validée elle aussi (`…-ambience.mp4`)." if bed else
             " ; avec l'ambiance sonore sous la narration, pas encore validée, les mêmes noms terminés par `-ambience.mp4`.")
            if film.get("ambience_after") else
@@ -296,11 +398,12 @@ def main() -> None:
         data = timeline_of(args.film, "film")
         lines, hadith, verse = quoted(quotes_of([s for c in film["chapters"] for s in c["segments"]]), sources)
         if pub.get("hook"):         # the short caption (owner, 2026-11-15)
-            tall_cards = cards("Facebook", pub["title"]["en"] + "\n" + pub["title"]["ar"], hooked(conf, pub["hook"]), "",
-                               hashtags(conf, [], pub["hashtags"], "facebook"))
+            fb_title, fb_tags = pub["title"]["ar"] + "\n" + pub["title"]["en"], hashtags(conf, [], pub["hashtags"], "facebook")
+            facebook_short(conf, f"{args.film} (9:16)", fb_title, hooked(conf, pub["hook"], platform="facebook"), fb_tags)
+            tall_cards = cards("Facebook", fb_title, hooked(conf, pub["hook"], platform="facebook"), "", fb_tags)
         else:
-            tall_cards = cards("Facebook", pub["title"]["en"] + "\n" + pub["title"]["ar"],
-                               "\n\n".join([pub["description"]["en"], pub["description"]["ar"], voice_line(narration), conf["handle"]]),
+            tall_cards = cards("Facebook", pub["title"]["ar"] + "\n" + pub["title"]["en"],
+                               "\n\n".join([pub["description"]["ar"], pub["description"]["en"], voice_line(narration), conf["handle"]]),
                                "Quoted:\n" + "\n".join(lines) + "\n\n" + footage(shorts, film.get("pictures")),
                                hashtags(conf, [], pub["hashtags"], "facebook"))
         said = ((film.get("tall") or {}).get("validated") or {})
@@ -315,7 +418,7 @@ def main() -> None:
                 sys.exit(f"error: --tall: {args.film}: a TikTok caption needs `publish.hook`")
             heard = (tiktok or {}).get("validated") or {}
             tall_cards += [f"Sur TikTok : la vidéo `{twin}`, signée `{conf['handles']['tiktok']}`.", "",
-                           *cards("TikTok", pub["title"]["en"] + "\n" + pub["title"]["ar"], hooked(conf, pub["hook"]), "",
+                           *cards("TikTok", pub["title"]["ar"] + "\n" + pub["title"]["en"], hooked(conf, pub["hook"]), "",
                                   hashtags(conf, [], pub["hashtags"], "tiktok"))]
         out = [f"# {pub['series']['en']} · {pub['series']['ar']} : le film en 9:16", "",
                "Le même film, monté pour un écran vertical (les images des shorts, la même voix, le même minutage). "
@@ -334,24 +437,30 @@ def main() -> None:
         print(f"{target.relative_to(ROOT) if target.is_relative_to(ROOT) else target}: the film in 9:16")
         return
 
-    if not series_only:
+    if not series_only and not page:
         # The film
         data = timeline_of(args.film, "film")
         ids = quotes_of([s for c in film["chapters"] for s in c["segments"]])
         lines, hadith, verse = quoted(ids, sources)
-        title = f"{pub['title']['en']} · {pub['title']['ar']}"
+        title = youtube_title(pub.get("youtube_title") or pub["title"])
         if len(title) > limits["youtube"]["max_title"]:
             sys.exit(f"error: the film's YouTube title is {len(title)} characters (most: {limits['youtube']['max_title']})")
-        chapters = "\n".join(f"{stamp(c['start'])} {c['title']['en']} · {c['title']['ar']}" for c in data["chapters"])
-        body = "\n\n".join([pub["description"]["en"], pub["description"]["ar"], "Chapters:\n" + chapters,
+        chapters = "\n".join(f"{stamp(c['start'])} {c['title']['ar']} · {c['title']['en']}" for c in data["chapters"])
+        body = "\n\n".join([pub["description"]["ar"], pub["description"]["en"], "Chapters:\n" + chapters,
                               voice_line(narration), conf["handle"]])
         credits = "Quoted:\n" + "\n".join(lines) + "\n\n" + footage(shorts, film.get("pictures"))
         tags = hashtags(conf, [], pub["hashtags"], "youtube")
         whole = len(body) + len(credits) + len(tags) + 4          # the three pasted into one description
         if whole > limits["youtube"]["max_description"]:
             sys.exit(f"error: the film's YouTube description is {whole} characters")
+        # A series whose file holds its film too (« un film chaque lundi », 2026-11-21): the film's texts are validated on
+        # their own (`publish.film_validated`), after the series' (`validated` of the file).
+        own_state = ([("Textes du film **validés par le propriétaire le " + str(pub["film_validated"]) + "**." if pub.get("film_validated")
+                       else "Textes du film (titre, description, chapitres) **proposés par la session, pas encore validés par le propriétaire**."), ""]
+                     if film.get("shorts") else [])
+        # The line of the files comes first under the heading: page-files reads the files it names there.
         out += [f"## Le film · {pub['title']['en']} · {pub['title']['ar']}", "",
-                f"`{files}-film-16x9{bed}.mp4` · {stamp(data['seconds'])} · 16:9 · YouTube · miniature : `{film['thumbnail'].get('file', files + '-film-thumbnail.jpg')}`", "",
+                f"`{files}-film-16x9{bed}.mp4` · {stamp(data['seconds'])} · 16:9 · YouTube · miniature : `{thumbnail_file(film, files)}`", "", *own_state,
                 *cards("YouTube", title, body, credits, tags, f"Titre ({len(title)}/{limits['youtube']['max_title']})"),
                 "Écran de fin (YouTube Studio) : les 12 dernières secondes sont une image calme, faite pour y poser le bouton "
                 "d'abonnement et la vidéo suivante.", ""]
@@ -363,16 +472,18 @@ def main() -> None:
         lines, hadith, verse = quoted(quotes_of(spec["segments"]), sources)
         n, total = sp["part"], len(shorts)
         # A series goes on: its shorts are numbered, never « n of total ».
-        series = (f"{pub['series']['en']} · {n} · {pub['series']['ar']} · {str(n).translate(DIGITS)}" if series_only else
-                  f"{pub['series']['en']} · part {n}/{total} · {pub['series']['ar']} · الجزء {str(n).translate(DIGITS)} من {str(total).translate(DIGITS)}")
-        name = f"{files}-short-{n}-{spec['id']}"
-        cover = (spec.get("cover") or {}).get("file", f"{name}-cover.jpg")
+        # Numbers are written 1 2 3, never ١ ٢ ٣ (the owner, 2026-11-17); texts already validated keep what they were validated with.
+        # A series whose file holds its film too (`shorts` of the file, 2026-11-21) keeps the numbering its shorts were validated with.
+        series = (f"{pub['series']['ar']} · {n} · {pub['series']['en']} · {n}" if series_only or film.get("shorts") else
+                  f"{pub['series']['ar']} · الجزء {n} من {total} · {pub['series']['en']} · part {n}/{total}")
+        name = f"{files}-short-{n}-{spec['id']}" + (f"-{page}" if page else "")
+        cover = f"{name}-cover.jpg" if page else (spec.get("cover") or {}).get("file", f"{name}-cover.jpg")
 
-        heading = sp["title"]["en"] + "\n" + sp["title"]["ar"]
+        heading = sp["title"]["ar"] + "\n" + sp["title"]["en"]
         credits = "Quoted:\n" + "\n".join(lines) + "\n\n" + footage([spec])
 
-        def description(handle: str) -> str:
-            return "\n\n".join([sp["description"]["en"], sp["description"]["ar"], series, voice_line(narration), handle])
+        def description(signed: str) -> str:
+            return "\n\n".join([sp["description"]["ar"], sp["description"]["en"], series, voice_line(narration), signed])
 
         def tags(platform: str) -> str:
             return hashtags(conf, sp.get("hashtags") or [], pub["hashtags"], platform)
@@ -380,22 +491,30 @@ def main() -> None:
         # Facebook, Instagram and TikTok: the short caption when the file has a hook (owner, 2026-11-15), three cards.
         hook = sp.get("hook")
 
-        def social(handle: str, platform: str) -> list[str]:
+        def social(signed: str, platform: str) -> list[str]:
+            if platform not in platforms:
+                return []
             if hook:
-                return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading, hooked(conf, hook), "", tags(platform))
-            return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading, description(handle), credits, tags(platform))
+                return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading,
+                             hooked(conf, hook, voiced(spec), platform), "", tags(platform))
+            return cards(platform.capitalize().replace("Tiktok", "TikTok"), heading, description(signed), credits, tags(platform))
 
         # The cards end up in one caption: its length is theirs together.
-        insta = ("\n\n".join([heading, hooked(conf, hook), tags("instagram")]) if hook else
-                 "\n\n".join([heading, description(conf["handle"]), credits, tags("instagram")]))
+        insta = ("\n\n".join([heading, hooked(conf, hook, voiced(spec)), tags("instagram")]) if hook else
+                 "\n\n".join([heading, description(handle), credits, tags("instagram")]))
+        if hook and "facebook" in platforms:
+            facebook_short(conf, name, heading, hooked(conf, hook, voiced(spec), "facebook"), tags("facebook"))
         if len(insta) > limits["instagram_tiktok"]["max_caption"]:
             sys.exit(f"error: {name}: the Instagram caption is {len(insta)} characters")
-        title = f"{sp['title']['en']} · {sp['title']['ar']}"
-        if len(title) > limits["youtube"]["max_title"]:
+        title = youtube_title(sp.get("youtube_title") or sp["title"])
+        if "youtube" in platforms and len(title) > limits["youtube"]["max_title"]:
             sys.exit(f"error: {name}: the YouTube title is {len(title)} characters")
         # A series drawn twice (`casts`): the same texts for both drawings, each file named. The drawing the owner chose to
         # publish (`published_cast`) comes first: quran-reels publishes the first .mp4 of the line (« بص تاني », 2026-11-16: B).
         casts = film.get("casts") or []
+        # A short may keep fewer drawings than its series (`casts` of the short's file): « بص تاني » 2 keeps only B (the owner,
+        # 2026-11-21: « la retirer des fichiers », A never published): only those drawings are named, so made public.
+        casts = [c for c in casts if c in (spec.get("casts") or casts)]
         if film.get("published_cast") in casts:
             casts = [film["published_cast"]] + [c for c in casts if c != film["published_cast"]]
         files_line = (
@@ -403,7 +522,9 @@ def main() -> None:
             + f", signées `{conf['handles']['tiktok']}` sur TikTok · {stamp(data['seconds'])} · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts"
             if casts else
             f"`{name}{bed}.mp4` (TikTok : `{name}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`) · {stamp(data['seconds'])} · 9:16 · "
-            f"Facebook, Instagram, TikTok, YouTube Shorts · couverture : `{cover}`")
+            f"Facebook, Instagram, TikTok, YouTube Shorts · couverture : `{cover}`"
+            if "tiktok" in platforms else
+            f"`{name}{bed}.mp4`, signée `{handle}` · {stamp(data['seconds'])} · 9:16 · {socials} · couverture : `{cover}`")
         # The short version for Facebook and Instagram (`cut` of the file, prepare.py --cut), named once the owner has
         # validated it, never before: page-files makes public what this line names, and quran-reels publishes it.
         # After the first name, so that a reader taking the first .mp4 of the line keeps the full short.
@@ -413,13 +534,13 @@ def main() -> None:
             seconds = json.loads(cut_path.read_text(encoding="utf-8"))["seconds"] if cut_path.is_file() else None
             files_line += f" · version courte pour Facebook et Instagram : `{name}-cut{bed}.mp4`" + (f", {stamp(seconds)}" if seconds else "")
         out += [f"## Short {n} · {sp['title']['en']} · {sp['title']['ar']}", "", files_line, "",
-                *social(conf["handle"], "facebook"),
-                *social(conf["handle"], "instagram"),
-                (f"Sur TikTok : la vidéo `{name}-{casts[0]}-tiktok{bed}.mp4` ou `{name}-{casts[-1]}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`." if casts else
-                 f"Sur TikTok : la vidéo `{name}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`."), "",
+                *social(handle, "facebook"),
+                *social(handle, "instagram"),
+                *([(f"Sur TikTok : la vidéo " + " ou ".join(f"`{name}-{c}-tiktok{bed}.mp4`" for c in casts) + f", signée `{conf['handles']['tiktok']}`." if casts else
+                    f"Sur TikTok : la vidéo `{name}-tiktok{bed}.mp4`, signée `{conf['handles']['tiktok']}`."), ""] if "tiktok" in platforms else []),
                 *social(conf["handles"]["tiktok"], "tiktok"),
-                *cards("YouTube", title, description(conf["handle"]), credits, tags("youtube"),
-                       f"Titre ({len(title)}/{limits['youtube']['max_title']})"),
+                *(cards("YouTube", title, description(handle), credits, tags("youtube"),
+                        f"Titre ({len(title)}/{limits['youtube']['max_title']})") if "youtube" in platforms else []),
                 *([] if series_only else ["Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le spectateur le trouve.", ""])]
 
     target.parent.mkdir(parents=True, exist_ok=True)

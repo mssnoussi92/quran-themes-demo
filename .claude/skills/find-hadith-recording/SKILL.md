@@ -27,6 +27,7 @@ before searching. Those noted here by hand:
 | --- | --- | --- |
 | Bukhari 6340, 1303, 1469, 6309, 6307, 6446, 73 | `bukhari_audiobook/<number>.mp3` (73: `0074.mp3`) | after the chain, 6 to 21 s in |
 | Bukhari 3401 (excerpt: the sparrow), 122 (excerpt: « يرحم الله موسى… ») | `3401.mp3` (383 s), `0123.mp3` (277 s: 122 is one file further, like 73) | 202.76-212.12 s, 268.78-276.5 s (khidr; Whisper hears « لولدنا » for « لوددنا », validated by ear); position ≈ the excerpt's share of the text |
+| Bukhari 2449, 216 (excerpt: the two graves, « يعذبان… يمشي بالنميمة », with « ثم قال » inside) | `2449.mp3`, `0216.mp3` | 13.05-34.25 s, 21.40-33.68 s (hayyin) |
 | Bukhari 608 (excerpt: « حتى يخطر بين المرء ونفسه… »), 751 | `0608.mp3`, `0751.mp3` (same numbers) | 28.40-40.25 s, 15.50-19.85 s (khushu; the reader pauses before « حتى » and « هو ») |
 | Muslim 228 (الطهارة) | `ar_Moslem_Reading_03.mp3` (file = book + 1: 03 is book 2) | 479.60-497.60 s (khushu; the estimate by share of text, 8 %, landed 35 s before it; Whisper hears « كثارة », « يؤتي ») |
 | Muslim 2203a (السلام) | `ar_Moslem_Reading_40.mp3` (book 39) | 3667.50-3677.45 s (khushu; share 43.5 %, found 60 s after the estimate; the Companion's complaint is read just before) |

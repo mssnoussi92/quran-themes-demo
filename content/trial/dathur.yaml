@@ -1,0 +1,101 @@
+# « ذكر وحكايته », short 3 (pilote, 2026-11-17 ; content/trial/dhikr.yaml, docs/themes.md) : le dhikr d'après la prière de
+# Muslim 595 (récit d'Abou Hourayra). Le fait : les pauvres des Muhajirun viennent dire que les gens des richesses ont
+# pris les plus hauts degrés : ils prient et jeûnent comme eux, mais font l'aumône et affranchissent, eux non. Il leur
+# apprend ce qui leur fera rattraper ceux qui les ont devancés et devancer ceux d'après : 33 fois après chaque prière. Ils
+# reviennent : les riches l'ont appris et le font aussi ; il répond « ذلك فضل الله يؤتيه من يشاء ». La narration raconte
+# leurs plaintes avec ses mots ; ses deux réponses sont lues par une vraie voix (parties `teach` et `grace`).
+# - « ذلك فضل الله يؤتيه من يشاء » ferme 57:21, le verset de la course (« سابقوا إلى مغفرة من ربكم… ») : récité (28,8 s).
+#   On ne dit pas que le Prophète ﷺ citait ce verset (la même phrase est en 5:54 et 62:4) : seulement que la phrase le
+#   ferme. 62:4, proposé dans la fiche, est écarté : al-Muyassar y lit l'envoi du Prophète ﷺ, pas ce récit.
+# - Le sens (al-Muyassar sur 57:21) : rivalisez vers les causes du pardon, le repentir, l'éloignement des péchés ; le
+#   Paradis ne s'obtient que par la miséricorde et la faveur d'Allah, et l'œuvre bonne.
+# - Répliques de la session, à valider. Les nôtres sans tafsir : « فضل ربنا… مش بيخلص » (ce qu'on ne voit pas), l'exemple,
+#   la phrase à retenir. On ne tranche pas entre le riche reconnaissant et le pauvre patient (une divergence connue).
+# - Images prévues (des choses et des lieux, personne) : `coins` des pièces et une bourse ; `beads` un chapelet, un
+#   compteur 33 · 33 · 33 ; `road` un chemin vers l'horizon à l'aube ; `mat` un tapis de prière.
+# - Le dernier short du pilote : un appel générique (aucun short 4 n'est encore choisi).
+id: dathur
+# « Je valide le script » du propriétaire (2026-11-17, question à choix nommant le script des 3 shorts de
+# docs/scripts/dhikr.md, avec 57:21 dans le short 3) : les répliques, la place des versets et des lectures. Ni la voix, ni
+# les images, ni les lectures (à juger sur les vidéos, son choix du même jour), ni les textes à coller. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
+validated: { by: mssnoussi92, on: 2026-11-19, what: [voice, montage, cover, ambience, publish] }   # « Je valide les trois » (après la voix), puis « Je valide titres et accroches »
+handle: "@quran_words_daily"
+voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
+text: 94-trial-dathur
+# Le clip : une aube en accéléré, des nuages qui filent et le soleil qui sort (Pixabay 30218, adege, approuvé pour la
+# caverne, short 3) : l'heure de la première prière, et des nuages qui font la course sous « سابقوا ». APPROUVÉ pour ce
+# short par le propriétaire le 2026-11-17 (question à choix, sa recommandation). Réglages repris de `awake`, à revoir.
+clip: { source: pixabay, id: 30218, author: adege, page: "https://pixabay.com/videos/id-30218/", take: { height: 1440 }, rate: 0.8, position: "50% 50%", shift: 0, brightness: 0.85, ground: "#06080e", horizon: 1300 }
+# Ambiance proposée (une des trois validées le 2026-11-11) : le vent dans un arbre, quelques oiseaux, le matin ; jamais
+# sous une lecture ni sous un verset. À valider sur la vidéo.
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 110, level: -37 }
+cover: { scene: coins, title: "الأغنيا سبقونا!… فعلّمهم حاجة من غير فلوس", tag: "ذكر وحكايته · 3", focus: 1100 }
+publish:
+  title: { en: "\"The rich got ahead of us!\"… what he taught the poor", ar: "الأغنيا سبقونا!… فعلّمهم حاجة من غير فلوس" }
+  part: 3
+  description:
+    ar: "الفقرا جم للنبي ﷺ يشتكوا: الأغنيا سبقونا… فعلّمهم حاجة بعد كل صلاة ما تحتاجش فلوس. ولما الأغنيا عملوا زيهم، ردّ بجملة بتختم آية في القرآن عن السباق (صحيح مسلم 595، الحديد 21)."
+    en: "The poor came to the Prophet ﷺ: the rich have got ahead of us. He taught them something to do after every prayer that needs no money. When the rich did the same, he answered with words that also close a verse about a race (Sahih Muslim 595; al-Hadid 57:21)."
+  hook:   # written by the session from the validated lines; « Je valide titres et accroches » (question à choix)
+    ar: "الفقرا اشتكوا: الأغنيا سبقونا! فعلّمهم حاجة بعد كل صلاة… ما تحتاجش فلوس."
+    en: "The poor complained: the rich have got ahead of us! He taught them something after every prayer that needs no money."
+    validated: 2026-11-19
+segments:
+  - narration: open
+    scene: coins
+    sources: [hadith.muslim.595a]
+    lines:
+      - ar: "الفقرا جم للنبي صلى الله عليه وسلم يشتكوا… الأغنيا سبقونا!"
+        en: "The poor came to the Prophet ﷺ complaining… the rich have got ahead of us!"
+      - ar: "بيصلّوا زينا وبيصوموا زينا… وبيتصدّقوا من فلوسهم، وإحنا مش لاقيين."
+        en: "They pray as we pray, fast as we fast… and give charity from their wealth, and we have nothing to give."
+      - ar: "فرد عليهم بحاجة… ما تحتاجش فلوس. اسمع:"
+        en: "So he answered them with something… that needs no money. Listen:"
+  - reading: hadith.muslim.595a
+    part: teach
+    scene: beads
+  - narration: twist
+    scene: coins
+    lines:
+      - ar: "بس الحكاية ما خلصتش… الأغنيا سمعوا… وعملوا زيهم!"
+        en: "But the story didn't end there… the rich heard… and did the same!"
+      - ar: "فالفقرا رجعوا يشتكوا تاني… فقالهم:"
+        en: "So the poor came back to complain again… and he told them:"
+  - reading: hadith.muslim.595a
+    part: grace
+    scene: road
+  - narration: turn
+    scene: road
+    lines:
+      - ar: "والجملة دي نفسها… بتختم آية في القرآن عن سباق:"
+        en: "And that very sentence… closes a verse of the Quran about a race:"
+  - verse: quran.57.21
+    scene: road
+  - narration: meaning
+    scene: road
+    sources: [tafsir.muyassar.57.21]
+    lines:
+      - ar: "يعني: اتسابقوا على أسباب المغفرة… التوبة، والبعد عن الذنوب."
+        en: "Meaning: race toward what brings forgiveness… repentance, and keeping away from sins."
+      - ar: "والجنة ما بتتاخدش إلا برحمة ربنا وفضله… والعمل الصالح."
+        en: "And Paradise is reached only through God's mercy and favor… and good deeds."
+  - narration: depth
+    scene: beads
+    lines:
+      - ar: "وفضل ربنا… مش بيخلص لما حد تاني ياخد منه."
+        en: "And God's favor… does not run out when someone else takes from it."
+  - narration: example
+    scene: mat
+    lines:
+      - ar: "زي ما بتسلّم من الصلاة… وتقوم على طول تلحق حاجة."
+        en: "Like when you finish your prayer… and get up at once to catch something."
+      - ar: "القعدة دي بعد السلام… هي السباق."
+        en: "Those moments after the salam… are the race."
+  - narration: close
+    scene: mat
+    lines:
+      - ar: "مش لازم يكون معاك فلوس… عشان تسبق."
+        en: "You don't need money… to get ahead."
+      - ar: "تابعنا عشان الحكاية الجاية."
+        en: "Follow us for the next story."

@@ -25,8 +25,7 @@ const chance = (i: number, salt = 0) => {
   const v = Math.sin(i * 127.1 + salt * 311.7) * 43758.5453;
   return v - Math.floor(v);
 };
-const ARABIC_DIGITS = "٠١٢٣٤٥٦٧٨٩";
-const arabic = (n: number) => String(n).replace(/[0-9]/g, (d) => ARABIC_DIGITS[Number(d)]);
+const arabic = (n: number) => String(n);      // the owner, 2026-11-17: numbers are written 1 2 3, never 1 2 3 (CLAUDE.md)
 
 /** When each scene starts. In the video: when its segment first starts. On a cover (every scene starts at 0 and only
  * the cover's own scene is shown), the scenes before the cover's are long over and the ones after it far away. */
@@ -49,7 +48,7 @@ const MOUTH = "M -72 14 L -72 -58 C -72 -118 72 -118 72 -58 L 72 14 Z";
 /** A rock and the mouth of a cave at its foot. (x, y): the middle of the mouth on the ground. `inner`: a warm light
  * inside the mouth (0: none); `air`: pale motes drifting in and out of it (0: none); `left`, `right`: the sun on that
  * side of the rock (0 to 1), never inside the mouth. */
-const Rock: React.FC<{ id: string; x: number; y: number; scale: number; shape: keyof typeof OUTLINE; rim: string; t: number; inner?: number; air?: number; left?: number; right?: number }> = ({ id, x, y, scale, shape, rim, t, inner = 0, air = 0, left = 0, right = 0 }) => {
+const Rock: React.FC<{ id: string; x: number; y: number; scale: number; shape: keyof typeof OUTLINE; rim: string; t: number; inner?: number; air?: number; left?: number; right?: number; lit?: boolean; warm?: boolean }> = ({ id, x, y, scale, shape, rim, t, inner = 0, air = 0, left = 0, right = 0, lit = false, warm = false }) => {
   const top = OUTLINE[shape];
   const end = shape === "hill" ? 640 : 580;  // the crag stands on both sides of its mouth
   const body = `${top} L ${end} 90 L ${shape === "hill" ? -430 : -580} 90 Z`;
@@ -74,10 +73,40 @@ const Rock: React.FC<{ id: string; x: number; y: number; scale: number; shape: k
           <stop offset=".55" stopColor="#ffb877" stopOpacity={0.08} />
           <stop offset="1" stopColor="#ffb877" stopOpacity={0} />
         </linearGradient>
+        <linearGradient id={`${id}-stone`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor={warm ? "#43332a" : "#2d344c"} />
+          <stop offset="1" stopColor={warm ? "#2a2019" : "#1d2234"} />
+        </linearGradient>
+        {/* the warm stone (short 2) takes a finer, softer grain: the owner found the first one blotchy (2026-11-22);
+            the cool one (shorts 1 and 3) stays as validated */}
+        <filter id={`${id}-grain`} x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency={warm ? "0.045 0.06" : "0.018 0.026"} numOctaves={warm ? 3 : 4} seed={11} result="n" />
+          <feColorMatrix in="n" type="matrix" values={warm ? "0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.7 -0.25" : "0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.3 -0.55"} />
+        </filter>
       </defs>
-      <path d={body} fill={INK} />
+      {/* the rock: a backlit silhouette; lit (the cave's shorts, owner 2026-11-22), a dim stone with its grain. The warm
+          one (short 2, a crag standing on the land) fades into the land at its foot: lit, its straight base showed */}
+      {lit && warm ? (
+        <>
+          <linearGradient id={`${id}-foot`} x1="0" y1="0" x2="0" y2="90" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stopColor="#fff" />
+            <stop offset="1" stopColor="#000" />
+          </linearGradient>
+          <mask id={`${id}-fade`} maskUnits="userSpaceOnUse" x={-700} y={-420} width={1400} height={520}>
+            <rect x={-700} y={-420} width={1400} height={520} fill={`url(#${id}-foot)`} />
+          </mask>
+        </>
+      ) : null}
+      <g mask={lit && warm ? `url(#${id}-fade)` : undefined}>
+        <path d={body} fill={lit ? `url(#${id}-stone)` : INK} />
+        {lit ? (
+          <g clipPath={`url(#${id}-body)`}>
+            <rect x={-700} y={-420} width={1400} height={520} filter={`url(#${id}-grain)`} opacity={warm ? 0.12 : 0.22} />
+          </g>
+        ) : null}
+      </g>
       {/* the sun on one wall of the rock: a warm wash on that side, never past the mouth */}
-      <g clipPath={`url(#${id}-body)`}>
+      <g clipPath={`url(#${id}-body)`} mask={lit && warm ? `url(#${id}-fade)` : undefined}>
         <rect x={80} y={-420} width={600} height={520} fill={`url(#${id}-r)`} opacity={right} />
         <rect x={-680} y={-420} width={600} height={520} fill={`url(#${id}-l)`} opacity={left} />
         {/* cracks and ledges of the rock */}
@@ -130,8 +159,8 @@ const RefugePicture: Drawn = ({ t, show, since, horizon }) => {
       </defs>
       <rect x={0} y={horizon - 620} width={W} height={640} fill="url(#kr-dawn)" opacity={dawn} />
       <Dwellings id="kr-city" x={170} y={horizon + 18} scale={0.34} t={t} lit={dawn > 0.5 ? 2 : 5} rim={rim} />
-      <Land id="kr-land" horizon={horizon} rim={rim} />
-      <Rock id="kr-rock" x={800} y={horizon + 30} scale={1.22} shape="hill" rim={rim} t={t} inner={inner} />
+      <Land id="kr-land" horizon={horizon} rim={rim} lit t={t} />
+      <Rock id="kr-rock" x={800} y={horizon + 30} scale={1.22} shape="hill" rim={rim} t={t} inner={inner} lit />
       <Footprints trails={[{ from: [270, horizon + 40], to: [770, horizon + 44], bend: 74 }]} shown={walked} ink="#cdd6ee" />
     </>
   );
@@ -171,8 +200,8 @@ const SunpathPicture: Drawn = ({ t, show, since, horizon }) => {
         <circle cx={sx} cy={sy} r={180} fill="url(#ks-sun)" opacity={0.6} />
         <circle cx={sx} cy={sy} r={42} fill="#fff1d6" />
       </g>
-      <Land id="ks-land" horizon={horizon} rim={rim} top="#140f0b" />
-      <Rock id="ks-rock" x={560} y={horizon + 34} scale={0.9} shape="crag" rim={rim} t={t} right={right} left={left} air={show("inside")} />
+      <Land id="ks-land" horizon={horizon} rim={rim} top="#140f0b" lit warm t={t} />
+      <Rock id="ks-rock" x={560} y={horizon + 34} scale={0.9} shape="crag" rim={rim} t={t} right={right} left={left} air={show("inside")} lit warm />
     </>
   );
 };
@@ -208,6 +237,23 @@ const AwakePicture: Drawn = ({ t, show, since, horizon }) => {
         <filter id="ka-glow" x="-30%" y="-30%" width="160%" height="160%">
           <feGaussianBlur stdDeviation="16" />
         </filter>
+        {/* the walls lit by the mouth (owner, 2026-11-22: no dark band that never moves at the edges of the frame) */}
+        <radialGradient id="ka-wall" cx="540" cy={floor - 380} r="1150" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#3d4258" />
+          <stop offset=".55" stopColor="#272b3d" />
+          <stop offset="1" stopColor="#1b1e2c" />
+        </radialGradient>
+        <radialGradient id="ka-warm" cx="540" cy={floor} r="900" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor={LIGHT} stopOpacity={0.32} />
+          <stop offset="1" stopColor={LIGHT} stopOpacity={0} />
+        </radialGradient>
+        <filter id="ka-grain" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves={4} seed={5} result="n" />
+          <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.3 -0.55" />
+        </filter>
+        <mask id="ka-walls">
+          <path d={`M -20 -20 H ${W + 20} V ${H + 20} H -20 Z ${arch}`} fill="#fff" fillRule="evenodd" />
+        </mask>
       </defs>
       {/* the days and nights going by, inside the arch only */}
       <g clipPath="url(#ka-arch)">
@@ -216,8 +262,20 @@ const AwakePicture: Drawn = ({ t, show, since, horizon }) => {
           <Dwellings id="ka-city" x={540} y={floor - 30} scale={0.3} t={t} lit={0} rim="#ffd2a0" />
         </g>
       </g>
-      {/* the cave around the arch: its walls, its ceiling, its floor */}
-      <path d={`M -20 -20 H ${W + 20} V ${H + 20} H -20 Z ${arch}`} fill={INK} fillRule="evenodd" opacity={0.96} />
+      {/* the cave around the arch: its walls, its ceiling, its floor, a dim stone lit by the mouth, with its grain; dust
+          drifting in the light, so that the bottom of the frame is never still */}
+      <g mask="url(#ka-walls)">
+        <rect x={-20} y={-20} width={W + 40} height={H + 40} fill="url(#ka-wall)" />
+        <rect x={-20} y={-20} width={W + 40} height={H + 40} filter="url(#ka-grain)" opacity={0.24} />
+        <rect x={-20} y={-20} width={W + 40} height={H + 40} fill="url(#ka-warm)" opacity={light} />
+        {Array.from({ length: 22 }, (_, k) => {
+          const pace = 0.018 + 0.02 * chance(k, 1);
+          const u = (t * pace + chance(k, 2)) % 1;
+          const mx = 60 + 960 * chance(k, 3) + 30 * Math.sin(t * 0.4 + k);
+          const my = floor + 40 + 480 * u;
+          return <circle key={k} cx={mx} cy={my} r={2 + 2.5 * chance(k, 4)} fill="#dfe8ff" opacity={0.35 * Math.sin(Math.PI * u)} />;
+        })}
+      </g>
       <path d={arch} fill="none" stroke="#b9c6e6" strokeWidth={3.5} opacity={0.45} />
       {/* the light coming in on the floor */}
       <path d={`M 170 ${floor} L 910 ${floor} L ${W + 40} ${H} L -40 ${H} Z`} fill="url(#ka-beam)" opacity={0.75 * light} />

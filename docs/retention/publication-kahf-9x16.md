@@ -11,8 +11,8 @@ La version TikTok (vidéo et légende) est **validée par le propriétaire le 20
 **Facebook · Titre**
 
 ```text
-The People of the Cave: 3 moments
 أصحاب الكهف: ٣ مواقف
+The People of the Cave: 3 moments
 ```
 
 **Facebook · Description**
@@ -21,7 +21,7 @@ The People of the Cave: 3 moments
 ربنا بيعمل إيه مع اللي يلجأ له؟
 What does God do for those who take refuge in Him?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -35,8 +35,8 @@ Sur TikTok : la vidéo `kahf-film-9x16-tiktok.mp4`, signée `@quran.words.daily`
 **TikTok · Titre**
 
 ```text
-The People of the Cave: 3 moments
 أصحاب الكهف: ٣ مواقف
+The People of the Cave: 3 moments
 ```
 
 **TikTok · Description**
@@ -45,7 +45,7 @@ The People of the Cave: 3 moments
 ربنا بيعمل إيه مع اللي يلجأ له؟
 What does God do for those who take refuge in Him?
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (4)**

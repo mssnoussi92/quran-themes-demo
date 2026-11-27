@@ -1,0 +1,87 @@
+# Adhkar à lire, sans voix, à enregistrer (demande du propriétaire, 2026-11-17 ; script validé par lui le même jour :
+# docs/scripts/adhkar-cards.md). Chaque dhikr est une carte (`card:`) : ses mots pris dans le registre (une partie du
+# hadith, son extrait), sa référence, sa traduction, le nombre de fois (nos mots) ; personne ne le lit, l'ambiance continue
+# dessous. Les sourates sont récitées par Tawfiq (jamais d'ambiance sous elles). Nos lignes : l'ouverture, la fin, les
+# étiquettes et les nombres. Clip et ambiance choisis par lui (le clip) ou proposés (l'ambiance, une de celles qu'il a validées).
+id: masaa
+# « Je valide les trois » du propriétaire (2026-11-17, question à choix nommant les trois vidéos envoyées, rendues par le
+# workflow `film`, run 44192660389) : les cartes, les nombres, le clip, l'ambiance, la couverture, et les seize hadiths
+# proposés au registre. Le script l'était le même jour. Les textes à coller restent à valider. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
+# Puis sa demande (2026-11-17, sur la vidéo validée) : réciter les deux derniers versets d'al-Baqara (Bukhari 5009) et
+# rester sous 3 min (la limite d'Instagram) en raccourcissant le passage entre les adhkar ; son choix : al-Baqara récitée,
+# الإخلاص والفلق والناس sur la carte « 3 مرات » sans récitation (elles le sont le matin), des passages plus courts et des
+# cartes un peu plus rapides (`pace`). La vidéo refaite (2:55, le signe de pause de 2:286 hors de la référence : PR #50)
+# validée par lui le 2026-11-18 (question à choix : « Je valide la vidéo du soir »).
+validated: { by: mssnoussi92, on: 2026-11-18, what: [montage, cover, ambience, publish] }   # ses textes YouTube aussi, le même jour
+pace: { gap: 0.15, card_lead: 1.0, card_word: 0.36 }
+handle: "@quran_words_daily"
+voices: { X: "no voice: the adhkar are written to be read" }
+clip: { source: pixabay, id: 190332, author: DancingSky, page: "https://pixabay.com/videos/id-190332/", position: "42% 50%", shift: -400, brightness: 0.55, ground: "#05060c", horizon: 1380, veil: 0.8 }
+ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 100, level: -38 }
+cover: { scene: sky, title: "أذكار المساء", tag: "من البخاري ومسلم والترمذي", focus: 1000 }
+publish:
+  title: { en: "Evening adhkar, from Bukhari, Muslim, Tirmidhi", ar: "أذكار المساء… من البخاري ومسلم والترمذي" }
+  part: 3
+  hashtags: ["#أذكار_المساء"]
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (question à choix : « je valide les trois »)
+    ar: "أذكار المساء… من البخاري ومسلم والترمذي بس. احفظها وارجعلها كل مسا."
+    en: "Evening adhkar, only from al-Bukhari, Muslim and at-Tirmidhi. Save it for every evening."
+    validated: 2026-11-17
+  description:
+    ar: "أذكار المساء، من أحاديث صحيحة وحسنة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله كل مسا."
+    en: "The evening adhkar, only from hadiths graded sahih or hasan (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it every evening."
+segments:
+  - narration: open
+    silent: true
+    hold: 4.5
+    scene: sky
+    lines:
+      - ar: "أذكار المساء… من البخاري ومسلم والترمذي."
+        en: "Evening adhkar… from al-Bukhari, Muslim and at-Tirmidhi."
+      - ar: "احفظ الفيديو… وارجعله كل مسا."
+        en: "Save this video… and come back to it every evening."
+  - card: hadith.bukhari.6306
+    part: sayyid
+    scene: sky
+    count: "مرة واحدة"
+  - card: hadith.muslim.2723c
+    part: amsayna
+    scene: sky
+    count: "مرة واحدة"
+  - card: hadith.tirmidhi.3391
+    part: masaa
+    scene: sky
+    count: "مرة واحدة"
+  - card: hadith.tirmidhi.3392
+    part: alim
+    scene: sky
+    count: "مرة واحدة"
+  - card: hadith.tirmidhi.3388
+    part: bismillah
+    scene: sky
+    count: "3 مرات"
+  - card: hadith.muslim.2709a
+    part: dhikr
+    scene: sky
+    label: "لما المسا يدخل"
+  - card: hadith.muslim.2692
+    part: subhan
+    scene: sky
+    count: "100 مرة"
+  - card: hadith.tirmidhi.3575
+    part: qul
+    scene: sky
+    count: "3 مرات"
+  - card: hadith.bukhari.5009
+    part: baqara
+    scene: sky
+  - verses: [quran.2.285, quran.2.286]
+    scene: sky
+  - narration: close
+    silent: true
+    hold: 3.5
+    scene: sky
+    lines:
+      - ar: "احفظه… وارجعله كل مسا."
+        en: "Save it… and come back to it every evening."

@@ -18,7 +18,20 @@ script_validated: { by: mssnoussi92, on: 2026-11-11 }
 # rendues par le workflow `film` et envoyées dans la conversation (release brouillon `qarnayn-candidate`) : la voix D
 # sur la vidéo entière, le montage, la couverture, l'ambiance, et les textes de publication (`publish`,
 # docs/retention/publication-qarnayn.md, envoyés). Inscrit sur sa parole.
+# La vidéo refaite (audit du 2026-11-20, puis sans « والسد وقف؟ ») validée par lui le 2026-11-21 (« Je valide »).
 validated: { by: mssnoussi92, on: 2026-11-12, what: [voice, montage, cover, publish, ambience] }
+# Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
+# on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). « Change tout », confirmé : la version entière (YouTube,
+# TikTok) sans les phrases qui redisent le verset (`drop`), « وإحنا كده » joué en gris (ce qu'on fait de travers)
+# puis l'exemple en blanc (le juste), une annonce jouée dans l'ouverture dès « هتغيّر نظرتك لكل نجاح في حياتك »
+# (PLAYED de Trial.tsx) ; la version courte garde l'annonce et l'exemple joués, le reste de sa coupe ne change pas.
+# Dhul-Qarnayn et le peuple ne sont jamais dessinés. Scènes validées par lui sur images le même jour (« Je valide les
+# 4 ») ; la vidéo refaite est à valider avant `page-files`.
+# « والسد وقف؟ » sort aussi de la version longue (sa correction sur la vidéo, 2026-11-21 : « il y a une coupe dans le verset,
+# والسد وقف à enlever » : la réplique tombait entre 18:96 et 18:97) ; « وهو قال إيه؟ » reste (son choix, même jour).
+# Le nom de la série en haut à gauche (« ذو القرنين », son numéro), ajouté le même jour à sa demande ; les 9 vidéos refaites
+# (entière, TikTok, courte des trois shorts) validées par lui (« Je valide les 9 »).
+drop: ["meaning:0", "meaning:1", "stood"]
 handle: "@quran_words_daily"
 clip: { source: pixabay, id: 381, author: FlickrVideos, page: "https://pixabay.com/videos/id-381/", position: "50% 50%", brightness: 0.85, landscape: { side: right, horizon: 700, brightness: 0.8 } }
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", V: "VoiceTut, Mohammed", X: "draft, no voice yet" }
@@ -32,8 +45,8 @@ cover: { scene: done, title: "بنى السد… وقال: مش مني!", tag: "
 # la vidéo. Proposée par la session ; validée par lui le 2026-11-16 (question à choix : « je valide les deux »), telle
 # qu'envoyée : 1:20, « ولما ييجي وعد ربي… » gardée (le sens de la fin de 18:98).
 cut:
-  drop: [stood, quran.18.97, "meaning:0", depth, example]
-  validated: { by: mssnoussi92, on: 2026-11-16 }
+  drop: [stood, quran.18.97, "meaning:0", depth, depth-us]
+  validated: { by: mssnoussi92, on: 2026-11-16 }   # la version courte refaite (annonce et exemple joués) validée par lui le 2026-11-21
 publish:
   title: { en: "He built the barrier… and said: not from me", ar: "بنى السد… وقال: مش مني!" }
   part: 3
@@ -88,10 +101,14 @@ segments:
     lines:
       - ar: "الناس شافت السد… وهو شاف اللي إداه القوة يبنيه."
         en: "People saw the barrier… he saw the One who gave him the strength to build it."
+  # « وإحنا كده », joué en gris (2026-11-20)
+  - narration: depth-us
+    scene: stage-us
+    lines:
       - ar: "وإحنا كده: أول ما ننجح… نقول: ده تعبي… ده شطارتي."
         en: "And so are we: the moment we succeed… we say: my effort… my talent."
   - narration: example
-    scene: land
+    scene: stage
     lines:
       - ar: "زي لما تنجح… والناس تسقف لك."
         en: "Like when you succeed… and people applaud you."

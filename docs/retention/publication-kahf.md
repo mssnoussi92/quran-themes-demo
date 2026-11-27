@@ -4,30 +4,30 @@ Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et 
 
 ## Le film · The People of the Cave: 3 moments · أصحاب الكهف: ٣ مواقف
 
-`kahf-film-16x9.mp4` · 6:10 · 16:9 · YouTube · miniature : `kahf-film-thumbnail.jpg`
+`kahf-film-16x9.mp4` · 6:10 · 16:9 · YouTube · miniature : `kahf-film-thumbnail-awake.jpg`
 
-**YouTube · Titre (56/100)**
+**YouTube · Titre (73/100)**
 
 ```text
-The People of the Cave: 3 moments · أصحاب الكهف: ٣ مواقف
+قصة أصحاب الكهف: 3 مواقف · The story of the People of the Cave: 3 moments
 ```
 
 **YouTube · Description**
 
 ```text
-Young men who leave their city with a single prayer, a sun that turns away from their cave every day, and a sleep of three hundred and nine years they took for a day: the story at the start of Surat al-Kahf, in three moments. What God does for those who take refuge in Him.
-
 شباب سابوا مدينتهم بدعوة واحدة، وشمس بتميل عن كهفهم كل يوم، ونومة تلتمية وتسع سنين فاكرينها يوم: القصة اللي في أول سورة الكهف، في تلات مواقف. ربنا بيعمل إيه مع اللي يلجأ له.
 
-Chapters:
-0:00 Three moments · تلات مواقف
-0:12 The opening of Surat al-Kahf · أول سورة الكهف
-0:42 A prayer in a cave · دعوة في كهف
-1:49 A sun that turned away · شمس بتميل عنهم
-2:57 They thought it was a day · فاكرينها يوم
-4:01 Why this story? · ليه القصة دي؟
+Young men who leave their city with a single prayer, a sun that turns away from their cave every day, and a sleep of three hundred and nine years they took for a day: the story at the start of Surat al-Kahf, in three moments. What God does for those who take refuge in Him.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+Chapters:
+0:00 تلات مواقف · Three moments
+0:12 أول سورة الكهف · The opening of Surat al-Kahf
+0:42 دعوة في كهف · A prayer in a cave
+1:49 شمس بتميل عنهم · A sun that turned away
+2:57 فاكرينها يوم · They thought it was a day
+4:01 ليه القصة دي؟ · Why this story?
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -70,8 +70,8 @@ Footage: Pixabay (adege, TeeFarm) · Ambience: BigSoundBank (Joseph Sardin)
 **Facebook · Titre**
 
 ```text
-They left their city… and hid in a cave!
 سابوا مدينتهم… واستخبّوا في كهف!
+They left their city… and hid in a cave!
 ```
 
 **Facebook · Description**
@@ -80,7 +80,7 @@ They left their city… and hid in a cave!
 سابوا مدينتهم… واستخبّوا في كهف بدعوة واحدة.
 They left their city… and hid in a cave with a single prayer.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -92,8 +92,8 @@ They left their city… and hid in a cave with a single prayer.
 **Instagram · Titre**
 
 ```text
-They left their city… and hid in a cave!
 سابوا مدينتهم… واستخبّوا في كهف!
+They left their city… and hid in a cave!
 ```
 
 **Instagram · Description**
@@ -102,7 +102,7 @@ They left their city… and hid in a cave!
 سابوا مدينتهم… واستخبّوا في كهف بدعوة واحدة.
 They left their city… and hid in a cave with a single prayer.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -116,8 +116,8 @@ Sur TikTok : la vidéo `kahf-short-1-refuge-tiktok.mp4`, signée `@quran.words.d
 **TikTok · Titre**
 
 ```text
-They left their city… and hid in a cave!
 سابوا مدينتهم… واستخبّوا في كهف!
+They left their city… and hid in a cave!
 ```
 
 **TikTok · Description**
@@ -126,7 +126,7 @@ They left their city… and hid in a cave!
 سابوا مدينتهم… واستخبّوا في كهف بدعوة واحدة.
 They left their city… and hid in a cave with a single prayer.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -138,19 +138,19 @@ They left their city… and hid in a cave with a single prayer.
 **YouTube · Titre (75/100)**
 
 ```text
-They left their city… and hid in a cave! · سابوا مدينتهم… واستخبّوا في كهف!
+سابوا مدينتهم… واستخبّوا في كهف! · They left their city… and hid in a cave!
 ```
 
 **YouTube · Description**
 
 ```text
-Young men left their city and their homes to hide in a cave, because their people wanted to force them to worship idols. They went in with a single prayer. They did their part, and asked God for the rest.
-
 شباب سابوا مدينتهم وبيوتهم واستخبّوا في كهف، عشان قومهم كانوا عايزين يجبروهم يعبدوا أصنام. ودخلوا بدعوة واحدة… عملوا اللي عليهم، وطلبوا الباقي من ربنا.
 
-The People of the Cave · part 1/3 · أصحاب الكهف · الجزء ١ من ٣
+Young men left their city and their homes to hide in a cave, because their people wanted to force them to worship idols. They went in with a single prayer. They did their part, and asked God for the rest.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+أصحاب الكهف · الجزء ١ من ٣ · The People of the Cave · part 1/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -181,8 +181,8 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 **Facebook · Titre**
 
 ```text
-The sun turned away from them, every day!
 الشمس كانت بتميل عنهم!
+The sun turned away from them, every day!
 ```
 
 **Facebook · Description**
@@ -191,7 +191,7 @@ The sun turned away from them, every day!
 طلبوا رحمة… والإجابة جت في زاوية الشمس.
 They asked for mercy… and the answer came in the angle of the sun.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -203,8 +203,8 @@ They asked for mercy… and the answer came in the angle of the sun.
 **Instagram · Titre**
 
 ```text
-The sun turned away from them, every day!
 الشمس كانت بتميل عنهم!
+The sun turned away from them, every day!
 ```
 
 **Instagram · Description**
@@ -213,7 +213,7 @@ The sun turned away from them, every day!
 طلبوا رحمة… والإجابة جت في زاوية الشمس.
 They asked for mercy… and the answer came in the angle of the sun.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -227,8 +227,8 @@ Sur TikTok : la vidéo `kahf-short-2-sunpath-tiktok.mp4`, signée `@quran.words.
 **TikTok · Titre**
 
 ```text
-The sun turned away from them, every day!
 الشمس كانت بتميل عنهم!
+The sun turned away from them, every day!
 ```
 
 **TikTok · Description**
@@ -237,7 +237,7 @@ The sun turned away from them, every day!
 طلبوا رحمة… والإجابة جت في زاوية الشمس.
 They asked for mercy… and the answer came in the angle of the sun.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -249,19 +249,19 @@ They asked for mercy… and the answer came in the angle of the sun.
 **YouTube · Titre (66/100)**
 
 ```text
-The sun turned away from them, every day! · الشمس كانت بتميل عنهم!
+الشمس كانت بتميل عنهم! · The sun turned away from them, every day!
 ```
 
 **YouTube · Description**
 
 ```text
-Every day the sun rose and turned away from the cave where the young men slept, and set without touching them, while they lay in a wide space where the air kept reaching them. They had asked for mercy, and the answer came even in the angle of the sun.
-
 كل يوم الشمس تطلع وتميل عن الكهف اللي الشباب نايمين فيه، وتغرب من غير ما تلمسهم، وهما في مكان واسع والهوا واصلهم. طلبوا رحمة… والإجابة جت حتى في زاوية الشمس.
 
-The People of the Cave · part 2/3 · أصحاب الكهف · الجزء ٢ من ٣
+Every day the sun rose and turned away from the cave where the young men slept, and set without touching them, while they lay in a wide space where the air kept reaching them. They had asked for mercy, and the answer came even in the angle of the sun.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+أصحاب الكهف · الجزء ٢ من ٣ · The People of the Cave · part 2/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -292,8 +292,8 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 **Facebook · Titre**
 
 ```text
-309 years… and they thought it was a day!
 ٣٠٩ سنين… وفاكرينها يوم!
+309 years… and they thought it was a day!
 ```
 
 **Facebook · Description**
@@ -302,7 +302,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 ناموا تلتمية وتسع سنين… وصحيوا فاكرينها يوم.
 They slept three hundred and nine years… and woke up thinking it was a day.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -314,8 +314,8 @@ They slept three hundred and nine years… and woke up thinking it was a day.
 **Instagram · Titre**
 
 ```text
-309 years… and they thought it was a day!
 ٣٠٩ سنين… وفاكرينها يوم!
+309 years… and they thought it was a day!
 ```
 
 **Instagram · Description**
@@ -324,7 +324,7 @@ They slept three hundred and nine years… and woke up thinking it was a day.
 ناموا تلتمية وتسع سنين… وصحيوا فاكرينها يوم.
 They slept three hundred and nine years… and woke up thinking it was a day.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (5)**
@@ -338,8 +338,8 @@ Sur TikTok : la vidéo `kahf-short-3-awake-tiktok.mp4`, signée `@quran.words.da
 **TikTok · Titre**
 
 ```text
-309 years… and they thought it was a day!
 ٣٠٩ سنين… وفاكرينها يوم!
+309 years… and they thought it was a day!
 ```
 
 **TikTok · Description**
@@ -348,7 +348,7 @@ Sur TikTok : la vidéo `kahf-short-3-awake-tiktok.mp4`, signée `@quran.words.da
 ناموا تلتمية وتسع سنين… وصحيوا فاكرينها يوم.
 They slept three hundred and nine years… and woke up thinking it was a day.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (5)**
@@ -360,19 +360,19 @@ They slept three hundred and nine years… and woke up thinking it was a day.
 **YouTube · Titre (68/100)**
 
 ```text
-309 years… and they thought it was a day! · ٣٠٩ سنين… وفاكرينها يوم!
+309 سنين… وفاكرينها يوم! · 309 years… and they thought it was a day!
 ```
 
 **YouTube · Description**
 
 ```text
-The People of the Cave slept three hundred and nine years and woke up thinking it had been a day. Every morning, you too wake from a sleep: what the Prophet ﷺ said as soon as he woke.
-
 أصحاب الكهف ناموا تلتمية وتسع سنين، وصحيوا فاكرينها يوم. وإنت كمان كل يوم الصبح بتصحى من نومة: اللي كان النبي صلى الله عليه وسلم بيقوله أول ما يصحى.
 
-The People of the Cave · part 3/3 · أصحاب الكهف · الجزء ٣ من ٣
+The People of the Cave slept three hundred and nine years and woke up thinking it had been a day. Every morning, you too wake from a sleep: what the Prophet ﷺ said as soon as he woke.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+أصحاب الكهف · الجزء ٣ من ٣ · The People of the Cave · part 3/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```

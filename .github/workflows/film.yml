@@ -1,7 +1,9 @@
 name: film
 
 # Prepares and renders a film of the model (docs/model.md) and its shorts: the three shorts, their TikTok
-# versions, the film, the covers and the thumbnail, side by side in parallel jobs, into a DRAFT release
+# versions, the film, the covers and the thumbnails (the three-panel one and the dedicated ones, `thumbnail.options`
+# of the film's file: one clean scene of the film and two lines of hook; `only: thumbnail` renders those alone, no
+# video job, added to the draft), side by side in parallel jobs, into a DRAFT release
 # "<files>-candidate" that only the repository's owner sees (a try on a push: "<files>-workflow-test"). Until now this was done in an interactive
 # session, one video after the other (about 2.5 hours for a film and three shorts), because the filmed
 # clips are not in the repository.
@@ -37,11 +39,11 @@ on:
         required: true
         type: string
       voice:
-        description: "Narration voice label of the takes (content/trial/takes/<voice>-<text>.flac)"
+        description: "Narration voice label of the takes (content/trial/takes/<voice>-<text>.flac); X: no voice yet, the silent draft"
         default: D
         type: string
       only:
-        description: "all, shorts, film, tiktok, one short's id (it prepares only that short), tall (the film in 9:16 and its TikTok twin, in a draft release of their own), or tall-tiktok (the twin alone, added to that draft)"
+        description: "all, shorts, film, thumbnail (the film's dedicated thumbnails alone, `thumbnail.options` of its file: no video, added to the draft release), tiktok, one short's id (it prepares only that short) or several joined by commas (qitr,marah), tall (the film in 9:16 and its TikTok twin, in a draft release of their own), or tall-tiktok (the twin alone, added to that draft)"
         default: all
         type: string
       ambience:
@@ -93,13 +95,24 @@ jobs:
 
       - name: Check the inputs
         run: |
-          [[ "$FILM" =~ ^[a-z0-9-]+$ && "$ONLY" =~ ^[a-z0-9-]+$ && "$VOICE" =~ ^[A-Za-z]+$ ]] \
+          [[ "$FILM" =~ ^[a-z0-9-]+$ && "$ONLY" =~ ^[a-z0-9,-]+$ && "$VOICE" =~ ^[A-Za-z]+$ ]] \
             || { echo "::error::invalid film, only or voice"; exit 1; }
           test -f "content/trial/$FILM.yaml" || { echo "::error::no content/trial/$FILM.yaml"; exit 1; }
+
+      - uses: astral-sh/setup-uv@v7
+
+      # `only: thumbnail` of a film whose every thumbnail option is a drawn scene (`art`, never `at`) needs nothing
+      # of the film but its light data file (<film>.json: the options, the title): no clip, no take, no Whisper, no
+      # recitation. Then the heavy preparation below is skipped (videos.py --light); one `at` option keeps the full path.
+      - name: Is the preparation light?
+        id: light
+        run: |
+          echo "light=$(uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --only "$ONLY" --light)" >> "$GITHUB_OUTPUT"
 
       # Where the key is, without ever printing it (as voice-test does): a repository secret is what the
       # clip step reads; a repository *variable* of the same name is not a secret.
       - name: Is the Pixabay key there?
+        if: ${{ steps.light.outputs.light != 'true' }}
         env:
           AS_SECRET: ${{ secrets.PIXABAY_API_KEY != '' }}
           AS_VARIABLE: ${{ vars.PIXABAY_API_KEY != '' }}
@@ -111,11 +124,10 @@ jobs:
             exit 1
           fi
 
-      - uses: astral-sh/setup-uv@v7
-
       # No apt: the Ubuntu mirror can hang for an hour (voice-test, 2026-11-06). Static ffmpeg build from
       # imageio-ffmpeg (pip, pinned as in render.yml), put on PATH as "ffmpeg".
       - name: ffmpeg (static build)
+        if: ${{ steps.light.outputs.light != 'true' }}
         run: |
           uv venv .venv-tools
           uv pip install --python .venv-tools/bin/python imageio-ffmpeg==0.8.1
@@ -125,18 +137,21 @@ jobs:
           "$HOME/.local/bin/ffmpeg" -hide_banner -version | head -1
 
       - uses: actions/setup-node@v7
+        if: ${{ steps.light.outputs.light != 'true' }}
         with:
           node-version: 22
           cache: npm
           cache-dependency-path: video/package-lock.json
 
       - name: Video dependencies
+        if: ${{ steps.light.outputs.light != 'true' }}
         working-directory: video
         run: npm ci --no-audit --no-fund
 
       # clip.py, prepare.py and check.py call ffprobe, which imageio-ffmpeg does not ship. Remotion's package
       # has one (video/node_modules, after npm ci), run with its own libraries: no download from another host.
       - name: ffprobe (the one that ships with Remotion)
+        if: ${{ steps.light.outputs.light != 'true' }}
         run: |
           dir="$GITHUB_WORKSPACE/video/node_modules/@remotion/compositor-linux-x64-gnu"
           test -x "$dir/ffprobe" || { echo "::error::no ffprobe in $dir"; exit 1; }
@@ -177,6 +192,7 @@ jobs:
 
       # Whisper (faster-whisper, tools/audio/align.py) downloads its model here the first time.
       - name: Cache model weights
+        if: ${{ steps.light.outputs.light != 'true' }}
         uses: actions/cache@v6
         with:
           path: ~/.cache/huggingface
@@ -185,6 +201,7 @@ jobs:
       # What the sources and the ambience download once: the reciter's surah files (surah 2 is 110 MB),
       # the readings (archive.org), the field recordings (BigSoundBank).
       - name: Cache downloads
+        if: ${{ steps.light.outputs.light != 'true' }}
         uses: actions/cache@v6
         with:
           path: |
@@ -197,11 +214,15 @@ jobs:
       # timeline with the voice take of content/trial/takes/ (a take that exists is never asked for again:
       # no request is made to Gemini here). The film comes after: it reuses the shorts' takes and clips.
       - name: Clips and timelines of the shorts
+        if: ${{ steps.light.outputs.light != 'true' }}
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
           flags=()
           if [ "$AMBIENCE" != true ]; then flags+=(--no-ambience); fi
+          # Voice X: no take yet, the silent draft (each line timed from its length), to look at the shorts on their
+          # real clips the day before the voice (the owner, 2026-11-17: « prépare tout sans voix, demain la voix »).
+          if [ "$VOICE" = X ]; then flags+=(--draft); fi
           mkdir -p build/clips
           for id in $(uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --ids --only "$ONLY"); do
             echo "::group::$id"
@@ -216,8 +237,14 @@ jobs:
             echo "::endgroup::"
           done
 
+      # The light path: `prepare.py --film` with no voice and no takes writes <film>.json alone (the thumbnail options),
+      # and nothing else (tools/trial/film.py: « the thumbnail only »).
+      - name: Light data of the film (drawn thumbnails only)
+        if: ${{ steps.light.outputs.light == 'true' }}
+        run: uv run --with pyyaml python3 tools/trial/prepare.py --film "$FILM"
+
       - name: Timeline of the film
-        if: ${{ env.ONLY == 'all' || env.ONLY == 'film' || env.ONLY == 'tall' || env.ONLY == 'tall-tiktok' }}
+        if: ${{ steps.light.outputs.light != 'true' && (env.ONLY == 'all' || env.ONLY == 'film' || env.ONLY == 'thumbnail' || env.ONLY == 'tall' || env.ONLY == 'tall-tiktok') }}
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
@@ -428,7 +455,7 @@ jobs:
       # Listed again here, from the files, and not taken from the prepare job: with `from_run` it did not run.
       - name: The videos and stills expected
         run: |
-          [[ "$FILM" =~ ^[a-z0-9-]+$ && "$ONLY" =~ ^[a-z0-9-]+$ && "$VOICE" =~ ^[A-Za-z]+$ && "$FROM_RUN" =~ ^[0-9]+$ ]] \
+          [[ "$FILM" =~ ^[a-z0-9-]+$ && "$ONLY" =~ ^[a-z0-9,-]+$ && "$VOICE" =~ ^[A-Za-z]+$ && "$FROM_RUN" =~ ^[0-9]+$ ]] \
             || { echo "::error::invalid film, only, voice or from_run"; exit 1; }
           {
             echo "VIDEOS=$(uv run --with pyyaml python3 tools/trial/videos.py --film "$FILM" --voice "$VOICE" --only "$ONLY" --matrix)"

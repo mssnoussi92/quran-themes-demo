@@ -1,0 +1,83 @@
+# Adhkar à lire, sans voix, à enregistrer (demande du propriétaire, 2026-11-17 ; script validé par lui le même jour :
+# docs/scripts/adhkar-cards.md). Chaque dhikr est une carte (`card:`) : ses mots pris dans le registre (une partie du
+# hadith, son extrait), sa référence, sa traduction, le nombre de fois (nos mots) ; personne ne le lit, l'ambiance continue
+# dessous. Les sourates sont récitées par Tawfiq (jamais d'ambiance sous elles). Nos lignes : l'ouverture, la fin, les
+# étiquettes et les nombres. Clip et ambiance choisis par lui (le clip) ou proposés (l'ambiance, une de celles qu'il a validées).
+id: salat
+# « Je valide les trois » du propriétaire (2026-11-17, question à choix nommant les trois vidéos envoyées, rendues par le
+# workflow `film`, run 44192660389) : les cartes, les nombres, le clip, l'ambiance, la couverture, et les seize hadiths
+# proposés au registre. Le script l'était le même jour. Les textes à coller restent à valider. Inscrit sur sa parole.
+script_validated: { by: mssnoussi92, on: 2026-11-17 }
+validated: { by: mssnoussi92, on: 2026-11-18, what: [montage, cover, ambience, publish] }   # la vidéo le 2026-11-17 (« je valide les trois »), ses textes YouTube le 2026-11-18
+handle: "@quran_words_daily"
+voices: { X: "no voice: the adhkar are written to be read" }
+clip: { source: pixabay, id: 7215, author: quimuns, page: "https://pixabay.com/videos/id-7215/", take: { slow: 3 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.75, ground: "#05070f", horizon: 1330 }
+ambience: { source: bigsoundbank, id: "0659", title: "Wind in a Tree", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/wind-in-a-tree-s0659.html", from: 5, seconds: 110, level: -37 }
+cover: { scene: sky, title: "أذكار بعد الصلاة", tag: "من البخاري ومسلم والترمذي", focus: 1000 }
+publish:
+  title: { en: "Adhkar after prayer, from Bukhari, Muslim, Tirmidhi", ar: "أذكار بعد الصلاة… من البخاري ومسلم والترمذي" }
+  part: 1
+  hashtags: ["#أذكار_بعد_الصلاة"]
+  hook:      # légende courte de Facebook, Instagram et TikTok ; proposée par la session, validée par le propriétaire le 2026-11-17 (question à choix : « je valide les trois »)
+    ar: "أذكار بعد الصلاة… من البخاري ومسلم والترمذي بس. احفظها وارجعلها بعد كل صلاة."
+    en: "Adhkar after the prayer, only from al-Bukhari, Muslim and at-Tirmidhi. Save it for after every prayer."
+    validated: 2026-11-17
+  description:
+    ar: "أذكار بعد الصلاة المفروضة، من أحاديث صحيحة وحسنة بس: البخاري ومسلم والترمذي، كل ذكر بمصدره وعدد مراته. احفظ الفيديو وارجعله بعد كل صلاة."
+    en: "The adhkar after the obligatory prayer, only from hadiths graded sahih or hasan (al-Bukhari, Muslim, at-Tirmidhi), each with its source and how many times. Save it and come back to it after every prayer."
+segments:
+  - narration: open
+    silent: true
+    hold: 5.5
+    scene: sky
+    lines:
+      - ar: "أذكار بعد الصلاة… من البخاري ومسلم والترمذي."
+        en: "Adhkar after the prayer… from al-Bukhari, Muslim and at-Tirmidhi."
+      - ar: "احفظ الفيديو… وارجعله بعد كل صلاة."
+        en: "Save this video… and come back to it after every prayer."
+  - card: hadith.muslim.591
+    part: salam
+    scene: sky
+    label: "وقبلها: استغفر 3 مرات"
+    count: "مرة واحدة"
+  - card: hadith.bukhari.844
+    part: la-mani
+    scene: sky
+    count: "مرة واحدة"
+  - card: hadith.muslim.594a
+    part: tahlil
+    scene: sky
+    count: "مرة واحدة"
+  - card: hadith.bukhari.843
+    part: tasbih
+    scene: sky
+    count: "33 مرة لكل واحدة"
+  - card: hadith.muslim.597a
+    part: tamam
+    scene: sky
+    label: "وتمام المية:"
+    count: "مرة واحدة"
+  - narration: muawwidhat
+    silent: true
+    hold: 3.5
+    scene: sky
+    sources: [hadith.tirmidhi.2903]
+    lines:
+      - ar: "وبعد كل صلاة: الفلق والناس."
+        en: "And after every prayer: al-Falaq and an-Nas."
+  - verses: [quran.113.1, quran.113.2, quran.113.3, quran.113.4, quran.113.5]
+    scene: sky
+  - verses: [quran.114.1, quran.114.2, quran.114.3, quran.114.4, quran.114.5, quran.114.6]
+    scene: sky
+  - card: hadith.tirmidhi.3534
+    part: maghrib
+    scene: sky
+    label: "بعد المغرب"
+    count: "10 مرات"
+  - narration: close
+    silent: true
+    hold: 4
+    scene: sky
+    lines:
+      - ar: "احفظه… وارجعله بعد كل صلاة."
+        en: "Save it… and come back to it after every prayer."

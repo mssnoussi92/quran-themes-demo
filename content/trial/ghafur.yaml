@@ -14,10 +14,14 @@ script_validated: { by: mssnoussi92, on: 2026-11-15 }
 # l'épisode tel que livré (voix, montage, couverture, ambiance, textes) et ses sources, passées à `validated`. Inscrit sur
 # sa parole.
 validated: { by: mssnoussi92, on: 2026-11-15, what: [voice, montage, cover, publish, ambience] }
+# Audit du 2026-11-20 (docs/scripts/audit-apres-verset.md ; sa demande : « sur toute la vidéo, si on peut jouer une scène,
+# on la joue ») : validé par lui le même jour sur l'aperçu (questions à choix). La question et l'exemple joués (LaterPlayed, Played.tsx) ; la narration après le verset en
+# sous-titre. Scènes validées par lui sur images le 2026-11-21 (« Je valide tout le lot ») ;
+# la vidéo refaite validée par lui le 2026-11-21 (« Je valide sauf pour sual-1 vers 40 sec »).
 handle: "@quran_words_daily"
 voices: { D: "Gemini 3.8 Flash TTS, Algieba", X: "draft, no voice yet" }
 text: 69-trial-ghafur
-clip: { source: pixabay, id: 30850, author: adege, page: "https://pixabay.com/videos/id-30850/", take: { from: 0, seconds: 30, height: 1440, slow: 3 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.75, ground: "#05070f", horizon: 1300 }      # le soleil qui se lève sur une mer de brume, une seule fois sur tout le short : le retour ; approuvé par le propriétaire le 2026-11-15
+clip: { source: pixabay, id: 30850, author: adege, page: "https://pixabay.com/videos/id-30850/", take: { from: 0, seconds: 30, height: 1440, slow: 3 }, rate: 1, position: "50% 50%", shift: 0, brightness: 0.75, ground: "#05070f", horizon: 1300, landscape: { side: left, horizon: 700, brightness: 0.75 } }      # le soleil qui se lève sur une mer de brume, une seule fois sur tout le short : le retour ; approuvé par le propriétaire le 2026-11-15
 ambience: { source: bigsoundbank, id: "1880", title: "Campaign at Night #4", author: Joseph Sardin, licence: CC0, page: "https://bigsoundbank.com/campaign-at-night-4-s1880.html", from: 20, seconds: 110, level: -38 }
 cover:
   scene: pause

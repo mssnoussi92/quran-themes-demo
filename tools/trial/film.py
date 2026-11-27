@@ -76,6 +76,8 @@ def prepare(args) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     thumb = out_dir / f"{fid}.json"
     shown = {k: film["thumbnail"][k] for k in ("title", "tag", "panels")}
+    if film["thumbnail"].get("options"):           # the dedicated thumbnails (TrialThumbFrame, 2026-11-21)
+        shown["options"] = film["thumbnail"]["options"]
     thumb.write_text(json.dumps({"title": film["title"], "handle": film["handle"], "thumbnail": shown}, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{thumb.relative_to(P.ROOT)}: thumbnail of the film ({', '.join(film['thumbnail']['panels'])})")
     if args.draft:
@@ -117,15 +119,25 @@ def prepare(args) -> None:
             wav = out_dir / f"{fid}-{args.voice}-{n:03d}.wav"
             if "reuse" in seg:
                 name, narration = seg["reuse"].split(".")
-                made = take(name).segment(narration, seg.get("lines"), wav)
+                own = next((s for s in trial(name)["segments"] if s.get("narration") == narration), None)
+                if own is not None and own.get("silent"):
+                    # A line written on screen and never said (the opening card of « وتحسبونه هيّنًا »): no take to cut,
+                    # timed from its length and its `hold`, as the short does (prepare.py).
+                    lines = [l for i, l in enumerate(own["lines"]) if seg.get("lines") is None or i in seg["lines"]]
+                    made = P.narration(None, *P.place([l["ar"] for l in lines], None), 0, lines, Path("-"))
+                    if own.get("hold") and made["seconds"] < own["hold"]:
+                        made["seconds"] = made["lines"][-1]["end"] = float(own["hold"])
+                    made["silent"] = True
+                else:
+                    made = take(name).segment(narration, seg.get("lines"), wav)
             elif "narration" in seg:
                 made = takes[fid].segment(seg["narration"], None, wav)
             elif "verses" in seg and recited is None:
                 # Verses recited in one piece, or one verse cut at a pause sign (`upto`), as in a short: the film of
                 # the cave stops 18:21 before the building over them (tafsir.muyassar.18.21).
-                made = sources.passage(seg["verses"], out_dir, seg.get("upto"))
+                made = sources.passage(seg["verses"], out_dir, seg.get("upto"), film.get("digits"))
             elif "verse" in seg:
-                made = P.verse_segment(recited, seg["verse"], out_dir, episode_name) if recited is not None else sources.verse(seg["verse"], out_dir)
+                made = P.verse_segment(recited, seg["verse"], out_dir, episode_name) if recited is not None else sources.verse(seg["verse"], out_dir, film.get("digits"))
             elif read is None:
                 made = sources.reading(seg["reading"], out_dir, draft=args.draft, part=seg.get("part"))
             else:

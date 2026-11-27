@@ -269,6 +269,8 @@ Le propriétaire (2026-11-11) : il a validé ce qui existe **par rapport aux opt
 
 125. **Les films verticaux sur TikTok, signés du nom de la page là-bas** (propriétaire, 2026-11-16 et 17). Il a publié le film du du'a le 16 au soir sur YouTube, Facebook et TikTok ; le film vertical posté sur TikTok y est signé `@quran_words_daily`, le compte de quelqu'un d'autre sur TikTok (la page s'y appelle `@quran.words.daily`). **Son choix** (question à choix : « version TikTok pour les suivants ») : le post du du'a reste tel quel (le supprimer perdrait ses vues) ; les films suivants ont un jumeau TikTok, comme les shorts. **Fait** : `FilmTall` prend `platform` (le nom lu dans `handles` de `content/publish.yaml`, que `film.py` met dans la timeline du film) ; `videos.py --only tall` liste le film vertical et son jumeau `<files>-film-9x16-tiktok`, `--only tall-tiktok` le jumeau seul (un film vertical validé n'est pas re-rendu) ; le workflow `film` traite `tall-tiktok` comme `tall` (timeline, textes, release `<files>-9x16-candidate`) ; `publish.py --tall` nomme le jumeau sur la ligne des fichiers et écrit sa légende TikTok (titre, accroche et voix IA, hashtags) dès que le fichier du film a `tall.tiktok`. Rendus par le workflow `film` (runs 43994292241 et 43994296966) : Dhul-Qarnayn 8:25 et la caverne 6:11, -16,2 et -16,1 LUFS, signature lue de près sur une image (en haut et dans le rappel « تابعنا »), fin avec le nom en grand ; envoyés. **« Je valide les deux »** (2026-11-17, question à choix nommant la vidéo et la légende TikTok) : `tall.tiktok.validated` de `qarnayn.yaml` et `kahf.yaml`. TikTok ajouté aux lignes du 23 et du 30 novembre du calendrier ; `page-files` relancé pour `qarnayn-9x16` et `kahf-9x16`. La légende TikTok d'un film a quatre hashtags, pas cinq : le film n'en a que deux à lui (les mêmes que sur YouTube), aucun n'est ajouté pour remplir.
 
+126. **Une série « وتحسبونه هيّنًا » : la ghiba, la namima, le riya'** (propriétaire, 2026-11-17 : « explorer une nouvelle série… حسناتك ممكن تمشي لحد انت اغتبته ; bien choisir le hook et bien créer une situation »). Fiche (`docs/themes.md`) : son idée repose sur Bukhari 2449 et al-Qurtubi sur 49:12, pas sur le « المفلس » (Muslim 2581), qui ne nomme pas la ghiba, d'où « ممكن » ; le riya' n'est pas un péché de la langue, d'où le fil de 24:15 ; deux pièges dits (le riya' est l'intention, pas d'être vu ; la namima est de semer la discorde). Ses quatre choix (questions à choix) : le titre et la forme (trois shorts, sans film), les trois ouvertures recommandées, les scripts tout de suite. Fait : 16 sources proposées, coupes de récitation, deux lectures de Bukhari, trois scripts (`docs/scripts/hayyin.md` : 2:08, 1:26, 1:53), aucune voix. Puis, le même soir : les images de style à sa demande (`video/src/trial/Hayyin.tsx`), **le script validé** (« je valide le script, tu peux commencer le rendu sans voix »), le rendu sans voix (run 44178359076, release brouillon `hayyin-candidate` : 2:10, 1:28, 1:55), **validés par lui** : le montage, les dessins, les couvertures, les trois accroches et les deux lectures ; la voix le 19 novembre (son choix). Le 19 : trois requêtes de voix (textes 102 à 104), ambiances (un café, la nuit, la nuit après la pluie), rendu (run 44484912562 : 2:06, 1:23, 1:46) ; **validés par lui** : la voix, les ambiances et les seize sources ; en réserve, placé à la revue après les mesures (son choix).
+
 ## Arborescence (telle qu'elle était décrite le 2026-11-11, ancien circuit compris)
 
 ```
@@ -551,6 +553,481 @@ Pour que le propriétaire **écoute** un audio, ne le laisse pas dans la session
   publics : `page-qadar`, `page-qadar-9x16` (workflow `page-files`).
 - **Ce qui est publié sort de sa page** : la session a signalé que la page était de nouveau presque pleine (242 Mio sur
   256) et proposé d'en retirer le du'a et Dhul-Qarnayn une fois tous leurs shorts publiés. **Sa réponse** : « oui je suis
-  d'accord, tu supprimes après publication ». Règle écrite dans `CLAUDE.md` et le skill `release-render` (§7) ; le du'a
-  après le 19 novembre, Dhul-Qarnayn après le 26 (la session avait écrit « le 25 » : son dernier short est le jeudi 26).
+  d'accord, tu supprimes après publication ». Le du'a après le 19 novembre, Dhul-Qarnayn après le 26 (la session avait
+  écrit « le 25 » : son dernier short est le jeudi 26). Le lendemain, une autre session a fait de même pour toute la page,
+  à sa demande (« supprimer ceux qui sont publiés ») : une date barrée en sort d'elle-même (`published_off`).
+
+## « معاك 5 ثواني », le quiz ; les chiffres 123 ; al-Qurtubi pour le fiqh (2026-11-17)
+
+- **Sa demande** : un nouveau type de short, un jeu pour faire commenter (un QCM sur le sens d'un mot avec un compteur, ou
+  une ayah à compléter), « ton avis d'abord ». Avis de la session : oui, il vise ce qui manque (Instagram : 1 commentaire
+  pour 29 publications) et le départ à 4-8 s ; contredit : pas de faux mot dans un verset (la fin d'un verset, de vrais
+  noms, le récitateur donne la réponse), aucune mauvaise réponse inventée, 5 s et non 10, pas de « اكتب إجابتك » (Meta
+  le diffuse moins), un pilote et pas une série tant que rien n'est mesuré. **Ses choix** : les trois formats A, B, C, une
+  question par short, une phrase de voix, une vraie question ouverte, le nom « معاك 5 ثواني », environ 40 s.
+- **Script validé** (shorts 1 à 3), le fils d'Adam nommé هابيل à sa demande (al-Muyassar sur 5:28). Fait le même jour :
+  quatorze sources proposées, quatre récitations coupées, `Quiz.tsx`, `tools/trial/quiz.py`, le tic `count`, brouillons
+  (0:42, 0:49, 1:22), le short 1 envoyé sans voix ; clips choisis par lui. La voix attend le lendemain (palier gratuit
+  presque épuisé par deux autres sessions). PR #44 fusionnée avec la règle des chiffres.
+- **Les chiffres** (sa règle, « à mémoriser pour toutes les sessions ») : 123, jamais ١٢٣, partout sauf le numéro qui ferme
+  une ayah dans le texte coranique (son choix) ; dans `CLAUDE.md` des deux dépôts, appliquée aux références, textes à
+  coller, badges, dates et chapitres ; quran-reels : la ligne de série du dimanche (PR #76).
+- **Au-delà du verset** (sa demande : « ne te limite pas au Coran, il faut voir le tafsir et le fiqh si besoin ») :
+  al-Qurtubi entre dans la politique pour le fiqh (son choix) ; un statut n'est une réponse de quiz que sans divergence ;
+  écrit dans le skill `write-hook`.
+- **Trois autres quiz** (sa demande : « prépare 3 autres quiz sans voix, et demain matin tu envoies les 6 voix ») : `dabba`
+  (34:14), `sabr` (12:83), `hudhud` (27:22), un par format ; scripts validés par lui (questions à choix) ; dix-neuf sources
+  proposées, quatre récitations coupées (34:14 jusqu'à « منسأته », 12:83, 27:22, 27:27) ; textes de voix 89 à 91 ; le
+  montage gagne la référence sous un mauvais choix vrai ailleurs (`note`) et `at_once` (la question entière sur la première
+  image : un « … » la partageait en deux temps) ; dessins : la canne et les arcs, la lumière qui monte, la huppe. En réserve
+  (son choix), placés à la revue après les chiffres du premier quiz.
+  Brouillons muets envoyés (la huppe reposée sur sa branche après un premier rendu) ; **validés par lui** : rendu, clips
+  (8451, 2119, 16139), 27:27 récité au short 6, les trois accroches. Voix des six quiz le 2026-11-18.
+- **Les six quiz avec voix** (2026-11-18) : une requête prise par une autre session ce matin-là, puis les six voix en une
+  fois (run 44269152104 de `voice-test`) ; toutes les phrases retrouvées par Whisper (82 % au plus bas, « فاكرينه عايش »,
+  signalé à son oreille) ; rendu par le workflow `film` (run 44270232504, release brouillon `quiz-candidate` : 0:37, 0:48,
+  1:23, 0:59, 0:58, 1:01, −16 LUFS), contrôlé sur les planches, envoyé. **Validé par lui** (questions à choix) : la voix,
+  les couvertures et l'ambiance des six, puis les textes à coller (`docs/retention/publication-quiz.md`). Les sources
+  restent proposées.
+
+## Une série éducative, « إزاي أعملها؟ » ; une source de fiqh dans la politique (2026-11-17)
+
+- **Demande du propriétaire** : explorer une série éducative qui garde un début fort, par exemple سجود السهو. La session
+  (skill `choose-format`) : le début d'une série éducative tend vers la leçon d'abord, ce que les mesures punissent ; règle
+  proposée, un fait tiré d'un texte ou l'erreur en mouvement d'abord. Le vrai risque était le fiqh : les hadiths placent les
+  deux prosternations avant et après le salam, les écoles diffèrent, la politique n'avait aucune source pour le dire.
+- **Ses choix** (questions à choix) : élargir à une source de fiqh et dire les avis des écoles quand elles diffèrent ; des
+  shorts sans film, des scènes et un montage nouveaux, au moins un short « comment faire » (« souvent j'oublie comment
+  faire si j'oublie dans la salat ») ; tout produire maintenant (il revient sur « mesurer d'abord », 2026-11-16).
+- **La source** : la Encyclopédie de fiqh koweïtienne, lue depuis la session sur turath.io (livre 11430, pagination de
+  l'imprimé ; article « سجود السهو », vol. 24, p. 234-241). Dans la politique pour tout le dépôt, avec la règle des quatre
+  écoles (`content/policy.yaml`, `fiqh`).
+- **Le pilote** (`docs/scripts/sahw.md`) : `sahun`, `khams`, `nasit` (le « comment faire »), `shakk` ; Dhul-Yadayn écarté
+  (les pages lues ne donnent pas les quatre avis pour ce cas). Script validé sans la ligne « اعمل بالمذهب اللي بتتّبعه »
+  (un conseil de la session, retiré à sa demande) ; montage validé sur quatre images (`docs/retention/sahw-style*.jpg`),
+  les nombres en 1 2 3.
+
+### « إزاي أعملها؟ » produite, corrigée, validée, au calendrier (2026-11-17 et 18)
+
+- **Produit** : sources (dont six pages de l'Encyclopédie koweïtienne, type `fiqh` construit par un agent et relu ligne à
+  ligne), lectures de Muslim 571a et 572a (Ryadussalihin.org), coupes de Tawfiq As-Sayegh (107:4-5 et 114:4, 114:6 posées à la
+  main), dessins (`Sahw.tsx`), voix (trois prises le 17, celle de `shakk` le 18 : le quota du 17 était épuisé), rendus par le
+  workflow `film`, un short à la fois.
+- **Ses corrections** (questions à choix) : le sujud (genoux en l'air, tête hors du tapis) refait articulation par articulation
+  et la silhouette ancrée sur ses genoux ; deux coquilles de la traduction anglaise corrigées dans le sous-titre seulement,
+  notées au registre (`en_corrections`) ; rien d'ajouté sur ce qu'on dit dans les deux prosternations (l'encyclopédie n'en dit
+  rien ; « سبحان من لا ينام ولا يسهو » : Ibn Hajar, « لم أجد له أصلًا », pas mentionné, son choix).
+- **Validé par lui** : les trois premiers shorts et leurs sources le 17, `shakk` et ses sources, les quatre accroches et les
+  textes à coller le 18. **Au calendrier** du lundi 4 au jeudi 7 janvier (son choix).
+- **Fusion avec `main`** (le quiz et le film « مخيّر ولا مسيّر؟ » d'une autre session) : la règle « 1 2 3 » vaut désormais
+  partout, l'option `digits: latin` de cette série ne change plus rien ; le registre reconstruit depuis `main` avec les
+  entrées de cette branche.
+- **Sa page** (« Films et shorts à publier », son accord du 2026-11-18) : le quiz ajouté, ses six shorts. Sans retélécharger
+  les films déjà en ligne : pour eux, des vidéos-témoins de la bonne durée (lue dans leurs textes) et des images-témoins ;
+  `gallery.py` refait la page, et seuls `index.html` et les douze médias du quiz sont envoyés (les 92 autres restent).
+
+## Sa page sans ce qui est publié (2026-11-18)
+
+- **Sa demande** : « mettre à jour la page et supprimer ceux qui sont publiés ; pour info, du'a short 1 est publié ». Le
+  short 1 du du'a est barré dans le calendrier (mardi 17), après le film du 16.
+- **Fait** : `gallery.py` laisse hors de la page chaque vidéo d'une ligne barrée du calendrier, sa carte et ses médias
+  (`published_off`) ; un film ou une série dont tout est publié en sort ; la ligne reste, barrée, sans lien. Le lien d'un
+  film dit ce qui reste (« 2 shorts (le film 16:9 est publié) »). Test : `test_a_published_video_leaves_the_page`.
+  Retirés le 18 : le film du du'a, son film vertical et son short 1 (les médias du film vertical étaient déjà partis).
+- **Le quiz et le film « مخيّر ولا مسيّر؟ »**, ajoutés à la page par d'autres sessions, y restent : refaits ici avec des
+  vidéos-témoins de la bonne durée (lue dans leurs textes), comme l'avait fait la session du quiz ; seule la page est
+  envoyée, leurs médias restent ceux qu'elles ont mis. Les liens des releases brouillon sont relus (ceux des films
+  verticaux de Dhul-Qarnayn et de la caverne avaient changé avec leur version TikTok).
+
+## La page test Meta « معاك 5 ثواني » et ses trois quiz (2026-11-18)
+
+- **Sa question** (session quran-reels) : les premières statistiques sont-elles bonnes, et faut-il de nouvelles pages
+  pour ne laisser que le Coran sur la Page ? Avis de la session : l'écart n'existe que sur YouTube (un short thématique
+  279 vues contre 904 pour un reel), probablement par la durée ; sur Instagram un short thématique fait autant qu'un reel
+  (132 contre 142). **Ses choix** : une seule Page, la décision à la revue du 6 décembre ; la version courte de
+  Dhul-Qarnayn aussi sur YouTube (quran-reels, PR #78).
+- **Puis son doute sur Meta** : une page test. La session l'a déconseillée (le point faible de Meta, 72 % partis avant 3 s,
+  est le même partout) et a refusé la même vidéo sur deux pages (Meta réduit la diffusion des copies). **Son choix** :
+  l'essai propre, les quiz 4 à 6 (en réserve) sur une page neuve, « معاك 5 ثواني » (Facebook et Instagram,
+  `@ma3ak.5.thawani`), le jour et l'heure des quiz 1 à 3 sur l'Instagram de la Page. Protocole : `docs/insights.md` de
+  quran-reels (PR #79).
+- **Fait** : sa photo de profil, sa couverture Facebook et sa bio (validées par lui) ; les quiz 4 à 6 rendus signés du
+  nom de la page test (`handles.ma3ak` de `content/publish.yaml`, `elsewhere` de `quiz.yaml`, `videos.py --only ma3ak`,
+  une couverture prend `platform` comme la vidéo ; PR #57, run 44375756327 : 0:58, 0:58, 1:01, −16 LUFS), contrôlés sur
+  leurs planches, envoyés ; **validés par lui le 2026-11-18**, numéros 4, 5 et 6 gardés (son choix). Ses textes : ceux
+  des « Short 4 » à « Short 6 » de `publication-quiz.md`, tels quels.
+
+## Un quiz par jour sur la page test : les quiz 7 à 13 (2026-11-18 et 19)
+
+- **Sa demande** (2026-11-18, après avoir publié le quiz 4 sur la page test) : produire d'autres épisodes pour en publier un
+  par jour, comparer le 23 quand les deux pages publient, et ôter le numéro d'épisode des prochains rendus. **Ses choix** :
+  sept quiz, du 21 au 27 novembre ; les quiz 5 et 6 refaits sans numéro (un chronomètre à sa place, PR #59) ; un dessin pour
+  chaque épisode ; les trois formats en alternance.
+- **Fait le 18** : une série à part, `ma3ak` (`content/trial/ma3ak.yaml`, signée `@ma3ak.5.thawani` par son `handle`), pour
+  que son rendu ne touche aucune vidéo validée du quiz ; sept scripts (`docs/scripts/quiz.md`), **validés par lui** (le quiz 13
+  avec 20:39 récité entier, son choix) ; registre (18 versets, 28 passages de tafsir, proposés), coupes de Tawfiq As-Sayegh
+  (80:28-30 posées à la main sur l'enregistrement, une seule respiration), dessins dans `Quiz.tsx` (le barrage et le cuivre,
+  le chemin, les braises qui s'éteignent, les plantes et le bétail, la salle de prière, le puits et les moutons, le fleuve et
+  le coffre) ; brouillons muets (run 44391880850) refaits une fois (le 13 montrait la mer, contraire à sa réponse) ; **clips et
+  dessins validés par lui**. `rules.py` a refusé deux fois un tafsir qui expliquait un verset non récité : remplacés.
+- **La voix, le 19** : quatre requêtes (run 44485664240), passées alors que deux autres sessions en avaient fait sept ce matin-là
+  (la limite du jour semble au-dessus de 10). Un run de voix en annulait un autre en cours (`cancel-in-progress`) : la prise
+  déjà faite était perdue et comptée ; désormais le second attend. Chaque phrase retrouvée (91 % ou plus) ; « سقى لهم » et
+  « قصر » sont dits à l'égyptienne (entendus « سألهم », « أصر »). **Quiz 9** : la voix semble dire « بردًا وسلامًا » (les
+  tanwin de 21:69) là où le texte dit « برد وسلام » ; la session proposait de refaire la prise voyellée ; **son choix : la
+  garder**.
+- **Le rendu** (run 44487100813) : sept vidéos de 0:46 à 1:08, −16,1 à −16,5 LUFS, sans jumeau TikTok (`platforms` d'une série :
+  la page test n'est que sur Meta ; `publish.py` n'écrit que ses textes, signés de son nom). Deux défauts vus sur les planches
+  et corrigés : la queue du « م » de « ٱلْيَمِّ » touchait sa référence (un mot qui finit par une lettre qui descend est écrit
+  plus haut, sa référence 48 px plus bas ; vérifié sur une image rendue dans la session avant le run 44491699532) ; le titre de
+  la couverture du 11, à moitié de la taille des autres, sur deux lignes (`\n` dans un titre de couverture, run 44490586411).
+  `only` du workflow `film` prend plusieurs shorts séparés par des virgules.
+- **Validés par lui le 2026-11-19** (« je valide les 7 vidéos », « je valide les 7 textes ») : voix, couvertures, ambiance,
+  montage, titres, accroches et hashtags (`docs/retention/publication-ma3ak.md`). Sources encore proposées.
+
+## La page test publiée seule, chaque jour à 18 h (2026-11-19)
+
+- **Sa demande** : « J'ai ajouté le token meta pour la nouvelle page META_PAGE_TOKEN_5. Je veux que tu commences la
+  publication automatique chaque jour à 18h et avec ce token tu peux suivre les stats. » **Son choix** (question à choix) :
+  dès ce soir, avec le quiz 5 (la session recommandait le 21, avec le quiz 7, pour avoir de la marge).
+- **Fait ici** (PR #63) : `docs/retention/calendar-ma3ak.md`, au format de `calendar.md` (quiz 5 le 19 → quiz 13 le 27,
+  puis « à faire ») ; `publish.py --elsewhere ma3ak` écrit `publication-quiz-ma3ak.md`, les textes validés des quiz 4 à 6
+  mot pour mot, pour leurs fichiers signés `@ma3ak.5.thawani` (Facebook et Instagram) ; `page-files` prend
+  `<doc>:<draft>` : `page-quiz-ma3ak` vient de `quiz-candidate`. Fichiers publics vérifiés octet par octet contre ceux
+  qu'il a validés.
+- **Fait dans quran-reels** (PR #82) : `themes.yml` avec `page: ma3ak` (une étape qui n'a que ce jeton, son état, son
+  ticket d'échec), `config/themes-ma3ak.yaml` (18:00 chaque jour), statistiques dans `insights-ma3ak.json` ; une tâche
+  planifiée à 17:41 dans la session planificateur. **Premier essai à blanc** : Facebook propre, Instagram introuvable (le
+  compte n'était pas relié à la Page dans le jeton) ; il a relié @ma3ak.5.thawani et refait le jeton en suivant les
+  étapes données ; **second essai à blanc propre sur les deux** (droits : aucune correspondance).
+
+## La Page à 18 h aussi (2026-11-19)
+
+- **Sa demande** : « Je veux modifier la publication automatique pour la page principale pour être aussi à 18h ». **Son
+  choix** (question à choix) : les vidéos thématiques (19 h → 18 h, du lundi au samedi, à partir du 23 novembre) **et** le
+  reel des séries du dimanche soir (19 h 30 → 18 h). Le reel du matin ne bouge pas. Avis donné : aucun chiffre ne dit si
+  18 h fait mieux que 19 h (19 h au Caire) ; le gain sûr est la comparaison avec la page test, à la même heure.
+- **Fait** : quran-reels PR #83 (`config/themes.yaml`, `config/schedule.yaml`, docs) ; les tâches du planificateur à
+  17 h 40 (la Page) et 17 h 42 (la page test, juste après) ; ici `calendar.md` (le paragraphe de l'heure, la ligne du
+  quiz du lundi) et CLAUDE.md.
+
+
+## Les visages permis pour les inconnus (2026-11-19)
+
+- **Sa décision**, en réponse à l'analyse de trois shorts de la chaîne « STICK TO IT » (des bonshommes, la même situation
+  rejouée, deux issues ; le plus vu, « Fake Friend vs Real Friend », 2,6 M vues, repose sur les visages) : « j'autorise les
+  visages pour les inconnus, et si nécessaire pour montrer la différence ». La règle du 2026-11-15 (une silhouette ou un
+  bonhomme sans visage pour un anonyme) devient : un visage simple (yeux, sourcils, bouche) quand l'expression porte la
+  différence, sans visage sinon ; rien ne change pour les prophètes, les Compagnons, les personnes connues et les gens
+  d'un récit du Coran ou d'un hadith, jamais dessinés.
+- **Fait** : CLAUDE.md, `docs/model.md`, skills `new-scene`, `new-theme`, `choose-format`. Sa deuxième demande, explorer les
+  sujets qui se font dans ce style, lui est envoyée dans la conversation ; la fiche entre dans `docs/themes.md` après son
+  choix. L'analyse des trois shorts entre dans `reference/` quand il les aura envoyés filmés (YouTube refuse le
+  téléchargement depuis la session).
+
+## Le style des bonshommes : l'analyse, puis un pilote de trois shorts (2026-11-19)
+
+- **L'analyse** de trois shorts de la chaîne « STICK TO IT », d'après ses enregistrements d'écran :
+  `reference/stickman-shorts-analysis.md` (PR #67). Celui des amis a fait 40 à 80 fois mieux que les deux autres.
+- **Ses choix (questions à choix)** : un pilote de trois shorts sur les hadiths de la fraternité (`الجليس`, `زي ما تحب
+  لنفسك`, `انصره ظالمًا`), sans narration, dans un décor dessiné à part ; les sujets à compteur en réserve. Fiche :
+  `docs/themes.md`. Le script (les moments, les étiquettes, les lignes de fin) lui est envoyé avant tout dessin.
+- **Validés le même jour** : le nom « الصاحب ساحب » et les trois scripts (`docs/scripts/sahib.md`), `yuhibb` fini sur
+  le fragment de 59:9 (« ويؤثرون… »), que la session jugeait nécessaire : sans lui, ce short, le plus doux des trois, n'a
+  pas de chute.
+- **Puis, le même jour** : les neuf sources au registre (proposées), les trois lectures trouvées dans `bukhari_audiobook`
+  et coupées sur les paroles du Prophète ﷺ, les images de style (`video/src/trial/Sahib.tsx`, `SahibStyle`). **Validés par
+  lui** (questions à choix) : le style, et les trois lectures.
+- **59:9 changé** : le fragment validé (« ويؤثرون… خصاصة ») commençait au milieu d'une phrase, sans signe de pause ; la
+  session l'a dit, son choix : réciter le verset du début jusqu'à « خصاصة ۚ » (≈ 25 s ; `yuhibb` passe à environ 1:15).
+- **Sa règle, juste après : « ne jamais couper ayah au milieu »** (un verset se récite toujours entier). La session a dit
+  ce qu'elle touchait (21 récitations de 18 shorts validés, arrêtées à un signe de pause) ; ses choix (questions à choix) :
+  désormais seulement, le stock reste ; 59:9 entier ; 9:71 entier à la place de 5:2 (67 s). Fait : CLAUDE.md,
+  `docs/model.md`, `tools/trial/rules.py` refuse `upto` hors des 18 shorts d'avant (`CUT_BEFORE_THE_RULE`, et ses tests),
+  le registre (5:2 et son Muyassar remplacés par 9:71), les coupes de Tawfiq (43:67, 59:9, 9:71 ; celle de 5:2 retirée).
+  La nouvelle ligne de sens de `nasr` sur 9:71 (« المؤمنين أنصار بعض… بيأمروا بالخير، وبيمنعوا بعض عن الغلط. ») **validée par
+  lui** le même jour.
+
+## « الصاحب ساحب » : la production (2026-11-19)
+
+- **Sa demande** : « oui continue », après les scripts, le style, les lectures et les versets entiers validés.
+- **Fait** : un segment sans texte (`pause` : un moment joué sans un mot, l'ambiance continue dessous ; prepare.py,
+  Trial.tsx, rules.py, script.py, tests) ; les fichiers de la série (`content/trial/sahib.yaml`, `jalis`, `yuhibb`, `nasr`) ;
+  l'animation (`video/src/trial/Sahib.tsx` : les décors tirés des images de style, chaque moment dessiné aux secondes de
+  sa scène, l'étiquette du moment dans un calque au-dessus du voile, l'appel au partage sur une scène à lui) ; des bruitages
+  faits de bruit, sans note (`tools/trial/sfx.py` : braise, scintillement, bouffée, bulle, vibration, moteur, pièces) ;
+  deux ambiances de rue de BigSoundBank (CC0 ; Whisper n'y entend aucune parole) ; la voix déclarée absente, comme les
+  adhkar (voix `X`, « بدون صوت راوي »). Trois brouillons rendus dans la session, regardés image par image et corrigés (le
+  serveur derrière la table, la lanterne et le panneau du bus sous les textes, le rire écrit en arabe), puis le rendu par
+  le workflow `film` (voix X).
+- **Livré, corrigé, validé (2026-11-19)** : ses corrections (questions à choix) : les débuts des lectures de Bukhari 13 et 2444
+  (la session avait laissé le « قال » du lecteur et la fin de son « وسلم » ; Whisper l'entendait, la session l'avait pris pour
+  une erreur de reconnaissance), et une affiche plus parlante (« فرصة شغل », une mallette). Rendus de nouveau, vérifiés
+  (Whisper entend « لا » et « انصر » en premier), envoyés ; **tout validé par lui** : titres, descriptions, accroches, les neuf
+  sources, les trois vidéos. En réserve, placés à la revue avec les mesures de « بص تاني » (son choix).
+
+## « آية وحكايتها » : moins de paroles après le verset, l'exemple joué (2026-11-20)
+
+- **Sa remarque**, le jour où le short 1 (la caravane) est publié par quran-reels : « après le verset on parle trop et
+  l'écran est presque le même, et on écrit ce que le narrateur dit… on peut se limiter à dire رَبّنا هو الرازق et enchaîner
+  par l'exemple de vie, mais il faut créer la situation dans l'écran avec les personnes avec visage ».
+- **Ce que la session a vu** : une planche du short 1 (le même minbar de 0:03 à 1:35, seul le texte change ; le récit dit
+  trois fois ; 23 s après le verset sur une image) ; les chiffres des shorts thématiques publiés (durée moyenne regardée :
+  Facebook 4 à 8 s, Instagram 8 à 13 s, YouTube 45 à 62 %). **Son avis, franc** : d'accord sur le diagnostic ; garder la
+  ligne sur les Compagnons (elle les défend et amène l'exemple) ; des visages seulement dans l'exemple, jamais pour une
+  personne du récit ; le texte réduit en sous-titre plutôt que supprimé (on regarde souvent sans le son) ; et sa correction
+  aide surtout YouTube : sur Facebook et Instagram on part avant le verset, c'est le début qui compte.
+- **Ses choix** (questions à choix) : les 3 shorts restants de la série (le short 1, publié, reste tel quel) et la même règle
+  pour tout nouveau script (skill `write-hook`, « After the verse ») ; la narration en sous-titre ; l'ouverture inchangée.
+  Puis, sur l'aperçu de chaque short, **les coupes et la scène jouée validées** (« Je valide » × 3) : `duha` 4 répliques
+  coupées (« ما كنتش تعرف الكتاب… » gardée pour « وَوَجَدَكَ ضَالًّا »), `hope` 3, `forgive` 3 (la réponse d'Abou Bakr et sa
+  limite d'Ibn Kathir restent).
+- **Fait** : `drop` dans le fichier d'un short (ce qui sort de toutes les versions, la prise gardée : aucune requête de voix ;
+  prepare.py, script.py, rules.py, tests) ; `caption` du layout (Trial.tsx) ; trois décors joués dans le style des bonshommes
+  (`video/src/trial/AyahPlayed.tsx` : la du'a et les nuits qui passent ; la porte de la mosquée ; les paroles dans le dos
+  puis la bourse tendue), un visage de plus (`cross`, Sahib.tsx). Images fixes rendues dans la session, regardées, corrigées
+  (l'homme plus grand que la porte, le tapis sous le sous-titre, la lune, les mains de la du'a), envoyées : **les trois scènes
+  et le sous-titre validés par lui** ; l'appel à s'abonner reste en grand (son choix). Rendu par le workflow `film`
+  (`only: duha,hope,forgive`, voix D, ajouté à la release brouillon `ayah-candidate`).
+
+
+## L'audit des vidéos à venir : tout jouer quand on peut, validé vidéo par vidéo (2026-11-21)
+
+- **Sa demande** (2026-11-20) : auditer les vidéos thématiques du calendrier, par date de publication, avec la règle « après
+  le verset », et jouer une scène partout où on le peut, sur toute la vidéo, la caravane comprise ; l'audit et ses choix,
+  lot par lot : `docs/scripts/audit-apres-verset.md`. Images fixes de chaque lot validées par lui, puis chaque vidéo rendue,
+  contrôlée sur sa planche et à −16 LUFS, envoyée, **validée par lui** (questions à choix) : « آية وحكايتها » 1 à 4, la
+  caverne 1 à 3, Dhul-Qarnayn 1 à 3 et leurs versions courtes (le 3 refait sans « والسد وقف؟ », sa correction : une coupe
+  dans le verset), « سنريهم آياتنا » 2 à 5, « كلمة من القرآن » 1 à 3, « خريطة كلمة » 1 à 3, « بص تاني » 2,
+  « لاحظت الفرق؟ » 1 à 3, « سؤال صعب » 1 à 3, « بص تاني » 1 à 3 (B), « مخيّر ولا مسيّر؟ » 1 à 3, « إزاي أعملها؟ » 1 à 4. Tout est
+  rendu public (`page-files`) : `ayah`, `kahf`, `qarnayn`, `kalima`, `map`, `signs`, `farq`, `sual`, `lens`, `qadar`, `sahw`.
+- **Les années en 123** dans le ciel, le cosmos et l'embryon (son choix : « En 123 dans les 3 signes ») : les répliques, leur
+  texte de voix et les crédits scientifiques ; la prise ne change pas (l'alignement retrouve chaque phrase au même temps, et
+  entend mieux les années) ; ni couvertures ni textes à coller. Vidéos refaites, validées (« Je valide les 3 »).
+- **Le nom de la série** manquait sur une partie des shorts (sa remarque : « il manque parfois le nom de la série, même sur
+  certaines vidéos que j'ai validées ») ; « partout où il manque » : « آية وحكايتها », « بص تاني », « إزاي أعملها؟ » et les
+  shorts de Dhul-Qarnayn, de la caverne et de « مخيّر ولا مسيّر؟ » ont le badge de « سؤال صعب » (`NAMED`, Trial.tsx) ; planche
+  des vingt ouvertures validée par lui. Vidéos refaites, contrôlées, **validées par lui le même jour** (Dhul-Qarnayn d'abord,
+  publié du 24 au 26 novembre, puis les autres), et rendues publiques.
+- **« سؤال صعب » 1** : vers 40 s, l'homme était assis au bord du lit « comme sur une chaise » ; il y reste allongé, éveillé,
+  et met la main sur sa poitrine à « قلق وحيرة » (scène validée sur images, puis la vidéo). **« بص تاني » 2** : il préfère B, celle où il y a
+  une personne à la fin, déjà au calendrier ; A, refaite avec la même coupe, est retirée des fichiers (`casts: [figure]` du
+  short, publish.py), son choix.
+
+## 2026-11-21 · YouTube : titres en arabe d'abord, vignettes dessinées
+
+- **D'où ça vient** : l'export « Contenu » de YouTube Studio (4–20 nov.) et une lecture de l'API YouTube Analytics par
+  quran-reels (`insights.yml`, `youtube_detail`). 86,7 % des vues viennent du fil des Shorts (la vignette n'y compte pas),
+  10,6 % de la recherche, toutes les recherches en arabe ; 74 % des vues de pays arabophones, aucun pays anglophone
+  dans les 15 premiers. Le film de Moussa et al-Khadir : 74 % de ses vues en vidéo suggérée, 6 963 impressions, 2,54 %
+  de clics (sa vignette à trois panneaux, sombre, lue à 170 px). Les shorts thématiques perdent leurs spectateurs entre
+  5 et 10 s (le bateau : de 100 % à 41 %, sur la promesse « والسبب… هيغيّر نظرتك »).
+- **Ses choix** : les titres YouTube en arabe d'abord (vidéos thématiques et reels ; `publish.py` : `youtube_title`,
+  chiffres 123 ; les blocs « YouTube · Titre » des vidéos pas encore sur YouTube réécrits, rien d'autre : les fichiers
+  entiers régénérés auraient perdu la durée des versions courtes et changé des descriptions validées) ; pour le film de
+  Dhul-Qarnayn, « قصة ذو القرنين: 3 اختبارات للقوة · The story of Dhul-Qarnayn: 3 tests of power » (parmi quatre
+  propositions ; la sienne, « 3 دروس… هتغيّر نظرتك », déconseillée : promesse générique, celle où le bateau perd ses
+  spectateurs) ; **des vignettes dessinées pour elles-mêmes** : un premier essai fait d'images du film publié, puis
+  le code d'une vignette tirée du film propre (`TrialThumbFrame`, `clean`, `at`) ; sa correction : « il ne faut pas toujours
+  choisir des images du film, on essaie de créer une » image, « entièrement dessinée » parmi trois façons. Trois scènes
+  dessinées (`ThumbArt.tsx` : le barrage chauffé au rouge, le coffre d'or, le soleil dans l'eau sombre), rendues dans la
+  session : **« A · le barrage » choisi par lui** (`thumbnail.use`) ; `only: thumbnail` du workflow `film` les ajoute à la
+  release brouillon. Et l'amélioration continue, pour toutes les sessions (CLAUDE.md).
+
+## Trois films faits de séries entières : « وتحسبونه هيّنًا », « سؤال صعب », « سجود السهو » (2026-11-21)
+
+- **Sa demande** : « continuer d'avoir un film chaque lundi » (grille validée, `docs/retention/calendar.md`), et pour ces
+  films « ne pas se limiter aux répliques de liaison » : travailler le début et la fin, et ce qu'on peut ajouter. Ses choix,
+  questions à choix : tous les ajouts proposés (24:15 récité et Bukhari 6478 lu par une vraie voix pour « وتحسبونه هيّنًا »,
+  13:28 en conclusion pour « سؤال صعب », l'ouverture sur les oublis du Prophète ﷺ, les deux questions fréquentes et la carte
+  qui récapitule pour « سجود السهو ») ; **les trois scripts et la lecture de Bukhari 6478 validés par lui** ; la voix des
+  répliques propres, une requête par film (prises `D-trial-<film>-film.flac`).
+- **Le 16:9 : « dessins refaits en 16:9 »** (son choix, contre le recadrage de l'image verticale du film « مخيّر ولا مسيّر؟ ») :
+  « وتحسبونه هيّنًا », tout dessiné, a chaque scène posée pour le cadre large (`HAYYIN_WIDE`, Hayyin.tsx : `Span`, le mur, la
+  rue, les collines, le ciel continuent sur toute la largeur, avec ce qui s'y trouve : fenêtres, maisons, palmiers, arcades,
+  sous le texte) ; « سؤال صعب » et « سجود السهو » posent leurs cartes, leur salle de prière et leurs scènes jouées à gauche
+  (`wideTall`, Film.tsx), les pièces des scènes jouées et le sol de la salle continuent au-delà du cadre du short
+  (`BLEED`, Played.tsx et Sahw.tsx : rien n'en paraît dans un short, son svg s'arrête au cadre), la frise des rak'ahs au-dessus.
+  Les films minutent désormais les dessins d'un short sur ses phrases (`phrase`), et le film vertical joue les scènes jouées
+  et la frise, ses textes là où le short les met (`layoutOf`). Planches d'images contrôlées par la session : deux éléments
+  passaient sous le texte (une villa voisine, un cadre au mur), retirés.
+- **La carte qui récapitule** (« سجود السهو ») : les trois erreurs puis, école par école, où vont les deux prosternations,
+  d'après l'Encyclopédie koweïtienne 24/238-239 : الحنفي après le salam, toujours ; المالكي avant pour un manque, après pour
+  un ajout ; الشافعي avant ; الحنبلي avant, sauf deux cas. La règle de chaque école telle que la page la donne, pas une case par
+  erreur : la page ne donne pas chaque cas (le doute chez les malikites), rien n'est inventé.
+- **Textes et vignettes** : description et accroche de chaque film proposées (`publish.description`, `publish.hook`) ; le
+  fichier d'une série qui porte aussi son film garde la numérotation de ses shorts et dit que les textes du film ne sont pas
+  validés (publish.py) ; vignettes : une scène dessinée pour la vignette seule (son choix du même jour, « entièrement
+  dessinée » : la chaise vide, le riche éveillé, « 3 ولا 4؟ », `ThumbArt.tsx`), recommandée, et des moments du film.
+  Les vignettes « moment du film » (`at`) sortaient toutes sur l'ouverture du film : la composition `TrialThumbFrame` durait
+  60 images, et une séquence du film qui commence après n'était jamais montrée ; elle dure désormais autant que le film.
+- **Rendus** : workflow `film`, `only: all` pour « وتحسبونه هيّنًا » (les shorts refaits avec le nom de la série, leurs versions
+  TikTok, le film), `only: film` pour les deux autres, puis `only: tall` (le film vertical et son jumeau TikTok) pour les trois.
+  Contrôlés sur leurs planches (−16,1 à −16,2 LUFS) et envoyés : 6:33, 5:17, 7:14. **Tout validé par lui le même jour**
+  (questions à choix) : « je valide les 12 vidéos », « je valide les 3 textes », « les 3 dessinées » (vignettes), « je valide les 7
+  sources » (24:15 et ses deux tafsirs, Bukhari 6478, l'Encyclopédie koweïtienne 24/240, 244, 245) ; fichiers rendus publics par
+  `page-files`.
+
+## 2026-11-21 · Vignettes dessinées de la caverne et de Moussa et al-Khadir
+
+- **Ses choix** (questions à choix, 2026-11-21, après celle de Dhul-Qarnayn) : pour le film de la caverne (lundi 30),
+  « C · 309 ans » (l'arche vue de l'intérieur, 309 en or) et le titre YouTube « قصة أصحاب الكهف: 3 مواقف · The story of
+  the People of the Cave: 3 moments » ; pour le film de Moussa et al-Khadir, déjà en ligne, « A · le bateau » et le titre
+  « قصة موسى والخضر: مش كل شر… شر · The story of Moses and al-Khidr: what looks bad is not always bad », à changer à la main
+  dans YouTube Studio (sa vignette à trois panneaux : 2,54 % de clics sur 6 963 impressions). Six scènes proposées
+  (`ThumbArt.tsx` : la caverne éclairée, le trajet du soleil, 309 ans ; le bateau, le mur, la maison), les lignes prises
+  des titres validés des shorts ; personne dessiné (le garçon du récit non plus).
+- **Le texte d'une vignette se mesure** (`HookLines`, `ThumbFrame.tsx`) : estimée à 0,38 em par lettre, « وقال: مش مني! »
+  dépassait son bloc de 30 px et touchait le bord ; les deux lignes sont maintenant mesurées une fois les polices
+  chargées et réduites ensemble.
+
+## La page du propriétaire refaite, avec les trois films du lundi (2026-11-21)
+
+- **Sa demande** : « oui fais le » (ajouter les trois films à sa page « Films et shorts à publier »). La page datait du 18 :
+  ses aperçus étaient ceux d'avant l'audit (scènes jouées, nom de la série), et elle touchait déjà la limite d'un artefact
+  (254 Mio sur 256). Refaite entière depuis les releases publiques `page-<doc>` (les fichiers validés que quran-reels publie),
+  plus les trois films du lundi en 16:9 et en vertical.
+- **`gallery.py`** : la vignette que YouTube reçoit (`thumbnail.use`), et plus d'arrêt sur les vignettes dédiées ajoutées le
+  même jour ; une série dessinée deux fois montre le dessin que le calendrier publie (`published_cast` : « بص تاني » en B) ;
+  les aperçus des films à 360 px sur leur petit côté (crf 29, son à 64 kb/s), les shorts inchangés ; la page s'arrête si elle
+  dépasse les 256 Mio (243 Mio, 115 fichiers).
+- **Le calendrier** : les 19 et 20 novembre barrés, publiés par quran-reels (`themes.json` de sa branche `state`) ; leurs
+  vidéos sortent de la page (sa règle du 2026-11-18).
+
+## 2026-11-21 — L'arabe d'abord partout, titres et descriptions
+
+Le propriétaire, dans la session des miniatures : « je veux l'arabe d'abord partout titres et description ». Une autre
+session avait compris « l'anglais d'abord sur Facebook, Instagram et TikTok » et l'avait appliqué (PR #83, et quran-reels
+PR #100) ; corrigé le même jour.
+
+- `tools/trial/publish.py` : sur Facebook, Instagram et TikTok, le titre écrit la ligne arabe puis l'anglaise ; chaque
+  description donne le paragraphe arabe d'abord, la ligne de la série en arabe d'abord, les chapitres « 0:14 <arabe> ·
+  <anglais> » (le temps reste en tête pour YouTube ; la relecture des chapitres déjà écrits reconnaît les deux ordres), la
+  ligne de la voix IA en arabe d'abord (`arabic_first`).
+- Les textes de `docs/retention/publication-*.md` remis dans cet ordre **sans changer un mot** : seulement l'ordre des
+  lignes, des paragraphes et des deux moitiés d'une ligne. Régénérés avec le nouveau `publish.py`, ils ne diffèrent que de
+  ce qui différait avant (chiffres ١٢٣ des textes validés avant sa règle du 2026-11-17, durées des versions courtes, note de
+  validation de la caverne). Les titres YouTube des vidéos déjà en ligne restent tels qu'ils ont été publiés (les
+  statistiques de quran-reels reconnaissent ces vidéos par ce titre).
+- `tests/test_title_order.py` vérifie l'inverse de la veille : chaque titre Facebook, Instagram et TikTok et chaque
+  description commencent en arabe.
+
+## 2026-11-21 — YouTube publié par quran-reels, vidéos thématiques comprises
+
+Depuis le 2026-11-02, YouTube ne verrouille plus en privé ce qu'un projet non audité met en ligne par l'API. Le
+propriétaire a choisi (questions à choix, 2026-11-21) que quran-reels mette en ligne lui-même les reels, puis les vidéos
+thématiques, shorts et films (quran-reels PR #104 et #106 ; pas d'audit demandé, PR #105).
+
+- Le run `themes` de quran-reels envoie à YouTube, après Facebook, Instagram et TikTok et seulement si Meta a vu la vidéo
+  propre, le fichier de la page « À publier » : le short (ou sa version courte) ou le film 16:9, celui-ci sur la
+  vérification de son jumeau 9:16 (même son ; sa décision). En public, avec le titre et la description validés de
+  `publication-<doc>.md` suivis des hashtags, **jamais les crédits** (« je ne veux pas que les crédits passent dans la
+  description ») ; la miniature : `thumbnail.use` d'un film, la couverture d'un short. « Contenu modifié ou synthétique » :
+  non (son choix : le narrateur n'imite personne, la description dit déjà que la voix est générée par IA).
+- Reste à la main : la « vidéo associée » d'un Short (le film), que l'API n'offre pas.
+- Ce que ça change ici : une vidéo du calendrier doit avoir son titre et sa description YouTube validés (sinon elle ne part
+  pas sur YouTube, l'alerte le dit) ; une miniature corrigée ne sert qu'une fois `page-files` relancé (les textes, eux, sont lus sur `main`).
+
+## 2026-11-21 — Les vidéos thématiques à 13 h à partir du 27 novembre
+
+Sa capture de YouTube Studio (« Quand vos spectateurs sont sur YouTube ? », 28 jours, heure de France) : très peu de monde
+de minuit à 10 h, le pic de 14 h à 16 h en semaine, 13 h le samedi, 17 h le dimanche, encore du monde de 18 h à 21 h. Sur
+YouTube, ses reels mis en ligne à la main entre 9 h et 12 h 30 faisaient 1 047 vues à 48 h en médiane, ceux mis entre 19 h 45
+et 23 h, 577 (le contenu change aussi : les séries du soir, une ayah). Son choix : le reel du matin ne bouge pas, les vidéos
+thématiques passent à **13 h**, une heure avant le pic, **à partir du vendredi 27** (après les versions courtes de
+Dhul-Qarnayn, 24-26, pour ne pas mêler les deux essais) ; toutes les plateformes, puisque quran-reels les publie d'un coup
+après la vérification de Meta (quran-reels PR #109, `times` de `config/themes.yaml`). Mesuré comme un essai à 48 h.
+
+La session a rappelé ce que dit YouTube : l'heure n'a « a priori pas de conséquences directes sur les performances à long
+terme » ; ce qui freine les shorts thématiques sur YouTube est surtout la part regardée (49 % en médiane contre 105 % pour les
+reels, 246 vues contre 977) : l'essai des versions courtes reste le levier principal.
+
+## 2026-11-22 — La bande-annonce de la chaîne
+
+Sa demande : une vidéo bande-annonce pour la page d'accueil de la chaîne YouTube, « qui décrit nos contenus de façon animée
+et qui attire ». L'avis de la session, donné avant : la page de la chaîne pèse peu (122 vues sur 21 240 du 4 au 21 novembre,
+0,6 % ; le fil des Shorts 86,7 %, la recherche 10,6 %), donc un montage léger plutôt qu'un film, en 16:9 pour YouTube et en
+9:16 à épingler sur Instagram, TikTok et Facebook. Son choix : « montage seulement », avec la voix du narrateur.
+
+- **Le script** (validé par lui, sept temps, puis un huitième à sa demande) : « « أبابيل »… تعرف معناها؟ » sur le mot
+  pris du registre (105:3, ajouté) ; l'extrait de son reel le plus vu (سورة الفيل, 1 709 vues, 105:3 récité en entier par
+  Tawfiq As-Sayegh, mots vérifiés par Whisper), puis le crédit du récitateur et l'encadré du Muyassar entourés en or ; un
+  point par passage jusqu'à 1887 (compté dans `config/plan.yaml` de quran-reels) ; les histoires dans les vignettes
+  dessinées de ses films (`ThumbArt.tsx`) ; les leçons de vie (« إجابات من القرآن والسنة في كل جوانب حياتك », sa phrase,
+  et trois scènes jouées par des personnages, muettes et recadrées sans leur texte) ; les dix séries du calendrier sur YouTube
+  (sans le quiz d'Instagram, son choix) avec leurs couvertures ; les sources ; « اشترك… ».
+- **La voix** ne dit ni « أبابيل » (pas de synthèse vocale sur le Coran) ni le nom du tafsir (sa règle du 2026-11-13) : écrits
+  à l'écran. Deux requêtes dans la journée (le texte v1, puis le texte v2 de huit lignes), validés avant chacune.
+- **Le 16:9** (sa remarque sur la version 1 : « on ne voit pas bien le contenu ») : le reel filmé de près, la caméra sur le
+  verset pendant la récitation puis sur le crédit et l'encadré ; les images verticales trois par trois, côte à côte. Le 9:16
+  garde une image à la fois.
+- **Fichiers** : `content/trial/trailer.yaml`, `tools/trial/trailer.py` (extraits, mixage à −16 LUFS, `trailerData.ts`),
+  `video/src/trial/Trailer.tsx` (compositions `Trailer169`, `Trailer916`) ; rendus dans la session (49,2 s), envoyés dans la
+  conversation. Texte YouTube (titre, description, voix IA déclarée, sans crédits) validé par lui. **Tout validé par lui le
+  2026-11-22.** À mettre en ligne par lui, puis Studio → Personnalisation → Page d'accueil → « Bande-annonce de la chaîne ».
+- **Publiée par quran-reels** (sa demande, la même nuit : « publie-les automatiquement, je gère l'épingle et la bande-annonce ») :
+  dimanche 22 à 14 h, comme un film et son jumeau 9:16 (YouTube le 16:9, Facebook et Instagram le 9:16 après la vérification
+  de Meta, TikTok en brouillon le jumeau signé `@quran.words.daily`), sa légende courte validée par lui
+  (`publication-trailer-9x16.md`) ; les fichiers rendus par le workflow `trailer` dans les pré-releases publiques `page-trailer`
+  et `page-trailer-9x16`. L'avis de la session, donné avant : pour une seule publication, la main est plus simple (5 minutes) ;
+  son choix : l'automatique, réutilisable à la prochaine version.
+
+## 2026-11-22 · Les légendes Facebook en 400 caractères (la revue du dimanche)
+
+- **Pourquoi** : Meta a marqué la bande-annonce « Qualité du contenu : légendes de qualité » (capture du propriétaire à la
+  revue) ; sa liste de qualité veut une légende de 10 à 400 caractères, hashtags compris, et celle de la bande-annonce en
+  faisait 408. Trois textes à venir dépassaient aussi : le film « وتحسبونه هيّنًا » (401, 14 décembre), son short 1 (411,
+  15 décembre) et le film « سؤال صعب » (404, 21 décembre).
+- **Ce qui a été proposé** : retirer le dernier hashtag (refusé par le propriétaire : « je n'ai pas aimé les solutions
+  proposées »), puis une ligne de la voix IA plus courte sur Facebook, ou les accroches anglaises resserrées. **Son choix :
+  les deux.**
+- **Fait** : sur Facebook seulement, « 🎙️ صوت بالذكاء الاصطناعي · AI voice » (35 caractères, au lieu de 52 ;
+  `ai_voice_facebook` de `content/publish.yaml`, `hooked(…, platform)` de `tools/trial/publish.py`), dans les légendes
+  Facebook de toutes les vidéos pas encore publiées (celles déjà en ligne gardent leur texte) ; les trois accroches
+  anglaises resserrées, **validées par lui le 2026-11-22** (« je valide les 3 lignes » : `hayyin`, `sual`, `ghiba`), donc
+  aussi sur Instagram et TikTok. Les trois légendes passent à 364, 366 et 374 caractères. `publish.py` s'arrête sur une
+  légende Facebook au-delà de `platforms.facebook.max_caption` (400), et `tests/test_facebook_length.py` lit tous les
+  textes (la bande-annonce, publiée avant, est la seule exception).
+- **Pas régénéré** : `publish.py` réécrirait aussi les numéros de série des descriptions YouTube (« ١ » → « 1 ») et le titre
+  YouTube d'une vidéo déjà en ligne ; les textes validés ne sont pas refaits pour autant (règle des chiffres, 2026-11-17).
+  Seules les lignes changées l'ont été, dans les fichiers.
+
+## 2026-11-22 · Les bordures : le sol éclairé, essai sur les shorts de la caverne (la revue du dimanche)
+
+- **Pourquoi** : Facebook a noté « Qualité du contenu : vidéo avec bordures » sur deux vidéos (captures du propriétaire à la
+  revue). Mesuré par la session : les vidéos thématiques ont, sous l'horizon, une bande presque noire qui ne bouge pas (le sol
+  `Land` de `Home.tsx` et les rochers d'encre : 170 à 590 px sur 1920, luminosité du dernier dixième de l'image autour de 6
+  sur 255) ; les reels de quran-reels n'en ont plus depuis leur correction du 13 novembre (la colline de la nuit).
+- **Décidé par le propriétaire le 2026-11-22** (questions à choix) : le gabarit corrigé, la scène descend sous les
+  sous-titres, **essai sur les trois shorts de la caverne** (1er au 3 décembre ; pas sur Dhul-Qarnayn, déjà dans l'essai de
+  la version courte), jugé à la revue du 6 décembre ; puis, sur images fixes (ciel de remplacement, faute de clé Pixabay dans
+  la session) : « Oui, rends-les ainsi ».
+- **Fait** : `LitGround` (`Home.tsx`) et `Land … lit`, un sol de la couleur de la pierre (froide la nuit, chaude au couchant),
+  un grain et des plaques de bruit fractal, une lueur sous la crête, trois bancs de brume qui passent chacun à son pas ;
+  `Rock … lit` (`Kahf.tsx`), une pierre en dégradé avec son grain, l'entrée de la caverne toujours sombre ; le short 3, les
+  parois autour de l'arche en pierre éclairée par l'ouverture, une poussière qui passe dans la lumière. Le dernier dixième
+  de l'image passe d'environ 6 à 35 de luminosité ; les scènes jouées (bonshommes) ne changent pas. Seuls les dessins de la
+  caverne l'emploient (vertical) ; les autres vidéos et le film 16:9 restent tels quels.
+- **Rendu par le workflow `film`** (run 45066355335, les trois shorts, leurs versions TikTok et leurs couvertures, release
+  brouillon `kahf-candidate`) : la bande sombre du bas a disparu (0 image sur 70 à 73, contre 57 à 64 avant), les bandes des
+  côtés de l'arche du short 3 aussi ; durées inchangées. Reste le haut du short 1, un ciel de nuit presque noir (le clip de la
+  fuite), laissé tel quel. **Les shorts 1 et 3 validés par le propriétaire le 2026-11-22** (question à choix : « 1 et 3
+  validés, adoucir le 2 ») ; le short 2, dont la pierre chaude faisait des taches, refait avec un grain plus fin et le pied du
+  rocher fondu dans le sol (les shorts 1 et 3 rendus à l'identique), à valider sur vidéo avant `page-files kahf`.
+- **Le short 2 refait** (run 45070698270 : 1:12, −16,1 LUFS, aucune bande en bas) **validé par le propriétaire le 2026-11-22**
+  (« je valide le short 2 », avec sa version TikTok et sa couverture). Les trois shorts de la caverne à sol éclairé sont
+  publics (`page-files kahf`) : ce sont eux qui sortent les 1er, 2 et 3 décembre. L'essai se juge à la revue du 6 décembre
+  (quran-reels, `docs/insights.md`, `trials`).
+
+## Dhul-Qarnayn sorti de sa page ; le calendrier barré jusqu'au 26 novembre (2026-11-27)
+
+- **Le rappel du 27** (sa décision du 2026-11-17 : « tu supprimes après publication ») : le du'a et Dhul-Qarnayn, une fois
+  tous leurs shorts publiés. Le du'a était déjà sorti (barré par une autre session, `published_off`).
+- **Vérifié dans `themes.json`** (branche `state` de quran-reels) : du 21 au 26 novembre, tout est publié sur Facebook,
+  Instagram et YouTube, TikTok en brouillon (le quiz 1 du 23 : sur Instagram seul, comme prévu). Ces dates sont barrées :
+  le 21 (« سنريهم آياتنا » 1), le 22 (la bande-annonce), le 23 (le film de Dhul-Qarnayn et le quiz 1), les 24, 25 et 26 (ses
+  trois shorts).
+- **Sa page refaite** sans Dhul-Qarnayn, avec des vidéos-témoins de la bonne durée pour les films qui restent ; seul
+  `index.html` est envoyé, et quatorze médias sont retirés (Dhul-Qarnayn, le short 1 de « سنريهم آياتنا », le quiz 1),
+  soit 39 Mio libérés.
 

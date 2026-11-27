@@ -9,25 +9,25 @@ Pour le film et chaque short, les textes à copier : sur Facebook, Instagram et 
 **YouTube · Titre (82/100)**
 
 ```text
-Free will or fate? 3 sentences we all say · مخيّر ولا مسيّر؟ تلات جمل بنقولها كلنا
+مخيّر ولا مسيّر؟ تلات جمل بنقولها كلنا · Free will or fate? 3 sentences we all say
 ```
 
 **YouTube · Description**
 
 ```text
-“The result is written”, “When God guides me”, “If only I had…”: three sentences we all say, and behind each one the same question. Not a debate: the question the Companions asked, the answer they received, and what the Quran says. You have a real will and real deeds, and your will runs under God's will.
-
 «النتيجة مكتوبة»، «لما ربنا يهديني»، «لو كنت عملت كذا»: تلات جمل بنقولها كلنا، وورا كل واحدة نفس السؤال. مش جدال: السؤال اللي الصحابة سألوه، والإجابة اللي خدوها، والقرآن قال إيه. ليك مشيئة حقيقية وفعل حقيقي، ومشيئتك ماشية تحت مشيئة ربنا.
 
-Chapters:
-0:00 Three sentences · تلات جمل
-0:16 Not a debate · مش جدال
-0:39 “The result is written” · «النتيجة مكتوبة»
-2:03 “When God guides me” · «لما ربنا يهديني»
-4:03 “If only” · «لو»
-5:54 Do we choose, or are we driven? · مخيّرين ولا مسيّرين؟
+“The result is written”, “When God guides me”, “If only I had…”: three sentences we all say, and behind each one the same question. Not a debate: the question the Companions asked, the answer they received, and what the Quran says. You have a real will and real deeds, and your will runs under God's will.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+Chapters:
+0:00 تلات جمل · Three sentences
+0:16 مش جدال · Not a debate
+0:39 «النتيجة مكتوبة» · “The result is written”
+2:03 «لما ربنا يهديني» · “When God guides me”
+4:03 «لو» · “If only”
+5:54 مخيّرين ولا مسيّرين؟ · Do we choose, or are we driven?
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -63,13 +63,13 @@ Ambience: BigSoundBank (Joseph Sardin)
 
 ## Short 1 · “It's all written, why bother?” The Companions asked it · «كله مكتوب… أتعب ليه؟» الصحابة سألوها
 
-`qadar-short-1-amal.mp4` (TikTok : `qadar-short-1-amal-tiktok.mp4`, signée `@quran.words.daily`) · 1:36 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qadar-short-1-amal-cover.jpg`
+`qadar-short-1-amal.mp4` (TikTok : `qadar-short-1-amal-tiktok.mp4`, signée `@quran.words.daily`) · 1:30 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qadar-short-1-amal-cover.jpg`
 
 **Facebook · Titre**
 
 ```text
-“It's all written, why bother?” The Companions asked it
 «كله مكتوب… أتعب ليه؟» الصحابة سألوها
+“It's all written, why bother?” The Companions asked it
 ```
 
 **Facebook · Description**
@@ -78,7 +78,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 «لو كل حاجة مكتوبة… أتعب ليه؟» الصحابة سألوا السؤال ده… وده كان الرد.
 “If everything is written, why bother?” The Companions asked this… and here is the answer.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -90,8 +90,8 @@ Ambience: BigSoundBank (Joseph Sardin)
 **Instagram · Titre**
 
 ```text
-“It's all written, why bother?” The Companions asked it
 «كله مكتوب… أتعب ليه؟» الصحابة سألوها
+“It's all written, why bother?” The Companions asked it
 ```
 
 **Instagram · Description**
@@ -100,7 +100,7 @@ Ambience: BigSoundBank (Joseph Sardin)
 «لو كل حاجة مكتوبة… أتعب ليه؟» الصحابة سألوا السؤال ده… وده كان الرد.
 “If everything is written, why bother?” The Companions asked this… and here is the answer.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (4)**
@@ -114,8 +114,8 @@ Sur TikTok : la vidéo `qadar-short-1-amal-tiktok.mp4`, signée `@quran.words.da
 **TikTok · Titre**
 
 ```text
-“It's all written, why bother?” The Companions asked it
 «كله مكتوب… أتعب ليه؟» الصحابة سألوها
+“It's all written, why bother?” The Companions asked it
 ```
 
 **TikTok · Description**
@@ -124,7 +124,7 @@ Sur TikTok : la vidéo `qadar-short-1-amal-tiktok.mp4`, signée `@quran.words.da
 «لو كل حاجة مكتوبة… أتعب ليه؟» الصحابة سألوا السؤال ده… وده كان الرد.
 “If everything is written, why bother?” The Companions asked this… and here is the answer.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (4)**
@@ -136,19 +136,19 @@ Sur TikTok : la vidéo `qadar-short-1-amal-tiktok.mp4`, signée `@quran.words.da
 **YouTube · Titre (95/100)**
 
 ```text
-“It's all written, why bother?” The Companions asked it · «كله مكتوب… أتعب ليه؟» الصحابة سألوها
+«كله مكتوب… أتعب ليه؟» الصحابة سألوها · “It's all written, why bother?” The Companions asked it
 ```
 
 **YouTube · Description**
 
 ```text
-“The result is already written, so why work?” The Companions asked the Prophet ﷺ this very question at a funeral. His answer, and the verses he recited after it: whoever brings the means, God makes the way easy for him.
-
 «النتيجة مكتوبة… أشتغل ليه؟» الصحابة سألوا النبي صلى الله عليه وسلم السؤال ده نفسه في جنازة. إجابته، والآيات اللي قرأها بعدها: اللي يجيب الأسباب… ربنا يسهّل له الطريق.
 
-Free will or fate? · part 1/3 · مخيّر ولا مسيّر؟ · الجزء ١ من ٣
+“The result is already written, so why work?” The Companions asked the Prophet ﷺ this very question at a funeral. His answer, and the verses he recited after it: whoever brings the means, God makes the way easy for him.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+مخيّر ولا مسيّر؟ · الجزء ١ من ٣ · Free will or fate? · part 1/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -181,8 +181,8 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 **Facebook · Titre**
 
 ```text
-“When God guides me…” Two verses answer it
 «لما ربنا يهديني»… آيتين بيردّوا عليها
+“When God guides me…” Two verses answer it
 ```
 
 **Facebook · Description**
@@ -191,7 +191,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 «لما ربنا يهديني»… آيتين ورا بعض بيردّوا عليها.
 “When God guides me…” Two verses in a row answer it.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -203,8 +203,8 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 **Instagram · Titre**
 
 ```text
-“When God guides me…” Two verses answer it
 «لما ربنا يهديني»… آيتين بيردّوا عليها
+“When God guides me…” Two verses answer it
 ```
 
 **Instagram · Description**
@@ -213,7 +213,7 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 «لما ربنا يهديني»… آيتين ورا بعض بيردّوا عليها.
 “When God guides me…” Two verses in a row answer it.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (4)**
@@ -227,8 +227,8 @@ Sur TikTok : la vidéo `qadar-short-2-shaa-tiktok.mp4`, signée `@quran.words.da
 **TikTok · Titre**
 
 ```text
-“When God guides me…” Two verses answer it
 «لما ربنا يهديني»… آيتين بيردّوا عليها
+“When God guides me…” Two verses answer it
 ```
 
 **TikTok · Description**
@@ -237,7 +237,7 @@ Sur TikTok : la vidéo `qadar-short-2-shaa-tiktok.mp4`, signée `@quran.words.da
 «لما ربنا يهديني»… آيتين ورا بعض بيردّوا عليها.
 “When God guides me…” Two verses in a row answer it.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (4)**
@@ -249,19 +249,19 @@ Sur TikTok : la vidéo `qadar-short-2-shaa-tiktok.mp4`, signée `@quran.words.da
 **YouTube · Titre (83/100)**
 
 ```text
-“When God guides me…” Two verses answer it · «لما ربنا يهديني»… آيتين بيردّوا عليها
+«لما ربنا يهديني»… آيتين بيردّوا عليها · “When God guides me…” Two verses answer it
 ```
 
 **YouTube · Description**
 
 ```text
-“When God guides me, I'll start praying.” In two verses in a row, the word “wills” comes twice: once for you, once for God. You have a real will and real deeds, and your will runs under God's will: you are not forced, and your will is not outside His.
-
 «لما ربنا يهديني… هبقى أصلّي.» في آيتين ورا بعض، كلمة «شاء» جت مرتين: مرة ليك ومرة لربنا. ليك مشيئة حقيقية وفعل حقيقي، ومشيئتك ماشية تحت مشيئة ربنا: لا إنت مجبور، ولا مشيئتك برّه مشيئته.
 
-Free will or fate? · part 2/3 · مخيّر ولا مسيّر؟ · الجزء ٢ من ٣
+“When God guides me, I'll start praying.” In two verses in a row, the word “wills” comes twice: once for you, once for God. You have a real will and real deeds, and your will runs under God's will: you are not forced, and your will is not outside His.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+مخيّر ولا مسيّر؟ · الجزء ٢ من ٣ · Free will or fate? · part 2/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
@@ -287,13 +287,13 @@ Sur YouTube : choisir le film comme « vidéo associée » du short, pour que le
 
 ## Short 3 · A two-letter word the Prophet ﷺ warned against · كلمة من حرفين… النبي ﷺ حذّر منها
 
-`qadar-short-3-law.mp4` (TikTok : `qadar-short-3-law-tiktok.mp4`, signée `@quran.words.daily`) · 1:32 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qadar-short-3-law-cover.jpg`
+`qadar-short-3-law.mp4` (TikTok : `qadar-short-3-law-tiktok.mp4`, signée `@quran.words.daily`) · 1:25 · 9:16 · Facebook, Instagram, TikTok, YouTube Shorts · couverture : `qadar-short-3-law-cover.jpg`
 
 **Facebook · Titre**
 
 ```text
-A two-letter word the Prophet ﷺ warned against
 كلمة من حرفين… النبي ﷺ حذّر منها
+A two-letter word the Prophet ﷺ warned against
 ```
 
 **Facebook · Description**
@@ -302,7 +302,7 @@ A two-letter word the Prophet ﷺ warned against
 كلمة من حرفين بنقولها كل ليلة… والنبي ﷺ حذّر منها.
 A two-letter word we say every night… and the Prophet ﷺ warned against it.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت بالذكاء الاصطناعي · AI voice
 ```
 
 **Facebook · Hashtags (3)**
@@ -314,8 +314,8 @@ A two-letter word we say every night… and the Prophet ﷺ warned against it.
 **Instagram · Titre**
 
 ```text
-A two-letter word the Prophet ﷺ warned against
 كلمة من حرفين… النبي ﷺ حذّر منها
+A two-letter word the Prophet ﷺ warned against
 ```
 
 **Instagram · Description**
@@ -324,7 +324,7 @@ A two-letter word the Prophet ﷺ warned against
 كلمة من حرفين بنقولها كل ليلة… والنبي ﷺ حذّر منها.
 A two-letter word we say every night… and the Prophet ﷺ warned against it.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **Instagram · Hashtags (4)**
@@ -338,8 +338,8 @@ Sur TikTok : la vidéo `qadar-short-3-law-tiktok.mp4`, signée `@quran.words.dai
 **TikTok · Titre**
 
 ```text
-A two-letter word the Prophet ﷺ warned against
 كلمة من حرفين… النبي ﷺ حذّر منها
+A two-letter word the Prophet ﷺ warned against
 ```
 
 **TikTok · Description**
@@ -348,7 +348,7 @@ A two-letter word the Prophet ﷺ warned against
 كلمة من حرفين بنقولها كل ليلة… والنبي ﷺ حذّر منها.
 A two-letter word we say every night… and the Prophet ﷺ warned against it.
 
-🎙️ AI-generated voice · صوت مولَّد بالذكاء الاصطناعي
+🎙️ صوت مولَّد بالذكاء الاصطناعي · AI-generated voice
 ```
 
 **TikTok · Hashtags (4)**
@@ -360,19 +360,19 @@ A two-letter word we say every night… and the Prophet ﷺ warned against it.
 **YouTube · Titre (81/100)**
 
 ```text
-A two-letter word the Prophet ﷺ warned against · كلمة من حرفين… النبي ﷺ حذّر منها
+كلمة من حرفين… النبي ﷺ حذّر منها · A two-letter word the Prophet ﷺ warned against
 ```
 
 **YouTube · Description**
 
 ```text
-“If only I had…” The Prophet ﷺ told us what to say when something befalls us, and warned against “if only”. Every misfortune was written before creation: what is gone could not have been stopped, so leave it to God and work on what is ahead.
-
 «لو كنت عملت كذا…» النبي صلى الله عليه وسلم قال لنا نقول إيه لما حاجة تحصلنا، وحذّر من «لو». كل مصيبة مكتوبة من قبل ما الخلق يتخلق: اللي فات ما كانش فيه طريق يتمنع… سيبه لربنا، واشتغل على اللي جاي.
 
-Free will or fate? · part 3/3 · مخيّر ولا مسيّر؟ · الجزء ٣ من ٣
+“If only I had…” The Prophet ﷺ told us what to say when something befalls us, and warned against “if only”. Every misfortune was written before creation: what is gone could not have been stopped, so leave it to God and work on what is ahead.
 
-AI-generated voice (Gemini TTS, Egyptian Arabic) · صوت الراوي مولَّد بالذكاء الاصطناعي
+مخيّر ولا مسيّر؟ · الجزء ٣ من ٣ · Free will or fate? · part 3/3
+
+صوت الراوي مولَّد بالذكاء الاصطناعي · AI-generated voice (Gemini TTS, Egyptian Arabic)
 
 @quran_words_daily
 ```
